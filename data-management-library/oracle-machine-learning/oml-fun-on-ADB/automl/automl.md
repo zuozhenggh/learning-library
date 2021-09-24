@@ -57,49 +57,8 @@ To sign into Oracle Machine Learning (OML) Notebooks from the Autonomous Databas
 
    If you add another paragraph, add 3 spaces before the line.
 
-## Task 2: Create the CUSTOMERS360 table
 
-In this step, you will create a notebook and run a SQL query to create the table ``CUSTOMERS60``.
-
->**Note:** You will be using this table in this lab in the next lab Oracle Machine Learning Services.
-
-To create the table:
-
-1. On the Oracle Machine Learning user interface home page, click **Notebooks**. The Notebooks page opens.
-
-2. On the Notebooks page, click **Create**.
-
-3. In the Create Notebook dialog, enter Customers_360 in the name field. and click **OK**.
-
-4. Type ``%sql`` to connect to the SQL interpreter and press enter.
-
-5. Enter the following script and click the run icon:
-
-    ```
-    <copy>
-		CREATE TABLE CUSTOMERS360 AS
-              (SELECT a.CUST_ID, a.CUST_GENDER, a.CUST_MARITAL_STATUS,
-                 a.CUST_YEAR_OF_BIRTH, a.CUST_INCOME_LEVEL, a.CUST_CREDIT_LIMIT,
-                 b.EDUCATION, b.AFFINITY_CARD,
-                 b.HOUSEHOLD_SIZE, b.OCCUPATION, b.YRS_RESIDENCE, b.Y_BOX_GAMES
-           FROM SH.CUSTOMERS a, SH.SUPPLEMENTARY_DEMOGRAPHICS b
-           WHERE a.CUST_ID = b.CUST_ID);
-		</copy>
-    ```
-	![SQL script to create Customers360 table](images/sql_script.png)
-
-6. In the next paragraph, run the following script to view the data:
-
-	```
-  <copy>
-	select * from CUSTOMERS360
-		where rownum < 10;
-	 </copy>
-  ```
-
-	![Script to view Customers360 table](images/script_view_customers360.png)
-
-## Task 3: Create an Experiment
+## Task 2: Create an Experiment
 An Experiment can be described as a work unit that contains the definition of data source, prediction target, and prediction type along with optional settings. After an Experiment runs successfully, it presents you a list of machine learning models in the leader board. You can select any model for deployment, or use it to create a notebook based on the selected model.
 When creating an Experiment, you must define the data source and the target of the experiment. To create an Experiment:
 
@@ -127,7 +86,7 @@ The supported prediction types are:
 8. In the **Case ID** field, select **CUST_ID**. The Case ID helps in data sampling and dataset split to make the results reproducible between experiments. It also aids in reducing randomness in the results. This is an optional field.  
 
 
-### Task 3.1: Adjust Additional Settings
+### Task 2.1: Adjust Additional Settings
 To adjust additional settings of this experiment:
 
 1. Expand the Additional Settings section on the Experiments page, and make the following changes:
@@ -159,7 +118,7 @@ To adjust additional settings of this experiment:
 This completes the task of creating an experiment.
 
 
-### Task 3.2 View Leader Board with Additional Metrics
+### Task 2.2 View Leader Board with Additional Metrics
 When an experiment runs, it starts to show the results in the Leader Board. When an experiment starts running, the status is displayed in a progress bar. Click Details next to the **Stop** button to view the experiment run details, as shown in the screen shot.
 
 ![Experiment Progress bar](images/exp_progress_bar.png)
@@ -199,7 +158,7 @@ The Leader Board displays the top performing models relative to the model metric
 	![View Confusion Matrix](images/confusion_matrix.png)
 
 
-## Task 4: Deploy Top Model to OML Services
+## Task 3: Deploy Top Model to OML Services
 When you deploy a model using the OML AutoML UI, you create an Oracle Machine Learning Services endpoint for scoring. OML Services extends Oracle Machine Learning functionality to support model deployment and model lifecycle management for in-database OML models through REST APIs.
 
 To deploy a model:  
@@ -233,7 +192,7 @@ To deploy a model:
 This completes the task of deploying the top model Naive Bayes to OML Services.
 
 
-## Task 5: View OML Models with Deployed Metadata and JSON Endpoint
+## Task 4: View OML Models with Deployed Metadata and JSON Endpoint
 
 The deployed models are listed under **Deployments** on the Models page. To view the metadata of the deployed model **CUST360_NB**:
 
@@ -256,7 +215,7 @@ The deployed models are listed under **Deployments** on the Models page. To view
 
 This completes the task of viewing the metadata of the deployed model, and its endpoint.
 
-## Task 6: Create a Notebook for the Top Model
+## Task 5: Create a Notebook for the Top Model
 You can create notebooks based on the top models produced in the experiment. This recreates the selected model using the same settings. This option is helpful if you want to use the code to re-create a similar machine learning model. To create a notebook:
 
 1. Go to the AutoML page and click the Customers 360 experiment.  
@@ -276,7 +235,7 @@ You can create notebooks based on the top models produced in the experiment. Thi
 This completes the task of creating the notebook NB Customer 360 based on the Naive Bayes model that is created by the AutoML experiment Customers 360.
 
 
-## Task 7: View Generated Notebook and Individual Paragraphs
+## Task 6: View Generated Notebook and Individual Paragraphs
 To view the generated notebook Customer 360:
 
 1. Click the hamburger icon ![Image alt text](images/sample2.png) to open the left navigation menu and click **Notebooks**.
