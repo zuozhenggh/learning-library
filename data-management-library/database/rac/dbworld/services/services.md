@@ -3,7 +3,7 @@
 ## Introduction
 This lab walks you through the steps to demonstrate many of the capabilities of Oracle Database services.
 
-Estimated Lab Time: 20 Minutes
+Estimated Time: 20 Minutes
 
 Watch the video for a quick walk through of Oracle Database services lab.
 
@@ -29,9 +29,8 @@ Application Continuity is set as an attribute of a service.
 
 Oracle recommends that all users who share a service have the same service level requirements. You can define specific characteristics for services and each service can represent a separate unit of work. There are many options that you can take advantage of when using services. Although you do not have to implement these options, using them helps optimize application operation and performance.
 
-For more information on Oracle Database Services visit http://www.oracle.com/goto/ac
+For more information on Oracle Database Services visit [https://www.oracle.com/goto/ac](https://www.oracle.com/goto/ac)
 
-[](youtube:dIMgaujSydQ)
 
 ## Task 1: Login and Identify Database and Instance names
 You should have already identified your database name and instance name.  Each place in this lab where you see **<REPLACE xxx NAME>** make sure you use your correct instance and database names.
@@ -168,7 +167,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 4. Manually relocate the service. Open a connection (with SQL*Plus) to the instance where the service is running. Use the SCAN address and the domain qualified service name in the format:
 
     ````
-    **sqlplus user/password@//<REPLACE SCAN NAME>/svctest**
+    sqlplus user/password@//<REPLACE SCAN NAME>/svctest.<DOMAIN NAME>
     ````
 
 5. To get the SCAN address run the following command
@@ -232,7 +231,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     SQL> /
     INST_ID     SERVICE_NAME         COUNT(*)
     ---------- -------------------- ----------
-       1         svctest                1
+       2         svctest                1
     ````
     It has not changed.
     The relocate service command will not disconnect active sessions unless a force option (**-force**) is specified. A stop service command will allow a drain timeout to be specified to allow applications to complete their work during the drain interval.
@@ -244,7 +243,7 @@ This exercise will demonstrate connection load balancing and why it is important
 
     ````
     <copy>
-    srvctl add service srvctl add service -d <REPLACE DATABASE NAME> -s unisrv -preferred <REPLACE INSTANCE NAME 1>,<REPLACE INSTANCE NAME 2> -pdb pdb1
+    srvctl add service -d <REPLACE DATABASE NAME> -s unisrv -preferred <REPLACE INSTANCE NAME 1>,<REPLACE INSTANCE NAME 2> -pdb pdb1
     srvctl start service -d <REPLACE DATABASE NAME> -s unisrv
     </copy>
     ````
@@ -261,7 +260,7 @@ This exercise will demonstrate connection load balancing and why it is important
 
     where you will see similar to:
 
-    ![](./images/lab6-step3-num2.png " ")
+    ![](./images/listener_scan_unisrv.png " ")
 
     You should notice that an entry for this service is configured for each instance.
 
@@ -298,6 +297,17 @@ This exercise will demonstrate connection load balancing and why it is important
         (ADDRESS = (PROTOCOL = TCP)(HOST = <REPLACE VIP HOST1>)(PORT = 1521))
         (ADDRESS = (PROTOCOL = TCP)(HOST = <REPLACE VIP HOST2>)(PORT = 1521))
         (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = unisrv.pub.racdblab.oraclevcn.com)))
+
+    CLBTEST-NODE1 = (DESCRIPTION =
+        (LOAD_BALANCE = on) (FAILOVER = off)
+        (ADDRESS = (PROTOCOL = TCP)(HOST = <REPLACE VIP HOST1>)(PORT = 1521))
+        (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = unisrv.pub.racdblab.oraclevcn.com)))
+
+    CLBTEST-NODE2 = (DESCRIPTION =
+        (LOAD_BALANCE = on) (FAILOVER = off)
+        (ADDRESS = (PROTOCOL = TCP)(HOST = <REPLACE VIP HOST2>)(PORT = 1521))
+        (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = unisrv.pub.racdblab.oraclevcn.com)))    
+
     </copy>
     ````
 
@@ -332,7 +342,7 @@ This exercise will demonstrate connection load balancing and why it is important
 
      ````
     <copy>
-    $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST
+    $ORACLE_HOME/bin/sqlplus hr/W3lc0m3#W3lc0m3#@CLBTEST
     </copy>
     ````
 
@@ -424,7 +434,7 @@ This exercise will demonstrate connection load balancing and why it is important
 
 
     ````
-    [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST-LOCAL
+    [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus hr/W3lc0m3#W3lc0m3#@CLBTEST-LOCAL
     SQL*Plus: Release 19.0.0.0.0 - Production on Mon Aug 24 08:34:32 2020
     Version 19.7.0.0.0
     Copyright (c) 1982, 2020, Oracle.  All rights reserved.
@@ -433,7 +443,9 @@ This exercise will demonstrate connection load balancing and why it is important
     ORA-12514: TNS:listener does not currently know of service requested in connect descriptor
     Enter user-name:
     ````
-    This address could be repeatedly tried \(it is a random access\)    
+    This address could be repeatedly tried \(it is a random access\)
+
+    **Note:** If you use CLBTEST-NODE1 or CLBTEST-NODE2 you will force the connection to a Node Listener. Choosing the listener where the instance was stopped is guaranteed to fail.
 
     The CLBTEST alias uses the SCAN address and will only send requests to the available instances
 
@@ -452,13 +464,14 @@ This exercise will demonstrate connection load balancing and why it is important
 13. The recommended connect string for all Oracle Drivers of version 12.2 or later is:
 
     ````
-    Alias (or URL) = (DESCRIPTION =
-   (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
-   (ADDRESS_LIST =(LOAD_BALANCE=on)
-      (ADDRESS = (PROTOCOL = TCP)(HOST=primary-scan)(PORT=1521)))
-   (ADDRESS_LIST =(LOAD_BALANCE=on)
-      (ADDRESS = (PROTOCOL = TCP)(HOST=secondary-scan)(PORT=1521)))
-   (CONNECT_DATA=(SERVICE_NAME = gold-cloud))
+    Alias (or URL) =
+       (DESCRIPTION =
+            (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
+            (ADDRESS_LIST =(LOAD_BALANCE=on)
+               (ADDRESS = (PROTOCOL = TCP)(HOST=primary-scan)(PORT=1521)))
+            (ADDRESS_LIST =(LOAD_BALANCE=on)
+               (ADDRESS = (PROTOCOL = TCP)(HOST=secondary-scan)(PORT=1521)))
+            (CONNECT_DATA=(SERVICE_NAME = gold-cloud)))
     ````    
     This is showing how a RAC and Data Guard environment would be specified. The assumption is that both the PRIMARY and SECONDARY sites are clustered environments, hence specifying a SCAN ADDRESS for each one.
 
@@ -487,6 +500,8 @@ This exercise will demonstrate connection load balancing and why it is important
 15. Verify you can connect using this alias.
 
 ## Task 5 The difference between connection load balancing and runtime load Balancing
+
+Ensure you restart any instances you previously shutdown.
 
 In this exercise we will use the Java client you installed previously: **acdemo**
 
@@ -530,180 +545,187 @@ This should show both instances in the PREFERRED list if successful
     Service is enabled
     Preferred instances: racKPEMW1,racKPEMW2
     Available instances:
-    ````      
-3. Ensure you are connected as the *oracle* user and then start the acdemo application using the runnoreplay script.
+    ````  
+Check that the service is running on both instances
+
+    ````
+    <copy>
+    srvctl status service -d <REPLACE DB NAME> -s unisrv
+    </copy>
+    ````
+
+3. Ensure you are connected as the *oracle* user and then start the acdemo application using the runlbtest script.
+
     ````
     <copy>
     cd /home/oracle/acdemo
-    ./runnoreplay
+    ./runlbtest
     </copy>
     ````
 
-    ![](./images/runnoreplay_output.png " ")      
+    ![](./images/runlbtest.png " ")      
 
 Make sure acdemo is using the *unisrv* service     
 
-4. Look at the connection distribution
-
-**Note** - You may need several windows to each node in this exercise
-
-Using a different cloud shell window (connected to either node) open a SQL*Plus connection as SYSTEM to the PDB associated with this service
+4. Look at the connection distribution by opening a SQL\*Plus connection, on either node, to the PDB associated with this service
 
     ````
-    <copy>
-    sqlplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.pub.racdblab.oraclevcn.com as sysdba
-    </copy>
+    sqlplus system/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.pub.racdblab.oraclevcn.com as sysdba
     ````
 
 and run the following SQL statement
 
-    ````
-    <copy>
-    set wrap off
-    col service_name format  a20
-    select inst_id, service_name, count(*) from gv$session where service_name = 'noac' group by inst_id, service_name;
-    exit
-    </copy>
-    ````
+````
+<copy>
+set wrap off
+col service_name format  a20
+select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
+</copy>
+````
 
 This statement will show you the instance this service is running and the number of open connections on this service.
 It should be relatively even
-    ````
-    INST_ID    SERVICE_NAME           COUNT(*)
-    ---------- -------------------- ----------
-         1      unisrv                         10
-         2      unisrv                         10
-    ````    
+
+````
+INST_ID    SERVICE_NAME           COUNT
+---------- -------------------- ----------
+   1      unisrv                    10
+   2      unisrv                    10
+````
 
 The UCP pool manager will be handing these connections to worker threads as they need them. There are algorithms that influence this, such as those related to affinity (where you were connected before) or time-based (when your thread last requested a connection) but generally the connections are handed out equally (for connections on each instance and so forth)
 
 5. We know that nodes in a cluster may not be equal in capacity, nor may there be equal distribution of workload on each node.
 
 If you look at the current response time for acdemo it is fairly equal - probably 38-40 ms per request.
-    ````
-    39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 38ms
-    40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 39ms
-    42 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 74535, avg response time from db 37ms
-    37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 38ms
-    41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 38ms
-    37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 40ms
-    ````
+````
+39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 5ms
+40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 6ms
+42 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 74535, avg response time from db 6ms
+37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 5ms
+41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 5ms
+37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 5ms
+````
 
-Consume CPU on one node with a database-external program. Download the CPU_HOG utility to the opposite Node from where you are running the acdemo application. If, for example acdemo runs on Node-1, then download CPU_HOG to Node-2.     
+Consume CPU on one node with a database-external program. Download the CPU\_HOG utility to the opposite Node from where you are running the acdemo application. If, for example acdemo runs on Node-1, then download CPU\_HOG to Node-2.
 
-    ````
-    <copy>
-    cd /home/oracle
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iMYwjIGTOrUvs4FQqoKY7ie7os3Ybocg1wob-G18rAneuZP-F__z_XoXUKB6hhIt/n/oradbclouducm/b/LiveLabTemp/o/cpuhog.zip
-    </copy>
-    ````
-Unzip the utility and set the execute bit      
-    ````
-    <copy>
-    cd /home/oracle
-    unzip cpuhog.zip
-    cd cpu_hog
-    chmod +x atm_cpuload_st.pl
-    </copy>
-    ````
-Start the CPU_HOG utility, specifying a target load of 90%
+````
+<copy>
+cd /home/oracle
+wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iMYwjIGTOrUvs4FQqoKY7ie7os3Ybocg1wob-G18rAneuZP-F__z_XoXUKB6hhIt/n/oradbclouducm/b/LiveLabTemp/o/cpuhog.zip
+</copy>
+````
+Unzip the utility and set the execution bit (\+x)
 
-    ````
-    <copy>
-    cd /home/oracle/cpu_hog
-    atm_cpuload_st 90
-    </copy>
-    ````
+````
+<copy>
+cd /home/oracle
+unzip cpuhog.zip
+cd cpu_hog
+chmod +x atm_cpuload_st.pl
+</copy>
+````
 
-    ![](./images/cpu_hog_running.png " ")
+Start the CPU\_HOG utility, specifying a target load of 90%
+
+````
+<copy>
+cd /home/oracle/cpu_hog
+atm_cpuload_st 90
+</copy>
+````
+
+![](./images/cpu_hog_running.png " ")
 
 You should see some of the acdemo requests getting longer (they will periodically jump to 45 - 48 ms, a significant change) - this is because the threads are using connections on the overloaded node
 
-    ````
-    39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 38ms
-    40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 39ms
-    42 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 74535, avg response time from db 40ms
-    37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 47ms
-    41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 47ms
-    37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 40ms
-    ````
-6. Enable runtime load balancing on the noac service
+````
+39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 38ms
+40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 39ms
+42 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 74535, avg response time from db 40ms
+37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 47ms
+41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 47ms
+37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 40ms
+````
+6. Enable runtime load balancing on the unisrv service
 
     ````
     <copy>
-    srvctl modify service -d <REPLACE DB NAME> -s noac -rlbgaol SERVICE_TIME
+    srvctl modify service -d <REPLACE DB NAME> -s unisrv -rlbgoal SERVICE_TIME
     </copy>
     ````
-
 Confirm the config
 
-    ````
-    srvctl config service -d <REPLACE DB NAME> -s noac
-    ````        
-    ![](./images/noac_confiog_rlb.png " ")    
+````
+srvctl config service -d <REPLACE DB NAME> -s unisrv
+````
+
+![](./images/unisrv_config_rlb.png " ")
+
 
 7. How Runtime Load Balancing (RLB) functions is that a smoothed rolling average of responses is calculated by service in the database. From this a metric is sent as a FAN event to subscribing clients. The RLB directive gives an indication to the client how database activity on each instance is performing (for that service). A guide is given to the pool to direct a portion of work to each instance - a lesser value to instances that are loaded.
 
 Examine the RLB statistics
 
-    ````
-    <copy>
-    sqlplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.pub.racdblab.oraclevcn.com as sysdba
-    </copy>
-    ````
+````
+<copy>
+sqlplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.pub.racdblab.oraclevcn.com as sysdba
+</copy>
+````
 
 Enter the following in to SQL\*plus
 
-    ````
-    <copy>
-    set colsep '|' pages 60 space 2 lines 132 num 8 verify off feedback off
-    col user_data heading "Service Metrics" format A80 wrap
-    break on SERVICE_NAME skip 1
+````
+<copy>
+set colsep '|' pages 60 space 2 lines 132 num 8 verify off feedback off
+col user_data heading "Service Metrics" format A80 wrap
+break on SERVICE_NAME skip 1
 
-    SELECT
-    TO_CHAR(ENQ_TIME, 'HH24:MI:SS') Enq_time, user_data
-    FROM SYS.SYS$SERVICE_METRICS_TAB
-    WHERE ENQ_TIME >= (select max(ENQ_TIME)- 60/1440/60 from SYS.SYS$SERVICE_METRICS_TAB )
-    ORDER BY 1;
-    </copy>
-    ````
+SELECT
+TO_CHAR(ENQ_TIME, 'HH24:MI:SS') Enq_time, user_data
+FROM SYS.SYS$SERVICE_METRICS_TAB
+WHERE ENQ_TIME >= (select max(ENQ_TIME)- 60/1440/60 from SYS.SYS$SERVICE_METRICS_TAB )
+ORDER BY 1;
+</copy>
+````
 
 
 You will see something similar to:
 
-    ````
-    ENQ_TIME  Service Metrics
-    --------  --------------------------------------------------------------------------------
+````
+ENQ_TIME  Service Metrics
+--------  --------------------------------------------------------------------------------
 
-    10:03:37  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
-              1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=51 fla
-              g=GOOD aff=FALSE}{instance=racKPEMW1 percent=49 flag=GOOD aff=TRUE} } timestamp=
-              2021-09-07 09:59:37')
+10:03:37  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
+          1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=51 fla
+          g=GOOD aff=FALSE}{instance=racKPEMW1 percent=49 flag=GOOD aff=TRUE} } timestamp=
+          2021-09-07 09:59:37')
 
-     10:04:07  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
-               1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=25 fla
-               g=GOOD aff=TRUE}{instance=racKPEMW1 percent=75 flag=GOOD aff=FALSE} } timestamp=
-               2021-09-07 10:03:37')
+10:04:07  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
+          1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=25 fla
+          g=GOOD aff=TRUE}{instance=racKPEMW1 percent=75 flag=GOOD aff=FALSE} } timestamp=
+          2021-09-07 10:03:37')
 
-     10:04:07  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
-               1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=16 fla
-               g=GOOD aff=TRUE}{instance=racKPEMW1 percent=84 flag=GOOD aff=FALSE} } timestamp=
-               2021-09-07 10:04:07')
+10:04:07  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
+          1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=16 fla
+          g=GOOD aff=TRUE}{instance=racKPEMW1 percent=84 flag=GOOD aff=FALSE} } timestamp=
+          2021-09-07 10:04:07')
 
-     10:04:37  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
-               1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=11 fla
-               g=GOOD aff=TRUE}{instance=racKPEMW1 percent=89 flag=GOOD aff=TRUE} } timestamp=2
-               021-09-07 10:04:37')
-    ````
-The ratio of percent:percent for the instances will trend towards more work guided away from the Node where CPU_HOG is running, as shown above
+10:04:37  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
+          1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=11 fla
+          g=GOOD aff=TRUE}{instance=racKPEMW1 percent=89 flag=GOOD aff=TRUE} } timestamp=2
+          021-09-07 10:04:37')
+````
 
-    ````
-    racKPEMW1 percent - racKPEMW1 percent
-       49                   51
-       75                   25
-       84                   16
-       89                   11
-    ````    
+The ratio of percent:percent for the instances will trend towards more work guided away from the Node where CPU\_HOG is running, as shown above
+
+````
+racKPEMW1 percent - racKPEMW1 percent
+     49                   51
+     75                   25
+     84                   16
+     89                   11
+````
 
 The connections are still distributed approximately 50:50 but the pool directs a greater quantity of work towards the instance(s) offering the best quality of service.
 

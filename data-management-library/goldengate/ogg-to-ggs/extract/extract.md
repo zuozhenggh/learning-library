@@ -14,7 +14,7 @@ An Extract is a process that extracts, or captures, data from a source database.
 In this lab, you will:
 * Add and run an Extract process to capture data to send to OCI GoldenGate
 * Add and run a Distribution Server Path to send the trail file to OCI GoldenGate
-* Add and run a Replicate process to consume the trail file sent from Oracle GoldenGate
+* Add and run a Replicat process to consume the trail file sent from Oracle GoldenGate
 
 ### Prerequisites
 
@@ -50,7 +50,7 @@ This Extract process captures data from the source database to send to OCI Golde
     <copy>Table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![](images/01-7-ext-params.png " ")
+    ![](images/01-07-ext-params.png " ")
 
 8.  Click **Create**. You're returned to the Administration Server Overview page.
 

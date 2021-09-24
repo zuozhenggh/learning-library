@@ -103,12 +103,16 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
 2. Connect to the **oracle** user and download the sample program from the Object Store
 
     ````
+    <copy>
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/O8AOujhwl1dSTqhfH69f3nkV6TNZWU3KaIF4TZ-XuCaZ5w-xHEQ14ViOVhUXQjPB/n/oradbclouducm/b/LiveLabTemp/o/ACDemo_19c.zip
+    </copy>
     ````
 3. Unzip the ACDemo_19c.zip file
     ````
+    <copy>
     cd /home/oracle
     unzip ACDemo_19c.zip
+    </copy>
     ````
     The directory **acdemo** will be created with the following structure:
 
@@ -126,7 +130,9 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
 4. Set the execute bit **+x** on the SETUP\_AC\_TEST.sh script
 
     ````
+    <copy>
     chmod +x SETUP_AC_TEST.sh
+    </copy>
     ````
 5. Run the script **SETUP\_AC\_TEST.sh**. You will be prompted for INPUTS. If a default value is shown, press **ENTER** to accept
 
@@ -159,6 +165,7 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
     ````
     <copy>
     sudo su - oracle
+    cd
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/pO-U5eQoBmaBukSpLrqHfprCjpBa8KhLbpSjdeFkX10wP8m6uA9pmUGh5o1_FtnP/n/oradbclouducm/b/LiveLabTemp/o/PythonClient.zip
     </copy>
     ````
@@ -306,69 +313,78 @@ You may now *proceed to the next lab*.
 
 ### Issue 1 Python3 (or pip) not installed
 
-    ![](./images/python3-not-installed.png  " ")
+![](./images/python3-not-installed.png  " ")
 
 or pip module not found:
 
-    ![](./images/pip-no-module-found.png  " ")    
+![](./images/pip-no-module-found.png  " ")    
 
 #### Fix for Issue #1
 Install python3 using yum as the **opc** user
 
-    ````
-    sudo yum -y install python3 python3-tools
-    ````
+````
+sudo yum -y install python3 python3-tools
+````
 
 If **There are no enabled repos** add a repository to your yum configuration
 
 1. First locate your regionIdentifier
-    ````
-    <copy>
-    curl -s http://169.254.169.254/opc/v1/instance/ |grep region
-    </copy>
-    ````    
+
+````
+<copy>
+curl -s http://169.254.169.254/opc/v1/instance/ |grep region
+</copy>
+````
 This will return information similar to:
-    ````
-    [opc@lvracdb-s01-2021-09-01-0837472 ~]$ curl -s http://169.254.169.254/opc/v1/instance/ |grep region
-      "region" : "iad",
-      "regionInfo" : {
-      "regionKey" : "IAD",
-      "regionIdentifier" : "us-ashburn-1"
-    ````
+
+````
+[opc@lvracdb-s01-2021-09-01-0837472 ~]$ curl -s http://169.254.169.254/opc/v1/instance/ |grep region
+  "region" : "iad",
+  "regionInfo" : {
+  "regionKey" : "IAD",
+  "regionIdentifier" : "us-ashburn-1"
+````
+
 My regionIdentifier is **us-ashburn-1**
 
 2. Replace the regionIdentifier in the following command:
     Substitute your regionIdentifier for the string **<REPLACE REGION IDENTIFIER>**
-    ````
-    <copy>
-    wget https://swiftobjectstorage.<REPLACE REGION IDENTIFIER>.oraclecloud.com/v1/dbaaspatchstore/DBaaSOSPatches/oci_dbaas_ol7repo -O /tmp/oci_dbaas_ol7repo
-    </copy>  
-    ````
-    ![](./images/yum-wget-1  " ")
+
+````
+<copy>
+wget https://swiftobjectstorage.<REPLACE REGION IDENTIFIER>.oraclecloud.com/v1/dbaaspatchstore/DBaaSOSPatches/oci_dbaas_ol7repo -O /tmp/oci_dbaas_ol7repo
+</copy>  
+````
+
+![](./images/yum_wget_1.png  " ")
 
 3. Replace the regionIdentifier in the following command:
     Substitute your regionIdentifier for the string **<REPLACE REGION IDENTIFIER>**
 
-    ````
-    <copy>
-    wget  https://swiftobjectstorage.<REPLACE REGION IDENTIFIER>.oraclecloud.com/v1/dbaaspatchstore/DBaaSOSPatches/versionlock_ol7.list -O /tmp/versionlock.list
-    </copy>  
-    ````
-    ![](./images/yum-wget-2  " ")
+````
+<copy>
+wget  https://swiftobjectstorage.<REPLACE REGION IDENTIFIER>.oraclecloud.com/v1/dbaaspatchstore/DBaaSOSPatches/versionlock_ol7.list -O /tmp/versionlock.list
+</copy>  
+````
+
+![](./images/yum_wget_2.png  " ")
 
 4. Confirm there are two files in /tmp directory
-    ````
-    <copy>
-    ls -al /tmp/versionlock.list /tmp/oci_dbaas_ol7repo
-    </copy>
-    ````
+
+````
+<copy>
+ls -al /tmp/versionlock.list /tmp/oci_dbaas_ol7repo
+</copy>
+````
 
 this should show:
-    ````
-    $ ls -al /tmp/versionlock.list /tmp/oci_dbaas_ol7repo
-        -rw-rw-r-- 1 opc opc   957 Feb 17  2021 /tmp/oci_dbaas_ol7repo
-        -rw-rw-r-- 1 opc opc 14646 Aug 19 05:33 /tmp/versionlock.list
-    ````    
+
+````
+$ ls -al /tmp/versionlock.list /tmp/oci_dbaas_ol7repo
+    -rw-rw-r-- 1 opc opc   957 Feb 17  2021 /tmp/oci_dbaas_ol7repo
+    -rw-rw-r-- 1 opc opc 14646 Aug 19 05:33 /tmp/versionlock.list
+````
+
 5. Move these files to the yum directory
 
     ````
@@ -378,29 +394,33 @@ this should show:
     </copy>
     ````  
 6. Load yum
-    ````
-    <copy>
-    sudo yum repolist
-    </copy>
-    ````   
-which will complete in a few minutes (only partial output shown):
-    ````
-    $ sudo yum repolist
-    Loaded plugins: versionlock
-    ol7_UEKR4                                                                                                                  | 3.0 kB  00:00:00
-    ol7_UEKR4_archive                                                                                                          | 2.5 kB  00:00:00
-    ol7_latest                                                                                                                 | 3.6 kB  00:00:00
-    ol7_latest_archive                                                                                                         | 2.5 kB  00:00:00
-    (1/5): ol7_UEKR4/x86_64/updateinfo                                                                                         | 100 kB  00:00:00
-    ...
-    (5/5): ol7_latest/x86_64/primary_db                                                                                        |  35 MB  00:00:03
-    (1/4): ol7_UEKR4_archive/x86_64/updateinfo                                                                                 | 267 kB  00:00:01
-    ...
-    Excluding 47 updates due to versionlock (use "yum versionlock status" to show them)
-    repo id                                repo name                                                                                        status
 
-    ````    
+````
+<copy>
+sudo yum repolist
+</copy>
+````
+
+which will complete in a few minutes (only partial output shown):
+
+````
+$ sudo yum repolist
+Loaded plugins: versionlock
+ol7_UEKR4                                                                                | 3.0 kB  00:00:00
+ol7_UEKR4_archive                                                                        | 2.5 kB  00:00:00
+ol7_latest                                                                               | 3.6 kB  00:00:00
+ol7_latest_archive                                                                       | 2.5 kB  00:00:00
+(1/5): ol7_UEKR4/x86_64/updateinfo                                                       | 100 kB  00:00:00
+...
+(5/5): ol7_latest/x86_64/primary_db                                                      |  35 MB  00:00:03
+(1/4): ol7_UEKR4_archive/x86_64/updateinfo                                               | 267 kB  00:00:01
+...
+Excluding 47 updates due to versionlock (use "yum versionlock status" to show them)
+repo id                                repo name                                         status
+````
+
 7. Install Python3
+
     ````
     <copy>
     sudo yum -y install python3 python3-tools
