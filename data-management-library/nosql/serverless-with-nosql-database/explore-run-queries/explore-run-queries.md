@@ -1,16 +1,15 @@
-# Explore Data and Run Queries
+# Explore data, run queries
 
 ## Introduction
 
-This lab picks up where lab 3 left off.   We are going to explore in more detail the tables we created, load data with functions, and execute queries a python application.  
+This lab picks up where lab 3 left off. We are going to explore in more detail the tables we created, load data, and execute queries using a python application.
 
-Estimated Time: 20 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
 * Understand the different tables
-* Load data with functions
-* Read data with REST api
+* Read data with REST API
 * Read data with a python application
 
 ### Prerequisites
@@ -18,250 +17,291 @@ Estimated Time: 20 minutes
 * An Oracle Free Tier, Always Free, or Paid Cloud Account
 * Connection to the Oracle NoSQL Database Cloud Service
 * Working knowledge of bash shell
-* Working knowledge of vi, emacs
-* Working knowledge of Python
+* Working knowledge of SQL language
 
 
 ## Task 1: Restart the Cloud Shell
 
-1. Lets get back into the Cloud Shell.  From the previous lab, you may have minimized it in which case you need to enlarge it.  It is possible it may have become disconnected and/or timed out.   In that case, restart it.
+1. Lets get back into the Cloud Shell. From the earlier lab, you may have minimized it in which case you need to enlarge it. It is possible it may have become disconnected and/or timed out. In that case, restart it.
 
-  ![](./images/cloud-shell-phoenix.png)
+    ![](./images/cloud-shell-phoenix.png)
 
 2. Execute the following environment setup shell script in the Cloud Shell to set up your environment. If you close/open the Cloud Shell Console, please re-execute it.
 
-  ```
-  <copy>
-  source ~/serverless-with-nosql-database/env.sh
-  </copy>
-  ```
-
-## Task 2: Load Data and Examine It
-
-The goal of this task is to understand the difference between the 2 data models used. The demoKeyVal table is a schema-less table, sometimes referred to as a JSON document that contains a primary key and a JSON column.  The demo table contains the primary key, several fixed columns and a JSON column.  Sometimes referred to as a fixed-schema. These tables are logically equivalent. Which data model you use depends on your business model.   Oracle NoSQL Database Cloud Service is extremely flexible in how you can model your data.   It is a true multi-model database service.
-
-![](./images/capturemultimodel.png)
-
-1. Next, we will use functions that we created in Lab 2 to add rows into the table demoKeyVal.  We will load 5 additional rows.  The initial invocation of functions can take 30-45 seconds because components are getting loaded into your environment.  Execute in Cloud Shell.
-
-  ```
-  <copy>
-  cd ~/serverless-with-nosql-database/functions-fn
-  cd load/demo-keyval-load
-  cat ~/BaggageData/baggage_data_file99.json | fn invoke $APP_NAME demo-keyval-load
-  cat ~/BaggageData/baggage_data_file9.json  | fn invoke $APP_NAME demo-keyval-load
-  cat ~/BaggageData/baggage_data_file103.json  | fn invoke  $APP_NAME demo-keyval-load
-  cat ~/BaggageData/baggage_data_file2.json  | fn invoke $APP_NAME demo-keyval-load
-  cat ~/BaggageData/baggage_data_file84.json  | fn invoke  $APP_NAME demo-keyval-load
-  </copy>
-  ```
-
-2. Use the steps in the previous Lab 3 to read the data for the demo-keyval-load table from the OCI console.  
-
-    ![](./images/capturenosql-query-keyval.png)
-
-3. Next, we will use a function to load the table demo with the same 5 rows.  Execute in Cloud Shell.
-
-  ```
-  <copy>
-  cd ~/serverless-with-nosql-database/functions-fn
-  cd load/demo-load
-  cat ~/BaggageData/baggage_data_file99.json | fn invoke  $APP_NAME demo-load
-  cat ~/BaggageData/baggage_data_file9.json | fn invoke  $APP_NAME demo-load
-  cat ~/BaggageData/baggage_data_file103.json  | fn invoke  $APP_NAME demo-load
-  cat ~/BaggageData/baggage_data_file2.json | fn invoke  $APP_NAME demo-load
-  cat ~/BaggageData/baggage_data_file84.json  | fn invoke  $APP_NAME demo-load
-  </copy>
-  ```
-
-4. Use the steps in the previous Lab 3 to read the data for the demo-load table from the OCI console.
-
-    ![](./images/capturenosql-query.png)
-
-
-## Task 3: Read Data Using a Node.js Application
-
-In this Task, we will review the code and trigger the function manually using the `fn invoke` CLI command.
-
-1. Let's look at the function we will be invoking.    By setting up different endpoints, you can cause different operations to happen.   In this node.js function, we have 3 different endpoints setup in advance. Execute in Cloud Shell.
-
     ```
     <copy>
-    cd ~/serverless-with-nosql-database/functions-fn
-    cd api/demo-api
-    vi func.js
+    source ~/serverless-with-nosql-database/env.sh
     </copy>
     ```
 
-2. Next, we will call `fn invoke` manually, passing it the getBagInfoByTicketNumber endpoint.   Execute in Cloud Shell one at a time so you can see the results.
+## Task 2: Load Data and Examine It
 
-  ```
-  <copy>
-  echo '{"ticketNo":"1762386738153", "endPoint":"getBagInfoByTicketNumber"}' | fn invoke $APP_NAME demo-api | jq
-  echo '{"endPoint":"getBagInfoByTicketNumber"}' | fn invoke $APP_NAME demo-api | jq
-  echo '{"endPoint":"getBagInfoByTicketNumber"}' | fn invoke $APP_NAME demo-api | jq '. | length'
-  </copy>
-  ```
+The goal of this task is to understand the difference between the 2 data models used. The demoKeyVal table is a schema-less table, sometimes referred to as a JSON document, that contains a primary key and a JSON column. The demo table has a primary key, several fixed columns and a JSON column. This is sometimes referred to as a fixed-schema table. These tables are logically equivalent. Which data model you use depends on your business model. Oracle NoSQL Database Cloud Service is extremely flexible in how you can model your data. It is a true multi-model database service.
 
-  Each of these produced slightly different results.   The first one display the document with a specific ticket number, the second displayed all the records and the third gave a count of the records.
+  ![](./images/capturemultimodel.png)
 
-3. Now, lets test another one of the endpoints in the function. Execute in Cloud Shell.
+1. Install the Node.js application. Execute in the Cloud Shell.
 
-  ```
-  <copy>
-  echo '{"endPoint":"getPassengersAffectedByFlight"}' | fn invoke $APP_NAME demo-api | jq
-  </copy>
-  ```
+    ```
+    <copy>
+    cd ~/serverless-with-nosql-database/express-nosql
+    npm install
+    node express_oracle_nosql.js &
+    </copy>
+    ```
+    **Note:** This will start the "express-oracle-nosql" application in the background.
 
-  As you can see the field "message" the getPassengersAffectedByFlight endpoint is still under construction.  In other words the code for that endpoint has not been completed yet.
+2. After you complete step 1, you will see a message in the shell saying 'application running'
 
-4. The result can be simulated by using this call. Execute in Cloud Shell.
+    ![](./images/appl-running.png)
 
-  ```
-  <copy>
-  echo '{"endPoint":"getPassengersAffectedByFlight"}' | fn invoke $APP_NAME demo-api | fn invoke $APP_NAME demo-api | jq
-  </copy>
-  ```
+    Press the **Enter** key on your keypad to get the command line prompt back.
 
-5. In fact, you can run SQL queries using the endpoint executeSQL.   This endpoint is coded to use the executeQuery(sql) API call. This will grab a sql query that has already been written and stored in your Cloud Shell.   Execute in Cloud Shell.
+3. Insert data into the demo table.
 
-  ````
-  <copy>
-  SQL_STATEMENT=$(cat ~/serverless-with-nosql-database/objects/query1.sql | tr '\n' ' ')
-  echo $SQL_STATEMENT
-  echo "{\"sql\":\"$SQL_STATEMENT\",\""endPoint\"": \""executeSQL\"" }"  | fn invoke $APP_NAME demo-api
-  </copy>
-  ````
-This displayed the entire record for passenger 'Clemencia Frame' where as the query before just displayed some basic information.
+  This will be done using a curl command to transfer data over the network to the NoSQL store using the "express-oracle-nosql" application. Execute in Cloud Shell.
 
-6. Let's say you didnt want to use functions.   You can also execute the same sql statement using OCI CLI commands.  Going this route, you will be querying the data over REST.  Execute in Cloud Shell.
+    ```
+    <copy>
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file99.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file9.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file103.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file2.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file84.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demo
+    </copy>
+    ```
+4. Insert data into the demoKeyVal table. Execute in Cloud Shell.
 
-  ````
-  <copy>
-  oci nosql query execute -c  $COMP_ID --statement "$SQL_STATEMENT"
-  </copy>
-  ````
+    ````
+    <copy>
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file99.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file9.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file103.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file2.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    FILE_NAME=`ls -1 ~/BaggageData/baggage_data_file84.json`
+    curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
+    </copy>
+    ````
+5. Read back the data that we just entered. Execute in the Cloud Shell. In the second two queries, we use a limit clause which limits the number of rows returned. We also use an orderby clause to sort the returned results.
 
+    ````
+    <copy>
+    curl -X GET http://localhost:3000/demo  | jq
+    </copy>
+    ````
+
+    This will display all the rows in the table currently.
+
+    ````
+    <copy>
+    curl  "http://localhost:3000/demo?limit=3&orderby=ticketNo"  | jq
+    </copy>
+    ````
+
+    This will display the 3 rows in the table ordered by ticket number.
+
+    ````
+    <copy>
+    curl  "http://localhost:3000/demo?limit=12&orderby=fullName"  | jq
+    </copy>
+    ````
+    This will display the 12 rows in the table ordered by full name. In our case, we only have 5 rows total, so it displays all existing rows.
+
+6. Read data for a specific ticket number using GET command. Execute in Cloud Shell.
+
+    ````
+    <copy>
+    curl -X GET http://localhost:3000/demo/1762322446040  | jq
+    </copy>
+    ````
+7. In the baggage tracking demo from Lab 1, which is running live in all the regions, a Node.js application was running in the background. We can install that application, and run it on our data. It uses a different port number than the previous application we installed. It will also run in the background, press the **Enter** key like you did before to get the prompt back. Execute in Cloud Shell.
+
+    ````
+    <copy>
+    cd ~/serverless-with-nosql-database/express-nosql
+    npm install
+    node express_baggage_demo_nosql.js &
+    </copy>
+    ````
+
+8. We can run a few queries by ticket number and flight number. Execute in Cloud Shell.
+
+    ````
+    <copy>
+    curl -X GET http://localhost:3500/getBagInfoByTicketNumber?ticketNo=1762322446040  | jq
+    </copy>
+    ````
+
+    ````
+    <copy>
+    curl -X GET http://localhost:3500/getBagInfoByTicketNumber  | jq
+    </copy>
+    ````
+
+    ````
+    <copy>
+    curl -X GET http://localhost:3500/getBagInfoByTicketNumber | jq '. | length'
+    </copy>
+    ````
+
+    ````
+    <copy>
+    curl -X GET http://localhost:3500/getPassengersAffectedByFlight?flightNo=BM715  | jq
+    </copy>
+    ````
+  Each of these produced slightly different results. The first one display the document with a specific ticket number, the second displayed all the records and the third gave a count of the records.
+
+  For the last one,  you can see in the field "message" the getPassengersAffectedByFlight endpoint is still under construction. In other words the code for that endpoint has not been completed yet. Feel free to take a look at the code using 'cat express-baggage-demo-nosql.js'
+
+9. You can also execute sql statements using Oracle Cloud Infrastructure CLI commands. Going this route, you will be querying the data over REST. Execute in Cloud Shell.
+
+    ````
+    <copy>
+    SQL_STATEMENT=$(cat ~/serverless-with-nosql-database/objects/query1.sql | tr '\n' ' ')
+    echo "$SQL_STATEMENT"
+    </copy>
+    ````
+
+    ````
+    <copy>
+    oci nosql query execute -c  $COMP_ID --statement "$SQL_STATEMENT"
+    </copy>
+    ````
   In this case, the data is formatted as a nice JSON document.
 
 
-## Task 4: Load Data Using Streaming Input
+## Task 3: Read Data Using a Python CLI Application
 
-In this task, we are going to load a record using a python function.  This uses the Oracle NoSQL Python SDK which we call Borneo.  We can take a look at the application. At the bottom of the file is the authentication which uses resource principals.
+1. Create the python CLI application in the Cloud shell. Execute in Cloud Shell.
 
-1. Let's look at the file.  Execute in Cloud Shell.
+    ```
+    <copy>
+    source ~/serverless-with-nosql-database/env.sh
+    cd ~/serverless-with-nosql-database/
+    pip3 install borneo
+    pip3 install cmd2  
+    </copy>
+    ```
 
-  ```
-  <copy>
-  cd ~/serverless-with-nosql-database/functions-fn
-  cd streaming/load-target
-  vi func.py
-  </copy>
-  ```
+    ```
+    <copy>
+    python3 nosql.py -s cloud -t $OCI_TENANCY -u $NOSQL_USER_ID -f $NOSQL_FINGERPRINT -k ~/NoSQLLabPrivateKey.pem -e https://nosql.${OCI_REGION}.oci.oraclecloud.com
+    </copy>
+    ```
+2. This will create a Python NoSQL shell that you can load data or execute queries in.
 
-2. Deploy this function which take about 2 min and 30 sec.  Execute in Cloud Shell.
+   ![](./images/capturepython.png)
 
-  ```
-  <copy>
-  fn -v deploy --app $APP_NAME
-  </copy>
-  ```
 
-3. Run this function.  The first time running this function takes about 1 min because it has to populate the cache. Execute in Cloud Shell.
+3. Load additional data so we can run some queries. Execute in Cloud Shell.
 
-  ```
-  <copy>
-  cd ~/serverless-with-nosql-database/functions-fn
-  cd streaming/load-target
-  var1=`base64 -w 0 ~/BaggageData/baggage_data_file99.json`
-  cp test_templ.json stream_baggage_data_file99.json
-  sed -i "s/<here>/$var1/g"  stream_baggage_data_file99.json
+    ````
+    <copy>
+    load ../BaggageData/load_multi_line.json demo
+    </copy>
+    ````
 
-  fn invoke $APP_NAME load-target < stream_baggage_data_file99.json
-  </copy>
-  ```
-4. Remove the function now that we are done with it.  Execute in Cloud Shell.
-
-  ```
-  <copy>
-  fn delete function $APP_NAME load-target
-  </copy>
-  ```
-
-## Task 5: Read Data Using a Python CLI Application
-
-1. Create the python CLI application in the Cloud shell.  Execute in Cloud Shell.
-
-  ```
-  <copy>
-  cd ~/serverless-with-nosql-database/
-  source ~/serverless-with-nosql-database/env.sh
-  pip3 install borneo
-  python3 nosql.py -s cloud -t $OCI_TENANCY -u $NOSQL_USER_ID -f $NOSQL_FINGERPRINT -k ~/NoSQLLabPrivateKey.pem -e https://nosql.${OCI_REGION}.oci.oraclecloud.com
-  </copy>
-  ```
-2.  This will create a Pyhton NoSQL shell that you can execute queries in.
-
-  ![](./images/capturepython.png)
-
-3. Execute the following queries.  Execute in Cloud Shell.
+4. Execute the following queries. Execute in Cloud Shell.
 
     ````
     <copy>
     SELECT *
     FROM demo d
     WHERE d.bagInfo.flightLegs.flightNo =ANY 'BM715';
+    </copy>
+    ````
 
+    ````
+    <copy>
     SELECT d.fullName, d.contactPhone, d.ticketNo , d.bagInfo.flightLegs.flightNo as bagInfo
     FROM demo d
     WHERE d.bagInfo.flightLegs.flightNo =ANY 'BM715';
+    </copy>
+    ````
 
+    ````
+    <copy>
     SELECT d.fullName, d.contactPhone, d.ticketNo , d.bagInfo.flightLegs.flightNo as bagInfo
     FROM demo d
     WHERE d.bagInfo.flightLegs.flightNo =ANY "BM715"
     AND d.bagInfo.flightLegs.flightNo =ANY "BM204";
+    </copy>
+    ````
 
+    ````
+    <copy>
     SELECT d.fullName, d.contactPhone, d.ticketNo , d.bagInfo.flightLegs.flightNo as bagInfo
     FROM   demo d
     WHERE  d.bagInfo.flightLegs.flightNo =ANY "BM715"
     AND    d.bagInfo.flightLegs.flightNo =ANY "BM204"
     AND    size(d.bagInfo.flightLegs) = 2;
-
-    exit
     </copy>
     ````
-4. Minimize the Cloud Shell by hitting the minimize key.
 
-## Task 6: Clean Up
+5. Write new queries to answer the following questions. This should give an appreciation of the types of queries that can be written against Oracle NoSQL Database Cloud Service.
+
+  Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD).
+  **Hint:** Every record has an actions array at: bagInfo.flightLegs.actions
+
+  Find the number of bags on flight BM715.
+  **Hint:** The size of the bagInfo array represents the number of bags a passenger has checked.
+
+  Find the names of passengers that had their bags initially loaded in Chicago.
+  **Hint:** Chicago Airport(ORD).
+
+  **Note:** The Learn More contains a link to the SQL Reference Guide. Lab 3, Task 3 contains an example of the JSON record to look at.
+
+6. Type in **exit** to exit from the python application.
+
+7. Minimize the Cloud Shell by pressing the **minimize** key.
+
+
+## Task 4: Clean Up
 
 This task deletes the tables that got created.
 
-1. On the top left, go to menu, then Databases, then under Oracle NoSQL Database, hit 'Tables'
-Set your compartment to 'demonosql'
-Click on the demoKeyVal table, which will bring up the table details screen.  Hit Delete.
+1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.**
 
-  ![](./images/delete-demokey.png)
+  ![](./images/delete-freetable.png)
 
-2. Repeat the process for the demo table and the freeTest table.
+  Deleting tables is an async operation, so you will not immediately see the results on the Oracle Cloud Console. Eventually the status of the tables will get changed to deleted.
 
-  Deleting tables is an async operation, so you will not immediately see the results on the OCI console.  Eventually the status of the tables will get changed to deleted.  
+2. Return to the 'Tables' screen and repeat the process for the **demo** and **demoKeyVal** tables.
 
-3. {MJB:  ADD STEPS TO CLEAN UP DEPLOYMENT}
+3. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
 
+    ![](./images/remove-compartment.png)
+
+4. The 'Compartments' screen appears and click **demonosql**
+
+    ![](./images/select-demonosql.png)
+
+5. Press the **Delete** button. This will fire off a job that runs asynchronously.
+
+    ![](./images/delete-demonosql.png)
 
 ## Learn More
 
+
+* [Oracle NoSQL Database Cloud Service page](https://www.oracle.com/database/nosql-cloud.html)
 * [About Oracle NoSQL Database Cloud Service](https://docs.oracle.com/pls/topic/lookup?ctx=cloud&id=CSNSD-GUID-88373C12-018E-4628-B241-2DFCB7B16DE8)
-* [Oracle NoSQL Database Cloud Service page](https://cloud.oracle.com/en_US/nosql)
 * [Java API Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html)
 * [Node API Reference Guide](https://oracle.github.io/nosql-node-sdk/)
 * [Python API Reference Guide](https://nosql-python-sdk.readthedocs.io/en/latest/index.html)
-* [About Resource Manager](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm)
-* [About Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
+* [NoSQL SQL Reference Manual](https://docs.oracle.com/en/database/other-databases/nosql-database/21.2/sqlreferencefornosql/sql-reference-guide.pdf)
 * [About Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm)
 
 
 ## Acknowledgements
 * **Author** - Dario Vega, Product Manager, NoSQL Product Management and Michael Brey, Director, NoSQL Product Development
-* **Contributors** - XXX, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Michael Brey, Director, NoSQL Product Development, September 2021
