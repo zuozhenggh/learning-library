@@ -16,10 +16,10 @@ A **database registration** captures source or target database credential inform
 
 In this lab, you will:
 * Create a OCI GoldenGate deployment
-* Review the OCI GoldenGate deployment details
-* Access the OCI GoldenGate deployment console
 * Register the source and target databases
 * Enable the ggadmin user and supplemental logging
+* Review the OCI GoldenGate deployment details
+* Access the OCI GoldenGate deployment console
 
 ### Prerequisites
 
@@ -165,7 +165,7 @@ On the Deployment Details page, you can:
 
     ![](images/04-01-ggs-launchconsole.png " ")
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in Task 1, steps 12 and 13, and then click **Sign In**.
 
     ![](images/04-02-ggs-deploymentconsole-signin.png " ")
 
