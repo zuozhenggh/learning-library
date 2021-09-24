@@ -1,4 +1,4 @@
-## Example 6: Workforce Sales
+## Task 6: Workforce Sales
 
 1. For: Configuration Deck, DVA file, Image sample, Catalog file, and Data Files-xls format, please
 
