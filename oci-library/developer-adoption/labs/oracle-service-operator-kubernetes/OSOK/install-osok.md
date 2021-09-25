@@ -75,7 +75,7 @@ Once the dynamic group is created, below sample matching rule can be added to th
 
 Any {instance.id = 'ocid1.instance.oc1.iad..exampleuniqueid1', instance.compartment.id = 'ocid1.compartment.oc1..exampleuniqueid2'}
 
-``
+```
 
 ### Enable User Principal
 
@@ -123,11 +123,7 @@ $ kubectl -n oci-service-operator-system create secret generic ocicredentials \
 --from-file=privatekey=<PATH_OF_USER_PRIVATE_API_KEY>
 ```
 
-The name of the secret will passed in the `osokConfig` config map which will be created as part of the OSOK deployment. By default the name of the user credential secret is `ocicredentials`. Also, the secret should be created in the `oci-service-operator-system` namespace.
-
-The customer should create a OSOK operator user and can add him to a IAM group `osok-operator-group`. Customer should create an OCI Policy that can be tenancy wide or in the compartment to manage the OCI Services
-
-``
+The name of the secret will passed in the `osokConfig` config map which will be created as part of the OSOK deployment. By default the name of the user credential secret is `ocicredentials`. Also, the secret should be created in the `oci-service-operator-system` namespace
 
 ### Deploy OSOK
 
