@@ -85,7 +85,7 @@ The users required to create a Kubernetes secret as detailed below.
 
 The OSOK will be deployed in `oci-service-operator-system` namespace. For enabling user principals, we need to create the namespace before deployment.
 
-Create a yaml file using below details
+Create a yaml file named oci-service-operator-system using below details
 ```yaml
 apiVersion: v1
 kind: Namespace
@@ -97,7 +97,7 @@ metadata:
 
 Create the namespace in the kubernetes cluster using below command
 ```bash
-$ kubectl apply -f <FILE_NAME_ABOVE>
+$ kubectl apply -f oci-service-operator-system
 ```
 
 The secret should have the below Keys and respective values for it:
