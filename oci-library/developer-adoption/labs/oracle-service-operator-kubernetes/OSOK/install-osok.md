@@ -6,6 +6,7 @@
 
 * Kubernetes Cluster
 * `kubectl` to control the Kubernetes Cluster. Please make sure it points to the above Kubernetes Cluster.
+* Need to be an OCI Tenancy Administrator
 
 ## Install Operator SDK
 
@@ -74,24 +75,7 @@ Once the dynamic group is created, below sample matching rule can be added to th
 
 Any {instance.id = 'ocid1.instance.oc1.iad..exampleuniqueid1', instance.compartment.id = 'ocid1.compartment.oc1..exampleuniqueid2'}
 
-```
-
-Customer needs to create an OCI Policy that can be tenancy wide or in the compartment for the dynamic group created above.
-
-```
-### Tenancy based OCI Policy for the dynamic group
-Allow dynamic-group <DYNAMICGROUP_NAME> to manage <OCI_SERVICE_1> in tenancy
-Allow dynamic-group <DYNAMICGROUP_NAME> to manage <OCI_SERVICE_2> in tenancy
-Allow dynamic-group <DYNAMICGROUP_NAME> to manage <OCI_SERVICE_3> in tenancy
-Allow dynamic-group <DYNAMICGROUP_NAME> to manage <OCI_SERVICE_4> in tenancy
-
-### Compartment based OCI Policy for the dynamic group
-Allow dynamic-group <DYNAMICGROUP_NAME> to manage <OCI_SERVICE_1> in compartment <NAME_OF_THE_COMPARTMENT>
-Allow dynamic-group <DYNAMICGROUP_NAME> to manage <OCI_SERVICE_2> in compartment <NAME_OF_THE_COMPARTMENT>
-Allow dynamic-group <DYNAMICGROUP_NAME> to manage <OCI_SERVICE_3> in compartment <NAME_OF_THE_COMPARTMENT>
-Allow dynamic-group <DYNAMICGROUP_NAME> to manage <OCI_SERVICE_4> in compartment <NAME_OF_THE_COMPARTMENT>
-```
-Note: the <OCI_SERVICE_1>, <OCI_SERVICE_2> represents in the OCI Services like "autonomous-database-family", "instance_family", etc.
+``
 
 ### Enable User Principal
 
@@ -143,20 +127,7 @@ The name of the secret will passed in the `osokConfig` config map which will be 
 
 The customer should create a OSOK operator user and can add him to a IAM group `osok-operator-group`. Customer should create an OCI Policy that can be tenancy wide or in the compartment to manage the OCI Services
 
-```
-### Tenancy based OCI Policy for user
-Allow group <OSOK_OPERATOR_GROUP> to manage <OCI_SERVICE_1> in tenancy
-Allow group <OSOK_OPERATOR_GROUP> to manage <OCI_SERVICE_2> in tenancy
-Allow group <OSOK_OPERATOR_GROUP> to manage <OCI_SERVICE_3> in tenancy
-Allow group <OSOK_OPERATOR_GROUP> to manage <OCI_SERVICE_4> in tenancy
-
-### Compartment based OCI Policy for user
-Allow group <OSOK_OPERATOR_GROUP> to manage <OCI_SERVICE_1> in compartment <NAME_OF_THE_COMPARTMENT>
-Allow group <OSOK_OPERATOR_GROUP> to manage <OCI_SERVICE_2> in compartment <NAME_OF_THE_COMPARTMENT>
-Allow group <OSOK_OPERATOR_GROUP> to manage <OCI_SERVICE_3> in compartment <NAME_OF_THE_COMPARTMENT>
-Allow group <OSOK_OPERATOR_GROUP> to manage <OCI_SERVICE_4> in compartment <NAME_OF_THE_COMPARTMENT>
-```
-Note: the <OCI_SERVICE_1>, <OCI_SERVICE_2> represents in the OCI Services like "autonomous-database-family", "instance_family", etc.
+``
 
 ### Deploy OSOK
 
