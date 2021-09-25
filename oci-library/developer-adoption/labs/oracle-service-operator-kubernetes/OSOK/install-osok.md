@@ -90,6 +90,9 @@ Any {instance.compartment.id = 'ocid1.compartment.oc1..exampleuniqueid2'}
 ```
 6. Select ***Create***
 
+![Dynamic Group](./images/dynamic-group-1.png) 
+
+
 ### Enable User Principal
 
 The OCI Service Operator for Kubernetes needs OCI user credentials details to provision and manage OCI services/resources in the customer tenancy. This approach is recommended when OSOK is deployed outside OCI.
