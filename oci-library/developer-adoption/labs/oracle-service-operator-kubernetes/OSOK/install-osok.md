@@ -71,21 +71,24 @@ To do this you are required to create a [OCI Dynamic Group](https://docs.oracle.
 
 
 ## Task 1: Create OCI Dynamic Group
+
 1. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Dynamic Groups***.
 
-   ![](images/ll-launch-workshop.png " ")
+2. Click ***Create Dynamic Group***.
 
-2. Click on ***Launch Workshop***
+3. Enter the following:
+ ***Name:*** A unique name for the group. The name must be unique across all groups in your tenancy (dynamic groups and user groups). You can't change this later. Avoid entering confidential information.
 
-3. In the expanded **Workshop Details**, look for the instance(s) and write down the public IP address(es).
-
-   ![](images/ll-get-public-ip.png " ")
+4.  ***Description***: Enter a friendly description.
+ 
+5. ***Enter a Matching Rule***
 ```
-#### Below rule matches the kubernetes worker instance ocid or the compartment where the worker instances are running
+#### Below rule matches the compartment where the worker instances are running
 
-Any {instance.id = 'ocid1.instance.oc1.iad..exampleuniqueid1', instance.compartment.id = 'ocid1.compartment.oc1..exampleuniqueid2'}
+Any {instance.compartment.id = 'ocid1.compartment.oc1..exampleuniqueid2'}
 
 ```
+6. Select ***Create***
 
 ### Enable User Principal
 
