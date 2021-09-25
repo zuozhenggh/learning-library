@@ -35,11 +35,12 @@ MySQL Database Service with HeatWave is a fully managed service, optimized for O
 
 In this lab, you will be guided through the following steps:
 
-- Create SSH Key on OCI Cloud Shell
+- Create a Compartment
 - Create VCN
-- Setup Bastion Service
+- Create SSH Key on OCI Cloud Shell
 - Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
-- Connect to DB System using MySQL Shell through Bastion Service/Cloud Shell
+- Setup Compute instance
+- Connect to DB System using MySQL Shell through Compute Instance / Cloud Shell
 - Add HeatWave cluster to DB System
 - Load sample data to HeatWave Cluster
 - Run queries in HeatWave and MySQL and see the performance improvement in HeatWave!

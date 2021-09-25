@@ -1,4 +1,4 @@
-# Run Queries with MySQL Shell and Workbench
+# Run Queries with MySQL Shell
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
@@ -27,12 +27,16 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Run Queries in HeatWave
 
-1. If not already connected with SSH, connect to the Cloud Shell
-2. On command Line, connect to MySQL using the MySQL Shell client tool        
+1. If not already connected with SSH, connect to Compute instance using Cloud Shell
+
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
+
+2. On command Line, connect to MySQL using the MySQL Shell client tool with the following command:
 
     ```
-        <copy>mysqlsh admin@127.0.0.1 --sql</copy>
+    <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
     ```
+
 3.	Change to the airport database   
 
     Enter the following command at the prompt

@@ -4,11 +4,9 @@
 
 ## Introduction
 
-When working in the cloud, there are often times when your servers and services are not exposed to the public internet. The Oracle Cloud Infrastructure (OCI) MySQL cloud service is an example of a service that is only accessible via private networks. Since the service is fully managed, we keep it siloed away from the internet to help protect your data from potential attacks and vulnerabilities. It’s a good practice to limit resource exposure as much as possible, but at some point, you’ll likely want to connect to those resources. That’s where bastion hosts enter the picture. A bastion host is a resource that sits between the private resource and the endpoint which requires access to the private network and can act as a “jump box” to allow you to log in to the private resource via protocols like SSH or RDP.  The bastion host requires a Virtual Cloud Network to connect with the MySQL DB Systems. 
+When working in the cloud, there are often times when your servers and services are not exposed to the public internet. The Oracle Cloud Infrastructure (OCI) MySQL cloud service is an example of a service that is only accessible via private networks. Since the service is fully managed, we keep it siloed away from the internet to help protect your data from potential attacks and vulnerabilities. It’s a good practice to limit resource exposure as much as possible, but at some point, you’ll likely want to connect to those resources. That’s where Compute Instance, also known as a Bastion host, enters the picture. This Compute Instance Bastion Host is a resource that sits between the private resource and the endpoint which requires access to the private network and can act as a “jump box” to allow you to log in to the private resource via protocols like SSH.  This bastion host requires a Virtual Cloud Network and Compute Instance to connect with the MySQL DB Systems. 
 
-Oracle added a Bastion Service to OCI. And you may also have noticed that the OCI Dashboard offers you the possibility to use a browser based terminal: Cloud Shell.
-
-Today, you will use these two components to connect from the browser to a MDS DB System
+Today, you will use the Compute Instance to connect from the browser to a MDS DB System
 
 Estimated Lab Time 20 minutes
 
@@ -18,8 +16,8 @@ Estimated Lab Time 20 minutes
 In this lab, you will be guided through the following tasks:
 
 - Create SSH Key on OCI Cloud 
-- Setup Bastion Service
-- Create Bastion session 
+- Create Compute Instance
+- Setup Compute Instance with MySQL Shell
 - Connect to MySQL DB System
 
 ### Prerequisites
@@ -37,6 +35,8 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ![](./images/cloudshellopen.png " ")
 
     ![](./images/cloudshell01.png " ")
+
+    *Note: You can use the icons in the upper right corner of the Cloud Shell window to minimize, maximize, restart, and close your Cloud Shell session.*
 
 2.  Once the cloud shell has started, create the SSH Key using the following command:
 
@@ -66,52 +66,85 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     Note in the output there are two files, a *private key:* `id_rsa` and a *public key:* `id_rsa.pub`. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
+## Task 2: Create Compute instance
+You will need a compute Instance to connect to your brand new MySQL database. 
 
-## Task 2: Create Bastion Service
+1. Before creating the Compute instance open a notepad 
 
-The new Bastion Service will allow you to create a SSH Tunnel to your MySQL DB System.
-1. Go to Navigation Menu > Identity Security > Bastion
+2. Do the followings steps to copy the public SSH key to the  notepad 
 
-    ![](./images/bastion-01.png " ")
+    Open the Cloud shell
+    ![](./images/cloudshell-10.png " ")    
 
-2. Click Create Bastion
+    Enter the following command  
 
-    ![](./images/bastion-02.png " ")
+    ```
+    <copy>cat ~/.ssh/id_rsa.pub</copy>
+    ``` 
+    ![](./images/cloudshell-11.png " ") 
 
-3. On Create bastion, complete the following fields:   
+3. Copy the id_rsa.pub content the notepad
+        
+    Your notepad should look like this
+    ![](./images/notepad-rsa-key-1.png " ")  
 
-    Bastion Name
-     ```
-     <copy>MDSBastion</copy>
-     ```
-    Target virtual Cloud network in .. (root)
+4. To launch a Linux Compute instance, go to Navigation Menu > Compute > Instances
+    ![COMPUTE](./images/05compute01.png " ")
+
+5. On Instances in **(root)** Compartment, click on 'Create Instance'
+    ![COMPUTE](./images/05compute02_00.png " ")
+
+6. On Create Compute Instance 
+
+ Enter Name
+    ```
+    <copy>MDS-Client</copy>
+    ```   
+7. Make sure **(root)** compartment is selected 
+
+8. On Placement, keep the selected Availability Domain
+
+9. On Image and Shape, keep the selected Image, Oracle Linux 7.9 
+
+      ![COMPUTE](./images/05compute03.png " ")  
+
+10. Select Instance Shape: VM.Standard2.2
+
+      ![COMPUTE](./images/05compute-shape.png " ")  
+
+11. On Networking, make sure '**MDS-VCN**' is selected
+
+    'Assign a public IP address' should be set to Yes 
+   
+  ![COMPUTE](./images/05compute04.png " ")
+
+12. On Add SSH keys, paste the public key from the notepad. 
+  
+    ![COMPUTE](./images/05compute-id-rsa-paste.png " ")
+
+13. Click '**Create**' to finish creating your Compute Instance. 
+
+14. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as 'Provisioning' during the creation
+    ![COMPUTE](./images/05compute07.png " ")
+
+15.	The state 'Runing' indicates that the Virtual Machine is ready to use. 
+
+    On the **MDS-Client** Instance page under 'Instance Access', **Copy and save the Public IP Address** 
+    ![COMPUTE](./images/05compute08.png " ")
+
+## Task 3: Connect to MySQL Database System
+
+1. Copy the public IP address of the active Compute Instance to your notepad
+
+    - Go to Navigation Menu > Compute > Instances
+    ![](./images/db-list.png " ")
+
+    - Click on the `MDS-Client` Compute Instance link
+    ![](./images/db-active.png " ")
     
-    Select  `MDS-VCN`
-    
-    Target subnet in .. (root)
+    - Copy `MDS-Client` plus  the `Public IP Address` to the notepad
 
-    Select  `Private Subnet-MDS-VCN`
-
-    CIDR block allowlist (As you don’t know the IP of the Cloud Shell, use 0.0.0.0/0)
-
-     ```
-     <copy>0.0.0.0/0</copy>
-     ```
-    
-    Click `0.0.0.0/0(New)`
-
-     ![](./images/bastion-03.png " ")
-
-4. Click `Create Bastion` button 
-
-    When completed your screen should look like this:
-
-    ![](./images/bastion-04.png " ")
-
-
-## Task 3: Create Bastion session
-
-1. Before creating the Bastion Session open a notepad. Do the following steps to record the MySQL Database System private IP address:
+2. Copy the public IP address of the active MySQl Database Service Instance to your notepad
 
     - Go to Navigation Menu > Databases > MySQL
      ![](./images/db-list.png " ")
@@ -120,92 +153,64 @@ The new Bastion Service will allow you to create a SSH Tunnel to your MySQL DB S
 
      ![](./images/db-active.png " ")
     
-    - Copy the `Private IP Address` to the notepad
+    - Copy `MDS-HW` plus the `Private IP Address` to the notepad
 
-2. Do the followings steps to copy  the public SSH key to the  notepad 
- 
-    - Open the Cloud shell
-     ![](./images/cloudshell-10.png " ")    
-
-    - Enter the following command   
-        ```
-     <copy>cat .ssh/id_rsa.pub</copy>
-        ``` 
-    ![](./images/cloudshell-11.png " ") 
-
-3.  Copy the id_rsa.pub content the notepad
-        Your notepad should look like this
-        ![](./images/notepad1.png " ")  
-        
-4. Go to Navigation Menu > Identity Security > Bastion
-
-5. Click the `MDSBastion` link
-
-     ![](./images/bastion-05.png " ")
-
-6. Click `Create Session`
-
-7. Set up the following information
-    - Session type
-      Select `SSH port forwarding session`
-    - Session Name 
-        *Keep Default*
-    - IP address
-        *Enter IP addtess from notepad*
-
-8. Enter the Port
-
-    ```      
-        <copy>3306</copy>
-    ```
-9. Add SSH Key -  Copy SSH Key from notepad
-    - The screen should look like this
-    ![](./images/bastion-06.png " ") 
-    - Click the `Create Session` button 
-10. The completed Bastion Session should look like this
-    ![](./images/bastion-07.png " ") 
-
-**Note: The Session will expire in 180 minutes**
-
-## Task 4: Connect to MySQL Database System
-
-1. Click on the 3 vertical dots on the Bastion Session
-
-    ![](./images/bastion-08.png " ") 
-
-2. Click `View SSH Command`  
-
-    ![](./images/bastion-09.png " ") 
-
-3. Click copy and paste the information to your notepad and hit Close
-
-4.  update the session command on notepad
-    - Set the beginning of the command `ssh -4 -i ~/.ssh/id_rsa -N -L 3306`
-    - *add the `&` character* at the end of the command or the connection will not be successful
-
-
-    The command from your notepad should look like this
-
-    ![](./images/notepad2.png " ") 
+3. Your notepad should look like the following:
+     ![](./images/notepad-rsa-key-compute-mds-1.png " ")
     
-5. Open the cloud shell and enter the command from the notepad. It should like this..
-    *Don't forget the &  character*
+4. Indicate the location of the private key you created earlier with **MDS-Client**. 
+    
+    Enter the username **opc** and the Public **IP Address**.
 
-    `ssh -4 -i ~/.ssh/id_rsa -N -L 3306:10.0.1...:3306 -p 22 ocid1.bastionsession.oc1.iad.amaaaaaacalccniavpdipmbwvxk...ybm2g7fuaea@host.bastion.us-ashburn-1.oci.oraclecloud.com &`
+    Note: The **MDS-Client**  shows the  Public IP Address as mentioned on TASK 5: #11
+    
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
 
-6. Use MySQL Shell to connect to the MySQL Database Service. Enter: 
+    ```
+    <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
+    ```
+    ![Connect](./images/06connect01-signin.png " ")
+
+    **Install MySQL Shell on the Compute Instance**
+
+5. You will need a MySQL client tool to connect to your new MySQL DB System from your client machine.
+
+    Install MySQL Shell with the following command (enter y for each question)
+
+    **[opc@…]$**
 
      ```
-     <copy>mysqlsh admin@127.0.0.1 --sql</copy>
-     ``` 
-7. View  the airportdb total records per table in 
+    <copy>sudo yum install mysql-shell -y</copy>
+    ```
+    ![Connect](./images/06connect02-shell.png " ")
 
+   **Connect to MySQL Database Service**
 
+6. From your Compute instance, connect to MDS-HW MySQL using the MySQL Shell client tool. 
+   
+   The endpoint (IP Address) can be found in your notepad or the  the MDS-HW MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
+
+    ![Connect](./images/06connect03.png " ")
+
+7.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the cammand. Also enter the admin user password
+
+    (Example  **mysqlsh -uadmin -p -h10.0.1..   --sql**)
+
+ **[opc@...]$**
+
+    ```
+    <copy>mysqlsh -uadmin -p -h 10.0.1.... --sql</copy>
+    ```
+    ![Connect](./images/06connect04-myslqsh.png " ")
+
+8. On MySQL Shell, switch to SQL mode  to try out some SQL commands 
+
+9. View  the airportdb total records per table in 
     ```
     <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
     ```
         
-    ![Connect](./images/airport-db-view02.png " ") 
+    ![Connect](./images/airportdb-list.png" ") 
     
 You may now [proceed to the next lab](#next).
 

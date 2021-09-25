@@ -31,7 +31,18 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Improve Query performance and Heatwave memory usage using Auto Encoding
 
-1.	Run the following four queries and record the runtime:
+1. If not already connected with SSH, connect to Compute instance using Cloud Shell
+
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
+
+2. On command Line, connect to MySQL using the MySQL Shell client tool with the following command:
+
+    ```
+    <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
+    ```
+
+    ```
+3.	Run the following four queries and record the runtime:
 
  **Query a)** Find per-company average age of passengers from Switzerland, Italy and France
 
@@ -108,12 +119,12 @@ GROUP BY firstname , lastname;
 </copy>
     ```
 
-2. Run Auto Encoding advisor to see if there are any recommendations for string column encodings
+4. Run Auto Encoding advisor to see if there are any recommendations for string column encodings
 
     ```
     <copy>call sys.heatwave_advisor(json_object('target_schema', JSON_ARRAY('airportdb'), 'auto_enc', json_object('mode', 'recommend') ));</copy>
     ```
-3.	To apply the suggestion, access the auto-generated script
+5.	To apply the suggestion, access the auto-generated script
 
     ```
     <copy>SET SESSION group_concat_max_len = 1000000;</copy>
@@ -121,8 +132,8 @@ GROUP BY firstname , lastname;
     ```
     <copy>SELECT GROUP_CONCAT(log->>"$.sql" SEPARATOR '\n') AS "SQL Script" FROM sys.heatwave_advisor_report WHERE type = "sql" ORDER BY id;</copy>
     ```
-4.	Copy and paste auto-generated script to apply AutoEncoding changes
-5.	Run the same queries in step 1 and record the time. You can see that total query runtime has improved.
+6.	Copy and paste auto-generated script to apply AutoEncoding changes
+7.	Run the same queries in step 1 and record the time. You can see that total query runtime has improved.
 
     **Your results should look like this:**
     ![INTRO](./images/pilot01.png " ") 
