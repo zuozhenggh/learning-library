@@ -65,11 +65,21 @@ system:controller:operator-lifecycle-manager                 ClusterRole        
 
 ### Enable Instance Principal
 
-The OCI Service Operator for Kuberentes needs OCI Instance Principal details to provision and manage OCI services/resources in the customer tenancy. This is the recommended approach for running OSOK within OCI.
+The OCI Service Operator for Kuberentes needs [OCI Instance Principal](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm). details to provision and manage OCI services/resources in the customer tenancy. This is the recommended approach for running OSOK within OCI.
 
-The customer is required to create a OCI dynamic group as detailed [here](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Managing_Dynamic_Groups).
+To do this you are required to create a [OCI Dynamic Group](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Managing_Dynamic_Groups).
 
-Once the dynamic group is created, below sample matching rule can be added to the dynamic group
+
+## Task 1: Create OCI Dynamic Group
+1. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Dynamic Groups***.
+
+   ![](images/ll-launch-workshop.png " ")
+
+2. Click on ***Launch Workshop***
+
+3. In the expanded **Workshop Details**, look for the instance(s) and write down the public IP address(es).
+
+   ![](images/ll-get-public-ip.png " ")
 ```
 #### Below rule matches the kubernetes worker instance ocid or the compartment where the worker instances are running
 
