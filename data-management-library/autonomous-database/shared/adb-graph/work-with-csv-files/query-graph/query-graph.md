@@ -190,7 +190,8 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
 5.  This step is optional. It demonstrates some layout settings of the notebook.  
     Since the table has just two columns we may want to reduce its width and place two paragraphs and result side by side.  
-	Click the gear icon at the top right to open the paragraph settings. Move the width slider to about halfway or a little less.  
+	Click the gear icon at the top right to open the paragraph settings.  
+	Move the width slider to about halfway or a little less.  
 
 	![ALT text is not available for this image](images/35a-adjust-top-ten-para-width.png " ")  
 
@@ -279,7 +280,8 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	![ALT text is not available for this image](images/44-6th-query-show-all-5-hops.png " ")  
 
 	This result might be better viewed in a different graph layout.  
-	Open the visualization settings dialog and select `Hierarchical` from the `Layouts` drop-down list. Leave the Direction as `Top-Down` and Algorithm Type as `Network Simplex`.
+	Open the visualization settings dialog and select `Hierarchical` from the `Layouts` drop-down list.  
+	Leave the Direction as `Top-Down` and Algorithm Type as `Network Simplex`.
 
 	![ALT text is not available for this image](images/45-6th-query-hierarchical-layout.png " ")  
 
@@ -327,7 +329,9 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
     ![ALT text is not available for this image](images/51-bind-params-in-query.png " ")
 
-13. Now let's run the PageRank graph algorithm. Add a paragraph. Paste the following Markdown text and execute it.  
+13. Now let's run the PageRank graph algorithm.  
+    Add a paragraph.  
+	Paste the following Markdown text and execute it.  
     ```
 	<copy>
 	%md 
@@ -336,7 +340,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	Algorithms are executed on the in-memory graph via the Java API for PGX.
 
 	First we get a handle to the graph we wish to analyze, that is, `BANK_GRAPH`, from the implicitly created `session` object.   
-	The `session`, `analyst`, and `instance` objects are implicitly created when the in-memory graph server is created. That is, when the envrionment is created.   
+	The `session`, `analyst`, and `instance` objects are implicitly created when the in-memory graph server is created. That is, when the environment is created.   
 	Next we execute the PageRank algorithm, with default parameters, on the graph. The computed value is stored in an attrbute named `pagerank` that is added to each vertex.
 	</copy>
 	```
@@ -477,7 +481,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	%md 
 
 	Lastly, account **#4** is in the top ten list on the left (by PageRank) but not the right (# of transactions) while account **#380** is in the list on right but not the one on the left.  
-	So lets us query and visualize those two accoutns and their neighbors. And once again larger nodes have a higher pagerank.   
+	So lets us query and visualize those two accounts and their neighbors. And once again larger nodes have a higher pagerank.   
 	We see that account #380 is mostly connected to accounts with lower pagerank values while account #4 is connected to accounts with a higher pagerank.
 
 	</copy>

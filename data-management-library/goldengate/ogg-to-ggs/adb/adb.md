@@ -166,7 +166,7 @@ You can click View VCN Details and see both a Public and Private subnet created.
 
 	![](./images/05-04-db-actions.png " ")
 
-3.  Log in with the ADMIN user and password provided when you created the ATP instance.
+3.  Log in with the ADMIN user and password provided when you created the ADW instance.
 
     ![](./images/02-05-login.png " ")
 
