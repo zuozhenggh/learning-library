@@ -15,21 +15,12 @@
 [Oracle MySQL Database Service](https://www.oracle.com/mysql/) is a fully managed database service that lets developers quickly develop and deploy secure, cloud native applications using the world’s most popular open source database. Oracle MySQL Database Service is also offered via the OCI Service Operator for Kubernetes, making it easy for applications to provision and integrate seamlessly with MySQL databases.
 
 
-## Pre-requisites for setting up MySQL DB Systems
-
-If this is your first time using MySQL Database Service, ensure your tenancy administrator has performed the following tasks:
-
-### Create VCN/Subnets
-  - [Virtual Networking Quickstart](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/quickstartnetworking.htm) Create VCN and subnets using Virtual Cloud Networks > Start VCN Wizard > Create a VCN with Internet Connectivity.
-  - It would be advisable if the VCN for Mysql DbSystem is created in the same vcn as the Kubernetes cluster.
-  - [Comprehensive networking setup](https://docs.oracle.com/en-us/iaas/mysql-database/doc/networking-setup-mysql-db-systems.html#MYAAS-GUID-2B4F78DD-72D3-45BA-8F6A-AC5E3A11B729)
-
-### Create Policies
+## Task 1: Create  My SQL DB System Dynamic Group Policies
 
 Create policies in the root compartment with the following statements [Policy Setup Documentation](https://docs.oracle.com/en-us/iaas/mysql-database/doc/policy-details-mysql-database-service.html#GUID-2D9D3C84-07A3-4BEE-82C7-B5A72A943F53)
 
 **For Instance Principle**
-The OCI Service Operator dynamic group should have the `manage` permission for the `mysql-family` resource type. 
+The OCI Service Operator dynamic group you created in the previous lab, should have the `manage` permission for the `mysql-family` resource type. 
 
 **Sample Policy:**
 
@@ -90,7 +81,7 @@ The Complete Specification of the `mysqldbsystems` Custom Resource (CR) is as de
 
 
 
-## MySQL DB System Status Parameters
+### MySQL DB System Status Parameters
 
 | Parameter                                         | Description                                                         | Type   | Mandatory |
 | --------------------------------------------------| ------------------------------------------------------------------- | ------ | --------- |
@@ -107,7 +98,7 @@ The Complete Specification of the `mysqldbsystems` Custom Resource (CR) is as de
 | `status.osokstatus.requestedAt`                   | Requested time of the CR.          | string | no |
 | `status.osokstatus.deletedAt`                     | Deleted time of the CR.            | string | no | 
 
-## Provisioning a MySQL DB System
+## Task 2: Provisioning a MySQL DB System
 
 Provisioning of a MySQL DB System requires the user to input the admin username and admin password as a Kubernetes secret. OSOK acquires the admin usernmame and admin password from the Kubernetes secret whose name is provided in the `spec`. 
 The Kubernetes secret should contain the admin username in `username` field. 
@@ -195,49 +186,7 @@ The MysqlDbSystem CR can be described as below:
 $ kubectl describe mysqldbsystems <NAME_OF_CR_OBJECT>
 ```
 
-## Binding to an Existing MySQL DB System
 
-OSOK allows you to bind to an existing MySQL DB System. In this case, `Id` is the only required field in the CR `spec`.
-
-```yaml
-apiVersion: oci.oracle.com/v1beta1
-kind: MySqlDbSystem
-metadata:
-  name: <CR_OBJECT_NAME>
-spec:
-  id: <MYSQLDBSYSTEM_OCID>
-```
-
-Run the following command to create a CR that binds to an existing MySQL DB System:
-```sh
-kubectl apply -f <BIND_YAML>.yaml
-```
-
-## Updating a MySQL DB System
-
-You can also update a number of [parameters](https://docs.oracle.com/en-us/iaas/mysql-database/doc/managing-db-system.html#GUID-24D56090-C7E8-4A21-B450-BCBFAD231911) of the MySQL DB System.
-```yaml
-apiVersion: oci.oracle.com/v1beta1
-kind: MySqlDbSystem
-metadata:
-  name: <CR_OBJECT_NAME>
-spec:
-  id: <MYSQLDBSYSTEM_OCID>
-  displayName: <UPDATE_DISPLAY_NAME>
-  description: <UPDATE_DESCRIPTION>
-  configuration:
-    id: <UPDATE_CONFIGURATION_ID>
-  freeformTags:
-    <KEY1>: <VALUE1>
-  definedTags:
-    <TAGNAMESPACE1>:
-      <KEY1>: <VALUE1>
-```
-
-Run the following command to create a CR that updates an existing MySQL DB System. 
-```sh
-kubectl apply -f <UPDATE_YAML>.yaml
-```
 
 ## Access Information in Kubernetes Secrets
 
