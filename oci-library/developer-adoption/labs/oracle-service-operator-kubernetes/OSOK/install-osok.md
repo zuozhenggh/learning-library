@@ -24,7 +24,7 @@ $ operator-sdk olm install
 INFO[0079] Successfully installed OLM version "latest"
 ```
 
-### Task 3: Verify Installation
+### Verify Installation
 
 You can verify your installation of OLM by first checking for all the necessary CRDs in the cluster:
 
@@ -61,7 +61,7 @@ catalogsources.operators.coreos.com                          CustomResourceDefin
 system:controller:operator-lifecycle-manager                 ClusterRole                 Installed
 ```
 
-## Task 4: Deploy OCI Service Operator for Kubernetes
+## Task 3: Deploy OCI Service Operator for Kubernetes
 
 ### Enable Instance Principal
 
@@ -85,9 +85,9 @@ To do this you are required to create a [OCI Dynamic Group](https://docs.oracle.
  
 6.  Enter a Matching Rule
 ```
-#### Below rule matches the compartment where the worker instances are running. Enter your tenancy ocid in the following policy statement. 
+#### Below rule matches the compartment where the worker instances are running. Enter your tenancy ocid between '' in the following policy statement. 
 
-Any {instance.compartment.id = '<tenancy_ocid>'}
+Any {instance.compartment.id = instance.compartment.id = 'ocid1.tenancy.oc1..exampleuniqueid2'}}
 
 ```
 7. Select ***Create***
