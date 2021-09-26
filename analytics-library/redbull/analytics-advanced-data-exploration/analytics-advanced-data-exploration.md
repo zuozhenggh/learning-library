@@ -1,4 +1,4 @@
-# Machine Learning on Red Bull data: Predicting Fan Score For a Race - Advanced Data Exploration
+# Advanced Data Exploration
 
 ![Banner](images/banner.png)
 

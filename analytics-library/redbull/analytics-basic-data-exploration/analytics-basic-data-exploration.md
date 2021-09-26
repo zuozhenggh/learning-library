@@ -281,7 +281,7 @@ Let's have a first look at the data that we have available for our data challeng
 
    At first glance, it appears that, since the measurement of fan scores started in 2008, fans are less excited about the sport as the years progressed. At least, this is the case if we look at the yearly average, not looking at individual races.
 
-	 Since we're missing fan scores for 2021, we cannot say whether this trend continued. However, by the completion of this workshop, you should be able to generate (predict) the scores for the races of 2021 yourself!
+	 Since we're missing fan scores for 2021, we cannot say whether this trend continued. However, by the completion of this workshop, you will be able to generate (predict) the scores for the races of 2021 yourself!
 
 ## **STEP 4:** Finding the best and worst race according to the fans
 
@@ -413,9 +413,6 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 	 In addition, we see two columns that have information on the weather. In particular, notice how the Brazilian Grand Prix was held during rainy conditions, while the Abu Dhabi GP had dry conditions. Our hypothesis is that wet weather on average will make a race more spectacular, because of unpredictable events, more complicated pit stop and tire decisions, sliding/turning cars, et cetera. Let's make another note!
 
-	 Notice how the weather of the top scoring and lowest scoring race are different.  Let's make a note of this.
-
-
 	 Note 4: Wet weather _may have_ a positive influence on the score that fans give to a race.
 
 10. Save the analysis by clicking on the Save icon. Name it "Race Analysis".
@@ -428,7 +425,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 ## **STEP 6:** Basic Exploratory Data Analysis: Correlation diagrams for Position Changes and DNFs
 
-Now, let's check our theories, what is the correlation between position changes and DNFs on the race score? We can find out using correlation diagrams.
+How can we check whether our theories about the relationship between position changes, DNFs and score is correct? We can use smart visualizations for this, in particular the correlation diagram and box plots are well suited for this task.
 
 1. Create a new project by clicking on the Races data set from the homepage.
 
@@ -490,7 +487,7 @@ Now, let's check our theories, what is the correlation between position changes 
 
    All variables are listed along both the vertical and the horizontal axis.
 
-	 For each combination of the two variables, the Pearson equivalent provides a number between -1 and 1 (-1 is a perfectly negative linear correlation, 0 means no correlation and 1 a perfectly positive correlation).
+	 For each combination of the two variables, the Pearson equivalent provides a number between -1 and 1. -1 is a perfectly negative linear correlation, 0 means no correlation and 1 a perfectly positive correlation.
 
    Any variable is always perfectly correlated with itself, which explain the dark green boxes through the diagonal.
 
@@ -527,7 +524,7 @@ Now, let's check our theories, what is the correlation between position changes 
    How to read this type of chart?
 	 The mean of the data set is indicated by the small horizontal line within the boxes. We see that the mean fan score for races with wet weather is quite a bit higher than for races with dry weather.
 	 The top and bottom end of the boxes show where the mid 50% of the fan scores lie. We can conclude that scores in general are significantly higher than races with dry weather.
-	 However, as with the other variables that we investigated, there are outliers that are quite far outside of the boxes. We see there are dry weather races that also result in high scores. So again, the WET_WEATHER factor looks important, but we can safely assume that it is not the only factor that influences fan score.
+	 However, as with the other variables that we investigated, there are outliers that are quite far outside of the boxes. We see that there are dry weather races that also result in high scores. So again, the WET_WEATHER factor looks important, but we can safely assume that it is not the only factor that influences the score.
 
 10. Save the project by clicking on the Save icon and name it "Correlations".
 
@@ -539,7 +536,11 @@ Now, let's check our theories, what is the correlation between position changes 
 
 ## **STEP 8:** Conclusion
 
-In our Exploratory Data Analysis we tried to identify factors that are of value to predict the fan score of a race.
+In our Exploratory Data Analysis we tried to identify factors that are of value to predict the score that fans give to the races.
+
+We looked at the total number of positions changes, the number of DNFs and weather (wet weather). Using correlation analysis we've confirmed that they are likely good candidates for the machine learning model.
+
+Congratulations on completing this lab! In the next lab you will see how you can look for additional pointers in the data that are not visible at first sight. We will use visualization to uncover these hidden patterns.
 
 <!--
 Let's review our notes:
@@ -551,145 +552,6 @@ Let's review our notes:
 - Note 6: "Position changes due to a pit stop _may be_ less interesting for viewers than position changes on the track. We will have to transform the race data in some way to separate real overtakes from semi overtakes (during Feature Generation)."
 - Note 7: "The presence of a safety car _may_ increase the score of races in general."
 -->
-
-We looked at the total number of positions changes, the number of DNFs and weather (wet weather). Using correlation analysis we've confirmed that they are likely good candidates for the machine learning model.
-
-Congratulations on completing this lab! In the next lab you will see how you can look for additional pointers in the data that are not visible at first sight. We will use visualization to uncover these hidden patterns.
-
-<!--
-  Let's form some hypothesis, we believe the following variables influence the fan score of a race:
-	-> The circuit where the race is being held. It seems fair to assume that one circuit leads to higher fan scores than the other. Maybe the Brazilian circuit is simply more exciting than the Abu Dhabi one (?). Some people are of the opinion that older, classic circuits were more spectacular than current, modern circuits.
-
-
-## **STEP 6:** Validating our hypothesis with correlation diagrams (continuous variables)
-
-Let's review our list of hipothesis. We believe the following potentially influence the fan score of a race:
-- The number of overtakes / position changes. The theory is that more overtakes make a more interesting race. There's certainly a lot more position changes in the Brazilian race than in the Abu Dhabi race that we investigated. In particular, it may be the case that changes in the top positions are more interesting (result in a higher fan score) than changes in the lower positions.
--> Crashes / DNFs (Did Not Finish). Although nobody likes accidents that harm the drivers, accidents can add dynamics to a race and have surprising effects on the race outcome, as was the case in the Brazilian GP.
-
-## **STEP 6:** Validating our hypothesis with correlation diagrams (categorical variables)
-
-## **STEP 7:** Feature engineering (business user)
-
-
-There are many other potential data points that we could extract from this data.
-
-- It's not just number of overtakes. Overtakes in the top of the race is more interesting than overtakes in the back of the ranking.
-- Currently all position changes are counted, including position changes as a result of pit stops. Although those position changes are interesting, it's probably more interesting for fans to see an actual overtake. Therefore we have to do something to separate "pit stop overtakes" and actual overtakes.
-- The surprise factor of lower ranking drivers who end up on the podium. A race is more interesting when there's an element of surprise, and when a low ranking driver ends up in the top 3 that may excite the fans more than having the well known top ranking drivers.
-- The current number of overtakes also includes overtakes as a result of pitstops. Although interesting, an overtake that's a result of a pitstop is likely less spectacular than an actual overtake on the circuit.
--> What happens with the top-ranking drivers is more interesting than what happens with the lower ranking teams. For example, it's more interesting when number 2 takes over number 1, than it is that number 15 takes over number 14.
-- Have a look at the Wikipedia for the Brazilian 2012. It explains how Vettel came back from a 22nd position and climbed all the way back to 6th position. This was enough to win the world championship. The hipothesis is that an audience likes the fact that a favourite comes back from so far back in the field. We'll have to quantify this phenomenon somehow, and we'll call it "comeback score".
-
-Data Flow allows you to calculate all these yourself, but it would be quite a bit of work to do this in the workshop. Because of this, we've provided you with a Notebook that has all the SQL in there to create them.
-
-
-
-...
-
-
-
-
-
-END OF FIRST LAB
-
-
-
-
-
-
-At the basis of our data structure are the formula one RACES.
-
-(Let them play with ergast data)
-(let them show one of the latest races?)
-=> One chart with a particular race (latest race?)
-=> One chart with the results over the different seasons, and the winners.
-Say something about battle between Mercedes and Red Bull.
-=> Something with pit stops combined into one chart (demonstrate chart second Y axis?)
-
-conclusion: the granularity is on LAP level, meaning that we can see what the positions are of everyone throughout the race per lap (but not more detailed within a lap).
-We suspect this is a pretty good indication of the progress of a race, even though it may "hide" some close encounters of cars (not fine grained enough for that).
-
-To help us decide what makes a good race, we have race fan scores (source: ...)
-(Let them play with score data)
-(Show )
-
-There are various goals behind data exploration. One way to approach the data is by making hipothesis beforehand, and verifying them. On the other hand, we also like to explore things about the data that we didn't think about a-priori. In other words, we'd like to learn what we don't know yet. We'll come back to that later.
-
-
-Why ML?
-- Initial correlation diagrams suggests there may be some truth in our correlation.
-- But each hipothesis almost certainly will not be enough to make an accurate prediction.
-- However, if we can build a machine learning model that PREDICTs with some accuracy the fan score from the combination of these elements (number of overtakes, DNFs and circuit), we can build a strong case that these are indeed important elements that influence the fan score.
-
-Build the model with overtakes, DNF and circuit.
-Visual comparison.
-Mathematical comparison. Explain RMSE, Explain MAE. One big error has more influence than various small errors.
-
-Conclusion:
-- Pretty inaccurate
-- Some of the reasons may be:
-  - We haven't found those factors yet that really influence the fan score.
-  - We could have data errors in the racing data. For example, if the position data isn't accurate, the number of overtakes won't be accurate, and therefore our model won't be accurate.
-  - The fan score may actually not be an accurate measure of fan sentiment. We don't know all the details of how fan score was collected. For example, maybe there are people that voted many times on the same race, and thereby skewed the results. Or maybe there are other data errors.
-
-BACK TO THE DRAWING table
-
-Let's revisit the Overtaking metric. Is this accurate enough? You might say:
-- Overtakes in top positions are much more interesting than in the lower positions.
-- Pit stops are included, pit stop overtakes not as interesting as actual overtakes.
-
-
-New ideas:
-- Closeness in terms of time. The "closeness" of the battle between the top teams. The theory is that, the closer the drivers/teams are together, the more exciting the race/the season, as we don't know who the winner will be.
-- Something unexpected => Brings back the field much closer together. Adds a surprise element to the race. Theory: Yellow car in a race will have positive correlation with score.
-Yet another way of looking for ideas is by looking at actual reports of the race.
-- Weather
-- Come back score?
-
-Exercise:
-- Do a more advanced data preparation (e.g. come back score)
-  Or add the weather as separate data source
-  Or add the yellow car as separate data source
-Train again
-- Show the overtrained model. Explain what the problem is. Explain the price we pay for too many features.
-- Let them choose the final model.
-
-Bonus: Try some of the other attributes
-  Nationality (explain rationale)
-  Driver (explain rationale)
-
-Score the model
-Conclusion: Still not very close
-Our hipothesis are correct, in the sense that they can be used to predict score, but the accuracy is not very high yet. So what can we do to improve? We have to think critically about our initial hipothesis again, think how we can improve them, or even come up with new ones.
-
-One way we could come up with new hipothesis is by looking at an actual race.
-
-
-Do some exercise with data preparation.
-
-Bonus:
-- Find a race in the past with a very high score. Visualize it and read about it on Wikipedia.
-  Do you agree with the high score of the race?
-
-Conclusion 1: How good is our model?
-  - No baseline for this, so pretty good. Certainly a lot better than nothing.
-Conclusion 2: What can we do with it now we have it?
-  - Takeovers -> Anything we can do to improve takeover probability
-  - Bringing the number 1 and 2 closer -> ...
-  - Weather -> Don't cancel event when it's raining
-  - Car -> Place it on the race faster (evens the chances again)
-Conclusion 3: Learnings
-  - You've seen the daily process of data science.
-  - It's an experiment, don't know what you'll find
-  - Have to look for patterns in the data
-  - It's ever improving process, not easy, constantly looking for the right data, looking for data quality, ..., constantly asking questions
-  - Useful skills for future, use it for any use case
-
-(Terugbrengen naar 2021 -> strijd tussen Hamilton en Verstappen)
--->
-
-Congratulations on completing the lab! Now you've learned the basics of machine learning, hopefully you are inspired to apply it to many more challenges!
 
 ## **Acknowledgements**
 - **Author** - Jeroen Kloosterman, Technology Product Strategy Director

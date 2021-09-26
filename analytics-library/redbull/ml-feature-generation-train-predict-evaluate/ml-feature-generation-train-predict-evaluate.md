@@ -1,4 +1,4 @@
-# Feature Generation, ML Training, Prediction and Evaluation
+# Feature Generation, Machine Learning Training, Prediction and Evaluation
 
 ![Banner](images/banner.png)
 
@@ -8,11 +8,10 @@ In this lab we will finally get to the actual Machine Learning part!
 
 We will do the following:
 - Feature Generation: In the advanced data exploration lab we identified additional data points that may be of value. However, we first have to extract those data points.
-- Train the machine learning model.
-- Predict the scores (for season 2020).
-- Avaluate the accuracy of the model.
-
-Finally, we will draw some conclusions on the entire exercise.
+- Train the machine learning model: We will use AutoML to take most of the complexity out of training a model.
+- Predict the scores: We will use a Data Flow in OAC to predict the scores for season 2020.
+- Evaluate the accuracy of the model: We will take a visual approach in OAC to compare predicted scores with actual scores.
+- Finally, we will conclusions on the entire exercise.
 
 ### Objectives
 - Learn how to generate new features from one or more data sets
@@ -215,7 +214,7 @@ Now we're ready to train the ML model.
 
    **IMPORTANT: Make a note of the exact model name, including the number. You will need this later.**
 
-## **TASK 4:** Add the generated features to data set in Oracle Analytics Cloud
+## **TASK 4:** Add the generated features to the RACES data set in Oracle Analytics Cloud
 
 1. In case you don't have a window with Oracle Analytics Cloud open, you can open it as follows:
 
@@ -359,7 +358,7 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
    ![pic1](images/check-accuracy3.png)
 
-## **TASK 8:** Bonus exercise: Calculate the difference between and alternative visualization of accuracy
+## **TASK 8:** Bonus exercise: Calculate the difference between predicted and actual scores
 
 1. Calculate the distance between the predicted and the actual scores.
 
@@ -383,7 +382,7 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
    Note that the predicted score follows the actual score in general, but in some of the races with lower actual scores, the predicted score tends to be a bit too high.
 
-## **TASK 9:** Bonus exercise: Predict score for the 2021 season
+## **TASK 9:** Bonus exercise: Predict the scores for the 2021 season
 
 In 2021, Formula 1 appears to be more exciting than ever. Red Bull is a serious contender for the world title. The fight between Hamilton and Verstappen is closer than ever.
 
