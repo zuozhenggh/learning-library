@@ -3,7 +3,7 @@
     {
       "text": "%sql\n--This calculates the number of rounds that have a change of driver in the leading position.\ncreate or replace view laps_with_change_pos_1_v\nas\n    select raceid, count(*) laps\n    from\n    (\n        select raceid, lap\n        from\n        (\n            select raceid, position, lap, driverid as current_driver,\n              LAG (driverid, 1) OVER (PARTITION BY raceid, position ORDER BY lap) AS prev_driver\n            from lap_times\n        )\n        where prev_driver is not null\n        and prev_driver \u003c\u003e current_driver\n        and position \u003d 1\n        group by raceid, lap\n    )\n    group by raceid;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:25+0000",
+      "dateUpdated": "2021-09-26T12:36:08+0000",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -126,11 +126,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632321799091_968519387",
-      "id": "20210922-144319_42749688",
+      "jobName": "paragraph_1632411097311_1456188143",
+      "id": "20210923-153137_1160278290",
       "dateCreated": "2021-09-22T14:43:37+0000",
-      "dateStarted": "2021-09-23T15:18:26+0000",
-      "dateFinished": "2021-09-23T15:18:26+0000",
+      "dateStarted": "2021-09-26T12:36:09+0000",
+      "dateFinished": "2021-09-26T12:36:14+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -138,7 +138,7 @@
     {
       "text": "%sql\nselect * from laps_with_change_pos_1_v",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:26+0000",
+      "dateUpdated": "2021-09-26T12:36:14+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -193,11 +193,11 @@
         ]
       },
       "interrupted": false,
-      "jobName": "paragraph_1632409551924_1826766084",
-      "id": "20210923-150551_748895207",
+      "jobName": "paragraph_1632411097311_-305593170",
+      "id": "20210923-153137_456977781",
       "dateCreated": "2021-09-23T15:05:51+0000",
-      "dateStarted": "2021-09-23T15:18:26+0000",
-      "dateFinished": "2021-09-23T15:18:27+0000",
+      "dateStarted": "2021-09-26T12:36:16+0000",
+      "dateFinished": "2021-09-26T12:36:16+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -205,7 +205,7 @@
     {
       "text": "%sql\n--This calculates the number of rounds that have a change of driver in the top 5 positions.\ncreate or replace view laps_with_change_pos_1_5_v\nas\n    select raceid, count(*) laps\n    from\n    (\n        select raceid, lap, count(*)\n        from\n        (\n            select raceid, position, lap, driverid as current_driver,\n              LAG (driverid, 1) OVER (PARTITION BY raceid, position ORDER BY lap) AS prev_driver\n            from lap_times\n        )\n        where prev_driver is not null\n        and prev_driver \u003c\u003e current_driver\n        and (position \u003e\u003d 1 and position \u003c\u003d 5)\n        group by raceid, lap\n        order by raceid, lap\n    )\n    group by raceid\n    order by raceid;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:27+0000",
+      "dateUpdated": "2021-09-26T12:36:16+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -226,11 +226,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632409579281_1599773883",
-      "id": "20210923-150619_2131706463",
+      "jobName": "paragraph_1632411097311_250623443",
+      "id": "20210923-153137_89805095",
       "dateCreated": "2021-09-23T15:06:19+0000",
-      "dateStarted": "2021-09-23T15:18:27+0000",
-      "dateFinished": "2021-09-23T15:18:27+0000",
+      "dateStarted": "2021-09-26T12:36:18+0000",
+      "dateFinished": "2021-09-26T12:36:18+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -238,7 +238,7 @@
     {
       "text": "%sql\nselect * from laps_with_change_pos_1_5_v;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:27+0000",
+      "dateUpdated": "2021-09-26T12:36:18+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -293,11 +293,11 @@
         ]
       },
       "interrupted": false,
-      "jobName": "paragraph_1632409585531_469477739",
-      "id": "20210923-150625_1533631171",
+      "jobName": "paragraph_1632411097311_-1820511445",
+      "id": "20210923-153137_1789257834",
       "dateCreated": "2021-09-23T15:06:25+0000",
-      "dateStarted": "2021-09-23T15:18:28+0000",
-      "dateFinished": "2021-09-23T15:18:28+0000",
+      "dateStarted": "2021-09-26T12:36:20+0000",
+      "dateFinished": "2021-09-26T12:36:21+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -305,7 +305,7 @@
     {
       "text": "%sql\n--This calculates the number of positions that a driver has lost during a lap. It separates those position changes in actual take overs and take overs that were a result of pit stops.\ncreate or replace view overtaken_positions_total\nas\n    select raceid, overtaken_positions_due_to_pitstop_total, (overtaken_positions_total - overtaken_positions_due_to_pitstop_total) as overtaken_positions_real_total\n    from\n    (\n        select raceid, sum(overtaken_positions_driver_lap) as overtaken_positions_total, sum(overtaken_positions_driver_lap_due_to_pitstop) as overtaken_positions_due_to_pitstop_total\n        from\n        (\n            select raceid, driverid, lap, overtaken_positions_driver_lap, nvl2(pitstop_raceid, overtaken_positions_driver_lap,0 ) overtaken_positions_driver_lap_due_to_pitstop\n            from\n            (\n                select ot.raceid, ot.driverid, ot.lap, sum(ot.overtaken_this_lap) as overtaken_positions_driver_lap, ps.raceid pitstop_raceid\n                from\n                (\n                    select ottl.raceid, ottl.driverid, ottl.lap, (ottl.current_position - ottl.prev_position) as overtaken_this_lap\n                    from\n                    (\n                        select lt.raceid, lt.driverid, lt.lap, lt.position as current_position, \n                          LAG (lt.position, 1) OVER (PARTITION BY lt.raceid, lt.driverid ORDER BY lt.lap) AS prev_position\n                        from lap_times lt\n                    ) ottl\n                    where ottl.prev_position is not null\n                    and ottl.prev_position \u003c ottl.current_position\n                )   ot\n                ,   pit_stops ps\n                where ps.raceid (+) \u003d ot.raceid\n                and   ps.driverid (+) \u003d ot.driverid\n                and   ps.lap (+) \u003d ot.lap\n                group by ot.raceid, ot.driverid, ot.lap, ps.raceid\n            )\n        )\n        group by raceid\n    );\n",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:28+0000",
+      "dateUpdated": "2021-09-26T12:36:21+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -326,11 +326,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632409672010_270981992",
-      "id": "20210923-150752_470506165",
+      "jobName": "paragraph_1632411097311_1680194377",
+      "id": "20210923-153137_1820570829",
       "dateCreated": "2021-09-23T15:07:52+0000",
-      "dateStarted": "2021-09-23T15:18:29+0000",
-      "dateFinished": "2021-09-23T15:18:29+0000",
+      "dateStarted": "2021-09-26T12:36:22+0000",
+      "dateFinished": "2021-09-26T12:36:23+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -338,7 +338,7 @@
     {
       "text": "%sql\nselect * from overtaken_positions_total;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:29+0000",
+      "dateUpdated": "2021-09-26T12:36:23+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -394,11 +394,11 @@
         ]
       },
       "interrupted": false,
-      "jobName": "paragraph_1632409742810_1297399319",
-      "id": "20210923-150902_1414712772",
+      "jobName": "paragraph_1632411097311_1836734053",
+      "id": "20210923-153137_279489389",
       "dateCreated": "2021-09-23T15:09:02+0000",
-      "dateStarted": "2021-09-23T15:18:29+0000",
-      "dateFinished": "2021-09-23T15:18:30+0000",
+      "dateStarted": "2021-09-26T12:36:24+0000",
+      "dateFinished": "2021-09-26T12:36:25+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -406,7 +406,7 @@
     {
       "text": "%sql\n--The following calculates the come back score for a race. This is defined that the maximum distance that one of the top finishing drivers (positions 1-8) has recovered from a position back in the field. E.g. when a driver came back from position 18 to position 1, the come back score is 17. \ncreate or replace view comebackscores\nas\n    select ps.raceid, max(ps.driver_comebackscore) max_comebackscore\n    from (\n        select raceid, driverid, max(delta_position) as driver_comebackscore\n        from\n        (\n            select lt.raceid, lt.driverid, (ltbefore.position - lt.position) delta_position\n            from lap_times lt\n            , lap_times ltbefore\n            where ltbefore.raceid \u003d lt.raceid\n            and ltbefore.driverid \u003d lt.driverid\n            and ltbefore.lap \u003c lt.lap\n        )\n        group by raceid, driverid) ps\n    ,   results r\n    where r.raceid \u003d ps.raceid\n    and r.position in (\u00271\u0027, \u00272\u0027, \u00273\u0027, \u00274\u0027, \u00275\u0027, \u00276\u0027, \u00277\u0027, \u00278\u0027)\n    group by ps.raceid;\n",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:30+0000",
+      "dateUpdated": "2021-09-26T12:36:25+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -456,11 +456,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632321833216_-984724619",
-      "id": "20210922-144353_912289194",
+      "jobName": "paragraph_1632411097311_273794366",
+      "id": "20210923-153137_1202459446",
       "dateCreated": "2021-09-22T14:43:53+0000",
-      "dateStarted": "2021-09-23T15:18:31+0000",
-      "dateFinished": "2021-09-23T15:18:31+0000",
+      "dateStarted": "2021-09-26T12:36:26+0000",
+      "dateFinished": "2021-09-26T12:36:26+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -468,7 +468,7 @@
     {
       "text": "%sql\nselect * from comebackscores",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:31+0000",
+      "dateUpdated": "2021-09-26T12:36:26+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -523,11 +523,11 @@
         ]
       },
       "interrupted": false,
-      "jobName": "paragraph_1632325006147_1856912202",
-      "id": "20210922-153646_1789434097",
+      "jobName": "paragraph_1632411097311_191652192",
+      "id": "20210923-153137_42947857",
       "dateCreated": "2021-09-22T15:36:46+0000",
-      "dateStarted": "2021-09-23T15:18:32+0000",
-      "dateFinished": "2021-09-23T15:18:37+0000",
+      "dateStarted": "2021-09-26T12:36:27+0000",
+      "dateFinished": "2021-09-26T12:36:32+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -535,7 +535,7 @@
     {
       "text": "%sql\n--This calculates the difference between the ranking of the driver and his finishing position. For example, if a driver is ranked 20th and finishes 1st, this adds 19 to this metric. This can be seen as a measure of \"surprise\".\ncreate or replace view position_difference_top_5_v\nas\n    select result_raceid as raceid, sum(position_difference_top_5) as position_difference_top_5\n    from\n    (\n        select result_raceid, abs(position_result - position_ranking) position_difference_top_5\n        from\n        (\n            select ra.round, s.raceid ranking_raceid, r.raceid result_raceid, r.driverid, r.position position_result, nvl(s.position, 0) position_ranking\n            from   driver_standings s\n            ,      results r\n            ,      races ra\n            where  s.raceid  \u003d (r.raceid - 1)\n            and    ra.raceid \u003d r.raceid\n            and    s.driverid  \u003d r.driverid\n            and    r.position in (\u00271\u0027, \u00272\u0027, \u00273\u0027, \u00274\u0027, \u00275\u0027)\n            order by r.raceid\n        )\n    )\n    group by result_raceid;\n",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:37+0000",
+      "dateUpdated": "2021-09-26T12:36:32+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -556,11 +556,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632409796795_104871525",
-      "id": "20210923-150956_105715062",
+      "jobName": "paragraph_1632411097311_-1170190132",
+      "id": "20210923-153137_1943776337",
       "dateCreated": "2021-09-23T15:09:56+0000",
-      "dateStarted": "2021-09-23T15:18:38+0000",
-      "dateFinished": "2021-09-23T15:18:38+0000",
+      "dateStarted": "2021-09-26T12:36:34+0000",
+      "dateFinished": "2021-09-26T12:36:34+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -568,7 +568,7 @@
     {
       "text": "%sql\nselect * from position_difference_top_5_v",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:38+0000",
+      "dateUpdated": "2021-09-26T12:36:34+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -623,11 +623,11 @@
         ]
       },
       "interrupted": false,
-      "jobName": "paragraph_1632325140259_-407314594",
-      "id": "20210922-153900_463991637",
+      "jobName": "paragraph_1632411097311_171456074",
+      "id": "20210923-153137_645763716",
       "dateCreated": "2021-09-22T15:39:00+0000",
-      "dateStarted": "2021-09-23T15:18:39+0000",
-      "dateFinished": "2021-09-23T15:18:39+0000",
+      "dateStarted": "2021-09-26T12:36:35+0000",
+      "dateFinished": "2021-09-26T12:36:36+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -635,7 +635,7 @@
     {
       "text": "%sql\n--The safety car table is an externally aquired dataset that holds information on all races that had a safety car\nselect * from safety_car;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:39+0000",
+      "dateUpdated": "2021-09-26T12:36:36+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -692,11 +692,11 @@
         ]
       },
       "interrupted": false,
-      "jobName": "paragraph_1632409905548_690951830",
-      "id": "20210923-151145_1982677243",
+      "jobName": "paragraph_1632411097311_-2125133830",
+      "id": "20210923-153137_32440542",
       "dateCreated": "2021-09-23T15:11:45+0000",
-      "dateStarted": "2021-09-23T15:18:40+0000",
-      "dateFinished": "2021-09-23T15:18:40+0000",
+      "dateStarted": "2021-09-26T12:36:37+0000",
+      "dateFinished": "2021-09-26T12:36:37+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -704,7 +704,7 @@
     {
       "text": "--Add place holders for the newly generated features",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:40+0000",
+      "dateUpdated": "2021-09-26T12:36:37+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -725,11 +725,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632409948560_-877892169",
-      "id": "20210923-151228_1995125036",
+      "jobName": "paragraph_1632411097311_308675400",
+      "id": "20210923-153137_2041637423",
       "dateCreated": "2021-09-23T15:12:28+0000",
-      "dateStarted": "2021-09-23T15:18:40+0000",
-      "dateFinished": "2021-09-23T15:18:40+0000",
+      "dateStarted": "2021-09-26T12:36:38+0000",
+      "dateFinished": "2021-09-26T12:36:38+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -737,267 +737,7 @@
     {
       "text": "%sql\nalter table races add laps_with_change_pos_1 number;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:40+0000",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "sql",
-          "editOnDblClick": false
-        },
-        "editorMode": "ace/mode/osql"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "ERROR",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "ORA-01430: column being added already exists in table\n"
-          }
-        ]
-      },
-      "interrupted": false,
-      "jobName": "paragraph_1632409998720_1380670314",
-      "id": "20210923-151318_1253504974",
-      "dateCreated": "2021-09-23T15:13:18+0000",
-      "dateStarted": "2021-09-23T15:18:41+0000",
-      "dateFinished": "2021-09-23T15:18:41+0000",
-      "status": "ERROR",
-      "progressUpdateIntervalMs": 500,
-      "commited": true
-    },
-    {
-      "text": "%sql\nalter table races add laps_with_change_pos_1_5 number;",
-      "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:55+0000",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "sql",
-          "editOnDblClick": false
-        },
-        "editorMode": "ace/mode/osql"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "ERROR",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "ORA-01430: column being added already exists in table\n"
-          }
-        ]
-      },
-      "interrupted": false,
-      "jobName": "paragraph_1632410068261_1534735500",
-      "id": "20210923-151428_2138268531",
-      "dateCreated": "2021-09-23T15:14:28+0000",
-      "dateStarted": "2021-09-23T15:18:56+0000",
-      "dateFinished": "2021-09-23T15:18:56+0000",
-      "status": "ERROR",
-      "progressUpdateIntervalMs": 500,
-      "commited": true
-    },
-    {
-      "text": "%sql\nalter table races add overtaken_positions_due_to_pitstop_total number;",
-      "user": "F1",
-      "dateUpdated": "2021-09-23T15:18:58+0000",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "sql",
-          "editOnDblClick": false
-        },
-        "editorMode": "ace/mode/osql"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "ERROR",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "ORA-01430: column being added already exists in table\n"
-          }
-        ]
-      },
-      "interrupted": false,
-      "jobName": "paragraph_1632410071725_2121734025",
-      "id": "20210923-151431_930659973",
-      "dateCreated": "2021-09-23T15:14:31+0000",
-      "dateStarted": "2021-09-23T15:18:59+0000",
-      "dateFinished": "2021-09-23T15:18:59+0000",
-      "status": "ERROR",
-      "progressUpdateIntervalMs": 500,
-      "commited": true
-    },
-    {
-      "text": "%sql\nalter table races add overtaken_positions_real_total number;",
-      "user": "F1",
-      "dateUpdated": "2021-09-23T15:19:00+0000",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "sql",
-          "editOnDblClick": false
-        },
-        "editorMode": "ace/mode/osql"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "ERROR",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "ORA-01430: column being added already exists in table\n"
-          }
-        ]
-      },
-      "interrupted": false,
-      "jobName": "paragraph_1632410132332_1950864044",
-      "id": "20210923-151532_1258152483",
-      "dateCreated": "2021-09-23T15:15:32+0000",
-      "dateStarted": "2021-09-23T15:19:01+0000",
-      "dateFinished": "2021-09-23T15:19:01+0000",
-      "status": "ERROR",
-      "progressUpdateIntervalMs": 500,
-      "commited": true
-    },
-    {
-      "text": "%sql\nalter table races add max_comebackscore number;",
-      "user": "F1",
-      "dateUpdated": "2021-09-23T15:15:56+0000",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "sql",
-          "editOnDblClick": false
-        },
-        "editorMode": "ace/mode/osql"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "interrupted": false,
-      "jobName": "paragraph_1632410143174_-1958361556",
-      "id": "20210923-151543_1302296999",
-      "dateCreated": "2021-09-23T15:15:43+0000",
-      "status": "READY",
-      "progressUpdateIntervalMs": 500,
-      "commited": false
-    },
-    {
-      "text": "%sql\nalter table races add rank_versus_position number;",
-      "user": "F1",
-      "dateUpdated": "2021-09-23T15:16:05+0000",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "sql",
-          "editOnDblClick": false
-        },
-        "editorMode": "ace/mode/osql"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "interrupted": false,
-      "jobName": "paragraph_1632410156671_-768600621",
-      "id": "20210923-151556_2089321337",
-      "dateCreated": "2021-09-23T15:15:56+0000",
-      "status": "READY",
-      "progressUpdateIntervalMs": 500,
-      "commited": false
-    },
-    {
-      "text": "%sql\nalter table races add safety_car number;",
-      "user": "F1",
-      "dateUpdated": "2021-09-23T15:16:23+0000",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "sql",
-          "editOnDblClick": false
-        },
-        "editorMode": "ace/mode/osql"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "interrupted": false,
-      "jobName": "paragraph_1632410165978_1725628307",
-      "id": "20210923-151605_621649282",
-      "dateCreated": "2021-09-23T15:16:05+0000",
-      "status": "READY",
-      "progressUpdateIntervalMs": 500,
-      "commited": false
-    },
-    {
-      "text": "Now merge the new features into the RACES table",
-      "user": "F1",
-      "dateUpdated": "2021-09-23T15:16:50+0000",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "sql",
-          "editOnDblClick": false
-        },
-        "editorMode": "ace/mode/osql"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "interrupted": false,
-      "jobName": "paragraph_1632410190591_2002367975",
-      "id": "20210923-151630_1029927877",
-      "dateCreated": "2021-09-23T15:16:30+0000",
-      "status": "READY",
-      "progressUpdateIntervalMs": 500,
-      "commited": false
-    },
-    {
-      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM laps_with_change_pos_1_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.laps_with_change_pos_1 \u003d h.laps;",
-      "user": "F1",
-      "dateUpdated": "2021-09-23T15:19:04+0000",
+      "dateUpdated": "2021-09-26T12:36:38+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1018,11 +758,275 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632410210945_601407797",
-      "id": "20210923-151650_1090591403",
+      "jobName": "paragraph_1632411097311_-1994852727",
+      "id": "20210923-153137_1470589036",
+      "dateCreated": "2021-09-23T15:13:18+0000",
+      "dateStarted": "2021-09-26T12:36:41+0000",
+      "dateFinished": "2021-09-26T12:36:41+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nalter table races add laps_with_change_pos_1_5 number;",
+      "user": "F1",
+      "dateUpdated": "2021-09-26T12:36:41+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1632411097311_928411851",
+      "id": "20210923-153137_495204782",
+      "dateCreated": "2021-09-23T15:14:28+0000",
+      "dateStarted": "2021-09-26T12:36:42+0000",
+      "dateFinished": "2021-09-26T12:36:42+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nalter table races add overtaken_positions_due_to_pitstop_total number;",
+      "user": "F1",
+      "dateUpdated": "2021-09-26T12:36:42+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1632411097311_818357247",
+      "id": "20210923-153137_1687434032",
+      "dateCreated": "2021-09-23T15:14:31+0000",
+      "dateStarted": "2021-09-26T12:36:43+0000",
+      "dateFinished": "2021-09-26T12:36:44+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nalter table races add overtaken_positions_real_total number;",
+      "user": "F1",
+      "dateUpdated": "2021-09-26T12:36:44+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1632411097311_-1905263532",
+      "id": "20210923-153137_436947999",
+      "dateCreated": "2021-09-23T15:15:32+0000",
+      "dateStarted": "2021-09-26T12:36:45+0000",
+      "dateFinished": "2021-09-26T12:36:45+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nalter table races add max_comebackscore number;",
+      "user": "F1",
+      "dateUpdated": "2021-09-26T12:36:45+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1632411097311_-1185156359",
+      "id": "20210923-153137_1988338490",
+      "dateCreated": "2021-09-23T15:15:43+0000",
+      "dateStarted": "2021-09-26T12:36:45+0000",
+      "dateFinished": "2021-09-26T12:36:46+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nalter table races add rank_versus_position number;",
+      "user": "F1",
+      "dateUpdated": "2021-09-26T12:36:46+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1632411097311_1508880358",
+      "id": "20210923-153137_1249291533",
+      "dateCreated": "2021-09-23T15:15:56+0000",
+      "dateStarted": "2021-09-26T12:36:47+0000",
+      "dateFinished": "2021-09-26T12:36:47+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nalter table races add safety_car number;",
+      "user": "F1",
+      "dateUpdated": "2021-09-26T12:36:47+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1632411097311_1205099774",
+      "id": "20210923-153137_264112832",
+      "dateCreated": "2021-09-23T15:16:05+0000",
+      "dateStarted": "2021-09-26T12:36:49+0000",
+      "dateFinished": "2021-09-26T12:36:49+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "--Now merge the new features into the RACES table",
+      "user": "F1",
+      "dateUpdated": "2021-09-26T12:37:03+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1632411097311_-316604507",
+      "id": "20210923-153137_1335219356",
+      "dateCreated": "2021-09-23T15:16:30+0000",
+      "dateStarted": "2021-09-26T12:37:05+0000",
+      "dateFinished": "2021-09-26T12:37:05+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM laps_with_change_pos_1_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.laps_with_change_pos_1 \u003d h.laps;",
+      "user": "F1",
+      "dateUpdated": "2021-09-26T12:37:06+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1632411097311_-563100941",
+      "id": "20210923-153137_610546727",
       "dateCreated": "2021-09-23T15:16:50+0000",
-      "dateStarted": "2021-09-23T15:19:05+0000",
-      "dateFinished": "2021-09-23T15:19:05+0000",
+      "dateStarted": "2021-09-26T12:37:08+0000",
+      "dateFinished": "2021-09-26T12:37:08+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1030,7 +1034,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM laps_with_change_pos_1_5_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.laps_with_change_pos_1_5 \u003d h.laps;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:19:07+0000",
+      "dateUpdated": "2021-09-26T12:37:10+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1051,11 +1055,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632410233188_-1396575797",
-      "id": "20210923-151713_1305967904",
+      "jobName": "paragraph_1632411097311_-780160365",
+      "id": "20210923-153137_1527114595",
       "dateCreated": "2021-09-23T15:17:13+0000",
-      "dateStarted": "2021-09-23T15:19:08+0000",
-      "dateFinished": "2021-09-23T15:19:08+0000",
+      "dateStarted": "2021-09-26T12:37:12+0000",
+      "dateFinished": "2021-09-26T12:37:12+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1063,7 +1067,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM overtaken_positions_total) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.overtaken_positions_due_to_pitstop_total \u003d h.overtaken_positions_due_to_pitstop_total\n        ,          e.overtaken_positions_real_total \u003d h.overtaken_positions_real_total;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:19:09+0000",
+      "dateUpdated": "2021-09-26T12:37:14+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1084,11 +1088,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632410242787_-30715666",
-      "id": "20210923-151722_868916841",
+      "jobName": "paragraph_1632411097311_1687936204",
+      "id": "20210923-153137_605160137",
       "dateCreated": "2021-09-23T15:17:22+0000",
-      "dateStarted": "2021-09-23T15:19:10+0000",
-      "dateFinished": "2021-09-23T15:19:11+0000",
+      "dateStarted": "2021-09-26T12:37:16+0000",
+      "dateFinished": "2021-09-26T12:37:17+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1096,7 +1100,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM comebackscore_aggr) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.max_comebackscore \u003d h.max_comebackscore;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:19:12+0000",
+      "dateUpdated": "2021-09-26T12:37:18+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1117,11 +1121,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632410256320_654808215",
-      "id": "20210923-151736_639291486",
+      "jobName": "paragraph_1632411097311_2016326718",
+      "id": "20210923-153137_1170346979",
       "dateCreated": "2021-09-23T15:17:36+0000",
-      "dateStarted": "2021-09-23T15:19:13+0000",
-      "dateFinished": "2021-09-23T15:19:19+0000",
+      "dateStarted": "2021-09-26T12:37:19+0000",
+      "dateFinished": "2021-09-26T12:37:27+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1129,7 +1133,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM position_difference_top_5_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.rank_versus_position \u003d h.position_difference_top_5;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:19:21+0000",
+      "dateUpdated": "2021-09-26T12:37:30+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1150,11 +1154,11 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632410275492_-1082505638",
-      "id": "20210923-151755_1513977391",
+      "jobName": "paragraph_1632411097311_1883471832",
+      "id": "20210923-153137_1073926768",
       "dateCreated": "2021-09-23T15:17:55+0000",
-      "dateStarted": "2021-09-23T15:19:22+0000",
-      "dateFinished": "2021-09-23T15:19:22+0000",
+      "dateStarted": "2021-09-26T12:37:32+0000",
+      "dateFinished": "2021-09-26T12:37:32+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1162,7 +1166,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM safety_car) h\n        ON (e.name \u003d h.race AND e.year \u003d h.year)\n      WHEN MATCHED THEN\n        UPDATE SET e.safety_car \u003d 1;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:19:23+0000",
+      "dateUpdated": "2021-09-26T12:37:37+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1183,19 +1187,19 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632410289396_1485722377",
-      "id": "20210923-151809_152008931",
+      "jobName": "paragraph_1632411097311_1830406624",
+      "id": "20210923-153137_875067360",
       "dateCreated": "2021-09-23T15:18:09+0000",
-      "dateStarted": "2021-09-23T15:19:24+0000",
-      "dateFinished": "2021-09-23T15:19:24+0000",
+      "dateStarted": "2021-09-26T12:37:38+0000",
+      "dateFinished": "2021-09-26T12:37:38+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
     },
     {
-      "text": "%sql\n--Split the dataset\n--Create a dedicated RACES_TRAIN table to TRAIN the model on the years until 2019\n--(We will use the year 2020 to TEST the model later)\ncreate table races_train as select * from races where year \u003e\u003d 2011 and year \u003c\u003d 2019; --Exclude 2020",
+      "text": "%sql\nupdate races set max_comebackscore \u003d 0 where max_comebackscore is null;",
       "user": "F1",
-      "dateUpdated": "2021-09-23T15:21:04+0000",
+      "dateUpdated": "2021-09-26T12:37:41+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1216,11 +1220,44 @@
         "msg": []
       },
       "interrupted": false,
-      "jobName": "paragraph_1632410363986_1702918688",
-      "id": "20210923-151923_654112847",
+      "jobName": "paragraph_1632413096429_169368398",
+      "id": "20210923-160456_1922337810",
+      "dateCreated": "2021-09-23T16:04:56+0000",
+      "dateStarted": "2021-09-26T12:37:42+0000",
+      "dateFinished": "2021-09-26T12:37:42+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\n--Split the dataset\n--Create a dedicated RACES_TRAIN table. We will use this later to TRAIN the model on the years until 2019.\n--We will use the year 2020 to TEST the model later.\ncreate table races_train as select * from races where year \u003e\u003d 2011 and year \u003c\u003d 2019; --Exclude 2020",
+      "user": "F1",
+      "dateUpdated": "2021-09-26T12:38:53+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1632411097311_-1479887262",
+      "id": "20210923-153137_1589222",
       "dateCreated": "2021-09-23T15:19:23+0000",
-      "dateStarted": "2021-09-23T15:21:05+0000",
-      "dateFinished": "2021-09-23T15:21:05+0000",
+      "dateStarted": "2021-09-26T12:38:55+0000",
+      "dateFinished": "2021-09-26T12:38:55+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1235,8 +1272,8 @@
         "forms": {}
       },
       "interrupted": false,
-      "jobName": "paragraph_1632410444854_717868890",
-      "id": "20210923-152044_1997337718",
+      "jobName": "paragraph_1632411097311_-773831365",
+      "id": "20210923-153137_1427138829",
       "dateCreated": "2021-09-23T15:20:44+0000",
       "status": "READY",
       "progressUpdateIntervalMs": 500,
@@ -1244,13 +1281,13 @@
     }
   ],
   "name": "Red Bull Racing: Generate New Features",
-  "id": "959631",
+  "id": "960464",
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
-    "ORA835AD2F8E8:F1:959631": [],
-    "ORA3B33948ADF:F1:959631": [],
-    "ORA1A081FAC99:F1:959631": [],
+    "ORA835AD2F8E8:F1:960464": [],
+    "ORA3B33948ADF:F1:960464": [],
+    "ORA1A081FAC99:F1:960464": [],
     "MDWA9B46C39B8:shared_process": []
   },
   "config": {
