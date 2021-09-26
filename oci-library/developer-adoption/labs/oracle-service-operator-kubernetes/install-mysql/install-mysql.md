@@ -1,5 +1,5 @@
 
-## Deploy Oracle MySQL DB System Service from Kubernetes
+## Deploy Oracl MySQL DB System Service from Kubernetes
 
 - [Introduction](#introduction)
 - [MySQL DB System Pre-requisites](#pre-requisites-for-setting-up-mysql-dbsystems)

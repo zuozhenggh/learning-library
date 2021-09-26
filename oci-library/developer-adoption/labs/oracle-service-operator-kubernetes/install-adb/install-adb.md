@@ -1,5 +1,5 @@
 
-## Deploy Oracle Autonomous Database from Kubernetes
+## Deploy Oracl Autonomous Database from Kubernetes
 
 - [Introduction](#introduction)
 - [OCI Permission requirement](#oci-permission-requirement)
