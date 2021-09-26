@@ -72,14 +72,14 @@ To do this you are required to create a [OCI Dynamic Group](https://docs.oracle.
 
 ### Create OCI Dynamic Group
 
-1. Open the navigation menu and click on ***Profile*** and click ***Tenancy*** your_tenancy_name. Copy and make note of your tenancy ocid as you will use it later.
+1. Open the navigation menu and click on ***Profile*** and click ***Tenancy*** your tenancy name. Copy and make note of your tenancy ocid as you will use it later.
 
 2. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Dynamic Groups***.
 
 3. Click ***Create Dynamic Group***.
 
 4.  Enter the following:
- ***Name:*** A unique name for the group. The name must be unique across all groups in your tenancy (dynamic groups and user groups). You can't change this later. Avoid entering confidential information.
+    A unique name for the group. The name must be unique across all groups in your tenancy (dynamic groups and user groups). You can't change this later. Avoid entering confidential information.
 
 5.  ***Description***: Enter a friendly description.
  
@@ -87,7 +87,7 @@ To do this you are required to create a [OCI Dynamic Group](https://docs.oracle.
 ```
 #### Below rule matches the compartment where the worker instances are running. Enter your tenancy ocid between '' in the following policy statement. 
 
-Any {instance.compartment.id = instance.compartment.id = 'ocid1.tenancy.oc1..exampleuniqueid2'}}
+Any {instance.compartment.id = instance.compartment.id = 'ocid1.tenancy.oc1..exampleuniqueid2'}
 
 ```
 7. Select ***Create***
