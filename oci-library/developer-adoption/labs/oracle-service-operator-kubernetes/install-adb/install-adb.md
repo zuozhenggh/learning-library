@@ -14,7 +14,7 @@
 
 [Oracle Autonomous Database Service](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm) is a fully managed, preconfigured database environment. It delivers automated patching, upgrades, and tuning, including performing all routine database maintenance tasks while the system is running, without human intervention. Autonomous Database service is also offered via the OCI Service Operator for Kubernetes (OSOK), making it easy for applications to provision and integrate seamlessly.
 
-## OCI Permission requirement
+## Task 1: Create  Autonomous Database Dynamic Group Policies
 
 **For Instance Principle** 
 The OCI Service Operator dynamic group should have the `manage` permission for the `autonomous-database` resource type.
@@ -58,7 +58,7 @@ The Complete Specification of the `AutonomousDatabase` Custom Resource (CR) is a
 | `spec.wallet.walletName` | The Kubernetes Secret Name of the wallet which contains the downloaded wallet information. | string | yes       |
 | `spec.walletPassword.secret.secretName`| The Kubernetes Secret Name that contains the password to be used for downloading the Wallet. | string |  no  |
 
-## Autonomous Database Status Parameters
+### Autonomous Database Status Parameters
 
 | Parameter                                         | Description                                                         | Type   | Mandatory |
 | --------------------------------------------------| ------------------------------------------------------------------- | ------ | --------- |
@@ -75,7 +75,7 @@ The Complete Specification of the `AutonomousDatabase` Custom Resource (CR) is a
 | `status.osokstatus.requestedAt`                   | Requested time of the CR.          | string | no |
 | `status.osokstatus.deletedAt`                     | Deleted time of the CR.            | string | no | 
 
-## Provisioning an Autonomous Database
+## Task 2:  Provisioning an Autonomous Database
 
 Provisioning of an Autonomous Database requires you to input the admin password as a Kubernetes secret. OSOK acquires the admin password from the Kubernetes secret provided in the `spec`. 
 The Kubernetes secret should contain the admin password in `password` field. 
@@ -147,69 +147,6 @@ autonomousdatabases-sample   ADBTest       OLTP         Active         ocid1.aut
 The AutonomousDatabases CR can be describe as below:
 ```sh
 $ kubectl describe autonomousdatabases <NAME_OF_CR_OBJECT>
-```
-
-## Binding to an Existing Autonomous Database
-
-The OSOK allows you to bind to an existing Autonomous Database instance. In this case, `Id` is the only required field in the CR `spec`. The wallet information can be provided to obtain the access information of the Autonomous Database instance.
-
-```yaml
-apiVersion: oci.oracle.com/v1beta1
-kind: AutonomousDatabases
-metadata:
-  name: <CR_OBJECT_NAME>
-spec:
-  id: <AUTONOMOUS_DATABASE_OCID>
-  wallet:
-    walletName: <WALLET_SECRET_NAME>
-    walletPassword:
-      secret:
-        secretName: <WALLET_PASSWORD_SECRET_NAME>
-```
-
-Run the following command to create a CR that binds to an existing DB instance:
-```sh
-kubectl apply -f <BIND_YAML>.yaml
-```
-
-## Updating an Autonomous Database
-
-Customers can also update a number of [parameters](https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/UpdateAutonomousDatabaseDetails) of the Autonomous Database instance.
-```yaml
-apiVersion: oci.oracle.com/v1beta1
-kind: AutonomousDatabases
-metadata:
-  name: <CR_OBJECT_NAME>
-spec:
-  id: <AUTONOMOUS_DATABASE_OCID>
-  displayName: <DISPLAY_NAME>
-  dbName: <DB_NAME>
-  dbWorkload: <OLTP/DW>
-  isDedicated: <false/true>
-  dbVersion: <ORABLE_DB_VERSION>
-  dataStorageSizeInTBs: <SIZE_IN_TBs>
-  cpuCoreCount: <COUNT>
-  adminPassword:
-    secret:
-      secretName: <ADMIN_PASSWORD_SECRET_NAME>
-  isAutoScalingEnabled: <true/false>
-  isFreeTier: <false/true>
-  licenseModel: <BRING_YOUR_OWN_LICENSE/LICENSE_INCLUDEE>
-  wallet:
-    walletName: <WALLET_SECRET_NAME>
-    walletPassword:
-      secret:
-        secretName: <WALLET_PASSWORD_SECRET_NAME>
-  freeformTags:
-    <KEY1>: <VALUE1>
-  definedTags:
-    <TAGNAMESPACE1>:
-      <KEY1>: <VALUE1>
-```
-
-Run the following command to create a CR that updates an existing Autonomous Database instance:
-```sh
-kubectl apply -f <UPDATE_YAML>.yaml
 ```
 
 ## Access Information in Kubernetes Secrets
