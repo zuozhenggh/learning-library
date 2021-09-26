@@ -1,9 +1,9 @@
-# Load Data
+# Load Data into Autonomous Data Warehouse
 
 ![Banner](images/banner.png)
 
 ## Introduction
-In this lab you will load the Twitter data into the Autonomous Data Warehouse. After this lab we will be ready to start analyzing the data.
+In this lab you will load the Grand Prix data into the Autonomous Data Warehouse. After this lab we will be ready to start analyzing the data.
 
 Estimated Lab Time: 5 minutes
 
@@ -15,23 +15,60 @@ To complete this lab, you need to have the following:
 - A provisioned Autonomous Data Warehouse
 - You're logged into your Oracle Cloud Account
 
-## **STEP 1**: Upload Red Bull Twitter data to Autonomous Data Warehouse
+## STEP 1: Create a New Database User/Schema in Autonomous Data Warehouse
+
+This new user/schema will hold the Grand Prix data.
+
+1. Go to **Menu** > **Oracle Database** > **Autonomous Data Warehouse**.
+
+   ![ADW Menu](images/adw-menu.png)
+
+2. Click on the **REDBULL** database that you created earlier.
+
+   ![ADW Menu](images/open-redbull2.png)
+
+3. Go to **Tools** tab and click **Open Database Actions**.
+
+   ![ADW Menu](images/open-database-actions.png)
+
+   Login with user **ADMIN**, password **Oracle_12345** (you specified this upon creation of the Autonomous Data Warehouse earlier).
+
+4. Click the **SQL** tile under **Development** section.
+
+    ![ADW Menu](images/open-sql.png)
+
+5. **Download** <a href="files/create_user.sql" target="\_blank">`create_user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
+
+6. Open the `create_user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area.
+
+    ![ADW Menu](images/copy-paste.png)
+
+7. Click the run-script button (**not** the Run button). Then verify the output in the **Script Output** tab. The last lines in the output should indicate that the script has run successfully.
+
+    ![ADW Menu](images/run-script.png)
+
+
+## **STEP 2**: Upload the Grand Prix data to Autonomous Data Warehouse
 
 1. **Download** the three files that contain the data that we'll use in our analysis:
 
-   <a href="
-https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/N2qV6WmjOVm9OMa3R7eohbCEKnO0rc-ok1dxFTD9CKz2-RCvWoOO2gRdd29rtoVz/n/odca/b/workshops-livelabs-do-not-delete/o/redbull_twitter_data.csv" target="\_blank">Red Bull Twitter data</a>
+   <a href="files/RACES.csv" target="\_blank">Races data</a>
 
-   Save the file on your local machine. Make sure that the files are saved with extension `.csv`.
+   <a href="files/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
 
-2. Next, come back to your `redbull` ADW console, go to **Tools** tab and click **Open Database Actions**.
+   <a href="files/SAFETY_CAR.csv" target="\_blank">Safety Car data</a>
+
+   Save the files on your local machine. **Make sure that the files are saved with extension `.csv`**
+
+2. Next, come back to your `REDBULL` ADW console, go to **Tools** tab and click **Open Database Actions**.
 
    > You should still have a browser tab open with the main page of the Autonomous Data Warehouse service. If not, navigate to this page first. Then, open Database Actions.
 
    ![Open Database Actions](images/open-database-actions.png)
 
-   Log in with
-   - Username: ADMIN
+   This time **use the F1 user** (not the ADMIN user).
+
+   - Username: F1
    - Password: Oracle_12345
 
 3. Click to the **Data Load** option, under the **Data Tools** section.
@@ -42,11 +79,19 @@ https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/N2qV6WmjOVm9OMa3R7eohbCEK
 
     ![Start Data Load](images/start-data-load.png)
 
-5. Select the file that you downloaded earlier.
+5. Select the files that you downloaded earlier.
 
     ![Select Files](images/select-files.png)
 
-6. Click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
+6. Edit the configuration of SAFETY_CAR.csv by changing the load option into "Insert into table". We are doing this because we already have an empty table, and we want to add the data into that table.
+
+   ![Select Files](images/edit-safety-car.png)
+
+   ![Select Files](images/change-option1.png)
+
+7. Also change the load option for RACES and LAP_TIMES to "Insert into table".
+
+8. After you have changed the load option of all three files, click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
 
     ![Start Load Process](images/load-data.png)
 

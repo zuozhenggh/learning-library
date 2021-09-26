@@ -4,13 +4,13 @@
 
 ## About this Workshop
 
-What makes a GREAT Grand Prix? And how can we make it even better?
+What makes a GREAT Grand Prix?
 
-I'm sure you know the feeling: Sometimes a race is so exciting that you can't look away for one second, while on other occasions you know what will happen in advance, and there are no surprises.
+I'm sure you know the feeling: Sometimes a race is so exciting that you can't look away for one second, while on other occasions you already know what will happen in advance, and there are no surprises.
 
 So what is that "magic" factor? Is it the amount of overtaking? Is it the battle for the number 1 position? Is it the weather conditions? Or are we missing some invisible factor that we can't quite understand yet?
 
-If we can understand exactly what factors contribute to a good race according to the fans, we might be able to make the sport more interesting by influencing those factors. Think about changes to the rules of the game, how the game is organized, et cetera.
+This question is so interesting, because if we can understand exactly what factors contribute to a good race according to the fans, we might be able to **make the sport even more interesting** by influencing those factors. Think about changes to the rules of the game, how the game is organized, et cetera.
 
 This is a great opportunity for you to learn about Analytics and Machine Learning. You'll use these two to discover the answer to our main question. No experience required, you will learn everything you need to know along the way!
 
