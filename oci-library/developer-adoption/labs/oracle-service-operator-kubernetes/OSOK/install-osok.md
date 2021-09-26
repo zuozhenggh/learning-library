@@ -8,11 +8,11 @@
 * `kubectl` to control the Kubernetes Cluster. Please make sure it points to the above Kubernetes Cluster.
 * Need to be an OCI Tenancy Administrator
 
-## Install Operator SDK
+## Task 1: Install Operator SDK
 
 The Operator SDK installation is documented in detail by the operator-sdk project. Please follow the document [here](https://sdk.operatorframework.io/docs/installation/) to install it.
 
-## Install Operator Lifecycle Manager (OLM)
+## Task 2: Install Operator Lifecycle Manager (OLM)
 
 ### Install OLM
 
@@ -24,7 +24,7 @@ $ operator-sdk olm install
 INFO[0079] Successfully installed OLM version "latest"
 ```
 
-### Verify Installation
+### Task 3: Verify Installation
 
 You can verify your installation of OLM by first checking for all the necessary CRDs in the cluster:
 
@@ -61,7 +61,7 @@ catalogsources.operators.coreos.com                          CustomResourceDefin
 system:controller:operator-lifecycle-manager                 ClusterRole                 Installed
 ```
 
-## Deploy OCI Service Operator for Kubernetes
+## Task 4: Deploy OCI Service Operator for Kubernetes
 
 ### Enable Instance Principal
 
@@ -70,25 +70,27 @@ The OCI Service Operator for Kuberentes needs [OCI Instance Principal](https://d
 To do this you are required to create a [OCI Dynamic Group](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Managing_Dynamic_Groups).
 
 
-## Task 1: Create OCI Dynamic Group
+### Create OCI Dynamic Group
 
-1. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Dynamic Groups***.
+1. Open the navigation menu and click on ***Profile*** and click ***Tenancy*** your_tenancy_name. Copy and make note of your tenancy ocid as you will use it later.
 
-2. Click ***Create Dynamic Group***.
+2. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Dynamic Groups***.
 
-3. Enter the following:
+3. Click ***Create Dynamic Group***.
+
+4.  Enter the following:
  ***Name:*** A unique name for the group. The name must be unique across all groups in your tenancy (dynamic groups and user groups). You can't change this later. Avoid entering confidential information.
 
-4.  ***Description***: Enter a friendly description.
+5.  ***Description***: Enter a friendly description.
  
-5. ***Enter a Matching Rule***
+6.  Enter a Matching Rule
 ```
-#### Below rule matches the compartment where the worker instances are running
+#### Below rule matches the compartment where the worker instances are running. Enter your tenancy ocid in the following policy statement. 
 
-Any {instance.compartment.id = 'ocid1.compartment.oc1..exampleuniqueid2'}
+Any {instance.compartment.id = '<tenancy_ocid>'}
 
 ```
-6. Select ***Create***
+7. Select ***Create***
 
 ![Dynamic Group](./images/dynamic-group-1.png) 
 
