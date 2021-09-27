@@ -1,5 +1,5 @@
 
-## Deploy Oracl MySQL DB System Service from Kubernetes
+## Deploy Oracle MySQL DB System Service from Kubernetes
 
 - [Introduction](#introduction)
 - [MySQL DB System Pre-requisites](#pre-requisites-for-setting-up-mysql-dbsystems)
@@ -52,7 +52,7 @@ Allow group <OSOK_GROUP> to use tag-namespaces in tenancy
 
 Without these policies, the service will not function correctly.
 
-## MySQL DB System Specification Parameters
+### MySQL DB System Specification Parameters
 
 The Complete Specification of the `mysqldbsystems` Custom Resource (CR) is as detailed below:
 
