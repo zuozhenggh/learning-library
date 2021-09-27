@@ -64,7 +64,7 @@ Make sure you are using a service that is enabled for Application Continuity (AC
 
 There is no need to introduce any failures - just exercise as much of your application as possible
 
-Us the Java client for this exercise:   
+Use the Java client for this exercise:   
 
 Use ACDEMO
 
