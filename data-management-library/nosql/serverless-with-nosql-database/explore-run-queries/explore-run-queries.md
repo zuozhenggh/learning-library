@@ -14,7 +14,7 @@ Estimated Time: 25 minutes
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, or Paid Cloud Account
+* An Oracle Free Tier, Paid Account or Green Button
 * Connection to the Oracle NoSQL Database Cloud Service
 * Working knowledge of bash shell
 * Working knowledge of SQL language
@@ -46,7 +46,7 @@ The goal of this task is to understand the difference between the 2 data models 
     <copy>
     cd ~/serverless-with-nosql-database/express-nosql
     npm install
-    node express_oracle_nosql.js &
+    node express-oracle-nosql.js &
     </copy>
     ```
     **Note:** This will start the "express-oracle-nosql" application in the background.
@@ -129,7 +129,7 @@ The goal of this task is to understand the difference between the 2 data models 
     <copy>
     cd ~/serverless-with-nosql-database/express-nosql
     npm install
-    node express_baggage_demo_nosql.js &
+    node express-baggage-demo-nosql.js &
     </copy>
     ````
 
@@ -160,7 +160,13 @@ The goal of this task is to understand the difference between the 2 data models 
     ````
   Each of these produced slightly different results. The first one display the document with a specific ticket number, the second displayed all the records and the third gave a count of the records.
 
-  For the last one,  you can see in the field "message" the getPassengersAffectedByFlight endpoint is still under construction. In other words the code for that endpoint has not been completed yet. Feel free to take a look at the code using 'cat express-baggage-demo-nosql.js'
+  For the last one,  you can see in the "message" field "getPassengersAffectedByFlight under construction." In other words the code for that endpoint has not been completed yet. Feel free to take a look at the code using below.
+
+      ````
+      <copy>
+      cat express-baggage-demo-nosql.js
+      </copy>
+      ````
 
 9. You can also execute sql statements using Oracle Cloud Infrastructure CLI commands. Going this route, you will be querying the data over REST. Execute in Cloud Shell.
 
@@ -269,15 +275,36 @@ The goal of this task is to understand the difference between the 2 data models 
 
 This task deletes the tables that got created.
 
+<if type="paid">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
 Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.**
 
   ![](./images/delete-freetable.png)
 
   Deleting tables is an async operation, so you will not immediately see the results on the Oracle Cloud Console. Eventually the status of the tables will get changed to deleted.
+</if>
+
+<if type="freetier">
+1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.**
+
+  ![](./images/delete-freetable.png)
+
+  Deleting tables is an async operation, so you will not immediately see the results on the Oracle Cloud Console. Eventually the status of the tables will get changed to deleted.
+</if>
+
+<if type="livelabs">
+1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
+Select your compartment. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.**
+
+  ![](./images/delete-freetable.png)
+
+  Deleting tables is an async operation, so you will not immediately see the results on the Oracle Cloud Console. Eventually the status of the tables will get changed to deleted.
+</if>
 
 2. Return to the 'Tables' screen and repeat the process for the **demo** and **demoKeyVal** tables.
 
+<if type="paid">
 3. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
@@ -289,6 +316,21 @@ Set your compartment to 'demonosql'. Click the **freeTest** table, which will br
 5. Press the **Delete** button. This will fire off a job that runs asynchronously.
 
     ![](./images/delete-demonosql.png)
+</if>
+
+<if type="freetier">
+3. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+
+    ![](./images/remove-compartment.png)
+
+4. The 'Compartments' screen appears and click **demonosql**
+
+    ![](./images/select-demonosql.png)
+
+5. Press the **Delete** button. This will fire off a job that runs asynchronously.
+
+    ![](./images/delete-demonosql.png)
+</if>
 
 ## Learn More
 
