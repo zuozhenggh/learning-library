@@ -24,7 +24,7 @@
             "title": "Lab 2: Prepare Your Environment",
             "description": "Perform the iniital setup operations",
             "type": "paid",
-            "filename": "../../setup-environment/setup-environment-Paid.md"
+            "filename": "../../setup-environment/setup-environment-paid.md"
         },
         {
             "title": "Lab 3: Create Tables, Load Tables",
