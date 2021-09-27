@@ -62,11 +62,11 @@ The Kubernetes secret should contain the admin password in `password` field.
 apiVersion: v1
 kind: Secret
 metadata:
-  name: <<ADMIN_SECRET_NAME>>
+  name: {ADMIN_SECRET_NAME}
 type: Opaque
 data:
-  username: <<USERNAME_BASE64_ENCODED>>
-  password: <<PASSWORD_BASE64_ENCODED>>
+  username: {USERNAME_BASE64_ENCODED}
+  password: {PASSWORD_BASE64_ENCODED}
 ```
 
 Run the following command to create a secret for the Mysql DbSystem:
@@ -107,10 +107,10 @@ spec:
   port: <<PORT>>
   portX: <<PORTX>>
   freeformTags:
-    <KEY1>: <<VALUE1>>
+    <KEY1>: {VALUE1}
   definedTags:
     <TAGNAMESPACE1>:
-      <KEY1>: <<VALUE1>>
+      <KEY1>: {VALUE1}
 
 ```
 Example Yaml:
