@@ -147,7 +147,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 2. In this example the process ID is 585689, which I can pass to the **kill -9 <process id>** command.  Identify your process id and issue the kill command as the *oracle* user
 
     ````
-    sudo kill -9 ######
+    kill -9 ######
     ````
 
     This will cause the instance to fail, any connections to the database on this instance would be lost. The CRS component of Grid Infrastructure would detect the instance failure, and immediately start the service on an **available** instance (based on the service definition). CRS would then restart the database instance.
@@ -239,14 +239,18 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 ## Task 4: Connection Load Balancing
 This exercise will demonstrate connection load balancing and why it is important to use the SCAN address and the VIPs as integral parts of your connection strategy
 
-1. Create a uniform service, named *unisrv*, that is **available** on both instances of your RAC database.  Execute this on **node 1**
+1. Examine the uniform service, named *unisrv*, that is **available** on both instances of your RAC database.  Execute this on **node 1**
 
     ````
     <copy>
-    srvctl add service -d <REPLACE DATABASE NAME> -s unisrv -preferred <REPLACE INSTANCE NAME 1>,<REPLACE INSTANCE NAME 2> -pdb pdb1
-    srvctl start service -d <REPLACE DATABASE NAME> -s unisrv
+    srvctl status service -d <REPLACE DATABASE NAME> -s unisrv
     </copy>
     ````
+If it is not running start this service
+
+    ````
+    Service unisrv is running on instance(s) racKPEMW1,racKPEMW2
+    ````    
     ![](./images/lab6-step3-num1.png " ")
 
 2. Look at the entry for this server in the **lsnrctl service LISTENER_SCAN2** output. Note that any of the SCAN listeners can be used here.  Run this on **node 2** as the *oracle* user
