@@ -233,8 +233,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
    ![](images/to-menu2.png)
 
-## **STEP 3:** An initial exploration of the data sets
-
+<!--
 Let's have a first look at the data that we have available for our data challenge.
 
 1. On the homepage, click "Data", then click the "Races" dataset to create a new visualization project.
@@ -282,12 +281,17 @@ Let's have a first look at the data that we have available for our data challeng
    At first glance, it appears that, since the measurement of fan scores started in 2008, fans are less excited about the sport as the years progressed. At least, this is the case if we look at the yearly average, not looking at individual races.
 
 	 Since we're missing fan scores for 2021, we cannot say whether this trend continued. However, by the completion of this workshop, you will be able to generate (predict) the scores for the races of 2021 yourself!
+-->
 
-## **STEP 4:** Finding the best and worst race according to the fans
+## **STEP 3:** Finding the best and worst race according to the fans
 
   What was the most popular race between 2008 and 2020 according to the fans? This would be interesting to find out, as that race is likely to have a lot of the key factors that fans appreciate.
 
-1. We'll search for the race with the highest score first.
+1. On the homepage, click "Data", then click the "Races" dataset to create a new visualization project.
+
+	  ![](images/click-races3.png)
+
+2. We'll search for the race with the highest score first.
 
    Create a new visualization by selecting both `NAME_YEAR` and `SCORE` (use Control + click), then right click on one of the fields and choose "Pick Visualization".
 
@@ -295,7 +299,7 @@ Let's have a first look at the data that we have available for our data challeng
 
 	 Then select the table icon.
 
-2. We will create a filter to only show those races that have a score assigned to them.
+3. We will create a filter to only show those races that have a score assigned to them.
 
    Drag `SCORE` to the filter region.
 
@@ -311,7 +315,7 @@ Let's have a first look at the data that we have available for our data challeng
 
 	 You see that the race with the top score was the Brazilian Grand Prix of 2012. Therefore, this is the best race during the decade that the fan scores were collected.
 
-3. Similarly, we'll look for the race with the lowest score.
+4. Similarly, we'll look for the race with the lowest score.
 
    Sort the dataset on score low-to-high by clicking the Ascending icon.
 
@@ -319,7 +323,7 @@ Let's have a first look at the data that we have available for our data challeng
 
    You see that the race with the lowest score according to the fans was Abu Dhabi GP of 2020.
 
-4. Finally, save the project by clicking on the Save icon and name it "All Races Overview".
+5. Finally, save the project by clicking on the Save icon and name it "All Races Overview".
 
    ![Banner](images/save-project5.png)
 
@@ -327,7 +331,7 @@ Let's have a first look at the data that we have available for our data challeng
 
 	 ![Banner](images/to-homepage6.png)
 
-## **STEP 5:** Basic Exploratory Data Analysis: Overtakes and DNFs
+## **STEP 4:** Basic Exploratory Data Analysis: Overtakes and DNFs
 
 These two races are a great starting point for our investigation into what factors makes a great (or not so great) race.
 
@@ -421,7 +425,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
    ![Banner](images/to-homepage9.png)
 
-## **STEP 6:** Basic Exploratory Data Analysis: Correlation diagrams for Position Changes and DNFs
+## **STEP 5:** Basic Exploratory Data Analysis: Correlation diagrams for Position Changes and DNFs
 
 How can we check whether our theories about the relationship between position changes, DNFs and score is correct? We can use smart visualizations for this, in particular correlation diagrams and box plots are well suited for this task.
 
@@ -532,7 +536,7 @@ How can we check whether our theories about the relationship between position ch
 
    ![Banner](images/to-homepage8.png)
 
-## **STEP 8:** Conclusion
+## **STEP 6:** Conclusion
 
 In our Exploratory Data Analysis we tried to identify factors that are of value to predict the score that fans give to the races.
 
