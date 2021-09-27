@@ -108,16 +108,16 @@ The Kubernetes secret should contain the admin password in `password` field.
 apiVersion: v1
 kind: Secret
 metadata:
-  name: <ADMIN_SECRET_NAME>
+  name: ADMIN_SECRET_NAME
 type: Opaque
 data:
-  username: <USERNAME_BASE64_ENCODED>
-  password: <PASSWORD_BASE64_ENCODED>
+  username: USERNAME_BASE64_ENCODED
+  password: PASSWORD_BASE64_ENCODED
 ```
 
 Run the following command to create a secret for the Mysql DbSystem:
 ```sh
-kubectl apply -f <CREATE_SECRET>.yaml
+kubectl apply -f CREATE_SECRET.yaml
 ```
 
 The MySQL DB System can be accessed from the Secret which will be persisted as part of the provision/bind operation of the CR.
@@ -125,7 +125,7 @@ The MySQL DB System can be accessed from the Secret which will be persisted as p
 The OSOK MySqlDbSystem controller automatically provisions a MySQL DB System when you provide mandatory fields to the `spec`. The following is a sample CR yaml for MySqlDbSystem.
 
 - SUBNET_OCID - OCID of the subnet created in the pre-requisites step
-- CONFIGURATION_ID - [More info about Configurations](https://docs.oracle.com/en-us/iaas/mysql-database/doc/db-systems.html#GUID-E2A83218-9700-4A49-B55D-987867D81871) Get your [Configuration_id](https://console.us-ashburn-1.oraclecloud.com/mysqlaas/configurations) 
+- CONFIGURATION_ID -  [More info about Configurations](https://docs.oracle.com/en-us/iaas/mysql-database/doc/db-systems.html#GUID-E2A83218-9700-4A49-B55D-987867D81871) Get your [Configuration_id](https://console.us-ashburn-1.oraclecloud.com/mysqlaas/configurations) 
 
 
 ```yaml
@@ -133,30 +133,30 @@ The OSOK MySqlDbSystem controller automatically provisions a MySQL DB System whe
 apiVersion: oci.oracle.com/v1beta1
 kind: MySqlDbSystem
 metadata:
-  name: <CR_OBJECT_NAME>
+  name: CR_OBJECT_NAME
 spec:
-  compartmentId: <COMPARTMENT_OCID>
-  displayName: <DISPLAY_NAME>
-  shapeName: <SHAPE>
-  subnetId: <SUBNET_OCID>
+  compartmentId: COMPARTMENT_OCID
+  displayName: DISPLAY_NAME
+  shapeName: SHAPE
+  subnetId: SUBNET_OCID
   configuration:
-    id: <CONFIGURATION_OCID>
-  availabilityDomain: <AVAIALABILITY_DOMAIN>
+    id: CONFIGURATION_OCID
+  availabilityDomain: AVAIALABILITY_DOMAIN
   adminUsername:
     secret:
-      secretName: <ADMIN_SECRET>
+      secretName: ADMIN_SECRET
   adminPassword:
     secret:
-      secretName: <ADMIN_SECRET>
-  description: <DESCRIPTION>
-  dataStorageSizeInGBs: <DB_SIZE>
-  port: <PORT>
-  portX: <PORTX>
+      secretName: ADMIN_SECRET
+  description: DESCRIPTION
+  dataStorageSizeInGBs: DB_SIZE
+  port: PORT
+  portX: PORTX
   freeformTags:
-    <KEY1>: <VALUE1>
+    <KEY1>: VALUE1
   definedTags:
     <TAGNAMESPACE1>:
-      <KEY1>: <VALUE1>
+      <KEY1>: VALUE1
 
 ```
 Example Yaml:
@@ -197,7 +197,7 @@ spec:
 
 Run the following command to create a CR to the cluster:
 ```sh
-kubectl apply -f <CREATE_YAML>.yaml
+kubectl apply -f CREATE_YAML.yaml
 ```
 
 Once the CR is created, OSOK will Reconcile and creates a MySQL DB System. OSOK will ensure the MySQL DB System instance is Available.
@@ -220,4 +220,3 @@ The MysqlDbSystem CR can be described as below:
 ```sh
 $ kubectl describe mysqldbsystems <NAME_OF_CR_OBJECT>
 ```
-#
