@@ -4,14 +4,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database on Oracle Cloud. There are two types of workloads:
-
-- Autonomous Data Warehouse (ADW)
-- Autonomous Transaction Processing (ATP)
-
-In this lab, you will provision a new Autonomous Data Warehouse (ADW) instance.
-
-*Note: While this lab uses ADW, the steps are identical for creating an ATP database.*
+In this lab, you will provision a new Autonomous Data Warehouse (ADW) instance. This database will hold the data that you will analyze.
 
 Estimated Lab Time: 5 minutes
 
@@ -86,4 +79,3 @@ Please *proceed to the next lab*.
 
 - **Author** - Jeroen Kloosterman, Technology Product Strategy Director
 - **Author** - Victor Martin, Technology Product Strategy Manager
-- **Contributor** - Priscila Iruela

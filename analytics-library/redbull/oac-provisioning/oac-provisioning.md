@@ -6,25 +6,15 @@
 
 During this lab you will deploy an Oracle Analytics Cloud instance on Oracle Cloud Infrastructure.
 
-> Provisioning Oracle Analytics Cloud can take up to 40 minutes.
-
-<!--
-[](youtube:Sf5MkI9pTn0)
--->
-
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 15 minutes (provisioning time may vary)
 
 ### Objectives
-
 In this lab, you will:
-
 - Login as a federated user.
 - Create an Oracle Analytics Cloud Instance.
 
 ### Prerequisites
-
 - Oracle Free Trial Account.
-
 
 ## **STEP 1:** Federated User Login
 

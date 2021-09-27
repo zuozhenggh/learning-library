@@ -64,7 +64,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
    ![AWD Wallet Password](images/adw_wallet_password.png)
 
-6. Click **Close**. A `ZIP` file will start downloading.
+6. Click **Close**. A ZIP file will start downloading.
 
 7. Use the Wallet in Oracle Analytics Cloud
 
@@ -127,13 +127,13 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
    You see how Oracle Analytics is profiling the columns in the data set. It creates histograms that give a high level overview of the distribution of the values in the column. These histograms help you to quickly understand what data you have at your disposal as well as gauge the quality of the data (e.g. missing values).
 
-4. Inspect the YEAR column
+4. Inspect the `YEAR` column
 
    ![Banner](images/races-years.png)
 
    Notice how the dataset contains races from the start of Formula 1 in 1950 until sometime in the season of 2021. You can also notice directly how the number of races per season has gradually increased.
 
-5. Now scroll to the column SCORE
+5. Now scroll to the column `SCORE`
 
 	 ![Banner](images/races-score.png)
 
@@ -177,7 +177,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
 8. Save the data set
 
-    Click the **Save** icon and name the data set **Races**.
+    Click the **Save** icon and name the data set `Races`.
 
     ![Set name and save data set](images/save-dataset.png)
 
@@ -219,13 +219,13 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
    ![Pivot](images/change-representation.png)
 
-6. Change the "Treat As" for the columns RACEID, DRIVERID and LAP to "Attribute".
+6. Change the "Treat As" for the columns `RACEID`, `DRIVERID` and `LAP` to "Attribute".
 
    ![Pivot](images/set-type-lap-times.png)
 
 7. Save the data set
 
-   Click the **Save** icon and give the data the name **Lap Times**.
+   Click the **Save** icon and give the data the name `Lap Times`.
 
    ![Set name and save data set](images/save-lap-times.png)
 
@@ -243,7 +243,7 @@ Let's have a first look at the data that we have available for our data challeng
 
 2. We want to create a chart that shows the number of races per season.
 
-  Select both the YEAR_C and RACE_COUNT columns. You can do this by clicking on YEAR_C, then hold Control while you click RACE_COUNT. Next, drag the two to the canvas.
+  Select both the `YEAR_C` and `RACE_COUNT` columns. You can do this by clicking on `YEAR_C`, then hold Control while you click `RACE_COUNT`. Next, drag the two to the canvas.
 
 	![Create first chart](images/create-first-chart.png)
 
@@ -253,27 +253,27 @@ Let's have a first look at the data that we have available for our data challeng
 
 	Notice the drop in number of races in season 2020 (Covid 19).
 
-3. Now, let's add in the race score. Drag the SCORE field to the small space right underneath the RACE_COUNT field (inside of the Values Y-Axis section).
+3. Now, let's add in the race score. Drag the `SCORE` field to the small space right underneath the `RACE_COUNT` field (inside of the Values Y-Axis section).
 
    ![Drag score](images/drag-score.png)
 
-4. By default the SCORE also shows as bars. We want to improve the readability of the chart by changing SCORE to a Line presentation.
+4. By default the `SCORE` also shows as bars. We want to improve the readability of the chart by changing `SCORE` to a Line presentation.
 
   Change the visualization type to "Combo".
 
 	![Drag score](images/change-to-combo.png)
 
-  Set the visualization type of RACE_COUNT back to Bar.
+  Set the visualization type of `RACE_COUNT` back to Bar.
 
 	![Drag score](images/set-to-bar.png)
 
-5. Now the only problem is that SCORE has a very different number range than RACE_COUNT, and therefore is hard to read. To fix this, we'll give SCORE its own scale.
+5. Now the only problem is that `SCORE` has a very different number range than `RACE_COUNT`, and therefore is hard to read. To fix this, we'll give `SCORE` its own scale.
 
-   Click SCORE (in the Values Y-axis section) and select "Y2 Axis".
+   Click `SCORE` (in the Values Y-axis section) and select "Y2 Axis".
 
 	![Drag score](images/y2-axis.png)
 
-	Now you see that RACE_COUNT and SCORE have their own scale (see left and right Y-axis).
+	Now you see that `RACE_COUNT` and `SCORE` have their own scale (see left and right Y-axis).
 
 6. Inspect the chart.
 
@@ -289,7 +289,7 @@ Let's have a first look at the data that we have available for our data challeng
 
 1. We'll search for the race with the highest score first.
 
-   Create a new visualization by selecting both NAME_YEAR and SCORE (use Control + click), then right click on one of the fields and choose "Pick Visualization".
+   Create a new visualization by selecting both `NAME_YEAR` and `SCORE` (use Control + click), then right click on one of the fields and choose "Pick Visualization".
 
 	 ![Banner](images/add-table1.png)
 
@@ -297,11 +297,11 @@ Let's have a first look at the data that we have available for our data challeng
 
 2. We will create a filter to only show those races that have a score assigned to them.
 
-   Drag the score to the filter region.
+   Drag `SCORE` to the filter region.
 
    ![Banner](images/drag-score2.png)
 
-   Then configure the SCORE field to be between 0 and 10. This will remove any RACES that don't have scores from the active selection.
+   Then configure the `SCORE` field to be between 0 and 10. This will remove any races that don't have scores from the active selection.
 
 	 ![Banner](images/configure-filter2.png)
 
@@ -327,8 +327,6 @@ Let's have a first look at the data that we have available for our data challeng
 
 	 ![Banner](images/to-homepage6.png)
 
-
-
 ## **STEP 5:** Basic Exploratory Data Analysis: Overtakes and DNFs
 
 These two races are a great starting point for our investigation into what factors makes a great (or not so great) race.
@@ -347,23 +345,23 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 3. Now create the visualization to show the position changes during the race.
 
-   Select the LAP, POSITION and DRIVERREF (Control + click to multi-select) fields. Then right click on any of those fields and select "Pick Visualization". Choose the Line visualization.
+   Select the `LAP`, `POSITION` and `DRIVERREF` (Control + click to multi-select) fields. Then right click on any of those fields and select "Pick Visualization". Choose the Line visualization.
 
 	 ![Banner](images/create-lap-chart.png)
 
-4. Separate the information of the two races into separate visualizations by dragging RACE_NAME to the Trellis Rows section.
+4. Separate the information of the two races into separate visualizations by dragging `RACE_NAME` to the Trellis Rows section.
 
    ![Banner](images/drag-to-trellis-rows.png)
 
 5. Inspect the results.
 
-   We see immediately that the high scoring race has many more position changes than the low scoring race. 	 This suggests that the number of take overs are an important factor that influence the race score. Intuitively this also makes sense. Let's make a note of this!
+   We see immediately that the high scoring race has many more position changes than the low scoring race. This suggests that the number of take overs are an important factor that influence the race score. Intuitively this also makes sense. Let's make a note of this!
 
 	 Note 1: "The total number of position changes _may be_ a factor to predict race score"
 
 6. Now let's zoom in on the top positions during the two races. Intuition tells us that people are interested in what happens there.
 
-   Drag the POSITION field to the Filter section and configure it to only show data for Positions 1 to 5.
+   Drag the `POSITION` field to the Filter section and configure it to only show data for Positions 1 to 5.
 
    ![Banner](images/filter-position.png)
 
@@ -377,7 +375,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 8. Let's see what else we can find in this chart.
 
-   Remove the POSITION filter again.
+   Remove the `POSITION` filter again.
 
 	 ![Banner](images/remove-filter.png)
 
@@ -391,15 +389,15 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 10. Now let's see what aggregated information we already have available on each of these races.
 
-   Add the RACES dataset by clicking on the + icon, then choose Add Data set.
+   Add the `RACES` dataset by clicking on the + icon, then choose Add Data set.
 
 	 ![Banner](images/add-dataset2.png)
 
-   Click on the RACES dataset and click "Add to Project".
+   Click on the `RACES` dataset and click "Add to Project".
 
 	 ![Banner](images/select-races.png)
 
-11. Create a table to show all of the information that's readily available on the level of RACES.
+11. Create a table to show all of the information that's readily available on the level of `RACES`.
 
    ![Banner](images/create-table.png)
 
@@ -425,17 +423,17 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 ## **STEP 6:** Basic Exploratory Data Analysis: Correlation diagrams for Position Changes and DNFs
 
-How can we check whether our theories about the relationship between position changes, DNFs and score is correct? We can use smart visualizations for this, in particular the correlation diagram and box plots are well suited for this task.
+How can we check whether our theories about the relationship between position changes, DNFs and score is correct? We can use smart visualizations for this, in particular correlation diagrams and box plots are well suited for this task.
 
 1. Create a new project by clicking on the Races data set from the homepage.
 
    ![Banner](images/new-project-races.png)
 
-2. Notice how there's already a field OVERTAKEN_POSITIONS_TOTAL on the RACES data set. This value has previously been calculated from the LAP_TIMES data set.
+2. Notice how there's already a field `OVERTAKEN_POSITIONS_TOTAL` on the `RACES` data set. This value has previously been calculated from the `LAP_TIMES` data set.
 
-   Configure the correlation diagram using the field POSITION_CHANGES_TOTAL, SCORE and NAME_YEAR as follows.
+   Configure the correlation diagram using the field `POSITION_CHANGES_TOTAL`, `SCORE` and `NAME_YEAR` as follows.
 
-	 Make sure you set the correct chart type (Scatter) and drag the fields in their corresponding sections (SCORE -> Values Y-Axis, OVERTAKEN_POSITIONS_TOTAL -> Values X-Axis and NAME_YEAR -> Category).
+	 Make sure you set the correct chart type (Scatter) and drag the fields in their corresponding sections (`SCORE` -> Values Y-Axis, `OVERTAKEN_POSITIONS_TOTAL` -> Values X-Axis and `NAME_YEAR` -> Category).
 
    ![Banner](images/create-correlation1.png)
 
@@ -455,15 +453,15 @@ How can we check whether our theories about the relationship between position ch
 
 	 ![Banner](images/duplicate.png)
 
-5. Click on the first copy of the chart to show its configuration. Now drag the DNF_COUNT field over the OVERTAKEN_POSITIONS_TOTAL field (in Values Y-Axis) to replace it.
+5. Click on the first copy of the chart to show its configuration. Now drag the `DNF_COUNT` field over the `OVERTAKEN_POSITIONS_TOTAL` field (in Values Y-Axis) to replace it.
 
 	 ![Banner](images/dnf-replace1.png)
 
-6. Click on the second copy of the chart to show its configuration. Now drag the DNF_DUE_TO_ACCIDENT_COUNT field over the OVERTAKEN_POSITIONS_TOTAL field (in Values Y-Axis) to replace it.
+6. Click on the second copy of the chart to show its configuration. Now drag the `DNF_DUE_TO_ACCIDENT_COUNT` field over the `OVERTAKEN_POSITIONS_TOTAL` field (in Values Y-Axis) to replace it.
 
    ![Banner](images/dnf-replace2.png)
 
-7. Inspect the two correlation diagrams with DNF_COUNT and DNF_DUE_TO_ACCIDENT_ACOUNT.
+7. Inspect the two correlation diagrams with `DNF_COUNT` and `DNF_DUE_TO_ACCIDENT_ACOUNT`.
 
    Notice that also here we have positive correlation; as the number of DNFs increase, so does the race score.
 
@@ -479,7 +477,7 @@ How can we check whether our theories about the relationship between position ch
 
 	 In the following we will calculate the Pearson correlation equivalent for all variables in one go by creating a matrix.
 
-	 Select the fields DNF_COUNT, DNF_DUE_TO_ACCIDENT_COUNT, OVERTAKEN_POSITIONS_TOTAL and SCORE (use Control click to multi-select). Then right click on any of the fields to open the Context Menu and choose the Correlation Matrix icon.
+	 Select the fields `DNF_COUNT`, `DNF_DUE_TO_ACCIDENT_COUNT`, `OVERTAKEN_POSITIONS_TOTAL` and `SCORE` (use Control click to multi-select). Then right click on any of the fields to open the Context Menu and choose the Correlation Matrix icon.
 
 	 ![Banner](images/create-corr-matrix.png)
 
@@ -493,29 +491,29 @@ How can we check whether our theories about the relationship between position ch
 
 	 Right now, we are only interested in the Pearson corr equivalent of SCORE with all other variables (as marked in the screenshot).
 
-	 Notice how OVERTAKEN_POSITIONS_TOTAL has the highest equivalent (0.38). This _may_ indicate that it is of relatively high importance to predict the SCORE.
+	 Notice how `OVERTAKEN_POSITIONS_TOTAL` has the highest equivalent (0.38). This _may_ indicate that it is of relatively high importance to predict the SCORE.
 
 	 In contrast, imagine we were to find no correlation between a variable and the target, then it's likely not to be of any value in predicting that target.
 
 	 ![Banner](images/correlation-matrix.png)
 
-10. Earlier on, we noticed how wet/dry weather possibly influences the score of a race. We want to investigate this further. However, we cannot use a correlation diagram in this case, since WEATHER_WET is not a continuous number but rather a category ('Y' or 'N').
+10. Earlier on, we noticed how wet/dry weather possibly influences the score of a race. We want to investigate this further. However, we cannot use a correlation diagram in this case, since `WEATHER_WET` is not a continuous number but rather a category ('Y' or 'N').
 
-   We can investigate the relationship between a categorical variable (such as WEATHER_WET) and a continuous variable (such as SCORE) using a Box Plot.
+   We can investigate the relationship between a categorical variable (such as `WEATHER_WET`) and a continuous variable (such as `SCORE`) using a Box Plot.
 
 	 First, create some empty space to work on by clicking the + icon next to Canvas 1 (bottom of the screen).
 
 	 ![Banner](images/create-canvas.png)
 
-11. Now create a new Boxplot by selecting NAME_YEAR, SCORE and WEATHER_WET (use Control + Click to select multiple fields). Then right-click on any of the fields to bring up the context menu and click "Pick Visualization". Click the Boxplot icon.
+11. Now create a new Boxplot by selecting `NAME_YEAR`, `SCORE` and `WEATHER_WET` (use Control + Click to select multiple fields). Then right-click on any of the fields to bring up the context menu and click "Pick Visualization". Click the Boxplot icon.
 
    ![Banner](images/boxplot1.png)
 
 12. Rearrange the chart configuration to be as follows:
 
-   * Values (Y-Axis): SCORE   
-   * Category (X-Axis): WEATHER_WET
-   * Detail (Box): NAME_YEAR
+   * Values (Y-Axis): `SCORE`
+   * Category (X-Axis): `WEATHER_WET`
+   * Detail (Box): `NAME_YEAR`
 
 	 ![Banner](images/rearrange-boxplot.png)
 
@@ -524,7 +522,7 @@ How can we check whether our theories about the relationship between position ch
    How to read this type of chart?
 	 The mean of the data set is indicated by the small horizontal line within the boxes. We see that the mean fan score for races with wet weather is quite a bit higher than for races with dry weather.
 	 The top and bottom end of the boxes show where the mid 50% of the fan scores lie. We can conclude that scores in general are significantly higher than races with dry weather.
-	 However, as with the other variables that we investigated, there are outliers that are quite far outside of the boxes. We see that there are dry weather races that also result in high scores. So again, the WET_WEATHER factor looks important, but we can safely assume that it is not the only factor that influences the score.
+	 However, as with the other variables that we investigated, there are outliers that are quite far outside of the boxes. We see that there are dry weather races that also result in high scores. So again, the `WET_WEATHER` factor looks important, but we can safely assume that it is not the only factor that influences the score.
 
 10. Save the project by clicking on the Save icon and name it "Correlations".
 
