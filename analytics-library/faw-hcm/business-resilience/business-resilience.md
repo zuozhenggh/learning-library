@@ -1,5 +1,5 @@
 
-## Example 2: Business Resilience
+## Task 2: Business Resilience
 
 1. For: Configuration Deck, DVA file, Image sample, Catalog file, and Data Files-xls format, please
 
@@ -15,7 +15,7 @@
 
 This is a representation of the Fusion Application Reporting:
 
-![Business Resilience](../diversity-inclusion/images/business-resilience.png)
+![Business Resilience](../business-resilience/images/business-resilience.png)
 
 ## Acknowledgements
 

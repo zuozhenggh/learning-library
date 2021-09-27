@@ -143,6 +143,8 @@ In this task, you use the ``-createDuplicateDB`` command in DBCA to duplicate CD
 
 1. Run the `-createDuplicateDB` command. This step takes a few minutes to complete.
 
+    *This is the new feature!*
+
     ```
     $ <copy>dbca -silent \
     -createDuplicateDB \
@@ -325,7 +327,7 @@ Execute the `-createDuplicateDB` command again to duplicate CDB1 as a single ind
 
 2. View the `listener.ora` file and verify that DBCA added the listener information for `LISTENER_OMFCDB1`.
 
-    Dynamic service registration does not make use of the `listener.ora` file; however, your listeners needs to be listed in this file if you want to manage them with the Listener Control Utility.
+    Dynamic service registration does not make use of the `listener.ora` file. However, your listeners must be listed in this file if you want to manage them with the Listener Control Utility.
 
     ```
     $ <copy>cat $ORACLE_HOME/network/admin/listener.ora</copy>
@@ -537,4 +539,4 @@ To restore your environment, delete DUPCDB1 and OMFCDB1 and disable `ARCHIVELOG`
 ## Acknowledgements
 - **Primary Author** - Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By** - Blake Hendricks, Solutions Engineer, September 2 2021
+- **Last Updated By** - Blake Hendricks, Solutions Engineer, September 21 2021

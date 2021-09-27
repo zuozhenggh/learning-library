@@ -27,9 +27,9 @@ In this lab, you will:
 
 	![](./images/create-collection.png)
 
-2. Provide a name for your collection in the field **Collection Name - products** and click **Create**.
+2. Provide a name for your collection in the field **Collection Name - products** and click **Create**. Note that the collection name is case-sensitive. You must enter products in all lower-case, do not use PRODUCTS or Products.
 
-	![](./images/products.png)
+	![](./images/new-products.png)
 
 3. A notification pops up that displays `products` collections is created.
 
