@@ -15,7 +15,7 @@
 
 This is a representation of the Fusion Application Reporting:
 
-![Business Resilience](../diversity-inclusion/images/business-resilience.png)
+![Business Resilience](../business-resilience/images/business-resilience.png)
 
 ## Acknowledgements
 

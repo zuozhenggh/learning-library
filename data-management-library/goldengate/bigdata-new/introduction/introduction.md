@@ -59,6 +59,6 @@ The labs will walk the end-user through how to add all components of Oracle Gold
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, August 2021
+* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, September 2021
 
 
