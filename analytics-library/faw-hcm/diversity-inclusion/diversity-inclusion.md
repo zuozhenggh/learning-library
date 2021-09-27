@@ -20,143 +20,137 @@ These images are a product showcase for HCM. Below steps present a demo flow whi
 
 1. Accessing an Instant Demo environment follow this URL: https://demo.oracle.com/apex/f?p=350:1 
 Select **Instant** and select one of the 5 shared GSI environments. Select an environment link name assigned for your demo:
-
-
-
-    ![Access Demo Environment](<../diversity-inclusion/images/di-access-demo-instant.png>)
+   ![Access Demo Environment](../diversity-inclusion/images/di-access-demo-instant.png)
 
     Choose an environment for Fusion:
 
-    ![Access Demo Environment](<../diversity-inclusion/images/choose-environment.png>)
+   ![Access Demo Environment](../diversity-inclusion/images/choose-environment.png)
 
 2. Accessing the environment, you need to gain authentication via password. Launch the environment and sign in. Follow this click path to do so. 
 Copy the password to the clipboard, select **Launch Demo** Environment:
-
-
-
-    ![Access Demo Environment](<../diversity-inclusion/images/copy-password.png>)
+   ![Access Demo Environment](../diversity-inclusion/images/copy-password.png)
 
     On the next page select **HCM Cloud Login**:
-
-    ![Access Demo Environment](<../diversity-inclusion/images/hcm-cloud-login.png>)
+  
+   ![Access Demo Environment](../diversity-inclusion/images/hcm-cloud-login.png)
 
 3. You gain authentication via password, launch the environment and sign in. Enter the user id for the associated demonstration Flow -michelle.shannon- Paste the password copied from the previous page and Sign in:
 
-    ![Sign in for HCM](<../diversity-inclusion/images/sign-in-hcm.png>)
+    ![Sign in for HCM](../diversity-inclusion/images/sign-in-hcm.png)
 
 4. Executives will have a better understanding of current situation in their organization, with the help of Analytics (easy to read). After logging in, go to **My Reporting Tab-KPIs** tile. It will take you to FAW custom content–**Business Resilience** Tab (if Business Resilience Tab is not the defaulted tab in FAW, click on that tab).
 
-    ![My Reporting KPI tile](<../diversity-inclusion/images/my-reporting.png>)
+    ![My Reporting KPI tile](../diversity-inclusion/images/my-reporting.png)
 
 5. Let’s meet the Persona. This is Michelle Shannon CHRO:
 
-    ![Michelle Shannon](<../diversity-inclusion/images/michelle-shannon-persona-.png>)
+    ![Michelle Shannon](../diversity-inclusion/images/michelle-shannon-persona-.png)
 
 6. Michelle starts her day reviewing a summary deck of workforce management measures for the organization. Select the **burger** in the Headcount by Gender card and select **Diversity Analysis**:
 
-    ![Headcount by Gender card](<../diversity-inclusion/images/headcount-by-gender-card.png>)
+    ![Headcount by Gender card](../diversity-inclusion/images/headcount-by-gender-card.png)
 
 7. These KPIs help us see that there is a situation that needs to be fixed in the organization. Diversity Analysis link will take you to **Workforce Trends** tab-Select the **Global Workforce** tab:
 
-    ![Global Workforce](<../diversity-inclusion/images/global-workforce.png>)
+    ![Global Workforce](../diversity-inclusion/images/global-workforce.png)
 
 8. Understand that age band diversity tendencies are a key source of unconscious bias most organizations do not realize they are experiencing. Select **New Joiners** tab:
 
-    ![New Joiners](<../diversity-inclusion/images/new-joiners.png>)
+    ![New Joiners](../diversity-inclusion/images/new-joiners.png)
 
 9. To go deeper, we can easily add filters to analyse a more specific aspect of the new joiners. Select the filter **Is Manager**-then select **Yes**:
 
-    ![Filter Is Manager](<../diversity-inclusion/images/filter-is-manager.png>)
+    ![Filter Is Manager](../diversity-inclusion/images/filter-is-manager.png)
 
 10. Refine the analysis to see only new joiners that we hired as Managers. We clearly see that we still hire more men than women when it comes to positions with responsibilities. This is something we can take as an action for future recruitments. Select **Leavers** tab:
 
-    ![Leavers tab](<../diversity-inclusion/images/leavers-tab.png>)
+    ![Leavers tab](../diversity-inclusion/images/leavers-tab.png)
 
 11. By analysing further, we learn from this Sankey diagram more about the reasons why women are leaving the organization and the main reason is because they find better opportunities elsewhere. This new analysis gave us an interesting insight: we clearly do not offer the right career opportunities for women and that’s why they are leaving. Select **Current Situation** tab:
 
-    ![Current Situation tab](<../diversity-inclusion/images/current-situation-tab.png>)
+    ![Current Situation tab](../diversity-inclusion/images/current-situation-tab.png)
 
 12. This dashboard allow us to clearly see and understand why women have a tendency to leave the company. We need now to take corrective actions to ensure we propose career opportunities for talented women. Scroll down:
 
-    ![Tendency to leave the company](<../diversity-inclusion/images/tendency-to-leave-the-company.png>)
+    ![Tendency to leave the company](../diversity-inclusion/images/tendency-to-leave-the-company.png)
 
 13. By adding filters, Oracle Cloud allows us to identify and isolate the women at risk in just a few clicks. Select the filter **Gender** then select **Female**:
 
-    ![Female Gender Filter](<../diversity-inclusion/images/female-gender-filter.png>)
+    ![Female Gender Filter](../diversity-inclusion/images/female-gender-filter.png)
 
 14. Access the Pottential filter data. Select filter **Potential** then select **High**:
 
-    ![Filter Potential](<../diversity-inclusion/images/filter-potential.png>)
+    ![Filter Potential](../diversity-inclusion/images/filter-potential.png)
 
 15. The sentiment analysis is a machine learning script that was applied to the comments that the employees provided during their last performance review. With this information, we can find very quickly who are the most dissatisfied women in the company. Select the red (negative) bar that represent High potential women at risk of leaving the organization and then Right Click:
 
-    ![Potential risk of leaving](<../diversity-inclusion/images/potential-risk-of-leaving.png>)
+    ![Potential risk of leaving](../diversity-inclusion/images/potential-risk-of-leaving.png)
 
 16. By refining the analysis we can Isolate the most dissatisfied High Potential women. Hit **Keep selected**:
 
-    ![Dissatisfied High Potential](<../diversity-inclusion/images/dissatisfied-high-potential.png>)
+    ![Dissatisfied High Potential](../diversity-inclusion/images/dissatisfied-high-potential.png)
 
 17. With machine learning and data correlation, we’ve been able, in less than a minute to identify the 5 high potential women who are the most at risk of leaving. From there, you can with a simple right click access there employee profile. This represents all high potential women that Michelle can now do more research about and personally contact them to determine how to help improve their sentiment and satisfaction with the organization. Analysis turned to action. **Right Click** on Susan Copeland (or Fiona Morell) then select **Employee Detail**. Note that from the Shared FAW environment you cannot click directly to the employee data. SCs will need to configure this link when they have their own environments provided- see how at the end of this script.
 
-    ![Access Employee Detail](<../diversity-inclusion/images/access-employee-detail.png>)
+    ![Access Employee Detail](../diversity-inclusion/images/access-employee-detail.png)
 
 18. Acess all the information you need for a profile: contact, manager name. We can now take immediate action. Employee Detail page opens:
 
-    ![Employee Detail page](<../diversity-inclusion/images/employee-detail-page.png>)
+    ![Employee Detail page](../diversity-inclusion/images/employee-detail-page.png)
 
 19. In some countries, legislation allows managing information such as Religion and Ethnicity. Oracle Cloud HCM is preconfigured for more than 170 countries and employee profiles are aligned with local legislations. Hover over **Headcount by Ethnicity** card-select the **Hamburger Menu** and navigate to **Inclusion analysis**:
 
-    ![Inclusion analysis](<../diversity-inclusion/images/inclusion-analysis.png>)
+    ![Inclusion analysis](../diversity-inclusion/images/inclusion-analysis.png)
 
 20. As any other information, Religion and Ethnicity can be use din analytics. When it comes to diversity they can be considered this is why you can here review Religion and Ethnicity. Inclusion link will take us to “Inclusion” tab. 
 By gender:
  **click path 1**\-right click on the **Headount by gender** graph and select **Use as a filter**. Select a gender to automatically filter and refine the other graphs. Other population criteria like the managers for instance: **click path 2**\-click **Is Manager** and select **Yes**. This analysis can focus on any sceptic country: **click path 3**\-click on **Country** and view the list.
 
-    ![Religion and Ethnicity analytics](<../diversity-inclusion/images/religion-and-ethnicity-analytics.png>)
+   ![Religion and Ethnicity analytics](../diversity-inclusion/images/religion-and-ethnicity-analytics.png)
 
 21. It appears that Top talent retention is lowest in the company. Also female gender ratio is dropping. Let’s take a deeper look into our Top Talent Retention–select **expand arrows**. To access more detail on Top Talent Retention–click on the expand symbol in the associated card:
 
-    ![Top Talent Retention](<../diversity-inclusion/images/top-talent-retention.png>)
+    ![Top Talent Retention](../diversity-inclusion/images/top-talent-retention.png)
 
 22. We do have an issue with Top Talent retention–The next logical reports are attached here for my review. Review the graph revealing hover-over values-Drill into the **Top Talent Retention** Dashboard by clicking on the hyperlink:
 
-    ![Top Talent Retention Dashboard](<../diversity-inclusion/images/top-talent-retention-dashboard.png>)
+    ![Top Talent Retention Dashboard](../diversity-inclusion/images/top-talent-retention-dashboard.png)
 
 23. Access data from sales. Select **Sales row**-**Data**–**top talent** % lower and Sales even lower. Note: the one consistent fact is talent retention continues to plummet over the past 4 quarters. Select a department analysis to see the hover-over value display. Drill in for more detail on the sales department:
 
-    ![Department Analysis](<../diversity-inclusion/images/department-analysis.png>)
+    ![Department Analysis](../diversity-inclusion/images/department-analysis.png)
 
 24. Top 5 names in the top talent workers should also include some women, but they are all men. **Navigate back** and then to **Team Effectiveness Analysis** from the same Top Talent Retention card:
 
-    ![Team Effectiveness Analysis](<../diversity-inclusion/images/team-effectiveness-analysis.png>)
+    ![Team Effectiveness Analysis](../diversity-inclusion/images/team-effectiveness-analysis.png)
 
 25. Some warnings start to show in the Sales org and even lower we can see some definite signs of a problem–we see two managers in particular D. Mehta and S. Rebound have even worse top performer issues and we can see compa ratio is low and female gender ratio is really low–looks like we may have some issues in these two organizations. Access additional analysis by selecting the **Top Talent Retention score** in the Team effectiveness analysis:
 
-    ![Access Additional Analysis](<../diversity-inclusion/images/access-additional-analysis.png>)
+    ![Access Additional Analysis](../diversity-inclusion/images/access-additional-analysis.png)
 
 26. Fusion Analytics allows us to visualize our data in ways that helps our leaders make sound business decisions. Let’s take a look at how we can focus on attrition. The reasons are many–but the main reason noted across time is no advancement potential. Select **Female** in the bottom graph and it then filters the entire page highlighting the selected gender-Navigate to the next visualization by selecting the **Attrition analysis** tab at the bottom of the analytics page:
 
-    ![Attrition Analysis](<../diversity-inclusion/images/attrition-analysis.png>)
+    ![Attrition Analysis](../diversity-inclusion/images/attrition-analysis.png)
 
 27. Here we see the areas that are facing significant attrition and we can see that many top performers are underpaid and leaving. Many of the leavers are the top performing woman employees. Select the female gender in the Termination Count by Overall Rating and it filters all results on the page to reflect Female values. Select the **Churn Prediction** tab for additional information:
 
-    ![Churn Prediction Tab](<../diversity-inclusion/images/churn-prediction-tab.png>)
+    ![Churn Prediction Tab](../diversity-inclusion/images/churn-prediction-tab.png)
 
 28. Use the link to drill to My team in HCM and relate the story to the team detail there. By examining my team and the employees due for promotion, you can make the point that the attrition can be headed off. NOTE: Make sure your action points to your Cloud HCM demo environment. Select **Headcount by Predicted turnover** in the donut graph to select the **Geos** and **Job Families** most at risk:
 
-    ![Geos and Job Families](<../diversity-inclusion/images/geos-and-job-families.png>)
+    ![Geos and Job Families](../diversity-inclusion/images/geos-and-job-families.png)
 
 29. To update Drill to Connections from FAW to HCM, from the main menu go to KPI’s. Search for the KPI called **Employee Name**, **Manager**, **Job**, **Country**, **Prediction Confidence**, **Predicted Turnover**, **Person ID**, **Assignment ID KPI** select and open it. Select the KPI and choose **add** (or edit) a menu option:
 
-    ![Drill to Connections](<../diversity-inclusion/images/drill-to-connections.png>)
+    ![Drill to Connections](../diversity-inclusion/images/drill-to-connections.png)
 
 30. To update the **Employee Detail**, drill to Connections from FAW to HCM. Enter **My Teams** and insert the deeplink to the HCM Environment you have been assigned. Be certain to grab from the Connections page for Susan Copeland page when populated with the appropriate content loaded. Save by hitting **OK** and return to the **Employee Name, Manager, Job, Country, Prediction Confidence, Predicted Turnover, Person ID, Assignment ID** KPI. Right click on the KPI to verify the new deep link has been added and select to test:
 
-    ![Employee Detail Drill](<../diversity-inclusion/images/employee-detail-drill.png>)
+    ![Employee Detail Drill](../diversity-inclusion/images/employee-detail-drill.png)
 
 31. To update **My Teams** drill to My Teams from FAW to HCM. Enter **My Team** and insert the deeplink to the HCM Environment you have been assigned. Be certain to grab from the My Team page when populated with the appropriate content loaded. Save by hitting **OK** and return to the **Headcount by Predicted Turnover** KPI. Right click on the KPI to verify the new deep link has been added and click to test:
 
-    ![My Teams Drill](<../diversity-inclusion/images/my-teams-drill.png>)
+    ![My Teams Drill](../diversity-inclusion/images/my-teams-drill.png)
 
 
 ## Acknowledgements
