@@ -113,7 +113,7 @@ spec:
       <KEY1>: {VALUE1}
 
 ```
-Example Yaml:
+Example Yam:
 
 ```yaml
 
