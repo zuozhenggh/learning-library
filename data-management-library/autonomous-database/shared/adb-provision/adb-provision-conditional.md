@@ -14,6 +14,10 @@ In this lab, you will:
 
 -   Learn how to provision a new Autonomous Database
 
+### Prerequisites:
+
+- This lab requires completion of the Get Started section in the Contents menu on the left.
+
 ## Task 1: Choose ADW or ATP from the Services Menu
 
 1. Login to the Oracle Cloud.
@@ -119,7 +123,7 @@ In this lab, you will:
 
 8. Choose network access:
     - For this lab, accept the default, "Secure access from everywhere".
-    - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Private endpoint access only" in the Choose network access area.
+    - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
     ![Choose the network access.](./images/task2-8.png " ")
@@ -149,7 +153,7 @@ In this lab, you will:
 
     ![Database instance homepage.](./images/task2-11.png " ")
 
-You may now **proceed to the next lab**.
+Please *proceed to the next lab*.
 
 ## Learn More
 
@@ -160,4 +164,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Brianna Ambler, August 2021
+- **Last Updated By/Date** - Richard Green, September 2021

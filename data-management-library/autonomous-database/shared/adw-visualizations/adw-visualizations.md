@@ -4,11 +4,16 @@
 
 This lab will walk you through the steps to connect *Oracle Analytics Desktop* (formerly Oracle Data Visualization Desktop) to an Oracle Autonomous Database, either in Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP), and create data visualizations.  Unlimited Oracle Analytics Desktop licenses are included when connecting to an ADW  or ATP data source.  Instructions will be provided to connect your previously created Autonomous Database instance (using sample data loaded into the database) to Oracle Analytics Desktop.  We will demonstrate how you can immediately gain insights and create beautiful data visualizations.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 - Learn how to connect a desktop analytics tool to the powerful Autonomous Database
 - Learn how to connect to the database from Oracle Analytics Desktop
 - Learn how to create a simple data visualization project with Oracle Analytics Desktop
 - Learn how to access and gain insights from data in the Autonomous Database
+
+### Prerequisites
+- This lab requires completion of the Provision Autonomous Database lab in the Contents menu on the left.
 
 ## Task 1: Install Oracle Analytics Desktop on a Windows Desktop
 
@@ -99,11 +104,11 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
     ![Click Download Wallet.](./images/download-instance-wallet.png " ")
 
-   *Note: Oracle recommends that you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.*
+    > **Note:** Oracle recommends that you provide a database-specific wallet, using Instance Wallet, to end users and for application use whenever possible. Regional wallets should only be used for administrative purposes that require potential access to all Autonomous Databases within a region.
 
 3. Specify a password of your choice for the wallet. You will need this password when connecting Oracle Analytics Desktop to the database in the next step. Click **Download** to download the wallet file to your client machine.
 
-   *Note: If you are prevented from downloading your Connection Wallet, it may be due to your browser's pop-up window blocker. Please disable it or create an exception for Oracle Cloud domains.*
+    > **Note:** If you are prevented from downloading your Connection Wallet, it may be due to your browser's pop-up window blocker. Please disable it or create an exception for Oracle Cloud domains.
 
     ![Enter password and confirm password.](./images/password-download-wallet.png " ")
 
@@ -140,7 +145,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
 10. Click the __ADMIN__ schema in the Data Warehouse.
 
-    *Note: If you do not see schemas because you are behind a firewall or on a VPN, you may need to use an alias or shut down the VPN to connect to your ADW database.*
+    > **Note:** If you do not see schemas because you are behind a firewall or on a VPN, you may need to use an alias or shut down the VPN to connect to your ADW database.*
 
    ![Select Admin.](./images/select_admin_schema.jpg " ")
 
@@ -150,7 +155,7 @@ As ADW and ATP accept only secure connections to the database, you need to downl
 
 12. First click the __Add All__ label in the left column, and type a new Name for the Data Set, naming it __SALES_HISTORY__. You may click __Get Preview Data__ at the bottom to see some example records. Click the __Add__ button to add the Data Set.
 
-  *NOTE: It is important to use the new name of __SALES_HISTORY__, as the rest of the lab steps will reference that name.*
+    > **Note:** It is important to use the new name of __SALES_HISTORY__, as the rest of the lab steps will reference that name.*
 
    ![Click Add All on the left and then click Add on the right.](./images/add_all_data_to_data_set.jpg " ")
 
@@ -207,8 +212,6 @@ This task enables you to share your project file with colleagues.
 
    ![Choose File.](./images/export_project_dva_to_file.jpg " ")  
 
-Please *proceed to the next lab*.
-
 ## Want to Learn More?
 
 Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/create-reports-analytics.html#GUID-30A575A6-2CAD-4A8A-971E-2F751C8E6F90) for documentation on working with analytics and visualization of data in your Autonomous Database.
@@ -217,4 +220,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, March 2021
+- **Last Updated By/Date** - Richard Green, September 2021

@@ -6,7 +6,7 @@
         {
             "title": "Introduction",
             "description": "This is the introduction for the lab",
-            "type": "livelabs",
+            "type": "freetier",
             "filename": "../../introduction/introduction.md"
         },
 		{
@@ -17,25 +17,25 @@
         {
             "title": "Lab 1: Baggage Tracking Demo",
             "description": "Experience a live baggage tracking demo",
-            "type": "livelabs",
+            "type": "freetier",
             "filename": "../../baggage-tracking-demo/baggage-tracking-demo.md"
         },
         {
             "title": "Lab 2: Prepare Your Environment",
             "description": "Perform the iniital setup operations",
-            "type": "livelabs",
+            "type": "freetier",
             "filename": "../../setup-environment/setup-environment.md"
         },
         {
             "title": "Lab 3: Create Tables, Load Tables",
             "description": "Create and populate your tables",
-            "type": "livelabs",
+            "type": "freetier",
             "filename": "../../create-populate-tables/create-populate-tables.md"
         },
         {
             "title": "Lab 4: Explore Data, Run Queries",
             "description": "This is the complete template for LiveLabs content developers",
-            "type": "livelabs",
+            "type": "freetier",
             "filename": "../../explore-run-queries/explore-run-queries.md"
         },
 		{

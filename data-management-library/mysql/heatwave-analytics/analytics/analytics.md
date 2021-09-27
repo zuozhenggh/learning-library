@@ -15,6 +15,8 @@ In this lab, you will:
 
 - All previous labs have been successfully completed.
 
+[Lab 4 Demo](youtube:DCc8FM6ZHtA)
+
 ## Task 1: Create Oracle Analytics Cloud Instance 
 
 1. From the Cloud shell connect to MySQL DB System:
@@ -210,6 +212,7 @@ In this lab, you will:
 
 **Well done, Congratulations!** You now have all the tools to discover insights in your data!
 
+[Recap](youtube:faYdjp-r__4)
 
 ## Learn More
 

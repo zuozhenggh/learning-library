@@ -8,7 +8,7 @@
 
 # Introduction
 
-**Description**: This content can be imported into an Allocated FAW Environment. You cannot use the content below to import to a FAW Docker or VM Image. We've included both a video and document below that details how you can download content and import it into an FAW Allocated environment.
+**Description**: This content can be imported into an Allocated FAW Environment. You cannot use the content below to import to a FAW Docker or VM Image. e've included both a video and document below that details how you can download content and import it into an FAW Allocated environment.
 
 - This lab walks you through the Steps to Import custom FAW Content. We created a document with all detailed steps.
 
@@ -16,7 +16,7 @@
 
 **Estimate time of Workshop**: 45 minutes
 
-## About FAW for HCM
+## About <product technology=""></product>
 
 
 
