@@ -41,7 +41,7 @@ In this lab, you will be guided through the following tasks:
     <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
     ```
 
-    ```
+  
 3.	Run the following four queries and record the runtime:
 
  **Query a)** Find per-company average age of passengers from Switzerland, Italy and France
@@ -159,6 +159,9 @@ SELECT GROUP_CONCAT(log->>"$.sql" SEPARATOR '\n') AS "SQL Script" FROM sys.heatw
 
     ![INTRO](./images/pilot03.png " ") 
 
+5. The final test result should look like the following:
+
+    ![INTRO](./images/final-result.png " ") 
 ## Learn More
 
 * [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)

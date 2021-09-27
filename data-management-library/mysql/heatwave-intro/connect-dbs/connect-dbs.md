@@ -144,7 +144,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     
     - Copy `MDS-Client` plus  the `Public IP Address` to the notepad
 
-2. Copy the public IP address of the active MySQl Database Service Instance to your notepad
+2. Copy the private IP address of the active MySQl Database Service Instance to your notepad
 
     - Go to Navigation Menu > Databases > MySQL
      ![](./images/db-list.png " ")
