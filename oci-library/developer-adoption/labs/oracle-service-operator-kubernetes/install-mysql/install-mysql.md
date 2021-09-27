@@ -1,15 +1,6 @@
 
 ## Deploy Oracle MySQL DB System Service from Kubernetes
 
-- [Introduction](#introduction)
-- [MySQL DB System Pre-requisites](#pre-requisites-for-setting-up-mysql-dbsystems)
-- [MySQL DB System Specification Parameters](#mysql-dbsystem-specification-parameters)
-- [MySQL DB System Status Parameters](#mysql-dbsystem-status-parameters)
-- [Provision](#provisioning-a-mysql-dbsystem)
-- [Bind](#binding-to-an-existing-mysql-dbsystem)
-- [Update](#updating-a-mysql-dbsystem)
-- [Access Information in Kubernetes Secret](#access-information-in-kubernetes-secrets)
-
 ## Introduction
 
 [Oracle MySQL Database Service](https://www.oracle.com/mysql/) is a fully managed database service that lets developers quickly develop and deploy secure, cloud native applications using the world’s most popular open source database. Oracle MySQL Database Service is also offered via the OCI Service Operator for Kubernetes, making it easy for applications to provision and integrate seamlessly with MySQL databases.
