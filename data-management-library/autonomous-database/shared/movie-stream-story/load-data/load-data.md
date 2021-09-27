@@ -439,7 +439,7 @@ alter table custsales add constraint fk_custsales_genre_id foreign key("GENRE_ID
 </copy>
 ```
 
-2.  To check one example of how the unique constraints work, we can now try to reload into the **pizza_location** table the same data we have already loaded. This should return an error as the data already exists in the table and we do not want to duplicate it. To do this, click on the bin icon to clear the worksheet, then copy and paste and Run the following statement to check the number of rows in the **pizza_location** table:
+2.  To check one example of how the unique constraints work, we can now try to reload into the **pizza\_location** table the same data we have already loaded. This should return an error as the data already exists in the table and we do not want to duplicate it. To do this, click on the bin icon to clear the worksheet, then copy and paste and Run the following statement to check the number of rows in the **pizza\_location** table:
 
 ```
 <copy>
