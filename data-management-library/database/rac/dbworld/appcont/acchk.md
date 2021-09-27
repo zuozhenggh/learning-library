@@ -64,7 +64,7 @@ Make sure you are using a service that is enabled for Application Continuity (AC
 
 There is no need to introduce any failures - just exercise as much of your application as possible
 
-You can use either client for this exercise. We will demonstrate both:   
+Us the Java client for this exercise:   
 
 Use ACDEMO
 
@@ -77,35 +77,6 @@ runtacreplay
 ````
 ![](./images/runtacreplay.png " ")
 
-or if using the Python client, first check the credentials being used
-
-````
-sudo su - oracle
-cd /home/oracle/py_client
-vi db_config.py
-````
-
-the db_config.py file contains the credentials for logging in to the database. *user* is **hr**, password is the system password you have been using (default is W3lc0m3#W3lc0m3#) and the *dsn* can be either an EZConnect Plus syntax or a TNS alias, *minconn* is the number of connections to create (100). Note that while this client uses the OCI Session pool it does not really take advantage of its capabilities.
-
-For example:
-
-````
-$ more db_config.py
-user = "hr"
-pw = "W3lc0m3#W3lc0m3#"
-dsn = "//lvracdb-s01-2021-09-07-033110-scan.pub.racdblab.oraclevcn.com/tac_service.pub.racdblab.oraclevcn.com?CONNECT_TIMEOUT=120&TRANSPORT_CONNECT_TIMEOUT=2&RETRY_COUNT=20&RETRY_DELAY=3&LOAD_BALANCE=ON"
-minconn=100  
-````
-
-and then run the Python application
-
-````
-<copy>
-cd /home/oracle/py_client
-python3 tac_demo.py
-</copy>
-````
-
 4. Generate the acchk report from within SQL\*Plus
 
     ````
@@ -116,30 +87,25 @@ python3 tac_demo.py
     </copy>
     ````
 
-![](./images/acchk_report-2.png " ")
+![](./images/acchk_report-2a.png " ")
 
-The report above shows the Python client *tac\_demo* using the TAC-enabled service *tac\_service*. As you can see this application is provided 100% protection from TAC.
+The report above shows the Java client *acdemo* using the TAC-enabled service *tac\_service*. As you can see this application is provided 100% protection from TAC.
 
 5. You may have the choice of using AC or TAC (if you are using Oracle Database 19c clients and you use an Oracle Connection Pool). Our recommendation is to always start with TAC if you can, but there may be reasons why AC may be considered. Use acchk to compare the protection offered by Application Continuity
 
-We will use the Python client in this example.
-Edit *db\_config.py* to configure the *dsn* to use the ac-enabled service, *ac\_service*
+We will use the Java client in this example.
+The script *runreplay* will configure the acdemo client to use the *ac\_service*
+
+You can examine the file *ac_replay.properties* to show the configuration:
 
 ````
 <copy>
 sudo su - oracle
-cd /home/oracle/py_client
-vi db_config.py
+cd acdemo
+cat ac_replay.properties
 </copy>
 ````
-
-Select a service that is enabled for AC (ac\_service)
-
-````
-user = "hr"
-pw = "W3lc0m3#W3lc0m3#"
-dsn = "//lvracdb-s01-2021-09-07-033110-scan.pub.racdblab.oraclevcn.com/ac_service.pub.racdblab.oraclevcn.com?CONNECT_TIMEOUT=120&TRANSPORT_CONNECT_TIMEOUT=2&RETRY_COUNT=20&RETRY_DELAY=3&LOAD_BALANCE=ON"
-````
+![](./images/ac_replay_properties.png " ")
 
 6. Ensure ACCHK is enabled
 ````
@@ -153,50 +119,45 @@ When in SQL\*Plus run the following command:
 execute dbms_app_cont_admin.acchk_set(true);
 ````
 
-and then run the Python application, tac\_demo
+Run the *runreplay* script:
 
 ````
 <copy>
 sudo su - oracle
-cd py_client
-python3 tac_demo.py  
+cd /home/oracle/acdemo
+runreplay
 </copy>
-````   
+````
 
 The acchk report can be either **FULL** or **SUMMARY**. The report is produced per PDB per SERVICE
 
-7. Edit **db_config.py** to select the TAC enabled service (tac\_service)
-
-````
-user = "hr"
-pw = "W3lc0m3#W3lc0m3#"
-dsn = "//<REPLACE SCAN NAME>/tac_service.pub.racdblab.oraclevcn.com?CONNECT_TIMEOUT=120&TRANSPORT_CONNECT_TIMEOUT=2&RETRY_COUNT=20&RETRY_DELAY=3&LOAD_BALANCE=ON"
-````
-and run the Python program again
+7. To select the TAC enabled service (tac\_service) choose the *runtacreplay* script
 
 ````
 <copy>
-sudo su - oracle
-cd py_client
-python3 tac_demo.py  
+runtacreplay
 </copy>
 ````
+to run acdemo with the service enabled for TAC
 
 7. And generate the report again
 
-![](./images/acchk_report-3.png " ")
+![](./images/acchk_report-3a.png " ")
 
 You should now see two entries, one for the service *tac\_service* and one for the service *ac\_service*.
 
-The **failover_type** column indicates AUTO for TAC and TRANS (abbreviation of TRANSACTION) for AC. You may notice that the level of protection is quite different (for the python application at least).
+The **failover_type** column indicates AUTO for TAC and TRANS (abbreviation of TRANSACTION) for AC. You may notice that the level of protection is almost identical (100% of calls, but some difference in time protected).
 
-This is an extreme example - there are 2 calls in each of the database requests, and one of them is not protected in the AC case, hence you only get approximately 50% protection. The reason it is not protected is shown:
+This is an extreme example - there are 2 calls in each of the database requests, and one of them is not protected in the AC case, hence you only get approximately 50% protection. The reason it is not protected is shown, for example:
 
 ````
-Event Type Error Code              Program               Module               Action        SQL_ID            Call      Total
+Event Type       Error Code              Program               Module               Action        SQL_ID   Call              Total
 ---------------- ---------- -------------------- -------------------- -------------------- ------------- --------------- ----------
-NEVER_ENABLED      41463 python3@lvracdb-s01-                                                                                 99
+DISABLE           41406     JDBC Thin Client     JDBC Thin Client                                            Session State O  51043
+DISABLE           41409     JDBC Thin Client     JDBC Thin Client                                                COMMIT         615
+NEVER_ENABLED     41462     JDBC Thin Client                                                                                      4
 ````
+A commit causes AC to disable. With TAC we will re-enable on the next call, with AC it is on the next request. The acdemo does not perform actions after the commit.
 
 8. ACCHK generates trace files from which it populates the database views DBA\_ACCHK\_EVENTS, DBA\_ACCHK\_EVENTS\_SUMMARY, DBA\_ACCHK\_STATISTICS and DBA\_ACCHK\_STATISTICS\_SUMMARY
 
