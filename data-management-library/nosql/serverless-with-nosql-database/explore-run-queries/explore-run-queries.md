@@ -220,19 +220,28 @@ The goal of this task is to understand the difference between the 2 data models 
 
     ````
     <copy>
-    SELECT *
-    FROM demo d
-    WHERE d.bagInfo.flightLegs.flightNo =ANY 'BM715';
+    SELECT count(*) FROM demo d;
     </copy>
     ````
+    This counts all the records in the table.
+
+    ````
+    <copy>
+    SELECT *
+    FROM demo d
+    WHERE d.bagInfo.flightLegs.flightNo =ANY 'BM254';
+    </copy>
+    ````
+    This will grab all records where a bag was on flight BM254.
 
     ````
     <copy>
     SELECT d.fullName, d.contactPhone, d.ticketNo , d.bagInfo.flightLegs.flightNo as bagInfo
     FROM demo d
-    WHERE d.bagInfo.flightLegs.flightNo =ANY 'BM715';
+    WHERE d.bagInfo.flightLegs.flightNo =ANY 'BM866';
     </copy>
     ````
+    This will grab basic information for bags on flight BM866.  We are also renaming a field in the output.
 
     ````
     <copy>
@@ -242,16 +251,18 @@ The goal of this task is to understand the difference between the 2 data models 
     AND d.bagInfo.flightLegs.flightNo =ANY "BM204";
     </copy>
     ````
+    This will grab basic information on bags that were on flight BM715 and BM204.
 
     ````
     <copy>
     SELECT d.fullName, d.contactPhone, d.ticketNo , d.bagInfo.flightLegs.flightNo as bagInfo
     FROM   demo d
-    WHERE  d.bagInfo.flightLegs.flightNo =ANY "BM715"
-    AND    d.bagInfo.flightLegs.flightNo =ANY "BM204"
+    WHERE  d.bagInfo.flightLegs.flightNo =ANY "BM604"
+    AND    d.bagInfo.flightLegs.flightNo =ANY "BM667"
     AND    size(d.bagInfo.flightLegs) = 2;
     </copy>
     ````
+    This will grab basic information on bags that were on flight BM604 and BM667 and the total journey was 2 legs.
 
 5. Write new queries to answer the following questions. This should give an appreciation of the types of queries that can be written against Oracle NoSQL Database Cloud Service.
 
@@ -277,7 +288,7 @@ This task deletes the tables that got created.
 
 <if type="paid">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.**
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -286,7 +297,7 @@ Set your compartment to 'demonosql'. Click the **freeTest** table, which will br
 
 <if type="freetier">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.**
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -295,7 +306,7 @@ Set your compartment to 'demonosql'. Click the **freeTest** table, which will br
 
 <if type="livelabs">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Select your compartment. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.**
+Select your compartment. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 

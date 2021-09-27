@@ -57,9 +57,9 @@ Estimated Time: 25 minutes
 </if>
 
 <if type="livelabs">
-3. On the 'Tables' screen there is a **Compartment** field on the left. Please make sure the compartment you were assigned is selected.  In Lab 2, task 1 you identified your compartment.  In this example, we are using demonosql.  Yours will be different.
+3. On the 'Tables' screen there is a **Compartment** field on the left. Please make sure the compartment you were assigned is selected.  In Lab 2, task 1 you identified your compartment. You will need to expand the root compartment, and then expand the **LiveLabs** compartment to find it. In this example, we are using demonosql.  Yours will be different.  You will not be able to create tables in any other compartment.
 
-  ![](./images/set-compartment.png)
+  ![](./images/livelab-compartment.png)
 </if>
 
 4. Click **Create table** and the 'Create table' screen appears.
@@ -195,7 +195,7 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
 
     ![](./images/row-inserted.png)
 
-5. Let's insert rows into the other tables. First we need to get back to the 'Tables' screen. Click **Tables** on top right.
+5. Let's insert rows into another table. First we need to get back to the 'Tables' screen. Click **Tables** on top right.
 
     ![](./images/click-tables.png)
 
