@@ -43,7 +43,7 @@ In this lab, you will be guided through the following tasks:
     ```
     <copy>USE airportdb;</copy>
     ```
-4. Query a - Find per-company average age of passengers from Switzerland, Italy and France
+4. **Query 1** - Find per-company average age of passengers from Switzerland, Italy and France
 
 5. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. You should see "Use secondary engine RAPID" in the explain plan. For example:
 
@@ -133,7 +133,7 @@ LIMIT 10;</copy>
      ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
-12. Query b -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
+12. **Query 2** -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
 
     ```
     <copy> SELECT
@@ -179,7 +179,7 @@ ORDER BY
 LIMIT 10;
     </copy>
     ```
-14. Query c - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
+14. **Query 3** - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
 
     ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
@@ -227,6 +227,10 @@ GROUP BY firstname , lastname;</copy>
     ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
+16. The final results should look like the following:
+
+    ![INTRO](./images/final-result.png " ") 
+
 You may now [proceed to the next lab](#next).
     
 ## Learn More

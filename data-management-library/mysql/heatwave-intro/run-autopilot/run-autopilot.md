@@ -44,7 +44,7 @@ In this lab, you will be guided through the following tasks:
   
 3.	Run the following four queries and record the runtime:
 
- **Query a)** Find per-company average age of passengers from Switzerland, Italy and France
+ **Query 1)** Find per-company average age of passengers from Switzerland, Italy and France
 
     ```
 <copy>SELECT 
@@ -66,7 +66,7 @@ ORDER BY airline.airlinename , avg_age
 LIMIT 10;
 </copy>
     ```
-**Query b)** Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports
+**Query 2)** Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports
     ```
 <copy>SELECT 
     airline.airlinename,
@@ -87,7 +87,7 @@ ORDER BY nb_tickets DESC , airline.airlinename
 LIMIT 10;
 </copy>
     ```
-**Query c)** Ticket price greater than 500, grouped by price
+**Query 3)** Ticket price greater than 500, grouped by price
     ```
     <copy> -- Query c) Ticket price greater than 500, grouped by price
 SELECT 
@@ -100,7 +100,7 @@ GROUP BY booking.price
 ORDER BY booking.price
 LIMIT 10; </copy>
     ```
-**Query d)** Ticket price greater than 400, grouped by firstname , lastname
+**Query 4)** Ticket price greater than 400, grouped by firstname , lastname
     ```
 <copy>SELECT 
     firstname,
@@ -159,9 +159,6 @@ SELECT GROUP_CONCAT(log->>"$.sql" SEPARATOR '\n') AS "SQL Script" FROM sys.heatw
 
     ![INTRO](./images/pilot03.png " ") 
 
-5. The final test result should look like the following:
-
-    ![INTRO](./images/final-result.png " ") 
 ## Learn More
 
 * [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
