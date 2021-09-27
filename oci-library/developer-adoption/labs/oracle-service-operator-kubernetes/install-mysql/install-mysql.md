@@ -159,6 +159,41 @@ spec:
       <KEY1>: <VALUE1>
 
 ```
+Example Yaml:
+
+```yaml
+
+#
+# Copyright (c) 2021, Oracle and/or its affiliates. All rights reserved.
+# Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.
+#
+
+apiVersion: oci.oracle.com/v1beta1
+kind: MySqlDbSystem
+metadata:
+  name: mysqldbsystem-sample
+spec:
+  compartmentId: ocid1.compartment.oc1..aaaaaaaaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  displayName: SampleDB
+  shapeName: MySQL.VM.Standard.E3.1.8GB
+  subnetId: ocid1.subnet.oc1.<region-shot-code>.aaaaaaaaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  configuration:
+    id: ocid1.mysqlconfiguration.oc1..aaaaaaaaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  availabilityDomain: XXXX:US-ASHBURN-AD-1
+  isHighlyAvailable: false
+  adminUsername:
+    secret:
+      secretName: admin-secret
+  adminPassword:
+    secret:
+      secretName: admin-secret
+  description: Creating a Sample DB MySqlDbSystem using operators
+  dataStorageSizeInGBs: 50
+  port: 3306
+  portX: 33060
+
+
+```
 
 Run the following command to create a CR to the cluster:
 ```sh
@@ -185,22 +220,4 @@ The MysqlDbSystem CR can be described as below:
 ```sh
 $ kubectl describe mysqldbsystems <NAME_OF_CR_OBJECT>
 ```
-
-
-
-## Access Information in Kubernetes Secrets
-
-The Access information of a OCI Service or Resource will be created as a Kubernetes secret to manage the MySQL DB System. The name of the secret can be provided in the CR yaml or by default the name of the CR will be used.
-
-You will get the access information as Kubernetes Secret to use the MySQL DB System. The following files/details will be made available to you:
-
-| Parameter           | Description                                                              | Type   |
-| ------------------  | ------------------------------------------------------------------------ | ------ |
-| `InternalFQDN`      | DNS endpoint                                                             | string |
-| `MySQLPort`         | Mysql port                                                               | string |
-| `MySQLXProtocolPort`| Mysql portx                                                              | string |
-| `PrivateIPAddress`  | DbSystem's PrivateIPAddress                                              | string |
-| `AvailabilityDomain`| AvailabilityDomain                                                       | string |
-| `FaultDomain`       | FaultDomain                                                              | string |
-| `Endpoints`         | Endpoints to connect to mysql db system                                  | json   |
- 
+#
