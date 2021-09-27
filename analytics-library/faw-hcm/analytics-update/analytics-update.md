@@ -15,6 +15,7 @@
 This is a sample of the Overall Business Performance Monitoring:
 ![Overall Business Performance Monitoring](../analytics-update/images/overall-business-performance-monitoring.png)
 
+
 ## Acknowledgements
 
 - **Author** Oana Turnea, Technical Writer, Demo Services
