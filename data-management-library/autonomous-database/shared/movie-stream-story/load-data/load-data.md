@@ -399,7 +399,7 @@ select * from time;
 
     ![Rows from the TIME table](images/viewtimetable.png)
 
-## Task 4: Enforcing data integrity
+## Task 5: Enforcing data integrity
 
 In this task, we will use the database's ability to define and enforce constraints to ensure that the data in the newly loaded tables remains valid. This will be important in later labs.
 
