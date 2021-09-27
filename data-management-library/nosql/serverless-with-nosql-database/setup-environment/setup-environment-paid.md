@@ -9,10 +9,11 @@ Estimated Time: 5 minutes
 ### Objectives
 
 In this lab you will:
-* Create a Compartment
+* Create a compartment
 * Create API Key
 * Download Code Bundle
 * Learn about Credentials, and Policies
+* Set up Cloud Shell
 
 ### Prerequisites
 
@@ -89,7 +90,6 @@ In this task we will copy over a data bundle stored on object storage and place 
 
 2. Exit from Cloud Shell
 
-
 ## Task 4: Understand Credentials, and Policies
 
 **Oracle NoSQL Database Cloud Service uses Oracle Cloud Infrastructure Identity and Access Management to provide secure access to Oracle Cloud.** Oracle Cloud Infrastructure Identity and Access Management enables you to create user accounts and give users permission to inspect, read, use, or manage tables. Credentials are used for connecting your application to the service and are associated with a specific user. The credentials consist of the tenancy ID, the user ID, an API signing key, a fingerprint and optionally a passphrase for the signing key. These got created in Task 2 of this lab and are stored in the info.json file in your Cloud Shell.
@@ -150,6 +150,31 @@ def get_handle():
 A similar switch can be made here to use **Instance Principals**, replace "create_with_resource_principal()" with "create_with_instance_principal()" and you are all set.
 
 In the next labs we are going to be running application code and we need an instance to run that from. In Task 2 we started the Cloud Shell and we will run the application from that instance. Currently, Cloud Shell does not support Instance Principals so in those labs we will be using credentials.
+
+## Task 5: Move to Phoenix
+
+Oracle NoSQL Always Free tables are available only in the Phoenix region. If Phoenix is **not** your home region then we need to move there. Skip this Task if Phoenix is your home region.
+
+1. Check to see if Phoenix shows up in your region drop down list. Click the down **arrow** by the region.
+
+    ![](images/no-phoenix.png)
+
+2. If it is there, click it and move your tenancy to Phoenix and **proceed to the next lab.**
+
+    ![](images/phoenix.png)
+
+3. Since it is not there, please subscribe to Phoenix Region. Click the drop down by your region and click **Manage Regions.**
+
+    ![](images/manage-regions.png)
+
+4. This will bring up a list of regions. Look for Phoenix and press **Subscribe**.
+
+    ![](images/capturesuscribe.png)
+
+5. If you haven't been moved to Phoenix, then click **Phoenix** to move your tenancy.
+
+    ![](images/phoenix.png)
+
 
 You may now **proceed to the next lab.**
 
