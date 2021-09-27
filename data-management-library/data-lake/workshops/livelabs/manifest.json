@@ -9,35 +9,29 @@
         },
         {
             "title": "Introduction",
-            "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/introduction.md"
+            "description": "Introduction to this workshop",
+            "filename": "../../introduction.md"
         },
         {
-            "title": "Lab 1: Configurations for Data Catalog, Data Flow and Data Lake",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "title": "Lab 1: Create Groups, Users, Policies and Autonomous Warehouse Database (ADW)",
+            "description": "This lab walks you through user setup and configuration and puts the foundation in place to prepare data cataloging, loading and maintaining for the data lakes.",
+            "filename": "./../../lakeshouse-configuration.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: OCI Data Catalog, OCI Data Integration and Data Assets",
+            "description": "This lab walks you through how to add various data assets and add business terms to define your data",
+            "filename": "./../../data-catalog.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: OCI Data Flow in the Data Lake",
+            "description": "This lab shows you how to an Application to load new data assets using Oracle Data Flow",
+            "filename": "./../../data-lake.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
-        },
-        {
-            "title": "Lab 5: Analyze Data",
-            "filename": "../../analyze/analyze.md"
-        },
-        {
-            "title": "Lab 6: Visualize Data",
-            "filename": "../../visualize/visualize.md"
-        },
-        {
+            "title": "Lab 4: Lakehouse: Putting it Together for Analytics",
+            "description": "This lab shows you pull data into analytics, and reviews the Oracle Data Lake House.",
+            "filename": "./../../lakehouse.md"
+        },        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
