@@ -1,4 +1,3 @@
-# Deploying Oracle Container Engine for Kubernetes
 
 ## Introduction
 
@@ -15,10 +14,14 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
 - kube-public, usually used for resources that have to be accessible across the cluster
 
 # Objectives
-- Create an OCI Container Engine Kubernetes cluster (OKE)
+- Create an OCI Container Engine Kubernetes cluster (OKE)# Deploying Oracle Container Engine for Kubernetes
+
 
 ### Prerequisites
 - [OCI CLI Installation on your local machine](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)
+
+- [Kubectl Installation on your local machine](https://kubernetes.io/docs/tasks/tools/)
+
 
 ## Task 1: Create Kubernetes Cluster
 
