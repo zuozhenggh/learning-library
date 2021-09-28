@@ -64,11 +64,12 @@ The service uses synchronous data replication across geographically distributed 
 
 Streaming provides tenancy-level data isolation and eliminates “noisy neighbor” performance issues, irrespective of scale and usage.
 
-[Security and Reliability](./images/OCI-Stream3.png)
+
+![Security and Reliability](./images/OCI-Stream3.png))
 
 
 
-## Acknowledgement
+## Acknowledgements
 
 * **Author** - Rishi Johari, Lucas Gomes
 * **Last Updated By/Date** - Rishi Johari, September, 2021
