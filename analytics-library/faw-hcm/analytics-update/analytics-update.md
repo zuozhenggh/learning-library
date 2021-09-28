@@ -13,7 +13,8 @@
 3. Demo Script
 
 This is a sample of the Overall Business Performance Monitoring:
-![Overall Business Performance Monitoring](../diversity-inclusion/images/overall-business-performance-monitoring.png)
+![Overall Business Performance Monitoring](../analytics-update/images/overall-business-performance-monitoring.png)
+
 
 ## Acknowledgements
 

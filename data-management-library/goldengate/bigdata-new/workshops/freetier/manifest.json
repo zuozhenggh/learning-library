@@ -76,8 +76,8 @@
       "filename": "../../mysql-to-kafka-via-ggma/mysql-to-kafka-via-ggma.md"
     },
     {
-      "title": "Lab 13: GoldenGate Microservices Adminclient",
-      "description": "GoldenGate Microservices Adminclient",
+      "title": "Lab 13: GGMA Adminclient",
+      "description": "GGMA Adminclient",
       "filename": "../../ggma-adminclient/ggma-adminclient.md"
     },
     {
