@@ -20,7 +20,7 @@ Estimated time: 30 minutes
 
 * This tutorial requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
 
-## Task 1: Launch the Cloud Shell and Clone mtdrworkshop GitHup repository
+## Task 1: Launch the Cloud Shell and Clone mtdrworkshop GitHub repository
 
 1. Launch the Oracle Cloud Shell
 The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration!
@@ -120,22 +120,21 @@ You should now see `mtdrworkshop` in your root directory
 	\* Create an empty file `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt`.
 
 	``` bash
-	<copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt<copy>
+	<copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt</copy>
 	```
 
 	![copy the atp ocids](images/42-copy-atp-ocids2.png " ")
 	\* Copy the OCID of the newly created database from the Cloud console and add it into the `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
 
 5. Generate the wallet for your Autonomous Transaction Processing connectivity. A wallet.zip file will be created in the current directory.
-	\* In the Cloud Shell, make sure you are in the
-`~/mtdrworkshop/setup-dev-environment` directory.
+
 	\* Copy the following command and replace `$OCID` with the copied OCID.
 
 	``` bash
-	<copy>./generateWallet.sh $OCID</copy>
+	<copy>cd ~/mtdrworkshop/setup-dev-environment; ./generateWallet.sh $OCID</copy>
 	```
 
-	\* **Example** `generateWallet.sh ocid1.autonomousdatabase.oc1.phx.abyhqlj....`
+	\* **Example** `./generateWallet.sh ocid1.autonomousdatabase.oc1.phx.abyhqlj....`
 	\* You will be requested to enter a password for wallet encryption, this is separate password from the ADMIN password but you could reuse the same.
 
 6. Launch the sql utility in Cloud Shell.
@@ -212,6 +211,7 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
 1. Open up the navigation menu in the top-left corner of the console and go to **Developer Services** and select **Container Registry**.
 	![Registry](images/21-dev-services-registry.png " ")
 2. Take note of the namespace (for example, `axhpdrizd2ai` shown in the image below).
+	![namespace](images/22-create-repo.png " ")
 3. Click **Create Repository**, specify the following details for your new repository, and click **Create Repository**.
     * Repository Name: `<tenancy name>/mtdrworkshop`
     * Access: `Public`
@@ -258,10 +258,10 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 	<copy>export WORKINGDIR=$MTDRWORKSHOP_LOCATION/workingdir</copy>
 	```
 
-	\* Make sure to be in the `mtdrwokshop/setup-dev-environment` directory then execute the following script
+	\*  Execute the following script
 
 	``` bash
-	<copy>./installGraalVM.sh</copy>
+	<copy>cd ~/mtdrworkshop/setup-dev-environment; ./installGraalVM.sh</copy>
 	```
 
 ## Task 6: Access OKE from the Cloud Shell
@@ -307,6 +307,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** \- Kuassi Mensah\, Dir\. Product Management\, Java Database Access
-* **Contributors** \- Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By/Date** \- Kamryn Vinson\, August 2021
+* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By/Date** - Kamryn Vinson, August 2021

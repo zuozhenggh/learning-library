@@ -1,5 +1,5 @@
 
-## Example 4: Workforce Overall
+## Task 5: Workforce Overall
 
 1. For: Configuration Deck, DVA file, Image sample, Catalog file, and Data Files-xls format, please
 
@@ -14,7 +14,7 @@
 3. Demo Script
 
 Workforce Overall sample:
-![Workforce Overall](../diversity-inclusion/images/workforce-overall.png)
+![Workforce Overall](../workforce-overall/images/workforce-overall.png)
 
 ## Acknowledgements
 
