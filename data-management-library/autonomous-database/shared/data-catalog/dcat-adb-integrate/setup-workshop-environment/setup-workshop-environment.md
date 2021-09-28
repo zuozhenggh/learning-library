@@ -17,6 +17,7 @@ In this lab, you will:
 * Create a Dynamic Group policy to allow Data Catalog to access your Object Storage resources.
 * Create a Data Catalog instance.
 * Import a Glossary into your Data Catalog instance.
+* Create and Autonomous Database instance.
 
 
 ### Prerequisites
@@ -177,19 +178,24 @@ In this task, you create a new and empty business glossary in the newly created 
 
    ![](./images/note-proceed.png " ")
 
-6. Using your local system **File Explorer**, navigate to and choose the local **`MovieStream ApplicationExport.xlsx`** Excel file that you want to import. This file represents a glossary that was exported from a Data Catalog instance. Click **Open**.
+6. In the **Open** dialog box for your local system, copy and enter the following pre-authenticated request (PAR) URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Select **All Files** from the second drop-down list, and then click **Open**. See [Pre-Authenticated requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm).
 
-   ![](./images/select-xlxs-file.png " ")
+
+    ```
+    <copy>https://objectstorage.us-phoenix-1.oraclecloud.com/p/asZnZNzK6aAz_cTEoRQ9I00x37oyGkhgrv24vd_SGap2joxi3FvuEHdZsux2itTj/n/adwc4pm/b/moviestream_scripts/o/MovieStream-Glossary.xlsx</copy>
+    ```
+
+    ![](./images/specify-par.png " ")
 
 7. An import job is triggered and a message is displayed.
 
    ![](./images/import-job-initiated.png " ")
 
-   If the import file is small, the job finishes instantly and the imported glossary is displayed. If the import file is large, you can monitor the status of the job from the Jobs tab. When the job is completed successfully, the contents of the Excel file are imported into your glossary.
+   The import file is small; therefore, the job finishes instantly and the imported glossary is displayed. If the import file is large, you can monitor the status of the job from the Jobs tab. When the job is completed successfully, the contents of the Excel file are imported into your glossary.
 
    ![](./images/glossary-imported.png " ")
 
-8. To view the imported glossary details, in the **Glossary Hierarchy** pane on the left, click **Expand all**. The children of the **MovieStream Application** glossary are displayed.
+8. The imported glossary is displayed in the **Glossary Hierarchy** pane on the left. You can also click **Expand all** to view all of the details. The children of the **MovieStream Application** glossary are displayed. If the glossary details are not displayed, click **Refresh glossary**.
 
    ![](./images/expand-all.png " ")
 
@@ -407,7 +413,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
        ![](./images/adb-admin-credentials.png " ")
 
-10. In the **Choose network access** section, select the **Secure access from everywhere** access type.     
+10. In the **Choose network access** section, select the **Allow secure access from everywhere** access type.     
 
     ![](./images/adb-network-access.png " ")
 
@@ -420,7 +426,6 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 13.  The **Autonomous Database Details** page is displayed. The status of your ADB instance is **PROVISIONING**.
 
     ![](./images/adb-provisioning.png " ")
-
 
     In a few minutes, the instance status changes to **AVAILABLE**. At this point, your Autonomous Data Warehouse database instance is ready to use! Review your instance's details including its name, database version, OCPU count, and storage size.
 
@@ -442,8 +447,9 @@ You may now proceed to the next lab.
 * [Managing a Business Glossary](https://docs.oracle.com/en-us/iaas/data-catalog/using/manage-glossary.htm#create-glossary)
 * [Managing Dynamic Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Managing_Dynamic_Groups)
 * [Writing Policies for Dynamic Groups](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm#Writing)
+* [Using Oracle Autonomous Database on Shared Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/index.html)
 
 ## Acknowledgements
-* **Author:** Lauran Serhal, Principal UA Developer, Oracle Database and Big Data User Assistance
-* **Contributor:** Martin Gubar, Director, Product Management Autonomous Database / Cloud SQL    
+* **Author:** Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
+* **Contributor:** Marty Gubar, Product Manager, Server Technologies    
 * **Last Updated By/Date:** Lauran Serhal, September 2021

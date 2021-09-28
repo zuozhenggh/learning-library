@@ -11,7 +11,8 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-* Delete the **`training-dcat-instance`** Data Catalog instance. This also deletes all of the resources in this instance.
+* Delete the Data Catalog instance. This also deletes all of the resources in this instance.
+* Delete the Autonomous Database instance.
 * Delete the resources that you created in your **`training-dcat-compartment`** as part of this workshop. This includes your IAM group, IAM user, IAM policies, Object Storage buckets and its objects, and so on.
 * Delete the entire **`training-dcat-compartment`** compartment.
 
@@ -31,11 +32,25 @@ You can terminate your Data Catalog instance that you created in this workshop a
 
    ![](./images/dcat-instance-actions.png " ")
 
-3. A **Terminate** dialog box is displayed. Enter **delete** in the **TYPE "DELETE" TO CONFIRM DELETE**, and then click **Terminate**.
+3. A **Terminate** dialog box is displayed. Enter **delete** in the **TYPE "DELETE" TO CONFIRM DELETE** field, and then click **Terminate**. The Data Catalog instance goes into a **Deleting** state. When the delete is completed, the instance is no longer displayed, and all of the resources in the deleted instance are permanently deleted.
 
-   ![](./images/terminate.png " ")
+   ![](./images/dcat-instance-deleted.png " ")
 
-   The Data Catalog instance goes into a **Deleting** state and all the resources in the Data Catalog instance are permanently deleted.
+## Task 2: Delete Your Autonomous Database Instance
+
+You can terminate your ADW instance that you created in this workshop as follows:
+
+1. Open the **Navigation** menu and click **Oracle Databases**. Click **Autonomous Database**.
+
+2. On the **Autonomous Databases** page, in the **List Scope** section, select the **`training-dcat-compartment`** compartment from the **Compartment** drop-down list. In the row for the **`DB-DCAT-Integration`** Autonomous Database instance, click the **Actions** icon (three dots), and then select **Terminate** from the context menu.
+
+   ![](./images/adb-instance-actions.png " ")
+
+3. A **Terminate** dialog box is displayed. Enter **DB-DCAT Integration** in the **To confirm, enter the name of the database that you want to terminate** field, and then click **Terminate Autonomous Database**.
+
+    The state of the Autonomous Database instance goes into **Terminating**. When the ADB is deleted, the **Status** changes to **Terminated**.
+
+    ![](./images/ADB-terminated.png " ")
 
 
 ## Task 2: Delete Your IAM Group, IAM User, and IAM Policies
@@ -76,6 +91,6 @@ This concludes the workshop.
 
 ## Acknowledgements
 
-* **Author:**  Lauran Serhal, Principal User Assistance (UA) Developer, Oracle Database and Big Data (UA)
-* **Contributors:** Martin Gubar, Director, Product Management Autonomous Database / Cloud SQL
-* **Last Updated By/Date:** Lauran Serhal, September 2021
+* **Author:** Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
+* **Contributor:** Marty Gubar, Product Manager, Server Technologies    
+* **Last Updated By/Date:** Lauran Serhal, October 2021
