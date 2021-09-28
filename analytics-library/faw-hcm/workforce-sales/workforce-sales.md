@@ -13,7 +13,7 @@
 3. Demo Script
 
 Workforce Sales sample:
-![Workforce Sales](../diversity-inclusion/images/workforce-sales.png)
+![Workforce Sales](../workforce-sales/images/workforce-sales.png)
 
 ## Acknowledgements
 
