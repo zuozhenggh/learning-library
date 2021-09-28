@@ -4,10 +4,10 @@
 
 ACME Corp sends an 850 Purchase Order EDI document to Trading Partner Dell Inc. ACME Corp had configured OIC B2B message exchange agreement to send Purchase Order EDI document to External Trading Partner.
 
-This integration takes the input as XML from a Rest Client . In a real world usecase you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
+This integration takes the input as XML from a Rest Client . In a real world use case you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
 
 
-![B2BArchitecture diagram](images/b2b-outbound1.png)
+![B2BArchitecture diagram](images/b2b-outbound1.png =50%x*)
 
 High level steps of the Integration:
 | Step | Description |
@@ -71,8 +71,7 @@ The Adapter Endpoint Configuration Wizard opens
     ```
     - Select POST as the action to perform on the endpoint.
     - Select to configure both request and response for this endpoint and click on Next
-
-   ![REST Endpont Wizard diagram](images/b2b-outbound2.png =50%x*)
+    ![REST Endpont Wizard diagram](images/b2b-outbound2.png =50%x*)
 
 2. On the Request page:
     - Select XML Schema in the Select the request payload format field.
@@ -97,15 +96,15 @@ The Configure B2B Action wizard opens
    ![Operation diagram](images/b2b-outbound6.png =50%x*)
     - Select Document Definition as Purchase Order (You must have created this as part of B2B activities) and click on Next
    ![DocumentDefinition diagram](images/b2b-outbound7.png =50%x*)
-    - On the Summary page, click Done to complete the configuration and click on Save to save your integration flow.
+    - Review the Summary page, click on Done to complete the configuration and click on Save to save your integration flow. Click on RESET if required for a better view of your integration flow.
    Note that the corresponding mapping element is automatically added to the integration flow
    ![Summary diagram](images/b2b-outbound8.png =50%x*)
 ## **STEP 5**: Configure Mapping Actions
 Configure data mappings for the EDI-Generate action and Receive-App-Msg action in order to successfully parse the incoming XML message and translate it to EDI message.
-Configure the Map to EDI-Generate Action
+
 1. Click the Map to EDI-Generate action and select Edit.
 2. Click on Developer mode
-![Devmode diagram](images/b2b-outbound9.png =50%x*)
+   ![Devmode diagram](images/b2b-outbound9.png =50%x*)
 3. From Source, expand the root element, expand AcmePurchaseOrder and From Target, expand the root element, expand TranslateInput, expand edi-xml-document, expand transaction-data and map all the mandatory elements  
 
 | Source | Target |
@@ -113,7 +112,7 @@ Configure the Map to EDI-Generate Action
 | “00” | BEG01 |
 | “NE” | BEG02 |
 | orderNumber | BEG03 |
-| drag and drop format-DateTime function in the expression windoe of BEG05 and create a string as given here: xp20:format-dateTime (/nssrcmpr:execute/tns:AcmePurchaseOrder/tns:orderDate, "[Y0001][M01][D01]" )| BEG05 |
+| drag and drop format-DateTime function from the Components onto the BEG05 and create a string as given here: xp20:format-dateTime (/nssrcmpr:execute/tns:AcmePurchaseOrder/tns:orderDate, "[Y0001][M01][D01]" )| BEG05 |
 |  count (/nssrcmpr:execute/tns:AcmePurchaseOrder/tns:lineItems )  | CTT01 |
 | totalAmount | CTT02 |
 | “2L” | CUR01 |
@@ -126,118 +125,67 @@ Configure the Map to EDI-Generate Action
 | lineItems->price | PO104 |
 | tradingPartnerId | Application Partner ID(This element is there under TranslateInput Node) |
 
-Once you are done with the validation, test it.
+Once you are done with the validation, test it and results should look like the screenshot given below.
+   ![mapperTest diagram](images/mapperTest.png =50%x*)
+
 4. Click Validate and then Close.
 5. Save your integration flow.
-## **STEP 6**: Switch action after EDI-Translate activity
-1. Add a switch after the EDI-Generate activity
-    - For the If branch, Enter the Expression Name as “Success or Warning” and enter the following expression under Expression section. (You may have to select Expression Mode to enter the value given below). If there is a error on namespaces then you can search for “translation-status” and select that element for mapping.
+## **STEP 6**: Switch action after EDI-Generate activity
+1. Add a switch action after the EDI-Generate activity
+    - For the If branch, Enter the Expression Name as “Success or Warning” and enter the following expression under Expression section. (You may have to select Expression Mode to enter the value given below). If there is an error on namespaces then you can search for “translation-status” and select that element for mapping.
     ```
     <copy>$EDI-Generate/nsmpr6:executeResponse/nsmpr9:TranslateOutput/nsmpr9:translation-status ="Success"</copy>
     ```
     Note:Your namespace prefix may include different values than nsmpr9 and nsmpr6.
 This expression indicates that if TranslateOutput > translation-status has a value of Success, then take this route. This is referred to as the success route
     - Click on Validate and Click on Close and save your integration flow
-    ![SwitchActivity diagram](images/b2b-outbound10.png =50%x*)
-    - In the success route: Add “Integration” Action ->Enter  name it as “callTP” and select USGE FTP Send Integration (OR any other outbound B2B integration) and click on Next->Click on Next ->Click on Done and save your integration flow
-    ![callTP diagram](images/b2b-outbound11.png =50%x*)
-    - Edit Map to callTP -> Select Developer mode and From Source, expand EDI-Generate -> executeResponse->TranslateOutput
+    - In the success route: Add “Integration” Action ->Enter name as "callTradingPartner" and select USGE FTP Send Integration (OR any other outbound B2B integration which you have created) and click on Next->Click on Next ->Click on Done and save your integration flow
+
+    - Edit Map to callTradingPartner -> Select Developer mode and From Source, expand EDI-Generate -> executeResponse->TranslateOutput
 | Source | Target |
 | --- | --- |
-| B2b-message-reference | components.schemas.request-wrapper->Messages->b2b-message-reference |
+| b2b-message-reference | components.schemas.request-wrapper->messages->b2b-message-reference |
 | trading-partner | components.schemas.request-wrapper->trading-partner |
 | connectivity-properties-code | Connectivity Properties->Localintegration->code |
 | connectivity-properties-version | Connectivity Properties->Localintegration->version |
 
-    - Mappings and Integration flow looks like the below diagrams
+    - Mappings looks like the below diagram
     ![mappings diagram](images/b2b-outbound12.png =50%x*)
-    ![flow1 diagram](images/b2b-outbound13.png =50%x*)
 
+    - Click on Validate and Click on Close and save your integration flow
     - In Otherwise route: Add Throw New Fault Action ->Enter name as “Error” ->click on Create and map the below elements
 
     $EDI-Generate/nsmpr7:executeResponse/nsmpr10:TranslateOutput/nsmpr10:validation-error to Code
     AND
     $EDI-Generate/nsmpr7:executeResponse/nsmpr10:TranslateOutput/nsmpr10:validation-error-report to Reason
-
-    ![otherwisemappings diagram](images/b2b-outbound14.png =50%x*)
+    ![mappings diagram](images/b2b-outbound14.png =50%x*)
     - Validate and Close -> Save your integration flow.
     ![finalflow diagram](images/b2b-outbound15.png =50%x*)
 
 ## **STEP 7**: After Switch activity
 1. Edit Map to Receive-App-Msg activity.
-2. From Source, expand EDI-Generate Response ->executeResponse->TranslateOutput and From Target, expand Purchase Order Result and map the following elements as per the below table.
+2. From Source, expand EDI-Generate Response ->executeResponse->TranslateOutput and From Target, expand Purchase Order Result and map the following elements as per the table given below.
 | Source | Target |
 | --- | --- |
 | Translation Status | Translation Status |
 | Validation Error Report | Validation Error Report |
 
-3. After completing all the mappings, you can cross check by leveraging Test feature available on Mapper
+3. After completing all the mappings, you can cross check by leveraging Test feature available on Mapper and Click on Validate and Click on Close
 4. click Actions Menu  in the top-right corner of canvas, and select Tracking.
-5. In the resulting dialog, select orderNumber on the left and move it to the table on the right.
-6. Click Save.
-7. Save the integration and click Close
-   ![finalflow1 diagram](images/b2b-outbound16.png =50%x*)
+5. In the resulting dialog, select orderNumber on the left and move it to the table on the right and click on Save.
+6. Check for errors, Save the integration and click Close
+   ![finalflow1 diagram](images/finalflow.png =50%x*)
 
 ## **STEP 8**: Activate the integration
-Check for errors, save, and activate the integration flow
+
 1. On the Integrations page, click on the activate button against your integration to activate it
-2. Click Activate in the Activate Integration dialog and select “Enable Tracing” and “Include Payload” options
+2. select “Enable Tracing”, “Include Payload” options and Click Activate in the Activate Integration dialog
 3. To execute your sample integration, send a request from a REST client tool, such as Postman OR you can use Oracle Integration console to test. Let us use Oracle Integration Test Console.
-4. You have two xml files [USGEPO.xml](files/USGEPO.xml?download=1) and [DellIncPO.xml](files/DellIncPO.xml?download=1), download and open each file and copy the data and paste it in the body of the request console and click on Test
+4. You have two xml files [USGEPO.xml](files/USGEPO.xml?download=1) and [DellIncPO.xml](files/DellIncPO.xml?download=1), download and open one xml file and copy the data and paste it in the body of the request console and click on Test
   ![TestConsole diagram](images/b2b-outbound17.png =50%x*)
-5. Go to MonitoringIntegrations Tracking Cross check your backend integration and trading partner integration ran successfully and now repeat the test with another xml file which would trigger another trading partner
+5. Go to Monitoring->Integrations->Tracking-> Cross check your backend integration and trading partner integration ran successfully and now repeat the test with another xml file which would trigger another trading partner
 6. If you have FTP Client installed on your machine, you can login using the FTP details provided to you and cross check your edi file created under folders /B2BWorkshop/B2BTPUSGEOut and /B2BWorkshop/B2BTPDELLOut
 7. In conclusion, you can use Oracle Integration to accept XML message and convert it into EDI format and send it to the trading partners dynamically
-
-6. This is an example of manual control over image sizes:
-
-  No image sizing applied: `![](images/pic2.png)`
-
-  ![](images/pic2.png)
-
-  50% of the width and use auto height: `![](images/pic2.png =50%x*)`
-
-  ![](images/pic2.png =50%x*)
-
-  absolute width and height (500 pixel by 200 pixels): `![](./images/pic2.png =500x200)`
-
-  ![](./images/pic2.png =500x200)
-
-  50% for both width and height:  `![](./images/pic2.png =50%x50%)`
-
-  ![](./images/pic2.png =50%x50%)
-
-## **STEP 3:** title
-
-1. Sub step 1
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
 
 *At the conclusion of the lab add this statement:*
 You may now [proceed to the next lab](#next).
@@ -250,7 +198,7 @@ You may now [proceed to the next lab](#next).
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Subhani, Title, Group>
+* **Author** - <Subhani, Director, OIC Product Management>
 * **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Last Updated By/Date** - <Subhani, Group, Month Year>
 * **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
