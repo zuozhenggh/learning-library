@@ -14,7 +14,7 @@
 3. Demo Script
 
 Workforce Overall sample:
-![Workforce Overall](../diversity-inclusion/images/workforce-overall.png)
+![Workforce Overall](../workforce-overall/images/workforce-overall.png)
 
 ## Acknowledgements
 

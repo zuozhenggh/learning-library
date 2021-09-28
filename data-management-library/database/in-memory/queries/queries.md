@@ -32,7 +32,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     ````
     ![](images/step1num1.png)
 
-2.  Let's begin with a simple query:  *What is the most expensive order we have received to date?*  There are no indexes or views setup for this.  So the execution plan will be to do a full table scan of the LINEORDER table.  Note the elapsed time. Run the script 01_im_query_stats.sql or run the queries below.
+2.  Let's begin with a simple query:  *What is the most expensive order we have received to date?*  There are no indexes or views setup for this.  So the execution plan will be to do a full table scan of the LINEORDER table.  Note the elapsed time. Run the script 01\_im\_query\_stats.sql or run the queries below.
 
     ````
     <copy>
@@ -54,7 +54,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     ![](images/step1num2.png)
 
-3.  To execute the same query against the buffer cache you will need to disable the IM column store via a hint called NO_INMEMORY. If you don't, the Optimizer will try to access the data in the IM column store when the execution plan is a full table scan. Run the script 02_buffer_query_stats.sql or run the queries below.
+3.  To execute the same query against the buffer cache you will need to disable the IM column store with a hint called NO\_INMEMORY. If you don't, the Optimizer will try to access the data in the IM column store when the execution plan is a full table scan. Run the script 02\_buffer\_query\_stats.sql or run the queries below.
 
     ````
     <copy>
@@ -77,17 +77,17 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
      ![](images/num3.png)    
 
 
-    As you can see the query executed extremely quickly in both cases because this is purely an in-memory scan. However, the performance of the query against the IM column store was significantly faster than the traditional buffer cache - why?  
+    As you can see the query executed extremely quickly in both cases because this is purely an in\-memory scan. However, the performance of the query against the IM column store was significantly faster than the traditional buffer cache - why?  
 
     The IM column store only has to scan two columns - lo\_ordtotalprice and lo\_quantity - while the row store has to scan all of the columns in each of the rows until it reaches the lo\_ordtotalprice and lo_quantity columns. The IM column store also benefits from the fact that the data is compressed so the volume of data scanned is much less.  Finally, the column format can take advantage of SIMD vector processing (Single Instruction processing Multiple Data values). Instead of evaluating each entry in the column one at a time, SIMD vector processing allows a set of column values to be evaluated together in a single CPU instruction.
 
-    In order to confirm that the IM column store was used, we need to examine the session level statistics. Notice that in the INMEMORY run several IM statistics show up (for this lab we have only displayed some key statistics – there are lots more!). The only one we are really interested in now is the "IM scan CUs columns accessed" which has been highlighted.
+    To confirm that the IM column store was used, we need to examine the session level statistics. Notice that in the INMEMORY run several IM statistics show up (for this lab we have only displayed some key statistics – there are lots more!). The only one we are really interested in now is the "IM scan CUs columns accessed" which has been highlighted.
 
     IM scan rows: Number of rows in scanned In-Memory Compression Units (IMCUs).
 
     As our query did a full table scan of the LINEORDER table, that session statistic shows that we scanned 23 million rows from the IM column store. Notice that in the second buffer cache query that statistic does not show up. Only one in-memory statistic shows up, "IM scan segments disk" with a value of 1. This means that even though the LINEORDER table is in the IM column store (IM segment) we actually scan that segment outside of the column store from the buffer cache. Recall that we fully cached the tables in the KEEP pool so that we could compare memory to memory access, and in this case we can verify that the query did no physical IO.
 
-4.  Let's look for a specific order in the LINEORDER table based on the order key.  Typically, a full table scan is not an efficient execution plan when looking for a specific entry in a table. Run the script 03_single_key_im.sql or run the queries below.
+4.  Let's look for a specific order in the LINEORDER table based on the order key.  Typically, a full table scan is not an efficient execution plan when looking for a specific entry in a table. Run the script 03\_single\_key\_im.sql or run the queries below.
 
     ````
     <copy>
@@ -107,7 +107,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     ![](images/num4.png)
 
-5.  Think indexing lo\_orderkey would provide the same performance as the IM column store? There is an invisible index already created on the lo\_orderkey column of the LINEORDER table. By using the parameter OPTIMIZER\_USE\_INVISIBLE\_INDEXES we can compare the performance of the IM column store and the index. Let's see how well the index performs. Run the script 05_index_comparison.sql or run the queries below.  
+5.  Think indexing lo\_orderkey would provide the same performance as the IM column store? There is an invisible index already created on the lo\_orderkey column of the LINEORDER table. By using the parameter OPTIMIZER\_USE\_INVISIBLE\_INDEXES we can compare the performance of the IM column store and the index. Let's see how well the index performs. Run the script 05\_\index\_comparison.sql or run the queries below.  
 
     ````
     <copy>
@@ -135,7 +135,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     Let’s change our query to look for a specific line item in an order and monitor the session statistics:
 
-    Run the script 06_multi_preds.sql or run the queries below.  
+    Run the script 06\_multi\_preds.sql or run the queries below.  
 
     ````
     <copy>
@@ -167,7 +167,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
 ## Conclusion
 
-In this lab you had an opportunity to try out Oracle’s In-Memory performance claims with queries that run against a table with over 23 million rows (i.e. LINEORDER), which resides in both the IM column store and the buffer cache. From a very simple aggregation, to more complex queries with multiple columns and filter predicates, the IM column store was able to out perform the buffer cache queries. Remember both sets of queries are executing completely within memory, so that’s quite an impressive improvement.
+In this lab you had an opportunity to try out Oracle’s In-Memory performance claims with queries that run against a table with over 23 million rows, the LINEORDER table, which resides in both the IM column store and the buffer cache. From a very simple aggregation, to more complex queries with multiple columns and filter predicates, the IM column store was able to out perform the buffer cache queries. Remember both sets of queries are executing completely within memory, so that’s quite an impressive improvement.
 
 These significant performance improvements are possible because of Oracle’s unique in-memory columnar format that allows us to only scan the columns we need and to take full advantage of SIMD vector processing. We also got a little help from our new in-memory storage indexes, which allow us to prune out unnecessary data. Remember that with the IM column store, every column has a storage index that is automatically maintained for you.
 
