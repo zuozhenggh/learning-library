@@ -1,7 +1,7 @@
 # Get started with Free Tier Setup
 
 ## Introduction
-This lab walks you through the steps set up your free tier environment that includes provisioning an Oracle Autonomous Database, and signing into Oracle Machine Learning user interface.
+This lab walks you through the steps to set up your free tier environment that includes provisioning an Oracle Autonomous Database, and signing into Oracle Machine Learning user interface.
 
 Estimated Lab Time: 15 minutes
 
@@ -23,7 +23,7 @@ In this lab, you will learn how to:
 
 ## Task 1: Launch the Workshop
 
-> Note: it takes approximately 20 minutes to create your workshop environment.*
+> **Note:** It takes approximately 20 minutes to create your workshop environment.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
@@ -100,9 +100,8 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 3. Enter your user credentials and click **Sign in**.
 
-	> **Note:** If you are using a LiveLabs tenancy, then the username is ``OMLUSER`` and the password is ``AAbbcc123456``.
 
-	![Oracle Machine Learning Notebooks Signin page](images/oml_signin_page.png)
+	![Oracle Machine Learning Notebooks Sign in page](images/oml_signin_page.png)
 
 4. Click **Notebooks** in the Quick Actions section.
 
@@ -113,7 +112,7 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 In this step, you will create a notebook and run a SQL query to create the table ``CUSTOMERS60``.
 
->**Note:** You will be using this table in this lab in the next lab Oracle Machine Learning Services.
+>**Note:** You will be using the table CUSTOMERS360 in the lab titled "Using Oracle Machine Learning Services".
 
 To create the table:
 
