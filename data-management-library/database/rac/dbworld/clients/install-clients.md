@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the installing a Java client and a Python client for later use in this lab. Both clients are independant of of one another.
+This lab walks you through the installing a Java client and a Python client for later use in this lab. Both clients are independant of one another.
 The clients each have SQL scripts to create their own objects.
 
 Estimated Lab Time: 10 Minutes
@@ -27,7 +27,7 @@ Connect to one of your nodes and collect the following information
     sudo su - oracle
     srvctl config scan
     ````
-   ![](./images/scanName.png " ")
+   ![SCAN Address Configuration](./images/scanName.png " ")
 
 The SCAN name is supplied on the first line (and does not include the *comma*). In the example shown the SCAN Name is **lvracdb-s01-2021-09-01-083747-scan.pub.racdblab.oraclevcn.com**
 
@@ -39,7 +39,7 @@ The SCAN name is supplied on the first line (and does not include the *comma*). 
     srvctl config database
     </copy>
     ````
-   ![](./images/dbName.png " ")     
+   ![Database Name](./images/dbName.png " ")     
 
 In this example the database name is **lvrac_iad2kd**
 
@@ -54,7 +54,7 @@ The Oracle background processes will include the instance name. For example, on 
     ps -ef | grep smon
     </copy>
     ````
-   ![](./images/smonName.png " ")
+   ![Instance Name from Background Process](./images/smonName.png " ")
 
 4. Password
 
@@ -90,7 +90,7 @@ which in my example is:
     ````
     sqlplus SYSTEM/W3lc0m3#W3lc0m3#@//lvracdb-s01-2021-09-01-083747-scan.pub.racdblab.oraclevcn.com/pdb1.pub.racdblab.oraclevcn.com
     ````    
-   ![](./images/sqlplusLogin.png " ")    
+   ![Log in with SQLPLUS](./images/sqlplusLogin.png " ")    
 
 ## Task 1:  Install Java Sample Program and configure services
 
@@ -148,7 +148,7 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
     On completion three services will be created
     **Note:** If services of the same name existed prior to running this script these services will have their original attributes - SETUP\_AC\_TEST does not attempt to modify them
 
-   ![](./images/setup_service_list.png " ")
+   ![Get Service Status using SRVCTL](./images/setup_service_list.png " ")
 
 6. Make the **run** scripts executable
 
@@ -169,7 +169,7 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/pO-U5eQoBmaBukSpLrqHfprCjpBa8KhLbpSjdeFkX10wP8m6uA9pmUGh5o1_FtnP/n/oradbclouducm/b/LiveLabTemp/o/PythonClient.zip
     </copy>
     ````
-    ![](./images/wgetPython.png " ")
+    ![Download Python Client](./images/wgetPython.png " ")
 
 2. Unzip the Python client
     ````
@@ -178,7 +178,7 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
     unzip PythonClient.zip
     </copy>
     ````  
-    ![](./images/unzipPyClient.png " ")
+    ![UNZIP the Download File](./images/unzipPyClient.png " ")
 
 3. Connect to the pluggable database *pdb1* as the **SYSTEM** user
 
@@ -222,7 +222,7 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
     sudo su - oracle
     </copy>
     ````
-    ![](./images/sudo-oracle.png " ")
+    ![Use SUDO to Connect to Oracle User](./images/sudo-oracle.png " ")
 
 2.  Install the *cx\_Oracle* module using python3 and pip for the oracle user.
 
@@ -232,7 +232,7 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
     </copy>
     ````
 
-    ![](./images/p_installcxOracle.png " " )
+    ![Install cx_Oracle Module](./images/p_installcxOracle.png " " )
 
 If this command fails - refer to the **Troubleshooting Tips** section below    
 
@@ -249,7 +249,7 @@ Select your database
     ORACLE_HOME = [/home/oracle] ? /u01/app/oracle/product/19.0.0.0/dbhome_1
     The Oracle base remains unchanged with value /u01/app/oracle/product/19.0.0.0/dbhome_1
     ````
-    ![](./images/oraenv.png " ")
+    ![Use ORAENV to set Environment Variables](./images/oraenv.png " ")
 
     ````
     <copy>
@@ -260,7 +260,7 @@ Select your database
 
 This command will show you a list of installed modules that should include the cx\_Oracle module we installed in the previous step.
 
-    ![](./images/p_installcxOracle-2.png " ")
+    ![List Installed Modules for Python](./images/p_installcxOracle-2.png " ")
 
 ## Task 4 Test the Python client
 
@@ -298,14 +298,14 @@ The Data Source Name (**dsn**) can either be a TNS ALIAS or an EZConnect Plus sy
     python3 tac_demo.py
     </copy>
     ````   
-    ![](./images/python_client_start.png " ")
+    ![Run Python Client](./images/python_client_start.png " ")
 
 3. The client will wait for you to press ENTER and will then issue a series of commands:
-    ![](./images/python_client_run-1.png " ")
+    ![Python Client Progress](./images/python_client_run-1.png " ")
 
 4. When you see the message **Inject fault or enter to continue:** the client has a set of uncommitted transactions submitted to the database. You can either inject a fault (crash the database instance from another session for example) or just press ENTER to continues
 
-    ![](./images/python_client_run-2.png " ")    
+    ![Python Client Pauses for Input](./images/python_client_run-2.png " ")    
 
 You may now *proceed to the next lab*.  
 
@@ -313,11 +313,11 @@ You may now *proceed to the next lab*.
 
 ### Issue 1 Python3 (or pip) not installed
 
-![](./images/python3-not-installed.png  " ")
+![Python Not Installed](./images/python3-not-installed.png  " ")
 
 or pip module not found:
 
-![](./images/pip-no-module-found.png  " ")    
+![PIP Not Installed](./images/pip-no-module-found.png  " ")    
 
 #### Fix for Issue #1
 Install python3 using yum as the **opc** user
@@ -356,7 +356,7 @@ wget https://swiftobjectstorage.<REPLACE REGION IDENTIFIER>.oraclecloud.com/v1/d
 </copy>  
 ````
 
-![](./images/yum_wget_1.png  " ")
+![Download Yum Repository](./images/yum_wget_1.png  " ")
 
 3. Replace the regionIdentifier in the following command:
     Substitute your regionIdentifier for the string **<REPLACE REGION IDENTIFIER>**
@@ -367,7 +367,7 @@ wget  https://swiftobjectstorage.<REPLACE REGION IDENTIFIER>.oraclecloud.com/v1/
 </copy>  
 ````
 
-![](./images/yum_wget_2.png  " ")
+![Download Version Lock File](./images/yum_wget_2.png  " ")
 
 4. Confirm there are two files in /tmp directory
 
@@ -439,7 +439,7 @@ repo id                                repo name                                
     Complete!
     ````
 
-    ![](./images/python3Install.png  " ")  
+    ![Yum Repository Configured](./images/python3Install.png  " ")  
 
 8. If you want to be able to run the Python client on either node repeat these steps on the other node.
 
