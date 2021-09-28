@@ -49,9 +49,22 @@ Customers with existing Kafka implementations, whether deployed on-premises or o
 ![Open Standard](./images/OCI-Stream2.png)
 
 
+### Security and reliability
 
 
+***Encryption and privacy***
 
+For security, the service provides data encryption both in transit and at rest. Streaming is integrated with Identity and Access Management (IAM) for fine-grained access control, as well as Private Endpointsand Vault (KMS) for data privacy.
+
+***Fault tolerance and SLAs***
+
+The service uses synchronous data replication across geographically distributed Availability Domains for fault tolerance and durability. Streaming is backed by a 99.95% service availability SLA. Oracle will provide credits for any breaches of this SLA.
+
+***Consistent performance***
+
+Streaming provides tenancy-level data isolation and eliminates “noisy neighbor” performance issues, irrespective of scale and usage.
+
+[Security and Reliability](./images/OCI-Stream3.png)
 
 
 
