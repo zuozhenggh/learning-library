@@ -68,7 +68,7 @@ Streaming provides tenancy-level data isolation and eliminates “noisy neighbor
 
 
 
-## Acknowledgements
+## Acknowledgement
 
 * **Author** - Rishi Johari, Lucas Gomes
 * **Last Updated By/Date** - Rishi Johari, September, 2021
