@@ -30,22 +30,6 @@ Allow dynamic-group <OSOK_DYNAMIC_GROUP> to manage mysql-family in [ tenancy | c
 Allow dynamic-group <OSOK_DYNAMIC_GROUP> to use tag-namespaces in tenancy
 ```
 
-**For User Principle**
-The OCI Service Operator user should have the `manage` permission for the `mysql-family` resource type. 
-
-**Sample Policy:**
-
-```plain
-Allow group <OSOK_GROUP> to {SUBNET_READ, SUBNET_ATTACH, SUBNET_DETACH, VCN_READ, COMPARTMENT_INSPECT} in [ tenancy | compartment <compartment_name> | compartment id <compartment_ocid> ]
-```
-```plain
-Allow group <OSOK_GROUP> to manage mysql-family in [ tenancy | compartment <compartment_name> | compartment id <compartment_ocid> ]
-```
-```plain
-Allow group <OSOK_GROUP> to use tag-namespaces in tenancy
-```
-
-
 Without these policies, the service will not function correctly.
 
 ## Task 2: Provisioning a MySQL DB System
