@@ -124,4 +124,4 @@ An interpreter is a plug-in that allows you to use a specific data processing la
 
 * **Author:** Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
 * **Contributor:** Marty Gubar, Product Manager, Server Technologies    
-* **Last Updated By/Date:** Lauran Serhal, October 2021
+* **Last Updated By/Date:** Lauran Serhal, September 2021
