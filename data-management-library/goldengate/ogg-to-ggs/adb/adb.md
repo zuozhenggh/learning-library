@@ -1,12 +1,12 @@
-# Set Up Your Environment
+# Set up your environment
 
 ## Introduction
 
 This lab walks you through the steps to create the required resources you'll use for this set of labs. You'll learn to create a VCN and subnet, provision autonomous databases, and load data into the databases for use with this LiveLab.
 
-> **Note:** *This workshop was designed to use Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
+> **Note:** *This workshop uses Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
-Estimated Lab Time: 20 mins
+Estimated time: 20 mins
 
 ### Objectives
 
@@ -16,7 +16,7 @@ Estimated Lab Time: 20 mins
 
 ### Prerequisites
 
-This lab assumes you have completed the Get Started lab.
+This lab assumes you completed the Get Started lab.
 
 > **Note:** *You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.*
 
@@ -39,9 +39,9 @@ This lab assumes you have completed the Get Started lab.
 
     ![](./images/00-05.png " ")
 
-You can click View VCN Details and see both a Public and Private subnet were created.
+You can click View VCN Details and see both a Public and Private subnet created.
 
-## Task 2: Create an ATP Instance
+## Task 2: Create an ATP instance
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
@@ -73,7 +73,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![](./images/01-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click the instance name to see details of it.
 
 
 ## Task 3: Load the ATP schema
@@ -84,7 +84,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 2.  Save `Archive.zip` to a download directory, and then unzip the file.
 
-3.  Back in the OCI Console, select your ATP instance from the Autonomous Databases list to view its details and access tools.
+3.  Back in the Oracle Cloud Console, select your ATP instance from the Autonomous Databases list to view its details and access tools.
 
     ![](./images/02-03-atp.png " ")
 
@@ -112,7 +112,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 11. Click **Run Script**. The Script Output tab displays confirmation messages.
 
-12. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
+12. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
 
     ![](./images/02-11-verify.png " ")
 
@@ -154,7 +154,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
     ![](./images/01-08-license.png " ")
 
-9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
+9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click the instance name to see details of it.
 
 ## Task 5: Load the ADW schema
 
@@ -166,7 +166,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 	![](./images/05-04-db-actions.png " ")
 
-3.  Log in with the ADMIN user and password provided when you created the ATP instance.
+3.  Log in with the ADMIN user and password provided when you created the ADW instance.
 
     ![](./images/02-05-login.png " ")
 
@@ -186,7 +186,7 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 8.  Click **Run Script**. The Script Output tab displays confirmation messages.
 
-9.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
+9.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
 
 You can now proceed to the next lab.
 

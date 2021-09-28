@@ -1,4 +1,4 @@
-## Example 5: Workforce Analysis
+## Task 4: Workforce Analysis
 
 1. For: Configuration Deck, DVA file, Image sample, Catalog file, and Data Files-xls format, please
 
@@ -13,7 +13,8 @@
 3. Demo Script
 
 Workforce Analysis sample:
-![Workforce Analysis](../diversity-inclusion/images/workforce-analysis.png)
+
+![Workforce Analysis](../workforce-analysis/images/workforce-analysis.png)
 
 ## Acknowledgements
 
