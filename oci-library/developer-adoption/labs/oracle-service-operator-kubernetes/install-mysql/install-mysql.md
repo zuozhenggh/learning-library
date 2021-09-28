@@ -97,14 +97,10 @@ spec:
   dataStorageSizeInGBs: {DB_SIZE}
   port: {PORT}
   portX: {PORTX}
-  freeformTags:
-    <KEY1>: {VALUE1}
-  definedTags:
-    <TAGNAMESPACE1>:
-      <KEY1>: {VALUE1}
+
 
 ```
-Example Yam:
+Example Yaml:
 
 ```yaml
 
