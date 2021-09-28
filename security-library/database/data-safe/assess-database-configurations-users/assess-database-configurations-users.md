@@ -230,7 +230,7 @@ This lab assumes you have:
 
     ![View History option for latest security assessment](images/latest-sa-view-history.png "View History option for latest security assessment")
 
-5. Review the **Assessment History** page for your target database.
+5. Review all the security assessments for your target database.
 
     - So far, you should have two security assessments for your target database: The default assessment that was automatically generated for you by Oracle Data Safe, and the assessment that you saved earlier as My Security Assessment.
     - If you don't see your assessments, make sure that your compartment is selected.
@@ -246,36 +246,41 @@ This lab assumes you have:
 
 ## Task 6: Set a baseline and generate a Comparison report for Security Assessment
 
-1. Click the name of the security assessment that Oracle Data Safe generated. The names starts with **SA_**.
+A baseline assessment shows you data for all your target databases in a selected compartment at a given point in time. However, because we are only dealing with one Autonomous Database in your compartment, the baseline assessment shows data for only your database. When you do the baseline comparison operation, Oracle Data Safe automatically compares only the assessments that pertain to your database.
 
-2. Click **Set As Baseline**.
+1. In the breadcrumb at the top of the page, click **Security Assessment**.
+
+2. Under **Related Resources**, click **Assessment History**.
+
+3. Click the name of the security assessment that Oracle Data Safe generated. The names starts with **SA_**. The security assessment is displayed.
+
+4. Click **Set As Baseline**.
 
     ![Security Assessment Set As Baseline option](images/sa-set-as-baseline.png "Security Assessment Set As Baseline option")
 
-3. In the **Set As Baseline?** dialog box, click **Yes** to confirm that you want to set these findings as the baseline.
+5. In the **Set As Baseline** dialog box, click **Yes** to confirm that you want to set these findings as the baseline.
 
     *Important! Stay on the page until the message **Baseline has been set** is displayed.*
 
     ![Security Assessment Baseline has been set message](images/sa-baseline-has-been-set-message.png "Security Assessment Baseline has been set message")
 
-4. Click **Close**.
+6. (Temporary) For now, please repeat steps 1 through 5 so that the baseline is properly set.
 
-5. Under **Resources**, click **Compare with Baseline** to compare the latest security assessment with the baseline. What do you find?
+7. Access the latest assessment for your target database. To do this, in the breadcrumb, click **Security Assessment**. Click the **Target Summary** tab. Click **View Report** for your target database.
+
+8. Under **Resources** on the left, click **Compare with Baseline**. Oracle Data Safe automatically begins processing the comparison.
 
     ![Compare With Baseline option under Resources](images/sa-resources-compare-with-baseline-option.png "Compare With Baseline option under Resources")
 
-6. When the comparison operation is completed, notice that the assessment is identical with the baseline. *REVIEWER WHY IS THIS THE CASE?. THERE ARE TWO ASSESSMENTS and ONE IS DIFFERENT THAN THE OTHER. WHEN I SET the earlier report as the baseline, the baseline is showing the numbers for the latest assessment*
-
-    ![Security Assessment is identical with baseline](images/sa-compare-with-baseline-identical.png "Security Assessment is identical with baseline")
-
+9. When the comparison operation is completed, review the Comparison report.
 
     - Review the number of findings per risk category for each risk level. Categories include **User Accounts**, **Privileges and Roles**, **Authorization Control**, **Data Encryption**, **Fine-Grained Access Control**, **Auditing**, and **Database Configuration**.
-    - You can view the number of new risks added, the number of risks remediated (removed), and the number of risks that have changed to a different risk level (modified).
-    - The change value is the total count of new, remediated, and modified risks on the target database for each category/risk level.
-    - The green color is used to indicate a positive change whereas the red color indicates the change needs your attention.
-    - In the details table, you can view the risk level for each finding, the category to which the finding belongs, the finding name, and a description of what has changed on your target database. The Comparison Report column is important because it provides explanations of what is changed, added, or removed from the target database since the baseline report was generated. The column also tells you if the change is a new risk or a remediated risk.
-*This part is the end of if the comparison report actually worked*
+    - You can identify where the changes have occurred on your target database by viewing cells that contains **Modified**. The number represents the total count of new, remediated, and modified risks on the target database.
+    - In the details table, you can view the risk level for each finding, the category to which the finding belongs, the finding name, and a description of what has changed on your target database. The Comparison Report column is important because it provides explanations of what is changed, added, or removed from the target database since the baseline report was generated.
 
+    ![Security Assessment Comparison report](images/sa-compare-with-baseline-table.png "Security Assessment Comparison report")
+
+    ![Security Assessment Comparison report](images/sa-compare-with-baseline-details.png "Security Assessment Comparison report")
 
 
 
@@ -411,7 +416,7 @@ Let's find the actual latest assessment (not a saved copy of it) and refresh it.
 
 3. To refresh the latest user assessment, click the **Refresh Now** button. The **Refresh Now** window is displayed. For now, let's keep the default name as is, and click **Refresh Now**.
 
-    - When you refresh the latest user assessment, Oracle Data Safe automatically saves a copy of it to the Assessment History.
+    - When you refresh the latest user assessment, Oracle Data Safe automatically saves a static copy of it to the Assessment History.
 
     ![User Assessment Refresh Now window](images/ua-refresh-now-window.png "User Assessment Refresh Now window")
 
@@ -487,10 +492,10 @@ You can select a user assessment to compare with the latest user assessment. Wit
 
 ## Learn More
 
-* [User Assessment Overview](https://docs.oracle.com/en-us/iaas/data-safe/doc/user-assessment-overview.html)
-* [Security Assessment Overview](https://docs.oracle.com/en-us/iaas/data-safe/doc/security-assessment-overview.html)
+* [User Assessment Overview](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/user-assessment-overview.html)
+* [Security Assessment Overview](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/security-assessment-overview.html)
 
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, September 27 2021
+* **Last Updated By/Date** - Jody Glover, September 28 2021
