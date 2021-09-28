@@ -179,7 +179,7 @@ Now that the GoldenGate extract, pump and replicat processes are running, next y
 ## Summary
 In summary, we loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local GG trail file. The pump process `pmpmysql` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `repmysql` read the remote trail files, and applied the changes to the MySQL database `ggtarget`.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab*
 
 ## Learn More
 
