@@ -21,21 +21,7 @@ In this lab, you will learn how to:
 > **Note:** You may see differences in account details (eg: Compartment Name is different in different places) as you work through the labs. This is because the workshop was developed using different accounts over time.
 
 
-## Task 1: Launch the Workshop
-
-> **Note:** It takes approximately 20 minutes to create your workshop environment.
-
-1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "")
-
-2. Select the compartment assigned to you from the **List Scope** menu and then click the Oracle Autonomous Data Warehouse instance.
-
-    ![](images/select-compartment.png)
-
-    ![](images/adw-instance.png)
-
-## Task 2: Provision an Oracle Autonomous Database
+## Task 1: Provision an Oracle Autonomous Database
 
 To provision an Oracle Autonomous Database:
 
@@ -47,13 +33,13 @@ To provision an Oracle Autonomous Database:
 
 3. Click **Create Autonomous Database**.
 
-    ![Create Autonomous Database option](images/create-autonomous-db.png "Create Autonomous Database option")
+    ![Create Autonomous Database option](images/create-autonomous-db.png)
 
 4. Provide basic information for the Oracle Autonomous Database.
 
     Enter a user-friendly display name for the ADB instance to easily identify the resource. The display name does not have to be unique.
 
-    ![Create Autonomous Database dialog](images/create-autonomous-db-1.png "Create Autonomous Database dialog")
+    ![Create Autonomous Database dialog](images/create-autonomous-db-1.png)
 
 5. For Workload Type, click **Data Warehouse**.
 
@@ -66,23 +52,75 @@ To provision an Oracle Autonomous Database:
     - **Storage (TB):** Specify the storage you wish to make available to your database, in terabytes. Click the arrow to select ``1``.
     - **Auto Scaling:** By default auto scaling is enabled to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
 
-    ![Configure Database dialog](images/create-adw-config.png "Configure Database dialog")
+    ![Configure Database dialog](images/create-adw-config.png)
 
 8. For Administrator credentials, enter and re-confirm a password.
 
 9. For network access, select **Allow secure access from everywhere.**
 
-    ![Network Access settings](images/create-adw-network.png "Network Access settings")
+    ![Network Access settings](images/create-adw-network.png)
 
 10. For License, select **License Included**.
 
-    ![License settings](images/create-adw-license.png "License settings")
+    ![License settings](images/create-adw-license.png)
 
 11. Click **Create Autonomous Database**. The Oracle Autonomous Data Warehouse instance starts provisioning. Click **Autonomous Data Warehouse** again from the navigation to see a list of Oracle Autonomous Database instances in your console.
 
 12. Click the Autonomous Data Warehouse instance you just created.
 
-    ![List of Oracle Autonomous Database instances](images/adb_instance.png "List of Oracle Autonomous Database instances")
+    ![List of Oracle Autonomous Database instances](images/adb_instance.png)
+
+## Task 2: Create an Oracle Machine Learning user
+
+An administrator creates a new user account and user credentials for Oracle Machine Learning in the User Management interface.
+
+>**Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface.
+
+To create a user account:
+
+1. Sign in to your OCI account, click the hamgurger on the left to open the left navigation pane, and click **Autonomous Data Warehouse**.
+
+	![Oracle Autonomous Data Warehouse](images/adw.png)
+
+
+2. Click on an Autonomous Database instance.   
+
+	![Oracle Autonomous Data Warehouse](images/adb_instance.png)
+
+
+3. On the Autonomous Database Details page, click **Service Console**.
+
+	![Oracle Autonomous Data Warehouse](images/service-console.png)
+
+
+4. On the Service Console click **Administration**.
+
+	![Oracle Autonomous Data Warehouse](images/administration.png)
+
+
+5. Click **Manage Oracle ML Users** to open the Oracle Machine Learning User Administration page.
+
+	![Oracle Autonomous Data Warehouse](images/manage_oml_users.png)
+
+6. Click **Create** on the Oracle Machine Learning User Administration page.
+
+	![Oracle Autonomous Data Warehouse](images/oml_um_page.png)
+
+7. On the Create User page, enter the following details to create the user:
+
+	![Oracle Autonomous Data Warehouse](images/create_user.png)
+
+	* **Username:** Enter a username for the account. Using the username, the user will log in to an Oracle Machine Learning instance.
+	* **First Name:** Enter the first name of the user.
+	* **Last Name:**  Enter the first name of the user.
+	* **Email Address:** Enter the email ID of the user.
+	* Select the option **Generate password and email account details to user. User will be required to reset the password on first sign in** to auto generate a temporary password and send an email with the account credentials to the user. If you select this option, you need not enter values in the Password and Confirm Password fields; the fields are grayed out.
+	* **Password:** Enter a password for the user, if you choose to create a password for the user.
+	>**Note:** This option is disabled if you select the **Generate password...** option to auto generate a temporary password for the user.
+
+	* **Confirm Password:** Enter a password to confirm the value that you entered in the Password field. By doing so, you create the password for the user. The user can change the password when first logging in.
+
+8. Click **Create**.
 
 
 ## Task 3: Sign into Oracle Machine Learning Notebooks

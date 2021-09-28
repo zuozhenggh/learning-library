@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to This lab walks you through the steps to sign into Oracle Machine Learning Notebooks, create an OML notebook, create an OML notebook based on the template example notebooks, and create jobs to schedule notebooks to run at specific day and time.
+This lab walks you through the steps to sign into Oracle Machine Learning Notebooks, create an OML notebook from scratch, create an OML notebook based on the template example notebooks, and create jobs to schedule notebooks to run at specific day and time.
 
 Estimated Time: 15 minutes
 
@@ -14,7 +14,7 @@ Through OML Notebooks, you have access to the in-database algorithms and analyti
 
 In this lab, you will:
 * Sign into Oracle Machine Learning Notebooks
-* Create an Oracle Machine Learning notebook
+* Create an Oracle Machine Learning notebook from scratch
 * Create a notebook based on an example template
 * Check and update the interpreter binding settings for a notebook
 * Schedule a notebook to run at a specific time using the Jobs interface
