@@ -45,7 +45,7 @@ The following table displays information about the attributes from the `SALES` t
 
 ## Task 2: Prepare the Data
 In this step, you will prepare the data by creating a view.
-The following steps help you to create a view and view the data.
+The following steps help you to create a view and view the data:
 1. Prepare a view called `ESM_SH_DATA` by selecting the necessary columns from `SH.SALES` table. For this example, select `TIME_ID` and `AMOUNT_SOLD`.
 
     ```
@@ -96,7 +96,7 @@ The output is follows:
     </copy>
     ```
 
-	![Image alt text](images/timeseries_001.png)
+	![Displays few rows from the created view](images/timeseries_table_view.png)
 
 ## Task 3: Build You Model
 To build a model using the time series data, you will use Exponential Smoothing algorithm on the `ESM_SH_DATA` view that is generated during the data preparation stage. In this example you build a time series model by applying the Holt-Winters model on time series aggregated on a quarterly interval.
@@ -171,7 +171,7 @@ Evaluate your model by viewing diagnostic metrics and performing quality checks.
     ORDER BY SETTING_NAME;
     </copy>
     ```
-	![Image alt text](images/timeseries_002.png)
+	![Review model settings](images/timeseries_modelsettings.png)
 
 2. To view the model diagonistic view, `DM$VG`, and evaluate the model, run the following query:
 
@@ -184,7 +184,7 @@ Evaluate your model by viewing diagnostic metrics and performing quality checks.
     </copy>
     ```
 
-	![Image alt text](images/timeseries_003.png)
+	![Review diagnostic metrics](images/timeseries_diagnosticview.png)
 The `DM$VG` view for time series contains the global information of the model along with the estimated smoothing constants, the estimated initial state, and global diagnostic measures.
 
 - `NAME`: Indicates the diagnostic attribute name.
@@ -218,7 +218,7 @@ For a time series model, you can use the `DM$VP` view to perform scoring or pred
     </copy>
     ```
 
-	![Image alt text](images/timeseries_004.png)
+	![The image displays the forecast using the DM$VP model detail view](images/timeseries_forecast.png)
 	In this step, the forecast shows the amount sold along with the `case_id`. The forecasts display upper and lower confidence bounds showing that the estimates can vary between those values.
 
 	Examine the statement:
@@ -242,12 +242,13 @@ Click settings and drag `DATE_ID` to keys and `FORECASTED_SOLD (avg)`, `ACTUAL_S
     ```
 
 
-	![Image alt text](images/timeseries_005.png)
+	![A visual representation of the forecast](images/timeseries_forecast_graph.png)
 
 
 
 This completes the prediction step. The model has successfully forecast sales for the next four quarters.
 
+You may now proceed to the next lab.
 
 
 ## Learn More
@@ -257,6 +258,7 @@ This completes the prediction step. The model has successfully forecast sales fo
 * [PL/SQL API Packages](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/DBMS_DATA_MINING.html#GUID-7B9145D4-831F-46B3-977F-01AF77ACA4A1)
 * [Model Detail Views](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/model-detail-views.html#GUID-AF7C531D-5327-4456-854C-9D6424C5F9EC)
 * [Exponential Smoothing](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/expnential-smoothing.html#GUID-65C7E533-E403-4F71-A5FE-EC034745904F)
+
 
 ## Acknowledgements
 * **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation
