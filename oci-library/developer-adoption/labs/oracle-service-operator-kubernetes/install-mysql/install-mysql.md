@@ -11,7 +11,12 @@
 Create policies in the root compartment with the following statements [Policy Setup Documentation](https://docs.oracle.com/en-us/iaas/mysql-database/doc/policy-details-mysql-database-service.html#GUID-2D9D3C84-07A3-4BEE-82C7-B5A72A943F53)
 
 **For Instance Principle**
-The OCI Service Operator dynamic group you created in the previous lab, should have the `manage` permission for the `mysql-family` resource type. 
+The OCI Service Operator dynamic group you created in the previous lab, will need the following policies.
+
+1. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Policies***.
+
+2. Click ***Create Policy***.
+
 
 **Sample Policy:**
 
