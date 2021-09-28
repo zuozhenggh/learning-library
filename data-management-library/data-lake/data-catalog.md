@@ -18,16 +18,6 @@ We will also discuss OCI Data Integration as part of data asset ETL and you can 
 - Learn how to create OCI Data Integration Workspace
 - Learn how to discover and create new data assets
 
-### Prerequisites
-
-- This lab requires you to have access to an Autonomous Database instance (either ADW or ATP).
-- This lab requires completion of Lab 1, **Provisioning an ADB Instance**, and Lab 3, **Creating a Database User**, in the Contents menu on the left.
-- You can complete the prerequisite labs in two ways:
-
-    a. Manually run through the labs.
-
-    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
-
 ## Task 1: Create the OCI Data Catalog
 
 In this task, you will create the OCI Data Catalog. Review options for creating business term to sync with the metadata for the data assets
