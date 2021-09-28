@@ -196,8 +196,7 @@ Description
     ![MDS](./images/04mysql11-3.png" ")
 
 
-## Task 3: Create Client Virtual Machine
-
+## Task 3: Create Compute instance
 1. You will need a client machine to connect to your brand new MySQL database. To launch a Linux Compute instance, go to Navigation Menu > Compute > Instances
     ![COMPUTE](./images/05compute01.png " ")
 
