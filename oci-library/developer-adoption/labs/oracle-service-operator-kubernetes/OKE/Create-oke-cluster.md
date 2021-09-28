@@ -20,8 +20,6 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
 ### Prerequisites
 - [OCI CLI Installation on your local machine](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm)
 
-- [Kubectl Installation on your local machine](https://kubernetes.io/docs/tasks/tools/)
-
 
 ## Task 1: Create Kubernetes Cluster
 
