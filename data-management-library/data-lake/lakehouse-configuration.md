@@ -40,21 +40,69 @@ First we are going to create an compartment. This allows for separation as well 
 
 ![Oracle home page.](./images/compartment.png " ")
 
-![Create Groups](images/create_group1.png " ")
+4. Select from the side menu Groups. Verify that you are in the lakehouse1 Compartment. There are going to be a few groups that are needed to administer and use the data catalog, integrations and flows. For the interest of this lab we are just going to add your user to each of these groups but in reality, administrators will only have the privileges to manage these areas of the data lake and other accounts will be added as users to have access to the data.
 
-![Create Groups](images/create_group2.png " ")
+![Click on Create Groups](images/create_group1.png " ")
 
-![Create Groups](images/create_group3.png " ")
+![Create Groups = Name group dataflow-users and add Description](images/create_group2.png " ")
 
+![Create Groups - Next group dataflow-admin](images/create_group3.png " ")
+
+Additional groups to create:
+- data-catalog-admin
+- data-catalog-users
+- data-integration-admin
+- data-integration-users
+
+After these groups are added. Click on a group and click on Add User. You will add your account you signed into the cloud with to each of the groups for the purpose of the lab.
+
+5. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on the lab we will have to create a couple more policies based on the workspace for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
+
+Select Policies on the side menu and click on the button Create Policy.
+ 
 ![Create Policies](images/create_policy1.png " ")
+
+Name each policy for to match the group so they are easy to recognize what they are used for. 
+- Name this first on DataFlowUsers (Notice no spaces, underscores or dashes are allowed here). 
+- Add the description.
+- Select under Policy use cases Data Flow. This will bring up common policy templates for this area in OCI. 
+- Select Let Data Flow users manage their own Applications and Runs. 
+- Add the group dataflow-users and the location is the compartment lakehouse1
 
 ![Create Policies](images/create_policy2.png " ")
 
+Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1
+
 ![Create Policies](images/create_policy3.png " ")
+
+Policies can be added based on the common templates or added by manually adding the policy. These are the additional policies that are needed for the different groups. Notice when you use manual editor, the group disappears because these will be part of the policy statement being added. You can copy the following commands and paste into the manual edit. We are going to name this policy DataLakehousePolicy to cover the rest of the policies needed for the groups.
+
+
+    ```
+    <copy>
+allow group data-lakehouse-admin to manage dis-workspaces in compartment lakehouse1
+allow group data-lakehouse-admin to manage dis-work-requests in compartment lakehouse1
+allow group data-lakehouse-admin to use virtual-network-family in compartment lakehouse1
+allow group data-lakehouse-admin to manage tag-namespaces in compartment lakehouse1
+allow group data-lakehouse-admin to use object-family in compartment lakehouse1
+
+    </copy>
+    ```
 
 ## Task 2: Create Object Storage Buckets
 
+Creating Object Storage Buckets allows for various types of data to be stored. For this lab, we are using a couple of buckets. Two are created for our data flow process which includes a place for the data and another one for the logs. Also we will create a moviestream bucket for placing the JSON file in that we will read later.
+
+From the Home Menu click on Storage and then click on Buckets.
+
 ![Create Storage Bucket](images/object_storage1.png " ")
+
+Enter a Bucket Name, dataflow-warehouse and use the rest of the defaults and click Create.
+
+![Create Storage Bucket](images/object_storage2.png " ")
+
+Next Bucket, click on Create Bucket, Bucket Name, dataflow-logs and use the rest of the defaults and click Create.
+And one more Create Bucket, Bucket Name, moviestream and again use the defaults and click Create.
 
 ![Create Storage Bucket](images/object_storage2.png " ")
 
