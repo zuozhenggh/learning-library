@@ -49,6 +49,7 @@ Customers with existing Kafka implementations, whether deployed on-premises or o
 ![Open Standard](./images/OCI-Stream2.png)
 
 
+
 ### Security and reliability
 
 
@@ -65,7 +66,8 @@ The service uses synchronous data replication across geographically distributed 
 Streaming provides tenancy-level data isolation and eliminates “noisy neighbor” performance issues, irrespective of scale and usage.
 
 
-![Security and Reliability](./images/OCI-Stream3.png))
+![Security and Reliability](./images/OCI-Stream3.png)
+
 
 ### Industry-leading pricing
 
