@@ -262,7 +262,7 @@ You can access all the assessments viewing the history.
     - Whether the latest assessment deviates from the baseline (if set)
 
 
-** Task 8: Analyze users across all your target databases
+## Task 8: Analyze users across all your target databases
 
 1. Click the **Risk Summary** tab.
 
