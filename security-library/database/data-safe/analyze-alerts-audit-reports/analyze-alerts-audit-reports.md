@@ -5,7 +5,7 @@ inject-note: true
 # Analyze Alerts and Audit Reports
 
 ## Introduction
-After you enable audit data collection on a target database in Oracle Data Safe, you can analyze the audit data via alerts and audit reports. Begin by viewing and manipulating the generated alerts for your Autonomous Transaction Processing (ATP) database. You can do so from the Alerts tab and from the dashboard on the Home tab in the Oracle Data Safe Console. Also analyze the collected audit data by viewing and modifying various audit reports. Finish by creating your own custom report that shows user login activity.
+After you enable audit data collection on a target database in Oracle Data Safe, you can analyze the audit data through alerts and audit reports. Begin by viewing and manipulating the generated alerts for your Autonomous Transaction Processing (ATP) database. You can do so from the Alerts tab and from the dashboard on the Home tab in the Oracle Data Safe Console. Also analyze the collected audit data by viewing and modifying various audit reports. Finish by creating your own custom report that shows user login activity.
 
 Estimated Lab Time: 20 minutes
 
@@ -37,11 +37,11 @@ This lab assumes you have:
 
 ## Task 1: View and close alerts
 
-1. If you are in the Oracle Data Safe Console, click the **Home** tab, and then click the **Alerts** tab.
+1. If you are in the Oracle Data Safe Console, click the **Alerts** tab.
 
-2. If you are in the Security Center, click **Activity Auditing**. When the Oracle Data Safe Console is displayed, click the **Alerts** tab.
+2. If you are in Security Center, click **Activity Auditing**. When the Oracle Data Safe Console is displayed, click the **Alerts** tab.
 
-3. View the total number of target databases, critical risk alerts, high risk alerts, medium risk alerts, open alerts, and closed alerts. At a glance, you can better understand whether the security of your database is in jeopardy and how you should prioritize your work.
+3. View the total number of target databases, critical risk alerts, high risk alerts, medium risk alerts, open alerts, and closed alerts. At a glance, you can better understand whether the security of your target database is in jeopardy and how you should prioritize your work.
 
     ![Alert totals](images/totals-alerts-page.png "Alert totals")
 
@@ -195,8 +195,8 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Activity Auditing Reports](https://docs.oracle.com/en-us/iaas/data-safe/doc/activity-auditing-reports.html)
-* [Manage Alerts](https://docs.oracle.com/en-us/iaas/data-safe/doc/manage-alerts.html)
+* [Activity Auditing Reports](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/activity-auditing-reports.html)
+* [Manage Alerts](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/manage-alerts.html)
 
 
 ## Acknowledgements

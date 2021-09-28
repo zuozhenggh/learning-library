@@ -24,7 +24,7 @@ In this lab, you will:
 This lab assumes you have:
 
 - Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
-- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that the Activity Auditing feature is enabled on your database and that you have privileges in Oracle Data Safe to use the Activity Auditing feature with your database
+- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that the Activity Auditing feature is enabled on your database and that you have privileges in Oracle Data Safe to use the Activity Auditing feature with your database.
 - Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it (see [Register an Autonomous Database](?lab=register-autonomous-database))
 - Accessed either the Security Center or the Oracle Data Safe Console
 
@@ -38,7 +38,7 @@ This lab assumes you have:
 
 1. If you are in the Oracle Data Safe Console, click the **Home** tab, and then click the **Activity Auditing** tab to access the Activity Auditing wizard.
 
-2. If you are in the Security Center, click **Activity Auditing**.
+2. If you are in Security Center, click **Activity Auditing**.
 
 3. On the **Select Targets for Auditing** page, select the check box for your target database, and then click **Continue**.
 
@@ -65,14 +65,14 @@ This lab assumes you have:
     ![target name in table](images/click-target-name.png "target name in table")
 
 
-8. On the **Audit Policies** tab in the **Edit Policies** dialog box, notice that the **Basic Auditing** and **Admin Activity Auditing** policies are selected to be provisioned. Oracle recommends that they be provisioned, so you can leave them selected. They are as follows:
+8. On the **Audit Policies** tab in the **Configure Policy** dialog box, notice that the **Basic Auditing** and **Admin Activity Auditing** policies are selected to be provisioned. Oracle recommends that they be provisioned, so you can leave them selected. They are as follows:
 
     - Critical Database Activity
     - Login Events
     - Database Schema Changes (DDL)
     - Admin Activity
 
-    ![Audit Policies tab in the Edit Policies dialog box](images/edit-policies-dialog-box-top-half.png "Audit Policies tab in the Edit Policies dialog box")
+    ![Audit Policies tab in the Configure Policy dialog box](images/configure-policy-dialog-box-top-half.png "Audit Policies tab in the Configure Policy dialog box")
 
 9. Expand **Custom Policies** to view the list of custom policies on your target database.
 
@@ -185,7 +185,7 @@ Enable the custom audit policy named `APP_USER_NOT_APP_SERVER` on your Autonomou
 
 2. On the **Audit and Alert Polices** page, click the name of your target database.
 
-3. In the **Edit Policies** dialog box, expand **Custom Policies**, select the `APP_USER_NOT_APP_SERVER` unified auditing policy to enable it, and then click **Provision**.
+3. In the **Configure Policy** dialog box, expand **Custom Policies**, select the `APP_USER_NOT_APP_SERVER` unified auditing policy to enable it, and then click **Provision**.
 
     ![Select the APP_USER_NOT_APP_SERVER check box](images/app-user-not-app-server.png "Select the APP_USER_NOT_APP_SERVER check box")
 
@@ -197,9 +197,9 @@ Enable the custom audit policy named `APP_USER_NOT_APP_SERVER` on your Autonomou
 
 ## Learn More
 
-* [Activity Auditing Overview](https://docs.oracle.com/en-us/iaas/data-safe/doc/activity-auditing-overview.html)
-* [Audit Policies](https://docs.oracle.com/en-us/iaas/data-safe/doc/audit-policies.html)
-* [Create Activity Auditing Jobs](https://docs.oracle.com/en-us/iaas/data-safe/doc/create-activity-auditing-jobs.html)
+* [Activity Auditing Overview](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/activity-auditing-overview.html)
+* [Audit Policies](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html)
+* [Retrieve and Provision Audit Policies](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/retrieve-and-provision-audit-policies.html)
 
 ## Acknowledgements
 

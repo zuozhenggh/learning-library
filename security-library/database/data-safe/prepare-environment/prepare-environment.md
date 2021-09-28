@@ -120,12 +120,9 @@ A tenancy administrator needs to create an IAM policy that allows the user group
     ```
     Allow group {group name} to manage all-resources in compartment {compartment name}
     Allow group {group name} to use autonomous-database in compartment {compartment name}
-    Allow group {group name} to manage security-assessments in compartment {compartment name}
-    Allow group {group name} to manage user-assessments in compartment {compartment name}
-    Allow group {group name} to read data-safe-work-requests in compartment {compartment name}
     ```
 
-    The first statement allows the user group to create an Autonomous Database in the specified compartment and then register it with Oracle Data Safe. The second statement allows the user group to utilize the database within Oracle Data Safe. The third and fourth statements allow the user group to create and manage assessments in Security Assessment and User Assessment. The fifth statement allows the user group to generate comparison reports in Security Assessment and User Assessment.
+    The first statement allows the user group to create an Autonomous Database in the specified compartment and then register it with Oracle Data Safe. The second statement allows the user group to utilize the database within Oracle Data Safe.
 
 
 9. Click **Create**.
@@ -141,15 +138,17 @@ A tenancy administrator or an Oracle Data Safe administrator needs to grant the 
 
     The **Overview** page is displayed.
 
-2. From the **Overview** page for Oracle Data Safe, click **Service Console** to access the Oracle Data Safe Console.
+2. From the **Overview** page for Oracle Data Safe, click **Security Center**.
 
-3. In the Oracle Data Safe Console, click the **Security** tab in the upper-right corner.
+3. Click **Activity Auditing** to access the Oracle Data Safe Console.
 
-4. From the **Compartment** drop-down list, select the user's compartment.
+4. In the upper-right corner, click the **Security** tab.
 
-5. For the user group that you created, select **Manage** from the **All Features** drop-down list.
+5. From the **Compartment** drop-down list, select the user's compartment (for example, dsc01).
 
-6. Click **Save**.
+6. For the user group that you created, select **Manage** from the **All Features** drop-down list.
+
+7. Click **Save**.
 
 
 ## Task 6: Provision an Autonomous Transaction Processing database
@@ -171,7 +170,7 @@ Provision an Autonomous Transaction Processing (ATP) database to use with Oracle
     - **Compartment** - If needed, select your compartment.
     - **Display name** - Enter a memorable name for the database for display purposes, for example, **ad01** (short for Autonomous Database 1).
     - **Database Name** - Enter **ad01**. It's important to use letters and numbers only, starting with a letter. The maximum length is 14 characters. Underscores are not supported.
-    - **Workload Type** - Leave **Transaction Processing** selected.
+    - **Workload Type** - Select **Transaction Processing**.
     - **Deployment Type** - Leave **Shared Infrastructure** selected.
     - **Always Free** - Leave this option deselected (the slider should be to the left).
     - **Database version** - Leave **19c** selected.
@@ -179,8 +178,8 @@ Provision an Autonomous Transaction Processing (ATP) database to use with Oracle
     - **Storage** - Leave **1** selected.
     - **Auto scaling** - Leave this checkbox selected.
     - **Password** and **Confirm Password** - Specify a password for the `ADMIN` database user and jot it down. The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character. It cannot contain your username or the double quote (") character.
-    - **Network Access** - Leave **Secure access from everywhere** selected.
-    - **License Type** - Select **License Included**.
+    - **Access Type** - Leave **Allow secure access from everywhere** selected.
+    - **License Type** - Leave **License Included** selected.
 
 6. Click **Create Autonomous Database**. The **Autonomous Database Details** page is displayed.
 
