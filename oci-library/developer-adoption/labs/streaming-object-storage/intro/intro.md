@@ -38,6 +38,7 @@ The Kafka Connect Harness provides out-of-the-box integrations with hundreds of 
 Run open source software as an Oracle-managed service. Streaming’s Kafka compatibility significantly reduces vendor lock-in and helps customers easily adopt hybrid and multicloud architectures.
 
 ***Choice of APIs***
+
 Developers have the flexibility of using either Apache Kafka APIs or Oracle Cloud’s native Streaming APIs, which are available in SDKs such as Python, Java, Typescript, and Go.
 
 ***Easy transition for Kafka implementations***
