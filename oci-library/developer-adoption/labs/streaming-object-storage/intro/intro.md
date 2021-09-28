@@ -10,6 +10,7 @@
 
 ### Serverless infrastructure
 
+
 ***Elastic and scalable platform***
 
 Data engineers can easily set up and operate big data pipelines. Oracle handles all infrastructure and platform management for event streaming, including provisioning, scaling, and security patching.
@@ -27,6 +28,26 @@ Native integrations with Oracle Cloud Infrastructure services include Object Sto
 The Kafka Connect Harness provides out-of-the-box integrations with hundreds of data sources and sinks, including GoldenGate, Integration Cloud, Database, and compatible third-party offerings.
 
 ![Serverless Infrastrucuture](./images/OCI-Stream1.png)
+
+
+### Open standards-based
+
+
+***Open source Apache Kafka-compatible***
+
+Run open source software as an Oracle-managed service. Streaming’s Kafka compatibility significantly reduces vendor lock-in and helps customers easily adopt hybrid and multicloud architectures.
+
+***Choice of APIs***
+Developers have the flexibility of using either Apache Kafka APIs or Oracle Cloud’s native Streaming APIs, which are available in SDKs such as Python, Java, Typescript, and Go.
+
+***Easy transition for Kafka implementations***
+
+Customers with existing Kafka implementations, whether deployed on-premises or on other clouds, can easily migrate to Streaming by changing a few configuration parameters.
+
+
+![Open Standard](./images/OCI-Stream2.png)
+
+
 
 
 
