@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Deploy a Highly Available OCI Container Enginer for Kubernetes Cluster",
+    "workshoptitle": "Using OCI Streaming Service",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
