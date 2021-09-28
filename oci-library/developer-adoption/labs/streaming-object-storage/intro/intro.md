@@ -1,47 +1,35 @@
 # Introduction
 
-## Deploying a Highly Available Oracle Container Engine for Kubernetes Cluster
+## What is OCI Streaming
 
-You will learn how to deploy a highly available Kubernetes cluster using Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI). 
-
-Estimated time: 60 minutes
+[Oracle CLoud Infrastrucutre Streaming](https://www.oracle.com/cloud-native/streaming/) is a real-time, managed service, Apache Kafka-compatible event streaming platform for developers and data scientists.OCI Streaming provides a fully managed, scalable, and durable messaging solution for ingesting continuous, high-volume streams of data that you can consume and process in real time. Streaming is tightly integrated with Oracle Cloud Infrastructure (OCI), Database, GoldenGate, and Integration Cloud.  The service also provides out-of-the-box integrations for hundreds of third-party products across categories such as DevOps, databases, big data, and SaaS applications.
 
 
 
-## A Highly Available Kubernetes Cluster
+## Why OCI Streaming
 
-A Highly Available Kubernetes cluster is about setting up Kubernetes without a single point of failure. OKE is a fully-managed, scalable, and highly available service that you can use to deploy your containerized applications to OCI. There are best practices to ensure your OKE data plane is highly available.
+### Serverless infrastructure
 
-During this lab, you will take advantage of OCI and Kubernetes components in deploying a highly available data plane for your Kubernetes cluster. 
-    ![KubeArch](./images/kubernetesarch.png " ")
+Elastic and scalable platform
+Data engineers can easily set up and operate big data pipelines. Oracle handles all infrastructure and platform management for event streaming, including provisioning, scaling, and security patching.
+
+ Deploy streaming apps at scale
+With the help of consumer groups, Streaming can provide state management for thousands of consumers. This helps developers easily build applications at scale.
+
+Oracle Cloud Infrastructure integrations
+Native integrations with Oracle Cloud Infrastructure services include Object Storage for long-term storage, Monitoring for observability, Resource Manager for deploying at scale, and Tagging for easier cost tracking/account management.
+
+Kafka Connect Harness
+The Kafka Connect Harness provides out-of-the-box integrations with hundreds of data sources and sinks, including GoldenGate, Integration Cloud, Database, and compatible third-party offerings.
+
+![Serverless Infrastrucuture](./images/OCI-Stream1.png)
 
 
 
-### Objectives
 
-In this lab, you will:
-
-* Provision an OKE cluster
-* Use Node Affinity with OCI Availability Domains (ADs)
-* Use Node Affinity with OCI Fault Domains
-* Use Kubernetes Probes
-
-### Prerequisites
-
-1. An Oracle Free Tier(Trial), Paid or LiveLabs Cloud Account
-1. [Familiarity with OCI console](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm)
-1. [Overview of Networking](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-1. [Familiarity with Compartments](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
-1. Basic conceptual knowledge of containers and [Kubernetes](https://kubernetes.io/)
-
-You may now [proceed to the next lab](#next).
-
-## Learn More
-
-* [Reference Architecture: Deploy a microservices-based application in Kubernetes](https://docs.oracle.com/en/solutions/cloud-native-ecommerce/index.html#GUID-CB180453-1F32-4465-8F27-EA7300ECF771)
 
 
 ## Acknowledgements
 
-* **Author** - Rishi Johari
-* **Last Updated By/Date** - Rishi Johari, August 2021
+* **Author** - Rishi Johari, Lucas Gomes
+* **Last Updated By/Date** - Rishi Johari, September, 2021
