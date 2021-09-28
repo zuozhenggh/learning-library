@@ -30,12 +30,12 @@ In this lab, you will:
 
 ### Prerequisites
 
-Before starting, be sure that you have completed the following prerequisite tasks:
+This lab assumes you have:
 
-- You obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console.
-- You prepared your environment for this workshop. If not, see [Prepare Your Environment](?lab=prepare-environment). It's important that your ATP database is registered with Oracle Data Safe, you have enabled the Activity Auditing, User Assessment, and Security Assessment features on your database, and you have the appropriate privileges in Oracle Data Safe to use the Activity Auditing, User Assessment, and Security Assessment features with your database.
-- You registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. If not, see [Register an Autonomous Database](?lab=register-autonomous-database).
-- Audit data collection is started in Oracle Data Safe for your ATP database. If not, see [Provision Audit and Alert Policies](?lab=provision-audit-alert-policies).
+- Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
+- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that your Autonomous Database is registered with Oracle Data Safe, you have enabled the Activity Auditing, User Assessment, and Security Assessment features on your database, and you have the appropriate privileges in Oracle Data Safe to use the Activity Auditing, User Assessment, and Security Assessment features with your database.
+- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it (see [Register an Autonomous Database](?lab=register-autonomous-database))
+- Started audit data collection for your Autonomous Database in Oracle Data Safe (see [Provision Audit and Alert Policies](?lab=provision-audit-alert-policies))
 
 
 ### Assumptions
