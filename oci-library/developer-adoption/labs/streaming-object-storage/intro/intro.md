@@ -8,6 +8,7 @@
 
 ## Why OCI Streaming
 
+
 ### Serverless infrastructure
 
 
@@ -30,6 +31,7 @@ The Kafka Connect Harness provides out-of-the-box integrations with hundreds of 
 ![Serverless Infrastrucuture](./images/OCI-Stream1.png)
 
 
+
 ### Open standards-based
 
 
@@ -50,6 +52,7 @@ Customers with existing Kafka implementations, whether deployed on-premises or o
 
 
 
+
 ### Security and reliability
 
 
@@ -67,6 +70,7 @@ Streaming provides tenancy-level data isolation and eliminates “noisy neighbor
 
 
 ![Security and Reliability](./images/OCI-Stream3.png)
+
 
 
 ### Industry-leading pricing
