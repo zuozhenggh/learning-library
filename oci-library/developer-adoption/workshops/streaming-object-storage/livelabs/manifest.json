@@ -11,16 +11,8 @@
             "filename": "../../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision the Infrastructure using Resource Manager",
-            "filename": "../../../labs/oci-devops-oke/deploy-infra/deploy-infra.md"
-        },
-        {
-            "title": "Lab 2: Continuous Deployment with OCI DevOps Pipeline",
-            "filename": "../../../labs/oci-devops-oke/devops-pipeline/devops-pipeline.md"
-        },    
-        {
-            "title": "Lab 3: Release resources created through the workshop",
-            "filename": "../../../labs/oci-devops-oke/cleanup/cleanup.md"
+            "title": "Lab 1: Archive Stream Data to Object Storage",
+            "filename": "../../../labs/streaming-object-storage/create-stream/create-stream.md"
         },        
         {
             "title": "Need Help?",
