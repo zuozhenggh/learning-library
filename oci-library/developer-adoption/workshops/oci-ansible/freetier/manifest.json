@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Deploy the Oracle Service Operator on Kubernetes",
+    "workshoptitle": "Ansible on OCI",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -11,21 +11,9 @@
             "filename": "../../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Deploy OKE Cluster",
+            "title": "Lab 1: Using Ansible on OCI",
             "filename": "../../../labs/oracle-service-operator-kubernetes/OKE/Create-oke-cluster.md"
-        },
-        {
-            "title": "Lab 2: Deploy Oracle Service Operator for Kubernetes",
-            "filename": "../../../labs/oracle-service-operator-kubernetes/OSOK/install-osok.md"
-        },    
-        {
-            "title": "Lab 3: Deploy Oracle MySQL DB System Service from Kubernetes",
-            "filename": "../../../labs/oracle-service-operator-kubernetes/install-mysql/install-mysql.md"
-        },
-        {
-            "title": "Lab 4: Deploy Oracle Autonomous Database Service from Kubernetes",
-            "filename": "../../../labs/oracle-service-operator-kubernetes/install-adb/install-adb.md"
-        },         
+        },        
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
