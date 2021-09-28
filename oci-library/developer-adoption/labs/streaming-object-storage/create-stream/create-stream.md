@@ -4,9 +4,10 @@
 
 * Need to be an OCI Tenancy Administrator
 
-## Task 1: Install Operator SDK
+## Task 1: Archiving Stream Data to Object Storage
 
-The Operator SDK installation is documented in detail by the operator-sdk project. Please follow the document [here](https://sdk.operatorframework.io/docs/installation/) to install it.
+In this tutorial, we’re going to use [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/service-connector-hub/overview.htm) to read an existing stream of data and archive that data to Object Storage. Then we’ll enhance the example by adding a task in between the source read and target write operations. Let’s dig in and see how to configure things.
+
 
 ## Task 2: Install Operator Lifecycle Manager (OLM)
 
