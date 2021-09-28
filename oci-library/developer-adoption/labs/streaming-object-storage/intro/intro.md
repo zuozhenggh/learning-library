@@ -67,6 +67,21 @@ Streaming provides tenancy-level data isolation and eliminates “noisy neighbor
 
 ![Security and Reliability](./images/OCI-Stream3.png))
 
+### Industry-leading pricing
+
+
+***Pay-as-you-use***
+
+Customers pay only for what they use, making the service attractive for workloads with large spikes in usage.
+
+***Simple pricing model***
+
+Customers pay only for throughput and storage, with no upfront costs or early termination penalties.
+
+***Zero-cost data movement***
+
+Unlike other public cloud providers, Oracle does not charge any additional fees for data movement from Streaming to other Oracle Cloud Infrastructure services.
+
 
 
 ## Acknowledgements
