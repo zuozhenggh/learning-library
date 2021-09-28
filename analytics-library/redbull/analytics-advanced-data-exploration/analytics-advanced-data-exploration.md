@@ -147,7 +147,7 @@ To visualize how well each car is doing, we'll calculate the time-delta between 
 
 In the previous lab we already found several factors that influence the score that fans will give to a race. These factors were directly available to us in the `RACES` dataset.
 
-In this lab, we've gone a step further by uncovering useful pieces of data that weren't visible at first sight. We've uncovered the following new pieces of information that we can potentially be extracted from the data:
+In this lab, we've gone a step further by uncovering useful pieces of data that weren't visible at first sight. We've uncovered the following new pieces of information that can potentially be extracted from the data:
 - Come back score (number of positions recovered by a driver during the race)
 - Positions changes as a result of actual take overs on the track versus position changes that are a result of pit stops
 - The presence of a safety car
