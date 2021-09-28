@@ -1,5 +1,5 @@
 
-## Deploy Oracl Autonomous Database from Kubernetes
+## Deploy Oracle Autonomous Database from Kubernetes
 
 ## Introduction
 
@@ -7,8 +7,12 @@
 
 ## Task 1: Create  Autonomous Database Dynamic Group Policies
 
-**For Instance Principle** 
-The OCI Service Operator dynamic group should have the `manage` permission for the `autonomous-database` resource type.
+**For Instance Principle**
+The OCI Service Operator dynamic group you created in the previous lab, will need the following policy added.
+
+1. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Policies***.
+
+2. Click ***Create Policy***.
 
 **Sample Policy:**
 
@@ -89,21 +93,3 @@ The AutonomousDatabases CR can be describe as below:
 ```sh
 $ kubectl describe autonomousdatabases <NAME_OF_CR_OBJECT>
 ```
-
-## Access Information in Kubernetes Secrets
-
-The Access information of a OCI Service or resource will be created as a Kubernetes secret to manage the Autonomous Database. The name of the secret can be provided in the CR yaml or by default the name of the CR will be used.
-
-Customer will get the access information as Kubernetes secret to use the Autonomous Database. The following files/details will be made available to the user:
-
-| Parameter          | Description                                                              | Type   |
-| ------------------ | ------------------------------------------------------------------------ | ------ |
-| `ewallet.p12`      | Oracle Wallet.                                                           | string |
-| `cwallet.sso`      | Oracle wallet with autologin.                                            | string |
-| `tnsnames.ora`     | Configuration file containing service name and other connection details. | string |
-| `sqlnet.ora`       |                                                                          | string |
-| `ojdbc.properties` |                                                                          | string |
-| `keystore.jks`     | Java Keystore.                                                           | string |
-| `truststore.jks`   | Java trustore.                                                           | string |
-| `user_name`        | Pre-provisioned DB ADMIN Username.                                       | string |
- 
