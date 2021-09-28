@@ -12,6 +12,7 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you will be guided through the following tasks:
 
+
 - Create Virtual Cloud Network 
 - Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
 
@@ -21,7 +22,9 @@ In this lab, you will be guided through the following tasks:
 - Some Experience with MySQL Shell
 
 
-## Task 1: Create Virtual Cloud Network
+## Task 1: Create Virtual Cloud Network 
+
+*Note: Green Button users - Your Virtual Cloud Network already exist. Go to Task 2*
 
 1. Navigation Menu > Networking > Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")

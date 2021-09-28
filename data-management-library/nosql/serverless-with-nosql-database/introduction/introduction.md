@@ -20,16 +20,19 @@ As a developer, you can connect to NDCS and work with NoSQL tables using the NoS
 
 In this workshop you will:
   * Work with a live demo application
-  * Create an API Signing Key and SDK CLI Configuration File
+  * Set up your environment
   * Create a table with provisioned reads/sec, writes/sec, and GB storage and write data to the table and read data from the table
-  * Run the Sample NoSQL Application
+  * Run a sample NoSQL application
   * Execute queries against NoSQL tables
+  * Write SQL queries to solve business problems
+
+
 
 
 ### Prerequisites
 
 This workshop assumes you have:
-  * An Oracle Free Tier, Always Free, or Paid Account
+  * An Oracle Free Tier, Paid Account or Green Button
   * Access to a personal cellphone
   * Programming knowledge in java, python or node.js
 
