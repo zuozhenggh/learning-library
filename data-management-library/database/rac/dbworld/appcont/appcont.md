@@ -32,7 +32,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     You should see at least the services: **noac**, **tac_service**, **ac_service**, and **unisrv**.
 
-   ![](./images/setup_service_list.png " ")
+   ![Display Database Service Status](./images/setup_service_list.png " ")
 
     Examine the service characteristics (replacing the service name in the command below for each service)
 
@@ -41,7 +41,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     srvctl config service -d  `srvctl config database` -s noac
     ````
-   ![](./images/noac_config.png " ")
+   ![Display Config of NOAC Database Service](./images/noac_config.png " ")
 
    The attributes **commit\_outcome**, **failovertype**, and **failover\_restore** are those that set whether AC is enabled or not. For the **noac** service AC is not enabled as commit\_outcome is false and failovertype is NONE.
 
@@ -51,7 +51,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     srvctl config service -d  <REPLACE DB NAME> -s tac_service
     ````
 
-      ![](./images/tac_config.png " ")
+      ![Display Config of TAC_SERVICE Database Service](./images/tac_config.png " ")
 
    To enable TAC **commit\_outcome** is TRUE, **failovertype** is set to AUTO, and **failover\_restore** is AUTO
 
@@ -92,7 +92,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
 
    Examine the ac\_noreplay.properties file to see that we are using a pooled datasource *oracle.jdbc.pool.OracleDataSource* but we have disabled FAN, *fastConnectionFailover=FALSE* and connection tests *validateConnectionOnBorrow=FALSE*. The URL uses the recommended format and connects to the service **noac**, which has no AC attributes set.
 
-    ![](./images/noreplay_properties.png " ")   
+    ![Examine JDBC Property File](./images/noreplay_properties.png " ")   
 
     ````
     cd /home/oracle/acdemo
@@ -100,7 +100,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     The application will start, create a connection pool, and begin issuing transactions against the database.
 
-    ![](./images/noreplay_run.png " ")   
+    ![Run Script RUNNOREPLAY](./images/noreplay_run.png " ")   
 
 2. Kill the instance or kill sessions attached to the database
 
@@ -139,7 +139,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     The application will see errors from the database and will fall in to its own error handling routines
 
-    ![](./images/noreplay_errors.png " ")      
+    ![Examine Application Errors](./images/noreplay_errors.png " ")      
 
     It can take some time for the system to correct and recover, but provided that the application does not time out, or has not reached some error thresholds (that the application sets for itself), connections can be re-established and activity recommence
 
@@ -163,19 +163,19 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
    2 borrowed, 0 pending, 4ms getConnection wait, TotalBorrowed 18353, avg response time from db 32ms
    2 borrowed, 0 pending, 4ms getConnection wait, TotalBorrowed 19163, avg response time from db 8ms
     ````
-    There is also a script named kill_sessions.sh in the acdemo/ directory that can be used to forcibly kill the database sessions. This script takes the service name as an argument (as it needs to connect to the same instance as the application in order to identify the sessions)
+    There is also a script named kill_sessions.sh in the acdemo/ directory that can be used to forcibly kill the database sessions. This script takes the service name as an argument (as it must connect to the same instance as the application to identify the sessions)
 
     ````
     cd /home/oracle/acdemo
     ./kill_session.sh noac.pub.racdblab.oraclevcn.com
     ````
-    ![](./images/noreplay_errors_2.png " ")  
+    ![Cause Connected Sessions to Fail](./images/noreplay_errors_2.png " ")  
 
 ## Task 3:  Transparent Application Continuity
 
 1.  Examine the tac_replay.properties file to see that we are using a replay datasource *oracle.jdbc.replay.OracleDataSourceImpl* and we have enabled FAN, *fastConnectionFailover=TRUE* and connection tests *validateConnectionOnBorrow=TRUE*. The URL uses the recommended format and connects to the service you created previously, which has AC attributes set.
 
-    ![](./images/tac_properties.png " ")   
+    ![Examine JDBC Property File](./images/tac_properties.png " ")   
 
      ````
      cd /home/oracle/acdemo
@@ -184,7 +184,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
      The application will start, create a connection pool, and begin issuing transactions against the database using a TAC-enabled service.
      Both FAN and connection tests are enabled
 
-     ![](./images/ac_run.png " ")  
+     ![Run Script RUNTACREPLAY](./images/ac_run.png " ")  
 
     **Note:** ONS is auto-configured. The "ONS Configuration" heading in the banner is only populated if ONS is manually configured [which is not recommended]
 
@@ -208,7 +208,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     $ kill -9 68325
     ````
 
-    ![](./images/tac_failover.png " ")
+    ![Cause Database Instance Crash](./images/tac_failover.png " ")
 
     No errors occur.
     Transparent Application Continuity traps the error(s), re-establishes connections at a surviving instance, and replays any uncommitted transactions.
@@ -306,7 +306,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     ````
     What happens to the SQL*Plus session?
 
-   ![](./images/sqlplus_tac.png " ")
+   ![Cause SQLPLUS Session to Fail](./images/sqlplus_tac.png " ")
 
     Perform another update and commit
 
@@ -369,7 +369,7 @@ You may now *proceed to the next lab*.
 
 ### Issue 1 JNI ERROR
 
-    ![](./images/issue1_java_mismatch.png  " ")
+    ![Application Sees a JNI Error](./images/issue1_java_mismatch.png  " ")
 
 #### Fix for Issue #1
 1.  Recompile and re-package ACDemo with the installed JDK
@@ -387,7 +387,7 @@ You may now *proceed to the next lab*.
     mv acdemo.jar ../lib  
     ````
 ### Issue 2 Instance not restarting
-    ![](./images/instance_down_error.png  " ")
+    ![Instance Does not Restart](./images/instance_down_error.png  " ")
 
 #### Fix for Issue #2
 1. After crashing an instance a number of times (in a short period), it may not automatically restart. If you notice an instance down, manually restart it (this can lead to application timeouts on failover, as the instance may not start before the application abandons connection attempts)
