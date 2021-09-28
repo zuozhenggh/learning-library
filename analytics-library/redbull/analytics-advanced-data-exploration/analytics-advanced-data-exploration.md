@@ -42,9 +42,9 @@ First of all, let's look closer at the visualizations that we already have to se
 
    ![Banner](images/vettel-comeback.png)
 
-   Due to a collision Vettel fell to 22nd position early in the race. In the chart you can see how he made a great come back. Eventually he made it back to the 6th position, which was enough for him to seal the championship of that year.
+   Due to a collision Vettel fell to 22nd position early in the race. In the chart you can see how he made a great come back. Eventually he made it back to the 6th position, which was enough for him to seal the championship of that year. **What do you think about this? Could we use this type of pattern to predict the score of a race?**
 
-   This is another interesting pattern. For the fans, we suspect it is interesting to have many overtakes, and it's even more exciting if a particular driver is able to recover many positions during the race. Let's make another note of this as an interesting pattern.
+5. We suspect that is interesting to have many overtakes, and it's even more exciting if a particular driver is able to recover many positions during the race. Let's make another note of this as an interesting pattern.
 
 	 Note 5: A large come back (many positions gained) of a driver _may have_ a positive influence on the score. We don't have this metric available yet, so we will have to create it ourselves later (Feature Engineering).
 
@@ -74,9 +74,9 @@ Now let's have a look at the pit stop information.
 
    ![Banner](images/overtake-pitstop2.png)
 
-   Notice how Norris is overtaken by Bottas in lap 30. However, this overtake took place because Norris was making a pit stop. This is in contrast with the overtake by Hamilton in lap 20, which actually takes place on the track itself.
+   Notice how Norris is overtaken by Bottas in lap 30. However, this overtake took place because Norris was making a pit stop. This is in contrast with the overtake by Hamilton in lap 20, which actually takes place on the track itself. **How do you believe pit stops can help us predict scores?**.
 
-	 Granted, an overtake because of a pit stop can be very interesting for the viewers, but our theory is that overtakes that actually take place on the track are more interesting to the viewers, and will result in a higher score. This is another interesting finding.
+6. Our theory is that, although an overtake during a pit stop can be interesting, the  overtakes that actually take place on the track are even more exciting, and will result in a higher score. This is another interesting finding.
 
 	 Note 6: Position changes due to a pit stop _may be_ less interesting for viewers than position changes on the track. We will have to transform the race data in some way to separate real overtakes from semi overtakes (during Feature Generation).
 
@@ -121,23 +121,25 @@ To visualize how well each car is doing, we'll calculate the time-delta between 
 
 	 ![Banner](images/create-ghost-car-chart2.png)
 
-4. Inspect the resulting chart.
+5. Inspect the resulting chart.
 
    ![Banner](images/safety-car.png)
 
    In this chart, the horizontal axis (y=0) indicates the ghost car. Any car that's above the line is going faster than the ghost car, any car below it is going slower.
 
-   With this new visualization we can uncover new patterns in the data! There's an event around laps 25-30 where all the cars come back close together. This is likely a safety car.
-	 This wasn't visible before in the position chart.
-	 This makes us think: What could a safety car mean for the level of excitement of a race? A safety car effectively "resets" the race, by compressing the cars into a short distance from each other. Our theory is that in general this may add lead to a higher score.
+   With this new visualization we can uncover new patterns in the data! There's an event around laps 25-30 where all the cars come back close together. **What do you believe is happening here?**
+
+6. This is likely a safety car. This wasn't visible before in the position chart.
+
+   This makes us think: What could a safety car mean for the level of excitement of a race? A safety car effectively "resets" the race, by compressing the cars into a short distance from each other. Our theory is that in general this may add lead to a higher score.
 
 	 Note 7: The presence of a safety car _may_ increase the score of races in general.
 
-5. Save the project by clicking on the Save icon.
+7. Save the project by clicking on the Save icon.
 
    ![Banner](images/save-simple.png)
 
-6. Finally, go back to the home page by clicking on the top left icon.
+8. Finally, go back to the home page by clicking on the top left icon.
 
    ![Banner](images/to-homepage9.png)
 

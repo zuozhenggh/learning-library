@@ -477,9 +477,9 @@ How can we check whether our theories about the relationship between position ch
 
 8. Relying on interpretation of a scatter plot can be a bit subjective. Therefore, it's important to also provide _numerical_ evidence of the correlation.
 
-   We can do this by calculating the so-called **Pearson correlation coefficient**. This is a single number that indicates the strength of the correlation between to variables.
+   We can do this by calculating the **Pearson correlation**. This is a single number that indicates the strength of the correlation between two variables.
 
-	 In the following we will calculate the Pearson correlation equivalent for all variables in one go by creating a matrix.
+	 In the following we will calculate the Pearson correlation for all variables in one go by creating a matrix.
 
 	 Select the fields `DNF_COUNT`, `DNF_DUE_TO_ACCIDENT_COUNT`, `OVERTAKEN_POSITIONS_TOTAL` and `SCORE` (use Control click to multi-select). Then right click on any of the fields to open the Context Menu and choose the Correlation Matrix icon.
 
@@ -489,13 +489,13 @@ How can we check whether our theories about the relationship between position ch
 
    All variables are listed along both the vertical and the horizontal axis.
 
-	 For each combination of the two variables, the Pearson equivalent provides a number between -1 and 1. -1 is a perfectly negative linear correlation, 0 means no correlation and 1 a perfectly positive correlation.
+	 For each combination of two variables, the Pearson correlation is a number between -1 and 1. -1 is a perfectly negative linear correlation, 0 means no correlation and 1 a perfectly positive correlation.
 
    Any variable is always perfectly correlated with itself, which explain the dark green boxes through the diagonal.
 
-	 Right now, we are only interested in the Pearson corr equivalent of SCORE with all other variables (as marked in the screenshot).
+	 Right now, we are only interested in the Pearson correlation of SCORE with all other variables (as marked in the screenshot).
 
-	 Notice how `OVERTAKEN_POSITIONS_TOTAL` has the highest equivalent (0.38). This _may_ indicate that it is of relatively high importance to predict the SCORE.
+	 Notice how `OVERTAKEN_POSITIONS_TOTAL` has the highest Pearson correlation (0.38). "Highest" in this case means that, of all variables, `OVERTAKEN_POSITIONS_TOTAL` is furthest away from 0 and closest to -1 or 1. This _may_ indicate that it is of relatively high importance to predict the SCORE.
 
 	 In contrast, imagine we were to find no correlation between a variable and the target, then it's likely not to be of any value in predicting that target.
 
@@ -525,8 +525,8 @@ How can we check whether our theories about the relationship between position ch
 
    How to read this type of chart?
 	 The mean of the data set is indicated by the small horizontal line within the boxes. We see that the mean fan score for races with wet weather is quite a bit higher than for races with dry weather.
-	 The top and bottom end of the boxes show where the mid 50% of the fan scores lie. We can conclude that scores in general are significantly higher than races with dry weather.
-	 However, as with the other variables that we investigated, there are outliers that are quite far outside of the boxes. We see that there are dry weather races that also result in high scores. So again, the `WET_WEATHER` factor looks important, but we can safely assume that it is not the only factor that influences the score.
+	 The top and bottom end of the boxes show where the mid 50% of the fan scores lie. We can conclude that scores of races in wet weather in general are significantly higher than races with dry weather.
+	 However, there are outliers that are quite far outside of the boxes. We see that there are dry weather races that also result in high scores. So again, the `WET_WEATHER` factor looks important, but we can safely assume that it is not the only factor that influences the score.
 
 10. Save the project by clicking on the Save icon and name it "Correlations".
 
