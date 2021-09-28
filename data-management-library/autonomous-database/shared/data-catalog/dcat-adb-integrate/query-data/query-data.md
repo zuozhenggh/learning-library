@@ -71,30 +71,51 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
     ![](./images/open-dialog.png " ")
 
-    The imported notebook is displayed in the **Notebooks** page.
+    If the import is successful, a notification is displayed at the top and the **`Data Lake Accelerator`** notebook is displayed in the list of available notebooks on **Notebooks** page.
 
     ![](./images/notebook-imported.png " ")
 
-
-## Task 3: Review and Run the Imported Notebook    
-
-1. Open the imported notebook. On the **Notebooks** page, click the **Data Lake Accelerator** notebook. The notebook is displayed in the list of available notebooks.
+4. Open the imported notebook. On the **Notebooks** page, click the **Data Lake Accelerator** notebook. The notebook is displayed in notebook **Editor**.
 
     ![](./images/notebook-displayed.png " ")
 
-2. The first thing we need to do is to click on the gear icon on the top right, which will open the panel with the Interpreters, and on that panel make sure to select at least one of the interpreters that indicate **%sql (default), %script, %python**. You can move the interpreters to change their order and bring the one you prefer to the top. Ideally move the **MEDIUM** interpreter (the one with "_medium" in the name) to the top, or only select it by clicking on it (it becomes blue) and leave the others unclicked (they stay white).
 
-    ![](./images/selected-interpreter.png " ")
+## Task 3: Set the Interpreter Bindings for the Imported Notebook
 
-    Click **Save** to save your selected options.
+An interpreter is a plug-in that allows you to use a specific data processing language backend. To display and visualize data using SQL in a notebook paragraph, that data must be fetched from the database; therefore, you must bind a notebook to an interpreter to fetch data from the database or any data source. A default set of interpreter bindings is available. Paragraphs using the **SQL** **`%sql`** and **PL/SQL** **`%script`** interpreters allow you to invoke Oracle SQL and PL/SQL statements, respectively. The interpreter binding order that is set for a notebook applies to all the paragraphs in that notebook. However, you can override the interpreter binding for SQL and PL/SQL interpreters for any specific paragraph in the notebook.
 
-3. Run the entire notebook by clicking at the top of the screen, on the icon that looks like a **play button** next to the notebook name.
+>**Note:** For the Zeppelin Notebooks in Oracle Machine Learning, you use the sql and pl/sql interpreters within an Oracle Database interpreter group and the md (MarkDown) interpreter for plain text formatting syntax so that it can be converted to HTML.
+
+1. Click on the gear icon on the top right. The **Settings** panel is displayed. The list of available interpreters is displayed in the **Interpreter binding** section.
+
+    ![](./images/settings-panel.png " ")
+
+2. Select at least one of the interpreters that indicate **%sql (default), %script, %python**. You can move the interpreters to change their order and bring the one you prefer to the top. The first interpreter in the list is the default. Click and drag the **trainingadb_medium %sql (default), %script, %python** interpreter to the top of the list to make it the default. Click **Save** to save your changes. See [About Interpreter Bindings and Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/omlug/interpreters-and-notebooks.html).
+
+    ![](./images/reorder-interpreter.png " ")
+
+    The notebook is re-displayed.
+
+## Task 4: Review and Run the Imported Notebook    
+
+1. Run the entire notebook by clicking the **Run all paragraphs** icon on the Notebook toolbar at the top of the page next to the notebook's name.
 
     ![](./images/run-notebook.png " ")
 
+    The **Run all** confirmation message box is displayed. Click **OK**.
+
+    ![](./images/run-all.png " ")
+
+    > **Note:** When a paragraph executes successfully, its status changes from READY to FINSIHED.
+
+2. When all the paragraphs in the note are finished, review each paragraph and examine its output.     
+
+    ![](./images/run-finished.png " ")
+
 ## Learn More
 
-* [OML Notebooks documentation](https://docs.oracle.com/en/database/oracle/machine-learningoml-notebooks/index.html)
+* [OML Notebooks documentation](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/index.html)
+* [Oracle Database documentation](https://docs.oracle.com/en/database/oracle/index.html)
 * [Oracle Cloud Infrastructure Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
 * [Using Oracle Autonomous Database on Shared Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/index.html)
 
