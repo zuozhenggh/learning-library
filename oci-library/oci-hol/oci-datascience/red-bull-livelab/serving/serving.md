@@ -10,7 +10,7 @@ This lab will walk you through the steps to deploy and serve the best trained mo
 
 It seems the Neural Network Classification is the best model to return the highest scores, correctly predicting the winner for 62% of the races.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 1 hr
 
 <b> Objectives </b>
 
@@ -53,18 +53,10 @@ Navigate to the ``` /redbull-analytics-hol/beginners/``` directory in your Jupyt
 
 You may now [proceed to the next lab](#next).
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Ignacio Martinez, Principal Advanced Support Engineer
+* **Last Updated By/Date** - Samrat Khosla, Advanced Data Services, September 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

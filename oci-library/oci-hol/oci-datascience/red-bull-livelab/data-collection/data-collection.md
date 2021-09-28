@@ -6,26 +6,26 @@ This lab will walk you through the very basic step of machine learning, i.e, dat
 
 * The data gathering process takes some time, so we've gone ahead and pulled the data in for you. However, if you want to see how it's done, take a look in the ```from_scratch``` directory in your Jupyter notebook, where you'll find the original scripts that gathered the remote data.
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 1 hr
 
 
 <b> Objectives </b>
 
 In this lab, you will gather data by:
-* Executing notebook ```01_0.Formule1_Data_Collection.ipynb``` to download Formula 1 Data (capturing data on features like  races, rounds, results, etc.) and create your own CSV Files. 
-* Executing notebook ```01_1.Weather_Data_Collection.ipynb``` to download weather data for Formula 1 races
-* Finally, executing this last notebook ```01_2.Qualifying_Data_Collection.ipynb``` to download the qualifying data for Formula 1 races
+* Executing notebook ```01_0.Formule1_Data_Collection.ipynb``` to download race data (capturing data on features like  races, rounds, results, etc.) and create your own CSV Files. 
+* Executing notebook ```01_1.Weather_Data_Collection.ipynb``` to download weather data for races
+* Finally, executing this last notebook ```01_2.Qualifying_Data_Collection.ipynb``` to download the qualifying data for races
 
 <b> Prerequisites </b>
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP 1**: Formula 1 Data Collection
+## **STEP 1**: Race Data Collection
 
 Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_0.Formule1_Data_Collection.ipynb```
 
-Execute the notebook to download Formula 1 data and create your CSV files. 
+Execute the notebook to download race data and create your CSV files. 
 
 1. Download dataset from ERGAST Web
     
@@ -48,7 +48,7 @@ Execute the notebook to download Formula 1 data and create your CSV files.
 
 Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_1.Weather_Data_Collection.ipynb```
 
-Execute the notebook to download weather data that captures weather conditions (warm, sunny, rainy, ect.) for different formula 1 races. 
+Execute the notebook to download weather data that captures weather conditions (warm, sunny, rainy, ect.) for different races. 
 
 ![Image alt text](images/weather.png)
 
@@ -57,7 +57,7 @@ Execute the notebook to download weather data that captures weather conditions (
 
 Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_2.Formula 1 Qualifying Data Collection```
 
-Execute the notebook to download weather data that captures weather conditions (warm, sunny, rainy, ect.) for different formula 1 races. 
+Execute the notebook to download weather data that captures weather conditions (warm, sunny, rainy, ect.) for different races. 
 
 *We suppose that Qualifying dataset is an important information to predict the result of a race.*
 
@@ -67,18 +67,11 @@ Execute the notebook to download weather data that captures weather conditions (
 
 You may now [proceed to the next lab](#next).
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Ignacio Martinez, Principal Advanced Support Engineer
+* **Last Updated By/Date** - Samrat Khosla, Advanced Data Services, September 2021
+
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

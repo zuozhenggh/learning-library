@@ -2,14 +2,16 @@
 
 ## About this Workshop
 
-Are you interested in learning machine learning (ML)? How about doing this in the context of the exciting world of racing?! Get your ML skills bootstrapped here with Oracle and Red Bull Racing!
+Red Bull Racing Honda, the four-time World Champion team, has chosen Oracle as their official cloud infrastructure and customer experience platform provider. [Read here for more information](https://www.oracle.com/redbullracing/)
 
-![Alerts Page](./images/SI202105091303_hires_jpeg_24bit_rgb.jpeg =50%x*)
+Are you interested in learning machine learning (ML)? How about doing this in the context of the exciting world of racing?! Get your ML skills bootstrapped here with Oracle and Red Bull Racing! 
+
+![Alerts Page](./images/rc.png =50%x*)
 
 This tutorial teaches ML analytics with a series of hands-on labs (HOLs) using the [Data Science](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm) service in [Oracle Cloud Infrastructure](https://cloud.oracle.com/). You'll learn how to get data from some public data sources, then how to analyze this data using some of the latest ML techniques. In the process you'll build ML models and test them out in a predictor application.
 
 
-<b> Estimated Lab Time: n minutes  </b>
+<b> Estimated Lab Time: 5 hrs  </b>
 
   This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
@@ -119,9 +121,8 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - <Brian MacDonald, Principal Cloud Architect, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Samrat Khosla, Advanced Data Services, September 2021>
+* **Author** - Ignacio Martinez, Principal Advanced Support Engineer
+* **Last Updated By/Date** - Samrat Khosla, Advanced Data Services, September 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -4,7 +4,7 @@
 
 This lab will walk you through the data preparation process of the machine learning lifecycle. Now that we have race, weather, and qualifying race data, we'll merge our sets together to create the dataset we'll feed to our Machine Learning algorithms. 
 
-Estimated Lab Time: n minutes
+Estimated Lab Time: 1 hr
 
 
 <b> Objectives </b>
@@ -31,18 +31,9 @@ Execute the notebook to merge the different data sets that we downloaded in step
 
 You may now [proceed to the next lab](#next).
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Ignacio Martinez, Principal Advanced Support Engineer
+* **Last Updated By/Date** - Samrat Khosla, Advanced Data Services, September 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
