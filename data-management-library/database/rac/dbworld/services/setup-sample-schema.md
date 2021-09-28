@@ -8,6 +8,8 @@ This lab will show you how to setup your database schemas for the subsequent lab
 - Lab: Generate SSH Key
 - Lab: Build a DB System
 
+Estimated Time: 5 Minutes
+
 Watch the video below for an overview of the Install Sample Schema lab
 [](youtube:rUIxZjy9HQg)
 
@@ -48,7 +50,8 @@ Copy the following commands into your terminal. These commands download the file
     . oraenv
     </copy>
     ````
-
+    The ORACLE_HOME is **/u01/app/oracle/product/19.0.0.0/dbhome_1**
+    
     Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
 
 5.  Get the Database sample schemas and unzip them. Then set the path in the scripts.

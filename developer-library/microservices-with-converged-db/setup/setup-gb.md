@@ -23,7 +23,7 @@ You have been assigned your own OCI compartment for running this workshop.  The 
 
 ![](images/select-compute-instances.png " ")
 
-3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope". 
+3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope".
 
 ![](images/enter-comp-name.png " ")
 
@@ -47,7 +47,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.9.2 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.9.2.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 

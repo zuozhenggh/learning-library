@@ -110,7 +110,7 @@ Oracle GoldenGate for Big Data’s real-time data streaming platform also allows
 Oracle GoldenGate for Big Data offers high-performance, fault-tolerant, easy-to-use, and flexible real- time data streaming platform for big data environments. It easily extends customers’ real-time data
 integration architectures to big data systems without impacting the performance of the source systems and enables timely business insight for better decision making.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab*
 
 ## Learn More
 
@@ -119,4 +119,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, September 2021
