@@ -98,7 +98,7 @@ The output is follows:
 
 	![Displays few rows from the created view](images/timeseries_table_view.png)
 
-## Task 3: Build You Model
+## Task 3: Build Your Model
 To build a model using the time series data, you will use Exponential Smoothing algorithm on the `ESM_SH_DATA` view that is generated during the data preparation stage. In this example you build a time series model by applying the Holt-Winters model on time series aggregated on a quarterly interval.
 1. Build a Holt-Winters model with the `ESM_SH_DATA` table, run the following script:
 
