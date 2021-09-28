@@ -30,7 +30,7 @@
         {
             "title": "Lab 4: Install Sample clients",
             "description": "This lab walks you through installing two simple clients.",
-            "filename": "../../clients/install-clients.md"
+            "filename": "../../clients/install-java-client.md"
         },
         {
             "title": "Lab 5: Services",
