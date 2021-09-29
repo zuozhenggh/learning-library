@@ -19,7 +19,7 @@ In this lab, you will learn how to:
 *	Evaluate your model using standard classification metrics
 *	Score data using your model
 
-### Prerequisites 
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle Machine Learning account
@@ -568,7 +568,7 @@ After building and evaluating the model, you will now score the data.
 
 In this example, you classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
 
-You may now proceed to the next step.
+You may now proceed to the next lab.
 
 ## Learn More
 
