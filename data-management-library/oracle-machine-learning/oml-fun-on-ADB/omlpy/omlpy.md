@@ -19,7 +19,7 @@ In this lab, you will learn how to:
 *	Evaluate your model using standard classification metrics
 *	Score data using your model
 
-### Prerequisites (Optional)
+### Prerequisites 
 
 This lab assumes you have:
 * An Oracle Machine Learning account
@@ -63,7 +63,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library. Us
 	```
 
   You use the zeppelin-context z.show method to display Python objects and proxy object content. Here, you display the first few rows of IRIS_TMP using z.show.
-	![Image alt text](images/pic1.png)
+	![Top rows of IRIS_TMP.](images/pic1.png)
 
 ## Task 2: Create a Persistent Database Table
 You can also create a persistent table using the create function and specifying a table name, IRIS as done below. This table is now accessible both within OML4Py and directly from SQL. Here, you will load the iris data and combine target and predictors into a single DataFrame, which matches the form of the data in the database table. Use the z.show function to display the desired data in the notebook. To create the persistent table IRIS, run the following script.
@@ -94,7 +94,7 @@ z.show(IRIS.head(10))
 ```
 
 The output is as follows:
-![Image alt text](images/pic2.png)
+![Columns,Shape and Top rows of IRIS.](images/pic2.png)
 
 ## Task 3: Create a Proxy Object For a Database Object
 Use the `oml.sync` function to create a Python object as a proxy for a database table. The `oml.sync` function returns an `oml.DataFrame` object or a dictionary of `oml.DataFrame` objects. The `oml.DataFrame` object returned by `oml.sync` is a proxy for the database object.  
@@ -107,7 +107,7 @@ z.show(DEMO.head())
 </copy>
 ```
 In this step, you are viewing a few rows from the SUPPLEMENTARY_DEMOGRAPHICS table.
-![Image alt text](images/pic3.png)
+![Top rows of DEMO.](images/pic3.png)
 
 ## Task 4: Explore The Data
 In this example, use describe, shape and crosstab functions to explore and view the data.
@@ -121,7 +121,7 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	z.show(summary_df.head())
 	</copy>
 	```
-	![Image alt text](images/pic4.png)
+	![Statistical details of DEMO.](images/pic4.png)
 
 2. Run the shape function to view the shape of an oml series data distribution, or of each column in an `oml.DataFrame`.
 	```
@@ -140,7 +140,7 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	z.show(DEMO.crosstab('AFFINITY_CARD'))
 	</copy>
 	```
-	![Image alt text](images/pic5.png)
+	![Crosstab of attribute AFFINITY_CARD.](images/pic5.png)
 4. To view the distribution of house size of the `AFFINITY_CARD` responders, run the following function:
 	```
 	<copy>
@@ -149,7 +149,7 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	z.show(DEMO.crosstab(['HOUSEHOLD_SIZE', 'AFFINITY_CARD']))
 	</copy>
 	```
-	![Images alt text](/images/pic6.png)
+	![Crosstab of attributes HOUSEHOLD_SIZE and AFFINITY_CARD.](/images/pic6.png)
 ## Task 5: Prepare The Data
 In this step, you will create a `DEMO_DF` dataframe, select the necessary columns for further analysis, display a few rows of the `DEMO_DF` dataframe, and split your data into TRAIN and TEST sets.
 1. Use the DEMO proxy object to create a new proxy object `DEMO_DF` by selecting the necessary columns. Run the following script:
@@ -170,7 +170,7 @@ In this step, you will create a `DEMO_DF` dataframe, select the necessary column
 	z.show(DEMO_DF.head())
 	</copy>
 	```
-	![Images alt text](/images/pic7.png)
+	![Top rows of DEMO_DF.](/images/pic7.png)
 3. In this example, you are splitting the `DEMO_DF` data into 60 percent TRAIN data set and 40 percent TEST data set. The split method splits the data referenced by DataFrame proxy object `DEMO_DF` into two new DataFrame proxy objects, TRAIN, and TEST.
 	```
 	<copy>
@@ -528,8 +528,8 @@ Here is a custom script to generate the metrics and charts as described above. R
 	_ = evaluate_model(pred_data=RES_DF, settings_name='Gini,Max Depth:7,Min%Node:0.05,Min%Split:0.1', name='Decision Tree', target='AFFINITY_CARD')
 	</copy>
 	```
-	![Image alt text](/images/pic8.png)
-	![Image alt text](/images/pic9.png)
+	![Confusion Matrix](/images/pic8.png)
+	![Evaluation of Decision Tree Model.](/images/pic9.png)
 
 3. Invoke the score function to get the model accuracy computed on the TEST data provided.
 	```
@@ -552,8 +552,8 @@ After building and evaluating the model, you will now score the data.
 	z.show(RES_DF)
 	</copy>
 	```
-	The output is as follows:
-	![Image alt text](/images/pic10.png)
+	The output is similar to the following:
+	![Display of score using predict function on new data.](/images/pic10.png)
 
 2. You can also display the prediction result using the `RES_DF` dataset. To do so, run the following script.
 	```
@@ -563,10 +563,12 @@ After building and evaluating the model, you will now score the data.
 	z.show(RES_DF[RES_DF['PROBABILITY_OF_1'] > 0.5][['PREDICTION', 'PROBABILITY_OF_1'] + RES_DF.columns])
 	</copy>
 	```
-	The output is as follows:
-	![Images alt text](/images/pic11.png)
+	The output is similar to the following:
+	![Prediction result using RES_DF dataset.](/images/pic11.png)
 
-In this example, you successfully classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
+In this example, you classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
+
+You may now proceed to the next step.
 
 ## Learn More
 
@@ -580,6 +582,6 @@ OML4Py enables data scientists to hand-off their user-defined Python functions t
 	It is used in the process of explanation and interpretation of the machine learning model to identify the important features to help the model impact its prediction.
 
 ## Acknowledgements
-* **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation; Dhanish Kumar, Member of Technical Staff
-* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning;Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning.
+* **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation; Dhanish Kumar, Member of Technical Staff.
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning.
 * **Last Updated By/Date** - Dhanish Kumar, September 2021
