@@ -26,7 +26,7 @@ This lab assumes you have:
 - Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
 - Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that the Activity Auditing feature is enabled on your database and that you have privileges in Oracle Data Safe to use the Activity Auditing feature with your database.
 - Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it (see [Register an Autonomous Database](?lab=register-autonomous-database))
-- Accessed either the Security Center or the Oracle Data Safe Console
+- Accessed either Security Center or the Oracle Data Safe Console
 
 
 ### Assumptions

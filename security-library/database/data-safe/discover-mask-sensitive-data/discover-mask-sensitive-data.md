@@ -33,7 +33,7 @@ This lab assumes you have:
 
 - Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
 - Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that your ATP database is registered with Oracle Data Safe, the Data Discovery and Data Masking features are enabled on your database, and you have the appropriate privileges in Oracle Data Safe to use the Data Discovery and Data Masking features with your database.
-- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. You know the `ADMIN` password for your database (see [Register an Autonomous Database](?lab=register-autonomous-database)).
+- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. Have the `ADMIN` password for your database on hand (see [Register an Autonomous Database](?lab=register-autonomous-database)).
 
 
 ### Assumptions
@@ -43,7 +43,7 @@ This lab assumes you have:
 
 ## Task 1: View sensitive data in your database
 
-Use Oracle Database Actions to query sensitive data in your database. You can access Database Actions from your database's Console.
+Use Oracle Database Actions to query sensitive data in your database. You can access Database Actions from your database's Console in Oracle Cloud Infrastructure.
 
 1. Select the browser tab that is signed in to the Oracle Cloud Infrastructure Console. If needed, sign in again.
 
@@ -287,4 +287,4 @@ The Data Masking wizard generates a masking policy for your target database base
 
 ## Acknowledgements
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, September 27 2021
+* **Last Updated By/Date** - Jody Glover, September 28 2021
