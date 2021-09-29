@@ -58,13 +58,13 @@
 ### Provisioning
 
 - On-premise
-  -Bare Metal
-  -Virtual Machines
-  -Hypervisors
+  - Bare Metal
+  - Virtual Machines
+  - Hypervisors
   
 - Cloud Infrastructure
-  -Public
-  -Private
+  - Public
+  - Private
   
 - Network Devices
 
@@ -72,13 +72,20 @@
 
 ***Example***
 
--OCI Virtual Cloud Network, Load Balancer, OKE, VirtualBox, GlusterFS, Firewalls
+- OCI Virtual Cloud Network, Load Balancer, OKE, VirtualBox, GlusterFS, Firewalls
 
 ### Continuous Delivery
 
 - Enable Agile Software Development
 
-- 
+-  Integrate with CI Platform
+
+- Monitoring
+  - Notifications, APM tools integration
+
+ ***Example***
+
+ -  
 
 
 ### Ansible Architecture
