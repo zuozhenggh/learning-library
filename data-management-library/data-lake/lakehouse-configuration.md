@@ -1,4 +1,4 @@
-# Create Groups, Users, Polices and Autonomous Data Warehouse Database (ADW)
+# Create Groups, Users, Polices and Autonomous Data Warehouse (ADW)
 
 ## Introduction
 
