@@ -1,13 +1,13 @@
-# Create the Shopping Cart Page
+# Create the shopping cart page
 
 ## Introduction
 
 In this lab, you will create a new page to review the items added to the Shopping Cart.
 
-Once you have finished all the steps described in this lab, your page will look like the following image:
+Once you have finished the workshop and updated all the products as described in the steps, your page will look like the following image:
 ![](images/creating-sc.png " ")
 
-Customers wil be able to:
+Customers will be able to:
 - Review the items in the shopping cart
 - Edit the quantity of the items
 - Remove an item
@@ -335,7 +335,7 @@ This action allows to open a page where customers can edit a particular item in 
     - For When Button Pressed, select **Clear**
 
 ## Task 11: Adding Dynamic Actions
-In this Task, you will create a dynamic actions to:
+In this task, you will create a dynamic actions to:
 - Update the badge and icon shown in the navigation bar after the customer has added / edited / removed a product from the shopping cart.
 - Refresh the shopping cart region.
 
