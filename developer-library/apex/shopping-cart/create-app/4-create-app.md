@@ -1,4 +1,4 @@
-# Creating the Application
+# Use the Create Application Wizard
 
 ## Introduction
 
@@ -10,7 +10,7 @@ Estimated Lab Time: 15 minutes
 In this lab, you will:
 - Create an application using the tables and data from previous labs.
 
-## **Task 1**: Creating an App
+## **STEP 1**: Creating an App
 
 1. In the App Builder menu, click **App Builder**.
 
@@ -22,11 +22,11 @@ In this lab, you will:
 
     ![](images/new-app.png " ")
 
-## **Task 2**: Naming the App
+## **STEP 2**: Naming the App
 
 1. In the Create Application wizard, for Name enter **ACME Shop**.
  
-## **Task 3**: Add the Dashboard Page
+## **STEP 3**: Add the Dashboard Page
 
 A dashboard page is a great way to show important information using various charts. When you installed the Sample Dataset, it also created a number of views, which joins data from various tables. These views are ideal as the basis for the dashboard charts.
 
@@ -84,7 +84,7 @@ A dashboard page is a great way to show important information using various char
 
 7. Click **Add Page**.
 
-## **Task 4**: Add the Products Page
+## **STEP 4**: Add the Products Page
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Faceted Search**.
@@ -105,14 +105,14 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/fs-page.png " ")  
 
-## **Task 5**: Delete Home Page
+## **STEP 5**: Delete Home Page
 
 1. Navigate to Home Page and click on **Edit**.
 2. Click **Delete**.    
 
     ![](images/delete-page.png " ")  
 
-## **Task 6**: Add Multiple Reports
+## **STEP 6**: Add Multiple Reports
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Additional Pages**.
@@ -132,7 +132,7 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/multiple-reports2.png " ") 
 
-## **Task 7**: Set Multiple Reports as Administration Pages
+## **STEP 7**: Set Multiple Reports as Administration Pages
 
 1. Edit the following pages to set those as an Administration Page:
     - CLOTHING_LOOKUP
@@ -147,7 +147,7 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/admin-pages.png " ") 
 
-## **Task 8**: Add Manage Products Page
+## **STEP 8**: Add Manage Products Page
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Interactive Report**.
@@ -163,7 +163,7 @@ A dashboard page is a great way to show important information using various char
     - Lookup Key 1 - select **CLOTHING_ID**
     - Display Column 1 - select **CLOTHING_LOOKUP.CLOTHING**
     - Lookup Key 2 - select **DEPARTMENT_ID**
-    - Display Column 2 - select **DEPARTMENT\_LOOKUP.DEPARTMENT**
+    - Display Column 2 - select **DEPARTMENT\_LOOKUP.DEPARTMENT\_ID**
     - Lookup Key 3 - select **COLOR_ID**
     - Display Column 3 - select **COLOR_LOOKUP.COLOR**
 
@@ -173,11 +173,11 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/ir-page2.png " ") 
 
-## **Task 9**: Set Features
+## **STEP 9**: Set Features
 
 1. Under **Features** section, check **Access Control**.
 
-## **Task 10**: Generate the App
+## **STEP 10**: Generate the App
 
 Now that you have added all the pages, it is time to generate the app and review it.
 
@@ -190,7 +190,7 @@ Click **Run Application**.
     
     ![](images/run-app.png " ")
 
-## **Task 11**: Run the Application
+## **STEP 11**: Run the Application
 
 1. Enter your user credentials. Click **Sign In**.
 
@@ -204,4 +204,4 @@ You now know how to create an application, with numerous different page types, b
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will learn how to create database objects to use in your APEX application. This package contains functions and procedures to add products to the cart, create the order, clear the cart and more.
+In this lab, you will learn how to create database objects to use in your APEX application. This package contains the function and procedures to add products to the shopping cart, create the order, clear the cart and more.
 
 Estimated Lab Time: 5 minutes
 
@@ -10,7 +10,7 @@ Estimated Lab Time: 5 minutes
 In this lab, you will:
 - Create a package to manage the Shopping Cart.
 
-## **Task 1**: Creating the Package
+## **STEP 1**: Creating the Package
 Create specification and body for the package.
 
 1. Navigate to **SQL Workshop**, click **Object Browser**.
@@ -38,7 +38,7 @@ AS
   PROCEDURE remove_product (
     p_product IN NUMBER);
   --------------------------------------------------------------
-  -- create function to get the number of items in the shopping cart
+  -- create funtion to get the number of items in the shopping cart
   FUNCTION Get_quantity
   RETURN NUMBER;
   --------------------------------------------------------------
@@ -234,4 +234,4 @@ You now know how to create a package to be used in your APEX application.
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021

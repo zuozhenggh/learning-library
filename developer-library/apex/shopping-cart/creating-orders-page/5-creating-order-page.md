@@ -2,24 +2,15 @@
 
 ## Introduction
 
-In this lab, you will create a new page that will allow customers to view the details of their recent order.
-Customers will find the details of the order:
-- Order number
-- Order date
-- Status
-- Total price
-- Quantity and price of the items.
+In this lab, you will create a new page that will allow customers to identify the details of their recent order.
 
-Once you have finished all the steps described in this lab, your page will look like the following image:
-![](images/orders-page.png " ")
-
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 In this lab, you will:
 - Create a page to review the items that customer just bought.
 
-## **Task 1**: Creating a Normal Page - Order Information
+## **STEP 1**: Creating a Normal Page - Order Information
 Create a Normal Page to review the Order that customer has made.
 
 1. In the **App Builder**, click **Create Page**.
@@ -27,14 +18,13 @@ Create a Normal Page to review the Order that customer has made.
 2. Select **Blank Page** and click **Next**.
     ![](images/blank-page.png " ")
 3. Enter the following and click **Next**.
-    - Page Number - enter **16**
     - Name - enter **Order Information**
     - Page Mode - select **Normal**
     - Breadcrumb - select **- don't use breadcrumbs on page -** 
 4. For Navigation Preference, select **Do not associate this page with a navigation menu entry** and click **Next**.
 5. Click **Finish**.
 
-## **Task 2**: Adding a Region 
+## **STEP 2**: Adding a Region 
 Add a region to the page to display order details.
 
 1. In the new page created, navigate to the **Gallery Menu**.
@@ -47,9 +37,7 @@ Add a region to the page to display order details.
         ![](images/template-options.png " ")
     - For Icon, enter **fa-heart**
 
-## **Task 3**: Adding Items to the Page
-Add an item to save the order ID.
-
+## **STEP 3**: Adding Items to the Page
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
 2. Right click on the region and click on **Create Page Item**.
     ![](images/create-item.png " ")
@@ -61,7 +49,7 @@ Add an item to save the order ID.
 
     ![](images/order-item.png " ")    
     
-## **Task 4**: Adding Static Content Region
+## **STEP 4**: Adding Static Content Region
 Add a region to contain Order details and items.
 
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
@@ -71,7 +59,7 @@ Add a region to contain Order details and items.
     - For Title - enter **Order: &P16_ORDER.**
     - For Type - select **Static Content**
 
-## **Task 5**: Adding Order Details Region
+## **STEP 5**: Adding Order Details Region
 Add a region to display Order details.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.
@@ -112,7 +100,7 @@ Add a region to display Order details.
             </copy>
             ```
 
-## **Task 6**: Adding Items Region
+## **STEP 6**: Adding Items Region
 Add a region to display items in the order.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.
@@ -175,4 +163,4 @@ You now know how to add more pages to your existing APEX Application.
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021
