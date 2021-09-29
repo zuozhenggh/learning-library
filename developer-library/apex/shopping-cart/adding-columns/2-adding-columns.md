@@ -1,9 +1,9 @@
-# Add columns to the products table
+# Adding Columns to Product Table
 
 ## Introduction
 
-The **PRODUCTS** table includes some columns such as image, price, and details. But there are other characteristics that customers would appreciate knowing about the product itself, like color, type of clothing, and department. For that reason, you will add these columns to the Products table. 
-To avoid data redundancy, you will need to create three additional tables to normalize the data. Instead of creating these three tables for yourself, you'll use the **Create Lookup Table** feature.
+The **PRODUCTS** table includes some columns such as, image, price and details. But there are other characteristics that customers would appreciate to know about the product itself, like color, type of clothing and department. For that reason, you will add these  columns to the Products table. 
+To avoid data redundancy, you will need to create three additional tables to normalize the data, but instead of creating these three tables for yourself, you'll use the **Create Lookup Table** feature.
 
 In this lab, you will learn how to add these three new columns to the **PRODUCTS** table and then create lookup tables for those new columns.
 
@@ -15,7 +15,7 @@ In this lab, you will:
 - Create lookup tables.
 - Populate the new lookup tables.
 
-## Task 1: Adding Columns to the Products Table
+## **STEP 1**: Adding Columns to the Products Table
 
 1. From the Oracle APEX Home, click **SQL Workshop**.
 
@@ -25,7 +25,7 @@ In this lab, you will:
 
     ![](images/products.png " ")
 
-4. Click **Add Column** button.
+4. Click on **Add Column** button.
 
 5. For Color column, enter the following:
 
@@ -39,7 +39,7 @@ In this lab, you will:
 
 7. Click **Finish**.
 
-8. Click **Add Column** button.
+8. Click on **Add Column** button.
 
 9.  For Department column, enter the following:
 
@@ -53,7 +53,7 @@ In this lab, you will:
 
 11. Click **Finish**.
 
-12. Click **Add Column** button.
+12. Click on **Add Column** button.
 
 13. For Clothing column, enter the following:
 
@@ -67,12 +67,12 @@ In this lab, you will:
 
 15. Click **Finish**.
 
-## Task 2: Creating Lookup Tables
+## **STEP 2**: Creating Lookup Tables
 You will create lookup tables based on the new three columns, after you will have created a lookup table, you will notice that a new table was created and the column in the PRODUCTS table has been renamed and the data type was changed to NUMBER.
 
 1. Navigate to **PRODUCTS** Table.
 
-2. Click **Create Lookup Table** button.
+2. Click on **Create Lookup Table** button.
 
     ![](images/lookup-table.png " ")
 
@@ -95,9 +95,9 @@ You will create lookup tables based on the new three columns, after you will hav
 
     ![](images/lt-color3.png " ")
 
-    *Note: Click the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
+    *Note: Click on the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
 
-8. To create **Department** lookup table, navigate to **Products** table and Click **Create Lookup Table** button.
+8. To create **Department** lookup table, navigate to **Products** table and click on **Create Lookup Table** button.
 
     ![](images/lookup-table2.png " ")
 
@@ -119,9 +119,9 @@ You will create lookup tables based on the new three columns, after you will hav
 13. Click **Create Lookup Table**.
 
     ![](images/lt-department3.png " ")
-    *Note: Click the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
+    *Note: Click on the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
     
-14. To create **Clothing** lookup table, navigate to **Products** table and Click **Create Lookup Table** button.
+14. To create **Clothing** lookup table, navigate to **Products** table and click on **Create Lookup Table** button.
 
     ![](images/lookup-table3.png " ")
 
@@ -143,16 +143,16 @@ You will create lookup tables based on the new three columns, after you will hav
 19. Click **Create Lookup Table**.
 
     ![](images/lt-clothing3.png " ")
-    *Note: Click the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
+    *Note: Click on the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
 
-20. The columns COLOR, DEPARTMENT, and CLOTHING in the **PRODUCTS** table are renamed and the data type changed to NUMBER. Also, there are new tables:
+20. The columns COLOR, DEPARTMENT, and CLOTHING in the **PRODUCTS** table were renamed and the data type changed to NUMBER. Also, three new tables were created:
     - COLOR_LOOKUP
     - DEPARTMENT_LOOKUP
     - CLOTHING_LOOKUP
 
     ![](images/lookup-table4.png " ")
 
-## Task 3: Populating Lookup Tables
+## **STEP 3**: Populating Lookup Tables
 
 1. From the Oracle APEX Home, click **SQL Workshop**.
 
@@ -195,7 +195,7 @@ You will create lookup tables based on the new three columns, after you will hav
 
     ![](images/create-script.png " ")
 
-7. The Script Results page is displayed listing the statements processed, successful, and with errors.
+7. The Script Results page will be displayed listing the statements processed, successful, and with errors.
 
     ![](images/script-results.png " ")
     
@@ -205,4 +205,4 @@ You now know how to create new columns to your existing tables and how to create
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021

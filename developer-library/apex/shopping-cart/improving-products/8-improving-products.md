@@ -1,22 +1,17 @@
-# Improve the products page
+# Improve Products Page
 
 ## Introduction
 
 In this lab, you will learn how to improve the Products page by adding new facets and customizing the cards.
 
-Once you have finished the workshop and updated all the products as described in the steps, your page will look like the following image:
-    ![](images/products-page.png " ")
-
-*Please note that customer can quickly identify the products that already has added to the shopping cart.*
-
-Estimated Lab Time: 20 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 In this lab, you will:
 - Improve both Faceted Search and Cards region. 
 - Add Dynamic Actions to the page.
 
-## Task 1: Adding New Facets
+## **STEP 1**: Adding New Facets
 In the Runtime environment navigate to Products, this is the page where your customers can explore the products and select what they wish to buy.
 As you can see, it's hard to find the products and it would be beneficial to see additional details related to the products.
 
@@ -24,7 +19,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
 
 1. From the runtime application, navigate to the Products page in Page Designer.
 
-    Given that you run this app from the APEX App Builder, you will find the Developer Toolbar at the bottom of the screen.
+    Given you ran this app from the APEX App Builder, a Developer Toolbar is displayed at the bottom of the screen. 
     *{Note: End users who log directly into the app will not see this toolbar.}*
 
     In the Developer Toolbar click **Edit Page 1**.
@@ -44,7 +39,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
     - COLOR
 
 2. Within Page Designer, in the Rendering tree (left pane), navigate to Facets under **Search** Faceted Search.
-3. Right-click Facets and click **Create Facet**.
+3. Right click on Facets and click **Create Facet**.
 
     ![](images/create-facet.png " ")
 
@@ -58,7 +53,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
 
     ![](images/department-facet.png " ")
     
-5. Create the second facet. Right-click Facets and click **Create Facet**.
+5. Create the second facet. Right click on Facets and click **Create Facet**.
 
     In the Property Editor, enter the following:
     - Name - enter **P1\_CLOTHING\_ID**
@@ -70,7 +65,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
 
     ![](images/clothing-facet.png " ")
 
-6. Create the third facet. Right-click Facets and click **Create Facet**.
+6. Create the third facet. Right click on Facets and click **Create Facet**.
 
     In the Property Editor, enter the following:
     - Name - enter **P1\_COLOR\_ID**
@@ -82,14 +77,14 @@ As you can see, it's hard to find the products and it would be beneficial to see
 
     ![](images/color-facet.png " ")
 
-## Task 2: Reorder Facets
+## **STEP 2**: Reorder Facets
 Unit price is not a common search criteria, so you want to put this facet at the bottom.
 
 1. In the Rendering tree (left pane), under Search, within Facets, click and hold **P1\_UNIT\_PRICE** and drag it up until it is under **P1\_COLOR\_ID** then release the mouse.
 
     ![](images/reorder-facet.png " ")
 
-## Task 3: Enhance the Faceted Search 
+## **STEP 3**: Enhance the Faceted Search 
 
 1. In the Rendering tree (left pane), navigate to **Search**.
 2. In the Property Editor (right pane), click Attributes and do the following:
@@ -98,7 +93,7 @@ Unit price is not a common search criteria, so you want to put this facet at the
 
     ![](images/enhance-facet.png " ")    
 
-## Task 4: Enhance the Cards Region
+## **STEP 4**: Enhance the Cards Region
     
 1.  In the Rendering tree (left pane), navigate to **Search Results** and in the Property Editor (right pane), do the following:
     - For SQL Query - enter the following SQL code:
@@ -135,7 +130,7 @@ Unit price is not a common search criteria, so you want to put this facet at the
     </copy>
     ```
     - Under Appearance section:
-        - Click Template Options. For Style - select **Style A**
+        - Click on Template Options. For Style - select **Style A**
     ![](images/template-options.png " ")  
         - Click **Ok**
         
@@ -174,8 +169,8 @@ Unit price is not a common search criteria, so you want to put this facet at the
 
         ![](images/cards.png " ")        
 
-## Task 5: Create Actions 
-You would need to provide a way for customers to shop the products, so in this task you will add an action to allow customers to learn more about the product.
+## **STEP 5**: Create Actions 
+You need to provide a way for customers to shop the products, so in this step you will add an action to allow customers to learn more about the product.
 
 1. Navigate to **Search Results** (left pane).
 2. On Actions, right-click **Create Action**.
@@ -184,7 +179,7 @@ You would need to provide a way for customers to shop the products, so in this t
 
 3. In the Property Editor (right pane), enter the following:
     -   For Type - select **Full Card**
-    -   For Target - Click **No Link Defined** and do the following:
+    -   For Target - click on **No Link Defined** and do the following:
         - For Page - enter **18**.
         - For Set Items, enter:
 
@@ -197,15 +192,15 @@ You would need to provide a way for customers to shop the products, so in this t
 
     ![](images/full-card.png " ")
 
-## Task 6: Adding Dynamic Actions
-In this task, you will create two dynamic actions:
-- To show a success message when a product is added/edited/removed from the shopping cart.
-- To update the badge and icon shown in the navigation bar after the customer has added/edited/removed a product from the shopping cart.
+## **STEP 6**: Adding Dynamic Actions
+In this step, you will create two dynamic actions:
+- To show success message when a product is added / edited / removed from the shopping cart.
+- To update the badge and icon shown in the navigation bar after the customer has added / edited / removed a product from the shopping cart.
 
 1. Navigate to **Dynamic Actions** tab (left pane).
      ![](images/create-da.png " ")  
 
-2. Right-Click Dialog Closed and click **Create Dynamic Action**.
+2. Right-click on Dialog Closed and click **Create Dynamic Action**.
      ![](images/create-da2.png " ")  
 3. In the Property Editor, enter the following: 
     - Under Identification section:
@@ -237,7 +232,7 @@ In this task, you will create two dynamic actions:
             </copy>
             ```
 
-8. Create a second dynamic action. Right-Click Dialog Closed and click **Create Dynamic Action**.  
+8. Create a second dynamic action. Right-click on Dialog Closed and click **Create Dynamic Action**.  
      ![](images/create-da4.png " ") 
 9. In the Property Editor, enter the following:    
     - Under Identification section: 
@@ -272,7 +267,7 @@ In this task, you will create two dynamic actions:
             </copy>
             ```
 11. Create an opposite action. In the Dynamic Actions tab (left pane), navigate to the newly dynamic action.
-12. Right-Click **Execute JavaScript Code** and click **Create Opposite Action**.
+12. Right-click on **Execute JavaScript Code** and click **Create Opposite Action**.
      ![](images/create-opposite-action.png " ") 
 
 13. Navigate to **Execute JavaScript Code** Action.
@@ -292,7 +287,7 @@ In this task, you will create two dynamic actions:
             ```
 14. Click **Save an Run Page**.
 
-## Task 7: Run Products Page 
+## **STEP 7**: Run Products Page 
 
 When running products page, you will notice that Department, Clothing and Color facets don't have values as the products are not associated with the corresponding characteristic.
    ![](images/products-facets.png " ")
@@ -300,7 +295,7 @@ When running products page, you will notice that Department, Clothing and Color 
 For that, navigate to **Manage Products** Page, upload a picture and select the proper color, department and clothing characteristic for each product.
     ![](images/manage-products.png " ")
 
-[Download images for your application](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nDA-UBc8y27dbtyRu0DVR0u6CRUI1jRXTAP17J_Cd4QqUaTCxjdG4puUa4aF1qGm/n/c4u04/b/developer-library/o/clothing-images.zip) to download images for your application.
+[Click here](./files/clothing-images.zip) to download images for your application.
 
 Once you have updated products information, you would be able to check facet values:
     ![](images/products-image.png " ")
@@ -312,5 +307,4 @@ You now know how to enhance faceted search and cards region.
 ## **Acknowledgments**
 
 - **Author** - Monica Godoy, Principal Product Manager
-- **Contributors** - Shakeeb Rahman, Architect
-- **Last Updated By/Date** - Monica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Monica Godoy, Principal Product Manager, July 2021
