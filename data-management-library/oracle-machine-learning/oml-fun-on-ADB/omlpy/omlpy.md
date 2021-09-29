@@ -149,7 +149,7 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	z.show(DEMO.crosstab(['HOUSEHOLD_SIZE', 'AFFINITY_CARD']))
 	</copy>
 	```
-	![Crosstab of attributes HOUSEHOLD_SIZE and AFFINITY_CARD.](/images/pic6.png)
+	![Crosstab of attributes HOUSEHOLD_SIZE and AFFINITY_CARD.](images/pic6.png)
 ## Task 5: Prepare The Data
 In this step, you will create a `DEMO_DF` dataframe, select the necessary columns for further analysis, display a few rows of the `DEMO_DF` dataframe, and split your data into TRAIN and TEST sets.
 1. Use the DEMO proxy object to create a new proxy object `DEMO_DF` by selecting the necessary columns. Run the following script:
@@ -170,7 +170,7 @@ In this step, you will create a `DEMO_DF` dataframe, select the necessary column
 	z.show(DEMO_DF.head())
 	</copy>
 	```
-	![Top rows of DEMO_DF.](/images/pic7.png)
+	![Top rows of DEMO_DF.](images/pic7.png)
 3. In this example, you are splitting the `DEMO_DF` data into 60 percent TRAIN data set and 40 percent TEST data set. The split method splits the data referenced by DataFrame proxy object `DEMO_DF` into two new DataFrame proxy objects, TRAIN, and TEST.
 	```
 	<copy>
@@ -528,8 +528,8 @@ Here is a custom script to generate the metrics and charts as described above. R
 	_ = evaluate_model(pred_data=RES_DF, settings_name='Gini,Max Depth:7,Min%Node:0.05,Min%Split:0.1', name='Decision Tree', target='AFFINITY_CARD')
 	</copy>
 	```
-	![Confusion Matrix](/images/pic8.png)
-	![Evaluation of Decision Tree Model.](/images/pic9.png)
+	![Confusion Matrix](images/pic8.png)
+	![Evaluation of Decision Tree Model.](images/pic9.png)
 
 3. Invoke the score function to get the model accuracy computed on the TEST data provided.
 	```
@@ -553,7 +553,7 @@ After building and evaluating the model, you will now score the data.
 	</copy>
 	```
 	The output is similar to the following:
-	![Display of score using predict function on new data.](/images/pic10.png)
+	![Display of score using predict function on new data.](images/pic10.png)
 
 2. You can also display the prediction result using the `RES_DF` dataset. To do so, run the following script.
 	```
@@ -564,7 +564,7 @@ After building and evaluating the model, you will now score the data.
 	</copy>
 	```
 	The output is similar to the following:
-	![Prediction result using RES_DF dataset.](/images/pic11.png)
+	![Prediction result using RES_DF dataset.](images/pic11.png)
 
 In this example, you classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
 
