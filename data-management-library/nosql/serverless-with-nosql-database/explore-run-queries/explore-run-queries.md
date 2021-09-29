@@ -316,29 +316,55 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
 2. Return to the 'Tables' screen and repeat the process for the **demo** and **demoKeyVal** tables.
 
 <if type="paid">
-3. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+3. If you created an API Key, delete that. It will show up as a fingerprint.  Click your **Profile**, then **User Settings** and **API Key** on the left.  Click the 3 dots on the right of the fingerprint you created.   Click **Delete**.
+
+  ![](./images/delete-api.png)
+
+4. Remove the files added into your Cloud Shell.   Open Cloud Shell and execute.
+
+    ````
+    <copy>
+    cd ~
+    rm -rf *
+    </copy>
+    ````
+
+5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
 
-4. The 'Compartments' screen appears and click **demonosql**
+6. The 'Compartments' screen appears and click **demonosql**
 
     ![](./images/select-demonosql.png)
 
-5. Press the **Delete** button. This will fire off a job that runs asynchronously.
+7. Press the **Delete** button. This will fire off a job that runs asynchronously.
 
     ![](./images/delete-demonosql.png)
 </if>
 
 <if type="freetier">
-3. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+3. If you created an API Key, delete that. It will show up as a fingerprint.  Click your **Profile**, then **User Settings** and **API Key** on the left.  Click the 3 dots on the right of the fingerprint you created.   Click **Delete**.
+
+  ![](./images/delete-api.png)  
+
+4. Remove the files added into your Cloud Shell.   Open Cloud Shell and execute.
+
+    ````
+    <copy>
+    cd ~
+    rm -rf *
+    </copy>
+    ````
+
+5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
 
-4. The 'Compartments' screen appears and click **demonosql**
+6. The 'Compartments' screen appears and click **demonosql**
 
     ![](./images/select-demonosql.png)
 
-5. Press the **Delete** button. This will fire off a job that runs asynchronously.
+7. Press the **Delete** button. This will fire off a job that runs asynchronously.
 
     ![](./images/delete-demonosql.png)
 </if>
