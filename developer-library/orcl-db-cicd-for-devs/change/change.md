@@ -192,6 +192,12 @@ It is now time to apply this change into our dbuser schema simulating how we wou
 
    We can see when we initial created the objects in the schema with the first 3 rows. What is of note is the last row. We see that SQLcl and Liquibase saw that the table already existed but that a new column was present. So instead of dropping and recreating the table, it was smart enough to just issue an alter table to add the new column.
 
+## Terminate your ADB (optional)
+
+To terminate your Always Free Autonomous Database, follow [these instructions](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/terminate-adb/terminate-adb.md).
+
+
+
 ## Acknowledgements
 
 - **Authors** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
