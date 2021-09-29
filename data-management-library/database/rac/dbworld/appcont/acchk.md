@@ -44,11 +44,11 @@ EXECUTE DBMS_APP_CONT_ADMIN.acchk_views;
 </copy>
 ````
 
-![](./images/build_acchk_views.png " ")
+![Build ACCHK Views](./images/build_acchk_views.png " ")
 
 2. Enable ACCHK
 
-Still connected as the SYS user enable ACCHK
+As the SYS user enable ACCHK
 
 ````
 <copy>
@@ -56,7 +56,7 @@ execute dbms_app_cont_admin.acchk_set(true);
 </copy>
 ````
 
-![](./images/enable_acchk.png " ")
+![Enable ACCHK](./images/enable_acchk.png " ")
 
 3. Now run your application
 
@@ -75,7 +75,7 @@ cd acdemo
 runtacreplay  
 </copy>
 ````
-![](./images/runtacreplay.png " ")
+![Run the ACDEMO application](./images/runtacreplay.png " ")
 
 4. Generate the acchk report from within SQL\*Plus
 
@@ -87,7 +87,7 @@ runtacreplay
     </copy>
     ````
 
-![](./images/acchk_report-2a.png " ")
+![Generate the ACCHK Report](./images/acchk_report-2a.png " ")
 
 The report above shows the Java client *acdemo* using the TAC-enabled service *tac\_service*. As you can see this application is provided 100% protection from TAC.
 
@@ -96,7 +96,7 @@ The report above shows the Java client *acdemo* using the TAC-enabled service *t
 We will use the Java client in this example.
 The script *runreplay* will configure the acdemo client to use the *ac\_service*
 
-You can examine the file *ac_replay.properties* to show the configuration:
+You can examine the file *ac\_replay.properties* to show the configuration:
 
 ````
 <copy>
@@ -105,7 +105,7 @@ cd acdemo
 cat ac_replay.properties
 </copy>
 ````
-![](./images/ac_replay_properties.png " ")
+![Examine JDBC Property File](./images/ac_replay_properties.png " ")
 
 6. Ensure ACCHK is enabled
 ````
@@ -113,7 +113,8 @@ cat ac_replay.properties
 sqplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.<REPLACE DOMAIN NAME> as SYSDBA
 </copy>
 ````
-When in SQL\*Plus run the following command:
+
+As the SYS user in SQL\*Plus run the following command:
 
 ````
 execute dbms_app_cont_admin.acchk_set(true);
@@ -131,33 +132,24 @@ runreplay
 
 The acchk report can be either **FULL** or **SUMMARY**. The report is produced per PDB per SERVICE
 
-7. To select the TAC enabled service (tac\_service) choose the *runtacreplay* script
-
-````
-<copy>
-runtacreplay
-</copy>
-````
-to run acdemo with the service enabled for TAC
-
 7. And generate the report again
 
-![](./images/acchk_report-3a.png " ")
+![Generate ACCHK Report](./images/acchk_report-3a.png " ")
 
 You should now see two entries, one for the service *tac\_service* and one for the service *ac\_service*.
 
 The **failover_type** column indicates AUTO for TAC and TRANS (abbreviation of TRANSACTION) for AC. You may notice that the level of protection is almost identical (100% of calls, but some difference in time protected).
 
-This is an extreme example - there are 2 calls in each of the database requests, and one of them is not protected in the AC case, hence you only get approximately 50% protection. The reason it is not protected is shown, for example:
+The reason why a call is not protected is shown in each case, for example:
 
 ````
 Event Type       Error Code              Program               Module               Action        SQL_ID   Call              Total
 ---------------- ---------- -------------------- -------------------- -------------------- ------------- --------------- ----------
-DISABLE           41406     JDBC Thin Client     JDBC Thin Client                                            Session State O  51043
+DISABLE           41406     JDBC Thin Client     JDBC Thin Client                                          Session State O    51043
 DISABLE           41409     JDBC Thin Client     JDBC Thin Client                                                COMMIT         615
 NEVER_ENABLED     41462     JDBC Thin Client                                                                                      4
 ````
-A commit causes AC to disable. With TAC we will re-enable on the next call, with AC it is on the next request. The acdemo does not perform actions after the commit.
+A commit causes AC to disable. With TAC we will re-enable on the next call, with AC it is on the next request. The acdemo application does not perform actions after the commit.
 
 8. ACCHK generates trace files from which it populates the database views DBA\_ACCHK\_EVENTS, DBA\_ACCHK\_EVENTS\_SUMMARY, DBA\_ACCHK\_STATISTICS and DBA\_ACCHK\_STATISTICS\_SUMMARY
 
@@ -174,6 +166,7 @@ In the LiveLabs systems ORACLE_BASE is set to /u01/app/oracle
 <copy>
 cd $ORACLE_BASE/diag/rdbms/<REPLACE DB NAME>/<REPLACE INSTANCE NAME>/trace
 rm <REPLACE INSTANCE NAME>_ora_*.trc
+rm <REPLACE INSTANCE NAME>_ora_*.trm
 </copy>
 ````
 For example
@@ -181,6 +174,7 @@ For example
 ````
 cd /u01/app/oracle/diag/rdbms/rackpemw_iad1pc/racKPEMW2/trace
 rm racKPEMW2_ora_*.trc
+rm racKPEMW2_ora_*.trm
 ````
 
 You may now *proceed to the next lab*.  
