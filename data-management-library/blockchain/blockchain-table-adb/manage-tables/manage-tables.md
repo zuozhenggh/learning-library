@@ -224,11 +224,11 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 ## Task 6: Verify Rows Without Signature
 
-You can verify the integrity of blockchain tables by verifying that the chain integrity has not been compromised. Oracle provides DBMS_BLOCKCHAIN\_TABLE.VERIFY\_ROWS procedure, which verifies all rows on all applicable chains for integrity of HASH column value and optionally the SIGNATURE column value for rows created in the range of low\_timestamp to hig\_timestamp. An appropriate exception is thrown if the integrity of chains is compromised.
+You can verify the integrity of blockchain tables by verifying that the chain integrity has not been compromised. Oracle provides DBMS_BLOCKCHAIN\_TABLE.VERIFY\_ROWS procedure, which verifies all rows on all applicable chains for integrity of HASH column value and optionally the SIGNATURE column value for rows created in the range of low\_timestamp to high\_timestamp. An appropriate exception is thrown if the integrity of chains is compromised.
 
 1. Verify the rows in blockchain table using DBMS\_BLOCKCHAIN\_TABLE.VERIFY_ROWS.
 
-	> *Note: Every blockchain table will have different instance Id values. Please do not panic if you do not see the same values in the output as in the screenshot. If the PL/SQL procedure is completed successfully, the blockchain table is verified successfully.*
+	> *Note: It is expected that every blockchain table will have different instance Id values. Please do not be concerned if you do not see the same values in the output as in the screenshot. If the PL/SQL procedure is completed successfully, the blockchain table is verified successfully.*
 
 	```
 	<copy>
