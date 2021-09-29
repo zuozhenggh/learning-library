@@ -1,10 +1,10 @@
 {
-    "workshoptitle": "Oracle Cloud Data Lake House",
+    "workshoptitle": "Oracle Cloud Data Lakehouse",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "Introduction to Oracle Cloud Data Lake House",
+            "description": "Introduction to Oracle Cloud Data Lakehouse",
             "filename": "./../../introduction.md"
         },
         {
