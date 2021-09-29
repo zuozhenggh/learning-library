@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to get started with Oracle Cloud Infrastructure Data Catalog. First, you create a compartment for your Data Catalog objects. You create a new administrator user and a Data Catalog administrator group, and then add the new user to the new group. Next, you create the user policies that are required to create and manage a Data Catalog instance. Finally, you create a Data Catalog instance and import a business glossary. When you create a data catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata.
+This lab walks you through the steps to get started with Oracle Cloud Infrastructure Data Catalog. First, you create a compartment for your Data Catalog instance. You create a new administrator user and a Data Catalog administrator group, and then add the new user to the new group. Next, you create the Oracle Cloud Infrastructure Identity and Access Management (IAM) policies that are required to create and manage a Data Catalog instance. Finally, you create a Data Catalog instance and import a business glossary. When you create a data catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata.
 
 This workshop is directed at administrator users because they are granted the required access permissions.
 
@@ -69,7 +69,7 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
 ## Task 3: Create an IAM User to Be the Data Catalog Administrator
 
-A Cloud Administrator has complete control over all of the Data Catalog resources in the tenancy; however, it's a good practice to delegate cluster administration tasks to one or more Data Catalog administrators. To create a new Data Catalog administrator for a service, a Cloud Administrator must create a user and then add that user to a Data Catalog administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
+A Cloud Administrator has complete control over all of the Data Catalog resources in the tenancy; however, it's a good practice to delegate administration tasks to one or more Data Catalog administrators. To create a new Data Catalog administrator for a service, a Cloud Administrator must create a user and then add that user to a Data Catalog administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
 
 Create a new **Administrator** group that will have full access rights to the new compartment that you created earlier as follows:
 
@@ -347,7 +347,7 @@ Create an access policy to grant ``manage`` permission to the aggregate resource
         <copy>allow dynamic-group moviestream-dynamic-group to manage object-family in compartment training-dcat-compartment</copy>
         ```
 
-     Click the **Copy** button in the following code box, and then paste it in on the second line in the **Policy Builder** text box. This policy statement allows any resource in the `moveistream-dynamic-group` to run any catalog operation on any catalog in the `training-dcat-compartment` compartment. 
+     Click the **Copy** button in the following code box, and then paste it in on the second line in the **Policy Builder** text box. This policy statement allows any resource in the `moveistream-dynamic-group` to run any catalog operation on any catalog in the `training-dcat-compartment` compartment.
 
         ```
         <copy>allow dynamic-group moviestream-dynamic-group to manage data-catalog-family in compartment training-dcat-compartment</copy>

@@ -27,6 +27,10 @@ A data lake enables an enterprise to store all of its data in a cost effective, 
 ## What is a Data Warehouse?
 With a data warehouse, you perform data transformation and cleansing before you commit the data to the warehouse. With a data lake, you ingest data quickly and prepare it on the fly as people access it. A data lake supports operational reporting and business monitoring that require immediate access to data and flexible analysis to understand what is happening in the business while it happening. See [Cloud data lake house - process enterprise and streaming data for analysis and machine learning](https://docs.oracle.com/en/solutions/oci-curated-analysis/index.html#GUID-7FF7A024-5EB0-414B-A1A5-4718929DC7F2).
 
+## What is a Lakehouse?
+The Lakehouse combines the abilities of a data lake and a data warehouse to process a broad range of enterprise and streaming data for business analysis and machine learning. It offers an architecture that eliminates data silos – allowing you to analyze data across your data estate.
+
+
 For additional information, see [What is the difference between a Data Lake, Database, and a Data Warehouse](https://www.oracle.com/a/ocom/docs/database/difference-between-data-lake-data-warehouse.pdf).
 
 ## Objectives

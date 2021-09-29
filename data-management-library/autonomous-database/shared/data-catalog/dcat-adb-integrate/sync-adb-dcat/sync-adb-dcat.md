@@ -214,19 +214,19 @@ In this task, you'll gather information about the Data Catalog instance which yo
 
     ```
     <copy>
-    define tenancy_ocid ='ocid1.tenancy.oc1..aaaaaaaafcue47pqmrf4vigneebgbcmmoy5r7xvoypicjqqge32ewnrcyx2a'
-    define dcat_region='us-phoenix-1'
-    define dcat_compartment = 'ocid1.compartment.oc1..aaaaaaaa2dw4azv4omrvlqfwl7u5zb6rnjpvecsdvjyerwjchjh6uodnemoa'
-    define dcat_ocid = 'ocid1.datacatalog.oc1.phx.amaaaaaa7ratcziaatbs6unxv5ouptdnvc7chzqvj53hg7is2aoev5tete7q'
-    define dcat_sandbox_asset_key='c8df4d3f-6bad-459f-b01c-1fff99132825'  
+    define tenancy_ocid ='enter-your-tenancy-ocid'
+    define dcat_region='enter-your-region'
+    define dcat_compartment = 'enter-your-compartment-ocid'
+    define dcat_ocid = 'enter-your-data-catalog-ocid'
+    define dcat_sandbox_asset_key='enter-your-data-catalog-data-asset-key'  
     define dcat_credential = 'OCI$RESOURCE_PRINCIPAL'
     define obj_credential = 'OCI$RESOURCE_PRINCIPAL'
     define uri_root = 'https://objectstorage.us-phoenix-1.oraclecloud.com/p/oC6LJHe8KMDEYlcfpN0wxLKbYjG4_W-E2laOeISSqBhEA343Qg-Ncn27oXup5e66/n/adwc4pm/b/moviestream_sandbox/o'
-    define user_ocid = 'ocid1.user.oc1..aaaaaaaahxy6rdxo6mqzluznxjhuyz3ievpqvi5r3yle4ma4njgq6ts6qlca'
+    define user_ocid = 'enter-your-own-user-ocid'
     </copy>
     ```
 
-3. Replace the values of the **`dcat_ocid`** and **`dcat_sandbox_asset_key`** with the values that you have identified in **Task 1: Gather Information About your Data Catalog Instance** in this lab. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
+3. Replace the values of the **`tenancy_ocid`**, **`dcat_region`**, **`dcat_compartment`**, **`dcat_ocid`**, **`dcat_sandbox_asset_key`**, and **`user_ocid`** with your own values that you have identified in **Task 1: Gather Information About your Data Catalog Instance** in this lab. **Note:** Task 1 is not yet fully completed as of September 29; therefore, not all the instructions on how to get your own ocids and other values are included yet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
     ![](./images/define-variables.png " ")
 
@@ -260,7 +260,7 @@ In this task, you'll gather information about the Data Catalog instance which yo
     ```
     <copy>
     select *
-    from dbms_cloud.list_objects('&dcat_credential', '&uri_root/');
+    from dbms_cloud.list_objects('&obj_credential', '&uri_root/');
     </copy>
     ```
 
