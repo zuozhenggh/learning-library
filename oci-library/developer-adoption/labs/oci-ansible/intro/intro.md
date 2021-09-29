@@ -5,7 +5,6 @@
 **Ansible** is an open-source IT automation platform that makes your applications and systems easier to deploy and maintain. Ansible handles configuration management, application deployment, cloud provisioning, ad-hoc task execution, network automation and multi-node orchestration in a language that approaches plain English, using SSH - with no agents to install on remote systems.Ansible proposal is to be the easiest IT automation system to use, ever. Some design principles:Easy to setup, with a minimal learning curveManage remote systems very quickly and in parallel; agentless, leveraging SSHDescribe infrastructure in a language that is both machine and human friendlyFocus on security and easy auditability/review/rewriting of content
 
 
-
 ## Why Ansible
 
 ### Cpnfiguration Management
@@ -54,7 +53,19 @@
 -Take a web server out of the Load Balancer one at a time to upgrade without downtime (rolling update)
 
 
-### Ansible Use Cases 
+## Ansible Use Cases 
+
+### Provisioning
+
+-On-premise
+  -Bare Metal
+  -Virtual Machines
+  -Hypervisors
+  
+-Cloud Infrastructure
+  -PublicPrivateNetwork DevicesStorageExampleOCI Virtual Cloud Network, Load Balancer, OKE, VirtualBox, GlusterFS, Firewalls
+
+
 
 ### Ansible Architecture
 
