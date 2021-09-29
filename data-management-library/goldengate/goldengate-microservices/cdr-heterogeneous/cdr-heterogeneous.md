@@ -134,7 +134,7 @@ To resolve an insert where the row exists in the source and target, but some or 
     ![](./images/ire_pm_db_1.png " ")
     ![](./images/ire_pm_db_2.png " ")
 
-    In case, you don't see conflict on Atlanta, go to Performance Metrics of Boston and check IREP, as target where conflict will be resolved depends on the capture sequence of the extract process.
+    In case, you don’t see any conflicts on Atlanta, go to Performance Metrics of <b>Boston</b> and check <b>IREP</b> as the other extract must have captured the changes first from the trial.
 
 
 
