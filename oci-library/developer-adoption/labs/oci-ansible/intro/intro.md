@@ -16,7 +16,7 @@
 
 -Human/Machine-readable format
 
-Example:
+***Example***
 
 -Configuration files contain the expected value, expected permissions
 
@@ -30,7 +30,7 @@ Example:
 
 -Start-up services
 
-Example:
+***Example***
 
 -Build Container Images
 
@@ -38,9 +38,20 @@ Example:
 
 -Build K8s Operator (Ansible Operators)
 
+
 ### Orchestration
 
+-Orchestrate deployments
 
+-Multiple remote servers and ensure things happen in a specific order
+
+-Rolling update
+
+***Example***
+
+-Bring up a database before the web server
+
+-Take a web server out of the Load Balancer one at a time to upgrade without downtime (rolling update)
 
 
 ### Serverless infrastructure
