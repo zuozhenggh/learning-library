@@ -85,7 +85,29 @@
 
  ***Example***
 
- -  
+ -  Build System invoke Ansible to deploy build artifact into staging environments
+
+ - When the stage tests pass, run a production deployment
+
+ -  Ansible can check out your artifacts from version control on each machine, or pull artifacts from the CI server, or from a package mirror.
+
+ ### Security Automation and Compliance
+
+ - Integrate with security platforms
+   - Firewalls
+   - Intrusion detection & prevention systems (IDPS)
+   - Security Information and Event Management (SIEM)
+   - Privileged Access Management (PAM)
+
+ - Automated response to security attacks
+
+ ***Example***
+
+ - Investigation enrichment
+
+ - Threat hunting
+
+ - Incident response 
 
 
 ### Ansible Architecture
