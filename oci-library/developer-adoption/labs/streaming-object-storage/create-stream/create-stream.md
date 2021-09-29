@@ -6,7 +6,7 @@ In this tutorial, we’re going to use [Service Connector Hub](https://docs.orac
 
 * Need to be an OCI Tenancy Administrator
 
-### Task 1: Create an OCI Stream
+## Task 1: Create an OCI Stream
 
 1. Open the navigation menu and click ***Analytics & AI***. Under ***Messaging***, click ***Streaming***. A list of existing streams is displayed.
 
@@ -35,7 +35,7 @@ In this tutorial, we’re going to use [Service Connector Hub](https://docs.orac
 ![OCI Stream](./images/OCI-Stream4.png)
 
 
-### Task 2: Create Object Storage Bucket
+## Task 2: Create Object Storage Bucket
 
 1. Open the navigation menu and click ***Storage***. Under ***Object Storage***, click ***Buckets***.
 
@@ -55,7 +55,7 @@ You will keep all of the defaults for the bucket creation.
 
  
 
-### Task 3: Create Service Connector
+## Task 3: Create Service Connector
 
 For simple archiving operations, we don’t need to write a single line of code. Instead, we just create a service connector and point it at the source (stream) and destination (bucket). Navigate to the Service Connector Hub via the burger menu (or by searching for it).
 
@@ -89,7 +89,7 @@ For simple archiving operations, we don’t need to write a single line of code.
 
 
 
-### Task 4: Publish Messages using OCI Cloud Shell
+## Task 4: Publish Messages using OCI Cloud Shell
 
  To test this out, we can write some messages to our stream using the Oracle CLoud Infrastrucuture CLI in Cloud Shell. 
 
