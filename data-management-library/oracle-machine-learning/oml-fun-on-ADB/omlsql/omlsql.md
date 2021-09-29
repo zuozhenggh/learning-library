@@ -262,5 +262,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation
-* **Contributors** -  Mark Hornick, Sherry LaMonica, Machine Learning Group
+* **Contributors** -  Mark Hornick, Sr. Director, Data Science/Machine Learning PM; Sherry LaMonica, Principal Member of Technical Staff, Data Science/Machine Learning
 * **Last Updated By/Date** - Sarika Surampudi, September 2021
