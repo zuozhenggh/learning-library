@@ -1,4 +1,4 @@
-# Connect to your DB System
+# Connect to Your DB System
 
 ## Introduction
 This lab will show you how to connect to your DB System.  
@@ -21,27 +21,27 @@ Watch the video below for an overview of the Build a DB System lab
 ## Task 1: Login to Oracle Cloud
 
 1.  Login to Oracle Cloud
-2.  Click on the down arrow next to Oracle Cloud Infrastructure Direct Sign in
+2.  Click the down arrow next to Oracle Cloud Infrastructure Direct Sign in
 3.  Enter your username and password you were provided
 4.  Change the password if prompted
 5.  In the upper right corner select the region you were assigned
-6.  Open up the hamburger menu in the left hand corner.  
+6.  Open the navigation menu in the left hand corner.  
 
-7.  From the hamburger menu, select **Bare Metal, VM, and Exadata** in the Oracle Database category.
+7.  From the navigation menu, select **Bare Metal, VM, and Exadata** in the Oracle Database category.
 
-  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
+  ![Bare Metal and VM Menu](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
-8.  Select the compartment you were assigned in LiveLabs and identify your database system from your My Reservations page. Click on the database system name to see the details.
+8.  Select the compartment you were assigned in LiveLabs and identify your database system from your My Reservations page. Click the database system name to see the details.
 
-  ![](./images/setup-compute-2.png " ")
+  ![Database Systems](./images/setup-compute-2.png " ")
 
 9. Explore the DB Systems home page.  On the left hand side, scroll down to view the Resources section.  Click Nodes.
 
-  ![](./images/setup-compute-3.png " ")
+  ![Database System Details](./images/setup-compute-3.png " ")
 
 10. Locate your two nodes and jot down their public IP addresses.
 
-  ![](./images/setup-compute-4.png " ")
+  ![Node List of Database System](./images/setup-compute-4.png " ")
 
 11. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps. If you choose to use Oracle Cloud Shell, you will need to copy your SSH Private to the cloud shell and set the proper permissions, otherwise, choose the platform that matches your local environment.
 
@@ -58,24 +58,24 @@ Your options are:
 
 1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
+	![Select Oracle Cloud Shell](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellsetup.png " ")
+    ![Oracle Cloud Shell](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellsetup.png " ")
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
+    ![Navigation Menu of Oracle Cloud Shell](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
 
-2.  Click on the Cloud Shell hamburger icon and select **Upload** to upload your private key
+2.  Click the Cloud Shell navigation menu and select **Upload** to upload your private key
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
+    ![Upload Private Key](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
 
 3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
+    ![Select Private Key for Upload](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
 
 4. Be patient while the key file uploads to your Cloud Shell directory
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
+    ![Upload progress](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+    ![Key Upload Complete](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
 
 5. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory, and change the permissions on the file.
 
@@ -92,14 +92,14 @@ Your options are:
     cd ~
     ```
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
+    ![List Private Key](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-finished.png " ")
 
 6.  Using one of the Public IP addresses, enter the command below to login as the *opc* user and verify connection to your nodes.
 
     ```nohighlight
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Node Public IP Address>
     ```
-    ![](./images/em-mac-linux-ssh-login.png " ")
+    ![Connect to a Node](./images/em-mac-linux-ssh-login.png " ")
 
 3.  When prompted, answer **yes** to continue connecting.
 4.  Repeat step 2 for your 2nd node.
@@ -113,14 +113,14 @@ Your options are:
     ```
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node1>
     ```
-    ![](./images/em-mac-linux-ssh-login.png " ")
+    ![Use SSH to Connect to a Node](./images/em-mac-linux-ssh-login.png " ")
 
 2. You can also log in to the **Public IP Address of node2**
 
     ```
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Public IP Address - node2>
     ```
-    ![](./images/em-mac-linux-ssh-login.png " ")
+    ![Use SSH to connect to a Node IP Address](./images/em-mac-linux-ssh-login.png " ")
 
 3. After successfully logging in, you may [proceed to the next lab](#next).
 
@@ -137,22 +137,22 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
     - Port: _22_
     - Connection type: _SSH_
 
-  ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
+  ![Putty Configuration Menu](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
-### **Configuring Automatic Login**
+### **Configure Automatic Login**
 
 1.  In the category section, **Click** Connection and then **Select** Data.
 
 2.  Enter your auto-login username. Enter **opc**.
 
-  ![](images/36164be0029033be6d65f883bbf31713.jpg " ")
+  ![Auto-Login Username is opc](images/36164be0029033be6d65f883bbf31713.jpg " ")
 
-### **Adding Your Private Key**
+### **Add Your Private Key**
 
 1.  In the category section, **Click** Auth.
 2.  **Click** browse and find the private key file that matches your VM’s public key. This private key should have a .ppk extension for PuTTy to work.
 
-  ![](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
+  ![Add Private Key to the Connection Authorization Menu](images/df56bc989ad85f9bfad17ddb6ed6038e.jpg " ")
 
 3.  To save all your settings, in the category section, **Click** session.
 4.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
@@ -166,29 +166,29 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
     - Port: _22_
     - Connection type: _SSH_
 
-  ![](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
+  ![Add Second Node to Putty Configuration Menu](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
 You may now [proceed to the next lab](#next).
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our support forum.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue by using our support forum.
 
-### Issue 1: Can't login to instance
-Participant is unable to login to instance
+### Issue 1: Cannot log in to the instance
+Participant is unable to log in to the instance
 
 #### Tips for fixing Issue #1
-There may be several reasons why you can't login to the instance.  Here are some common ones we've seen from workshop participants
+There may be several reasons why you cannot log in to the instance.  Here are some common ones we've seen from workshop participants
 - Permissions are too open for the private key - be sure to chmod the file using `chmod 600 ~/.ssh/<yourprivatekeyname>`
 - Incorrectly formatted ssh key (see above for fix)
-- User chose to login from MAC Terminal, Putty, etc and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
+- User chose to login from MAC Terminal, Putty, and so on and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
 - Incorrect name supplied for ssh key (Do not use sshkeyname, use the key name you provided)
 - @ placed before opc user (Remove @ sign and login using the format above)
 - Make sure you are the oracle user (type the command *whoami* to check, if not type *sudo su - oracle* to switch to the oracle user)
 - Make sure the instance is running (type the command *ps -ef | grep oracle* to see if the oracle processes are running)
 
 ### Issue 2: Need a ppk key
-Participant is unable to login to instance
+Participant is unable to log in to instance
 
 #### Tips for fixing Issue #1
 If you want to use Putty to connect to your server, you must convert your SSH key into a format compatible with Putty. To convert your key into the required .ppk format, you can use PuTTYgen.
