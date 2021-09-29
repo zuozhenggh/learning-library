@@ -9,71 +9,76 @@
 
 ### Cpnfiguration Management
 
--Centralizing configuration file management
+- Centralizing configuration file management
 
--Write state description of servers (playbooks)
+- Write state description of servers (playbooks)
 
--Human/Machine-readable format
+- Human/Machine-readable format
 
 ***Example***
 
--Configuration files contain the expected value, expected permissions
+- Configuration files contain the expected value, expected permissions
 
--Ensure services are running
+- Ensure services are running
 
 ### Application Deployment
 
--Generate, package source code, binaries, static assets
+- Generate, package source code, binaries, static assets
 
--Copy then to servers
+- Copy then to servers
 
--Start-up services
+- Start-up services
 
 ***Example***
 
--Build Container Images
+- Build Container Images
 
--Build VM Images
+- Build VM Images
 
--Build K8s Operator (Ansible Operators)
+- Build K8s Operator (Ansible Operators)
 
 
 ### Orchestration
 
--Orchestrate deployments
+- Orchestrate deployments
 
--Multiple remote servers and ensure things happen in a specific order
+- Multiple remote servers and ensure things happen in a specific order
 
--Rolling update
+- Rolling update
 
 ***Example***
 
--Bring up a database before the web server
+- Bring up a database before the web server
 
--Take a web server out of the Load Balancer one at a time to upgrade without downtime (rolling update)
+- Take a web server out of the Load Balancer one at a time to upgrade without downtime (rolling update)
 
 
 ## Ansible Use Cases 
 
 ### Provisioning
 
--On-premise
+- On-premise
   -Bare Metal
   -Virtual Machines
   -Hypervisors
   
--Cloud Infrastructure
+- Cloud Infrastructure
   -Public
   -Private
   
--Network Devices
+- Network Devices
 
--Storage
+- Storage
 
 ***Example***
 
 -OCI Virtual Cloud Network, Load Balancer, OKE, VirtualBox, GlusterFS, Firewalls
 
+### Continuous Delivery
+
+- Enable Agile Software Development
+
+- 
 
 
 ### Ansible Architecture
