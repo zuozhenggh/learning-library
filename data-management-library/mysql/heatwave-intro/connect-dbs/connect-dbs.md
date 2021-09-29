@@ -210,8 +210,6 @@ You will need a compute Instance to connect to your brand new MySQL database.
     ```
     ![CONNECT](./images/06connect04-myslqsh.png " ")
 
-8. On MySQL Shell, switch to SQL mode  to try out some SQL commands 
-
 9. View  the airportdb total records per table in 
     ```
     <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>

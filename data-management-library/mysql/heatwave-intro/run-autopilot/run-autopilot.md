@@ -40,9 +40,21 @@ In this lab, you will be guided through the following tasks:
     ```
     <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
     ```
+3.	Change to the airport database   
 
+    Enter the following command at the prompt
+    ```
+    <copy>USE airportdb;</copy>
+    ```
+
+4. If not already on turn on  the `use_secondary_engine` 
+
+    Enter the following command at the prompt
+     ```
+    <copy>SET SESSION use_secondary_engine=ON;</copy>
+    ```
   
-3.	Run the following four queries and record the runtime:
+5.	Run the following four queries and record the runtime:
 
  **Query 1)** Find per-company average age of passengers from Switzerland, Italy and France
 
@@ -119,12 +131,12 @@ GROUP BY firstname , lastname;
 </copy>
     ```
 
-4. Run Auto Encoding advisor to see if there are any recommendations for string column encodings
+6. Run Auto Encoding advisor to see if there are any recommendations for string column encodings
 
     ```
     <copy>call sys.heatwave_advisor(json_object('target_schema', JSON_ARRAY('airportdb'), 'auto_enc', json_object('mode', 'recommend') ));</copy>
     ```
-5.	To apply the suggestion, access the auto-generated script
+7.	To apply the suggestion, access the auto-generated script
 
     ```
     <copy>SET SESSION group_concat_max_len = 1000000;</copy>
@@ -132,8 +144,8 @@ GROUP BY firstname , lastname;
     ```
     <copy>SELECT GROUP_CONCAT(log->>"$.sql" SEPARATOR '\n') AS "SQL Script" FROM sys.heatwave_advisor_report WHERE type = "sql" ORDER BY id;</copy>
     ```
-6.	Copy and paste auto-generated script to apply AutoEncoding changes
-7.	Run the same queries in step 1 and record the time. You can see that total query runtime has improved.
+8.	Copy and paste auto-generated script to apply AutoEncoding changes
+9.	Run the same queries in step 1 and record the time. You can see that total query runtime has improved.
 
     **Your results should look like this:**
     ![INTRO](./images/pilot01.png " ") 
