@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create a database table, create a proxy object, explore and prepare data, build and evaluate models, and use those models to score data using OML4Py. This will use a Classification example available in OML Notebooks. For illustrative purposes, Task 1 and Task 2 of this lab uses iris from sklearn datasets to create a database table. The rest of the steps walk you through the example available in OML Notebooks that use the SH schema. The SH schema and associated data sets can be readily accessed in Oracle Autonomous Database.
+This lab walks you through the steps to create a database table, create a proxy object, explore and prepare data, build and evaluate models, and use those models to score data using OML4Py. This will use a Classification example available in OML Notebooks. For illustrative purposes, Task 1 and Task 2 of this lab use iris from sklearn datasets to create a database table. The rest of the steps walk you through the example available in OML Notebooks that use the SH schema. The SH schema and associated data sets can be readily accessed in Oracle Autonomous Database.
 
 Estimated Lab Time: 30 minutes
 ### About Oracle Machine Learning for Python(OML4Py)
@@ -21,14 +21,14 @@ In this lab, you will learn how to:
 
 ### Prerequisites (Optional)
 
-This lab assumes you have completed the following lab:
-* Login to Oracle Cloud/Sign Up for Free Tier <link to be provided>
-* Lab 1: Oracle Machine Learning Notebooks
+This lab assumes you have:
+* An Oracle Machine Learning account
+* Completed Lab 1: Oracle Machine Learning Notebooks
 
 ## Task 1: Create a Database Table
 
-OML4Py transparently translates many standard Python functions into SQL. With OML4Py, you can create Python proxy objects that can be used to access, analyze, and manipulate data that resides in the database. In this step, the *iris* data set is used for illustrative purposes to load the data into a temporary database table. The temporary table is automatically deleted when theOML Notebook connection to the database ends unless you have saved its proxy object to a datastore before disconnecting.
-`oml` module and the Pandas library. Use the `oml.push` function to create a temporary table.
+OML4Py transparently translates many standard Python functions into SQL. With OML4Py, you can create Python proxy objects that can be used to access, analyze, and manipulate data that resides in the database. In this step, the *iris* data set is used for illustrative purposes to load the data into a temporary database table. The temporary table is automatically deleted when the OML Notebook connection to the database ends unless you have saved its proxy object to a datastore before disconnecting.
+To use OML4Py, you must first import the `oml` module and the Pandas library. Use the `oml.push` function to create a temporary table.
 1. Run the following scripts to import the `oml` package, the Pandas library, and set the display options:
 	```
 	<copy>
@@ -115,8 +115,10 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	```
 	<copy>
 	%python
-	DEMO.describe(include='all')
-	z.show(DEMO.describe(include='all'))
+	summary_df = DEMO.describe()
+	summary_df = summary_df.reset_index()
+	summary_df = summary_df.rename(columns = {'index': 'statistics'})
+	z.show(summary_df.head())
 	</copy>
 	```
 	![Image alt text](images/pic4.png)
@@ -564,11 +566,11 @@ After building and evaluating the model, you will now score the data.
 	The output is as follows:
 	![Images alt text](/images/pic11.png)
 
-In this example, you successfully classified customers who are most likely to be positive responders to an Affinity Card loyal program. You build and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
+In this example, you successfully classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
 
 ## Learn More
 
-OML4Py enables data scientists to run their own defined function along with various expertise for making the machine learning models and predictions more significant. Given below are some of the functionality that OML4Py offers:
+OML4Py enables data scientists to hand-off their user-defined Python functions to application developers for invocation from REST or SQL interfaces, where the database environment spawns and controls the Python engines. This facilitates making machine learning models and predictions readily available for enterprise solutions. Given below are some of the functionality that OML4Py offers:
 1. [Embedded Python Execution](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-embedded-python-execution.html#GUID-A15F3A62-736A-4276-83F2-7C54BE026639)
 	OML4Py Embedded Python Execution provides users the ability to invoke user-defined Python functions in one or more Python engines spawned and managed by the Oracle database environment.
 
@@ -578,6 +580,6 @@ OML4Py enables data scientists to run their own defined function along with vari
 	It is used in the process of explanation and interpretation of the machine learning model to identify the important features to help the model impact its prediction.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation; Dhanish Kumar, Member of Technical Staff
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning;Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning.
+* **Last Updated By/Date** - Dhanish Kumar, September 2021
