@@ -65,7 +65,14 @@ For simple archiving operations, we don’t need to write a single line of code.
 
 3. Click ***Create Service Connector***. 
 
-4. 
+4. Name the connector ***streaming-to-object-storage*** . 
+
+5. Provide the description ***Moving streaming data to object storage***.
+
+6. For the compartment, choose the root tenancy.
+
+
+
 
 
 ### Task 4: Publish Messages
