@@ -41,7 +41,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     ```
     <copy>sudo su - ggadmin</copy>
     ```
-     ![](./images/1.png" ")
+     ![](./images/1.png " ")
 
 
 ## Task 1: Connect to the Admin Client
@@ -64,7 +64,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
     </copy>
     ```
-    ![](./images/2.PNG" ")
+    ![](./images/2.png " ")
 
 2. Connect to the GoldenGate deployment:
 
@@ -73,7 +73,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     <copy>connect http://localhost:16000 as oggadmin password Wel_Come1</copy>
     ```
 
-    ![](./images/3.PNG" ")
+    ![](./images/3.png " ")
 
 
 3. After connecting successfully, you can run any of the following commands:
@@ -85,7 +85,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     info all
     </copy>
     ```
-![](./images/4.PNG" ")
+    ![](./images/4.png " ")
 
     View statistics of  Replicat ***REPKAFKA***
 
@@ -95,18 +95,18 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     STATS REPLICAT REPKAFKA TOTAL
     </copy>
     ```
-    ![](./images/5.PNG" ")
+    
+    ![](./images/5.png " ")
+
 
     View the content of a ggserror log file:
     ```
     <copy>
-    VIEW MESSAGESL
+    VIEW MESSAGES
     </copy>
     ```
-    ![](./images/6.PNG" ")
-
-
-
+    
+    ![](./images/6.png " ")
 
 ## Summary
 In summary, Admin Client is a command line utility (similar to the classic GGSCI utility). It uses the REST API published by the Microservices Servers to accomplish control and configuration tasks in an Oracle GoldenGate deployment.
