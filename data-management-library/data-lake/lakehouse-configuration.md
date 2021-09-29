@@ -81,9 +81,13 @@ Policies can be added based on the common templates or added by manually adding 
     ```
     <copy>
 allow group data-lakehouse-admin to manage dis-workspaces in compartment lakehouse1
+
 allow group data-lakehouse-admin to manage dis-work-requests in compartment lakehouse1
+
 allow group data-lakehouse-admin to use virtual-network-family in compartment lakehouse1
+
 allow group data-lakehouse-admin to manage tag-namespaces in compartment lakehouse1
+
 allow group data-lakehouse-admin to use object-family in compartment lakehouse1
 
     </copy>
@@ -276,69 +280,6 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
     We now have two cloud storage locations set up.
 
     ![Cloud Storage Locations](images/cloudstoragelocations.png " ")
-
-## Task 5: Load Data from Files in Object Storage Using Data Tools
-
-In this step, we will perform some simple data loading tasks, to load in CSV files from Object Storage into tables in our Autonomous Database.
-
-1. To load or link data from our newly configured cloud storage, click the **Data Load** link in the top left of your screen.
-
-    ![Click Data Load](images/backtodataload.png " ")
-
-2. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**.
-
-    ![Select Load Data, then Cloud Storage](images/loadfromstorage.png " ")
-
-3. From the MOVIESTREAMGOLD location, drag the **customer_contact** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we only have a single file, but we do want to load this into a single table. Click **OK**.
-
-4. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
-
-
-5. Click the pencil icon for the **customer_contact** task to view the settings for this load task.
-
-    ![View settings for customer_contact load task](images/cc_viewsettings.png " ")
-
-6. Here we can see the list of columns and data types that will be created from the csv file. They all look correct, so click **Close** to close the settings viewer.
-
-7. Click the pencil icon for the **genre** task to view its settings. This should show just two columns to be created - **GENRE_ID** and **NAME**. Click **Close** to close the settings viewer.
-
-8. Now click the Play button to run the data load job.
-
-    ![Run the data load job](images/rundataload.png " ")
-
-    The job should take about 20 seconds to run.
-
-9. Check that both data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
-
-    ![Check the job is completed](images/loadcompleted.png " ")
-
-10. Now, to load some more data from the MovieStream landing area, click the **Data Load** link in the top left of your screen.
-
-    ![Click Data Load](images/backtodataload.png " ")
-
-11. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
-
-12. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
-
-    ![Click Data Load](images/selectlanding.png " ")
-
-13. From the MOVIESTREAMLANDING location, drag the **customer_extension** folder over to the right hand pane and click **OK** to load all objects into one table.
-
-14. Drag the **customer_segment** folder over to the right hand pane and click **OK**.
-
-15. Drag the **pizza_location** folder over to the right hand pane and click **OK**.
-
-16. Click the Play button to run the data load job.
-
-    ![Run the data load job](images/runload2.png " ")
-
-    The job should take about 20 seconds to run.
-
-17. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
-
-    ![Check the job is completed](images/loadcompleted2.png " ")
-
-18. Click the **Done** button in the bottom right of the screen.
 
 This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
 
