@@ -23,15 +23,15 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
 
 ## Task 1: Create Kubernetes Cluster
 
-1. From OCI Services menu, Click **Container Clusters (OKE)** under Developer Services.
+1. From OCI Services menu, Click ***Container Clusters (OKE)*** under Developer Services.
 
     **No need to create any policies for OKE, all the policies are pre-configured**
         ![](./../OKE/images/OKE_S1P1.PNG " ")
 
-2. Under **List Scope**, select the compartment in which you would like to create a cluster.
+2. Under ***List Scope***, select the compartment in which you would like to create a cluster.
         ![](./../OKE/images/OKE_S1P2.PNG " ")
 
-3. Click **Create Cluster**. Choose **Quick Create** and click **Launch Workflow**.
+3. Click ***Create Cluster***. Choose ***Quick Create*** and click ***Launch Workflow***.
 
 4. Fill out the dialog box:
 
@@ -42,7 +42,7 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
       - SHAPE: Choose a VM shape of your choice
       - NUMBER OF NODES: 1
 
-5. Click **Next** and Click "**Create Cluster**".
+5. Click ***Next*** and Click "***Create Cluster***".
 
     **We now have a OKE cluster with 1 node and Virtual Cloud Network with all the necessary resources and configuration needed**
 
@@ -99,10 +99,10 @@ In this section we will install kubectl. You can use the Kubernetes command line
 
 ## Task 4: Download get-kubeconfig.sh file and Initialize your environment
 
-1. Switch to OCI console window and navigate to your cluster. In Cluster detail window, scroll down and click **Quick Start**, under **Resources**.
-Follow the steps under the **Quick Start** Section.
+1. Switch to OCI console window and navigate to your cluster. In Cluster detail window, scroll down and click ***Quick Start***, under ***Resources***.
+Follow the steps under the ***Quick Start*** Section.
     ![](./../OKE/images/OKE_S4P1.PNG " ")
 
-2. The **Quick Start** directions will direct you to copy and execute the following commands depicted below in your local terminal.
+2. The ***Quick Start*** directions will direct you to copy and execute the following commands depicted below in your local terminal.
 
     ![](./../OKE/images/OKE_006.PNG " ")
