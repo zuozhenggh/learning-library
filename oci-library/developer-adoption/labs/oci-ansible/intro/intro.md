@@ -1,12 +1,20 @@
 # Introduction
 
-## What is OCI Streaming
+## What is Ansible
 
-[Oracle Cloud Infrastrucutre Streaming](https://www.oracle.com/cloud-native/streaming/) is a real-time, managed service, Apache Kafka-compatible event streaming platform for developers and data scientists.OCI Streaming provides a fully managed, scalable, and durable messaging solution for ingesting continuous, high-volume streams of data that you can consume and process in real time. Streaming is tightly integrated with Oracle Cloud Infrastructure (OCI), Database, GoldenGate, and Integration Cloud.  The service also provides out-of-the-box integrations for hundreds of third-party products across categories such as DevOps, databases, big data, and SaaS applications.
+**Ansible** is an open-source IT automation platform that makes your applications and systems easier to deploy and maintain. Ansible handles configuration management, application deployment, cloud provisioning, ad-hoc task execution, network automation and multi-node orchestration in a language that approaches plain English, using SSH - with no agents to install on remote systems.Ansible proposal is to be the easiest IT automation system to use, ever. Some design principles:Easy to setup, with a minimal learning curveManage remote systems very quickly and in parallel; agentless, leveraging SSHDescribe infrastructure in a language that is both machine and human friendlyFocus on security and easy auditability/review/rewriting of content
 
 
 
-## Why OCI Streaming
+## Why Ansible
+
+-Centralizing configuration file management
+
+-Write state description of servers (playbooks)
+
+-Human/Machine-readable formatExampleConfiguration files contain the expected value, expected permissions
+
+-Ensure services are running
 
 
 ### Serverless infrastructure
