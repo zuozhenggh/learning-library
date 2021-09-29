@@ -54,7 +54,11 @@
 -Take a web server out of the Load Balancer one at a time to upgrade without downtime (rolling update)
 
 
-### Serverless infrastructure
+### Ansible Use Cases 
+
+### Ansible Architecture
+
+
 
 
 ***Elastic and scalable platform***
