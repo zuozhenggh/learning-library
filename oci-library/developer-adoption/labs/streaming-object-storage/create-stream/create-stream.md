@@ -20,7 +20,7 @@ In this tutorial, we’re going to use [Service Connector Hub](https://docs.orac
 
    a. If your chosen compartment has an existing stream pool, you can select it from the drop-down list or click Create new stream pool and configure the stream pool manually.
 
-   b. If no stream pool exists in the chosen compartment, select Auto-create a default stream pool or click Create a new stream pool and configure the stream pool manually.
+   b. **If no stream pool exists** in the chosen compartment, select Auto-create a default stream pool or click Create a new stream pool and configure the stream pool manually.
 
 6. In the Define Stream Settings panel:
 
@@ -34,9 +34,20 @@ In this tutorial, we’re going to use [Service Connector Hub](https://docs.orac
 
 ![OCI Stream](./images/OCI-Stream4.png)
 
+
 ### Task 2: Create Object Storage Bucket
 
-1. 
+1. Open the navigation menu and click ***Storage***. Under ***Object Storage***, click ***Buckets***.
+
+2. Select a ***compartment*** from the ***Compartment lis*** t on the left side of the page. For this lab you will remain in the root tenancy. 
+
+A list of existing buckets is displayed.
+
+3. Click ***Create Bucket***.
+
+4. 
+
+ 
 
 ### Task 3: Create Service Connector
 
