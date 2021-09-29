@@ -51,6 +51,10 @@ You will keep all of the defaults for the bucket creation.
 
 5. Click ***Create*** . 
 
+![OCI Stream](./images/OCI-Stream5.png)
+
+
+
 
  
 
