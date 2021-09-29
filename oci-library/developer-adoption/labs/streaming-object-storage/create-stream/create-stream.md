@@ -130,18 +130,8 @@ oci streaming stream message put \
   --messages "[{\"key\": \"a2V5Mg==\", \"value\": \"eyJpZCI6IjAiLCAidGVzdCI6ICJtZXNzYWdlIGZyb20gQ0xJIn0=\"}]"
   ```
 
-  4. 
+  4. You will now confirm the archive operation.   You will need to wait the 60000 milliseconds (60 seconds) for the archive operation. After the 60 second wait period, we can check that the stream data was written to our Object Storage bucket.
 
+  ![Archive Stream](./images/OCI-archive-stream-1.png)
 
-
-
-### Task 5: Confirm Archive Operation
-
-Install the OLM from the operator-sdk, you can use the following command:
-```bash
-$ operator-sdk olm install
-...
-...
-INFO[0079] Successfully installed OLM version "latest"
-```
 
