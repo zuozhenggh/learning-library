@@ -27,6 +27,11 @@
             "filename": "../../change/change.md"
         },
         {
+            "title": "Terminate your Always Free Autonomous Database",
+            "description": "Terminate your Always Free Autonomous Database",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/terminate-adb/terminate-adb.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
