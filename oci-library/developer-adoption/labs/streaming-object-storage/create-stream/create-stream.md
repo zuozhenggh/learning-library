@@ -41,11 +41,16 @@ In this tutorial, we’re going to use [Service Connector Hub](https://docs.orac
 
 2. Select a ***compartment*** from the ***Compartment lis*** t on the left side of the page. For this lab you will remain in the root tenancy. 
 
-A list of existing buckets is displayed.
+You will keep all of the defaults for the bucket creation.
 
 3. Click ***Create Bucket***.
 
-4. 
+4. Enter a ***Bucket Name*** . For this lab we will name the bucket **streaming-archive-demo-0**.
+
+   You will keep all of the defaults for the bucket creation.
+
+5. Click ***Create*** . 
+
 
  
 
