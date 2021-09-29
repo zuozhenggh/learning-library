@@ -8,13 +8,39 @@
 
 ## Why Ansible
 
+### Cpnfiguration Management
+
 -Centralizing configuration file management
 
 -Write state description of servers (playbooks)
 
--Human/Machine-readable formatExampleConfiguration files contain the expected value, expected permissions
+-Human/Machine-readable format
+
+Example:
+
+-Configuration files contain the expected value, expected permissions
 
 -Ensure services are running
+
+### Application Deployment
+
+-Generate, package source code, binaries, static assets
+
+-Copy then to servers
+
+-Start-up services
+
+Example:
+
+-Build Container Images
+
+-Build VM Images
+
+-Build K8s Operator (Ansible Operators)
+
+### Orchestration
+
+
 
 
 ### Serverless infrastructure
