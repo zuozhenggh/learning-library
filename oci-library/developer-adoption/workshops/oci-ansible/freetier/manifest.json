@@ -4,7 +4,7 @@
 	"tutorials": [
         {
             "title": "Introduction",
-            "filename": "../../../labs/oracle-service-operator-kubernetes/intro/intro.md"
+            "filename": "../../../labs/oci-ansible/intro/intro.md"
         },
         {
             "title": "Getting Started with Free Trial Account",
@@ -12,7 +12,7 @@
         },
         {
             "title": "Lab 1: Using Ansible on OCI",
-            "filename": "../../../labs/oracle-service-operator-kubernetes/OKE/Create-oke-cluster.md"
+            "filename": "../../../labs/oci-ansible/create-ansible.md"
         },        
         {
             "title": "Need Help?",
