@@ -201,4 +201,4 @@ To terminate your Always Free Autonomous Database, follow [these instructions](h
 ## Acknowledgements
 
 - **Authors** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, August 2021
+- **Last Updated By/Date** - Brian Spendolini, September 2021
