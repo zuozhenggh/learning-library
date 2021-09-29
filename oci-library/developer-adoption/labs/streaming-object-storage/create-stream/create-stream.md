@@ -71,6 +71,12 @@ For simple archiving operations, we don’t need to write a single line of code.
 
 6. For the compartment, choose the root tenancy.
 
+![Service Connector](./images/OCI-Service-Connector1.png)
+
+
+7. Now to configure your service connector, Choose  ’Streaming’ as the ***source***, and ‘Object Storage’ as the ***target***. Chose the compartment where the stream pool resides, choose the stream pool, and the stream. You can choose to read from either the ‘Latest’ offset or ’Trim Horizon’ (the oldest non-committed offset).
+
+![Service Connector](./images/OCI-Service-Connector2.png)
 
 
 
