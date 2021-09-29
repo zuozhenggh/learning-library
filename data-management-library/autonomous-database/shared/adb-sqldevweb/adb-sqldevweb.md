@@ -84,7 +84,7 @@ Run a query on a sample Oracle Autonomous Database data set.
 
 4.  You can find more sample queries to run <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/sample-queries.html" target="\_blank">in the ADW documentation</a>.
 
-Please *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Want to learn more?
 

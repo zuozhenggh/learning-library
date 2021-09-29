@@ -153,7 +153,7 @@ In this lab, you will:
 
     ![Database instance homepage.](./images/task2-11.png " ")
 
-Please *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

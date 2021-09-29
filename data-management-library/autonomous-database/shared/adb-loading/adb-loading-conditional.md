@@ -350,7 +350,7 @@ This task shows how to load data from Oracle Cloud Infrastructure Object Storage
 
 5.  To learn more about how to specify file formats, delimiters, reject limits, and more, review the <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/dbmscloud-reference.html" target="\_blank"> Autonomous Database Supplied Package Reference </a> and <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/format-options.html#GUID-08C44CDA-7C81-481A-BA0A-F7346473B703" target="\_blank"> DBMS_CLOUD Package Format Options </a>
 
-Please *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Want to learn more?
 

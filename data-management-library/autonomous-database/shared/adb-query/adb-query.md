@@ -61,7 +61,7 @@ Estimated Time: 10 minutes
 
     ![Paste the code snippet and click Run Script.](images/external_table_query_results.jpg " ")
 
-Please *proceed to the next lab*.
+You may now [proceed to the next lab](#next).
 
 ## Want to learn more?
 
