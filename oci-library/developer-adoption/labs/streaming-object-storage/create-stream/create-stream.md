@@ -32,6 +32,8 @@ In this tutorial, we’re going to use [Service Connector Hub](https://docs.orac
 
 8. Click ***Create***.
 
+![OCI Stream](./images/OCI-Stream4.png)
+
 ### Task 2: Create Object Storage Bucket
 
 1. 
