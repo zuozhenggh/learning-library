@@ -1,4 +1,4 @@
-# Create the application
+# Use the Create Application Wizard
 
 ## Introduction
 
@@ -8,25 +8,25 @@ Estimated Lab Time: 15 minutes
 
 ### Objectives
 In this lab, you will:
-- Create an application using the tables and data that you already have installed.
+- Create an application using the tables and data from previous labs.
 
-## Task 1: Creating an App
+## **STEP 1**: Creating an App
 
 1. In the App Builder menu, click **App Builder**.
 
 2. Click **Create**.
 
-    ![Click Create](images/go-create-app.png " ")
+    ![](images/go-create-app.png " ")
 
 3.  Click **New Application**.
 
     ![](images/new-app.png " ")
 
-## Task 2: Naming the App
+## **STEP 2**: Naming the App
 
 1. In the Create Application wizard, for Name enter **ACME Shop**.
  
-## Task 3: Add the Dashboard Page
+## **STEP 3**: Add the Dashboard Page
 
 A dashboard page is a great way to show important information using various charts. When you installed the Sample Dataset, it also created a number of views, which joins data from various tables. These views are ideal as the basis for the dashboard charts.
 
@@ -80,11 +80,11 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/chart4.png " ")  
 
-7. Click Advanced and check **Set as Administration Page**.
+7. Click on Advanced and check **Set as Administration Page**.
 
 7. Click **Add Page**.
 
-## Task 4: Add the Products Page
+## **STEP 4**: Add the Products Page
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Faceted Search**.
@@ -105,14 +105,14 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/fs-page.png " ")  
 
-## Task 5: Delete Home Page
+## **STEP 5**: Delete Home Page
 
-1. Navigate to Home Page and Click **Edit**.
+1. Navigate to Home Page and click on **Edit**.
 2. Click **Delete**.    
 
     ![](images/delete-page.png " ")  
 
-## Task 6: Add Multiple Reports
+## **STEP 6**: Add Multiple Reports
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Additional Pages**.
@@ -132,7 +132,7 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/multiple-reports2.png " ") 
 
-## Task 7: Set Multiple Reports as Administration Pages
+## **STEP 7**: Set Multiple Reports as Administration Pages
 
 1. Edit the following pages to set those as an Administration Page:
     - CLOTHING_LOOKUP
@@ -142,12 +142,12 @@ A dashboard page is a great way to show important information using various char
     - PRODUCT_REVIEWS
     - STORES    
 
-2. Click Advanced and check **Set as Administration Page**.
+2. Click on Advanced and check **Set as Administration Page**.
 3. Click **Save Changes**.
 
     ![](images/admin-pages.png " ") 
 
-## Task 8: Add Manage Products Page
+## **STEP 8**: Add Manage Products Page
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Interactive Report**.
@@ -163,21 +163,21 @@ A dashboard page is a great way to show important information using various char
     - Lookup Key 1 - select **CLOTHING_ID**
     - Display Column 1 - select **CLOTHING_LOOKUP.CLOTHING**
     - Lookup Key 2 - select **DEPARTMENT_ID**
-    - Display Column 2 - select **DEPARTMENT\_LOOKUP.DEPARTMENT**
+    - Display Column 2 - select **DEPARTMENT\_LOOKUP.DEPARTMENT\_ID**
     - Lookup Key 3 - select **COLOR_ID**
     - Display Column 3 - select **COLOR_LOOKUP.COLOR**
 
-5. Click Advanced and check **Set as Administration Page**.
+5. Click on Advanced and check **Set as Administration Page**.
 
 6. Click **Add Page**
 
     ![](images/ir-page2.png " ") 
 
-## Task 9: Set Features
+## **STEP 9**: Set Features
 
 1. Under **Features** section, check **Access Control**.
 
-## Task 10: Generate the App
+## **STEP 10**: Generate the App
 
 Now that you have added all the pages, it is time to generate the app and review it.
 
@@ -185,12 +185,12 @@ Now that you have added all the pages, it is time to generate the app and review
 
     ![](images/create-app.png " ")
 
-2. Once the application is created, you will find the new app on the application home page.
+2. Once the application has been generated, your new app will be displayed in the application home page.
 Click **Run Application**.
     
     ![](images/run-app.png " ")
 
-## Task 11: Run the Application
+## **STEP 11**: Run the Application
 
 1. Enter your user credentials. Click **Sign In**.
 
@@ -199,9 +199,9 @@ Click **Run Application**.
     The new application will be displayed.
 
 
-You now know how to create an application with a number of different page types based on existing database objects. 
+You now know how to create an application, with numerous different page types, based on existing database objects. 
 
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, July 2021
