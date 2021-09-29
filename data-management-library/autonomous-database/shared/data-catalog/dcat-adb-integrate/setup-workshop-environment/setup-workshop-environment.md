@@ -258,7 +258,7 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
 
         ```
         <copy>allow group training-dcat-admin-group to manage virtual-network-family in compartment training-dcat-compartment</copy>
-        ```
+        ```    
 
     + Click the **Copy** button in the following code box to copy the policy statement, and then paste it in the **Policy Builder** text box. This policy statement allows the admin users to view Oracle Cloud Infrastructure users who performed various actions in Data Catalog.
 
@@ -299,19 +299,20 @@ In this task, you will first gather the Data Catalog instance's OCID which you w
     + **Name:** Enter **`moviestream-dynamic-group`**.
     + **Description:** Enter **`Training Compartment Dynamic Group`**.
     + In the **Matching Group** section, accept the default **Match any rules defined below** option.
-    + Click the **Copy** button in the following code box to copy the dynamic rule, and then paste it in the **Rule 1** text box. This dynamic group will be used in a policy that allows the **`datacatalog`** Data Catalog to access the Object Storage buckets. Substitute the _your-data-catalog-instance-ocid_ with your **training-dcat-instance** Data Catalog instance OCID that you copied earlier but make sure you don't delete the single quotation marks around the ocid.
+    + Click the **Copy** button in the following code box to copy the dynamic rule, and then paste it in the **Rule 1** text box. This dynamic group will be used in a policy that allows the **`datacatalog`** Data Catalog to access the Object Storage buckets. Substitute the _your-compartment-ocid_ with your **training-dcat-instance** compartment OCID that you copied earlier but make sure you don't delete the single quotation marks around the ocid.
 
         ```
-        <copy>Any {resource.id = 'your-data-catalog-instance-ocid'}</copy>
+        <copy>resource.compartment.id='your-compartment-ocid'</copy>
         ```
 
-        In our example, the dynamic rule is as follows:
+        In our example, the dynamic rule would look as follows:
 
         ```
-        Any {resource.id = 'ocid1.datacatalog.oc1.iad.aaaaaaaampatnmuyvhwqlg7vucnmkez3f2k7ouqyqfcooq7jtjdypbrqy5xq'}
+        resource.compartment.id='ocid1.compartment.oc1..aaaaaaaa4tb73bunlssmtoalapbsnujiss46jwgqag7xkqqk2z4evbpmm2bq'
         ```
+        > **Note:** Substitute the 'your-compartment-ocid' with your own compartment's OCID.
 
-  ![](./images/moviestream-dynamic-group-db.png " ")
+        ![](./images/moviestream-dynamic-group-db.png " ")
 
     + Click **Create**. The **Dynamic Group Details** page is displayed. Click **Dynamic Groups** in the breadcrumbs to re-display the **Dynamic Groups** page.
 
@@ -322,10 +323,10 @@ In this task, you will first gather the Data Catalog instance's OCID which you w
          ![](./images/dynamic-group-created.png " ")
 
 
-## Task 9: Create an Object Storage Resources Access Policy         
+## Task 9: Create Object Storage and Data Catalog Resources Types Access Policies         
 After you have created a dynamic group, you need to create policies to permit the dynamic group to access Oracle Cloud Infrastructure services. In this task, you create a policy to allow Data Catalog in your `training-dcat-compartment` to access any object in your **Oracle Object Storage**, in any bucket. At a minimum, you must have `READ` permissions to all the individual resource types such as `objectstorage-namespaces`, `buckets`, and `objects`, or to the Object Storage aggregate resource type `object-family`.
 
-Create an access policy to grant ``READ`` permission to the **Object Storage** aggregate resource type ``object-family`` as follows:
+Create an access policy to grant ``manage`` permission to the aggregate resource-types: ``object-family`` and **`data-catalog-family`** as follows:
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Policies**.
 
@@ -337,21 +338,26 @@ Create an access policy to grant ``READ`` permission to the **Object Storage** a
 
 3. In the **Create Policy** dialog box, provide the following information:
     + Enter **`moviestream-object-storage-policy`** in the **Name** field.
-    + Enter **`Grant Dynamic Group instances access to the Oracle Object Storage resources in your compartment`** in the **Description** field.
+    + Enter **`Grant Dynamic Group instances access to the Oracle Object Storage and Data Catalog resources in your compartment`** in the **Description** field.
     + Select **`training-dcat-compartment`** from the **Compartment** drop-down list, if it's not already selected.
     + In the **Policy Builder** section, click and slide the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
     + Allow Data Catalog to access any object in your Oracle Object Storage, in any bucket, in the `training-dcat-compartment` compartment. Click the **Copy** button in the following code box, and then paste it in the **Policy Builder** text box.  
 
         ```
-        <copy>allow dynamic-group moviestream-dynamic-group to read object-family in compartment training-dcat-compartment</copy>
+        <copy>allow dynamic-group moviestream-dynamic-group to manage object-family in compartment training-dcat-compartment</copy>
         ```
-     ![](./images/dynamic-group-instances-os-policy.png " ")
 
-     This policy allows access to any object, in any bucket, within the `training-dcat-compartment` compartment where the policy is created.
+     Click the **Copy** button in the following code box, and then paste it in on the second line in the **Policy Builder** text box. This policy statement allows any resource in the `moveistream-dynamic-group` to run any catalog operation on any catalog in the `training-dcat-compartment` compartment. 
+
+        ```
+        <copy>allow dynamic-group moviestream-dynamic-group to manage data-catalog-family in compartment training-dcat-compartment</copy>
+        ```
+
+        ![](./images/dynamic-group-instances-os-policy.png " ")
 
     + Click **Create**. The **Policy Detail** page is displayed. Click **Policies** in the breadcrumbs to return to the **Dynamic Groups** page.
 
-          ![](./images/moviestream-object-storage-policy.png " ")
+          ![](./images/object-storage-policy-detail.png " ")
 
           The newly created policy is displayed in the **Policies** page.
 
@@ -452,4 +458,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author:** Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
 * **Contributor:** Marty Gubar, Product Manager, Server Technologies    
-* **Last Updated By/Date:** Lauran Serhal, September 2021
+* **Last Updated By/Date:** Lauran Serhal, October 2021

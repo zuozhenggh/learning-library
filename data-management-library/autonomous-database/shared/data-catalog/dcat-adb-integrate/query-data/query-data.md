@@ -82,7 +82,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 ## Task 3: Set the Interpreter Bindings for the Imported Notebook
 
-An interpreter is a plug-in that allows you to use a specific data processing language backend. To display and visualize data using SQL in a notebook paragraph, that data must be fetched from the database; therefore, you must bind a notebook to an interpreter to fetch data from the database or any data source. A default set of interpreter bindings is available. Paragraphs using the **SQL** **`%sql`** and **PL/SQL** **`%script`** interpreters allow you to invoke Oracle SQL and PL/SQL statements, respectively. The interpreter binding order that is set for a notebook applies to all the paragraphs in that notebook. However, you can override the interpreter binding for SQL and PL/SQL interpreters for any specific paragraph in the notebook.
+An interpreter is a plug-in that allows you to use a specific data processing language backend. To display and visualize data using SQL in a notebook paragraph, that data must be fetched from the database; therefore, you must bind a notebook to an interpreter to fetch data from the database or any data source. A default set of interpreter bindings is available. Paragraphs using the **`%sql`** and **`%script`** interpreters allow you to invoke Oracle SQL and PL/SQL statements, respectively. The interpreter binding order that is set for a notebook applies to all the paragraphs in that notebook. However, you can override the interpreter binding for SQL and PL/SQL interpreters for any specific paragraph in the notebook.
 
 >**Note:** For the Zeppelin Notebooks in Oracle Machine Learning, you use the sql and pl/sql interpreters within an Oracle Database interpreter group and the md (MarkDown) interpreter for plain text formatting syntax so that it can be converted to HTML.
 
@@ -108,7 +108,7 @@ An interpreter is a plug-in that allows you to use a specific data processing la
 
     > **Note:** When a paragraph executes successfully, its status changes from READY to FINSIHED.
 
-2. When all the paragraphs in the note are finished, review each paragraph and examine its output.     
+2. When all the paragraphs in the note are finished, review each paragraph and examine its output. Experiment with the paragraphs as desired.      
 
     ![](./images/run-finished.png " ")
 
