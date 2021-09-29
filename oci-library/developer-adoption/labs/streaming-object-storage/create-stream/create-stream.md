@@ -89,12 +89,20 @@ For simple archiving operations, we don’t need to write a single line of code.
 
 
 
-### Task 4: Publish Messages
+### Task 4: Publish Messages using OCI Cloud Shell
 
  To test this out, we can write some messages to our stream using the Oracle CLoud Infrastrucuture CLI in Cloud Shell. 
 When writing messages to a stream, we must pass the message as a JSON object with two keys: key and value. Both the key and the value must be Base64 encoded. I’ll publish two separate messages, one with key1 and another with key2. Both will contain a simple JSON message payload. Here’s how I encoded the values.
 
-1. 
+1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
+
+![](./images/cloudshellopen.png " ")
+
+    ![](./images/cloudshellsetup.png " ")
+
+    ![](./images/cloudshell.png " ")
+
+
 
 ### Task 5: Confirm Archive Operation
 
