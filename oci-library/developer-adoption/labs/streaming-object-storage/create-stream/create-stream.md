@@ -80,6 +80,10 @@ For simple archiving operations, we don’t need to write a single line of code.
 
 
 
+![Service Connector](./images/OCI-Service-Connector3.png)
+
+
+
 
 ### Task 4: Publish Messages
 
