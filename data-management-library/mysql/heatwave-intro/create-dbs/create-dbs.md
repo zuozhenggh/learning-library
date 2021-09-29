@@ -175,28 +175,43 @@ Description
 
 10. Click on Show Advanced Options 
 
-    Select Data Import tab
+11. Select Data Import tab. 
+12. To enter the PAR Source URL, use one of the folloing links depending on your Tenancy Region
 
-    Copy and paste the following to PAR Source URL: 
+    **US(Ashburn) Region**:
+        ![MDS](./images/region-ashburn.png" ")
+    
+    Copy and paste the following *Asburn link*  to PAR Source URL: 
   
     ```
-    <copy> https://objectstorage.us-ashburn-1.oraclecloud.com/p/RpoC9Zza6bcxIAWkNXFVKD0dsmRQJRMvNthgzbr3TUnO9pTYpEhoSFP7_6RNZ1lv/n/mysqlpm/b/irportdb-bucket/o/airportdb/@.manifest.json </copy>
+    <copy> https://objectstorage.us-ashburn-1.oraclecloud.com/p/RpoC9Zza6bcxIAWkNXFVKD0dsmRQJRMvNthgzbr3TUnO9pTYpEhoSFP7_6RNZ1lv/n/mysqlpm/b/airportdb-bucket/o/airportdb/@.manifest.json  </copy>
     ```   
+        
+    **UK South(London) Region**
+        ![MDS](./images/region-london.png" ")
+    
+    Copy and paste the following *London link*  to PAR Source URL: 
+  
+    ```
+    <copy> https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
+    ```   
+  
+    Your PAR Source URL entry should look like this:
     ![MDS](./images/04mysql08-2.png" ")
 
-11. Review **Create MySQL DB System**  Screen 
+13. Review **Create MySQL DB System**  Screen 
 
     ![MDS](./images/04mysql09-3.png" ")
 
     
     Click the '**Create**' button
 
-12. The New MySQL DB System will be ready to use after a few minutes 
+14. The New MySQL DB System will be ready to use after a few minutes 
 
     The state will be shown as 'Creating' during the creation
     ![MDS](./images/04mysql10-3.png" ")
 
-13. The state 'Active' indicates that the DB System is ready for use 
+15. The state 'Active' indicates that the DB System is ready for use 
 
     On MDS-HW Page, check the MySQL Endpoint (Private IP Address) 
 
