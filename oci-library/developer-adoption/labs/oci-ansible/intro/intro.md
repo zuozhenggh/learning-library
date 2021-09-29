@@ -63,7 +63,16 @@
   -Hypervisors
   
 -Cloud Infrastructure
-  -PublicPrivateNetwork DevicesStorageExampleOCI Virtual Cloud Network, Load Balancer, OKE, VirtualBox, GlusterFS, Firewalls
+  -Public
+  -Private
+  
+-Network Devices
+
+-Storage
+
+***Example***
+
+-OCI Virtual Cloud Network, Load Balancer, OKE, VirtualBox, GlusterFS, Firewalls
 
 
 
