@@ -26,49 +26,49 @@
             "type": "freetier"
         },
         {
-            "title": "Install Oracle Database 19c with Automatic Root Script Execution",
+            "title": "Lab 1: Install Oracle Database 19c with Automatic Root Script Execution",
             "description": "Install Oracle Database 19c with automatic configuration script execution.",
             "filename": "./../../install-db19c-auto-root-script-execution/install-db19c-auto-root-script-execution.md",
             "type": "freetier"
          },
           {
-              "title": "Clone a PDB from a Remote CDB by Using DBCA in Silent Mode",
+              "title": "Lab 2: Clone a PDB from a Remote CDB by Using DBCA in Silent Mode",
               "description": "Clone a PDB from a remote CDB by using DBCA in silent mode.",
               "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md",
               "type": "freetier"
           },
           {
-              "title": "Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode",
+              "title": "Lab 3: Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode",
               "description": "Relocate a PDB to a remote CDB by using DBCA in silent mode.",
               "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md",
               "type": "freetier"
           },
           {
-              "title": "Duplicate a CDB by Using DBCA in Silent Mode",
+              "title": "Lab 4: Duplicate a CDB by Using DBCA in Silent Mode",
               "description": "Duplicate a CDB by using DBCA in silent mode.",
               "filename": "./../../duplicate-cdb-using-dbca-silent-mode/duplicate-cdb-using-dbca-silent-mode.md",
               "type": "freetier"
           },
           {
-              "title": "Decrease the Transportable Tablespace (TTS) Import and Export Time",
+              "title": "Lab 5: Decrease the Transportable Tablespace (TTS) Import and Export Time",
               "description": "Decrease the transportable tablespace (TTS) import and export time.",
               "filename": "./../../decrease-transportable-tablespace-import-export-time/decrease-transportable-tablespace-import-export-time.md",
               "type": "freetier"
           },
           {
-              "title": "Omit the Column Encryption Attribute During Import",
+              "title": "Lab 6: Omit the Column Encryption Attribute During Import",
               "description": "Omit the column encryption attribute during import.",
               "filename": "./../../omit-column-encryption-attribute-during-import/omit-column-encryption-attribute-during-import.md",
               "type": "freetier"
           },
           {
-              "title": "Use RMAN to Connect to a PDB to Use the Recovery Catalog",
+              "title": "Lab 7: Use RMAN to Connect to a PDB to Use the Recovery Catalog",
               "description": "Use Resource Manager (RMAN) to connect to a pluggable database (PDB) to use the recovery catalog.",
               "filename": "./../../use-rman-connect-to-pdb-to-use-recovery-catalog/use-rman-connect-to-pdb-to-use-recovery-catalog.md",
               "type": "freetier"
           },
           {
-              "title": "Explore Automatic Deletion of Flashback Logs",
+              "title": "Lab 8: Explore Automatic Deletion of Flashback Logs",
               "description": "Omit the column encryption attribute during import.",
               "filename": "./../../explore-automatic-deletion-flashback-logs/explore-automatic-deletion-flashback-logs.md",
               "type": "freetier"
