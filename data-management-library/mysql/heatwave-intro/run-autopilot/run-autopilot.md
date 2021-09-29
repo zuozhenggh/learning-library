@@ -1,4 +1,4 @@
-# Run MySQL Auto Pilot
+# RUN MYSQL AUTO PILOT
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
@@ -161,8 +161,8 @@ SELECT GROUP_CONCAT(log->>"$.sql" SEPARATOR '\n') AS "SQL Script" FROM sys.heatw
 
 ## Learn More
 
-* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
-* [MySQL Database Documentation](https://www.mysql.com)
+* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
+* [MySQL Database Documentation](https://www.MySQL.com)
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
