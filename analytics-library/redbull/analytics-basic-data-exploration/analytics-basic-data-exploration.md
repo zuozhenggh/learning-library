@@ -43,7 +43,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
     You can see all the **ADW** instances that you have **created**.
     **Select** the instance `REDBULL` that we created before.
 
-    ![ADW databases list](images/select-redbull-database.png)
+    ![ADW databases list](images/select-adw2.png)
 
 2. We will download the wallet file. The wallet file (client credentials), along with the database user ID and password, provides access to your Autonomous Database in the most secure way possible.
 
