@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create a database table, create a proxy object, explore and prepare data, build and evaluate models, and use those models to score data using OML4Py. This will use a Classification example available in OML Notebooks. For illustrative purposes, Task 1 and Task 2 of this lab use iris from sklearn datasets to create a database table. The rest of the steps walk you through the example available in OML Notebooks that use the SH schema. The SH schema and associated data sets can be readily accessed in Oracle Autonomous Database.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 ### About Oracle Machine Learning for Python(OML4Py)
 Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous Database, which includes Oracle Autonomous Data Warehouse (ADW), Oracle Autonomous Transaction Processing (ATP), and Oracle Autonomous JSON Database (AJD). By using Oracle Machine Learning Notebooks, you can use standard Python syntax and overloaded Python functions, use a natural Python API to in-database machine learning algorithms, invoke user-defined Python functions in database-spawned and controlled Python engines, and leverage automated machine learning (AutoML).
 ### Objectives
@@ -528,7 +528,7 @@ Here is a custom script to generate the metrics and charts as described above. R
 	_ = evaluate_model(pred_data=RES_DF, settings_name='Gini,Max Depth:7,Min%Node:0.05,Min%Split:0.1', name='Decision Tree', target='AFFINITY_CARD')
 	</copy>
 	```
-	![Confusion Matrix](images/confusion_matrix.png)
+	![Confusion Matrix.](images/confusion_matrix.png)
 	![Evaluation of Decision Tree Model.](images/decision_tree_model.png)
 
 3. Invoke the score function to get the model accuracy computed on the TEST data provided.
@@ -568,7 +568,7 @@ After building and evaluating the model, you will now score the data.
 
 In this example, you classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 
