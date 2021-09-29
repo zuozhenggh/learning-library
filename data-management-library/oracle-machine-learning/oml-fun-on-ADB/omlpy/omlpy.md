@@ -63,7 +63,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library. Us
 	```
 
   You use the zeppelin-context z.show method to display Python objects and proxy object content. Here, you display the first few rows of IRIS_TMP using z.show.
-	![Top rows of IRIS_TMP.](images/pic1.png)
+	![Top rows of IRIS_TMP.](images/rows_iris_temp.png)
 
 ## Task 2: Create a Persistent Database Table
 You can also create a persistent table using the create function and specifying a table name, IRIS as done below. This table is now accessible both within OML4Py and directly from SQL. Here, you will load the iris data and combine target and predictors into a single DataFrame, which matches the form of the data in the database table. Use the z.show function to display the desired data in the notebook. To create the persistent table IRIS, run the following script.
@@ -94,9 +94,9 @@ z.show(IRIS.head(10))
 ```
 
 The output is as follows:
-![Columns,Shape and Top rows of IRIS.](images/pic2.png)
+![Columns,Shape and Top rows of IRIS.](images/description_iris.png)
 
-## Task 3: Create a Proxy Object For a Database Object
+## Task 3: Create a Proxy Object for a Database Object
 Use the `oml.sync` function to create a Python object as a proxy for a database table. The `oml.sync` function returns an `oml.DataFrame` object or a dictionary of `oml.DataFrame` objects. The `oml.DataFrame` object returned by `oml.sync` is a proxy for the database object.  
 ```
 <copy>
@@ -107,9 +107,9 @@ z.show(DEMO.head())
 </copy>
 ```
 In this step, you are viewing a few rows from the SUPPLEMENTARY_DEMOGRAPHICS table.
-![Top rows of DEMO.](images/pic3.png)
+![Top rows of DEMO.](images/rows_demo.png)
 
-## Task 4: Explore The Data
+## Task 4: Explore the Data
 In this example, use describe, shape and crosstab functions to explore and view the data.
 1. Use the transparency layer function `describe()` to calculate descriptive statistics that summarize the central tendency, dispersion, and shape of the DEMO table in each numeric column. A few rows of the output are displayed using the `z.show` function.
 	```
@@ -121,7 +121,7 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	z.show(summary_df.head())
 	</copy>
 	```
-	![Statistical details of DEMO.](images/pic4.png)
+	![Statistical details of DEMO.](images/statistical_data_demo.png)
 
 2. Run the shape function to view the shape of an oml series data distribution, or of each column in an `oml.DataFrame`.
 	```
@@ -140,7 +140,7 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	z.show(DEMO.crosstab('AFFINITY_CARD'))
 	</copy>
 	```
-	![Crosstab of attribute AFFINITY_CARD.](images/pic5.png)
+	![Crosstab of attribute AFFINITY_CARD.](images/crosstab_affinity_card.png)
 4. To view the distribution of house size of the `AFFINITY_CARD` responders, run the following function:
 	```
 	<copy>
@@ -149,8 +149,8 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	z.show(DEMO.crosstab(['HOUSEHOLD_SIZE', 'AFFINITY_CARD']))
 	</copy>
 	```
-	![Crosstab of attributes HOUSEHOLD_SIZE and AFFINITY_CARD.](images/pic6.png)
-## Task 5: Prepare The Data
+	![Crosstab of attributes HOUSEHOLD_SIZE and AFFINITY_CARD.](images/crosstab_householdsize_affinitycard.png)
+## Task 5: Prepare the Data
 In this step, you will create a `DEMO_DF` dataframe, select the necessary columns for further analysis, display a few rows of the `DEMO_DF` dataframe, and split your data into TRAIN and TEST sets.
 1. Use the DEMO proxy object to create a new proxy object `DEMO_DF` by selecting the necessary columns. Run the following script:
 	```
@@ -170,7 +170,7 @@ In this step, you will create a `DEMO_DF` dataframe, select the necessary column
 	z.show(DEMO_DF.head())
 	</copy>
 	```
-	![Top rows of DEMO_DF.](images/pic7.png)
+	![Top rows of DEMO_DF.](images/rows_demo_df.png)
 3. In this example, you are splitting the `DEMO_DF` data into 60 percent TRAIN data set and 40 percent TEST data set. The split method splits the data referenced by DataFrame proxy object `DEMO_DF` into two new DataFrame proxy objects, TRAIN, and TEST.
 	```
 	<copy>
@@ -331,7 +331,7 @@ Use the `oml.dt` class to build a Decision Tree model. You can build a model wit
 * `TREE_TERM_MINREC_SPLIT`: Specifies the criteria for splits: minimum number of records in a parent node expressed as a value. No split is attempted if the number of records is below this value. The default value is 20.
 * `CLAS_MAX_SUP_BINS`: Specifies the maximum number of bins for each attribute. The default value is 32.
 
-## Task 7: Evaluate Your model
+## Task 7: Evaluate Your Model
 To evaluate your model you need to score the test data and then evaluate the model using various metrics.
 1. In this step, you will make predictions on the test case and add the `CASE_ID` as a supplement column so that you can uniquely associate scores with the original data. To do so run the below script.
 	```
@@ -528,8 +528,8 @@ Here is a custom script to generate the metrics and charts as described above. R
 	_ = evaluate_model(pred_data=RES_DF, settings_name='Gini,Max Depth:7,Min%Node:0.05,Min%Split:0.1', name='Decision Tree', target='AFFINITY_CARD')
 	</copy>
 	```
-	![Confusion Matrix](images/pic8.png)
-	![Evaluation of Decision Tree Model.](images/pic9.png)
+	![Confusion Matrix](images/confusion_matrix.png)
+	![Evaluation of Decision Tree Model.](images/decision_tree_model.png)
 
 3. Invoke the score function to get the model accuracy computed on the TEST data provided.
 	```
@@ -553,7 +553,7 @@ After building and evaluating the model, you will now score the data.
 	</copy>
 	```
 	The output is similar to the following:
-	![Display of score using predict function on new data.](images/pic10.png)
+	![Display of score using predict function on new data.](images/score_display_predict.png)
 
 2. You can also display the prediction result using the `RES_DF` dataset. To do so, run the following script.
 	```
@@ -564,7 +564,7 @@ After building and evaluating the model, you will now score the data.
 	</copy>
 	```
 	The output is similar to the following:
-	![Prediction result using RES_DF dataset.](images/pic11.png)
+	![Prediction result using RES_DF dataset.](images/prediction_result_res_df.png)
 
 In this example, you classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
 
