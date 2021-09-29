@@ -134,4 +134,5 @@ oci streaming stream message put \
 
   ![Archive Stream](./images/OCI-archive-stream-1.png)
 
+As shown above, the stream data was written to a compressed file in my bucket and labeled with the timestamp at which it was written. Both of the messages that were published via the CLI were archived into the bucket. Without writing a single line of code or deploying any infrastructure, we have a reliable archive of our stream data in OCI.
 
