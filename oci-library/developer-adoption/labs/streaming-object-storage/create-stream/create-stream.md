@@ -39,7 +39,7 @@ In this tutorial, we’re going to use [Service Connector Hub](https://docs.orac
 
 1. Open the navigation menu and click ***Storage***. Under ***Object Storage***, click ***Buckets***.
 
-2. Select a ***compartment*** from the ***Compartment lis*** t on the left side of the page. For this lab you will remain in the root tenancy. 
+2. Select a ***compartment*** from the ***Compartment list***  on the left side of the page. For this lab you will remain in the tenancy root compartment.
 
 You will keep all of the defaults for the bucket creation.
 
@@ -53,14 +53,20 @@ You will keep all of the defaults for the bucket creation.
 
 ![OCI Stream](./images/OCI-Stream5.png)
 
-
-
-
  
 
 ### Task 3: Create Service Connector
 
-1. 
+For simple archiving operations, we don’t need to write a single line of code. Instead, we just create a service connector and point it at the source (stream) and destination (bucket). Navigate to the Service Connector Hub via the burger menu (or by searching for it).
+
+1. Open the navigation menu and click ***Analytics & AI***. Under ***Messaging***, click ***Service Connector Hub***.
+
+2. You can choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. For this lab, we will work in the tenancy root compartment.
+
+3. Click ***Create Service Connector***. 
+
+4. 
+
 
 ### Task 4: Publish Messages
 
