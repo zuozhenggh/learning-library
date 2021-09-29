@@ -92,7 +92,7 @@ For simple archiving operations, we don’t need to write a single line of code.
 ### Task 4: Publish Messages using OCI Cloud Shell
 
  To test this out, we can write some messages to our stream using the Oracle CLoud Infrastrucuture CLI in Cloud Shell. 
-When writing messages to a stream, we must pass the message as a JSON object with two keys: key and value. Both the key and the value must be Base64 encoded. I’ll publish two separate messages, one with key1 and another with key2. Both will contain a simple JSON message payload. Here’s how I encoded the values.
+
 
 1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
@@ -101,6 +101,37 @@ When writing messages to a stream, we must pass the message as a JSON object wit
     ![](./images/cloudshellsetup.png " ")
 
     ![](./images/cloudshell.png " ")
+
+
+2.  To test this out, we can write some messages to our stream using the OCI CLI in OCI Cloud Shell. When writing messages to a stream, we must pass the message as a JSON object with two keys: key and value. Both the key and the value must be Base64 encoded. Here are two  two separate messages to publish, one with key1 and another with key2. Both will contain a simple JSON message payload. Below the values are encoded.
+
+```bash
+$ echo -n "key1" | base64
+a2V5MQ==
+$ echo -n "key2" | base64
+a2V5Mg==
+$ echo -n '{"id":"0", "test": "message from CLI"}' | base64
+eyJpZCI6IjAiLCAidGVzdCI6ICJtZXNzYWdlIGZyb20gQ0xJIn0=
+```
+
+3. You then plug these encoded values into your OCI CLI commands and published both messages. The ***Stream id*** and *** stream endpoint*** can be retrieved from your stream information.
+
+```bash
+// key1
+oci streaming stream message put \
+  --stream-id ocid1.stream.oc1.phx… \
+  --endpoint https://cell-1.streaming.us-phoenix-1.oci.oraclecloud.com \
+  --messages "[{\"key\": \"a2V5MQ==\", \"value\": \"eyJpZCI6IjAiLCAidGVzdCI6ICJtZXNzYWdlIGZyb20gQ0xJIn0=\"}]"
+
+// key2
+oci streaming stream message put \
+  --stream-id ocid1.stream.oc1.phx… \
+  --endpoint https://cell-1.streaming.us-phoenix-1.oci.oraclecloud.com \
+  --messages "[{\"key\": \"a2V5Mg==\", \"value\": \"eyJpZCI6IjAiLCAidGVzdCI6ICJtZXNzYWdlIGZyb20gQ0xJIn0=\"}]"
+  ```
+
+  4. 
+
 
 
 
