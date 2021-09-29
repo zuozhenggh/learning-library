@@ -1,4 +1,4 @@
-# Lakehouse: Putting it Together for Analytics
+# Lake House: Putting it Together for Analytics
 
 ## Introduction
 
