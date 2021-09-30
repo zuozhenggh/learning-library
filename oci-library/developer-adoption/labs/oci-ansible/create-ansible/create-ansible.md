@@ -1,4 +1,4 @@
-# Oracle Cloud Infrastructure Ansible Collection
+# Install Oracle Cloud Infrastructure Ansible Collection and write a Playbook
 
   ## Introduction
   
@@ -44,74 +44,7 @@ $ ansible-galaxy collection install oracle.oci
 
    ![](./images/Ansible-Cloud-Shell1.png " ")
 
+   ## Task 2: Install an OCI Ansible Collection using Cloud Shell
 
 
-2. ***Stream Name:*** Required. Specify a friendly name for the stream. It does not have to be unique within the compartment, but it must be unique to the stream pool. The stream name cannot be changed. Avoid entering confidential information.
-
-4. Compartment: Choose the compartment in which the stream will be created. FOr this lab, we will keep it in the root tenancy.
-
-5. ***Stream Pool:*** Choose the stream pool that will contain your stream.
-
-   a. If your chosen compartment has an existing stream pool, you can select it from the drop-down list or click Create new stream pool and configure the stream pool manually.
-
-   b. **If no stream pool exists** in the chosen compartment, select Auto-create a default stream pool or click Create a new stream pool and configure the stream pool manually.
-
-6. In the Define Stream Settings panel:
-
-    a. ***Retention (in Hours):*** Enter the number of hours (from 24 to 168) to retain messages. The default value is 24.
-
-    b. ***Number of Partitions:*** Enter the number of partitions for the stream. The maximum number is based on the limits for your tenancy.
-
-7. Click ***Show Advanced Options*** to optionally define Tags: If you have permissions to create a resource, then you also have permissions to apply free-form tags to that resource. To apply a defined tag, you must have permissions to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
-
-8. Click ***Create***.
-
-![OCI Stream](./images/OCI-Stream4.png)
-
-
-## Task 2: Write an Ansible playbook on OCI
-
-1. Open the navigation menu and click ***Storage***. Under ***Object Storage***, click ***Buckets***.
-
-2. Select a ***compartment*** from the ***Compartment list***  on the left side of the page. For this lab you will remain in the tenancy root compartment.
-
-You will keep all of the defaults for the bucket creation.
-
-3. Click ***Create Bucket***.
-
-4. Enter a ***Bucket Name*** . For this lab we will name the bucket **streaming-archive-demo-0**.
-
-   You will keep all of the defaults for the bucket creation.
-
-5. Click ***Create*** . 
-
-![OCI Stream](./images/OCI-Stream5.png)
-
- 
-
-
-```bash
-$ echo -n "key1" | base64
-a2V5MQ==
-$ echo -n "key2" | base64
-a2V5Mg==
-$ echo -n '{"id":"0", "test": "message from CLI"}' | base64
-eyJpZCI6IjAiLCAidGVzdCI6ICJtZXNzYWdlIGZyb20gQ0xJIn0=
-```
-
-3. You then plug these encoded values into your OCI CLI commands and published both messages. The ***Stream id*** and *** stream endpoint*** can be retrieved from your stream information.
-
-```bash
-// key1
-oci streaming stream message put \
-  --stream-id ocid1.stream.oc1.phx… \
-  --endpoint https://cell-1.streaming.us-phoenix-1.oci.oraclecloud.com \
-  --messages "[{\"key\": \"a2V5MQ==\", \"value\": \"eyJpZCI6IjAiLCAidGVzdCI6ICJtZXNzYWdlIGZyb20gQ0xJIn0=\"}]"
-
-// key2
-oci streaming stream message put \
-  --stream-id ocid1.stream.oc1.phx… \
-  --endpoint https://cell-1.streaming.us-phoenix-1.oci.oraclecloud.com \
-  --messages "[{\"key\": \"a2V5Mg==\", \"value\": \"eyJpZCI6IjAiLCAidGVzdCI6ICJtZXNzYWdlIGZyb20gQ0xJIn0=\"}]"
-  ```
 
