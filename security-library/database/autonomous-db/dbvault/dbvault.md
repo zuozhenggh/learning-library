@@ -39,7 +39,7 @@ This lab assumes you have:
 | Step No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
 | 1 | Enable Database Vault | <5 minutes |
-| 2 | Enable Separation of Duties (SoD) | 5 minutes |
+| 2 | Enable Separation of Duties (SoD) | <5 minutes |
 | 3 | Create a Simple Realm | 10 minutes |
 | 4 | Audit Policy to Capture Realm Violations | 5 minutes |
 | 5 | Simulation Mode | 10 minutes |
@@ -185,7 +185,7 @@ In the "Prepare your environment" step you created the user `DBA_DEBRA`. This us
 
        ![](./images/adb-dbv_009.png " ")
 
-    **Note:** Notice that DBA_DEBRA have several roles, including the DBA role `PDB_DBA`
+    **Note:** Notice that DBA_DEBRA has several roles, including `PDB_DBA` (the DBA role in an Autonomous DB)
 
 3. Create a test user *`DEMO1`*
 
