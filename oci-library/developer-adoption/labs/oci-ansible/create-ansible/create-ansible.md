@@ -17,7 +17,7 @@
 
 
 
-In this tutorial, we’re going to use [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/service-connector-hub/overview.htm) to read an OCI stream of data and archive that data to Object Storage.
+In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) since Ansible comes pre-installed for your environment. We are then going to install the Oracle Cloud Infrastructure Ansible collection. You then will write a sample playbook that uses Ansible modules. 
 
 ## Pre-Requisites
 
