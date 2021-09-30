@@ -153,9 +153,9 @@ In this lab, you will:
 
     ![Database instance homepage.](./images/task2-11.png " ")
 
-You may now [proceed to the next lab](#next).
+Please *proceed to the next lab*.
 
-## Learn More
+## Learn more
 
 Go to [the documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) on the typical workflow for using Autonomous Data Warehouse.
 
