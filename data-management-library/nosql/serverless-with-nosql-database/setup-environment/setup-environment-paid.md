@@ -79,6 +79,8 @@ In this task we will copy over a data bundle stored on object storage and place 
 
     ````
     <copy>
+      cd $HOME
+      rm -rf serverless-with-nosql-database BaggageData serverless-with-nosql-database.zip demo-lab-nosql-main
       curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/PdICF4N3CtbcAB6cPe7-foLYqGGSRNqkf4mSt1gVIBhH8Wvt87PxoYQkNATywFM0/n/c4u04/b/labfiles/o/demo-lab-nosql-main.zip -o serverless-with-nosql-database.zip
       unzip serverless-with-nosql-database.zip
       mv demo-lab-nosql-main serverless-with-nosql-database
