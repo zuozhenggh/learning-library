@@ -109,7 +109,6 @@ For simplicity's sake, in this exercise, we will use the Oracle Sales History (S
       </copy>
       ```
 
-
    ![Paste the code and click Run Script.](./images/execute_script_in_sql_dev_web_to_create_view.png " ")
 
 ## Task 3: Create a connection to your Oracle Autonomous Database from Oracle Analytics Desktop
