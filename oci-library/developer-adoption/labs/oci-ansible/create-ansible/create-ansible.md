@@ -6,6 +6,16 @@
    
    **Wider Coverage** - Support for the majority of the Oracle Cloud services.
 
+   Below is a collection ofi OCI Ansible collateral for your reference before we walk through a OCI Ansible tutorial.
+
+   - [Ansible Galaxy Reference](https://galaxy.ansible.com/oracle/oci)
+
+   -  [OCI Ansible Samples](https://github.com/oracle/oci-ansible-collection/tree/master/samples)
+
+   - [OCI Ansible Solutions](https://github.com/oracle/oci-ansible-collection/tree/master/solutions)
+
+
+
 
 In this tutorial, we’re going to use [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/service-connector-hub/overview.htm) to read an OCI stream of data and archive that data to Object Storage.
 
