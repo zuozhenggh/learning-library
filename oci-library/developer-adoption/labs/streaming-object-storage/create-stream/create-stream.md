@@ -91,7 +91,7 @@ For simple archiving operations, we don’t need to write a single line of code.
 
 ## Task 4: Publish Messages using OCI Cloud Shell
 
- To test this out, we can write some messages to our stream using the Oracle CLoud Infrastrucuture CLI in Cloud Shell. 
+ To test this out, we can write some messages to our stream using the Oracle Cloud Infrastructure CLI in Cloud Shell. 
 
 
 1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
