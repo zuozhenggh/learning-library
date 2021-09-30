@@ -27,7 +27,14 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
 
 ## Task 1: Install an OCI Ansible Collection
 
-1. Open the navigation menu and click ***Analytics & AI***. Under ***Messaging***, click ***Streaming***. A list of existing streams is displayed.
+1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
+
+![](./images/cloudshellopen.png " ")
+
+    ![](./images/cloudshellsetup.png " ")
+
+    ![](./images/cloudshell.png " ")
+.
 
 2. Click ***Create Stream*** at the top of the list.
 
