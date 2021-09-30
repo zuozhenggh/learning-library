@@ -1,5 +1,8 @@
 # Oracle Cloud Infrastructure Ansible Collection
 
+  [Oracle Cloud Infrastructure Ansible Collection](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/ansiblegetstarted.htm) provides an easy way to provision and manage resources in Oracle Cloud using Ansible.With the creation of Oracle Cloud Ansible Collection, we are providing two user benefits: Faster Availability - Oracle Cloud Ansible Modules will now be available to users at a faster pace on Ansible Galaxy. Wider Coverage - Support for the majority of the Oracle Cloud services.
+
+
 In this tutorial, we’re going to use [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/service-connector-hub/overview.htm) to read an OCI stream of data and archive that data to Object Storage.
 
 ## Pre-Requisites
