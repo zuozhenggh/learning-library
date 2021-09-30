@@ -17,7 +17,7 @@ This application is running in all the Oracle Cloud Infrastructure regions.
 
   ![](images/demo-region.png)
 
-The application behind the demo uses a three-tier architecture, representing the brains of the application. Integrating these components: an API Gateway, Streams, and Functions; in your logic tier can be revolutionary. The features of these services enable you to build a serverless production application that is highly available, scalable, and secure. Your application can use thousands of servers, however, by leveraging this pattern you do not have to manage a single one.
+The application behind the demo uses a three-tier architecture, representing the brains of the application. Integrating these components: an API Gateway, Streams, and Functions, in your logic tier can be revolutionary. The features of these services enable you to build a serverless production application that is highly available, scalable, and secure. Your application can use thousands of servers, however, by leveraging this pattern you do not have to manage a single one.
 
 In addition, by using these managed services together you gain the following benefits:
 *	No operating systems to choose, secure, patch, or manage.
@@ -59,15 +59,17 @@ What are a few goals of this application:
 
 ## Task 2: Grab your Personal Cell Phone
 
-1. In a browser window, enter ndcsdemo.com
+1. In a browser window, enter ndcsdemo.com. Optionally you can use the QR code below.
 
     ![](images/ndcs-google.png)
+
+    ![](images/qr-code.png)
 
   This brings you to the welcome screen for Blue Mist airways.
 
       ![](images/blue-mist.png)
 
-   **Note:** If you see a screen that says 'Blue Mist Employee Portal' and not 'Blue Mist Airways' then you are not using a phone device and instead using a laptop, desktop or tablet. You have been taken to the employee portal. You can look at the information there but it not line up with the rest of the screen shots in this Lab.
+   **Note:** If you see a screen that says 'Blue Mist Employee Portal' and not 'Blue Mist Airways' then you are not using a phone device and instead using a laptop, desktop, or tablet. You have been taken to the employee portal. You can look at the information there but it not line up with the rest of the screen shots in this Lab.
 
 ## Task 3: Track a Bag
 

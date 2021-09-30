@@ -20,7 +20,7 @@ Estimated time: 30 minutes
 
 * This tutorial requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
 
-## Task 1: Launch the Cloud Shell and Clone mtdrworkshop GitHup repository
+## Task 1: Launch the Cloud Shell and Clone mtdrworkshop GitHub repository
 
 1. Launch the Oracle Cloud Shell
 The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration!
@@ -104,7 +104,8 @@ You should now see `mtdrworkshop` in your root directory
 2. Click **Create Autonomous Database**
 	![ATP-config-1](images/ATP-config-1.png " ")
     * Set the **Compartment, Display Name** and **Database Name**.
-    * Set the workload type to **Transaction Processing**.
+	* Set `mtdrdb` as the database name (that name is being used in future commands)
+	* Set the workload type to **Transaction Processing**.
     * Accept the default Deployment Type **Shared Infrastructure**.
 3. Set the **ADMIN password, Network Access Type** and **License Type**
 	![ADB setup](images/ADB-setup.png " ")
@@ -117,26 +118,22 @@ You should now see `mtdrworkshop` in your root directory
 > **Note:** The database creation will take a few minutes.
 
 4. Populate mtdrworkshopdbid.txt with the database OCID.
-	\* Create an empty file `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt`.
 
 	``` bash
-	<copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt<copy>
+	<copy>echo $DBOCID > ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt</copy>
 	```
 
-	![copy the atp ocids](images/42-copy-atp-ocids2.png " ")
-	\* Copy the OCID of the newly created database from the Cloud console and add it into the `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
-
 5. Generate the wallet for your Autonomous Transaction Processing connectivity. A wallet.zip file will be created in the current directory.
-	\* In the Cloud Shell, make sure you are in the
-`~/mtdrworkshop/setup-dev-environment` directory.
+
 	\* Copy the following command and replace `$OCID` with the copied OCID.
 
 	``` bash
-	<copy>./generateWallet.sh $OCID</copy>
+	<copy>cd ~/mtdrworkshop/setup-dev-environment; ./generateWallet.sh $OCID</copy>
 	```
 
-	\* **Example** `generateWallet.sh ocid1.autonomousdatabase.oc1.phx.abyhqlj....`
+	\* **Example** `./generateWallet.sh ocid1.autonomousdatabase.oc1.phx.abyhqlj....`
 	\* You will be requested to enter a password for wallet encryption, this is separate password from the ADMIN password but you could reuse the same.
+	\* Wait for a littke moment while the command executes.
 
 6. Launch the sql utility in Cloud Shell.
 
@@ -165,11 +162,11 @@ You should now see `mtdrworkshop` in your root directory
 	\* Point the tool at your wallet.zip file
 	\* Stay in the mtdrwokshop/setup-dev-environment directory and launch sql with /nolog option.
 8. Create a TODOUSER with a strong password, using the sql utility.
-
+	\* Suggest reusing the admin password, not good practice in real life, but easy for this workshop
 	``` sql
 	<copy> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
 	```
-
+	\* After typing the password in the middle of the CREATE USER command, move the cursor to the end of the command, where the semicolon `;` is
 	![create user](images/create-user.png " ")
 	\* Grant some privileges to TODOUSER by executing the following command.
 
@@ -205,6 +202,12 @@ You should now see `mtdrworkshop` in your root directory
 <br>
 	![commit complete](images/commit-complete.png " ")
 
+		\* Execute "exit ;" after committing.
+
+	``` SQL
+	<copy>exit;</copy>
+	```
+
 ## Task 4: Create an OCI Registry and a pre-authentication key
 
 You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an Auth key. The OCI Registry is an Oracle-managed registry that enables you to simplify your development-to-production workflow by storing, sharing, and managing development artifacts such as Docker images.
@@ -212,6 +215,7 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
 1. Open up the navigation menu in the top-left corner of the console and go to **Developer Services** and select **Container Registry**.
 	![Registry](images/21-dev-services-registry.png " ")
 2. Take note of the namespace (for example, `axhpdrizd2ai` shown in the image below).
+	![namespace](images/22-create-repo.png " ")
 3. Click **Create Repository**, specify the following details for your new repository, and click **Create Repository**.
     * Repository Name: `<tenancy name>/mtdrworkshop`
     * Access: `Public`
@@ -258,10 +262,10 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 	<copy>export WORKINGDIR=$MTDRWORKSHOP_LOCATION/workingdir</copy>
 	```
 
-	\* Make sure to be in the `mtdrwokshop/setup-dev-environment` directory then execute the following script
+	\*  Execute the following script
 
 	``` bash
-	<copy>./installGraalVM.sh</copy>
+	<copy>cd ~/mtdrworkshop/setup-dev-environment; ./installGraalVM.sh</copy>
 	```
 
 ## Task 6: Access OKE from the Cloud Shell
@@ -269,18 +273,13 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
 	``` bash
-	<copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
+	<copy>echo $ClusterID > ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
 	```
 
-2. Navigate to **Developer Services** and select **Kubernetes Clusters (OKE)**
-	![dev services oke](images/27-dev-services-oke.png " ")
-	![dev services](images/27-dev-services-oke.png " ")
-3. Copy the **mdtrworkshopcluster ID** and paste it into the newly created file.
-	![mtdrworkshop cluster id](images/mtdrworkshop-cluster-id.png " ")
-4. Run `./verifyOKEAndCreateKubeConfig.sh`
+2. Run `./verifyOKEAndCreateKubeConfig.sh`
 
 	```
-	<copy>./verifyOKEAndCreateKubeConfig.sh</copy>
+	<copy>cd mtdrworkshop; ./verifyOKEAndCreateKubeConfig.sh</copy>
 	```
 
 > **Note:** `/.kube/config` is created for the OKE cluster.
@@ -307,6 +306,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** \- Kuassi Mensah\, Dir\. Product Management\, Java Database Access
-* **Contributors** \- Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By/Date** \- Kamryn Vinson\, August 2021
+* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By/Date** - Kamryn Vinson, August 2021

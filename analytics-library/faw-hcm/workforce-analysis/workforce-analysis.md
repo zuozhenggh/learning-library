@@ -13,7 +13,8 @@
 3. Demo Script
 
 Workforce Analysis sample:
-![Workforce Analysis](../diversity-inclusion/images/workforce-analysis.png)
+
+![Workforce Analysis](../workforce-analysis/images/workforce-analysis.png)
 
 ## Acknowledgements
 

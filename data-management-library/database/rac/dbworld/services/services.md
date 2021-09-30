@@ -32,21 +32,21 @@ Oracle recommends that all users who share a service have the same service level
 For more information on Oracle Database Services visit [https://www.oracle.com/goto/ac](https://www.oracle.com/goto/ac)
 
 
-## Task 1: Login and Identify Database and Instance names
+## Task 1: log in and Identify Database and Instance names
 You should have already identified your database name and instance name.  Each place in this lab where you see **<REPLACE xxx NAME>** make sure you use your correct instance and database names.
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
+1.  Log in to the Oracle Cloud.
 2.  Once you are logged in, open up a 2nd web browser tab.
 3.  Start Cloud Shell in each.  Maximize both Cloud Shell instances.
 
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
-    ![](./images/start-cloudshell.png " ")
+    ![Start Cloud Shell](./images/start-cloudshell.png " ")
 
 4.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<Node 1 Public IP Address>
     ````
-    ![](./images/racnode1-login.png " ")
+    ![Use SSH to Connect as the OPC User](./images/racnode1-login.png " ")
 
 5. Repeat this step for node 2.
 
@@ -54,7 +54,7 @@ You should have already identified your database name and instance name.  Each p
     ssh -i ~/.ssh/sshkeyname opc@<Node 2 Public IP Address>
     ps -ef | grep pmon
     ````
-    ![](./images/racnode2-login.png " ")  
+    ![Use SSH to Connect as the OPC USer](./images/racnode2-login.png " ")  
 
 6. Run the command to determine your database name and additional information about your cluster on **node 1**.  Run this as the *grid* user.
 
@@ -64,22 +64,22 @@ You should have already identified your database name and instance name.  Each p
     crsctl stat res -t
     </copy>
     ````
-    ![](./images/crsctl-1.png " ")
+    ![Examine Cluster Resources](./images/crsctl-1.png " ")
 
-    ![](./images/crsctl-2.png " ")
+    ![Examine Cluster Resources](./images/crsctl-2.png " ")
 
 7. Find your database name in the *Cluster Resources* section with the *.db*.  Jot this information down, you will need it for this lab.
 
-    ![](./images/db-crsctl.png " ")
+    ![Examine Database Resource](./images/db-crsctl.png " ")
 8. Confirm that you have the *testy* service running and note the node it is running on.
 
-    ![](./images/testy-crsctl.png " ")
+    ![Validate Service is Running](./images/testy-crsctl.png " ")
 
 ## Task 2:  Create a Service
 
 **NOTE** For simplicity we will often use the EZConnect syntax to specify connect strings to the database:
 
-user/password@**//hostname:port/servicename**  EZConnect does not support all service characteristics. A fully specified URL or TNS Connect String is required for Application Continuity and other service characteristics. The 19c syntax **EZConnect Plus** can be used to set some of the parameters required for continuous service (including some of the application continuity characteristics), but not all of them.
+user/password@**//hostname:port/servicename**  EZConnect does not support all service characteristics. A fully specified URL or TNS Connect String is required for Application Continuity and other service characteristics. The 19c syntax **EZConnect Plus** can be used to set some parameters required for continuous service (including some of the application continuity characteristics), but not all of them.
 
 1.  Create a new service **svctest** with *instance1* as a **preferred** instance and *instance2* as an **available instance**. This means that the service will normally run on the *instance1* but will failover to *instance2* if the first instance becomes unavailable.  Run this on node 1.
 
@@ -92,7 +92,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     srvctl start service -d <REPLACE DATABASE NAME> -s svctest
     </copy>
     ````
-    ![](./images/lab6-step1-num6.png " ")
+    ![Add a Database Service](./images/lab6-step1-num6.png " ")
 
 2. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
 
@@ -101,7 +101,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     srvctl status service -d <REPLACE DATABASE NAME> -s svctest
     </copy>
     ````
-    ![](./images/lab6-step1-num7.png " ")
+    ![Examine Database Service Status](./images/lab6-step1-num7.png " ")
 
 3.  Use the lsnrctl utility to list the services on both **node 1** and **node 2** as the *grid* user.
     ````
@@ -109,13 +109,13 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     lsnrctl services
     </copy>
     ````
-    ![](./images/lsnrctl-node1.png " ")
-    ![](./images/lsnrctl-node2.png " ")
+    ![Use LSNRCTL to View Registered Services](./images/lsnrctl-node1.png " ")
+    ![Use LSNRCTL to View Registered Services](./images/lsnrctl-node2.png " ")
 
 
-    Note that this service is only active on one instance at a time, so both **local** listeners will not include an entry for this service. In the example shown here, the listener on racnode2 would **not** have an entry for **Service "svctest.tfexsubdbsys.tfexvcndbsys.oraclevcn.com"*
+    Note that this service is only active on one instance at a time, so both **local** listeners will not include an entry for this service. In the example shown here, the listener on racnode2 would **not** have an entry for **Service "svctest.tfexsubdbsys.tfexvcndbsys.oraclevcn.com"**
 
-4.  Any of the SCAN listeners will show where the service is offered. Note that SCAN Listeners run from the GI HOME so you have to change the ORACLE_HOME environment variable in order to view the information about the SCAN Listeners.  Run the lsnrctl command below on **node 2** as the *grid*.
+4.  Any of the SCAN listeners will show where the service is offered. Note that SCAN Listeners run from the GI HOME so you have to change the ORACLE_HOME environment variable to view the information about the SCAN Listeners.  Run the lsnrctl command below on **node 2** as the *grid* user.
 
     ````
     <copy>
@@ -123,11 +123,11 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     $ORACLE_HOME/bin/lsnrctl service LISTENER_SCAN2
     </copy>
     ````
-    ![](./images/scan-node2.png " ")
+    ![Use LSNRCTL to View Registered Services](./images/scan-node2.png " ")
 
 5. Repeat it on **node 1** as well.
 
-    ![](./images/scan-node1.png " ")
+    ![Use LSNRCTL to View Registered Services](./images/scan-node1.png " ")
 
 
 ## Task 3: Service Failover
@@ -140,14 +140,14 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     </copy>
     ````
     This will show the SMON process id of your database  
-    ![](./images/lab6-step2-num1.png " ")
-    ![](./images/lab6-step2-num1-1.png " ")
+    ![Identify Process ID of SMON](./images/lab6-step2-num1.png " ")
+    ![Identify Process ID of SMON and Pass to KILL -9 Function](./images/lab6-step2-num1-1.png " ")
 
 
 2. In this example the process ID is 585689, which I can pass to the **kill -9 <process id>** command.  Identify your process id and issue the kill command as the *oracle* user
 
     ````
-    sudo kill -9 ######
+    kill -9 ######
     ````
 
     This will cause the instance to fail, any connections to the database on this instance would be lost. The CRS component of Grid Infrastructure would detect the instance failure, and immediately start the service on an **available** instance (based on the service definition). CRS would then restart the database instance.
@@ -162,7 +162,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 
     Depending on where your service was running beforehand, you will notice something similar to
 
-    ![](./images/lab6-step2-num3.png " ")
+    ![Relocate Database Service](./images/lab6-step2-num3.png " ")
 
 4. Manually relocate the service. Open a connection (with SQL*Plus) to the instance where the service is running. Use the SCAN address and the domain qualified service name in the format:
 
@@ -178,7 +178,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     </copy>
     ````  
 
-6. Connect via sqlplus and replace the scan address name and the password with the password you chose for your cluster.
+6. Connect through sqlplus and replace the scan address name and the password with the password you chose for your cluster.
     **Note:** The service domain name will be the same domain as the SCAN Address
 
     ````
@@ -187,7 +187,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     </copy>
     ````
 
-    ![](./images/lab6-step2-num5-2.png " ")
+    ![Connect Using SQLPLUS](./images/lab6-step2-num5-2.png " ")
 
 
 6. Using a different cloud shell window (connected to either node) open a SQL*Plus connection as SYS to the PDB associated with this service
@@ -209,7 +209,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````
     This statement will show you the instance this service is running and the number of open connections on this service.
 
-    ![](./images/lab6-step2-num6.png " ")
+    ![Examine V$SESSION for Connected Sessions](./images/lab6-step2-num6.png " ")
 
 
 7. Relocate the service using srvctl.  Execute the command on **node 2**
@@ -222,7 +222,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````
     which will move the service from one instance to another:
 
-    ![](./images/lab6-step3-num7.png " ")
+    ![Relocate a Database Service](./images/lab6-step3-num7.png " ")
 
     Re-examine the v$session information:
 
@@ -239,15 +239,19 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 ## Task 4: Connection Load Balancing
 This exercise will demonstrate connection load balancing and why it is important to use the SCAN address and the VIPs as integral parts of your connection strategy
 
-1. Create a uniform service, named *unisrv*, that is **available** on both instances of your RAC database.  Execute this on **node 1**
+1. Examine the uniform service, named *unisrv*, that is **available** on both instances of your RAC database.  Execute this on **node 1**
 
     ````
     <copy>
-    srvctl add service -d <REPLACE DATABASE NAME> -s unisrv -preferred <REPLACE INSTANCE NAME 1>,<REPLACE INSTANCE NAME 2> -pdb pdb1
-    srvctl start service -d <REPLACE DATABASE NAME> -s unisrv
+    srvctl status service -d <REPLACE DATABASE NAME> -s unisrv
     </copy>
     ````
-    ![](./images/lab6-step3-num1.png " ")
+If it is not running start this service
+
+    ````
+    Service unisrv is running on instance(s) racKPEMW1,racKPEMW2
+    ````    
+    ![Start the Uniform Service UNISRV](./images/lab6-step3-num1.png " ")
 
 2. Look at the entry for this server in the **lsnrctl service LISTENER_SCAN2** output. Note that any of the SCAN listeners can be used here.  Run this on **node 2** as the *oracle* user
 
@@ -260,7 +264,7 @@ This exercise will demonstrate connection load balancing and why it is important
 
     where you will see similar to:
 
-    ![](./images/listener_scan_unisrv.png " ")
+    ![Use LSNRCTL to Examine Registered Services](./images/listener_scan_unisrv.png " ")
 
     You should notice that an entry for this service is configured for each instance.
 
@@ -273,9 +277,9 @@ This exercise will demonstrate connection load balancing and why it is important
     vi $ORACLE_HOME/network/admin/tnsnames.ora
     ````
 
-    ![](./images/oraenv.png " ")
+    ![Set Environment Variables](./images/oraenv.png " ")
 
-    ![](./images/tnsnames-1.png " ")
+    ![Edit TNSNAMES.ORA File](./images/tnsnames-1.png " ")
 
 
 4. Add the following two entries.  Click **:wq!** to save.
@@ -311,7 +315,7 @@ This exercise will demonstrate connection load balancing and why it is important
     </copy>
     ````
 
-    ![](./images/tnsnames-2.png " ")
+    ![Add Connection Aliases to TNSNAMES.ORA File](./images/tnsnames-2.png " ")
 
 5. Run the command to get your scan name
     ````
@@ -327,7 +331,7 @@ This exercise will demonstrate connection load balancing and why it is important
     nslookup <REPLACE SCAN NAME>
     </copy>
     ````
-    ![](./images/nslookup.png " ")
+    ![use NSLOOKUP to Translate an IP Address](./images/nslookup.png " ")
 
 7. Run the ping command
 
@@ -336,7 +340,7 @@ This exercise will demonstrate connection load balancing and why it is important
     ping <REPLACE SCAN NAME> -c 2
     </copy>
     ````
-    ![](./images/ping.png " ")
+    ![Run the PING Command](./images/ping.png " ")
 
 8. Use the CLBTEST alias to connect
 
@@ -357,7 +361,7 @@ This exercise will demonstrate connection load balancing and why it is important
          2     unisrv                   5
 
     ````
-    ![](./images/sqlplus-1.png " ")
+    ![Examine GV$SESSION for Connected Sessions](./images/sqlplus-1.png " ")
 
 
     The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances, but for a small number of connections created at intervals they generally do.
@@ -495,7 +499,7 @@ This exercise will demonstrate connection load balancing and why it is important
     </copy>
     ````
 
-    ![](./images/tnsnames-3.png " ")
+    ![Add an Alias to TNSNAMES.ORA File](./images/tnsnames-3.png " ")
 
 15. Verify you can connect using this alias.
 
@@ -505,7 +509,7 @@ Ensure you restart any instances you previously shutdown.
 
 In this exercise we will use the Java client you installed previously: **acdemo**
 
-The acdemo application is a simple Java application that uses the Universal connection pool (UCP) to connect to the database and run a simple OLTP workload. The application is configured via a property file, and a simple shell script is provided to run the application.
+The acdemo application is a simple Java application that uses the Universal connection pool (UCP) to connect to the database and run a simple OLTP workload. The application is configured through a property file, and a simple shell script is provided to run the application.
 
 1. Examine the lbtest.properties file
 
@@ -525,7 +529,7 @@ The acdemo application is a simple Java application that uses the Universal conn
     more /home/oracle/acdemo/lbtest.properties
     </copy>
     ````
-    ![](./images/lbtest-properties.png " ")  
+    ![Examine JDBC Property File](./images/lbtest-properties.png " ")  
 
 You can see that the application will use the service *unisrv* to connect to the database. And will establish 20 connections. We are using the SCAN address in the URL, so with no modification we should see a balanced number of connections on each instance.
 
@@ -563,7 +567,7 @@ Check that the service is running on both instances
     </copy>
     ````
 
-    ![](./images/runlbtest.png " ")      
+    ![Run the RUNLBTEST Script](./images/runlbtest.png " ")      
 
 Make sure acdemo is using the *unisrv* service     
 
@@ -635,9 +639,9 @@ atm_cpuload_st 90
 </copy>
 ````
 
-![](./images/cpu_hog_running.png " ")
+![CPUHOG Program Running](./images/cpu_hog_running.png " ")
 
-You should see some of the acdemo requests getting longer (they will periodically jump to 45 - 48 ms, a significant change) - this is because the threads are using connections on the overloaded node
+You should see some acdemo requests getting longer (they will periodically jump to 45 - 48 ms, a significant change) - this is because the threads are using connections on the overloaded node
 
 ````
 39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 38ms
@@ -660,7 +664,7 @@ Confirm the config
 srvctl config service -d <REPLACE DB NAME> -s unisrv
 ````
 
-![](./images/unisrv_config_rlb.png " ")
+![Database Service Configuration](./images/unisrv_config_rlb.png " ")
 
 
 7. How Runtime Load Balancing (RLB) functions is that a smoothed rolling average of responses is calculated by service in the database. From this a metric is sent as a FAN event to subscribing clients. The RLB directive gives an indication to the client how database activity on each instance is performing (for that service). A guide is given to the pool to direct a portion of work to each instance - a lesser value to instances that are loaded.

@@ -9,7 +9,7 @@ Estimated Lab Time 45-60 minutes
 - Deploy Terraform to setup necessary architecture for DR
 
 ### Prerequisites
-1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/El0bKQBM-DFwTxp7p6YigKkTR6IoVJLCJRvUh6vgI7dMO[…]/b/solutions-library/o/DR-ORDS-RW-Master-v2.zip) to your local machine.
+1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/El0bKQBM-DFwTxp7p6YigKkTR6IoVJLCJRvUh6vgI7dMOdKXG9ULl0aAhwhzWBv5/n/c4u04/b/solutions-library/o/DR-ORDS-RW-Master-v2.zip) to your local machine.
 
 2.  Create your own private/public key pair on your local system.
 3.  Zip up all of the files in to a zip folder. The zip file name is not important.
@@ -90,8 +90,8 @@ Estimated Lab Time 45-60 minutes
 5. Copy your public and private key. Make sure you are using the correct format.
     ![](./images/ResourceManager-Keys.PNG)
 
-6. Input the configuration for the object storage. Make sure to copy the following link [apex](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uoRIkmmXSSb2SI4Hfil6fHWfw4b_9Z1Ln4iEmfzNHJQNG[…]W3A/n/c4u04/b/solutions-library/o/apex_20.1.zip) into the URL\_APEX\_FILE field.
-   Make sure to copy the following link [ords](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nZNTd1Figtx0Mcngl8lvJrO7K8WPIdPsA2To4lr_KaQmJ[…]VkUMsHhU/n/c4u04/b/solutions-library/o/ords.war) into the URL\_ORDS\_FILE field.
+6. Input the configuration for the object storage. Make sure to copy the following link [apex](https://objectstorage.us-ashburn-1.oraclecloud.com/p/uoRIkmmXSSb2SI4Hfil6fHWfw4b_9Z1Ln4iEmfzNHJQNGtAMfP_Y8EHYBraPrW3A/n/c4u04/b/solutions-library/o/apex_20.1.zip) into the URL\_APEX\_FILE field.
+   Make sure to copy the following link [ords](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nZNTd1Figtx0Mcngl8lvJrO7K8WPIdPsA2To4lr_KaQmJQzAWrt4eDMWVkUMsHhU/n/c4u04/b/solutions-library/o/ords.war) into the URL\_ORDS\_FILE field.
     ![](./images/ResourceManager-ObjectStorage.PNG)
 
 7. Review & click on the **Create** button
@@ -127,7 +127,7 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 - **Author** - Saul Chavez
 - **Last Updated by/date** Saul Chavez September 31, 2021
-- **Lab Expiry Date** - 11/30/2021
+- **Lab Expiration date** - 10/01/2022
 
 
 
