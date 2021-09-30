@@ -1,4 +1,4 @@
-# Create the Application
+# Create the application
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Estimated Lab Time: 15 minutes
 
 ### Objectives
 In this lab, you will:
-- Create an application using the tables and data from previous labs.
+- Create an application using the tables and data that you already have installed.
 
 ## Task 1: Creating an App
 
@@ -16,7 +16,7 @@ In this lab, you will:
 
 2. Click **Create**.
 
-    ![](images/go-create-app.png " ")
+    ![Click Create](images/go-create-app.png " ")
 
 3.  Click **New Application**.
 
@@ -80,7 +80,7 @@ A dashboard page is a great way to show important information using various char
 
     ![](images/chart4.png " ")  
 
-7. Click on Advanced and check **Set as Administration Page**.
+7. Click Advanced and check **Set as Administration Page**.
 
 7. Click **Add Page**.
 
@@ -107,7 +107,7 @@ A dashboard page is a great way to show important information using various char
 
 ## Task 5: Delete Home Page
 
-1. Navigate to Home Page and click on **Edit**.
+1. Navigate to Home Page and Click **Edit**.
 2. Click **Delete**.    
 
     ![](images/delete-page.png " ")  
@@ -142,7 +142,7 @@ A dashboard page is a great way to show important information using various char
     - PRODUCT_REVIEWS
     - STORES    
 
-2. Click on Advanced and check **Set as Administration Page**.
+2. Click Advanced and check **Set as Administration Page**.
 3. Click **Save Changes**.
 
     ![](images/admin-pages.png " ") 
@@ -167,7 +167,7 @@ A dashboard page is a great way to show important information using various char
     - Lookup Key 3 - select **COLOR_ID**
     - Display Column 3 - select **COLOR_LOOKUP.COLOR**
 
-5. Click on Advanced and check **Set as Administration Page**.
+5. Click Advanced and check **Set as Administration Page**.
 
 6. Click **Add Page**
 
@@ -185,7 +185,7 @@ Now that you have added all the pages, it is time to generate the app and review
 
     ![](images/create-app.png " ")
 
-2. Once the application has been generated, your new app will be displayed in the application home page.
+2. Once the application is created, you will find the new app on the application home page.
 Click **Run Application**.
     
     ![](images/run-app.png " ")
@@ -199,7 +199,7 @@ Click **Run Application**.
     The new application will be displayed.
 
 
-You now know how to create an application, with numerous different page types, based on existing database objects. 
+You now know how to create an application with a number of different page types based on existing database objects. 
 
 ## **Acknowledgments**
 

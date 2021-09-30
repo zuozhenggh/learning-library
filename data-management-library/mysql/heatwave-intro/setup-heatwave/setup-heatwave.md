@@ -54,18 +54,20 @@ algorithm, it will predict the number of nodes needed.
     ![Connect](./images/10addheat07.png " ")
 
 ## Task 2: Load airportdb Data into HeatWave Cluster
-1. If not already connected with SSH, on Command Line, connect to the Cloud Shell
+1. If not already connected with SSH, connect to Compute instance using Cloud Shell
+
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
 
 2. On command Line, connect to MySQL using the MySQL Shell client tool with the following command:
 
     ```
-    <copy>mysqlsh admin@127.0.0.1 --sql</copy>
+    <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
     ```
 
 3. Run the following Auto Parallel Load command to load the airportdb tables into HeatWave..
 
 
-    ![Connect](./images/heatwave-load-01.png " ")
+    ![Connect](./images/heatwave-load-01-shell.png " ")
 
     ```
     <copy>CALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL);</copy>
