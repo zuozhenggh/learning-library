@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to get started with Oracle Cloud Infrastructure Data Catalog. First, you create a compartment for your Data Catalog instance. You create a Dynamic group. Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). Next, you need to create policies to permit the dynamic group to access Oracle Cloud Infrastructure services such as Data Catalog, ADB, and Oracle Object Storage buckets. You then create a Data Catalog instance, create a new business glossary, and then import a glossary into the new glossary. When you create a data catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata. Finally, you create an Autonomous Database instance. Finally, you create an Autonomous Database instance.
+This lab walks you through the steps to get started with Oracle Cloud Infrastructure Data Catalog. First, you create a compartment for your Data Catalog instance. You create a dynamic group which allows you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). Next, you create the policy to permit the dynamic group to access Oracle Cloud Infrastructure services such as Data Catalog, ADB, and optionally Oracle Object Storage buckets. You then create a Data Catalog instance, create a new business glossary, and then import a glossary into the new glossary. When you create a data catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata. Finally, you create an Autonomous Database instance.
 
 > **Note:** This workshop is directed at administrator users because they are granted the required access permissions. In real life scenarios, you would create a new administrator user and a Data Catalog administrator group, and then add the new user to the new group. Next, you create the Oracle Cloud Infrastructure Identity and Access Management (IAM) policies that are required to create and manage a Data Catalog and Autonomous Database instances.
 
@@ -15,8 +15,8 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 * (Optional) Create a compartment for your Data Catalog objects.
-* Create a Dynamic Group policy to allow Data Catalog to access your Object Storage resources.
-* Create the
+* Create a dynamic group policy to allow Data Catalog to manage the Data Catalog resources.
+* Create the access policy for the dynamic group.
 * Create a Data Catalog instance.
 * Import a Glossary into your Data Catalog instance.
 * Create and Autonomous Database instance.
@@ -24,7 +24,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.  
 * At least one user in your tenancy who wants to work with Data Catalog. This user must be created in the Identity service[URL Text](https://www.oracle.com).
 
 > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)
@@ -129,7 +129,7 @@ Create a Data Catalog group whose members will be granted permissions to manage 
 
 ## Task 3: Create a Data Catalog Instance
 
-To control who has access to Data Catalog, and the type of access for each group of users, you must create policies. By default, only the users in the Administrators group have access to all Data Catalog resources. For everyone else who's involved with Data Catalog, you must create policies that give them proper rights to Data Catalog resources. In this workshop, it is assumed that you are an administrator performing the steps in this workshop such as creating the Data Catalog and ADB instances. If you are not an administrator user, then your administrator user much grant you the policies listed below.
+To control who has access to Data Catalog, and the type of access for each group of users, you must create policies. By default, only the users in the Administrators group have access to all Data Catalog resources. For everyone else who's involved with Data Catalog, you must create policies that give them proper rights to Data Catalog resources. In this workshop, it is assumed that you are an administrator performing the steps in this workshop such as creating the Data Catalog and ADB instances. If you are not an administrator user, then your administrator user must grant you the policies listed below.
 
 Let's say you are not an Administrator but you do need to use and manage Data Catalog. Your Administrator can create a Data Catalog Group and add you and other non-Administrator users to this group. Assume that all of the resources that you will need to perform your job are in compartment named `training-dcat-compartment`. The following policy statements are required for the `training-dcat-users-group` group.
 
@@ -139,7 +139,7 @@ The following statement allows the `training-dcat-users-group` group to perform 
 allow group training-dcat-users-group to manage data-catalog-family in compartment training-dcat-compartment
 ```
 
-The following policy statement grants the specified group to access the virtual network resources:
+The following policy statement allows the specified group to access the virtual network resources:
 
 ```
 allow group training-dcat-users-group to manage virtual-network-family in compartment training-dcat-compartment
