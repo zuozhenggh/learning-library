@@ -77,31 +77,7 @@ This lab assumes that you completed all preceding labs, and your deployment is i
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
-## Task 3: Check Support Mode for all source tables
-
-1.  Use the Oracle Cloud Console navigation menu to return to the source Autonomous Database Details page.
-
-2.  Click **Tools**, and then click **Open Database Actions**.
-
-3.  Log in to Database Actions using the ADMIN credentials.
-
-4.  Under Development, click **SQL**.
-
-5.  Run the following query:
-
-    ```
-    set pagesize 50
-    alter session set container=pdbeast;
-    column object_name format a40
-    column support_mode format a8 heading 'Support|Mode'
-    select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
-    ```
-
-    ![](images/03-05-support-mode.png " ")
-
-    Keep Database Actions open to return to later.
-
-## Task 4: Add and Run an Extract
+## Task 3: Add and Run an Extract
 
 1.  On the GoldenGate Deployment Console Home page, click **Add Extract** (plus icon).
 
@@ -129,7 +105,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 8.  Click **Next**.
 
-9.  On the Parameter File page, in the text area, add a new line and the following text:
+9.  On the Parameter File page, in the text area, add a new line to the existing text and add the following:
 
     ```
     <copy>-- Capture DDL operations for listed schema tables
@@ -155,6 +131,8 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
     table SRC_OCIGGLL.*;</copy>
     ```
 
+    ![](images/03-09-params.png " ")
+
 10. Click **Create**. You're returned to the OCI GoldenGate Deployment Console Home page.
 
 11. In the UAEXT **Actions** menu, select **Start**. In the Confirm Action dialog, click **OK**.
@@ -165,7 +143,33 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![Extract started](images/02-ggs-extract-started.png)
 
-## Task 5: Add and Run the Replicat
+## Task 4: Check for long running transactions
+
+1.  In the source database SQL window, enter the following script, and then click Run Script:
+
+    ```
+    <copy>select start_scn, start_time from gv$transaction where start_scn < (select max(start_scn) from dba_capture);</copy>
+    ```
+
+    If the query returns any rows, then you must locate the transaction's SCN and then either commit or rollback the transaction.
+
+    ![](images/04-02-sql.png " ")
+
+## Task 5: Create the Object Store Bucket
+
+1.  From the Oracle Cloud Console navigation menu (hamburger icon), click **Storage**, and then **Buckets**.
+
+    ![](images/05-01-storage-buckets.png " ")
+
+2.  On the **Buckets in &lt;compartment-name&gt;** page, click **Create Bucket**.
+
+    ![](images/05-02-create-bucket.png " ")
+
+3.  In the **Create Bucket** panel, enter a name, and then click **Create**.
+
+    ![](images/05-03-bucket.png " ")
+
+## Task 4: Add and Run the Replicat
 
 1.  On the GoldenGate Deployment Console Home page, click **Add Replicat** (plus icon).
 

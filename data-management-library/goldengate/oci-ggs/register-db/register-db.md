@@ -47,7 +47,7 @@ First, follow the steps below to register the source Oracle Autonomous Transacti
 
     The database registration becomes Active after a few minutes.
 
-## Task 2: Unlock the GGADMIN user for the source database
+## Task 2: Unlock the GGADMIN user and check support mode for the source database
 
 Oracle Autonomous Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
@@ -79,7 +79,26 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     Note that the user icon changes from a padlock to a checkmark.
 
-8.  Log out of Database Actions.
+8.  From the navigation menu (hamburger icon), click **SQL**.
+
+9.  In the worksheet, enter the following, and then click **Run Script**:
+
+    ```
+    <copy>set pagesize 50
+alter session set container=pdbeast;
+column object_name format a40
+column support_mode format a8 heading 'Support|Mode'
+select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
+    </copy>
+    ```
+
+    ![](images/02-09.png " ")
+
+    The Script Output panel displays six tables whose Support_Mode is **FULL**.
+
+    ![](images/02-09b.png " ")
+
+You can leave the source database SQL window open for use in a later lab.
 
 ## Task 3: Register the target database and unlock the GGADMIN user
 
