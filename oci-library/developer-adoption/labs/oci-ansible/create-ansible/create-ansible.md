@@ -25,7 +25,7 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
 
 * Need to be an OCI Tenancy Administrator
 
-## Task 1: Install an OCI Ansible Collection
+## Task 1: Install an OCI Ansible Collection using Cloud Shell
 
 1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
@@ -36,9 +36,17 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
     ![](./images/cloudshell.png " ")
 .
 
-2. Click ***Create Stream*** at the top of the list.
+2. From the OCI Cloud Shell, install the OCI Ansible collection from Ansible Galaxy by using the following command:
 
-3. ***Stream Name:*** Required. Specify a friendly name for the stream. It does not have to be unique within the compartment, but it must be unique to the stream pool. The stream name cannot be changed. Avoid entering confidential information.
+```bash
+$ ansible-galaxy collection install oracle.oci
+```
+
+   ![](./images/Ansible-Cloud-Shell1.png " ")
+
+
+
+2. ***Stream Name:*** Required. Specify a friendly name for the stream. It does not have to be unique within the compartment, but it must be unique to the stream pool. The stream name cannot be changed. Avoid entering confidential information.
 
 4. Compartment: Choose the compartment in which the stream will be created. FOr this lab, we will keep it in the root tenancy.
 
