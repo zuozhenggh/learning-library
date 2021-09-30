@@ -28,7 +28,7 @@ Estimated Time: 25 minutes
 </if>
 
 <if type="freetier">
-1. If you are in the Phoenix region, you will be able to create Always Free tables.  If you are in any other region, then you will create paid tables, however, they will be paid for with credits.
+1. If you are in the Phoenix region, you will be able to create Always Free tables. If you are in any other region, then you will create paid tables, however, they will be paid for with credits.
 
   ![](./images/phoenix-location.png)
 </if>
@@ -57,7 +57,7 @@ Estimated Time: 25 minutes
 </if>
 
 <if type="livelabs">
-3. On the 'Tables' screen there is a **Compartment** field on the left. Please make sure the compartment you were assigned is selected.  In Lab 2, task 1 you identified your compartment. You will need to expand the root compartment, and then expand the **LiveLabs** compartment to find it. In this example, we are using demonosql.  Yours will be different.  You will not be able to create tables in any other compartment.
+3. On the 'Tables' screen there is a **Compartment** field on the left. Please make sure the compartment you were assigned is selected. In Lab 2, task 1 you identified your compartment. You will need to expand the root compartment, and then expand the **LiveLabs** compartment to find it. In this example, we are using demonosql. Yours will be different. You will not be able to create tables in any other compartment.
 
   ![](./images/livelab-compartment.png)
 </if>
@@ -83,7 +83,7 @@ Estimated Time: 25 minutes
 
   Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.** Proceed to step 7.
 
-6. If not in Phoenix, then enter in values for **Read capacity**, **Write capacity**, and **Disk storage**.  Enter in 10,10, and 5 respectively. The **Always Free Configuration** button is grayed out and cannot be used.
+6. If not in Phoenix, then enter in values for **Read capacity**, **Write capacity**, and **Disk storage**. Enter in 10,10, and 5 respectively. The **Always Free Configuration** button is grayed out and cannot be used.
 
    ![](./images/create-reserve.png)
 
@@ -105,7 +105,7 @@ Estimated Time: 25 minutes
 
   In summary, this screen allows to create a table with multiple columns for the primary key, as well as adding many additional columns. You can create simple or more complex tables with this interface.
 
-7. After clicking **Create table** you will be brought to the 'Tables' screen. This screen shows you a list of tables you have created, as well as basic information about the table. One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table. If you created an 'Always Free' table, then a tag that is attached to that table. This lets you know it is an always free table.  Without the tag, then it is a paid table.
+7. After clicking **Create table** you will be brought to the 'Tables' screen. This screen shows you a list of tables you have created, as well as basic information about the table. One important thing to notice is that our table has a status of 'Active' which means we are ready to load data into our table. If you created an 'Always Free' table, then a tag that is attached to that table. This lets you know it is an always free table. Without the tag, then it is a paid table.
 
     ![](./images/freetest-table.png)
 
@@ -118,7 +118,7 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
 
     ![](./images/cloud-shell-phoenix.png)
 
-  Execute the following in your Cloud Shell.  This creates several JSON documents that will be used in future steps.
+  Execute the following in your Cloud Shell. This creates several JSON documents that will be used in future steps.
 
     ````
     <copy>
@@ -134,7 +134,7 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
     </copy>
     ```
 
-3. Let's create NoSQL tables using the Oracle Cloud Infrastructure Command Line Interface (CLI). The CLI command for Oracle NoSQl is 'oci nosql <command>'. We will create two different tables and  echo the DDL statements so you can see what is being created. One of the tables is a fixed schema table and the other is a JSON document table. To create the always free table using the CLI, you set the '--is-auto-reclaimable' flag to true.   The env.sh script run in step 2 detects the region your are in and sets a variable we can use.
+3. Let's create NoSQL tables using the Oracle Cloud Infrastructure Command Line Interface (CLI). The CLI command for Oracle NoSQl is 'oci nosql <command>'. We will create two different tables and  echo the DDL statements so you can see what is being created. One of the tables is a fixed schema table and the other is a JSON document table. To create the always free table using the CLI, you set the '--is-auto-reclaimable' flag to true. The env.sh script run in step 2 detects the region your are in and sets a variable we can use.
 
     ```
     <copy>
@@ -154,7 +154,7 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
     --wait-for-state SUCCEEDED --wait-for-state FAILED
     </copy>
     ```
-    At the end of this command you should see a "status": "SUCCEEDED" on your screen.
+    At the end of this command you should see a "status": "SUCCEEDED" on your screen. Next we will create the second table.
 
     ```
     <copy>
@@ -162,6 +162,8 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
     echo $DDL_TABLE
     </copy>
     ```
+    The echo command will show you the DDL statement that you will execute next.
+
     ```
     <copy>
     oci nosql table create --compartment-id "$COMP_ID"   \
@@ -183,7 +185,7 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
 
     ![](./images/table-screen.png)
 
-2. Lets start with the simple table we created in Task 1. Click **freeTest** table. The details screen that shows up, displays all the key information about the table. Explore that screen.
+2. Let's start with the simple table we created in Task 1. Click **freeTest** table. The details screen that shows up, displays all the key information about the table. Explore that screen.
 
     ![](./images/free-test.png)
 

@@ -41,11 +41,11 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
     ![](images/user-ocid.png)
 
-3. In this step we need to execute a few commands in the Cloud Shell.   To start the Cloud Shell, we have to select our compartment first.   Click on the 'hamburger' menu on the top left.  Click on **Databases** and then click on **Tables**.
+3. In this step we need to execute a few commands in the Cloud Shell. To start the Cloud Shell, we have to select our compartment first. Click on the 'hamburger' menu on the top left. Click on **Databases** and then click on **Tables**.
 
     ![](images/compartment-livelab.png)
 
-4. In the **Compartment** drop down on the left, pick you compartment.  In Task 1, you should have taken note of your compartment.   To find it, expand the root node (**c3u04**), then expand the **Livelabs** node.  Your compartment should be listed under there.  In this example we are using **LL11090-COMPARTMENT**.
+4. In the **Compartment** drop down on the left, pick you compartment. In Task 1, you should have taken note of your compartment. To find it, expand the root node (**c3u04**), then expand the **Livelabs** node. Your compartment should be listed under there. In this example we are using **LL11090-COMPARTMENT**.
 
 5. Open the **Cloud Shell** in the top right menu. It can take about 2 minutes to get the Cloud Shell started.
 
@@ -71,7 +71,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
         cat NoSQLLabPublicKey.pem
         </copy>
         ````
-      This will print out your public key to the screen. Grab a copy of the entire key, including the "BEGIN/END PUBLIC KEY" lines.  Paste it into notepad or some text file for use in step 8.
+      This will print out your public key to the screen. Grab a copy of the entire key, including the "BEGIN/END PUBLIC KEY" lines. Paste it into notepad or some text file for use in step 8.
 
       Minimize the Cloud shell.
 
@@ -93,7 +93,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
    ![](images/hit-add.png)
 
-11. Copy your fingerprint and paste it into notepad or some text file for use in step 10.  Click **Close** when done.
+11. Copy your fingerprint and paste it into notepad or some text file for use in step 10. Click **Close** when done.
 
   ![](images/copy-finger.png)
 

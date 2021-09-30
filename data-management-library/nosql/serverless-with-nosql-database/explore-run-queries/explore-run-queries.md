@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab picks up where lab 3 left off. We are going to explore in more detail the tables we created, load data, and execute queries using a python application.
+This lab picks up where lab 3 left off. We are going to explore in more detail the tables we created, load data, and execute queries using a Python application.
 
 Estimated Time: 25 minutes
 
@@ -10,7 +10,7 @@ Estimated Time: 25 minutes
 
 * Understand the different tables
 * Read data with REST API
-* Read data with a python application
+* Read data with a Python application
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ Estimated Time: 25 minutes
 
 ## Task 1: Restart the Cloud Shell
 
-1. Lets get back into the Cloud Shell. From the earlier lab, you may have minimized it in which case you need to enlarge it. It is possible it may have become disconnected and/or timed out. In that case, restart it.
+1. Let's get back into the Cloud Shell. From the earlier lab, you may have minimized it in which case you need to enlarge it. It is possible it may have become disconnected and/or timed out. In that case, restart it.
 
     ![](./images/cloud-shell-phoenix.png)
 
@@ -187,7 +187,7 @@ The goal of this task is to understand the difference between the 2 data models 
 
 ## Task 3: Read Data Using a Python CLI Application
 
-1. Create the python CLI application in the Cloud shell. Execute in Cloud Shell.
+1. Create the Python CLI application in the Cloud shell. Execute in Cloud Shell.
 
     ```
     <copy>
@@ -241,7 +241,7 @@ The goal of this task is to understand the difference between the 2 data models 
     WHERE d.bagInfo.flightLegs.flightNo =ANY 'BM866';
     </copy>
     ````
-    This will grab basic information for bags on flight BM866.  We are also renaming a field in the output.
+    This will grab basic information for bags on flight BM866. We are also renaming a field in the output.
 
     ````
     <copy>
@@ -277,14 +277,14 @@ The goal of this task is to understand the difference between the 2 data models 
 
   **Note:** The Learn More contains a link to the SQL Reference Guide. Lab 3, Task 3 contains an example of the JSON record to look at.
 
-6. Type in **exit** to exit from the python application.
+6. Type in **exit** to exit from the Python application.
 
 7. Minimize the Cloud Shell by pressing the **minimize** key.
 
 
 ## Task 4: Clean Up
 
-This task deletes the tables that got created.
+This task deletes the tables and other OCI components that got created.
 
 <if type="paid">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
@@ -316,11 +316,11 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
 2. Return to the 'Tables' screen and repeat the process for the **demo** and **demoKeyVal** tables.
 
 <if type="paid">
-3. If you created an API Key, delete that. It will show up as a fingerprint.  Click your **Profile**, then **User Settings** and **API Key** on the left.  Click the 3 dots on the right of the fingerprint you created.   Click **Delete**.
+3. If you created an API Key, delete that. It will show up as a fingerprint. Click your **Profile**, then **User Settings** and **API Key** on the left. Click the 3 dots on the right of the fingerprint you created. Click **Delete**.
 
   ![](./images/delete-api.png)
 
-4. Remove the files added into your Cloud Shell.   Open Cloud Shell and execute.
+4. Remove the files added into your Cloud Shell. Open Cloud Shell and execute.
 
     ````
     <copy>
@@ -343,11 +343,11 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
 </if>
 
 <if type="freetier">
-3. If you created an API Key, delete that. It will show up as a fingerprint.  Click your **Profile**, then **User Settings** and **API Key** on the left.  Click the 3 dots on the right of the fingerprint you created.   Click **Delete**.
+3. If you created an API Key, delete that. It will show up as a fingerprint. Click your **Profile**, then **User Settings** and **API Key** on the left. Click the 3 dots on the right of the fingerprint you created. Click **Delete**.
 
   ![](./images/delete-api.png)  
 
-4. Remove the files added into your Cloud Shell.   Open Cloud Shell and execute.
+4. Remove the files added into your Cloud Shell. Open Cloud Shell and execute.
 
     ````
     <copy>

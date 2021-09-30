@@ -72,7 +72,7 @@ This lab assumes you have:
 
 ## Task 3: Get Data and Code Bundle
 
-In this task we will copy over a data bundle stored on object storage and place that in the Cloud Shell.   
+In this task we will copy over a data bundle stored on object storage and place that in the Cloud Shell.
 
 1. Execute the following in your Cloud Shell.
 
@@ -113,7 +113,7 @@ In this node.js snippet, we used the credential information created in Task 2 an
         });
 ````
 
-  Another way to handle authentication is with Instance and Resource Principals. The Oracle NoSQL SDKs support both of them. Resource principals are primarily used when authenticating from functions.   We will show you an example of using Resource Principals.
+  Another way to handle authentication is with Instance and Resource Principals. The Oracle NoSQL SDKs support both of them. Resource principals are primarily used when authenticating from functions. We will show you an example of using Resource Principals.
 
   Instance Principals is a capability in Oracle Cloud Infrastructure Identity and Access Management (IAM) that lets you make service calls from an instance. With instance principals, you don’t need to configure user credentials or rotate the credentials. Instances themselves are a principal type in IAM and are set up in IAM. You can think of them as an IAM service feature that enables instances to be authorized actors (or principals) to perform actions on service resources.
 
