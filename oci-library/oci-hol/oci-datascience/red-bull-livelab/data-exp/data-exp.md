@@ -12,7 +12,7 @@ Before begining the project we need to understand the history of car racing (Gra
 
 An racing team's performance is largely dependent on the FIA technical regulation for the season. After the 2013 season, new engine regulations were made (Hybrid era). Mercedes-Benz is the most dominant team since, followed by Red Bull Racing and Scuderia Ferrari. Rules are set to change for 2022, so whatever analysis is made here will not apply for 2022 season and after. Only data after 2010 will be considered in the following analysis.
 
-Estimated Lab Time: 1 hr
+Estimated Time: 1 hr
 
 
 <b> Objectives </b>

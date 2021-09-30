@@ -11,7 +11,7 @@ Are you interested in learning machine learning (ML)? How about doing this in th
 This tutorial teaches ML analytics with a series of hands-on labs (HOLs) using the [Data Science](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm) service in [Oracle Cloud Infrastructure](https://cloud.oracle.com/). You'll learn how to get data from some public data sources, then how to analyze this data using some of the latest ML techniques. In the process you'll build ML models and test them out in a predictor application.
 
 
-<b> Estimated Lab Time: 5 hrs  </b>
+<b> Estimated Time: 5 hrs  </b>
 
   This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 

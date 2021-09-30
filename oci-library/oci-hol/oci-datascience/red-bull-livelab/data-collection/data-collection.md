@@ -6,7 +6,7 @@ This lab will walk you through the very basic step of machine learning, i.e, dat
 
 * The data gathering process takes some time, so we've gone ahead and pulled the data in for you. However, if you want to see how it's done, take a look in the ```from_scratch``` directory in your Jupyter notebook, where you'll find the original scripts that gathered the remote data.
 
-Estimated Lab Time: 1 hr
+Estimated Time: 1 hr
 
 
 <b> Objectives </b>

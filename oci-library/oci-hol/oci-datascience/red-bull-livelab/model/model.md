@@ -81,7 +81,7 @@ To begin with, we are going to be building our machine learning model based on t
   ![Image alt text](./images/knn.png)
 
 
-Estimated Lab Time: 40 minutes
+Estimated Time: 40 minutes
 
 <b> Objectives </b>
 

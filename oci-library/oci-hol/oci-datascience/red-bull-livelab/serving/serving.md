@@ -10,7 +10,7 @@ This lab will walk you through the steps to deploy and serve the best trained mo
 
 It seems the Neural Network Classification is the best model to return the highest scores, correctly predicting the winner for 62% of the races.
 
-Estimated Lab Time: 1 hr
+Estimated Time: 1 hr
 
 <b> Objectives </b>
 
