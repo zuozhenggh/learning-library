@@ -242,7 +242,6 @@ Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Mode
 
     ![Image alt text](./images/picture13.png)
 
-You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer

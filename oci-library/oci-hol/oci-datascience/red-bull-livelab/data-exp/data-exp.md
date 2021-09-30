@@ -79,8 +79,6 @@ We will use the dataset “data_f1” prepared by Ergast to simplify the Explora
 7. Check Constructor Podiums
     ![Image alt text](./images/cp.png)
 
-  
-You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer

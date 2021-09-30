@@ -51,8 +51,6 @@ Navigate to the ``` /redbull-analytics-hol/beginners/``` directory in your Jupyt
   ![Image alt text](images/picture6.png)
 
 
-You may now [proceed to the next lab](#next).
-
 
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer

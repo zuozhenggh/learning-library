@@ -117,9 +117,6 @@ After creating your Oracle Cloud account, there is some infrastructure that must
 11. You should now see the JupyterLab. Navigate in the sidebar to ```/redbull-analytics-hol/beginners/``` to see the Jupyter notebooks for this lab.
 
 
-You may now [proceed to the next lab](#next).
-
-
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer
 * **Last Updated By/Date** - Samrat Khosla, Advanced Data Services, September 2021

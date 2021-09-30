@@ -29,8 +29,6 @@ Execute the notebook to merge the different data sets that we downloaded in step
 ![Image alt text](images/prep.png =50%x*)
 
 
-You may now [proceed to the next lab](#next).
-
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer
 * **Last Updated By/Date** - Samrat Khosla, Advanced Data Services, September 2021
