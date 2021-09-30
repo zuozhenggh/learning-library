@@ -81,7 +81,7 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
 8.  From the navigation menu (hamburger icon), click **SQL**.
 
-9.  In the worksheet, enter the following, and then click **Run Script**:
+9.  In the worksheet, enter the following, and then click **Run Statement**:
 
     ```
     <copy>set pagesize 50
@@ -91,8 +91,6 @@ column support_mode format a8 heading 'Support|Mode'
 select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
     </copy>
     ```
-
-    ![](images/02-09.png " ")
 
     The Script Output panel displays six tables whose Support_Mode is **FULL**.
 

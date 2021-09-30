@@ -155,7 +155,9 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![](images/04-02-sql.png " ")
 
-## Task 5: Create the Object Store Bucket
+## Task 5: Export data using Oracle Data Pump
+
+Before using Oracle Data Pump to export data, first create an Oracle Object Store bucket, then create yourself a Credential Token, and then use these resources to create a credential in ATP.
 
 1.  From the Oracle Cloud Console navigation menu (hamburger icon), click **Storage**, and then **Buckets**.
 
@@ -168,6 +170,120 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 3.  In the **Create Bucket** panel, enter a name, and then click **Create**.
 
     ![](images/05-03-bucket.png " ")
+
+4.  From the list of buckets, click the bucket you created. You're brought to the bucket Details page.
+
+5.  Using the bucket details, formulate and take note of your bucket URI:
+
+    ```
+    <copy>https://objectstorage.us-&lt;region&gt;-1.oraclecloud.com/n/&lt;namespace&gt;/&lt;bucket-name&gt;/o/</copy>
+    ```
+
+    For example, if your region is Phoenix, your namespace is c4u04, and your bucket name ADB-LLStore, then your URI would be: `https://objectstorage.us-phoenix-1.oraclecloud.com/n/c4u04/ADB-LLStore/o/`.
+
+6.  In the Oracle Cloud Console global header, click **Profile** (user icon), and then select your username.
+
+    ![](images/05-06-profile.png " ")
+
+7.  On the User Details page, under **Resources**, click **Auth Tokens**, and then click **Generate Token**.
+
+    ![](images/05-07-auth-token.png " ")
+
+8.  In the Generate Token dialog, enter a description, and then click **Generate Token**.
+
+    ![](images/05-08-generate-token.png " ")
+
+9.  Click **Copy**, and then click **Close**.
+
+    > **Note:** *Paste the token to a text editor for use in the next step.*
+
+    ![](images/05-09-copy-token.png " ")
+
+10. In the source database SQL window, enter the following script, replace the placeholders with your user name and token value, and then click **Run Statement**:
+
+    ```
+    <copy>BEGIN
+  DBMS_CLOUD.CREATE_CREDENTIAL(
+    credential_name => 'ADB_OBJECTSTORE',
+    username => '<user-name>',
+    password => '<token>'
+  );
+END;</copy>
+    ```
+
+    ![](images/05-10-create-credential.png " ")
+
+11. Use the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.us-<region>-1.oraclecloud.com/n/<namespace>/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs.
+
+    ```
+    <copy>DECLARE
+    ind NUMBER;              -- Loop index
+    h1 NUMBER;               -- Data Pump job handle
+    percent_done NUMBER;     -- Percentage of job complete
+    job_state VARCHAR2(30);  -- To keep track of job state
+    le ku$_LogEntry;         -- For WIP and error messages
+    js ku$_JobStatus;        -- The job status from get_status
+    jd ku$_JobDesc;          -- The job description from get_status
+    sts ku$_Status;          -- The status object returned by get_status
+
+    BEGIN
+    -- Create a (user-named) Data Pump job to do a schema export.
+    h1 := DBMS_DATAPUMP.OPEN('EXPORT','SCHEMA',NULL,'SRC_OCIGGLL_EXPORT','LATEST');
+
+    -- Specify a single dump file for the job (using the handle just returned
+    -- and a directory object, which must already be defined and accessible
+    -- to the user running this procedure.
+    DBMS_DATAPUMP.ADD_FILE(h1,'https://objectstorage.us-&lt;region&gt;-1.oraclecloud.com/n/&lt;namespace&gt;/&lt;bucket-name&gt;/o/SRC_OCIGGLL.dmp','ADB_OBJECTSTORE','100MB',DBMS_DATAPUMP.KU$_FILE_TYPE_URIDUMP_FILE,1);
+
+    -- A metadata filter is used to specify the schema that will be exported.
+    DBMS_DATAPUMP.METADATA_FILTER(h1,'SCHEMA_EXPR','IN (''SRC_OCIGGLL'')');
+
+    -- Start the job. An exception will be generated if something is not set up properly.
+    DBMS_DATAPUMP.START_JOB(h1);
+
+    -- The export job should now be running. In the following loop, the job
+    -- is monitored until it completes. In the meantime, progress information is displayed.
+    percent_done := 0;
+    job_state := 'UNDEFINED';
+    while (job_state != 'COMPLETED') and (job_state != 'STOPPED') loop
+      dbms_datapump.get_status(h1,dbms_datapump.ku$_status_job_error + dbms_datapump.ku$_status_job_status + dbms_datapump.ku$_status_wip,-1,job_state,sts);
+      js := sts.job_status;
+
+    -- If the percentage done changed, display the new value.
+    if js.percent_done != percent_done
+    then
+      dbms_output.put_line('*** Job percent done = ' || to_char(js.percent_done));
+      percent_done := js.percent_done;
+    end if;
+
+    -- If any work-in-progress (WIP) or error messages were received for the job, display them.
+    if (bitand(sts.mask,dbms_datapump.ku$_status_wip) != 0)
+    then
+      le := sts.wip;
+    else
+      if (bitand(sts.mask,dbms_datapump.ku$_status_job_error) != 0)
+      then
+        le := sts.error;
+      else
+        le := null;
+      end if;
+    end if;
+    if le is not null
+    then
+      ind := le.FIRST;
+      while ind is not null loop
+        dbms_output.put_line(le(ind).LogText);
+        ind := le.NEXT(ind);
+      end loop;
+    end if;
+  end loop;
+
+  -- Indicate that the job finished and detach from it.
+  dbms_output.put_line('Job has completed');
+  dbms_output.put_line('Final job state = ' || job_state);
+  dbms_datapump.detach(h1);
+END;</copy>
+    ```
 
 ## Task 4: Add and Run the Replicat
 
