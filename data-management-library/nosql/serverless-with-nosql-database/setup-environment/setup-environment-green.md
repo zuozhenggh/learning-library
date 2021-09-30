@@ -37,11 +37,17 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
   ![](images/user-profile.png)
 
-2. Click **User Settings** again. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 10.
+2. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 10.
 
     ![](images/user-ocid.png)
 
-3. Open the **Cloud Shell** in the top right menu. It can take about 2 minutes to get the Cloud Shell started.
+3. In this step we need to execute a few commands in the Cloud Shell.   To start the Cloud Shell, we have to select our compartment first.   Click on the 'hamburger' menu on the top left.  Click on **Databases** and then click on **Tables**.
+
+    ![](images/compartment-livelab.png)
+
+4. In the **Compartment** drop down on the left, pick you compartment.  In Task 1, you should have taken note of your compartment.   To find it, expand the root node (**c3u04**), then expand the **Livelabs** node.  Your compartment should be listed under there.  In this example we are using **LL11090-COMPARTMENT**.
+
+5. Open the **Cloud Shell** in the top right menu. It can take about 2 minutes to get the Cloud Shell started.
 
     ![](images/cloud-shell.png)
 
@@ -49,7 +55,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
     ![](images/capturecloudshellhomeregion.png)
 
-4. Execute these commands in your Cloud Shell to create a private and a public key.
+6. Execute these commands in your Cloud Shell to create a private and a public key.
 
     ````
     <copy>
@@ -58,7 +64,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
     </copy>
     ````
 
-5. Grab you a copy of your public key. Execute in Cloud Shell.
+7. Grab you a copy of your public key. Execute in Cloud Shell.
 
         ````
         <copy>
@@ -69,17 +75,17 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
       Minimize the Cloud shell.
 
-6. Top right, click your **Profile**, then **User Settings.**
+8. Top right, click your **Profile**, then **User Settings.**
 
     ![](images/user-profile.png)
 
 
 
-7. On the left, click **API Keys**, then click **Add API Key.**
+9. On the left, click **API Keys**, then click **Add API Key.**
 
     ![](images/api-keys.png)
 
-8. Click on **Paste Public Key**
+10. Click on **Paste Public Key**
 
     ![](images/paste-key.png)
 
@@ -87,11 +93,11 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
    ![](images/hit-add.png)
 
-9. Copy your fingerprint and paste it into notepad or some text file for use in step 10.  Click **Close** when done.
+11. Copy your fingerprint and paste it into notepad or some text file for use in step 10.  Click **Close** when done.
 
   ![](images/copy-finger.png)
 
-10. You should have saved 3 pieces of information, the compartment OCID, your user OCID and your fingerprint. This step requires you to edit a shell script and insert that information into the script. We will use vi for this but if you are comfortable with vim or emacs then use either. Expand your Cloud Shell and execute.
+12. You should have saved 3 pieces of information, the compartment OCID, your user OCID and your fingerprint. This step requires you to edit a shell script and insert that information into the script. We will use vi for this but if you are comfortable with vim or emacs then use either. Expand your Cloud Shell and execute.
 
     ````
     <copy>
@@ -122,7 +128,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
   To exit out of vi, click esc, then type in ":wq" and your changes will be saved.
 
-11. Exit Cloud Shell  
+13. Exit Cloud Shell  
 
 ## Task 3: Understand Credentials, and Policies
 
