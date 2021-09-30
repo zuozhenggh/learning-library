@@ -19,13 +19,13 @@
 
 
 
-In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) since Ansible comes pre-installed for your environment. We are then going to install the Oracle Cloud Infrastructure Ansible collection. You then will write a sample playbook that uses Ansible modules on OCI. 
+In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) since Ansible comes pre-installed for your environment. We are  going to install the Oracle Cloud Infrastructure Ansible collection. You then will write a sample playbook that uses Ansible modules on OCI. 
 
 ### Pre-Requisites
 
 * Need to be an OCI Tenancy Administrator
 
-### Task 1: Create an OCI Stream
+## Task 1: Install an OCI Ansible Collection
 
 1. Open the navigation menu and click ***Analytics & AI***. Under ***Messaging***, click ***Streaming***. A list of existing streams is displayed.
 
@@ -54,7 +54,7 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
 ![OCI Stream](./images/OCI-Stream4.png)
 
 
-### Task 2: Create Object Storage Bucket
+## Task 2: Write an Ansible playbook on OCI
 
 1. Open the navigation menu and click ***Storage***. Under ***Object Storage***, click ***Buckets***.
 
@@ -74,55 +74,6 @@ You will keep all of the defaults for the bucket creation.
 
  
 
-### Task 3: Create Service Connector
-
-For simple archiving operations, we don’t need to write a single line of code. Instead, we just create a service connector and point it at the source (stream) and destination (bucket). Navigate to the Service Connector Hub via the burger menu (or by searching for it).
-
-1. Open the navigation menu and click ***Analytics & AI***. Under ***Messaging***, click ***Service Connector Hub***.
-
-2. You can choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. For this lab, we will work in the tenancy root compartment.
-
-3. Click ***Create Service Connector***. 
-
-4. Name the connector ***streaming-to-object-storage*** . 
-
-5. Provide the description ***Moving streaming data to object storage***.
-
-6. For the compartment, choose the root tenancy.
-
-![Service Connector](./images/OCI-Service-Connector1.png)
-
-
-7. Now to configure your service connector, Choose  ’Streaming’ as the ***source***, and ‘Object Storage’ as the ***target***. Chose the compartment where the stream pool resides, choose the stream pool, and the stream. You can choose to read from either the ‘Latest’ offset or ’Trim Horizon’ (the oldest non-committed offset).
-
-![Service Connector](./images/OCI-Service-Connector2.png)
-
-
-
-![Service Connector](./images/OCI-Service-Connector3.png)
-
-
- - You will not be using the optional ***Configure Task*** for this lab. 
-
- 8. Click ***Create*** and the service connector is ready to archive your streams.
-
-
-
-### Task 4: Publish Messages using OCI Cloud Shell
-
- To test this out, we can write some messages to our stream using the Oracle CLoud Infrastrucuture CLI in Cloud Shell. 
-
-
-1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
-
-![](./images/cloudshellopen.png " ")
-
-    ![](./images/cloudshellsetup.png " ")
-
-    ![](./images/cloudshell.png " ")
-
-
-2.  To test this out, we can write some messages to our stream using the OCI CLI in OCI Cloud Shell. When writing messages to a stream, we must pass the message as a JSON object with two keys: key and value. Both the key and the value must be Base64 encoded. Here are two  two separate messages to publish, one with key1 and another with key2. Both will contain a simple JSON message payload. Below the values are encoded.
 
 ```bash
 $ echo -n "key1" | base64
@@ -148,10 +99,4 @@ oci streaming stream message put \
   --endpoint https://cell-1.streaming.us-phoenix-1.oci.oraclecloud.com \
   --messages "[{\"key\": \"a2V5Mg==\", \"value\": \"eyJpZCI6IjAiLCAidGVzdCI6ICJtZXNzYWdlIGZyb20gQ0xJIn0=\"}]"
   ```
-
-  4. You will now confirm the archive operation.   You will need to wait the 60000 milliseconds (60 seconds) for the archive operation. After the 60 second wait period, we can check that the stream data was written to our Object Storage bucket.
-
-  ![Archive Stream](./images/OCI-archive-stream-1.png)
-
-As shown above, the stream data was written to a compressed file in my bucket and labeled with the timestamp at which it was written. Both of the messages that were published via the CLI were archived into the bucket. Without writing a single line of code or deploying any infrastructure, we have a reliable archive of our stream data in OCI.
 
