@@ -1,5 +1,7 @@
 # Oracle Cloud Infrastructure Ansible Collection
 
+  ## Introduction
+  
   [Oracle Cloud Infrastructure Ansible Collection](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/ansiblegetstarted.htm) provides an easy way to provision and manage resources in Oracle Cloud using Ansible. With the creation of Oracle Cloud Ansible Collection, we are providing two user benefits:
   
    **Faster Availability** - Oracle Cloud Ansible Modules will now be available to users at a faster pace on Ansible Galaxy. 
@@ -17,9 +19,9 @@
 
 
 
-In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) since Ansible comes pre-installed for your environment. We are then going to install the Oracle Cloud Infrastructure Ansible collection. You then will write a sample playbook that uses Ansible modules. 
+In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) since Ansible comes pre-installed for your environment. We are then going to install the Oracle Cloud Infrastructure Ansible collection. You then will write a sample playbook that uses Ansible modules on OCI. 
 
-## Pre-Requisites
+### Pre-Requisites
 
 * Need to be an OCI Tenancy Administrator
 
