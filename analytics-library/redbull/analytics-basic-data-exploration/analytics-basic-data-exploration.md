@@ -435,19 +435,19 @@ How can we check whether our theories about the relationship between position ch
 
 2. Notice how there's already a field `OVERTAKEN_POSITIONS_TOTAL` on the `RACES` data set. This value has previously been calculated from the `LAP_TIMES` data set.
 
-   Configure the correlation diagram using the field `POSITION_CHANGES_TOTAL`, `SCORE` and `NAME_YEAR` as follows.
+   Configure the correlation diagram using the field `OVERTAKEN_POSITIONS_TOTAL`, `SCORE` and `NAME_YEAR` as follows.
 
 	 Make sure you set the correct chart type (Scatter) and drag the fields in their corresponding sections (`SCORE` -> Values Y-Axis, `OVERTAKEN_POSITIONS_TOTAL` -> Values X-Axis and `NAME_YEAR` -> Category).
 
    ![Banner](images/create-correlation1.png)
 
-3. Create a reference line.
+3. Create a trend line.
 
-   Click on the icon at the top right of the chart, then click "Add Statistics", then "Reference Line".
+   Click on the icon at the top right of the chart, then click "Add Statistics", then "Trend Line".
 
-	 ![Banner](images/add-reference-line2.png)
+	 ![Banner](images/add-trend-line.png)
 
-	 We see positive correlation, which means that as the number of overtakes increase, _generally speaking_ so does the average race score. However, the points are not nicely concentrated on one line (they are sometimes far away from the reference line), which indicates that this is likely not to be the only factor that influences the fan score.
+	 We see positive correlation, which means that as the number of overtakes increase, _generally speaking_ so does the average race score. However, the points are not nicely concentrated on one line (they are sometimes far away from the trend line), which indicates that this is likely not to be the only factor that influences the fan score.
 
 	 For now, we'll conclude that the number of overtaken positions will remain a candidate to train our model!
 
