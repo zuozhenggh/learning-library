@@ -29,7 +29,7 @@ Execute the notebook to download race data and create your CSV files.
 
 1. Download dataset from ERGAST Web
     
-    ![Image alt text](images/F1Data.png)
+    ![Image alt text](images/f1data.png)
 
 2. Extracting Races Results, Driving Standing, & Team Standing results from ERGAST Web
 

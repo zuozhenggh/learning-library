@@ -31,7 +31,7 @@ In this lab, you will:
 
 We will use the dataset “data_f1” prepared by Ergast to simplify the Exploratory, but we could use all CSV prepared in the folder “data”
 
-![Image alt text](./images/EDA.png)
+![Image alt text](./images/eda.png)
 
 1. Click on Terminal to open it. Download racing dataset:
   
@@ -66,11 +66,11 @@ We will use the dataset “data_f1” prepared by Ergast to simplify the Explora
 
 4. Check DNF Ratio per Constructor
 
-  ![Image alt text](./images/dnf_c.png)
+  ![Image alt text](./images/dnf-c.png)
 
 5. Check Driver Points Percentage
 
-  ![Image alt text](./images/dnf_d.png)
+  ![Image alt text](./images/dnf-d.png)
 
 6. Check Driver Podiums Percentage
 

@@ -156,7 +156,7 @@ In this lab, you will:
 
 Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Model considering both “Drivers” and “F1 Team/Constructor” Information.
 
-![Image alt text](./images/Picture0.png)
+![Image alt text](./images/picture0.png)
 
 1. Build your x dataset
 
@@ -167,7 +167,7 @@ Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Mode
     </copy>
     ```
 
-  ![Image alt text](./images/Picture2.png)
+  ![Image alt text](./images/picture2.png)
 
 2. Filter the dataset for this Model "Driver + Constructor" all active drivers and constructors
 
@@ -177,7 +177,7 @@ Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Mode
     </copy>
     ```
 
-    ![Image alt text](./images/Picture4.png)
+    ![Image alt text](./images/picture4.png)
 
 3. Create Standard Scaler and Label Encoder for the different features in order to have a similar scale for all features
   
@@ -192,7 +192,7 @@ Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Mode
     </copy>
     ```
 
-    ![Image alt text](./images/Picture6.png)
+    ![Image alt text](./images/picture6.png)
 
 4. Prepare the x (Features dataset) and y for predicted value.
 
@@ -203,7 +203,7 @@ Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Mode
     </copy>
     ```
 
-    ![Image alt text](./images/Picture8.png)
+    ![Image alt text](./images/picture8.png)
 
 5. Applied the same list of ML Algorithms for cross validation of different models
 
@@ -236,11 +236,11 @@ Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Mode
     plt.show()
     </copy>
     ```
-    ![Image alt text](./images/Picture11.png)
+    ![Image alt text](./images/picture11.png)
 
 7. Comparing the 3 ML models
 
-    ![Image alt text](./images/Picture13.png)
+    ![Image alt text](./images/picture13.png)
 
 You may now [proceed to the next lab](#next).
 
