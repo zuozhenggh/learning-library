@@ -2,23 +2,28 @@
 
 ## About this Workshop
 
-This workshop will walk you through database change management via CI/CD using SQLcl and a the OCI DevOps Code Repository. You will be using an Autonomous Database to create database objects that you will commit to the repository as well as see database change tracking via SQLcl and Liquibase. These skills will set the baseline for expanding CI/CD into areas such as pipelines and automated deployment.
+This workshop will walk you through database change management via CI/CD using SQLcl. You will be using an Autonomous Database to create database objects and see database change tracking via SQLcl and Liquibase. These skills will set the baseline for expanding CI/CD into areas such as repositories, pipelines and automated deployment.
 
-*Estimated Workshop Time:* 2 Hours
+*Estimated Workshop Time:* 1 Hour
 
 ### Objectives
 
 In this lab you will learn to use SQLcl and git to track and apply changes across databases for CI/CD processes.
 
-- Create an autonomous database and sameple schemas
+- Create an autonomous database, objects and schemas
 - Use SQLcl to create a baseline of an Oracle Database schema
-- Commit the baseline to a git repository
 - Create and track database object changes with SQLcl
-- Apply the changes to a new schema and see the results
+- Apply the changes to a new schema and see how SQLcl and Liquibase manage database change tracking
 
 ### Prerequisites
 This lab assumes you have:
 * Completed the [Getting Started](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md) lab
+
+## Oracle Database CI/CD for Developers
+
+### **Lab 1:** Use SQLcl for Database Change Management/Tracking
+
+### **Lab 2:** Create and Apply Database Changes with SQLcl
 
 ## Learn More
 
