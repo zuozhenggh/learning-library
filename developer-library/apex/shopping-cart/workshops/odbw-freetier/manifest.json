@@ -11,11 +11,11 @@
         "filename": "../../../common/1-sign-up-apex/1-sign-up-apex.md"
       },
       {
-        "title": "Lab 1: Install Sample Tables",
+        "title": "Lab 1: Install a Sample Dataset",
         "filename": "../../installing-sample-tables/installing-sample-tables.md"
       },
       {
-        "title": "Lab 2: Add Columns to Products Table",
+        "title": "Lab 2: Add Columns to the Products Table",
           "filename": "../../adding-columns/adding-columns.md"
       },
       {
@@ -39,13 +39,17 @@
         "filename": "../../creating-add-to-cart-page/creating-add-to-cart-page.md"
       },            
       {
-        "title": "Lab 8: Improve Products Page",
+        "title": "Lab 8: Improve the Products Page",
         "filename": "../../improving-products/improving-products.md"
       },
       {
-        "title": "Lab 9: Improve the App",
+        "title": "Lab 9: Improve the Application",
         "filename": "../../improving-app/improving-app.md"
       },
+      {
+        "title": "Lab 10: Terminate Oracle Autonomous Database Instance",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/terminate-adb/terminate-adb.md"
+      },         
       {
         "title": "Need Help?",
         "description": "Solutions to Common Problems and Directions for Receiving Live Help",

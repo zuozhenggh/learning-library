@@ -1,4 +1,4 @@
-# Find Closest Pizza Shops with Spatial
+# Find the closest pizza shops with Oracle Spatial
 
 ## Introduction
 
