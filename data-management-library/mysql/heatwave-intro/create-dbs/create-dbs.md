@@ -12,6 +12,7 @@ Estimated Lab Time: 15 minutes
 
 In this lab, you will be guided through the following tasks:
 
+
 - Create Virtual Cloud Network 
 - Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
 
@@ -21,7 +22,9 @@ In this lab, you will be guided through the following tasks:
 - Some Experience with MySQL Shell
 
 
-## Task 1: Create Virtual Cloud Network
+## Task 1: Create Virtual Cloud Network 
+
+*Note: Green Button users - Your Virtual Cloud Network already exist. Go to Task 2*
 
 1. Navigation Menu > Networking > Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
@@ -124,7 +127,7 @@ Description
  Select **HeatWave** to specify a HeatWave DB System
     ![MDS](./images/04mysql03-3.png " ")
 
-6. Create Administrator Credentials
+5. Create Administrator Credentials
 
  Enter Username
     ```
@@ -141,7 +144,7 @@ Description
     ```
     ![MDS](./images/04mysql04.png " ")
 
-7. On Configure networking, keep the default values
+6. On Configure networking, keep the default values
 
     Virtual Cloud Network: **MDS-VCN**
     
@@ -149,7 +152,7 @@ Description
 
     ![MDS](./images/04mysql05.png " ")
 
-8. On Configure placement under 'Availability Domain'
+7. On Configure placement under 'Availability Domain'
    
     Select AD-3
 
@@ -157,39 +160,58 @@ Description
 
     ![MDS](./images/04mysql06-3.png" ")
 
-9. On Configure hardware, keep default shape as **MySQL.HeatWave.VM.Standard.E3**
+8. On Configure hardware, keep default shape as **MySQL.HeatWave.VM.Standard.E3**
 
-    Data Storage Size (GB) Keep default value:  **1024**
-    ![MDS](./images/04mysql07-3.png" ")
+    Data Storage Size (GB) Set value to:  **100**
+    
+    ```
+    <copy>100</copy>
+    ``` 
+    ![MDS](./images/04mysql07-3-100.png" ")
 
-10. On Configure Backups, disable 'Enable Automatic Backup'
+9. On Configure Backups, disable 'Enable Automatic Backup'
 
     ![MDS](./images/04mysql08.png" ")
 
-11. Click on Show Advanced Options 
+10. Click on Show Advanced Options 
 
-    Select Data Import tab
+11. Select Data Import tab. 
+12. To enter the PAR Source URL, use one of the folloing links depending on your Tenancy Region
 
-    Copy and paste the following to PAR Source URL: 
+    **US(Ashburn) Region**:
+        ![MDS](./images/region-ashburn.png" ")
+    
+    Copy and paste the following *Asburn link*  to PAR Source URL: 
   
     ```
-    <copy> https://objectstorage.us-ashburn-1.oraclecloud.com/p/RpoC9Zza6bcxIAWkNXFVKD0dsmRQJRMvNthgzbr3TUnO9pTYpEhoSFP7_6RNZ1lv/n/mysqlpm/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
+    <copy> https://objectstorage.us-ashburn-1.oraclecloud.com/p/RpoC9Zza6bcxIAWkNXFVKD0dsmRQJRMvNthgzbr3TUnO9pTYpEhoSFP7_6RNZ1lv/n/mysqlpm/b/airportdb-bucket/o/airportdb/@.manifest.json  </copy>
     ```   
+        
+    **UK South(London) Region**
+        ![MDS](./images/region-london.png" ")
+    
+    Copy and paste the following *London link*  to PAR Source URL: 
+  
+    ```
+    <copy> https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
+    ```   
+  
+    Your PAR Source URL entry should look like this:
     ![MDS](./images/04mysql08-2.png" ")
 
-12. Review **Create MySQL DB System**  Screen 
+13. Review **Create MySQL DB System**  Screen 
 
     ![MDS](./images/04mysql09-3.png" ")
 
     
     Click the '**Create**' button
 
-13. The New MySQL DB System will be ready to use after a few minutes 
+14. The New MySQL DB System will be ready to use after a few minutes 
 
     The state will be shown as 'Creating' during the creation
     ![MDS](./images/04mysql10-3.png" ")
 
-14. The state 'Active' indicates that the DB System is ready for use 
+15. The state 'Active' indicates that the DB System is ready for use 
 
     On MDS-HW Page, check the MySQL Endpoint (Private IP Address) 
 

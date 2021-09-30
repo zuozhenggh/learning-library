@@ -1,8 +1,8 @@
-# Build Your Tables and Views - Install Sample Tables
+# Install a sample dataset
 
 ## Introduction
 
-In this lab, you will learn how to install sample tables and views from Sample Datasets. This particular sample dataset is a collection of customers, stores, products, and orders that will be used for managing the shopping cart.
+In this lab, you will learn how to install sample tables and views from Sample Datasets. This particular sample dataset is a collection of customers, stores, products, and orders used to manage the shopping cart.
 
 Estimated Lab Time: 5 minutes
 
@@ -42,7 +42,7 @@ Note: You do NOT want to click Create Application, as you will manually create a
 
     ![](images/object-browser.png " ")
 
-3. Click on the new tables and the various tabs, such as Data, Constraints, and so forth, to review the table details.
+3. Click the new tables and the various tabs, such as Data, Constraints, and so forth, to review the table details.
 
 
 This completes Lab 1. You now know how to install a sample dataset.
