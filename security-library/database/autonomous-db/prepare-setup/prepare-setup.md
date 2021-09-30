@@ -110,42 +110,52 @@ Although you can connect to your Autonomous DB using local PC desktop tools like
 
     ![](./images/adb-set_013.png " ")
 
- 5. Click [**Sign in**]
+5. Click [**Sign in**]
  
- 6. The Database Actions page opens. In the Development box, click [**SQL**]
+6. The Database Actions page opens. In the Development box, click [**SQL**]
 
     ![](./images/adb-set_014.png " ")
 
   **Note:** The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click [**Next**] to take a tour through the informational boxes
 
-7. Run the init scripts into SQL Worksheet
+7. Copy/Paste the following SQL queries and run them into SQL Worksheet
 
-    - Copy/Paste the following SQL queries
+    - To create the working schema
 
       ````
       <copy>
-        -- Create HR schema
-        CREATE USER hr IDENTIFIED BY WElcome_123#;
-        GRANT CREATE SESSION, CREATE TABLE TO hr;
-        GRANT UNLIMITED TABLESPACE TO hr;
-        BEGIN
-          ORDS_ADMIN.ENABLE_SCHEMA(p_enabled => TRUE, p_schema => UPPER('hr'), p_url_mapping_type => 'BASE_PATH', p_url_mapping_pattern => LOWER('hr'), p_auto_rest_auth => TRUE);
-        END;
-        /
-        CREATE TABLE hr.customers AS SELECT * FROM sh.customers;
-        CREATE TABLE hr.countries AS SELECT * FROM sh.countries;
+      -- Create SH1 schema
+      CREATE USER sh1 IDENTIFIED BY WElcome_123#;
+      GRANT CREATE SESSION, CREATE TABLE TO sh1;
+      GRANT UNLIMITED TABLESPACE TO sh1;
+      BEGIN
+          ORDS_ADMIN.ENABLE_SCHEMA(p_enabled => TRUE, p_schema => UPPER('sh1'), p_url_mapping_type => 'BASE_PATH', p_url_mapping_pattern => LOWER('sh1'), p_auto_rest_auth => TRUE);
+      END;
+      /
+      CREATE TABLE sh1.customers AS SELECT * FROM sh.customers;
+      CREATE TABLE sh1.countries AS SELECT * FROM sh.countries;
 
       </copy>
       ````
+
+    - To create the working users
+
       ````
       <copy>
-        -- Create APPUSER user
-        CREATE USER appuser IDENTIFIED BY WElcome_123#;
-        GRANT CREATE SESSION, READ ANY TABLE TO appuser;
-        BEGIN
+      -- Create DBA_DEBRA user
+      CREATE USER dba_debra IDENTIFIED BY WElcome_123#;
+      GRANT PDB_DBA TO dba_debra;
+      BEGIN
+          ORDS_ADMIN.ENABLE_SCHEMA(p_enabled => TRUE, p_schema => UPPER('dba_debra'), p_url_mapping_type => 'BASE_PATH', p_url_mapping_pattern => LOWER('dba_debra'), p_auto_rest_auth => TRUE);
+      END;
+      /
+      -- Create APPUSER user
+      CREATE USER appuser IDENTIFIED BY WElcome_123#;
+      GRANT CREATE SESSION, READ ANY TABLE TO appuser;
+      BEGIN
           ORDS_ADMIN.ENABLE_SCHEMA(p_enabled => TRUE, p_schema => UPPER('appuser'), p_url_mapping_type => 'BASE_PATH', p_url_mapping_pattern => LOWER('appuser'), p_auto_rest_auth => TRUE);
-        END;
-        /
+      END;
+      /
 
       </copy>
       ````
@@ -153,7 +163,6 @@ Although you can connect to your Autonomous DB using local PC desktop tools like
     - Press [**F5**] or click on the "Run Scripts" icon
 
          ![](./images/adb-set_015.png " ")
-
          ![](./images/adb-set_016.png " ")
 
     - Check that there are no errors

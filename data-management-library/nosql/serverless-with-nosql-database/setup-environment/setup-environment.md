@@ -33,7 +33,7 @@ This lab assumes you have:
 
 3. Click **Create Compartment.** This opens up a new window.
 
-  Enter **demonosql** as compartment **Name** field, enter test into **Description** field and press **Create Compartment** button at bottom of window. The **Parent Compartment** field will display your current parent compartment -- make sure this is your **root** compartment, whatever that is for your case. This HOL assumes the 'demonosql' compartment is a child of the root compartment.
+  Enter **demonosql** as compartment **Name** field, enter some text into **Description** field and press **Create Compartment** button at bottom of window. The **Parent Compartment** field will display your current parent compartment -- make sure this is your **root** compartment, whatever that is for your case. This HOL assumes the 'demonosql' compartment is a child of the root compartment.
 
     ![](images/create-compartment.png)
 
@@ -44,7 +44,7 @@ This lab assumes you have:
 
   ![](images/user-profile.png)
 
-2. Click **User Settings** again. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 4.
+2. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 4.
 
     ![](images/user-ocid.png)
 
@@ -72,7 +72,7 @@ This lab assumes you have:
 
 ## Task 3: Get Data and Code Bundle
 
-In this task we will copy over a data bundle stored on object storage and place that in the Cloud Shell.   
+In this task we will copy over a data bundle stored on object storage and place that in the Cloud Shell.
 
 1. Execute the following in your Cloud Shell.
 
@@ -113,7 +113,7 @@ In this node.js snippet, we used the credential information created in Task 2 an
         });
 ````
 
-  Another way to handle authentication is with Instance and Resource Principals. The Oracle NoSQL SDKs support both of them. Resource principals are primarily used when authenticating from functions.   We will show you an example of using Resource Principals.
+  Another way to handle authentication is with Instance and Resource Principals. The Oracle NoSQL SDKs support both of them. Resource principals are primarily used when authenticating from functions. We will show you an example of using Resource Principals.
 
   Instance Principals is a capability in Oracle Cloud Infrastructure Identity and Access Management (IAM) that lets you make service calls from an instance. With instance principals, you don’t need to configure user credentials or rotate the credentials. Instances themselves are a principal type in IAM and are set up in IAM. You can think of them as an IAM service feature that enables instances to be authorized actors (or principals) to perform actions on service resources.
 
@@ -147,7 +147,7 @@ def get_handle():
      return borneo.NoSQLHandle(config)
 ```
 
-A similar switch can be made here to use **Instance Principals**, replace "create_with_resource_principal()" with "create_with_instance_principal()" and you are all set.
+A similar switch can be made here to use **Instance Principals**, replace "create\_with\_resource\_principal()" with "create\_with\_instance\_principal()" and you are all set.
 
 In the next labs we are going to be running application code and we need an instance to run that from. In Task 2 we started the Cloud Shell and we will run the application from that instance. Currently, Cloud Shell does not support Instance Principals so in those labs we will be using credentials.
 
