@@ -1,4 +1,4 @@
-# Create the Order Page
+# Create the order page
 
 ## Introduction
 
@@ -10,7 +10,7 @@ Customers will find the details of the order:
 - Total price
 - Quantity and price of the items.
 
-Once you have finished all the steps described in this lab, your page will look like the following image:
+Once you have finished the workshop and updated all the products as described in the steps, your page will look like the following image:
 ![](images/orders-page.png " ")
 
 Estimated Lab Time: 15 minutes
@@ -51,7 +51,7 @@ Add a region to the page to display order details.
 Add an item to save the order ID.
 
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
-2. Right click on the region and click on **Create Page Item**.
+2. Right-click the region and click **Create Page Item**.
     ![](images/create-item.png " ")
 3. Create one hidden item as follows:
 
@@ -65,7 +65,7 @@ Add an item to save the order ID.
 Add a region to contain Order details and items.
 
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
-2. Right click on the region and click on **Create Sub Region**.
+2. Right click the region and click **Create Sub Region**.
     ![](images/create-sub-region.png " ")
 3. In the Property Editor, enter the following:
     - For Title - enter **Order: &P16_ORDER.**
@@ -75,7 +75,7 @@ Add a region to contain Order details and items.
 Add a region to display Order details.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.
-2. Right click on the region and click on **Create Sub Region**.
+2. Right click the region and click **Create Sub Region**.
     ![](images/create-sub-region2.png " ")
 3. In the Property Editor, enter the following:
     - For Title - enter **Order Details**
@@ -98,7 +98,7 @@ Add a region to display Order details.
             WHERE  order_id = :P16_ORDER 
             </copy>
             ```
-4. Click on Attributes.
+4. click Attributes.
     ![](images/attributes.png " ")
     -  Search for Secondary Body in the filter and do the following:
         - Set Advanced Formatting to **On**
@@ -116,7 +116,7 @@ Add a region to display Order details.
 Add a region to display items in the order.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.
-2. Right click on the region and click on **Create Sub Region**.
+2. Right-click the region and click **Create Sub Region**.
     ![](images/create-sub-region3.png " ")
 3. In the Property Editor, enter the following:
     - For Title - enter **Items**
@@ -139,7 +139,7 @@ Add a region to display items in the order.
             AND  order_id = :P16_ORDER 
             </copy>
             ```
-4. Click on Attributes and do the following:
+4. click Attributes and do the following:
     ![](images/attributes2.png " ")
 
     - Under Title section:

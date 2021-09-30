@@ -19,7 +19,7 @@ In this lab, you will:
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* SSH Keys for Putty or OpenSSH (id_rsa.ppk or id_rsa, and id_rsa.pub)
+* SSH Keys for Putty or OpenSSH (`id_rsa.ppk` or `id_rsa`, and `id_rsa.pub`)
 
 
 ## Task 1: Create Virtual Cloud Network (VCN)
@@ -61,7 +61,7 @@ In this lab, you will:
     - Virtual cloud network: [Your Initials]-VCN
     - Subnet: Public Subnet
     - Assign a public IP address
-    - Add SSH keys: Choose SSH key files > id_rsa.pub
+    - Add SSH keys: Choose SSH key files > `id_rsa.pub`
 
 2. Click **Create**. Wait for Compute Instance to finish provisioning, and have status Available.
 
@@ -77,7 +77,7 @@ In this lab, you will:
 
     ![](./images/putty1.png "")
 
-6. Use the id_rsa.ppk private key. (Windows only)
+6. Use the `id_rsa.ppk` private key. (Windows only)
 
     ![](./images/putty2.png "")
 
@@ -112,8 +112,6 @@ For some of the labs we need graphical user interface, and this can be achieved 
     yum -y groupinstall "Server with GUI"
 
     yum -y install xrdp tigervnc-server terminus-fonts terminus-fonts-console cabextract
-
-    yum -y update sqldeveloper.noarch
 
     yum -y localinstall https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
