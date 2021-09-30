@@ -35,19 +35,24 @@ This Lab assumes you have:
     * For configuration instructions, see [Mandatory RTE Configurations](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/configuring-runtime-environment.html#GUID-EB33DDFD-7444-434D-8944-059564A453FD).
 
 
-## **Task 1:** **Create a CSV file**
+## **Task 1:** Create a CSV file
 
-Create a CSV file and copy the following lines into it:
+Create a CSV file on your local drive with the data below:
 
-* `ProductLn,ProductType,Product,OrderMethod,CountrySold,QuantitySold,UnitSalePrice`
-* `Personal Accessories,Watches,Legend,Special,Brazil,1,240`
-* `Outdoor Protection,First Aid,Aloe Relief,E-mail,United States,3,5.23`
-* `Camping Equipment,Lanterns,Flicker Lantern,Telephone,Italy,3,35.09`
-* `Camping Equipment,Lanterns,Flicker Lantern,Fax,United States,4,35.09`
-* `Golf Equipment,Irons,Hailstorm Steel Irons,Telephone,Spain,5,461`
+```
+<copy>
 
+ ProductLn,ProductType,Product,OrderMethod,CountrySold,QuantitySold,UnitSalePrice
+ Personal Accessories,Watches,Legend,Special,Brazil,1,240
+ Outdoor Protection,First Aid,Aloe Relief,E-mail,United States,3,5.23
+ Camping Equipment,Lanterns,Flicker Lantern,Telephone,Italy,3,35.09
+ Camping Equipment,Lanterns,Flicker Lantern,Fax,United States,4,35.09
+ Golf Equipment,Irons,Hailstorm Steel Irons,Telephone,Spain,5,461
+</copy>
 
-## **Task 2:** **Log in to GoldenGate Stream Analytics**
+```
+
+## **Task 2:** Log in to GoldenGate Stream Analytics
 
 To log in to the GGSA instance:
 
@@ -59,7 +64,7 @@ To log in to the GGSA instance:
 
 * **Password:** **welcome1**
 
-## **Task 3:** **Create a File Stream**
+## **Task 3:** Create a File Stream
 
 To create a File stream:
 
@@ -67,62 +72,62 @@ To create a File stream:
 
 2. Select **File** from the list, to display the **Create Stream** screen.
 
-![](./images/CreateStream.png "")
+ ![](./images/CreateStream.png "")
 
 3. Select **Create Pipeline with this source (Launch Pipeline Editor)**.
 
-![](./images/CreateStream2.png "")
+ ![](./images/CreateStream2.png "")
 
 4. Click **Next**, to update the source details.
 
-## **Task 4:** **Upload the CSV file**
+## **Task 4:** Upload the CSV file
 
 To upload the CSV file:
 
 1. On the **Source Details** screen, click **Upload File** to browse and upload the CSV file that you had created in **Task 1**.
 
-![](./images/fileupload.png "")
+ ![](./images/fileupload.png "")
 
 2. Click **Next**, to display the **Data Format** screen.
 
-## **Task 5:** **Set Record Header**
+## **Task 5:** Set Record Header
 
 To set the first record as header:
 
 1. On the **Data Format** screen, select **First record as header**.
 
-![](./images/filerecasfrmt.png "")
+ ![](./images/filerecasfrmt.png "")
 
 2. Click **Next**, to infer shape for the event.
 
-## **Task 6:** **Infer Event Shape**
+## **Task 6:** Infer Event Shape
 
 To infer shape from stream:
 
 1. On the **Shape** screen, ensure **Infer Shape** and **From Stream** options are selected, and verify if the shape of the event is successfully inferred as shown in following screenshot.
 
-![](./images/shape.png "")
+ ![](./images/shape.png "")
 
 2. Click **Save**, to open the **Create Pipeline** screen.
 
-## **Task 7:** **Create a Pipeline**
+## **Task 7:** Create a Pipeline
 
 To create a pipeline:
 
 1. On the **Create Pipeline** screen, enter a name for the pipeline, and click **Save** to launch the Pipeline Editor.
 
-![](./images/createpplne.png "")
+ ![](./images/createpplne.png "")
 
 
-## **Task 8:** **View the Pipeline in the Pipeline Editor**
+## **Task 8:** View the Pipeline in the Pipeline Editor
 
 1. In the pipeline editor, you will see the message *Starting Pipeline* followed by *Listening to Events*. This is the first access of the cluster, therefore it will take a while to copy the libraries.
 
 2. You should eventually see the following screen, with a single node representing the source stream in the left pane, and the **Sources** used in the pipeline, in the right pane.
 
-![](./images/pplneditor.png "")
+ ![](./images/pplneditor.png "")
 
-## **Task 9:** **Add a Query Stage**
+## **Task 9:** Add a Query Stage
 
 To add a **Query** stage to the source stream:
 
@@ -132,7 +137,7 @@ To add a **Query** stage to the source stream:
 
 3. Click **Save**. A Query stage is added to the source stream.
 
-## **Task 10:** **Add a Filter to the Query Stage**
+## **Task 10:** Add a Filter to the Query Stage
 
 To add a **Filter** to a **Query** stage:
 
@@ -140,15 +145,15 @@ To add a **Filter** to a **Query** stage:
 
 2. Click **Add a Filter**. In this example, the filter is **QuantitySold is greater than 4**, as shown in the following screenshot.
 
-![](./images/addquery.png "")
+ ![](./images/addquery.png "")
 
-## **Task 11:** **Publish the Pipeline**
+## **Task 11:** Publish the Pipeline
 
 To publish the pipeline:
 
 1. Click **Publish** on the top-right corner.
 
-![](./images/pubpplne.png "")
+ ![](./images/pubpplne.png "")
 
 2. Publish with defaults, for your pipeline to filter data in real-time.
 
@@ -166,6 +171,4 @@ To publish the pipeline:
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Prabhu Thukaram, Senior Director, Software Development
-
-
 * **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, September 2021
