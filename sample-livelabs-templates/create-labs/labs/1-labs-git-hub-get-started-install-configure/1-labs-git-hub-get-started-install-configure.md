@@ -130,7 +130,7 @@ To clone the forked repository:
 
   ![](./images/contribute-to-parent.png " ")
 
-You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
@@ -145,10 +145,8 @@ You may now [proceed to the next lab](#next).
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 * **Contributors:**
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-
-* **Reviewed by:**  
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+    * Madhusudhan Rao, Principal Product Manager, Database
 
-
-* **Last Updated By/Date:** Madhusudhan Rao, February 2021
+* **Last Updated By/Date:** Anuradha Chepuri, October 2021
