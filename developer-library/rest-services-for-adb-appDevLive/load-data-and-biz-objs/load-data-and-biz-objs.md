@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will use the SQL Developer Web browser-based tool, connect to your Database, create and REST enable a table.
+In this lab you will use the batch load API to load large amounts of data into a table.
 
 Estimated Lab Time: 20 minutes
 

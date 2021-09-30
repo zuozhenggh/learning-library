@@ -13,12 +13,12 @@
         {
             "title": "Lab 2: Development environment preparation",
             "description": "Provision Oracle Cloud Infrastructure basic resources.",
-            "filename": "./introduction/intro-soda.md"
+            "filename": "./../../introduction/intro-soda.md"
         },
         {
             "title": "Lab 3: Build Python application using SODA and JSON",
             "description": "This lab shows how easy it is to build a simple Python application that uses JSON documents from MongoDB Cloud Atlas and Oracle Autonomous JSON Database using SODA APIs.",
-            "filename": "./soda-python/soda-python.md"
+            "filename": "./../../soda-python/soda-python.md"
         },
         {
             "title": "Need Help?",
