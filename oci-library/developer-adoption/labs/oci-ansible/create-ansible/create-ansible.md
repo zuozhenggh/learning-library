@@ -1,4 +1,4 @@
-# Archiving Stream Data to Object Storage
+# Oracle Cloud Infrastructure Ansible Collection
 
 In this tutorial, we’re going to use [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/service-connector-hub/overview.htm) to read an OCI stream of data and archive that data to Object Storage.
 
