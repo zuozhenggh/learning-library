@@ -228,7 +228,7 @@ For a time series model, you can use the `DM$VP` view to perform scoring or pred
 	- `round(LOWER,2) LOWER_BOUND, round(UPPER,2) UPPER_BOUND`: Specifies the lower and upper confidence levels rounded to two numericals after the decimal.
 
 2. To see a visual representation of the predictions in OML Notebooks, run the above same query with the following settings:
-Click settings and drag `DATE_ID` to keys and `FORECASTED_SOLD (avg)`, `ACTUAL_SOLD (avge)`, `LOWER_BOUND (avg)`, and `UPPER_BOUND(avg)` to values.
+Click **settings** and drag `DATE_ID` to **keys** and `FORECASTED_SOLD (avg)`, `ACTUAL_SOLD (avge)`, `LOWER_BOUND (avg)`, and `UPPER_BOUND(avg)` to **values**.
 
     ```
     <copy>
@@ -261,6 +261,6 @@ You may now proceed to the next lab.
 
 
 ## Acknowledgements
-* **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation
-* **Contributors** -  Mark Hornick, Sr. Director, Data Science/Machine Learning PM; Sherry LaMonica, Principal Member of Technical Staff, Data Science/Machine Learning
+* **Author** - Sarika Surampudi, Senior User Assistance Developer, Oracle Database User Assistance Development
+* **Contributors** -  Mark Hornick, Sr. Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning
 * **Last Updated By/Date** - Sarika Surampudi, September 2021
