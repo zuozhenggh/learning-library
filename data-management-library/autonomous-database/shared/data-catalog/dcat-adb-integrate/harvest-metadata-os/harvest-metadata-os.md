@@ -46,7 +46,7 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
         ```
         <copy>https://swiftobjectstorage.us-phoenix-1.oraclecloud.com</copy>
         ```
-        >**Note:** In this lab, you will be accessing three Oracle Object Storage buckets that contain the data. The three buckets are located in the **adwc4pm** tenancy in the **us-phoenix-1** region. In the next step, you'll add three connections to this data asset using pre-authenticated requests (PARs) that are provided for you. For information on PAR, see [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) in the _Oracle Cloud Infrastructure_ documentation.
+        >**Note:** In this lab, you will be accessing three Oracle Object Storage buckets that contain the data using three pre-authenticated requests (PARs) that are provided for you. The three buckets are located in the **adwc4pm** tenancy in the **us-phoenix-1** region in our example. In the next step, you'll add three data connections to this data asset using the three pre-authenticated requests (PARs). Note that if you were using an Oracle Object Storage data asset type instead of PAR, you would only need one data connection instead of three. For information on PARs, see [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) in the _Oracle Cloud Infrastructure_ documentation.
 
        * **Namespace:** Enter **adwc4pm**. This is the Namespace that contains the Object Storage buckets that you will use.        
 

@@ -177,24 +177,41 @@ Create and run the PL/SQL procedures to initialize the lab before you synchroniz
 
 In this task, you'll gather information about the Data Catalog instance which you will need in the next task. Save this information in a text editor of your choice such as Notepad in Windows so that you can easily copy and paste this information.
 
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you already used in this workshop, if you are not already logged in. On the **Sign In** page, select your tenancy if needed, enter your username and password, and then click **Sign In**. The Oracle **Cloud Console** Home page is displayed.
+1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you already used in this workshop, if you are not already logged in. On the **Sign In** page, select your tenancy if needed, enter your username and password, and then click **Sign In**. The Oracle **Console** Home page is displayed.
 
-2. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**. In the list of Data Catalog instances, search for your **training-dcat-instance**. In the row for the instance, click the **Actions** button, and then select **Copy OCID** from the context menu. Next, paste that OCID to an editor or a file, so that you can easily retrieve it later in this task.
+2. To find your _Tenancy's OCID_, from the **Console**, click the **Profile** icon, and then click **Tenancy** from the drop-down list.
+
+    ![](./images/get-tenancy-ocid-1.png " ")
+
+3. On the **Tenancy Details** page, in the **Tenancy Information** tab, click the **Copy** link for the **OCID** field. The **Copy** link text changes briefly to **Copied** and then back to **Copy**. Paste the copied OCID to your text editor and label it as the **Tenancy OCID** to easily identify it later.
+
+    ![](./images/get-tenancy-ocid-2.png " ")
+
+4. To find your _Region-Identifier_, from the **Console**, click the **Region** drop-down list, and then click **Manage Regions**. The **Infrastructure Regions** page is displayed. In the **Region** section, your Home Region to which you are subscribed is displayed along with your **Region Identifier**, `us-phoenix-1`, in our example. Copy and paste the region identifier to your text editor and label it as the **Region Identifier** to easily identify it later.
+
+5. To find your _Compartment OCID_, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Compartments**.
+
+6. On the **Compartments** page, in the row for your **training-dcat-compartment**, hover over the OCID link in the **OCID** column, and then click **Copy** to copy the OCID for the **training-dcat-compartment**. Next, paste the copied OCID to your text editor and label it as the **Compartment OCID** to easily identify it later.
+
+    ![](./images/copy-compartment-ocid.png " ")
+
+7. To find your _Data Catalog OCID_, open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, select **Data Catalog**. On the **Data Catalogs** page, in the list of Data Catalog instances, search for your **training-dcat-instance**. In the row for the instance, click the **Actions** button, and then select **Copy OCID** from the context menu. Next, paste copied OCID to your text editor and label it as the **Data Catalog OCID** to easily identify it later.
 
     ![](./images/dcat-ocid.png " ")
 
-3.   To find your own _region-identifier_, from the **Console**, click the **Region** drop-down list, and then click **Manage Regions**.
+8. To find your _Data Catalog Data Asset Key_, from the the **Data Catalogs** page from the previous step, in the list of Data Catalog instances, search for and click your **training-dcat-instance** link. On the Data Catalog **Home** page, click the **Data Assets** link. On the **Data Assets** page, click your **Data Lake** data asset.
 
-    ![](./images/manage-regions.png " ")
+9. In the **Summary** tab of the **Data Lake** page, in the **Default Properties** section, highlight the value of the **Data asset key** field, and then right-click your mouse and select **Copy** from the context menu. Next, paste the copied data asset key to your text editor and label it as the **Data Asset Key** to easily identify it later.
 
-    The **Infrastructure Regions** page is displayed. In the **Region** section, your Home Region to which you are subscribed is displayed along with your **Region Identifier**, `ca-montreal-1`, in our example:
+    ![](./images/data-lake-asset-key.png " ")
 
-   ![](./images/region-identifier.png " ")
+10. To find your _User OCID_, from the **Console**, click the **Profile** icon, and then click **User Settings** from the drop-down list.
 
+    ![](./images/user-settings.png " ")
 
-4. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Compartments**. In the list of compartments, search for your **training-dcat-compartment**. In the row for the compartment, in the **OCID** column, hover over the **OCID** link and then click **Copy**. The status changes from **Copy** to **Copied**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this task.
+11. On the **User Details** page, in the **User Information** tab, click the **Copy** link for the **OCID** field. The **Copy** link text changes briefly to **Copied** and then back to **Copy**. Paste the copied OCID to your text editor and label it as the **User OCID** to easily identify it later.
 
-    ![](./images/compartment-ocid.png " ")
+    ![](./images/user-details.png " ")
 
 
 ## Task 4: Connect to Data Catalog
@@ -226,7 +243,7 @@ In this task, you'll gather information about the Data Catalog instance which yo
     </copy>
     ```
 
-3. Replace the values of the **`tenancy_ocid`**, **`dcat_region`**, **`dcat_compartment`**, **`dcat_ocid`**, **`dcat_sandbox_asset_key`**, and **`user_ocid`** with your own values that you have identified in **Task 1: Gather Information About your Data Catalog Instance** in this lab. **Note:** Task 1 is not yet fully completed as of September 29; therefore, not all the instructions on how to get your own ocids and other values are included yet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
+3. Replace the values of the **`tenancy_ocid`**, **`dcat_region`**, **`dcat_compartment`**, **`dcat_ocid`**, **`dcat_sandbox_asset_key`**, and **`user_ocid`** with your own values that you have identified in **Task 1: Gather Information About your Data Catalog Instance** in this lab. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
     ![](./images/define-variables.png " ")
 

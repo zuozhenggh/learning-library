@@ -1,10 +1,13 @@
+<!-- September 29, 2021: Per Marty's comments on September 29, I am removing tasks 3 and 4 and replacing then with notes about the privileges required for the current user if the user is not an admin like they are in this workshop. -->
+<!-- comments -->
+
 # Setup the Workshop Environment
 
 ## Introduction
 
-This lab walks you through the steps to get started with Oracle Cloud Infrastructure Data Catalog. First, you create a compartment for your Data Catalog instance. You create a new administrator user and a Data Catalog administrator group, and then add the new user to the new group. Next, you create the Oracle Cloud Infrastructure Identity and Access Management (IAM) policies that are required to create and manage a Data Catalog instance. Finally, you create a Data Catalog instance and import a business glossary. When you create a data catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata.
+This lab walks you through the steps to get started with Oracle Cloud Infrastructure Data Catalog. First, you create a compartment for your Data Catalog instance. You create a Dynamic group. Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). Next, you need to create policies to permit the dynamic group to access Oracle Cloud Infrastructure services such as Data Catalog, ADB, and Oracle Object Storage buckets. You then create a Data Catalog instance, create a new business glossary, and then import a glossary into the new glossary. When you create a data catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata. Finally, you create an Autonomous Database instance. Finally, you create an Autonomous Database instance.
 
-This workshop is directed at administrator users because they are granted the required access permissions.
+> **Note:** This workshop is directed at administrator users because they are granted the required access permissions. In real life scenarios, you would create a new administrator user and a Data Catalog administrator group, and then add the new user to the new group. Next, you create the Oracle Cloud Infrastructure Identity and Access Management (IAM) policies that are required to create and manage a Data Catalog and Autonomous Database instances.
 
 Estimated Time: 30 minutes
 
@@ -12,9 +15,8 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 * (Optional) Create a compartment for your Data Catalog objects.
-* (Optional) Create a user group for Data Catalog administrators.
-* Create policies to give your Data Catalog admins and other user groups access to use Data Catalog resources.
 * Create a Dynamic Group policy to allow Data Catalog to access your Object Storage resources.
+* Create the
 * Create a Data Catalog instance.
 * Import a Glossary into your Data Catalog instance.
 * Create and Autonomous Database instance.
@@ -66,8 +68,9 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
    ![](./images/compartment-created.png " ")
 
+<!-- Commenting out Tasks 3, 4, and original 7 per Marty's feedback.
 
-## Task 3: Create an IAM User to Be the Data Catalog Administrator
+Task 3: Create an IAM User to Be the Data Catalog Administrator
 
 A Cloud Administrator has complete control over all of the Data Catalog resources in the tenancy; however, it's a good practice to delegate administration tasks to one or more Data Catalog administrators. To create a new Data Catalog administrator for a service, a Cloud Administrator must create a user and then add that user to a Data Catalog administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
 
@@ -93,7 +96,7 @@ Create a new **Administrator** group that will have full access rights to the ne
 
     >**Note:** In this workshop, you will not login to OCI using the new **`training-dcat-admin-user`** user that you just created in this task; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-dcat-admin-user`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
 
-## Task 4: Create an IAM Data Catalog Administrators Group and Add the New User to the Group
+Task 4: Create an IAM Data Catalog Administrators Group and Add the New User to the Group
 
 Create a Data Catalog group whose members will be granted permissions to manage the Data Catalog.
 
@@ -122,9 +125,34 @@ Create a Data Catalog group whose members will be granted permissions to manage 
 7. Click **Groups** in the breadcrumbs to re-display the **Groups** page. The newly created group is displayed in the list of available groups.
 
    ![](./images/groups-page.png " ")
+-->
 
+## Task 3: Create a Data Catalog Instance
 
-## Task 5: Create a Data Catalog Instance
+To control who has access to Data Catalog, and the type of access for each group of users, you must create policies. By default, only the users in the Administrators group have access to all Data Catalog resources. For everyone else who's involved with Data Catalog, you must create policies that give them proper rights to Data Catalog resources. In this workshop, it is assumed that you are an administrator performing the steps in this workshop such as creating the Data Catalog and ADB instances. If you are not an administrator user, then your administrator user much grant you the policies listed below.
+
+Let's say you are not an Administrator but you do need to use and manage Data Catalog. Your Administrator can create a Data Catalog Group and add you and other non-Administrator users to this group. Assume that all of the resources that you will need to perform your job are in compartment named `training-dcat-compartment`. The following policy statements are required for the `training-dcat-users-group` group.
+
+The following statement allows the `training-dcat-users-group` group to perform all operations on all data catalog resources in the `training-dcat-compartment`.
+
+```
+allow group training-dcat-users-group to manage data-catalog-family in compartment training-dcat-compartment
+```
+
+The following policy statement grants the specified group to access the virtual network resources:
+
+```
+allow group training-dcat-users-group to manage virtual-network-family in compartment training-dcat-compartment
+```
+
+The following policy statement allows the specified group to view Oracle Cloud Infrastructure users who performed various actions in Data Catalog:
+
+```
+allow group training-dcat-users-group to inspect users in compartment training-dcat-compartment
+```
+
+>**Note:**
+Data Catalog offers both aggregate and individual resource-types for writing policies. You can use aggregate resource-types to write fewer policies. For example, instead of allowing a group to manage **`data-catalogs`** and **`data-catalog-data-assets`**, you can have a policy that allows the group to manage the aggregate resource-type, **`data-catalog-family`**. See [Data Catalog Policies](https://docs.oracle.com/en-us/iaas/data-catalog/using/policies.htm) in the Oracle Cloud Infrastructure documentation.
 
 Create a Data Catalog instance using the following steps.
 
@@ -146,8 +174,9 @@ Create a Data Catalog instance using the following steps.
 
    ![](./images/click-data-catalog.png " ")
 
+<!-- End of commenting out tasks 3 and 4. -->
 
-## Task 6: Create, Import, and Edit a Glossary
+## Task 4: Create, Import, and Edit a Glossary
 
 In this task, you create a new and empty business glossary in the newly created Data Catalog instance. Next, you  import an existing glossary from your local file system into the new glossary. You use a business glossary to define your concepts across your business domain. Creating a business glossary brings common understanding of the vocabulary used throughout your organization. In Data Catalog, you create categories and terms in a glossary to manage and organize your business concepts. Terms are the actual definitions of business concepts as agreed upon by different business stakeholders in your company. You use terms to organize your data entities and attributes. You can edit a glossary, category, or term to modify their default properties such as name, owner, status, and description, or any custom property that is associated with a glossary, category, or term. For detailed information on managing glossaries, see [Managing a Business Glossary](https://docs.oracle.com/en-us/iaas/data-catalog/using/manage-glossary.htm#create-glossary) in the _Oracle Cloud Infrastructure_ documentation.
 
@@ -215,8 +244,8 @@ In this task, you create a new and empty business glossary in the newly created 
 
    ![](./images/description-added.png " ")
 
-
-## Task 7: Create IAM Policies for Administering Your Service
+<!-- commented out this task
+Task 7: Create IAM Policies for Administering Your Service
 Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies to grant privileges to users and groups to use and manage Data Catalog resources. Before you can create and access a data catalog, you must also create a policy that grants the system access to networking resources.
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Policies**.
@@ -276,17 +305,18 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
      ![](./images/policies-page-2.png " ")
 
     >**Note:** You can click the name of a policy on this page to view and edit it.
+    -->
 
-## Task 8: Create a Dynamic Group
+## Task 5: Create a Dynamic Group
 Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). You can then create policies to permit instances to make API calls against Oracle Cloud Infrastructure services. When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
 
-In this task, you will first gather the Data Catalog instance's OCID which you will use when you create the Dynamic Group. Next, you create a Dynamic Group that includes the specific data catalog instance OCID as a resource in the group.
+In this task, you will first gather your compartment's OCID which you will use when you create the dynamic group. Next, you create a dynamic group that includes the specific compartment OCID as a resource in the group.
 
-1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, select **Data Catalog**.
+1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Compartments**.
 
-2. On the **Data Catalogs** page, in the row for your **training-dcat-instance**, click the **Action** button to display the context menu. Select **Copy OCID** from the context menu to copy the OCID for the **training-dcat-instance** Data Catalog instance. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
+2. On the **Compartments** page, in the row for your **training-dcat-compartment**, hover over the OCID link in the **OCID** column, and then click **Copy** to copy the OCID for the **training-dcat-compartment**. Next, paste that OCID to an editor or a file of your choice, so that you can retrieve it when you create the dynamic group.
 
-  ![](./images/copy-dcat-ocid.png " ")
+  ![](./images/copy-compartment-ocid.png " ")
 
 3. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
 
@@ -305,12 +335,7 @@ In this task, you will first gather the Data Catalog instance's OCID which you w
         <copy>resource.compartment.id='your-compartment-ocid'</copy>
         ```
 
-        In our example, the dynamic rule would look as follows:
-
-        ```
-        resource.compartment.id='ocid1.compartment.oc1..aaaaaaaa4tb73bunlssmtoalapbsnujiss46jwgqag7xkqqk2z4evbpmm2bq'
-        ```
-        > **Note:** Substitute the 'your-compartment-ocid' with your own compartment's OCID.
+        > **Note:** Substitute the 'your-compartment-ocid' placeholder above with your own compartment's OCID.
 
         ![](./images/moviestream-dynamic-group-db.png " ")
 
@@ -323,10 +348,8 @@ In this task, you will first gather the Data Catalog instance's OCID which you w
          ![](./images/dynamic-group-created.png " ")
 
 
-## Task 9: Create Object Storage and Data Catalog Resources Types Access Policies         
-After you have created a dynamic group, you need to create policies to permit the dynamic group to access Oracle Cloud Infrastructure services. In this task, you create a policy to allow Data Catalog in your `training-dcat-compartment` to access any object in your **Oracle Object Storage**, in any bucket. At a minimum, you must have `READ` permissions to all the individual resource types such as `objectstorage-namespaces`, `buckets`, and `objects`, or to the Object Storage aggregate resource type `object-family`.
-
-Create an access policy to grant ``manage`` permission to the aggregate resource-types: ``object-family`` and **`data-catalog-family`** as follows:
+## Task 6: Create Access Policy for Dynamic Group         
+After you have created a dynamic group, you need to create a policy to permit the dynamic group to access Oracle Cloud Infrastructure services. In this task, you create a policy to allow Data Catalog in your `training-dcat-compartment` to manage the aggregate resource-type **`data-catalog-family`** as follows:
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Policies**.
 
@@ -338,16 +361,10 @@ Create an access policy to grant ``manage`` permission to the aggregate resource
 
 3. In the **Create Policy** dialog box, provide the following information:
     + Enter **`moviestream-object-storage-policy`** in the **Name** field.
-    + Enter **`Grant Dynamic Group instances access to the Oracle Object Storage and Data Catalog resources in your compartment`** in the **Description** field.
+    + Enter **`Grant Dynamic Group instances access to the Data Catalog resources in your compartment`** in the **Description** field.
     + Select **`training-dcat-compartment`** from the **Compartment** drop-down list, if it's not already selected.
     + In the **Policy Builder** section, click and slide the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
-    + Allow Data Catalog to access any object in your Oracle Object Storage, in any bucket, in the `training-dcat-compartment` compartment. Click the **Copy** button in the following code box, and then paste it in the **Policy Builder** text box.  
-
-        ```
-        <copy>allow dynamic-group moviestream-dynamic-group to manage object-family in compartment training-dcat-compartment</copy>
-        ```
-
-     Click the **Copy** button in the following code box, and then paste it in on the second line in the **Policy Builder** text box. This policy statement allows any resource in the `moveistream-dynamic-group` to run any catalog operation on any catalog in the `training-dcat-compartment` compartment.
+    + Allow Data Catalog to access any object in your Oracle Object Storage, in any bucket, in the `training-dcat-compartment` compartment. Click the **Copy** button in the following code box, and then paste it in the **Policy Builder** text box. This policy statement allows any resource in the `moveistream-dynamic-group` to run any catalog operation on any catalog in the `training-dcat-compartment` compartment.  
 
         ```
         <copy>allow dynamic-group moviestream-dynamic-group to manage data-catalog-family in compartment training-dcat-compartment</copy>
@@ -363,8 +380,13 @@ Create an access policy to grant ``manage`` permission to the aggregate resource
 
           ![](./images/moviestream-object-storage-policy-created.png " ")
 
+    > **Note:** In this workshop, you will access public Oracle Object Storage buckets using specific public Pre-authenticated requests (PARs); therefore, you don't need to provide a policy statement to allow Data Catalog in your `training-dcat-compartment` to access any object in your **Oracle Object Storage** (since the public pars are not in this compartment); however, if you were not using public PARs, then in order to access your Oracle Object Storage buckets in your compartment (such as the training-dcat-compartment in this example), you would need the following policy statement:
 
-## Task 10: Create an Autonomous Database Instance
+    ```
+    allow dynamic-group moviestream-dynamic-group to manage object-family in compartment training-dcat-compartment
+    ```
+
+## Task 7: Create an Autonomous Database Instance
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.

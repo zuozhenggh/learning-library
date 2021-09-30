@@ -65,7 +65,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
     ```
     <copy>
-    https://objectstorage.us-phoenix-1.oraclecloud.com/p/asZnZNzK6aAz_cTEoRQ9I00x37oyGkhgrv24vd_SGap2joxi3FvuEHdZsux2itTj/n/adwc4pm/b/moviestream_scripts/o/Notebook-Data%20Lake%20Accelerator.json
+    https://objectstorage.us-phoenix-1.oraclecloud.com/p/asZnZNzK6aAz_cTEoRQ9I00x37oyGkhgrv24vd_SGap2joxi3FvuEHdZsux2itTj/n/adwc4pm/b/moviestream_scripts/o/Workshop%20Notebook%20-%20Data%20Lake%20Accelerator.json
     </copy>
     ```
 
@@ -75,7 +75,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
     ![](./images/notebook-imported.png " ")
 
-4. Open the imported notebook. On the **Notebooks** page, click the **Data Lake Accelerator** notebook. The notebook is displayed in notebook **Editor**.
+4. Open the imported notebook. On the **Notebooks** page, click the **Workshop - Data Lake Accelerator** notebook. The notebook is displayed in the notebook **Editor**.
 
     ![](./images/notebook-displayed.png " ")
 
@@ -98,7 +98,7 @@ An interpreter is a plug-in that allows you to use a specific data processing la
 
 ## Task 4: Review and Run the Imported Notebook    
 
-1. Run the entire notebook by clicking the **Run all paragraphs** icon on the Notebook toolbar at the top of the page next to the notebook's name.
+1. Run the entire notebook by clicking the **Run all paragraphs** icon on the Notebook toolbar at the top of the page next to the notebook's name. Alternatively, you can examine the code in each paragraph separately, run it, and then review the output. 
 
     ![](./images/run-notebook.png " ")
 
