@@ -1,10 +1,10 @@
 {
-    "workshoptitle": "Oracle Cloud Data Lake House",
+    "workshoptitle": "Oracle Cloud Data Lakehouse",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "Introduction to Oracle Cloud Data Lake House",
+            "description": "Introduction to Oracle Cloud Data Lakehouse",
             "filename": "./../../introduction.md"
         },
         {
@@ -15,7 +15,12 @@
         {
             "title": "Lab 1: Create Groups, Users, Policies and Autonomous Warehouse Database (ADW)",
             "description": "This lab walks you through user setup and configuration and puts the foundation in place to prepare data cataloging, loading and maintaining for the data lakes.",
-            "filename": "./../../lakeshouse-configuration.md"
+            "filename": "./../../lakehouse-configuration.md"
+        },
+        {
+            "title": "Lab 1b: Load Initial Data",
+            "description": "The database has been created with the users and policies but before we look at the catalog and integrations, the initial set of data should be loaded and available.",
+            "filename": "./../../lakehouse-configuration2.md"
         },
         {
             "title": "Lab 2: OCI Data Catalog, OCI Data Integration and Data Assets",
