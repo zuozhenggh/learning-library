@@ -22,7 +22,7 @@ In this lab you will:
 - Create an audit policy to capture realm violations
 - Test Database Vault Controls with Simulation mode
 
-You will use the `SH1` schema containing multiple tables such as `CUSTOMERS` or `COUNTRIES` tables which contain sensitive information and need to be protected from privileged users such as the schema owner (user `SH1`) and DBA (user `DBA_DEBRA`). But the data in these tables should be available to the application user (user `APPUSER`).
+You will use the `SH1` schema containing multiple tables such as `CUSTOMERS` or `COUNTRIES` tables which contain sensitive information and need to be protected from privileged users such as the schema owner (**user `SH1`**) and DBA (**user `DBA_DEBRA`**). But the data in these tables should be available to the application user (**user `APPUSER`**).
 
    ![](./images/adb-dbv_001.png " ")
 
@@ -49,15 +49,15 @@ This lab assumes you have:
 
 We start by creating two DV user accounts:
 
-- Database Vault owner (`SEC_ADMIN_OWEN`)
+- **Database Vault owner (`SEC_ADMIN_OWEN`)**
     - This user is mandatory as an owner of DV objects
     - `SEC_ADMIN_OWEN` has the `DV_OWNER` and `DV_ADMIN` roles and can configure database vault policies
-- Database Vault account manager (`ACCTS_ADMIN_ACE`)
+- **Database Vault account manager (`ACCTS_ADMIN_ACE`)**
     - This user is an optional but recommended role
     - `ACCTS_ADMIN_ACE` has the `DV_ACCTMGR` role and can create users and change user passwords
 - While DV owner can also become DV account manager, Oracle recommends maintaining separation of duties via two different accounts
 
-1. Open a SQL Worksheet on your **ADB Security** as *admin* user
+1. Open a SQL Worksheet on your Autonomous DB as the *`ADMIN`* user
     
     - In OCI, select your ADB Security database created during the "Prepare Your Environment" step
 
@@ -153,7 +153,7 @@ We start by creating two DV user accounts:
 
        ![](./images/adb-dbv_007.png " ")
 
-    - Once restart completes, go back to the SQL Worksheet as *`ADMIN`* user and verify DV is enabled
+    - Once restart completes, go back to the SQL Worksheet as the `ADMIN` user and verify DV is enabled
 
       ````
       <copy>SELECT * FROM DBA_DV_STATUS;</copy>
@@ -171,7 +171,7 @@ In Autonomous DB, the `ADMIN` user has all privileges, including the privileges 
 
 In the "Prepare your environment" step you created the user `DBA_DEBRA`. This user has the `DBA` role on the Autonomous DB
 
-1. To demonstrate the effects of the DB Vault SoD on a DBA account, open the SQL Worksheet as the *`DBA_DEBRA`* user. As reminder, the password *`WElcome_123#`*
+1. To demonstrate the effects of the DB Vault SoD on a DBA account, open the SQL Worksheet as the *`DBA_DEBRA`* user (as reminder, the password is `WElcome_123#`)
     
       ````
       <copy>WElcome_123#</copy>
@@ -187,7 +187,7 @@ In the "Prepare your environment" step you created the user `DBA_DEBRA`. This us
 
     **Note:** Notice that DBA_DEBRA has several roles, including `PDB_DBA` (the DBA role in an Autonomous DB)
 
-3. Create a test user *`DEMO1`*
+3. Create a test user `DEMO1`
 
       ````
       <copy>CREATE USER demo1;</copy>
@@ -196,9 +196,9 @@ In the "Prepare your environment" step you created the user `DBA_DEBRA`. This us
        ![](./images/adb-dbv_010.png " ")
 
 
-    **Note:** Notice that `DBA_DEBRA` is not able to create a user, despite having the `DBA` role, because Database Vault is enabled!
+    **Note:** Notice that `DBA_DEBRA` is not able to create a user, despite having the `DBA` role, **because Database Vault is enabled**!
                 
-4. Let's try altering the user *`APPUSER`*
+4. Let's try altering the user `APPUSER`
 
       ````
       <copy>ALTER USER appuser IDENTIFIED BY WElcome_123456#;</copy>
@@ -223,7 +223,7 @@ A realm is a protected zone inside the database where database schemas, objects,
    
        **Note:**
           -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
-          - As reminder, the password of these users is the same (here *`WElcome_123#`*)
+          - As reminder, the password of these users is the same (here `WElcome_123#`)
     
              ````
              <copy>WElcome_123#</copy>
@@ -257,7 +257,7 @@ A realm is a protected zone inside the database where database schemas, objects,
           -	`DBA_DEBRA` because it has the DBA role
           - `APPUSER` because it have the "`READ ANY TABLE`" system privilege
 
-2. Now, let's create a realm to secure `SH1` tables by executing this query below as *`SEC_ADMIN_OWEN`* user. So, please **open a 4th web-browser window using the "Incognito mode"!**
+2. Now, let's create a realm to secure `SH1` tables by executing this query below as the *`SEC_ADMIN_OWEN`* user. So, please **open a 4th web-browser window using the "Incognito mode"!**
 
       ````
       <copy>
@@ -378,7 +378,7 @@ A realm is a protected zone inside the database where database schemas, objects,
 
 You may also want to capture an audit trail of unauthorized access attempts to your realm objects. Since the Autonomous Database includes Unified Auditing, we will create a policy to audit database vault activities
 
-1. Open a SQL Worksheet as the *`ACCTS_ADMIN_ACE`* user - as reminder, the password is *`WElcome_123#`*
+1. Open a SQL Worksheet as the *`ACCTS_ADMIN_ACE`* user (as reminder, the password is `WElcome_123#`)
     
       ````
       <copy>WElcome_123#</copy>
@@ -421,7 +421,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
    
        **Note:**
           -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
-          - As a reminder, the password of these users is the same (here *`WElcome_123#`*)
+          - As a reminder, the password of these users is the same (here `WElcome_123#`)
     
              ````
              <copy>WElcome_123#</copy>
@@ -451,7 +451,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
        - `DBA_DEBRA` **and** `SH1` **users cannot access the** `SH1.CUSTOMERS` **table and should generate an audit record of their failed attempt to violate policy!**
 
-5. Go back to the SQL Worksheet as "*`ACCTS_ADMIN_ACE`*" to review realm violation audit trail 
+5. Go back to the SQL Worksheet as the *`ACCTS_ADMIN_ACE`* user to review realm violation audit trail 
 
       ````
       <copy>
@@ -466,7 +466,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
     **Note:** You should see the `DBA_DEBRA` and `SH1` failed attempts
 
-6. When you have completed this lab, sign in as "*`SEC_ADMIN_OWEN`*" to reset the audit settings
+6. When you have completed this lab, sign in as the *`SEC_ADMIN_OWEN`* user to reset the audit settings
 
       ````
       <copy>
@@ -506,7 +506,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 We will use simulation mode to find the factors to use for our "trusted path" connection to the `SH1.COUNTRIES` table. We will do that by completely disabling access to the table – but then put the realm policy into simulation mode. Since simulation mode won’t block the actual SQL commands – the SQL commands will work. However, if the SQL command should have been blocked by the new command rule – then it will create an entry in the simulation mode. Then you can review the simulation log to find if it captured the correct violations and the factors and associated rules.
 
-1. Open a SQL Worksheet as *`SEC_ADMIN_OWEN`* user - as reminder, the password is *`WElcome_123#`*
+1. Open a SQL Worksheet as the *`SEC_ADMIN_OWEN`* user (as reminder, the password is `WElcome_123#`)
     
       ````
       <copy>WElcome_123#</copy>
@@ -547,7 +547,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
    
        **Note:**
           -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
-          - As reminder, the password of these users is the same (here *`WElcome_123#`*)
+          - As reminder, the password of these users is the same (here `WElcome_123#`)
     
              ````
              <copy>WElcome_123#</copy>
@@ -575,7 +575,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
        - **All the users can access the** `SH1.CUSTOMERS` **table!**
       
-5. Now, go back to the SQL Worksheet as the "*`SEC_ADMIN_OWEN`*" user to see what new entries we have. Remember we created a command rule to simulate blocking user select!
+5. Now, go back to the SQL Worksheet as the *`SEC_ADMIN_OWEN`* user to see what new entries we have. Remember we created a command rule to simulate blocking user select!
 
       ````
       <copy>
@@ -622,7 +622,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
 ## Task 6: Disable Database Vault
 
-1. Log as "*`SEC_ADMIN_OWEN`*" user and drop the existing DV realm
+1. Log as the *`SEC_ADMIN_OWEN`* user and drop the existing DV realm
 
       ````
       <copy>
@@ -654,7 +654,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
        ![](./images/adb-dbv_007.png " ")
 
-    - Once restart completes, log in to SQL Worksheet as *`DBA_DEBRA`* user and verify DV is enabled
+    - Once restart completes, log in to SQL Worksheet as the *`DBA_DEBRA`* user and verify DV is enabled
 
       ````
       <copy>SELECT * FROM DBA_DV_STATUS;</copy>
