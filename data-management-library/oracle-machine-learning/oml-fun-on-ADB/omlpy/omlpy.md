@@ -584,4 +584,4 @@ OML4Py enables data scientists to hand-off their user-defined Python functions t
 ## Acknowledgements
 * **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation; Dhanish Kumar, Member of Technical Staff, User Assistance Developer.
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning.
-* **Last Updated By/Date** - Dhanish Kumar, September 2021
+* **Last Updated By/Date** - Dhanish Kumar, October 2021
