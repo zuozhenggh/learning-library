@@ -39,8 +39,9 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
 2. From the OCI Cloud Shell, install the OCI Ansible collection from Ansible Galaxy by using the following command:
 
 ```bash
-$ ansible-galaxy collection install oracle.oci
-```
+   $ ansible-galaxy collection install oracle.oci
+    ```
+
 
    ![](./images/Ansible-Cloud-Shell1.png " ")
 
@@ -49,8 +50,9 @@ $ ansible-galaxy collection install oracle.oci
    After your installation is complete, you can write a sample playbook that uses Ansible modules. Following is an example playbook (named list_buckets.yaml) that uses the oci_object_storage_bucket_facts module to fetch facts pertaining to the buckets in your compartment.
 
     
-    ```yaml
-$ ---
+ ```yaml
+
+---
 - name : List summary of existing buckets in OCI object storage
   collections:
     - oracle.oci
@@ -65,7 +67,10 @@ $ ---
     - name: Dump result
       debug: 
         msg: '{{result}}'
- ```  
+
+```
+
+
 
 
 
