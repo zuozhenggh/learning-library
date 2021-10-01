@@ -4,7 +4,7 @@
 
 This lab explains the steps to deploy the UI access, that aready exists in your jupyter notebook to predict first 5 drivers for a given race. So this lab is just to explain what these files and their functions are doing to and for our model.      
 
-Estimated Time: 1 hr
+Estimated Time: 60 minutes
 
 ### Objectives
 

@@ -25,7 +25,7 @@ In this lab, you will gather data by:
 
 Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_0.Formule1_Data_Collection.ipynb```
 
-Execute the notebook to download race data and create your CSV files. 
+   * Execute the notebook to download race data and create your CSV files. 
 
 1. Download dataset from ERGAST Web
     
@@ -46,24 +46,25 @@ Execute the notebook to download race data and create your CSV files.
 
 ## **Task 2:** Weather Data Collection 
 
-Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_1.Weather_Data_Collection.ipynb```
+1. Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_1.Weather_Data_Collection.ipynb```
 
-Execute the notebook to download weather data that captures weather conditions (warm, sunny, rainy, ect.) for different races. 
+    * Execute the notebook to download weather data that captures weather conditions (warm, sunny, rainy, ect.) for different races. 
 
-![Image alt text](images/weather.png)
+    ![Image alt text](images/weather.png)
 
 
 ## **Task 3:** Qualifying Data Collection 
 
-Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_2.Formula 1 Qualifying Data Collection```
+1. Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_2.Formula 1 Qualifying Data Collection```
 
-Execute the notebook to download weather data that captures weather conditions (warm, sunny, rainy, ect.) for different races. 
+    * Execute the notebook to download weather data that captures weather conditions (warm, sunny, rainy, ect.) for different races. 
 
-*We suppose that Qualifying dataset is an important information to predict the result of a race.*
+    *We suppose that Qualifying dataset is an important information to predict the result of a race.*
 
-![Image alt text](images/qd.png =50%x*)
+    ![Image alt text](images/qd.png =50%x*)
 
 
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer
