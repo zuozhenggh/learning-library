@@ -255,7 +255,7 @@ This lab assumes you have completed the following labs:
 
     ![Copied cURL command](./images/rest-45.png)
 
-23. Using the OCI Cloud Shell, paste and run the cURL command and see that the count is returned as the output variable.
+23. Using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command and see that the count is returned as the output variable.
 
     ```
     curl -X POST \

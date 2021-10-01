@@ -4,7 +4,7 @@
 
 This lab will walk you through the data preparation process of the machine learning lifecycle. Now that we have race, weather, and qualifying race data, we'll merge our sets together to create the dataset we'll feed to our Machine Learning algorithms. 
 
-Estimated Lab Time: 1 hr
+Estimated Time: 1 hr
 
 
 <b> Objectives </b>
@@ -28,8 +28,6 @@ Execute the notebook to merge the different data sets that we downloaded in step
 
 ![Image alt text](images/prep.png =50%x*)
 
-
-You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer

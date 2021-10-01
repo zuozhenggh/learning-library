@@ -1,4 +1,4 @@
-# Create MySQL Database System
+# CREATE MYSQL DATABASE SYSTEM
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
@@ -26,15 +26,17 @@ In this lab, you will be guided through the following tasks:
 
 *Note: Green Button users - Your Virtual Cloud Network already exist. Go to Task 2*
 
-1. Navigation Menu > Networking > Virtual Cloud Networks
+1. Navigation Menu   
+        Networking  
+            Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
 
-2. Click 'Start VCN Wizard'
+2. 'click' **Start VCN Wizard**
     ![VCN](./images/03vcn02.png " ")
 
 3. Select 'Create VCN with Internet Connectivity'
 
-    Click on 'Start VCN Wizard' 
+    'click' 'Start VCN Wizard' 
     ![VCN](./images/03vcn03.png " ")
 
 4. Create a VCN with Internet Connectivity 
@@ -63,13 +65,13 @@ In this lab, you will be guided through the following tasks:
 8. Click 'View Virtual Cloud Network' to display the created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. On MDS-VCN page under 'Subnets in (root) Compartment', click on '**Private Subnet-MDS-VCN**' 
+9. On MDS-VCN page under 'Subnets in (root) Compartment', 'click'  '**Private Subnet-MDS-VCN**' 
      ![VCN](./images/03vcn07.png " ")
 
-10.	On Private Subnet-MDS-VCN page under 'Security Lists',  click on '**Security List for Private Subnet-MDS-VCN**'
+10.	On Private Subnet-MDS-VCN page under 'Security Lists',  'click'  '**Security List for Private Subnet-MDS-VCN**'
     ![VCN](./images/03vcn08.png " ")
 
-11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', click on '**Add Ingress Rules**' 
+11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', 'click' '**Add Ingress Rules**' 
     ![VCN](./images/03vcn09.png " ")
 
 12.	On Add Ingress Rules page under Ingress Rule 1
@@ -94,11 +96,14 @@ Description
 
 ## Task 2: Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
 
-1. Go to Navigation Menu > Databases > MySQL > DB Systems
+1. Go to Navigation Menu 
+         Databases 
+         MySQL
+         DB Systems
     ![MDS](./images/04mysql01.png " ")
 
 2. Click 'Create MySQL DB System'
-    ![MDS](./images/04mysql02.png" ")
+    ![MDS](./images/04mysql02.png " ")
 
 3. Create MySQL DB System dialog complete the fields in each section
 
@@ -158,7 +163,7 @@ Description
 
     Do not check 'Choose a Fault Domain' for this DB System. 
 
-    ![MDS](./images/04mysql06-3.png" ")
+    ![MDS](./images/04mysql06-3.png " ")
 
 8. On Configure hardware, keep default shape as **MySQL.HeatWave.VM.Standard.E3**
 
@@ -171,15 +176,15 @@ Description
 
 9. On Configure Backups, disable 'Enable Automatic Backup'
 
-    ![MDS](./images/04mysql08.png" ")
+    ![MDS](./images/04mysql08.png " ")
 
-10. Click on Show Advanced Options 
+10. 'click' on Show Advanced Options 
 
 11. Select Data Import tab. 
 12. To enter the PAR Source URL, use one of the folloing links depending on your Tenancy Region
 
     **US(Ashburn) Region**:
-        ![MDS](./images/region-ashburn.png" ")
+        ![MDS](./images/region-ashburn.png =50%x*)
     
     Copy and paste the following *Asburn link*  to PAR Source URL: 
   
@@ -188,7 +193,7 @@ Description
     ```   
         
     **UK South(London) Region**
-        ![MDS](./images/region-london.png" ")
+        ![MDS](./images/region-london.png =50%x*)
     
     Copy and paste the following *London link*  to PAR Source URL: 
   
@@ -197,11 +202,11 @@ Description
     ```   
   
     Your PAR Source URL entry should look like this:
-    ![MDS](./images/04mysql08-2.png" ")
+    ![MDS](./images/04mysql08-2.png " ")
 
 13. Review **Create MySQL DB System**  Screen 
 
-    ![MDS](./images/04mysql09-3.png" ")
+    ![MDS](./images/04mysql09-3.png " ")
 
     
     Click the '**Create**' button

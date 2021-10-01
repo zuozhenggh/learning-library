@@ -6,11 +6,11 @@ This lab will walk you through the steps to deploy and serve the best trained mo
   
   * API REST using the feature importance (variables) for the best model.
 
-![Image alt text](./images/Picture1.png)
+![Image alt text](./images/picture1.png)
 
 It seems the Neural Network Classification is the best model to return the highest scores, correctly predicting the winner for 62% of the races.
 
-Estimated Lab Time: 1 hr
+Estimated Time: 1 hr
 
 <b> Objectives </b>
 
@@ -28,30 +28,28 @@ Navigate to the ``` /redbull-analytics-hol/beginners/``` directory in your Jupyt
 
 1. Our ML model must use Drivers confidence / points and Team/Constructor reliability / Points
 
-   ![Image alt text](images/Picture1.png)
+   ![Image alt text](images/picture1.png)
 
 
 2. Using 2021 Dataset to Calculate the Confidence/ reliability and Points per Constructor/ Driver after each race
   
-  ![Image alt text](images/Picture2.png)
+  ![Image alt text](images/picture2.png)
 
-  ![Image alt text](images/Picture3.png)
+  ![Image alt text](images/picture3.png)
 
 
 3. We can detect the Feature Importance for our Best ML Model.The Qualifying Position is the main feature for our trained model. 
 
-  ![Image alt text](images/Picture4.png)
+  ![Image alt text](images/picture4.png)
 
 4. RF Explanation for First Decision Tree 
 
-  ![Image alt text](images/Picture5.png)
+  ![Image alt text](images/picture5.png)
 
 5. RF Explanation for 5 first Decision Trees
 
-  ![Image alt text](images/Picture6.png)
+  ![Image alt text](images/picture6.png)
 
-
-You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements

@@ -37,7 +37,7 @@
       {
         "title": "Lab 7: Create the Add to Cart Page",
         "filename": "../../creating-add-to-cart-page/creating-add-to-cart-page.md"
-      },            
+      },
       {
         "title": "Lab 8: Improve the Products Page",
         "filename": "../../improving-products/improving-products.md"
@@ -47,13 +47,9 @@
         "filename": "../../improving-app/improving-app.md"
       },
       {
-        "title": "Lab 10: Terminate Oracle Autonomous Database Instance",
-        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/terminate-adb/terminate-adb.md"
-      },      
-      {
         "title": "Need Help?",
         "description": "Solutions to Common Problems and Directions for Receiving Live Help",
         "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
-      }   
+      }
     ]
 }

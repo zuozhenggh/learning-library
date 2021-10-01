@@ -6,7 +6,7 @@ This lab will walk you through the very basic step of machine learning, i.e, dat
 
 * The data gathering process takes some time, so we've gone ahead and pulled the data in for you. However, if you want to see how it's done, take a look in the ```from_scratch``` directory in your Jupyter notebook, where you'll find the original scripts that gathered the remote data.
 
-Estimated Lab Time: 1 hr
+Estimated Time: 1 hr
 
 
 <b> Objectives </b>
@@ -29,7 +29,7 @@ Execute the notebook to download race data and create your CSV files.
 
 1. Download dataset from ERGAST Web
     
-    ![Image alt text](images/F1Data.png)
+    ![Image alt text](images/f1data.png)
 
 2. Extracting Races Results, Driving Standing, & Team Standing results from ERGAST Web
 
@@ -63,9 +63,6 @@ Execute the notebook to download weather data that captures weather conditions (
 
 ![Image alt text](images/qd.png =50%x*)
 
-
-
-You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
