@@ -388,7 +388,7 @@ In 2021, Formula 1 appears to be more exciting than ever. Red Bull is a serious 
 
 The question is: Will our ML model confirm that 2021 is an exciting season?
 
-Your challenge is to predict the score values for 2021 and plot the predicted scores. Note that this workshop has data until round 11, the Hungarian Grand Prix of August 2021.
+Your challenge is to predict the score values for 2021 and plot the predicted scores. Note that this workshop has data until round 11, the Hungarian Grand Prix of August 2021. This means that you will have to adapt the Data Flow to predict until ROUND 11 of YEAR 2021.
 
 So what do you think? Do the predicted scores reflect the actual level of excitement of 2021?
 
