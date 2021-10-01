@@ -1,4 +1,4 @@
-# Run Queries with MySQL Shell
+# RUN QUERIES WITH MYSQL SHELL
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
@@ -65,7 +65,7 @@ ORDER BY
     airline.airlinename, avg_age
 LIMIT 10\G</copy>
     ```
-    ![Connect](./images/heatwave-qeury-02.png " ")
+    ![RUN](./images/heatwave-qeury-02.png " ")
 
 6. After verifying that the query can be offloaded, run the query and note the execution time. Enter the following command at the prompt:
      ```
@@ -115,7 +115,7 @@ ORDER BY
     airline.airlinename, avg_age
 LIMIT 10;</copy>
     ```
-    ![Connect](./images/heatwave-qeury-04.png " ")
+    ![RUN](./images/heatwave-qeury-04.png " ")
 
 9. To see if `use_secondary_engine` is enabled (=ON)
 
@@ -229,14 +229,14 @@ GROUP BY firstname , lastname;</copy>
     ```
 16. The final results should look like the following:
 
-    ![INTRO](./images/final-result.png " ") 
+    ![RUN](./images/final-result.png " ") 
 
 You may now [proceed to the next lab](#next).
     
 ## Learn More
 
-* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
-* [MySQL Database Documentation](https://www.mysql.com)
+* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
+* [MySQL Database Documentation](https://www.MySQL.com)
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager

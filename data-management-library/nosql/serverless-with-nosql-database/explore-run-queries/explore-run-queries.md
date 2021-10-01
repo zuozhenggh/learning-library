@@ -320,7 +320,7 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
 
   ![](./images/delete-api.png)
 
-4. Remove the files added into your Cloud Shell. Open Cloud Shell and execute.
+4. Remove the files added into your Cloud Shell. Open Cloud Shell and execute. Minimize Cloud Shell.
 
     ````
     <copy>
@@ -347,7 +347,7 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
 
   ![](./images/delete-api.png)  
 
-4. Remove the files added into your Cloud Shell. Open Cloud Shell and execute.
+4. Remove the files added into your Cloud Shell. Open Cloud Shell and execute. Minimize Cloud Shell.
 
     ````
     <copy>
