@@ -3,7 +3,7 @@
     {
       "text": "%sql\n--This calculates the number of rounds that have a change of driver in the leading position.\ncreate or replace view laps_with_change_pos_1_v\nas\n    select raceid, count(*) laps\n    from\n    (\n        select raceid, lap\n        from\n        (\n            select raceid, position, lap, driverid as current_driver,\n              LAG (driverid, 1) OVER (PARTITION BY raceid, position ORDER BY lap) AS prev_driver\n            from lap_times\n        )\n        where prev_driver is not null\n        and prev_driver \u003c\u003e current_driver\n        and position \u003d 1\n        group by raceid, lap\n    )\n    group by raceid;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:08+0000",
+      "dateUpdated": "2021-10-01T10:46:04+0000",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -129,8 +129,8 @@
       "jobName": "paragraph_1632411097311_1456188143",
       "id": "20210923-153137_1160278290",
       "dateCreated": "2021-09-22T14:43:37+0000",
-      "dateStarted": "2021-09-26T12:36:09+0000",
-      "dateFinished": "2021-09-26T12:36:14+0000",
+      "dateStarted": "2021-10-01T10:46:04+0000",
+      "dateFinished": "2021-10-01T10:46:04+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -138,7 +138,7 @@
     {
       "text": "%sql\nselect * from laps_with_change_pos_1_v",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:14+0000",
+      "dateUpdated": "2021-10-01T10:46:04+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -188,7 +188,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "RACEID\tLAPS\n6\t2\n14\t2\n23\t3\n27\t8\n50\t5\n51\t5\n52\t4\n57\t6\n58\t5\n64\t1\n72\t5\n107\t8\n108\t6\n113\t5\n124\t3\n125\t3\n135\t5\n158\t5\n161\t5\n166\t3\n173\t4\n210\t3\n232\t2\n237\t2\n348\t1\n846\t3\n851\t9\n852\t9\n870\t5\n883\t4\n902\t2\n914\t3\n948\t3\n962\t4\n964\t2\n965\t2\n974\t1\n977\t2\n999\t5\n1013\t3\n1019\t1\n1039\t1\n1061\t1\n7\t2\n31\t2\n36\t4\n40\t4\n42\t5\n43\t3\n59\t2\n68\t4\n71\t4\n78\t3\n79\t2\n88\t9\n98\t3\n99\t3\n105\t5\n109\t3\n110\t7\n127\t4\n131\t3\n134\t9\n136\t2\n143\t4\n159\t4\n162\t3\n163\t5\n168\t3\n172\t1\n180\t1\n183\t1\n189\t5\n198\t2\n200\t2\n221\t3\n338\t3\n344\t6\n350\t3\n352\t3\n353\t1\n862\t4\n864\t6\n865\t4\n872\t2\n884\t7\n888\t5\n892\t2\n910\t8\n913\t4\n927\t5\n928\t4\n931\t1\n943\t4\n945\t4\n963\t4\n981\t2\n990\t3\n992\t2\n1000\t2\n1038\t3\n34\t2\n41\t2\n44\t3\n45\t5\n62\t2\n63\t5\n82\t1\n104\t4\n118\t5\n129\t3\n179\t4\n184\t2\n190\t2\n203\t2\n204\t4\n343\t5\n354\t2\n844\t2\n845\t8\n860\t4\n861\t4\n882\t9\n890\t8\n911\t4\n968\t6\n987\t3\n988\t2\n998\t4\n1007\t2\n1011\t4\n1025\t1\n1029\t6\n1041\t1\n1052\t3\n2\t4\n8\t2\n11\t4\n12\t6\n17\t1\n21\t3\n30\t7\n37\t5\n54\t5\n56\t4\n70\t2\n73\t4\n77\t8\n86\t1\n115\t5\n121\t2\n140\t2\n141\t2\n145\t4\n155\t5\n174\t6\n177\t2\n187\t3\n188\t5\n191\t4\n195\t4\n212\t4\n216\t2\n219\t3\n231\t2\n238\t5\n856\t2\n873\t3\n878\t1\n895\t5\n918\t5\n932\t2\n933\t3\n941\t1\n942\t5\n971\t3\n979\t3\n980\t2\n983\t3\n989\t1\n1004\t4\n1009\t3\n1022\t3\n1024\t3\n1026\t4\n1028\t4\n1032\t2\n1055\t3\n4\t7\n5\t5\n10\t3\n18\t4\n35\t5\n48\t2\n49\t4\n65\t2\n66\t2\n81\t5\n101\t8\n103\t8\n116\t3\n120\t2\n137\t2\n142\t3\n151\t3\n156\t7\n157\t5\n169\t2\n197\t3\n199\t1\n209\t2\n215\t4\n220\t4\n222\t7\n225\t2\n228\t2\n848\t2\n849\t1\n867\t1\n869\t2\n877\t1\n880\t10\n881\t9\n886\t2\n896\t5\n898\t2\n906\t6\n908\t3\n917\t7\n936\t2\n954\t3\n956\t6\n961\t2\n984\t3\n993\t2\n997\t1\n1008\t4\n1023\t2\n1033\t2\n1059\t4\n3\t5\n9\t6\n20\t3\n22\t7\n26\t3\n28\t6\n33\t10\n53\t6\n74\t6\n87\t5\n93\t1\n96\t4\n112\t6\n122\t7\n126\t4\n146\t2\n148\t1\n149\t2\n152\t1\n170\t4\n202\t1\n213\t4\n214\t4\n218\t1\n235\t5\n236\t5\n339\t2\n340\t2\n347\t3\n855\t10\n879\t6\n887\t2\n904\t4\n926\t2\n929\t5\n937\t2\n944\t6\n950\t1\n957\t2\n976\t2\n991\t3\n1006\t4\n1010\t2\n1018\t4\n1021\t3\n1040\t1\n1042\t5\n1044\t6\n1046\t3\n1057\t6\n1062\t5\n13\t5\n19\t5\n29\t6\n38\t4\n55\t4\n60\t2\n67\t3\n69\t2\n83\t5\n95\t5\n97\t6\n111\t5\n114\t8\n119\t2\n133\t1\n139\t5\n153\t5\n164\t1\n167\t2\n171\t2\n181\t6\n193\t3\n201\t2\n207\t3\n230\t1\n233\t2\n234\t3\n847\t3\n850\t9\n866\t6\n930\t4\n949\t2\n958\t4\n966\t3\n973\t4\n985\t4\n1002\t4\n1027\t3\n1045\t2\n1054\t3\n16\t1\n24\t6\n25\t3\n32\t3\n39\t5\n47\t5\n61\t4\n91\t4\n92\t7\n94\t3\n100\t1\n123\t6\n138\t4\n147\t2\n150\t6\n160\t1\n165\t2\n175\t1\n176\t3\n182\t5\n205\t1\n208\t2\n217\t4\n223\t7\n224\t3\n229\t4\n337\t1\n355\t2\n841\t2\n842\t4\n843\t8\n853\t1\n858\t4\n859\t8\n863\t4\n868\t3\n907\t7\n912\t3\n916\t5\n934\t6\n952\t7\n953\t3\n969\t4\n972\t2\n996\t2\n1003\t4\n1016\t3\n1020\t3\n1035\t4\n1043\t1\n1053\t2\n"
+            "data": "RACEID\tLAPS\n6\t2\n14\t2\n23\t3\n27\t8\n348\t1\n846\t3\n851\t9\n852\t9\n870\t5\n883\t4\n902\t2\n914\t3\n948\t3\n962\t4\n964\t2\n965\t2\n974\t1\n977\t2\n999\t5\n1013\t3\n1019\t1\n1039\t1\n1061\t1\n7\t2\n31\t2\n338\t3\n344\t6\n350\t3\n352\t3\n353\t1\n862\t4\n864\t6\n865\t4\n872\t2\n884\t7\n888\t5\n892\t2\n910\t8\n913\t4\n927\t5\n928\t4\n931\t1\n943\t4\n945\t4\n963\t4\n981\t2\n990\t3\n992\t2\n1000\t2\n1038\t3\n34\t2\n343\t5\n354\t2\n844\t2\n845\t8\n860\t4\n861\t4\n882\t9\n890\t8\n911\t4\n968\t6\n987\t3\n988\t2\n998\t4\n1007\t2\n1011\t4\n1025\t1\n1029\t6\n1041\t1\n1052\t3\n2\t4\n8\t2\n11\t4\n12\t6\n17\t1\n21\t3\n30\t7\n856\t2\n873\t3\n878\t1\n895\t5\n918\t5\n932\t2\n933\t3\n941\t1\n942\t5\n971\t3\n979\t3\n980\t2\n983\t3\n989\t1\n1004\t4\n1009\t3\n1022\t3\n1024\t3\n1026\t4\n1028\t4\n1032\t2\n1055\t3\n4\t7\n5\t5\n10\t3\n18\t4\n35\t5\n848\t2\n849\t1\n867\t1\n869\t2\n877\t1\n880\t10\n881\t9\n886\t2\n896\t5\n898\t2\n906\t6\n908\t3\n917\t7\n936\t2\n954\t3\n956\t6\n961\t2\n984\t3\n993\t2\n997\t1\n1008\t4\n1023\t2\n1033\t2\n1059\t4\n3\t5\n9\t6\n20\t3\n22\t7\n26\t3\n28\t6\n33\t10\n339\t2\n340\t2\n347\t3\n855\t10\n879\t6\n887\t2\n904\t4\n926\t2\n929\t5\n937\t2\n944\t6\n950\t1\n957\t2\n976\t2\n991\t3\n1006\t4\n1010\t2\n1018\t4\n1021\t3\n1040\t1\n1042\t5\n1044\t6\n1046\t3\n1057\t6\n1062\t5\n13\t5\n19\t5\n29\t6\n847\t3\n850\t9\n866\t6\n930\t4\n949\t2\n958\t4\n966\t3\n973\t4\n985\t4\n1002\t4\n1027\t3\n1045\t2\n1054\t3\n16\t1\n24\t6\n25\t3\n32\t3\n337\t1\n355\t2\n841\t2\n842\t4\n843\t8\n853\t1\n858\t4\n859\t8\n863\t4\n868\t3\n907\t7\n912\t3\n916\t5\n934\t6\n952\t7\n953\t3\n969\t4\n972\t2\n996\t2\n1003\t4\n1016\t3\n1020\t3\n1035\t4\n1043\t1\n1053\t2\n"
           }
         ]
       },
@@ -196,8 +196,8 @@
       "jobName": "paragraph_1632411097311_-305593170",
       "id": "20210923-153137_456977781",
       "dateCreated": "2021-09-23T15:05:51+0000",
-      "dateStarted": "2021-09-26T12:36:16+0000",
-      "dateFinished": "2021-09-26T12:36:16+0000",
+      "dateStarted": "2021-10-01T10:46:05+0000",
+      "dateFinished": "2021-10-01T10:46:05+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -205,7 +205,7 @@
     {
       "text": "%sql\n--This calculates the number of rounds that have a change of driver in the top 5 positions.\ncreate or replace view laps_with_change_pos_1_5_v\nas\n    select raceid, count(*) laps\n    from\n    (\n        select raceid, lap, count(*)\n        from\n        (\n            select raceid, position, lap, driverid as current_driver,\n              LAG (driverid, 1) OVER (PARTITION BY raceid, position ORDER BY lap) AS prev_driver\n            from lap_times\n        )\n        where prev_driver is not null\n        and prev_driver \u003c\u003e current_driver\n        and (position \u003e\u003d 1 and position \u003c\u003d 5)\n        group by raceid, lap\n        order by raceid, lap\n    )\n    group by raceid\n    order by raceid;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:16+0000",
+      "dateUpdated": "2021-10-01T10:46:05+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -229,8 +229,8 @@
       "jobName": "paragraph_1632411097311_250623443",
       "id": "20210923-153137_89805095",
       "dateCreated": "2021-09-23T15:06:19+0000",
-      "dateStarted": "2021-09-26T12:36:18+0000",
-      "dateFinished": "2021-09-26T12:36:18+0000",
+      "dateStarted": "2021-10-01T10:46:06+0000",
+      "dateFinished": "2021-10-01T10:46:06+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -238,7 +238,7 @@
     {
       "text": "%sql\nselect * from laps_with_change_pos_1_5_v;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:18+0000",
+      "dateUpdated": "2021-10-01T10:46:06+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -288,7 +288,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "RACEID\tLAPS\n1\t20\n2\t16\n3\t24\n4\t17\n5\t11\n6\t17\n7\t12\n8\t14\n9\t23\n10\t18\n11\t14\n12\t18\n13\t10\n14\t12\n15\t11\n16\t18\n17\t10\n18\t15\n19\t16\n20\t14\n21\t13\n22\t15\n23\t14\n24\t13\n25\t13\n26\t26\n27\t16\n28\t19\n29\t15\n30\t15\n31\t17\n32\t14\n33\t20\n34\t14\n35\t16\n36\t11\n37\t13\n38\t10\n39\t11\n40\t7\n41\t16\n42\t14\n43\t10\n44\t14\n45\t17\n46\t15\n47\t10\n48\t15\n49\t11\n50\t23\n51\t15\n52\t20\n53\t17\n54\t15\n55\t16\n56\t15\n57\t18\n58\t12\n59\t9\n60\t10\n61\t13\n62\t11\n63\t15\n64\t17\n65\t20\n66\t8\n67\t16\n68\t20\n69\t19\n70\t17\n71\t13\n72\t10\n73\t16\n74\t9\n75\t19\n76\t7\n77\t16\n78\t12\n79\t6\n80\t9\n81\t15\n82\t13\n83\t14\n84\t14\n85\t20\n86\t14\n87\t12\n88\t19\n89\t7\n90\t8\n91\t16\n92\t17\n93\t14\n94\t15\n95\t13\n96\t17\n97\t13\n98\t19\n99\t15\n100\t17\n101\t19\n102\t15\n103\t21\n104\t18\n105\t21\n106\t17\n107\t22\n108\t21\n109\t16\n110\t24\n111\t15\n112\t17\n113\t16\n114\t15\n115\t15\n116\t12\n117\t10\n118\t18\n119\t12\n120\t21\n121\t10\n122\t29\n123\t18\n124\t10\n125\t14\n126\t14\n127\t9\n128\t16\n129\t17\n130\t6\n131\t13\n132\t6\n133\t16\n134\t15\n135\t11\n136\t9\n137\t8\n138\t13\n139\t12\n140\t11\n141\t11\n142\t21\n143\t17\n144\t6\n145\t12\n146\t13\n147\t8\n148\t13\n149\t9\n150\t16\n151\t10\n152\t12\n153\t8\n154\t13\n155\t11\n156\t17\n157\t16\n158\t11\n159\t14\n160\t7\n161\t16\n162\t9\n163\t17\n164\t5\n165\t13\n166\t11\n167\t14\n168\t17\n169\t10\n170\t19\n171\t8\n172\t19\n173\t9\n174\t17\n175\t12\n176\t11\n177\t11\n178\t3\n179\t11\n180\t9\n181\t21\n182\t11\n183\t10\n184\t14\n185\t12\n186\t9\n187\t10\n188\t19\n189\t14\n190\t10\n191\t13\n192\t11\n193\t14\n194\t5\n195\t9\n196\t8\n197\t16\n198\t11\n199\t14\n200\t15\n201\t7\n202\t15\n203\t11\n204\t11\n205\t14\n206\t9\n207\t9\n208\t18\n209\t14\n210\t12\n211\t8\n212\t22\n213\t13\n214\t16\n215\t14\n216\t12\n217\t16\n218\t16\n219\t7\n220\t15\n221\t11\n222\t14\n223\t15\n224\t9\n225\t15\n226\t18\n227\t14\n228\t12\n229\t11\n230\t14\n231\t13\n232\t11\n233\t12\n234\t8\n235\t21\n236\t14\n237\t11\n238\t13\n239\t9\n337\t9\n338\t12\n339\t7\n340\t17\n341\t4\n342\t6\n343\t6\n344\t13\n345\t4\n346\t8\n347\t6\n348\t6\n349\t7\n350\t5\n351\t8\n352\t7\n353\t7\n354\t8\n355\t12\n841\t15\n842\t23\n843\t28\n844\t21\n845\t17\n846\t15\n847\t24\n848\t13\n849\t15\n850\t20\n851\t27\n852\t23\n853\t15\n854\t16\n855\t19\n856\t10\n857\t5\n858\t12\n859\t18\n860\t16\n861\t15\n862\t28\n863\t19\n864\t22\n865\t6\n866\t21\n867\t19\n868\t17\n869\t20\n870\t16\n871\t22\n872\t17\n873\t13\n874\t11\n875\t12\n876\t9\n877\t11\n878\t15\n879\t25\n880\t24\n881\t26\n882\t30\n883\t34\n884\t24\n885\t10\n886\t7\n887\t22\n888\t23\n890\t22\n891\t16\n892\t10\n893\t16\n894\t11\n895\t19\n896\t22\n897\t15\n898\t7\n899\t17\n900\t6\n901\t16\n902\t22\n903\t13\n904\t13\n905\t4\n906\t22\n907\t16\n908\t14\n909\t19\n910\t25\n911\t23\n912\t14\n913\t14\n914\t14\n915\t8\n916\t10\n917\t28\n918\t19\n926\t7\n927\t22\n928\t9\n929\t16\n930\t14\n931\t7\n932\t8\n933\t7\n934\t12\n936\t14\n937\t18\n938\t8\n939\t4\n940\t11\n941\t16\n942\t23\n943\t11\n944\t9\n945\t18\n948\t11\n949\t24\n950\t28\n951\t10\n952\t16\n953\t11\n954\t15\n955\t14\n956\t17\n957\t10\n958\t11\n959\t17\n960\t15\n961\t16\n962\t14\n963\t10\n964\t14\n965\t12\n966\t14\n967\t16\n968\t17\n969\t6\n970\t16\n971\t17\n972\t5\n973\t11\n974\t5\n975\t13\n976\t19\n977\t7\n978\t10\n979\t8\n980\t10\n981\t13\n982\t9\n983\t9\n984\t12\n985\t13\n986\t7\n987\t10\n988\t5\n989\t7\n990\t14\n991\t15\n992\t12\n993\t9\n994\t5\n995\t5\n996\t11\n997\t8\n998\t14\n999\t12\n1000\t13\n1001\t9\n1002\t12\n1003\t9\n1004\t11\n1005\t6\n1006\t14\n1007\t13\n1008\t18\n1009\t10\n1010\t7\n1011\t20\n1012\t12\n1013\t13\n1014\t10\n1015\t7\n1016\t13\n1017\t5\n1018\t14\n1019\t11\n1020\t23\n1021\t8\n1022\t12\n1023\t12\n1024\t11\n1025\t10\n1026\t14\n1027\t11\n1028\t14\n1029\t20\n1030\t9\n1031\t13\n1032\t14\n1033\t11\n1034\t6\n1035\t11\n1036\t13\n1037\t5\n1038\t11\n1039\t17\n1040\t12\n1041\t15\n1042\t19\n1043\t15\n1044\t18\n1045\t18\n1046\t22\n1047\t3\n1052\t21\n1053\t11\n1054\t11\n1055\t12\n1056\t4\n1057\t15\n1058\t8\n1059\t11\n1060\t10\n1061\t9\n1062\t15\n"
+            "data": "RACEID\tLAPS\n1\t20\n2\t16\n3\t24\n4\t17\n5\t11\n6\t17\n7\t12\n8\t14\n9\t23\n10\t18\n11\t14\n12\t18\n13\t10\n14\t12\n15\t11\n16\t18\n17\t10\n18\t15\n19\t16\n20\t14\n21\t13\n22\t15\n23\t14\n24\t13\n25\t13\n26\t26\n27\t16\n28\t19\n29\t15\n30\t15\n31\t17\n32\t14\n33\t20\n34\t14\n35\t16\n337\t9\n338\t12\n339\t7\n340\t17\n341\t4\n342\t6\n343\t6\n344\t13\n345\t4\n346\t8\n347\t6\n348\t6\n349\t7\n350\t5\n351\t8\n352\t7\n353\t7\n354\t8\n355\t12\n841\t15\n842\t23\n843\t28\n844\t21\n845\t17\n846\t15\n847\t24\n848\t13\n849\t15\n850\t20\n851\t27\n852\t23\n853\t15\n854\t16\n855\t19\n856\t10\n857\t5\n858\t12\n859\t18\n860\t16\n861\t15\n862\t28\n863\t19\n864\t22\n865\t6\n866\t21\n867\t19\n868\t17\n869\t20\n870\t16\n871\t22\n872\t17\n873\t13\n874\t11\n875\t12\n876\t9\n877\t11\n878\t15\n879\t25\n880\t24\n881\t26\n882\t30\n883\t34\n884\t24\n885\t10\n886\t7\n887\t22\n888\t23\n890\t22\n891\t16\n892\t10\n893\t16\n894\t11\n895\t19\n896\t22\n897\t15\n898\t7\n899\t17\n900\t6\n901\t16\n902\t22\n903\t13\n904\t13\n905\t4\n906\t22\n907\t16\n908\t14\n909\t19\n910\t25\n911\t23\n912\t14\n913\t14\n914\t14\n915\t8\n916\t10\n917\t28\n918\t19\n926\t7\n927\t22\n928\t9\n929\t16\n930\t14\n931\t7\n932\t8\n933\t7\n934\t12\n936\t14\n937\t18\n938\t8\n939\t4\n940\t11\n941\t16\n942\t23\n943\t11\n944\t9\n945\t18\n948\t11\n949\t24\n950\t28\n951\t10\n952\t16\n953\t11\n954\t15\n955\t14\n956\t17\n957\t10\n958\t11\n959\t17\n960\t15\n961\t16\n962\t14\n963\t10\n964\t14\n965\t12\n966\t14\n967\t16\n968\t17\n969\t6\n970\t16\n971\t17\n972\t5\n973\t11\n974\t5\n975\t13\n976\t19\n977\t7\n978\t10\n979\t8\n980\t10\n981\t13\n982\t9\n983\t9\n984\t12\n985\t13\n986\t7\n987\t10\n988\t5\n989\t7\n990\t14\n991\t15\n992\t12\n993\t9\n994\t5\n995\t5\n996\t11\n997\t8\n998\t14\n999\t12\n1000\t13\n1001\t9\n1002\t12\n1003\t9\n1004\t11\n1005\t6\n1006\t14\n1007\t13\n1008\t18\n1009\t10\n1010\t7\n1011\t20\n1012\t12\n1013\t13\n1014\t10\n1015\t7\n1016\t13\n1017\t5\n1018\t14\n1019\t11\n1020\t23\n1021\t8\n1022\t12\n1023\t12\n1024\t11\n1025\t10\n1026\t14\n1027\t11\n1028\t14\n1029\t20\n1030\t9\n1031\t13\n1032\t14\n1033\t11\n1034\t6\n1035\t11\n1036\t13\n1037\t5\n1038\t11\n1039\t17\n1040\t12\n1041\t15\n1042\t19\n1043\t15\n1044\t18\n1045\t18\n1046\t22\n1047\t3\n1052\t21\n1053\t11\n1054\t11\n1055\t12\n1056\t4\n1057\t15\n1058\t8\n1059\t11\n1060\t10\n1061\t9\n1062\t15\n"
           }
         ]
       },
@@ -296,8 +296,8 @@
       "jobName": "paragraph_1632411097311_-1820511445",
       "id": "20210923-153137_1789257834",
       "dateCreated": "2021-09-23T15:06:25+0000",
-      "dateStarted": "2021-09-26T12:36:20+0000",
-      "dateFinished": "2021-09-26T12:36:21+0000",
+      "dateStarted": "2021-10-01T10:46:07+0000",
+      "dateFinished": "2021-10-01T10:46:07+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -305,7 +305,7 @@
     {
       "text": "%sql\n--This calculates the number of positions that a driver has lost during a lap. It separates those position changes in actual take overs and take overs that were a result of pit stops.\ncreate or replace view overtaken_positions_total\nas\n    select raceid, overtaken_positions_due_to_pitstop_total, (overtaken_positions_total - overtaken_positions_due_to_pitstop_total) as overtaken_positions_real_total\n    from\n    (\n        select raceid, sum(overtaken_positions_driver_lap) as overtaken_positions_total, sum(overtaken_positions_driver_lap_due_to_pitstop) as overtaken_positions_due_to_pitstop_total\n        from\n        (\n            select raceid, driverid, lap, overtaken_positions_driver_lap, nvl2(pitstop_raceid, overtaken_positions_driver_lap,0 ) overtaken_positions_driver_lap_due_to_pitstop\n            from\n            (\n                select ot.raceid, ot.driverid, ot.lap, sum(ot.overtaken_this_lap) as overtaken_positions_driver_lap, ps.raceid pitstop_raceid\n                from\n                (\n                    select ottl.raceid, ottl.driverid, ottl.lap, (ottl.current_position - ottl.prev_position) as overtaken_this_lap\n                    from\n                    (\n                        select lt.raceid, lt.driverid, lt.lap, lt.position as current_position, \n                          LAG (lt.position, 1) OVER (PARTITION BY lt.raceid, lt.driverid ORDER BY lt.lap) AS prev_position\n                        from lap_times lt\n                    ) ottl\n                    where ottl.prev_position is not null\n                    and ottl.prev_position \u003c ottl.current_position\n                )   ot\n                ,   pit_stops ps\n                where ps.raceid (+) \u003d ot.raceid\n                and   ps.driverid (+) \u003d ot.driverid\n                and   ps.lap (+) \u003d ot.lap\n                group by ot.raceid, ot.driverid, ot.lap, ps.raceid\n            )\n        )\n        group by raceid\n    );\n",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:21+0000",
+      "dateUpdated": "2021-10-01T10:46:07+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -329,8 +329,8 @@
       "jobName": "paragraph_1632411097311_1680194377",
       "id": "20210923-153137_1820570829",
       "dateCreated": "2021-09-23T15:07:52+0000",
-      "dateStarted": "2021-09-26T12:36:22+0000",
-      "dateFinished": "2021-09-26T12:36:23+0000",
+      "dateStarted": "2021-10-01T10:46:08+0000",
+      "dateFinished": "2021-10-01T10:46:08+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -338,7 +338,7 @@
     {
       "text": "%sql\nselect * from overtaken_positions_total;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:23+0000",
+      "dateUpdated": "2021-10-01T10:46:08+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -389,7 +389,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "RACEID\tOVERTAKEN_POSITIONS_DUE_TO_PITSTOP_TOTAL\tOVERTAKEN_POSITIONS_REAL_TOTAL\n6\t0\t92\n14\t0\t120\n23\t0\t147\n27\t0\t181\n50\t0\t295\n51\t0\t163\n52\t0\t125\n57\t0\t112\n58\t0\t104\n64\t0\t108\n72\t0\t82\n107\t0\t237\n108\t0\t214\n113\t0\t162\n124\t0\t35\n125\t0\t115\n135\t0\t134\n158\t0\t82\n161\t0\t186\n166\t0\t120\n173\t0\t105\n210\t0\t32\n226\t0\t146\n232\t0\t61\n237\t0\t47\n348\t0\t53\n846\t131\t24\n851\t29\t199\n852\t42\t175\n870\t23\t136\n883\t72\t281\n893\t77\t152\n902\t41\t208\n914\t35\t173\n948\t108\t37\n960\t18\t129\n962\t67\t154\n964\t30\t197\n965\t14\t154\n974\t51\t5\n977\t8\t41\n999\t26\t145\n1013\t37\t115\n1019\t15\t110\n1039\t37\t37\n1061\t0\t117\n1\t0\t188\n7\t0\t171\n15\t0\t134\n31\t0\t215\n36\t0\t125\n40\t0\t62\n42\t0\t121\n43\t0\t89\n59\t0\t105\n68\t0\t157\n71\t0\t94\n78\t0\t89\n79\t0\t7\n85\t0\t145\n88\t0\t136\n98\t0\t93\n99\t0\t151\n105\t0\t191\n109\t0\t73\n110\t0\t141\n127\t0\t69\n131\t0\t119\n134\t0\t77\n143\t0\t122\n159\t0\t58\n162\t0\t92\n163\t0\t149\n168\t0\t175\n172\t0\t253\n180\t0\t48\n183\t0\t110\n189\t0\t72\n198\t0\t133\n200\t0\t99\n206\t0\t70\n221\t0\t77\n338\t0\t120\n344\t0\t246\n350\t0\t61\n351\t0\t104\n352\t0\t68\n353\t0\t113\n862\t64\t292\n864\t56\t262\n865\t100\t17\n872\t26\t189\n874\t16\t151\n876\t20\t87\n884\t54\t274\n885\t92\t20\n888\t38\t215\n892\t18\t127\n901\t34\t123\n903\t25\t133\n910\t39\t208\n913\t58\t143\n927\t42\t214\n928\t21\t107\n931\t26\t16\n940\t17\t122\n943\t10\t104\n945\t26\t148\n951\t26\t91\n963\t14\t123\n975\t61\t38\n981\t37\t95\n990\t33\t165\n992\t18\t74\n1000\t5\t62\n1014\t14\t92\n1017\t82\t28\n1038\t39\t114\n136\t0\t64\n34\t0\t162\n41\t0\t260\n44\t0\t153\n45\t0\t189\n62\t0\t38\n63\t0\t119\n82\t0\t102\n104\t0\t166\n118\t0\t321\n129\t0\t122\n179\t0\t71\n184\t0\t90\n185\t0\t86\n190\t0\t92\n203\t0\t29\n204\t0\t65\n342\t0\t98\n343\t0\t95\n345\t0\t123\n349\t0\t129\n354\t0\t174\n844\t28\t336\n845\t55\t220\n860\t108\t51\n861\t65\t297\n882\t77\t215\n890\t39\t158\n905\t51\t22\n911\t61\t146\n968\t22\t164\n978\t5\t111\n987\t15\t76\n988\t3\t76\n994\t74\t7\n998\t0\t124\n1007\t22\t114\n1011\t42\t148\n1025\t14\t83\n1029\t30\t175\n1031\t6\t86\n1041\t40\t125\n1052\t35\t204\n1056\t27\t2\n196\t0\t34\n2\t0\t135\n8\t0\t142\n11\t0\t121\n12\t0\t125\n17\t0\t119\n21\t0\t128\n30\t0\t120\n37\t0\t158\n54\t0\t73\n56\t0\t116\n70\t0\t155\n73\t0\t134\n75\t0\t98\n76\t0\t70\n77\t0\t123\n84\t0\t138\n86\t0\t136\n90\t0\t104\n115\t0\t129\n121\t0\t85\n140\t0\t98\n141\t0\t87\n145\t0\t97\n155\t0\t70\n174\t0\t142\n177\t0\t62\n187\t0\t59\n188\t0\t114\n191\t0\t45\n194\t0\t40\n195\t0\t69\n212\t0\t198\n216\t0\t63\n219\t0\t80\n231\t0\t61\n238\t0\t127\n856\t39\t155\n873\t90\t207\n875\t27\t101\n878\t7\t139\n894\t68\t189\n895\t32\t175\n909\t45\t181\n918\t13\t206\n932\t58\t43\n933\t12\t64\n941\t14\t102\n942\t18\t113\n955\t78\t166\n967\t49\t156\n971\t16\t101\n979\t8\t55\n980\t33\t100\n983\t16\t102\n989\t38\t11\n995\t59\t20\n1004\t20\t78\n1009\t7\t100\n1022\t18\t112\n1024\t64\t113\n1026\t26\t132\n1028\t12\t137\n1030\t18\t112\n1032\t17\t114\n1047\t7\t72\n1055\t31\t130\n1060\t32\t137\n4\t0\t177\n5\t0\t106\n10\t0\t176\n18\t0\t95\n35\t0\t183\n48\t0\t138\n49\t0\t132\n65\t0\t92\n66\t0\t132\n81\t0\t79\n101\t0\t196\n103\t0\t127\n116\t0\t126\n120\t0\t156\n137\t0\t98\n142\t0\t131\n151\t0\t76\n156\t0\t116\n157\t0\t120\n169\t0\t93\n178\t0\t28\n186\t0\t94\n197\t0\t74\n199\t0\t84\n209\t0\t131\n215\t0\t153\n220\t0\t109\n222\t0\t125\n225\t0\t123\n228\t0\t114\n341\t0\t58\n848\t134\t54\n849\t1\t168\n857\t14\t87\n867\t199\t85\n869\t45\t180\n877\t14\t166\n880\t225\t64\n881\t42\t202\n886\t95\t44\n896\t37\t221\n898\t4\t96\n900\t49\t32\n906\t127\t45\n908\t10\t90\n917\t62\t306\n936\t32\t167\n954\t84\t35\n956\t75\t225\n961\t34\t141\n984\t16\t84\n993\t15\t79\n997\t9\t75\n1008\t27\t99\n1023\t40\t90\n1033\t27\t195\n1059\t112\t54\n3\t0\t234\n9\t0\t236\n20\t0\t148\n22\t0\t147\n26\t0\t137\n28\t0\t127\n33\t0\t146\n46\t0\t132\n53\t0\t162\n74\t0\t84\n87\t0\t87\n93\t0\t128\n96\t0\t133\n112\t0\t140\n122\t0\t185\n126\t0\t100\n128\t0\t111\n130\t0\t91\n146\t0\t74\n148\t0\t81\n149\t0\t90\n152\t0\t85\n170\t0\t157\n202\t0\t73\n213\t0\t82\n214\t0\t66\n218\t0\t192\n227\t0\t110\n235\t0\t62\n236\t0\t81\n339\t0\t87\n340\t0\t203\n347\t0\t99\n854\t82\t143\n855\t30\t259\n879\t136\t231\n887\t40\t307\n891\t51\t141\n897\t20\t193\n904\t28\t201\n926\t33\t13\n929\t26\t141\n937\t25\t97\n938\t9\t78\n944\t42\t156\n950\t81\t341\n957\t2\t239\n959\t50\t178\n970\t22\t93\n976\t55\t81\n986\t22\t78\n991\t19\t141\n1006\t3\t88\n1010\t69\t14\n1018\t16\t109\n1021\t12\t95\n1037\t15\t52\n1040\t22\t97\n1042\t26\t158\n1044\t14\t131\n1046\t22\t149\n1057\t26\t104\n1062\t12\t85\n13\t0\t104\n19\t0\t137\n29\t0\t90\n38\t0\t145\n55\t0\t83\n60\t0\t89\n67\t0\t125\n69\t0\t140\n83\t0\t84\n95\t0\t41\n97\t0\t111\n111\t0\t146\n114\t0\t88\n119\t0\t69\n132\t0\t104\n133\t0\t140\n139\t0\t106\n144\t0\t76\n153\t0\t74\n167\t0\t79\n171\t0\t53\n181\t0\t106\n193\t0\t79\n201\t0\t68\n207\t0\t33\n230\t0\t28\n233\t0\t79\n234\t0\t57\n847\t295\t126\n850\t33\t134\n866\t151\t48\n930\t29\t130\n939\t31\t98\n949\t61\t231\n958\t24\t142\n966\t25\t126\n973\t12\t74\n985\t1\t119\n1001\t10\t45\n1002\t21\t79\n1005\t20\t138\n1015\t70\t15\n1027\t34\t121\n1034\t6\t70\n1045\t23\t196\n1054\t12\t109\n1058\t25\t73\n164\t0\t27\n16\t0\t177\n24\t0\t201\n25\t0\t169\n32\t0\t233\n39\t0\t117\n47\t0\t162\n61\t0\t85\n80\t0\t114\n89\t0\t125\n91\t0\t154\n92\t0\t216\n94\t0\t178\n100\t0\t176\n102\t0\t130\n106\t0\t171\n117\t0\t139\n123\t0\t213\n138\t0\t85\n147\t0\t50\n150\t0\t90\n154\t0\t74\n160\t0\t90\n165\t0\t131\n175\t0\t129\n176\t0\t118\n182\t0\t148\n192\t0\t80\n205\t0\t99\n208\t0\t162\n211\t0\t44\n217\t0\t135\n223\t0\t139\n224\t0\t62\n229\t0\t48\n239\t0\t85\n337\t0\t76\n346\t0\t161\n355\t0\t133\n841\t117\t47\n842\t46\t209\n843\t65\t217\n853\t23\t79\n858\t15\t159\n859\t55\t123\n863\t41\t292\n868\t17\t201\n871\t44\t126\n899\t39\t158\n907\t33\t187\n912\t24\t117\n916\t7\t170\n934\t4\t80\n952\t39\t209\n953\t102\t42\n969\t26\t9\n972\t10\t36\n982\t16\t56\n996\t62\t48\n1003\t39\t66\n1012\t20\t94\n1016\t65\t30\n1020\t47\t213\n1035\t4\t211\n1036\t42\t133\n1043\t24\t101\n1053\t23\t86\n915\t24\t105\n"
+            "data": "RACEID\tOVERTAKEN_POSITIONS_DUE_TO_PITSTOP_TOTAL\tOVERTAKEN_POSITIONS_REAL_TOTAL\n6\t0\t92\n14\t0\t120\n23\t0\t147\n27\t0\t181\n348\t0\t53\n846\t131\t24\n851\t29\t199\n852\t42\t175\n870\t23\t136\n883\t72\t281\n893\t77\t152\n902\t41\t208\n914\t35\t173\n948\t108\t37\n960\t18\t129\n962\t67\t154\n964\t30\t197\n965\t14\t154\n974\t51\t5\n977\t8\t41\n999\t26\t145\n1013\t37\t115\n1019\t15\t110\n1039\t37\t37\n1061\t0\t117\n1\t0\t188\n7\t0\t171\n15\t0\t134\n31\t0\t215\n338\t0\t120\n344\t0\t246\n350\t0\t61\n351\t0\t104\n352\t0\t68\n353\t0\t113\n862\t64\t292\n864\t56\t262\n865\t100\t17\n872\t26\t189\n874\t16\t151\n876\t20\t87\n884\t54\t274\n885\t92\t20\n888\t38\t215\n892\t18\t127\n901\t34\t123\n903\t25\t133\n910\t39\t208\n913\t58\t143\n927\t42\t214\n928\t21\t107\n931\t26\t16\n940\t17\t122\n943\t10\t104\n945\t26\t148\n951\t26\t91\n963\t14\t123\n975\t61\t38\n981\t37\t95\n990\t33\t165\n992\t18\t74\n1000\t5\t62\n1014\t14\t92\n1017\t82\t28\n1038\t39\t114\n34\t0\t162\n342\t0\t98\n343\t0\t95\n345\t0\t123\n349\t0\t129\n354\t0\t174\n844\t28\t336\n845\t55\t220\n860\t108\t51\n861\t65\t297\n882\t77\t215\n890\t39\t158\n905\t51\t22\n911\t61\t146\n968\t22\t164\n978\t5\t111\n987\t15\t76\n988\t3\t76\n994\t74\t7\n998\t0\t124\n1007\t22\t114\n1011\t42\t148\n1025\t14\t83\n1029\t30\t175\n1031\t6\t86\n1041\t40\t125\n1052\t35\t204\n1056\t27\t2\n2\t0\t135\n8\t0\t142\n11\t0\t121\n12\t0\t125\n17\t0\t119\n21\t0\t128\n30\t0\t120\n856\t39\t155\n873\t90\t207\n875\t27\t101\n878\t7\t139\n894\t68\t189\n895\t32\t175\n909\t45\t181\n918\t13\t206\n932\t58\t43\n933\t12\t64\n941\t14\t102\n942\t18\t113\n955\t78\t166\n967\t49\t156\n971\t16\t101\n979\t8\t55\n980\t33\t100\n983\t16\t102\n989\t38\t11\n995\t59\t20\n1004\t20\t78\n1009\t7\t100\n1022\t18\t112\n1024\t64\t113\n1026\t26\t132\n1028\t12\t137\n1030\t18\t112\n1032\t17\t114\n1047\t7\t72\n1055\t31\t130\n1060\t32\t137\n4\t0\t177\n5\t0\t106\n10\t0\t176\n18\t0\t95\n35\t0\t183\n341\t0\t58\n848\t134\t54\n849\t1\t168\n857\t14\t87\n867\t199\t85\n869\t45\t180\n877\t14\t166\n880\t225\t64\n881\t42\t202\n886\t95\t44\n896\t37\t221\n898\t4\t96\n900\t49\t32\n906\t127\t45\n908\t10\t90\n917\t62\t306\n936\t32\t167\n954\t84\t35\n956\t75\t225\n961\t34\t141\n984\t16\t84\n993\t15\t79\n997\t9\t75\n1008\t27\t99\n1023\t40\t90\n1033\t27\t195\n1059\t112\t54\n3\t0\t234\n9\t0\t236\n20\t0\t148\n22\t0\t147\n26\t0\t137\n28\t0\t127\n33\t0\t146\n339\t0\t87\n340\t0\t203\n347\t0\t99\n854\t82\t143\n855\t30\t259\n879\t136\t231\n887\t40\t307\n891\t51\t141\n897\t20\t193\n904\t28\t201\n926\t33\t13\n929\t26\t141\n937\t25\t97\n938\t9\t78\n944\t42\t156\n950\t81\t341\n957\t2\t239\n959\t50\t178\n970\t22\t93\n976\t55\t81\n986\t22\t78\n991\t19\t141\n1006\t3\t88\n1010\t69\t14\n1018\t16\t109\n1021\t12\t95\n1037\t15\t52\n1040\t22\t97\n1042\t26\t158\n1044\t14\t131\n1046\t22\t149\n1057\t26\t104\n1062\t12\t85\n13\t0\t104\n19\t0\t137\n29\t0\t90\n847\t295\t126\n850\t33\t134\n866\t151\t48\n930\t29\t130\n939\t31\t98\n949\t61\t231\n958\t24\t142\n966\t25\t126\n973\t12\t74\n985\t1\t119\n1001\t10\t45\n1002\t21\t79\n1005\t20\t138\n1015\t70\t15\n1027\t34\t121\n1034\t6\t70\n1045\t23\t196\n1054\t12\t109\n1058\t25\t73\n16\t0\t177\n24\t0\t201\n25\t0\t169\n32\t0\t233\n337\t0\t76\n346\t0\t161\n355\t0\t133\n841\t117\t47\n842\t46\t209\n843\t65\t217\n853\t23\t79\n858\t15\t159\n859\t55\t123\n863\t41\t292\n868\t17\t201\n871\t44\t126\n899\t39\t158\n907\t33\t187\n912\t24\t117\n916\t7\t170\n934\t4\t80\n952\t39\t209\n953\t102\t42\n969\t26\t9\n972\t10\t36\n982\t16\t56\n996\t62\t48\n1003\t39\t66\n1012\t20\t94\n1016\t65\t30\n1020\t47\t213\n1035\t4\t211\n1036\t42\t133\n1043\t24\t101\n1053\t23\t86\n915\t24\t105\n"
           }
         ]
       },
@@ -397,8 +397,8 @@
       "jobName": "paragraph_1632411097311_1836734053",
       "id": "20210923-153137_279489389",
       "dateCreated": "2021-09-23T15:09:02+0000",
-      "dateStarted": "2021-09-26T12:36:24+0000",
-      "dateFinished": "2021-09-26T12:36:25+0000",
+      "dateStarted": "2021-10-01T10:46:09+0000",
+      "dateFinished": "2021-10-01T10:46:10+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -406,7 +406,7 @@
     {
       "text": "%sql\n--The following calculates the come back score for a race. This is defined that the maximum distance that one of the top finishing drivers (positions 1-8) has recovered from a position back in the field. E.g. when a driver came back from position 18 to position 1, the come back score is 17. \ncreate or replace view comebackscores\nas\n    select ps.raceid, max(ps.driver_comebackscore) max_comebackscore\n    from (\n        select raceid, driverid, max(delta_position) as driver_comebackscore\n        from\n        (\n            select lt.raceid, lt.driverid, (ltbefore.position - lt.position) delta_position\n            from lap_times lt\n            , lap_times ltbefore\n            where ltbefore.raceid \u003d lt.raceid\n            and ltbefore.driverid \u003d lt.driverid\n            and ltbefore.lap \u003c lt.lap\n        )\n        group by raceid, driverid) ps\n    ,   results r\n    where r.raceid \u003d ps.raceid\n    and r.position in (\u00271\u0027, \u00272\u0027, \u00273\u0027, \u00274\u0027, \u00275\u0027, \u00276\u0027, \u00277\u0027, \u00278\u0027)\n    group by ps.raceid;\n",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:25+0000",
+      "dateUpdated": "2021-10-01T10:46:10+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -459,8 +459,8 @@
       "jobName": "paragraph_1632411097311_273794366",
       "id": "20210923-153137_1202459446",
       "dateCreated": "2021-09-22T14:43:53+0000",
-      "dateStarted": "2021-09-26T12:36:26+0000",
-      "dateFinished": "2021-09-26T12:36:26+0000",
+      "dateStarted": "2021-10-01T10:46:10+0000",
+      "dateFinished": "2021-10-01T10:46:10+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -468,7 +468,7 @@
     {
       "text": "%sql\nselect * from comebackscores",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:26+0000",
+      "dateUpdated": "2021-10-01T10:46:10+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -518,7 +518,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "RACEID\tMAX_COMEBACKSCORE\n1\t12\n2\t13\n3\t15\n4\t8\n5\t9\n6\t10\n7\t9\n8\t11\n9\t12\n10\t10\n11\t7\n12\t9\n13\t9\n14\t9\n15\t8\n16\t12\n17\t8\n18\t12\n19\t7\n20\t9\n21\t11\n22\t10\n23\t12\n24\t15\n25\t12\n26\t10\n27\t17\n28\t7\n29\t6\n30\t8\n31\t13\n32\t19\n33\t13\n34\t8\n35\t13\n36\t12\n37\t9\n38\t8\n39\t10\n40\t7\n41\t16\n42\t10\n43\t6\n44\t17\n45\t20\n46\t8\n47\t9\n48\t11\n49\t8\n50\t18\n51\t13\n52\t11\n53\t14\n54\t10\n55\t14\n56\t7\n57\t14\n58\t10\n59\t14\n60\t5\n61\t11\n62\t10\n63\t7\n64\t10\n65\t10\n66\t11\n67\t7\n68\t12\n69\t10\n70\t16\n71\t9\n72\t8\n73\t10\n74\t12\n75\t8\n76\t11\n77\t11\n78\t16\n79\t1\n80\t9\n81\t7\n82\t9\n83\t7\n84\t12\n85\t10\n86\t14\n87\t7\n88\t11\n89\t12\n90\t10\n91\t11\n92\t13\n93\t8\n94\t11\n95\t10\n96\t10\n97\t10\n98\t12\n99\t8\n100\t12\n101\t12\n102\t9\n103\t13\n104\t15\n105\t14\n106\t10\n107\t16\n108\t19\n109\t9\n110\t18\n111\t8\n112\t10\n113\t12\n114\t6\n115\t13\n116\t12\n117\t13\n118\t16\n119\t7\n120\t15\n121\t9\n122\t13\n123\t14\n124\t9\n125\t19\n126\t15\n127\t8\n128\t9\n129\t15\n130\t12\n131\t12\n132\t10\n133\t14\n134\t7\n135\t10\n136\t9\n137\t9\n138\t14\n139\t7\n140\t9\n141\t14\n142\t16\n143\t15\n144\t9\n145\t17\n146\t11\n147\t16\n148\t14\n149\t9\n150\t9\n151\t6\n152\t13\n153\t7\n154\t7\n155\t11\n156\t10\n157\t10\n158\t13\n159\t10\n160\t9\n161\t13\n162\t9\n163\t12\n164\t13\n165\t14\n166\t10\n167\t11\n168\t15\n169\t10\n170\t13\n171\t11\n172\t18\n173\t9\n174\t14\n175\t15\n176\t14\n177\t11\n178\t11\n179\t8\n180\t10\n181\t13\n182\t11\n183\t20\n184\t12\n185\t9\n186\t8\n187\t8\n188\t14\n189\t11\n190\t8\n191\t10\n192\t8\n193\t8\n194\t12\n195\t12\n196\t11\n197\t14\n198\t8\n199\t13\n200\t18\n201\t9\n202\t9\n203\t8\n204\t11\n205\t7\n206\t11\n207\t9\n208\t12\n209\t12\n210\t9\n211\t12\n212\t11\n213\t14\n214\t10\n215\t12\n216\t9\n217\t16\n218\t13\n219\t8\n220\t11\n221\t12\n222\t7\n223\t10\n224\t9\n225\t13\n226\t12\n227\t10\n228\t15\n229\t11\n230\t8\n231\t13\n232\t9\n233\t10\n234\t11\n235\t9\n236\t8\n237\t14\n238\t10\n239\t10\n337\t10\n338\t18\n339\t11\n340\t14\n341\t8\n342\t17\n343\t8\n344\t14\n345\t15\n346\t17\n347\t9\n348\t10\n349\t14\n350\t7\n351\t15\n352\t9\n353\t13\n354\t14\n355\t13\n841\t11\n842\t13\n843\t17\n844\t14\n845\t14\n846\t10\n847\t20\n848\t10\n849\t10\n850\t15\n851\t12\n852\t18\n853\t9\n854\t14\n855\t15\n856\t10\n857\t10\n858\t14\n859\t9\n860\t12\n861\t22\n862\t16\n863\t13\n864\t16\n865\t12\n866\t15\n867\t15\n868\t16\n869\t10\n870\t7\n871\t10\n872\t13\n873\t16\n874\t13\n875\t11\n876\t8\n877\t19\n878\t16\n879\t18\n880\t13\n881\t15\n882\t16\n883\t15\n884\t15\n885\t10\n886\t12\n887\t18\n888\t14\n890\t9\n891\t10\n892\t16\n893\t16\n894\t14\n895\t10\n896\t16\n897\t9\n898\t15\n899\t10\n900\t12\n901\t8\n902\t13\n903\t10\n904\t17\n905\t10\n906\t14\n907\t12\n908\t10\n909\t15\n910\t20\n911\t13\n912\t16\n913\t10\n914\t17\n915\t18\n916\t10\n917\t13\n918\t14\n926\t6\n927\t15\n928\t10\n929\t10\n930\t8\n931\t8\n932\t15\n933\t8\n934\t7\n936\t15\n937\t9\n938\t11\n939\t12\n940\t9\n941\t10\n942\t14\n943\t13\n944\t10\n945\t10\n948\t15\n949\t13\n950\t18\n951\t12\n952\t14\n953\t11\n954\t11\n955\t13\n956\t13\n957\t16\n958\t10\n959\t13\n960\t14\n961\t13\n962\t15\n963\t14\n964\t10\n965\t9\n966\t13\n967\t14\n968\t17\n969\t5\n970\t13\n971\t11\n972\t5\n973\t8\n974\t7\n975\t14\n976\t18\n977\t5\n978\t13\n979\t6\n980\t9\n981\t12\n982\t6\n983\t10\n984\t11\n985\t12\n986\t15\n987\t15\n988\t8\n989\t8\n990\t10\n991\t9\n992\t12\n993\t9\n994\t9\n995\t9\n996\t13\n997\t11\n998\t15\n999\t13\n1000\t12\n1001\t12\n1002\t14\n1003\t8\n1004\t12\n1005\t13\n1006\t13\n1007\t11\n1008\t9\n1009\t9\n1010\t11\n1011\t12\n1012\t8\n1013\t14\n1014\t10\n1015\t8\n1016\t10\n1017\t10\n1018\t11\n1019\t9\n1020\t17\n1021\t12\n1022\t10\n1023\t12\n1024\t12\n1025\t13\n1026\t14\n1027\t14\n1028\t15\n1029\t14\n1030\t11\n1031\t9\n1032\t13\n1033\t16\n1034\t11\n1035\t15\n1036\t11\n1037\t8\n1038\t14\n1039\t9\n1040\t9\n1041\t15\n1042\t15\n1043\t12\n1044\t16\n1045\t11\n1046\t17\n1047\t6\n1052\t16\n1053\t10\n1054\t10\n1055\t11\n1056\t6\n1057\t12\n1058\t11\n1059\t11\n1060\t12\n1061\t11\n1062\t12\n"
+            "data": "RACEID\tMAX_COMEBACKSCORE\n1\t12\n2\t13\n3\t15\n4\t8\n5\t9\n6\t10\n7\t9\n8\t11\n9\t12\n10\t10\n11\t7\n12\t9\n13\t9\n14\t9\n15\t8\n16\t12\n17\t8\n18\t12\n19\t7\n20\t9\n21\t11\n22\t10\n23\t12\n24\t15\n25\t12\n26\t10\n27\t17\n28\t7\n29\t6\n30\t8\n31\t13\n32\t19\n33\t13\n34\t8\n35\t13\n337\t10\n338\t18\n339\t11\n340\t14\n341\t8\n342\t17\n343\t8\n344\t14\n345\t15\n346\t17\n347\t9\n348\t10\n349\t14\n350\t7\n351\t15\n352\t9\n353\t13\n354\t14\n355\t13\n841\t11\n842\t13\n843\t17\n844\t14\n845\t14\n846\t10\n847\t20\n848\t10\n849\t10\n850\t15\n851\t12\n852\t18\n853\t9\n854\t14\n855\t15\n856\t10\n857\t10\n858\t14\n859\t9\n860\t12\n861\t22\n862\t16\n863\t13\n864\t16\n865\t12\n866\t15\n867\t15\n868\t16\n869\t10\n870\t7\n871\t10\n872\t13\n873\t16\n874\t13\n875\t11\n876\t8\n877\t19\n878\t16\n879\t18\n880\t13\n881\t15\n882\t16\n883\t15\n884\t15\n885\t10\n886\t12\n887\t18\n888\t14\n890\t9\n891\t10\n892\t16\n893\t16\n894\t14\n895\t10\n896\t16\n897\t9\n898\t15\n899\t10\n900\t12\n901\t8\n902\t13\n903\t10\n904\t17\n905\t10\n906\t14\n907\t12\n908\t10\n909\t15\n910\t20\n911\t13\n912\t16\n913\t10\n914\t17\n915\t18\n916\t10\n917\t13\n918\t14\n926\t6\n927\t15\n928\t10\n929\t10\n930\t8\n931\t8\n932\t15\n933\t8\n934\t7\n936\t15\n937\t9\n938\t11\n939\t12\n940\t9\n941\t10\n942\t14\n943\t13\n944\t10\n945\t10\n948\t15\n949\t13\n950\t18\n951\t12\n952\t14\n953\t11\n954\t11\n955\t13\n956\t13\n957\t16\n958\t10\n959\t13\n960\t14\n961\t13\n962\t15\n963\t14\n964\t10\n965\t9\n966\t13\n967\t14\n968\t17\n969\t5\n970\t13\n971\t11\n972\t5\n973\t8\n974\t7\n975\t14\n976\t18\n977\t5\n978\t13\n979\t6\n980\t9\n981\t12\n982\t6\n983\t10\n984\t11\n985\t12\n986\t15\n987\t15\n988\t8\n989\t8\n990\t10\n991\t9\n992\t12\n993\t9\n994\t9\n995\t9\n996\t13\n997\t11\n998\t15\n999\t13\n1000\t12\n1001\t12\n1002\t14\n1003\t8\n1004\t12\n1005\t13\n1006\t13\n1007\t11\n1008\t9\n1009\t9\n1010\t11\n1011\t12\n1012\t8\n1013\t14\n1014\t10\n1015\t8\n1016\t10\n1017\t10\n1018\t11\n1019\t9\n1020\t17\n1021\t12\n1022\t10\n1023\t12\n1024\t12\n1025\t13\n1026\t14\n1027\t14\n1028\t15\n1029\t14\n1030\t11\n1031\t9\n1032\t13\n1033\t16\n1034\t11\n1035\t15\n1036\t11\n1037\t8\n1038\t14\n1039\t9\n1040\t9\n1041\t15\n1042\t15\n1043\t12\n1044\t16\n1045\t11\n1046\t17\n1047\t6\n1052\t16\n1053\t10\n1054\t10\n1055\t11\n1056\t6\n1057\t12\n1058\t11\n1059\t11\n1060\t12\n1061\t11\n1062\t12\n"
           }
         ]
       },
@@ -526,8 +526,8 @@
       "jobName": "paragraph_1632411097311_191652192",
       "id": "20210923-153137_42947857",
       "dateCreated": "2021-09-22T15:36:46+0000",
-      "dateStarted": "2021-09-26T12:36:27+0000",
-      "dateFinished": "2021-09-26T12:36:32+0000",
+      "dateStarted": "2021-10-01T10:46:11+0000",
+      "dateFinished": "2021-10-01T10:46:14+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -535,7 +535,7 @@
     {
       "text": "%sql\n--This calculates the difference between the ranking of the driver and his finishing position. For example, if a driver is ranked 20th and finishes 1st, this adds 19 to this metric. This can be seen as a measure of \"surprise\".\ncreate or replace view position_difference_top_5_v\nas\n    select result_raceid as raceid, sum(position_difference_top_5) as position_difference_top_5\n    from\n    (\n        select result_raceid, abs(position_result - position_ranking) position_difference_top_5\n        from\n        (\n            select ra.round, s.raceid ranking_raceid, r.raceid result_raceid, r.driverid, r.position position_result, nvl(s.position, 0) position_ranking\n            from   driver_standings s\n            ,      results r\n            ,      races ra\n            where  s.raceid  \u003d (r.raceid - 1)\n            and    ra.raceid \u003d r.raceid\n            and    s.driverid  \u003d r.driverid\n            and    r.position in (\u00271\u0027, \u00272\u0027, \u00273\u0027, \u00274\u0027, \u00275\u0027)\n            order by r.raceid\n        )\n    )\n    group by result_raceid;\n",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:32+0000",
+      "dateUpdated": "2021-10-01T10:46:14+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -559,8 +559,8 @@
       "jobName": "paragraph_1632411097311_-1170190132",
       "id": "20210923-153137_1943776337",
       "dateCreated": "2021-09-23T15:09:56+0000",
-      "dateStarted": "2021-09-26T12:36:34+0000",
-      "dateFinished": "2021-09-26T12:36:34+0000",
+      "dateStarted": "2021-10-01T10:46:14+0000",
+      "dateFinished": "2021-10-01T10:46:14+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -568,7 +568,7 @@
     {
       "text": "%sql\nselect * from position_difference_top_5_v",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:34+0000",
+      "dateUpdated": "2021-10-01T10:46:14+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -618,7 +618,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "RACEID\tPOSITION_DIFFERENCE_TOP_5\n210\t34\n232\t8\n237\t20\n27\t19\n52\t11\n57\t14\n277\t10\n313\t13\n328\t19\n108\t20\n648\t12\n667\t15\n703\t6\n706\t8\n722\t23\n753\t26\n762\t30\n763\t35\n781\t16\n813\t11\n817\t73\n870\t16\n471\t66\n490\t36\n493\t19\n501\t61\n513\t27\n521\t23\n534\t39\n371\t57\n400\t12\n405\t58\n410\t18\n418\t17\n463\t35\n465\t28\n815\t8\n1039\t15\n893\t5\n962\t6\n964\t7\n974\t6\n999\t8\n51\t28\n734\t10\n754\t93\n14\t29\n457\t12\n496\t36\n497\t33\n510\t31\n554\t34\n561\t34\n359\t33\n424\t31\n459\t20\n1061\t10\n914\t5\n1013\t4\n774\t97\n837\t9\n851\t10\n591\t39\n977\t6\n535\t23\n124\t7\n883\t13\n663\t15\n808\t44\n511\t8\n792\t108\n965\t10\n291\t0\n690\t39\n421\t35\n579\t50\n58\t4\n846\t11\n161\t17\n166\t8\n1019\t6\n173\t4\n318\t12\n770\t48\n832\t8\n578\t27\n592\t40\n391\t29\n403\t47\n411\t9\n433\t15\n512\t52\n290\t2\n23\t25\n64\t12\n281\t15\n659\t20\n685\t8\n823\t5\n414\t21\n522\t12\n158\t11\n902\t31\n107\t16\n113\t12\n6\t19\n960\t13\n226\t2\n348\t19\n125\t2\n50\t16\n852\t7\n135\t2\n72\t17\n143\t18\n159\t5\n172\t14\n183\t15\n198\t10\n206\t8\n259\t58\n15\t16\n59\t23\n275\t5\n293\t5\n315\t13\n329\t14\n99\t6\n611\t28\n612\t19\n655\t13\n693\t23\n724\t40\n727\t15\n737\t27\n756\t38\n772\t26\n793\t30\n814\t20\n864\t31\n872\t21\n472\t48\n487\t50\n567\t37\n568\t24\n569\t21\n338\t19\n352\t8\n353\t14\n368\t41\n395\t26\n437\t30\n660\t21\n666\t19\n691\t28\n1038\t28\n892\t15\n951\t9\n963\t11\n981\t4\n300\t9\n71\t28\n98\t18\n110\t9\n85\t9\n127\t3\n705\t25\n404\t30\n270\t23\n333\t10\n647\t19\n862\t17\n865\t15\n481\t56\n525\t16\n594\t16\n441\t15\n927\t25\n943\t11\n945\t9\n975\t9\n1000\t2\n36\t23\n795\t56\n807\t86\n544\t45\n901\t35\n990\t33\n200\t10\n162\t8\n483\t44\n419\t24\n249\t14\n31\t19\n377\t22\n430\t19\n702\t13\n798\t64\n109\t10\n244\t8\n589\t14\n7\t9\n627\t46\n40\t6\n531\t33\n168\t17\n910\t13\n78\t26\n351\t9\n344\t8\n88\t16\n665\t40\n699\t27\n712\t17\n478\t47\n504\t13\n528\t27\n221\t21\n876\t3\n736\t16\n543\t16\n136\t6\n874\t22\n131\t12\n992\t26\n305\t16\n605\t8\n509\t16\n536\t29\n556\t26\n888\t10\n637\t34\n744\t41\n268\t8\n42\t4\n282\t8\n79\t56\n827\t95\n455\t17\n913\t10\n68\t11\n350\t13\n180\t23\n163\t1\n931\t17\n189\t14\n928\t4\n134\t8\n43\t9\n1017\t4\n903\t10\n105\t8\n885\t20\n940\t0\n1014\t4\n884\t9\n179\t11\n190\t8\n240\t12\n246\t21\n253\t10\n262\t30\n45\t26\n63\t12\n272\t34\n278\t26\n620\t53\n631\t17\n642\t28\n654\t25\n688\t23\n711\t25\n732\t51\n784\t10\n787\t48\n801\t6\n831\t6\n488\t30\n495\t23\n499\t60\n520\t35\n549\t49\n577\t27\n586\t57\n588\t13\n595\t44\n598\t16\n345\t16\n349\t14\n373\t7\n378\t4\n380\t11\n399\t14\n412\t15\n432\t19\n450\t12\n460\t11\n771\t34\n797\t48\n806\t10\n882\t17\n911\t14\n978\t8\n987\t8\n988\t6\n1011\t6\n41\t21\n255\t23\n261\t39\n1029\t36\n245\t33\n634\t34\n358\t42\n462\t14\n707\t12\n845\t2\n357\t31\n482\t24\n502\t32\n343\t18\n420\t45\n442\t24\n1041\t15\n1007\t8\n250\t22\n62\t20\n662\t8\n546\t15\n571\t23\n360\t42\n994\t8\n267\t38\n264\t22\n401\t25\n196\t25\n298\t7\n617\t12\n905\t6\n104\t8\n370\t32\n243\t19\n668\t42\n34\t4\n998\t3\n342\t13\n1031\t15\n82\t18\n844\t10\n564\t26\n422\t33\n379\t53\n434\t28\n486\t44\n860\t6\n204\t19\n1052\t33\n203\t41\n354\t6\n629\t23\n386\t10\n306\t32\n280\t4\n279\t16\n635\t19\n394\t30\n759\t21\n271\t50\n718\t29\n574\t17\n745\t42\n638\t14\n701\t17\n429\t13\n720\t22\n1056\t21\n596\t41\n1025\t3\n968\t6\n129\t21\n185\t10\n118\t12\n861\t12\n184\t19\n44\t9\n140\t20\n187\t20\n188\t35\n216\t36\n257\t24\n2\t13\n17\t15\n288\t11\n289\t7\n297\t5\n302\t8\n76\t19\n86\t19\n90\t13\n607\t15\n608\t26\n613\t22\n614\t20\n657\t13\n714\t40\n740\t27\n779\t91\n838\t180\n470\t63\n480\t14\n545\t36\n552\t22\n558\t33\n559\t21\n565\t11\n580\t29\n597\t11\n599\t18\n362\t26\n375\t4\n417\t6\n454\t47\n466\t33\n468\t34\n664\t25\n704\t15\n735\t29\n829\t19\n1030\t4\n909\t7\n983\t11\n1004\t4\n174\t6\n195\t13\n231\t6\n238\t7\n54\t7\n285\t35\n320\t5\n73\t14\n84\t14\n115\t10\n933\t6\n816\t14\n212\t27\n121\t4\n602\t35\n873\t20\n875\t13\n557\t21\n600\t17\n425\t27\n1022\t16\n1028\t8\n1055\t3\n895\t12\n941\t13\n955\t11\n749\t93\n269\t16\n387\t16\n1060\t8\n177\t9\n37\t5\n1009\t5\n145\t17\n366\t4\n646\t49\n316\t34\n652\t22\n894\t18\n8\t11\n56\t15\n77\t21\n30\t20\n191\t20\n1047\t12\n989\t14\n1026\t12\n260\t37\n292\t10\n650\t41\n675\t52\n723\t22\n747\t15\n796\t36\n811\t19\n551\t27\n369\t18\n932\t4\n585\t17\n477\t34\n674\t37\n303\t17\n75\t16\n967\t9\n11\t23\n856\t8\n1032\t32\n194\t6\n219\t17\n266\t37\n713\t19\n479\t37\n408\t27\n878\t10\n918\t12\n70\t8\n678\t42\n383\t23\n324\t26\n769\t80\n526\t56\n636\t34\n995\t11\n12\t40\n824\t94\n141\t23\n980\t6\n979\t6\n971\t3\n155\t23\n942\t14\n21\t9\n1024\t12\n199\t5\n220\t16\n228\t11\n251\t38\n256\t41\n4\t13\n18\t31\n48\t5\n287\t21\n317\t17\n331\t4\n66\t13\n625\t27\n644\t49\n671\t53\n677\t35\n680\t22\n697\t43\n708\t54\n743\t16\n751\t43\n766\t8\n790\t50\n799\t66\n805\t47\n828\t49\n836\t22\n857\t3\n505\t22\n516\t12\n550\t41\n363\t46\n364\t7\n389\t38\n413\t9\n428\t22\n451\t13\n656\t47\n700\t20\n715\t51\n761\t48\n764\t25\n819\t113\n1059\t2\n954\t15\n993\t9\n1008\t6\n157\t8\n35\t14\n295\t30\n309\t53\n606\t9\n475\t22\n849\t6\n869\t20\n572\t29\n573\t17\n402\t16\n898\t10\n186\t7\n209\t22\n673\t38\n696\t43\n498\t55\n456\t20\n81\t28\n716\t20\n570\t31\n906\t11\n639\t54\n783\t46\n587\t40\n788\t29\n848\t4\n621\t36\n393\t24\n1023\t23\n877\t16\n489\t28\n719\t19\n446\t15\n427\t28\n222\t14\n384\t14\n464\t27\n103\t23\n116\t14\n178\t3\n961\t6\n1033\t16\n896\t20\n49\t8\n900\t25\n310\t24\n120\t9\n782\t30\n381\t13\n802\t11\n622\t26\n604\t40\n507\t27\n156\t23\n169\t5\n5\t7\n65\t37\n791\t96\n584\t16\n365\t13\n485\t34\n603\t18\n225\t2\n773\t25\n539\t8\n984\t6\n908\t10\n997\t29\n215\t16\n197\t16\n886\t4\n137\t4\n151\t14\n956\t9\n10\t29\n867\t30\n101\t9\n880\t8\n881\t25\n142\t3\n341\t20\n917\t10\n148\t32\n152\t37\n263\t20\n20\t4\n53\t15\n301\t11\n311\t16\n312\t9\n87\t7\n93\t4\n130\t28\n640\t39\n649\t14\n658\t23\n661\t24\n694\t29\n698\t29\n731\t28\n739\t17\n741\t30\n789\t27\n820\t8\n834\t38\n515\t23\n532\t24\n590\t3\n340\t13\n382\t13\n423\t30\n426\t21\n439\t18\n1037\t15\n1042\t9\n1057\t23\n897\t12\n944\t4\n957\t9\n986\t13\n1010\t16\n146\t16\n214\t7\n242\t5\n22\t6\n28\t28\n46\t7\n323\t26\n325\t14\n126\t5\n618\t37\n854\t4\n541\t48\n254\t4\n695\t11\n491\t29\n506\t25\n523\t33\n529\t42\n581\t14\n361\t62\n397\t22\n444\t36\n970\t18\n938\t6\n170\t7\n236\t10\n33\t21\n319\t30\n689\t10\n767\t27\n518\t26\n530\t13\n672\t25\n96\t1\n1040\t11\n929\t8\n235\t8\n202\t15\n227\t19\n3\t41\n1018\t12\n630\t25\n950\t13\n683\t36\n336\t9\n26\t20\n540\t21\n633\t24\n553\t22\n976\t24\n959\t6\n855\t4\n879\t17\n218\t21\n991\t17\n1021\t5\n887\t11\n610\t24\n519\t51\n601\t38\n448\t18\n681\t26\n725\t12\n1062\t27\n321\t33\n339\t26\n891\t4\n1044\t19\n74\t27\n112\t11\n839\t20\n431\t20\n452\t22\n435\t64\n213\t26\n327\t26\n440\t36\n709\t21\n385\t27\n619\t17\n1046\t27\n149\t11\n937\t19\n9\t14\n122\t27\n904\t8\n347\t17\n1006\t12\n128\t16\n153\t4\n234\t5\n241\t5\n247\t22\n258\t53\n13\t25\n286\t18\n314\t3\n322\t54\n326\t16\n83\t16\n95\t14\n111\t20\n114\t11\n119\t24\n679\t35\n721\t17\n742\t21\n822\t11\n850\t9\n866\t22\n476\t47\n500\t43\n514\t35\n524\t24\n537\t28\n538\t25\n542\t24\n555\t33\n575\t22\n593\t23\n367\t47\n372\t24\n388\t29\n409\t8\n670\t81\n686\t20\n776\t53\n825\t21\n1034\t13\n1045\t13\n1054\t8\n949\t18\n139\t9\n144\t15\n181\t15\n60\t3\n97\t17\n641\t16\n966\t5\n390\t40\n396\t30\n374\t18\n376\t20\n392\t8\n458\t26\n469\t42\n1058\t5\n69\t5\n729\t72\n67\t25\n207\t21\n55\t27\n273\t75\n726\t19\n503\t38\n560\t57\n193\t14\n609\t26\n1005\t6\n765\t15\n453\t23\n167\t13\n38\t11\n1015\t5\n171\t26\n248\t18\n283\t27\n632\t47\n687\t25\n758\t74\n436\t32\n19\t13\n730\t32\n132\t12\n1027\t8\n985\t6\n164\t25\n335\t51\n133\t29\n533\t14\n1001\t10\n847\t15\n615\t34\n566\t13\n201\t20\n930\t5\n230\t20\n939\t13\n29\t8\n973\t13\n233\t16\n958\t5\n1002\t4\n175\t24\n223\t16\n274\t3\n276\t18\n284\t12\n294\t9\n296\t23\n117\t10\n616\t25\n624\t55\n626\t12\n628\t16\n651\t54\n669\t5\n676\t29\n684\t10\n692\t23\n710\t31\n717\t11\n728\t12\n750\t61\n760\t40\n775\t44\n777\t0\n803\t73\n812\t56\n830\t10\n474\t47\n484\t38\n494\t21\n527\t49\n563\t58\n582\t32\n406\t28\n407\t10\n416\t14\n443\t46\n445\t20\n447\t32\n449\t71\n653\t33\n785\t23\n833\t40\n1036\t6\n915\t13\n934\t2\n176\t12\n205\t5\n208\t8\n211\t17\n252\t9\n16\t23\n39\t10\n332\t7\n91\t10\n1012\t6\n165\t17\n25\t15\n308\t45\n780\t79\n1020\t29\n517\t24\n548\t10\n562\t33\n576\t32\n912\t11\n952\t16\n953\t22\n80\t18\n643\t31\n682\t68\n804\t25\n508\t15\n843\t16\n868\t16\n899\t10\n102\t6\n334\t12\n810\t42\n467\t7\n147\t22\n229\t46\n752\t81\n438\t40\n239\t12\n473\t27\n398\t5\n265\t82\n307\t46\n89\t18\n821\t7\n755\t27\n138\t18\n24\t34\n859\t7\n154\t14\n192\t5\n123\t19\n224\t18\n346\t16\n61\t1\n1035\t6\n916\t6\n330\t20\n623\t29\n733\t21\n492\t22\n461\t49\n304\t27\n299\t11\n583\t15\n47\t10\n1043\t11\n160\t3\n"
+            "data": "RACEID\tPOSITION_DIFFERENCE_TOP_5\n490\t36\n493\t19\n501\t61\n513\t27\n521\t23\n534\t39\n371\t57\n400\t12\n405\t58\n410\t18\n962\t6\n964\t7\n974\t6\n999\t8\n51\t28\n734\t10\n754\t93\n14\t29\n457\t12\n496\t36\n497\t33\n510\t31\n554\t34\n561\t34\n359\t33\n418\t17\n463\t35\n465\t28\n815\t8\n1039\t15\n893\t5\n210\t34\n232\t8\n237\t20\n27\t19\n52\t11\n57\t14\n277\t10\n313\t13\n328\t19\n108\t20\n648\t12\n667\t15\n703\t6\n706\t8\n722\t23\n753\t26\n762\t30\n763\t35\n781\t16\n813\t11\n817\t73\n870\t16\n471\t66\n124\t7\n883\t13\n663\t15\n808\t44\n511\t8\n792\t108\n965\t10\n291\t0\n690\t39\n421\t35\n579\t50\n58\t4\n846\t11\n161\t17\n166\t8\n1019\t6\n424\t31\n459\t20\n1061\t10\n914\t5\n1013\t4\n774\t97\n837\t9\n851\t10\n591\t39\n977\t6\n535\t23\n281\t15\n659\t20\n685\t8\n823\t5\n414\t21\n522\t12\n158\t11\n902\t31\n107\t16\n113\t12\n6\t19\n960\t13\n226\t2\n348\t19\n125\t2\n50\t16\n852\t7\n173\t4\n318\t12\n770\t48\n832\t8\n578\t27\n592\t40\n391\t29\n403\t47\n411\t9\n433\t15\n512\t52\n290\t2\n23\t25\n64\t12\n135\t2\n72\t17\n487\t50\n567\t37\n568\t24\n569\t21\n338\t19\n352\t8\n353\t14\n368\t41\n395\t26\n963\t11\n981\t4\n300\t9\n71\t28\n98\t18\n110\t9\n85\t9\n127\t3\n705\t25\n404\t30\n270\t23\n333\t10\n647\t19\n862\t17\n865\t15\n481\t56\n525\t16\n594\t16\n437\t30\n660\t21\n666\t19\n691\t28\n1038\t28\n892\t15\n951\t9\n143\t18\n159\t5\n172\t14\n183\t15\n198\t10\n206\t8\n259\t58\n15\t16\n59\t23\n275\t5\n293\t5\n315\t13\n329\t14\n99\t6\n611\t28\n612\t19\n655\t13\n693\t23\n724\t40\n727\t15\n737\t27\n756\t38\n772\t26\n793\t30\n814\t20\n864\t31\n872\t21\n472\t48\n483\t44\n419\t24\n249\t14\n31\t19\n377\t22\n430\t19\n702\t13\n798\t64\n109\t10\n244\t8\n589\t14\n7\t9\n627\t46\n40\t6\n531\t33\n168\t17\n910\t13\n78\t26\n351\t9\n441\t15\n927\t25\n943\t11\n945\t9\n975\t9\n1000\t2\n36\t23\n795\t56\n807\t86\n544\t45\n901\t35\n990\t33\n200\t10\n162\t8\n305\t16\n605\t8\n509\t16\n536\t29\n556\t26\n888\t10\n637\t34\n744\t41\n268\t8\n42\t4\n282\t8\n79\t56\n827\t95\n455\t17\n913\t10\n68\t11\n350\t13\n180\t23\n163\t1\n931\t17\n189\t14\n928\t4\n134\t8\n43\t9\n1017\t4\n903\t10\n105\t8\n885\t20\n940\t0\n344\t8\n88\t16\n665\t40\n699\t27\n712\t17\n478\t47\n504\t13\n528\t27\n221\t21\n876\t3\n736\t16\n543\t16\n136\t6\n874\t22\n131\t12\n992\t26\n1014\t4\n884\t9\n488\t30\n495\t23\n499\t60\n520\t35\n549\t49\n577\t27\n586\t57\n588\t13\n595\t44\n598\t16\n345\t16\n349\t14\n373\t7\n378\t4\n380\t11\n399\t14\n412\t15\n978\t8\n987\t8\n988\t6\n1011\t6\n41\t21\n255\t23\n261\t39\n1029\t36\n245\t33\n634\t34\n358\t42\n462\t14\n707\t12\n845\t2\n357\t31\n482\t24\n502\t32\n343\t18\n432\t19\n450\t12\n460\t11\n771\t34\n797\t48\n806\t10\n882\t17\n911\t14\n179\t11\n190\t8\n240\t12\n246\t21\n253\t10\n262\t30\n45\t26\n63\t12\n272\t34\n278\t26\n620\t53\n631\t17\n642\t28\n654\t25\n688\t23\n711\t25\n732\t51\n784\t10\n787\t48\n801\t6\n831\t6\n298\t7\n617\t12\n905\t6\n104\t8\n370\t32\n243\t19\n668\t42\n34\t4\n998\t3\n342\t13\n1031\t15\n82\t18\n420\t45\n442\t24\n1041\t15\n1007\t8\n250\t22\n62\t20\n662\t8\n546\t15\n571\t23\n360\t42\n994\t8\n267\t38\n264\t22\n401\t25\n196\t25\n354\t6\n629\t23\n386\t10\n306\t32\n280\t4\n279\t16\n635\t19\n394\t30\n759\t21\n271\t50\n718\t29\n574\t17\n745\t42\n638\t14\n701\t17\n429\t13\n720\t22\n1056\t21\n596\t41\n1025\t3\n968\t6\n129\t21\n185\t10\n118\t12\n844\t10\n564\t26\n422\t33\n379\t53\n434\t28\n486\t44\n860\t6\n204\t19\n1052\t33\n203\t41\n861\t12\n184\t19\n44\t9\n480\t14\n545\t36\n552\t22\n558\t33\n559\t21\n565\t11\n580\t29\n597\t11\n599\t18\n362\t26\n375\t4\n983\t11\n1004\t4\n174\t6\n195\t13\n231\t6\n238\t7\n54\t7\n285\t35\n320\t5\n73\t14\n84\t14\n115\t10\n933\t6\n816\t14\n212\t27\n121\t4\n602\t35\n873\t20\n875\t13\n557\t21\n600\t17\n417\t6\n454\t47\n466\t33\n468\t34\n664\t25\n704\t15\n735\t29\n829\t19\n1030\t4\n909\t7\n140\t20\n187\t20\n188\t35\n216\t36\n257\t24\n2\t13\n17\t15\n288\t11\n289\t7\n297\t5\n302\t8\n76\t19\n86\t19\n90\t13\n607\t15\n608\t26\n613\t22\n614\t20\n657\t13\n714\t40\n740\t27\n779\t91\n838\t180\n470\t63\n1009\t5\n145\t17\n366\t4\n646\t49\n316\t34\n652\t22\n894\t18\n8\t11\n56\t15\n77\t21\n30\t20\n191\t20\n1047\t12\n989\t14\n425\t27\n1022\t16\n1028\t8\n1055\t3\n895\t12\n941\t13\n955\t11\n749\t93\n269\t16\n387\t16\n1060\t8\n177\t9\n37\t5\n11\t23\n856\t8\n1032\t32\n194\t6\n219\t17\n266\t37\n713\t19\n479\t37\n408\t27\n878\t10\n918\t12\n70\t8\n678\t42\n383\t23\n324\t26\n769\t80\n526\t56\n636\t34\n995\t11\n12\t40\n824\t94\n141\t23\n980\t6\n979\t6\n971\t3\n155\t23\n1026\t12\n260\t37\n292\t10\n650\t41\n675\t52\n723\t22\n747\t15\n796\t36\n811\t19\n551\t27\n369\t18\n932\t4\n585\t17\n477\t34\n674\t37\n303\t17\n75\t16\n967\t9\n942\t14\n21\t9\n1024\t12\n505\t22\n516\t12\n550\t41\n363\t46\n364\t7\n389\t38\n413\t9\n993\t9\n1008\t6\n157\t8\n35\t14\n295\t30\n309\t53\n606\t9\n475\t22\n849\t6\n869\t20\n572\t29\n573\t17\n428\t22\n451\t13\n656\t47\n700\t20\n715\t51\n761\t48\n764\t25\n819\t113\n1059\t2\n954\t15\n199\t5\n220\t16\n228\t11\n251\t38\n256\t41\n4\t13\n18\t31\n48\t5\n287\t21\n317\t17\n331\t4\n66\t13\n625\t27\n644\t49\n671\t53\n677\t35\n680\t22\n697\t43\n708\t54\n743\t16\n751\t43\n766\t8\n790\t50\n799\t66\n805\t47\n828\t49\n836\t22\n857\t3\n81\t28\n716\t20\n570\t31\n906\t11\n639\t54\n783\t46\n587\t40\n788\t29\n848\t4\n621\t36\n393\t24\n1023\t23\n877\t16\n489\t28\n719\t19\n446\t15\n427\t28\n222\t14\n384\t14\n464\t27\n103\t23\n116\t14\n178\t3\n961\t6\n1033\t16\n896\t20\n402\t16\n898\t10\n186\t7\n209\t22\n673\t38\n696\t43\n498\t55\n456\t20\n5\t7\n65\t37\n791\t96\n584\t16\n365\t13\n485\t34\n603\t18\n225\t2\n773\t25\n539\t8\n984\t6\n908\t10\n997\t29\n215\t16\n197\t16\n886\t4\n137\t4\n151\t14\n956\t9\n10\t29\n867\t30\n101\t9\n880\t8\n881\t25\n49\t8\n900\t25\n310\t24\n120\t9\n782\t30\n381\t13\n802\t11\n622\t26\n604\t40\n507\t27\n156\t23\n169\t5\n142\t3\n341\t20\n917\t10\n515\t23\n532\t24\n590\t3\n340\t13\n382\t13\n957\t9\n986\t13\n1010\t16\n146\t16\n214\t7\n242\t5\n22\t6\n28\t28\n46\t7\n323\t26\n325\t14\n126\t5\n618\t37\n854\t4\n541\t48\n254\t4\n695\t11\n491\t29\n506\t25\n523\t33\n529\t42\n581\t14\n361\t62\n423\t30\n426\t21\n439\t18\n1037\t15\n1042\t9\n1057\t23\n897\t12\n944\t4\n148\t32\n152\t37\n263\t20\n20\t4\n53\t15\n301\t11\n311\t16\n312\t9\n87\t7\n93\t4\n130\t28\n640\t39\n649\t14\n658\t23\n661\t24\n694\t29\n698\t29\n731\t28\n739\t17\n741\t30\n789\t27\n820\t8\n834\t38\n227\t19\n3\t41\n1018\t12\n630\t25\n950\t13\n683\t36\n336\t9\n26\t20\n540\t21\n633\t24\n553\t22\n976\t24\n959\t6\n855\t4\n879\t17\n218\t21\n397\t22\n444\t36\n970\t18\n938\t6\n170\t7\n236\t10\n33\t21\n319\t30\n689\t10\n767\t27\n518\t26\n530\t13\n672\t25\n96\t1\n1040\t11\n929\t8\n235\t8\n202\t15\n74\t27\n112\t11\n839\t20\n431\t20\n452\t22\n435\t64\n213\t26\n327\t26\n440\t36\n709\t21\n385\t27\n619\t17\n1046\t27\n149\t11\n937\t19\n9\t14\n122\t27\n904\t8\n991\t17\n1021\t5\n887\t11\n610\t24\n519\t51\n601\t38\n448\t18\n681\t26\n725\t12\n1062\t27\n321\t33\n339\t26\n891\t4\n1044\t19\n347\t17\n1006\t12\n128\t16\n476\t47\n500\t43\n514\t35\n524\t24\n537\t28\n538\t25\n542\t24\n555\t33\n575\t22\n593\t23\n367\t47\n372\t24\n388\t29\n409\t8\n139\t9\n144\t15\n181\t15\n60\t3\n97\t17\n641\t16\n966\t5\n390\t40\n396\t30\n374\t18\n670\t81\n686\t20\n776\t53\n825\t21\n1034\t13\n1045\t13\n1054\t8\n949\t18\n153\t4\n234\t5\n241\t5\n247\t22\n258\t53\n13\t25\n286\t18\n314\t3\n322\t54\n326\t16\n83\t16\n95\t14\n111\t20\n114\t11\n119\t24\n679\t35\n721\t17\n742\t21\n822\t11\n850\t9\n866\t22\n55\t27\n273\t75\n726\t19\n503\t38\n560\t57\n193\t14\n609\t26\n1005\t6\n765\t15\n453\t23\n167\t13\n38\t11\n1015\t5\n376\t20\n392\t8\n458\t26\n469\t42\n1058\t5\n69\t5\n729\t72\n67\t25\n207\t21\n164\t25\n335\t51\n133\t29\n533\t14\n1001\t10\n847\t15\n615\t34\n566\t13\n201\t20\n930\t5\n230\t20\n939\t13\n29\t8\n973\t13\n233\t16\n958\t5\n171\t26\n248\t18\n283\t27\n632\t47\n687\t25\n758\t74\n436\t32\n19\t13\n730\t32\n132\t12\n1027\t8\n985\t6\n1002\t4\n474\t47\n484\t38\n494\t21\n527\t49\n563\t58\n582\t32\n406\t28\n407\t10\n416\t14\n176\t12\n205\t5\n208\t8\n211\t17\n252\t9\n16\t23\n39\t10\n332\t7\n91\t10\n1012\t6\n165\t17\n25\t15\n308\t45\n780\t79\n1020\t29\n517\t24\n548\t10\n562\t33\n576\t32\n443\t46\n445\t20\n447\t32\n449\t71\n653\t33\n785\t23\n833\t40\n1036\t6\n915\t13\n934\t2\n175\t24\n223\t16\n274\t3\n276\t18\n284\t12\n294\t9\n296\t23\n117\t10\n616\t25\n624\t55\n626\t12\n628\t16\n651\t54\n669\t5\n676\t29\n684\t10\n692\t23\n710\t31\n717\t11\n728\t12\n750\t61\n760\t40\n775\t44\n777\t0\n803\t73\n812\t56\n830\t10\n102\t6\n334\t12\n810\t42\n467\t7\n147\t22\n229\t46\n752\t81\n438\t40\n239\t12\n473\t27\n398\t5\n265\t82\n307\t46\n89\t18\n821\t7\n755\t27\n138\t18\n24\t34\n859\t7\n154\t14\n192\t5\n123\t19\n224\t18\n346\t16\n61\t1\n912\t11\n952\t16\n953\t22\n80\t18\n643\t31\n682\t68\n804\t25\n508\t15\n843\t16\n868\t16\n899\t10\n738\t9\n746\t29\n32\t31\n100\t12\n92\t9\n645\t24\n547\t15\n907\t13\n415\t46\n863\t19\n1016\t6\n106\t14\n969\t10\n"
           }
         ]
       },
@@ -626,8 +626,8 @@
       "jobName": "paragraph_1632411097311_171456074",
       "id": "20210923-153137_645763716",
       "dateCreated": "2021-09-22T15:39:00+0000",
-      "dateStarted": "2021-09-26T12:36:35+0000",
-      "dateFinished": "2021-09-26T12:36:36+0000",
+      "dateStarted": "2021-10-01T10:46:15+0000",
+      "dateFinished": "2021-10-01T10:46:15+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -635,7 +635,7 @@
     {
       "text": "%sql\n--The safety car table is an externally aquired dataset that holds information on all races that had a safety car\nselect * from safety_car;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:36+0000",
+      "dateUpdated": "2021-10-01T10:46:16+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -687,7 +687,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "YEAR\tRACE\tCOUNT\tLAPS\n2018\tFrench Grand Prix\t2\t7\n2019\tFrench Grand Prix\t1\t1\n2013\tGerman Grand Prix\t1\t6\n2014\tGerman Grand Prix\t1\t2\n2018\tGerman Grand Prix\t1\t6\n2019\tGerman Grand Prix\t6\t19\n2010\tKorean Grand Prix\t3\t24\n2011\tKorean Grand Prix\t1\t4\n2013\tKorean Grand Prix\t2\t9\n2010\tMonaco Grand Prix\t4\t14\n2011\tMonaco Grand Prix\t2\t11\n2012\tMonaco Grand Prix\t1\t2\n2013\tMonaco Grand Prix\t3\t15\n2014\tMonaco Grand Prix\t2\t8\n2015\tMonaco Grand Prix\t1\t7\n2016\tMonaco Grand Prix\t5\t15\n2017\tMonaco Grand Prix\t1\t7\n2018\tMonaco Grand Prix\t1\t3\n2019\tMonaco Grand Prix\t1\t4\n2020\tTuscan Grand Prix\t3\t12\n2014\tBahrain Grand Prix\t1\t5\n2017\tBahrain Grand Prix\t1\t4\n2018\tBahrain Grand Prix\t1\t3\n2019\tBahrain Grand Prix\t1\t3\n2010\tBelgian Grand Prix\t2\t5\n2011\tBelgian Grand Prix\t1\t4\n2012\tBelgian Grand Prix\t1\t4\n2015\tBelgian Grand Prix\t1\t2\n2016\tBelgian Grand Prix\t2\t7\n2017\tBelgian Grand Prix\t1\t4\n2018\tBelgian Grand Prix\t1\t4\n2019\tBelgian Grand Prix\t1\t4\n2020\tBelgian Grand Prix\t1\t4\n2010\tBritish Grand Prix\t1\t3\n2013\tBritish Grand Prix\t2\t10\n2014\tBritish Grand Prix\t1\t2\n2015\tBritish Grand Prix\t2\t5\n2016\tBritish Grand Prix\t2\t6\n2017\tBritish Grand Prix\t1\t3\n2018\tBritish Grand Prix\t2\t8\n2019\tBritish Grand Prix\t1\t4\n2020\tBritish Grand Prix\t2\t10\n2010\tChinese Grand Prix\t2\t7\n2015\tChinese Grand Prix\t1\t4\n2016\tChinese Grand Prix\t1\t5\n2017\tChinese Grand Prix\t2\t6\n2018\tChinese Grand Prix\t1\t5\n2019\tChinese Grand Prix\t1\t2\n2011\tItalian Grand Prix\t1\t3\n2018\tItalian Grand Prix\t1\t3\n2019\tItalian Grand Prix\t2\t2\n2020\tItalian Grand Prix\t2\t8\n2015\tMexican Grand Prix\t1\t6\n2016\tMexican Grand Prix\t1\t3\n2017\tMexican Grand Prix\t1\t2\n2018\tMexican Grand Prix\t3\t5\n2019\tMexican Grand Prix\t1\t3\n2015\tRussian Grand Prix\t2\t8\n2016\tRussian Grand Prix\t1\t3\n2017\tRussian Grand Prix\t1\t3\n2019\tRussian Grand Prix\t3\t8\n2016\tSpanish Grand Prix\t1\t3\n2017\tSpanish Grand Prix\t1\t4\n2018\tSpanish Grand Prix\t2\t9\n2019\tSpanish Grand Prix\t1\t7\n2020\tStyrian Grand Prix\t1\t3\n2015\tAustrian Grand Prix\t1\t6\n2016\tAustrian Grand Prix\t1\t5\n2018\tAustrian Grand Prix\t1\t2\n2020\tAustrian Grand Prix\t3\t15\n2011\tCanadian Grand Prix\t5\t32\n2014\tCanadian Grand Prix\t2\t8\n2016\tCanadian Grand Prix\t1\t1\n2017\tCanadian Grand Prix\t2\t7\n2018\tCanadian Grand Prix\t1\t4\n2010\tEuropean Grand Prix\t1\t5\n2010\tJapanese Grand Prix\t1\t6\n2011\tJapanese Grand Prix\t1\t4\n2012\tJapanese Grand Prix\t1\t2\n2014\tJapanese Grand Prix\t2\t10\n2017\tJapanese Grand Prix\t3\t7\n2018\tJapanese Grand Prix\t2\t5\n2010\tAbu Dhabi Grand Prix\t1\t5\n2012\tAbu Dhabi Grand Prix\t2\t10\n2018\tAbu Dhabi Grand Prix\t2\t6\n2010\tBrazilian Grand Prix\t1\t5\n2012\tBrazilian Grand Prix\t2\t9\n2016\tBrazilian Grand Prix\t4\t34\n2017\tBrazilian Grand Prix\t1\t5\n2019\tBrazilian Grand Prix\t2\t10\n2010\tHungarian Grand Prix\t1\t3\n2014\tHungarian Grand Prix\t2\t9\n2015\tHungarian Grand Prix\t1\t7\n2017\tHungarian Grand Prix\t1\t5\n2018\tHungarian Grand Prix\t2\t4\n2010\tSingapore Grand Prix\t2\t7\n2011\tSingapore Grand Prix\t1\t4\n2012\tSingapore Grand Prix\t2\t9\n2013\tSingapore Grand Prix\t1\t6\n2014\tSingapore Grand Prix\t1\t7\n2015\tSingapore Grand Prix\t2\t10\n2016\tSingapore Grand Prix\t1\t2\n2017\tSingapore Grand Prix\t3\t12\n2018\tSingapore Grand Prix\t1\t4\n2019\tSingapore Grand Prix\t3\t11\n2010\tAustralian Grand Prix\t1\t4\n2012\tAustralian Grand Prix\t1\t5\n2014\tAustralian Grand Prix\t1\t4\n2015\tAustralian Grand Prix\t1\t3\n2016\tAustralian Grand Prix\t1\t3\n2018\tAustralian Grand Prix\t2\t10\n2017\tAzerbaijan Grand Prix\t3\t12\n2018\tAzerbaijan Grand Prix\t2\t13\n2019\tAzerbaijan Grand Prix\t1\t2\n2013\tUnited States Grand Prix\t1\t4\n2014\tUnited States Grand Prix\t1\t4\n2015\tUnited States Grand Prix\t4\t16\n2016\tUnited States Grand Prix\t1\t3\n2018\tUnited States Grand Prix\t1\t2\n2012\tMalaysian Grand Prix\t1\t7\n2015\tMalaysian Grand Prix\t1\t3\n2016\tMalaysian Grand Prix\t3\t7\n2012\tEuropean Grand Prix\t1\t5\n"
+            "data": "YEAR\tRACE\tCOUNT\tLAPS\n2018\tFrench Grand Prix\t2\t7\n2019\tFrench Grand Prix\t1\t1\n2013\tGerman Grand Prix\t1\t6\n2014\tGerman Grand Prix\t1\t2\n2018\tGerman Grand Prix\t1\t6\n2019\tGerman Grand Prix\t6\t19\n2010\tKorean Grand Prix\t3\t24\n2011\tKorean Grand Prix\t1\t4\n2013\tKorean Grand Prix\t2\t9\n2010\tMonaco Grand Prix\t4\t14\n2011\tMonaco Grand Prix\t2\t11\n2012\tMonaco Grand Prix\t1\t2\n2013\tMonaco Grand Prix\t3\t15\n2014\tMonaco Grand Prix\t2\t8\n2015\tMonaco Grand Prix\t1\t7\n2016\tMonaco Grand Prix\t5\t15\n2017\tMonaco Grand Prix\t1\t7\n2018\tMonaco Grand Prix\t1\t3\n2019\tMonaco Grand Prix\t1\t4\n2020\tTuscan Grand Prix\t3\t12\n2014\tBahrain Grand Prix\t1\t5\n2017\tBahrain Grand Prix\t1\t4\n2018\tBahrain Grand Prix\t1\t3\n2019\tBahrain Grand Prix\t1\t3\n2010\tBelgian Grand Prix\t2\t5\n2011\tBelgian Grand Prix\t1\t4\n2012\tBelgian Grand Prix\t1\t4\n2015\tBelgian Grand Prix\t1\t2\n2016\tBelgian Grand Prix\t2\t7\n2017\tBelgian Grand Prix\t1\t4\n2018\tBelgian Grand Prix\t1\t4\n2019\tBelgian Grand Prix\t1\t4\n2020\tBelgian Grand Prix\t1\t4\n2010\tBritish Grand Prix\t1\t3\n2013\tBritish Grand Prix\t2\t10\n2014\tBritish Grand Prix\t1\t2\n2015\tBritish Grand Prix\t2\t5\n2016\tBritish Grand Prix\t2\t6\n2017\tBritish Grand Prix\t1\t3\n2018\tBritish Grand Prix\t2\t8\n2019\tBritish Grand Prix\t1\t4\n2020\tBritish Grand Prix\t2\t10\n2010\tChinese Grand Prix\t2\t7\n2015\tChinese Grand Prix\t1\t4\n2016\tChinese Grand Prix\t1\t5\n2017\tChinese Grand Prix\t2\t6\n2018\tChinese Grand Prix\t1\t5\n2019\tChinese Grand Prix\t1\t2\n2011\tItalian Grand Prix\t1\t3\n2018\tItalian Grand Prix\t1\t3\n2019\tItalian Grand Prix\t2\t2\n2020\tItalian Grand Prix\t2\t8\n2015\tMexican Grand Prix\t1\t6\n2016\tMexican Grand Prix\t1\t3\n2017\tMexican Grand Prix\t1\t2\n2018\tMexican Grand Prix\t3\t5\n2019\tMexican Grand Prix\t1\t3\n2015\tRussian Grand Prix\t2\t8\n2016\tRussian Grand Prix\t1\t3\n2017\tRussian Grand Prix\t1\t3\n2019\tRussian Grand Prix\t3\t8\n2016\tSpanish Grand Prix\t1\t3\n2017\tSpanish Grand Prix\t1\t4\n2018\tSpanish Grand Prix\t2\t9\n2019\tSpanish Grand Prix\t1\t7\n2020\tStyrian Grand Prix\t1\t3\n2015\tAustrian Grand Prix\t1\t6\n2016\tAustrian Grand Prix\t1\t5\n2018\tAustrian Grand Prix\t1\t2\n2020\tAustrian Grand Prix\t3\t15\n2011\tCanadian Grand Prix\t5\t32\n2014\tCanadian Grand Prix\t2\t8\n2016\tCanadian Grand Prix\t1\t1\n2017\tCanadian Grand Prix\t2\t7\n2018\tCanadian Grand Prix\t1\t4\n2010\tEuropean Grand Prix\t1\t5\n2012\tEuropean Grand Prix\t1\t5\n2010\tJapanese Grand Prix\t1\t6\n2011\tJapanese Grand Prix\t1\t4\n2012\tJapanese Grand Prix\t1\t2\n2014\tJapanese Grand Prix\t2\t10\n2017\tJapanese Grand Prix\t3\t7\n2018\tJapanese Grand Prix\t2\t5\n2010\tAbu Dhabi Grand Prix\t1\t5\n2012\tAbu Dhabi Grand Prix\t2\t10\n2018\tAbu Dhabi Grand Prix\t2\t6\n2010\tBrazilian Grand Prix\t1\t5\n2012\tBrazilian Grand Prix\t2\t9\n2016\tBrazilian Grand Prix\t4\t34\n2017\tBrazilian Grand Prix\t1\t5\n2019\tBrazilian Grand Prix\t2\t10\n2010\tHungarian Grand Prix\t1\t3\n2014\tHungarian Grand Prix\t2\t9\n2015\tHungarian Grand Prix\t1\t7\n2017\tHungarian Grand Prix\t1\t5\n2018\tHungarian Grand Prix\t2\t4\n2012\tMalaysian Grand Prix\t1\t7\n2015\tMalaysian Grand Prix\t1\t3\n2016\tMalaysian Grand Prix\t3\t7\n2010\tSingapore Grand Prix\t2\t7\n2011\tSingapore Grand Prix\t1\t4\n2012\tSingapore Grand Prix\t2\t9\n2013\tSingapore Grand Prix\t1\t6\n2014\tSingapore Grand Prix\t1\t7\n2015\tSingapore Grand Prix\t2\t10\n2016\tSingapore Grand Prix\t1\t2\n2017\tSingapore Grand Prix\t3\t12\n2018\tSingapore Grand Prix\t1\t4\n2019\tSingapore Grand Prix\t3\t11\n2010\tAustralian Grand Prix\t1\t4\n2012\tAustralian Grand Prix\t1\t5\n2014\tAustralian Grand Prix\t1\t4\n2015\tAustralian Grand Prix\t1\t3\n2016\tAustralian Grand Prix\t1\t3\n2018\tAustralian Grand Prix\t2\t10\n2017\tAzerbaijan Grand Prix\t3\t12\n2018\tAzerbaijan Grand Prix\t2\t13\n2019\tAzerbaijan Grand Prix\t1\t2\n2013\tUnited States Grand Prix\t1\t4\n2014\tUnited States Grand Prix\t1\t4\n2015\tUnited States Grand Prix\t4\t16\n2016\tUnited States Grand Prix\t1\t3\n2018\tUnited States Grand Prix\t1\t2\n"
           }
         ]
       },
@@ -695,8 +695,8 @@
       "jobName": "paragraph_1632411097311_-2125133830",
       "id": "20210923-153137_32440542",
       "dateCreated": "2021-09-23T15:11:45+0000",
-      "dateStarted": "2021-09-26T12:36:37+0000",
-      "dateFinished": "2021-09-26T12:36:37+0000",
+      "dateStarted": "2021-10-01T10:46:16+0000",
+      "dateFinished": "2021-10-01T10:46:16+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -704,7 +704,7 @@
     {
       "text": "--Add place holders for the newly generated features",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:37+0000",
+      "dateUpdated": "2021-10-01T10:46:17+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -728,8 +728,8 @@
       "jobName": "paragraph_1632411097311_308675400",
       "id": "20210923-153137_2041637423",
       "dateCreated": "2021-09-23T15:12:28+0000",
-      "dateStarted": "2021-09-26T12:36:38+0000",
-      "dateFinished": "2021-09-26T12:36:38+0000",
+      "dateStarted": "2021-10-01T10:46:17+0000",
+      "dateFinished": "2021-10-01T10:46:17+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -737,7 +737,7 @@
     {
       "text": "%sql\nalter table races add laps_with_change_pos_1 number;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:38+0000",
+      "dateUpdated": "2021-10-01T10:46:17+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -761,8 +761,8 @@
       "jobName": "paragraph_1632411097311_-1994852727",
       "id": "20210923-153137_1470589036",
       "dateCreated": "2021-09-23T15:13:18+0000",
-      "dateStarted": "2021-09-26T12:36:41+0000",
-      "dateFinished": "2021-09-26T12:36:41+0000",
+      "dateStarted": "2021-10-01T10:46:18+0000",
+      "dateFinished": "2021-10-01T10:46:18+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -770,7 +770,7 @@
     {
       "text": "%sql\nalter table races add laps_with_change_pos_1_5 number;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:41+0000",
+      "dateUpdated": "2021-10-01T10:46:18+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -794,8 +794,8 @@
       "jobName": "paragraph_1632411097311_928411851",
       "id": "20210923-153137_495204782",
       "dateCreated": "2021-09-23T15:14:28+0000",
-      "dateStarted": "2021-09-26T12:36:42+0000",
-      "dateFinished": "2021-09-26T12:36:42+0000",
+      "dateStarted": "2021-10-01T10:46:19+0000",
+      "dateFinished": "2021-10-01T10:46:19+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -803,7 +803,7 @@
     {
       "text": "%sql\nalter table races add overtaken_positions_due_to_pitstop_total number;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:42+0000",
+      "dateUpdated": "2021-10-01T10:46:19+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -827,8 +827,8 @@
       "jobName": "paragraph_1632411097311_818357247",
       "id": "20210923-153137_1687434032",
       "dateCreated": "2021-09-23T15:14:31+0000",
-      "dateStarted": "2021-09-26T12:36:43+0000",
-      "dateFinished": "2021-09-26T12:36:44+0000",
+      "dateStarted": "2021-10-01T10:46:19+0000",
+      "dateFinished": "2021-10-01T10:46:19+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -836,7 +836,7 @@
     {
       "text": "%sql\nalter table races add overtaken_positions_real_total number;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:44+0000",
+      "dateUpdated": "2021-10-01T10:46:19+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -860,8 +860,8 @@
       "jobName": "paragraph_1632411097311_-1905263532",
       "id": "20210923-153137_436947999",
       "dateCreated": "2021-09-23T15:15:32+0000",
-      "dateStarted": "2021-09-26T12:36:45+0000",
-      "dateFinished": "2021-09-26T12:36:45+0000",
+      "dateStarted": "2021-10-01T10:46:20+0000",
+      "dateFinished": "2021-10-01T10:46:20+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -869,7 +869,7 @@
     {
       "text": "%sql\nalter table races add max_comebackscore number;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:45+0000",
+      "dateUpdated": "2021-10-01T10:46:20+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -893,8 +893,8 @@
       "jobName": "paragraph_1632411097311_-1185156359",
       "id": "20210923-153137_1988338490",
       "dateCreated": "2021-09-23T15:15:43+0000",
-      "dateStarted": "2021-09-26T12:36:45+0000",
-      "dateFinished": "2021-09-26T12:36:46+0000",
+      "dateStarted": "2021-10-01T10:46:21+0000",
+      "dateFinished": "2021-10-01T10:46:21+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -902,7 +902,7 @@
     {
       "text": "%sql\nalter table races add rank_versus_position number;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:46+0000",
+      "dateUpdated": "2021-10-01T10:46:21+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -926,8 +926,8 @@
       "jobName": "paragraph_1632411097311_1508880358",
       "id": "20210923-153137_1249291533",
       "dateCreated": "2021-09-23T15:15:56+0000",
-      "dateStarted": "2021-09-26T12:36:47+0000",
-      "dateFinished": "2021-09-26T12:36:47+0000",
+      "dateStarted": "2021-10-01T10:46:22+0000",
+      "dateFinished": "2021-10-01T10:46:22+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -935,7 +935,7 @@
     {
       "text": "%sql\nalter table races add safety_car number;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:36:47+0000",
+      "dateUpdated": "2021-10-01T10:46:22+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -959,8 +959,8 @@
       "jobName": "paragraph_1632411097311_1205099774",
       "id": "20210923-153137_264112832",
       "dateCreated": "2021-09-23T15:16:05+0000",
-      "dateStarted": "2021-09-26T12:36:49+0000",
-      "dateFinished": "2021-09-26T12:36:49+0000",
+      "dateStarted": "2021-10-01T10:46:22+0000",
+      "dateFinished": "2021-10-01T10:46:22+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -968,7 +968,7 @@
     {
       "text": "--Now merge the new features into the RACES table",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:37:03+0000",
+      "dateUpdated": "2021-10-01T10:46:22+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -992,8 +992,8 @@
       "jobName": "paragraph_1632411097311_-316604507",
       "id": "20210923-153137_1335219356",
       "dateCreated": "2021-09-23T15:16:30+0000",
-      "dateStarted": "2021-09-26T12:37:05+0000",
-      "dateFinished": "2021-09-26T12:37:05+0000",
+      "dateStarted": "2021-10-01T10:46:23+0000",
+      "dateFinished": "2021-10-01T10:46:23+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1001,7 +1001,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM laps_with_change_pos_1_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.laps_with_change_pos_1 \u003d h.laps;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:37:06+0000",
+      "dateUpdated": "2021-10-01T10:46:23+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1025,8 +1025,8 @@
       "jobName": "paragraph_1632411097311_-563100941",
       "id": "20210923-153137_610546727",
       "dateCreated": "2021-09-23T15:16:50+0000",
-      "dateStarted": "2021-09-26T12:37:08+0000",
-      "dateFinished": "2021-09-26T12:37:08+0000",
+      "dateStarted": "2021-10-01T10:46:24+0000",
+      "dateFinished": "2021-10-01T10:46:24+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1034,7 +1034,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM laps_with_change_pos_1_5_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.laps_with_change_pos_1_5 \u003d h.laps;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:37:10+0000",
+      "dateUpdated": "2021-10-01T10:46:24+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1058,8 +1058,8 @@
       "jobName": "paragraph_1632411097311_-780160365",
       "id": "20210923-153137_1527114595",
       "dateCreated": "2021-09-23T15:17:13+0000",
-      "dateStarted": "2021-09-26T12:37:12+0000",
-      "dateFinished": "2021-09-26T12:37:12+0000",
+      "dateStarted": "2021-10-01T10:46:25+0000",
+      "dateFinished": "2021-10-01T10:46:25+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1067,7 +1067,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM overtaken_positions_total) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.overtaken_positions_due_to_pitstop_total \u003d h.overtaken_positions_due_to_pitstop_total\n        ,          e.overtaken_positions_real_total \u003d h.overtaken_positions_real_total;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:37:14+0000",
+      "dateUpdated": "2021-10-01T10:46:25+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1091,16 +1091,16 @@
       "jobName": "paragraph_1632411097311_1687936204",
       "id": "20210923-153137_605160137",
       "dateCreated": "2021-09-23T15:17:22+0000",
-      "dateStarted": "2021-09-26T12:37:16+0000",
-      "dateFinished": "2021-09-26T12:37:17+0000",
+      "dateStarted": "2021-10-01T10:46:26+0000",
+      "dateFinished": "2021-10-01T10:46:26+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
     },
     {
-      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM comebackscore_aggr) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.max_comebackscore \u003d h.max_comebackscore;",
+      "text": "%sql\nMERGE INTO races e USING (SELECT * FROM comebackscores) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.max_comebackscore \u003d h.max_comebackscore;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:37:18+0000",
+      "dateUpdated": "2021-10-01T10:46:26+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1124,8 +1124,8 @@
       "jobName": "paragraph_1632411097311_2016326718",
       "id": "20210923-153137_1170346979",
       "dateCreated": "2021-09-23T15:17:36+0000",
-      "dateStarted": "2021-09-26T12:37:19+0000",
-      "dateFinished": "2021-09-26T12:37:27+0000",
+      "dateStarted": "2021-10-01T10:46:27+0000",
+      "dateFinished": "2021-10-01T10:46:29+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1133,7 +1133,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM position_difference_top_5_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.rank_versus_position \u003d h.position_difference_top_5;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:37:30+0000",
+      "dateUpdated": "2021-10-01T10:46:29+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1157,8 +1157,8 @@
       "jobName": "paragraph_1632411097311_1883471832",
       "id": "20210923-153137_1073926768",
       "dateCreated": "2021-09-23T15:17:55+0000",
-      "dateStarted": "2021-09-26T12:37:32+0000",
-      "dateFinished": "2021-09-26T12:37:32+0000",
+      "dateStarted": "2021-10-01T10:46:30+0000",
+      "dateFinished": "2021-10-01T10:46:30+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1166,7 +1166,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM safety_car) h\n        ON (e.name \u003d h.race AND e.year \u003d h.year)\n      WHEN MATCHED THEN\n        UPDATE SET e.safety_car \u003d 1;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:37:37+0000",
+      "dateUpdated": "2021-10-01T10:46:30+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1190,8 +1190,8 @@
       "jobName": "paragraph_1632411097311_1830406624",
       "id": "20210923-153137_875067360",
       "dateCreated": "2021-09-23T15:18:09+0000",
-      "dateStarted": "2021-09-26T12:37:38+0000",
-      "dateFinished": "2021-09-26T12:37:38+0000",
+      "dateStarted": "2021-10-01T10:46:31+0000",
+      "dateFinished": "2021-10-01T10:46:31+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1199,7 +1199,7 @@
     {
       "text": "%sql\nupdate races set max_comebackscore \u003d 0 where max_comebackscore is null;",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:37:41+0000",
+      "dateUpdated": "2021-10-01T10:46:31+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1223,8 +1223,8 @@
       "jobName": "paragraph_1632413096429_169368398",
       "id": "20210923-160456_1922337810",
       "dateCreated": "2021-09-23T16:04:56+0000",
-      "dateStarted": "2021-09-26T12:37:42+0000",
-      "dateFinished": "2021-09-26T12:37:42+0000",
+      "dateStarted": "2021-10-01T10:46:32+0000",
+      "dateFinished": "2021-10-01T10:46:32+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1232,7 +1232,7 @@
     {
       "text": "%sql\n--Split the dataset\n--Create a dedicated RACES_TRAIN table. We will use this later to TRAIN the model on the years until 2019.\n--We will use the year 2020 to TEST the model later.\ncreate table races_train as select * from races where year \u003e\u003d 2011 and year \u003c\u003d 2019; --Exclude 2020",
       "user": "F1",
-      "dateUpdated": "2021-09-26T12:38:53+0000",
+      "dateUpdated": "2021-10-01T10:46:32+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1249,16 +1249,21 @@
         "forms": {}
       },
       "results": {
-        "code": "SUCCESS",
-        "msg": []
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "ORA-00955: name is already used by an existing object\n"
+          }
+        ]
       },
       "interrupted": false,
       "jobName": "paragraph_1632411097311_-1479887262",
       "id": "20210923-153137_1589222",
       "dateCreated": "2021-09-23T15:19:23+0000",
-      "dateStarted": "2021-09-26T12:38:55+0000",
-      "dateFinished": "2021-09-26T12:38:55+0000",
-      "status": "FINISHED",
+      "dateStarted": "2021-10-01T10:46:32+0000",
+      "dateFinished": "2021-10-01T10:46:32+0000",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500,
       "commited": true
     },
