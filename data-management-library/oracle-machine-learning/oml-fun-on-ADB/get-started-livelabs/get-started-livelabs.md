@@ -10,6 +10,7 @@ Estimated Lab Time: 15 minutes
 In this lab, you will learn how to:
 
 * Provision an Oracle Autonomous Database
+* Create an Oracle Machine Learning user
 * Sign into Oracle Machine Learning user interface
 * Create the CUSTOMERS360 table.
 
