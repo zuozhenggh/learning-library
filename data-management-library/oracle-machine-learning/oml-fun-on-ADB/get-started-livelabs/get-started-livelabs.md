@@ -26,36 +26,41 @@ In this lab, you will learn how to:
 
 To provision an Oracle Autonomous Database:
 
-1. From the **Navigation Menu** in the upper left corner, select **Oracle Database**, and then select **Autonomous Data Warehouse**.
+1. Sign in to your OCI account, and under the Launch Resources section, click **Create an ADW database**.
+
+	![Create ADW Database](images/adw_database.png)
+
+	 Alternatively, you may click the hamburger on the upper left corner to open the left navigation pane, and click **Autonomous Data Warehouse**.
 
 	![Autonomous Data Warehouse option under Oracle Database](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "Autonomous Data Warehouse option under Oracle Database")
 
-2. From the Oracle Cloud Infrastructure Console, on the Oracle Autonomous Database page choose your region and select a compartment.
+2. From the Oracle Cloud Infrastructure Console, on the Oracle Autonomous Database page choose your region and select a compartment. Click **Create Autonomous Database**. This opens the Create Autonomous Database page.
 
-3. Click **Create Autonomous Database**.
+   ![Create Autonomous Database option](images/create-autonomous-db.png)
 
-    ![Create Autonomous Database option](images/create-autonomous-db.png)
+4. On the Create Autonomous Database page, provide the basic information about the database. By default, a database name and a display name for the database are provided. You can modify these names to enter a user-friendly display name for the ADB instance to easily identify the resource. The display name does not have to be unique.    
 
-4. Provide basic information for the Oracle Autonomous Database.
-
-    Enter a user-friendly display name for the ADB instance to easily identify the resource. The display name does not have to be unique.
-
-    ![Create Autonomous Database dialog](images/create-autonomous-db-1.png)
+   ![Autonomous Database information](images/adb_basic_info.png)
 
 5. For Workload Type, click **Data Warehouse**.
 
+	 ![Autonomous Database Workload type](images/workload_type.png)
+
 6. For Deployment, select **Shared Infrastructure**.
 
-7. For Database configuration, select the following:
+	 ![Autonomous Database deployment type](images/deployment_type.png)
 
-    - **Choose database version:** Select the database version. The available database version is **19c**.
-    - **OCPU Count:** Enter ``1`` . This is number of CPU cores for your database.
-    - **Storage (TB):** Specify the storage you wish to make available to your database, in terabytes. Click the arrow to select ``1``.
-    - **Auto Scaling:** By default auto scaling is enabled to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
+7. For Database Configuration, select Always Free. For the Always Free option, the database configuration options - OCPU count, Storage, and Auto scaling are not available. You must upgrade to a paid account to avail of it.
 
-    ![Configure Database dialog](images/create-adw-config.png)
+	 >**Note:** You can create Always Free resources both in Free Tier and Paid accounts
 
-8. For Administrator credentials, enter and re-confirm a password.
+  ![Configure Database](images/db_configuration.png)
+
+8. Create your Autonomous Database administrator credentials by providing a password. You will need these credentials to sign in to this Autonomous Database instance.   
+
+	>Note: The default administrator username is ADMIN.
+
+	![Database Administrator credentials](images/db_admin_credentials.png)
 
 9. For network access, select **Allow secure access from everywhere.**
 
@@ -65,11 +70,11 @@ To provision an Oracle Autonomous Database:
 
     ![License settings](images/create-adw-license.png)
 
-11. Click **Create Autonomous Database**. The Oracle Autonomous Data Warehouse instance starts provisioning. Click **Autonomous Data Warehouse** again from the navigation to see a list of Oracle Autonomous Database instances in your console.
+11. Click **Create Autonomous Database**. The Oracle Autonomous Data Warehouse instance starts provisioning. Once your Autonomous Database is created, the database details are listed with the status Available.
 
-12. Click the Autonomous Data Warehouse instance you just created.
+	  ![ADB details](images/adw_details.png)
 
-    ![List of Oracle Autonomous Database instances](images/adb_instance.png)
+This completes the task of provisioning an Oracle Autonomous Database.
 
 ## Task 2: Create an Oracle Machine Learning user
 
@@ -103,7 +108,13 @@ To create a user account:
 
 	![Oracle Autonomous Data Warehouse](images/manage_oml_users.png)
 
-6. Click **Create** on the Oracle Machine Learning User Administration page.
+6. On the Oracle Machine Learning User Administration Sign in page, enter the username and password to sign in.
+
+	>**Note:** The username is ADMIN. The password is what is you have defined while provisioning the Autonomous Database instance.   
+
+	![Oracle Machine Learning User Administration Sign in page](images/database_admin_signin.png)
+
+7. Click **Create** on the Oracle Machine Learning User Administration page.
 
 	![Oracle Autonomous Data Warehouse](images/oml_um_page.png)
 
@@ -123,6 +134,7 @@ To create a user account:
 
 8. Click **Create**.
 
+This completes the task of creating an Oracle Machine Learning user.
 
 ## Task 3: Sign into Oracle Machine Learning Notebooks
 
@@ -135,17 +147,19 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 2. Click **Oracle Machine Learning Notebooks.**
 
-	  ![Oracle Machine Learning Notebooks in ADW](images/adw_oml_notebooks.png)
+	 ![Oracle Machine Learning Notebooks in ADW](images/oml_notebooks_dev.png)
 
 3. Enter your user credentials and click **Sign in**.
 
+	>**Note:** The credential is what you have defined while creating the Oracle Machine Learning user.
 
-	![Oracle Machine Learning Notebooks Sign in page](images/oml_signin_page.png)
+	![Oracle Machine Learning Notebooks Sign in page](images/omluser_signin.png)
 
 4. Click **Notebooks** in the Quick Actions section.
 
 	![Notebooks option in OML homepage](images/homepage_notebooks.png)
 
+This completes the task of signing into Oracle Machine Learning user interface.
 
 ## Task 4: Create the CUSTOMERS360 table
 
