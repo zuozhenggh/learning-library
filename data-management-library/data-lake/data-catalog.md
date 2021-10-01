@@ -53,8 +53,46 @@ The data asset will then be added to this data catalog.
 
 ## Task 3: Create the OCI Data Integration workspace
 
-Creation of the OCI Data Integration workspace required the VPN, groups and policies that we configured during the setup of the environment for the Lakehouse. Now it is a matter of navigating to the Data Integration space and creating the workspace which will in turn allow us to create ETL processes.
+Creation of the OCI Data Integration workspace required the VPN for private endpoints, groups and policies that we configured during the setup of the environment for the Lakehouse. Now it is a matter of navigating to the Data Integration space and creating the workspace which will in turn allow us to create ETL processes.
 
+From the home navigation menu, click Analytics & AI and then click Data Integration.
+
+![Data Integration](./images/nav_dataintegration.png " ")
+
+From the Data Integration Service we will create a Workspace which will allow for diagramming the data flows with filters and create execution plans for data into the data assets. First we must create the workspace and a couple more policies for the workspace to access the object storage and use and update the data in the data lake.
+
+Click on Create Workspace. Name it Workspace Lakehouse and click the Create button.
+
+![Create Workspace](./images/create_workspace.png " ")
+
+While that is creating navigate back to Policies. Click on Identity & Security and then Policies.
+Select dataintegrationWS policies and clik Edit Policy Statements. From here you can + Another Statement.
+
+![Add Policies](./images/add_policies.png " ")
+
+Use the follow three allow statements to add into the existing policy, and then Save Changes.
+```
+<copy>
+allow any-user to use buckets in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='ocid1.disworkspace.oc1.iad.anuwcljt2ow634yaaq4pl6jbvhhudjkchsdwrw3q3hkmlpoyfilwyyjqykjq'}
+
+allow any-user to manage objects in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='ocid1.disworkspace.oc1.iad.anuwcljt2ow634yaaq4pl6jbvhhudjkchsdwrw3q3hkmlpoyfilwyyjqykjq'}
+
+allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.principal.type='disworkspace',requesst.principal.id='ocid1.disworkspace.oc1.iad.anuwcljt2ow634yaaq4pl6jbvhhudjkchsdwrw3q3hkmlpoyfilwyyjqykjq'
+}
+
+</copy>
+```
+
+Once the workspace has been created (a refresh of the screen might be needed to go from Processing to Active). 
+
+- Click on the Workspace Lakehouse. 
+- Click on Create a Project.
+- Enter Name Project_lakehouse
+- Click Create
+
+![Create Project](./images/create_project.png " ")
+
+We have now configured our Data Lakehouse by creating a database, data sources in object storage and setup up our services ready to use and set up processes for data loading and ETL with OCI Data Flow.
 
 You may now [proceed to the next lab](#next).
 
