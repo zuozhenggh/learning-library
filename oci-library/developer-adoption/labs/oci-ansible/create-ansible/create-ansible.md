@@ -36,7 +36,7 @@ You will keep all of the defaults for the bucket creation.
 
 3. Click ***Create Bucket***.
 
-4. Enter a ***Bucket Name*** . For this lab we will name the bucket **ansible-bucket**.
+4. Enter a ***Bucket Name*** . For this lab we will name the bucket **bucket-ansible**.
 
    You will keep all of the defaults for the bucket creation.
 
