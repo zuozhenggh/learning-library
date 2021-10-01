@@ -50,7 +50,7 @@ This new user/schema will hold the Grand Prix data.
 
 ## **STEP 2**: Upload the Grand Prix data to Autonomous Data Warehouse
 
-1. **Download** the five files that contain the data that we'll use in our analysis:
+1. **Download** the 6 files that contain the data that we'll use in our analysis:
 
    <a href="files/RACES.csv" target="\_blank">Races data</a>
 
@@ -61,6 +61,8 @@ This new user/schema will hold the Grand Prix data.
    <a href="files/PIT_STOPS.csv" target="\_blank">Pit Stop data</a>
 
    <a href="files/RESULTS.csv" target="\_blank">Race Results data</a>
+
+   <a href="files/DRIVER_STANDINGS.csv" target="\_blank">Driver Ranking data</a>
 
    Save the files on your local machine. **Make sure that the files are saved with extension `.csv`**
 
@@ -87,19 +89,19 @@ This new user/schema will hold the Grand Prix data.
 
     ![Select Files](images/select-files.png)
 
-6. Edit the configuration of SAFETY_CAR.csv by changing the load option into "Insert into table". We are doing this because we already have an empty table, and we want to add the data into that table.
+6. Edit the configuration of each of the data sets by changing the load option into "Insert into table". We are doing this because we already created the empty tables earlier, and we want to add the data into those existing tables.
+
+  We are showing the instructions for SAFETY_CAR. **Please make sure that you do this for all data sets.**
 
    ![Select Files](images/edit-safety-car.png)
 
    ![Select Files](images/change-option1.png)
 
-7. Also change the load option for RACES, LAP_TIMES, PIT_STOPS and RESULTS to "Insert into table".
-
-8. After you have changed the load option of all 5 files, click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
+7. After you have changed the load option of **all** files, click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
 
     ![Start Load Process](images/load-data.png)
 
-7. This process takes a few seconds. You will see a green tick when done.
+8. This process takes a few seconds. You should see  green ticks next to all data load jobs.
 
     ![Load Completed](images/load-completed.png)
 
