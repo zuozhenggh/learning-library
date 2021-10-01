@@ -50,7 +50,7 @@ This new user/schema will hold the Grand Prix data.
 
 ## **STEP 2**: Upload the Grand Prix data to Autonomous Data Warehouse
 
-1. **Download** the four files that contain the data that we'll use in our analysis:
+1. **Download** the five files that contain the data that we'll use in our analysis:
 
    <a href="files/RACES.csv" target="\_blank">Races data</a>
 
@@ -59,6 +59,8 @@ This new user/schema will hold the Grand Prix data.
    <a href="files/SAFETY_CAR.csv" target="\_blank">Safety Car data</a>
 
    <a href="files/PIT_STOPS.csv" target="\_blank">Pit Stop data</a>
+
+   <a href="files/RESULTS.csv" target="\_blank">Race Results data</a>
 
    Save the files on your local machine. **Make sure that the files are saved with extension `.csv`**
 
@@ -91,9 +93,9 @@ This new user/schema will hold the Grand Prix data.
 
    ![Select Files](images/change-option1.png)
 
-7. Also change the load option for RACES, LAP_TIMES and PIT_STOPS to "Insert into table".
+7. Also change the load option for RACES, LAP_TIMES, PIT_STOPS and RESULTS to "Insert into table".
 
-8. After you have changed the load option of all three files, click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
+8. After you have changed the load option of all 5 files, click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
 
     ![Start Load Process](images/load-data.png)
 
