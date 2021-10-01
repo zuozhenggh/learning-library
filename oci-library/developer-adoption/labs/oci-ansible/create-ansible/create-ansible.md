@@ -44,7 +44,31 @@ $ ansible-galaxy collection install oracle.oci
 
    ![](./images/Ansible-Cloud-Shell1.png " ")
 
-   ## Task 2: Install an OCI Ansible Collection using Cloud Shell
+   ## Task 2: Write a sample Ansible playbook 
+
+   After your installation is complete, you can write a sample playbook that uses Ansible modules. Following is an example playbook (named list_buckets.yaml) that uses the oci_object_storage_bucket_facts module to fetch facts pertaining to the buckets in your compartment.
+
+    
+    ```yaml
+$ ---
+- name : List summary of existing buckets in OCI object storage
+  collections:
+    - oracle.oci
+  connection: local
+  hosts: localhost
+  tasks:
+    - name: List bucket facts
+      oci_object_storage_bucket_facts:
+         namespace_name: '<yournamespace>'
+         compartment_id: '<yourcompartmentocid>'
+      register: result
+    - name: Dump result
+      debug: 
+        msg: '{{result}}'
+ ```  
+
+
+
 
 
 
