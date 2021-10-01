@@ -17,11 +17,9 @@ In this lab, you will:
 * Maintain up-to-date copies of production databases by periodically topping them up with incremental transactions.
 
 
+## Task 1: Login to CDB1 Database
 
-
-## Task 1: Login & reset the SYS user password
-
-In this lab, we have two CDBs (CDB1 & CDB2) created, and listing on different port using listner (LISTCDB1 & LISTCDB2)
+In this lab, we have two CDBs (CDB1 & CDB2) created, and listening on different port using listeners LISTCDB1 on 1523 & LISTCDB2 on 1524)
 
 1. All scripts for this lab are stored in the `labs/multitenant` folder and are run as the oracle user. Let's navigate to the path now.
 
@@ -31,62 +29,26 @@ In this lab, we have two CDBs (CDB1 & CDB2) created, and listing on different po
     </copy>
     ```
 
-2.  Login and reset the SYS password
+2.  Login to Database
 
-    Note: SYS and SYSTEM username/password are common across all CDBs and PDBs. If you need a customized Global user across CDBs and PDBs we can create user having username starting with "C##" at the CDB level. i.e., "C##<username>" or C##vijay
-
-    For this lab we will reset the password of SYS user to 'oracle' on CDB2 and CDB2 instances
-
-    Reset password on CDB2
-    ```
-    <copy>. oraenv</copy>
-    CDB2
-    ```
-
-    ```
-    <copy>
-    sqlplus /nolog
-    </copy>
-    ```
-
-    ```
-    <copy>
-    connect / as sysdba
-    alter user sys identified by oracle;
-    connect sys/oracle@localhost:1521/cdb2 as sysdba
-    exit
-    </copy>
-    ```
-
-    Reset password on CDB1
+    set environment for CDB1    
     ```
     <copy>. oraenv</copy>
     CDB1
     ```
 
+    Connect to CDB1 instance
     ```
     <copy>
     sqlplus /nolog
-    </copy>
-    ```
-
-    ```
-    <copy>
-    connect / as sysdba
-    alter user sys identified by oracle;
     connect sys/oracle@localhost:1523/cdb1 as sysdba
     exit
     </copy>
     ```
-    ```
-    <copy>
-    connect sys/oracle@localhost:1523/cdb1 as sysdba
-    </copy>
-    ```
-
+    Note: SYS and SYSTEM username/password are common across all CDBs and PDBs. If you need a customized Global user across CDBs and PDBs we can create user having username starting with "C##" at the CDB level. i.e., "C##<username>" or C##vijay
 
 ## Task 2:  Create PDB
-This section looks at how to login and create a new PDB. You will create a pluggable database **PDB2** in the container database **CDB1**
+This section looks at how to create a new PDB. You will create a pluggable database **PDB2** in the container database **CDB1**
 
 1. Check to see who you are connected as. At any point in the lab you can run this script to see who or where you are connected.
 
