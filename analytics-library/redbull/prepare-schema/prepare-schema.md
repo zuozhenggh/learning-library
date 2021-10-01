@@ -39,7 +39,7 @@ This new user/schema will hold the Grand Prix data.
 
 5. **Download** <a href="files/create_user.sql" target="\_blank">`create_user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
 
-6. Open the `create_user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area.
+6. Open the `create_user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area. This file will create a new user "F1" for us.
 
     ![ADW Menu](images/copy-paste.png)
 
@@ -72,7 +72,7 @@ This new user/schema will hold the Grand Prix data.
 
    ![Open Database Actions](images/open-database-actions.png)
 
-   This time **use the F1 user** (not the ADMIN user).
+   This time **use the F1 user** (not the ADMIN user). Note that this new "F1" user was created in the previous step.
 
    - Username: F1
    - Password: Oracle_12345
