@@ -1,9 +1,9 @@
 ﻿
-# Applying Machine Learning to Customer Demographics
+# Apply machine learning to customer demographics
 
 ## Introduction
 
-Autonomous Data Warehouse contains built-in machine learning algorithms. The aim of this lab is to provide a simple introduction into using machine learning models to solve common business problems. There are many other workshops in LiveLabs that will help you explore machine learning in more detail: [see here](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/livelabs-workshop-cards?c=y&p100_focus_area=27&p100_product=131).
+Autonomous Data Warehouse has built-in machine learning algorithms. The aim of this lab is to give a simple introduction into using machine learning models to solve common business problems. There are many other workshops in LiveLabs that will help you explore machine learning in more detail: [see these workshops](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/livelabs-workshop-cards?c=y&p100_focus_area=27&p100_product=131).
 
 Estimated Lab Time: 10 minutes
 
@@ -23,15 +23,15 @@ Estimated Lab Time: 10 minutes
 
 ### Overview
 
-Autonomous Data Warehouse contains built-in machine learning algorithms. There is a separate workshop that can guide you through creating machine learning models to solve common business problems. In this short lab, the objective is to use one of these built-in algorithms to help us understand the demographic factors that can explain why a customer triggers an "insufficient funds" event against their account. If we can find a way to identify the key demographic attributes associated with this type of event, we can target customers to help them better manage their account and therefore have a better experience on MovieStream.
+Autonomous Data Warehouse has built-in machine learning algorithms. There is a separate workshop that can guide you through creating machine learning models to solve common business problems. In this short lab, the goal is to use one of these built-in algorithms to help us understand the demographic factors that can explain why a customer triggers an "insufficient funds" event against their account. If we can find a way to identify the key demographic attributes associated with this type of event, we can target customers to help them better manage their account and therefore have a better experience on MovieStream.
 
-To do this analysis, we are going to use a package called **`DBMS_PREDICTIVE_ANALYTICS`**. This package contains routines that perform an automated form of machine learning known as **predictive analytics**. With predictive analytics, we do not need to be aware of typical machine learning steps such as model building or model scoring. All machine learning activities are handled internally by the procedure. This makes it really easy for everyone to benefit from the power of machine learning-driven analytics.
+To do this analysis, we are going to use a package called **`DBMS_PREDICTIVE_ANALYTICS`**. This package has routines that perform an automated form of machine learning known as **predictive analytics**. With predictive analytics, we do not need to be aware of typical machine learning steps such as model building or model scoring. All machine learning activities are handled internally by the procedure. This makes it very easy for everyone to benefit from the power of machine learning-driven analytics.
 
 In this example we are going to use the EXPLAIN procedure to identifies the attributes that are important in explaining the variation in values of a target column. Our input data contains some records where the target value is known (not NULL) and also unknown (NULL). The records where the target value is known are used by the procedure to train a model that calculates the attribute importance. The EXPLAIN procedure creates a result table that lists the attributes in order of their explanatory power.
 
-## Task 1: Preparing Our customer Data Set
+## Task 1: Prepare our customer data set
 
-1. The firsts step is to create a view which summarizes the main customer demographic attributes. This means removing the time attributes, transaction attributes and movie attributes from our movie sales data.  Copy and paste the following code into the SQL worksheet window:
+1. The firsts step is to create a view which summarizes the main customer demographic attributes. This means removing the time attributes, transaction attributes and movie attributes from our movie sales data. Copy and paste the following code into the SQL worksheet window:
 
     ```
     <copy>CREATE OR REPLACE VIEW vw_cust_funds AS
@@ -59,7 +59,7 @@ In this example we are going to use the EXPLAIN procedure to identifies the attr
     </copy>
     ```
 
-2. You should get a message in the log window saying "View VW\_CUST\_FUNDS created". Check the number of rows returned by the above query/view, by running the following query, which should show that there are 4,845 unique customers:
+2. You should get a message in the log window saying "View VW\_CUST\_FUNDS created." Check the number of rows returned by the above query/view, by running the following query, which should show that there are 4,845 unique customers:
 
     ```
     <copy>SELECT COUNT(*) FROM vw_cust_funds;</copy>
@@ -81,7 +81,7 @@ In this example we are going to use the EXPLAIN procedure to identifies the attr
 
     > **Note:** Unlike the movie sales data, we now have a single row per customer and you can see that in the column **insufficient\_funds\_incidents** there are single numeric values determining the status of this column.
 
-5. Run the following query to show that the column contains only four values:
+5. Run the following query to show that the column has only four values:
 
     ```
     <copy>SELECT
@@ -90,11 +90,11 @@ In this example we are going to use the EXPLAIN procedure to identifies the attr
     order by 1;</copy>
     ```
 
-    ![Query result showing the column contains only four values](images/lab-5e-step-1-substep-5.png " ")
+    ![Query result showing the column has only four values](images/lab-5e-step-1-substep-5.png " ")
 
     Obviously we are interested in all the values in this column, not just the non-zero values. From a machine learning perspective, it is important for this type of analysis to have situations where an event did occur, as well as situations where an event does not occur - we need data to cover both sides of the story. Now that we know we have the right data set in place, we can proceed to building our model.
 
-## Task 2: Building The Model
+## Task 2: Build the model
 
 ### Overview
 
@@ -118,9 +118,9 @@ To run this analysis we need to provide the following information:
 
 2. The package will return a "PL/SQL procedure successfully completed" message to the log window once it has finished processing.
 
-## Task 3: Reviewing The Output
+## Task 3: Review the output
 
-1. To view the results from our model, we simply need to view the result table -> customer\_explain\_result:
+1. To view the results from our model, we simply need to view the result table: customer\_explain\_result:
 
     ```
     <copy>SELECT
@@ -136,7 +136,7 @@ To run this analysis we need to provide the following information:
 
 What do the above columns mean?
 
-### Explanatory Value
+### Explanatory value
 
 This column contains a value that indicates how useful the column is for determining the value of the explained column (insufficient funds). Higher values indicate greater explanatory power. Value can range from 0 to 1.
 
@@ -148,7 +148,7 @@ An explanatory power value of 0 implies there is no useful correlation between t
 
 Simply shows the ranking of explanatory power. Rows with equal values for explanatory_value have the same rank. Rank values are not skipped in the event of ties.
 
-## Task 4: Interpreting The Results
+## Task 4: Interpret the results
 
 1. Let's use some of the techniques from earlier parts of this workshop to enhance the output:
 
@@ -172,21 +172,21 @@ The above results tell us that to understand why an insufficient funds event occ
 
 Conversely, we can say that demographic attributes such as job\_type, marital\_status and renting or owning a property have little to no impact on whether a customer is likely to incur an insufficient funds event.
 
-You may now [proceed to the next lab](#next).
-
 ## Recap
 
 This lab has introduced you to the built-in capabilities of machine learning within Autonomous Data Warehouse. There are additional workshops in this series that will take you deeper into these unique capabilities.
 
-Within this lab we have examined:
+Within this lab we examined:
 
 - How to use the `DBMS_PREDICTIVE_ANALYTICS.EXPLAIN` procedure and how to interpret the results that are automatically generated.
 - How this built-in feature helps us understand the demographic factors that can explain why a customer might trigger an "insufficient funds" event.
 
-Now that we identified these key demographic attributes, we can do more analysis using SQL to go deeper. This type of analysis can allow us to identify and guide customers in better ways to manage their account and, therefore, have a better experience on our MovieStream platform.
+Now that we identified these key demographic attributes, we can do more analysis using SQL to go deeper. This type of analysis can enable us to identify and guide customers in better ways to manage their account and, therefore, have a better experience on our MovieStream platform.
+
+Please *proceed to the next lab*.
 
 ## **Acknowledgements**
 
-- **Author** - Keith Laker, ADB Product Management
+- **Author** - Keith Laker, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Keith Laker, August 2021
