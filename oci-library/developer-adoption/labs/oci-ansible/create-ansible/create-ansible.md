@@ -19,13 +19,13 @@
 
 
 
-In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) since Ansible comes pre-installed for your environment. We are  going to install the Oracle Cloud Infrastructure Ansible collection. You then will write a sample playbook that uses Ansible modules on OCI. 
+In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) since Ansible comes pre-installed for your environment. We are going to create an OCI object storage bucket. We are going to then install the Oracle Cloud Infrastructure Ansible collection using OCI Cloud Shell. You then will write a sample playbook that uses Ansible modules on OCI. 
 
 ### Pre-Requisites
 
 * Need to be an OCI Tenancy Administrator
 
-## Task 1: Install an OCI Ansible Collection using Cloud Shell
+## Task 2: Install an OCI Ansible Collection using Cloud Shell
 
 1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
@@ -45,7 +45,7 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
 
    ![](./images/Ansible-Cloud-Shell1.png " ")
 
-   ## Task 2: Write a sample Ansible playbook 
+   ## Task 3: Write a sample Ansible playbook 
 
    After your installation is complete, you can write a sample playbook that uses Ansible modules. 
 
