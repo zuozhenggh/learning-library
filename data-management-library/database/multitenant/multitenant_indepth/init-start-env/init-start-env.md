@@ -35,7 +35,7 @@ During the execution of your labs you may need to copy text from your local PC/M
 2. Select the *clipboard* icon, Copy the sample text below and paste into the clipboard widget, then finally open up the desired application and paste accordingly using *mouse controls*
 
     ```
-		 <copy>echo "This text was copied from my local computer"</copy>
+		 <copy>echo "This text was copied from my local computer"</copy> 
     ```
 
     ![](./images/novnc-clipboard-2.png " ")
