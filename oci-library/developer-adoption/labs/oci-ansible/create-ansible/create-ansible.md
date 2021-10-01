@@ -85,11 +85,11 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
  ```
 
 
- You should expect an output of listing the object storage bucket.
+ You should expect an output of listing the object storage bucket you created earlier in the lab.
 
  
 
-
+![](./images/ansible-bucket-1.png " ")
 
 
 
