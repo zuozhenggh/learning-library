@@ -59,7 +59,7 @@ Estimated time: 15 minutes
 	```
 
 
-2.	Replace the GreetService class with the code shown below.
+2.	Replace the GreetService class with the code below.
 
 	``` bash
 	<copy>

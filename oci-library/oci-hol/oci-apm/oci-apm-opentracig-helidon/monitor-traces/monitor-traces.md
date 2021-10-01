@@ -41,7 +41,7 @@ Estimated time: 15 minutes
 	```
 
 
-3. Change to helidon-quickstart-se directory, and open the pom.xml file with an editor tool (e.g., vi editor)
+3. Change to ***helidon-quickstart-se*** directory, and open the ***pom.xml*** file with an editor tool (e.g., vi editor)
 	``` bash
 	<copy>
 	vi ~/helidon-quickstart-se/pom.xml
@@ -78,7 +78,7 @@ Estimated time: 15 minutes
 
 ## Task 2: Modify application.yaml file
 
-1.	Change to src/main/resources directory, then open the application.yaml file with an editor tool.
+1.	Change to ***src/main/resources*** directory, then open the ***application.yaml*** file with an editor tool.
 
 	``` bash
 	<copy>
@@ -102,7 +102,7 @@ Estimated time: 15 minutes
 	>Suggested Tips:
 	* Copy the above text and paste it into a text file, replace the endpoint and the private key, then copy the modified text into the yaml file.
 	* Make sure to keep the syntax of 2 space indentation.
-	* Refer to the screenshot image below to see how the it should look like after the file is modified.
+	* Refer to the screenshot image below to see how it should look like after the file is modified.
 
 	![application.yaml](images/2-1-applicationyaml.png " ")
 
@@ -111,7 +111,7 @@ Estimated time: 15 minutes
 
 ## Task 3: Modify Main.java file
 
-1.	Open Main.java with any editor.
+1.	Open ***Main.java*** with any editor.
 	``` bash
   <copy>
   vi ~/helidon-quickstart-se/src/main/java/io/helidon/examples/quickstart/se/Main.java
@@ -194,10 +194,10 @@ Estimated time: 15 minutes
 3.	Under **Traces**, find a trace from the Helidon application.
 4.	Click the service name: ***helidon-http: HTTP Request***.
 	![APM Trace Explorer](images/5-2-trace_explorer.png " ")
-5.	In the **Trace Details** page, review the trace in the Topology view, and each span duration in the Spans view.
+5.	In the **Trace Details** page, review the trace in the **Topology** view, and each span duration in the **Spans** view.
 6.	Click the span: ***helidon-http: content-write***.
 	![APM Trace Explorer](images/5-3-trace_explorer.png " ")
-7.	Examine the span parameters in the Span Details view.
+7.	Examine the span parameters in the **Span Details** view.
 	![APM Trace Explorer](images/5-4-trace_explorer.png " ")
 
 

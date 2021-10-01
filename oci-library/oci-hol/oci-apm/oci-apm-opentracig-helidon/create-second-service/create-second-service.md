@@ -124,7 +124,7 @@ Estimated time: 10 minutes
 
 ## Task 4: Modify Main.java file
 
-1.	Open Main.java file with an editor on your choice.
+1.	Open ***Main.java*** file with an editor on your choice.
 	``` bash
 	<copy>
 	vi ~/helidon-quickstart-se-2/src/main/java/io/helidon/examples/quickstart/se/Main.java
@@ -150,7 +150,7 @@ Estimated time: 10 minutes
 
 ## Task 5: Add custom span to GreetService class
 
-1.	Open GreetService.java file with an editor
+1.	Open ***GreetService.java*** file with an editor
 	``` bash
 	<copy>
 	vi ~/helidon-quickstart-se-2/src/main/java/io/helidon/examples/quickstart/se/GreetService.java
@@ -231,6 +231,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
-* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Kamryn Vinson, August 2021
+* **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
+* **Contributors** -
+* **Last Updated By/Date** - Yutaka Takatsu, September 2021
