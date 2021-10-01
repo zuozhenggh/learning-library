@@ -44,6 +44,10 @@ You will keep all of the defaults for the bucket creation.
 
 
 
+ ![](./images/ansible-bucket-2.png " ")
+
+
+
 
 ## Task 2: Install an OCI Ansible Collection using Cloud Shell
 
