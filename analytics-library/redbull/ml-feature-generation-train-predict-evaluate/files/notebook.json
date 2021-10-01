@@ -3,7 +3,7 @@
     {
       "text": "%sql\n--This calculates the number of rounds that have a change of driver in the leading position.\ncreate or replace view laps_with_change_pos_1_v\nas\n    select raceid, count(*) laps\n    from\n    (\n        select raceid, lap\n        from\n        (\n            select raceid, position, lap, driverid as current_driver,\n              LAG (driverid, 1) OVER (PARTITION BY raceid, position ORDER BY lap) AS prev_driver\n            from lap_times\n        )\n        where prev_driver is not null\n        and prev_driver \u003c\u003e current_driver\n        and position \u003d 1\n        group by raceid, lap\n    )\n    group by raceid;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:04+0000",
+      "dateUpdated": "2021-10-01T15:36:51+0000",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -129,8 +129,8 @@
       "jobName": "paragraph_1632411097311_1456188143",
       "id": "20210923-153137_1160278290",
       "dateCreated": "2021-09-22T14:43:37+0000",
-      "dateStarted": "2021-10-01T10:46:04+0000",
-      "dateFinished": "2021-10-01T10:46:04+0000",
+      "dateStarted": "2021-10-01T15:36:52+0000",
+      "dateFinished": "2021-10-01T15:36:56+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -138,7 +138,7 @@
     {
       "text": "%sql\nselect * from laps_with_change_pos_1_v",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:04+0000",
+      "dateUpdated": "2021-10-01T15:36:56+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -196,8 +196,8 @@
       "jobName": "paragraph_1632411097311_-305593170",
       "id": "20210923-153137_456977781",
       "dateCreated": "2021-09-23T15:05:51+0000",
-      "dateStarted": "2021-10-01T10:46:05+0000",
-      "dateFinished": "2021-10-01T10:46:05+0000",
+      "dateStarted": "2021-10-01T15:36:57+0000",
+      "dateFinished": "2021-10-01T15:36:57+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -205,7 +205,7 @@
     {
       "text": "%sql\n--This calculates the number of rounds that have a change of driver in the top 5 positions.\ncreate or replace view laps_with_change_pos_1_5_v\nas\n    select raceid, count(*) laps\n    from\n    (\n        select raceid, lap, count(*)\n        from\n        (\n            select raceid, position, lap, driverid as current_driver,\n              LAG (driverid, 1) OVER (PARTITION BY raceid, position ORDER BY lap) AS prev_driver\n            from lap_times\n        )\n        where prev_driver is not null\n        and prev_driver \u003c\u003e current_driver\n        and (position \u003e\u003d 1 and position \u003c\u003d 5)\n        group by raceid, lap\n        order by raceid, lap\n    )\n    group by raceid\n    order by raceid;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:05+0000",
+      "dateUpdated": "2021-10-01T15:36:57+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -229,8 +229,8 @@
       "jobName": "paragraph_1632411097311_250623443",
       "id": "20210923-153137_89805095",
       "dateCreated": "2021-09-23T15:06:19+0000",
-      "dateStarted": "2021-10-01T10:46:06+0000",
-      "dateFinished": "2021-10-01T10:46:06+0000",
+      "dateStarted": "2021-10-01T15:36:58+0000",
+      "dateFinished": "2021-10-01T15:36:58+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -238,7 +238,7 @@
     {
       "text": "%sql\nselect * from laps_with_change_pos_1_5_v;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:06+0000",
+      "dateUpdated": "2021-10-01T15:36:58+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -296,8 +296,8 @@
       "jobName": "paragraph_1632411097311_-1820511445",
       "id": "20210923-153137_1789257834",
       "dateCreated": "2021-09-23T15:06:25+0000",
-      "dateStarted": "2021-10-01T10:46:07+0000",
-      "dateFinished": "2021-10-01T10:46:07+0000",
+      "dateStarted": "2021-10-01T15:36:59+0000",
+      "dateFinished": "2021-10-01T15:36:59+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -305,7 +305,7 @@
     {
       "text": "%sql\n--This calculates the number of positions that a driver has lost during a lap. It separates those position changes in actual take overs and take overs that were a result of pit stops.\ncreate or replace view overtaken_positions_total\nas\n    select raceid, overtaken_positions_due_to_pitstop_total, (overtaken_positions_total - overtaken_positions_due_to_pitstop_total) as overtaken_positions_real_total\n    from\n    (\n        select raceid, sum(overtaken_positions_driver_lap) as overtaken_positions_total, sum(overtaken_positions_driver_lap_due_to_pitstop) as overtaken_positions_due_to_pitstop_total\n        from\n        (\n            select raceid, driverid, lap, overtaken_positions_driver_lap, nvl2(pitstop_raceid, overtaken_positions_driver_lap,0 ) overtaken_positions_driver_lap_due_to_pitstop\n            from\n            (\n                select ot.raceid, ot.driverid, ot.lap, sum(ot.overtaken_this_lap) as overtaken_positions_driver_lap, ps.raceid pitstop_raceid\n                from\n                (\n                    select ottl.raceid, ottl.driverid, ottl.lap, (ottl.current_position - ottl.prev_position) as overtaken_this_lap\n                    from\n                    (\n                        select lt.raceid, lt.driverid, lt.lap, lt.position as current_position, \n                          LAG (lt.position, 1) OVER (PARTITION BY lt.raceid, lt.driverid ORDER BY lt.lap) AS prev_position\n                        from lap_times lt\n                    ) ottl\n                    where ottl.prev_position is not null\n                    and ottl.prev_position \u003c ottl.current_position\n                )   ot\n                ,   pit_stops ps\n                where ps.raceid (+) \u003d ot.raceid\n                and   ps.driverid (+) \u003d ot.driverid\n                and   ps.lap (+) \u003d ot.lap\n                group by ot.raceid, ot.driverid, ot.lap, ps.raceid\n            )\n        )\n        group by raceid\n    );\n",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:07+0000",
+      "dateUpdated": "2021-10-01T15:36:59+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -329,8 +329,8 @@
       "jobName": "paragraph_1632411097311_1680194377",
       "id": "20210923-153137_1820570829",
       "dateCreated": "2021-09-23T15:07:52+0000",
-      "dateStarted": "2021-10-01T10:46:08+0000",
-      "dateFinished": "2021-10-01T10:46:08+0000",
+      "dateStarted": "2021-10-01T15:37:00+0000",
+      "dateFinished": "2021-10-01T15:37:00+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -338,7 +338,7 @@
     {
       "text": "%sql\nselect * from overtaken_positions_total;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:08+0000",
+      "dateUpdated": "2021-10-01T15:37:00+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -397,8 +397,8 @@
       "jobName": "paragraph_1632411097311_1836734053",
       "id": "20210923-153137_279489389",
       "dateCreated": "2021-09-23T15:09:02+0000",
-      "dateStarted": "2021-10-01T10:46:09+0000",
-      "dateFinished": "2021-10-01T10:46:10+0000",
+      "dateStarted": "2021-10-01T15:37:00+0000",
+      "dateFinished": "2021-10-01T15:37:01+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -406,7 +406,7 @@
     {
       "text": "%sql\n--The following calculates the come back score for a race. This is defined that the maximum distance that one of the top finishing drivers (positions 1-8) has recovered from a position back in the field. E.g. when a driver came back from position 18 to position 1, the come back score is 17. \ncreate or replace view comebackscores\nas\n    select ps.raceid, max(ps.driver_comebackscore) max_comebackscore\n    from (\n        select raceid, driverid, max(delta_position) as driver_comebackscore\n        from\n        (\n            select lt.raceid, lt.driverid, (ltbefore.position - lt.position) delta_position\n            from lap_times lt\n            , lap_times ltbefore\n            where ltbefore.raceid \u003d lt.raceid\n            and ltbefore.driverid \u003d lt.driverid\n            and ltbefore.lap \u003c lt.lap\n        )\n        group by raceid, driverid) ps\n    ,   results r\n    where r.raceid \u003d ps.raceid\n    and r.position in (\u00271\u0027, \u00272\u0027, \u00273\u0027, \u00274\u0027, \u00275\u0027, \u00276\u0027, \u00277\u0027, \u00278\u0027)\n    group by ps.raceid;\n",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:10+0000",
+      "dateUpdated": "2021-10-01T15:37:01+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -459,8 +459,8 @@
       "jobName": "paragraph_1632411097311_273794366",
       "id": "20210923-153137_1202459446",
       "dateCreated": "2021-09-22T14:43:53+0000",
-      "dateStarted": "2021-10-01T10:46:10+0000",
-      "dateFinished": "2021-10-01T10:46:10+0000",
+      "dateStarted": "2021-10-01T15:37:01+0000",
+      "dateFinished": "2021-10-01T15:37:02+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -468,7 +468,7 @@
     {
       "text": "%sql\nselect * from comebackscores",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:10+0000",
+      "dateUpdated": "2021-10-01T15:37:02+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -526,8 +526,8 @@
       "jobName": "paragraph_1632411097311_191652192",
       "id": "20210923-153137_42947857",
       "dateCreated": "2021-09-22T15:36:46+0000",
-      "dateStarted": "2021-10-01T10:46:11+0000",
-      "dateFinished": "2021-10-01T10:46:14+0000",
+      "dateStarted": "2021-10-01T15:37:02+0000",
+      "dateFinished": "2021-10-01T15:37:05+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -535,7 +535,7 @@
     {
       "text": "%sql\n--This calculates the difference between the ranking of the driver and his finishing position. For example, if a driver is ranked 20th and finishes 1st, this adds 19 to this metric. This can be seen as a measure of \"surprise\".\ncreate or replace view position_difference_top_5_v\nas\n    select result_raceid as raceid, sum(position_difference_top_5) as position_difference_top_5\n    from\n    (\n        select result_raceid, abs(position_result - position_ranking) position_difference_top_5\n        from\n        (\n            select ra.round, s.raceid ranking_raceid, r.raceid result_raceid, r.driverid, r.position position_result, nvl(s.position, 0) position_ranking\n            from   driver_standings s\n            ,      results r\n            ,      races ra\n            where  s.raceid  \u003d (r.raceid - 1)\n            and    ra.raceid \u003d r.raceid\n            and    s.driverid  \u003d r.driverid\n            and    r.position in (\u00271\u0027, \u00272\u0027, \u00273\u0027, \u00274\u0027, \u00275\u0027)\n            order by r.raceid\n        )\n    )\n    group by result_raceid;\n",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:14+0000",
+      "dateUpdated": "2021-10-01T15:37:06+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -559,8 +559,8 @@
       "jobName": "paragraph_1632411097311_-1170190132",
       "id": "20210923-153137_1943776337",
       "dateCreated": "2021-09-23T15:09:56+0000",
-      "dateStarted": "2021-10-01T10:46:14+0000",
-      "dateFinished": "2021-10-01T10:46:14+0000",
+      "dateStarted": "2021-10-01T15:37:06+0000",
+      "dateFinished": "2021-10-01T15:37:06+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -568,7 +568,7 @@
     {
       "text": "%sql\nselect * from position_difference_top_5_v",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:14+0000",
+      "dateUpdated": "2021-10-01T15:37:06+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -618,7 +618,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "RACEID\tPOSITION_DIFFERENCE_TOP_5\n490\t36\n493\t19\n501\t61\n513\t27\n521\t23\n534\t39\n371\t57\n400\t12\n405\t58\n410\t18\n962\t6\n964\t7\n974\t6\n999\t8\n51\t28\n734\t10\n754\t93\n14\t29\n457\t12\n496\t36\n497\t33\n510\t31\n554\t34\n561\t34\n359\t33\n418\t17\n463\t35\n465\t28\n815\t8\n1039\t15\n893\t5\n210\t34\n232\t8\n237\t20\n27\t19\n52\t11\n57\t14\n277\t10\n313\t13\n328\t19\n108\t20\n648\t12\n667\t15\n703\t6\n706\t8\n722\t23\n753\t26\n762\t30\n763\t35\n781\t16\n813\t11\n817\t73\n870\t16\n471\t66\n124\t7\n883\t13\n663\t15\n808\t44\n511\t8\n792\t108\n965\t10\n291\t0\n690\t39\n421\t35\n579\t50\n58\t4\n846\t11\n161\t17\n166\t8\n1019\t6\n424\t31\n459\t20\n1061\t10\n914\t5\n1013\t4\n774\t97\n837\t9\n851\t10\n591\t39\n977\t6\n535\t23\n281\t15\n659\t20\n685\t8\n823\t5\n414\t21\n522\t12\n158\t11\n902\t31\n107\t16\n113\t12\n6\t19\n960\t13\n226\t2\n348\t19\n125\t2\n50\t16\n852\t7\n173\t4\n318\t12\n770\t48\n832\t8\n578\t27\n592\t40\n391\t29\n403\t47\n411\t9\n433\t15\n512\t52\n290\t2\n23\t25\n64\t12\n135\t2\n72\t17\n487\t50\n567\t37\n568\t24\n569\t21\n338\t19\n352\t8\n353\t14\n368\t41\n395\t26\n963\t11\n981\t4\n300\t9\n71\t28\n98\t18\n110\t9\n85\t9\n127\t3\n705\t25\n404\t30\n270\t23\n333\t10\n647\t19\n862\t17\n865\t15\n481\t56\n525\t16\n594\t16\n437\t30\n660\t21\n666\t19\n691\t28\n1038\t28\n892\t15\n951\t9\n143\t18\n159\t5\n172\t14\n183\t15\n198\t10\n206\t8\n259\t58\n15\t16\n59\t23\n275\t5\n293\t5\n315\t13\n329\t14\n99\t6\n611\t28\n612\t19\n655\t13\n693\t23\n724\t40\n727\t15\n737\t27\n756\t38\n772\t26\n793\t30\n814\t20\n864\t31\n872\t21\n472\t48\n483\t44\n419\t24\n249\t14\n31\t19\n377\t22\n430\t19\n702\t13\n798\t64\n109\t10\n244\t8\n589\t14\n7\t9\n627\t46\n40\t6\n531\t33\n168\t17\n910\t13\n78\t26\n351\t9\n441\t15\n927\t25\n943\t11\n945\t9\n975\t9\n1000\t2\n36\t23\n795\t56\n807\t86\n544\t45\n901\t35\n990\t33\n200\t10\n162\t8\n305\t16\n605\t8\n509\t16\n536\t29\n556\t26\n888\t10\n637\t34\n744\t41\n268\t8\n42\t4\n282\t8\n79\t56\n827\t95\n455\t17\n913\t10\n68\t11\n350\t13\n180\t23\n163\t1\n931\t17\n189\t14\n928\t4\n134\t8\n43\t9\n1017\t4\n903\t10\n105\t8\n885\t20\n940\t0\n344\t8\n88\t16\n665\t40\n699\t27\n712\t17\n478\t47\n504\t13\n528\t27\n221\t21\n876\t3\n736\t16\n543\t16\n136\t6\n874\t22\n131\t12\n992\t26\n1014\t4\n884\t9\n488\t30\n495\t23\n499\t60\n520\t35\n549\t49\n577\t27\n586\t57\n588\t13\n595\t44\n598\t16\n345\t16\n349\t14\n373\t7\n378\t4\n380\t11\n399\t14\n412\t15\n978\t8\n987\t8\n988\t6\n1011\t6\n41\t21\n255\t23\n261\t39\n1029\t36\n245\t33\n634\t34\n358\t42\n462\t14\n707\t12\n845\t2\n357\t31\n482\t24\n502\t32\n343\t18\n432\t19\n450\t12\n460\t11\n771\t34\n797\t48\n806\t10\n882\t17\n911\t14\n179\t11\n190\t8\n240\t12\n246\t21\n253\t10\n262\t30\n45\t26\n63\t12\n272\t34\n278\t26\n620\t53\n631\t17\n642\t28\n654\t25\n688\t23\n711\t25\n732\t51\n784\t10\n787\t48\n801\t6\n831\t6\n298\t7\n617\t12\n905\t6\n104\t8\n370\t32\n243\t19\n668\t42\n34\t4\n998\t3\n342\t13\n1031\t15\n82\t18\n420\t45\n442\t24\n1041\t15\n1007\t8\n250\t22\n62\t20\n662\t8\n546\t15\n571\t23\n360\t42\n994\t8\n267\t38\n264\t22\n401\t25\n196\t25\n354\t6\n629\t23\n386\t10\n306\t32\n280\t4\n279\t16\n635\t19\n394\t30\n759\t21\n271\t50\n718\t29\n574\t17\n745\t42\n638\t14\n701\t17\n429\t13\n720\t22\n1056\t21\n596\t41\n1025\t3\n968\t6\n129\t21\n185\t10\n118\t12\n844\t10\n564\t26\n422\t33\n379\t53\n434\t28\n486\t44\n860\t6\n204\t19\n1052\t33\n203\t41\n861\t12\n184\t19\n44\t9\n480\t14\n545\t36\n552\t22\n558\t33\n559\t21\n565\t11\n580\t29\n597\t11\n599\t18\n362\t26\n375\t4\n983\t11\n1004\t4\n174\t6\n195\t13\n231\t6\n238\t7\n54\t7\n285\t35\n320\t5\n73\t14\n84\t14\n115\t10\n933\t6\n816\t14\n212\t27\n121\t4\n602\t35\n873\t20\n875\t13\n557\t21\n600\t17\n417\t6\n454\t47\n466\t33\n468\t34\n664\t25\n704\t15\n735\t29\n829\t19\n1030\t4\n909\t7\n140\t20\n187\t20\n188\t35\n216\t36\n257\t24\n2\t13\n17\t15\n288\t11\n289\t7\n297\t5\n302\t8\n76\t19\n86\t19\n90\t13\n607\t15\n608\t26\n613\t22\n614\t20\n657\t13\n714\t40\n740\t27\n779\t91\n838\t180\n470\t63\n1009\t5\n145\t17\n366\t4\n646\t49\n316\t34\n652\t22\n894\t18\n8\t11\n56\t15\n77\t21\n30\t20\n191\t20\n1047\t12\n989\t14\n425\t27\n1022\t16\n1028\t8\n1055\t3\n895\t12\n941\t13\n955\t11\n749\t93\n269\t16\n387\t16\n1060\t8\n177\t9\n37\t5\n11\t23\n856\t8\n1032\t32\n194\t6\n219\t17\n266\t37\n713\t19\n479\t37\n408\t27\n878\t10\n918\t12\n70\t8\n678\t42\n383\t23\n324\t26\n769\t80\n526\t56\n636\t34\n995\t11\n12\t40\n824\t94\n141\t23\n980\t6\n979\t6\n971\t3\n155\t23\n1026\t12\n260\t37\n292\t10\n650\t41\n675\t52\n723\t22\n747\t15\n796\t36\n811\t19\n551\t27\n369\t18\n932\t4\n585\t17\n477\t34\n674\t37\n303\t17\n75\t16\n967\t9\n942\t14\n21\t9\n1024\t12\n505\t22\n516\t12\n550\t41\n363\t46\n364\t7\n389\t38\n413\t9\n993\t9\n1008\t6\n157\t8\n35\t14\n295\t30\n309\t53\n606\t9\n475\t22\n849\t6\n869\t20\n572\t29\n573\t17\n428\t22\n451\t13\n656\t47\n700\t20\n715\t51\n761\t48\n764\t25\n819\t113\n1059\t2\n954\t15\n199\t5\n220\t16\n228\t11\n251\t38\n256\t41\n4\t13\n18\t31\n48\t5\n287\t21\n317\t17\n331\t4\n66\t13\n625\t27\n644\t49\n671\t53\n677\t35\n680\t22\n697\t43\n708\t54\n743\t16\n751\t43\n766\t8\n790\t50\n799\t66\n805\t47\n828\t49\n836\t22\n857\t3\n81\t28\n716\t20\n570\t31\n906\t11\n639\t54\n783\t46\n587\t40\n788\t29\n848\t4\n621\t36\n393\t24\n1023\t23\n877\t16\n489\t28\n719\t19\n446\t15\n427\t28\n222\t14\n384\t14\n464\t27\n103\t23\n116\t14\n178\t3\n961\t6\n1033\t16\n896\t20\n402\t16\n898\t10\n186\t7\n209\t22\n673\t38\n696\t43\n498\t55\n456\t20\n5\t7\n65\t37\n791\t96\n584\t16\n365\t13\n485\t34\n603\t18\n225\t2\n773\t25\n539\t8\n984\t6\n908\t10\n997\t29\n215\t16\n197\t16\n886\t4\n137\t4\n151\t14\n956\t9\n10\t29\n867\t30\n101\t9\n880\t8\n881\t25\n49\t8\n900\t25\n310\t24\n120\t9\n782\t30\n381\t13\n802\t11\n622\t26\n604\t40\n507\t27\n156\t23\n169\t5\n142\t3\n341\t20\n917\t10\n515\t23\n532\t24\n590\t3\n340\t13\n382\t13\n957\t9\n986\t13\n1010\t16\n146\t16\n214\t7\n242\t5\n22\t6\n28\t28\n46\t7\n323\t26\n325\t14\n126\t5\n618\t37\n854\t4\n541\t48\n254\t4\n695\t11\n491\t29\n506\t25\n523\t33\n529\t42\n581\t14\n361\t62\n423\t30\n426\t21\n439\t18\n1037\t15\n1042\t9\n1057\t23\n897\t12\n944\t4\n148\t32\n152\t37\n263\t20\n20\t4\n53\t15\n301\t11\n311\t16\n312\t9\n87\t7\n93\t4\n130\t28\n640\t39\n649\t14\n658\t23\n661\t24\n694\t29\n698\t29\n731\t28\n739\t17\n741\t30\n789\t27\n820\t8\n834\t38\n227\t19\n3\t41\n1018\t12\n630\t25\n950\t13\n683\t36\n336\t9\n26\t20\n540\t21\n633\t24\n553\t22\n976\t24\n959\t6\n855\t4\n879\t17\n218\t21\n397\t22\n444\t36\n970\t18\n938\t6\n170\t7\n236\t10\n33\t21\n319\t30\n689\t10\n767\t27\n518\t26\n530\t13\n672\t25\n96\t1\n1040\t11\n929\t8\n235\t8\n202\t15\n74\t27\n112\t11\n839\t20\n431\t20\n452\t22\n435\t64\n213\t26\n327\t26\n440\t36\n709\t21\n385\t27\n619\t17\n1046\t27\n149\t11\n937\t19\n9\t14\n122\t27\n904\t8\n991\t17\n1021\t5\n887\t11\n610\t24\n519\t51\n601\t38\n448\t18\n681\t26\n725\t12\n1062\t27\n321\t33\n339\t26\n891\t4\n1044\t19\n347\t17\n1006\t12\n128\t16\n476\t47\n500\t43\n514\t35\n524\t24\n537\t28\n538\t25\n542\t24\n555\t33\n575\t22\n593\t23\n367\t47\n372\t24\n388\t29\n409\t8\n139\t9\n144\t15\n181\t15\n60\t3\n97\t17\n641\t16\n966\t5\n390\t40\n396\t30\n374\t18\n670\t81\n686\t20\n776\t53\n825\t21\n1034\t13\n1045\t13\n1054\t8\n949\t18\n153\t4\n234\t5\n241\t5\n247\t22\n258\t53\n13\t25\n286\t18\n314\t3\n322\t54\n326\t16\n83\t16\n95\t14\n111\t20\n114\t11\n119\t24\n679\t35\n721\t17\n742\t21\n822\t11\n850\t9\n866\t22\n55\t27\n273\t75\n726\t19\n503\t38\n560\t57\n193\t14\n609\t26\n1005\t6\n765\t15\n453\t23\n167\t13\n38\t11\n1015\t5\n376\t20\n392\t8\n458\t26\n469\t42\n1058\t5\n69\t5\n729\t72\n67\t25\n207\t21\n164\t25\n335\t51\n133\t29\n533\t14\n1001\t10\n847\t15\n615\t34\n566\t13\n201\t20\n930\t5\n230\t20\n939\t13\n29\t8\n973\t13\n233\t16\n958\t5\n171\t26\n248\t18\n283\t27\n632\t47\n687\t25\n758\t74\n436\t32\n19\t13\n730\t32\n132\t12\n1027\t8\n985\t6\n1002\t4\n474\t47\n484\t38\n494\t21\n527\t49\n563\t58\n582\t32\n406\t28\n407\t10\n416\t14\n176\t12\n205\t5\n208\t8\n211\t17\n252\t9\n16\t23\n39\t10\n332\t7\n91\t10\n1012\t6\n165\t17\n25\t15\n308\t45\n780\t79\n1020\t29\n517\t24\n548\t10\n562\t33\n576\t32\n443\t46\n445\t20\n447\t32\n449\t71\n653\t33\n785\t23\n833\t40\n1036\t6\n915\t13\n934\t2\n175\t24\n223\t16\n274\t3\n276\t18\n284\t12\n294\t9\n296\t23\n117\t10\n616\t25\n624\t55\n626\t12\n628\t16\n651\t54\n669\t5\n676\t29\n684\t10\n692\t23\n710\t31\n717\t11\n728\t12\n750\t61\n760\t40\n775\t44\n777\t0\n803\t73\n812\t56\n830\t10\n102\t6\n334\t12\n810\t42\n467\t7\n147\t22\n229\t46\n752\t81\n438\t40\n239\t12\n473\t27\n398\t5\n265\t82\n307\t46\n89\t18\n821\t7\n755\t27\n138\t18\n24\t34\n859\t7\n154\t14\n192\t5\n123\t19\n224\t18\n346\t16\n61\t1\n912\t11\n952\t16\n953\t22\n80\t18\n643\t31\n682\t68\n804\t25\n508\t15\n843\t16\n868\t16\n899\t10\n738\t9\n746\t29\n32\t31\n100\t12\n92\t9\n645\t24\n547\t15\n907\t13\n415\t46\n863\t19\n1016\t6\n106\t14\n969\t10\n"
+            "data": "RACEID\tPOSITION_DIFFERENCE_TOP_5\n490\t36\n493\t19\n501\t61\n513\t27\n521\t23\n534\t39\n371\t57\n400\t12\n405\t58\n410\t18\n962\t6\n964\t7\n974\t6\n999\t8\n51\t28\n734\t10\n754\t93\n14\t29\n457\t12\n496\t36\n497\t33\n510\t31\n554\t34\n561\t34\n359\t33\n418\t17\n463\t35\n465\t28\n815\t8\n1039\t15\n893\t5\n210\t34\n232\t8\n237\t20\n27\t19\n52\t11\n57\t14\n277\t10\n313\t13\n328\t19\n108\t20\n648\t12\n667\t15\n703\t6\n706\t8\n722\t23\n753\t26\n762\t30\n763\t35\n781\t16\n813\t11\n817\t73\n870\t16\n471\t66\n124\t7\n883\t13\n663\t15\n808\t44\n511\t8\n792\t108\n965\t10\n291\t0\n690\t39\n421\t35\n579\t50\n58\t4\n846\t11\n161\t17\n166\t8\n1019\t6\n424\t31\n459\t20\n1061\t10\n1013\t4\n774\t97\n837\t9\n851\t10\n591\t39\n977\t6\n535\t23\n281\t15\n659\t20\n685\t8\n823\t5\n414\t21\n522\t12\n158\t11\n902\t31\n107\t16\n113\t12\n6\t19\n960\t13\n226\t2\n348\t19\n125\t2\n50\t16\n852\t7\n173\t4\n318\t12\n770\t48\n832\t8\n578\t27\n592\t40\n391\t29\n403\t47\n411\t9\n433\t15\n512\t52\n290\t2\n23\t25\n64\t12\n135\t2\n72\t17\n487\t50\n567\t37\n568\t24\n569\t21\n338\t19\n352\t8\n353\t14\n368\t41\n395\t26\n963\t11\n981\t4\n300\t9\n71\t28\n98\t18\n110\t9\n85\t9\n127\t3\n705\t25\n404\t30\n270\t23\n333\t10\n647\t19\n862\t17\n865\t15\n481\t56\n525\t16\n594\t16\n437\t30\n660\t21\n666\t19\n691\t28\n1038\t28\n892\t15\n951\t9\n143\t18\n159\t5\n172\t14\n183\t15\n198\t10\n206\t8\n259\t58\n15\t16\n59\t23\n275\t5\n293\t5\n315\t13\n329\t14\n99\t6\n611\t28\n612\t19\n655\t13\n693\t23\n724\t40\n727\t15\n737\t27\n756\t38\n772\t26\n793\t30\n814\t20\n864\t31\n872\t21\n472\t48\n483\t44\n419\t24\n249\t14\n31\t19\n377\t22\n430\t19\n702\t13\n798\t64\n109\t10\n244\t8\n589\t14\n7\t9\n627\t46\n40\t6\n531\t33\n168\t17\n910\t13\n78\t26\n351\t9\n441\t15\n927\t25\n943\t11\n945\t9\n975\t9\n1000\t2\n36\t23\n795\t56\n807\t86\n544\t45\n901\t35\n990\t33\n200\t10\n162\t8\n305\t16\n605\t8\n509\t16\n536\t29\n556\t26\n888\t10\n637\t34\n744\t41\n268\t8\n42\t4\n282\t8\n79\t56\n827\t95\n455\t17\n913\t10\n68\t11\n350\t13\n180\t23\n163\t1\n931\t17\n189\t14\n928\t4\n134\t8\n43\t9\n1017\t4\n903\t10\n105\t8\n885\t20\n940\t0\n344\t8\n88\t16\n665\t40\n699\t27\n712\t17\n478\t47\n504\t13\n528\t27\n221\t21\n876\t3\n736\t16\n543\t16\n136\t6\n874\t22\n131\t12\n992\t26\n1014\t4\n884\t9\n488\t30\n495\t23\n499\t60\n520\t35\n549\t49\n577\t27\n586\t57\n588\t13\n595\t44\n598\t16\n345\t16\n349\t14\n373\t7\n378\t4\n380\t11\n399\t14\n412\t15\n978\t8\n987\t8\n988\t6\n1011\t6\n41\t21\n255\t23\n261\t39\n1029\t36\n245\t33\n634\t34\n358\t42\n462\t14\n707\t12\n845\t2\n357\t31\n482\t24\n502\t32\n343\t18\n432\t19\n450\t12\n460\t11\n771\t34\n797\t48\n806\t10\n882\t17\n911\t14\n179\t11\n190\t8\n240\t12\n246\t21\n253\t10\n262\t30\n45\t26\n63\t12\n272\t34\n278\t26\n620\t53\n631\t17\n642\t28\n654\t25\n688\t23\n711\t25\n732\t51\n784\t10\n787\t48\n801\t6\n831\t6\n298\t7\n617\t12\n905\t6\n104\t8\n370\t32\n243\t19\n668\t42\n34\t4\n998\t3\n342\t13\n1031\t15\n82\t18\n420\t45\n442\t24\n1041\t15\n1007\t8\n250\t22\n62\t20\n662\t8\n546\t15\n571\t23\n360\t42\n994\t8\n267\t38\n264\t22\n401\t25\n196\t25\n354\t6\n629\t23\n386\t10\n306\t32\n280\t4\n279\t16\n635\t19\n394\t30\n759\t21\n271\t50\n718\t29\n574\t17\n745\t42\n638\t14\n701\t17\n429\t13\n720\t22\n1056\t21\n596\t41\n1025\t3\n968\t6\n129\t21\n185\t10\n118\t12\n844\t10\n564\t26\n422\t33\n379\t53\n434\t28\n486\t44\n860\t6\n204\t19\n1052\t33\n203\t41\n861\t12\n184\t19\n44\t9\n480\t14\n545\t36\n552\t22\n558\t33\n559\t21\n565\t11\n580\t29\n597\t11\n599\t18\n362\t26\n375\t4\n983\t11\n1004\t4\n174\t6\n195\t13\n231\t6\n238\t7\n54\t7\n285\t35\n320\t5\n73\t14\n84\t14\n115\t10\n933\t6\n816\t14\n212\t27\n121\t4\n602\t35\n873\t20\n875\t13\n557\t21\n600\t17\n417\t6\n454\t47\n466\t33\n468\t34\n664\t25\n704\t15\n735\t29\n829\t19\n1030\t4\n909\t7\n140\t20\n187\t20\n188\t35\n216\t36\n257\t24\n2\t13\n17\t15\n288\t11\n289\t7\n297\t5\n302\t8\n76\t19\n86\t19\n90\t13\n607\t15\n608\t26\n613\t22\n614\t20\n657\t13\n714\t40\n740\t27\n779\t91\n838\t180\n470\t63\n1009\t5\n145\t17\n366\t4\n646\t49\n316\t34\n652\t22\n894\t18\n8\t11\n56\t15\n77\t21\n30\t20\n191\t20\n1047\t12\n989\t14\n425\t27\n1022\t16\n1028\t8\n1055\t3\n895\t12\n941\t13\n955\t11\n749\t93\n269\t16\n387\t16\n1060\t8\n177\t9\n37\t5\n11\t23\n856\t8\n1032\t32\n194\t6\n219\t17\n266\t37\n713\t19\n479\t37\n408\t27\n878\t10\n918\t12\n70\t8\n678\t42\n383\t23\n324\t26\n769\t80\n526\t56\n636\t34\n995\t11\n12\t40\n824\t94\n141\t23\n980\t6\n979\t6\n971\t3\n155\t23\n1026\t12\n260\t37\n292\t10\n650\t41\n675\t52\n723\t22\n747\t15\n796\t36\n811\t19\n551\t27\n369\t18\n932\t4\n585\t17\n477\t34\n674\t37\n303\t17\n75\t16\n967\t9\n942\t14\n21\t9\n1024\t12\n505\t22\n516\t12\n550\t41\n363\t46\n364\t7\n389\t38\n413\t9\n993\t9\n1008\t6\n157\t8\n35\t14\n295\t30\n309\t53\n606\t9\n475\t22\n849\t6\n869\t20\n572\t29\n573\t17\n428\t22\n451\t13\n656\t47\n700\t20\n715\t51\n761\t48\n764\t25\n819\t113\n1059\t2\n954\t15\n199\t5\n220\t16\n228\t11\n251\t38\n256\t41\n4\t13\n18\t31\n48\t5\n287\t21\n317\t17\n331\t4\n66\t13\n625\t27\n644\t49\n671\t53\n677\t35\n680\t22\n697\t43\n708\t54\n743\t16\n751\t43\n766\t8\n790\t50\n799\t66\n805\t47\n828\t49\n836\t22\n857\t3\n81\t28\n716\t20\n570\t31\n906\t11\n639\t54\n783\t46\n587\t40\n788\t29\n848\t4\n621\t36\n393\t24\n1023\t23\n877\t16\n489\t28\n719\t19\n446\t15\n427\t28\n222\t14\n384\t14\n464\t27\n103\t23\n116\t14\n178\t3\n961\t6\n1033\t16\n896\t20\n402\t16\n898\t10\n186\t7\n209\t22\n673\t38\n696\t43\n498\t55\n456\t20\n5\t7\n65\t37\n791\t96\n584\t16\n365\t13\n485\t34\n603\t18\n225\t2\n773\t25\n539\t8\n984\t6\n908\t10\n997\t29\n215\t16\n197\t16\n886\t4\n137\t4\n151\t14\n956\t9\n10\t29\n867\t30\n101\t9\n880\t8\n881\t25\n49\t8\n900\t25\n310\t24\n120\t9\n782\t30\n381\t13\n802\t11\n622\t26\n604\t40\n507\t27\n156\t23\n169\t5\n142\t3\n341\t20\n917\t10\n515\t23\n532\t24\n590\t3\n340\t13\n382\t13\n957\t9\n986\t13\n1010\t16\n146\t16\n214\t7\n242\t5\n22\t6\n28\t28\n46\t7\n323\t26\n325\t14\n126\t5\n618\t37\n854\t4\n541\t48\n254\t4\n695\t11\n491\t29\n506\t25\n523\t33\n529\t42\n581\t14\n361\t62\n423\t30\n426\t21\n439\t18\n1037\t15\n1042\t9\n1057\t23\n897\t12\n944\t4\n148\t32\n152\t37\n263\t20\n20\t4\n53\t15\n301\t11\n311\t16\n312\t9\n87\t7\n93\t4\n130\t28\n640\t39\n649\t14\n658\t23\n661\t24\n694\t29\n698\t29\n731\t28\n739\t17\n741\t30\n789\t27\n820\t8\n834\t38\n227\t19\n3\t41\n1018\t12\n630\t25\n950\t13\n683\t36\n336\t9\n26\t20\n540\t21\n633\t24\n553\t22\n976\t24\n959\t6\n855\t4\n879\t17\n218\t21\n397\t22\n444\t36\n970\t18\n938\t6\n170\t7\n236\t10\n33\t21\n319\t30\n689\t10\n767\t27\n518\t26\n530\t13\n672\t25\n96\t1\n1040\t11\n929\t8\n235\t8\n202\t15\n74\t27\n112\t11\n839\t20\n431\t20\n452\t22\n435\t64\n213\t26\n327\t26\n440\t36\n709\t21\n385\t27\n619\t17\n1046\t27\n149\t11\n937\t19\n9\t14\n122\t27\n904\t8\n991\t17\n1021\t5\n887\t11\n610\t24\n519\t51\n601\t38\n448\t18\n681\t26\n725\t12\n1062\t27\n321\t33\n339\t26\n891\t4\n1044\t19\n347\t17\n1006\t12\n128\t16\n476\t47\n500\t43\n514\t35\n524\t24\n537\t28\n538\t25\n542\t24\n555\t33\n575\t22\n593\t23\n367\t47\n372\t24\n388\t29\n409\t8\n139\t9\n144\t15\n181\t15\n60\t3\n97\t17\n641\t16\n966\t5\n390\t40\n396\t30\n374\t18\n670\t81\n686\t20\n776\t53\n825\t21\n1034\t13\n1045\t13\n1054\t8\n949\t18\n153\t4\n234\t5\n241\t5\n247\t22\n258\t53\n13\t25\n286\t18\n314\t3\n322\t54\n326\t16\n83\t16\n95\t14\n111\t20\n114\t11\n119\t24\n679\t35\n721\t17\n742\t21\n822\t11\n850\t9\n866\t22\n55\t27\n273\t75\n726\t19\n503\t38\n560\t57\n193\t14\n609\t26\n1005\t6\n765\t15\n453\t23\n167\t13\n38\t11\n1015\t5\n376\t20\n392\t8\n458\t26\n469\t42\n1058\t5\n69\t5\n729\t72\n67\t25\n207\t21\n164\t25\n335\t51\n133\t29\n533\t14\n1001\t10\n847\t15\n615\t34\n566\t13\n201\t20\n930\t5\n230\t20\n939\t13\n29\t8\n973\t13\n233\t16\n958\t5\n171\t26\n248\t18\n283\t27\n632\t47\n687\t25\n758\t74\n436\t32\n19\t13\n730\t32\n132\t12\n1027\t8\n985\t6\n1002\t4\n474\t47\n484\t38\n494\t21\n527\t49\n563\t58\n582\t32\n406\t28\n407\t10\n416\t14\n176\t12\n205\t5\n208\t8\n211\t17\n252\t9\n16\t23\n39\t10\n332\t7\n91\t10\n1012\t6\n165\t17\n25\t15\n308\t45\n780\t79\n1020\t29\n517\t24\n548\t10\n562\t33\n576\t32\n443\t46\n445\t20\n447\t32\n449\t71\n653\t33\n785\t23\n833\t40\n1036\t6\n915\t13\n934\t2\n175\t24\n223\t16\n274\t3\n276\t18\n284\t12\n294\t9\n296\t23\n117\t10\n616\t25\n624\t55\n626\t12\n628\t16\n651\t54\n669\t5\n676\t29\n684\t10\n692\t23\n710\t31\n717\t11\n728\t12\n750\t61\n760\t40\n775\t44\n777\t0\n803\t73\n812\t56\n830\t10\n102\t6\n334\t12\n810\t42\n467\t7\n147\t22\n229\t46\n752\t81\n438\t40\n239\t12\n473\t27\n398\t5\n265\t82\n307\t46\n89\t18\n821\t7\n755\t27\n138\t18\n24\t34\n859\t7\n154\t14\n192\t5\n123\t19\n224\t18\n346\t16\n61\t1\n912\t11\n952\t16\n953\t22\n80\t18\n643\t31\n682\t68\n804\t25\n508\t15\n843\t16\n868\t16\n899\t10\n738\t9\n746\t29\n32\t31\n100\t12\n92\t9\n645\t24\n547\t15\n907\t13\n415\t46\n863\t19\n1016\t6\n106\t14\n969\t10\n1053\t8\n"
           }
         ]
       },
@@ -626,8 +626,8 @@
       "jobName": "paragraph_1632411097311_171456074",
       "id": "20210923-153137_645763716",
       "dateCreated": "2021-09-22T15:39:00+0000",
-      "dateStarted": "2021-10-01T10:46:15+0000",
-      "dateFinished": "2021-10-01T10:46:15+0000",
+      "dateStarted": "2021-10-01T15:37:07+0000",
+      "dateFinished": "2021-10-01T15:37:07+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -635,7 +635,7 @@
     {
       "text": "%sql\n--The safety car table is an externally aquired dataset that holds information on all races that had a safety car\nselect * from safety_car;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:16+0000",
+      "dateUpdated": "2021-10-01T15:37:07+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -695,8 +695,8 @@
       "jobName": "paragraph_1632411097311_-2125133830",
       "id": "20210923-153137_32440542",
       "dateCreated": "2021-09-23T15:11:45+0000",
-      "dateStarted": "2021-10-01T10:46:16+0000",
-      "dateFinished": "2021-10-01T10:46:16+0000",
+      "dateStarted": "2021-10-01T15:37:08+0000",
+      "dateFinished": "2021-10-01T15:37:08+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -704,7 +704,7 @@
     {
       "text": "--Add place holders for the newly generated features",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:17+0000",
+      "dateUpdated": "2021-10-01T15:37:08+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -728,8 +728,8 @@
       "jobName": "paragraph_1632411097311_308675400",
       "id": "20210923-153137_2041637423",
       "dateCreated": "2021-09-23T15:12:28+0000",
-      "dateStarted": "2021-10-01T10:46:17+0000",
-      "dateFinished": "2021-10-01T10:46:17+0000",
+      "dateStarted": "2021-10-01T15:37:09+0000",
+      "dateFinished": "2021-10-01T15:37:09+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -737,7 +737,7 @@
     {
       "text": "%sql\nalter table races add laps_with_change_pos_1 number;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:17+0000",
+      "dateUpdated": "2021-10-01T15:37:09+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -754,16 +754,21 @@
         "forms": {}
       },
       "results": {
-        "code": "SUCCESS",
-        "msg": []
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "ORA-01430: column being added already exists in table\n"
+          }
+        ]
       },
       "interrupted": false,
       "jobName": "paragraph_1632411097311_-1994852727",
       "id": "20210923-153137_1470589036",
       "dateCreated": "2021-09-23T15:13:18+0000",
-      "dateStarted": "2021-10-01T10:46:18+0000",
-      "dateFinished": "2021-10-01T10:46:18+0000",
-      "status": "FINISHED",
+      "dateStarted": "2021-10-01T15:37:09+0000",
+      "dateFinished": "2021-10-01T15:37:09+0000",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500,
       "commited": true
     },
@@ -1001,7 +1006,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM laps_with_change_pos_1_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.laps_with_change_pos_1 \u003d h.laps;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:23+0000",
+      "dateUpdated": "2021-10-01T15:37:20+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1025,8 +1030,8 @@
       "jobName": "paragraph_1632411097311_-563100941",
       "id": "20210923-153137_610546727",
       "dateCreated": "2021-09-23T15:16:50+0000",
-      "dateStarted": "2021-10-01T10:46:24+0000",
-      "dateFinished": "2021-10-01T10:46:24+0000",
+      "dateStarted": "2021-10-01T15:37:21+0000",
+      "dateFinished": "2021-10-01T15:37:21+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1034,7 +1039,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM laps_with_change_pos_1_5_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.laps_with_change_pos_1_5 \u003d h.laps;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:24+0000",
+      "dateUpdated": "2021-10-01T15:37:23+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1058,8 +1063,8 @@
       "jobName": "paragraph_1632411097311_-780160365",
       "id": "20210923-153137_1527114595",
       "dateCreated": "2021-09-23T15:17:13+0000",
-      "dateStarted": "2021-10-01T10:46:25+0000",
-      "dateFinished": "2021-10-01T10:46:25+0000",
+      "dateStarted": "2021-10-01T15:37:23+0000",
+      "dateFinished": "2021-10-01T15:37:24+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1067,7 +1072,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM overtaken_positions_total) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.overtaken_positions_due_to_pitstop_total \u003d h.overtaken_positions_due_to_pitstop_total\n        ,          e.overtaken_positions_real_total \u003d h.overtaken_positions_real_total;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:25+0000",
+      "dateUpdated": "2021-10-01T15:37:25+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1091,8 +1096,8 @@
       "jobName": "paragraph_1632411097311_1687936204",
       "id": "20210923-153137_605160137",
       "dateCreated": "2021-09-23T15:17:22+0000",
-      "dateStarted": "2021-10-01T10:46:26+0000",
-      "dateFinished": "2021-10-01T10:46:26+0000",
+      "dateStarted": "2021-10-01T15:37:26+0000",
+      "dateFinished": "2021-10-01T15:37:27+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1100,7 +1105,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM comebackscores) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.max_comebackscore \u003d h.max_comebackscore;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:26+0000",
+      "dateUpdated": "2021-10-01T15:37:31+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1124,8 +1129,8 @@
       "jobName": "paragraph_1632411097311_2016326718",
       "id": "20210923-153137_1170346979",
       "dateCreated": "2021-09-23T15:17:36+0000",
-      "dateStarted": "2021-10-01T10:46:27+0000",
-      "dateFinished": "2021-10-01T10:46:29+0000",
+      "dateStarted": "2021-10-01T15:37:32+0000",
+      "dateFinished": "2021-10-01T15:37:34+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1133,7 +1138,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM position_difference_top_5_v) h\n        ON (e.raceid \u003d h.raceid)\n      WHEN MATCHED THEN\n        UPDATE SET e.rank_versus_position \u003d h.position_difference_top_5;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:29+0000",
+      "dateUpdated": "2021-10-01T15:37:35+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1157,8 +1162,8 @@
       "jobName": "paragraph_1632411097311_1883471832",
       "id": "20210923-153137_1073926768",
       "dateCreated": "2021-09-23T15:17:55+0000",
-      "dateStarted": "2021-10-01T10:46:30+0000",
-      "dateFinished": "2021-10-01T10:46:30+0000",
+      "dateStarted": "2021-10-01T15:37:36+0000",
+      "dateFinished": "2021-10-01T15:37:36+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
@@ -1166,7 +1171,7 @@
     {
       "text": "%sql\nMERGE INTO races e USING (SELECT * FROM safety_car) h\n        ON (e.name \u003d h.race AND e.year \u003d h.year)\n      WHEN MATCHED THEN\n        UPDATE SET e.safety_car \u003d 1;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:30+0000",
+      "dateUpdated": "2021-10-01T15:37:38+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1190,16 +1195,16 @@
       "jobName": "paragraph_1632411097311_1830406624",
       "id": "20210923-153137_875067360",
       "dateCreated": "2021-09-23T15:18:09+0000",
-      "dateStarted": "2021-10-01T10:46:31+0000",
-      "dateFinished": "2021-10-01T10:46:31+0000",
+      "dateStarted": "2021-10-01T15:37:39+0000",
+      "dateFinished": "2021-10-01T15:37:39+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
     },
     {
-      "text": "%sql\nupdate races set max_comebackscore \u003d 0 where max_comebackscore is null;",
+      "text": "%sql\nupdate races set laps_with_change_pos_1 \u003d 0 where laps_with_change_pos_1 is null;",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:31+0000",
+      "dateUpdated": "2021-10-01T15:51:10+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1223,16 +1228,16 @@
       "jobName": "paragraph_1632413096429_169368398",
       "id": "20210923-160456_1922337810",
       "dateCreated": "2021-09-23T16:04:56+0000",
-      "dateStarted": "2021-10-01T10:46:32+0000",
-      "dateFinished": "2021-10-01T10:46:32+0000",
+      "dateStarted": "2021-10-01T15:51:10+0000",
+      "dateFinished": "2021-10-01T15:51:11+0000",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
     },
     {
-      "text": "%sql\n--Split the dataset\n--Create a dedicated RACES_TRAIN table. We will use this later to TRAIN the model on the years until 2019.\n--We will use the year 2020 to TEST the model later.\ncreate table races_train as select * from races where year \u003e\u003d 2011 and year \u003c\u003d 2019; --Exclude 2020",
+      "text": "%sql\nupdate races set laps_with_change_pos_1_5 \u003d 0 where laps_with_change_pos_1_5 is null;\n",
       "user": "F1",
-      "dateUpdated": "2021-10-01T10:46:32+0000",
+      "dateUpdated": "2021-10-01T15:51:15+0000",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1249,21 +1254,148 @@
         "forms": {}
       },
       "results": {
-        "code": "ERROR",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "ORA-00955: name is already used by an existing object\n"
-          }
-        ]
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1633103382783_-2016740363",
+      "id": "20211001-154942_866393273",
+      "dateCreated": "2021-10-01T15:49:42+0000",
+      "dateStarted": "2021-10-01T15:51:16+0000",
+      "dateFinished": "2021-10-01T15:51:16+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nupdate races set max_comebackscore \u003d 0 where max_comebackscore is null;",
+      "user": "F1",
+      "dateUpdated": "2021-10-01T15:51:19+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1633103389329_1725845305",
+      "id": "20211001-154949_824902393",
+      "dateCreated": "2021-10-01T15:49:49+0000",
+      "dateStarted": "2021-10-01T15:51:19+0000",
+      "dateFinished": "2021-10-01T15:51:19+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nupdate races set rank_versus_position \u003d 0 where rank_versus_position is null;",
+      "user": "F1",
+      "dateUpdated": "2021-10-01T15:51:21+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1633103420569_-976431735",
+      "id": "20211001-155020_1249975291",
+      "dateCreated": "2021-10-01T15:50:20+0000",
+      "dateStarted": "2021-10-01T15:51:22+0000",
+      "dateFinished": "2021-10-01T15:51:22+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\nupdate races set safety_car \u003d 0 where safety_car is null;",
+      "user": "F1",
+      "dateUpdated": "2021-10-01T15:51:24+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "interrupted": false,
+      "jobName": "paragraph_1633103431706_1940953518",
+      "id": "20211001-155031_940985420",
+      "dateCreated": "2021-10-01T15:50:31+0000",
+      "dateStarted": "2021-10-01T15:51:25+0000",
+      "dateFinished": "2021-10-01T15:51:25+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "commited": true
+    },
+    {
+      "text": "%sql\n--Split the dataset\n--Create a dedicated RACES_TRAIN table. We will use this later to TRAIN the model on the years until 2019.\n--We will use the year 2020 to TEST the model later.\ncreate table races_train as select * from races where year \u003e\u003d 2011 and year \u003c\u003d 2019; --Exclude 2020",
+      "user": "F1",
+      "dateUpdated": "2021-10-01T15:38:03+0000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
       },
       "interrupted": false,
       "jobName": "paragraph_1632411097311_-1479887262",
       "id": "20210923-153137_1589222",
       "dateCreated": "2021-09-23T15:19:23+0000",
-      "dateStarted": "2021-10-01T10:46:32+0000",
-      "dateFinished": "2021-10-01T10:46:32+0000",
-      "status": "ERROR",
+      "dateStarted": "2021-10-01T15:38:04+0000",
+      "dateFinished": "2021-10-01T15:38:04+0000",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500,
       "commited": true
     },
