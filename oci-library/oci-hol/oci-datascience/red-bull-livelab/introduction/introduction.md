@@ -29,7 +29,7 @@ This tutorial teaches ML analytics with a series of hands-on labs (HOLs) using t
 
   [](youtube:WWyM432VPQY)
 
-<b>Objectives</b>
+### Objectives
 
 
   In this lab, you will to complete the following steps:
@@ -40,7 +40,7 @@ This tutorial teaches ML analytics with a series of hands-on labs (HOLs) using t
   * Model Serving - <i> Deploy the best trained model as a REST API </i>
   * UI Access - <i> Develop Web UI Access to predict the next winner </i>
 
-<b> Prerequisites </b>
+### Prerequisites
 
   This solution is designed to work with several OCI services, allowing you to quickly be up-and-running. You can read more about the services used in the lab here:
   * [Data Science](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
