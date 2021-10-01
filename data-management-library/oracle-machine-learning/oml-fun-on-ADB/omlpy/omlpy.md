@@ -582,6 +582,6 @@ OML4Py enables data scientists to hand-off their user-defined Python functions t
 	It is used in the process of explanation and interpretation of the machine learning model to identify the important features to help the model impact its prediction.
 
 ## Acknowledgements
-* **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation; Dhanish Kumar, Member of Technical Staff.
+* **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation; Dhanish Kumar, Member of Technical Staff, User Assistance Devlopment.
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning.
 * **Last Updated By/Date** - Dhanish Kumar, September 2021
