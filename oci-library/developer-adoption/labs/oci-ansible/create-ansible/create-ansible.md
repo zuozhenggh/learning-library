@@ -25,6 +25,26 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
 
 * Need to be an OCI Tenancy Administrator
 
+
+## Task 1: Create Object Storage Bucket
+
+1. Open the navigation menu and click ***Storage***. Under ***Object Storage***, click ***Buckets***.
+
+2. Select a ***compartment*** from the ***Compartment list***  on the left side of the page. For this lab you will remain in the tenancy root compartment.
+
+You will keep all of the defaults for the bucket creation.
+
+3. Click ***Create Bucket***.
+
+4. Enter a ***Bucket Name*** . For this lab we will name the bucket **ansible-bucket**.
+
+   You will keep all of the defaults for the bucket creation.
+
+5. Click ***Create*** . 
+
+
+
+
 ## Task 2: Install an OCI Ansible Collection using Cloud Shell
 
 1. To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
