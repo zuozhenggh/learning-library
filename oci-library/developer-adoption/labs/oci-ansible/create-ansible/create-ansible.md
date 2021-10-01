@@ -40,7 +40,7 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
 
 ```bash
    $ ansible-galaxy collection install oracle.oci
-    ```
+ ```
 
 
    ![](./images/Ansible-Cloud-Shell1.png " ")
@@ -49,6 +49,10 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
 
    After your installation is complete, you can write a sample playbook that uses Ansible modules. Following is an example playbook (named list_buckets.yaml) that uses the oci_object_storage_bucket_facts module to fetch facts pertaining to the buckets in your compartment.
 
+
+1.  Open the navigation menu and click on ***Profile*** and click ***Tenancy*** your tenancy name. Copy and make note of your tenancy ocid as you will use it later.
+
+2. 
     
  ```yaml
 
