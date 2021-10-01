@@ -9,19 +9,19 @@ This lab will walk you through the very basic step of machine learning, i.e, dat
 Estimated Time: 1 hr
 
 
-<b> Objectives </b>
+### Objectives
 
 In this lab, you will gather data by:
 * Executing notebook ```01_0.Formule1_Data_Collection.ipynb``` to download race data (capturing data on features like  races, rounds, results, etc.) and create your own CSV Files. 
 * Executing notebook ```01_1.Weather_Data_Collection.ipynb``` to download weather data for races
 * Finally, executing this last notebook ```01_2.Qualifying_Data_Collection.ipynb``` to download the qualifying data for races
 
-<b> Prerequisites </b>
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP 1**: Race Data Collection
+## **Task 1**: Race Data Collection
 
 Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_0.Formule1_Data_Collection.ipynb```
 
@@ -44,7 +44,7 @@ Execute the notebook to download race data and create your CSV files.
     ![Image alt text](images/rel.png =50%x*)
 
 
-## **STEP 2:** Weather Data Collection 
+## **Task 2:** Weather Data Collection 
 
 Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_1.Weather_Data_Collection.ipynb```
 
@@ -53,7 +53,7 @@ Execute the notebook to download weather data that captures weather conditions (
 ![Image alt text](images/weather.png)
 
 
-## **STEP 3:** Qualifying Data Collection 
+## **Task 3:** Qualifying Data Collection 
 
 Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 01_2.Formula 1 Qualifying Data Collection```
 

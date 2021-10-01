@@ -12,17 +12,17 @@ It seems the Neural Network Classification is the best model to return the highe
 
 Estimated Time: 1 hr
 
-<b> Objectives </b>
+### Objectives
 
 In this lab, you will:
 * Execute ``` 05.ML_Model_Serving.ipynb ``` to deploy the best ML model, which is served and consumed using REST API
 
-<b> Prerequisites </b>
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP 1**: Execute ``` 05.ML_Model_Serving.ipynb ``` to deploy the best ML model, served and consumed using REST API
+## **Task 1**: Execute ``` 05.ML_Model_Serving.ipynb ``` to deploy the best ML model, served and consumed using REST API
 
 Navigate to the ``` /redbull-analytics-hol/beginners/``` directory in your Jupyter Notebook session and execute ``` 05.ML_Model_Serving.ipynb ```. 
 

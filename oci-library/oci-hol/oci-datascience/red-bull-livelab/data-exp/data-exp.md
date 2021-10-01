@@ -15,19 +15,19 @@ An racing team's performance is largely dependent on the FIA technical regulatio
 Estimated Time: 1 hr
 
 
-<b> Objectives </b>
+### Objectives
 
 In this lab, you will:
   * Download racing dataset prepared by Ergast to simplify the Exploratory Data Analysis process by:
 
     * Execute the notebook ```03.f1_analysis_EDA.ipynb``` to perform Data Analysis using ERGAST Data Model
 
-<b> Prerequisites </b>
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP 1**:  Download racing dataset prepared by Ergast to simplify the Exploratory Data Analysis process
+## **TASK 1**:  Download racing dataset prepared by Ergast to simplify the Exploratory Data Analysis process
 
 We will use the dataset “data_f1” prepared by Ergast to simplify the Exploratory, but we could use all CSV prepared in the folder “data”
 

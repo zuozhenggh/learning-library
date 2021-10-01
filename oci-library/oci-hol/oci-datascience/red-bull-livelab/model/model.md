@@ -83,17 +83,17 @@ To begin with, we are going to be building our machine learning model based on t
 
 Estimated Time: 40 minutes
 
-<b> Objectives </b>
+### Objectives
 
 In this lab, you will:
 * Execute the notebook ```04.ML_Modelling.ipynb``` to build and implement a mchine learning model for our use case
 * Machine learning model exercise for Developers
 
-<b> Prerequisites </b>
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Execute the notebook ```04.ML_Modelling.ipynb``` to build and implement a mchine learning model for our use case
+## **Task 1**: Execute the notebook ```04.ML_Modelling.ipynb``` to build and implement a mchine learning model for our use case
 
   Navigate to the ``` /redbull-analytics-hol/beginners/``` directory in your Jupyter Notebook session and execute ``` 04.ML_Modelling.ipynb``` 
 
@@ -152,7 +152,7 @@ In this lab, you will:
   ![Image alt text](./images/overfit.png)
 
 
-## **STEP 2:** Machine learning model exercise for Developers
+## **Task 2:** Machine learning model exercise for Developers
 
 Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Model considering both “Drivers” and “F1 Team/Constructor” Information.
 
