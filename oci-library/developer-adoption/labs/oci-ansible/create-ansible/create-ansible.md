@@ -54,6 +54,9 @@ In this tutorial, we’re going to use [OCI Cloud Shell](https://docs.oracle.com
 
 
       ![](./images/tenancy-info-1.png " ")
+      
+
+2.  
     
  ```yaml
 
