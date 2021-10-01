@@ -1,8 +1,8 @@
-# Improve the App
+# Improve the application
 
 ## Introduction
 
-In this lab, you will learn how to enable some pages to be viewed by any user who accesses the app. 
+In this lab, you will learn how to make some pages publicly accessible.
 
 Estimated Lab Time: 10 minutes
 
@@ -16,13 +16,13 @@ In this lab, you will:
 - Enhance the Navigation Bar
 
 ## Task 1: Set Pages to be Public
-Your customers don't need to login the app in order to shop the products, so let's set the following pages as public:
+Your customers don't need to log in the app to shop the products, so let's set the following pages as public:
 - Page  1: Products
 - Page 16: Order Information
 - Page 17: Shopping Cart
 - Page 18: Add to Cart
 
-Follow these Tasks for the four listed pages:
+Follow these tasks for the four listed pages:
 
 1. From the runtime application, navigate to the page.
 
@@ -43,12 +43,12 @@ Follow these Tasks for the four listed pages:
 
 ## Task 2: Cleaning the Navigation Menu
 Since the home page is the Products page and this is a public access page as some others too, it's not needed to have a navigation menu. 
-In this Task, you will turn off displaying the navigation menu.
+In this task, you will turn off displaying the navigation menu.
 
-1. Within Page Designer, click on the Shared Components icon at the top right.
+1. Within Page Designer, click the Shared Components icon at the top right.
 
     ![](images/shared-components.png " ")
-   Alternatively, if you're in the App Builder, click on Shared Components.
+   Alternatively, if you are in the App Builder, click Shared Components.
    ![](images/shared-components2.png " ")
 
 2. Under User Interface, click **User Interface Attributes**.
@@ -65,7 +65,7 @@ Add a new navigation menu entry to allow:
 - Customers to go directly to the Shopping Cart.
 - Administrators to login and access to administration page.
 
-1. Click on the Shared Components icon at the top right.
+1. Click the Shared Components icon at the top right.
     ![](images/shared-components3.png " ")
 2. Under Navigation, click **Navigation Bar List**.
     ![](images/navigation-bar.png " ")

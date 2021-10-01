@@ -9,16 +9,16 @@ Estimated Time: 5 minutes
 ### Objectives
 
 In this lab you will:
-* Create a compartment
+* Create a Compartment
 * Create API Key
+* Download Code Bundle
 * Learn about Credentials, and Policies
-* Set up Cloud Shell
 
 ### Prerequisites
 
 This lab assumes you have:
 
-* An Oracle Free Tier, Always Free, or Paid Account
+* An Oracle Free Tier, Paid Account or Green Button
 
 
 ## Task 1: Create a Compartment
@@ -33,7 +33,7 @@ This lab assumes you have:
 
 3. Click **Create Compartment.** This opens up a new window.
 
-  Enter **demonosql** as compartment **Name** field, enter test into **Description** field and press **Create Compartment** button at bottom of window. The **Parent Compartment** field will display your current parent compartment -- make sure this is your **root** compartment, whatever that is for your case. This HOL assumes the 'demonosql' compartment is a child of the root compartment.
+  Enter **demonosql** as compartment **Name** field, enter some text into **Description** field and press **Create Compartment** button at bottom of window. The **Parent Compartment** field will display your current parent compartment -- make sure this is your **root** compartment, whatever that is for your case. This HOL assumes the 'demonosql' compartment is a child of the root compartment.
 
     ![](images/create-compartment.png)
 
@@ -44,7 +44,7 @@ This lab assumes you have:
 
   ![](images/user-profile.png)
 
-2. Click **User Settings** again. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 4.
+2. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 4.
 
     ![](images/user-ocid.png)
 
@@ -70,9 +70,29 @@ This lab assumes you have:
 
     If you execute the 'oci iam' command and you get this error **"ApiKeyLimitExceeded"** then you need to delete some keys you already created. Go to your user details screen, and **API Keys** to find old keys to delete.
 
-5. Exit Cloud Shell  
+## Task 3: Get Data and Code Bundle
 
-## Task 3: Understand Credentials, and Policies
+In this task we will copy over a data bundle stored on object storage and place that in the Cloud Shell.
+
+1. Execute the following in your Cloud Shell.
+
+    ````
+    <copy>
+      cd $HOME
+      rm -rf serverless-with-nosql-database BaggageData serverless-with-nosql-database.zip demo-lab-nosql-main
+      curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/PdICF4N3CtbcAB6cPe7-foLYqGGSRNqkf4mSt1gVIBhH8Wvt87PxoYQkNATywFM0/n/c4u04/b/labfiles/o/demo-lab-nosql-main.zip -o serverless-with-nosql-database.zip
+      unzip serverless-with-nosql-database.zip
+      mv demo-lab-nosql-main serverless-with-nosql-database
+      cp ~/NoSQLLabPrivateKey.pem  ~/serverless-with-nosql-database/express-nosql
+      cp ~/info.json ~/serverless-with-nosql-database/express-nosql
+      cp ~/serverless-with-nosql-database/env-freetier.sh ~/serverless-with-nosql-database/env.sh
+    </copy>
+    ````
+
+2. Exit from Cloud Shell
+
+
+## Task 4: Understand Credentials, and Policies
 
 **Oracle NoSQL Database Cloud Service uses Oracle Cloud Infrastructure Identity and Access Management to provide secure access to Oracle Cloud.** Oracle Cloud Infrastructure Identity and Access Management enables you to create user accounts and give users permission to inspect, read, use, or manage tables. Credentials are used for connecting your application to the service and are associated with a specific user. The credentials consist of the tenancy ID, the user ID, an API signing key, a fingerprint and optionally a passphrase for the signing key. These got created in Task 2 of this lab and are stored in the info.json file in your Cloud Shell.
 
@@ -95,7 +115,7 @@ In this node.js snippet, we used the credential information created in Task 2 an
         });
 ````
 
-  Another way to handle authentication is with Instance and Resource Principals. The Oracle NoSQL SDKs support both of them. Resource principals are primarily used when authenticating from functions. We are not using functions in this workshop so we will not discuss those any further.
+  Another way to handle authentication is with Instance and Resource Principals. The Oracle NoSQL SDKs support both of them. Resource principals are primarily used when authenticating from functions. We will show you an example of using Resource Principals.
 
   Instance Principals is a capability in Oracle Cloud Infrastructure Identity and Access Management (IAM) that lets you make service calls from an instance. With instance principals, you don’t need to configure user credentials or rotate the credentials. Instances themselves are a principal type in IAM and are set up in IAM. You can think of them as an IAM service feature that enables instances to be authorized actors (or principals) to perform actions on service resources.
 
@@ -119,6 +139,8 @@ function createClientResource() {
   });
 }
 ```
+If you wanted to use **Instance Principals** instead of Resource Principals, then replace "useResourcePrincipal: true"  with "useInstancePrincipal: true" to switch.
+
 **NoSQL Database Python SDK**
 ```
 def get_handle():
@@ -126,32 +148,10 @@ def get_handle():
      config = borneo.NoSQLHandleConfig('eu-frankfurt-1', provider).set_logger(None)
      return borneo.NoSQLHandle(config)
 ```
+
+A similar switch can be made here to use **Instance Principals**, replace "create\_with\_resource\_principal()" with "create\_with\_instance\_principal()" and you are all set.
+
 In the next labs we are going to be running application code and we need an instance to run that from. In Task 2 we started the Cloud Shell and we will run the application from that instance. Currently, Cloud Shell does not support Instance Principals so in those labs we will be using credentials.
-
-## Task 4: Move to Phoenix
-
-Oracle NoSQL Always Free tables are available only in the Phoenix region. If Phoenix is **not** your home region then we need to move there. Skip this Task if Phoenix is your home region.
-
-1. Check to see if Phoenix shows up in your region drop down list. Click the down **arrow** by the region.
-
-    ![](images/no-phoenix.png)
-
-2. If it is there, click it and move your tenancy to Phoenix and **proceed to the next lab.**
-
-    ![](images/phoenix.png)
-
-3. Since it is not there, please subscribe to Phoenix Region. Click the drop down by your region and click **Manage Regions.**
-
-    ![](images/manage-regions.png)
-
-4. This will bring up a list of regions. Look for Phoenix and press **Subscribe**.
-
-    ![](images/capturesuscribe.png)
-
-5. If you haven't been moved to Phoenix, then click **Phoenix** to move your tenancy.
-
-    ![](images/phoenix.png)
-
 
 You may now **proceed to the next lab.**
 

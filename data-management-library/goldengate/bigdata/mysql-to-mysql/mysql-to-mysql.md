@@ -46,7 +46,9 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 2. Select Option **2**
 
-3. Review the overview notes on the following screen, then select **Q** to quit. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
+Select **Q** to exit labmenu
+
+3. Review the overview notes on the following screen. These online notes have been provided so you can cut/paste file names to another session, to avoid typos.
 
 4. Review the content of each of these files to explore how GoldenGate is being configured.
 
@@ -182,7 +184,7 @@ Now that the GoldenGate extract, pump and replicat processes are running, next y
 ## Summary
 In summary, we loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local GG trail file. The pump process `pmpmysql` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `repmysql` read the remote trail files, and applied the changes to the MySQL database `ggtarget`.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab*
 
 ## Learn More
 
@@ -191,4 +193,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, September 2021

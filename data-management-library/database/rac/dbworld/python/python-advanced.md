@@ -29,7 +29,7 @@ In the previous lab you have seen how easy it is to use Python against the Oracl
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
+* Lab: Log in to Oracle Cloud
 * Lab: Generate SSH Key
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
@@ -79,7 +79,7 @@ GRANT READ, WRITE ON DIRECTORY world_dumpfile_dir TO world_sample;
 
 **Note:** If the world sample zip file creates a different directory name than *world_sample_q114*, please modify the CREATE DIRECTORY statement above
 
-## Task 2: Edit the two SQL files and run load_sample_data.sql from SQL*Plus:
+## Task 2: Edit the two SQL files and run load_sample_data.sql from SQL*Plus
 
 1. The SQL files *cln_sample_data.sql* and *load_sample_data.sql* need to be edited:
 
@@ -250,7 +250,7 @@ cur.execute('create table test_json (id number generated always as identity, jso
 
 2. Query the table data.
 
-**Note** the three spaces in front of the *‘print row’* command. These three spaces are a code indentation that indicate a block of code in Python, you must indent each line of the block by the same amount. In this case, ‘print row’ is the block of code we execute in the loop ‘for row in cur:’. Make sure you have those spaces when you execute the command. Hit Enter to close the block of code in the loop.
+**Note** the three spaces in front of the *‘print row’* command. These three spaces are a code indentation that indicate a block of code in Python, you must indent each line of the block by the same amount. In this case, ‘print row’ is the block of code we execute in the loop ‘for row in cur:’. Make sure you have those spaces when you execute the command. Press *Enter* to close the block of code in the loop.
 
 ````
 <copy>
@@ -486,4 +486,3 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 
 - **Author** - Troy Anthony
 - **Last Updated By/Date** - Troy Anthony, April 2020
-

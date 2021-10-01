@@ -1,4 +1,4 @@
-# Run Queries with MySQL Shell and Workbench
+# RUN QUERIES WITH MYSQL SHELL
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
@@ -27,19 +27,23 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Run Queries in HeatWave
 
-1. If not already connected with SSH, connect to the Cloud Shell
-2. On command Line, connect to MySQL using the MySQL Shell client tool        
+1. If not already connected with SSH, connect to Compute instance using Cloud Shell
+
+    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
+
+2. On command Line, connect to MySQL using the MySQL Shell client tool with the following command:
 
     ```
-        <copy>mysqlsh admin@127.0.0.1 --sql</copy>
+    <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
     ```
+
 3.	Change to the airport database   
 
     Enter the following command at the prompt
     ```
     <copy>USE airportdb;</copy>
     ```
-4. Query a - Find per-company average age of passengers from Switzerland, Italy and France
+4. **Query 1** - Find per-company average age of passengers from Switzerland, Italy and France
 
 5. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. You should see "Use secondary engine RAPID" in the explain plan. For example:
 
@@ -61,7 +65,7 @@ ORDER BY
     airline.airlinename, avg_age
 LIMIT 10\G</copy>
     ```
-    ![Connect](./images/heatwave-qeury-02.png " ")
+    ![RUN](./images/heatwave-qeury-02.png " ")
 
 6. After verifying that the query can be offloaded, run the query and note the execution time. Enter the following command at the prompt:
      ```
@@ -111,7 +115,7 @@ ORDER BY
     airline.airlinename, avg_age
 LIMIT 10;</copy>
     ```
-    ![Connect](./images/heatwave-qeury-04.png " ")
+    ![RUN](./images/heatwave-qeury-04.png " ")
 
 9. To see if `use_secondary_engine` is enabled (=ON)
 
@@ -129,7 +133,7 @@ LIMIT 10;</copy>
      ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
-12. Query b -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
+12. **Query 2** -  Find top 10 companies selling the biggest amount of tickets for planes taking off from US airports.	Run Pricing Summary Report Query:
 
     ```
     <copy> SELECT
@@ -175,7 +179,7 @@ ORDER BY
 LIMIT 10;
     </copy>
     ```
-14. Query c - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
+14. **Query 3** - Give me the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
 
     ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
@@ -223,12 +227,16 @@ GROUP BY firstname , lastname;</copy>
     ```
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ```
+16. The final results should look like the following:
+
+    ![RUN](./images/final-result.png " ") 
+
 You may now [proceed to the next lab](#next).
     
 ## Learn More
 
-* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
-* [MySQL Database Documentation](https://www.mysql.com)
+* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
+* [MySQL Database Documentation](https://www.MySQL.com)
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager

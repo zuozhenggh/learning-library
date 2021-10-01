@@ -48,6 +48,8 @@ These two sessions will be used respectively for `source` and `target` execution
 
 2. Select **R** to reset the lab environment, then select **6**
 
+Select **Q** to exit labmenu
+
 3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
 
 4. Review the content of each of these files to explore how GoldenGate is being configured.
@@ -232,7 +234,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
     ```
     <copy>info all</copy>
     ```
-2. Now go back to the previous session, where you ran `showtopics`; we will load some data on the MySQL database `ggsource` and GG will extract and write it to the Kafka topics.
+2. Now go back to the previous session,  we will load some data on the MySQL database `ggsource` then run `showtopics`;and GG will extract and write it to the Kafka topics.
 
     ![](./images/E11.png " ")
 
@@ -300,7 +302,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
 ## Summary
 In summary, you loaded data in MySQL database `‘ggsource’`, GG extract process `‘extmysql’` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `‘pmphadop’` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `‘rkafka’` read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab*
 
 ## Learn More
 
@@ -309,4 +311,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, September 2021
