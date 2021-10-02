@@ -76,7 +76,7 @@ system:controller:operator-lifecycle-manager                 ClusterRole        
 
 ### Enable Instance Principal
 
-The OCI Service Operator for Kuberentes needs [OCI Instance Principal](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm). details to provision and manage OCI services/resources in the customer tenancy. This is the recommended approach for running OSOK within OCI.
+The OCI Service Operator for Kuberentes needs [OCI Instance Principal](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm). details to provision and manage OCI services/resources in your tenancy. This is the recommended approach for running OSOK within OCI.
 
 To do this you are required to create a [OCI Dynamic Group](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#Managing_Dynamic_Groups).
 
