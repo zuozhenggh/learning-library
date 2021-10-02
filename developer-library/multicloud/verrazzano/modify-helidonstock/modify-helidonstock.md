@@ -64,7 +64,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
 ## Task 2: Create a new Docker image for the bobbys-helidon-stock-application
 
-1. Because we are going to build a new Docker image for *bobbys-helidon-stock-application*, which has dependencies on *bobbys-coherence-application*, we run a *Maven* command to clean the existing bobbys-coherence-application archive and compile, build, package, and install a new bobby-coherence-application archive in a local Maven repository. To change to the *bobbys-coherence* directory folder and to compile, build, and install the *bobbys-coherence* application archive into a local Maven repository,, copy the following command and paste it in the *Cloud Shell*.
+1. Because we are going to build a new Docker image for *bobbys-helidon-stock-application*, which has dependencies on *bobbys-coherence-application*, we run a *Maven* command to clean the existing bobbys-coherence-application archive and compile, build, package, and install a new bobby-coherence-application archive in a local Maven repository. To change to the *bobbys-coherence* directory folder and to compile, build, and install the *bobbys-coherence* application archive into a local Maven repository, copy the following command and paste it in the *Cloud Shell*.
 
     ```bash
     <copy>
@@ -105,7 +105,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     You can find out your *Region Name* in top right corner in the Oracle Cloud Console, as shown in following image.
     ![Container Registry](images/15.png)
 
-5. For finding the Namespace of the tenancy, select the Hamburger Menu -> Developer Services -> Container Registry, as shown. In the compartment, you will find the Namespace. Copy and save it in somewhere in your text editor. In my case, *id9hokcxpkra* is my tenancy Namespace. Keep it in the text editor, because we will also use it in Lab 6.
+5. For finding the Namespace of the tenancy, select the Hamburger Menu -> Developer Services -> Container Registry, as shown. In the compartment, you will find the Namespace. Copy and save it in somewhere in your text editor. Keep it in the text editor, because we will also use it in Lab 6.
 
     ![Tenancy Namespace](images/20.png)
     ![Tenancy Namespace](images/16.png)
@@ -124,7 +124,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
     ![Docker Build](images/19.png)
 
-This creates the Docker image, which we will push into the Oracle Cloud Container Registry repository in Lab 6. You need to copy the replaced full image name `END_POINT_OF_YOUR_REGION`/`NAMESPACE_OF_YOUR_TENANCY`/helidon-stock-application:1.0 in your text editor; we will need it in Lab 6 and Lab 7. In my case, I am copying `iad.ocir.io/id9hokcxpkra/helidon-stock-application:1.0` as the full Docker image name in my text editor.
+This creates the Docker image, which we will push into the Oracle Cloud Container Registry repository in Lab 6. You need to copy the replaced full image name `END_POINT_OF_YOUR_REGION`/`NAMESPACE_OF_YOUR_TENANCY`/helidon-stock-application:1.0 in your text editor; we will need it in Lab 6 and Lab 7.
 
 Leave the *Cloud Shell* open; we need it for next lab.
 
