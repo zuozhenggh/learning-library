@@ -1,6 +1,8 @@
 
 ## Install Oracle Service Operator for Kubernetes
 
+In this tutorial, you will be installing the Oracle Service Operator for Kubernetes (OSOK) and deploying it to the Kubernetes cluster you created in the previous lab. These steps are meant to be performed on your local machine. 
+
 
 ## Pre-Requisites
 
@@ -17,6 +19,12 @@ The Operator SDK installation is documented in detail by the operator-sdk projec
 ### Install OLM
 
 Install the OLM from the operator-sdk, you can use the following command:
+
+ ```
+    <copy>
+    operator-sdk olm install
+    </copy>
+    ```
 ```bash
 $ operator-sdk olm install
 ...
