@@ -12,7 +12,7 @@
         },
         {
             "title": "Lab 1: Using Ansible on OCI",
-            "filename": "../../../labs/oci-ansible/create-ansible.md"
+            "filename": "../../../labs/oci-ansible/create-ansible/create-ansible.md"
         },        
         {
             "title": "Need Help?",
