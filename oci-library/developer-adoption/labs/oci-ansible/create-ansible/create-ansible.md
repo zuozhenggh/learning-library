@@ -1,4 +1,4 @@
-# Install Oracle Cloud Infrastructure Ansible Collection and write a Playbook
+# Install Oracle Cloud Infrastructure Ansible Collection
 
   ## Introduction
   
