@@ -14,7 +14,7 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
 - kube-public, usually used for resources that have to be accessible across the cluster
 
 # Objectives
-- Create an OCI Container Engine Kubernetes cluster (OKE)# Deploying Oracle Container Engine for Kubernetes
+- Create an OCI Container Engine Kubernetes cluster (OKE) deploying Oracle Container Engine for Kubernetes
 
 
 ### Prerequisites
