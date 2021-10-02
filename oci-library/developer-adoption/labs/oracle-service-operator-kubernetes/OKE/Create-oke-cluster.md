@@ -38,11 +38,13 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
 4. Fill out the dialog box:
 
       - NAME: Provide a name (oke-cluster in this example)
-      - COMPARTMENT: Choose your compartment
+      - COMPARTMENT: Choose your compartment ( we will use the root compartment)
       - Kubernetes API Endpoint: Public Endpoint
       - Kubernetes Worker Nodes: Private Worker Nodes
-      - SHAPE: Choose a VM shape of your choice
+      - SHAPE: Choose any VM shape of your choice
       - NUMBER OF NODES: 1
+
+       ![](./../OKE/images/create-oke-1.PNG " ")
 
 5. Click ***Next*** and Click "***Create Cluster***".
 
