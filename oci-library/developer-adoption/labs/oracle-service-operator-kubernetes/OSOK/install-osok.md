@@ -20,13 +20,12 @@ The Operator SDK installation is documented in detail by the operator-sdk projec
 
 Install the OLM from the operator-sdk, you can use the following command:
 
- ```
+```
     <copy>
     operator-sdk olm install
     </copy>
     ```
- You should expect the following output:
-    
+ Output of the above command
 ```bash
 
 ...
