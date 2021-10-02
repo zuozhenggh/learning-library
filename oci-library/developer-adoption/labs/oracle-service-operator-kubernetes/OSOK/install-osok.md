@@ -25,8 +25,10 @@ Install the OLM from the operator-sdk, you can use the following command:
     operator-sdk olm install
     </copy>
     ```
+ You should expect the following output:
+    
 ```bash
-$ operator-sdk olm install
+
 ...
 ...
 INFO[0079] Successfully installed OLM version "latest"
