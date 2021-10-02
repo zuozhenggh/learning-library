@@ -28,9 +28,11 @@ INFO[0079] Successfully installed OLM version "latest"
 
 You can verify your installation of OLM by first checking for all the necessary CRDs in the cluster:
 
-```bash
-$ operator-sdk olm status
-```
+ ```
+    <copy>
+    operator-sdk olm status
+    </copy>
+    ```
 
 Output of the above command
 ```bash
