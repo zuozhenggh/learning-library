@@ -105,7 +105,7 @@ You will keep all of the defaults for the bucket creation.
 3. Execute the Ansible playbook using Python by invoking this command:
 
  ```bash
-   $ $ ansible-playbook list_buckets.yml
+   $ ansible-playbook list_buckets.yml
  ```
 
 
