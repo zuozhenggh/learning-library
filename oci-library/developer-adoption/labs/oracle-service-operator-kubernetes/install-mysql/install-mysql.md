@@ -3,6 +3,8 @@
 
 ## Introduction
 
+In this lab, we will use the deployed Oracle Service Operator for Kubernetes (OSOK) on your Kubernetes cluster from Lab 1 and Lab 2, to deploy the Oracle MySQL Database Service. 
+
 [Oracle MySQL Database Service](https://www.oracle.com/mysql/) is a fully managed database service that lets developers quickly develop and deploy secure, cloud native applications using the world’s most popular open source database. Oracle MySQL Database Service is also offered via the OCI Service Operator for Kubernetes, making it easy for applications to provision and integrate seamlessly with MySQL databases.
 
 
