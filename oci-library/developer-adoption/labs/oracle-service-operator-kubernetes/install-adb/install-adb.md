@@ -27,13 +27,13 @@ Allow dynamic-group {OSOK_DYNAMIC_GROUP} to manage autonomous-database in tenanc
 Provisioning of an Autonomous Database requires you to input the admin password as a Kubernetes secret. OSOK acquires the admin password from the Kubernetes secret provided in the `spec`. 
 The Kubernetes secret should contain the admin password in `password` field. 
 ```sh
-kubectl create secret generic <ADMIN-PASSWORD-SECRET-NAME> --from-literal=password=<ADMIN-PASSWORD>
+kubectl create secret generic {ADMIN-PASSWORD-SECRET-NAME}--from-literal=password={ADMIN-PASSWORD}
 ```
 
 The Autonomous Database can be accessed using the details in the wallet which will be downloaded as part of the provision/bind operation of the CR. OSOK acquires the wallet password from the Kubernetes secret whose name is provided in the `spec`. Also, we can configure the name of the wallet in the `spec`.
 
 ```sh
-kubectl create secret generic <WALLET-PASSWORD-SECRET-NAME> --from-literal=walletpassword=<WALLET-PASSWORD>
+kubectl create secret generic {WALLET-PASSWORD-SECRET-NAME}--from-literal=walletpassword={WALLET-PASSWORD}
 ```
 
 The OSOK AutonomousDatabases controller automatically provisions an Autonomous Database when you provides mandatory fields to the `spec`. the following is a sample YAML for Autonomous Database.
