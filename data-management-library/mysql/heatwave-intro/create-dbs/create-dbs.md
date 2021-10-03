@@ -201,7 +201,17 @@ Description
     ```
     <copy> https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
     ```   
+    **Japan East(Tokyo) Region**
+        ![MDS](./images/region-tokyo.png =50%x*)
+    
+    Copy and paste the following *Tokyo link*  to PAR Source URL: 
   
+    ```
+    <copy> https://objectstorage.ap-tokyo-1.oraclecloud.com/p/hKcth9AOMgzW_bS2rVIiTT_JJ5tNGmqS1kjkWjMphMlnZDbtUj3ZuSehrSuDTCtC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
+    ```   
+ 
+
+
     Your PAR Source URL entry should look like this:
     ![MDS](./images/04mysql08-2.png " ")
 
