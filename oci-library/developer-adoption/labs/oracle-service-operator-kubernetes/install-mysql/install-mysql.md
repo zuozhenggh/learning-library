@@ -23,13 +23,13 @@ The OCI Service Operator dynamic group you created in the previous lab, will nee
 **Sample Policy:**
 
 ```plain
-Allow dynamic-group <OSOK_DYNAMIC_GROUP> to {SUBNET_READ, SUBNET_ATTACH, SUBNET_DETACH, VCN_READ, COMPARTMENT_INSPECT} in tenancy 
+Allow dynamic-group {OSOK_DYNAMIC_GROUP} to {SUBNET_READ, SUBNET_ATTACH, SUBNET_DETACH, VCN_READ, COMPARTMENT_INSPECT} in tenancy 
 ```
 ```plain
-Allow dynamic-group <OSOK_DYNAMIC_GROUP> to manage mysql-family in tenancy 
+Allow dynamic-group {OSOK_DYNAMIC_GROUP} to manage mysql-family in tenancy 
 ```
 ```plain
-Allow dynamic-group <OSOK_DYNAMIC_GROUP> to use tag-namespaces in tenancy
+Allow dynamic-group {OSOK_DYNAMIC_GROUP} to use tag-namespaces in tenancy
 ```
 
 Without these policies, the service will not function correctly.
@@ -53,7 +53,7 @@ data:
 
 Run the following command to create a secret for the Mysql DbSystem:
 ```sh
-kubectl apply -f CREATE_SECRET.yaml
+kubectl apply -f {CREATE_SECRET].yaml
 ```
 
 The MySQL DB System can be accessed from the Secret which will be persisted as part of the provision/bind operation of the CR.
