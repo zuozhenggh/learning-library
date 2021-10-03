@@ -19,7 +19,7 @@ The OCI Service Operator dynamic group you created in the previous lab, will nee
 **Sample Policy:**
 
 ```plain
-Allow dynamic-group <OSOK_DYNAMIC_GROUP> to manage autonomous-database in compartment <COMPARTMENT_NAME>
+Allow dynamic-group {OSOK_DYNAMIC_GROUP} to manage autonomous-database in compartment {COMPARTMENT_NAME}
 ```
 
 ## Task 2:  Provisioning an Autonomous Database
@@ -103,7 +103,7 @@ spec:
     walletPassword:
       secret:
         secretName: wallet-password
-        
+
  ```
 
 
