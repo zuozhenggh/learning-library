@@ -60,7 +60,10 @@ The MySQL DB System can be accessed from the Secret which will be persisted as p
 
 The OSOK MySqlDbSystem controller automatically provisions a MySQL DB System when you provide mandatory fields to the `spec`. The following is a sample CR yaml for MySqlDbSystem. Create a yaml file and name it CREATE_MYSQL.yaml. 
 
-- SUBNET_OCID - OCID of the public worker node subnet created in your Kubernetes cluster from the previous lab.
+- SUBNET_OCID - OCID of the public worker node subnet created in your Kubernetes cluster from the previous lab. 
+
+![OSOK MySQL](./images/osok-mysql-1.png) 
+
 
 
 - CONFIGURATION_ID - [More info about Configurations](https://docs.oracle.com/en-us/iaas/mysql-database/doc/db-systems.html#GUID-E2A83218-9700-4A49-B55D-987867D81871) Get your [Configuration_id](https://console.us-ashburn-1.oraclecloud.com/mysqlaas/configurations) 
