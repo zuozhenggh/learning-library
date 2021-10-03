@@ -53,7 +53,7 @@ This lab assumes you have:
 
     ![](images/cloud-shell.png)
 
-  **Note:** This must be executed in the **Home region**. Please ensure you are in your home region. The Cloud Shell prompt shows you what region the shell is running out of.
+  **Note:** This must be executed in the **Home region**. Please ensure you are in your home region. The Cloud Shell prompt shows you what region the shell is running out of.  In the example below, there is a mismatch between the two which is incorrect.  It is executing out of Phoenix and the **Home region** is Ashurn.   
 
     ![](images/capturecloudshellhomeregion.png)
 
@@ -161,7 +161,7 @@ Oracle NoSQL Always Free tables are available only in the Phoenix region. If Pho
 
     ![](images/no-phoenix.png)
 
-2. If it is there, click it and move your tenancy to Phoenix and **proceed to the next lab.**
+2. If it is there, **click it** and move your tenancy to Phoenix and **proceed to the next lab.**
 
     ![](images/phoenix.png)
 
