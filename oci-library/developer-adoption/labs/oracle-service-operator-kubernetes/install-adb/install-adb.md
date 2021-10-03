@@ -3,12 +3,14 @@
 
 ## Introduction
 
+In this lab, we will use the deployed Oracle Service Operator for Kubernetes (OSOK) on your Kubernetes cluster from Lab 1 and Lab 2, to deploy the Oracle Autonomous Database Service.  
+
 [Oracle Autonomous Database Service](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm) is a fully managed, preconfigured database environment. It delivers automated patching, upgrades, and tuning, including performing all routine database maintenance tasks while the system is running, without human intervention. Autonomous Database service is also offered via the OCI Service Operator for Kubernetes (OSOK), making it easy for applications to provision and integrate seamlessly.
 
 ## Task 1: Create  Autonomous Database Dynamic Group Policies
 
 **For Instance Principle**
-The OCI Service Operator dynamic group you created in the previous lab, will need the following policy added.
+The OCI Service Operator dynamic group you created in the previous lab, will need the following [policies](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm) .
 
 1. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Policies***.
 
