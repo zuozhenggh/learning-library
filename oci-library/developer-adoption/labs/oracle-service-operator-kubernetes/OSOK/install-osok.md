@@ -129,7 +129,7 @@ Create the namespace in the kubernetes cluster using below command
 $ kubectl apply -f oci-service-operator-system
 ```
 
-The secret should have the below Keys and respective values for it:
+The secret should have the below Keys and respective values for it. You can recieve assistance in obtaining these values from this [page](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm#configfile). 
 
 | Key | Description |
 | --------- | ----------- |
