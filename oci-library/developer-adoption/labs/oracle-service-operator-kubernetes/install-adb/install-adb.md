@@ -110,7 +110,7 @@ spec:
 
 Run the following command to create a CR in the cluster:
 ```sh
-kubectl apply -f <CREATE_YAML>.yaml
+kubectl apply -f {CREATE_ADB}.yaml
 ```
 
 Once the CR is created, OSOK will reconcile and create an Autonomous Database. OSOK will ensure the Autonomous Database instance is available.
