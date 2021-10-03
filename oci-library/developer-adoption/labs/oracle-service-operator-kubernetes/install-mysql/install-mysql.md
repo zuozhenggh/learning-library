@@ -17,16 +17,16 @@ The OCI Service Operator dynamic group you created in the previous lab, will nee
 
 1. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Policies***.
 
-2. Click ***Create Policy***.
+2. Click ***Create Policy***. 
 
 
 **Sample Policy:**
 
 ```plain
-Allow dynamic-group <OSOK_DYNAMIC_GROUP> to {SUBNET_READ, SUBNET_ATTACH, SUBNET_DETACH, VCN_READ, COMPARTMENT_INSPECT} in [ tenancy | compartment <compartment_name> | compartment id <compartment_ocid> ]
+Allow dynamic-group <OSOK_DYNAMIC_GROUP> to {SUBNET_READ, SUBNET_ATTACH, SUBNET_DETACH, VCN_READ, COMPARTMENT_INSPECT} in tenancy 
 ```
 ```plain
-Allow dynamic-group <OSOK_DYNAMIC_GROUP> to manage mysql-family in [ tenancy | compartment <compartment_name> | compartment id <compartment_ocid> ]
+Allow dynamic-group <OSOK_DYNAMIC_GROUP> to manage mysql-family in tenancy 
 ```
 ```plain
 Allow dynamic-group <OSOK_DYNAMIC_GROUP> to use tag-namespaces in tenancy
