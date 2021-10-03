@@ -10,7 +10,7 @@ In this lab, we will use the deployed Oracle Service Operator for Kubernetes (OS
 
 ## Task 1: Create  My SQL DB System Dynamic Group Policies
 
-Create policies in the root compartment with the following statements [Policy Setup Documentation](https://docs.oracle.com/en-us/iaas/mysql-database/doc/policy-details-mysql-database-service.html#GUID-2D9D3C84-07A3-4BEE-82C7-B5A72A943F53)
+Create policies in the root compartment for OKE to have permission to create the MySQL Database Service. With these following statements [Policy Setup Documentation](https://docs.oracle.com/en-us/iaas/mysql-database/doc/policy-details-mysql-database-service.html#GUID-2D9D3C84-07A3-4BEE-82C7-B5A72A943F53)
 
 **For Instance Principle**
 The OCI Service Operator dynamic group you created in the previous lab, will need the following policies.
