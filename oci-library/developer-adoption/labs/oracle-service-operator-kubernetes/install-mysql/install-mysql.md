@@ -155,5 +155,5 @@ mysqldbsystems-sample        BusyBoxDB       Active         ocid1.mysqldbsystem.
 
 The MysqlDbSystem CR can be described as below:
 ```sh
-$ kubectl describe mysqldbsystems <NAME_OF_CR_OBJECT>
+$ kubectl describe mysqldbsystems {NAME_OF_CR_OBJECT}
 ```
