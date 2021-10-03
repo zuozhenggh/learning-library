@@ -10,10 +10,10 @@ In this lab, we will use the deployed Oracle Service Operator for Kubernetes (OS
 
 ## Task 1: Create  My SQL DB System Dynamic Group Policies
 
-Create policies in the root compartment for OKE to have permission to create the MySQL Database Service. With these following statements [Policy Setup Documentation](https://docs.oracle.com/en-us/iaas/mysql-database/doc/policy-details-mysql-database-service.html#GUID-2D9D3C84-07A3-4BEE-82C7-B5A72A943F53)
 
 **For Instance Principle**
-The OCI Service Operator dynamic group you created in the previous lab, will need the following policies.
+The OCI Service Operator dynamic group you created in the previous lab, will need the following [policies](https://docs.oracle.com/en-us/iaas/mysql-database/doc/policy-details-mysql-database-service.html#GUID-2D9D3C84-07A3-4BEE-82C7-B5A72A943F53) .
+.
 
 1. Open the navigation menu and click ***Identity & Security***. Under ***Identity***, click ***Policies***.
 
@@ -60,7 +60,9 @@ The MySQL DB System can be accessed from the Secret which will be persisted as p
 
 The OSOK MySqlDbSystem controller automatically provisions a MySQL DB System when you provide mandatory fields to the `spec`. The following is a sample CR yaml for MySqlDbSystem. Create a yaml file and name it CREATE_MYSQL.yaml. 
 
-- SUBNET_OCID - OCID of the subnet created in the pre-requisites step
+- SUBNET_OCID - OCID of the public worker node subnet created in your Kubernetes cluster from the previous lab.
+
+
 - CONFIGURATION_ID - [More info about Configurations](https://docs.oracle.com/en-us/iaas/mysql-database/doc/db-systems.html#GUID-E2A83218-9700-4A49-B55D-987867D81871) Get your [Configuration_id](https://console.us-ashburn-1.oraclecloud.com/mysqlaas/configurations) 
 
 
