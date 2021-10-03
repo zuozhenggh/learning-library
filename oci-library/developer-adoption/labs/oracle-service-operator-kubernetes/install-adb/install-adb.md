@@ -42,32 +42,32 @@ The OSOK AutonomousDatabases controller automatically provisions an Autonomous D
 apiVersion: oci.oracle.com/v1beta1
 kind: AutonomousDatabases
 metadata:
-  name: <CR_OBJECT_NAME>
+  name: {CR_OBJECT_NAME}
 spec:
-  compartmentId: <COMPARTMENT_OCID>
-  displayName: <DISPLAY_NAME>
-  dbName: <DB_NAME>
-  dbWorkload: <OLTP/DW>
-  isDedicated: <false/true>
-  dbVersion: <ORABLE_DB_VERSION>
-  dataStorageSizeInTBs: <SIZE_IN_TBs>
-  cpuCoreCount: <COUNT>
+  compartmentId: {COMPARTMENT_OCID}
+  displayName: {DISPLAY_NAME}
+  dbName: {DB_NAME}
+  dbWorkload: {OLTP/DW}
+  isDedicated: {false/true}
+  dbVersion: {ORABLE_DB_VERSION}
+  dataStorageSizeInTBs: {SIZE_IN_TBs}
+  cpuCoreCount: {COUNT}
   adminPassword:
     secret:
-      secretName: <ADMIN_PASSWORD_SECRET_NAME>
-  isAutoScalingEnabled: <true/false>
-  isFreeTier: <false/true>
-  licenseModel: <BRING_YOUR_OWN_LICENSE/LICENSE_INCLUDEE>
+      secretName: {ADMIN_PASSWORD_SECRET_NAME}
+  isAutoScalingEnabled: {true/false}
+  isFreeTier: {false/true}
+  licenseModel: {BRING_YOUR_OWN_LICENSE/LICENSE_INCLUDE}
   wallet:
-    walletName: <WALLET_SECRET_NAME>
+    walletName: {WALLET_SECRET_NAME}
     walletPassword:
       secret:
-        secretName: <WALLET_PASSWORD_SECRET_NAME>
+        secretName: {WALLET_PASSWORD_SECRET_NAME}
   freeformTags:
-    <KEY1>: <VALUE1>
+    <KEY1>: {VALUE1}
   definedTags:
     <TAGNAMESPACE1>:
-      <KEY1>: <VALUE1>
+      <KEY1>: {VALUE1}
 ```
 
 Run the following command to create a CR in the cluster:
