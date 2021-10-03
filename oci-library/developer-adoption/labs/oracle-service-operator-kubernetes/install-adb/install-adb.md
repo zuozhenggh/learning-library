@@ -103,11 +103,7 @@ spec:
     walletPassword:
       secret:
         secretName: wallet-password
- # freeformTags:
- #   key1: value1
- # definedTags:
- #   test:
- #     key1: value1
+        
  ```
 
 
