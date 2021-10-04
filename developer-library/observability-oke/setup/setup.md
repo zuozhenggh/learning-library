@@ -7,7 +7,6 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-In this lab, you will:
 * Create a Compartment in your Tenancy
 * Create and configure an IAM Dynamic Group
 * Deploy an OKE cluster
@@ -65,7 +64,7 @@ Dynamic groups allow you to assign permissions to Virtual Machines and allow the
     ```
     instance.compartment.id = 'ocid1.compartment.oc1..aaaaaa-YOUR-ACTUAL-COMPARTMENT-OCID-cnjfzjhfi2nbgv3yq'
     ```
-    
+
       ![Create Dynamic Group Wizard](images/dynamic-group-wizard-2.png)
 
 5. Click **Create** to complete the process and close the dialog screen.

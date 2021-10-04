@@ -17,7 +17,6 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-In this lab, you will:
 * Create an OCI Log Group and Agent Configuration
 * Review code options to enable app logging and deploy a Python web service to OKE
 * Examine application log data ingested into the OCI Logging Service
