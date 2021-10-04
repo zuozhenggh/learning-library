@@ -28,10 +28,16 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
 1. From OCI Services menu, Click ***Container Clusters (OKE)*** under Developer Services.
 
     **No need to create any policies for OKE, all the policies are pre-configured**
-        ![](./../OKE/images/OKE_S1P1.PNG " ")
+
+      
+
+      ![](./../OKE/images/OKE_015.PNG " ")
+
+    
 
 2. Under ***List Scope***, select the compartment in which you would like to create a cluster.
-        ![](./../OKE/images/OKE_S1P2.PNG " ")
+
+     ![](./../OKE/images/OKE_S1P2.PNG " ")
 
 3. Click ***Create Cluster***. Choose ***Quick Create*** and click ***Launch Workflow***.
 
@@ -44,7 +50,8 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
       - SHAPE: Choose any VM shape of your choice
       - NUMBER OF NODES: 1
 
-       ![](./../OKE/images/create-oke-1.PNG " ")
+
+     ![](./../OKE/images/create-oke-1.PNG " ")
 
 5. Click ***Next*** and Click "***Create Cluster***".
 
