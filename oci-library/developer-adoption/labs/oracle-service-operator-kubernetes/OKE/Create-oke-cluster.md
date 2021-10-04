@@ -31,13 +31,11 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
 
       
 
-      ![](./../OKE/images/OKE_015.PNG " ")
-
     
 
 2. Under ***List Scope***, select the compartment in which you would like to create a cluster.
 
-     ![](./../OKE/images/OKE_S1P2.PNG " ")
+
 
 3. Click ***Create Cluster***. Choose ***Quick Create*** and click ***Launch Workflow***.
 
@@ -51,7 +49,8 @@ A Kubernetes cluster can be organized into namespaces to divide the cluster's re
       - NUMBER OF NODES: 1
 
 
-     ![](./../OKE/images/create-oke-1.PNG " ")
+     ![](./../OKE/images/create-oke-1.png " ")
+
 
 5. Click ***Next*** and Click "***Create Cluster***".
 
