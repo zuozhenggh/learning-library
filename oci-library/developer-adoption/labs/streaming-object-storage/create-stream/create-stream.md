@@ -83,10 +83,11 @@ For simple archiving operations, we don’t need to write a single line of code.
 ![Service Connector](./images/OCI-Service-Connector3.png)
 
 
+
  - You will not be using the optional ***Configure Task*** for this lab. 
 
  8. Click ***Create*** to create the default policy to allow the Service Connector Service to read from Streaming.
- 
+
 
  9. Click ***Create*** and the service connector is ready to archive your streams.
 
