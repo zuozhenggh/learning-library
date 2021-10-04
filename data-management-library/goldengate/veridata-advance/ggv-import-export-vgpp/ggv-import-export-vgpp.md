@@ -16,7 +16,7 @@ Use the Import utility to import this configuration into Oracle GoldenGate Verid
 + **Linux or Windows. This lab describe the Linux command-line options.**
 + **Oracle Database 19c (19.3.0.0) or Microsoft SQL Server (for the repository)**
 + **Java 1.8 or higher**
-+ **Oracle GoldenGate (OGG) Software located at: [Oracle GoldenGate Downloads](https://www.oracle.com/middleware/technologies/goldengate-downloads.html)**
++ **An existing Oracle GoldenGate Veridata install that is functional, version 12.2.1.4.200714 and higher: [Oracle GoldenGate Downloads](https://www.oracle.com/middleware/technologies/goldengate-downloads.html)**
 
 ## Task 1: Run the Veridata GoldenGate Parameter Processing from the Oracle GoldenGate Parameter File
 Veridata GoldenGate Parameter Processing (VGPP) is a command-line tool that uses the map and table parameter of extract and replicat parameter files to create the Oracle GoldenGate Veridata configurations. An Oracle GoldenGate Veridata parameter file contains all of the information required to extract or apply replicated data. The data-propagated replication is controlled by settings in the Extract and Replicat parameter files. Typically, the Extract parameter file specifies the tables to be replicated, the Replicat parameter file controls column mapping and restricts the tables. The Veridata GoldenGate Parameter Processing command-line utility accepts one or two parameter files as input. One of the files must be a Replicat parameter file, and the other optional file must be an Extract parameter file.
@@ -87,5 +87,3 @@ To run the Vericom tool:
     + Sukin Varghese, Senior Member of Technical staff, Database Testing
 
 * **Last Updated By/Date:** Anuradha Chepuri, December 2020
-
-
