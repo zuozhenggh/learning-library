@@ -28,7 +28,7 @@ Estimated Time: 25 minutes
 </if>
 
 <if type="freetier">
-1. If you are in the Phoenix region, you will be able to create Always Free tables. If you are in any other region, then you will create paid tables, however, they will be paid for with credits.
+1. If you are in the Phoenix region, you will be able to create always Free tables. If you are in any other region, then you will create paid tables, however, they will be paid for with credits.
 
   ![](./images/phoenix-location.png)
 </if>
@@ -57,7 +57,7 @@ Estimated Time: 25 minutes
 </if>
 
 <if type="livelabs">
-3. On the 'Tables' screen there is a **Compartment** field on the left. Please make sure the compartment you were assigned is selected. In Lab 2, task 1 you identified your compartment. You will need to expand the root compartment, and then expand the **LiveLabs** compartment to find it. In this example, we are using demonosql. Yours will be different. You will not be able to create tables in any other compartment.
+3. On the 'Tables' screen there is a **Compartment** field on the left. Please make sure the compartment you were assigned is selected. In Lab 2, task 1 you identified your compartment. You will need to expand the root compartment, and then expand the **LiveLabs** compartment to find it. In this example, we are using **LL46279-COMPARTMENT**. Yours will be different. You will not be able to create tables in any other compartment.
 
   ![](./images/livelab-compartment.png)
 </if>

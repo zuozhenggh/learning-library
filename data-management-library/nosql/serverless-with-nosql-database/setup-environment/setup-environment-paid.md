@@ -53,7 +53,7 @@ This lab assumes you have:
 
     ![](images/cloud-shell.png)
 
-  **Note:** This must be executed in the **Home region**. Please ensure you are in your home region. The Cloud Shell prompt shows you what region the shell is running out of.
+  **Note:** This must be executed in the **Home region**. Please ensure you are in your home region. The Cloud Shell prompt shows you what region the shell is running out of.  In the example below, there is a mismatch between the two which is incorrect.  It is executing out of Phoenix and the **Home region** is Ashurn.   
 
     ![](images/capturecloudshellhomeregion.png)
 
@@ -79,6 +79,8 @@ In this task we will copy over a data bundle stored on object storage and place 
 
     ````
     <copy>
+      cd $HOME
+      rm -rf serverless-with-nosql-database BaggageData serverless-with-nosql-database.zip demo-lab-nosql-main
       curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/PdICF4N3CtbcAB6cPe7-foLYqGGSRNqkf4mSt1gVIBhH8Wvt87PxoYQkNATywFM0/n/c4u04/b/labfiles/o/demo-lab-nosql-main.zip -o serverless-with-nosql-database.zip
       unzip serverless-with-nosql-database.zip
       mv demo-lab-nosql-main serverless-with-nosql-database
@@ -159,7 +161,7 @@ Oracle NoSQL Always Free tables are available only in the Phoenix region. If Pho
 
     ![](images/no-phoenix.png)
 
-2. If it is there, click it and move your tenancy to Phoenix and **proceed to the next lab.**
+2. If it is there, **click it** and move your tenancy to Phoenix and **proceed to the next lab.**
 
     ![](images/phoenix.png)
 

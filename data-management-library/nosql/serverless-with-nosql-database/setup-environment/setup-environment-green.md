@@ -37,7 +37,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
   ![](images/user-profile.png)
 
-2. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 10.
+2. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in step 10.
 
     ![](images/user-ocid.png)
 
@@ -45,13 +45,15 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
     ![](images/compartment-livelab.png)
 
-4. In the **Compartment** drop down on the left, pick you compartment. In Task 1, you should have taken note of your compartment. To find it, expand the root node (**c3u04**), then expand the **Livelabs** node. Your compartment should be listed under there. In this example we are using **LL11090-COMPARTMENT**.
+4. In the **Compartment** drop down on the left, pick you compartment. In Task 1, you should have taken note of your compartment. To find it, expand the root node (**c4u04**), then expand the **Livelabs** node. Your compartment should be listed under there. In this example we are using **LL11090-COMPARTMENT**.
+
+    ![](images/pick-compartment.png)
 
 5. Open the **Cloud Shell** in the top right menu. It can take about 2 minutes to get the Cloud Shell started.
 
     ![](images/cloud-shell.png)
 
-  **Note:** Your **Home Region** may be different than the region you are currently connected to. In the example screen below, you are connected to Ashburn but the **Home Region** is XXX. If you are connected to Phoenix, then you can use Always Free NoSQL tables.
+  **Note:** Your **Home Region** may be different than the region you are currently connected to. In the example screen below, you are connected to Phoenix but the **Home Region** is Ashburn. You can create Always Free NoSQL tables when connected to Phoenix.
 
     ![](images/capturecloudshellhomeregion.png)
 
@@ -71,7 +73,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
         cat NoSQLLabPublicKey.pem
         </copy>
         ````
-      This will print out your public key to the screen. Grab a copy of the entire key, including the "BEGIN/END PUBLIC KEY" lines. Paste it into notepad or some text file for use in step 8.
+      This will print out your public key to the screen. Grab a copy of the entire key, including the "BEGIN/END PUBLIC KEY" lines. Paste it into notepad or some text file for use in step 10.
 
       Minimize the Cloud shell.
 
@@ -93,7 +95,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
    ![](images/hit-add.png)
 
-11. Copy your fingerprint and paste it into notepad or some text file for use in step 10. Click **Close** when done.
+11. Copy your fingerprint and paste it into notepad or some text file for use in step 12. Click **Close** when done.
 
   ![](images/copy-finger.png)
 
@@ -101,6 +103,8 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
     ````
     <copy>
+      cd $HOME
+      rm -rf serverless-with-nosql-database BaggageData serverless-with-nosql-database.zip demo-lab-nosql-main
       curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/PdICF4N3CtbcAB6cPe7-foLYqGGSRNqkf4mSt1gVIBhH8Wvt87PxoYQkNATywFM0/n/c4u04/b/labfiles/o/demo-lab-nosql-main.zip -o serverless-with-nosql-database.zip
       unzip serverless-with-nosql-database.zip
       mv demo-lab-nosql-main serverless-with-nosql-database
