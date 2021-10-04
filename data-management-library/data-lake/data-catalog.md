@@ -85,6 +85,48 @@ allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.princip
 
 Once the workspace has been created (a refresh of the screen might be needed to go from Processing to Active). 
 
+## Task 4: Create the Data Assets in the Workspace
+
+Under Quick Actions, you want to click on Create Data Asset
+
+![Create Data Asset](./images/create_dataasset1.png " ")
+
+The first data asset is going to be our ADW database we already created. Fill in moviestream_adw and select type to Oracle Autonomous Data Warehouse.
+
+![Create Data Asset](./images/create_dataasset.png " ")
+
+Continue to fill with Select Database, regions, Tenant OCID that we saved off or you can go to your profile and click on Tenancy to get that information again. Make sure the compartment is lakehouse1 and DB is lakehousedb.
+
+![Create Data Asset](./images/create_dataasset3.png " ")
+
+Using the default connection you can put in User Name ADMIN and the password you configured for your database, and select the TNS Alias from the the dropdown.
+
+![Create Data Asset](./images/create_dataasset4.png " ")
+
+Test Connection to make sure you can connect to the this data asset.
+
+![Create Data Asset](./images/create_dataasset5.png " ")
+
+Next we are going to create a data asset for our json file that will be part of our application and scheduled load of files coming into the data lake.
+
+Select Create Data Asset again, and fill in the name genre_json and choose the Type to be Oracle Object Storage.
+
+![Create Data Asset](./images/create_jsonasset1.png " ")
+
+Continue to fill with Select Database, regions, Tenant OCID that we saved off or you can go to your profile and click on Tenancy to get that information again. You need the object storage bucket Namespace, and the OCI-Region. Select the Default Connection and Test Connection.
+
+![Create Data Asset](./images/create_jsonasset2.png " ")
+
+You need to make sure the Compartment is set to lakehouse1 and then click Buckets. You will see the dataflow-logs, dataflow-warehouse and moviestream_bucket. Click on moviestream_bucket.
+
+![Create Data Asset](./images/create_jsonasset3.png " ")
+
+Click on the file under Data Entities (export-stream_custid_updated.json). Select the file type as JSON, and click Get Attributes to see the names and data types for this file.
+
+![Create Data Asset](./images/create_jsonasset4.png " ")
+
+## Task 5: Create a Project in the Workspace
+
 - Click on the Workspace Lakehouse. 
 - Click on Create a Project.
 - Enter Name Project_lakehouse
