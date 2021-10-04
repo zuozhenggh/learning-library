@@ -66,7 +66,7 @@ The OSOK MySqlDbSystem controller automatically provisions a MySQL DB System whe
 
 
 
-- CONFIGURATION_ID - [More info about Configurations](https://docs.oracle.com/en-us/iaas/mysql-database/doc/db-systems.html#GUID-E2A83218-9700-4A49-B55D-987867D81871) Get your [Configuration_id](https://console.us-ashburn-1.oraclecloud.com/mysqlaas/configurations) 
+- CONFIGURATION-ID - [More info about Configurations](https://docs.oracle.com/en-us/iaas/mysql-database/doc/db-systems.html#GUID-E2A83218-9700-4A49-B55D-987867D81871) Get your [Configuration-id](https://console.us-ashburn-1.oraclecloud.com/mysqlaas/configurations) 
 
 
 ```yaml
