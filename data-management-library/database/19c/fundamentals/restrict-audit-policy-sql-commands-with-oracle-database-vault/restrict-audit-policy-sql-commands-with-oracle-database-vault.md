@@ -10,9 +10,9 @@
 
 1. Execute the `setup_DV_CDB1.sh` script to create and enable Oracle Database Vault in CDB1.
 
-   ```
-   $ <copy>$HOME/labs/19cnf/setup_DV_CDB1.sh</copy>
-   ```
+    ```
+    $ <copy>$HOME/labs/19cnf/setup_DV_CDB1.sh</copy>
+    ```
 ## Task 2: Enable Audit Policy
 1. Log into CDB1
 
