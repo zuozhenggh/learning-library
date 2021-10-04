@@ -11,8 +11,7 @@ Estimated time: 15 minutes
 * Modify pom.xml file in the Helidon application
 * Modify application.yaml file
 *	Modify Main.java file
-*	Rebuild application with APM Tracer configuration
-*	Verify application
+*	Rebuild application with APM Tracer configurations
 *	View traces in the APM Trace Explorer
 
 

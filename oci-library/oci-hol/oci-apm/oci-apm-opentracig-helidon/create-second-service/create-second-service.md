@@ -26,7 +26,7 @@ Estimated time: 10 minutes
 	```
 	![Cloud Shell](images/1-1-java.png " ")
 
-	if you completed the Lab1 in this workshop, but the Java version returned from the command is not 11.0.7, you may need to reset the JAVA_HOME environment variable. Run the following commands.
+	If you completed the Lab1 in a different Cloud Shell session, you will need to reset the JAVA_HOME environment variable, by running run the followings.
 
 	``` bash
 	<copy>

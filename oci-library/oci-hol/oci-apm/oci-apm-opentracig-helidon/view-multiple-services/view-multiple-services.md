@@ -217,11 +217,11 @@ Estimated time: 15 minutes
 
 	![Cloud Shell](images/4-1-trace_explorer.png " ")
 
-2. In the **Trace Details** page, verify that the trace includes 7 spans from two services. Examine the topology to understand how the two services are connected. Review the flow in the **Spans** view and observe how the spans are distributed.
+2. In the **Trace Details** page, verify that the trace includes 7 spans from two services. Examine the topology to understand how the two services are connected. Review the flow in the **Spans** view and notice how the spans are distributed.
 
 	![Cloud Shell](images/4-2-trace_explorer.png " ")
 
-You may now [proceed to the next lab](#next).
+You have completed the tutorials in this Workshop. You may now [proceed to the Need Help section ](#next) to review the common problems users face in the LiveLab, or exit the Workshop.
 
 ## Acknowledgements
 
