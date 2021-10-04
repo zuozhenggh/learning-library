@@ -352,7 +352,7 @@ This task shows how to load data from Oracle Cloud Infrastructure Object Storage
 
 Please *proceed to the next lab*.
 
-## Want to learn more?
+## Learn more
 
 For more information about loading data, see the documentation [Loading Data from Files in the Cloud](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-data-warehouse-cloud&id=CSWHU-GUID-07900054-CB65-490A-AF3C-39EF45505802).
 
