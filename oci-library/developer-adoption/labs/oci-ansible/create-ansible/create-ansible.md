@@ -72,7 +72,7 @@ You will keep all of the defaults for the bucket creation.
 
    ![](./images/Ansible-Cloud-Shell1.png " ")
 
-   ## Task 3: Write a sample Ansible playbook
+## Task 3: Write a sample Ansible playbook
 
    After your installation is complete, you can write a sample playbook that uses Ansible modules. 
 
