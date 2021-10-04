@@ -144,12 +144,12 @@ Run the below command to create Secret by name `ociCredentials`. (Replace values
 
 ```bash
 $ kubectl -n oci-service-operator-system create secret generic ocicredentials \
---from-literal=tenancy=<CUSTOMER_TENANCY_OCID> \
---from-literal=user=<USER_OCID> \
---from-literal=fingerprint=<USER_PUBLIC_API_KEY_FINGERPRINT> \
---from-literal=region=<USER_OCI_REGION> \
---from-literal=passphrase=<PASSPHRASE_STRING> \
---from-file=privatekey=<PATH_OF_USER_PRIVATE_API_KEY>
+--from-literal=tenancy={CUSTOMER_TENANCY_OCID} \
+--from-literal=user={USER_OCID} \
+--from-literal=fingerprint={USER_PUBLIC_API_KEY_FINGERPRINT} \
+--from-literal=region={USER_OCI_REGION} \
+--from-literal=passphrase={PASSPHRASE_STRING} \
+--from-file=privatekey={PATH_OF_USER_PRIVATE_API_KEY}
 ```
 
 The name of the secret will passed in the `osokConfig` config map which will be created as part of the OSOK deployment. By default the name of the user credential secret is `ocicredentials`. Also, the secret should be created in the `oci-service-operator-system` namespace
