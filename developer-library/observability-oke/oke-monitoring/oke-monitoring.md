@@ -4,7 +4,7 @@
 
 In the previous section you learned how to integrate your applications with the OCI Logging Service to ensure your valuable log data can be easily collected, centralized and persisted for diagnostics. Complete visibility into your containerized application also requires real-time quantitative metrics to understand the health, performance and resource utilization. This is critical to quickly detect issues, analyze trends and monitor functional compliance in real time. How can you easily populate a dashboard with realtime metrics?
 
-![Monitoring Overview](images/Monitoring-Overview.png)
+![Monitoring Overview](images/Monitoring-Overview.png " ")
 
 The OCI Monitoring Service is natively integrated with the underlying infrastructure resources your containerized app utilizes at runtime. Your application code can leverage this service and take advantage of all the built-in features such as realtime alerting, notifications, metric storage and metric data archival. This also provides a single unified monitoring framework for all your cloud infrastructure and custom application resources.
 
@@ -47,11 +47,11 @@ Let's examine the js source file:
 $ cat devlive-metric.js
 ```
 
-![node.js code](images/code.js.01.png)
+![node.js code](images/code.js.01.png " ")
 
-![node.js code](images/code.js.02.png)
+![node.js code](images/code.js.02.png " ")
 
-![node.js code](images/code.js.03.png)
+![node.js code](images/code.js.03.png " ")
 
 
 Now let's review the deployment file.  
@@ -90,7 +90,7 @@ Now let's take a look at the deployment file format.
 ```
 $ cat devlive-metric.yaml
 ```
-![Yaml](images/yaml.png)
+![Yaml](images/yaml.png " ")
 
 You may use the vi command to update the deployment file directly in the shell.  Or, use the menu options in the upper left corner of the shell window to download/upload this file for editing on your workstation.
 
@@ -128,47 +128,47 @@ You may use the vi command to update the deployment file directly in the shell. 
 
 1. In the OCI Console, navigate to **Observability & Management** --> **Monitoring** --> **Metrics Explorer** to bring up the explorer page.  
 
-      ![Metrics Explorer](images/Metrics-Explorer.png)
+      ![Metrics Explorer](images/Metrics-Explorer.png " ")
 
 2. Below the graph, you have the ability to specify the query parameters to locate and display the metrics being published from your application. The selections are drop-down options with many only containing a single option. Select values to match the diagram below, then click on **Update Chart**.
 
-      ![Query](images/Query-12.png)
+      ![Query](images/Query-12.png " ")
 
 3. Above the graph, locate the **Y-Axis Label** box and enter a meaningful label.
 
-      ![Y Axis Label](images/Y-Axis-Label.png)
+      ![Y Axis Label](images/Y-Axis-Label.png " ")
 
 4. View your graph, which should resemble the image below. Although this is simulated data, the process is the same for your live applications.
 
-      ![Graph](images/graph.png)
+      ![Graph](images/graph.png " ")
 
 ## Task 4: [Optional] Create Metric Alarm
 
 1. While still reviewing the Metrics Explorer page, locate and select the **Create Alarm** button near the bottom.
 
-      ![Alarm](images/Alarm-11.png)
+      ![Alarm](images/Alarm-11.png " ")
 
 2. This will open the **Define Alarm** dialog. Give your alarm a name and message (Alarm Body).
 
-      ![Alarm](images/Alarm-02.png)
+      ![Alarm](images/Alarm-02.png " ")
 
 3. Continue to select the **Metric Description** boxes to match the query specified in Step 3.
 
-      ![Alarm](images/Alarm-13.png)
+      ![Alarm](images/Alarm-13.png " ")
 
 4. Define the **Trigger Rule** as follows:
 
-      ![Alarm](images/Alarm-04.png)
+      ![Alarm](images/Alarm-04.png " ")
 
 5. For **Destinations**, you probably do not yet have a Topic [Alarm Message Destination] configured. Select the **Create a Topic** link to open up the **Create a new topic and subscription** option. Enter your information (you will have to confirm an automatically generated email to enable this topic. You can cancel the topic and alarm at any time).
 
-      ![Alarm](images/Alarm-05.png)
+      ![Alarm](images/Alarm-05.png " ")
 
-      ![Alarm](images/Alarm-06.png)
+      ![Alarm](images/Alarm-06.png " ")
 
 6. Finally, select **Save alarm** to complete the process.
 
-      ![Alarm](images/Alarm-07.png)
+      ![Alarm](images/Alarm-07.png " ")
 
 **Congratulations** You have completed this section! If your are done testing, consider terminating your OKE cluster to conserve your free credits.
 

@@ -7,7 +7,7 @@ Logs contain critical event, state and diagnostic information for your  containe
 It is important align with the long term vision of the Kubernetes Foundation's recommended strategy for log management on the worker nodes. Kubernetes recommends you containers export log messages via native stdout/stderr buffers. This data is already collected and managed by the worker nodes. OKE cluster nodes automatically deploy with a lightweight agent for collecting metrics and log information from host processes. Additionally, this agent can be easily configured to collect custom application log data as shown in the following diagram.  
 
 
-![Logging Overview](images/Logging-Overview.png)
+![Logging Overview](images/Logging-Overview.png " ")
 
 
 
@@ -33,19 +33,19 @@ Log groups are logical containers for organizing and managing logs. Logs must al
 
 1. In the OCI Management Console, ensure you have selected the same Region as Setup the Environment. Navigate to **Observability and Management** --> **Logging** --> **Log Groups**
 
-      ![Log Groups](images/Log-Groups.png)
+      ![Log Groups](images/Log-Groups.png " ")
 
 2. Ensure **Compartment** devlivedemo is selected in the left column.
 
-    ![Compartment](images/select-compartment.png)
+    ![Compartment](images/select-compartment.png " ")
 
 3. Click the **Create Log Group** button.
 
-    ![Create Log Group](images/Create-Log-Group.png)
+    ![Create Log Group](images/Create-Log-Group.png " ")
 
 4. On the **Create Log Group** dialog page ensure **Compartment** devlivedemo is specified. **NAME** your Log Group devlivelg, provide a brief **DESCRIPTION**, and then click the **Create** button.
 
-    ![Create Log Group Details](images/Create-Log-Group-Details.png)
+    ![Create Log Group Details](images/Create-Log-Group-Details.png " ")
 
 
    You are now ready to move on to the next task.
@@ -56,25 +56,25 @@ An agent configuration provides instructions for both the Logging Service and a 
 
 1. Navigate to **Observability and Management** --> **Logging** --> **Logs**.  Under List Scope, Compartment, choose devlivedemo. Then select **Create Custom Log** to open the Create panel.
 
-    ![Custom Log](images/Create-Custom-Log.png)
+    ![Custom Log](images/Create-Custom-Log.png " ")
 
 
 2.  In **CUSTOM LOG NAME** enter *customlog01*, for **COMPARTMENT** ensure *devlivedemo* is listed, and in **LOG GROUP** select *devlivelg*. Then click the **Create Custom Log** button.
 
-    ![Custom Log](images/Create-Custom-Log-Details.png)
+    ![Custom Log](images/Create-Custom-Log-Details.png " ")
 
    The **Create Agent Configuration** panel is displayed, where you can create a new configuration.
 
-    ![Custom Log](images/Create-New-Cfg.png)
+    ![Custom Log](images/Create-New-Cfg.png " ")
 
 
 3.  In **CONFIGURATION NAME** enter oke-app-cfg01. Ensure **COMPARTMENT** specifies devlivedemo.  
 
-    ![Custom Log](images/Config-Details-1.png)
+    ![Custom Log](images/Config-Details-1.png " ")
 
     In **GROUP TYPE** select Dynamic Group, and in the **GROUP** box select the group created in Setup the Environment: devlivedg.
 
-    ![Custom Log](images/Config-Details-2.png)
+    ![Custom Log](images/Config-Details-2.png " ")
 
     **Note** Your screen may give you the option to create a policy to allow resources to use the logging service. This was already performed in Setup the Environment, but go ahead and click **Create** to dismiss the prompt.
 
@@ -92,7 +92,7 @@ An agent configuration provides instructions for both the Logging Service and a 
 
     Your Agent configuration should look like the following:
 
-    ![Custom Log](images/Config-Details-3.png)
+    ![Custom Log](images/Config-Details-3.png " ")
 
 6.  Click **Create Custom Log** to complete the task. You are ready to move on to the next task.
 
@@ -118,7 +118,7 @@ Let's examine the Python source:
 ```
 $ cat devlive-logger.py
 ```
-![Python](images/python.png)
+![Python](images/python.png " ")
 
 Now let's review the deployment file:
 
@@ -126,7 +126,7 @@ Now let's review the deployment file:
 $ cat devlive-logger.yaml
 ```
 
-![Yaml](images/yaml.png)
+![Yaml](images/yaml.png " ")
 
 **2. Deploy the Application**
 
@@ -151,7 +151,7 @@ $ kubectl get service flask-service
 
 ```
 
-![Service IP](images/External-IP.png)
+![Service IP](images/External-IP.png " ")
 
 **3. Generate log entries**
 
@@ -166,7 +166,7 @@ Salut!  Hello!  Hola!  Ciao!
 
 Alternatively, you could also reach the flask server via a browser, as shown here (don't forget to specify port 5000):
 
-![Browser IP](images/Browser-Get.png)
+![Browser IP](images/Browser-Get.png " ")
 
 Verify pod/container logs are being populated on the worker node by executing the following command:
 
@@ -184,33 +184,33 @@ Don't worry if you see some *error occured at:  "* messages mixed in with the re
 
 Navigate to **logging service** --> **logs** and select your custom log **customlog01** to open the Explore Log page.
 
-![Logging Service](images/Nav-to-Logs.png)
+![Logging Service](images/Nav-to-Logs.png " ")
 
-![Custom Log](images/Select-Custom-Log.png)
+![Custom Log](images/Select-Custom-Log.png " ")
 
 By this time you should be able to view log messages.  
 **Note:** there could be an initial ingestion delay of up to a few minutes.
 
-![Custom Log](images/Explore-Custom-Log.png)
+![Custom Log](images/Explore-Custom-Log.png " ")
 
-![Custom Log](images/Select-Custom-Log.png)
+![Custom Log](images/Select-Custom-Log.png " ")
 
 Examine the log entries and identify the additional metadata available.
 
-![Log Detail](images/Log-Detail.png)
+![Log Detail](images/Log-Detail.png " ")
 
 
 **2. Intro to Log Search**
 
 Select the **Explore with Log Seach** link to pull up the search page.
 
-![Log Search](images/Explore-Log-Search.png)
+![Log Search](images/Explore-Log-Search.png " ")
 
 Enter search keywords or phrases in the **Custom Filters** box and review the results. This Log Search capabilities are extensive, including the ability to create and save complex queries and define automatic export jobs for result sets.  Although we don't have time in this lab to cover all the capabilities, please spend a few minutes exploring the possibilities.
 
-![Log Query](images/Log-Query.png)
+![Log Query](images/Log-Query.png " ")
 
-![Log Search](images/Log-Search-Results.png)
+![Log Search](images/Log-Search-Results.png " ")
 
 
 **Note:** Remember to periodically execute the curl command to generate new log entries!
