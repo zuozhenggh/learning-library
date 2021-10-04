@@ -88,6 +88,12 @@ For simple archiving operations, we don’t need to write a single line of code.
 
  8. Click ***Create*** to create the default policy to allow the Service Connector Service to read from Streaming.
 
+![Service Connector](./images/OCI-Service-Connector4.png)
+
+
+![Service Connector](./images/OCI-Service-Connector5.png)
+
+
 
  9. Click ***Create*** and the service connector is ready to archive your streams.
 
