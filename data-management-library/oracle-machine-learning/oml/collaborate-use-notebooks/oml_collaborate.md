@@ -13,7 +13,7 @@ A notebook is a web-based interface for data visualization, machine learning, an
 
 * Access to your account in Oracle Autonomous Database
 * Provide workspace permission to users with whom you want to collaborate
-* Two users - USER1 and USER2 created.
+* Two users - `USER1` and `USER2` created.
 * A notebook created in your OML account
 
 
@@ -32,10 +32,11 @@ This use case demonstrates how:
 * USER 2 edits a notebook that is created by USER1 in **USER1 Project**
 * USER1 views the changes in the notebook made by USER2.
 
-Note:
 
-    * USER1 Workspace and USER2 Workspace are default workspaces created for USER1 and USER2 respectively.
-    * USER1 Project and USER2 Project are default projects under USER1 Workspace and USER2 Workspace, respectively.
+
+> **Note:** USER1 Workspace and USER2 Workspace are default workspaces created for USER1 and USER2 respectively.
+
+> USER1 Project and USER2 Project are default projects under USER1 Workspace and USER2 Workspace, respectively.
 
 ### USER1 Grants DEVELOPER Permission to USER2
 
@@ -48,7 +49,7 @@ Note:
 
     ![user1_manage_workspace.png](images/user1_manage_workspace.png "user1_manage_workspace.png")
 
-4. In the Manage Workspaces dialog, select **USER1** Workspace and then click **Permissions**.  
+4. In the Manage Workspaces dialog, select **USER1 Workspace** and then click **Permissions**.  
 
     ![manage_workspace.png](images/manage_workspace.png "manage_workspace.png")
 
@@ -90,7 +91,7 @@ Note:
 
     ![oml_top_menu.png](images/oml_top_menu.png "oml_top_menu.png")
 
-5. Click **Notebooks** in the Oracle Machine Learning homepage. Alternatively, you can go to the navigation menu on the left and click **Notebooks**.
+5. Click **Notebooks** in the Oracle Machine Learning home page. Alternatively, you can go to the navigation menu on the left and click **Notebooks**.
 
     ![notebooks_user2.png](images/notebooks_user2.png "notebooks_user2.png")
 
@@ -122,7 +123,7 @@ Note notebook opened in different browsers, and they work on it
 simultaneously. The changes made by the users are dynamically
 reflected in the notebook in real-time. To try this example on the same client machine, for example, your laptop, use two different types of browsers such as Chrome and Firefox to enable two different logins. To see changes dynamically, try to position these two browser windows side by side on your screen so that both views are visible.
 
-1. Sign in to the Oracle Machine Learning instance as USER1 in Mozilla Firefox browser. Click <b>Notebooks</b> in the homepage to view the list of notebooks. Observe that the entry for <b>Updated By</b> column for **Sales Note** notebook shows USER2.
+1. Sign in to the Oracle Machine Learning instance as USER1 in Mozilla Firefox browser. Click <b>Notebooks</b> in the home page to view the list of notebooks. Observe that the entry for <b>Updated By</b> column for **Sales Note** notebook shows USER2.
 
      ![user1_views_notebooks.png](images/user1_views_notebooks.png "user1_views_notebooks.png")
 
@@ -183,6 +184,6 @@ of the notebook. Select **Shared** if you want to save and share this notebook. 
 ## Acknowledgements
 * **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
 
-* **Last Updated By/Date**: Dimpi Sarmah, September 2020
+* **Last Updated By/Date**: Moitreyee Hazarika, September 2021
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
