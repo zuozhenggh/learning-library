@@ -96,9 +96,9 @@ To do this you are required to create a [OCI Dynamic Group](https://docs.oracle.
  
 6.  Enter a Matching Rule
 ```
-#### Below rule matches the compartment where the worker instances are running. Enter your tenancy ocid between '' in the following policy statement. 
+#### Below rule matches the compartment where the worker instances are running. Enter your tenancy ocid between '' in the following policy statement. Enter the tenancy ocid you noted from a previous step for the instance.compartment.id . 
 
-Any {instance.compartment.id = instance.compartment.id = 'ocid1.tenancy.oc1..exampleuniqueid2'}
+Any {instance.compartment.id = instance.compartment.id = {'tenancy ocid'}
 
 ```
 7. Select ***Create***
