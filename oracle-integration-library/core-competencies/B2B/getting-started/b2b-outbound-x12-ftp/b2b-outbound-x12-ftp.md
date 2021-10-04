@@ -4,7 +4,7 @@
 
 ACME Corp sends an 850 Purchase Order EDI document to Trading Partner Dell Inc. ACME Corp had configured OIC B2B message exchange agreement to send Purchase Order EDI document to External Trading Partner.
 
-This integration takes the input as XML from a Rest Client . In a real world use case you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
+This integration takes the input as XML from a Rest Client. In a real world use case you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
 
 
 ![B2BArchitecture diagram](images/b2b-outbound1.png =50%x*)
@@ -12,7 +12,7 @@ This integration takes the input as XML from a Rest Client . In a real world use
 High level steps of the Integration:
 | Step | Description |
 | --- | --- |
-| 1 | Your backend application has a requirement to send a business transaction to an external trading partner. It triggers your outbound backend integration by sending it a notification message.|
+| 1 | Your backend application has a requirement to send a business transaction to an external trading partner. It triggers your outbound backend integration by sending it as a notification message.|
 | 2 |Your backend integration instance receives the notification that includes the application message in the backend application message format|
 | 3 |Using a mapper, the backend application message is transformed into a B2B canonical XML format.|
 | 4 |The canonical XML message is provided to a B2B action for outbound translation (the action named EDI-Generate above). A trading partner is specified as an input to the B2B action. The B2B action translates the canonical XML message to a native EDI format (X12 or EDIFACT) and persists it in the Oracle Integration persistence store. A unique ID is assigned to it.|
@@ -105,7 +105,7 @@ Configure data mappings for the EDI-Generate action and Receive-App-Msg action i
 1. Click the Map to EDI-Generate action and select Edit.
 2. Click on Developer mode
    ![Devmode diagram](images/b2b-outbound9.png =50%x*)
-3. From Source, expand the root element, expand AcmePurchaseOrder and From Target, expand the root element, expand TranslateInput, expand edi-xml-document, expand transaction-data and map all the mandatory elements  
+3. From Source, expand the root element, expand AcmePurchaseOrder and From Target, expand the root element, expand TranslateInput, expand edi-xml-document, expand transaction-data and map all the mandatory elements given below.
 
 | Source | Target |
 | --- | --- |
@@ -192,10 +192,8 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle B2B Documentation](https://docs.oracle.com/en/cloud/paas/integration-cloud/btob.html)
+* [What's New](https://docs.oracle.com/en/cloud/paas/integration-cloud/whats-new/index.html)
 
 ## Acknowledgements
 * **Author** - <Subhani, Director, OIC Product Management>
