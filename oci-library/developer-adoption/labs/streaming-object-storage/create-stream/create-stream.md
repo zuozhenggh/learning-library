@@ -84,7 +84,7 @@ For simple archiving operations, we don’t need to write a single line of code.
 
 
 
- - You will not be using the optional ***Configure Task*** for this lab. 
+  You will not be using the optional ***Configure Task*** for this lab. 
 
  8. Click ***Create*** to create the default policy to allow the Service Connector Service to read from Streaming.
 
@@ -109,10 +109,10 @@ For simple archiving operations, we don’t need to write a single line of code.
 ![](./images/cloudshellopen.png " ")
 
 
- ![](./images/cloudshellsetup.png " ")
+![](./images/cloudshellsetup.png " ")
 
   
-  ![](./images/cloudshell.png " ")
+ ![](./images/cloudshell.png " ")
 
 
 2.  To test this out, we can write some messages to our stream using the OCI CLI in OCI Cloud Shell. When writing messages to a stream, we must pass the message as a JSON object with two keys: key and value. Both the key and the value must be Base64 encoded. Here are two  two separate messages to publish, one with key1 and another with key2. Both will contain a simple JSON message payload. Below the values are encoded.
