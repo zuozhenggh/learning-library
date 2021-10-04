@@ -30,7 +30,7 @@ Before getting started, we recommend you submit your workshop to the WMS. 	Submi
 
 Once your workshop is submitted, it will be sent to the workshop council.  The workshop council will approve your workshop or ask for more details.  Once approved, you will be entered into the workflow and given additional steps to progress through to production.
 
-**Note: For Developers/QA/PM to create and publish a Custom image of the on-premises product to OCI Market place, refer [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/?lab=6-labs-setup-graphical-remote-desktop)**
+**Note: For Developers/QA/PM: To create and publish a Custom image of the on-premises product to OCI Market place, refer [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/?lab=6-labs-setup-graphical-remote-desktop)**
 
 ## Task 2: Download and Install the latest version of Git (Optional Step)
   > > **Note:** For UA Developers, Oracle recommends the usage of the GitHub Desktop client because of its simple and user friendly user interface, and it is much easier than using the Git command line. Therefore, this is an optional Step.
