@@ -71,6 +71,7 @@ You will keep all of the defaults for the bucket creation.
 
 
    ![](./images/Ansible-Cloud-Shell1.png " ")
+   
 
 ## Task 3: Write a sample Ansible playbook
 
