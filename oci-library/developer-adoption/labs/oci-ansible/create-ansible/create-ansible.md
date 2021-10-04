@@ -71,7 +71,7 @@ You will keep all of the defaults for the bucket creation.
 
 
    ![](./images/Ansible-Cloud-Shell1.png " ")
-   
+
 
 ## Task 3: Write a sample Ansible playbook
 
@@ -84,7 +84,7 @@ You will keep all of the defaults for the bucket creation.
       ![](./images/tenancy-info-1.png " ")
 
 
-2. Using OCI Cloud Shell, write the following file list_buckets.yaml, that uses the oci_object_storage_bucket_facts module to fetch facts pertaining to the buckets in your compartment.
+2. Using OCI Cloud Shell, write the following file {list_buckets.yaml}, that uses the {oci_object_storage_bucket_facts} module to fetch facts pertaining to the buckets in your compartment.
     
  ```yaml
 
