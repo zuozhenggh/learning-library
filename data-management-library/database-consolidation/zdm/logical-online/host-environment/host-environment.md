@@ -92,8 +92,7 @@ Estimate Lab Time: 20 minutes
 
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/mvN0sYf5aYnY5Skvy8gCB2gbHgvJ-1Hcwbx2sNgH7lPjSgm46v-PvevSOvV1u4lt/n/frwachlef5nd/b/MV2ADB/o/zdm21.1.zip
-    unzip zdm*.zip
+
     cd zdm21.1
     </copy>
     ```
