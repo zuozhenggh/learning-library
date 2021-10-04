@@ -1,12 +1,12 @@
-# CREATE MYSQL DATABASE SYSTEM
+# CREATE MYSQL DATABASE SYSTEM AND HEATWAVE CLUSTER
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
 ## Introduction
 
-In this lab, you will create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.    
+In this lab, you will create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.  Finally you will add a HeatWave Cluster comprise of two or more HeatWave nodes.  
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -15,6 +15,7 @@ In this lab, you will be guided through the following tasks:
 
 - Create Virtual Cloud Network 
 - Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
+- Add a HeatWave Cluster to MySQL Database System
 
 ### Prerequisites
 
@@ -200,7 +201,17 @@ Description
     ```
     <copy> https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
     ```   
+    **Japan East(Tokyo) Region**
+        ![MDS](./images/region-tokyo.png =50%x*)
+    
+    Copy and paste the following *Tokyo link*  to PAR Source URL: 
   
+    ```
+    <copy> https://objectstorage.ap-tokyo-1.oraclecloud.com/p/hKcth9AOMgzW_bS2rVIiTT_JJ5tNGmqS1kjkWjMphMlnZDbtUj3ZuSehrSuDTCtC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
+    ```   
+ 
+
+
     Your PAR Source URL entry should look like this:
     ![MDS](./images/04mysql08-2.png " ")
 
@@ -221,6 +232,36 @@ Description
     On MDS-HW Page, check the MySQL Endpoint (Private IP Address) 
 
     ![MDS](./images/04mysql11-3.png" ")
+
+## Task 3: Add a HeatWave Cluster to MDS-HW MySQL Database System
+
+1. Open the navigation menu  
+    Databases 
+    MySQL
+    DB Systems
+2. Choose the root Compartment. A list of DB Systems is displayed. 
+    ![Connect](./images/10addheat01.png " ")
+3. In the list of DB Systems, 'click' the **MDS-HW** system. 'click' **More Action ->  Add HeatWave Cluster**.
+    ![Connect](./images/10addheat02.png " ")
+4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
+
+5. Click “Estimate Node Count” button
+    ![Connect](./images/10addheat03.png " ")
+6. On the “Estimate Node Count” page, click “Generate Estimate”. This will trigger the auto
+provisioning advisor to sample the data stored in InnoDB and based on machine learning
+algorithm, it will predict the number of nodes needed.
+    ![Connect](./images/10addheat04.png " ")
+
+7. Once the estimations are calculated, it shows list of database schemas in MySQL node. If you expand the schema and select different tables, you will see the estimated memory required in the Summary box, There is a Load Command (heatwave_load) generated in the text box window, which will change based on the selection of databases/tables
+
+8. Select the airportdb schema and click “Apply Node Count Estimate” to apply the node count
+    ![Connect](./images/10addheat05.png " ")
+
+9. Click “Add HeatWave Cluster” to create the HeatWave cluster
+    ![Connect](./images/10addheat06.png " ")
+10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. 'click' the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
+    ![Connect](./images/10addheat07.png " ")
+
 
 You may now [proceed to the next lab](#next).
 
