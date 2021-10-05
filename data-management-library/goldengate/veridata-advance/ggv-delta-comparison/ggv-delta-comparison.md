@@ -125,6 +125,10 @@ Enter:
 
       ![](./images/11DP.png " ")
 
+      Watch our short video that explains the Delta Comparison feature in Oracle GoldenGate Veridata:
+
+      [](youtube:4sj_2j3dIvc)
+
 
 ## Want to Learn More?
 * [Using Delta Processing ](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-02F4F2D3-2828-4504-8968-C87231752115)

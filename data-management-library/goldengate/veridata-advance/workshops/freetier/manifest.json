@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
-            "title": "Introduction to Oracle GoldenGate Veridata",
+            "title": "Introduction",
             "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
             "filename": "./intro.md"
         }
@@ -55,7 +55,7 @@
                 "description": "This lab shows how to configure Database Partitioning in Oracle GoldenGate Veridata.",
                 "filename": "./../../ggv-database-partitions/ggv-db-partitions.md"
             }
-            
+
                 ,
                 {
                       "title": "Need Help?",
