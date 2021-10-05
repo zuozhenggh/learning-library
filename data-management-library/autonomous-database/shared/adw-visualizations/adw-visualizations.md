@@ -227,7 +227,7 @@ This task enables you to share your project file with colleagues.
 
    ![Click the navigation menu at the bottom right of your project tile. Select Export.](./images/export_dva_project_file.jpg " ")  
 
-3. Choose to export as a __File__. Email may work if Oracle Analytics Desktop is able to interact with your local email client. Cloud provides the mechanism to upload and share your project to <a href="https://cloud.oracle.com/en_US/oac" target="\_blank">Oracle Analytics Cloud</a>.
+3. Choose to export as a __File__. Email may work if Oracle Analytics Desktop is able to interact with your local email client. Cloud provides the mechanism to upload and share your project to Oracle Analytics Cloud. See the <a href="https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873" target="\_blank">Oracle Analytics Cloud documentation</a>.
 
 4. Choose the Export option as shown below and save the DVA file to your Desktop.
 
