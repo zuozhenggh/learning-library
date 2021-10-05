@@ -18,37 +18,37 @@
             "filename": "./../../initialize-environment/initialize-environment.md"
         },
             {
-                "title": "Clone a PDB from a Remote CDB by Using DBCA in Silent Mode",
+                "title": "Lab 1: Clone a PDB from a Remote CDB by Using DBCA in Silent Mode",
                 "description": "Clone a PDB by using DBCA in silent mode.",
                 "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md"
             },
             {
-                "title": "Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode",
+                "title": "Lab 2: Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode",
                 "description": "Relocate a PDB by using DBCA in silent mode.",
                 "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md"
             },
             {
-                "title": "Duplicate a CDB by Using DBCA in Silent Mode",
+                "title": "Lab 3: Duplicate a CDB by Using DBCA in Silent Mode",
                 "description": "Duplicate a CDB by using DBCA in silent mode.",
                 "filename": "./../../duplicate-cdb-using-dbca-silent-mode/duplicate-cdb-using-dbca-silent-mode.md"
             },
             {
-                "title": "Decrease the Transportable Tablespace (TTS) Import and Export Time",
+                "title": "Lab 4: Decrease the Transportable Tablespace (TTS) Import and Export Time",
                 "description": "Decrease the transportable tablespace (TTS) import and export time.",
                 "filename": "./../../decrease-transportable-tablespace-import-export-time/decrease-transportable-tablespace-import-export-time.md"
             },
             {
-                "title": "Omit the Column Encryption Attribute During Import",
+                "title": "Lab 5: Omit the Column Encryption Attribute During Import",
                 "description": "Omit the column encryption attribute during import.",
                 "filename": "./../../omit-column-encryption-attribute-during-import/omit-column-encryption-attribute-during-import.md"
             },
             {
-                "title": "Use RMAN to Connect to a PDB to Use the Recovery Catalog",
+                "title": "Lab 6: Use RMAN to Connect to a PDB to Use the Recovery Catalog",
                 "description": "Use Resource Manager (RMAN) to connect to a pluggable database (PDB) to use the recovery catalog.",
                 "filename": "./../../use-rman-connect-to-pdb-to-use-recovery-catalog/use-rman-connect-to-pdb-to-use-recovery-catalog.md"
             },
             {
-                "title": "Explore Automatic Deletion of Flashback Logs",
+                "title": "Lab 7: Explore Automatic Deletion of Flashback Logs",
                 "description": "Omit the column encryption attribute during import.",
                 "filename": "./../../explore-automatic-deletion-flashback-logs/explore-automatic-deletion-flashback-logs.md"
             },

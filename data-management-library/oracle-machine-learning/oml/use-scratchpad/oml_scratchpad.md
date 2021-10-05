@@ -55,7 +55,7 @@ To run python script:
 4. You are now ready to run your Python script. Type the following Python code and click the run
    icon. Alternatively, you can press **Shift+Enter** keys to run the paragraph.
 
-   ```
+    ```
     import matplotlib.pyplot as plt
     import numpy as np
 
@@ -70,12 +70,12 @@ To run python script:
 
     ```
 
-       ![scratchpad_python.png](images/scratchpad_python.png "scratchpad_python.png")
+    ![scratchpad_python.png](images/scratchpad_python.png "scratchpad_python.png")
 
-       In this example, the commands import two python packages to compute and render the data in two histograms for `list1` and `list2`. The Python packages are:
+    In this example, the commands import two python packages to compute and render the data in two histograms for `list1` and `list2`. The Python packages are:
 
-       * Matplotlib - Python package to render graphs.
-       * Numpy - Python package for computations.
+      * Matplotlib - Python package to render graphs.
+      * Numpy - Python package for computations.
 
 5. After you have created and run your scripts in the Scratchpad, the Scratchpad is automatically saved as a notebook by the name default name `Scratchpad` in the Notebooks page. You can edit the name and save it with a new name by selecting the notebook and clicking **Edit**.
 
@@ -138,6 +138,6 @@ To run PL/SQL scripts:
 ## Acknowledgements
 * **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
 
-* **Last Updated By/Date**: Moitreyee Hazarika, June 2021
+* **Last Updated By/Date**: Moitreyee Hazarika, September 2021
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

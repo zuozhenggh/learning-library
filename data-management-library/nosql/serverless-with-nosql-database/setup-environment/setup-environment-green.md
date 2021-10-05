@@ -37,19 +37,27 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
   ![](images/user-profile.png)
 
-2. Click **User Settings** again. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in Step 10.
+2. Copy your OCID. Make sure to **save your OCID** for future steps. Paste it into notepad or some text file for use in step 10.
 
     ![](images/user-ocid.png)
 
-3. Open the **Cloud Shell** in the top right menu. It can take about 2 minutes to get the Cloud Shell started.
+3. In this step we need to execute a few commands in the Cloud Shell. To start the Cloud Shell, we have to select our compartment first. Click on the 'hamburger' menu on the top left. Click on **Databases** and then click on **Tables**.
+
+    ![](images/compartment-livelab.png)
+
+4. In the **Compartment** drop down on the left, pick you compartment. In Task 1, you should have taken note of your compartment. To find it, expand the root node (**c4u04**), then expand the **Livelabs** node. Your compartment should be listed under there. In this example we are using **LL11090-COMPARTMENT**.
+
+    ![](images/pick-compartment.png)
+
+5. Open the **Cloud Shell** in the top right menu. It can take about 2 minutes to get the Cloud Shell started.
 
     ![](images/cloud-shell.png)
 
-  **Note:** Your **Home Region** may be different than the region you are currently connected to. In the example screen below, you are connected to Ashburn but the **Home Region** is XXX. If you are connected to Phoenix, then you can use Always Free NoSQL tables.
+  **Note:** Your **Home Region** may be different than the region you are currently connected to. In the example screen below, you are connected to Phoenix but the **Home Region** is Ashburn. You can create Always Free NoSQL tables when connected to Phoenix.
 
     ![](images/capturecloudshellhomeregion.png)
 
-4. Execute these commands in your Cloud Shell to create a private and a public key.
+6. Execute these commands in your Cloud Shell to create a private and a public key.
 
     ````
     <copy>
@@ -58,24 +66,28 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
     </copy>
     ````
 
-5. Top right, click your **Profile**, then **User Settings.**
+7. Grab you a copy of your public key. Execute in Cloud Shell.
+
+        ````
+        <copy>
+        cat NoSQLLabPublicKey.pem
+        </copy>
+        ````
+      This will print out your public key to the screen. Grab a copy of the entire key, including the "BEGIN/END PUBLIC KEY" lines. Paste it into notepad or some text file for use in step 10.
+
+      Minimize the Cloud shell.
+
+8. Top right, click your **Profile**, then **User Settings.**
 
     ![](images/user-profile.png)
 
-6. Grab you a copy of your public key. Execute in Cloud Shell.
 
-    ````
-    <copy>
-    cat NoSQLLabPublicKey.pem
-    </copy>
-    ````
-    This will print out your public key to the screen. Grab a copy of the entire key, including the "BEGIN/END PUBLIC KEY" lines.
 
-7. On the left, click **API Keys**, then click **Add API Key.**
+9. On the left, click **API Keys**, then click **Add API Key.**
 
     ![](images/api-keys.png)
 
-8. Click on **Paste Public Key**
+10. Click on **Paste Public Key**
 
     ![](images/paste-key.png)
 
@@ -83,14 +95,16 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
    ![](images/hit-add.png)
 
-9. Copy your fingerprint and paste it into notepad or some text file for use in step 10.
+11. Copy your fingerprint and paste it into notepad or some text file for use in step 12. Click **Close** when done.
 
   ![](images/copy-finger.png)
 
-10. You should have saved 3 pieces of information, the compartment OCID, your user OCID and your fingerprint. This step requires you to edit a shell script and insert that information into the script. We will use vi for this but if you are comfortable with vim or emacs then use either. Execute in Cloud Shell.
+12. You should have saved 3 pieces of information, the compartment OCID, your user OCID and your fingerprint. This step requires you to edit a shell script and insert that information into the script. We will use vi for this but if you are comfortable with vim or emacs then use either. Expand your Cloud Shell and execute.
 
     ````
     <copy>
+      cd $HOME
+      rm -rf serverless-with-nosql-database BaggageData serverless-with-nosql-database.zip demo-lab-nosql-main
       curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/PdICF4N3CtbcAB6cPe7-foLYqGGSRNqkf4mSt1gVIBhH8Wvt87PxoYQkNATywFM0/n/c4u04/b/labfiles/o/demo-lab-nosql-main.zip -o serverless-with-nosql-database.zip
       unzip serverless-with-nosql-database.zip
       mv demo-lab-nosql-main serverless-with-nosql-database
@@ -100,7 +114,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
     </copy>
     ````
 
-  Let's use vi to edit env.sh. Once you go into vi, you will hit 'i' to go into insert mode. You will see 3 variables that need to be set correctly based on real data. Replace **your_compartment_ocid**, **your_user_ocid**, and **your_fingerprint** with the actual values that you save from previous steps.
+  Let's use vi to edit env.sh. Once you go into vi, you will hit 'i' to go into insert mode. You will see 3 variables that need to be set correctly based on real data. Replace **your\_compartment\_ocid**, **your\_user\_ocid**, and **your\_fingerprint** with the actual values that you save from previous steps.
 
       ````
       <copy>
@@ -118,7 +132,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
   To exit out of vi, click esc, then type in ":wq" and your changes will be saved.
 
-11. Exit Cloud Shell  
+13. Exit Cloud Shell  
 
 ## Task 3: Understand Credentials, and Policies
 
@@ -126,7 +140,7 @@ Please make note of the **Region** you are assigned. If you are assigned Phoenix
 
 The Oracle NoSQL Database SDKs allow you to provide the credentials to an application in multiple ways. The SDKs support a configuration file as well as one or more interfaces that allow direct specification of the information. You can use the SignatureProvider API to supply your credentials to NoSQL Database. Oracle NoSQL has SDKs in the following languages:  Java, Node.js, Python, Go, Spring and C#.
 
-In this node.js snippet, we used the credential information created in Task 2 and specified the credentials directly as part of auth.iam property in the initial configuration. The tenancy ID, the user ID, an API signing key, a fingerprint are all supplied. The tenancy iD and the user ID are referred to as OCIDs.
+In this node.js snippet, we used similiar credential information created in Task 2 of this Lab and specified the credentials directly as part of auth.iam property in the initial configuration. The tenancy ID, the user ID, an API signing key, a fingerprint are all supplied. The tenancy iD and the user ID are referred to as OCIDs.
 
 ````
        return new NoSQLClient({
@@ -177,7 +191,7 @@ def get_handle():
      return borneo.NoSQLHandle(config)
 ```
 
-A similar switch can be made here to use **Instance Principals**, replace "create_with_resource_principal()" with "create_with_instance_principal()" and you are all set.
+A similar switch can be made here to use **Instance Principals**, replace "create\_with\_resource\_principal()" with "create\_with\_instance\_principal()" and you are all set.
 
 In the next labs we are going to be running application code and we need an instance to run that from. In Task 2 we started the Cloud Shell and we will run the application from that instance. Currently, Cloud Shell does not support Instance Principals so in those labs we will be using credentials.
 

@@ -104,7 +104,8 @@ You should now see `mtdrworkshop` in your root directory
 2. Click **Create Autonomous Database**
 	![ATP-config-1](images/ATP-config-1.png " ")
     * Set the **Compartment, Display Name** and **Database Name**.
-    * Set the workload type to **Transaction Processing**.
+	* Set `mtdrdb` as the database name (that name is being used in future commands)
+	* Set the workload type to **Transaction Processing**.
     * Accept the default Deployment Type **Shared Infrastructure**.
 3. Set the **ADMIN password, Network Access Type** and **License Type**
 	![ADB setup](images/ADB-setup.png " ")
@@ -117,14 +118,10 @@ You should now see `mtdrworkshop` in your root directory
 > **Note:** The database creation will take a few minutes.
 
 4. Populate mtdrworkshopdbid.txt with the database OCID.
-	\* Create an empty file `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt`.
 
 	``` bash
-	<copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt</copy>
+	<copy>echo $DBOCID > ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt</copy>
 	```
-
-	![copy the atp ocids](images/42-copy-atp-ocids2.png " ")
-	\* Copy the OCID of the newly created database from the Cloud console and add it into the `~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt` file.
 
 5. Generate the wallet for your Autonomous Transaction Processing connectivity. A wallet.zip file will be created in the current directory.
 
@@ -136,6 +133,7 @@ You should now see `mtdrworkshop` in your root directory
 
 	\* **Example** `./generateWallet.sh ocid1.autonomousdatabase.oc1.phx.abyhqlj....`
 	\* You will be requested to enter a password for wallet encryption, this is separate password from the ADMIN password but you could reuse the same.
+	\* Wait for a littke moment while the command executes.
 
 6. Launch the sql utility in Cloud Shell.
 
@@ -164,11 +162,11 @@ You should now see `mtdrworkshop` in your root directory
 	\* Point the tool at your wallet.zip file
 	\* Stay in the mtdrwokshop/setup-dev-environment directory and launch sql with /nolog option.
 8. Create a TODOUSER with a strong password, using the sql utility.
-
+	\* Suggest reusing the admin password, not good practice in real life, but easy for this workshop
 	``` sql
 	<copy> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
 	```
-
+	\* After typing the password in the middle of the CREATE USER command, move the cursor to the end of the command, where the semicolon `;` is
 	![create user](images/create-user.png " ")
 	\* Grant some privileges to TODOUSER by executing the following command.
 
@@ -203,6 +201,12 @@ You should now see `mtdrworkshop` in your root directory
 	```
 <br>
 	![commit complete](images/commit-complete.png " ")
+
+		\* Execute "exit ;" after committing.
+
+	``` SQL
+	<copy>exit;</copy>
+	```
 
 ## Task 4: Create an OCI Registry and a pre-authentication key
 
@@ -269,18 +273,13 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
 	``` bash
-	<copy>touch ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
+	<copy>echo $ClusterID > ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
 	```
 
-2. Navigate to **Developer Services** and select **Kubernetes Clusters (OKE)**
-	![dev services oke](images/27-dev-services-oke.png " ")
-	![dev services](images/27-dev-services-oke.png " ")
-3. Copy the **mdtrworkshopcluster ID** and paste it into the newly created file.
-	![mtdrworkshop cluster id](images/mtdrworkshop-cluster-id.png " ")
-4. Run `./verifyOKEAndCreateKubeConfig.sh`
+2. Run `./verifyOKEAndCreateKubeConfig.sh`
 
 	```
-	<copy>./verifyOKEAndCreateKubeConfig.sh</copy>
+	<copy>cd mtdrworkshop; ./verifyOKEAndCreateKubeConfig.sh</copy>
 	```
 
 > **Note:** `/.kube/config` is created for the OKE cluster.

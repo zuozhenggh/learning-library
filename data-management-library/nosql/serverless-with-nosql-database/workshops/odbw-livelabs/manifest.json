@@ -9,11 +9,6 @@
             "type": "livelabs",
             "filename": "../../introduction/introduction.md"
         },
-		{
-          "title": "Getting Started",
-          "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable).",
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        },
         {
             "title": "Lab 1: Baggage Tracking Demo",
             "description": "Experience a live baggage tracking demo",

@@ -21,19 +21,19 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
 Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the oracle user*.  Run a *whoami* to ensure the value *oracle* comes back.)
 
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
+1.  Log in to the Oracle Cloud.
 
 2.  Start Cloud Shell
 
     *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
-    ![](../clusterware/images/start-cloudshell.png " ")
+    ![Start Cloud Shell](../clusterware/images/start-cloudshell.png " ")
 
 3.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
-    ![](../clusterware/images/racnode1-login.png " ")
+    ![use SSH to Connect to OPC User](../clusterware/images/racnode1-login.png " ")
 
 4.  Switch to the oracle user and set the Oracle database environment
 
@@ -51,7 +51,7 @@ Copy the following commands into your terminal. These commands download the file
     </copy>
     ````
     The ORACLE_HOME is **/u01/app/oracle/product/19.0.0.0/dbhome_1**
-    
+
     Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
 
 5.  Get the Database sample schemas and unzip them. Then set the path in the scripts.
@@ -65,16 +65,16 @@ Copy the following commands into your terminal. These commands download the file
     </copy>
     ````
 
-    ![](./images/install-schema-zip.png " " )
+    ![Download Setup File and Unzip](./images/install-schema-zip.png " " )
 
-6.  Login using `SQL*Plus` as the **oracle** user.  
+6.  log in using `SQL*Plus` as the **oracle** user.  
 
     ````
     <copy>
     sqlplus system/W3lcom3#W3lcom3#@localhost:1521/pdb1.pub.racdblab.oraclevcn.com
     </copy>
     ````
-    ![](./images/start-sqlplus.png " ")
+    ![Connect Using SQLPLUS](./images/start-sqlplus.png " ")
 
 7.  Install the Sample Schemas by running the script below.
 
@@ -84,17 +84,17 @@ Copy the following commands into your terminal. These commands download the file
     </copy>
     ````
 
-    ![](./images/schemas-created.png " " )
+    ![Install Sample Schemas](./images/schemas-created.png " " )
 
 8. Exit SQL Plus and exit the oracle user to return to the opc user.
 
     ```
-    <copy>exit
+    <copy>
     exit
     </copy>
     ```
 
-    ![](images/return-to-opc.png)
+    ![Exit SQLPLUS](images/return-to-opc.png)
 
 Congratulations! Now you have the environment to run the labs.
 

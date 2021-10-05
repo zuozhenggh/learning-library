@@ -58,26 +58,36 @@ The following command will set the values of environment variables in `mtdrworks
 
 1. Ensure that the "DOCKER\_REGISTRY" variable is set
 
-For example:
+``` bash
+	<copy>echo $DOCKER_REGISTRY</copy>
+	```
+	It should look like the following example:
 `<region-key>.ocir.io/<object-storage-namespace>/<firstname.lastname>/<repo-name>`.
 If the variable is not set or is an empty string, the push will fail (but the docker image will be built).
 
-2. Make sure to be in backend/target/classes/wallet directory and then execute.
+2. Make sure to be in backend/target/classes/wallet directory and then unzip.
 
 	``` bash
-	<copy>unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
+	<copy>cd mtdrworkshop/backend/target/classes/wallet; unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
 	```
 
-3. Select the mtdrb\_tp service alias (see the list of aliases in
+3. Copy the mtdrb\_tp service alias (see the list of aliases in
 ./backend/target/classes/wallet/tnsnames.ora)
 	![tnsnames-ora](images/tnsnames-ora.png " ")
 4. Edit ./backend/target/classes/application.yaml to set the database service and user password
 	![application yaml](images/application-yaml.png " ")
-5. Copy the edited ./backend/target/classes/application.yaml to ./backend/src/main/resources/application.yaml
+5. Copy the edited application.yaml to ./backend/src/main/resources/application.yaml
+
+``` bash
+	<copy>cp ~/mtdrworkshop/backend/target/classes/application.yaml ~/mtdrworkshop/backend/src/main/resources/application.yaml</copy>
+	```
+
 6. Edit ./backend/src/main/java/com/oracle/todoapp/Main.java
 7. Locate the following code fragment
 	![CORS main](images/CORS-Main.png " ")
 8. Replace `eu-frankfurt-1` in `https://objectstorage.eu-frankfurt-1.oraclecloud.com` with your region
+	\* Hint: your region id is displayed in the cloud shell prompt, between parenthesis, as in: 
+	joe@cloudshell:classes (**us-phoenix-1**)$
 9. Save the file
 10. Run `build.sh` script to build and push the
 microservices images into the repository
@@ -148,7 +158,7 @@ If you make changes to the image then you need to delete the service and the pod
 The API Gateway protects any RESTful service running on Container Engine for Kubernetes, Compute, or other endpoints through policy enforcement, metrics, and logging.
 Rather than exposing the Helidon service directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
 
-1. From the navigation menu select **Developer Services** then select **Gateways**.
+1. From the navigation menu select **Developer Services** then under API Management, select **Gateways**.
 
 	![gateway](images/gateways.png " ")
 
@@ -181,11 +191,15 @@ Then click **Create**.
 
 8. Configure the headers.
 	![headers](images/Headers.png " ")
+	\* click **Apply changes** to create the CORS policy
 
 9. Configure the routes by defining two routes:
+	\* Click **Routes**, next to the number 2, on the left to create
    ![route](images/Route-1.png " ")
     * /todolist for the first two APIs: GET, POST, OPTIONS
-    * /todolist/{id} for the remaining three APIs: GET, PUT, DELETE
+	* After defining a route for `/todolist`, click **Another Route** to define a route for `/todolist/{id}` for the remaining three APIs: GET, PUT, DELETE
+
+	* After defining both routes, click **Next**, then click **Create**
    
 
 ## Task 6: Testing the backend application through the API Gateway
