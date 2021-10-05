@@ -35,7 +35,8 @@ This lab assumes you have:
     - Enterprise Manager - Management server (OMS)
     - Enterprise Manager - Management Agent (emagent)
 
-2. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+2. On the browser window on the right preloaded with *Enterprise Manager*, click on the *Username*  and login with the credentials provided below. 
+(If the browser shows any certificate authority invalid error code, click on *Advanced* and add the exception to proceed as outlined in Appendix 2)
 
     ```
     Username: <copy>sysman</copy>
