@@ -28,12 +28,17 @@ Estimated Lab Time: 15 minutes
 
 3. Fill the web form with the following information and click Create:
 
-•	Name: < Instance_Name >
-•	Description: < Analytics Instance for Workshop >
-•	Create in Compartment: root compartment, unless you have permissions and experience selecting a different one
-•	Feature Set: Enterprise Analytics
-•	Capacity: OCPU and 1 - Non Production
-•	License Type: License Included
+    •	Name: < Instance_Name >
+
+    •	Description: < Analytics Instance for Workshop >
+
+    •	Create in Compartment: root compartment, unless you have permissions and experience selecting a different one
+
+    •	Feature Set: Enterprise Analytics
+
+    •	Capacity: OCPU and 1 - Non Production
+
+    •	License Type: License Included
 
 ![](images/oac_form.png)
 
