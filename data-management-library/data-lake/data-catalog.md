@@ -122,7 +122,7 @@ Explore the Data Catalog:
 
 ![View Catalog](./images/datacatalog_overview.png " ")
 
-## Task 5: Discover data assets and configure connections for new data assets
+## Task 5: Discover Data Assets and Configure Connections
 
 In this step, you will discover the data assets already available in the ADW and Object Storage. We will also create new data assets that we might get from another source or API.
 From the Quick Menu on the Home tab, click Discover Data Sources.
@@ -135,6 +135,57 @@ As you can we have our data warehouse database available and our object storage 
 ![Add Data Assets](./images/catalog_addasset.png " ")
 
 The data asset will then be added to this data catalog, now we caan use these data assets to set up processes for data loading and ETL with OCI Data Flow.
+
+## Task 6: New table for Spark Application Data Loads
+
+In this step, you will simply be creating a new table to be used in the data loading process that uses the application in the next lab. You will also verify that the table is now part of the discovered entities in the OCI Data Catalog.
+
+Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
+
+![Database](./images/databaselisting.png " ")
+
+Click on the database and then proced to click on the Tools Tab and click on Open Database Actions.
+
+![Database Actions](./images/dbactions.png " ")
+
+Click on SQL to execute the query to create the table.
+
+![SQL](./images/SQL_queries.png " ")
+
+You are going to copy and paste the following code to build the MOVIE_GENRE table that we will use later in our data feed process and end queries.
+
+```
+<copy>
+CREATE TABLE MOVIE_GENRE
+(ENTERED_TIME       DATE,
+PRICE               NUMBER,
+CUSTID              NUMBER,
+GENREID             NUMBER,
+MOVIEID             NUMBER,
+ACTIVITY            NUMBER,
+RECOMMENDED         VARCHAR2(10));
+</copy>
+```
+
+After the query executes, you can close Database Actions tab to get back to the Oracle Cloud menu .
+
+Now you can verify that the entity is available as part of the OCI Data Catalog. Navigate to the menu Cloud Menu. Click on Analytics & AI and click on Data Catalog under the Data Lake header.
+
+Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you do not see it listed.
+
+![SQL](./images/Current_Catalog.png " ")
+
+Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity informaiton into the Data Asset, but for now in the lab you can run this manually.
+
+Now if you go back to the Home Tab fro the Data Catalog, you will discover that there are now 7 Data Entities are being kept up to data in the Data Catalog.
+
+![New Entities](./images/new_entities.png " ")
+
+Click on Entities just to verify that all of the tables are now here.
+
+![Entities List](./images/entities_list.png " ")
+
+Now you are ready to work with the Data Flows and applications.
 
 You may now [proceed to the next lab](#next).
 
