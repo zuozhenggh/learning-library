@@ -1,10 +1,10 @@
-# Install Node.js in Compute Instance and Deploy the Application
+# Advanced Lab - Install Node.js in Compute Instance and Deploy the Application
 
 ## Introduction
 
-In the previous lab, we generated the ssh keys needed for the compute instance used for the node.js application to provide cryptographic signing of the user data outside the database.
+In the earlier lab, we generated the ssh keys needed for the compute instance used for the node.js application to provide cryptographic signing of the user data outside the database.
 
-In this lab, we will install Node.js in the compute instance, Then to prepare for data signing you will generate a private/public key pair and a PKI certificate in compute instance, which will include your public key. Afterwards you will store the certificate in your ATP database instance, and save the certificate GUID it returns. Finally, deploy the application and sign a row in the database from the cloud shell.
+In this lab, we will install Node.js in the compute instance, Then to prepare for data signing you will generate a private/public key pair and a PKI certificate in compute instance, which will include your public key. Afterwards you will store the certificate in your Oracle Autonomous Transaction Processing database instance, and save the certificate GUID it returns. Finally, deploy the application and sign a row in the database from cloud shell.
 
 Estimated Time: 25 minutes
 
@@ -17,7 +17,7 @@ In this lab, you will:
 - Install Node.js in the compute instance
 - Open Firewall for Ports
 - Download and deploy the application
-- Sign the row
+- Sign a row and verify all the rows in the blockchain table
 
 ### Prerequisites
 
@@ -27,11 +27,11 @@ This workshop assumes you have:
 
 ## Task 1: Provision a Compute Instance
 
-1. In the Oracle Cloud console, click on hamburger menu, search for **Compute** and select **Instances** under Compute.
+1. In the Oracle Cloud console, click on navigation menu, search for **Compute** and select **Instances** under Compute.
 
     ![](./images/lab5-task1-1.png " ")
 
-2. Make sure you are in the same region and compartment as the Autonomous Database instance and click on **Create Instance**.
+2. Make sure you are in the same region and compartment as the Oracle Autonomous Database instance and click on **Create Instance**.
 
     ![](./images/lab5-task1-2.png " ")
 
@@ -55,16 +55,16 @@ This workshop assumes you have:
     ![](./images/lab5-task1-62.png " ")
 
 ## Task 2: Connect to your Compute instance
-
+<if type="freetier">
 There are multiple ways to connect to your cloud instance. Choose the way to connect to your cloud instance that matches the SSH Key you generated.  *(i.e If you created your SSH Keys in cloud shell, choose cloud shell)*
 
 - Oracle Cloud Shell
-- MAC or Windows CYCGWIN Emulator
+- MAC or Windows CYGWIN Emulator
 - Windows Using Putty
 
 ### Oracle Cloud Shell
-
-1. If you are logged out of cloud shell or to re-start the Oracle Cloud shell click the cloud shell icon to the right of the region in the Cloud console,.  *Note: Make sure you are in the region you were assigned*
+</if>
+1. If you are logged out of cloud shell or to re-start the Oracle Cloud shell, click cloud shell icon to the right of the region in cloud console. *Note: Make sure you are in the region you were assigned*
 
     ![](./images/lab5-task2-1.png " ")
 
@@ -81,11 +81,11 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 3.  When prompted, answer **yes** to continue connecting.
 
     ![](./images/lab5-task2-5.png " ")
-
+<if type="freetier">
 4.  Proceed to the next task on the left hand menu.
 
 ### MAC or Windows CYGWIN Emulator
-1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+1.  Go to **Compute**, click **Instance** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP address for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
@@ -129,7 +129,7 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session STEP.
 
 8. Click Open to begin your session with the instance.
-
+</if>
 Congratulations!  You now have a fully functional Linux instance running on Oracle Cloud Compute.
 
 ## Task 3: Generate Certificate
@@ -168,7 +168,7 @@ Let's generate your x509 key pair. We are generating the key pair and an X509 ce
 
 4. Run the command to generate your x509 key pair - *user01.key*, *user01.pem* in the nodejs folder.
 
-	When prompted, provide the details for each parameter and press enter - Country Name, State, Locality Name, Organization name, Common name, Email address
+	When prompted, give the details for each parameter and press enter - Country Name, State, Locality Name, Organization name, Common name, Email address
 
 	```
 	<copy>
@@ -196,7 +196,7 @@ Let's generate your x509 key pair. We are generating the key pair and an X509 ce
 
 ## Task 4: Store Certificate in the Database
 
-1. Navigate to the tab with SQL Developer Web in your browser, copy and paste the below procedure in SQL Worksheet. Do no run the procedure yet.
+1. Navigate to the tab with SQL Developer Web in your browser, copy and paste the below procedure in SQL Worksheet. Do not run the procedure yet.
 
 	```
 	<copy>
@@ -289,9 +289,19 @@ Let's generate your x509 key pair. We are generating the key pair and an X509 ce
 
 ## Task 5: Install Node.js in the Compute Instance
 
-Now, let's see how to install Node.js in the compute instance for the Node.js application to interact with the Autonomous database rest end points.
+Now, let's see how to install Node.js in the compute instance for the Node.js application to interact with the Oracle Autonomous database rest end points.
 
-1. Navigate back to the tab with Oracle Cloud console. To install Node.js we need to have oracle-release-el7 repo added to the virtual machine via sudo. This will take about a minute and will say "Complete!" when finished.
+1. Navigate back to the tab with Oracle Cloud console. If you are logged out of cloud shell, click on cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance using this command. Else, you can proceed to the step.
+
+    ```
+    <copy>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
+    ```
+
+    ![](./images/lab5-task7-1.png " ")
+
+2.  To install Node.js we need to have oracle-release-el7 repo added to the virtual machine via sudo. This will take about a minute and will say "Complete!" when finished.
 
     ```
     <copy>
@@ -311,7 +321,7 @@ Now, let's see how to install Node.js in the compute instance for the Node.js ap
 
 ## Task 6: Open Firewall for Ports
 
-To connect to the Autonomous Database instance from the virtual machine we need to open firewall ports. Oracle linux compute instance internal firewall do not have any port enabled by default. We need to enable a port.
+To connect to the Oracle Autonomous Database instance from the virtual machine we need to open firewall ports. Oracle linux compute instance internal firewall do not have any port enabled by default. We need to enable a port.
 
 1. Run this sudo command to permanently add port 8080 under the public zone.
 
@@ -353,7 +363,7 @@ In the Oracle Linux virtual machine, since we have the Node.js installed and the
     ```
     ![](./images/task3-1.png " ")
 
-2.  Now, let's modify the index.js file with your ATP instance URL and Certificate GUID. Copy and paste the below command in notepad, replace `<paste your atp url>` in the command below with your ATP URL and hit `Enter`.
+2.  Now, let's modify the index.js file with your Oracle Autonomous Transaction Processing database instance URL and Certificate GUID. Copy and paste the below command in notepad, replace `<paste your atp url>` in the command below with your Oracle Autonomous Transaction Processing database URL and press `Enter`.
 
     ```
     sed -i 's,atp-url,<paste your atp url>,g' index.js
@@ -365,7 +375,7 @@ In the Oracle Linux virtual machine, since we have the Node.js installed and the
     sed -i 's,atp-url,https://fw8mxn5ftposwuj-demoatp.adb.us-ashburn-1.oraclecloudapps.com,g' index.js
     ```
 
-3.  Copy and paste the modified command in cloud shell and hit `Enter`. This command searches for the string `atp-url` in the index.js file and replaces with your ATP URL.
+3.  Copy and paste the modified command in cloud shell and press `Enter`. This command searches for the string `atp-url` in the index.js file and replaces with your Oracle Autonomous Transaction Processing database URL.
 
     ![](./images/task3-3.png " ")
 
@@ -381,7 +391,7 @@ In the Oracle Linux virtual machine, since we have the Node.js installed and the
     sed -i 's,cert-guid,C8D2C1F00236AD7CE0533D11000AE2FC,g' index.js
     ```
 
-5. Copy and paste the modified command in cloud shell and hit `Enter`. This command searches for the string `cert-guid` in the index.js file and replaces with your Certificate GUID.
+5. Copy and paste the modified command in cloud shell and press `Enter`. This command searches for the string `cert-guid` in the index.js file and replaces with your Certificate GUID.
 
     ![](./images/task3-5.png " ")
 
@@ -389,7 +399,7 @@ In the Oracle Linux virtual machine, since we have the Node.js installed and the
 
     ![](./images/task3-6.png " ")
 
-7. Let's reconnect into the compute instance. Click on the cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance using the command.
+7. Let's reconnect into the compute instance. Click on cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance using the command.
 
     ````
     ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
@@ -414,15 +424,26 @@ In the Oracle Linux virtual machine, since we have the Node.js installed and the
 
 Let's use the curl command to send a REST request to the node.js application we’ve just started. This will cause the application to:
 
-    - Retrieve the content of the row using DBMS_BLOCKCHAIN_TABLE.GET_BYTES_FOR_ROW_SIGNATURE procedures
-    - Invoke openssl command to generate a signature using your private key
-    - Add the signature to the row using DBMS_BLOCKCHAIN_TABLE.SIGN_ROW procedure, at which point the database will use your certificate GUID to retrieve the certificate, extract the public key, and verify that the signature generated using your private key in the node.js application is valid based on the data present in the row and the public key in your X.509 certificate
+- Retrieve the content of the row using DBMS\_BLOCKCHAIN\_TABLE.GET\_BYTES\_FOR\_ROW_SIGNATURE procedures
+- Invoke openssl command to generate a signature using your private key
+- Add the signature to the row using DBMS\_BLOCKCHAIN\_TABLE.SIGN_ROW procedure, at which point the database will use your certificate GUID to retrieve the certificate, extract the public key, and verify that the signature generated using your private key in the node.js application is valid based on the data present in the row and the public key in your X.509 certificate
 
 If the signature and data are verified with the public key, the signature field is stored in the table and the application returns status 200 and a success message. If this fails, it returns error status 400.
 
 1. Navigate back to the previous cloud shell window that does not have the Node.js application running.
 
-2. Replace the number 1 for the instanceId, chainId and seqId and update with your noted instanceId, chainId and seqId values in the below command and hit enter.
+    If you are logged out of cloud shell, click on cloud shell icon at the top right of the page to start the Oracle Cloud shell, SSH into the instance and navigate to nodejs folder. Else, you can proceed to the step.
+
+    ```
+    <copy>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    cd nodejs
+    </copy>
+    ```
+
+    ![](./images/lab5-task7-1.png " ")
+
+2. Replace the number 1 for the instanceId, chainId and seqId and update with your noted instanceId, chainId and seqId values in the below command and press enter.
 
     ```
     curl --location --request POST 'http://localhost:8080/transactions/row' --header 'Content-Type: application/json' --data '{"instanceId":1,"chainId":1,"seqId":1}'
@@ -458,6 +479,30 @@ If the signature and data are verified with the public key, the signature field 
 
 	![](./images/task4-5.png " ")
 
+## Task 9: Verify Rows with Signature
+
+1. In the SQL worksheet, copy ane paste the below procedure to verify the rows in blockchain table using DBMS\_BLOCKCHAIN\_TABLE.VERIFY_ROWS.
+
+	> *Note: It is expected that every blockchain table will have different instance Id values. Please do not be concerned if you do not see the same values in the output as in the screenshot. If the PL/SQL procedure is completed successfully, the blockchain table is verified successfully.*
+
+	```
+	<copy>
+	DECLARE
+		verify_rows NUMBER;
+		instance_id NUMBER;
+	BEGIN
+		FOR instance_id IN 1 .. 4 LOOP
+			DBMS_BLOCKCHAIN_TABLE.VERIFY_ROWS('DEMOUSER','BANK_LEDGER',
+	NULL, NULL, instance_id, NULL, verify_rows);
+		DBMS_OUTPUT.PUT_LINE('Number of rows verified in instance Id '||
+	instance_id || ' = '|| verify_rows);
+		END LOOP;
+	END;
+	/
+	</copy>
+	```
+
+	![](./images/lab5-task6-1.png " ")
 
 ## Acknowledgements
 

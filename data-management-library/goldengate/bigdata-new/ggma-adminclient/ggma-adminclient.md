@@ -4,12 +4,10 @@
 This workshop will demonstrate how to connect to the Oracle GoldenGate Admin Client and use it to view all running processes, Extract statistics, log messages, and purge unused files.
 
 *Estimated Workshop Time*: 5 minutes
+
 #### Lab Architecture
 
 ![](./images/arch.jpg " ")
-
-
-### About GGMA Adminclient
 
 ### Objectives
 -  Connect to the Admin Client
@@ -20,34 +18,33 @@ This Workshop assumes you have:
 - A Free Tier, Paid or LiveWorkshops Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
-    - Workshop: Generate SSH Keys
-    - Workshop: Prepare Setup
-    - Workshop: Environment Setup
+    - Lab: Generate SSH Keys
+    - Lab: Prepare Setup
+    - Lab: Environment Setup
 
 
 ## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
+
+Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS:
+
   - Authentication OS User - “*opc*”
   - Authentication method - *SSH RSA Key*
   - OS User – “*ggadmin*”.
 
-1. First login as “*opc*” using your SSH Private Key
+1. Login as “*opc*” using your SSH Private Key
 
 2. Then sudo to “*ggadmin*”. E.g.
-
-
 
     ```
     <copy>sudo su - ggadmin</copy>
     ```
-     ![](./images/1.png " ")
 
+    ![](./images/1.png " ")
 
 ## Task 1: Connect to the Admin Client
+
 1. Select **Q** to quit the labmenu.Change directories to ***/u01/ggbd_home/bin/***, and then start the Admin Client:
-
-
 
     To quit the Lab Menu:
     
@@ -64,11 +61,11 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
     </copy>
     ```
+
     ![](./images/2.png " ")
 
 2. Connect to the GoldenGate deployment:
 
- 
     ```
     <copy>connect http://localhost:16000 as oggadmin password Wel_Come1</copy>
     ```
@@ -85,32 +82,33 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     info all
     </copy>
     ```
+
     ![](./images/4.png " ")
 
-    View statistics of  Replicat ***REPKAFKA***
 
+    View statistics of  Replicat ***REPKAFKA***
 
     ```
     <copy>
     STATS REPLICAT REPKAFKA TOTAL
     </copy>
     ```
-    
+
     ![](./images/5.png " ")
 
 
     View the content of a ggserror log file:
+
     ```
     <copy>
     VIEW MESSAGES
     </copy>
     ```
-    
+
     ![](./images/6.png " ")
 
 ## Summary
-In summary, Admin Client is a command line utility (similar to the classic GGSCI utility). It uses the REST API published by the Microservices Servers to accomplish control and configuration tasks in an Oracle GoldenGate deployment.
-
+To summarize, Admin Client is a command line utility (similar to the classic GGSCI utility). It uses the REST API published by the Microservices Servers to accomplish control and configuration tasks in an Oracle GoldenGate deployment.
 
 
 ## Learn More

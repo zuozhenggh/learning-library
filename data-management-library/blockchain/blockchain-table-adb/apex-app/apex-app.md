@@ -23,11 +23,11 @@ This workshop assumes you have:
 
 ## Task 1: Create APEX Workspace
 
-1. Navigate back to the tab with Oracle Cloud console. Click on the hamburger menu, search for **Oracle Database** and click **Autonomous Transaction Processing**.
+1. Navigate back to the tab with Oracle Cloud console. Click the navigation menu, search for **Oracle Database** and click **Autonomous Transaction Processing**.
 
 	![](./images/task1-1.png " ")
 
-2. Click on the Display Name of your ADB instance to navigate to your ADB instance details page. In this lab, click on the provisioned **DEMOATP** instance.
+2. Click the Display Name of your Oracle Autonomous Database instance to navigate to your Oracle Autonomous Database instance details page. In this lab, click the provisioned **DEMOATP** instance.
 
 	![](./images/task1-2.png " ")
 
@@ -36,9 +36,9 @@ This workshop assumes you have:
     Click the **Tools** tab. Click **Open APEX**.
 	![](./images/task1-3.png " ")
 
-4. Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the ATP instance.
+4. Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the Oracle Autonomous Transaction Processing instance.
 
-    In the lab, provide the **password - WElcome123##** for the ADMIN user you created when you provisioned your ADB instance and click **Sign in to Administration** to sign in to APEX Workspace.
+    In the lab, give the **password - WElcome123##** for the ADMIN user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in to Administration** to sign in to APEX Workspace.
 	![](./images/task1-4.png " ")
 
 5. Click **Create Workspace**.
@@ -61,16 +61,16 @@ This workshop assumes you have:
 
     ![](./images/task1-8.png " ")
 
-9. Click on **Set APEX Account Password**.
+9. Click **Set APEX Account Password**.
 
 	![](./images/task1-9.png " ")
 
-10. Navigate to the tab with Oracle cloud console, click on Profile icon, click on User Setting and Copy the email address.
+10. Navigate to the tab with Oracle cloud console, click on Profile icon then click **User Setting** and copy the email address.
 
 	![](./images/task1-101.png " ")
     ![](./images/task1-102.png " ")
 
-11. Navigate back to the APEX workspace, paste the email address in the Email Address field, provide the **Password - W3lcome123##** and confirm the password for the `demouser` and click on **Apply Changes**.
+11. Navigate back to the APEX workspace, paste the email address in the Email Address field, give the **Password - W3lcome123##** and confirm the password for the `demouser` and click **Apply Changes**.
 
 	![](./images/task1-111.png " ")
 	![](./images/task1-112.png " ")
@@ -100,7 +100,7 @@ APEX application will interact with the blockchain tables using REST API through
 
     ![](./images/task2-5.png " ")
 
-6. Click on **Choose File** and upload the ORDS REST Blockchain file that you just downloaded. Click on **Import**.
+6. Click **Choose File** and upload the ORDS REST Blockchain file that you just downloaded. Click **Import**.
 
     ![](./images/task2-6.png " ")
 
@@ -195,7 +195,7 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
     ![](./images/task3-6.png " ")
 
-7. In the Blockchain APEX application sign in page, provide the **Username - DEMOUSER**, **Password - W3lcome123##** and click **Sign In**.
+7. In the Blockchain APEX application sign in page, give the **Username - DEMOUSER**, **Password - W3lcome123##** and click **Sign In**.
 
     ![](./images/task3-7.png " ")
 
@@ -251,7 +251,7 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
 10. Chose any row of your choice, make note the Instance ID, Chain ID and Seq ID values of that row and save these required parameters values as you will need to enter them in the signing task in next lab.
 
-    > *Note - Every blockchain table will have different Instance ID, Chain ID and Seq ID values. Please do not panic if you do not see the same values in your table as in the demo.*
+    > *Note - It is expected that every blockchain table will have different Instance ID, Chain ID and Seq ID values. Please do not be concerned if you do not see the same values in your table as in the demo.*
 
     In the demo, we are going to sign the row with Instance ID - 1, Chain ID - 5, and Seq ID - 1.
 

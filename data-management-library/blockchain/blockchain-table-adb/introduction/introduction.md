@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this workshop, you will provision an Autonomous Database instance, manage blockchain tables and rows in a blockchain table. Then import a simple web application using Application Express (APEX) to see how to manage the rows, verify the rows without the signature in the blockchain table. Finally, you will provision and connect to the compute instance, install and deploy Node.js application in it to sign a row in the blockchain table.
+In this workshop, you will provision an Oracle Autonomous Database instance, manage blockchain tables and rows in a blockchain table. Then import a simple web application using Application Express (APEX) to see how to manage the rows, verify the rows without the signature in the blockchain table. Finally, you will provision and connect to the compute instance, install and deploy Node.js application in it to sign a row in the blockchain table.
 
 Estimated Workshop Time: 1 hour, 15 minutes
 

@@ -22,14 +22,14 @@
             "filename": "../../sqlcl/sqlcl.md"
         },
         {
-            "title": "Lab 2: Create a Branch and a Database Change",
-            "description": "Create a Branch and a Database Change",
-            "filename": "../../branch/branch.md"
+            "title": "Lab 2: Create and Apply Database Changes with SQLcl",
+            "description": "Create and Apply Database Changes with SQLcl",
+            "filename": "../../change/change.md"
         },
         {
-            "title": "Lab 3: Change Management/Tracking across Databases",
-            "description": "Change Management/Tracking across Databases",
-            "filename": "../../change/change.md"
+            "title": "Terminate your Always Free Autonomous Database",
+            "description": "Terminate your Always Free Autonomous Database",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/terminate-adb/terminate-adb.md"
         },
         {
             "title": "Need Help?",

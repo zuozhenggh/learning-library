@@ -28,29 +28,29 @@ For more information on Oracle Database Services visit http://www.oracle.com/got
 
  [](https://youtu.be/dIMgaujSydQ)
 
-## Task 1: Login and Identify Database and Instance names
-You should have already identified your database name and instance name.  Each place in this lab where you see replacename make sure you use your correct instance and database names. 
-1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. 
+## Task 1: log in and Identify Database and Instance names
+You should have already identified your database name and instance name.  Each place in this lab where you see replacename make sure you use your correct instance and database names.
+1.  Log in to the Oracle Cloud.
 2.  Once you are logged in, open up a 2nd webbrowser tab.
 3.  Start Cloudshell in each.  Maximize both cloudshell instances.
-   
-    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
-    ![](./images/start-cloudshell.png " ")
 
-4.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab). 
+    *Note:* You can also use Putty or MAC Cygwin if you chose those formats in the earlier lab.  
+    ![Open CloudShell](./images/start-cloudshell.png " ")
+
+4.  Connect to node 1 as the *opc* user (you identified the IP address of node 1 in the Build DB System lab).
 
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 1 Public IP Address>>
     ````
-    ![](./images/racnode1-login.png " ")
+    ![Use SSH to Connect as the OPC User](./images/racnode1-login.png " ")
 
 5. Repeat this step for node 2.
-   
+
     ````
     ssh -i ~/.ssh/sshkeyname opc@<<Node 2 Public IP Address>>
     ps -ef | grep pmon
     ````
-    ![](./images/racnode2-login.png " ")  
+    ![Connect to Node-2 Using SSH](./images/racnode2-login.png " ")  
 
 6. Run the command to determine your database name and additional information about your cluster on **node 1**.  Run this as the *grid* user.
 
@@ -60,13 +60,13 @@ You should have already identified your database name and instance name.  Each p
     crsctl stat res -t
     </copy>
     ````
-    ![](./images/crsctl-1.png " ")
+    ![Use CRSCTL to Display Cluster Resources on Node-1](./images/crsctl-1.png " ")
 
-    ![](./images/crsctl-2.png " ")
-    
-7. Find your database name in the *Cluster Resources* section with the *.db*.  Jot this information down, you will need it for this lab. 
+    ![Use CRSCTL to Display Cluster Resources on Node-2](./images/crsctl-2.png " ")
 
-    ![](./images/db-crsctl.png " ")
+7. Find your database name in the *Cluster Resources* section with the *.db*.  Jot this information down, you will need it for this lab.
+
+    ![Examine Database Resource](./images/db-crsctl.png " ")
 
 
 ## Task 2:  Create a Service
@@ -86,7 +86,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     srvctl start service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
-    ![](./images/lab6-step1-num6.png " ")
+    ![Add a Database Service](./images/lab6-step1-num6.png " ")
 
 2. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
 
@@ -95,7 +95,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     srvctl status service -d aTFdbVm_replacename -s svctest
     </copy>
     ````
-    ![](./images/lab6-step1-num7.png " ")
+    ![Display Database Service Status](./images/lab6-step1-num7.png " ")
 
 3.  Use the lsnrctl utility to list the services on both **node 1** and **node 2** as the *grid* user.
     ````
@@ -103,8 +103,8 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     lsnrctl services
     </copy>
     ````
-    ![](./images/lsnrctl-node1.png " ")
-    ![](./images/lsnrctl-node-2.png " ")
+    ![Use LSNRCTL to Display Registered Services](./images/lsnrctl-node1.png " ")
+    ![Use LSNRCTL to Display Registered Services](./images/lsnrctl-node-2.png " ")
 
 
     Note that this service is only active on one instance at a time, so both **local** listeners will not include an entry for this service. In the example shown here, the listener on racnode2 would **not** have an entry for **Service "svctest..pub.racdblab.oraclevcn.com"*
@@ -117,11 +117,11 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     $ORACLE_HOME/bin/lsnrctl service LISTENER_SCAN2
     </copy>
     ````
-    ![](./images/scan-node2.png " ")
+    ![Set Environment Variables](./images/scan-node2.png " ")
 
 5. Repeat it on **node 1** as well.
 
-    ![](./images/scan-node1.png " ")
+    ![Set Environment Variables](./images/scan-node1.png " ")
 
 
 ## Task 3: Service Failover
@@ -134,8 +134,8 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     </copy>
     ````
     This will show the SMON process id of your database  
-    ![](./images/lab6-step2-num1.png " ")
-    ![](./images/lab6-step2-num1-1.png " ")
+
+    ![Identify SMON Background Process](./images/lab6-step2-num1.png " ")
 
 
 2. In this example the process ID is 29761, which I can pass to the **kill -9 <process id>** command.  Identify your process id and issue the kill command as the *oracle* user
@@ -150,13 +150,13 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 
     ````
     <copy>
-    srvctl status service -d aTFdbVm_replacename -s svctest
+    srvctl status service -d <REPLACE DATABASE NAME> -s svctest
     </copy>
     ````
 
     Depending on where your service was running beforehand, you will notice something similar to
 
-    ![](./images/lab6-step2-num3.png " ")
+    ![Display Database Service Status](./images/lab6-step2-num3.png " ")
 
 
 4. To get the SCAN address run the following command
@@ -173,15 +173,15 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     **sqlplus user/password@//SCAN Address Name/service-name**
     ````
 
-6. Connect via sqlplus and replace the scan address name and the password with the password you chose for your cluster.
-   
+6. Connect through sqlplus and replace the scan address name and the password with the password you chose for your cluster.
+
     ````
     <copy>
     sqlplus sys/W3lc0m3#W3lc0m3#@//<Node2HostName>/svctest.pub.racdblab.oraclevcn.com as sysdba
     </copy>
-    ```` 
+    ````
 
-    ![](./images/lab6-step2-num5-2.png " ")
+    ![Connect Through SQLPLUS](./images/lab6-step2-num5-2.png " ")
 
 
 6. Using a different cloud shell window (connected to either node) open a SQL*Plus connection as SYS to the PDB associated with this service
@@ -190,7 +190,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     <copy>
     sqlplus sys/W3lc0m3#W3lc0m3#@//<PutScanNameHere>/pdb1.pub.racdblab.oraclevcn.com as sysdba
     </copy>
-    ```` 
+    ````
     and run the following SQL statement
 
     ````
@@ -201,9 +201,9 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     exit
     </copy>
     ````
-    This statement will show you the instance this service is running and the number of open connections on this service. 
-    
-    ![](./images/lab6-step2-num6.png " ")
+    This statement will show you the instance this service is running and the number of open connections on this service.
+
+    ![Query V$SESSION to see Connected Sessions](./images/lab6-step2-num6.png " ")
 
 
 7. Relocate the service using srvctl.  Execute the command on **node 2**
@@ -215,7 +215,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ````
     which will move the service from one instance to another:
 
-    ![](./images/lab6-step3-num7.png " ")
+    ![RELOCATE a Database Service](./images/lab6-step3-num7.png " ")
 
     Re-examine the v$session information:
 
@@ -240,7 +240,7 @@ This exercise will demonstrate connection load balancing and why it is important
     srvctl start service -d aTFdbVm_replacename -s unisrv
     </copy>
     ````
-    ![](./images/lab6-step3-num1.png " ")
+    ![Create a UNIFORM Database Service](./images/lab6-step3-num1.png " ")
 
 2. Look at the entry for this server in the **lsnrctl service LISTENER_SCAN2** output. Note that any of the SCAN listeners can be used here.  Run this on **node 2** as the *oracle* user
 
@@ -252,21 +252,21 @@ This exercise will demonstrate connection load balancing and why it is important
     ````
 where you will see similar to:
 
-    ![](./images/lab6-step3-num2.png " ")
+    ![Use LSNRCTL to Examine Registered Services](./images/lab6-step3-num2.png " ")
 
     You should notice that an entry for this service is configured for each instance.
 
-3. Set your oracle environment and edit your tnsnames.ora file (in $ORACLE_HOME/network/admin wherever you are running your client connections from). 
-   
+3. Set your oracle environment and edit your tnsnames.ora file (in $ORACLE_HOME/network/admin wherever you are running your client connections from).
+
     ````
     . oraenv
     <<Press enter>>
     /u01/app/oracle/product/19.0.0.0/dbhome_1
     vi $ORACLE_HOME/network/admin/tnsnames.ora
     ````
-    ![](./images/oraenv.png " ")
+    ![Edit TNSNAME.ORA file to Define Connection Alias](./images/oraenv.png " ")
 
-    ![](./images/tnsnames-1.png " ")
+    ![Edit TNSNAME.ORA file to Define Connection Alias](./images/tnsnames-1.png " ")
 
 
 4. Add the following two entries.  Click **:wq!** to save.
@@ -289,7 +289,7 @@ where you will see similar to:
     </copy>
     ````
 
-    ![](./images/tnsnames-2.png " ")
+    ![Add Aliases to TNSNAMES.ORA File](./images/tnsnames-2.png " ")
 
 5. Run the command to get your scan name
     ````
@@ -305,7 +305,7 @@ where you will see similar to:
     nslookup <PutScanNameHere>
     </copy>
     ````
-    ![](./images/nslookup.png " ")
+    ![Use NSLOOKUP to Translate an IP Address](./images/nslookup.png " ")
 
 7. Run the ping command
 
@@ -314,16 +314,16 @@ where you will see similar to:
     ping <putScanNameHere> -c 2
     </copy>
     ````
-    ![](./images/ping.png " ")
+    ![Run the PING Command to test IP Access](./images/ping.png " ")
 
  8. Use the CLBTEST alias to connect
 
      ````
     <copy>
-    $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST 
+    $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST
     </copy>
     ````
-   
+
 5. Create 10 connections using the alias CLBTEST and look at where the connections were established
 
     ````
@@ -335,7 +335,7 @@ where you will see similar to:
          2     unisrv                   4
 
     ````
-    ![](./images/sqlplus-1.png " ")
+    ![Connect using Connection Load Balancing](./images/sqlplus-1.png " ")
 
 
     The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances. You can instruct the listener to use the load on an instance to balance connection attempts (the listener will store run queue information), but this is not the default.
@@ -364,37 +364,32 @@ where you will see similar to:
     ````
 
 8. Attempt to use the CLBTEST-LOCAL alias to connect as the *oracle* user on **node 1**.  Remember to replace the password with the database password you chose when you provisioned the instance. If the ADDRESS to the instance you just stopped is chosen, you will see the following
-   
+
     ````
-    sudo su - oracle
+    [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST-LOCAL
+    SQL*Plus: Release 19.0.0.0.0 - Production on Mon Aug 24 08:34:32 2020
+    Version 19.7.0.0.0
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+    ERROR:
+    ORA-12514: TNS:listener does not currently know of service requested in connect descriptor
+    Enter user-name:
+    ````
+This address could be repeatedly tried \(it is a random access\)    
 
+The CLBTEST alias uses the SCAN address and will only send requests to the available instances
 
-        ````
-        [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST-LOCAL
-        SQL*Plus: Release 19.0.0.0.0 - Production on Mon Aug 24 08:34:32 2020
-        Version 19.7.0.0.0
-        Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+    ````
+    [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST
+    SQL*Plus: Release 19.0.0.0.0 - Production on Mon Aug 24 08:38:56 2020
+    Version 19.7.0.0.0
+    Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+    Last Successful login time: Mon Aug 24 2020 08:37:33 +00:00
 
-        ERROR:
-        ORA-12514: TNS:listener does not currently know of service requested in connect descriptor
-        Enter user-name:
-        ````
-        This address could be repeatedly tried \(it is a random access\)    
-
-        The CLBTEST alias uses the SCAN address and will only send requests to the available instances
-
-        ````
-        [oracle@racnode1 ~]$ $ORACLE_HOME/bin/sqlplus sh/W3lc0m3#W3lc0m3#@CLBTEST
-        SQL*Plus: Release 19.0.0.0.0 - Production on Mon Aug 24 08:38:56 2020
-        Version 19.7.0.0.0
-        Copyright (c) 1982, 2020, Oracle.  All rights reserved.
-        Last Successful login time: Mon Aug 24 2020 08:37:33 +00:00
-
-        Connected to:
-        Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
-        Version 19.7.0.0.0
-        SQL>
-        ````
+    Connected to:
+    Oracle Database 19c EE Extreme Perf Release 19.0.0.0.0 - Production
+    Version 19.7.0.0.0
+    SQL>
+    ````
 9. The recommended connect string for all Oracle Drivers of version 12.2 or later is:
 
     ````
@@ -424,11 +419,11 @@ where you will see similar to:
      (ADDRESS_LIST =(LOAD_BALANCE=on)
      (ADDRESS = (PROTOCOL = TCP)(HOST=lvracdb-<replaceThisSection>-scan.pub.racdblab.oraclevcn.com)(PORT=1521)))
      (CONNECT_DATA=(SERVICE_NAME = testy.pub.racdblab.oraclevcn.com)))
-   </copy>
+    </copy>
     ````
 
-     ![](./images/tnsnames-3.png " ")
-   
+     ![Add New Alias to TNSNAMES.ORA File](./images/tnsnames-3.png " ")
+
 11. Verify you can connect using this alias.
 
 ## Task 5: Services configured for Application Continuity
@@ -440,6 +435,7 @@ FAN, connection identifier, TAC, AC, switchover, consumer groups, and many other
    ````
    <copy>
    srvctl config database
+   </copy>
    ````
 
 1. Attributes set on the service enable applications to use Application Continuity. Create a service, setting the attributes **failover_restore**, **commit_outcome**, and **failovertype** for **Application Continuity (AC)**. Replace the values for "-d", "-s", "-preferred" and "-available" with those of your system.
@@ -447,18 +443,23 @@ FAN, connection identifier, TAC, AC, switchover, consumer groups, and many other
    ````
    <copy>
    srvctl add service -d <addDatabaseName> -s <myServiceName> -commit_outcome TRUE -failovertype TRANSACTION -failover_restore LEVEL1 -preferred <YourInstance1> -available <YourInstance2> -clbgoal LONG -rlbgoal NONE
+   </copy>
    ````
 2. Create a service named **noac** with no AC settings
 
    ````
    <copy>
    srvctl add service -d <addDatabaseName> -s noac -commit_outcome FALSE -failovertype NONE -failover_restore NONE -preferred <YourInstance1> -available <YourInstance2> -clbgoal LONG -rlbgoal NONE
+   </copy>
    ````
+
 3. Start both services   
+
    ````
    <copy>
    srvctl start service -d <addDatabaseName> -s noac
    srvctl start service -d <addDatabaseName> -s <myServiceName>
+   </copy>
    ````
 The two services you have just created (one named **noac** and another you named) will be used in the next lab.
 
