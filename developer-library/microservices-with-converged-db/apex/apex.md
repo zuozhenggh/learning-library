@@ -1,12 +1,10 @@
-# Create an APEX App to Make Sense of the Data
+# Create an APEX app to view and update the data
 
 ## Overview
 
-This lab will show you how to create an APEX application that will help make sense of the type of data being collected by the microservices created in the previous labs.
+This lab will show you how to create an APEX application that will allow you to view and update the microservice data.
 
 Estimated Lab Time - 10 minutes
-
-Quick walk through on how to create an APEX application that will help make sense of the type of data being collected by the microservices created in the previous labs.
 
 ### Objectives
 
@@ -15,17 +13,17 @@ Quick walk through on how to create an APEX application that will help make sens
 
 ### Prerequisites
 
-* An ATP database (created in Lab 1)
+* An Oracle Autonomous Transaction Processing database (created in Lab 1)
 
 ## Task 1: Create a new workspace in APEX
 
-When you first access APEX you will need to log in as an APEX instance administrator to create a workspace. A workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
+When you first access APEX you will need to log in as an APEX instance administrator to create a workspace. A workspace is a logical domain where you define APEX applications. Each workspace is linked to one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more.
 
-1. Navigate to the ATP Database instance named INVENTORYDB (Display Name) created in Lab 1. Click the **Tools** tab and then the **Open APEX** button.
+1. Navigate to the Oracle Autonomous Transaction Processing database instance named INVENTORYDB (Display Name) created in Lab 1. Click the **Tools** tab and then the **Open APEX** button.
 
     ![](images/click-open-apex.png)
 
-2. Enter the password for the Administration Services and click **Sign In to Administration**. The password should match the one you used when creating the ATP instance.
+2. Enter the password for the Administration Services and click **Sign In to Administration**. The password should match the one you used when creating the Oracle Autonomous Transaction Processing instance.
 
     ![](images/log-in-as-admin-inv.png)
 
@@ -37,7 +35,7 @@ When you first access APEX you will need to log in as an APEX instance administr
 
     ![](images/create-workspace-inv.png)
 
-5. After the workspace is created, click the **INVENTORYUSER** link in the success message. This will log you out of APEX administration so that you can log into your new workspace.
+5. After the workspace has been created, click the **INVENTORYUSER** link in the success message. This will log you out of APEX administration so that you can log into your new workspace.
 
     ![](images/select-inv.png)
 
@@ -99,7 +97,7 @@ In this task, you will create a new APEX app based on the inventory table.
 
 ![](images/click-inv.png)
 
-11. The INVENTORY table data is displayed and can be edited.
+11. The INVENTORY table data will be displayed and can be edited.
 
 ![](images/inv-app.png)
 
