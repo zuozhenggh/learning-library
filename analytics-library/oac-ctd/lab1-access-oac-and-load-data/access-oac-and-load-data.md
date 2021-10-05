@@ -11,11 +11,39 @@ In this first exercise you will connect to the OAC instance, load an excel file,
 Estimated Lab Time: 15 minutes
 
 ### Objectives
+* Provision Analytics Cloud
 * Connect to the OAC instance
 * Load an excel file
 * Enhance and prepare the file for search
 
-## **Task 1**: Connect to the OAC instance
+## **Task 1**: Create an Oracle Analytics Cloud (OAC) Instance
+
+1. Navigate to the Home page and  Menu > Analytics & AI > Analytics Cloud.
+
+![](images/oac_menu.png)
+
+2. Make sure you select the root compartment (unless you have permissions and experience selecting a different one) and click Create Instance.
+
+![](images/oac_create_button.png)
+
+3. Fill the web form with the following information and click Create:
+
+•	Name: < Instance_Name >
+•	Description: < Analytics Instance for Workshop >
+•	Create in Compartment: root compartment, unless you have permissions and experience selecting a different one
+•	Feature Set: Enterprise Analytics
+•	Capacity: OCPU and 1 - Non Production
+•	License Type: License Included
+
+![](images/oac_form.png)
+
+Your Analytics Instance will start provisioning.
+
+![](images/oac_creating.png)
+
+Note: Provisioning an Oracle Analytics Cloud instance can take from 10 (most likely) to 40 minutes.
+
+## **Task 2**: Connect to the OAC instance
 
 Open the browser and enter the ‘OAC URL’ for ‘Oracle Analytics Cloud’ provided. It would be of the format http://host/dv/ui.
 
@@ -48,7 +76,7 @@ Click on Preview option in system setting page.
 
 Note:In the future, Oracle's Redwood theme will be the default look and feel and you won't be able to switch it on or off.
 
-## **Task 2**: Load an excel file
+## **Task 3**: Load an excel file
 
 Donwload the file: [OAC_TD_Expenses.xlsx](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/U54YMX0aiUSEO-XCPI-OqD9RwzrSR1GrCorz6if9vo0Kk_9kX35cXuLjDtJyyAsP/n/sehubemeaprod/b/OAC_LiveLab/o/OAC_TD_Expenses.xlsx)
 
@@ -83,7 +111,7 @@ On the screen you have a preview of the data.
 ![](images/6_data_prep_step.png " ")
 
 
-## **Task 3**: Enhance and prepare the file for search
+## **Task 4**: Enhance and prepare the file for search
 
 
 Now, your data is profiled to provide you with some recommendations to enhance it.
