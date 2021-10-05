@@ -1,4 +1,4 @@
-# Configure Your Host Environment
+# Configure the ZDM Environment
 
 ## Introduction
 In this lab on your host instance, you will:
@@ -18,6 +18,8 @@ The API keys you are generating are to allow the OCI CLI you installed on your h
 The reason your OCI directory is being copied to 'zdmuser', 'oracle', and 'opc' is so that each of these 3 users can utilize the OCI CLI.
 
 Estimate Lab Time: 20 minutes
+
+**Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually hit enter a second time. To avoid statement failure, please be cognizant of this and hit enter twice when pasting.
 
 ## **Task 1: Install OCI CLI**
 1. Return to your compute instance command prompt as 'opc'. If you navigated away while creating your target database, you can reconnect through your command prompt with the following command. Replace < sshkeyname > and < Your Compute Instance Public IP Address > with the key file name and IP address of your source compute instance:
@@ -76,6 +78,7 @@ Estimate Lab Time: 20 minutes
     sudo yum install <package>
     </copy>
     ```
+
 
 2. Let's download the ZDM binaries to your local machine (laptop) and then scp / sftp it to the compute node where the ZDM Service node will be deployed. Copy the following link and open it in your favorite browser:
 
@@ -180,7 +183,6 @@ Estimate Lab Time: 20 minutes
 
     ![Check Status](./images/check-status.png)
 
-
 ## **Task 4: Generating API Keys**
 1. As 'zdmuser' go to 'zdmhome' directory.
 
@@ -203,16 +205,16 @@ Estimate Lab Time: 20 minutes
     ```
 
 3. On your OCI Dashboard navigate to and click on your user profile in the top right. Select the top option, your user.
-    ![Dashboard Profile](./images/dashboard-profile.PNG)
+    ![Dashboard Profile](./images/dashboard-profile.png)
 
 4. Select 'API Keys' and 'Add API Key'.
-    ![Add API Keys](./images/add-api-keys.PNG)
+    ![Add API Keys](./images/add-api-keys.png)
 
-5. Paste your public OCI API key file you catted and copied to clipboard from above.
-    ![Paste Public Key](./images/paste-pub-key.PNG)
+5. Paste your public OCI API key file you copied above and click "Add Key".
+    ![Paste Public Key](./images/paste-pub-key.png)
 
 6. You will see a configuration file preview. Copy its contents to clipboard. You will be using it to populate your configuration file in the following step.
-    ![Configuration File Preview](./images/config-file-preview.PNG)
+    ![Configuration File Preview](./images/config-file-preview.png)
 
 ## **Task 5: Creating Your Configuration File and Copying Your Directory**
 1. Back in your command prompt create your config file.
@@ -241,7 +243,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![Update Path](./images/update-path.PNG)
+    ![Update Path](./images/update-path.png)
 
 5. Press the escape key to escape insert.
 
@@ -289,24 +291,43 @@ Estimate Lab Time: 20 minutes
     vi config
     </copy>
     ```
+10. 'i' command lets you insert text into the file.
 
-10. Update key_file path to ~/.oci/oci\_api\_key.pem and then save and quit the vi editor.
+    ```
+    <copy>
+    i
+    </copy>
+    ```
+
+11. Update the last line, key_file path, to ~/.oci/oci\_api\_key.pem and then save and quit the vi editor.
 
     ```
     <copy>
     ~/.oci/oci_api_key.pem
     </copy>
     ```
+    ![Update Key File Path](./images/update-keyfile-path.png)
 
-11. Lock the private key file.
 
+12. To save and quit vi editor.
+
+    ```
+    <copy>
+    :wq!
+    </copy>
+    ```
+
+
+13. Lock the private key file.
     ```
     <copy>
     chmod go-rwx ~/.oci/oci_api_key.pem
     </copy>
     ```
 
-12. Test OCI CLI as 'opc'. Ignore any warnings. If the output is similar to the image below the test was successful.
+
+
+14. Test OCI CLI as 'opc'. Ignore any warnings. If the output is similar to the image below the test was successful.
 
     ```
     <copy>
@@ -314,9 +335,9 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![OCI CLI Test](./images/cli-test.PNG)
+    ![OCI CLI Test](./images/cli-test.png)
 
-13. Repeat the steps for 'oracle'.
+15. Repeat the steps for 'oracle'.
 
     ```
     <copy>
@@ -327,20 +348,46 @@ Estimate Lab Time: 20 minutes
     cd .oci
     cp /u01/app/zdmhome/.oci/config /home/oracle/.oci
     cp /u01/app/zdmhome/.oci/oci_api_key.pem /home/oracle/.oci
-    cp /u01/app/zdmhome/.oci/oci_api_key_public.pem /home/oracle/.oci
-    vi config		
+    cp /u01/app/zdmhome/.oci/oci_api_key_public.pem /home/oracle/.oci		
     </copy>
     ```
 
-14. Update the key\_file path to ~/.oci/oci\_api\_key.pem and save and quit vi editor.
+
+16. Update the config file.
+
+    ```
+    <copy>
+    vi config
+    </copy>
+    ```
+17. 'i' command lets you insert text into the file.
+
+    ```
+    <copy>
+    i
+    </copy>
+    ```
+
+18. Update the last line, key_file path, to ~/.oci/oci\_api\_key.pem and then save and quit the vi editor.
 
     ```
     <copy>
     ~/.oci/oci_api_key.pem
     </copy>
     ```
+    ![Update Key File Path](./images/update-keyfile-path.png)
 
-15. Lock private key file.
+
+19. To save and quit vi editor.
+
+    ```
+    <copy>
+    :wq!
+    </copy>
+    ```
+
+
+20. Lock private key file.
 
     ```
     <copy>
@@ -348,15 +395,17 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-16. Test OCI CLI with 'oracle'.
+21. Test OCI CLI with 'oracle'. Ignore any warnings. If the output is similar to the image below the test was successful.
 
     ```
     <copy>
     oci iam region list
     </copy>
     ```
+    ![OCI CLI Test](./images/cli-test.png)
 
-17. Lock 'zdmuser' private key file.
+    
+22. Lock 'zdmuser' private key file.
 
     ```
     <copy>
@@ -403,16 +452,245 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![RSA Key Check](./images/cat-rsa.PNG)    
+    ![RSA Key Check](./images/cat-rsa.png)    
 
-5. Switch back to 'zdmuser':
+
+## **Task 7: Configuring Connectivity Between ZDM and the OGG Hub**
+
+1. In order to configure connectivity between ZDM and the OGG Hub, you will need to modify the etc/hosts file. Let's first gather the relevant information, you will need to OGG Hub hostname, it's private IP and it's Internal FQDN.
+
+2. From your cloud account, select the top left hamburger menu and click on the __Compute__ Option. It will display different options, please click on __Instances__
+
+    ![Compute](./images/compute-menu.png)   
+
+3. Right next to the Oracle GoldenGate Hub instance, you will see a Public IP address and a Private IP address. Copy the Private IP Adress and save it, you will need in the following steps. Then, proceed to Select the Oracle GoldenGate Compute Instances by clicking it's name.
+
+    ![Compute OGG](./images/compute-ogg.png)
+
+4. On the Oracle GoldenGate Hub instance __Instance Information__ tab, scroll down and copy the instances's __Hostname__ and the __Internal FQDN__ information. You might have to click on __Show__ in order for the information to reveal.
+
+
+
+    ![Compute OGG 2](./images/compute-ogg-2.png)
+
+5. Having copied the information, go back to your Cloud Shell and edit the /etc/hosts file
+
+    ```
+    <copy>
+    sudo vi /etc/hosts
+    </copy>
+    ```
+
+6. 'i' command lets you insert text into the file.
+
+    ```
+    <copy>
+    i
+    </copy>
+    ```
+
+7. Add an entry at the botttom of the file for the OGG Hub. Use the following as an example but update with the values current for your environment with the information copied above:
+
+    ```
+    <copy>
+    ogg_host_private_ip ogg_public_fqdn ogg_hostname 
+    </copy>
+    ```
+
+8. To save and quit vi editor.
+
+    ```
+    <copy>
+    :wq!
+    </copy>
+    ```
+
+
+## **Task 8: Adding OGG self-signed Certificate**
+
+Oracle GoldenGate Hub uses a self-signed certificate which can cause an issue, in order to preempt this please copy the following so that it can be pasted on a file to be created on next step. 
+
+1. As the zdmuser, open the vi editor for a new file named zdm_add_cert.sh
 
     ```
     <copy>
     sudo su - zdmuser
+    vi zdm_add_cert.sh
+    </copy>
+    ```
+2. 'i' command lets you insert text into the file.
+
+    ```
+    <copy>
+    i
     </copy>
     ```
 
+3. Paste the contents of the following script.
+
+    ```
+    <copy>
+    #!/bin/bash
+    #
+    # Copyright (c) 2019, 2020, Oracle and/or its affiliates. All rights reserved.
+    #
+    # NAME
+    # Workaround for SunCertPathBuilderException: unable to find valid certification path to requested target
+    #
+    # DESCRIPTION
+    # GoldenGate hub created using OCI Marketplace will have
+    # an Nginx server with a self-signed certificate which
+    # will cause above Java error.
+    # This script adds the specified GoldenGate hub's
+    # self-signed certificate to ZDM Server's JDK trust store.
+    #
+    # NOTES
+    # Set ORACLE_HOME environment variable to execute this script.
+    # Usage: zdm_add_cert.sh <gghub_hostname_or_ip>
+    #
+    #
+    REMHOST=$1
+    REMPORT=443
+    #Make sure we use the short host name (-s is not available in Solaris)
+    LOCALHOST_NAME=`/bin/hostname | /bin/cut -d . -f 1 | tr '[:upper:]' '[:lower:]'`
+    ORACLE_BASE=`$ORACLE_HOME/bin/orabase`
+    if [ $? -ne 0 ]; then
+    echo "ERROR: failed to determine Oracle base"
+    exit 1
+    fi
+    echo "stopping zdmserver"
+    $ORACLE_HOME/bin/zdmservice stop
+    if [ $? -eq 1 ]; then
+    echo "ERROR: failed to stop zdmserver"
+    exit 1
+    fi
+    JDKHOME="$ORACLE_HOME/jdk"
+    KEYTOOL="$JDKHOME/jre/bin/keytool"
+    KEYSTORE_PASS=changeit
+    JDKCACERTS="$JDKHOME/jre/lib/security/cacerts"
+    TMPDIR="/tmp/"
+    CERT_TO_IMPORT="${TMPDIR}${REMHOST}_${REMPORT}.pem"
+    for CACERTS in `ls $JDKCACERTS`
+    do
+    if [ -e "$CACERTS" ]
+    then
+    echo "Adding certs to $CACERTS"
+    set -e
+    rm -f $CERT_TO_IMPORT
+    if openssl s_client -connect $REMHOST:$REMPORT 1> $TMPDIR/keytool_stdout 2> $TMPDIR/output </dev/null
+    then
+    :
+    else
+    cat $TMPDIR/keytool_stdout
+    cat $TMPDIR/output
+    exit 1
+    fi
+    echo "extracting certificate from $CERT_TO_IMPORT"
+    if sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' < $TMPDIR/keytool_stdout > $CERT_TO_IMPORT
+    then
+    :
+    else
+    echo "ERROR: Unable to extract the certificate from $CERT_TO_IMPORT ($?)"
+    cat $TMPDIR/output
+    exit 1
+    fi
+    if $KEYTOOL -list -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT >/dev/null
+    then
+    echo "Key of $REMHOST found, deleting it."
+    $KEYTOOL -delete -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT
+    fi
+    $KEYTOOL -import -trustcacerts -noprompt -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT -file $CERT_TO_IMPORT
+    if [ $? -ne 0 ]; then
+    echo "ERROR: import failed"
+    exit 1
+    fi
+    if $KEYTOOL -list -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT -keystore "$CACERTS" >/dev/null
+    then
+    echo "Key of $REMHOST found in cacerts, deleting it."
+    $KEYTOOL -delete -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT -keystore "$CACERTS"
+    fi
+    $KEYTOOL -import -trustcacerts -noprompt -keystore "$CACERTS" -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT -file $CERT_TO_IMPORT
+    if [ $? -ne 0 ]; then
+    echo "ERROR: import failed"
+    exit 1
+    fi
+    fi
+    done
+    cp $JDKCACERTS $ORACLE_BASE/crsdata/$LOCALHOST_NAME/security/
+    if [ $? -ne 0 ]; then
+    echo "ERROR: Failed to copy JRE cacerts file for ZDM"
+    exit 1
+    fi
+    echo "starting zdmserver"
+    $ORACLE_HOME/bin/zdmservice start
+    if [ $? -ne 0 ]; then
+    echo "ERROR: failed to start zdmserver"
+    exit 1
+    fi
+    </copy>
+    ```
+
+
+4. To save and quit vi editor press the ESC key and then copy the following and press Enter.
+
+    ```
+    <copy>
+    :wq!
+    </copy>
+    ```
+
+5. The file needs to have executable permissions, grant this by executing the following:
+
+    ```
+    <copy>
+    chmod a+x zdm_add_cert.sh
+    </copy>
+    ```
+
+6. Set the Oracle Home
+
+    ```
+    <copy>
+    export ORACLE_HOME=/u01/app/zdmhome
+    </copy>
+    ```
+ 
+7. Execute the Script, replace <gghub_hostname_or_ip> with the GG Hub Compute Instance IP
+    
+    ```
+    <copy>
+    ./zdm_add_cert.sh <gghub_hostname_or_ip>
+    </copy>
+    ```    
+
+8. Executing the Script correctly will trigger the ZDM Service to stop and then start again, wait for some minutes for this operation to complete succesfully.        
+
+
+
+## **Task 9: Updating IPTables on the Source DB Server**
+
+It is important to update the IPTables on the Source DB Server. In order to do so: 
+
+1. Switch to the opcuser, verify the Cloud Shell prompt is on __opc@workshop__ after entering exit: 
+
+    ```
+    <copy>
+    exit
+    </copy>
+    ```
+
+2. Then proceed to run the following command in Cloud Shell:    
+    ```
+    <copy>
+    sudo iptables -A IN_public_allow -p tcp -m tcp --dport 1521 -m conntrack --ctstate NEW,UNTRACKED -j ACCEPT
+    </copy>
+    ```
+
+You may now [proceed to the next lab](#next). 
+
+
 ## Acknowledgements
 * **Author** - Zachary Talke, Solutions Engineer, NA Tech Solution Engineering
-* **Last Updated By/Date** - Zachary Talke, July 2021
+- **Contributors** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
+* **Contributors** - LiveLabs Team, ZDM Development Team
+* **Last Updated By/Date** - Ricardo Gonzalez, August 2021
