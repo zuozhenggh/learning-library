@@ -10,6 +10,10 @@
 
         },
         {
+            "title": "Introduction",
+            "filename": "../../intro/intro-sandbox.md"
+        },
+        {
             "title": "Lab 1: Access OAC and load data",
             "filename": "./../../lab1-access-oac-and-load-data/access-oac-and-load-data.md"
         },
