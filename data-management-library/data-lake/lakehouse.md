@@ -16,8 +16,8 @@ Estimated Time:15 minutes
 ## Task 1: SQL Queries
 
 ## Next Steps
-Congratulations! You have now completed the Oracle Cloud Lake House LiveLab.
-Be sure to check out the labs on Oracle Machine Learning and how the Lake House fits into the Movie Stream story and lab.
+Congratulations! You have now completed the Oracle Cloud Lakehouse LiveLab.
+Be sure to check out the labs on Oracle Machine Learning and how the Lakehouse fits into the Movie Stream story and lab.
 
 ## Acknowledgements
 

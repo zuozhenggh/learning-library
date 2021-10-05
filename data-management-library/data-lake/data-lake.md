@@ -62,8 +62,15 @@ After Saving the dataflow, click on Validate, and the Snapshot should show 0s fo
 
 ![Create Data Flow](./images/dataflow10.png " ")
 
+## Task 2: Create an Application for Automation
 
-## Task 2: Create and Schedule OCI Data Flow Apps for Automation
+Now you are going to navigate back to the data integration workspace, and click on Application. Click on create application.
+
+![Create Application](./images/create_app.png " ")
+
+Click on Save and Close. It is just a shell of an application where you can now publish tasks to be scheduled and run through the application.
+
+## Task 3: Create and Schedule OCI Data Flow Apps for Automation
 
 Now you are going to navigate back to the project. Click on Task under Details and click on Create Task. This task is going to be included in the application.
 
@@ -71,6 +78,13 @@ Now you are going to navigate back to the project. Click on Task under Details a
 
 Under Data Flow, you are going to click Select and add the Data Flow that you just finished creating in the previous task. Then click Save and Close.
 
+Click on the menu for the task and select Publish to Application.
+
+![Add Task](./images/add_task.png " ")
+
+After the task has been added you will see run task or schedule, and you can navigate to the application. For regular loads of this data and automation, you are going to want to schedule the job to run. Again to see how this is working now, click on Run.
+
+![Run App](./images/run_app.png " ")
 
 You may now [proceed to the next lab](#next).
 
