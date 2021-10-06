@@ -141,12 +141,12 @@ This lab assumes you have completed the following labs:
 
 ## Task 3: Enabling In-Memory
 
-The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account.
+The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called pdb1 you must supply this alias when connecting to the ssb account.
 
 1.  Login to the pdb as the SSB user.  
     ````
     <copy>
-    sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
+    sqlplus ssb/Ora_DB4U@localhost:1521/pdb1
     set pages 9999
     set lines 200
     </copy>

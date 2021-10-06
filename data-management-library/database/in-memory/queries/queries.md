@@ -25,7 +25,7 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     ````
     <copy>
     cd /home/oracle/labs/inmemory/Part2
-    sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
+    sqlplus ssb/Ora_DB4U@localhost:1521/pdb1
     set pages 9999
     set lines 100
     </copy>
@@ -176,8 +176,3 @@ These significant performance improvements are possible because of Oracle’s un
 - **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
 - **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
 - **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, August 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.  
