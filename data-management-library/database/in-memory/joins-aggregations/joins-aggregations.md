@@ -19,7 +19,7 @@ This lab assumes you have:
     - Lab: Initialize Environment
     - Lab: Querying the In-Memory Column Store
 
-## Step: In-Memory Joins and Aggregation
+## Task 1: In-Memory Joins and Aggregation
 
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the fact table, LINEORDER, and one of more dimension tables and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond just the basic performance benefits of scanning data in a columnar format.
 
