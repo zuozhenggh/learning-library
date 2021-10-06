@@ -36,7 +36,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     ![](images/num1.png " ")
 
-2.  Join the LINEORDER and DATE\_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  Run the script 01\_join\_im.sql or run the queries below..  
+2.  Join the LINEORDER and DATE\_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  Run the script *01\_join\_im.sql* or run the queries below..  
 
     ```
     <copy>
@@ -62,7 +62,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     The IM column store has no problem executing a query with a join because it is able to take advantage of Bloom filters.  It’s easy to identify Bloom filters in the execution plan. They will appear in two places, at creation time and again when it is applied. Look at the highlighted areas in the plan above. You can also see what join condition was used to build the Bloom filter by looking at the predicate information under the plan.
 
-3.  Let's run against the buffer cache now. Run the script `02_join_buffer.sql` or run the queries below.
+3.  Let's run against the buffer cache now. Run the script *`02_join_buffer.sql`* or run the queries below.
 
     ```
     <copy>
@@ -88,7 +88,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
     ```
     ![](images/num3.png)
 
-4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results. Run the script 03\_3join\_im.sql or run the queries below.
+4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results. Run the script *03\_3join\_im.sql* or run the queries below.
 
     ```
     <copy>
@@ -125,7 +125,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     This is where Oracle’s 30 plus years of database innovation kick in. By embedding the column store into Oracle Database we can take advantage of all of the optimizations that have been added to the database. In this case, the Optimizer has switched from its typical left deep tree execution to a right deep tree execution plan using an optimization called ‘swap\_join\_inputs’. What this means for the IM column store is that we are able to generate multiple Bloom filters before we scan the necessary columns for the fact table, meaning we are able to benefit by eliminating rows during the scan rather than waiting for the join to do it.
 
-5. Now let’s execute the query against the buffer cache. Run the script 04\_3join\_buffer.sql or run the queries below.
+5. Now let’s execute the query against the buffer cache. Run the script *04\_3join\_buffer.sql* or run the queries below.
 
     ```
     <copy>
@@ -163,7 +163,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
 6.  Up until this point we have been focused on joins and how the IM column store can execute them incredibly efficiently. Let’s now turn our attention to more OLAP style “What If” queries.  In this case our query examines the yearly profits from a specific region and manufacturer over our complete data set.
 Oracle has introduced a new Optimizer transformation, called Vector Group By. This transformation is a two-part process not dissimilar to that of star transformation.  First, the dimension tables are scanned and any WHERE clause predicates are applied. A new data structure called a key vector is created based on the results of these scans. The key vector is similar to a Bloom filter as it allows the join predicates to be applied as additional filter predicates during the scan of the fact table, but it also enables us to conduct the group by or aggregation during the scan of the fact table instead of having to do it afterwards. The second part of the execution plan sees the results of the fact table scan being joined back to the temporary tables created as part of the scan of the dimension tables, that is defined by the lines that start with LOAD AS SELECT. These temporary tables contain the payload columns (columns needed in the select list) from the dimension table(s). In 12.2 these tables are now pure in-memory tables as evidenced by the addition of the (CURSOR DURATION MEMORY) phrase that is appended to the LOAD AS SELECT phrases. The combination of these two phases dramatically improves the efficiency of a multiple table join with complex aggregations. Both phases are visible in the execution plan of our queries.
-To see this in action execute the query 10\_vgb\_im.sql or run the queries below.     
+To see this in action execute the query *10\_vgb\_im.sql* or run the queries below.     
 
     ```
     <copy>
@@ -200,7 +200,7 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
   Our query is more complex now and if you look closely at the execution plan you will see the creation and use of :KV000n structures which are the Key Vectors along with the Vector Group By operation.
 
-7. To see how dramatic the difference really is we can run the same query but we will disable vector group by operation. Run the script 11\_novgb\_im.sql or run the queries below.
+7. To see how dramatic the difference really is we can run the same query but we will disable vector group by operation. Run the *script 11\_novgb\_im.sql* or run the queries below.
 
   ```
   <copy>
