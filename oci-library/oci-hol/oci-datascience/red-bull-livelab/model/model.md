@@ -83,23 +83,23 @@ To begin with, we are going to be building our machine learning model based on t
 
 Estimated Time: 40 minutes
 
-<b> Objectives </b>
+### Objectives
 
 In this lab, you will:
 * Execute the notebook ```04.ML_Modelling.ipynb``` to build and implement a mchine learning model for our use case
 * Machine learning model exercise for Developers
 
-<b> Prerequisites </b>
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Execute the notebook ```04.ML_Modelling.ipynb``` to build and implement a mchine learning model for our use case
+## **Task 1**: Execute the notebook 
 
   Navigate to the ``` /redbull-analytics-hol/beginners/``` directory in your Jupyter Notebook session and execute ``` 04.ML_Modelling.ipynb``` 
 
   Here is a detailed description on how we approached modelling our predictions in this lab, so that you understand how we came to the conclusions. 
 
-<b> Analyzing the Data </b>
+1. <b> Analyze the Data </b>
     
   _Feature Importance_
 
@@ -118,14 +118,16 @@ In this lab, you will:
 
   Prior to training, you need to split your dataset into two or more parts of unequal size that still represent the data well.
 
-  1. Training. This part of the dataset is fit to your model to train it. This set constitutes the majority of the original dataset.
-  2. Testing. A test dataset is an independent group of data, often a subset of the original data, that you use to confirm the performance of the model you built.
-  3. Validating. A validation set is a smaller independent group of examples that you use to tune the model's hyperparameters, or architecture, to improve the model. Depending on your data's size and the question you are asking, you might not need to build this third set.
+  a. **Training.** This part of the dataset is fit to your model to train it. This set constitutes the majority of the original dataset.
+  
+  b.  **Testing.** A test dataset is an independent group of data, often a subset of the original data, that you use to confirm the performance of the model you built.
+
+  c.  **Validating.** A validation set is a smaller independent group of examples that you use to tune the model's hyperparameters, or architecture, to improve the model. Depending on your data's size and the question you are asking, you might not need to build this third set.
 
 
 
 
-<b> Building the Model </b>
+2. <b> Build the Model </b>
 
   Using your training data, your goal is to build a model, or a statistical representation of your data, using various algorithms to train it. Training a model exposes it to data and allows it to make assumptions about perceived patterns it discovers, validates, and accepts or rejects.
 
@@ -152,7 +154,7 @@ In this lab, you will:
   ![Image alt text](./images/overfit.png)
 
 
-## **STEP 2:** Machine learning model exercise for Developers
+## **Task 2:** Machine learning model exercise for Developers
 
 Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Model considering both “Drivers” and “F1 Team/Constructor” Information.
 
@@ -242,6 +244,7 @@ Modify final section of Notebook “04.ML_Modelling.ipynb” to implement a Mode
 
     ![Image alt text](./images/picture13.png)
 
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer

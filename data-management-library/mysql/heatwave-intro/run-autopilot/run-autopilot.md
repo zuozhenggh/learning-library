@@ -10,7 +10,7 @@ MySQL Autopilot provides machine learning automation that improves performance, 
 In this lab, you will learn how to use two of the MySQL Autopilot advisors (Auto Encoding and Auto Data Placement) to optimize HeatWave memory usage and performance for your workload
 
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 10 minutes
 
 
 ### Objectives
