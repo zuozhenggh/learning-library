@@ -86,7 +86,7 @@ Run a query on a sample Oracle Autonomous Database data set.
 
 Please *proceed to the next lab*.
 
-## Want to learn more?
+## Learn more
 
 Go to [the documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sql-developer-web.html#GUID-102845D9-6855-4944-8937-5C688939610F) on connecting with the built-in Oracle Database Actions.
 
