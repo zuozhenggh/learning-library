@@ -24,13 +24,14 @@ This lab assumes you have:
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the fact table, LINEORDER, and one of more dimension tables and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond just the basic performance benefits of scanning data in a columnar format.
 
 1.  Let's switch to the Part3 folder and log back in to the PDB.
+
     ```
     <copy>
     cd /home/oracle/labs/inmemory/Part3
     sqlplus ssb/Ora_DB4U@localhost:1521/pdb1
     set pages 9999
     set lines 100
-    <copy>    
+    </copy>    
     ```
 
     ![](images/num1.png " ")
@@ -164,37 +165,37 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 Oracle has introduced a new Optimizer transformation, called Vector Group By. This transformation is a two-part process not dissimilar to that of star transformation.  First, the dimension tables are scanned and any WHERE clause predicates are applied. A new data structure called a key vector is created based on the results of these scans. The key vector is similar to a Bloom filter as it allows the join predicates to be applied as additional filter predicates during the scan of the fact table, but it also enables us to conduct the group by or aggregation during the scan of the fact table instead of having to do it afterwards. The second part of the execution plan sees the results of the fact table scan being joined back to the temporary tables created as part of the scan of the dimension tables, that is defined by the lines that start with LOAD AS SELECT. These temporary tables contain the payload columns (columns needed in the select list) from the dimension table(s). In 12.2 these tables are now pure in-memory tables as evidenced by the addition of the (CURSOR DURATION MEMORY) phrase that is appended to the LOAD AS SELECT phrases. The combination of these two phases dramatically improves the efficiency of a multiple table join with complex aggregations. Both phases are visible in the execution plan of our queries.
 To see this in action execute the query 10\_vgb\_im.sql or run the queries below.     
 
-  ```
-  <copy>
-  set timing on
+    ```
+    <copy>
+    set timing on
 
-  SELECT
-    d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
-  from
-    LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
-  where
-    l.lo_orderdate = d.d_datekey
-    and l.lo_partkey = p.p_partkey
-    and l.lo_suppkey = s.s_suppkey
-    and l.lo_custkey = c.c_custkey
-    and s.s_region = 'AMERICA'
-    and c.c_region = 'AMERICA'
-  group by
-    d.d_year, c.c_nation
-  order by
-    d.d_year, c.c_nation;
+    SELECT
+      d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
+    from
+      LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
+    where
+      l.lo_orderdate = d.d_datekey
+      and l.lo_partkey = p.p_partkey
+      and l.lo_suppkey = s.s_suppkey
+      and l.lo_custkey = c.c_custkey
+      and s.s_region = 'AMERICA'
+      and c.c_region = 'AMERICA'
+    group by
+      d.d_year, c.c_nation
+    order by
+      d.d_year, c.c_nation;
 
-  set timing off
+    set timing off
 
-  select * from table(dbms_xplan.display_cursor());
+    select * from table(dbms_xplan.display_cursor());
 
-  @../imstats.sql
-  </copy>
-  ```
+    @../imstats.sql
+    </copy>
+    ```
 
-  ![](images/vgb-im-p1.png)
+    ![](images/vgb-im-p1.png)
 
-  ![](images/vgb-im-p2.png)
+    ![](images/vgb-im-p2.png)
 
 
   Our query is more complex now and if you look closely at the execution plan you will see the creation and use of :KV000n structures which are the Key Vectors along with the Vector Group By operation.
@@ -275,41 +276,41 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
 9. And finally let's take a look at how our query runs in the row-store with no Database In-Memory optimizations. Run the script 13\_novgb\_buffer.sql or run the queries below.
 
-  ```
-  <copy>
-  set timing on
-  alter session set inmemory_query = disable;
+    ```
+    <copy>
+    set timing on
+    alter session set inmemory_query = disable;
 
-  SELECT /*+ NO_VECTOR_TRANSFORM */
-    d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
-  from
-    LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
-  where
-    l.lo_orderdate = d.d_datekey
-    and l.lo_partkey = p.p_partkey
-    and l.lo_suppkey = s.s_suppkey
-    and l.lo_custkey = c.c_custkey
-    and s.s_region = 'AMERICA'
-    and c.c_region = 'AMERICA'
-  group by
-    d.d_year, c.c_nation
-  order by
-    d.d_year, c.c_nation;
+    SELECT /*+ NO_VECTOR_TRANSFORM */
+      d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
+    from
+      LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
+    where
+      l.lo_orderdate = d.d_datekey
+      and l.lo_partkey = p.p_partkey
+      and l.lo_suppkey = s.s_suppkey
+      and l.lo_custkey = c.c_custkey
+      and s.s_region = 'AMERICA'
+      and c.c_region = 'AMERICA'
+    group by
+      d.d_year, c.c_nation
+    order by
+      d.d_year, c.c_nation;
 
-  set timing off
+    set timing off
 
-  select * from table(dbms_xplan.display_cursor());
+    select * from table(dbms_xplan.display_cursor());
 
-  @../imstats.sql
-  </copy>
-  ```
+    @../imstats.sql
+    </copy>
+    ```
 
    ![](images/13-novgb-buffer-p1.png)
 
    ![](images/13-novgb-buffer-p2.png)
 
 
-  Compare the time from Step 6 at 0.99 seconds to the time running the query in the row-store of 7.17 seconds. Quite a dramatic difference. This is why we say that you can expect a 3-8x performance improvement with In-Memory Aggregation.
+   Compare the time from Step 6 at 0.99 seconds to the time running the query in the row-store of 7.17 seconds. Quite a dramatic difference. This is why we say that you can expect a 3-8x performance improvement with In-Memory Aggregation.
 
 
 ## Conclusion
