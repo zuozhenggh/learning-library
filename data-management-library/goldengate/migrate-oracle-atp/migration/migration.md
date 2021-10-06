@@ -8,12 +8,22 @@ Up to now, we have created all of the necessary resources using Terraform in OCI
 
 ### Objectives
 
-In this lab, we will configure _**two extract**_ processes at the source database and _**two replicat**_ processes at the target database:
-* An extract for **changed data capture**. This process will start by capturing changes also create some files called trail files. We will use these files after the initial load finish at the target database. Let's call it **the primary extract** during this workshop.
+Many Oracle Cloud Infrastructure (OCI) GoldenGate customers overlook the need to ensure that 
+the source and target database schemas to be replicated are in sync before replicating the data. 
+GoldenGate’s underlying architecture for data replication ensures 100% consistency for all 
+changes that occur on the source database. For each change on the source, such as an update or delete, GoldenGate guarantees the transaction was completed on the target. If the data didn’t exist on the target for an update or delete, then the replication of the transaction will fail and stop with an abnormal error. Many first-time GoldenGate users don’t understand this guaranteed consistency architecture and expect that GoldenGate would ignore these errors by default. However, if this was the case, then the target data would never match the source data.
+
+For the purposes of this lab, the source database is an on-premise 12c database and the target is Autonomous database.  There are seven source tables in HR schema and each table and associated resources, such as primary key constraints, will be created in the target schema as part of the target instantiation. 
+
+To complete the lab, we will configure _**two extract**_ processes at the source database and _**two replicat**_ processes at the target database:
+
+* An extract for **changed data capture**. This process will start by capturing changes also create some files called trail files. We will use these files after the initial load finish at the target database. Let's call it **the primary extract** during this workshop. 
 
 * We will connect to the source database and retrieve the oldest available System Change Number (SCN) using SQLPlus connection. This SCN will be used to the instantiation SCN, in other words, it means we will export database rows until that given SCN.
 
 * The migration step needs another 'special' type of extract process while changes are being captured by the first extract process from the source database. This 'special' process is called the **Initial-Load extract**. It captures data from a specified list of tables and later will be loaded into target database tables using the SCN.
+
+	>**NOTE:** The Oracle Database expdp and impdp are fully documented in the Oracle Documentation. You can also use the Replicate Data Using OCI GoldenGate, and it is preferred method of instantiation. However, we will use simple initial-load for purpose of this lab. You can also use [this quick start guide](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=797).
 
 * When the initial-load extract finishes at the source, we will create the first replicat process to apply those changes. We will call it **Initial-Load replicat**, it is responsible for populating the target database using extracted data by the initial-load extract.
 
@@ -130,6 +140,8 @@ We will do the below tasks:
 6. Make sure everything is correct until this stage. Click **Create and Run** to start our extract.
 
 	![](/images/3.goldengate_ext_5.png)
+
+	>**NOTE:** You need to make sure [purge old trail files](https://docs.oracle.com/en/middleware/goldengate/core/21.3/ggmas/working-data-replications.html#GUID-41771EA7-8C7B-40D9-80EF-AF4DC0CA2FB5) in production scenario. The Purge Trail page works the same way as the Manager `PURGEOLDEXTRACTS` parameter in the Classic Architecture. It allows you to purge trail files when Oracle GoldenGate has finished processing them. Automating this task ensures that the trail files are periodically deleted to avoid excessive consumption of disk space. 
 
 ## **Task 5**: Get the SCN from The Source Database
 
