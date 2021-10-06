@@ -1,8 +1,8 @@
-# Polyglot Microservices
+# Polyglot microservices
 
 ## Introduction
 
-The illustration below shows four microservices – Order, Inventory, Delivery, Supplier, and the infrastructure required to run them.
+The illustration below shows four microservices–Order, Inventory, Delivery, Supplier, and the infrastructure required to run them.
 
 ![](images/architecture.png " ")
 
@@ -23,11 +23,11 @@ Quick walk through on how to switch the Inventory microservice to Python while r
 
 ### Prerequisites
 
-This lab assumes you have already completed the previous labs.
+This lab assumes you have already completed the earlier labs.
 
 ## Task 1: Undeploy the Java Helidon MP Inventory Microservice
 
-1. To undeploy the Inventory Helidon MP service, open the Cloud Shell and go to the
+1. To undeploy the Inventory Helidon MP service, open Cloud Shell and go to the
     inventory-helidon folder, using the following command.
 
     ```
@@ -86,7 +86,7 @@ In this step you can choose between six different implementations of the Invento
 
 ## Task 3: Verify application functionality
 
-1. Repeat **Lab 2: Step 3** to verify that the functionality of the GrabDish store remains the same while using the new implementation.  You will need to use different order ID's, for example 166 and 167.
+1. Repeat **Lab 2: Step 3** to verify that the functionality of the GrabDish store remains the same while using the new implementation. You will need to use different order ID's, for example 166 and 167.
 
 ## Task 4: Re-deploy the Java Helidon MP Inventory Microservice
 
