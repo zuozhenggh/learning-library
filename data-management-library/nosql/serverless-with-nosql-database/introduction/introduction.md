@@ -1,4 +1,4 @@
-# Discover serverless apps using Oracle NoSQL Database Cloud Service
+# Introduction
 
 ## About this Workshop
 
