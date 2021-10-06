@@ -4,10 +4,10 @@ create or replace procedure moviestream_write
 ) as 
 begin
     dbms_output.put_line(to_char(systimestamp, 'DD-MON-YY HH:MI:SS') || ' - ' || message); 
-    
+
     if message is not null then
         execute immediate 'insert into moviestream_log values(:t1, :msg)' 
-                using systimestamp, message;
+                using to_char(systimestamp, 'DD-MON-YY HH:MI:SS'), message;
         commit;
     end if;
 
