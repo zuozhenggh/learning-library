@@ -174,5 +174,5 @@ These significant performance improvements are possible because of Oracle’s un
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager,  Database In-Memory
-- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, August 2020
+- **Contributors** - Kay Malcolm, Anoosha Pilli, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

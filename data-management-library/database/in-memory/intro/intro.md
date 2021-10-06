@@ -45,5 +45,5 @@ Please proceed to the next lab.
 ## Acknowledgements
 
 - **Authors/Contributors** - Andy Rivenes, Product Manager, Database In-Memory
-- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
+- **Contributors** - Kay Malcolm, Anoosha Pilli, Rene Fontcha
 - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

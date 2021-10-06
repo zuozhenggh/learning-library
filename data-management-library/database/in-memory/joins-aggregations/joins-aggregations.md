@@ -324,5 +324,5 @@ Oracle Database adds In-Memory database functionality to existing databases, and
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Product Manager,  Database In-Memory
-- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
-- **Last Updated By/Date** - Andy Rivenes, Product Manager,  Database In-Memory, September 2021
+- **Contributors** - Kay Malcolm, Anoosha Pilli, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021
