@@ -18,17 +18,12 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 2: Enabling In-Memory",
-      "description": "Queries on In-Memory Column Store",
-      "filename": "../../setup-inmem/setup-inmem.md"
-    },
-    {
-      "title": "Lab 3: Querying the In-Memory Column Store",
+      "title": "Lab 2: Querying the In-Memory Column Store",
       "description": "Queries on In-Memory Column Store",
       "filename": "../../queries/queries.md"
     },
     {
-      "title": "Lab 4: Joins and Aggregation",
+      "title": "Lab 3: Joins and Aggregation",
       "description": "In-Memory Joins and Aggregation",
       "filename": "../../joins-aggregations/joins-aggregations.md"
     },

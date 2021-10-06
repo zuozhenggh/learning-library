@@ -13,7 +13,6 @@ Watch the video below to get an overview of joins using Database In-Memory.
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Lab: Generate SSH Key (FreeTier and Paid accounts)
 * Lab: Environment Setup or Verify Setup
 * Lab: Enabling In-Memory
 * Lab: Querying the IMC
@@ -24,20 +23,20 @@ This lab assumes you have completed the following labs:
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the fact table, LINEORDER, and one of more dimension tables and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond just the basic performance benefits of scanning data in a columnar format.
 
 1.  Let's switch to the Part3 folder and log back in to the PDB.
-    ````
+    ```
     <copy>
     cd /home/oracle/labs/inmemory/Part3
-    sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
+    sqlplus ssb/Ora_DB4U@localhost:1521/pdb1
     set pages 9999
     set lines 100
     <copy>    
-    ````
+    ```
 
     ![](images/num1.png " ")
 
 2.  Join the LINEORDER and DATE\_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  Run the script 01\_join\_im.sql or run the queries below..  
 
-    ````
+    ```
     <copy>
     set timing on
 
@@ -55,7 +54,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     @../imstats.sql
     </copy>
-    ````
+    ```
 
     ![](images/num2.png)
 
@@ -63,7 +62,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
 3.  Let's run against the buffer cache now. Run the script 02\_join\_buffer.sql or run the queries below.
 
-    ````
+    ```
     <copy>
     set timing on
 
@@ -84,12 +83,12 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     @../imstats.sql
     </copy>
-    ````
+    ```
     ![](images/num3.png)
 
 4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results. Run the script 03\_3join\_im.sql or run the queries below.
 
-    ````
+    ```
     <copy>
     set timing on
 
@@ -113,7 +112,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     @../imstats.sql
     </copy>
-    ````
+    ```
 
     ![](images/num4a.png)
 
@@ -126,7 +125,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
 5. Now let’s execute the query against the buffer cache. Run the script 04\_3join\_buffer.sql or run the queries below.
 
-    ````
+    ```
     <copy>
     set timing on
     alter session set inmemory_query = disable;
@@ -151,7 +150,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     @../imstats.sql
     </copy>
-    ````
+    ```
 
     ![](images/3join_buffer_p1.png)
 
@@ -164,7 +163,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 Oracle has introduced a new Optimizer transformation, called Vector Group By. This transformation is a two-part process not dissimilar to that of star transformation.  First, the dimension tables are scanned and any WHERE clause predicates are applied. A new data structure called a key vector is created based on the results of these scans. The key vector is similar to a Bloom filter as it allows the join predicates to be applied as additional filter predicates during the scan of the fact table, but it also enables us to conduct the group by or aggregation during the scan of the fact table instead of having to do it afterwards. The second part of the execution plan sees the results of the fact table scan being joined back to the temporary tables created as part of the scan of the dimension tables, that is defined by the lines that start with LOAD AS SELECT. These temporary tables contain the payload columns (columns needed in the select list) from the dimension table(s). In 12.2 these tables are now pure in-memory tables as evidenced by the addition of the (CURSOR DURATION MEMORY) phrase that is appended to the LOAD AS SELECT phrases. The combination of these two phases dramatically improves the efficiency of a multiple table join with complex aggregations. Both phases are visible in the execution plan of our queries.
 To see this in action execute the query 10\_vgb\_im.sql or run the queries below.     
 
-  ````
+  ```
   <copy>
   set timing on
 
@@ -190,7 +189,7 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
   @../imstats.sql
   </copy>
-  ````
+  ```
 
   ![](images/vgb-im-p1.png)
 
@@ -201,7 +200,7 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
 7. To see how dramatic the difference really is we can run the same query but we will disable vector group by operation. Run the script 11\_novgb\_im.sql or run the queries below.
 
-  ````
+  ```
   <copy>
   set timing on
 
@@ -227,7 +226,7 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
   @../imstats.sql
   </copy>
-  ````
+  ```
 
   ![](images/11-novgb-im-p1.png)
 
@@ -237,7 +236,7 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
 8. To execute the query against the buffer cache run the script 12\_vgb\_buffer.sql or run the queries below.
 
-    ````
+    ```
     <copy>
     set timing on
     alter session set inmemory_query = disable;
@@ -264,7 +263,7 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
     @../imstats.sql
     </copy>
-    ````
+    ```
 
    ![](images/12-vgb-buffer-p1.png)
 
@@ -275,7 +274,7 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
 9. And finally let's take a look at how our query runs in the row-store with no Database In-Memory optimizations. Run the script 13\_novgb\_buffer.sql or run the queries below.
 
-  ````
+  ```
   <copy>
   set timing on
   alter session set inmemory_query = disable;
@@ -302,7 +301,7 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
   @../imstats.sql
   </copy>
-  ````
+  ```
 
    ![](images/13-novgb-buffer-p1.png)
 
@@ -325,8 +324,3 @@ Oracle Database adds In-Memory database functionality to existing databases, and
 - **Author** - Andy Rivenes, Product Manager,  Database In-Memory
 - **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
 - **Last Updated By/Date** - Andy Rivenes, Product Manager,  Database In-Memory, September 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.

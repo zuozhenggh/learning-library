@@ -11,11 +11,11 @@ This workshop will demonstrate how to connect to the Oracle GoldenGate Admin Cli
 
 ### Objectives
 -  Connect to the Admin Client
--  Run various commands 
+-  Run various commands
 
 ### Prerequisites
 This Workshop assumes you have:
-- A Free Tier, Paid or LiveWorkshops Oracle Cloud account
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
@@ -47,13 +47,13 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 1. Select **Q** to quit the labmenu.Change directories to ***/u01/ggbd_home/bin/***, and then start the Admin Client:
 
     To quit the Lab Menu:
-    
+
     ```
     <copy>Q</copy>
     ```
 
     Navigate to GGMA Adminclient folder:
-    
+
     ```
     <copy>
     cd /u01/ggbd_home/bin/
@@ -119,12 +119,3 @@ To summarize, Admin Client is a command line utility (similar to the classic GGS
 * **Author** - Madhu Kumar S, Data Integration Team, Oracle, September  2021
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, September 2021
-
-
-
-
-
-
-
-
-
