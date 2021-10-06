@@ -129,7 +129,7 @@ This lab assumes you have:
     <copy>
     alter system set sga_max_size=6G scope=spfile;
     alter system set sga_target=6G scope=spfile;
-    alter system set inmemory_size=2G scope=spfile;
+    alter system set inmemory_size=2560M scope=spfile;
     alter system set db_keep_cache_size=2G scope=spfile;
     shutdown immediate;
     startup;
@@ -204,7 +204,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     ```
      ![](images/num4.png)   
 
-5.  This looks at the USER_TABLES view and queries attributes of tables in the SSB schema.  
+5.  This looks at the `USER_TABLES` view and queries attributes of tables in the SSB schema.  
 
     ```
     <copy>
@@ -241,7 +241,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     ```
      ![](images/step2num6.png)
 
-7. Background processes are populating these segments into the IM column store.  To monitor this, you could query the V\$IM\_SEGMENTS.  Once the data population is complete, the BYTES\_NOT\_POPULATED should be 0 for each segment.  
+7. Background processes are populating these segments into the IM column store.  To monitor this, you could query the `V$IM_SEGMENTS`.  Once the data population is complete, the BYTES\_NOT\_POPULATED should be 0 for each segment.  
 
     ```
     <copy>
@@ -276,7 +276,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
     ![](images/part1step8b.png)
 
-In this task you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a new static pool in the SGA, and once allocated it can be resized dynamically, but it is not managed by either of the automatic SGA memory features.
+In this task you saw that the IM column store is configured by setting the initialization parameter `INMEMORY_SIZE`. The IM column store is a new static pool in the SGA, and once allocated it can be resized dynamically, but it is not managed by either of the automatic SGA memory features.
 
 You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
 
