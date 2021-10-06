@@ -710,7 +710,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
      ![](images/emratlab4step8d.png " ")
 
-  The cause is the Replay with **Free Trial Credit** use lesser number of CPUs and Memory resource. 
+  The cause is the Replay with **Free Trial Credit** use lesser number of CPUs and Memory resource.
 
 
 ## Task 5: Database Consolidation Replay
@@ -866,7 +866,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab5step13c.png " ")
 
-
+14. In **Free Tier Credit** Image, the Consolidation Replay can take much longer time to finish. The same reason as in Task 4, the Capture for Sales History workload has more CPUs and memory resource in comparison with Replay enviroment. In **Free Tier** the Consolidation Replay finished in 30 minutes. You can stop the Replay to finish the Lesson.
 
 You have now learned how to work with Real Application Testing. As you can see there are Guided Workflows that will help you during your analysis and verify that you can implement new changes in production with confidence.
 
