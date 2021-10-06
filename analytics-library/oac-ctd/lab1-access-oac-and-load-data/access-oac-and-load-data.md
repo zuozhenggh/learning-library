@@ -50,11 +50,16 @@ Note: Provisioning an Oracle Analytics Cloud instance can take from 10 (most lik
 
 ## **Task 2**: Connect to the OAC instance
 
-Open the browser and enter the ‘OAC URL’ for ‘Oracle Analytics Cloud’ provided. It would be of the format http://host/dv/ui.
+Based on instance provisioning step you have two choices to start using Oracle Analytics Cloud instance.
 
+Option 1 : If you are running this workshop on Oracle Analytics Cloud instance already provisioned for you by workshop instructor follow steps below.
+
+Open the browser and enter the ‘OAC URL’ for ‘Oracle Analytics Cloud’ provided. It would be of the format http://host/dv/ui.
 
 1. Your instructor will provide you with your User Name and Password. Accept the term of service and you will be directed to the main OAC Console page.
 2. Login using the credentials provided.
+
+Option 2 : Use fresh provisioned OAC instance from task 1.
 
 ![](images/1_oac_login.png)
 
