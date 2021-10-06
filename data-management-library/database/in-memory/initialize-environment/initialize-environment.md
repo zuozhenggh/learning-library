@@ -4,7 +4,12 @@
 
 In this lab we will review and startup all components required to successfully run this workshop.
 
-*Estimated Lab Time:* 10 Minutes.
+*Estimated Lab Time:* 30 Minutes.
+
+### Video Preview
+Watch the video below to get an explanation of enabling the In-Memory column store.
+
+[](youtube:dZ9cnIL6KKw)
 
 ### Objectives
 - Initialize the workshop environment.

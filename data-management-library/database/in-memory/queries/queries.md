@@ -10,12 +10,12 @@ Watch a preview video of querying the In-Memory Column Store
 -   Perform various queries on the In-Memory Column Store
 
 ### Prerequisites
-
-This lab assumes you have completed the following labs:
-* Lab: Generate SSH Key (FreeTier and Paid accounts)
-* Lab: Environment Setup or Verify Setup
-* Lab: Enabling In-Memory
-
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
 ## Step: Querying the In-Memory Column Store
 

@@ -11,12 +11,13 @@ Watch the video below to get an overview of joins using Database In-Memory.
 -   Perform various queries on the In-Memory Column Store
 
 ### Prerequisites
-
-This lab assumes you have completed the following labs:
-* Lab: Environment Setup or Verify Setup
-* Lab: Enabling In-Memory
-* Lab: Querying the IMC
-
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: Querying the In-Memory Column Store
 
 ## Step: In-Memory Joins and Aggregation
 
