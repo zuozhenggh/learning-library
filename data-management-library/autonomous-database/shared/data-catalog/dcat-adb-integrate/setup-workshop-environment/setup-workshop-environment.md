@@ -160,21 +160,24 @@ Create a Data Catalog instance using the following steps.
 
    ![](./images/navigate-data-catalog.png " ")
 
-2. On the **Data Catalogs** page, click **Create Data Catalog**.
+2. On the **Data Catalog Overview** page, click **Go to Data Catalogs**.
+
+   ![](./images/data-catalog-overview.png " ")    
+
+3. On the **Data Catalogs** page, click **Create Data Catalog**.
 
    ![](./images/data-catalog-page.png " ")
 
-3. Select the **`training-dcat-compartment`** compartment from the **Create In Compartment** drop-down list, if not already selected.
+4. Select the **`training-dcat-compartment`** compartment from the **Create In Compartment** drop-down list, if not already selected.
 
-4. Enter **`training-dcat-instance`** in the **Name** field.
+5. Enter **`training-dcat-instance`** in the **Name** field.
 
    ![](./images/create-data-catalog.png " ")
 
-5. Click **Create Data Catalog**. The Data Catalog instance is created and displayed in the **Data Catalogs** page.
+6. Click **Create Data Catalog**. The Data Catalog instance is created and displayed in the **Data Catalogs** page.
 
    ![](./images/click-data-catalog.png " ")
 
-<!-- End of commenting out tasks 3 and 4. -->
 
 ## Task 4: Create, Import, and Edit a Glossary
 

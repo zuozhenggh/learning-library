@@ -29,15 +29,19 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
 
 1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**.
 
-2. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance where you want to create your data asset.
+2. On the **Data Catalog Overview** page, click **Go to Data Catalogs**.
+
+   ![](./images/data-catalog-overview.png " ")
+
+3. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance where you want to create your data asset.
 
    ![](./images/dcat-instance.png " ")
 
-3. On the **`training-dcat-instance`** **Home** page, click **Create Data Asset** in the **Data Assets** tile.
+4. On the **`training-dcat-instance`** **Home** page, click **Create Data Asset** in the **Data Assets** tile.
 
    ![](./images/create-data-asset.png " ")
 
-4. In the **Create Data Asset** panel, specify the data asset details as follows:    
+5. In the **Create Data Asset** panel, specify the data asset details as follows:    
        * **Name:** **`Data Lake`**.
        * **Description:** **`Data Asset to access Oracle Object Storage buckets`**.
        * **Type:** Select **Oracle Object Storage** from the drop-down list.
@@ -51,7 +55,7 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
        * **Namespace:** Enter **adwc4pm**. This is the Namespace that contains the Object Storage buckets that you will use.        
 
 
-5. Click **Create**.
+6. Click **Create**.
 
    ![](./images/create-data-asset-panel.png " ")
 

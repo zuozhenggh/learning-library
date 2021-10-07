@@ -26,7 +26,7 @@ If you want to list the resources in your **`training-dcat-compartment`**, you c
 
 You can terminate your Data Catalog instance that you created in this workshop as follows:
 
-1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**.
+1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**. On the **Data Catalog Overview** page, click **Go to Data Catalogs**.
 
 2. On the **Data Catalogs** page, in the row for the **`training-dcat-instance`** Data Catalog instance, click the **Actions** icon (three dots), and then select **Terminate** from the context menu.
 
