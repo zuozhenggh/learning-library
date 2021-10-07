@@ -1,0 +1,613 @@
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/intro/intro.md
+ 41:24  warning  Don't use end punctuation in    Oracle.Grammar_HeadingPunctuation 
+                 headings.                                                         
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/creating-orders-page/5-creating-order-page.md
+ 1:3     error       Do not start headings with      Oracle.Tutorial_HeadingImperativeVerb 
+                     'ing' words. Use imperative                                           
+                     verbs such as 'create' and                                            
+                     'configure' instead.                                                  
+ 1:3     error       Use sentence-style              Oracle.Tutorial_HeadingCasing         
+                     capitalization for the heading                                        
+                     'Creating the Order Page'.                                            
+ 42:4    suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 42:34   suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 50:5    error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 56:4    suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 56:34   suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 66:4    suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 66:34   suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 89:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 107:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 107:34  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 130:4   suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/signup/1-sign-up-apex.md
+ 1:3     error    Use sentence-style              Oracle.Tutorial_HeadingCasing 
+                  capitalization for the heading                                
+                  'Sign up for an Oracle APEX                                   
+                  Workspace'.                                                   
+ 5:109   error    Use 'Oracle Autonomous Data     Oracle.Legal_ProductNames     
+                  Warehouse' instead of 'ADW'.                                  
+                  Avoid incorrect Oracle product                                
+                  names.                                                        
+ 5:153   error    Use 'Oracle Autonomous          Oracle.Legal_ProductNames     
+                  Transaction Processing'                                       
+                  instead of 'ATP'. Avoid                                       
+                  incorrect Oracle product                                      
+                  names.                                                        
+ 17:119  warning  Don't use 'here' as the         Oracle.Accessibility_LinkText 
+                  context for a link. Use link                                  
+                  text that clearly identifies                                  
+                  the target of the link, such                                  
+                  as name of your target page.                                  
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/creating-orders-page/creating-order-page.md
+ 62:5  error  Always include alt text for     Oracle.Accessibility_AltText 
+              inline images.                                               
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/improving-app/9-improving-app.md
+ 1:3    error       Use sentence-style              Oracle.Tutorial_HeadingCasing 
+                    capitalization for the heading                                
+                    'Improve Products Page'.                                      
+ 19:44  suggestion  Consider using 'to' instead of  Oracle.Grammar_Wordiness      
+                    'in order to'.                                                
+ 48:26  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords        
+                    on' when referring to UI                                      
+                    elements.                                                     
+ 51:26  suggestion  Use 'regarding, concerning'     Oracle.Terminology_Latin      
+                    instead of 're'. Avoid Latin                                  
+                    abbreviations. Use them only                                  
+                    in tables or where space is                                   
+                    limited.                                                      
+ 51:49  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords        
+                    on' when referring to UI                                      
+                    elements.                                                     
+ 68:4   suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords        
+                    on' when referring to UI                                      
+                    elements.                                                     
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/README.md
+ 1:3    error    Use sentence-style              Oracle.Tutorial_HeadingCasing     
+                 capitalization for the heading                                    
+                 'Oracle APEX Hands-On Lab'.                                       
+ 42:24  warning  Don't use end punctuation in    Oracle.Grammar_HeadingPunctuation 
+                 headings.                                                         
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/improving-products/improving-products.md
+ 99:5   error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 139:5  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 175:9  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 206:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 209:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 241:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 276:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/improving-products/8-improving-products.md
+ 1:3     error       Use sentence-style              Oracle.Tutorial_HeadingCasing 
+                     capitalization for the heading                                
+                     'Improve Products Page'.                                      
+ 42:4    suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords        
+                     of 'Right click on' when                                      
+                     referring to UI elements.                                     
+ 56:29   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords        
+                     of 'Right click on' when                                      
+                     referring to UI elements.                                     
+ 68:28   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords        
+                     of 'Right click on' when                                      
+                     referring to UI elements.                                     
+ 94:5    error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 133:11  suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords        
+                     on' when referring to UI                                      
+                     elements.                                                     
+ 134:5   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 170:9   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 182:22  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords        
+                     on' when referring to UI                                      
+                     elements.                                                     
+ 201:6   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 203:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords        
+                     of 'Right-click on' when                                      
+                     referring to UI elements.                                     
+ 204:6   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 235:36  suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords        
+                     of 'Right-click on' when                                      
+                     referring to UI elements.                                     
+ 236:6   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 270:5   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords        
+                     of 'Right-click on' when                                      
+                     referring to UI elements.                                     
+ 271:6   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 298:8   warning     Don't use 'here' as the         Oracle.Accessibility_LinkText 
+                     context for a link. Use link                                  
+                     text that clearly identifies                                  
+                     the target of the link, such                                  
+                     as name of your target page.                                  
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/signup-up-apex/sign-up-apex.md
+ 1:3     error    Use sentence-style              Oracle.Tutorial_HeadingCasing 
+                  capitalization for the heading                                
+                  'Sign up for an Oracle APEX                                   
+                  Workspace'.                                                   
+ 5:109   error    Use 'Oracle Autonomous Data     Oracle.Legal_ProductNames     
+                  Warehouse' instead of 'ADW'.                                  
+                  Avoid incorrect Oracle product                                
+                  names.                                                        
+ 5:153   error    Use 'Oracle Autonomous          Oracle.Legal_ProductNames     
+                  Transaction Processing'                                       
+                  instead of 'ATP'. Avoid                                       
+                  incorrect Oracle product                                      
+                  names.                                                        
+ 17:119  warning  Don't use 'here' as the         Oracle.Accessibility_LinkText 
+                  context for a link. Use link                                  
+                  text that clearly identifies                                  
+                  the target of the link, such                                  
+                  as name of your target page.                                  
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/creating-db-objects/3-creating-db-objects.md
+ 1:3  error  Do not start headings with      Oracle.Tutorial_HeadingImperativeVerb 
+             'ing' words. Use imperative                                           
+             verbs such as 'create' and                                            
+             'configure' instead.                                                  
+ 1:3  error  Use sentence-style              Oracle.Tutorial_HeadingCasing         
+             capitalization for the heading                                        
+             'Creating Database Objects'.                                          
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/adding-columns/2-adding-columns.md
+ 1:3     error       Do not start headings with      Oracle.Tutorial_HeadingImperativeVerb 
+                     'ing' words. Use imperative                                           
+                     verbs such as 'create' and                                            
+                     'configure' instead.                                                  
+ 1:3     error       Use sentence-style              Oracle.Tutorial_HeadingCasing         
+                     capitalization for the heading                                        
+                     'Adding Columns to Product                                            
+                     Table'.                                                               
+ 28:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 42:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 56:5    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 75:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 98:12   suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 100:78  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 122:12  suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 124:77  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 146:12  suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/create-app/create-app.md
+ 70:5   error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 81:5   error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 92:5   error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 106:5  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 113:5  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 121:5  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 133:5  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 148:5  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 155:5  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 174:5  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/creating-shopping-cart/creating-shopping-cart.md
+ 27:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords       
+                     on' when referring to UI                                     
+                     elements.                                                    
+ 45:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords       
+                     on' when referring to UI                                     
+                     elements.                                                    
+ 52:5    error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 73:5    error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 80:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords       
+                     on' when referring to UI                                     
+                     elements.                                                    
+ 81:5    error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 83:5    error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 122:4   suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords       
+                     on' when referring to UI                                     
+                     elements.                                                    
+ 168:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords       
+                     of 'Right-click on' when                                     
+                     referring to UI elements.                                    
+ 192:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords       
+                     of 'Right click on' when                                     
+                     referring to UI elements.                                    
+ 220:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords       
+                     of 'Right click on' when                                     
+                     referring to UI elements.                                    
+ 221:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 235:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 238:39  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords       
+                     on' when referring to UI                                     
+                     elements.                                                    
+ 240:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 249:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 260:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 265:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords       
+                     of 'Right click on' when                                     
+                     referring to UI elements.                                    
+ 267:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 291:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords       
+                     of 'Right click on' when                                     
+                     referring to UI elements.                                    
+ 310:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords       
+                     of 'Right click on' when                                     
+                     referring to UI elements.                                    
+ 311:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 314:40  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords       
+                     on' when referring to UI                                     
+                     elements.                                                    
+ 327:63  suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords       
+                     of 'Right click on' when                                     
+                     referring to UI elements.                                    
+ 330:40  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords       
+                     on' when referring to UI                                     
+                     elements.                                                    
+ 343:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 345:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords       
+                     of 'Right-click on' when                                     
+                     referring to UI elements.                                    
+ 346:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 389:5   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords       
+                     of 'Right-click on' when                                     
+                     referring to UI elements.                                    
+ 390:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+ 423:6   error       Always include alt text for     Oracle.Accessibility_AltText 
+                     inline images.                                               
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/create-app/4-create-app.md
+ 1:3     error       Use sentence-style              Oracle.Tutorial_HeadingCasing 
+                     capitalization for the heading                                
+                     'Use the Create Application                                   
+                     Wizard'.                                                      
+ 70:5    error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 81:5    error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 83:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords        
+                     on' when referring to UI                                      
+                     elements.                                                     
+ 92:5    error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 106:5   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 110:30  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords        
+                     on' when referring to UI                                      
+                     elements.                                                     
+ 113:5   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 121:5   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 133:5   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 145:4   suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords        
+                     on' when referring to UI                                      
+                     elements.                                                     
+ 148:5   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 155:5   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+ 170:4   suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords        
+                     on' when referring to UI                                      
+                     elements.                                                     
+ 174:5   error       Always include alt text for     Oracle.Accessibility_AltText  
+                     inline images.                                                
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/installing-sample-tables/1-installing-sample-tables.md
+ 1:3   error       Use sentence-style              Oracle.Tutorial_HeadingCasing         
+                   capitalization for the heading                                        
+                   'Building Your Tables and                                             
+                   Views - Installing Sample                                             
+                   Tables'.                                                              
+ 1:3   error       Do not start headings with      Oracle.Tutorial_HeadingImperativeVerb 
+                   'ing' words. Use imperative                                           
+                   verbs such as 'create' and                                            
+                   'configure' instead.                                                  
+ 45:4  suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                   on' when referring to UI                                              
+                   elements.                                                             
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/creating-shopping-cart/6-creating-shopping-cart.md
+ 1:3     error       Use sentence-style              Oracle.Tutorial_HeadingCasing         
+                     capitalization for the heading                                        
+                     'Creating the Shopping Cart                                           
+                     Page'.                                                                
+ 1:3     error       Do not start headings with      Oracle.Tutorial_HeadingImperativeVerb 
+                     'ing' words. Use imperative                                           
+                     verbs such as 'create' and                                            
+                     'configure' instead.                                                  
+ 17:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 35:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 42:5    error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 63:5    error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 69:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 70:5    error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 72:5    error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 108:4   suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 153:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right-click on' when                                              
+                     referring to UI elements.                                             
+ 176:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 204:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 205:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 219:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 222:39  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 224:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 233:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 244:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 249:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 251:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 275:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 294:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 295:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 298:40  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 311:63  suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 314:40  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 327:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 329:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right-click on' when                                              
+                     referring to UI elements.                                             
+ 330:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 373:5   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right-click on' when                                              
+                     referring to UI elements.                                             
+ 374:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 406:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/creating-add-to-cart-page/7-creating-add-to-cart.md
+ 1:3     error       Use sentence-style              Oracle.Tutorial_HeadingCasing         
+                     capitalization for the heading                                        
+                     'Creating Add to Cart Page'.                                          
+ 1:3     error       Do not start headings with      Oracle.Tutorial_HeadingImperativeVerb 
+                     'ing' words. Use imperative                                           
+                     verbs such as 'create' and                                            
+                     'configure' instead.                                                  
+ 17:6    error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 29:6    error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 59:30   suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 60:9    error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 64:4    suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 65:6    error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 103:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 124:4   suggestion  Use 'click' instead of 'Click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 125:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 153:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 159:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right-click on' when                                              
+                     referring to UI elements.                                             
+ 160:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 173:31  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 188:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right-click on' when                                              
+                     referring to UI elements.                                             
+ 189:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 205:7   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 208:33  suggestion  Use 'click' instead of 'click   Oracle.GUI_ActionWords                
+                     on' when referring to UI                                              
+                     elements.                                                             
+ 215:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right-click on' when                                              
+                     referring to UI elements.                                             
+ 216:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 229:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 234:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 235:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 236:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 260:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 285:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 286:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 309:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 310:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 327:4   suggestion  Use 'right-click' instead       Oracle.GUI_ActionWords                
+                     of 'Right click on' when                                              
+                     referring to UI elements.                                             
+ 328:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 339:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+ 348:6   error       Always include alt text for     Oracle.Accessibility_AltText          
+                     inline images.                                                        
+
+
+ /Users/kvphan/Documents/GitHub/learning-library/learning-library/developer-library/apex/shopping-cart/creating-add-to-cart-page/creating-add-to-cart-page.md
+ 25:6   error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 39:6   error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 70:9   error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 75:6   error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 114:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 136:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 164:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 171:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 200:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 216:7  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 227:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 240:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 246:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 248:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 300:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 325:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 344:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 355:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+ 364:6  error  Always include alt text for     Oracle.Accessibility_AltText 
+               inline images.                                               
+
+✖ 126 errors, 5 warnings and 82 suggestions in 22 files.
