@@ -11,12 +11,12 @@ In this lab we will load data in the MySQL database ‘ggsource’. The GG extra
 ![](./images/0.jpg " ")
 
 ### Objectives
--  GoldenGate Microservices for BigData 
+-  GoldenGate Microservices for BigData
 -  Replicating from mysql to kafka through GGMA  
 
 ### Prerequisites
 This Workshop assumes you have:
-- A Free Tier, Paid or LiveWorkshops Oracle Cloud account
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
     - Lab: Generate SSH Keys
@@ -36,17 +36,36 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 2. Then sudo to “*ggadmin*”. E.g.
 
     ```
-        <copy>sudo su - ggadmin</copy>
+    <copy>sudo su - ggadmin</copy>
     ```
 
     ![](./images/1.png " ")
 
-3. Reset the lab by selecting ***R*** in the option
+4. Select **Q** to quit the labmenu  and start the ServiceManager
 
     ```
-        <copy>R</copy>
+    <copy>
+    cd /u01/ggbd_home/bin
+    ./ServiceManager
+    </copy>
     ```
+
+    ![](./images/srvmgr.png " ")
+
+5. Press *Enter* to return to the prompt
+
+6. Re-open the *labmenu* and reset the lab by selecting ***R*** in the option
+
+    ```
+    <copy>labmenu</copy>
+    ```
+
+    ```
+    <copy>R</copy>
+    ```
+
     ![](./images/2.png " ")
+
 
 ## Task 1: GoldenGate Configuration for MySQL as Source
 
@@ -61,21 +80,21 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
     To quit the Lab Menu:
 
     ```
-        <copy>Q</copy>
+    <copy>Q</copy>
     ```
     Switch to GoldenGate command mode:
-    
+
     ```
     <copy>
-        cd /u01/gg4mysql
-        ./ggsci
+    cd /u01/gg4mysql
+    ./ggsci
 
-        </copy>
+    </copy>
     ```
     To start the manager:
-     
+
     ```
-        <copy>start mgr</copy>
+    <copy>start mgr</copy>
     ```
 
     ![](./images/4.png " ")
@@ -83,7 +102,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 3. Execute the obey file to create the GoldenGate process.The Obey file contains all the commands to create the GoldenGate process.
 
     ```
-        <copy>obey ./dirprm/create_mysql_gg_procs.oby</copy>
+    <copy>obey ./dirprm/create_mysql_gg_procs.oby</copy>
     ```
     ![](./images/5.png " ")
 
@@ -94,11 +113,11 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 4. Start all GoldenGate processes .Start with wildcard '*' which will start all the GoldenGate processes.
 
     ```
-        <copy>
-        info all
+    <copy>
+    info all
 
-        start *
-        </copy>
+    start *
+    </copy>
     ```
     ![](./images/8.png " ")
 
@@ -109,19 +128,19 @@ Source deployment completed!
 1. Login to GoldenGate for BigData console .
 
     Replace IP Address with livelab server generated IP
-    
+
     ```
-        <copy> http://IP Address:16001/?root=account </copy>
+    <copy> http://[Public-IP Address]:16001/?root=account </copy>
     ```
 Enter username as ***oggadmin***
 
     ```
-        <copy>oggadmin</copy>
+    <copy>oggadmin</copy>
     ```
 Enter Password as ***Wel_Come1***
 
     ```
-        <copy>Wel_Come1</copy>
+    <copy>Wel_Come1</copy>
     ```
 ![](./images/9.png " ")
 
@@ -152,13 +171,13 @@ Enter Password as ***Wel_Come1***
     Trail Name:
 
     ```
-        <copy>rt</copy>
+    <copy>rt</copy>
     ```
 
     Trail Subdirectory:
 
     ```
-        <copy>/u01/gg4mysql/dirdat</copy>
+    <copy>/u01/gg4mysql/dirdat</copy>
     ```
 ![](./images/13.png " ")
 
@@ -195,7 +214,7 @@ Enter Password as ***Wel_Come1***
     gg.classpath=/home/ggadmin/kafka_2.13-2.8.0/libs/*
     jvm.bootoptions=-Xmx512m -Xms32m
     </copy>
-    ``` 
+    ```
 
     ![](./images/20.png " ")
 
@@ -245,12 +264,3 @@ You may now *proceed to the next lab*
 * **Author** - Madhu Kumar S, Data Integration Team, Oracle, July 2021
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, September 2021
-
-
-
-
-
-
-
-
-
