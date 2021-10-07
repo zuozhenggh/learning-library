@@ -23,8 +23,6 @@ This lab assumes you have:
 
 ## Task 1: Validate That Required Processes are Up and Running.
 
-*Note:* All screenshots for SSH terminal type tasks featured throughout this workshop were captured using the *MobaXterm* SSH Client as described in this step. As a result when executing such tasks from within the graphical remote desktop session you can skip steps requiring you to login as user *oracle* using *sudo su - oracle*, the reason being that the remote desktop session is under user *oracle*.
-
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
     - Database Listeners
@@ -34,7 +32,7 @@ This lab assumes you have:
         - CDB1
         - CDB2
 
-    You may test database connectivity clicking on the *+* sign next to each of the 3 Databases as shown below in the *SQL Developer Oracle Connections* panel.
+    You may test database connectivity clicking on the *+* sign next to the Database(s) as shown below in the *SQL Developer Oracle Connections* panel.
 
     ![](./images/19c_hol_landing.png " ")
 
