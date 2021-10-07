@@ -21,7 +21,7 @@ This lab assumes you have completed the following labs:
 - Getting Started
 - Upload Files to Object Storage
 
-## **STEP 1:** Provision an Autonomous Transaction Process Database
+## Task 1: Provision an Autonomous Transaction Process Database
 
 1.  Log in to the Oracle Cloud console (in a new window if you still have files uploading from the previous lab). Click on the hamburger menu at the top left and choose "Autonomous Transaction Processing under Database
 
@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/atp3.png " ")
 
-## **STEP 2:** Connecting to the Database Using SQL Developer Web and Creating a New User
+## Task 2: Connecting to the Database Using SQL Developer Web and Creating a New User
 
 SQL Developer Web (SDW) is an entirely browser-based tool for interacting with the database. Users of the standalone SQL Developer tool will be familiar with most of the interface elements.
 
@@ -89,7 +89,7 @@ SQL Developer Web (SDW) is an entirely browser-based tool for interacting with t
 
     ![](images/create-user.png "")
 
-## **STEP 3:**  Log into SQL Developer Web as the New User "yelp"
+## Task 3:  Log into SQL Developer Web as the New User "yelp"
 
 We now have a user who has the required privileges, and can use SQL Developer Web.
 
@@ -132,7 +132,7 @@ We now have a user who has the required privileges, and can use SQL Developer We
 
     That should create our three table which will contain the JSON we are about to load. The JSON text will be stored in a CLOB column called 'jtext' in each case.
 
-## **STEP 4:** Performing the Load into the Database
+## Task 4: Performing the Load into the Database
 
 We can now load our files from object storage to the database. The business file is small (145MB), so we’ll do first and run it interactively.
 

@@ -5,32 +5,21 @@ In this Lab, you examined and solved a "Association" data mining business proble
 
 *Estimated Lab Time*: 20 Minutes
 
-<!-- ### About Oracle Machine Learning "Regression" -->
-
-
-<!-- [](youtube:zQtRwTOwisI) -->
-
-
 ### Objectives
 In this lab, you will:
 * Identify Data Miner interface components
 * Create a Data Miner project
 * Build a Workflow document that uses Market Basket Analysis models to uncover association between items purchased together and identify patterns of co-occurrence.
 
-
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-
-
-## **STEP 1:** Start creating a Data Miner Project
+## Task 1: Start creating a Data Miner Project
 Before you begin working on a Data Miner Workflow, you must create a Data Miner Project, which serves as a container for one or more Workflows.
 Create a SQL Developer connection for a data mining user named dmuser. This user has access to the sample data that you will be mining.
 
@@ -50,7 +39,7 @@ To create a Data Miner Project, perform the following steps.
 
     ![](./images/mba3.jpg " ")
 
-## **STEP 2:** Data Miner Workflow (Optional)
+## Task 2: Data Miner Workflow (Optional)
 
 A Data Miner Workflow is a collection of connected nodes that describe a data mining processes.
 
@@ -69,7 +58,7 @@ A workflow.
 
 To create the workflow for this process, perform the below steps.
 
-## **STEP 3:** Create a Workflow and Add data for the workflow
+## Task 3: Create a Workflow and Add data for the workflow
 
 1. Right-click on your project (Retail\_Data\_Analysis) and select New Workflow from the menu. 
  
@@ -127,7 +116,7 @@ To create the workflow for this process, perform the below steps.
 
     ![](./images/mba13.jpg " ")
 
-## **STEP 4:** Build the Models
+## Task 4: Build the Models
 
 In this section, you will build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
 
@@ -172,7 +161,7 @@ A common data mining practice is to build (or train) your model against part of 
 
     ![](./images/mba24.jpg " ")
 
-## **STEP 5:** Interpreting the results of the market basket analysis
+## Task 5: Interpreting the results of the market basket analysis
 
 Referring to the association rules of the relational data table, there are almost 1386 association rules generated from the analysis we performed. That is a lot. Therefore, we can basically interpret the results shown in the Data Miner with rationale such as:
 
@@ -189,20 +178,6 @@ The Support is the probability that all items in the rule (in both the “If” 
 You can automate this data mining execution to create a result set and export it to CSV files(s) or store it in a database for immediate retrieval in an ETL process or directly in Oracle BI. This makes the ability to have some near real time data mining activity take place within the organization and potentially even compare business or data mining logic with some level of dynamic variation and control.
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
-
-## Rate this Workshop
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
-
-1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
-
-<!-- If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop. -->
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh

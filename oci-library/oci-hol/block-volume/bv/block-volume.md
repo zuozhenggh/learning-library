@@ -5,9 +5,11 @@
 
 The Oracle Cloud Infrastructure Block Volume service lets you dynamically provision and manage block storage volumes. You can create, attach, connect and move volumes as needed to meet your storage and application requirements. Once attached and connected to an instance, you can use a volume like a regular hard drive. Volumes can also be disconnected and attached to another instance without the loss of data.
 
+<!-- Removed temporarily until video link is fixed 
+ 
 This video provides an overview of creating and attaching Oracle Cloud Infrastructure Block Volumes:
 
-[](youtube:kpL7czRCRLs)
+[](youtube:kpL7czRCRLs) -->
 
 ### Prerequisites
 
@@ -16,7 +18,7 @@ This video provides an overview of creating and attaching Oracle Cloud Infrastru
   -  Tenant, User name and Password
   -  URL for the Console: [https://cloud.oracle.com/](https://cloud.oracle.com/)
  
-## **STEP 1**: Create a Block Volume
+## Task 1: Create a Block Volume
 
 A common usage of Block Volume is adding storage capacity to an Oracle Cloud Infrastructure instance. Once you have launched an instance and set up your cloud network, you can create a block storage volume through the Console or API. Once created, you attach the volume to an instance using a volume attachment. Once attached, you connect to the volume from your instance's guest OS using iSCSI or paravirtualized mode. The volume can then be mounted and used by your instance.
 
@@ -57,7 +59,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
    ![](images/create-livelabs-avail.png)
    </if>
 
-## **STEP 2**: Attaching a Block Volume to an instance
+## Task 2: Attaching a Block Volume to an instance
 
 1. Once the Block Volume is created, you can attach it to the VM instance you just launched on Compute Practice. When you attach a block volume to a VM instance, you have two options for attachment type, iSCSI or paravirtualized.
 
@@ -125,5 +127,5 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar
 - **Adapted by** -  Tom McGinn, Database Product Management
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
-- **Last Updated By/Date** - Rajeshwari Rai, February 2021
+- **Last Updated By/Date** - Kevin Lazarz, September 2021
 

@@ -25,19 +25,17 @@ In this lab you will learn:
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository.
 
-## **STEP 1:** Prepare Database
-Select between *STEP 1A* and *STEP 1B*
+## Task 1: Prepare Database
+Select between *Task 1A* and *Task 1B*
 
-## **STEP 1A:** Prepare Database Using EM Console
+## Task 1A: Prepare Database Using EM Console
 
 1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
@@ -67,9 +65,9 @@ Select between *STEP 1A* and *STEP 1B*
 
     ![](images/emjobcom.png " ")
 
-## **STEP 1B:** Prepare database Using the terminal
+## Task 1B: Prepare database Using the terminal
 
-1. Instead of *STEP 1* above, you may run the block below from the terminal as user *oracle*
+1. Instead of *Task 1A* above, you may run the block below from the terminal as user *oracle*
 
     ```
     <copy>
@@ -80,7 +78,7 @@ Select between *STEP 1A* and *STEP 1B*
 
     ![](images/emopt2start.jpg " ")
 
-## **STEP 2:** Performance Hub
+## Task 2: Performance Hub
 
 1. Click on the Targets, then Databases. You will be directed to the list of Databases in EM.
 
@@ -140,17 +138,16 @@ Select between *STEP 1A* and *STEP 1B*
 
 14. Click on the **activity** tab to understand about the activity breakdown for this SQL.
 
-16. Click on **Save** button on the top right corner of the page. This will help you to save this monitored execution in “.html” format, which can be used to share or to diagnose offline.
+16. Click on **Save Report** button on the top right corner of the page. This will help you to save this monitored execution in “.html” format, which can be used to share or to diagnose offline.
 
-## **STEP 3:** Real-Time Database Operations Monitoring
+## Task 3: Real-Time Database Operations Monitoring
 
 1. From the terminal session on your remote desktop, run as user *oracle*
 
     ```
     <copy>
-    cd scripts
     source SALESENV
-    cd load/frame/queries/awrv</copy>
+    cd scripts/load/frame/queries/awrv</copy>
     ```
 
 2. Using SQLPlus connect to the sh2 account. Open the file (!vi DBOP.sql) from the SQL prompt and then review the content of the file. At the beginning of the file you will notice how we have tagged the operation with dbms\_sql\_monitor.begin\_operation and ended it with dbms\_sql\_monitor.end\_operation.
@@ -173,11 +170,11 @@ Now execute the file \@DBOP.sql
 
     ![](images/a59f28bdd1166978c41e9c9c6a5d9b93.jpg " ")
 
-6.  Click on the **Activity** tab. You will see all the activity for this operation.
+6.  Click on the **Metric** tab. You will see all the activity for this operation.
 
     ![](images/1a32fbdd89e519c2b8401e7dd0626890.jpg " ")
 
-## **STEP 4:** Tuning a SQL in a PDB
+## Task 4: Tuning a SQL in a PDB
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
 
@@ -239,7 +236,7 @@ Now execute the file \@DBOP.sql
 
 <!-- This concludes the Database Performance Management lab activity. You can now move on to Real Application Testing lab activity. -->
 
-## **STEP 5:** SQL Performance Analyzer Optimizer Statistics
+## Task 5: SQL Performance Analyzer Optimizer Statistics
 
 In this step we need to configure the database to set up optimizer statistics to be stale. So the first step is to create and submit a job that will configure the statistics to be stale.
 
@@ -351,7 +348,7 @@ In this step we need to configure the database to set up optimizer statistics to
 
 Details about newly published statistics can be found if you navigate **Schema** , to **Database Object** , to **Tables** , and Select tables for schema ‘STAT1’
 
-## **STEP 6:** Database Workload Replay
+## Task 6: Database Workload Replay
 
 1. Create a Replay Task. You need to open two terminal sessions as user *oracle*.  
 

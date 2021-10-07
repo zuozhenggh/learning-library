@@ -4,6 +4,20 @@
 
 So far, all collection operations have been issued from a UI in the browser. In a real application these operations would be called directly from a programming language (for example using the open-source SODA drivers for Java, Python or NodeJS). Another option is to use REST.
 
+This lab is optional for those that wish to understand how to access Autonomous JSON Database through raw REST calls. Part of this lab involves loading more documents through a REST call. If you wish to move straight on to Lab 4, you can load the extra documents from SQL instead, using the following SQL code:
+
+```
+<copy>
+begin
+dbms_cloud.copy_collection(
+	collection_name => 'products',
+	file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/b3XNySsmYQLPsy2Aw8C_uz14NYTfv2lqJ9IKoLNDRfKj6uZzUKPUFc5MbloNP0Cz/n/c4u04/b/data-management-library-files/o/testdata.json',
+	format => '{ "recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "1000000" }'
+);
+end;
+</copy>
+```
+
 Estimated Lab Time: 15 minutes
 
 ### Objectives
@@ -17,7 +31,7 @@ In this lab, you will:
 
 * Have successfully created a JSON collection in Autonomous JSON Database and have inserted few documents
 
-## **STEP 1:** Perform Simple REST Operations in Oracle Cloud Shell
+## Task 1: Perform Simple REST Operations in Oracle Cloud Shell
 
 1. A simple REST request can be done from the browser - open a new window and copy the URL from the 'JSON Workshop' or the 'SQL Developer Web' into it.
 
@@ -155,7 +169,7 @@ In this lab, you will:
 
 	![](./images/proof.png)	
 
-## **STEP 2:** Insert Data into the Collection
+## Task 2: Insert Data into the Collection
 
 1. Now, let's do a bulk load to insert more data. Navigate back to the tab with Oracle Cloud Shell.
 

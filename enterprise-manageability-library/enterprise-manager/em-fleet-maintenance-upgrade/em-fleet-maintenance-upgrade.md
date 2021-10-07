@@ -30,16 +30,14 @@ In this lab you will perform the following steps:
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-## **STEP 1:** Review Tasks Completed in Advance
+## Task 1: Review Tasks Completed in Advance
 
 In the interest of simplifying the setup and save time, the following steps were completed in advance and covered in this lab. Please review accordingly for reference
 
@@ -57,7 +55,7 @@ We recommend that you read through each of the steps, review the *emcli* command
 
 To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at */home/oracle/fleet*
 
-## **STEP 2:** Detect Configuration Pollution with Software Standardization Advisor
+## Task 2: Detect Configuration Pollution with Software Standardization Advisor
 
 This exercise enables us to analyze the database estate using Software Standardization.
 
@@ -65,7 +63,7 @@ Software Standardization Advisor enables administrators to understand various da
 
   ![](images/em-fleet-maintenance-overview-2.png " ")
 
-1.  On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+1.  On the browser window on the right preloaded with *Enterprise Manager*, if not already logged in, click on the *Username* field and login with the credentials provided below.
 
     ```
     Username: <copy>sysman</copy>
@@ -131,7 +129,7 @@ Software Standardization Advisor enables administrators to understand various da
   - Upgrade “finance.subnet.vcn.oraclevcn.com” from 18.10 to 19.7 -->
 
 
-## **STEP 3:** Oracle Database Upgrade with Fleet Maintenance (Overview)
+## Task 3: Oracle Database Upgrade with Fleet Maintenance (Overview)
 
 ### **Database Fleet Maintenance**
 
@@ -151,7 +149,7 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
     You will see *finance.subnet.vcn.oraclevcn.com*. If target status is ‘DOWN’, start the target (using */home/oracle/start\_db\_finance.sh*).
 
-## **STEP 4:** Review Pre-Completed Patching Tasks
+## Task 4: Review Pre-Completed Patching Tasks
 
 In this **[READ ONLY]** section, specific tasks related to patching on the target DB to be upgraded have already been performed using Fleet Maintenance. These tasks are fully covered by the  *Automated Database Patching at Scale with Fleet Maintenance* Lab and are listed here for your information only
 
@@ -259,7 +257,7 @@ This step verifies if the image can be used to patch a specified database target
 
     ![](images/ed90e634e7779548a6f7aebecec5e189.png " ")
 
-## **STEP 5:** Create New Image Version
+## Task 5: Create New Image Version
 
 In this section, you are adding DB software image version 19.7 to Gold Image *Tier1 SIDB Linux-x64*
 
@@ -310,7 +308,7 @@ In this section, you are adding DB software image version 19.7 to Gold Image *Ti
 
     ![](images/7796c07b2b8273dc93221a84b784dc63.png " ")
 
-## **STEP 6:** Deploy New Image Version
+## Task 6: Deploy New Image Version
 
 1. Run the block below to deploy a new Oracle Home.
 
@@ -349,7 +347,7 @@ In this section, you are adding DB software image version 19.7 to Gold Image *Ti
 
     ![](images/2db6aa6336c6d7b6d846a90fad68f5c7.png " ")
 
-## **STEP 7:** Migrate Listener to New Upgraded Home
+## Task 7: Migrate Listener to New Upgraded Home
 
 1. Review and execute the following command to Migrate the Listener
 
@@ -373,7 +371,7 @@ In this section, you are adding DB software image version 19.7 to Gold Image *Ti
 
     ![](images/5b63a9af8400bf71eb838f3a00cc2667.png " ")
 
-## **STEP 8:** Update Database – Upgrade to 19.7
+## Task 8: Update Database – Upgrade to 19.7
 
 With the deploy operation completed successfully, we are ready to run the final UPDATE operation which upgrades the database by switching it to the newly deployed home.
 
@@ -407,7 +405,7 @@ With the deploy operation completed successfully, we are ready to run the final 
 
     ![](images/0dd5dbdbd9c2f2eac424cf9cf976aa34.png " ")
 
-## **STEP 9:** Cleanup Old Homes
+## Task 9: Cleanup Old Homes
 
 1. Review and execute the following command as a dry-run to report on cleanup impact for *finance.subnet.vcn.oraclevcn.com*  
 

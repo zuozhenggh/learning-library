@@ -18,27 +18,27 @@ Estimated Lab Time: 6 hours
 ### Prerequisites
 * An OCI Account.
 * A tenancy where you can provision all the resources in the architecture diagram above.
-* **Lab 3: Install and prepare prerequisites**.
-* **Lab 4: Autonomous JSON Database & SODA Collections**.
+* **Lab 2: Install and prepare prerequisites**.
+* **Lab 3: Autonomous JSON Database & SODA Collections**.
 
 
-## **STEP 1:** Download the full Skillset Tracking application code
-Before proceeding, you must first download the zip file with the code that can be found [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/K5Wf9wdEs2YrUD_dY7Vt2p0ytXyQxenT5VtcHyUfQq4OonNnm13MgDQ6J3pwheG0/n/c4u04/b/labfiles/o/SkillsetTrackerApplicationCode.zip). After downloading, you can unzip the archive.
+## Task 1: Download the full Skillset Tracking application code
+Before proceeding, you must first download the zip file with the code that can be found [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FCkf-hjTxrlpKNHF9Y-Ofpfg35DTBsOQDalozYSjvK_JfH98sdytIR8ZgF0Cr5GN/n/c4u03/b/labfiles/o/SkillsetTrackerApplicationCode.zip). After downloading, you can unzip the archive.
 
 In the _SkillsetTrackerApplicationCode_ directory you can find two folders:
 
-  * ***API*** - The code containing the APIs that make calls to the database for various operations. This is an extended version of the code you built in **Lab 6: Build NodeJS APIs to make calls to the database** and is needed for **STEP 2** in this Lab.
+  * ***API*** - The code containing the APIs that make calls to the database for various operations. This is an extended version of the code you built in **Lab 5: Build NodeJS APIs to make calls to the database** and is needed for **STEP 2** in this Lab.
 
-  * ***OJET*** - The code containing the interface of the Skillset Tracking application, built using OracleJET. This is an extended version of the application you built in **Lab 5: Build an OracleJET Web Application** and is needed for **STEP 3** in this Lab.
+  * ***OJET*** - The code containing the interface of the Skillset Tracking application, built using OracleJET. This is an extended version of the application you built in **Lab 4: Build an OracleJET Web Application** and is needed for **STEP 3** in this Lab.
 
 
-## **STEP 2:** Create NodeJS API instance and run the code
+## Task 2: Create NodeJS API instance and run the code
 
-1. The first thing that you need to do is to go through the first step in **Lab 5: Build an OracleJET Web Application**, **Creating a Virtual Cloud Network**.
+1. The first thing that you need to do is to go through the first step in **Lab 4: Build an OracleJET Web Application**, **Creating a Virtual Cloud Network**.
 
-2. After your VCN is properly set up, you can proceed creating and configuring a new Linux Instance as described in **Lab 6: Build NodeJS APIs to make calls to the database** -> **STEPS 1, 2, and 3**.
+2. After your VCN is properly set up, you can proceed creating and configuring a new Linux Instance as described in **Lab 5: Build NodeJS APIs to make calls to the database** -> **STEPS 1, 2, and 3**.
 
-3. Now, before copying the code to the instance and running it, let's understand what all the files in this project are. Note that some of them were already explained in more detail in **Lab 6: Build NodeJS APIs to make calls to the database**.
+3. Now, before copying the code to the instance and running it, let's understand what all the files in this project are. Note that some of them were already explained in more detail in **Lab 5: Build NodeJS APIs to make calls to the database**.
     * **package.json** file - This file contains all the needed NodeJS packages that will be downloaded & installed by the ``npm install`` command.
     * **config** folder - The two files in the _config_ folder are meant to set up the default configuration for the entire application.
         * **database.js** - Sets up the configuration for making the connection to the database. Here the database user and password, as well as the connection string used, and the database name are all set. Notice that the values for these variables are not hardcoded and they are read from the _.env_ file.
@@ -126,11 +126,11 @@ In the _SkillsetTrackerApplicationCode_ directory you can find two folders:
 
 You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/** or run an API at **http://your\_instance\_public\_ip:8000/api/skillset**.  
 
-## **STEP 3:** Create OracleJET instance and run the code
+## Task 3: Create OracleJET instance and run the code
 
-1. The first thing that you need to do is to go through the second step in **Lab 5: Build an OracleJET Web Application**, **Creating a Linux Instance in OCI**.
+1. The first thing that you need to do is to go through the second step in **Lab 4: Build an OracleJET Web Application**, **Creating a Linux Instance in OCI**.
 
-2. After you created the instance, it's time to configure it as described in **Lab 5: Build an OracleJET Web Application** -> **STEP 3**.
+2. After you created the instance, it's time to configure it as described in **Lab 4: Build an OracleJET Web Application** -> **STEP 3**.
 
 3. Now, before copying the code to the instance and running it, let's understand what all the files in this project are. Note that some of them were already explained earlier.
     * **package.json** file - This file contains all the needed NodeJS packages that will be downloaded & installed by the ``npm install`` command.
@@ -399,9 +399,9 @@ You should now be able to see the application running in browser at **http://you
 
     You should now be able to see the application running in browser at **http://your\_instance\_public\_ip:8000/**.
 
-## **STEP 4:** Deploy the NodeJS API code in OKE
+## Task 4: Deploy the NodeJS API code in OKE
 
-1. In order to deploy your API code in Kubernetes, you should follow all the steps described in **Lab 8: Deploy the application on OKE**, but instead of using the code you developed in **Lab 6**, you would use the code downloaded at the beginning of this Lab.
+1. In order to deploy your API code in Kubernetes, you should follow all the steps described in **Lab 7: Deploy the application on OKE**, but instead of using the code you developed in **Lab 5**, you would use the code downloaded at the beginning of this Lab.
 
 2. After going through all these steps, you can go to your OracleJET project and update the IP in the _src/js/data/db.json_ file.
 
@@ -416,9 +416,9 @@ You should now be able to see the application running in browser at **http://you
     ]
     ```
 
-## **STEP 5:** Integrate your application with ODA
+## Task 5: Integrate your application with ODA
 
-1. In order to integrate your application with **Oracle Digital Assistant**, you would need to follow all the steps described in **Lab 6: Build NodeJS APIs to make calls to the database**, considering the fact that at **STEP 4** -> **point 6** you would need to either use the _Public IP_ of the NodeJS Instance from **STEP 2** of this Lab, or the _External IP_ from **STEP 4** in this Lab.
+1. In order to integrate your application with **Oracle Digital Assistant**, you would need to follow all the steps described in **Lab 6: Integration with Oracle Digital Assistant and Slack**, considering the fact that at **STEP 4** -> **point 6** you would need to either use the _Public IP_ of the NodeJS Instance from **STEP 2** of this Lab, or the _External IP_ from **STEP 4** in this Lab.
 
 ## Annexes
 

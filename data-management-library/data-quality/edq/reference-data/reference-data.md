@@ -23,7 +23,7 @@ This lab assumes you have:
     - Lab: Data Profiling
 
 
-## **Step 1**:  Generate Reference Data
+## Task 1:  Generate Reference Data
 
 ### Generate Reference Data
 
@@ -88,7 +88,7 @@ We will take advantage of the results generated while we were profiling the data
     ![](./images/image1200_66.png " ")
 
 
-## **Step 2**: Copy Reference Data
+## Task 2: Copy Reference Data
 Now, we will copy reference data previously created into our project, which will be used in further labs.
 
 1. We will use Examples.dxi package which is located in below path.

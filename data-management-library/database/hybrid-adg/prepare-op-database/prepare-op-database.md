@@ -23,7 +23,7 @@ This lab assumes you have completed the following labs:
 * Setup Primary Environment
 
 
-## **STEP 1:** Open the 1521 Port for the on-premise Database
+## Task 1: Open the 1521 Port for the on-premise Database
 
 1. Connect to the VM which you created before with **opc** user. Use putty tool (Windows) or command line (Mac, Linux).
 
@@ -42,7 +42,7 @@ This lab assumes you have completed the following labs:
      ```
 
 
-## **STEP 2:** Enable ssh Connect for the Oracle User
+## Task 2: Enable ssh Connect for the Oracle User
 
 1. Work as opc user, edit the ssh configure file.
 
@@ -65,7 +65,7 @@ This lab assumes you have completed the following labs:
 
 
 
-## **STEP 3:** Enable TDE
+## Task 3: Enable TDE
 
 Oracle MAA best practice recommends using Oracle Transparent Data Encryption (TDE) to encrypt both primary and standby databases to ensure all data is encrypted at-rest. Data can be converted during the migration process but it’s highly recommended to convert to TDE prior to migration to provide the most secure Data Guard environment. 
 
@@ -266,7 +266,7 @@ Oracle MAA best practice recommends using Oracle Transparent Data Encryption (TD
 
 
 
-## **STEP 4:** Encrypt the Data Files
+## Task 4: Encrypt the Data Files
 
 According to the best practice, you should encrypt all the data files. In this lab, we only encrypt the **USERS** tablespace in the pdb.
 
@@ -308,7 +308,7 @@ According to the best practice, you should encrypt all the data files. In this l
 
 
 
-## **STEP 5:** Enable the Network Encryption
+## Task 5: Enable the Network Encryption
 
 VPN connection or Oracle Net encryption is also required for encryption-in-flight for any other database payload (e.g. data file or redo headers) that are not encrypted by TDE. In this lab, you use public internet to connect between on-premise and the cloud, so you need to enable the network encryption.
 
@@ -398,7 +398,7 @@ VPN connection or Oracle Net encryption is also required for encryption-in-fligh
 
 
 
-## **STEP 6:** Enable Achivelog and Flashback
+## Task 6: Enable Achivelog and Flashback
 
 1. Check the achivelog mode, you can find it's disable now.
 
@@ -472,7 +472,7 @@ VPN connection or Oracle Net encryption is also required for encryption-in-fligh
 
 
 
-## **STEP 7:** Change Redo Log Size and Create Standby Log
+## Task 7: Change Redo Log Size and Create Standby Log
 
 1. Change the redo log size to 1024M according to the best practice. Check the status of the redo log first.
 
@@ -574,7 +574,7 @@ VPN connection or Oracle Net encryption is also required for encryption-in-fligh
      ```
 
 
-## **STEP 8:** Modify the Init Parameters for Best Practice
+## Task 8: Modify the Init Parameters for Best Practice
 
 Modify some init parameters for best practice.
 

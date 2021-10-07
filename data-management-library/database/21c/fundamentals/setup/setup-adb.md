@@ -1,9 +1,9 @@
 # Setup
 
 ## Introduction
-In the previous lab you created an ADB instance.  In this lab you will connect to the ADB instance from Oracle Cloud Shell.
+In the previous lab you created an ADB instance.  In this lab, you will connect to the ADB instance from Oracle Cloud Shell.
 
-*Estimated time:* 20 Minutes
+Estimated Time: 20 Minutes
 
 ### Objectives
 - Create a bucket, auth token and Oracle Wallet
@@ -14,13 +14,13 @@ In the previous lab you created an ADB instance.  In this lab you will connect t
 ### Prerequisites
 - Lab: Provision ADB
 
-## **STEP 1:** Create a Bucket
+## Task 1: Create a Bucket
 
 1. Login to Oracle Cloud if you are not already logged in.
 
-2. Click on the hamburger menu and navigate to Object Storage and click on **Object Storage**.
+2. Click on the hamburger menu and navigate to **Storage** and click on **Buckets**.
 
-      ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
+      ![](./images/object_storage.png " ")
 
 3. Choose the compartment where your ATP is provisioned and click **Create Bucket**.
 
@@ -34,7 +34,7 @@ In the previous lab you created an ADB instance.  In this lab you will connect t
 
       ![](./images/step1-5.png " ")
 
-## **STEP 2:** Create Oracle Wallet in Cloud Shell
+## Task 2: Create Oracle Wallet in Cloud Shell
 
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
@@ -75,7 +75,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ````
       ![](./images/21cwallet.png " ")
 
-## **STEP 3:** Create Auth Token
+## Task 3: Create Auth Token
 
 1.  Click on the person icon in the upper right corner.
 2.  Select **User Settings**
@@ -101,7 +101,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 6.  Identify the line in the output that starts with **"token"**.
 7.  Copy the value for the **token** somewhere safe, you will need it in the following steps.
 
-## **STEP 4:**  Load ADB Instance with Application Schemas
+## Task 4:  Load ADB Instance with Application Schemas
 
 1. Go back to your cloud shell and start the cloud shell if it isn't already running
    
@@ -126,7 +126,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ![](./images/load21c-1.png " ")
 
-## **STEP 5:** Grant Roles and Privileges to Users
+## Task 5: Grant Roles and Privileges to Users
 
 1.  Go back to your Autonomous Database Homepage.
 
@@ -202,7 +202,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       
       ![](./images/step5-14e.png " ")
 
-## **STEP 6:** Login to SQL Developer Web
+## Task 6: Login to SQL Developer Web
 
 1.  Test to ensure that your data has loaded by logging into SQL Developer Web. 
 
@@ -224,7 +224,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ![](./images/step4-run.png " ") 
 
-## **STEP 7:** Create a Database Credential for Your Users
+## Task 7: Create a Database Credential for Your Users
 
 To access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Transaction Processing. This information is only usable for your user schema.
 
@@ -255,7 +255,7 @@ To access data in the Object Store you have to enable your database user to auth
 
       ![](./images/step4-signout.png " ") 
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Authors** - Kay Malcolm, Senior Director, Database Product Management

@@ -5,31 +5,21 @@ In this Lab, you will examine and solve a "Regression" prediction data mining bu
 
 *Estimated Lab Time*: 30 Minutes
 
-<!-- ### About Oracle Machine Learning "Regression" -->
-
-
-<!-- [](youtube:zQtRwTOwisI) -->
-
-
 ### Objectives
 In this lab, you will:
 * Identify Data Miner interface components.
 * Create a Data Miner project.
 * Build a Workflow document that uses Regression models to predict customer behavior.
 
-
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-
-## **STEP 1:** Create a Data Miner Project
+## Task 1: Create a Data Miner Project
 
 To create a Data Miner Project, perform the following steps.
 
@@ -47,7 +37,7 @@ To create a Data Miner Project, perform the following steps.
 
     ![](./images/regression3.png " ")
 
-## **STEP 2:** Build a Data Miner Workflow
+## Task 2: Build a Data Miner Workflow
 
 To create the workflow for this process, perform the following steps.
 
@@ -103,7 +93,7 @@ At the bottom of the wizard window, click **Finish**.
   - You can add descriptive information about any node by using the Details tab in the Property Inspector.
   - The Thumbnail tab also provides a smaller display of the larger workflow window. As you drag nodes around the workflow window, the thumbnail view automatically adjusts.
 
-## **STEP 3:** Examine the Source Data
+## Task 3: Examine the Source Data
 
 You can use an Explore Data node to examine the source data. Although this is an optional step, Oracle Data Miner provides this tool to enable you to verify if the selected data meets the criteria to solve the stated business problem.
 
@@ -169,7 +159,7 @@ Follow these steps:
 
     ![](./images/regression21.png " ")
 
-## **STEP 4:** Build the Models
+## Task 4: Build the Models
 
 In this topic, you build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
 
@@ -205,7 +195,7 @@ In this topic, you build the selected models against the source data. This opera
 
     ![](./images/regression24.png " ")
 
-## **STEP 5:** Compare the Models
+## Task 5: Compare the Models
 
 After you build/train the selected models, you can view and evaluate the results for all of the models in a comparative format. Here, you compare the relative results of all four classification models. Follow these steps:
 
@@ -247,7 +237,7 @@ After you build/train the selected models, you can view and evaluate the results
 
     ![](./images/regression27.png " ")
 
-## **STEP 6:** Select and Examine a Specific Model
+## Task 6: Select and Examine a Specific Model
 
 1. Using the analysis performed in the previous topic.
 
@@ -256,7 +246,7 @@ After you build/train the selected models, you can view and evaluate the results
 
   ![](./images/regression29.png " ")
 
-## **STEP 7:** Apply the Model
+## Task 7: Apply the Model
 
 In this step, you will apply the Regression model and then create a table to display the results. You "apply" a model in order to make predictions - in this case to predict which customers are likely to buy insurance.
 
@@ -295,20 +285,6 @@ In this step, you will apply the Regression model and then create a table to dis
     ![](./images/regression34.png " ")
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
-
-## Rate this Workshop
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
-
-1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
-
-<!-- If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop. -->
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh

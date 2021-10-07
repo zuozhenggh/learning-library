@@ -20,9 +20,7 @@ To use GoldenGate to perform transformations on the data during the replication 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys
     - Lab: Prepare Setup
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -30,7 +28,7 @@ This lab assumes you have:
 
 In this lab we will setup GoldenGate Microservices Transformations
 
-## **STEP 1:** Preparation for Data Transformations
+## Task 1: Preparation for Data Transformations
 1. From the SSH terminal session as user *oracle* connecting to your VM instance, launch SQLPLUS and connect as `gate/gate` to PDB `OGGOOW191`
 
     ```
@@ -69,7 +67,7 @@ In this lab we will setup GoldenGate Microservices Transformations
 
     ![](./images/i02.png " ")
 
-## **STEP 2:** Concatenating the source *m* columns into target single *n* columns
+## Task 2: Concatenating the source *m* columns into target single *n* columns
 The picture below represents the summary of the transformations we will be performing in this step
 
   ![](./images/c1.png " ")
@@ -135,7 +133,7 @@ The picture below represents the summary of the transformations we will be perfo
 
     ![](./images/i6.png " ")
 
-## **STEP 3:** Masking a Source Data Field
+## Task 3: Masking a Source Data Field
 
 In this step we will mask the email ID field extracted at the source and replace it with a dummy email post replication at the target
 
@@ -242,7 +240,7 @@ In this step we will mask the email ID field extracted at the source and replace
 
     ![](./images/i10.png " ")
 
-## **STEP 4:** Using Environment Variables/Tokens
+## Task 4: Using Environment Variables/Tokens
 
 1. Go to the browser tab session of the Admin Server for *Boston* Deployment
 

@@ -27,7 +27,7 @@ One interesting aspect of JSON data in this context is the fact that all the req
 
 However, as we'll see, **indexing JSON data remains a best practice**.
 
-## **STEP 1**: Indexing a JSON Field
+## Task 1: Indexing a JSON Field
 
 SODA collections support different index types:
 - Unique index on the ID
@@ -112,7 +112,7 @@ This can be done using the `URL` and `login` resulting from the provisioning of 
    ![Click on SQL.](./images/create-index-plsql.png)
 
 
-## **STEP 2**: Retrieving JSON Documents
+## Task 2: Retrieving JSON Documents
 
 1. Let's run our very first query By Example (aka QBE) using the JSON panel.
  
@@ -131,7 +131,7 @@ This can be done using the `URL` and `login` resulting from the provisioning of 
    
    But how do we know if the command uses the index we've just created before?
 
-## **STEP 3**: Looking at the Execution Plan
+## Task 3: Looking at the Execution Plan
 
 1. Switch back to the SQL database action:
 
@@ -160,7 +160,7 @@ This can be done using the `URL` and `login` resulting from the provisioning of 
 
    The index is used!
 
-## **STEP 4**: More Advanced Indexes: _Search Index_
+## Task 4: More Advanced Indexes: _Search Index_
 
 If you test different values in the previous query, you might see that sometimes the index isn't used. This can happen if the value specified starts by the wildcard symbol **%**:
 
@@ -234,7 +234,7 @@ Search indexes take a significant time to create on large collections.
    The index creation should take about 1 minute to complete.
 
 
-## **STEP 5**: Retrieving JSON documents using Full-Text search
+## Task 5: Retrieving JSON documents using Full-Text search
 
 1. Using the SODA API, you can perform complex search:
 

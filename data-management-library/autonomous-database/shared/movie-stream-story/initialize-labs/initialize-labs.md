@@ -1,422 +1,139 @@
-# Initialize Labs
+# Initializing Labs
 
 ## Introduction
-This page contains the scripts that can be used to initialize your labs.  
+The workshop has been designed to run from beginning to end.  However, you may want to skip certain labs - which means that you may have also skipped some prerequisites.  For example, you can't recommend movies to a potential churner (using the Graph lab) until you've predicted those customers that are likely to churn (using the Machine Learning lab).
 
-The workshop has been designed to run from beginning to end.  However, you may want to skip certain labs - which means that you may have also skipped some prerequisites.  You can run the initialization script for any lab to get your database environment in the proper state.
+There's a two step process that will allow you to jump to any lab in the workshop:
+
+1. PL/SQL procedures are available that will generate the output of each lab.  You will need to download those scripts from object storage (don't worry, we've made this very easy)
+2. Execute the `run_lab_preq` procedure - passing as a parameter the lab number that you would like to run.  All of the prerequisites for that lab will be run and you're ready to go!
+
+The script drop and recreate the MOVIESTREAM user.  This means that all of the data for that user will be deleted and recreated.
+
+>**<span style="color:red">Warning:</span>  Any custom work that you did in the MOVIESTREAM schema will be deleted - so save your work!**
 
 Estimated Time: 5 minutes
 
-## **Lab 5 Initialization Script** 
+## Task 1:  Connect to the ADB SQL Tool as the ADMIN User
 
-Go to SQL Worksheet in SQL Tools and login as the **moviestream** user.  Then, copy and paste the script below into the SQL Worksheet and click **Run Script**.
+Connect to Autonomous Database tool as the ADMIN user:
 
-The script will drop and recreate the MovieStream tables and load them from data in object storage.
+1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**.
 
- ```
+    ![Click on Tools, then Database Actions](images/launchdbactions.png " ")
+
+2. On the login screen, enter the username ADMIN, then click the blue **Next** button.
+
+3. Enter the password for the ADMIN user you set up in the provisioning lab.
+
+4. Open the SQL Worksheet from the Launchpad:
+
+    ![Click on SQL from the Launchpad](images/launchpad.png " ")
+
+## Task 2:  Create the PL/SQL Procedures that Run the Prerequisite Labs
+
+Now that you're in the SQL worksheet, you will create the procedures used to initialize the labs.  
+
+1. Copy the script below into the worksheet and click Run Script (F5).
+
+```
 <copy>
--- This is the gold image for creating the schema
-define uri_landing = 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/tLBDQf0prua1qyczMj321erjEGwCy1kJwi5Y3B0YWBnssNmfRxRhQFRbeS799RH1/n/adwc4pm/b/moviestream_landing/o'
-define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/S-9E_eBGGoo9xNm3QP-DoNPr8xlmibT52mXsirQdvmiv_FfRTFmAx2ajUqFY5RCW/n/adwc4pm/b/moviestream_gold/o'
-define csv_format = '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":",", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}'
-define pipe_format = '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":"|", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}'
-define json_format = '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}'
-define parquet_format = '{"type":"parquet",  "schema": "all"}'
+-- Scripts have been provided that generate the output of each lab
+-- This lets you jump to a lab even if you haven't run thru the prior ones
+-- A JSON file contains the info about the labs and pointers to these scripts
 
--- initialize
-drop table ext_genre;
-drop table ext_movie;
-drop table ext_customer_contact;
-drop table ext_customer_extension;
-drop table ext_customer_segment;
-drop table ext_pizza_location;
-drop table ext_custsales;
-drop table customer;
-drop table customer_contact;
-drop table customer_extension;
-drop table genre;
-drop table movie;
-drop table custsales;
-drop table customer_segment;
-drop table pizza_location;
-drop table time;
-drop view v_custsales;
- 
+-- Click F5 to run all the scripts at once
 
- 
--- Test:  query object storage with the credential
--- SELECT *
--- FROM DBMS_CLOUD.LIST_OBJECTS('OBJ_STORE_CRED', '&uri_gold/');
- 
- 
--- Create a time table  over 2 years.  Used to densify time series calculations
-exec dbms_output.put_line(systimestamp || ' - create time table')
+-- drop this table with the lab listings
+drop table moviestream_labs; -- may fail if hasn't been defined
 
-create table time as
-select trunc (to_date('20210101','YYYYMMDD')-rownum) as day_id
-from dual connect by rownum < 732;
-comment on table time is ‘This is a densified time dimension table with the following hierarchy day-week-month-quarter-year’;
-
-alter table time
-add (
-    day_name as (to_char(day_id, 'DAY')),
-    day_dow as (to_char(day_id, 'D')),
-    day_dom as (to_char(day_id, 'DD')),
-    day_doy as (to_char(day_id, 'DDD')),
-    week_wom as (to_char(day_id, 'W')),
-    week_woy as (to_char(day_id, 'WW')),
-    month_moy as (to_char(day_id, 'MM')),
-    month_name as (to_char(day_id, 'MONTH')),
-    month_aname as (to_char(day_id, 'MON')),
-    quarter_name as ('Q'||to_char(day_id, 'Q')||'-'||to_char(day_id, 'YYYY')),
-    quarter_qoy as (to_char(day_id, 'Q')),
-    year_name as (to_char(day_id, 'YYYY'))
-);
- 
--- Using public buckets  so credentials are not required
--- Create external tables then do a CTAS
-exec dbms_output.put_line(systimestamp || ' - create external tables')
-exec dbms_output.put_line(systimestamp || ' - ... ext_genre')
-
+-- Create the MOVIESTREAM_LABS table that allows you to query all of the labs and their associated scripts
 begin
-    dbms_cloud.create_external_table(
-        table_name => 'ext_genre',
-        file_uri_list => '&uri_gold/genre/genre.csv',
-        format => '&csv_format',
-        column_list => 'genre_id number, name varchar2(30)'
-        );
+    dbms_cloud.create_external_table(table_name => 'moviestream_labs',
+                file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_scripts/o/prerequisites/moviestream-labs.json',
+                format => '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}',
+                column_list => 'doc varchar2(30000)'
+            );
 end;
 /
 
-exec dbms_output.put_line(systimestamp || ' - ... ext_customer_segment') 
+-- Define the scripts found in the labs table.
+declare
+    b_plsql_script blob;            -- binary object
+    v_plsql_script varchar2(32000); -- converted to varchar
+    uri_scripts varchar2(2000) := 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_scripts/o/prerequisites'; -- location of the scripts
+    uri varchar2(2000);
 begin
-    dbms_cloud.create_external_table(
-        table_name => 'ext_customer_segment',
-        file_uri_list => '&uri_landing/customer_segment/customer_segment.csv',
-        format => '&csv_format',
-        column_list => 'segment_id number, name varchar2(100), short_name varchar2(100)'
-        );       
-end;
-/
 
-exec dbms_output.put_line(systimestamp || ' - ... ext_movie')  
-begin
-    dbms_cloud.create_external_table(
-        table_name => 'ext_movie',
-        file_uri_list => '&uri_gold/movie/movies.json',
-        format => '&json_format',
-        column_list => 'doc varchar2(30000)'
-        );
-end;
-/       
+    -- Run a query to get each lab and then create the procedures that generate the output
+    for lab_rec in (
+        select  json_value (doc, '$.lab_num' returning number) as lab_num,
+                json_value (doc, '$.title' returning varchar2(500)) as title,
+                json_value (doc, '$.script' returning varchar2(100)) as proc        
+        from moviestream_labs ml
+        where json_value (doc, '$.script' returning varchar2(100))  is not null
+        order by 1 asc
+        )
+    loop
+        -- The plsql procedure DDL is contained in a file in object store
+        -- Create the procedure
+        dbms_output.put_line(lab_rec.title);
+        dbms_output.put_line('....downloading plsql procedure ' || lab_rec.proc);
 
-exec dbms_output.put_line(systimestamp || ' - ... ext_custsales')  
+        -- download the script into this binary variable        
+        uri := uri_scripts || '/' || lab_rec.proc || '.sql';
 
-begin
-    dbms_cloud.create_external_table(
-        table_name => 'ext_custsales',
-        file_uri_list => '&uri_gold/custsales/*.parquet',
-        format => '&parquet_format',
-        column_list => 'MOVIE_ID NUMBER(20,0),
-                        LIST_PRICE BINARY_DOUBLE,
-                        DISCOUNT_TYPE VARCHAR2(4000 BYTE),
-                        PAYMENT_METHOD VARCHAR2(4000 BYTE),
-                        GENRE_ID NUMBER(20,0),
-                        DISCOUNT_PERCENT BINARY_DOUBLE,
-                        ACTUAL_PRICE BINARY_DOUBLE,
-                        DEVICE VARCHAR2(4000 BYTE),
-                        CUST_ID NUMBER(20,0),
-                        OS VARCHAR2(4000 BYTE),
-                        DAY_ID date,
-                        APP VARCHAR2(4000 BYTE)'
-    ); 
-end;
-/
- 
-exec dbms_output.put_line(systimestamp || ' - ... ext_pizza_location')  
+        dbms_output.put_line('....the full uri is ' || uri);        
+        b_plsql_script := dbms_cloud.get_object(object_uri => uri);
 
-begin       
-    dbms_cloud.create_external_table(
-        table_name => 'ext_pizza_location',
-        file_uri_list => '&uri_landing/pizza_location/*.csv',
-        format => '&csv_format',
-        column_list => 'PIZZA_LOC_ID NUMBER,
-                        LAT NUMBER,
-                        LON NUMBER,
-                        CHAIN_ID NUMBER,
-                        CHAIN VARCHAR2(30 BYTE),
-                        ADDRESS VARCHAR2(250 BYTE),
-                        CITY VARCHAR2(250 BYTE),
-                        STATE VARCHAR2(26 BYTE),
-                        POSTAL_CODE VARCHAR2(38 BYTE),
-                        COUNTY VARCHAR2(250 BYTE)'
-        ); 
-end;
-/
+        dbms_output.put_line('....creating plsql procedure ' || lab_rec.proc);
+        -- convert the blob to a varchar2 and then create the procedure
+        v_plsql_script :=  utl_raw.cast_to_varchar2( b_plsql_script );
 
-exec dbms_output.put_line(systimestamp || ' - ... ext_customer_contact')  
+        -- generate the procedure
+        execute immediate v_plsql_script;
 
-begin       
-    dbms_cloud.create_external_table(
-        table_name => 'ext_customer_contact',
-        file_uri_list => '&uri_gold/customer_contact/*.csv',
-        format => '&csv_format',
-        column_list => 'CUST_ID                  NUMBER,         
-                        LAST_NAME                VARCHAR2(200 byte), 
-                        FIRST_NAME               VARCHAR2(200 byte), 
-                        EMAIL                    VARCHAR2(500 byte), 
-                        STREET_ADDRESS           VARCHAR2(400 byte), 
-                        POSTAL_CODE              VARCHAR2(10 byte), 
-                        CITY                     VARCHAR2(100 byte), 
-                        STATE_PROVINCE           VARCHAR2(100 byte), 
-                        COUNTRY                  VARCHAR2(400 byte), 
-                        COUNTRY_CODE             VARCHAR2(2 byte), 
-                        CONTINENT                VARCHAR2(400 byte),
-                        YRS_CUSTOMER             NUMBER, 
-                        PROMOTION_RESPONSE       NUMBER,         
-                        LOC_LAT                  NUMBER,         
-                        LOC_LONG                 NUMBER' 
+    end loop lab_rec;  
 
-        ); 
-end;
-/
+    exception
+        when others then
+            dbms_output.put_line('Unable to setup prequisite scripts.');
+            dbms_output.put_line('You will need to run thru each of the labs');
+            dbms_output.put_line('');
+            dbms_output.put_line(sqlerrm);
+ end;
+ /
+ </copy>
+```
 
-exec dbms_output.put_line(systimestamp || ' - ... ext_customer_extension')  
+2. The result of running the procedure is displayed below. There is a new table called MOVIESTREAM_LABS that contains the list of available labs in this workshop.
 
-begin       
-    dbms_cloud.create_external_table(
-        table_name => 'ext_customer_extension',
-        file_uri_list => '&uri_landing/customer_extension/*.csv',
-        format => '&csv_format',
-        column_list => 'CUST_ID                      NUMBER,         
-                        LAST_NAME                    VARCHAR2(200 byte),
-                        FIRST_NAME                   VARCHAR2(200 byte), 
-                        EMAIL                        VARCHAR2(500 byte),
-                        AGE                          NUMBER,         
-                        COMMUTE_DISTANCE             NUMBER,         
-                        CREDIT_BALANCE               NUMBER,         
-                        EDUCATION                    VARCHAR2(40 byte),
-                        FULL_TIME                    VARCHAR2(40 byte),
-                        GENDER                       VARCHAR2(20 byte), 
-                        HOUSEHOLD_SIZE               NUMBER,         
-                        INCOME                       NUMBER,         
-                        INCOME_LEVEL                 VARCHAR2(20 byte), 
-                        INSUFF_FUNDS_INCIDENTS       NUMBER,         
-                        JOB_TYPE                     VARCHAR2(200 byte),
-                        LATE_MORT_RENT_PMTS          NUMBER,         
-                        MARITAL_STATUS               VARCHAR2(8 byte),
-                        MORTGAGE_AMT                 NUMBER,         
-                        NUM_CARS                     NUMBER,         
-                        NUM_MORTGAGES                NUMBER,         
-                        PET                          VARCHAR2(40 byte), 
-                        RENT_OWN                     VARCHAR2(40 byte), 
-                        SEGMENT_ID                   NUMBER,
-                        WORK_EXPERIENCE              NUMBER,         
-                        YRS_CURRENT_EMPLOYER         NUMBER,         
-                        YRS_RESIDENCE                NUMBER'
-        ); 
-end;
-/
+    ![Running the script](images/run-script.png)
 
-exec dbms_output.put_line(systimestamp || ' - external tables created.')  
+3. Scroll to **Procedures** in the Navigator to see the procedures that were generated by the script:
 
+    ![Review the generated procedures](images/generated-procedures.png " ")
 
-/*
-    Create tables from external tables
-*/
-exec dbms_output.put_line(systimestamp || ' - create custsales')
-create table custsales as select * from ext_custsales;
+## Task 3: Execute the `run_lab_preq` Procedure
 
- 
-exec dbms_output.put_line(systimestamp || ' - create pizza_locations')
-create table pizza_location as select * from ext_pizza_location;
- 
-exec dbms_output.put_line(systimestamp || ' - create movie')
-create table movie as
-select
-    cast(m.doc.movie_id as number) as movie_id,
-    cast(m.doc.title as varchar2(200 byte)) as title,   
-    cast(m.doc.budget as number) as budget,
-    cast(m.doc.gross as number) gross,
-    cast(m.doc.list_price as number) as list_price,
-    cast(m.doc.genre as varchar2(4000)) as genres,
-    cast(m.doc.sku as varchar2(30 byte)) as sku,   
-    cast(m.doc.year as number) as year,
-    to_date(m.doc.opening_date, 'YYYY-MM-DD') as opening_date,
-    cast(m.doc.views as number) as views,
-    cast(m.doc.cast as varchar2(4000 byte)) as cast,
-    cast(m.doc.crew as varchar2(4000 byte)) as crew,
-    cast(m.doc.studio as varchar2(4000 byte)) as studio,
-    cast(m.doc.main_subject as varchar2(4000 byte)) as main_subject,
-    cast(m.doc.awards as varchar2(4000 byte)) as awards,
-    cast(m.doc.nominations as varchar2(4000 byte)) as nominations,
-    cast(m.doc.runtime as number) as runtime,
-    substr(cast(m.doc.summary as varchar2(4000 byte)),1, 4000) as summary
-from ext_movie m;
- 
-exec dbms_output.put_line(systimestamp || ' - create genre')
-create table genre as select * from ext_genre;
- 
-exec dbms_output.put_line(systimestamp || ' - create customer_segment')
-create table customer_segment as select * from ext_customer_segment;
- 
-exec dbms_output.put_line(systimestamp || ' - create customer_contact')
-create table customer_contact as select * from ext_customer_contact;
+In the SQL Worksheet, you can now run the script that will ensure that the prerequisites are in place for the lab that you would like to run.  
 
-exec dbms_output.put_line(systimestamp || ' - create customer_extension')
-create table customer_extension as select * from ext_customer_extension;
+1. Simply replace ``<lab number>`` below with the number of the lab that you want to run.
 
+    ``exec run_lab_prereq(lab_number => <lab number>);``
 
--- Table combining the two independent ones
-exec dbms_output.put_line(systimestamp || ' - create combined customer')
-create table CUSTOMER
-as
-select  cc.CUST_ID,                
-        cc.LAST_NAME,              
-        cc.FIRST_NAME,             
-        cc.EMAIL,                  
-        cc.STREET_ADDRESS,         
-        cc.POSTAL_CODE,            
-        cc.CITY,                   
-        cc.STATE_PROVINCE,         
-        cc.COUNTRY,                
-        cc.COUNTRY_CODE,           
-        cc.CONTINENT,              
-        cc.YRS_CUSTOMER,           
-        cc.PROMOTION_RESPONSE,     
-        cc.LOC_LAT,                
-        cc.LOC_LONG,               
-        ce.AGE,                    
-        ce.COMMUTE_DISTANCE,       
-        ce.CREDIT_BALANCE,         
-        ce.EDUCATION,              
-        ce.FULL_TIME,              
-        ce.GENDER,                 
-        ce.HOUSEHOLD_SIZE,         
-        ce.INCOME,                 
-        ce.INCOME_LEVEL,           
-        ce.INSUFF_FUNDS_INCIDENTS, 
-        ce.JOB_TYPE,               
-        ce.LATE_MORT_RENT_PMTS,    
-        ce.MARITAL_STATUS,         
-        ce.MORTGAGE_AMT,           
-        ce.NUM_CARS,               
-        ce.NUM_MORTGAGES,          
-        ce.PET,                    
-        ce.RENT_OWN,    
-        ce.SEGMENT_ID,           
-        ce.WORK_EXPERIENCE,        
-        ce.YRS_CURRENT_EMPLOYER,   
-        ce.YRS_RESIDENCE
-from CUSTOMER_CONTACT cc, CUSTOMER_EXTENSION ce
-where cc.cust_id = ce.cust_id;
- 
--- View combining data
-exec dbms_output.put_line(systimestamp || ' - create view v_custsales')
-CREATE OR REPLACE VIEW v_custsales AS
-SELECT
-    cs.day_id,
-    c.cust_id,
-    c.last_name,
-    c.first_name,
-    c.city,
-    c.state_province,
-    c.country,
-    c.continent,
-    c.age,
-    c.commute_distance,
-    c.credit_balance,
-    c.education,
-    c.full_time,
-    c.gender,
-    c.household_size,
-    c.income,
-    c.income_level,
-    c.insuff_funds_incidents,
-    c.job_type,
-    c.late_mort_rent_pmts,
-    c.marital_status,
-    c.mortgage_amt,
-    c.num_cars,
-    c.num_mortgages,
-    c.pet,
-    c.promotion_response,
-    c.rent_own,
-    c.work_experience,
-    c.yrs_current_employer,
-    c.yrs_customer,
-    c.yrs_residence,
-    c.loc_lat,
-    c.loc_long,   
-    cs.app,
-    cs.device,
-    cs.os,
-    cs.payment_method,
-    cs.list_price,
-    cs.discount_type,
-    cs.discount_percent,
-    cs.actual_price,
-    1 as transactions,
-    s.short_name as segment,
-    g.name as genre,
-    m.title,
-    m.budget,
-    m.gross,
-    m.genres,
-    m.sku,
-    m.year,
-    m.opening_date,
-    m.cast,
-    m.crew,
-    m.studio,
-    m.main_subject,
-    nvl(json_value(m.awards,'$.size()'),0) awards,
-    nvl(json_value(m.nominations,'$.size()'),0) nominations,
-    m.runtime
-FROM
-    genre g, customer c, custsales cs, customer_segment s, movie m
-WHERE
-     cs.movie_id = m.movie_id
-AND  cs.genre_id = g.genre_id
-AND  cs.cust_id = c.cust_id
-AND  c.segment_id = s.segment_id;
- 
+2. Because the MOVIESTREAM user will be recreated, you will also need to specify a password from the user. The example below will run the prequisites for **Lab 5** and then set the password to a secure value.
 
--- Add constraints and indexes
-exec dbms_output.put_line(systimestamp || ' - creating constraints and indexes')
-
-alter table genre add constraint pk_genre_id primary key("GENRE_ID");
-
-alter table customer add constraint pk_customer_cust_id primary key("CUST_ID");
-alter table customer_extension add constraint pk_custextension_cust_id primary key("CUST_ID");
-alter table customer_contact add constraint pk_custcontact_cust_id primary key("CUST_ID");
-alter table customer_segment add constraint pk_custsegment_id primary key("SEGMENT_ID");
-
-alter table movie add constraint pk_movie_id primary key("MOVIE_ID");
-alter table movie add CONSTRAINT movie_cast_json CHECK (cast IS JSON);
-alter table movie add CONSTRAINT movie_genre_json CHECK (genres IS JSON);
-alter table movie add CONSTRAINT movie_crew_json CHECK (crew IS JSON);
-alter table movie add CONSTRAINT movie_studio_json CHECK (studio IS JSON);
-alter table movie add CONSTRAINT movie_awards_json CHECK (awards IS JSON);
-alter table movie add CONSTRAINT movie_nominations_json CHECK (nominations IS JSON);
-  
-alter table pizza_location add constraint pk_pizza_loc_id primary key("PIZZA_LOC_ID");
-
-alter table time add constraint pk_day primary key("DAY_ID");
-
-
--- foreign keys
-alter table custsales add constraint fk_custsales_movie_id foreign key("MOVIE_ID") references movie("MOVIE_ID");
-alter table custsales add constraint fk_custsales_cust_id foreign key("CUST_ID") references customer("CUST_ID");
-alter table custsales add constraint fk_custsales_day_id foreign key("DAY_ID") references time("DAY_ID");
-alter table custsales add constraint fk_custsales_genre_id foreign key("GENRE_ID") references genre("GENRE_ID");
-
-
-exec dbms_output.put_line(systimestamp || 'Done.')
+    ```
+    <copy>
+    exec run_lab_prereq(lab_number => 5);
+    alter user moviestream identified by "MoviesAreC00l#";
     </copy>
- ```
+    ```
 
+    This may take a few minutes to run; the script is running thru many steps :). Once complete, the MOVIESTREAM is initialized and you can continue to your Lab.
 
 ## Acknowledgements
-* **Author** - Marty Gubar, Product Manager - Server Technoloties
-* **Last Updated By/Date** - <Marty Gubar, Group, July 2021>
+
+* **Author** - Marty Gubar, Product Manager - Server Technologies
+* **Last Updated By/Date** - Marty Gubar, August 2021

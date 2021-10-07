@@ -28,9 +28,9 @@ To complete this lab, you must have:
 * An OCI Account.
 * A tenancy where you have the resources available to provision a VCN and a Linux Instance.
 * An existing compartment in which the resources created will reside.
-* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
+* If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
-## **STEP 1:** Creating a Virtual Cloud Network
+## Task 1: Creating a Virtual Cloud Network
 
 1. Please refer to this [link] (https://oracle-base.com/articles/vm/oracle-cloud-infrastructure-oci-create-a-compartment) if you want to create a new compartment. In this lab will be used an existing compartment called _skillset_.
 
@@ -68,18 +68,18 @@ To complete this lab, you must have:
 
   **Note**: For production instances never open up all traffic via 0.0.0.0/0 on a given port, in this lab this happens only to make the configuration easier.
 
-9. The next step would be to create a public subnet in the VCN. Navigate to **your VCN** -> **Subnets** -> **Create Subnet** and fill in the form with the name of the subnet, the compartment and the CIDR block. For the subnet type select **Regional**, as recommended. Also, chose the Default Route Table and Default Security List created and updated previously.
+9. The next step would be to create a public subnet in the VCN. Navigate to **your VCN** -> **Subnets** -> **Create Subnet** and fill in the form with the name of the subnet, the compartment and the CIDR block. For the subnet type select **Regional**, as recommended. Also, choose the Default Route Table and Default Security List created and updated previously.
 
   ![create subnet form 1](./images/create-subnet-form-1.png)
 
   ![create subnet form 2](./images/create-subnet-form-2.png)
 
 
-## **STEP 2:** Creating a Linux Instance in OCI
+## Task 2: Creating a Linux Instance in OCI
 
 After the Virtual Cloud Network and its components are provisioned, the next step would be to create a Linux Instance to run the OracleJET code.
 
-1. In the top-left hamburger menu navigate to **Compute** -> **Instances** and choose **Create Instance**. Chose a name for the instance, in this case it would be _ojet-server_, then select the desired compartment and availability domain.
+1. In the top-left hamburger menu navigate to **Compute** -> **Instances** and choose **Create Instance**. Choose a name for the instance, in this case it would be _ojet-server_, then select the desired compartment and availability domain.
 
   ![create instance form step 1](./images/create-instance-form-step1.png)
 
@@ -87,17 +87,17 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
   ![create instance form step 2](./images/create-instance-form-step2.png)
 
-3. Chose the VCN in which the instance will reside, as well as the subnet created previously. To simplify everything, chose to assign a Public IP to the instance, in order to make it accessible from the Internet.
+3. Choose the VCN in which the instance will reside, as well as the subnet created previously. To simplify everything, choose to assign a Public IP to the instance, in order to make it accessible from the Internet.
 
   ![create instance form step 3](./images/create-instance-form-step3.png)
 
-4. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH key**.
+4. Upload your public SSH key from your computer (.pub) so that you will be able to connect to the instance. If you need to generate an SSH key pair, follow instructions from **Lab 1: Generate SSH Keys**.
 
   ![create instance form step 4](./images/create-instance-form-step4.png)
 
 5. Click the **Create** button.
 
-## **STEP 3:** Connecting to the Instance and Installing the Needed Packages
+## Task 3: Connecting to the Instance and Installing the Needed Packages
 
 1. From the OCI Console, copy the public IP address of your new created instance and open a terminal, CMD or Windows PowerShell screen.
 
@@ -169,13 +169,13 @@ After the Virtual Cloud Network and its components are provisioned, the next ste
 
   Paste the key that needs to be added at the end of the file on the instance and save the file (**Ctrl+O** then **Ctrl+X**).
 
-## **STEP 4:** Create a Simple OracleJET Application with a Treemap
+## Task 4: Create a Simple OracleJET Application with a Treemap
 
 After the process of configuring the OCI instance, in order to be able to create and run OracleJET application, you will see an example of a basic project that will contain a treemap structure based on a JSON file stored in the project.
 
 You can either create and run the following application on your local machine, then copy the code and run it on the Linux Instance, or you can connect with SSH to the instance and write the code directly on the instance in any editor of your choice.
 
-  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 3: Install and prepare prerequisites**.
+  **Note**: If you choose to develop the code on your local machine you need to have installed **NodeJS**, **OracleJET** and **Visual Studio Code** (or other code editor of your choice), as mentioned in **Lab 2: Install and prepare prerequisites**.
 
 According to [OracleJET Cookbook] (https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=treemap&demo=default), a treemap is an interactive data visualization in which hierarchical data is represented across two dimensions by the size and color of nested rectangular nodes.
 
@@ -308,7 +308,7 @@ In order to see a treemap in your application, use Visual Studio Code and follow
 
 11. Create a new folder under **/src/js** named _data_.
 
-12. Download the _sampletest.json_ file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/hosgpT-IV7HpwSoTXLoPyhemvHpEe9vA4PhX6zqFOetWqAwDcUO1qH5V4zMJu4Ez/n/c4u04/b/labfiles/o/Lab5-Sample_JSON.zip). You can customize this with as many skill areas, skills and employees as you want. Place this file into the folder created at the previous step.
+12. Download the _sampletest.json_ file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/l6r-762fqT4EZuv8dopEPFwOexn40krchYio-0P2T8mTT1RBaMHo4Qy1rBGArloA/n/c4u03/b/labfiles/o/Lab5-Sample_JSON.zip). You can customize this with as many skill areas, skills and employees as you want. Place this file into the folder created at the previous step.
 
   At this moment you have the JSON, JavaScript and HTML file and if you want to see the result, you need to create a new entry in the menu.
 
@@ -327,11 +327,11 @@ In order to see a treemap in your application, use Visual Studio Code and follow
       </copy>
       ```
 
-      After all this changes are made, run again `ojet build` and `ojet serve` commands and you will see the final result in your browser.
+      After all these changes are made, run again `ojet build` and `ojet serve` commands and you will see the final result in your browser.
 
       ![Running app in browser](./images/treemap.png)
 
-14. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run in from you laptop, not on the instance).
+14. If you created the project on your local machine, you need to upload it to the instance. In order to do this, you can use the following commands (run from your laptop, not on the instance).
 
   **Note**: Before copying the code from your local machine to the instance, delete the _node\_modules_ folder so that the process will take less time.
 

@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Deploy GoldenGate for Big Data
     - Lab: MySQL to MySQL
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -41,12 +41,14 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 3. Repeat the two steps above to create a second session.
 These two sessions will be used respectively for `source` and `target` execution tasks
 
-## **STEP 1**: Explore GoldenGate Configuration
+## Task 1: Explore GoldenGate Configuration
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
     ![](./images/labmenu_opt1.png " ")
 
 2. Select **R** to reset the lab environment, then select **6**
+
+Select **Q** to exit labmenu
 
 3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
 
@@ -82,7 +84,7 @@ These two sessions will be used respectively for `source` and `target` execution
     ```
     <copy>view /u01/gg4hadoop123010/dirprm/custom_kafka_producer.properties</copy>
     ```
-## **STEP 2**: GoldenGate Source Configuration
+## Task 2: GoldenGate Source Configuration
 1. In the first or `source` terminal session, go to the GG Home for MySQL, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
     ```
@@ -159,7 +161,7 @@ These two sessions will be used respectively for `source` and `target` execution
     ![](./images/e4.png " ")
     ![](./images/e5.png " ")
 
-## **STEP 3**: GoldenGate Target Configuration
+## Task 3: GoldenGate Target Configuration
 Now that the source side is setup, let’s configure GG on the target side (Kafka).
 
 1. In the second or `target` terminal session (GG for Hadoop), you’ll need to modify the Kafka properties by removing the ‘---‘ from the highlighted values:
@@ -217,7 +219,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
 
       ![](./images/e9.png " ")
 
-## **STEP 4**: GoldenGate Replication to Kafka
+## Task 4: GoldenGate Replication to Kafka
 
 1. Now that GG processes have been created and the Kafka Broker has been started, let’s start the GG replicat for Kafka. Go back to the GG Home for Hadoop ggsci session:
 
@@ -232,7 +234,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
     ```
     <copy>info all</copy>
     ```
-2. Now go back to the previous session, where you ran `showtopics`; we will load some data on the MySQL database `ggsource` and GG will extract and write it to the Kafka topics.
+2. Now go back to the previous session,  we will load some data on the MySQL database `ggsource` then run `showtopics`;and GG will extract and write it to the Kafka topics.
 
     ![](./images/E11.png " ")
 
@@ -300,7 +302,7 @@ Now that the source side is setup, let’s configure GG on the target side (Kafk
 ## Summary
 In summary, you loaded data in MySQL database `‘ggsource’`, GG extract process `‘extmysql’` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `‘pmphadop’` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `‘rkafka’` read the remote trail files, acted as a producer and wrote the messages to an auto-created topic for each table in the source database.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab*
 
 ## Learn More
 
@@ -309,4 +311,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, September 2021

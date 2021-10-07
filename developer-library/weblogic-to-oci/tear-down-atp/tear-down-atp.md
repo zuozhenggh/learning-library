@@ -12,7 +12,7 @@ Estimated Completion Time: 15 minutes
 
 You will tear down the infrastructure provisioned.
 
-## **STEP 1:** Cleaning up the on-premises environment
+## Task 1: Cleaning up the on-premises environment
 
 ### If you used docker
 
@@ -51,7 +51,7 @@ To destroy the demo VM:
 
   ![](./images/delete-stack.png " ")
 
-## **STEP 2:** Tear down the Application Database on OCI
+## Task 2: Tear down the Application Database on OCI
 
 1. Go to the **Autonomous Transaction Processing**
 
@@ -76,7 +76,7 @@ To destroy the demo VM:
 
     Note you won't be able to proceed until the DB System itself has been terminated.
 
-## **STEP 3:** Tear down the WebLogic environment
+## Task 3: Tear down the WebLogic environment
 
 You need to terminate the DB subnet before you can tear down the WebLogic deployment as Resource Manager will not be able to clean up the VCN until the DB subnet is removed.
 

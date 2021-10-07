@@ -17,7 +17,7 @@ In this lab, you will:
 * Lab: Setup
 
 
-## **STEP 1:** Show how zone maps are not created without DBA intervention
+## Task 1: Show how zone maps are not created without DBA intervention
 
 1. Create the `SALES.ZM_TABLE` table in `PDB21`.  
 
@@ -210,7 +210,7 @@ In this lab, you will:
 
 
 
-## **STEP 2:** Enable automatic zone maps
+## Task 2: Enable automatic zone maps
 
 1. Drop the table.
 
@@ -238,7 +238,7 @@ In this lab, you will:
     SQL>
     ```
 
-## **STEP 3:** Show how automatic zone maps are created without DBA intervention
+## Task 3: Show how automatic zone maps are created without DBA intervention
 
 1. Re-create the table, insert rows with direct load, and gather table statistics.
 
@@ -543,7 +543,7 @@ In this lab, you will:
     SQL>
     ```
 
-## **STEP 4:** Drop the table
+## Task 4: Drop the table
 
 1.  Execute the commands to drop the table.
 

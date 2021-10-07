@@ -13,7 +13,8 @@
     },
     {
       "title": "Create an APEX Workspace",
-      "filename": "../../../common/create-apex-workspace/create-apex-workspace.md"
+      "filename": "../../../common/create-apex-workspace/create-apex-workspace.md",
+      "type": "livelabs"
     },
     {
       "title": "Lab 1: Installing Sample Tables",
@@ -41,7 +42,7 @@
     },
     {
       "title": "Lab 7: Improving Tasks",
-      "filename": "../8-improving-tasks/8-improving-tasks.md"
+      "filename": "../../8-improving-tasks/8-improving-tasks.md"
     },
     {
       "title": "Need Help?",

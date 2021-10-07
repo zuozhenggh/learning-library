@@ -29,7 +29,7 @@ _Estimated Lab Time_: 20 minutes
     * Lab 8: Mashing up additional Data Sets, Contextual Data Preparation
     * Lab 10: Geo Maps and Custom Binning
 
-## **STEP 1**: Data Flow
+## Task 1: Data Flow
 
 Data Flow enables training of Machine Learning models and application models for scoring of data and detects sentiment from a text column allowing for Sentiment Analysis.
 To build a Data Flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the Data Flow Editor to add and configure your steps.  
@@ -141,7 +141,7 @@ Click on **Go Back** icon.
 
      ![Go Back](../data-flows/images/gobacksmall.png)
 
-## **STEP 2**: Connect to SQL Developer Web tool to check your data
+## Task 2: Connect to SQL Developer Web tool to check your data
 
 **Oracle SQL Developer Web (Database Actions)** is the web-based version of Oracle SQL Developer that enables you to execute queries and scripts, create database objects, load data, build data models, and monitor database performance.  
 To connect to Oracle SQL Developer Web you have at least a couple of options.

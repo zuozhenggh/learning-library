@@ -23,7 +23,7 @@ _Estimated Lab Time:_ 20 minutes
     * Lab 1: Provisioning your Autonomous Database instance  
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
 
-## **STEP 1**: Load data to your Autonomous Database
+## Task 1: Load data to your Autonomous Database
 
 Connect to your **Autonomous Database**.  
 In the ADWH console, lets navigate to the Development tab and open the SQL Developer Web  
@@ -59,7 +59,7 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
 
       ![Run Script](./images/lab300_3fsmall.png)
 
-## **STEP 2**: Prepare the connection from Autonomous Database
+## Task 2: Prepare the connection from Autonomous Database
 
 **Oracle Autonomous Database** only accepts secure connections to the database. This requires a *'wallet'* file that contains the SQL\*NET configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL\*Plus etc. For this workshop, you will use this same wallet mechanism to make a connection from OAC to the **Autonomous Database**.
 
@@ -90,7 +90,7 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
 
     ![Oracle Wallet Close](./images/lab300_6.png)
 
-## **STEP 3**: Create the connection from Oracle Analytics Cloud to Autonomous Database
+## Task 3: Create the connection from Oracle Analytics Cloud to Autonomous Database
 1. ### Use the Wallet in Oracle Analytics Cloud
 
     **Return** to the **Oracle Cloud Infrastructure console** and click on the menu icon on the left.
@@ -126,7 +126,7 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
 
 5. Select **Save** to save your new connection **information**.
 
-## **STEP 4**: Create and Adjust the Data Set
+## Task 4: Create and Adjust the Data Set
 
 When you create a project, you add one or more **Data Sets** containing the data that you want to **visualize and explore**. Data sets contain data
 from Subject Areas, Oracle Applications, databases, or uploaded data files such as spreadsheets. You can also add multiple data sets to your existing projects.

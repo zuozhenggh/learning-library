@@ -27,7 +27,7 @@ Watch a video demonstration of provisioning a new autonomous database:
 *Note: While this video uses ADW, the steps are identical for creating and connecting to an ATP database.*
 
 
-## **STEP 1:** Choosing ATP from the Services Menu
+## Task 1: Choosing ATP from the Services Menu
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -48,7 +48,7 @@ Watch a video demonstration of provisioning a new autonomous database:
 
     ![](./images/prov3.png " ")
 
-## **STEP 2:** Creating the Autonomous Database Instance
+## Task 2: Creating the Autonomous Database Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 

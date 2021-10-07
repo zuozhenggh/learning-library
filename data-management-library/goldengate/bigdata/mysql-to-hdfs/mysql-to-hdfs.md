@@ -25,7 +25,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -42,12 +42,14 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
  3. Repeat the two steps above to create a second session. These two sessions will be used respectively for `source` and `target` execution tasks
 
-## **STEP 1**: Explore GoldenGate Configuration
+## Task 1: Explore GoldenGate Configuration
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
     ![](./images/labmenu_opt1.png " ")
 
 2. Select **R** to reset the lab environment, then select **3**
+
+ Select **Q** to exit labmenu
 
 3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm. It's already done in the env script for this workshop
 
@@ -71,7 +73,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 Now we need to start the GG manager process on both the source and target. Keep these sessions open for the rest of this lab.
 
-## **STEP 2**: GoldenGate Source Configuration
+## Task 2: GoldenGate Source Configuration
 
 1. In the first or `source` terminal session, go to the **GG Home for MySQL**, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
@@ -142,7 +144,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
     <copy> info all</copy>
     ```
 
-## **STEP 3**: GoldenGate Target Configuration
+## Task 3: GoldenGate Target Configuration
 
 Now that the source side is setup, let us configure GG on the target side (HDFS).
 
@@ -157,13 +159,13 @@ Now that the source side is setup, let us configure GG on the target side (HDFS)
     </copy>
     ```
 
-2. Remove "---" from the items below as highlighted above
+2. Remove "---" from the items below as highlighted below
 
     ```
     ---hdfs
     ---/user/ggtarget/hdfs
     ---delimitedtext
-    ---.csv
+    ---,
     ```
 
 3. Now create and start the HDFS replicat process:
@@ -201,7 +203,7 @@ Now that the source side is setup, let us configure GG on the target side (HDFS)
 
     ![](./images/B9.png " ")
 
-## **STEP 4**: Exploring HDFS Target
+## Task 4: Exploring HDFS Target
 
 1. Now that GG processes have been created and started on both the source and target, let us take a look at what is in the HDFS directory – it should be empty. Then we will load some data on the MySQL database `ggsource` and GG will extract and write it to the HDFS target. GG will create a subdirectory for each table in the base directory `/user/ggtarget`.
 
@@ -262,7 +264,7 @@ Now that the source side is setup, let us configure GG on the target side (HDFS)
 
 The stats command displays the statistics of the data that GoldenGate processed (grouped by `insert/update/deletes`). Counts should match between source and target.
 
-## **STEP 5**: GoldenGate Results using HUE
+## Task 5: GoldenGate Results using HUE
 
 1. Open a Browser window from your local machine to visualize data from HUE frontend application.
     - URL
@@ -290,7 +292,7 @@ The stats command displays the statistics of the data that GoldenGate processed 
 In summary, we loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
 `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rhdfs` read the remote trail file, and wrote the data to the HDFS target directory `/user/ggtarget/hdfs/*`.
 
-You may now *proceed to the next lab*.
+You may now *proceed to the next lab*
 
 ## Learn More
 
@@ -299,4 +301,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, September 2021

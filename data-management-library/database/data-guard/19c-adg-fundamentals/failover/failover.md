@@ -1,4 +1,4 @@
-# Perform a Failover
+# How to Perform Database Failover
 
 ## Introduction
 In this lab, we will be performing a failover operation.
@@ -29,7 +29,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Connect to the Database
 - Perform a switchover
 
-## **STEP 1**: Verify the database roles in the database
+## Task 1: Verify the database roles in the database
 
 1. Using SQL Developer, you can drag and drop the panes so that they are next to each other or shown split horizontally.
 
@@ -48,7 +48,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 We can conclude that the Database in AD2 is the primary database and the database in AD1 is the Standby database.
 
 
-## **STEP 2**: Perform the role transition
+## Task 2: Perform the role transition
 
 1. In the OCI console, navigate to the DB System Details of the ADGHOLAD1 database and scroll down to the Databases section.
 
@@ -75,7 +75,7 @@ We can conclude that the Database in AD2 is the primary database and the databas
 7. After some time the role transition finished and the state is Available again.
     ![](./images/failover-08.png)
 
-## **STEP 3**: Reinstate the old primary, the new standby
+## Task 3: Reinstate the old primary, the new standby
 
 A failover means that the old primary, in our case the DB in AD2, will be disabled. To use this database again as a standby database, we need to reinstate it.
 
@@ -107,7 +107,7 @@ A failover means that the old primary, in our case the DB in AD2, will be disabl
     ![](./images/failover-14.png)
 
 
-## **STEP 4**: Verify the database roles in the database
+## Task 4: Verify the database roles in the database
 
 1. Using SQL Developer, verify the roles again with following Query:
 
@@ -119,7 +119,7 @@ A failover means that the old primary, in our case the DB in AD2, will be disabl
 
     ![](./images/failover-15.png)
 
-We can conclude that the Database in AD2 is the primary database and the database in AD1 is the Standby database.
+We can conclude that the Database in AD1 is the primary database and the database in AD2 is the Standby database.
 
 You have now successfully performed a failover. You may now [proceed to the next lab](#next).
 
@@ -128,4 +128,4 @@ You have now successfully performed a failover. You may now [proceed to the next
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Database Product Management
-- **Last Updated By/Date** -  Tom McGinn, July 2021
+- **Last Updated By/Date** -  Suraj Ramesh, September 2021

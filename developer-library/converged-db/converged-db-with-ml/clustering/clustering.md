@@ -22,15 +22,13 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
 
-## **STEP 1:** Create a Data Miner Project
+## Task 1: Create a Data Miner Project
 To create a Data Miner Project, perform the following steps:
 
 1.	In the Data Miner tab, right-click on the data mining user connection that you previously created, and select **New Project**, as shown here.
@@ -46,7 +44,7 @@ To create a Data Miner Project, perform the following steps:
     ![](./images/clustering_8.png " ")
   
  
-## **STEP 2:** Build a Data Miner Workflow
+## Task 2: Build a Data Miner Workflow
 
 1. A Data Miner Workflow is a collection of connected nodes that describe a data mining processes.
     A workflow:
@@ -79,7 +77,7 @@ To create a Data Miner Project, perform the following steps:
   
     To create the workflow for this process, perform the below steps.
 
-## **STEP 3:** Create a Workflow and Add data for the workflow
+## Task 3: Create a Workflow and Add data for the workflow
 
 1.	Right-click on your project (Retail\_Data\_Analysis) and select New Workflow from the menu.
     ![](./images/clustering_10.jpg " ")
@@ -133,7 +131,7 @@ To create a Data Miner Project, perform the following steps:
  
   ![](./images/clustering_23.png " ")
 
-## **STEP 4:** Build the Models
+## Task 4: Build the Models
 
 In this section, you will build the selected models against the source data. This operation is also called “training” a model, and the model is said to “learn” from the training data.
 
@@ -174,7 +172,7 @@ By default, the models are all tested. The test data is created by randomly spli
 11. To do this, right click on the Cluster Build node and click run. ODM will go create a job that will contain PL/SQL code that will generate a cluster model based on K-Means and a second cluster model based on O-Cluster. This job is submitted to the database and when it is complete, we will get the little green tick mark on the top right hand corner of the Cluster Build node.
     ![](./images/clustering_31.png " ") ![](./images/clustering_32.png " ")
                
-## **STEP 5:** View the Cluster Models/Rules
+## Task 5: View the Cluster Models/Rules
 
 1. To view the the cluster modes we need to right click on the Cluster Build node and select View Models from the drop down list. We get an additional down down menu that gives the names of the three cluster models that were developed.
 
@@ -202,7 +200,7 @@ The first one that we will look at will be the K-Mean Cluster Model (**CLUS\_KM\
 
     The further down the tree you go the smaller the percentage of cases will fall into each cluster.
 
-## **STEP 6:** Compare Clusters
+## Task 6: Compare Clusters
 
 1. In addition to the cluster tree, ODM also has two additional tabs to allow us to explore the clusters. These are Cluster and Compare tabs.
 
@@ -245,7 +243,7 @@ This lets us compare two clusters against each other at an attribute level. For 
   
     We have now explored our clusters and we have decided which of our Clustering Models best suits our needs. In our scenario, we are going to select the **K-Mean** model to apply and label our new data.
 
-## **STEP 7:** Create the Apply Node
+## Task 7: Create the Apply Node
 
 We have already setup our sample of data that we are going to use as our Apply Data Set. We did this when we setup the two different Sample node.
 
@@ -276,7 +274,7 @@ We are going to use the Sample node that was set to 40%.
     ![](./images/clustering_49.png " ")
  
 
-## **STEP 8:** Run the Apply Node/View Result
+## Task 8: Run the Apply Node/View Result
 
 We have one last data setup to do on the Apply node. We need to specify what data from the apply data set we want to include in the output from the Apply node.  For simplicity, we will include the primary key, but you could include all the attributes.  In addition to including the attributes from the apply data source, the Apply Node will also create some attributes based on the Cluster model we selected. In our scenario, the K-Means model will create two additional attributes. One of these will contain the Cluster ID and the other attribute will be the probability of the cluster being valid.
 
@@ -320,21 +318,8 @@ In this workshop, you examined and solved a "Clustering" data mining business pr
  - [ML](https://www.oracle.com/in/data-science/machine-learning/what-is-machine-learning/)
  - [ML Offerings](https://blogs.oracle.com/machinelearning/machine-learning-in-oracle-database)
 
-## Rate this Workshop
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
-
-1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
-
-<!-- If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop. -->
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh
 * **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, Pragati Mourya.
-* **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, April 2021
+* **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, AUG 2021

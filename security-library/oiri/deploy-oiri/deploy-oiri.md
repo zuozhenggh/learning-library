@@ -15,20 +15,16 @@ In this lab, you will:
 * Create and Seed the Database schema
 * Install the OIRI Helm chart
 
-
 ### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: Deploy Kubernetes Cluster and Start OIG Server
 
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* SSH Private Key to access the host via SSH
-* You have completed:
-      - Lab : Generate SSH Keys (Free-tier and Paid Tenants only)
-      - Lab : Prepare Setup (Free-tier and Paid Tenants only)
-      - Lab : Environment Setup
-      - Lab : Initialize Environment
-      - Lab : Deploy Kubernetes Cluster and Start OIG Server
-
-
-## **STEP 1:** Load the OIRI docker images
+## Task 1: Load the OIRI docker images
 
 The OIRI service comprises of four images as follows:
 
@@ -76,7 +72,7 @@ Follow the steps below to load these docker images.
 
     ![](images/2-docker-images.png)
 
-## **STEP 2:** Set up the configuration files
+## Task 2: Set up the configuration files
 
 Set up the files required for configuring data import (or data ingestion) and Helm chart.
 
@@ -269,7 +265,7 @@ Set up the files required for configuring data import (or data ingestion) and He
     ![](images/9-setup.png)
 
 
-## **STEP 3:** Update entity parameters for data import
+## Task 3: Update entity parameters for data import
 
 1. Run the following command to be able to update entity parameters for data import.
 
@@ -282,7 +278,7 @@ Set up the files required for configuring data import (or data ingestion) and He
   tail -f /dev/null</copy>
     ```
 
-## **STEP 4:** Wallet creation
+## Task 4: Wallet creation
 
 1. Import the OIG certificate in the keystore. To do so, Export OIG certificate for signature verification.
 
@@ -409,7 +405,7 @@ Set up the files required for configuring data import (or data ingestion) and He
     ![](images/15-wallet.png)
 
 
-## **STEP 5:** Create and Seed OIRI Database Schema
+## Task 5: Create and Seed OIRI Database Schema
 
 1. Create the database user schema.
 
@@ -440,7 +436,7 @@ Set up the files required for configuring data import (or data ingestion) and He
 
     Note: If the verification of wallet fails, use *oiri-cli --config=/app/data/conf/config.yaml wallet update* command to fix the entry reported having an issue
 
-## **STEP 6:** Install the OIRI Helm chart
+## Task 6: Install the OIRI Helm chart
 
 1. Create the following namespaces.
 

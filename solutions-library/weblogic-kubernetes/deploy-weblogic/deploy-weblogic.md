@@ -6,7 +6,7 @@ This lab walks you through the steps to deploy and configure WebLogic Kubernetes
 
 Estimated Lab Time: 25 minutes
 
-## **STEP 1**: Prepare the Kubernetes cluster to run WebLogic domains
+## Task 1: Prepare the Kubernetes cluster to run WebLogic domains
 
 Create the domain namespace:
 ```bash
@@ -19,7 +19,7 @@ Create a Kubernetes secret containing the Administration Server boot credentials
   --from-literal=password=welcome1</copy>
 ```
 
-## **STEP 2**: Update the Traefik load balancer and operator configuration
+## Task 2: Update the Traefik load balancer and operator configuration
 
 After you have your domain namespace (the WebLogic domain is not deployed yet), you have to update the load balancer and operator configuration to specify where the domain will be deployed.
 
@@ -45,7 +45,7 @@ To update Traefik, execute the following `helm upgrade` command:
 ```
 Note that in both cases, the only updated parameter is the domain namespace.
 
-## **STEP 3**: Deploy a WebLogic domain on Kubernetes
+## Task 3: Deploy a WebLogic domain on Kubernetes
 
 To deploy WebLogic domain, you need to create a domain resource definition which contains the necessary parameters for the operator to start the WebLogic domain properly.
 
@@ -135,7 +135,7 @@ Enter the administrative user credentials (weblogic/welcome1) and click **Login*
 
 !Please note in this use case that the use of the Administration Console is just for demo/test purposes because the domain configuration is persisted in the pod, which means that after the restart, the original values (baked into the image) will be used again. To override certain configuration parameters - to ensure image portability - follow the override part of this tutorial.
 
-## **STEP 4**: Test the sample web application
+## Task 4: Test the sample web application
 
 The URL pattern of the sample application is the following:
 

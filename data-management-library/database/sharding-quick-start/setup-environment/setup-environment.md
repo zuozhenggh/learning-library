@@ -26,7 +26,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
 
 
-## **STEP 1:** Create the Shard Database Stacks
+## Task 1: Create the Shard Database Stacks
 
 1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Resource Manager > Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. *Note: If you are in a workshop, double check your region to ensure you are on the assigned region.*
 
@@ -85,7 +85,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
     ![image-stack-created](images/image-stack-created.png)
 
-## **STEP 2:** Terraform Apply
+## Task 2: Terraform Apply
 
 When using Resource Manager to deploy an environment, execute a terraform **Apply**. Let's do that now.
 
@@ -118,7 +118,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Appl
 
 You now have a fully functional Oracle shard database which uses the system managed shard method. 
 
-## **STEP 3:** Verify the Shard Database
+## Task 3: Verify the Shard Database
 
 1. Login to the shard director host using the public ip address of the director host, switch to oracle user.
 

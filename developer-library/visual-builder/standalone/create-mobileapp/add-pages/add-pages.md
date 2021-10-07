@@ -10,7 +10,7 @@ This lab shows you how to use the Quick Starts provided with Oracle Visual Build
 
 Oracle Visual Builder provides Quick Starts that create pages to help you quickly build your mobile application. Quick Starts facilitate the creation of pages to display, create, edit, and delete data. You can invoke the Quick Start you want to use when you select the appropriate component in the page. Typically, this is a List View component when you develop a mobile application.
 
-## **STEP 1**: Add a Detail Page for the Department Business Object
+## Task 1: Add a Detail Page for the Department Business Object
 
 1.  In the HR Application, click the **Mobile Applications** ![Mobile Applications](./images/vbmda_mobapp_icon.png) tab in the Navigator.
 2.  If necessary, expand the **flows** and **main** nodes, then click **main-departments**.
@@ -31,7 +31,7 @@ Oracle Visual Builder provides Quick Starts that create pages to help you quickl
     ![](./images/vbmda_detailfinal.png)
 
 
-## **STEP 2**: Add an Edit Page for the Department Business Object
+## Task 2: Add an Edit Page for the Department Business Object
 
 1.  Return to the main-departments page and click **Design**. If necessary, select the **List View** component in the **Structure** view.
 2.  In the Quick Start menu, click **Add Edit Page**.
@@ -64,7 +64,7 @@ Oracle Visual Builder provides Quick Starts that create pages to help you quickl
     ![](./images/vbmda_mapvarpar.png)
 
 
-## **STEP 3**: Add a Delete Action for the Department Business Object
+## Task 3: Add a Delete Action for the Department Business Object
 
 1.  Go to the main-departments page, and if necessary click the **List View** component in the **Structure** view.
 2.  In the Quick Start menu, click **Add Delete Action**.
@@ -74,7 +74,7 @@ Oracle Visual Builder provides Quick Starts that create pages to help you quickl
     ![](./images/vbmda_swipe_pi.png)
 
 
-## **STEP 4**: Test Your New Departments Pages
+## Task 4: Test Your New Departments Pages
 
 1.  Click **Preview** ![](./images/vbmda_run_icon.png).
 

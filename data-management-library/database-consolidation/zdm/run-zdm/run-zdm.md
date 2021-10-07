@@ -6,8 +6,28 @@ In this lab, you will be configuring the template file used to inform your migra
 
 Estimate Lab Time: 25 minutes
 
-## **STEP 1: Copy the Template File**
-1. As 'zdmuser' in your compute instance (ZDM host instance) command prompt run the following commands:
+## **Task 1: Copy the Template File**
+1. Return to the command prompt connected to your compute instance as 'zdmuser'.
+
+    ![ZDMUSER Connection](./images/cloudshell.PNG)
+
+2. If you need to reconnect you can do so with the following command. Replace < sshkeyname > and < Your Compute Instance Public IP Address > with the key file name and IP address of your source compute instance:
+
+    ```
+    <copy>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
+    ```
+
+3. If you need to return to 'zdmuser' and are currently user 'oracle' type the command `exit` to switch to 'opc'. To go from 'opc' to 'zdmuser' run the following command:
+
+    ```
+    <copy>
+    sudo su - zdmuser
+    </copy>
+    ```
+
+4. As 'zdmuser' in your compute instance command prompt run the following commands:
 
     ```
     <copy>
@@ -19,7 +39,7 @@ Estimate Lab Time: 25 minutes
     </copy>
     ```
 
-## **STEP 2: Fill Out the Template**
+## **Task 2: Fill Out the Template**
 1. Go into the migration file and delete all of the existing lines.
 
     ```
@@ -92,13 +112,19 @@ Estimate Lab Time: 25 minutes
 
 3. Update the following lines in the file. Replace `<Update>` with the information. Be careful and make sure the entire text is pasted as there is a tendency for the first character to sometimes get cut off:
     * TARGETDATABASE\_OCID: On your Autonomous Database home page.
+    ![Configuration Autonomous](./images/config-autonomous.PNG)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_TENANTID: On your API key configuration file preview.
+    ![Configuration Tenancy](./images/config-tenancy.PNG)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_USERID: On your API key configuration file preview.
+    ![Configuration User ID](./images/config-user.PNG)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_FINGERPRINT: On your API key configuration file preview.
+    ![Configuration Fingerprint](./images/config-fingerprint.PNG)
     * OCIAUTHENTICATIONDETAILS\_REGIONID: On your API key configuration file preview.
+    ![Configuration Region](./images/config-region.PNG)
     * DATAPUMPSETTINGS_DATABUCKET\_NAMESPACENAME: On your object storage bucket homepage.
+    ![Bucket Namespace](./images/bucket-namespace.PNG)
     * DATAPUMPSETTINGS_DATABUCKET\_BUCKETNAME: On your object storage bucket homepage.
-
+    ![Bucket Name](./images/bucket-name.PNG)
 
     For easy access go back under your OCI user profile, API Keys, select the ellipses under your fingerprint, and 'View Configuration File'.
 
@@ -106,7 +132,7 @@ Estimate Lab Time: 25 minutes
 
 4. After the lines are updated save and quit vi editor.
 
-## **STEP 3: Run the Migration Command**
+## **Task 3: Run the Migration Command**
 1. In command prompt as 'zdmuser' run the following command:
 
     ```
@@ -115,7 +141,7 @@ Estimate Lab Time: 25 minutes
     </copy>
     ```
 
-## **STEP 4: Answer the Migration Prompts**
+## **Task 4: Answer the Migration Prompts**
 1. **'orcl_user' password:**
 
     ```
@@ -142,7 +168,7 @@ Estimate Lab Time: 25 minutes
     </copy>
     ```
 
-## **STEP 5: Check on Job Status**
+## **Task 5: Check on Job Status**
 1. Go to the 'scheduled' directory.
 
     ```
@@ -181,7 +207,7 @@ Estimate Lab Time: 25 minutes
 
     ![Job List](./images/job-lists.PNG)
 
-## **STEP 6: Check Job in Autonomous Database**
+## **Task 6: Check Job in Autonomous Database**
 1. In your autonomous database SQL command prompt run the command:
 
     ```

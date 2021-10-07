@@ -21,7 +21,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Create a common user
+## Task 1: Create a common user
 
 1. Before configuring the `SYSLOG` destination for common unified audit policies to be consolidated into a single destination, execute the `/home/oracle/labs/M104781GC10/setup_SYSLOG_audit.sh` shell script against `CDB21`. The shell script creates a common user `C##TEST` and commonly grants the common user the `CREATE SESSION` and `CREATE TABLE` privileges..  
 
@@ -61,7 +61,7 @@ In this lab, you will:
     
     ```
 
-## **STEP 2:** Create a common and local audit policy
+## Task 2: Create a common and local audit policy
 
 1. Create the common audit policy at the CDB root in `CDB21`.
 
@@ -142,7 +142,7 @@ In this lab, you will:
     
     ```
 
-## **STEP 3:** Configure the SYSLOG destination for common and local audit policies
+## Task 3: Configure the SYSLOG destination for common and local audit policies
 
 1. Configure the `SYSLOG` destination for common unified audit policies to be consolidated into a single destination. The `facility_clause` refers to the facility to which you will write the audit trail records. Valid choices are `USER` and `LOCAL`. If you enter `LOCAL`, then optionally append 0–7 to designate a local custom facility for the `SYSLOG` records. `priority_clause` refers to the type of warning in which to categorize the record. Valid choices are `NOTICE`, `INFO`, `DEBUG`, `WARNING`, `ERR`,`CRIT` , `ALERT`, and `EMERG`. 
 
@@ -224,7 +224,7 @@ In this lab, you will:
     
     ```
 
-## **STEP 4:** Define the OS directories for the SYSLOG files
+## Task 4: Define the OS directories for the SYSLOG files
 
 1. Before audited actions are recorded by the SYSLOG system, define the OS directories for the SYSLOG files to store the audited records. Open another terminal session as `root`. 
 
@@ -273,7 +273,7 @@ In this lab, you will:
     
     ```
 
-## **STEP 5:** Test
+## Task 5: Test
 
 1. In the `oracle` UNIX session, log on as the common user `C##TEST` to the CDB root and perform a `CREATE TABLE` operation followed by `INSERT` operation on the table created.  
 
@@ -415,7 +415,7 @@ In this lab, you will:
   
   
 
-## **Step 6:** Cleanup
+## Task 6: Cleanup
 
 1. Back in the `oracle` UNIX session, execute the `/home/oracle/labs/M104781GC10/cleanup.sh` shell script to reset the `SYSLOG` destinations for both common and local unified audit policies, and dropping the policies int he CDB root and `PDB21`.
 

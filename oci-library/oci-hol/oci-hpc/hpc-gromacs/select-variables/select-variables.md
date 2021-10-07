@@ -5,7 +5,7 @@ In this lab, you will fill in the variables for your stack.
 
 Estimated Lab Time: 10 minutes
 
-## **STEP**: Select Variables
+## Task: Select Variables
 
 1. Click on ![](./images/next.png) and fill in the variables.
 

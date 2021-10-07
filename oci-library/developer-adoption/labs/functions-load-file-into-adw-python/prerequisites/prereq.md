@@ -18,7 +18,7 @@ Estimated time: 10 minutes
 
 - Your Oracle Cloud Trial Account
 
-## **STEP 1:** Log into OCI Tenancy
+## Task 1: Log into OCI Tenancy
 
    Log in to your OCI dashboard and retrieve information required to create resources.
 
@@ -26,7 +26,7 @@ Estimated time: 10 minutes
 
   ![Landing Screen](../../common/setup-cloud-env/images/landing-screen-mid-2021.png " ")
 
-## **STEP 2:** Create compartment
+## Task 2: Create compartment
 
 If you want to use an existing compartment, skip to the next step. Otherwise, follow the steps.
 
@@ -49,7 +49,7 @@ If you want to use an existing compartment, skip to the next step. Otherwise, fo
 
 Now you are ready to move on to Step 3.
 
-## **STEP 3:** Create VCN and subnets
+## Task 3: Create VCN and subnets
 
 If a suitable VCN in which to create network resources doesn't exist already, log in to the Console as a tenancy administrator and then:
 
@@ -63,11 +63,11 @@ If a suitable VCN in which to create network resources doesn't exist already, lo
 
   ![Create VCN Animation](images/create-fn-vcn.gif " ")
 
-## **STEP 4:** Create policy for Oracle Functions Service
+## Task 4: Create policy for Oracle Functions Service
 
 Log in to the Console as a **tenancy administrator** and under Governance and Administration, and do the following:
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Policies** under the **Identity** section.
 
   ![Compartment](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
 
@@ -87,7 +87,7 @@ Log in to the Console as a **tenancy administrator** and under Governance and Ad
 
 Make sure the user is part of the group referenced in the policy statements above. To create groups and add users to groups, refer to [Create a group](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm#To).
 
-## **STEP 5:** Create a Dynamic Group
+## Task 5: Create a Dynamic Group
 
 To use other OCI Services, your function must be part of a **dynamic group**. For information on creating dynamic groups, refer to the [documentation](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm#To).
 

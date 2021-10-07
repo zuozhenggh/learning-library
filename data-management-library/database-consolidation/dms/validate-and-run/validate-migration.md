@@ -19,7 +19,7 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Validate Migration
+## Task 1: Validate Migration
 
 1. In the OCI Console Menu ![](images/hamburger.png =22x22), go to **Migration > Migrations**
 
@@ -54,7 +54,7 @@ In this lab, you will:
 
 10. Once all phases show complete, move to the next step.
 
-## **STEP 2**: Run Migration
+## Task 2: Run Migration
 
   1. In the OCI Console Menu ![](images/hamburger.png =22x22), go to **Migration > Migrations**
 

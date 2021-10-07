@@ -36,7 +36,7 @@ The job coordinators communicate with each other to keep information current. Th
 
 We will take a brief look at this property through two simple tests.
 
-## **STEP 1:**  Assign a Job Class to a service and prepare a package to be scheduled
+## Task 1:  Assign a Job Class to a service and prepare a package to be scheduled
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud. If you are logged in, skip to step 4.
 
 2.  Start Cloud Shell
@@ -99,7 +99,7 @@ We will take a brief look at this property through two simple tests.
     ![](./images/job-num7.png " " )
 
 
-## **STEP 2:** Schedule a job
+## Task 2: Schedule a job
 
 1. Schedule the job to run immediately with the job class that's tied to the **svctest** service. From your sqlplus session connected to PDB1
 
@@ -161,7 +161,7 @@ Look in the diagnostic_dest for files with the **id** set in the job schedule. T
     ````
     ![](./images/job-step2-num6.png " " )
 
-## **STEP 3:** Submitting work to a uniform service
+## Task 3: Submitting work to a uniform service
 1. Modify the service **svctest** to run on both instances, and then stop this service
 
     ````

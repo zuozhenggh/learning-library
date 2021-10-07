@@ -26,16 +26,14 @@ In this lab you will perform the following steps:
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository.
 
-## **STEP 1:** Inventory & Usage Details
+## Task 1: Inventory & Usage Details
 
 ### Overview
 
@@ -44,7 +42,7 @@ The IT Manager wants to get an inventory of all existing databases managed by En
 All the items in this step are read-only, primary goal is to learn about inventory usage details within Enterprise Manager for all supported targets
 
 ### Execution
-1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+1. On the browser window on the right preloaded with *Enterprise Manager*, if not already logged in, click on the *Username* field and login with the credentials provided below.
 
     ```
     Username: <copy>sysman</copy>
@@ -84,7 +82,7 @@ All the items in this step are read-only, primary goal is to learn about invento
 
   ![](images/ecm1_inventory_usage_details_report.png " ")
 
-## **STEP 3:** One Time Database Comparison
+## Task 3: One Time Database Comparison
 
 ### Overview
 
@@ -177,7 +175,7 @@ In this step, you will compare two database targets to determine configuration d
 
 <!-- In this step, you learned steps to compare two database targets to determine configuration differences. This one-time database (or any Enterprise Manager managed targets) comparison will help you quickly determine specific configuration changes when compared with reference configuration. This is very ideal for troubleshooting any target configuration parameters. -->
 
-## **STEP 4:** Database Configuration Drift Management
+## Task 4: Database Configuration Drift Management
 
 ### Overview
 
@@ -301,7 +299,7 @@ In this workshop, you will learn about continuous configuration drift monitoring
 
 <!-- In this step, you learned about continuous configuration drift monitoring of database targets against a reference target for initialization parameters using customized configuration monitoring template. This can be customized to align with your policies. By establishing a configuration drift definition, you can continuously monitor any configuration changes that can be potentially secure risk and remediate the drift immediately. -->
 
-## **STEP 5:** Database Security Compliance
+## Task 5: Database Security Compliance
 
 ### Overview
 
@@ -406,7 +404,7 @@ A compliance standard rule is a specific test to determine if a configuration da
   All these will give you a security posture of database target
 
 
-## **STEP 6:** Host Security Compliance
+## Task 6: Host Security Compliance
 
 ### Overview
 

@@ -17,7 +17,7 @@ This lab assumes you have:
 
     ```
     <copy>
-    sudo su - || sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd; sudo su -
+    sudo su - || (sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd && sudo su -)
 
     </copy>
     ```
@@ -109,6 +109,23 @@ This lab assumes you have:
     cd /tmp
     wget https://raw.githubusercontent.com/oracle/oci-utils/master/libexec/oci-image-cleanup -O /tmp/oci-image-cleanup.sh
     chmod +x oci-image-cleanup.sh
+    </copy>
+    ```
+
+2. Stop VNC Service to preserve the remote desktop layout before proceeding with custom image creation.
+
+    ```
+    <copy>
+    cat > /tmp/stopvnc.sh <<EOF
+    #!/bin/bash
+    cd /etc/systemd/system
+    for i in \$(ls vncserver_*@*)
+    do
+      sudo systemctl stop \$i
+    done
+    EOF
+    chmod +x /tmp/stopvnc.sh
+    /tmp/stopvnc.sh
     </copy>
     ```
 

@@ -13,17 +13,15 @@ In this lab, you will:
 * Start the OIG 12c domain. Analyze different roles and entitlements created in OIG
 
 ### Prerequisites
-
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* SSH Private Key to access the host via SSH
-* You have completed:
-      - Lab : Generate SSH Keys (Free-tier and Paid Tenants only)
-      - Lab : Prepare Setup (Free-tier and Paid Tenants only)
-      - Lab : Environment Setup
-      - Lab : Initialize Environment
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
 
-## **STEP 1:** Initialize the Kubernetes cluster and the pod network add-on
+## Task 1: Initialize the Kubernetes cluster and the pod network add-on
 
 1. Open a terminal session.
 
@@ -77,7 +75,7 @@ In this lab, you will:
 
     ![](images/3-pods.png)
 
-## **STEP 2:** Start the Oracle Identity Governance (OIG) Server and analyze the roles in OIG
+## Task 2: Start the Oracle Identity Governance (OIG) Server and analyze the roles in OIG
 
 <!-- 1. Verify that the OIG Database is running.
 

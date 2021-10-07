@@ -19,8 +19,17 @@ The reason your OCI directory is being copied to 'zdmuser', 'oracle', and 'opc' 
 
 Estimate Lab Time: 20 minutes
 
-## **STEP 1: Install OCI CLI**
-1. Return to your compute instance command prompt. As 'opc' install OCI CLI. Respond y at the prompt.
+## **Task 1: Install OCI CLI**
+1. Return to your compute instance command prompt as 'opc'. If you navigated away while creating your target database, you can reconnect through your command prompt with the following command. Replace < sshkeyname > and < Your Compute Instance Public IP Address > with the key file name and IP address of your source compute instance:
+
+    ```
+    <copy>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+    </copy>
+    ```
+
+
+2. Install OCI CLI. Respond y at the prompt.
 
     ```
     <copy>
@@ -28,7 +37,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-## **STEP 2: Set ZDM Group and User and Create Directories**
+## **Task 2: Set ZDM Group and User and Create Directories**
 1. Run code below to add the group zdm, create the user zdmuser, and add directories for the ZDM.
 
     ```
@@ -44,7 +53,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-## **STEP 3: Install Zero Downtime Migration**
+## **Task 3: Install Zero Downtime Migration**
 1. As 'opc' check that the following packages are installed:
     * expect
     * glib-devel
@@ -68,26 +77,82 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-2. Switch to the newly created 'zdmuser' and go to the directory 'zdmdownload'.
+2. Let's download the ZDM binaries to your local machine (laptop) and then scp / sftp it to the compute node where the ZDM Service node will be deployed. Copy the following link and open it in your favorite browser:
+
+    ```
+    <copy>
+    https://www.oracle.com/database/technologies/rac/zdm-downloads.html
+    </copy>
+    ```
+
+3. Bear in mind you must be signed in to perform a download, please proceed to sign if you have not done so. Once signed in, click on Download, Accept the Licensing terms and download the ZDM binaries to your Desktop
+
+    ![Go to Download Link](./images/download-link.png)
+
+    ![Accept Terms](./images/accept-terms.png)
+
+
+4. Go back to your Cloud Shell environment and click on the Hamburguer menu on the top left of Cloud Shell and click on the __Upload__ option, an upload window will appear
+
+    ![Cloud Shell Hamburguer Menu - Upload Option](./images/hamburguer-upload.png)
+
+    ![Upload Window](./images/upload-pane.png)
+
+
+5. Click on __select from your computer__, select the recently ZDM downloaded binaries and click __Upload__
+
+
+    ![Select ZDM File](./images/zdm-file.png)
+
+
+6. Upon finalizing the upload process, click on __Hide__, then exit the zdmuser and the opc user:
+
+    ```
+    <copy>
+    exit
+    exit
+    </copy>
+    ```
+
+7. Once you are back in your Cloud Shell root, move the file to a /tmp folder under the opc user. Replace < sshkeyname > and < Your Compute Instance Public IP Address > with the key file name and IP address of your source compute instance:
+
+    ```
+    <copy>
+    scp -i ~/.ssh/<sshkeyname> zdm21.2.zip opc@<Your Compute Instance Public IP Address>:/tmp
+    </copy>
+    ```
+
+8. Return to your compute instance command prompt as 'opc'.  Replace < sshkeyname > and < Your Compute Instance Public IP Address > with the key file name and IP address of your source compute instance:
+
+    ```
+    <copy>
+    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address> 
+    </copy>
+    ```    
+
+9. Switch to 'zdmuser' .
 
     ```
     <copy>
     sudo su - zdmuser
-    cd /u01/app/zdmdownload
     </copy>
     ```
 
-3. Retrieve the ZDM install file, unzip it, and go to the directory.
 
-    ```
+10. Cd to the /tmp folder, copy the zdm binaries to the zdmdownload file and, unzip the files and cd to the unziped directory: 
+
+     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/mvN0sYf5aYnY5Skvy8gCB2gbHgvJ-1Hcwbx2sNgH7lPjSgm46v-PvevSOvV1u4lt/n/frwachlef5nd/b/MV2ADB/o/zdm21.1.zip
-    unzip zdm*.zip
-    cd zdm21.1
+    cd /tmp
+    cp zdm21.2.zip /u01/app/zdmdownload
+    cd /u01/app/zdmdownload
+    unzip zdm21.2.zip
+    cd zdm21.2
     </copy>
     ```
 
-4. Run the install and start the service.
+
+11. Run the install and start the service.
 
     Install ZDM:
 
@@ -113,9 +178,10 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![Check Status](./images/check-status.PNG)
+    ![Check Status](./images/check-status.png)
 
-## **STEP 4: Generating API Keys**
+
+## **Task 4: Generating API Keys**
 1. As 'zdmuser' go to 'zdmhome' directory.
 
     ```
@@ -148,7 +214,7 @@ Estimate Lab Time: 20 minutes
 6. You will see a configuration file preview. Copy its contents to clipboard. You will be using it to populate your configuration file in the following step.
     ![Configuration File Preview](./images/config-file-preview.PNG)
 
-## **STEP 5: Creating Your Configuration File and Copying Your Directory**
+## **Task 5: Creating Your Configuration File and Copying Your Directory**
 1. Back in your command prompt create your config file.
 
     ```
@@ -301,7 +367,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-## **STEP 6: Creating RSA Keys**
+## **Task 6: Creating RSA Keys**
 
 1. As 'zdmuser' go to root directory and generate RSA keys. Hit enter key 3 times for no password and to save to /home/zdmuser/.ssh/id_rsa.
 

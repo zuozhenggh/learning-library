@@ -62,4 +62,4 @@ You will also download Oracle SQL Developer to help execute the programs associa
 - **Owners** - Balasubramanian Ramamoorthy, Amith Ghosh
 - **Contributors** - Laxmi Amarappanavar, Venkata Bandaru, Ashish Kumar, Priya Dhuriya, Maniselvan K
 - **Team** - North America Database Specialists
-- **Last Updated By** - Ashish Kumar, LiveLabs Platform, NA Technology, April 2021
+- **Last Updated By** - Ashish Kumar, LiveLabs Platform, NA Technology, AUG 2021

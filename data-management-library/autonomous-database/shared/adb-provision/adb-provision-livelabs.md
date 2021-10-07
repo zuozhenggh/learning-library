@@ -20,7 +20,7 @@ Estimated time: 5 minutes
 
 -   Learn how to provision a new Autonomous Database
 
-## **STEP 1**: Choosing ADW or ATP from the Services Menu
+## Task 1: Choosing ADW or ATP from the Services Menu
 
 1. Login to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -42,7 +42,7 @@ Estimated time: 5 minutes
     ![Autonomous Databases console.](./images/Compartment.png " ")
 
 
-## **STEP 2**: Creating the ADB instance
+## Task 2: Creating the ADB instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -130,4 +130,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Tom McGinn, June 2021
+- **Last Updated By/Date** - Richard Green, September 2021

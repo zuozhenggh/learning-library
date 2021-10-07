@@ -22,7 +22,7 @@ In this lab, you will:
       - Lab: Get Acquainted with the Environment and the rhpctl Command line tool
 
 
-## **Step 1:** Import the local FPP Homes as Gold Images
+## Task 1: Import the local FPP Homes as Gold Images
 1. Import the Oracle Homes that are already installed and configured on the FPP Server as new gold images. First, the Grid Infrastructure image: (Est.: 5 minutes)
 
         ````
@@ -42,7 +42,7 @@ Notice the `-imagetype ORACLEGISOFTWARE` that tells FPP which image it is about 
 
 The image type `ORACLEDBSOFTWARE` is the default, so you do not need to specify it.
 
-## **Step 2:** Import an additional DB Home from a zip file
+## Task 2: Import an additional DB Home from a zip file
 1. First, download the zip file from this location (Est.: 3 minutes):
 
         ```
@@ -64,7 +64,7 @@ We have already patched it for you with the DB 19.9.0 Release Update, so you do 
 Because it comes from a non-verified source, FPP will uncompress the image and verify it by configuring it and relinking it.
 This is an extra step to make sure that the image is usable and can be provisioned as working copy on the remote targets without problem. This, however, requires 2-3 additional minutes.
 
-## **Step 3:** Query the Gold Images
+## Task 3: Query the Gold Images
 1. Once the images have been imported into the FPP Server, you can query them:
 
         ```

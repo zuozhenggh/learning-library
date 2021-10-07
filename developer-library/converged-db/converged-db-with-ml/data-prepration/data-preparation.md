@@ -5,32 +5,21 @@ In this Lab, you will be working on a Data Miner Workflow, you must create a Dat
 
 *Estimated Lab Time*: 60 Minutes
 
-<!-- ### About Oracle Machine Learning "Regression" -->
-
-
-<!-- [](youtube:zQtRwTOwisI) -->
-
-
 ### Objectives
 In this lab, you will:
 * Identify Data Miner interface components.
 * Create a Data Miner project.
 * Build a Workflow document that uses Regression models to predict customer behavior.
 
-
-
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-
-## **STEP 1:** Install the Data Miner Repository
+## Task 1: Install the Data Miner Repository
 
 If you have not yet set up Oracle Data Miner, or have not created the data mining user, you must first complete the tasks presented in the tutorial [Setting Up Oracle Data Miner 19c Release 2](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-install-dm-repo/)
 
@@ -52,7 +41,7 @@ If you have not yet set up Oracle Data Miner, or have not created the data minin
     ![](./images/install-repository.jpg " ")
     - Click Yes on the Installing Demo Data window.
 
-## **STEP 2:** Start creating a Data Miner Project
+## Task 2: Start creating a Data Miner Project
 Before you begin working on a Data Miner Workflow, you must create a Data Miner Project, which serves as a container for one or more Workflows.
 In the tutorial Setting up Oracle Data Miner 11g Release 2, you learned how to create a database account and SQL Developer connection for a data mining user named dmuser. This user has access to the sample data that you will be mining.
 
@@ -71,7 +60,7 @@ In the tutorial Setting up Oracle Data Miner 11g Release 2, you learned how to c
 
     ![](./images/data-preparation-8.png " ")
 
-## **STEP 3:** Build a Data Miner Workflow
+## Task 3: Build a Data Miner Workflow
 
 1. A Data Miner Workflow is a collection of connected nodes that describe a data mining processes.
    A workflow.
@@ -102,7 +91,7 @@ In the tutorial Setting up Oracle Data Miner 11g Release 2, you learned how to c
 
     `To create the workflow for this process, perform the following steps.`
 
-## **STEP 4:** Create a Workflow and Add data for the workflow
+## Task 4: Create a Workflow and Add data for the workflow
 
 1. Right-click on your project (Retail\_Data\_Analysis) and select **New Workflow** from the menu. For this workflow we will be using these three tables :  `DATA_REL, JSON_PURCHASEORDER, XML_PURCHASEORDER`
 
@@ -209,7 +198,7 @@ In the tutorial Setting up Oracle Data Miner 11g Release 2, you learned how to c
     - You can add descriptive information about any node by using the Details tab in the Property Inspector.
     - The Thumbnail tab also provides a smaller display of the larger workflow window. As you drag nodes around the workflow window, the thumbnail view automatically adjusts.
 
-## **STEP 5:** Examine the Source Data
+## Task 5: Examine the Source Data
 
 You can use an Explore Data node to examine the source data. Although this is an optional step, Oracle Data Miner provides this tool to enable you to verify if the selected data meets the criteria to solve the stated business problem.
 
@@ -273,7 +262,7 @@ Follow these steps.
   
     Next, you move from a high-level manual analytic exercise to using the power of database data mining.
 
-## **STEP 6:** Append Data from Two Different Table
+## Task 6: Append Data from Two Different Table
 
 1. Now we can append the data from `DATA_REL` and `JSON_XML_COMBINED` into a single table using the `UNION ALL` query in the `SQL Query` control and store the data in a output table. Steps will be similar to what we had mentioned earlier. 
 Before we `JOIN` the tables, we will update some of the attributes to numeric type, so that the data types of both tables match during the join.  Add a `Transform` node and connect the `DATA_REL` table to the `Transform` node. 
@@ -353,7 +342,7 @@ Before we `JOIN` the tables, we will update some of the attributes to numeric ty
 
     ![](./images/data-preparation-50.png " ")
 
-## **STEP 7:** Create Attributes Using Aggregate Function
+## Task 7: Create Attributes Using Aggregate Function
 
 Now we will create 3 new attributes with the aggregate function. Three attributes (QUANTITY, TOTALAMOUNT, and UNITPRICE) will be aggregated using the SUM function, grouped by CUSTOMERID and STATE.
 
@@ -414,7 +403,7 @@ Now we will create 3 new attributes with the aggregate function. Three attribute
     ![](./images/data-preparation-67.png " ") 
     ![](./images/data-preparation-67a.png " ") 
 
-## **STEP 8:** Join the Two Tables Using Join Node
+## Task 8: Join the Two Tables Using Join Node
 
 1. Drag a `Join` node into the Canvas. Connect the `Join` node with the two output tables, containing the aggregated data (Sum Aggregation and Distinct Count aggregated data).
 
@@ -481,19 +470,6 @@ We have the three final source tables:
 
 **This concludes this lab. You may now [proceed to the next lab](#next).**
 
-## Rate this Workshop
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
-
-1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
-
-<!-- If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop. -->
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh

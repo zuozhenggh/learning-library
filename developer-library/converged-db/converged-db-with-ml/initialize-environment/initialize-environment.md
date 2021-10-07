@@ -12,70 +12,78 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Start And Validate The Required Processes are Up and Running.
+## Task 1: Start And Validate The Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running:
     
     - Database Listeners
-    - Database Server Instances
-    ![](./images/convg-novnc-guide.png " ")
+    - Database Server Instances 
 
-2. Open the *Workshop Guides* folder from the *Firefox* toolbar area above and select the correct guide for your workshop.
-    - On the *SQL-Developer* window on the right preloaded with saved credential
+2. On the *SQL-Developer* window on the right preloaded with saved credential
+    
     ![](./images/convg-novnc-landing.png " ")
 
-3. Click on *Terminal* icon on the desktop to start a terminal and execute the below command.
-    
-    - Go to folder /u01/script
+3. The above command will start the oracle database service and Listeners. 
 
-        ```
-        <copy>
-        cd /u01/script
-        </copy>
-        ```
-    - Run the script file to start the components.
+    - click on the saved connection on *SQL-Developer* .
 
-        ```
-        <copy>
-        ./env_setup_ml-workshop.sh
-        </copy>
-        ```
-        ![](./images/convg-terminal.png " ")
-        
-4. The above command will start the database, listener and oracle rest data service. This script could take 2-5 minutes to run. Check for the "Finished starting servers" status before proceeding next.
-    
     ![](./images/convg-final.png " ")
     If successful, the page above is displayed and as a result your environment is now ready.  
 
+    You may now [proceed to the next lab](#next).
+
+4. If you are still unable to login or the login page is not functioning after reloading the application URL, open a terminal session and proceed as indicated below to validate the services.
+
+    - Database and Listener
+    ```
+    <copy>
+    sudo systemctl status oracle-database
+    </copy>
+    ```
+
+5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
+
+    - Database and Listener
+
+    ```
+    <copy>
+    sudo sudo systemctl restart oracle-database
+    </copy>
+    ```
+## Appendix 1: Managing Startup Services
+
+1. Database Service (Database and Listener).
+
+    - Start
+
+    ```
+    <copy>sudo systemctl start oracle-database</copy>
+    ```
+
+    - Stop
+
+    ```
+    <copy>sudo systemctl stop oracle-database</copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>sudo systemctl status oracle-database</copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>sudo systemctl restart oracle-database</copy>
+    ```
+
 **This concludes this lab. You may now [proceed to the next lab](#next).**
-
-## Appendix 1: External Terminal Access (using SSH Key Based Authentication)
-
-While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
-
-1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-
-    - From the web session where you completed your provisioning request, do:
-        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
-        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - OS User – “*oracle*”.
-
-2. First login as “*opc*” using your SSH Private Key
-
-3. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh
 * **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, Pragati Mourya.
-* **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, July 2021
+* **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, AUG 2021

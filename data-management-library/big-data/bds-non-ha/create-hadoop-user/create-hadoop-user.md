@@ -19,7 +19,7 @@ Estimated Time: 45 minutes
 ### Prerequisites   
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
-## **Task 1:** Gather Information About the Cluster
+## Task 1: Gather Information About the Cluster
 
 <if type="livelabs">
 1. Log in to the **Oracle Cloud Console**, if you are not already logged in, using your LiveLabs credentials and instructions. The **Oracle Cloud Console** Home page is displayed.
@@ -55,7 +55,7 @@ This lab assumes that you have successfully completed all of the preceding labs 
   ![](./images/ll-mn0-private-ip.png " ")
   </if>
 
-## **Task 2:** Map the Private IP Address of the First Master Node to a Public IP Address
+## Task 2: Map the Private IP Address of the First Master Node to a Public IP Address
 
 In this task, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first master node** to a new public IP address. You have done similar work in **Lab 4**.
 
@@ -142,7 +142,7 @@ In this task, you will set three variables using the **`export`** command. The v
   ![](./images/ll-mn0-reserved-public-ip.png " ")
   </if>
 
-## **Task 3:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
+## Task 3: Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
 In this task, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
 
@@ -221,7 +221,7 @@ _If you are already connected to your cluster's first master node using the Open
   ![](./images/ll-traininmn0-connected.png " ")
   </if>
 
-## **Task 4:** Create the **`training`** Linux OS Administrator User
+## Task 4: Create the **`training`** Linux OS Administrator User
 
 Create the **`training`** Linux administrator user and the OS group **`supergroup`**. Assign **`training`** the **`supergroup`** superuser group as the primary group, and **hdfs**, **hadoop**, and **hive** as the secondary groups.
 
@@ -315,7 +315,7 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     ![](./images/ll-hdfs-ls.png " ")
     </if>
 
-## **Task 5:** Add the **`training`** User to Hue (optional)
+## Task 5: Add the **`training`** User to Hue (optional)
 
 In this task, you log into Hue as an administrator and add the **`training`** user as an administrator. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun10`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 

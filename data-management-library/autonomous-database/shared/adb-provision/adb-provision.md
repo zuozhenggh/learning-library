@@ -27,7 +27,7 @@ To complete this lab, you need to have the following:
 
 - Logged into your Oracle Cloud Account
 
-## **STEP 1**: Choosing ADW or ATP from the Services Menu
+## Task 1: Choosing ADW or ATP from the Services Menu
 
 1. Login to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -54,7 +54,7 @@ To complete this lab, you need to have the following:
 
     ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
 
-## **STEP 2**: Creating the ADB Instance
+## Task 2: Creating the ADB Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -143,4 +143,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Tom McGinn, Brianna Ambler, June 2021
+- **Last Updated By/Date** - Richard Green, September 2021

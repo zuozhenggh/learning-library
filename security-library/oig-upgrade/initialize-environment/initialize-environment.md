@@ -18,14 +18,13 @@ In this lab, you will:
 * Verify the status of 12c Domain.
 
 ### Prerequisites
-
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* SSH Private Key to access the host via SSH
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
 
-## **STEP 1:** Validate That Required Processes are Up and Running.
+## Task 1: Validate That Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
     - Database Listener
@@ -89,7 +88,7 @@ In this lab, you will:
         ```
         ![](images/oig-12cservice.png " ")
 
-<!-- ## **STEP 2:** Verify that the Database is up and running
+<!-- ## Task 2: Verify that the Database is up and running
 
 1. Verify that the Database has started
 
@@ -99,7 +98,7 @@ In this lab, you will:
 
     ![](images/1-database.png " ") -->
 
-## **STEP 2:** Verify the 11g and 12c Domain
+## Task 2: Verify the 11g and 12c Domain
 <!--
 1. Launch a terminal instance and Run the *startDomain11g.sh* script. The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
 
@@ -159,7 +158,7 @@ In this lab, you will:
 
     ![](images/8-users.png)
 
-<!-- ## **STEP 4:** Start and Verify the 12c Domain -->
+<!-- ## Task 4: Start and Verify the 12c Domain -->
 <!--
 1. Run the *startDomain12c.sh* script. The Admin server will take about 3-4 mins to start. It may take about 10mins for the SOA and OIM servers to start.
 

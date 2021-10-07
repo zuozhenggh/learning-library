@@ -19,16 +19,16 @@ In this lab, you will:
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* SSH Keys for Putty or OpenSSH (id_rsa.ppk or id_rsa, and id_rsa.pub)
+* SSH Keys for Putty or OpenSSH (`id_rsa.ppk` or `id_rsa`, and `id_rsa.pub`)
 
 
-## **STEP 1:** Create Virtual Cloud Network (VCN)
+## Task 1: Create Virtual Cloud Network (VCN)
 
 1. Login to Oracle cloud console using the URL: [https://console.eu-frankfurt-1.oraclecloud.com](https://console.eu-frankfurt-1.oraclecloud.com)
 
-- Tenant: oci-tenant
-- Username: oci-username
-- Password: oci-password
+    - Tenant: oci-tenant
+    - Username: oci-username
+    - Password: oci-password
 
 2. Click on main menu ≡, then Networking > **Virtual Cloud Networks**. Select your Region and Compartment assigned by the instructor. 
 
@@ -36,8 +36,8 @@ In this lab, you will:
 
 4. Select **VCN with Internet Connectivity**. Start VCN Wizard.
 
-- VCN Name: [Your Initials]-VCN (e.g. VLT-VCN)
-- Compartment: [Your Compartment]
+    - VCN Name: [Your Initials]-VCN (e.g. VLT-VCN)
+    - Compartment: [Your Compartment]
 
 5. Click Next and Create.
 
@@ -45,23 +45,23 @@ In this lab, you will:
 
 7. Click **Public Subnet-[Your Initials]-VCN**. Click **Default Security List for [Your Initials]-VCN**. Click **Add Ingress Rules**.
 
-- CIDR Block: 0.0.0.0/0
-- Destination Port Range: 5000
-- Description: Python Flask
+    - CIDR Block: 0.0.0.0/0
+    - Destination Port Range: 5000
+    - Description: Python Flask
 
 8. Click **Save Changes**.
 
 
-## **STEP 2:** Provision Compute Node for development
+## Task 2: Provision Compute Node for development
 
 1. Click on main menu ≡, then Compute > **Instances**. Click **Create Instance**.
 
-- Name: [Your Initials]-ClientVM (e.g. VLT-ClientVM)
-- Image or operating system: Change Image > Oracle Images > Oracle Cloud Developer Image
-- Virtual cloud network: [Your Initials]-VCN
-- Subnet: Public Subnet
-- Assign a public IP address
-- Add SSH keys: Choose SSH key files > id_rsa.pub
+    - Name: [Your Initials]-ClientVM (e.g. VLT-ClientVM)
+    - Image or operating system: Change Image > Oracle Images > Oracle Cloud Developer Image
+    - Virtual cloud network: [Your Initials]-VCN
+    - Subnet: Public Subnet
+    - Assign a public IP address
+    - Add SSH keys: Choose SSH key files > `id_rsa.pub`
 
 2. Click **Create**. Wait for Compute Instance to finish provisioning, and have status Available.
 
@@ -77,7 +77,7 @@ In this lab, you will:
 
     ![](./images/putty1.png "")
 
-6. Use the id_rsa.ppk private key. (Windows only)
+6. Use the `id_rsa.ppk` private key. (Windows only)
 
     ![](./images/putty2.png "")
 
@@ -88,7 +88,7 @@ In this lab, you will:
     ![](./images/putty4.png "")
 
 
-## **STEP 3:** Configure Compute Node for development
+## Task 3: Configure Compute Node for development
 
 For some of the labs we need graphical user interface, and this can be achieved using a Remote Desktop connection.
 
@@ -112,8 +112,6 @@ For some of the labs we need graphical user interface, and this can be achieved 
     yum -y groupinstall "Server with GUI"
 
     yum -y install xrdp tigervnc-server terminus-fonts terminus-fonts-console cabextract
-
-    yum -y update sqldeveloper.noarch
 
     yum -y localinstall https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
@@ -167,45 +165,45 @@ For some of the labs we need graphical user interface, and this can be achieved 
 
 10. After setting your language and keyboard layout, open a Terminal window using **Right-Click** and **Open Terminal**. Check if your keyboard works. If you need to select another keyboard layout, click the **On-Off** button in the upper right corner, and **Settings** button. You will find the options under Region & Language.
 
-## **STEP 4:** Provision Oracle Autonomous JSON Database (AJD)
+## Task 4: Provision Oracle Autonomous JSON Database (AJD)
 
 1. Click on main menu ≡, then **Autonomous JSON Database** under Oracle Database. **Create Autonomous Database**.
 
-- Select a compartment: [Your Compartment]
-- Display name: [Your Initials]-AJD (e.g. VLT-AJD)
-- Database name: [Your Initials]AJD (e.g. VLTAJD)
-- Choose a workload type: JSON
-- Choose a deployment type: Shared Infrastructure
-- Choose database version: 19c
-- OCPU count: 1
-- Storage (TB): 1
-- Auto scaling: enabled
+    - Select a compartment: [Your Compartment]
+    - Display name: [Your Initials]-AJD (e.g. VLT-AJD)
+    - Database name: [Your Initials]AJD (e.g. VLTAJD)
+    - Choose a workload type: JSON
+    - Choose a deployment type: Shared Infrastructure
+    - Choose database version: 19c
+    - OCPU count: 1
+    - Storage (TB): 1
+    - Auto scaling: enabled
 
 2. Under Create administrator credentials:
 
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 3. Under Choose network access:
 
-- Access Type: Allow secure access from everywhere
+    - Access Type: Allow secure access from everywhere
 
 4. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
 
 5. On Tools tab, under Oracle Application Express, click **Open APEX**. On Administration Services login page, use password for ADMIN.
 
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 6. Click **Sing In to Administration**. Click **Create Workspace**.
 
-- Database User: DEMO
-- Password: DBlearnPTS#21_
-- Workspace Name: DEMO
+    - Database User: DEMO
+    - Password: DBlearnPTS#21_
+    - Workspace Name: DEMO
 
 7. Click **Create Workspace**. Click AD on upper right corner, **Sign out**. Click **Return to Sign In Page**.
 
-- Workspace: demo
-- Username: demo
-- Pasword: DBlearnPTS#21_
+    - Workspace: demo
+    - Username: demo
+    - Pasword: DBlearnPTS#21_
 
 8. Click **Sign In**. Oracle APEX uses low-code development to let you build data-driven apps quickly without having to learn complex web technologies. This also gives you access to Oracle REST Data Services, that allows developers to readily expose and/or consume RESTful Web Services by defining REST end points.
 
@@ -215,8 +213,8 @@ For some of the labs we need graphical user interface, and this can be achieved 
 
 10. Use ADMIN user credentials to login.
 
-- Username: admin
-- Password: DBlearnPTS#21_
+    - Username: admin
+    - Password: DBlearnPTS#21_
 
 11. On SQL Dev Web Worksheet as ADMIN user, run the following code:
 
@@ -248,15 +246,15 @@ For some of the labs we need graphical user interface, and this can be achieved 
 
 13. Click **ADMIN** upper right corner, and **Sign Out**. Login using DEMO user credentials.
 
-- Username: demo
-- Password: DBlearnPTS#21_
+    - Username: demo
+    - Password: DBlearnPTS#21_
 
 14. Save in your notes the URL of SQL Developer Web for DEMO user, by changing '**admin**' with '**demo**' in the URL you saved for ADMIN user:
 
     https://kndl0dsxmmt29t1-vltajd.adb.eu-frankfurt-1.oraclecloudapps.com/ords/demo/_sdw/?nav=worksheet
 
 
-## **STEP 5:** Deploy Atlas document store on MongoDB Cloud
+## Task 5: Deploy Atlas document store on MongoDB Cloud
 
 One of the objectives of this workshop is to show the integration of Oracle Autonomous JSON Database with existing document stores like MongoDB. This is why you need an existing MongoDB database, and if you don't have one, you can provision it quickly on MondoDB Cloud.
 

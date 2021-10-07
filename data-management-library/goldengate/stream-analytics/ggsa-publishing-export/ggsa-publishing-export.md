@@ -16,14 +16,12 @@ Golden Gate Stream Analytics (GGSA) is a tool designed to consume a stream of da
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **Step 1**: Publishing vs. Draft
+## Task 1: Publishing vs. Draft
 
 1. Select Pipelines from the left Nav Bar and see all the pipelines.  
 2. Click on the RetailPromotions from Lab 3 to see that pipeline running with Live Output. Also note that every time you click on the *Done* button the stream stops but all the changes are saved to the pipeline.  
@@ -31,7 +29,7 @@ This lab assumes you have:
 
     ![](./images/donedraft.png " ")
 
-## **Step 2**: Publishing a Pipeline
+## Task 2: Publishing a Pipeline
 In order to make the pipeline available for production for all users the pipeline must be published. A published pipeline will continue to run on your Spark cluster even after you exit the pipeline editor which is not the case if the pipeline is in Draft mode.
 
 You can Publish a pipeline in two ways.  You can hover over the pipeline in the Catalog page and see the Publish button highlighted.  Alternatively, you can open the pipeline and click on the Publish button on the top right-hand corner of the screen.
@@ -54,7 +52,7 @@ You can Publish a pipeline in two ways.  You can hover over the pipeline in the 
 
     ![](./images/published2.png " ")
 
-## **Step 3**: Dashboards
+## Task 3: Dashboards
 A Dashboard is an analytic feature that allows visualization of the pipeline once the data has been analyzed.  You can easily create a dashboard in GGSA with a few quick steps. However, dashboards are not visible until the pipeline they pertain to is in the Published state.
 
 1. In the left Nav Bar of the Catalog page click on the Dashboards and see all the dashboards that have been created.
@@ -90,7 +88,7 @@ A Dashboard is an analytic feature that allows visualization of the pipeline onc
 
 17. You can now Exit the dashboard using the Actions dropdown.
 
-## **Step 4**: Import/Export
+## Task 4: Import/Export
 You can use export and import to migrate your pipeline and its contents between GoldenGate Stream Analytics systems, or you can also migrate only select artifacts. You can import a pipeline developed with the latest version of GoldenGate Stream Analytics. You have learned the import functionality in the beginning of this workshop.  In this lab you will export the dashboard that you just create in the last step.
 
 1. Hover over the RevenueByCustomerSegementLab3 dashboard

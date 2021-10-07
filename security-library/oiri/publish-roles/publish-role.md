@@ -12,20 +12,18 @@ In this lab, you will:
 * Publish roles from OIRI to OIG
 
 ### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: Deploy Kubernetes Cluster and Start OIG Server
+    - Lab: Deploy OIRI in the local Kubernetes Node
+    - Lab: Import Data into OIRI from OIG
+    - Lab: Role Mining
 
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
-      - Lab : Generate SSH Keys (Free-tier and Paid Tenants only)
-      - Lab : Prepare Setup (Free-tier and Paid Tenants only)
-      - Lab : Environment Setup
-      - Lab : Initialize Environment
-      - Lab : Deploy Kubernetes Cluster and Start OIG Server
-      - Lab : Deploy OIRI in the local Kubernetes Node
-      - Lab : Import Data into OIRI from OIG
-      - Lab : Role Mining
-
-## **STEP 1:** Publish a candidate role
+## Task 1: Publish a candidate role
 
 1. In the Review and Adjust Candidate Role page, click *Looks Good! Publish the role*. The Publish Role dialog box appears.
 
@@ -66,7 +64,7 @@ The list of entitlements in the role along with the associated applications is d
 
     ![](images/8-publish-role.png)
 
-## **STEP 2:** Review published role in OIG
+## Task 2: Review published role in OIG
 
 1. Sign in to Identity Self Service console.
 Open a browser tab and Click on the bookmark *OIG Identity Console*.

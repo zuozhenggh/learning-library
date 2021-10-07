@@ -17,7 +17,7 @@ In this lab, you will:
 
 * Logged into your Oracle Cloud Account
 
-## **STEP 1**: Choose AJD from the Services Menu
+## Task 1: Choose AJD from the Services Menu
 
 1. Login to the Oracle Cloud.
 
@@ -58,7 +58,7 @@ In this lab, you will:
    > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
 </if>
 
-## **STEP 2**: Creating the AJD Instance
+## Task 2: Create the AJD Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -153,7 +153,7 @@ In this lab, you will:
 
     ![Database instance homepage.](./images/provisioning.png " ")
 
-## **STEP 3**: Connect to your Autonomous Database using "JSON Workshop" UI
+## Task 3: Connect to your Autonomous Database using "JSON Workshop" UI
 
 1. On the Autonomous Database Details page, click on the Tools tab.
 

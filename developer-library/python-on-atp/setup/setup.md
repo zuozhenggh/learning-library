@@ -16,7 +16,7 @@ To deploy these services, you will be using Terraform, a tool for building, chan
 
 *We recommend that you create a notes page to write down all of the credentials you will need.*
 
-## **Step 1:** Prepare your terraform script for execution
+## Task 1: Prepare your terraform script for execution
 
 Terraform provides a reusable process for creating infrastructure.  In some cases, like this one, you don't have to know anything about how the process works. You can deploy different pre-designed infrastructure designs for many different purposes, which frees up users to focus on their projects.  This will create your cloud resources (VCN, Compute Image, Autonomous Transaction Processing Instance, among other things).
 
@@ -44,7 +44,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/015.png " ")
 
-## **Step 2:** Create OCI Resources in Resource Manager
+## Task 2: Create OCI Resources in Resource Manager
 
 1. Now inside of the resource manager, hover over **Terraform Actions** and click on **Plan**.
 
@@ -74,7 +74,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/005.png " ")
 
-## **Step 3:** Prepare to Load Data
+## Task 3: Prepare to Load Data
 
 1. Generate an Auth Token.  Navigate to **Identity** > **Users**.  
 
@@ -124,7 +124,7 @@ Terraform provides a reusable process for creating infrastructure.  In some case
 
   ![](images/032.png " ")
 
-## **Step 4:** Log into SQL Developer and Load Data into userid Alpha.
+## Task 4: Log into SQL Developer and Load Data into userid Alpha.
 
 1. Click the **Menu icon** in the upper left corner to open the navigation menu. Under the **Database** section, select **Autonomous Transaction Processing**.
 
@@ -252,7 +252,7 @@ END;
 
   ![](images/045.png " ")
 
-## **Step 5:** Connect to your Marketplace Developer Image
+## Task 5: Connect to your Marketplace Developer Image
 
 For more information about the Marketplace Developer Image [click here](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/54030984).
 
