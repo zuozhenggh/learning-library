@@ -32,7 +32,17 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
     ````
     ![](images/step1num1.png)
 
-2.  Let's begin with a simple query:  *What is the most expensive order we have received to date?*  There are no indexes or views setup for this.  So the execution plan will be to do a full table scan of the LINEORDER table.  Note the elapsed time. Run the script *01\_im\_query\_stats.sql* or run the queries below.
+2.  Let's begin with a simple query:  *What is the most expensive order we have received to date?*  There are no indexes or views setup for this.  So the execution plan will be to do a full table scan of the LINEORDER table.  Note the elapsed time.
+
+    Run the script *01\_im\_query\_stats.sql*
+
+    ```
+    <copy>
+    @01_im_query_stats.sql
+    </copy>    
+    ```
+
+    or run the queries below.
 
     ````
     <copy>
@@ -54,7 +64,17 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     ![](images/step1num2.png)
 
-3.  To execute the same query against the buffer cache you will need to disable the IM column store with a hint called *NO\_INMEMORY*. If you don't, the Optimizer will try to access the data in the IM column store when the execution plan is a full table scan. Run the script *02\_buffer\_query\_stats.sql* or run the queries below.
+3.  To execute the same query against the buffer cache you will need to disable the IM column store with a hint called *NO\_INMEMORY*. If you don't, the Optimizer will try to access the data in the IM column store when the execution plan is a full table scan.
+
+    Run the script *02\_buffer\_query\_stats.sql*
+
+    ```
+    <copy>
+    @02_buffer_query_stats.sql
+    </copy>    
+    ```
+
+    or run the queries below.
 
     ````
     <copy>
@@ -87,7 +107,17 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     As our query did a full table scan of the LINEORDER table, that session statistic shows that we scanned 23 million rows from the IM column store. Notice that in the second buffer cache query that statistic does not show up. Only one in-memory statistic shows up, "IM scan segments disk" with a value of 1. This means that even though the LINEORDER table is in the IM column store (IM segment) we actually scan that segment outside of the column store from the buffer cache. Recall that we fully cached the tables in the KEEP pool so that we could compare memory to memory access, and in this case we can verify that the query did no physical IO.
 
-4.  Let's look for a specific order in the LINEORDER table based on the order key.  Typically, a full table scan is not an efficient execution plan when looking for a specific entry in a table. Run the script *03\_single\_key\_im.sql* or run the queries below.
+4.  Let's look for a specific order in the LINEORDER table based on the order key.  Typically, a full table scan is not an efficient execution plan when looking for a specific entry in a table.
+
+    Run the script *03\_single\_key\_im.sql*
+
+    ```
+    <copy>
+    @03_single_key_im.sql
+    </copy>    
+    ```
+
+    or run the queries below.
 
     ````
     <copy>
@@ -107,7 +137,17 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     ![](images/num4.png)
 
-5.  Think indexing lo\_orderkey would provide the same performance as the IM column store? There is an invisible index already created on the lo\_orderkey column of the LINEORDER table. By using the parameter OPTIMIZER\_USE\_INVISIBLE\_INDEXES we can compare the performance of the IM column store and the index. Let's see how well the index performs. Run the script *05\_\index\_comparison.sql* or run the queries below.  
+5.  Think indexing lo\_orderkey would provide the same performance as the IM column store? There is an invisible index already created on the lo\_orderkey column of the LINEORDER table. By using the parameter OPTIMIZER\_USE\_INVISIBLE\_INDEXES we can compare the performance of the IM column store and the index. Let's see how well the index performs.
+
+    Run the script *05\_\index\_comparison.sql*
+
+    ```
+    <copy>
+    @05_index_comparison.sql
+    </copy>    
+    ```
+
+    or run the queries below.  
 
     ````
     <copy>
@@ -135,7 +175,15 @@ Now that you’ve gotten familiar with the IM column store let’s look at the b
 
     Let’s change our query to look for a specific line item in an order and monitor the session statistics:
 
-    Run the script *06\_multi\_preds.sql* or run the queries below.  
+    Run the script *06\_multi\_preds.sql*
+
+    ```
+    <copy>
+    @06_multi_preds.sql
+    </copy>    
+    ```
+
+    or run the queries below.  
 
     ````
     <copy>
