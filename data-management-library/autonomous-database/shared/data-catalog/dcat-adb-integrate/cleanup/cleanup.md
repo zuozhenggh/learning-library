@@ -72,8 +72,6 @@ To delete a compartment, it must be empty of all resources. Before you initiate 
 
 3. A confirmation message box is displayed. Click **Delete**. The status of the deleted compartment changes from **Active** to **Deleting** until the compartment is successfully deleted. You can click on the compartment name link in the **Name** column to display the status of this operation.
 
-    ![](./images/delete-compartment.png " ")
-
 
 This concludes the workshop.
 

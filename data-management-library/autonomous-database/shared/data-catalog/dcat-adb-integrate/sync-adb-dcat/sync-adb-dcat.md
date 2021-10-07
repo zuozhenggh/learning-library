@@ -243,6 +243,8 @@ In this task, you'll gather information about the Data Catalog instance which yo
     </copy>
     ```
 
+    >**Note:** For the **`uri_root`** value above, make sure the url ends with **/o** and not with an extra **/** such as **/o/ to avoid an error message later in step 6.
+
 3. Replace the values of the **`tenancy_ocid`**, **`dcat_region`**, **`dcat_compartment`**, **`dcat_ocid`**, **`dcat_sandbox_asset_key`**, and **`user_ocid`** with your own values that you have identified in **Task 1: Gather Information About your Data Catalog Instance** in this lab. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
     ![](./images/define-variables.png " ")
