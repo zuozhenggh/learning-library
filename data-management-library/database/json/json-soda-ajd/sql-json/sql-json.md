@@ -97,7 +97,7 @@ In this lab, you will:
 
     *Learn more -* [Oracle SQL Function JSON_SERIALIZE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-667D37FF-F5FB-465D-B8AE-DAE88F191B2F), and [Simple Dot-Notation Access to JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/simple-dot-notation-access-to-json-data.html#GUID-7249417B-A337-4854-8040-192D5CEFD576)
 
-## Task 3: Unnesting JSON arrays
+## Task 3: Unnest JSON arrays
 
 All above examples extracted singleton values from the JSON data - values that only occurred once per document (like title or price). But JSON can have nested arrays - how can we access those?
 
@@ -159,9 +159,9 @@ The 'simple dot notation' as shown in the previous steps is a syntax simplificat
 
 SQL/JSON relies on 'path expressions' which consist of steps: A step can navigate into an object or array.
 
-An object step starts with a dot followed by a key name; e.g '.name' or '.id'. If the key name starts with a non-Ascii character you need to quote it; e.g. '."0abc"'.
+An object step starts with a dot followed by a key name; for example, '.name' or '.id'. If the key name starts with a non-Ascii character you need to quote it; for example, '."0abc"'.
 
-An array step uses square brackets; '[0]' selects the first value in an array. It is possible to select more than one element form the array, e.g. '[*]' selects all values, '[0,1,2]' selects the first three elements, and '[10 to 20]' selects elements 11 through 21.
+An array step uses square brackets; '[0]' selects the first value in an array. It is possible to select more than one element form the array, for example, '[*]' selects all values, '[0,1,2]' selects the first three elements, and '[10 to 20]' selects elements 11 through 21.
 
 Steps can be chained together. A path expression typically starts with the '$' symbol which refers to the document itself.
 

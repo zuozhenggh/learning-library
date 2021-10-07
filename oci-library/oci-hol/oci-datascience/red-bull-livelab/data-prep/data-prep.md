@@ -4,32 +4,32 @@
 
 This lab will walk you through the data preparation process of the machine learning lifecycle. Now that we have race, weather, and qualifying race data, we'll merge our sets together to create the dataset we'll feed to our Machine Learning algorithms. 
 
-Estimated Lab Time: 1 hr
+Estimated Time: 1 hr
 
 
-<b> Objectives </b>
+### Objectives
 
 In this lab, you will prepare a final dataset by merging race, weather and qualifying race datasets:
 
 * Execute the notebook ``` 02.Data_Preparation_merging.ipynb``` to prepare your final dataset by merging different datasets
 
 
-<b> Prerequisites </b>
+### Prerequisites 
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP 1**: Data Preparation
+## **Task 1**: Data Preparation
 
-Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 02.Data_Preparation_merging.ipynb```
+1. Navigate to the ``` /beginner/from_scratch``` directory in your Jupyter Notebook session and execute ``` 02.Data_Preparation_merging.ipynb```
 
-Execute the notebook to merge the different data sets that we downloaded in step 1 into one dataset, essentially to help us better understand which features could be important for training and building our machine learning model. 
-
-
-![Image alt text](images/prep.png =50%x*)
+   * Execute the notebook to merge the different data sets that we downloaded in step 1 into one dataset, essentially to help us better understand which features could be important for training and building our machine learning model. 
 
 
-You may now [proceed to the next lab](#next).
+    ![Image alt text](images/prep.png =50%x*)
+
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer

@@ -73,7 +73,7 @@ Estimated Time: 25 minutes
 
     ![](./images/always-free.png)
 
-  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.**
+  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column** and click **Set as a shard key.** For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column.
 </if>
 
 <if type="freetier">
@@ -81,13 +81,13 @@ Estimated Time: 25 minutes
 
     ![](./images/always-free.png)
 
-  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.** Proceed to step 7.
+  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column** and click **Set as a shard key.**  For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Proceed to step 7.
 
 6. If not in Phoenix, then enter in values for **Read capacity**, **Write capacity**, and **Disk storage**. Enter in 10,10, and 5 respectively. The **Always Free Configuration** button is grayed out and cannot be used.
 
    ![](./images/create-reserve.png)
 
-   Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.**
+   Next enter a **name** for your table, a **primary key** and a **column** and click **Set as a shard key.** For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column.
 </if>
 
 <if type="livelabs">
@@ -95,7 +95,7 @@ Estimated Time: 25 minutes
 
     ![](./images/always-free.png)
 
-  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.**
+  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column** and click **Set as a shard key.** For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column.
 </if>
 
 

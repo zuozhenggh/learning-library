@@ -4,7 +4,7 @@
 
 This lab takes you through the steps needed to load and link data from the MovieStream data lake on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
 
-You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third party data integration tools. With the built-in tools, you can load data:
+You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third-party data integration tools. With the built-in tools, you can load data:
 
 + from files in your local device,
 + from tables in remote databases, or
@@ -16,21 +16,18 @@ You can also leave data in place in cloud object storage, and link to it from yo
 
 Estimated Time: 30 minutes
 
-### About Product
+### About product
 
 In this lab, we will learn more about the autonomous database's built-in Data Load tool - see the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/data-load.html#GUID-E810061A-42B3-485F-92B8-3B872D790D85) for more information.
 
 We will also learn how to exercise features of the DBMS\_CLOUD package to link and load data into the autonomous database using SQL scripts. For more information about DBMS_CLOUD, see its [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 
-
 ### Objectives
-
 
 + Learn how to define object storage credentials for your autonomous database
 + Learn how to load data from object storage using Data Tools
 + Learn how to load data from object storage using the DBMS\_CLOUD APIs executed from SQL
 + Learn how to enforce data integrity in newly loaded tables
-
 
 ### Prerequisites
 
@@ -38,9 +35,9 @@ We will also learn how to exercise features of the DBMS\_CLOUD package to link a
 
 + The MOVIESTREAM user must have been set up. If the user is not set up, please complete Lab 3 in this series (Create a Database User) before proceeding.
 
-## Task 1: Configure the Object Storage Connections
+## Task 1: Configure the Object Storage connections
 
-In this step, you will set up access to the two buckets on Oracle Cloud Infrastructure Object Storage that contain data that we want to load - the landing area, and the 'gold' area. 
+In this step, you will set up access to the two buckets on Oracle Cloud Infrastructure Object Storage that contain data that we want to load - the landing area, and the 'gold' area.
 
 1. In your database's details page, click the Tools tab. Click **Open Database Actions**
 
@@ -163,7 +160,7 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
 18. Click on the **Done** button in the bottom right of the screen.
 
-## Task 3: Creating the Customer table
+## Task 3: Create the Customer table
 
 We have now loaded a number of tables, including two main tables containing information about MovieStream customers - CUSTOMER\_CONTACT and CUSTOMER\_EXTENSION. It will be useful to link these tables together to create a joined table of customer information. We can do this with some simple SQL.
 
@@ -199,7 +196,7 @@ create table CUSTOMER
                     ce.HOUSEHOLD_SIZE,         
                     ce.INCOME,                 
                     ce.INCOME_LEVEL,           
-                    ce.INSUFF_FUNDS_INCIDENTS, 
+                    ce.INSUFF_FUNDS_INCIDENTS,
                     ce.JOB_TYPE,               
                     ce.LATE_MORT_RENT_PMTS,    
                     ce.MARITAL_STATUS,         
@@ -234,13 +231,13 @@ select * from customer;
 
 If you scroll to the right, you can see the columns that have been joined from the **customer\_extension** table, such as **age**, and **commute\_distance**.
 
-## Task 4: Using database APIs to load richer data files
+## Task 4: Use database APIs to load richer data files
 
 The DBMS\_CLOUD package is a feature of the autonomous database that enables us to extend the database to load from, and link to, cloud data storage systems such as Oracle Cloud Infrastructure Object Storage, Amazon S3, and Microsoft Azure Blob Storage. This package is used by the Data Load tool, but can also be exercised using SQL. For more information see the [DBMS\_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 
 In this step, we will use some additional features of the DBMS\_CLOUD APIs to load in some Parquet and JSON files with differently structured data.
 
->**Note** [Parquet](https://parquet.apache.org/documentation/latest/) is a common big data file format, where often many parquet files are used to store large volumes of data with a common type and with a common set of columns; in this case, the customer sales data for Moviestream. 
+>**Note** [Parquet](https://parquet.apache.org/documentation/latest/) is a common big data file format, where often many parquet files are used to store large volumes of data with a common type and with a common set of columns; in this case, the customer sales data for MovieStream.
 
 1.  Still in the SQL Worksheet viewer, click on the bin icon on the top toolbar to clear the worksheet.
 
@@ -252,7 +249,7 @@ In this step, we will use some additional features of the DBMS\_CLOUD APIs to lo
 <copy>
 define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
 define parquet_format = '{"type":"parquet",  "schema": "all"}'
- 
+
 begin
     dbms_cloud.create_external_table(
         table_name => 'ext_custsales',
@@ -270,7 +267,7 @@ begin
                         OS VARCHAR2(4000 BYTE),
                         DAY_ID date,
                         APP VARCHAR2(4000 BYTE)'
-    ); 
+    );
 end;
 </copy>
 ```
@@ -279,8 +276,8 @@ end;
 
     ![Run the script to load the ext_custsales table](images/custsalesscript.png)
 
-    We now have a new **ext_custsales** table that links to all of the parquet files in the **custsales** folder of our data lake on object storage. 
-    
+    We now have a new **ext_custsales** table that links to all of the parquet files in the **custsales** folder of our data lake on object storage.
+
 4.  To check that the data has been linked correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
 
 ```
@@ -350,7 +347,7 @@ from ext_movie m;
 </copy>
 ```
 
-9.  Click on the **Run Script** button to run the script.
+9.  Click the **Run Script** button to run the script.
 
 10. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following lines:
 
@@ -399,7 +396,7 @@ select * from time;
 
     ![Rows from the TIME table](images/viewtimetable.png)
 
-## Task 5: Enforcing data integrity
+## Task 5: Enforce data integrity
 
 In this task, we will use the database's ability to define and enforce constraints to ensure that the data in the newly loaded tables remains valid. This will be important in later labs.
 
@@ -479,9 +476,7 @@ select count (*) from pizza_location;
 
 The count remains at 104 rows as there were no new rows to copy from the file.
 
-
 This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream data lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
-
 
 ## Acknowledgements
 
