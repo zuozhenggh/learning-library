@@ -79,5 +79,5 @@ Watch our short video that explains the partitioning feature in Oracle GoldenGat
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Senior Principal Product Manager and Sukin Varghese, Senior Member of Technical staff
-* **Last Updated By/Date** - Anuradha Chepuri, September 2021
+* **Contributors** -  Sukin Varghese, Jonathan Fu
+* **Last Updated By/Date** - Anuradha Chepuri, October 2021
