@@ -69,13 +69,13 @@ Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you
 
 Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity informaiton into the Data Asset, but for now in the lab you can run this manually.
 
-Now if you go back to the Home Tab fro the Data Catalog, you will discover that there are now 7 Data Entities are being kept up to data in the Data Catalog.
+Now if you go back to the Home Tab fro the Data Catalog, you will discover that there are now 8 Data Entities are being kept up to data in the Data Catalog.
 
 ![New Entities](./images/new_entities.png " ")
 
-Click on Entities just to verify that all of the tables are now here.
+Click on Entities just to verify that all of the tables and views are now here.
 
-![Entities List](./images/entities_list.png " ")
+![Entities List](./images/final_catalog.png " ")
 
 ## Task 3: View of the Oracle Data Lakehouse
 
