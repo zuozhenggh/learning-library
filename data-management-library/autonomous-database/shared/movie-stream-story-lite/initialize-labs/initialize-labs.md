@@ -14,6 +14,7 @@ grant create view to moviestream;
 grant all on directory data_pump_dir to moviestream;
 grant create procedure to moviestream;
 grant create sequence to moviestream;
+grant create job to moviestream;
 </copy>
 ```
 3. Log out of SQL Worksheet
