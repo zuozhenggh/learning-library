@@ -34,19 +34,19 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 4. On the **Autonomous Databases** page, click your **DB-DCAT Integration** ADB that you provisioned earlier.
 
-5. On the **Autonomous Database Details** page, click the **Tools** tab. In the **Database Actions** card, click **Open Database Actions**.
+5. On the **Autonomous Database Details** page, click the **Tools** tab.
 
-   ![](./images/open-database-actions.png " ")
+   ![](./images/click-tools.png " ")
 
-6. On the **Database Actions** Sign in page, enter **`admin`** in the **Username** field, and then click **Next**.
+6. On the **Tools** tab, in the **Database Actions** card, click **Open Database Actions**.
 
-   ![](./images/enter-admin-user.png " ")
+   ![](./images/click-database-actions.png " ")
 
-    > **Note:** The **`admin`** username is not case sensitive.  
+7. On the **Database Actions** sign-in page, enter **`admin`** in the **Username** field, and then click **Next**.
 
-7. Enter **`Training4ADB`** in the **Password** field, and then click **Sign in**.
+   ![](./images/enter-username.png " ")
 
-    > **Note:** The password is case sensitive. If you chose a different password for the **`admin`** user in the **Setup the Workshop Environment** lab, use that password instead of **`TrainingADB`**.
+8. Enter **Training4ADB** in the **Password** field, and then click **Sign in**.
 
    ![](./images/enter-password.png " ")
 
@@ -54,14 +54,14 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
    ![](./images/launchpad.png " ")
 
-8. In the **Development** section, click the **SQL** card. The **SQL Worksheet** is displayed.   
+
+9. In the **Development** section, click the **SQL** card. The **SQL Worksheet** is displayed.   
 
     ![](./images/start-sql-worksheet.png " ")
 
     > **Note:** In the remaining tasks in this lab, you will use the SQL Worksheet to run the necessary SQL statements to:
     * Connect to your Data Catalog instance from ADB and query its assets.
     * Synchronize your ADB instance with your Data Catalog instance.
-    * Query the generated logs, schemas and external tables.
 
 
 ## Task 2: Initialize the Lab
@@ -142,7 +142,7 @@ Create and run the PL/SQL procedures to initialize the lab before you synchroniz
     /
     </copy>
     ```
-    >**Note:** It may take a few minutes to run this script as it is performing many initialization steps. Once the script completes successfully, the **`MOVIESTREAM`** user is created and initialized.
+    >**Note:** It may take a few minutes to run this script as it is performing many initialization steps. Once the script completes successfully, the **`MOVIESTREAM`** user is created and initialized. You will login to Oracle Machine Learning (OML) in the next lab using this new user to perform many queries.
 
     ![](./images/initialize.png " ")
 
@@ -163,7 +163,7 @@ Create and run the PL/SQL procedures to initialize the lab before you synchroniz
 
 3. Set the password for the **`MOVIESTREAM`** user.  You will log in as this user to run queries. , and then click the **Run Script (F5)** icon in the Worksheet toolbar.
 
-    >**Note:** Substitute **``<secure password``>** with your own secured password that you will remember for later use.
+    >**Note:** Substitute **``<secure password``>** with your own secured password that you will remember for later use such as **`Training4ADB`**.
 
     ```
     <copy>
@@ -216,7 +216,7 @@ In this task, you'll gather information about the Data Catalog instance which yo
 
 ## Task 4: Connect to Data Catalog
 
-1. Disconnect (initialize) from Data Catalog, if already connected, by using the **`dbms_dcat.unset_data_catalog_conn`** PL/SQL package procedure. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. This procedure removes an existing Data Catalog connections. It drops all of the protected schemas and external tables that were created as part of your previous synchronizations; however, it does not remove the metadata in Data Catalog. You should perform this action only when you no longer plan on using Data Catalog and the external tables that are derived, or if you want to start the entire process from the beginning.
+1. Disconnect (initialize) from Data Catalog, if already connected, by using the **`dbms_dcat.unset_data_catalog_conn`** PL/SQL package procedure. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Script (F5)** icon in the Worksheet toolbar. This procedure removes an existing Data Catalog connections. It drops all of the protected schemas and external tables that were created as part of your previous synchronizations; however, it does not remove the metadata in Data Catalog. You should perform this action only when you no longer plan on using Data Catalog and the external tables that are derived, or if you want to start the entire process from the beginning.
 
     ```
     <copy>
@@ -227,12 +227,12 @@ In this task, you'll gather information about the Data Catalog instance which yo
 
     ![](./images/unset-data-catalog.png " ")
 
-2. Define the following substitution variables, for repeated use in this task by using the SQL\*Plus **`DEFINE`** command. The variables will hold the necessary details for the Data Catalog connection such as the Data Catalog credential name, Data Catalog OCID, Compartment OCID, Home Region, and Data Asset key. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. **_Don't run the code yet. Complete the next step first._**
+2. Define the following substitution variables, for repeated use in this task by using the SQL\*Plus **`DEFINE`** command. The variables will hold the necessary details for the Data Catalog connection such as the Data Catalog credential name, Data Catalog OCID, Compartment OCID, Home Region, and Data Asset key. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. **_Don't run the code yet. Complete the next step first where you will replace the place holders between the ' ' in the code below with the actual values that you obtained in Task 3_**.
 
     ```
     <copy>
     define tenancy_ocid ='enter-your-tenancy-ocid'
-    define dcat_region='enter-your-region'
+    define dcat_region='enter-your-region-identifier'
     define dcat_compartment = 'enter-your-compartment-ocid'
     define dcat_ocid = 'enter-your-data-catalog-ocid'
     define dcat_sandbox_asset_key='enter-your-data-catalog-data-asset-key'  
@@ -272,7 +272,7 @@ In this task, you'll gather information about the Data Catalog instance which yo
     ![](./images/query-resource-principal.png " ")
 
 
-6. Query the Object Storage bucket to ensure that the resource principal and privilege work. Use the `list_objects` function to list objects in the specified location on object storage, **`moviestream_sandbox`** bucket in our example. The results include the object names and additional metadata about the objects such as size, checksum, creation timestamp, and the last modification timestamp. Click **Copy** to copy and paste the following code into the SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
+6. Query the Object Storage bucket to ensure that the resource principal and privilege work. Use the `list_objects` function to list objects in the specified location on object storage, **`moviestream_sandbox`** bucket in our example (specified earlier using the `uri_root` variable). The results include the object names and additional metadata about the objects such as size, checksum, creation timestamp, and the last modification timestamp. Click **Copy** to copy and paste the following code into the SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
 
     ```
     <copy>
@@ -281,11 +281,17 @@ In this task, you'll gather information about the Data Catalog instance which yo
     </copy>
     ```
 
+    This bucket contains only one object, **`potential_churners`**.
+
     ![](./images/query-bucket.png " ")
 
-    Here's the content of the **`moviestream_sandbox`** bucket as seen in Data Catalog.
+    Here's the one logical data entity in the **`moviestream_sandbox`** bucket as seen in Data Catalog, **`potential_churners`**.
 
-    ![](./images/sandbox-bucket-dcat.png " ")  
+    ![](./images/sandbox-bucket-dcat.png " ")
+
+    This was harvested from the **`moviestream_sandbox`** public Oracle Object Storage bucket which contains one single folder, **`potential_churners`**.
+
+    ![](./images/sandbox-bucket-storage.png " ")    
 
 7. Set the credentials to use with Data Catalog and Object Storage. The **`set_data_catalog_credential`** procedure sets the Data Catalog access credential that is used for all access to the Data Catalog. The **`set_object_store_credential`** procedure sets the credential that is used by the external tables for accessing the Object Storage. Changing the Object Storage access credential alters all existing synced tables to use the new credential. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
@@ -324,12 +330,24 @@ In this task, you'll gather information about the Data Catalog instance which yo
     </copy>
     ```
 
+    The connection to your `training-dcat-instance` Data Catalog instance that you created in this workshop is displayed.
+
     ![](./images/query-dcat-connection.png " ")
+
+    You can use the `describe` SQL*Plus command to get familiar with the columns in the `all_dcat_connections` Data Catalog table:
+
+    ```
+    <copy>
+    describe all_dcat_connections;
+    </copy>
+    ```
+
+    ![](./images/dsc-all-dcat-connections.png " ")
 
 
 ## Task 5: Display Data Assets, Folders, and Entities     
 
-1. Display all of data assets in the connected Data Catalog instance. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
+1. Display all of data assets that are available in the connected Data Catalog instance. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
 
     ```
     <copy>
@@ -338,7 +356,7 @@ In this task, you'll gather information about the Data Catalog instance which yo
     </copy>    
     ```
 
-    The row for the **`Data Lake`** data asset that you created in your Data Catalog instance is displayed in the **Query Result** tab.
+    The row for the only data asset that you created in your Data Catalog instance, **`Data Lake`**, is displayed in the **Query Result** tab.
 
     ![](./images/view-dcat-assets.png " ")
 
@@ -356,6 +374,17 @@ In this task, you'll gather information about the Data Catalog instance which yo
 
     ![](./images/view-asset-folders.png " ")
 
+    You can use the `describe` SQL*Plus command to get familiar with the columns in the `all_dcat_folders` Data Catalog table:
+
+    ```
+    <copy>
+    describe all_dcat_folders;
+    </copy>
+    ```
+
+    ![](./images/dsc-all-dcat-folders.png " ")
+
+
 3. Display all the entities in the folders originating from Oracle Object Storage buckets referenced in the **`Data Lake`** data asset.
 
     ```
@@ -367,53 +396,20 @@ In this task, you'll gather information about the Data Catalog instance which yo
 
     ![](./images/view-entities.png " ")
 
+    You can use the `describe` SQL*Plus command to get familiar with the columns in the `all_dcat_entities` Data Catalog table:
 
-## Task 6: Provide a Custom Property Override for the Schema Name
+    ```
+    <copy>
+    describe all_dcat_entities;
+    </copy>
+    ```
 
-When you perform the synchronization process between your ADB and Data Catalog instances in this workshop, the schemas and external tables are created automatically for you. By default, the name of a generated schema will start with the keyword **`DCAT$`** concatenated with the **data asset's name** and the **Object Storage folder's name** as follows:
-
-![](./images/schema-format.png " ")
-
-In this workshop, one of the generated schemas for your `moviestream_sandbox` Oracle Object Storage bucket using the `Data Lake` data asset would be as follows by default:
-
-![](./images/schema-format-example.png " ")
-
-However, in **Lab 2: Harvest Technical Metadata from Oracle Object Storage**, in **Task 7: Customize the Business Name for the Object Storage Buckets**, you customized the business names for each of the three Oracle Object Storage buckets that you use in this workshop to make the generated schema names a bit shorter. You removed the **`moviestream_`** prefix from the name of each bucket. For example, you changed the business name for the **`moviestream_sandbox`** bucket to **`Sandbox`**; therefore, the schema name format would be as follows:
-
-![](./images/schema-format-business-name.png " ")
-
-You will do one last customization to shorten the generated schemas' names a bit more. You will use a custom property override, **`obj`** that will be used instead of the actual data asset name, **`Data Lake`**, when you run the synchronization process so that the schema name would be as follows for the `Sandbox` bucket.
-
-![](./images/schema-and-business-exmaple.png " ")
-
-1. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance link.
-
-    ![](./images/dcat-instance.png " ")
-
-2. On the **`training-dcat-instance`** **Home** page, click **Browse Data Assets** in the **Quick Actions** tile.
-
-    ![](./images/browse-data-assets.png " ")
-
-3. If you only have the one Data Asset created in this workshop, the **Oracle Object Storage: Data Lake** page is displayed.
-
-4. In the **Summary** tab, in the **DBMS_DCAT** tile, click **Edit**.
-
-    ![](./images/click-edit-dbms-dcat.png " ")
-
-    > **Note:** The **DBMS_DCAT** tile will only be displayed after you connect ADB to Data Catalog.
-
-5. In the **Edit DBMS_DCAT** dialog box, enter **`obj`** in the **Oracle-Db-Schema-Prefix** field, and then click **Save Changes**. This value will be used as the prefix to the schemas' that are generated by the synchronization process which is covered in the next lab. If you don't provide a prefix here, then the data asset name, **Data Lake** in this example, will be used a prefix.
-
-    ![](./images/edit-dbms-dcat-dialog.png " ")
-
-    The new prefix is displayed.
-
-    ![](./images/dbms-dcat-dialog-edited.png " ")
+    ![](./images/dsc-all-dcat-entities.png " ")
 
 
-## Task 7: Synchronize Autonomous Database with Data Catalog    
+## Task 6: Synchronize Autonomous Database with Data Catalog    
 
-1. Synchronize the **`moviestream_sandbox`** Object Storage Bucket, between Data Catalog and Autonomous Database using the **`dbms_dcat.run_sync`** PL/SQL package procedure. In order to synchronize just one bucket (folder), you'll need the folder's key and the data asset key.  
+1. Synchronize the **`moviestream_sandbox`** Object Storage Bucket, between Data Catalog and Autonomous Database using the **`dbms_dcat.run_sync`** PL/SQL package procedure. In order to synchronize just one bucket (folder), you'll need the folder's key, `moviestream_sandbox` in this example, and the `Data Lake` data asset key.  
 
     ```
     <copy>
@@ -432,6 +428,7 @@ You will do one last customization to shorten the generated schemas' names a bit
 
     ![](./images/copy-key-value.png " ")  
 
+    > **Note:** In later steps, you will synchronize all of the available Object Storage buckets.
 
 2. Copy and paste the following code into your SQL Worksheet. Replace the values for the **`asset_id`** and **`folder_list`** keys with your own values that you copied in the previous step. Click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
@@ -455,34 +452,40 @@ You will do one last customization to shorten the generated schemas' names a bit
 
     ![](./images/sync-folder.png " ")
 
+    Earlier in this workshop, you learned that when you perform the synchronization process between your ADB and Data Catalog instances, the schemas and tables are created automatically for you as you saw in the above step. By default, the name of a generated schema will start with **`DCAT$`** concatenated with the data asset's name, **`Data Lake`**, and the folder's (bucket's) name such as **`moviestream_sandbox`**; however, in **Lab 2, Harvest Technical Metadata from Oracle Object Storage**, in **Task 7: Customize the Business Name for the Object Storage Buckets**, you created a business name for each of the three buckets and removed the **`moviestream_`** prefix. For example, the generated schema name for the **`moviestream_sandbox`** as you can see in the above synchronization image is **`DCAT$DATA_LAKE_SANDBOX`** instead of **`DCAT$DATA_LAKE_MOVIESTREAM_SANDBOX`** which is a bit shorter. In this lab, you will also learn how to replace the data asset name in the schema's name with a shorter custom property override of your choice.
 
-3. Review the generated log to identify any issues. The **`logfile_table`** contains the name of the table containing the full log. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
+
+3. Review the generated log to identify any issues. The **`logfile_table`** column contains the name of the table containing the full log. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
 
     ```
     <copy>
     select type, start_time, status, logfile_table
-    from user_load_operations;
+    from user_load_operations
+    order by start_time desc;
     </copy>
     ```
 
     ![](./images/view-log.png " ")
 
-    In our example, the log table name is `DBMS_DCAT$1_LOG`.
+    In our example, there were three `DCAT_SYNC` synchronization operations performed. If you have more than one log files generated as in our example, query the most recent log file table. In our example, the most recent (from using the `order by clause`) log table name is `DBMS_DCAT$23_LOG`.
 
-4. Review the full log. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar. Substitute the log table name with your with your own log table name that you identified in the previous step.
-
+4. Review the full log. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar. Substitute the log table name with your own log table name that you identified in the previous step.
 
     ```
     <copy>
     select *
-    from DBMS_DCAT$1_LOG
+    from DBMS_DCAT$23_LOG
     order by log_timestamp desc;
     </copy>
     ```
 
+    ![](./images/log-details-query.png " ")
+
+    The results are displayed in the **Query Result** tab.
+
     ![](./images/log-details.png " ")
 
-    >**Note:** The external table name that is created automatically, is **`DCAT$`** followed by the data asset prefix that you specified earlier, **`obj`** (instead of data lake), followed by the business name for the Object Storage bucket that you specified earlier, **`sandbox`** (instead of moviestream_sandbox), followed by logical entity name, **`potential_churners`**.
+    >**Note:** The external table name that is created automatically, is **`DCAT$`** followed by the data asset name,**`Data Lake`**, followed by the business name for the Object Storage bucket that you specified earlier, **`sandbox`** (instead of moviestream_sandbox), followed by logical entity name, **`potential_churners`**.
 
     ![](./images/logical-entity.png " ")
 
@@ -502,10 +505,8 @@ You will do one last customization to shorten the generated schemas' names a bit
 
     The synchronization process creates schemas and external tables based on the Data Catalog data assets and logical entities. The name of the schema is displayed in the **`oracle_schema_name`** column and the name of the generated external table is displayed in the **`oracle_table_name`** column.
 
-    >**Note:** Remember, earlier in this workshop, you provided **`obj`** as a Custom Property Override for the Schema Name instead of the data asset name of **`Data Lake`**. You also provided a shorter business name for each or the three Oracle Object Storage buckets.
 
-
-6. Describe the **`all_dcat_entities`** table to get familiar with its columns. Copy and paste the following query into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
+6. Describe the **`all_dcat_entities`** table that you will use in the next step to get familiar with its columns. Copy and paste the following query into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
 
     ```
     <copy>
@@ -516,7 +517,7 @@ You will do one last customization to shorten the generated schemas' names a bit
     ![](./images/desc-all_dcat_entities.png " ")
 
 
-7. Display the following: Object Storage bucket folder name, logical (data) entity name, schema name, and external table name. Copy and paste the following query into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
+7. Display the following: Object Storage bucket folder name, logical (data) entity name, schema name, and external table name from the `all_dcat_entities` and `dcat_entities` tables. Copy and paste the following query into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
 
     ```
     <copy>
@@ -535,14 +536,14 @@ You will do one last customization to shorten the generated schemas' names a bit
 
     ![](./images/custom-query.png " ")
 
-    >**Note:** The result shows the information for only one of the three Object Storage buckets, **`moviestream_sandbox`**. Earlier, you performed the synchronization only on this bucket.
+    >**Note:** The result shows the information for only one of the three Object Storage buckets, **`moviestream_sandbox`**. Earlier, you performed the synchronization only on this bucket. In the next task in this lab, you will synchronize all assets.
 
 8. Query the first nine rows of the `potential_churners` external table. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
 
     ```
     <copy>
     select *
-    from dcat$obj_sandbox.potential_churners
+    from dcat$data_lake_sandbox.potential_churners
     where rownum < 10;
     </copy>
     ```
@@ -550,25 +551,81 @@ You will do one last customization to shorten the generated schemas' names a bit
     ![](./images/potential-churners.png " ")
 
 
-9. Synchronize all of the available data assets in your Data Catalog instance. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script (F5)** icon in the Worksheet toolbar.
+## Task 7: Provide a Custom Property Override for the Schema Name
+
+In this task, you provide a custom property override for the schema name to use a short prefix instead of the data asset name as part of the generated schema name. By default, the name of a generated schema will start with the keyword **`DCAT$`** concatenated with the **data asset's name** and the **Object Storage folder's name** as follows:
+
+![](./images/schema-format.png " ")
+
+As you already learned in this lab, the generated schema name for your `moviestream_sandbox` Oracle Object Storage bucket uses the `Data Lake` data asset name as part of the schema name as follows:
+
+![](./images/schema-format-example.png " ")
+
+However, in **Lab 2: Harvest Technical Metadata from Oracle Object Storage**, in **Task 7: Customize the Business Name for the Object Storage Buckets**, you customized the business names for each of the three Oracle Object Storage buckets that you use in this workshop to make the generated schema names a bit shorter. You removed the **`moviestream_`** prefix from the name of each bucket. For example, you changed the business name for the **`moviestream_sandbox`** bucket to **`Sandbox`**; therefore, the schema name format that you saw already is as follows:
+
+![](./images/schema-format-business-name.png " ")
+
+You will do one last customization to shorten the generated schemas' names a bit more. You will use a custom property override, **`obj`** (can be any prefix) that will be used instead of the actual data asset name, **`Data Lake`**, when you run the synchronization process. The generated schema name would be as follows for the `Sandbox` bucket.
+
+![](./images/schema-and-business-exmaple.png " ")
+
+1. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance link.
+
+    ![](./images/dcat-instance.png " ")
+
+2. On the **`training-dcat-instance`** **Home** page, click **Browse Data Assets** in the **Quick Actions** tile.
+
+    ![](./images/browse-data-assets.png " ")
+
+3. If you only have the one Data Asset created in this workshop, the **Oracle Object Storage: Data Lake** page is displayed.
+
+4. In the **Summary** tab, in the **DBMS_DCAT** tile, click **Edit**.
+
+    ![](./images/click-edit-dbms-dcat.png " ")
+
+    > **Note:** The **DBMS_DCAT** tile will only be displayed after you connect ADB to Data Catalog.
+
+5. In the **Edit DBMS_DCAT** dialog box, enter **`obj`** custom in the **Oracle-Db-Schema-Prefix** field, and then click **Save Changes**. This value will be used as the prefix to the schemas' that are generated by the synchronization process which is covered in the next lab. If you don't provide a prefix here, then the data asset name, **`Data Lake`**, will be used in schemas' names.
+
+    ![](./images/edit-dbms-dcat-dialog.png " ")
+
+    The new prefix is displayed.
+
+    ![](./images/dbms-dcat-dialog-edited.png " ")
+
+
+## Task 8: Synchronize All of the Data Assets in Data Catalog
+
+So far in this lab, you synchronized only the **`moviestream_sandbox`** Object Storage Bucket. In this task, you will synchronize all of the data assets folders.
+
+1. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script (F5)** icon in the Worksheet toolbar.
 
     ```
     <copy>
     begin
-    dbms_dcat.run_sync('{"asset_list":["*"]}');
+      dbms_dcat.run_sync('{"asset_list":["*"]}');
     end;  
     /
     </copy>
     ```
 
-    ![](./images/synch-adb-dcat.png " ")
-
     The synchronization can take few minutes to complete. When it is completed successfully, the output is displayed at the bottom of the SQL Worksheet.
 
     ![](./images/synch-output.png " ")  
 
+    >**Note:** You can automate the sync operation by using the following procedure which will check for new objects in Data Catalog every 3 minutes. In this workshop, we will not use this procedure because we know that our Data Catalog will not be updated.
 
-10. Access to the automatically generated tables by the synchronization process is secure.  You need to grant access to users/roles. Autonomous Databases come with a predefined database role named **`DWROLE`**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Grant the select on tables privilege to the data warehouse role using the `grant_select_on_dcat_tables` custom procedure. This procedure grants READ access on the Data Catalog sourced tables to the `dwrole` role. See [Manage User Privileges on Autonomous Database - Connecting with a Client Tool](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-privileges.html#GUID-50450FAD-9769-4CF7-B0D1-EC14B465B873)
+    ```
+    begin
+       dbms_dcat.create_sync_job (
+         synced_objects => '{"asset_list":["*"]}',          
+         repeat_interval => 'FREQ=MINUTELY;INTERVAL=3;'
+       );
+    end;
+    /
+    ```
+
+2. Access to the automatically generated tables by the synchronization process is secure.  You need to grant access to users/roles. Autonomous Databases come with a predefined database role named **`DWROLE`**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Grant the select on tables privilege to the data warehouse role using the `grant_select_on_dcat_tables` custom procedure. This procedure grants READ access on the Data Catalog sourced tables to the `dwrole` role. See [Manage User Privileges on Autonomous Database - Connecting with a Client Tool](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-privileges.html#GUID-50450FAD-9769-4CF7-B0D1-EC14B465B873)
 
 
     ```
@@ -578,6 +635,20 @@ You will do one last customization to shorten the generated schemas' names a bit
     ```
 
     ![](./images/grant-to-dwrole.png " ")
+
+3. Query the generated schemas and external tables after your synchronization. Copy and paste the following query into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
+
+    ```
+    <copy>
+    select oracle_schema_name, oracle_table_name
+    from dcat_entities;
+    </copy>
+    ```
+
+    The schema and external table names are displayed. The generated schemas names now uses the **`obj`** custom property override that you provided instead of the actual data asset name, `Data Lake`.
+
+    ![](./images/schema-and-table-names-2.png " ")
+
 
 You may now proceed to the next lab.
 
@@ -593,6 +664,6 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-* **Author:** Marty Gubar, Product Manager, Server Technologies
-* **Contributor:** Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data     
+* **Author:** Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data     
+* **Contributor:** Marty Gubar, Product Manager, Server Technologies
 * **Last Updated By/Date:** Lauran Serhal, October 2021
