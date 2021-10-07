@@ -17,12 +17,12 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
 ### Prerequisites
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
-* The OKE cluster and the ATP databases that you created in Lab 1
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
+* The OKE cluster and the Autonomous Transaction Processing databases that you created in Lab 1
 
 ## Task 1: Deploy all the Microservices and the FrontEnd UI
 
-1.  Run the deploy script.  This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
+1.  Run the deploy script. This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
 
     ```
     <copy>cd $GRABDISH_HOME;./deploy.sh</copy>
@@ -38,19 +38,18 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
   ![](images/pods-all-after-deploy.png " ")
 
-  Alternatively, you can execute the `pods` shortcut command:
+  Or, you can execute the `pods` shortcut command:
 
-3. Check that the **ingress-nginx-controller** load balancer service is running, and write down the external IP
-    address.
+3. Check that the **ingress-nginx-controller** load balancer service is running, and write down the external IP address.
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
     ```
 
     ![](images/ingress-nginx-loadbalancer-externalip.png " ")
-  
 
-  Alternatively, you can execute the `services` shortcut command.
+
+  Or, you can execute the `services` shortcut command.
 
 ## Task 2: Access the FrontEnd UI
 
@@ -60,7 +59,7 @@ You are ready to access the frontend page. Open a new browser tab and enter the 
 
 Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
 
-You will then be prompted to authenticate to access the Front End microservices.  The user is `grabdish` and the password is the one you entered in Lab 1.
+You will be prompted to authenticate to access the Front End microservices. The user is `grabdish` and the password is the one you entered in Lab 1.
 
 ![](images/frontendauthlogin.png " ")
 
@@ -68,7 +67,7 @@ You should then see the Front End home page. You've now accessed your first micr
 
 ![](images/ui-home-page.png " ")
 
-We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display the frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
+We created a self-signed certificate to protect the frontend-helidon service. This certificate will not be recognized by your browser and so a warning is displayed. It will be necessary to instruct the browser to trust this site to display the frontend. In a production implementation a certificate that is officially signed by a certificate authority should be used.
 
 ## Task 3: Verify the Order and Inventory Functionality of GrabDish store
 
@@ -106,7 +105,7 @@ We created a self-signed certificate to protect the frontend-helidon service.  T
 
    ![](images/tx-show-order-67.png " ")
 
-   The order should have been successfully placed, which is demonstrated with the order status showing success.
+   The order should have been successfully placed, which is shown by the order status showing success.
 
 
 Although this might look like a basic transactional mechanic, the difference in the microservices environment is that it’s not using a two-phase XA commit, and therefore not using distributed locks. In a microservices environment with potential latency in the network, service failures during the communication phase or delays in long running activities, an application shouldn’t have locking across the services. Instead, the pattern that is used is called the saga pattern, which instead of defining commits and rollbacks, allows each service to perform its own local transaction and publish an event. The other services listen to that event and perform the next local transaction.
