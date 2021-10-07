@@ -70,7 +70,6 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>
     cd ~/examples/bobs-books/bobbys-books/bobbys-coherence/
     mvn clean install
-    cd
     </copy>
     ```
 
@@ -82,7 +81,6 @@ You should have a text editor, where you can paste the commands and URLs and mod
     ```bash
     <copy>cd ~/examples/bobs-books/bobbys-books/bobbys-helidon-stock-application/
     mvn clean package
-    cd
     </copy>
     ```
 
