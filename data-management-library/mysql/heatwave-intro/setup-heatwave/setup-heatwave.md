@@ -1,4 +1,4 @@
-# Setup HeatWave cluster in MySQL Database System 
+# SETUP HEATWAVE CLUSTER IN MYSQL DATABASE SYSTEM  
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
@@ -29,10 +29,13 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Add a HeatWave Cluster to MDS-HW MySQL Database System
 
-1. Open the navigation menu  Databases > MySQL > DB Systems
+1. Open the navigation menu  
+    Databases 
+    MySQL
+    DB Systems
 2. Choose the root Compartment. A list of DB Systems is displayed. 
     ![Connect](./images/10addheat01.png " ")
-3. In the list of DB Systems, click on the **MDS-HW** Ssystem. click the “More Action” -> “Add HeatWave Cluster”.
+3. In the list of DB Systems, 'click' the **MDS-HW** system. 'click' **More Action ->  Add HeatWave Cluster**.
     ![Connect](./images/10addheat02.png " ")
 4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
 
@@ -50,7 +53,7 @@ algorithm, it will predict the number of nodes needed.
 
 9. Click “Add HeatWave Cluster” to create the HeatWave cluster
     ![Connect](./images/10addheat06.png " ")
-10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click on the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
+10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. 'click' the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/10addheat07.png " ")
 
 ## Task 2: Load airportdb Data into HeatWave Cluster
@@ -90,8 +93,8 @@ algorithm, it will predict the number of nodes needed.
 
 ## Learn More
 
-* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
-* [MySQL Database Documentation](https://www.mysql.com)
+* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
+* [MySQL Database Documentation](https://www.MySQL.com)
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
