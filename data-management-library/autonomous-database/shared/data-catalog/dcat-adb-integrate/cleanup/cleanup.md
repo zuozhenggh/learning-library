@@ -34,6 +34,8 @@ You can terminate your Data Catalog instance that you created in this workshop a
 
 3. A **Terminate** dialog box is displayed. Enter **delete** in the **TYPE "DELETE" TO CONFIRM DELETE** field, and then click **Terminate**. The Data Catalog instance goes into a **Deleting** state. When the delete is completed, the instance is no longer displayed, and all of the resources in the deleted instance are permanently deleted.
 
+    >**Note:** You might need to refresh your browser to confirm the deletion of the Data Catalog instance.
+
    ![](./images/dcat-instance-deleted.png " ")
 
 ## Task 2: Delete Your Autonomous Database Instance
@@ -48,7 +50,9 @@ You can terminate your ADW instance that you created in this workshop as follows
 
 3. A **Terminate** dialog box is displayed. Enter **DB-DCAT Integration** in the **To confirm, enter the name of the database that you want to terminate** field, and then click **Terminate Autonomous Database**.
 
-    The state of the Autonomous Database instance goes into **Terminating**. When the ADB is deleted, the **Status** changes to **Terminated**.
+    ![](./images/terminate-adb.png " ")
+
+    The **State** of the Autonomous Database instance goes into **Terminating**. When the ADB is deleted, the **State** changes to **Terminated**.
 
     ![](./images/ADB-terminated.png " ")
 
@@ -59,7 +63,7 @@ You can terminate your ADW instance that you created in this workshop as follows
 
 2. In the **Dynamic Groups** page, search for your **moviestream-dynamic-group** dynamic group. Click the **Actions** button associated with the dynamic group, and then select **Delete** from the context menu. A confirmation message box is displayed, click **Delete**.
 
-3. In the **Dynamic Groups** page, click **Policies** in the **Identity** section on the left. The **Policies** page is displayed. In the **List Scope** section, search for and select your **training-dcat-compartment** from the **Compartment** drop-down list. Click the **Actions** button associated with the **moviestream-object-storage-policy**, and then select **Delete** from the context menu.  A confirmation message box is displayed, click **Delete**.
+3. In the **Dynamic Groups** page, click **Policies** in the **Identity** section on the left. The **Policies** page is displayed. In the **List Scope** section, search for and select your **training-dcat-compartment** from the **Compartment** drop-down list, if not already selected. Click the **Actions** button associated with the **moviestream-object-storage-policy**, and then select **Delete** from the context menu.  A confirmation message box is displayed, click **Delete**.
 
 
 ## Task 3: Delete Your Compartment
@@ -68,10 +72,11 @@ To delete a compartment, it must be empty of all resources. Before you initiate 
 
 1. Click the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Compartments**. From the list of available compartments, search for your **`training-dcat-compartment`**.
 
-2. On the **Compartments** page, click the **Actions** button associated with **`training-dcat-compartment`**. Select **Delete** from the context menu.
+2. On the **Compartments** page, in the row for the **`training-dcat-compartment`** compartment, click the **Actions** button, and then select **Delete** from the context menu.
 
-3. A confirmation message box is displayed. Click **Delete**. The status of the deleted compartment changes from **Active** to **Deleting** until the compartment is successfully deleted. You can click on the compartment name link in the **Name** column to display the status of this operation.
+3. A confirmation message box is displayed. Click **Delete**. The state of the deleted compartment changes from **Active** to **Deleting** until the compartment is successfully deleted. You can click on the compartment name link in the **Name** column to display the status of this operation.
 
+    ![](./images/delete-compartment.png " ")
 
 This concludes the workshop.
 
