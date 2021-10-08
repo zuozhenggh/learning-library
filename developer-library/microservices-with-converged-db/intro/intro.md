@@ -15,7 +15,7 @@ You will create an application with Helidon microservices and a Javascript front
 
 If you need any help please join the databasehome.slack.com (#microservices) channel.
 
-### Let's Get Started!
+### Let's Get Started
 
 Proceed to the next lab.
 

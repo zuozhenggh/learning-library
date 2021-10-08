@@ -8,7 +8,7 @@ Estimated Lab Time - 10 minutes
 
 ### Objectives
 
-* Create an APEX workspace in ATP
+* Create an APEX workspace in the Oracle Autonomous database
 * Create an APEX app based on the inventory table
 
 ### Prerequisites
