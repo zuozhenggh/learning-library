@@ -32,12 +32,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-> **NEEDS REVIEW** This lab requires completion of Labs 1 through 4 in the Contents menu on the left.
-- You can complete the prerequisite labs in two ways:
-
-    a. Manually run through the labs.
-
-    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+- This lab requires completion of Labs 1–2 in the Contents menu on the left.
 
 > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will convert to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. See the [**Free Tier FAQ page**.](https://www.oracle.com/cloud/free/faq.html)
 
