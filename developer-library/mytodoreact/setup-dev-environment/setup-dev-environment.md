@@ -104,20 +104,23 @@ You should now see `mtdrworkshop` in your root directory
 2. Click **Create Autonomous Database**
 	![ATP-config-1](images/ATP-config-1.png " ")
     * Set the **Compartment, Display Name** and **Database Name**.
-	* Set `mtdrdb` as the database name (that name is being used in future commands)
+	* Set `mtdrdb` as the database name  and display name (that name is being used in future commands)
 	* Set the workload type to **Transaction Processing**.
     * Accept the default Deployment Type **Shared Infrastructure**.
 3. Set the **ADMIN password, Network Access Type** and **License Type**
 	![ADB setup](images/ADB-setup.png " ")
     * Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
     Please write down the ADMIN password; it will be required later.
-    * Set the **Access type** to **Allow secure access from specific IPs and VCNs**.
+    * Set the **Access type** to **Secure access from specific IPs and VCNs only**.
+	* Select **Virtual Cloud Network** under `IP notation type` and select the associated Virtual cloud network in your compartment
     * Set the license type to **Bring Your Own License (BYOL)** (does not matter for this workshop).
     * Click **Create Autonomous Database**.
 
 > **Note:** The database creation will take a few minutes.
 
-4. Populate mtdrworkshopdbid.txt with the database OCID.
+4. Copy the database OCID  and replace $DBOCID with it in the following comand to populate mtdrworkshopdbid.txt.
+
+	![copy DBOCID](images/copy-DBOCID.png " ")
 
 	``` bash
 	<copy>echo $DBOCID > ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt</copy>
