@@ -136,4 +136,4 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance
-* **Last Updated By/Date** - September 2021
+* **Last Updated By/Date** - October 2021
