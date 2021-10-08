@@ -115,7 +115,7 @@ Estimated Lab Time - 10 minutes
 18. Click the `Get Inventory` button and notice inventory has been reduced to an incorrect value of 7 as the duplicate message delivery has reduced inventory twice for the same order.
    ![](images/getinventory7.png " ")
 
-## Task 3: Deploy Order and Inventory services that use Oracle and AQ/TEQ.
+## Task 3: Deploy Order and Inventory services that use Oracle and AQ/TEQ
 
 1.  Undeploy MongoDB, Postgres, and Kafka backed Order and Inventory implementations and deploy the Oracle + TEQ/AQ backed Order and Inventory implementations by copying and running the following commands.
 
