@@ -1,6 +1,5 @@
 {
   "workshoptitle": "Creating a Shopping Cart using Oracle APEX",
-  "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
         "title": "Introduction",
@@ -8,7 +7,7 @@
       },      
       {
         "title": "Getting Started",
-        "filename": "signup/1-sign-up-apex.md"
+        "filename": "../signup/1-sign-up-apex.md"
       },
       {
         "title": "Lab 1: Installing Sample Tables",
@@ -28,7 +27,7 @@
       },     
       {
         "title": "Lab 5: Creating the Order Page",
-        "filename": "creating-orders-page/5-creating-order-page.md"
+        "filename": "../creating-orders-page/5-creating-order-page.md"
       },
       {
         "title": "Lab 6: Creating the Shopping Cart Page",

@@ -5,9 +5,9 @@
 During the workshop, you use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface. You are automatically signed in to these compute instances as the `oracle` user.
 
 - The `workshop-staged` compute instance has the Oracle Database 19c installer files (release 19.12) staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
-- The `workshop-installed` compute instance has Oracle Database 19c (release 19.12) already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. CDB1, PDB1, and CDB2 are configured to use the default listener, which is called LISTENER. The listener and the database instances are configured to automatically start up on boot.
+- The `workshop-installed` compute instance has Oracle Database 19c (release 19.12) already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. CDB1, PDB1, and CDB2 use the default listener, LISTENER. The listener and the database instances automatically start up on boot.
 
-In this lab, you verify that your `workshop-installed` compute instance is properly started and download the lab files.
+In this lab, you verify that the listener on the `workshop-installed` compute instance is started and download the lab files.
 
 Estimated Time: 5 minutes
 
@@ -28,7 +28,7 @@ This lab assumes that you have:
 
 ## Task 1: Verify that the default listener (LISTENER) is started on the `workshop-installed` compute instance
 
-1. On the desktop of your `workshop-installed` compute instance, open a terminal window. Notice that you are signed in to the Linux operating system as the `oracle` user.
+1. On the desktop of your `workshop-installed` compute instance, open a terminal window. You are signed in to the Linux operating system as the `oracle` user.
 
 2. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
@@ -171,7 +171,7 @@ This lab assumes that you have:
 
 ## Appendix A: Restore your lab files
 
-In the event that you accidentally change one or more of your lab files on your `workshop-installed` compute instance and need to restore them, you can follow these steps:
+To restore one or more of your lab files on your `workshop-installed` compute instance, follow these steps:
 
 1. Open a terminal window.
 
@@ -188,4 +188,4 @@ In the event that you accidentally change one or more of your lab files on your 
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, September 2 2021
+- **Last Updated By/Date** - Jody Glover, Database team, September 21 2021

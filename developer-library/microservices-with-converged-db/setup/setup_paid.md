@@ -15,7 +15,7 @@ Estimates Lab Time - 25 minutes
 * Clone the setup and microservices code
 * Execute setup
 
-## Task 1: Login to the OCI Console and Launch the Cloud Shell
+## Task 1: Log in to the Oracle Cloud Console and Launch the Cloud Shell
 
 If you haven't already, sign in to your account.
 
@@ -39,14 +39,14 @@ Here are the steps for creating a new group and assigning security policy requir
   ![](images/create-group.png " ")
 
 3. In the Create Group dialog box, enter the following:
- - **Name**: Enter a unique name for your group, e.g. "MicroservicesAdmin”. Note that the group name cannot contain spaces.
+ - **Name**: Enter a unique name for your group, such as "MicroservicesAdmin”. Note that the group name cannot contain spaces.
  - **Description**: Enter a description (for example, “New group for microservices workshop”).
  - Click **Create**.
   ![](images/new-group.png " ")
 
   ![](images/get-new-group.png " ")
 
- 4. Now, let’s create a security policy that give your group permissions to execute the setup steps for this workshop, e.g. "Microservices-Policies".
+ 4. Now, create a security policy that gives the group permissions to execute the setup steps for this workshop, entering a name, such as "Microservices-Policies".
 
   ![](images/create-policy.png " ")
 
@@ -70,7 +70,7 @@ Allow group MicroservicesAdmin to manage objects in tenancy
 
 ## Task 4: Check Your Tenancy Service Limits
 
-If you have already used up some of the quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may hit are summarized in the following table.
+If you have already used up some quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may exceed are summarized in the following table.
 
 | Service          | Scope  | Resource                                             | Available | Free Account Limit |
 |------------------|:------:|------------------------------------------------------|:---------:|:------------------:|
@@ -80,7 +80,7 @@ If you have already used up some of the quota on your tenancy, perhaps while com
 |                  | Region | Autonomous Transaction Processing OCPU Count         | **4**     | 8                  |
 | LbaaS            | Region | 100Mbps Load Balancer Count                           | **3**     | 3                  |
 
-Quota usage and limits can be check through the console: **Governance & Administration** --> **Governance** --> **Limits, Quotas and Usage**, For example:
+Quota usage and limits can be check through the console: **Governance & Administration** -- **Governance** -- **Limits, Quotas and Usage**, For example:
 
   ![](images/service-limit-example.png " ")
 
@@ -88,11 +88,11 @@ The Tenancy Explorer may be used to locate existing resources: **Governance & Ad
 
   ![](images/show-subcompartments.png " ")
 
-It may be necessary to delete some resources in order to make space to run the workshop.  Once you have sufficient space you may proceed to the next step.
+It may be necessary to delete some resources to make space to run the workshop.  Once you have sufficient space you may proceed to the next step.
 
 ## Task 5: Launch the Cloud Shell
 
-Cloud Shell is a small virtual machine running a "bash" shell which you access through the OCI Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the OCI Console tenancy region. It also provides up-to-date tools and utilities.
+Cloud Shell is a small virtual machine running a "bash" shell which you access through the  'Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the  'Oracle Cloud Console' tenancy region. It also provides up-to-date tools and utilities.
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
@@ -121,7 +121,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.8.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.9.2.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -163,7 +163,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    The user OCID will look something like `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta` . Note the "ocid1.user" prefix.
 
-   This can be found in the OCI console.  Note that in some cases the name link may be inactive in which case select the `User Settings` link. Do not select the "Tenancy" link.
+   This can be found in the Oracle Cloud Console.  Note that sometimes the name link may be inactive in which case select the `User Settings` link. Do not select the "Tenancy" link.
 
   ![](images/get-user-ocid.png " ")
 
@@ -173,7 +173,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![](images/get-comp-ocid.png " ")
 
-4. The setup will automatically upload an Auth Token to your tenancy so that docker can login to the OCI Registry.  If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room.  This can be done through the OCI console.
+4. The setup will automatically upload an Auth Token to your tenancy so that docker can log in to the OCI Registry.  If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room.  This can be done through the  'Oracle Cloud Console.
 
   ![](images/get-user-ocid.png " ")
 
@@ -187,12 +187,12 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 The setup will provision the following resources in your tenancy:
 
-| Resources              | OCI Console Navigation                                                        |
-|------------------------|-------------------------------------------------------------------------------|
-| Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
-| Databases (2)          | Oracle Database --> Autonomous Database --> Autonomous Transaction Processing |
-| OKE Cluster            | Developer Services --> Containers --> Kubernetes Clusters (OKE)               |
-| Registry Repositories  | Developer Services --> Containers --> Container Registry                      |
+| Resources              |  Oracle Cloud Console Navigation                                            |
+|------------------------|-----------------------------------------------------------------------------|
+| Object Storage Buckets | Storage -- Object Storage -- Buckets                                        |
+| Databases (2)          | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing |
+| OKE Cluster            | Developer Services -- Containers -- Kubernetes Clusters (OKE)               |
+| Registry Repositories  | Developer Services -- Containers -- Container Registry                      |
 
 You can monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window as this may disturb the setup.  Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 

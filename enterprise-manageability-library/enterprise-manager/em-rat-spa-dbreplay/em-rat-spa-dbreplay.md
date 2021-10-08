@@ -21,9 +21,7 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 | **5**  | Database Replay - Consolidation Replay (EM) (Optional) | 20 minutes       | The objective of this activity is to demonstrate and use the Consolidation Database Replay using Enterprise Manager UI. | **Scenario:**    You've been asked to validate Database performance before upgrade Database from 18.3 to 19.10. The plan is also consolidation a couple of application workload from 2 different Database Captures (Order Entry and Sales History) from 18.3 into a single Database Replay in 19.10.                                                                                                                                          |
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -32,19 +30,27 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 ## Task 1: SQL Performance Analyzer
 
-1. Shutdown Databases cdb186.subnet.vcn.oraclevcn.com, finance.subnet.vcn.oraclevcn.com, hr.subnet.vcn.oraclevcn.com
+1.  Log into an Enterprise Manager VM. The Enterprise Manager credentials are “sysman/welcome1”. **Click** on the Targets, then Databases. You will be directed to the list of Databases in EM.
 
-    ![](images/emratlab0step2a.png " ")
+    ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
 
-    ![](images/emratlab0step2b.png " ")
+    ![](images/emratlab1step2.png " ")
 
-    ![](images/emratlab0step2c.png " ")
 
-    ![](images/emratlab0step2d.png " ")
 
-    ![](images/emratlab0step2e.png " ")
+2. Shutdown Databases cdb186.subnet.vcn.oraclevcn.com, finance.subnet.vcn.oraclevcn.com, hr.subnet.vcn.oraclevcn.com.
 
-2. In this Lab, we use Databases db19c.subnet.vcn.oraclevcn.com, emrep.us.oracle.com, sales.subnet.vcn.oraclevcn.com. Start Database db19c.subnet.vcn.oraclevcn.com. Open Pluggable Databases db19c.subnet.vcn.oraclevcn.com\_OLTP\_CL2, db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1.
+  ![](images/emratlab0step2a.png " ")
+
+  ![](images/emratlab0step2b.png " ")
+
+  ![](images/emratlab0step2c.png " ")
+
+  ![](images/emratlab0step2d.png " ")
+
+  ![](images/emratlab0step2e.png " ")
+
+3. In this Lab, we use Databases db19c.subnet.vcn.oraclevcn.com, emrep.us.oracle.com, sales.subnet.vcn.oraclevcn.com. Check if Database db19c.subnet.vcn.oraclevcn.com is open and available. If it is down, please start Database db19c.subnet.vcn.oraclevcn.com. Open Pluggable Databases db19c.subnet.vcn.oraclevcn.com\_OLTP\_CL2, db19c.subnet.vcn.oraclevcn.com\_PSAL\_CL1.
 
    ![](images/emratlab0step2f.png " ")
 
@@ -57,10 +63,6 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
    ![](images/emratlab0step2j.png " ")
 
    ![](images/emratlab0step2k.png " ")
-
-3. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “sysman/welcome1”.
-
-    ![](images/1876be1823ca17d9ab7e663e128859c4.jpg " ")
 
 4. **Click** on the Targets, then Databases. You will be directed to the list of Databases in EM.
 

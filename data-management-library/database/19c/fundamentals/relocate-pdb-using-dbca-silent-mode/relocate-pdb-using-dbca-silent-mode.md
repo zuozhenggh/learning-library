@@ -1,4 +1,4 @@
-# Relocate a PDB to a Remote CDB by using DBCA in Silent Mode
+# Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode
 
 ## Introduction
 Starting in Oracle Database 19c, you can use the Oracle Database Configuration Assistant (DBCA) tool to relocate a PDB that resides in a remote CDB (a different CDB than the one to which you are relocating). To do this, you use the new `-relocatePDB` command in DBCA. Before you can relocate a PDB from one CDB to another, you need to put your CDBs into `ARCHIVELOG` mode.
@@ -173,6 +173,8 @@ A common user is a database user that has the same identity in the `root` contai
 ## Task 3: Use DBCA in silent mode to relocate PDB1 from CDB1 to CDB2
 
 1. Run the `-relocatePDB` command in DBCA in silent mode to relocate PDB1 from CDB1 to CDB2.
+
+    *This is the new feature!*
 
     ```
     $ <copy>dbca -silent \
@@ -451,4 +453,4 @@ A common user is a database user that has the same identity in the `root` contai
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, September 2 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, September 21 2021

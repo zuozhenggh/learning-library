@@ -5,7 +5,7 @@
 
 Oracle Database 19c provides complete backup and recovery flexibility for multitenant container databases (CDBs) and pluggable databases (PDBs) with recovery catalog support. You can use a virtual private catalog (VPC) user to control permissions to perform backup and restore operations at a PDB level. The metadata view is also limited, so a VPC user can view only data for which the user has been granted permission.
 
-In this lab, you create a PDB named PDB19 to act as the recovery catalog database for all other PDBs in CDB1. `ARCHIVELOG` mode must be enabled on CDB1. Use the `workshop-installed` compute instance.
+In this lab, you create a PDB named PDB19 to act as the recovery catalog database for all other PDBs in CDB1. You create two VPC users (`vpc_pdb1` and `vpc_pdb2`) and grant them access to the metadata of PDB1 and PDB2 respectively in the recovery catalog database. Next, you use RMAN to perform back up operations on PDB1 as both users and observe the results. `ARCHIVELOG` mode must be enabled on CDB1. Use the `workshop-installed` compute instance.
 
 Estimated Time: 25 minutes
 
@@ -20,7 +20,7 @@ In this lab, you will:
 - Grant VPD privileges to the base catalog schema owner
 - Upgrade the recovery catalog
 - Create VPC users
-- Back up and restore PDB1
+- Back up PDB1
 - Find the handle value that corresponds to your tag value
 - Revoke privileges from the VPC users and drop the recovery catalog
 - Reset your environment
@@ -64,7 +64,7 @@ Create a PDB named PDB19 to act as the recovery catalog database. This database 
     $ <copy>$HOME/labs/19cnf/create_PDB19_in_CDB1.sh</copy>
     ```
 
-2. Run the `glogin.sh` shell script to format all of the columns selected in queries.
+2. Run the `glogin.sh` shell script to format all the columns selected in queries.
 
     ```
     $ <copy>$HOME/labs/19cnf/glogin.sh</copy>
@@ -111,7 +111,7 @@ In PDB19, create a recovery catalog owner named `catowner` and grant it privileg
 
 ## Task 4: Create the recovery catalog in the recovery catalog database with RMAN and register CDB1
 
-Create a virtual private catalog (VPC), also referred to simply as "recovery catalog", in PDB19 for users and databases. Register CDB1 in the recovery catalog.
+Create a virtual private catalog (VPC), also referred to simply as "recovery catalog," in PDB19 for users and databases. Register CDB1 in the recovery catalog.
 
 1. Start Recovery Manager (RMAN).
 
@@ -318,11 +318,13 @@ Connect to the recovery catalog database as the `SYSTEM` user and create two VPC
     Recovery Manager complete.
     ```
 
-## Task 8: Back up and restore PDB1
+## Task 8: Back up PDB1
 
-RMAN can store backup data in a logical structure called a backup set, which is the smallest unit of an RMAN backup. A backup set contains the data from one or more data files, archived redo logs, control files, or server parameter file. A backup set consists of one or more binary files in an RMAN-specific format. Each of these files is known as a backup piece. In the output from the `BACKUP DATABASE` command, you can find a handle value and a tag value. The handle value is the destination of the backup piece. The tag value is a reference for the backupset. If you do not specify your own tag, RMAN assigns a default tag automatically to all backupsets created. The default tag has a format `TAGYYYYMMDDTHHMMSS`, where `YYYYMMDD` is a date and `HHMMSS` is a time of when taking the backup was started. The instance's timezone is used.  In a later task, you create a query using your tag value to find the handle value.
+RMAN can store backup data in a logical structure called a backup set, which is the smallest unit of an RMAN backup. A backup set has the data from one or more data files, archived redo logs, control files, or server parameter file. A backup set consists of one or more binary files in an RMAN-specific format. Each of these files is known as a backup piece. In the output from the `BACKUP DATABASE` command, you can find a handle value and a tag value. The handle value is the destination of the backup piece. The tag value is a reference for the backupset. If you do not specify your own tag, RMAN assigns a default tag automatically to all backupsets created. The default tag has a format `TAGYYYYMMDDTHHMMSS`, where `YYYYMMDD` is a date and `HHMMSS` is a time of when taking the backup was started. The instance's timezone is used. In a later task, you create a query using your tag value to find the handle value.
 
 In RMAN, connect to PDB1 (the target PDB) and to the recovery catalog database as the `vpc_pdb1` user to back up and restore PDB1. Next, try to back up PDB1 as the `vpc_pdb2` user and observe what happens.
+
+*This is the new feature!*
 
 1. Using RMAN, connect to PDB1 (the target) and the recovery catalog database (PDB19) as the `vpd_pdb1` user.
 
@@ -417,8 +419,8 @@ In RMAN, connect to PDB1 (the target PDB) and to the recovery catalog database a
 
 ## Task 9: Find the handle value that corresponds to your tag value
 
-Query the `RC_BACKUP_PIECE` view, which contains information about backup pieces. This view corresponds to the `V$BACKUP_PIECE` view.
-Each backup set contains one or more backup pieces. Multiple copies of the same backup piece can exist, but each copy has its own record in the control file and its own row in the view.
+Query the `RC_BACKUP_PIECE` view, which has information about backup pieces. This view corresponds to the `V$BACKUP_PIECE` view.
+Each backup set contains one or more backup pieces. Many copies of the same backup piece can exist, but each copy has its own record in the control file and its own row in the view.
 
 1. Connect to the recovery catalog database as the catalog owner.
 
@@ -569,14 +571,14 @@ Disable `ARCHIVELOG` mode on CDB1 and clean up the PDBs in CDB1.
     ```
 
 
-
 ## Learn More
 
 - [Database New Features Guide (Release 19c)](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
 - [Managing a Recovery Catalog](https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/managing-recovery-catalog.html#GUID-E836E243-6620-495B-ACFB-AC0001EF4E89)
 
+
 ## Acknowledgements
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, September 2 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, September 22 2021
