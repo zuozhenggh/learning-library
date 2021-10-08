@@ -15,9 +15,11 @@ Estimated Time: 20 minutes
 ### Prerequisites
 - This lab requires completion of the Provision Autonomous Database lab in the Contents menu on the left.
 
-## Task 1: Install Oracle Analytics Desktop on a Windows desktop
+## Task 1: Download and install Oracle Analytics Desktop 5.9
 
-1. Download *version 5.9* of *Oracle Analytics Desktop* (formerly Data Visualization Desktop) from <a href="https://edelivery.oracle.com/osdc/faces/SoftwareDelivery" target="\_blank">Oracle Software Delivery Cloud</a>. Do not use version 6.x of Oracle Analytics Desktop. To download Oracle Analytics Desktop, follow these steps:
+1. Download *version 5.9* of *Oracle Analytics Desktop* (formerly Data Visualization Desktop) from <a href="https://edelivery.oracle.com/osdc/faces/SoftwareDelivery" target="\_blank">Oracle Software Delivery Cloud</a>. Do not use version 6.x of Oracle Analytics Desktop, as this lab's instructions and screenshots are for the 5.9 version. To download Oracle Analytics Desktop, follow these steps:
+
+    > **Note:** This example shows installing Oracle Analytics Desktop to a Windows desktop. The steps for installing to an Apple Mac computer will be similar.
 
     Search for **oracle analytics desktop** in the search field. Click **Oracle Analytics Desktop** in the search results list.
 
@@ -106,7 +108,6 @@ For simplicity's sake, in this exercise, we will use the Oracle Sales History (S
       X.COUNTRY_ID=R.COUNTRY_ID;
       </copy>
       ```
-
 
    ![Paste the code and click Run Script.](./images/execute_script_in_sql_dev_web_to_create_view.png " ")
 
@@ -226,13 +227,13 @@ This task enables you to share your project file with colleagues.
 
    ![Click the navigation menu at the bottom right of your project tile. Select Export.](./images/export_dva_project_file.jpg " ")  
 
-3. Choose to export as a __File__. Email may work if Oracle Analytics Desktop is able to interact with your local email client. Cloud provides the mechanism to upload and share your project to <a href="https://cloud.oracle.com/en_US/oac" target="\_blank">Oracle Analytics Cloud</a>.
+3. Choose to export as a __File__. Email may work if Oracle Analytics Desktop is able to interact with your local email client. Cloud provides the mechanism to upload and share your project to Oracle Analytics Cloud. See the <a href="https://docs.oracle.com/en/cloud/paas/analytics-cloud/acsgs/what-is-oracle-analytics-cloud.html#GUID-E68C8A55-1342-43BB-93BC-CA24E353D873" target="\_blank">Oracle Analytics Cloud documentation</a>.
 
 4. Choose the Export option as shown below and save the DVA file to your Desktop.
 
    ![Choose File.](./images/export_project_dva_to_file.jpg " ")  
 
-## Want to learn more?
+## Learn more
 
 View [documentation on working with analytics and visualization of data](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/create-reports-analytics.html#GUID-30A575A6-2CAD-4A8A-971E-2F751C8E6F90) in your Autonomous Database.
 

@@ -30,7 +30,7 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 4: About Eshop",
+      "title": "Lab 4: Building Applications with Oracle Sharding",
       "description": "About Eshop",
       "filename": "../../eshop/eshop.md"
     },
@@ -38,16 +38,6 @@
       "title": "Lab 5: Exploring Sharding Topology",
       "description": "Exploring Sharding Topology",
       "filename": "../../topology/topology.md"
-    },
-    {
-      "title": "Lab 6: Eshop Application Schema & Code Snippet (read-only)",
-      "description": "Eshop App schema & Code Snippet",
-      "filename": "../../appschema/appschema.md"
-    },
-    {
-      "title": "Lab 7: Application Queries on Sharded Database",
-      "description": "Application Queries on sharding Database",
-      "filename": "../../appqueries/appqueries.md"
     },
     {
       "title": "Need Help?",

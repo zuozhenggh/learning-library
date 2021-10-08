@@ -27,7 +27,7 @@ Your options are:
 ## Task 1A: Create Stack:  Compute + Networking
 1. Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2. Login to Oracle Cloud
-3.  Open up the hamburger menu in the left hand corner.  Choose the compartment in which you would like to install.  Under the **Solutions and Platform** submenu, choose **Resource Manager > Stacks**.  
+3.  Open up the hamburger menu in the left hand corner.  Click **Developer Services**, choose **Resource Manager > Stacks**. Choose the compartment in which you would like to install. Click **Create Stack**.  
 
   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
 
