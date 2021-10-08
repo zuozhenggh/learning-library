@@ -2,8 +2,6 @@
 
 ## Introduction
 
-### About this Workshop
-
 The labs in this workshop walk you through all the steps to access the Data Lake using Autonomous Database (ADB) and Data Catalog. You will learn how to Synchronize ADB and Data Catalog so that you can query Oracle Object Storage buckets from ADB.
 
 Estimated Time: TBD
@@ -34,7 +32,7 @@ The Lakehouse combines the abilities of a data lake and a data warehouse to proc
 
 For additional information, see [What is the difference between a Data Lake, Database, and a Data Warehouse](https://www.oracle.com/a/ocom/docs/database/difference-between-data-lake-data-warehouse.pdf).
 
-## Objectives
+### Objectives
 
 In this workshop, you will:
 * Set up the workshop environment.
@@ -49,7 +47,7 @@ In this workshop, you will:
 * Query both the Data Warehouse and the Data Lake (Oracle Object Storage buckets) from within ADB.
 * Use Oracle Machine Learning Notebooks to view and analyze the data from ADB and the Data Lake.
 
-## Prerequisites
+### Prerequisites
 
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported. You may use your own cloud account or you can get a Free Trial account as described in the **Get Started** lab in the **Contents** menu.
 
