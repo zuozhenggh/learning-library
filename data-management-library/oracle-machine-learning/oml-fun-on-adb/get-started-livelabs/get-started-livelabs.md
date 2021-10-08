@@ -26,11 +26,11 @@ In this lab, you will learn how to:
 
 To provision an Oracle Autonomous Database:
 
-1. Sign in to your OCI account, and under the Launch Resources section, click **Create an ADW database**.
+1. Sign into your OCI account, and under the Launch Resources section, click **Create an ADW database**.
 
 	![Create ADW Database](images/adw_database.png)
 
-	 Alternatively, you may click the hamburger on the upper left corner to open the left navigation pane, and click **Autonomous Data Warehouse**.
+	 Alternatively, you may click the left navigation pane on the upper left corner, and click **Autonomous Data Warehouse**.
 
 	![Autonomous Data Warehouse option under Oracle Database](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "Autonomous Data Warehouse option under Oracle Database")
 
@@ -212,6 +212,6 @@ To create the table:
 * [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
 
 ## Acknowledgements
-* **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Oracle Database
+* **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, September 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, October 2021

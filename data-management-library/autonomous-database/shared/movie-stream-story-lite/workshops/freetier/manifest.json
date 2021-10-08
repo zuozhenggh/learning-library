@@ -20,8 +20,9 @@
             "filename": "../../load-data/load-data.md"
         },
         {
-            "title": "Lab 3: Analyze Data with Oracle SQL",
-            "filename": "../../analyze-data/analyze-data.md"
+            "title": "Lab 3: Working with JSON Data",
+            "filename": "../../working-with-semi-structured-data/working-with-semi-structured-data.md"
+            
         },
         {
             "title": "Lab 4: Use OML to Predict Customer Churn",
@@ -35,10 +36,6 @@
         {
             "title": "Lab 6: Use Graph Analytics for Product Recommendations",
             "filename": "../../apply-graph/apply-graph.md"
-        },
-        {
-            "title": "Add this to Lab 2",
-            "filename": "../../initialize-labs/initialize-labs.md"
         },
         {
           "title": "Need Help?",
