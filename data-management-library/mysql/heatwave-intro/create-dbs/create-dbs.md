@@ -220,6 +220,18 @@ Description
 
 </details>
 
+
+<details>
+<summary>South Korea Central(Seoul) Region - Copy and paste to PAR Source URL</summary>
+<br>
+
+    <copy>
+    https://objectstorage.ap-seoul-1.oraclecloud.com/p/cWMmcups3ZFFswzB4pknzotyEvRmCOcNft1AsJxBJlaEKajKdJIVfdMI70yVz6yD/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+
+</details>
+
+
 13. Your PAR Source URL entry should look like this:
     ![MDS](./images/04mysql08-2.png " ")
 

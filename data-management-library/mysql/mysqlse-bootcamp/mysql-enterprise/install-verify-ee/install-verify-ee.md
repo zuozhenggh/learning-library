@@ -13,9 +13,10 @@ Estimated Time: -- minutes
 ### Objectives
 
 In this lab, you will:
-* Install MySQL Community
-* Objective 2
-* Objective 3
+* Discuss MySQL Connection 
+* Connect to Ports 3306 and 3307
+* Remove MySQL Community Installation and Iimport Databses
+* Learn Useful SQL Statements
 
 **Use ServerB for this lab**
 
@@ -25,7 +26,7 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
-## Task 1: Discussion about MySQL connection
+## Task 1: Discuss MySQL Connection 
 
 Please note that now you have 2 instances on the same server: one on 3306 and one on 3307. To connect to the correct one, always use the IP address, otherwise you may connect to wrong instance. Here we practice connecting to the right one (por t3310 is intentionally wrong). To help you understand “why” these check lines (not all are always available…)
 
@@ -34,7 +35,7 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
 - UNIX socket:
 - TCP port:
 
-## Task 2: 	Connect to 3306 or 3307
+## Task 2: 	Connect to Ports 3306 and 3307
 
 1.  **shell>** 
 
@@ -157,7 +158,7 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
     <copy>exit</copy>
     ```
 
-## Task 3: Remove MySQL Community installation and import databses
+## Task 3: Remove MySQL Community Installation and Iimport Databses
 1. Now that you understand how to connect, we can remove the MySQL Community installation
 
   **shell>** 
@@ -187,7 +188,7 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
     ```
     <copy>mysql -uroot -p -P3307 -h 127.0.0.1 < ./employees.sql</copy>
     ```
-## Task 4: take a look the following useful SQL Statements:
+## Task 4: Learn Useful SQL Statements
 
 1. **shell>**
 
