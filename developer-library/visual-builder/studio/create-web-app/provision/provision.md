@@ -66,11 +66,16 @@ Provision a service instance of Visual Builder Studio to develop and deploy your
    The Visual Builder Studio console opens in a new browser tab. When you first log in, you see the Welcome page with a link to an introductory video, along with a news feed of additional screens. Close **X** to dismiss the news feed and expand your work area.
    ![](./images/vbs_home.png)
 
-   You are on the Organization page in the Projects tab, but before you can create a project, you'll need to connect the VB Studio instance to an OCI account in order to access resources.
+   You are on the Organization page in the Projects tab.
+
+   Before you create a project, check if your VB Studio instance is preconfigured with a built-in Oracle Cloud Infrastructure (OCI) account that lets you freely access resources to run builds. This free account isn't available in all OCI regions and data centers, so click the **OCI Account** tab to check if your instance includes it. If you see something similar to this image, it means your instance is connected to the built-in free account:
+  ![](./images/oci-free-account.png)
+
+  The free built-in account provides a minimal set of resources, sufficient to try out VB Studio features. If this account is enough for your needs, you can [jump to the next lab](#next) and get started with  creating a project. If not, continue with the rest of the tasks to connect to an OCI account that provides access to more resources.
 
 ## Task 3: Set Up the OCI Account
 
-To connect VB Studio to Oracle Cloud Infrastructure (OCI) resources such as VMs for builds and storage buckets for project data, you need to set up your OCI account with a dedicated compartment and a separate Identity and Access Management (IAM) user. This allows you to organize VB Studio resources better because they aren't mixed with your other resources.
+To connect your VB Studio instance to OCI resources such as VMs for builds and storage buckets for project data, you need to set up your OCI account with a dedicated compartment and a separate Identity and Access Management (IAM) user. This allows you to organize VB Studio resources better because they aren't mixed with your other resources.
 
 1. Create a separate compartment to host VB Studio resources:
 
@@ -229,7 +234,7 @@ You now need the unique Oracle Cloud Identifiers (OCIDs) of the VB Studio compar
 ## Task 5: Connect the OCI Account
 With all the necessary information copied, connect your VB Studio instance to the OCI account.
 
-1. Return to the VB Studio console, then on the Organization page, select **OCI Account** and click **Connect**.
+1. Return to the VB Studio console, then on the Organization page, select **OCI Account** and click **Connect** (or **Connect OCI Account**).
 
    ![](./images/vbs_oci_tab.png)
 

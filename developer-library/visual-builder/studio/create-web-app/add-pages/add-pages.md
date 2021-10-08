@@ -32,7 +32,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     ![](images/department_heading.png " ")
 
-4.  Click **Properties** to open the Heading's Properties pane, then enter `Departments` in the **Text** field.
+4.  In the Heading's Properties pane, enter `Departments` in the **Text** field.
 
     ![](images/departments.png " ")
 
@@ -85,7 +85,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
    ![](images/department_add_create.png " ")
 4.  Leave the Button label and other fields set to their default values. Click **Finish**.
 
-    A **Create Department** button appears in a Toolbar component above the table on the main-start page. (Click next to the button to see the Toolbar component.) Click the **Web Applications** tab to see the main-create-department page created in the pages list under main.
+    A **Create Department** button appears in a Toolbar component above the table on the main-start page. (You might need to click beside the **Create Department** button to see the Toolbar component.) Click the **Web Applications** tab to see the main-create-department page created in the pages list under main.
 
     ![](images/department_add_create_result.png " ")
 
