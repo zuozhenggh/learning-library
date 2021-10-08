@@ -12,7 +12,7 @@ In this lab, you will deploy an Oracle Analytics Cloud instance on Oracle Cloud 
 
 _Estimated Time:_ 5 minutes
 
-![Banner](images/banner.jpg)
+![Banner](images/banner.png)
 
 ### Objectives
 
