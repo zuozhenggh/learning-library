@@ -182,37 +182,45 @@ Description
 10. 'click' on Show Advanced Options 
 
 11. Select Data Import tab. 
-12. To enter the PAR Source URL, use one of the folloing links depending on your Tenancy Region
 
-    **US(Ashburn) Region**:
-        ![MDS](./images/region-ashburn.png =50%x*)
-    
-    Copy and paste the following *Asburn link*  to PAR Source URL: 
-  
-    ```
-    <copy> https://objectstorage.us-ashburn-1.oraclecloud.com/p/RpoC9Zza6bcxIAWkNXFVKD0dsmRQJRMvNthgzbr3TUnO9pTYpEhoSFP7_6RNZ1lv/n/mysqlpm/b/airportdb-bucket/o/airportdb/@.manifest.json  </copy>
-    ```   
-        
-    **UK South(London) Region**
-        ![MDS](./images/region-london.png =50%x*)
-    
-    Copy and paste the following *London link*  to PAR Source URL: 
-  
-    ```
-    <copy> https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
-    ```   
-    **Japan East(Tokyo) Region**
-        ![MDS](./images/region-tokyo.png =50%x*)
-    
-    Copy and paste the following *Tokyo link*  to PAR Source URL: 
-  
-    ```
-    <copy> https://objectstorage.ap-tokyo-1.oraclecloud.com/p/hKcth9AOMgzW_bS2rVIiTT_JJ5tNGmqS1kjkWjMphMlnZDbtUj3ZuSehrSuDTCtC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
-    ```   
- 
+12. To enter the PAR Source URL, click your Region from the Dropdown list below 
+
+**Tenancy Regions** Please select the same region that you're creating MDS in  
+
+<details>
+<summary>US(Ashburn) Region - Copy and paste to PAR Source URL</summary>
+<br>
 
 
-    Your PAR Source URL entry should look like this:
+    <copy> 
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/RpoC9Zza6bcxIAWkNXFVKD0dsmRQJRMvNthgzbr3TUnO9pTYpEhoSFP7_6RNZ1lv/n/mysqlpm/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    </copy>
+
+</details>
+
+<details>
+<summary>UK South(London) Region - Copy and paste to PAR Source URL</summary>
+<br>
+
+
+    <copy> 
+    https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    </copy>
+
+</details>
+
+<details>
+<summary>Japan East(Tokyo) Region - Copy and paste to PAR Source URL</summary>
+<br>
+
+
+    <copy> 
+    https://objectstorage.ap-tokyo-1.oraclecloud.com/p/hKcth9AOMgzW_bS2rVIiTT_JJ5tNGmqS1kjkWjMphMlnZDbtUj3ZuSehrSuDTCtC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    </copy>
+
+</details>
+
+13. Your PAR Source URL entry should look like this:
     ![MDS](./images/04mysql08-2.png " ")
 
 13. Review **Create MySQL DB System**  Screen 
