@@ -19,7 +19,7 @@ Your own Oracle Cloud Infrastructure compartment for running this workshop has b
 
 ![](images/copy-comp-name.png " ")
 
-2. Select the navigation menu from the top left corner of the Oracle Cloud Console and navigate to the Compute --> Compute --> Instances page.
+2. Select the navigation menu from the top left corner of the Oracle Cloud Console and navigate to the Instances page in the Compute section.
 
 ![](images/select-compute-instances.png " ")
 
@@ -87,7 +87,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![](images/get-compartment-ocid.png " ")
 
-3. The setup will ask you to enter an Auth Token so that docker can log in to the OCI Registry. Please follow these steps to create an Auth Token.
+3. The setup will ask you to enter an Auth Token so that docker can log in to the Oracle Cloud Infrastructure Registry. Please follow these steps to create an Auth Token.
 
   a. Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
