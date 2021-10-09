@@ -68,11 +68,11 @@ Provision a service instance of Visual Builder Studio to develop and deploy your
 
    You are on the Organization page in the Projects tab.
 
-   Before you create a project, check if your VB Studio instance is preconfigured with a built-in Oracle Cloud Infrastructure (OCI) account that lets you freely access resources to run builds. This free account isn't available in all OCI regions and data centers, so click the **OCI Account** tab to check if your instance includes it. If you see something similar to this image, it means your instance is connected to the built-in free account:
+   Before you create a project, you might want to check if your instance is preconfigured with a built-in Oracle Cloud Infrastructure (OCI) account, which lets you access resources to run builds in VB Studio. This free account isn't available in all OCI regions and data centers, so click the **OCI Account** tab to check if your instance includes it. If you see something similar to this image, it means your instance is connected to the built-in free account:
 
   ![](./images/oci-free-account.png)
 
-  The free account provides a minimal set of resources, sufficient to try out VB Studio features. If this account is enough for your needs, you can [directly jump to the next lab](#next) and get started with  creating a project. If not, continue with the rest of the tasks to connect to an OCI account that provides access to more resources.
+  The free account provides a minimal set of resources (detailed [here](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-oracle-visual-builder-studio.html#GUID-759853ED-5561-4031-AC01-773D58992CA3)), sufficient to try out VB Studio. If this is enough for your needs, you can [directly jump to the next lab](#next) and get started with creating a project. If your data center does not include this free account or you want to explore more of VB Studio, continue with the following tasks to set up your OCI account.
 
 ## Task 3: Set Up the OCI Account
 
