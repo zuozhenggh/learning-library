@@ -74,18 +74,18 @@ begin
     moviestream_write(' - populate time table');
     moviestream_exec ( 'alter table time
         add (
-            day_name as (to_char(day_id, ''DAY'')),
-            day_dow as (to_char(day_id, ''D'')),
-            day_dom as (to_char(day_id, ''DD'')),
-            day_doy as (to_char(day_id, ''DDD'')),
-            week_wom as (to_char(day_id, ''W'')),
-            week_woy as (to_char(day_id, ''WW'')),
-            month_moy as (to_char(day_id, ''MM'')),
-            month_name as (to_char(day_id, ''MONTH'')),
-            month_aname as (to_char(day_id, ''MON'')),
-            quarter_name as (''Q''||to_char(day_id, ''Q'')||''-''||to_char(day_id, ''YYYY'')),
-            quarter_qoy as (to_char(day_id, ''Q'')),
-            year_name as (to_char(day_id, ''YYYY''))
+            day_name as (to_char(day_id, ''fmDAY'')),
+            day_dow as ((cast(to_char(day_id, ''fmD'') as number))),
+            day_dom as ((cast(to_char(day_id, ''fmDD'') as number))),
+            day_doy as ((cast(to_char(day_id, ''fmDDD'') as number))),
+            week_wom as ((cast(to_char(day_id, ''fmW'') as number))),
+            week_woy as ((cast(to_char(day_id, ''fmWW'') as number))),
+            month_moy as ((cast(to_char(day_id, ''fmMM'') as number))),
+            month_name as (to_char(day_id, ''fmMONTH'')),
+            month_aname as (to_char(day_id, ''fmMON'')),
+            quarter_name as (''Q''||to_char(day_id, ''fmQ'')||''-''||to_char(day_id, ''fmYYYY'')),
+            quarter_qoy as ((cast(to_char(day_id, ''fmQ'') as number))),
+            year_name as ((cast(to_char(day_id, ''fmYYYY'') as number)))
         )');
 
     -- Using public buckets  so credentials are not required

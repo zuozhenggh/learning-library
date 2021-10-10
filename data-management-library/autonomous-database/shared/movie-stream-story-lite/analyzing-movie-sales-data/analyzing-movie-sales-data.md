@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will learn many of the basics for analyzing data across multiple tables. This includes using views to simplify sophisticated queries, performing time series analyses and more.
 
-Estimated time: 15 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
@@ -16,9 +16,30 @@ Estimated time: 15 minutes
 - Bin customers by key metrics
 
 ### Prerequisites
-- This lab requires completion of Labs 1 and 4 in the Contents menu on the left.
+- This lab requires completion of Labs 1 and 2 in the Contents menu on the left.
 
-## Background
+## Task 1: Log into the SQL Worksheet
+Make sure you are logged into Autonomous Database's **Database Tools** as the MOVIESTREAM user.   
+
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
+
+    ![Details page of your Autonomous Database](images/2878884319.png " ")
+
+2. Enter MOVIESTREAM for the username and click **Next**. On the next form, enter the MOVIESTREAM password - which is the one you entered when creating your MOVIESTREAM user. Click **Sign in**.
+
+    ![Log in dialog for Database Actions](images/login-moviestream.png " ")
+
+3. In the Development section of the Database Actions page, click the SQL card to open a new SQL worksheet:
+
+    ![Go to SQL worksheet](images/sql-card.png " ")
+
+4. Enter your commands in the worksheet. You can use the shortcuts [Control-Enter] or [Command-Enter] to run the command and view the Query Result (tabular format). Clear your worksheet by clicking the trash:
+
+    ![Go to SQL worksheet](images/sql-worksheet.png " ")
+
+You are now ready to start analyzing MovieStream's performance using SQL.
+
+## Task 2: Prepare the data warehouse schema
 The MovieStream data warehouse uses an design approach called a 'star schema'. A star schema is characterized by one or more very large fact tables that contain the primary information in the data warehouse and a number of much smaller dimension tables (or lookup tables), each of which contains information about the entries for a particular attribute in the fact table.
 
 
@@ -29,8 +50,65 @@ The main advantages of star schemas are that they:
 * Offer a direct and intuitive mapping between the business entities being analyzed by end users and the schema design.</li>
 * Offer highly optimized performance for typical data warehouse queries.</li>
 
+One of the key dimensions in the MovieStream data warehouse is **TIME**. Currently the time dimension table has a single column containing just the ids for each day. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter, and year. Therefore we need to expand the current time dimension to include these additional levels.
 
-There are different types of joins you can use within a SQL query to combine rows from one table with rows in another table. Typical examples are:
+1. View the time dimension table.
+
+    ```
+    <copy>
+    SELECT
+    *  
+    FROM time;</copy>
+    ```
+
+> **Note:** The TIME dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
+
+Querying a data warehouse can involve working with a lot of repetitive SQL. This is where 'views' can be very helpful and very powerful. The code below is used to simplify the queries used throughout this workshop. The main focus here is to introduce the concept of joining tables together to returned a combined resultset.
+
+The code below uses a technique called **INNER JOIN** to join the dimension tables to the fact table.
+
+2. Creating a view that joins the GENRE, CUSTOMER and TIME dimension tables with the main fact table CUSTSALES.
+
+    >**Note**: For copy/pasting, be sure to click the convenient Copy button in the upper right corner of the following code snippet, and all subsequent code snippets:
+
+    ```
+    <copy>CREATE OR REPLACE VIEW vw_movie_sales_fact AS
+    SELECT
+    m.day_id,
+    t.day_name,
+    t.day_dow,
+    t.day_dom,
+    t.day_doy,
+    t.week_wom,
+    t.week_woy,
+    t.month_moy,
+    t.month_name,
+    t.month_aname,  
+    t.quarter_name,  
+    t.year_name,  
+    c.cust_id as customer_id,
+    c.state_province,
+    c.country,
+    c.continent,
+    g.name as genre,
+    m.app,
+    m.device,
+    m.os,
+    m.payment_method,
+    m.list_price,
+    m.discount_type,
+    m.discount_percent,
+    m.actual_price,
+    m.genre_id,
+    m.movie_id
+    FROM custsales m
+    INNER JOIN time t ON m.day_id = t.day_id
+    INNER JOIN customer c ON m.cust_id = c.cust_id
+    INNER JOIN genre g ON m.genre_id = g.genre_id;
+    </copy>
+    ```
+
+There are lots of different types of joins you can use within a SQL query to combine rows from one table with rows in another table. Typical examples are:
 
 ### A) INNER JOIN
 An inner join, which is sometimes called a simple join, is a join of two or more tables that returns only those rows that satisfy the join condition. In the example above, only rows in the sales fact table will be returned where a corresponding row for day exists in the time dimension table and a corresponding row exists in the customer dimension table and a corresponding row exists in the genre dimension table.
@@ -39,8 +117,8 @@ An inner join, which is sometimes called a simple join, is a join of two or more
 An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you will typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next task.
 
 
-## Task 1: Learn more about joins
-It's important to understand different ways of joining tables.  We'll take a look at two kinds:  inner and outer joins. Inner joins ignore rows in the dimension tables where there is no corresponding sales data. This means that some queries may need to use a different join method if you want to gain a deeper understanding of your sales data. Consider the following example:
+## Task 3: Learn more about joins
+In the previous SQL code we used an inner join to merge time, customer and genre dimensional data with the sales data. However, inner joins ignore rows in the dimension tables where there is no corresponding sales data. This means that some queries may need to use a different join method if you want to gain a deeper understanding of your sales data. Consider the following example:
 
 1. How many news category films were viewed in 2020?
 
@@ -83,7 +161,7 @@ It's important to understand different ways of joining tables.  We'll take a loo
     |War|191657|
     |Western|45668|
 
-    Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the following:
+    Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the next query.
 
 2. Modify the above SQL to use an outer join:
 
@@ -130,46 +208,58 @@ It's important to understand different ways of joining tables.  We'll take a loo
     > **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the resultset you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now that we have our time dimension defined as a view and a view to simplify SQL queries against the fact table, we can move on to how SQL can help us explore the sales data.
 
 
-## Task 2: Analyze customer viewing habits
+## Task 4: Explore sales data with fast performance
 
-1. Switch back to the tab where SQL Worksheet is running.
-
-2. Let's start by investigating the viewing habits of our MovieStream customers by seeing how many of them are buying movies on each day of the week and whether there are any specific patterns we can spot. Copy the following SQL into your worksheet and then press the green circle icon to execute the query:
+1. Next, let's use a very simple query to look at total movie sales by year and quarter, which extends the earlier simple SQL queries by adding a GROUP BY clause.
 
     ```
     <copy>SELECT
-        day_dow,
-        day_name,
-        COUNT(customer_id) AS no_viewers,
-        round(SUM(actual_price),0) AS revenue
+    year_name,
+    quarter_name,
+    SUM(actual_price)
     FROM vw_movie_sales_fact
-    WHERE  year_name = '2020'
-    GROUP BY day_dow, day_name
-    ORDER BY day_dow;</copy>
+    WHERE year_name = '2020'
+    GROUP BY year_name, quarter_name
+    ORDER BY 1,2;</copy>
     ```
-    Here we are using a built-in function, TO_CHAR, to convert the column 'day', which is defined as a date and has values such as 01-01-2020, into a number between 1 and 7 and also the name of the day.
+    **Note**: In this query, we have returned a resultset where the data has been aggregated (or grouped by) year then, within year, by quarter. The ORDER BY clause sorts the resultset by year and then quarter. In addition there is a filter or WHERE clause that enables us to return only data for the year 2020.    
 
     This should return something similar to the following:
 
-    |DAY_DOW|DAY_NAME|NO_VIEWERS|REVENUE|
-    |---|---|---|---|
-    |1|SUNDAY   |2219505|3811266|
-    |2|MONDAY   |1819724|3093383|
-    |3|TUESDAY  |1615533|2756909|
-    |4|WEDNESDAY|1615219|2748366|
-    |5|THURSDAY |1625975|2768255|
-    |6|FRIDAY   |1687633|2881052|
-    |7|SATURDAY |2052578|3493243|
+    |YEAR_NAME|QUARTER_NAME|SUM(ACTUAL_PRICE)|
+    |---|---|---|
+    |2020|Q1-2020|4888603.6299999645|
+    |2020|Q2-2020|6207591.609999965|
+    |2020|Q3-2020|5094875.069999959|
+    |2020|Q4-2020|5361403.959999974|
 
-    This shows that we have more customers buying movies on Fridays, Saturdays, Sundays and Mondays since these days show the highest revenue. The revenue for the days in the middle of week is still great, but definitely lower. But it's hard to see a clear pattern just by looking at the raw sales numbers.
+    *elapsed: 1.315s*
 
-## Task 3: Compare sales to last year
+    Note the time taken to run your query. In the above example, this was 1.315 seconds to run (*when you run your query the timing may vary slightly*).
+
+2. Now simply run the query again
+
+    |YEAR_NAME|QUARTER_NAME|SUM(ACTUAL_PRICE)|
+    |---|---|---|
+    |2020|Q1-2020|4888603.6299999645|
+    |2020|Q2-2020|6207591.609999965|
+    |2020|Q3-2020|5094875.069999959|
+    |2020|Q4-2020|5361403.959999974|
+
+    *elapsed: 0.026*
+
+    This time the query ran much faster, taking just 0.026 seconds! So what happened?
+
+    When we executed the query the first time, Autonomous Data Warehouse executed the query against our movie sales table and scanned all the rows. It returned the result of our query to our worksheet and then it stored the result in something called a **result cache**. When we then ran the same query again, Autonomous Data Warehouse simply retrieved the result from its result cache! No need to scan all the rows again. This saved a lot of time and saved us money because we used hardly any compute resources.
+
+
+## Task 5: Compare sales to last year
 
 ### Overview
 
 Time comparisons are one of the most common types of analyses. MovieStream has just completed sales for December. What is the year over year comparison for this latest month? What is this breakout by movie genre? Oracle SQL has a **LAG** function that facilitates these types of analyses.  
 
-1. Let's start by looking at sales in December for the latest two years:
+1. Let's start by looking at sales in December for the latest two years for our major genres (we can use an INNER JOIN because there is always a current and previous year value):
 
     ```
     <copy>SELECT 
@@ -179,6 +269,7 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
     FROM  custsales c, genre g
     WHERE g.genre_id = c.genre_id
       AND to_char(c.day_id, 'MON') in ('DEC')
+      AND g.name in ('Action','Drama','Comedy')
     GROUP BY to_char(c.day_id,'YYYY-MM'), c.genre_id, g.name
     ORDER BY genre, month;</copy>
     ```
@@ -189,115 +280,56 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
     |---|---|---|
     |Action|2019-12|320577|
     |Action|2020-12|280191|
-    |Adventure|2019-12|201527|
-    |Adventure|2020-12|139393|
-    |Animation|2019-12|23811|
-    |Animation|2020-12|18270|
-    |Biography|2019-12|27436|
-    |Biography|2020-12|32681|
     |Comedy|2019-12|183968|
     |Comedy|2020-12|169859|
-    |Crime|2019-12|48677|
-    |Crime|2020-12|60794|
-    |Documentary|2019-12|2533|
-    |Documentary|2020-12|2594|
     |Drama|2019-12|295584|
     |Drama|2020-12|369497|
-    |Family|2019-12|99692|
-    |Family|2020-12|110592|
-    |Fantasy|2019-12|157594|
-    |Fantasy|2020-12|134760|
-    |Film-Noir|2019-12|15001|
-    |Film-Noir|2020-12|16666|
-    |History|2019-12|5645|
-    |History|2020-12|7703|
-    |Horror|2019-12|55240|
-    |Horror|2020-12|67594|
-    |Lifestyle|2019-12|2210|
-    |Lifestyle|2020-12|2887|
-    |Musical|2019-12|69769|
-    |Musical|2020-12|57121|
-    |Mystery|2019-12|19294|
-    |Mystery|2020-12|25215|
-    |Reality-TV|2019-12|631|
-    |Reality-TV|2020-12|1628|
-    |Romance|2019-12|81551|
-    |Romance|2020-12|113360|
-    |Sci-Fi|2019-12|114868|
-    |Sci-Fi|2020-12|118291|
-    |Sport|2019-12|1682|
-    |Sport|2020-12|2399|
-    |Thriller|2019-12|105663|
-    |Thriller|2020-12|140631|
-    |Unknown|2019-12|2773|
-    |Unknown|2020-12|865|
-    |War|2019-12|24040|
-    |War|2020-12|40758|
-    |Western|2019-12|4880|
-    |Western|2020-12|6416|
+
 
 2. The **LAG** function will allow us to compare this year vs last (or any other time comparison). In addition, we are going to leverage the SQL **WITH** clause. The **WITH** clause allows you to define in-line views - which greatly simplifies your queries. We'll be using these in-line views as "query blocks" - or named result sets that can be easily referenced. Here, we're using the **WITH** clause to set up the comparison to last year.
 
     ```
     <copy>WITH sales_vs_lastyear as (
-        SELECT g.name as genre,
-            TO_CHAR(c.day_id,'YYYY-MM') as month,
-            ROUND(SUM(c.actual_price),0) sales,
-            LAG(ROUND(SUM(c.actual_price),0)) OVER (
-                    PARTITION BY g.name
-                    ORDER BY to_char(c.day_id,'YYYY-MM')
-                ) as last_year         
-        FROM custsales c, genre g
-        WHERE g.genre_id = c.genre_id
-        AND to_char(c.day_id, 'MON') in ('DEC')
-        GROUP BY TO_CHAR(c.day_id,'YYYY-MM'), c.genre_id, g.name
-        ORDER BY genre, month
+    SELECT 
+        g.name as genre,
+        TO_CHAR(c.day_id,'YYYY-MM') as month,
+        ROUND(SUM(c.actual_price),0) as sales,
+        LAG(ROUND(SUM(c.actual_price),0), 1) OVER (
+                PARTITION BY g.name
+                ORDER BY to_char(c.day_id,'YYYY-MM') ASC
+            ) as last_year         
+    FROM custsales c, genre g
+    WHERE g.genre_id = c.genre_id
+    AND to_char(c.day_id, 'MON') in ('DEC')
+    AND g.name in ('Action','Drama','Comedy')
+    GROUP BY TO_CHAR(c.day_id,'YYYY-MM'), c.genre_id, g.name
+    ORDER BY genre, month
     )
     SELECT 
         genre, 
         sales as sales,
         last_year as last_year,
-        last_year - sales as change
+        sales - last_year as change
     FROM  sales_vs_lastyear
     WHERE last_year is not null
-    ORDER BY round(last_year - sales) DESC;
-    </copy>
+    ORDER BY round(last_year - sales) DESC;</copy>
     ```
     
-    You can see that Adventure and Action movies have shown strong growth. Importantly, Drama - MovieStream's highest revenue genre - has shown significant drop off:
+    The subquery **sales\_vs\_lastyear** aggregates sales by genre and month for both this year and last. The subquery is then used by the SELECT statement that calculates the sales change. 
 
-    |genre|sales|last_year|change|
+    You can see that Adventure and Action movies have shown strong a significant drop off. This drop off was more than offset by a large increase in Drama movies:
+
+    |GENRE|SALES|LAST_YEAR|CHANGE|
     |---|---|---|---|
-    |Adventure|139393|201527|62134|
-    |Action|280191|320577|40386|
-    |Fantasy|134760|157594|22834|
-    |Comedy|169859|183968|14109|
-    |Musical|57121|69769|12648|
-    |Animation|18270|23811|5541|
-    |Unknown|865|2773|1908|
-    |Documentary|2594|2533|-61|
-    |Lifestyle|2887|2210|-677|
-    |Sport|2399|1682|-717|
-    |Reality-TV|1628|631|-997|
-    |Western|6416|4880|-1536|
-    |Film-Noir|16666|15001|-1665|
-    |History|7703|5645|-2058|
-    |Sci-Fi|118291|114868|-3423|
-    |Biography|32681|27436|-5245|
-    |Mystery|25215|19294|-5921|
-    |Family|110592|99692|-10900|
-    |Crime|60794|48677|-12117|
-    |Horror|67594|55240|-12354|
-    |War|40758|24040|-16718|
-    |Romance|113360|81551|-31809|
-    |Thriller|140631|105663|-34968|
-    |Drama|369497|295584|-73913|
+    |Action|280191|320577|-40386|
+    |Comedy|169859|183968|-14109|
+    |Drama|369497|295584|73913|
 
-## Task 4: Understanding sales contributions
+## Task 6: Understanding sales contributions
 
 ### Overview
 
-Adventure sales are up; Dramas are down. How significant are these genres to MovieStream's success? And, which movies are important contributors within these genres?  We're going to find out.  
+Drama sales are up; Action sales are down. How significant are these genres to MovieStream's success? And, which movies are important contributors within these genres?  We're going to find out.  
 
 When customers select a movie to watch, they pick from a "shelf" that is broken out by genre. A movie may be an adventure/comedy (and the movie table contains these details) - but the customer selected a movie via a specific genre - and this genre is captured in the sales data.
 
@@ -309,15 +341,18 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
         g.name as genre,
         m.title,
         round(sum(c.actual_price),0) as sales        
-    FROM t_movie m, custsales c, genre g
+    FROM movie m, custsales c, genre g
     WHERE m.movie_id = c.movie_id
     AND c.genre_id = g.genre_id
     GROUP BY g.name, m.title
-    ORDER BY 3 DESC
     )
-    SELECT * 
+    SELECT 
+        genre, 
+        title,  
+        sales
     FROM sales_by_genre
-    WHERE rownum < 20;</copy>
+    ORDER BY sales desc
+    FETCH FIRST 20 ROWS ONLY</copy>
     ```
  
     Here are the top genre-movie combinations:
@@ -343,6 +378,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
     |Family|Aladdin|142674|
     |Action|Venom|140091|
     |Drama|Room|138024|
+    |Drama|The Lion King|137991|
 
     There are clearly movies - like Aquaman - that are popular across genres.
 
@@ -354,7 +390,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
             g.name as genre,
             m.title as movie,
             round(sum(c.actual_price),0) as sales
-        FROM t_movie m, custsales c, genre g
+        FROM movie m, custsales c, genre g
         WHERE m.movie_id = c.movie_id
         AND c.genre_id = g.genre_id
         AND g.name IN ('Drama','Action','Comedy')
@@ -366,8 +402,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
         sales,
         RANK () OVER ( order by sales desc ) as ranking
     FROM sales_grouping
-    FETCH FIRST 20 ROWS ONLY
-    ;</copy>
+    FETCH FIRST 20 ROWS ONLY;/copy>
     ```
     The result is shown below:
 
@@ -402,7 +437,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
             g.name as genre,
             m.title as movie,
             round(sum(c.actual_price),0) as sales
-        FROM t_movie m, custsales c, genre g
+        FROM movie m, custsales c, genre g
         WHERE m.movie_id = c.movie_id
         AND c.genre_id = g.genre_id
         AND g.name in ('Drama','Action','Comedy')
@@ -419,8 +454,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
     SELECT * 
     FROM movie_ranking_by_genre
     WHERE ranking <= 5
-    ORDER BY genre ASC, ranking ASC
-    ;</copy>
+    ORDER BY genre ASC, ranking ASC;</copy>
     ```
 
     We can now see the most important movies for each genre:
@@ -451,7 +485,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
             g.name as genre,
             m.title as movie,
             round(sum(c.actual_price),0) as sales
-        FROM t_movie m, custsales c, genre g
+        FROM movie m, custsales c, genre g
         WHERE m.movie_id = c.movie_id
         AND c.genre_id = g.genre_id
         AND g.name IN ('Drama','Action','Comedy')
@@ -501,7 +535,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
 
 Notice, we also added the **RATIO\_TO\_REPORT** analytic function in order to compute the movie's contribution to the total within the report.
 
-## Task 5: Finding Our Most Important Customers
+## Task 7: Finding Our Most Important Customers
 
 ### Overview
 This final example will enrich our existing understanding of customer behavior by utilizing an RFM analysis. RFM is a very commonly used method for analyzing customer value. It is commonly used in general customer marketing, direct marketing, and retail sectors.
@@ -587,7 +621,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
 
     This should return a result similar to the following (again, your results may differ):
 
-   |CUST_ID|RFM_RECENCY|RFM_FREQUENCY|
+    |CUST_ID|RFM_RECENCY|RFM_FREQUENCY|
     |---|---|---|
     |1214447|2|1|
     |1271576|4|1|
