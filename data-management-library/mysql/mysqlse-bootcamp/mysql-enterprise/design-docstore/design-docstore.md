@@ -30,6 +30,65 @@ This lab assumes you have:
 *This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Concise Step Description
+4c) MySQL Document Store
+Objective: Understanding the functioning of MySQL Document Store and practicing some CRUD operations.
+
+Server: serverB
+
+Notes:
+•	Please note that we use the port for Xdev (33070) instead of usual classic protocol port (3307)
+
+
+
+1. Please connect to MySQL Database via X Protocol
+
+	shell> mysqlsh -uroot -h127.0.0.1 -P33070 -p
+
+2. Create and use a test schema. (We use javascript mode, but python is available also)
+	
+	MySQL … JS > session.createSchema('test')
+
+MySQL … JS > \use test
+
+3. Now create and populate a small collection
+	
+	MySQL … JS > db.createCollection('posts');
+
+	MySQL … JS > db.posts.add({"title":"MySQL 8.0 rocks", "text":"My first post!", "code": "42"})
+
+	MySQL … JS > db.posts.add({"title":"Polyglot database", "text":"Developing both SQL and NoSQL applications"})
+
+4. Checking the built-in JSON validation
+	
+	MySQL … JS > db.posts.add("This is not a valid JSON document")
+
+5. Inspect the posts collection you have just created 
+	
+	MySQL … JS > db.posts.find()
+
+What can you notice? Did the system add something to content by itself?
+	
+	MySQL … JS > db.posts.find().limit(1)
+
+6.  Modify existing elements of the collection
+	
+	MySQL … JS > db.posts.modify("title = 'MySQL 8.0 rocks'").set("title", " MySQL 8.0 rocks!!!")
+
+	MySQL … JS > db.posts.find()
+
+7. Check that that a collection is just a table with 2 columns: Index and JSON Document
+	
+	MySQL … JS > session.sql("desc posts")
+
+	MySQL … JS > session.sql("show create table posts")
+
+	MySQL … JS > session.sql("select * from posts")
+
+8. Therefore, it is possible to add indexes on specific JSON elements of the collection
+
+	MySQL … JS > db.posts.createIndex('myIndex', {fields: [{field: "$.title", type: "TEXT(20)"}]} )
+
+	MySQL … JS > session.sql("show create table posts")
 
 
 ## Learn More

@@ -30,54 +30,50 @@ This lab assumes you have:
 *This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Concise Step Description
+6a) MySQL logical backup (mysqldump)
+Objective: explore how mysqldump works
+Server: serverB
+Notes:
+•	We work now with mysql-advanced instance.
+•	Reference:
+o	https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
 
-(optional) Step 1 opening paragraph.
+1.	Create the export folder
 
-1. Sub step 1
+shell> sudo mkdir -p /mysql/exports
 
-	![Image alt text](images/sample1.png)
+shell> sudo chown mysqluser:mysqlgrp /mysql/exports/
 
-2. Sub step 2
+shell> sudo chmod 770 /mysql/exports/
 
-  ![Image alt text](images/sample1.png)
+2.	Export all the data with mysqldump
+shell> mysqldump -uroot -p -h127.0.0.1 -P3307 --single-transaction --events --routines --flush-logs --all-databases > /mysql/exports/full.sql
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+3.	Watch the content of the file /mysql/exports/full.sql
 
-5. Example with bold **text**.
+4.	Export employees database
 
-   If you add another paragraph, add 3 spaces before the line.
+shell> mysqldump -uroot -p -h127.0.0.1 -P3307 --single-transaction --set-gtid-purged=OFF employees > /mysql/exports/employees.sql
 
-## Task 1: Concise Step Description
+5.	Drop employees database
 
-1. Sub step 1 - tables sample
+shell> mysql -uroot -p -h127.0.0.1 -P3307
 
-  Use tables sparingly:
+mysql> DROP DATABASE employees;
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+mysql> show databases;
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+6.	Import the employees database
 
-    - List item 1
-    - List item 2
+mysql> CREATE DATABASE employees;
 
-3. Code examples
+mysql> exit
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+shell> mysql -uroot -p -h127.0.0.1 -P3307 employees < /mysql/exports/employees.sql
 
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+7.	Confirm database employees exist
+shell> mysql -uroot -p -h127.0.0.1 -P3307
+mysql> show tables in employees;
 
 ## Learn More
 

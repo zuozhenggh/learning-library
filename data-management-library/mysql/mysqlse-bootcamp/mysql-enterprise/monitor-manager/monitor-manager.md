@@ -27,57 +27,220 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Concise Step Description
+5a) MySQL Enterprise Monitor - Install Service Manager
+Objective: Install MySQL Enterprise Monitor Service Manager
 
-(optional) Step 1 opening paragraph.
+Server: 
+•	serverA for Enterprise Monitor
+•	ServerB for Enterprise Agent
 
-1. Sub step 1
 
-	![Image alt text](images/sample1.png)
+Note:
+•	Note down the IP address here.  
+	serverA Public IP address : _______________________________
+The Public IP Address is used on your Local Browser https://<public ip>:18443
 
-2. Sub step 2
+	serverB Private IP address : _______________________________
+This is used when you Add Instance as Remote Monitoring using agentless option
 
-  ![Image alt text](images/sample1.png)
+•	References
+o	https://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-install-tuning.html
+o	https://dbtut.com/index.php/2018/10/25/installation-of-mysql-enterprise-monitor/
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+ ![Image alt text](images/monitor-managment-1.png)
 
-5. Example with bold **text**.
+## Task 2: MySQL Enterprise Monitor Service Manager Install
 
-   If you add another paragraph, add 3 spaces before the line.
+1.	On serverA: Install the MySQL Enterprise Monitor Service Manager on your Linux instance
 
-## Task 1: Concise Step Description
+shell> cd /workshop/linux/monitor
 
-1. Sub step 1 - tables sample
+shell> sudo ./mysqlmonitor-8.0.25.1328-linux-x86_64-installer.bin 
 
-  Use tables sparingly:
+Here a summary of the installer questions:  
+(Except for the Password Entry [ using Welcome1! ], all other INPUTs are DEFAULT – Just hit <ENTER>)
+Language Selection
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+Please select the installation language
+[1] English - English
+[2] Japanese - 日本語
+[3] Simplified Chinese - 简体中文
+Please choose an option [1] : 1
+Info: During the installation process you will be asked to enter usernames and
+passwords for various pieces of the Enterprise Monitor. Please be sure to make
+note of these in a secure location so you can recover them in case they are
+forgotten.
+Press [Enter] to continue:
+----------------------------------------------------------------------------
+Welcome to the setup wizard for the MySQL Enterprise Monitor
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+----------------------------------------------------------------------------
+Please specify the directory where the MySQL Enterprise Monitor will be
+installed
 
-    - List item 1
-    - List item 2
+Installation directory [/opt/mysql/enterprise/monitor]:
 
-3. Code examples
+----------------------------------------------------------------------------
+Select Requirements
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+Select Requirements
 
-4. Code examples that include variables
+Please indicate the scope of monitoring this installation will initially encompass so we can configure memory usage accordingly. NOTE: This setting may have a big impact on overall performance. The manual contains instructions for updating the configuration later, if needed. This installation will monitor a:
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+System Size
+
+[1] Small system: 1 to 5 MySQL Servers monitored from a laptop computer or low-end server with no more than 4 GB of RAM
+[2] Medium system: Up to 100 MySQL Servers monitored from a medium-size but shared server with 4 GB to 8 GB of RAM
+[3] Large system: More than 100 MySQL Servers monitored from a high-end server dedicated to MEM with more than 8 GB RAM
+Please choose an option [2] : 1
+
+----------------------------------------------------------------------------
+Tomcat Server Options
+
+Please specify the following parameters for the bundled Tomcat Server
+
+Tomcat Server Port [18080]:
+
+Tomcat SSL Port [18443]:
+
+----------------------------------------------------------------------------
+Service Manager User Account
+
+You are installing as root, but it's not good practice for the Service Manager
+to run under the root user account. Please specify the name of a user account
+to use for the Service Manager below. Note that this user account will be
+created for you if it doesn't already exist.
+
+User Account [mysqlmem]:
+
+----------------------------------------------------------------------------
+Database Installation
+
+Please select which database configuration you wish to use
+
+[1] I wish to use the bundled MySQL database
+[2] I wish to use an existing MySQL database *
+Please choose an option [1] :
+
+* We will validate the version of your existing MySQL database server during the
+installation. See documentation for minimum version requirements.
+
+* Important: If your existing MySQL database server already has another MySQL
+Enterprise Monitor repository in it that you want to keep active, be sure to
+specify a unique name in the "MySQL Database Name" field on the next screen.
+
+
+
+Visit the following URL for more information:
+
+http://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-install-server.html
+
+----------------------------------------------------------------------------
+Repository Configuration
+
+Please specify the following parameters for the bundled MySQL server
+
+Repository Username [service_manager]:
+
+Password : Welcome1!
+Re-enter : Welcome1!
+MySQL Database Port [13306]:
+
+MySQL Database Name [mem]:
+
+----------------------------------------------------------------------------
+Setup is now ready to install MySQL Enterprise Monitor on your computer.
+
+Do you want to continue? [Y/n]: Y
+
+----------------------------------------------------------------------------
+Please wait while Setup installs MySQL Enterprise Monitor on your computer.
+
+ Installing
+ 0% ______________ 50% ______________ 100%
+ #########################################
+
+----------------------------------------------------------------------------
+Completed installing files
+
+
+
+Setup has completed installing the MySQL Enterprise Monitor files on your
+computer
+
+Uninstalling the MySQL Enterprise Monitor files can be done by invoking:
+/opt/mysql/enterprise/monitor/uninstall
+
+To complete the installation, launch the MySQL Enterprise Monitor UI and
+complete the initial setup. Refer to the readme file for additional information
+and a list of known issues.
+
+
+Press [Enter] to continue:
+
+----------------------------------------------------------------------------
+Completed installing files
+
+WARNING: To improve security, all communication with the Service Manager uses
+SSL. Because only a basic self-signed security certificate is included when the
+Service Manager is installed, it is likely that your browser will display a
+warning about an untrusted connection. Please either install your own
+certificate or add a security exception for the Service Manager URL to your
+browser. See the documentation for more information.
+
+http://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-ssl-installation.html
+Press [Enter] to continue:
+
+----------------------------------------------------------------------------
+Setup has finished installing MySQL Enterprise Monitor on your computer.
+
+View Readme File [Y/n]: n
+
+Info: To configure the MySQL Enterprise Monitor please visit the following page:
+https://localhost:18443
+Press [Enter] to continue:
+
+## Task 3: MySQL Monitor Status
+1.	On serverA: Check the status of the MySQL Monitor
+
+Shell> sudo /opt/mysql/enterprise/monitor/mysqlmonitorctl.sh status
+
+2.	On serverA: After the successful installation connect to the newly installed service with a web browser on the address from your laptop (please use thee public IP and be patient, startup may require few minutes depending on VM resources)
+https://<public_ip_of_serverA>:18443
+
+ ![Image alt text](images/monitor-managment-1.png)
+
+3.	Fill then Admin user and Agent user settings
+Admin user : admin	-	Admin password: Welcome1!
+Agent user : agent	-	Agent password: Welcome1!
+
+4.	     Click ‘Complete Setup’ button
+
+ 
+5.	Choose your time zone and keep “English” for locale
+![Image alt text](images/monitor-managment-3.png)
+
+7.	Now you are logged in, start exploring the interface
+
+8.	Connect your MEM to use mysql-advanced in agentless mode [ on student###-serverB:3307 ]
+a.	On left side menu expand “Configuration” and select “Mysql Instances”. 
+Click button “Add MySQL Instance” and fill
+
+Monitor From: MEM Built-in Agent
+Instance Address: student###-serverB (or private IP)
+Port: 3307
+Admin User: admin
+Admin password: Welcome1!
+Auto-Create Less Privileged Users: No
+
+9.	Do you see statistics on NIC, disk etc? You should not (!)
+
+10.	Check the monitoring status on the top right [Dolphin Logo]
+
+11.	How many server (Hosts) are you monitoring? How many MySQL Instances (Monitored, not Monitored etc.) are there? # Do not add this/these servers yet!
+ 
 
 ## Learn More
 

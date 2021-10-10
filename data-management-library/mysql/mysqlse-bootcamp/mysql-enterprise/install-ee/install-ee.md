@@ -2,6 +2,10 @@
 
 ## Introduction
 
+2b) Detailed Installation of MySQL on Linux
+Objective: Tarball Installation of MySQL 8 Enterprise on Linux
+
+
 Tarball Installation of MySQL 8 Enterprise on Linux
 
 Estimated Time: -- minutes
@@ -19,7 +23,8 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
-    **Use ServerB for this lab - we call this instance mysql-advanced**
+    **Use ServerB for this lab** 
+    - we call this instance mysql-advanced
     - This is the most used instance in the labs
     - In the last labs we use it as source for replication and primary node for InnoDB Cluster HA
 

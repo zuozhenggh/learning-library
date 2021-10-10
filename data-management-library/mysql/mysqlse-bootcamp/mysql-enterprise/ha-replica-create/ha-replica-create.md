@@ -31,53 +31,79 @@ This lab assumes you have:
 
 ## Task 1: Concise Step Description
 
-(optional) Step 1 opening paragraph.
 
-1. Sub step 1
+7b) MySQL Replication: create replica
+NOTE: 
+•	MySQL 8.0 replication requires SSL. To make it works like MySQL 5.7 and practice for the exam we force the usage of old native password authentication in my.cnf
+•	Some commands must run inside the source, other on slave: please read carefully the instructions
 
-	![Image alt text](images/sample1.png)
+Server: serverB (source) and serverA (slave)
 
-2. Sub step 2
 
-  ![Image alt text](images/sample1.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
 
-5. Example with bold **text**.
+1.	Please remember that servers communicate use the PRIVATE IPs
 
-   If you add another paragraph, add 3 spaces before the line.
+Source Private IP Address (MAIN)  student###-serverB :	 ______________________________________
 
-## Task 1: Concise Step Description
+Replica Private IP Address (REPLICA) student###-serverA :	______________________________________
 
-1. Sub step 1 - tables sample
+2.	ServerB (source): Make the replica a copy of the source in a shard folder to easily restore on the replica:
 
-  Use tables sparingly:
+a. Inside /workshop/backups there is a folder for each student server. Search yours
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+shell-source> ls -l /workshop/backups
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+b. take a full backup of the source using MySQL Enterprise Backup in your folder:
 
-    - List item 1
-    - List item 2
+shell-source> sudo /mysql/mysql-latest/bin/mysqlbackup --port=3307 --host=127.0.0.1 --protocol=tcp --user=admin --password --backup-dir=/workshop/backups/$(hostname) backup-and-apply-log
 
-3. Code examples
+3.	ServerA (replica): We now create the my.cnf, restore the backup create and configure the replica
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+a. It’s mandatory that each server in a replication topology have a unique server id. There is a copy of the my.cnf ready to be used. It’s a duplicate of the one used for mysql-advanced instance, with a different server_id
 
-4. Code examples that include variables
+shell-replica> sudo cp /workshop/support/my.cnf.replica /mysql/etc/my.cnf
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+shell-replica> sudo chown mysqluser:mysqlgrp /mysql/etc/my.cnf
+
+b. restore the backup from share folder (please change the red part with your folder name)
+
+shell-replica> sudo /mysql/mysql-latest/bin/mysqlbackup --defaults-file=/mysql/etc/my.cnf --backup-dir=/workshop/backups/student###-serverb --datadir=/mysql/data --log-bin=/mysql/binlog/binlog copy-back
+shell-replica> sudo chown -R mysqluser:mysqlgrp /mysql
+c. start the new replica instance it and verify that it works.
+
+shell-replica> sudo systemctl start mysqld-advanced
+shell-replica> mysql -uroot -p -h127.0.0.1 -P3307
+mysql-replica> SHOW DATABASES;
+4.	ServerB (source): For the matter of the exam we create here a user using MySQL 5.7
+
+shell-source> mysql -uroot -p -h127.0.0.1 -P3307
+
+mysql-source> CREATE USER 'repl'@'%' IDENTIFIED WITH mysql_native_password BY 'Welcome1!';
+mysql-source> GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
+5.	ServerA (replica): Time to connect and start the replica 
+
+a.	Configure the replica connection. PLEASE INSERT YOUR CORRECT SOURCE IP!
+mysql-replica> change master to master_host='<private_IP_of_student###-serverB>', master_port=3307, master_user='repl', master_password='Welcome1!', master_auto_position=1;
+
+b.	start the replica threads
+mysql-replica> start slave;
+c.	Verify replica status, e.g. that IO_Thread and SQL_Thread are started searching the value with the following command (in case of problems check error log)
+mysql-replica> SHOW SLAVE STATUS\G
+7.	ServerB (source): Let’s test that data are replicated. Connect to source and make some changes
+mysql-source> CREATE DATABASE newdb;
+mysql-source> USE newdb;
+mysql-source> CREATE TABLE t1 (c1 int primary key);
+mysql-source> INSERT INTO t1 VALUES(1);
+mysql-source> INSERT INTO t1 VALUES(2);
+mysql-source> DROP DATABASE employees;
+
+8.	ServerA (replica): Verify that the new database and table is on the replica, to do so connect to replica and submit
+mysql-replica> SHOW DATABASES;
+mysql-replica> SELECT * FROM newdb.t1;
+ 
+
+
 
 ## Learn More
 

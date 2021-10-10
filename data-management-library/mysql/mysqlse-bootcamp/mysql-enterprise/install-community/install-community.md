@@ -1,6 +1,10 @@
 # INSTALL - MYSQL COMMUNITY
 
 ## Introduction
+2a) Installation of MySQL (replacement of MariaDB)
+Objective: Installation of MySQL 8 (Community) on Oracle Linux 7. Because by default RedHat install MariaDB so, we update the repository to install the original MySQL.
+
+Server: serverB
 
 Installation of MySQL 8 (Community) on Oracle Linux 7. Because by default RedHat install MariaDB so, we update the repository to install the original MySQL.
 

@@ -112,14 +112,9 @@
             "filename": "../../ha-innodb-cluster/ha-innodb-cluster.md"
         },
         {
-            "title": "Lab 21: MySQL Database Service and HeatWave - Provision",
-            "description": "MySQL Database Service and HeatWave - Provision",
-            "filename": "../../mds-heatwave-provision/mds-heatwave-provision.md"
-        },
-        {
-            "title": "Lab 22: MySQL Database Service and HeatWave - Manage",
-            "description": "MySQL Database Service and HeatWave - Manage",
-            "filename": "../../mds-heatwave-manage/mds-heatwave-manage.md"
+            "title": "Lab 21: Addemdum",
+            "description": "Addemdum",
+            "filename": "../../addendum/addendum.md"
         },
         {
             "title": "Need Help?",

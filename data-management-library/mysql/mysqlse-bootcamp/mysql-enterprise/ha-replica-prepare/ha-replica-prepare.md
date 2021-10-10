@@ -31,53 +31,19 @@ This lab assumes you have:
 
 ## Task 1: Concise Step Description
 
-(optional) Step 1 opening paragraph.
+7a) MySQL Replication: prepare replica server
+NOTE: 
+•	ServerA doesn't have binaries installed, so first part of the lab installs them. This is the same to first installation of mysql-advanced on serverB
+•	MySQL 8.0 replication requires SSL. To make it works like MySQL 5.7 and practice for the exam we force the usage of old native password authentication in my.cnf
+•	Some commands must run inside the source, other on slave: please read carefully the instructions
+Server: serverA (slave)
 
-1. Sub step 1
+1.	Connect to serverA and execute the script to create a new user/group, folders structure and install binaries (be careful with copy&paste)
 
-	![Image alt text](images/sample1.png)
+shell> /workshop/support/lab7a-MySQL_Replication___Prepare_replica_server.sh
 
-2. Sub step 2
+2.	Close the SSH connection and open a new one to let opc user have the new group.
 
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 1: Concise Step Description
-
-1. Sub step 1 - tables sample
-
-  Use tables sparingly:
-
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
-
-2. You can also include bulleted lists - make sure to indent 4 spaces:
-
-    - List item 1
-    - List item 2
-
-3. Code examples
-
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
-
-4. Code examples that include variables
-
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
 
 ## Learn More
 

@@ -2,20 +2,20 @@
 
 ## Introduction
 
-Execute MySQL Shell and explore the interface: 
-help
-settings
-test an extension: reporting
-command mode
+2d) MySQL Shell: the new client
+Objective: Execute MySQL Shell and explore the interface: 
+•	help
+•	settings
+•	test an extension: reporting
+•	command mode
 
+Server: serverB
 
 Estimated Time: -- minutes
 
 
 
 ### Objectives
-
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Install MySQL Shell
@@ -49,7 +49,7 @@ This lab assumes you have:
     ```
     <copy>mysqlsh</copy>
     ```
-## Task 2: Use MySQL Shell with JASON
+## Task 2: Use MySQL Shell with JSON
 1.	Discover the command auto-completion feature, type \h and press TAB twice 
 
    **MySQL JS>** 
@@ -103,17 +103,17 @@ MySQL Shell comes with the option of automatically saving the history of command
     **MySQL JS>** 
 
     ```
-    <copy>\sql</copy>
-    ```	
+    <copy>\q</copy>
+    ```
 2.	Now you can submit SQL commands
 
-   **MySQL … SQLL>** 
+   **MySQL … SQL>** 
 
     ```
     <copy>show databases;</copy>
     ```
 
-   **MySQL … SQLL>** 
+   **MySQL … SQL>** 
 
     ```
     <copy>SELECT * FROM world.city LIMIT 10;</copy>
@@ -124,13 +124,13 @@ If you want to execute a command continuously use the command “query” (defau
 To exit from reporting press CTRL+C
 
 
-   **MySQL … SQLL>** 
+   **MySQL … SQL>** 
 
     ```
     <copy>watch query show processlist;</copy>
     ```
 
-   **MySQL … SQLL>** 
+   **MySQL … SQL>** 
 
     ```
     <copy>watch query --interval=2 show processlist;;</copy>

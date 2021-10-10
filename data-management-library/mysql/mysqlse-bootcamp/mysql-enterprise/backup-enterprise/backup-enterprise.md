@@ -30,54 +30,96 @@ This lab assumes you have:
 *This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Concise Step Description
+6b) MySQL Enterprise Backup
+Objective: explore how mysqlbackup works
+Server: serverB
+Notes:
+•	We work now with mysql-advanced instance. [ student###-serverB:3307 ]
+•	References:
+o	https://dev.mysql.com/doc/mysql-enterprise-backup/8.0/en/mysqlbackup.tasks.html
+o	https://dev.mysql.com/doc/mysql-enterprise-backup/8.0/en/mysqlbackup.privileges.html
 
-(optional) Step 1 opening paragraph.
 
-1. Sub step 1
 
-	![Image alt text](images/sample1.png)
+1.	MySQL Enterprise Backup is now available inside MySQL Enterprise Distributions like a tool, so you don’t have to install it.
 
-2. Sub step 2
+2.	Create directories to store backups
+shell> sudo mkdir -p /backupdir/full
 
-  ![Image alt text](images/sample1.png)
+shell> sudo mkdir /backupdir/compressed
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+shell> sudo chown -R mysqluser:mysqlgrp /backupdir
 
-5. Example with bold **text**.
+shell> sudo chmod 770 -R /backupdir
 
-   If you add another paragraph, add 3 spaces before the line.
+3.	Create a user in mysql-advanced with grants options for backup. To simplify user creations we have a script with minimal grants for this user (see the manual for additional privileges required for specific features like TTS, SBT integration, encrypted). You can also have a look on the privileges opening the file /workshop/support/mysqlbackup_user_grants.sql
 
-## Task 1: Concise Step Description
+shell> mysql -uroot -p -h127.0.0.1 -P3307
 
-1. Sub step 1 - tables sample
+mysql> CREATE USER 'mysqlbackup'@'%' IDENTIFIED BY 'Welcome1!';
 
-  Use tables sparingly:
+mysql> source /workshop/support/mysqlbackup_user_grants.sql;
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+mysql> exit
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+4.	Create a full backup (be careful with copy&paste!). 
 
-    - List item 1
-    - List item 2
+shell> sudo /mysql/mysql-latest/bin/mysqlbackup --port=3307 --host=127.0.0.1 --protocol=tcp --user=mysqlbackup --password --backup-dir=/backupdir/full backup-and-apply-log
 
-3. Code examples
+5.	Create a second backup with compression (be careful with copy&paste!)
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+shell> sudo /mysql/mysql-latest/bin/mysqlbackup --port=3307 --host=127.0.0.1 --protocol=tcp --user=mysqlbackup --password --backup-dir=/backupdir/compressed --compress backup-and-apply-log
 
-4. Code examples that include variables
+6.	Because these backups are created with sudo, change the permissions
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+shell> sudo chown -R mysqluser:mysqlgrp /backupdir/full
+
+shell> sudo chown -R mysqluser:mysqlgrp /backupdir/compressed
+
+7.	Have a look of the content of the backup folders
+
+shell> cd /backupdir/full
+
+shell> ls -l
+
+shell> cd /backupdir/compressed
+
+shell> ls -l
+
+8.	Check the size of the two backups, the one uncompressed and the one compressed
+
+shell> cd /backupdir
+
+shell> du -sh *
+
+9.	Restore
+a.	Stop the server
+
+shell> sudo systemctl stop mysqld-advanced	
+
+b.	(destroy time!) empty datadir and binary log dir
+shell> sudo rm -rf /mysql/binlog/* /mysql/data/*
+	
+c.	Restore the backup (be careful with copy&paste!)
+
+shell> sudo /mysql/mysql-latest/bin/mysqlbackup --defaults-file=/mysql/etc/my.cnf --backup-dir=/backupdir/full/ --datadir=/mysql/data --log-bin=/mysql/binlog/binlog copy-back
+
+d.	Set ownership
+shell> sudo chown -R mysqluser:mysqlgrp /mysql/data /mysql/binlog
+
+shell> sudo chmod -R 750 /mysql/data /mysql/binlog
+
+
+e.	Start the server
+
+shell> sudo systemctl start mysqld-advanced
+
+a.	verify that content is still there
+
+shell> mysql -uroot -p -h127.0.0.1 -P3307
+
+mysql> SHOW DATABASES;
+
 
 ## Learn More
 

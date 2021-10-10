@@ -30,6 +30,49 @@ This lab assumes you have:
 *This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Concise Step Description
+4b) MySQL JSON datatype 
+Objective: practice with JSON
+Server: serverB
+
+1.	Create a database for JSON tests
+
+mysql> CREATE DATABASE json_test;
+
+mysql> USE json_test;
+
+2.	Create a JSON table
+
+mysql> CREATE TABLE jtest (id bigint NOT NULL AUTO_INCREMENT, doc JSON, PRIMARY KEY (id)); 
+
+mysql> SELECT * FROM jtest;
+
+3.	add data to this table
+
+mysql> INSERT INTO jtest(doc) VALUE('{"A": "hello", "b": "test", "c": {"hello": 1}}');
+
+mysql> INSERT INTO jtest(doc) VALUE('{"b": "hello"}'),('{"c": "help"}');
+
+mysql> SELECT * FROM jtest;
+
+4.	Retrieve json documents with these commands (note the shortcut “->”)
+
+mysql> SELECT json_extract (doc, "$.b") FROM jtest;
+
+mysql> SELECT doc->"$.b" FROM jtest;
+
+mysql> SELECT json_extract (doc, "$.c") FROM jtest;
+
+mysql> SELECT doc->"$.b" from jtest;
+
+mysql> SELECT doc->>"$.b" from jtest;
+
+5.	Create Index on the virtual column
+
+mysql>  alter table jtest add column gencol CHAR(7) AS (doc->"$.b");
+
+mysql> CREATE INDEX myvirtindex ON jtest(gencol);
+
+mysql> SELECT * FROM jtest;
 
 
 ## Learn More

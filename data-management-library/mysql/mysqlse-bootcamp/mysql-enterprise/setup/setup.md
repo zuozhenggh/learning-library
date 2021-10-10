@@ -2,7 +2,10 @@
 
 ## Introduction
 
-In this lab you will Connect Notebook to the Oracle Network and the Oracle Cloud Infrastructure (OCI)
+1) Client Setup
+Objective: Connect Notebook to the Oracle Network and the Oracle Cloud Infrastructure (OCI)
+
+In this lab you will Download lab materials, plus connect Notebook to the Oracle Network and the Oracle Cloud Infrastructure (OCI)
 
 Estimated Lab Time: -- minutes
 
