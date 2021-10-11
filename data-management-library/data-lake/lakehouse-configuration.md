@@ -214,7 +214,7 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     > **Note:** Take care not to use spaces in the name.
 
-This completes the. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
+This completes the creation of the groups, polices, database. We will now load the database with a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
 
 You may now [proceed to the next lab](#next).
 
