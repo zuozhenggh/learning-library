@@ -176,7 +176,46 @@ LiveLabs compute instance are password-less and only accessible optionally via S
     ![](./images/novnc-startup-prog-5.png " ")
     ![](./images/novnc-startup-prog-6.png " ")
 
-## Task 4: Optimize Chrome Browser
+## Task 4: Optimize Terminal Utility
+Perform the following to optimize the *Terminal* utility
+
+1. Double-click on the *Terminal* icon to launch a session, then Click on *Edit* and select *Preferences*
+
+    ![](./images/novnc-terminal-1.png " ")
+
+2. Select the *Colors* tab, pick *White on black* from *Built-in Schemes*, and click on *Close*
+
+    ![](./images/novnc-terminal-2.png " ")
+
+3. Run the following from the opened Terminal window.
+
+    ```
+    <copy>
+    cd $HOME
+    mv .bash_profile .bash_profile.orig
+
+    cat >.profile <<EOF
+    # .profile
+    # User specific environment and startup programs
+    PATH=\$PATH:\$HOME/.local/bin:\$HOME/bin
+    export PATH
+    EOF
+
+    cat >.bash_profile <<EOF
+    #LiveLabs
+    # .bash_profile
+    . ~/.profile
+    if [[ \$- == *i* ]]; then . ~/.bashrc; fi
+    EOF
+    </copy>
+    ```
+
+4. Review *$HOME/.bash_profile.orig* and do the following:
+
+    - Copy any custom environment variable beside *$PATH* to *$HOME/.profile*
+    - Copy any alias or function to to *$HOME/.bashrc*
+
+## Task 5: Optimize Chrome Browser
 Perform the following to further customize and optimize *Google Chrome* Browser.
 
 1. Close any running *Google Chrome* browser session running on the remote desktop
