@@ -1,42 +1,43 @@
-# Create and Connect to MySQL Database System
+# CREATE MYSQL DATABASE SYSTEM AND HEATWAVE CLUSTER
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 
 ## Introduction
 
-In this hands-on workshop, you will be introduced to MySQL Database Service (MDS), a powerful union between MySQL Enterprise Edition and Oracle Cloud Infrastructure. You will learn how to create and use MySQL Database Service with HeatWave in a secure Oracle Cloud Infrastructure environment.
+In this lab, you will create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.  Finally you will add a HeatWave Cluster comprise of two or more HeatWave nodes.  
 
-Estimated Lab Time: 30 minutes
-
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will be guided through the following tasks:
 
-- Create and configure a Virtual Cloud Network (VCN) 
-- Create the MySQL Database Service with HeatWave
-- Create Client Linux Virtual Machine and install MySQL Shell
-- Connect and use MySQL HeatWave
-- Create Airportdb Database and Import Data into MySQL
 
+- Create Virtual Cloud Network 
+- Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
+- Add a HeatWave Cluster to MySQL Database System
 
 ### Prerequisites
 
 - An Oracle Trial or Paid Cloud Account
 - Some Experience with MySQL Shell
-- Should have completed Lab 1
 
-## Task 1: Create Virtual Cloud Network
 
-1. Navigation Menu > Networking > Virtual Cloud Networks
+## Task 1: Create Virtual Cloud Network 
+
+*Note: Green Button users - Your Virtual Cloud Network already exist. Go to Task 2*
+
+1. Navigation Menu   
+        Networking  
+            Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
 
-2. Click 'Start VCN Wizard'
+2. 'click' **Start VCN Wizard**
     ![VCN](./images/03vcn02.png " ")
 
 3. Select 'Create VCN with Internet Connectivity'
 
-    Click on 'Start VCN Wizard' 
+    'click' 'Start VCN Wizard' 
     ![VCN](./images/03vcn03.png " ")
 
 4. Create a VCN with Internet Connectivity 
@@ -65,13 +66,13 @@ In this lab, you will be guided through the following tasks:
 8. Click 'View Virtual Cloud Network' to display the created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. On MDS-VCN page under 'Subnets in (root) Compartment', click on '**Private Subnet-MDS-VCN**' 
+9. On MDS-VCN page under 'Subnets in (root) Compartment', 'click'  '**Private Subnet-MDS-VCN**' 
      ![VCN](./images/03vcn07.png " ")
 
-10.	On Private Subnet-MDS-VCN page under 'Security Lists',  click on '**Security List for Private Subnet-MDS-VCN**'
+10.	On Private Subnet-MDS-VCN page under 'Security Lists',  'click'  '**Security List for Private Subnet-MDS-VCN**'
     ![VCN](./images/03vcn08.png " ")
 
-11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', click on '**Add Ingress Rules**' 
+11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', 'click' '**Add Ingress Rules**' 
     ![VCN](./images/03vcn09.png " ")
 
 12.	On Add Ingress Rules page under Ingress Rule 1
@@ -94,13 +95,16 @@ Description
 13.	On Security List for Private Subnet-MDS-VCN page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn11.png " ")
 
-## Task 2: Create a MySQL DB System - HeatWave.
+## Task 2: Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
 
-1. Navigation Menu > Databases > MySQL > DB Systems
+1. Go to Navigation Menu 
+         Databases 
+         MySQL
+         DB Systems
     ![MDS](./images/04mysql01.png " ")
 
 2. Click 'Create MySQL DB System'
-    ![MDS](./images/04mysql02.png" ")
+    ![MDS](./images/04mysql02.png " ")
 
 3. Create MySQL DB System dialog complete the fields in each section
 
@@ -110,9 +114,9 @@ Description
     - Configure Networking
     - Configure placement
     - Configure hardware
-    - Exlude Backups
+    - Exclude Backups
+    - Advanced Options - Data Import
    
-
 4. Provide basic information for the DB System:
 
  Select Compartment **(root)**
@@ -129,12 +133,13 @@ Description
  Select **HeatWave** to specify a HeatWave DB System
     ![MDS](./images/04mysql03-3.png " ")
 
-6. Create Administrator Credentials
+5. Create Administrator Credentials
 
  Enter Username
     ```
     <copy>admin</copy>
     ```
+    
  Enter Password
     ```
     <copy>Welcome#12345</copy>
@@ -145,7 +150,7 @@ Description
     ```
     ![MDS](./images/04mysql04.png " ")
 
-7. On Configure networking, keep the default values
+6. On Configure networking, keep the default values
 
     Virtual Cloud Network: **MDS-VCN**
     
@@ -153,233 +158,114 @@ Description
 
     ![MDS](./images/04mysql05.png " ")
 
-8. On Configure placement under 'Availability Domain'
+7. On Configure placement under 'Availability Domain'
    
     Select AD-3
 
     Do not check 'Choose a Fault Domain' for this DB System. 
 
-    ![MDS](./images/04mysql06-3.png" ")
+    ![MDS](./images/04mysql06-3.png " ")
 
-9. On Configure hardware, keep default shape as **MySQL.HeatWave.VM.Standard.E3**
+8. On Configure hardware, keep default shape as **MySQL.HeatWave.VM.Standard.E3**
 
-    Data Storage Size (GB) Keep default value:  **1024**
-    ![MDS](./images/04mysql07-3.png" ")
-
-19. On Configure Backups, disable 'Enable Automatic Backup'
-
-20. Click on 'Show Advanced Options' 
-
-    Select 'Networking' tab
-
-    Enter Hostname 
-       ```
-    <copy>mdshw</copy>
-    ```
-    ![MDS](./images/04mysql08-3.png" ")
+    Data Storage Size (GB) Set value to:  **100**
     
-    Click the '**Create**'
-    ![MDS](./images/04mysql09-3.png" ")
+    ```
+    <copy>100</copy>
+    ``` 
+    ![MDS](./images/04mysql07-3-100.png" ")
 
-11. The New MySQL DB System will be ready to use after a few minutes 
+9. On Configure Backups, disable 'Enable Automatic Backup'
+
+    ![MDS](./images/04mysql08.png " ")
+
+10. 'click' on Show Advanced Options 
+
+11. Select Data Import tab. 
+12. To enter the PAR Source URL, use one of the folloing links depending on your Tenancy Region
+
+    **US(Ashburn) Region**:
+        ![MDS](./images/region-ashburn.png =50%x*)
+    
+    Copy and paste the following *Asburn link*  to PAR Source URL: 
+  
+    ```
+    <copy> https://objectstorage.us-ashburn-1.oraclecloud.com/p/RpoC9Zza6bcxIAWkNXFVKD0dsmRQJRMvNthgzbr3TUnO9pTYpEhoSFP7_6RNZ1lv/n/mysqlpm/b/airportdb-bucket/o/airportdb/@.manifest.json  </copy>
+    ```   
+        
+    **UK South(London) Region**
+        ![MDS](./images/region-london.png =50%x*)
+    
+    Copy and paste the following *London link*  to PAR Source URL: 
+  
+    ```
+    <copy> https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
+    ```   
+    **Japan East(Tokyo) Region**
+        ![MDS](./images/region-tokyo.png =50%x*)
+    
+    Copy and paste the following *Tokyo link*  to PAR Source URL: 
+  
+    ```
+    <copy> https://objectstorage.ap-tokyo-1.oraclecloud.com/p/hKcth9AOMgzW_bS2rVIiTT_JJ5tNGmqS1kjkWjMphMlnZDbtUj3ZuSehrSuDTCtC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json </copy>
+    ```   
+ 
+
+
+    Your PAR Source URL entry should look like this:
+    ![MDS](./images/04mysql08-2.png " ")
+
+13. Review **Create MySQL DB System**  Screen 
+
+    ![MDS](./images/04mysql09-3.png " ")
+
+    
+    Click the '**Create**' button
+
+14. The New MySQL DB System will be ready to use after a few minutes 
 
     The state will be shown as 'Creating' during the creation
     ![MDS](./images/04mysql10-3.png" ")
 
-12. The state 'Active' indicates that the DB System is ready to use 
+15. The state 'Active' indicates that the DB System is ready for use 
 
     On MDS-HW Page, check the MySQL Endpoint (Private IP Address) 
 
     ![MDS](./images/04mysql11-3.png" ")
 
+## Task 3: Add a HeatWave Cluster to MDS-HW MySQL Database System
 
-## Task 3: Create Client Virtual Machine
+1. Open the navigation menu  
+    Databases 
+    MySQL
+    DB Systems
+2. Choose the root Compartment. A list of DB Systems is displayed. 
+    ![Connect](./images/10addheat01.png " ")
+3. In the list of DB Systems, 'click' the **MDS-HW** system. 'click' **More Action ->  Add HeatWave Cluster**.
+    ![Connect](./images/10addheat02.png " ")
+4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
 
-1. You will need a client machine to connect to your brand new MySQL database. To launch a Linux Compute instance, go to Navigation Menu > Compute > Instances
-    ![COMPUTE](./images/05compute01.png " ")
+5. Click “Estimate Node Count” button
+    ![Connect](./images/10addheat03.png " ")
+6. On the “Estimate Node Count” page, click “Generate Estimate”. This will trigger the auto
+provisioning advisor to sample the data stored in InnoDB and based on machine learning
+algorithm, it will predict the number of nodes needed.
+    ![Connect](./images/10addheat04.png " ")
 
-2. On Instances in **(root)** Compartment, click on 'Create Instance'
-    ![COMPUTE](./images/05compute02_00.png " ")
+7. Once the estimations are calculated, it shows list of database schemas in MySQL node. If you expand the schema and select different tables, you will see the estimated memory required in the Summary box, There is a Load Command (heatwave_load) generated in the text box window, which will change based on the selection of databases/tables
 
-3. On Create Compute Instance 
+8. Select the airportdb schema and click “Apply Node Count Estimate” to apply the node count
+    ![Connect](./images/10addheat05.png " ")
 
- Enter Name
-    ```
-    <copy>MDS-Client</copy>
-    ```   
-4. Make sure **(root)** compartment is selected 
-
-5. On Placement, keep the selected Availability Domain
-
-6. On Image and Shape, keep the selected Image, Oracle Linux 7.9 
-
-    And, keep the selected Instance Shape, VM.Standard.E2.1.Micro
-
-      ![COMPUTE](./images/05compute03.png " ")  
-
-7. On Networking, make sure '**MDS-VCN**' is selected
-
-    'Assign a public IP address' should be set to Yes 
-   
-  ![COMPUTE](./images/05compute04.png " ")
-
-8. If you have not already created your SSH key, perform 'Lab 1: Create Local SSH Key'.  When you are done return to the next line (TASK 5: #9) .
-
-9. On Add SSH keys, upload your own public key. 
-  
-    ![COMPUTE](./images/05compute05.png " ")
-
-10. Click '**Create**' to finish creating your Compute Instance. 
-
-    ![COMPUTE](./images/05compute06.png " ")
-
-11. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as 'Provisioning' during the creation
-    ![COMPUTE](./images/05compute07.png " ")
-
-12.	The state 'Runing' indicates that the Virtual Machine is ready to use. 
-
-    On the **MDS-Client** Instance page under 'Instance Access', **Copy and save the Public IP Address** 
-    ![COMPUTE](./images/05compute08.png " ")
+9. Click “Add HeatWave Cluster” to create the HeatWave cluster
+    ![Connect](./images/10addheat06.png " ")
+10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. 'click' the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
+    ![Connect](./images/10addheat07.png " ")
 
 
-## Task 4: Connect to MySQL Database - HeatWave
-
-HeatWave is an add-on to MySQL Database Service. It provides a highly performant and scalable in-memory analytic processing engine optimized for Oracle Cloud Infrastructure. Customers can run HeatWave on data stored in the MySQL database without requiring ETL and without any change to the application. Applications simply access HeatWave via standard MySQL protocols, and the typical administration actions are automated, integrated and accessible via the OCI Web Console, REST API, CLI, or DevOps tools. HeatWave queries achieve orders of magnitude acceleration over the MySQL database.
-
-1. Linux ad Mac users  use Terminal 
-
-   Windows 10 users use Powershell
-
-
-2.  From a terminal or powershell window on your local system. Connect to the Compute Instance with the SSH command. 
-
-    Indicate the location of the private key you created earlier with **MDS-Client**. 
-    
-    Enter the username **opc** and the Public **IP Address**.
-
-    Note: The **MDS-Client**  shows the  Public IP Address as mentioned on TASK 5: #11
-    
-    (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
-
-
-    ```
-    <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
-    ```
-
-
-    ![Connect](./images/06connect01.png " ")
-
-    **Install MySQL Shell on the Compute Instance**
-
-3. You will need a MySQL client tool to connect to your new MySQL DB System from your client machine.
-
-    Install MySQL Shell with the following command (enter y for each question)
-
-    **[opc@…]$**
-
-     ```
-    <copy>sudo yum install –y mysql-shell</copy>
-    ```
-    ![Connect](./images/06connect02.png " ")
-
-   **Connect to MySQL Database Service**
-
-4. From your Compute instance, connect to MDS-HW MySQL using the MySQL Shell client tool. 
-   
-   The endpoint (IP Address) can be found in the MDS-HW MySQL DB System Details page, under the "Endpoint" "Private IP Address". 
-
-    ![Connect](./images/06connect03.png " ")
-
-5.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the cammand. Also enter the admin user password
-
-    (Example  **mysqlsh -uadmin -p -h10.0.1..**)
-
- **[opc@...]$**
-
-    ```
-    <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
-    ```
-    ![Connect](./images/06connect04.png " ")
-
-6. On MySQL Shell, switch to SQL mode  to try out some SQL commands 
-
- Enter the following command at the prompt:
-     ```
-    <copy>\SQL</copy>
-    ```
- To display a list of databases, Enter the following command at the prompt:
-      ```
-    <copy>SHOW DATABASES;</copy>
-    ```  
-     
- To display the database version, current_date, and user enter the following command at the prompt:
-      ```
-    <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
-    ```  
- To display MysQL user and host from user table enter the following command at the prompt:
-       ```
-    <copy>SELECT USER, HOST FROM mysql.user;</copy>
-      ```
- Type the following command to exit MySQL:
-      ```
-    <copy>\q</copy>
-    ```   
-
-  **Final Sceen Shot**
-    ![Connect](./images/06connect05.png " ")
-
-## Task 5: Create airportdb schema and load data using MySQL Shell
-
-1. If you are not already connected to MDS-Client then do so now
-
-    ```
-    <copy>ssh -i ~/.ssh/id_rsa opc@<your_compute_instance_ip></copy>
-    ```
-2. Download the airportdb sample database and unpack it. (6 minutes)
-
-    ```
-    <copy>wget https://downloads.mysql.com/docs/airport-db.zip</copy>
-    ```
-
-    ```
-    <copy>unzip airport-db.zip</copy>
-    ```
-3. List the  airport-db directory to view the unxipped data files
-
-    ```
-    <copy>ls /home/opc/airport-db</copy>
-    ```
-    ![Connect](./images/09import01.png " ")
-
-4. Start MySQL Shell and connect to the MDS-HW
-
-    ```
-    <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
-    ```
-5. Load the airportdb database into into MDS-HW using the  MySQL Shell Dump Loading Utility (6 minutes)   
-
-    ```
-    <copy>util.loadDump("airport-db", {threads: 16, deferTableIndexes: "all", ignoreVersion: true})</copy>
-    ```
-6. Display the count of all records per table in airportdb 
-
-    ```
-    <copy>\sql</copy>
-    ```
-
-    ```
-    <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
-    ```
-    ![Connect](./images/09import02.png " ")
-
-7.	Exit MySQL Shell
-
-    ```
-    <copy>\q</copy>
-    ```
-
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
-* **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
+* **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager, Frédéric Descamps, MySQL Community Manager
 * **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, September 2021
