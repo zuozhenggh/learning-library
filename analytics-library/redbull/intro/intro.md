@@ -1,6 +1,6 @@
 # Introduction
 
-![Oracle Workshop](images/banner.png)
+<!--![Oracle Workshop](images/banner.png)-->
 
 ## About this Workshop
 

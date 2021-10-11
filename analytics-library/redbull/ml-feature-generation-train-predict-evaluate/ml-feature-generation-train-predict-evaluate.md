@@ -1,6 +1,6 @@
 # Feature Generation, Machine Learning Training, Prediction and Evaluation
 
-![Banner](images/banner.png)
+<!--![Banner](images/banner.png)-->
 
 ## Introduction
 

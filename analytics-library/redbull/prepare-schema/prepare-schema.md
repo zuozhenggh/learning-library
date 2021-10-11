@@ -1,6 +1,6 @@
 # Load Data into Autonomous Data Warehouse
 
-![Banner](images/banner.png)
+<!--![Banner](images/banner.png)-->
 
 ## Introduction
 In this lab you will load the Grand Prix data into the Autonomous Data Warehouse. After this lab we will be ready to start analyzing the data.

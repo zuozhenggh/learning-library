@@ -1,6 +1,6 @@
 # Advanced Data Exploration
 
-![Banner](images/banner.png)
+<!--![Banner](images/banner.png)-->
 
 ## Introduction
 
