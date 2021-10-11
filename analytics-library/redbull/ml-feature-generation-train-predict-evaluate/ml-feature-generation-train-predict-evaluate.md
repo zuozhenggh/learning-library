@@ -26,7 +26,7 @@ Estimated Lab Time: 20 minutes
 - Autonomous Data Warehouse
 - You've completed the previous labs
 
-## **TASK 1:** Set Up The Machine Learning User
+## **Task 1:** Set Up The Machine Learning User
 
 1. Open the Autonomous Data Warehouse.
 
@@ -58,7 +58,7 @@ Estimated Lab Time: 20 minutes
 
    Press **Save**. You've now enabled the `F1` database user (schema) to use the Machine Learning functionality of Autonomous Data Warehouse.
 
-## **TASK 2:** Generate New Features
+## **Task 2:** Generate New Features
 
 SQL is a useful language in Machine Learning process. It allows you to work with data in databases in an efficient manner. In our case, we will use it to extract new data points from the raw data that is available to us.
 
@@ -133,7 +133,7 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
     ![pic1](images/notebook-success.png)
 
-## **TASK 3:** Train the model using AutoML
+## **Task 3:** Train the model using AutoML
 
 Now we're ready to train the ML model.
 
@@ -215,7 +215,7 @@ Now we're ready to train the ML model.
 
    **IMPORTANT: Make a note of the exact model name, including the number. You will need this later.**
 
-## **TASK 4:** Add the generated features to the RACES data set in Oracle Analytics Cloud
+## **Task 4:** Add the generated features to the RACES data set in Oracle Analytics Cloud
 
 1. In case you don't have a window with Oracle Analytics Cloud open, you can open it as follows:
 
@@ -251,7 +251,7 @@ Now we're ready to train the ML model.
 
    ![pic1](images/leave-save.png)
 
-## **TASK 5:** Import the trained model into Oracle Analytics Cloud
+## **Task 5:** Import the trained model into Oracle Analytics Cloud
 
 Now we need to make the Machine Learning model that we built in the database available to Oracle Analytics Cloud.
 
@@ -265,7 +265,7 @@ Now we need to make the Machine Learning model that we built in the database ava
 
    ![pic1](images/register-model2.png)
 
-## **TASK 6:** Predict the scores for 2020 in Oracle Analytics Cloud
+## **Task 6:** Predict the scores for 2020 in Oracle Analytics Cloud
 
 Now it's time to predict the race score on our _test_ data set: 2020. We can do this with Data Flows. Data Flows let us create a series of steps in which we can manipulate data, or, in this case, apply a ML model to data.
 
@@ -338,7 +338,7 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
    ![pic1](images/to-homepage6.png)
 
-## **TASK 7:** Evaluate the accuracy of the model in Oracle Analytics Cloud
+## **Task 7:** Evaluate the accuracy of the model in Oracle Analytics Cloud
 
 1. On the homepage, click "Data", then click the "Predicted Scores" dataset to create a new visualization project.
 
@@ -363,7 +363,7 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
    ![pic1](images/check-accuracy3.png)
 
-## **TASK 8:** Bonus exercise: Calculate the difference between predicted and actual scores
+## **Task 8:** Bonus exercise: Calculate the difference between predicted and actual scores
 
 1. Calculate the distance between the predicted and the actual scores.
 
@@ -388,7 +388,7 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
    Note that the predicted score follows the actual score in general. This is a pretty good first result!
    As a point of improvement, notice how on the races with lower actual scores, the predicted score tends to be a bit too high.
 
-## **TASK 9:** Bonus exercise: Predict the scores for the 2021 season
+## **Task 9:** Bonus exercise: Predict the scores for the 2021 season
 
 In 2021, Formula 1 appears to be more exciting than ever. Red Bull is a serious contender for the world title. The fight between Hamilton and Verstappen is closer than ever.
 
@@ -400,7 +400,7 @@ This means that you will have to adapt the Data Flow to predict until ROUND 11 o
 
 So what do you think? Do the predicted scores reflect the actual level of excitement of 2021?
 
-## **TASK 10:** Conclusions and next steps
+## **Task 10:** Conclusions and next steps
 
 We have identified a number of factors that were successfully used to predict the score that fans will give to a race.
 

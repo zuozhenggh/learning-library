@@ -22,7 +22,7 @@ Estimated Lab Time: 20 minutes
 - Autonomous Data Warehouse
 - You've completed the previous labs
 
-## **STEP 1:** "Come back score"
+## **Task 1:** "Come back score"
 
 First of all, let's look closer at the visualizations that we already have to see what data is patterns are hidden away in them.
 
@@ -50,7 +50,7 @@ First of all, let's look closer at the visualizations that we already have to se
 
 	 Note 5: A large come back (many positions gained) of a driver _may have_ a positive influence on the score. We don't have this metric available yet, so we will have to create it ourselves later (Feature Engineering).
 
-## **STEP 2:** Pit Stops
+## **Task 2:** Pit Stops
 
 Now let's have a look at the pit stop information.
 
@@ -82,7 +82,7 @@ Now let's have a look at the pit stop information.
 
 	 Note 6: Position changes due to a pit stop _may be_ less interesting for viewers than position changes on the track. We will have to transform the race data in some way to separate real overtakes from semi overtakes (during Feature Generation).
 
-## **STEP 3:** Ghost Car
+## **Task 3:** Ghost Car
 
 The position chart we've been using so far may seem quite rudimentary; although it contains position information, it doesn't give any idea of exactly _how big_ the distance is in seconds between cars.
 
@@ -145,7 +145,7 @@ To visualize how well each car is doing, we'll calculate the time-delta between 
 
    ![Banner](images/to-homepage9.png)
 
-## **STEP 4:** Conclusion
+## **Task 4:** Conclusion
 
 In the previous lab we already found several factors that influence the score that fans will give to a race. These factors were directly available to us in the `RACES` dataset.
 

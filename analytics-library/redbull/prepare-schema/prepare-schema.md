@@ -8,7 +8,7 @@ In this lab you will load the Grand Prix data into the Autonomous Data Warehouse
 We will:
 1. Login in the Database Tools section as the ADMIN user. We will run a script here that a) creates the F1 user and b) creates a set of **empty** tables in the F1 schema.
 2. Log out and then login again in the Database Tools, now as the new F1 user.
-3. Load the data into the tables (that we created in step 1) as the F1 user.
+3. Load the data into the tables as the F1 user.
 
 Estimated Lab Time: 10 minutes
 
@@ -20,7 +20,7 @@ To complete this lab, you need to have the following:
 - A provisioned Autonomous Data Warehouse
 - You're logged into your Oracle Cloud Account
 
-## **STEP 1**: Create a New Database User/Schema in Autonomous Data Warehouse
+## **Task 1**: Create a New Database User/Schema in Autonomous Data Warehouse
 
 This new user/schema will hold the Grand Prix data.
 
@@ -53,7 +53,7 @@ This new user/schema will hold the Grand Prix data.
     ![ADW Menu](images/run-script.png)
 
 
-## **STEP 2**: Upload the Grand Prix data to Autonomous Data Warehouse
+## **Task 2**: Upload the Grand Prix data to Autonomous Data Warehouse
 
 1. **Download** the 6 files that contain the data that we'll use in our analysis:
 

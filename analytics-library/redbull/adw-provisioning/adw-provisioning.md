@@ -20,7 +20,7 @@ To complete this lab, you need to have the following:
 
 - Logged into your Oracle Cloud Account
 
-## **STEP 1**: Provision ADW
+## **Task 1**: Provision ADW
 
 1. Go to **Menu** > **Oracle Database** > **Autonomous Data Warehouse**.
 

@@ -16,7 +16,7 @@ In this lab, you will:
 ### Prerequisites
 - Oracle Free Trial Account.
 
-## **STEP 1:** Federated User Login
+## **Task 1:** Federated User Login
 
 1. Oracle Cloud has two types of users:
 
@@ -43,7 +43,7 @@ In this lab, you will:
 
    For more information about federated users, see [User Provisioning for Federated Users](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/usingscim.htm).
 
-## **STEP 2:** Create an Oracle Analytics Cloud (OAC) Instance
+## **Task 2:** Create an Oracle Analytics Cloud (OAC) Instance
 
 1. Return to the Home Page and go to the **Menu** > **Analytics & AI** > **Analytics Cloud**.
 

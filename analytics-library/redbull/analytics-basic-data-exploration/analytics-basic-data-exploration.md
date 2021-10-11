@@ -33,7 +33,7 @@ Estimated Lab Time: 30 minutes
 - Autonomous Data Warehouse
 - You've completed the previous lab that loads the data sources into the Autonomous Data Warehouse
 
-## **STEP 1**: Create the connection from Oracle Analytics Cloud to Autonomous Database
+## **Task 1**: Create the connection from Oracle Analytics Cloud to Autonomous Database
 
 **Oracle Analytics Cloud** will be the tool which you use to analyze your data. **Autonomous Data Warehouse** is used to store and organize the data, and to provide the Machine Learning engine.
 Therefore we need to create a connection from Oracle Analytics Cloud to Autonomous Data Warehouse first. To be able to create this connection, OAC will need to use a so-called "wallet" file. The wallet file (client credentials), along with the database user ID and password, provides access to your Autonomous Database in the most secure way possible. The "wallet" file can be obtained from the database menus.
@@ -111,7 +111,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
 11. Select **Save** to save your new connection **information**.
 
-## **STEP 2:** Add the RACES dataset to Oracle Analytics Cloud
+## **Task 2:** Add the RACES dataset to Oracle Analytics Cloud
 
 1. On the top right, choose Create and then Dataset.
 
@@ -187,7 +187,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
    ![](images/to-menu.png)
 
-## **STEP 3:** Add the LAP_TIMES dataset to Oracle Analytics Cloud
+## **Task 3:** Add the LAP_TIMES dataset to Oracle Analytics Cloud
 
 1. On the top right, choose Create and then Dataset.
 
@@ -285,7 +285,7 @@ Let's have a first look at the data that we have available for our data challeng
 	 Since we're missing fan scores for 2021, we cannot say whether this trend continued. However, by the completion of this workshop, you will be able to generate (predict) the scores for the races of 2021 yourself!
 -->
 
-## **STEP 3:** Finding the best and worst race according to the fans
+## **Task 3:** Finding the best and worst race according to the fans
 
   What was the most popular race between 2008 and 2020 according to the fans? This would be interesting to find out, as that race is likely to have a lot of the key factors that fans appreciate.
 
@@ -333,7 +333,7 @@ Let's have a first look at the data that we have available for our data challeng
 
 	 ![Banner](images/to-homepage6.png)
 
-## **STEP 4:** Basic Exploratory Data Analysis: Overtakes and DNFs
+## **Task 4:** Basic Exploratory Data Analysis: Overtakes and DNFs
 
 These two races are a great starting point for our investigation into what factors makes a great (or not so great) race.
 
@@ -427,7 +427,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
    ![Banner](images/to-homepage9.png)
 
-## **STEP 5:** Basic Exploratory Data Analysis: Correlation diagrams for Position Changes and DNFs
+## **Task 5:** Basic Exploratory Data Analysis: Correlation diagrams for Position Changes and DNFs
 
 How can we check whether our theories about the relationship between position changes, DNFs and score is correct? We can use smart visualizations for this, in particular correlation diagrams and box plots are well suited for this task.
 
@@ -537,7 +537,7 @@ How can we check whether our theories about the relationship between position ch
 
    ![Banner](images/to-homepage8.png)
 
-## **STEP 6:** Conclusion
+## **Task 6:** Conclusion
 
 In our Exploratory Data Analysis we tried to identify factors that are of value to predict the score that fans give to the races.
 
