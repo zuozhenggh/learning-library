@@ -41,7 +41,7 @@ This lab assumes you have:
 
 3. Don't you see **oracleidentitycloudservice/** before your email? Then, you need to Sign out and log in as a federated user, following these steps.
 
-4. Go to <a href="https://cloud.oracle.com" target="\_blank">cloud.oracle.com</a>, type your **Cloud Account Name** and click **Next**.
+4. Go to cloud.oracle.com, type your **Cloud Account Name** and click **Next**.
 
    ![Cloud Account Name](images/oac-login-cloud-account-name.png)
 
@@ -87,6 +87,7 @@ This lab assumes you have:
 You may now *proceed to the next lab*.
 
 ## **Acknowledgements**
+
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
 - **Contributors** - Priscila Iruela, Arabella Yao
 - **Last Updated By** - Lucian Dinescu, October 2021

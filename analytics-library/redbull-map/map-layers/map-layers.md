@@ -151,16 +151,13 @@ Select **Delete All Matches**, click **OK**, confirm that you want to disconnect
 
     ![](images/delete-all-matches.png " ")
 
-**!!! MISSING PIECES  **
+**!!! MISSING PIECES !!! Please add content**
 
 11. Returning to your visualize tab you will add your second layer and use your Turns data to represent the points on your map.  
 Click the add layer button as shown below.
 
-<img src="./images//media/image18.png" style="width:3.85417in;height:5.57639in" alt="Graphical user interface, application Description automatically generated" />
 
 12. Using the Turns data, use your name column for the Category (Location) and Val for the Size option.
-
-<img src="./images//media/image19.png" style="width:6.5in;height:3.29167in" alt="Graphical user interface, website Description automatically generated" />
 
 
 Congratulations on completing this workshop!
