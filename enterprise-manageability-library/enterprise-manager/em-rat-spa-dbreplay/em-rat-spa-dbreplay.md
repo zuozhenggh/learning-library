@@ -557,7 +557,7 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
     SQL> exec dbms_workload_replay.INITIALIZE_REPLAY (replay_name => 'lab4rep', replay_dir => 'LAB4SH');
     ````
 
-3. The run below PLSQL anonymous block to remap the connections for replay
+3. Run below PLSQL anonymous block to remap the connections for replay
 
     ```
     <copy>begin
@@ -866,7 +866,18 @@ In this lab, we are going to use a pre-captured workload of Sales History. The w
 
     ![](images/emratlab5step13c.png " ")
 
-14. In **Free Tier Credit** Image, the Consolidation Replay can take much longer time to finish. The same reason as in Task 4, the Capture for Sales History workload has more CPUs and memory resource in comparison with Replay enviroment. In **Free Tier** the Consolidation Replay finished in 30 minutes. You can stop the Replay to finish the Lesson.
+14. In **Free Tier Credit** Image, the Consolidation Replay can take much longer time to finish. The same reason as in Task 4, the Capture for Sales History workload has more CPUs and memory resource in comparison with Replay enviroment. In **Free Tier** the Consolidation Replay estimated finish in 30 minutes. You can stop the Replay and finish the Lesson.
+
+    ![](images/emratlab5step14.png " ")
+
+15. If you are able to finished the Consolidation Replay lab5con_rep1, you can review the report.
+
+![](images/emratlab5step15a.png " ")
+
+![](images/emratlab5step15b.png " ")  
+
+![](images/emratlab5step15c.png " ")
+
 
 You have now learned how to work with Real Application Testing. As you can see there are Guided Workflows that will help you during your analysis and verify that you can implement new changes in production with confidence.
 
