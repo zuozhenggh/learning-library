@@ -345,7 +345,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 2. We'll visualize this dataset to understand the story of what happened during the two races we've selected. In particular, we want to zoom in on how the drivers changed positions (compared to the other drivers) from lap to lap.
 
-   First of all, make sure that we only see the lap information of the two Grand Prix's that we're interested in: Drag the RACE_NAME field to the Filter section. Search for the 2012 Brazilian Grand Prix and the 2020 Abu Dhabi Grand Prix and click them in the list to select them.
+   First of all, make sure that we only see the lap information of the two Grand Prix's that we're interested in: Drag the RACE_NAME field to the Filter section. Search for the "2012 Brazilian Grand Prix" and the "2020 Abu Dhabi Grand Prix" and add them to the filter values.
 
    ![Banner](images/filter-gps.png)
 
@@ -365,7 +365,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 	 Note 1: "The total number of position changes _may be_ a factor to predict race score"
 
-6. Now let's zoom in on the top positions during the two races. Intuition tells us that people are interested in what happens there.
+6. Intuition tells us that the audience is interested in what happens in the top positions. So let's zoom in on the top positions of these two races.
 
    Drag the `POSITION` field to the Filter section and configure it to only show data for Positions 1 to 5.
 
@@ -437,9 +437,17 @@ How can we check whether our theories about the relationship between position ch
 
 2. Notice how there's already a field `OVERTAKEN_POSITIONS_TOTAL` on the `RACES` data set. This value has previously been calculated from the `LAP_TIMES` data set.
 
-   Configure the correlation diagram using the field `OVERTAKEN_POSITIONS_TOTAL`, `SCORE` and `NAME_YEAR` as follows.
+   Configure the correlation diagram using the fields `OVERTAKEN_POSITIONS_TOTAL`, `SCORE` and `NAME_YEAR` as follows.
 
-	 Make sure you set the correct chart type (Scatter) and drag the fields in their corresponding sections (`SCORE` -> Values Y-Axis, `OVERTAKEN_POSITIONS_TOTAL` -> Values X-Axis and `NAME_YEAR` -> Category).
+	 Make sure you set the correct chart type (Scatter) configure the chart as follows:
+
+	 > `SCORE` -> Values Y-Axis
+	 >
+	 > `OVERTAKEN_POSITIONS_TOTAL` -> Values X-Axis
+	 >
+	 > `NAME_YEAR` -> Category
+
+	 By default the fields may not be in the correct sections. In that case, drag the fields to their correct sections.
 
    ![Banner](images/create-correlation1.png)
 
@@ -459,11 +467,11 @@ How can we check whether our theories about the relationship between position ch
 
 	 ![Banner](images/duplicate.png)
 
-5. Click on the first copy of the chart to show its configuration. Now drag the `DNF_COUNT` field over the `OVERTAKEN_POSITIONS_TOTAL` field (in Values Y-Axis) to replace it.
+5. Click on the first copy of the chart to show its configuration. Now drag the `DNF_COUNT` field over the `OVERTAKEN_POSITIONS_TOTAL` field (in Values X-Axis) to replace it.
 
 	 ![Banner](images/dnf-replace1.png)
 
-6. Click on the second copy of the chart to show its configuration. Now drag the `DNF_DUE_TO_ACCIDENT_COUNT` field over the `OVERTAKEN_POSITIONS_TOTAL` field (in Values Y-Axis) to replace it.
+6. Click on the second copy of the chart to show its configuration. Now drag the `DNF_DUE_TO_ACCIDENT_COUNT` field over the `OVERTAKEN_POSITIONS_TOTAL` field (in Values X-Axis) to replace it.
 
    ![Banner](images/dnf-replace2.png)
 

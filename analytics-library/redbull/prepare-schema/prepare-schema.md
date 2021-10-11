@@ -6,8 +6,8 @@
 In this lab you will load the Grand Prix data into the Autonomous Data Warehouse. After this lab we will be ready to start analyzing the data.
 
 We will:
-1. Login in the Database Tools section as the ADMIN user. We will run a script here that a) creates the F1 user and b) creates a set of **empty** tables in the F1 schema.
-2. Log out and then login again in the Database Tools, now as the new F1 user.
+1. Login in the Database Actions section as the ADMIN user. We will run a script here that a) creates the F1 user and b) creates a set of **empty** tables in the F1 schema.
+2. Log out and then login again in the Database Actions, now as the new F1 user.
 3. Load the data into the tables as the F1 user.
 
 Estimated Lab Time: 10 minutes
@@ -52,6 +52,9 @@ This new user/schema will hold the Grand Prix data.
 
     ![ADW Menu](images/run-script.png)
 
+8. Log out from the Data Actions as the ADMIN user.
+
+   ![ADW Menu](images/signoutadmin.png)
 
 ## **Task 2**: Upload the Grand Prix data to Autonomous Data Warehouse
 
@@ -71,30 +74,28 @@ This new user/schema will hold the Grand Prix data.
 
    Save the files on your local machine. **Make sure that the files are saved with extension `.csv`**
 
-2. In case you still have the Database Tools open, log out the ADMIN user first.
-
-3. Next, come back to your `REDBULL` ADW console, go to **Tools** tab and click **Open Database Actions**.
+2. Next, come back to your `REDBULL` ADW console, go to **Tools** tab and click **Open Database Actions**.
 
    ![Open Database Actions](images/open-database-actions.png)
 
-   It's **important** that you **use the F1 user** (not the ADMIN user) to log in. Note that you created this "F1" user earlier (when you ran the create_user.sql script).
+   It's **important** that you **use the F1 user** (_not_ the ADMIN user) to log in. Note that you created this "F1" user earlier (when you ran the create_user.sql script).
 
    - Username: F1
    - Password: Oracle_12345
 
-4. Click to the **Data Load** option, under the **Data Tools** section.
+3. Click to the **Data Load** option, under the **Data Tools** section.
 
    ![Open Data Load](images/open-data-load.png)
 
-5. Choose **Load Data** to answer the first question and **Local Files** to answer the second one. Click **Next**.
+4. Choose **Load Data** to answer the first question and **Local Files** to answer the second one. Click **Next**.
 
     ![Start Data Load](images/start-data-load.png)
 
-6. Select the files that you downloaded earlier.
+5. Select the files that you downloaded earlier.
 
     ![Select Files](images/select-files.png)
 
-7. Edit the configuration of each of the data sets by changing the load option into "Insert into table". We are doing this because we already created the empty tables earlier, and we want to add the data into those existing tables.
+6. Edit the configuration of each of the data sets by changing the load option into "Insert into table". We are doing this because we already created the empty tables earlier, and we want to add the data into those existing tables.
 
   We are showing the instructions for SAFETY_CAR. **Please make sure that you do this for all data sets.**
 
@@ -102,11 +103,11 @@ This new user/schema will hold the Grand Prix data.
 
    ![Select Files](images/change-option1.png)
 
-8. After you have changed the load option of **all** files, click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
+7. After you have changed the load option of **all** files, click the **Play** button to start the process and click **Run** on the **Run Data Load Job** verification window.
 
     ![Start Load Process](images/load-data.png)
 
-9. This process takes a few seconds. You should see  green ticks next to all data load jobs.
+8. This process takes a few seconds. You should see  green ticks next to all data load jobs.
 
     ![Load Completed](images/load-completed.png)
 
