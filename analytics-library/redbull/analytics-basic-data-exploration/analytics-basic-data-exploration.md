@@ -333,7 +333,7 @@ Let's have a first look at the data that we have available for our data challeng
 
 	 ![Banner](images/to-homepage6.png)
 
-## **Task 4:** Basic Exploratory Data Analysis: Overtakes and DNFs
+## **Task 4:** Overtakes and DNFs
 
 These two races are a great starting point for our investigation into what factors makes a great (or not so great) race.
 
@@ -427,7 +427,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
    ![Banner](images/to-homepage9.png)
 
-## **Task 5:** Basic Exploratory Data Analysis: Correlation diagrams for Position Changes and DNFs
+## **Task 5:** Correlation diagrams for Position Changes and DNFs
 
 How can we check whether our theories about the relationship between position changes, DNFs and score is correct? We can use smart visualizations for this, in particular correlation diagrams and box plots are well suited for this task.
 
