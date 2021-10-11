@@ -58,7 +58,7 @@ In this lab, you will:
    > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
 </if>
 
-## Task 2: Creating the AJD Instance
+## Task 2: Create the AJD Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 

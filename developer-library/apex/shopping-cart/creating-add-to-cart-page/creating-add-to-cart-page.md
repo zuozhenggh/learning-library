@@ -1,13 +1,13 @@
-# Create Add to Cart Page
+# Create the add to cart page
 
 ## Introduction
 
 In this lab, you will create a new modal page to add or edit existing items in the Shopping Cart.
 
-Once you have finished all the steps described in this lab, your page will look like the following image:
+Once you have finished the workshop and updated all the products as described in the steps, your page will look like the following image:
 ![](images/creating-ac.png " ")
 
-Customers wil be able to:
+Customers will be able to:
 - Review the product details
 - Add, edit or remove the product from the shopping cart
 - Read the customer reviews.
@@ -32,7 +32,7 @@ Create a Modal Page to add products to the cart.
 5. Click **Finish**.
 
 ## Task 2: Adding Cards Region for Product Details
-This region allows users to review the details of the product, such as brand, price, description and more.
+This region allows users to review the details of the product, such as brand, price, description, and more.
 
 1. In the new modal page created, navigate to the **Gallery Menu**.
 2. Drag a **Cards** region and drop it to the Content Body section.
@@ -66,12 +66,12 @@ This region allows users to review the details of the product, such as brand, pr
             </copy>
             ```
 
-    - For Template Options - click on **Use Template Defaults**.
+    - For Template Options - click **Use Template Defaults**.
         ![](images/template-options.png " ") 
         - For **Style** - select **Style C**
         - Click **Ok**
 
-4. Click on Attributes and enter the following:
+4. Click Attributes and enter the following:
      ![](images/attributes.png " ") 
 
     - Under Appearance section:
@@ -107,7 +107,7 @@ This region allows users to review the details of the product, such as brand, pr
         - For Primary Key Column 1 - select **PRODUCT_ID**    
     
 ## Task 3: Adding Cards Region for Customer Reviews
-This region allows users to read the customer reviews for this product.
+This region lets users read the customer reviews for this product.
 
 1. Navigate to the **Gallery Menu**.
 2. Drag a **Cards** region and drop it to the Content Body section under **Product** region.
@@ -132,7 +132,7 @@ This region allows users to read the customer reviews for this product.
     - Under Appearance section:
         - For Template - select **Standard**
 
-4. Click on Attributes and enter the following:
+4. Click Attributes and enter the following:
      ![](images/attributes.png " ")  
     - Under Appearance section:
         - For Layout - select **Horizontal (Row)**
@@ -152,11 +152,11 @@ This region allows users to read the customer reviews for this product.
         - For When No Data Found - enter **There are no customer reviews yet.**
      
 ## Task 4: Adding Items and Buttons
-In this Task, you will create four page items:
+In this task, you will create four-page items:
 - PRODUCT_ID: To get the product ID.
 - ACTION: To identify the action (Add / Edit / Delete)made for the customer.
-- QUANTITY: To allow customers to select the number of items to add or edit in the shopping cart.
-- SHOPPING\_CART\_ITEMS: To get the quantity of items (total) in the shopping cart after an action is made.
+- QUANTITY: To permit customers to select the number of items to add or edit in the shopping cart.
+- SHOPPING\_CART\_ITEMS: To get the number of items (total) in the shopping cart after an action is made.
 
 
 1. Navigate to the **Gallery Menu**.
@@ -167,7 +167,7 @@ In this Task, you will create four page items:
     - For Title - enter **Buttons Bar**
     - For Template - select **Buttons Container**
 4. In the Rendering tree (left pane), navigate to **Buttons Bar** region
-5. Right-click on the **Buttons Bar** region and click  **Create Page Item**
+5. Right-click the **Buttons Bar** region and click  **Create Page Item**
      ![](images/create-page-item2.png " ") 
 6. Create four items as follows. In the Property Editor, do the following:
 
@@ -181,7 +181,7 @@ In this Task, you will create four page items:
     For **P18_QUANTITY** item, do the following: 
     - Under List of Values section:
         - For Type - select **Static Values**
-        - For Static Values - click on **Display1, Display2** and enter the following:
+        - For Static Values - click **Display1, Display2** and enter the following:
 
             | Display Value |  Return Value  |
             | --- |  --- |
@@ -196,7 +196,7 @@ In this Task, you will create four page items:
     - Set Display Null Value to **Off**
 
 7. Navigate to **Buttons Bar** region (left side).
-8. Right-click on the region and click **Create Button**.
+8. Right-click the region and click **Create Button**.
      ![](images/create-button.png " ") 
 9. Create three buttons as follows:
 
@@ -216,14 +216,14 @@ In this Task, you will create four page items:
       ![](images/buttons.png " ")    
 
 10. For **Delete** button, apply the following changes:
-    - Under Appearance section, click on Template Options:
+    - Under Appearance section, click Template Options:
         - For Type - select **Danger**
         - For Style -select **Display as Link**
         - For Spacing Right, select **Large**
 
 ## Task 5: Adding Computation to Calculate the Number of Items for a Product
 1. In the Rendering tree (left pane), expand the **Pre-Rendering**.
-2. Right-click on **Before Regions** and click **Create Computation**.
+2. Right-click **Before Regions** and click **Create Computation**.
      ![](images/computation.png " ")    
 3. In the Property Editor, enter the following:
     - Under Identification section:
@@ -244,7 +244,7 @@ In this Task, you will call the *manage\_orders.add_product* procedure that add 
 
 1. In the Rendering tree (left pane), navigate to **Processing** tab.  
      ![](images/create-process.png " ")    
-2. Right click on Processing and click **Create Process**.
+2. Right click Processing and click **Create Process**.
      ![](images/create-process2.png " ")   
 3. In the Property Editor, enter the following:
     - For Name - enter **Add product**
@@ -270,7 +270,7 @@ In this Task, you will call the *manage\_orders.add_product* procedure that add 
 In this Task, you will call the *manage\_orders.remove\_product* and *manage\_orders.add\_product* procedures to remove the product from the shopping cart and add it again with the updated quantity.
 
 1. In the **Processing** tab.    
-2. Right click on Processing and click **Create Process**.
+2. Right click Processing and click **Create Process**.
 3. In the Property Editor, enter the following:
     - For Name - enter **Edit product**
     - For Type - select **Execute Code**
@@ -296,7 +296,7 @@ In this Task, you will call the *manage\_orders.remove\_product* and *manage\_or
 In this Task, you will call the *manage\_orders.remove\_product* to remove the product from the shopping cart.
 
 1. In the **Processing** tab.    
-2. Right click on Processing and click **Create Process**.
+2. Right click Processing and click **Create Process**.
      ![](images/create-process-cart.png " ")  
 3. In the Property Editor, enter the following:
     - For Name - enter **Delete product**
@@ -318,10 +318,10 @@ In this Task, you will call the *manage\_orders.remove\_product* to remove the p
         - For When Button Pressed - select **Delete**    
 
 ## Task 9: Adding Process to Calculate the Shopping Cart Items
-In this Task, you will call the *manage\_orders.get\_quantity* to get the total of products in the shopping cart.
+In this task, you will call the *manage\_orders.get\_quantity* to get the total of products in the shopping cart.
 
 1. In the **Processing** tab.    
-2. Right click on Processing and click  **Create Process**.
+2. Right click Processing and click  **Create Process**.
      ![](images/create-process-cart.png " ")  
 3. In the Property Editor, enter the following:
     - For Name - enter **Calculate Shopping Cart Items**
@@ -337,10 +337,10 @@ In this Task, you will call the *manage\_orders.get\_quantity* to get the total 
         ```
 
 ## Task 10: Adding Process to Close the Modal Page
-After user had taken action (add/edit/delete) about the product, the modal page will be closed.
+After the customer has taken action (add/edit/delete) about the product, the modal page will close and continue the shopping process.
 
 1. In the **Processing** tab.    
-2. Right click on Processing and click **Create Process**.
+2. Right click Processing and click **Create Process**.
      ![](images/create-process-cart.png " ")  
 3. In the Property Editor, enter the following:
     - Under Identification section:

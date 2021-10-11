@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will use the SQLcl to create object in an Autonomous Database. Once the objects are created, SQLcl will be used to export the object definitions so that we can commit them to our OCI Code Repository.
+In this lab you will use the SQLcl to create objects in an Autonomous Database. Once the objects are created, SQLcl will be used to export the object definitions so that we can apply them to other databases.
 
 Estimated Lab Time: 30-45 minutes
 
@@ -11,7 +11,6 @@ Estimated Lab Time: 30-45 minutes
 - Download the Autonomous Database wallet
 - Login to your Autonomous Database with SQLcl
 - Create a baseline for your database schema
-- Commit the objects to your OCI Repository
 - Apply the baseline to a new schema
 
 
@@ -170,60 +169,37 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
 
    ![cd at the prompt](./images/dir-1.png)
 
-   then, **change the directory** to our code repository directory.
+   then, **create a directory** at the Cloud Shell prompt with the following command
 
    ````
    <copy>
-   cd livelabs/cicdRepository/
+   mkdir livelabs
    </copy>
    ````
 
-   ![cd to the code repo at the prompt](./images/dir-2.png)
+   ![mkdir at the prompt](./images/dir-2.png)
 
-   issue a **pwd** at the command prompt to ensure you are in the correct directory
+   move into the directory with a cd livelabs command at the Cloud Shell prompt
 
    ````
    <copy>
-   pwd
+   cd livelabs
    </copy>
    ````
 
-   ![pwd at the prompt](./images/dir-3.png)
+   ![cd at the prompt](./images/dir-3.png)   
 
-2. In the cicdRepository directory, **create a database directory** at the command line. You can do this by issuing a **mkdir database** at the prompt.
-
-   ````
-   <copy>
-   mkdir database
-   </copy>
-   ````
-   ![mkdir database at the prompt](./images/dir-4.png)
-
-   and then enter that directory by issuing a **cd database** at the command prompt in the Cloud Shell
-
-   ````
-   <copy>
-   cd database
-   </copy>
-   ````
-   ![cd database at the prompt](./images/dir-5.png)
-
-   as before, issue a **pwd** at the command prompt to ensure you are in the correct directory
+2. Now, issue a **pwd** at the command prompt to ensure you are in the correct directory
 
    ````
    <copy>
    pwd
    </copy>
-   ````   
-   ![pwd again at the prompt](./images/dir-6.png)
+   ````
 
-   you should be **in the database directory in the code repository directory** (USER_NAME will be your user name)
+   ![pwd at the prompt](./images/dir-4.png)
 
-   ```
-   /home/USER_NAME/livelabs/cicdRepository/database
-   ```
-
- 3. Start SQLcl but do not log into a database yet. SQLcl is already installed so all you need to do is issue the following command
+3. **Start SQLcl** but do not log into a database yet. SQLcl is already installed so all you need to do is issue the following command
       ````
       <copy>
       sql /nolog
@@ -284,7 +260,7 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
    ```   
    Just go back a step and set the wallet location.
 
-6. Time to **create a schema/user, give that schema some permissions and then database objects** for committing to our code repository. 
+6. Time to **create a schema/user**, give that schema some **permissions** and then **create database objects**
 
    Run the following commands at our SQLcl prompt to create and configure the livelabs user
    ````
@@ -333,7 +309,7 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
    ```` 
    ![DDL OFF!](./images/ddloff-1.png)
 
-9. It's time to create some datababase object for our repository. Run the following code.
+9. It's time to create some database objects. Run the following code.
 
    **Create a table**
    ````
@@ -469,126 +445,18 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
 
    ![check the records](./images/sql-9.png)
 
-## Task 3: Use SQLcl and git to commit the code to the repository
-
-Now that we have objects in our database, let's create a baseline and commit it to our code repository.
-
-### **Jeff's Tips** At anytime in the SQLcl prompt, you can issue a **cl scr** to clear the screen!
-
-
-1. While **still logged into the database as our livelabs user**, we are going to use SQLcl to take a baseline of the objects in this schema. To do this, we issue a **Liquibase command at the SQLcl prompt**. The command **lb genschema -split** will pull all the Data Definition Language (DDL) for our database objects and put them into folders that correspond to their types (tables, indexes, triggers, etc). **Copy and paste the following command** then press enter.
-
-   ````
-   <copy>
-   lb genschema -split
-   </copy>
-   ```` 
-   ![run liquibase](./images/sql-10.png)
-
-2. Once this is finished, we can **exit out of SQLcl** and start to commit our changes to the repository. To exit SQLcl just type **exit** and press return.
-
-   ````
-   <copy>
-   exit
-   </copy>
-   ```` 
-
-   ![exit sqlcl](./images/sql-11.png)
-
-3. If you take a quick look around the database directory, you will now see **folders for indexes, tables and procedures**; all the objects we just created. We also have a **controller.xml** file. This file is a change log that includes all files in each directory and in the proper order to allow the schema to be deployed correctly to other databases, our CI process. Issue an **ls** at the Cloud Shell to see the directories.
-
-   ````
-   <copy>
-   ls
-   </copy>
-   ```` 
-   ![view directories](./images/sql-12.png)
-
-4. To commit our code to the repository, change your directory to the top level of the project (the cicdRepository directory). To do this, issue a **cd ..** at the Cloud Shell.
-
-   ````
-   <copy>
-   cd ..
-   </copy>
-   ```` 
-5. In the **cicdRepository directory**, we are going to run **git add .** at the Cloud Shell. A **git add** command adds our new files to the local staging area.
-
-   ````
-   <copy>
-   git add .
-   </copy>
-   ```` 
-   ![git add](./images/sql-13.png)
-
-6. A **git commit** command takes a snapshot of your local repository or you can think of it as saving the current state. Issue a **git commit -m "V1.0"** at the Cloud Shell. The **-m** sets the commit message with the message following the flag and being in double quotes. We will set the message to **v1.0**, our code baseline.
-
-   ````
-   <copy>
-   git commit -m "v1.0"
-   </copy>
-   ```` 
-
-   ![git commit](./images/sql-14.png)
-
-   Finally, lets **push** these files up to the GitHub file repository. The push command uploads our commit or state to the main repository. Once the push is done, you can see our files in our OCI code repository.
-   ````
-   <copy>
-   git push origin master
-   </copy>
-   ```` 
-
-   ![git push](./images/sql-15.png)
-
-   Upon pressing return, we need to again provide our **username and password (auth token)** as we did when we cloned the environment in the setup step.
-
-   ![user/password for push](./images/sql-16.png)
-
-7. You can view the files in the OCI Cloud Console on the **repository details page**.
-
-   ![repository details page](./images/sql-17.png)
-
-   Congratulations, you have just created your code baseline or version 1.0!
-
-
-## Task 4: Create a new schema and apply the code with SQLcl
-
-1. To simulate applying our code in a new database without needing to create a new database we can use a new schema. We will be creating this new schema/user just as we did previously with our livelabs user. Start by ensuring you are in cicdRepository/database directory. If you remember, its located at
-
-   ```
-   /home/USER_NAME/livelabs/cicdRepository/database
-   ```
-
-   To get there, you can issue a **cd /home/USER_NAME/livelabs/cicdRepository/database** but remember to **replace USER_NAME with your username**.
-
-   ````
-   <copy>
-   cd /home/USER_NAME/livelabs/cicdRepository/database
-   </copy>
-   ````
-   ![change directories](./images/apply-1.png)
-
-2. Use **SQLcl** to log into our Autonomous Database.
-
-   ````
-   <copy>
-   sql /nolog
-   </copy>
-   ````
-   ![use SQLcl](./images/apply-2.png)
-
-3. We have to tell SQLcl where to look for the Autonomous Database wallet. Remember, we downloaded it in our home directory and we can use the following command to set its location. Just remember to **replace USER_NAME with your username**. You can look at the previous lab to find the exact location if needed.
-
-      ### **Jeff's Tips** SQLcl remembers the commands you ran! Use the up arrow on your keyboard to find the command that you previously used to set the wallet location.
+10. While **still logged into the database as our livelabs user**, we are going to use SQLcl to take a baseline of the objects in this schema. To do this, we issue a **Liquibase command at the SQLcl prompt**. The command **lb genschema -split** will pull all the Data Definition Language (DDL) for our database objects and put them into folders that correspond to their types (tables, indexes, triggers, etc). **Copy and paste the following command** then press enter.
 
       ````
       <copy>
-      set cloudconfig /home/USER_NAME/Wallet_LABADB.zip
+      lb genschema -split
       </copy>
-      ````
-      ![set cloudconfig at the prompt](./images/apply-3.png)
+      ```` 
+      ![run liquibase](./images/sql-10.png)
 
+## Task 3: Create a new schema and apply the code with SQLcl
 
-4. Now we are going to **connect as the admin user**. Issue the following command at the SQLcl prompt
+1. To simulate applying our code in a new database without needing to create a new database we can use a new schema. We will be creating this new schema/user just as we did previously with our livelabs user. **Connect as the admin user** by issuing the following command at the SQLcl prompt
 
    ````
    <copy>
@@ -642,7 +510,7 @@ Now that we have objects in our database, let's create a baseline and commit it 
    ```` 
    ![provide the password](./images/apply-9.png)
 
-7. We can apply the code base we created and committed to our repository in this schema with the following Liquibase command: **lb update -changelog controller.xml**. Now run this command at your SQLcl prompt.
+7. We can apply the code base we created in this schema with the following Liquibase command: **lb update -changelog controller.xml**. Now run this command at your SQLcl prompt.
 
    ````
    <copy>
@@ -661,9 +529,9 @@ Now that we have objects in our database, let's create a baseline and commit it 
 
    ![tables command](./images/apply-11.png)
 
-   You now have a new schema that has all the objects from our livelabs schema we can use in our upcoming change managment tasks in the next sections of this lab.
+   You now have a new schema that has all the objects from our livelabs schema we can use in our upcoming change management tasks in the next sections of this lab.
 
 ## Acknowledgements
 
 - **Authors** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, August 2021
+- **Last Updated By/Date** - Brian Spendolini, September 2021
