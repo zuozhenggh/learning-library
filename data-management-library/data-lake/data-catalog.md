@@ -191,6 +191,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Michelle Malcher, Database Product Management
+* **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
 * **Contributors** -  
 * **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
