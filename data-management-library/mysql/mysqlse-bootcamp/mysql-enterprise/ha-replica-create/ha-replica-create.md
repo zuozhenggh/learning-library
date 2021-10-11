@@ -8,15 +8,14 @@
 
 Estimated Lab Time: -- minutes
 
-### About <Product/Technology> (Optional)
+### About <Product/Technology>
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+- Create Replica
+- Use Replica
 
 ### Prerequisites
 
@@ -30,7 +29,7 @@ This lab assumes you have:
 - MySQL 8.0 replication requires SSL. To make it works like MySQL 5.7 and practice for the exam we force the usage of old native password authentication in my.cnf
 - Some commands must run inside the source, other on slave: please read carefully the instructions
 
-## Task 1: Concise Step Description
+## Task 1: Create Replica
 
 1.	Please remember that servers communicate use the PRIVATE IPs
 
@@ -93,19 +92,21 @@ Replica Private IP Address (REPLICA) student###-serverA :
     ```
 4.	ServerB (source): For the matter of the exam we create here a user using MySQL 5.7
 
-    **shell-source>** mysql -uroot -p -h127.0.0.1 -P3307
+    a. **shell-source>** mysql -uroot -p -h127.0.0.1 -P3307
     ```
     <copy>exit</copy>
     ```
-    **mysql-source>** 
+    b. **mysql-source>** 
     ```
     <copy>CREATE USER 'repl'@'%' IDENTIFIED WITH mysql_native_password BY 'Welcome1!';</copy>
     ```
-    **mysql-source>** 
+    c. **mysql-source>** 
     ```
     <copy>GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';</copy>
     ```
-5.	ServerA (replica): Time to connect and start the replica 
+## Task 2: Use Replica
+
+1.	ServerA (replica): Time to connect and start the replica 
 
     a.	Configure the replica connection. PLEASE INSERT YOUR CORRECT SOURCE IP!
     
@@ -125,39 +126,39 @@ Replica Private IP Address (REPLICA) student###-serverA :
     ```
     <copy>SHOW SLAVE STATUS\G</copy>
     ```
-7.	ServerB (source): Let’s test that data are replicated. Connect to source and make some changes
+2.	ServerB (source): Let’s test that data are replicated. Connect to source and make some changes
 
-    **mysql-source>** 
+    a. **mysql-source>** 
     ```
     <copy>CREATE DATABASE newdb;</copy>
     ```
-    **mysql-source>** 
+    b. **mysql-source>** 
     ```
     <copy>USE newdb;</copy>
     ```
-    **mysql-source>**    
+    c.**mysql-source>**    
     ```
     <copy>CREATE TABLE t1 (c1 int primary key);</copy>
     ```
-    **mysql-source>** 
+    d. **mysql-source>** 
     ```
     <copy>INSERT INTO t1 VALUES(1);</copy>
     ```
-    **mysql-source>** 
+    e. **mysql-source>** 
     ```
     <copy>INSERT INTO t1 VALUES(2);</copy>
     ```
-    **mysql-source>** 
+    f. **mysql-source>** 
     ```
     <copy>DROP DATABASE employees;</copy>
     ```
-8.	ServerA (replica): Verify that the new database and table is on the replica, to do so connect to replica and submit
+3.	ServerA (replica): Verify that the new database and table is on the replica, to do so connect to replica and submit
     
-    **mysql-replica>** 
+    a. **mysql-replica>** 
     ```
     <copy>SHOW DATABASES;</copy>
     ```
-    **mysql-replica>** 
+    b. **mysql-replica>** 
     ```
     <copy>SELECT * FROM newdb.t1;</copy>
     ```
