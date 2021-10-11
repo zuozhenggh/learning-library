@@ -212,74 +212,9 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     ![Database instance homepage.](./images/Picture100-32.png " ")
 
-
-## Task 4: Configure the Object Storage Connections
-
-In this step, you will set up access to the two buckets on Oracle Object Store that contain data that we want to load - the landing area, and the 'gold' area.
-
-1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
-
-	  ![Click Tools, then Database Actions](images/launchdbactions.png " ")
-
-2. On the login screen, enter the username MOVIESTREAM, then click the blue **Next** button.
-
-3. Enter the password for the MOVIESTREAM user you set up in the previous lab.
-
-4. Under **Data Tools**, click **DATA LOAD**
-
-    ![Click DATA LOAD](images/dataload.png " ")
-
-5. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your Autonomous Database to OCI Object Storage.
-
-    ![Click CLOUD LOCATIONS](images/cloudlocations.png " ")
-
-6. To add access to the Moviestream landing area, click **+Add Cloud Storage** in the top right of your screen.
-
-    In the **Name** field, enter 'MovieStreamLanding'
-
     > **Note:** Take care not to use spaces in the name.
 
-    Leave the Cloud Store selected as **Oracle**.
-
-    Copy and paste the following URI into the URI + Bucket field:
-
-    ```
-    <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
-    </copy>
-    ```
-
-    Select **No Credential** as this is a public bucket.
-
-    Click the **Test** button to test the connection. Then click **Create**.
-
-7. The page now invites us to load data from this area. In this case, we want to set up access to an additional cloud location first. Click **Data Load** in the top left of your screen to go back to the main Data Load page.
-
-    ![Click Data Load](images/todataload.png " ")
-
-8. In the **Explore and Connect** section, click **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click **+Add Cloud Storage**.
-
-- In the **Name** field, enter 'MovieStreamGold'
-
-    > **Note:** Take care not to use spaces in the name.
-
-- Leave the Cloud Store selected as **Oracle**
-- Copy and paste the following URI into the URI + Bucket field:
-
-    ```
-    <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o
-    </copy>
-    ```
-
-- Select **No Credential** as this is a public bucket.
-- Click the **Test** button to test the connection. Then click **Create**.
-
-    We now have two cloud storage locations set up.
-
-    ![Cloud Storage Locations](images/cloudstoragelocations.png " ")
-
-This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
+This completes the. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
 
 You may now [proceed to the next lab](#next).
 
