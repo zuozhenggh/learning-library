@@ -90,7 +90,16 @@ Perform the following to optimize the *Terminal* utility
 
     ![](./images/novnc-terminal-2.png " ")
 
-3. Review *$HOME/.bash_profile* and move any alias or function to  *$HOME/.bashrc*
+3. Review *$HOME/.bash_profile* and move any custom entry of type alias, script call, or function to  *$HOME/.bashrc*. If these are referencing environment variables set in the file, then copy those over to *$HOME/.bashrc* as well.
+
+    *Notes:* Do not remote the following default entry from *$HOME/.bash_profile*
+
+    ```
+    # Get the aliases and functions
+    if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+    fi
+    ```
 
 ## Task 4: Configure Desktop   
 LiveLabs compute instance are password-less and only accessible optionally via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
