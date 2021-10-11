@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will use the SQL Developer Web browser-based tool, connect to your Database, create and REST enable a table.
+In this lab you will use the batch load API to load large amounts of data into a table.
 
 Estimated Lab Time: 20 minutes
 
@@ -50,17 +50,17 @@ This lab assumes you have completed the following labs:
 
     **Save this code in a text editor or a notes application, we will be using it in just a bit.**
 
-4.  We are going to alter this a bit for our data load. First, we need to be in either the **OCI Cloud Shell** or a local computer with cURL installed. Every OCI account has Cloud Shell so we would encourage using that. 
+4.  We are going to alter this a bit for our data load. First, we need to be in either the **Oracle Cloud Infrastructure Cloud Shell** or a local computer with cURL installed. Every Oracle Cloud Infrastructure account has Cloud Shell so we would encourage using that. 
 
-    To use the Cloud Shell, after logging into your OCI account, click the Cloud Shell icon in the upper right of the OCI banner:
+    To use the Cloud Shell, after logging into your Oracle Cloud Infrastructure account, click the Cloud Shell icon in the upper right of the Oracle Cloud Infrastructure banner:
 
-    ![Cloud Shell on OCI Banner](./images/ld-5.png)
+    ![Cloud Shell on Oracle Cloud Infrastructure Banner](./images/ld-5.png)
 
     The Cloud Shell will open on the lower part of the web browser:
 
     ![Cloud Shell on bottom of browser](./images/ld-6.png)
 
-    We will be using the OCI Cloud Shell for examples in this lab going forward.
+    We will be using the Oracle Cloud Infrastructure Cloud Shell for examples in this lab going forward.
 
 5. Time to get ready for the data load. To start, we need to download the csv file. Using the Cloud Shell, enter the following command:
 

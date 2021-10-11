@@ -4,7 +4,7 @@
 
 In the earlier lab, we generated the ssh keys needed for the compute instance used for the node.js application to provide cryptographic signing of the user data outside the database.
 
-In this lab, we will install Node.js in the compute instance, Then to prepare for data signing you will generate a private/public key pair and a PKI certificate in compute instance, which will include your public key. Afterwards you will store the certificate in your Autonomous Transaction Processing database instance, and save the certificate GUID it returns. Finally, deploy the application and sign a row in the database from cloud shell.
+In this lab, we will install Node.js in the compute instance, Then to prepare for data signing you will generate a private/public key pair and a PKI certificate in compute instance, which will include your public key. Afterwards you will store the certificate in your Oracle Autonomous Transaction Processing database instance, and save the certificate GUID it returns. Finally, deploy the application and sign a row in the database from cloud shell.
 
 Estimated Time: 25 minutes
 
@@ -31,7 +31,7 @@ This workshop assumes you have:
 
     ![](./images/lab5-task1-1.png " ")
 
-2. Make sure you are in the same region and compartment as the Autonomous Database instance and click on **Create Instance**.
+2. Make sure you are in the same region and compartment as the Oracle Autonomous Database instance and click on **Create Instance**.
 
     ![](./images/lab5-task1-2.png " ")
 
@@ -116,9 +116,9 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 
     ![](./images/lab5-putty-setup.png " ")
 
-3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
+3. Click **Connection** then **Data** in the left navigation pane and set the Auto-login username to root.
 
-4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
+4. Click **Connection** then **SSH** then **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
 5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE: You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
@@ -289,7 +289,7 @@ Let's generate your x509 key pair. We are generating the key pair and an X509 ce
 
 ## Task 5: Install Node.js in the Compute Instance
 
-Now, let's see how to install Node.js in the compute instance for the Node.js application to interact with the Autonomous database rest end points.
+Now, let's see how to install Node.js in the compute instance for the Node.js application to interact with the Oracle Autonomous database rest end points.
 
 1. Navigate back to the tab with Oracle Cloud console. If you are logged out of cloud shell, click on cloud shell icon at the top right of the page to start the Oracle Cloud shell and SSH into the instance using this command. Else, you can proceed to the step.
 
@@ -321,7 +321,7 @@ Now, let's see how to install Node.js in the compute instance for the Node.js ap
 
 ## Task 6: Open Firewall for Ports
 
-To connect to the Autonomous Database instance from the virtual machine we need to open firewall ports. Oracle linux compute instance internal firewall do not have any port enabled by default. We need to enable a port.
+To connect to the Oracle Autonomous Database instance from the virtual machine we need to open firewall ports. Oracle linux compute instance internal firewall do not have any port enabled by default. We need to enable a port.
 
 1. Run this sudo command to permanently add port 8080 under the public zone.
 
@@ -363,7 +363,7 @@ In the Oracle Linux virtual machine, since we have the Node.js installed and the
     ```
     ![](./images/task3-1.png " ")
 
-2.  Now, let's modify the index.js file with your Autonomous Transaction Processing database instance URL and Certificate GUID. Copy and paste the below command in notepad, replace `<paste your atp url>` in the command below with your Autonomous Transaction Processing database URL and press `Enter`.
+2.  Now, let's modify the index.js file with your Oracle Autonomous Transaction Processing database instance URL and Certificate GUID. Copy and paste the below command in notepad, replace `<paste your atp url>` in the command below with your Oracle Autonomous Transaction Processing database URL and press `Enter`.
 
     ```
     sed -i 's,atp-url,<paste your atp url>,g' index.js
@@ -375,7 +375,7 @@ In the Oracle Linux virtual machine, since we have the Node.js installed and the
     sed -i 's,atp-url,https://fw8mxn5ftposwuj-demoatp.adb.us-ashburn-1.oraclecloudapps.com,g' index.js
     ```
 
-3.  Copy and paste the modified command in cloud shell and press `Enter`. This command searches for the string `atp-url` in the index.js file and replaces with your Autonomous Transaction Processing database URL.
+3.  Copy and paste the modified command in cloud shell and press `Enter`. This command searches for the string `atp-url` in the index.js file and replaces with your Oracle Autonomous Transaction Processing database URL.
 
     ![](./images/task3-3.png " ")
 

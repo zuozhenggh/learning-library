@@ -59,7 +59,7 @@ What are a few goals of this application:
 
 ## Task 2: Grab your Personal Cell Phone
 
-1. In a browser window, enter ndcsdemo.com.  Optionally you can use the QR code below.
+1. In a browser window, enter ndcsdemo.com. Optionally you can use the QR code below.
 
     ![](images/ndcs-google.png)
 

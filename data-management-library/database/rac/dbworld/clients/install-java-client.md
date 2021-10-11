@@ -22,22 +22,22 @@ Connect to one of your nodes and collect the following information
 
 1. SCAN ADDRESS
 
-    ````
-    sudo su - oracle
-    srvctl config scan
-    ````
+````
+sudo su - oracle
+srvctl config scan
+````
    ![](./images/scanName.png " ")
 
 The SCAN name is supplied on the first line (and does not include the *comma*). In the example shown the SCAN Name is **lvracdb-s01-2021-09-01-083747-scan.pub.racdblab.oraclevcn.com**
 
 2. Database name and Instance Name
 
-    ````
-    <copy>
-    sudo su - oracle
-    srvctl config database
-    </copy>
-    ````
+````
+<copy>
+sudo su - oracle
+srvctl config database
+</copy>
+````
    ![](./images/dbName.png " ")     
 
 In this example the database name is **lvrac_iad2kd**
@@ -48,11 +48,12 @@ The instance names are constructed from the database name. The Instance Name is 
 In this example, Instance \#1 would be **lvrac1** and Instance \#2 would be **lvrac2**
 
 The Oracle background processes will include the instance name. For example, on Node-1
-    ````
-    <copy>
-    ps -ef | grep smon
-    </copy>
-    ````
+
+````
+<copy>
+ps -ef | grep smon
+</copy>
+````
    ![](./images/smonName.png " ")
 
 4. Password
@@ -64,32 +65,34 @@ The default password used is **W3lc0m3#W3lc0m3#** - if you have specified a new 
 A pdb named **pdb1** has been created for you, the default service name for this pdb is **pdb1.<your domain name>**. You can get your domain name from the domain listed with the SCAN ADDRESS.
 In this example the default service for PDB1 is:
 
-    ````
-    pdb1.pub.racdblab.oraclevcn.com
-    ````
+````
+pdb1.pub.racdblab.oraclevcn.com
+````
+
 6. The values you have collected will need to be substituted in to commands referenced in the labs.
 
 For example, to relocate a service you would be instructed to use the command:
+````
+srvctl relocate service -d <REPLACE DB NAME> -s <REPLACE SERVICE NAME> -i oldinst <REPLACE INSTANCE NAME> -newinst <REPLACE INSTANCE NAME>
+````
 
-    ````
-    srvctl relocate service -d <REPLACE DB NAME> -s <REPLACE SERVICE NAME> -i oldinst <REPLACE INSTANCE NAME> -newinst <REPLACE INSTANCE NAME>
-    ````
-which, in my example becomes:
+which, in my example becomes
 
-    ````
-    srvctl relocate service -d lvrac_iad2kd -s ac_service -oldinst lvrac1 -newinst lvrac2
-    ````   
-Or to connect to the default PDB service as the SYSTEM user, you would be instructed to:
+````
+srvctl relocate service -d lvrac_iad2kd -s ac_service -oldinst lvrac1 -newinst lvrac2
+````
+Or to connect to the default PDB service as the SYSTEM user, you would be instructed to
 
-    ````
-    sqlplus SYSTEM/<REPLACE PASSWORD>@//<REPLACE SCAN NAME>/<REPLACE PDB SERVICE NAME>
-    ````    
-which in my example is:
+````
+sqlplus SYSTEM/<REPLACE PASSWORD>@//<REPLACE SCAN NAME>/<REPLACE PDB SERVICE NAME>
+````
+which in my example is
 
-    ````
-    sqlplus SYSTEM/W3lc0m3#W3lc0m3#@//lvracdb-s01-2021-09-01-083747-scan.pub.racdblab.oraclevcn.com/pdb1.pub.racdblab.oraclevcn.com
-    ````    
-   ![](./images/sqlplusLogin.png " ")    
+````
+sqlplus SYSTEM/W3lc0m3#W3lc0m3#@//lvracdb-s01-2021-09-01-083747-scan.pub.racdblab.oraclevcn.com/pdb1.pub.racdblab.oraclevcn.com
+````
+
+![](./images/sqlplusLogin.png " ")
 
 ## Task 1:  Install Java Sample Program and configure services
 
@@ -101,45 +104,45 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
 
 2. Connect to the **oracle** user and download the sample program from the Object Store
 
-    ````
-    <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/O8AOujhwl1dSTqhfH69f3nkV6TNZWU3KaIF4TZ-XuCaZ5w-xHEQ14ViOVhUXQjPB/n/oradbclouducm/b/LiveLabTemp/o/ACDemo_19c.zip
-    </copy>
-    ````
+````
+<copy>
+wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/O8AOujhwl1dSTqhfH69f3nkV6TNZWU3KaIF4TZ-XuCaZ5w-xHEQ14ViOVhUXQjPB/n/oradbclouducm/b/LiveLabTemp/o/ACDemo_19c.zip
+</copy>
+````
 3. Unzip the ACDemo_19c.zip file
-    ````
-    <copy>
-    cd /home/oracle
-    unzip ACDemo_19c.zip
-    </copy>
-    ````
+````
+<copy>
+cd /home/oracle
+unzip ACDemo_19c.zip
+</copy>
+````
     The directory **acdemo** will be created with the following structure:
 
-    ````
-    unzip ACDemo_19c.zip
-    Archive:  ACDemo_19c.zip
-    creating: acdemo/
-       creating: acdemo/classes/
-       creating: acdemo/lib/
-       creating: acdemo/src/
-       creating: acdemo/win/
-    inflating: README.txt
-    inflating: SETUP_AC_TEST.sh
-    ````
+````
+unzip ACDemo_19c.zip
+Archive:  ACDemo_19c.zip
+creating: acdemo/
+   creating: acdemo/classes/
+   creating: acdemo/lib/
+   creating: acdemo/src/
+   creating: acdemo/win/
+inflating: README.txt
+inflating: SETUP_AC_TEST.sh
+````
 4. Set the execute bit **+x** on the SETUP\_AC\_TEST.sh script
 
-    ````
-    <copy>
-    chmod +x SETUP_AC_TEST.sh
-    </copy>
-    ````
+````
+<copy>
+chmod +x SETUP_AC_TEST.sh
+</copy>
+````
 5. Run the script **SETUP\_AC\_TEST.sh**. You will be prompted for INPUTS. If a default value is shown, press **ENTER** to accept
 
-    ````
-    <copy>
-    ./SETUP_AC_TEST.sh
-    </copy>
-    ````
+````
+<copy>
+./SETUP_AC_TEST.sh
+</copy>
+````
 
     You will need to provide the password for the **SYSTEM** user - this is **"W3lc0m3#W3lc0m3#"** (without the quotation marks **" "**)
     Choose a name for your service. If this installation is not on the database tier many of the inputs will not have default values.
@@ -151,13 +154,13 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
 
 6. Make the **run** scripts executable
 
-    ````
-    <copy>
-    cd /home/oracle/acdemo
-    chmod +x run*
-    chmod +x kill_session.sh
-    </copy>
-    ````
+````
+<copy>
+cd /home/oracle/acdemo
+chmod +x run*
+chmod +x kill_session.sh
+</copy>
+````
 
 You may now *proceed to the next lab*.  
 

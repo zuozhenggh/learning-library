@@ -4,7 +4,7 @@ Oracle Cloud Infrastructure is responsible for securing the infrastructure that 
 
 This workshop will cover automated and step-by-step(manual) approaches which you can follow to deploy your required components on Oracle Cloud Infrastructure with Check Point solution.
 
-Since you will be using OCI Marketplace's product (CloudGuard) so make sure you have access to minimum **BYOL Listings** available on Oracle Cloud Infrastructure Marketplace. In production environment **PAID Listing** gives you access to active license.
+Since you will be using OCI Marketplace's product (CloudGuard) so make sure you have access to minimum **BYOL Listings** available on Oracle Cloud Infrastructure Marketplace. You can also deploy **PAID Listing** which gives you access to active license.
 
 ## CloudGuard Solution
 

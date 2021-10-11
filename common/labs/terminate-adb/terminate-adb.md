@@ -1,4 +1,4 @@
-# Terminate Oracle Autonomous Database Instance
+# Terminate Oracle Autonomous Database
 
 ## Introduction
 
