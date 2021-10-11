@@ -12,7 +12,7 @@ So what is that "magic" factor? Is it the amount of overtaking? Is it the battle
 
 This question is so interesting, because if we can understand exactly what factors contribute to a good race according to the fans, we might be able to **make the sport even more interesting** by influencing those factors. Think about changes to the rules of the game, how the game is organized, et cetera.
 
-This is a great opportunity for you to learn about Analytics and Machine Learning. You'll use these two to discover the answer to our main question. No experience required, you will learn everything you need to know along the way!
+This is a great opportunity for you to learn about Analytics and Machine Learning. You'll use these to discover the answer to our main question. No experience required, you will learn everything you need to know along the way!
 
 Estimated Workshop Time: 120 minutes
 

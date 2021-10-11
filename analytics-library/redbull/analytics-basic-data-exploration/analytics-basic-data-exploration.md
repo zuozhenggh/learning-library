@@ -76,9 +76,9 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
 8. **Open** the Cloud Analytics **URL** associated with your instance (we created this earlier) by using the dots menu button on the right-hand side of your instance information and selecting **Analytics Home Page**.
 
-   > Make sure your Oracle Analytics Cloud instance is in status `Active` (not `Creating`) before you go to **Analytics Home Page**.
+   > Make sure your Oracle Analytics Cloud instance is in status `Active` (not `Creating`) before you go to the **Analytics Home Page**.
    >
-   > Be patient, Analytics Cloud sometimes can take few more minutes to provision.
+   > Please be patient, Analytics Cloud can sometimes take a few more minutes to provision.
 
     ![Cloud Analytics URL](images/select-oac-instance.png)
 
@@ -413,7 +413,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 	 Notice how we already have aggregated data available on the number of overtakes and the number of Did-Not-Finish. This means these particular metrics are basically "ready to go" to train our ML model on.
 
-	 In addition, we see two columns that have information on the weather. In particular, notice how the Brazilian Grand Prix was held during rainy conditions, while the Abu Dhabi GP had dry conditions. Our hypothesis is that wet weather on average will make a race more spectacular, because of unpredictable events, more complicated pit stop and tire decisions, sliding/turning cars, et cetera. Let's make another note!
+	 In addition, we see two columns that have information on the weather. In particular, notice how the Brazilian Grand Prix was held during rainy conditions, while the Abu Dhabi GP had dry conditions. Our hypothesis is that wet weather on average will make a race more spectacular, because of unpredictable events, more complicated pit stop and tyre decisions, sliding/turning cars, et cetera. Let's make another note!
 
 	 Note 4: Wet weather _may have_ a positive influence on the score that fans give to a race.
 

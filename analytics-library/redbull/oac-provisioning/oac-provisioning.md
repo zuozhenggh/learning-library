@@ -29,7 +29,7 @@ In this lab, you will:
 
    ![Federated user](images/oac_profile_federated.png)
 
-3. Don't you see **oracleidentitycloudservice/** before your email? Then, you need to Sign out and log in as a federated user, following these steps.
+3. If you don't you see **oracleidentitycloudservice/** before your email, then you need to Sign out and log in as a federated user, following these steps.
 
 4. Go to <a href="https://cloud.oracle.com" target="\_blank">cloud.oracle.com</a>, type your **Cloud Account Name** and click **Next**.
 

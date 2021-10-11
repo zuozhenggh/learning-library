@@ -44,7 +44,7 @@ To complete this lab, you need to have the following:
 
    ![ADW Form 2](images/adw_form_2.png)
 
-      - Always Free: Turn it `on`, but it will work if you leave it `off` like in the screeshot.
+      - Always Free: Turn it `on`, but it will work if you leave it `off` like in the screenshot.
       - Choose database version: `19c`, if your region has 21c it will equally work.
       - OCPU count: `1` or default value.
       - Storage (TB): `1` or default value.

@@ -7,10 +7,10 @@
 In this lab we will finally get to the actual Machine Learning part!
 
 We will do the following:
-- Feature Generation: In the advanced data exploration lab we identified additional data points that may be of value. However, we first have to extract those data points.
-- Train the machine learning model: We will use AutoML to take most of the complexity out of training a model.
-- Predict the scores: We will use a Data Flow in OAC to predict the scores for season 2020.
-- Evaluate the accuracy of the model: We will take a visual approach in OAC to compare predicted scores with actual scores.
+- Feature Generation: in the advanced data exploration lab we identified additional data points that may be of value. However, we first have to extract those data points.
+- Train the machine learning model: we will use AutoML to take most of the complexity out of training a model.
+- Predict the scores: we will use a Data Flow in OAC to predict the scores for season 2020.
+- Evaluate the accuracy of the model: we will take a visual approach in OAC to compare predicted scores with actual scores.
 - Finally, we will draw conclusions on the entire exercise.
 
 ### Objectives
@@ -386,9 +386,11 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
 In 2021, Formula 1 appears to be more exciting than ever. Red Bull is a serious contender for the world title. The fight between Hamilton and Verstappen is closer than ever.
 
-The question is: Will our ML model confirm that 2021 is an exciting season?
+The question is: will our ML model confirm that 2021 is an exciting season?
 
-Your challenge is to predict the score values for 2021 and plot the predicted scores. Note that this workshop has data until round 11, the Hungarian Grand Prix of August 2021. This means that you will have to adapt the Data Flow to predict until ROUND 11 of YEAR 2021.
+Your challenge is to predict the score values for 2021 and plot the predicted scores. Note that this workshop has data until round 11, the Hungarian Grand Prix of August 2021.
+
+This means that you will have to adapt the Data Flow to predict until ROUND 11 of YEAR 2021 and then visualize the results, in a similar way as you've done for 2020.
 
 So what do you think? Do the predicted scores reflect the actual level of excitement of 2021?
 
