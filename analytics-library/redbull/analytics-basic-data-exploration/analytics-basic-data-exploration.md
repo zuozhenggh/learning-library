@@ -80,9 +80,9 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
    >
    > Please be patient, Analytics Cloud can sometimes take a few more minutes to provision.
 
-    ![Cloud Analytics URL](images/select-oac-instance.png)
+   ![Cloud Analytics URL](images/select-oac-instance.png)
 
-    The **Oracle Analytics** page will open in a new browser **window/tab**.
+   The **Oracle Analytics** page will open in a new browser **window/tab**.
 
 9. On the top right-hand side of the screen, click **Create**, and then **Connection**.
 
