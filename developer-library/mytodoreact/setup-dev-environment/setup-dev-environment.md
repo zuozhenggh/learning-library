@@ -118,7 +118,7 @@ You should now see `mtdrworkshop` in your root directory
 
 > **Note:** The database creation will take a few minutes.
 
-4. Copy the database OCID  and replace $DBOCID with it in the following comand to populate mtdrworkshopdbid.txt.
+4. Copy the **database OCID**  and replace $DBOCID with it in the following command to populate mtdrworkshopdbid.txt.
 
 	![copy DBOCID](images/copy-DBOCID.png " ")
 
@@ -273,7 +273,7 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 
 ## Task 6: Access OKE from the Cloud Shell
 
-1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
+1. Copy the **Cluster ID** from the Cloud console then replace `$ClusterID` with it in the following command and create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
 	``` bash
 	<copy>echo $ClusterID > ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
@@ -282,7 +282,7 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 2. Run `./verifyOKEAndCreateKubeConfig.sh`
 
 	```
-	<copy>cd mtdrworkshop; ./verifyOKEAndCreateKubeConfig.sh</copy>
+	<copy>cd ~/mtdrworkshop; ./verifyOKEAndCreateKubeConfig.sh</copy>
 	```
 
 > **Note:** `/.kube/config` is created for the OKE cluster.
