@@ -13,6 +13,8 @@ We will do the following:
 - Evaluate the accuracy of the model: we will take a visual approach in OAC to compare predicted scores with actual scores.
 - Finally, we will draw conclusions on the entire exercise.
 
+Estimated Lab Time: 20 minutes
+
 ### Objectives
 - Learn how to generate new features from one or more data sets
 - Learn how to train a model with AutoML
@@ -338,11 +340,15 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
 ## **TASK 7:** Evaluate the accuracy of the model in Oracle Analytics Cloud
 
-1. Select all fields (use control + click to select multiple fields). Then right-click on any of the fields to bring up the context menu and click "Pick Visualization". Then choose the Line visualization.
+1. On the homepage, click "Data", then click the "Predicted Scores" dataset to create a new visualization project.
+
+   ![pic1](images/create-project3.png)
+
+2. Select all fields (use control + click to select multiple fields). Then right-click on any of the fields to bring up the context menu and click "Pick Visualization". Then choose the Line visualization.
 
    ![pic1](images/add-pred-chart.png)
 
-2. Reconfigure the chart setup as follows:
+3. Reconfigure the chart setup as follows:
 
    - Values Y-Axis, first field: `SCORE`
    - Values Y-Axis, second field: `Prediction`
@@ -351,7 +357,7 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
    ![pic1](images/reconfig-chart.png)
 
-3. Inspect the chart.
+4. Inspect the chart.
 
    Notice how the predicted scores follow the actual scores nicely.
 

@@ -20,7 +20,7 @@ To complete this lab, you need to have the following:
 - A provisioned Autonomous Data Warehouse
 - You're logged into your Oracle Cloud Account
 
-## STEP 1: Create a New Database User/Schema in Autonomous Data Warehouse
+## **STEP 1**: Create a New Database User/Schema in Autonomous Data Warehouse
 
 This new user/schema will hold the Grand Prix data.
 

@@ -21,6 +21,8 @@ We will go through the following phases:
 - Prediction: Predict the fan scores for a number of races.
 - Evaluation: Verify the accuracy of the model. We'll take a visual approach to see how accurate our model is.
 
+Estimated Lab Time: 30 minutes
+
 ### Objectives
 - Identify the factors that we can influence to improve the fan experience of F1 races.
 - Learn how to use Oracle Analytics Cloud to Explore Data and Prepare Data to get it ready for building a Machine Learning model.
@@ -105,7 +107,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
     > **Service Name**: Keep the default, the name of your database followed by the `_high` suffix.
     >
 
-    ![Connection Creation](images/oac-adw-connection-details-admin.png)
+    ![Connection Creation](images/oac-adw-connection-details-f1.png)
 
 11. Select **Save** to save your new connection **information**.
 
@@ -515,13 +517,11 @@ How can we check whether our theories about the relationship between position ch
 
 12. Rearrange the chart configuration to be as follows
 
-   >
    > Values (Y-Axis): `SCORE`
 	 >
    > Category (X-Axis): `WEATHER_WET`
 	 >
    > Detail (Box): `NAME_YEAR`
-   >
 
    ![Banner](images/rearrange-boxplot.png)
 
