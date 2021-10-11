@@ -272,6 +272,6 @@ This completes the task of creating a notebook based on a model and viewing the 
 * [Blog: OML AutoML UI](https://blogs.oracle.com/machinelearning/post/introducing-oml-automl-user-interface)
 
 ## Acknowledgements
-* **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Oracle Database
+* **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, September, 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, October, 2021

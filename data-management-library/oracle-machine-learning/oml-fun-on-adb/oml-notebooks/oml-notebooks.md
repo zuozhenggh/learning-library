@@ -30,7 +30,7 @@ This lab assumes you have:
 
 A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Autonomous Database.
 
-1. From the tab on your browser with your ADW instance, click **Service Console**, then select **Development** on the left.
+1. From the tab on your browser with your Oracle Autonomous Data Warehouse instance, click **Service Console**, then select **Development** on the left.
 
 	![Development option in ADW Service Console](images/adw_development.png)
 
@@ -317,6 +317,6 @@ To create a job:
 * [Interactive Tour - Oracle Machine Learning Notebooks](https://docs.oracle.com/en/cloud/paas/autonomous-database/oml-tour/)
 
 ## Acknowledgements
-* **Author** -  Moitreyee Hazarika, Principal User Assistance Developer, Oracle Database
+* **Author** -  Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -   Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, September, 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, October, 2021

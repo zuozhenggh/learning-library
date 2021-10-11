@@ -39,7 +39,7 @@ If, however, you have already used up some quota on your tenancy, perhaps while 
 |                  | Region | Autonomous Transaction Processing OCPU Count         | **4**     | 8                  |
 | LbaaS            | Region | 100Mbps Load Balancer Count                           | **3**     | 3                  |
 
-Quota usage and limits can be check through the console: **Governance & Administration** --> **Governance** --> **Limits, Quotas and Usage**, For example:
+Quota usage and limits can be check through the console: **Limits, Quotas and Usage** in the **Governance & Administration** section , For example:
 
   ![](images/service-limit-example.png " ")
 
@@ -128,7 +128,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![](images/example-user-ocid.png " ")
 
-3. The setup will automatically upload an Auth Token to your tenancy so that docker can log in to the OCI Registry. If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room. This is done through the Oracle Cloud Console.
+3. The setup will automatically upload an Auth Token to your tenancy so that docker can log in to the Oracle Cloud Infrastructure Registry. If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room. This is done through the Oracle Cloud Console.
 
   ![](images/get-user-ocid.png " ")
 
@@ -142,12 +142,12 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 The setup will provision the following resources in your tenancy:
 
-| Resources              | OCI Console Navigation                                                        |
+| Resources              | Oracle Cloud Console Navigation                                               |
 |------------------------|-------------------------------------------------------------------------------|
 | Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
-| Databases (2)          | Oracle Database --> Autonomous Database --> Autonomous Transaction Processing |
-| OKE Cluster            | Developer Services --> Containers --> Kubernetes Clusters (OKE)               |
-| Registry Repositories  | Developer Services --> Containers --> Container Registry                      |
+| Databases (2)          | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing   |
+| OKE Cluster            | Developer Services -- Containers -- Kubernetes Clusters (OKE)                 |
+| Registry Repositories  | Developer Services -- Containers -- Container Registry                        |
 
 You can monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window as this may disturb the setup. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
