@@ -49,7 +49,8 @@ This lab assumes you have:
     
     In the landing home page, click on *servers* and Confirm that EDQ server and Admin server are running.
 
-    ![](images/ws-edq-landing.png " ")
+    ![](images/ws-edq-landing-1.png " ")
+    ![](images/ws-edq-landing-2.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
@@ -64,7 +65,8 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![](images/db-service-status.png " ")
+    ![](images/edq-db-status.png " ")
+    ![](images/edq-db-status2.png " ")
 
     - WLS Admin Server, EDQ Service
     ```
@@ -73,7 +75,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![](images/edq-service-status.png " ")
+    ![](images/edq-status.png " ")
 
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
@@ -81,7 +83,7 @@ This lab assumes you have:
 
     ```
     <copy>
-    sudo sudo systemctl restart oracle-database
+    sudo systemctl restart oracle-database
     </copy>
     ```
 
@@ -89,7 +91,7 @@ This lab assumes you have:
 
     ```
     <copy>
-    sudo sudo systemctl restart edq
+    sudo systemctl restart edq
     </copy>
     ```
 
