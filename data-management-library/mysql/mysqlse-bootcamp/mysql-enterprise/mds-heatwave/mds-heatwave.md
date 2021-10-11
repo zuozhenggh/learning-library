@@ -4,13 +4,15 @@
 
 In this hands-on workshop, you will be introduced to MySQL Database Service (MDS), a powerful union between MySQL Enterprise Edition and Oracle Cloud Infrastructure. You will learn how to create and use three different instances of MySQL Database Service Systems, Standalone, High Availability, and HeatWave,  in a secure Oracle Cloud Infrastructure environment.
 
-Estimated Lab Time: 6 hours
+Estimated Lab Time: 4 hours
 
 
 ### Objectives
 
 In this lab, you will be guided through the following tasks:
 
+- Create Compartment
+- Create policy
 - Create and configure a Virtual Cloud Network (VCN)
 - Create the three MySQL Database Systems
     * Standalone
@@ -33,7 +35,73 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
-## Task 1: Create Virtual Cloud Network
+## Task 1: Create a Compartment
+
+You must have an OCI tenancy subscribed to your home region and enough limits configured for your tenancy to create a MySQL Database System. Make sure to log in to the Oracle Cloud Console as an Administrator.
+
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
+
+    ![Oracle Cloud Console](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
+
+2. On the Compartments page, click **Create Compartment**.
+
+    ![Compartment2](./images/01compartment02.png " ")
+
+   > **Note:** Two Compartments, _Oracle Account Name_ (root) and a compartment for PaaS, were automatically created by the Oracle Cloud.
+
+3. In the Create Compartment dialog box, in the **NAME** field, enter **MDS_Sandbox**, and then enter a Description, select the **Parent Compartment**, and click **Create Compartment**.
+
+    ![Create a Compartment](./images/01compartment03.png " ")
+
+    The following screen shot shows a completed compartment:
+
+    ![Completed Compartment](./images/01compartment04.png " ")
+
+## Task 2: Create a Policy
+
+1.	Click the **Navigation Menu** in the upper-left corner, navigate to **Identity & Security** and select **Policies**.
+
+     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-policies.png " ")
+
+2.	On the Policies page, in the **List Scope** section, select the Compartment (root) and click **Create Policy**.
+
+    ![Policies page](./images/02policy02.png " ")
+
+3.	On the Create Policy page, in the **Description** field, enter **MDS_Policy** and select the root compartment.
+
+3. In the **Policy Builder** section, turn on the **Show manual editor** toggle switch.
+
+    ![Create Policy page](./images/02policy03.png " ")
+
+4. Enter the following required MySQL Database Service policies:
+
+    - Policy statement 1:
+
+     ```
+    <copy>Allow group Administrators to {COMPARTMENT_INSPECT} in tenancy</copy>
+    ```
+
+    - Policy statement 2:
+
+     ```
+    <copy>Allow group Administrators to {VCN_READ, SUBNET_READ, SUBNET_ATTACH, SUBNET_DETACH} in tenancy</copy>
+    ```
+
+    - Policy statement 3:
+
+     ```
+    <copy>Allow group Administrators to manage mysql-family in tenancy</copy>
+    ```
+
+5. Click **Create**.
+
+    ![Create Policy page](./images/02policy04.png " ")
+
+    > **Note:** The following screen shot shows the completed policy creation:
+
+    ![Completed policy creation page](./images/02policy05.png " ")
+
+## Task 3: Create Virtual Cloud Network
 
 Estimated Time: 10 minutes
 
@@ -56,7 +124,7 @@ Estimated Time: 10 minutes
      ````
     <copy>MDS-VCN</copy>
     ````
- Compartment: Select  **(root)**
+ Compartment: Select  **(MDS_Sandbox)**
 
  Your screen should look similar to the following
     ![VCN](./images/03vcn04.png " ")
@@ -74,7 +142,7 @@ Estimated Time: 10 minutes
 8. Click "View Virtual Cloud Network" button to display the  created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. MDS-VCN page Under Subnets in( (**(root)**)) Compartment Click on the  **Private Subnet-MDS-VCN** link
+9. MDS-VCN page Under Subnets in( (**(MDS_Sandbox)**)) Compartment Click on the  **Private Subnet-MDS-VCN** link
             ![VCN](./images/03vcn07.png " ")
 
 10.	Private Subnet-MDS-VCN page under Security Lists  click on the **Security List for Private Subnet-MDS-VCN** link
@@ -129,7 +197,7 @@ Estimated Time: 10 minutes
 
     ![VCN](./images/03vcn12.png " ")
 
-## Task 2: Create a MySQL DB System - Standalone.
+## Task 4: Create a MySQL DB System - Standalone.
 
 Estimated Time: 10 minutes
 
@@ -153,7 +221,7 @@ Estimated Time: 10 minutes
 4. Provide basic information for the DB System:
 
 
- Select Compartment **(root)**
+ Select Compartment **(MDS_Sandbox)**
 
  Enter Name
      ````
@@ -221,7 +289,7 @@ Estimated Time: 10 minutes
 
     ![MDS](./images/04mysql11-1.png" ")
 
-## Task 3: Create a MySQL DB System - High Availability.
+## Task 5: Create a MySQL DB System - High Availability.
 
 Estimated Time: 10 minutes
 
@@ -245,7 +313,7 @@ Estimated Time: 10 minutes
 4. Provide basic information for the DB System:
 
 
- Select Compartment **(root)**
+ Select Compartment **(MDS_Sandbox)**
 
  Enter Name
      ````
@@ -316,7 +384,7 @@ Estimated Time: 10 minutes
     ![MDS](./images/04mysql11-2.png" ")
 
 
-## Task 4: Create a MySQL DB System - HeatWave.
+## Task 6: Create a MySQL DB System - HeatWave.
 
 Estimated Time: 10 minutes
 
@@ -340,7 +408,7 @@ Estimated Time: 10 minutes
 4. Provide basic information for the DB System:
 
 
- Select Compartment **(root)**
+ Select Compartment **(MDS_Sandbox)**
 
  Enter Name
      ````
@@ -416,15 +484,14 @@ Estimated Time: 10 minutes
 
     ![MDS](./images/04mysql11-1.png" ")
 
-
-## Task 5: Create Client Virtual Machine
+## Task 7: Create Client Virtual Machine
 
 Estimated Time: 10 minutes
 
 1. You will need a client machine to connect to your brand new MySQL database. To launch a Linux Compute instance, go to the Console, menu Compute, Instances
     ![COMPUTE](./images/05compute01.png " ")
 
-2. On Instances in **(root)** Compartment, click on Create Instance.
+2. On Instances in **(MDS_Sandbox)** Compartment, click on Create Instance.
     ![COMPUTE](./images/05compute02.png " ")
 
 3. On Create Compute Instance
@@ -433,7 +500,7 @@ Estimated Time: 10 minutes
     ````
     <copy>MDS-Client</copy>
     ````   
-4. Make sure **(root)** compartment is selected.
+4. Make sure **(MDS_Sandbox)** compartment is selected.
 
 5. Choose an operating system or image source (for this lab , select Oracle Linux),
 
@@ -462,7 +529,7 @@ Estimated Time: 10 minutes
     **Save the Public IP Address** under "Instance Access"  on the **MDS_Client** Instance page.
     ![COMPUTE](./images/05compute08.png " ")
 
-## **TASK 6:** Connect to MySQL Database - Standalone
+## Task 8: Connect to MySQL Database - Standalone
 
 Estimated Time: 10 minutes
 
@@ -550,7 +617,7 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
   **Final Sceen Shot**
     ![Connect](./images/06connect05.png " ")
 
-## Task 7: Connect to MySQL Database and Switchover - High Availability
+## Task 9: Connect to MySQL Database and Switchover - High Availability
 
 Estimated Time: 10 minutes
 
@@ -632,7 +699,7 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
 7. **Switchover** - To switch from the current primary instance to one of the secondary instances, do the following:
 
 * Open the navigation menu  Database > MySQL > DB Systems
-* Choose **(root)** Compartment.
+* Choose **(MDS_Sandbox)** Compartment.
 * In the list of DB Systems, Click MDS-HA DB System to display the details page and do the following:
     * Save the current endpoint values for a before and after comparisson of the switch
     ![Connect](./images/07switch01.png " ")  
@@ -644,7 +711,7 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
     * The DB System's status changes to Updating, and the selected instance becomes the primary.
         ![Connect](./images/07switch04.png " ")  
 
-## Task 8: Connect to MySQL Database - HeatWave
+## Task 10: Connect to MySQL Database - HeatWave
 
 Estimated Time: 15 minutes
 
@@ -722,7 +789,7 @@ HeatWave is an add-on to MySQL Database Service. It provides a highly performant
   **Final Sceen Shot**
     ![Connect](./images/06connect05.png " ")
 
-## Task 9:  Create airportdb schema and load data using MySQL Shell
+## Task 11:  Create airportdb schema and load data using MySQL Shell
 
 Estimated Time: 15 minutes
 
@@ -779,7 +846,7 @@ Data files produced by the MySQL Shell Schema Dump Utility include DDL files for
     ````
     <copy>\q</copy>
     ````
-## Task 10:  Add a HeatWave Cluster to MDS-HW MySQL Database System
+## Task 12:  Add a HeatWave Cluster to MDS-HW MySQL Database System
 
 Estimated Time: 15 minutes
 
@@ -788,7 +855,7 @@ Estimated Time: 15 minutes
     ![Connect](./images/10addheat00.png " ")
 
 2. Open the navigation menu  Databases > MySQL > DB Systems
-3. Choose the **(root)** Compartment. A list of DB Systems is displayed.
+3. Choose the **(MDS_Sandbox)** Compartment. A list of DB Systems is displayed.
     ![Connect](./images/10addheat01.png " ")
 4. In the list of DB Systems, click on the **MDS-HW** Ssystem. click the “More Action” -> “Add HeatWave Cluster”.
     ![Connect](./images/10addheat02.png " ")
@@ -815,7 +882,7 @@ required in the Summary box, There is s Load Command (analytics_load) generated 
 12. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click on the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/10addheat07.png " ")
 
-## **TASK 11:**  Load airportdb Data into HeatWave Cluster
+## Task 13: Load airportdb Data into HeatWave Cluster
 
 Estimated Time: 15 minutes
 
@@ -854,7 +921,7 @@ Estimated Time: 15 minutes
     ````
     ![Connect](./images/11loadcluster02.png " ")
 
-## **TASK 12:**  Run Queries in HeatWave
+## Task 14: Run Queries in HeatWave
 
 Estimated Time: 15 minutes
 
@@ -1040,7 +1107,7 @@ LIMIT 10;
     ````
     <copy>SET SESSION use_secondary_engine=ON;</copy>
     ````
-## **TASK 13:**  Connect to HeatWave using Workbench
+## Task 15: Connect to HeatWave using Workbench
 
 Estimated Time: 5 minutes
 
@@ -1054,7 +1121,7 @@ Estimated Time: 5 minutes
     **MySQL Workbench Use  for MDS HeatWAve**
     ![MDS](./images/13workbench02.png " ")
 
-## Task 14: Start, stop, or reboot MySQL DB System
+## Task 16: Start, stop, or reboot MySQL DB System
 
 Estimated Time: 10 minutes
 
@@ -1063,7 +1130,7 @@ Open the navigation menu. Under MySQL, click DB Systems.
 
 List DB Systems
 ![MDS](./images/12main.png " ")
-Choose  **(root)** Compartment
+Choose  **(MDS_Sandbox)** Compartment
 
 Click **MDS-DB** to open the DB System details page
 ![MDS](./images/12dbdetail.png " ")
@@ -1091,7 +1158,7 @@ Select a shutdown type:
 Select the required shutdown type and click the Stop or Restart button, depending on the action chosen.
 
 
-## Task 15: Delete MySQL DB System
+## Task 17: Delete MySQL DB System
 
 Estimated Time: 10 minutes
 
@@ -1102,7 +1169,7 @@ Open the navigation menu. Under MySQL, click DB Systems.
 
 List DB Systems
 ![MDS](./images/12main.png " ")
-Choose  **(root)** Compartment
+Choose  **(MDS_Sandbox)** Compartment
 
 Click **MDS-DB** to open the DB System details page
 ![MDS](./images/12dbdetail.png " ")
@@ -1116,7 +1183,7 @@ Enter the word, all caps, "DELETE" and click "Delete 1 MySQL DB System" button.
 
 When delete process is done **MDS-DB** will be set to Delete status.
 
-## **TASK 16:**  Create a Bastion Host and Connect to MySQL
+## Task 18: Create a Bastion Host and Connect to MySQL
 1. Now we will create a new Bastion Service that will allow us to create a SSH Tunnel to our MySQL DB System
 
 2. Open the navigation menu Identity & Security > Bastion
