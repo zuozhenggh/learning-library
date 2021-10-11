@@ -2,6 +2,8 @@
 
 ## Introduction
 
+7a) MySQL Replication: prepare replica server
+
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
 Estimated Lab Time: -- minutes
@@ -11,37 +13,33 @@ Enter background information here about the technology/feature or product used i
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
 * Objective 1
 * Objective 2
 * Objective 3
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
+**Server:** serverA (slave)
 
-*This is the "fold" - below items are collapsed by default*
+**NOTE:** 
+- ServerA doesn't have binaries installed, so first part of the lab installs them. This is the same to first installation of mysql-advanced on serverB
+- MySQL 8.0 replication requires SSL. To make it works like MySQL 5.7 and practice for the exam we force the usage of old native password authentication in my.cnf
+- Some commands must run inside the source, other on slave: please read carefully the instructions
+
 
 ## Task 1: Concise Step Description
 
-7a) MySQL Replication: prepare replica server
-NOTE: 
-•	ServerA doesn't have binaries installed, so first part of the lab installs them. This is the same to first installation of mysql-advanced on serverB
-•	MySQL 8.0 replication requires SSL. To make it works like MySQL 5.7 and practice for the exam we force the usage of old native password authentication in my.cnf
-•	Some commands must run inside the source, other on slave: please read carefully the instructions
-Server: serverA (slave)
-
 1.	Connect to serverA and execute the script to create a new user/group, folders structure and install binaries (be careful with copy&paste)
 
-shell> /workshop/support/lab7a-MySQL_Replication___Prepare_replica_server.sh
-
+    **shell>** 
+    ```
+    <copy>/workshop/support/lab7a-MySQL_Replication___Prepare_replica_server.sh</copy>
+    ```
 2.	Close the SSH connection and open a new one to let opc user have the new group.
 
 

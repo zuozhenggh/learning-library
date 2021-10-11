@@ -2,21 +2,24 @@
 
 ## Introduction
 
+5a) MySQL Enterprise Monitor - Install Service Manager
+Objective: Install MySQL Enterprise Monitor Service Manager
+
+Server: 
+•	serverA for Enterprise Monitor
+•	ServerB for Enterprise Agent
+
+
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
 Estimated Lab Time: -- minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
-
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* MySQL Enterprise Monitor Service Manager Install
+* Installer questions summary
+* MySQL Monitor Status
 
 ### Prerequisites (Optional)
 
@@ -26,40 +29,45 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
+**Server:** 
+- serverA for Enterprise Monitor
+- ServerB for Enterprise Agent
 
 
-## Task 1: Concise Step Description
-5a) MySQL Enterprise Monitor - Install Service Manager
-Objective: Install MySQL Enterprise Monitor Service Manager
+**Note:**
+- Note down the IP address here.  
+- serverA Public IP address : 
+- The Public IP Address is used on your Local Browser 
+    
+    https://<public ip>:18443)
 
-Server: 
-•	serverA for Enterprise Monitor
-•	ServerB for Enterprise Agent
+- serverB Private IP address : 
 
-
-Note:
-•	Note down the IP address here.  
-	serverA Public IP address : _______________________________
-The Public IP Address is used on your Local Browser https://<public ip>:18443
-
-	serverB Private IP address : _______________________________
 This is used when you Add Instance as Remote Monitoring using agentless option
 
-•	References
-o	https://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-install-tuning.html
-o	https://dbtut.com/index.php/2018/10/25/installation-of-mysql-enterprise-monitor/
+- References
+- https://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-install-tuning.html
+- https://dbtut.com/index.php/2018/10/25/installation-of-mysql-enterprise-monitor/
 
  ![Image alt text](images/monitor-managment-1.png)
 
-## Task 2: MySQL Enterprise Monitor Service Manager Install
+## Task 1: MySQL Enterprise Monitor Service Manager Install
 
 1.	On serverA: Install the MySQL Enterprise Monitor Service Manager on your Linux instance
 
-shell> cd /workshop/linux/monitor
+    a. **shell>** cd /workshop/linux/monitor
 
-shell> sudo ./mysqlmonitor-8.0.25.1328-linux-x86_64-installer.bin 
+    ```
+    <copy>exit</copy>
+    ```
+    b. **shell>** sudo ./mysqlmonitor-8.0.25.1328-linux-x86_64-installer.bin 
 
-Here a summary of the installer questions:  
+    ```
+    <copy>exit</copy>
+    ```
+
+## Task 2: Installer questions summary 
+
 (Except for the Password Entry [ using Welcome1! ], all other INPUTs are DEFAULT – Just hit <ENTER>)
 Language Selection
 
@@ -72,17 +80,17 @@ Info: During the installation process you will be asked to enter usernames and
 passwords for various pieces of the Enterprise Monitor. Please be sure to make
 note of these in a secure location so you can recover them in case they are
 forgotten.
+
 Press [Enter] to continue:
-----------------------------------------------------------------------------
+
 Welcome to the setup wizard for the MySQL Enterprise Monitor
 
-----------------------------------------------------------------------------
+
 Please specify the directory where the MySQL Enterprise Monitor will be
 installed
 
 Installation directory [/opt/mysql/enterprise/monitor]:
 
-----------------------------------------------------------------------------
 Select Requirements
 
 Select Requirements
@@ -96,7 +104,7 @@ System Size
 [3] Large system: More than 100 MySQL Servers monitored from a high-end server dedicated to MEM with more than 8 GB RAM
 Please choose an option [2] : 1
 
-----------------------------------------------------------------------------
+
 Tomcat Server Options
 
 Please specify the following parameters for the bundled Tomcat Server
@@ -105,7 +113,7 @@ Tomcat Server Port [18080]:
 
 Tomcat SSL Port [18443]:
 
-----------------------------------------------------------------------------
+
 Service Manager User Account
 
 You are installing as root, but it's not good practice for the Service Manager
@@ -115,7 +123,7 @@ created for you if it doesn't already exist.
 
 User Account [mysqlmem]:
 
-----------------------------------------------------------------------------
+
 Database Installation
 
 Please select which database configuration you wish to use
@@ -137,7 +145,7 @@ Visit the following URL for more information:
 
 http://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-install-server.html
 
-----------------------------------------------------------------------------
+
 Repository Configuration
 
 Please specify the following parameters for the bundled MySQL server
@@ -150,19 +158,19 @@ MySQL Database Port [13306]:
 
 MySQL Database Name [mem]:
 
-----------------------------------------------------------------------------
+
 Setup is now ready to install MySQL Enterprise Monitor on your computer.
 
 Do you want to continue? [Y/n]: Y
 
-----------------------------------------------------------------------------
+
 Please wait while Setup installs MySQL Enterprise Monitor on your computer.
 
  Installing
  0% ______________ 50% ______________ 100%
  #########################################
 
-----------------------------------------------------------------------------
+
 Completed installing files
 
 
@@ -180,7 +188,7 @@ and a list of known issues.
 
 Press [Enter] to continue:
 
-----------------------------------------------------------------------------
+
 Completed installing files
 
 WARNING: To improve security, all communication with the Service Manager uses
@@ -193,7 +201,7 @@ browser. See the documentation for more information.
 http://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-ssl-installation.html
 Press [Enter] to continue:
 
-----------------------------------------------------------------------------
+
 Setup has finished installing MySQL Enterprise Monitor on your computer.
 
 View Readme File [Y/n]: n
@@ -203,28 +211,32 @@ https://localhost:18443
 Press [Enter] to continue:
 
 ## Task 3: MySQL Monitor Status
+
 1.	On serverA: Check the status of the MySQL Monitor
 
-Shell> sudo /opt/mysql/enterprise/monitor/mysqlmonitorctl.sh status
+    **Shell>**
 
+    ```
+    <copy> sudo /opt/mysql/enterprise/monitor/mysqlmonitorctl.sh status</copy>
+    ```
 2.	On serverA: After the successful installation connect to the newly installed service with a web browser on the address from your laptop (please use thee public IP and be patient, startup may require few minutes depending on VM resources)
 https://<public_ip_of_serverA>:18443
 
  ![Image alt text](images/monitor-managment-1.png)
 
-3.	Fill then Admin user and Agent user settings
+3. Fill then Admin user and Agent user settings
 Admin user : admin	-	Admin password: Welcome1!
 Agent user : agent	-	Agent password: Welcome1!
 
-4.	     Click ‘Complete Setup’ button
+4. Click ‘Complete Setup’ button
 
  
-5.	Choose your time zone and keep “English” for locale
+5. Choose your time zone and keep “English” for locale
 ![Image alt text](images/monitor-managment-3.png)
 
-7.	Now you are logged in, start exploring the interface
+7. Now you are logged in, start exploring the interface
 
-8.	Connect your MEM to use mysql-advanced in agentless mode [ on student###-serverB:3307 ]
+8. Connect your MEM to use mysql-advanced in agentless mode [ on student###-serverB:3307 ]
 a.	On left side menu expand “Configuration” and select “Mysql Instances”. 
 Click button “Add MySQL Instance” and fill
 
@@ -235,11 +247,11 @@ Admin User: admin
 Admin password: Welcome1!
 Auto-Create Less Privileged Users: No
 
-9.	Do you see statistics on NIC, disk etc? You should not (!)
+9. Do you see statistics on NIC, disk etc? You should not (!)
 
-10.	Check the monitoring status on the top right [Dolphin Logo]
+10. Check the monitoring status on the top right [Dolphin Logo]
 
-11.	How many server (Hosts) are you monitoring? How many MySQL Instances (Monitored, not Monitored etc.) are there? # Do not add this/these servers yet!
+11. How many server (Hosts) are you monitoring? How many MySQL Instances (Monitored, not Monitored etc.) are there? # Do not add this/these servers yet!
  
 
 ## Learn More

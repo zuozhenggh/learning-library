@@ -2,34 +2,6 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
-
-Estimated Lab Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
-
-### Objectives
-
-*List objectives for this lab using the format below*
-
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
-
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
-
-*This is the "fold" - below items are collapsed by default*
-
-## Task 1: Concise Step Description
 5b) MySQL Enterprise Monitor - Install Agent
 Objective: Install MySQL Enterprise Monitor Agent
 
@@ -37,31 +9,68 @@ Server:
 •	serverA for Enterprise Monitor
 •	ServerB for Enterprise Agent
 
-Note:
-•	Note down the IP address here.  
-	serverA Public IP address : _______________________________
+*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+
+Estimated Lab Time: -- minutes
+
+### Objectives
+
+*List objectives for this lab using the format below*
+
+In this lab, you will:
+* Concise Step Description
+* Question Summary
+* Use Agent
+* OPTIONAL: add workload
+
+### Prerequisites 
+
+This lab assumes you have:
+* An Oracle account
+* All previous labs successfully completed
+
+**Server:** 
+- serverA for Enterprise Monitor
+- ServerB for Enterprise Agent
+
+**Note:**
+- Note down the IP address here.  
+- serverA Public IP address : 
 The Public IP Address is used on your Local Browser https://<public ip>:18443
 
-	serverA Private IP address :  ______________________________
+- serverA Private IP address : 
+
 Used during Agent configuration
 
-	serverB Private IP address : _______________________________
+- serverB Private IP address :  
+
 This is used when you Add Instance as Remote Monitoring using agentless option
 
-•	References
-o	https://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-install-tuning.html
-o	https://dbtut.com/index.php/2018/10/25/installation-of-mysql-enterprise-monitor/
+**References**
+- https://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-install-tuning.html
+- https://dbtut.com/index.php/2018/10/25/installation-of-mysql-enterprise-monitor/
 
 ![Image alt text](images/monitor-agent-1.png)
 
+
 ## Task 1: Concise Step Description
+
 1.	On  serverB : Install the MEM agent and connect to your MEM server on MEMBER1
 
-Here a summary of the questions (from command installation in linux). Note Linux requires a manual first start
 
-shell> cd /workshop/linux/agent
+    **shell>** 
 
-shell> sudo ./mysqlmonitoragent-8.0.25.1328-linux-x86-64bit-installer.bin 
+    ```
+    <copy>cd /workshop/linux/agent</copy>
+    ```
+    **shell>** 
+
+    ```
+    <copy>sudo ./mysqlmonitoragent-8.0.25.1328-linux-x86-64bit-installer.bin </copy>
+    ```
+## Task 2: Question Summary 
+
+Here is  a summary of the questions (from command installation in linux). Note Linux requires a manual first start
 
 Language Selection
 
@@ -70,10 +79,9 @@ Please select the installation language
 [2] Japanese - 日本語
 [3] Simplified Chinese - 简体中文
 Please choose an option [1] : 1
-----------------------------------------------------------------------------
+
 Welcome to the MySQL Enterprise Monitor Agent Setup Wizard.
 
-----------------------------------------------------------------------------
 Installation directory
 
 
@@ -91,7 +99,6 @@ How will the agent connect to the database it is monitoring?
 [2] Socket
 Please choose an option [1] :
 
-----------------------------------------------------------------------------
 Monitoring Options
 
 You can configure the Agent to monitor this host (file systems, CPU, RAM, etc.)
@@ -110,13 +117,12 @@ Monitoring options:
 [2] Host and database: Configure the Agent to monitor this host and furnish connection parameters for a specific MySQL Instance now. This process may be scripted. Once installed, this Agent will also continuously look for new MySQL Instances to monitor as described above.
 Please choose an option [2] : 1
 
-----------------------------------------------------------------------------
 Setup is now ready to begin installing MySQL Enterprise Monitor Agent on your
 computer.
 
 Do you want to continue? [Y/n]: Y
 
-----------------------------------------------------------------------------
+
 Please wait while Setup installs MySQL Enterprise Monitor Agent on your
 computer.
 
@@ -124,7 +130,7 @@ computer.
  0% ______________ 50% ______________ 100%
  #########################################
 
-----------------------------------------------------------------------------
+
 MySQL Enterprise Monitor Options
 
 Hostname or IP address []: [private IP address student###-serverA]
@@ -139,7 +145,7 @@ Agent Username [agent]:
 
 Agent Password : Welcome1!
 Re-enter : Welcome1!
-----------------------------------------------------------------------------
+
 Monitored Database Configuration Options
 
 
@@ -157,7 +163,6 @@ Configure encryption settings for user accounts [y/N]: n
 Configure less privileged user accounts [y/N]: n
 
 
-----------------------------------------------------------------------------
 Monitored Database Information
 
 IMPORTANT: The Admin user account specified below requires special MySQL 
@@ -176,8 +181,6 @@ Admin Password : Welcome1!
 Re-enter Password : Welcome1!
 Monitor Group []: 
 
-
-----------------------------------------------------------------------------
 Configuration Report
 
 
@@ -194,7 +197,7 @@ http://dev.mysql.com/doc/mysql-monitor/8.0/en/mem-qanal-using-feeding.html
 Installation directory: /opt/mysql/enterprise/agent
 
 MySQL Enterprise Monitor UI:
--------------------------
+
 Hostname or IP address: <the ip>
 Tomcat Server Port: 18443
 Use SSL: yes
@@ -202,39 +205,48 @@ Use SSL: yes
 
 Press [Enter] to continue:
 
-----------------------------------------------------------------------------
 Start MySQL Enterprise Monitor Agent
 
 Info to start the MySQL Enterprise Monitor Agent
 
 The MySQL Enterprise Monitor Agent was successfully installed. To start the
 Agent please invoke:
+
 /etc/init.d/mysql-monitor-agent start
+
 Press [Enter] to continue:
 
-----------------------------------------------------------------------------
+
 Setup has finished installing MySQL Enterprise Monitor Agent on your computer.
 
 View Agent Readme File [Y/n]: n
 
-2.	Start the agent
+## Task 3: Use Agent
 
-shell> sudo /etc/init.d/mysql-monitor-agent start
+1.	Start the agent
 
-3.	Open your MySQL Monitor mysql-advanced connection (left menu Configuration\MySQL Instances) and change the “Monitor from” choosing your agent instead of the MEM Built-in Agent
+    **shell>** 
 
-4. Do you see statistics on NIS, disk etc.?
+    ```
+    <copy>sudo /etc/init.d/mysql-monitor-agent start</copy>
+    ```
+2.	Open your MySQL Monitor mysql-advanced connection (left menu Configuration\MySQL Instances) and change the “Monitor from” choosing your agent instead of the MEM Built-in Agent
+
+3. Do you see statistics on NIS, disk etc.?
 
 
 
-OPTIONAL: add workload
-5.	OPTIONAL: Try to add some load on your server to watch graphics change
+## Task 4: OPTIONAL: add workload
+1.	Try to add some load on your server to watch graphics change
 
-a.	run the test tool “mysqlslap” (available in all MySQL Server installations):
+    a.	run the test tool “mysqlslap” (available in all MySQL Server installations):
 
-shell> mysqlslap --user=admin --password --host=127.0.0.1 --port=3307 --concurrency=20 --iterations=5000 --number-int-cols=5 --number-char-cols=20 --auto-generate-sql --verbose
+    **shell>** 
 
-b.	Check behavior in MEM, can you see the peaks?
+    ```
+    <copy> mysqlslap --user=admin --password --host=127.0.0.1 --port=3307 --concurrency=20 --iterations=5000 --number-int-cols=5 --number-char-cols=20 --auto-generate-sql --verbose</copy>
+    ```
+    b.	Check behavior in MEM, can you see the peaks?
 
 
 

@@ -2,78 +2,128 @@
 
 ## Introduction
 
+4b) MySQL JSON datatype 
+Objective: practice with JSON
+
+Server: serverB
+
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
 Estimated Lab Time: -- minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
-
 ### Objectives
 
-*List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create Database and Table
+* Load Table
+* Retrieve Data
+* Use Index
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites 
 
 This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
+**Server:** serverB
 
-*This is the "fold" - below items are collapsed by default*
+## Task 1: Create Database and Table
 
-## Task 1: Concise Step Description
-4b) MySQL JSON datatype 
-Objective: practice with JSON
-Server: serverB
+1. Create a database for JSON tests
 
-1.	Create a database for JSON tests
+    a. **mysql>**
 
-mysql> CREATE DATABASE json_test;
+    ```
+    <copy>CREATE DATABASE json_test;</copy>
+    ```
+    b. **mysql>** 
 
-mysql> USE json_test;
-
+    ```
+    <copy>USE json_test;</copy>
+    ```
 2.	Create a JSON table
 
-mysql> CREATE TABLE jtest (id bigint NOT NULL AUTO_INCREMENT, doc JSON, PRIMARY KEY (id)); 
+    a. **mysql>**  
 
-mysql> SELECT * FROM jtest;
+    ```
+    <copy>CREATE TABLE jtest (id bigint NOT NULL AUTO_INCREMENT, doc JSON, PRIMARY KEY (id));</copy>
+    ```
+    b. **mysql>** 
 
-3.	add data to this table
+    ```
+    <copy>SELECT * FROM jtest;</copy>
+    ```
+## Task 2: Load Table
 
-mysql> INSERT INTO jtest(doc) VALUE('{"A": "hello", "b": "test", "c": {"hello": 1}}');
+1.	add data to this table
 
-mysql> INSERT INTO jtest(doc) VALUE('{"b": "hello"}'),('{"c": "help"}');
+    a. **mysql>** 
 
-mysql> SELECT * FROM jtest;
+    ```
+    <copy>INSERT INTO jtest(doc) VALUE('{"A": "hello", "b": "test", "c": {"hello": 1}}');</copy>
+    ```
+    b. **mysql>** 
 
-4.	Retrieve json documents with these commands (note the shortcut “->”)
+    ```
+    <copy>INSERT INTO jtest(doc) VALUE('{"b": "hello"}'),('{"c": "help"}');</copy>
+    ```
+2.	Display table dada  
 
-mysql> SELECT json_extract (doc, "$.b") FROM jtest;
+    **mysql>**
 
-mysql> SELECT doc->"$.b" FROM jtest;
+    ```
+    <copy>SELECT * FROM jtest;</copy>
+    ```
+## Task 3: Retrieve Data 
 
-mysql> SELECT json_extract (doc, "$.c") FROM jtest;
+1.	Retrieve json documents with shortcut “->” 
 
-mysql> SELECT doc->"$.b" from jtest;
+    a. **mysql>** 
 
-mysql> SELECT doc->>"$.b" from jtest;
+    ```
+    <copy>SELECT json_extract (doc, "$.b") FROM jtest;</copy>
+    ```
+    b. **mysql>** 
 
+    ```
+    <copy>SELECT doc->"$.b" FROM jtest;</copy>
+    ```
+2.	Retrieve json documents with shortcut “$.” 
+
+    a. **mysql>** 
+
+    ```
+    <copy>SELECT json_extract (doc, "$.c") FROM jtest;</copy>
+    ```
+    b. **mysql>** 
+
+    ```
+    <copy>SELECT doc->"$.b" from jtest;</copy>
+    ```
+    c. **mysql>** 
+
+    ```
+    <copy>SELECT doc->>"$.b" from jtest;</copy>
+    ```
+## Task 4: Use Index
 5.	Create Index on the virtual column
 
-mysql>  alter table jtest add column gencol CHAR(7) AS (doc->"$.b");
+    a. **mysql>**  
 
-mysql> CREATE INDEX myvirtindex ON jtest(gencol);
+    ```
+    <copy>alter table jtest add column gencol CHAR(7) AS (doc->"$.b");</copy>
+    ```
+    b. **mysql>** 
 
-mysql> SELECT * FROM jtest;
+    ```
+    <copy>CREATE INDEX myvirtindex ON jtest(gencol);</copy>
+    ```
+    c. **mysql>** 
 
+    ```
+    <copy>SELECT * FROM jtest;</copy>
+    ```
 
 ## Learn More
 

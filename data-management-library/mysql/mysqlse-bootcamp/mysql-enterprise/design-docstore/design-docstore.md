@@ -2,94 +2,137 @@
 
 ## Introduction
 
+4c) MySQL Document Store
+Objective: Understanding the functioning of MySQL Document Store and practicing some CRUD operations.
+
+Server: serverB
+
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
 Estimated Lab Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives
 
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* *Use Xprotocol and use collection
+* Work with 1ndexes
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites 
 
 This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
+**Server:** serverB
 
-*This is the "fold" - below items are collapsed by default*
-
-## Task 1: Concise Step Description
-4c) MySQL Document Store
-Objective: Understanding the functioning of MySQL Document Store and practicing some CRUD operations.
-
-Server: serverB
-
-Notes:
-•	Please note that we use the port for Xdev (33070) instead of usual classic protocol port (3307)
+**Notes:**
+- Please note that we use the port for Xdev (33070) instead of usual classic protocol port (3307)
 
 
+## Task 1: Use Xprotocol and use collection
 
 1. Please connect to MySQL Database via X Protocol
 
-	shell> mysqlsh -uroot -h127.0.0.1 -P33070 -p
+	**shell>** 
 
+    ```
+    <copy>mysqlsh -uroot -h127.0.0.1 -P33070 -p</copy>
+    ```
 2. Create and use a test schema. (We use javascript mode, but python is available also)
 	
-	MySQL … JS > session.createSchema('test')
+	a. **MySQL … JS >** 
 
-MySQL … JS > \use test
+    ```
+    <copy>session.createSchema('test')</copy>
+    ```
+	b. **MySQL … JS >** 
 
+    ```
+    <copy>\use test</copy>
+    ```
 3. Now create and populate a small collection
 	
-	MySQL … JS > db.createCollection('posts');
+	c. **MySQL … JS >** 
 
-	MySQL … JS > db.posts.add({"title":"MySQL 8.0 rocks", "text":"My first post!", "code": "42"})
+    ```
+    <copy>db.createCollection('posts');</copy>
+    ```
+	d. **MySQL … JS >** 
 
-	MySQL … JS > db.posts.add({"title":"Polyglot database", "text":"Developing both SQL and NoSQL applications"})
+    ```
+    <copy>db.posts.add({"title":"MySQL 8.0 rocks", "text":"My first post!", "code": "42"})</copy>
+    ```
+	e. **MySQL … JS >** 
 
+    ```
+    <copy>db.posts.add({"title":"Polyglot database", "text":"Developing both SQL and NoSQL applications"})</copy>
+    ```
 4. Checking the built-in JSON validation
 	
-	MySQL … JS > db.posts.add("This is not a valid JSON document")
+	**MySQL … JS >** 
 
+    ```
+    <copy>db.posts.add("This is not a valid JSON document")</copy>
+    ```
 5. Inspect the posts collection you have just created 
 	
-	MySQL … JS > db.posts.find()
+	**MySQL … JS >** 
 
-What can you notice? Did the system add something to content by itself?
+    ```
+    <copy>db.posts.find()</copy>
+    ```
+6. What can you notice? Did the system add something to content by itself?
 	
-	MySQL … JS > db.posts.find().limit(1)
+	**MySQL … JS >** 
 
-6.  Modify existing elements of the collection
+    ```
+    <copy>db.posts.find().limit(1)</copy>
+    ```
+7.  Modify existing elements of the collection
 	
-	MySQL … JS > db.posts.modify("title = 'MySQL 8.0 rocks'").set("title", " MySQL 8.0 rocks!!!")
+	a. **MySQL … JS >** db.posts.modify("title = 'MySQL 8.0 rocks'").set("title", " MySQL 8.0 rocks!!!")
 
-	MySQL … JS > db.posts.find()
+    ```
+    <copy>exit</copy>
+    ```
+	b. **MySQL … JS >** db.posts.find()
 
-7. Check that that a collection is just a table with 2 columns: Index and JSON Document
+    ```
+    <copy>exit</copy>
+    ```
+## Task 2: Work with 1ndexes
+
+1. Check that that a collection is just a table with 2 columns: Index and JSON Document
 	
-	MySQL … JS > session.sql("desc posts")
+	a. **MySQL … JS >** 
 
-	MySQL … JS > session.sql("show create table posts")
+    ```
+    <copy>session.sql("desc posts")</copy>
+    ```
+	b. **MySQL … JS >** 
 
-	MySQL … JS > session.sql("select * from posts")
+    ```
+    <copy>session.sql("show create table posts")</copy>
+    ```
+	c. **MySQL … JS >** 
 
-8. Therefore, it is possible to add indexes on specific JSON elements of the collection
+    ```
+    <copy>session.sql("select * from posts")</copy>
+    ```
+2. Therefore, it is possible to add indexes on specific JSON elements of the collection
 
-	MySQL … JS > db.posts.createIndex('myIndex', {fields: [{field: "$.title", type: "TEXT(20)"}]} )
+	a. **MySQL … JS >** 
 
-	MySQL … JS > session.sql("show create table posts")
+    ```
+    <copy>db.posts.createIndex('myIndex', {fields: [{field: "$.title", type: "TEXT(20)"}]} )</copy>
+    ```
+	b. **MySQL … JS >** 
 
+    ```
+    <copy>session.sql("show create table posts")</copy>
+    ```
 
 ## Learn More
 
