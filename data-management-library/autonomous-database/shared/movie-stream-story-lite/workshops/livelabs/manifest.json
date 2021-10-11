@@ -17,24 +17,29 @@
         "filename": "../../provision-database/adb-provision-moviestream.md"
       },
       {
-          "title": "Lab 2: Use Data Tools to Create a User and Load Data",
-          "filename": "../../load-data/load-data.md"
+        "title": "Lab 2: Use Data Tools to create a user and load data",
+        "filename": "../../load-data/load-data.md"
       },
       {
-          "title": "Lab 3: Working with JSON Data",
-          "filename": "../../working-with-semi-structured-data/working-with-semi-structured-data.md"
+          "title": "Lab 3: Analyzing movie sales data",
+          "filename": "../../analyzing-movie-sales-data/analyzing-movie-sales-data.md"
       },
       {
-          "title": "Lab 4: Use OML to Predict Customer Churn",
+        "title": "Lab 4: Working with JSON Data",
+        "filename": "../../working-with-semi-structured-data/working-with-semi-structured-data.md"
+        
+      },
+      {
+          "title": "Lab 5: Use OML to predict customer churn",
           "type": "livelabs",
           "filename": "../../predict-churn/predict-churn.md"
       },
       {
-          "title": "Lab 5: Find the closest pizza shops with Oracle Spatial",
+          "title": "Lab 6: Find the closest pizza shops with Oracle Spatial",
           "filename": "../../apply-spatial/apply-spatial.md"
       },
       {
-          "title": "Lab 6: Use Graph Analytics for Product Recommendations",
+          "title": "Lab 7: Use Graph analytics for product recommendations",
           "filename": "../../apply-graph/apply-graph.md"
       },
       {
