@@ -30,8 +30,7 @@ This lab assumes you have:
 
 1. Go to <https://geojson.io/>
 
-2. Search for your location, in this instance we will search for “2041
-    KP Zandvoort, Netherlands”.
+2. Search for your location, in this instance we will search for “2041 KP Zandvoort, Netherlands”.
 
     ![](images/track-zandvoort.png " ")  
     
@@ -41,8 +40,9 @@ layout to find your three sectors, colored red, yellow, and blue.
 
      You will use the line tool to draw each sector.
 
-3.  Start drawing your LineString by choosing the polyline option ![](images/polyline.png " ").  
-Your JSON code will contain a top level FeatureCollection and  multiple Features nested below it. Add a “name”:”\[unique name\]” to each “LineString” property.  
+3.  Start drawing your LineString by choosing the polyline option ![](images/polyline.png " ")  
+
+    Your JSON code will contain a top level FeatureCollection and  multiple Features nested below it. Add a “name”:”\[unique name\]” to each “LineString” property.  
 
     **CODE SNIPPIT:**  
      **Before**
@@ -110,7 +110,7 @@ in OAC.
 
     ![](images/save-geojson.png " ")
 
-6. Rename the file to the map layer name. example: Circuit Zandvoort Sectors
+6. Rename the file to the map layer name. example: _Circuit Zandvoort Sectors_
 
 ## Task 2: Create Points that represent turns on Circuit Zandvoort
 
@@ -120,7 +120,7 @@ in OAC.
 
     > **Note:** Use the [Circuit Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) layout to find each turn. You will find turns labeled 1-14.
 
-3. Create a GeoJSON file with Points using the “Draw a Marker” option. Add the 14 turns to your map.
+3. Create a GeoJSON file with Points using the “**Draw a Marker**” option. Add the 14 turns to your map.
 
     ![](images/draw-marker.png " ")  
     ![](images/circuit-zandvoort.png " ")

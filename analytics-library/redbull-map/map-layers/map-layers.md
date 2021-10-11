@@ -15,21 +15,21 @@ This lab assumes you have:
 - Permission to create Datasets in OAC
 - Created a file or use the data file provided
 
-## Task 1: Create a Dataset and assign to a map layer
+## Task 1: Create a Dataset and assign to a Map Layer
 
-Now that you have your two map layers created and imported, we need to associate these keys to values in your data. Our first simple exercise will be to **create a Dataset** for each **map layer**.
+Now that you have your two map layers created and imported, we need to associate these keys to values in your data. Our first simple exercise will be to **create a Dataset** for each **Map Layer**.
 
 Create a file that contains the following information. The name field in your data set needs to match the id value in the map layer.
 
-![](images/turns.png " ")
+![](images/turns.png " ") 
 ![](images/segments.png " ")
 
 
-1. From OAC, select Create -> Dataset.
+1. On the top right of the **Oracle Analytics Home Page**, choose **Create** and then **Data Set**
 
     ![](images/create-dataset.png " ")
 
-2. Browse to the file you created for turns and sector.  
+2. Browse to the file you created for Turns and Segments (Sector)  
 
     ![](images/dataset-browse.png " ")
 
@@ -75,7 +75,7 @@ Drag **Name** to **Color**
 
     You can extend your Dataset with additional values such as speed to provide additional values to display. You can use all of the powers of OAC now to blend additional DataSets to make your visualization more interactive.
 
-12. Click **Data** tab on your center-top header and within the Dataset icon, click the  pencil and then choose **Edit Definition**.  
+12. Click **Data** tab on your center-top header and within the Dataset icon, click the  _pencil_ and then choose **Edit Definition**.  
 
     ![](images/data-edit-definition.png " ")
 
@@ -83,7 +83,7 @@ Drag **Name** to **Color**
 
     ![](images/segments-two.png " ")
 
-14. Return to your Visualize tab and add your new Max Speed Measure to size to see the fastest part of the track.  
+14. Return to your **Visualize** tab and add your new Max Speed Measure to size to see the fastest part of the track.  
 
     Click **New Workbook** browser page 
 
@@ -93,17 +93,13 @@ Drag **Name** to **Color**
 
     ![](images/new-workbook-viz.png " ")
 
-16. Click **Visualize** tab  
-
-    ![](images/new-workbook-viz.png " ")
-
-17. Drag and Drop **Max Speed** to **Size**  
+16. Drag and Drop **Max Speed** to **Size**  
 
     ![](images/max-speed-to-size.png " ")
 
     > **Note:** Min and Max speed values are not real and were created for the use in this exercise 
 
-18. Your visualization should look like  
+17. Your visualization should look like  
 
     ![](images/map-max-speed-to-size.png " ")  
 
@@ -155,7 +151,7 @@ Select **Delete All Matches**, click **OK**, confirm that you want to disconnect
 
     ![](images/delete-all-matches.png " ")
 
-!!! MISSING PIECES  
+**!!! MISSING PIECES  **
 
 11. Returning to your visualize tab you will add your second layer and use your Turns data to represent the points on your map.  
 Click the add layer button as shown below.

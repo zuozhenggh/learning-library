@@ -59,8 +59,8 @@ This lab assumes you have:
 
     ![](images/home-page.png " ")
 
-You have now loaded your custom map layers into OAC. Next we will
-associate the LineStrings and Points to your data.
+You have now loaded your custom **Map Layers** into OAC.  
+Next we will associate the LineStrings and Points to your data.
 
 Congratulations on completing this lab!
 
