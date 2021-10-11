@@ -148,11 +148,9 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
 8. Provide basic information for the autonomous database:
 
-    - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __ADW Finance Mart__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __ADWFINANCE__.
-
-    ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
+    - __Choose a compartment__ - Select a compartment for the database from the drop-down list (lakehouse1).
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use Lakehousedb.
+    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use Lakehousedb.
 
 9. Choose a workload type. Select the workload type for your database from the choices:
 
@@ -179,7 +177,7 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     *Note: You cannot scale up/down an Always Free autonomous database.*
 
-    ![Choose the remaining parameters.](./images/Picture100-26c.png " ")
+      ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
 
 12. Create administrator credentials:
 
@@ -288,5 +286,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management
-* **Contributors** -  Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
+* **Contributors** -  Massimo Castelli, Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
 * **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
