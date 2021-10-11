@@ -32,7 +32,7 @@ This lab assumes you have:
 - Some commands must run inside the source, other on slave: please read carefully the instructions
 
 
-## Task 1: Concise Step Description
+## Task 1: Prepare Replica
 
 1.	Connect to serverA and execute the script to create a new user/group, folders structure and install binaries (be careful with copy&paste)
 
@@ -53,4 +53,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Engineering
 * **Contributors** -  Marco Carlessi, MySQL Engineering
-* **Last Updated By/Date** - <Perside Foster, October 2021
+* **Last Updated By/Date** - Perside Foster, October 2021
