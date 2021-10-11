@@ -98,7 +98,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
     >
     > **Client Credentials**: Use the Browse button to upload the **wallet zip > file** that you downloaded. It will automatically extract the `cwallet.sso` file from this zip bundle.
     >
-    > **Username**: `ADMIN`
+    > **Username**: `F1`
     >
     > **Password**: `Oracle_12345`
     >
@@ -513,26 +513,23 @@ How can we check whether our theories about the relationship between position ch
 
    ![Banner](images/boxplot1.png)
 
-12. Rearrange the chart configuration to be as follows:
+12. Rearrange the chart configuration to be as follows
 
-   * Values (Y-Axis): `SCORE`
-   * Category (X-Axis): `WEATHER_WET`
-   * Detail (Box): `NAME_YEAR`
+   - Values (Y-Axis): `SCORE`
+   - Category (X-Axis): `WEATHER_WET`
+   - Detail (Box): `NAME_YEAR`
 
-	 ![Banner](images/rearrange-boxplot.png)
+   ![Banner](images/rearrange-boxplot.png)
 
-13. Inspect the Boxplot.
+13. Inspect the Boxplot
 
-   How to read this type of chart?
-	 The mean of the data set is indicated by the small horizontal line within the boxes. We see that the mean fan score for races with wet weather is quite a bit higher than for races with dry weather.
-	 The top and bottom end of the boxes show where the mid 50% of the fan scores lie. We can conclude that scores of races in wet weather in general are significantly higher than races with dry weather.
-	 However, there are outliers that are quite far outside of the boxes. We see that there are dry weather races that also result in high scores. So again, the `WET_WEATHER` factor looks important, but we can safely assume that it is not the only factor that influences the score.
+   How to read this type of chart? The mean of the data set is indicated by the small horizontal line within the boxes. We see that the mean fan score for races with wet weather is quite a bit higher than for races with dry weather. The top and bottom end of the boxes show where the mid 50% of the fan scores lie. We can conclude that scores of races in wet weather in general are significantly higher than races with dry weather. However, there are outliers that are quite far outside of the boxes. We see that there are dry weather races that also result in high scores. So again, the `WET_WEATHER` factor looks important, but we can safely assume that it is not the only factor that influences the score.
 
-10. Save the project by clicking on the Save icon and name it "Correlations".
+14. Save the project by clicking on the Save icon and name it "Correlations".
 
    ![Banner](images/save-correlations.png)
 
-11. Finally, go back to the homepage by clicking on the top left icon.
+15. Finally, go back to the homepage by clicking on the top left icon.
 
    ![Banner](images/to-homepage8.png)
 
