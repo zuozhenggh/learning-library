@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this lab, you will learn how to create database objects to use in your APEX application. This package contains functions and procedures to add products to the cart, create the order, clear the cart and more.
+In this lab, you will learn how to create database objects to use in your APEX application. This package contains functions and procedures to add products to the cart, remove products, create the order, clear the cart, and more.
+
+To manage items in the cart, you will use [collections](https://docs.oracle.com/en/database/oracle/application-express/21.1/aeapi/APEX_COLLECTION.html#GUID-859B488C-2628-44D7-969F-50872C685B76), which enable you to temporarily store products currently in session state so they can be accessed, manipulated, or processed during a user's specific session. 
 
 Estimated Lab Time: 5 minutes
 
@@ -14,14 +16,14 @@ In this lab, you will:
 Create specification and body for the package.
 
 1. Navigate to **SQL Workshop**, click **Object Browser**.
-2. Navigate to the + button, in the right side and click **Package**.
+2. Navigate to the + button, on the right side and click **Package**.
 
-    ![](images/create-package.png " ")
+    ![](./images/create-package.png " ")
 
 3. Select **Specification** and click **Next**.
 
 4. For Package Name, enter **MANAGE_ORDERS** and click **Next**.
-    ![](images/create-package2.png " ")
+    ![](./images/create-package2.png " ")
 5. For Specification, enter the following:
 
 ```
@@ -67,7 +69,7 @@ END manage_orders;
 ```
 
 6. Click **Create Package Specification**.
-    ![](images/create-specification.png " ")
+    ![](./images/create-specification.png " ")
 
 7. Navigate to body part of the package by clicking on Body tab and enter the following:
 
@@ -225,7 +227,7 @@ END manage_orders;
 
 8. Click **Save & Compile**.
 
-    ![](images/create-body.png " ")
+    ![](./images/create-body.png " ")
 
 
 You now know how to create a package to manage the shopping cart. In the following labs, you will call these procedures and functions when it is required.
