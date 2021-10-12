@@ -136,8 +136,8 @@ To run PL/SQL scripts:
          ![plsql_procedure.png](images/plsql_procedure.png "plsql_procedure.png")
 
 ## Acknowledgements
-* **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
+* **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM; Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 
-* **Last Updated By/Date**: Moitreyee Hazarika, September 2021
+* **Last Updated By/Date**: Moitreyee Hazarika, October 2021
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.

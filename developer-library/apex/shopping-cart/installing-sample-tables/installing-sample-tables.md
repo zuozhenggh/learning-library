@@ -14,23 +14,23 @@ In this lab, you will:
 1. Log into your workspace.
 2. From your APEX workspace home page, select **SQL Workshop**, click **Utilities**, and then click **Sample Datasets**.
 
-    ![](images/naviagate-sample-dataset.png " ")
+    ![](./images/naviagate-sample-dataset.png " ")
 
 3. On the **Customer Orders** row, click Install.
 
-    ![](images/Select-Sample-Dataset.png " ")
+    ![](./images/Select-Sample-Dataset.png " ")
 
 4. Click **Next**
 
-    ![](images/manage-sample-dataset.png" ")
+    ![](./images/manage-sample-dataset.png" ")
 
 5. Click **Install Dataset**.
 
-    ![](images/load-sample-dataset.png" ")
+    ![](./images/load-sample-dataset.png" ")
 
 6. Click **Exit**.
 
-    ![](images/load-sample-dataset-results.png" ")
+    ![](./images/load-sample-dataset-results.png" ")
 
 Note: You do NOT want to click Create Application, as you will manually create an application 
 
@@ -40,7 +40,7 @@ Note: You do NOT want to click Create Application, as you will manually create a
 
 2. Click **Object Browser**.
 
-    ![](images/object-browser.png " ")
+    ![](./images/object-browser.png " ")
 
 3. Click the new tables and the various tabs, such as Data, Constraints, and so forth, to review the table details.
 

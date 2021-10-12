@@ -183,7 +183,7 @@ This lab assumes that you have already completed the earlier labs.
 
 ## Task 4: Scale down the application and database tiers
 
-1. To scale the Order DB ATP database down to **1 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
+1. To scale the Order database down to **1 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
