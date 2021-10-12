@@ -185,52 +185,79 @@ Description
 
 12. To enter the PAR Source URL, click your Region from the Dropdown list below 
 
-**Tenancy Regions** Please select the same region that you're creating MDS in  
+    **Tenancy Regions** Please select the same region that you're creating MDS in  
 
-<details>
-<summary>US(Ashburn) Region - Copy and paste to PAR Source URL</summary>
-<br>
-
-
+    <details>
+    <summary>US East (Ashburn) Region - Copy and paste to PAR Source URL</summary>
+    <br>
     <copy> 
-    https://objectstorage.us-ashburn-1.oraclecloud.com/p/RpoC9Zza6bcxIAWkNXFVKD0dsmRQJRMvNthgzbr3TUnO9pTYpEhoSFP7_6RNZ1lv/n/mysqlpm/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/lIdlQUQNNL7zTvct-yECI7b422-DTLI5PKrW2luTlRt-JbH7GCzkZ-hXTOUGRBZG/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
     </copy>
+    </details>
 
-</details>
+    <details>
+    <summary>US West (Phoenix) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    <copy> 
+    https://objectstorage.us-phoenix-1.oraclecloud.com/p/YStBr3efR5DEU6vJDkGMZ8f9NK-vawTf114iPirD7i3LW0_BC9mRpidzs2qTLVBB/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    </details>
 
-<details>
-<summary>UK South(London) Region - Copy and paste to PAR Source URL</summary>
-<br>
+    <details>
+    <summary>US West (San Jose) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    <copy> 
+    https://objectstorage.us-sanjose-1.oraclecloud.com/p/EXwPhz0h6gBUlu8gSiA9O97BB9JUoTECraqxAKGyueF1dYeW_fL2goa_d2rfeZMn/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    </details>
+    
+    <details>
+    <summary>Canada Southeast (Toronto) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    <copy> 
+    https://objectstorage.ca-toronto-1.oraclecloud.com/p/mnDsSyuKkSEtHn6jU44zqViMKBTUySyTpoTLdSZGZf-UO7fqKEX7uqr_z2R_mxGO/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    </details>
 
+    <details>
+    <summary>Canada Southeast (Montreal) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    <copy> 
+    https://objectstorage.ca-montreal-1.oraclecloud.com/p/8TzdLjwdzm8xmvTG6nTokE1yNE4dkE2IRq2aVmvjT4IC10f7PIeryyQyC4ROpr0X/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    </details>
 
+    <details>
+    <summary>Brazil East (Sao Paulo) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    <copy> 
+    https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/02z9LbgxbzO0L7RQvUpp51ol85tgnfJd1uSM3xGZ4CYjX9UAX2WR4ES9PH0zG-zr/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    </details>
+
+    <details>
+    <summary>UK South(London) Region - Copy and paste to PAR Source URL</summary>
+    <br>
     <copy> 
     https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
     </copy>
+    </details>
 
-</details>
-
-<details>
-<summary>Japan East(Tokyo) Region - Copy and paste to PAR Source URL</summary>
-<br>
-
-
+    <details>
+    <summary>Japan East(Tokyo) Region - Copy and paste to PAR Source URL</summary>
+    <br>
     <copy> 
     https://objectstorage.ap-tokyo-1.oraclecloud.com/p/hKcth9AOMgzW_bS2rVIiTT_JJ5tNGmqS1kjkWjMphMlnZDbtUj3ZuSehrSuDTCtC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
     </copy>
+    </details>
 
-</details>
-
-
-<details>
-<summary>South Korea Central(Seoul) Region - Copy and paste to PAR Source URL</summary>
-<br>
-
+    <details>
+    <summary>South Korea Central(Seoul) Region - Copy and paste to PAR Source URL</summary>
+    <br>
     <copy>
     https://objectstorage.ap-seoul-1.oraclecloud.com/p/cWMmcups3ZFFswzB4pknzotyEvRmCOcNft1AsJxBJlaEKajKdJIVfdMI70yVz6yD/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
-
-</details>
-
+    </details>
 
 13. Your PAR Source URL entry should look like this:
     ![MDS](./images/04mysql08-2.png " ")
