@@ -99,6 +99,21 @@ A Sample Configuration using FileZilla FTP Client
 Directory Listing created in File Server. If all the permissions are provided you should be able to read/write/list etc
 	![](images/user-permissions8.png)
 
+## Task 4: Creating Connection with File Server
+1.	From Home page Navigate to Integrations -> Connections
+2.	Create a connection 'File Server' by selecting FTP adapter
+3.	Provide the below information in the FTP Adapter connection with the gathered information from the File Server -> Settings page. Confirm your Test connection is Successful and Save the connection. Check the connection status is 'Configured'
+
+| Field                   | Value                                                 |
+|-------------------------|-------------------------------------------------------|
+| FTP Server Host Address | <Check File Server Settings- IP and Port Information  |
+| FPT Server Port         | <Check File Server Settings - IP and Port Information |
+| SFTP Connection         | Yes                                                   |
+| Security                | FTP Server Access Policy                              |
+| Username                | <OIC Username>                                        |
+| Password                | <OIC Password>                                        |
+
+
 ## Learn More
 
 * [File Server](https://docs.oracle.com/en/cloud/paas/integration-cloud/file-server/file-server-overview.html)
