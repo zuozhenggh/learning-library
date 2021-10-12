@@ -402,7 +402,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
         sales,
         RANK () OVER ( order by sales desc ) as ranking
     FROM sales_grouping
-    FETCH FIRST 20 ROWS ONLY;/copy>
+    FETCH FIRST 20 ROWS ONLY;</copy>
     ```
     The result is shown below:
 
@@ -453,7 +453,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
     )
     SELECT * 
     FROM movie_ranking_by_genre
-    WHERE ranking <= 5
+    WHERE ranking \<= 5
     ORDER BY genre ASC, ranking ASC;</copy>
     ```
 
@@ -506,9 +506,9 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
         FROM movie_ranking_by_genre
         WHERE ranking <= 5
         GROUP BY ROLLUP(genre, movie)
-        ORDER BY 1 ASC, 3 DESC
-        ;</copy>
+        ORDER BY 1 ASC, 3 DESC;</copy>
     ```        
+
     Here's the top movies within each genre and its contribution:
 
     |GENRE|MOVIE|SUM(SALES)|RATIO|
