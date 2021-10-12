@@ -92,5 +92,5 @@ Be sure to check out the labs on Oracle Machine Learning and how the Lakehouse f
 
 ## Acknowledgements
 
-* **Author** - Michelle Malcher, Database Product Management
+* **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
 * **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
