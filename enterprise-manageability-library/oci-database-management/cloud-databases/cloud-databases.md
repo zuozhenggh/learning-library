@@ -4,7 +4,22 @@
 
 In this lab, you will go through the steps to setup Database Management for Oracle Cloud Databases.
 
+Database Management service now also supports Oracle Databases, which are databases running on comanaged Oracle Cloud Database services, including bare metal, virtual machines, and Exadata Cloud.
+
 ![Architecture](./images/architecture.png " ")
+
+Database Management features for Oracle Database service are available as part of two Management Options, which you can select when enabling Database Management.
+
+The Full Management option includes all Database Management features for Oracle Database Enterprise Editions, including the following features. The Full Management option is also available for Oracle Database Standard Edition but doesn’t include Performance Hub features.
+
+* Monitoring and managing capabilities for your fleet of databases
+* SKU features, which include advanced Performance Hub features, such as automatic database diagnostic monitor (ADDM) and blocking sessions and other features, such as scheduled fobs, tablespace monitoring, and database parameters
+* Features available as part of Basic Management
+
+The Basic Management option includes the following features:
+
+* 14 basic monitoring metrics, such as CpuUtilization, StorageAllocated, and UserCalls. These metrics are displayed in the OCI Monitoring service and on the Database Details page of the database after Database Management is enabled.
+* Active session history (ASH) analytics and SQL monitoring features in Performance Hub for multitenant container databases (CDBs). These features are not available for pluggable databases.
 
 Estimated Time: 50 minutes
 
@@ -19,7 +34,7 @@ Setup Database Management to monitor and manage Oracle Databases on the followin
 ### Prerequisites
 
 This lab assumes you have completed the following labs:
-* Oracle Database running on DBCS
+* Oracle Database running on Oracle Database Cloud Service - Please check documentation to [Create a DB System] ( https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/creatingDBsystem.htm#create).
 
 ## Task 1: Oracle Cloud Database-related Prerequisite Tasks
 
@@ -39,8 +54,10 @@ This lab assumes you have completed the following labs:
     </copy>
     ```
 
-    Password length must be between 14 to 127 characters.
-    Password must have at least one lowercase, one uppercase, one digit, and one special character.
+    The database user password checks in Database Management require the password to be Federal Information Processing Standards (FIPS) compliant:
+    
+    * Password length must be between 14 to 127 characters.
+    * Password must have at least one lowercase, one uppercase, one digit, and one special character.
 
     ![Management Agents](./images/prereqs.png " ") 
 
@@ -138,6 +155,13 @@ This lab assumes you have completed the following labs:
     ![Management Agents](./images/secret1.png " ")
 
 ## Task 6: Create a Database Management private endpoint
+
+You must create a private endpoint to connect Database Management to an Oracle Cloud Database.
+
+The private endpoint is a representation of Database Management in the VCN in which the Oracle Cloud Database can be accessed, and acts as a VNIC with private IP addresses in a subnet of your choice. The private endpoint need not be on the same subnet as the Oracle Cloud Database, although, it must be on a subnet that can communicate with the Oracle Cloud Database.
+
+Refer [Create a Database Management Private Endpoint]( https://docs.oracle.com/en-us/iaas/database-management/doc/perform-database-management-prerequisite-tasks.html#GUID-AC816009-3FE9-42A1-A133-83281E0790FD) for best practices.
+
 
 1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
 
@@ -286,7 +310,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
      **Private Endpoint:** Select **dbmgmtpe**
 
-     **Management Options:** Select **Full Management**
+     **Management Options:** Select **Full Management**. For information on Management Options, see [About Management Options]( https://docs.oracle.com/en-us/iaas/database-management/doc/enable-database-management.html#GUID-82E59C37-A1EA-4355-8216-769D22F8EFDD).
 
      Click **Enable Database Management**.
 
@@ -308,7 +332,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
     ![Management Agents](./images/enabledbmgmt6.png " ")
 
-    For ASH Analytics, SQL Monitoring, and Blocking Session, click on **Performance Hub** on the Database Details page.
+    For ASH Analytics & SQL Monitoring click on **Performance Hub** on the Database Details page. **Performance Hub** page on Database Details will be a basic one.
 
     ![Management Agents](./images/enabledbmgmt8.png " ")    
 
