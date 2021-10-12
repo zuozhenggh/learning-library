@@ -7,6 +7,11 @@ In this lab you will create a database change and apply it via SQLcl and Liquiba
 
 Estimated Lab Time: 30-45 minutes
 
+Watch the video for a quick walk through of the lab.
+
+[](youtube:NTuBdG4z3z0)
+
+
 ### Objectives
 
 - Create a database change in the livelabs schema
