@@ -48,8 +48,8 @@
             "filename": "../../dbmgmt-features/dbmgmt-features.md"
         },
         {
-            "title": "Lab 8: Setup OCI Vault and save monitoring password",
-            "description": "Setting up OCI Vault and store monitoring password",
+            "title": "Lab 8: Setup Database Management for Oracle Cloud Databases",
+            "description": "Setup Database Management for Oracle Cloud Databases",
             "filename": "../../cloud-databases/cloud-databases.md"
         },
         {
