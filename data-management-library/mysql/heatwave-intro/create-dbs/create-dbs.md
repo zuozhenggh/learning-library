@@ -254,6 +254,16 @@ Description
     </copy>
     ```
     </details>
+    
+    <details>
+    <summary>Brazil Southeast (Vinhedo) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.sa-vinhedo-1.oraclecloud.com/p/D5_AuuxEKdqsJpeieZNCgmUtpkvOKOU5_2gMnJHtDbbJekz1dag6dBElSmW3nQ0Y/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
     ## Europe, Middle East and Africa (EMEA)
     **Tenancy Regions** Please select the same region that you are creating MDS in 
 
@@ -263,6 +273,15 @@ Description
     ```
     <copy> 
     https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    </copy>
+    ```
+    </details>
+    <details>
+    <summary>Germany Central (Frankfurt) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/5CiMznUnIfiUducb8J2GSB7BrsbMQA4tA27qfOoLHFgxtgi6RIBCHcP6U3hlsYpK/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
