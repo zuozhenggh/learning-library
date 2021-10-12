@@ -44,7 +44,44 @@ This lab assumes you have completed the following labs:
 
     ![Management Agents](./images/prereqs.png " ") 
 
-## Task 2: Create OCI Vault
+## Task 2: Assign IAM permissions
+
+1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Identity & Security**. Under **Identity**, click **Policies**.
+
+    ![Management Agents](./images/policy.png " ") 
+
+2. Click **Create Policy**. On the **Create Policy** dialog enter:
+
+     **Name:** Policy-for-dbmgmt
+     
+     **Description:** Policy for OCI DB Management
+     
+     **Compartment:** Select root
+     
+     Enable **Show manual editor**
+     
+     Enter following in **Policy Builder**:
+
+    ```
+    <copy>
+    Allow service dpd to read secret-family in compartment dbmgmt-demo
+    Allow service dpd to manage objects in compartment dbmgmt-demo
+    Allow group dbmgmt-group to manage dbmgmt-family in tenancy
+    Allow group dbmgmt-group to read database-family in tenancy
+    Allow group dbmgmt-group to manage vnics in tenancy
+    Allow group dbmgmt-group to use subnets in tenancy
+    Allow group dbmgmt-group to use network-security-groups in tenancy
+    Allow group dbmgmt-group to use security-lists in tenancy
+    Allow group dbmgmt-group to manage secret-family in compartment dbmgmt-demo
+    Allow group dbmgmt-group to read buckets in compartment dbmgmt-demo
+    </copy>
+    ```
+
+    ![Management Agents](./images/policy2.png " ") 
+
+    Click **Create**
+
+## Task 3: Create OCI Vault
 
 1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Identity & Security** and click **Vault**.
 
@@ -64,7 +101,7 @@ This lab assumes you have completed the following labs:
 
     ![Management Agents](./images/vault3.png " ")
 
-## Task 3: Create Key
+## Task 4: Create Key
 
 1. On the **Vault Details** page click **Create Key**. On the **Create Key** page select all defaults and enter "Name" : dbmgmt-key.
 
@@ -76,7 +113,7 @@ This lab assumes you have completed the following labs:
 
     ![Management Agents](./images/key1.png " ")
 
-## Task 4: Create Secret
+## Task 5: Create Secret
 
 1. Click **Create Secret**. On the **Create Secret** page enter following :
 
@@ -100,7 +137,7 @@ This lab assumes you have completed the following labs:
 
     ![Management Agents](./images/secret1.png " ")
 
-## Task 5: Create a Database Management private endpoint
+## Task 6: Create a Database Management private endpoint
 
 1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
 
@@ -136,7 +173,7 @@ This lab assumes you have completed the following labs:
 
     ![Management Agents](./images/endpoint2.png " ")
 
-## Task 6: Add security rules to enable communication
+## Task 7: Add security rules to enable communication
 
 Add the following stateful security rules to the Security List:
 
@@ -186,17 +223,17 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
     ![Management Agents](./images/administration.png " ")
 
-2.  On the left pane on the **Administration** page, click **Private Endpoint** and click **dbmgmtpe** under Private Endpoints.
+8.  On the left pane on the **Administration** page, click **Private Endpoint** and click **dbmgmtpe** under Private Endpoints.
 
-3.  On the **Private Endpoint Details** page, click **lab-public-subnet1**.
+9.  On the **Private Endpoint Details** page, click **lab-public-subnet1**.
 
     ![Management Agents](./images/endpoint3.png " ")
 
-4.  On the **Subnet Details** page, click **Default Security List for labVCN** to go to **Security List Details** page which will have a list of Security List Ingress and Egress Rules.
+10.  On the **Subnet Details** page, click **Default Security List for labVCN** to go to **Security List Details** page which will have a list of Security List Ingress and Egress Rules.
 
     ![Management Agents](./images/seclist5.png " ")
 
-5.  Click **Egress Rules** on the left navigation pane and then click **Add Egress Rules**. Enter following details:
+11.  Click **Egress Rules** on the left navigation pane and then click **Add Egress Rules**. Enter following details:
 
      **Source Type:** Select **CIDR**
 
@@ -215,7 +252,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
     ![Management Agents](./images/seclist7.png " ")
 
 
-## Task 7: Enable Database Management for Oracle Cloud Databases
+## Task 8: Enable Database Management for Oracle Cloud Databases
 
 1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
 
