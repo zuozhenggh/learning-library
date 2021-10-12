@@ -79,7 +79,29 @@ For ease of access to desktop applications provided on the instance and needed t
 
     ![](./images/create-shortcut-6.png " ")
 
-## Task 3: Configure Desktop   
+## Task 3: Optimize Terminal Utility
+Perform the following to optimize the *Terminal* utility
+
+1. Double-click on the *Terminal* icon to launch a session, then Click on *Edit* and select *Preferences*
+
+    ![](./images/novnc-terminal-1.png " ")
+
+2. Select the *Colors* tab, pick *White on black* from *Built-in Schemes*, and click on *Close*
+
+    ![](./images/novnc-terminal-2.png " ")
+
+3. Review *$HOME/.bash_profile* and move any custom entry of type alias, script call, or function to  *$HOME/.bashrc*. If these are referencing environment variables set in the file, then copy those over to *$HOME/.bashrc* as well.
+
+    *Notes:* Do not remote the following default entry from *$HOME/.bash_profile*
+
+    ```
+    # Get the aliases and functions
+    if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+    fi
+    ```
+
+## Task 4: Configure Desktop   
 LiveLabs compute instance are password-less and only accessible optionally via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
 
 1. Follow steps in the screenshot below and run command provided below to resize desktop icons
@@ -176,7 +198,7 @@ LiveLabs compute instance are password-less and only accessible optionally via S
     ![](./images/novnc-startup-prog-5.png " ")
     ![](./images/novnc-startup-prog-6.png " ")
 
-## Task 4: Optimize Chrome Browser
+## Task 5: Optimize Chrome Browser
 Perform the following to further customize and optimize *Google Chrome* Browser.
 
 1. Close any running *Google Chrome* browser session running on the remote desktop

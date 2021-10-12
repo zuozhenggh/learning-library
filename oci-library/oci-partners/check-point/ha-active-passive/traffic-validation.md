@@ -24,11 +24,11 @@ Estimated Time: 20 minutes.
 
 2. You will be creating **3** different Network Host Objects to support inbound connection to **Web App1 VM** and **DB App1 VM** as per below table:
 
-    | Name                        | Value                                                                            |
-    |-----------------------------|----------------------------------------------------------------------------------|
-    | Web-App1-VM                 | Web Spoke App1 VM Private IP; Example: 10.0.0.79                                 |
-    | Frontend-Private-IP         | Primary CloudGuard Primary Interface Secondary Private IP;Example: 192.168.1.241 |
-    | DB-App1-VM                  | DB Spoke App1 VM Private IP; Example: 10.0.1.40                                  |
+    | Name                        | Value                                                                            | Comment                                                                            |
+    |-----------------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+    | Web-App1-VM                 | Web Spoke App1 VM Private IP; Example: 10.0.0.79                                 |Collect Correct Web App VM1 IP address from OCI Console                                |
+    | Frontend-Private-IP         | Primary CloudGuard Primary Interface Secondary Private IP;Example: 192.168.1.241 |Collect Correct CloudGuard1 Frontend i.e. Primary Interface's Secondary Private IP address from OCI Console                                |
+    | DB-App1-VM                  | DB Spoke App1 VM Private IP; Example: 10.0.1.40                                  |Collect Correct DB App VM1 IP address from OCI Console                                |
 
 3. Navigate to top right option **New > Host** to add a new Host.
 
@@ -305,35 +305,54 @@ Estimated Time: 20 minutes.
 
 2. Since you are using **R81** release there is an additional step which you need to ensure that HA failover happens successfully. Go to **expert** mode and run below commands on each **CloudGuard1** and **CloudGuard2** instances over SSH:
 
-   ```
-   <copy>
-   set expert-password
-   Enter a Unique Password, for example: Check@123
-   expert
-   $FWDIR/scripts/merge-bundle.sh
-   $FWDIR/scripts/cloud_ha_cli.py restart
-   </copy>
-   ```
+      ```
+      <copy>
+      set expert-password
+      Enter a Unique Password, for example: Check@123
+      expert
+      $FWDIR/scripts/merge-bundle.sh
+      $FWDIR/scripts/cloud_ha_cli.py restart
+      </copy>
+      ```
 
    Below image shows an example of above script on **CloudGuard1** instance. You have to make sure that you run on both CloudGuard instances.
 
-   ![](../common/images/HA-Failover-Config-1.png " ")
+      ![](../common/images/HA-Failover-Config-1.png " ")
 
-3. Reboot **CloudGuard1** instance or Suspend HA which will trigger failover automatically to **CloudGuard2** instance.
+4. You can manually trigger HA failover using provided commands as below: 
+
+      ```
+      <copy>
+      #### To bring down Cluster Member 
+      set cluster member admin down 
+      show cluster state 
+
+      #### To bring back up Cluster Member 
+      set cluster member admin up 
+      show cluster state 
+      </copy>
+      ```
+
+   Example: Below image reflect HA failover from **CloudGuard1** instance to **CloudGuard2** instance: 
+
+   ![](../common/images/failover-validation.png " ")
+
+
+   Or you can also Reboot **CloudGuard1** instance from OCI console to trigger failover automatically to **CloudGuard2** instance.
 
    ![](../common/images/87-Reboot-CloudGuard1.png " ")
 
-4. Within few seconds **CloudGuard2** instance should come up online/reachable and once you connect to **CloudGuard2** GUI using **admin/Check@123** credentials or password which you had setup in **Lab3**. You should see it became primary instance.
+5. Within few seconds **CloudGuard2** instance should become **Active** Firewall. You can also see on **SmartConsole** GUI where **CloudGuard2** instance became primary firewall.
 
    ![](../common/images/88-Failover-CloudGuard2.png " ")
 
-5. Navigate to **CloudGuard2** instance attached VNIC details page and verify that **Frontend/Primary** and/or **Backend** interface floating IPs has moved from **CloudGuard1** instance.
+6. Navigate to **CloudGuard2** instance attached VNIC details page and verify that **Frontend/Primary** and/or **Backend** interface floating IPs has moved from **CloudGuard1** instance.
 
    ![](../common/images/90-Failover-Success-CloudGuard2-frontend.png " ")
 
    ![](../common/images/91-Failover-Success-CloudGuard2-backend.png " ")
 
-6. You can verify that **CloudGuard2** is primary and **CloudGuard1** is secondary in your cluster:
+7. You can verify that **CloudGuard2** is primary and **CloudGuard1** is secondary in your cluster:
 
    ![](../common/images/89-Failover-Success-CloudGuard1.png " ")
 
