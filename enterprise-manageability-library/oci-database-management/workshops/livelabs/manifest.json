@@ -48,6 +48,11 @@
             "filename": "../../dbmgmt-features/dbmgmt-features.md"
         },
         {
+            "title": "Lab 8: Setup OCI Vault and save monitoring password",
+            "description": "Setting up OCI Vault and store monitoring password",
+            "filename": "../../cloud-databases/cloud-databases.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
