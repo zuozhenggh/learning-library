@@ -285,6 +285,42 @@ Description
     </copy>
     ```
     </details>
+    <details>
+    <summary>Switzerland North(Zurich) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.eu-zurich-1.oraclecloud.com/p/YBRZfD1n2iAcuqvqnwRvQuozrcjvxiRl0Rvp95UnCWLg74JDzdFvP1kuCaZYF5qi/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
+    <details>
+    <summary>UAE East(Dubai) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.me-dubai-1.oraclecloud.com/p/0xrSzhhg0bvExr9BgK-VTFAlUwJD5TaY1VB0cDGlFswagCS44raI0cg9VCypHECR/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
+     <details>
+    <summary>Saudi Arabia West(Jeddah)  Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.me-jeddah-1.oraclecloud.com/p/8YbXOPZ0GyDFb69K4BkUv7690MqhTs8pqcE4zG5zOLNeSG3j_wZfIm7DcSQn5G0n/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json    
+    </copy>
+    ```
+    </details>
+    <details>
+    <summary>Netherlands Northwest(Amsterdam) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.eu-amsterdam-1.oraclecloud.com/p/xr8B6l2kTzIu5OyryaSkiJo_1QU4QnH4AD_sx6PF_b21DmZBdoLwLF7c10Ot9Koe/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json   
+    </copy>
+    ```
+    </details>
     ## Asia Pacific (APAC)
     **Tenancy Regions** Please select the same region that you are creating MDS in 
 
