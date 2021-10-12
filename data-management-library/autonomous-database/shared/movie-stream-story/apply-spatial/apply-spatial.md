@@ -2,11 +2,17 @@
 
 ## Introduction
 
+#### Video Preview
+
+[] (youtube:IpUuoOcpgho)
+
+Time to run a promotion to help keep our at-risk customers. Run a localized promotion by finding these customers' local pizza locations using Oracle Spatial's nearest neighbor algorithm.
+
 To reduce customer churn, our business has partnered with a pizza chain to offer coupons for free pizza. The promotion will be offered to customers identified as both likely to churn and within reasonable proximity to a pizza chain location. Likelihood to churn is covered in Lab 6 (Using Oracle Machine Learning AutoML UI to Predict Churn). In this lab you determine which customers are near one or more pizza chain locations, and for those customers, which location is the closest. Specifically, we will answer the following question: "For customers that are within 10km of pizza chain location(s), which is the closest and what is the distance?"
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
-### About Product/Technology
+### About product/technology
 
 Oracle Database, including Oracle Autonomous Database, provides native support for spatial data management, analysis, and processing. Oracle Database stores spatial data (points, lines, polygons) in a native data type called SDO_GEOMETRY. Oracle Database also provides a native spatial index for high performance spatial queries. This spatial index relies on spatial metadata that is entered for each geometry column storing spatial data. Once spatial data is populated and indexed, robust APIs are available to perform spatial analysis, calculations, and processing. A self-service web application, Spatial Studio, is also available for no-code access to the Spatial features of Oracle Database.
 
@@ -35,7 +41,7 @@ In this lab, you will:
 
 > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
-## Task 1: Prepare the Data
+## Task 1: Prepare the data
 
 To prepare your data for spatial analyses, you create function-based spatial indexes on the CUSTOMER\_CONTACT and PIZZA\_LOCATION tables. Function-based spatial indexes enable tables for spatial analysis without the need to create geometry columns. Tables with coordinate columns are always good candidates for a function-based spatial index.
 
@@ -126,7 +132,7 @@ To prepare your data for spatial analyses, you create function-based spatial ind
     </copy>
     ```
 
-## Task 2: Run Spatial Queries
+## Task 2: Run spatial queries
 
 Oracle Autonomous Database provides an extensive SQL API for spatial analysis. This includes spatial relationships, measurements, aggregations, transformations, and more. In this lab you focus on one of those spatial analysis operations, "nearest neighbor" analysis. Nearest neighbor analysis refers to identifying which item(s) are nearest to a location.
 
@@ -315,12 +321,12 @@ This lab is based on scenario 1. Scenario 2 requires a slightly different syntax
     </copy>
     ```
 
-###Performance and Scaling
+###Performance and scaling
 Parallel processing is a powerful capability of Oracle Database for high performance and scalability. Parallelized operations are spread across database server processors, where performance generally increases linearly with the "degree of parallelism" (DOP). DOP can be thought of as the number of processors that the operation is spread over. Many spatial operations of Oracle database support parallel processing, including nearest neighbor.
 
-In customer-managed (non-Autonomous) Oracle Database, the degree of parallelism is set using optimizer hints. In Oracle Autonomous Database, parallelism is ... you guessed it... autonomous. A feature called "Auto DOP" controls parallelism based on available processing resources for the database session. Those available processing resources are in turn based on; 1) the service used for the current session: (service)\_LOW, (service)\_MEDIUM, or (service)\_HIGH, and 2) the shape (total OCPUs) of the Autonomous Database. Changing your connection from LOW to MEDIUM to HIGH  will increase the degree of parallelism and consume more of the overall processing resources for other operations. So a balance must be reached between optimal performance and sufficient resources for all workloads. Details can be found in the documentation [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-priorities.html#GUID-19175472-D200-445F-897A-F39801B0E953).
+In customer-managed (non-Autonomous) Oracle Database, the degree of parallelism is set using optimizer hints. In Oracle Autonomous Database, parallelism is ... you guessed it... autonomous. A feature called "Auto DOP" controls parallelism based on available processing resources for the database session. Those available processing resources are in turn based on; 1) the service used for the current session: (service)\_LOW, (service)\_MEDIUM, or (service)\_HIGH, and 2) the shape (total OCPUs) of the Autonomous Database. Changing your connection from LOW to MEDIUM to HIGH  will increase the degree of parallelism and consume more of the overall processing resources for other operations. So a balance must be reached between optimal performance and sufficient resources for all workloads. Details can be found in the [**documentation**](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-priorities.html#GUID-19175472-D200-445F-897A-F39801B0E953).
 
-## Task 3: Purge Changes (Optional)
+## Task 3: Purge changes (optional)
 
 If you would like to purge all changes made in this lab, run the following commands in order.
 
@@ -339,9 +345,9 @@ DROP FUNCTION latlon_to_geometry;
 </copy>
 ```
 
-You may now [proceed to the next lab](#next).
+Please *proceed to the next lab*.
 
-## Learn More
+## Learn more
 * [Spatial product portal](https://www.oracle.com/database/spatial/)
 * [Spatial documention](https://docs.oracle.com/en/database/oracle/oracle-database/21/spatl/index.html)
 * [Spatial blogs](https://blogs.oracle.com/oraclespatial/)
@@ -349,6 +355,6 @@ You may now [proceed to the next lab](#next).
 * [Tips on tuning SDO_NN (nearest neighbor) queries](https://blogs.oracle.com/oraclespatial/tips-on-tuning-sdonn-nearest-neighbor-queries)
 
 ## Acknowledgements
-* **Author** - David Lapp, Database Product Management, Oracle
+* **Author** - David Lapp, Oracle Database Product Management, Oracle
 * **Contributors** -  Marty Gubar, Patrick Wheeler, Keith Laker, Rick Green
 * **Last Updated By/Date** - David Lapp, July 2021

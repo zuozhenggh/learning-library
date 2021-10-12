@@ -72,7 +72,7 @@ Use ACDEMO
 <copy>
 sudo su - oracle
 cd acdemo
-runtacreplay  
+./runtacreplay  
 </copy>
 ````
 ![Run the ACDEMO application](./images/runtacreplay.png " ")
@@ -120,7 +120,7 @@ As the SYS user in SQL\*Plus run the following command:
 execute dbms_app_cont_admin.acchk_set(true);
 ````
 
-Run the *runreplay* script:
+Run the *runreplay* script from the operating system:
 
 ````
 <copy>

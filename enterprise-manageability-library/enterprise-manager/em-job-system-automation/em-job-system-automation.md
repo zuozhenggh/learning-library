@@ -37,7 +37,7 @@ In this lab you will learn:
 
 In this workshop we will first review the Job you ran in STEP 0 to set user *oracle*'s Named Credentials. This is a Read-Only exercise to explain how that Library job was created.
 
-1.  On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+1.  On the browser window on the right, preloaded with *Enterprise Manager*, if you are already logged in as user sysman, logout. Click on the *Username* field and login as emadmin. These credentials are provided below for reference
 
   ```
   Username: <copy>emadmin</copy>
