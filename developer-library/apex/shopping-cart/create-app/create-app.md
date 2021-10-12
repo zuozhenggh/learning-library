@@ -20,7 +20,7 @@ In this lab, you will:
 
 3.  Click **New Application**.
 
-    ![](images/new-app.png " ")
+    ![](./images/new-app.png " ")
 
 ## Task 2: Naming the App
 
@@ -34,7 +34,7 @@ A dashboard page is a great way to show important information using various char
 
 2. Click **Dashboard**.
 
-    ![](images/add-dashboard.png " ")
+    ![](./images/add-dashboard.png " ")
 
 3. For Chart 1, enter the following:
 
@@ -45,7 +45,7 @@ A dashboard page is a great way to show important information using various char
     * Type – select **Sum**
     * Value Column – select **TOTAL_SALES**.
 
-    ![](images/chart1.png " ")
+    ![](./images/chart1.png " ")
 
 4. Click Chart 2, and enter the following:
 
@@ -56,7 +56,7 @@ A dashboard page is a great way to show important information using various char
     * Type – select **Sum**
     * Value Column – select **TOTAL_SALES**.
 
-    ![](images/chart2.png " ")
+    ![](./images/chart2.png " ")
 
 5. Click Chart 3, and enter the following:
 
@@ -67,7 +67,7 @@ A dashboard page is a great way to show important information using various char
     * Type – select **Count**
     * Value Column – select **ORDER_ID**.
 
-    ![](images/chart3.png " ")    
+    ![](./images/chart3.png " ")    
 
 6. Click Chart 4, and enter the following:
 
@@ -78,7 +78,7 @@ A dashboard page is a great way to show important information using various char
     * Type – select **Column Value**
     * Value Column – select **AVG_RATING**.
 
-    ![](images/chart4.png " ")  
+    ![](./images/chart4.png " ")  
 
 7. Click Advanced and check **Set as Administration Page**.
 
@@ -89,7 +89,7 @@ A dashboard page is a great way to show important information using various char
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Faceted Search**.
 
-    ![](images/faceted-search.png " ") 
+    ![](./images/faceted-search.png " ") 
 
 3. On the Faceted Search Page, enter the following:
     - Page Name - enter **Products**
@@ -103,14 +103,14 @@ A dashboard page is a great way to show important information using various char
 
 4. Click **Add Page**.
 
-    ![](images/fs-page.png " ")  
+    ![](./images/fs-page.png " ")  
 
 ## Task 5: Delete Home Page
 
 1. Navigate to Home Page and Click **Edit**.
 2. Click **Delete**.    
 
-    ![](images/delete-page.png " ")  
+    ![](./images/delete-page.png " ")  
 
 ## Task 6: Add Multiple Reports
 
@@ -118,7 +118,7 @@ A dashboard page is a great way to show important information using various char
 2. Click **Additional Pages**.
 3. Click **Multiple Reports**.
 
-    ![](images/multiple-reports.png " ") 
+    ![](./images/multiple-reports.png " ") 
 
 3. On the Create Multiple Reports Page, select the following tables:
     - CLOTHING_LOOKUP
@@ -130,7 +130,7 @@ A dashboard page is a great way to show important information using various char
 
 4. Click **Add Pages**.
 
-    ![](images/multiple-reports2.png " ") 
+    ![](./images/multiple-reports2.png " ") 
 
 ## Task 7: Set Multiple Reports as Administration Pages
 
@@ -145,14 +145,14 @@ A dashboard page is a great way to show important information using various char
 2. Click Advanced and check **Set as Administration Page**.
 3. Click **Save Changes**.
 
-    ![](images/admin-pages.png " ") 
+    ![](./images/admin-pages.png " ") 
 
 ## Task 8: Add Manage Products Page
 
 1. In the Create Application wizard, click **Add Page**.
 2. Click **Interactive Report**.
 
-    ![](images/ir-page.png " ") 
+    ![](./images/ir-page.png " ") 
 
 3. On the Report Page, enter the following:
     - Page Name - enter **Manage Products**
@@ -171,7 +171,7 @@ A dashboard page is a great way to show important information using various char
 
 6. Click **Add Page**
 
-    ![](images/ir-page2.png " ") 
+    ![](./images/ir-page2.png " ") 
 
 ## Task 9: Set Features
 
@@ -183,18 +183,18 @@ Now that you have added all the pages, it is time to generate the app and review
 
 1. Scroll to the bottom of the page, and click **Create Application**.
 
-    ![](images/create-app.png " ")
+    ![](./images/create-app.png " ")
 
 2. Once the application is created, you will find the new app on the application home page.
 Click **Run Application**.
     
-    ![](images/run-app.png " ")
+    ![](./images/run-app.png " ")
 
 ## Task 11: Run the Application
 
 1. Enter your user credentials. Click **Sign In**.
 
-    ![](images/sign-in.png " ")
+    ![](./images/sign-in.png " ")
 
     The new application will be displayed.
 

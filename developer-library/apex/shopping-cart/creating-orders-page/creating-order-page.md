@@ -11,7 +11,7 @@ Customers will find the details of the order:
 - Quantity and price of the items.
 
 Once you have finished the workshop and updated all the products as described in the steps, your page will look like the following image:
-![](images/orders-page.png " ")
+![](./images/orders-page.png " ")
 
 Estimated Lab Time: 15 minutes
 
@@ -23,9 +23,9 @@ In this lab, you will:
 Create a Normal Page to review the Order that customer has made.
 
 1. In the **App Builder**, click **Create Page**.
-    ![](images/create-page.png " ")
+    ![](./images/create-page.png " ")
 2. Select **Blank Page** and click **Next**.
-    ![](images/blank-page.png " ")
+    ![](./images/blank-page.png " ")
 3. Enter the following and click **Next**.
     - Page Number - enter **16**
     - Name - enter **Order Information**
@@ -39,12 +39,12 @@ Add a region to the page to display order details.
 
 1. In the new page created, navigate to the **Gallery Menu**.
 2. Drag a **Static Content** region and drop it to the Content Body section.
-    ![](images/create-static.png " ")
+    ![](./images/create-static.png " ")
 3. In the Property Editor, enter the following:
     - For Title - enter **Thank you for your order!**
     - For Template - select **Content Block**
     - For Template Options - check **Show Region Icon** and click **Ok**
-        ![](images/template-options.png " ")
+        ![](./images/template-options.png " ")
     - For Icon, enter **fa-heart**
 
 ## Task 3: Adding Items to the Page
@@ -52,21 +52,21 @@ Add an item to save the order ID.
 
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
 2. Right-click the region and click **Create Page Item**.
-    ![](images/create-item.png " ")
+    ![](./images/create-item.png " ")
 3. Create one hidden item as follows:
 
     | Name |  Type  | 
     | --- |  --- | 
     | P16_ORDER | Hidden |
 
-    ![](images/order-item.png " ")    
+    ![](./images/order-item.png " ")    
     
 ## Task 4: Adding Static Content Region
 Add a region to contain Order details and items.
 
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
 2. Right click the region and click **Create Sub Region**.
-    ![](images/create-sub-region.png " ")
+    ![](./images/create-sub-region.png " ")
 3. In the Property Editor, enter the following:
     - For Title - enter **Order: &P16_ORDER.**
     - For Type - select **Static Content**
@@ -76,7 +76,7 @@ Add a region to display Order details.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.
 2. Right click the region and click **Create Sub Region**.
-    ![](images/create-sub-region2.png " ")
+    ![](./images/create-sub-region2.png " ")
 3. In the Property Editor, enter the following:
     - For Title - enter **Order Details**
     - For Type - select **Cards**
@@ -99,7 +99,7 @@ Add a region to display Order details.
             </copy>
             ```
 4. click Attributes.
-    ![](images/attributes.png " ")
+    ![](./images/attributes.png " ")
     -  Search for Secondary Body in the filter and do the following:
         - Set Advanced Formatting to **On**
         - For HTML Expression - enter:
@@ -117,7 +117,7 @@ Add a region to display items in the order.
 
 1. In the Rendering tree (left pane), navigate to the **Order: &P16_ORDER.** region.
 2. Right-click the region and click **Create Sub Region**.
-    ![](images/create-sub-region3.png " ")
+    ![](./images/create-sub-region3.png " ")
 3. In the Property Editor, enter the following:
     - For Title - enter **Items**
     - For Type - select **Cards**
@@ -140,7 +140,7 @@ Add a region to display items in the order.
             </copy>
             ```
 4. click Attributes and do the following:
-    ![](images/attributes2.png " ")
+    ![](./images/attributes2.png " ")
 
     - Under Title section:
         - For Column - select **PRODUCT**    

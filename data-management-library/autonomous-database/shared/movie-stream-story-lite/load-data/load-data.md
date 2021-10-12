@@ -4,11 +4,11 @@
 
 In this lab, you will create a new database user, then load and link data from the MovieStream data lake on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
 
-You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third-party data integration tools. With the built-in tools, you can load data:
+You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third party data integration tools. With the built-in tools, you can load data:
 
-+ from files in your local device,
-+ from tables in remote databases, or
-+ from files stored in cloud-based object storage (Oracle Cloud Infrastructure Object Storage, Amazon S3, Microsoft Azure Blob Storage, Google Cloud Storage).
++ from files in your local device
++ from tables in remote databases
++ from files stored in cloud-based object storage (Oracle Cloud Infrastructure Object Storage, Amazon S3, Microsoft Azure Blob Storage, Google Cloud Storage)
 
 You can also leave data in place in cloud object storage, and link to it from your Autonomous Database.
 
@@ -25,11 +25,11 @@ We will also learn how to exercise features of the DBMS\_CLOUD package to link a
 ### Objectives
 
 In this lab, you will:
-* Create a database user and update the user's profile to grant more roles
+* Create a database user and update the user's profile to grant more privileges
 * Log in as the user
 * Learn how to define object storage credentials for your autonomous database
 * Learn how to load data from object storage using Data Tools
-* Learn how to load data from object storage using the DBMS\_CLOUD APIs executed from SQL
+* Load data using a script
 
 
 ### Prerequisites
@@ -84,7 +84,7 @@ For this workshop we need to create one new user.
 - Toggle the **OML** button to **On**
 - In the upper right section of the Create User dialog, select **UNLIMITED** from the drop down menu for Quota on tablespace DATA
 
-    >**Note:** If you are using an Always Free autonomous database instance, the **UNLIMITED** option will not be available. In this case, simply select **1TB** in the list. This will be sufficient for the whole workshop.
+    >**Note:** If you are using an Always Free autonomous database instance, the **UNLIMITED** option will not be available. In this case, simply select **20GB** in the list. This will be sufficient for the whole workshop.
 
 - Leave the **Password Expired** toggle button as off (Note: this controls whether the user is prompted to change their password when they next log in).
 - Leave the **Account is Locked** toggle button as off. 
@@ -95,9 +95,9 @@ For this workshop we need to create one new user.
 
 Now that you have created a user with several roles, let's see how easy it is to grant some more roles.
 
-## Task 2: Update the user's profile to grant more roles
+## Task 2: Update the user's profile to grant more privileges
 
-You learned how to use the Create User dialog to create a new user. You can also create and modify users using SQL. This is useful when you don't have access to the user interface or you want to run scripts to create/alter many users. Open the SQL worksheet as the ADMIN user to update the MovieStream user you just created.
+You learned how to use the Create User dialog to create a new user. You can also create and modify users using SQL. This is useful when you don't have access to the user interface or you want to run scripts to create/alter many users. Open the SQL worksheet as the ADMIN user to update the MOVIESTREAM user you just created.
 
 1. The Database Users page now shows your new MOVIESTREAM user in addition to the ADMIN user. Click **Database Actions** in the upper left corner of the page, to return to the Database Actions launch page.
 
@@ -122,11 +122,12 @@ You learned how to use the Create User dialog to create a new user. You can also
     grant all on directory data_pump_dir to moviestream;
     grant create procedure to moviestream;
     grant create sequence to moviestream;
+    grant create job to moviestream;
     </copy>
     ```
 
 
-## Task 3: Log in as the user
+## Task 3: Log in as the MOVIESTREAM user
 
 Now you need to switch from the ADMIN user to the MOVIESTREAM user, before starting the next lab on data loading.
 
@@ -314,7 +315,7 @@ end;
 
 9.  Click the **Run Script** button to run the script.
 
-> **Note** The script should take around 5-6 minutes to run as it uses a number of scripts to load and links a number of data files, and to generate additional views and tables used in later analysis steps.
+> **Note** The script should take around 4-5 minutes to run as it uses a number of scripts to load and links a number of data files, and to generate additional views and tables used in later analysis steps.
 
 10. When the script has completed, you should see a message like this in the Script Output window:
 
