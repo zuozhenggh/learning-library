@@ -57,7 +57,7 @@ Defining what **customer churn** is can be very complex, but for our example her
 
 The following diagram shows the process we will use, including a **buffer** month that represents the time needed to be able to **act** on the knowledge that a customer is about to leave. Predicting the **probability that a customer is going to leave exactly right now** does not help preparing a customer retention campaign, since there is a lot of processing involved in updating customer data at the end of a day before one can do scoring, excluding customers that have a **DO NOT CONTACT** exception. Also, processing offers and other processes in sync with all other divisions of the enterprise will always take time.  
 
-![Diagram of the Data on ML Churn Process](images/oml-customer-churn-concepts.png "Diagram of the Data on ML Churn Process")
+![Diagram of the Data on ML Churn Process](images/oml-customer-churn-concepts.png " ")
 
 In addition to that, **a customer churning today probably made that decision a while ago**, so our machine learning model needs to be able to detect any change in behavior from at least a month ago. This is the reason for the buffer of 1 month in the following process.
 
@@ -337,11 +337,9 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
 
     As a reference point, we expect this **Experiment** to run to completion on a **Classification** task using **Balanced Accuracy** as the metric, and using **Maximum Top Models of 2** in about **15 minutes or less**.
 
-    **IMPORTANT:** Please note that if you choose different settings for your own Experiment, a larger number if models, or even run it at **Best Accuracy** instead of **Faster Results**, a longer running time might be required, and a different "best" algorithm might be chosen. In that case, your results might differ slightly from the screens below, but will still be valid and correct.
+     **IMPORTANT:** Please note that if you choose different settings for your own Experiment, a larger number of models, or even run it at **Best Accuracy** instead of **Faster Results**, a longer running time might be required, and a different "best" algorithm might be chosen. In that case, your results might differ slightly from the screens below, but will still be valid and correct to your settings.
 
-    While the **Experiment** is running, you will note that there are **three dots** under a progress bar at the top right.
-
-    By clicking on the **three dots** themselves, a full floating **Progress** indicator opens, showing the specific step of the process the **Experiment** is currently running.
+    While the **Experiment** is running, you will note that a floating **Progress** indicator opens, showing the specific step of the process the **Experiment** is currently running, and an approximate time that it has been running.
 
     ![Churn AutoML Step 3 open progress](images/oml-churn-automl-open-progress.png " ")
 
@@ -440,9 +438,7 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
     - In the Namespace field, enter a name for the model namespace. Usually `OML_MODELS` would indicate an in-Database model.
     - Click **Shared** to enable users with access to the database schema to view and deploy the model.
 
-    In the case of a successful deployment, a notice at the top of the screen will indicate that, as shown below.
-
-    ![Churn AutoML Step 4 Leader Board deploy model successful](images/oml-churn-automl-leader-deploy-message.png " ")   
+    In the case of a successful deployment, a notice at the top right of the screen will indicate that.  
 
 6. Create an auto-generated notebook with the model selected in the Leaderboard
 
@@ -452,9 +448,7 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
 
     ![Churn AutoML Step 4 Leader Board Create Notebook](images/oml-churn-automl-leader-notebook.png " ")   
 
-    Upon successful **Notebook** creation, a notice at the top of the screen will indicate that, as shown below.
-
-    ![Churn AutoML Step 4 Leader Board Create Notebook message](images/oml-churn-automl-leader-notebook-message.png " ")  
+    Upon successful **Notebook** creation, a notice at the top right of the screen will indicate that. 
 
     If you were to open the Notebook from the **OML Notebooks** menu, you would see that the entire code for building the exact model you have chosen is there,  written in Python using OML4Py capabilities, so that a Data Scientist can study and modify the model at their will, as well as do batch scoring.
 
@@ -464,11 +458,9 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
 
     ![Churn AutoML Step 4 Leader Board Rename model](images/oml-churn-automl-leader-rename.png " ")  
 
-    If the Rename is successful, a notice at the top of the screen will indicate that, as shown below.
+    If the Rename is successful, a notice at the top right of the screen will indicate that.  
 
-    ![Churn AutoML Step 4 Leader Board Rename message](images/oml-churn-automl-leader-rename-message.png " ")  
-
-    It will also show up in the **Leader Board** with the new name as well.
+    It will also show up in the **Leader Board** with the new name as well in a few seconds.
 
     ![Churn AutoML Step 4 Leader Board Rename new name](images/oml-churn-automl-leader-rename-new-name.png " ")
 
@@ -480,7 +472,7 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
 
     Let's download a new **Oracle Machine Learning notebook** that has the code for scoring the table, and then import it into OML Notebooks.
 
-    **Click** <a href="./files/Scoring_customers_with_Churn_Model.json" download="Scoring_customers_with_Churn_Model.json" target="\_blank">**here**</a> to download the sample Scoring notebook for this lab, "Scoring\_customers\_with\_Churn\_Model.json," to a folder on your local computer.
+    [**CLICK HERE** to download the "Scoring customers with Churn Model" notebook file in JSON format](./../notebooks/Scoring_customers_with_Churn_Model.jso?download=1), and save it to a folder on your local computer.
 
     Navigate back to the OML Notebooks screen, click the **Import** button and navigate to the folder where you just downloaded the notebook **Scoring\_customers\_with\_Churn\_Model.json** file.
 
@@ -488,9 +480,9 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
 
     ![Churn AutoML Step 5 Scoring Notebook import](images/oml-churn-automl-scoring-import-note.png " ")
 
-    In case of success, you should receive a notification at the top of the screen that the import process was successful, and you should be able to see a new notebook called **Scoring customers with Churn Model** in the list of Notebooks.
+    In case of success, you should receive a notification at the top right of the screen that the import process was successful, and you should be able to see a new notebook called **Scoring customers with Churn Model** in the list of Notebooks.
 
-    ![Churn AutoML Step 5 Scoring Notebook main menu](images/oml-churn-automl-notebook-listing.png "Churn AutoML Step 5 Scoring Notebook main menu")
+    ![Churn AutoML Step 5 Scoring Notebook main menu](images/oml-churn-automl-notebook-listing.png " ")
 
     We are going to open the Notebook for editing. For that we need to **click the "Scoring customers with Churn Model" name**. You will see that the notebook server starts and loads the notebook. You should see the beginning of the notebook, as shown below.
 
@@ -553,4 +545,4 @@ Please *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Marcos Arancibia, Oracle Machine Learning Product Management
 * **Contributors** -  Mark Hornick, Marty Gubar, Kevin Lazarz, Nilay Panchal, Jayant Sharma, Jie Liu, Sherry LaMonica, Richard Green
-* **Last Updated By/Date** - Marcos Arancibia, August 2021
+* **Last Updated By/Date** - Marcos Arancibia, October 2021

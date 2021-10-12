@@ -20,23 +20,26 @@ Access to your Oracle Machine Learning Notebooks account
 
 ## Access your Oracle Machine Learning Notebooks Account
 
-To gain access to your Oracle Machine Learning Notebooks account, contact the Oracle Machine Learning administrator to create your account. The administrator creates the Oracle Machine Learning Notebooks account, and provides you the account details in an email.
+A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Autonomous Database.
 
-1. Click the URL provided by your Oracle Machine Learning administrator. This opens the Oracle Machine Learning Notebooks Sign In page.
+1. From the tab on your browser with your ADW instance, click **Service Console**, then select **Development** on the left.
 
-2. On the Sign In page, enter the **Tenant** and **Database** name provided by your administrator.
+	![Development option in ADW Service Console](images/adw_development.png "Development option in ADW Service Console")
 
-  ![login1.png](images/login1.png "login1.png")
 
-3. Click **Continue**.
+2. Click **Oracle Machine Learning Notebooks.**
 
-4. On the next Sign In page, enter your Username and Password provided to you and click **Sign In**.
+  ![Oracle Machine Learning Notebooks in ADW](images/adw_oml_notebooks.png "Oracle Machine Learning Notebooks in ADW")
 
-  ![login2.png](images/login2.png "login2.png")
+4. Enter your user credentials and click **Sign in**.
 
-5. After you sign in, change the password immediately by clicking **Change Password** in the top right corner of the Oracle Machine Learning home page, as shown in the screenshot.
+	> **Note:** If you are using a LiveLabs tenancy, then the username is ``OMLUSER`` and the password is ``AAbbcc123456``.
 
-  ![changepassword.png](images/changepassword.png "changepassword.png")
+	![Oracle Machine Learning Notebooks Signin page](images/oml_signin_page.png "Oracle Machine Learning Notebooks Sign in page")
+
+5. Click **Notebooks** in the Quick Actions section.
+
+	![Notebooks option in OML homepage](images/homepage_notebooks.png "Notebooks option in OML homepage")
 
 
 
@@ -112,8 +115,8 @@ To create a workspace:
 
 ## Acknowledgements
 
-* **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM, Moitreyee Hazarika, Principal User Assistance Developer, DB Development - Documentation
+* **Author** : Mark Hornick, Sr. Director, Data Science / Machine Learning PM; Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 
-* **Last Updated By/Date**: Moitreyee Hazarika, September 2021
+* **Last Updated By/Date**: Moitreyee Hazarika, October 2021
 
 See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
