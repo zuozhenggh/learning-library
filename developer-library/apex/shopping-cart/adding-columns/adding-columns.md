@@ -23,7 +23,7 @@ In this lab, you will:
 
 3. Navigate to **PRODUCTS** Table.
 
-    ![](images/products.png " ")
+    ![](./images/products.png " ")
 
 4. Click **Add Column** button.
 
@@ -35,7 +35,7 @@ In this lab, you will:
 
 6. Click **Next**.
 
-    ![](images/color-column.png " ")
+    ![](./images/color-column.png " ")
 
 7. Click **Finish**.
 
@@ -49,7 +49,7 @@ In this lab, you will:
 
 10. Click **Next**.
 
-    ![](images/department-column.png " ")
+    ![](./images/department-column.png " ")
 
 11. Click **Finish**.
 
@@ -63,7 +63,7 @@ In this lab, you will:
 
 14. Click **Next**.
 
-    ![](images/clothing-column.png " ")
+    ![](./images/clothing-column.png " ")
 
 15. Click **Finish**.
 
@@ -74,13 +74,13 @@ You will create lookup tables based on the new three columns, after you will hav
 
 2. Click **Create Lookup Table** button.
 
-    ![](images/lookup-table.png " ")
+    ![](./images/lookup-table.png " ")
 
 3. For Column, select **COLOR - varchar2**.
 
 4. Click **Next**.
 
-    ![](images/lt-color.png " ")
+    ![](./images/lt-color.png " ")
 
 5. Leave the table and sequence name by default:
 
@@ -89,23 +89,23 @@ You will create lookup tables based on the new three columns, after you will hav
 
 6. Click **Next**.
 
-    ![](images/lt-color2.png " ")
+    ![](./images/lt-color2.png " ")
 
 7. Click **Create Lookup Table**.
 
-    ![](images/lt-color3.png " ")
+    ![](./images/lt-color3.png " ")
 
     *Note: Click the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
 
 8. To create **Department** lookup table, navigate to **Products** table and Click **Create Lookup Table** button.
 
-    ![](images/lookup-table2.png " ")
+    ![](./images/lookup-table2.png " ")
 
 9. For Column, select **DEPARTMENT - varchar2**.
 
 10. Click **Next**.
 
-    ![](images/lt-department.png " ")
+    ![](./images/lt-department.png " ")
 
 11. Leave the table and sequence name by default:
 
@@ -114,22 +114,22 @@ You will create lookup tables based on the new three columns, after you will hav
 
 12. Click **Next**.
 
-    ![](images/lt-department2.png " ")
+    ![](./images/lt-department2.png " ")
     
 13. Click **Create Lookup Table**.
 
-    ![](images/lt-department3.png " ")
+    ![](./images/lt-department3.png " ")
     *Note: Click the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
     
 14. To create **Clothing** lookup table, navigate to **Products** table and Click **Create Lookup Table** button.
 
-    ![](images/lookup-table3.png " ")
+    ![](./images/lookup-table3.png " ")
 
 15. For Column, select **CLOTHING - varchar2**.
 
 16. Click **Next**.
 
-    ![](images/lt-clothing.png " ")
+    ![](./images/lt-clothing.png " ")
 
 17. Leave the table and sequence name by default:
 
@@ -138,11 +138,11 @@ You will create lookup tables based on the new three columns, after you will hav
 
 18. Click **Next**.
 
-    ![](images/lt-clothing2.png " ")
+    ![](./images/lt-clothing2.png " ")
 
 19. Click **Create Lookup Table**.
 
-    ![](images/lt-clothing3.png " ")
+    ![](./images/lt-clothing3.png " ")
     *Note: Click the **Create Lookup Table** button only once. Then you will find the new table listed in the Object Browser.*
 
 20. The columns COLOR, DEPARTMENT, and CLOTHING in the **PRODUCTS** table are renamed and the data type changed to NUMBER. Also, there are new tables:
@@ -150,7 +150,7 @@ You will create lookup tables based on the new three columns, after you will hav
     - DEPARTMENT_LOOKUP
     - CLOTHING_LOOKUP
 
-    ![](images/lookup-table4.png " ")
+    ![](./images/lookup-table4.png " ")
 
 ## Task 3: Populating Lookup Tables
 
@@ -193,11 +193,11 @@ You will create lookup tables based on the new three columns, after you will hav
 
 6. Click **Run Now**.
 
-    ![](images/create-script.png " ")
+    ![](./images/create-script.png " ")
 
 7. The Script Results page is displayed listing the statements processed, successful, and with errors.
 
-    ![](images/script-results.png " ")
+    ![](./images/script-results.png " ")
     
 
 You now know how to create new columns to your existing tables and how to create lookup tables.
