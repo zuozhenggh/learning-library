@@ -20,7 +20,8 @@ The following values are used in many of the commands referenced in this lab and
 
 Connect to one of your nodes and collect the following information
 
-1. SCAN ADDRESS
+1. SCAN ADDRESS is common to all nodes - connect to either node
+
 
 ````
 sudo su - oracle
@@ -31,6 +32,8 @@ srvctl config scan
 The SCAN name is supplied on the first line (and does not include the *comma*). In the example shown the SCAN Name is **lvracdb-s01-2021-09-01-083747-scan.pub.racdblab.oraclevcn.com**
 
 2. Database name and Instance Name
+
+The Database name is consistent across the cluster, the instance names are unique to each cluster.
 
 ````
 <copy>
@@ -69,7 +72,18 @@ In this example the default service for PDB1 is:
 pdb1.pub.racdblab.oraclevcn.com
 ````
 
-6. The values you have collected will need to be substituted in to commands referenced in the labs.
+6. The Virtual IP (VIP) Names
+
+Collect the VIP names (one per node). Run the following on each node:
+    ````
+    <copy>
+    sudo su - grid
+    crsctl get nodename
+    srvctl config vip -node nodename
+    exit
+    </copy>
+    ````
+7. The values you have collected will need to be substituted in to commands referenced in the labs. During the lab the srvctl comnmands can be run from either node, but some exercises require you to specifically target the database instance running a given service, for example. Operating system commands have to be run on a particular node (which one depends, typically, on where a given service is currently running).
 
 For example, to relocate a service you would be instructed to use the command:
 ````
