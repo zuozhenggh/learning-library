@@ -113,30 +113,61 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     source setup.sh
     </copy>
     ```
-
    The setup process will typically take around 20 minutes to complete.  
 
 2. The setup will ask for you to enter your User OCID.  
 
    Be sure to provide the user OCID and not the user name or tenancy OCID.
 
-   The user OCID will look something like `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta`. Note the "ocid1.user" prefix.
+   User information is available in the Oracle Cloud Console. The user OCID will look something like `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta`. Note the "ocid1.user" prefix. 
 
-   This is in the Oracle Cloud Console. Note, sometimes the name link is missing in which case select the `User Settings` link. Do not select the "Tenancy" link.
+   Note, sometimes the name link is missing in which case select the `User Settings` link. Do not select the "Tenancy" link.
+
+   Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
   ![](images/get-user-ocid.png " ")
+
+   Click Show to see the details and then click Copy to copy the user OCID to the clipboard, paste in the copied data in console.
 
   ![](images/example-user-ocid.png " ")
 
 3. The setup will automatically upload an Auth Token to your tenancy so that docker can log in to the Oracle Cloud Infrastructure Registry. If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room. This is done through the Oracle Cloud Console.
 
+   Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
+
   ![](images/get-user-ocid.png " ")
+
+  On the User Details console, click Auth Tokens under Resources.
+
+  ![](images/auth-token.png " ")
+
+  On the Auth Tokens screen, highlight the existing token(s) and delete by clicking Delete from the drop-down menu.
 
   ![](images/delete-auth-token.png " ")
 
 4. The setup will ask you to enter an admin password for the databases. For simplicity, the same password will be used for both the order and inventory databases. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
 5. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface. Make a note of the password as you will need it later.  The UI password must be 8 to 30 characters.
+
+6. The setup will ask you to confirm that there are no other un-terminated OKE clusters exist in your tenancy.
+
+   ```
+   <copy>
+   You are limited to only one OKE cluster in this tenancy. This workshop will create one additional OKE cluster and so any other OKE clusters must be terminated. 
+   Please confirm that no other un-terminated OKE clusters exist in this tenancy and then hit [RETURN]?
+   </copy>
+   ```
+
+   To confirm that there are no other un-terminated OKE clusters, click the Navigation Menu in the upper left, navigate to Developer Services and click on Kubernetes Clusters (OKE).
+
+   ![](images/dev-services-menu.png " ")
+  
+   ![](images/get-oke-info.png " ")
+
+   If there are any un-terminated OKE cluster(s), please delete it(them) and continue with setup steps.
+   
+   ![](images/get-oke-details.png " ")
+
 
 ## Task 8: Monitor the Setup
 
