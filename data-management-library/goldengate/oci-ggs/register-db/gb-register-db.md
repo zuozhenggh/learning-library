@@ -89,7 +89,22 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-8.  Log out of Database Actions.
+9.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
+
+    ```
+    <copy>set pagesize 50
+    alter session set container=pdbeast;
+    column object_name format a40
+    column support_mode format a8 heading 'Support|Mode'
+    select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
+    </copy>
+    ```
+
+    The Script Output panel displays six tables whose Support_Mode is **FULL**.
+
+    ![](images/02-09b.png " ")
+
+    You can leave the SQL window open and continue with the next Task.
 
 ## Task 3: Register the target database and unlock the GGADMIN user
 
@@ -126,4 +141,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, October 2021

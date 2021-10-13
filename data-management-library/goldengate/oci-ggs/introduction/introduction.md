@@ -11,15 +11,6 @@ Oracle Cloud Infrastructure GoldenGate is a fully-managed service that uses Orac
 
    [](youtube:m4oloCyQJGM)
 
-### Objectives
-
-In this lab, you will:
-* Create the source and target databases
-* Create an Oracle Cloud Infrastructure GoldenGate Deployment
-* Register the source and target databases
-* Create an Extract and a Replicat
-* Monitor Extracts and Replicats
-
 ### Prerequisites
 
 * Experience with Oracle Database
@@ -37,4 +28,4 @@ In this lab, you will:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, October 2021

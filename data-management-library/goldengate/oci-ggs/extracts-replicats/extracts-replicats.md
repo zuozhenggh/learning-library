@@ -155,7 +155,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
     ![](images/04-02-sql.png " ")
 
-## Task 5: Export data using Oracle Data Pump
+## Task 5: Export data using Oracle Data Pump (ExpDP)
 
 Before using Oracle Data Pump to export data, first create an Oracle Object Store bucket, then create yourself a Credential Token, and then use these resources to create a credential in ATP.
 
@@ -176,10 +176,10 @@ Before using Oracle Data Pump to export data, first create an Oracle Object Stor
 5.  Using the bucket details, formulate and take note of your bucket URI:
 
     ```
-    <copy>https://objectstorage.us-&lt;region&gt;-1.oraclecloud.com/n/&lt;namespace&gt;/&lt;bucket-name&gt;/o/</copy>
+    <copy>https://objectstorage.&lt;region&gt;.oraclecloud.com/n/&lt;namespace&gt;/b/&lt;bucket-name&gt;/o/</copy>
     ```
 
-    For example, if your region is Phoenix, your namespace is c4u04, and your bucket name ADB-LLStore, then your URI would be: `https://objectstorage.us-phoenix-1.oraclecloud.com/n/c4u04/ADB-LLStore/o/`.
+    For example, if your region is Phoenix, your namespace is c4u04, and your bucket name ADB-LLStore, then your URI would be: `https://objectstorage.us-phoenix-1.oraclecloud.com/n/c4u04/b/ADB-LLStore/o/`.
 
 6.  In the Oracle Cloud Console global header, click **Profile** (user icon), and then select your username.
 
@@ -213,7 +213,7 @@ END;</copy>
 
     ![](images/05-10-create-credential.png " ")
 
-11. Use the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.us-<region>-1.oraclecloud.com/n/<namespace>/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs.
+11. Use the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs.
 
     ```
     <copy>DECLARE
@@ -233,7 +233,7 @@ END;</copy>
     -- Specify a single dump file for the job (using the handle just returned
     -- and a directory object, which must already be defined and accessible
     -- to the user running this procedure.
-    DBMS_DATAPUMP.ADD_FILE(h1,'https://objectstorage.us-&lt;region&gt;-1.oraclecloud.com/n/&lt;namespace&gt;/&lt;bucket-name&gt;/o/SRC_OCIGGLL.dmp','ADB_OBJECTSTORE','100MB',DBMS_DATAPUMP.KU$_FILE_TYPE_URIDUMP_FILE,1);
+    DBMS_DATAPUMP.ADD_FILE(h1,'https://objectstorage.&lt;region&gt;.oraclecloud.com/n/&lt;namespace&gt;/b/&lt;bucket-name&gt;/o/SRC_OCIGGLL.dmp','ADB_OBJECTSTORE','100MB',DBMS_DATAPUMP.KU$_FILE_TYPE_URIDUMP_FILE,1);
 
     -- A metadata filter is used to specify the schema that will be exported.
     DBMS_DATAPUMP.METADATA_FILTER(h1,'SCHEMA_EXPR','IN (''SRC_OCIGGLL'')');
@@ -285,7 +285,128 @@ END;</copy>
 END;</copy>
     ```
 
-## Task 4: Add and Run the Replicat
+    ![](images/05-11.png " ")
+
+## Task 6: Import data using Oracle Data Pump (ImpDP)
+
+1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Data Warehouse**.
+
+    ![](images/06-01.png " ")
+
+2. In the list of Autonomous Data Warehouses, click **TargetADW**.
+
+    ![](images/06-02.png " ")
+
+3. On the **TargetADW Details** page, click **Tools**, and then click **Open Database Actions**.
+
+    ![](images/06-03.png " ")
+
+4. Log in to Database Actions as ADMIN, and then click **SQL**.
+
+5. Enter the following script and then click **Run Statement** to create a credential in ADW:
+
+    ```
+    <copy>BEGIN
+    DBMS_CLOUD.CREATE_CREDENTIAL(
+      credential_name => 'ADB_OBJECTSTORE',
+      username => '<user-name>',
+      password => '<token>'
+    );
+    END;
+    </copy>
+    ```
+
+    ![](images/06-05.png " ")
+
+6.  Enter the following script and then click **Run Statement** to import data using ImpDP:
+
+    ```
+    <copy>DECLARE
+    ind NUMBER;  -- Loop index
+    h1 NUMBER;  -- Data Pump job handle
+    percent_done NUMBER;  -- Percentage of job complete
+    job_state VARCHAR2(30);  -- To keep track of job state
+    le ku$_LogEntry;  -- For WIP and error messages
+    js ku$_JobStatus;  -- The job status from get_status
+    jd ku$_JobDesc;  -- The job description from get_status
+    sts ku$_Status;  -- The status object returned by get_status
+    BEGIN
+
+    -- Create a (user-named) Data Pump job to do a "full" import (everything
+    -- in the dump file without filtering).
+    h1 := DBMS_DATAPUMP.OPEN('IMPORT','FULL',NULL,'SRCMIRROR_OCIGGLL_IMPORT');
+
+    -- Specify the single dump file for the job (using the handle just returned)
+    -- and directory object, which must already be defined and accessible
+    -- to the user running this procedure. This is the dump file created by
+    -- the export operation in the first example.
+
+    DBMS_DATAPUMP.ADD_FILE(h1,'https://objectstorage.ca-toronto-1.oraclecloud.com/n/C4U04/b/bucket-11725/o/SRC_OCIGGLL.dmp','ADB_OBJECTSTORE',null,DBMS_DATAPUMP.KU$_FILE_TYPE_URIDUMP_FILE);
+
+
+    -- A metadata remap will map all schema objects from SRC_OCIGGLL to SRCMIRROR_OCIGGLL.
+    DBMS_DATAPUMP.METADATA_REMAP(h1,'REMAP_SCHEMA','SRC_OCIGGLL','SRCMIRROR_OCIGGLL');
+
+    -- If a table already exists in the destination schema, skip it (leave
+    -- the preexisting table alone). This is the default, but it does not hurt
+    -- to specify it explicitly.
+    DBMS_DATAPUMP.SET_PARAMETER(h1,'TABLE_EXISTS_ACTION','SKIP');
+
+    -- Start the job. An exception is returned if something is not set up properly.
+    DBMS_DATAPUMP.START_JOB(h1);
+
+    -- The import job should now be running. In the following loop, the job is
+    -- monitored until it completes. In the meantime, progress information is
+    -- displayed. Note: this is identical to the export example.
+    percent_done := 0;
+    job_state := 'UNDEFINED';
+    while (job_state != 'COMPLETED') and (job_state != 'STOPPED') loop
+      dbms_datapump.get_status(h1,
+        dbms_datapump.ku$_status_job_error +
+        dbms_datapump.ku$_status_job_status +
+        dbms_datapump.ku$_status_wip,-1,job_state,sts);
+        js := sts.job_status;
+
+      -- If the percentage done changed, display the new value.
+      if js.percent_done != percent_done
+      then
+        dbms_output.put_line('*** Job percent done = ' ||
+        to_char(js.percent_done));
+        percent_done := js.percent_done;
+      end if;
+
+      -- If any work-in-progress (WIP) or Error messages were received for the job, display them.
+      if (bitand(sts.mask,dbms_datapump.ku$_status_wip) != 0)
+      then
+        le := sts.wip;
+      else
+        if (bitand(sts.mask,dbms_datapump.ku$_status_job_error) != 0)
+        then
+          le := sts.error;
+        else
+          le := null;
+        end if;
+      end if;
+      if le is not null
+      then
+        ind := le.FIRST;
+        while ind is not null loop
+          dbms_output.put_line(le(ind).LogText);
+          ind := le.NEXT(ind);
+        end loop;
+      end if;
+    end loop;
+
+    -- Indicate that the job finished and gracefully detach from it.
+    dbms_output.put_line('Job has completed');
+    dbms_output.put_line('Final job state = ' || job_state);
+    dbms_datapump.detach(h1);
+    END;</copy>
+    ```
+
+    ![](images/06-06.png " ")
+
+## Task 7: Add and run the Replicat
 
 1.  On the GoldenGate Deployment Console Home page, click **Add Replicat** (plus icon).
 
@@ -293,7 +414,9 @@ END;</copy>
 
 2.  On the Add Replicat page, select **Nonintegrated Replicat**, and then click **Next**.
 
-3.  On the Replicate Options page, for **Process Name**, enter **Rep**.
+    ![](images/07-02.png " ")
+
+3.  On the Replicat Options page, for **Process Name**, enter **Rep**.
 
 4.  For **Credential Domain**, select **OracleGoldenGate**.
 
@@ -303,25 +426,54 @@ END;</copy>
 
 7.  For **Checkpoint Table**, select **"SRCMIRROR_OCIGGLL","CHECKTABLE"**.
 
-    ![Add Replicat - Basic Information](images/03-05-ggs-replicat-basicInfo.png)
+    ![Add Replicat - Basic Information](images/07-07.png " ")
 
-6.  Under **Managed Options**, enable **Critical to deployment health**.
+8.  Under **Managed Options**, enable **Critical to deployment health**, and then click **Next**.
 
-7.  Click **Next**.
+    ![](images/07-08.png " ")
 
-8.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with **MAP SRC\_OCIGGLL.\*, TARGET SRCMIRROR\_OCIGGLL.\*;**
+9.  In the **Parameter File** text area, replace **MAP \*.\*, TARGET \*.\*;** with the following script:
 
-    ![Add Replicat - Parameter File](images/03-08-param-file.png)
+    ```
+    <copy>-- Capture DDL operations for listed schema tables
+    --
+    ddl include mapped
+    --
+    -- Add step-by-step history of ddl operations captured
+    -- to the report file. Very useful when troubleshooting.
+    --
+    ddloptions report
+    --
+    -- Write capture stats per table to the report file daily.
+    --
+    report at 00:01
+    --
+    -- Rollover the report file weekly. Useful when PR runs
+    -- without being stopped/started for long periods of time to
+    -- keep the report files from becoming too large.
+    --
+    reportrollover at 00:01 on Sunday
+    --
+    -- Report total operations captured, and operations per second
+    -- every 10 minutes.
+    --
+    reportcount every 10 minutes, rate
+    --
+    -- Table map list for apply
+    --
+    DBOPTIONS ENABLE_INSTANTIATION_FILTERING;
+    MAP SRC_OCIGGLL.*, TARGET SRCMIRROR_OCIGGLL.*;</copy>
+    ```
 
-9.  Click **Create**.
+    ![Add Replicat - Parameter File](images/07-09.png " ")
 
-10. In the Rep Replicat **Action** menu, select **Start**.
+10.  Click **Create**.
 
-    ![Replicat Actions Menu - Start](images/03-10-ggs-start-replicat.png)
+11. In the REP Replicat **Action** menu, select **Start**.
 
     The yellow exclamation point icon changes to a green checkmark.
 
-In this lab, you created and ran an Extract and Replicat. You may now [proceed to the next lab](#next), to monitor these processes.
+In this lab, you created and ran an Extract and Replicat. You may now **proceed to the next lab**.
 
 ## Learn more
 
@@ -331,4 +483,4 @@ In this lab, you created and ran an Extract and Replicat. You may now [proceed t
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, October 2021
