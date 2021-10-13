@@ -24,7 +24,7 @@ Estimated Time: 20 minutes.
 
     ```
     <copy>
-    ssh user admin password
+    set user admin password
     Enter a Unique Password, for example: Check@123
     save config
     </copy>
@@ -94,7 +94,7 @@ Estimated Time: 20 minutes.
 
     ```
     <copy>
-    ssh user admin password
+    set user admin password
     Enter a Unique Password, for example: Check@123
     save config
     </copy>
@@ -106,11 +106,24 @@ Estimated Time: 20 minutes.
 
     ![](../common/images/Manager-Initial-Config-1.png " ")
 
-4. You will be setting up **static Routes** to support Spoke VCNs traffic. Click on **Lock** icon to unlock configuration changes and Navigate to **Network Management > IPv4 Static Routes**. Click on **Add** icon to add new static route:
+4. You will entering below minimum configuration and options to support **CloudGuard1** instance initial configuration. Fill out the dialog box for initial configuration:
+
+    - **Host Name**: Entery Friendly Host Name i.e. **cloudguard1** 
+    - **Authentication**:  Enter admin user password; For test purpose you can keep it same as **Check@123**
+    - **SIC**: Security Manager supported communication SIC key; For test purpose you can keep it same as **Check@123**
+    - **Configuration**:  Select **Enable Cluster membership for this gateway** 
+
+    ![](../common/images/cloud-guard1-initial1.png " ")
+
+5. Verify all the information and Click **GO** and Select **Yes** to apply configuration and reboot:
+
+    ![](../common/images/cloud-guard1-initial2.png " ")
+
+6. Once host reboots you will be setting up **static Routes** to support Spoke VCNs traffic. Click on **Lock** icon to unlock configuration (If locked) changes and Navigate to **Network Management > IPv4 Static Routes**. Click on **Add** icon to add new static route:
 
     ![](../common/images/CloudGuard1-Initial-Config-1.png " ")
 
-5. You will be entering a static route entery as per below table:
+7. You will be entering a static route entery as per below table:
 
    | Destination | Subnet Mask | Gateway     | Comment                                                      |
    |-------------|-------------|-------------|--------------------------------------------------------------|
@@ -130,7 +143,7 @@ Estimated Time: 20 minutes.
 
     ```
     <copy>
-    ssh user admin password
+    set user admin password
     Enter a Unique Password, for example: Check@123
     save config
     </copy>
@@ -142,17 +155,30 @@ Estimated Time: 20 minutes.
 
     ![](../common/images/Manager-Initial-Config-1.png " ")
 
-4. You will be setting up **static Routes** to support Spoke VCNs traffic. Click on **Lock** icon to unlock configuration changes and navigate to **Network Management > IPv4 Static Routes**. Click on **Add** icon to add new static route:
+4. You will entering below minimum configuration and options to support **CloudGuard1** instance initial configuration. Fill out the dialog box for initial configuration:
+
+    - **Host Name**: Entery Friendly Host Name i.e. **cloudguard2**
+    - **Authentication**:  Enter admin user password; For test purpose you can keep it same as **Check@123**
+    - **SIC**: Security Manager supported communication SIC key; For test purpose you can keep it same as **Check@123**
+    - **Configuration**:  Select **Enable Cluster membership for this gateway** 
+
+    ![](../common/images/cloud-guard2-initial1.png " ")
+
+5. Verify all the information and Click **GO** and Select **Yes** to apply configuration and reboot:
+
+    ![](../common/images/cloud-guard2-initial2.png " ")
+
+6. Once host reboots you will be setting up **static Routes** to support Spoke VCNs traffic. Click on **Lock** icon to unlock configuration (If locked) changes and navigate to **Network Management > IPv4 Static Routes**. Click on **Add** icon to add new static route:
 
     ![](../common/images/CloudGuard1-Initial-Config-1.png " ")
 
-5. You will be entering a static route entery as per below table:
+7. You will be entering a static route entery as per below table:
 
    | Destination | Subnet Mask | Gateway     | Comment                                                      |
    |-------------|-------------|-------------|--------------------------------------------------------------|
    | 10.0.0.0    | 255.255.0.0 | 192.168.2.1 | Spoke VCNs traffic route via  Backend Subnet Default Gateway |
 
-6. Enter values as per table and Click on **Save** icon to save route entry:
+8. Enter values as per table and Click on **Save** icon to save route entry:
 
     ![](../common/images/CloudGuard1-Initial-Config-2.png " ")
 
@@ -174,9 +200,9 @@ Estimated Time: 20 minutes.
 
 5. Click or Copy below link to download the **.exe** file on your **Windows VM** and install SmartConsole software.
 
-    Click here: [smartconsole.exe](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2-RdLPleO_mfBfinrGKEoeVcAdGCv44D-FIf8ysm-QfJ8m4zHzB1vaFnluPPnPxU/n/partners/b/files/o/smartconsole.exe)
+    Click here: [smartconsole.exe](https://objectstorage.us-ashburn-1.oraclecloud.com/p/2-RdLPleO_mfBfinrGKEoeVcAdGCv44D-FIf8ysm-QfJ8m4zHzB1vaFnluPPnPxU/n/partners/b/files/o/smartconsole.exe) to download/copy link to your Windows VM.
 
-    - SmartConsole to support connectivity to **R81** Check Point Security Managment platform to support **CloudGuard High Availability** use-case.
+    - SmartConsole is to support connectivity of Check Point Security Managment platform (Release: **R81**) and **CloudGuard** configuration.
 
 6. Click on **SmartConsole** software installed on your Windows VM:
 
@@ -227,8 +253,8 @@ Estimated Time: 20 minutes.
 14. Repeat the same step for adding another memeber and fill the dialog box for **CloudGuard2**. Click on **Ok** button:
 
     Enter the following information and accept all the defaults
-       - **Name**: Enter a user-friendly name; CloudGuard1
-       - **IPv4 Address**: Enter Primary Interface Private IP address of **CloudGuard1** instance.
+       - **Name**: Enter a user-friendly name; CloudGuard2
+       - **IPv4 Address**: Enter Primary Interface Private IP address of **CloudGuard2** instance.
        - **Secure Internal Communication**:
          - Enter **SIC** key associated to **CloudGuard1** instance which you added during instance launch either manually or by default via **Oracle Resource Manager**. It's **Check@1234** and confirm the same key in **Confirm Activation Key** field.
          - Click on **Initialize** to test communication and it should change to **Trust established**
@@ -237,15 +263,19 @@ Estimated Time: 20 minutes.
 
     ![](../common/images/Cluster-Config-11.png " ")
 
-15. Verify that both **CloudGuard1 and CloudGuard2** are part of your cluster and click on **Finish** button to complete Cluster configuration:
+15. Verify that both **CloudGuard1 and CloudGuard2** are part of your cluster and click on **Next** button:
 
     ![](../common/images/Cluster-Config-12.png " ")
 
-16. View your created cluster and associate members are visible on **GATEWAYS & SERVERS** section:
+16. Click on **Finish** button on next window to complete Cluster configuration:
+
+    ![](../common/images/add-cluster-initial-config.png " ")
+
+17. View your created cluster and associate members are visible on **GATEWAYS & SERVERS** section:
 
     ![](../common/images/Cluster-Config-13.png " ")
 
-17. Click on **checkpoint-cluster** and navigate to **Network Management**. Click on **Get Interfaces** and select interface with topology. This will populate **eth0** and **eth1** interfaces for each member. Click on **eth0** interface and update values as per below configuration:
+18. Double click on **checkpoint-cluster** and navigate to **Network Management**. Click on **Get Interfaces** and select **Get Interface with topology** with selecting **Yes** option. This will populate **eth0** and **eth1** interfaces for each member. Click on **eth0** interface and update values as per below configuration:
 
     Enter the following information and accept all the defaults
        - **Network Type**: Cluster
@@ -253,31 +283,33 @@ Estimated Time: 20 minutes.
 
     ![](../common/images/Cluster-Config-14.png " ")
 
-18. Click on **OK** button of **eth0** dialog box to save configuration.
+19. Click on **OK** button of **eth0** dialog box to save configuration.
 
-19. Click on **eth1** interface and update values as per below configuration:
+20. Click on **eth1** interface and update values as per below configuration:
 
     Enter the following information and accept all the defaults
-       - **Network Type**: Cluster
+       - **Network Type**: Cluster + Sync 
        - **IPv4**: Enter Secondary Private IP Address of Secondary Interface on **CloudGuard1** instance.
 
     ![](../common/images/Cluster-Config-15.png " ")
 
-20. Click on **OK** button of **eth1** dialog box to save configuration.
+21. Click on **OK** button of **eth1** dialog box to save configuration.
 
-21. Click on **OK** button of **Gateway Cluster Properties checkpoint-cluster** to save configuration.
+22. Click on **OK** button of **Gateway Cluster Properties checkpoint-cluster** to save configuration. Click **Yes** to continue and it will save cluster configuration. 
 
-22. At this point for test purpose you will update clean up policy to reflect **Allow ALL** name and update **Action** from **Drop** to **Accept**:
+23. Navigate to **Security Policies** and at this point for **Test Purpose** you will update **Cleanup rule** to reflect **Allow ALL** name and update **Action** from **Drop** to **Accept**:
 
     ![](../common/images/Cluster-Config-16.png " ")
 
-23. Click on **Install Policy** which will prompt you to see policy target as **Cluster** which is expected. Select **publish and install** button to publish configuration and installing policy.
+24. Click on **Install Policy** which will prompt you to see policy target as **Cluster** which is expected. Select **publish and install** button to publish configuration and installing policy.
 
-24. Successful configuration policy push should like this:
+    ![](../common/images/initial-publish-install.png " ")
+
+25. Successful configuration policy push should like this:
 
     ![](../common/images/Cluster-Config-17.png " ")
 
-25. You should see healthy check marks to Cluster and Cluster's members shortly:
+26. You should see healthy check marks to Cluster and Cluster's members shortly:
 
     ![](../common/images/Cluster-Config-18.png " ")
 
