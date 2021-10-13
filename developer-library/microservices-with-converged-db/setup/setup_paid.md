@@ -33,38 +33,42 @@ If you are not an administrator on your tenancy, you must insure that additional
 Here are the steps for creating a new group and assigning security policy required for this workshop (only a user with the admin account will be able to perform the below steps):
 
 1. Click the Navigation Menu in the upper left, navigate to Identity & Security and select Groups.
-  ![](images/id-groups.png " ")
+
+   ![](images/id-groups.png " ")
 
 2. Click Create Group.
-  ![](images/create-group.png " ")
+
+   ![](images/create-group.png " ")
 
 3. In the Create Group dialog box, enter the following:
  - **Name**: Enter a unique name for your group, such as "MicroservicesAdmin”. Note that the group name cannot contain spaces.
  - **Description**: Enter a description (for example, “New group for microservices workshop”).
  - Click **Create**.
-  ![](images/new-group.png " ")
 
-  ![](images/get-new-group.png " ")
+   ![](images/new-group.png " ")
+
+   ![](images/get-new-group.png " ")
 
  4. Now, create a security policy that gives the group permissions to execute the setup steps for this workshop, entering a name, such as "Microservices-Policies".
 
-  ![](images/create-policy.png " ")
+    ![](images/create-policy.png " ")
 
   Using **Edit Policy Statement** option, add the below statements to the policy created above.
 
-```
-<copy>
-Allow group MicroservicesAdmin to use cloud-shell in tenancy
-Allow group MicroservicesAdmin to manage users in tenancy
-Allow group MicroservicesAdmin to manage all-resources in tenancy
+   ```
+   <copy>
+   Allow group MicroservicesAdmin to use cloud-shell in tenancy
+   Allow group MicroservicesAdmin to manage users in tenancy
+   Allow group MicroservicesAdmin to manage all-resources in tenancy
 
-Allow group MicroservicesAdmin to manage vaults in tenancy
-Allow group MicroservicesAdmin to manage buckets in tenancy
-Allow group MicroservicesAdmin to manage objects in tenancy
+   Allow group MicroservicesAdmin to manage vaults in tenancy
+   Allow group MicroservicesAdmin to manage buckets in tenancy
+   Allow group MicroservicesAdmin to manage objects in tenancy
 
-</copy>
-```
-![](images/policy-statements.png " ")
+   </copy>
+  ```
+  
+  ![](images/policy-statements.png " ")
 
 5. And finally, make sure your user account has been added to the group created in step#2.
 
