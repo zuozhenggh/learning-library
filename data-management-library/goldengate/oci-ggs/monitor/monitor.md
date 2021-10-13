@@ -21,19 +21,13 @@ In order to complete this lab, you should have completed the preceding lab and h
 
 ## Task 1: Using the Performance Metrics Server
 
-1.  In the GoldenGate deployment console, click **Performance Metrics Server**.
+1.  In the GoldenGate deployment console, click **Performance Metrics Server**, and then click **EXT**.
 
     ![](images/05-01-perf-serv.png)
 
-    ![](images/05-01-perf-serv-b.png)
+    > **Note:** *You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.*
 
-    Note: You can also view performance details for the Administration, Distribution, and Receiver Servers, as well as any processes created.
-
-2.  Click the Extract to view its performance details.
-
-    ![](images/05-02-ext.png)
-
-3.  Click **Database Statistics**.
+2.  Click **Database Statistics**.
 
     ![](images/05-03-db-stats.png)
 
@@ -63,4 +57,3 @@ In this lab, you learned to monitor performance in the OCI GoldenGate Deployment
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
 * **Last Updated By/Date** - March 2021
-

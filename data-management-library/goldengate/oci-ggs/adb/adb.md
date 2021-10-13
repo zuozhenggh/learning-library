@@ -131,10 +131,9 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 ## Task 4: Create an ADW instance
 
-
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
-		![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 2.  Click **Create Autonomous Database**.
 

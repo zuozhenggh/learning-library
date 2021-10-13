@@ -341,7 +341,7 @@ END;</copy>
     -- to the user running this procedure. This is the dump file created by
     -- the export operation in the first example.
 
-    DBMS_DATAPUMP.ADD_FILE(h1,'https://objectstorage.ca-toronto-1.oraclecloud.com/n/C4U04/b/bucket-11725/o/SRC_OCIGGLL.dmp','ADB_OBJECTSTORE',null,DBMS_DATAPUMP.KU$_FILE_TYPE_URIDUMP_FILE);
+    DBMS_DATAPUMP.ADD_FILE(h1,'https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/SRC_OCIGGLL.dmp','ADB_OBJECTSTORE',null,DBMS_DATAPUMP.KU$_FILE_TYPE_URIDUMP_FILE);
 
 
     -- A metadata remap will map all schema objects from SRC_OCIGGLL to SRCMIRROR_OCIGGLL.
