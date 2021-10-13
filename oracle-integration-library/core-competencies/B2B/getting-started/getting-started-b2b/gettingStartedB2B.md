@@ -173,7 +173,7 @@ The sample screenshot below shows the B2B Tracking UI.
 
 **Business Messages**
 
-In this view, you see B2B messages as individual business transactions. Rows marked denote functional acknowledgments.
+In this view, you see B2B messages as individual business transactions. Rows marked 'FA' denote functional acknowledgments.
 
 Let's say you receive an inbound message containing batched transactions. Then in this view you will see individual rows for each of the single transactions within that batch.
 

@@ -37,16 +37,16 @@
             "filename": "../../b2b-trading-partner-manager/b2b-trading-partner-manager.md"
         },
         {
-            "title": "6: Using B2B Action",
+            "title": "6: Understand B2B Action",
             "filename": "../../b2b-action/b2b-action.md"
         },
         {
-            "title": "7: Designing B2B Inbound Scenario",
-            "filename": "../../b2b-inbound-x12-ftp/b2b-inbound-x12-ftp.md"
+            "title": "7: Designing B2B Outbound Scenario",
+            "filename": "../../b2b-outbound-x12-ftp/b2b-outbound-x12-ftp.md"
         },
         {
-            "title": "8: Designing B2B Outbound Scenario",
-            "filename": "../../b2b-outbound-x12-ftp/b2b-outbound-x12-ftp.md"
+            "title": "8: Designing B2B Inbound Scenario",
+            "filename": "../../b2b-inbound-x12-ftp/b2b-inbound-x12-ftp.md"
         },
         {
             "title": "Need Help?",
