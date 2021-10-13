@@ -135,5 +135,5 @@ Now that we've added options to let users manage departments, we'll do the same 
     You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, VB Studio User Assistance
-* **Last Updated By/Date** - October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+<!--* **Last Updated By** - October 2021 --!>

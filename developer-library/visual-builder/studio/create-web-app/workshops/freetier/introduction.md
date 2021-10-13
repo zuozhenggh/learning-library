@@ -22,7 +22,7 @@ In this workshop, you will:
 * Share and publish the web app
 
 ### Prerequisites
-This workshop assumes you have:
+This workshop requires:
 * An Oracle account
 * A browser (works best in Chrome)
 
@@ -32,5 +32,5 @@ This workshop assumes you have:
 * [VB Studio](https://blogs.oracle.com/vbcs/visual-builder-studio-2) and [Visual Builder blogs](https://blogs.oracle.com/vbcs/)
 
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, VB Studio User Assistance
-* **Last Updated By/Date** - October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+<!--* **Last Updated By** - October 2021 --!>

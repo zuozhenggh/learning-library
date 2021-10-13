@@ -88,7 +88,7 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
 
     ![](images/build_auth_credentials.png)
 
-    **Tips:** While on this page, take a quick look at other advanced settings:
+   **Tip:** While on this page, take a quick look at other advanced settings:
     - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to the URL when your application is deployed (for example, https://host/something-else/0.1/index.html). This version number is useful to identify multiple versions during development, but when your app is ready to go live, you'll want to deselect this option to remove the version and replace it instead with **live** (https:/host/something-else/live/index.html).
     - Take note of the **Use clean database** option, also selected by default. This option uses a new database by default to store your application's data. To keep your data after initially importing it (which we'll do in a later lab), you'll need to select the **Keep existing environment data** option.
 
@@ -110,5 +110,5 @@ For the purposes of this tutorial, let's assume that other members of your team 
 
     You may now [proceed to the next lab](#next).
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, VB Studio User Assistance
-* **Last Updated By/Date** - October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+<!--* **Last Updated By** - October 2021 --!>

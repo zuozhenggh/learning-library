@@ -87,5 +87,5 @@ A deployed application does not automatically include its business object data, 
     If you now want to make changes to your application, you'll need to create a new branch off your project's `main` branch. You can do this in your existing workspace using the **Switch Branch** option in the Git repository menu. You can also clone this repository in a new workspace using the **Clone From Git** option on the Workspaces page and start afresh.
 
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, VB Studio User Assistance
-* **Last Updated By/Date** - October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+<!--* **Last Updated By** - October 2021 --!>

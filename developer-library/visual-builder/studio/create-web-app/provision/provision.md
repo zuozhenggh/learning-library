@@ -2,12 +2,12 @@
 
 ## Introduction
 
-This lab walks you through the process of provisioning a Visual Builder Studio instance and a separate Visual Builder instance, assuming you don't already have both available to you. If you do, you can skip this lab and move on to the next one.
+This lab walks you through the process of provisioning an Oracle Visual Builder Studio instance and a separate Oracle Visual Builder instance, assuming you don't already have both available to you. If you do, you can skip this lab and move on to the next one.
 
 Estimated Lab Time: 20 minutes
 
 ### Background
-If you just created a new Cloud account following the instructions in Getting Started, you might want to wait before you attempt to create an instance of Visual Builder and Visual Builder Studio. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned and for the navigation menu to show. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
+If you just created a new Cloud account following the instructions in Getting Started, you might want to wait before you attempt to create Visual Builder and VB Studio instances. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned and for the navigation menu to show. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
 
 ### Prerequisites
 This lab assumes you have:
@@ -15,7 +15,7 @@ This lab assumes you have:
 * A Chrome browser
 
 ## Task 1: Create an Instance of Visual Builder
-Provision a service instance of Visual Builder to host apps created in Visual Builder Studio. The Visual Builder instance serves as the runtime environment for the web app that you will create in Visual Builder Studio. You must provision the Visual Builder instance first, so you have it available for selection when you create a project in Visual Builder Studio.
+Provision a service instance of Visual Builder to host apps created in VB Studio. The Visual Builder instance serves as the runtime environment for the web app that you will create in VB Studio. You must provision the Visual Builder instance first, so you have it available for selection when you create a project in VB Studio.
 
 1.  On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision:
 
@@ -40,8 +40,8 @@ Provision a service instance of Visual Builder to host apps created in Visual Bu
 
    ![](./images/open.png)
 
-## Task 2: Create an Instance of Visual Builder Studio
-Provision a service instance of Visual Builder Studio to develop and deploy your web app. You can create only one Visual Builder Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure there's no existing Visual Builder Studio instance in your account.
+## Task 2: Create an Instance of VB Studio
+Provision a service instance of VB Studio to develop and deploy your web app. You can create only one VB Studio instance in an Oracle Cloud account. Before you attempt to create an instance, make sure there's no existing VB Studio instance in your account.
 
 1. Navigate back to your Cloud Console and click the menu in the upper left corner, click **OCI Classic Services**, then select **Developer**.
 
@@ -63,7 +63,7 @@ Provision a service instance of Visual Builder Studio to develop and deploy your
 
    ![](./images/access_instance_vbs.png)
 
-   The Visual Builder Studio console opens in a new browser tab. When you first log in, you see the Welcome page with a link to an introductory video, along with a news feed of additional screens. Close **X** to dismiss the news feed and expand your work area.
+   The VB Studio console opens in a new browser tab. When you first log in, you see the Welcome page with a link to an introductory video, along with a news feed of additional screens. Close **X** to dismiss the news feed and expand your work area.
    ![](./images/vbs_home.png)
 
    You are on the Organization page in the Projects tab.
@@ -244,7 +244,7 @@ With all the necessary information copied, connect your VB Studio instance to th
     - You can leave the Passphrase field empty because we generated the private-public key without a passphrase.
     - When you enter a private key, the Fingerprint field is automatically populated. Check whether this value matches the fingerprint value that you previously copied. If it doesn't, update it to enter the correct value.
 
-3. Select the Visual Builder Studio Requirements box, click **Validate**, then **Save**.
+3. Select the requirements check box, click **Validate**, then **Save**.
 
    ![](./images/oci_account.png)
 
@@ -252,6 +252,5 @@ You may now [proceed to the next lab](#next) to create a project and run builds 
 
 
 ## Acknowledgements
-**Author** - Sheryl Manoharan, Visual Builder User Assistance
-
-**Last Updated** - October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+<!--* **Last Updated By** - October 2021 --!>
