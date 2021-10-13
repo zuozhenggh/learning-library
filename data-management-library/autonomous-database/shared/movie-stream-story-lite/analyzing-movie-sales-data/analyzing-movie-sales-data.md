@@ -352,7 +352,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
         sales
     FROM sales_by_genre
     ORDER BY sales desc
-    FETCH FIRST 20 ROWS ONLY</copy>
+    FETCH FIRST 20 ROWS ONLY;</copy>
     ```
  
     Here are the top genre-movie combinations:
@@ -453,10 +453,9 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
     )
     SELECT * 
     FROM movie_ranking_by_genre
-    WHERE ranking \<= 5
+    WHERE ranking <= 5
     ORDER BY genre ASC, ranking ASC;</copy>
     ```
-
     We can now see the most important movies for each genre:
 
     |GENRE|MOVIE|SALES|RANKING|
@@ -507,8 +506,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
         WHERE ranking <= 5
         GROUP BY ROLLUP(genre, movie)
         ORDER BY 1 ASC, 3 DESC;</copy>
-    ```        
-
+    ```
     Here's the top movies within each genre and its contribution:
 
     |GENRE|MOVIE|SUM(SALES)|RATIO|
@@ -578,8 +576,6 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     c.age,
     c.income_level;</copy>
     ```
-
-
     Below is a snapshot of the result (and your result may differ):
     |CUST_ID|CUST_NAME|COUNTRY|GENDER|AGE|INCOME_LEVEL|RFM_MONETARY|
     |---|---|---|---|---|---|---|
@@ -618,7 +614,6 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     FROM custsales
     GROUP BY cust_id;</copy>
     ```
-
     This should return a result similar to the following (again, your results may differ):
 
     |CUST_ID|RFM_RECENCY|RFM_FREQUENCY|
@@ -675,7 +670,6 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
       AND r.rfm_recency <= 1
     ORDER BY r.rfm_monetary desc, r.rfm_recency desc;</copy>
     ```
-
     The result only shows customers who have history had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers.
 
     |CUST_ID|CUST_NAME|RFM_RECENCY|RFM_FREQUENCY|RFM_MONETARY|COUNTRY|GENDER|AGE|INCOME_LEVEL|
