@@ -6,7 +6,11 @@ This lab describes how to split the large table comparison into multiple partiti
 The automatic row partition creates configurable partitions and generates compare pairs for each generated partition.
 
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 20 minutes
+
+Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
+
+[](youtube:N28CsAr5kjw)
 
 ### Objectives
 In this lab, you will:
@@ -17,9 +21,7 @@ In this lab, you will:
 This lab assumes you have:
 
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
 * You have completed:
-    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
     * Lab: Prepare Setup (Free-tier and Paid Tenants only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
@@ -60,10 +62,7 @@ To configure Automatic Row Partitioning:
     ![](./images/4_AP.png " ")
 You may now proceed to the lab on [Creating and Executing Jobs](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468) to create a new job. Add the **Group_AutoPartition** Group to this job.
 
-Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata:
-
-[](youtube:N28CsAr5kjw)
-
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 

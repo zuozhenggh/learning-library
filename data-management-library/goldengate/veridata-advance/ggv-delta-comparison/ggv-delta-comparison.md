@@ -7,6 +7,12 @@ Oracle GoldenGate Veridata compares a source database table to the target databa
 
 During the subsequent runs of a comparison job, the comparison of the tables can be performed based on what has changed in the tables from previous job run; these jobs are Delta Processing Jobs. Delta processing is usually performed on tables that contain a large number of rows so it is probable that in these tables there will be columns eligible for delta processing.
 
+*Estimated Lab Time*: 30 minutes
+
+Watch our short video that explains the Delta Comparison feature in Oracle GoldenGate Veridata:
+
+[](youtube:4sj_2j3dIvc)
+
 ### Objectives
 In this lab, you will:
 * Create Delta Comparison of the source and target databases.
@@ -16,9 +22,7 @@ In this lab, you will:
 This lab assumes you have:
 
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
 * You have completed:
-    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
     * Lab: Prepare Setup (Free-tier and Paid Tenants only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
@@ -125,10 +129,7 @@ Enter:
 
       ![](./images/11DP.png " ")
 
-      Watch our short video that explains the Delta Comparison feature in Oracle GoldenGate Veridata:
-
-      [](youtube:4sj_2j3dIvc)
-
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 * [Using Delta Processing ](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-02F4F2D3-2828-4504-8968-C87231752115)
