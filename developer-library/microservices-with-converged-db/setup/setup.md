@@ -141,15 +141,15 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
-    ![](images/get-user-ocid.png " ")
+   ![](images/get-user-ocid.png " ")
 
    On the User Details console, click Auth Tokens under Resources.
 
-    ![](images/auth-token.png " ")
+   ![](images/auth-token.png " ")
 
    On the Auth Tokens screen, highlight the existing token(s) and delete by clicking Delete from the drop-down menu.
 
-    ![](images/delete-auth-token.png " ")
+   ![](images/delete-auth-token.png " ")
 
 5. The setup will ask you to enter an admin password for the databases. For simplicity, the same password will be used for both the order and inventory databases. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
@@ -193,6 +193,8 @@ You can monitor the setup progress from a different browser window or tab.  It i
 
    ![](images/select-compartment.png " ")
 
+ Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+
 ## Task 9: Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
@@ -213,7 +215,9 @@ ls -al $GRABDISH_LOG
 </copy>
 ```
 
-Once the setup has completed you are ready to [move on to Lab 2](#next). Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
+Once the setup has completed you are ready to [move on to Lab 2](#next). 
+
+Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
 ## Acknowledgements
 
