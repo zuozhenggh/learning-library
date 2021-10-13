@@ -26,13 +26,12 @@ This lab assumes you have:
     * Lab: Prepare Setup (Free-tier and Paid Tenants only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
-* From the [Get Started with Oracle GoldenGate Veridata Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386), the following are required to complete this lab:
-    * Source and Target connections are created as described in [Lab: Create Datasource Connections](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).
+* Source and Target connections are created. See **Lab: Create Datasource Connections** for steps to create connections.
 
 
 ## Task 1: Configure Delta Comparison
 
-1. In the Oracle GoldenGate Veridata UI, click **Group Configuration**, select a group, click Edit, and click **Go to Compare Pair Configuration** to display the **Compare Pair Configuration** page.
+1. In the Oracle GoldenGate Veridata UI, click **Group Configuration**, select a group, click **Edit**, and click **Go to Compare Pair Configuration** to display the **Compare Pair Configuration** page.
 2. Click **Manual Mapping**.
 3. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping.
 Enter:

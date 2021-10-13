@@ -27,10 +27,9 @@ This lab assumes you have:
     * Lab: Prepare Setup (Free-tier and Paid Tenants only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
-* From the [Get Started with Oracle GoldenGate Veridata Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386), the following are required to complete this lab:
-    * Source and Target connections are created as described in [Lab: Create Datasource Connections](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).
-    * Follow the steps to [Create a Group](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=13638147975386).  Let the Group Name be **Group_DBPartition**.
-    * Follow the steps 1 to 2 in [Create Compare Pairs (on Manual Mapping Tab)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468).
+* Source and Target connections are created. See **Lab: Create Datasource Connections** for steps to create connections.
+* A Group is created. Let the Group Name be **Group_DBPartition**. See **Lab: Create Groups and Compare Pairs** for steps to create groups.
+* Create Compare Pairs (on Manual Mapping Tab): Follow the Tasks 1 to 2 in **Lab: Create Groups and Compare Pairs** to create a compare pair.
 
 ## **Task 1:** Configure Database Row Partitioning
 To configure Database Row Partitioning:
