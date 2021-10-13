@@ -27,8 +27,8 @@ This lab assumes you have:
     * Lab: Initialize Environment
 * Source and Target connections are created. See **Lab: Create Datasource Connections** for steps to create connections.
 * A Group is created. Let the Group Name be **Group_AutoPartition**. See **Lab: Create Groups and Compare Pairs** for steps to create groups.
-* Create Compare Pairs (on Manual Mapping Tab): Follow the steps 1 to 2 in **Lab: Create Groups and Compare Pairs** to create a compare pair.
-  
+* Create Compare Pairs (on Manual Mapping Tab): Follow the Tasks 1 to 2 in **Lab: Create Groups and Compare Pairs** to create a compare pair.
+
 
 ## **Task 1:** Configure Automatic Row Partitioning
 To configure Automatic Row Partitioning:

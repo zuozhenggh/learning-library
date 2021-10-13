@@ -38,20 +38,32 @@
             }
             ,
             {
-                "title": "Lab 1: Configure Delta Comparison",
+                "title": "Lab 1: Create Datasource Connections",
+                "description": "This lab shows how to configure datasource connections in Oracle GoldenGate Veridata.",
+                "filename": "./../../ggv-create-connections/ggv-create-connections.md"
+            }
+            ,
+            {
+                "title": "Lab 2: Create Groups and Compare Pairs",
+                "description": "This lab shows how to create groups and compare pairs in Oracle GoldenGate Veridata.",
+                "filename": "./../../ggv-create-groups-compare-pairs/ggv-create-groups-compare-pairs.md"
+            }
+            ,
+            {
+                "title": "Lab 3: Configure Delta Comparison",
                 "description": "This lab shows how to configure Automatic Row Partitioning in Oracle GoldenGate Veridata.",
                 "filename": "./../../ggv-delta-comparison/ggv-delta-comparison.md"
             }
             ,
 
             {
-                "title": "Lab 2: Configure Auto Partitions",
+                "title": "Lab 4: Configure Auto Partitions",
                 "description": "This lab shows how to configure Automatic Row Partitioning in Oracle GoldenGate Veridata.",
                 "filename": "./../../ggv-auto-partitions/ggv-auto-partitions.md"
             }
             ,
             {
-                "title": "Lab 3: Configure Database Partitions",
+                "title": "Lab 5: Configure Database Partitions",
                 "description": "This lab shows how to configure Database Partitioning in Oracle GoldenGate Veridata.",
                 "filename": "./../../ggv-database-partitions/ggv-db-partitions.md"
             }
