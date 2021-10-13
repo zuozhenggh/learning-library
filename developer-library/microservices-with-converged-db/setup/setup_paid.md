@@ -45,9 +45,9 @@ Here are the steps for creating a new group and assigning security policy requir
  - **Description**: Enter a description (for example, “New group for microservices workshop”).
  - Click **Create**.
 
-  ![](images/new-group.png " ")
+    ![](images/new-group.png " ")
 
-  ![](images/get-new-group.png " ")
+    ![](images/get-new-group.png " ")
 
  4. Now, create a security policy that gives the group permissions to execute the setup steps for this workshop, entering a name, such as "Microservices-Policies".
 
@@ -191,7 +191,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    On the Auth Tokens screen, highlight the existing token(s) and delete by clicking Delete from the drop-down menu.
 
-    ![](images/delete-auth-token.png " "))
+    ![](images/delete-auth-token.png " ")
 
 5. The setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for both the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
