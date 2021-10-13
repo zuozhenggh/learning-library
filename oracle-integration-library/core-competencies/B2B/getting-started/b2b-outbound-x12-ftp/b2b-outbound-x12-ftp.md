@@ -1,4 +1,4 @@
-# Oracle Integration B2B - Inbound
+# Oracle Integration B2B - Outbound
 
 ## Introduction
 
