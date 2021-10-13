@@ -3,7 +3,7 @@
 ## Introduction
 This lab shows you how to enable delta comparison for database compare pairs in Oracle GoldenGate Veridata.
 
-Oracle GoldenGate Veridata compares a source database table to the target database table. The source and target tables are configured using compare pairs, which are grouped and added to a job to run the comparison. See [Get Started with Oracle GoldenGate Veridata Workshop - Lab6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=9807808223512).  When all the rows in the table are compared, it is a Full Comparison Job.
+Oracle GoldenGate Veridata compares a source database table to the target database table. The source and target tables are configured using compare pairs, which are grouped and added to a job to run the comparison. When all the rows in the table are compared, it is a Full Comparison Job.
 
 During the subsequent runs of a comparison job, the comparison of the tables can be performed based on what has changed in the tables from previous job run; these jobs are Delta Processing Jobs. Delta processing is usually performed on tables that contain a large number of rows so it is probable that in these tables there will be columns eligible for delta processing.
 

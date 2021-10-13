@@ -1,7 +1,7 @@
 # Create Datasource Connections
 
 ## Introduction
-This lab describes how to configure datasource connections. The Oracle GoldenGate Veridata  Server must be able to connect to an Oracle GoldenGate Veridata Agent for each database that contains source and target data that you want to compare. A connection is defined by a host, the port number of an Oracle GoldenGate Veridata Agent (or Manager, if a C-agent), and the datasource that is accessed by the agent. You need to create connections before you create any of the GoldenGate Veridata objects, such as groups, compare pairs, profiles, or jobs.
+This lab describes how to configure datasource connections. The Oracle GoldenGate Veridata  Server must be able to connect to an Oracle GoldenGate Veridata Agent for each database that contains source and target data that you want to compare. A connection is defined by a host, the port number of an Oracle GoldenGate Veridata Agent (or Manager, if a C-agent), and the datasource that is accessed by the agent. You need to create connections before you create any of the Oracle GoldenGate Veridata objects, such as groups, compare pairs, profiles, or jobs.
 
 Watch this short video on how to create datasource connections, groups, compare pairs, jobs, and repair data:
 
@@ -17,9 +17,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
@@ -103,7 +101,7 @@ To create connections:
 
 9. Click **OK** to display the **New Connection Assistant** page.
 
-You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
@@ -111,5 +109,5 @@ You may now [proceed to the next lab](#next).
 
 ### Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
+* **Last Updated By/Date** - Anuradha Chepuri, October 2021

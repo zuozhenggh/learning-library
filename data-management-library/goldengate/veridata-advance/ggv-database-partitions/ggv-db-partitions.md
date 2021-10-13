@@ -40,14 +40,15 @@ To configure Database Row Partitioning:
     * Target schema: **TARGET**
     * Source Table: **SALES**
     * Target Table: **SALES**
-      ![](./images/1_DB.png " ")
+
+    ![](./images/1_DB.png " ")
 
 4. Select the source and target partitions from **Source Table Partitions** and **Target Table Partitions**:
     * Source Table Partitions: **SALES\_Q1\_2006**
 
     * Target Table Partitions: **SALES\_Q1\_2006**
 
-      ![](./images/2_DB.png " ")
+    ![](./images/2_DB.png " ")
 
 5. Click **Add Mapping** to map the selected database Table Partitions. You can also map multiple database Table Partitions before generating the compare-pair.
 

@@ -7,6 +7,10 @@ A group is associated with a set of connections to the source and target data.
 
 A compare pair is the logical relationship between a source table or file and a target table or file for the purpose of comparing their data. Compare pairs are linked to groups. Because of this, all of the source and target objects that you configure into compare pairs for any given group must be accessible from the datasource connections that are associated with that group.
 
+Watch this short video on how to create datasource connections, groups, compare pairs, jobs, and repair data:
+
+[](youtube:DiAapnWt0No)
+
 *Estimated Lab Time*: 45 minutes
 
 ### Objectives
@@ -16,15 +20,10 @@ In this lab, you will:
 * Create a job for the Compare Pair Groups.
 * Run the job.
 
-### Video Preview
-Watch our short video that explains the partitioning feature in Oracle GoldenGate Veridata: [](youtube:N28CsAr5kjw)
-
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
-    * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
@@ -106,7 +105,7 @@ To create compare pairs on the **Pattern Mapping** tab:
 5. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
     ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
 
-You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
@@ -118,4 +117,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
+* **Last Updated By/Date** - Anuradha Chepuri, October 2021
