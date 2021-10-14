@@ -25,8 +25,6 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Create Virtual Cloud Network 
 
-*Note: Green Button users - Your Virtual Cloud Network already exist. Go to Task 2*
-
 1. Navigation Menu   
         Networking  
             Virtual Cloud Networks
