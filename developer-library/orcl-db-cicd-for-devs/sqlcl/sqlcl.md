@@ -6,6 +6,11 @@ In this lab you will use the SQLcl to create objects in an Autonomous Database. 
 
 Estimated Lab Time: 30-45 minutes
 
+Watch the video for a quick walk through of the lab.
+
+[](youtube:pPXxYPe0Fd4)
+
+
 ### Objectives
 
 - Download the Autonomous Database wallet
