@@ -220,6 +220,7 @@ In this task, you will create four-page items:
         - For Type - select **Danger**
         - For Style -select **Display as Link**
         - For Spacing Right, select **Large**
+    - Click **Ok**.
 
 ## Task 5: Adding Computation to Calculate the Number of Items for a Product
 1. In the Rendering tree (left pane), expand the **Pre-Rendering**.
