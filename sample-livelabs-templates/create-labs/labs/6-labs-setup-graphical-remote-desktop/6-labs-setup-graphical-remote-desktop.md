@@ -266,11 +266,11 @@ Perform the following to further customize and optimize *Google Chrome* Browser.
 
     ![](./images/add-bookmarks-07.png " ")
 
-13. Run on the terminal to initialize LiveLabs browser windows.
+13. Run the following from terminal session to initialize LiveLabs browser windows.
 
     ```
     <copy>
-    /tmp/init_ll_windows.sh
+    $HOME/.livelabs/init_ll_windows.sh
     </copy>
     ```
 14. If the *desktop_app1_url* and/or *desktop_app2_url* are applicable to the workshop, test with *chrome-window2* chrome profile to validate before proceeding to custom image creation.
@@ -287,7 +287,7 @@ Perform the following to further customize and optimize *Google Chrome* Browser.
     </copy>
     ```
 
-15. Update *vncserver* startup script to add dependency(ies) on primary service(s) supporting Web Apps behind *desktop_app1_url* and/or *desktop_app2_url*. This will prevent premature web browser startup leading to *404-errors* when the app(s) is (are) not yet ready.
+15. Update *vncserver* startup script to add dependency(ies) on primary service(s) supporting Web Apps behind *desktop_app1_url* and/or *desktop_app2_url*. This will prevent premature web browser startup leading to *404-page-not-found-error* when the app requested is not yet ready.
 
     - Edit `/etc/systemd/system/vncserver_${appuser}@\:1.service` and append the dependent service(s) at the end of the starting with **After=**
 
