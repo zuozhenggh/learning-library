@@ -45,6 +45,14 @@ Estimated Lab Time: 15 Minutes
 
 7. Find your ssh private key which has been created earlier to connect to the host where the primary database is located.
 
+a. If you have used Reserve Workshop on Livelabs option(Green Button), you should have used anyone of the method for generating SSH key pairs using [How to Generate SSH Keys](https://oracle.github.io/learning-library/common/labs/generate-ssh-key/?lab=generate-ssh-keys) .
+
+Now, you should have the **Public** and **Private** key pair. You must have provided the Public Key while reserving the lab and you need the repsective Private key to connect the DB Server.
+
+b. If you have used Run on Your Tenancy option (Brown Button), you must use the downloaded public and private keys ( While creating the DB Systems) for connecting to the DB servers.
+
+In all the labs we use Cloud shell to connect to the DB server. You can also connect to the DB servers in anyone of your preferred way such as Terminal in Mac, Powershell in Windows, Putty etc.  Refer the above mentioned link [How to Connect to Servers](https://oracle.github.io/learning-library/common/labs/generate-ssh-key/?lab=generate-ssh-keys) for detailed instructions. Once you are connected to the DB server, **rest of the instructions will remain same**.
+
   Using the **Upload** facility, upload the private key in the **Cloud Shell** environment.
 
   ![](./images/cloud-shell-upload.png)
