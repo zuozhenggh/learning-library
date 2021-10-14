@@ -10,7 +10,7 @@ JSON provides an extremely flexible and powerful data model.  No wonder that it 
 
 Up to this point in our workshop, all the data we have been using has been **structured**. Structured data comes with a pre-determined definition. In our movie sales data, each record in our sales data files has a reference ID, a timestamp, a customer ID, associated customer demographic information, movie purchases, payment information, and more. Each field in our data set has a clearly defined purpose, which makes it very quick and easy to query. In most real-world situations, you will need to deal with other types of data such as **semi-structured**.
 
-Estimated time: 15 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
