@@ -58,7 +58,7 @@ Under Quick Actions, you want to click on Create Data Asset
 
 ![Create Data Asset](./images/create_dataasset1.png " ")
 
-The first data asset is going to be our ADW database we already created. Fill in moviestream_adw and select type to Oracle Autonomous Data Warehouse.
+The first data asset is going to be our ADW database we already created. Fill in MOVIESTREAM_ADW and select type to Oracle Autonomous Data Warehouse.
 
 ![Create Data Asset](./images/create_dataasset.png " ")
 
@@ -74,23 +74,6 @@ Test Connection to make sure you can connect to the this data asset.
 
 ![Create Data Asset](./images/create_dataasset5.png " ")
 
-Next we are going to create a data asset for our json file that will be part of our application and scheduled load of files coming into the data lake.
-
-Select Create Data Asset again, and fill in the name genre_json and choose the Type to be Oracle Object Storage.
-
-![Create Data Asset](./images/create_jsonasset1.png " ")
-
-Continue to fill with Select Database, regions, Tenant OCID that we saved off or you can go to your profile and click on Tenancy to get that information again. You need the object storage bucket Namespace, and the OCI-Region. Select the Default Connection and Test Connection.
-
-![Create Data Asset](./images/create_jsonasset2.png " ")
-
-You need to make sure the Compartment is set to lakehouse1 and then click Buckets. You will see the dataflow-logs, dataflow-warehouse and moviestream_bucket. Click on moviestream_bucket.
-
-![Create Data Asset](./images/create_jsonasset3.png " ")
-
-Click on the file under Data Entities (export-stream_custid_updated.json). Select the file type as JSON, and click Get Attributes to see the names and data types for this file.
-
-![Create Data Asset](./images/create_jsonasset4.png " ")
 
 ## Task 3: Create a Project in the Workspace
 
@@ -129,10 +112,36 @@ From the Quick Menu on the Home tab, click Discover Data Sources.
 
 ![Data Discovery](./images/discoverdata.png " ")
 
-As you can we have our data warehouse database available and our object storage buckets. Click the box and then click Create Data Asset. The name and description and type will automatically be filled in and you can adjust and make changes as needed. Do these steps for both the ADW Database and object storage buckets.
-
+As you can there is the data warehouse database available and object storage buckets. Click the box and then click Create Data Asset. The name and description and type will automatically be filled in and you can adjust and make changes as needed. Do these steps for both the ADW Database.
 
 ![Add Data Assets](./images/catalog_addasset.png " ")
+
+Next we are going to create a data asset for our json file that will be part of our application and scheduled load of files coming into the data lake.
+
+Select Create Data Asset, and fill in the name genre_json and choose the Type to be Oracle Object Storage.
+
+![Create Data Asset](./images/create_new_data_asset.png " ")
+
+Continue to fill name of GENRE_JSON. Choose the type as Oracle Object Storage You need the object storage bucket Namespace, c4u04, and the OCI-Region. 
+
+OCI-Region
+```
+<copy>
+https://swiftobjectstorage.us-ashburn-1.oraclecloud.com
+</copy>
+```
+
+![Create Data Asset](./images/create_new_data_asset.png " ")
+
+Then add the connection for the data asset. Create json_connection and put in the pre-authenicated data set.
+
+```
+<copy>
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/YvlgIsMlZQgCn4RVYn2697Er_Y9iw_2X48zZwIbbHs6c2647ouXVatto303mbQ3x/n/c4u04/b/moviestream_sandbox/o/
+</copy>
+```
+
+![Create Data Asset](./images/json_connection.png " ")
 
 The data asset will then be added to this data catalog, now we caan use these data assets to set up processes for data loading and ETL with OCI Data Flow.
 
