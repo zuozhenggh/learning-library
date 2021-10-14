@@ -1,32 +1,49 @@
 # Analyze movie sales data
 
 ## Introduction
-This is the first in a series of SQL analytics labs. You will learn many of the basics for analyzing data across multiple tables. This includes using views to simplify sophisticated queries, performing time series analyses and more.
+In this lab, you will learn many of the basics for analyzing data across multiple tables. This includes using views to simplify sophisticated queries, performing time series analyses and more.
 
-Estimated time: 15 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
 - Understand how to use SQL Worksheet
 
-- Learn how query caching improves performance
+- Perform time series analyses
 
-- Learn about the different types of built-in calculations
+- Calculate rankings and shares
 
-- Learn how to pivot data rows into columns to make analysis easier
+- Bin customers by key metrics
 
 ### Prerequisites
-- This lab requires completion of Labs 1 through 4 in the Contents menu on the left.
-- You can complete the prerequisite labs in two ways:
+- This lab requires completion of Labs 1 and 2 in the Contents menu on the left.
 
-    a. Manually run through the labs.
+## Task 1: Log into the SQL Worksheet
+Make sure you are logged into Autonomous Database's **Database Tools** as the MOVIESTREAM user.   
 
-    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
 
-## Task 1: Prepare The data warehouse schema
+    ![Details page of your Autonomous Database](images/2878884319.png " ")
+
+2. Enter MOVIESTREAM for the username and click **Next**. On the next form, enter the MOVIESTREAM password - which is the one you entered when creating your MOVIESTREAM user. Click **Sign in**.
+
+    ![Log in dialog for Database Actions](images/login-moviestream.png " ")
+
+3. In the Development section of the Database Actions page, click the SQL card to open a new SQL worksheet:
+
+    ![Go to SQL worksheet](images/sql-card.png " ")
+
+4. Enter your commands in the worksheet. You can use the shortcuts [Control-Enter] or [Command-Enter] to run the command and view the Query Result (tabular format). Clear your worksheet by clicking the trash:
+
+    ![Go to SQL worksheet](images/sql-worksheet.png " ")
+
+You are now ready to start analyzing MovieStream's performance using SQL.
+
+## Task 2: Prepare the data warehouse schema
 The MovieStream data warehouse uses an design approach called a 'star schema'. A star schema is characterized by one or more very large fact tables that contain the primary information in the data warehouse and a number of much smaller dimension tables (or lookup tables), each of which contains information about the entries for a particular attribute in the fact table.
 
-![A simple data warehouse star schema.](https://docs.oracle.com/cd/A87860_01/doc/server.817/a76994/schemasa.gif)
+
+![A simple data warehouse star schema.](images/star.png)
 
 The main advantages of star schemas are that they:
 
@@ -51,6 +68,8 @@ Querying a data warehouse can involve working with a lot of repetitive SQL. This
 The code below uses a technique called **INNER JOIN** to join the dimension tables to the fact table.
 
 2. Creating a view that joins the GENRE, CUSTOMER and TIME dimension tables with the main fact table CUSTSALES.
+
+    >**Note**: For copy/pasting, be sure to click the convenient Copy button in the upper right corner of the following code snippet, and all subsequent code snippets:
 
     ```
     <copy>CREATE OR REPLACE VIEW vw_movie_sales_fact AS
@@ -88,6 +107,7 @@ The code below uses a technique called **INNER JOIN** to join the dimension tabl
     INNER JOIN genre g ON m.genre_id = g.genre_id;
     </copy>
     ```
+
 There are lots of different types of joins you can use within a SQL query to combine rows from one table with rows in another table. Typical examples are:
 
 ### A) INNER JOIN
@@ -96,54 +116,100 @@ An inner join, which is sometimes called a simple join, is a join of two or more
 ### B) OUTER JOIN
 An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you will typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next task.
 
-
-## Task 2: Learn more about joins
+## Task 3: Learn more about joins
 In the previous SQL code we used an inner join to merge time, customer and genre dimensional data with the sales data. However, inner joins ignore rows in the dimension tables where there is no corresponding sales data. This means that some queries may need to use a different join method if you want to gain a deeper understanding of your sales data. Consider the following example:
 
 1. How many news category films were viewed in 2020?
 
     ```
     <copy>SELECT
-    g.name,
-    count(m.genre_id)
+        g.name,
+        count(m.genre_id)
     FROM (SELECT genre_id FROM vw_movie_sales_fact  WHERE year_name = '2020') m
     INNER JOIN genre g ON m.genre_id = g.genre_id
     GROUP BY g.name
     order by 1;</copy>
     ```
 
-2. The result will look like this:
+    The result will look like this:
 
+    |NAME|COUNT(M.GENRE_ID)|
+    |---|---|
+    |Action|1629149|
+    |Adventure|1088422|
+    |Animation|109517|
+    |Biography|187264|
+    |Comedy|1104148|
+    |Crime|416139|
+    |Documentary|22608|
+    |Drama|2488106|
+    |Family|609975|
+    |Fantasy|860680|
+    |Film-Noir|117250|
+    |History|51441|
+    |Horror|671819|
+    |Lifestyle|17327|
+    |Musical|336557|
+    |Mystery|190321|
+    |Reality-TV|8290|
+    |Romance|749525|
+    |Sci-Fi|793888|
+    |Sport|24646|
+    |Thriller|909956|
+    |Unknown|11814|
+    |War|191657|
+    |Western|45668|
 
-    ![Result from an inner join](images/lab-5a-step-2-substep-2.png " ")
+    Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the next query.
 
-    Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the following:
-
-3. Modify the above SQL to use an outer join:
+2. Modify the above SQL to use an outer join:
 
     ```
     <copy>SELECT
-    g.name,
-    count(m.genre_id)
+        g.name,
+        count(m.genre_id)
     FROM (SELECT genre_id FROM vw_movie_sales_fact WHERE year_name = '2020') m
     FULL OUTER JOIN genre g ON m.genre_id = g.genre_id
     GROUP BY g.name
     order by 1;</copy>
     ```
 
-4. The result will now look like this, where we can now see how many news category films were viewed in 2020:
+    The result will now look like this, where we can now see how many news category films were viewed in 2020:
 
-
-    ![Result from an inner join](images/lab-5a-step-2-substep-4.png " ")
+    |NAME|COUNT(M.GENRE_ID)|
+    |---|---|
+    |Action|1629149|
+    |Adventure|1088422|
+    |Animation|109517|
+    |Biography|187264|
+    |Comedy|1104148|
+    |Crime|416139|
+    |Documentary|22608|
+    |Drama|2488106|
+    |Family|609975|
+    |Fantasy|860680|
+    |Film-Noir|117250|
+    |History|51441|
+    |Horror|671819|
+    |Lifestyle|17327|
+    |Musical|336557|
+    |Mystery|190321|
+    |News|0|
+    |Reality-TV|8290|
+    |Romance|749525|
+    |Sci-Fi|793888|
+    |Sport|24646|
+    |Thriller|909956|
+    |Unknown|11814|
+    |War|191657|
+    |Western|45668|
 
     > **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the resultset you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now that we have our time dimension defined as a view and a view to simplify SQL queries against the fact table, we can move on to how SQL can help us explore the sales data.
 
 
-## Task 3: Explore sales data
+## Task 4: Explore sales data with fast performance
 
-1. To get started, let's use a very simple query to look at total movie sales by year and quarter, which extends the earlier simple SQL queries by adding a GROUP BY clause.
-
-    **Note**: For copy/pasting, be sure to click the convenient Copy button in the upper right corner of the following code snippet, and all subsequent code snippets:
+1. Next, let's use a very simple query to look at total movie sales by year and quarter, which extends the earlier simple SQL queries by adding a GROUP BY clause.
 
     ```
     <copy>SELECT
@@ -155,338 +221,497 @@ In the previous SQL code we used an inner join to merge time, customer and genre
     GROUP BY year_name, quarter_name
     ORDER BY 1,2;</copy>
     ```
-    **Note**: In this query, we have returned a resultset where the data has been aggregated (or grouped by) year then, within year, by quarter. The ORDER BY clause sorts the resultset by year and then quarter. In addition there is a filter or WHERE clause that enables us to return only data for the year 2020.
+    **Note**: In this query, we have returned a resultset where the data has been aggregated (or grouped by) year then, within year, by quarter. The ORDER BY clause sorts the resultset by year and then quarter. In addition there is a filter or WHERE clause that enables us to return only data for the year 2020.    
 
-2. The result should look something like this:
+    This should return something similar to the following:
 
-    ![The result of simple query should look like this.](images/lab-5a-step-3-substep-2.png " ")
+    |YEAR_NAME|QUARTER_NAME|SUM(ACTUAL_PRICE)|
+    |---|---|---|
+    |2020|Q1-2020|4888603.6299999645|
+    |2020|Q2-2020|6207591.609999965|
+    |2020|Q3-2020|5094875.069999959|
+    |2020|Q4-2020|5361403.959999974|
+
+    *elapsed: 1.315s*
 
     Note the time taken to run your query. In the above example, this was 1.315 seconds to run (*when you run your query the timing may vary slightly*).
 
-3. Now simply run the query again:
+2. Now simply run the query again
 
+    |YEAR_NAME|QUARTER_NAME|SUM(ACTUAL_PRICE)|
+    |---|---|---|
+    |2020|Q1-2020|4888603.6299999645|
+    |2020|Q2-2020|6207591.609999965|
+    |2020|Q3-2020|5094875.069999959|
+    |2020|Q4-2020|5361403.959999974|
 
-    ![Run the query again.](images/lab-5a-step-3-substep-4.png " ")
+    *elapsed: 0.026*
 
-4. This time the query ran much faster, taking just 0.026 seconds! So what happened?
+    This time the query ran much faster, taking just 0.026 seconds! So what happened?
 
     When we executed the query the first time, Autonomous Data Warehouse executed the query against our movie sales table and scanned all the rows. It returned the result of our query to our worksheet and then it stored the result in something called a **result cache**. When we then ran the same query again, Autonomous Data Warehouse simply retrieved the result from its result cache! No need to scan all the rows again. This saved a lot of time and saved us money because we used hardly any compute resources.
 
-    If you want to understand a little bit more about **result cache**, then continue with Task 4; otherwise, just jump ahead to ** Task 5 - Analyzing Customer Viewing Habits**.
 
-## Task 4: Learn how ADW's RESULT CACHE means faster queries (optional)
-
-A result cache is an area of memory within our Autonomous Data Warehouse that stores the results of database queries for reuse. The **cached** rows are shared across queries and sessions. What this means is that when we run a query, the first thing the database does is to search its cache memory to determine whether the result already exists in the result cache. If it does, then the database retrieves the result from memory instead of executing the query. If the result is not cached, then the database executes the query, returns the result and stores the result in the result cache so the next time the query runs, the results can simply be returned from the cache.
-
-But, how do you know if the results from a query are returned from the **result cache**?
-
-1. Our Autonomous Data Warehouse console has a built-in performance monitoring tool called **Performance Hub**. This tool gives us both real-time and historical performance data for our Autonomous Data Warehouse. Performance Hub shows active session analytics along with SQL monitoring and workload information. Let's try running a query and then see how Autonomous Data Warehouse executes it.
-
-2. To simplify the monitoring process, we will add some additional instructions to the database about how we want it to execute our query. These extra instructions are called **hints** and they are enclosed within special markers: **/*  */.** In the example below we have given our query a name (Query 1) and we have told Autonomous Data Warehouse to monitor the query during its execution:
-
-    ```
-    <copy>SELECT /* Query 1 */ /*+ monitor */
-    year_name,
-    quarter_name,
-    continent,
-    country,
-    state_province,
-    COUNT(customer_id) AS no_customers,
-    COUNT(distinct movie_id) AS no_movies,
-    SUM(actual_price) AS total_revenue,
-    SUM(actual_price)/COUNT(customer_id) AS avg_revenue
-    FROM vw_movie_sales_fact
-    WHERE year_name = '2020'
-    GROUP BY year_name, quarter_name, continent, country, state_province
-    ORDER BY 1,2,3,4;</copy>
-    ```
-
-    **Note**: In this query, we added more calculations and assigned more meaningful names to each calculated column.
-
-3. This query should return a result similar to this:
-
-    ![Worksheet showing query and result](images/lab-5a-step-4-substep-3.png " ")
-
-4. Click this icon at the top of the worksheet (the icon is in the menu bar just above your SQL statement):
-
-    ![Click this icon to run an Explain Plan.](images/lab-5a-step-4-substep-4.png " ")
-
-5. This will run an Explain Plan. This shows, in a tree-form, how Autonomous Data Warehouse executed our query. You read the tree from bottom to top so the last step is to put the result set into the result cache:
-
-    ![Explain Plan shown in a tree-form](images/lab-5a-step-4-substep-5.png " ")
-
-    > **Note**: The plan above shows a lot of information that can be quite helpful in terms of understanding how your query has been run by Autonomous Data Warehouse. However, at this point the information shown is not the main focus area for this workshop.
-
-6. Now simply run the query again:
-
-    ```
-    <copy>SELECT /* Query 1 */ /*+ monitor */
-    year_name,
-    quarter_name,
-    continent,
-    country,
-    state_province,
-    COUNT(customer_id) AS no_customers,
-    COUNT(distinct movie_id) AS no_movies,
-    SUM(actual_price) AS total_revenue,
-    SUM(actual_price)/COUNT(customer_id) AS avg_revenue
-    FROM vw_movie_sales_fact
-    WHERE year_name = '2020'
-    GROUP BY year_name, quarter_name, continent, country, state_province
-    ORDER BY 1,2,3,4;</copy>
-    ```
-
-7. You can see that it runs significantly faster this time!
-
-    ![Query results with faster run time](images/lab-5a-step-4-substep-7.png " ")
-
-8. If you look at the explain plan again it will be the same explain plan as last time, which is helpful in some ways, but we want to dig a little deeper this time. To track the actual execution process, we need to switch over to the Autonomous Data Warehouse console. There should be a tab open in your browser which is labelled **Oracle Cloud Infrastructure**, or simply open a new tab and go to **[cloud.oracle.com](http://cloud.oracle.com),** then click the card labeled **View all my resources **, and find your data warehouse in the list of resources so that this page is now visible:
-
-    ![Autonomous Database Details page, with Tools tab selected](images/3038282369.png " ")
-
-9. Click the **Performance Hub** button to open the monitoring window.
-
-    **Note:** Your performance charts will look a little different because we have only just started using our new Autonomous Data Warehouse:
-
-    ![Monitoring window of Performance Hub](images/3038282370.png " ")
-
-10. Now click the tab marked **SQL Monitoring** in the lower half of the screen:
-
-    ![Click the SQL Monitoring tab.](images/lab-5a-step-4-substep-10.png " ")
-
-    > **Note:** The first two queries in the list will be the queries we just executed - (*you can identify them by looking at database times if the two queries are not grouped together*). The first execution of our query (row two in the table above) shows that we used 8 parallel execution servers to execute the query and this resulted in 2,470 I/O requests to retrieve data stored on disk. So it's clear that we had to use some database resources to run our query the first time. Now look at the performance monitoring data for the second execution (the first row in the table above) - no parallel resources were used, no I/O requests were made and the database time was insignificant. This tells us that the database was able to reuse the results from a previous execution of the same query. Essentially there was zero cost in running the same query a second time.
-
-    This is a typical real-world scenario where users are viewing pre-built reports on dashboards and in their data visualization tools. Result cache is one of the many transparent performance features that helps Autonomous Data Warehouse efficiently and effectively run data warehouse workloads.
-
-Now that we have some insight into how Autonomous Data Warehouse manages queries, let's expand our first query and begin to do some analysis of our sales data.
-
-## Task 5: Analyze customer viewing habits
-
-1. Switch back to the tab where SQL Worksheet is running.
-
-2. Let's start by investigating the viewing habits of our MovieStream customers by seeing how many of them are buying movies on each day of the week and whether there are any specific patterns we can spot. Copy the following SQL into your worksheet and then press the green circle icon to execute the query:
-
-    ```
-    <copy>SELECT
-    day_dow,
-    day_name,
-    COUNT(customer_id) AS no_viewers,
-    SUM(actual_price) AS revenue
-    FROM vw_movie_sales_fact
-    WHERE  year_name = '2020'
-    GROUP BY day_dow, day_name
-    ORDER BY day_dow;</copy>
-    ```
-    Here we are using a built-in function, TO_CHAR, to convert the column 'day', which is defined as a date and has values such as 01-01-2020, into a number between 1 and 7 and also the name of the day.
-
-3. This should return something similar to the following:
-
-    ![Result of query](images/lab-5a-step-5-subsetp-3.png " ")
-
-    This shows that we have more customers buying movies on Fridays, Saturdays, Sundays and Mondays since these days show the highest revenue. The revenue for the days in the middle of week is still great, but definitely lower. But it's hard to see a clear pattern just by looking at the raw sales numbers.
-
-## Task 6: Calculate each day's contribution
+## Task 5: Compare sales to last year
 
 ### Overview
 
-It would be helpful for our analysis if we could calculate the contribution that each day is providing to our overall sales. To do this, we need to use a special type of aggregation process within our query - we need a type of function that is called a **window** function. This type of function is very powerful since it enables us to calculate additional totals (or ratios, ranks, averages, maximum values, minimum values) as part of our query. In this case, we want to calculate the total revenue across all seven days and then divide each day's total by that aggregate total.
+Time comparisons are one of the most common types of analyses. MovieStream has just completed sales for December. What is the year over year comparison for this latest month? What is this breakout by movie genre? Oracle SQL has a **LAG** function that facilitates these types of analyses.  
 
-Let's start by defining the total for each day:   **```SUM(actual_price * quantity_sold)```**
-
-Then we can add the total revenue for all days by using a standard SQL operation called a window function that extends the **SUM** function. This means adding an additional keyword **OVER** as follows:  **```SUM(actual_price * quantity_sold) OVER ()```**  to calculate a grand total for all rows.
-
-If you want to read more about window functions, look at this topic in the [Oracle Data Warehouse Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-2877E1A5-9F11-47F1-A5ED-D7D5C7DED90A).
-
-Now we can combine these two calculations to compute the contribution for each day: **SUM(actual\_price * quantity\_sold) / SUM(actual\_price * quantity\_sold) OVER ()** which is easy to understand having slowly built up the SQL, step-by-step. However, the calculation does look a little complicated!
-
-**BUT WAIT!** There is actually a specific SQL function that can do this calculation. It's called [RATIO\_TO\_REPORT](https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-C545E24F-B162-45CC-8042-B2ACED4E1FD7) and the SQL looks like this:
-
-**```RATIO_TO_REPORT(SUM(actual_price * quantity_sold)) OVER()```**
-
-This approach looks much neater, easier to read, and much simpler!
-
-> **Note:**  the function **```RATIO_TO_REPORT```** returns results in the format where 1 equals 100%. Therefore, the code below multiplies the result by 100 to return a typical percentage value.
-
-We are going to extend the **```RATIO_TO_REPORT```** function a little further on in this workshop so you will get some more insight regarding the flexibility and power of this type of calculation.
-
-1. For now, let's extend our original query so that it now includes this new window function:
+1. Let's start by looking at sales in December for the latest two years for our major genres (we can use an INNER JOIN because there is always a current and previous year value):
 
     ```
-    <copy>SELECT
-    day_dow,
-    day_name,
-    COUNT(customer_id) AS no_viewers,
-    SUM(actual_price) AS revenue,
-    RATIO_TO_REPORT(SUM(actual_price)) OVER()*100 AS contribution
-    FROM vw_movie_sales_fact
-    WHERE year_name = '2020'
-    GROUP BY day_dow, day_name
-    ORDER BY day_dow;</copy>
+    <copy>SELECT 
+        g.name as genre,
+        TO_CHAR(c.day_id,'YYYY-MM') as month,
+        ROUND(sum(c.actual_price),0) sales
+    FROM  custsales c, genre g
+    WHERE g.genre_id = c.genre_id
+      AND to_char(c.day_id, 'MON') in ('DEC')
+      AND g.name in ('Action','Drama','Comedy')
+    GROUP BY to_char(c.day_id,'YYYY-MM'), c.genre_id, g.name
+    ORDER BY genre, month;</copy>
     ```
 
-2. The output from this query is shown below and the last column containing the contribution calculation is definitely a little challenging to read:
+    This produces the following result:
 
-    ![Output from query showing confusing values for contribution calculation](images/lab-5a-step-6-substep-2.png " ")
+    |GENRE|MONTH|SALES|
+    |---|---|---|
+    |Action|2019-12|320577|
+    |Action|2020-12|280191|
+    |Comedy|2019-12|183968|
+    |Comedy|2020-12|169859|
+    |Drama|2019-12|295584|
+    |Drama|2020-12|369497|
 
-3. In a spreadsheet, it's very easy to clean up this type of report by using the decimals button. SQL has a similar formatting option called **ROUND**, to manage the number of decimals displayed:
 
-    ```
-    <copy>SELECT
-    day_dow,
-    day_name,
-    COUNT(customer_id) AS no_viewers,
-    ROUND(SUM(actual_price),2) AS revenue,
-    ROUND(RATIO_TO_REPORT(SUM(actual_price)) OVER()*100,2) AS contribution
-    FROM vw_movie_sales_fact
-    WHERE year_name = '2020'
-    GROUP BY day_dow, day_name
-    ORDER BY day_dow;</copy>
-    ```
-4. Now we can get a much clearer picture of the contribution each day is providing:
-
-    ![Output from query showing more meaningful values for contribution calculation](images/lab-5a-step-6-substep-4.png " ")
-
-    We can see that Monday provides a significant contribution compared to the other weekdays, however, **Saturday**, **Sunday** and **Friday** are actually providing the highest levels of contribution across the whole week. Now let's try to drill down and breakout the data across different dimensions to get some more insight.
-
-## Task 7: Break data out by specific genre
-
-Let's expand our focus and consider the types of movies that customers are watching each day. To do this, we can use the **SQL CASE** feature (which is similar to the IF() function in Excel) in conjunction with a count for each genre of movie as follows and examine the ratio of people streaming each genre on each day:
-
-For each genre where we know how many movies of that type were watched, we include the following code:
-
-```
-CASE genre WHEN 'crime' THEN 1 ELSE null END
-```
-
-1. We can take this formula and wrap it within a contribution calculation (**```RATIO_TO_REPORT```**), applying the formatting technique we just used above. Let's focus on a specific range of genres: crime, documentary, news and reality-tv genres.
+2. The **LAG** function will allow us to compare this year vs last (or any other time comparison). In addition, we are going to leverage the SQL **WITH** clause. The **WITH** clause allows you to define in-line views - which greatly simplifies your queries. We'll be using these in-line views as "query blocks" - or named result sets that can be easily referenced. Here, we're using the **WITH** clause to set up the comparison to last year.
 
     ```
-    <copy>SELECT
-    day_dow,
-    day_name,
-    COUNT(customer_id) AS no_viewers,
-    SUM(actual_price) as revenue,
-    ROUND(RATIO_TO_REPORT(SUM(actual_price)) OVER() * 100, 2) AS contribution,
-    ROUND(RATIO_TO_REPORT(SUM(CASE genre WHEN 'Crime' THEN 1 ELSE 0 END)) OVER() * 100, 2) AS crime,
-    ROUND(RATIO_TO_REPORT(SUM(CASE genre WHEN 'Documentary' THEN 1 ELSE 0 END)) OVER() * 100, 2) AS documentary,
-    ROUND(RATIO_TO_REPORT(SUM(CASE genre WHEN 'News' THEN 1 ELSE 0 END)) OVER() * 100, 2) AS news,
-    ROUND(RATIO_TO_REPORT(SUM(CASE genre WHEN 'Reality-TV' THEN 1 ELSE 0 END)) OVER() * 100, 2) AS realitytv
-    FROM vw_movie_sales_fact
-    WHERE year_name = '2020'
-    GROUP BY day_dow, day_name
-    ORDER BY day_dow;</copy>
-    ```
-2. This should return something similar to the following:
-
-    ![Results using RATIO TO REPORT calculation](images/lab-5a-step-7-substep-2.png " ")
-
-From the data we can see that viewing of Reality-TV related movies is definitely more popular on Sundays compared to other days of the week. News is definitely more popular on Mondays, and Saturday is a good day to enjoy a crime movie!
-
-We are starting to get an interesting picture of our customers' viewing habits during the week. The next stage is to drill into this daily analysis and look at how the daily contributions change within each of the four reporting quarters.
-
-## Task 8: Break data out by quarter
-
-It's most likely that when you are doing this type of analysis on your own data set, the obvious next step is to look at the same data over time to see if any other interesting patterns pop out.
-
-1. Let's dig a little deeper into the numbers by breaking out the data by year. With SQL, all we need to do is add the additional column name into the **SELECT** clause, **GROUP BY** clause and most importantly the **ORDER BY** clause as well:
-
-    ```
-    <copy>SELECT
-    quarter_name,
-    day_dow AS day_id,
-    day_name,
-    COUNT(customer_id) AS no_viewers,
-    SUM(actual_price) AS revenue,
-    ROUND(RATIO_TO_REPORT(SUM(actual_price)) OVER()*100, 2) AS contribution
-    FROM vw_movie_sales_fact
-    WHERE year_name = '2020'
-    GROUP BY quarter_name, day_dow, day_name
-    ORDER BY quarter_name, day_dow;</copy>
-    ```
-2. The result should look similar to this:
-
-    ![Results with additional quarter_name column](images/lab-5a-step-8-substep-2.png " ")
-
-3. Take a look at the contribution column; the values are very low. This is because we are comparing each day's revenue with the grand total for revenue across all four quarters. What we really need to do is compute the contribution within each quarter. This is a very easy change to make by simply adding a **PARTITION BY** clause to our window function.
-
-    ```
-    <copy>SELECT
-    quarter_name,
-    day_dow AS day_id,
-    day_name,
-    COUNT(customer_id) AS no_viewers,
-    SUM(actual_price) AS revenue,
-    ROUND(RATIO_TO_REPORT(SUM(actual_price)) OVER(PARTITION BY quarter_name)*100, 2) AS contribution
-    FROM vw_movie_sales_fact
-    WHERE year_name = '2020'
-    GROUP BY quarter_name, day_dow, day_name
-    ORDER BY quarter_name, day_dow;</copy>
-    ```
-
-4. Now it's much easier to see that we have a same familiar pattern across Monday, Friday, Saturday and Sunday:
-
-    ![Results with addition of PARTITION BY clause](images/lab-5a-step-8-substep-4.png " ")
-
-## Task 9: Create an Excel-like pivot table
-
-### Overview
-
-However, the challenge here is: it would be much easier if we could have a spreadsheet-like view of our result set, where the quarters are across the top of the report. Spreadsheets (along with many BI/data visualization tools) make this very easy to achieve through the use of pivot tables. Fortunately, SQL provides an almost identical feature:  **[PIVOT](https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/sql-analysis-reporting-data-warehouses.html#GUID-05BB22CD-0F53-4C90-AE84-CE3F88DBD591)** function (you may need to scroll down to find the section on PIVOT). In the code snippet below, we are telling SQL to break out the contribution column into separate columns for each quarter (where each column will be named as Q1, Q2, Q3 and Q4):
-
-> **Note:** You don't need to run this block of code:
-
-  ```
-  PIVOT
-  (
-  SUM(CONTRIBUTION) contribution
-  FOR QUARTER_NAME IN('Q1-2020' as "Q1", 'Q2-2020' as "Q2", 'Q3-2020' as "Q3", 'Q4-2020' as "Q4")
-  )
-  ```
-
-1. If we wrap a **PIVOT** operation around our previous query, this will enable us to swap rows for each quarter into columns so we can focus more easily on the contribution data:
-
-    ```
-    <copy>SELECT * FROM
-    (SELECT
-    quarter_name,
-    day_dow,
-    day_name,
-    ROUND(RATIO_TO_REPORT(SUM(actual_price)) OVER(PARTITION BY quarter_name)*100, 2) AS contribution
-    FROM vw_movie_sales_fact
-    WHERE year_name = '2020'
-    GROUP BY quarter_name, day_dow, day_name
-    ORDER BY quarter_name, day_dow)
-    PIVOT
-    (
-    SUM(CONTRIBUTION) contribution
-    FOR QUARTER_NAME IN('Q1-2020' as "Q1", 'Q2-2020' as "Q2", 'Q3-2020' as "Q3", 'Q4-2020' as "Q4")
+    <copy>WITH sales_vs_lastyear as (
+    SELECT 
+        g.name as genre,
+        TO_CHAR(c.day_id,'YYYY-MM') as month,
+        ROUND(SUM(c.actual_price),0) as sales,
+        LAG(ROUND(SUM(c.actual_price),0), 1) OVER (
+                PARTITION BY g.name
+                ORDER BY to_char(c.day_id,'YYYY-MM') ASC
+            ) as last_year         
+    FROM custsales c, genre g
+    WHERE g.genre_id = c.genre_id
+    AND to_char(c.day_id, 'MON') in ('DEC')
+    AND g.name in ('Action','Drama','Comedy')
+    GROUP BY TO_CHAR(c.day_id,'YYYY-MM'), c.genre_id, g.name
+    ORDER BY genre, month
     )
-    ORDER BY 1;</copy>
+    SELECT 
+        genre, 
+        sales as sales,
+        last_year as last_year,
+        sales - last_year as change
+    FROM  sales_vs_lastyear
+    WHERE last_year is not null
+    ORDER BY round(last_year - sales) DESC;</copy>
     ```
-2. This now looks more like a spreadsheet and it's now a lot easier to visually analyze the data over two time dimensions.
+    
+    The subquery **sales\_vs\_lastyear** aggregates sales by genre and month for both this year and last. The subquery is then used by the SELECT statement that calculates the sales change. 
 
-    ![Query results with PIVOT](images/lab-5a-step-9-substep-2.png " ")
+    You can see that Adventure and Action movies have shown strong a significant drop off. This drop off was more than offset by a large increase in Drama movies:
 
-### Wrap it all up
+    |GENRE|SALES|LAST_YEAR|CHANGE|
+    |---|---|---|---|
+    |Action|280191|320577|-40386|
+    |Comedy|169859|183968|-14109|
+    |Drama|369497|295584|73913|
 
-From this result set, we can easily spot that Monday's contribution is declining over time whilst the contribution provided by Friday, Saturday and Sunday is increasing over time. This could have important knock-on effects for our networks and servers during those three days, so this trend will need to be watched closely to see how it develops further over time.
+## Task 6: Understanding sales contributions
+
+### Overview
+
+Drama sales are up; Action sales are down. How significant are these genres to MovieStream's success? And, which movies are important contributors within these genres?  We're going to find out.  
+
+When customers select a movie to watch, they pick from a "shelf" that is broken out by genre. A movie may be an adventure/comedy (and the movie table contains these details) - but the customer selected a movie via a specific genre - and this genre is captured in the sales data.
+
+1. Let's begin by looking at movie sales by genre.
+
+    ```
+    <copy>WITH sales_by_genre as (
+    SELECT
+        g.name as genre,
+        m.title,
+        round(sum(c.actual_price),0) as sales        
+    FROM movie m, custsales c, genre g
+    WHERE m.movie_id = c.movie_id
+    AND c.genre_id = g.genre_id
+    GROUP BY g.name, m.title
+    )
+    SELECT 
+        genre, 
+        title,  
+        sales
+    FROM sales_by_genre
+    ORDER BY sales desc
+    FETCH FIRST 20 ROWS ONLY;</copy>
+    ```
+ 
+    Here are the top genre-movie combinations:
+
+    |GENRE|TITLE|SALES|
+    |---|---|---|
+    |Action|Avengers: Endgame|327423|
+    |Sci-Fi|Captain Marvel|298493|
+    |Adventure|Avengers: Endgame|289171|
+    |Sci-Fi|Spider-Man: Far from Home|248109|
+    |Action|Captain Marvel|240827|
+    |Adventure|Captain Marvel|239246|
+    |Fantasy|Aquaman|212570|
+    |Action|Spider-Man: Far from Home|209282|
+    |Adventure|Spider-Man: Far from Home|208749|
+    |Action|Aquaman|196869|
+    |Sci-Fi|Aquaman|191586|
+    |Adventure|Aquaman|177126|
+    |Family|The Lion King|168251|
+    |Animation|The Lion King|161655|
+    |Action|Avengers: Infinity War|150931|
+    |Sci-Fi|Avengers: Infinity War|149532|
+    |Family|Aladdin|142674|
+    |Action|Venom|140091|
+    |Drama|Room|138024|
+    |Drama|The Lion King|137991|
+
+    There are clearly movies - like Aquaman - that are popular across genres.
+
+2. We'll now focus on three of MovieStream's most important genres: Drama, Action and Comedies. What are the top 20 genre/movie combinations? We are going to use the RANK function to help with this analysis:
+
+    ```
+    <copy>WITH sales_grouping as (
+        SELECT
+            g.name as genre,
+            m.title as movie,
+            round(sum(c.actual_price),0) as sales
+        FROM movie m, custsales c, genre g
+        WHERE m.movie_id = c.movie_id
+        AND c.genre_id = g.genre_id
+        AND g.name IN ('Drama','Action','Comedy')
+        GROUP BY g.name, m.title
+    )
+    SELECT 
+        genre,
+        movie,
+        sales,
+        RANK () OVER ( order by sales desc ) as ranking
+    FROM sales_grouping
+    FETCH FIRST 20 ROWS ONLY;</copy>
+    ```
+    The result is shown below:
+
+    |GENRE|MOVIE|SALES|RANKING|
+    |---|---|---|---|
+    |Action|Avengers: Endgame|327423|1|
+    |Action|Captain Marvel|240827|2|
+    |Action|Spider-Man: Far from Home|209282|3|
+    |Action|Aquaman|196869|4|
+    |Action|Avengers: Infinity War|150931|5|
+    |Action|Venom|140091|6|
+    |Drama|Room|138024|7|
+    |Drama|The Lion King|137991|8|
+    |Action|Aladdin|130577|9|
+    |Drama|The Godfather|127420|10|
+    |Action|Avatar|120613|11|
+    |Action|Spider-Man: Homecoming|117223|12|
+    |Action|Batman v Superman: Dawn of Justice|111758|13|
+    |Comedy|Spider-Man: Homecoming|111384|14|
+    |Action|The Incredibles|103692|15|
+    |Drama|The Ten Commandments|102949|16|
+    |Drama|Deadpool 2|101739|17|
+    |Drama|Boogie Nights|101569|18|
+    |Action|Gladiator|101229|19|
+    |Drama|Jaws|101181|20|
+
+3. Okay, we know the top 20 genre/movie combinations - but it's not quite what we want. Let's refine the query to show the top movies WITHIN each genre. The RANK's **PARTITION BY** clause will enable this type of grouping:
+
+    ```
+    <copy>WITH sales_grouping as (
+        SELECT
+            g.name as genre,
+            m.title as movie,
+            round(sum(c.actual_price),0) as sales
+        FROM movie m, custsales c, genre g
+        WHERE m.movie_id = c.movie_id
+        AND c.genre_id = g.genre_id
+        AND g.name in ('Drama','Action','Comedy')
+        GROUP BY g.name, m.title
+    ),
+    movie_ranking_by_genre as (
+        SELECT 
+            genre,
+            movie,
+            sales,
+            RANK () OVER ( PARTITION BY genre ORDER BY sales DESC ) as ranking
+        FROM sales_grouping
+    )
+    SELECT * 
+    FROM movie_ranking_by_genre
+    WHERE ranking <= 5
+    ORDER BY genre ASC, ranking ASC;</copy>
+    ```
+    We can now see the most important movies for each genre:
+
+    |GENRE|MOVIE|SALES|RANKING|
+    |---|---|---|---|
+    |Action|Avengers: Endgame|327423|1|
+    |Action|Captain Marvel|240827|2|
+    |Action|Spider-Man: Far from Home|209282|3|
+    |Action|Aquaman|196869|4|
+    |Action|Avengers: Infinity War|150931|5|
+    |Comedy|Spider-Man: Homecoming|111384|1|
+    |Comedy|Chef|100777|2|
+    |Comedy|Deadpool 2|96248|3|
+    |Comedy|Lady Bird|91200|4|
+    |Comedy|Jumanji: Welcome to the Jungle|76383|5|
+    |Drama|Room|138024|1|
+    |Drama|The Lion King|137991|2|
+    |Drama|The Godfather|127420|3|
+    |Drama|The Ten Commandments|102949|4|
+    |Drama|Deadpool 2|101739|5|
+
+ 4. But, what is each movie's contribution to its genre? To answer this question, we need to make one more update. The **ROLLUP** function in the **GROUP BY** adds summaries (subtotals and grandtotals) for each grouping. Note, you can put the **ROLLUP** clause in different parts of the query to achieve different results. For example, do you want to see the movie's sales contribution across the total genre sales (add the ROLLUP to the subquery)? Or, its contribution based on the current selection.  Below displays the contribution for the current selection:
+
+    ```
+    <copy>WITH sales_grouping as (
+        SELECT
+            g.name as genre,
+            m.title as movie,
+            round(sum(c.actual_price),0) as sales
+        FROM movie m, custsales c, genre g
+        WHERE m.movie_id = c.movie_id
+        AND c.genre_id = g.genre_id
+        AND g.name IN ('Drama','Action','Comedy')
+        GROUP BY g.name, m.title
+        ),
+        movie_ranking_by_genre as (
+            SELECT
+                genre,
+                movie,
+                sales,
+                RANK () OVER ( partition by genre order by sales desc ) as ranking
+            FROM sales_grouping
+        )
+        SELECT genre,
+            movie,
+            SUM(sales),
+            ROUND(RATIO_TO_REPORT (SUM(sales)) OVER (PARTITION BY genre), 2) * 2 as ratio
+        FROM movie_ranking_by_genre
+        WHERE ranking <= 5
+        GROUP BY ROLLUP(genre, movie)
+        ORDER BY 1 ASC, 3 DESC;</copy>
+    ```
+    Here's the top movies within each genre and its contribution:
+
+    |GENRE|MOVIE|SUM(SALES)|RATIO|
+    |---|---|---|---|
+    |Action|null|1125332|1|
+    |Action|Avengers: Endgame|327423|0.3|
+    |Action|Captain Marvel|240827|0.22|
+    |Action|Spider-Man: Far from Home|209282|0.18|
+    |Action|Aquaman|196869|0.18|
+    |Action|Avengers: Infinity War|150931|0.14|
+    |Comedy|null|475992|1|
+    |Comedy|Spider-Man: Homecoming|111384|0.24|
+    |Comedy|Chef|100777|0.22|
+    |Comedy|Deadpool 2|96248|0.2|
+    |Comedy|Lady Bird|91200|0.2|
+    |Comedy|Jumanji: Welcome to the Jungle|76383|0.16|
+    |Drama|null|608123|1|
+    |Drama|Room|138024|0.22|
+    |Drama|The Lion King|137991|0.22|
+    |Drama|The Godfather|127420|0.2|
+    |Drama|The Ten Commandments|102949|0.16|
+    |Drama|Deadpool 2|101739|0.16|
+    |null|null|2209447|2|
+
+Notice, we also added the **RATIO\_TO\_REPORT** analytic function in order to compute the movie's contribution to the total within the report.
+
+## Task 7: Finding Our Most Important Customers
+
+### Overview
+This final example will enrich our existing understanding of customer behavior by utilizing an RFM analysis. RFM is a very commonly used method for analyzing customer value. It is commonly used in general customer marketing, direct marketing, and retail sectors.
+
+In the following steps, the scripts will build a SQL query that will identify:
+
+- Recency: when was the last time the customer accessed the site?
+
+- Frequency: what is the level of activity for that customer on the site?
+
+- Monetary: how much money has the customer spent?
+
+Customers will be categorized into 5 buckets measured (using the NTILE function) in increasing importance. For example, an RFM combined score of 551 indicates that the customer is in the highest tier of customers in terms of recent visits (R=5) and activity on the site (F=5), however the customer is in the lowest tier in terms of spend (M=1). Perhaps this is a customer that performs research on the site, but then decides to buy movies elsewhere!
+
+1.  Binning customers' sales by value
+
+    Use the following query to segment customers into 5 distinct bins based on the value of their purchases:
+
+    ```
+    <copy>SELECT
+        m.cust_id,
+        c.first_name||' '||c.last_name as cust_name,
+        c.country,
+        c.gender,
+        c.age,
+        c.income_level,
+        NTILE (5) OVER (ORDER BY SUM(m.actual_price)) AS rfm_monetary
+    FROM custsales m
+    INNER JOIN customer c ON c.cust_id = m.cust_id
+    GROUP BY m.cust_id,
+        c.first_name||' '||c.last_name,
+        c.country,
+        c.gender,
+        c.age,
+        c.income_level
+    ORDER BY m.cust_id,
+    c.first_name||' '||c.last_name,
+    c.country,
+    c.gender,
+    c.age,
+    c.income_level;</copy>
+    ```
+    Below is a snapshot of the result (and your result may differ):
+    |CUST_ID|CUST_NAME|COUNTRY|GENDER|AGE|INCOME_LEVEL|RFM_MONETARY|
+    |---|---|---|---|---|---|---|
+    |1000001|Tamara Angermeier|Mexico|Female|59|B: 30,000 - 49,999|4|
+    |1000004|Gaik-Hong Pouzade|Mexico|Female|53|B: 30,000 - 49,999|4|
+    |1000007|Perryn Koleyan|Mexico|Male|23|C: 50,000 - 69,999|5|
+    |1000010|Tatiana Sanu|Mexico|Female|66|D: 70,000 - 89,999|2|
+    |1000013|Bryan Primeau|Mexico|Male|43|B: 30,000 - 49,999|4|
+    |1000015|Kung-Zheng Artamova|Mexico|Male|65|A: Below 30,000|3|
+    |1000017|Bandhura Höhne|Mexico|Female|50|A: Below 30,000|3|
+    |1000021|Akara Papaz|Mexico|Male|66|A: Below 30,000|1|
+    |1000022|Asma Pollini|Mexico|Male|28|A: Below 30,000|2|
+    |1000025|Lonan Sergeyev|Mexico|Male|34|C: 50,000 - 69,999|5|
+    |1000027|Ernesto Preetish|Mexico|Male|55|A: Below 30,000|2|
+    |1000028|Iliona Gallois|Mexico|Female|45|A: Below 30,000|4|
+    |1000029|Gisella De Pougy|Mexico|Non-binary|58|E: 90,000 - 109,999|2|
+    |1000030|Liparit Jongman|Mexico|Male|42|E: 90,000 - 109,999|3|
+    |1000031|Yetar Cabrero|Mexico|Female|48|F: Above 110,000|4|
+    |1000033|Zhora Xue|Mexico|Female|38|B: 30,000 - 49,999|5|
+    |1000037|Olive Morgia|Mexico|Female|23|F: Above 110,000|4|
+    |1000038|Reinhard Evdikimov|Mexico|Male|16|A: Below 30,000|5|
+    |1000041|Carol Peck|United States|Male|41|D: 70,000 - 89,999|3|
+
+    
+    The last column in the report shows the "Bin" value. A value of 1 in this column indicates that a customer is a low spending customer and a value of 5 indicates that a customer is a high spending customer. For more information about using the `NTILE` function, see [the SQL documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/NTILE.html#GUID-FAD7A986-AEBD-4A03-B0D2-F7F2148BA5E9).
+
+2.  Binning customer sales by frequency
+
+    The next step is to determine how frequently customers are watching movies on our platform. To do this, we simply calculate the number of movies watched by each customer and then bin that calculation across 5 buckets.
+
+    ```
+    <copy>SELECT
+        cust_id,
+        NTILE (5) OVER (ORDER BY max(day_ID)) AS rfm_recency,
+        NTILE (5) OVER (ORDER BY count(1)) AS rfm_frequency
+    FROM custsales
+    GROUP BY cust_id;</copy>
+    ```
+    This should return a result similar to the following (again, your results may differ):
+
+    |CUST_ID|RFM_RECENCY|RFM_FREQUENCY|
+    |---|---|---|
+    |1214447|2|1|
+    |1271576|4|1|
+    |1381292|2|1|
+    |1173092|1|1|
+    |1394001|1|1|
+    |1033689|2|1|
+    |1036695|2|1|
+    |1313963|2|1|
+    |1133180|1|1|
+    |1087817|1|1|
+    |1201112|1|1|
+    |1118736|1|1|
+    |1107833|1|1|
+    |1243613|2|1|
+    |1147187|2|1|
+    |1158471|2|1|
+    |1217452|1|1|
+    |1391390|1|1|
+    |1088817|1|1|
+
+    Now we can identify those customers, based on when they last watched a movie (rfm\_recency). And, identify customers that watch the fewest number of movies, where the rfm\_frequency is 1, versus those customers that watch the most number of movies, where the rfm\_frequency is 5.
+
+3.  Create an RFM query
+
+    Now we use the **`WITH`** clause to combine these two queries to create an RFM query:
+
+    ```
+    <copy>WITH rfm AS (
+    SELECT
+        m.cust_id,
+        NTILE (5) OVER (ORDER BY max(day_id)) AS rfm_recency,
+        NTILE (5) OVER (ORDER BY count(1)) AS rfm_frequency,
+        NTILE (5) OVER (ORDER BY SUM(m.actual_price)) AS rfm_monetary
+    FROM custsales m
+    GROUP BY m.cust_id
+    )
+    SELECT
+        r.cust_id,
+        c.first_name||' '||c.last_name AS cust_name,
+        r.rfm_recency,
+        r.rfm_frequency,
+        r.rfm_monetary,
+        c.country,
+        c.gender,
+        c.age,
+        c.income_level
+    FROM rfm r
+    INNER JOIN customer c ON c.cust_id = r.cust_id
+    WHERE r.rfm_monetary >= 5
+      AND r.rfm_recency <= 1
+    ORDER BY r.rfm_monetary desc, r.rfm_recency desc;</copy>
+    ```
+    The result only shows customers who have history had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers.
+
+    |CUST_ID|CUST_NAME|RFM_RECENCY|RFM_FREQUENCY|RFM_MONETARY|COUNTRY|GENDER|AGE|INCOME_LEVEL|
+    |---|---|---|---|---|---|---|---|---|
+    |1351052|Akra Schockemohle|1|5|5|Kenya|Male|23|A: Below 30,000|
+    |1177510|Alicia Tilak|1|5|5|Mexico|Female|26|A: Below 30,000|
+    |1028719|Gerard Carlson|1|5|5|United States|Male|32|B: 30,000 - 49,999|
+    |1040970|Ward Larson|1|5|5|United States|Male|17|B: 30,000 - 49,999|
+    |1066885|Monty Morris|1|5|5|United States|Male|21|A: Below 30,000|
+    |1323975|Everette Cooley|1|5|5|United States|Male|24|A: Below 30,000|
+    |1091259|Jennifer Kirk|1|5|5|United States|Male|24|A: Below 30,000|
+    |1296904|Rubie Carosi|1|4|5|Italy|Female|27|E: 90,000 - 109,999|
+    |1144796|Pap Spinello|1|5|5|Hungary|Male|37|F: Above 110,000|
+    |1352324|Xuer-Nei Mendès|1|5|5|Kenya|Female|17|A: Below 30,000|
+    |1339142|Zhao-Dao Lamboglio|1|5|5|Jordan|Male|33|A: Below 30,000|
+    |1334789|Geet Werner|1|5|5|Jordan|Male|25|A: Below 30,000|
+    |1356569|Carmen Ferrari|1|5|5|Kenya|Male|26|A: Below 30,000|
+    |1355551|Tat Frommel|1|5|5|Kenya|Male|16|A: Below 30,000|
+    |1299978|Lancelot Sterner|1|5|5|Kenya|Male|26|A: Below 30,000|
+    |1356568|Troy Wullenweber|1|4|5|Kenya|Male|37|A: Below 30,000|
+    |1057387|Dutta Tilak|1|5|5|India|Male|26|A: Below 30,000|
+    |1183390|Venkatesh Kathiravan|1|5|5|India|Male|24|B: 30,000 - 49,999|
+    |1008586|Elaine Burnett|1|5|5|United States|Female|21|A: Below 30,000|
+    |1329199|Kris Woods|1|5|5|United States|Female|21|A: Below 30,000|
 
 ### Recap
+We covered alot of ground in this lab. You learned how to use different types of analytic functions, time series functions and subqueries to answer important questions about the business. 
+These features include:
 
-In this section, you have looked at the following key features of your Autonomous Data Warehouse:
+- Different ways of joining tables
 
-- Seeing how the result cache can transparently speed up queries
+- Time-series functions
 
-- Using built-in analytic functions to calculate contribution (**```RATIO_TO_REPORT```**)
+- Analytic functions to calculate contribution (**RATIO_TO_REPORT** and **ROLLUP**)
 
-- Applying formatting options to numeric results
+- **NTILE** binning functions that helps categorize customer sales and activity
 
-- Transforming data from rows into columns to make comparisons easier by using **PIVOT**
+Subsequent labs will showcase other types of database analytics that are equally if not more powerful.
 
 You may now [proceed to the next lab](#next).
 
 ## **Acknowledgements**
 
-- **Author** - Keith Laker, Oracle Autonomous Database Product Management
+- **Authors** - Keith Laker and Marty Gubar, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Keith Laker, July 2021
+- **Last Updated By/Date** - Marty Gubar, October 2021

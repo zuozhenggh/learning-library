@@ -1,4 +1,4 @@
-# SODA for Python Workshop Introduction
+# SODA for Python Workshop Environment Preparation
 
 ## Introduction
 

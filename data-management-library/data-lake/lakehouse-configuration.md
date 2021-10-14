@@ -42,17 +42,19 @@ First we are going to create an compartment. This allows for separation as well 
 
 4. Select from the side menu Groups. Verify that you are in the lakehouse1 Compartment. There are going to be a few groups that are needed to administer and use the data catalog, integrations and flows. For the interest of this lab we are just going to add your user to each of these groups but in reality, administrators will only have the privileges to manage these areas of the data lake and other accounts will be added as users to have access to the data.
 
-![Click on Create Groups](images/create_group1.png " ")
+![Click on Create Groups](images/newgroup.png " ")
 
-![Create Groups = Name group dataflow-users and add Description](images/create_group2.png " ")
+![Create Groups = Name group dataflow-users and add Description](images/new_groups1.png " ")
 
-![Create Groups - Next group dataflow-admin](images/create_group3.png " ")
+![Create Groups - Next group dataflow-admin](images/newgroup2.png " ")
 
+Not all of these groups are needed in this lab, however, it is important to provide separation of duties for manaing the lakehouse and these roles with policies will allow for that.
 Additional groups to create:
 - data-catalog-admin
 - data-catalog-users
 - data-integration-admin
 - data-integration-users
+- data-lakehouse_admin
 
 After these groups are added. Click on a group and click on Add User. You will add your account you signed into the cloud with to each of the groups for the purpose of the lab.
 
@@ -60,7 +62,7 @@ After these groups are added. Click on a group and click on Add User. You will a
 
 Select Policies on the side menu and click on the button Create Policy.
  
-![Create Policies](images/create_policy1.png " ")
+![Create Policies](images/create_policy.png " ")
 
 Name each policy for to match the group so they are easy to recognize what they are used for. 
 - Name this first on DataFlowUsers (Notice no spaces, underscores or dashes are allowed here). 
@@ -69,11 +71,11 @@ Name each policy for to match the group so they are easy to recognize what they 
 - Select Let Data Flow users manage their own Applications and Runs. 
 - Add the group dataflow-users and the location is the compartment lakehouse1
 
-![Create Policies](images/create_policy2.png " ")
+![Create Policies](images/create_polic1.png " ")
 
 Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1
 
-![Create Policies](images/create_policy3.png " ")
+![Create Policies](images/create_policy2.png " ")
 
 Policies can be added based on the common templates or added by manually adding the policy. These are the additional policies that are needed for the different groups. Notice when you use manual editor, the group disappears because these will be part of the policy statement being added. You can copy the following commands and paste into the manual edit. We are going to name this policy DataLakehousePolicy to cover the rest of the policies needed for the groups.
 
@@ -148,11 +150,9 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
 8. Provide basic information for the autonomous database:
 
-    - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __ADW Finance Mart__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __ADWFINANCE__.
-
-    ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
+    - __Choose a compartment__ - Select a compartment for the database from the drop-down list (lakehouse1).
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use Lakehousedb.
+    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use Lakehousedb.
 
 9. Choose a workload type. Select the workload type for your database from the choices:
 
@@ -179,7 +179,7 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     *Note: You cannot scale up/down an Always Free autonomous database.*
 
-    ![Choose the remaining parameters.](./images/Picture100-26c.png " ")
+      ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
 
 12. Create administrator credentials:
 
@@ -214,79 +214,14 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     ![Database instance homepage.](./images/Picture100-32.png " ")
 
-
-## Task 4: Configure the Object Storage Connections
-
-In this step, you will set up access to the two buckets on Oracle Object Store that contain data that we want to load - the landing area, and the 'gold' area.
-
-1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
-
-	  ![Click Tools, then Database Actions](images/launchdbactions.png " ")
-
-2. On the login screen, enter the username MOVIESTREAM, then click the blue **Next** button.
-
-3. Enter the password for the MOVIESTREAM user you set up in the previous lab.
-
-4. Under **Data Tools**, click **DATA LOAD**
-
-    ![Click DATA LOAD](images/dataload.png " ")
-
-5. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your Autonomous Database to OCI Object Storage.
-
-    ![Click CLOUD LOCATIONS](images/cloudlocations.png " ")
-
-6. To add access to the Moviestream landing area, click **+Add Cloud Storage** in the top right of your screen.
-
-    In the **Name** field, enter 'MovieStreamLanding'
-
     > **Note:** Take care not to use spaces in the name.
 
-    Leave the Cloud Store selected as **Oracle**.
-
-    Copy and paste the following URI into the URI + Bucket field:
-
-    ```
-    <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
-    </copy>
-    ```
-
-    Select **No Credential** as this is a public bucket.
-
-    Click the **Test** button to test the connection. Then click **Create**.
-
-7. The page now invites us to load data from this area. In this case, we want to set up access to an additional cloud location first. Click **Data Load** in the top left of your screen to go back to the main Data Load page.
-
-    ![Click Data Load](images/todataload.png " ")
-
-8. In the **Explore and Connect** section, click **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click **+Add Cloud Storage**.
-
-- In the **Name** field, enter 'MovieStreamGold'
-
-    > **Note:** Take care not to use spaces in the name.
-
-- Leave the Cloud Store selected as **Oracle**
-- Copy and paste the following URI into the URI + Bucket field:
-
-    ```
-    <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o
-    </copy>
-    ```
-
-- Select **No Credential** as this is a public bucket.
-- Click the **Test** button to test the connection. Then click **Create**.
-
-    We now have two cloud storage locations set up.
-
-    ![Cloud Storage Locations](images/cloudstoragelocations.png " ")
-
-This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
+This completes the creation of the groups, polices, database. We will now load the database with a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management
-* **Contributors** -  Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
+* **Contributors** -  Massimo Castelli, Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
 * **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
