@@ -12,7 +12,7 @@ In this lab, you will:
 
 ## Task 1: Creating Customer Orders Tables
 1. Log into your workspace.
-2. From your APEX workspace home page, select **SQL Workshop**, click **Utilities**, and then click **Sample Datasets**.
+2. From your APEX workspace home page, as shown below, select the down-arrow to the right of  **SQL Workshop**, then click the arrow to the right of  **Utilities**, and choose **Sample Datasets**.
 
     ![](./images/naviagate-sample-dataset.png " ")
 
@@ -20,8 +20,9 @@ In this lab, you will:
 
     ![](./images/Select-Sample-Dataset.png " ")
 
-4. Click **Next**
+4. Click **Next**.
 
+   *The schema name defaults to your current schema so will be different from the schema name shown below.*
     ![](./images/manage-sample-dataset.png" ")
 
 5. Click **Install Dataset**.
