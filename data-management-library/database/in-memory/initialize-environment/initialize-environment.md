@@ -36,6 +36,8 @@ This lab assumes you have:
 
     ![](./images/19c_hol_landing.png " ")
 
+## ** NOTE: If you copy and paste SQL commands then you must hit the ENTER key after the paste. Otherwise the last line will still be in the buffer until you hit ENTER!
+
 2. Click the *Terminal* icon on the desktop to launch a session, then run the following to validate that expected processes are up.
 
     ```
