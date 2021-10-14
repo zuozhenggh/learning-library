@@ -145,7 +145,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 4: Check for long running transactions
 
-1.  In the source database SQL window, enter the following script, and then click Run Script:
+1.  In the source database SQL window, enter the following script, and then click **Run Statement**:
 
     ```
     <copy>select start_scn, start_time from gv$transaction where start_scn < (select max(start_scn) from dba_capture);</copy>

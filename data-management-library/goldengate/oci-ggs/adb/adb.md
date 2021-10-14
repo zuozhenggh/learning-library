@@ -9,7 +9,7 @@ Estimated time: 20 mins
 ### Objectives
 -  Learn to provision a VCN and subnet
 -  Learn how to provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
--  Learn how to provision, connect, and load data into an Autonomous Data Warehouse (ADW) instance
+-  Learn how to provision an Autonomous Data Warehouse (ADW) instance
 
 ### Prerequisites
 
@@ -163,43 +163,10 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
-
-## Task 5: Load the ADW schema
-
-1.  Select your ADW instance from the Autonomous Databases list to view its details and access tools.
-
-    ![Select ADW database](./images/04-01-adw.png)
-
-2.  Click the **Tools** tab, and then click **Open Database Actions**.
-
-    ![Open Database Actions](./images/02-04-db-actions.png)
-
-3.  Log in with the ADMIN user and password provided when you created the ATP instance.
-
-    ![Log in to Database Actions](./images/02-05-login.png)
-
-4.  From the Database Actions menu, under **Development**, select **SQL**.
-
-    ![Select SQL](./images/02-06-db-actions.png)
-
-5.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SETUP\_USERS\_ADW.sql** paste it into the SQL Worksheet.
-
-    ![Paste ADW User Set Up](./images/04-05-adw.png)
-
-6.  Click **Run Script**. The Script Output tab displays confirmation messages.
-
-7.  Copy the SQL script from **OCIGGLL\_OCIGGS\_SRC\_MIRROR\_USER\_SEED\_DATA.sql** and paste it into a new SQL Worksheet.
-
-    ![Paste ADW User Seed](./images/04-07-adw-schema.png)
-
-8.  Click **Run Script**. The Script Output tab displays confirmation messages.
-
-9.  In the Navigator tab, look for the SRCMIRROR\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRCMIRROR\_OCIGGLL.
-
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated** - September 2021
+- **Last Updated** - October 2021
 - **PAR Expiration date** - March 31, 2022
