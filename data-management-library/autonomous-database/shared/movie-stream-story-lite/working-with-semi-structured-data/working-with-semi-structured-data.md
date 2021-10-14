@@ -10,7 +10,7 @@ JSON provides an extremely flexible and powerful data model.  No wonder that it 
 
 Up to this point in our workshop, all the data we have been using has been **structured**. Structured data comes with a pre-determined definition. In our movie sales data, each record in our sales data files has a reference ID, a timestamp, a customer ID, associated customer demographic information, movie purchases, payment information, and more. Each field in our data set has a clearly defined purpose, which makes it very quick and easy to query. In most real-world situations, you will need to deal with other types of data such as **semi-structured**.
 
-Estimated time: 15 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
@@ -46,7 +46,7 @@ JSON is a language-independent data format. It was derived from JavaScript, but 
 
 Oracle's SQL language contains specific keywords that help you process JSON data. In this lab, you will learn how to process and query JSON data formats.
 
-### Overview Of business problem
+### Overview of the business problem
 
 The marketing team would like to create themed bundles of movies based on the scriptwriters. Our movie data set has a series of columns that contain more detailed information. Each movie has a **crew** associated with it and that crew is comprised of **jobs**, such as "producer," "director," "writer," along with the names of the individuals. An example of how this information is organized is shown below:
 
@@ -55,12 +55,11 @@ The marketing team would like to create themed bundles of movies based on the sc
 
 This is in a format known as JSON and you can see that it is organized very differently from some other data that you have loaded into your new data warehouse. There is a single entry for "producer" but the corresponding key "names" actually has multiple values. This is referred to as an **array** - specifically a JSON array. Fortunately, the Autonomous Data Warehouse allows you to query this type of data (JSON arrays) using normal SQL as you will see below.
 
-Let's build a query for the marketing team that ranks each writer based on the amount of revenue for each film where they were involved, and look for writers who have suddenly had big hits in 2020 compared to other years. This would enable us to create promotion campaigns to bring attention to their earlier movies.
-
+Let's better understand the sales performance of our movies. We'll start by simply looking at our movie profiles and sales of those movies. Then, we'll examine how different events - in particular the Academy Awards - impacts sales of high profile movies.
 
 ## Task 1: Review JSON movie data
 
-In the previous labs of this workshop, we have loaded the data we want to use into our data warehouse. Autonomous Data Warehouse also allows you to leave your data in the Object Store and query it directly without having to load it first. This uses a feature called an External Table. There is a whole chapter on this topic in the documentation, [see here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833), which explains all the different types of file formats (including JSON) that are supported.
+In the previous labs of this workshop, we loaded the data we want to use into our data warehouse. Autonomous Data Warehouse also allows you to leave your data in the Object Store and query it directly without having to load it first. This uses a feature called an External Table. There is a whole chapter on this topic in the documentation, [see here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833), which explains all the different types of file formats (including JSON) that are supported.
 
 Although queries on external data will not be as fast as queries on database tables, you can use this approach to quickly start running queries on your external source files and external data. In the public Object Storage buckets, there is a file called **movies.json** which contains information about each movie, as outlined above.  An external table called **JSON\_MOVIE\_DATA\_EXT** has been created over this json file.
 
@@ -107,14 +106,13 @@ Although queries on external data will not be as fast as queries on database tab
 
     ```
     <copy>SELECT
-    m.doc.movie_id,
-    m.doc.title,
-    m.doc.budget,
-    m.doc.runtime
+        m.doc.movie_id,
+        m.doc.title,
+        m.doc.budget,
+        m.doc.runtime
     FROM json_movie_data_ext m
     WHERE rownum < 10;</copy>
     ```
-
     It should return a result set that looks similar to this:
 
     |MOVIE_ID|TITLE|BUDGET|RUNTIME|
@@ -189,17 +187,18 @@ Although queries on external data will not be as fast as queries on database tab
     ALTER TABLE t_movie add CONSTRAINT t_movie_crew_json CHECK (crew IS JSON);
     ALTER TABLE t_movie add CONSTRAINT t_movie_awards_json CHECK (awards IS JSON);
     ALTER TABLE t_movie add CONSTRAINT t_movie_nominations_json CHECK (nominations IS JSON);</copy>
+    ```
 
 3. Some attributes in our JSON data set contain multiple entries. For example, cast has a list of names and nominations a list of nominated awards. Take a look at the cast, crew,  names of the crew and awards for a couple of popular movies:
 
     ```
     <copy>SELECT
-    m.movie_id,
-    m.title,
-    m.budget,
-    m.cast,
-    m.crew,
-    m.awards
+        m.movie_id,
+        m.title,
+        m.budget,
+        m.cast,
+        m.crew,
+        m.awards
     FROM t_movie m
     WHERE m.title in ('Rain Man','The Godfather');</copy>
     ```
@@ -222,8 +221,8 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
     ```
     <copy>SELECT 
-    title, 
-    award    
+        title, 
+        award    
     FROM t_movie, 
          JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
     WHERE title IN ('Rain Man','The Godfather');</copy>
@@ -246,9 +245,9 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
     ```
     <copy>SELECT 
-    year,
-    title, 
-    award    
+        year,
+        title, 
+        award    
     FROM t_movie, 
         JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
     WHERE award = 'Academy Award for Best Picture'
@@ -276,43 +275,50 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
     ```
     <copy>WITH academyAwardedMovies as (
         -- Find movies that won significant awards
-        SELECT m.movie_id
+        SELECT 
+            m.movie_id
         FROM t_movie m, JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
         WHERE jt.award in ('Academy Award for Best Picture','Academy Award for Best Actor','Academy Award for Best Actress','Academy Award for Best Director')
         ),
     academyMovieSales as (
         -- what were those movies' sales?
-        SELECT sales.movie_id, sales.day_id
+        SELECT 
+            sales.movie_id, 
+            sales.day_id
         FROM custsales sales
         WHERE sales.movie_id in 
-        (SELECT movie_id FROM academyAwardedMovies)
+          (SELECT movie_id FROM academyAwardedMovies)
         ),
     before2020Award as (
         -- how about 14 days prior to the event
-        SELECT ams1.movie_id, count(1) as before_count
+        SELECT 
+            ams1.movie_id, 
+            count(1) as before_count
         FROM academyMovieSales ams1 
         WHERE day_id BETWEEN to_date('09/02/2020', 'DD/MM/YYYY') -14
-        AND to_date('09/02/2020', 'DD/MM/YYYY')
+          AND to_date('09/02/2020', 'DD/MM/YYYY')
         GROUP BY ams1.movie_id
         ),
     after2020Award as (
         -- and 14 days after the event
-        SELECT ams2.movie_id, count(1) as after_count
+        SELECT 
+            ams2.movie_id, 
+            count(1) as after_count
         from academyMovieSales ams2 
         WHERE day_id BETWEEN to_date('09/02/2020', 'DD/MM/YYYY')
-        AND to_date('09/02/2020', 'DD/MM/YYYY') +14
+          AND to_date('09/02/2020', 'DD/MM/YYYY') +14
         GROUP BY ams2.movie_id
     )
     -- join the before and after
     SELECT 
-    title, 
-    year, 
-    bef.before_count as "before event", 
-    aft.after_count as "after event", 
-    ROUND((aft.after_count - bef.before_count)/bef.before_count * 100) as  "percent change"
+        title, 
+        year, 
+        bef.before_count as "before event", 
+        aft.after_count as "after event", 
+        ROUND((aft.after_count - bef.before_count)/bef.before_count * 100) as  "percent change"
     FROM after2020Award aft, before2020Award bef, t_movie m
     WHERE aft.movie_id = bef.movie_id
-    AND   aft.movie_id = m.movie_id
+      AND aft.movie_id = m.movie_id
     ORDER BY "percent change" DESC;</copy>
     ```
 
