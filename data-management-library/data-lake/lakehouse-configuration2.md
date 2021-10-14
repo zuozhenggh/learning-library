@@ -27,9 +27,9 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 	  ![Click Tools, then Database Actions](images/launchdbactions.png " ")
 
-2. On the login screen, enter the username MOVIESTREAM, then click the blue **Next** button.
+2. On the login screen, enter the username ADMIN, then click the blue **Next** button.
 
-3. Enter the password for the MOVIESTREAM user you set up in the previous lab.
+3. Enter the password for the ADMIN user you entered when creating the database.
 
 4. Under **Data Tools**, click **DATA LOAD**
 

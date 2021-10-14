@@ -13,7 +13,7 @@
         {
             "title": "Lab 2: Development environment preparation",
             "description": "Provision Oracle Cloud Infrastructure basic resources.",
-            "filename": "./../../introduction/intro-soda.md"
+            "filename": "./../../introduction/intro-soda-pts.md"
         },
         {
             "title": "Lab 3: Build Python application using SODA and JSON",
