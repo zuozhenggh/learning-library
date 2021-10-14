@@ -9,7 +9,7 @@ layers in OAC. There are many ways to generate GeoJSON code and
 
 _Estimated time:_ 30 minutes
 
-![](images/racing-track.png " ")
+![](./images/racing-track.png)
 
 ### Objectives
 
@@ -32,7 +32,7 @@ This lab assumes you have:
 
 2. Search for your location, in this instance we will search for “2041 KP Zandvoort, Netherlands”.
 
-    ![](images/track-zandvoort.png " ")  
+    ![](./images/track-zandvoort.png)  
     
     > **Note:** Use the [Circuit
 Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html)
@@ -40,7 +40,7 @@ layout to find your three sectors, colored red, yellow, and blue.
 
      You will use the line tool to draw each sector.
 
-3.  Start drawing your LineString by choosing the polyline option ![](images/polyline.png " ")  
+3.  Start drawing your LineString by choosing the polyline option ![](./images/polyline.png)  
 
     Your JSON code will contain a top level FeatureCollection and  multiple Features nested below it. Add a “name”:”\[unique name\]” to each “LineString” property.  
 
@@ -91,13 +91,13 @@ layout to find your three sectors, colored red, yellow, and blue.
     </copy>
      ```
 
-    ![](images/code-snippit.png " ")
+    ![](./images/code-snippit.png)
 
     Image using Satellite View
 
 4. Draw the two remaining LineStrings to complete the circuit.
 
-    ![](images/complete-circuit.png " ")
+    ![](./images/complete-circuit.png)
 
 Image using Mapbox view
 
@@ -108,7 +108,7 @@ property. Example: "properties": {}  "properties": {"name": "Sector1"}
 for each “LineString” for the file to successfully upload as a map layer
 in OAC.
 
-    ![](images/save-geojson.png " ")
+    ![](./images/save-geojson.png)
 
 6. Rename the file to the map layer name. example: _Circuit Zandvoort Sectors_
 
@@ -122,8 +122,8 @@ in OAC.
 
 3. Create a GeoJSON file with Points using the “**Draw a Marker**” option. Add the 14 turns to your map.
 
-    ![](images/draw-marker.png " ")  
-    ![](images/circuit-zandvoort.png " ")
+    ![](./images/draw-marker.png)  
+    ![](./images/circuit-zandvoort.png)
 
 4. Add unique values for each properties option. In this example you will have 14 lines you update.
 
@@ -132,7 +132,7 @@ in OAC.
     > **Note:** you must add a unique properties value to each “Point” for the
 file to successfully upload as a map layer in OAC.
 
-    ![](images/save-geojson.png " ")
+    ![](./images/save-geojson.png)
 
 6. **Rename** the file to the map layer name.
 
@@ -144,4 +144,4 @@ You may now *proceed to the next lab*.
 
 - **Author** - Carrie Nielsen (Oracle Analytics Product Strategy Director)
 - **Contributors** - Lucian Dinescu (Oracle Analytics Product Strategy)
-- **Last Updated By** - Lucian Dinescu (Oracle Analytics Product Strategy)
+- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021)

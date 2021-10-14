@@ -12,7 +12,7 @@ In this lab, you will deploy an Oracle Analytics Cloud instance on Oracle Cloud 
 
 _Estimated Time:_ 5 minutes
 
-![Banner](images/banner.png)
+![Banner](./images/banner.png)
 
 ### Objectives
 
@@ -37,17 +37,17 @@ This lab assumes you have:
 
 2. Go to **Profile** on the top-right corner and make sure your user has the name **oracleidentitycloudservice/** appended before your email, like in the picture:
 
-   ![Federated user](images/oac-profile-federated.png)
+   ![Federated user](././images/oac-profile-federated.png)
 
 3. Don't you see **oracleidentitycloudservice/** before your email? Then, you need to Sign out and log in as a federated user, following these steps.
 
 4. Go to cloud.oracle.com, type your **Cloud Account Name** and click **Next**.
 
-   ![Cloud Account Name](images/oac-login-cloud-account-name.png)
+   ![Cloud Account Name](././images/oac-login-cloud-account-name.png)
 
 5. Login with user and password.
 
-   ![User and Password](images/oac-login-user-password.png)
+   ![User and Password](./images/oac-login-user-password.png)
 
 6. At this point, you should have **oracleidentitycloudservice/** before your email on the Profile popup, on the top-right corner.
 
@@ -57,11 +57,11 @@ This lab assumes you have:
 
 1. Return to the Home Page and go to the **Menu** > **Analytics & AI** > **Analytics Cloud**.
 
-   ![OAC Menu](images/oac-menu.png)
+   ![OAC Menu](./images/oac-menu.png)
 
 2. Make sure you select the `root` compartment (unless you have permissions and experience selecting a different one) and click **Create Instance**.
 
-   ![OAC Create Button](images/oac-create-button.png)
+   ![OAC Create Button](./images/oac-create-button.png)
 
 3. Fill the web form with the following information and click **Create**:
 
@@ -74,11 +74,11 @@ This lab assumes you have:
 
     > **Note:** **1 OCPU** OAC instance is for **Trials Only;** please be aware that you cannot scale up an 1 OCP instance and also there are [Limits for Querying, Displaying, Exporting Data](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acoci/create-services.html#GUID-7D6DB4EE-8DD5-44C5-9B6E-9FA847463A5F)
 
-   ![OAC Form](images/oac-form-redbull.png " ")
+   ![OAC Form](./images/oac-form-redbull.png " ")
 
    Your Analytics Instance will start provisioning.
 
-   ![pic3](images/oac-creating.png " ")
+   ![pic3](./images/oac-creating.png " ")
 
    > **Note:** Provisioning an Oracle Analytics Cloud instance can take from 10 (most likely) to 40 minutes.
 
@@ -90,4 +90,4 @@ You may now *proceed to the next lab*.
 
 - **Author** - Jeroen Kloosterman (Technology Product Strategy Director), Victor Martin (Technology Product Strategy Manager)
 - **Contributors** - Priscila Iruela, Arabella Yao
-- **Last Updated By** - Lucian Dinescu, October 2021
+- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021

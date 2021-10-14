@@ -29,6 +29,10 @@
       "filename": "../../map-layers/map-layers.md"
     },
     {
+      "title": "Lab 5: Configure Google maps as a Map background",
+      "filename": "../../google-maps/google-maps.md"
+    },
+    {
        "title": "Need Help?",
        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
        "filename":"../../need-help-freetier/need-help-freetier.md"
