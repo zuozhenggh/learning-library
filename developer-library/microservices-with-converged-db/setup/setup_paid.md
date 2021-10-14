@@ -226,7 +226,7 @@ The setup will provision the following resources in your tenancy:
 | OKE Cluster            | Developer Services -- Containers -- Kubernetes Clusters (OKE)               |
 | Registry Repositories  | Developer Services -- Containers -- Container Registry                      |
 
-You can monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window as this may disturb the setup.  Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
+You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
    ![](images/duplicate-browser-tab.png " ")
 
