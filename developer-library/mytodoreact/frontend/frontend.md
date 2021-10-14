@@ -32,14 +32,14 @@ In this tutorial, you will:
 
 ### Prerequisites
 
-1. This tutorial requires the completion of **Setup Development Environment** and **Deploy the Backend  Docker Image to Kubernetes**
+1. This tutorial requires the completion of **Setup Development Environment** and **Deploy the Backend  Docker Image to Kubernetes**. This tutorial also requires admin rights.
 
 2. Make sure the `npm` command is installed.
 
     ```
     <copy>npm --version</copy>
     ```
-3. if `npm` is not installed, install `Node` for your laptop, using `https://bit.ly/3evGlEo`.
+3. if `npm` is not installed, install `Node` for your laptop, using `https://bit.ly/3oVTrSh`.
 
 4. Make sure `Go lang` is installed.
 
@@ -74,10 +74,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	<copy>npm install</copy>
 	```
 
-4. In case of errors, try the following command
+4. In case of errors: delete `package-lock.json`, and the  `node_modules` directory then re-run ` npm install` followed by `npm audit fix` 
 
     ```bash
-	<copy>npm audit fix --force</copy>
+	<copy>npm audit fix </copy>
 	```
 
 	>**Note**: ideally, the `npm -version` should be higher than  `6.14.x`  and `node version` higher than 14.16.x 
