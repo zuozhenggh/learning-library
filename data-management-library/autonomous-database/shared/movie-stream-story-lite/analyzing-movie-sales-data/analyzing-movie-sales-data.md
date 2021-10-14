@@ -116,7 +116,6 @@ An inner join, which is sometimes called a simple join, is a join of two or more
 ### B) OUTER JOIN
 An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you will typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next task.
 
-
 ## Task 3: Learn more about joins
 In the previous SQL code we used an inner join to merge time, customer and genre dimensional data with the sales data. However, inner joins ignore rows in the dimension tables where there is no corresponding sales data. This means that some queries may need to use a different join method if you want to gain a deeper understanding of your sales data. Consider the following example:
 
@@ -352,7 +351,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
         sales
     FROM sales_by_genre
     ORDER BY sales desc
-    FETCH FIRST 20 ROWS ONLY</copy>
+    FETCH FIRST 20 ROWS ONLY;</copy>
     ```
  
     Here are the top genre-movie combinations:
@@ -402,7 +401,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
         sales,
         RANK () OVER ( order by sales desc ) as ranking
     FROM sales_grouping
-    FETCH FIRST 20 ROWS ONLY;/copy>
+    FETCH FIRST 20 ROWS ONLY;</copy>
     ```
     The result is shown below:
 
@@ -456,7 +455,6 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
     WHERE ranking <= 5
     ORDER BY genre ASC, ranking ASC;</copy>
     ```
-
     We can now see the most important movies for each genre:
 
     |GENRE|MOVIE|SALES|RANKING|
@@ -506,9 +504,8 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
         FROM movie_ranking_by_genre
         WHERE ranking <= 5
         GROUP BY ROLLUP(genre, movie)
-        ORDER BY 1 ASC, 3 DESC
-        ;</copy>
-    ```        
+        ORDER BY 1 ASC, 3 DESC;</copy>
+    ```
     Here's the top movies within each genre and its contribution:
 
     |GENRE|MOVIE|SUM(SALES)|RATIO|
@@ -578,8 +575,6 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     c.age,
     c.income_level;</copy>
     ```
-
-
     Below is a snapshot of the result (and your result may differ):
     |CUST_ID|CUST_NAME|COUNTRY|GENDER|AGE|INCOME_LEVEL|RFM_MONETARY|
     |---|---|---|---|---|---|---|
@@ -618,7 +613,6 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     FROM custsales
     GROUP BY cust_id;</copy>
     ```
-
     This should return a result similar to the following (again, your results may differ):
 
     |CUST_ID|RFM_RECENCY|RFM_FREQUENCY|
@@ -675,7 +669,6 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
       AND r.rfm_recency <= 1
     ORDER BY r.rfm_monetary desc, r.rfm_recency desc;</copy>
     ```
-
     The result only shows customers who have history had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers.
 
     |CUST_ID|CUST_NAME|RFM_RECENCY|RFM_FREQUENCY|RFM_MONETARY|COUNTRY|GENDER|AGE|INCOME_LEVEL|
