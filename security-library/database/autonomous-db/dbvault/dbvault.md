@@ -222,7 +222,7 @@ A realm is a protected zone inside the database where database schemas, objects,
     - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (*`DBA_DEBRA`*, *`SH1`* and *`APPUSER`*) as shown in Task 1 previously
    
        **Note:**
-          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
+          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new web-browser window (Mozilla, Chrome, Edge, Safari, etc) or by using the "Incognito mode"!**
           - As reminder, the password of these users is the same (here `WElcome_123#`)
     
              ````
@@ -257,7 +257,7 @@ A realm is a protected zone inside the database where database schemas, objects,
           -	`DBA_DEBRA` because it has the DBA role
           - `APPUSER` because it have the "`READ ANY TABLE`" system privilege
 
-2. Now, let's create a realm to secure `SH1` tables by executing this query below as the *`SEC_ADMIN_OWEN`* user. So, please **open a 4th web-browser window using the "Incognito mode"!**
+2. Now, let's create a realm to secure `SH1` tables by executing this query below as the *`SEC_ADMIN_OWEN`* user. So, please **open a 4th web-browser window**
 
       ````
       <copy>
@@ -420,7 +420,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
     - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser window** connected with a different user (*`DBA_DEBRA`*, *`SH1`* and *`APPUSER`*)
    
        **Note:**
-          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
+          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new web-browser window (Mozilla, Chrome, Edge, Safari, etc) or by using the "Incognito mode"!**
           - As a reminder, the password of these users is the same (here `WElcome_123#`)
     
              ````
@@ -546,7 +546,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
     - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (*`DBA_DEBRA`*, *`SH1`* and *`APPUSER`*)
    
        **Note:**
-          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
+          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new web-browser window (Mozilla, Chrome, Edge, Safari, etc) or by using the "Incognito mode"!**
           - As reminder, the password of these users is the same (here `WElcome_123#`)
     
              ````
