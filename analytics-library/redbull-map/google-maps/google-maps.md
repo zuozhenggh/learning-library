@@ -20,12 +20,9 @@ This lab assumes:
 - Access to the console of OAC ("*BI Service Administrator Role*"
     Application Role)
 
-## Task 1: Identify your Google Developer API Key
+## Task 1: Google Developer API Key
 
-1. If your organization already has a developer account, you can skip this task and determine from your internal resources what API key you should
-use. Research carefully as costs can be incurred.
-
-2. Please find the [documentation](https://developers.google.com/maps/documentation/javascript/get-api-key) for API Keys 
+1. Please find the [documentation](https://developers.google.com/maps/documentation/javascript/get-api-key) for API Keys 
 
 
 ## Task 2: Configure your Map background

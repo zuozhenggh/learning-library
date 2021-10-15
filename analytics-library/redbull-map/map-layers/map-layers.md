@@ -16,7 +16,7 @@ This lab assumes you have:
 - Permission to create Datasets in OAC
 - Created a file or use the data file provided
 
-## Task 1: Create a Dataset and assign to a map layer
+## Task 1: Create the Sector Dataset and assign it to the Map Layer
 
 Now that you have your two map layers created and imported, we need to associate the name property from our geojson files to an attribute in your data. Our first simple exercise will be to **create a Dataset** for each **Map Layer**.
 
@@ -127,8 +127,8 @@ Sector3 = Dark Blue:  #00192f
 Go to Save icon from top right, enter your workbook **Name** and click **Save** 
 
     ![](./images/save-workbook.png) 
-
-## Task 2: Create the Points Dataset and assign it to the map layer
+    
+## Task 2: Create the Points Dataset and assign it to the Map Layer
 
 1. Select the circle icon containing a **+** next to Search to select **Add Dataset**  
 

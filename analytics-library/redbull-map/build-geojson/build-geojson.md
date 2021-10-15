@@ -6,7 +6,7 @@ In this exercise, you will generate GeoJSON code and see how easy it is create m
 
 _Estimated time:_ 30 minutes
 
-![](./images/racing-track.png)
+![](./images/racing-track2.png)
 
 ### Objectives
 
@@ -22,7 +22,7 @@ This lab assumes you have:
 
 - Use of a GeoJSON code generation tool or can browse to https://geojson.io/
 
-## Task 1: Create LineStrings of Circuit Zandvoort
+## Task 1: Create LineStrings that represent sectors of Circuit Zandvoort
 
 1. Go to <https://geojson.io/>
 
@@ -36,7 +36,7 @@ Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) lay
      You will use the line tool to draw each sector     
      ![](./images/circuit-schema.png)
 
-3.  Start drawing your LineString by choosing the polyline option 
+3. Start drawing your first LineString of sector 1, the red sector, by choosing the polyline option
 
     ![](./images/polyline.png)  
 
@@ -89,19 +89,16 @@ Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) lay
     </copy>
      ```
 
-    ![](./images/code-snippit.png)
+    ![](./images/code-snippit2.png)
 
-    Image using Satellite View
 
 4. Draw the two remaining LineStrings for sector 2 and sector 3 to complete the circuit.
 
-    ![](./images/complete-circuit.png)
-
-    Image using Mapbox view
+    ![Image using Mapbox view](./images/complete-circuit.png)
 
 5. Choose **Save**, **GeoJSON** to export the file.
 
-    > **Note:** properties cannot be empty. You must add a unique value for each property. Example: "properties": {}  "properties": {"name": "Sector1"} for each “LineString” for the file to successfully upload as a map layer in OAC.
+    > **Note:** properties cannot be empty. You must add a unique value for each property. Example: change the syntax of “properties": {} to “properties": {"name": "Sector1"} for each “LineString” for the file to successfully upload as a map layer in OAC.
 
     ![](./images/save-geojson.png)
 
