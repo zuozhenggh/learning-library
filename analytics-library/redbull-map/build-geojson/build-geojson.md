@@ -2,10 +2,7 @@
 
 ## Introduction 
 
-In this exercise, you will generate a “Line String” GeoJSON file using
-an external tool and see how easy it is to leverage it to build map
-layers in OAC. There are many ways to generate GeoJSON code and
-<https://geojson.io/> is just one open-source option.
+In this exercise, you will generate GeoJSON code and see how easy it is create map layers in OAC with it. There are many ways to generate GeoJSON code and https://geojson.io/ is just one open-source option.
 
 _Estimated time:_ 30 minutes
 
@@ -23,8 +20,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Are able to use a GeoJSON code generation tool or browse to
-    <https://geojson.io/>
+- Use of a GeoJSON code generation tool or can browse to https://geojson.io/
 
 ## Task 1: Create LineStrings of Circuit Zandvoort
 
@@ -32,15 +28,17 @@ This lab assumes you have:
 
 2. Search for your location, in this instance we will search for “2041 KP Zandvoort, Netherlands”.
 
-    ![](./images/track-zandvoort.png)  
-    
+    ![](./images/track-zandvoort.png)
+
     > **Note:** Use the [Circuit
-Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html)
-layout to find your three sectors, colored red, yellow, and blue.  
+Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) layout to find your three sectors, colored red (sector 1), blue (sector 2), and yellow (sector 3).
 
-     You will use the line tool to draw each sector.
+     You will use the line tool to draw each sector     
+     ![](./images/circuit-schema.png)
 
-3.  Start drawing your LineString by choosing the polyline option ![](./images/polyline.png)  
+3.  Start drawing your LineString by choosing the polyline option 
+
+    ![](./images/polyline.png)  
 
     Your JSON code will contain a top level FeatureCollection and  multiple Features nested below it. Add a “name”:”\[unique name\]” to each “LineString” property.  
 
@@ -95,26 +93,25 @@ layout to find your three sectors, colored red, yellow, and blue.
 
     Image using Satellite View
 
-4. Draw the two remaining LineStrings to complete the circuit.
+4. Draw the two remaining LineStrings for sector 2 and sector 3 to complete the circuit.
 
     ![](./images/complete-circuit.png)
 
     Image using Mapbox view
 
-5. Choose Save, GeoJSON to export the file.
+5. Choose **Save**, **GeoJSON** to export the file.
 
-    > **Note:** properties cannot be empty. You must add a unique value for each property. Example: "properties": {}  "properties": {"name": "Sector1"} for each “LineString” for the file to successfully upload as a map layer
-in OAC.
+    > **Note:** properties cannot be empty. You must add a unique value for each property. Example: "properties": {}  "properties": {"name": "Sector1"} for each “LineString” for the file to successfully upload as a map layer in OAC.
 
     ![](./images/save-geojson.png)
 
-6. Rename the file to the map layer name. example: _Circuit Zandvoort Sectors_
+6. Rename the file to the map layer name. example: _Circuit Zandvoort Sectors.geojson_
 
 ## Task 2: Create Points that represent turns on Circuit Zandvoort
 
 1. Go to <https://geojson.io/>
 
-2. Search for your location Zandvoort, Netherlands and start with a blank file.
+2. Search for “2041 KP Zandvoort, Netherlands”  and start with a blank file.
 
     > **Note:** Use the [Circuit Zandvoort](https://www.formula1.com/en/racing/2021/Netherlands/Circuit.html) layout to find each turn. You will find turns labeled 1-14.
 
@@ -133,6 +130,10 @@ file to successfully upload as a map layer in OAC.
     ![](./images/save-geojson.png)
 
 6. **Rename** the file to the map layer name.
+
+7. Please find an example of the geojson files:
+- [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/a4JySgQvO_jUFX7Z9pOWPWKAgSs5BqweobA8kdxV3W_oqs-pAFiAJVOheNtAQ17x/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20LineString.geojson)
+- [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/33Bt4LPdlJvJRtuLnHOAymQ8SitN46quzbHlFHOTgY9w_5YMUeEPY6npOXlaS_5C/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20Point.geojson)
 
 Congratulations on completing this lab!
 

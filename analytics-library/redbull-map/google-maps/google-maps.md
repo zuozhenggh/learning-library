@@ -22,12 +22,10 @@ This lab assumes:
 
 ## Task 1: Identify your Google Developer API Key
 
-1. Google Maps API **Access Key**  
-If your organization already has a developer account, you can skip this task and determine from your internal resources what API key you should
+1. If your organization already has a developer account, you can skip this task and determine from your internal resources what API key you should
 use. Research carefully as costs can be incurred.
 
-2. Using API Keys
-Please find the [documentation](https://developers.google.com/maps/documentation/javascript/get-api-key) for API Keys 
+2. Please find the [documentation](https://developers.google.com/maps/documentation/javascript/get-api-key) for API Keys 
 
 
 ## Task 2: Configure your Map background
@@ -72,14 +70,14 @@ Enter your client **Key** or the generated one from Task 1.
     ![](./images/home-page.png)
 
 ## Task 3: Change your map background to be a satellite view  
-Let’s go change the Background type to our Map Background.  
+Let’s go change the background type to our **Background Map**.  
 Open OAC to the workbook state where we ended in Lab 4.
 
 1. Select the **Map** option and scroll down until you see the **Background Map** setting.
 
     ![](./images/change-background-map.png)
 
-2. Choose the **Google Maps Satellite** background created from Task 2 above.
+2. Choose the **Google Maps** background created from Task 2 above.
 
     ![](./images/maps-background-google-maps.png)
 

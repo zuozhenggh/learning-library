@@ -2,7 +2,7 @@
 
 **Introduction**
 
-In this lab you will **import the GeoJSON files** you generated, into the OAC Console as a Map Layer.
+In this lab you will **import the GeoJSON files** you generated into the OAC Console as a Map Layer.
 
 ###  Prerequisites
 
@@ -32,7 +32,7 @@ This lab assumes you have:
 
     ![](./images/map-layers.png)
 
-5. **Add Custom** Map **Layer**  
+5. **Add Custom** **Map Layer**  
 
     ![](./images/custom-map-layers.png)
 

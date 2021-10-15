@@ -16,11 +16,11 @@ This lab assumes you have:
 - Permission to create Datasets in OAC
 - Created a file or use the data file provided
 
-## Task 1: Create a Dataset and assign to a Map Layer
+## Task 1: Create a Dataset and assign to a map layer
 
-Now that you have your two map layers created and imported, we need to associate these keys to values in your data. Our first simple exercise will be to **create a Dataset** for each **Map Layer**.
+Now that you have your two map layers created and imported, we need to associate the name property from our geojson files to an attribute in your data. Our first simple exercise will be to **create a Dataset** for each **Map Layer**.
 
-1. Create a file that contains the following information. The name field in your data set needs to match the id value in the map layer.  
+1. Create a file that contains the following information. The name field in your data set needs to match the properties name value in the map layer.  
 
     ![](./images/turns.png) ![](./images/segments.png)
 
@@ -114,7 +114,6 @@ Sector3 = Dark Blue:  #00192f
 
     ![](./images/color-sector1.png) 
 
-
 21. **Rename** your Map Layer to "**LineString**"  
 
     ![](./images/rename-map-layer.png)  
@@ -129,7 +128,7 @@ Go to Save icon from top right, enter your workbook **Name** and click **Save**
 
     ![](./images/save-workbook.png) 
 
-## Task 2: Add Points Dataset to OAC and assign it to the map layer
+## Task 2: Create the Points Dataset and assign it to the map layer
 
 1. Select the circle icon containing a **+** next to Search to select **Add Dataset**  
 
