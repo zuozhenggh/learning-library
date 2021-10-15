@@ -281,7 +281,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    https://objectstorage.uk-london-1.oraclecloud.com/p/-y7ZikQ0A7iRE1PFU3Fijt7oayomVEvUx6W4os4EVhCsru56hKlSWsNyy1Y-iYFg/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -354,7 +354,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.ap-tokyo-1.oraclecloud.com/p/hKcth9AOMgzW_bS2rVIiTT_JJ5tNGmqS1kjkWjMphMlnZDbtUj3ZuSehrSuDTCtC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    https://objectstorage.ap-tokyo-1.oraclecloud.com/p/ABVB5gPbYO35Ep2C64n6xw8xKIyx-8Zuw7t7n-GS6UrjGtT8l-PNU-Xpu_gAqtwx/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
     </copy>
     ```
     </details>
