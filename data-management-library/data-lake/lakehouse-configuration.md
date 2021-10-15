@@ -122,53 +122,18 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     ![Oracle home page.](./images/Picture100-36.png " ")
 
-2. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Data Warehouse database use with data assets for the data lake, so click **Autonomous Data Warehouse**.
+2. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Data Warehouse database use with data assets for the data lake, so click **Autonomous Data Warehouse**. The console probably shows that no database exists yet. Click on **Create Autonomous Database** to start the instance creation process.
 
-    ![Click Autonomous Data Warehouse.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+3. Provide basic information for the autonomous database:
 
-3. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select the compartment that was created in Task 1.
+- __Choose a compartment__ - Select a compartment for the database from the drop-down list **lakehouse1**.
+- __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use **Lakehousedb**.
+- __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use **Lakehousedb**.
+. Choose the workload type to be __Data Warehouse__ .
 
-    ![Check the workload type on the left.](images/list-scope-freetier.png " ")
+    ![Compartment_name.](images/create_ADW1.png " ")
 
-   *Note: Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.*
-
-4. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Data Warehouse__ workload type is selected.
-
-    ![Autonomous Databases console.](./images/no-adb-freetier.png " ")
-
-5. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
-
-    ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
-
-6. Click **Create Autonomous Database** to start the instance creation process.
-
-    ![Click Create Autonomous Database.](./images/Picture100-23.png " ")
-
-7.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
-
-    ![](./images/create-adb-screen-freetier-default.png " ")
-
-8. Provide basic information for the autonomous database:
-
-    - __Choose a compartment__ - Select a compartment for the database from the drop-down list (lakehouse1).
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use Lakehousedb.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use Lakehousedb.
-
-9. Choose a workload type. Select the workload type for your database from the choices:
-
-    - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
-    - __Transaction Processing__ - Alternatively, you could have chosen Transaction Processing as the workload type.
-
-    ![Choose a workload type.](./images/Picture100-26b.png " ")
-
-10. Choose a deployment type. Select the deployment type for your database from the choices:
-
-    - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
-    - __Dedicated Infrastructure__ - Alternatively, you could have chosen Dedicated Infrastructure as the deployment type.
-
-    ![Choose a deployment type.](./images/Picture100-26_deployment_type.png " ")
-
-11. Configure the database:
+4. Configure the database, and for this lab we will be using **Always Free** resources.
 
     - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
     - __Choose database version__ - Select a database version from the available versions.
@@ -179,9 +144,9 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     *Note: You cannot scale up/down an Always Free autonomous database.*
 
-      ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
+      ![Enter the required details.](./images/create_ADW2.png " ")
 
-12. Create administrator credentials:
+5. Create administrator credentials:
 
     - __Password and Confirm Password__ - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
     - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
@@ -191,24 +156,21 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![Enter password and confirm password.](./images/Picture100-26d.png " ")
-13. Choose network access:
+    ![Enter password and confirm password.](./images/create_ADW3.png " ")
+
+6. Choose network access:
     - For this lab, accept the default, "Allow secure access from everywhere".
-    - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
-    - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
-
-    ![](./images/network-access.png " ")
-
-14. Choose a license type. For this lab, choose __License Included__. The two license types are:
+ 
+7. Choose a license type. For this lab, choose __License Included__. The two license types are:
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-    ![](./images/license.png " ")
+    ![](./images/create_ADW4.png " ")
 
 15. Click __Create Autonomous Database__.
 
-    ![Click Create Autonomous Database.](./images/Picture100-27.png " ")
+    ![Click Create Autonomous Database.](./images/create_ADW5.png " ")
 
 16.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
