@@ -19,7 +19,7 @@ In this lab, you will be guided through the following tasks:
 
 ### Prerequisites
 
-- An Oracle Trial or Paid Cloud Account
+- A LiveLab environment 
 - Some Experience with MySQL Shell
 
 
