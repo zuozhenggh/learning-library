@@ -1,4 +1,4 @@
-# Oracle Database Vault on Autonomous Database
+# Oracle Database Vault on an autonomous database
 
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Database Vault (DV). It gives the user an opportunity to learn how to configure those features in an Autonomous Database to prevent unauthorized privileged users from accessing sensitive data.
