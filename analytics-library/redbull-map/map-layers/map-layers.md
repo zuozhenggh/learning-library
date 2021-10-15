@@ -127,7 +127,8 @@ Sector3 = Dark Blue:  #00192f
 Go to Save icon from top right, enter your workbook **Name** and click **Save** 
 
     ![](./images/save-workbook.png) 
-    
+
+
 ## Task 2: Create the Points Dataset and assign it to the Map Layer
 
 1. Select the circle icon containing a **+** next to Search to select **Add Dataset**  
@@ -203,8 +204,39 @@ Val = Yellow: #fad55c
 
     ![](./images/map-viz-colors2.png) 
 
-23. **Save** the Workbook.  
+17. **Save** the Workbook.  
 Click **Save** icon from top right ![](./images/save-workbook-icon.png)  
+
+
+## Task 3: Review the workshop  
+If you were able to successfully complete the workshop, you can ignore this task.  
+Otherwise, please find the dva for this project for use of troubleshooting or reviewing the implementation.  
+
+1. Follow the steps from **Lab 3: Import your GeoJSON code into OAC** and import the following files:  
+- [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/a4JySgQvO_jUFX7Z9pOWPWKAgSs5BqweobA8kdxV3W_oqs-pAFiAJVOheNtAQ17x/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20LineString.geojson)
+- [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/33Bt4LPdlJvJRtuLnHOAymQ8SitN46quzbHlFHOTgY9w_5YMUeEPY6npOXlaS_5C/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20Point.geojson)
+
+2. Download the OAC dva project file. (link to the file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rm1QNE2IZs4tE-A8X_3Lm3B7gMdqaj-5aGEq8yPBvxnw-yn9x8CaAd2xZ3fva29N/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Red%20Bull%20Racing%20Honda.dva))  
+
+3. On the top right of the **Oracle Analytics Home Page**, choose the stacked icons and select **Import Workbook/Flow**
+
+    ![](./images/import-project.png)
+
+4. Click **Select** and browse to the file downloaded from step 1 above and click **Open**
+
+    ![](./images/import-select-file.png)
+
+5. Click **Import**
+
+    ![](./images/import-click-import.png)
+
+6. When the message, Import successful appears, click **OK**
+
+    ![](./images/import-successful.png)
+
+7. You can open the project to view the contents or make changes.  
+
+    ![](./images/imported-workbook.png)
 
 
 Congratulations on completing this lab!
