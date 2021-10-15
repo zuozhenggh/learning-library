@@ -17,21 +17,21 @@ Your own Oracle Cloud Infrastructure compartment for running this workshop has b
 
 1. Copy the compartment name (not OCID) from the workshop reservation page.
 
-![](images/copy-comp-name.png " ")
+   ![](images/copy-comp-name.png " ")
 
-2. Select the navigation menu from the top left corner of the Oracle Cloud Console and navigate to the Compute --> Compute --> Instances page.
+2. Select the navigation menu from the top left corner of the Oracle Cloud Console and navigate to the Instances page in the Compute section.
 
-![](images/select-compute-instances.png " ")
+   ![](images/select-compute-instances.png " ")
 
 3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope".
 
-![](images/enter-comp-name.png " ")
+   ![](images/enter-comp-name.png " ")
 
 4. Select your compartment name from the drop down list.
 
-![](images/select-comp-name.png " ")
+   ![](images/select-comp-name.png " ")
 
-![](images/correct-comp-name.png " ")
+   ![](images/correct-comp-name.png " ")
 
 ## Task 2: Launch the Cloud Shell
 
@@ -39,7 +39,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
-  ![](images/open-cloud-shell.png " ")
+   ![](images/open-cloud-shell.png " ")
 
 
 ## Task 3: Make a Clone of the Workshop Setup Script and Source Code
@@ -85,9 +85,9 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 2. The setup will ask for you to enter your Compartment OCID. This is included in the workshop reservation page console.
 
-  ![](images/get-compartment-ocid.png " ")
+   ![](images/get-compartment-ocid.png " ")
 
-3. The setup will ask you to enter an Auth Token so that docker can log in to the OCI Registry. Please follow these steps to create an Auth Token.
+3. The setup will ask you to enter an Auth Token so that docker can log in to the Oracle Cloud Infrastructure Registry. Please follow these steps to create an Auth Token.
 
   a. Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
@@ -111,7 +111,11 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   f. Click Close to close the Generate Token dialog.
 
-4. The setup will ask you to enter an Admin password for the databases. For simplicity, the same password will be used for both the Order and Inventory databases. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin". **Note**: The passwords typed are not displayed.
+4. The setup will ask you to enter an Admin password for the databases. For simplicity, the same password will be used for both the Order and Inventory databases. 
+
+Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin". 
+
+**Note**: The passwords typed are not displayed.
 
 5. The setup will also ask you to enter a UI password that is used to enter the microservice frontend user interface. Make a note of the password as you will need it later. The UI password must be 8 to 30 characters.
 
@@ -135,11 +139,15 @@ ls -al $GRABDISH_LOG
 </copy>
 ```
 
-Once the setup has completed you are ready to move to the next lab. Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
+Once the setup has completed you are ready to move to the next lab. 
+
+Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
+
+Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
 ## Acknowledgements
 
-* **Authors** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata, Irina Granat, Consulting Member of Technical Staff, Oracle MAA and Exadata,
+* **Authors** - Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata; Irina Granat, Consulting Member of Technical Staff, Oracle MAA and Exadata
 
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon

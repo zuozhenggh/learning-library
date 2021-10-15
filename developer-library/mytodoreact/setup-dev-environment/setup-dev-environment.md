@@ -104,20 +104,25 @@ You should now see `mtdrworkshop` in your root directory
 2. Click **Create Autonomous Database**
 	![ATP-config-1](images/ATP-config-1.png " ")
     * Set the **Compartment, Display Name** and **Database Name**.
-	* Set `mtdrdb` as the database name (that name is being used in future commands)
+	* Set `mtdrdb` as the database name  and display name (that name is being used in future commands)
 	* Set the workload type to **Transaction Processing**.
     * Accept the default Deployment Type **Shared Infrastructure**.
 3. Set the **ADMIN password, Network Access Type** and **License Type**
 	![ADB setup](images/ADB-setup.png " ")
     * Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
     Please write down the ADMIN password; it will be required later.
-    * Set the **Access type** to **Allow secure access from specific IPs and VCNs**.
+	
+    * Set the **Access type** to **Secure access from everywhere**.
+	![network access](images/network-access.png " ")
+
     * Set the license type to **Bring Your Own License (BYOL)** (does not matter for this workshop).
     * Click **Create Autonomous Database**.
 
 > **Note:** The database creation will take a few minutes.
 
-4. Populate mtdrworkshopdbid.txt with the database OCID.
+4. Copy the **database OCID**  and replace $DBOCID with it in the following command to populate mtdrworkshopdbid.txt.
+
+	![copy DBOCID](images/copy-DBOCID.png " ")
 
 	``` bash
 	<copy>echo $DBOCID > ~/mtdrworkshop/workingdir/mtdrworkshopdbid.txt</copy>
@@ -161,12 +166,19 @@ You should now see `mtdrworkshop` in your root directory
 	![connect](images/connect.png " ")
 	\* Point the tool at your wallet.zip file
 	\* Stay in the mtdrwokshop/setup-dev-environment directory and launch sql with /nolog option.
-8. Create a TODOUSER with a strong password, using the sql utility.
-	\* Suggest reusing the admin password, not good practice in real life, but easy for this workshop
+8. Create a TODOUSER with a strong password (**in quotes**), using the sql utility.
+	\* Suggest reusing the admin password, not a good practice in real life, but easy for this workshop
 	``` sql
-	<copy> CREATE USER todouser IDENTIFIED BY <password> DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
+	<copy> CREATE USER todouser IDENTIFIED BY "password";</copy>
 	```
-	\* After typing the password in the middle of the CREATE USER command, move the cursor to the end of the command, where the semicolon `;` is
+	``` sql
+	<copy> ALTER USER todouser DEFAULT TABLESPACE data TEMPORARY TABLESPACE TEMP;</copy>
+	```
+	``` sql
+	<copy> GRANT UNLIMITED TABLESPACE TO todouser WITH ADMIN OPTION;</copy>
+	```
+
+	\* After typing the `password` in the middle of the CREATE USER command, move the cursor to the end of the command, where the semicolon `;` is
 	![create user](images/create-user.png " ")
 	\* Grant some privileges to TODOUSER by executing the following command.
 
@@ -220,10 +232,10 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
     * Repository Name: `<tenancy name>/mtdrworkshop`
     * Access: `Public`
     ![create repository](images/create-repository.png " ")
-4. Go to Cloud Shell and run `./addOCIRInfo.sh` with the namespace and repository name as arguments.
+4. Go to Cloud Shell and run `./addOCIRInfo.sh` with the **namespace and repository name** as arguments.
 
 	``` bash	
-	<copy>./addOCIRInfo.sh <namespace> <repository_name></copy>
+	<copy>cd ~/mtdrworkshop; ./addOCIRInfo.sh <namespace> <repository_name></copy>
 	```
 
 	\* For example `./addOCIRInfo.sh axhpdrizd2ai treehacks01/mtdrworkshop`
@@ -270,7 +282,7 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 
 ## Task 6: Access OKE from the Cloud Shell
 
-1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
+1. Copy the **Cluster ID** from the Cloud console then replace `$ClusterID` with it in the following command and create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
 	``` bash
 	<copy>echo $ClusterID > ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt</copy>
@@ -279,7 +291,7 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 2. Run `./verifyOKEAndCreateKubeConfig.sh`
 
 	```
-	<copy>cd mtdrworkshop; ./verifyOKEAndCreateKubeConfig.sh</copy>
+	<copy>cd ~/mtdrworkshop; ./verifyOKEAndCreateKubeConfig.sh</copy>
 	```
 
 > **Note:** `/.kube/config` is created for the OKE cluster.

@@ -4,11 +4,11 @@
 
 In this lab, you will create a new database user, then load and link data from the MovieStream data lake on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
 
-You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third-party data integration tools. With the built-in tools, you can load data:
+You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third party data integration tools. With the built-in tools, you can load data:
 
-+ from files in your local device,
-+ from tables in remote databases, or
-+ from files stored in cloud-based object storage (Oracle Cloud Infrastructure Object Storage, Amazon S3, Microsoft Azure Blob Storage, Google Cloud Storage).
++ from files in your local device
++ from tables in remote databases
++ from files stored in cloud-based object storage (Oracle Cloud Infrastructure Object Storage, Amazon S3, Microsoft Azure Blob Storage, Google Cloud Storage)
 
 You can also leave data in place in cloud object storage, and link to it from your Autonomous Database.
 
@@ -25,11 +25,11 @@ We will also learn how to exercise features of the DBMS\_CLOUD package to link a
 ### Objectives
 
 In this lab, you will:
-* Create a database user and update the user's profile to grant more roles
+* Create a database user and update the user's profile to grant more privileges
 * Log in as the user
 * Learn how to define object storage credentials for your autonomous database
 * Learn how to load data from object storage using Data Tools
-* Learn how to load data from object storage using the DBMS\_CLOUD APIs executed from SQL
+* Load data using a script
 
 
 ### Prerequisites
@@ -80,11 +80,11 @@ For this workshop we need to create one new user.
     There is more information available in the documentation about password rules and how to create your own password rules; see here: [Create Users on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-create.html#GUID-B5846072-995B-4B81-BDCB-AF530BC42847)
 
 - Toggle the **Graph** button to **On**.
-- Toggle the **Web Access** button to **On**
-- Toggle the **OML** button to **On**
-- In the upper right section of the Create User dialog, select **UNLIMITED** from the drop down menu for Quota on tablespace DATA
+- Toggle the **Web Access** button to **On**.
+- Toggle the **OML** button to **On**.
+- In the upper right section of the Create User dialog, select **UNLIMITED** from the drop down menu for Quota on tablespace DATA.
 
-    >**Note:** If you are using an Always Free autonomous database instance, the **UNLIMITED** option will not be available. In this case, simply select **1TB** in the list. This will be sufficient for the whole workshop.
+    >**Note:** If you are using an Always Free autonomous database instance, the **UNLIMITED** option will not be available. In this case, simply select **20GB** in the list. This will be sufficient for the whole workshop.
 
 - Leave the **Password Expired** toggle button as off (Note: this controls whether the user is prompted to change their password when they next log in).
 - Leave the **Account is Locked** toggle button as off. 
@@ -95,9 +95,9 @@ For this workshop we need to create one new user.
 
 Now that you have created a user with several roles, let's see how easy it is to grant some more roles.
 
-## Task 2: Update the user's profile to grant more roles
+## Task 2: Update the user's profile to grant more privileges
 
-You learned how to use the Create User dialog to create a new user. You can also create and modify users using SQL. This is useful when you don't have access to the user interface or you want to run scripts to create/alter many users. Open the SQL worksheet as the ADMIN user to update the MovieStream user you just created.
+You learned how to use the Create User dialog to create a new user. You can also create and modify users using SQL. This is useful when you don't have access to the user interface or you want to run scripts to create/alter many users. Open the SQL worksheet as the ADMIN user to update the MOVIESTREAM user you just created.
 
 1. The Database Users page now shows your new MOVIESTREAM user in addition to the ADMIN user. Click **Database Actions** in the upper left corner of the page, to return to the Database Actions launch page.
 
@@ -122,11 +122,12 @@ You learned how to use the Create User dialog to create a new user. You can also
     grant all on directory data_pump_dir to moviestream;
     grant create procedure to moviestream;
     grant create sequence to moviestream;
+    grant create job to moviestream;
     </copy>
     ```
 
 
-## Task 3: Log in as the user
+## Task 3: Log in as the MOVIESTREAM user
 
 Now you need to switch from the ADMIN user to the MOVIESTREAM user, before starting the next lab on data loading.
 
@@ -151,31 +152,33 @@ Now you need to switch from the ADMIN user to the MOVIESTREAM user, before start
 
 In this step, you will set up access to the two buckets on Oracle Cloud Infrastructure Object Storage that contain data that we want to load - the landing area, and the 'gold' area.
 
-1. On the Database Actions home page, under **Data Tools**, click on **DATA LOAD**
+1. On the Database Actions home page, under **Data Tools**, click **DATA LOAD**.
 
     ![Click DATA LOAD](images/dataload.png)
 
-5. In the **Explore and Connect** section, click on **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
+2. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
 
     ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
-6. To add access to the Moviestream gold area which contains curated files for us to load, click on **+Add Cloud Storage** in the top right of your screen.
+3. To add access to the Moviestream gold area which contains curated files for us to load, click **+Add Cloud Storage** in the top right of your screen.
 
--   In the **Name** field, enter 'MovieStreamGold'
+    - In the **Name** field, enter 'MovieStreamGold'.
 
-> **Note:** Take care not to use spaces in the name.
+    **Note:** Take care not to use spaces in the name.
 
--   Leave Cloud Store selected as **Oracle**
--   Copy and paste the following URI into the URI + Bucket field:
-```
-<copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
-</copy>
-```
--   Select **No Credential** as this is a public bucket
--   Click on the **Test** button to test the connection. Then click **Create**.
+    - Leave Cloud Store selected as **Oracle**.
+    - Copy and paste the following URI into the URI + Bucket field:
 
-7. The page now shows the newly created Cloud Location.
+    ```
+    <copy>
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
+    </copy>
+    ```
+
+    - Select **No Credential** as this is a public bucket.
+    - Click on the **Test** button to test the connection. Then click **Create**.
+
+4. The page now shows the newly created Cloud Location.
 
     ![Click CLOUD LOCATIONS](images/cloudlocations2.png)
 
@@ -242,7 +245,7 @@ drop table moviestream_log;  -- ignore error if table did not exist
 
 -- Add the log table
 create table moviestream_log
-   (	execution_time timestamp (6), 
+   (	execution_time timestamp (6),
 	    message varchar2(32000 byte)
    );
 
@@ -273,38 +276,38 @@ begin
         from moviestream_labs ml
         where json_value (doc, '$.script' returning varchar2(100))  is not null
         order by 1 asc
-        ) 
+        )
     loop
         -- The plsql procedure DDL is contained in a file in object store
         -- Create the procedure
         dbms_output.put_line(lab_rec.title);
         dbms_output.put_line('....downloading plsql procedure ' || lab_rec.proc);
-            
+
         -- download the script into this binary variable        
         uri := uri_scripts || '/' || lab_rec.proc || '.sql';
-        
+
         dbms_output.put_line('....the full uri is ' || uri);        
         b_plsql_script := dbms_cloud.get_object(object_uri => uri);
-        
+
         dbms_output.put_line('....creating plsql procedure ' || lab_rec.proc);
         -- convert the blob to a varchar2 and then create the procedure
         c_plsql_script :=  to_clob( b_plsql_script );
-        
+
         -- generate the procedure
         execute immediate c_plsql_script;
 
     end loop lab_rec;  
-    
+
     execute immediate 'grant execute on moviestream_write to public';
 
-    exception 
+    exception
         when others then
             dbms_output.put_line('Unable to add the data sets.');
             dbms_output.put_line('');
             dbms_output.put_line(sqlerrm);
  end;
  /
- 
+
 begin
     add_datasets();
 end;
@@ -314,7 +317,7 @@ end;
 
 9.  Click the **Run Script** button to run the script.
 
-> **Note** The script should take around 5-6 minutes to run as it uses a number of scripts to load and links a number of data files, and to generate additional views and tables used in later analysis steps.
+> **Note** The script should take around 4-5 minutes to run as it uses a number of scripts to load and links a number of data files, and to generate additional views and tables used in later analysis steps.
 
 10. When the script has completed, you should see a message like this in the Script Output window:
 
@@ -325,6 +328,8 @@ end;
     ![Full list of tables and views](images/tablelist.png)
 
 This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream data lake. We will be working with these tables in later labs.
+
+Please *proceed to the next lab*.
 
 ## Acknowledgements
 

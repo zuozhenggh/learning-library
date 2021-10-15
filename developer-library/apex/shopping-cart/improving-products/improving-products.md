@@ -5,7 +5,7 @@
 In this lab, you will learn how to improve the Products page by adding new facets and customizing the cards.
 
 Once you have finished the workshop and updated all the products as described in the steps, your page will look like the following image:
-    ![](images/products-page.png " ")
+    ![](./images/products-page.png " ")
 
 *Please note that customer can quickly identify the products that already has added to the shopping cart.*
 
@@ -20,7 +20,7 @@ In this lab, you will:
 In the Runtime environment navigate to Products, this is the page where your customers can explore the products and select what they wish to buy.
 As you can see, it's hard to find the products and it would be beneficial to see additional details related to the products.
 
-![](images/products-page.png " ")
+![](./images/products-page-org.png " ")
 
 1. From the runtime application, navigate to the Products page in Page Designer.
 
@@ -29,12 +29,12 @@ As you can see, it's hard to find the products and it would be beneficial to see
 
     In the Developer Toolbar click **Edit Page 1**.
 
-    ![](images/dev-toolbar.png " ")
+    ![](./images/dev-toolbar.png " ")
     
     Alternatively, you can also navigate back to the APEX App Builder tab in your browser manually by selecting the appropriate browser tab or window.   
     Once in the App Builder click **1 - Products**.
 
-    ![](images/alt-app-builder.png " ")
+    ![](./images/alt-app-builder.png " ")
     
     You should now be in Page Designer with **Page 1: Products** loaded.
 
@@ -46,7 +46,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
 2. Within Page Designer, in the Rendering tree (left pane), navigate to Facets under **Search** Faceted Search.
 3. Right-click Facets and click **Create Facet**.
 
-    ![](images/create-facet.png " ")
+    ![](./images/create-facet.png " ")
 
 4. In the Property Editor, enter the following:
     - Name - enter **P1\_DEPARTMENT\_ID**
@@ -56,7 +56,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
         - Type - select **Shared Component**
         - List of Values - select **DEPARTMENT_LOOKUP.DEPARTMENT**
 
-    ![](images/department-facet.png " ")
+    ![](./images/department-facet.png " ")
     
 5. Create the second facet. Right-click Facets and click **Create Facet**.
 
@@ -68,7 +68,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
         - Type - select **Shared Component**
         - List of Values - select **CLOTHING_LOOKUP.CLOTHING**
 
-    ![](images/clothing-facet.png " ")
+    ![](./images/clothing-facet.png " ")
 
 6. Create the third facet. Right-click Facets and click **Create Facet**.
 
@@ -80,14 +80,14 @@ As you can see, it's hard to find the products and it would be beneficial to see
         - Type - select **Shared Component**
         - List of Values - select **COLOR_LOOKUP.COLOR**
 
-    ![](images/color-facet.png " ")
+    ![](./images/color-facet.png " ")
 
 ## Task 2: Reorder Facets
 Unit price is not a common search criteria, so you want to put this facet at the bottom.
 
-1. In the Rendering tree (left pane), under Search, within Facets, click and hold **P1\_UNIT\_PRICE** and drag it up until it is under **P1\_COLOR\_ID** then release the mouse.
+1. In the Rendering tree (left pane), under Search, within Facets, click and hold **P1\_UNIT\_PRICE** and drag it down until it is under **P1\_COLOR\_ID** then release the mouse.
 
-    ![](images/reorder-facet.png " ")
+    ![](./images/reorder-facet.png " ")
 
 ## Task 3: Enhance the Faceted Search 
 
@@ -96,7 +96,7 @@ Unit price is not a common search criteria, so you want to put this facet at the
     -   For Total Row Count Label - enter **Total Products**
     -   For Show Charts - select **No**.
 
-    ![](images/enhance-facet.png " ")    
+    ![](./images/enhance-facet.png " ")    
 
 ## Task 4: Enhance the Cards Region
     
@@ -136,11 +136,11 @@ Unit price is not a common search criteria, so you want to put this facet at the
     ```
     - Under Appearance section:
         - Click Template Options. For Style - select **Style A**
-    ![](images/template-options.png " ")  
+    ![](./images/template-options.png " ")  
         - Click **Ok**
         
 2. Click Attributes and apply the following changes:
-    ![](images/attributes.png " ")
+    ![](./images/attributes.png " ")
     - Under Apperance section:
         - For Layout - select **Grid**.
         - For Grid Columns - select **Auto**.
@@ -172,15 +172,15 @@ Unit price is not a common search criteria, so you want to put this facet at the
     - Under Card section:
         -   For Primary Key Column 1 - select **PRODUCT_ID**.          
 
-        ![](images/cards.png " ")        
+        ![](./images/cards.png " ")        
 
 ## Task 5: Create Actions 
-You would need to provide a way for customers to shop the products, so in this task you will add an action to allow customers to learn more about the product.
+Customers need a way to shop the products, so in this task you will add an action to allow customers to learn more about the product.
 
 1. Navigate to **Search Results** (left pane).
 2. On Actions, right-click **Create Action**.
 
-    ![](images/create-action.png " ")
+    ![](./images/create-action.png " ")
 
 3. In the Property Editor (right pane), enter the following:
     -   For Type - select **Full Card**
@@ -195,7 +195,7 @@ You would need to provide a way for customers to shop the products, so in this t
         - For Clear Cache, enter **18**
         - Click **Ok**.
 
-    ![](images/full-card.png " ")
+    ![](./images/full-card.png " ")
 
 ## Task 6: Adding Dynamic Actions
 In this task, you will create two dynamic actions:
@@ -203,10 +203,10 @@ In this task, you will create two dynamic actions:
 - To update the badge and icon shown in the navigation bar after the customer has added/edited/removed a product from the shopping cart.
 
 1. Navigate to **Dynamic Actions** tab (left pane).
-     ![](images/create-da.png " ")  
+     ![](./images/create-da.png " ")  
 
 2. Right-Click Dialog Closed and click **Create Dynamic Action**.
-     ![](images/create-da2.png " ")  
+     ![](./images/create-da2.png " ")  
 3. In the Property Editor, enter the following: 
     - Under Identification section:
         - For Name - enter **Show Success Message**
@@ -238,7 +238,7 @@ In this task, you will create two dynamic actions:
             ```
 
 8. Create a second dynamic action. Right-Click Dialog Closed and click **Create Dynamic Action**.  
-     ![](images/create-da4.png " ") 
+     ![](./images/create-da4.png " ") 
 9. In the Property Editor, enter the following:    
     - Under Identification section: 
         - For Name - enter **Update Shopping Cart Header**
@@ -273,7 +273,7 @@ In this task, you will create two dynamic actions:
             ```
 11. Create an opposite action. In the Dynamic Actions tab (left pane), navigate to the newly dynamic action.
 12. Right-Click **Execute JavaScript Code** and click **Create Opposite Action**.
-     ![](images/create-opposite-action.png " ") 
+     ![](./images/create-opposite-action.png " ") 
 
 13. Navigate to **Execute JavaScript Code** Action.
     - Under Identification section:
@@ -294,18 +294,21 @@ In this task, you will create two dynamic actions:
 
 ## Task 7: Run Products Page 
 
-When running products page, you will notice that Department, Clothing and Color facets don't have values as the products are not associated with the corresponding characteristic.
-   ![](images/products-facets.png " ")
+When running products page, you will notice that image of the products is missing.
+   ![](./images/products-facets.png " ")
 
-For that, navigate to **Manage Products** Page, upload a picture and select the proper color, department and clothing characteristic for each product.
-    ![](images/manage-products.png " ")
+To upload images please follow these steps:
 
-[Download images for your application](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nDA-UBc8y27dbtyRu0DVR0u6CRUI1jRXTAP17J_Cd4QqUaTCxjdG4puUa4aF1qGm/n/c4u04/b/developer-library/o/clothing-images.zip) to download images for your application.
+1. [Download images](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nDA-UBc8y27dbtyRu0DVR0u6CRUI1jRXTAP17J_Cd4QqUaTCxjdG4puUa4aF1qGm/n/c4u04/b/developer-library/o/clothing-images.zip) for your application.
+2. Run ACME Shop App
+3. Click navigation menu, click **Administration** and then click **Manage Products**.
+4. Edit each of the products by clicking the pencil and upload the image.
 
-Once you have updated products information, you would be able to check facet values:
-    ![](images/products-image.png " ")
+   ![](./images/upload-image.png " ")
 
 
+Once you have upload images of the products, your page will look like the following image:
+    ![](./images/products-image.png " ")
 
 You now know how to enhance faceted search and cards region.
 

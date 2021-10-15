@@ -1,4 +1,4 @@
-﻿# Work with semi-structured movie data
+﻿# Work with JSON movie data
 
 ## Introduction
 
@@ -10,7 +10,7 @@ JSON provides an extremely flexible and powerful data model.  No wonder that it 
 
 Up to this point in our workshop, all the data we have been using has been **structured**. Structured data comes with a pre-determined definition. In our movie sales data, each record in our sales data files has a reference ID, a timestamp, a customer ID, associated customer demographic information, movie purchases, payment information, and more. Each field in our data set has a clearly defined purpose, which makes it very quick and easy to query. In most real-world situations, you will need to deal with other types of data such as **semi-structured**.
 
-Estimated time: 15 minutes
+Estimated time: 10 minutes
 
 ### Objectives
 
@@ -22,14 +22,9 @@ Estimated time: 15 minutes
 
 ### Prerequisites
 
-- This lab requires completion of these previous labs: **Provision an ADB Instance**, **Create a Database User**, **Use Data Tools and Scripting to Load Data**.
-- You can complete the prerequisite labs in two ways:
+- This lab requires completion of these previous labs: **Provision an ADB Instance**, **Create a Database User**, **Use Data Tools to Create a User and Load Data**.
 
-    a. Manually run through the labs.
-
-    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
-
-## What is semi-structured data
+### What is semi-structured data
 
 Semi-structured data does not have predefined fields that have a clearly defined purpose. Typically most semi-structured data looks similar to a text-based document but most types of semi-structured data lack a precise structural definition and come in all shapes and sizes. This can make it very challenging to work with this type of data.
 
@@ -51,166 +46,87 @@ JSON is a language-independent data format. It was derived from JavaScript, but 
 
 Oracle's SQL language contains specific keywords that help you process JSON data. In this lab, you will learn how to process and query JSON data formats.
 
-### Overview Of business problem
+### Overview of the business problem
 
-The marketing team would like to create themed bundles of movies based on the scriptwriters. Our movie data set has a series of columns that contain more detailed information. Each movie has a **crew** associated with it and that crew is comprised of jobs, such as "producer," "director," "writer," along with the names of the individuals. An example of how this information is organized is shown below:
+The marketing team would like to create themed bundles of movies based on the scriptwriters. Our movie data set has a series of columns that contain more detailed information. Each movie has a **crew** associated with it and that crew is comprised of **jobs**, such as "producer," "director," "writer," along with the names of the individuals. An example of how this information is organized is shown below:
 
-![An example of data in JSON format](images/3038282398.png " ")
+![JSON example](images/lab-3-json-doc.png " ")
+
 
 This is in a format known as JSON and you can see that it is organized very differently from some other data that you have loaded into your new data warehouse. There is a single entry for "producer" but the corresponding key "names" actually has multiple values. This is referred to as an **array** - specifically a JSON array. Fortunately, the Autonomous Data Warehouse allows you to query this type of data (JSON arrays) using normal SQL as you will see below.
 
-Let's build a query for the marketing team that ranks each writer based on the amount of revenue for each film where they were involved, and look for writers who have suddenly had big hits in 2020 compared to other years. This would enable us to create promotion campaigns to bring attention to their earlier movies.
+Let's better understand the sales performance of our movies. We'll start by simply looking at our movie profiles and sales of those movies. Then, we'll examine how different events - in particular the Academy Awards - impacts sales of high profile movies.
 
-## Task 1: Prepare the data warehouse schema
+## Task 1: Review JSON movie data
 
-If you have already completed the lab **Analyzing Movie Sales Data** then you can skip this step since this is a repetition of Step 1 in that lab. Jump straight to the next step, Step 2.
+In the previous labs of this workshop, we loaded the data we want to use into our data warehouse. Autonomous Data Warehouse also allows you to leave your data in the Object Store and query it directly without having to load it first. This uses a feature called an External Table. There is a whole chapter on this topic in the documentation, [see here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833), which explains all the different types of file formats (including JSON) that are supported.
 
-The MovieStream data warehouse uses an design approach called a 'star schema'. A star schema is characterized by one or more very large fact tables that contain the primary information in the data warehouse and a number of much smaller dimension tables (or lookup tables), each of which contains information about the entries for a particular attribute in the fact table.
+Although queries on external data will not be as fast as queries on database tables, you can use this approach to quickly start running queries on your external source files and external data. In the public Object Storage buckets, there is a file called **movies.json** which contains information about each movie, as outlined above.  An external table called **JSON\_MOVIE\_DATA\_EXT** has been created over this json file.
 
-![A simple data warehouse star schema.](https://docs.oracle.com/cd/A87860_01/doc/server.817/a76994/schemasa.gif)
-
-The main advantages of star schemas are that they:
-<ul>
-<li>Provide a direct and intuitive mapping between the business entities being analyzed by end users and the schema design.</li>
-<li>Provides highly optimized performance for typical data warehouse queries.</li>
-</ul>
-
-
-One of the key dimensions in the MovieStream data warehouse is **TIME**. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter and year. This **TIME** table has a single stored column - **DAY_ID** - and virtual columns that are attributes of that day value.
-
-1. View the time dimension table.
+1. Let's see how many rows are in this table:
 
     ```
-    <copy>
-    SELECT
-    *  
-    FROM time;</copy>
+    <copy>SELECT count(*) FROM json_movie_data_ext;</copy>
     ```
+    This query returns the following result:
 
-    > **Note:** The TIME dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
+    |COUNT(*)|
+    |---|
+    |3800|
 
-Querying a data warehouse can involve working with a lot of repetitive SQL. This is where 'views' can be very helpful and very powerful. The code below is used to simplify the queries used throughout this workshop. The main focus here is to introduce the concept of joining tables together to returned a combined resultset.
+2. Go to the SQL Worksheet Navigator panel and click the arrow to the left of the name, **JSON\_MOVIE\_DATA\_EXT**, to show the list of columns in our table.  Notice that there is a single column called **DOC** that contains the JSON data:
 
-The code below uses a technique called **INNER JOIN** to join the dimension tables to the fact table.
+    ![See the table in the tree](images/3038282401.png " ")
 
-
-2. Creating a view that joins the GENRE, CUSTOMER and TIME dimension tables with the main fact table CUSTSALES.
-
-    ```
-    <copy>CREATE OR REPLACE VIEW vw_movie_sales_fact AS
-    SELECT
-    m.day_id,
-    t.day_name,
-    t.day_dow,
-    t.day_dom,
-    t.day_doy,
-    t.week_wom,
-    t.week_woy,
-    t.month_moy,
-    t.month_name,
-    t.month_aname,  
-    t.quarter_name,  
-    t.year_name,  
-    c.cust_id as customer_id,
-    c.state_province,
-    c.country,
-    c.continent,
-    g.name as genre,
-    m.app,
-    m.device,
-    m.os,
-    m.payment_method,
-    m.list_price,
-    m.discount_type,
-    m.discount_percent,
-    m.actual_price,
-    m.genre_id,
-    m.movie_id
-    FROM custsales m
-    INNER JOIN time t ON m.day_id = t.day_id
-    INNER JOIN customer c ON m.cust_id = c.cust_id
-    INNER JOIN genre g ON m.genre_id = g.genre_id;
-    </copy>
-    ```
-There are lots of different types of joins that can be used within a SQL query to combine rows from one table with rows in another table. Typical examples are:
-
-### A) INNER JOIN
-An inner join, which is sometimes called a simple join, is a join of two or more tables that returns only those rows that satisfy the join condition. In the example above, only rows in the sales fact table will be returned where a corresponding row for day existings in the time dimension table and a corresponding row exists in the customer dimension table and a corresponding row exists in the genre dimension table.
-
-### B) OUTER JOIN
-An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you wil typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next step.
-
-## Task 2: Load JSON movie data
-
-In the previous labs of this workshop, we have loaded the data we want to use into our data warehouse. Autonomous Data Warehouse also allows you to leave your data in the Object Store and query it directly without having to load it first. This uses a feature called an External Table. There is a whole chapter on this topic in the documentation, [see here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833), which explains all the different types of file formats (including JSON) that are supported.
-
-Although queries on external data will not be as fast as queries on database tables, you can use this approach to quickly start running queries on your external source files and external data. In the public Object Storage buckets, there is a file called **movies.json** which contains information about each movie, as outlined above.
-
-
-1. The code to create an external table is very similar to the data loading code we used earlier. This time we will use a procedure called: **DBMS\_CLOUD.CREATE\_EXTERNAL\_TABLE**. Run the following block of code in your SQL Worksheet:
+    This external table behaves just like an ordinary table. Let's run a simple query to show the rows in the table:
 
     ```
-    <copy>
-    BEGIN
-    DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
-    table_name => 'json_movie_data_ext',
-    file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o/movie/*.json',
-    column_list => 'doc varchar2(32000)',
-    field_list => 'doc char(30000)',
-    format => json_object('delimiter' value '\n')
-    );
-    END;
-    /</copy>
+    <copy>SELECT * FROM json_movie_data_ext WHERE rownum < 10;</copy>
     ```
 
-2. You should see a message "PL/SQL procedure successfully completed" in the script output window, something similar to the following:
-
-    ![Script output window showing message PL/SQL procedure successfully completed](images/sql-analytics-lab5-step1-substep2.png " ")
-
-    > **Note:** The procedure completed very quickly (milliseconds), because we did not move any data from the Object Store into the data warehouse. The data is still sitting in the Object Store.
-
-3. This external table behaves just like an ordinary table so we can run a query to see how many rows are in the file. Run this query in your SQL Worksheet:
-
-    ```
-    <copy>SELECT COUNT(*)
-    FROM json_movie_data_ext;</copy>
-    ```
-
-4. This should return a result something like this:
-
-    ![Result of querying external table](images/analytics-lab-2-step-1-substep-6.png " ")
-
-5. If we now refresh the Navigator panel again, we should see the new table in the tree (**note** your navigation tree may look slightly different to the one shown below in terms of the number of tables shown). Click the arrow to the left of the name, **JSON\_MOVIE\_DATA\_EXT**, to show the list of columns in our table:
-
-    ![See the new table in the tree](images/3038282401.png " ")
-
-6. You can see that our table contains only one column! Let's run a simple query to show the rows in the table:
-
-    ```
-    <copy>SELECT * FROM json_movie_data_ext WHERE rownum < 25;</copy>
-    ```
-
-    ![Results of query showing the rows in the table](images/analytics-lab-2-step-1-substep-8.png " ")
+    |DOC|
+    |---|
+    |{  "movie\_id" : 1, "sku" : "COO3790", "list\_price" : 3.99, "wiki\_article" : "'Gator\_Bait\_II:\_Cajun\_J...|
+    |{  "movie\_id" : 10, "sku" : "WSD96478", "list\_price" : 1.99, "wiki\_article" : "101\_Dalmatians\_(1996\_...|
+    |{  "movie\_id" : 17, "sku" : "KLI27554", "list\_price" : 0.0, "wiki\_article" : "127\_Hours", "title" : ...|
+    |{  "movie\_id" : 24, "sku" : "FNF32465", "list\_price" : 2.99, "wiki\_article" : "1945\_(2017\_film)", "t...|
+    |{  "movie\_id" : 32, "sku" : "BYH40340", "list\_price" : 4.99, "wiki\_article" : "2012:\_Supernova", "ti...|
+    |{  "movie\_id" : 40, "sku" : "NTV55017", "list\_price" : 1.99, "wiki\_article" : "2BR02B:\_To\_Be\_or\_Naug...|
+    |{  "movie\_id" : 47, "sku" : "QYJ8171", "list\_price" : 4.99, "wiki\_article" : "30\_Beats", "title" : "...|
+    |{  "movie\_id" : 55, "sku" : "ETA20766", "list\_price" : 1.99, "wiki\_article" : "3\_Backyards", "title"...|
+    |{  "movie\_id" : 62, "sku" : "FMX14446", "list\_price" : 2.99, "wiki\_article" : "48\_Shades", "title" :...|
+    
 
     As you can see, the data is shown in its native JSON format; that is, there are no columns in the table for each identifier (movie_id, sku, list price, and more). So how can we query this table if there is only one column?
 
-## Task 3: A simple query over JSON data
+## Task 2: Simple queries over JSON data
 
-1. As a first step, let's show you how to query  JSON data using SQL. We can use special notation within our SQL query to convert the content above into a more normal looking table containing columns and rows. This approach is known as Simple Dot Notation and it looks very similar to the way we have constructed previous queries. Here is our first query which you can run in your SQL Worksheet:
+
+1. As a first step, let's show you how to query  JSON data using SQL. Use the dot notation within our SQL query to convert the content above into a more normal looking table containing columns and rows. This approach is known as Simple Dot Notation and it looks very similar to the way we have constructed previous queries. Here is our first query which you can run in your SQL Worksheet:
 
     ```
     <copy>SELECT
-    m.doc.movie_id,
-    m.doc.title,
-    m.doc.budget,
-    m.doc.runtime
+        m.doc.movie_id,
+        m.doc.title,
+        m.doc.budget,
+        m.doc.runtime
     FROM json_movie_data_ext m
-    WHERE rownum < 25;</copy>
+    WHERE rownum < 10;</copy>
     ```
+    It should return a result set that looks similar to this:
 
-2. It should return a result set that looks similar to this:
-
-    ![Result of query using Simple Dot Notation](images/analytics-lab-2-step-2-substep-2.png " ")
+    |MOVIE_ID|TITLE|BUDGET|RUNTIME|
+    |---|---|---|---|
+    |1|'Gator Bait II: Cajun Justice|null|95|
+    |10|101 Dalmatians|+54000000|+103|
+    |17|127 Hours|+18000000|+94|
+    |24|1945|null|+91|
+    |32|2012: Supernova|200000|+84|
+    |40|2BR02B: To Be or Naught to Be|null|18|
+    |47|30 Beats|1000000|88|
+    |55|3 Backyards|null|88|
+    |62|48 Shades|null|96|
+    
 
     > **Note:** Each column has three components:
 
@@ -220,194 +136,274 @@ Although queries on external data will not be as fast as queries on database tab
 
     - the name of the json attribute - **movie_id**, **title**, **budget** and **runtime**
 
-3. Some attributes in our JSON data set contain multiple entries. For example, cast and crew contain lists of names. To include these attributes in our query, we simply tell the SQL engine to loop over and collect all the values. Here is an example of how to extract the list of cast members and the names of the crew that worked on each movie:
+2. Now that movie queries return data in column format, you can join that data with data stored in other Oracle Database tables.  Let's find the top 10 movies (JSON) based on customer sales (tabular).  This requires joining the **MOVIE\_ID** column from the **CUSTSALES** table with the json document's **movie\_id** attribute.
+
+    ```
+    <copy>SELECT 
+        m.doc.title, 
+        round(sum(c.actual_price),0) as sales
+    FROM json_movie_data_ext m, custsales c
+    WHERE m.doc.movie_id = c.movie_id
+    GROUP BY m.doc.title
+    ORDER BY 2 desc
+    FETCH FIRST 10 ROWS ONLY;</copy>
+    ```
+
+    This produces the following - and not surprising - result:
+    |TITLE|SALES|
+    |---|---|
+    |Aladdin|825080|
+    |Captain Marvel|778566|
+    |Aquaman|778151|
+    |Spider-Man: Far from Home|666140|
+    |The Lion King|665654|
+    |Avengers: Endgame|616594|
+    |Avatar|456188|
+    |Avengers: Infinity War|431297|
+    |Frozen|372896|
+    |The Godfather|371966|
+
+3. We'll query movies frequently - it will be useful to store the data in Autonomous Data Warehouse. Create a table containing the movie data.  Some of the fields will still be in JSON format - specifically those fields containing arrays.  For those fields, add a constraint that ensures the columns contain valid JSON:
+
+    ```
+    <copy>CREATE table t_movie AS
+    SELECT
+        CAST(m.doc.movie_id as number) as movie_id,
+        CAST(m.doc.title as varchar2(200 byte)) as title,   
+        CAST(m.doc.budget as number) as budget,
+        CAST(m.doc.gross as number) gross,
+        CAST(m.doc.genre as varchar2(4000)) as genres,
+        CAST(m.doc.year as number) as year,
+        TO_DATE(m.doc.opening_date, 'YYYY-MM-DD') as opening_date,
+        CAST(m.doc.views as number) as views,
+        CAST(m.doc.cast as varchar2(4000 byte)) as cast,
+        CAST(m.doc.crew as varchar2(4000 byte)) as crew,
+        CAST(m.doc.awards as varchar2(4000 byte)) as awards,
+        CAST(m.doc.nominations as varchar2(4000 byte)) as nominations
+    FROM json_movie_data_ext m;
+            
+    ALTER TABLE t_movie add CONSTRAINT t_movie_cast_json CHECK (cast IS JSON);
+    ALTER TABLE t_movie add CONSTRAINT t_movie_genre_json CHECK (genres IS JSON);
+    ALTER TABLE t_movie add CONSTRAINT t_movie_crew_json CHECK (crew IS JSON);
+    ALTER TABLE t_movie add CONSTRAINT t_movie_awards_json CHECK (awards IS JSON);
+    ALTER TABLE t_movie add CONSTRAINT t_movie_nominations_json CHECK (nominations IS JSON);</copy>
+    ```
+
+3. Some attributes in our JSON data set contain multiple entries. For example, cast has a list of names and nominations a list of nominated awards. Take a look at the cast, crew,  names of the crew and awards for a couple of popular movies:
 
     ```
     <copy>SELECT
-    m.doc.movie_id,
-    m.doc.title,
-    m.doc.budget,
-    m.doc.runtime,
-    m.doc.cast,
-    m.doc.crew[*].names
-    FROM json_movie_data_ext m;</copy>
+        m.movie_id,
+        m.title,
+        m.budget,
+        m.cast,
+        m.crew,
+        m.awards
+    FROM t_movie m
+    WHERE m.title in ('Rain Man','The Godfather');</copy>
     ```
 
-4. It will return the following output:
+    It will return:
+    |MOVIE_ID|TITLE|BUDGET|CAST|CREW|AWARDS|
+    |---|---|---|---|---|---|
+    |2472|Rain Man|25|["Dustin Hoffman","Tom Cruise","Valeria Golino","Gerald R. Molen","Jack Murdock","Michael D. Roberts","Bonnie Hunt","Barry Levinson","Beth Grant","Lucinda Jenney","Jake Hoffman","Chris Mulkey","Ray Baker"]|[{"job":"producer","names":["Mark Johnson"]},{"job":"director","names":["Barry Levinson"]},{"job":"screenwriter","names":["Barry Morrow","Ronald Bass"]}]|["Academy Award for Best Picture","Golden Bear","Academy Award for Best Director","Academy Award for Best Actor","Academy Award for Best Writing, Original Screenplay"]|
+    |3244|The Godfather|6000000|["Marlon Brando","Al Pacino","James Caan","Richard S. Castellano","Robert Duvall","Sterling Hayden","John Cazale","Diane Keaton","Talia Shire","Abe Vigoda","Al Lettieri","Gianni Russo","Corrado Gaipa","Al Martino","John Marley","Johnny Martino","Lenny Montana","Richard Conte","Alex Rocco","Julie Gregg","Simonetta Stefanelli","Saro Urzì","Angelo Infanti","Franco Citti","Joe Spinell","Morgana King","Richard Bright","Rudy Bond","Vito Scotti","Carmine Coppola","Roman Coppola","Sofia Coppola","Ron Gilbert","Tony King","Raymond Martino","Nick Vallelonga","Tony Giorgio","Victor Rendina"]|[{"job":"producer","names":["Albert S. Ruddy"]},{"job":"executive producer","names":["Robert Evans"]},{"job":"director","names":["Francis Ford Coppola"]},{"job":"screenwriter","names":["Mario Puzo","Francis Ford Coppola"]}]|["Academy Award for Best Picture","National Film Registry","Academy Award for Best Actor","Academy Award for Best Writing, Adapted Screenplay","National Board of Review: Top Ten Films"]|
 
-    ![Query result of looping to get lists of multiple values](images/analytics-lab-2-step-2-substep-4.png " ")
+This is good - but the arrays are still part of a single record.  What if you want to ask questions that need to look at the values within the arrays?  
 
-Now let's try using some more advanced features that will enable us to convert the list of cast members and crew members into rows and columns of data. These can then be joined with our movie sales data, allowing us to combine unstructured movie JSON data with our structured movie sales data.
+## Task 3: More sophisticated JSON queries
 
-## Task 4: Simplify JSON queries
+The Academy Awards is an exciting time for the movie industry. It would be interesting to understand movie sales during that time. What happens to movie sales before and after the event? Specifically, what happens to sales for those movies that have won the Academy Award? This can be a challenging question. A movie has an **awards** column - but it is an array.  How do you find sales for a movie that's won the best picture?
 
 Your Autonomous Data Warehouse includes a number of helper packages that can simplify access to your JSON data. The **JSON_TABLE** function can be used to automatically translate JSON data into a row-column format so you can query the JSON data in exactly the same way as our movie sales data.
 
-1. Let's use the JSON_TABLE function to create a view over our existing JSON table. Run the following command in your SQL Worksheet:
+1. Let's use the JSON_TABLE function to create a row for each movie -> award combination. Run the following command in your SQL Worksheet:
 
     ```
-    <copy>CREATE OR REPLACE VIEW JSON_MOVIE_VIEW (sku, year, gross, title, views, budget, pageid, runtime, summary, movie_id, list_price, wiki_article, cast_names, job, crew, genre, studio) AS
-    SELECT JT."sku", JT."year", JT."gross", JT."title", JT."views", JT."budget", JT.pageid, JT."runtime", JT."summary", JT."movie_id", JT."list_price", JT."wiki_article", JT."cast_names", JT."job", JT."crew", JT."genre", JT."studio"
-    FROM JSON_MOVIE_DATA_EXT RT,
-    JSON_TABLE("DOC", '$[*]' COLUMNS
-    "sku" varchar2(8) path '$.sku',
-    NESTED PATH '$.cast[*]' COLUMNS (
-    "cast_names" varchar2(128) path '$[*]'),
-    NESTED PATH '$.crew[*]' COLUMNS (
-    "job" varchar2(16) path '$.job',
-    NESTED PATH '$.names[*]' COLUMNS (
-    "crew" varchar2(128) path '$[*]')),
-    "year" varchar2(4) path '$.year',
-    NESTED PATH '$.genre[*]' COLUMNS (
-    "genre" varchar2(16) path '$[*]'),
-    "gross" varchar2(16) path '$.gross',
-    "title" varchar2(128) path '$.title',
-    "views" number path '$.views',
-    "budget" varchar2(16) path '$.budget',
-    pageid number path '$.pageid',
-    NESTED PATH '$.studio[*]' COLUMNS (
-    "studio" varchar2(128) path '$[*]'),
-    "runtime" varchar2(4) path '$.runtime',
-    "summary" varchar2(4096) path '$.summary',
-    "movie_id" number path '$.movie_id',
-    "list_price" number path '$.list_price',
-    "wiki_article" varchar2(128) path '$.wiki_article') JT;</copy>
+    <copy>SELECT 
+        title, 
+        award    
+    FROM t_movie, 
+         JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
+    WHERE title IN ('Rain Man','The Godfather');</copy>
     ```
+    You can now see the movie and its award in tabular format:
+    |TITLE|AWARD|
+    |---|---|
+    |Rain Man|Academy Award for Best Picture|
+    |Rain Man|Golden Bear|
+    |Rain Man|Academy Award for Best Director|
+    |Rain Man|Academy Award for Best Actor|
+    |Rain Man|Academy Award for Best Writing, Original Screenplay|
+    |The Godfather|Academy Award for Best Picture|
+    |The Godfather|National Film Registry|
+    |The Godfather|Academy Award for Best Actor|
+    |The Godfather|Academy Award for Best Writing, Adapted Screenplay|
+    |The Godfather|National Board of Review: Top Ten Films|
 
-2. Now run the following command in the worksheet:
+2. Now that we have rows for each value of the array, it is straightforward to find all Academy Award winners for Best Picture:
 
     ```
-    <copy>SELECT COUNT(*)
-    FROM json_movie_view;</copy>
+    <copy>SELECT 
+        year,
+        title, 
+        award    
+    FROM t_movie, 
+        JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
+    WHERE award = 'Academy Award for Best Picture'
+    ORDER BY year
+    FETCH FIRST 10 ROWS ONLY;</copy>
     ```
 
-3. This should return a result similar to the following:
+    Below are the oldest award winners that MovieStream offers:
 
-    ![ALT text is not available for this image](images/analytics-lab-2-step-3-substep-3.png " ")
+    |YEAR|TITLE|AWARD|
+    |---|---|---|
+    |1950|All About Eve|Academy Award for Best Picture|
+    |1951|An American in Paris|Academy Award for Best Picture|
+    |1952|The Greatest Show on Earth|Academy Award for Best Picture|
+    |1953|From Here to Eternity|Academy Award for Best Picture|
+    |1956|Around the World in 80 Days|Academy Award for Best Picture|
+    |1957|The Bridge on the River Kwai|Academy Award for Best Picture|
+    |1958|Gigi|Academy Award for Best Picture|
+    |1959|Ben-Hur|Academy Award for Best Picture|
+    |1960|The Apartment|Academy Award for Best Picture|
+    |1961|West Side Story|Academy Award for Best Picture|
 
-     > **Note**: The number of records has increased compared with our source table (JSON\_MOVIE\_DATA\_EXT): 3,491 to over 56,000 values. The reason is that we have something called an "array" of data within the JSON document that contains the cast members and crew members associated with each movie. Essentially, this means that each movie has to be translated into multiple rows.
-
-4. Run the following query, which will return the columns of data that contain the arrays; that is, multiple values, in the original JSON document:
-
-    ```
-    <copy>SELECT
-    title,
-    genre,
-    cast_names,
-    job,
-    crew,
-    studio
-    FROM json_movie_view
-    WHERE title = 'Star Wars: Episode IV – A New Hope';</copy>
-    ```
-
-5. This should return 37 rows as follows, where you can see individual rows for each member of the cast, crew members and genre:
-
-    ![Query result showing columns of data containing arrays](images/sql-analytics-lab5-step3-substep5.png " ")
-
-We can now use this view as the launch point for doing more analysis!
-
-## Task 5:  Build a more sophisticated JSON query
-
-In this query, we are using the **JSON_TABLE** function again, to convert our JSON data into a more natural row-column resultset.
-
-1. If we just want to see the directors for each movie, then we simply add a filter to our query:
+3. What were sales before and after the Academy Awards?  Let's see the results for past winners of the major awards.
 
     ```
-    <copy>SELECT
-    movie_id,
-    title,
-    job,
-    crew
-    FROM json_movie_view
-    WHERE job = 'director'
-    ORDER BY 1,4;</copy>
-    ```
-
-2. This should return the following results:
-
-    ![Query results showing directors for each movie](images/sql-analytics-lab5-step4-substep2.png " ")
-
-## Task 6: Combine JSON data and relational data
-
-1. If we combine this result set with the previous query against our JSON data, we can see the total revenue by year for each movie director and find the top 5 movie directors within each year. To do this, we can create a query that joins the JSON data set with our movie sales fact table by using the `movie_id` column. Run this query in your SQL Worksheet:
-
-    ```
-    <copy>SELECT
-    jt.movie_id,
-    jt.title,
-    jt.job,
-    jt.crew,
-    f.year_name,
-    SUM(f.actual_price) as revenue
-    FROM vw_movie_sales_fact f
-    JOIN json_movie_view jt ON jt.movie_id = f.movie_id
-    WHERE jt.job = 'director'
-    AND f.year_name = 2020
-    GROUP BY jt.movie_id, jt.title, jt.job, jt.crew, f.year_name
-    ORDER BY 6 desc;</copy>
-    ```
-
-2. the output will be shown in the Query Result window:
-
-    ![Query result of combining queries](images/lab-9-step-5-substep-2.png " ")
-
-## Task 7: Rank directors based on quarterly movie revenue
-
-1. We can extend the query by adding a ranking calculation, broken out by quarter within each year, to determine how much each director's films contributed to MovieStream's overall revenue. Note that we are reusing techniques from the previous lab, specifically SQL's window functions. The last column ranks each director based on the annual revenue of his or her movies.
-
-    ```
-    <copy>SELECT
-    f.year_name,
-    f.quarter_name,
-    jt.movie_id,
-    jt.title,
-    jt.job,
-    jt.crew,
-    SUM(f.actual_price) AS revenue,
-    RANK() OVER (PARTITION BY f.quarter_name ORDER BY SUM(f.actual_price) desc) as rank_rev
-    FROM vw_movie_sales_fact f
-    JOIN json_movie_view jt ON jt.movie_id = f.movie_id
-    WHERE jt.job = 'director'
-    AND f.year_name = 2020
-    GROUP BY jt.movie_id, jt.title, jt.job, jt.crew, f.year_name, f.quarter_name
-    ORDER BY 1,2,7 desc;</copy>
-    ```
-
-2. The results should show that our top grossing director in Q1 was Guy Ritchie with the film Aladdin:
-
-    ![Query result showing top grossing directors](images/lab-9-step-6-substep-2.png " ")
-
-## Task 8: Find the top 5 directors based on revenue
-
-1. The final part of this query is to add a filter so it only returns the top 5 directors in each quarter:
-
-    ```
-    <copy>WITH movie_rev as (
-    SELECT
-        f.year_name,
-        f.quarter_name,
-        jt.movie_id,
-        jt.title,
-        jt.job,
-        jt.crew,
-        sum(f.actual_price) as revenue,
-        RANK() OVER (PARTITION BY f.quarter_name order by sum(f.actual_price) desc) as rank_rev
-    FROM vw_movie_sales_fact f, json_movie_view jt
-    WHERE jt.job = 'director'
-        AND f.year_name = 2020
-        AND jt.movie_id = f.movie_id
-    GROUP BY f.year_name, f.quarter_name, jt.movie_id, jt.title, jt.job, jt.crew
-    ORDER BY 1,2,7 desc
+    <copy>WITH academyAwardedMovies as (
+        -- Find movies that won significant awards
+        SELECT 
+            m.movie_id
+        FROM t_movie m, JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
+        WHERE jt.award in ('Academy Award for Best Picture','Academy Award for Best Actor','Academy Award for Best Actress','Academy Award for Best Director')
+        ),
+    academyMovieSales as (
+        -- what were those movies' sales?
+        SELECT 
+            sales.movie_id, 
+            sales.day_id
+        FROM custsales sales
+        WHERE sales.movie_id in 
+          (SELECT movie_id FROM academyAwardedMovies)
+        ),
+    before2020Award as (
+        -- how about 14 days prior to the event
+        SELECT 
+            ams1.movie_id, 
+            count(1) as before_count
+        FROM academyMovieSales ams1 
+        WHERE day_id BETWEEN to_date('09/02/2020', 'DD/MM/YYYY') -14
+          AND to_date('09/02/2020', 'DD/MM/YYYY')
+        GROUP BY ams1.movie_id
+        ),
+    after2020Award as (
+        -- and 14 days after the event
+        SELECT 
+            ams2.movie_id, 
+            count(1) as after_count
+        from academyMovieSales ams2 
+        WHERE day_id BETWEEN to_date('09/02/2020', 'DD/MM/YYYY')
+          AND to_date('09/02/2020', 'DD/MM/YYYY') +14
+        GROUP BY ams2.movie_id
     )
-SELECT *
-FROM movie_rev
-WHERE rank_rev <=5;</copy>
+    -- join the before and after
+    SELECT 
+        title, 
+        year, 
+        bef.before_count as "before event", 
+        aft.after_count as "after event", 
+        ROUND((aft.after_count - bef.before_count)/bef.before_count * 100) as  "percent change"
+    FROM after2020Award aft, before2020Award bef, t_movie m
+    WHERE aft.movie_id = bef.movie_id
+      AND aft.movie_id = m.movie_id
+    ORDER BY "percent change" DESC;</copy>
     ```
 
-2. This should return the following results:
+    Looks like the Academy Awards is good for business!
 
-    ![Query result returning top 5 directors in each year](images/lab-9-step-7-substep-2.png " ")
+    |TITLE|YEAR|before event|after event|percent change|
+    |---|---|---|---|---|
+    |The Lion in Winter|1968|109|652|498|
+    |Giant|1956|144|504|250|
+    |Gigi|1958|133|336|153|
+    |The Goodbye Girl|1977|43|105|144|
+    |Around the World in 80 Days|1956|83|202|143|
+    |Terms of Endearment|1983|300|717|139|
+    |Come Back, Little Sheba|1952|1|2|100|
+    |An American in Paris|1951|145|290|100|
+    |Gladiator|2000|1370|2326|70|
+    |Guess Who's Coming to Dinner|1967|338|540|60|
+    |12 Years a Slave|2013|1231|1956|59|
+    |True Grit|1969|365|565|55|
+    |As Good as It Gets|1997|544|816|50|
+    |Kiss of the Spider Woman|1985|55|77|40|
+    |Rocky|1976|607|848|40|
+    |Dallas Buyers Club|2013|612|857|40|
+    |Lawrence of Arabia|1962|699|943|35|
+    |On Golden Pond|1982|148|199|34|
+    |Bohemian Rhapsody|2018|1481|1972|33|
+    |Dances with Wolves|1990|718|952|33|
+    |The Lord of the Rings: The Return of the King|2003|777|1030|33|
+    |Room|2015|936|1220|30|
+    |A Man for All Seasons|1966|193|249|29|
+    |Shakespeare in Love|1998|463|596|29|
+    |Rain Man|1988|554|698|26|
+    |The Greatest Show on Earth|1952|91|115|26|
+    |Butterfield 8|1960|60|75|25|
+    |The Godfather|1972|2385|2975|25|
+    |Saving Private Ryan|1998|1408|1729|23|
+    |Blue Jasmine|2013|202|243|20|
+    |Platoon|1986|543|645|19|
+    |Monster|2004|489|575|18|
+    |Titanic|1997|2994|3525|18|
+    |Black Swan|2010|1051|1243|18|
+    |The Godfather Part II|1974|1376|1630|18|
+    |All About Eve|1950|216|252|17|
+    |Oliver!|1968|152|176|16|
+    |Gravity|2013|537|618|15|
+    |The Graduate|1967|539|618|15|
+    |Patton|1970|165|189|15|
+    |Out of Africa|1985|320|365|14|
+    |The Sting|1973|231|261|13|
+    |The Country Girl|1954|23|26|13|
+    |The Bridge on the River Kwai|1957|384|433|13|
+    |Chariots of Fire|1981|387|436|13|
+    |To Kill a Mockingbird|1962|285|313|10|
+    |The King and I|1956|136|150|10|
+    |The Quiet Man|1952|209|228|9|
+    |The Silence of the Lambs|1991|1933|2112|9|
+    |Cabaret|1972|335|357|7|
+    |West Side Story|1961|481|509|6|
+    |Ben-Hur|1959|541|568|5|
+    |High Noon|1952|257|271|5|
+    |The Sound of Music|1965|1191|1243|4|
+    |Who's Afraid of Virginia Woolf?|1966|151|155|3|
+    |American Beauty|1999|1291|1335|3|
+    |Coal Miner's Daughter|1980|157|162|3|
+    |The French Connection|1971|329|328|0|
+    |Forrest Gump|1994|2140|2138|0|
+    |Mary Poppins|1964|797|798|0|
+    |Kramer vs. Kramer|1979|503|498|-1|
+    |The Deer Hunter|1978|673|667|-1|
+    |The African Queen|1951|232|228|-2|
+    |Annie Hall|1977|354|345|-3|
+    |Midnight Cowboy|1969|509|483|-5|
+    |My Fair Lady|1964|380|347|-9|
+    |Born Yesterday|1950|11|10|-9|
+    |Schindler's List|1993|1683|1455|-14|
+    |From Here to Eternity|1953|440|378|-14|
+    |Philadelphia|1993|644|543|-16|
+    |One Flew Over the Cuckoo's Nest|1975|1065|887|-17|
+    |Tom Jones|1963|110|86|-22|
+    |Born on the Fourth of July|1989|363|252|-31|
+    |Funny Girl|1968|277|169|-39|
+    |Cat Ballou|1965|130|79|-39|
+    |Moonstruck|1987|491|282|-43|
+    |The Apartment|1960|471|211|-55|
+
 
 ## Recap
 
