@@ -288,7 +288,7 @@ This task deletes the tables and other OCI components that got created.
 
 <if type="paid">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **More Actions** and then **Delete** under that. This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -297,7 +297,7 @@ Set your compartment to 'demonosql'. Click the **freeTest** table, which will br
 
 <if type="freetier">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **More Actions** and then **Delete** under that. This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -306,7 +306,7 @@ Set your compartment to 'demonosql'. Click the **freeTest** table, which will br
 
 <if type="livelabs">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Select your compartment. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
+Select your compartment. Click the **freeTest** table, which will bring up the table details screen. Press **More Actions** and then **Delete** under that. This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 

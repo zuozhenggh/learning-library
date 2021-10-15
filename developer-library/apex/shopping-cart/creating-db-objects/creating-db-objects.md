@@ -1,4 +1,4 @@
-# Create database objects
+# Create database package for business logic
 
 ## Introduction
 
@@ -229,6 +229,7 @@ END manage_orders;
 
     ![](./images/create-body.png " ")
 
+While you don't have to understand the code to complete the workshop successfully, know that the functions and procedures you've defined in this lab are using a built-in feature of Oracle APEX to handle the user's shopping cart by managing a collection of product id and quantity values specific to the current user, and automatically create new row in the **Customers** table during order creation if it's the first time the user is placing an order.
 
 You now know how to create a package to manage the shopping cart. In the following labs, you will call these procedures and functions when it is required.
 

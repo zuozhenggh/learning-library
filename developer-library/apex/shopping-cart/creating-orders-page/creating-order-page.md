@@ -37,7 +37,7 @@ Create a Normal Page to review the Order that customer has made.
 ## Task 2: Adding a Region 
 Add a region to the page to display order details.
 
-1. In the new page created, navigate to the **Gallery Menu**.
+1. In the new page created, navigate to the **Gallery Menu** at the bottom of the page showing Regions, Items, and Buttons categories and ensure that Regions is selected.
 2. Drag a **Static Content** region and drop it to the Content Body section.
     ![](./images/create-static.png " ")
 3. In the Property Editor, enter the following:
@@ -48,12 +48,12 @@ Add a region to the page to display order details.
     - For Icon, enter **fa-heart**
 
 ## Task 3: Adding Items to the Page
-Add an item to save the order ID.
+Add a hidden item used to store the order ID without the user's being able to see it.
 
 1. In the Rendering tree (left pane), navigate to the **Thank you for your order!** region.
 2. Right-click the region and click **Create Page Item**.
     ![](./images/create-item.png " ")
-3. Create one hidden item as follows:
+3. In the property editor, set the name and type as follows:
 
     | Name |  Type  | 
     | --- |  --- | 
@@ -68,7 +68,7 @@ Add a region to contain Order details and items.
 2. Right click the region and click **Create Sub Region**.
     ![](./images/create-sub-region.png " ")
 3. In the Property Editor, enter the following:
-    - For Title - enter **Order: &P16_ORDER.**
+    - For Title - enter the expression (including the period) **Order: &P16_ORDER.**
     - For Type - select **Static Content**
 
 ## Task 5: Adding Order Details Region
@@ -169,8 +169,7 @@ Add a region to display items in the order.
 5. Click **Save**.
 
 
-
-You now know how to add more pages to your existing APEX Application.
+You now know how to add a new page to your existing APEX Application and add regions to define the page's content using the Page Designer.
 
 ## **Acknowledgments**
 
