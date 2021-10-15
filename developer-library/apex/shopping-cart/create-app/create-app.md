@@ -10,7 +10,7 @@ Estimated Lab Time: 15 minutes
 In this lab, you will:
 - Create an application using the tables and data that you already have installed.
 
-## Task 1: Creating an App
+## Task 1: Creating an Application
 
 1. In the App Builder menu, click **App Builder**.
 
@@ -22,7 +22,7 @@ In this lab, you will:
 
     ![](./images/new-app.png " ")
 
-## Task 2: Naming the App
+## Task 2: Naming the Application
 
 1. In the Create Application wizard, for Name enter **ACME Shop**.
  
@@ -82,7 +82,9 @@ A dashboard page is a great way to show important information using various char
 
 7. Click Advanced and check **Set as Administration Page**.
 
-7. Click **Add Page**.
+Setting a page as Administration Page will make that only certain users can run the page. In this case, only users with Administration Rights will be able to run the Dashboard page, which means that this page will require authentication.
+
+8. Click **Add Page**.
 
 ## Task 4: Add the Products Page
 
@@ -97,7 +99,7 @@ A dashboard page is a great way to show important information using various char
     - Table - select **PRODUCTS**
     - Select **Grid**
     - Title Column - select **PRODUCT_NAME**
-    - Body Column - select **- Select Column -**
+    - Body Column - select **- Select Column -** (to unselect the default column chosen)
 
     Expand Advanced Section and check **Set as Home Page** 
 
@@ -105,17 +107,21 @@ A dashboard page is a great way to show important information using various char
 
     ![](./images/fs-page.png " ")  
 
-## Task 5: Delete Home Page
+## Task 5: Delete Original Home Page
 
-1. Navigate to Home Page and Click **Edit**.
+Since we just designated the product faceted search page we just created as the application's home page, we no longer need the default home page the wizard included in the list of pages. So, here we'll remove the original home page.
+
+1. Navigate to the original page named "Home" and click **Edit**.
 2. Click **Delete**.    
 
     ![](./images/delete-page.png " ")  
 
+3. Confirm the deletion by clicking **OK** on the dialog.
+
 ## Task 6: Add Multiple Reports
 
 1. In the Create Application wizard, click **Add Page**.
-2. Click **Additional Pages**.
+2. Click the arrow to the left of **Additional Pages** to see additional page types.
 3. Click **Multiple Reports**.
 
     ![](./images/multiple-reports.png " ") 
@@ -134,7 +140,7 @@ A dashboard page is a great way to show important information using various char
 
 ## Task 7: Set Multiple Reports as Administration Pages
 
-1. Edit the following pages to set those as an Administration Page:
+1. Edit each of the following pages to set it as an Administration Page:
     - CLOTHING_LOOKUP
     - COLOR_LOOKUP
     - CUSTOMERS
@@ -142,7 +148,7 @@ A dashboard page is a great way to show important information using various char
     - PRODUCT_REVIEWS
     - STORES    
 
-2. Click Advanced and check **Set as Administration Page**.
+2. For each page you edit, click Advanced and check **Set as Administration Page**.
 3. Click **Save Changes**.
 
     ![](./images/admin-pages.png " ") 
@@ -175,9 +181,11 @@ A dashboard page is a great way to show important information using various char
 
 ## Task 9: Set Features
 
+Features are a set of optional application capabilities Oracle APEX can include for your new application. Access Control enables role-based user authorization with a single click.
+
 1. Under **Features** section, check **Access Control**.
 
-## Task 10: Generate the App
+## Task 10: Finish Creating the Application
 
 Now that you have added all the pages, it is time to generate the app and review it.
 
@@ -196,7 +204,7 @@ Click **Run Application**.
 
     ![](./images/sign-in.png " ")
 
-    The new application will be displayed.
+    The new application will be displayed. Explore the pages that you just created by clicking on the navigation menu.
 
 
 You now know how to create an application with a number of different page types based on existing database objects. 

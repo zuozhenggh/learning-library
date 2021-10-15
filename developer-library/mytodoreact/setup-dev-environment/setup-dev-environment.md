@@ -44,11 +44,11 @@ The Oracle Cloud Shell is a small virtual machine running a Bash shell that you 
 
 You should now see `mtdrworkshop` in your root directory
 
-4. Change to `mtdrworkshop` directory and create a sub-directory `workingdir`;.
+4. Change to `mtdrworkshop` directory.
 
 	``` bash
 	<copy>
-	cd ~/mtdrworkshop; mkdir workingdir
+	cd ~/mtdrworkshop
 	</copy>
 	```
 
