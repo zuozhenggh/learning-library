@@ -213,8 +213,9 @@ If you were able to successfully complete the workshop, you can ignore this task
 Otherwise, please find the dva for this project for use of troubleshooting or reviewing the implementation.  
 
 1. Follow the steps from **Lab 3: Import your GeoJSON code into OAC** and import the following files:  
-- [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/a4JySgQvO_jUFX7Z9pOWPWKAgSs5BqweobA8kdxV3W_oqs-pAFiAJVOheNtAQ17x/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20LineString.geojson)
-- [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/33Bt4LPdlJvJRtuLnHOAymQ8SitN46quzbHlFHOTgY9w_5YMUeEPY6npOXlaS_5C/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20Point.geojson)
+    [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/a4JySgQvO_jUFX7Z9pOWPWKAgSs5BqweobA8kdxV3W_oqs-pAFiAJVOheNtAQ17x/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20LineString.geojson)
+
+    [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/33Bt4LPdlJvJRtuLnHOAymQ8SitN46quzbHlFHOTgY9w_5YMUeEPY6npOXlaS_5C/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20Point.geojson)
 
 2. Download the OAC dva project file. (link to the file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rm1QNE2IZs4tE-A8X_3Lm3B7gMdqaj-5aGEq8yPBvxnw-yn9x8CaAd2xZ3fva29N/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Red%20Bull%20Racing%20Honda.dva))  
 
@@ -222,7 +223,7 @@ Otherwise, please find the dva for this project for use of troubleshooting or re
 
     ![](./images/import-project.png)
 
-4. Click **Select** and browse to the file downloaded from step 1 above and click **Open**
+4. Click **Select File** and browse to the file downloaded from step 2 above and click **Open**
 
     ![](./images/import-select-file.png)
 
