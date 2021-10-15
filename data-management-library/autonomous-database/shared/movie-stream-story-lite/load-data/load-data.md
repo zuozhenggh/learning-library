@@ -80,9 +80,9 @@ For this workshop we need to create one new user.
     There is more information available in the documentation about password rules and how to create your own password rules; see here: [Create Users on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-create.html#GUID-B5846072-995B-4B81-BDCB-AF530BC42847)
 
 - Toggle the **Graph** button to **On**.
-- Toggle the **Web Access** button to **On**
-- Toggle the **OML** button to **On**
-- In the upper right section of the Create User dialog, select **UNLIMITED** from the drop down menu for Quota on tablespace DATA
+- Toggle the **Web Access** button to **On**.
+- Toggle the **OML** button to **On**.
+- In the upper right section of the Create User dialog, select **UNLIMITED** from the drop down menu for Quota on tablespace DATA.
 
     >**Note:** If you are using an Always Free autonomous database instance, the **UNLIMITED** option will not be available. In this case, simply select **20GB** in the list. This will be sufficient for the whole workshop.
 
@@ -152,31 +152,33 @@ Now you need to switch from the ADMIN user to the MOVIESTREAM user, before start
 
 In this step, you will set up access to the two buckets on Oracle Cloud Infrastructure Object Storage that contain data that we want to load - the landing area, and the 'gold' area.
 
-1. On the Database Actions home page, under **Data Tools**, click on **DATA LOAD**
+1. On the Database Actions home page, under **Data Tools**, click **DATA LOAD**.
 
     ![Click DATA LOAD](images/dataload.png)
 
-5. In the **Explore and Connect** section, click on **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
+2. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
 
     ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
-6. To add access to the Moviestream gold area which contains curated files for us to load, click on **+Add Cloud Storage** in the top right of your screen.
+3. To add access to the Moviestream gold area which contains curated files for us to load, click **+Add Cloud Storage** in the top right of your screen.
 
--   In the **Name** field, enter 'MovieStreamGold'
+    - In the **Name** field, enter 'MovieStreamGold'.
 
-> **Note:** Take care not to use spaces in the name.
+    **Note:** Take care not to use spaces in the name.
 
--   Leave Cloud Store selected as **Oracle**
--   Copy and paste the following URI into the URI + Bucket field:
-```
-<copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
-</copy>
-```
--   Select **No Credential** as this is a public bucket
--   Click on the **Test** button to test the connection. Then click **Create**.
+    - Leave Cloud Store selected as **Oracle**.
+    - Copy and paste the following URI into the URI + Bucket field:
 
-7. The page now shows the newly created Cloud Location.
+    ```
+    <copy>
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
+    </copy>
+    ```
+
+    - Select **No Credential** as this is a public bucket.
+    - Click on the **Test** button to test the connection. Then click **Create**.
+
+4. The page now shows the newly created Cloud Location.
 
     ![Click CLOUD LOCATIONS](images/cloudlocations2.png)
 
@@ -243,7 +245,7 @@ drop table moviestream_log;  -- ignore error if table did not exist
 
 -- Add the log table
 create table moviestream_log
-   (	execution_time timestamp (6), 
+   (	execution_time timestamp (6),
 	    message varchar2(32000 byte)
    );
 
@@ -274,38 +276,38 @@ begin
         from moviestream_labs ml
         where json_value (doc, '$.script' returning varchar2(100))  is not null
         order by 1 asc
-        ) 
+        )
     loop
         -- The plsql procedure DDL is contained in a file in object store
         -- Create the procedure
         dbms_output.put_line(lab_rec.title);
         dbms_output.put_line('....downloading plsql procedure ' || lab_rec.proc);
-            
+
         -- download the script into this binary variable        
         uri := uri_scripts || '/' || lab_rec.proc || '.sql';
-        
+
         dbms_output.put_line('....the full uri is ' || uri);        
         b_plsql_script := dbms_cloud.get_object(object_uri => uri);
-        
+
         dbms_output.put_line('....creating plsql procedure ' || lab_rec.proc);
         -- convert the blob to a varchar2 and then create the procedure
         c_plsql_script :=  to_clob( b_plsql_script );
-        
+
         -- generate the procedure
         execute immediate c_plsql_script;
 
     end loop lab_rec;  
-    
+
     execute immediate 'grant execute on moviestream_write to public';
 
-    exception 
+    exception
         when others then
             dbms_output.put_line('Unable to add the data sets.');
             dbms_output.put_line('');
             dbms_output.put_line(sqlerrm);
  end;
  /
- 
+
 begin
     add_datasets();
 end;
@@ -326,6 +328,8 @@ end;
     ![Full list of tables and views](images/tablelist.png)
 
 This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream data lake. We will be working with these tables in later labs.
+
+Please *proceed to the next lab*.
 
 ## Acknowledgements
 
