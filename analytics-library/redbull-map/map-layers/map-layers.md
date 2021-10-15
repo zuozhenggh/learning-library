@@ -1,4 +1,4 @@
-# Add the Sector Dataset to OAC and assign it to the map layer
+# Add the Sector Dataset to OAC and assign it to the Map Layer
 
 **Introduction**
 
@@ -45,7 +45,7 @@ Now that you have your two map layers created and imported, we need to associate
 
     ![](./images/dataset-name-location.png)
 
-7.  Choose the appropriate Map Layer name and confirm your match quality is sufficient. Click **OK**  
+7.  Choose **Zandvoort Sector LineString** Map Layer name and confirm your match quality is sufficient. Click **OK**  
 
     ![](./images/dataset-name-location2.png)
 
@@ -152,11 +152,12 @@ Go to Save icon from top right, enter your workbook **Name** and click **Save**
     Highlight the **Name** columns, click on the stacked dots (**Options**) and choose **Location Details**
 
     ![](./images/dataset-name-options-turns.png)
-6. Choose the appropriate Map Layer name and confirm your match quality is sufficient. Click **OK**  
+
+6. Choose **Zandvoort Sector Point** Map Layer name and confirm your match quality is sufficient. Click **OK**  
 
     ![](./images/dataset-name-location-sector.png)
 
-    Your data is now mapped to the map layer. You will see the icon to the left of your name column change to the location property icon.
+    Your data is now mapped to the Map Layer. You will see the icon to the left of your name column change to the location property icon.
 
 7. Click **Apply Script**.  
 

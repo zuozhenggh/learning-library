@@ -2,7 +2,7 @@
 
 **Introduction**
 
-In this lab you will **import the GeoJSON files** you generated, into the OAC Console as a map layer.
+In this lab you will **import the GeoJSON files** you generated, into the OAC Console as a Map Layer.
 
 ###  Prerequisites
 

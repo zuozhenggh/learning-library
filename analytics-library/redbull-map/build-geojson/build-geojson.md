@@ -99,13 +99,11 @@ layout to find your three sectors, colored red, yellow, and blue.
 
     ![](./images/complete-circuit.png)
 
-Image using Mapbox view
+    Image using Mapbox view
 
 5. Choose Save, GeoJSON to export the file.
 
-    > **Note:** properties cannot be empty. You must add a unique value for each
-property. Example: "properties": {}  "properties": {"name": "Sector1"}
-for each “LineString” for the file to successfully upload as a map layer
+    > **Note:** properties cannot be empty. You must add a unique value for each property. Example: "properties": {}  "properties": {"name": "Sector1"} for each “LineString” for the file to successfully upload as a map layer
 in OAC.
 
     ![](./images/save-geojson.png)

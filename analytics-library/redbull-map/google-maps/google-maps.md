@@ -63,7 +63,7 @@ Enter your client **Key** or the generated one from Task 1.
 
     ![](./images/maps-background-save.png)
 
-8. Click **Go Back** arrow from top let
+8. Click **Go Back** arrow from top left
 
     ![](./images/go-back.png)
 

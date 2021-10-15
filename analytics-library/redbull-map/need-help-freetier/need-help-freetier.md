@@ -14,7 +14,7 @@ When you are finished please don't forget to rate this workshop!  We rely on thi
 
 2.  Click on the **Brown Button** to re-access the workshop  
 
-    ![](./images/workshop-homepage-2.png)
+    ![](./images/workshop-homepage.png)
 
 3.  Click **Rate this workshop**
 
@@ -31,7 +31,7 @@ This will construct an email in your default mail application that is auto popul
 3. Include the **Lab Number**, **Step Number**, and **Sub-Step Number** where you've encounter the issue. 
 4. Attach a **Screenshot** and **Any Troubleshooting Steps** you've tried so we can recreate the issue and provide a timely and accurate solution.
 
-    ![](./images/problem-picture.png)
+    ![](./images/problem-screenshot.png)
 
 ## Connectivity Issues
 Are you connected to a **VPN**, **Corporate Network**, or behind a strict **Firewall**?
