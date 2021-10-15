@@ -5,6 +5,9 @@ Watch the video below to get an overview of joins using Database In-Memory.
 
 [](youtube:y3tQeVGuo6g)
 
+Watch the video below for a walk through of the In-memory Joins and Aggregations lab.
+[](youtube:w62wQ5pkBMA)
+
 ### Objectives
 
 -   Learn how to enable In-Memory on the Oracle Database
