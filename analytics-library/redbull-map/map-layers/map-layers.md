@@ -22,7 +22,8 @@ Now that you have your two map layers created and imported, we need to associate
 
 1. Create a file that contains the following information. The name field in your data set needs to match the properties name value in the map layer.  
 
-    ![](./images/turns.png) ![](./images/segments.png)
+    ![](./images/turns.png) ![](./images/segments.png)  
+        > **Note:** you can use [Netherlands GrandPrix.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wzqlSdk7t5tkX-fLWuYt7wlgJ7o7oGjZvDZNsNaEqZJWcz9coErP_GG8bl3X13F_/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Netherlands%20GrandPrix.xlsx)
 
 2. On the top right of the **Oracle Analytics Home Page**, choose **Create** and then **Data Set**
 
@@ -33,7 +34,6 @@ Now that you have your two map layers created and imported, we need to associate
     ![](./images/dataset-browse.png)
 
 4. Add your file, rename your Dataset as needed, and ensure the correct sheet is selected. Click **Add**.  
-    > **Note:** you can use [Netherlands GrandPrix.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wzqlSdk7t5tkX-fLWuYt7wlgJ7o7oGjZvDZNsNaEqZJWcz9coErP_GG8bl3X13F_/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Netherlands%20GrandPrix.xlsx)
 
     ![](./images/dataset-segments.png)
 
@@ -213,8 +213,7 @@ If you were able to successfully complete the workshop, you can ignore this task
 Otherwise, please find the dva for this project for use of troubleshooting or reviewing the implementation.  
 
 1. Follow the steps from **Lab 3: Import your GeoJSON code into OAC** and import the following files:  
-    [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/a4JySgQvO_jUFX7Z9pOWPWKAgSs5BqweobA8kdxV3W_oqs-pAFiAJVOheNtAQ17x/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20LineString.geojson)
-
+    [Zandvoort Sector LineString.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/a4JySgQvO_jUFX7Z9pOWPWKAgSs5BqweobA8kdxV3W_oqs-pAFiAJVOheNtAQ17x/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20LineString.geojson)  
     [Zandvoort Sector Point.geojson](https://objectstorage.us-ashburn-1.oraclecloud.com/p/33Bt4LPdlJvJRtuLnHOAymQ8SitN46quzbHlFHOTgY9w_5YMUeEPY6npOXlaS_5C/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Zandvoort%20Sector%20Point.geojson)
 
 2. Download the OAC dva project file. (link to the file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/rm1QNE2IZs4tE-A8X_3Lm3B7gMdqaj-5aGEq8yPBvxnw-yn9x8CaAd2xZ3fva29N/n/idbwmyplhk4t/b/RedBullRacing-HondaWin/o/Red%20Bull%20Racing%20Honda.dva))  
