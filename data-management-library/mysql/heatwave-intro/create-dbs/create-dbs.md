@@ -25,8 +25,6 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Create Virtual Cloud Network 
 
-*Note: Green Button users - Your Virtual Cloud Network already exist. Go to Task 2*
-
 1. Navigation Menu   
         Networking  
             Virtual Cloud Networks
@@ -188,7 +186,7 @@ Description
 
     ![MDS](./images/regionSelector.png " ")
 
-13. Click on l your ocalized geographic area
+13. Click on your localized geographic area
 
     ## North America (NA)  
     **Tenancy Regions** Please select the same region that you are creating MDS in  
@@ -198,7 +196,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.us-ashburn-1.oraclecloud.com/p/lIdlQUQNNL7zTvct-yECI7b422-DTLI5PKrW2luTlRt-JbH7GCzkZ-hXTOUGRBZG/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/xZUH4AmYNqBa-C0o3q6hKB2ogXUzpJkBSi-IVhySxWiKHBrEHOwI9E_Lyq0rQgCE/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
     </copy>
     ```
     </details>
@@ -222,23 +220,23 @@ Description
     </copy>
     ```
     </details>
-    
-    <details>
-    <summary>Canada Southeast (Toronto) Region - Copy and paste to PAR Source URL</summary>
-    <br>
-    ```
-    <copy> 
-    https://objectstorage.ca-toronto-1.oraclecloud.com/p/mnDsSyuKkSEtHn6jU44zqViMKBTUySyTpoTLdSZGZf-UO7fqKEX7uqr_z2R_mxGO/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
-    </copy>
-    ```
-    </details>
-
+ 
     <details>
     <summary>Canada Southeast (Montreal) Region - Copy and paste to PAR Source URL</summary>
     <br>
     ```
     <copy> 
     https://objectstorage.ca-montreal-1.oraclecloud.com/p/8TzdLjwdzm8xmvTG6nTokE1yNE4dkE2IRq2aVmvjT4IC10f7PIeryyQyC4ROpr0X/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
+   
+    <details>
+    <summary>Canada Southeast (Toronto) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.ca-toronto-1.oraclecloud.com/p/mnDsSyuKkSEtHn6jU44zqViMKBTUySyTpoTLdSZGZf-UO7fqKEX7uqr_z2R_mxGO/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -255,6 +253,17 @@ Description
     ```
     </details>
     
+    <details>
+    <summary>Chile (Santiago) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.sa-santiago-1.oraclecloud.com/p/gnhSojOHKIDtg2cO-lZSEv0yYCIksDbnqylfOxVb0-X1H4MwNatOyOtzXYD3Si0N/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+
+    </copy>
+    ```
+    </details>
+        
     <details>
     <summary>Brazil Southeast (Vinhedo) Region - Copy and paste to PAR Source URL</summary>
     <br>
@@ -276,6 +285,7 @@ Description
     </copy>
     ```
     </details>
+
     <details>
     <summary>Germany Central (Frankfurt) Region - Copy and paste to PAR Source URL</summary>
     <br>
@@ -285,6 +295,7 @@ Description
     </copy>
     ```
     </details>
+
     <details>
     <summary>Switzerland North(Zurich) Region - Copy and paste to PAR Source URL</summary>
     <br>
@@ -294,24 +305,7 @@ Description
     </copy>
     ```
     </details>
-    <details>
-    <summary>UAE East(Dubai) Region - Copy and paste to PAR Source URL</summary>
-    <br>
-    ```
-    <copy> 
-    https://objectstorage.me-dubai-1.oraclecloud.com/p/0xrSzhhg0bvExr9BgK-VTFAlUwJD5TaY1VB0cDGlFswagCS44raI0cg9VCypHECR/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
-    </copy>
-    ```
-    </details>
-     <details>
-    <summary>Saudi Arabia West(Jeddah)  Region - Copy and paste to PAR Source URL</summary>
-    <br>
-    ```
-    <copy> 
-    https://objectstorage.me-jeddah-1.oraclecloud.com/p/8YbXOPZ0GyDFb69K4BkUv7690MqhTs8pqcE4zG5zOLNeSG3j_wZfIm7DcSQn5G0n/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json    
-    </copy>
-    ```
-    </details>
+
     <details>
     <summary>Netherlands Northwest(Amsterdam) Region - Copy and paste to PAR Source URL</summary>
     <br>
@@ -321,6 +315,37 @@ Description
     </copy>
     ```
     </details>
+
+    <details>
+    <summary>Saudi Arabia West(Jeddah)  Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.me-jeddah-1.oraclecloud.com/p/8YbXOPZ0GyDFb69K4BkUv7690MqhTs8pqcE4zG5zOLNeSG3j_wZfIm7DcSQn5G0n/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json    
+    </copy>
+    ```
+    </details>
+
+    <details>
+    <summary>UAE East(Dubai) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.me-dubai-1.oraclecloud.com/p/0xrSzhhg0bvExr9BgK-VTFAlUwJD5TaY1VB0cDGlFswagCS44raI0cg9VCypHECR/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
+
+    <details>
+    <summary>Israel 1 (Jerusalem) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.il-jerusalem-1.oraclecloud.com/p/Smo6bw6xGzG_TIIvIXqa657dNFVFnVb-pQ4pxhumdFsWvZCf1RAQV11eUKPqxNzm/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
+    </copy>
+    ```
+    </details>
+
     ## Asia Pacific (APAC)
     **Tenancy Regions** Please select the same region that you are creating MDS in 
 
@@ -333,7 +358,17 @@ Description
     </copy>
     ```
     </details>
-
+ 
+    <details>
+    <summary> Japan Central (Osaka) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy>
+    https://objectstorage.ap-osaka-1.oraclecloud.com/p/P9L6IfzKl2AWeu8e5Ekc9YVdR9lnvBLPkSiXe5vs9QsUsHHnYI78eba7ib-iWLnc/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
+   
     <details>
     <summary>South Korea Central(Seoul) Region - Copy and paste to PAR Source URL</summary>
     <br>
@@ -344,6 +379,58 @@ Description
     ```
     </details>
 
+  
+    <details>
+    <summary> South Korea North (Chuncheon) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy>
+    https://objectstorage.ap-chuncheon-1.oraclecloud.com/p/VfIzozmxePRBgnozS5cWyoo1U8IJOWMJKOWV9Vkfp-r3Pq8hJeuj9GCjNxmT5ZGo/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
+  
+    <details>
+    <summary> Australia East (Sydney) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy>
+    https://objectstorage.ap-sydney-1.oraclecloud.com/p/wOHQ85I_g0Xm5efGO1jWfk8Jg9hKQAJ7MxWTW1Qec8wLdGrYxi78qPgcdcKr92JG/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
+
+    <details>
+    <summary> Australia Southeast (Melbourne) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy>
+    https://objectstorage.ap-melbourne-1.oraclecloud.com/p/xrusIEweK7vvSuzdj6d_Oqm04l14gI-JFyHG92UHqmt9V3lADczMuOV1PnvY-jXe/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
+ 
+    <details>
+    <summary> India West (Mumbai) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy>
+    https://objectstorage.ap-mumbai-1.oraclecloud.com/p/KxPwBh70ck0suWi8o0gmLP9vWwgnMznQKL7cilv-7T1zZsAXjY4Iun6p4lARU2vl/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
+
+
+    <details>
+    <summary> India South (Hyderabad) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy>
+    https://objectstorage.ap-hyderabad-1.oraclecloud.com/p/HicbLKYet2Ww47WmMvPhyrT7VUnj443tOj801k44ZqOoP3VZ0H06tfRRuUQim4xK/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
+    </copy>
+    ```
+    </details>
+ 
 14. Your PAR Source URL entry should look like this:
     ![MDS](./images/04mysql08-2.png " ")
 

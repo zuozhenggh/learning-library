@@ -269,7 +269,7 @@ Run the below each sql query by login into Catalog database as well as one of th
 
     ![](./images/query2.jpg " ")
 
-2. Top Selling Products: Return top Selling products in the store ranging from high to low from last two months by fetching from LINE_ITEM (Relational ) & Products (JSON) & Reviews (JSON) Tables.
+2. Top Selling Products: Return top Selling products in the store ranging from high to low from last one year by fetching from LINE_ITEM (Relational ) & Products (JSON) & Reviews (JSON) Tables.
 
     ```
     <copy>
@@ -277,19 +277,19 @@ Run the below each sql query by login into Catalog database as well as one of th
     col SKU for a20
     col PRODUCT_NAME for a30
     col BEST_REVIEW for a50
-    select le.SKU,pr.Product_Name,le.count,le.SELL_VALUE,re.Avg_Senti_Score,rev.BEST_REVIEW from (select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id ) le,(select r.sku as id,round(avg(r.senti_score)) as Avg_Senti_Score from reviews r group by r.sku) re,(select p.sku as pid,substr(p.json_text.NAME,0,30) as Product_Name from products p) pr,(select r.sku as rvid,r.revid,substr(r.json_text.REVIEW,0,40) as BEST_REVIEW from reviews r,(select sku as pid ,max(senti_score) as bestscore from reviews group by sku) where r.sku=pid and r.senti_score=bestscore) rev where re.id=le.SKU and pr.pid=le.SKU and rev.rvid=le.SKU order by 3 desc;
+    select le.SKU,pr.Product_Name,le.count,le.SELL_VALUE,re.Avg_Senti_Score,rev.BEST_REVIEW from (select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -365 group by product_id ) le,(select r.sku as id,round(avg(r.senti_score)) as Avg_Senti_Score from reviews r group by r.sku) re,(select p.sku as pid,substr(p.json_text.NAME,0,30) as Product_Name from products p) pr,(select r.sku as rvid,r.revid,substr(r.json_text.REVIEW,0,40) as BEST_REVIEW from reviews r,(select sku as pid ,max(senti_score) as bestscore from reviews group by sku) where r.sku=pid and r.senti_score=bestscore) rev where re.id=le.SKU and pr.pid=le.SKU and rev.rvid=le.SKU order by 3 desc;
     </copy>
     ```
     ![](./images/queryone.jpg " ")
 
 
-3. Select products ordered by maximum sell
+3. Select products ordered by maximum sell from last one year.
 
     ```
     <copy>
     set lines 200 pages 200
     col SKU for a40
-    select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -60 group by product_id order by count desc;
+    select product_id as SKU, sum(PRODUCT_QUANTITY) as count,ROUND(sum(PRODUCT_COST*PRODUCT_QUANTITY),2) as SELL_VALUE from LINE_ITEM where DATE_ORDERED > sysdate -365 group by product_id order by count desc;
     </copy>
     ```
     ![](./images/query5.jpg " ")
@@ -309,7 +309,7 @@ Run the below each sql query by login into Catalog database as well as one of th
 
     ![](./images/query6.jpg " ")
 
-5.  Let's try one query at **shard2** database. Open another terminal and execute below as **opc** user to connect to **shard2**.
+5.  Let's try one query at **shard2** database as the default user **'demo@eshop.com'** belongs to shard2. Open another terminal and execute below as **opc** user to connect to **shard2**.
 
     ```
     <copy>

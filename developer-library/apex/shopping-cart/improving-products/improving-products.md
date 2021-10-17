@@ -20,7 +20,7 @@ In this lab, you will:
 In the Runtime environment navigate to Products, this is the page where your customers can explore the products and select what they wish to buy.
 As you can see, it's hard to find the products and it would be beneficial to see additional details related to the products.
 
-![](./images/products-page.png " ")
+![](./images/products-page-org.png " ")
 
 1. From the runtime application, navigate to the Products page in Page Designer.
 
@@ -85,7 +85,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
 ## Task 2: Reorder Facets
 Unit price is not a common search criteria, so you want to put this facet at the bottom.
 
-1. In the Rendering tree (left pane), under Search, within Facets, click and hold **P1\_UNIT\_PRICE** and drag it up until it is under **P1\_COLOR\_ID** then release the mouse.
+1. In the Rendering tree (left pane), under Search, within Facets, click and hold **P1\_UNIT\_PRICE** and drag it down until it is under **P1\_COLOR\_ID** then release the mouse.
 
     ![](./images/reorder-facet.png " ")
 
@@ -175,7 +175,7 @@ Unit price is not a common search criteria, so you want to put this facet at the
         ![](./images/cards.png " ")        
 
 ## Task 5: Create Actions 
-You would need to provide a way for customers to shop the products, so in this task you will add an action to allow customers to learn more about the product.
+Customers need a way to shop the products, so in this task you will add an action to allow customers to learn more about the product.
 
 1. Navigate to **Search Results** (left pane).
 2. On Actions, right-click **Create Action**.
@@ -294,18 +294,21 @@ In this task, you will create two dynamic actions:
 
 ## Task 7: Run Products Page 
 
-When running products page, you will notice that Department, Clothing and Color facets don't have values as the products are not associated with the corresponding characteristic.
+When running products page, you will notice that image of the products is missing.
    ![](./images/products-facets.png " ")
 
-For that, navigate to **Manage Products** Page, upload a picture and select the proper color, department and clothing characteristic for each product.
-    ![](./images/manage-products.png " ")
+To upload images please follow these steps:
 
-[Download images for your application](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nDA-UBc8y27dbtyRu0DVR0u6CRUI1jRXTAP17J_Cd4QqUaTCxjdG4puUa4aF1qGm/n/c4u04/b/developer-library/o/clothing-images.zip) to download images for your application.
+1. [Download images](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nDA-UBc8y27dbtyRu0DVR0u6CRUI1jRXTAP17J_Cd4QqUaTCxjdG4puUa4aF1qGm/n/c4u04/b/developer-library/o/clothing-images.zip) for your application.
+2. Run ACME Shop App
+3. Click navigation menu, click **Administration** and then click **Manage Products**.
+4. Edit each of the products by clicking the pencil and upload the image.
 
-Once you have updated products information, you would be able to check facet values:
+   ![](./images/upload-image.png " ")
+
+
+Once you have upload images of the products, your page will look like the following image:
     ![](./images/products-image.png " ")
-
-
 
 You now know how to enhance faceted search and cards region.
 

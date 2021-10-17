@@ -72,12 +72,6 @@ In this step you can choose between six different implementations of the Invento
     <copy>cd $GRABDISH_HOME/inventory-go; ./deploy.sh</copy>
     ```
 
-   If you selected **Spring Boot**, deploy this service:
-
-    ```
-    <copy>cd $GRABDISH_HOME/inventory-springboot; ./deploy.sh</copy>
-    ```
-
    If you selected **Java Helidon SE**, deploy this service:
 
     ```

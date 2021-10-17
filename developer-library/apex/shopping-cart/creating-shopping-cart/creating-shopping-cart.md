@@ -162,7 +162,7 @@ This region will list the items that have been added temporarily to the shopping
         - For Primary Key Column 1 - select **ITEM** 
 
 ## Task 5: Adding an Action to the Shopping Cart
-This action allows to open a page where customers can edit a particular item in the shopping cart.
+This action allows customers to open a page to edit a particular item in the shopping cart.
 
 1. In the Rendering tree (left pane), navigate to **Actions** under **Shopping Cart**.
 2. Right-click Actions and click **Create Action**.
@@ -181,10 +181,12 @@ This action allows to open a page where customers can edit a particular item in 
     - For Display Type - select **Text with Icon**
     - For Icon - enter **fa-cart-edit**
 
+This configures the (Edit) button to open page 18, passing the value of the PRODUCT_ID column of the current card as the value for the page item P18\_PRODUCT\_ID in that called page.       
+
 ## Task 6: Adding Items and Buttons to the Page
 
 1. Navigate to the **Gallery Menu**.
-2. Drag a **Static Content** region and drop it next to the Shopping Cart region.
+2. Drag a **Static Content** region and drop it to the right of the Shopping Cart region to create a second region of content.
     ![](./images/static-content-r.png " ")
 3. In the Property Editor, enter the following:
     - For Name - enter **Order Information**
@@ -201,7 +203,7 @@ This action allows to open a page where customers can edit a particular item in 
     | P17\_CUSTOMER\_ID | Hidden |  | | |
     | P17_STORE | Select List | Store | Optional - Floating | Off |
 
-    For **P17_STORE** item, configure the list of values as follows: 
+    For **P17_STORE** item, in the list of values section, configure the type as follows: 
 
     - For Type - select **SQL Query**
     - For SQL Query - enter the following SQL Query:
@@ -240,11 +242,19 @@ This action allows to open a page where customers can edit a particular item in 
      ![](./images/create-validation.png " ")  
 3. Create three validations for the following items: Name, Email and Store
 
-    | Name |  Type | Item | Error Message | Display Location | Associated Item | 
-    | --- |  --- | --- | --- | --- | 
-    | Validate Name | Item is NOT NULL | P17\_CUSTOMER\_FULLNAME | Please enter your name | Inline with Field and in Notification | P17\_CUSTOMER\_FULLNAME |
-    | Validate Email | Item is NOT NULL | P17\_CUSTOMER\_EMAIL | Please enter your email address | Inline with Field and in Notification | P17\_CUSTOMER\_EMAIL |
-    | Validate Store | Item is NOT NULL | P17_STORE | Please select a store | Inline with Field and in Notification | P17_STORE |
+    | Name |  Type (under Validation) | Item |
+    | --- |  --- | --- | 
+    | Validate Name | Item is NOT NULL | P17\_CUSTOMER\_FULLNAME |
+    | Validate Email | Item is NOT NULL | P17\_CUSTOMER\_EMAIL |
+    | Validate Store | Item is NOT NULL | P17_STORE |
+
+    Under Error:
+
+    | Error Message | Display Location | Associated Item | 
+    | --- |  --- | --- | 
+    | Please enter your name | Inline with Field and in Notification | P17\_CUSTOMER\_FULLNAME |
+    | Please enter your email address | Inline with Field and in Notification | P17\_CUSTOMER\_EMAIL |
+    | Please select a store | Inline with Field and in Notification | P17_STORE |
 
      ![](./images/validations.png " ") 
 
@@ -404,6 +414,15 @@ In this task, you will create a dynamic actions to:
             apex.jQuery(".js-shopping-cart-item .t-Icon").removeClass('fa-cart-full').addClass('fa-cart-empty');
             </copy>
             ```
+
+14. Create a second action. In the Dynamic Actions tab (left pane), navigate to **False** under **Update Shopping Cart Header** Dynamic Action.
+
+15. In the Property Editor, enter the following:  
+    - Under Identification section:
+        - For Action - select **Refresh** 
+    - Under Affected Elements section:          
+        - For Selection Type - select **Region**
+        - For Region - select **Shopping Cart**    
 
 ## Task 12: Format Products Image Size
 
