@@ -35,7 +35,7 @@ Click on Create Workspace. Name it Workspace Lakehouse and click the Create butt
 While that is creating navigate back to Policies. Click on Identity & Security and then Policies.
 Select dataintegrationWS policies and clik Edit Policy Statements. From here you can + Another Statement.
 
-![Add Policies](./images/add_policies.png " ")
+![Add Policies](./images/create_policies.png " ")
 
 Use the follow three allow statements to add into the existing policy, and then Save Changes.
 ```
@@ -120,18 +120,15 @@ Next we are going to create a data asset for our json file that will be part of 
 
 Select Create Data Asset, and fill in the name genre_json and choose the Type to be Oracle Object Storage.
 
-![Create Data Asset](./images/create_new_data_asset.png " ")
+![Create Data Asset](./images/create_assetjson.png " ")
 
 Continue to fill name of GENRE_JSON. Choose the type as Oracle Object Storage You need the object storage bucket Namespace, c4u04, and the OCI-Region. 
 
-OCI-Region
 ```
 <copy>
 https://swiftobjectstorage.us-ashburn-1.oraclecloud.com
 </copy>
 ```
-
-![Create Data Asset](./images/create_new_data_asset.png " ")
 
 Then add the connection for the data asset. Create json_connection and put in the pre-authenicated data set.
 
@@ -185,6 +182,8 @@ Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you
 ![SQL](./images/Current_Catalog.png " ")
 
 Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity informaiton into the Data Asset, but for now in the lab you can run this manually.
+
+![Harvest](./images/harvest1.png " ")
 
 Now if you go back to the Home Tab fro the Data Catalog, you will discover that there are now 7 Data Entities are being kept up to data in the Data Catalog.
 
