@@ -130,7 +130,9 @@ To complete this lab, you need to have the following:
 
 6. In the **New Oracle Data Transforms Metadata Repository** section, pick the name of your Autonomous Database from the pick list at the top. (This pick list is populated with names of Autonomous Databases in the same Compartment as you're using here. This is why it was important to pick the Target Compartment carefully in the **General Settings** section above.)
 
-    **Important**: Be sure to check the box next to REGISTER ORACLE DATA TRANSFORMS WITH THE AUTONOMOUS DATABASE, DATABASE ACTIONS PAGE. This is what puts the Data Transforms card on your Database Actions page. 
+    **Important**: Be sure to check the box next to REGISTER ORACLE DATA TRANSFORMS WITH THE AUTONOMOUS DATABASE, DATABASE ACTIONS PAGE. This is what puts the Data Transforms card on your Database Actions page.
+
+    **Important**: Carefully type the passwords. Autonomous Database Admin password is not verified at this stage and deployment may fail if you type in incorrect password. For new passwords (VNC, SUPERVISOR and SCHEMA), follow the passwords guidelines. It is better to write these passwords in an editor and do copy and paste here. This will make sure that passwords are correctly entered.
 
     ![ALT text is not available for this image](images/3018104747.png)
 
@@ -191,13 +193,26 @@ Data Transforms tool can be launched by two methods:
 
 4. The page that appears provides both private and public URLs for accessing **Oracle Data Integrator - Web Edition** directly.  
 
-    ![ALT text is not available for this image](images/3018104789.png) 
+    ![ALT text is not available for this image](images/3018104789.png)
 
-5. You can also launch **Data Transforms** from Autonomous Database. You'll see a card for a fully pre-configured connection to your Autonomous Database. Click the **DATA TRANSFORMS** card.
+5. We need to perform few administration steps before we can successfully launch Data Transforms form Autonomous Database Actions menu. Click on the Data Transforms URL in previous step to launch Data Transform. Login with SUPERVISOR user and your password.
+
+    ![ALT text is not available for this image](images/lab04-task03-05.jpg)
+
+6. Click Administration and click Continue.
+
+    ![ALT text is not available for this image](images/lab04-task03-06.jpg)
+
+7. This is where Database user is mapped to Data Transforms user. There is a default map for ADMIN user to SUPERVISOR. Click + and add QTEAM user mapping to SUPERVISOR. Enter Database URL (as shown) and click Save. After this you will be able to launch Data Transforms from Autonomous Database Actions page.
+
+    ![ALT text is not available for this image](images/lab04-task03-07.jpg)
+
+
+8. You can also launch **Data Transforms** from Autonomous Database. You'll see a card for a fully pre-configured connection to your Autonomous Database. Click the **DATA TRANSFORMS** card.
 
     ![ALT text is not available for this image](images/3018124770.png)
 
-6. You will see the login screen for the Data Transforms tool. Specify username **SUPERVISOR** and the password that you provided in the ODI Web Edition deployment. Click **Connect**.
+9. You will see the login screen for the Data Transforms tool. Specify username **SUPERVISOR** and the password that you provided in the ODI Web Edition deployment. Click **Connect**.
 
     ![ALT text is not available for this image](images/3018123500.png)Follow the next lab for using Data Transforms to create a data flow.
 
