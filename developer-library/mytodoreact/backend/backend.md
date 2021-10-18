@@ -85,9 +85,9 @@ If the variable is not set or is an empty string, the push will fail (but the do
 6. Edit ./backend/src/main/java/com/oracle/todoapp/Main.java
 7. Locate the following code fragment
 	![CORS main](images/CORS-Main.png " ")
-8. Replace `eu-frankfurt-1` in `https://objectstorage.eu-frankfurt-1.oraclecloud.com` with your region
-	\* Hint: your region id is displayed in the cloud shell prompt, between parenthesis, as in: 
-	joe@cloudshell:classes (**us-phoenix-1**)$
+8. Replace `eu-frankfurt-1` in `https://objectstorage.eu-frankfurt-1.oraclecloud.com` with your region.
+
+	\* Hint: your region id is displayed in the cloud shell prompt, between parenthesis, as in: joe@cloudshell:classes (**us-phoenix-1**)$
 9. Save the file
 10. Run `build.sh` script to build and push the
 microservices images into the repository
@@ -172,16 +172,16 @@ Then click **Create**.
     * Subnet pick the public subnet
 
    Observe that the ToDolist gateway has been successfully created.
-	![gateway](images/gateway.png " ")
+	![gateway](images/Gateway.png " ")
 
 4. Click **Deployments**
-	![deployment-menu](images/deployment-menu.png " ")
+	![deployment-menu](images/Deployment-menu.png " ")
 
 5. Click **Create Deployment**
    ![deployment](images/deployment.png " ")
 
 6. Create a **TodDolist deployment**.
-   ![deployment](images/Deployment.png " ")
+   ![deployment](images/Deplyment.png " ")
 
 7. Configure CORS policies:
    ![origins methods](images/Origins-Methods.png " ")

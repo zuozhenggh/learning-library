@@ -114,7 +114,6 @@ In the previous SQL code we used an inner join to merge time, customer and genre
 
 2. The result will look like this:
 
-
     ![Result from an inner join](images/lab-5a-step-2-substep-2.png " ")
 
     Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the following:
