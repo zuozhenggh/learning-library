@@ -58,31 +58,31 @@ The following command will set the values of environment variables in `mtdrworks
 
 1. Ensure that the "DOCKER\_REGISTRY" variable is set
 
-``` bash
+	``` bash
 	<copy>echo $DOCKER_REGISTRY</copy>
 	```
 	It should look like the following example:
 `<region-key>.ocir.io/<object-storage-namespace>/<firstname.lastname>/<repo-name>`.
 If the variable is not set or is an empty string, the push will fail (but the docker image will be built).
 
-2. Make sure to be in backend/target/classes/wallet directory and then unzip.
+2. Unzip the wallet.zi under thebackend/target/classws/wallet directory.
 
 	``` bash
-	<copy>cd mtdrworkshop/backend/target/classes/wallet; unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
+	<copy>cd ~/mtdrworkshop/backend/target/classes/wallet; unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
 	```
 
-3. Copy the mtdrb\_tp service alias (see the list of aliases in
+3. Copy the `mtdrb\_tp` alias (see the list of aliases in
 ./backend/target/classes/wallet/tnsnames.ora)
 	![tnsnames-ora](images/tnsnames-ora.png " ")
-4. Edit ./backend/target/classes/application.yaml to set the database service and user password
+4. Edit ~/mtdrworkshop/backend/target/classes/application.yaml to set the database service and user password
 	![application yaml](images/application-yaml.png " ")
 5. Copy the edited application.yaml to ./backend/src/main/resources/application.yaml
 
-``` bash
+	``` bash
 	<copy>cp ~/mtdrworkshop/backend/target/classes/application.yaml ~/mtdrworkshop/backend/src/main/resources/application.yaml</copy>
 	```
 
-6. Edit ./backend/src/main/java/com/oracle/todoapp/Main.java
+6. Edit ~/mtdrworkshop/backend/src/main/java/com/oracle/todoapp/Main.java
 7. Locate the following code fragment
 	![CORS main](images/CORS-Main.png " ")
 8. Replace `eu-frankfurt-1` in `https://objectstorage.eu-frankfurt-1.oraclecloud.com` with your region.
@@ -97,7 +97,7 @@ microservices images into the repository
 	```
 
 	In a few minutes, you would have successfully built and pushed the images into the OCIR repository.
-11. Check your container registry from the root compartment.
+11. Check your container registry **from the root compartment**.
 	Go to the Oracle Cloud Console, click the navigation menu in the top-left corner and open **Developer Services** then **Container Registry**.
 	![dev services reg](images/21-dev-services-registry.png " ")
 	![registry root comp](images/Registry-root-compart.png " ")
@@ -114,9 +114,9 @@ microservices images into the repository
 	```
 	![deploy -sh](images/deploy-sh.png " ")
 
-2. Check the status using the following command; it returns the Kubernetes service of MyToDo application with a load balancer exposed through an external API.
+2. Check the status using the following command; it returns the Kubernetes service of MyToDo application with a load balancer exposed through an external IP address.
 	**$ kubectl get services**
-
+	Repeat the command until the External IP address is shown.
 	``` bash
 	<copy>kubectl get services</copy>
 	```
@@ -131,12 +131,12 @@ microservices images into the repository
 
 	![k8 pods](images/k8-pods.png " ")
 5. Use the following command to continuously tail the log of one of the PODs.
-	**$ kubectl logs -f**
+	**$ kubectl logs -f <POD-name>**
 	``` bash
-	<copy>kubectl logs -f</copy>
+	<copy>kubectl logs -f <POD-name></copy>
 	```
 
-	**Example** kubectl lgs -f todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
+	**Example** kubectl logs -f todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
 	Returns
 	http://130.61.66.27/todolist
 
@@ -162,7 +162,7 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 
 	![gateway](images/gateways.png " ")
 
-2. Specify the root compartment on the left side then click **Create Gateway**
+2. Specify the `mtdrworkshop` compartment on the left side then click **Create Gateway**
 	![click create gateway](images/click-create-gateway.png " ")
 
 3. Configure the basic info: name, compartment, VCN and Subnet
@@ -183,17 +183,21 @@ Then click **Create**.
 6. Create a **TodDolist deployment**.
    ![deployment](images/Deplyment.png " ")
 
-7. Configure CORS policies:
-   ![origins methods](images/Origins-Methods.png " ")
+7. Configure the Basic info
+ ![Basic info](images/API-Gateway-basic.png " ")
+
+8. Configure CORS policies:
+  
 	* CORS is a security mechanism that will prevent running application loaded from origin A from using resources from origin B.
-	* Allowed Origins is the list of all servers (origins) that are allowed to access the API deployment typically of a Kubernetes cluster IP.
+	* Allowed Origins is the list of all servers (origins) that are allowed to access the API deployment typically of a Kubernetes cluster IP. **Replace 129.146.94.125** with the **External IP** of your Kubernetes cluster
+	 ![origins methods](images/Origins-Methods.png " ")
     * Allowed methods GET, PUT, DELETE, POST, and OPTIONS are all needed.
 
-8. Configure the headers.
+9. Configure the headers.
 	![headers](images/Headers.png " ")
 	\* click **Apply changes** to create the CORS policy
 
-9. Configure the routes by defining two routes:
+10. Configure the routes by defining two routes:
 	\* Click **Routes**, next to the number 2, on the left to create
    ![route](images/Route-1.png " ")
     * /todolist for the first two APIs: GET, POST, OPTIONS
@@ -217,6 +221,6 @@ You may now [proceed to the next tutorial](#next).
 
 ## Acknowledgements
 
-* **Author** \- Kuassi Mensah\, Dir\. Product Management\, Java Database Access
-* **Contributors** \- Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By/Date** \- Kamryn Vinson\, July 2021
+* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By/Date** - Kamryn Vinson, July 2021
