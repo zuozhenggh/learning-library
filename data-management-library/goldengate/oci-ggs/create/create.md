@@ -7,7 +7,7 @@ This lab walks you through the steps to create an Oracle Cloud Infrastructure Go
 Estimated time: 5 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate Deployments
-A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage Extracts and Replicats.
+A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage processes such as Extracts and Replicats.
 
 ### Objectives
 
@@ -29,39 +29,39 @@ This lab assumes that you completed all preceding labs.
 
     ![](images/database-goldengate.png " ")
 
-    You're brought to the **Deployments** page.
+2.  On the GoldenGate **Overview** page, click **Deployments**.
 
-    ![](images/01-01-02a.png "")
+    ![](images/01-02-ggs-overview.png " ")
 
-2.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
+3.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
-2.  On the Deployments page, click **Create Deployment**.
+4.  On the Deployments page, click **Create Deployment**.
 
     ![Click Create Deployment](images/01-02-01.png "")
 
-3.  In the Create Deployment panel, enter **GGSDeployment** for Name.
+5.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
-4.  From the Compartment dropdown, select a compartment.
+6.  From the Compartment dropdown, select a compartment.
 
-5.  For OCPU Count, enter **1**.
+7.  For OCPU Count, enter **1**.
 
-6.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
+8.  For Subnet, select a subnet. If you're using the workshop environment, select **&lt;user&gt;pubsubnt**.
 
-7.  For License type, select **Bring You Own License (BYOL)**.
+9.  For License type, select **Bring You Own License (BYOL)**.
 
-8.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
+10. Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
     ![Create GoldenGate Deployment](images/01-09.png " ")
 
-9.  Click **Next**.
+11. Click **Next**.
 
-10. For GoldenGate Instance Name, enter **ggsinstance**.
+12. For GoldenGate Instance Name, enter **ggsinstance**.
 
-11. For Administrator Username, enter **oggadmin**.
+13. For Administrator Username, enter **oggadmin**.
 
-12. For Administrator Password, enter a password. Take note of this password.
+14. For Administrator Password, enter a password. Take note of this password.
 
-13. Click **Create**.
+15. Click **Create**.
 
     ![](images/02-13.png " ")
 

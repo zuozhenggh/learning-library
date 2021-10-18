@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to create and run an Extract and a Replicat in the Oracle GoldenGate Deployment Console.
+This lab walks you through the steps to create and run an Extract, instantiate the target database using Oracle Data Pump, and create and run a Replicat in the Oracle GoldenGate Deployment Console.
 
-Estimated time: 10 minutes
+Estimated time: 15 minutes
 
 ### About Extracts and Replicats
 An Extract is a process that extracts, or captures, data from a source database. A Replicat is a process that delivers data to a target database.
@@ -157,7 +157,7 @@ To return to the GoldenGate Deployment Console Home page, click **Overview** in 
 
 ## Task 5: Export data using Oracle Data Pump (ExpDP)
 
-Before using Oracle Data Pump to export data, first create an Oracle Object Store bucket, then create yourself a Credential Token, and then use these resources to create a credential in ATP.
+Before using Oracle Data Pump to export data from the source database, first create an Oracle Object Store bucket, then create yourself a Credential Token, and then use these resources to create a credential in ATP.
 
 1.  From the Oracle Cloud Console navigation menu (hamburger icon), click **Storage**, and then **Buckets**.
 
@@ -288,6 +288,8 @@ END;</copy>
     ![](images/05-11.png " ")
 
 ## Task 6: Import data using Oracle Data Pump (ImpDP)
+
+Before importing data to the target database, create a credential in the target database to access the exported data file in Oracle Object Store.
 
 1. In the **Oracle Cloud Console**, open the navigation menu (hamburger icon), select **Oracle Database**, and then click **Autonomous Data Warehouse**.
 
@@ -466,6 +468,8 @@ END;</copy>
     ```
 
     ![Add Replicat - Parameter File](images/07-09.png " ")
+
+    > **Note:** *'DBOPTIONS ENABLE\_INSTATIATION\_FILTERING' enables CSN filtering on tables imported using Oracle Data Pump. For more information, see [DBOPTIONS Reference](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/goldengate-service/using&id=GWURF-GUID-BA8C0CED-D87F-4106-862E-4AD22D910160).*
 
 10.  Click **Create**.
 

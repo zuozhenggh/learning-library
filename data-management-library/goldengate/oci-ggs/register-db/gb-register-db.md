@@ -130,7 +130,7 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
     The source and target databases appear in the list of Registered Databases. The database registration becomes Active after a few minutes.
 
-7.  Repeat the instructions under Task 2 to unlock the GGADMIN user on the TargetADW database.
+7.  Repeat Task 2, steps 1 to 7, to unlock the GGADMIN user on the TargetADW database.
 
 You may now **proceed to the next lab**.
 
