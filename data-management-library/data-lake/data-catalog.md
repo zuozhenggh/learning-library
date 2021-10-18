@@ -54,15 +54,15 @@ Once the workspace has been created (a refresh of the screen might be needed to 
 
 ## Task 2: Create the Data Assets in the Workspace
 
-Under Quick Actions, you want to click on Create Data Asset
+Under Quick Actions, you want to click on **Create Data Asset**
 
 ![Create Data Asset](./images/create_dataasset1.png " ")
 
-The first data asset is going to be our ADW database we already created. Fill in MOVIESTREAM_ADW and select type to Oracle Autonomous Data Warehouse.
+The first data asset is going to be our ADW database we already created. Fill in **MOVIESTREAM_ADW** and select **Type** to Oracle Autonomous Data Warehouse.
 
 ![Create Data Asset](./images/create_dataasset.png " ")
 
-Continue to fill with Select Database, regions, Tenant OCID that we saved off or you can go to your profile and click on Tenancy to get that information again. Make sure the compartment is lakehouse1 and DB is lakehousedb.
+Continue to fill with Select Database, regions, Tenancy OCID that we saved off or you can go to your profile and click on Tenancy to get that information again. Make sure the compartment is lakehouse1 and DB is lakehousedb.
 
 ![Create Data Asset](./images/create_dataasset3.png " ")
 
@@ -72,8 +72,17 @@ Using the default connection you can put in User Name ADMIN and the password you
 
 Test Connection to make sure you can connect to the this data asset.
 
-![Create Data Asset](./images/create_dataasset5.png " ")
+Second data asset will be the dataflow-warehouse bucket that you created for data flows. Click on Create Data Asset. Fill in the name **dataflow-warehouse-bucket** Choose **Oracle Object Storage** for **Type**.
 
+![Create Data Asset](./images/create_dataasset6.png " ")
+
+Then copy in the Tenancy OCID, Namespace and Region.
+
+![Create Data Asset](./images/create_dataasset7.png " ")
+
+Test Connection to make sure you can connect to the this data asset. Now you can see both of the Data Assets that we have added.
+
+![Create Data Asset](./images/create_dataasset8.png " ")
 
 ## Task 3: Create a Project in the Workspace
 
@@ -134,7 +143,7 @@ Then add the connection for the data asset. Create json_connection and put in th
 
 ```
 <copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/p/YvlgIsMlZQgCn4RVYn2697Er_Y9iw_2X48zZwIbbHs6c2647ouXVatto303mbQ3x/n/c4u04/b/moviestream_sandbox/o/
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/ouDV0uXS0m0vSkJ7Ok2-W0FfSPIsLDHkXF7aSBevClUpS7zdD0wOe4DHVn5r5IvY/n/c4u04/b/data_lakehouse/o/
 </copy>
 ```
 
