@@ -13,7 +13,11 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: Application Onboarding",
+      "title": "Lab 1: Initialize the Environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
+    },
+    {
+      "title": "Lab 2: Application Onboarding",
       "filename": "../../application-onboarding/application-onboarding.md"
     },
     {

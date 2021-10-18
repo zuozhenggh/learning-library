@@ -4,14 +4,14 @@
 
 This lab walks you through the steps to onboard an application into Oracle Identity Governance(OIG) using the flat file connector.
 
-Estimated Time: 30 minutes
+Estimated Time: 25 minutes
 
 ### Objectives
 
 In this lab, you will:
 * Onboard an application into OIG using flat file connector
 
-## **STEP 1:** Launch the workshop instance
+## Task 1: Launch the workshop instance
 
 1. Launch a browser window to the following URL to access the instance
 
@@ -23,7 +23,7 @@ In this lab, you will:
 
     ![](images/2-no-vnc.png)
 
-## **STEP 2:** Starting the OIG server
+## Task 2: Starting the OIG server
 
 1. Launch a browser window and Click on the bookmark *Workshop Links* and click on Weblogic Admin Console.
 
@@ -43,7 +43,7 @@ In this lab, you will:
 
   ![](images/7-weblogic.png)
 
-## **STEP 3:** Copy the flat files into the directory
+## Task 3: Copy the flat files into the directory
 
 1. Open a terminal session as oracle user and copy the entitlement file.
 
@@ -68,7 +68,7 @@ In this lab, you will:
     ```
   ![](images/9-files.png)
 
-## **STEP 4:** Create Application Screen
+## Task 4: Create Application Screen
 
 1. Click on *OIG Identity Console* under the *Workshop Links* bookmark folder. Login to the Identity Self Service console.
 
@@ -90,7 +90,7 @@ In this lab, you will:
 
   ![](images/12-application.png)
 
-## **STEP 5:** Providing Basic Information
+## Task 5: Providing Basic Information
 
 1. On the Basic Information page, ensure that the *Connector Package* option is selected.
 
@@ -128,7 +128,7 @@ In this lab, you will:
 
   ![](images/16-basicinfo.png)
 
-## **STEP 6:** Updating Schema Information
+## Task 6: Updating Schema Information
 
 1. Expand the *document_access* attribute and change the display name.
 
@@ -162,7 +162,7 @@ In this lab, you will:
 
   ![](images/20-schema.png)
 
-## **STEP 7:** Providing Settings Information
+## Task 7: Providing Settings Information
 
 1. In the Settings page,click on Preview Settings to preview the settings.
 
@@ -213,7 +213,7 @@ In this lab, you will:
 
   ![](images/26-settings.png)
 
-## **STEP 8:** Reviewing and Submitting the Application Details
+## Task 8: Reviewing and Submitting the Application Details
 
 1. On the Finish page, review your application summary and click Finish to submit the application.
 
@@ -229,7 +229,7 @@ In this lab, you will:
 
 4. Log out and log in again into the Identity Self Service.
 
-## **STEP 9:** Performing Reconciliation
+## Task 9: Performing Reconciliation
 1. Choose the Applications box on the Manage tab.
 
 2. Click Search icon and click on the DMS application.
