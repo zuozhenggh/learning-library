@@ -221,7 +221,7 @@ From the Action Menu deploy the Inbound Agreement
 
 ##	Task	11: Import and Activate the Supplier (Dell Inc) Integration
 
-1.	Download the [Dell Inc Simulator Integration](files/OUTBOUND_XTP_DELL_INC_01.00.0000.iar)
+1.	Download the [Dell Inc Simulator Integration](files/OUTBOUND_XTP_DELL_INC_01.00.0001.iar)
 2.	Import and Activate the Integration with Tracing Enabled.
 
 ##	Task	12: Testing the B2B Inbound Integration Scenario
