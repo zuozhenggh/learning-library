@@ -184,12 +184,7 @@ Then click **Create**.
    ![deployment](images/Deplyment.png " ")
 
 7. Configure the Basic info
-<<<<<<< HEAD
- ![Basic info](images/API-Gateway-basic.png " ")git status
-
-=======
  ![Basic info](images/API-Gateway-basic.png " ")
->>>>>>> upstream/master
 
 8. Configure CORS policies:
   
