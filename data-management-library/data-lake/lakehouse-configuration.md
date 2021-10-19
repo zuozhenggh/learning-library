@@ -71,7 +71,7 @@ Name each policy for to match the group so they are easy to recognize what they 
 - Select Let Data Flow users manage their own Applications and Runs. 
 - Add the group dataflow-users and the location is the compartment lakehouse1
 
-![Create Policies](images/create_polic1.png " ")
+![Create Policies](images/create_policy1.png " ")
 
 Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1
 
@@ -168,13 +168,11 @@ In this step, you will create an Oracle Autonomous Data Warehouse.
 
     ![](./images/create_ADW4.png " ")
 
-15. Click __Create Autonomous Database__.
+8. Click __Create Autonomous Database__.
 
     ![Click Create Autonomous Database.](./images/create_ADW5.png " ")
 
-16.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
-
-    ![Database instance homepage.](./images/Picture100-32.png " ")
+9.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
     > **Note:** Take care not to use spaces in the name.
 

@@ -13,7 +13,7 @@
         {
             "title": "Lab 2: Development environment preparation",
             "description": "Provision Oracle Cloud Infrastructure basic resources to Capture Oracle Database Changes for CI/CD.",
-            "filename": "./../../introduction/intro-cicd.md"
+            "filename": "./../../introduction/intro-cicd-pts.md"
         },
         {
             "title": "Lab 3: Use SQLcl to Capture Database Changes with Liquibase",
