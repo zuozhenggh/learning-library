@@ -13,7 +13,7 @@ In this lab, you will:
 
 ## Task 1: Launch the workshop instance
 
-1. Launch a browser window to the following URL to access the instance
+1. Launch a browser window to the following URL to access the instance.
 
     ```
     <copy>http://[your instance public-ip address]:6080/index.html?password=LiveLabs.Rocks_99&resize=remote&autoconnect=true/</copy>
