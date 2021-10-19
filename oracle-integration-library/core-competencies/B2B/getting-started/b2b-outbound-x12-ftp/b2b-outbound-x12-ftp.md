@@ -1,4 +1,4 @@
-# Oracle Integration B2B - Inbound
+# Oracle Integration B2B - Outbound Processing
 
 ## Introduction
 
@@ -7,7 +7,7 @@ ACME Corp sends an 850 Purchase Order EDI document to Trading Partner Dell Inc. 
 This integration takes the input as XML from a Rest Client. In a real world use case you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
 
 
-![B2BArchitecture diagram](images/b2b-outbound1.png =50%x*)
+![B2B Outbound Processing High Level Architecture](images/b2b-outbound1.png =50%x*)
 
 High level steps of the Integration:
 | Step | Description |
@@ -187,7 +187,6 @@ This expression indicates that if TranslateOutput > translation-status has a val
 6. If you have FTP Client installed on your machine, you can login using the FTP details provided to you and cross check your edi file created under folders /B2BWorkshop/B2BTPUSGEOut and /B2BWorkshop/B2BTPDELLOut
 7. In conclusion, you can use Oracle Integration to accept XML message and convert it into EDI format and send it to the trading partners dynamically
 
-*At the conclusion of the lab add this statement:*
 You may now [proceed to the next lab](#next).
 
 ## Learn More
