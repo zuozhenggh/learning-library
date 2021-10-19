@@ -21,6 +21,8 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
+**NOTE:** When doing Copy/Paste using the convenient *Copy* function used throughout the guide, you must hit the *ENTER* key after the paste. Otherwise the last line will still be in the buffer until you hit *ENTER*!
+
 ## Task 1: Validate That Required Processes are Up and Running.
 
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
@@ -35,8 +37,6 @@ This lab assumes you have:
     You may test database connectivity clicking on the *+* sign next to the Database(s) as shown below in the *SQL Developer Oracle Connections* panel.
 
     ![](./images/19c_hol_landing.png " ")
-
-## ** NOTE: If you copy and paste SQL commands then you must hit the ENTER key after the paste. Otherwise the last line will still be in the buffer until you hit ENTER!
 
 2. Click the *Terminal* icon on the desktop to launch a session, then run the following to validate that expected processes are up.
 
