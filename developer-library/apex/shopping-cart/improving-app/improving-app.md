@@ -1,8 +1,8 @@
-# Improve the App
+# Improve the application
 
 ## Introduction
 
-In this lab, you will learn how to enable some pages to be viewed by any user who accesses the app. 
+In this lab, you will learn how to make some pages publicly accessible.
 
 Estimated Lab Time: 10 minutes
 
@@ -16,13 +16,13 @@ In this lab, you will:
 - Enhance the Navigation Bar
 
 ## Task 1: Set Pages to be Public
-Your customers don't need to login the app in order to shop the products, so let's set the following pages as public:
+Your customers don't need to log in the app to shop the products, so let's set the following pages as public:
 - Page  1: Products
 - Page 16: Order Information
 - Page 17: Shopping Cart
 - Page 18: Add to Cart
 
-Follow these Tasks for the four listed pages:
+Follow these tasks for the four listed pages:
 
 1. From the runtime application, navigate to the page.
 
@@ -34,29 +34,29 @@ Follow these Tasks for the four listed pages:
     - Under Security section:
         - For Authentication - select **Page Is Public**
 
-    ![](images/public-page.png " ")
+    ![](./images/public-page.png " ")
 
 3. Click **Save**.
 
 4. Navigate to Page Finder and go to the next page. 
-    ![](images/page-finder.png " ")
+    ![](./images/page-finder.png " ")
 
 ## Task 2: Cleaning the Navigation Menu
 Since the home page is the Products page and this is a public access page as some others too, it's not needed to have a navigation menu. 
-In this Task, you will turn off displaying the navigation menu.
+In this task, you will turn off displaying the navigation menu.
 
-1. Within Page Designer, click on the Shared Components icon at the top right.
+1. Within Page Designer, click the Shared Components icon at the top right.
 
-    ![](images/shared-components.png " ")
-   Alternatively, if you're in the App Builder, click on Shared Components.
-   ![](images/shared-components2.png " ")
+    ![](./images/shared-components.png " ")
+   Alternatively, if you are in the App Builder, click Shared Components.
+   ![](./images/shared-components2.png " ")
 
 2. Under User Interface, click **User Interface Attributes**.
-    ![](images/interface-attributes.png " ")
+    ![](./images/interface-attributes.png " ")
 3. Click **Navigation Menu**.
 
 4. Set Display Navigation to **Off**.
-    ![](images/nav-menu.png " ")
+    ![](./images/nav-menu.png " ")
 
 5. Click **Apply Changes**.
 
@@ -65,15 +65,15 @@ Add a new navigation menu entry to allow:
 - Customers to go directly to the Shopping Cart.
 - Administrators to login and access to administration page.
 
-1. Click on the Shared Components icon at the top right.
-    ![](images/shared-components3.png " ")
+1. Click the Shared Components icon at the top right.
+    ![](./images/shared-components3.png " ")
 2. Under Navigation, click **Navigation Bar List**.
-    ![](images/navigation-bar.png " ")
+    ![](./images/navigation-bar.png " ")
 
 3. Click **Desktop Navigation Bar**.
 
 4. Click **Create Entry** and enter the following:
-![](images/create-entry.png " ")
+![](./images/create-entry.png " ")
     - For Sequence - enter **1**
     - For Image/Class - **&SHOPPING\_CART\_ICON.**
     - For List Entry Label - **Shopping Cart**
@@ -85,15 +85,15 @@ Add a new navigation menu entry to allow:
     - For 2. List Item CSS Classes - enter **js-shopping-cart-item**
 
 5. Click **Create List Entry**.
-    ![](images/create-entry2.png " ")
+    ![](./images/create-entry2.png " ")
     
 6. Click **&APP_USER.** 
-    ![](images/edit-app-user.png " ")
+    ![](./images/edit-app-user.png " ")
 
 7. Under Authorization, for Authorization Scheme, select **Administration Rights**.
 
 8. Click **Apply Changes**.
-    ![](images/authorization.png " ")
+    ![](./images/authorization.png " ")
 
 4. Click **Create Entry**  and enter the following:
     - For Sequence - enter **5**
@@ -102,7 +102,7 @@ Add a new navigation menu entry to allow:
     - For Page - select **10000**
     
 5. Click **Create List Entry**.
-    ![](images/new-entry.png " ")
+    ![](./images/new-entry.png " ")
 
 
 You now know how to enhance and mantain both navigation menu and navigation bar.

@@ -1,4 +1,4 @@
-## Example 3: Analytics Update
+## Task 1: Analytics Update
 
 1. For: Configuration Deck, DVA file, Image sample, Catalog file, and Data Files-xls format, please
 
@@ -13,7 +13,8 @@
 3. Demo Script
 
 This is a sample of the Overall Business Performance Monitoring:
-![Overall Business Performance Monitoring](../diversity-inclusion/images/overall-business-performance-monitoring.png)
+![Overall Business Performance Monitoring](../analytics-update/images/overall-business-performance-monitoring.png)
+
 
 ## Acknowledgements
 

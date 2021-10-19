@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Developing with JSON and SODA in Oracle DB",
+    "workshoptitle": "Developing with JSON and SODA in Oracle Database",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -29,6 +29,10 @@
         {
             "title": "Lab 4: Using SQL to work with JSON",
             "filename": "../../sql-json/sql-json.md"
+        },
+        {
+            "title": "Lab 5: Terminate Oracle Autonomous Database",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/terminate-adb/terminate-adb.md"
         },
         {
             "title": "Need Help?",

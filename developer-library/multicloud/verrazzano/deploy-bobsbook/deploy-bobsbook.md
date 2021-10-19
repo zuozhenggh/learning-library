@@ -182,7 +182,7 @@ For the deployment of the *Bob's Books* sample application, we will use the exam
 
     ![Sign In](images/2.png)
 
-2. Enter your *Oracle Account Credentials* in the Username and Password fields, and then click *Sign In*.
+2. Enter your *Oracle Account Credentials* in the Username and Password fields, and then click *Sign In*. We will later use these credentials to create secret in Kubernetes. So if you are afraid to use your SSO credentials here please create Oracle Account based on any your personal email address and use it here.
 
     ![Oracle SSO](images/3.png)
 
