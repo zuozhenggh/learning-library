@@ -15,37 +15,32 @@
         "filename": "../../setup/setup.md"
       },
       {
-        "title": "Lab 2: Data-centric microservices walkthrough with Helidon MP",
+        "title": "Lab 2: Data-centric microservices walkthrough",
         "filename": "../../walkthrough-helidon/walkthrough-helidon.md",
         "type": "event-freetier"
       },
       {
-        "title": "Lab 3: Polyglot microservices",
-        "filename": "../../polyglot/polyglot.md",
-        "type": "event-freetier"
-      },
-      {
-        "title": "Lab 4: Scaling",
+        "title": "Lab 3: Run Load Test",
         "filename": "../../scaling/scaling.md",
         "type": "event-freetier"
       },
       {
-        "title": "Lab 5: Observability",
+        "title": "Lab 4: Oracle DB Metrics Exporter",
+        "filename": "../../metricsexporter/metricsexporter.md",
+        "type": "event-freetier"
+      },
+      {
+        "title": "Lab 5: Oracle DB Log Exporter",
+        "filename": "../../logexporter/logexporter.md",
+        "type": "event-freetier"
+      },
+      {
+        "title": "Lab 6: Unified Observability of Microservices and Databases Metrics, Logs, and Tracing in Grafana",
         "filename": "../../observability/observability.md",
         "type": "event-freetier"
       },
       {
-        "title": "Lab 6: Create an APEX app to view and update data",
-        "filename": "../../apex/apex.md",
-        "type": "event-freetier"
-      },
-      {
-        "title": "Lab 7: Transactional tests: compare MongoDB, Postgres, and Kafka to Oracle DB with TEQ/AQ",
-        "filename": "../../transactional/transactional.md",
-        "type": "event-freetier"
-      },
-      {
-        "title": "Lab 8: Tear down",
+        "title": "Lab 7: Tear down",
         "filename": "../../teardown/teardown.md",
         "type": "event-freetier"
       },
