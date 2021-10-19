@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Oracle Integration B2B - Outbound Processing
+=======
+# Oracle Integration B2B - Outbound
+>>>>>>> f88c68fba6ea056f666c43e7583d772a7c256cb3
 
 ## Introduction
 
@@ -31,8 +35,6 @@ Oracle Integration - B2B
 In this lab, you will create a basic integration flow:
 This labs takes the input as XML from a Rest Client . In a real world use case you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
 
-
-*This is the "fold" - below items are collapsed by default*
 
 ## **STEP 1**: Create Connection
 
