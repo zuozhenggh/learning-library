@@ -65,7 +65,7 @@ The following command will set the values of environment variables in `mtdrworks
 `<region-key>.ocir.io/<object-storage-namespace>/<firstname.lastname>/<repo-name>`.
 If the variable is not set or is an empty string, the push will fail (but the docker image will be built).
 
-2. Unzip the wallet.zi under thebackend/target/classws/wallet directory.
+2. Unzip the wallet.zip under the ~/mtdrworkshop/backend/target/classes/wallet directory.
 
 	``` bash
 	<copy>cd ~/mtdrworkshop/backend/target/classes/wallet; unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
@@ -184,7 +184,12 @@ Then click **Create**.
    ![deployment](images/Deplyment.png " ")
 
 7. Configure the Basic info
+<<<<<<< HEAD
+ ![Basic info](images/API-Gateway-basic.png " ")git status
+
+=======
  ![Basic info](images/API-Gateway-basic.png " ")
+>>>>>>> upstream/master
 
 8. Configure CORS policies:
   
