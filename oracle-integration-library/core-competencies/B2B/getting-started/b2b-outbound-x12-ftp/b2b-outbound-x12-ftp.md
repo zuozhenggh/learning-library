@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Oracle Integration B2B - Outbound Processing
-=======
-# Oracle Integration B2B - Outbound
->>>>>>> f88c68fba6ea056f666c43e7583d772a7c256cb3
 
 ## Introduction
 
