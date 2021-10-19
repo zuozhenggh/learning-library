@@ -3,27 +3,27 @@
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
-      "title": "Getting Started",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-    },
-    {
       "title": "Introduction",
       "description": "Introduction to Multitenant Workshop",
       "filename": "./../../intro/intro.md"
     },
     {
-      "title": "Lab 1: Environment Setup (Verify Only)",
+      "title": "Lab 1: Environment Setup",
       "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
-      "title": "Lab 2: Clone, Plug and Drop",
+      "title": "Lab 2: Initialize Environment",
+      "description": "Initialize Environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
+    },
+    {
+      "title": "Lab 3: Clone, Plug and Drop",
       "description": "Clone, Plug and Drop Pluggable Databases",
       "filename": "./../../clone-plug-drop/clone-plug-drop.md"
     },
     {
-      "title": "Lab 3: Application Containers",
+      "title": "Lab 4: Application Containers",
       "description": "Using Application Containers with Multitenant",
       "filename": "./../../app-containers/app-containers.md"
     },

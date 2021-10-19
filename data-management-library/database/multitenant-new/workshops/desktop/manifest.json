@@ -4,8 +4,8 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "About the In-Memory Workshop",
-      "filename": "../../intro/intro.md"
+      "description": "Introduction to Multitenant Workshop",
+      "filename": "./../../intro/intro.md"
     },
     {
       "title": "Get Started with noVNC Remote Desktop",
@@ -18,14 +18,14 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 2: Querying the In-Memory Column Store",
-      "description": "Queries on In-Memory Column Store",
-      "filename": "../../queries/queries.md"
+      "title": "Lab 2: Clone, Plug and Drop",
+      "description": "Clone, Plug and Drop Pluggable Databases",
+      "filename": "./../../clone-plug-drop/clone-plug-drop.md"
     },
     {
-      "title": "Lab 3: Joins and Aggregation",
-      "description": "In-Memory Joins and Aggregation",
-      "filename": "../../joins-aggregations/joins-aggregations.md"
+      "title": "Lab 3: Application Containers",
+      "description": "Using Application Containers with Multitenant",
+      "filename": "./../../app-containers/app-containers.md"
     },
     {
       "title": "Need Help?",
