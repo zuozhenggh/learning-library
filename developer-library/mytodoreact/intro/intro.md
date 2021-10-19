@@ -30,6 +30,6 @@ You may now [proceed to the next tutorial](#next).
 
 ## Acknowledgements
 
-* **Author** - Kuassi Mensah\, Dir\. Product Management\, Java Database Access
-* **Contributors** - Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By Date** \- Anoosha Pilli\, Database Product Management\, April 2021
+* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By Date** - Anoosha Pilli, Database Product Management, April 2021
