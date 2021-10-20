@@ -239,7 +239,7 @@ Close the preview pane by pressing the **X** on the upper right of the screen.
 
     ![ALT text is not available for this image](images/lab05-task02-19.jpg) 
 
-20. Press contract (two diagonally opposing arrows in the upper right of the Properties pane)
+20. Press collapse (two diagonally opposing arrows in the upper right of the Properties pane)
 
     ![ALT text is not available for this image](images/lab05-task02-20.jpg) 
 
@@ -299,7 +299,7 @@ You'll have landed on a page that looks like this. Notice that the job has been 
 
 - Insert new rows
 
-Click on the link for step 2, as shown below.
+Click on the link for step 3, as shown below.
 
    ![ALT text is not available for this image](images/lab05-task03-01.jpg)
 
@@ -429,4 +429,4 @@ In this lab we’ve covered simple to some relatively advanced features of the D
 
 - **Authors** - Jayant Mahto, ADB Product Management
 - **Contributors** - Patrick Wheeler, Mike Matthews, ADB Product Management
-- **Last Updated By/Date** - Jayant Mahto, Brianna Ambler, June 2021
+- **Last Updated By/Date** - Jayant Mahto, Arabella Yao, October 2021

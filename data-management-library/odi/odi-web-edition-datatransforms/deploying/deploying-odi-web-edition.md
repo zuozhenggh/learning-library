@@ -7,7 +7,7 @@ Oracle Data Integrator (ODI) is Oracle's industry-leading, enterprise-class data
 
 ODI Web Edition needs to be deployed from OCI Marketplace before we can use Data Transforms. In this lab we will go through the steps to create an  ODI Web Edition instance.
 
-Estimated Lab Time: 60 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -140,11 +140,7 @@ To complete this lab, you need to have the following:
 
     ![ALT text is not available for this image](images/3018104748.png)
 
-    **Important**: What follows is a two-part deployment process:
-
-    * Deployment of the OCI components. This may take around 10 minutes. Data Transforms is still not ready to use at this stage!
-
-    * Deployment of the ODI components in your Autonomous Database. This may take around 30-40 minutes. 
+    **Important**:  Data Transforms is still not ready to use at this stage. Deployment of the ODI components in your Autonomous Database will take 10-15 minutes. 
 
     Because of the time required to set up Data Transforms completely, this is an ideal time to take a 10 min break from the workshop. We suggest a walk, a nice meal, or perhaps a coffee break. 
 
@@ -166,9 +162,9 @@ To complete this lab, you need to have the following:
 
     - **Starting ODI agents**
 
-  **All the above steps take around 30-40 minutes to finish. You can come back after 30 minutes and check for Data Transforms using direct URL as shown in Step 3. If it is not ready then give it another 10 minutes.**
+  **All the above steps take around 10-15 minutes to finish. You can come back after 15 minutes and check for Data Transforms using direct URL as shown in Step 3. If it is not ready then give it another 5 minutes.**
 
-  **In order to check the progress of the deployment script, one need to login to VNC viewer to the compute instance and check the log file. This is beyond the scope of this workshop. To keep steps simple, we simply wait for 30-40 minutes and launch the Data Transforms tool.** 
+  **In order to check the progress of the deployment script, one need to login to VNC viewer to the compute instance and check the log file. This is beyond the scope of this workshop. To keep steps simple, we simply wait for 10-15 minutes and launch the Data Transforms tool.**
 
 ## Task 3: Launch The Data Transforms Tool
 
@@ -230,4 +226,4 @@ In this section we've covered the following topics:
 
 - **Authors** - Jayant Mahto, ADB Product Management
 - **Contributors** - Patrick Wheeler, Mike Matthews, ADB Product Management
-- **Last Updated By/Date** - Jayant Mahto, Brianna Ambler June 2021
+- **Last Updated By/Date** - Jayant Mahto, Arabella Yao, October 2021
