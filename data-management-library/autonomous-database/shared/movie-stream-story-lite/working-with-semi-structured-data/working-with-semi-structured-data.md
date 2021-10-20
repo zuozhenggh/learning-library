@@ -141,7 +141,7 @@ Although queries on external data will not be as fast as queries on database tab
         m.cast,
         m.crew,
         m.awards
-    FROM t_movie m
+    FROM movie m
     WHERE m.title in ('Rain Man','The Godfather');</copy>
     ```
 
@@ -163,7 +163,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
     <copy>SELECT 
         title, 
         award    
-    FROM t_movie, 
+    FROM movie, 
          JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
     WHERE title IN ('Rain Man','The Godfather');</copy>
     ```
@@ -178,7 +178,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
         year,
         title, 
         award    
-    FROM t_movie, 
+    FROM movie, 
         JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
     WHERE award = 'Academy Award for Best Picture'
     ORDER BY year
@@ -196,7 +196,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
         -- Find movies that won significant awards
         SELECT 
             m.movie_id
-        FROM t_movie m, JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
+        FROM movie m, JSON_TABLE(awards, '$[*]' columns (award path '$')) jt
         WHERE jt.award in ('Academy Award for Best Picture','Academy Award for Best Actor','Academy Award for Best Actress','Academy Award for Best Director')
         ),
     academyMovieSales as (
@@ -235,7 +235,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
         bef.before_count as "before event", 
         aft.after_count as "after event", 
         ROUND((aft.after_count - bef.before_count)/bef.before_count * 100) as  "percent change"
-    FROM after2020Award aft, before2020Award bef, t_movie m
+    FROM after2020Award aft, before2020Award bef, movie m
     WHERE aft.movie_id = bef.movie_id
       AND aft.movie_id = m.movie_id
     ORDER BY "percent change" DESC;</copy>

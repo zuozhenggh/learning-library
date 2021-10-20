@@ -333,7 +333,7 @@ Explore the movie-genre relationship.
 
     ![top genres per movie](images/lab3-q8.png " ")
 
-There were a few changes to this query.  First, there is a suquery that finds the top movies. The second suquery uses that as a source to find rank the movie-genre combinations.  Notice, **RANK** has been updated to include a **PARTITION BY** in order to rank the top genres by movie.  Finally, the query adds a **RATIO_TO_REPORT** in order to easily view that genre's contribution relative to the other top genres.
+There were a few changes to this query.  First, there is a suquery that finds the top movies. The second suquery uses that as a source to find rank the movie-genre combinations.  Notice, **RANK** has been updated to include a **PARTITION BY** in order to rank the top genres by movie.  Finally, the query adds a **RATIO\_TO\_REPORT** in order to easily view that genre's contribution relative to the other top genres.
 
 The result appears to show that - at least for best selling movies - people select the movie regardless of its genre.
 
