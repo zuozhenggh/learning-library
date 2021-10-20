@@ -28,7 +28,7 @@ Native integrations with Oracle Cloud Infrastructure services include Object Sto
 
 The Kafka Connect Harness provides out-of-the-box integrations with hundreds of data sources and sinks, including GoldenGate, Integration Cloud, Database, and compatible third-party offerings.
 
-![Serverless Infrastrucuture](./images/OCI-Stream1.png)
+![Serverless Infrastructure](./images/OCI-Stream1.png)
 
 
 
