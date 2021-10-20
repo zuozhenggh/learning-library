@@ -70,9 +70,7 @@ Although queries on external data will not be as fast as queries on database tab
     ```
     This query returns the following result:
 
-    |COUNT(*)|
-    |---|
-    |3800|
+    ![count of json records](images/json-lab-1.png " ")
 
 2. Go to the SQL Worksheet Navigator panel and click the arrow to the left of the name, **JSON\_MOVIE\_DATA\_EXT**, to show the list of columns in our table.  Notice that there is a single column called **DOC** that contains the JSON data:
 
@@ -84,17 +82,8 @@ Although queries on external data will not be as fast as queries on database tab
     <copy>SELECT * FROM json_movie_data_ext WHERE rownum < 10;</copy>
     ```
 
-    |DOC|
-    |---|
-    |{  "movie\_id" : 1, "sku" : "COO3790", "list\_price" : 3.99, "wiki\_article" : "'Gator\_Bait\_II:\_Cajun\_J...|
-    |{  "movie\_id" : 10, "sku" : "WSD96478", "list\_price" : 1.99, "wiki\_article" : "101\_Dalmatians\_(1996\_...|
-    |{  "movie\_id" : 17, "sku" : "KLI27554", "list\_price" : 0.0, "wiki\_article" : "127\_Hours", "title" : ...|
-    |{  "movie\_id" : 24, "sku" : "FNF32465", "list\_price" : 2.99, "wiki\_article" : "1945\_(2017\_film)", "t...|
-    |{  "movie\_id" : 32, "sku" : "BYH40340", "list\_price" : 4.99, "wiki\_article" : "2012:\_Supernova", "ti...|
-    |{  "movie\_id" : 40, "sku" : "NTV55017", "list\_price" : 1.99, "wiki\_article" : "2BR02B:\_To\_Be\_or\_Naug...|
-    |{  "movie\_id" : 47, "sku" : "QYJ8171", "list\_price" : 4.99, "wiki\_article" : "30\_Beats", "title" : "...|
-    |{  "movie\_id" : 55, "sku" : "ETA20766", "list\_price" : 1.99, "wiki\_article" : "3\_Backyards", "title"...|
-    |{  "movie\_id" : 62, "sku" : "FMX14446", "list\_price" : 2.99, "wiki\_article" : "48\_Shades", "title" :...|
+    Result:
+    ![list of json docs](images/json-lab-2.png " ")
     
 
     As you can see, the data is shown in its native JSON format; that is, there are no columns in the table for each identifier (movie_id, sku, list price, and more). So how can we query this table if there is only one column?
@@ -115,19 +104,8 @@ Although queries on external data will not be as fast as queries on database tab
     ```
     It should return a result set that looks similar to this:
 
-    |MOVIE_ID|TITLE|BUDGET|RUNTIME|
-    |---|---|---|---|
-    |1|'Gator Bait II: Cajun Justice|null|95|
-    |10|101 Dalmatians|+54000000|+103|
-    |17|127 Hours|+18000000|+94|
-    |24|1945|null|+91|
-    |32|2012: Supernova|200000|+84|
-    |40|2BR02B: To Be or Naught to Be|null|18|
-    |47|30 Beats|1000000|88|
-    |55|3 Backyards|null|88|
-    |62|48 Shades|null|96|
+    ![simple json query result](images/json-lab-3.png " ")
     
-
     > **Note:** Each column has three components:
 
     - the name of the source table - **json\_movie\_data\_ext** which is referenced using the letter **m**
@@ -150,46 +128,10 @@ Although queries on external data will not be as fast as queries on database tab
     ```
 
     This produces the following - and not surprising - result:
-    |TITLE|SALES|
-    |---|---|
-    |Aladdin|825080|
-    |Captain Marvel|778566|
-    |Aquaman|778151|
-    |Spider-Man: Far from Home|666140|
-    |The Lion King|665654|
-    |Avengers: Endgame|616594|
-    |Avatar|456188|
-    |Avengers: Infinity War|431297|
-    |Frozen|372896|
-    |The Godfather|371966|
 
-3. We'll query movies frequently - it will be useful to store the data in Autonomous Data Warehouse. Create a table containing the movie data.  Some of the fields will still be in JSON format - specifically those fields containing arrays.  For those fields, add a constraint that ensures the columns contain valid JSON:
+    ![top movies](images/json-lab-4.png " ")
 
-    ```
-    <copy>CREATE table t_movie AS
-    SELECT
-        CAST(m.doc.movie_id as number) as movie_id,
-        CAST(m.doc.title as varchar2(200 byte)) as title,   
-        CAST(m.doc.budget as number) as budget,
-        CAST(m.doc.gross as number) gross,
-        CAST(m.doc.genre as varchar2(4000)) as genres,
-        CAST(m.doc.year as number) as year,
-        TO_DATE(m.doc.opening_date, 'YYYY-MM-DD') as opening_date,
-        CAST(m.doc.views as number) as views,
-        CAST(m.doc.cast as varchar2(4000 byte)) as cast,
-        CAST(m.doc.crew as varchar2(4000 byte)) as crew,
-        CAST(m.doc.awards as varchar2(4000 byte)) as awards,
-        CAST(m.doc.nominations as varchar2(4000 byte)) as nominations
-    FROM json_movie_data_ext m;
-            
-    ALTER TABLE t_movie add CONSTRAINT t_movie_cast_json CHECK (cast IS JSON);
-    ALTER TABLE t_movie add CONSTRAINT t_movie_genre_json CHECK (genres IS JSON);
-    ALTER TABLE t_movie add CONSTRAINT t_movie_crew_json CHECK (crew IS JSON);
-    ALTER TABLE t_movie add CONSTRAINT t_movie_awards_json CHECK (awards IS JSON);
-    ALTER TABLE t_movie add CONSTRAINT t_movie_nominations_json CHECK (nominations IS JSON);</copy>
-    ```
-
-3. Some attributes in our JSON data set contain multiple entries. For example, cast has a list of names and nominations a list of nominated awards. Take a look at the cast, crew,  names of the crew and awards for a couple of popular movies:
+3. As part of our data loading, we loaded this external data into a table called **MOVIE**. This table created simple columns for the scalar fields - like title. But, some attributes in our JSON data set contain multiple entries. For example, cast has a list of names and nominations a list of nominated awards. Take a look at the cast, crew, names of the crew and awards for a couple of popular movies:
 
     ```
     <copy>SELECT
@@ -204,10 +146,8 @@ Although queries on external data will not be as fast as queries on database tab
     ```
 
     It will return:
-    |MOVIE_ID|TITLE|BUDGET|CAST|CREW|AWARDS|
-    |---|---|---|---|---|---|
-    |2472|Rain Man|25|["Dustin Hoffman","Tom Cruise","Valeria Golino","Gerald R. Molen","Jack Murdock","Michael D. Roberts","Bonnie Hunt","Barry Levinson","Beth Grant","Lucinda Jenney","Jake Hoffman","Chris Mulkey","Ray Baker"]|[{"job":"producer","names":["Mark Johnson"]},{"job":"director","names":["Barry Levinson"]},{"job":"screenwriter","names":["Barry Morrow","Ronald Bass"]}]|["Academy Award for Best Picture","Golden Bear","Academy Award for Best Director","Academy Award for Best Actor","Academy Award for Best Writing, Original Screenplay"]|
-    |3244|The Godfather|6000000|["Marlon Brando","Al Pacino","James Caan","Richard S. Castellano","Robert Duvall","Sterling Hayden","John Cazale","Diane Keaton","Talia Shire","Abe Vigoda","Al Lettieri","Gianni Russo","Corrado Gaipa","Al Martino","John Marley","Johnny Martino","Lenny Montana","Richard Conte","Alex Rocco","Julie Gregg","Simonetta Stefanelli","Saro Urzì","Angelo Infanti","Franco Citti","Joe Spinell","Morgana King","Richard Bright","Rudy Bond","Vito Scotti","Carmine Coppola","Roman Coppola","Sofia Coppola","Ron Gilbert","Tony King","Raymond Martino","Nick Vallelonga","Tony Giorgio","Victor Rendina"]|[{"job":"producer","names":["Albert S. Ruddy"]},{"job":"executive producer","names":["Robert Evans"]},{"job":"director","names":["Francis Ford Coppola"]},{"job":"screenwriter","names":["Mario Puzo","Francis Ford Coppola"]}]|["Academy Award for Best Picture","National Film Registry","Academy Award for Best Actor","Academy Award for Best Writing, Adapted Screenplay","National Board of Review: Top Ten Films"]|
+
+    ![query complex movie table](images/json-lab-5.png " ")
 
 This is good - but the arrays are still part of a single record.  What if you want to ask questions that need to look at the values within the arrays?  
 
@@ -228,18 +168,8 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
     WHERE title IN ('Rain Man','The Godfather');</copy>
     ```
     You can now see the movie and its award in tabular format:
-    |TITLE|AWARD|
-    |---|---|
-    |Rain Man|Academy Award for Best Picture|
-    |Rain Man|Golden Bear|
-    |Rain Man|Academy Award for Best Director|
-    |Rain Man|Academy Award for Best Actor|
-    |Rain Man|Academy Award for Best Writing, Original Screenplay|
-    |The Godfather|Academy Award for Best Picture|
-    |The Godfather|National Film Registry|
-    |The Godfather|Academy Award for Best Actor|
-    |The Godfather|Academy Award for Best Writing, Adapted Screenplay|
-    |The Godfather|National Board of Review: Top Ten Films|
+
+    ![query complex movie table](images/json-lab-6.png " ")
 
 2. Now that we have rows for each value of the array, it is straightforward to find all Academy Award winners for Best Picture:
 
@@ -257,18 +187,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
     Below are the oldest award winners that MovieStream offers:
 
-    |YEAR|TITLE|AWARD|
-    |---|---|---|
-    |1950|All About Eve|Academy Award for Best Picture|
-    |1951|An American in Paris|Academy Award for Best Picture|
-    |1952|The Greatest Show on Earth|Academy Award for Best Picture|
-    |1953|From Here to Eternity|Academy Award for Best Picture|
-    |1956|Around the World in 80 Days|Academy Award for Best Picture|
-    |1957|The Bridge on the River Kwai|Academy Award for Best Picture|
-    |1958|Gigi|Academy Award for Best Picture|
-    |1959|Ben-Hur|Academy Award for Best Picture|
-    |1960|The Apartment|Academy Award for Best Picture|
-    |1961|West Side Story|Academy Award for Best Picture|
+    ![first 10 academy award winners](images/json-lab-7.png " ")
 
 3. What were sales before and after the Academy Awards?  Let's see the results for past winners of the major awards.
 
@@ -421,4 +340,4 @@ Please *proceed to the next lab*
 
 - **Author** - Keith Laker, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Keith Laker, August 3, 2021
+- **Last Updated By/Date** - Keith Laker, Marty Gubar October 20, 2021
