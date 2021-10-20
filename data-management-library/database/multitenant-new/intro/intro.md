@@ -7,7 +7,7 @@ Many PDBs can be plugged into a single Multitenant Container Database (CDB). Fro
 
 Enormous gains in technical efficiency are enabled by a shared technical infrastructure. There’s a single set of background processes and a single, global memory area, the SGA, shared by all the PDBs. The result is that with this architecture we can consolidate more applications per server.
 
-Estimated Workshop Time: 4 hours
+*Estimated Workshop Time*: 4 hours
 
 Watch the video below for an overview of Oracle Multitenant.
 

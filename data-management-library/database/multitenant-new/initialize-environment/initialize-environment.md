@@ -16,7 +16,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-**NOTE:** When doing Copy/Paste using the convenient *Copy* function used throughout the guide, you must hit the *ENTER* key after the paste. Otherwise the last line will still be in the buffer until you hit *ENTER*!
+**NOTE:** When doing Copy/Paste using the convenient *Copy* function used throughout the guide, you must hit the *ENTER* key after the pasting. Otherwise the last line will still be in the buffer until you hit *ENTER*!
 
 ## Task 1: Validate That Required Processes are Up and Running.
 
@@ -67,7 +67,8 @@ This lab assumes you have:
     <copy>
     cd ~
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/DI8FDu8opoqAK7MoplCLgwUiVsf8uyNNbcLkaytAdJyGSMmgn0Jw14OMtG3vNLI-/n/c4u04/b/labfiles/o/labs-novnc.zip
-    unzip -o labs-novnc.zip
+    unzip -qo labs-novnc.zip
+    rm -f labs-novnc.zip
     cd labs/multitenant
     </copy>
     ```

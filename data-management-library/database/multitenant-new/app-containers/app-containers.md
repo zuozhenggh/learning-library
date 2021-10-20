@@ -10,41 +10,18 @@ Estimated Time: 1 hour
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host using SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Clone, Plug and Drop
 
-## Task 0: Connect to your instance and log in
-
-This Lab assumes that you have already Initialized your environment as instructed in "*Lab: Clone, Plug and Drop*". If you haven't please return to that lab and execute "*Step 0*" at the minimum.
-
-1. If you've disconnected from the session you established while running the previous lab, please reconnect to your instance as user "*opc*"
-
-    ```
-    ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-    ```
-
-2. Then, login using the following commands:
-    ```
-    <copy>
-    sudo su - oracle
-    cd /home/oracle/labs/multitenant
-    </copy>
-    ```
-
-    ```
-    <copy>. oraenv</copy>
-    CDB1
-    ```
+**NOTE:** When doing Copy/Paste using the convenient *Copy* function used throughout the guide, you must hit the *ENTER* key after the pasting. Otherwise the last line will still be in the buffer until you hit *ENTER*!
 
 ## Task 1: Instant SaaS
 This section shows how Multitenant with Application Containers provides an instant SaaS architecture for an application formerly architected for standalone deployment.
 
 The tasks you will do in this step are:
-- Setup Application Root - wmStore_Master
+- Setup Application Root - `wmStore_Master`
 - Install v1 of Application wmStore in Application Root
 - Create and sync Application Seed and provision Application PDBs for four franchises: Tulsa, California, Tahoe, NYC
 - Populate Application Tenant PDBs with demo data.
@@ -325,9 +302,7 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
     <copy>@Franchise_Data_Lab1</copy>
     ```
 
-    ![](./images/task1.7-createfranchise1.png " ")
-
-    ![](./images/task1.7-createfranchise2.png " ")
+    ![](./images/task1.7-createfranchise.png " ")
 
 ## Task 2: PDB exploration
 In this section you will take a brief tour of the newly created SaaS estate.
@@ -455,9 +430,7 @@ The tasks you will do in this step are:
     </copy>
     ```
 
-    ![](./images/task2.5-orders1.png " ")
-
-    ![](./images/task2.5-orders2.png " ")
+    ![](./images/task2.5-orders.png " ")
 
 In this section you have observed how each application PDB has its own data through queries directly against each application PDB.  In an upcoming lab, you will learn how to run queries from the Application Root across multiple Application Tenant PDBs.
 
@@ -1395,6 +1368,7 @@ The tasks you will do in this step are:
     select Row_GUID "Origin Con_ID"
     ,      Name     "Product"
     from wm_Products
+    order by 1
     ;
     </copy>
     ```
@@ -1520,9 +1494,7 @@ The tasks you will do in this step are:
     <copy>alter pluggable database application wmStore end patch;</copy>
     ```
 
-    ![](./images/task9.1-createpatch1.png " ")
-
-    ![](./images/task9.1-createpatch2.png " ")
+    ![](./images/task9.1-createpatch.png " ")
 
 2. Apply the patch to some but not all databases.
 
@@ -1953,10 +1925,7 @@ The tasks you will do in this step are:
     </copy>
     ```
 
-    ![](./images/task12.3-terminstall1.png " ")
-
-    ![](./images/task12.3-terminstall2.png " ")
-
+    ![](./images/task12.3-terminstall.png " ")
 
 4. Sync the Application databases to install 1.0.
 
@@ -1988,9 +1957,7 @@ The tasks you will do in this step are:
     <copy>@Terminal_Data_Lab12</copy>
     ```
 
-    ![](./images/task12.5.1-dataload1.png " ")
-
-    ![](./images/task12.5.1-dataload2.png " ")
+    ![](./images/task12.5.1-dataload.png " ")
 
 6. Review the query results utilizing the Container Map: a "CONTAINERS" clause is not needed in the query, although it still fetches results from each Application PDB.
 
@@ -2019,4 +1986,4 @@ The tasks you will do in this step are:
 - **Author** - Patrick Wheeler, VP, Multitenant Product Management
 - **Adapted to Cloud by** -  David Start, OSPA
 - **Contributors** -  David Start, Anoosha Pilli, Rene Fontcha, Joseph Bernens
-- **Last Updated By/Date** - Joseph Bernens, Principal Solutions Engineer, NA Technology / September 2021
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

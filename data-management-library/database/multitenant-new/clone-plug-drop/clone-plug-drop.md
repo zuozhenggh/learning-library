@@ -11,53 +11,14 @@ Estimated Time: 1 hour
 
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host using SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free Tier* and *Paid Tenancies* only)
     - Lab: Prepare Setup (*Free Tier* and *Paid Tenancies* only)
     - Lab: Environment Setup
 
-
-## Task 0: Initialize environment
-Proceed as indicated below to Initialize your workshop instance prior to executing any subsequent step or lab.
-
-Refer to *Lab Environment Setup* for the detailed instructions relevant to your SSH client type (such as Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-
-1. First login as “*opc*” using your SSH Private Key
-
-2.  Download and execute pre-labs init scripts.
-
-    ```
-    <copy>
-    cd /tmp/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/agZ9XqafKHNCN3rpIegRlFFFJXe6YRPMqO7uHsO49vnLgm_3o0H_I_XTemvaAEXu/n/natdsecurity/b/labs-files/o/db-multitenant-prelab-init.zip
-    unzip db-multitenant-prelab-init.zip -d bootstrap
-    cd bootstrap; chmod +x *.sh
-    sudo ./db19-prelab-init.sh
-    </copy>
-    ```
-
-3.  Sudo to “*oracle*” user, start the listeners and restart the two container databases.
-
-    ```
-    <copy>
-    sudo su - oracle
-    cd /tmp/bootstrap
-    lsnrctl start LISTCDB1
-    lsnrctl start LISTCDB2
-    ./stop_all.sh
-    ./start_all.sh
-    lsnrctl status LISTCDB1
-    lsnrctl status LISTCDB2
-    cd
-
-    </copy>
-    ```
+**NOTE:** When doing Copy/Paste using the convenient *Copy* function used throughout the guide, you must hit the *ENTER* key after the pasting. Otherwise the last line will still be in the buffer until you hit *ENTER*!
 
 ## Task 1: Log in and create PDB
-In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Command Line (SQLcl).  Oracle **SQLcl** is the modern, command line interface to the database. **SQLcl** has many key features that add to the value of the utility, including command history, in-line editing, auto-complete using the TAB key and more. You can learn more about **SQLcl** [at the Oracl SQLcl website](https://www.oracle.com/database/technologies/appdev/sqlcl.html).
+In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Command Line (SQLcl).  Oracle **SQLcl** is the modern, command line interface to the database. **SQLcl** has many key features that add to the value of the utility, including command history, in-line editing, auto-complete using the TAB key and more. You can learn more about **SQLcl** [at the Oracle SQLcl website](https://www.oracle.com/database/technologies/appdev/sqlcl.html).
 
 In this first task, you will create and explore a new pluggable database **PDB2** in the container database **CDB1**
 
@@ -90,9 +51,7 @@ In this first task, you will create and explore a new pluggable database **PDB2*
     </copy>
     ```
 
-
     ![](./images/task1.2-connectcdb1.png " ")
-
 
 3. Create a script to check to see who you are connected as. At any point in the lab you can run this script to see who or where you are connected. We'll save this script for future use and call it "whoami.sql".
 
@@ -223,13 +182,14 @@ This lab covers the basics of how to clone a Pluggable Database (PDB).
 The task you will do in this step is:
 - Clone a pluggable database **PDB2** into **PDB3**
 
-If you're not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
+    If you're not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
     <copy>sql /nolog
     set sqlformat ANSICONSOLE
     </copy>
     ```
+
 1. Connect to the container **CDB1**.
 
     ```
@@ -294,7 +254,7 @@ This section reviews how to unplug a PDB from its container database (CDB) and s
 The task you will do in this step is:
 - Unplug **PDB3** from **CDB1**
 
-If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
+    If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
     <copy>sql /nolog
@@ -322,7 +282,7 @@ If you are not already running SQLcl, then launch SQLcl and set the formatting t
     <copy>
     alter pluggable database PDB3
     unplug into
-    '/u01/app/oracle/oradata/CDB1/pdb3.xml';
+    '/opt/oracle/oradata/CDB1/pdb3.xml';
     show pdbs
     </copy>
     ```
@@ -370,7 +330,7 @@ If you are not already running SQLcl, then launch SQLcl and set the formatting t
 5. Look at the XML file for the pluggable database **PDB3**.  Take some time to review the information that is contained in a PDB manifest.
 
     ```
-    <copy>host cat /u01/app/oracle/oradata/CDB1/pdb3.xml</copy>
+    <copy>host cat /opt/oracle/oradata/CDB1/pdb3.xml</copy>
     ```
 
     ![](./images/task3.5-catxmlfile.png " ")
@@ -381,7 +341,7 @@ This section looks at how to plug in a PDB.
 The task you will do in this step is:
 - Plug the previously unplugged **PDB3** into **CDB2**
 
-If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
+    If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
     <copy>sql /nolog
@@ -411,7 +371,7 @@ If you are not already running SQLcl, then launch SQLcl and set the formatting t
     begin
       if not
         Sys.DBMS_PDB.Check_Plug_Compatibility
-        ('/u01/app/oracle/oradata/CDB1/pdb3.xml')
+        ('/opt/oracle/oradata/CDB1/pdb3.xml')
       then
         Raise_Application_Error(-20000, 'Incompatible');
       end if;
@@ -427,7 +387,7 @@ If you are not already running SQLcl, then launch SQLcl and set the formatting t
     ```
     <copy>
     create pluggable database PDB3
-    using '/u01/app/oracle/oradata/CDB1/pdb3.xml'
+    using '/opt/oracle/oradata/CDB1/pdb3.xml'
     move;
 
     show pdbs
@@ -490,7 +450,7 @@ This section looks at how to drop a pluggable database.
 The task you will do in this step is:
 - Drop **PDB3** from **CDB2**
 
-If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
+    If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
     <copy>sql /nolog
@@ -532,7 +492,7 @@ The tasks you will do in this step are:
 - Create a gold copy of **PDB2** in **CDB1** as **GOLDPDB**
 - Clone **GOLDPDB** into **COPYPDB1** and **COPYPDB2** in **CDB2**
 
-If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
+    If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
     <copy>sql /nolog
@@ -594,7 +554,7 @@ If you are not already running SQLcl, then launch SQLcl and set the formatting t
 
     ```
     <copy>alter pluggable database GOLDPDB
-    unplug into '/u01/app/oracle/oradata/CDB1/goldpdb.xml';</copy>
+    unplug into '/opt/oracle/oradata/CDB1/goldpdb.xml';</copy>
     ```
 
     ```
@@ -626,7 +586,7 @@ If you are not already running SQLcl, then launch SQLcl and set the formatting t
     begin
       if not
         Sys.DBMS_PDB.Check_Plug_Compatibility
-    ('/u01/app/oracle/oradata/CDB1/goldpdb.xml')
+    ('/opt/oracle/oradata/CDB1/goldpdb.xml')
       then
         Raise_Application_Error(-20000, 'Incompatible');
       end if;
@@ -642,7 +602,7 @@ If you are not already running SQLcl, then launch SQLcl and set the formatting t
     ```
     <copy>
     create pluggable database COPYPDB1 as clone
-    using '/u01/app/oracle/oradata/CDB1/goldpdb.xml'
+    using '/opt/oracle/oradata/CDB1/goldpdb.xml'
     storage (maxsize unlimited max_shared_temp_size unlimited)
     copy;
     </copy>
@@ -659,7 +619,7 @@ If you are not already running SQLcl, then launch SQLcl and set the formatting t
     ```
     <copy>
     create pluggable database COPYPDB2 as clone
-    using '/u01/app/oracle/oradata/CDB1/goldpdb.xml'
+    using '/opt/oracle/oradata/CDB1/goldpdb.xml'
     storage (maxsize unlimited max_shared_temp_size unlimited)
     copy;
     </copy>
@@ -706,7 +666,7 @@ What you will do in this task:
 
 [](youtube:djp-ogM71oE)
 
-If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
+    If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
     <copy>sql /nolog
@@ -768,19 +728,7 @@ If you are not already running SQLcl, then launch SQLcl and set the formatting t
 
     ![](./images/task7.3-soetable.png " ")
 
- 4. Open a new terminal window, login into your instance, sudo to the oracle user, and execute write-load.sh. Leave this window open and running throughout for the rest of this lab.
-
-    ```
-    <copy>cd .ssh</copy>
-    ```
-
-    ```
-    <copy>ssh -i ~/.ssh/sshkeyname opc@Your Compute Instance Public IP Address</copy>
-    ```
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
+ 4. Open a new terminal window or tab within your remote desktop session, then navigate to */home/oracle/labs/multitenant* and execute *write-load.sh*. Keep this window open and running throughout for the rest of this lab.
 
     ```
     <copy>cd /home/oracle/labs/multitenant</copy>
@@ -861,10 +809,10 @@ This section looks at how to hot clone a pluggable database, open it for read on
 
 The tasks you will do in this step are:
 - Leverage the **OE** pluggable database from the previous step with the load still running against it.
-- Create a hot clone **OE_REFRESH**` in the container database **CDB2** from the pluggable database **OE**
-- Refresh the **OE_REFRESH**` pluggable database.
+- Create a hot clone **OE_REFRESH** in the container database **CDB2** from the pluggable database **OE**
+- Refresh the **OE_REFRESH** pluggable database.
 
-If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
+    If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
     <copy>sql /nolog
@@ -950,10 +898,10 @@ A snapshot copy reduces the time required to create the clone because it does no
 
 The two main requirements for snapshot copy to work on our Linux filesystem are:
 
-  - CLONEDB initialization parameter should be set to TRUE.
-  - The source PDB is in Read Only mode.
+- CLONEDB initialization parameter should be set to TRUE.
+- The source PDB is in Read Only mode.
 
-Refreshable PDBs need to be in **read only** mode in order to refresh. You can quickly create a Snapshot Clone PDB from the refreshable PDB and use it in reporting, test and dev environments. In our exercise, we will create a **Snapshot Copy PDB** from the read only PDB **OE_REFRESH**.
+    Refreshable PDBs need to be in **read only** mode in order to refresh. You can quickly create a Snapshot Clone PDB from the refreshable PDB and use it in reporting, test and dev environments. In our exercise, we will create a **Snapshot Copy PDB** from the read only PDB **OE_REFRESH**.
 
 1. If you're already running SQLcl, then **exit** from SQLcl and set oraenv to CDB2.
 
@@ -963,6 +911,7 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
     </copy>
     CDB2
     ```
+
     ![](./images/task9.1-setenvcdb2.png " ")
 
 2. Launch SQLcl, connect to CDB2 as SYSDBA. Set the SQLcl formatting to make the on-screen output easier to read. Run the "whoami" script to verify the CDB connection.
@@ -973,6 +922,7 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
     @whoami
     </copy>
     ```
+
     ![](./images/task9.2-connectcdb2.png " ")
 
 3. Show the status of the PDBs and also verify the setting of the CLONEDB initialization parameter.
@@ -997,6 +947,7 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
     show parameter CLONEDB
     </copy>
     ```
+
     ![](./images/task9.4-restartcdb2.png " ")
 
 5. Snapshot Copy PDBs must be created from a read-only source, so open PDB **OE\_REFRESH** read only and create a Snapshot Copy PDB named **OE_SNAP**.  
@@ -1015,49 +966,51 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
 
 6. A PDB Snapshot Copy is a "thin" clone that reads from the source PDB but any DML changes will be persisted in the snapshot copy PDB. Insert a row into the **OE_SNAP** database.
 
-   ```
-   <copy>
-   connect soe/soe@localhost:1522/oe_snap
-   select count(*) from sale_orders;
-   insert into sale_orders VALUES (1, SYSDATE, 30);
-   commit;
-   select count(*) from sale_orders;
-   </copy>
-   ```
-   ![](./images/task9.6-dmlpdbsnap.png " ")
+    ```
+    <copy>
+    connect soe/soe@localhost:1522/oe_snap
+    select count(*) from sale_orders;
+    insert into sale_orders VALUES (1, SYSDATE, 30);
+    commit;
+    select count(*) from sale_orders;
+    </copy>
+    ```
+
+    ![](./images/task9.6-dmlpdbsnap.png " ")
 
 7. Now generate a couple of OS commands to show that the **OE\_SNAP** PDB uses a fraction of the space compared to the source **OE_REFRESH** database.
 
-   ```
-   <copy>
-   connect sys/Ora_DB4U@//localhost:1522/cdb2 as sysdba
-   show pdbs
-   select distinct 'host du -h '||SUBSTR(NAME,1,INSTR(NAME,'datafile')+8 ) du_output
+    ```
+    <copy>
+    connect sys/Ora_DB4U@//localhost:1522/cdb2 as sysdba
+    show pdbs
+    select distinct 'host du -h '||SUBSTR(NAME,1,INSTR(NAME,'datafile')+8 ) du_output
      from v$datafile  
      where con_id in
      (select con_id from v$pdbs where name in ('OE_REFRESH','OE_SNAP'));
-   </copy>
-   ```
+    </copy>
+    ```
 
-   ![](./images/task9.7-genhostdu.png " ")
+    ![](./images/task9.7-genhostdu.png " ")
 
 8. Copy and paste each of the query output lines separately, to see the difference in disk space consumed between the "thin" PDB Snapshot Copy and the source PDB.
 
-   ![](./images/task9.8-duoutput.png " ")
+    ![](./images/task9.8-duoutput.png " ")
 
 9. Close and remove the **OE\_REFRESH** and **OE_SNAP** pluggable databases.
 
-   ```
-   <copy>
-   show pdbs
-   alter pluggable database oe_snap close;
-   drop pluggable database oe_snap including datafiles;
-   alter pluggable database oe_refresh close;
-   drop pluggable database oe_refresh including datafiles;
-   show pdbs
-   </copy>
-   ```
-   ![](./images/task9.9-pdbcleanup.png " ")
+    ```
+    <copy>
+    show pdbs
+    alter pluggable database oe_snap close;
+    drop pluggable database oe_snap including datafiles;
+    alter pluggable database oe_refresh close;
+    drop pluggable database oe_refresh including datafiles;
+    show pdbs
+    </copy>
+    ```
+
+    ![](./images/task9.9-pdbcleanup.png " ")
 
 
 
@@ -1082,7 +1035,7 @@ The tasks you will do in this step are:
     ```
 
     ```
-    <copy>alter system set local_listener='LISTCDB1' scope=both;</copy>
+    <copy>alter system set local_listener='LISTENER_CDB1' scope=both;</copy>
     ```
 
     ![](./images/task10.1-changelistener.png " ")
@@ -1117,30 +1070,30 @@ The tasks you will do in this step are:
 
     The load program isn't needed anymore, so CTRL-C out of that program and exit from the second terminal window.
 
-5. If you are going to continue to use this environment then you will need to change **CDB2** back to use **LISTCDB2**.
+5. If you are going to continue to use this environment then you will need to change **CDB2** back to use **LISTENER_CDB2**.
 
     ```
     <copy>conn sys/Ora_DB4U@localhost:1521/cdb2 as sysdba</copy>
     ```
 
     ```
-    <copy>alter system set local_listener='LISTCDB2' scope=both;</copy>
+    <copy>alter system set local_listener='LISTENER_CDB2' scope=both;</copy>
     ```
 
     ![](./images/task10.5-resetlistener.png " ")
 
-## Lab cleanup
+## Task 11: Lab cleanup
 
 1. Exit from the SQL command prompt and reset the container databases back to their original ports. If any errors about dropping databases appear, you can ignore them.
 
     ```
-    <copy>exit
-    ./resetCDB.sh</copy>
+    <copy>
+    exit
+    ./resetCDB.sh
+    </copy>
     ```
 
-    ![](./images/labcleanup1.png " ")
-
-    ![](./images/labcleanup2.png " ")
+    ![](./images/task11.1-labcleanup.png " ")
 
 Now you've had a chance to try out the Multitenant option. You were able to create, clone, plug and unplug a pluggable database. You were then able to accomplish some advanced tasks, such as hot cloning and PDB relocation, that you could leverage to more easily maintain a large multitenant environment.
 
@@ -1150,4 +1103,4 @@ Please *proceed to the next lab*.
 
 - **Author** - Patrick Wheeler, VP, Multitenant Product Management
 - **Contributors** -  Joseph Bernens, David Start, Anoosha Pilli, Brian McGraw, Quintin Hill, Rene Fontcha
-- **Last Updated By/Date** - Joseph Bernens, Principal Solutions Engineer, NA Technology/August 2021
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021
