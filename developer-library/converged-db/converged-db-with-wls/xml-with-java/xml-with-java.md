@@ -13,14 +13,12 @@ The basic building block of an XML document is an element, defined by tags. An e
 ### Objectives
 - Create table for XML data type
 - Walk through the SQL queries having built-in functions for XML datatype
-- Showcase creation of REST end-points for XML data retrived
+- Showcase creation of REST end-points for XML data retrieved
 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
