@@ -56,9 +56,7 @@ In addition to that, **a customer churning today probably made that decision a w
 
     You can access Oracle Machine Learning notebooks from Autonomous Database.
 
-    In "Lab 2: Quick Tour of ADW", under "Task 1: Familiarizing with the Autonomous Database console", at Step 6 you got access to the **Development page.** In there you can see a "card" to open **Oracle Machine Learning (OML) Notebooks.**
-
-    As a quick recap, from the tab on your browser with your Oracle Autonomous Data Warehouse (ADW) instance, click **Service Console.**
+    From the tab on your browser with your Oracle Autonomous Data Warehouse (ADW) instance, click **Service Console.**
 
     ![Service Console](images/adw-moviestream-main-short.png "")
 
@@ -71,7 +69,7 @@ In addition to that, **a customer churning today probably made that decision a w
     ![Oracle Machine Learning Notebooks option in Development tab in Oracle ADW](images/adw-service-console-oml-card.png " ")
 
     <if type="livelabs">Sign in with ``MOVIESTREAM`` using the password you created in "Lab 3: Create a Database User", Task 1, Step 5. </if><if type="freetier">Enter your Autonomous Database user credentials and click **Sign in.**
-    
+
     Please note that your user has to have the proper credentials for Oracle Machine Learning, described under "**Lab 3:** Create a Database user", at "**Task 2:** Update the user's profile to grant additional roles."</if>
 
     ![Oracle Machine Learning Notebooks sign-in page](images/oml-login-page.png " ")
@@ -80,7 +78,7 @@ In addition to that, **a customer churning today probably made that decision a w
 
     ![Churn AutoML Step 1 home menu](images/oml-churn-automl-home-menu.png " ")
 
-2. Build a machine learning model to predict churn
+2. Build a machine learning model to predict churn.
 
    In this step, you will use the Oracle Machine Learning (OML) AutoML UI provided with your Autonomous Database and its features to identify customers with a higher likelihood of churning from **Oracle MovieStream** streaming services to a different movie streaming company.
 
@@ -108,7 +106,7 @@ In addition to that, **a customer churning today probably made that decision a w
 
 3. Define the Prediction Target, Case ID and Experiment Settings.
 
-    Back to the top of the **Experiments** page, at the right of the screen you will find two pull-down menus. We need to use those to define what we want to predict, in the **Predict** field. Click the down-arrow and search for `TARGET`. Alternatively you can start typing in the `Search` box that appears.
+    Back to the top of the **Experiments** page, at the right of the screen you will find two pull-down menus. We need to use those to define what we want to predict, in the **Predict** field. Click the down-arrow and search for the target attribute named `IS_CHURNER`. Alternatively you can start typing in the `Search` box that appears.
 
     ![Churn AutoML Step 3 target search](images/oml-churn-automl-target-search.png " ")
 
@@ -131,7 +129,7 @@ In addition to that, **a customer churning today probably made that decision a w
 ## Task 2: Run the Experiment and explore the results.
 
 1. Start the Experiment.
-   
+
    At the very top right of the screen, you will find the **Start** button. We will click it, and from the sub-menu that appears, we will select **Faster Results**. With that selection, OML AutoML UI will search for models on a reduced hyperparameter search space, to speed up the process.
 
     ![Churn AutoML Task 2 Step 1 start experiment](images/oml-churn-automl-start-experiment.png " ")
@@ -144,7 +142,7 @@ In addition to that, **a customer churning today probably made that decision a w
 
     ![Churn AutoML Task 2 Step 1 open progress](images/oml-churn-automl-open-progress.png " ")
 
-2. Review the asynchronous process
+2. Review the asynchronous process.
    This process is completely **asynchronous**, so you can go back to the **Experiments** menu at any time by clicking on the blue button on the top left.
 
     ![Churn AutoML Task 2 Step 2 back to Experiments](images/oml-churn-automl-back-to-experiments.png " ")
@@ -157,7 +155,7 @@ In addition to that, **a customer churning today probably made that decision a w
 
     The performance of OML AutoML UI depends a lot of the type of environment your Autonomous Database is running on. As explained in [this blog post](https://blogs.oracle.com/machinelearning/oml-automl-ui-4-things-you-can-do-that-affect-performance), several components may affect the performance, among the most important ones is the number of CPUs that can be allocated to your Autonomous Database instance, and whether you can enable auto scaling on Autonomous Database.  
 
-3. Check the results
+3. Check the results.
    Once the process completes, you will note that the **running icon** on the top right changes to indicate it is **Completed**. The **Balanced Accuracy** chart will show the increased accuracy over time as the models were tested, and the **Leader Board** will present the different algorithms that were chosen, and their respective **Model Names**.
 
     In the following screen we can see that the top 2 algorithms chosen were a **Decision Tree** and a **Random Forest**. By default they receive randomly generated unique **Model Names**.
@@ -176,9 +174,9 @@ In addition to that, **a customer churning today probably made that decision a w
     ```
     AGE, AVG_DISC_M3_11 (average discounts for the 9 months before the current quarter), GENDER, CREDIT_BALANCE, AVG_NTRANS_M3_5 (average number of transactions in the previous quarter), YRS_RESIDENCE, GENRE_THRILLER, GENRE_COMEDY, and GENRE_WAR
     ```
-4. Understand model performance
-    Scrolling up to the **Leader Board** section, we can click the **Decition Tree** unique model name to open the diagnostics. Click on the Decision Tree **Model Name** link in blue. 
-   
+4. Understand model performance.
+    Scrolling up to the **Leader Board** section, we can click the **Decition Tree** unique model name to open the diagnostics. Click on the Decision Tree **Model Name** link in blue.
+
     > **NOTE**: The exact random model name is unique to your model, so it will not appear as *DT_312651AA64* like the one below.
 
     ![Churn AutoML Task 2 Step 4 Leader Board select model](images/oml-churn-automl-leader-model.png " ")
@@ -186,9 +184,9 @@ In addition to that, **a customer churning today probably made that decision a w
     The first screen that shows up is the **Prediction Impacts**. This time the attributes are listed in order of impact that this specific model uses in its formulation to predict churn.
 
     It includes the following geo-demographic attributes like AGE, GENDER, EDUCATION, YRS\_RESIDENCE and MARITAL\_STATUS.
-    
+
     From the customer product behavior point of view, it includes AVG\_DISC\_M3\_11 (the average discounts for the 9 months before the current quarter) and the counts for total number of movies of several different types of genres (GENRE\_xxx).
-    
+
     ![Churn AutoML Task 2 Step 4 Prediction Impacts](images/oml-churn-automl-prediction-impacts.png " ")
 
     After reviewing the impacts, click the **Confusion Matrix** tab to visualize the result of the assessment of the model on a **Test Set** of data chosen by AutoML for this test.
@@ -196,17 +194,17 @@ In addition to that, **a customer churning today probably made that decision a w
     ![Churn AutoML Task 2 Step 4 Confusion Matrix](images/oml-churn-automl-confusion-matrix.png " ")
 
     In the **Confusion Matrix** we can see that, in this particular **Test Set**, the model was able to correctly identify __95.42%__ of the future customer behaviors (the green diagonals, 61.76% + 33.66%).  
-    
+
     The model incorrectly thought that __3.59%__ of the customers were going to churn (Predicted: 1), but they actually did not (Actual: 0).  This is actually not that bad for marketing purposes, since we would be sending offers to these customers when they might be staying with us anyway.
-    
+
     The model also thought that __less than 1%__ of the customers (0.98%) would not churn (Predict: 0) but they actually did (Actual: 1).  This type of error is more dangerous in churn management, since your model is not capable of identifying these customers as churners when they indeed would have been, and should be monitored over time.
-    
+
 5. Rename the model.
-  
+
    In preparation for scoring via SQL, we will need to rename the model.
 
     We will **Rename** the model, which will allows us to run the scoring via SQL later. With the model row selected (indicated by a blue color), click the **Rename** button.
-    
+
     ![Churn AutoML Task 3 Step 1 Leader Board click rename](images/oml-churn-automl-leader-click-rename.png " ")  
 
     Give your model a new name.  We suggest **`CHURN_PRED`**.
@@ -226,7 +224,7 @@ In addition to that, **a customer churning today probably made that decision a w
     Go to the main notebooks listing by clicking on the "three lines" button on the upper left of the screen, and then select **Notebooks**.
 
     ![Oracle Machine Learning Notebooks menu](images/go-back-to-notebooks.png " ")
- 
+
     Click the **Import** button and navigate to the folder where you just downloaded the notebook **Scoring\_customers\_with\_Churn\_Model.json** file.
 
     Click **Open** to load the notebook into your environment, like shown below.
@@ -235,9 +233,9 @@ In addition to that, **a customer churning today probably made that decision a w
 
     In case of success, you should receive a notification at the top right of the screen that the import process was successful, and you should be able to see a new notebook called **Scoring customers with Churn Model** in the list of Notebooks.
 
-2. Open and run the notebook
-  
-    We are going to open the Notebook for editing. For that we need to **click the "Scoring customers with Churn Model" name**. 
+2. Open and run the notebook.
+
+    We are going to open the Notebook for editing. For that we need to **click the "Scoring customers with Churn Model" name**.
 
     ![Churn AutoML Task 3 Step 3 Scoring Notebook main menu](images/oml-churn-automl-notebook-listing.png " ")
 
@@ -261,8 +259,8 @@ In addition to that, **a customer churning today probably made that decision a w
 
     The entire run is expected to take around 15 seconds, depending on the resources available.
 
-3. Create the table with churn probabilities
-   
+3. Create the table with churn probabilities.
+
     If we scroll down, we see basically two main steps. The first paragraph deletes a table named `LATEST_POTENTIAL_CHURNERS` if it exists, and the second paragraph uses SQL to create a new table based on the `PREDICTION` and `PREDICTION_PROBABILITY` capabilities of Oracle SQL enabled by OML.
 
     ![Churn AutoML Task 3 Step 3 Scoring Notebook second screen](images/oml-churn-automl-notebook-screen2.png " ")
@@ -297,12 +295,12 @@ Please *proceed to the next lab*.
 
 ## Task 4: Bonus content - model metrics and auto-generated OML4Py notebook
 
-Step 1. While on the Leaderboard section, view other metrics of model quality
+Step 1. While on the Leaderboard section, view other metrics of model quality.
 
  Go to the **Leader Board** section of the OML AutoML UI results.
 
- We will check out the **Metrics** menu item, by **clicking on it**. 
-  
+ We will check out the **Metrics** menu item, by **clicking on it**.
+
  ![Churn AutoML Task 2 Step 5 Leader Board click metrics](images/oml-churn-automl-click-metrics.png " ")
 
  A menu will pop open showing several metrics that can be selected. Choose a few ones and just close the menu in the top right **X** when ready.
@@ -315,10 +313,10 @@ Step 1. While on the Leaderboard section, view other metrics of model quality
 
 Step 2. Create an OML4Py auto-generated notebook with the model selected in the Leaderboard.
 
-  We can click the **Create Notebook** button, which generates a Python-based notebook using the Oracle Machine Learning for Python interface. 
-    
+  We can click the **Create Notebook** button, which generates a Python-based notebook using the Oracle Machine Learning for Python interface.
+
   ![Churn AutoML Task 3 Step 2 Leader Board click Create Notebook](images/oml-churn-automl-click-create-notebook.png " ")   
-  
+
   This notebook will contain the hyperparameters selected by the AutoML process and allows you to create the model explicitly using OML4Py.
 
   While still making sure the best model is selected (row highlighted in a blue hue), click the **Create Notebook** button to open a dialog window where you specify the name you want for this notebook. This step is also optional for this **Workshop**.
