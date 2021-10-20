@@ -49,14 +49,14 @@
       "filename": "../../mysql-to-cassandra/mysql-to-cassandra.md"
     },
     {
-      "title": "Lab 9: MySQL to Kafka via GG Microservices",
-      "description": "MySQL to Kafka via GG Microservices",
-      "filename": "../../mysql-to-kafka-via-ggma/mysql-to-kafka-via-ggma.md"
-    },
-    {
-      "title": "Lab 10: MySQL to Oracle",
+      "title": "Lab 9: MySQL to Oracle",
       "description": "GGBD mysql-to-oracle",
       "filename": "../../mysql-to-oracle/mysql-to-oracle.md"
+    },
+    {
+      "title": "Lab 10: MySQL to Kafka via GG Microservices",
+      "description": "MySQL to Kafka via GG Microservices",
+      "filename": "../../mysql-to-kafka-via-ggma/mysql-to-kafka-via-ggma.md"
     },
     {
       "title": "Lab 11: GGMA Adminclient",

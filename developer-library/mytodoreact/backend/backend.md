@@ -58,36 +58,36 @@ The following command will set the values of environment variables in `mtdrworks
 
 1. Ensure that the "DOCKER\_REGISTRY" variable is set
 
-``` bash
+	``` bash
 	<copy>echo $DOCKER_REGISTRY</copy>
 	```
 	It should look like the following example:
 `<region-key>.ocir.io/<object-storage-namespace>/<firstname.lastname>/<repo-name>`.
 If the variable is not set or is an empty string, the push will fail (but the docker image will be built).
 
-2. Make sure to be in backend/target/classes/wallet directory and then unzip.
+2. Unzip the wallet.zip under the ~/mtdrworkshop/backend/target/classes/wallet directory.
 
 	``` bash
-	<copy>cd mtdrworkshop/backend/target/classes/wallet; unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
+	<copy>cd ~/mtdrworkshop/backend/target/classes/wallet; unzip ~/mtdrworkshop/setup-dev-environment/wallet.zip</copy>
 	```
 
-3. Copy the mtdrb\_tp service alias (see the list of aliases in
+3. Copy the `mtdrb\_tp` alias (see the list of aliases in
 ./backend/target/classes/wallet/tnsnames.ora)
 	![tnsnames-ora](images/tnsnames-ora.png " ")
-4. Edit ./backend/target/classes/application.yaml to set the database service and user password
+4. Edit ~/mtdrworkshop/backend/target/classes/application.yaml to set the database service and user password
 	![application yaml](images/application-yaml.png " ")
 5. Copy the edited application.yaml to ./backend/src/main/resources/application.yaml
 
-``` bash
+	``` bash
 	<copy>cp ~/mtdrworkshop/backend/target/classes/application.yaml ~/mtdrworkshop/backend/src/main/resources/application.yaml</copy>
 	```
 
-6. Edit ./backend/src/main/java/com/oracle/todoapp/Main.java
+6. Edit ~/mtdrworkshop/backend/src/main/java/com/oracle/todoapp/Main.java
 7. Locate the following code fragment
 	![CORS main](images/CORS-Main.png " ")
-8. Replace `eu-frankfurt-1` in `https://objectstorage.eu-frankfurt-1.oraclecloud.com` with your region
-	\* Hint: your region id is displayed in the cloud shell prompt, between parenthesis, as in: 
-	joe@cloudshell:classes (**us-phoenix-1**)$
+8. Replace `eu-frankfurt-1` in `https://objectstorage.eu-frankfurt-1.oraclecloud.com` with your region.
+
+	\* Hint: your region id is displayed in the cloud shell prompt, between parenthesis, as in: joe@cloudshell:classes (**us-phoenix-1**)$
 9. Save the file
 10. Run `build.sh` script to build and push the
 microservices images into the repository
@@ -97,7 +97,7 @@ microservices images into the repository
 	```
 
 	In a few minutes, you would have successfully built and pushed the images into the OCIR repository.
-11. Check your container registry from the root compartment.
+11. Check your container registry **from the root compartment**.
 	Go to the Oracle Cloud Console, click the navigation menu in the top-left corner and open **Developer Services** then **Container Registry**.
 	![dev services reg](images/21-dev-services-registry.png " ")
 	![registry root comp](images/Registry-root-compart.png " ")
@@ -114,9 +114,9 @@ microservices images into the repository
 	```
 	![deploy -sh](images/deploy-sh.png " ")
 
-2. Check the status using the following command; it returns the Kubernetes service of MyToDo application with a load balancer exposed through an external API.
+2. Check the status using the following command; it returns the Kubernetes service of MyToDo application with a load balancer exposed through an external IP address.
 	**$ kubectl get services**
-
+	Repeat the command until the External IP address is shown.
 	``` bash
 	<copy>kubectl get services</copy>
 	```
@@ -131,12 +131,12 @@ microservices images into the repository
 
 	![k8 pods](images/k8-pods.png " ")
 5. Use the following command to continuously tail the log of one of the PODs.
-	**$ kubectl logs -f**
+	**$ kubectl logs -f <POD-name>**
 	``` bash
-	<copy>kubectl logs -f</copy>
+	<copy>kubectl logs -f <POD-name></copy>
 	```
 
-	**Example** kubectl lgs -f todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
+	**Example** kubectl logs -f todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv
 	Returns
 	http://130.61.66.27/todolist
 
@@ -162,42 +162,54 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 
 	![gateway](images/gateways.png " ")
 
-2. Specify the root compartment on the left side then click **Create Gateway**
+2. Specify the `mtdrworkshop` compartment on the left side then click **Create Gateway**
 	![click create gateway](images/click-create-gateway.png " ")
 
-3. Configure the basic info: name, compartment, VCN and Subnet
-Then click **Create**.
+3. Configure the basic info: name, compartment, VCN and Subnet; then click **Create**.
     ![create gateway](images/create-gateway.png " ")
     * VCN: pick one of the virtual circuit networks
     * Subnet pick the public subnet
 
    Observe that the ToDolist gateway has been successfully created.
-	![gateway](images/gateway.png " ")
+	![gateway](images/Gateway.png " ")
 
-4. Click **Deployments**
-	![deployment-menu](images/deployment-menu.png " ")
+4. Copy the OCID of the newly created Gateway
+	![Gatway OCID](images/Gateway-OCID.png " ")
 
-5. Click **Create Deployment**
+	Replace $Gateway_OCID with the copied OCID and save it to the following file
+	``` bash
+	<copy>echo $Gateway_OCID > ~/mtdrworkshop/workingdir/mtdrworkshopgatewayid.txt</copy>
+	```
+
+5. Click **Deployments**
+	![deployment-menu](images/Deployment-menu.png " ")
+
+6. Click **Create Deployment**
    ![deployment](images/deployment.png " ")
 
-6. Create a **TodDolist deployment**.
-   ![deployment](images/Deployment.png " ")
+7. Create a **TodDolist deployment**.
+   ![deployment](images/Deplyment.png " ")
 
-7. Configure CORS policies:
-   ![origins methods](images/Origins-Methods.png " ")
+8. Configure the Basic info
+ ![Basic info](images/APi-Gateway-basic.png " ")
+
+9. Configure CORS policies:
+  
 	* CORS is a security mechanism that will prevent running application loaded from origin A from using resources from origin B.
-	* Allowed Origins is the list of all servers (origins) that are allowed to access the API deployment typically of a Kubernetes cluster IP.
+	* Allowed Origins is the list of all servers (origins) that are allowed to access the API deployment typically of a Kubernetes cluster IP. **Replace 129.146.94.125** with the **External IP** of your Kubernetes cluster
+	 ![origins methods](images/Origins-Methods.png " ")
     * Allowed methods GET, PUT, DELETE, POST, and OPTIONS are all needed.
 
-8. Configure the headers.
+10. Configure the headers.
 	![headers](images/Headers.png " ")
 	\* click **Apply changes** to create the CORS policy
 
-9. Configure the routes by defining two routes:
-	\* Click **Routes**, next to the number 2, on the left to create
+11. Click **Next** to configure two routes:
+	
    ![route](images/Route-1.png " ")
     * /todolist for the first two APIs: GET, POST, OPTIONS
-	* After defining a route for `/todolist`, click **Another Route** to define a route for `/todolist/{id}` for the remaining three APIs: GET, PUT, DELETE
+	* After defining a route for `/todolist`, click **Another Route** to define a route for `/todolist/{id}` for the remaining three APIs: GET, PUT, DELETE.
+	 ![route](images/Route-2.png " ")
 
 	* After defining both routes, click **Next**, then click **Create**
    
@@ -205,7 +217,7 @@ Then click **Create**.
 ## Task 6: Testing the backend application through the API Gateway
 
 1. Navigate to the newly created Gateway Deployment Detail and copy the endpoint
-   ![gateway endpoint](images/gateway-endpoint.png " ")
+   ![gateway endpoint](images/Gateway-endpoint.png " ")
 
 2. Testing through the **API Gateway endpoint**.
 Postfix the gateway endpoint with "/todolist" as shown in the following screen shot.
@@ -217,6 +229,6 @@ You may now [proceed to the next tutorial](#next).
 
 ## Acknowledgements
 
-* **Author** \- Kuassi Mensah\, Dir\. Product Management\, Java Database Access
-* **Contributors** \- Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By/Date** \- Kamryn Vinson\, July 2021
+* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By/Date** - Kamryn Vinson, July 2021
