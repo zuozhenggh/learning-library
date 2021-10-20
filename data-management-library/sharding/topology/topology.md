@@ -115,6 +115,14 @@ For more details check [GDSCTL with Oracle Sharding] (https://docs.oracle.com/en
 
     ![](./images/showddl.jpg " ")
 
+7. Now **exit** from here.
+
+    ```
+    <copy>
+    exit
+    </copy>
+    ```
+
 ## Task 3: Connect to Catalog
 
 **Shard Catalog:** The shard catalog is a special-purpose Oracle Database that is a persistent store for sharded database configuration data and plays a key role in centralized management of a sharded database. All configuration changes, such as adding and removing shards and global services, are initiated on the shard catalog. All DDLs in a sharded database are executed by connecting to the shard catalog.
@@ -171,6 +179,14 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
 
    ![](./images/query.jpg " ")
 
+5. Now **exit** from SQLPLUS and Catalog as well.
+
+    ```
+    <copy>
+    exit
+    </copy>
+    ```
+
 ## Task 4: Connect to Shard 1 Database
 
 **Sharded Database and Shards** Each shard in the sharded database is an independent Oracle Database instance that hosts a subset of a sharded database's data. Shared storage is not required across the shards.
@@ -219,6 +235,14 @@ For more details see [Oracle Sharding documentation] (https://docs.oracle.com/en
     ![](./images/query1.jpg " ")
 
    You can find the difference in the row count between the shard catalog and the shard-database (porcl1cdb\_porcl1pdb, porcl2cdb\_porcl2pdb, porcl3cdb\_porcl3pdb).
+
+5. Now **exit** from SQLPLUS and Shard 1 as well.
+
+    ```
+    <copy>
+    exit
+    </copy>
+    ```
 
 ## Task 5: Run Application Queries on a sharded Database
 
