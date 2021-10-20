@@ -275,7 +275,7 @@ Estimated Time: 20 minutes.
 
     ![](../common/images/Cluster-Config-13.png " ")
 
-18. Click on **checkpoint-cluster** and navigate to **Network Management**. Click on **Get Interfaces** and select **Get Interface with topology** with selecting **Yes** option. This will populate **eth0** and **eth1** interfaces for each member. Click on **eth0** interface and update values as per below configuration:
+18. Double click on **checkpoint-cluster** and navigate to **Network Management**. Click on **Get Interfaces** and select **Get Interface with topology** with selecting **Yes** option. This will populate **eth0** and **eth1** interfaces for each member. Click on **eth0** interface and update values as per below configuration:
 
     Enter the following information and accept all the defaults
        - **Network Type**: Cluster
@@ -288,7 +288,7 @@ Estimated Time: 20 minutes.
 20. Click on **eth1** interface and update values as per below configuration:
 
     Enter the following information and accept all the defaults
-       - **Network Type**: Cluster
+       - **Network Type**: Cluster + Sync 
        - **IPv4**: Enter Secondary Private IP Address of Secondary Interface on **CloudGuard1** instance.
 
     ![](../common/images/Cluster-Config-15.png " ")
@@ -297,7 +297,7 @@ Estimated Time: 20 minutes.
 
 22. Click on **OK** button of **Gateway Cluster Properties checkpoint-cluster** to save configuration. Click **Yes** to continue and it will save cluster configuration. 
 
-23. Naviate to **Security Policies** and at this point for **Test Purpose** you will update **Cleanup rule** to reflect **Allow ALL** name and update **Action** from **Drop** to **Accept**:
+23. Navigate to **Security Policies** and at this point for **Test Purpose** you will update **Cleanup rule** to reflect **Allow ALL** name and update **Action** from **Drop** to **Accept**:
 
     ![](../common/images/Cluster-Config-16.png " ")
 

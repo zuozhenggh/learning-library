@@ -5,6 +5,9 @@ Watch the video below to get an overview of joins using Database In-Memory.
 
 [](youtube:y3tQeVGuo6g)
 
+Watch the video below for a walk through of the In-memory Joins and Aggregations lab.
+[](youtube:w62wQ5pkBMA)
+
 ### Objectives
 
 -   Learn how to enable In-Memory on the Oracle Database
@@ -25,14 +28,21 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
 1.  Let's switch to the Part3 folder and log back in to the PDB.
 
-    ```
+    ````
     <copy>
     cd /home/oracle/labs/inmemory/Part3
     sqlplus ssb/Ora_DB4U@localhost:1521/pdb1
+    </copy>
+    ````
+
+    And adjust sqlplus display.
+
+    ````
+    <copy>
     set pages 9999
     set lines 100
-    </copy>    
-    ```
+    </copy>
+    ````
 
     ![](images/num1.png " ")
 
@@ -297,7 +307,7 @@ Oracle has introduced a new Optimizer transformation, called Vector Group By. Th
 
 8. To execute the query against the buffer cache
 
-    Run the script *12\_vgb\_buffer.sql* 
+    Run the script *12\_vgb\_buffer.sql*
 
     ```
     <copy>

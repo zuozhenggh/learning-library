@@ -5,6 +5,9 @@ Watch a preview video of querying the In-Memory Column Store
 
 [](youtube:U9BmS53KuGs)
 
+Watch the video below for a walk through of the In-memory Queries lab.
+[](youtube:XHxCsmspuAw)
+
 ### Objectives
 
 -   Perform various queries on the In-Memory Column Store
@@ -22,14 +25,23 @@ This lab assumes you have:
 Now that you’ve gotten familiar with the IM column store let’s look at the benefits of using it. You will execute a series of queries against the large fact table LINEORDER, in both the buffer cache and the IM column store, to demonstrate the different ways the IM column store can improve query performance above and beyond the basic performance benefits of accessing data in memory only.
 
 1.  Let's switch to the Part2 folder and log back in to the PDB.
+
     ````
     <copy>
     cd /home/oracle/labs/inmemory/Part2
     sqlplus ssb/Ora_DB4U@localhost:1521/pdb1
+    </copy>
+    ````
+
+    And adjust sqlplus display.
+
+    ````
+    <copy>
     set pages 9999
     set lines 100
     </copy>
     ````
+
     ![](images/step1num1.png)
 
 2.  Let's begin with a simple query:  *What is the most expensive order we have received to date?*  There are no indexes or views setup for this.  So the execution plan will be to do a full table scan of the LINEORDER table.  Note the elapsed time.
