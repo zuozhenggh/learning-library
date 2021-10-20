@@ -70,6 +70,7 @@ This lab assumes you have:
     unzip -qo labs-novnc.zip
     rm -f labs-novnc.zip
     cd labs/multitenant
+    chmod *x *.sh
     </copy>
     ```
 

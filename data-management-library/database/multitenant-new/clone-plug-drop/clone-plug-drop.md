@@ -666,7 +666,7 @@ What you will do in this task:
 
 [](youtube:djp-ogM71oE)
 
-    If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
+- If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
     <copy>sql /nolog
