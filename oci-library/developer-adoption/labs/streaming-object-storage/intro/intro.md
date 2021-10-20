@@ -58,7 +58,7 @@ Customers with existing Kafka implementations, whether deployed on-premises or o
 
 ***Encryption and privacy***
 
-For security, the service provides data encryption both in transit and at rest. Streaming is integrated with Identity and Access Management (IAM) for fine-grained access control, as well as Private Endpointsand Vault (KMS) for data privacy.
+For security, the service provides data encryption both in transit and at rest. Streaming is integrated with Identity and Access Management (IAM) for fine-grained access control, as well as Private Endpoints and Vault (KMS) for data privacy.
 
 ***Fault tolerance and SLAs***
 
