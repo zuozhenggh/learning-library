@@ -27,7 +27,7 @@ This lab assumes you have:
 
 ## Task 1: Connect to the Pluggable Database (PDB)
 
-1. Open Linux terminal on VNC. As Oracle user set Oracle Environment and connect to the PDB.
+1. As *oracle* user from your remote desktop session, set the environment and connect to the PDB.
 
     ```
     <copy>

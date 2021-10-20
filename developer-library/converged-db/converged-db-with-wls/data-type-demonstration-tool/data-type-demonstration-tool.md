@@ -70,7 +70,7 @@ This lab assumes you have:
 
 ## Task 3: Launch the demonstrator tool
 
-1. Open the Firefox browser and navigate to `http://localhost:7101/resources/html/endPointChecker.html` OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshop** in Bookmark Toolbar.
+1. On the web browser window on the right preloaded with  **Oracle Weblogic Server Administration Console**, navigate to `http://localhost:7101/resources/html/endPointChecker.html`
 2. Click on the drop-down to see the list of datatypes shown in workshop.
 3. Select a datatype and click on **Change View** button to change.
 

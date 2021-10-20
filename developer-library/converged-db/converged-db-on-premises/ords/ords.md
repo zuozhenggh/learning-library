@@ -32,8 +32,7 @@ This lab assumes you have:
 
 1. The script (`env_setup_script.sh`) which was run in `Lab-3` starts the ORDS in standalone mode  
 
-2. Check if ORDS is connecting through the browser
-   Open the browser and enter the following URI in the address bar:
+2. Check if ORDS is connecting through the browser. On the web browser window on the right, open a new tab and navigate to the following
 
     ```
     http://localhost:9090/ords/

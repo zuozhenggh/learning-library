@@ -29,7 +29,7 @@ This lab assumes you have:
 
 ## Task 1:  Verify Application
 
-1. Open up a web browser and visit the Application URL indicated in your terminal.    
+1. On the web browser window on the right preloaded with two application tabs navigate to verify.    
 
     ```
     URL: <copy>http://localhost:3000/</copy>

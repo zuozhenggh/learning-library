@@ -138,7 +138,6 @@ Provide the fields with the following values:
     </copy>
     ```
 
-
     ![](./images/jdev-xml-db-code-search.png " ")
 
 4.	Click on the **Save** icon to save the file.
@@ -163,7 +162,7 @@ Provide the fields with the following values:
 
 ## Task 4: Read XML in tool
 
-1.	Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
+1.	On the web browser window on the right, navigate to *`http://localhost:7101/resources/html/endPointChecker.html`*.
 
 2.	Click on the drop-down to see the list of datatypes shown in workshop.
 
@@ -193,7 +192,7 @@ Provide the fields with the following values:
 
     ![](./images/jdev-xml-rest-code.png" ")
 
-2.	Open Firefox or if already open, in another browser tab, open the URL `http://localhost:7101/xml/read/1` Data is retrieved by the fetchXml() method in XmlController.java.
+2.	On the web browser window on the right, open the URL `http://localhost:7101/xml/read/1` Data is retrieved by the fetchXml() method in XmlController.java.
 
     ![](./images/rest-id1-retrieve.png" ")
 
