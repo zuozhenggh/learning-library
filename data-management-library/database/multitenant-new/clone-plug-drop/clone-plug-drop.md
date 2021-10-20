@@ -659,14 +659,14 @@ The tasks you will do in this step are:
 ## Task 7: PDB hot clones
 This section looks at how to "hot clone" a pluggable database. Since Database 12.2, the capability exists to clone a PDB while it is open read write.
 
+  [](youtube:djp-ogM71oE)
+
 What you will do in this task:
 - Create a pluggable database **OE** in the container database **CDB1**
 - Create a load against the pluggable database **OE**
 - Create a hot clone **OE_DEV** in the container database **CDB2** from the pluggable database **OE**
 
-[](youtube:djp-ogM71oE)
-
-- If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
+    If you are not already running SQLcl, then launch SQLcl and set the formatting to make the on-screen output easier to read.
 
     ```
     <copy>sql /nolog
@@ -805,7 +805,7 @@ You can see that the clone of the pluggable database worked without having to st
 ## Task 8: PDB refresh
 This section looks at how to hot clone a pluggable database, open it for read only and then refresh the database.
 
-[](youtube:L9l7v6dH-e8)
+  [](youtube:L9l7v6dH-e8)
 
 The tasks you will do in this step are:
 - Leverage the **OE** pluggable database from the previous step with the load still running against it.
