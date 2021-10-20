@@ -532,7 +532,7 @@ When customers select a movie to watch, they pick from a "shelf" that is broken 
 
 Notice, we also added the **RATIO\_TO\_REPORT** analytic function in order to compute the movie's contribution to the total within the report.
 
-## Task 7: Finding Our Most Important Customers
+## Task 7: Finding our most important customers
 
 ### Overview
 This final example will enrich our existing understanding of customer behavior by utilizing an RFM analysis. RFM is a very commonly used method for analyzing customer value. It is commonly used in general customer marketing, direct marketing, and retail sectors.
@@ -702,7 +702,7 @@ These features include:
 
 - Time-series functions
 
-- Analytic functions to calculate contribution (**RATIO_TO_REPORT** and **ROLLUP**)
+- Analytic functions to calculate contribution (**RATIO\_TO\_REPORT** and **ROLLUP**)
 
 - **NTILE** binning functions that helps categorize customer sales and activity
 

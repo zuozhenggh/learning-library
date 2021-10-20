@@ -1,4 +1,4 @@
-# Prepare Your Environment
+# Prepare your environment
 
 ## Introduction
 
@@ -15,7 +15,7 @@ Estimated time: 10 minutes
 
   **Note:** If you plan to use an existing Autonomous DB in your own tenancy, or you are using an Oracle-provided environment, you can skip this step.
 
-1. Login to the Oracle Cloud Infrastructure
+1. Log in to the Oracle Cloud Infrastructure
 
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
@@ -23,7 +23,7 @@ Estimated time: 10 minutes
 
     ![](./images/adb-set_001.png " ")
 
-3. The following steps apply similarly to either Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP). So please **click on the provisioning of Autonomous DB of your choice** (here we choose an ADW but again you can also choose ATP if you prefer).
+3. The following steps apply similarly to either Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP). So please **click the provisioning of Autonomous DB of your choice** (here we choose an Oracle Autonomous Data Warehouse but again you can also choose Oracle Autonomous Transaction Processing if you prefer).
 
     ![](./images/adb-set_002.png " ")
 
@@ -88,9 +88,9 @@ Estimated time: 10 minutes
 
 ## Task 2: Set up Application Schema and Users
 
-Although you can connect to your Autonomous DB using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your ADW or ATP
+Although you can connect to your Autonomous DB using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing
 
-1. In your ADB Security database's details page, click the **Tools** tab
+1. In your "`ADB Security`" database's details page, click the **Tools** tab
 
     ![](./images/adb-set_010.png " ")
 
@@ -160,7 +160,7 @@ Although you can connect to your Autonomous DB using local PC desktop tools like
       </copy>
       ````
 
-    - Press [**F5**] or click on the "Run Scripts" icon
+    - Press [**F5**] or click the "Run Scripts" icon
 
          ![](./images/adb-set_015.png " ")
          ![](./images/adb-set_016.png " ")
@@ -171,7 +171,7 @@ Although you can connect to your Autonomous DB using local PC desktop tools like
 
 ## Want to Learn More?
 
-Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Data Warehouse.
+Click [autonomous workflow](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Data Warehouse.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
