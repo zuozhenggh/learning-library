@@ -20,7 +20,7 @@ Estimates Lab Time - 10 minutes
 1. Run the following command to delete the resources created in you tenancy. It will delete everything except the compartment. It will take several minutes to run. The script will delete the Object Storage bucket,  'Oracle Cloud Infrastructure Registry  repositories, OKE cluster, VCN and databases.
 
     ```
-    <copy>source destroy.sh</copy>
+    <copy>cd ~/mtdrworkshop/teardown;./destroy.sh</copy>
     ```
 
 ## **STEP 2**: Delete the Directory
@@ -28,7 +28,7 @@ Estimates Lab Time - 10 minutes
 1. Delete the directory in your cloud shell where you installed the workshop.
 
     ```
-    <copy>rm -rf mtdrworkshop</copy>
+    <copy>rm -rf ~/mtdrworkshop</copy>
     ```
 
 ## **STEP 3**: Delete the Compartment

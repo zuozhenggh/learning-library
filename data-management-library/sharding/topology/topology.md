@@ -10,6 +10,9 @@ You can find more details at [Oracle Sharding on Docker](https://github.com/orac
 
 *Estimated Lab Time*: 15 Minutes
 
+Watch the video below for a walk through of the lab.
+[](youtube:1wTpz4k7wL8)
+
  ![](./images/topology.jpg " ")  
 
 As shown in the diagram above, the sharded database is deployed as multiple containers all running within the same Compute VM.
