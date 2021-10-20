@@ -165,8 +165,7 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 2. Specify the `mtdrworkshop` compartment on the left side then click **Create Gateway**
 	![click create gateway](images/click-create-gateway.png " ")
 
-3. Configure the basic info: name, compartment, VCN and Subnet
-Then click **Create**.
+3. Configure the basic info: name, compartment, VCN and Subnet; then click **Create**.
     ![create gateway](images/create-gateway.png " ")
     * VCN: pick one of the virtual circuit networks
     * Subnet pick the public subnet
@@ -174,39 +173,43 @@ Then click **Create**.
    Observe that the ToDolist gateway has been successfully created.
 	![gateway](images/Gateway.png " ")
 
-4. Click **Deployments**
+4. Copy the OCID of the newly created Gateway
+	![Gatway OCID](images/Gateway-OCID.png " ")
+
+	Replace $Gateway_OCID with the copied OCID and save it to the following file
+	``` bash
+	<copy>echo $Gateway_OCID > ~/mtdrworkshop/workingdir/mtdrworkshopgatewayid.txt</copy>
+	```
+
+5. Click **Deployments**
 	![deployment-menu](images/Deployment-menu.png " ")
 
-5. Click **Create Deployment**
+6. Click **Create Deployment**
    ![deployment](images/deployment.png " ")
 
-6. Create a **TodDolist deployment**.
+7. Create a **TodDolist deployment**.
    ![deployment](images/Deplyment.png " ")
 
-7. Configure the Basic info
-<<<<<<< HEAD
- ![Basic info](images/API-Gateway-basic.png " ")git status
+8. Configure the Basic info
+ ![Basic info](images/APi-Gateway-basic.png " ")
 
-=======
- ![Basic info](images/API-Gateway-basic.png " ")
->>>>>>> upstream/master
-
-8. Configure CORS policies:
+9. Configure CORS policies:
   
 	* CORS is a security mechanism that will prevent running application loaded from origin A from using resources from origin B.
 	* Allowed Origins is the list of all servers (origins) that are allowed to access the API deployment typically of a Kubernetes cluster IP. **Replace 129.146.94.125** with the **External IP** of your Kubernetes cluster
 	 ![origins methods](images/Origins-Methods.png " ")
     * Allowed methods GET, PUT, DELETE, POST, and OPTIONS are all needed.
 
-9. Configure the headers.
+10. Configure the headers.
 	![headers](images/Headers.png " ")
 	\* click **Apply changes** to create the CORS policy
 
-10. Configure the routes by defining two routes:
-	\* Click **Routes**, next to the number 2, on the left to create
+11. Click **Next** to configure two routes:
+	
    ![route](images/Route-1.png " ")
     * /todolist for the first two APIs: GET, POST, OPTIONS
-	* After defining a route for `/todolist`, click **Another Route** to define a route for `/todolist/{id}` for the remaining three APIs: GET, PUT, DELETE
+	* After defining a route for `/todolist`, click **Another Route** to define a route for `/todolist/{id}` for the remaining three APIs: GET, PUT, DELETE.
+	 ![route](images/Route-2.png " ")
 
 	* After defining both routes, click **Next**, then click **Create**
    
@@ -214,7 +217,7 @@ Then click **Create**.
 ## Task 6: Testing the backend application through the API Gateway
 
 1. Navigate to the newly created Gateway Deployment Detail and copy the endpoint
-   ![gateway endpoint](images/gateway-endpoint.png " ")
+   ![gateway endpoint](images/Gateway-endpoint.png " ")
 
 2. Testing through the **API Gateway endpoint**.
 Postfix the gateway endpoint with "/todolist" as shown in the following screen shot.
