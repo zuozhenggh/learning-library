@@ -37,7 +37,7 @@ The Kafka Connect Harness provides out-of-the-box integrations with hundreds of 
 
 ***Open source Apache Kafka-compatible***
 
-Run open source software as an Oracle-managed service. Streaming’s Kafka compatibility significantly reduces vendor lock-in and helps customers easily adopt hybrid and multicloud architectures.
+Run open source software as an Oracle-managed service. Streaming’s Kafka compatibility significantly reduces vendor lock-in and helps customers easily adopt hybrid and multi-cloud architectures.
 
 ***Choice of APIs***
 
