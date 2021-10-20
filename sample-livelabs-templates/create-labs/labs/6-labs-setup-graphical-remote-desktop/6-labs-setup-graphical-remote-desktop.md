@@ -79,7 +79,29 @@ For ease of access to desktop applications provided on the instance and needed t
 
     ![](./images/create-shortcut-6.png " ")
 
-## Task 3: Configure Desktop   
+## Task 3: Optimize Terminal Utility
+Perform the following to optimize the *Terminal* utility
+
+1. Double-click on the *Terminal* icon to launch a session, then Click on *Edit* and select *Preferences*
+
+    ![](./images/novnc-terminal-1.png " ")
+
+2. Select the *Colors* tab, uncheck *Use colors from system theme*, Select *White on black* from *Built-in schemes* drop-down, and click on *Close*
+
+    ![](./images/novnc-terminal-2.png " ")
+
+3. Review *$HOME/.bash_profile* and move any custom entry of type alias, script call, or function to  *$HOME/.bashrc*. If these are referencing environment variables set in the file, then copy those over to *$HOME/.bashrc* as well.
+
+    *Notes:* Do not remote the following default entry from *$HOME/.bash_profile*
+
+    ```
+    # Get the aliases and functions
+    if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+    fi
+    ```
+
+## Task 4: Configure Desktop   
 LiveLabs compute instance are password-less and only accessible optionally via SSH keys. As result it's important to adjust session settings to ensure a better user experience.
 
 1. Follow steps in the screenshot below and run command provided below to resize desktop icons
@@ -176,7 +198,7 @@ LiveLabs compute instance are password-less and only accessible optionally via S
     ![](./images/novnc-startup-prog-5.png " ")
     ![](./images/novnc-startup-prog-6.png " ")
 
-## Task 4: Optimize Chrome Browser
+## Task 5: Optimize Chrome Browser
 Perform the following to further customize and optimize *Google Chrome* Browser.
 
 1. Close any running *Google Chrome* browser session running on the remote desktop
@@ -244,34 +266,11 @@ Perform the following to further customize and optimize *Google Chrome* Browser.
 
     ![](./images/add-bookmarks-07.png " ")
 
-13. Create and run the script below to initialize LiveLabs browser windows.
+13. Run the following from terminal session to initialize LiveLabs browser windows.
 
     ```
     <copy>
-    cat > /tmp/init_ll_windows.sh <<EOF
-    #!/bin/bash
-    # Initialize LL Windows
-
-    #Drop existing sessions
-
-    ll_windows_opened=\$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}'|wc -l)
-    user_data_dir_base="/home/\$(whoami)/.livelabs"
-
-    if [[ "\${ll_windows_opened}" -gt 0 ]]; then
-     kill -2 \$(ps aux | grep 'disable-session-crashed-bubble'|grep -v grep |awk '{print \$2}')
-    fi
-
-    desktop_guide_url="https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/livelabs"
-    desktop_app1_url="https://oracle.com"
-    desktop_app2_url="https://bit.ly/golivelabs"
-    google-chrome --password-store=basic --app=\${desktop_guide_url} --window-position=110,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window1" --disable-session-crashed-bubble >/dev/null 2>&1 &
-    google-chrome --password-store=basic \${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
-    google-chrome --password-store=basic \${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="\${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
-    EOF
-    chmod +x /tmp/init_ll_windows.sh
-    /tmp/init_ll_windows.sh
-    rm -f /tmp/init_ll_windows.sh
-
+    $HOME/.livelabs/init_ll_windows.sh
     </copy>
     ```
 14. If the *desktop_app1_url* and/or *desktop_app2_url* are applicable to the workshop, test with *chrome-window2* chrome profile to validate before proceeding to custom image creation.
@@ -288,11 +287,11 @@ Perform the following to further customize and optimize *Google Chrome* Browser.
     </copy>
     ```
 
-15. Update *vncserver* startup script to add dependency(ies) on primary service(s) supporting WebApps behind *desktop_app1_url* and/or *desktop_app2_url*. This will prevent premature web browser startup leading to *404-errors* because the apps are not yet ready.
+15. Update *vncserver* startup script to add dependency(ies) on primary service(s) supporting Web Apps behind *desktop_app1_url* and/or *desktop_app2_url*. This will prevent premature web browser startup leading to *404-page-not-found-error* when the app requested is not yet ready.
 
     - Edit `/etc/systemd/system/vncserver_${appuser}@\:1.service` and append the dependent service(s) at the end of the starting with **After=**
 
-    e.g. The example below is from the *EM Fundamentals* workshop, please substitute *oracle-emcc.service* in the block beloe with the correct service name relevant to your workshop before running it.
+    e.g. The example below is from the *EM Fundamentals* workshop, please substitute *oracle-emcc.service* in the block below with the correct service name relevant to your workshop before running it.
 
     ```
     <copy>
@@ -528,4 +527,4 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
 * **Contributors** - Robert Pastijn
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021
