@@ -172,16 +172,16 @@ Then click **Create**.
     * Subnet pick the public subnet
 
    Observe that the ToDolist gateway has been successfully created.
-	![gateway](images/gateway.png " ")
+	![gateway](images/Gateway.png " ")
 
 4. Click **Deployments**
-	![deployment-menu](images/deployment-menu.png " ")
+	![deployment-menu](images/Deployment-menu.png " ")
 
 5. Click **Create Deployment**
    ![deployment](images/deployment.png " ")
 
 6. Create a **TodDolist deployment**.
-   ![deployment](images/Deployment.png " ")
+   ![deployment](images/Deplyment.png " ")
 
 7. Configure CORS policies:
    ![origins methods](images/Origins-Methods.png " ")

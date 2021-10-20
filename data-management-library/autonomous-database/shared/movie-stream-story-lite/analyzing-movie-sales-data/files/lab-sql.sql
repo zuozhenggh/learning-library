@@ -22,4 +22,6 @@ WHERE t.month_name = 'DECEMBER'
 and c.movie_id = 2527
 GROUP BY c.movie_id,t.day_id
 ORDER BY t.day_id;
+
+SELECT 'marty' FROM dual;
  

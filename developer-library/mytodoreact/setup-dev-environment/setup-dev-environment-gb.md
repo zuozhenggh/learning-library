@@ -63,20 +63,30 @@ You should now see `mtdrworkshop` in your root directory
 * The Cloud shell will disconnect after a certain period of inactiity.
 * If you are disconnected or logged off and return to Cloud shell, make sure you are back in the \~/mtdrworkshop directory.
 
-## Task 2: Create an OCI compartment and an OKE cluster in that compartment
+## Task 2: Select Your Compartment and Create an OKE cluster in that compartment
 
-1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select **Identity & Security** then select **Compartments**.
-	![Compartment](images/15-identity-compartments.png " ")
-2. Click **Create Compartment** with the following parameters then click **Create Compartment**.
-	![Create Compartment](./images/16-create-compartment.png " ")
-	![Create Compartment Cont.](images/17-create-compartment2.png " ")
-    * Compartment name: `mtdrworkshop`
-    * Description: `My ToDo React workshop compartment`
-3. Once the compartment is created, click the name of the compartment and then click **Copy** to copy the OCID.
-	![compartment-name-ocid](images/19-compartment-name-ocid.png " ")
-	![compartment-ocid](images/20-compartment-ocid.png " ")
-4. Go back into your cloud shell and verify you are in the `~/mtdrworkshop` directory.
-5. Run `./setCompartmentId.sh <COMPARTMENT_OCID> <REGION_ID>` where your `<COMPARTMENT_OCID>` and `<REGION_ID>` values are set as arguments.
+Your own Oracle Cloud Infrastructure compartment for running this workshop has been assigned to you. The name of the compartment appears on the Launch page.
+
+1. Copy the compartment name (not OCID) from the workshop reservation page.
+
+![](images/copy-comp-name.png " ")
+
+2. Select the navigation menu from the top left corner of the Oracle Cloud Console and navigate to the Instances page in the Compute section.
+
+![](images/select-compute-instances.png " ")
+
+3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope".
+
+![](images/enter-comp-name.png " ")
+
+4. Select your compartment name from the drop down list.
+
+![](images/select-comp-name.png " ")
+
+![](images/correct-comp-name.png " ")
+
+5. Go back into your cloud shell and verify you are in the `~/mtdrworkshop` directory.
+6. Run `./setCompartmentId.sh <COMPARTMENT_OCID> <REGION_ID>` where your `<COMPARTMENT_OCID>` and `<REGION_ID>` values are set as arguments.
 **For example**:
 `./setCompartmentId.sh ocid1.compartment.oc1..aaaaaaaaxbvaatfz6yourcomparmentidhere5dnzgcbivfwvsho77myfnqq us-ashburn-1`.
 	![compartment id](images/compartmentid.png " ")
