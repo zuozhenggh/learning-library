@@ -26,4 +26,4 @@ _At this point, you are ready to start learning! Please proceed._
 
 ## **Acknowledgements**
 
-- **Author** - Jeroen Kloosterman, Technology Product Strategy Director
+- **Author** - Jeroen Kloosterman, Technology Product Strategy Director, special thanks to Marc-Philippe Frey for his invaluable input.
