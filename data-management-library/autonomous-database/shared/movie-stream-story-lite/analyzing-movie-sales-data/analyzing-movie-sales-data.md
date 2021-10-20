@@ -50,7 +50,7 @@ The main advantages of star schemas are that they:
 * Offer a direct and intuitive mapping between the business entities being analyzed by end users and the schema design.</li>
 * Offer highly optimized performance for typical data warehouse queries.</li>
 
-One of the key dimensions in the MovieStream data warehouse is **TIME**. Currently the time dimension table has a single column containing just the ids for each day. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter, and year. Therefore we need to expand the current time dimension to include these additional levels.
+One of the key dimensions in the MovieStream data warehouse is **TIME**. Currently the time dimension table has a single stored column containing just the ids for each day. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter, and year. This time table was expanded using computed virtual columns that are derived from the day_id.
 
 1. View the time dimension table.
 
@@ -63,7 +63,7 @@ One of the key dimensions in the MovieStream data warehouse is **TIME**. Current
 
 > **Note:** The TIME dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
 
-Querying a data warehouse can involve working with a lot of repetitive SQL. This is where 'views' can be very helpful and very powerful. The code below is used to simplify the queries used throughout this workshop. The main focus here is to introduce the concept of joining tables together to returned a combined resultset.
+Querying a data warehouse can involve working with a lot of repetitive SQL. This is where 'views' can be very helpful and very powerful. The code below is used to simplify the queries used throughout this workshop. The main focus here is to introduce the concept of joining tables together to returned a combined result set.
 
 The code below uses a technique called **INNER JOIN** to join the dimension tables to the fact table.
 
@@ -136,7 +136,7 @@ In the previous SQL code we used an inner join to merge time, customer and genre
     ![inner join query](images/lab3-q1.png " ")
  
 
-    Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the next query.
+    Unless you had a detailed knowledge of all the available genres, you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the next query.
 
 2. Modify the above SQL to use an outer join:
 
@@ -155,7 +155,7 @@ In the previous SQL code we used an inner join to merge time, customer and genre
     ![outer join query](images/lab3-q2.png " ")
 
 
-    > **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the resultset you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now that we have our time dimension defined as a view and a view to simplify SQL queries against the fact table, we can move on to how SQL can help us explore the sales data.
+    > **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the result set you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now that we have our time dimension defined as a view and a view to simplify SQL queries against the fact table, we can move on to how SQL can help us explore the sales data.
 
 
 ## Task 4: Explore sales data with fast performance
@@ -172,7 +172,7 @@ In the previous SQL code we used an inner join to merge time, customer and genre
     GROUP BY year_name, quarter_name
     ORDER BY 1,2;</copy>
     ```
-    **Note**: In this query, we have returned a resultset where the data has been aggregated (or grouped by) year then, within year, by quarter. The ORDER BY clause sorts the resultset by year and then quarter. In addition there is a filter or WHERE clause that enables us to return only data for the year 2020.    
+    **Note**: In this query, we have returned a result set where the data has been aggregated (or grouped by) year then, within year, by quarter. The ORDER BY clause sorts the result set by year and then quarter. In addition, there is a filter or WHERE clause that enables us to return only data for the year 2020.    
 
     This should return something similar to the following:
 
@@ -218,7 +218,7 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
 
     ![this year vs last year](images/lab3-q5.png " ")
 
-    This result is fine, but to simplify comparisons you want to do a side-by-side comparison of the sales across the two years.  Oracle SQL analytic functions will help solve that problem.
+    This result is fine, but to simplify comparisons you want to do a side-by-side comparison of sales across the two years.  Oracle SQL analytic functions will help solve that problem.
 
 
 2. The **LAG** function will allow us to compare this year vs last (or any other time comparison). In addition, we are going to leverage the SQL **WITH** clause. The **WITH** clause allows you to define in-line views - which greatly simplifies your queries by breaking a query down into smaller, understandable chunks. It's a very powerful tool to have in your toolbox. We'll be using these in-line views as "query blocks" - or named result sets that can be easily referenced. Here, we're using the **WITH** clause to set up the comparison to last year.
@@ -252,7 +252,7 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
     
     The subquery **sales\_vs\_lastyear** aggregates sales by genre and month for both this year and last. The **LAG** function is looking back "1" row for each genre name **PARTITION** - or grouping. The **ORDER BY** clause is critical to ensure that the prior row is indeed the prior month for that genre. The subquery is then used by the SELECT statement that calculates the sales change. 
 
-    You can see that Adventure and Action movies have shown strong a significant drop off. This drop off was more than offset by a large increase in Drama movies:
+    You can see that Action and Comedy genres have shown a significant drop off. This drop off was more than offset by a large increase in Drama movies:
 
     ![using lag](images/lab3-q6.png " ")
 
@@ -293,7 +293,7 @@ Explore the movie-genre relationship.
 
     Again, the query starts with a subquery `sales_by_movie_genre` which calculates the sales for the movie-genre combinations.  Then, it **RANKS** the result by `sales` for the top 20.
 
-    There are clearly movies - like *Spider-Man: Far from Home* and *Avengers: End Game* - that are popular across genres. No matter what shelf they're on - people find and want to watch them! Of course, this leads to more questions. How important is a movie to its genre(s)? What are the most popular way that people are finding movies?
+    There are clearly movies - like *Spider-Man: Far from Home* and *Avengers: End Game* - that are popular across genres. No matter what shelf they're on - people find and watch them! Of course, this leads to more questions. How important is a movie to its genre(s)? What are the most popular way that people are finding movies?
 
 2. Let's answer the second question - What are the most popular ways that people find movies that appear in multiple genres.
 
@@ -333,10 +333,9 @@ Explore the movie-genre relationship.
 
     ![top genres per movie](images/lab3-q8.png " ")
 
-There were a few changes to this query.  First, there is a suquery that finds the top movies. The second suquery uses that as a source to find rank the movie-genre combinations.  Notice, **RANK** has been updated to include a **PARTITION BY** in order to rank the top genres by movie.  Finally, the query adds a **RATIO\_TO\_REPORT** in order to easily view that genre's contribution relative to the other top genres.
+There were a few changes to this query.  First, there is a suquery that finds the top movies. The second suquery uses that as a source to rank the movie-genre combinations.  Notice, **RANK** has been updated to include a **PARTITION BY** in order to rank the top genres by movie.  Finally, the query adds a **RATIO\_TO\_REPORT** in order to easily view that genre's contribution relative to the other top genres.
 
-The result appears to show that - at least for best selling movies - people select the movie regardless of its genre.
-
+The result appears to show that - at least for best selling movies - people select the movie with an equivalent distribution across genres.
 
 ## Task 7: Finding our most important customers
 
@@ -406,8 +405,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
 
     ![binned customers by date and frequency](images/lab3-q10.png " ")
 
-
-    Now we can identify those customers, based on when they last watched a movie (rfm\_recency). And, identify customers that watch the fewest number of movies, where the rfm\_frequency is 1, versus those customers that watch the most number of movies, where the rfm\_frequency is 5.
+    Now we can categorize customers based on when they last watched a movie (rfm\_recency) and how frequently they viewed movies (rfm\_frequency).
 
 3.  Create an RFM query
 
@@ -436,10 +434,10 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     FROM rfm r
     INNER JOIN customer c ON c.cust_id = r.cust_id
     WHERE r.rfm_monetary >= 5
-      AND r.rfm_recency <= 1
+      AND r.rfm_recency = 1
     ORDER BY r.rfm_monetary desc, r.rfm_recency desc;</copy>
     ```
-    The result only shows customers who have history had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers.
+    The result only shows customers who have history had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers!
 
     ![RFM query](images/lab3-q11.png " ")
     
@@ -452,7 +450,7 @@ These features include:
 
 - Time-series functions
 
-- Analytic functions to calculate contribution (**RATIO\_TO\_REPORT** and **ROLLUP**)
+- Analytic functions to calculate contribution (**RATIO\_TO\_REPORT** and **RANK**)
 
 - **NTILE** binning functions that helps categorize customer sales and activity
 

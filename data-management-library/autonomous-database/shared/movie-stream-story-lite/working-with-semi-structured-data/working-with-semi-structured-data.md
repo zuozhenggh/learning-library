@@ -48,7 +48,7 @@ Oracle's SQL language contains specific keywords that help you process JSON data
 
 ### Overview of the business problem
 
-The marketing team would like to create themed bundles of movies based on the scriptwriters. Our movie data set has a series of columns that contain more detailed information. Each movie has a **crew** associated with it and that crew is comprised of **jobs**, such as "producer," "director," "writer," along with the names of the individuals. An example of how this information is organized is shown below:
+The marketing team would like to gain a better understanding of how different types of events - like the Academy Awards - impacts the business. Our movie data set has a series of columns that contain different types of details about movies. Each movie has a **crew** associated with it and that crew is comprised of **jobs**, such as "producer," "director," "writer," along with the names of the individuals. Each movie also has a list of award nominations and wins. An example of how this information is organized is shown below:
 
 ![JSON example](images/lab-3-json-doc.png " ")
 
@@ -61,7 +61,7 @@ Let's better understand the sales performance of our movies. We'll start by simp
 
 In the previous labs of this workshop, we loaded the data we want to use into our data warehouse. Autonomous Data Warehouse also allows you to leave your data in the Object Store and query it directly without having to load it first. This uses a feature called an External Table. There is a whole chapter on this topic in the documentation, [see here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833), which explains all the different types of file formats (including JSON) that are supported.
 
-Although queries on external data will not be as fast as queries on database tables, you can use this approach to quickly start running queries on your external source files and external data. In the public Object Storage buckets, there is a file called **movies.json** which contains information about each movie, as outlined above.  An external table called **JSON\_MOVIE\_DATA\_EXT** has been created over this json file.
+Although queries on external data will not be as fast as queries on database tables, you can use this approach to quickly start running queries on your external source files and external data. In the public object storage buckets, there is a file called **movies.json** which contains information about each movie, as outlined above.  An external table called **JSON\_MOVIE\_DATA\_EXT** has been created over this json file.
 
 1. Let's see how many rows are in this table:
 
@@ -131,7 +131,7 @@ Although queries on external data will not be as fast as queries on database tab
 
     ![top movies](images/json-lab-4.png " ")
 
-3. As part of our previous data loading lab, we loaded this external data into a table called **MOVIE**. This table created simple columns for the scalar fields - like title. But, some attributes in our JSON data set contain multiple entries. For example, cast has a list of names and nominations a list of nominated awards. Take a look at the cast, crew, names of the crew and awards for a couple of popular movies:
+3. As part of our previous data loading lab, we loaded this external data into a table called **MOVIE**. This table created simple columns for the scalar fields - like title. But, some attributes in our JSON data set contain multiple entries. For example, cast has a list of names and nominations a list of nominated awards. Take a look at the cast, crew and awards for a couple of popular movies:
 
     ```
     <copy>SELECT
@@ -245,7 +245,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
     ![academy bump](images/json-lab-8.png " ")
 
-    This is a sophistcated query that draws on our previous concepts and introduces the MATCH_RECOGNIZE clause. MATCH_RECOGNIZE (a.k.a. SQL Pattern Matching) is a powerful capability that allows you to find many different types of patterns  - like rising and falling of stock prices. Our pattern will be simple - did the customer watch the movie before or after the Academy Awards?
+    This is a sophistcated query that draws on our previous concepts and introduces the MATCH_RECOGNIZE clause. MATCH_RECOGNIZE (a.k.a. SQL pattern matching) is a powerful capability that allows you to examine many different types of patterns - like rising and falling of stock prices. Our pattern will be simple - did the customer watch the movie before or after the Academy Awards?
     
     Here is a summary of the query specification:
     * Subquery `academyAwardMovies` returns movies that have won significant awards
