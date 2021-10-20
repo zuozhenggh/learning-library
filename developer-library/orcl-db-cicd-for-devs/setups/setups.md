@@ -8,10 +8,52 @@ Estimated Lab Time: 20 minutes
 
 ### Objectives
 
+- Create a Compartment
 - Create an Autonomous Database
 
+## Task 1: Create a Compartment
 
-## Task 1: Create an Autonomous Database
+We are going to create a **Compartment** for this lab so that our database is in a specific compartment for this LiveLab and can also be easily found and used for additional LiveLabs.
+
+1. To create a compartment, use the OCI web console drop down menu and select **Identity & Security**, then **Compartments**.
+
+    ![Use OCI menu for compartments](./images/comp-1.png)
+
+2. On the Compartments page, click the **Create Compartment** button.
+
+    ![Create Compartment Button](./images/comp-2.png)
+
+3. Using the **Create Compartment modal**, set the following values:
+
+    **Name:** livelabs
+
+    ````
+    <copy>
+    livelabs
+    </copy>
+    ````
+
+    ![Create Compartment Name Field](./images/comp-3.png)
+
+    **Description:** livelabs
+
+    ````
+    <copy>
+    livelabs
+    </copy>
+    ````
+    ![Create Compartment Name Field](./images/comp-4.png)
+
+    **Parent Compartment:** Use the root compartment (Should be auto-selected, your root compartment will be named different, but will have (root) after it)
+
+    ![Create Compartment Parent Compartment Field](./images/comp-5.png)
+
+4. When your **Create Compartment modal** looks like the following image (root compartment name will be different but have (root) after the name), click the **Create Compartment button**.
+
+    ![Create Compartment Modal](./images/comp-6.png)
+
+
+## Task 2: Create an Autonomous Database
 
 1. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
 
