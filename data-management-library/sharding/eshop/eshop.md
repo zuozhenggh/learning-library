@@ -120,7 +120,7 @@ You can change the address shown in Saved Address if you want to ship products t
 
 ## Task 2: View Reports
 
-Navigate to application's home page and click on **REPORT** to view reports. The application can create reports by emulating two large data sets from relational tables (customers, orders, line items) and non-relational tables (Products and Reviews - JSON, Text, sentiment analysis). And these Analytics reports are built from a single query spanning multiple data types from multiple shard databases.
+Navigate to application's home page and click on **REPORT** to view reports. You can view reports as logged-in user only. The application can create reports by emulating two large data sets from relational tables (customers, orders, line items) and non-relational tables (Products and Reviews - JSON, Text, sentiment analysis). And these Analytics reports are built from a single query spanning multiple data types from multiple shard databases.
 
 1.	Dollar value sale by month: A single query from LINE_ITEM accessing multiple shard databases.
 2.	Sentiment Percentage: A single query from Reviews accessing multiple shard databases.
