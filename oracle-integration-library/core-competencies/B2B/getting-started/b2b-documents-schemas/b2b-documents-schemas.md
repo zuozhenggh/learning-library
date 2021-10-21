@@ -126,6 +126,7 @@ In B2B for Oracle Integration, you can generate implementation guides for both s
 The following image shows an example implementation guide:
 ![](images/CustomizePOSchema4010-ImplGuide-2.png)
 
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

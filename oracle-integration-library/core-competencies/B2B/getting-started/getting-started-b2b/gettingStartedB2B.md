@@ -202,6 +202,7 @@ ACME Corp sends an X12 850 Purchase Order EDI document to Trading Partner Dell I
 **Relationship between Trading Partner and Agreements**
 ![](./images/relationshipTP-Agreements.png)
 
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

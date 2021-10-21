@@ -61,6 +61,8 @@ Navigate to an Oracle Integration instance in the Oracle Cloud Infrastructure Co
 3.	At the far right, click Task menu, and select Service Console to access the Oracle Integration login page
 	![](./images/oic-homepage.png)
 
+	You may now [proceed to the next lab](#next).
+
 ## Learn More
 
 * [Provisioning Oracle Integration Instance](https://docs.oracle.com/en/cloud/paas/integration-cloud/oracle-integration-oci/creating-oracle-integration-instance.html#GUID-930F40E8-5149-4091-9CDA-8E05C8449BA6)

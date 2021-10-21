@@ -113,6 +113,7 @@ Directory Listing created in File Server. If all the permissions are provided yo
 | Username                | <OIC Username>                                        |
 | Password                | <OIC Password>                                        |
 
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 

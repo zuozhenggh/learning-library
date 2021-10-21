@@ -167,22 +167,31 @@ This expression indicates that if TranslateOutput > translation-status has a val
 | Translation Status | Translation Status |
 | Validation Error Report | Validation Error Report |
 
-3. After completing all the mappings, you can cross check by leveraging Test feature available on Mapper and Click on Validate and Click on Close
-4. click Actions Menu  in the top-right corner of canvas, and select Tracking.
-5. In the resulting dialog, select orderNumber on the left and move it to the table on the right and click on Save.
-6. Check for errors, Save the integration and click Close
+3. After completing all the mappings, you can cross check by leveraging Test feature available on Mapper and Click on Validate and Click on Close and Save your integration flow.
+
+## **STEP 7**: 	Add Tracking Identifiers for Integration Tracking
+
+1. Click Actions Menu  in the top-right corner of canvas, and select Tracking
+2. In the resulting dialog, select orderNumber on the left and move it to the table on the right and click on Save.
+3. Check for errors, Save the integration and click Close
    ![finalflow1 diagram](images/finalflow.png =50%x*)
 
-## **STEP 7**: Activate the integration
 
-1. On the Integrations page, click on the activate button against your integration to activate it
-2. select “Enable Tracing”, “Include Payload” options and Click Activate in the Activate Integration dialog
-3. To execute your sample integration, send a request from a REST client tool, such as Postman OR you can use Oracle Integration console to test. Let us use Oracle Integration Test Console.
-4. You have two xml files [USGEPO.xml](files/USGEPO.xml?download=1) and [DellIncPO.xml](files/DellIncPO.xml?download=1), download and open one xml file and copy the data and paste it in the body of the request console and click on Test
+## **STEP 8**:  Activate the Integration
+
+Check for errors, save, and activate the integration flow.
+1.	On the Integrations page, click on the activate button against your integration to activate it.
+2.	Click Activate in the Activate Integration dialog and select **Enable Tracing** and **Include Payload** options
+
+
+## **STEP 9**: Test the integration
+
+1. To execute your sample integration, send a request from a REST client tool, such as Postman OR you can use Oracle Integration console to test. Let us use Oracle Integration Test Console.
+2. Download [DellIncPO.xml](files/DellIncPO.xml?download=1) and open the file and copy the data and paste it in the body of the request console and click on Test
   ![TestConsole diagram](images/b2b-outbound17.png =50%x*)
-5. Go to Monitoring->Integrations->Tracking-> Cross check your backend integration and trading partner integration ran successfully and now repeat the test with another xml file which would trigger another trading partner
-6. If you have FTP Client installed on your machine, you can login using the FTP details provided to you and cross check your edi file created under folders /B2BWorkshop/B2BTPUSGEOut and /B2BWorkshop/B2BTPDELLOut
-7. In conclusion, you can use Oracle Integration to accept XML message and convert it into EDI format and send it to the trading partners dynamically
+3. Go to Monitoring->Integrations->Tracking-> Cross check your backend integration and trading partner integration ran successfully and now repeat the test with another xml file which would trigger another trading partner
+4. If you have FTP Client installed on your machine, you can login using the FTP details provided to you and cross check your edi file created under folder /B2BWorkshop/B2BTPDELLOut
+5. In conclusion, you can use Oracle Integration to accept XML message and convert it into EDI format and send it to the trading partners dynamically
 
 You may now [proceed to the next lab](#next).
 

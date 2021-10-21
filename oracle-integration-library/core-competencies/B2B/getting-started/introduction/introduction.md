@@ -40,6 +40,8 @@ In this workshop, you will learn how to:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * A Chrome browser
 
+You may now [proceed to the next lab](#next).
+
 ## Learn More
 
 * [B2B for Oracle Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud/btob.html)
