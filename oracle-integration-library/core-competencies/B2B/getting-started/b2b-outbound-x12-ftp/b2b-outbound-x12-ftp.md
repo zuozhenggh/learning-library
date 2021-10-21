@@ -33,7 +33,7 @@ This labs takes the input as XML from a Rest Client . In a real world use case y
 
 
 
-## **STEP 1**: Create an Integration
+## Task 1: Create an Integration
 
 Let's create a basic, outbound integration flow that receives an XML document through a REST request, converts it to EDI X12 format, and invokes corresponding trading partner.
 
@@ -53,7 +53,7 @@ Note:This integration flow uses REST for simplicity. You can substitute the REST
 
 4. Change Layout to Horizontal
 
-## **STEP 2**: Configure the REST Adapter Trigger Connection
+## Task 2: Configure the REST Adapter Trigger Connection
 On the integration canvas, click the start node and select Sample REST Endpoint Interface as the trigger connection.
 The Adapter Endpoint Configuration Wizard opens
 
@@ -80,7 +80,7 @@ The Adapter Endpoint Configuration Wizard opens
     - Click Next, and on the Summary page, click Done to complete the REST Adapter configuration.
     - The integration flow is now represented as follows in the canvas and click on Save to save your integration flow
     ![Response diagram](images/b2b-outbound4.png =50%x*)
-## **STEP 3**: Configure the EDI Translate Action
+## Task 3: Configure the EDI Translate Action
 Add an EDI translate action to the flow to translate XML document to an EDI document
 1. On the right side of the canvas, click Actions  , drag B2B, and drop it after the first Receive-App-Msg element.
 The Configure B2B Action wizard opens
@@ -96,7 +96,7 @@ The Configure B2B Action wizard opens
     - Review the Summary page, click on Done to complete the configuration and click on Save to save your integration flow. Click on RESET if required for a better view of your integration flow.
    Note that the corresponding mapping element is automatically added to the integration flow
    ![Summary diagram](images/b2b-outbound8.png =50%x*)
-## **STEP 4**: Configure Mapping Actions
+## Task 4: Configure Mapping Actions
 Configure data mappings for the EDI-Generate action and Receive-App-Msg action in order to successfully parse the incoming XML message and translate it to EDI message.
 
 1. Click the Map to EDI-Generate action and select Edit.
@@ -127,7 +127,7 @@ Once you are done with the validation, test it and results should look like the 
 
 4. Click Validate and then Close.
 5. Save your integration flow.
-## **STEP 5**: Switch action after EDI-Generate activity
+## Task 5: Switch action after EDI-Generate activity
 1. Add a switch action after the EDI-Generate activity
     - For the If branch, Enter the Expression Name as “Success or Warning” and enter the following expression under Expression section. (You may have to select Expression Mode to enter the value given below). If there is an error on namespaces then you can search for “translation-status” and select that element for mapping.
     ```
@@ -159,7 +159,7 @@ This expression indicates that if TranslateOutput > translation-status has a val
     - Validate and Close -> Save your integration flow.
     ![finalflow diagram](images/b2b-outbound15.png =50%x*)
 
-## **STEP 6**: After Switch activity
+## Task 6: After Switch activity
 1. Edit Map to Receive-App-Msg activity.
 2. From Source, expand EDI-Generate Response ->executeResponse->TranslateOutput and From Target, expand Purchase Order Result and map the following elements as per the table given below.
 | Source | Target |
@@ -169,7 +169,7 @@ This expression indicates that if TranslateOutput > translation-status has a val
 
 3. After completing all the mappings, you can cross check by leveraging Test feature available on Mapper and Click on Validate and Click on Close and Save your integration flow.
 
-## **STEP 7**: 	Add Tracking Identifiers for Integration Tracking
+## Task 7: 	Add Tracking Identifiers for Integration Tracking
 
 1. Click Actions Menu  in the top-right corner of canvas, and select Tracking
 2. In the resulting dialog, select orderNumber on the left and move it to the table on the right and click on Save.
@@ -177,14 +177,14 @@ This expression indicates that if TranslateOutput > translation-status has a val
    ![finalflow1 diagram](images/finalflow.png =50%x*)
 
 
-## **STEP 8**:  Activate the Integration
+## Task 8:  Activate the Integration
 
 Check for errors, save, and activate the integration flow.
 1.	On the Integrations page, click on the activate button against your integration to activate it.
 2.	Click Activate in the Activate Integration dialog and select **Enable Tracing** and **Include Payload** options
 
 
-## **STEP 9**: Test the integration
+## Task 9: Test the integration
 
 1. To execute your sample integration, send a request from a REST client tool, such as Postman OR you can use Oracle Integration console to test. Let us use Oracle Integration Test Console.
 2. Download [DellIncPO.xml](files/DellIncPO.xml?download=1) and open the file and copy the data and paste it in the body of the request console and click on Test
