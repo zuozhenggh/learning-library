@@ -21,7 +21,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-**NOTE:** *When doing Copy/Paste using the convenient **Copy** *function used throughout the guide, you must hit the **ENTER** *key after pasting. Otherwise the last line will still be in the buffer until you hit **ENTER!**
+**NOTE:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise the last line will remain in the buffer until you hit* **ENTER!**
 
 ## Task 1: Validate That Required Processes are Up and Running.
 
