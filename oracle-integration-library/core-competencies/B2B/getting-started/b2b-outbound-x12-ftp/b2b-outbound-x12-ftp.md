@@ -32,13 +32,12 @@ In this lab, you will create a basic integration flow:
 This labs takes the input as XML from a Rest Client . In a real world use case you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
 
 
-## **STEP 1**: Create Connection
 
-## **STEP 2**: Create an Integration
+## **STEP 1**: Create an Integration
 
 Let's create a basic, outbound integration flow that receives an XML document through a REST request, converts it to EDI X12 format, and invokes corresponding trading partner.
-Note:
-This integration flow uses REST for simplicity. You can substitute the REST Adapter trigger connection with any other adapter, such as the FTP Adapter, NetSuite Adapter, ERP Cloud Adapter, available in Oracle Integration
+
+Note:This integration flow uses REST for simplicity. You can substitute the REST Adapter trigger connection with any other adapter, such as the FTP Adapter, NetSuite Adapter, ERP Cloud Adapter, available in Oracle Integration
 
 
 1. In the navigation pane, click Integrations.
@@ -54,7 +53,7 @@ This integration flow uses REST for simplicity. You can substitute the REST Adap
 
 4. Change Layout to Horizontal
 
-## **STEP 3**: Configure the REST Adapter Trigger Connection
+## **STEP 2**: Configure the REST Adapter Trigger Connection
 On the integration canvas, click the start node and select Sample REST Endpoint Interface as the trigger connection.
 The Adapter Endpoint Configuration Wizard opens
 
@@ -81,7 +80,7 @@ The Adapter Endpoint Configuration Wizard opens
     - Click Next, and on the Summary page, click Done to complete the REST Adapter configuration.
     - The integration flow is now represented as follows in the canvas and click on Save to save your integration flow
     ![Response diagram](images/b2b-outbound4.png =50%x*)
-## **STEP 4**: Configure the EDI Translate Action
+## **STEP 3**: Configure the EDI Translate Action
 Add an EDI translate action to the flow to translate XML document to an EDI document
 1. On the right side of the canvas, click Actions  , drag B2B, and drop it after the first Receive-App-Msg element.
 The Configure B2B Action wizard opens
@@ -97,7 +96,7 @@ The Configure B2B Action wizard opens
     - Review the Summary page, click on Done to complete the configuration and click on Save to save your integration flow. Click on RESET if required for a better view of your integration flow.
    Note that the corresponding mapping element is automatically added to the integration flow
    ![Summary diagram](images/b2b-outbound8.png =50%x*)
-## **STEP 5**: Configure Mapping Actions
+## **STEP 4**: Configure Mapping Actions
 Configure data mappings for the EDI-Generate action and Receive-App-Msg action in order to successfully parse the incoming XML message and translate it to EDI message.
 
 1. Click the Map to EDI-Generate action and select Edit.
@@ -128,7 +127,7 @@ Once you are done with the validation, test it and results should look like the 
 
 4. Click Validate and then Close.
 5. Save your integration flow.
-## **STEP 6**: Switch action after EDI-Generate activity
+## **STEP 5**: Switch action after EDI-Generate activity
 1. Add a switch action after the EDI-Generate activity
     - For the If branch, Enter the Expression Name as “Success or Warning” and enter the following expression under Expression section. (You may have to select Expression Mode to enter the value given below). If there is an error on namespaces then you can search for “translation-status” and select that element for mapping.
     ```
@@ -160,7 +159,7 @@ This expression indicates that if TranslateOutput > translation-status has a val
     - Validate and Close -> Save your integration flow.
     ![finalflow diagram](images/b2b-outbound15.png =50%x*)
 
-## **STEP 7**: After Switch activity
+## **STEP 6**: After Switch activity
 1. Edit Map to Receive-App-Msg activity.
 2. From Source, expand EDI-Generate Response ->executeResponse->TranslateOutput and From Target, expand Purchase Order Result and map the following elements as per the table given below.
 | Source | Target |
@@ -174,7 +173,7 @@ This expression indicates that if TranslateOutput > translation-status has a val
 6. Check for errors, Save the integration and click Close
    ![finalflow1 diagram](images/finalflow.png =50%x*)
 
-## **STEP 8**: Activate the integration
+## **STEP 7**: Activate the integration
 
 1. On the Integrations page, click on the activate button against your integration to activate it
 2. select “Enable Tracing”, “Include Payload” options and Click Activate in the Activate Integration dialog

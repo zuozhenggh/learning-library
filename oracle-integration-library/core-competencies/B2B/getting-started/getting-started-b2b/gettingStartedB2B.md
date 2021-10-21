@@ -109,7 +109,7 @@ You define a Transport for a B2B trading partner from the B2B > Transports and A
 
 **AS2**
 
-AS2, an abbreviation for Applicability Statement 2, is an HTTP based protocol designed for B2B by adding a comprehensive set of data security features around data confidentiality, data integrity/authenticity and non-repudiation. The AS2 specification is covered by RFC 4130 (https://datatracker.ietf.org/doc/html/rfc4130). B2B for Oracle Integration supports AS2 1.0 and 1.1 versions.
+AS2, an abbreviation for Applicability Statement 2, is an HTTP based protocol designed for B2B by adding a comprehensive set of data security features around data confidentiality, data integrity/authenticity and non-repudiation. The AS2 specification is covered by [RFC 4130](https://datatracker.ietf.org/doc/html/rfc4130). B2B for Oracle Integration supports AS2 1.0 and 1.1 versions.
 
 An AS2 transport offers configuration options specific to AS2 that work in conjunction with the AS2 Connection and the Certificate management UI.
 
@@ -205,10 +205,8 @@ ACME Corp sends an X12 850 Purchase Order EDI document to Trading Partner Dell I
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [B2B for Oracle Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud/btob.html)
+* [Oracle Integration Blogs](https://blogs.oracle.com/integration/)
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>

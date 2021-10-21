@@ -16,7 +16,7 @@ B2B for Oracle Integration represents a collective set of features inside Oracle
 * A trading partner management interface.
 * An EDI schema editor for customization.
 * A specialized B2B tracking user interface for viewing messages exchanged with trading partners.
-* Adapters to support B2B protocols such as AS2 and FTP. See [Transport Protocols Supported in B2B for Oracle Integration] (https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/transport-protocols-supported-oracle-b2b.html#GUID-A200BA30-65F0-486A-BBBA-BAA1D84D131A).
+* Adapters to support B2B protocols such as AS2, FTP and SFTP. See [Transport Protocols Supported in B2B for Oracle Integration] (https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/transport-protocols-supported-oracle-b2b.html#GUID-A200BA30-65F0-486A-BBBA-BAA1D84D131A).
 * Actions you place within your integrations for EDI processing. See [Business Protocols Supported in B2B for Oracle Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/business-protocols-supported-oracle-b2b.html#GUID-CBAF3DC2-0A64-4AC4-BD2D-4F940223DC9A).
 
 
@@ -42,10 +42,8 @@ In this workshop, you will learn how to:
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
 * [B2B for Oracle Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud/btob.html)
-* [URL text 2](http://docs.oracle.com)
+* [Oracle Integration Blogs](https://blogs.oracle.com/integration/)
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>

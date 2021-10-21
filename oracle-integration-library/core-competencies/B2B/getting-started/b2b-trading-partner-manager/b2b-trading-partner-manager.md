@@ -42,7 +42,9 @@ This lab assumes you have:
 2.	In the Host Company Name field, enter your company name
 		<copy>Acme</copy>
 		The name is currently only for reference and not used elsewhere.
-3.	Select a host identifier or, if none are defined, click Add icon. You add identifiers to the host profile on behalf of your company. This is typically a one-time activity that you perform before adding your first trading partner. Host identifiers define your company when acting as the host interacting with other trading partners. They identify and validate the source of the document when sent by the host. Identifiers defined here are used in two places:
+3.	Select a host identifier or, if none are defined, click Add icon. You add identifiers to the host profile on behalf of your company.
+
+Note: This is typically a one-time activity that you perform before adding your first trading partner. Host identifiers define your company when acting as the host interacting with other trading partners. They identify and validate the source of the document when sent by the host. Identifiers defined here are used in two places:
 *	Transports
 *	Outbound agreements
 
@@ -52,8 +54,10 @@ This lab assumes you have:
 | EDI Interchange ID	 |ACMEOICB2B|
 | EDI Interchange ID Qualifier |ZZ|
 |EDI Group ID	|Acme|
+|EDI Group ID Qualifier|01|
 
 5.	Click Save.
+
 Note: If you change the host identifier value used in a deployed agreement, the changes only take effect after you explicitly redeploy the agreement between the host and the trading partner
 
 
@@ -61,7 +65,7 @@ Note: If you change the host identifier value used in a deployed agreement, the 
 
 You can create and manage trading partners. A trading partner is the external business entity with which your company interacts to send or receive business documents, such as orders and invoices, in electronic form.
 
-Trading partner concepts are provided. See Trading Partners (Refer Getting Started with B2B in Oracle Integration)
+Trading partner concepts are provided. Refer Getting Started with B2B in Oracle Integration Lab.
 
 1.	In the left navigation pane, click B2B > Trading Partners
 2.	Click Create. Enter the trading partner name as “Dell Inc" and an optional description. The Identifier field is automatically populated with the name you enter. The values for both must be unique. And click Create.

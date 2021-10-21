@@ -50,7 +50,7 @@ The above schematic structure represents the Transaction Set Segment (**ST**) st
 
 ## Task 2: Create a new B2B Document
 
-You can create a new B2B schema based on a standard document type
+You can create a new B2B Document based on a standard document type
 
 1. In the left navigation pane, click B2B > B2B Documents
 2. On the B2B Documents page, click **Create**
@@ -91,7 +91,7 @@ The Details pane is displayed with the Properties tab selected.
 The three tabs on the Details pane enable you to perform customizations.
 | Tab | Description |
 | --- | --- |
-| Properties  |Displayed by default when you initially access the Details pane. You can modify the following standard EDI X12 properties for the selected segment or element: <ul><li>Purpose of element</ul></li><ul><li>Requirement (mandatory, optional, or conditional)</ul></li><ul><li>Usage (must use, do not use, recommended, or not recommended)t</ul></li><ul><li>Minimum and maximum number of characters</ul></li><ul><li>Number of times to repeat the element</ul></li>|
+| Properties |Displayed by default when you initially access the Details pane. You can modify the following standard EDI X12 properties for the selected segment or element: <ul><li>Purpose of element</ul></li><ul><li>Requirement (mandatory, optional, or conditional)</ul></li><ul><li>Usage (must use, do not use, recommended, or not recommended)t</ul></li><ul><li>Minimum and maximum number of characters</ul></li><ul><li>Number of times to repeat the element</ul></li>|
 | Code List |A code list defines an enumeration of allowed values for the element. |
 | Notes  | Click to add Notes to the Element |
 
