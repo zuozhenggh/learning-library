@@ -26,9 +26,8 @@ This lab assumes you have:
     * Lab: Prepare Setup (Free-tier and Paid Tenants only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
-* Source and Target connections are created. See **Lab: Create Datasource Connections** for steps to create connections.
-
-
+    * Lab: Create Datasource connections
+    
 ## Task 1: Configure Delta Comparison
 
 1. In the Oracle GoldenGate Veridata UI, click **Group Configuration**, select a group, click **Edit**, and click **Go to Compare Pair Configuration** to display the **Compare Pair Configuration** page.
@@ -128,7 +127,7 @@ Enter:
 
       ![](./images/11DP.png " ")
 
-This concludes this lab. You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 * [Using Delta Processing ](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-02F4F2D3-2828-4504-8968-C87231752115)

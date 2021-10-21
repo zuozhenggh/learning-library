@@ -16,7 +16,7 @@ Watch our short video that explains the partitioning feature in Oracle GoldenGat
 
 ### Objectives
 In this lab, you will:
-* Create Database Row Partitioning
+* Create Database Row Partitioning.
 
 
 ### Prerequisites
@@ -27,9 +27,9 @@ This lab assumes you have:
     * Lab: Prepare Setup (Free-tier and Paid Tenants only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
-* Source and Target connections are created. See **Lab: Create Datasource Connections** for steps to create connections.
-* A Group is created. Let the Group Name be **Group_DBPartition**. See **Lab: Create Groups and Compare Pairs** for steps to create groups.
-* Create Compare Pairs (on Manual Mapping Tab): Follow the Tasks 1 to 2 in **Lab: Create Groups and Compare Pairs** to create a compare pair.
+    * Lab: Create Datasource connections
+    * Lab: Create Groups and Compare Pairs. Create a Group by name **Group_DBPartition**.
+    * Lab: Create Groups and Compare Pairs. Follow the Tasks 1 to 2 to create a compare pair.
 
 ## **Task 1:** Configure Database Row Partitioning
 To configure Database Row Partitioning:
@@ -56,7 +56,6 @@ To configure Database Row Partitioning:
 
 6. Click **Generate Compare Pairs**. The control moves to the **Preview** tab.
 
-
     ![](./images/4_DB.png " ")
 7. Click **Save** to save the generated compare pair.
 
@@ -64,10 +63,6 @@ To configure Database Row Partitioning:
   Notice the compare pairs that have been generated with Database Row Partition.
 
     ![](./images/5_DB.png " ")
-
-  You may now proceed to the lab on [Creating and Executing Jobs](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468) to create a new job. Add the **Group_DBPartition** Group to this job.
-
-This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 

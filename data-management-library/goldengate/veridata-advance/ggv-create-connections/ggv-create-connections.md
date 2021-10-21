@@ -101,7 +101,7 @@ To create connections:
 
 9. Click **OK** to display the **New Connection Assistant** page.
 
-This concludes this lab. You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
@@ -109,5 +109,5 @@ This concludes this lab. You may now proceed to the next lab.
 
 ### Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Meghana Banka
 * **Last Updated By/Date** - Anuradha Chepuri, October 2021

@@ -105,7 +105,7 @@ To create compare pairs on the **Pattern Mapping** tab:
 5. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
     ![](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
 
-This concludes this lab. You may now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)

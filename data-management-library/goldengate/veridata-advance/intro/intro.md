@@ -4,7 +4,7 @@
 
 The labs in this workshop walk you through several advanced features of Oracle GoldenGate Veridata, including: Delta Progression, Automatic Comparison, and Database Partitions.
 
-*Estimated Lab Time*: 2 hours
+*Estimated Lab Time*: 4 hours
 
 ### About Oracle GoldenGate Veridata
 Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
@@ -18,7 +18,6 @@ In this lab, you will:
 
 ### Prerequisites
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 * The following are required to complete this lab:
     * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
     * Prior knowledge of Database basic concepts
@@ -35,5 +34,5 @@ Use these links to get more information about Oracle GoldenGate Veridata:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
