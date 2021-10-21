@@ -10,6 +10,9 @@ Today, you will use the Compute Instance to connect from the browser to a MDS DB
 
 Estimated Lab Time 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:h5ueWMhLH2g)
 
 ### Objectives
 
