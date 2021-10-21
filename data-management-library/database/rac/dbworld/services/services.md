@@ -75,11 +75,11 @@ You should have already identified your database name and instance name.  Each p
 
     ![Validate Service is Running](./images/testy-crsctl.png " ")
 9. Exit from the grid user
-    ````
-    <copy>
-    exit
-    </copy>
-    ````
+````
+<copy>
+exit
+</copy>
+````
 
 ## Task 2:  Create a Service
 
@@ -155,13 +155,13 @@ As the grid user
 
 If you are still running as the *grid* user, exit to *opc* and then *su* to *oracle*
 
-    ````
-    <copy>
-    exit
-    su - grid
-    export ORACLE_HOME=/u01/app/19.0.0.0/grid
-    </copy>
-    ````
+````
+<copy>
+exit
+sudo su - oracle
+export ORACLE_HOME=/u01/app/19.0.0.0/grid
+</copy>
+````
 As the *oracle* user
 
     ````
@@ -398,21 +398,20 @@ For example:
     ````
 Examine where the sessions have been created
 
-    ````
-    SQL> select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
+````
+SQL> select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
 
-    INST_ID SERVICE_NAME             COUNT(*)
-    ---------- -------------------- ----------
-         1     unisrv                   5
-         2     unisrv                   5
+INST_ID SERVICE_NAME             COUNT(*)
+---------- -------------------- ----------
+     1     unisrv                   5
+     2     unisrv                   5
+````
 
-    ````
     ![Examine GV$SESSION for Connected Sessions](./images/sqlplus-1.png " ")
 
+The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances, but for a small number of connections created at intervals they generally do.
 
-    The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances, but for a small number of connections created at intervals they generally do.
-
-    You can instruct the listener to use the load on an instance to balance connection attempts (the listener will store run queue information), but this is not the default.
+You can instruct the listener to use the load on an instance to balance connection attempts (the listener will store run queue information), but this is not the default.
 
 10. Now do the same with the CLBTEST-LOCAL alias (close the first sessions as it will make it easier to illustrate what happens)
 
@@ -540,8 +539,8 @@ Examine where the sessions have been created
     RECSRV=(DESCRIPTION =
      (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
      (ADDRESS_LIST =(LOAD_BALANCE=on)
-     (ADDRESS = (PROTOCOL = TCP)(HOST=racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)(PORT=1521)))
-     (CONNECT_DATA=(SERVICE_NAME = testy.pub.racdblab.oraclevcn.com)))
+     (ADDRESS = (PROTOCOL = TCP)(HOST=<REPLACE SCAN NAME>)(PORT=1521)))
+     (CONNECT_DATA=(SERVICE_NAME = <REPLACE SERVICE NAME>.pub.racdblab.oraclevcn.com)))
     </copy>
     ````
 
@@ -551,11 +550,11 @@ Examine where the sessions have been created
 
 16. Restart the instance you stopped earlier
 
-    ````
-    <copy>
-    srvctl start instance -d <REPLACE DATABASE NAME> -i aTFdbVm2
-    </copy>
-    ````
+````
+<copy>
+srvctl start instance -d <REPLACE DATABASE NAME> -i aTFdbVm2
+</copy>
+````
 
 ## Task 5 The difference between connection load balancing and runtime load Balancing
 
@@ -655,7 +654,7 @@ The UCP pool manager will be handing these connections to worker threads as they
 
 5. We know that nodes in a cluster may not be equal in capacity, nor may there be equal distribution of workload on each node.
 
-If you look at the current response time for acdemo it is fairly equal - probably 38-40 ms per request.
+If you look at the current response time for acdemo it is fairly equal - probably 5-6 ms per request.
 ````
 39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 5ms
 40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 6ms
@@ -690,13 +689,13 @@ Start the CPU\_HOG utility, specifying a target load of 90%
 ````
 <copy>
 cd /home/oracle/cpu_hog
-atm_cpuload_st 90
+atm_cpuload_st.pl 90
 </copy>
 ````
 
 ![CPUHOG Program Running](./images/cpu_hog_running.png " ")
 
-You should see some acdemo requests getting longer (they will periodically jump to 45 - 48 ms, a significant change) - this is because the threads are using connections on the overloaded node
+You should see some acdemo requests getting longer (they will periodically jump to 15 - 20 ms, a significant change) - this is because the threads are using connections on the overloaded node
 
 ````
 39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 38ms
