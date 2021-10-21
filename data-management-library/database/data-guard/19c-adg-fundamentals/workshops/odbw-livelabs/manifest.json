@@ -17,7 +17,7 @@
             "title": "Lab 1: Connecting to the Database ",
             "description":"Connection to the databases",
             "type": "livelabs",
-            "filename":"../../connect-db/connect-db-cs.md"
+            "filename":"../../connect-db/connect-db-cs-odbw.md"
         },
         {
             "title": "Lab 2: Performing a switchover",
