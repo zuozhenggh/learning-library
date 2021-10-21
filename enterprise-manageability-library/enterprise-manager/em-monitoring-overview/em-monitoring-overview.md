@@ -213,7 +213,7 @@ As Best Practice:
 12.	Click OK to save changes, then you should see a Confirmation message . Click OK.
 
      ![](images/emmonlab3step12pt1.png " ")
-     
+
      ![](images/emmonlab3step12.png " ")
 
 13.	Navigate to “Database >> Monitoring >> All Metrics”.
@@ -507,9 +507,9 @@ To create this hierarchy, use target properties to define the membership criteri
 
 10.	The Non-Production Template Collection contains two Monitoring Templates. Click OK once you are done reviewing the templates.
 
-     - Dev_Test_PDB_Monitoring_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Test".
+     - Dev\_Test\_PDB\_Monitoring\_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Test".
 
-     - Dev_Test_DB_Instance_Monitoring_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Test".
+     - Dev\_Test\_DB\_Instance\_Monitoring\_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Test".
 
      ![](images/emmonlab7step10.png " ")
 
@@ -519,11 +519,11 @@ To create this hierarchy, use target properties to define the membership criteri
 
 12.	The Production Template Collection contains 3 Monitoring Templates. Click OK once you are done reviewing the templates.
 
-     - Prod_PDB_Monitoring_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
+     - Prod\_PDB\_Monitoring\_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
 
-     - Prod_DB_Instance_Monitoring_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
+     - Prod\_DB\_Instance\_Monitoring\_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
 
-     - Prod_Host_Monitoring_Template: This monitoring template will be applied to Host targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
+     - Prod\_Host\_Monitoring\_Template: This monitoring template will be applied to Host targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
 
      ![](images/emmonlab7step12.png " ")
 
