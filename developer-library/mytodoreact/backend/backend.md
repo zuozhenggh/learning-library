@@ -140,6 +140,13 @@ microservices images into the repository
 	Returns
 	http://130.61.66.27/todolist
 
+5. Testing end to end from the OKE cluster to the Autonomous database
+	* In **Cloud Shell** issue the following command (Replace the IP address with the **External IP** of your OKE cluster)
+	**$ kubectl logs -f <POD-name>**
+	``` bash
+	<copy>curl http://155.248.198.248/todolist</copy>
+	```
+		You should see the record you have created in Tutorial 1 after the database creation.
 ## Task 4: UnDeploy (optional)
 
 If you make changes to the image then you need to delete the service and the pods by running undeploy.sh then redo the following steps: **Build and Push the Docker Image to the OCI Registry** and **Deploy in Kubernetes and Check the Status**.
@@ -165,43 +172,52 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 2. Specify the `mtdrworkshop` compartment on the left side then click **Create Gateway**
 	![click create gateway](images/click-create-gateway.png " ")
 
-3. Configure the basic info: name, compartment, VCN and Subnet
-Then click **Create**.
+3. Configure the basic info: name, compartment, VCN and Subnet; then click **Create**.
     ![create gateway](images/create-gateway.png " ")
-    * VCN: pick one of the virtual circuit networks
-    * Subnet pick the public subnet
+    * VCN: pick the virtual circuit networks
+    * Subnet: pick the public subnet starting with `oke-svclbsubnet-quick-mtdrworkshopcluster`
 
    Observe that the ToDolist gateway has been successfully created.
 	![gateway](images/Gateway.png " ")
 
-4. Click **Deployments**
+4. Copy the OCID of the newly created Gateway
+	![Gatway OCID](images/Gateway-OCID.png " ")
+
+	In the following command, replace $Gateway_OCID with the copied OCID and save it to the mtdrworkshopgateway.txt file
+	``` bash
+	<copy>echo $Gateway_OCID > ~/mtdrworkshop/workingdir/mtdrworkshopgatewayid.txt</copy>
+	```
+
+5. Click **Deployments**
 	![deployment-menu](images/Deployment-menu.png " ")
 
-5. Click **Create Deployment**
+6. Click **Create Deployment**
    ![deployment](images/deployment.png " ")
 
-6. Create a **TodDolist deployment**.
+7. Create a **TodDolist deployment**.
    ![deployment](images/Deplyment.png " ")
 
-7. Configure the Basic info
- ![Basic info](images/API-Gateway-basic.png " ")
+8. Configure the Basic info
+ ![Basic info](images/APi-Gateway-basic.png " ")
 
-8. Configure CORS policies:
+9. Configure CORS policies:
   
 	* CORS is a security mechanism that will prevent running application loaded from origin A from using resources from origin B.
-	* Allowed Origins is the list of all servers (origins) that are allowed to access the API deployment typically of a Kubernetes cluster IP. **Replace 129.146.94.125** with the **External IP** of your Kubernetes cluster
+	* Allowed Origins is the list of all servers (origins) that are allowed to access the API deployment typically of a Kubernetes cluster IP. Replace **us-sanjose-1** by your region, and **155.248.198.248** by the **External IP** of your Kubernetes cluster.
+	
 	 ![origins methods](images/Origins-Methods.png " ")
     * Allowed methods GET, PUT, DELETE, POST, and OPTIONS are all needed.
 
-9. Configure the headers.
+10. Configure the headers.
 	![headers](images/Headers.png " ")
 	\* click **Apply changes** to create the CORS policy
 
-10. Configure the routes by defining two routes:
-	\* Click **Routes**, next to the number 2, on the left to create
+11. Click **Next** to configure two routes:
+	
    ![route](images/Route-1.png " ")
     * /todolist for the first two APIs: GET, POST, OPTIONS
-	* After defining a route for `/todolist`, click **Another Route** to define a route for `/todolist/{id}` for the remaining three APIs: GET, PUT, DELETE
+	* After defining a route for `/todolist`, click **Another Route** to define a route for `/todolist/{id}` for the remaining three APIs: GET, PUT, DELETE.
+	 ![route](images/Route-2.png " ")
 
 	* After defining both routes, click **Next**, then click **Create**
    
@@ -209,7 +225,7 @@ Then click **Create**.
 ## Task 6: Testing the backend application through the API Gateway
 
 1. Navigate to the newly created Gateway Deployment Detail and copy the endpoint
-   ![gateway endpoint](images/gateway-endpoint.png " ")
+   ![gateway endpoint](images/Gateway-endpoint.png " ")
 
 2. Testing through the **API Gateway endpoint**.
 Postfix the gateway endpoint with "/todolist" as shown in the following screen shot.
