@@ -4,12 +4,18 @@
 
 This lab walks you through the steps to onboard an application into Oracle Identity Governance(OIG) using the flat file connector.
 
-Estimated Time: 25 minutes
+*Estimated Time*: 25 minutes
 
 ### Objectives
 
 In this lab, you will:
 * Onboard an application into OIG using flat file connector
+
+### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Initialize Environment
 
 ## Task 1: Launch the workshop instance
 
@@ -126,7 +132,7 @@ In this lab, you will:
     * Change the datatype of start_date attribute by selecting the Date datatype from the Data Type column.
     * Mark the document_access as multivalued by selecting the corresponding checkbox in the MVA column.
 
-      ![](images/15-basicinfo.png)
+  ![](images/15-basicinfo.png)
 
 7. Click Next to proceed to the Schema page.
 
@@ -154,9 +160,9 @@ In this lab, you will:
         Length : <copy>15</copy>
         ```
 
-        ![](images/17b-schema.png)
+  ![](images/17b-schema.png)
 
-        ![](images/18-schema.png)
+  ![](images/18-schema.png)
 
 3. Select the Case Insensitive column for username,id and document_access attributes.
 
@@ -246,17 +252,17 @@ In this lab, you will:
     - Expand the Flat File Entitlement and then expand the DMS Flat File Entitlements Loader.
     - Click Run now and click on the Refresh icon multiple times until you notice that the Success result appears under Job history
 
-      ![](images/31-recon.png)
+    ![](images/31-recon.png)
 
-      ![](images/32-recon.png)
+    ![](images/32-recon.png)
 
 5. Performing Full Reconciliation
     - Expand the Flat File Full and then expand the DMS Flat File Accounts Loader.
     - Click Run now and click on the Refresh icon multiple times until you notice that the Success result appears under Job history
 
-      ![](images/33-recon.png)
+    ![](images/33-recon.png)
 
-      ![](images/34-recon.png)
+    ![](images/34-recon.png)
 
 6. Go to Users box on the Manage tab and click any user.
 

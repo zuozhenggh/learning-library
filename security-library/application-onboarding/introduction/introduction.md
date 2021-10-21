@@ -10,6 +10,13 @@ This simplified solution has the following benefits:
 - You can configure new or existing applications by using a single user interface: Identity Self Service.
 - You can export configurations as application templates and configure applications by using these templates, instead of Oracle Identity Manager.
 
+*Estimated Lab Time*: 30 minutes
+
+### About Product/Technology
+Oracle Identity Management enables organizations to effectively manage the end-to-end lifecycle of user identities across all enterprise resources, both within and beyond the firewall and into the cloud. The Oracle Identity Management platform delivers scalable solutions for identity governance, access management and directory services. This modern platform helps organizations strengthen security, simplify compliance and capture business opportunities around mobile and social access.
+
+Oracle Identity Governance is a powerful and flexible enterprise identity management system that automatically manages users' access privileges within enterprise IT resources. Its flexible architecture easily handles the most uncompromising and rigorous IT and business requirements -- without requiring changes to existing infrastructure, policies or procedures. Oracle Identity Governance is designed to manage user access privileges across all of a firm's resources, throughout the entire identity management lifecycle -- from initial creation of access privileges to dynamically adapting to changes in business requirements. Because of Identity Governance's innovative design, enterprises can elegantly incorporate necessary business changes at minimal cost, while avoiding enforced customization that might be necessary with other provisioning systems.
+
 *Know More About Oracle Identity Governance:*
 
   [](youtube:YdvKkstK4o8)
