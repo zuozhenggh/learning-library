@@ -15,7 +15,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Clone, Plug and Drop
 
-**NOTE:** When doing Copy/Paste using the convenient *Copy* function used throughout the guide, you must hit the *ENTER* key after the pasting. Otherwise the last line will still be in the buffer until you hit *ENTER*!
+**NOTE:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise the last line will remain in the buffer until you hit* **ENTER!**
 
 ## Task 1: Instant SaaS
 This section shows how Multitenant with Application Containers provides an instant SaaS architecture for an application formerly architected for standalone deployment.

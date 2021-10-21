@@ -15,7 +15,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free Tier* and *Paid Tenancies* only)
     - Lab: Environment Setup
 
-**NOTE:** When doing Copy/Paste using the convenient *Copy* function used throughout the guide, you must hit the *ENTER* key after the pasting. Otherwise the last line will still be in the buffer until you hit *ENTER*!
+**NOTE:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise the last line will remain in the buffer until you hit* **ENTER!**
 
 ## Task 1: Log in and create PDB
 In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Command Line (SQLcl).  Oracle **SQLcl** is the modern, command line interface to the database. **SQLcl** has many key features that add to the value of the utility, including command history, in-line editing, auto-complete using the TAB key and more. You can learn more about **SQLcl** [at the Oracle SQLcl website](https://www.oracle.com/database/technologies/appdev/sqlcl.html).
