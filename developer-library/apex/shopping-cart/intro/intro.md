@@ -3,11 +3,11 @@
 
 [](youtube:6pKNt_FXP7g)
 
-This workshop walks you through creation a Shopping Cart application that allows managing products, customers, and  stores. The application will have two application roles:
+In this workshop, you'll create a Shopping Cart application that allows managing products, customers, and  stores. The application will have two application roles:
 
 * Administrators
     * To manage the products, customers and stores
-    * To run a dashboard to identify the top products
+    * To access a dashboard to identify the top products
 * Customers
     * To review, add, delete or edit the number of products in the shopping cart
     * To submit orders
@@ -41,15 +41,20 @@ In this lab, you will:
 ### **Let's Get Started!**
 
 - If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top of the page.
-- If you don't have experience working with APEX, please take a look at [Page Designer](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/about-page-designer.html#GUID-F4A825A2-6BD5-4A11-8D68-B24B2B6ED18B) to familiarize with it.
 
 ### Downloads
 
 - [Download the application](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fMM4HD8nK2lIO5AW0Cms3Ycaew-FYd4xxvZzKMJobKK1qpk3Ybc1_SS-wIHa_3A_/n/c4u04/b/developer-library/o/shopping-cart-app.sql). To run the app, please run the steps described in Lab 1, 2, and 3.
-- [Download images for your application](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yzrA6TXcjR6Py4wSmKbvtz3ar8lmjAP7XSwNhTDCgN1XbvX8RXdaa4yNCHyGdn89/n/c4u04/b/developer-library/o/products-images.zip).
+- [Download images for your application](https://objectstorage.us-ashburn-1.oraclecloud.com/p/yzrA6TXcjR6Py4wSmKbvtz3ar8lmjAP7XSwNhTDCgN1XbvX8RXdaa4yNCHyGdn89/n/c4u04/b/developer-library/o/products-images.zip). 
 
 ## Learn More - *Useful Links*
 
+- Introduction to APEX
+    - [App Builder Concepts](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/application-builder-concepts.html#GUID-6D22E307-6D48-49BC-9FDC-A7D8B037E46A)
+    - [Page Designer](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/about-page-designer.html#GUID-F4A825A2-6BD5-4A11-8D68-B24B2B6ED18B)
+    - [Shared Components](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/shared-components-page.html#GUID-2CDE44A1-E219-44BC-B983-B6780266F315)
+    - [Cards](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/managing-cards.html#GUID-4B524AC4-9507-45EB-B4EA-A4D33F469B2D)
+    - [APEX_COLLECTION API](https://docs.oracle.com/en/database/oracle/application-express/21.1/aeapi/APEX_COLLECTION.html#GUID-859B488C-2628-44D7-969F-50872C685B76)
 - [APEX on Autonomous](https://apex.oracle.com/autonomous)
 - [APEX Service](https://apex.oracle.com/en/platform/apex-service/)
 - [APEX Collateral](https://apex.oracle.com)
@@ -59,5 +64,5 @@ In this lab, you will:
 
 ## Acknowledgments
 
-- **Author** - Monica Godoy, Principal Product Manager
+- **Author** - Mónica Godoy, Principal Product Manager
 - **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021

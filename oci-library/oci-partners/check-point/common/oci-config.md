@@ -453,7 +453,7 @@ Estimated Time: 30 minutes.
 
    | Target Type             | Destination CIDR Block | Description                      | Comment                                                                                             |
    |-------------------------|------------------------|----------------------------------|-----------------------------------------------------------------------------------------------------|
-   | Dynamic Routing Gateway | 0.0.0.0/0              | SendTrafficToFirewallsThroughDRG | For Test Purpose you are sending all traffic; In Production send only required traffic to Firewalls |
+   | Dynamic Routing Gateway | 0.0.0.0/0              | SendTrafficToFirewallsThroughDRG | For Test Purpose you are sending all traffic; In Production send only required traffic to Firewalls via DRG Attachment |
 
 4. Click on **Add Route Rules** on **Default Route Table for web-vcn** route table; Virtual Cloud Networks Details > Route Table page and fill out the dialog box:
 
@@ -496,7 +496,7 @@ Estimated Time: 30 minutes.
 
     | Target Type             | Destination CIDR Block | Description                      | Comment                                                                                             |
     |-------------------------|------------------------|----------------------------------|-----------------------------------------------------------------------------------------------------|
-    | Dynamic Routing Gateway | 0.0.0.0/0              | SendTrafficToFirewallsThroughDRG | For Test Purpose you are sending all traffic; In Production send only required traffic to Firewalls |
+    | Dynamic Routing Gateway | 0.0.0.0/0              | SendTrafficToFirewallsThroughDRG | For Test Purpose you are sending all traffic; In Production send only required traffic to Firewalls via DRG Attachment|
 
 13. Click on **Add Route Rules** on **Default Route Table for db-vcn** route table; Virtual Cloud Networks Details > Route Table page and fill out the dialog box:
 
@@ -661,7 +661,7 @@ Estimated Time: 30 minutes.
 
 8. Ensure **PASTE PUBLIC KEYS** is selected under **Add SSH Keys**. Paste the public key copied earlier.
 
-   > **Note:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1 OR choose a different AD.
+   > **Note:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E3.Flex OR choose a different AD.
 
    > **Note:** If you already have your ssh-key available you can skip copying from cloud-shell and paste your own public key and use private key associated to that for accessing instance.
 
@@ -705,7 +705,7 @@ Estimated Time: 30 minutes.
 
 8. Ensure **PASTE PUBLIC KEYS** is selected under **Add SSH Keys**. Paste the public key copied earlier.
 
-   > **Note:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1 OR choose a different AD.
+   > **Note:** If 'Service limit' error is displayed choose a different shape from VM.Standard2.1, VM.Standard.E3.Flex OR choose a different AD.
    > **Note:** If you already have your ssh-key available you can skip copying from cloud-shell and paste your own public key and use private key associated to that for accessing instance.
 
 9. Click **Create** and wait for Instance to be in **Running** state.

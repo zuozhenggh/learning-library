@@ -4,15 +4,15 @@
 
 In this workshop, learn how to build and deploy a simple Cloud native application using the most commonly used frameworks and the Oracle Cloud Infrastructure (OCI) services.
 
-Estimated Time: 70 minutes
+Estimated Time: 75 minutes
 
-![](./images/Application.png " ")
+![application](images/Application.png " ")
 
 ### About Product/Technology
 
 Learn how to use the Autonomous Database, the Oracle Container Registry (OCR), the Kubernetes Cluster (OKE) , Helidon, and the API Gateway managed services of OCI through the deployment of a simple MyToDo List React JS application.
 
-    ![](./images/architecture.png " ")
+![intro architecture](images/architecture.png " ")
 
 ### Objectives
 
@@ -30,6 +30,6 @@ You may now [proceed to the next tutorial](#next).
 
 ## Acknowledgements
 
-* **Author** \- Kuassi Mensah\, Dir\. Product Management\, Java Database Access
-* **Contributors** \- Jean de Lavarene\, Sr\. Director of Development\, JDBC/UCP
-* **Last Updated By/Date** \- Anoosha Pilli\, Database Product Management\, April 2021
+* **Author** - Kuassi Mensah, Dir. Product Management, Java Database Access
+* **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
+* **Last Updated By Date** - Anoosha Pilli, Database Product Management, April 2021

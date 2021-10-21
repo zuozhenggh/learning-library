@@ -57,7 +57,27 @@ SELECT * FROM MOVIE_VW;
 ![SQL](./images/SQL_output.png " ")
 
 
-## Task 2: View of the Oracle Data Lakehouse
+## Task 2: OCI Data Catalog - View of the Data Lake
+
+You have updated data, added new tables and views into the database. Let's take another look at the OCI Data Catalog to see that it captured the changes and the new entities.
+
+Navigate to the menu Cloud Menu. Click on Analytics & AI and click on Data Catalog under the Data Lake header.
+
+Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you do not see it listed.
+
+![SQL](./images/Current_Catalog.png " ")
+
+Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity informaiton into the Data Asset, but for now in the lab you can run this manually.
+
+Now if you go back to the Home Tab fro the Data Catalog, you will discover that there are now 8 Data Entities are being kept up to data in the Data Catalog.
+
+![New Entities](./images/new_entities.png " ")
+
+Click on Entities just to verify that all of the tables and views are now here.
+
+![Entities List](./images/final_catalog.png " ")
+
+## Task 3: View of the Oracle Data Lakehouse
 
 The Oracle Data Lakehouse uses the tools under the main menu of ANalytics & AI. The Data Lake header contains the services needed to create integrations, catalog and data flows to build the lakehouse. The configuration that was setup in the beginning allows for consistent security through out the different pieces of the data lake environment which also grants least privilege for administration, developers and consumers of the data lake.
 
@@ -72,5 +92,5 @@ Be sure to check out the labs on Oracle Machine Learning and how the Lakehouse f
 
 ## Acknowledgements
 
-* **Author** - Michelle Malcher, Database Product Management
+* **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
 * **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021

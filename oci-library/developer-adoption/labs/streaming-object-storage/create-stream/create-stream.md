@@ -14,13 +14,9 @@ In this tutorial, we’re going to use [Service Connector Hub](https://docs.orac
 
 3. ***Stream Name:*** Required. Specify a friendly name for the stream. It does not have to be unique within the compartment, but it must be unique to the stream pool. The stream name cannot be changed. Avoid entering confidential information.
 
-4. Compartment: Choose the compartment in which the stream will be created. FOr this lab, we will keep it in the root tenancy.
+4. Compartment: Choose the compartment in which the stream will be created. For this lab, we will keep it in the root tenancy.
 
-5. ***Stream Pool:*** Choose the stream pool that will contain your stream.
-
-   a. If your chosen compartment has an existing stream pool, you can select it from the drop-down list or click Create new stream pool and configure the stream pool manually.
-
-   b. **If no stream pool exists** in the chosen compartment, select Auto-create a default stream pool or click Create a new stream pool and configure the stream pool manually.
+5. ***Stream Pool:*** Choose the stream pool that will contain your stream. For this lab, we will allow  **If no stream pool exists** in the chosen compartment, select Auto-create a default stream pool or click Create a new stream pool and configure the stream pool manually.
 
 6. In the Define Stream Settings panel:
 

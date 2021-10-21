@@ -5,6 +5,10 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 
 *Estimated Lab Time:* 10 minutes
 
+Watch the video for a quick walk through of the Prepare Setup lab.
+
+[](youtube:LcQmt3LYA7k)
+
 ### Objectives
 -   Download ORM stack
 -   Configure an existing Virtual Cloud Network (VCN)
@@ -14,7 +18,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [ods-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wgFpz86OtCTyuXusV82FGcCbxSFOR_S1vfy_A2cYPx4Q_UZqVQXK5pXTq6o3GFap/n/natdsecurity/b/stack/o/ods-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [ods-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/f1Det9Oz4YxwBGqwwkV36cmEThw8EAwf_-pSBcdvOkQoNtD6UloIuz_6F0XQfJHO/n/natdsecurity/b/stack/o/ods-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
@@ -60,6 +64,6 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
-* **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
-* **Contributors** - Balasubramanian Ramamoorthy, Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
-* **Last Updated By/Date** - Priya Dhuriya, Staff Solution Engineer - July 2021
+* **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+* **Contributors** - Meghana Banka
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021
