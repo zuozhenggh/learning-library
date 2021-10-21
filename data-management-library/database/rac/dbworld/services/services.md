@@ -158,7 +158,7 @@ If you are still running as the *grid* user, exit to *opc* and then *su* to *ora
 ````
 <copy>
 exit
-su - oracle
+sudo su - oracle
 export ORACLE_HOME=/u01/app/19.0.0.0/grid
 </copy>
 ````
@@ -689,7 +689,7 @@ Start the CPU\_HOG utility, specifying a target load of 90%
 ````
 <copy>
 cd /home/oracle/cpu_hog
-atm_cpuload_st 90
+atm_cpuload_st.pl 90
 </copy>
 ````
 
