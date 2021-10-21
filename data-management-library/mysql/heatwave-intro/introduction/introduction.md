@@ -35,8 +35,6 @@ MySQL Database Service with HeatWave is a fully managed service, optimized for O
 
 In this lab, you will be guided through the following steps:
 
-- Create a Compartment
-- Create VCN
 - Create SSH Key on Oracle Cloud Infrastructure Cloud Shell
 - Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
 - Setup Compute instance

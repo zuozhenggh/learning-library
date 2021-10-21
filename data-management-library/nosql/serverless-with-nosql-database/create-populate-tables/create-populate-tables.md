@@ -266,7 +266,7 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
 
 ## Task 3:  Adding Data From the Oracle Cloud Console
 
-1. Make sure you see the 'Tables' screen. You should see 3 tables listed. You may or may not see the 'Always Free' tag, this displays depending on how you created the tables.
+1. Make sure you see the 'Tables' screen. You should see 3 tables listed. You may or may not see the 'Always Free' tag, this displays depending on how you created the tables.  You may see different values for read units, write units and storage.
 
     ![](./images/table-screen.png)
 

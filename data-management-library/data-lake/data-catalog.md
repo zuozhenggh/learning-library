@@ -35,7 +35,7 @@ Click on Create Workspace. Name it Workspace Lakehouse and click the Create butt
 While that is creating navigate back to Policies. Click on Identity & Security and then Policies.
 Select dataintegrationWS policies and clik Edit Policy Statements. From here you can + Another Statement.
 
-![Add Policies](./images/add_policies.png " ")
+![Add Policies](./images/create_policies.png " ")
 
 Use the follow three allow statements to add into the existing policy, and then Save Changes.
 ```
@@ -54,15 +54,15 @@ Once the workspace has been created (a refresh of the screen might be needed to 
 
 ## Task 2: Create the Data Assets in the Workspace
 
-Under Quick Actions, you want to click on Create Data Asset
+Under Quick Actions, you want to click on **Create Data Asset**
 
 ![Create Data Asset](./images/create_dataasset1.png " ")
 
-The first data asset is going to be our ADW database we already created. Fill in MOVIESTREAM_ADW and select type to Oracle Autonomous Data Warehouse.
+The first data asset is going to be our ADW database we already created. Fill in **MOVIESTREAM_ADW** and select **Type** to Oracle Autonomous Data Warehouse.
 
 ![Create Data Asset](./images/create_dataasset.png " ")
 
-Continue to fill with Select Database, regions, Tenant OCID that we saved off or you can go to your profile and click on Tenancy to get that information again. Make sure the compartment is lakehouse1 and DB is lakehousedb.
+Continue to fill with Select Database, regions, Tenancy OCID that we saved off or you can go to your profile and click on Tenancy to get that information again. Make sure the compartment is lakehouse1 and DB is lakehousedb.
 
 ![Create Data Asset](./images/create_dataasset3.png " ")
 
@@ -72,8 +72,17 @@ Using the default connection you can put in User Name ADMIN and the password you
 
 Test Connection to make sure you can connect to the this data asset.
 
-![Create Data Asset](./images/create_dataasset5.png " ")
+Second data asset will be the dataflow-warehouse bucket that you created for data flows. Click on Create Data Asset. Fill in the name **dataflow-warehouse-bucket** Choose **Oracle Object Storage** for **Type**.
 
+![Create Data Asset](./images/create_dataasset6.png " ")
+
+Then copy in the Tenancy OCID, Namespace and Region.
+
+![Create Data Asset](./images/create_dataasset7.png " ")
+
+Test Connection to make sure you can connect to the this data asset. Now you can see both of the Data Assets that we have added.
+
+![Create Data Asset](./images/create_dataasset8.png " ")
 
 ## Task 3: Create a Project in the Workspace
 
@@ -120,24 +129,21 @@ Next we are going to create a data asset for our json file that will be part of 
 
 Select Create Data Asset, and fill in the name genre_json and choose the Type to be Oracle Object Storage.
 
-![Create Data Asset](./images/create_new_data_asset.png " ")
+![Create Data Asset](./images/create_assetjson.png " ")
 
 Continue to fill name of GENRE_JSON. Choose the type as Oracle Object Storage You need the object storage bucket Namespace, c4u04, and the OCI-Region. 
 
-OCI-Region
 ```
 <copy>
 https://swiftobjectstorage.us-ashburn-1.oraclecloud.com
 </copy>
 ```
 
-![Create Data Asset](./images/create_new_data_asset.png " ")
-
 Then add the connection for the data asset. Create json_connection and put in the pre-authenicated data set.
 
 ```
 <copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/p/YvlgIsMlZQgCn4RVYn2697Er_Y9iw_2X48zZwIbbHs6c2647ouXVatto303mbQ3x/n/c4u04/b/moviestream_sandbox/o/
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/ouDV0uXS0m0vSkJ7Ok2-W0FfSPIsLDHkXF7aSBevClUpS7zdD0wOe4DHVn5r5IvY/n/c4u04/b/data_lakehouse/o/
 </copy>
 ```
 
@@ -185,6 +191,8 @@ Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you
 ![SQL](./images/Current_Catalog.png " ")
 
 Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity informaiton into the Data Asset, but for now in the lab you can run this manually.
+
+![Harvest](./images/harvest1.png " ")
 
 Now if you go back to the Home Tab fro the Data Catalog, you will discover that there are now 7 Data Entities are being kept up to data in the Data Catalog.
 
