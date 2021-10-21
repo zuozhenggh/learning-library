@@ -6,6 +6,10 @@ This lab introduces the suite of data tools built into the Oracle Autonomous Dat
 
 Estimated Time: 1 hour, 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:OL_zq2UqYSI)
+
 ### Objectives
 In this lab, you will:
 - Familiarize with the suite of built-in database tools of the Oracle Autonomous Data Warehouse
