@@ -33,8 +33,7 @@ In this first task, you will create and explore a new pluggable database **PDB2*
 2.  Set your oracle environment and connect to **CDB1** using SQLcl.
 
     ```
-    <copy>. oraenv</copy>
-    CDB1
+    <copy>. ~/.set-env-db.sh CDB1</copy>
     ```
 
     ```
@@ -903,13 +902,12 @@ The two main requirements for snapshot copy to work on our Linux filesystem are:
 
     Refreshable PDBs need to be in **read only** mode in order to refresh. You can quickly create a Snapshot Clone PDB from the refreshable PDB and use it in reporting, test and dev environments. In our exercise, we will create a **Snapshot Copy PDB** from the read only PDB **OE_REFRESH**.
 
-1. If you're already running SQLcl, then **exit** from SQLcl and set oraenv to CDB2.
+1. If you're already running SQLcl, then **exit** from SQLcl and set the environment to CDB2.
 
     ```
     <copy>exit
-    . oraenv
+    . ~/.set-env-db.sh CDB2
     </copy>
-    CDB2
     ```
 
     ![](./images/task9.1-setenvcdb2.png " ")
