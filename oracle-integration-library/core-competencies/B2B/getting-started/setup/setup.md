@@ -60,9 +60,9 @@ Note: Leave the default Authentication Type to be **Password or Key**
 4. From the Top right corner Click **Create** and create a folder **B2BWorkshop**
 
 	![](images/file_server_files2.png)
-5.	Select B2BWorkshop and create a folder structure as below
+5.	Select B2BWorkshop and create a folder structure(B2BTPDELLIn & B2BTPDELLOut) as below
 
-	![](images/file_server_files3.png)
+  ![](images/file_server_files3.png =50%x*)
 
 Note: You will be using the above folder structure in next labs
 
@@ -82,7 +82,7 @@ Note: You will be using the above folder structure in next labs
 8. Click on Add Permissions and Select the user to assign the permissions and select **Add**
 	![](images/user-permissions5.png)
 
-9.	Select All permissions and Save
+9.	Select All permissions including "Propagate to subfolders" and Save
 	![](images/user-permissions6.png)
 
 ## Task 3: Connect to File Server with FTP Client
@@ -97,7 +97,7 @@ A Sample Configuration using FileZilla FTP Client
 	![](images/user-permissions7.png)
 
 Directory Listing created in File Server. If all the permissions are provided you should be able to read/write/list etc
-	![](images/user-permissions8.png)
+	![](images/user-permissions8.png =50%x*)
 
 ## Task 4: Creating Connection with File Server
 1.	From Home page Navigate to Integrations -> Connections

@@ -82,7 +82,7 @@ The Adapter Endpoint Configuration Wizard opens
     ![Response diagram](images/b2b-outbound4.png =50%x*)
 ## Task 3: Configure the EDI Translate Action
 Add an EDI translate action to the flow to translate XML document to an EDI document
-1. On the right side of the canvas, click Actions  , drag B2B, and drop it after the first Receive-App-Msg element.
+1. On the right side of the canvas, click Actions  , drag & drop B2B action on the designer after the first Receive-App-Msg element.
 The Configure B2B Action wizard opens
     - On the Basic Info page, enter the name as per the value given below for the action and select a mode as “B2B Trading Partner mode”, and click Next
     ```
@@ -136,18 +136,15 @@ Once you are done with the validation, test it and results should look like the 
     Note:Your namespace prefix may include different values than nsmpr9 and nsmpr6.
 This expression indicates that if TranslateOutput > translation-status has a value of Success, then take this route. This is referred to as the success route
     - Click on Validate and Click on Close and save your integration flow
-    - In the success route: Add “Integration” Action ->Enter name as "callTradingPartner" and select USGE FTP Send Integration (OR any other outbound B2B integration which you have created) and click on Next->Click on Next ->Click on Done and save your integration flow
+    - In the success route: Add “Integration” Action ->Enter name as "callTradingPartner" and select DELL FTP Send Integration (OR any other outbound B2B integration which you have created) and click on Next->Click on Next ->Click on Done and save your integration flow
 
     - Edit Map to callTradingPartner -> Select Developer mode and From Source, expand EDI-Generate -> executeResponse->TranslateOutput
 | Source | Target |
 | --- | --- |
-| b2b-message-reference | components.schemas.request-wrapper->messages->b2b-message-reference |
-| trading-partner | components.schemas.request-wrapper->trading-partner |
+| B2B Message Reference | components.schemas.request-wrapper->messages->b2b-message-reference |
+| Trading Partner Name | components.schemas.request-wrapper->trading-partner |
 | connectivity-properties-code | Connectivity Properties->Localintegration->code |
 | connectivity-properties-version | Connectivity Properties->Localintegration->version |
-
-    - Mappings looks like the below diagram
-    ![mappings diagram](images/b2b-outbound12.png =50%x*)
 
     - Click on Validate and Click on Close and save your integration flow
     - In Otherwise route: Add Throw New Fault Action ->Enter name as “Error” ->click on Create and map the below elements
@@ -187,11 +184,14 @@ Check for errors, save, and activate the integration flow.
 ## Task 9: Test the integration
 
 1. To execute your sample integration, send a request from a REST client tool, such as Postman OR you can use Oracle Integration console to test. Let us use Oracle Integration Test Console.
+
 2. Download [DellIncPO.xml](files/DellIncPO.xml?download=1) and open the file and copy the data and paste it in the body of the request console and click on Test
   ![TestConsole diagram](images/b2b-outbound17.png =50%x*)
-3. Go to Monitoring->Integrations->Tracking-> Cross check your backend integration and trading partner integration ran successfully and now repeat the test with another xml file which would trigger another trading partner
+3. Go to Monitoring->Integrations->Tracking-> Cross check your backend integration and trading partner integration ran successfully.
 4. If you have FTP Client installed on your machine, you can login using the FTP details provided to you and cross check your edi file created under folder /B2BWorkshop/B2BTPDELLOut
-5. In conclusion, you can use Oracle Integration to accept XML message and convert it into EDI format and send it to the trading partners dynamically
+5. In conclusion, you can use Oracle Integration to accept XML message and convert it into EDI format and send it to the trading partners dynamically.
+
+This feature would be very much useful when you have more than one trading partner. You just define the trading partner on the user interface, integrations will be created automatically and files will be processed automatically with the existing Backend Integration.
 
 You may now [proceed to the next lab](#next).
 

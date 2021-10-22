@@ -34,11 +34,12 @@ You can create a new B2B schema based on a standard document type
 | Identifier |This field is automatically populated with the document name. You can manually change this value |
 | Document Standard | Select the document standard X12. The document standard identifies the business protocol to follow when exchanging business documents between partners. Supported document standards are EDIFACT & X12 |
 | Description | Purchase Order Schema |
+| Document Standard	 | X12 |
 | Document Version	 | 4010 |
 | Document Type	 | 850 (Purchase Order) |
 
 ![](images/POSchema4010.png)
-3. Click **Create**
+3. Click **Create and Save**
 
 ![](images/POSchema-Structure.png)
 
@@ -62,6 +63,7 @@ You can create a new B2B Document based on a standard document type
 | Identifier |This field is automatically populated with the document name. You can manually change this value |
 | Document Standard | Select the document standard X12. The document standard identifies the business protocol to follow when exchanging business documents between partners. Supported document standards are EDIFACT & X12 |
 | Description | Purchase Order Schema |
+| Document Standard	 | X12 |
 | Document Version	 | 4010 |
 | Document Type	 | 850 (Purchase Order) |
 

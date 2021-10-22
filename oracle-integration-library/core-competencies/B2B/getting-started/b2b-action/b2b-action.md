@@ -18,7 +18,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: B2B Actions Available in Trading Partner Mode
+## B2B Actions Available in Trading Partner Mode
 
 This section describes the operations provided by the B2B action during trading partner mode configuration.
 

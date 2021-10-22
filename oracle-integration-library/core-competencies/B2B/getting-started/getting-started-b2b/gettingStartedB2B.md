@@ -24,7 +24,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Learn Concepts and Understand Navigation
+## Learn Concepts and Understand Navigation
 
 ### *Host Company*
 

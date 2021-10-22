@@ -1,4 +1,4 @@
-	# Working with Trading Partner Manager
+# Working with Trading Partner Manager
 
 ## Introduction
 
@@ -7,7 +7,6 @@ This lab walks you through the steps to work with Trading Partner Manager
 Estimated Lab Time: -- minutes
 
 ### Objectives
-
 
 In this lab, you will learn:
 * Define Host profile and identifiers
@@ -141,7 +140,7 @@ Detailed agreement concepts are provided. See Agreements (Refer Getting Started 
 
 In the left navigation pane, click B2B > Trading Partners
 
-**Define Inbound Agreement**
+**Define Outbound Agreement**
 1.	Click Transports & Agreements.
 2.	In the Outbound Agreements section, click Add (+) icon to add a new agreement.
 
@@ -154,6 +153,7 @@ Enter the details as per below
 | Select Host Identifiers            |<ul><li>EDI Interchange ID </li><li>EDI Interchange ID Qualifier</li><li>EDI Group ID Qualifier</li><li>EDI Group ID</li></ul>                             |
 | Select a Transport                 | FTP                         |
 | Configure Agreement Settings       | Select "Enable Validations" |
+| Configure Agreement Settings       | Uncheck "Functional Ack Required" |
 
 ![](images/tpm-tp-Agreement-Out-1.png)
 
