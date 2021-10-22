@@ -10,6 +10,10 @@ Estimates Lab Time - 25 minutes
 + Estimates Lab Time - 25 minutes
 </if>
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:yqCbkHh9EVA)
+
 ### Objectives
 
 * Clone the setup and microservices code

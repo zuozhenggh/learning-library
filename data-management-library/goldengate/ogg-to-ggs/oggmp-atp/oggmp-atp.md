@@ -7,7 +7,7 @@ For the purposes of this workshop, Oracle Autonomous Transaction Processing (ATP
 Estimated time: 10 minutes
 
 Watch the video below for a walk through of the lab.
-[](youtube:bNcZ4P-gpRw)
+[](youtube:Vw2rWRLSRjk)
 
 ### Objectives
 

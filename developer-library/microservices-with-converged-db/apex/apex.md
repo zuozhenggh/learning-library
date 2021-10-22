@@ -6,6 +6,10 @@ This lab will show you how to create an APEX application that will allow you to 
 
 Estimated Lab Time - 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:fJqtSAHgj1Q)
+
 ### Objectives
 
 * Create an APEX workspace in the Oracle Autonomous database
