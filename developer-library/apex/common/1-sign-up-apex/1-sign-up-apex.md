@@ -8,6 +8,10 @@ If you already have an APEX 21.1 Workspace provisioned, you can skip this lab.
 
 Estimated Time: 5 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:RcSCnZnDzDE)
+
 ### What is an APEX Workspace?
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. APEX applications are built on top of these database objects.
 
