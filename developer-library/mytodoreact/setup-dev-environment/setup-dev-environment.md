@@ -23,7 +23,7 @@ Estimated time: 30 minutes
 ## Task 1: Launch the Cloud Shell and Clone mtdrworkshop GitHub repository
 
 1. Launch the Oracle Cloud Shell
-The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration!
+	The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration!
 2. Click the Cloud Shell icon in the top-right corner of the Console.
 	![Cloud Shell](images/7-open-cloud-shell.png " ")
 3. Clone the GitHub repo and move up the `mtdrworkshop` directory.
@@ -68,7 +68,7 @@ You should now see `mtdrworkshop` in your root directory
 1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select **Identity & Security** then select **Compartments**.
 	![Compartment](images/15-identity-compartments.png " ")
 2. Click your **root Compartment**  
-![Root Compartment](images/Root-Compartment.png " ")
+	![Root Compartment](images/Root-Compartment.png " ")
 3. Click **Create Compartment** with the following parameters then click **Create Compartment**.
 	![Create Compartment](./images/16-create-compartment.png " ")
 	![Create Compartment Cont.](images/17-create-compartment2.png " ")
@@ -114,10 +114,12 @@ You should now see `mtdrworkshop` in your root directory
     * Set the database ADMIN password (12 to 30 characters, at least one uppercase letter, one lowercase letter, and one number) and confirm.
     Please write down the ADMIN password; it will be required later.
 	
+	* Set the license type to **Bring Your Own License (BYOL)** (does not matter for this workshop).
+
     * Set the **Access type** to **Secure access from everywhere**.
 	![network access](images/network-access.png " ")
 
-    * Set the license type to **Bring Your Own License (BYOL)** (does not matter for this workshop).
+    
     * Click **Create Autonomous Database**.
 
 > **Note:** The database creation will take a few minutes.
@@ -132,23 +134,26 @@ You should now see `mtdrworkshop` in your root directory
 
 5. Generate the wallet for your Autonomous Transaction Processing connectivity. A wallet.zip file will be created in the current directory.
 
-	\* Copy the following command and replace `$OCID` with the copied OCID.
+	\* Copy the following command and replace `$DBOCID` with the copied **database OCID**.
 
 	``` bash
-	<copy>cd ~/mtdrworkshop/setup-dev-environment; ./generateWallet.sh $OCID</copy>
+	<copy>cd ~/mtdrworkshop/setup-dev-environment; ./generateWallet.sh $DBOCID</copy>
 	```
 
 	\* **Example** `./generateWallet.sh ocid1.autonomousdatabase.oc1.phx.abyhqlj....`
 	\* You will be requested to enter a password for wallet encryption, this is separate password from the ADMIN password but you could reuse the same.
 	\* Wait for a littke moment while the command executes.
 
-6. Launch the sql utility in Cloud Shell.
+6. 
+	\* Stay in the mtdrwokshop/setup-dev-environment directory and launch sql with /nolog option.
+	Launch the sql utility in Cloud Shell.
 
 	``` SQL
 	<copy>sql /nolog</copy>
 	```
 
 	![SQLcl](images/SQLCl-Cloud-Shell.png " ")
+		\* Point the tool at your wallet.zip file
 
 	``` sql
 	<copy>set cloudconfig wallet.zip</copy>
@@ -166,10 +171,10 @@ You should now see `mtdrworkshop` in your root directory
 	```
 
 	![connect](images/connect.png " ")
-	\* Point the tool at your wallet.zip file
-	\* Stay in the mtdrwokshop/setup-dev-environment directory and launch sql with /nolog option.
-8. Create a TODOUSER with a strong password (**in quotes**), using the sql utility.
+	
+8. Create a TODOUSER with a strong password, using the sql utility.
 	\* Suggest reusing the admin password, not a good practice in real life, but easy for this workshop
+	\* Replace the password **in quotes** in the following command 
 	``` sql
 	<copy> CREATE USER todouser IDENTIFIED BY "password" DEFAULT TABLESPACE data QUOTA UNLIMITED ON data;</copy>
 	```
@@ -247,7 +252,7 @@ You are now going to create an Oracle Cloud Infrastructure (OCI) Registry and an
 9. Go to Cloud Shell, at the workshop root directory and run the
 dockerLogin.sh scripts:
 `./dockerLogin.sh <USERNAME> "<AUTH_TOKEN>"` where
-    * The `<USERNAME>`: the user name used to log in (typically your email address). If your user name is federated from Oracle Identity Cloud Service, you need to add the `oracleidentitycloudservice/` prefix to your user name, for example, `oracleidentitycloudservice/firstname.lastname@something.com`
+    * The `<USERNAME>`: the user name used to log in (typically your email address). If your user name is federated from Oracle Identity Cloud Service, then it is yoir Profile (with ) `oracleidentitycloudservice/` prefix for example, `oracleidentitycloudservice/firstname.lastname@something.com`
     * `"<AUTH_TOKEN>"`: paste the generated token value and enclose the value in quotes.
     **For example** `dockerLogin.sh user.foo@bar.com "8nO[BKNU5iwasdf2xeefU;yl"`
 10. Once successfully logged into the Container Registry, we can list the existing docker images. Since this is the first time logging into Registry, no images will be shown.
@@ -278,7 +283,7 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 
 ## Task 6: Access OKE from the Cloud Shell
 
-1. Copy the **Cluster ID** from the Cloud console then replace `$ClusterID` with it in the following command and create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file.
+1. Copy the **Cluster ID** from the Cloud console then replace `$ClusterID` with it in the following command and create the ~/mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file.
 **Alternatively**, you can first copy the clusterid and export it into the env variable ClusterID as in `export ClusterID=....`. 
 
 	``` bash
@@ -305,10 +310,10 @@ We will be using the Java Development Kit (JDK) 11 in the Cloud Shell to build t
 4. Click the existing security list.
 	![add security](images/Add-security-lists.png " ")
 5. Add an **ingress rule**.
-Set the destination CIDR as indicated (leave other fields as-is) and then Click **Add Ingress Rules**
+Set the Source CIDR as indicated (leave other fields as-is) and then Click **Add Ingress Rules**
 	![ingress rule](images/Ingress-rule.png " ")
 6. Add an **egress rule**.
-Set stateless and destination CIDR as indicated in the image (leave other fields as-is) and then Click **Add Egress Rules**
+Set stateless and the Destination CIDR as indicated in the image (leave other fields as-is) and then Click **Add Egress Rules**
 	![egress rule](images/Egress-rule.png " ")
 
 You may now [proceed to the next lab](#next).
