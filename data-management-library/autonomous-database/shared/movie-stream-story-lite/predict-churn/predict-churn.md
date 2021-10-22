@@ -1,4 +1,4 @@
-# Use Oracle Machine Learning AutoML UI to predict churn
+# Use Oracle Machine Learning AutoML UI to predict customer churn
 
 ## Introduction
 
