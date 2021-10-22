@@ -71,9 +71,15 @@ You should have already identified your database name and instance name.  Each p
 7. Find your database name in the *Cluster Resources* section with the *.db*.  Jot this information down, you will need it for this lab.
 
     ![Examine Database Resource](./images/db-crsctl.png " ")
-8. Confirm that you have the *testy* service running and note the node it is running on.
+8. Confirm that you have the service you originally created running and note the node it is running on. My example uses a service named *testy*
 
     ![Validate Service is Running](./images/testy-crsctl.png " ")
+9. Exit from the grid user
+````
+<copy>
+exit
+</copy>
+````
 
 ## Task 2:  Create a Service
 
@@ -96,6 +102,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 
 2. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
 
+   The Oracle Listener runs from the Grid Home. You will assume the *grid* identity to use lsnrctl
     ````
     <copy>
     srvctl status service -d <REPLACE DATABASE NAME> -s svctest
@@ -104,6 +111,19 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ![Examine Database Service Status](./images/lab6-step1-num7.png " ")
 
 3.  Use the lsnrctl utility to list the services on both **node 1** and **node 2** as the *grid* user.
+
+If you are still running as the oracle user, exit to *opc* and then *su* to *grid*
+
+    ````
+    <copy>
+    exit
+    su - grid
+    export ORACLE_HOME=/u01/app/19.0.0.0/grid
+    </copy>
+    ````
+
+As the grid user
+
     ````
     <copy>
     lsnrctl services
@@ -119,13 +139,12 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 
     ````
     <copy>
-    export ORACLE_HOME=/u01/app/19.0.0.0/grid
     $ORACLE_HOME/bin/lsnrctl service LISTENER_SCAN2
     </copy>
     ````
     ![Use LSNRCTL to View Registered Services](./images/scan-node2.png " ")
 
-5. Repeat it on **node 1** as well.
+5. Repeat the same command on **node 1** as well.
 
     ![Use LSNRCTL to View Registered Services](./images/scan-node1.png " ")
 
@@ -133,6 +152,17 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
 ## Task 3: Service Failover
 
 1. Cause the service to fail over. After identifying which instance the service is being offered on, kill that instance by removing the SMON process at the operating system level.  Run this on **node 1**
+
+If you are still running as the *grid* user, exit to *opc* and then *su* to *oracle*
+
+````
+<copy>
+exit
+sudo su - oracle
+export ORACLE_HOME=/u01/app/19.0.0.0/grid
+</copy>
+````
+As the *oracle* user
 
     ````
     <copy>
@@ -233,8 +263,11 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     ---------- -------------------- ----------
        2         svctest                1
     ````
-    It has not changed.
+    It will still show connected sessions to the instance that no longer offers the service.
+
     The relocate service command will not disconnect active sessions unless a force option (**-force**) is specified. A stop service command will allow a drain timeout to be specified to allow applications to complete their work during the drain interval.
+
+8. Disconnect the sessions from *svctest*, they will not be used in the next exercise.    
 
 ## Task 4: Connection Load Balancing
 This exercise will demonstrate connection load balancing and why it is important to use the SCAN address and the VIPs as integral parts of your connection strategy
@@ -317,6 +350,8 @@ If it is not running start this service
 
     ![Add Connection Aliases to TNSNAMES.ORA File](./images/tnsnames-2.png " ")
 
+To run a client from either node, create an identical *tnsnames.ora* file on each node.
+
 5. Run the command to get your scan name
     ````
     <copy>
@@ -324,7 +359,7 @@ If it is not running start this service
     </copy>
     ````
 
-6. Run the nslookup command followed by your scan name
+6. Run the nslookup command, on either node, followed by your scan name
 
     ````
     <copy>
@@ -333,7 +368,7 @@ If it is not running start this service
     ````
     ![use NSLOOKUP to Translate an IP Address](./images/nslookup.png " ")
 
-7. Run the ping command
+7. Run the ping command on either node
 
     ````
     <copy>
@@ -352,21 +387,31 @@ If it is not running start this service
 
 9. Create 10 connections using the alias CLBTEST and look at where the connections were established
 
-    ````
-    SQL> select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
+You can do this by issuing the **host** command from within SQL\*Plus and then re-issuing the sqlplus connection from the shell.
 
-    INST_ID SERVICE_NAME             COUNT(*)
-    ---------- -------------------- ----------
-         1     unisrv                   5
-         2     unisrv                   5
-
+For example:
     ````
+    $ORACLE_HOME/bin/sqlplus hr/W3lc0m3#W3lc0m3#@CLBTEST
+    SQL> host
+    os-prompt>  $ORACLE_HOME/bin/sqlplus hr/W3lc0m3#W3lc0m3#@CLBTEST
+    SQL> host
+    ````
+Examine where the sessions have been created
+
+````
+SQL> select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
+
+INST_ID SERVICE_NAME             COUNT(*)
+---------- -------------------- ----------
+     1     unisrv                   5
+     2     unisrv                   5
+````
+
     ![Examine GV$SESSION for Connected Sessions](./images/sqlplus-1.png " ")
 
+The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances, but for a small number of connections created at intervals they generally do.
 
-    The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances, but for a small number of connections created at intervals they generally do.
-
-    You can instruct the listener to use the load on an instance to balance connection attempts (the listener will store run queue information), but this is not the default.
+You can instruct the listener to use the load on an instance to balance connection attempts (the listener will store run queue information), but this is not the default.
 
 10. Now do the same with the CLBTEST-LOCAL alias (close the first sessions as it will make it easier to illustrate what happens)
 
@@ -494,14 +539,22 @@ If it is not running start this service
     RECSRV=(DESCRIPTION =
      (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
      (ADDRESS_LIST =(LOAD_BALANCE=on)
-     (ADDRESS = (PROTOCOL = TCP)(HOST=racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)(PORT=1521)))
-     (CONNECT_DATA=(SERVICE_NAME = testy.pub.racdblab.oraclevcn.com)))
+     (ADDRESS = (PROTOCOL = TCP)(HOST=<REPLACE SCAN NAME>)(PORT=1521)))
+     (CONNECT_DATA=(SERVICE_NAME = <REPLACE SERVICE NAME>.pub.racdblab.oraclevcn.com)))
     </copy>
     ````
 
     ![Add an Alias to TNSNAMES.ORA File](./images/tnsnames-3.png " ")
 
 15. Verify you can connect using this alias.
+
+16. Restart the instance you stopped earlier
+
+````
+<copy>
+srvctl start instance -d <REPLACE DATABASE NAME> -i aTFdbVm2
+</copy>
+````
 
 ## Task 5 The difference between connection load balancing and runtime load Balancing
 
@@ -601,7 +654,7 @@ The UCP pool manager will be handing these connections to worker threads as they
 
 5. We know that nodes in a cluster may not be equal in capacity, nor may there be equal distribution of workload on each node.
 
-If you look at the current response time for acdemo it is fairly equal - probably 38-40 ms per request.
+If you look at the current response time for acdemo it is fairly equal - probably 5-6 ms per request.
 ````
 39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 5ms
 40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 6ms
@@ -624,9 +677,10 @@ Unzip the utility and set the execution bit (\+x)
 ````
 <copy>
 cd /home/oracle
-unzip cpuhog.zip
+mkdir /home/oracle/cpu_hog
 cd cpu_hog
-chmod +x atm_cpuload_st.pl
+unzip ../cpuhog.zip
+chmod +x atm_cpuload_st.pl primes
 </copy>
 ````
 
@@ -635,13 +689,13 @@ Start the CPU\_HOG utility, specifying a target load of 90%
 ````
 <copy>
 cd /home/oracle/cpu_hog
-atm_cpuload_st 90
+atm_cpuload_st.pl 90
 </copy>
 ````
 
 ![CPUHOG Program Running](./images/cpu_hog_running.png " ")
 
-You should see some acdemo requests getting longer (they will periodically jump to 45 - 48 ms, a significant change) - this is because the threads are using connections on the overloaded node
+You should see some acdemo requests getting longer (they will periodically jump to 15 - 20 ms, a significant change) - this is because the threads are using connections on the overloaded node
 
 ````
 39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 38ms

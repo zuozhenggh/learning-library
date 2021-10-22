@@ -32,7 +32,7 @@ Connect to the PDB, *pdb1* as the *sys* user
 ````
 <copy>
 sudo su - oracle
-sqplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.<REPLACE DOMAIN NAME> as SYSDBA
+sqlplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.<REPLACE DOMAIN NAME> as SYSDBA
 </copy>
 ````
 
@@ -47,6 +47,8 @@ EXECUTE DBMS_APP_CONT_ADMIN.acchk_views;
 ![Build ACCHK Views](./images/build_acchk_views.png " ")
 
 2. Enable ACCHK
+
+Note: In Oracle Database 19c you must enable ACCHK on the instance(s) that the service your application will connect to is running (or all instances to be sure).
 
 As the SYS user enable ACCHK
 
@@ -72,7 +74,7 @@ Use ACDEMO
 <copy>
 sudo su - oracle
 cd acdemo
-runtacreplay  
+./runtacreplay  
 </copy>
 ````
 ![Run the ACDEMO application](./images/runtacreplay.png " ")
@@ -90,6 +92,8 @@ runtacreplay
 ![Generate the ACCHK Report](./images/acchk_report-2a.png " ")
 
 The report above shows the Java client *acdemo* using the TAC-enabled service *tac\_service*. As you can see this application is provided 100% protection from TAC.
+
+Note: If ACCHK produces the message *Nothing to report*, this is due to acchk_set(true) not being run on the instance that the service connected to was being offered.
 
 5. You may have the choice of using AC or TAC (if you are using Oracle Database 19c clients and you use an Oracle Connection Pool). Our recommendation is to always start with TAC if you can, but there may be reasons why AC may be considered. Use acchk to compare the protection offered by Application Continuity
 
@@ -113,6 +117,7 @@ cat ac_replay.properties
 sqplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.<REPLACE DOMAIN NAME> as SYSDBA
 </copy>
 ````
+Note: In Oracle Database 19c you must enable ACCHK on the instance(s) that the service your application will connect to is running (or all instances to be sure).
 
 As the SYS user in SQL\*Plus run the following command:
 
@@ -120,7 +125,7 @@ As the SYS user in SQL\*Plus run the following command:
 execute dbms_app_cont_admin.acchk_set(true);
 ````
 
-Run the *runreplay* script:
+Run the *runreplay* script from the operating system:
 
 ````
 <copy>
@@ -156,6 +161,7 @@ A commit causes AC to disable. With TAC we will re-enable on the next call, with
 These views can be examined to gain more insight
 
 9. Cleaning entries
+
 If you are going to perform multiple tests with different applications using the same service you will have to remove the trace files ACCHK generates before changing clients. Not removing the trace files will produce an aggregated report (for all users of a given service) which may not be useful.
 
 To remove the trace files used by ACCHK clean the entries under ORACLE BASE

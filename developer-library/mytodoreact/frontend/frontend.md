@@ -25,21 +25,21 @@ The index.css file has all the styles for the application.
 ### Objectives
 
 In this tutorial, you will:
-- Clone the workshop git repository on your laptop
+- Clone the workshop git repository **on your laptop**
 - Set the API Gateway endpoint
 - Run the ReactJS frontend code in development mode and build for production
 - Host the production build on the OCI Object Storage
 
 ### Prerequisites
 
-1. This tutorial requires the completion of **Setup Development Environment** and **Deploy the Backend  Docker Image to Kubernetes**
+1. This tutorial requires the completion of **Setup Development Environment** and **Deploy the Backend  Docker Image to Kubernetes**. This tutorial also requires admin rights.
 
 2. Make sure the `npm` command is installed.
 
     ```
     <copy>npm --version</copy>
     ```
-3. if `npm` is not installed, install `Node` for your laptop, using `https://bit.ly/3evGlEo`.
+3. if `npm` is not installed, install `Node` for your laptop, using `https://bit.ly/3oVTrSh`.
 
 4. Make sure `Go lang` is installed.
 
@@ -50,6 +50,7 @@ In this tutorial, you will:
     ```
 5. If `Go lang` is not installed, see https://golang.org/doc/
 
+6. Make sure **git** is installed; if not please follow the instructions @ `https://bit.ly/3DXyjiL`
 ## Task 1: Configure API.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -74,10 +75,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	<copy>npm install</copy>
 	```
 
-4. In case of errors, try the following command
+4. In case of errors: delete `package-lock.json`, and the  `node_modules` directory then re-run ` npm install` followed by `npm audit fix` 
 
     ```bash
-	<copy>npm audit fix --force</copy>
+	<copy>npm audit fix </copy>
 	```
 
 	>**Note**: ideally, the `npm -version` should be higher than  `6.14.x`  and `node version` higher than 14.16.x 
@@ -100,7 +101,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Task 2: Run in Dev Mode then Build for Production
 
-1. In the project directory, run the app in the development mode <br />.
+1. In the project directory, **run the app** in the development  mode and **play with it**.<br />.
 
 	```bash
 	<copy>npm start</copy>
@@ -134,9 +135,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Task 3: Host on the Oracle Cloud Infrastructure Object Storage
 
 1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select
-**Storage** then select **Object Storage**.
+**Storage** then select **Buckets** under **Object Storage**.
 
-2. Create the **mtdrworkshop** bucket in your root compartment.
+2. Create the **mtdrworkshop** bucket in your root compartment.] and make it **Public**
+	![Create Bucket 0](images/Create-bucket.png " ")
+	![Create Bucket 1](images/Create-bucket-2.png " ")
+	![Create bucket 3](images/Public-bucket.png " ")
+
 
 3. Install the Staci utility for copying directories to the Oracle Cloud Infrastructure (OCI) object storage
    bucket while preserving folder hierarchies.
@@ -151,6 +156,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
     ```bash
     <copy>cd staci</copy>
+     ```
+	\* Execute `go mod init staci`.
+
+     ```bash
+     <copy>go mod init staci</copy>
      ```
 
 	\* Execute `go get -d`.

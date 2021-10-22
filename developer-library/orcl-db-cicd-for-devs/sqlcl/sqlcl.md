@@ -6,6 +6,11 @@ In this lab you will use the SQLcl to create objects in an Autonomous Database. 
 
 Estimated Lab Time: 30-45 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:pPXxYPe0Fd4)
+
+
 ### Objectives
 
 - Download the Autonomous Database wallet
@@ -444,6 +449,15 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
    ```` 
 
    ![check the records](./images/sql-9.png)
+
+10. While **still logged into the database as our livelabs user**, we are going to use SQLcl to take a baseline of the objects in this schema. To do this, we issue a **Liquibase command at the SQLcl prompt**. The command **lb genschema -split** will pull all the Data Definition Language (DDL) for our database objects and put them into folders that correspond to their types (tables, indexes, triggers, etc). **Copy and paste the following command** then press enter.
+
+      ````
+      <copy>
+      lb genschema -split
+      </copy>
+      ```` 
+      ![run liquibase](./images/sql-10.png)
 
 ## Task 3: Create a new schema and apply the code with SQLcl
 

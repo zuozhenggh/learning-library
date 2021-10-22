@@ -33,6 +33,6 @@ You will learn the following:
 
 ## Acknowledgements
 
-* **Author** - Michelle Malcher, Database Product Management
-* **Contributors** -  Massimo Castelli, Senior Director Product Management
+* **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
+* **Contributors** -  
 * **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021

@@ -80,9 +80,11 @@ In Tasks 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
     ![Click EXPLORE in the Data Load page.](./images/click-explore-in-data-load-page.png " ")
 
-11. The Explore tool shows the *CHANNELS_LOCAL* table has been successfully created. You can click the table name to see the data.
+11. The Catalog shows the *CHANNELS_LOCAL* table has been successfully created. You can click the table name to see the data.
 
-    ![View the new table in the Explore tool.](./images/view-new-table.png " ")
+    ![View the new table in the Catalog.](./images/view-new-table.png " ")
+
+    ![See the new table's data.](./images/see-new-table-data.png " ")
 
 ## Task 3: Download sample data for staging to object store
 
@@ -352,7 +354,7 @@ This task shows how to load data from Oracle Cloud Infrastructure Object Storage
 
 Please *proceed to the next lab*.
 
-## Want to learn more?
+## Learn more
 
 For more information about loading data, see the documentation [Loading Data from Files in the Cloud](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-data-warehouse-cloud&id=CSWHU-GUID-07900054-CB65-490A-AF3C-39EF45505802).
 

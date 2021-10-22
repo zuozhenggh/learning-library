@@ -86,9 +86,11 @@ In Tasks 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
     ![Click EXPLORE in the Data Load page.](./images/click-explore-in-data-load-page.png " ")
 
-11. The Explore tool shows the *CHANNELS_LOCAL* table has been successfully created. You can click the table name to see the data.
+11. The Catalog shows the *CHANNELS_LOCAL* table has been successfully created. You can click the table name to see the data.
 
-    ![View the new table in the Explore tool.](./images/view-new-table.png " ")
+    ![View the new table in the Catalog.](./images/view-new-table.png " ")
+
+    ![See the new table's data.](./images/see-new-table-data.png " ")
 
 ## Task 3: Download Sample Data for Staging to Object Store
 
