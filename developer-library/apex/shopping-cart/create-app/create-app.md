@@ -6,6 +6,10 @@ In this lab you will build an application based on the data structures you built
 
 Estimated Lab Time: 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:ssUKy-bZGUw)
+
 ### Objectives
 In this lab, you will:
 - Create an application using the tables and data that you already have installed.

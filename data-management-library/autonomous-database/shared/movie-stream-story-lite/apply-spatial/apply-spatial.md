@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:IpUuoOcpgho)
+[](youtube: kFB9C36oIaw)
 
 Time to run a promotion to help keep our at-risk customers. Run a localized promotion by finding these customers' local pizza locations using Oracle Spatial's nearest neighbor algorithm.
 

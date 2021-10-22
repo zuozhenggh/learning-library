@@ -6,6 +6,10 @@ In this lab, you will learn how to install sample tables and views from Sample D
 
 Estimated Lab Time: 5 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:ynUk8q6S1qo)
+
 ### Objectives
 In this lab, you will:
 - Install a sample dataset into your Oracle APEX Workspace

@@ -15,6 +15,10 @@ Once you have finished the workshop and updated all the products as described in
 
 Estimated Lab Time: 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:qskWwkxJmcM)
+
 ### Objectives
 In this lab, you will:
 - Create a page to review the items that customer just bought.

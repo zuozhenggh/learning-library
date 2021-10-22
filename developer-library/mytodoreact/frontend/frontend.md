@@ -175,7 +175,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     <copy>go build</copy>
     ```
 
-4. Upload a static build into the bucket, using the staci binary.
+4. If you have never used your laptop for connecting to an Oracle Cloud account, you need to setup an **OCI config file** and create an **API key**.
+	\* Follow Step #2 in the following doc `https://bit.ly/3vM7v2h` for that purpose.
+
+5. Upload a static build into the bucket, using the staci binary.
 
 	```bash
 	<copy>./staci/staci -source build -target mtdrworkshop</copy>
@@ -183,7 +186,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 	- The application is visible in the 'mtdrworkshop' bucket of your tenancy.
 
-5. Click the index.html object and copy its URL.
+6. Click the index.html object and copy its URL.
 
 	![bucket index](images/bucket-index.png " ")
 

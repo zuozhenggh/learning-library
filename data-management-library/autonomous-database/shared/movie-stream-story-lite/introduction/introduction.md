@@ -5,7 +5,7 @@
 
 #### Video Preview
 
-[] (youtube:mxVX7AQ2pCk)
+[](youtube:fwkBA6A7isI)
 
 Most workshops focus on teaching you about a cloud service or performing a series of tasks. This workshop is different. You will learn how to deliver high value solutions using Oracle Cloud data platform services. And, the workshop will do this in the context of a company that we all can relate to and understand.
 

@@ -10,7 +10,7 @@ Estimated Lab Time: 20 minutes
 
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:pqjN8UpoGnj8)
+[](youtube:Uz_PXHzO9ac) 
 
 ### Objectives
 
@@ -326,16 +326,6 @@ Description
     ```
     <copy> 
     https://objectstorage.me-jeddah-1.oraclecloud.com/p/8YbXOPZ0GyDFb69K4BkUv7690MqhTs8pqcE4zG5zOLNeSG3j_wZfIm7DcSQn5G0n/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json    
-    </copy>
-    ```
-    </details>
-
-    <details>
-    <summary>UAE East(Dubai) Region - Copy and paste to PAR Source URL</summary>
-    <br>
-    ```
-    <copy> 
-    https://objectstorage.me-dubai-1.oraclecloud.com/p/0xrSzhhg0bvExr9BgK-VTFAlUwJD5TaY1VB0cDGlFswagCS44raI0cg9VCypHECR/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>

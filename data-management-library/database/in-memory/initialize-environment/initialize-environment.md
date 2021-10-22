@@ -11,6 +11,10 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
 
 [](youtube:dZ9cnIL6KKw)
 
+Watch the video below for a walk through of the lab.
+[](youtube:7rbgF8Z6hc4)
+
+
 ### Objectives
 - Initialize the workshop environment.
 
