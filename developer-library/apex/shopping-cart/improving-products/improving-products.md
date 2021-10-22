@@ -11,6 +11,10 @@ Once you have finished the workshop and updated all the products as described in
 
 Estimated Lab Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:iFjoMq6EMcI)
+
 ### Objectives
 In this lab, you will:
 - Improve both Faceted Search and Cards region. 

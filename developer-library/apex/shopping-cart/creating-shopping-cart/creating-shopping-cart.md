@@ -16,6 +16,10 @@ Customers will be able to:
 
 Estimated Lab Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:Q7jMcuxMlnc)
+
 ### Objectives
 In this lab, you will:
 - Create a page to list the products in the Shopping Cart.
