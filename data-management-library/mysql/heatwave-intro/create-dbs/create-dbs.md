@@ -331,16 +331,6 @@ Description
     </details>
 
     <details>
-    <summary>UAE East(Dubai) Region - Copy and paste to PAR Source URL</summary>
-    <br>
-    ```
-    <copy> 
-    https://objectstorage.me-dubai-1.oraclecloud.com/p/0xrSzhhg0bvExr9BgK-VTFAlUwJD5TaY1VB0cDGlFswagCS44raI0cg9VCypHECR/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
-    </copy>
-    ```
-    </details>
-
-    <details>
     <summary>Israel 1 (Jerusalem) Region - Copy and paste to PAR Source URL</summary>
     <br>
     ```
