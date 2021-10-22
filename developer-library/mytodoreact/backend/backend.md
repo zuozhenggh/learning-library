@@ -101,8 +101,8 @@ microservices images into the repository
 	Go to the Oracle Cloud Console, click the navigation menu in the top-left corner and open **Developer Services** then **Container Registry**.
 	![dev services reg](images/21-dev-services-registry.png " ")
 	![registry root comp](images/Registry-root-compart.png " ")
-11. Mark **Access** as **Public** (if **Private**)
-12. From the Actions drop-down list, select **Actions** and **Change to Public**.
+12. Mark **Access** as **Public** (if **Private**)
+13. From the Actions drop-down list, select **Actions** and **Change to Public**.
 	![public access](images/Public-access.png " ")
 
 ## Task 3: Deploy on Kubernetes and Check the Status

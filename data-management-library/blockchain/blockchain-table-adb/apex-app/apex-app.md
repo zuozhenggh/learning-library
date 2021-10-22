@@ -6,6 +6,10 @@ In the lab, you will create an APEX workspace, define the rest end points and en
 
 Estimated time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:0vNYCULNhnI)
+
 ### Objectives
 
 In this lab, you will:
