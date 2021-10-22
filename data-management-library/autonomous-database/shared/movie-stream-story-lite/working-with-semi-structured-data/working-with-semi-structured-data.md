@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:0_BOgvJw4N0)
+[](youtube:5o40waKb2_4)
 
 JSON provides an extremely flexible and powerful data model.  No wonder that it is such a popular storage format for developers. Oracle SQL allows you to analyze JSON data - including complex data types like arrays - in combination with structured tabular data.
 

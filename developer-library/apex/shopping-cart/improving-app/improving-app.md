@@ -6,6 +6,10 @@ In this lab, you will learn how to make some pages publicly accessible.
 
 Estimated Lab Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:dijXH_p_0f0)
+
 ### Objectives
 In this lab, you will:
 - Set the following pages as public pages:

@@ -5,6 +5,10 @@ In this lab, you will learn many of the basics for analyzing data across multipl
 
 Estimated time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:lgug4o8qqB8)
+
 ### Objectives
 
 - Understand how to use SQL Worksheet

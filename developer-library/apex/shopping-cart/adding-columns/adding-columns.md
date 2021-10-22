@@ -9,6 +9,10 @@ In this lab, you will learn how to add these three new columns to the **PRODUCTS
 
 Estimated Lab Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:fBVSgDAXtrU)
+
 ### Objectives
 In this lab, you will:
 - Add new columns to the existing Products table.

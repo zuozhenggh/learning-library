@@ -12,6 +12,10 @@ In the following we show you how you can use SQL to work with the JSON data in a
 
 Estimated Lab Time: 30 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:MrSXStEfOF4)
+
 ### Objectives
 
 In this lab, you will:

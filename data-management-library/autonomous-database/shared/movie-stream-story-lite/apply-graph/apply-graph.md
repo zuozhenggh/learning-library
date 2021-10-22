@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:Z1HxSxr4wd4)
+[](youtube: 6ik6ahjmYQQ)
 
 Use Oracle Graph analytics to create customer communities based on movie viewing behavior. Once you've created communities - make recommendations based on what your community members have watched.
 
