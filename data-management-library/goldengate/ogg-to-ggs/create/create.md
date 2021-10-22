@@ -7,7 +7,7 @@ This lab walks you through the steps to create an Oracle Cloud Infrastructure (O
 Estimated time: 20 minutes
 
 Watch the video below for a walk through of the lab.
-[](youtube:5sZEYsfK7mw)
+[](youtube:qW8ulWBx99s)
 
 ### About Oracle Cloud Infrastructure GoldenGate Resources
 
