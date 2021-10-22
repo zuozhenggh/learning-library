@@ -6,6 +6,10 @@ This lab will show you how to test different failure scenarios and compare/contr
 
 Estimated Lab Time - 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:ivyPwQDl7GQ)
+
 ### Objectives
 
 -   Test the three failure scenarios shown in the following table:

@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:Z1HxSxr4wd4)
+[](youtube: 6ik6ahjmYQQ)
 
 Use Oracle Graph analytics to create customer communities based on movie viewing behavior. Once you've created communities - make recommendations based on what your community members have watched.
 
@@ -79,7 +79,7 @@ The MOVIE_RECOMMENDATIONS graph has been created for you from the tables CUSTOME
 
  You can import a notebook that has the graph queries and analytics. Each paragraph in the notebook has an explanation.  You can review the explanation, and then run the query or analytics algorithm.   
 
-  [Click here to download the notebook](./files/movie_movie_recommendations.dsnb) and save it to a folder on your local computer.  This notebook includes graph queries and analytics for the MOVIE_RECOMMENDATIONS graph.
+  [Click here to download the notebook](files/Movie_Movie_Recommendations.dsnb) and save it to a folder on your local computer.  This notebook includes graph queries and analytics for the MOVIE_RECOMMENDATIONS graph.
 
  1. Import a notebook by clicking on the notebook icon on the left, and then clicking on the **import notebook** icon on the far right.
 

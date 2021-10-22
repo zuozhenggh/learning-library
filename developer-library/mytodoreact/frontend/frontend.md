@@ -25,7 +25,7 @@ The index.css file has all the styles for the application.
 ### Objectives
 
 In this tutorial, you will:
-- Clone the workshop git repository on your laptop
+- Clone the workshop git repository **on your laptop**
 - Set the API Gateway endpoint
 - Run the ReactJS frontend code in development mode and build for production
 - Host the production build on the OCI Object Storage
@@ -50,6 +50,7 @@ In this tutorial, you will:
     ```
 5. If `Go lang` is not installed, see https://golang.org/doc/
 
+6. Make sure **git** is installed; if not please follow the instructions @ `https://bit.ly/3DXyjiL`
 ## Task 1: Configure API.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -100,7 +101,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Task 2: Run in Dev Mode then Build for Production
 
-1. In the project directory, run the app in the development mode <br />.
+1. In the project directory, **run the app** in the development  mode and **play with it**.<br />.
 
 	```bash
 	<copy>npm start</copy>
@@ -134,9 +135,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Task 3: Host on the Oracle Cloud Infrastructure Object Storage
 
 1. Open up the navigation menu in the top-left corner of the Oracle Cloud Console and select
-**Storage** then select **Object Storage**.
+**Storage** then select **Buckets** under **Object Storage**.
 
-2. Create the **mtdrworkshop** bucket in your root compartment.
+2. Create the **mtdrworkshop** bucket in your root compartment.] and make it **Public**
+	![Create Bucket 0](images/Create-bucket.png " ")
+	![Create Bucket 1](images/Create-bucket-2.png " ")
+	![Create bucket 3](images/Public-bucket.png " ")
+
 
 3. Install the Staci utility for copying directories to the Oracle Cloud Infrastructure (OCI) object storage
    bucket while preserving folder hierarchies.
@@ -152,6 +157,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     ```bash
     <copy>cd staci</copy>
      ```
+	\* Execute `go mod init staci`.
+
+     ```bash
+     <copy>go mod init staci</copy>
+     ```
 
 	\* Execute `go get -d`.
 
@@ -165,7 +175,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     <copy>go build</copy>
     ```
 
-4. Upload a static build into the bucket, using the staci binary.
+4. If you have never used your laptop for connecting to an Oracle Cloud account, you need to setup an **OCI config file** and create an **API key**.
+	\* Follow Step #2 in the following doc `https://bit.ly/3vM7v2h` for that purpose.
+
+5. Upload a static build into the bucket, using the staci binary.
 
 	```bash
 	<copy>./staci/staci -source build -target mtdrworkshop</copy>
@@ -173,7 +186,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 	- The application is visible in the 'mtdrworkshop' bucket of your tenancy.
 
-5. Click the index.html object and copy its URL.
+6. Click the index.html object and copy its URL.
 
 	![bucket index](images/bucket-index.png " ")
 

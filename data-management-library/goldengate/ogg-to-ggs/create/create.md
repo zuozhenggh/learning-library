@@ -6,6 +6,9 @@ This lab walks you through the steps to create an Oracle Cloud Infrastructure (O
 
 Estimated time: 20 minutes
 
+Watch the video below for a walk through of the lab.
+[](youtube:qW8ulWBx99s)
+
 ### About Oracle Cloud Infrastructure GoldenGate Resources
 
 A OCI GoldenGate **deployment** manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can create and manage Extracts and Replicats.

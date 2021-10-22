@@ -5,6 +5,10 @@ In this lab, we will create the connection to primary and standby databases.
 
 Estimated Lab Time: 15 Minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:6Dp49VXqjtQ)
+
 ### Objectives
 - Create a database connection to the primary database
 - Create a database connection to the standby database

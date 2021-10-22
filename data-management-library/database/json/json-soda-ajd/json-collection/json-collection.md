@@ -8,6 +8,10 @@ In order to create a collection all you have to specify is the collection's name
 
 Estimated Lab Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:7H086A3JKbo)
+
 ### Objectives
 
 In this lab, you will:

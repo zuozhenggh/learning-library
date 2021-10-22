@@ -8,6 +8,10 @@ In this lab, we will install Node.js in the compute instance, Then to prepare fo
 
 Estimated Time: 25 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube: 2QHI3kH8H0o)
+
 ### Objectives
 
 In this lab, you will:
