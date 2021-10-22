@@ -101,8 +101,8 @@ microservices images into the repository
 	Go to the Oracle Cloud Console, click the navigation menu in the top-left corner and open **Developer Services** then **Container Registry**.
 	![dev services reg](images/21-dev-services-registry.png " ")
 	![registry root comp](images/Registry-root-compart.png " ")
-11. Mark **Access** as **Public** (if **Private**)
-12. From the Actions drop-down list, select **Actions** and **Change to Public**.
+12. Mark **Access** as **Public** (if **Private**)
+13. From the Actions drop-down list, select **Actions** and **Change to Public**.
 	![public access](images/Public-access.png " ")
 
 ## Task 3: Deploy on Kubernetes and Check the Status
@@ -140,6 +140,13 @@ microservices images into the repository
 	Returns
 	http://130.61.66.27/todolist
 
+5. Testing end to end from the OKE cluster to the Autonomous database
+	* In **Cloud Shell** issue the following command (Replace the IP address with the **External IP** of your OKE cluster)
+	**$ kubectl logs -f <POD-name>**
+	``` bash
+	<copy>curl http://155.248.198.248/todolist</copy>
+	```
+		You should see the record you have created in Tutorial 1 after the database creation.
 ## Task 4: UnDeploy (optional)
 
 If you make changes to the image then you need to delete the service and the pods by running undeploy.sh then redo the following steps: **Build and Push the Docker Image to the OCI Registry** and **Deploy in Kubernetes and Check the Status**.
@@ -167,8 +174,8 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 
 3. Configure the basic info: name, compartment, VCN and Subnet; then click **Create**.
     ![create gateway](images/create-gateway.png " ")
-    * VCN: pick one of the virtual circuit networks
-    * Subnet pick the public subnet
+    * VCN: pick the virtual circuit networks
+    * Subnet: pick the public subnet starting with `oke-svclbsubnet-quick-mtdrworkshopcluster`
 
    Observe that the ToDolist gateway has been successfully created.
 	![gateway](images/Gateway.png " ")
@@ -176,7 +183,7 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 4. Copy the OCID of the newly created Gateway
 	![Gatway OCID](images/Gateway-OCID.png " ")
 
-	Replace $Gateway_OCID with the copied OCID and save it to the following file
+	In the following command, replace $Gateway_OCID with the copied OCID and save it to the mtdrworkshopgateway.txt file
 	``` bash
 	<copy>echo $Gateway_OCID > ~/mtdrworkshop/workingdir/mtdrworkshopgatewayid.txt</copy>
 	```
@@ -196,7 +203,8 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 9. Configure CORS policies:
   
 	* CORS is a security mechanism that will prevent running application loaded from origin A from using resources from origin B.
-	* Allowed Origins is the list of all servers (origins) that are allowed to access the API deployment typically of a Kubernetes cluster IP. **Replace 129.146.94.125** with the **External IP** of your Kubernetes cluster
+	* Allowed Origins is the list of all servers (origins) that are allowed to access the API deployment typically of a Kubernetes cluster IP. Replace **us-sanjose-1** by your region, and **155.248.198.248** by the **External IP** of your Kubernetes cluster.
+	
 	 ![origins methods](images/Origins-Methods.png " ")
     * Allowed methods GET, PUT, DELETE, POST, and OPTIONS are all needed.
 
