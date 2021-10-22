@@ -240,7 +240,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.ca-toronto-1.oraclecloud.com/p/mnDsSyuKkSEtHn6jU44zqViMKBTUySyTpoTLdSZGZf-UO7fqKEX7uqr_z2R_mxGO/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ca-toronto-1.oraclecloud.com/p/5hzfshBP7rSU7W-L1gzLUqLTQrU7Jd7BkA8IUoPjVj_hTs5BdDvC-ncv0E-pNyzm/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -290,6 +290,17 @@ Description
     ```
     </details>
 
+    <details>
+    <summary>UK West (Newport) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.uk-cardiff-1.oraclecloud.com/p/W9hqprQAyNOwMQI_MVdXByEEjpj7ys91uJCF9mGgRobyq6_YW9cY-vE24ypujlTI/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+
+    </copy>
+    ```
+    </details>
+    
     <details>
     <summary>Germany Central (Frankfurt) Region - Copy and paste to PAR Source URL</summary>
     <br>
