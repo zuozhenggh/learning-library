@@ -55,21 +55,18 @@ You can import, create, and work with notebooks in Oracle Machine Learning Noteb
 
 ## Task 2: Import a Notebook
 
-You can import a notebook from a local disk or from a remote location if you provide the URL. In this task, you will import a notebook from an Object Storage bucket using its URL.
+You can import a notebook from a local disk or from a remote location if you provide the URL. In this task, you will first download an OML notebook to your local machine, and then import this notebook into OML.
 
-1. On the **Oracle Machine Learning** Home page, in the **Quick Actions** section, click the **Notebooks**. The **Notebooks** page is displayed.    
+1. Download the [Workshop-Data-Lake-Accelerator.json](files/Workshop-Data-Lake-Accelerator.json?download=1) OML Notebook.
+
+2. On the **Oracle Machine Learning** Home page, in the **Quick Actions** section, click the **Notebooks**. The **Notebooks** page is displayed.    
 
     ![](./images/notebooks-page.png " ")
 
-2. Click **Import**. The **Open** dialog box is displayed.
+3. Click **Import**. The **Open** dialog box is displayed.
 
-3. Copy following URL for the **`Workshop Notebook - Data Lake Accelerator.json`** notebook and paste it in the **File name** field. Make sure that the **JSON file (*.json)** type is selected in the second drop-down field, and then click **Open**.
+4. Navigate to your local folder where you downloaded the OML notebook, and select the **`Workshop-Notebook-Data-Lake-Accelerator.json`** notebook file. The file is displayed in the **File name** field. Make sure that the **JSON file (*.json)** type is selected in the second drop-down field, and then click **Open**.
 
-    ```
-    <copy>
-    https://objectstorage.us-phoenix-1.oraclecloud.com/p/asZnZNzK6aAz_cTEoRQ9I00x37oyGkhgrv24vd_SGap2joxi3FvuEHdZsux2itTj/n/adwc4pm/b/moviestream_scripts/o/Workshop%20Notebook%20-%20Data%20Lake%20Accelerator.json
-    </copy>
-    ```
 
     ![](./images/open-dialog.png " ")
 
@@ -77,7 +74,7 @@ You can import a notebook from a local disk or from a remote location if you pro
 
     ![](./images/notebook-imported.png " ")
 
-4. Open the imported notebook. On the **Notebooks** page, click the **Workshop - Data Lake Accelerator** notebook. The notebook is displayed in the Notebook **Editor**.
+4. Open the imported notebook. Click the **Workshop - Data Lake Accelerator** notebook link. The notebook is displayed in the Notebook **Editor**.
 
     ![](./images/notebook-displayed.png " ")
 
@@ -206,15 +203,15 @@ You can use this drop-down list to do the following:
 
     ![](./images/show-code.png " ")
 
-    The code section of each paragraph is displayed. The first three paragraphs in the notebook use the **`%md`** (MarkDown) interpreter while the last two use **`%sql`** interpreter.
+    The code section of each paragraph is displayed. For example, paragraphs 1, 2, and 3 in the notebook use the **`%md`** (MarkDown) interpreter while the paragraphs 4 and 5 use the **`%sql`** interpreter.
 
     ![](./images/code-displayed.png " ")
 
-    In this notebook, the **`%md`** (MarkDown) paragraphs provide useful information about the paragraph(s) that follows. The **`%md`** Markdown interpreter generates static html from plain Markdown text. In this lab, you will review the code in each paragraph one at a time, run that paragraph, and review the results as desired.
+    In this notebook, the **`%md`** (MarkDown) paragraphs provide useful information about the paragraphs. The **`%md`** Markdown interpreter generates static html from plain Markdown text. In this lab, you will review the code in each paragraph one at a time, run that paragraph, and review the results as desired.
 
     >**Note:** To hide the code sections of all paragraphs, click the **Show/hide the code** toggle icon again. Keep the code sections displayed in this lab.
 
-2. Display the result (output) sections of all paragraphs in the notebook. On the notebook toolbar, click the **Show/hide the output** icon.
+2. Display the result (output) sections of all paragraphs in the notebook. On the notebook toolbar, click the **Show/hide the output** icon to show the output sections of the paragraphs where the output section is not shown by default.
 
     ![](./images/show-output.png " ")
 
@@ -222,29 +219,15 @@ You can use this drop-down list to do the following:
 
     ![](./images/output-displayed.png " ")
 
-3. Start at the top of the notebook, review the first **`%md`** paragraph, and then click **Run this paragraph**.  
-
-    ![](./images/run-md-paragraph.png " ")
-
-    The output of the **`%md`** code is displayed in the result section. It is the **Oracle Moviestream** logo. Note how the status of the paragraph changed from **READY** to **FINISHED**.
-
-    ![](./images/moviestream-logo.png " ")
-
-    >**Note:** In general, you can run the entire notebook by clicking the **Run all paragraphs** icon on the Notebook toolbar at the top of the page next to the notebook's name; however, we won't do that in this lab.
-
-4. Hide the code section for the first **`%md`** paragraph that you just ran. Click **Hide editor**.
+3. Hide the code sections for the first three **`%md`** paragraphs. Click **Hide editor** in each paragraph.
 
     ![](./images/hide-editor.png " ")  
 
-    The code section is hidden. It is a good practice to hide the code section of a **`%md`** paragraph since you are only intertested in looking at the formatted output.
+    The code sections are hidden. It is a good practice to hide the code section of a **`%md`** paragraph since you are only interested in looking at the formatted output.
 
     ![](./images/editor-hidden.png " ")  
 
-5. Run the next two **%md** paragraphs and hide the editor in each paragraph.
-
-    ![](./images/run-md-paragraphs.png " ")  
-
-6. Run the **Top Sales by City** paragraph. Click **Run this paragraph**.  
+4. Run the **Top Sales by City** paragraph. Click **Run this paragraph**.  
 
     ![](./images/run-top-sales.png " ")  
 
@@ -252,9 +235,11 @@ You can use this drop-down list to do the following:
 
     ![](./images/top-sales-output.png " ")
 
-7. Click **Bar Chart** on the toolbar to change the output display format.
+5. Click **Bar Chart** on the toolbar to change the output display format.
 
     ![](./images/top-sales-bar-chart.png " ")
+
+6. Examine, run, and review the output of the remaining paragraphs, as desired.
 
     You may now proceed to the next lab.
 

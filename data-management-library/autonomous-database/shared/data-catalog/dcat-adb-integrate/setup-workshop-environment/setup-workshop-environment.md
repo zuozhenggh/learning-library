@@ -1,11 +1,11 @@
 <!-- September 29, 2021: Per Marty's comments on September 29, I am removing tasks 3 and 4 and replacing then with notes about the privileges required for the current user if the user is not an admin like they are in this workshop. -->
 <!-- comments -->
 
-# Setup the Workshop Environment
+# Set Up the Workshop Environment
 
 ## Introduction
 
-This lab walks you through the steps to get started with Oracle Cloud Infrastructure Data Catalog. First, you create a compartment for your Data Catalog instance. You create a dynamic group which allows you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). Next, you create the policy to permit the dynamic group to access Oracle Cloud Infrastructure services such as Data Catalog, ADB, and optionally Oracle Object Storage buckets. You then create a Data Catalog instance, create a new business glossary, and then import a glossary into the new glossary. When you create a data catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata. Finally, you create an Autonomous Database instance.
+This lab walks you through the steps to set up the workshop environment. First, you create a compartment for your Data Catalog instance that will contain all of the workshop resources. You create a dynamic group which allows you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). Next, you create the policy to permit the dynamic group to access Oracle Cloud Infrastructure services such as Data Catalog, ADB, and optionally Oracle Object Storage buckets. You then create a Data Catalog instance, create a new business glossary, and then import a glossary into the new glossary. When you create a data catalog, you get a single collaborative environment to manage technical, business, and operational metadata. You can collect, organize, find, access, understand, enrich, and activate this metadata. Finally, you create an Autonomous Database instance.
 
 > **Note:** This workshop is directed at administrator users because they are granted the required access permissions. In real life scenarios, you would create a new administrator user and a Data Catalog administrator group, and then add the new user to the new group. Next, you create the Oracle Cloud Infrastructure Identity and Access Management (IAM) policies that are required to create and manage a Data Catalog and Autonomous Database instances.
 
@@ -19,7 +19,7 @@ In this lab, you will:
 * Create the access policy for the dynamic group.
 * Create a Data Catalog instance.
 * Import a Glossary into your Data Catalog instance.
-* Create and Autonomous Database instance.
+* Create an Autonomous Database instance.
 
 
 ### Prerequisites
@@ -68,66 +68,28 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
    ![](./images/compartment-created.png " ")
 
-<!-- Commenting out Tasks 3, 4, and original 7 per Marty's feedback.
+## Task 3: Gather Information About Your Workshop Resources
 
-Task 3: Create an IAM User to Be the Data Catalog Administrator
+In this lab and in several later labs, you'll gather information about the resources that you will use in this workshop such as your _Compartment OCID_. You will save this information in a text file that is provided for you so that you can easily copy and paste this information whenever you need it. This will save you extra steps later.
 
-A Cloud Administrator has complete control over all of the Data Catalog resources in the tenancy; however, it's a good practice to delegate administration tasks to one or more Data Catalog administrators. To create a new Data Catalog administrator for a service, a Cloud Administrator must create a user and then add that user to a Data Catalog administrators group. You create Identity and Access Management (IAM) groups with access privileges that are appropriate to your needs.
+1. Download the [workshop-resources.txt](files/workshop-resources.txt?download=1) file folder. This file contains several placeholders for different resources that you will use in this workshop. Once you identify a resource value such as your _Compartment OCID_, you can paste it in your `workshop-resources.txt` file so that you can easily retrieve it anytime you need it.
 
-Create a new **Administrator** group that will have full access rights to the new compartment that you created earlier as follows:
+2. Navigate to your local folder where you downloaded the `workshop-resources.txt` file, `Downloads` folder in MS-Windows, and then open it.
 
-1. If you are still on the **Compartments** page from the previous task, click the **Users** link in the **Identity** section on the left; otherwise, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Users**.
+    ![](./images/workshop-resources.png " ")
 
-2. On the **Users** page, click **Create User**.
+3. To find your _Compartment OCID_, on the **Compartments** page from the previous task, in the row for your **training-dcat-compartment**, hover over the **OCID link** in the **OCID** column, and then click **Copy** to copy the OCID for the **training-dcat-compartment**.
 
-   ![](./images/create-users-page.png " ")
+    ![](./images/copy-compartment-ocid.png " ")
 
-3. In the **Create User** dialog box, enter **`training-dcat-admin-user`** in the **Name** field, **`Training DCAT Admin User`** in the  **Description** field, an optional email address for the user in the **Email** field, and then click **Create**.
+4. Paste the copied OCID value in the **training-dcat-compartment Compartment OCID Compartment OCID** row in the **`workshop-resources`** text file, and then save the file.
 
-   ![](./images/create-user.png " ")
+    >**Note:** Keep the `workshop-resources.txt` text file open as you work on the workshop.
 
-4. The **User Details** page is displayed. Click **Users** in the breadcrumbs to return to the **Users** page.
+    ![](./images/paste-compartment-ocid.png " ")
 
-   ![](./images/user-details.png " ")
 
-   The new user is displayed in the list of available users.
-
-   ![](./images/user-created.png " ")
-
-    >**Note:** In this workshop, you will not login to OCI using the new **`training-dcat-admin-user`** user that you just created in this task; instead, you will continue your work using the same Cloud Administrator user that you used so far in this workshop. As a Cloud Administrator, you can create a one-time password for the new **`training-dcat-admin-user`** user. The user must change the password during the first sign in to the Console. For additional information, see [Managing User Credentials](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm) in the OCI documentation.
-
-Task 4: Create an IAM Data Catalog Administrators Group and Add the New User to the Group
-
-Create a Data Catalog group whose members will be granted permissions to manage the Data Catalog.
-
-1. If you are still on the **Users** page from the previous task, click the **Groups** link in the **Identity** section on the left; otherwise, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Groups**.
-
-2. On the **Groups** page, click **Create Group**.
-
-   ![](./images/create-group.png " ")
-
-3. In the **Create Group** dialog box, enter **`training-dcat-admin-group`** in the **Name** field, **`Training Data Catalog Admin. Group`** in the **Description** field, and then click **Create**.
-
-   ![](./images/create-group-dialog.png " ")
-
-4. The **Group Details** page is displayed. In the **Group Members** section, click **Add User to Group**.   
-
-   ![](./images/group-details-page.png " ")
-
-5. In the **Add User to Group** dialog box, select the **`training-dcat-admin-user`** user that you created earlier from the **Users** drop-down list, and then click **Add**.
-
-   ![](./images/add-user-group.png " ")
-
-6. The **Group Details** page is re-displayed and the newly added user to this group is displayed in the **Group Members** section.
-
-   ![](./images/user-added-to-group.png " ")
-
-7. Click **Groups** in the breadcrumbs to re-display the **Groups** page. The newly created group is displayed in the list of available groups.
-
-   ![](./images/groups-page.png " ")
--->
-
-## Task 3: Create a Data Catalog Instance
+## Task 4: Create a Data Catalog Instance
 
 To control who has access to Data Catalog, and the type of access for each group of users, you must create policies. By default, only the users in the Administrators group have access to all Data Catalog resources. For everyone else who's involved with Data Catalog, you must create policies that give them proper rights to Data Catalog resources. In this workshop, it is assumed that you are an administrator performing the steps in this workshop such as creating the Data Catalog and ADB instances. If you are not an administrator user, then your administrator user must grant you the policies listed below.
 
@@ -178,8 +140,16 @@ Create a Data Catalog instance using the following steps.
 
    ![](./images/click-data-catalog.png " ")
 
+7. Find your _Data Catalog OCID_ which you will need in later labs, and then save it in your local **`workshop-resources.txt`** text file. On the **Data Catalogs** page, in the row for your **training-dcat-instance** Data Catalog instance, click the **Actions** button, and then select **Copy OCID** from the context menu.
 
-## Task 4: Create, Import, and Edit a Glossary
+    ![](./images/dcat-ocid.png " ")
+
+8. Paste the copied OCID value in the **training-dcat-instance Data Catalog OCID** section in your local **`workshop-resources`** text file, and then save the file.
+
+    ![](./images/paste-dcat-ocid.png " ")
+
+
+## Task 5: Create, Import, and Edit a Glossary
 
 In this task, you create a new and empty business glossary in the newly created Data Catalog instance. Next, you  import an existing glossary from your local file system into the new glossary. You use a business glossary to define your concepts across your business domain. Creating a business glossary brings common understanding of the vocabulary used throughout your organization. In Data Catalog, you create categories and terms in a glossary to manage and organize your business concepts. Terms are the actual definitions of business concepts as agreed upon by different business stakeholders in your company. You use terms to organize your data entities and attributes. You can edit a glossary, category, or term to modify their default properties such as name, owner, status, and description, or any custom property that is associated with a glossary, category, or term. For detailed information on managing glossaries, see [Managing a Business Glossary](https://docs.oracle.com/en-us/iaas/data-catalog/using/manage-glossary.htm#create-glossary) in the _Oracle Cloud Infrastructure_ documentation.
 
@@ -210,16 +180,16 @@ In this task, you create a new and empty business glossary in the newly created 
 
    ![](./images/note-proceed.png " ")
 
-6. In the **Open** dialog box for your local system, copy and enter the following pre-authenticated request (PAR) URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Select **All Files** from the second drop-down list, and then click **Open**. See [Pre-Authenticated requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm).
+6. In the **Open** dialog box for your local system, copy and enter the following public pre-authenticated request (PAR) URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Select **All Files** from the second drop-down list, and then click **Open**. See [Pre-Authenticated requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm).
 
 
     ```
-    <copy>https://objectstorage.us-phoenix-1.oraclecloud.com/p/asZnZNzK6aAz_cTEoRQ9I00x37oyGkhgrv24vd_SGap2joxi3FvuEHdZsux2itTj/n/adwc4pm/b/moviestream_scripts/o/MovieStream-Glossary.xlsx</copy>
+    <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_scripts/o/dcat/MovieStream%20ApplicationExport.xlsx</copy>
     ```
 
     ![](./images/specify-par.png " ")
 
-7. An import job is triggered and a message is displayed.
+7. An import job is triggered and a message is displayed. You can click the **View Job** link in the message to view the details of this job. 
 
    ![](./images/import-job-initiated.png " ")
 
@@ -310,24 +280,20 @@ Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies
     >**Note:** You can click the name of a policy on this page to view and edit it.
     -->
 
-## Task 5: Create a Dynamic Group
+## Task 6: Create a Dynamic Group
 Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). You can then create policies to permit instances to make API calls against Oracle Cloud Infrastructure services. When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
 
-In this task, you will first gather your compartment's OCID which you will use when you create the dynamic group. Next, you create a dynamic group that includes the specific compartment OCID as a resource in the group.
+In this task, you create a dynamic group that includes the specific compartment OCID as a resource in the group.
 
-1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Compartments**.
+1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
 
-2. On the **Compartments** page, in the row for your **training-dcat-compartment**, hover over the OCID link in the **OCID** column, and then click **Copy** to copy the OCID for the **training-dcat-compartment**. Next, paste that OCID to an editor or a file of your choice, so that you can retrieve it when you create the dynamic group.
+  ![](./images/navigate-dynamic-group.png " ")
 
-  ![](./images/copy-compartment-ocid.png " ")
-
-3. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
-
-4. On the **Dynamic Groups** page, click **Create Dynamic Group**.
+2. On the **Dynamic Groups** page, click **Create Dynamic Group**.
 
   ![](./images/dynamic-group-page.png " ")
 
-5. In the **Create Dynamic Group** dialog box, specify the following:
+3. In the **Create Dynamic Group** dialog box, specify the following:
 
     + **Name:** Enter **`moviestream-dynamic-group`**.
     + **Description:** Enter **`Training Compartment Dynamic Group`**.
@@ -338,23 +304,28 @@ In this task, you will first gather your compartment's OCID which you will use w
         <copy>resource.compartment.id='your-compartment-ocid'</copy>
         ```
 
-        > **Note:** Substitute the 'your-compartment-ocid' placeholder above with your own compartment's OCID.
+        > **Note:** Substitute the **'your-compartment-ocid'** placeholder in the above rule with your own compartment's OCID that you identified and saved earlier in your local **`workshop-resources.txt`** text file. Make sure to include the single quotation marks (**`'`**) in the rule.  
 
-        ![](./images/moviestream-dynamic-group-db.png " ")
+        ![](./images/compartment-ocid-text-file.png " ")
 
-    + Click **Create**. The **Dynamic Group Details** page is displayed. Click **Dynamic Groups** in the breadcrumbs to re-display the **Dynamic Groups** page.
+4. Click **Create**.
 
-         ![](./images/dynamic-group-details.png " ")
-
-         The newly created dynamic group is displayed.
-
-         ![](./images/dynamic-group-created.png " ")
+    ![](./images/moviestream-dynamic-group-db.png " ")
 
 
-## Task 6: Create Access Policy for Dynamic Group         
+5. The **Dynamic Group Details** page is displayed. Click **Dynamic Groups** in the breadcrumbs to re-display the **Dynamic Groups** page.
+
+    ![](./images/dynamic-group-details.png " ")
+
+    The newly created dynamic group is displayed.
+
+    ![](./images/dynamic-group-created.png " ")
+
+
+## Task 7: Create Access Policy for Dynamic Group         
 After you have created a dynamic group, you need to create a policy to permit the dynamic group to access Oracle Cloud Infrastructure services. In this task, you create a policy to allow Data Catalog in your `training-dcat-compartment` to manage the aggregate resource-type **`data-catalog-family`** as follows:
 
-1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Policies**.
+1. If you are still on the **Dynamic Groups** page from the previous task, click **Policies** in the **Identity** section on the left; otherwise, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Policies**.
 
 2. On the **Policies** page, make sure that your **`training-dcat-compartment`** compartment is selected, and then click **Create Policy**.  
 
@@ -389,33 +360,30 @@ After you have created a dynamic group, you need to create a policy to permit th
     allow dynamic-group moviestream-dynamic-group to manage object-family in compartment training-dcat-compartment
     ```
 
-## Task 7: Create an Autonomous Database Instance
+## Task 8: Create an Autonomous Database Instance
 
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
-See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
+1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
+2. Open the **Navigation** menu and click **Oracle Database**. Under **Oracle Database**, click **Autonomous Database**.
 
-3. Open the **Navigation** menu and click **Oracle Database**. Under **Oracle Database**, click **Autonomous Database**.
+3. On the **Autonomous Databases** page, make sure **`training-dcat-compartment`** is selected in the **Compartment** drop-down list in the **List Scope** section. click **Create Autonomous Database**. The **Create Autonomous Database** page is displayed.
 
-4. On the **Autonomous Databases** page, make sure **`training-dcat-compartment`** is selected in the **Compartment** drop-down list in the **List Scope** section. click **Create Autonomous Database**. The **Create Autonomous Database** page is displayed.
-
-5. In the **Provide basic information for the Autonomous Database** section, specify the following:
+4. In the **Provide basic information for the Autonomous Database** section, specify the following:
        * **Compartment:** **`training-dcat-compartment`**.
        * **Display Name:** **`DB-DCAT Integration`**.
        * **Database Name:** **`TrainingADB`**.
 
        ![](./images/adb-basic-info.png " ")
 
-6. In the **Choose a workload type** section, accept the **Data Warehouse** default selection.
+5. In the **Choose a workload type** section, accept the **Data Warehouse** default selection.
 
        ![](./images/adb-workload-type.png " ")
 
-7. In the **Choose a deployment type** section, accept the **Shared Infrastructure** default selection.
+6. In the **Choose a deployment type** section, accept the **Shared Infrastructure** default selection.
 
        ![](./images/adb-deployment-type.png " ")
 
-8. In the **Configure the database** section, specify the following:
+7. In the **Configure the database** section, specify the following:
 
        * **Always Free:** Disabled. If your Cloud Account is an Always Free account, you can select this option to create an Always Free autonomous database.
        * **Choose Database version:** **`19c`**.
@@ -427,7 +395,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
        >**Note:** If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
 
-9. In the **Create administrator credentials** section, specify the following:
+8. In the **Create administrator credentials** section, specify the following:
 
        * **Username _Read-Only_:** This read-only field displays the default username, **`ADMIN`**.     
        **Important:** Make a note of this _username_ as you will need it to perform later tasks.
@@ -444,17 +412,17 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
        ![](./images/adb-admin-credentials.png " ")
 
-10. In the **Choose network access** section, select the **Allow secure access from everywhere** access type.     
+9. In the **Choose network access** section, select the **Secure access from everywhere** access type.     
 
     ![](./images/adb-network-access.png " ")
 
-11. In the **Choose a license type** section, accept the default __Bring Your Own License (BYOL)__. Select this type when your organization has existing database licenses.
+10. In the **Choose a license type** section, accept the default __Bring Your Own License (BYOL)__. Select this type when your organization has existing database licenses.
 
     ![](./images/adb-license-type.png " ")
 
-12. Click __Create Autonomous Database__.
+11. Click __Create Autonomous Database__.
 
-13.  The **Autonomous Database Details** page is displayed. The status of your ADB instance is **PROVISIONING**.
+12.  The **Autonomous Database Details** page is displayed. The status of your ADB instance is **PROVISIONING**.
 
     ![](./images/adb-provisioning.png " ")
 
@@ -462,7 +430,7 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
     ![](./images/adb-provisioned.png " ")
 
-14. Click the **Autonomous Database** link in the breadcrumbs. The **Autonomous Database** page is displayed. The new Autonomous Database instance is displayed.
+13. Click the **Autonomous Database** link in the breadcrumbs. The **Autonomous Database** page is displayed. The new Autonomous Database instance is displayed.
 
     ![](./images/adb-page.png " ")
 
