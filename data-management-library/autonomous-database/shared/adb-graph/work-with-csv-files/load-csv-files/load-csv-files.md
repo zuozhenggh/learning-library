@@ -39,7 +39,7 @@ Learn how to
    
     ![ALT text is not available for this image](./images/db-actions-graphuser-login.png " ")  
 
-    **Note:** If necessary, do the following to create the user with the right roles and privileges:
+    **Note:** *If necessary, do the following to create the user with the right roles and privileges*:
     - Log in to Database Actions as the ADMIN user for your Autonomous Database.
     - Select Administration and then Database Users from the navigation menu
     - Click Create User
@@ -71,7 +71,7 @@ Learn how to
    
    ![ALT text is not available for this image](images/db-actions-dataload-card.png " ")
    
-   Then specifcy the location of your data. That is, make sure the Load Data and the Local File cards have a check mark. Click `Next`.
+   Then specify the location of your data. That is, make sure the Load Data and the Local File cards have a check mark. Click `Next`.
 
    ![ALT text is not available for this image](./images/db-actions-dataload-location.png)
 
@@ -79,7 +79,7 @@ Learn how to
    
       ![ALT text is not available for this image](images/db-action-dataload-file-browser.png " ") 
 
-    Navigate to the correct folder (for example, ~/downloads/random-acct-data) and select the bank_account.csv and the bank_txns.csv file.
+    Navigate to the correct folder (for example, ~/downloads/random-acct-data) and select the `bank_account.csv` and the `bank_txns.csv` files.
 
     ![ALT text is not available for this image](./images/db-actions-dataload-choose-files.png " ")
 
@@ -149,6 +149,6 @@ Please **proceed to the next lab** to create a graph from these tables.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, September 2021
+* **Last Updated By/Date** - Jayant Sharma, October 2021
 
   

@@ -59,7 +59,7 @@ Learn how to
    Select the `Environment` menu item.  
 
    ![ALT text is not available for this image](images/ll-user-pulldown-menu.png " ")
-2. Enter a **value of 2 (GB)** for the memory size and then click `Create`.  
+2. Enter a **value of 4 (GB)** for the memory size and then click `Create`.  
 
    ![ALT text is not available for this image](images/ll-create-env-detail.png " ") 
 3. The Jobs page will show the status. Meanwhile let's start modeling and creating a graph from the existing tables.  
