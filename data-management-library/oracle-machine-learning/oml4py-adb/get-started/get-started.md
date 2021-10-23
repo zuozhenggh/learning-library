@@ -5,6 +5,10 @@ This lab walks you through the steps of accessing Oracle Machine Learning Notebo
 
 Estimated Lab Time: 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:J0GlX2uBLrQ)
+
 ### Objectives
 
 In this lab, you will learn how to:
