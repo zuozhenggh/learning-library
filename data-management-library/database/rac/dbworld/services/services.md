@@ -5,9 +5,9 @@ This lab walks you through the steps to demonstrate many of the capabilities of 
 
 Estimated Time: 20 Minutes
 
-Watch the video for a quick walk through of Oracle Database services lab.
+Watch the video below for a quick walk through of the lab.
 
-[](youtube:rPUFNMGCzDc)
+[](youtube:HWdqRagr7UE)
 
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account

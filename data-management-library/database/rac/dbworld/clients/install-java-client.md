@@ -6,9 +6,9 @@ This lab walks you through the installing a Java client for later use in this la
 
 Estimated Lab Time: 10 Minutes
 
-Watch the video below for an overview of the Application Continuity lab
-[](youtube:KkwxbwII3O4)
+Watch the video below for a quick walk through of the lab.
 
+[](youtube: LCYqgzlgaPs)
 
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account

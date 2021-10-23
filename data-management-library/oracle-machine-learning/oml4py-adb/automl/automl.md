@@ -6,6 +6,10 @@ This lab walks you through the steps to use the AutoML functionality.
 
 Estimated Lab Time: 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:xmccI5XwzEY)
+
 ### About AutoML
 AutoML (Automated Machine Learning) provides built-in data science expertise about data analytics and modeling that you can employ to build machine learning models.
 

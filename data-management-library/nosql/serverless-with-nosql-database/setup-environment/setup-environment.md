@@ -6,6 +6,10 @@ This lab walks you through the steps necessary to create a proper operating envi
 
 Estimated Time: 5 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:UqVLC1Y47hY)
+
 ### Objectives
 
 In this lab you will:

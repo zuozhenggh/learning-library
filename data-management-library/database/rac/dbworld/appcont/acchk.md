@@ -6,8 +6,9 @@ This lab walks you through the use and functioning of **acchk**, a database-resi
 
 Estimated Lab Time: 20 Minutes
 
-Watch the video below for an overview of the Application Continuity lab
-[](youtube:KkwxbwII3O4)
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:NPL1n78YlRk)
 
 
 ### Prerequisites
