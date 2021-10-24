@@ -139,7 +139,7 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
       unzip ACDemo_19c.zip
       </copy>
       ````
-   
+
    The directory **acdemo** will be created with the following structure:
 
       ````
@@ -176,7 +176,7 @@ The install script for this client (SETUP\_AC\_TEST.sh) will create the **hr** u
     On completion three services will be created
     **Note:** If services of the same name existed prior to running this script these services will have their original attributes - SETUP\_AC\_TEST does not attempt to modify them
 
-   <!-- ![](./images/setup_service_list.png " ") -->
+   ![](./images/setup_service_list.png " ")
 
 6. Make the **run** scripts executable
 
