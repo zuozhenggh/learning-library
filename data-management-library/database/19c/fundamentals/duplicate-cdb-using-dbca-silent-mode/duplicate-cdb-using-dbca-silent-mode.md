@@ -8,9 +8,7 @@ In this lab, you duplicate CDB1 twice by using the `createDuplicateDB` command o
 
 Estimated Time: 25 minutes
 
-Watch the video below for a quick walk through of the lab.
 
-[](youtube:oK9hiZIXXC0)
 
 ### Objectives
 
