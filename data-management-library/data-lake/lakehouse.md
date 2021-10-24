@@ -79,7 +79,58 @@ Click on Entities just to verify that all of the tables and views are now here.
 
 ## Task 3: View of the Oracle Data Lakehouse
 
-The Oracle Data Lakehouse uses the tools under the main menu of ANalytics & AI. The Data Lake header contains the services needed to create integrations, catalog and data flows to build the lakehouse. The configuration that was setup in the beginning allows for consistent security through out the different pieces of the data lake environment which also grants least privilege for administration, developers and consumers of the data lake.
+We have a database, csv and json files in our data lake but there can be all of the various data platforms and types of data stored in the data lake and even streamed. We don't always have to load data into a database to be able to use our data sets with other data sets and assets. There are simple queries to the object storage that will allow us to join the data together with our data warehouse in our data lakehouse. Here is just one example using the data that we have loaded in this short time.
+
+Navigate back to DBActions
+
+Join the data to the existing customer data:
+
+SELECT
+    DAY_ID,
+    GENRE_ID,
+    MOVIE_ID,
+    custsales.CUST_ID,
+  AGE,
+  GENDER, STATE_PROVINCE
+FROM
+    ADMIN.CUSTSALES, ADMIN.CUSTOMER_EXTENSION, ADMIN.CUSTOMER_CONTACT
+    where customer_extension.CUST_ID=custsales.cust_id
+    and customer_extension.CUST_ID=customer_contact.CUST_ID
+    and COUNTRY_CODE='US'
+
+Optionally you can also get the results using either external tables or Data Lake Accelerator. Here is an example to use an external table to access the JSON file in the object storage and join to the database tables.
+
+Create the external table or view to get the json file data that is stored in the object storage.
+```
+<copy>
+BEGIN
+DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
+table_name => 'json_movie_data_ext2',
+file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/ouDV0uXS0m0vSkJ7Ok2-W0FfSPIsLDHkXF7aSBevClUpS7zdD0wOe4DHVn5r5IvY/n/c4u04/b/data_lakehouse/o/export-stream-2020-updated.json',
+column_list => 'doc varchar2(32000)',
+field_list => 'doc char(30000)',
+format => json_object('delimiter' value '\n')
+);
+END;
+/
+</copy>
+```
+Query the data:
+```
+<copy>
+select *
+FROM JSON_MOVIE_DATA_EXT2,
+JSON_TABLE("DOC", '$[*]' COLUMNS
+"custid" number path '$.custid',
+"genreid" number path '$.genreid',
+"movieid" number path '$.movieid')
+</copy>
+```
+
+
+***Oracle Data Lakehouse
+
+The Oracle Data Lakehouse uses the tools under the main menu of Analytics & AI. The Data Lake header contains the services needed to create integrations, catalog and data flows to build the lakehouse. The configuration that was setup in the beginning allows for consistent security through out the different pieces of the data lake environment which also grants least privilege for administration, developers and consumers of the data lake.
 
 Take a quick view at the steps that you went through to create the lakehouse that ended with a view or queries to be utilized in further analysis.
 
