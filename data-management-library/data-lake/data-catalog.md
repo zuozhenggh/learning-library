@@ -84,11 +84,11 @@ Second data asset will be the dataflow-warehouse bucket that you created for dat
 
 Then copy in the Tenancy OCID. The Tenancy OCID you might have saved to the side, but if not, go to the user profile and click on Tenancy and copy the OCID. 
 
-![Tenancy OCID](./images/Tenancy_OCID.png " ")
+![Create Data Asset](./images/Tenancy_OCID.png " ")
 
 The Namespace will populate once the tenancy was entered and then enter the region ID. The region ID you can get from clicking the dropdown menu by regions and click on manage region. Your current region should be listed at the top of the list.
 
-![Region ID](./images/RegionID.png " ")
+![Create Data Asset](./images/RegionID.png " ")
 
 ![Create Data Asset](./images/create_dataasset7.png " ")
 
@@ -111,7 +111,7 @@ You have now configured this data lake by creating a database, data sources in o
 
 In this task, you will create the OCI Data Catalog. Review options for creating business term to sync with the metadata for the data assets
 
-![Navigate to Analytics](./images/nav_dataintegration.png " ")
+![Navigate to Analytics](./images/nav_datacatalog.png " ")
 
 Click on Create Data Catalog. Create in Compartment, lakehouse1, and name the catalog, lakehousecatalog. Click on Create.
 
@@ -185,7 +185,7 @@ In this step, you will simply be creating a new table to be used in the data loa
 
 Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
 
-![Database](./images/Databaselisting.png " ")
+![Database](./images/databaselisting.png " ")
 
 Click on the database and then proced to click on the Tools Tab and click on Open Database Actions.
 
