@@ -1,7 +1,7 @@
 # Introduction
 
 ### About this Workshop
-Oracle Real Application clusters can be deployed in a variety of ways. On bare metal servers, in docker containers, on engineered systems and in the Oracle Cloud.
+Oracle Real Application Clusters can be deployed in a variety of ways. On bare metal servers, in docker containers, on engineered systems and in the Oracle Cloud.
 
 ![](./images/rac-deployment.png " ")
 

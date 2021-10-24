@@ -5,12 +5,19 @@
 In this lab you will load two CSV files into corresponding tables using the Database Actions interface of your 
 Oracle Autonomous Data Warehouse  or Oracle Autonomous Transaction Processing instance.
 
-The following video shows the steps you will execute in this lab.
+<!-- COMMENTED THE FOLLOWING OUT FOR DATABSE WORLD:
 
-[](youtube:F_3xe18kWoo) Graph Studio: Load CSV Files.
+ The following video shows the steps you will execute in this lab.
+
+[](youtube:F_3xe18kWoo) Graph Studio: Load CSV Files. -->
 
 
-Estimated Time: 10 minutes. 
+Estimated Time: 10 minutes.
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:wkKKO-RO0lA)
+
 
 ### Objectives
 
@@ -57,6 +64,7 @@ Learn how to
 
    Or use `wget` or `curl` to download the sample data to you computer.   
    An example `curl` request that you can copy and paste is:
+
     ```
     <copy>
     curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/EmjceN7dh4exJAwe8llQzAOMi4Y4pe9deZbpOXDpcjmoXYQ98Xu7XVFinPudEQwM/n/c4u04/b/data-management-library-files/o/random-acct-txn-data.zip
@@ -107,34 +115,32 @@ Learn how to
 
    If, however, you prefer to copy-n-paste then the contents of `fixup.sql` are:
 
-   ```
-   <copy>
-   alter table bank_accounts add primary key (acct_id);
-   
-   alter table bank_txns add txn_id number;
-   update bank_txns set txn_id = rownum;
-   commit;
-   
-   alter table bank_txns add primary key (txn_id);
-   alter table bank_txns modify from_acct_id references bank_accounts (acct_id);
-   alter table bank_txns modify to_acct_id references bank_accounts (acct_id);
+      ```
+      <copy>
+      alter table bank_accounts add primary key (acct_id);
+      
+      alter table bank_txns add txn_id number;
+      update bank_txns set txn_id = rownum;
+      commit;
+      
+      alter table bank_txns add primary key (txn_id);
+      alter table bank_txns modify from_acct_id references bank_accounts (acct_id);
+      alter table bank_txns modify to_acct_id references bank_accounts (acct_id);
 
-   desc bank_txns;
-   
-   select * from USER_CONS_COLUMNS where table_name in ('BANK_ACCOUNTS', 'BANK_TXNS');
-   </copy>
-   
-   ```
+      desc bank_txns;
+      
+      select * from USER_CONS_COLUMNS where table_name in ('BANK_ACCOUNTS', 'BANK_TXNS');
+      </copy>      
+      ```
 
-   It does the following:
-   - Adds a primary key constraint to the `bank_accounts` table.
-   - Adds a column (`txn_id`) to the `bank_txns` table.
-   - Sets a value for the `txn_id` and commits the transaction.
-   - Adds a primary key constraint to the `bank_txns` table.
-   - Adds a foreign key constraint to the `bank_txns` table specifying that `from_acct_id` references `bank_accounts.acct_id`.
-   - Adds a second foreign key constraint to the `bank_txns` table specifying that `to_acct_id` references `bank_accounts_acct_id`.  
-   - Helps you verify that the addition of a `txn_id` column and the constraints.
-
+      It does the following:
+      - Adds a primary key constraint to the `bank_accounts` table.
+      - Adds a column (`txn_id`) to the `bank_txns` table.
+      - Sets a value for the `txn_id` and commits the transaction.
+      - Adds a primary key constraint to the `bank_txns` table.
+      - Adds a foreign key constraint to the `bank_txns` table specifying that `from_acct_id` references `bank_accounts.acct_id`.
+      - Adds a second foreign key constraint to the `bank_txns` table specifying that `to_acct_id` references `bank_accounts_acct_id`.  
+      - Helps you verify that the addition of a `txn_id` column and the constraints.
 
 8. Execute the `fixup.sql` script in the SQL worksheet.  
    ![ALT text is not available for this image](./images/db-actions-sql-execute-fixup.png " ")  

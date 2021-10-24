@@ -4,11 +4,16 @@
 
 In this lab you will query the newly create graph (that is, `bank_graph`) in PGQL paragraphs of a notebook.
 
+<!-- COMMENTED THE FOLLOWING OUT FOR DATABSE WORLD:
 The following video shows some of the steps you will execute in this lab.
 
-[](youtube:DLRlnw-NI1g) Graph Studio: Query a graph.
+[](youtube:DLRlnw-NI1g) Graph Studio: Query a graph. -->
 
 Estimated Time: 30 minutes. 
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:XnE1yw2k5IU)
 
 ### Objectives
 
