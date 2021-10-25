@@ -8,6 +8,10 @@ To manage items in the cart, you will use [collections](https://docs.oracle.com/
 
 Estimated Lab Time: 5 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:X8nVMCJhQic)
+
 ### Objectives
 In this lab, you will:
 - Create a package to manage the Shopping Cart.

@@ -10,6 +10,10 @@ In this lab, you will provision a new Autonomous Data Warehouse (ADW) instance a
 
 Estimated Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:9S0MWzPGlkY)
+
 ### Objectives
 
 In this lab, you will:

@@ -13,14 +13,12 @@ The basic building block of an XML document is an element, defined by tags. An e
 ### Objectives
 - Create table for XML data type
 - Walk through the SQL queries having built-in functions for XML datatype
-- Showcase creation of REST end-points for XML data retrived
+- Showcase creation of REST end-points for XML data retrieved
 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -140,7 +138,6 @@ Provide the fields with the following values:
     </copy>
     ```
 
-
     ![](./images/jdev-xml-db-code-search.png " ")
 
 4.	Click on the **Save** icon to save the file.
@@ -165,7 +162,7 @@ Provide the fields with the following values:
 
 ## Task 4: Read XML in tool
 
-1.	Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
+1.	On the web browser window on the right, navigate to *`http://localhost:7101/resources/html/endPointChecker.html`*.
 
 2.	Click on the drop-down to see the list of datatypes shown in workshop.
 
@@ -195,7 +192,7 @@ Provide the fields with the following values:
 
     ![](./images/jdev-xml-rest-code.png" ")
 
-2.	Open Firefox or if already open, in another browser tab, open the URL `http://localhost:7101/xml/read/1` Data is retrieved by the fetchXml() method in XmlController.java.
+2.	On the web browser window on the right, open the URL `http://localhost:7101/xml/read/1` Data is retrieved by the fetchXml() method in XmlController.java.
 
     ![](./images/rest-id1-retrieve.png" ")
 

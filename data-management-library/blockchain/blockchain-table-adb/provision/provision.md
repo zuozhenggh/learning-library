@@ -6,6 +6,10 @@ In this lab, you will provision the Oracle Autonomous Database (ADB) instance an
 
 Estimated Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:dhCPeTAErtY)
+
 ### Objectives
 
 In this lab, you will:
@@ -18,7 +22,7 @@ In this lab, you will:
 
 This workshop assumes you have:
 
-- Logged in to your own cloud account or a LiveLabs account.
+- An Oracle Free Tier, Always Free, Paid, or LiveLabs Cloud Account
 
 ## Task 1: Provision an ATP Instance
 

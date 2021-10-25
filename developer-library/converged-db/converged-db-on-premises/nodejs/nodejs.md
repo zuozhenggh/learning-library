@@ -22,16 +22,14 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
 ## Task 1:  Verify Application
 
-1. Open up a web browser and visit the Application URL indicated in your terminal.    
+1. On the web browser window on the right preloaded with two application tabs navigate to verify.    
 
     ```
     URL: <copy>http://localhost:3000/</copy>
@@ -99,8 +97,8 @@ This lab assumes you have:
         <copy>http://localhost:3001/products</copy>
         ```
 
-    - To get the specific product details by using PID enter URL: 
-        
+    - To get the specific product details by using PID enter URL:
+
         ```
         <copy>http://localhost:3001/products/490</copy>
         ```
@@ -127,7 +125,7 @@ This lab assumes you have:
 
     - Method: - POST  
     - URL:
- 
+
         ```
         <copy>http://localhost:3001/updateProduct/13</copy>
         ```
@@ -141,10 +139,10 @@ This lab assumes you have:
 
         ![](./images/postman12a.png " ")
 
-4. Verify product details by using HTTP GET method. 
+4. Verify product details by using HTTP GET method.
     - Select the GET method
     - Enter the URL
-  
+
         ```
         <copy>
         http://localhost:3001/products/13

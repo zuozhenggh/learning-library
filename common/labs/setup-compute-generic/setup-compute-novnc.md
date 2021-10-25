@@ -7,7 +7,7 @@ Estimated Time: 15 minutes
 
 
 Watch the video below for a walk through of the Environment Setup lab.
-[](youtube:9sf8rb8VmSU)
+[](youtube:anPEOZYBdyA)
 
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
