@@ -8,7 +8,7 @@ A HeatWave cluster comprise of a MySQL DB System node and two or more HeatWave n
 
 ![Connect](./images/10addheat00.png " ")
 
-Estimated Lab Time: 10 minutes
+_Estimated Lab Time:_ 10 minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -61,6 +61,8 @@ In this lab, you will be guided through the following task:
     <copy>SELECT NAME, LOAD_STATUS FROM rpd_tables,rpd_table_id WHERE rpd_tables.ID = rpd_table_id.ID;</copy>
     ```
     ![Connect](./images/heatwave-load-04.png " ")
+
+You may now proceed to the next lab.
 
 ## Learn More
 

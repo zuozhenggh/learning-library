@@ -6,7 +6,7 @@
 
 In this lab, you will run queries in HeatWave and in MySQL. You will see the query performance improvements on HeatWave compare to MySQL.
 
-Estimated Lab Time: 10 minutes
+_Estimated Lab Time:_ 10 minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -235,7 +235,7 @@ GROUP BY firstname , lastname;</copy>
 
     ![RUN](./images/final-result.png " ") 
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
     
 ## Learn More
 
