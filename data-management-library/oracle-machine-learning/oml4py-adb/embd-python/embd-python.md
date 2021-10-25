@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to use OML4Py Embedded Python Execution functions as well as the Python Script Repository.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 Watch the video below for a quick walk through of the lab.
 

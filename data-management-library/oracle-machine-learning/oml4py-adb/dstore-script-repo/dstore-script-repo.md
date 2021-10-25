@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to use and work with OML4Py datastores and the script repository.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 Watch the video below for a quick walk through of the lab.
 

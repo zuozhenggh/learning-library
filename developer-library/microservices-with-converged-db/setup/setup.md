@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab we will provision and setup the resources to execute microservices in your tenancy.  
+In this lab, we will provision and setup the resources to execute microservices in your tenancy.  
 
-Estimates Lab Time - 25 minutes
+Estimated Time: 25 minutes
 <if type="multicloud-freetier">
 - Estimates Lab Time - 25 minutes
 + Estimates Lab Time - 25 minutes
