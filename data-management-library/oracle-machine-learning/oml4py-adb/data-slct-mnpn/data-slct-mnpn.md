@@ -4,7 +4,7 @@
 
 This lab shows how to use the transparency layer classes to work with data and to perform exploratory analysis of the data.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 Watch the video below for a quick walk through of the lab.
 

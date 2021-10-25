@@ -3,7 +3,7 @@
 ## Introduction
 This lab walks you through the steps of accessing Oracle Machine Learning Notebooks, loading notebooks and running OML4Py scripts.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 Watch the video below for a quick walk through of the lab.
 

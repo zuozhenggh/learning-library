@@ -4,14 +4,14 @@
 
 This lab will show you how you can trace microservice activity using Jaeger.
 
-Estimated lab Time - 25 minutes
+Estimated Time: 25 minutes
 
 Watch the video below for a quick walk through of the lab.
 
 [](youtube:MuoMHJ54PHE)
 
   -   Install and configure Grafana, Prometheus, Loki, Promtail, and Jaeger
-  -   Understand single-pane-of glass unified observability using Grafana to analyze metrics, logs, and tracing of the microservices architecture across the applicaiotn and Oracle database tier.
+  -   Understand single-pane-of glass unified observability using Grafana to analyze metrics, logs, and tracing of the microservices architecture across the application and Oracle database tier.
 
 ## Task 1: Install and configure observability software and metrics and log exporters
 
