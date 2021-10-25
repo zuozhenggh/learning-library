@@ -8,15 +8,81 @@ OCI Data Flows handles these processes by loading new data or updating.
 
 ### Objectives
 
-* Learn how to define OCI Data Flow
 * Learn how to create an OCI Data Flow App
+* Learn how to create OCI Data Flow from OCI Data Integration
 * Learn how to schedule to automate OCI Data Flow Apps
 
-## Task 1: Define OCI Data Flow
+## Task 1: Create an OCI Data Flow App
+
+You have several choices on how to create applications and languages. You can choose something that makes sense for your environment. First we are going to take a look at the OCI Data Flow and create an application to read through files in the object storage or data lake.
+
+First navigage to the OCI Data Flow, and click on Create Application.
+
+![Create Data Flow](./images/nav_dataflow.png " ")
+
+For creating the application, you need to have the java jar file and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
+
+![Create Data Flow](./images/df_createapp.png " ")
+
+For this exampe, choose Java, and check the box for entering the URL manually. Copy and paste from the following into the form. 
+
+![Create Data Flow](./images/df_app_details1.png " ")
+
+```
+<copy>
+oci://dataflow_sample_apps@bigdatadatasciencelarge/dataflow-java-sample-1.0-SNAPSHOT.jar
+</copy>
+```
+```
+<copy>
+com.oracle.oci.dataflow.samples.DataFlowJavaSample
+</copy>
+```
+And for the arguments:
+```
+<copy>
+${input} ${output}
+</copy>
+```
+Click on Create Application.
+
+![Create Data Flow](./images/df_app_details2.png " ")
+
+Now we can run the application. Copy and paste the following in to the input and output arguments and click run.
+Input
+```
+<copy>
+https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/custsales_custsales-2020-01.csv
+</copy>
+```
+Output
+```
+<copy>
+oci://dataflow-warehouse@id05dmgeno0f/optimized_listings
+</copy>
+```
+
+![Create Data Flow](./images/df_run_app.png " ")
+
+It of course depends on how big your data file is but this sample takes about a minute to return successfully.
+
+![Create Data Flow](./images/df_validate_run.png " ")
+
+You can also monitor your applications in the Spark UI. Click on the application name and click on the Spark UI button.
+
+![Create Data Flow](./images/df_sparkui1.png " ")
+
+And there are additional views to see the details about the jobs and applications running and completed.
+
+![Create Data Flow](./images/df_sparkui2.png " ")
+
+Now let's go back to OCI Data Integrations because we export our data flows from here into an applicaiton to run for OCI Data Flows.
+
+## Task 2: Create OCI Data Flow from Data Integration
 
 In this step, we are going to use again Quick Actions to click on Create Data Flow and then use the designer to setup the source and target along with any other filters we would like.
 
-![Create Data Flow](./images/create_dataflow.png " ")
+![Create Data Flow](./images/Create_dataflow.png " ")
 
 By default, at the bottom of the designer,  you want to enter the name for the New Data Flow, DataFlow_UploadGenre, and Select the Project that was created in the last lab.
 
@@ -51,6 +117,8 @@ Now you are going to navigate back to the data integration workspace, and click 
 ![Create Application](./images/create_app.png " ")
 
 Click on Save and Close. It is just a shell of an application where you can now publish tasks to be scheduled and run through the application.
+
+![Create Application](./images/create_app.png " ")
 
 ## Task 3: Create and Schedule OCI Data Flow Apps for Automation
 
