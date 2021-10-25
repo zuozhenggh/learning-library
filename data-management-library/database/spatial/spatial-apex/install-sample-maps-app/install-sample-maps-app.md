@@ -1,9 +1,9 @@
-# Create Project
+# Install the Sample Maps application
 
 
 ## Introduction
 
-In Spatial Studio, a Project is where you visualize and analyze your data. Projects may be saved so that you can resume work, and they can be published so that you can share your results with others.  In this lab you create and save your first Project. 
+....
 
 Estimated Lab Time: 30 minutes
 
@@ -60,8 +60,16 @@ This will take you to the Install Application wizard.
 13.  Sign in to the Sample Maps application using ......  
 ![Image alt text](images/install-sample-maps-12.png)
 
-14. You are now in the Sample Maps application, which provides numerous examples of maps and spatial operations in APEX. You will explore these examples in the next lab.
+## Task 2: Load Data
+
+1. You are now in the Sample Maps application, which provides numerous examples of maps and spatial operations in APEX. On initial launch a warning message is displayed regarding data loading. Click on the **Data Loading** link within that message. You will navigate to a page where you complete loading of demo data.
 ![Image alt text](images/install-sample-maps-13.png)
+
+2. The Data Loading page shows the loading status of the States and Airports datasets used in this workshop. Upon installation of the Sample Maps application, these datasets are only partially loaded. To complete the sample data loading, you may either load directly from files stored in github, or you may first download the files and load from your local system. In this case, you will load directly from github. Click on the lick to load **Directly from GitHub**.
+![Image alt text](images/install-sample-maps-14.png)
+
+3.  When data loading is complete you will see a notification at the top right, and the warning message is gone. The Sample Maps application is now ready to use.  
+![Image alt text](images/install-sample-maps-15.png)
 
 
 You may now [proceed to the next lab](#next).

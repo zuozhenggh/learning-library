@@ -12,8 +12,12 @@
       "filename": "https://raw.githubusercontent.com/dlapp/learning-library/master/developer-library/apex/common/create-apex-workspace/create-apex-workspace.md"
     },
     {
-      "title": "Lab 2: Install the Sample Maps app",
+      "title": "Lab 2: Install the Sample Maps application",
       "filename": "../../../install-sample-maps-app/install-sample-maps-app.md"
+    },    
+    {
+      "title": "Lab 3: Review the Sample Maps application",
+      "filename": "../../../install-sample-maps-app/review-sample-maps-app.md"
     },
     {
       "title": "Need Help?",
