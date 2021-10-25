@@ -64,7 +64,11 @@ Under Quick Actions, you want to click on **Create Data Asset**
 
 ![Create Data Asset](./images/create_dataasset1.png " ")
 
+<<<<<<< HEAD
+The first data asset is going to be our ADW database we already created. Fill in MOVIESTREAM_ADW and select type to Oracle Autonomous Data Warehouse.
+=======
 The first data asset is going to be our ADW database we already created. Fill in **MOVIESTREAM_ADW** and select **Type** to Oracle Autonomous Data Warehouse.
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 
 ![Create Data Asset](./images/create_dataasset.png " ")
 
@@ -78,6 +82,10 @@ Using the default connection you can put in User Name ADMIN and the password you
 
 Test Connection to make sure you can connect to the this data asset.
 
+<<<<<<< HEAD
+![Create Data Asset](./images/create_dataasset5.png " ")
+
+=======
 Second data asset will be the dataflow-warehouse bucket that you created for data flows. Click on Create Data Asset. Fill in the name **dataflow-warehouse-bucket** Choose **Oracle Object Storage** for **Type**.
 
 ![Create Data Asset](./images/create_dataasset6.png " ")
@@ -95,6 +103,7 @@ The Namespace will populate once the tenancy was entered and then enter the regi
 Test Connection to make sure you can connect to the this data asset. Now you can see both of the Data Assets that we have added.
 
 ![Create Data Asset](./images/create_dataasset8.png " ")
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 
 ## Task 3: Create a Project in the Workspace
 
@@ -133,6 +142,12 @@ From the Quick Menu on the Home tab, click Discover Data Sources.
 
 ![Data Discovery](./images/discoverdata.png " ")
 
+<<<<<<< HEAD
+As you can there is the data warehouse database available and object storage buckets. Click the box and then click Create Data Asset. The name and description and type will automatically be filled in and you can adjust and make changes as needed. Do these steps for both the ADW Database.
+
+![Add Data Assets](./images/catalog_addasset.png " ")
+
+=======
 As you can see in the list is the data warehouse database available and object storage buckets. Click the box and then click Create Data Asset. The name, description, type and wallet  will automatically be filled in and you can adjust and make changes as needed. If you manually add the database outside of the discovery, you will need to provide the details that were automatically loaded. The wallet file would have to be copied from the database connection information. Data discovery is the simplest way to go, and you can actually put in other compartments for the catalog.
 
 ![Add Data Assets](./images/catalog_addasset.png " ")
@@ -153,31 +168,53 @@ In the next task you will harvest data again, but this would normally be schedul
 
 ![Harvest](./images/harvest1.png " ")
 
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 Next we are going to create a data asset for our json file that will be part of our application and scheduled load of files coming into the data lake.
 
 Select Create Data Asset, and fill in the name genre_json and choose the Type to be Oracle Object Storage.
 
+<<<<<<< HEAD
+![Create Data Asset](./images/create_new_data_asset.png " ")
+
+Continue to fill name of GENRE_JSON. Choose the type as Oracle Object Storage You need the object storage bucket Namespace, c4u04, and the OCI-Region. 
+
+OCI-Region
+=======
 ![Create Data Asset](./images/create_assetjson.png " ")
 
 Continue to fill in the name of GENRE_JSON. Choose the type as Oracle Object Storage. You need the object storage bucket Namespace, c4u04, and the OCI-Region. 
 
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 ```
 <copy>
 https://swiftobjectstorage.us-ashburn-1.oraclecloud.com
 </copy>
 ```
 
+<<<<<<< HEAD
+![Create Data Asset](./images/create_new_data_asset.png " ")
+
+=======
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 Then add the connection for the data asset. Create json_connection and put in the pre-authenicated data set.
 
 ```
 <copy>
+<<<<<<< HEAD
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/YvlgIsMlZQgCn4RVYn2697Er_Y9iw_2X48zZwIbbHs6c2647ouXVatto303mbQ3x/n/c4u04/b/moviestream_sandbox/o/
+=======
 https://objectstorage.us-ashburn-1.oraclecloud.com/p/ouDV0uXS0m0vSkJ7Ok2-W0FfSPIsLDHkXF7aSBevClUpS7zdD0wOe4DHVn5r5IvY/n/c4u04/b/data_lakehouse/o/
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 </copy>
 ```
 
 ![Create Data Asset](./images/json_connection.png " ")
 
+<<<<<<< HEAD
+The data asset will then be added to this data catalog, now we caan use these data assets to set up processes for data loading and ETL with OCI Data Flow.
+=======
 The data asset will then be added to this data catalog. Now we can use these data assets to set up processes for data loading and ETL with OCI Data Flow.
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 
 ## Task 6: New table for Spark Application Data Loads
 

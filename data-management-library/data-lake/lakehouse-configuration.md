@@ -42,6 +42,14 @@ First we are going to create an compartment. This allows for separation as well 
 
 You are going to be using this compartment for the rest of the lab. When you see the compartment listed on the left menu, just verify that it says lakehouse1. This will be important for the databases and the data tasks.
 
+<<<<<<< HEAD
+![Click on Create Groups](images/newgroup.png " ")
+
+![Create Groups = Name group dataflow-users and add Description](images/new_groups1.png " ")
+
+![Create Groups - Next group dataflow-admin](images/newgroup2.png " ")
+
+=======
 4. Select from the side menu Groups. There are going to be a few groups that are needed to administer and use the data catalog, integrations and flows. For the interest of this lab we are just going to add your user to each of these groups but in reality, administrators will only have the privileges to manage these areas of the data lake and other accounts will be added as users to have access to the data.
 
 ![Click on Create Groups](./images/newgroup.png " ")
@@ -50,6 +58,7 @@ You are going to be using this compartment for the rest of the lab. When you see
 
 ![Create Groups - Next group dataflow-admin](./images/newgroup2.png " ")
 
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 Not all of these groups are needed in this lab, however, it is important to provide separation of duties for manaing the lakehouse and these roles with policies will allow for that.
 Additional groups to create:
 - data-catalog-admin
@@ -58,9 +67,13 @@ Additional groups to create:
 - data-flow-users
 - data-integration-admin
 - data-integration-users
+<<<<<<< HEAD
+- data-lakehouse_admin
+=======
 - data-lakehouse-admin
 
 After these groups are added. Click on a group and click on Add User. You will add your account you signed into the cloud with to each of the groups for the purpose of the lab. Ideally there will be the administrator accounts that would only be in the admin groups and those wanting to execute and view the values will be the user accounts in the user groups.
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 
 To add a user, click on a group and below the group details, click on Add User.
 
@@ -70,7 +83,11 @@ To add a user, click on a group and below the group details, click on Add User.
 
 Select Policies on the side menu and click on the button Create Policy.
  
+<<<<<<< HEAD
+![Create Policies](images/create_policy.png " ")
+=======
 ![Create Policies](./images/create_policy.png " ")
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 
 Name each policy for to match the group so they are easy to recognize what they are used for. 
 - Name this first on DataFlowUsers (Notice no spaces, underscores or dashes are allowed here). 
@@ -79,11 +96,19 @@ Name each policy for to match the group so they are easy to recognize what they 
 - Select Let Data Flow users manage their own Applications and Runs. 
 - Add the group dataflow-users and the location is the compartment lakehouse1
 
+<<<<<<< HEAD
+![Create Policies](images/create_polic1.png " ")
+
+Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1
+
+![Create Policies](images/create_policy2.png " ")
+=======
 ![Create Policies](./images/create_policy1.png " ")
 
 Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1
 
 ![Create Policies](./images/create_policy2.png " ")
+>>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 
 Policies can be added based on the common templates or added by manually adding the policy. These are the additional policies that are needed for the different groups. Notice when you use manual editor, the group disappears because these will be part of the policy statement being added. You can copy the following commands and paste into the manual edit. We are going to name this policy DataLakehousePolicy to cover the rest of the policies needed for the groups.
 
