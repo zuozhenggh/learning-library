@@ -4,7 +4,8 @@
 
 #### Video preview
 
-https://youtu.be/iK2T6iKaYqQ
+[](youtube:iK2T6iKaYqQ)
+
 
 Analyzing past performance lets you know customers that have already been lost. Lets get in front of this problem and predict those that are at risk using in database analytics.
 
