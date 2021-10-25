@@ -16,7 +16,10 @@ Set the environment variables and log in to the root container of CDB as the `SY
 
 ### Prerequisites
 
-Oracle Database 21c installed and a CDB with at least one PDB created.
+- Oracle Database 21c installed and a CDB with at least one PDB created.
+- You have completed -
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Setup Compute Instance
 
 ## Task 1: Set the Environment
 
@@ -51,7 +54,7 @@ To connect to Oracle Database and run SQL commands, set the environment first.
 
 You have set the environment variables for the active terminal session. You can now connect to Oracle Database and run the commands.
 
-**Note:** Every time you open a new terminal window, you need to set the environment to connect to Oracle Database from that terminal. Environment variables from one terminal do not apply automatically to other terminals. 
+**Note:** Every time you open a new terminal window, you need to set the environment variables to connect to Oracle Database from that terminal. Environment variables from one terminal do not apply automatically to other terminals. 
 
 ## Task 2: Connect to SQL Plus and Explore the Container
 
@@ -102,15 +105,15 @@ You have set the environment variables for the active terminal session. You can 
     
 4.  View all PDBs in the CDB.
 
-	```
-	SQL> <copy>show pdbs</copy>
-	```
+	 ```
+	 SQL> <copy>show pdbs</copy>
+	 ```
 
-	```
-	    CON_ID CON_NAME						 		OPEN MODE	RESTRICTED
-	---------- ------------------------------ 		----------	----------
-			 2 PDB$SEED							 READ ONLY	 NO
-			 3 ORCLPDB								READ WRITE	NO
+	 ```
+		 CON_ID CON_NAME					   OPEN MODE RESTRICTED
+	 ---------- ------------------------------ ---------- ----------
+			  2 PDB$SEED					   READ ONLY  NO
+			  3 ORCLPDB						   READ WRITE NO
 	```
     
 5.  Check the version of the core library components. 
@@ -137,7 +140,8 @@ You have set the environment variables for the active terminal session. You can 
     
     The value *0* indicates that the data pertains to the entire CDB.
     
-7.  View the instance name and the status of the CDB.   
+7.  View the instance name and the status of the CDB.
+
     ```
 	SQL> <copy>select instance_name, status, con_id from v$instance;</copy>
 	```
