@@ -7,7 +7,7 @@ Oracle MySQL Database Service is a fully managed database service that lets deve
 In this workshop, you will learn how to create a MySQL HeatWave Cluster, connect to the cluster using MySQL Shell and MySQL Workbench, and run queries on HeatWave. You will learn how easy it is to create and manage MySQL HeatWave, and how MySQL HeatWave enables you to make informed business-critical decision with real-time insights.
 
 
-Estimated Lab Time: 90 minutes
+_Estimated Lab Time:_ 90 minutes
 
 ### About Product/Technology
 MySQL HeatWave is a massively parallel, high performance, in-memory query accelerator for Oracle MySQL Database Service that accelerates MySQL performance by orders of magnitude for analytics and mixed workloads. It is the only service that enables customers to run OLTP and OLAP workloads directly from their MySQL database without the need of ETL process. MySQL Autopilot uses advanced machine-learning techniques to automates the database lifecycle operations including provisioning, data loading, query processing, and error handling. This minimizes manual administrative work and further improves HeatWave’s usability, performance, and scalability. MySQL HeatWave is also integrated with other Oracle Cloud services such as Data Integration Service and Oracle Analytics Cloud to provide a seamless end-to-end integration.

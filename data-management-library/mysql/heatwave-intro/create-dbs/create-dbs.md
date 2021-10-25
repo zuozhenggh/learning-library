@@ -6,7 +6,7 @@
 
 In this lab, you will create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.  Finally you will add a HeatWave Cluster comprise of two or more HeatWave nodes.  
 
-Estimated Lab Time: 20 minutes
+_Estimated Lab Time:_ 20 minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -34,12 +34,12 @@ In this lab, you will be guided through the following tasks:
             Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
 
-2. 'click' **Start VCN Wizard**
+2. Click **Start VCN Wizard**
     ![VCN](./images/03vcn02.png " ")
 
 3. Select 'Create VCN with Internet Connectivity'
 
-    'click' 'Start VCN Wizard' 
+    Click 'Start VCN Wizard' 
     ![VCN](./images/03vcn03.png " ")
 
 4. Create a VCN with Internet Connectivity 
@@ -68,13 +68,13 @@ In this lab, you will be guided through the following tasks:
 8. Click 'View Virtual Cloud Network' to display the created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. On MDS-VCN page under 'Subnets in (root) Compartment', 'click'  '**Private Subnet-MDS-VCN**' 
+9. On MDS-VCN page under 'Subnets in (root) Compartment', click  '**Private Subnet-MDS-VCN**' 
      ![VCN](./images/03vcn07.png " ")
 
-10.	On Private Subnet-MDS-VCN page under 'Security Lists',  'click'  '**Security List for Private Subnet-MDS-VCN**'
+10.	On Private Subnet-MDS-VCN page under 'Security Lists',  click  '**Security List for Private Subnet-MDS-VCN**'
     ![VCN](./images/03vcn08.png " ")
 
-11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', 'click' '**Add Ingress Rules**' 
+11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', click '**Add Ingress Rules**' 
     ![VCN](./images/03vcn09.png " ")
 
 12.	On Add Ingress Rules page under Ingress Rule 1
@@ -181,7 +181,7 @@ Description
 
     ![MDS](./images/04mysql08.png " ")
 
-10. 'click' on Show Advanced Options 
+10. Click on Show Advanced Options 
 
 
 11. Select Data Import tab. 
@@ -464,7 +464,7 @@ Description
     DB Systems
 2. Choose the root Compartment. A list of DB Systems is displayed. 
     ![Connect](./images/10addheat01.png " ")
-3. In the list of DB Systems, 'click' the **MDS-HW** system. 'click' **More Action ->  Add HeatWave Cluster**.
+3. In the list of DB Systems, click the **MDS-HW** system. click **More Action ->  Add HeatWave Cluster**.
     ![Connect](./images/10addheat02.png " ")
 4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
 
@@ -482,11 +482,11 @@ algorithm, it will predict the number of nodes needed.
 
 9. Click “Add HeatWave Cluster” to create the HeatWave cluster
     ![Connect](./images/10addheat06.png " ")
-10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. 'click' the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
+10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/10addheat07.png " ")
 
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 

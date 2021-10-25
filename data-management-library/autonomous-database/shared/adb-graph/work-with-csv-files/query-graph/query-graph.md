@@ -27,9 +27,9 @@ Learn how to
 ## Task 1: Verify that `BANK_GRAPH` is loaded into memory  
 
 1. First check that the `BANK_GRAPH` is in memory. Click the `Graphs` menu icon 
-   ![ALT text is not available for this image](images/radar-chart.svg " ")
+   ![ALT text is not available for this image](images/radar-chart.svg "")
    and verify that `BANK_GRAPH` is in memory. If it isn't then click the action menu 
-   ![ALT text is not available for this image](images/ellipsis-v.svg " ")
+   ![ALT text is not available for this image](images/ellipsis-v.svg "")
    on that row and select `Load into memory`. 
 
    ![ALT text is not available for this image](images/load-bank-graph-into-memory.png " ")
@@ -77,7 +77,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
       - `%java-pgx` for executing built-in graph algorithms with the Property Graph Java API  
   
 2. Add a new paragraph. **Hover over the bottom middle part of the first paragraph**. Click the + icon 
-   ![ALT text is not available for this image](images/plus-circle.svg " ") when displayed.  
+   ![ALT text is not available for this image](images/plus-circle.svg "") when displayed.  
 	![ALT text is not available for this image](images/28-add-new-paragraph.png " ") 
 
 3. Let's enter a Markdown paragraph which outlines the notebook content. Copy and paste the following text into the first blank paragraph.
@@ -98,10 +98,10 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	</copy>
 	```
 
-	Click the Run icon ![ALT text is not available for this image](images/play.svg " ") to execute this paragraph.  
+	Click the Run icon ![ALT text is not available for this image](images/play.svg "") to execute this paragraph.  
 
 	Then click the Eye (visibility) icon 
-	![ALT text is not available for this image](images/eye.svg " ")  
+	![ALT text is not available for this image](images/eye.svg")  
 	to turn off the Code listing and only display the result.   
 
 	![ALT text is not available for this image](images/27a-md-turn-off-code-listing.png " ")  
@@ -140,7 +140,7 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 2. Now let's explore some features of the visualization component. We will add the `acct_id` as node (or vertex) labels and use a different graph layout algorithm.  
    
    Click the visualization `settings` icon 
-   ![ALT text is not available for this image](images/sliders.svg " ")  
+   ![ALT text is not available for this image](images/sliders.svg "")  
    (the fourth icon from the left at the top of the visualization panel).  
 
    ![ALT text is not available for this image](images/31-viz-open-settings.png " ")   
