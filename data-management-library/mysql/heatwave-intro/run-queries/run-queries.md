@@ -49,7 +49,7 @@ In this lab, you will be guided through the following tasks:
     ```
 4. **Query 1** - Find per-company average age of passengers from Switzerland, Italy and France
 
-5. Before Runing a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. You should see "Use secondary engine RAPID" in the explain plan. For example:
+5. Before running a query, use EXPLAIN to verify that the query can be offloaded to the HeatWave cluster. You should see "Use secondary engine RAPID" in the explain plan. For example:
 
     ```
     <copy>EXPLAIN SELECT

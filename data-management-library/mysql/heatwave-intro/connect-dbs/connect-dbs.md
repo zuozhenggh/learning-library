@@ -133,7 +133,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 14. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as 'Provisioning' during the creation
     ![CONNECT](./images/05compute07.png " ")
 
-15.	The state 'Runing' indicates that the Virtual Machine is ready to use. 
+15.	The state 'Running' indicates that the Virtual Machine is ready to use. 
 
     On the **MDS-Client** Instance page under 'Instance Access', **Copy and save the Public IP Address** 
     ![CONNECT](./images/05compute08.png " ")
@@ -202,7 +202,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     ![CONNECT](./images/06connect03.png " ")
 
-7.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the cammand. Also enter the admin user password
+7.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the command. Also enter the admin user password
 
     (Example  **mysqlsh -uadmin -p -h10.0.1..   --sql**)
 
