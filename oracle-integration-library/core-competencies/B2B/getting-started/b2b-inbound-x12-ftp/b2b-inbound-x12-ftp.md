@@ -148,7 +148,7 @@ Add a For Each Action. In the Create Action configure as per below and Select **
 ## Task 4: Configure Current Message as Tracking Variable
 
 1.	Add an **Assign** activity within the **For Each** and name it as **Assign-Current-Msg**
-2.	Select the + action and configure **tracking\_var\_2**
+2.	Select the + action and configure **tracking\_var\_2** (select the variable from the drop-down list)
 3.	In the **Value** field Select the Pencil icon and provide **b2b-message-reference** from **B2B-Doc-Msg -> message**. Select Validate and Close.
 
 ![](images/inbound-beintegration-foreach-2.png)
