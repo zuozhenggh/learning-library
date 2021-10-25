@@ -1,4 +1,4 @@
-# Oracle Database Vault on an autonomous database
+# Oracle Database Vault on an Autonomous Database
 
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Database Vault (DV). It gives the user an opportunity to learn how to configure those features in an Autonomous Database to prevent unauthorized privileged users from accessing sensitive data.
@@ -40,7 +40,7 @@ This lab assumes you have:
 - You have completed "Prepare Your Environment" step previously
 
 ### Lab Timing (estimated)
-| Step No. | Feature | Approx. Time |
+| Task No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
 | 1 | Enable Database Vault | <5 minutes |
 | 2 | Enable Separation of Duties (SoD) | <5 minutes |

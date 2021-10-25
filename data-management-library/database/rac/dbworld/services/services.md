@@ -125,7 +125,7 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     export ORACLE_HOME=/u01/app/19.0.0.0/grid
     </copy>
     ````
-   
+
     As the grid user
 
     ````
@@ -403,8 +403,8 @@ If it is not running start this service
     os-prompt>  $ORACLE_HOME/bin/sqlplus hr/W3lc0m3#W3lc0m3#@CLBTEST
     SQL> host
     ````
-    
-    Examine where the sessions have been created
+
+    Examine where the sessions have been created by executing the following SQL from a session connected as **SYS**
 
     ````
     SQL> select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
@@ -604,7 +604,7 @@ The acdemo application is a simple Java application that uses the Universal conn
     ````
 
     This should show both instances in the PREFERRED list if successful
-    
+
     ````
     Service name: unisrv
 
