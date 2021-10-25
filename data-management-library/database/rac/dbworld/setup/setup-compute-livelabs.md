@@ -98,7 +98,7 @@ Watch the video below for a quick walk through of the lab.
     ![Connect to a Node](./images/em-mac-linux-ssh-login.png " ")
 
 3.  When prompted, answer **yes** to continue connecting.
-4.  Repeat step 2 for your 2nd node.
+4.  Duplicate this tab and repeat these steps to login to your 2nd node.
 5.  You may now [proceed to the next lab](#next).  
 
 You may now [proceed to the next lab](#next).
