@@ -12,6 +12,10 @@ In the following we show you how you can use SQL to work with the JSON data in a
 
 Estimated Lab Time: 30 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:MrSXStEfOF4)
+
 ### Objectives
 
 In this lab, you will:
@@ -396,18 +400,18 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     <copy>
     select JSON_Serialize(json_document)
     from products p
-    where p.json_document.id.number() = 1414;
+    where p.json_document.id.number() = 316;
     </copy>
     ```
     ![](./images/sql7-1.png " ")
 
-2.  This brings us the 'ET' doll which we have not sold yet. Maybe we should update the price and add a note?
+2.  This brings up a rare original VHS of 'Star Wars' which we have not sold yet. Maybe we should update the price and add a note?
 
     ```
     <copy>
     update products p
-    set p.json_document = JSON_Mergepatch(json_document, '{"price":45, "note":"only 100 were made!"}')
-    where p.json_document.id.number() = 1414;
+    set p.json_document = JSON_Mergepatch(json_document, '{"price":45, "note":"rare original VHS!"}')
+    where p.json_document.id.number() = 316;
     </copy>
     ```
     ![](./images/sql7-2.png " ")
@@ -418,7 +422,8 @@ JSON_Mergepatch follows RFC 7386 [https://datatracker.ietf.org/doc/html/rfc7386]
     <copy>
     select JSON_Serialize(json_document)
     from products p
-    where p.json_document.id.number()= 1414;
+    where p.json_document.id.number()= 316;
+ 
     </copy>
     ```
     ![](./images/sql7-3.png " ")
@@ -473,6 +478,10 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     ![](./images/sql8-1.png " ")
 
     **Note:** Click the refresh button on the left-hand side to view the new table.
+
+    We want to insert three new documents. 
+    
+    **Important:** make sure you highlight all insert statement rows before pressing the "Run Statement" button. Otherwise it will only insert the row your cursor is on. Make sure it reports "1 row inserted" three times.
 
     ```
     <copy>

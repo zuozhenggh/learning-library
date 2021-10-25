@@ -6,6 +6,9 @@ This lab walks you through the steps to download the root certificate from Oracl
 
 Estimated time: 10 minutes
 
+Watch the video below for a walk through of the lab.
+[](youtube:c73kK9JDuo8)
+
 ### Objectives
 
 In this lab, you will:

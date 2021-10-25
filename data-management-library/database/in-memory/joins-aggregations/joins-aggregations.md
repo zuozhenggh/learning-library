@@ -5,6 +5,9 @@ Watch the video below to get an overview of joins using Database In-Memory.
 
 [](youtube:y3tQeVGuo6g)
 
+Watch the video below for a walk through of the In-memory Joins and Aggregations lab.
+[](youtube:PC1kWntRrqg)
+
 ### Objectives
 
 -   Learn how to enable In-Memory on the Oracle Database
@@ -19,20 +22,29 @@ This lab assumes you have:
     - Lab: Initialize Environment
     - Lab: Querying the In-Memory Column Store
 
+**NOTE:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise the last line will remain in the buffer until you hit* **ENTER!**
+
 ## Task 1: In-Memory Joins and Aggregation
 
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the fact table, LINEORDER, and one of more dimension tables and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond just the basic performance benefits of scanning data in a columnar format.
 
 1.  Let's switch to the Part3 folder and log back in to the PDB.
 
-    ```
+    ````
     <copy>
     cd /home/oracle/labs/inmemory/Part3
     sqlplus ssb/Ora_DB4U@localhost:1521/pdb1
+    </copy>
+    ````
+
+    And adjust sqlplus display.
+
+    ````
+    <copy>
     set pages 9999
     set lines 100
-    </copy>    
-    ```
+    </copy>
+    ````
 
     ![](images/num1.png " ")
 
@@ -297,7 +309,7 @@ Oracle has introduced a new Optimizer transformation, called Vector Group By. Th
 
 8. To execute the query against the buffer cache
 
-    Run the script *12\_vgb\_buffer.sql* 
+    Run the script *12\_vgb\_buffer.sql*
 
     ```
     <copy>

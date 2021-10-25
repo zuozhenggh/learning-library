@@ -25,19 +25,19 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 1. In your ADW database's details page, click the Tools tab. Click **Open Database Actions**
 
-	  ![Click Tools, then Database Actions](images/launchdbactions.png " ")
+	  ![Click Tools, then Database Actions](./images/DBActions.png " ")
 
-2. On the login screen, enter the username MOVIESTREAM, then click the blue **Next** button.
+2. On the login screen, enter the username ADMIN, then click the blue **Next** button.
 
-3. Enter the password for the MOVIESTREAM user you set up in the previous lab.
+3. Enter the password for the ADMIN user you entered when creating the database.
 
 4. Under **Data Tools**, click **DATA LOAD**
 
-    ![Click DATA LOAD](images/dataload.png " ")
+    ![Click DATA LOAD](./images/dataload.png " ")
 
 5. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your Autonomous Database to OCI Object Storage.
 
-    ![Click CLOUD LOCATIONS](images/cloudlocations.png " ")
+    ![Click CLOUD LOCATIONS](./images/cloudlocations.png " ")
 
 6. To add access to the Moviestream landing area, click **+Add Cloud Storage** in the top right of your screen.
 
@@ -57,11 +57,11 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
     Select **No Credential** as this is a public bucket.
 
-    Click the **Test** button to test the connection. Then click **Create**.
+    Click  **Create**.
 
 7. The page now invites us to load data from this area. In this case, we want to set up access to an additional cloud location first. Click **Data Load** in the top left of your screen to go back to the main Data Load page.
 
-    ![Click Data Load](images/todataload.png " ")
+    ![Click Data Load](./images/todataload.png " ")
 
 8. In the **Explore and Connect** section, click **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click **+Add Cloud Storage**.
 
@@ -83,7 +83,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
     We now have two cloud storage locations set up.
 
-    ![Cloud Storage Locations](images/cloudstoragelocations.png " ")
+    ![Cloud Storage Locations](./images/cloudstoragelocations.png " ")
 
 ## Task 2: Load Data from Files in Object Storage Using Data Tools
 
@@ -91,11 +91,11 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
 1. To load or link data from our newly configured cloud storage, click the **Data Load** link in the top left of your screen.
 
-    ![Click Data Load](images/backtodataload.png " ")
+    ![Click Data Load](./images/backtodataload.png " ")
 
 2. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**.
 
-    ![Select Load Data, then Cloud Storage](images/loadfromstorage.png " ")
+    ![Select Load Data, then Cloud Storage](./images/loadfromstorage.png " ")
 
 3. From the MOVIESTREAMGOLD location, drag the **customer_contact** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we only have a single file, but we do want to load this into a single table. Click **OK**.
 
@@ -104,7 +104,7 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
 5. Click the pencil icon for the **customer_contact** task to view the settings for this load task.
 
-    ![View settings for customer_contact load task](images/cc_viewsettings.png " ")
+    ![View settings for customer_contact load task](./images/cc_viewsettings.png " ")
 
 6. Here we can see the list of columns and data types that will be created from the csv file. They all look correct, so click **Close** to close the settings viewer.
 
@@ -112,23 +112,23 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
 8. Now click the Play button to run the data load job.
 
-    ![Run the data load job](images/rundataload.png " ")
+    ![Run the data load job](./images/rundataload.png " ")
 
     The job should take about 20 seconds to run.
 
 9. Check that both data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
-    ![Check the job is completed](images/loadcompleted.png " ")
+    ![Check the job is completed](./images/loadcompleted.png " ")
 
 10. Now, to load some more data from the MovieStream landing area, click the **Data Load** link in the top left of your screen.
 
-    ![Click Data Load](images/backtodataload.png " ")
+    ![Click Data Load](./images/backtodataload.png " ")
 
 11. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
 
 12. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
 
-    ![Click Data Load](images/selectlanding.png " ")
+    ![Click Data Load](./images/selectlanding.png " ")
 
 13. From the MOVIESTREAMLANDING location, drag the **customer_extension** folder over to the right hand pane and click **OK** to load all objects into one table.
 
@@ -138,13 +138,13 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
 16. Click the Play button to run the data load job.
 
-    ![Run the data load job](images/runload2.png " ")
+    ![Run the data load job](./images/runload2.png " ")
 
     The job should take about 20 seconds to run.
 
 17. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
-    ![Check the job is completed](images/loadcompleted2.png " ")
+    ![Check the job is completed](./images/loadcompleted2.png " ")
 
 18. Click the **Done** button in the bottom right of the screen.
 
