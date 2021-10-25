@@ -13,6 +13,9 @@ Analyze the SQL Tuning Set and generate recommendations
 
 A complete script is provided: `sta_cc.sql`.  
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:lDID_2uPxaI)
+
 ### About SQL Tuning Advisor
 SQL Tuning Advisor is SQL diagnostic software in the Oracle Database Tuning Pack.
 
