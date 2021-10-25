@@ -5,7 +5,11 @@
 
 In this lab you will create a database user with the appropriate roles and privileges required for using the graph capabilities of the Autonomous Database.
 
-Estimated Time: 5 minutes. 
+Estimated Time: 5 minutes.
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:CQh8Q24Rboc)
 
 ### Objectives
 
@@ -46,7 +50,7 @@ Learn how to
    
    ![ALT text is not available for this image](images/db-actions-create-graph-user.png " ")
 
-**Note: Please do not Graph Enable the ADMIN user and do not login to Graph Studio as the ADMIN user.**
+   **Note: Please do not Graph Enable the ADMIN user and do not login to Graph Studio as the ADMIN user.**
 
    Click the `Create User` button at the bottom of the panel to create the user with the specified credentials
 
@@ -57,25 +61,27 @@ Learn how to
    **Note:** *The UI steps above can be instead done by executing the following sql commands listed below when logged in as ADMIN. So step 5 below is not necessary. It shows an alternate way of creating and enabling GRAPHUSER.*
    
 5. Allocate a desired table space quota to the newly created user. Open the SQL page and issue the alter command.  
+
    For example, 
    `ALTER USER GRAPHUSER QUOTA UNLIMITED ON DATA;`   
    will allocate a quota the user `GRAPHUSER` in the tablespace named `DATA`.  
    Copy and paste the following command into the SQL worksheet.  
    Substitute the correct values for  `<username>` and `<quota>` and then click on Run to execute it.
-   ```
-   <copy>
-    -- Optional statement to use in place of the UI of the Administration page
-   ALTER USER <username> QUOTA <quota> ON DATA;
-   </copy>
-   ```
 
-   ```
-   <copy>
-   -- Optional statements to use in place of the UI of the Administration page
-   GRANT GRAPH_DEVELOPER TO <username> ;
-   ALTER USER <username> GRANT CONNECT THROUGH "GRAPH$PROXY_USER";
-   </copy>
-   ``` 
+      ```
+      <copy>
+      -- Optional statement to use in place of the UI of the Administration page
+      ALTER USER <username> QUOTA <quota> ON DATA;
+      </copy>
+      ```
+
+      ```
+      <copy>
+      -- Optional statements to use in place of the UI of the Administration page
+      GRANT GRAPH_DEVELOPER TO <username> ;
+      ALTER USER <username> GRANT CONNECT THROUGH "GRAPH$PROXY_USER";
+      </copy>
+      ``` 
 
    The screenshots below show an example of executing the ALTER USER statement.
 
@@ -86,8 +92,8 @@ Learn how to
    ![ALT text is not available for this image](./images/user-altered.png " ") 
  
  6. You can similarly use SQL statements to verify that GRAPHUSER has been set up correctly.  
-    You must be logged into Data Actions SQL as `ADMIN`.  
-    then enter the following SQL statements and execute them. 
+    
+    You must be logged into Data Actions SQL as `ADMIN` then enter the following SQL statements and execute them. 
      
     ```
     <copy>

@@ -20,7 +20,7 @@ We will also discuss OCI Data Integration as part of data asset ETL and you can 
 
 ## Task 1: Create the OCI Data Integration workspace
 
-Creation of the OCI Data Integration workspace required the VPN for private endpoints, groups and policies that we configured during the setup of the environment for the Lakehouse. Now it is a matter of navigating to the Data Integration space and creating the workspace which will in turn allow us to create ETL processes.
+Creation of the OCI Data Integration workspace is needed for the data flow and other ETL procedures. Now it is a matter of navigating to the Data Integration space and creating the workspace which will in turn allow us to create ETL processes.
 
 From the home navigation menu, click Analytics & AI and then click Data Integration.
 
@@ -28,23 +28,29 @@ From the home navigation menu, click Analytics & AI and then click Data Integrat
 
 From the Data Integration Service we will create a Workspace which will allow for diagramming the data flows with filters and create execution plans for data into the data assets. First we must create the workspace and a couple more policies for the workspace to access the object storage and use and update the data in the data lake.
 
-Click on Create Workspace. Name it Workspace Lakehouse and click the Create button.
+Click on Create Workspace. Name it Workspace Lakehouse, uncheck the Enable the Private Network option and click the Create button.
 
 ![Create Workspace](./images/create_workspace.png " ")
 
-While that is creating navigate back to Policies. Click on Identity & Security and then Policies.
-Select dataintegrationWS policies and clik Edit Policy Statements. From here you can + Another Statement.
+As the workspace is being created copy the OCID by clicking on the menu to the far right of the workspace, and from the pop-up menu click on Copy OCID. This is needed to create policies for access to this workspace.
 
-![Add Policies](./images/create_policies.png " ")
+![Create Workspace](./images/workspaceOCID.png " ")
+
+Note: In another lab or configurations you will want to setup VPNs and private network, but the focus is on these services for the Lakehouse and additional information on private networks can be 
+
+While that is creating navigate back to Policies. Click on Identity & Security and then Policies.
+Create a dataintegrationWS policy. Slide the Show Manual Editor to yes and then you can copy the statements, replace the text inn request.principal.id with the copied OCID.
+
+![Add Policies](./images/create_policy.png " ")
 
 Use the follow three allow statements to add into the existing policy, and then Save Changes.
 ```
 <copy>
-allow any-user to use buckets in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='ocid1.disworkspace.oc1.iad.anuwcljt2ow634yaaq4pl6jbvhhudjkchsdwrw3q3hkmlpoyfilwyyjqykjq'}
+allow any-user to use buckets in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE WITH WORKSPACE OCID'}
 
-allow any-user to manage objects in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='ocid1.disworkspace.oc1.iad.anuwcljt2ow634yaaq4pl6jbvhhudjkchsdwrw3q3hkmlpoyfilwyyjqykjq'}
+allow any-user to manage objects in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE WITH WORKSPACE OCID'}
 
-allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.principal.type='disworkspace',requesst.principal.id='ocid1.disworkspace.oc1.iad.anuwcljt2ow634yaaq4pl6jbvhhudjkchsdwrw3q3hkmlpoyfilwyyjqykjq'
+allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.principal.type='disworkspace',requesst.principal.id='REPLACE WITH WORKSPACE OCID'
 }
 
 </copy>
@@ -76,7 +82,13 @@ Second data asset will be the dataflow-warehouse bucket that you created for dat
 
 ![Create Data Asset](./images/create_dataasset6.png " ")
 
-Then copy in the Tenancy OCID, Namespace and Region.
+Then copy in the Tenancy OCID. The Tenancy OCID you might have saved to the side, but if not, go to the user profile and click on Tenancy and copy the OCID. 
+
+![Create Data Asset](./images/Tenancy_OCID.png " ")
+
+The Namespace will populate once the tenancy was entered and then enter the region ID. The region ID you can get from clicking the dropdown menu by regions and click on manage region. Your current region should be listed at the top of the list.
+
+![Create Data Asset](./images/RegionID.png " ")
 
 ![Create Data Asset](./images/create_dataasset7.png " ")
 
@@ -93,7 +105,7 @@ Test Connection to make sure you can connect to the this data asset. Now you can
 
 ![Create Project](./images/create_project.png " ")
 
-We have now configured our Data Lakehouse by creating a database, data sources in object storage and setup up our services ready to use.
+You have now configured this data lake by creating a database, data sources in object storage. Configuration is completed from access to services and are ready to use in this project.
 
 ## Task 4: Create the OCI Data Catalog
 
@@ -121,9 +133,25 @@ From the Quick Menu on the Home tab, click Discover Data Sources.
 
 ![Data Discovery](./images/discoverdata.png " ")
 
-As you can there is the data warehouse database available and object storage buckets. Click the box and then click Create Data Asset. The name and description and type will automatically be filled in and you can adjust and make changes as needed. Do these steps for both the ADW Database.
+As you can see in the list is the data warehouse database available and object storage buckets. Click the box and then click Create Data Asset. The name, description, type and wallet  will automatically be filled in and you can adjust and make changes as needed. If you manually add the database outside of the discovery, you will need to provide the details that were automatically loaded. The wallet file would have to be copied from the database connection information. Data discovery is the simplest way to go, and you can actually put in other compartments for the catalog.
 
 ![Add Data Assets](./images/catalog_addasset.png " ")
+
+The connection still needs to be added to be able to harvest the data and any changes, such as new tables, views. The harvesting of the data can be scheduled to happen every hour. Click on Add Connection.
+
+![Add Data Assets](./images/add_dbconnection.png " ")
+
+Because of all coming in from discovery, the connection information is almost all there except for the user name and password. You should be using ADMIN and Password that you set up for the database at creation.
+
+![Add Data Assets](./images/add_conn_db.png " ")
+
+You can test the connection here before performing a harvest of the data asset. 
+
+![Add Data Assets](./images/add_conn_db2.png " ")
+
+In the next task you will harvest data again, but this would normally be scheduled, but here you can harvest the data now to see the initial tables and as more are added, you will see them appear after the refresh in the entities.
+
+![Harvest](./images/harvest1.png " ")
 
 Next we are going to create a data asset for our json file that will be part of our application and scheduled load of files coming into the data lake.
 
@@ -131,7 +159,7 @@ Select Create Data Asset, and fill in the name genre_json and choose the Type to
 
 ![Create Data Asset](./images/create_assetjson.png " ")
 
-Continue to fill name of GENRE_JSON. Choose the type as Oracle Object Storage You need the object storage bucket Namespace, c4u04, and the OCI-Region. 
+Continue to fill in the name of GENRE_JSON. Choose the type as Oracle Object Storage. You need the object storage bucket Namespace, c4u04, and the OCI-Region. 
 
 ```
 <copy>
@@ -149,7 +177,7 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/p/ouDV0uXS0m0vSkJ7Ok2-W0FfSPI
 
 ![Create Data Asset](./images/json_connection.png " ")
 
-The data asset will then be added to this data catalog, now we caan use these data assets to set up processes for data loading and ETL with OCI Data Flow.
+The data asset will then be added to this data catalog. Now we can use these data assets to set up processes for data loading and ETL with OCI Data Flow.
 
 ## Task 6: New table for Spark Application Data Loads
 
@@ -161,7 +189,7 @@ Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb
 
 Click on the database and then proced to click on the Tools Tab and click on Open Database Actions.
 
-![Database Actions](./images/dbactions.png " ")
+![Database Actions](./images/DBActions.png " ")
 
 Click on SQL to execute the query to create the table.
 
