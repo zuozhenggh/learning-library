@@ -4,11 +4,16 @@
 
 In this lab you will create a graph from the `bank_accounts` and `bank_txns` tables using Graph Studio and the CREATE PROPERTY GRAPH statement.
 
+<!-- COMMENTED THE FOLLOWING OUT FOR DATABSE WORLD:
 The following video shows the steps you will execute in this lab.
 
-[](youtube:5g9i9HA_cn0) Graph Studio: Create a graph.
+[](youtube:5g9i9HA_cn0) Graph Studio: Create a graph. -->
 
 Estimated Time: 15 minutes. 
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:tNPY4xmVFMk)
 
 ### Objectives
 
@@ -45,7 +50,7 @@ Learn how to
     Graph Studio consists of a set of pages accessed from the menu on the left. 
 
     The Home icon ![ALT text is not available for this image](images/home.svg " ") takes you to the Home page.  
-    The Models icon ![ALT text is not available for this image](images/code-fork.svg " ") takes you to the Models page where you start modeling your existing tables and views as a graph and then create, or instanstiate, a graph.  
+    The Models icon ![ALT text is not available for this image](images/code-fork.svg " ") takes you to the Models page where you start modeling your existing tables and views as a graph and then create, or instantiate, a graph.  
     The Graph page ![ALT text is not available for this image](images/radar-chart.svg " ") lists existing graphs for use in notebooks.  
     The Notebook page ![ALT text is not available for this image](images/notebook.svg " ") lists existing notebooks and lets you create a new one.  
     The Jobs page ![ALT text is not available for this image](images/server.svg " ") lists the status of background jobs and lets you view the associated log if any.  

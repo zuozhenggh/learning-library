@@ -6,6 +6,10 @@ This lab picks up where lab 3 left off. We are going to explore in more detail t
 
 Estimated Time: 25 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:g1CATzd5wtg)
+
 ### Objectives
 
 * Understand the different tables

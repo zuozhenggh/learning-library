@@ -6,6 +6,10 @@ In this tutorial, deploy the pre-built Helidon Java backend Docker image to OKE,
 
 Estimated time: 25-minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:Th7YCV6e8CE)
+
 ### Understand the Java backend application
 
 As with most React applications (https://reactjs.org/), this application uses remote APIs to handle data persistence. The backend implements five REST APIs including:

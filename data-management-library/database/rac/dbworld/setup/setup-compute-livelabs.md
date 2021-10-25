@@ -5,8 +5,9 @@ This lab will show you how to connect to your DB System.
 
 Estimated Lab Time:  5 minutes
 
-Watch the video below for an overview of the Build a DB System lab
-[](youtube:tRo33KktXt0)
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:8iy_F08NDig)
 
 ### Objectives
 -   Identify DB Instance Public IP Addresses

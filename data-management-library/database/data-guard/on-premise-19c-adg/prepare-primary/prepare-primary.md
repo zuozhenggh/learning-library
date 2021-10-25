@@ -1,4 +1,4 @@
-# Prepare the Primary Database
+# Prepare The Primary Database
 
 ## Introduction
 In this lab, You will check and modify the status of the primary site database, make it ready to ADG.
@@ -13,7 +13,7 @@ Estimated Time: 30 minutes
 ### Prerequisites
 This lab assumes you have completed the following labs:
 
-- Environment Setup for Primary and Standby
+- Environment Setup For Primary And Standby
 
 Now you have 2 VM hosts:
 
@@ -22,7 +22,7 @@ Now you have 2 VM hosts:
 
 
 
-## Task 1: Enable achivelog and flashback
+## **Task 1:** Enable Achivelog And Flashback
 
 1. Connect to the primary VM hosts with opc user. Use putty tool (Windows) or command line (Mac, Linux).
 
@@ -113,7 +113,8 @@ Now you have 2 VM hosts:
     SQL>
     ```
 
-## Task 2: Change redo log size and create standby log
+
+## **Task 2:** Change Redo Log Size And Create Standby Log
 
 1. Change the redo log size to 1024M according to the best practice. Check the status of the redo log first.
 
@@ -216,7 +217,7 @@ Now you have 2 VM hosts:
 
 
 
-## Task 3: Modify the init parameters for best practice
+## **Task 3:** Modify Init Parameters For Best Practice
 
 1. Modify some init parameters for best practice.
 
@@ -242,5 +243,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020 
-* **Last Updated By/Date** - Minqiao Wang, Aug 2021
+* **Last Updated By/Date** - Minqiao Wang, Oct 2021
 

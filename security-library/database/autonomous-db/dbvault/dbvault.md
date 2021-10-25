@@ -9,6 +9,10 @@ You can deploy controls to block privileged account access to application data a
 
 *Estimated Time:* 35 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:O_Hi2-vZ-zU)
+
 *Version tested in this lab:* Oracle Autonomous Database 19c
 
 ### Video Preview
