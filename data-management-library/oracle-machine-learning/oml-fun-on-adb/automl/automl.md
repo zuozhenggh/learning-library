@@ -193,9 +193,13 @@ This completes the task of deploying the top model Naive Bayes to OML Services.
 
 The deployed models are listed under **Deployments** on the Models page. To view the metadata of the deployed model **CUST360_NB**:
 
-1. To go to Deployments, click the hamburger icon ![Image alt text](images/sample2.png) and then click  **Models** on the left navigation menu. Alternatively, you can click **Models** on the Oracle Machine Learning home page.  
+1. To go to Deployments, click the hamburger icon ![Image alt text](images/sample2.png) and then click  **Models** on the left navigation menu. Alternatively, you can click **Models** on the Oracle Machine Learning home page.
+
+  ![Models](images/models_option.png)
 
 2. On the Models page, click **Deployments**.
+
+	![Deployments](images/deployments_tab.png)
 
 2. The deployed model **CUST360_NB** is listed along with the metadata - Shared, version, namespace, owner, deployed date and URI under **Deployments** on the Models page.
 
