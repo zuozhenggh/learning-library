@@ -9,13 +9,11 @@ Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-* Learn how to create and save a Project
-* Learn how to add Datasets to a Project
-* Learn how to visualize Datasets
+* ...
 
 ### Prerequisites
 
-* Successfully complete Lab 1: Load Spatial Data
+* ....
 
 
 ## Task 1: Install the application
@@ -37,11 +35,33 @@ You will be prompted to same the application bundle to a local folder.
 5. Return to your App Builder browser tab and click **Import**
 ![Image alt text](images/install-sample-maps-04.png)
 
-6. 
+6. Drag and drop or browse to the sample Maps appliocation bundle that you downloaded previously.  Leave the File Type selection as Database Application, and then click **Next**.
+![Image alt text](images/install-sample-maps-05.png)
 
+7. File import is confirmed. Click **Next** again
+![Image alt text](images/install-sample-maps-06.png)
 
+8. Leave the default menu selections and click **Install Application**.
+![Image alt text](images/install-sample-maps-07.png)
+This will take you to the Install Application wizard.
 
+9. Leave the default menu selections and click **Next**. 
+![Image alt text](images/install-sample-maps-08.png)
 
+10.  Click **Next** to validate system compatibility. 
+![Image alt text](images/install-sample-maps-09.png)
+
+11.  With compatibility confirmed, click **Install** to initiate the installation of supporting database objects and the APEX application. 
+![Image alt text](images/install-sample-maps-10.png)
+
+12.  Once installation is complete, click **Run Application**. 
+![Image alt text](images/install-sample-maps-11.png)
+
+13.  Sign in to the Sample Maps application using ......  
+![Image alt text](images/install-sample-maps-12.png)
+
+14. You are now in the Sample Maps application, which provides numerous examples of maps and spatial operations in APEX. You will explore these examples in the next lab.
+![Image alt text](images/install-sample-maps-13.png)
 
 
 You may now [proceed to the next lab](#next).
