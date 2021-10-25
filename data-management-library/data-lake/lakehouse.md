@@ -17,11 +17,11 @@ Estimated Time:15 minutes
 
 Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
 
-![Database](./images/databaselisting.png " ")
+![Database](./images/Databaselisting.png " ")
 
 Click on the database and then proced to click on the Tools Tab and click on Open Database Actions.
 
-![Database Actions](./images/dbactions.png " ")
+![Database Actions](./images/DBActions.png " ")
 
 Click on SQL to execute the query to create the table.
 
@@ -81,22 +81,30 @@ Click on Entities just to verify that all of the tables and views are now here.
 
 We have a database, csv and json files in our data lake but there can be all of the various data platforms and types of data stored in the data lake and even streamed. We don't always have to load data into a database to be able to use our data sets with other data sets and assets. There are simple queries to the object storage that will allow us to join the data together with our data warehouse in our data lakehouse. Here is just one example using the data that we have loaded in this short time.
 
-Navigate back to DBActions
+Navigate back to DBActions. Under Development, click on SQL. We are going to run a few queries here for analysis. At this point you can take the queries and information to analytics and reporting.
 
 Join the data to the existing customer data:
 
+```
+<copy>
 SELECT
     DAY_ID,
-    GENRE_ID,
-    MOVIE_ID,
-    custsales.CUST_ID,
-  AGE,
-  GENDER, STATE_PROVINCE
+    GENRE_NAME,
+    CUSTSALES.CUST_ID,
+    AGE,
+    GENDER, 
+    STATE_PROVINCE
 FROM
-    ADMIN.CUSTSALES, ADMIN.CUSTOMER_EXTENSION, ADMIN.CUSTOMER_CONTACT
+    ADMIN.CUSTSALES_CUSTSALES_2020_01 custsales, 
+    ADMIN.CUSTOMER_EXTENSION, 
+    ADMIN.CUSTOMER_CONTACT,
+    ADMIN.GENRE
     where customer_extension.CUST_ID=custsales.cust_id
     and customer_extension.CUST_ID=customer_contact.CUST_ID
     and COUNTRY_CODE='US'
+    and genre.genre_id=custsales.genre_id;    
+</copy>    
+```
 
 Optionally you can also get the results using either external tables or Data Lake Accelerator. Here is an example to use an external table to access the JSON file in the object storage and join to the database tables.
 
@@ -126,7 +134,6 @@ JSON_TABLE("DOC", '$[*]' COLUMNS
 "movieid" number path '$.movieid')
 </copy>
 ```
-
 
 ***Oracle Data Lakehouse
 
