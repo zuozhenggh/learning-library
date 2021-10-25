@@ -6,6 +6,10 @@ This lab walks you through creating and loading NoSQL tables. This can be done a
 
 Estimated Time: 25 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:V8tWMOXpgIA)
+
 ### Objectives
 
 * Create 3 tables with provisioned reads/sec, writes/sec, and GB storage

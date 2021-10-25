@@ -6,6 +6,10 @@ In this tutorial, configure your development environment and collect information
 
 Estimated time: 30 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:l6hEDTdOiEI)
+
 ### Objectives
 
 * Launch the Cloud Shell

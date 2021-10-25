@@ -4,11 +4,16 @@
 
 In this lab you will query the newly create graph (that is, `bank_graph`) in PGQL paragraphs of a notebook.
 
-The following video shows the steps you will execute in this lab.
+<!-- COMMENTED THE FOLLOWING OUT FOR DATABSE WORLD:
+The following video shows some of the steps you will execute in this lab.
 
-[](youtube:DLRlnw-NI1g) Graph Studio: Query a graph.
+[](youtube:DLRlnw-NI1g) Graph Studio: Query a graph. -->
 
 Estimated Time: 30 minutes. 
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:XnE1yw2k5IU)
 
 ### Objectives
 
@@ -45,7 +50,7 @@ If you prefer you can simply **import** the notebook and then execute each parag
 
    ![ALT text is not available for this image](images/import-notebook.png " ")  
 
-3. Drag the downloaded file or navigate t the correct folder and select it for upload.  
+3. Drag the downloaded file or navigate to the correct folder and select it for upload.  
    ![ALT text is not available for this image](images/choose-exported-file.png " ")  
 
 4. Click `Import`. 

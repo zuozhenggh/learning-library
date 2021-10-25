@@ -6,6 +6,17 @@ In this tutorial, deploy a pre-built ReactJS application locally then build it f
 
 Estimated time: 15-minutes
 
+Watch the video below for a quick walk through of the lab.
+
+Mac:
+
+[](youtube:cEEKcV3-yTQ)
+
+Windows:
+
+[](youtube:rHAf4ZW4XP0)
+
+
 ### Understand the ReactJS Application
 
 The application is simple; it uses "functional components" with "state hooks" for managing states. There is a main part called "App", which renders another part called "NewItem" and two tables of todo items: the active ones and the already done ones. The "NewItem" part displays the text field for adding a new item.

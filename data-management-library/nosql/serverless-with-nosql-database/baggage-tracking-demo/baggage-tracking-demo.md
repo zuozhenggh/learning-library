@@ -6,6 +6,10 @@ This lab walks you through a live baggage tracking demo created by the Oracle No
 
 Estimated Time: 7 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:S91oa69whXA)
+
 
 ### Serverless Logic Tier
 
