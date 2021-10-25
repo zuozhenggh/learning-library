@@ -8,7 +8,7 @@ When working in the cloud, there are often times when your servers and services 
 
 Today, you will use the Compute Instance to connect from the browser to a MDS DB System
 
-Estimated Lab Time 20 minutes
+_Estimated Lab Time:_ 20 minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -97,7 +97,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     Instances
     ![CONNECT](./images/05compute01.png " ")
 
-5. On Instances in **(root)** Compartment, 'click'  **Create Instance**
+5. On Instances in **(root)** Compartment, click  **Create Instance**
     ![CONNECT](./images/05compute02_00.png " ")
 
 6. On Create Compute Instance 
@@ -147,7 +147,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
             Instances
     ![CONNECT](./images/db-list.png " ")
 
-    - 'click' the `MDS-Client` Compute Instance link
+    - Click the `MDS-Client` Compute Instance link
     ![CONNECT](./images/db-active.png)
     
     - Copy `MDS-Client` plus  the `Public IP Address` to the notepad
@@ -159,7 +159,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
             MySQL
      ![](./images/db-list.png " ")
 
-    - 'click' the `MDS-HW` Database System link
+    - Click the `MDS-HW` Database System link
 
      ![CONNECT](./images/db-active.png " ")
     
@@ -220,7 +220,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
         
     ![CONNECT](./images/airportdb-list.png " ") 
     
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
