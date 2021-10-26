@@ -82,7 +82,7 @@ The Backend Integration performs these steps:
 Let us walk through a typical B2B message being sent to an external trading partner, called as an Outbound Message.
 
 The picture below shows how an outbound message is processed through two integrations.
-![](./images/gettingStarted-InboundProcessing.png)
+![](./images/gettingStarted-OutboundProcessing.png)
 
 In the two-integration pattern, the Backend Integration performs these steps:
 
