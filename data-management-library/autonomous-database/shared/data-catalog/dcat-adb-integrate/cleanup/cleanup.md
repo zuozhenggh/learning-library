@@ -16,7 +16,7 @@ Estimated Time: 10 minutes
 * Delete any resources that you created in your **`training-dcat-compartment`** as part of this workshop.
 * Delete the entire **`training-dcat-compartment`** compartment.
 
-###Prerequisites  
+### Prerequisites  
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 **Note:**     

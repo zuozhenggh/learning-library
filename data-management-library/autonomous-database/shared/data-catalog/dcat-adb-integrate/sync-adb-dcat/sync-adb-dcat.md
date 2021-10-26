@@ -15,7 +15,7 @@ In this lab, you will:
 * Synchronize your ADB instance with your Data Catalog instance
 * Query the generated log, schemas, and external tables
 
-###Prerequisites  
+### Prerequisites  
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 
