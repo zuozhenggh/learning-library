@@ -54,7 +54,7 @@ This lab assumes you have:
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
-    You may now [proceed to the next lab](#next).
+    You may now [proceed to the next Task](#task-2-create-new-project-in-edq).
 
 4. If you are still unable to login or the login page is not functioning after reloading , open a terminal session and proceed as indicated below to validate the services.
 
@@ -94,8 +94,6 @@ This lab assumes you have:
     sudo systemctl restart edq
     </copy>
     ```
-
-You may now [proceed to the next lab](#next).
 
 ## Task 2: Create New Project in EDQ
 

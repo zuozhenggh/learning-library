@@ -44,12 +44,6 @@ This lab assumes you have:
     sudo systemctl restart oracle-database
     </copy>
     ```
-4. In the terminal window, run the following initialize and start *ODI Studio* (one-time only)
-
-    ```
-    <copy>/home/oracle/Oracle/Middleware/Oracle_Home/odi/studio/odi.sh -clean -initialize &</copy>
-    ```
-    *Note:* If you close *ODI Studio* and need to re-open it, simply click on the desktop icon as show above or re-run the same script with *"-clean -initialize"*. The command above is to be executed one-time only otherwise the client will be re-initialized and any cache saved since your initial run will de discarded.
 
 ## Task 2: Launch and Configure ODI Studio
 
