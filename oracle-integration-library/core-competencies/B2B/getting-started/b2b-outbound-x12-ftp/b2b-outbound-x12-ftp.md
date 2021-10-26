@@ -28,10 +28,10 @@ Oracle Integration - B2B
 
 ### Objectives
 
-In this lab, you will create a basic integration flow:
-This labs takes the input as XML from a Rest Client . In a real world use case you would have the XML originating from a Source System like ERP Cloud or NetSuite. A Backend App Integration transforms XML into EDI X12 format using EDI Translate functionality and sends the EDI document to B2B Integration to send across to External Trading Partner (Dell Inc)
+In this lab, you will create a basic integration flow to process the EDI document and send it to the Trading partner.
 
-
+### Prerequisites
+> **Note** : This Lab assumes you have already completed the sections from Lab1-Lab5
 
 ## Task 1: Create an Integration
 
