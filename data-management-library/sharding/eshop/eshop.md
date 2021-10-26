@@ -15,7 +15,7 @@ We developed this application to demonstrate Oracle Sharding (a hyperscale globa
 *Estimated Lab Time*: 10 Minutes
 
 Watch the video below for a walk through of the lab.
-[](youtube:x1-95SOe8iU)
+[](youtube:EMhd5OolcbM)
 
 ![](./images/app_front.jpg " ")
 

@@ -8,7 +8,7 @@ Estimated Lab Time: 30-45 minutes
 
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:pPXxYPe0Fd4)
+[](youtube:h572hFZBKyA)
 
 
 ### Objectives

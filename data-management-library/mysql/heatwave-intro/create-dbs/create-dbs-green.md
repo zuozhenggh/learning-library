@@ -6,7 +6,7 @@
 
 The required Virtual cloud Network has been created and configured for this system. You are ready to start the MySQL DB system creation process. You will use a provided object storage link to create the airportdb schema and load data into the new Database.  Finally, you will add a HeatWave Cluster comprise of two or more HeatWave nodes.   
 
-Estimated Lab Time: 20 minutes
+_Estimated Lab Time:_ 20 minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -42,7 +42,7 @@ In this lab, you will be guided through the following tasks:
 4. Paste the compartment value in the search box and select the matching  compartment value.
     ![VCN](./images/green-search-compartment-2.png " ")
 
-5. 'click' the existing VCN 
+5. Click the existing VCN 
     ![VCN](./images/green-select-vcn.png " ")
 
 6. Your VCN should look like this
@@ -134,11 +134,11 @@ In this lab, you will be guided through the following tasks:
 
     ![MDS](./images/04mysql08.png " ")
 
-10. 'click' on Show Advanced Options 
+10. Click on Show Advanced Options 
 
 
 11. Select the Data Import tab. 
-12. Since your databse was created in the **London OCI Region**, copy and paste the following link to the PAR Source URL</summary>
+12. Since your database was created in the **London OCI Region**, copy and paste the following link to the PAR Source URL</summary>
 
     ```
     <copy> 
@@ -176,7 +176,7 @@ In this lab, you will be guided through the following tasks:
     DB Systems
 2. Choose the ...-COMPARTMENT.. Compartment. A list of DB Systems is displayed. 
     ![Connect](./images/10addheat01.png " ")
-3. In the list of DB Systems, 'click' the **MDS-HW** system. 'click' **More Action ->  Add HeatWave Cluster**.
+3. In the list of DB Systems, click the **MDS-HW** system. Click **More Action ->  Add HeatWave Cluster**.
     ![Connect](./images/10addheat02.png " ")
 4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
 
@@ -194,7 +194,7 @@ algorithm, it will predict the number of nodes needed.
 
 9. Click “Add HeatWave Cluster” to create the HeatWave cluster
     ![Connect](./images/10addheat06.png " ")
-10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. 'click' the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
+10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/10addheat07.png " ")
 
 

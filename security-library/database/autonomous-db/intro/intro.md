@@ -22,7 +22,7 @@ In this workshop, you learn how to perform the following tasks:
 
 The entire DB Security PMs Team wishes you an excellent workshop!
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

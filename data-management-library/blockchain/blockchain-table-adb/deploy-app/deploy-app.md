@@ -10,7 +10,7 @@ Estimated Time: 25 minutes
 
 Watch the video below for a quick walk through of the lab.
 
-[](youtube: 2QHI3kH8H0o)
+[](youtube:2QHI3kH8H0o)
 
 ### Objectives
 
@@ -27,7 +27,8 @@ In this lab, you will:
 
 This workshop assumes you have:
 
-- Have successfully completed all the previous labs
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Successfully completed the previous labs
 
 ## Task 1: Provision a Compute Instance
 

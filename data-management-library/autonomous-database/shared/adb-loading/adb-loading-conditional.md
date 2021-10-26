@@ -15,6 +15,10 @@ You can load data into your new Oracle Autonomous Database (Oracle Autonomous Da
 
 Estimated Time: 30 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:/Dasim678fYM)
+
 ### Objectives
 
 -   Learn how to create and load an ADW table with sample data from your local file system

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Oracle Application Express (APEX) is a low-code application platform for Oracle Database. APEX Application Development, Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) are fully managed services, pre-integrated and pre-configured with APEX, for rapidly building and deploying modern data-driven applications in Oracle Cloud. Business users, citizen and application developers can create enterprise apps 20X faster with 100X less code—without having to learn complex web technologies with just a browser. To start, you will need to decide on the service you are going to use for this workshop, and then create an APEX workspace accordingly.
+Oracle Application Express (APEX) is a low-code application platform for Oracle Database. APEX Application Development, Autonomous Data Warehouse (ADW), and Autonomous Transaction Processing (ATP) are fully managed services, pre-integrated and pre-configured with APEX, for rapidly building and deploying modern data-driven applications in Oracle Cloud. Business users, citizen, and application developers can create enterprise apps 20X faster with 100X less code — without having to learn complex web technologies with just a browser. To start, you will need to decide on the service you are going to use for this workshop, and then create an APEX workspace accordingly.
 
 If you already have an APEX 21.1 Workspace provisioned, you can skip this lab.
 
@@ -257,12 +257,12 @@ Signing up for apex.oracle.com is simply a matter of providing details on the wo
 
 ## **Summary**
 
-This completes lab 1. At this point, you know how to create an APEX Workspace and you are ready to start building amazing apps, fast.
+At this point, you know how to create an APEX Workspace and you are ready to start building amazing apps, fast.
 
-You may now *proceed to the next lab*.
+You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
  - **Author** -  Salim Hlayel, Principal Product Manager
  - **Contributors** - Arabella Yao, Product Manager Intern, Database Management | Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
- - **Last Updated By/Date** - Monica Godoy, Principal Product Manager, October 2021
+ - **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021

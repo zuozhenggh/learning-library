@@ -6,6 +6,10 @@ This lab will walk you through the steps to connect *Oracle Analytics Desktop* (
 
 Estimated Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:vUF4kNUbWNQ)
+
 ### Objectives
 - Learn how to connect a desktop analytics tool to the powerful Autonomous Database
 - Learn how to connect to the database from Oracle Analytics Desktop

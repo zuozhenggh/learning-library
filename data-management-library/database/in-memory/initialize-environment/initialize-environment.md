@@ -25,6 +25,8 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
+**NOTE:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise the last line will remain in the buffer until you hit* **ENTER!**
+
 ## Task 1: Validate That Required Processes are Up and Running.
 
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
@@ -39,8 +41,6 @@ This lab assumes you have:
     You may test database connectivity clicking on the *+* sign next to the Database(s) as shown below in the *SQL Developer Oracle Connections* panel.
 
     ![](./images/19c_hol_landing.png " ")
-
-## ** NOTE: If you copy and paste SQL commands then you must hit the ENTER key after the paste. Otherwise the last line will still be in the buffer until you hit ENTER!
 
 2. Click the *Terminal* icon on the desktop to launch a session, then run the following to validate that expected processes are up.
 
@@ -286,7 +286,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
     ![](images/part1step8b.png)
 
-    In this Lab you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a static pool in the SGA, and once allocated it can be increased in size dynamically, but it is not managed by either of the automatic SGA memory features.
+    In this Lab you saw that the IM column store is configured by setting the initialization parameter `INMEMORY_SIZE`. The IM column store is a static pool in the SGA, and once allocated it can be increased in size dynamically, but it is not managed by either of the automatic SGA memory features.
 
     You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
 
