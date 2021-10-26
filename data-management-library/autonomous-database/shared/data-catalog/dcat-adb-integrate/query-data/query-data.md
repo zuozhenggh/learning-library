@@ -54,7 +54,7 @@ You can import, create, and work with notebooks in Oracle Machine Learning Noteb
 
 You can import a notebook from a local disk or from a remote location if you provide the URL. In this task, you will first download an OML notebook to your local machine, and then import this notebook into OML.
 
-1. Download the [Workshop-Data-Lake-Accelerator.json](files/Workshop-Data-Lake-Accelerator.json?download=1) OML Notebook.
+1. Download the [workshop-data-lake-accelerator.json](files/workshop-data-lake-accelerator.json?download=1) OML Notebook.
 
 2. On the **Oracle Machine Learning** Home page, in the **Quick Actions** section, click the **Notebooks**. The **Notebooks** page is displayed.    
 
