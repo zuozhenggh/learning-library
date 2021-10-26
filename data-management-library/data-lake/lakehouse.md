@@ -1,4 +1,4 @@
-# Lakehouse: Putting it Together for Analytics
+# Lakehouse: Putting it together for Analytics
 
 ## Introduction
 
@@ -11,9 +11,9 @@ In this lab, you will:
 * Validate that new data is being loaded
 * Review the components of the Data Lake
 
-Estimated Time:15 minutes
+Estimated Time: 15 minutes
 
-## Task 1: SQL Queries
+## Task 1: SQL queries
 
 Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
 
