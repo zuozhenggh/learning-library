@@ -54,7 +54,7 @@ Note:This integration flow uses REST for simplicity. You can substitute the REST
 4. Change Layout to Horizontal
 
 ## Task 2: Configure the REST Adapter Trigger Connection
-On the integration canvas, click the start node and select Sample REST Endpoint Interface as the trigger connection.
+On the integration canvas, click the start node and select REST Interface as the trigger connection.
 The Adapter Endpoint Configuration Wizard opens
 
 1. On the Basic Info page, enter the following details

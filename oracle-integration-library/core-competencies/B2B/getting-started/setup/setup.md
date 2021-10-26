@@ -113,6 +113,15 @@ Directory Listing created in File Server. If all the permissions are provided yo
 | Username                | <OIC Username>                                        |
 | Password                | <OIC Password>                                        |
 
+## Task 5: Creating Connection with REST Adapter
+
+Note: You can use existing connection if it is already there in the instance, otherwise, you can create it.
+
+1.	From Home page Navigate to Integrations -> Connections
+2.	Create a connection 'REST Interface' by selecting REST adapter
+
+![](images/RESTInterface.png =50%x*)
+
 You may now [proceed to the next lab](#next).
 
 ## Learn More

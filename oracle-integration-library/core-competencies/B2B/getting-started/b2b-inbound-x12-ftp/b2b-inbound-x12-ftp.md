@@ -211,7 +211,7 @@ Check for errors, save, and activate the integration flow.
 2.	Click Activate in the Activate Integration dialog and select **Enable Tracing** and **Include Payload** options
 
 ## Task 10:	Deploy Inbound Agreement
-1.	Navigate to Trading Partner (Dell Inc). Select Transport and Agreements. Edit Inbound Agreement and select the Backend Integration **Process Inbound Vendor Invoices**
+1.	Navigate to Trading Partner (Dell Inc). Select Transport and Agreements. Edit Inbound Agreement and select the Backend Integration **Process Inbound Vendor Invoices** (You need to copy the identifier and version from the Integration details and paste it in the Backend Integration text box as per the screenshot given below, it should look like PROCESS_INBOUND_VENDOR_INVOICES|01.00.0000)
 
 ![](images/inbound-agreement-deploy.png)
 
