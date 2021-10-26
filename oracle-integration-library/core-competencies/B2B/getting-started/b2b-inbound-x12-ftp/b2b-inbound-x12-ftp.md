@@ -290,6 +290,6 @@ In conclusion, you can use Oracle Integration B2B feature to automatically gener
 * [B2B Tracking](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/b2b-tracking.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
 * **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - <Kishore Katta, 10/21>

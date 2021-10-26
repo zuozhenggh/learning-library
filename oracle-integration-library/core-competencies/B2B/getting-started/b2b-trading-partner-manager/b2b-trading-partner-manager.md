@@ -171,6 +171,6 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
 * **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - <Kishore Katta, 10/21>
