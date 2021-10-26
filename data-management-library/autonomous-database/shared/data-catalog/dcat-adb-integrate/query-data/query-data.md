@@ -62,7 +62,7 @@ You can import a notebook from a local disk or from a remote location if you pro
 
 3. Click **Import**. The **Open** dialog box is displayed.
 
-4. Navigate to your local folder where you downloaded the OML notebook, and select the **`Workshop-Notebook-Data-Lake-Accelerator.json`** notebook file. The file is displayed in the **File name** field. Make sure that the **JSON file (*.json)** type is selected in the second drop-down field, and then click **Open**.
+4. Navigate to your local folder where you downloaded the OML notebook, and select the **`workshop-notebook-data-lake-accelerator.json`** notebook file. The file is displayed in the **File name** field. Make sure that the **JSON file (*.json)** type is selected in the second drop-down field, and then click **Open**.
 
 
     ![](./images/open-dialog.png " ")
