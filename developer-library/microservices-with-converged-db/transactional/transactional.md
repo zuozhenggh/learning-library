@@ -4,7 +4,7 @@
 
 This lab will show you how to test different failure scenarios and compare/contrast the behavior when using different resources.
 
-Estimated Lab Time - 10 minutes
+Estimated Time: 10 minutes
 
 Watch the video below for a quick walk through of the lab.
 

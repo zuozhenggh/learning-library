@@ -1,10 +1,10 @@
-# Store and manage Python objects and user-defined functions
+# Run user-defined functions using Embedded Python Execution
 
 ## Introduction
 
-This lab walks you through the steps to use OML4Py Embedded Python Execution functions as well as the Python Script Repository.
+This lab walks you through the steps to use OML4Py Embedded Python Execution functions to run custom Python code.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 Watch the video below for a quick walk through of the lab.
 
