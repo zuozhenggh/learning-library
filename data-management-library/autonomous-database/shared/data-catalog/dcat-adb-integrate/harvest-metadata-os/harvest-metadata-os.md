@@ -16,6 +16,9 @@ In this lab, you will:
 * View the harvested data entities.
 * Customize the business names for the three Oracle Object Storage buckets.
 
+###Prerequisites  
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
+
 ## Task 1: Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.

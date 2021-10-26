@@ -12,11 +12,8 @@ In this lab, you will:
 - Access Oracle Machine Learning Notebooks provided with Oracle Autonomous Database
 - Import and review the imported notebook
 
-### Prerequisites
-
-This lab assumes you have:
-* An Oracle account
-* Completed all previous labs successfully
+###Prerequisites  
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
 ## Task 1: Access Oracle Machine Learning Notebooks
 
