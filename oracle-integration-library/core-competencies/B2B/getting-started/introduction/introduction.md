@@ -48,6 +48,6 @@ In this workshop, you will learn how to:
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Kishore Katta, Technical Director, Group>
+* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
 * **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - <Kishore Katta, 10/21>

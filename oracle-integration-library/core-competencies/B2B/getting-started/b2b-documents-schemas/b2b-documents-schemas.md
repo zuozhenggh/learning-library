@@ -137,6 +137,6 @@ You may now [proceed to the next lab](#next).
 *	[Generate Implementation Guide](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/generate-implementation-guide.html#GUID-04ED2504-39C4-4885-8A69-CEDDCA614308)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
 * **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - <Kishore Katta, 10/21>
