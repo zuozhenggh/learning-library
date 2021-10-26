@@ -4,7 +4,7 @@
 
 This lab will show how the application can scale at the application and database tiers to achieve optimal performance.
 
-Estimates Lab Time - 10 minutes
+Estimates Time: 10 minutes
 
 [](youtube:95cW9eH_os4)
 

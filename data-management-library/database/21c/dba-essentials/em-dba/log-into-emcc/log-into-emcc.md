@@ -12,7 +12,11 @@ Log in to Oracle EMCC and select a personal homepage.
 
 ### Prerequisites
 
-Oracle EMCC 13.5 installed with Oracle Database 19c as the repository.
+- Oracle EMCC 13.5 installed with Oracle Database 19c as the repository.
+- You have completed -
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Setup Compute Instance
+    - Lab: Initialize Environment
 
 ## Task 1: Log in to Oracle EMCC
 
@@ -24,17 +28,17 @@ From Oracle EMCC, you can do various activities, such as view details of your Or
 
     <!-- Replace 0.0.0.0 and enter the actual IP address of the host machine. -->
 
-   <TBD> [https://0.0.0.0:7803/em](https://0.0.0.0:7803/em)  
+   [https://emcc:7803/em](https://emcc:7803/em)  
 
    **Note:** If you get a security certificate warning, you can safely ignore the error. Depending on your web browser, click *Advanced* or *More Information* and continue to the login page.
 
    ![Oracle EMCC Login URL](images/emcc-001-login-url.png)
 
     > **URL Syntax**  
-    > The Oracle EMCC URL comprises the IP address of the host and the port number - `https://ipaddress:portnumber/em`.  
-    For this lab, the host IP address for Oracle EMCC is <TBD> *0.0.0.0* and the port number is *7803*. 
+    > The Oracle EMCC URL comprises the hostname and the port number - `https://hostname:portnumber/em`.  
+    For this lab, the hostname for Oracle EMCC is *emcc* or *emcc.livelabs.oraclevcn.com* and the port number is *7803*. 
 
-   <!--To view your hostname, open a terminal window and run the command *hostname*. -->
+   To view your hostname, open a terminal window and run the command *hostname*.
 
 3. Enter the login credentials for Oracle EMCC.  
    **Username** - *sysman* (not case sensitive)  
@@ -60,7 +64,7 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-- **Author** - Manish Garodia, Principal User Assistance - Developer, Database Technologies
+- **Author** - Manish Garodia, Principal User Assistance Developer, Database Technologies
 
 - **Contributors** - Suresh Rajan, Kurt Engeleiter, Prakash Jashnani, Subhash Chandra 
 

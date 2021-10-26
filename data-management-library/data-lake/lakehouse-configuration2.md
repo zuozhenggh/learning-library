@@ -1,25 +1,27 @@
-# Lab 1b: Load Initial Data
+# Load initial data
 
 ## Introduction
 
 Load the initial set of data into the Autonomous Data Warehouse and Load data into object storage
 
-Estimated Lab Time: 15 minutes
+Estimated  Time: 15 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:0j5B2ePXvEE)
 
 ### Objectives
 
 In this lab, you will:
 * Load from OCI Object Storage a data set into ADW as part of the data lake
 
-> **Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
-
-Estimated Time:10 minutes
+**Note:** While this lab uses ADW, the steps are identical for loading data into an ATP database.
 
 ### About Product
 
 In this lab, we will learn more about the Autonomous Database's built-in Data Load tool - see the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/data-load.html#GUID-E810061A-42B3-485F-92B8-3B872D790D85) for more information.
 
-## Task 1: Configure the Object Storage Connections
+## Task 1: Configure the Object Storage connections
 
 In this step, you will set up access to the two buckets on Oracle Object Store that contain data that we want to load - the landing area, and the 'gold' area.
 
@@ -65,12 +67,12 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 8. In the **Explore and Connect** section, click **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click **+Add Cloud Storage**.
 
-- In the **Name** field, enter 'MovieStreamGold'
+    - In the **Name** field, enter 'MovieStreamGold'
 
-    > **Note:** Take care not to use spaces in the name.
+    **Note:** Take care not to use spaces in the name.
 
-- Leave the Cloud Store selected as **Oracle**
-- Copy and paste the following URI into the URI + Bucket field:
+    - Leave the Cloud Store selected as **Oracle**
+    - Copy and paste the following URI into the URI + Bucket field:
 
     ```
     <copy>
@@ -78,14 +80,33 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
     </copy>
     ```
 
-- Select **No Credential** as this is a public bucket.
-- Click the **Test** button to test the connection. Then click **Create**.
+    - Select **No Credential** as this is a public bucket.
+    - Click the **Test** button to test the connection. Then click **Create**.
 
-    We now have two cloud storage locations set up.
+9. In the **Explore and Connect** section, click **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click **+Add Cloud Storage**.
+
+    - In the **Name** field, enter 'CustomerSales'
+
+        > **Note:** Take care not to use spaces in the name.
+
+    - Leave the Cloud Store selected as **Oracle**
+    - Copy and paste the following URI into the URI + Bucket field:
+
+    ```
+    <copy>
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o
+    </copy>
+    ```
+    ![Click Data Load](./images/customersales2.png " ")
+    
+    - Select **No Credential** as this is a public bucket.
+    - Click the **Test** button to test the connection. Then click **Create**.
+
+    We now have three cloud storage locations set up.
 
     ![Cloud Storage Locations](./images/cloudstoragelocations.png " ")
 
-## Task 2: Load Data from Files in Object Storage Using Data Tools
+## Task 2: Load data from files in Object Storage using Data Tools
 
 In this step, we will perform some simple data loading tasks, to load in CSV files from Object Storage into tables in our Autonomous Database.
 
@@ -148,9 +169,17 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
 18. Click the **Done** button in the bottom right of the screen.
 
+19. From the CUSTOMERSALES location, drag the three files with customer_sales **customer_sales** folders over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we only have a single file, but we do want to load this into a single table. Click **OK**.
+
+    ![CustomerSales load task](./images/customersales3.png " ")
+
+20. Now click the Play button to run the data load job.
+
+    ![Run the data load job](./images/customersales4.png " ")
+
 This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
