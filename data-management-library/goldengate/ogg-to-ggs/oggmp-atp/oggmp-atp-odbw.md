@@ -62,8 +62,7 @@ In this lab, you will:
 6.  Run the following commands in Cloud Shell to make directory and download the private key for the Oracle Database World LiveLab:
 
     ```
-    <copy>
-    wget http://bit.ly/cloudshellkey</copy>
+    <copy>wget http://bit.ly/cloudshellkey</copy>
     ```
 
 7.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell:
