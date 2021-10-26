@@ -23,7 +23,8 @@ In this lab, you will:
 
 This workshop assumes you have:
 
-- All previous labs completed.
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Successfully completed the previous labs
 
 ## Task 1: Create APEX Workspace
 
