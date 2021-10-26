@@ -171,7 +171,7 @@ Although you can connect to your Autonomous Database using local PC desktop tool
 
     - Check that there are no errors
 
-8. **Your environment is ready to use!** and you may now [proceed to the next lab](#next)
+8. **Your environment is ready to use!** and you may now proceed to the next lab
 
 ## Want to Learn More?
 
