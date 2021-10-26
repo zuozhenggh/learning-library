@@ -211,7 +211,7 @@ Check for errors, save, and activate the integration flow.
 2.	Click Activate in the Activate Integration dialog and select **Enable Tracing** and **Include Payload** options
 
 ## Task 10:	Deploy Inbound Agreement
-1.	Navigate to Trading Partner (Dell Inc). Select Transport and Agreements. Edit Inbound Agreement and select the Backend Integration **Process Inbound Vendor Invoices** (You need to copy the identifier and version from the Integration details and paste it in the Backend Integration text box as per the screenshot given below, it should look like PROCESS_INBOUND_VENDOR_INVOICES|01.00.0000)
+1.	Navigate to Trading Partner (Dell Inc). Select Transport and Agreements. Edit Inbound Agreement and select the Backend Integration **Process Inbound Vendor Invoices** (You need to copy the identifier and version from the Integration details and paste it in the Backend Integration text box as per the screenshot given below, it should look like PROCESS\_INBOUND\_VENDOR\_INVOICES|01.00.0000)
 
 ![](images/inbound-agreement-deploy.png)
 
@@ -232,7 +232,8 @@ We will Import and Activate an Integration Flow which Simulates a Supplier (Dell
 
 Let's use Oracle Integration Test Console to simulate a 810 Invoice EDI message from **Dell Inc** Supplier.
 
-2.	Download [Dell Invoice XML](files/DellIncInvoice.xml). Copy the xml data and paste it in the body of the request console. Before Selecting Test modify the below elements in the supplied XML payload
+2.	Download [Dell Invoice XML](files/DellIncInvoice.xml?download=1). Copy the xml data and paste it in the body of the request console. Before Selecting Test modify the below elements in the supplied XML payload
+
 	-	InvoiceNumber – ex: XX-INV-DE-0299
 	-	XTP\_FTP\_DIR - /B2BWorkshop/B2BTPDELLIn
 	-	XTP\_FTP\_FILENAME - Invoice-1.edi (Note: The file pattern should be similar to the configuration in the **Dell Inc** Trading Partner Setup for **FTP** Transport Input File value
@@ -255,7 +256,7 @@ Let's use Oracle Integration Test Console to simulate a 810 Invoice EDI message 
 
 	**Knowledge Point**: A separate Functional Ack will be generated for every Transaction set
 
-3.	Navigate to Monitoring -> B2B Tracking page. You should see 2 Business Messages under the Business Messages Tab for your specific Trading Partner.
+3.	Navigate to Monitoring->B2B Tracking page. You should see 2 Business Messages under the Business Messages Tab for your specific Trading Partner.
 
 		Tip:  Select the Filter to search based on Trading Partner Name
 
@@ -272,7 +273,7 @@ Let's use Oracle Integration Test Console to simulate a 810 Invoice EDI message 
 
 	![](images/inbound-test-6.png)
 
-5.	Navigate to Monitoring  Integrations  Dashboards. Select Activity Stream from **View**
+5.	Navigate to Monitoring->Integrations->Dashboards. Select Activity Stream from **View**
 
 	![](images/inbound-test-7.png)
 
