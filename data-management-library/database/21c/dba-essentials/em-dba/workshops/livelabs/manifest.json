@@ -1,5 +1,5 @@
 {
-  "workshoptitle" : "EM - Oracle Database Administration (DBA)",
+  "workshoptitle" : "DBA Essentials - Oracle EM Database Administration (DBA)",
   "help": "livelabs-help-em_us@oracle.com",
   "tutorials": [
     {
@@ -35,7 +35,7 @@
         "filename": "./../../log-into-emcc/log-into-emcc.md"
     },
     {
-        "title": "Lab 5: Manage Target Database and Listener",
+        "title": "Lab 5: Manage Targets - Oracle Database and Listener",
         "description": "How to manage the targets discovered by Oracle EMCC. View details of Oracle Database and listener and administer them from Oracle EMCC as managed targets.",
         "filename": "./../../manage-targets/manage-targets.md"
     },

@@ -8,7 +8,9 @@ The objective of this lab is to become familiar with the basic usage of SQL Perf
 
 *Estimated Time*: 55 minutes
 
+Watch the video below for a quick walk through of the lab.
 
+[](youtube:4V9kpeF3jJY)
 
 ### Lab Timing (Estimated)
 
