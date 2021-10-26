@@ -105,15 +105,15 @@ You have set the environment variables for the active terminal session. You can 
     
 4.  View all PDBs in the CDB.
 
-	 ```
-	 SQL> <copy>show pdbs</copy>
-	 ```
+	```
+	SQL> <copy>show pdbs</copy>
+	```
 
-	 ```
-		 CON_ID CON_NAME					   OPEN MODE RESTRICTED
-	 ---------- ------------------------------ ---------- ----------
-			  2 PDB$SEED					   READ ONLY  NO
-			  3 ORCLPDB						   READ WRITE NO
+	``` 
+		CON_ID CON_NAME                  OPEN MODE  RESTRICTED
+	---------- ------------------------- ---------- ----------
+			 2 PDB$SEED                  READ ONLY  NO
+			 3 ORCLPDB                   READ WRITE NO
 	```
     
 5.  Check the version of the core library components. 
