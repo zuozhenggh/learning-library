@@ -10,8 +10,8 @@ Trading Partner (Dell Inc) sends an 810 Invoice EDI document to Host ACME. ACME 
 |---------------|-------------------|
 |     1         |     Your (ACME Corp) backend   application has a requirement to receive a business transaction (810 Invoice)   from an external trading partner (Dell Inc). A scheduled integration- B2B   Receive polls for a configured file pattern of Invoice document. A B2B action   translates an Inbound Invoice EDI Message to Oracle Integration Message. If   it is a valid Business Message invokes a Backend Integration which is   configured in the Trading Partner Inbound Agreement    |
 |     2         |     You will design an ACME Corp   backend application which receives a business transaction (810 Invoice) from   an external trading partner (Dell Inc). Triggers your Inbound backend integration   with a defined REST interface.|
-|     2         |     Your backend integration instance   receives the Invoice 810 EDI message. Using a B2B Translation activity, the Invoice   810 EDI (X12 or EDIFACT) message is translated into a B2B canonical XML   format. |
-|     3         |     Further, down the line integration processes   the invoices for ex: maybe you want to create a payables invoice in the   ERP/Netsuite for the Purchase Order raised. In this exercise you will create   a log activity to capture some important fields from the translated EDI   Invoice message.|
+|     3         |     Your backend integration instance   receives the Invoice 810 EDI message. Using a B2B Translation activity, the Invoice   810 EDI (X12 or EDIFACT) message is translated into a B2B canonical XML   format. |
+|     4         |     Further, down the line integration processes   the invoices for ex: maybe you want to create a payables invoice in the   ERP/Netsuite for the Purchase Order raised. In this exercise you will create   a log activity to capture some important fields from the translated EDI   Invoice message.|
 
 Estimated Lab Time: 60 minutes
 
@@ -221,14 +221,16 @@ From the Action Menu deploy the Inbound Agreement
 
 ##	Task	11: Import and Activate the Supplier (Dell Inc) Integration
 
+We will Import and Activate an Integration Flow which Simulates a Supplier (Dell Inc) Trading Partner to send an Invoice (810) document to a defined FTP location so that host (Acme Corp) can process the Inbound Invoice document. This integration accepts an Invoice XML and pushes and 810 Invoice EDI message into a specific directory provided in the xml payload. In a real world scenario typically an ERP application (ex. ERP Cloud or NetSuite) generates the Receivables Invoice and sends the Invoice document to Acme Corp
+
 1.	Download the [Dell Inc Simulator Integration](files/OUTBOUND_XTP_DELL_INC_01.00.0001.iar)
 2.	Import and Activate the Integration with Tracing Enabled.
 
 ##	Task	12: Testing the B2B Inbound Integration Scenario
 
-1.	Navigate to Integrations. Selec the **OutboundEDI-XTP-Dell-Inc**. Select **Run** and click on **Test** which will open an Integration Test Console
+1.	Navigate to Integrations. Select the **OutboundEDI-XTP-Dell-Inc**. Select **Run** and click on **Test** which will open an Integration Test Console
 
-Let's use Oracle Integration Test Console to simulate a 810 Invoice EDI message from **Dell Inc** Supplier as per the Usecase described. This integration accepts an Invoice XML and pushes and 810 Invoice EDI message into a specific directory provided in the xml payload. In a real world scenario typically an ERP application (ex. ERP Cloud or Netsuite) generates the Receivables Invoice and sends the Invoice document to Acme Corp
+Let's use Oracle Integration Test Console to simulate a 810 Invoice EDI message from **Dell Inc** Supplier.
 
 2.	Download [Dell Invoice XML](files/DellIncInvoice.xml). Copy the xml data and paste it in the body of the request console. Before Selecting Test modify the below elements in the supplied XML payload
 	-	InvoiceNumber – ex: XX-INV-DE-0299
