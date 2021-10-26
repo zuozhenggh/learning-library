@@ -44,22 +44,17 @@ This lab assumes you have:
     sudo systemctl restart oracle-database
     </copy>
     ```
+4. On the right preloaded with the *Oracle Data Integrator*.
 
-## Task 2: Launch and Configure ODI Studio
+  ![](./images/odi-novnc-landing.png " ")  
 
-1. From the same remote desktop session, Click on the "*Oracle Data Integrator*" icon.
+## Task 2: Configure ODI Studio  
 
-  ![](./images/guacamole-landing-odi-studio.png " ")    
-
-  ODI Studio will appear on screen.
-
-  ![](./images/odi_studio_1.png " ")    
-
-2. Click on "Connect to Repository".
+1. From the same remote desktop session, Click on "Connect to Repository".
 
   ![](./images/odi_studio_2a.png " ")
 
-3. Type in the wallet password and click OK
+2. Type in the wallet password and click OK
 
     ```
     Password: <copy>Welcome1#</copy>
@@ -67,35 +62,35 @@ This lab assumes you have:
 
   ![](./images/odi_studio_2b.png " ")  
 
-4. Click "OK" when the default login username and password appear on screen.
+3. Click "OK" when the default login username and password appear on screen.
 
   ![](./images/odi_studio_3.png " ")
 
-5. Go to the Designer tab and select import to open the import wizard.
+4. Go to the Designer tab and select import to open the import wizard.
 
   ![](./images/odi_studio_4.png " ")
 
-6. Select "Smart Import" option and click ok.
+5. Select "Smart Import" option and click ok.
 
   ![](./images/odi_studio_5a.png " ")
 
-7.  Enter the path to the **ODI_Models.xml** file (`/home/oracle/ODI_Mappings_V1/ODI_Models.xml`) and click "Next".
+6.  Enter the path to the **ODI_Models.xml** file (`/home/oracle/ODI_Mappings_V1/ODI_Models.xml`) and click "Next".
 
   ![](./images/odi_studio_5b.png " ")  
 
   The import will take approximately 5 minutes
 
-8. Provide the export key. Export key can be obtained from the instructor and click "OK".
+7. Provide the export key. Export key can be obtained from the instructor and click "OK".
 
   ![](./images/odi_studio_5c.png " ")   
 
-9. Click "Next" on the next screen and then click on Finish.
+8. Click "Next" on the next screen and then click on Finish.
 
   ![](./images/odi_studio_5d.png " ")
 
   ![](./images/odi_studio_5e.png " ")
 
-10. Click close on the next screen.
+9. Click close on the next screen.
 
   ![](./images/odi_studio_5f.png " ")
 
@@ -152,7 +147,7 @@ This lab assumes you have:
 
   ![](./images/odi_models_2.png " ")      
 
-Congratulations!  Now you have the environment to run the ODI labs. You may now [proceed to the next lab](#next).
+You may now [proceed to the next lab](#next).
 
 ## Appendix 1: Managing Startup Services
 
