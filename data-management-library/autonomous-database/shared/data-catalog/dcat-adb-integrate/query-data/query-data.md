@@ -56,7 +56,7 @@ You can import a notebook from a local disk or from a remote location if you pro
 
 1. Download the [workshop-data-lake-accelerator.json](files/workshop-data-lake-accelerator.json?download=1) OML Notebook.
 
-2. On the **Oracle Machine Learning** Home page, in the **Quick Actions** section, click the **Notebooks**. The **Notebooks** page is displayed.    
+2. On the **Oracle Machine Learning** Home page, in the **Quick Actions** section, click **Notebooks**. The **Notebooks** page is displayed.    
 
     ![](./images/notebooks-page.png " ")
 
