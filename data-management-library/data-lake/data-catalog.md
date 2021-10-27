@@ -4,7 +4,11 @@
 
 Here we will create our OCI Data Catalog and OCI Data Integration workspace first and create a couple of additional data assets along with discovering our ADW database as a data asset.
 
-Estimated Time:15 minutes
+Estimated Time: 15 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:D0Y8chE7kJg)
 
 ### About Product
 
@@ -44,6 +48,7 @@ Create a dataintegrationWS policy. Slide the Show Manual Editor to yes and then 
 ![Add Policies](./images/create_policy.png " ")
 
 Use the follow three allow statements to add into the existing policy, and then Save Changes.
+
 ```
 <copy>
 allow any-user to use buckets in compartment lakehouse1 where ALL {request.principal.type='disworkspace',request.principal.id='REPLACE WITH WORKSPACE OCID'}
@@ -58,7 +63,7 @@ allow any-user {PAR_MANAGE} in compartment lakehouse1 where ALL {request.princip
 
 Once the workspace has been created (a refresh of the screen might be needed to go from Processing to Active). 
 
-## Task 2: Create the Data Assets in the Workspace
+## Task 2: Create the Data Assets in the workspace
 
 Under Quick Actions, you want to click on **Create Data Asset**
 
@@ -98,7 +103,7 @@ Test Connection to make sure you can connect to the this data asset. Now you can
 
 ![Create Data Asset](./images/create_dataasset8.png " ")
 
-## Task 3: Create a Project in the Workspace
+## Task 3: Create a project in the workspace
 
 - Click on the Workspace Lakehouse. 
 - Click on Create a Project.
@@ -120,6 +125,7 @@ Click on Create Data Catalog. Create in Compartment, lakehouse1, and name the ca
 ![Create Catalog](./images/create_datacatalog.png " ")
 
 Explore the Data Catalog:
+
 - Data Assets, some we will discover and others we will just create to use with this data lake.
 - Data Entities, these come from the data assets as there can multiple entities in each data asset
 - Glossaries, these are business terms for mappings of the data and definitions with columns and data assets.
@@ -128,7 +134,7 @@ Explore the Data Catalog:
 
 ![View Catalog](./images/datacatalog_overview.png " ")
 
-## Task 5: Discover Data Assets and Configure Connections
+## Task 5: Discover data assets and configure connections
 
 In this step, you will discover the data assets already available in the ADW and Object Storage. We will also create new data assets that we might get from another source or API.
 From the Quick Menu on the Home tab, click Discover Data Sources.
@@ -193,7 +199,7 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/p/ouDV0uXS0m0vSkJ7Ok2-W0FfSPI
 
 The data asset will then be added to this data catalog. Now we can use these data assets to set up processes for data loading and ETL with OCI Data Flow.
 
-## Task 6: New table for Spark Application Data Loads
+## Task 6: New table for Spark application data loads
 
 In this step, you will simply be creating a new table to be used in the data loading process that uses the application in the next lab. You will also verify that the table is now part of the discovered entities in the OCI Data Catalog.
 
@@ -246,7 +252,7 @@ Click on Entities just to verify that all of the tables are now here.
 
 Now you are ready to work with the Data Flows and applications.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

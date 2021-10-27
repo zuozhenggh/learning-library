@@ -55,11 +55,15 @@ In this lab, you will:
 
     ![](images/02-04-cloud-shell-upload.png " ")
 
-5.  In the File Upload to your Home Directory dialog, drag and drop or select the SourceATP wallet file you downloaded in Task 1, and then click **Upload**.
+5.  In the File Upload to your Home Directory dialog, drag and drop or select the SourceATP wallet file you downloaded in Task 1, and then click **Upload**. Click **Hide** to close the File Transfers dialog.
 
     ![](images/02-05-upload-wallet.png " ")
 
-6.  Repeat step 5 to upload your SSH private key. Click **Hide** to close the File Transfers dialog.
+6.  Run the following commands in Cloud Shell to make directory and download the private key for the Oracle Database World LiveLab:
+
+    ```
+    <copy>wget http://bit.ly/cloudshellkey</copy>
+    ```
 
 7.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell:
 

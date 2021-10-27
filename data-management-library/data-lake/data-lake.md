@@ -6,13 +6,19 @@ Data is constantly growing being enhanced, validated and updated. That is why on
 
 OCI Data Flows handles these processes by loading new data or updating.
 
+Estimated time: 20 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:arWzMjy5-y8)
+
 ### Objectives
 
 * Learn how to create an OCI Data Flow App
 * Learn how to create OCI Data Flow from OCI Data Integration
 * Learn how to schedule to automate OCI Data Flow Apps
 
-## Task 1: Create an OCI Data Flow App
+## Task 1: Create an OCI Data Flow app
 
 You have several choices on how to create applications and languages. You can choose something that makes sense for your environment. First, we are going to take a look at the OCI Data Flow and create an application to read through files in the object storage or data lake.
 
@@ -110,7 +116,7 @@ After Saving the dataflow, click on Validate, and the Snapshot should show 0s fo
 
 ![Create Data Flow](./images/dataflow6.png " ")
 
-## Task 2: Create an Application for Automation
+## Task 2: Create an application for automation
 
 Now you are going to navigate back to the data integration workspace, and click on Application. Click on create application.
 
@@ -120,7 +126,7 @@ Click on Save and Close. It is just a shell of an application where you can now 
 
 ![Create Application](./images/create_app.png " ")
 
-## Task 3: Create and Schedule OCI Data Flow Apps for Automation
+## Task 3: Create and schedule OCI Data Flow apps for automation
 
 Now you are going to navigate back to the project. Click on Task under Details and click on Create Task and choose Integration Task. This task is going to be included in the application.
 
@@ -142,7 +148,7 @@ After the task has been added you will see run task or schedule, and you can nav
 
 ![Run App](./images/run_app.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

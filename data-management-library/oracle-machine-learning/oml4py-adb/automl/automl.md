@@ -44,7 +44,7 @@ In this lab, you will learn how to:
 
 > **Note:** Due to the nature of Automated Machine Learning, it is expected that some of the paragraphs will take several minutes to complete.
 
-## Task 1: Import libraries supporting Oracle Machine Learning for Python (OML4Py)
+## Task 1: Import libraries supporting OML4Py and AutoML
 Follow the flow of the notebook by scrolling to view and run each paragraph of this lab.
 
 Scroll down to the beginning of Task 1.
