@@ -167,7 +167,7 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
 18. Click the **Done** button in the bottom right of the screen.
 
-19. From the CUSTOMERSALES location, drag the three files with customer_sales **customer_sales** folders over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we only have a single file, but we do want to load this into a single table. Click **OK**.
+19. From the CUSTOMERSALES location, drag the three folders with customer_sales as part of their name over to the right hand pane.
 
 ![CustomerSales load task](./images/customersales3.png " ")
 
@@ -175,7 +175,7 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
     ![Run the data load job](./images/customersales4.png " ")
 
-This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
+This completes the data load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake. We will be working with these tables in later labs.
 
 You may now [proceed to the next lab](#next).
 

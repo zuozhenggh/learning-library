@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In planning the Oracle Lake House, we know that there are several components that are needed to support the data lake and continue to maintain it. This first lab will allow us to combine these steps together for consistent polices, users and configurations for the Oracle Cloud Infrastructure tools that we will be using throughout this workshop.
+In planning the Oracle Lakehouse, we know that there are several components that are needed to support the data lake and continue to maintain it. This first lab will allow us to combine these steps together for consistent polices, users and configurations for the Oracle Cloud Infrastructure tools that we will be using throughout this workshop.
 
 Estimated Lab Time: 15 minutes
 
@@ -23,12 +23,13 @@ Estimated Time:20 minutes
 In this lab, we will learn more about the Autonomous Database's built-in Data Load tool - see the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/data-load.html#GUID-E810061A-42B3-485F-92B8-3B872D790D85) for more information.
 
 ## Task 1: Configure Groups, Users and Polices for the Lake House
+## Task 1: Configure Groups, Users and Polices for the Lakehouse
 
-It is important to create separate groups and policies to keep the data lake and catalog secure. As data assets are discovered and use, the proper authorizations can be granted to users based on these groups. Having access to data in the lake is critical for business processes and you will see how to grant this access and use this as a security plan for a data lake. In this step, you will set up users and policies for using the OCI Data Catalog, OCI Data Lake and ADW.
+It is important to create separate groups and policies to keep the data lake and catalog secure. As data assets are discovered and use, the proper authorizations can be granted to users based on these groups. Having access to the data lake is critical for business processes and you will see how to grant this access and use this as a security plan for a data lake. In this step, you will set up users and policies for using the OCI Data Catalog, OCI Data Lake and ADW.
 
-First we are going to create an compartment. This allows for separation as well as grouping all of the items together in this area. Sometimes you may have been already assigned a compartment to use but it is a quick step and throughout the lab you will want to make sure that you are always in this compartment.
+First we are going to create an compartment. This allows for separation as well as grouping all of the items together in this area. If you are working in one of your tenancies, you may have been already assigned a compartment to use but it is a quick step and throughout the lab you will want to make sure that you are always in this compartment.
 
-1. Once you are logged in you are at the cloud services dashboard. Click the navigation menu in the upper left to show top level navigation choices.
+1. Once you are logged in, you are at the cloud services dashboard. Click the navigation menu in the upper left to show top level navigation choices.
 
 ![Oracle home page.](./images/Picture100-36.png " ")
 
@@ -42,15 +43,7 @@ First we are going to create an compartment. This allows for separation as well 
 
 You are going to be using this compartment for the rest of the lab. When you see the compartment listed on the left menu, just verify that it says lakehouse1. This will be important for the databases and the data tasks.
 
-<<<<<<< HEAD
-![Click on Create Groups](images/newgroup.png " ")
-
-![Create Groups = Name group dataflow-users and add Description](images/new_groups1.png " ")
-
-![Create Groups - Next group dataflow-admin](images/newgroup2.png " ")
-
-=======
-4. Select from the side menu Groups. There are going to be a few groups that are needed to administer and use the data catalog, integrations and flows. For the interest of this lab we are just going to add your user to each of these groups but in reality, administrators will only have the privileges to manage these areas of the data lake and other accounts will be added as users to have access to the data.
+4. Select Groups from the left side menu. There are going to be a few groups that are needed to administer and use the data catalog, integrations and flows. For the interest of this lab, we are just going to add your user to each of these groups but in reality, administrators will only have the privileges to manage these areas of the data lake and other accounts will be added as users to have access to the data.
 
 ![Click on Create Groups](./images/newgroup.png " ")
 
@@ -58,8 +51,7 @@ You are going to be using this compartment for the rest of the lab. When you see
 
 ![Create Groups - Next group dataflow-admin](./images/newgroup2.png " ")
 
->>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
-Not all of these groups are needed in this lab, however, it is important to provide separation of duties for manaing the lakehouse and these roles with policies will allow for that.
+Not all of these groups are needed in this lab, however, it is important to provide separation of duties for managing the lakehouse and these roles with policies will allow for that.
 Additional groups to create:
 - data-catalog-admin
 - data-catalog-users
@@ -67,48 +59,32 @@ Additional groups to create:
 - data-flow-users
 - data-integration-admin
 - data-integration-users
-<<<<<<< HEAD
-- data-lakehouse_admin
-=======
 - data-lakehouse-admin
 
 After these groups are added. Click on a group and click on Add User. You will add your account you signed into the cloud with to each of the groups for the purpose of the lab. Ideally there will be the administrator accounts that would only be in the admin groups and those wanting to execute and view the values will be the user accounts in the user groups.
->>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 
 To add a user, click on a group and below the group details, click on Add User.
 
 ![Create Groups - Next group dataflow-admin](./images/add_user_group.png " ")
 
-5. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on the lab we will have to create a couple more policies based on the workspace for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
+5. After creating the groups and adding your user name to each of the groups we need to create the policies that will allow for the access to object storage and creation of the data assets. Take note of the policies and the areas they are allowed to access and how they are divided by what the user and administrator can do. Later on in the lab we will have to create a couple more policies based on the workspace ID for data integration, but having all of the policies and groups in this step of the lab combines the authorization part for the data lake and brings together what is needed to consider the security around the data lake process.
 
-Select Policies on the side menu and click on the button Create Policy.
+Select Policies on the left side menu and click on the button Create Policy.
  
-<<<<<<< HEAD
-![Create Policies](images/create_policy.png " ")
-=======
 ![Create Policies](./images/create_policy.png " ")
->>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 
 Name each policy for to match the group so they are easy to recognize what they are used for. 
-- Name this first on DataFlowUsers (Notice no spaces, underscores or dashes are allowed here). 
-- Add the description.
-- Select under Policy use cases Data Flow. This will bring up common policy templates for this area in OCI. 
-- Select Let Data Flow users manage their own Applications and Runs. 
+- Name this first on DataFlowUsers (Notice no spaces, underscores or dashes are allowed here)
+- Add the description
+- Select under Policy use cases Data Flow. This will bring up common policy templates for this area in OCI
+- Select Let Data Flow users manage their own Applications and Runs
 - Add the group dataflow-users and the location is the compartment lakehouse1
 
-<<<<<<< HEAD
-![Create Policies](images/create_polic1.png " ")
-
-Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1
-
-![Create Policies](images/create_policy2.png " ")
-=======
 ![Create Policies](./images/create_policy1.png " ")
 
-Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1
+Next create the policy for dataflow-admins. These are the same steps as above, selecting Let Data Flow admins manage all Applications and Runs. Make sure to select the group dataflow-admin and location of lakehouse1.
 
 ![Create Policies](./images/create_policy2.png " ")
->>>>>>> f9f50a0ece7c6b7b0ed3e8a8af2333b370aefd4e
 
 Policies can be added based on the common templates or added by manually adding the policy. These are the additional policies that are needed for the different groups. Notice when you use manual editor, the group disappears because these will be part of the policy statement being added. You can copy the following commands and paste into the manual edit. We are going to name this policy DataLakehousePolicy to cover the rest of the policies needed for the groups.
 
@@ -138,14 +114,14 @@ From the Home Menu click on Storage and then click on Buckets.
 
 Enter a Bucket Name, dataflow-warehouse and use the rest of the defaults and click Create.
 
-![Create Storage Bucket](./images/object_storage2.png " ")
+![Create Storage Bucket](./images/create_bucket.png " ")
 
-Next Bucket, click on Create Bucket, Bucket Name, dataflow-logs and use the rest of the defaults and click Create.
-And one more Create Bucket, Bucket Name, moviestream and again use the defaults and click Create.
+Next bucket, click on Create Bucket, Bucket Name, dataflow-logs and use the rest of the defaults and click Create.
+And one more Create Bucket, Bucket Name, moviestream-bucket and again use the defaults and click Create.
 
-![Create Storage Bucket](./images/object_storage2.png " ")
+![Create Storage Bucket](./images/create_bucket2.png " ")
 
-The dataflow buckets are for the processing of the data and logs and the moviestream data will allow you keep copies of the data for loading and processing.
+The dataflow buckets are for the processing of the data and logs and the moviestream-bucket data will allow you keep copies of the data for loading and processing.
 
 
 ## Task 3: Create ADW
