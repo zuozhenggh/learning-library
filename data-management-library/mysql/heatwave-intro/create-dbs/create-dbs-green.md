@@ -142,7 +142,7 @@ In this lab, you will be guided through the following tasks:
 
     ```
     <copy> 
-    https://objectstorage.uk-london-1.oraclecloud.com/p/-y7ZikQ0A7iRE1PFU3Fijt7oayomVEvUx6W4os4EVhCsru56hKlSWsNyy1Y-iYFg/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/IeENlkro2TdsgKZPh2KyLNUnKOh45sWFvIr5jz2djuFfC6ExviKq7cwITTLOUhDP/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
     </copy>
     ```
 
