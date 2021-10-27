@@ -29,9 +29,18 @@ Oracle Integration - B2B
 ### Objectives
 
 In this lab, you will create a basic integration flow to process the EDI document and send it to the Trading partner.
+In this lab, you will:
+* Create a App Driven Integration
+* Configure REST adapter as a trigger
+* Configure EDI Translate Action
+* Add Switch action which includes two paths for success and failure.
+* Define mappings
+* Activate the integration
+* Monitor Business Messages, Backend Integration and Trading partners.
+
 
 ### Prerequisites
-> **Note** : This Lab assumes you have already completed the sections from Lab1-Lab5
+> **Note** : This Lab assumes you have completed the sections from Lab1-Lab5
 
 ## Task 1: Create an Integration
 
@@ -193,6 +202,16 @@ Check for errors, save, and activate the integration flow.
 
 This feature would be very much useful when you have more than one trading partner. You just define the trading partner on the user interface, integrations will be created automatically and files will be processed automatically with the existing Backend Integration.
 
+## Task 10: Monitoring
+
+1. Navigate to Monitoring->B2B Tracking page. You should see Business Messages under the Business Messages Tab for your specific Trading Partner.
+
+		Tip:  Select the Filter to search based on Trading Partner Name
+
+2. Click on the **View** icon and inspect Message Logs, Payload
+
+3. Navigate to Monitoring->Integrations -->Tracking page. You should see the backend integration and trading partner related integrations.
+
 You may now [proceed to the next lab](#next).
 
 ## Learn More
@@ -200,8 +219,7 @@ You may now [proceed to the next lab](#next).
 * [Oracle B2B Documentation](https://docs.oracle.com/en/cloud/paas/integration-cloud/btob.html)
 * [What's New](https://docs.oracle.com/en/cloud/paas/integration-cloud/whats-new/index.html)
 
+
 ## Acknowledgements
-* **Author** - <Subhani, Director, OIC Product Management>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Subhani, Group, Month Year>
-* **Workshop (or Lab) Expiry Date** - <Month Year> -- optional, use this when you are using a Pre-Authorized Request (PAR) URL to an object in Oracle Object Store.
+* **Author** - Subhani Italapuram, Oracle Integration Product Management
+* **Contributors** -  Kishore Katta, Oracle Integration Product Management
