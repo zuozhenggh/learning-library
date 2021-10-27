@@ -169,13 +169,12 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
 18. Click the **Done** button in the bottom right of the screen.
 
-19. From the CUSTOMERSALES location, drag the three folders with customer_sales as part of their name over to the right hand pane.
+19. From the CUSTOMERSALES location, drag all 4 of the folders over to the right hand pane.
 
     ![CustomerSales load task](./images/customersales3.png " ")
 
 20. Now click the Play button to run the data load job.
 
-    ![Run the data load job](./images/customersales4.png " ")
 
 This completes the data load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake. We will be working with these tables in later labs.
 

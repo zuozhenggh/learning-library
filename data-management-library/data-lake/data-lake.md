@@ -96,9 +96,13 @@ By default, at the bottom of the designer,  you want to enter the name for the N
 
 Then click Create. This way you can save as you go along to in order not to lose any changes.
 
-From the toolbar, there are sources, targets, filters, joins and other options. You are going to drag the source icon over to the design area. Then start to fill out the details for the source by clicking on Select, and then choose the ADW asset that was created in the first lab. Select the Default Connection, and in Schema, ADMIN. For the Entiy choose the MOVIE_GENRE table. 
+From the toolbar, there are sources, targets, filters, joins and other options. You are going to drag the source icon over to the design area. Then start to fill out the details for the source by clicking on Select, and then choose the ADW asset that was created in the first lab. Select the Default Connection, and in Schema, ADMIN. For the Entity choose the MOVIE_GENRE table. 
 
 ![Create Data Flow](./images/dataflow2.png " ")
+
+Next you want to filter the data in order not to pull in the entire data set. If this was streaming it or large files this would be an important step.
+
+![Create Data Flow](./images/dataflowfilter.png " ")
 
 Now you are going to drag the Target icon over to the designer area. Target is going to be defined as the Object Storage that was created for the dataflow-warehouse. You can insert, overwrite or merge data with the existing data, and even create a new file or table here. This lab, you are just going to insert data, and choose one file which will overwrite the file each time.
 
@@ -109,9 +113,6 @@ Then click on the Data Entity and in the next menu type the name of the folder *
 ![Create Data Flow](./images/dataflow5.png " ")
 
 Save at this step, since you now have your source and target. Now you need to connect the source to the target. Drag the icon onto the designer area between the source and the target.
-
-![Create Data Flow](./images/dataflow4.png " ")
-
 After Saving the dataflow, click on Validate, and the Snapshot should show 0s for Errors and Warnings.
 
 ![Create Data Flow](./images/dataflow6.png " ")
