@@ -164,14 +164,14 @@ In this task, you will create four-page items:
 
 
 1. Navigate to the **Gallery Menu**.
-2. Drag a **Static Content** region and drop it to the Dialog Footer.
+2. Drag a **Static Content** region and drop it to the **Dialog Footer**.
      ![](./images/create-sc.png " ")  
 
 3. In the Property Editor, enter the following:
     - For Title - enter **Buttons Bar**
     - For Template - select **Buttons Container**
-4. In the Rendering tree (left pane), navigate to **Buttons Bar** region
-5. Right-click the **Buttons Bar** region and click  **Create Page Item**
+4. In the Rendering tree (left pane), navigate to **Buttons Bar** region.
+5. Right-click the **Buttons Bar** region and click  **Create Page Item**.
      ![](./images/create-page-item2.png " ") 
 6. Create four items as follows. In the Property Editor, do the following:
 
@@ -249,7 +249,7 @@ In this Task, you will call the *manage\_orders.add_product* procedure that add 
 
 1. In the Rendering tree (left pane), navigate to **Processing** tab.  
      ![](./images/create-process.png " ")    
-2. Right click Processing and click **Create Process**.
+2. Right click **Processing** and click **Create Process**.
      ![](./images/create-process2.png " ")   
 3. In the Property Editor, enter the following:
     - For Name - enter **Add product**
@@ -275,7 +275,7 @@ In this Task, you will call the *manage\_orders.add_product* procedure that add 
 In this Task, you will call the *manage\_orders.remove\_product* and *manage\_orders.add\_product* procedures to remove the product from the shopping cart and add it again with the updated quantity.
 
 1. In the **Processing** tab.    
-2. Right click Processing and click **Create Process**.
+2. Right click **Processing** and click **Create Process**.
 3. In the Property Editor, enter the following:
     - For Name - enter **Edit product**
     - For Type - select **Execute Code**
@@ -301,7 +301,7 @@ In this Task, you will call the *manage\_orders.remove\_product* and *manage\_or
 In this Task, you will call the *manage\_orders.remove\_product* to remove the product from the shopping cart.
 
 1. In the **Processing** tab.    
-2. Right click Processing and click **Create Process**.
+2. Right click **Processing** and click **Create Process**.
      ![](./images/create-process-cart.png " ")  
 3. In the Property Editor, enter the following:
     - For Name - enter **Delete product**
@@ -326,7 +326,7 @@ In this Task, you will call the *manage\_orders.remove\_product* to remove the p
 In this task, you will call the *manage\_orders.get\_quantity* to get the total of products in the shopping cart.
 
 1. In the **Processing** tab.    
-2. Right click Processing and click  **Create Process**.
+2. Right click **Processing** and click  **Create Process**.
      ![](./images/create-process-cart.png " ")  
 3. In the Property Editor, enter the following:
     - For Name - enter **Calculate Shopping Cart Items**
@@ -345,7 +345,7 @@ In this task, you will call the *manage\_orders.get\_quantity* to get the total 
 After the customer has taken action (add/edit/delete) about the product, the modal page will close and continue the shopping process.
 
 1. In the **Processing** tab.    
-2. Right click Processing and click **Create Process**.
+2. Right click **Processing** and click **Create Process**.
      ![](./images/create-process-cart.png " ")  
 3. In the Property Editor, enter the following:
     - Under Identification section:
