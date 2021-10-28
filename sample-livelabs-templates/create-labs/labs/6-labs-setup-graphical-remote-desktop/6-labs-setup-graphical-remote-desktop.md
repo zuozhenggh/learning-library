@@ -86,11 +86,15 @@ Perform the following to optimize the *Terminal* utility
 
     ![](./images/novnc-terminal-1.png " ")
 
-2. Select the *Colors* tab, uncheck *Use colors from system theme*, Select *White on black* from *Built-in schemes* drop-down, and click on *Close*
+2. Select the *Colors* tab, uncheck *Use colors from system theme*, Select *White on black* from *Built-in schemes* drop-down
 
     ![](./images/novnc-terminal-2.png " ")
 
-3. Review *$HOME/.bash_profile* and move any custom entry of type alias, script call, or function to  *$HOME/.bashrc*. If these are referencing environment variables set in the file, then copy those over to *$HOME/.bashrc* as well.
+3. Select the *Command* tab, check *Run command as a login shell*, and click *close*
+
+    ![](./images/novnc-terminal-3.png " ")
+
+4. Review *$HOME/.bash_profile* and move any custom entry of type alias, script call, or function to  *$HOME/.bashrc*. If these are referencing environment variables set in the file, then copy those over to *$HOME/.bashrc* as well.
 
     *Notes:* Do not remote the following default entry from *$HOME/.bash_profile*
 

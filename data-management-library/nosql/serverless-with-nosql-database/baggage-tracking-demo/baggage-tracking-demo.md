@@ -1,10 +1,14 @@
-# Baggage tracking demo
+# Baggage Tracking Demo
 
 ## Introduction
 
 This lab walks you through a live baggage tracking demo created by the Oracle NoSQL development team.
 
-Estimated Time: 7 minutes
+_Estimated Lab Time:_ 7 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:S91oa69whXA)
 
 
 ### Serverless Logic Tier

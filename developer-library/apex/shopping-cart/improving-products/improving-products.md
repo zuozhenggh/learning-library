@@ -7,22 +7,26 @@ In this lab, you will learn how to improve the Products page by adding new facet
 Once you have finished the workshop and updated all the products as described in the steps, your page will look like the following image:
     ![](./images/products-page.png " ")
 
-*Please note that customer can quickly identify the products that already has added to the shopping cart.*
+*Please note that customer can quickly identify the products that already have been added to the shopping cart.*
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:N3Kd2XuudG4)
 
 ### Objectives
 In this lab, you will:
-- Improve both Faceted Search and Cards region. 
-- Add Dynamic Actions to the page.
+- Improve both Faceted Search and Cards region
+- Add Dynamic Actions to the page
 
-## Task 1: Adding New Facets
-In the Runtime environment navigate to Products, this is the page where your customers can explore the products and select what they wish to buy.
+## Task 1: Add New Facets
+In the Runtime environment, navigate to **Products**. This is the page where your customers can explore the products and select what they wish to buy.
 As you can see, it's hard to find the products and it would be beneficial to see additional details related to the products.
 
 ![](./images/products-page-org.png " ")
 
-1. From the runtime application, navigate to the Products page in Page Designer.
+1. From the runtime application, navigate to the **Products** page in **Page Designer**.
 
     Given that you run this app from the APEX App Builder, you will find the Developer Toolbar at the bottom of the screen.
     *{Note: End users who log directly into the app will not see this toolbar.}*
@@ -43,8 +47,8 @@ As you can see, it's hard to find the products and it would be beneficial to see
     - CLOTHING
     - COLOR
 
-2. Within Page Designer, in the Rendering tree (left pane), navigate to Facets under **Search** Faceted Search.
-3. Right-click Facets and click **Create Facet**.
+2. Within Page Designer, in the Rendering tree (left pane), navigate to **Facets** under **Search**.
+3. Right-click **Facets** and click **Create Facet**.
 
     ![](./images/create-facet.png " ")
 
@@ -58,7 +62,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
 
     ![](./images/department-facet.png " ")
     
-5. Create the second facet. Right-click Facets and click **Create Facet**.
+5. Create the second facet. Right-click **Facets** and click **Create Facet**.
 
     In the Property Editor, enter the following:
     - Name - enter **P1\_CLOTHING\_ID**
@@ -70,7 +74,7 @@ As you can see, it's hard to find the products and it would be beneficial to see
 
     ![](./images/clothing-facet.png " ")
 
-6. Create the third facet. Right-click Facets and click **Create Facet**.
+6. Create the third facet. Right-click **Facets** and click **Create Facet**.
 
     In the Property Editor, enter the following:
     - Name - enter **P1\_COLOR\_ID**
@@ -85,16 +89,16 @@ As you can see, it's hard to find the products and it would be beneficial to see
 ## Task 2: Reorder Facets
 Unit price is not a common search criteria, so you want to put this facet at the bottom.
 
-1. In the Rendering tree (left pane), under Search, within Facets, click and hold **P1\_UNIT\_PRICE** and drag it down until it is under **P1\_COLOR\_ID** then release the mouse.
+1. In the Rendering tree (left pane), under Search, within Facets, click and hold **P1\_UNIT\_PRICE** and drag it down until it is under **P1\_COLOR\_ID**, then release the mouse.
 
     ![](./images/reorder-facet.png " ")
 
 ## Task 3: Enhance the Faceted Search 
 
 1. In the Rendering tree (left pane), navigate to **Search**.
-2. In the Property Editor (right pane), click Attributes and do the following:
+2. In the Property Editor (right pane), click **Attributes** and do the following:
     -   For Total Row Count Label - enter **Total Products**
-    -   For Show Charts - select **No**.
+    -   For Show Charts - select **No**
 
     ![](./images/enhance-facet.png " ")    
 
@@ -103,53 +107,53 @@ Unit price is not a common search criteria, so you want to put this facet at the
 1.  In the Rendering tree (left pane), navigate to **Search Results** and in the Property Editor (right pane), do the following:
     - For SQL Query - enter the following SQL code:
 
-    ```
-    <copy>
-    SELECT "PRODUCT_ID",
-        "PRODUCT_NAME",
-        "UNIT_PRICE",
-        "PRODUCT_DETAILS",
-        "PRODUCT_IMAGE",
-        "IMAGE_MIME_TYPE",
-        "IMAGE_FILENAME",
-        "IMAGE_CHARSET",
-        "IMAGE_LAST_UPDATED",
-        "COLOR_ID",
-        (
-                SELECT l1."COLOR"
-                FROM   "COLOR_LOOKUP" l1
-                WHERE  l1."COLOR_ID" = m."COLOR_ID") "COLOR_ID_L$1",
-        "DEPARTMENT_ID",
-        (
-                SELECT l2."DEPARTMENT"
-                FROM   "DEPARTMENT_LOOKUP" l2
-                WHERE  l2."DEPARTMENT_ID" = m."DEPARTMENT_ID") "DEPARTMENT_ID_L$2",
-        "CLOTHING_ID",
-        (
-                SELECT l3."CLOTHING"
-                FROM   "CLOTHING_LOOKUP" l3
-                WHERE  l3."CLOTHING_ID" = m."CLOTHING_ID") "CLOTHING_ID_L$3",
-        b.brand
-    FROM   "PRODUCTS" m,
-        json_table (m.product_details, '$' columns ( brand varchar2(4000) path '$.brand') ) b
-    </copy>
-    ```
+        ```
+        <copy>
+        SELECT "PRODUCT_ID",
+            "PRODUCT_NAME",
+            "UNIT_PRICE",
+            "PRODUCT_DETAILS",
+            "PRODUCT_IMAGE",
+            "IMAGE_MIME_TYPE",
+            "IMAGE_FILENAME",
+            "IMAGE_CHARSET",
+            "IMAGE_LAST_UPDATED",
+            "COLOR_ID",
+            (
+                    SELECT l1."COLOR"
+                    FROM   "COLOR_LOOKUP" l1
+                    WHERE  l1."COLOR_ID" = m."COLOR_ID") "COLOR_ID_L$1",
+            "DEPARTMENT_ID",
+            (
+                    SELECT l2."DEPARTMENT"
+                    FROM   "DEPARTMENT_LOOKUP" l2
+                    WHERE  l2."DEPARTMENT_ID" = m."DEPARTMENT_ID") "DEPARTMENT_ID_L$2",
+            "CLOTHING_ID",
+            (
+                    SELECT l3."CLOTHING"
+                    FROM   "CLOTHING_LOOKUP" l3
+                    WHERE  l3."CLOTHING_ID" = m."CLOTHING_ID") "CLOTHING_ID_L$3",
+            b.brand
+        FROM   "PRODUCTS" m,
+            json_table (m.product_details, '$' columns ( brand varchar2(4000) path '$.brand') ) b
+        </copy>
+        ```
     - Under Appearance section:
-        - Click Template Options. For Style - select **Style A**
+        - Click **Template Options**. For Style - select **Style A**
     ![](./images/template-options.png " ")  
         - Click **Ok**
         
-2. Click Attributes and apply the following changes:
+2. Click **Attributes** and apply the following changes:
     ![](./images/attributes.png " ")
     - Under Apperance section:
-        - For Layout - select **Grid**.
-        - For Grid Columns - select **Auto**.
+        - For Layout - select **Grid**
+        - For Grid Columns - select **Auto**
 
     - Under Title section:
-        -   For Column - select **PRODUCT_NAME**.      
+        -   For Column - select **PRODUCT_NAME**
 
     - Under Subtitle section:
-        - Set Advanced Formatting to **On**.
+        - Set Advanced Formatting to **On**
         - For HTML Expression - enter the following:
 
             ```
@@ -170,7 +174,7 @@ Unit price is not a common search criteria, so you want to put this facet at the
         -   For Sizing - select **Fit**
 
     - Under Card section:
-        -   For Primary Key Column 1 - select **PRODUCT_ID**.          
+        -   For Primary Key Column 1 - select **PRODUCT_ID**
 
         ![](./images/cards.png " ")        
 
@@ -197,15 +201,15 @@ Customers need a way to shop the products, so in this task you will add an actio
 
     ![](./images/full-card.png " ")
 
-## Task 6: Adding Dynamic Actions
+## Task 6: Add Dynamic Actions
 In this task, you will create two dynamic actions:
-- To show a success message when a product is added/edited/removed from the shopping cart.
-- To update the badge and icon shown in the navigation bar after the customer has added/edited/removed a product from the shopping cart.
+- To show a success message when a product is added/edited/removed from the shopping cart
+- To update the badge and icon shown in the navigation bar after the customer has added/edited/removed a product from the shopping cart
 
 1. Navigate to **Dynamic Actions** tab (left pane).
      ![](./images/create-da.png " ")  
 
-2. Right-Click Dialog Closed and click **Create Dynamic Action**.
+2. Right-click **Dialog Closed** and click **Create Dynamic Action**.
      ![](./images/create-da2.png " ")  
 3. In the Property Editor, enter the following: 
     - Under Identification section:
@@ -237,9 +241,9 @@ In this task, you will create two dynamic actions:
             </copy>
             ```
 
-8. Create a second dynamic action. Right-Click Dialog Closed and click **Create Dynamic Action**.  
+5. Create a second dynamic action. Right-click **Dialog Closed** and click **Create Dynamic Action**.  
      ![](./images/create-da4.png " ") 
-9. In the Property Editor, enter the following:    
+6. In the Property Editor, enter the following:    
     - Under Identification section: 
         - For Name - enter **Update Shopping Cart Header**
     - Under When section:        
@@ -256,7 +260,7 @@ In this task, you will create two dynamic actions:
             </copy>
             ```
 
-10. Navigate to **Refresh** Action.
+7. Navigate to **Refresh** Action.
     - Under Identification section:
         - For Action - select **Execute JavaScript Code**
     - Under Settings section:        
@@ -271,11 +275,11 @@ In this task, you will create two dynamic actions:
             apex.jQuery(".js-shopping-cart-item .t-Icon").removeClass('fa-cart-empty').addClass('fa-cart-full');
             </copy>
             ```
-11. Create an opposite action. In the Dynamic Actions tab (left pane), navigate to the newly dynamic action.
-12. Right-Click **Execute JavaScript Code** and click **Create Opposite Action**.
+8. Create an opposite action. In the Dynamic Actions tab (left pane), navigate to the newly dynamic action.
+9. Right-click **Execute JavaScript Code** and click **Create Opposite Action**.
      ![](./images/create-opposite-action.png " ") 
 
-13. Navigate to **Execute JavaScript Code** Action.
+10. Navigate to **Execute JavaScript Code** Action.
     - Under Identification section:
         - For Action - select **Execute JavaScript Code**
     - Under Settings section:        
@@ -290,7 +294,7 @@ In this task, you will create two dynamic actions:
             apex.jQuery(".js-shopping-cart-item .t-Icon").removeClass('fa-cart-full').addClass('fa-cart-empty');
             </copy>
             ```
-14. Click **Save an Run Page**.
+11. Click **Save and Run Page**.
 
 ## Task 7: Run Products Page 
 
@@ -300,20 +304,20 @@ When running products page, you will notice that image of the products is missin
 To upload images please follow these steps:
 
 1. [Download images](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nDA-UBc8y27dbtyRu0DVR0u6CRUI1jRXTAP17J_Cd4QqUaTCxjdG4puUa4aF1qGm/n/c4u04/b/developer-library/o/clothing-images.zip) for your application.
-2. Run ACME Shop App
-3. Click navigation menu, click **Administration** and then click **Manage Products**.
+2. Run ACME Shop App.
+3. Click navigation menu, click **Administration**, and then click **Manage Products**.
 4. Edit each of the products by clicking the pencil and upload the image.
 
    ![](./images/upload-image.png " ")
 
 
-Once you have upload images of the products, your page will look like the following image:
+Once you have uploaded images of the products, your page will look like the following image:
     ![](./images/products-image.png " ")
 
-You now know how to enhance faceted search and cards region.
+You now know how to enhance faceted search and cards region. You may now **proceed to the next lab**. 
 
 ## **Acknowledgments**
 
 - **Author** - Monica Godoy, Principal Product Manager
 - **Contributors** - Shakeeb Rahman, Architect
-- **Last Updated By/Date** - Monica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021
