@@ -1,6 +1,6 @@
 # Introduction
 
-This workshop aims at providing hands-on lab in creating a complete solution platform to filter, correlate, and process events in real-time using GoldenGate for Big data and GoldenGate stream Analytics.  
+This workshop is designed to provide hands-on lab in creating a complete solution platform to filter, correlate, and process events in real-time using GoldenGate for Big data and GoldenGate stream Analytics.  
 
 *Estimated Time*: 3 hours
 
