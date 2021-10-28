@@ -243,5 +243,5 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - Subhani Italapuram, Oracle Integration Product Management
+* **Author** - Subhani Italapuram, Technical Director, Oracle Integration Product Management
 * **Contributors** -  Kishore Katta, Oracle Integration Product Management
