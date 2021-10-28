@@ -250,7 +250,7 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
     </copy>
     ```
 
-    This bucket contains only one object, **`potential_churners`**.
+    The **`moviestream_sandbox`** bucket contains a **`potential_churners`** data set and potentially other data sets created by data scientists. This bucket is used by multiple workshops that capture the results of experiments. Therefore, your result might not precisely match the following screen capture.
 
     ![](./images/query-bucket.png " ")
 
