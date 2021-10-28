@@ -26,12 +26,12 @@ Estimated Lab Time: 60 minutes
 ### Objectives
 
 In this lab, you will create a basic integration flow to process the EDI document and send it to the Trading partner.
-* Create an App Driven Integration flow receive and XML document
+* Create an App Driven Integration flow to receive an XML document
 * Configure EDI Translate Action to convert XML to EDI X12 format
 * Define relevant mappings to send an Outbound Message
 * Monitor Business Messages, Backend Integration and Trading partners.
 * Verify Dynamic routing for multiple trading partners
-* Test success and failure paths
+* Verify success and failure paths
 
 
 ### Prerequisites
