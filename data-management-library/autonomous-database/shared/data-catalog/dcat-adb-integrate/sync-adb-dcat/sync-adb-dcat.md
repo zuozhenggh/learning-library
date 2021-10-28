@@ -316,7 +316,7 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
 
 ## Task 4: Display Data Assets, Folders, and Entities     
 
-1. Display all of data assets that are available in the connected Data Catalog instance. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
+1. Display the available data assets in the connected Data Catalog instance. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar.
 
     ```
     <copy>
