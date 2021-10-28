@@ -11,7 +11,7 @@ Estimated Lab Time: 5 minutes
 In this lab, you will:
 * Enable File Server
 * Create directory and configure permissions
-* Connect FTP to File Server
+* Connect an FTP Client to Oracle Integration File Server
 
 ### Prerequisites
 
@@ -129,6 +129,6 @@ You may now [proceed to the next lab](#next).
 * [File Server](https://docs.oracle.com/en/cloud/paas/integration-cloud/file-server/file-server-overview.html)
 
 ## Acknowledgements
-* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Kishore Katta, 10/21>
+* **Author** - Kishore Katta, Technical Director, Oracle Integration Product Management
+* **Contributors** -  Subhani Italapuram, Oracle Integration Product Management
+* **Last Updated By/Date** -

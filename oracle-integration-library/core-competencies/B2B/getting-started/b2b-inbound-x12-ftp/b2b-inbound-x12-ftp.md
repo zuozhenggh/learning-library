@@ -26,7 +26,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-> **Note** : This Lab assumes you have already completed the section  "5: Working with Trading Partner Manager"
+> **Note** : This Lab assumes you have already completed [Defining Host Profile](../workshops/freetier/?lab=b2b-trading-partner-manager#Task1:DefineHostProfileandIdentifiers) and [Create Trading Partners] (../workshops/freetier/?lab=b2b-trading-partner-manager#Task2:CreateTradingPartners)
 
 **Create B2B Document**
 
@@ -61,13 +61,13 @@ In this lab, you will:
 |     Name                                    |     FTP                                 |
 |---------------------------------------------|-----------------------------------------|
 |     Type                                    |     FTP                                 |
-|     Trading   partner's connection          |     FTP Connection (FTP File Server)    |
+|     Trading   partner's connection          |     FTP Connection (File Server)    |
 |     Input   Directory                       |     /B2BWorkshop/B2BTPDELLIn            |
 |     Input File                              |     Invoice-%SEQ%.edi     							|
 |     Output   Directory                      |     /B2BWorkshop/B2BTPDELLOut           |
 |     Output   File Name                      |     Out997-%SEQ%.edi      							|
 
-2.	Select Action Menu and **Redeploy**
+2.	Select Action Menu and **Redeploy** if already Deployed
 
 ![](images/inbound-ftp-redeploy.png)
 
@@ -291,6 +291,6 @@ In conclusion, you can use Oracle Integration B2B feature to automatically gener
 * [B2B Tracking](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/b2b-tracking.html)
 
 ## Acknowledgements
-* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Kishore Katta, 10/21>
+* **Author** - Kishore Katta, Technical Director, Oracle Integration Product Management
+* **Contributors** -  Subhani Italapuram, Oracle Integration Product Management
+* **Last Updated By/Date** -

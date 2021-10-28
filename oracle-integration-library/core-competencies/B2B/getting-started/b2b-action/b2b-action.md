@@ -4,7 +4,7 @@
 
 This lab walks you through the concepts of B2B Action and their usage in B2B Inbound and Outbound Message Processing
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -28,7 +28,7 @@ B2B action is available from Action Menu
 
 The following operations are available in the inbound and outbound directions.
 
-Of these five operations, you must use the three highlighted below in your backend integrations. Those are the only ones you need to more fully understand. The remaining operations are used in the B2B transport integrations (that is, B2B integrations for receiving messages and sending messages). Because those integrations are automatically created, you don't need to understand their usage in as much detail.
+Of these five operations, you must use the three **highlighted** below in your backend integrations. Those are the only ones you need to more fully understand. The remaining operations are used in the B2B transport integrations (that is, B2B integrations for receiving messages and sending messages). Because those integrations are automatically created, you don't need to understand their usage in as much detail.
 
 **Inbound**
 
@@ -55,6 +55,6 @@ You may now [proceed to the next lab](#next).
 * [Use B2B Action](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/use-b2b-action-trading-partner-mode.html)
 
 ## Acknowledgements
-* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Kishore Katta, 10/21>
+* **Author** - Kishore Katta, Technical Director, Oracle Integration Product Management
+* **Contributors** -  Subhani Italapuram, Oracle Integration Product Management
+* **Last Updated By/Date** -
