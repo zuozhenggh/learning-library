@@ -3,7 +3,7 @@
 ## About this Workshop                             
 
 This Docker configuration has been used to create the Oracle GoldenGate Veridata image. The README facilitates the configuration and environment set up for DevOps users. This project includes the creation of an Oracle GoldenGate Veridata domain and agent.
-s
+
 ### About Oracle GoldenGate Veridata
 Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
 
