@@ -1,11 +1,11 @@
 #  Use the Load Balancer to Access Services on the Cluster
 
-After you've completed the steps in the previous tutorial, you can access the services through the load balancer.
+After you've completed the steps in the previous workshop, you can access the services through the load balancer.
 
 ## Objective
 Access services like Hue on the cluster by using the load balancer address appended by the port on which the service runs.
 
-This tutorial assumes you have successfully completed **the Create the Load Balancer tutorial**. It may take a few minutes after completing all the steps in the previous lab for the backend sets and listeners to be ready to receive requests.
+This workshop assumes you have successfully completed **the Create the Load Balancer workshop**. It may take a few minutes after completing all the steps in the previous lab for the backend sets and listeners to be ready to receive requests.
 
 Estimated time: 10 minutes
 
