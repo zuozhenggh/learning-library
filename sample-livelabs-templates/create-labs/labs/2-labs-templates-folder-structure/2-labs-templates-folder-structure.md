@@ -43,4 +43,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Last Updated By/Date:** Anuradha Chepuri, October 2021
+* **Last Updated By/Date:** Anuradha Chepuri, November 2021
