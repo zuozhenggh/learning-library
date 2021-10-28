@@ -207,6 +207,33 @@ This feature would be very much useful when you have more than one trading partn
 
 3. Navigate to Monitoring->Integrations->Tracking page. You should see the backend integration and trading partner related integrations.
 
+## Task 10: Exercise(Optional)
+In this exercise,
+you would be creating a new trading partner(US Gas and Electric) and pre-requisites required for integrating with this trading partner.
+1. Create two folders B2BTPUSGEIn and B2BTPUSGEOut under B2BWorkshop folder in the File Server and provide permissions.
+
+Follow the instructions given under [Setup the Environment Lab-Task2-From Step5 to Step9](../workshops/freetier/?lab=setup#Task2:ConfigureFileServer)
+
+2. Create a trading partner and corresponding agreements with the details given below. You can refer [Working with B2B Trading Partner Manager lab-Task2 and Task3](../workshops/freetier/?lab=b2b-trading-partner-manager)
+
+| Identifier Name | Identifier Value |
+| --- | --- |
+| Trading Partner Name | US Gas and Electric |
+|Email|**Use your email id**|
+|EDI Interchange ID Qualifier|SS|
+|EDI Interchange ID|US Gas and Electric|
+|EDI Group ID|02|
+|EDI Group ID Qualifier|US Gas and Electric|
+|Application Partner ID|US Gas and Electric|
+|Input Directory|/B2BWorkshop/B2BTPUSGEIn|
+|Output Directory|/B2BWorkshop/B2BTPUSGEOut|
+|Output File Name|Order<<StudentId>>-%SEQ%.edi (Order-%SEQ%.edi)|
+|Integration name prefix|USGE|
+3. Deploy the transport and Agreements if not deployed.
+4. Download [USGEPO.xml](files/USGEPO.xml?download=1)
+5. Go back to Integrations and test it with the new trading partner as you did for DellInc, [Refer previous task](../workshops/freetier/?lab=b2b-outbound-x12-ftp#Task9:Testtheintegration).
+6. Monitor the trading partner and backend integrations.
+
 You may now [proceed to the next lab](#next).
 
 ## Learn More
