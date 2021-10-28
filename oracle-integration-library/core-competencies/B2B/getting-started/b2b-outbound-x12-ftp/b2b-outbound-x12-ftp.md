@@ -207,9 +207,9 @@ This feature would be very much useful when you have more than one trading partn
 
 3. Navigate to Monitoring->Integrations->Tracking page. You should see the backend integration and trading partner related integrations.
 
-## Task 10: Exercise(Optional)
-In this exercise,
-you would be creating a new trading partner(US Gas and Electric) and pre-requisites required for integrating with this trading partner.
+## Task 11: Exercise(Optional)
+
+In this exercise, you would be creating a new trading partner(US Gas and Electric) and pre-requisites required for integrating with this trading partner.
 1. Create two folders B2BTPUSGEIn and B2BTPUSGEOut under B2BWorkshop folder in the File Server and provide permissions.
 
 Follow the instructions given under [Setup the Environment Lab-Task2-From Step5 to Step9](../workshops/freetier/?lab=setup#Task2:ConfigureFileServer)
@@ -227,7 +227,7 @@ Follow the instructions given under [Setup the Environment Lab-Task2-From Step5 
 |Application Partner ID|US Gas and Electric|
 |Input Directory|/B2BWorkshop/B2BTPUSGEIn|
 |Output Directory|/B2BWorkshop/B2BTPUSGEOut|
-|Output File Name|Order<<StudentId>>-%SEQ%.edi (Order-%SEQ%.edi)|
+|Output File Name|Order-%SEQ%.edi|
 |Integration name prefix|USGE|
 3. Deploy the transport and Agreements if not deployed.
 4. Download [USGEPO.xml](files/USGEPO.xml?download=1)
