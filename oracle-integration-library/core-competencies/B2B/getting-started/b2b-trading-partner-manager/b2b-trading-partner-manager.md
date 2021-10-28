@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to work with Trading Partner Manager
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -22,7 +22,7 @@ This lab assumes you have:
 
 ## Task 1: Define Host Profile and Identifiers
 
-1. Host trading partner concepts are provided. See Host Company (Refer Getting Started with B2B in Oracle Integration).
+1. Host trading partner concepts are provided. See **Host Company** in [Getting Started with B2B in Oracle Integration](../workshops/freetier/?lab=gettingStartedB2B)
 
 *	Define Identifiers in the Host Profile
 *	Create the Host Profile
@@ -64,7 +64,7 @@ Note: If you change the host identifier value used in a deployed agreement, the 
 
 You can create and manage trading partners. A trading partner is the external business entity with which your company interacts to send or receive business documents, such as orders and invoices, in electronic form.
 
-Trading partner concepts are provided. Refer Getting Started with B2B in Oracle Integration Lab.
+Trading partner concepts are provided. Refer [Getting Started with B2B in Oracle Integration](../workshops/freetier/?lab=gettingStartedB2B) Lab.
 
 1.	In the left navigation pane, click B2B > Trading Partners
 2.	Click Create. Enter the trading partner name as “Dell Inc" and an optional description. The Identifier field is automatically populated with the name you enter. The values for both must be unique. And click Create.
@@ -112,7 +112,7 @@ Note: . The AS2 and FTP transport protocols are currently supported
 |------------------------------|------------------------------|
 | Name                         | FTP                          |
 | Type                         | FTP                          |
-| Trading Partner's Connection | FTP Connection (File Server). Refer: Chapter Setup the environment - Task 4  |
+| Trading Partner's Connection | FTP Connection (File Server). Refer [Setup FTP Connection](../workshops/freetier/?lab=setup#Task4:CreatingConnectionwithFileServer)  |
 | Output Directory             | /B2BWorkshop/B2BTPDELLOut    |
 | Output File Name             | Order-%SEQ%.edi              |
 | Integration Name Prefix      | Dell                       	|
@@ -121,11 +121,11 @@ Click Add
 
 **B2B Integrations**
 
-Two integrations are created automatically under-the-covers when a transport is created. These integrations are the heart of the transport for its runtime functioning. The two integrations actually process the runtime messages that pass through the transport.
+Two integrations are created automatically under the covers when a transport is created. These integrations are the heart of the transport for its runtime functioning. The two integrations actually process the runtime messages that pass through the transport.
     <ul><li>B2B integration for receiving messages (Dell FTP Receive)</li>
 		<li>B2B integration for sending messages (Dell FTP Send)</li></ul>
 
-Click the action menu on a row to view available actions. Select Deploy
+Click the action menu on a row to view available actions. Select **Deploy**
 
 ![](images\tpm-tp-Transport-1.png)
 
@@ -133,10 +133,10 @@ Navigate to the Integrations page and note that both Integrations created and St
 
 ![](images\tpm-tp-Transport-2.png)
 
-**Create Agreements**
+## Task 3: Create Agreements
 This section describes about creating and managing agreements. You define one or more agreements for a B2B trading partner with an intent to send or receive only certain types of business documents to or from that trading partner.
 
-Detailed agreement concepts are provided. See Agreements (Refer Getting Started with B2B in Oracle Integration).
+Detailed agreement concepts are provided. See **Agreements** in [Getting Started with B2B in Oracle Integration](../workshops/freetier/?lab=gettingStartedB2B)
 
 In the left navigation pane, click B2B > Trading Partners
 
@@ -171,6 +171,6 @@ You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
-* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Kishore Katta, 10/21>
+* **Author** - Kishore Katta, Technical Director, Oracle Integration Product Management
+* **Contributors** -  Subhani Italapuram, Oracle Integration Product Management
+* **Last Updated By/Date** -

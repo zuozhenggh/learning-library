@@ -4,7 +4,7 @@
 
 This lab walks you through B2B concepts
 
-Estimated Time: -- minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -64,7 +64,7 @@ The picture below shows how an inbound message is processed through two integrat
 
 ![](./images/gettingStarted-InboundProcessing.png)
 
-In the two-integration pattern, the **B2B Integration for Receiving Messages** performs these steps:
+In the two-integration flow patterns, the **B2B Integration for Receiving Messages** performs these steps:
 
     1.	Receive the message from the trading partner and perform various validity checks, for example:
         - Is the message received from a known (i.e. registered) trading partner ? Verify this based on authentication credentials, SSL certificates, HTTP headers, etc.
@@ -84,7 +84,7 @@ Let us walk through a typical B2B message being sent to an external trading part
 The picture below shows how an outbound message is processed through two integrations.
 ![](./images/gettingStarted-OutboundProcessing.png)
 
-In the two-integration pattern, the Backend Integration performs these steps:
+In the two-integration flow patterns, the Backend Integration performs these steps:
 
     1.	Receive an event from a backend application such as ERP for a business document needs to be sent out to an external trading partner.
     2.	Translate the message to an industry-standard B2B format, for example EDI (Electronic Data Interchange) format.
@@ -210,6 +210,6 @@ You may now [proceed to the next lab](#next).
 * [Oracle Integration Blogs](https://blogs.oracle.com/integration/)
 
 ## Acknowledgements
-* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Kishore Katta, 10/21>
+* **Author** - Kishore Katta, Technical Director, Oracle Integration Product Management
+* **Contributors** -  Subhani Italapuram, Oracle Integration Product Management
+* **Last Updated By/Date** -

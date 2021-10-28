@@ -4,7 +4,7 @@
 
 This lab walks you through the process of provisioning an instance of Oracle Integration, assuming you don't already have one available to you.  If you do, you can skip this lab and move on to the next one.
 
-Estimated Lab Time:  5 minutes
+Estimated Lab Time:  10 minutes
 
 ### Objectives
 
@@ -46,7 +46,7 @@ If you just created a new Cloud account following the instructions in Getting St
 | License Type	  |Select - Subscribe to a new Oracle Integration License|
 | Message Packs	  |1|
 | Access Token  | If this field is displayed, you are creating an instance as a non-federated user. Sign in as a federated user and restart creating an instance.|
-| Show Advanced Options	| Custom Endpoint: Configure this tab to use a custom endpoint URL for the instance. The custom hostname you want to map to the instance must already be registered on a DNS provider and its SSL certificate stored as a secret in an OCI Vault. We may ignore this for now. For more information refer how to [Configure the Custom Endpoint](https://docs.oracle.com/en/cloud/paas/integration-cloud/oracle-integration-oci/creating-oracle-integration-instance.html#GUID-930F40E8-5149-4091-9CDA-8E05C8449BA6)|
+| Show Advanced Options	| Custom Endpoint: Configure this tab to use a custom endpoint URL for the instance. The custom hostname you want to map to the instance must already be registered on a DNS provider and its SSL certificate stored as a secret in an OCI Vault. We may ignore this for now. For more information refer How to [Configure the Custom Endpoint](https://docs.oracle.com/en/cloud/paas/integration-cloud/oracle-integration-oci/creating-oracle-integration-instance.html#GUID-930F40E8-5149-4091-9CDA-8E05C8449BA6)|
 
 	![](./images/provision-oic-instance-1.png)
 
@@ -69,6 +69,6 @@ Navigate to an Oracle Integration instance in the Oracle Cloud Infrastructure Co
 
 
 ## Acknowledgements
-* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Kishore Katta, 10/21>
+* **Author** - Kishore Katta, Technical Director, Oracle Integration Product Management
+* **Contributors** -  Subhani Italapuram, Oracle Integration Product Management
+* **Last Updated By/Date** -

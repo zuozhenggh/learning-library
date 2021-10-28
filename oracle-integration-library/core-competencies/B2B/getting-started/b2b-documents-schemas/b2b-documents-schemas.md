@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create a B2B Purchase Order Document based on a Schema
 
-Estimated Lab Time: -- minutes
+Estimated Lab Time:  15 minutes
 
 ### Objectives
 
@@ -18,7 +18,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * All previous labs successfully completed
-* Completed Getting Started Lab which explains B2B concepts at a high level
+* Completed [Getting Started with B2B in Oracle Integration](../workshops/freetier/?lab=gettingStartedB2B) Lab which explains B2B concepts at a high level
 
 
 ## Task 1: Create a new B2B schema
@@ -137,6 +137,6 @@ You may now [proceed to the next lab](#next).
 *	[Generate Implementation Guide](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/generate-implementation-guide.html#GUID-04ED2504-39C4-4885-8A69-CEDDCA614308)
 
 ## Acknowledgements
-* **Author** - <Kishore Katta, Technical Director, Oracle Integration Product Management>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Kishore Katta, 10/21>
+* **Author** - Kishore Katta, Technical Director, Oracle Integration Product Management
+* **Contributors** -  Subhani Italapuram, Oracle Integration Product Management
+* **Last Updated By/Date** -
