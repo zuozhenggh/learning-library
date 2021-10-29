@@ -58,7 +58,7 @@ The following steps help you to create a view and view the data:
 
     ```
 
-      The output of the script is as follows:
+      The output is as follows:
 
       ```
       View ESM_SH_DATA created.
@@ -91,7 +91,8 @@ The output is follows:
     ```
     <copy>
     %sql
-    SELECT * from ESM_SH_DATA;
+    SELECT * from ESM_SH_DATA
+    WHERE rownum <11;
 
     </copy>
     ```
@@ -99,43 +100,59 @@ The output is follows:
 	![Displays few rows from the created view](images/timeseries_table_view.png)
 
 ## Task 3: Build Your Model
-To build a model using the time series data, you will use Exponential Smoothing algorithm on the `ESM_SH_DATA` view that is generated during the data preparation stage. In this example you build a time series model by applying the Holt-Winters model on time series aggregated on a quarterly interval.
+To build a model using the time series data, you will use the Exponential Smoothing algorithm on the `ESM_SH_DATA` view that is generated during the data preparation stage. In this example you build a time series model by applying the Holt-Winters model on time series aggregated on a quarterly interval.
 1. Build a Holt-Winters model with the `ESM_SH_DATA` table, run the following script:
+    ```sql
+        <copy>
+        %script
+
+        BEGIN DBMS_DATA_MINING.DROP_MODEL('ESM_SALES_FORECAST_1');
+        EXCEPTION WHEN OTHERS THEN NULL; END;
+        /
+        DECLARE
+              v_setlst DBMS_DATA_MINING.SETTING_LIST;
+        BEGIN
+    &nbsp;
+             -- algorithm = exponential smoothing
+             v_setlst('ALGO_NAME')            := 'ALGO_EXPONENTIAL_SMOOTHING';
+
+
+
+                 -- accumulation interval = quarter
+                 v_setlst('EXSM_INTERVAL')        := 'EXSM_INTERVAL_QTR';
+
+                 -- prediction step = 4 quarters
+                 v_setlst('EXSM_PREDICTION_STEP') := '4';                 
+
+                 -- ESM model = Holt-Winters
+                 v_setlst('EXSM_MODEL')           := 'EXSM_WINTERS';      
+
+                 -- seasonal cycle = 4 quarters
+                 v_setlst('EXSM_SEASONALITY')     := '4';                 
+
+    &nbsp;
+             DBMS_DATA_MINING.CREATE_MODEL2(
+                MODEL_NAME           => 'ESM_SALES_FORECAST_1',
+                MINING_FUNCTION      => 'TIME_SERIES',
+                DATA_QUERY           => 'select * from ESM_SH_DATA',
+                SET_LIST             => v_setlst,
+                CASE_ID_COLUMN_NAME  => 'TIME_ID',
+                TARGET_COLUMN_NAME   =>'AMOUNT_SOLD');
+        END;
+        </copy>
+
 
     ```
-    <copy>
-    %script
 
-    BEGIN DBMS_DATA_MINING.DROP_MODEL('ESM_SALES_FORECAST_1');
-    EXCEPTION WHEN OTHERS THEN NULL; END;
-    /
-    DECLARE
-          v_setlst DBMS_DATA_MINING.SETTING_LIST;
-    BEGIN
-
-         v_setlst('ALGO_NAME')            := 'ALGO_EXPONENTIAL_SMOOTHING';
-         v_setlst('EXSM_INTERVAL')        := 'EXSM_INTERVAL_QTR'; -- accumulation int'l = quarter
-         v_setlst('EXSM_PREDICTION_STEP') := '4'; -- prediction step = 4 quarters
-         v_setlst('EXSM_MODEL')           := 'EXSM_WINTERS';  -- ESM model = Holt-Winters
-         v_setlst('EXSM_SEASONALITY')     := '4'; -- seasonal cycle = 4 quarters   
-&nbsp;
-         DBMS_DATA_MINING.CREATE_MODEL2(
-            MODEL_NAME          => 'ESM_SALES_FORECAST_1',
-            MINING_FUNCTION     => 'TIME_SERIES',
-            DATA_QUERY          => 'select * from ESM_SH_DATA',
-            SET_LIST            => v_setlst,
-            CASE_ID_COLUMN_NAME => 'TIME_ID',
-            TARGET_COLUMN_NAME  =>'AMOUNT_SOLD');
-    END;
-    </copy>
+    The output is as follows:
     ```
-The output is as follows:
+        PL/SQL procedure successfully completed.
+        ---------------------------
+        PL/SQL procedure successfully completed.
 
     ```
-    PL/SQL procedure successfully completed.
-    ---------------------------
-    PL/SQL procedure successfully completed.
-    ```
+
+
 
     Examine the script:
     - `v_setlist` is a variable to store `SETTING_LIST`.
@@ -198,12 +215,12 @@ The `DM$VG` view for time series contains the global information of the model al
     - `MAE`: Indicates Mean Absolute Error.
     - `MSE`: Indicates Mean Square Error.
 
-In Exponential smoothing a series extends infinitely into the past, but that influence of past on future, decays smoothly and exponentially fast. The smooth rate of decay is expressed by one or more smoothing constants. The smoothing constants are parameters that the model estimates. These smoothing constants are represented as _α_, _β_, and _γ_. Values of a smoothing constant near one put almost all weight on the most recent observations. Values of a smoothing constant near zero allow the distant past observations to have a large influence.
+In exponential smoothing a series extends infinitely into the past, but that influence of past on future decays smoothly and exponentially fast. The smooth rate of decay is expressed by one or more smoothing constants. The smoothing constants are parameters that the model estimates. These smoothing constants are represented as _α_, _β_, and _γ_. Values of a smoothing constant near one put almost all weight on the most recent observations. Values of a smoothing constant near zero allow the distant past observations to have a large influence.
 
-Note that _α_ is associated with the error or noise of the series, _β_ is associated with the trend, and _γ_ is associated with the seasonality factors. The _γ_ value is closest to zero which means seasonality has an influence on the data set.
+Note that _α_ is associated with the error or noise of the series, _β_ is associated with the trend, and _γ_ is associated with the seasonality factors.
 
 ## Task 5 Score Your Model
-For a time series model, you can use the `DM$VP` view to perform scoring or prediction.
+For a time series model, you can use the `DM$VP` view to retrieve the forecasts for the requested time periods.
 1. Query the `DM$VP` model detail view to see the forecast (sales for four quarters). The `DM$VP` view for time series contains the result of an ESM model. The output has a set of records such as partition, `CASE_ID`, value, prediction, lower, upper, and so on and ordered by partition and `CASE_ID` (time). Run the following statement:
 
     ```
@@ -263,4 +280,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Sarika Surampudi, Senior User Assistance Developer, Oracle Database User Assistance Development
 * **Contributors** -  Mark Hornick, Sr. Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning
-* **Last Updated By/Date** - Sarika Surampudi, September 2021
+* **Last Updated By/Date** - Sarika Surampudi, October 2021
