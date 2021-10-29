@@ -4,7 +4,7 @@
 
 In this exercise, you will generate GeoJSON code and see how easy it is create map layers in OAC with it. There are many ways to generate GeoJSON code and https://geojson.io/ is just one open-source option.
 
-_Estimated time:_ 30 minutes
+_Estimated time:_ 20 minutes
 
 ![](./images/racing-track2.png)
 

@@ -1,6 +1,6 @@
 # Configure Google maps as a map background
 
-**Introduction**
+## Introduction
 
 Oracle Analytics Cloud supports a variety of different [map backgrounds](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/apply-map-backgrounds-and-map-layers-enhance-visualizations.html#GUID-C0851CD0-0DD4-45E7-B378-195796327370)
 including Google, Baidu, WMS, and XYZ Tiled Web Maps.
@@ -8,6 +8,13 @@ including Google, Baidu, WMS, and XYZ Tiled Web Maps.
 To use Google Maps tiles, you must obtain a Google Maps API access key from Google. Google prompts you to enter your Maps API access key and, when applicable, your Google “Client ID”. Usage of the tiles must meet the terms of service specified by Google in the [Google Developers Site Terms of
 Service](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/analytics-cloud/acubi&id=google-dev-terms).
 
+_Estimated Time:_ 5 minutes
+
+### Objectives
+
+In this lab, you will:
+
+- Configure and add Google Maps Background
 ###  Prerequisites
 
 This lab assumes:
@@ -17,13 +24,11 @@ This lab assumes:
 - All previous labs successfully complete
 - You meet the terms of service specified by Google in the [Google Developers Site Terms of Service](https://docs.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/analytics-cloud/acubi&id=google-dev-terms).
 - Have a client ID or are able to generate a google
-- Access to the console of OAC ("*BI Service Administrator Role*"
-    Application Role)
+- Access to the console of OAC ("*BI Service Administrator Role*" Application Role)  
 
 ## Task 1: Google Developer API Key
 
 1. Please find the [documentation](https://developers.google.com/maps/documentation/javascript/get-api-key) for API Keys 
-
 
 ## Task 2: Configure your Map background
 

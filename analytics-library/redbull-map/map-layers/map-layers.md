@@ -1,11 +1,17 @@
 # Add the Sector Dataset to OAC and assign it to the Map Layer
 
-**Introduction**
+## Introduction
 
 In this lab you will assign values from your Dataset to properties in your Map Layers.  
-This process allows for maps to be automatically
-rendered in OAC for your GeoJSON LineString and Points with color, size, and more.
+This process allows for maps to be automatically rendered in OAC for your GeoJSON LineString and Points with color, size, and more.
 
+_Estimated Time:_ 20 minutes
+
+### Objectives
+
+In this lab, you will:
+
+- Create Sector, Point Datasets and assign it to the Map Layer
 ###  Prerequisites
 
 This lab assumes you have:

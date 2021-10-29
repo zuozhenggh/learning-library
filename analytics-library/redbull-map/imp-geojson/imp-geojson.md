@@ -1,9 +1,16 @@
 # Import your GeoJSON code into OAC 
 
-**Introduction**
+## Introduction
 
 In this lab you will **import the GeoJSON files** you generated into the OAC Console as a Map Layer.
 
+_Estimated Time:_ 10 minutes
+
+### Objectives
+
+In this lab, you will:
+
+- Import your GeoJSON files you have built in the previous lab
 ###  Prerequisites
 
 This lab assumes you have:
@@ -13,7 +20,7 @@ This lab assumes you have:
 - All previous labs successfully completed
 - Access to the console of OAC ("_BI Service Administrator Role_" Application Role)
 
-##  Task 1: Import your geoJSON files into OAC 
+## Task 1: Import your geoJSON files into OAC 
 
 1. Select the triple bar icon (**Navigator**)
 
