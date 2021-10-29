@@ -1,10 +1,11 @@
-# Use Oracle Machine Learning AutoML UI to predict churn
+# Use Oracle Machine Learning AutoML UI to predict customer churn
 
 ## Introduction
 
 #### Video preview
 
-[] (youtube:Qwsw_AjLZ1Y)
+[](youtube:iK2T6iKaYqQ)
+
 
 Analyzing past performance lets you know customers that have already been lost. Lets get in front of this problem and predict those that are at risk using in database analytics.
 
@@ -106,7 +107,7 @@ In addition to that, **a customer churning today probably made that decision a w
 
 3. Define the Prediction Target, Case ID and Experiment Settings.
 
-    Back to the top of the **Experiments** page, at the right of the screen you will find two pull-down menus. We need to use those to define what we want to predict, in the **Predict** field. Click the down-arrow and search for `TARGET`. Alternatively you can start typing in the `Search` box that appears.
+    Back to the top of the **Experiments** page, at the right of the screen you will find two pull-down menus. We need to use those to define what we want to predict, in the **Predict** field. Click the down-arrow and search for the target attribute named `IS_CHURNER`. Alternatively you can start typing in the `Search` box that appears.
 
     ![Churn AutoML Step 3 target search](images/oml-churn-automl-target-search.png " ")
 
@@ -142,7 +143,7 @@ In addition to that, **a customer churning today probably made that decision a w
 
     ![Churn AutoML Task 2 Step 1 open progress](images/oml-churn-automl-open-progress.png " ")
 
-2. Review the asynchronous process
+2. Review the asynchronous process.
    This process is completely **asynchronous**, so you can go back to the **Experiments** menu at any time by clicking on the blue button on the top left.
 
     ![Churn AutoML Task 2 Step 2 back to Experiments](images/oml-churn-automl-back-to-experiments.png " ")
@@ -155,7 +156,7 @@ In addition to that, **a customer churning today probably made that decision a w
 
     The performance of OML AutoML UI depends a lot of the type of environment your Autonomous Database is running on. As explained in [this blog post](https://blogs.oracle.com/machinelearning/oml-automl-ui-4-things-you-can-do-that-affect-performance), several components may affect the performance, among the most important ones is the number of CPUs that can be allocated to your Autonomous Database instance, and whether you can enable auto scaling on Autonomous Database.  
 
-3. Check the results
+3. Check the results.
    Once the process completes, you will note that the **running icon** on the top right changes to indicate it is **Completed**. The **Balanced Accuracy** chart will show the increased accuracy over time as the models were tested, and the **Leader Board** will present the different algorithms that were chosen, and their respective **Model Names**.
 
     In the following screen we can see that the top 2 algorithms chosen were a **Decision Tree** and a **Random Forest**. By default they receive randomly generated unique **Model Names**.
@@ -174,8 +175,8 @@ In addition to that, **a customer churning today probably made that decision a w
     ```
     AGE, AVG_DISC_M3_11 (average discounts for the 9 months before the current quarter), GENDER, CREDIT_BALANCE, AVG_NTRANS_M3_5 (average number of transactions in the previous quarter), YRS_RESIDENCE, GENRE_THRILLER, GENRE_COMEDY, and GENRE_WAR
     ```
-4. Understand model performance
-    Scrolling up to the **Leader Board** section, we can click the **Decition Tree** unique model name to open the diagnostics. Click on the Decision Tree **Model Name** link in blue.
+4. Understand model performance.
+    Scrolling up to the **Leader Board** section, we can click the **Decision Tree** unique model name to open the diagnostics. Click on the Decision Tree **Model Name** link in blue.
 
     > **NOTE**: The exact random model name is unique to your model, so it will not appear as *DT_312651AA64* like the one below.
 

@@ -6,6 +6,9 @@ In this lab, you will now unplug an Oracle 12.2.0.1 pluggable database (PDB) fro
 
 *Estimated Lab Time*: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:k4m09ejlAxU)
+
 ### About Unplug Plug Upgrade
 You can upgrade PDBs by unplugging a PDB from an earlier release CDB, plugging it into a later release CDB, and then upgrading that PDB to the later release.
 

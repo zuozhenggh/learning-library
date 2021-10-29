@@ -14,6 +14,10 @@ When working with the OCI console, a failover is started from the standby databa
 
 Estimated Lab Time: 15 Minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:9KUo95KhnVQ)
+
 ### Objectives
 - Verify the database roles in the database
 - Perform a failover

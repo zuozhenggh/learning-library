@@ -5,8 +5,9 @@ This lab will show you how to connect to your DB System.
 
 Estimated Lab Time:  5 minutes
 
-Watch the video below for an overview of the Build a DB System lab
-[](youtube:tRo33KktXt0)
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:8iy_F08NDig)
 
 ### Objectives
 -   Identify DB Instance Public IP Addresses
@@ -45,18 +46,10 @@ Watch the video below for an overview of the Build a DB System lab
 
 11. Now that you have your IP address select the method of connecting. Choose the environment where you created your ssh-key in the previous lab (Generate SSH Keys) and select one of the following steps. If you choose to use Oracle Cloud Shell, you will need to copy your SSH Private to the cloud shell and set the proper permissions, otherwise, choose the platform that matches your local environment.
 
-## Task 2: Choose a path to connect
-Now it's time to choose a path. You can connect by one of 3 methods.  If you are doing a LiveLab that can be done within a terminal completely, we recommend you choose Oracle Cloud Shell (Step 2A).
 
-Your options are:
-1. Task 2A: Connect using Cloud Shell *(recommended)*
-2. Task 2B: Connect using MAC or a Windows CYGWIN Emulator
-3. Task 2C: Connect using Putty *(Requires you to install applications on your machine)*
+## Task 2: Connect using Oracle Cloud Shell
 
-
-## Task 2A: Connect using Oracle Cloud Shell
-
-1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.
+1.  To start the Oracle Cloud Shell, go to your Cloud console and click the Cloud Shell icon at the top right of the page.  If you get a policy error, ensure you have chosen the correct compartment you were assigned in the earlier task.
 
 	![Select Oracle Cloud Shell](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshellopen.png " ")
 
@@ -64,18 +57,21 @@ Your options are:
 
     ![Navigation Menu of Oracle Cloud Shell](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/cloudshell.png " ")
 
-2.  Click the Cloud Shell navigation menu and select **Upload** to upload your private key
+2. Download the private key for the Oracle Database World LiveLab using the below command in the Cloud Shell.
+    ````
+    <copy>wget http://bit.ly/cloudshellkey</copy>
+    ````
 
-    ![Upload Private Key](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key.png " ")
 
-3.  To connect to the compute instance that was created for you, you will need to load your private key.  This is the key that does *not* have a .pub file at the end.  Locate that file on your machine and click **Upload** to process it.
-
-    ![Select Private Key for Upload](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select.png " ")
-
-4. Be patient while the key file uploads to your Cloud Shell directory
-    ![Upload progress](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-2.png " ")
-
-    ![Key Upload Complete](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/images/upload-key-select-3.png " ")
+3. Change the permission of the private key to `0600` and connect to the primary host as `opc`, using the public IP address that you have noted down earlier.
+    ````
+    <copy>chmod 600 cloudshellkey</copy>
+    ````
+    Replace `cloudshellkey` with the name of your private key file.
+    ````
+    <copy>ssh -i cloudshellkey opc@IP_ADDRESS</copy>
+    ````
+    Replace `cloudshellkey` with the name of your private key file, and `IP_ADDRESS` with the real public IP address.
 
 5. Once finished run the command below to check to see if your ssh key was uploaded.  Move it into your .ssh directory, and change the permissions on the file.
 
@@ -102,11 +98,44 @@ Your options are:
     ![Connect to a Node](./images/em-mac-linux-ssh-login.png " ")
 
 3.  When prompted, answer **yes** to continue connecting.
-4.  Repeat step 2 for your 2nd node.
+4.  Duplicate this tab and repeat these steps to login to your 2nd node.
 5.  You may now [proceed to the next lab](#next).  
 
+You may now [proceed to the next lab](#next).
 
-## Task 2B: Connect using MAC terminal or Windows CYGWIN Emulator
+## Appendix: Troubleshooting Tips
+
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue by using our support forum.
+
+### Issue 1: Cannot log in to the instance
+Participant is unable to log in to the instance
+
+#### Tips for fixing Issue #1
+There may be several reasons why you cannot log in to the instance.  Here are some common ones we've seen from workshop participants
+- Permissions are too open for the private key - be sure to chmod the file using `chmod 600 ~/.ssh/<yourprivatekeyname>`
+- Incorrectly formatted ssh key (see above for fix)
+- User chose to login from MAC Terminal, Putty, and so on and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
+- Incorrect name supplied for ssh key (Do not use sshkeyname, use the key name you provided)
+- @ placed before opc user (Remove @ sign and login using the format above)
+- Make sure you are the oracle user (type the command *whoami* to check, if not type *sudo su - oracle* to switch to the oracle user)
+- Make sure the instance is running (type the command *ps -ef | grep oracle* to see if the oracle processes are running)
+
+### Issue 2: Need a ppk key
+Participant is unable to log in to instance
+
+#### Tips for fixing Issue #1
+If you want to use Putty to connect to your server, you must convert your SSH key into a format compatible with Putty. To convert your key into the required .ppk format, you can use PuTTYgen.
+
+[Download PuTTYgen](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwigtZLx47DwAhUYKFkFHf99BmAQFjAAegQIAxAD&url=https%3A%2F%2Fwww.puttygen.com%2F&usg=AOvVaw1fagG6hM51oZWfQB_rqn2t)
+
+To use PuTTYgen to convert a key into .ppk format, complete the following steps:
+
+1. Open PuTTYgen, go to **Conversions**, and then click **Import key**. PuTTYgen will display a window to load your key.
+2. Browse to your **SSH private key**, select the file, and then click **Open**. Your SSH private key may be in the Users\[user_name]\.ssh directory.
+3. Enter the passphrase associated with the private key, or leave blank if none and then click **OK**. *Note the key fingerprint confirms the number of bits is 4096.*
+4. Go to **File**, and then click **Save private key** to save the key in .ppk format.
+
+## Appendix: Connect using MAC terminal or Windows CYGWIN Emulator
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 1.  Using one of the Public IP addresses, open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
 
@@ -124,7 +153,7 @@ Your options are:
 
 3. After successfully logging in, you may [proceed to the next lab](#next).
 
-## Task 2C: Connect using Putty on Windows
+## Appendix: Connect using Putty on Windows
 *NOTE:  If you have trouble connecting and are using your work laptop to connect, your corporate VPN may prevent you from logging in. Log out of your VPN before connecting. *
 
 On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to connect to remote systems over the internet using SSH and Telnet. SSH is supported in PuTTY, provides for a secure shell, and encrypts information before it's transferred.
@@ -168,43 +197,9 @@ On Windows, you can use PuTTY as an SSH client. PuTTY enables Windows users to c
 
   ![Add Second Node to Putty Configuration Menu](images/7c9e4d803ae849daa227b6684705964c.jpg " ")
 
-You may now [proceed to the next lab](#next).
-
-## Appendix: Troubleshooting Tips
-
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue by using our support forum.
-
-### Issue 1: Cannot log in to the instance
-Participant is unable to log in to the instance
-
-#### Tips for fixing Issue #1
-There may be several reasons why you cannot log in to the instance.  Here are some common ones we've seen from workshop participants
-- Permissions are too open for the private key - be sure to chmod the file using `chmod 600 ~/.ssh/<yourprivatekeyname>`
-- Incorrectly formatted ssh key (see above for fix)
-- User chose to login from MAC Terminal, Putty, and so on and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
-- Incorrect name supplied for ssh key (Do not use sshkeyname, use the key name you provided)
-- @ placed before opc user (Remove @ sign and login using the format above)
-- Make sure you are the oracle user (type the command *whoami* to check, if not type *sudo su - oracle* to switch to the oracle user)
-- Make sure the instance is running (type the command *ps -ef | grep oracle* to see if the oracle processes are running)
-
-### Issue 2: Need a ppk key
-Participant is unable to log in to instance
-
-#### Tips for fixing Issue #1
-If you want to use Putty to connect to your server, you must convert your SSH key into a format compatible with Putty. To convert your key into the required .ppk format, you can use PuTTYgen.
-
-[Download PuTTYgen](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwigtZLx47DwAhUYKFkFHf99BmAQFjAAegQIAxAD&url=https%3A%2F%2Fwww.puttygen.com%2F&usg=AOvVaw1fagG6hM51oZWfQB_rqn2t)
-
-To use PuTTYgen to convert a key into .ppk format, complete the following steps:
-
-1. Open PuTTYgen, go to **Conversions**, and then click **Import key**. PuTTYgen will display a window to load your key.
-2. Browse to your **SSH private key**, select the file, and then click **Open**. Your SSH private key may be in the Users\[user_name]\.ssh directory.
-3. Enter the passphrase associated with the private key, or leave blank if none and then click **OK**. *Note the key fingerprint confirms the number of bits is 4096.*
-4. Go to **File**, and then click **Save private key** to save the key in .ppk format.
-
 
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Platform Specialist, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Tom McGinn, May 2021
+* **Last Updated By/Date** - Kay Malcolm, October 2021

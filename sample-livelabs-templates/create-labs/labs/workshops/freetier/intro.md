@@ -2,7 +2,7 @@
 
 The labs in this workshop walk you through all the steps to **develop workshops** for LiveLabs.
 
-*If you are looking for information on creating images for compute instances and storing them in Marketplace, please click this link: [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/).*
+*If you are looking for information on creating images for compute instances and storing them in Marketplace, then click this link: [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/).*
 
 ## What are Labs and Workshops?
 A lab is a new model adopted by the DB organization to enhance the tutorial experience. Labs are what the User Assistance community commonly knew as Oracle by example (OBE). Labs can be combined to form a workshop, formerly known as Hands-on Lab or HOL, or a Learning Path.
@@ -41,6 +41,7 @@ The following flow chart shows the process that your need to follow to set up th
   * Clone your forked learning-library repository (copy repository content to local machine).
   * Understand the lab folders' structure.
   * Install and use Atom Editor to and the Markdown templates to develop content.
+  * Understand a few Markdown features.
   * Perform GitHub operations to commit your developed content to the master (production) learning-library on GitHub.
   * Host workshops and labs in LiveLabs and optionally in OHC (User Assistance only).
 
@@ -68,9 +69,8 @@ The following flow chart shows the process that your need to follow to set up th
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 * **Contributors:**
-    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
+  * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
+  * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
+  * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Reviewed by:**  
-    * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-* **Last Updated By/Date:** Anuradha Chepuri, November 2020
+* **Last Updated By/Date:** Anuradha Chepuri, November 2021

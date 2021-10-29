@@ -2,6 +2,10 @@
 
 ## Introduction
 
+#### Video Preview
+
+[](youtube:0_BOgvJw4N0)
+
 In this lab, you will create a new database user, then load and link data from the MovieStream data lake on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
 
 You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third party data integration tools. With the built-in tools, you can load data:
@@ -171,7 +175,7 @@ In this step, you will set up access to the two buckets on Oracle Cloud Infrastr
 
     ```
     <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o
     </copy>
     ```
 
@@ -252,7 +256,7 @@ create table moviestream_log
 -- Create the MOVIESTREAM_LABS table that allows you to query all of the labs and their associated scripts
 begin
     dbms_cloud.create_external_table(table_name => 'moviestream_labs',
-                file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_lite_scripts/o/moviestream-lite-labs.json',
+                file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/R-csuXKL9-Vn-fpstvXalGJftkjzCB1Te2iI1bA0dq7afsSdVHRd5H7dd2O5HLtp/n/c4u04/b/moviestream_lite_scripts/o/moviestream-lite-labs.json',
                 format => '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}',
                 column_list => 'doc varchar2(30000)'
             );
@@ -263,7 +267,7 @@ end;
 declare
     b_plsql_script blob;            -- binary object
     c_plsql_script clob;    -- converted to clob
-    uri_scripts varchar2(2000) := 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_lite_scripts/o'; -- location of the scripts
+    uri_scripts varchar2(2000) := 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/R-csuXKL9-Vn-fpstvXalGJftkjzCB1Te2iI1bA0dq7afsSdVHRd5H7dd2O5HLtp/n/c4u04/b/moviestream_lite_scripts/o'; -- location of the scripts
     uri varchar2(2000);
 begin
 
