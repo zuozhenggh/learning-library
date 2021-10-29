@@ -228,7 +228,9 @@ The Jenkins Console includes a job to create a WebLogic domain.
 
 9. Click **Build**.
 
-10. You can follow the build process by clicking on **Console Output** on the left menu.
+10. Click the link to the job
+
+11. You can follow the build process by clicking on **Console Output** on the left menu.
 
     This will take 20 to 25 minutes.
 
@@ -241,4 +243,4 @@ The Jenkins Console includes a job to create a WebLogic domain.
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, October 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, October 2021

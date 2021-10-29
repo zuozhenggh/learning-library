@@ -456,6 +456,7 @@ appDeployments:
      ```
    
    > **Important**: If when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers.
+   Also make sure to add single quotes to **Targets** even if the extracted model does not include them, as '-' characters cause issues in yaml.
 
 5. Save the `source.yaml` file by typing `CTRL+x` then `y`.
 
@@ -571,12 +572,13 @@ appDeployments:
 
     ![](./images/jenkins4.png " ")
 
-8. In case of failure, hover over the job step and check the logs for information about issues at each build step.
+8. Click the link to the job, then click Console Output for details on the job.
 
-9. Wait until the job completes without failure in Jenkins.
+9. In case of failure, hover over the job step and check the logs for information about issues at each build step.
+
+10. Wait until the job completes without failure in Jenkins.
 
     ![](./images/jenkins5.png " ")
-
 
 ## Task 7: Check the Application Deployed Properly
 
@@ -584,7 +586,7 @@ appDeployments:
 
    ![](./images/oci-deployments.png " ")
 
-2. On the **Core Infrastructure** menu, click **Networking** then click **Load Balancers**.
+2. In the OCI Console, click **Networking** then click **Load Balancers**.
 
 3. Find the IP of the Public Load Balancer.
 
@@ -599,4 +601,4 @@ appDeployments:
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, August 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, October 2021

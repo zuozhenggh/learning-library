@@ -140,4 +140,4 @@ You will need to create a Dynamic Group and associated Policies:
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, August 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, October 2021

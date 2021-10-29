@@ -265,4 +265,4 @@ While the WebLogic instances are provisioning, it's possible to move forward wit
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, October 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, October 2021
