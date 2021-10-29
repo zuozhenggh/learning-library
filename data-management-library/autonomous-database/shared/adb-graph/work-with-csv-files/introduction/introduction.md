@@ -6,6 +6,7 @@ This workshop covers how to load data in CSV files into the database and introdu
 
 Estimated Workshop Time: 65 minutes
 
+
 <if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/Ymk9TE9Q2K4).</if>
 
 ### About Graph Studio
