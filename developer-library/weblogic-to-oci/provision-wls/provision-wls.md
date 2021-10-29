@@ -146,7 +146,7 @@ Prepared OCI tenancy with:
 
   ![](./images/provision-21-idcs.png " ")
 
-21. Keep Policies **checked**.
+21. Keep Policies **checked** unless you are not an admin. In that case you must have created the Dynamic Group and associated the proper rules in the 'Prepare' section.
 
   ![](./images/provision-22-policies.png " ")
 

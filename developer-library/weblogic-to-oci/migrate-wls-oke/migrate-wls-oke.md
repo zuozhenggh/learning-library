@@ -537,7 +537,9 @@ appDeployments:
 
     ![](./images/jenkins2.png " ")
 
-5. Select **Shared Filesystem** for each of the file locations, and type the full path to each file as below.
+5. Select the WebLogic Domain to update (`nonjrf`).
+
+6. Select **Shared Filesystem** for each of the file locations, and type the full path to each file as below.
 
     - Archive file
 
@@ -555,7 +557,7 @@ appDeployments:
        </copy>
        ```
 
-    - Properties file
+    - Variables Properties file
 
        ```
        <copy>
@@ -565,20 +567,20 @@ appDeployments:
 
     ![](./images/jenkins3.png " ")
 
-6. Run the job with the **Build** button.
+7. Run the job with the **Build** button.
 
     ![](./images/jenkins4.png " ")
 
-7. In case of failure, hover over the job step and check the logs for information about issues at each build step.
+8. In case of failure, hover over the job step and check the logs for information about issues at each build step.
 
-8. Wait until the job completes without failure in Jenkins.
+9. Wait until the job completes without failure in Jenkins.
 
     ![](./images/jenkins5.png " ")
 
 
 ## Task 7: Check the Application Deployed Properly
 
-1. Go to the WebLogic Admin console (at `http://PRIVATE_LOAD_BALANCER_IP/console` under **Deployment** you should see the two applications listed.
+1. Go to the WebLogic Admin console (at `http://PRIVATE_LOAD_BALANCER_IP/nonjrf/console` under **Deployment** you should see the two applications listed.
 
    ![](./images/oci-deployments.png " ")
 
