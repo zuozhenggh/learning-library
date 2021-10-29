@@ -7,7 +7,7 @@ For the purposes of this workshop, Oracle Autonomous Transaction Processing (ATP
 Estimated time: 10 minutes
 
 Watch the video below for a walk through of the lab.
-[](youtube:bNcZ4P-gpRw)
+[](youtube:Vw2rWRLSRjk)
 
 ### Objectives
 
@@ -84,7 +84,7 @@ In this lab, you will:
 10. Enter the following `put` command to upload the SourceATP wallet file to /home/opc.
 
     ```
-    <copy>put <local-path>/<Wallet_ATP-filename>.zip</copy>
+    <copy>put <Wallet_ATP-filename>.zip</copy>
     ```
 
     ![](images/02-10-put.png " ")

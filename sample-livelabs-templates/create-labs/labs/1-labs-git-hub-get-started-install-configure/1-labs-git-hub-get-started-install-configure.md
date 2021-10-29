@@ -151,4 +151,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Madhusudhan Rao, Principal Product Manager, Database
 
-* **Last Updated By/Date:** Anuradha Chepuri, October 2021
+* **Last Updated By/Date:** Anuradha Chepuri, November 2021

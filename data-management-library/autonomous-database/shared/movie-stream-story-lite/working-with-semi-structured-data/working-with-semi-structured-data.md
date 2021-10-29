@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:0_BOgvJw4N0)
+[](youtube:5o40waKb2_4)
 
 JSON provides an extremely flexible and powerful data model.  No wonder that it is such a popular storage format for developers. Oracle SQL allows you to analyze JSON data - including complex data types like arrays - in combination with structured tabular data.
 
@@ -245,7 +245,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
     ![academy bump](images/json-lab-8.png " ")
 
-    This is a sophistcated query that draws on our previous concepts and introduces the MATCH_RECOGNIZE clause. MATCH_RECOGNIZE (a.k.a. SQL pattern matching) is a powerful capability that allows you to examine many different types of patterns - like rising and falling of stock prices. Our pattern will be simple - did the customer watch the movie before or after the Academy Awards?
+    This is a sophistcated query that draws on our previous concepts and introduces the MATCH\_RECOGNIZE clause. MATCH\_RECOGNIZE (a.k.a. SQL pattern matching) is a powerful capability that allows you to examine many different types of patterns - like rising and falling of stock prices. Our pattern will be simple - did the customer watch the movie before or after the Academy Awards?
     
     Here is a summary of the query specification:
     * Subquery `academyAwardMovies` returns movies that have won significant awards

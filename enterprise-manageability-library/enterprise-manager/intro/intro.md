@@ -8,6 +8,8 @@ The EM Workshop is a fully functional Oracle Enterprise Manager environment conf
 
 *Estimated Time:* 420 minutes
 
+[](youtube:894JHZi3Ol4)
+
 ### About Oracle Enterprise Manager
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems.
 

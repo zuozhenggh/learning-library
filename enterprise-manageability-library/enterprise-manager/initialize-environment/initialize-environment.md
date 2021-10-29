@@ -6,6 +6,10 @@ In this lab we will review and startup all components required to successfully r
 
 *Estimated Lab Time:* 10 Minutes.
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:6BD2Z4zzEhI)
+
 ### Objectives
 - Initialize the workshop environment.
 

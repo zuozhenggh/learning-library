@@ -4,7 +4,7 @@
 
 This lab will show you how to deploy the microservices on your Kubernetes cluster, walk through the functionality and explain how it works.
 
-Estimated Lab Time - 10 minutes
+Estimated Time: 10 minutes
 
 Quick walk through on how to deploy the microservices on your Kubernetes cluster.
 
@@ -212,9 +212,9 @@ To connect to an  'Oracle Autonomous Transaction Processing database you need th
 
 Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.yaml` to see how this is done.
 
-```
-<copy>cat $GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml</copy>
-```
+   ```
+   <copy>cat $GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml</copy>
+   ```
 
 1. The **database user name** is passed as an environment variable:
 

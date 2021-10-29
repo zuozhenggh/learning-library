@@ -15,9 +15,7 @@ We developed this application to demonstrate Oracle Sharding (a hyperscale globa
 *Estimated Lab Time*: 10 Minutes
 
 Watch the video below for a walk through of the lab.
-[](youtube:x1-95SOe8iU)
-
-![](./images/app_front.jpg " ")
+[](youtube:EMhd5OolcbM)
 
 Typically, multiple technologies and products are required to develop such an application. For example, you would need a JSON database, a Text Index application, a relational database, and an Analytics engine, which makes it difficult to query data across multiple data stores. Further, using the traditional methods, you could spend several years and millions of dollars in licensing and development.
 
