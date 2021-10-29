@@ -14,6 +14,8 @@ In this workshop, you'll create a Shopping Cart application that allows managing
 
 Estimated Workshop Time: 2 hours
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/ioduhe7gHvc).</if>
+
 ### Objectives
 In this lab, you will:
 * Obtain a free development environment
