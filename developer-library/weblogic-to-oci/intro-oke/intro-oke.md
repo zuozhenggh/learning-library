@@ -35,18 +35,31 @@ If you are not an administrator on your tenancy, you must insure that the follow
 
 ```
 <copy>
-Allow group MyGroup to manage dynamic-groups in tenancy
-Allow group MyGroup to manage policies in tenancy
-Allow group MyGroup to manage volume-family in tenancy
-Allow group MyGroup to manage instance-family in tenancy
-
-Allow group MyGroup to inspect tenancies in tenancy
-Allow group MyGroup to use secret-family in tenancy
-Allow group MyGroup to use tag-namespaces in tenancy
-
-Allow group MyGroup to manage all-resources in compartment MyCompartment
+Allow group MyGroup to manage instance-family in compartment MyCompartment
+Allow group MyGroup to manage orm-family in compartment MyCompartment
+Allow group MyGroup to manage mount-targets in compartment MyCompartment
+Allow group MyGroup to manage file-systems in compartment MyCompartment
+Allow group MyGroup to manage export-sets in compartment MyCompartment
+Allow group MyGroup to manage cluster-family in compartment MyCompartment
+Allow group MyGroup to use subnets in compartment MyCompartment
+Allow group MyGroup to use vnics in compartment MyCompartment
+Allow group MyGroup to inspect compartments in compartment MyCompartment
+Allow group MyGroup to read metrics in compartment MyCompartment
+Allow group MyGroup to read virtual-network-family in compartment MyCompartment
+Allow group MyGroup to manage virtual-network-family in compartment MyCompartment
 </copy>
 ```
+
+If you don't have the following policy for your group:
+
+```
+<copy>
+Allow group MyGroup to manage dynamic-groups in tenancy
+Allow group MyGroup to manage policies in tenancy
+</copy>
+```
+
+You will need to create a Dynamic Group 
 
 > **Important:** This workshop uses the WebLogic version 12.2.1.4 stack with a non-JRF domain. It is similar with version 12.2.1.3; however, WebLogic version 10.3.6 requires a JRF domain by default, which requires a database as a backend. The *only* database versions compatible with WebLogic 10.3.6 on OCI are database version 11.2.0.4 and 12.1.0.2. Note that database 11.2.0.4 requires the Oracle Grid Infrastructure when provisioning, or it will not be visible as an option when selecting the database image version.
 
@@ -54,4 +67,4 @@ Allow group MyGroup to manage all-resources in compartment MyCompartment
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, October 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, October 2021
