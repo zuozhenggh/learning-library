@@ -10,6 +10,8 @@ The Oracle Cloud Data Lake House LiveLab will demonstrate a typical usage scenar
 
 Estimated Time: 70 minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/NnRfE-MLN-A).</if>
+
 ### Objectives
 
 This lab walks you through how Oracle Cloud Infrastructure services along with the feature rich Autonomous Data Warehouse will allow you to perform ETL, manage data updates, keep track of data using the data catalog, and finally perform a simple unifying query.
