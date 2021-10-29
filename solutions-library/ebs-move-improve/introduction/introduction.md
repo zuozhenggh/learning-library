@@ -134,6 +134,9 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 
 **Virtual Cloud Network (VCN)** – A virtual version of a traditional network – including subnets, route tables, and gateways – on which your instances run. A cloud network resides within a single region, but can cross multiple availability domains.
 
+## More Documentation
+[Full documentation on Oracle EBS Cloud Manager](https://docs.oracle.com/cd/E26401_01/doc.122/f35809/toc.htm)
+
 ## Acknowledgements
 
 * **Author:** Quintin Hill, Cloud Engineering
