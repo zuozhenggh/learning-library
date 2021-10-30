@@ -4,7 +4,8 @@
 	"tutorials": [
       {
         "title": "Introduction",
-        "filename": "../../intro/intro.md"
+        "filename": "../../intro/intro.md",
+        "type": "odbw"
       },
       {
         "title": "Getting started",
