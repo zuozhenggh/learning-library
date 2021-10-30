@@ -5,7 +5,8 @@
         {
             "title": "Introduction",
             "filename": "../../introduction/introduction.md",
-            "type": "freetier"
+            "type": "freetier",
+            "type": "odbw"
         },
         {
             "title": "Getting Started",
