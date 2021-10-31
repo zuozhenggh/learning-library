@@ -1,6 +1,3 @@
-<!-- September 29, 2021: Per Marty's comments on September 29, I am removing tasks 3 and 4 and replacing then with notes about the privileges required for the current user if the user is not an admin like they are in this workshop. -->
-<!-- comments -->
-
 # Set Up the Workshop Environment
 
 ## Introduction
@@ -189,7 +186,7 @@ In this task, you create a new and empty business glossary in the newly created 
 
     ![](./images/specify-par.png " ")
 
-7. An import job is triggered and a message is displayed. You can click the **View Job** link in the message to view the details of this job. 
+7. An import job is triggered and a message is displayed. You can click the **View Job** link in the message to view the details of this job.
 
    ![](./images/import-job-initiated.png " ")
 
@@ -217,68 +214,6 @@ In this task, you create a new and empty business glossary in the newly created 
 
    ![](./images/description-added.png " ")
 
-<!-- commented out this task
-Task 7: Create IAM Policies for Administering Your Service
-Create Oracle Cloud Infrastructure Identity and Access Management (IAM) policies to grant privileges to users and groups to use and manage Data Catalog resources. Before you can create and access a data catalog, you must also create a policy that grants the system access to networking resources.
-
-1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Policies**.
-
-2. On the **Policies** page, if your compartment is not selected, use the **Compartment** drop-down list in the **List Scope** section to search for and select the **`training-dcat-compartment`** where the new policies will reside.  
-
-   ![](./images/list-scope.png " ")
-
-    >**Note:** Type part of the compartment's name in the **Search compartments** text box. When your compartment is displayed in the list, select it.  
-
-   ![](./images/search-compartment.png " ")
-
-3.  Click **Create Policy**.  
-
-    ![](./images/policies-page-blank.png " ")
-
-    The **Create Policy** dialog box is displayed.
-
-    ![](./images/create-policy-db-blank.png " ")
-
-
-4. In the **Create Policy** dialog box, provide the following information:
-    * **Name:** Enter **`training-dcat-admin-policy`**.
-    - **Description:** Enter **`Training DCAT Admin Group Policy`**.
-    - **Compartment:** Select **`training-dcat-compartment`** from the drop-down list, if it's not already selected.
-    - In the **Policy Builder** section, click and slide the **Show manual editor** slider to enable it. An empty text box is displayed in this section.
-
-     ![](./images/create-policy-1-dialog.png " ")
-
-    + Click the **Copy** button in the following code box to copy the policy statement to allow the admin users to perform all operations on all data catalog resources in the `training-dcat-compartment`, and then paste it in the **Policy Builder** text box.
-
-        ```
-        <copy>allow group training-dcat-admin-group to manage data-catalog-family in compartment training-dcat-compartment</copy>
-        ```
-        >**Note:**
-        Data Catalog offers both aggregate and individual resource-types for writing policies. You can use aggregate resource-types to write fewer policies. For example, instead of allowing a group to manage **`data-catalogs`** and **`data-catalog-data-assets`**, you can have a policy that allows the group to manage the aggregate resource-type, **`data-catalog-family`**. See [Data Catalog Policies](https://docs.oracle.com/en-us/iaas/data-catalog/using/policies.htm) in the Oracle Cloud Infrastructure documentation.
-
-    + Click the **Copy** button in the following code box to copy the policy statement, and then paste it in the **Policy Builder** text box. This policy statement allows Data Catalog service, **`datacatalog`**, to access the network, create instances, and more. Before you can create a private network in your compartment in a later lab in this workshop, you must have the required networking permissions. The following statement allows you to perform all networking operations in any your **training-dcat-compartment** compartment.
-
-        ```
-        <copy>allow group training-dcat-admin-group to manage virtual-network-family in compartment training-dcat-compartment</copy>
-        ```    
-
-    + Click the **Copy** button in the following code box to copy the policy statement, and then paste it in the **Policy Builder** text box. This policy statement allows the admin users to view Oracle Cloud Infrastructure users who performed various actions in Data Catalog.
-
-        ```
-        <copy>allow group training-dcat-admin-group to inspect users in compartment training-dcat-compartment</copy>
-        ```
-        ![](./images/click-create-policy.png " ")
-
-5. Click **Create**. The **Policy Detail** page is displayed. Scroll-down the page to the **Statements** section. The three statements that you added to the policy are displayed.  
-
-  ![](./images/policy-displayed-detail-page.png " ")
-
-6. Click **Policies** in the breadcrumbs to re-display the **Policies** page. The newly created policy is displayed in the list of available policies.
-
-     ![](./images/policies-page-2.png " ")
-
-    >**Note:** You can click the name of a policy on this page to view and edit it.
-    -->
 
 ## Task 6: Create a Dynamic Group
 Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). You can then create policies to permit instances to make API calls against Oracle Cloud Infrastructure services. When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
