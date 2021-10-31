@@ -19,7 +19,7 @@ This lab assumes that you have successfully completed all of the preceding labs 
 
 You can import, create, and work with notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Autonomous Database.
 
-1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
+1. Log in to the **Oracle Cloud Console** as the Cloud Administrator.
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
