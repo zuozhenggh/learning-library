@@ -1,4 +1,4 @@
-# Lakehouse: Putting it Together for Analytics
+# Lakehouse: Putting it together for Analytics
 
 ## Introduction
 
@@ -11,15 +11,15 @@ In this lab, you will:
 * Validate that new data is being loaded
 * Review the components of the Data Lake
 
-Estimated Time:15 minutes
+Estimated Time: 15 minutes
 
-## Task 1: SQL Queries
+## Task 1: SQL queries
 
 Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
 
 ![Database](./images/Databaselisting.png " ")
 
-Click on the database and then proced to click on the Tools Tab and click on Open Database Actions.
+Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
 
 ![Database Actions](./images/DBActions.png " ")
 
@@ -27,7 +27,7 @@ Click on SQL to execute the query to create the table.
 
 ![SQL](./images/SQL_queries.png " ")
 
-You can just simply query the MOVIE_GENRE table to view data, or create the following view to see the additional data along with the join to the MOVIE_GENRE entity.
+You can just simply query the MOVIE GENRE table to view data, or create the following view to see the additional data along with the join to the MOVIE GENRE entity.
 
 ```
 <copy>
@@ -67,9 +67,9 @@ Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you
 
 ![SQL](./images/Current_Catalog.png " ")
 
-Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity informaiton into the Data Asset, but for now in the lab you can run this manually.
+Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
 
-Now if you go back to the Home Tab fro the Data Catalog, you will discover that there are now 8 Data Entities are being kept up to data in the Data Catalog.
+Now if you go back to the Home Tab from the Data Catalog, you will discover that there are now 8 Data Entities are being kept up to data in the Data Catalog.
 
 ![New Entities](./images/new_entities.png " ")
 
@@ -89,7 +89,7 @@ Join the data to the existing customer data:
 <copy>
 SELECT
     DAY_ID,
-    GENRE_NAME,
+    GENRE.NAME,
     CUSTSALES.CUST_ID,
     AGE,
     GENDER, 

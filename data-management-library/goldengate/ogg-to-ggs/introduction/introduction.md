@@ -10,6 +10,8 @@ Oracle GoldenGate, the industry-leading data replication and integration softwar
 
 Estimated Time: 120 minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/6KsirCdeUXw).</if>
+
 ### About Oracle Cloud Infrastructure GoldenGate
 
 Oracle Cloud Infrastructure GoldenGate is a fully managed cloud service that uses Oracle GoldenGate Microservices to replicate data in real time, at scale, in the cloud. It processes data as it moves from one or more data management systems to target databases in Oracle Cloud Infrastructure.
