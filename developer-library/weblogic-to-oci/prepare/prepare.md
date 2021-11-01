@@ -65,10 +65,65 @@ Estimated Completion Time: 5 minutes.
 
    ![](./images/prereq-secret4.png " ")
 
+## Task 4: Check Policies Needed to Deploy and Create Dynamic Group if needed.
 
-That is all that's needed to get started.
+If you don't have the following policy for your group:
+
+```
+<copy>
+Allow group MyGroup to manage dynamic-groups in tenancy
+Allow group MyGroup to manage policies in tenancy
+</copy>
+```
+
+You will need to create a Dynamic Group and associated Policies:
+
+1. From the navigation menu, select Identity & Security. Under the Identity group, click Compartments.
+
+2. Copy the OCID for the compartment that you plan to use for the Oracle WebLogic Server compute instances.
+   
+   If you use another compartment just for network resources, copy also the OCID of the network compartment.
+
+3. Click Dynamic Groups.
+
+4. Click Create Dynamic Group.
+
+5. Enter a Name and Description. In the policies below we assume the name is *MyInstancesPrincipalGroup*
+
+6. For Rule 1, create a rule that includes all instances in the selected compartment in this group.
+
+   ```
+   <copy>
+   ALL {instance.compartment.id = 'WLS_Compartment_OCID'}
+   </copy>
+   ```
+
+   Provide the OCID for the compartment you copied previously.
+
+7. Click Create Dynamic Group.
+
+8. Create the policy for the dynamic group
+
+   ```
+   <copy>
+   Allow dynamic-group MyInstancesPrincipalGroup to manage all-resources in compartment MyCompartment
+   Allow service oke to read app-catalog-listing in compartment MyCompartment
+   Allow dynamic-group MyInstancesPrincipalGroup to read secret-bundles in compartment VaultCompartment where target.secret.id = '<OCID for OCIR token secret>'
+   Allow dynamic-group MyInstancesPrincipalGroup to inspect subnets in NetworkCompartment
+   Allow dynamic-group MyInstancesPrincipalGroup to use dynamic-groups in MyCompartment
+   </copy>
+   ```
+
+9. To use the OS Management Service, you can add the following policies as well:
+
+   ```
+   <copy>
+   Allow dynamic-group MyInstancesPrincipalGroup to use osms-managed-instances in compartment MyCompartment
+   Allow dynamic-group MyInstancesPrincipalGroup to read instance-family in compartment MyCompartment
+   </copy>
+   ```
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, August 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, October 2021

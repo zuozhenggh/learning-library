@@ -169,6 +169,7 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, Cognitive Analytics and AI
-- **Last Updated By/Date** - Tom McGinn, Product Manager, Database Product Management, March 2021
+- **Author** - Mark Hornick , Sr. Director, Data Science / Machine Learning PM
+
+- **Last Updated By/Date** - Siddesh Ujjni, Senior Cloud Engineer, October 2021.
 

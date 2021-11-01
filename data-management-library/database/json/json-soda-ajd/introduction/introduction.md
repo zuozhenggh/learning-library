@@ -24,6 +24,7 @@ Watch this quick video to know why JSON in Oracle Autonomous Database is awesome
 
 [](youtube:yiGFO139ftg)
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/uvlhnG-bjnY).</if>
 
 ### About JSON
 
