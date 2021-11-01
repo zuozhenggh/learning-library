@@ -39,6 +39,11 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
    ![](./images/oracle-cloud-console-home.png " ")
 
+>**Note:** To zoom in (magnify) a displayed image in this workshop, hover over the image to display the magnifying glass icon, and then then click the image.
+
+   ![](./images/magnify-image.png " ")
+
+
 ## Task 2: (Optional) Create a Compartment
 
 A Cloud Administrator can optionally create a compartment in your tenancy to help organize the Data Catalog resources. In this lab, as a Cloud Administrator, you will create a new compartment that will group all of your Data Catalog resources that you will use in the workshop.
