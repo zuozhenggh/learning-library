@@ -4,6 +4,8 @@ The labs in this workshop walk you through all the steps to get started using th
 
 With Oracle Autonomous Database we make it quick and easy for you to create a secure, fully managed database service in the Oracle Cloud which enables you to start loading and analyzing your data immediately.
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/otS5PvJcxMQ).</if>
+
 ## What is an Oracle Autonomous Database?
 Oracle Autonomous Data Warehouse and Oracle Autonomous Transaction Processing are built around the market leading Oracle database. They come with fully automated data warehouse and transaction processing specific features that deliver outstanding query performance. This environment provides a fully managed cloud service running on optimized high-end Oracle hardware systems. You don’t need to spend time thinking about how you should store your data, when or how to back it up or how to tune your queries. We take care of everything for you.
 
@@ -22,21 +24,18 @@ Oracle’s Autonomous Database is the perfect quick-start service for fast data 
 - Visualize your data using Oracle Analytics Desktop
 
 ## Lab breakdown
-- **Lab 1:** Log in to Oracle Cloud and access the Oracle Autonomous Data Warehouse console.
-- **Lab 2:** Provision your first Autonomous Data Warehouse.
-- **Lab 3:** Explore the provided sample data sets that come with your Autonomous Database.
-- **Lab 4:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
-- **Lab 5:** Query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
-- **Lab 6:** Scale up your Oracle Autonomous Database service to have more CPUs.
+- **Lab 1:** Provision your first Autonomous Data Warehouse.
+- **Lab 2:** Explore the provided sample data sets that come with your Autonomous Database.
+- **Lab 3:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
+- **Lab 4:** Query files on the Oracle Cloud Infrastructure (OCI) Object Storage directly without loading them to your database.
+- **Lab 5:** Visualize your data using Oracle Analytics Desktop.
 
-**After reading the following workshop prerequisites, get started by clicking Getting Started in the Contents menu on the left.**
+**After reading the following workshop prerequisites, get started by clicking Get Started in the Contents menu on the left.**
 
 ## Workshop prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details you received from an Oracle instructor.
 
-**You are all set; let's begin! Click Lab 1 in the Contents menu on the right.**
-
-## Want to learn more about Oracle Autonomous Database?
+## Learn more
 
 Use these links to get more information about Oracle Autonomous Database:
 
@@ -52,4 +51,4 @@ Use these links to get more information about Oracle Autonomous Database:
 
 - **Author** - Nilay Panchal, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, September 2021
+- **Last Updated By/Date** - Richard Green, October 2021

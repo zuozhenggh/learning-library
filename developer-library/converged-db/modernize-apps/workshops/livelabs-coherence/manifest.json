@@ -13,7 +13,12 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
-      "title": "Lab 2: Modernize with Coherence Cache",
+      "title": "Lab 2: Initialize Environment",
+      "description": "Initialize Environment",
+      "filename": "../../initialize-environment/initialize-environment.md"
+    },
+    {
+      "title": "Lab 3: Modernize with Coherence Cache",
       "description": "Coherence Lab",
       "publisheddate": "08/10/2020",
       "filename": "../../coherence/coherence.md"

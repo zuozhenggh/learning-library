@@ -182,7 +182,7 @@ For the deployment of the *Bob's Books* sample application, we will use the exam
 
     ![Sign In](images/2.png)
 
-2. Enter your *Oracle Account Credentials* in the Username and Password fields, and then click *Sign In*.
+2. Enter your *Oracle Account Credentials* in the Username and Password fields, and then click *Sign In*. We will later use these credentials to create secret in Kubernetes.
 
     ![Oracle SSO](images/3.png)
 
@@ -248,7 +248,7 @@ Please copy and paste the block of commands into the *Cloud Shell*.
     ```bash
     <copy>
     export WLS_USERNAME=weblogic
-    export WLS_PASSWORD=$((< /dev/urandom tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' | head -c10);(date +%S))
+    export WLS_PASSWORD=$((< /dev/urandom tr -dc 'A-Za-z0-9!"#$%&'\''*+,-./:;<=>?@\^_`|~' | head -c10);(date +%S))
     echo $WLS_PASSWORD
     kubectl create secret generic bobbys-front-end-weblogic-credentials --from-literal=password=$WLS_PASSWORD --from-literal=username=$WLS_USERNAME -n bobs-books
     kubectl create secret generic bobs-bookstore-weblogic-credentials --from-literal=password=$WLS_PASSWORD --from-literal=username=$WLS_USERNAME -n bobs-books

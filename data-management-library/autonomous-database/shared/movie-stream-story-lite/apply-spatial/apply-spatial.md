@@ -4,13 +4,13 @@
 
 #### Video Preview
 
-[] (youtube:IpUuoOcpgho)
+[](youtube:kFB9C36oIaw)
 
 Time to run a promotion to help keep our at-risk customers. Run a localized promotion by finding these customers' local pizza locations using Oracle Spatial's nearest neighbor algorithm.
 
-To reduce customer churn, our business has partnered with a pizza chain to offer coupons for free pizza. The promotion will be offered to customers identified as both likely to churn and within reasonable proximity to a pizza chain location. Likelihood to churn is covered in Lab 6 (Using Oracle Machine Learning AutoML UI to Predict Churn). In this lab you determine which customers are near one or more pizza chain locations, and for those customers, which location is the closest. Specifically, we will answer the following question: "For customers that are within 10km of pizza chain location(s), which is the closest and what is the distance?"
+To reduce customer churn, our business has partnered with a pizza chain to offer coupons for free pizza. The promotion will be offered to customers identified as both likely to churn and within reasonable proximity to a pizza chain location. Likelihood to churn is covered in Lab 4 (Using Oracle Machine Learning AutoML UI to Predict Churn). In this lab you determine which customers are near one or more pizza chain locations, and for those customers, which location is the closest. Specifically, we will answer the following question: "For customers that are within 10km of pizza chain location(s), which is the closest and what is the distance?"
 
-Estimated Time: 20 minutes
+Estimated Time: 10 minutes
 
 ### About product/technology
 
@@ -18,119 +18,45 @@ Oracle Database, including Oracle Autonomous Database, provides native support f
 
 ![Conceptual diagram of Spatial in Oracle Autonomous Database](images/spatial.png " ")
 
-To add spatial capability to a table, we can add and populate a column of type SDO_GEOMETRY and then create a spatial index. In the case of large tables, it would be preferable to enable spatial capability without having to create a new column. Fortunately, Spatial is a first-class feature of Oracle Database and, as such, is able to leverage many powerful mainstream Oracle features. One such feature is **[function-based indexes](https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/indexes-and-index-organized-tables.html#GUID-9AD7651D-0F0D-4FC6-A984-5845F0224EE6)**, which allows creating an index on the result of a SQL function. This is perfect for Spatial: we create a function that accepts coordinates and returns SDO\_GEOMETRY, and then create a spatial index on the output of that function. Using a function-based spatial index, our table is enabled for spatial analysis without the need to add a geometry column.
-
 For a hands-on general introduction, you are encouraged to review **[Introduction to Oracle Spatial Workshop] (https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=736)**
 
 
 ### Objectives
 
 In this lab, you will:
-- Create function-based spatial indexes for tables with latitude, longitude columns
 - Perform spatial queries to identify the nearest pizza location to customers
 
 
 ### Prerequisites
 
-- This lab requires completion of Labs 1&ndash;4 in the Contents menu on the left.
-- You can complete the prerequisite labs in two ways:
+- This lab requires completion of Labs 1&ndash;2 in the Contents menu on the left.
 
-    a. Manually run through the labs.
-
-    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
-## Task 1: Prepare the data
 
-To prepare your data for spatial analyses, you create function-based spatial indexes on the CUSTOMER\_CONTACT and PIZZA\_LOCATION tables. Function-based spatial indexes enable tables for spatial analysis without the need to create geometry columns. Tables with coordinate columns are always good candidates for a function-based spatial index.
+## Task 1: Open a SQL Worksheet
 
+In this lab you will run a series of SQL queries as the MOVIESTREAM user. You concluded Lab 2 by running a script in a SQL Worksheet to load data as the MOVIESTREAM user. You may return to that SQL Worksheet to perform this Lab. If that Worksheet was closed then open a new SQL Worksheet.
 
-1. As described in Task 3 of the Lab entitled "Create a Database User," navigate to a SQL Worksheet as user MOVIESTREAM.
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
 
-2. Begin by creating a function that accepts coordinates and returns a geometry. In order to use a function for a function-based index, it must be declared DETERMINISTIC. This means that a given input will always return the same output. Our case of returning a geometry from latitude, longitude input meets this requirement. Run the following command to create the function.
+    ![Details page of your Autonomous Database](images/2878884319.png " ")
 
-    ```
-	<copy>
-    CREATE OR REPLACE FUNCTION latlon_to_geometry (
-       latitude   IN  NUMBER,
-       longitude  IN  NUMBER
-    ) RETURN sdo_geometry
-       DETERMINISTIC
-   IS
-   BEGIN
-       --first ensure valid lat/lon input
-       IF latitude IS NULL OR longitude IS NULL
-       OR latitude NOT BETWEEN -90 AND 90
-       OR longitude NOT BETWEEN -180 AND 180 THEN
-         RETURN NULL;
-       ELSE
-       --return point geometry
-        RETURN sdo_geometry(
-                2001, --identifier for a point geometry
-                4326, --identifier for lat/lon coordinate system
-                sdo_point_type(
-                 longitude, latitude, NULL),
-                NULL, NULL);
-       END IF;
-   END;
-   </copy>
-    ```
+2. Enter MOVIESTREAM for the username and click **Next**. On the next form, enter the MOVIESTREAM password - which is the one you entered when creating your MOVIESTREAM user. Click **Sign in**.
 
-3. Next, test the function. Since the function returns a point geometry, you can perform a basic distance calculation using function calls to create the input geometries. Operations that do not involve spatial search or filtering, such as distance between 2 points, do not require a spatial index. Therefore you are able to perform this operation now, before spatial metadata and indexes are created. Run the following query to test the function by calculating the distance between a pair of coordinates.
+    ![Log in dialog for Database Actions](images/login-moviestream.png " ")
 
-    ```
-    <copy>
-    SELECT sdo_geom.sdo_distance(
-            latlon_to_geometry(22, -90),
-            latlon_to_geometry(23, -91),
-            0.05, --tolerance (coordinate precision in meters)
-           'unit=KM') as distance_km
-      FROM dual;
-    </copy>
-    ```
+3. In the Development section of the Database Actions page, click the SQL card to open a new SQL worksheet:
 
-    ![SQL worksheet showing the testing of the function](images/spatial-02.png " ")
+    ![Go to SQL worksheet](images/sql-card.png " ")
 
-4. Before creating a spatial index, you must insert a row of metadata for the geometry being indexed. This metadata is stored in a centralized spatial metadata table exposed to users through the view USER\_SDO\_GEOM\_METADATA available to all users. Instead of creating a spatial index on a geometry column, you will be creating function-based spatial indexes. Therefore, you insert spatial metadata specifying the function instead of a column. It is required that the function name be prefixed with the owner name. Run the following commands to insert spatial metadata for the CUSTOMER\_CONTACT and PIZZA\_LOCATION tables.
+4. Enter your commands in the worksheet. You can use the shortcuts [Control-Enter] or [Command-Enter] to run the command and view the Query Result (tabular format). Clear your worksheet by clicking the trash:
 
-    ```
-    <copy>
-    INSERT INTO user_sdo_geom_metadata VALUES (
-     'CUSTOMER_CONTACT',
-     user||'.LATLON_TO_GEOMETRY(loc_lat,loc_long)',
-      sdo_dim_array(
-          sdo_dim_element('X', -180, 180, 0.05), --longitude bounds and tolerance in meters
-          sdo_dim_element('Y', -90, 90, 0.05)),  --latitude bounds and tolerance in meters
-      4326 --identifier for lat/lon coordinate system
-        );
+    ![Go to SQL worksheet](images/sql-worksheet.png " ")
 
-    INSERT INTO user_sdo_geom_metadata VALUES (
-     'PIZZA_LOCATION',
-     user||'.LATLON_TO_GEOMETRY(lat,lon)',
-      sdo_dim_array(
-          sdo_dim_element('X', -180, 180, 0.05),
-          sdo_dim_element('Y', -90, 90, 0.05)),
-      4326
-       );
-    </copy>
-    ```
+You are now ready to find the closest pizza shops to MovieStream customers using SQL.
 
-5. Now that spatial metadata has been added, spatial indexes can be created. Spatial indexes are typically created on geometry columns. However here you are creating function-based spatial indexes, or in other words spatial indexes on geometries returned from a function. Run the following commands to create function-based spatial indexes for the CUSTOMER\_CONTACT and PIZZA\_LOCATION tables.
-
-    ```
-    <copy>
-    CREATE INDEX customer_sidx
-    ON customer_contact (latlon_to_geometry(loc_lat,loc_long))
-    INDEXTYPE IS mdsys.spatial_index_v2
-       PARAMETERS ('layer_gtype=POINT');
-
-    CREATE INDEX pizza_location_sidx
-    ON pizza_location (latlon_to_geometry(lat,lon))
-    INDEXTYPE IS mdsys.spatial_index_v2
-       PARAMETERS ('layer_gtype=POINT');
-    </copy>
-    ```
 
 ## Task 2: Run spatial queries
 
@@ -326,24 +252,6 @@ Parallel processing is a powerful capability of Oracle Database for high perform
 
 In customer-managed (non-Autonomous) Oracle Database, the degree of parallelism is set using optimizer hints. In Oracle Autonomous Database, parallelism is ... you guessed it... autonomous. A feature called "Auto DOP" controls parallelism based on available processing resources for the database session. Those available processing resources are in turn based on; 1) the service used for the current session: (service)\_LOW, (service)\_MEDIUM, or (service)\_HIGH, and 2) the shape (total OCPUs) of the Autonomous Database. Changing your connection from LOW to MEDIUM to HIGH  will increase the degree of parallelism and consume more of the overall processing resources for other operations. So a balance must be reached between optimal performance and sufficient resources for all workloads. Details can be found in the [**documentation**](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-priorities.html#GUID-19175472-D200-445F-897A-F39801B0E953).
 
-## Task 3: Purge changes (optional)
-
-If you would like to purge all changes made in this lab, run the following commands in order.
-
-```
-<copy>
-DROP INDEX customer_sidx;
-
-DROP INDEX pizza_location_sidx;
-
-DELETE FROM user_sdo_geom_metadata
-WHERE TABLE_NAME in ('CUSTOMER_CONTACT','PIZZA_LOCATION');
-
-DROP TABLE customer_nearest_pizza ;
-
-DROP FUNCTION latlon_to_geometry;
-</copy>
-```
 
 Please *proceed to the next lab*.
 
@@ -356,5 +264,5 @@ Please *proceed to the next lab*.
 
 ## Acknowledgements
 * **Author** - David Lapp, Oracle Database Product Management, Oracle
-* **Contributors** -  Marty Gubar, Patrick Wheeler, Keith Laker, Rick Green
-* **Last Updated By/Date** - David Lapp, July 2021
+* **Contributors** -  Marty Gubar, Rick Green
+* **Last Updated By/Date** - David Lapp, October 2021

@@ -1,10 +1,14 @@
-# Explore data, run queries
+# Explore Data, Run Queries
 
 ## Introduction
 
 This lab picks up where lab 3 left off. We are going to explore in more detail the tables we created, load data, and execute queries using a Python application.
 
-Estimated Time: 25 minutes
+_Estimated Lab Time:_ 25 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:g1CATzd5wtg)
 
 ### Objectives
 
@@ -91,7 +95,7 @@ The goal of this task is to understand the difference between the 2 data models 
     curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
     </copy>
     ````
-5. Read back the data that we just entered. Execute in the Cloud Shell. In the second two queries, we use a limit clause which limits the number of rows returned. We also use an orderby clause to sort the returned results.
+5. Read back the data that we just entered. Execute in the Cloud Shell. In the second two queries, we use a limit clause which limits the number of rows returned. We also use an order by clause to sort the returned results.
 
     ````
     <copy>
@@ -266,14 +270,11 @@ The goal of this task is to understand the difference between the 2 data models 
 
 5. Write new queries to answer the following questions. This should give an appreciation of the types of queries that can be written against Oracle NoSQL Database Cloud Service.
 
-  Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD).
-  **Hint:** Every record has an actions array at: bagInfo.flightLegs.actions
+      - Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD). **Hint:** Every record has an actions array at: bagInfo.flightLegs.actions
 
-  Find the number of bags on flight BM715.
-  **Hint:** The size of the bagInfo array represents the number of bags a passenger has checked.
+      - Find the number of bags on flight BM715. **Hint:** The size of the bagInfo array represents the number of bags a passenger has checked.
 
-  Find the names of passengers that had their bags initially loaded in Chicago.
-  **Hint:** Chicago Airport(ORD).
+      - Find the names of passengers that had their bags initially loaded in Chicago. **Hint:** Chicago Airport(ORD).
 
   **Note:** The Learn More contains a link to the SQL Reference Guide. Lab 3, Task 3 contains an example of the JSON record to look at.
 
@@ -288,7 +289,7 @@ This task deletes the tables and other OCI components that got created.
 
 <if type="paid">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **More Actions** and then **Delete** under that. This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -297,7 +298,7 @@ Set your compartment to 'demonosql'. Click the **freeTest** table, which will br
 
 <if type="freetier">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **More Actions** and then **Delete** under that. This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -306,7 +307,7 @@ Set your compartment to 'demonosql'. Click the **freeTest** table, which will br
 
 <if type="livelabs">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Select your compartment. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
+Select your compartment. Click the **freeTest** table, which will bring up the table details screen. Press **More Actions** and then **Delete** under that. This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -329,7 +330,7 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
     </copy>
     ````
 
-5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Identity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
 
@@ -356,7 +357,7 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
     </copy>
     ````
 
-5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Identity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
 
