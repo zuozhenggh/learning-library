@@ -72,7 +72,7 @@ When creating an Experiment, you must define the data source and the target of t
 
 4. In the **Comments** field, enter comments, if any.
 
-5. In the **Data Source** field, define the data definition for your experiment. The data definition comprises a data source and a target. Click the search icon to open the Select Table dialog box. Select the table **CUSTOMERS360** and click **OK**.
+5. In the **Data Source** field, click the search icon to open the Select Table dialog box. Select the **CUSTOMERS360** table and click **OK**.
 
 6. In the **Predict** drop-down list, select the column **AFFINITY_CARD** from the ``CUSTOMERS360`` table. This is the target for your prediction.
 
@@ -143,6 +143,15 @@ The Leader Board displays the top performing models relative to the model metric
 
 	![Leader Board showing selected metrics](images/leaderboard_2.png)
 
+
+5. Click on the Naive Bayes model, and then click **Rename**. In the Rename Model dialog, enter `NB_Customer360` to rename the auto generated model name for Naive Bayes. Click **OK**.  	
+
+	![Rename model](images/rename_model.png)
+
+6. Click **OK**. A confirmation message is displayed once the renaming is complete, and the leader board refreshes to display the renamed model.
+
+	![Leaderboard showing renamed model](images/renamed_model.png)
+
 5. Click on any model name to view the model details in the Model Detail dialog. Click **Prediction Impacts** and **Confusion Matrix** tab in the dialog to view the respective details, as shown in the screenshots below:
 
 * **Prediction Impact:** Displays the importance of the attributes in terms of the target prediction of the models. In this lab, the attribute HOUSEHOLD_SIZE has the highest impact on target prediction. Move your cursor over the prediction impact chart for each attribute to view the values.
@@ -162,9 +171,9 @@ To deploy a model:
 
 1. Open the Customer 360 experiment.
 
-2. Scroll down to the Leader Board, select the Naive Bayes model row and click **Deploy**. The Deploy Model dialog opens.
+2. Scroll down to the Leader Board, select the model **NB_CUSTOMER360** and click **Deploy**. The Deploy Model dialog opens.
 
-	![Deploy Model option in Leader Board](images/deploy_model_lb.png)
+	![Deploy Model option in Leader Board](images/deploy_model_nb.png)
 
 	>**Note:** You can also deploy a model from the Models page. You can access the Models page from the home page and the left navigation menu.  
 
@@ -172,9 +181,9 @@ To deploy a model:
 
 	![Deploy Model dialog](images/deploy_model.png)
 
-4. In the **Name** field, the system generated model name is displayed here by default. Edit this name to change it to **CUST360_NB**. The model name must be a unique alphanumeric name with a maximum of 50 characters.
+4. In the **Name** field, the model name is displayed here by default. In this example, the name `NB_CUSTOMER360` is displayed. This is the name that you renamed in the previous step. Edit this name to change it to **NaiveBayes_CUST360**. The model name must be a unique alphanumeric name with a maximum of 50 characters.
 
-5. In the **URI** field, enter **cust360nb**. The URI must be alphanumeric, and the length must be max 200 characters.
+5. In the **URI** field, enter **nb_cust360**. The URI must be alphanumeric, and the length must be max 200 characters.
 
 6. In the **Version** field, enter **1.0**. The version must be in the format ``xx.xx`` where x is a number.
 
@@ -182,7 +191,7 @@ To deploy a model:
 
 8. Click **Shared** to allow users with access to the database schema to view and deploy the model.
 
-9. Click **OK**. After a model is successfully deployed, it is listed on the Deployments page. To go to the Deployments page, click click **Models** in the left navigation menu. Alternatively, you can click **Models** on the home page.    
+9. Click **OK**. After a model is successfully deployed, it is listed on the Deployments page. To go to the Deployments page, click **Models** in the left navigation menu. Alternatively, you can click **Models** on the home page.    
 
 	![List of deployed models on the Deployments page](images/deployed_models.png)
 
@@ -191,7 +200,7 @@ This completes the task of deploying the top model Naive Bayes to OML Services.
 
 ## Task 4: View OML Models with Deployed Metadata and JSON Endpoint
 
-The deployed models are listed under **Deployments** on the Models page. To view the metadata of the deployed model **CUST360_NB**:
+The deployed models are listed under **Deployments** on the Models page. To view the metadata of the deployed model **NaiveBayes_CUST360**:
 
 1. To go to Deployments, click the hamburger icon ![Image alt text](images/sample2.png) and then click  **Models** on the left navigation menu. Alternatively, you can click **Models** on the Oracle Machine Learning home page.
 
@@ -201,17 +210,17 @@ The deployed models are listed under **Deployments** on the Models page. To view
 
 	![Deployments](images/deployments_tab.png)
 
-2. The deployed model **CUST360_NB** is listed along with the metadata - Shared, version, namespace, owner, deployed date and URI under **Deployments** on the Models page.
+2. The deployed model **NaiveBayes_CUST360** is listed along with the metadata - Shared, version, namespace, owner, deployed date and URI under **Deployments** on the Models page.
 
 	![List of deployed models on the Deployments page](images/deployed_models.png)
 
-3. To view the metadata of the deployed model, click the name **CUST360_NB**. The model metadata is listed in the Model metadata for <name> dialog.
+3. To view the metadata of the deployed model, click the name of the deployed model `NaiveBayes_CUST360`. The model metadata is listed in the **Model metadata for NaiveBayes_CUST360** dialog.
 
-	![View model metadata](images/cust360_nb_metadata.png)
+	![View model metadata](images/naivebayes_cust360_metadata.png)
 
-4. To view the endpoint JSON, click the URI **cust360nb**. All details of the deployed model are listed in the **OPEN API Specification for <deployed_model_name>** dialog, as shown in the screenshot. Scroll down to view all details of the endpoint.
+4. To view the endpoint JSON, click the URI `nb_cust360`. All details of the deployed model are listed in the **OPEN API Specification for NaiveBayes_CUST360** dialog, as shown in the screenshot. Scroll down to view all details of the endpoint.
 
-	![View JSON endpoints](images/cust360_nb_endpoint.png)
+	![View JSON endpoints](images/nb_cust360_endpoint.png)
 
 
 This completes the task of viewing the metadata of the deployed model, and its endpoint.
