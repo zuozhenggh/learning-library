@@ -42,7 +42,7 @@ This new user/schema will hold the Grand Prix data.
 
     ![ADW Menu](images/open-sql.png)
 
-5. **Download** <a href="files/create_user.sql" target="\_blank">`create_user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
+5. **Download** <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/bUMuZhglMweYaXxscbcgvjzVEt02nvvIgIG5gWWZ3lzbk8g4mzN8luJgB87ZINeJ/n/odca/b/workshops-livelabs-do-not-delete/o/create_user.sql" target="\_blank">`create_user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
 
 6. Open the `create_user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area. This file will create a new user "F1" for us.
 
@@ -60,17 +60,17 @@ This new user/schema will hold the Grand Prix data.
 
 1. **Download** the 6 files that contain the data that we'll use in our analysis:
 
-   <a href="files/RACES.csv" target="\_blank">Races data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/SACcTyC3Ggal6GNffGp6oRhJABi7Wm94MPXww-c2sA3JFyJZbH9GF5kYw0ivqSei/n/odca/b/workshops-livelabs-do-not-delete/o/RACES.csv" target="\_blank">Races data</a>
 
-   <a href="files/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/wQuDVV-FDxGaYhwHyG3YVzGL9OF1uLDr2QjU9ojLiVOVyfjoZi9DFJTUFcYQfUb0/n/odca/b/workshops-livelabs-do-not-delete/o/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
 
-   <a href="files/SAFETY_CAR.csv" target="\_blank">Safety Car data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/3h5etgru8Q4o6YiQ2nEJUKLuKQ5df03nOoE22FDe_YQgJkNd7UBFQ8sYpU4gA54l/n/odca/b/workshops-livelabs-do-not-delete/o/SAFETY_CAR.csv" target="\_blank">Safety Car data</a>
 
-   <a href="files/PIT_STOPS.csv" target="\_blank">Pit Stop data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/pPpBJUxWOsUO71yPXsOz8nINXd3RPl2R5qAduASCUwAUKjolY-8OvO0-CST-aJk8/n/odca/b/workshops-livelabs-do-not-delete/o/PIT_STOPS.csv" target="\_blank">Pit Stop data</a>
 
-   <a href="files/RESULTS.csv" target="\_blank">Race Results data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/vyScD5nC1MKyRjw2DJe0sVNjJWxXhiOEYJTVztdWOyEtsSim6dFEWUbjYfL2qYS_/n/odca/b/workshops-livelabs-do-not-delete/o/RESULTS.csv" target="\_blank">Race Results data</a>
 
-   <a href="files/DRIVER_STANDINGS.csv" target="\_blank">Driver Ranking data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/K1ct-GD7lhs8sofFf53hz1supOKuytLnqHnGOWYVXJrCQ24NaaEMdQdRK-2HffI8/n/odca/b/workshops-livelabs-do-not-delete/o/DRIVER_STANDINGS.csv" target="\_blank">Driver Ranking data</a>
 
    Save the files on your local machine. **Make sure that the files are saved with extension `.csv`**
 

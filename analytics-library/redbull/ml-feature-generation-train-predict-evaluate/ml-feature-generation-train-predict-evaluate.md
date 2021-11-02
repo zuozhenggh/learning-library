@@ -68,7 +68,7 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
 1. **Download** the prepared notebook that contain the SQL instructions to Generate the new Features:
 
-   <a href="files/notebook.json" target="\_blank">Notebook to Generate Features</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/fBEurmSF69MM4KjqCMvPblGCHNAxpE1es1w1AM1sGK-nQbrhyTWSZkZdMwyZxUhZ/n/odca/b/workshops-livelabs-do-not-delete/o/notebook.json" target="\_blank">Notebook to Generate Features</a>
 
    Save the file on your local machine. Make sure that the file is saved with extension `.json`.
 
