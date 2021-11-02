@@ -1,13 +1,21 @@
-# Workshop Introduction and Overview #
+# Introduction
 
-## Introduction to Oracle Database In-Memory ##
-Database In-Memory features a highly optimized In-Memory Column Store (IM column store) maintained alongside the existing row formatted buffer cache as depicted below. The primary purpose of the IM column store is to accelerate column-oriented data accesses made by analytics operations. It is similar in spirit to having a conventional index (for analytics) on every column in a table. However, it is much more lightweight than a conventional index, requiring no logging, or any writes to the database. Just as the performance benefit to an application from conventional indexes depends on the amount of time the application spends accessing data in the tables that are indexed, the benefit from the IM column store also depends on the amount of time the application spends on data access for analytic operations.
+## About this workshop
+
+*Database In-Memory* features a highly optimized In-Memory Column Store (IM column store) maintained alongside the existing row formatted buffer cache as depicted below. The primary purpose of the IM column store is to accelerate column-oriented data accesses made by analytics operations.
+
+It is similar in spirit to having a conventional index (for analytics) on every column in a table. However, it is much more lightweight than a conventional index, requiring no logging, or any writes to the database. Just as the performance benefit to an application from conventional indexes depends on the amount of time the application spends accessing data in the tables that are indexed, the benefit from the IM column store also depends on the amount of time the application spends on data access for analytic operations.
+
+*Estimated Workshop Time*: 2 hours
 
 Watch the video below for an overview of Oracle In-Memory.
 
 [](youtube:JGM1taVRZHs)
 
-## Database In-Memory and Performance
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/QzCnO_Me97g).</if>
+
+## Overview
+### Database In-Memory and Performance
 
 There are four basic architectural elements of the column store that enable orders of magnitude faster analytic query processing:  
 
@@ -20,13 +28,13 @@ There are four basic architectural elements of the column store that enable orde
 
 4. *In-Memory Optimized Joins and Reporting*: Because of massive increases in scan speeds, the Bloom filter optimization (introduced earlier in Oracle Database 10g) can be commonly selected by the optimizer. With the Bloom filter optimization, the scan of the outer (dimension) table generates a compact Bloom filter which can then be used to greatly reduce the amount of data processed by the join from the scan of the inner (fact) table. Similarly, an optimization known as Vector Group By can be used to reduce a complex aggregation query on a typical star schema into a series of filtered scans against the dimension and fact tables.
 
-## In-Memory Architecture
+### In-Memory Architecture
 
 The following figure shows a sample IM column store. The database stores the sh.sales table on disk in traditional row format. The SGA stores the data in columnar format in the IM column store, and in row format in the database buffer cache.
 
 ![](./images/arch.png " ")
 
-## More Information on In-Memory
+## Learn More
 
 Database In-Memory Channel
 <a href="https://www.youtube.com/channel/UCSYHgTG68nrHa5aTGfFH4pA">![](./images/inmem.png " ") </a>
@@ -39,10 +47,5 @@ Please proceed to the next lab.
 ## Acknowledgements
 
 - **Authors/Contributors** - Andy Rivenes, Product Manager, Database In-Memory
-- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, Director, Database Product Management, March 2020
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+- **Contributors** - Kay Malcolm, Anoosha Pilli, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

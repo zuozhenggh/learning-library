@@ -1,20 +1,24 @@
-# Load data from object storage using Data Tools and scripting
+# Use Data Tools to create a user and load data
 
 ## Introduction
 
-This lab takes you through the steps needed to load and link data from the MovieStream data lake on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
+#### Video Preview
 
-You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third-party data integration tools. With the built-in tools, you can load data:
+[](youtube:0_BOgvJw4N0)
 
-+ from files in your local device,
-+ from tables in remote databases, or
-+ from files stored in cloud-based object storage (Oracle Cloud Infrastructure Object Storage, Amazon S3, Microsoft Azure Blob Storage, Google Cloud Storage).
+In this lab, you will create a new database user, then load and link data from the MovieStream data lake on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
+
+You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third party data integration tools. With the built-in tools, you can load data:
+
++ from files in your local device
++ from tables in remote databases
++ from files stored in cloud-based object storage (Oracle Cloud Infrastructure Object Storage, Amazon S3, Microsoft Azure Blob Storage, Google Cloud Storage)
 
 You can also leave data in place in cloud object storage, and link to it from your Autonomous Database.
 
 > **Note:** While this lab uses Oracle Autonomous Data Warehouse, the steps are identical for loading data into an Oracle Autonomous Transaction Processing database.
 
-Estimated Time: 30 minutes
+Estimated Time: 15 minutes
 
 ### About product
 
@@ -24,80 +28,165 @@ We will also learn how to exercise features of the DBMS\_CLOUD package to link a
 
 ### Objectives
 
-+ Learn how to define object storage credentials for your autonomous database
-+ Learn how to load data from object storage using Data Tools
-+ Learn how to load data from object storage using the DBMS\_CLOUD APIs executed from SQL
-+ Learn how to enforce data integrity in newly loaded tables
+In this lab, you will:
+* Create a database user and update the user's profile to grant more privileges
+* Log in as the user
+* Learn how to define object storage credentials for your autonomous database
+* Learn how to load data from object storage using Data Tools
+* Load data using a script
+
 
 ### Prerequisites
 
-+ This lab requires you to have access to an autonomous database instance; either Oracle Autonomous Data Warehouse (ADW) or Oracle Autonomous Transaction Processing (ATP).
+- This lab requires completion of Lab 1, **Provision an ADB Instance**, in the Contents menu on the left.
 
-+ The MOVIESTREAM user must have been set up. If the user is not set up, please complete Lab 3 in this series (Create a Database User) before proceeding.
+## Task 1: Create a database user
 
-## Task 1: Configure the Object Storage connections
+When you create a new data warehouse, you automatically get an account called ADMIN that is your super administrator user. In the real world, you will definitely want to keep your data warehouse data separate from the administration processes. Therefore, you will need to know how to create separate new users and grant them access to your data warehouse. This section will guide you through this process using the "New User" wizard within the Database Actions set of tools.
+
+For this workshop we need to create one new user.
+
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
+
+    ![Details page of your Autonomous Database](images/2878884319.png " ")
+
+2. Enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse. Click **Sign in**.
+
+    ![Log in dialog for Database Actions](images/2878884336.png " ")
+
+3. On the Database Actions home page, click the **Database Users** card.
+
+    ![Database Users card of the Database Actions home page](images/2878884369.png " ")
+
+4.  You can see that your ADMIN user appears as the current user.  On the right-hand side, click the **+ Create User** button.
+
+    ![Create User button highlighted on the Database Users page](images/2878884398.png " ")
+
+5. The **Create User**  form will appear on the right-hand side of your browser window. Use the settings below to complete the form:
+
+ - username: **MOVIESTREAM**
+ - password: create a suitably strong password, and make note of it, as you will need to provide it in an upcoming step.
+
+    >**Note:** Rules for User Passwords: Autonomous Data Warehouse requires strong passwords. User passwords user must meet the following default password complexity rules:
+
+    - Password must be between 12 and 30 characters long
+
+    - Must include at least one uppercase letter, one lowercase letter, and one numeric character
+
+    - Limit passwords to a maximum of 30 characters
+
+    - Cannot contain the username
+
+    - Cannot be one of the last four passwords used for the same username
+
+    - Cannot contain the double quote (") character
+
+    There is more information available in the documentation about password rules and how to create your own password rules; see here: [Create Users on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-create.html#GUID-B5846072-995B-4B81-BDCB-AF530BC42847)
+
+- Toggle the **Graph** button to **On**.
+- Toggle the **Web Access** button to **On**.
+- Toggle the **OML** button to **On**.
+- In the upper right section of the Create User dialog, select **UNLIMITED** from the drop down menu for Quota on tablespace DATA.
+
+    >**Note:** If you are using an Always Free autonomous database instance, the **UNLIMITED** option will not be available. In this case, simply select **20GB** in the list. This will be sufficient for the whole workshop.
+
+- Leave the **Password Expired** toggle button as off (Note: this controls whether the user is prompted to change their password when they next log in).
+- Leave the **Account is Locked** toggle button as off. 
+
+- Click **Create User** at the bottom of the form.
+
+    ![The Create User dialog](images/createuser2.png " ")
+
+Now that you have created a user with several roles, let's see how easy it is to grant some more roles.
+
+## Task 2: Update the user's profile to grant more privileges
+
+You learned how to use the Create User dialog to create a new user. You can also create and modify users using SQL. This is useful when you don't have access to the user interface or you want to run scripts to create/alter many users. Open the SQL worksheet as the ADMIN user to update the MOVIESTREAM user you just created.
+
+1. The Database Users page now shows your new MOVIESTREAM user in addition to the ADMIN user. Click **Database Actions** in the upper left corner of the page, to return to the Database Actions launch page.
+
+    ![Database Users page showing your new MOVIESTREAM user](images/see-new-moviestream-user.png " ")
+
+2.  In the Development section of the Database Actions page, click the **SQL** card to open a new SQL worksheet:
+
+    ![Click the SQL card.](images/3054194715.png " ")
+
+    This will open up a new window that should look something like the screenshot below. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click Next to take a tour through the informational boxes.
+
+    ![Screenshot of initial SQL Worksheet](images/Picture100-sql-worksheet.png " ")
+
+
+3. In the SQL Worksheet, paste in this code and run it using the **Run Script** button:
+
+    ```
+    <copy>
+    grant execute on dbms_cloud to moviestream;
+    grant create table to moviestream;
+    grant create view to moviestream;
+    grant all on directory data_pump_dir to moviestream;
+    grant create procedure to moviestream;
+    grant create sequence to moviestream;
+    grant create job to moviestream;
+    </copy>
+    ```
+
+
+## Task 3: Log in as the MOVIESTREAM user
+
+Now you need to switch from the ADMIN user to the MOVIESTREAM user, before starting the next lab on data loading.
+
+1. In the upper right corner of the page, click the drop-down menu for ADMIN, and click **Sign Out**.
+
+    ![Drop down menu to sign out](images/sign-out-from-admin.png " ")
+
+2. On the next screen, click **Sign in**.
+
+    ![Sign in dialog](images/click-sign-in.png " ")
+
+3. Enter the username MOVIESTREAM and the password you defined when you created this user.
+
+    ![Sign in dialog filled with username and password](images/2878885088.png " ")
+
+4. This will launch the Database Actions home page.
+
+    ![The Database Actions home page](images/2878885105.png " ")
+
+
+## Task 4: Configure the Object Storage connections
 
 In this step, you will set up access to the two buckets on Oracle Cloud Infrastructure Object Storage that contain data that we want to load - the landing area, and the 'gold' area.
 
-1. In your database's details page, click the Tools tab. Click **Open Database Actions**
-
-	  ![Click on Tools, then Database Actions](images/launchdbactions.png)
-
-2. On the login screen, enter the username MOVIESTREAM, then click the blue **Next** button.
-
-3. Enter the password for the MOVIESTREAM user you set up in the earlier lab.
-
-4. Under **Data Tools**, click on **DATA LOAD**
+1. On the Database Actions home page, under **Data Tools**, click **DATA LOAD**.
 
     ![Click DATA LOAD](images/dataload.png)
 
-5. In the **Explore and Connect** section, click on **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
+2. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
 
     ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
-6. To add access to the Moviestream landing area, click on **+Add Cloud Storage** in the top right of your screen.
+3. To add access to the Moviestream gold area which contains curated files for us to load, click **+Add Cloud Storage** in the top right of your screen.
 
--   In the **Name** field, enter 'MovieStreamLanding'
+    - In the **Name** field, enter 'MovieStreamGold'.
 
-> **Note:** Take care not to use spaces in the name.
+    **Note:** Take care not to use spaces in the name.
 
--   Leave Cloud Store selected as **Oracle**
--   Copy and paste the following URI into the URI + Bucket field:
-```
-<copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
-</copy>
-```
--   Select **No Credential** as this is a public bucket
--   Click on the **Test** button to test the connection. Then click **Create**.
+    - Leave Cloud Store selected as **Oracle**.
+    - Copy and paste the following URI into the URI + Bucket field:
 
-7. The page now invites us to load data from this area. In this case, we want to set up access to an additional cloud location first. Click on Data Load in the top left of your screen to go back to the main Data Load page.
+    ```
+    <copy>
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o
+    </copy>
+    ```
 
-    ![Click Data Load](images/todataload.png)
+    - Select **No Credential** as this is a public bucket.
+    - Click on the **Test** button to test the connection. Then click **Create**.
 
-8. In the **Explore and Connect** section, click on **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click on **+Add Cloud Storage**.
+4. The page now shows the newly created Cloud Location.
 
--   In the **Name** field, enter 'MovieStreamGold'
+    ![Click CLOUD LOCATIONS](images/cloudlocations2.png)
 
-> **Note:** Take care not to use spaces in the name.
-
--   Leave Cloud Store selected as **Oracle**
--   Copy and paste the following URI into the URI + Bucket field:
-
-```
-<copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o
-</copy>
-```
-
--   Select **No Credential** as this is a public bucket
--   Click on the **Test** button to test the connection. Then click **Create**.
-
-We now have two cloud storage locations set up.
-
-![Cloud Storage Locations](images/cloudstoragelocations.png)
-
-## Task 2: Load data from files in Object Storage using Data Tools
+## Task 5: Load data from files in Object Storage using Data Tools
 
 In this step we will perform some simple data loading tasks, to load in CSV files from object storage into tables in our autonomous database.
 
@@ -112,7 +201,6 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 3. From the MOVIESTREAMGOLD location, drag the **customer_contact** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we only have a single file, but we do want to load this into a single table. Click **OK**.
 
 4. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
-
 
 5. Click on the pencil icon for the **customer_contact** task to view the settings for this load task.
 
@@ -132,354 +220,123 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     ![Check the job is completed](images/loadcompleted.png)
 
-10. Now, to load some more data from the MovieStream landing area, click on the **Data Load** link in the top left of your screen.
 
-    ![Click on Data Load](images/backtodataload.png)
+## Task 6: Load and link more data using SQL scripting
 
-11. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
+We have now learned how easy it is to load data using the Data Load tool. However, we can also load data using SQL scripts which exercise the same database APIs in the DBMS\_CLOUD package.
 
-12. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
+The DBMS\_CLOUD package is a feature of the autonomous database that enables us to extend the database to load from, and link to, cloud data storage systems such as Oracle Cloud Infrastructure Object Storage, Amazon S3, and Microsoft Azure Blob Storage. For more information see the [DBMS\_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 
-    ![Click on Data Load](images/selectlanding.png)
-
-13. From the MOVIESTREAMLANDING location, drag the **customer_extension** folder over to the right hand pane and click **OK** to load all objects into one table.
-
-14. Drag the **customer_segment** folder over to the right hand pane and click **OK**.
-
-15. Drag the **pizza_location** folder over to the right hand pane and click **OK**.
-
-16. Click on the Play button to run the data load job.
-
-    ![Run the data load job](images/runload2.png)
-
-    The job should take about 20 seconds to run.
-
-17. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
-
-    ![Check the job is completed](images/loadcompleted2.png)
-
-18. Click on the **Done** button in the bottom right of the screen.
-
-## Task 3: Create the Customer table
-
-We have now loaded a number of tables, including two main tables containing information about MovieStream customers - CUSTOMER\_CONTACT and CUSTOMER\_EXTENSION. It will be useful to link these tables together to create a joined table of customer information. We can do this with some simple SQL.
-
-1. In the **Development** section, click on **SQL** to open a SQL Worksheet.
-
-2. Copy and paste the following script into the Worksheet. This script will create the table **CUSTOMER**, joining our customer information together.
-
-```
-<copy>
-create table CUSTOMER
-            as
-            select  cc.CUST_ID,                
-                    cc.LAST_NAME,              
-                    cc.FIRST_NAME,             
-                    cc.EMAIL,                  
-                    cc.STREET_ADDRESS,         
-                    cc.POSTAL_CODE,            
-                    cc.CITY,                   
-                    cc.STATE_PROVINCE,         
-                    cc.COUNTRY,                
-                    cc.COUNTRY_CODE,           
-                    cc.CONTINENT,              
-                    cc.YRS_CUSTOMER,           
-                    cc.PROMOTION_RESPONSE,     
-                    cc.LOC_LAT,                
-                    cc.LOC_LONG,               
-                    ce.AGE,                    
-                    ce.COMMUTE_DISTANCE,       
-                    ce.CREDIT_BALANCE,         
-                    ce.EDUCATION,              
-                    ce.FULL_TIME,              
-                    ce.GENDER,                 
-                    ce.HOUSEHOLD_SIZE,         
-                    ce.INCOME,                 
-                    ce.INCOME_LEVEL,           
-                    ce.INSUFF_FUNDS_INCIDENTS,
-                    ce.JOB_TYPE,               
-                    ce.LATE_MORT_RENT_PMTS,    
-                    ce.MARITAL_STATUS,         
-                    ce.MORTGAGE_AMT,           
-                    ce.NUM_CARS,               
-                    ce.NUM_MORTGAGES,          
-                    ce.PET,                    
-                    ce.RENT_OWN,    
-                    ce.SEGMENT_ID,           
-                    ce.WORK_EXPERIENCE,        
-                    ce.YRS_CURRENT_EMPLOYER,   
-                    ce.YRS_RESIDENCE
-            from CUSTOMER_CONTACT cc, CUSTOMER_EXTENSION ce
-            where cc.cust_id = ce.cust_id;
-</copy>
-```
-3. Click on the **Run Script** button (or use the F5 key) to run the script.
-
-    ![Run the script to create the customer table](images/runcustscript.png)
-
-4. To check that the table has been created correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
-
-```
-<copy>
-select * from customer;
-</copy>
-```
-
-5. Click on the Run button to run the statement. You should see customer information, like this:
-
-    ![View customer data](images/custview.png)
-
-If you scroll to the right, you can see the columns that have been joined from the **customer\_extension** table, such as **age**, and **commute\_distance**.
-
-## Task 4: Use database APIs to load richer data files
-
-The DBMS\_CLOUD package is a feature of the autonomous database that enables us to extend the database to load from, and link to, cloud data storage systems such as Oracle Cloud Infrastructure Object Storage, Amazon S3, and Microsoft Azure Blob Storage. This package is used by the Data Load tool, but can also be exercised using SQL. For more information see the [DBMS\_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
-
-In this step, we will use some additional features of the DBMS\_CLOUD APIs to load in some Parquet and JSON files with differently structured data.
+In this step, we will use some additional features of the DBMS\_CLOUD APIs to load in some more files, including Parquet and JSON files.
 
 >**Note** [Parquet](https://parquet.apache.org/documentation/latest/) is a common big data file format, where often many parquet files are used to store large volumes of data with a common type and with a common set of columns; in this case, the customer sales data for MovieStream.
 
-1.  Still in the SQL Worksheet viewer, click on the bin icon on the top toolbar to clear the worksheet.
+1. Click on the menu in the very top left of your screen. In the **Development** section, click on **SQL** to open a SQL Worksheet.
 
-    ![Click on the bin icon](images/binicon.png)
+    ![Click on Development - SQL](images/gotosql.png)
 
-2.  Now, copy and paste the following script into the worksheet. This script will create the table **ext_custsales**, linking to the parquet files in the **custsales** folder in Object Store.
+2. Copy and paste the following script into the Worksheet. This script will load the rest of the data required by the workshop.
 
 ```
 <copy>
-define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
-define parquet_format = '{"type":"parquet",  "schema": "all"}'
+-- Run the following in order to add all the data sets required for the workshop
+-- Click F5 to run all the scripts at once
 
+-- drop this table with the lab listings
+
+drop table moviestream_labs; -- ignore error if table did not exist
+drop table moviestream_log;  -- ignore error if table did not exist
+
+-- Add the log table
+create table moviestream_log
+   (	execution_time timestamp (6),
+	    message varchar2(32000 byte)
+   );
+
+-- Create the MOVIESTREAM_LABS table that allows you to query all of the labs and their associated scripts
 begin
-    dbms_cloud.create_external_table(
-        table_name => 'ext_custsales',
-        file_uri_list => '&uri_gold/custsales/*.parquet',
-        format => '&parquet_format',
-        column_list => 'MOVIE_ID NUMBER(20,0),
-                        LIST_PRICE BINARY_DOUBLE,
-                        DISCOUNT_TYPE VARCHAR2(4000 BYTE),
-                        PAYMENT_METHOD VARCHAR2(4000 BYTE),
-                        GENRE_ID NUMBER(20,0),
-                        DISCOUNT_PERCENT BINARY_DOUBLE,
-                        ACTUAL_PRICE BINARY_DOUBLE,
-                        DEVICE VARCHAR2(4000 BYTE),
-                        CUST_ID NUMBER(20,0),
-                        OS VARCHAR2(4000 BYTE),
-                        DAY_ID date,
-                        APP VARCHAR2(4000 BYTE)'
-    );
-end;
-</copy>
-```
-
-3.  Click on the **Run Script** button (or use the F5 key) to run the script.
-
-    ![Run the script to load the ext_custsales table](images/custsalesscript.png)
-
-    We now have a new **ext_custsales** table that links to all of the parquet files in the **custsales** folder of our data lake on object storage.
-
-4.  To check that the data has been linked correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
-
-```
-<copy>
-select * from ext_custsales;
-</copy>
-```
-
-5.  Click on the Run button to run the statement. You should see transactional data representing customer movie purchases and rentals, like this:
-
-    ![Data from ext_custsales](images/select-extcustsales.png)
-
-
-6.  For the purposes of later labs, it is useful for us to copy the data from **ext_custsales** over to a **custsales** table. To do this, click on the bin icon to clear the worksheet. Then, copy and paste the following statement into the worksheet, and click on the Run (or Run Script) button to run the statement:
-
-```
-<copy>
-create table custsales as select * from ext_custsales;
-</copy>
-```
-
-> **Note:** This may take a minute or two, since it will be copying over 25m rows.
-
-7. Next, we will create an external table to link to the **movies.json** file. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
-
-```
-<copy>
-define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
-define json_format = '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}'
-begin
-    dbms_cloud.create_external_table(
-        table_name => 'ext_movie',
-        file_uri_list => '&uri_gold/movie/movies.json',
-        format => '&json_format',
-        column_list => 'doc varchar2(30000)'
-        );
+    dbms_cloud.create_external_table(table_name => 'moviestream_labs',
+                file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/R-csuXKL9-Vn-fpstvXalGJftkjzCB1Te2iI1bA0dq7afsSdVHRd5H7dd2O5HLtp/n/c4u04/b/moviestream_lite_scripts/o/moviestream-lite-labs.json',
+                format => '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}',
+                column_list => 'doc varchar2(30000)'
+            );
 end;
 /
-</copy>  
-```
 
-8. This has created a simple external table (**ext_movie**) with the whole JSON structure in a single column. It will be useful to create a more structured table from this data. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+-- Define the scripts found in the labs table.
+declare
+    b_plsql_script blob;            -- binary object
+    c_plsql_script clob;    -- converted to clob
+    uri_scripts varchar2(2000) := 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/R-csuXKL9-Vn-fpstvXalGJftkjzCB1Te2iI1bA0dq7afsSdVHRd5H7dd2O5HLtp/n/c4u04/b/moviestream_lite_scripts/o'; -- location of the scripts
+    uri varchar2(2000);
+begin
 
-```
-<copy>
-create table movie as
-select
-    cast(m.doc.movie_id as number) as movie_id,
-    cast(m.doc.title as varchar2(200 byte)) as title,   
-    cast(m.doc.budget as number) as budget,
-    cast(m.doc.gross as number) gross,
-    cast(m.doc.list_price as number) as list_price,
-    cast(m.doc.genre as varchar2(4000)) as genres,
-    cast(m.doc.sku as varchar2(30 byte)) as sku,   
-    cast(m.doc.year as number) as year,
-    to_date(m.doc.opening_date, 'YYYY-MM-DD') as opening_date,
-    cast(m.doc.views as number) as views,
-    cast(m.doc.cast as varchar2(4000 byte)) as cast,
-    cast(m.doc.crew as varchar2(4000 byte)) as crew,
-    cast(m.doc.studio as varchar2(4000 byte)) as studio,
-    cast(m.doc.main_subject as varchar2(4000 byte)) as main_subject,
-    cast(m.doc.awards as varchar2(4000 byte)) as awards,
-    cast(m.doc.nominations as varchar2(4000 byte)) as nominations,
-    cast(m.doc.runtime as number) as runtime,
-    substr(cast(m.doc.summary as varchar2(4000 byte)),1, 4000) as summary
-from ext_movie m;
+    -- Add privilege to run dbms_cloud
+    -- Run a query to get each lab and then create the procedures that generate the output
+    for lab_rec in (
+        select  json_value (doc, '$.lab_num' returning number) as lab_num,
+                json_value (doc, '$.title' returning varchar2(500)) as title,
+                json_value (doc, '$.script' returning varchar2(100)) as proc        
+        from moviestream_labs ml
+        where json_value (doc, '$.script' returning varchar2(100))  is not null
+        order by 1 asc
+        )
+    loop
+        -- The plsql procedure DDL is contained in a file in object store
+        -- Create the procedure
+        dbms_output.put_line(lab_rec.title);
+        dbms_output.put_line('....downloading plsql procedure ' || lab_rec.proc);
+
+        -- download the script into this binary variable        
+        uri := uri_scripts || '/' || lab_rec.proc || '.sql';
+
+        dbms_output.put_line('....the full uri is ' || uri);        
+        b_plsql_script := dbms_cloud.get_object(object_uri => uri);
+
+        dbms_output.put_line('....creating plsql procedure ' || lab_rec.proc);
+        -- convert the blob to a varchar2 and then create the procedure
+        c_plsql_script :=  to_clob( b_plsql_script );
+
+        -- generate the procedure
+        execute immediate c_plsql_script;
+
+    end loop lab_rec;  
+
+    execute immediate 'grant execute on moviestream_write to public';
+
+    exception
+        when others then
+            dbms_output.put_line('Unable to add the data sets.');
+            dbms_output.put_line('');
+            dbms_output.put_line(sqlerrm);
+ end;
+ /
+
+begin
+    add_datasets();
+end;
+/
 </copy>
 ```
 
 9.  Click the **Run Script** button to run the script.
 
-10. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following lines:
+> **Note** The script should take around 4-5 minutes to run as it uses a number of scripts to load and links a number of data files, and to generate additional views and tables used in later analysis steps.
 
-```
-<copy>
-create table TIME as
-SELECT TRUNC (to_date('2021-01-01','YYYY-MM-DD') - ROWNUM) as day_id
-FROM DUAL CONNECT BY ROWNUM < 732;
-</copy>  
-```
+10. When the script has completed, you should see a message like this in the Script Output window:
 
-11. Click on the **Run Script** button to run the script.
+    ![Script ran successfully](images/scriptcomplete.png)
 
-12. It is useful for us to add some additional 'virtual' columns for different time dimensions that we can use in later analysis. To do this, click on the bin icon to clear the worksheet, then copy and paste the following script:
+11. In the left hand pane, next to the Search box, click on the Refresh button to refresh the set of tables and views in the MOVIESTREAM user's schema. You should see a list of tables and views including **CUSTOMER**, **CUSTSALES** and **TIME** amongst others:
 
-```
-<copy>
-alter table time
-add (
-    day_name as (to_char(day_id, 'DAY')),
-    day_dow as (to_char(day_id, 'D')),
-    day_dom as (to_char(day_id, 'DD')),
-    day_doy as (to_char(day_id, 'DDD')),
-    week_wom as (to_char(day_id, 'W')),
-    week_woy as (to_char(day_id, 'WW')),
-    month_moy as (to_char(day_id, 'MM')),
-    month_name as (to_char(day_id, 'MONTH')),
-    month_aname as (to_char(day_id, 'MON')),
-    quarter_name as ('Q'||to_char(day_id, 'Q')||'-'||to_char(day_id, 'YYYY')),
-    quarter_qoy as (to_char(day_id, 'Q')),
-    year_name as (to_char(day_id, 'YYYY'))
-);
-</copy>
-```
-13. Click on the **Run Script** button to run the script.
+    ![Full list of tables and views](images/tablelist.png)
 
-14. To ensure the table has been created correctly, click on the bin icon to clear the worksheet, then copy and paste and Run the following query:
+This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream data lake. We will be working with these tables in later labs.
 
-```
-<copy>
-select * from time;
-</copy>  
-```
-
-15. You should see a number of columns with different date dimensions, for all the dates in the years 2020 and 2019:
-
-    ![Rows from the TIME table](images/viewtimetable.png)
-
-## Task 5: Enforce data integrity
-
-In this task, we will use the database's ability to define and enforce constraints to ensure that the data in the newly loaded tables remains valid. This will be important in later labs.
-
-In this example, we will define primary key constraints for a number of tables, to ensure that all records in each table have a populated and unique value for the key identifying column.
-
-We will also add constraints on the **movie** table to ensure that all the columns that contain JSON data must contain valid JSON, to ensure no bad data can exist in the table.
-
-1. Still in the SQL Worksheet viewer, click on the bin icon to clear the worksheet, then copy and paste and Run the following script:
-
-```
-<copy>
-alter table genre add constraint pk_genre_id primary key("GENRE_ID");
-
-alter table customer add constraint pk_customer_cust_id primary key("CUST_ID");
-alter table customer_extension add constraint pk_custextension_cust_id primary key("CUST_ID");
-alter table customer_contact add constraint pk_custcontact_cust_id primary key("CUST_ID");
-alter table customer_segment add constraint pk_custsegment_id primary key("SEGMENT_ID");
-
-alter table movie add constraint pk_movie_id primary key("MOVIE_ID");
-alter table movie add CONSTRAINT movie_cast_json CHECK (cast IS JSON);
-alter table movie add CONSTRAINT movie_genre_json CHECK (genres IS JSON);
-alter table movie add CONSTRAINT movie_crew_json CHECK (crew IS JSON);
-alter table movie add CONSTRAINT movie_studio_json CHECK (studio IS JSON);
-alter table movie add CONSTRAINT movie_awards_json CHECK (awards IS JSON);
-alter table movie add CONSTRAINT movie_nominations_json CHECK (nominations IS JSON);
-
-alter table pizza_location add constraint pk_pizza_loc_id primary key("PIZZA_LOC_ID");
-
-alter table time add constraint pk_day primary key("DAY_ID");
-
-
--- foreign keys
-alter table custsales add constraint fk_custsales_movie_id foreign key("MOVIE_ID") references movie("MOVIE_ID");
-alter table custsales add constraint fk_custsales_cust_id foreign key("CUST_ID") references customer("CUST_ID");
-alter table custsales add constraint fk_custsales_day_id foreign key("DAY_ID") references time("DAY_ID");
-alter table custsales add constraint fk_custsales_genre_id foreign key("GENRE_ID") references genre("GENRE_ID");
-</copy>
-```
-
-2.  To check one example of how the unique constraints work, we can now try to reload into the **pizza\_location** table the same data we have already loaded. This should return an error as the data already exists in the table and we do not want to duplicate it. To do this, click on the bin icon to clear the worksheet, then copy and paste and Run the following statement to check the number of rows in the **pizza\_location** table:
-
-```
-<copy>
-select count (*) from pizza_location;
-</copy>
-```
-
-This should return a count of 104 rows in the table.
-
-3. Now, copy and paste then Run the following script, which tries to reload the data from the **pizza_location.csv** file into the same table:
-
-```
-<copy>
-define csv_format = '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":",", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}'
-BEGIN
-DBMS_CLOUD.COPY_DATA (
-table_name => 'pizza_location',
-file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o/pizza_location/pizza_location.csv',
-format => '&csv_format'
-);
-END;
-/
-</copy>
-```
-
-4. Due to the primary key constraint on the **pizza_location** table, we can see that the database returns an error attempting to copy over the same data.
-
-    ![Unique constraint error](images/constrainterror.png)
-
-5. To prove that the **pizza_location** table has been unaffected by this rogue data loading attempt, copy and paste then Run the command to count the rows again:
-
-```
-<copy>
-select count (*) from pizza_location;
-</copy>
-```
-
-The count remains at 104 rows as there were no new rows to copy from the file.
-
-This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream data lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
+Please *proceed to the next lab*.
 
 ## Acknowledgements
 
 * **Author** - Mike Matthews, Autonomous Database Product Management
-* **Contributors** -  Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Mike Matthews, Autonomous Database Product Management, September 2021
+* **Contributors** -  Rick Green, Principal Developer, Database User Assistance, Marty Gubar, Autonomous Database Product Management
+* **Last Updated By/Date** - Mike Matthews, Autonomous Database Product Management, October 2021

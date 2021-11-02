@@ -1,4 +1,4 @@
-# Setup Primary and Standby Compute Instance
+# Setup Primary And Standby Compute Instance
 
 ## Introduction
 
@@ -23,7 +23,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
 
 
-## Task 1: Prepare the Primary Database
+## **Task 1:** Prepare The Primary Database
 
 1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Developer Services**, under **Resource Manager** choose **Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. 
 
@@ -86,7 +86,8 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
     ![](images/image-output.png)
 
-## Task 4: Connect to your Instance
+
+## **Task 4:** Connect To Your Instance
 
 ### MAC or Windows CYGWIN Emulator
 
@@ -101,7 +102,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     ```
     ssh -i labkey opc@xxx.xxx.xxx.xxx
     The authenticity of host 'xxx.xxx.xxx.xxx (xxx.xxx.xxx.xxx)' can't be established.
-    ECDSA key fingerprint is SHA256:Wq+YNHzgc1JUySBJuTRO0T4NKpeRz5Udw82Mn5RCe6c.
+    ECDSA key fingerprint is SHA256:Wq***...***Ce6c.
     Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
     Warning: Permanently added 'xxx.xxx.xxx.xxx' (ECDSA) to the list of known hosts.
     -bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
@@ -110,7 +111,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
     
 
-### Windows using Putty
+### Windows Using Putty
 
 1.  Open up putty and create a new connection.
 
@@ -132,7 +133,8 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 8.  Click Open to begin your session with the instance.
 
-## Task 5: Verify the Database is Up
+
+## **Task 5:** Verify The Database Is Up
 
 1.  From your connected session of choice **tail** the `buildsingle.log`, This file has the configures log of the database.
 
@@ -197,7 +199,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 You now have a fully functional Oracle Database 19c instance **ORCL** running on Oracle Cloud Compute, the default pdb name is **orclpdb**. This instance is your primary DB.
 
-## Task 6: Prepare the standby host
+## **Task 6:** Prepare The Standby Host
 
 Repeat from the Task 1 to Task 4 to prepare the standby host. This time please choose the `db19c-standby-nodb.zip` file in the Resource Manager. And you can choose another region and compartment for the standby database.
 
@@ -207,8 +209,8 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020
-* **Last Updated By/Date** - Minqiao Wang, Aug 2021
-* **Workshop Expiry Date** - Nov 30, 2021
+* **Last Updated By/Date** - Minqiao Wang, Oct 2021
+* **Workshop Expiry Date** - Nov 30, 2022
 
 
 

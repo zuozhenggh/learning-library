@@ -1,7 +1,7 @@
 # Introduction
 
 ### About this Workshop
-Oracle Real Application clusters can be deployed in a variety of ways. On bare metal servers, in docker containers, on engineered systems and in the Oracle Cloud.
+Oracle Real Application Clusters can be deployed in a variety of ways. On bare metal servers, in docker containers, on engineered systems and in the Oracle Cloud.
 
 ![](./images/rac-deployment.png " ")
 
@@ -12,6 +12,8 @@ Once your system is created you will create database services to provide a trans
 You will be using the VM.Standard2.2 shape with 4 OCPUs and 60GB of memory.
 
 For more about Virtual DB systems, click [Database Concepts: Overview](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Concepts/overview.htm).
+
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/bZjnAaJGUfs).</if>
 
 ### Workshop Objectives
 - Connect to a DB System

@@ -5,6 +5,7 @@
         {
             "title": "Introduction",
             "description": "Introduction to Oracle Cloud Data Lakehouse",
+            "type": "odbw",
             "filename": "./../../introduction.md"
         },
         {
@@ -13,7 +14,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Create Groups, Users, Policies and Autonomous Warehouse Database (ADW)",
+            "title": "Lab 1a: Create Groups, Users, Policies and Autonomous Warehouse Database (ADW)",
             "description": "This lab walks you through user setup and configuration and puts the foundation in place to prepare data cataloging, loading and maintaining for the data lakes.",
             "filename": "./../../lakehouse-configuration.md"
         },
@@ -23,7 +24,7 @@
             "filename": "./../../lakehouse-configuration2.md"
         },
         {
-            "title": "Lab 2: OCI Data Catalog, OCI Data Integration and Data Assets",
+            "title": "Lab 2: OCI Data Integration, OCI Data Catalog and Data Assets",
             "description": "This lab walks you through how to add various data assets and add business terms to define your data",
             "filename": "./../../data-catalog.md"
         },
@@ -33,7 +34,7 @@
             "filename": "./../../data-lake.md"
         },
         {
-            "title": "Lab 4: Lakehouse: Putting it Together for Analytics",
+            "title": "Lab 4: Lakehouse: Putting it together for Analytics",
             "description": "This lab shows you pull data into analytics, and reviews the Oracle Data Lake House.",
             "filename": "./../../lakehouse.md"
         },

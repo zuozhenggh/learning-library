@@ -10,6 +10,7 @@ The Oracle Cloud Data Lake House LiveLab will demonstrate a typical usage scenar
 
 Estimated Time: 70 minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/NnRfE-MLN-A).</if>
 
 ### Objectives
 
@@ -33,6 +34,6 @@ You will learn the following:
 
 ## Acknowledgements
 
-* **Author** - Michelle Malcher, Database Product Management
-* **Contributors** -  Massimo Castelli, Senior Director Product Management
+* **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
+* **Contributors** -  
 * **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021

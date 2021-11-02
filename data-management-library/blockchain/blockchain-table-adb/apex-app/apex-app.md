@@ -6,6 +6,10 @@ In the lab, you will create an APEX workspace, define the rest end points and en
 
 Estimated time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:0vNYCULNhnI)
+
 ### Objectives
 
 In this lab, you will:
@@ -19,7 +23,8 @@ In this lab, you will:
 
 This workshop assumes you have:
 
-- All previous labs completed.
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Successfully completed the previous labs
 
 ## Task 1: Create APEX Workspace
 

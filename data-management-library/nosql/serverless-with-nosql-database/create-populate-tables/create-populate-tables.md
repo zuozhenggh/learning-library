@@ -1,10 +1,14 @@
-# Create tables, load tables
+# Create Tables, Load Tables
 
 ## Introduction
 
 This lab walks you through creating and loading NoSQL tables. This can be done a variety of different ways including using the Oracle Cloud Console, writing an application program, or triggering actions through a function. This lab will walk you through a couple of different approaches. Oracle NoSQL Database Cloud Service supports both schema-based and schema-less (JSON) modeling so we will create examples of both tables.
 
-Estimated Time: 25 minutes
+_Estimated Lab Time:_ 25 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:V8tWMOXpgIA)
 
 ### Objectives
 
@@ -73,7 +77,7 @@ Estimated Time: 25 minutes
 
     ![](./images/always-free.png)
 
-  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.**
+  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column** and click **Set as a shard key.** For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column.
 </if>
 
 <if type="freetier">
@@ -81,13 +85,13 @@ Estimated Time: 25 minutes
 
     ![](./images/always-free.png)
 
-  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.** Proceed to step 7.
+  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column** and click **Set as a shard key.**  For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Proceed to step 7.
 
 6. If not in Phoenix, then enter in values for **Read capacity**, **Write capacity**, and **Disk storage**. Enter in 10,10, and 5 respectively. The **Always Free Configuration** button is grayed out and cannot be used.
 
    ![](./images/create-reserve.png)
 
-   Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.**
+   Next enter a **name** for your table, a **primary key** and a **column** and click **Set as a shard key.** For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column.
 </if>
 
 <if type="livelabs">
@@ -95,7 +99,7 @@ Estimated Time: 25 minutes
 
     ![](./images/always-free.png)
 
-  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column**. For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column. Click **Set as a shard key.**
+  Clicking the **Always Free Configuration** button grays out the boxes to input provisioning. Next enter a **name** for your table, a **primary key** and a **column** and click **Set as a shard key.** For this example, we used freeTest as the name, pkey with a type of integer as the primary key, and name with a type of string as an additional column.
 </if>
 
 
@@ -133,7 +137,7 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
     source ~/serverless-with-nosql-database/env.sh
     </copy>
     ```
-
+<if type="paid">
 3. Let's create NoSQL tables using the Oracle Cloud Infrastructure Command Line Interface (CLI). The CLI command for Oracle NoSQl is 'oci nosql <command>'. We will create two different tables and  echo the DDL statements so you can see what is being created. One of the tables is a fixed schema table and the other is a JSON document table. To create the always free table using the CLI, you set the '--is-auto-reclaimable' flag to true. The env.sh script run in step 2 detects the region your are in and sets a variable we can use.
 
     ```
@@ -173,6 +177,91 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
     --wait-for-state SUCCEEDED --wait-for-state FAILED
     </copy>
     ```
+</if>
+
+<if type="livelabs">
+3. Let's create NoSQL tables using the Oracle Cloud Infrastructure Command Line Interface (CLI). The CLI command for Oracle NoSQl is 'oci nosql <command>'. We will create two different tables and  echo the DDL statements so you can see what is being created. One of the tables is a fixed schema table and the other is a JSON document table. To create the always free table using the CLI, you set the '--is-auto-reclaimable' flag to true. The env.sh script run in step 2 detects the region your are in and sets a variable we can use.
+
+    ```
+    <copy>
+    cd ~/serverless-with-nosql-database/objects
+    DDL_TABLE=$(cat demo.nosql)
+    echo $DDL_TABLE
+    </copy>
+    ```
+    The echo command will show you the DDL statement that you will execute next.
+
+    ```
+    <copy>
+    oci nosql table create --compartment-id "$COMP_ID"   \
+    --name demo --ddl-statement "$DDL_TABLE" \
+    --is-auto-reclaimable "$NOSQL_ALWAYS_FREE" \
+    --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }" \
+    --wait-for-state SUCCEEDED --wait-for-state FAILED
+    </copy>
+    ```
+    At the end of this command you should see a "status": "SUCCEEDED" on your screen. Next we will create the second table.
+
+    ```
+    <copy>
+    DDL_TABLE=$(cat demoKeyVal.nosql)
+    echo $DDL_TABLE
+    </copy>
+    ```
+    The echo command will show you the DDL statement that you will execute next.
+
+    ```
+    <copy>
+    oci nosql table create --compartment-id "$COMP_ID"   \
+    --name demoKeyVal  --ddl-statement "$DDL_TABLE" \
+    --is-auto-reclaimable "$NOSQL_ALWAYS_FREE" \
+    --table-limits="{\"maxReadUnits\": 50,  \"maxStorageInGBs\": 25,  \"maxWriteUnits\": 50 }" \
+    --wait-for-state SUCCEEDED --wait-for-state FAILED
+    </copy>
+    ```
+</if>
+
+<if type="freetier">
+3. Let's create NoSQL tables using the Oracle Cloud Infrastructure Command Line Interface (CLI). The CLI command for Oracle NoSQl is 'oci nosql <command>'. We will create two different tables and  echo the DDL statements so you can see what is being created. One of the tables is a fixed schema table and the other is a JSON document table. To create the always free table using the CLI, you set the '--is-auto-reclaimable' flag to true. The env.sh script run in step 2 detects the region your are in and sets a variable we can use.
+
+    ```
+    <copy>
+    cd ~/serverless-with-nosql-database/objects
+    DDL_TABLE=$(cat demo.nosql)
+    echo $DDL_TABLE
+    </copy>
+    ```
+    The echo command will show you the DDL statement that you will execute next.
+
+    ```
+    <copy>
+    oci nosql table create --compartment-id "$COMP_ID"   \
+    --name demo --ddl-statement "$DDL_TABLE" \
+    --is-auto-reclaimable "$NOSQL_ALWAYS_FREE" \
+    --table-limits="{\"maxReadUnits\": 10,  \"maxStorageInGBs\": 5,  \"maxWriteUnits\": 10 }" \
+    --wait-for-state SUCCEEDED --wait-for-state FAILED
+    </copy>
+    ```
+    At the end of this command you should see a "status": "SUCCEEDED" on your screen. Next we will create the second table.
+
+    ```
+    <copy>
+    DDL_TABLE=$(cat demoKeyVal.nosql)
+    echo $DDL_TABLE
+    </copy>
+    ```
+    The echo command will show you the DDL statement that you will execute next.
+
+    ```
+    <copy>
+    oci nosql table create --compartment-id "$COMP_ID"   \
+    --name demoKeyVal  --ddl-statement "$DDL_TABLE" \
+    --is-auto-reclaimable "$NOSQL_ALWAYS_FREE" \
+    --table-limits="{\"maxReadUnits\": 10,  \"maxStorageInGBs\": 5,  \"maxWriteUnits\": 10 }" \
+    --wait-for-state SUCCEEDED --wait-for-state FAILED
+    </copy>
+    ```
+</if>    
 
 4. Minimize the Cloud Shell by clicking the **minimization button.**
 
@@ -181,7 +270,7 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
 
 ## Task 3:  Adding Data From the Oracle Cloud Console
 
-1. Make sure you see the 'Tables' screen. You should see 3 tables listed. You may or may not see the 'Always Free' tag, this displays depending on how you created the tables.
+1. Make sure you see the 'Tables' screen. You should see 3 tables listed. You may or may not see the 'Always Free' tag, this displays depending on how you created the tables.  You may see different values for read units, write units and storage.
 
     ![](./images/table-screen.png)
 
