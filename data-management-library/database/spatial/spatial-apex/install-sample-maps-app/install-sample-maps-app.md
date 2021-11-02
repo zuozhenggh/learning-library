@@ -65,17 +65,29 @@ This will take you to the Install Application wizard.
 1. You are now in the Sample Maps application, which provides numerous examples of maps and spatial operations in APEX. On initial launch a warning message is displayed regarding data loading. Click on the **Data Loading** link within that message. You will navigate to a page where you complete loading of demo data.
 ![Image alt text](images/install-sample-maps-13.png)
 
-2. The Data Loading page shows the loading status of the States and Airports datasets used in this workshop. Upon installation of the Sample Maps application, these datasets are only partially loaded. To complete the sample data loading, you may either load directly from files stored in github, or you may first download the files and load from your local system. In this case, you will load directly from github. Click on the lick to load **Directly from GitHub**.
+2. The Data Loading page shows the loading status of the States and Airports datasets used in this workshop. Upon installation of the Sample Maps application, these datasets are only partially loaded. To complete the sample data loading, you may either load directly from files stored in github, or you may first download the files and load from your local system. In this case, you will load directly from github. 
+   
+   Click on the link to load **Directly from GitHub** and then click **Load Dataset** at the top right.
 ![Image alt text](images/install-sample-maps-14.png)
+If you have any issued accessing github, then you may also click the option upload files which provides alternate instructions.
 
-3.  When data loading is complete you will see a notification at the top right, and the warning message is gone. The Sample Maps application is now ready to use.  
+1.  When data loading is complete you will see a notification at the top right, and the warning message is gone. The Sample Maps application is now ready to use.  
 ![Image alt text](images/install-sample-maps-15.png)
 
+
+## Task 3: Explore the Sample Maps application
+
+1. .....
+
+## Task 4: Explore the demo data
+You will use the demo data in the next lab...
+
+1. .....
 
 You may now [proceed to the next lab](#next).
 
 ## Learn More
-* [Spatial Studio product portal] (https://oracle.com/goto/spatialstudio)
+* 
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle

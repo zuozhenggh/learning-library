@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this workshop you will explore ... 
+In this workshop you will explore ...    map regions and spatial opertions...
 
 ![](./images/xxx.png " ")
 
