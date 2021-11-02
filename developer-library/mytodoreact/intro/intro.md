@@ -6,6 +6,8 @@ In this workshop, you will learn how to build and deploy a simple Cloud native a
 
 Estimated Time: 80 minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/JiAbVCGRcN8).</if>
+
 ![application](images/Application.png " ")
 
 ### About Product/Technology

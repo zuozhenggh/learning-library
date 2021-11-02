@@ -17,9 +17,8 @@ You need to have prepared the Oracle Cloud Infrastructure (OCI) tenancy with:
 
 - A Vault.
 - A Key.
-- A Secret for the WebLogic Admin password.
 - A Secret for the OCI Registry Auth Token.
-
+- Either have proper policies to create Dynamic Groups or have manually created the Dynamic Group.
 
 ## Task 1: Provision the Stack Through the Marketplace
 
@@ -72,65 +71,31 @@ You need to have prepared the Oracle Cloud Infrastructure (OCI) tenancy with:
 
     > **Note:** Do not use the example above as the key: it is a different public key which is useless without the corresponding private key, and you will not be able to access your resources on OCI)
 
-8. Keep the default of *2* for **Managed Server Count**.
-
-9. Use the standard *weblogic* for **Administration User Name**.
-
-   ![](./images/provision-11-admin-name.png " ")
-
-10. Paste the **OCID** of the **Secret** generated previously for the **Secret OCID for Administration Password**.
-
-    ![](./images/provision-12-secret.png " ")
-
-11. Click the **WebLogic Advanced Configuration** and enter the name **nonjrf_domain** for the domain name.
-
-    ![](./images/domain-name.png " ")
-
-12. Under **WebLogic Cluster (OKE) Configuration**, the Kubernetes version is default and select a **Shape** you have available in your tenancy.
-
-    In a real world situation, choose a shape appropriate to handle the load of a single managed server. Since we're using a trial account, choose the **VM.Standard.E2.1** shape, the **VM.Standard.E2.2** shape or a suitable shape that is available in your tenancy.
-
-    ![](./images/shape.png " ")
-
-    To check shape availability, in another tab, on the **Governance** menu, click **Limits and Quotas**, and verify you have a specific shape available.
-
-13. Select the **Number of Nodes in the WebLogic Pool** to 1 for now.
-
-    ![](./images/node-in-wls-pool.png " ")
-
-14. Select a shape and number of nodes for the non-WebLogic pool (for infra services like Jenkins).
-
-    ![](./images/node-in-non-wls-pool.png " ")
-
-15. Keep the **CIDR** block the default.
-
-    ![](./images/cidr.png " ")
-
-16. Under **Container Cluster (OKE) Administration Instances**, select an **Availability Domain** and shapes for the **Administration Server Compute Shape** and **Bastion Instance Shape**.
-
-    ![](./images/admin-bastion-shape.png " ")
-
-17. Under **Network**, select **Create New VCN** and keep the other defaults.
+8. Under **Network**, select **Create New VCN** and keep the other defaults.
 
     ![](./images/create-vcn.png " ")
 
-18. For **Database**, select **No Database**. This is only needed for a JRF domain. We will provision the application database separately.
+9. Under **Container Cluster (OKE) Configuration** select the **Non-Weblogic Node Pool Shape** from a shape available in your tenancy.
 
-    ![](./images/no-database.png " ")
+10. Under **Container Cluster (OKE) Administration Instances**, select an **Availability Domain** and shapes for the **Administration Instance Compute Shape** and **Bastion Instance Shape**.
 
-19. Select an **Availability Domain** for the **File System**.
+    ![](./images/admin-bastion-shape.png " ")
+
+11. Select an **Availability Domain** for the **File System**.
 
     ![](./images/file-system-ad.png " ")
 
-20. Under Registry (OCIR) enter your full **Username**, which you find under your **User icon**.
+12. Under Registry (OCIR) enter your full **Username**, which you find under your **User icon**.
 
     ![](./images/username.png " ")
 
-21. Enter the **OCID** of the secret for the **OCI Registry Auth Token**.
+13. Enter the **OCID** of the secret for the **OCI Registry Auth Token**.
 
     ![](./images/ocir-secret.png " ")
 
-22. Click **Create**.
+14. Keep **OCI Policies** checked **unless** you are not an admin and you created the Dynamic Group manually in the 'Prepare' step.
+
+22. Click **Next** and then **Create**
 
     ![](./images/provision-25.png " ")
 
@@ -148,13 +113,13 @@ You should see something like the following:
 
 ![](./images/provision-28.png " ")
 
-- Make a note of the **WebLogic Admin Server Private IP address** from the **WebLogic Admin Server Console URL** for later use.
-
-- Make a note of the **Load Balancer IP** for later use.
+- Make a note of the **Admin Instance Private IP** for later use.
 
 - Make a note of the Bastion Instance **Public IP address** for later use.
 
-To access the WebLogic Admin console, you will need to create a tunnel through the bastion host to your local machine.
+- Make a note of the **Kubernetes API Endpoints** for later use.
+
+To access the UI consoles, you will need to create a tunnel through the bastion host to your local machine.
 
 We'll need to set up a tunnel through the Bastion Instance, with a dynamic port to connect to the Admin Console and the Jenkins UI with the browser.
 
@@ -224,25 +189,58 @@ We'll need to set up a tunnel through the Bastion Instance, with a dynamic port 
 
 ## Task 4: Check the Deployment
 
-1. Find the private load balancer IP under the following menu settings: **Core Infrastructure**, **Networking**, **Load Balancers**.
+1. Find the private load balancer IP under the following menu settings: **Networking**, **Load Balancers**.
 
 2. Find the load balancer marked *Private* and note the IP address.
 
    ![](./images/lb-oke.png " ")
 
-3. In Firefox, go to `http://PRIVATE_LOAD_BALANCER_IP/console` to find the WebLogic Admin console.
+3. In Firefox, go to `http://PRIVATE_LOAD_BALANCER_IP/jenkins` to get to the Jenkins Console.
 
-   ![](./images/wls-empty.png " ")
-
-   You should find the deployment list is empty under **Deployments**.
-
-4. Go to `http://PRIVATE_LOAD_BALANCER_IP/jenkins` to get to the Jenkins Console.
-
-   You will be prompted to create a default admin user, and then you can see the Jenkins UI and pipelines.
+4. You will be prompted to create a default admin user.
+   
+5. Once in the console, click **Dashboard** on the top left. 
+    You should see the Jenkins UI and pipelines.
 
    ![](./images/jenkins.png " ")
+
+## Task 5: Create the WebLogic Domain
+
+In this stack, the WebLogic domain has not been created yet. This allow for creation of multiple domains per environments.
+
+The Jenkins Console includes a job to create a WebLogic domain.
+
+1. In the list of pipelines, click **Create WebLogic Domain**.
+
+2. On the left menu, click **Build with parameters**.
+
+3. For domain name, use `nonjrf`.
+
+4. Select the default Base Image.
+
+5. For WebLogic Username use `weblogic`.
+
+6. For password use `welcome1`.
+
+7. Check **Patch Automatically**.
+
+8. Leave the rest emtpy or defaults.
+
+9. Click **Build**.
+
+10. Click the link to the job
+
+11. You can follow the build process by clicking on **Console Output** on the left menu.
+
+    This will take 20 to 25 minutes.
+
+## Task 6: Access the Weblogic Console
+
+1. The WebLogic console is accessible at `http://PRIVATE_LOAD_BALANCER_IP/DOMAIN_NAME/console` which when following instruction above is `http://PRIVATE_LOAD_BALANCER_IP/nonjrf/console`
+
+2. There you can check Deployments and verify the domain is empty.
 
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, October 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, October 2021
