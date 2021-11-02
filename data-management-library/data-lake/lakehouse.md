@@ -27,7 +27,7 @@ Click on SQL to execute the query to create the table.
 
 ![SQL](./images/SQL_queries.png " ")
 
-You can just simply query the MOVIE_GENRE table to view data, or create the following view to see the additional data along with the join to the MOVIE_GENRE entity.
+You can just simply query the MOVIE GENRE table to view data, or create the following view to see the additional data along with the join to the MOVIE GENRE entity.
 
 ```
 <copy>
@@ -89,7 +89,7 @@ Join the data to the existing customer data:
 <copy>
 SELECT
     DAY_ID,
-    GENRE_NAME,
+    GENRE.NAME,
     CUSTSALES.CUST_ID,
     AGE,
     GENDER, 

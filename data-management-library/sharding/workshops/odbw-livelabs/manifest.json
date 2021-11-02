@@ -5,6 +5,7 @@
     {
       "title": "Introduction",
       "description": "This lab provides an overview of Oracle Sharding – Hyperscale Globally Distributed Database",
+      "type": "odbw",
       "filename": "../../intro/intro.md"
     },
     {
