@@ -22,7 +22,7 @@ In this workshop, you will learn how to work with
 - MySQL Enterprise Monitor - Manager, Agent
 - MySQL Backup - Logical and Enterprise Backup
 - High Availability - Replication and INNODB Cluster
-- MySQL Database Service plus HeatWave Step 
+- MySQL Database Service plus HeatWave Step
 
 ## Learn More
 

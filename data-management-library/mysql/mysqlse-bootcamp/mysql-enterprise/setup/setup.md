@@ -53,16 +53,16 @@ This lab assumes you have:
     - When in the manual you read MySQL **mysql>** the command must be executed in MySQL shell.
 
 2. Lab standard  
-    - shell> the command must be executed in the Operating System shell
-    - When in the manual you read **mysql>** the command must be executed in a client like MySQL, MySQL Shell, MySQL Workbench, etc. We recommend students to use MySQL Shell to practice with it
-    - When in the manual you read MySQL **mysql>** the command must be executed in MySQL shell
+    - ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
+    - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
+    - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
 
 3.	The software used for the labs is located on a local /workshop folder within each server.
 
 4.	Tip: set the keep alive for SSH connection to 60 seconds, to keep session open during lectures
 
 5.	Linux opc user has limited privileges. To work with administrative privileges, use "sudo" like 
-shell> sudo su - root
+![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> sudo su - root
 
 ## Task 4: Setup Lab Server and Connection
 
@@ -85,11 +85,12 @@ shell> sudo su - root
     - d. no password
     - e. Public IP address of your assigned Linux VM (serverA, serverB)
 
+
 4. Examples of connections: 
 
   *Linux:* use “id_rsa” key file
 
-    **shell>**
+  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>ssh -i id_rsa opc@public_ip </copy>
     ```
