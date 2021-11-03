@@ -21,9 +21,11 @@ This lab assumes you have -
 
     - Database Listeners
         - LISTENER
+        - LISTENER_1522
     - Database Server Instances
         - emrep
         - db19c
+		- orcl
     - Enterprise Manager - Management server (OMS)
     - Enterprise Manager - Management Agent (emagent)
 
