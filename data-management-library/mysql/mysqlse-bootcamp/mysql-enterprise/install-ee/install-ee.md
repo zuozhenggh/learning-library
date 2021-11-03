@@ -28,6 +28,11 @@ This lab assumes you have:
     - This is the most used instance in the labs
     - In the last labs we use it as source for replication and primary node for InnoDB Cluster HA
 
+* Lab standard  
+    - ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
+    - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
+    - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
+    
 ## Task 1: Install MySQL Enterprise Edition
 
 1.	Usually to run mysql  the user “mysql” is used, but because it is already available we show here how create a new one.

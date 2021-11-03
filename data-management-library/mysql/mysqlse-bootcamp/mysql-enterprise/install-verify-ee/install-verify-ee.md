@@ -34,6 +34,11 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
+* Lab standard  
+    - ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
+    - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
+    - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
+    
 ## Task 1: Discuss MySQL Connection 
 
 Please note that now you have 2 instances on the same server: one on 3306 and one on 3307. To connect to the correct one, always use the IP address, otherwise you may connect to wrong instance. Here we practice connecting to the right one (por t3310 is intentionally wrong). To help you understand “why” these check lines (not all are always available…)
