@@ -36,15 +36,15 @@ This lab assumes you have:
 
 1. To install the data masking plugin, execute with statements 
 
-    a. **shell>** 
+    a.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3307</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>INSTALL PLUGIN data_masking SONAME 'data_masking.so';</copy>
     ```
-    c. **mysql>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SHOW PLUGINS;</copy>
     ```
@@ -54,33 +54,33 @@ This lab assumes you have:
 
 1. Install masking functions
 
-    a. **mysql>** 
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>CREATE FUNCTION gen_range RETURNS INTEGER SONAME 'data_masking.so';</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>CREATE FUNCTION gen_rnd_email RETURNS STRING SONAME 'data_masking.so';</copy>
     ```
-    c. **mysql>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>CREATE FUNCTION gen_rnd_us_phone RETURNS STRING SONAME 'data_masking.so';</copy>
     ```
-    d. **mysql>** 
+    d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>CREATE FUNCTION mask_inner RETURNS STRING SONAME 'data_masking.so';</copy>
     ```
-    e. **mysql>** 
+    e. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>CREATE FUNCTION mask_outer RETURNS STRING SONAME 'data_masking.so';</copy>
     ```
 2. Use data masking functions
 
-    a. **mysql>** 
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT mask_inner(NAME, 1,1) FROM world.city limit 10;</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT mask_outer(NAME, 1,1) FROM world.city limit 10;</copy>
     ```
@@ -89,21 +89,21 @@ This lab assumes you have:
 
 1. Discuss differences between  mask&#95;inner  and  mask&#95;outer 
 
-    **mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT mask_inner(NAME, 1,1, '&') FROM world.city limit 1;</copy>
     ```
 2. Use data masking random generators to these statements several times
 
-    a. **mysql>**  
+    a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>SELECT gen_range(1, 200);</copy>
     ```
-    b. **mysql>** 
+    b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT gen_rnd_us_phone();</copy>
     ```
-    c. **mysql>** 
+    c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT gen_rnd_email();</copy>
     ```

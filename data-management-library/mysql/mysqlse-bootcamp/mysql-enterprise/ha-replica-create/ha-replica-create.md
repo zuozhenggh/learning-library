@@ -22,7 +22,11 @@ In this lab, you will:
 This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
-
+* Lab standard  
+    - ![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell> the command must be executed in the Operating System shell
+    - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql> the command must be executed in a client like MySQL, MySQL Workbench
+    - ![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) mysqlsh> the command must be executed in MySQL shell
+    
 **Server:** serverB (source) and serverA (slave)
 
 **NOTE:** 

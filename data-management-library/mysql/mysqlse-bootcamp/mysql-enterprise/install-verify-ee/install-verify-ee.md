@@ -50,122 +50,122 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
 
 ## Task 2: 	Connect to Ports 3306 and 3307
 
-1.  **shell>** 
+1.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
     <copy>mysql -u root -p</copy>
     ```
-2.  **mysql>**
+2.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>status</copy>
     ```
-3.  **mysql>** 
+3.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
 
     ```
     <copy>exit</copy>
     ```
-4.  **shell>** 
+4.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysql -u root -p -P3306</copy>
     ```
-5.  **mysql>** 
+5.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>status</copy>
     ```
 
-6.  **mysql>**
+6.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>exit</copy>
     ```
 	
-7.  **shell>**
+7.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>mysql -uroot -p -h localhost -P3310</copy>
     ```
 
-8.  **mysql>**
+8.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>status</copy>
     ```
 
-9.  **mysql>**
+9.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>exit</copy>
     ```
 
-10.  **shell>** 
+10.   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysql -uroot -p -S /var/lib/mysql/mysql.sock</copy>
     ```
 
-11.  **mysql>** 
+11.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>status</copy>
     ```
 
-12.  **mysql>**
+12.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>exit</copy>
     ```
 	
-13.  **shell>** 
+13.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysql -uadmin -p -h 127.0.0.1 -P3307</copy>
     ```
 
-14.  **mysql>** 
+14.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>status</copy>
     ```
 
-15.  **shell>** 
+15.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>exit</copy>
     ```
 
-16.  **shell>** 
+16.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysql -uadmin -p -h privateip-ServerB -P3307</copy>
     ```
     
-17.  **mysql>** 
+17.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>status</copy>
     ```
 
-18.  **mysql>**
+18.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>exit</copy>
     ```
-19.  **mysql>** 
+19.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>mysql -uroot -p -S /mysql/temp/mysql.sock</copy>
     ```
 
-20.  **mysql>** 
+20.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>status</copy>
     ```
 
-21.  **mysql>** 
+21.  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>exit</copy>
@@ -174,7 +174,7 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
 ## Task 3: Remove MySQL Community Installation and Iimport Databses
 1. Now that you understand how to connect, we can remove the MySQL Community installation
 
-  **shell>** 
+  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>sudo yum remove mysql-server</copy>
@@ -185,78 +185,78 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
     
     You can do it with mysql client
 
-  **shell>**
+  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
     <copy>mysql -uroot -p -S /mysql/temp/mysql.sock</copy>
     ``` 
 3.	Import the employees demo database that is in /workshop/databases folder.
 
-  **shell>** 
+  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>cd /workshop/databases/employees</copy>
     ```
 
-  **shell>** 
+  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>mysql -uroot -p -P3307 -h 127.0.0.1 < ./employees.sql</copy>
     ```
 ## Task 4: Learn Useful SQL Statements
 
-1. **shell>**
+1. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3307</copy>
     ```
-2. **mysql>** 
+2. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>eSHOW VARIABLES LIKE "%version%";</copy>
     ```
 
-3. **mysql>** 
+3. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT table&#95;name, engine FROM INFORMATION&#95;SCHEMA.TABLES WHERE engine <> 'InnoDB';</copy>
     ```
-4. **mysql>** 
+4. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT table&#95;name, engine FROM INFORMATION&#95;SCHEMA.TABLES WHERE engine = 'InnoDB';</copy>
     ```
-5. **mysqll>** 
+5. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT table&#95;name, engine FROM INFORMATION&#95;SCHEMA.TABLES where engine = 'InnoDB' and table&#95;schema not in ('mysql','information&#95;schema', 'sys');</copy>
     ```
-6. **mysql>**
+6. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SELECT ENGINE, COUNT(*), SUM(DATA&#95;LENGTH)/ 1024 / 1024 AS 'Data MB', SUM(INDEX&#95;LENGTH)/1024 / 1024 AS 'Index MB' FROM information&#95;schema.TABLEs group by engine;</copy>
     ```
-7. **mysql>**
+7. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SELECT table&#95;schema AS 'Schema', SUM( data&#95;length ) / 1024 / 1024 AS 'Data MB', SUM( index&#95;length ) / 1024 / 1024 AS 'Index MB', SUM( data&#95;length + index&#95;length ) / 1024 / 1024 AS 'Sum' FROM information&#95;schema.tables GROUP BY table&#95;schema ;</copy>
     ```
 9. The “\G” is like “;” with a different way to show results 
 
-  **mysql>** 
+  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SHOW GLOBAL VARIABLES\G</copy>
     ```
-  **mysql>**
+  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SHOW GLOBAL STATUS\G</copy>
     ```
-  **mysql>**
+  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SHOW FULL PROCESSLIST;</copy>
     ```
-  **mysqll>** 
+  **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 
     ```
     <copy>SHOW ENGINE INNODB STATUS\G</copy>

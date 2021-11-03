@@ -49,7 +49,7 @@ This lab assumes you have:
 
 1. Connect to your mysql-advanced with administrative user
 
-   **shell>** 
+   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3307</copy>
@@ -57,19 +57,19 @@ This lab assumes you have:
 
 2. Create a new user and restrict the user to your “serverA” IP
 
-	a. **mysql>** 
+	a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>CREATE USER 'appuser'@<client_ip> IDENTIFIED BY 'Welcome1!';</copy>
     ```
 
-	b. **mysql>** 
+	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>GRANT ALL PRIVILEGES ON world.* TO 'appuser'@<client_ip>;</copy>
     ```
 
-	c. **mysql>** 
+	c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SHOW GRANTS FOR 'appuser'@<client_ip>;</copy>
@@ -79,27 +79,28 @@ This lab assumes you have:
 
 	a. Install mysql client
 	 
-    **shell>** 
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>sudo yum install /workshop/linux/client/*.rpm</copy>
     ```
 
 	b. connect to mysql-advanced with appuser
-   **shell>** 
+    
+   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysql -u appuser -p -h <server_ip> -P 3307</copy>
     ```
 	c. Run a select on the tables e.g.
 
-    **mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>USE world;</copy>
     ```
 
-    **mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT * FROM city;</copy>
@@ -107,20 +108,20 @@ This lab assumes you have:
 
 2. Switch to the administrative connection revoke privilege on city to appuser
 
-    **mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>REVOKE SELECT ON world.* FROM 'appuser'@<client_ip>;</copy>
     ```
 
-    **mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SHOW GRANTS FOR 'appuser'@<client_ip>;</copy>
     ```
 3. Repeat the select on appuser connection for the user. There is a difference?
 
-    **mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SELECT * FROM city;</copy>
@@ -129,44 +130,44 @@ This lab assumes you have:
 ## Task 3: Use appuser connection
 1.	Close and reopen the appuser connection for the user, then repeat above commands. There is a difference? 
 
-    **mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>exit</copy>
     ```
 
-	**shell>** 
+	**![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysql -u appuser -p -h <server_ip> -P 3307</copy>
     ```
-	**mysql>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>USE world;</copy>
     ```
-    **mysql>** 
+    **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT * FROM city;</copy>
     ```
 2.	Switch to the administrative connection revoke ‘USAGE’ privilege using and administrative connection and verify (tip: this privilege can’t be revoked…)
 
-	**mysql>**
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 	```
 	<copy>REVOKE USAGE ON *.* FROM 'appuser'@<client_ip>;</copy>
 	```
-	**mysql>**
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 	```
 	<copy>SHOW GRANTS FOR 'appuser'@<client_ip>;</copy>
 	```
 
 3.	Using the administrative connection revoke all privileges using and administrative connection and verify
 
-	**mysql>**
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 	```
     <copy>REVOKE ALL PRIVILEGES ON *.* FROM 'appuser'@<client_ip>;</copy>
     ```
-	**mysql>**
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
 	```
     <copy>SHOW GRANTS FOR 'appuser'@<client_ip>;</copy>
     ```   
@@ -175,51 +176,51 @@ This lab assumes you have:
 ## Task 4: Restore user privileges
 1.	Using the administrative connection restore user privileges to reuse it in next labs
 
-	**mysql>**
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>GRANT ALL PRIVILEGES ON world.* TO 'appuser'@<client_ip>;</copy>
     ```
 2.	Using the administrative connection, what are your password settings?
 
-	**mysql>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SHOW VARIABLES LIKE 'validate_password%';</copy>
     ```
 3.	Try to set unsecure passwords for appuser
 
-	**mysql>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>alter user 'appuser'@<client_ip> identified by 'appuser';</copy>
     ```
 	
-	**mysql>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>alter user 'appuser'@<client_ip> identified by 'Welcome';</copy>
     ```
 
-	**mysql>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>alter user 'appuser'@<client_ip>identified by 'We1!';</copy>
     ```
 4.	Expire the password for appuser
 
-	**mysql>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>alter user 'appuser'@<client_ip> PASSWORD EXPIRE;</copy>
     ```
 5.	Close and reopen connection to mysql-advanced and try to submit a command. What changed?
 
-	**shell>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>mysql –u appuser -p -h <server_ip> -P 3307</copy>
     ```
 
-	**mysql>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SHOW DATABASES;</copy>
     ```
 
-	**mysql>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>alter user 'appuser'@<client_ip> identified by 'Welcome1!'</copy>
     ```

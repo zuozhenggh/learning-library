@@ -38,23 +38,24 @@ This lab assumes you have:
 1.	Usually to run mysql  the user “mysql” is used, but because it is already available we show here how create a new one.
 2. Create a new user/group for your MySQL service (mysqluser/mysqlgrp) and a add ‘mysqlgrp’ group to opc to help labs execution. 
 
-3.  **shell>** 
+3.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo groupadd mysqlgrp</copy>
     ```
   
-4.  **shell>** 
+4.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo useradd -r -g mysqlgrp -s /bin/false mysqluser</copy>
     ```
   
-5.  **shell>** 
+5.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
+
     ```
     <copy>sudo usermod -a -G mysqlgrp opc</copy>
     ```
 6. Close and reopen shell session or use “newgrp” command as below
 
-7.  **shell>** 
+7.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>newgrp - mysqlgrp</copy>
     ```
@@ -62,31 +63,31 @@ This lab assumes you have:
 
 8.	Create new directory structure:
 
-9.  **shell>** 
+9.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo mkdir /mysql/ /mysql/etc /mysql/data</copy>
     ```
 
-10.  **shell>** 
+10. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo mkdir /mysql/log /mysql/temp /mysql/binlog</copy>
     ```
 
 11.	Extract the tarball in your /mysql folder
 
-12.  **shell>** 
+12. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>cd /mysql/</copy>
     ```
 
-13.  **shell>** 
+13. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>sudo tar xvf /workshop/linux/mysql-commercial-8.0.25-el7-x86&#95;64.tar.gz</copy>
     ```
 
 14.	Create a symbolic link to mysql binary installation
 
-15.  **shell>** 
+15. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo ln -s mysql-commercial-8.0.25-el7-x86&#95;64 mysql-latest</copy>
     ```
@@ -94,33 +95,33 @@ This lab assumes you have:
 16.	Create a new configuration file my.cnf inside /mysql/etc
 To help you we created one with some variables, please copy it
 
-17.  **shell>** 
+17. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo cp /workshop/support/my.cnf.first /mysql/etc/my.cnf</copy>
     ```
 
 18.	For security reasons change ownership and permissions
 
-19.  **shell>** 
+19. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo chown -R mysqluser:mysqlgrp /mysql</copy>
     ```
 
-20.  **shell>** 
+20. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo chmod -R 750 /mysql</copy>
     ```
 
 21. The following permission is for the Lab purpose so that opc account can make changes and copy files to overwrite the content
 
-22.  **shell>** 
+22. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo chmod -R 770 /mysql/etc</copy>
     ```
 
 23.	initialize your database
 
-24.  **shell>** 
+24. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
 
     ```
     <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf --initialize --user=mysqluser</copy>
@@ -129,19 +130,19 @@ To help you we created one with some variables, please copy it
 
 1.	Start your new mysql instance
 
-2.  **shell>** 
+2.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf --user=mysqluser &</copy>
     ```
 
 3.	Verify that process is running
 
-4.  **shell>** 
+4.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>eps -ef | grep mysqld</copy>
     ```
 
-5.  **shell>** 
+5.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>netstat -an | grep 3307t</copy>
     ```
@@ -149,21 +150,21 @@ To help you we created one with some variables, please copy it
 
 6.	Another way is searching the message “ready for connections” in error log as one of the last
 
-7.  **shell>** 
+7.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>grep -i ready /mysql/log/err&#95;log.log</copy>
     ```
 
 8.	Retrieve root password for first login
 
-9.  **shell>** 
+9.  **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>grep -i 'temporary password' /mysql/log/err&#95;log.log</copy>
     ```
 
 10.	Before version 5.7 it was recommended to run the mysql&#95;secure&#95;installation script. From version 5.7 all these settings are by default, but the script can be used also to setup the validate&#95;password plugin (used later). Now execute mysql&#95;secure&#95;installation
 
-11.  **shell>** 
+11. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>/mysql/mysql-latest/bin/mysql&#95;secure&#95;installation -P3307 -h127.0.0.1 </copy>
     ```
@@ -181,24 +182,24 @@ To help you we created one with some variables, please copy it
 
 12.	Login to you mysql-advanced installation and check the status (you will be asked to change password). You can use the community mysql or the one provided with enterprise package
 
-13.  **shell>** 
+13. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3307</copy>
     ```
 
-14.  **mysqll>** 
+14. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>status</copy>
     ```
 
 15.	Shutdown the service
 
-16.  **mysql>** 
+16. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>exit</copy>
     ```
 
-17.  **shell>** 
+17. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>/mysql/mysql-latest/bin/mysqladmin -uroot -h127.0.0.1 -p -P3307 shutdown</copy>
     ```
@@ -207,102 +208,89 @@ To help you we created one with some variables, please copy it
     - Add a systemd service unit configuration file with details about the MySQL service. 
     - The file is named mysqld.service and is placed in /usr/lib/systemd/system. We created one for you (See addendum for the content)
 
-19.  **shell>** 
+19. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>sudo cp /workshop/support/mysqld-advanced.service /usr/lib/systemd/system/</copy>
     ```
-20.  **shell>** 
-
+20. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo chmod 644 /usr/lib/systemd/system/mysqld-advanced.service</copy>
     ```
 
-21.  **shell>** 
-
+21. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo systemctl enable mysqld-advanced.service</copy>
     ```
 22.	Test start, stop and restart
 
-23.  **shell>** 
-
+23. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo systemctl start mysqld-advanced</copy>
     ```
 
-24.  **shell>** 
-
+24. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo systemctl status mysqld-advanced</copy>
     ```
 
-25.  **shell>** 
-
+25. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo systemctl stop mysqld-advanced</copy>
     ```
 
-26.  **shell>** 
+26. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>sudo systemctl status mysqld-advanced</copy>
     ```
-27.  **shell>** 
-
+27. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>sudo systemctl restart mysqld-advanced</copy>
     ```
 
-28.  **shell>**
-
+28. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>sudo systemctl status mysqld-advanced</copy>
     ```
 
 29.	Create a new administrative user called 'admin' with remote access and full privileges
 
-30.  **shell>**
-
+30. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>mysql -uroot -p -h 127.0.0.1 -P 3307</copy>
     ```
 
-31.  **shell>** 
-
+31. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>CREATE USER 'admin'@'%' IDENTIFIED BY 'Welcome1!';</copy>
     ```
 
-32.  **shell>** 
-
+32. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;</copy>
     ```
 
 33.	In the configuration file was specified to load the commercial Thread Pool Plugin, check if it’s loaded and active:
 
-34.  **shell>** 
-
+34. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>select * from information&#95;schema.plugins where plugin&#95;name like 'thread%';</copy>
     ```
 
-35.  **shell>** 
-
+35. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
+ 
     ```
     <copy>select * from information&#95;schema.plugins where plugin&#95;name like 'thread%'\G</copy>
     ```
 36.	Add the mysql bin folder to the bash profile
 
-37.  **shell>** 
-
+37. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>exit</copy>
     ```
 
-38.  **shell>** 
-
+38. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>nano /home/opc/.bash&#95;profile</copy>
     ```

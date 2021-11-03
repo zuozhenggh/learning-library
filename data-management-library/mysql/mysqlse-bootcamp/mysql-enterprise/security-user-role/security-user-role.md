@@ -34,77 +34,77 @@ This lab assumes you have:
 ## Task 1: Create user
 1.	Reconnect as root to create a new user
 	
-	a. **shell>** 
+	a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
     <copy>mysql -u admin -p -h 127.0.0.1 -P 3307</copy>
     ```
-	b. **mysql>** 
+	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>CREATE USER 'appuser2'@'%' IDENTIFIED BY 'Welcome1!';</copy>
     ```
-	c. **mysql>** 
+	c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SHOW GRANTS FOR 'appuser2'@'%';</copy>
     ```
 2.	Now create a new role and grant it to the new user
 	
-	a. **mysql>** 
+	a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>CREATE ROLE 'app_read';</copy>
     ```
-	b. **mysql>** 
+	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>GRANT SELECT ON world.* TO 'app_read';</copy>
     ```
-	c. **mysql>** 
+	c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>GRANT 'app_read' TO 'appuser2'@'%';</copy>
     ```
-	d. **mysql>** SHOW GRANTS FOR 'appuser2'@'%';
+	d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SHOW GRANTS FOR 'appuser2'@'%';</copy>
     ```
 3.	Reconnect as appuser2 and submit some commands (you receive errors, why?)
 	
-	a. **shell>** 
+	a. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>**
     ```
     <copy>mysql -u appuser2 -p -h 127.0.0.1 -P 3307</copy>
     ```
-	b. **mysql>** ; 
+	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**   
     ```
     <copy>SHOW DATABASES</copy>
     ```
-	c. **mysql>** 
+	c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT COUNT(*) FROM world.city;</copy>
     ```
-	d. **mysql>** 
+	d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT current_role();</copy>
     ```
 ## Task 2: Set user role
 4.	Set the role for the user and repeat above commands
 
-	a. **mysql>** 
+	a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SET ROLE ALL;</copy>
     ```
-	b. **mysql>** 
+	b. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>SELECT current_role();</copy>
     ```
-	c. **mysql>**  
+	c. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**  
     ```
     <copy>SHOW DATABASES;</copy>
     ```
-	d. **mysql>** 
+	d. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
     ```
     <copy>SELECT COUNT(*) FROM world.city;</copy>
     ```
 5.	We can also assign a default role to don’t ask to set one after every login (you can use user or administrative session)
 
-	**mysql>** 
+	**![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>**
     ```
     <copy>ALTER USER 'appuser2'@'%' DEFAULT ROLE 'app_read';</copy>
     ```

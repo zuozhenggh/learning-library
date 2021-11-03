@@ -42,14 +42,14 @@ This lab assumes you have:
 ## Task 1: Install MySQL Shell
 1.	Install Mysql Shell, a new client that can be used in devOps organizations (you’ll learn more about it during the course)
 
-   **shell>** 
+   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>sudo yum install /workshop/linux/mysql-shell-commercial-8.0.25-1.1.el7.x86_64.rpm </copy>
     ```
 2.	Launch MySQL Shell
 
-   **shell>** 
+   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysqlsh</copy>
@@ -57,14 +57,14 @@ This lab assumes you have:
 ## Task 2: Use MySQL Shell with JSON
 1.	Discover the command auto-completion feature, type \h and press TAB twice 
 
-   **MySQL JS>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL JS>** 
 
     ```
     <copy>\h [tab] [tab]</copy>
     ```
 2.	Check the available options. Add the letter “e” to “\h” and press TAB again to see that the command will automatically complete for you. Press enter and explore the help menu
 
-   **MySQL JS>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL JS>** 
 
     ```
     <copy>\he [tab]</copy>
@@ -74,21 +74,21 @@ MySQL Shell comes with the option of automatically saving the history of command
 	
 	a.	Show settings and look for history.autoSave
 
-   **MySQL JS>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL JS>** 
 
     ```
     <copy>shell.options</copy>
     ```
 	b.	activate autosave history
 
-   **MySQL JS>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL JS>** 
 
     ```
     <copy>\option --persist history.autoSave=1</copy>
     ```
 4.	Close and reopen the session and in the new one use the arrow up key to verify that the data from previous session are available
    
-   **MySQL JS>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL JS>** 
 
     ```
     <copy>\exit</copy>
@@ -98,27 +98,27 @@ MySQL Shell comes with the option of automatically saving the history of command
 1.	MySQL Shell can be used as SQL client
 	a.	Connect to the newly installed mysql-advanced instance. Enter the password when requested and press enter. When the prompt asks to save the password choose No and press Enter.
    		
-	**MySQL JS>** 
+	**![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL JS>** 
 
     ```
     <copy>\c admin@127.0.0.1:3307</copy>
     ```
 	b.	Switch to SQL mode
 
-    **MySQL JS>** 
+    **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL JS>** 
 
     ```
     <copy>\q</copy>
     ```
 2.	Now you can submit SQL commands
 
-   **MySQL … SQL>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL SQL>** 
 
     ```
     <copy>show databases;</copy>
     ```
 
-   **MySQL … SQL>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL SQL>** 
 
     ```
     <copy>SELECT * FROM world.city LIMIT 10;</copy>
@@ -129,13 +129,13 @@ If you want to execute a command continuously use the command “query” (defau
 To exit from reporting press CTRL+C
 
 
-   **MySQL … SQL>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL SQL>** 
 
     ```
     <copy>watch query show processlist;</copy>
     ```
 
-   **MySQL … SQL>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL SQL>** 
 
     ```
     <copy>watch query --interval=2 show processlist;;</copy>
@@ -144,53 +144,53 @@ To exit from reporting press CTRL+C
 ## Task 4: Use MySQL Shell with PYTHON
 1.	Switch to Python command mode, then Javascript command mode, check how prompt change
 
-	**MySQL … Py>** 
+	**![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL Py>** 
 
     ```
     <copy>\py</copy>
     ```   
-	**MySQL … Py>** 
+	**![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL Py>** 
 
     ```
     <copy>\js</copy>
     ```
 2.	Exit from MySQL Shell with “\q” or “\exit”
 
-   **MySQL … JS>** 
+   **![#ff9933](https://via.placeholder.com/15/ff9933/000000?text=+) MySQL JS>** 
 
     ```
     <copy>\q</copy>
     ```
 3.	Command line connection from MySQL Client and MySQL Shell are similar (just specify  “--sql”). Try these
 
-   **shell>** 
+   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysql -uroot -p -h127.0.0.1 -P3307</copy>
     ```
 
-   **mysql>** 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SHOW DATABASES;</copy>
     ```
-   **mysql>** 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>exit</copy>
     ```
-   **shell>** 
+   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
 
     ```
     <copy>mysqlsh --sql -uroot -p -h127.0.0.1 -P3307</copy>
     ```
  
-   **mysql>** 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>SHOW DATABASES;</copy>
     ```
-   **mysql>** 
+   **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
     <copy>exit</copy>
