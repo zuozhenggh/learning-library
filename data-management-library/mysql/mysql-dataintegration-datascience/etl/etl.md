@@ -26,7 +26,7 @@ In this lab, you will:
 
 - All previous labs have been successfully completed.
 
-## **STEP 1:** Create the Data Flow
+## Task 1: Create the Data Flow
 
 1. Click **Create Data Flow**.
 
@@ -139,7 +139,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 2:** Create the Integration Task
+## Task 2: Create the Integration Task
 
 1. Go back to **Home** and Click **Create Integration Task**.
 
@@ -160,7 +160,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 3:** Publish the Integration Task
+## Task 3: Publish the Integration Task
 
 1. Go to **Projects** on the home screen.
 
@@ -184,7 +184,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 4:** Run the Task
+## Task 4: Run the Task
 
 1. Go back to the **Home** screen and click **Applications**.
 
@@ -212,7 +212,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 5:** It Works
+## Task 5: It Works
 
 1. On the bastion host in **Cloud Shell** (reconnect from Cloud Shell to the bastion host if timed out: `ssh -i .ssh/bastion opc@PUBLIC_IP`), run the **MySQL Shell** in the `bash` **Terminal** with:
 

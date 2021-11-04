@@ -21,14 +21,16 @@ In this lab, you will:
 * You must have SQLcl 19.2 or later installed.
 
 
-## **STEP 1:** Verify SQLcl and update if necessary
+## Task 1: Verify SQLcl and update if necessary
 
 1. On Oracle Cloud Developer Image you used for the compute node there is SQLcl installed in folder `/opt/oracle/sqlcl`, however it is necessary to update to version 19.2 or superior. Download the latest version from [SQLcl Downloads](https://www.oracle.com/tools/downloads/sqlcl-downloads.html).
 
-2. Unzip the downloaded package into the existing folder. When asked, replace all files with the new version.
+2. Unzip the downloaded package into the existing folder. When asked, replace **All** (A) files with the new version.
 
     ````
-    unzip sqlcl-21.1.0.104.1544.zip -d /opt/oracle/
+    ls ~/Downloads/
+    
+    unzip Downloads/sqlcl-latest.zip -d /opt/oracle/
 
     replace /opt/oracle/sqlcl/lib/javax.json.jar? [y]es, [n]o, [A]ll, [N]one, [r]ename: A
     ````
@@ -65,8 +67,14 @@ In this lab, you will:
     lb
     ````
 
+8. Exit SQLcl.  
 
-## **STEP 2:** Capture initial schema and code
+    ````
+    exit
+    ````
+
+
+## Task 2: Capture initial schema and code
 
 1. Create a new folder for database changes in your project main folder, for the first version of your project.
 
@@ -114,7 +122,7 @@ In this lab, you will:
     sed -i -e 's/\/>/ relativeToChangelogFile="true"\/>/g' v1.0/controller.xml
     ````
 
-6. Create a Liquibase master changelog to reference other changelogs in your project. The master changelog is used to break up your entire changelog into more manageable pieces, by creating multiple changelogs to separate your changesets in a way that makes sense for your project.
+6. In `cicd-ws-rep00` folder, create a Liquibase master changelog to reference other changelogs in your project. The master changelog is used to break up your entire changelog into more manageable pieces, by creating multiple changelogs to separate your changesets in a way that makes sense for your project.
 
     ````
     gedit hr-master.xml
@@ -136,23 +144,24 @@ In this lab, you will:
     </databaseChangeLog>
     ````
 
-8. Validate your master changelog.
+8. From SQLcl, validate your master changelog. Remember you are now in sub-folder `v1.0`.
 
     ````
-    lb validate -changelog hr-master.xml
+    lb validate -changelog ./../hr-master.xml
 
-    No issues were found in file hr-master.xml, validation passed.
+    No issues were found in file ./../hr-master.xml, validation passed.
     ````
 
 9. Mark all these initial changes as deployed in the local development database, as they belong to the initial HR schema we used for our project.
 
     ````
-    lb changelogsync -changelog hr-master.xml
+    lb changelogsync -changelog ./../hr-master.xml
 
+    ...
     Operation completed successfully.
     ````
 
-10. Use SQL Developer, connected as **HR** user to your ATP service to run the generated script from the previous step, and commit changes.
+10. Copy and paste into SQL Developer **HR** user connection the generated script from the previous step, run it, and commit changes.
 
     ````
     /* changelogsync script here */
@@ -167,9 +176,11 @@ In this lab, you will:
       from DATABASECHANGELOG order by 4 desc;
     ````
 
-12. Add initial schema changes to the Git repository. Use the second Terminal window tab to run these bash commands.
+12. Add initial schema changes to the Git repository. Use the second Terminal window tab to run these bash commands in `cicd-ws-rep00` folder.
 
     ````
+    export PATH=$PATH:/usr/local/git/bin
+
     git add v1.0/*
 
     git add hr-master.xml
@@ -179,8 +190,15 @@ In this lab, you will:
     git push
     ````
 
+13. Use your token to authenticate to GitHub.
 
-## **STEP 3:** Create new database objects and stored code
+    ````
+    Username: your_username
+    Password: your_token
+    ````
+
+
+## Task 3: Create new database objects and stored code
 
 1. This is **Developer #2** from your team, that clones this Git repository on a local development environment, working on the same project. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -293,15 +311,15 @@ In this lab, you will:
 10. Every time you modify your master changelog, you must validate it.
 
     ````
-    lb validate -changelog hr-master.xml
+    lb validate -changelog ./../hr-master.xml
 
-    No issues were found in file hr-master.xml, validation passed.
+    No issues were found in file ./../hr-master.xml, validation passed.
     ````
 
 11. Mark all these initial changes as deployed in the local development database.
 
     ````
-    lb changelogsync -changelog hr-master.xml
+    lb changelogsync -changelog ./../hr-master.xml
 
     Operation completed successfully.
     ````
@@ -324,6 +342,8 @@ In this lab, you will:
 14. Add initial schema changes to the Git repository. Use the second Terminal window tab to run these bash commands.
 
     ````
+    cd ~/cicd-ws-rep00
+
     git add v2.0/*
 
     git commit -a -m "Version 2: Prospects table and Investment package"
@@ -332,7 +352,7 @@ In this lab, you will:
     ````
 
 
-## **STEP 4:** Modify objects, add code, and re-capture changes
+## Task 4: Modify objects, add code, and re-capture changes
 
 1. Now comes **Developer #3** from your team, that clones this Git repository on a local development environment, working on the same project. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -431,15 +451,15 @@ In this lab, you will:
 9. Every time you modify your master changelog, you must validate it.
 
     ````
-    lb validate -changelog hr-master.xml
+    lb validate -changelog ./../hr-master.xml
 
-    No issues were found in file hr-master.xml, validation passed.
+    No issues were found in file ./../hr-master.xml, validation passed.
     ````
 
 10. Mark all these initial changes as deployed in the local development database.
 
     ````
-    lb changelogsync -changelog hr-master.xml
+    lb changelogsync -changelog ./../hr-master.xml
 
     Operation completed successfully.
     ````
@@ -462,6 +482,8 @@ In this lab, you will:
 13. Add initial schema changes to the Git repository. Use the second Terminal window tab to run these bash commands.
 
     ````
+    cd ~/cicd-ws-rep00
+    
     git add v3.0/*
 
     git commit -a -m "Version 3: HR Events table and trigger"
@@ -472,7 +494,7 @@ In this lab, you will:
 14. On GitHub, click on **cicd-ws-rep00** link in the breadcrumbs at the top of the page. On the right side, under Releases, click Create a new release. Create a Release called '**Version 3 production**', use Tag version '**V3**'. Click **Publish release**.
 
 
-## **STEP 5:** Working on patch that changes columns in table
+## Task 5: Working on patch that changes columns in table
 
 1. Once more, **Developer #1** from your team, pulls the updates from this Git repository on hers/his local development environment, working on the same project. For this lab, we will not pull the repository with `git pull cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -540,15 +562,15 @@ In this lab, you will:
 9. Every time you modify your master changelog, you must validate it.
 
     ````
-    lb validate -changelog hr-master.xml
+    lb validate -changelog ./../hr-master.xml
 
-    No issues were found in file hr-master.xml, validation passed.
+    No issues were found in file ./../hr-master.xml, validation passed.
     ````
 
 10. Mark all these initial changes as deployed in the local development database.
 
     ````
-    lb changelogsync -changelog hr-master.xml
+    lb changelogsync -changelog ./../hr-master.xml
 
     Operation completed successfully.
     ````
@@ -571,6 +593,8 @@ In this lab, you will:
 13. Add initial schema changes to the Git repository. Use the second Terminal window tab to run these bash commands.
 
     ````
+    cd ~/cicd-ws-rep00
+
     git add v3.1/*
 
     git commit -a -m "Version 3 ticket 001: Prospects drop 2 columns, add 1"
@@ -583,12 +607,11 @@ In this lab, you will:
 15. Click **Compare & pull request** > **Create pull request**. **Merge pull request** > **Confirm merge**. 
 
 16. When finished, you will receive this message: *Pull request successfully merged and closed*. Click **Delete branch**.
+    - on GitHub click on cicd-ws-rep00 to refresh page
+    - Compare & pull request > Create pull request. Merge pull request > Confirm merge. Delete branch.
 
-- on GitHub click on cicd-ws-rep00 to refresh page
-- Compare & pull request > Create pull request. Merge pull request > Confirm merge. Delete branch.
 
-
-## **STEP 6:** Modify code and use Git to version changes
+## Task 6: Modify code and use Git to version changes
 
 1. Again, **Developer #2** from your team, pulls the updates from this Git repository, to continue working on the same project. For this lab, we will not pull the repository with `git pull cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
@@ -672,15 +695,15 @@ In this lab, you will:
 12. Every time you modify your master changelog, you must validate it.
 
     ````
-    lb validate -changelog hr-master.xml
+    lb validate -changelog ./../hr-master.xml
 
-    No issues were found in file hr-master.xml, validation passed.
+    No issues were found in file ./../hr-master.xml, validation passed.
     ````
 
 13. Mark all these initial changes as deployed in the local development database.
 
     ````
-    lb changelogsync -changelog hr-master.xml
+    lb changelogsync -changelog ./../hr-master.xml
 
     Operation completed successfully.
     ````
@@ -703,6 +726,8 @@ In this lab, you will:
 16. Add initial schema changes to the Git repository. Use the second Terminal window tab to run these bash commands.
 
     ````
+    cd ~/cicd-ws-rep00
+
     git add v3.2/*
 
     git commit -a -m "Version 3 ticket 002: Code changes in package body and trigger"
@@ -720,37 +745,33 @@ In this lab, you will:
 21. Click again Releases. Under **V3.2** click **Compare**, select **V3**. Review Comparing changes.
 
 
-## **STEP 7:** Provision another Development Database (ATP)
+## Task 7: Provision another Development Database (ATP)
 
 1. This is **Developer #3** from your team, that has to work on a new project, using a new database **ATPdev02**. For this lab, we will not clone the repository with `git clone cicd-ws-rep00`, but will work on the same folder, just to simplify the scenario, and avoid to create multiple copies of these files on the same compute node, as we have a single development environment.
 
 2. On Oracle Cloud Console, click on main menu ≡, then **Autonomous Transaction Processing** under Oracle Database. **Create Autonomous Database**.
-
-- Select a compartment: [Your Compartment]
-- Display name: [Your Initials]-Dev02 (e.g. VLT-Dev02)
-- Database name: [Your Initials]Dev02 (e.g. VLTDev02)
-- Choose a workload type: Transaction Processing
-- Choose a deployment type: Shared Infrastructure
-- Choose database version: 19c
-- OCPU count: 1
-- Storage (TB): 1
-- Auto scaling: disabled
+    - Select a compartment: [Your Compartment]
+    - Display name: [Your Initials]-Dev02 (e.g. VLT-Dev02)
+    - Database name: [Your Initials]Dev02 (e.g. VLTDev02)
+    - Choose a workload type: Transaction Processing
+    - Choose a deployment type: Shared Infrastructure
+    - Choose database version: 19c
+    - OCPU count: 1
+    - Storage (TB): 1
+    - Auto scaling: disabled
 
 3. Under Create administrator credentials:
-
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 4. Under Choose network access:
-
-- Access Type: Allow secure access from everywhere
+    - Access Type: Allow secure access from everywhere
 
 5. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
 
 6. Download and unzip the client credentials `Wallet_[Your Initials]Dev02.zip` file, selecting instance wallet file, on the ClientVM. If you use the Firefox browser on the Remote Desktop connection, it will be downloaded in folder `/home/oracle/Downloads/`.
 
 7. Specify a wallet password.
-
-- Password: DBlearnPTS#21_
+    - Password: DBlearnPTS#21_
 
 8. Set the location of your wallet file for your **Dev02** ATP service.
 

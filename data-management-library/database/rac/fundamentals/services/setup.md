@@ -11,7 +11,7 @@ This lab will show you how to setup your database schemas for the subsequent lab
 Watch the video below for an overview of the Install Sample Schema lab
 [](youtube:rUIxZjy9HQg)
 
-## **STEP**: Install Sample Data
+## Task: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 

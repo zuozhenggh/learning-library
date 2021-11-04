@@ -23,7 +23,7 @@ _Estimated Lab Time:_ 20 minutes
     * Lab 1: Provisioning your Autonomous Database instance  
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
 
-## **STEP 1**: Load data to your Autonomous Database
+## Task 1: Load data to your Autonomous Database
 
 Connect to your **Autonomous Database**.  
 In the ADWH console, lets navigate to the Development tab and open the SQL Developer Web  
@@ -59,7 +59,7 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
 
       ![Run Script](./images/lab300_3fsmall.png)
 
-## **STEP 2**: Prepare the connection from Autonomous Database
+## Task 2: Prepare the connection from Autonomous Database
 
 **Oracle Autonomous Database** only accepts secure connections to the database. This requires a *'wallet'* file that contains the SQL\*NET configuration files and the secure connection information. Wallets are used by client utilities such as SQL Developer, SQL\*Plus etc. For this workshop, you will use this same wallet mechanism to make a connection from OAC to the **Autonomous Database**.
 
@@ -90,7 +90,7 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
 
     ![Oracle Wallet Close](./images/lab300_6.png)
 
-## **STEP 3**: Create the connection from Oracle Analytics Cloud to Autonomous Database
+## Task 3: Create the connection from Oracle Analytics Cloud to Autonomous Database
 1. ### Use the Wallet in Oracle Analytics Cloud
 
     **Return** to the **Oracle Cloud Infrastructure console** and click on the menu icon on the left.
@@ -126,7 +126,7 @@ You can access to the '***Autonomous Database Details***' page using the cloud c
 
 5. Select **Save** to save your new connection **information**.
 
-## **STEP 4**: Create and Adjust the Data Set
+## Task 4: Create and Adjust the Data Set
 
 When you create a project, you add one or more **Data Sets** containing the data that you want to **visualize and explore**. Data sets contain data
 from Subject Areas, Oracle Applications, databases, or uploaded data files such as spreadsheets. You can also add multiple data sets to your existing projects.
@@ -141,14 +141,22 @@ Now lets create a Data Set using the ADWH connection just created. And lets sele
 
     ![Data Set Creation - ADWH](./images/createdataset2small.png)
 
-3. In the next window, search for **DCA\_SALES\_DATA** table in **ADMIN**  *schema* and click **Add All**.
+3. In the next window, search for **DCA\_SALES\_DATA** table in **ADMIN**  *schema* and click **Add to Dataset**.
 
+    ![Data Set Creation -DCA_SALES_DATA](./images/add-to-dataset.png)
+
+4. Right Click **DCA\_SALES\_DATA** and select **Edit Definition**
+
+    ![](./images/dataset-edit-definition.png)
+
+5. Click **Add All**
+    
     ![Data Set Creation -DCA_SALES_DATA](./images/createdataset3.png)
 
     Once you add the columns the **Data Set name** took as the default table name (**DCA\_SALES\_DATA**)
 
     Data can be previewed with just a click.
-    Click **Get Preview Data** and then Click **Add** to create the Data Set.  
+    Click **Get Preview Data** and then Click **Ok** to create the Data Set.  
     ![Data Set Creation - Ready](./images/createdataset4.png)
 
     Once the Data Set is created, it undergoes column-level profiling to produce a set of semantic recommendations to repair or enrich your data.
@@ -157,41 +165,45 @@ Now lets create a Data Set using the ADWH connection just created. And lets sele
 
     Based on the data we have a number of 8 recommendations based on SALES_DATE column.
 
-4. Lets change the property of **'CUST\_ID'** to Attribute.  
+6. Lets change the property of **'CUST\_ID'** to Attribute.  
 Select (click) **'CUST\_ID'** column go to Properties Pane from down left, General ![OAC - Sales](./images/createdataset6.png) and change (click) **Treat As** from Measure to Attribute
 
    ![CUST_ID](./images/createdataset5.png)
    > Notice that the Aggregation type has changed from Sum to None
 
-5. Lets also change the aggregation rule for **Loyalty ID** and rename the column.  
+7. Lets also change the aggregation rule for **Loyalty ID** and rename the column.  
 Select (click) **'Loyalty\_ID'** column
 Go to 'Loyalty\_ID' **options** ![Loyalty\_ID](./images/renameloyaltyid0.png) > Click and select **Rename** ![Loyalty\_ID](./images/renameloyaltyid.png)  
-In the dialog box type in Name "**# Customers**" and Click **Add Step** button  
 
-    ![# Customers](./images/addstep.png) 
-
-6. Change Aggregation from Sum to Count Distinct Select (click) **# Customers** go to General Property Pane > **Aggregation** > Select **Count Distinct**  
+8. Change Aggregation from Sum to Count Distinct Select (click) **# Customers** go to General Property Pane > **Aggregation** > Select **Count Distinct**  
 
     ![Count Distinct](./images/countdistinct.png)
 
-7. Lets extract week from the Sales Date column and rename it appropriate.  
+9. Lets extract week from the Sales Date column and rename it appropriate.  
 Select (click) **SALES\_DATE** column, go to Options > **Extract** > Week 
 
     ![Extract Week](./images/extractweek.png)
 
-8. Go to the new column Options > **Rename**  
+10. Go to the new column Options > **Rename**  
 
     ![Rename](./images/salesweek.png)
    
-9. Type in **Sales Week** and Click on **Add Step**  
+11. Type in **Sales Week** and Click Enter on your keyboard 
 
     ![Sales Week](./images/salesweek2.png)
 
-10. Apply the preparation script to persist all the data transformation we did.  
-On top left is the Preparation Script Pane, which keeps track of every change to your Data Set. Each Step can be Modify/Remove.  
-In Preparation **Script Pane** click **Apply Script**  to apply the property changes to the Data Set. 
+12. Save your Dataset.  
+Click on the Save button on top right.  
 
-    ![Apply Script](./images/applyscriptresize.png)
+    ![](./images/save-dataset.png)
+
+13. Enter your Dataset name "DCA\_SALES\_DATA"
+
+    ![](./images/save-dataset-name.png)
+
+14. Click **Go Back** left arrow from top left
+
+    ![](./images/go-back.png)
 
 You have just finished to Load and Prepare your Data.
 
@@ -204,7 +216,7 @@ You may now [proceed to the next lab](#next)
 
 ## **Acknowledgements**
 
-- **Author** - Lucian Dinescu, Product Strategy, Analytics
+- **Author** - Lucian Dinescu (Oracle Analytics Product Strategy)
 - **Contributors** - Priscila Iruela, Database Business Development | Juan Antonio Martin Pedro, Analytics Business Development Victor Martin, Melanie Ashworth-March, Andrea Zengin
-- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics
-- **Last Updated By/Date** - Lucian Dinescu, April 2021
+- **Reviewed by** - Shiva Oleti (Oracle Analytics Product Strategy), Sebastien Demanche (Oracle Cloud Center of Excellence)
+- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021

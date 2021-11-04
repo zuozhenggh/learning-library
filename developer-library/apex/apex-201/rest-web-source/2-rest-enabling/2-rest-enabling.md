@@ -12,7 +12,7 @@ In this lab you will be creating the EMP and DEPT tables, REST enabling them, an
 
 Once the Web Source module is defined in an APEX application, rather than calling a local database object, the APEX Engine calls the REST endpoint, to retrieve the data from the remote database. If the PUT, POST, and DELETE handlers have also been defined, then APEX applications can also perform updates, inserts, and deletes on the remote database objects.
 
-## **STEP 1** – Creating the Sample Tables
+## Task 1: Creating the Sample Tables
 This lab utilizes the common EMP and DEPT tables. These can easily be installed using Sample Datasets.
 
 1. Log into your workspace.
@@ -36,7 +36,7 @@ This lab utilizes the common EMP and DEPT tables. These can easily be installed 
 
     ![](images/load-results.png " ")
 
-## **STEP 2** – REST Enabling the Database Objects
+## Task 2: REST Enabling the Database Objects
 Running the SQL Script below will REST Enable the schema and also create modules for the EMP and DEPT tables and the EMP\_DEPT\_V view, together with the appropriate handlers.
 
 Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled the schema. Then go to SQL Workshop > Object Browser, clicked on each table/view and then selected REST to define the REST services. However, the handlers created using the SQL Workshop > Object Browser will utilize Data Dictionary lookups each time they are called. This is less efficient then the manually created services you will create, especially on services, such as apex.oracle.com, which have an extremely large data dictionary. On apex.oracle.com there are over 20,000 schemas.
@@ -199,7 +199,7 @@ Alternatively, you could go to SQL Workshop > RESTful Services and REST enabled 
 
     ![](images/script-results.png " ")
 
-## **STEP 3** – Reviewing the REST Services
+## Task 3: Reviewing the REST Services
 
 1. In the main menu, select **SQL Workshop**, click **RESTful Services**.
 

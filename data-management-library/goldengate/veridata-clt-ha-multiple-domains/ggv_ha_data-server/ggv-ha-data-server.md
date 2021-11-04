@@ -5,6 +5,8 @@ This lab shows you how to set up the Oracle GoldenGate Veridata Server (version:
 This scenario considers 2 hosts and the setup works in an ACTIVE-PASSIVE mode. Though all the managed servers on different hosts are up, only 1 server serves the request at a time. The use case was verified on a Linux x86-64 platform, but the approach is generic to all the platforms on which, the Oracle GoldenGate Veridata Server is deployed.
 ![](./images/architecture.png " ")
 
+*Estimated Lab Time*: 15 minutes
+
 ### What Do You Need?
 
 + **Linux**
@@ -16,7 +18,7 @@ This scenario considers 2 hosts and the setup works in an ACTIVE-PASSIVE mode. T
 + **Oracle GoldenGate Veridata repository created using the Repository Creation Utility (RCU)**
 + **Web Browser**
 
-## **STEP 1:** Create the Oracle WebLogic Server Domain on Host 1
+## Task 1: Create the Oracle WebLogic Server Domain on Host 1
 To create the Oracle WebLogic Server domain (for example, *domain_name*):
 1. In the command line, enter the following: `$ORACLE_HOME/oracle_common/common/bin/config.sh` to display the **Fusion Middleware Configuration Wizard**.
   Ensure that you have set the `$ORACLE_HOME` to a middleware location, such as `MW_HOME`, where you have installed the Oracle WebLogic Server.
@@ -35,7 +37,7 @@ To create the Oracle WebLogic Server domain (for example, *domain_name*):
 8. Retain the default values in the subsequent pages and then finally create the domain. After you have created a domain, start the Administration server and provide the Oracle GoldenGate Veridata permissions for the user under **Security Realms**.
 
 
-## **STEP 2:** Create a Domain Jar File
+## Task 2: Create a Domain Jar File
 
 To create a domain jar file:
 
@@ -46,7 +48,7 @@ To create a domain jar file:
   In this code snippet, `-domain` = domain which needs to be copied from host 1.
   A domain jar gets created in the path provided in the template.
 
-## **STEP 3:** Create the Oracle WebLogic Server Domain on Host 2
+## Task 3: Create the Oracle WebLogic Server Domain on Host 2
 To create the domain on host 2:
 1. Copy the domain jar created in host 1 to host 2.
 2. Run the following commands to create the domain in host 2:
@@ -57,7 +59,7 @@ To create the domain on host 2:
 3. Execute `startNodeManager.sh` under `$ORACLE_HOME/user_projects/domains/<domain_name>/bin` to start the node manager.
 4. Repeat steps 1 and 2 on host 2.
 
-## **STEP 4:** Start the Oracle GoldenGate Veridata Managed Servers
+## Task 4: Start the Oracle GoldenGate Veridata Managed Servers
 To start the Oracle GoldenGate Veridata Managed Servers from the Oracle WebLogic Server Administration UI:
 1. Navigate to **Environments** and then select **Servers**.
 2. Click the **Control** tab.
@@ -81,5 +83,3 @@ To start the Oracle GoldenGate Veridata Managed Servers from the Oracle WebLogic
     + Avinash Yadagere, Principal Member Technical Staff, GoldenGate Development
 
 * **Last Updated By/Date:** Anuradha Chepuri, December 2020
-
-

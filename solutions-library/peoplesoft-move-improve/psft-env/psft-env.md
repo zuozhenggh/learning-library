@@ -17,7 +17,7 @@ In this lab, you will:
 - A PeopleSoft Cloud Manager Instance
 - A PeopleSoft Environment Template 
 
-## **STEP 1**: Creating a New PeopleSoft Environment
+## Task 1: Creating a New PeopleSoft Environment
 
 1. 	Navigate to Dashboard | Environments.  Click Create Environment button.
 

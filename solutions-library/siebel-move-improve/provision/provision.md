@@ -19,7 +19,7 @@ To deploy the Siebel Instance, in this lab, you will:
 * SSH key
 * VCN setup from the previous lab
 
-## **STEP 1**: Launching Instance of Siebel from Marketplace
+## Task 1: Launching Instance of Siebel from Marketplace
 
 1. Make sure you are on the Oracle Cloud Infrastructure site
 
@@ -69,7 +69,7 @@ To deploy the Siebel Instance, in this lab, you will:
      ![Once the orange box changes to a green box your intance will have been succesfully provisioned](./images/6.png " ")
 
 
-## **STEP 2**: Deploying the Siebel Application
+## Task 2: Deploying the Siebel Application
 
 After you have created the instance, you have to generate two URLs:
 *	Jenkins URL: To deploy Siebel application
@@ -117,7 +117,7 @@ Generating Jenkins URL
 
     Once it is finished provisioning you will see its status change to a green circle with a check signifying that it is complete and that you may move onto the next step
 
-## **STEP 3**: Generating application domain URL
+## Task 3: Generating application domain URL
 
 Generating the Application domain URL
 

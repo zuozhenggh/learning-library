@@ -1,4 +1,4 @@
-# Perform a Switchover
+# How to Perform Database Switchover
 
 ## Introduction
 In this lab, we will be performing a switchover operation.
@@ -7,11 +7,13 @@ Oracle Data Guard helps you change the role of databases between primary and sta
 
 A switchover is a role reversal between the primary database and one of its standby databases. A switchover guarantees no data loss and is typically done for planned maintenance of the primary system. During a switchover, the primary database transitions to a standby role, and the standby database transitions to the primary role.
 
-A failover is a role transition in which one of the standby databases is transitioned to the primary role after the primary database (all instances in the case of an Oracle RAC database) fails or has become unreachable. A failover may or may not result in data loss depending on the protection mode in effect at the time of the failover.
+A failover is a role transition in which one of the standby databases is transitioned to the primary role after the primary database (all instances in the case of an Oracle RAC database) fails or has become unreachable.
+
+A failover may or may not result in data loss depending on the protection mode in effect at the time of the failover.
 
 Estimated Lab Time: 15 Minutes
 
-### Performing a switchover
+### Perform Database switchover
 
 A switchover is always started from the primary database, where a failover is initiated from the standby database.
 The difference between a switchover and a failover is that a switchover is a graceful operation where a failover is only needed when the primary database is broken beyond repair or that repair would take too long.
@@ -29,7 +31,7 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 - Connect to the Database
 
 
-## **STEP 1**: Verify the database roles in the database
+## Task 1: Verify the database roles in the database
 
 1. Using SQL Developer, you can drag and drop the panes so that they are next to each other or shown split horizontally.
 
@@ -49,9 +51,9 @@ You can download SQL Developer from this link: [SQL Developer Home page](https:/
 We can conclude that the Database in AD1 is the primary database and the database in AD2 is the Standby database.
 
 
-## **STEP 2**: Perform the role transition
+## Task 2: Perform the role transition
 
-1. In the OCI console, navigate to the DB System Details of the ADGHOLAD1 database and scroll down to the Databases section.
+1. In the Oracle Cloud Infrastructure console, navigate to the DB System Details of the ADGHOLAD1 database and scroll down to the Databases section.
 
     Overview
     -> Bare Metal, VM and Exadata
@@ -60,11 +62,11 @@ We can conclude that the Database in AD1 is the primary database and the databas
 2. Select **ADGHOLAD1**
     ![](./images/switchover-03.png)
 
-3. Click on the name **DGHOL** and in the next screen scroll down immediately and click on **Data Guard Associations**
+3. Click name **DGHOL** and in the next screen scroll down immediately and click on **Data Guard Associations**
 
     ![](./images/switchover-04.png)
 
-4. Click on the 3 dots on the right, and click **Switchover**
+4. Click the 3 dots on the right, and click **Switchover**
     ![](./images/switchover-05.png)
 
 5. This is a DBA responsibility, so the tooling asks the password. Enter the SYS password (WElcome123##) from the Primary database and click **OK** then the role transition starts.
@@ -76,9 +78,9 @@ We can conclude that the Database in AD1 is the primary database and the databas
 7. After some time the role transition finished and the state is Available again.
     ![](./images/switchover-08.png)
 
-    > **Note:** If you get an error indicating that the failover failed and you need to open an SR, try again and enter the sys password carefully.
+    > **Note:** If you get an error indicating that the failover failed and you need to open an SR, try again and enter the sys password correctly.
 
-## **STEP 3**: Verify the database roles in the database
+## Task 3: Verify the database roles in the database
 
 1. Using SQL Developer, verify the roles again with following Query:
 
@@ -98,4 +100,4 @@ You have now successfully performed a graceful role transition.
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Database Product Management
-- **Last Updated By/Date** -  Tom McGinn, July 2021
+- **Last Updated By/Date** -  Suraj Ramesh,September 2021

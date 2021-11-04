@@ -17,14 +17,16 @@ In this lab, you will:
 * Verify and review the data import process
 
 ### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: Deploy Kubernetes Cluster and Start OIG Server
+    - Lab: Deploy OIRI in the local Kubernetes Node
 
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
-      - Lab 1: Initialize the workshop Environment
-      - Lab 2: Deploy OIRI in the local Kubernetes node
-
-## **STEP 1:** Starting the data load process
+## Task 1: Starting the data load process
 
 1. Copy ca.crt from K8S Master.
 
@@ -45,7 +47,7 @@ In this lab, you will:
     ![](images/1-data-load.png)
 
 
-## **STEP 2:** Perform a Dry Import Run
+## Task 2: Perform a Dry Import Run
 
 1. Before data import (or data ingestion), perform a dry run to validate if the data fits into the OIRI database. This will fetch data from Oracle Identity Governance database and validate it against the metadata of the OIRI database.
 
@@ -53,9 +55,21 @@ In this lab, you will:
     <copy>ding-cli --config=/app/data/conf/config.yaml data-ingestion dry-run /app/data/conf/data-ingestion-config.yaml</copy>
     ```
 
-## **STEP 3:** Sign in to the OIRI user interface and validate the dry data import
+2. The Dry Data Import process takes about 8-10 minutes. While the process is running, we can observe the pods that get generated under the namespace ding by running the following command in another terminal tab.
 
-1. Sign in to Identity Role Intelligence user interface. Launch a browser window and click on the bookmark *OIRI*. The OIRI account sign in page appears. Enter the username and password.
+    ```
+    <copy>kubectl get pods -n ding</copy>
+    ```
+
+    Notice that once the dry-run task has completed, the ding driver will move from the status *Running* to *Completed*.
+
+
+3. Sign in to the OIRI console and monitor the data import process as shown in the steps below.
+
+## Task 3: Sign in to the OIRI user interface and validate the dry data import
+
+1. Sign in to Identity Role Intelligence user interface. Launch a browser window and click on the bookmark *OIRI*. Ignore the warning message by clicking on *Advanced* and then on *Accept Risk and Continue. The OIRI account sign in page appears. Enter the username and password.
+
 
     ```
     Username: <copy>xelsysadm</copy>
@@ -64,19 +78,20 @@ In this lab, you will:
     Password: <copy>Welcome1</copy>
     ```
 
+    ![](images/13-warning.png)
 
     ![](images/2-oiri.png)
 
 
 
-2. Click the Application Navigation menu icon on the top left of the page, and click *Data Import* to open the Manage Data Import page with a list of all the data import tasks.
+2. Click the Application Navigation menu icon on the top left of the page, and click *Data Import* to open the *Manage Data Import* page with a list of all the data import tasks.
 
     ![](images/3-data-import.png)
 
     ![](images/4-data-import.png)    
 
 
-3. Verify that the dry data import run has been completed successfully. Click *View Results* against the Import data(dry-run) from Oracle Identity Governance task. Alternatively, you can click the data import task name. The *View Results* window is displayed with the result for data import from Oracle Identity Governance database.
+3. While the dry-run is running, observe that there is a red clock icon next to the task. Once the dry data import run has been completed successfully, we will get a green tick and the button *View Results* will be made available. Click *View Results* against the Import data(dry-run) from Oracle Identity Governance task. Alternatively, you can click the data import task name. The *View Results* window is displayed with the result for data import from Oracle Identity Governance database.
 
     ![](images/5-data-import.png)
 
@@ -95,9 +110,7 @@ In this lab, you will:
 
 5. Click Cancel to close the View Results window.
 
-
-
-## **STEP 4:** Data Import from Oracle Identity Governance
+## Task 4: Data Import from Oracle Identity Governance
 
 1. Run the actual data import process.
 
@@ -105,13 +118,23 @@ In this lab, you will:
     <copy>ding-cli --config=/app/data/conf/config.yaml data-ingestion start /app/data/conf/data-ingestion-config.yaml</copy>
     ```
 
-## **STEP 5:** Validate the data import task
+2. The Data Import process takes about 8-10 minutes. While the process is running, we can observe the pods that get generated under the namespace ding by running the following command in another terminal tab.
+
+    ```
+    <copy>kubectl get pods -n ding</copy>
+    ```
+
+    ![](images/14-data-import.png)
+
+    Notice that once the dry-run task has completed, the ding driver will move from the status *Running* to *Completed*.
+
+## Task 5: Validate the data import task
 
 1. Access the OIRI console from the browser window.
 
 2. Click the Application Navigation menu icon on the top left of the page, and click *Data Import* to open the Manage Data Import page with a list of all the data import tasks
 
-3. Verify that the data import from OIG has been completed successfully. Click *View Results* against the Import data from Oracle Identity Governance task. Alternatively, you can click the data import task name. The *View Results* window is displayed with the result for data import from Oracle Identity Governance database.
+3. While the data import is running, observe that there is a red clock icon next to the task. Once the data import run has been completed successfully, we will get a green tick and the button *View Results* will be made available. Click *View Results* against the Import data from Oracle Identity Governance task. Alternatively, you can click the data import task name. The *View Results* window is displayed with the result for data import from Oracle Identity Governance database.
 
     ![](images/11-data-import.png)
 

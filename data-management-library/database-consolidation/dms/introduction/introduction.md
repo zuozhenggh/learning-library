@@ -1,25 +1,29 @@
 # Introduction
 
-The labs in this workshop walk you through all the steps to get started using Oracle Cloud Infrastructure (OCI) Database Migration (DMS). You will provision a Virtual Cloud Network (VCN), an Oracle Database 19c, an Oracle Autonomous Database (ADB) and a GoldenGate instance in order to perform a database migration using OCI Database Migration.
+The labs in this workshop will walk you through all the steps to get started using Oracle Cloud Infrastructure (OCI) Database Migration (DMS). You will provision a Virtual Cloud Network (VCN), an Oracle Database 19c instance, and an Oracle Autonomous Database (ADB) instance in order to perform a database migration using DMS.
 
-With OCI Database Migration we make it quick and easy for you to migrate databases from on-premises, Oracle or third-party cloud into Oracle databases on OCI.
+With DMS we make it quick and easy for you to migrate databases from on-premises, Oracle or third-party cloud into Oracle databases on OCI.
+
+Watch the video below for an overview of Oracle Database Migration.
+
+[](youtube:i4u6HREERTk)
 
 ## About OCI Database Migration
 
-OCI Database Migration (DMS) provides high performant, fully managed approach to migrating databases from on-premsies, Oracle or third-party cloud into OCI-hosted databases. Migrations can be in either one of the following modes:
+DMS provides high performance, fully managed approach to migrating databases from on-premises, Oracle or third-party cloud into OCI-hosted databases. Migrations can be in either one of the following modes:
 
 * **Offline**: The Migration makes a point-in-time copy of the source to the target database. Any changes to the source database during migration are not copied, requiring any applications to stay offline for the duration of the migration.
 * **Online**: The Migration makes a point-in-time copy and replicates all subsequent changes from the source to the target database. This allows applications to stay online during the migration and then be switched over from source to target database.
 
-In the current release of DMS we support Oracle databases located on-premises, in third-party clouds, or on OCI as the source and Oracle Autonomous Database shared or dedicated as the target database. Below is a table of supported source and target databases as well as migration modes:
+In the current release of DMS we support Oracle databases located on-premises, in third-party clouds, or on OCI as the source and Oracle Autonomous Database shared or dedicated as the target database. Below is a table of supported configurations;
 
-|                  | DMS LA Phase 2 | Added for DMS GA | Added for DMS Roadmap |   
-|---------------------|--------------------|-------------------|-----------------------|
-| Source Databases | Oracle DB 11g, 12c, 18c, 19c: <br>on-premises, third-party cloud, OCI | Latest DB version | Heterogeneous Databases |   
-| Target Databases | ADB shared | ADB dedicated | Oracle DB (DBCS, ExaCS, <br>self-installed) |   
-| Migration Modes  | Direct Access to Source <br>(VPN or Fast Connect) | Indirect Access to Source <br>(Agent on Source Env) |                       |  
-| Initial Load <br> (Offline Migration) | Logical Migration using <br>Data Pump to Object Store | Data Pump using SQLnet | Physical Migration using RMAN |
-| Replication <br> (Online Migration) | GoldenGate Marketplace | | GoldenGate Service-Based <br>Physical Migration using <br>Data Guard |
+|                  |  |     
+|--------------------------|-------------------------|
+| Source Databases | Oracle DB 11g, 12c, 18c, 19c: <br>on-premises, third-party cloud, OCI  |   
+| Target Databases | ADB shared and dedicated |    
+| Migration Modes  | Direct Access to Source <br>(VPN or Fast Connect) Indirect Access to Source <br>(Agent on Source Env) |                        |  
+| Initial Load <br> (Offline Migration) | Logical Migration using <br>Data Pump to Object Store <br>Data Pump using SQLnet |  |
+| Replication <br> (Online Migration) | GoldenGate Marketplace |
 
 The DMS service runs as a managed cloud service separate from the user's tenancy and resources. The service operates as a multitenant service in a DMS Service Tenancy and communicates with the user's resources using Private Endpoints (PEs). PEs are managed by DMS and are transparent to the user.
 
@@ -31,14 +35,8 @@ The DMS service runs as a managed cloud service separate from the user's tenancy
 * **Migration Job**: A Migration Job displays the state or a given Migration execution, either for validation or migration purposes. A job consists of a number of sequential phases, users can opt to wait after a given phase for user input to resume with the following phase.
 * **Registered Database**: A Registered Database represents information about a source or target database, such as connection and authentication credentials. DMS uses the OCI Vault to store credentials. A Registered Database is reusable across multiple Migrations.
 
-Estimated Lab Time: n minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
+Estimated Lab Time: 180 minutes -- this estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.
 
-### About Product/Technology
-Enter background information here....
-
-*You may add an option video, using this format: [](youtube:YouTube video id)*
-
-  [](youtube:zNKxJjkq0Pw)
 
 ### Objectives
 
@@ -47,7 +45,6 @@ In this lab, you will:
 * Create a VCN
 * Create a Vault
 * Create Databases
-* Create a GoldenGate Marketplace Instance
 * Create an Object Storage Bucket
 * Create Registered Databases
 * Create, Validate, and Run a Migration

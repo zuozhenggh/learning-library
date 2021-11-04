@@ -15,9 +15,7 @@ This lab walks you through the steps for deploying and testing the interoperabil
 ### Prerequisites
 This lab assumes you have:
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
 * You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
@@ -40,7 +38,7 @@ This lab is designed for people with no prior experience with Kubernetes, Docker
 * Develop new Credit Score function as microservice using Helidon SE and deploy on local JVM
 * Modify Bank Web Application to use Credit Score microservice and deploy on WebLogic
  
-## **STEP 1**: Develop new Credit Score Function
+## Task 1: Develop new Credit Score Function
 Proceed to Develop new Credit Score Function as microservice using Helidon SE and deploy on local JVM
 
 1.	Create a directory called “microservice” under `/u01/middleware_demo/wls-helidon` and navigate to `/u01/middleware_demo/wls-helidon/microservice`
@@ -100,7 +98,7 @@ Proceed to Develop new Credit Score Function as microservice using Helidon SE an
     </copy>
     ```
 
-## **STEP 2:** Modify Bank Web Application
+## Task 2: Modify Bank Web Application
 Proceed to Modify Bank Web Application To Use Credit Score Microservice & Deploy On WebLogic
 
 Before the deployment of the Bank Web Application to consume Microservice, the following changes will be made:

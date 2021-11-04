@@ -33,7 +33,7 @@ The DRAGON Stack manager is an open-source project which provides the fastest wa
 - integrates SQL Developer Web and Oracle REST Data Services (ORDS) integration with standard application development frameworks such as React, Oracle JET, Spring-Boot...
 - generates project source code to start coding as soon as possible!  
 
-## **STEP 1**: Download the DRAGON Stack manager
+## Task 1: Download the DRAGON Stack manager
 
 1. Launch the cloud shell terminal.
    ![Launch Cloud Shell terminal](images/launch-cloud-shell.png)
@@ -114,7 +114,7 @@ The DRAGON Stack manager is an open-source project which provides the fastest wa
 
    ![Copy the public key](images/copy-key.png)
 
-## **STEP 2:** Gather Data you need
+## Task 2: Gather Data you need
 
 1. From the OCI console, click the user icon (top right of your browser) and click **User Settings**. Click **API Keys** and **Add API Key**.
 
@@ -156,7 +156,7 @@ Save the auth token for later.
 
 8. Look in the upper right of the Oracle Cloud Console to determine your region, then use [this reference](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm#top) to determine your region code. Save it for later.
 
-## **STEP 3:** Create the dragon.config file
+## Task 3: Create the dragon.config file
 
 1. Create a `dragon.config` file using vi, nano or your favorite editor:
 
@@ -165,6 +165,8 @@ Save the auth token for later.
     ```
 
 2. Copy the following and paste it into the file, and add the values you collected earlier:
+
+    /!\ FOR RESERVED TENANTS (Green Button): Please, check the remark just after this block.
 
     ```
     <copy>
@@ -183,9 +185,17 @@ Save the auth token for later.
     </copy>
     ```
 
+   /!\ FOR RESERVED TENANTS (Green Button): Please, verify that you've chosen to deploy an ATP-S database and not an Always Free one! E.g. add this additional configuration parameter:
+
+   ```
+   <copy>
+   database_type=atp
+   </copy> 
+   ```
+
    *Remark: the JSON data being used will be stored inside the **purchase_orders** collection.*
 
-## **STEP 4:** Deploy the DRAGON Stack
+## Task 4: Deploy the DRAGON Stack
 
 1. Use the `-help` to see the parameters that DRAGON accepts:
 

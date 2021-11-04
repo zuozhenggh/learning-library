@@ -4,11 +4,11 @@
 
 In this lab you will create a shard app schema. You will create a sharded table family `Customers->Orders->LineItems` sharded by `CustId`, and a duplicate table `Products`.
 
-Estimated Lab Time: 30 minutes.
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-In this lab, you will perform the following steps:
+In this lab, you will:
 - Create the schema user, tablespace set, sharded tables and duplicated tables
 - Verify that the DDLs have been propagated to all the shards
 - Create a global service used to connect to the sharded database
@@ -19,7 +19,7 @@ This lab assumes you have already completed the following:
 - Deploy the Sharded Database
 
 
-## **STEP 1:** Create Shard App Schema
+## Task 1: Create Shard App Schema
 
 1. Login to the shard director host using the public ip address, switch to oracle user.
 
@@ -421,7 +421,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **STEP 2:** Verify the Shard App Schema
+## Task 2: Verify the Shard App Schema
 
 1. Run GDSCTL command.
 
@@ -785,7 +785,7 @@ This lab assumes you have already completed the following:
 
     
 
-## **STEP 3:** Create a global service
+## Task 3: Create a global service
 
 1. Login to the shard director host, switch to oracle user.
 

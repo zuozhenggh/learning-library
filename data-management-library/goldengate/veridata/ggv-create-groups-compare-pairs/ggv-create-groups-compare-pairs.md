@@ -21,17 +21,16 @@ Watch our short video that explains the partitioning feature in Oracle GoldenGat
 
 ### Prerequisites
 This lab assumes you have:
-
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
+- You have completed:
     * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
     * Lab: Create Datasource Connections
 
-## **STEP 1:** Create a Group
+## Task 1: Create a Group
 
   To create a group:
 1. From the left navigation pane, click **Configuration** and then click **Group Configuration** to display the **Group configuration** page.
@@ -46,7 +45,7 @@ This lab assumes you have:
 
 Your new Group has been created.
 
-## **STEP 2:** Create Compare Pairs (on Manual Mapping Tab)
+## Task 2: Create Compare Pairs (on Manual Mapping Tab)
 Use the **Manual Mapping** tab to map source objects to target objects one at a time. This method is useful when source and target names differ vastly and cannot be mapped by using wildcards.
 To create compare pairs on the **Manual Mapping** tab:
 1. After you have created the Group, click **Go to Compare Pair Configuration...** check box in the **New Group Assistant** page to display the **Compare Pair Configuration** page.
@@ -67,7 +66,7 @@ To create compare pairs on the **Manual Mapping** tab:
     ![](./images/7-compare-pair-manual-mapping-generated-saved-existingCPtab.png " ")
 Similarly, you can create any number of compare pairs for other tables.
 
-## **STEP 3:** Create Compare Pairs (on Pattern Mapping Tab)
+## Task 3: Create Compare Pairs (on Pattern Mapping Tab)
 If you don’t want to add new compare pairs, you may directly jump to **Lab Create and Execute Job**. Use the **Pattern Mapping** tab to map numerous source and target objects at once by using:
 
 * An exact name match (for example TAB1=TAB1).

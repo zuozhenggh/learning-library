@@ -17,11 +17,11 @@ Estimated time: 10 minutes
 
 - Your Oracle Cloud Trial Account
 
-## **STEP 1:** Create compartment
+## Task 1: Create compartment
 
 If you want to use an existing compartment, skip this step. Otherwise, click **Compartments** and then **Create Compartment**, to create a new compartment.
 
-## **STEP 2**: Creating <if type="freetier">a Web Server on </if>a Compute Instance
+## Task 2: Creating <if type="freetier">a Web Server on </if>a Compute Instance
 
 Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instances:
 

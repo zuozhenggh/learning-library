@@ -12,79 +12,87 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **Step 0**: Running your Lab
-### Access the graphical desktop
-For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+## Task 1: Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-1. Launch your browser to the following URL
+    - Database Listener
+        - LISTENER
+    - Database Server Instance
+        - convergedcdb
+    - Oracle Rest Data Service (ORDS)
+    - Application
+        - Nodejs eShop Application on docker container
 
-    ```
-    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-    ```
-
-2. Provide login credentials
-
-    ```
-    Username: <copy>oracle</copy>
-    ```
-    ```
-    Password: <copy>Guac.LiveLabs_</copy>
-    ```
-
-    ![](./images/guacamole-login.png " ")
-
-    *Note*: There is an underscore `_` character at the end of the password.
-
-3. Click on *Terminal* icon on the desktop to start a terminal
-
-    ![](./images/guacamole-landing.png " ")
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
-
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-## **Step 1**: Start Database and Application
-1. From any of the terminal session started above, proceed as shown below as “*oracle*” user
-
-2. Go to folder /u01/script
+2. Validate that expected processes are up. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
     ```
     <copy>
-    cd /u01/script
+    ps -ef|grep LISTENER|grep -v grep
+    ps -ef|grep ora_|grep pmon|grep -v grep
+    ps -ef|grep ords|grep -v grep
+    docker ps -a
+    systemctl status oracle-database
+    systemctl status oracle-init-workshop
     </copy>
     ```
-3. Run the script file to start the components.
+
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
 
     ```
+    e.g. Restarting the DB and DB Listener
     <copy>
-    ./env_setup_db-workshop.sh
+    sudo systemctl restart oracle-database
     </copy>
     ```
 
-This will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run. Check for the "Finished starting servers" status before proceeding next.
+4. On the web browser window on the right preloaded with the *eShop application* login page, click on *click here to start shopping* to test
+
+    ![](./images/convg-novnc-landing.png " ")  
+
 
 You may now [proceed to the next lab](#next).
+
+## Appendix 1: Managing Startup Services
+
+1. Database service (Database and Standard Listener).
+
+    - Start
+
+    ```
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
+    ```
+    - Stop
+
+    ```
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>
+    systemctl status oracle-database
+    </copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

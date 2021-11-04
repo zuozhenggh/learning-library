@@ -18,14 +18,20 @@ Watch this short video to preview how to provision Oracle E-Business Suite using
 * Cloud Manager Admin credentials
 * Cloud Manager Application variables in ``key-data.txt`` file.
 
-## **Step 1:** Log in to EBS Cloud Manager
+## Task 1: Log in to EBS Cloud Manager
 1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your ``key-data.txt`` file.
+
+Note: If your login URL is not working or if your compute instance which contains the Cloud Manager image was ever stopped/turned off you may need to check and see if the application is running. The command for this can be found in the Lab "Optional: Managing the EBS Cloud Manager Virtual Machine."
 
 2. Log in with your Cloud Manager Admin credentials.
 
   ![](./images/ebscm-login.png " ")
 
-## **Step 2:** Provision an Environment Using One-Click Provisioning
+  This will bring you to the home screen.
+
+  ![](./images/cm_home_screen.png " ")
+
+## Task 2: Provision an Environment Using One-Click Provisioning
 1. On the Oracle E-Business Suite Cloud Manager Environments page, click **Provision Environment** and select **One-Click**.
 
   ![](./images/oneclick.png " ")
@@ -36,7 +42,7 @@ Watch this short video to preview how to provision Oracle E-Business Suite using
 
     b. **Purpose**: Vision Demo Install
 
-    c. **EBS Version**: 12.2.9
+    c. **EBS Version**: 12.2.10
 
     d. **DB Version**: 19.0.0.0
 
@@ -46,7 +52,7 @@ Watch this short video to preview how to provision Oracle E-Business Suite using
 
 You can check the status of the activity to provision the environment in the Activities page. The provisioning process will take approximately 30-35 minutes.
 
-## **STEP 3:** Enable and Set Oracle E-Business Suite Account Passwords
+## Task 3: Enable and Set Oracle E-Business Suite Account Passwords
 
 1. SSH to the newly created environment by following the instructions under “Administrator Access” in section “Access Your Oracle E-Business Suite Environment” in the Oracle by Example tutorial: [Performing Post-Provisioning and Post-Cloning Tasks for Oracle E-Business Suite on Oracle Cloud Infrastructure](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html)
 
@@ -65,6 +71,10 @@ You can check the status of the activity to provision the environment in the Act
         <copy>
         ssh <ebsholenv1_private_ip>
         </copy>
+    
+    The private ip can be found by clicking on your newly created environment as shown
+
+      ![](./images/priv_ip.png " ")
 2. Once logged into your EBS instance as an Oracle user, source your variables for the release you are using via the following commands:
         
       a. Source variables for **release 12.2** 
@@ -94,7 +104,7 @@ The SYSADMIN user can now connect to Oracle E-Business Suite through the web int
 
 You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/post_provisioning_tasks_for_ebs_on_oci/110_post_prov_cm_oci.html#EnableandSetOracleE-BusinessAccountPasswords(ConditionallyRequired)) for more details.
 
-## **STEP 4:** Open Firewall and Security List to Allow Connections to EBS Environment
+## Task 4: Open Firewall and Security List to Allow Connections to EBS Environment
 
 1. Exit from the EBS instance and reconnect as the opc user
 
@@ -130,7 +140,7 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
 
 3. Now we will open the Security List in our VCN to allow traffic from the internet on port 4443. Go to OCI and navigate to the **Networking** > **Virtual Cloud Networks** section. 
 
-  Note: In the below screenshots, the naming convention is a little different. Where you see **ebswjm** as a prefix, you will most likely have **ebshol**. 
+  Note: In the below screenshots, the naming convention is a little different. Where you see **cwCM** as a prefix, you will most likely have **ebshol**. 
 
   ![](./images/7.png " ")
 
@@ -156,7 +166,7 @@ You can refer [Enable and Set Oracle E-Business Account Passwords](https://www.o
       ![](./images/11.png " ")
 
 
-## **STEP 5:** Configure Local Hosts File and Log in to Oracle E-Business Suite
+## Task 5: Configure Local Hosts File and Log in to Oracle E-Business Suite
 
 1. Click the Cloud Manager Environment: "ebsholenv1"
 
@@ -235,6 +245,7 @@ You may now proceed to the next lab.
   - Santiago Bastidas, Product Management Director
   - William Masdon, Cloud Engineering
   - Mitsu Mehta, Cloud Engineering
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, May 2021
+  - Chris Wegenek, Cloud Engineering
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering, September 2021
 
 

@@ -35,7 +35,7 @@ Migration with WebLogic Deploy Tooling (WDT) consists of 4 steps:
 - Have deployed a WebLogic on OCI domain using the Oracle Cloud Marketplace.
 - Have migrated the application database from the source environment to OCI.
 
-## **STEP 1:** Installing WebLogic Deploy Tooling
+## Task 1: Installing WebLogic Deploy Tooling
 
 ### Using the docker on-premises environment:
 
@@ -82,7 +82,7 @@ cd ~/wdt
 
 This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`.
 
-## **STEP 2:** Discover the On-Premises Domain
+## Task 2: Discover the On-Premises Domain
 
 The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate three files:
 
@@ -188,7 +188,7 @@ Extracting those files and updating paths in the model file...
   adding: wlsdeploy/applications/SimpleDB.ear (deflated 62%)
 ```
 
-## **STEP 3:** Edit the `source.yaml` File
+## Task 3: Edit the `source.yaml` File
 
 The extracted `source.yaml` file looks like the following:
 
@@ -456,10 +456,11 @@ appDeployments:
      ```
    
    > **Important**: If when migrating a different domain the `StagingMode: stage` key was not present in the `Application` section, **make sure to add it** as shown so the applications are distributed and started on all managed servers.
+   Also make sure to add single quotes to **Targets** even if the extracted model does not include them, as '-' characters cause issues in yaml.
 
 5. Save the `source.yaml` file by typing `CTRL+x` then `y`.
 
-## **STEP 4:** Edit the `source.properties` File
+## Task 4: Edit the `source.properties` File
 
   ```bash
   <copy>
@@ -491,7 +492,7 @@ appDeployments:
 
 3. Save the file with `CTRL+x` and `y`.
 
-## **STEP 5:** Copy the Model Files over to the Shared File System
+## Task 5: Copy the Model Files over to the Shared File System
 
 1. Export the `BASTION_IP` variable:
 
@@ -523,7 +524,7 @@ appDeployments:
 
     This will copy the files to the folder `/u01/shared/` in the shared file system, accessible to Jenkins.
 
-## **STEP 6:** Run the `update-domain` Build Job on Jenkins
+## Task 6: Run the `update-domain` Build Job on Jenkins
 
 1. Go to the Jenkins UI at `http://PRIVATE_LOAD_BALANCER_IP/jenkins` using the tunnel set up earlier.
 
@@ -537,7 +538,9 @@ appDeployments:
 
     ![](./images/jenkins2.png " ")
 
-5. Select **Shared Filesystem** for each of the file locations, and type the full path to each file as below.
+5. Select the WebLogic Domain to update (`nonjrf`).
+
+6. Select **Shared Filesystem** for each of the file locations, and type the full path to each file as below.
 
     - Archive file
 
@@ -555,7 +558,7 @@ appDeployments:
        </copy>
        ```
 
-    - Properties file
+    - Variables Properties file
 
        ```
        <copy>
@@ -565,24 +568,25 @@ appDeployments:
 
     ![](./images/jenkins3.png " ")
 
-6. Run the job with the **Build** button.
+7. Run the job with the **Build** button.
 
     ![](./images/jenkins4.png " ")
 
-7. In case of failure, hover over the job step and check the logs for information about issues at each build step.
+8. Click the link to the job, then click Console Output for details on the job.
 
-8. Wait until the job completes without failure in Jenkins.
+9. In case of failure, hover over the job step and check the logs for information about issues at each build step.
+
+10. Wait until the job completes without failure in Jenkins.
 
     ![](./images/jenkins5.png " ")
 
+## Task 7: Check the Application Deployed Properly
 
-## **STEP 7:** Check the Application Deployed Properly
-
-1. Go to the WebLogic Admin console (at `http://PRIVATE_LOAD_BALANCER_IP/console` under **Deployment** you should see the two applications listed.
+1. Go to the WebLogic Admin console (at `http://PRIVATE_LOAD_BALANCER_IP/nonjrf/console` under **Deployment** you should see the two applications listed.
 
    ![](./images/oci-deployments.png " ")
 
-2. On the **Core Infrastructure** menu, click **Networking** then click **Load Balancers**.
+2. In the OCI Console, click **Networking** then click **Load Balancers**.
 
 3. Find the IP of the Public Load Balancer.
 
@@ -597,4 +601,4 @@ appDeployments:
 ## Acknowledgements
 
  - **Author** - Emmanuel Leroy, May 2020
- - **Last Updated By/Date** - Emmanuel Leroy, August 2020
+ - **Last Updated By/Date** - Emmanuel Leroy, October 2021

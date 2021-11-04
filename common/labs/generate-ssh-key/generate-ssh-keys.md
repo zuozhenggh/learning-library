@@ -44,7 +44,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ssh-keygen -b 2048 -t rsa -f <<sshkeyname>>
     ````
 
-    *Note: The angle brackets <<>> should not appear in your code.*
+    *Note: The angle brackets <<>> should not appear in your command.*
 
     ![](./images/cloudshell-ssh-keygen.png " ")
 
@@ -60,7 +60,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 4. To list the contents of the public key, use the cat command ```cat <<sshkeyname>>.pub```
 
-    *Note: The angle brackets <<>> should not appear in your code.*
+    *Note: The angle brackets <<>> should not appear in your command.*
 
     ![](images/cat-in-cloudshell.png " ")
 
@@ -202,7 +202,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
     ```
     cd Users/<your home folder name>/.ssh/
     ```
-    *Note: The angle brackets <> should not appear in your code.*
+    *Note: The angle brackets <> should not appear in your command.*
 
     ```
     <copy>ls</copy>
@@ -354,6 +354,6 @@ You may now [proceed to the next lab](#next) or paste it in the LiveLabs reserva
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Contributors** - Kay Malcolm, Tom McGinn, Kamryn Vinson, Anil Nair
+* **Contributors** - LiveLabs Team, Tom McGinn, Kamryn Vinson, Anil Nair
 * **Last Updated By/Date** - Kamryn Vinson, Database Product Management, March 2021
 

@@ -19,7 +19,7 @@ In this lab, you will:
 
 * This lab assumes you have successfully setup a Property Graph Analysis Environment in Docker.
 
-## **STEP 1:** Add ingress rules and verify setup environment
+## Task 1: Add ingress rules and verify setup environment
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
@@ -77,7 +77,7 @@ In this lab, you will:
 
   ![GraphViz on startup](./images/GraphVizStartup.png)
 
-## **STEP 2:** Graph query and analysis in Apache Zeppelin
+## Task 2: Graph query and analysis in Apache Zeppelin
 
 1. Navigate to the Zeppelin in the browser and click on the "Customer 360" notebook link.
 
@@ -87,7 +87,7 @@ In this lab, you will:
 
   ![Customer 360 Notebook](./images/ZepCustomer360NB.png)
 
-## **STEP 3:** Graph visualization
+## Task 3: Graph visualization
 
 Now we will use the Graph Visualization component to explore the graph and run some PGQL queries.
 
@@ -196,7 +196,7 @@ Let's find accounts that have had an outbound and inbound transfer of over 500 o
 
   ![Circular transfer A to B to C to A](./images/GraphVizABCATxn.png)
 
-## **STEP 4:** Graph query and analysis in JShell
+## Task 4: Graph query and analysis in JShell
 
 1. If you don't have an open SSH connection to your compute instance, open a terminal window. Navigate to the folder where you created the SSH keys, replace *your-key-name* with your private key name and *your-instance-ip-address* with your compute instance ip address and connect to your compute instance:
 

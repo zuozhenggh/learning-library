@@ -13,14 +13,15 @@ In this lab, you will:
 * Rewire the upgraded schemas of the OIM 11g setup with the OIM 12c setup
 
 ### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: Pre-Upgrade Requirements
 
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
-      - Lab 1: Initialize the workshop Environment
-      - Lab 2: Pre-Upgrade Requirements
-
-## **STEP 1:** Identify existing schemas available for upgrade
+## Task 1: Identify existing schemas available for upgrade
 
 1. Connect to the database as a *sys* user and Run the following SQL query to check the versions of the existing domains
 
@@ -45,7 +46,7 @@ In this lab, you will:
     <copy>exit</copy>
     ```
 
-## **STEP 2:** Run the upgrade assistant to perform schema upgrade
+## Task 2: Run the upgrade assistant to perform schema upgrade
 
 1. Navigate to the *oracle_common/upgrade/bin* directory
 
@@ -115,7 +116,7 @@ In this lab, you will:
 
     ![](images/7-upgrade.png)
 
-## **STEP 3:** Verify the schema Upgrade
+## Task 3: Verify the schema Upgrade
 
 1. Connect to the database as a *sys* user and Run the following SQL query to check the version
 
@@ -135,7 +136,7 @@ In this lab, you will:
 
     ![](images/8-sql.png)
 
-## **STEP 4:** Cleaning the temporary folder
+## Task 4: Cleaning the temporary folder
 
 1. As the */tmp* directory is set against the JVM *java.io.tmpdir* property, any unwanted files in the */tmp* folder can interfere with the OIG upgrade process and may result is MDS corruption. Hence, clean the */tmp* folder before starting the upgrade process.
 
@@ -143,7 +144,7 @@ In this lab, you will:
     <copy>rm -rf /tmp/*</copy>
     ```
 
-## **STEP 5:** Stopping 12c Managed Servers
+## Task 5: Stopping 12c Managed Servers
 
 1. Stop the SOA, OIM Managed Servers before rewiring the domain. Ensure that the Admin Server and Database are up and running. First, stop the OIM Server
 
@@ -165,7 +166,7 @@ In this lab, you will:
 
     ![](images/9-server12c.png)
 
-## **STEP 6:** Rewiring the domain
+## Task 6: Rewiring the domain
 
 1. Verify the values for the various properties in the *oneHop.properties* file
 

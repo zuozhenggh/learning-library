@@ -22,7 +22,7 @@ In this lab, you will:
 * Add PizzaSkill to the DA
 
 
-## **STEP 1**: Explore the Digital Assistant
+## Task 1: Explore the Digital Assistant
 
 The starter digital assistant (or, DA for short) that you just cloned consists of two skills – FinancialBot and RetailBot. Later, we'll add PizzaSkill to the DA.
 
@@ -55,7 +55,7 @@ To familiarize yourself with the DA, try it out by following these steps:
 16. Close the tester.
 
 
-## **STEP 2:** Add PizzaSkill to the DA
+## Task 2: Add PizzaSkill to the DA
 
 With a new pizzeria opening in the shopping centre, we want the digital assistant to support this merchant as well. So let's add the PizzaSkill to our digital assistant and then train the digital assistant so that it can work with the new skill:
 

@@ -20,9 +20,7 @@ We will also use visualizations on the predicted data for ease of decision makin
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -37,7 +35,7 @@ The below pre-loaded data objects are available in Converged Database.
 | HR\_ATTRITION\_PREDICT | Table | Relational | Data used to test the model we create |
 
 
-## **STEP 1**: Create Dataset
+## Task 1: Create Dataset
 
 In this step, create a dataset to work on.
 
@@ -57,7 +55,7 @@ In this step, create a dataset to work on.
 7. Finally click on “Add” to add the data set.
     ![](./images/paoas1.5.png " ")
 
-## **STEP 2**: Create Dataflow - ML Model
+## Task 2: Create Dataflow - ML Model
 
 In this step, we will build a Machine learning model using OAS Dataflow capability to train our dataset.
 
@@ -83,7 +81,7 @@ In this step, we will build a Machine learning model using OAS Dataflow capabili
 
 We now have an ML model to test our data.
 
-## **STEP 3**: Check ML Model Quality
+## Task 3: Check ML Model Quality
 
 In this step , we will check the parameters which determines the credibility of a model.
 
@@ -96,7 +94,7 @@ In this step , we will check the parameters which determines the credibility of 
 
  Based on the above shown parameters one can compare various algorithms and select the algorithm for best results of their data.
 
-## **STEP 4**: Apply Training Model to Predict
+## Task 4: Apply Training Model to Predict
 
 In this step, we will apply the previously created ML model to the test data.
 
@@ -125,7 +123,7 @@ In this step, we will apply the previously created ML model to the test data.
 Now our training model is successfully mapped to the ML model.
 
 
-## **STEP 5**: Create Visualizations
+## Task 5: Create Visualizations
 
 In this step we will enrich our insights with predictive analytics by creating some visuals on the prediction data.
 

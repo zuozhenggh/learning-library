@@ -10,7 +10,7 @@ In this lab we will create a compute instance, install httpd server, attach bloc
 - Use Boot volume of compute instance
 - Move additional storage with applications/tools installed between compute instances.
 
-## **Step 1:** Create VCN
+## Task 1: Create VCN
 
 1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select the compartment assigned to you from drop down menu on left part of the screen 
 2. Click **Start VCN Wizard**.
@@ -53,7 +53,7 @@ In this lab we will create a compute instance, install httpd server, attach bloc
 
     Then, Click **Add Ingress Rules** at the bottom.
 
-## **Step 2:** Compute instance.
+## Task 2: Compute instance.
 
 1. Launch **Cloud Shell** by clicking the icon next to region name on top right of OCI console. ('<=' icon)
 
@@ -108,7 +108,7 @@ Copy the key displayed. Thsi will be used when creating the compute instance.
 
   Ex: [opc@quickstart_instance ~]
 
-## **Step 3:** Attach block volume to compute instance.
+## Task 3: Attach block volume to compute instance.
 
 1. From OCI services menu Click **Block Volumes** under **Block Storage**, then Click **Create Block Volume**.
 
@@ -144,7 +144,7 @@ Copy the key displayed. Thsi will be used when creating the compute instance.
 8. Verify Block volume is attached on compute instance details page (Refresh the screen if needed).
 
 
-## **Step 4:** Install httpd on compute instance and an app on block volume.
+## Task 4: Install httpd on compute instance and an app on block volume.
 
 1. Switch to ssh session to compute instance (Cloud Shell). Install httpd server, Enter Command:
 
@@ -348,7 +348,7 @@ Copy the key displayed. Thsi will be used when creating the compute instance.
 
 We have initialized httpd.conf file. Next we will create a second compute instance using the boot volume of the first compute instance and attach Block Volume to it
 
-## **Step 5:**(OPTIONAL): Detach the block volume and launch second compute instance using boot volume and attach Block Volume
+## Task 5:(OPTIONAL): Detach the block volume and launch second compute instance using boot volume and attach Block Volume
 
 In this section we will detach the block volume, Stop the compute instance, use its boot volume to launch a second compute instance and delete the second compute instance.
 
@@ -414,7 +414,7 @@ In this section we will detach the block volume, Stop the compute instance, use 
 
 We have now successfully launched a compute instance using another instance's boot volume and re-attached a block volume that was attached to another instance. The block volume preserved all the data on it during this process. Moreover the compute instance launched using the boot volume had httpd server and fire wall configuration already present.
 
-## **Step 6:** Delete the resources
+## Task 6: Delete the resources
 
 1. Switch to  OCI console window.
 

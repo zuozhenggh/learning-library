@@ -1,19 +1,26 @@
-# Create the Oracle Cloud Infrastructure GoldenGate Deployment
+# Create the Oracle Cloud Infrastructure GoldenGate resources
 
 ## Introduction
 
-This lab walks you through the steps to create an Oracle Cloud Infrastructure GoldenGate Deployment.
+This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate Deployment.
 
-Estimated Lab Time: 5 minutes
+Estimated time: 20 minutes
 
-### About Oracle Cloud Infrastructure GoldenGate Deployments
-A Oracle Cloud Infrastructure GoldenGate deployment manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can access the OCI GoldenGate deployment console to create and manage Extracts and Replicats.
+Watch the video below for a walk through of the lab.
+[](youtube:qW8ulWBx99s)
+
+### About Oracle Cloud Infrastructure GoldenGate Resources
+
+A OCI GoldenGate **deployment** manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can create and manage Extracts and Replicats.
+
+A **database registration** captures source or target database credential information and syncs the information to OCI GoldenGate.
 
 ### Objectives
 
 In this lab, you will:
-* Locate Oracle Cloud Infrastructure GoldenGate in the Console
 * Create a OCI GoldenGate deployment
+* Register the source and target databases
+* Enable the ggadmin user and supplemental logging
 * Review the OCI GoldenGate deployment details
 * Access the OCI GoldenGate deployment console
 
@@ -21,41 +28,41 @@ In this lab, you will:
 
 This lab assumes that you completed all preceding labs.
 
-## **STEP 1**: Create a Deployment
+## Task 1: Create a deployment
 
-*Note that the compartment names in the screenshots may differ from values that appear in your environment.*
+> **Note:** *Compartment names in the screenshots may differ from values that appear in your environment.*
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **GoldenGate**.
 
-    ![Select GoldenGate from Oracle Database](images/database-goldengate.png " ")
+    ![](images/database-goldengate.png " ")
 
     You're brought to the **Deployments** page.
 
-    ![GoldenGate Deployments page](images/01-01-02a.png "Deployments page")
+    ![](images/01-01-02a.png " ")
 
-2.  If you're prompted to select a compartment, select the compartment associated to your LiveLab workshop. For example, if your LiveLab username is LL1234-user, select the compartment **LL1234-COMPARTMENT**.
+2.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
 3.  On the Deployments page, click **Create Deployment**.
 
-    ![Click Create Deployment](images/01-02-01.png "Create a deployment")
+    ![](images/01-02-01.png " ")
 
 4.  In the Create Deployment panel, enter **GGSDeployment** for Name.
 
 5.  From the Compartment dropdown, select a compartment.
 
-6.  For OCPU Count, enter **2**.
+6.  For OCPU Count, enter **1**.
 
-7.  For Subnet, select **Public Subnet**.
+7.  For Subnet, select **&lt;user&gt;pubsubnt**.
 
 8.  For License type, select **Bring You Own License (BYOL)**.
 
 9.  Click **Show Advanced Options**, and then select **Create Public Endpoint**.
 
-    ![Click Create Deployment](images/01-02-create_deployment_panel.png "Create a deployment")
+    ![](images/01-02-create-deployment-panel.png " ")
 
 10. Click **Next**.
 
-11. For GoldenGate Instance Name, enter **ogginstance**.
+11. For GoldenGate Instance Name, enter **ggsinstance**.
 
 12. For Administrator Username, enter **oggadmin**.
 
@@ -65,8 +72,83 @@ This lab assumes that you completed all preceding labs.
 
 You're brought to the Deployment Details page. It takes a few minutes for the deployment to be created. Its status will change from CREATING to ACTIVE when it is ready for you to use.
 
+## Task 2: Register the source and target databases
 
-## **STEP 2:** Review the Deployment details
+While the deployment is being created, you can register the source and target Autonomous Database instances.
+
+*For the purposes of this workshop, registering the source Autonomous Database is purely used for its connection string to help you create the credential in the Oracle GoldenGate Marketplace instance.*
+
+1.  Return to the OCI Console. In the breadcrumb, click **GoldenGate**, and then **Registered Databases**.
+
+    ![](images/04-01-breadcrumb.png " ")
+
+2.  On the Registered Databases page, click **Register Database**.
+
+    ![](images/04-02-register-db.png " ")
+
+3.  In the Register Database panel, enter **SourceATP** for Name and Alias.
+
+4.  Click **Select Database**.
+
+5.  For **Database Type**, select **Autonomous Database**.
+
+6.  For **Database in &lt;compartment-name&gt;**, select **SourceATP**.
+
+7.  For **Database User Password**, enter a password, and take note of this password for use later in this workshop. You can use the database passwords provided in the Workshop Details.
+
+8.  Click **Register**.
+
+    ![](images/reg-sourceATP.png " ")
+
+9.  Repeat these steps for the Target Autonomous Database (**TargetADW**).
+
+The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
+
+## Task 3: Unlock the GGADMIN user and add supplemental logging
+
+Although the GGADMIN user is created during the database registration process, it is locked by default. The following steps guide you through how to unlock the GGADMIN user.
+
+1.  Open the **Navigation Menu** (hamburger icon), navigate to **Oracle Database**, and then click **Autonomous Database**.
+
+    ![](images/05-01.png " ")
+
+2.  From the list of databases, select **SourceATP**.
+
+    ![](images/05-02.png " ")
+
+3.  On the SourceATP Database Details page, click **Tools**, and then click **Open Database Actions**.
+
+    ![](images/05-04.png " ")
+
+4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment. If you're running this lab as a workshop, copy the ADMIN password provided with your workshop details.
+
+5.  Under **Administration**, click **Database Users**.
+
+6.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
+
+    ![](images/02-06-locked.png " ")
+
+7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the GGADMIN user in the database registration steps above, and then click **Apply Changes**.
+
+    ![](images/02-07-edit.png " ")
+
+    Note that the user icon changes from a blue padlock to a green checkmark.
+
+8.  Open the Database Actions navigation menu (hamburger icon), and then select **SQL**.
+
+    ![](images/01-08-sql.png " ")
+
+9.  Enter the following into the worksheet, and then click **Run Script**.
+
+    ```
+    <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
+    ```
+
+10. Log out of Database Actions.
+
+11. Repeat steps 1 to 7 to unlock the GGADMIN user for **TargetADW**. Log out of Database Actions when you're done.
+
+## Task 4: Review the deployment details
 
 On the Deployment Details page, you can:
 
@@ -78,75 +160,27 @@ On the Deployment Details page, you can:
 * Review the deployment resource information
 * Add tags
 
-    ![Deployment Details page](images/01-03-gg_deployment_details.png "GoldenGate Deployment details")
+    ![](images/01-03-gg-deployment-details.png " ")
 
-## **STEP 3:** Launch the GoldenGate Deployment Console
+## Task 5: Launch the GoldenGate Deployment Console
 
 1. When the deployment is active, click **Launch Console**.
 
-    ![Launch Console](images/04-01-ggs-launchconsole.png)
+    ![](images/04-01-ggs-launchconsole.png " ")
 
-2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided above, and then click **Sign In**.
+2. To log in to the GoldenGate deployment console, enter **oggadmin** for User Name and the password you provided in Task 1, steps 12 and 13, and then click **Sign In**.
 
-    ![GoldenGate Deployment Console](images/04-02-ggs-deploymentconsole-signin.png)
+    ![](images/04-02-ggs-deploymentconsole-signin.png " ")
 
 After you log in successfully, you're brought to the GoldenGate deployment console home page. Here, you can access the GoldenGate Administration, Performance Metrics, Distribution, and Receiver Servers, as well as add Extracts and Replicats for your data replication tasks.
 
-In this lab, you created an OCI Deployment and reviewed its Deployment details. You can now proceed to the next [lab](#next).
+In this lab, you created the OCI GoldenGate deployment and registered the source and target databases. You may now **proceed to the next lab**.
 
-## **STEP 4:** Register the Target Database
-
-Now, follow the steps below to register the target Autonomous Data Warehouse \(ADW\) instance.
-
-1.  On the Registered Databases page, click **Register Database**.
-
-2.  In the Register Database panel, enter **TargetADW** for Name and Alias.
-
-3.  From the **Compartment** dropdown, select a compartment.
-
-4.  Click **Select Database**.
-
-5.  For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ADW instance, and then select **ADWTarget** from the dropdown. Some fields are autopopulated based on your selection.
-
-6.  Enter the database's password in the Password field, and then click **Register**.
-
-    ![Target Database details](images/02_10-ggs-regDB_target.png)
-
-    The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
-
-## **STEP 4:** Enable the ggadmin user
-
-Although the ggadmin user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
-
-1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
-
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
-
-2.  From the list of databases, select **ADWTarget**.
-
-3.  On the ADWTarget Database Details page, click **Tools**, and then click **Open Database Actions**.
-
-4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment. If you're running this lab as a workshop, copy the ADMIN password provided with your lab environment details.
-
-5.  Under **Administration**, click **Database Users**.
-
-6.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
-
-    ![GGADMIN user](images/02-06-locked.png)
-
-7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
-
-    ![Edit user](images/02-07-edit.png)
-
-    Note that the user icon changes from a blue padlock to a green checkmark.
-
-8.  Log out of Database Actions.
-
-## Learn More
+## Learn more
 
 * [Managing Deployments](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/deployments.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
-* **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, June 2021
+* **Contributors** -  Julien Testut, Database Product Management
+* **Last Updated By/Date** - Jenny Chan, October 2021

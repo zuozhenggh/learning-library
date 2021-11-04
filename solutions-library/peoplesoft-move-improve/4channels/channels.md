@@ -12,7 +12,7 @@ In this lab you will:
 ### Prerequisites
 - Access to the Cloud Manager Dashboard
 
-## **STEP 1**: Subscribing to a Channel
+## Task 1: Subscribing to a Channel
 
 1.	Navigate to **Cloud Manager Dashboard** > **Repository** 
     ![](./images/repo.png "")

@@ -21,9 +21,9 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Add Network Security Group
+## Task 1: Add Network Security Group
 
-The following tasks are *optional* if a target autonomous database is already present. In the first phase of DMS\_LA an autonomous database with private IP address is required.
+The following tasks are *optional* if a target autonomous database is already present.
 
 1. You first need to create a Network Security Group for use in a Private IP ADB instance. In the OCI Console Menu, go to **Networking > Virtual Cloud Networks** and pick your VCN.
 
@@ -45,7 +45,7 @@ The following tasks are *optional* if a target autonomous database is already pr
 
   ![](images/add-security-rules-nsg.png)
 
-## **STEP 2**: Create Target Autonomous Database
+## Task 2: Create Target Autonomous Database
 
 1. Now you can create the ADB instance. In the OCI Console Menu, go to **Oracle Database > Autonomous Transaction Processing**.
 
@@ -60,13 +60,13 @@ The following tasks are *optional* if a target autonomous database is already pr
     - Database Name: **TargetATP**
     - Create administrator credentials – Password: *password of your choice*
     - Access Type: **Secure Access from Everywhere**
-    - Choose a license type: **Bring Your Own License (BYOL)**
+    - Choose a license type: **License Included**
 
   ![](images/atp-name.png)
 
   ![](images/atp-password.png)
 
-  ![](images/atp-network-license.png)
+  ![](images/adb-lt.png)
 
 5. Close the dialog by pressing **Create Autonomous Database**.
 

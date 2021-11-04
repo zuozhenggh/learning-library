@@ -32,7 +32,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Validate Access to required components and applications
+## Task 1: Validate Access to required components and applications
 
 1. Validate Access to required components and applications. These are also bookmarked on Firefox running on your remote desktop. Refer to *Lab: Initialize Environment* for more
 
@@ -86,7 +86,7 @@ This lab assumes you have:
     Password    Oracle123
     ```
 
-## **STEP 2**: Employee On-Boarding and Notifications
+## Task 2: Employee On-Boarding and Notifications
 1. Proceed to import new employees into My HR Application. To do so login into the APEX Workspace **HRSPACE**.
 
     E.g. Use the following link and credentials:
@@ -153,7 +153,7 @@ This lab assumes you have:
 
     **Note:** before adding a new employee, you must first create an email account so the new employee receives a notification after being on-boarded into OIM. Access the **Email Server Admin Console** as admin user to create new email accounts.
 
-## **STEP 3**:  On-board New Employees
+## Task 3:  On-board New Employees
 1. Login as user **xelsysadm** with password **Oracle123** to the OIM Admin Console. Click on the **Scheduler** option and under System Management tab enter **HRData\*** in the search box.
 
 2. From the results list, select job **HRData DBAT Trusted Resource User Reconciliation**
@@ -178,7 +178,7 @@ This lab assumes you have:
     USERNAME, DEPARTMENT_NAME, FIRST_NAME, LAST_NAME, JOB_TITLE, PHONE_NUMBER, MANAGER, EMAIL, HIRE_DATE, END_DATE.
     ```
 
-## **STEP 4**:  Checking On-boarded Employees
+## Task 4:  Checking On-boarded Employees
 1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **`Manage -> Users`**, review if the on-boarded employees are listed as users in the Users page.
 
 2. Notice if user login **RMAINOR** is listed in the Users page, then click on the user login to open the User Details page, select the **Attributes** tab and check the **End Date** attribute for this user. His end date had passed the current date, meaning this user will be disabled and deleted in the next **`Disable/Delete User After End Date`** job execution. Do not close the User Details page to proceed with the next step.
@@ -195,7 +195,7 @@ This lab assumes you have:
 
 7. Sign out from the Self Service Console. This will also close the session for the Admin Console.
 
-## **STEP 5**:  Check for Notification and New Credentials (Optional)
+## Task 5:  Check for Notification and New Credentials (Optional)
 1. Optionally, proceed to login to the Email Web client **Roundcube** as employee **DCOBY** using **Oracle123** as password.
 
     E.g. Login to Roundcube Email Client:
@@ -219,7 +219,7 @@ This lab assumes you have:
 
 6. Sign out from the Self Service Console.
 
-## **STEP 6**: Employee Transfer and Role Updates
+## Task 6: Employee Transfer and Role Updates
 1. Login as user **hradmin** with password **Oracle123** to My HR Application.
 
 2. Click on **Employees** tile to open the employees page, select one employee e.g. **DCOBY** and click on the **Pencil** icon to edit the employee details.
@@ -238,7 +238,7 @@ This lab assumes you have:
 
 7. Once the job is completed with job status **Stopped::Success**, proceed to close the Scheduler window and sign out from the Admin Console.
 
-## **STEP 7**: Checking on department transfer and role updates
+## Task 7: Checking on department transfer and role updates
 
 1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **`Manage -> Users`**, click on user login **DCOBY**.
 
@@ -250,7 +250,7 @@ This lab assumes you have:
 
 5. Sign out from the Self Service Console.
 
-## **STEP 8**: Self Service, Access Request and Approvals
+## Task 8: Self Service, Access Request and Approvals
 
 1. Login to the Email Web client **Roundcube** as employee **RLAURIA** using password **Oracle123** to obtain the OIM user credentials (UserID) and link to set the password and challenge questions.
 
@@ -287,7 +287,7 @@ This lab assumes you have:
 
 13. Close the page and sign out from the Self Service Console.
 
-## **STEP 9**: Approving the request using actionable notifications
+## Task 9: Approving the request using actionable notifications
 1. Login to the Email Web client **Roundcube** as manager **JSMITH** using **Oracle123** as password.
 
     E.g. login to Roundcube Email Client:
@@ -313,7 +313,7 @@ This lab assumes you have:
 
 6. Logout from the Email Web Client.
 
-## **STEP 10**: Checking on the requested application access
+## Task 10: Checking on the requested application access
 
 1. Login as user **RLAURIA** to the OIM Self Service Console. Click on **My Access** tile.
 
@@ -327,7 +327,7 @@ This lab assumes you have:
 
     Figure 4. Provisioned Account - Access Request
 
-## **STEP 11**: Check the account on the target application (Optional)
+## Task 11: Check the account on the target application (Optional)
 
 1. This step is optional and requires to have the OAM server running to test the provisioned account. Since you have already started the OIM components, you will need at least 48 GB of total memory in your environment to be able to start the OAM server components in addition to OIM.
 
@@ -355,7 +355,7 @@ This lab assumes you have:
 
 4. Proceed to sign out from the OAM console.
 
-## **STEP 12**: Employee Termination
+## Task 12: Employee Termination
 
 1. Login as user **hradmin** with password **Oracle123** to My HR Application.
 
@@ -373,7 +373,7 @@ This lab assumes you have:
 
 8. A list of events with Profile Name **HRData** should be listed as recent events indicating that records were processed. Click on the last event ID to see the details. If the current status shows **Delete Succeeded** for the event, the employee was successfully deleted. Sign out from the Admin Console.
 
-## **STEP 13**: Checking on terminated employees
+## Task 13: Checking on terminated employees
 
 1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **`Manage -> Users`**, review if the terminated employee is not listed as user in the users page.
 

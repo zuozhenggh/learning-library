@@ -1,4 +1,4 @@
-# Eshop Application Schema & Code Snippet
+# Eshop Application Schema & Code Snippet (read-only)
 
 ## Introduction   
 eShop application is server side rendered web application hosted on a NodeJS web server. Application is designed on MVC (Model, View and Controller) architecture pattern, with view as HTML 5 pages, controllers written in NodeJS to handle user http request and model to access database objects.
@@ -8,7 +8,7 @@ It utilizes different types of tables (relational, non-relational) in Oracle dat
 Relational table stores data related to **Customer** and their **Orders** while the **Product Catalog** and **Customer Reviews** data are stored as JSON in SODA collections.
 
 
-*Estimated Lab Time*: 20 Minutes
+*Estimated Lab Time*: 5 Minutes
 
 ### Objectives
 In this lab, you will:
@@ -18,35 +18,29 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Application Schema and Code Snippet
+## Task 1: Application Schema and Code Snippet
 
 1. User makes a valid http request to server using a rest call from browser.
-   
+
 2. Application validates the route and map it to a proper controller as shown below:
 
     ```
-    <copy>
     app.route("/shop/product/:key").get(shopController.fetchProductById);
-    </copy>
     ```
 
 3. Controller function pull out the provided details from the request and make pass it to model layer, as shown below in the code snippet:
 
     ```
-    <copy>
-    exports.fetchProductById = function(req,res,next){
-    let item = req.params.key;
-    dbService.getProductByKey(item)
-
-    }
-    </copy>
+    exports.fetchProductById = function(req,res,next)
+        {
+            let item = req.params.key;
+            dbService.getProductByKey(item)
+        }
     ```
 dbService.getProductByKey(item) – calling model layer function with “item” as parameter.
 
@@ -55,34 +49,29 @@ dbService.getProductByKey(item) – calling model layer function with “item”
    **Connect to database shard using sharding key**
 
     ```
-    <copy>
     connection = await oracledb.getConnection({
-      
-	user: 'SHARDUSERTEST',
+
+    user: 'SHARDUSERTEST',
     password: 'oracle',
     connectString: '158.101.120.251:1522/oltp_rw_products.orasdb.oradbcloud',
     shardingKey:[id]
 
-      });
-    </copy>
+    });
     ```
 
 	**Query the SODA Collection or Table (In this case PRODUCTS is a SODA Collection)**
 
 	```
-    <copy>
     const soda = connection.getSodaDatabase();
     const collection = await soda.openCollection("PRODUCTS");
     const doc = await collection.find().key(id).getOne();
     const content = doc.getContent();
 
-    </copy>
     ```
 
 5. Views (HTML page) get created using the data returned to controller from model layer, as show below and then sent to client as response.
 
     ```
-    <copy>
    dbService.getProductByKey(item)
     	.then(
         (data)=>{
@@ -93,35 +82,24 @@ dbService.getProductByKey(item) – calling model layer function with “item”
             return next(err);
         }
     	)
-    </copy>
     ```
-
-
-## **STEP 2**: Application Connection Details
+## Task 2: Application Connection Details
 
 In Oracle Sharding, database query and DML requests are routed to the shards in two main ways, depending on whether a sharding key is supplied with the request. These two routing methods are called **proxy routing** and **direct routing.**
 
-**Proxy Routing:** Queries that need data from multiple shards, and queries that do not specify a sharding key, cannot be routed directly by the application. Those queries require a proxy to route requests between the application and the shards. Proxy routing is handled by the shard catalog query coordinator. 
+**Proxy Routing:** Queries that need data from multiple shards, and queries that do not specify a sharding key, cannot be routed directly by the application. Those queries require a proxy to route requests between the application and the shards. Proxy routing is handled by the shard catalog query coordinator.
 
 Example: Database connection details:
 
-			module.exports = 
-
+			module.exports =
 			{
                sharding: {
-
       			  user: 'SHARDUSERTEST',
-
-       			 password: 'oracle',
-
+       			  password: 'oracle',
       			  connectString: '10.0.20.102:1521/cat1pdb',
-
         				poolMin: 10,
-
         				poolMax: 10,
-
         				poolIncrement: 0
-
   			  }
 
 **Direct Routing:** You can connect directly to the shards to execute queries and DML by providing a sharding key with the database request. Direct routing is the preferred way of accessing shards to achieve better performance, among other benefits.
@@ -129,15 +107,10 @@ Example: Database connection details:
 Example: Database connection details by passing a sharding key:
 
 			connection = await oracledb.getConnection({
-
-            			 user: 'SHARDUSERTEST',
-
+            			user: 'SHARDUSERTEST',
              			password: 'oracle',
-
              			connectString: '10.0.20.101:1521/oltp_rw_products.shardcatalog1.oradbcloud',
-
               			shardingKey:[docmt.PRODUCT_ID]
-
             			  });
 
 For more details for the eShop code snippet click [here] (https://github.com/nishakau/ShardingSampleCode.git)
@@ -149,21 +122,7 @@ You may now [proceed to the next lab](#next).
 - [Oracle JSON Developers Guide 19c] (https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html)
 - [Introduction to SODA] (https://docs.oracle.com/en/database/oracle/simple-oracle-document-access/adsdi/overview-soda.html#GUID-BE42F8D3-B86B-43B4-B2A3-5760A4DF79FB)
 
-## Rate this Workshop
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
-
-1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
-
-If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
-
 ## Acknowledgements
 * **Authors** - Shailesh Dwivedi, Database Sharding PM , Vice President
 * **Contributors** - Balasubramanian Ramamoorthy , Alex Kovuru, Nishant Kaushik, Ashish Kumar, Priya Dhuriya, Richard Delval, Param Saini,Jyoti Verma, Virginia Beecher, Rodrigo Fuentes
-* **Last Updated By/Date** - Alex Kovuru, Principal Solution Engineer - June 2021
+* **Last Updated By/Date** - Priya Dhuriya, Staff Solution Engineer - July 2021

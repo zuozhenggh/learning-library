@@ -27,7 +27,7 @@ To complete this lab, you need to have the following:
 
 - Logged into your Oracle Cloud Account
 
-## **STEP 1**: Choosing ADW or ATP from the Services Menu
+## Task 1: Choosing ADW or ATP from the Services Menu
 
 1. Login to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -54,7 +54,7 @@ To complete this lab, you need to have the following:
 
     ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
 
-## **STEP 2**: Creating the ADB Instance
+## Task 2: Creating the ADB Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -112,8 +112,9 @@ To complete this lab, you need to have the following:
     ![Enter password and confirm password.](./images/Picture100-26d.png " ")
 8. Choose network access:
     - For this lab, accept the default, "Allow secure access from everywhere".
-    - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
-    - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
+    - If you want to restrict access to specified IP addresses and VCNs, select "Secure access from allowed IPs and VCNs only." You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
+    - If you want a private endpoint, to enable traffic only from the VCN you specify - and to block access to the database from all public IPs or VCNs, select "Private endpoint access only" in the Choose network access area.
+    - If you select "Secure access from allowed IPs and VCNs only" or "Private endpoint access only", you can use the checkbox to require mutual TLS (mTLS) authentication to authenticate connections to your database. If you don't select this checkbox, TLS or mTLS can be used.
 
     ![](./images/network-access.png " ")
 
@@ -143,4 +144,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Tom McGinn, Brianna Ambler, June 2021
+- **Last Updated By/Date** - Richard Green, September 2021

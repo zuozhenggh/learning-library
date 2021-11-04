@@ -30,7 +30,7 @@ This lab assumes you have completed the following labs:
 * Generate SSH Key
 * Environment Setup using Marketplace Image
 
-## **STEP 1:** Install Python
+## Task 1: Install Python
 
 Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
@@ -60,7 +60,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
     ![](./images/p_installPython.jpg " ")
 
-## **STEP 2:** Add a Sample Schema in your Database
+## Task 2: Add a Sample Schema in your Database
 
 1.  Switch to the `oracle` user using the sudo command.
 
@@ -94,7 +94,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
     <copy>
     mkdir -p python
     cd python
-    wget  https://objectstorage.us-ashburn-1.oraclecloud.com/p/bbwmGPLQJD3NXMeglfHvmp7FKyPm1q229tMd_DdrKnkaYVfAg_zdank015eirnBr/n/c4u04/b/labfiles/o/python_setup.zip
+    wget  https://objectstorage.us-ashburn-1.oraclecloud.com/p/0mc1pGojNWLuXj0RXKtmj8-qWyRmEkNipReSOXudpIvOmM642cYOSDoxmWTT-ibY/n/c4u04/b/labfiles/o/python_setup.zip
     unzip python_setup.zip
     </copy>
     ````
@@ -123,7 +123,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
     </copy>
     ````
 
-## **STEP 3:** Install Python Oracle Module and Connect to a Database
+## Task 3: Install Python Oracle Module and Connect to a Database
 
 cx\_Oracle is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
@@ -169,7 +169,7 @@ cx\_Oracle is a python module that enables access to Oracle databases. This modu
 
     ![](./images/p_python-3.png " ")
 
-## **STEP 4:** The Python Interpreter
+## Task 4: The Python Interpreter
 
 There are several ways to execute Python code. In this step, we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
 
@@ -225,7 +225,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-2.png " " )
 
-## **STEP 5:** Connect to the Oracle Database
+## Task 5: Connect to the Oracle Database
 
 1.  Review the connection credentials.
 
@@ -470,7 +470,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     Any cx\_Oracle installation can connect to older and newer Oracle Database versions. By checking the Oracle Database and client versions numbers, the application can make use of the best Oracle features available.
 
-## **STEP 6:** Connection Pooling
+## Task 6: Connection Pooling
 
 1.  Connection pooling
 
@@ -712,7 +712,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     and add calls to **time.sleep(1)** in the code, for example in the query loop. Then look at the way the threads execute. Use **drcp\_query.sql** to monitor the pool's behavior.
 
-## **STEP 7:** Fetching Data
+## Task 7: Fetching Data
 
 1. A simple query
 
@@ -970,7 +970,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     The default value of arraysize for cx\_Oracle is 100. If you know a query only returns a few records, decrease the arraysize from the default to reduce memory usage.
 
-## **STEP 8:** Binding Data
+## Task 8: Binding Data
 
 Bind variables enable you to re-execute statements with new data values, without the overhead of reparsing the statement. Bind variables improve code reusability, and can reduce the risk of SQL injection attacks.
 
@@ -1335,7 +1335,7 @@ Bind variables enable you to re-execute statements with new data values, without
 
     The gettype() and newobject() methods can also be used to bind PL/SQL Records and Collections.
 
-## **STEP 9:** PL/SQL
+## Task 9: PL/SQL
 
 PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and functions are stored and run in the database. Using PL/SQL lets all database applications reuse logic, no matter how the application accesses the database. Many data-related operations can be performed in PL/SQL faster than extracting the data into a program (for example, Python) and then processing it.
 
@@ -1448,7 +1448,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
     246
     ````
 
-## **STEP 10:** Type Handlers
+## Task 10: Type Handlers
 
 1.  Basic output type handler
 
@@ -1716,7 +1716,7 @@ PL/SQL is Oracle's procedural language extension to SQL. PL/SQL procedures and f
 
     ![](./images/step10.3-typeinput.png " ")
 
-## **STEP 11:** LOBs
+## Task 11: LOBs
 
 Oracle Database "LOB" long objects can be streamed using a LOB locator, or worked with directly as strings or bytes.
 
@@ -1812,7 +1812,7 @@ Oracle Database "LOB" long objects can be streamed using a LOB locator, or worke
     </copy>
     ````
 
-## **STEP 12:** Rowfactory functions
+## Task 12: Rowfactory functions
 
 Rowfactory functions enable queries to return objects other than tuples. They can be used to provide names for the various columns or to return custom objects.
 
@@ -1885,7 +1885,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     ![](./images/step12.1-rowfactory.png " ")
 
-## **STEP 13:** Subclassing Connections and Cursors
+## Task 13: Subclassing Connections and Cursors
 
 1. Subclassing connections
 
@@ -1977,7 +1977,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
     </copy>
     ````
 
-## **STEP 14:** Advanced Queueing
+## Task 14: Advanced Queueing
 
 1. Message passing with Oracle Advanced Queuing
 
@@ -2095,7 +2095,7 @@ Rowfactory functions enable queries to return objects other than tuples. They ca
 
     If you are stuck, look in the **solutions** directory at the aq-dequeue.py, aq-enqueue.py and aq-queuestart.py files.
 
-## **STEP 15:** Simple Oracle Document Access (SODA)
+## Task 15: Simple Oracle Document Access (SODA)
 
 Simple Oracle Document Access is a set of NoSQL-style APIs. Documents can be inserted, queried, and retrieved from Oracle Database using a set of NoSQL-style cx\_Oracle methods. By default, documents are JSON strings. SODA APIs exist in many languages.
 

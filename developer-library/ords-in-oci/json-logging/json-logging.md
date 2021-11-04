@@ -20,7 +20,7 @@ This lab assumes you have:
 - Completed the [CSV Functions Lab](../csv-function/csv-function.md)
 
 
-## **STEP 1:** Download Lab Files
+## Task 1: Download Lab Files
 
 Download the lab files with the following link. 
 
@@ -31,7 +31,7 @@ To download them in the OCI Cloud Console, use the following command:
 curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip
 ```
 
-## **STEP 2:** Creating a Collection
+## Task 2: Creating a Collection
 
 **If this is your first time accessing the JSON Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
@@ -134,7 +134,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HE
     Cache-Control: private,must-revalidate,max-age=0
     ```
 
-## **STEP 3:** Create and Deploy a Function
+## Task 3: Create and Deploy a Function
 
 1. The next few steps will be using the **OCI Cloud Shell**. We can do this by clicking the **Cloud Shell icon** in the upper right of the OCI web console.
 
@@ -283,7 +283,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HE
     ![Deployed Function](./images/func-3.png)
 
 
-## **STEP 4:** Create a Service Connector
+## Task 4: Create a Service Connector
 
 1. Use the OCI web console drop down menu to go to **Observability & Management** and then **Service Connectors**.
 
@@ -394,7 +394,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HE
 
     ![Created Service Connector](./images/con-22.png)
 
-## **STEP 5:** Testing the flow
+## Task 5: Testing the Flow
 
 1. To test the entire flow, we need to put the file1.csv csv file into the input-bucket bucket just as we did in the previous lab. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 

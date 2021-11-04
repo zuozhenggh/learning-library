@@ -15,7 +15,7 @@ Estimated Lab Time: 30 minutes
 - Ability to obtain IDCS Access Token to provision an analytics instance as part of the stack.
 - Necessary permissions and quota to provision the stack in a compartment.
 
-## **STEP 1:** Obtain IDCS Access Token
+## Task 1: Obtain IDCS Access Token
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
 
@@ -45,7 +45,7 @@ Estimated Lab Time: 30 minutes
 
 **Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OVQA-GCUjlO9VwEdWqHSre02rNj4K6wZ3VsacpzsXNg/n/oradbclouducm/b/bucket-20200907-1650/o/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
 
-## **STEP 2:** Provision the Stack
+## Task 2: Provision the Stack
 
 1. On the OCI architecture centre's page for [Departmental data warehousing - an EBS integration](https://docs.oracle.com/en/solutions/oci-ebs-analysis/index.html#GUID-A8644D8A-54F2-4015-90F1-7727C68E40CD), click on **Deploy to Oracle Cloud** under the **deploy** section. This should take you to the stack creation page. If you are prompted to login to OCI instead, then login to proceed.
 
@@ -99,7 +99,7 @@ Estimated Lab Time: 30 minutes
     
 **Note:** You may use any names for the files and folders. We will be using the names that we mentioned above.
 
-## **STEP 3:** Download Autonomous Data Warehouse wallet file
+## Task 3: Download Autonomous Data Warehouse wallet file
 
 1. Go to the **Associated Resources** tab to get the links to the provisioned resources.
 
@@ -124,5 +124,5 @@ Estimated Lab Time: 30 minutes
 You may now proceed to Lab 2.
 
 ## Acknowledgements
-- **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
+- **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021
 - **Last Updated By/Date** - Yash Lamba, May 2021

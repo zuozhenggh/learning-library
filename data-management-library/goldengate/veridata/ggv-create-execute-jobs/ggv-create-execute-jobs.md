@@ -14,10 +14,9 @@ In this lab, you will:
 
 ### Prerequisites
 This lab assumes you have:
-
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
+- You have completed:
     * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
@@ -25,7 +24,7 @@ This lab assumes you have:
     * Lab: Create Datasource Connections
     * Lab: Create Groups and Compare Pairs
 
-## **STEP 1**: Create a Job for the Compare Pair Group
+## Task 1: Create a Job for the Compare Pair Group
   To create a job:
 1. From the left navigation pane, click **Configuration** and **Job configuration** to display the **Job Configuration** page.
     ![](./images/1a-select-job-configuration.png " ")
@@ -38,7 +37,7 @@ This lab assumes you have:
     ![](./images/14-create-job-select-group-click-Finish.png " ")
 A new job is created for the compare pair.
 
-## **STEP 2**: Execute the Job
+## Task 2: Execute the Job
 To execute a job:
 1. From the left navigation pane, click **Run/Execute Job** to display the **Run configuration** page.
     [](./images/15a-run-job-run-configuration-page.png " ")

@@ -14,14 +14,14 @@ In this lab, you will:
 * Run the Upgrade Assistant to perform Pre-Upgrade readiness check
 
 ### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* SSH Private Key to access the host via SSH
-* You have completed:
-      - Lab 1: Initialize the workshop Environment
-
-
-## **STEP 1:** Create a non-SYSDBA user
+## Task 1: Create a non-SYSDBA user
 
 Oracle recommends that you create a non-SYSDBA user called *FMW* to run the Upgrade Assistant. This user has the privileges required to modify schemas, but does not have full administrator privileges.
 
@@ -37,7 +37,7 @@ Oracle recommends that you create a non-SYSDBA user called *FMW* to run the Upgr
     SQL> <copy>exit</copy>
     ```
 
-## **STEP 2:** Export and Copy the OPSS Encryption Keys
+## Task 2: Export and Copy the OPSS Encryption Keys
 
 Export the OPSS encryption key from the Oracle Identity Manager 11g (11.1.2.3) setup.The following steps are performed to ensure that the encrypted data from 11g (11.1.2.3) OIG is read correctly after the upgrade to 12c (12.2.1.4) OIG. The exported keys will be required by the oneHopUpgrade tool to complete the upgrade process.
 
@@ -80,7 +80,7 @@ Export the OPSS encryption key from the Oracle Identity Manager 11g (11.1.2.3) s
     <copy>cp /u01/oracle/middleware11g/user_projects/domains/iam11g_domain/config/fmwconfig/.xldatabasekey /u01/OPSS_EncryptKey</copy>
     ```
 
-## **STEP 3:** Pre-Upgrade readiness check
+## Task 3: Pre-Upgrade readiness check
 
 1. Run the Upgrade Assistant in readiness mode to perform a pre-upgrade readiness check
 
@@ -139,7 +139,7 @@ Export the OPSS encryption key from the Oracle Identity Manager 11g (11.1.2.3) s
 
     ![](images/10-ua.png)
 
-## **STEP 4:** Analyzing Pre-Upgrade Report for Oracle Identity Manager (Optional)
+## Task 4: Analyzing Pre-Upgrade Report for Oracle Identity Manager (Optional)
 
 1. The pre-upgrade report utility analyzes your existing Oracle Identity Manager environment, and provides information about the mandatory prerequisites that you must complete before you begin the upgrade. It is important to address all of the issues listed in the pre-upgrade report before you proceed with the upgrade, as the upgrade might fail if the issues are not resolved.
 Sample Pre-upgrade reports have already been generated as part of this lab. They can be viewed and analyzed at the *`/u01/Upgrade_Utils/OIM_preupgrade_reports`* directory.
@@ -156,7 +156,7 @@ Sample Pre-upgrade reports have already been generated as part of this lab. They
 
     ![](images/Reports.png)
 
-## **STEP 5:** Stop 11g servers and processes
+## Task 5: Stop 11g servers and processes
 
 Before you run the Upgrade Assistant to upgrade the schemas, you must shut down all the processes and servers in the 11g OIG domain, including the Administration Server, Node Manager (if you have configured Node Manager), and all Managed Servers.
 

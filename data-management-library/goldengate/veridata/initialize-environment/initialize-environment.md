@@ -12,28 +12,34 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1:** Validate That Required Processes are Up and Running.
+## Task 1: Validate That Required Processes are Up and Running.
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
     - Database Listener
-    - Database Server
+        - LISTENER
+    - Database Server instance
+        - ORCL
     - Veridata Server
     - Veridata Agent
 
 2. On the *Firefox* window on the right preloaded with *Veridata*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
-    ```
-    Username: <copy>ggadm</copy>
-    ```
+    - Username
 
     ```
-    Password: <copy>welcome1</copy>
+    <copy>ggadm</copy>
+    ```
+
+    - Password
+
+    ```
+    <copy>welcome1</copy>
     ```
 
     ![](images/veridata-login.png " ")
@@ -51,7 +57,7 @@ This lab assumes you have:
     - Database and Listener
     ```
     <copy>
-    systemctl status oracle-database
+    sudo systemctl status oracle-database
     </copy>
     ```
 
@@ -60,7 +66,7 @@ This lab assumes you have:
     - WLS Admin Server, Veridata Server, and Veridata Agent
     ```
     <copy>
-    systemctl status oracle-veridata
+    sudo systemctl status oracle-veridata
     </copy>
     ```
 
@@ -69,16 +75,18 @@ This lab assumes you have:
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
     - Database and Listener
+
     ```
     <copy>
-    systemctl restart oracle-database
+    sudo sudo systemctl restart oracle-database
     </copy>
     ```
 
     - WLS Admin Server, Veridata Server, and Veridata Agent
+
     ```
     <copy>
-    systemctl restart oracle-veridata
+    sudo sudo systemctl restart oracle-veridata
     </copy>
     ```
 
@@ -88,31 +96,54 @@ You may now [proceed to the next lab](#next).
 
 1. Database Service (Database and Listener).
 
-    ```
-    Start: <copy>systemctl start oracle-database</copy>
-    ```
-    ```
-    Stop: <copy>systemctl stop oracle-database</copy>
-    ```
-    ```
-    Status: <copy>systemctl status oracle-database</copy>
-    ```
-    ```
-    Restart: <copy>systemctl restart oracle-database</copy>
-    ```
-2. Veridata Service (WLS Admin Server, Veridata Server, and Veridata Agent)
+    - Start
 
     ```
-    Start: <copy>systemctl start oracle-veridata</copy>
+    <copy>sudo systemctl start oracle-database</copy>
     ```
+
+    - Stop
+
     ```
-    Stop: <copy>systemctl stop oracle-veridata</copy>
+    <copy>sudo systemctl stop oracle-database</copy>
     ```
+
+    - Status
+
     ```
-    Status: <copy>systemctl status oracle-veridata</copy>
+    <copy>sudo systemctl status oracle-database</copy>
     ```
+
+    - Restart
+
     ```
-    Restart: <copy>systemctl restart oracle-veridata</copy>
+    <copy>sudo systemctl restart oracle-database</copy>
+    ```
+
+2. Veridata Service (WLS Admin Server, Veridata Server, and Veridata Agent)
+
+    - Start
+
+    ```
+    <copy>sudo systemctl start oracle-veridata</copy>
+    ```
+
+    - Stop
+
+    ```
+    <copy>sudo systemctl stop oracle-veridata</copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>sudo systemctl status oracle-veridata</copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>sudo systemctl restart oracle-veridata</copy>
     ```
 
 ## Acknowledgements

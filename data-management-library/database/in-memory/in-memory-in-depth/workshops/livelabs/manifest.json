@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Oracle In-Memory In-Depth Workshop",
+    "workshoptitle": "Oracle In-Memory In-Depth",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -10,7 +10,7 @@
         "title": "Introduction",
         "description":"In-Memory Overview",
         "publisheddate": "10/15/2020",
-        "filename":"../../intro/intro.md"
+        "filename":"../../introduction/introduction.md"
     },
     {
         "title": "Lab Setup",
@@ -18,7 +18,7 @@
         "partnumber": "Ennnnn_01",
         "publisheddate": "10/10/2020",
         "contentid": "12nnnn",
-        "filename": "../../labsetup/labsetup.md"
+        "filename": "../../labsetup/init-start-env/init-start-env.md"
     },
     {
         "title": "Lab 1: In-Memory Basics",
@@ -53,11 +53,6 @@
         "description":"Multitenant Application Containers",
         "publisheddate": "04/07/2021",
         "filename":"../..//inmemory-pocmisc/inmemory-pocmisc.md"
-    },
-        {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
-        }
+    }
     ]
 }

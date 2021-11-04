@@ -1,6 +1,6 @@
 # LiveLabs Test Template
 
-*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with the [Use the LiveLabs Lab Markdown Template](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template) Confluence page. Next, use the [LiveLabs Markdown Template What's New](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) page.*
+*About this template: This file is used to demonstrate all of the features built into the LiveLabs conversion engine. Many of the features described here are optional and are so marked. Start with the [Use the LiveLabs Lab Markdown Template](https://confluence.oraclecorp.com/confluence/display/DUASPG/Use+the+LiveLabs+Lab+Markdown+Template) Confluence page. Next, use the [LiveLabs Markdown Template What's New](https://confluence.oraclecorp.com/confluence/display/DUASPG/LiveLabs+Markdown+Template+What%27s+New) page.*
 
 ## Introduction
 
@@ -10,10 +10,10 @@
 
   [](youtube:zNKxJjkq0Pw)
 
-Estimated Lab Time: n minutes
+Estimated Time: -- minutes
 
-### Background
-Enter background information here - this can include product information, or a technology overview, but also should cover what the workshop is about.
+### About <Product/Technology> (Optional)
+Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
 
 ### Objectives
 
@@ -25,11 +25,19 @@ In this lab, you will:
 * Objective 3
 * [relative lab url test](?lab=need-help)
 
-*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
+### Prerequisites (Optional)
+
+*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+
+This lab assumes you have:
+* An Oracle account
+* All previous labs successfully completed
+
+  > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 *This is the "fold" - below items are collapsed by default*
 
-## **Step 1**: Standard LiveLabs image and text
+## Task 1: Standard LiveLabs Images and Text
 
 <!-- Images -->
 
@@ -239,21 +247,25 @@ In this lab, you will:
     }</copy>
     ```
 
-## **Step 2:** Optional Advanced features
+## Task 2: Optional Advanced Features
 
 <!-- files -->
 
 1. Files that you want the reader to download:
 
-  When the file type is not recognized by the browser, you can use this format:
+  When the file type is not recognized by the browser, you can use the following format.
+
+  > **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
 
   Download the [starter SQL code](files/starter-file.sql).
 
-  When the file type is recognized by the browser, it will attempt to render it. So you can use this format to force the download dialog box:
+  When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
+
+  > **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
 
   Download the [sample JSON code](files/sample.json?download=1).
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+  *IMPORTANT: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
 3. Conditional content example (type="livelabs")
 
@@ -273,5 +285,5 @@ In this lab, you will:
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Contributors** -  <Name, Group> (optional)
+* **Last Updated By/Date** - <Name, Month Year>

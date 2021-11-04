@@ -18,7 +18,7 @@ Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップ�
 * 有効なメールアドレス
 * SMSテキスト認証を受信する機能（メールが登録されていない場合のみ）
 
-## **STEP 1**: Free Trialアカウントの作成
+## Task 1: Free Trialアカウントの作成
 
 すでにクラウドアカウントをお持ちの方は、**STEP2**へお進みください。
 
@@ -69,7 +69,7 @@ Oracle Cloud Free Tierでは、Oracle Cloudアカウントにサインアップ�
 14. あなたのアカウントはプロビジョニング中となり、数秒で利用可能になります。準備ができたら、自動的にサインイン・ページに移動します。また、オラクルから2通のメールが届きます。1つは、プロビジョニングが進行中であることを最初に通知するメールです。もう1通は、プロビジョニングが完了したことを通知するメールです。こちらが最終通知のコピーです:<br>
        ![](images/account-provisioned.png " ")
 
-## **STEP 2**: アカウントへのサインイン
+## Task 2: アカウントへのサインイン
 
 Oracle Cloudからサインアウトした場合は、以下の手順を使用してサインインし直してください。
 
@@ -95,5 +95,5 @@ Oracle Cloudからサインアウトした場合は、以下の手順を使用�
 ## **Acknowledgements**
 
 - **作成者・日時** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **投稿者** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
+- **投稿者** - John Peach, Kamryn Vinson, Rene Fontcha
 - **最終更新日** - Rene Fontcha, February 2021

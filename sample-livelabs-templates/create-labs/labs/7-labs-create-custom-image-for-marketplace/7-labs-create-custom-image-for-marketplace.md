@@ -12,12 +12,12 @@ This lab will show you how to prepare a host for custom image capture and create
 This lab assumes you have:
 - An Oracle Enterprise Linux (OEL) that meets requirement for marketplace publishing
 
-## **STEP 1**: Configure Preserved Static hostname
+## Task 1: Configure Preserved Static hostname
 1.  As opc, run *sudo su -* to login as root
 
     ```
     <copy>
-    sudo su - || sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd; sudo su -
+    sudo su - || (sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd && sudo su -)
 
     </copy>
     ```
@@ -49,6 +49,7 @@ This lab assumes you have:
     #  MODIFIED        Date                 Comments
     #  --------        ----------           -----------------------------------
     #  Rene Fontcha    02/17/2021           Initial Creation
+    #  Rene Fontcha    10/07/2021           Added routine to update livelabs-get_started.sh
     #
     ###############################################################################
 
@@ -61,6 +62,17 @@ This lab assumes you have:
     # Add static name to /etc/hosts
     #echo "\$(oci-metadata -g privateIp --value-only | head -1)   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
     echo "\$(oci-metadata -g privateIp |sed -n -e 's/^.*Private IP address: //p')   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
+
+    # Update "livelabs-get_started.sh"
+    cd /tmp
+    wget -q https://objectstorage.us-ashburn-1.oraclecloud.com/p/RcNjQSg0UvYprTTudZhXUJCTA4DyScCh3oRdpXEEMsHuasT9S9N1ET3wpxnrW5Af/n/natdsecurity/b/misc/o/livelabs-get_started.zip
+
+    if [[ -f livelabs-get_started.zip ]]; then
+      unzip -q livelabs-get_started.zip
+      chmod +x livelabs-get_started.sh
+      mv -f livelabs-get_started.sh /usr/local/bin/
+      rm -f livelabs-get_started.zip
+    fi
 
     EOF
     </copy>
@@ -100,7 +112,8 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Cleanup Instance for Image Capture   
+## Task 2: Cleanup Instance for Image Capture   
+
 1. As user *opc*, Download the latest *oci-image-cleanup.sh* script.
 
     ```
@@ -108,6 +121,23 @@ This lab assumes you have:
     cd /tmp
     wget https://raw.githubusercontent.com/oracle/oci-utils/master/libexec/oci-image-cleanup -O /tmp/oci-image-cleanup.sh
     chmod +x oci-image-cleanup.sh
+    </copy>
+    ```
+
+2. Stop VNC Service to preserve the remote desktop layout before proceeding with custom image creation.
+
+    ```
+    <copy>
+    cat > /tmp/stopvnc.sh <<EOF
+    #!/bin/bash
+    cd /etc/systemd/system
+    for i in \$(ls vncserver_*@*)
+    do
+      sudo systemctl stop \$i
+    done
+    EOF
+    chmod +x /tmp/stopvnc.sh
+    /tmp/stopvnc.sh
     </copy>
     ```
 
@@ -130,6 +160,7 @@ This lab assumes you have:
     sudo sed -i -e 's|root:x:0:0:root:/root:/bin/bash|root:x:0:0:root:/root:/sbin/nologin|g' /etc/passwd
     sudo ln -sf /root/bootstrap/firstboot.sh /var/lib/cloud/scripts/per-instance/firstboot.sh
     sudo ln -sf /root/bootstrap/eachboot.sh /var/lib/cloud/scripts/per-boot/eachboot.sh
+    sudo rm -f /u01/app/osa/non-marketplace-init/system-configured
     sudo rm -f /var/log/audit/audit.log
     EOF
     chmod +x /tmp/cleanup.sh
@@ -138,7 +169,8 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 3**: Create Custom Image   
+## Task 3: Create Custom Image   
+
 Your instance at this point is ready for clean capture. Proceed to OCI console to perform the next steps
 
 1. Launch your browser to OCI console, then navigate to *"Compute > Instances"*
@@ -173,5 +205,4 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
-* **Contributors** - - -
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021

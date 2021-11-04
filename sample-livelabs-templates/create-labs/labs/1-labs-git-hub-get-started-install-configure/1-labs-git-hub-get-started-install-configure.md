@@ -11,13 +11,15 @@ In this lab, you will learn how to create a GitHub Account and associate it with
 * Set up the GitHub Environment.
 * Install GitHub Desktop Client.
 
+  > > **Note:** the changes in this template will be implemented in LiveLabs August 6th.
+
 ### What Do You Need?
 
 * Familiarity with HTML is helpful.
 * Access to the LiveLabs Workshop Management System
 
-## **STEP 1:** Submit a workshop to the LiveLabs Workshop Management System
-Before getting started, we recommend you submit your workshop to the LWMS. 	Submitting a workshop tells the Oracle ecosystem you are working on a workshop and submits your idea to the Workshop Council.  We urge you not to delay this step.  There are hundreds of workshops already, this step is important to helps us preserve the quality and integrity of the workshop catalog
+## Task 1: Submit a workshop to the LiveLabs Workshop Management System
+Before getting started, we recommend you submit your workshop to the WMS. 	Submitting a workshop tells the Oracle ecosystem you are working on a workshop and submits your idea to the Workshop Council.  We urge you not to delay this step.  There are hundreds of workshops already, this step is important to helps us preserve the quality and integrity of the workshop catalog
 
 1.  Login to Corporate VPN
 2.  Go to http://bit.ly/oraclelivelabs.  This is only available to Oracle Employees at this time.
@@ -28,8 +30,10 @@ Before getting started, we recommend you submit your workshop to the LWMS. 	Subm
 
 Once your workshop is submitted, it will be sent to the workshop council.  The workshop council will approve your workshop or ask for more details.  Once approved, you will be entered into the workflow and given additional steps to progress through to production.
 
-## **STEP 2:** Download and Install the latest version of Git (Optional Step)
-  **Note**: For UA Developers, Oracle recommends the usage of the GitHub Desktop client because of its simple and user friendly user interface, and it is much easier than using the Git command line. Therefore, this is an optional Step.
+**Note: For Developers/QA/PM: To create and publish a Custom image of the on-premises product to OCI Market place, refer [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/?lab=6-labs-setup-graphical-remote-desktop)**
+
+## Task 2: Download and Install the latest version of Git (Optional Step)
+  > > **Note:** For UA Developers, Oracle recommends the usage of the GitHub Desktop client because of its simple and user friendly user interface, and it is much easier than using the Git command line. Therefore, this is an optional Step.
 
 To install Git:
 1. Install Git for your operating system from the [Git download site] (https://git-scm.com/downloads).
@@ -40,7 +44,7 @@ To install Git:
 6. Under **Choose the default behavior of `git pull`**, leave the selected **Default (fast-forward or merge)** option as is and click **Next**.
 7. In the **Configuring experimental options** dialog box, click **Install**.
 
-## **STEP 3:** Create and Set Up Your GitHub Account
+## Task 3: Create and Set Up Your GitHub Account
 
 In this Step, you will create and set up your GitHub account.
 
@@ -48,7 +52,7 @@ In this Step, you will create and set up your GitHub account.
     ![](./images/git-download-install-create-account.png " ")
 2.  If this is a new account, use your Oracle email ID to register.
 
-    **Note**: Do not create a secondary new account to join GitHub. Ensure that your GitHub account is associated to your @oracle.com email ID.
+    > **Note:** Do not create a secondary new account to join GitHub. Ensure that your GitHub account is associated to your @oracle.com email ID.
 3. Go to [GitHub Settings](https://github.com/settings/profile) and configure the following:
     *   Set your Name as it appears in your Aria employee page.
     *   Add your Profile Picture.
@@ -56,7 +60,7 @@ In this Step, you will create and set up your GitHub account.
 5. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
     ![](./images/git-2-factor-authentication.png " ")
 
-## **STEP 4:** Install GitHub Desktop
+## Task 4: Install GitHub Desktop
 The GitHub Desktop application is a UI client for Windows and Mac that simplifies the complex set of GitHub command line arguments. GitHub Desktop is a fast and easy way to contribute to projects and it simplifies your development workflow. It is much easier than using Git command line.
 
 To setup the GitHub Development Environment and install **GitHub Desktop**:
@@ -71,12 +75,12 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 3. Click **File > Options > Sign in**, enter your GitHub **Username** or **email address**, **Password**, and then click **Sign in**.
   You will receive an authentication code to your cell phone. Enter this code in the **Authentication code** field in the **Sign in** dialog box.
 
-  **Note**: The authentication code is valid only for a few seconds.
+  > **Note:** The authentication code is valid only for a few seconds.
 
     You are now logged in to **GitHub Desktop**.
     ![](./images/get-started-git-hub-desktop.png " ")
 
-## **STEP 5:** Fork the learning-library Repository on Your GitHub Account
+## Task 5: Fork the learning-library Repository on Your GitHub Account
   We create workshops and labs in the **learning-library** repository of the **oracle** project. You must fork the learning-library repository to create a duplicate personal copy of the repository on your GitHub account. You own the forked repository and you can edit its contents without affecting the parent repository.
 
   For example, if a user named achepuri forks the learning-library repository in the oracle project, a duplicate repository [achepuri/learning-library](https://github.com/achepuri/learning-library) is created.
@@ -89,11 +93,11 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 4. Select the option that indicates your local repository.
 In the following example, user achepuri has forked the **learning-library** repository.
 
-![](./images/get-started-git-hub-webui-forked-library.png " ")
+  ![](./images/get-started-git-hub-webui-forked-library.png " ")
 
 In the next Step, you will clone this forked repository.
 
-## **STEP 6:** Clone the Forked Repository
+## Task 6: Clone the Forked Repository
 A clone is a copy of your forked repository that lives on your local computer instead of on [GitHub Web UI](http://github.com). When you clone your forked repository, you can edit the files in your preferred editor, such as **Atom** editor, and use the **GitHub Desktop** client to keep track of your changes without having to be online.
 
 To clone the forked repository:
@@ -112,7 +116,7 @@ To clone the forked repository:
 
   ![](./images/git-hub-my-cloned-repository.png " ")
 
-  **Note**: The local cloned repository is connected to the remote fork version. You can push your local changes to the remote fork version when you are online to keep them in sync.
+  > **Note:** The local cloned repository is connected to the remote fork version. You can push your local changes to the remote fork version when you are online to keep them in sync.
 
   **Important Note**: The **create-labs** folder (shown in the above screen) and its contents are internal to this "**Creating Labs and Workshops**" workshop. This folder is not available at the production. This means that when you fork the **oracle\learning-library** repository to your fork, such as **your account\learning-library**, you will not find the **create-labs** folder, and thereby it will not be available in your cloned repository as well.
 
@@ -122,9 +126,13 @@ To clone the forked repository:
 
 5. You can also use Github Desktop to Synchronize the changes that you have made in your local file system to the forked content on your github repo, more details on using Github Desktop in Lab 4 of this workshop and also on Otube [Working with GitHub Desktop](https://otube.oracle.com/media/t/1_bxj0cfqf).
 
-![](./images/github-desktop-sync.png " ")
+  ![](./images/github-desktop-sync.png " ")
 
-You may now [proceed to the next lab](#next).
+6. When asked how you plan to use the fork select **To contribute to the parent project**.
+
+  ![](./images/contribute-to-parent.png " ")
+
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
@@ -139,10 +147,8 @@ You may now [proceed to the next lab](#next).
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 * **Contributors:**
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
-
-* **Reviewed by:**  
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+    * Madhusudhan Rao, Principal Product Manager, Database
 
-
-* **Last Updated By/Date:** Madhusudhan Rao, February 2021
+* **Last Updated By/Date:** Anuradha Chepuri, November 2021

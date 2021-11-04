@@ -13,21 +13,19 @@ The basic building block of an XML document is an element, defined by tags. An e
 ### Objectives
 - Create table for XML data type
 - Walk through the SQL queries having built-in functions for XML datatype
-- Showcase creation of REST end-points for XML data retrived
+- Showcase creation of REST end-points for XML data retrieved
 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: eSHOP Application
     - Lab: Data Type Demonstrator Tool
 
-## **STEP 1**: Connect JDeveloper to database
+## Task 1: Connect JDeveloper to database
 
 To show the ease of integration of ConvergedDB with Java applications to access and process data and to create REST endpoints in the Java application to access the different datatypes like JSON, XML and SPATIAL, we have a simple application installed along with the eSHOP application.
 
@@ -51,7 +49,7 @@ Provide the fields with the following values:
 
 4.	Click on **Test Connection** and upon **Success!** message, Click **OK**.
 
-## **STEP 2**: Sample XML Data
+## Task 2: Sample XML Data
 
 1.	In the Menu bar, click on **SQL** dropdown and select **xml**.
 
@@ -97,7 +95,7 @@ Provide the fields with the following values:
 
     ![](./images/jdev-insert-xml.png " ")
 
-## **STEP 3**: Modify JEE code for XML
+## Task 3: Modify JEE code for XML
 
 1.	Under the Projects in **Applications** tab on the left Navigation, expand **`converge -> Resources`** and double click on **applicationContext.xml** to open the configuration xml to add the new datasource bean. Add the code below the **`</bean>`** tag of **converge.oracle.spatialAnalytics** and before ending **`</beans>`** tag.
 
@@ -140,7 +138,6 @@ Provide the fields with the following values:
     </copy>
     ```
 
-
     ![](./images/jdev-xml-db-code-search.png " ")
 
 4.	Click on the **Save** icon to save the file.
@@ -163,9 +160,9 @@ Provide the fields with the following values:
 
     ![](./images/jdev-xmlcode-redeploy-success.png " ")
 
-## **STEP 4**: Read XML in tool
+## Task 4: Read XML in tool
 
-1.	Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
+1.	On the web browser window on the right, navigate to *`http://localhost:7101/resources/html/endPointChecker.html`*.
 
 2.	Click on the drop-down to see the list of datatypes shown in workshop.
 
@@ -189,13 +186,13 @@ Provide the fields with the following values:
 
     **XMLCAST** casts `value_expression` to the scalar SQL datatype specified by datatype. The `value_expression` argument is a SQL expression that is evaluated. The datatype argument can be of datatype NUMBER, VARCHAR2, and any of the datetime datatypes.
 
-## **STEP 5**: XML REST end-point
+## Task 5: XML REST end-point
 
 1.	In JDeveloper, open **XMLController.java** under **`converge -> Application Sources -> converge.controllers`**. Search for **fetchXML** and check the function code.  The request mapping is done as **`/read/{id}`**.  The base rest end point being **`/xml`** for the code declared at the class level. Also see **`getXmlIds()`** function fetching all data by ID with rest end point **`/ids`**.
 
     ![](./images/jdev-xml-rest-code.png" ")
 
-2.	Open Firefox or if already open, in another browser tab, open the URL `http://localhost:7101/xml/read/1` Data is retrieved by the fetchXml() method in XmlController.java.
+2.	On the web browser window on the right, open the URL `http://localhost:7101/xml/read/1` Data is retrieved by the fetchXml() method in XmlController.java.
 
     ![](./images/rest-id1-retrieve.png" ")
 
@@ -204,7 +201,7 @@ Provide the fields with the following values:
     ![](./images/rest-retrieve-all-ids.png" ")
 
 
-## **STEP 6**: Insert XML data
+## Task 6: Insert XML data
 
 1.	Navigate back to **endpointchecker** tool to insert a xml record.
 
@@ -228,7 +225,7 @@ Provide the fields with the following values:
 
     ![](./images/tool-xml-insert-success.png" ")
 
-## **STEP 7**: Update XML data
+## Task 7: Update XML data
 
 1.	**Fetch** the xml with **ID 2** to update it.
 
@@ -254,7 +251,7 @@ Provide the fields with the following values:
 
     **UPDATEXML** takes as arguments an XMLType instance and an XPath-value pair and returns an XMLType instance with the updated value. If `XPath_string` is an XML element, then the corresponding `value_expr` must be an XMLType instance.
 
-## **STEP 8**: Delete XML data
+## Task 8: Delete XML data
 
 1.	Navigate back to **Data Type Demonstration Tool** and fetch the XML with **ID 2** from the dropdown.
 

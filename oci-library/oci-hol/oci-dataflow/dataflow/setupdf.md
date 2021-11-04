@@ -25,7 +25,7 @@ Before you Begin with Data Flow lab, you must have:
 
 
 
-## **STEP 1**: Object Store: Setting Up Storage
+## Task 1: Object Store: Setting Up Storage
 
 1. Before running the application in the Data Flow service, create two storage buckets that are required in object storage.
 
@@ -45,7 +45,7 @@ Before you Begin with Data Flow lab, you must have:
     * A data warehouse bucket for Spark SQL applications. Create a standard storage tier bucket called `dataflow-warehouse` in the Object Store service.
         ![](../images/DATAWAREHOUSEBUCKET.png " ")
 
-## **STEP 2**: Identity: Policy Set Up
+## Task 2: Identity: Policy Set Up
 
 A user's permissions to access services comes from the _groups_ to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
 

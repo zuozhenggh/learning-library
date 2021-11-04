@@ -20,7 +20,7 @@ Estimated Lab Time: 10 minutes
 
 Note: Please download the file above before continuing.
 
-## **STEP 1:** Setting up the EBS Analytics Project in OAC
+## Task 1: Setting up the EBS Analytics Project in OAC
 
 As previously mentioned, when you spin up the stack the links to some resources do not show up in the **Associated Resources** tab. In our case, we want to get to our Analytics Cloud instance, but the link is not provided.
 
@@ -77,6 +77,6 @@ We will now leave it up to your imagination to analyse the data sets that have b
 *Congratulations! You have successfully completed the lab*.
 
 ## Acknowledgements
-- **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
+- **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021
 - **Last Updated By/Date** - Yash Lamba, January 2021
 

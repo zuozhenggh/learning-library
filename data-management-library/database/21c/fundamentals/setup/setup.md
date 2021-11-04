@@ -22,7 +22,7 @@ In this lab, you will:
 * Database Unique Name
 
 
-## **STEP 1**: Server Setup
+## Task 1: Server Setup
 
 1. If you aren't still logged in, login to Oracle Cloud and re-start the Oracle Cloud Shell otherwise skip to Step 3.
 2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
@@ -90,7 +90,7 @@ In this lab, you will:
     [oracle@da3 ~]$ <copy>/home/oracle/labs/update_pass.sh</copy>
     Enter the password you set during the DBSystem creation: WElcome123##
     ```
-## **STEP 2**: Database Create
+## Task 2: Database Create
 
 1. Now to create the `CDB21` database. There is an existing database on this server but the `CDB21` was created with everything needed for this workshop.
 

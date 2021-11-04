@@ -12,7 +12,7 @@ Play the video below to learn about this lab.
 
  <a href="https://www.slideshare.net/DanielMcGhan/module-3-working-with-the-dom-and-jquery" target="\_blank">Click here</a> to view the slides.
 
-## **Step 1:** Basic selection, traversal, and manipulation in the DOM
+## Task 1: Basic selection, traversal, and manipulation in the DOM
 
 jQuery makes it easy to select elements, traverse the DOM tree, and make changes to the DOM as needed. In this step, you will practice using a few of the jQuery methods that make it possible.
 
@@ -92,7 +92,7 @@ jQuery makes it easy to select elements, traverse the DOM tree, and make changes
     </copy>
     ```
 
-## **Step 2:** Working with events and event delegation
+## Task 2: Working with events and event delegation
 
 In this step, you will create basic regular event listeners and then learn why sometimes event delegation is needed in APEX.
 

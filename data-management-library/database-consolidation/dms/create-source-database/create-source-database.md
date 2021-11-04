@@ -21,11 +21,12 @@ In this lab, you will:
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## **STEP 1**: Setup the Source Database
+## Task 1: Setup the Source Database
 
 The following task is *optional* if a source database is already present.
 
-1. You will need an SSH key pair for logging into your database and GoldenGate environments. If you don’t already have one, please create one. *Important*: The key needs to be in RSA format, other formats like OpenSSL are currently not supported. You can use a command like: `ssh-keygen -t rsa -N "" -b 2048 -C "<key_name>" -f <path/root_name>`
+1. You will need an SSH key pair for logging into your database and environments. If you don’t already have one, please create one.
+*Important*: The key needs to be in RSA format, other formats like OpenSSL are currently not supported. You can use a command like: `ssh-keygen -t rsa -N "" -b 2048 -C "<key_name>" -f <path/root_name>`
 
 2. In the OCI Console Menu, go to **Oracle Database > Bare Metal, VM, and Exadata**.
 
@@ -38,14 +39,14 @@ The following task is *optional* if a source database is already present.
 4. Enter the following values, otherwise leave defaults. You can adjust shapes and storage to your use case requirements and available quota.
     - Name: **SourceDB**
     - Add public SSH keys: *Upload the public key file you use.*
-    - Choose a license type: **BYOL**
+    - Choose a license type: **License Included**
     - Virtual cloud network: **VCN\_DMS\_LA** (Or your VCN name)
     - Client subnet: **Public Subnet-VCN\_DMS\_LA** (Or your subnet name)
     - Hostname prefix: **sourcedb**
 
   ![](images/name-your-source.png)
 
-  ![](images/add-ssh-byol.png)
+  ![](images/dbLT.png)
 
   ![](images/specify-network-info.png)
 
@@ -73,7 +74,7 @@ The following task is *optional* if a source database is already present.
 8. The provisioning of the database can take **60 or more** minutes. Wait for the Lifecycle State of the database to change to Active.
 
 
-## **STEP 2:** Collect Database Information
+## Task 2: Collect Database Information
 
 1. Open the database system **SourceDB** in the **DB Systems** table.
 
@@ -95,11 +96,11 @@ The following task is *optional* if a source database is already present.
 
 6. Go back to the **DB Systems Details** page of your database and select **Nodes** on the left-hand side **Resources** list.
 
-7. The Nodes list shows the **sourcedb** node. Note the **Public IP Address** and **Private IP Address** of the node into a notepad, in this case **129.213.162.34** and **10.0.0.3**.
+7. The Nodes list shows the **sourcedb** node. Note the **Public IP Address** and **Private IP Address** of the node into a notepad, in this case **129.146.173.28** and **10.0.0.55**.
 
   ![](images/source-db-ip-addresses.png)
 
-## **STEP 3:** Adding Data to the Database
+## Task 3: Adding Data to the Database
 
 1. Open a SSH terminal to the database instance. The instructions are for Unix-style ssh command:
 
@@ -115,8 +116,13 @@ The following task is *optional* if a source database is already present.
     ```
     <copy>mkdir /u01/app/oracle/dumpdir</copy>
     ```
+3. Connect as sysdba to alter the streams pool size:
 
-3. Set the streams pool size = 2GB
+    ```
+    <copy>sqlplus / as sysdba</copy>
+    ```
+
+3. Set the streams pool size = 2GB:
 
     ```
     <copy>alter system set streams_pool_size=2G scope=both SID='sourcedb';</copy>

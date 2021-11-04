@@ -29,7 +29,7 @@ Follow these general steps:
 7. In the Oracle Data Safe Console, examine the **All Activity** report to view the newly generated audit records.
 8. In SQL Developer Web, disable the recently created audit policy, and then verify if any alerts are generated in the Oracle Data Safe Console.
 
-## STEP 1:  In SQL Developer Web, create a query to view the list of enabled audit policies and their details
+## Task 1:  In SQL Developer Web, create a query to view the list of enabled audit policies and their details
 
 - In SQL Developer Web, run the following query to view a list of enabled unified audit policies.
 
@@ -45,7 +45,7 @@ Follow these general steps:
 
    ![](./images/Img154.png " ")
 
-## STEP 2: In SQL Developer Web, create a unified audit policy on your target database to audit SELECT, INSERT, UPDATE, and DELETE statements on the HCM1.EMP_EXTENDED table (which contains the sensitive column PAYMENTACCOUNTNO)
+## Task 2: In SQL Developer Web, create a unified audit policy on your target database to audit SELECT, INSERT, UPDATE, and DELETE statements on the HCM1.EMP_EXTENDED table (which contains the sensitive column PAYMENTACCOUNTNO)
 
 *Note: Your dataset may vary and so can your sensitive columns. Hence, do manipulate the queries listed here according to your dataset.*
 
@@ -67,7 +67,7 @@ Follow these general steps:
 - How could you extend this unified audit policy to be more effective? What could you add or remove to the `WHEN` clause?
 - Keep this tab open because you return to it in a later step.
 
-## STEP 3: In the Oracle Data Safe Console, enable your Custom Audit Policy on your target ATP-D database
+## Task 3: In the Oracle Data Safe Console, enable your Custom Audit Policy on your target ATP-D database
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **Activity Auditing**.
 - Select the check box for your target database, and then click **Continue**.
@@ -90,7 +90,7 @@ Follow these general steps:
 - Wait until the provisioning is finished. The dialog box is closed.
 - Click **Exit**.
 
-## STEP 4: In SQL Developer Web, execute some SQL statements against `HCM1.EMP_EXTENDED`
+## Task 4: In SQL Developer Web, execute some SQL statements against `HCM1.EMP_EXTENDED`
 
 - Return to SQL Developer.
 - Run the following SQL statement twice to generate some audit data. In STEP 6, you view the audit records generated.
@@ -99,7 +99,7 @@ Follow these general steps:
 <copy>select * from HCM1.EMP_EXTENDED;</copy>
 ```
 
-## STEP 5: In the Oracle Data Safe Console, examine the All Activity report to view the newly generated audit records
+## Task 5: In the Oracle Data Safe Console, examine the All Activity report to view the newly generated audit records
 
 - Return to the Oracle Data Safe Console.
 - Click the **Reports** tab.
@@ -124,7 +124,7 @@ b. In the **Select Columns** dialog box, select **Object Owner**, and then click
 
    ![](./images/Img161.png " ")
 
-## STEP 6: In SQL Developer Web, disable the recently created audit policy and verify if any alerts are generated in Oracle Data Safe
+## Task 6: In SQL Developer Web, disable the recently created audit policy and verify if any alerts are generated in Oracle Data Safe
 
 - Return to the SQL Developer Web.
 - Run the following SQL statement:

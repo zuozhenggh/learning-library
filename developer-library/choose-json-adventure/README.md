@@ -59,17 +59,17 @@ This lab assumes you have completed the following labs:
 
 In this lab you will work with JSON in the Oracle Database with the intent of exposing the data for application development.
 
-### **Step 1:** Connect to your Database using SQL Developer Web
+### Task 1: Connect to your Database using SQL Developer Web
 
-### **Step 2:** Create a user for working with JSON in the Oracle Database
+### Task 2: Create a user for working with JSON in the Oracle Database
 
-### **Step 3:** Load JSON into the database and work with relational tables
+### Task 3: Load JSON into the database and work with relational tables
 
-### **Step 4:** Load JSON into the database and work with JSON documents and collections
+### Task 4: Load JSON into the database and work with JSON documents and collections
 
-### **Step 5:** Expose the JSON data for application development via a REST endpoint
+### Task 5: Expose the JSON data for application development via a REST endpoint
 
-### **Step 6:** Extra Credit: Deploy a sample application and consume the REST endpoint
+### Task 6: Extra Credit: Deploy a sample application and consume the REST endpoint
 
 ## Conclusion
  In this lab, you had an opportunity to work with JSON in the Oracle Database
