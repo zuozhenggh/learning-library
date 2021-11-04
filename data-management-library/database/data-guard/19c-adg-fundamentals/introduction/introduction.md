@@ -18,6 +18,8 @@ This workshop focuses on **Creating Active Data Guard 19c in Oracle Cloud Infras
 
 Estimated Workshop Time: 2 Hours
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/IF_HAzrzizc).</if>
+
 ### Workshop Objectives
 - Create the primary database
 - Create the standby database

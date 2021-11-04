@@ -6,7 +6,11 @@ Oracle is a relational database, meaning it typically stores data in rows and co
 
 In order to create a collection all you have to specify is the collection's name. Unlike a relational table you do not have to provide any schema information. So, lets create a collection for the products we want to sell in the store.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:7H086A3JKbo)
 
 ### Objectives
 
@@ -345,7 +349,7 @@ Some values need to be unique, so how do we enforce this?
 	</copy>
 	```
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 

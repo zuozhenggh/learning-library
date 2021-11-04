@@ -6,6 +6,8 @@ This workshop will walk you through database change management via CI/CD using S
 
 *Estimated Workshop Time:* 1 Hour
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/RtcvWhF5iwI).</if>
+
 ### Objectives
 
 In this lab you will learn to use SQLcl and git to track and apply changes across databases for CI/CD processes.

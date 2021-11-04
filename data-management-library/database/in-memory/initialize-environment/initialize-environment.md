@@ -11,6 +11,10 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
 
 [](youtube:dZ9cnIL6KKw)
 
+Watch the video below for a walk through of the lab.
+[](youtube:7rbgF8Z6hc4)
+
+
 ### Objectives
 - Initialize the workshop environment.
 
@@ -20,6 +24,8 @@ This lab assumes you have:
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
+
+**NOTE:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise the last line will remain in the buffer until you hit* **ENTER!**
 
 ## Task 1: Validate That Required Processes are Up and Running.
 
@@ -35,8 +41,6 @@ This lab assumes you have:
     You may test database connectivity clicking on the *+* sign next to the Database(s) as shown below in the *SQL Developer Oracle Connections* panel.
 
     ![](./images/19c_hol_landing.png " ")
-
-## ** NOTE: If you copy and paste SQL commands then you must hit the ENTER key after the paste. Otherwise the last line will still be in the buffer until you hit ENTER!
 
 2. Click the *Terminal* icon on the desktop to launch a session, then run the following to validate that expected processes are up.
 
@@ -71,8 +75,8 @@ This lab assumes you have:
     ```
     <copy>
     cd /tmp/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/_27ATGCscU7T_sIKx4DFJDr6AkMr9rH5EgSpJsSs-kKkNmLRnIP2m0_1LMmHfi-p/n/c4u04/b/labfiles/o/init-inmemory.zip
-    unzip init-inmemory.zip; chmod +x init*.sh
+    wget -O init-inmemory.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/_27ATGCscU7T_sIKx4DFJDr6AkMr9rH5EgSpJsSs-kKkNmLRnIP2m0_1LMmHfi-p/n/c4u04/b/labfiles/o/init-inmemory.zip
+    unzip -qo init-inmemory.zip; chmod +x init*.sh
     ./init-inmemory.sh 2>&1 | tee /tmp/init-inmemory.log
     </copy>
     ```
@@ -282,7 +286,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
     ![](images/part1step8b.png)
 
-    In this Lab you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a static pool in the SGA, and once allocated it can be increased in size dynamically, but it is not managed by either of the automatic SGA memory features.
+    In this Lab you saw that the IM column store is configured by setting the initialization parameter `INMEMORY_SIZE`. The IM column store is a static pool in the SGA, and once allocated it can be increased in size dynamically, but it is not managed by either of the automatic SGA memory features.
 
     You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
 

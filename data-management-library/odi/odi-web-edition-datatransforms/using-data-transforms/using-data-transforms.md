@@ -39,13 +39,13 @@ To complete this lab, you need to have the following:
 
 1. Launch **Data Transforms** from either direct URL or from the Data Transforms card in Autonomous Database. Specify username **SUPERVISOR** and the password that you provided in the ODI installation. Click **Connect**.
 
-    ![ALT text is not available for this image](images/3019662951.png)
+    ![ALT text is not available for this image](images/lab05-task01-01.jpg)
 
 2. In the Data Transforms main page, click on **Connections** on the left of the screen. You'll see that a default connection has already been configured. It may look similar to the screenshot below (possibly with a somewhat obscure name). Click on the card for this connection. 
 
     **NOTE:** If you don't see your Autonomous Database here then it means the ODI deployment script could not scan your database due to some privilege or policy issues. In that case, we will manually add a new connection to your database. Skip to step 5.
 
-    ![ALT text is not available for this image](images/3019662952.png)
+    ![ALT text is not available for this image](images/lab05-task01-02.jpg)
 
 3. Override the default values of the fields indicated below with the following values:
 
@@ -55,49 +55,49 @@ To complete this lab, you need to have the following:
 
     - Password - (the password you specified for user QTEAM)
 
-    ![ALT text is not available for this image](images/3019662953.png)
+    ![ALT text is not available for this image](images/lab05-task01-03.jpg)
 
 4. Review the connection details in the panel to the right, and press **Test Connection**.
 
     All being well, you'll get a message to confirm that the connection test has succeeded, similar to this. If not, verify and correct your entries and try again.
 
-    ![ALT text is not available for this image](images/3019662954.png)
+    ![ALT text is not available for this image](images/lab05-task01-04.jpg)
 
 5. **NOTE:** Skip to step 8 if your Autonomous Database connection was automatically created in previous steps. We will manually create a connection to your Autonomous Database if it was not there. **You need to download wallet file for you autonomous Database to your local laptop. Come back to this step after you have downloaded the wallet file.**
 
     Click on **Create Connection**.
 
-    ![ALT text is not available for this image](images/3024272093.jpg)
+    ![ALT text is not available for this image](images/lab05-task01-05.jpg)
 
 6. Enter the name for the connection &quot;MovieStream&quot;, click on Oracle in **Connection Type** and click **Next**.
 
-    ![ALT text is not available for this image](images/3024272103.jpg)
+    ![ALT text is not available for this image](images/lab05-task01-06.jpg)
 
 7. Enable **Use Credential File**. Drag and drop the **Wallet File**. Select a **Service** (```your_db_name```_low) and enter your **user** and **password**.
 
     Click **Test** and after successful connection click **Create** to create the connection to your Autonomous Database.
 
-    ![ALT text is not available for this image](images/3024272116.jpg)
+    ![ALT text is not available for this image](images/lab05-task01-07.jpg)
 
 8. Notifications for many important operations are logged while you use Data Transforms. To view these notifications, click on the bell at the top of the screen, and you'll see a summary of these, which may look like this.
 
-    ![ALT text is not available for this image](images/3019662955.png)
+    ![ALT text is not available for this image](images/lab05-task01-08.jpg)
 
 9. Now we need to import the definitions of the tables in QTEAM's schema. Click on **Data Entities** (on the left of the screen) and then **Import Data Entities**. 
 
-    ![ALT text is not available for this image](images/3019662841.png)
+    ![ALT text is not available for this image](images/lab05-task01-09.jpg)
 
 10. The following dialog appears. Identify the connection and schema from which to load metadata and press **Start**. You will get the notification for the import job. It will take few minutes for the job to finish.
 
-    ![ALT text is not available for this image](images/3019662842.png)
+    ![ALT text is not available for this image](images/lab05-task01-10.jpg)
 
 11. You'll see a list of all five tables imported so far (wait for few minutes for the import job to finish and refresh if you don't see it). Type **movie** into the filter on the left of the screen to reduce the list of tables displayed to just one table: `MOVIE_SALES_2020`. Click the three dots to the right of the table's entry on the list and select **Preview**. 
 
-    ![ALT text is not available for this image](images/3019662843.png)
+    ![ALT text is not available for this image](images/lab05-task01-11.jpg)
 
 12. As expected, we see again here the data errors that we identified at the end of the Data Load section of the workshop: We have data for all of 2020, whereas the the task assigned to the departmental analyst is to analyze only the data from Q2. We see that some of the values for DAY are upper case, while others are in title case. (This is not an uncommon situation where there are incremental loads of data into source systems, and is likely what has happened here. In general we need to be able to accommodate and correct these data errors, which is why it's invaluable to have a Data Transform capability built into Autonomous Data Warehouse.) Again, our mission here is to correct these errors.
 
-    ![ALT text is not available for this image](images/3019662869.png)
+    ![ALT text is not available for this image](images/lab05-task01-12.jpg)
 
 You may already have noticed that the look-and-feel of the data previewer is consistent both here in the Data Transforms tool and in the Data Load tool that we used in the previous section of the workshop. Autonomous Database tools are integrated across the suite, with consistent user experience to minimize learning curve.
 
@@ -107,7 +107,7 @@ Close the preview pane by pressing the **X** on the upper right of the screen.
 
 1. Click **Projects** (on the left of the screen, and then click **Create Data Flow.**
 
-    ![ALT text is not available for this image](images/3019662870.png) 
+    ![ALT text is not available for this image](images/lab05-task02-01.jpg) 
 
 2. In the Data Transforms tool, Data Flows are organized within projects. As we have neither yet, the dialog that appears allows us to define both in a single step. Specify the following values in the dialog, as shown below, and click **Create**.
 
@@ -116,15 +116,15 @@ Close the preview pane by pressing the **X** on the upper right of the screen.
     - **Project Name:** MovieStream
     - **Description: **Extract & fix data for Q2 FY2020
 
-    ![ALT text is not available for this image](images/3019662871.png)
+    ![ALT text is not available for this image](images/lab05-task02-02.jpg) 
 
 3. This will open the Data Flow Details screen, which looks like this:
 
-    ![ALT text is not available for this image](images/3019662872.png)
+    ![ALT text is not available for this image](images/lab05-task02-03.jpg) 
 
 4. This screen is divided into four sections, as shown in the annotations here:
 
-    ![ALT text is not available for this image](images/3019662873.png)
+    ![ALT text is not available for this image](images/lab05-task02-04.jpg) 
 
     In the next few steps, we're going to define a data flow as follows:
 
@@ -159,15 +159,15 @@ Close the preview pane by pressing the **X** on the upper right of the screen.
 
     - Notice that the stub of an arrow appears to the right of `MOVIE_SALES_2020`. Grab this with your mouse and drag-and-drop it to connect it to the filter. 
 
-    ![ALT text is not available for this image](images/3019662874.png)
+    ![ALT text is not available for this image](images/lab05-task02-05.jpg) 
 
 6. After completing these steps, select the filter bubble on the canvas. The screen should look like this:
 
-    ![ALT text is not available for this image](images/3019662875.png)
+    ![ALT text is not available for this image](images/lab05-task02-06.jpg) 
 
 7. Now we need to define the properties of the filter. With the filter bubble selected, click the filter condition (circle) and then click the edit button (pencil), as shown below.
 
-     ![ALT text is not available for this image](images/3019662876.png)
+    ![ALT text is not available for this image](images/lab05-task02-07.jpg) 
 
 8. In the expression editor that appears, complete the filter conditions. As shown below, with the drag-and-drop editor:
 
@@ -179,7 +179,7 @@ Close the preview pane by pressing the **X** on the upper right of the screen.
 
     `in ('April','May','June')`
 
-    ![ALT text is not available for this image](images/3019662839.png)
+    ![ALT text is not available for this image](images/lab05-task02-08.jpg) 
 
 9. The next step is to fix the data problem with column `MOVIE_SALES_2020.DAY`. Do this as follows, as illustrated below:
 
@@ -193,55 +193,55 @@ Close the preview pane by pressing the **X** on the upper right of the screen.
 
     - Specify a meaningful name (&quot;Fix\_AllCap\_Days&quot;) and description (&quot;Convert all values in column DAY to Title Case.&quot;)
 
-    ![ALT text is not available for this image](images/3019662899.png)
+    ![ALT text is not available for this image](images/lab05-task02-09.jpg) 
 
 10. Press the expand button to the upper right
 
-    ![ALT text is not available for this image](images/3019662861.png)
+    ![ALT text is not available for this image](images/lab05-task02-10.jpg) 
 
 11. Click the **Attributes** tab towards the center of the Properties pane that appears. 
 
-    ![ALT text is not available for this image](images/3019662862.png)
+    ![ALT text is not available for this image](images/lab05-task02-11.jpg) 
 
 12. We need to cleanse the data in column MOVIE\_SALES\_2020.DAY, by removing leading and trailing white space, and converting to title case. Select the appropriate options as shown below. 
 
-    ![ALT text is not available for this image](images/3019662863.png)
+    ![ALT text is not available for this image](images/lab05-task02-12.jpg) 
 
 13. When you've finished, press the collapse button (opposing diagonal arrows) in the upper right. 
 
-    ![ALT text is not available for this image](images/3019662864.png)
+    ![ALT text is not available for this image](images/lab05-task02-13.jpg) 
 
 14. Finally, we create a table into which to load the data after it has been filtered and cleansed. 
 
     Select the Data Cleanse bubble *Fix\_AllCap\_Days*, and then click the grid-like table icon to the upper right of the bubble.
 
-    ![ALT text is not available for this image](images/3019662865.png)
+    ![ALT text is not available for this image](images/lab05-task02-14.jpg) 
 
 15. The **create table** dialog that appears, as shown below. Specify the table name as MOVIE\_SALES\_2020**Q2**. (Note the suffix **Q2**.) Accept the default alias, and press **Save**. 
 
-    ![ALT text is not available for this image](images/3019662866.png)
+    ![ALT text is not available for this image](images/lab05-task02-15.jpg) 
 
 16. Drag the `MOVIE_SALES_2020Q2` bubble a little to the right, as shown, and in the properties pane press the Expand button as shown below.
 
-    ![ALT text is not available for this image](images/3019662867.png)
+    ![ALT text is not available for this image](images/lab05-task02-16.jpg) 
 
 17. There are various tabs in the expanded properties pane. This is the Attributes view.
 
-    ![ALT text is not available for this image](images/3019662868.png)
+    ![ALT text is not available for this image](images/lab05-task02-17.jpg) 
 
 18. Click on the Column Mapping tab, which looks like this:
 
-    ![ALT text is not available for this image](images/3019662892.png)
+    ![ALT text is not available for this image](images/lab05-task02-18.jpg) 
 
 19. Since we haven't run this Data Flow yet, the table doesn't exist, so there is nothing to see in Preview. We'll return to this a little later in this exercise. 
 
     For now, press **Options**, which brings up the following dialog. Be sure that **Create target table** is set to **True**, because the table doesn't exist yet. 
 
-    ![ALT text is not available for this image](images/3019662893.png)
+    ![ALT text is not available for this image](images/lab05-task02-19.jpg) 
 
-20. Press contract (two diagonally opposing arrows in the upper right of the Properties pane)
+20. Press collapse (two diagonally opposing arrows in the upper right of the Properties pane)
 
-    ![ALT text is not available for this image](images/3019662894.png)
+    ![ALT text is not available for this image](images/lab05-task02-20.jpg) 
 
 This takes us back to the main Data Flow screen, in which we can see our completed Data Flow.
 
@@ -253,7 +253,7 @@ What remains to be done is:
 
 - Press Run (green play icon).
 
-     ![ALT text is not available for this image](images/3019662896.png)
+    ![ALT text is not available for this image](images/lab05-task02-21.jpg) 
 
 **RECAP – Basic Steps**
 
@@ -278,7 +278,7 @@ Having completed these steps we now have a table MOVIE\_SALES\_2020**Q2**, with 
 #### Driver or Mechanic?
 *We love thrilling car races. Fans can often be sorted into two groups: the drivers and the mechanics. The drivers want to strap in behind the wheel, rev the engine and burn some rubber. The mechanics want to get under the hood and tinker with the gears and the carburetor. Here's the point at which you can self-select as a driver or a mechanic.*
 
-  ![ALT text is not available for this image](images/3019662956.png)
+  ![ALT text is not available for this image](images/lab05-task03-00driver-or-mechanic.jpg)
 
 
 ##### **Driver**
@@ -299,9 +299,9 @@ You'll have landed on a page that looks like this. Notice that the job has been 
 
 - Insert new rows
 
-Click on the link for step 2, as shown below.
+Click on the link for step 3, as shown below.
 
-![ALT text is not available for this image](images/3019662930.png)
+   ![ALT text is not available for this image](images/lab05-task03-01.jpg)
 
 2. A panel will pop up on the right of the screen with details for this step. Click on the **Target Connection** tab at the top to see the execution details for *Step 2*. You'll notice how the individual steps of the Data Flow were implemented:
 
@@ -309,13 +309,13 @@ Click on the link for step 2, as shown below.
 
     - Data Cleanse operation Fix\_AllCap\_Days is implemented with the string operation INITCAP(TRIM(MOVIE\_SALES\_2020.DAY))
 
-  ![ALT text is not available for this image](images/3019662929.png)
+   ![ALT text is not available for this image](images/lab05-task03-02.jpg)
 
 3. Now, for those *Blue Pill* types, these are pearls before swine, but we *Red Pillers* can spend a moment to admire how these operations are implemented in SQL in Autonomous Database.
 
-When you're satisfied, press **Close**. Then, press **Jobs** in the breadcrumb at the upper left of the screen to return to the Data Transforms main page. 
+    When you're satisfied, press **Close**. Then, press **Jobs** in the breadcrumb at the upper left of the screen to return to the Data Transforms main page. 
 
-  ![ALT text is not available for this image](images/3019662928.png)
+   ![ALT text is not available for this image](images/lab05-task03-03.jpg)
 
 ## Task 4: Create Workflow
 
@@ -327,23 +327,23 @@ Good engineering practice is to build and thoroughly test (with both positive an
 
 1. Following the procedures we've already covered (under *Lab 5 - Using Data Transforms / Create Data Flow*) create the definition for these two Data Flows. Note that for the purposes of this workshop it is sufficient merely to create the Data Flow headers. These additional flows are only for illustrations and don't do anything. In practice there will be real data flows that you may want to include in a workflow.
 
-  ![ALT text is not available for this image](images/3019662927.png)
+  ![ALT text is not available for this image](images/lab05-task04-01.jpg)
 
 2. Having defined these two new Data Flows, click the Workflows tab on the left of the screen, then press **Create Workflow**.
 
-  ![ALT text is not available for this image](images/3019662926.png)
+  ![ALT text is not available for this image](images/lab05-task04-02.jpg)
 
 3. Give the Workflow the name &quot;*MovieStream_Incremental&quot;* , and press  **Create** . 
 
   Note: Workflow names must be single words, so the underscore between *MovieStream* and *Incremental* is very important here. 
 
-  ![ALT text is not available for this image](images/3019662950.png)
+  ![ALT text is not available for this image](images/lab05-task04-03.jpg)
 
 4. We now arrive at the Workflow page. This has a similar layout to the Data Flow page, with Resources to the left, a Tool Palette at the top, Properties pane to the right and a Canvas in the middle. 
 
   Expand the DefaultFolder on the left and drag the three Data Flows on to the canvas as shown below:
 
-  ![ALT text is not available for this image](images/3019662949.png)
+  ![ALT text is not available for this image](images/lab05-task04-04.jpg)
 
   In this workflow we're going to define the processing logic as follows:
 
@@ -365,7 +365,7 @@ Good engineering practice is to build and thoroughly test (with both positive an
 
     - Drag the arrow stub from *Nightly\_Batch* to *Movie\_Stream\_Q2FY2020*.
 
-  ![ALT text is not available for this image](images/3019662948.png)
+  ![ALT text is not available for this image](images/lab05-task04-05.jpg)
 
 6. Create failure condition
 
@@ -375,13 +375,13 @@ Good engineering practice is to build and thoroughly test (with both positive an
 
     - Drag the arrow stub from *Nightly\_Batch* to *Error\_Handling*.
 
-  ![ALT text is not available for this image](images/3019662947.png)
+  ![ALT text is not available for this image](images/lab05-task04-06.jpg)
 
 7. Complete the Workflows
 
     Repeat these steps to complete the workflow as follows, being sure to press the **Save** button (disk image) when you're finished:
 
-    ![ALT text is not available for this image](images/3019662946.png)
+  ![ALT text is not available for this image](images/lab05-task04-07.jpg)
 
     After completing the definition of the Workflow, navigate back to the Data Transforms main page by pressing **Projects** in the breadcrumb at the upper left of the screen.
 
@@ -391,23 +391,25 @@ The typical process for development with Data Transforms will be first to develo
 
 1. Press the **Schedules** tab to the left of the screen, then press Create Schedule.
 
-    ![ALT text is not available for this image](images/3019662924.png)
+    ![ALT text is not available for this image](images/lab05-task05-01.jpg)
 
 2. From the pick list next to Resource, you'll notice that schedules can be defined either for Data Flows or Workflows. The procedure is very similar for both cases. In this workflow, we'll define a schedule for a Workflow, so select that.
 
-    ![ALT text is not available for this image](images/3019662923.png)
+    Give a name to the schedule: "My_Schedule."
+
+    ![ALT text is not available for this image](images/lab05-task05-02.jpg)
 
 3. In the pick list for Resource Name, select the Workflow we just created *MovieStream_Incremental*
 
-    ![ALT text is not available for this image](images/3019662921.png)
+    ![ALT text is not available for this image](images/lab05-task05-03.jpg)
 
 4. Specify the regular day and time at which this Workflow is to be executed. In the screenshot below, we're scheduling it for 2am on Wednesday mornings.
 
-    ![ALT text is not available for this image](images/3019662920.png)
+    ![ALT text is not available for this image](images/lab05-task05-04.jpg)
 
 5. Press **Save** and return to the **Schedules** main page.
 
-    ![ALT text is not available for this image](images/3019662919.png)
+    ![ALT text is not available for this image](images/lab05-task05-05.jpg)
 
 ## Conclusion
 
@@ -427,4 +429,4 @@ In this lab we’ve covered simple to some relatively advanced features of the D
 
 - **Authors** - Jayant Mahto, ADB Product Management
 - **Contributors** - Patrick Wheeler, Mike Matthews, ADB Product Management
-- **Last Updated By/Date** - Jayant Mahto, Brianna Ambler, June 2021
+- **Last Updated By/Date** - Jayant Mahto, Arabella Yao, October 2021
