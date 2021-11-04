@@ -1,6 +1,6 @@
 # Upgrade to 19c using the Autoupgrade tool #
 
-In this lab, we will leverage the Autoupgrade tool and upgrade an existing 12.1 CDB with 2 PDBs to 19c in a single command and configuration file. 
+In this lab, we will leverage the Autoupgrade tool and upgrade an existing 12.1 CDB with 2 PDBs to 19c in a single command and configuration file.
 
 ## Disclaimer ##
 The following is intended to outline our general product direction. It is intended for information purposes only and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle's products remain at the sole discretion of Oracle.
@@ -105,7 +105,7 @@ With the Partitioning, OLAP, Advanced Analytics and Real Application Testing opt
  
 The Auto Upgrade tool is part of the 19c Oracle Home distribution. Previous versions (<= 18.4) will need a separate download and set up from MyOracle Support under note 2485457.1. In this example, we will only put one database into the configuration file, but you can add as many databases as needed.
 
-First, we will create a directory on the operating system where we can store Autoupgrade related files (and log files): 
+First, we will create a directory on the operating system where we can store Autoupgrade related files (and log files):
 
 ````
 $  <copy>mkdir -p /u01/autoupgrade</copy>
@@ -197,7 +197,7 @@ The result should be similar to the following:
 [fixup_available]    NO
 [runfix]             N/A
 [severity]           INFO
-[rule]               The number of PDBs upgraded in parallel and the number of 
+[rule]               The number of PDBs upgraded in parallel and the number of
                      parallel processes per PDB can be adjusted as described in
                      Database Upgrade Guide.
 [broken rule]        Using default parallel upgrade options, this CDB with 2 PDBs will
@@ -211,7 +211,7 @@ The result should be similar to the following:
 [fixup_available]    YES
 [runfix]             YES
 [severity]           RECOMMEND
-[rule]               Dictionary statistics help the Oracle optimizer find efficient 
+[rule]               Dictionary statistics help the Oracle optimizer find efficient
                      SQL execution plans and are essential for proper upgrade timing.
                      Oracle recommends gathering dictionary statistics in the last 24
                      hours before database upgrade.<br><br>For information on managing
@@ -230,7 +230,7 @@ In this hands-on lab, no changes are required so we can continue with the actual
  
 ### Execute the full upgrade using Auto Upgrade ###
 
-To continue with the full upgrade of the database(s) in the config file, run the same command but this time with the 'mode=deploy' option. 
+To continue with the full upgrade of the database(s) in the config file, run the same command but this time with the 'mode=deploy' option.
 
 ````
 $ <copy>java -jar $ORACLE_HOME/rdbms/admin/autoupgrade.jar -config DB121C.cfg -mode deploy</copy>
@@ -261,10 +261,10 @@ The following is an example output:
 |JOB#|DB NAME|    STAGE|OPERATION| STATUS|    START TIME|END TIME| UPDATED|          MESSAGE|
 +----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
 | 101| DB121C|PRECHECKS|PREPARING|RUNNING|19/04/19 11:51|     N/A|11:51:09|Remaining 198/246|
-+----+-------+---------+---------+-------+--------------+--------+--------+-----------------+ 
++----+-------+---------+---------+-------+--------------+--------+--------+-----------------+
 ````
 
-Using the command prompt, you can do many things to control your upgrade. If there is any failure, you can correct the failures, restart the job, or restore the environment to its original state. On the operating system, you can check the running of the upgrade as well. 
+Using the command prompt, you can do many things to control your upgrade. If there is any failure, you can correct the failures, restart the job, or restore the environment to its original state. On the operating system, you can check the running of the upgrade as well.
 
 To get a more detailed status of the job, you can use the `status` command with the job number of your upgrade. Example:
 
@@ -311,13 +311,13 @@ Error Details:
 None
 ````
 
-The actual upgrade will be done using the standard tools for upgrading databases. You can see this in the operating system once the `lsj` command indicates that the actual upgrade has started:
+The actual upgrade will be done using the standard tools for upgrading databases. You can see this in the operating system once the `lsj` command indicates that the actual upgrade has started. First check if the autoupgrade process has started with the actual upgrade of the database:
 
 ````
 upg> <copy>lsj</copy>
 ````
 
-If you see that the actual database upgrade is running like this:
+Only if you see that the actual database upgrade is running, about 6 minutes after the start of autoupgrade, like this:
 
 ````
 upg> lsj
@@ -335,7 +335,7 @@ You can open a second terminal window (do not close the running autoupgrade tool
 $ <copy>ps -ef | grep perl</copy>
 ````
 
-The output will be similar to the following:
+The output will be similar to the following (if the upgrade is running, this command will not result in an output during the precheck or prefixup steps):
 
 ````
 oracle   17211 11951  0 10:13 pts/4    00:00:01 /u01/app/oracle/product/19.0.0/dbhome_193/perl/bin/perl /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/catctl.pl -A -l /u01/autoupgrade/100/dbupgrade -i 20190321101158db112 -d /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin catupgrd.sql
@@ -355,10 +355,10 @@ $ <copy>tail -f dbupgrade_</copy><Press TAB>.log
 The output will be similar to the following:
 
 ````
-2019-04-17 12:44:23.670 INFO Finished - Utilities.autoReadFileToAry 
-2019-04-17 12:44:23.670 INFO Finished - Utilities.getPhaseNo 
-2019-04-17 12:44:23.672 INFO [Upgrading] is [92%] completed for [db121c-pdb$seed] 
-2019-04-17 12:47:23.747 INFO [Upgrading] is [92%] completed for [db121c-pdb$seed] 
+2019-04-17 12:44:23.670 INFO Finished - Utilities.autoReadFileToAry
+2019-04-17 12:44:23.670 INFO Finished - Utilities.getPhaseNo
+2019-04-17 12:44:23.672 INFO [Upgrading] is [92%] completed for [db121c-pdb$seed]
+2019-04-17 12:47:23.747 INFO [Upgrading] is [92%] completed for [db121c-pdb$seed]
 +---------+---------------------------------------+
 |CONTAINER|                             PERCENTAGE|
 +---------+---------------------------------------+
@@ -421,7 +421,7 @@ SQL> <copy>select version from v$instance;</copy>
 
 The output will be similar to this:
 
-```` 
+````
 VERSION
 -----------------
 19.0.0.0.0

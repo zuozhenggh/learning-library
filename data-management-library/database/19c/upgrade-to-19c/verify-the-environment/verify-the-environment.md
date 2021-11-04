@@ -1,6 +1,6 @@
-# Connect to the 19c database Hands-On-Lab Environment #
+# Verify the environment #
 
- Since we will upgrade databases, we have prepared an image with several database versions already set up. This image is accessible through Remote Desktop NoVNC application and runs in the Oracle OCI Cloud.
+ Since we will upgrade databases, we have prepared an image with several database versions already set up. This image is accessible through a NoVNC URL and runs in the Oracle OCI Cloud.
 
 ## Disclaimer ##
  The following is intended to outline our general product direction. It is intended for information purposes only and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remain at the sole discretion of Oracle.
@@ -54,4 +54,4 @@
 ## Acknowledgements ##
 
 - **Author** - Robert Pastijn, Database Product Management, PTS EMEA - April 2020
-- March 2021 - Robert Pastijn - Adopted to Livelabs -
+- **March 2021** - Robert Pastijn, Adopted to Livelabs

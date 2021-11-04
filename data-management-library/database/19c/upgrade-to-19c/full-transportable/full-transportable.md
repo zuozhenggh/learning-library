@@ -1,6 +1,6 @@
 # Upgrade to 19c using Full Transportable Database #
 
- In this lab, we will use the Full (Cross Platform) Transportable Database functionality to migrate an existing 12.2 (single-mode, non-CDB architecture) to a 19c Pluggable database. 
+ In this lab, we will use the Full (Cross Platform) Transportable Database functionality to migrate an existing 12.2 (single-mode, non-CDB architecture) to a 19c Pluggable database.
 
 ## Disclaimer ##
  The following is intended to outline our general product direction. It is intended for information purposes only and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle's products remain at the sole discretion of Oracle.
@@ -99,8 +99,8 @@ SQL> <copy>grant read, write on directory homedir to system;</copy>
 Grant succeeded.
 ````
 ````
-SQL> <copy>create public database link SOURCEDB 
-     connect to system identified by Welcome_123 
+SQL> <copy>create public database link SOURCEDB
+     connect to system identified by Welcome_123
      using '//localhost:1521/DB122';</copy>
 
 Database link created.
@@ -201,8 +201,8 @@ Tablespace altered.
  We can now determine the data files that we need to copy to the target environment as part of the Transportable Tablespaces. We will only transport those tablespaces that contain user data:
 
 ````
-SQL> <copy>select name from v$datafile where ts# in (select ts# 
-                   from v$tablespace 
+SQL> <copy>select name from v$datafile where ts# in (select ts#
+                   from v$tablespace
                    where name='USERS');</copy>
 ````
 
@@ -214,7 +214,7 @@ NAME
 /u01/oradata/DB122/users01.dbf
 ````
 
- Now that we have put the source tablespace to READ ONLY and know which data files we need to copy, we can copy or move the files to the target location. In our example, we will copy the files, but we could also have moved the files. 
+ Now that we have put the source tablespace to READ ONLY and know which data files we need to copy, we can copy or move the files to the target location. In our example, we will copy the files, but we could also have moved the files.
 
  If you copy the files, you have a fall-back scenario if something goes wrong (by simply changing the source tablespace to READ WRITE again). The downside is that you need extra disk space to hold the copy of the data files.
 
@@ -230,9 +230,9 @@ SQL> <copy>exit</copy>
 $ <copy>cp /u01/oradata/DB122/users01.dbf /u01/oradata/DB19C/PDB19C02</copy>
 ````
 
- Now we can import the metadata of the database and the data (already copied and ready in the data files for the tablespace USERS in the new location) by executing a Datapump command. The Datapump import will be run through the database link you created earlier – thus no need for a file-based export or a dump file. 
+ Now we can import the metadata of the database and the data (already copied and ready in the data files for the tablespace USERS in the new location) by executing a Datapump command. The Datapump import will be run through the database link you created earlier – thus no need for a file-based export or a dump file.
 
- Data Pump will take care of everything (currently except XDB and AWR) you need from the system tablespaces and move views, synonyms, triggers, etc., over to the target database (in our case: PDB19C02). Data Pump can do this beginning from Oracle 11.2.0.3 on the source side but will require an Oracle 12c database as a target. Data Pump will work cross-platform as well but might need RMAN to convert the files from big to little-endian or vice-versa. 
+ Data Pump will take care of everything (currently except XDB and AWR) you need from the system tablespaces and move views, synonyms, triggers, etc., over to the target database (in our case: PDB19C02). Data Pump can do this beginning from Oracle 11.2.0.3 on the source side but will require an Oracle 12c database as a target. Data Pump will work cross-platform as well but might need RMAN to convert the files from big to little-endian or vice-versa.
 
  First, we change our environment parameters back to 19c:
 
@@ -244,7 +244,7 @@ ORACLE_SID = [DB122] ? <copy>DB19C</copy>
 The Oracle base remains unchanged with value /u01/app/oracle
 ````
 
- We can now start the actual import process. 
+ We can now start the actual import process.
 
 ````
 $ <copy>impdp system/Welcome_123@//localhost:1521/PDB19C02 network_link=sourcedb \
@@ -293,7 +293,7 @@ or
 03-APR-20 12:11:44.837: ORA-39342: Internal error - failed to import internal objects tagged with ORDIM due to ORA-00955: name is already used by an existing object
 ````
 
- By checking the log file, you need to determine if the errors harm your environment. In our migration, the errors should only be regarding a few users that could not be created. 
+ By checking the log file, you need to determine if the errors harm your environment. In our migration, the errors should only be regarding a few users that could not be created.
 
  The Data Pump process should have migrated the most crucial user in the database (PARKINGFINE). We can check the target database to see if our table has been imported as it should:
 
@@ -343,4 +343,4 @@ SQL> <copy>select count(*) from PARKINGFINE.PARKING_CITATIONS;</copy>
 
 ## Acknowledgements ##
 
-- Author - Robert Pastijn, DB Dev Product Management, PTS EMEA - March 2020
+- **Author** - Robert Pastijn, Database Product Management, PTS EMEA - March 2020

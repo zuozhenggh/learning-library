@@ -91,7 +91,7 @@ SQL> <copy>show pdbs</copy>
 
  We assume you are already connected as sysdba to the DB18C database for the following steps as described in the previous chapter.
 
- Execute the following command to unplug the PDB and write a .xml descriptor file to a filesystem location. 
+ Execute the following command to unplug the PDB and write a .xml descriptor file to a filesystem location.
 
 ````
 SQL> <copy>alter pluggable database PDB18C01 unplug into '/u01/PDB18C01.xml';</copy>
@@ -178,7 +178,7 @@ SQL> <copy>alter pluggable database PDB18C01 open upgrade;</copy>
 Pluggable database altered.
 ````
 
- We now need to upgrade the pluggable database as the PDB also contains a data dictionary and objects (which are still of the old version). When you upgrade a PDB, you use the commands you typically use with the Parallel Upgrade Utility. However, you also add the option **`-c PDBname`** to specify which PDB you are upgrading. 
+ We now need to upgrade the pluggable database as the PDB also contains a data dictionary and objects (which are still of the old version). When you upgrade a PDB, you use the commands you typically use with the Parallel Upgrade Utility. However, you also add the option **`-c PDBname`** to specify which PDB you are upgrading.
 
  Make sure to capitalize the name of your PDB while using this option.
 
@@ -312,4 +312,4 @@ PL/SQL procedure successfully completed.
 
 ## Acknowledgements ##
 
-- Author - Robert Pastijn, DB Dev Product Management, PTS EMEA - March 2020
+- **Author** - Robert Pastijn, Database Product Management, PTS EMEA - March 2020

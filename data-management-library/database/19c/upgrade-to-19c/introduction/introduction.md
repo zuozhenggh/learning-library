@@ -1,6 +1,6 @@
 # Upgrade to 19c Hands-On-Lab (HOL) #
 
-## Workshop Overview ##
+## Introduction ##
 
 **19c Database** is the current version Oracle promotes to customers and partners as the best target version for a database upgrade. Oracle 19c is the long-term support version and will be supported for at least four years after the initial release. After this, Extended support and Sustaining support will be available.
 
