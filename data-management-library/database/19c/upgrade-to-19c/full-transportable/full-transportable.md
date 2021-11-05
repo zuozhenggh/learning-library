@@ -1,11 +1,20 @@
-# Upgrade to 19c using Full Transportable Database #
+# Upgrade using Full Transportable Database #
+
+## Introduction ##
 
  In this lab, we will use the Full (Cross Platform) Transportable Database functionality to migrate an existing 12.2 (single-mode, non-CDB architecture) to a 19c Pluggable database.
 
-## Disclaimer ##
- The following is intended to outline our general product direction. It is intended for information purposes only and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle's products remain at the sole discretion of Oracle.
+ Estimated time: 15 minutes
 
-## Prerequisites ##
+### Objectives ###
+
+- Create a new 19c PDB to act as target for the source database.
+- Prepare the target 19c database for the transported Tablespaces
+- Prepare the source database for the transportable tablespace step
+- Execute the upgrade using Full Transportable Tablespaces
+- Check the target (upgraded) database to see that all data has been migrated
+
+### Prerequisites ###
 
 - You have access to the Upgrade to a 19c Hands-on-Lab client image
 - If you use the copy functionality in this lab, make sure you open the Lab instructions INSIDE the client image
@@ -38,7 +47,7 @@ Processing Database instance "DB18C": logfile /u01/app/oracle/product/18.1.0/dbh
 Processing Database instance "DB19C": logfile /u01/app/oracle/product/19.3.0/dbhome_19c/rdbms/log/startup.log
 ````
 
-## Prepare the target 19c database ##
+## Task 1: Prepare the target 19c database ##
 
 The FTTS functionality requires an existing database as a target. For this, we will log into the existing 19c instance and create a new Pluggable Database.
 
@@ -79,7 +88,7 @@ SQL> <copy>alter pluggable database PDB19C02 open;</copy>
 Pluggable database altered.
 ````
 
-## Prepare the target PDB ##
+### Prepare the target PDB ###
 
 The migration described in this lab requires a directory object for Datapump and a database link to the source database. We will use our `/home/oracle` as the temporary location for the Data Pump files.
 
@@ -161,7 +170,7 @@ The table and user exist in the source 12.2 database. They do not exist in the (
 SQL> <copy>exit</copy>
 ````
 
-## Prepare the Source database ##
+## Task 2: Prepare the Source database ##
 
  To run the full transportable operation, we'll have to take all data tablespaces into read-only mode – the same procedure as we would do for a regular transportable tablespace operation. Once the tablespace (in this case, just the USERS tablespace) is in read-only mode, we can copy the file(s) to the target location. In our example, we only have one tablespace (USERS) that contains user data. If you execute an FTTS in another environment, make sure you identify all tablespaces!
 
@@ -222,7 +231,8 @@ NAME
 ````
 SQL> <copy>exit</copy>
 ````
-## Copy datafiles and import into 19c target PDB ##
+
+## Task 3: Copy datafiles and import into 19c target PDB ##
 
  First, we copy the files to the location we will use for the 19c target PDB:
 
@@ -295,6 +305,8 @@ or
 
  By checking the log file, you need to determine if the errors harm your environment. In our migration, the errors should only be regarding a few users that could not be created.
 
+## Task 4: Check the new upgraded target ##
+
  The Data Pump process should have migrated the most crucial user in the database (PARKINGFINE). We can check the target database to see if our table has been imported as it should:
 
 ````
@@ -344,3 +356,4 @@ SQL> <copy>select count(*) from PARKINGFINE.PARKING_CITATIONS;</copy>
 ## Acknowledgements ##
 
 - **Author** - Robert Pastijn, Database Product Management, PTS EMEA - March 2020
+- **Last update** - Robert Pastijn, Database Product Management, PTS EMEA - November 2021

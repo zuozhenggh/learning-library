@@ -1,14 +1,22 @@
-# Upgrade to 19c using the Autoupgrade tool #
+# Upgrade using the Autoupgrade tool #
+
+## Introduction ##
 
 In this lab, we will leverage the Autoupgrade tool and upgrade an existing 12.1 CDB with 2 PDBs to 19c in a single command and configuration file.
 
-## Disclaimer ##
-The following is intended to outline our general product direction. It is intended for information purposes only and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle's products remain at the sole discretion of Oracle.
+Estimated time: 75 minutes (please note you can run other labs in this training in parallel to this lab to reduce waiting time)
+
+### Objectives ###
+
+- Startup the existing databases in the hands-on lab environment
+- Create the Autoupgrade configuration file
+- Run the Autoupgrade pre-check phase and look at the results
+- Run the Autoupgrade deploy phase and watch the database being upgraded
 
 ## Prerequisites ##
 
 - You have access to the Upgrade to a 19c Hands-on-Lab client image
-- A new 19c database has been created in this image
+- A new 19c database has been created in this image (previous lab)
 - All databases in the image are running
 
 When in doubt or need to start the databases, please log in as **oracle** user and execute the following command:
@@ -36,7 +44,7 @@ Processing Database instance "DB18C": log file /u01/app/oracle/product/18.1.0/db
 Processing Database instance "DB19C": log file /u01/app/oracle/product/19.3.0/dbhome_19c/rdbms/log/startup.log
 ````
  
-## Prepare the Source database ##
+## Task 1: Prepare the Source database ##
 We will use the preinstalled 12.1.0.2 database for this exercise (although we could have used the 11.2 database or any other database).
 
 ### Open all PDBS ###
@@ -99,7 +107,7 @@ Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64
 With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
 ````
 
-## Prepare and run the Autoupgrade tool ##
+## Task 2: Prepare and run the Autoupgrade tool ##
 
 ### Create the Auto Upgrade Config file ###
  
@@ -385,7 +393,7 @@ Job 101 for DB121C FINISHED
 
 Your database is now upgraded to 19c (with all PDBs as well).
 
-## Check target database ##
+### Task 3: Check target database ###
 
 To check your target database, you can execute the following:
 
@@ -431,3 +439,4 @@ The autoupgrade tool was successful. You can check the log files for details reg
 ## Acknowledgements ##
 
 - **Author** - Robert Pastijn, DB Dev Product Management, PTS EMEA - April 2020
+- **Last updated** - Robert Pastijn, Database Product Development, PTS EMEA - November 2021

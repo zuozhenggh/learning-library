@@ -1,16 +1,27 @@
-# Install new 19c database #
+# Install a new 19c database #
 
- In this lab, we will install the 19c database software and create a new 19c database (and listener) as a target for the other upgrades.
+## Introduction ##
 
-## Disclaimer ##
- The following is intended to outline our general product direction. It is intended for information purposes only and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle's products remain at the sole discretion of Oracle.
+In this lab, we will install the 19c database software and create a new 19c database (and listener) as a target for the other upgrades.
 
-## Prerequisites ##
+Estimated Time: 30 minutes
+
+### Objectives ###
+
+In this lab you will
+
+- Learn how to install and register a new Oracle 19c Home in the location of your choice
+- Create a new Oracle 19c Multitenant Database with a pluggable database (PDB)
+- Install the Oracle 19c preinstall package
+- Reduce the memory footprint of the new 19c instance
+- Install the latest autoupgrade.jar in the Oracle 19c Home
+
+### Prerequisites ###
 
 - You have access to the Upgrade to a 19c Hands-on-Lab client image
-- You have connected to the Hands-on-Lab client image using a Remote Desktop session
+- You have connected to the Hands-on-Lab client image using the supplied NoVNC link
 
-## Prepare 19c software and operating system ##
+## Task 1: Prepare 19c software and operating system ##
 
  Before we can upgrade to Oracle 19c, we need to have the Oracle software installed. Outside of this training environment, you should download the production software base release from [https://eDelivery.oracle.com](https://eDelivery.oracle.com "eDelivery.oracle.com"). In a production environment, please also download the patches required and apply them before you create or upgrade any instances. The DBA can download patches to upgrade the base 19c version (19.3.0) from [https://support.oracle.com](https://support.oracle.com).
 
@@ -70,7 +81,7 @@ Installed:
 Complete!
 ````
 
-## Run OUI and create new 19c database ##
+## Task 2: Run OUI and create new 19c database ##
 
  Before using the unzipped Oracle software, we need to run the Oracle Universal Installer (OUI) to register the software to the Oracle Inventory on the system and do mandatory (relinking) steps for this OS. This can either be done in a GUI mode or in a character mode (for systems that do not have access to a graphical interface). In this lab, we will run the OUI in GUI mode for learning purposes.
 
@@ -168,7 +179,7 @@ $ <copy>./runInstaller</copy>
 
  Your 19c Oracle Home has been created, and the initial database (DB19C) has been started.
 
-## Change default memory parameters and perform administration ##
+## Task 3: Change default memory parameters and perform administration ##
 
  The OUI takes a certain percentage of the available memory in our environment as default SGA size. In our workshop environment, this is an SGA of 18G. We need the memory for other tasks (databases) later on, so we will need to lower the memory usage of the new instance:
 
@@ -229,7 +240,15 @@ Database opened.
 SQL> <copy>exit</copy>
 ````
 
-### Upgrade autoupgrade.jar file ###
+### Make your 19c database startup using dbstart ###
+
+ If you shut down your Hands-On-Lab environment, you will need to start the databases again. To make this automatic (using the
+
+````
+$ <copy>sudo sed -i 's/:N/:Y/' /etc/oratab</copy>
+````
+
+### Task 4: Upgrade autoupgrade.jar file ###
 
  For the autoupgrade lab, we need to put the latest version in the new 19c Oracle home. Please execute the following commands:
 
@@ -240,19 +259,9 @@ $ <copy>mv /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/autoupgrade.jar
 $ <copy>cp /source/autoupgrade.jar /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/</copy>
 ````
 
-### Make your 19c database startup using dbstart ###
-
- If you shut down your Hands-On-Lab environment, you will need to start the databases again. To make this automatic (using the
-
-````
-$ <copy>sudo sed -i 's/:N/:Y/' /etc/oratab</copy>
-````
-
- Your container database and your environment are now ready for the Hands-On labs.
+Your setup is now ready to execute the next chapter in this hands-on lab.
 
 ## Acknowledgements ##
 
 - **Author** - Robert Pastijn, Database Product Management, PTS EMEA - initial version March 2019
-- **Migrated to Github** - Robert Pastijn, Database Product Management, PTS EMEA - April 2020
-- **Updated for Livelabs** - Robert Pastijn, Database Product Management, PTS EMEA - June 2021
-    - Changed execute of root.sh from password to sudo
+- **Last Update** - Robert Pastijn, Database Product Management, PTS EMEA - November 2021

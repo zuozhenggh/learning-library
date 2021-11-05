@@ -1,14 +1,20 @@
-# Upgrade to 19c using unplug and plug of Pluggable Databases #
+# Upgrade using unplug and plug of Pluggable Databases #
+
+## Introduction ##
 
  This lab will demonstrate how easy it is to unplug an existing Pluggable Database and plug it into an Oracle Home that has either been patched or upgraded to a new version.
 
- > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the NoVNC remote desktop and paste inside the NoVNC remove desktop, additional **enters**, or CRLF characters are pasted, causing some commands to fail. Solution: Open this lab inside the browser inside the Remote Desktop session.
+ Estimated time: 45 minutes
 
+### Objectives ###
 
-## Disclaimer ##
- The following is intended to outline our general product direction. It is intended for information purposes only and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle'sOracle's products remain at the sole discretion of Oracle.
+- Unplug the source PDB from its current database
+- Plug the PDB into its new CDB running on 19c
+- Upgrade the PDB using the regular upgrade tools
 
 ## Prerequisites ##
+
+> **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the NoVNC remote desktop and paste inside the NoVNC remove desktop, additional **enters**, or CRLF characters are pasted, causing some commands to fail. Solution: Open this lab inside the browser inside the Remote Desktop session.
 
 - You have access to the Upgrade to a 19c Hands-on-Lab client image
 - A new 19c database has been created in this image
@@ -39,7 +45,7 @@ Processing Database instance "DB18C": logfile /u01/app/oracle/product/18.1.0/dbh
 Processing Database instance ""DB19C"": logfile /u01/app/oracle/product/19.3.0/dbhome_19c/rdbms/log/startup.log
 ````
 
-## Check the current status of the source PDBs ##
+## Task 1: Check the source database ##
 
  Please login as the **oracle** user to check the status of the source database and pluggable databases.
 
@@ -83,7 +89,7 @@ SQL> <copy>show pdbs</copy>
 
  So we have 1 PDB running in this environment in MOUNTED mode. In this lab, we will migrate this PDB from the DB18C environment to the new 19c environment.
 
-## Unplugging the source pluggable database ##
+## Task 2: Unplugging the source pluggable database ##
 
  There are many ways to migrate a PDB to a new CDB. Some will keep the datafiles in place, and other options will recreate the datafiles (double your storage size). If you are moving the data files to another storage system, you can, for example, use the Pluggable Archive option (this option will put all files into one zip file with a .pdb extension).
 
@@ -108,7 +114,7 @@ Disconnected from Oracle Database 18c Enterprise Edition Release 18.0.0.0.0 - Pr
 Version 18.3.0.0.0
 ````
 
-## Plug the PDB into the target 19c environment ##
+## Task 3: Plug the PDB into the target 19c environment ##
 
  First, we need to change the environment settings to the 19c environment:
 
@@ -166,7 +172,7 @@ NAME
 
  The above example also shows that it is a **bad** custom to put the version name of the PDB in the name of the PDB. As displayed, it looks bizarre to have a `PDB18C01` in the DB19C location.
 
-## Upgrade the imported Pluggable Database ##
+## Task 4: Upgrade the imported Pluggable Database ##
 
  We cannot just open the PDB in the new 19c Oracle Home. If you tried to open it, it would fail since it does not have the correct 19c objects in its schema.
 
@@ -313,3 +319,4 @@ PL/SQL procedure successfully completed.
 ## Acknowledgements ##
 
 - **Author** - Robert Pastijn, Database Product Management, PTS EMEA - March 2020
+- **Last update** - Robert Pastijn, Database Product Management, PTS EMEA - November 2021
