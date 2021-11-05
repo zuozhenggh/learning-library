@@ -142,7 +142,19 @@ To create your lab and workshop content:
 
 * Click [here](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) for a deeper dive into more robust Markdown Template features.
 
-## Task 5: Preview Your Workshop and Labs Using Live Server
+## Task 5: Security
+
+1. Blur all personal information (IP addresses, intranet URLs, email addresses, OCIDs, usernames, and passwords) from images.
+  ![](./images/blur-ip.png " ")
+
+2. Every image must have a description: ![DESC] (…/…/name.png “ “)
+
+  ![](./images/image-desc.png " ")
+
+3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text.
+
+
+## Task 6: Preview Your Workshop and Labs Using Live Server
 ### **Option 1: Using Atom**
 
 1. First, start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
