@@ -30,7 +30,7 @@ MovieStream is a global business with finance departments distributed around the
 1. To find out how much space our movie sales table (movie\_sales\_fact) is consuming, we can run the following query our SQL worksheet
 
     ```
-<copy>
+    <copy>
     SELECT
     segment_name,
     SUM(bytes)/1024/1024/1024 AS gb
@@ -38,7 +38,7 @@ MovieStream is a global business with finance departments distributed around the
     WHERE segment_type='TABLE'
     AND segment_name = 'MOVIE_SALES_FACT'
     GROUP BY segment_name;
-</copy>
+    </copy>
     ```
 
 2. This will return something similar to the results shown below: 8.43 GB.
