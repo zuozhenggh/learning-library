@@ -19,6 +19,7 @@ For more information about Terraform and Resource Manager, please see the append
 ### Prerequisites
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
+- SSH Keys (optional)
 - Performed *Lab: Prepare Setup*
 
 ## Task 1: Create Stack: Choose a Path
