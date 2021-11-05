@@ -3,7 +3,7 @@
 
 ## Background
 
-Autonomous Data Warehouse supports the ability to define constraints against your data that enforce logical and business rules. In the example below, we are going to add a unique constraint and ensure that there are no empty rows in our data table.
+Oracle Autonomous Data Warehouse supports the ability to define constraints against your data that enforce logical and business rules. In the example below, we are going to add a unique constraint and ensure that there are no empty rows in our data table.
 
 A unique constraint designates a column (it could also be a group of columns) as a unique key. To satisfy a unique constraint, no two rows in the table can have the same value for the unique key. The second step is to combine this concept with the NOT NULL constraint that was included in the definition of our data table to derive a **PRIMARY KEY**. The concept of a primary key concept is a key part of an efficient relational database. Without the primary key, along with the closely related concept of a foreign key, relational databases would simply not work. A primary key provides us with a fast and efficient way to uniquely identify each row in a table.   
 
@@ -39,14 +39,17 @@ This lab assumes you have:
     ```
     <copy>SELECT SUM(actual_price) FROM movie_sales_fact;</copy>
     ```
-    **NOTE:** This should return a value of **$160,365,556.83**.
+    **NOTE:** This should return a value of **$163,848,266**.
 
-2. Now let's try to reload sales data for January 2018 using the following command
+2. Now let's try to reload sales data for January 2018. We can do this directly from SQL as follows:
 
-    (**Note**: *the command reuses the variables you created in Lab 2 that point to the location of the data file and the format strings used to parse the CSV file*): 
+    **NOTE:** As this only loads a single file, the command below uses the Ashburn region's bucket, but you can replace the bucket location with a closer region if you prefer, using the table of locations in the previous lab.
 
     ```
-    <copy>BEGIN
+    <copy>
+    define uri_ms_oss_bucket = 'newlocation';
+    define csv_format_string = '{"type":"csv","skipheaders":"1"}';
+    BEGIN
     DBMS_CLOUD.COPY_DATA (
     table_name => 'MOVIE_SALES_FACT',
     file_uri_list => '&uri_ms_oss_bucket/d801_movie_sales_fact_m-201801.csv',
@@ -65,12 +68,14 @@ This lab assumes you have:
 4. Check the value of total sales in the `movie_sales_fact` table:
 
     ```
-    <copy>SELECT SUM(actual_price) FROM movie_sales_fact;</copy>
+    <copy>
+    SELECT SUM(actual_price) FROM movie_sales_fact;
+    </copy>
     ```
 
-    **NOTE:** This should return the same value as shown in step 1 - $160,365,556.83.
+    **NOTE:** This should return the same value as shown in step 1 - $163,848,266.
 
-We can now show that our sales data is factually correct - our data set contains no duplicate records. Note that other non-Oracle cloud data warehouse vendors do not have this important feature, and with them you would need to implement your own data auditing features to ensure your data sets are factually correct.
+We can now show that our sales data is factually correct. Our data set contains no duplicate records. Note that other non-Oracle cloud data warehouse vendors do not have this important feature, and with them you would need to implement your own data auditing features to ensure your data sets are factually correct.
 
 Please *proceed to the next lab*.
 
