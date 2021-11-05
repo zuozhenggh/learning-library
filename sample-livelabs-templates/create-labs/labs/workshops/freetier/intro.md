@@ -74,12 +74,9 @@ The following diagram shows the general workflow process that your need to follo
 
   **You are all set to begin the labs! Click Lab 1: Get Started with Git and Set up the Environment in the Contents menu.**
 
-## Want to learn more about labs and workshops?
-  Use these links to get more information about Labs and Workshops:
-  * [Develop LiveLabs Workshops and Labs Using Markdown Documentation](https://confluence.oraclecorp.com/confluence/display/DUASPG/Develop+LiveLabs+Workshops+and+Labs+Using+Markdown)
+## Want to learn more about LiveLabs workshops and GitHub?
   * [Oracle LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1)
   * [Get started with GitHub](https://docs.github.com/en/get-started)
-  * [Glossary of Terms](https://confluence.oraclecorp.com/confluence/display/DUASPG/Glossary+of+Terms)
 
 
 ## Acknowledgements
