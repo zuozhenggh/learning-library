@@ -25,19 +25,20 @@ This lab assumes you have:
 MovieStream is a global business with finance departments distributed around the world. Each of these periodically generates a number of financial adjustments for customers in their respective countries. In practice, these will come in at various times and will need to be processed one-by-one. In this section we are going to process all the regional adjustment files at once, but it is important to bear in mind that each would usually be processed immediately on arrival (and therefore individually) so that we can always get the most up-to-date information from our warehouse. Below we will run the update process by merging in the adjustment files for all the countries into our fact table.
 
 
-## Task 1: Finding Out the space usage of the Movie Sales data
+## Task 1: Finding out the space usage of the Movie Sales data
 
 1. To find out how much space our movie sales table (movie\_sales\_fact) is consuming, we can run the following query our SQL worksheet
 
     ```
-    <copy>SELECT
+<copy>
+    SELECT
     segment_name,
     SUM(bytes)/1024/1024/1024 AS gb
     FROM user_segments
     WHERE segment_type='TABLE'
     AND segment_name = 'MOVIE_SALES_FACT'
     GROUP BY segment_name;
-		</copy>
+</copy>
     ```
 
 2. This will return something similar to the results shown below: 8.43 GB.
