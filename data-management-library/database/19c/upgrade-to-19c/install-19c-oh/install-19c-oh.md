@@ -1,16 +1,27 @@
-# Install new 19c database #
+# Install a new 19c database #
 
- In this lab, we will install the 19c database software and create a new 19c database (and listener) as a target for the other upgrades.
+## Introduction ##
 
-## Disclaimer ##
- The following is intended to outline our general product direction. It is intended for information purposes only and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle's products remain at the sole discretion of Oracle.
+In this lab, we will install the 19c database software and create a new 19c database (and listener) as a target for the other upgrades.
 
-## Prerequisites ##
+Estimated Time: 30 minutes
+
+### Objectives ###
+
+In this lab you will
+
+- Learn how to install and register a new Oracle 19c Home in the location of your choice
+- Create a new Oracle 19c Multitenant Database with a pluggable database (PDB)
+- Install the Oracle 19c preinstall package
+- Reduce the memory footprint of the new 19c instance
+- Install the latest autoupgrade.jar in the Oracle 19c Home
+
+### Prerequisites ###
 
 - You have access to the Upgrade to a 19c Hands-on-Lab client image
-- You have connected to the Hands-on-Lab client image using a Remote Desktop session
+- You have connected to the Hands-on-Lab client image using the supplied NoVNC link
 
-## Prepare 19c software and operating system ##
+## Task 1: prepare 19c software and operating system ##
 
  Before we can upgrade to Oracle 19c, we need to have the Oracle software installed. Outside of this training environment, you should download the production software base release from [https://eDelivery.oracle.com](https://eDelivery.oracle.com "eDelivery.oracle.com"). In a production environment, please also download the patches required and apply them before you create or upgrade any instances. The DBA can download patches to upgrade the base 19c version (19.3.0) from [https://support.oracle.com](https://support.oracle.com).
 
@@ -20,239 +31,248 @@
 
  The software downloaded from the Oracle network is a zip file for your operating system/architecture. In 19c, the location where you unzip the software and start the Oracle Universal Installer (OUI) **will be used as your new Oracle Home**, so be careful where you unzip the software. The running of the OUI will only register the software with the inventory (or will create an inventory if none exists).
 
- First, we need to create a new location for the software. Execute the following command as an oracle user after starting a new terminal window in your image:
+1. First, we need to create a new location for the software. Execute the following command as an oracle user after starting a new terminal window in your image:
 
-````
-$ <copy>mkdir -p /u01/app/oracle/product/19.0.0/dbhome_193</copy>
-````
+    ````
+    $ <copy>mkdir -p /u01/app/oracle/product/19.0.0/dbhome_193</copy>
+    ````
 
- We can now use this new location to unzip our software.
+2. We can now use this new location to unzip our software.
 
-````
-$ <copy>cd /u01/app/oracle/product/19.0.0/dbhome_193</copy>
-````
-````
-$ <copy>unzip /source/db_home_193_V982063.zip</copy>
+    ````
+    $ <copy>cd /u01/app/oracle/product/19.0.0/dbhome_193</copy>
+    ````
 
-...
-  javavm/admin/classes.bin -> ../../javavm/jdk/jdk8/admin/classes.bin
-  javavm/admin/libjtcjt.so -> ../../javavm/jdk/jdk8/admin/libjtcjt.so
-  jdk/jre/bin/ControlPanel -> jcontrol
-  javavm/admin/lfclasses.bin -> ../../javavm/jdk/jdk8/admin/lfclasses.bin
-  javavm/lib/security/cacerts -> ../../../javavm/jdk/jdk8/lib/security/cacerts
-  javavm/lib/sunjce_provider.jar -> ../../javavm/jdk/jdk8/lib/sunjce_provider.jar
-  javavm/lib/security/README.txt -> ../../../javavm/jdk/jdk8/lib/security/README.txt
-  javavm/lib/security/java.security -> ../../../javavm/jdk/jdk8/lib/security/java.security
-  jdk/jre/lib/amd64/server/libjsig.so -> ../libjsig.so
-````
+    ````
+    $ <copy>unzip /source/db_home_193_V982063.zip</copy>
 
- We will not install any patches during this workshop; therefore, we can continue to prepare the operating system environment.
+    ...
+      javavm/admin/classes.bin -> ../../javavm/jdk/jdk8/admin/classes.bin
+      javavm/admin/libjtcjt.so -> ../../javavm/jdk/jdk8/admin/libjtcjt.so
+      jdk/jre/bin/ControlPanel -> jcontrol
+      javavm/admin/lfclasses.bin -> ../../javavm/jdk/jdk8/admin/lfclasses.bin
+      javavm/lib/security/cacerts -> ../../../javavm/jdk/jdk8/lib/security/cacerts
+      javavm/lib/sunjce_provider.jar -> ../../javavm/jdk/jdk8/lib/sunjce_provider.jar
+      javavm/lib/security/README.txt -> ../../../javavm/jdk/jdk8/lib/security/README.txt
+      javavm/lib/security/java.security -> ../../../javavm/jdk/jdk8/lib/security/java.security
+      jdk/jre/lib/amd64/server/libjsig.so -> ../libjsig.so
+    ````
+
+We will not install any patches during this workshop; therefore, we can continue to prepare the operating system environment.
 
 ### Install the 19c pre-install RPM on the system ###
 
- An easy way to make sure all system parameters are correct in a Linux environment is to use the preinstall rpm package. For non-Linux environments, please check the manual for the appropriate environment values. We have already downloaded the preinstall rpm in the environment, so you can simply install it.
+An easy way to make sure all system parameters are correct in a Linux environment is to use the preinstall rpm package. For non-Linux environments, please check the manual for the appropriate environment values. We have already downloaded the preinstall rpm in the environment, so you can simply install it.
 
-````
-$ <copy>sudo yum -y localinstall /source/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm</copy>
+4. Run the installer to start the database software install
 
-Loaded plugins: langpacks, ulninfo
-Examining /source/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm: oracle-database-preinstall-19c-1.0-1.el7.x86_64
-Marking /source/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm to be installed
-Resolving Dependencies
-...
-Running transaction
-  Installing : oracle-database-preinstall-19c-1.0-1.el7.x86_64          1/1
-  Verifying  : oracle-database-preinstall-19c-1.0-1.el7.x86_64          1/1
+    ````
+    $ <copy>sudo yum -y localinstall /source/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm</copy>
 
-Installed:
-  oracle-database-preinstall-19c.x86_64 0:1.0-1.el7                                                                    
+    Loaded plugins: langpacks, ulninfo
+    Examining /source/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm: oracle-database-preinstall-19c-1.0-1.el7.x86_64
+    Marking /source/oracle-database-preinstall-19c-1.0-1.el7.x86_64.rpm to be installed
+    Resolving Dependencies
+    ...
+    Running transaction
+      Installing : oracle-database-preinstall-19c-1.0-1.el7.x86_64          1/1
+      Verifying  : oracle-database-preinstall-19c-1.0-1.el7.x86_64          1/1
 
-Complete!
-````
+    Installed:
+      oracle-database-preinstall-19c.x86_64 0:1.0-1.el7                                                                    
 
-## Run OUI and create new 19c database ##
+    Complete!
+    ````
+
+## Task 2: run OUI and create new 19c database ##
 
  Before using the unzipped Oracle software, we need to run the Oracle Universal Installer (OUI) to register the software to the Oracle Inventory on the system and do mandatory (relinking) steps for this OS. This can either be done in a GUI mode or in a character mode (for systems that do not have access to a graphical interface). In this lab, we will run the OUI in GUI mode for learning purposes.
 
 ### Run OUI ###
 
- While running the OUI, we have the option to install only the software (so no database) or to install the software and create a database. For various reasons, we will both install the software and create a new database in this lab. Execute the following commands in your terminal window as oracle user:
+ While running the OUI, we have the option to install only the software (so no database) or to install the software and create a database. For various reasons, we will both install the software and create a new database in this lab.
 
-````
-$ <copy>cd /u01/app/oracle/product/19.0.0/dbhome_193</copy>
-````
-````
-$ <copy>./runInstaller</copy>
-````
+ 1. Execute the following commands in your terminal window as oracle user:
 
- The following screen should be visible on your (remote) desktop:
+    ````
+    $ <copy>cd /u01/app/oracle/product/19.0.0/dbhome_193</copy>
+    ````
+    ````
+    $ <copy>./runInstaller</copy>
+    ````
 
- ![](./images/01-OUI-1of9.png)
+    The following screen should be visible on your (remote) desktop:
 
-- Keep the default 'Create and Configure a single instance database' and press `NEXT`
-- Choose 'Desktop class' and press `NEXT`
+     ![](./images/01-OUI-1of9.png)
 
- The desktop class will display one screen with all of the information required to create this type of database. If you think you need (for your local environment) other settings than displayed on the Desktop class screen, feel free to use the Server class. If you choose the Server class, please check the documentation for the values to be used. For the Oracle provided Workshop environment, the Desktop class is enough.
+    - Keep the default 'Create and Configure a single instance database' and press `NEXT`
 
- Make sure to check and change the following values in the various fields:
+3. In the next screen, choose 'Desktop class' and press `NEXT`
 
-- Oracle Base
-    - /u01/app/oracle (no changes)
-- Database File Location
-    - /u01/oradata **(change this value)**
-- Database Edition
-    - Enterprise Edition (no changes)
-- Characterset
-    - Unicode (no changes)
-- OSBDA group
-    - oinstall (no changes)
-- Global Database name
-    - DB19C **(change this value)**
-- Password
-    - Welcome_123 **(change this value)**
-- Create as Container database
-    - Checked (no changes)
-- Pluggable database name
-    - PDB19C01 **(change this value)**
+4. The desktop class will display one screen with all of the information required to create this type of database. If you think you need (for your local environment) other settings than displayed on the Desktop class screen, feel free to use the Server class. If you choose the Server class, please check the documentation for the values to be used. For the Oracle provided Workshop environment, the Desktop class is enough.
 
- ![](./images/02-OUI-3of9.png)
+    Make sure to check and change the following values in the various fields:
 
-- After you have entered the correct values, please press the `NEXT` button to continue.
+    - Oracle Base
+        - /u01/app/oracle (no changes)
+    - Database File Location
+        - /u01/oradata **(change this value)**
+    - Database Edition
+        - Enterprise Edition (no changes)
+    - Characterset
+        - Unicode (no changes)
+    - OSBDA group
+        - oinstall (no changes)
+    - Global Database name
+        - DB19C **(change this value)**
+    - Password
+        - Welcome_123 **(change this value)**
+    - Create as Container database
+        - Checked (no changes)
+    - Pluggable database name
+        - PDB19C01 **(change this value)**
 
- The following screen should be visible:
+    ![](./images/02-OUI-3of9.png)
 
- ![](./images/03-sudo.png)
+    - After you have entered the correct values, please press the `NEXT` button to continue.
 
- Like previous installations, the `root.sh` script needs to be executed after the relinking and registration of the Oracle Home. This screen lets you decide whether or not you want the OUI to do this for you. In this workshop environment, you can use the sudo option for automatic execution of the root.sh script(s). For your local environment (at home), do what applies to your situation.
+5. The following screen should be visible:
 
-- Check the option to execute the configuration scripts automatically
-    - Select the 'Use sudo' radio button
-    - Change the command to execute to `/bin/sudo`
-    - Enter *any* password in the Password field.
-        - Please note the screen will display an error if you do not supply a (random) Password
-- Click the 'Next' button to continue.
+    ![](./images/03-sudo.png)
 
- The system will now start checking the prerequisites for the 19c installation.
+    Like previous installations, the `root.sh` script needs to be executed after the relinking and registration of the Oracle Home. This screen lets you decide whether or not you want the OUI to do this for you. In this workshop environment, you can use the sudo option for automatic execution of the root.sh script(s). For your local environment (at home), do what applies to your situation.
 
- ![](./images/05-OUI-5of9.png)
+    - Check the option to execute the configuration scripts automatically
+        - Select the 'Use sudo' radio button
+        - Change the command to execute to `/bin/sudo`
+        - Enter *any* password in the Password field.
+            - Please note the screen will display an error if you do not supply a (random) Password
+    - Click the 'Next' button to continue.
 
- If all prerequisites have been checked and the preparation check can find no warnings or errors, the OUI will display the summary screen:
+ 6. The system will now start checking the prerequisites for the 19c installation.
 
- ![](./images/07-OUI-6of9.png)
+    ![](./images/05-OUI-5of9.png)
 
-- Press the `Install` button to start the installation and database creation.
+ 7. If all prerequisites have been checked and the preparation check can find no warnings or errors, the OUI will display the summary screen:
 
- ![](./images/08-OUI-7of9.png)
+    ![](./images/07-OUI-6of9.png)
 
- After about 5 minutes, provided there are no issues during the install, the root.sh script needs to be executed. If you have entered the password for the root user in the OUI, the pop-up box will ask permission to execute the scripts:
+    - Press the `Install` button to start the installation and database creation.
 
- ![](./images/09-OUI-Pup-up.png)
+    ![](./images/08-OUI-7of9.png)
 
-- Click the `Yes` button to continue
+ 8. After about 5 minutes, provided there are no issues during the install, the root.sh script needs to be executed. If you have entered the password for the root user in the OUI, the pop-up box will ask permission to execute the scripts:
 
- > If you did not provide a root password or sudo information, a different window will be displayed.
- >
- > ![](./images/10-OUI-Pop-up-2.png)
- >
- > If you do not get the option to click `Yes`, please execute the script mentioned in the window as root user in a terminal environment.
+    ![](./images/09-OUI-Pup-up.png)
 
- The installer will now start to create the new CDB database with its PDB. The processes will take between 20 and 40 minutes.
+    - Click the `Yes` button to continue
 
- If this is an instructor-led class (either on-site or through a Live-Virtual-Class system) **Please inform your instructor that you are waiting for the database install to finish** to keep track of the progress of the installs perhaps continue with presentations if everybody is waiting.
+    > If you did not provide a root password or sudo information, a different window will be displayed.
+    >
+    > ![](./images/10-OUI-Pop-up-2.png)
+    >
+    > If you do not get the option to click `Yes`, please execute the script mentioned in the window as root user in a terminal environment.
 
- After the database creation has finished, the OUI  will display the following screen (or similar):
+9. The installer will now start to create the new CDB database with its PDB. The processes will take between 20 and 40 minutes.
 
- ![](./images/11-OUI-8of8.png)
+    If this is an instructor-led class (either on-site or through a Live-Virtual-Class system) **Please inform your instructor that you are waiting for the database install to finish** to keep track of the progress of the installs perhaps continue with presentations if everybody is waiting.
 
-- Press the `Close` button to end the Universal Installer session.
+10. After the database creation has finished, the OUI  will display the following screen (or similar):
 
- Your 19c Oracle Home has been created, and the initial database (DB19C) has been started.
+    ![](./images/11-OUI-8of8.png)
 
-## Change default memory parameters and perform administration ##
+    - Press the `Close` button to end the Universal Installer session.
+
+    Your 19c Oracle Home has been created, and the initial database (DB19C) has been started.
+
+## Task 3: change default memory parameters and perform administration ##
 
  The OUI takes a certain percentage of the available memory in our environment as default SGA size. In our workshop environment, this is an SGA of 18G. We need the memory for other tasks (databases) later on, so we will need to lower the memory usage of the new instance:
 
- Please execute the following commands as Oracle user:
+1. Please execute the following commands as Oracle user to login to the database:
 
-````
-$ <copy>. oraenv</copy>
-````
-````
-ORACLE_SID = [oracle] ? <copy>DB19C</copy>
-The Oracle base remains unchanged with value /u01/app/oracle\
-````
-````
-$ <copy>sqlplus / as sysdba</copy>
+    ````
+    $ <copy>. oraenv</copy>
+    ````
+    ````
+    ORACLE_SID = [oracle] ? <copy>DB19C</copy>
+    The Oracle base remains unchanged with value /u01/app/oracle\
+    ````
+    ````
+    $ <copy>sqlplus / as sysdba</copy>
 
+    SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 2 11:39:20 2020
+    Version 19.3.0.0.0
 
-SQL*Plus: Release 19.0.0.0.0 - Production on Thu Apr 2 11:39:20 2020
-Version 19.3.0.0.0
+    Copyright (c) 1982, 2019, Oracle.  All rights reserved.
 
-Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+    Connected to:
+    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+    Version 19.3.0.0.0
+    ````
+2. Change the parameters for the memory setting to a lower value:
 
-Connected to:
-Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-Version 19.3.0.0.0
-````
-````
-SQL> <copy>alter system set sga_max_size=1300M scope=spfile;</copy>
+    ````
+    SQL> <copy>alter system set sga_max_size=1300M scope=spfile;</copy>
 
-System altered.
-````
-````
-SQL> <copy>alter system set sga_target=1300M scope=spfile;</copy>
+    System altered.
+    ````
+    ````
+    SQL> <copy>alter system set sga_target=1300M scope=spfile;</copy>
 
-System altered.
-````
-````
-SQL> <copy>shutdown immediate</copy>
-Database closed.
-Database dismounted.
-ORACLE instance shut down.
-````
-````
-SQL> <copy>startup</copy>
-ORACLE instance started.
+    System altered.
+    ````
+3. Shutdown and startup the database to get the parameters into effect:
 
-Total System Global Area 1375728872 bytes
-Fixed Size                  9135336 bytes
-Variable Size             385875968 bytes
-Database Buffers          973078528 bytes
-Redo Buffers                7639040 bytes
-Database mounted.
-Database opened.
-````
+    ````
+    SQL> <copy>shutdown immediate</copy>
+    Database closed.
+    Database dismounted.
+    ORACLE instance shut down.
+    ````
+    ````
+    SQL> <copy>startup</copy>
+    ORACLE instance started.
 
- We can now close SQLPlus:
+    Total System Global Area 1375728872 bytes
+    Fixed Size                  9135336 bytes
+    Variable Size             385875968 bytes
+    Database Buffers          973078528 bytes
+    Redo Buffers                7639040 bytes
+    Database mounted.
+    Database opened.
+    ````
 
-````
-SQL> <copy>exit</copy>
-````
+4. We can now exit SQLPlus:
 
-### Upgrade autoupgrade.jar file ###
-
- For the autoupgrade lab, we need to put the latest version in the new 19c Oracle home. Please execute the following commands:
-
-````
-$ <copy>mv /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/autoupgrade.jar /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/autoupgrade.jar.org</copy>
-````
-````
-$ <copy>cp /source/autoupgrade.jar /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/</copy>
-````
+    ````
+    SQL> <copy>exit</copy>
+    ````
 
 ### Make your 19c database startup using dbstart ###
 
- If you shut down your Hands-On-Lab environment, you will need to start the databases again. To make this automatic (using the
+5. If you shut down your Hands-On-Lab environment, you will need to start the databases again. To make this automatic (using the default dbstart tool), execute the following command:
 
-````
-$ <copy>sudo sed -i 's/:N/:Y/' /etc/oratab</copy>
-````
+    ````
+    $ <copy>sudo sed -i 's/:N/:Y/' /etc/oratab</copy>
+    ````
 
- Your container database and your environment are now ready for the Hands-On labs.
+### Task 4: upgrade autoupgrade.jar file ###
+
+For the autoupgrade lab, we need to put the latest version in the new 19c Oracle home.
+
+1. Please execute the following commands:
+
+    ````
+    $ <copy>mv /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/autoupgrade.jar /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/autoupgrade.jar.org</copy>
+    ````
+    ````
+    $ <copy>cp /source/autoupgrade.jar /u01/app/oracle/product/19.0.0/dbhome_193/rdbms/admin/</copy>
+    ````
+
+You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
 - **Author** - Robert Pastijn, Database Product Management, PTS EMEA - initial version March 2019
-- **Migrated to Github** - Robert Pastijn, Database Product Management, PTS EMEA - April 2020
-- **Updated for Livelabs** - Robert Pastijn, Database Product Management, PTS EMEA - June 2021
-    - Changed execute of root.sh from password to sudo
+- **Last Update** - Robert Pastijn, Database Product Management, PTS EMEA - November 2021
