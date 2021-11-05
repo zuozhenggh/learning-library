@@ -21,17 +21,17 @@ This guide shows you how to provision the OCI Data Science service on the Oracle
 
 1. In your Oracle CLoud Console, open the menu.
 
+![](./images/openmenu.png)
+
 2. Select Analytics & AI -> Data Science.
 
 Data Science should be under the Machine Learning category.
 
 3. Click Create Project
 
-4. Choose the proper compartment to create your project in.
+4. Choose the proper compartment to create your project in and then click Create.
 
 Name and Description are optional but may help you find your project more easily later.
-
-5. Click Create.
 
 ## Task 2: Create a Data Science Notebook
 

@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Rertail Segmentation is the process of separating customers into useful and identifiable categories based on product or service requirements. This allows you target specific types of customers with special marketing that is catered to them. This lab will be broken down into four parts: getting started with OCI Data Science, accessing the data uploaded locally using ADW, and using an advanced clustering technique to group similar behaving customers together.
+Retail Segmentation is the process of separating customers into useful and identifiable categories based on product or service requirements. This allows you target specific types of customers with special marketing that is catered to them. This lab will be broken down into four parts: getting started with OCI Data Science, accessing the data uploaded locally using ADW, and using an advanced clustering technique to group similar behaving customers together.
 
 Estimated workshop time: 90 minutes (this includes all the labs in this workshop)
 
