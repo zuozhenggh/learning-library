@@ -115,7 +115,7 @@ Let's create a **Greeting Intent**.
 
 Time to **integrate** your **Custom Component with the Intent** `ListTasks` created before.
 
-1. **Go** to the **Flows** view ![Flows](./images/flows-menu-item2.png) on the left menu.
+1. **Go** to the **Flows** view ![Flows](./images/flows-menu-item3.png) on the left menu.
 
     You will **see** the `YAML` file that define the behavior of your **Skill**.
 
