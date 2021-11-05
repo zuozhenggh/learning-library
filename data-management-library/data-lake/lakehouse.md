@@ -114,7 +114,7 @@ Create the external table or view to get the json file data that is stored in th
 BEGIN
 DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
 table_name => 'json_movie_data_ext2',
-file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/ouDV0uXS0m0vSkJ7Ok2-W0FfSPIsLDHkXF7aSBevClUpS7zdD0wOe4DHVn5r5IvY/n/c4u04/b/data_lakehouse/o/export-stream-2020-updated.json',
+file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/ECSyjYVno_ekE_qrWZ-g3LwGvNvxkFkgcDAC3OeTUXvmXNxl1umLqf6NXDa2sL5Q/n/c4u04/b/data_lakehouse/o/export-stream-2020-updated.json',
 column_list => 'doc varchar2(32000)',
 field_list => 'doc char(30000)',
 format => json_object('delimiter' value '\n')

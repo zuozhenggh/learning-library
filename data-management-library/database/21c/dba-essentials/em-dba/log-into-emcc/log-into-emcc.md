@@ -33,12 +33,12 @@ From Oracle EMCC, you can do various activities, such as view details of your Or
    **Note:** If you get a security certificate warning, you can safely ignore the error. Depending on your web browser, click *Advanced* or *More Information* and continue to the login page.
 
    ![Oracle EMCC Login URL](images/emcc-001-login-url.png)
-
+ 
     > **URL Syntax**  
     > The Oracle EMCC URL comprises the hostname and the port number - `https://hostname:portnumber/em`.  
-    For this lab, the hostname for Oracle EMCC is *emcc* or *emcc.livelabs.oraclevcn.com* and the port number is *7803*. 
+    For this lab, the hostname for Oracle EMCC is *emcc* or *emcc.livelabs.oraclevcn.com* and the port number is *7803*. The values may differ depending on the system you are using. 
 
-   To view your hostname, open a terminal window and run the command *hostname*.
+   To view your hostname, open a terminal window and run the command `hostname`.
 
 3. Enter the login credentials for Oracle EMCC.  
    **Username** - *sysman* (not case sensitive)  
@@ -68,4 +68,4 @@ You may now **proceed to the next lab**.
 
 - **Contributors** - Suresh Rajan, Kurt Engeleiter, Prakash Jashnani, Subhash Chandra 
 
-- **Last Updated By/Date** - Manish Garodia, October 2021
+- **Last Updated By/Date** - Manish Garodia, November 2021
