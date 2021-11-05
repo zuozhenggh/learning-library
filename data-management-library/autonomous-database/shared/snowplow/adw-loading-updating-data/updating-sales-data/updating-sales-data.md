@@ -45,7 +45,6 @@ MovieStream is a global business with finance departments distributed around the
 
     ![Query result showing space consumed by movie sales table](images/initialsize.png)
 
-<br><br>
 
 ## Task 2: Merging in the adjustments from files
 
@@ -65,7 +64,7 @@ In this task, we will merge in all the country-specific adjustment files into ou
 
 5. In this case, we do not want to create a new table, but to merge all these adjustments into our current fact table. Change the Option from **Create Table** to **Merge into Table**. Then, under **Name**, select the **MOVIE\_SALES\_FACT** table.
 
-6. In the **Mapping** section, check the **Merge Key** box for the column **ORDER\_NUM** as this column will be the key column for the merge. This means that any records in the table with the same **ORDER\_NUM** value as one of the records in the adjustment file will be updated, and any adjustment file records wih new **ORDER_\NUM** values will be added as new records in the table. The final settings should look like this:
+6. In the **Mapping** section, check the **Merge Key** box for the column **ORDER\_NUM** as this column will be the key column for the merge. This means that any records in the table with the same **ORDER\_NUM** value as one of the records in the adjustment file will be updated, and any adjustment file records with new **ORDER_\NUM** values will be added as new records in the table. The final settings should look like this:
 
     ![Settings to merge in adjustment files](images/mergeconfig.png)
 
@@ -113,7 +112,6 @@ The job should take less than 2 minutes to run. Note that the primary key that w
 
     ![Query result showing very slight increase in space usage](images/sizeaftermerge.png)
 
-<br><br>
 
 ## Summary
 
