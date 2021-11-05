@@ -56,10 +56,9 @@ Your options are:
 
     - **SSH Public Key**: Select from the following two options
         - *Paste SSH Key*: Paste the plaintext key string or
+        - *Choose SSH Key File*: Drag-n-drop or browse and select a valid public key of *openssh* format from your computer
 
     ![](./images/create-stack-novnc-ssh-2.png " ")
-
-        - *Choose SSH Key File*: Drag-n-drop or browse and select a valid public key of *openssh* format from your computer
 
     ![](./images/create-stack-novnc-ssh-3.png " ")
 
@@ -78,15 +77,15 @@ Your options are:
 
   ![](./images/create-stack-novnc-ssh-4.png " ")
 
-10. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
+7. For this section we will provision a new VCN with all the appropriate ingress and egress rules needed to run this workshop.  If you already have a VCN, make sure it has all of the correct ingress and egress rules and skip to the next section.
     - **Use Existing VCN?:** Accept the default by leaving this unchecked. This will create a **new VCN**.
 
-11. Click **Next**.
-12. Select **Run Apply** and click **Create**.
+8. Click **Next**.
+9. Select **Run Apply** and click **Create**.
 
   ![](./images/create-stack-novnc-4.png " ")
 
-13. Your stack has is now created and the *Apply* action triggered is running to deploy your environment!  
+10. Your stack has is now created and the *Apply* action triggered is running to deploy your environment!  
 
   ![](./images/create-stack-novnc-ssh-7.png " ")
 
@@ -129,10 +128,9 @@ If you just completed Task 1A, please proceed to Task 2.  If you have an existin
 
     - **SSH Public Key**: Select from the following two options
         - *Paste SSH Key*: Paste the plaintext key string or
+        - *Choose SSH Key File*: Drag-n-drop or browse and select a valid public key of *openssh* format from your computer
 
     ![](./images/create-stack-novnc-ssh-2.png " ")
-
-        - *Choose SSH Key File*: Drag-n-drop or browse and select a valid public key of *openssh* format from your computer
 
     ![](./images/create-stack-novnc-ssh-3.png " ")
 
@@ -176,9 +174,9 @@ For ease of execution of this workshop, your VM instance has been pre-configured
 
 1. Navigate to **Stack Details**, **Application Information** tab, and click on the remote desktop URL
 
-  ![](./images/create-stack-novnc-10.png " ")
+  ![](./images/create-stack-novnc-ssh-8.png " ")
 
-  ![](./images/novnc-login-1.png " ")
+  ![](./images/novnc-login-ssh.png " ")
 
   This should take you directly to your remote desktop in a single click.
 
