@@ -23,13 +23,13 @@ In this lab, you will
     - Your IP address is visible on the Livelabs -> Launch Workshop page
     - The URL to the NoVNC Remote Desktop is also visible on this screen
 
- ![](./images/01-LL-details.png)
+     ![](./images/01-LL-details.png)
 
 ## Task 1: Connect to the Hands-On Lab client image using NoVNC ##
 
  Click on the supplied link on the LiveLabs Attendee Page. A new browser window should open and show you a running Linux desktop like this:
 
- ![](./images/02-NoVNC-Desktop.png)
+     ![](./images/02-NoVNC-Desktop.png)
 
 ### Suggestion ####
 

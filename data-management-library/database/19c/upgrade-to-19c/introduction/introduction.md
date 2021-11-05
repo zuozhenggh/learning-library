@@ -31,9 +31,11 @@ Estimated time needed to complete all steps in this hands-on is about 3 hours.
 
 - From the menu, click on the lab that you would like to run. For example, if you want to proceed to **Lab 0**, click **Lab 0: Verify the environment**.
 
- ![](./images/menu.jpg "")
+     ![](./images/menu.jpg "")
 
 - You may close the menu by clicking the  ![](./images/menu-button.png "") again.
+
+You may now proceed to the next lab.
 
 ## Acknowledgements ##
 
