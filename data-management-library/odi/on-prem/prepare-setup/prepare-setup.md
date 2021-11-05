@@ -12,7 +12,6 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 ### Prerequisites
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
-- SSH Keys (optional)
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
@@ -33,7 +32,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 8080           | Tomcat (Guacamole)                    |
+| 6080           | NoVnc                 |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
