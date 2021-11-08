@@ -103,7 +103,7 @@ We cannot cover the use of vi but we will share the commands needed to change th
     ```
     ![Cloud Shell tasks.js](./images/cloud_shell_task.js.png)
 
-8. **Edit** the file `tasks.js` and **replace** the whole content with the following code or download it from <a href="./files/tasks.js" target="\_blank">here</a> to download the customer component source code.
+8. **Edit** the file `tasks.js`. **Remove** the whole content and **replace** it with the following source code or download it from <a href="./files/tasks.js" target="\_blank">here</a>.
 
     ```
     <copy>vi tasks.js</copy>

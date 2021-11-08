@@ -53,7 +53,6 @@ This lab assumes you have:
 
     ![](./images/convg-novnc-landing.png " ")  
 
-
 You may now [proceed to the next lab](#next).
 
 ## Appendix 1: Managing Startup Services
