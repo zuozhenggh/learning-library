@@ -32,12 +32,12 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Access OML AutoML UI
+## Task 1: Access Oracle Machine Learning AutoML UI
 
 To access AutoML UI, you must sign into the Oracle Machine Learning user interface, which also includes Oracle Machine Learning Notebooks, on Autonomous Database:
 To sign into Oracle Machine Learning (OML) Notebooks from the Autonomous Database Service Console:
 
-1. Select an Autonomous Database instance and on the Autonomous Database details page click **Service Console**.
+1. Select an Autonomous Database instance, and on the Autonomous Database details page click **Service Console**.
 
 	![Service Console](images/service_console.png)
 
@@ -51,11 +51,11 @@ To sign into Oracle Machine Learning (OML) Notebooks from the Autonomous Databas
 
 5. Enter your username and password, and click **Sign in**. This opens the Oracle Machine Learning user interface homepage.
 
-6. On your Oracle Machine Learning homepage, click **AutoML**.
+6. On your Oracle Machine Learning homepage, click **AutoML** in the Quick Actions section.
 
 	![Homepage](images/homepage_automl.png)
 
-   If you add another paragraph, add 3 spaces before the line.
+
 
 
 ## Task 2: Create an Experiment
@@ -64,7 +64,11 @@ When creating an Experiment, you must define the data source and the target of t
 
 1. Click **AutoML** on your Oracle Machine Learning home page. The AutoML Experiments page opens.
 
+	![Homepage](images/homepage_automl.png)
+
 2. Click **Create**. The Create Experiments page opens.
+
+	![AutoML Experiment page](images/create_automl_exp.png)
 
 3. In the **Name** field, enter **Customers 360**.
 
@@ -86,7 +90,7 @@ When creating an Experiment, you must define the data source and the target of t
 ### Task 2.1: Adjust Additional Settings
 To adjust additional settings of this experiment:
 
-1. Expand the Additional Settings section on the Experiments page, and make the following changes:
+1. Expand the **Additional Settings** section on the Experiments page, and make the following changes:
 
 	![Additional Settings](images/additional_settings_bal_accr.png)
 
@@ -99,9 +103,9 @@ To adjust additional settings of this experiment:
 	*  **High** level gives the greatest parallelism but significantly limits the number of concurrent jobs.
 	*  **Medium** level enables some parallelism but allows greater concurrency for job processing.
 
->Note: Changing the database service level setting on the Always Free Tier will have no effect since there is a 1 OCPU limit. However, if you increase the OCPUs allocated to your autonomous database, then you can increase the Database Service Level to Medium or High.
+>**Note:** Changing the database service level setting on the Always Free Tier will have no effect since there is a 1 OCPU limit. However, if you increase the OCPUs allocated to your autonomous database, then you can increase the Database Service Level to Medium or High.
 
-5. Leave the other settings under Additional Settings as is, and click Start and then Faster Results to trigger the AutoML UI experiment to run.
+5. Leave the other settings under **Additional Settings** as is, and click **Start** and then **Faster Results** to trigger the AutoML UI experiment to run.
 
 	![Experiment Start options](images/faster_results.png)
 
@@ -110,13 +114,13 @@ To adjust additional settings of this experiment:
 	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of hyperparamter combinations and hence yields faster results.
 	* **Better Accuracy:** Select this option if you want more hyperparameter combinations to be tried for possibly more accurate models.
 
-> Note: This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
+> **Note:** This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
 
 This completes the task of creating an experiment.
 
 
 ### Task 2.2 View Leader Board with Additional Metrics
-When an experiment starts running, the status is displayed in a progress bar. When an experiment runs, it starts to show the results in the Leader Board. Click Details next to the **Stop** button to view the experiment run details, as shown in the screen shot.
+When an experiment starts running, the status is displayed in a progress bar. When an experiment runs, it starts to show the results in the Leader Board. Click **Details** next to the **Stop** button to view the experiment run details, as shown in the screen shot.
 
 ![Experiment Progress bar](images/exp_progress_bar.png)
 
@@ -169,7 +173,7 @@ When you deploy a model using the OML AutoML UI, you create an Oracle Machine Le
 
 To deploy a model:  
 
-1. Open the Customer 360 experiment.
+1. Go to the AutoML Experiments page and click **Customer 360** to open the experiment.
 
 2. Scroll down to the Leader Board, select the model **NB_CUSTOMER360** and click **Deploy**. The Deploy Model dialog opens.
 
@@ -284,4 +288,4 @@ This completes the task of creating a notebook based on a model and viewing the 
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, October, 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, November, 2021
