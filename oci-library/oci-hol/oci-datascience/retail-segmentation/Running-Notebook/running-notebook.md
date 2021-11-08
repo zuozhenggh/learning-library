@@ -8,6 +8,8 @@ This guide will tell you how to run the Retail Segmentation demo notebook on the
 
 1. Return to your datascience notebook that you have created and press Open.
 
+![](./images/opennotebook.png)
+
 2. Place the config file associated with your oracle account and tenancy into the ./.oci directory within the directory on Oracle Data Science.
 
 Note: You can easily upload files to OCI Data Science by dragging a file from your local folder onto the file directory box on the left.
@@ -35,7 +37,13 @@ The code below will help you unzip the folder and move it to a separate folder o
 
 6. Press the + button on the top left to open up the launch, and double click the environment explorer.
 
+![](./images/plusbutton.png)
+
+![](./images/environmentexplorer.png)
+
 7. Search for "General Machine Learning" on the top right, and then select General Machine Learning for CPU's.
+
+![](./images/searchGML.png)
 
 The kernel may already be displayed by defauly even before you search.
 Also, other machine learning libraries such as Tensorflow for CPU should work as well so long as it is CPU for CPU instanes and GPU for GPU instances.
@@ -44,7 +52,11 @@ Also, other machine learning libraries such as Tensorflow for CPU should work as
 
 9. Click the copy button next to the line of code under install.
 
+![](./images/copybutton.png)
+
 10. Open a terminal from the launch and run the line of code.
+
+![](./images/codeline.png)
 
 If it asks you for version number just press enter, and if it asks you to say yes, press y and then press enter,
 
@@ -52,13 +64,21 @@ If it asks you for version number just press enter, and if it asks you to say ye
 
 1. Open the data science notebook by double clicking it in the directory on the left hand side.
 
+![](./images/openfile.png)
+
 2. Now, you must fill in the information in the third block of code.
+
+![](./images/credentials.png)
 
 TNS_ADMIN will equal the directory which you put the wallet folder in.
 ADW_SID refers to a value within the tnsnames.ora file in the unzipped wallet folder.
 Set it to the value that ends with "low" which should look something like "databasename"_low
 ADW_USER and ADW_PASSWORD will be the username and password that you had created earlier using OML User Administration.
 
-3. For the fourth block of code, underneath what you had just edited, make sure the string within the first set of quotes points to the location of the data file you had downloaded. 
+3. For the fourth block of code, underneath what you had just edited, make sure the string within the first set of quotes points to the location of the data file you had downloaded.
+
+![](./images/filelocation.png)
 
 4. With this, you should be able to press run all, at the top, which will execute the code sequentially, and produce results.
+
+![](./images/runall.png)
