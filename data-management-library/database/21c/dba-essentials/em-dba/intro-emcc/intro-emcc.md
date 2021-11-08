@@ -4,19 +4,15 @@
 
 After you install Oracle Database 21c on your host, let's connect to the database, and get started with database administration using Oracle Enterprise Manager (Oracle EM).
 
-<if type="em-dba">
 **Oracle Enterprise Manager Cloud Control (Oracle EMCC)** is Oracle’s on-premise management solution providing centralized monitoring, administration, and lifecycle management functionality for the complete IT infrastructure. It offers a single dashboard to monitor and manage your entire computing environment from a web-based console.
 
 Oracle EM offers a comprehensive set of performance and health metrics that allows unattended monitoring of key components in your environment. These key components include but are not limited to applications, application servers, Oracle Databases, and the back-end components on which they rely, such as hosts, operating systems, storage, and so on.
-</if>
 
 Estimated Workshop Time: 1 hour 45 minutes
 
-<if type="em-dba">
 Watch this video on *Oracle EMCC Console Overview*.
 
 [](youtube:8VgdTYmfJYs)
-</if>
 
 ### Objectives
 
@@ -26,9 +22,7 @@ In this workshop, you will learn how to *connect to SQL Plus* and *view containe
 
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 
-<if type="em-dba">
 **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-</if>
 
 ## Appendix 1: Oracle EMCC Architecture
 
@@ -99,4 +93,4 @@ Click on the next lab to **Get Started**.
 
 - **Contributors** - Suresh Rajan
 
-- **Last Updated By/Date** - Manish Garodia, October 2021
+- **Last Updated By/Date** - Manish Garodia, November 2021
