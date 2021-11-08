@@ -46,4 +46,3 @@ In this workshop you will:
 - **Contributors** - Anoosha Pilli, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, LiveLabs QA
 - **Last Updated By/Date** - Arabella Yao, August 2021
 - **Workshop Expiration Date** - March 31, 2022
-

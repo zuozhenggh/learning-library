@@ -2,15 +2,19 @@
 
 ## Introduction
 
-In this lab you will build an application based on the data structures you built in previous labs.
+In this lab, you will build an application based on the data structures you built in previous labs.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:ssUKy-bZGUw)
 
 ### Objectives
 In this lab, you will:
 - Create an application using the tables and data that you already have installed.
 
-## Task 1: Creating an Application
+## Task 1: Create an Application
 
 1. In the App Builder menu, click **App Builder**.
 
@@ -22,13 +26,13 @@ In this lab, you will:
 
     ![](./images/new-app.png " ")
 
-## Task 2: Naming the Application
+## Task 2: Name the Application
 
 1. In the Create Application wizard, for Name enter **ACME Shop**.
  
 ## Task 3: Add the Dashboard Page
 
-A dashboard page is a great way to show important information using various charts. When you installed the Sample Dataset, it also created a number of views, which joins data from various tables. These views are ideal as the basis for the dashboard charts.
+A dashboard page is a great way to show important information using various charts. When you installed the Sample Dataset, it also created a number of views, which join data from various tables. These views are ideal as the basis for the dashboard charts.
 
 1. In the Create Application wizard, click **Add Page**.
 
@@ -82,7 +86,7 @@ A dashboard page is a great way to show important information using various char
 
 7. Click Advanced and check **Set as Administration Page**.
 
-Setting a page as Administration Page will make that only certain users can run the page. In this case, only users with Administration Rights will be able to run the Dashboard page, which means that this page will require authentication.
+    Setting a page as Administration Page will make that only certain users can run the page. In this case, only users with Administration Rights will be able to run the Dashboard page, which means that this page will require authentication.
 
 8. Click **Add Page**.
 
@@ -148,7 +152,7 @@ Since we just designated the product faceted search page we just created as the 
     - PRODUCT_REVIEWS
     - STORES    
 
-2. For each page you edit, click Advanced and check **Set as Administration Page**.
+2. For each page you edit, click **Advanced** and check **Set as Administration Page**.
 3. Click **Save Changes**.
 
     ![](./images/admin-pages.png " ") 
@@ -163,7 +167,7 @@ Since we just designated the product faceted search page we just created as the 
 3. On the Report Page, enter the following:
     - Page Name - enter **Manage Products**
     - Table - select **PRODUCTS**
-    - Check Include Form
+    - Check **Include Form**
 
 4. For Lookup Columns, enter the following:
     - Lookup Key 1 - select **CLOTHING_ID**
@@ -173,9 +177,9 @@ Since we just designated the product faceted search page we just created as the 
     - Lookup Key 3 - select **COLOR_ID**
     - Display Column 3 - select **COLOR_LOOKUP.COLOR**
 
-5. Click Advanced and check **Set as Administration Page**.
+5. Click **Advanced** and check **Set as Administration Page**.
 
-6. Click **Add Page**
+6. Click **Add Page**.
 
     ![](./images/ir-page2.png " ") 
 
@@ -207,9 +211,9 @@ Click **Run Application**.
     The new application will be displayed. Explore the pages that you just created by clicking on the navigation menu.
 
 
-You now know how to create an application with a number of different page types based on existing database objects. 
+You now know how to create an application with a number of different page types based on existing database objects. You may now **proceed to the next lab**. 
 
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021

@@ -1,4 +1,4 @@
-# Oracle Database Vault on an autonomous database
+# Oracle Database Vault on an Autonomous Database
 
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Database Vault (DV). It gives the user an opportunity to learn how to configure those features in an Autonomous Database to prevent unauthorized privileged users from accessing sensitive data.
@@ -8,6 +8,10 @@ Managed database services run the risk of 'Admin snooping', allowing privileged 
 You can deploy controls to block privileged account access to application data and control sensitive operations inside the database. Trusted paths can be used to add additional security controls to authorized data access and database changes. IP addresses, usernames, client program names and other factors can be used as part of Oracle Database Vault security controls to increase security. **Oracle Database Vault secures existing database environments transparently, eliminating costly and time consuming application changes.**
 
 *Estimated Time:* 35 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:O_Hi2-vZ-zU)
 
 *Version tested in this lab:* Oracle Autonomous Database 19c
 
@@ -36,7 +40,7 @@ This lab assumes you have:
 - You have completed "Prepare Your Environment" step previously
 
 ### Lab Timing (estimated)
-| Step No. | Feature | Approx. Time |
+| Task No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
 | 1 | Enable Database Vault | <5 minutes |
 | 2 | Enable Separation of Duties (SoD) | <5 minutes |
@@ -679,7 +683,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
 5. Now, Database Vault is correctly disabled!
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## **Appendix**: About the Product
 ### **Overview**

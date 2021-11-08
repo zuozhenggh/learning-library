@@ -6,6 +6,8 @@ This workshop introduces key graph data modeling and analysis concepts and the i
 
 Estimated Workshop Time: 60 minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/Ymk9TE9Q2K4).</if>
+
 ### About Graph Studio
 Oracle Autonomous Database has features that enable it to function as a scalable property graph database. They automate the creation of graph models and in-memory graphs from database tables. They include notebooks and developer APIs for executing graph queries using PGQL, a SQL-like graph query language, and over 60 built-in graph algorithms, and many visualizations including native graph visualization.
 

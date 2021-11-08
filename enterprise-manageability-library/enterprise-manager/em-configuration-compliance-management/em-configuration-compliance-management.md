@@ -5,6 +5,9 @@ The objective of this lab is to highlight Oracle Enterprise Manager Cloud Contro
 
 *Estimated Lab Time:* 60 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:xEKClAvB-Yg)
+
 ### About Configuration and Compliance Management
 
 Changes to configuration properties of database and host targets invariably happen, typically because of common events like patches and upgrades. At some point a change to one component can affect the overall system in a negative way. Detecting the root cause becomes paramount. With Configuration Management, one can continuously monitor and track configuration drifts of targets against the reference configuration. Enterprise Manger automatically collects a comprehensive set of configuration properties of all managed targets across the datacenter and cloud.

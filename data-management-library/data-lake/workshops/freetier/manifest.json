@@ -5,6 +5,7 @@
         {
             "title": "Introduction",
             "description": "Introduction to Oracle Cloud Data Lakehouse",
+            "type": "odbw",
             "filename": "./../../introduction.md"
         },
         {
@@ -33,7 +34,7 @@
             "filename": "./../../data-lake.md"
         },
         {
-            "title": "Lab 4: Lakehouse: Putting it Together for Analytics",
+            "title": "Lab 4: Lakehouse: Putting it together for Analytics",
             "description": "This lab shows you pull data into analytics, and reviews the Oracle Data Lake House.",
             "filename": "./../../lakehouse.md"
         },

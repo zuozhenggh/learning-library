@@ -13,58 +13,55 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
-      "title": "Lab 1: Generate SSH Keys",
-      "description": "Generate SSH Key",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
-    },
-    {
-      "title": "Lab 2: Prepare Setup",
+      "title": "Lab 1: Prepare Setup",
       "description": "How to download your ORM stack and update security rules for an existing VCN",
-      "filename": "../../../prepare-setup/prepare-setup.md"
+      "publisheddate": "09/28/2020",
+      "filename": "../../../prepare-setup/prepare-setup.md",
+      "type": "with-wls"
     },
     {
-      "title": "Lab 3: Environment Setup",
+      "title": "Lab 2: Environment Setup",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc.md"
     },
     {
-      "title": "Lab 4: Initialize Environment",
+      "title": "Lab 3: Initialize Environment",
       "description": "Initialize Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 5: eShop Application",
+      "title": "Lab 4: eShop Application",
       "description": "eShop Application",
       "filename": "../../eshop-application/eshop-application.md"
     },
     {
-      "title": "Lab 6: Cross Data Type",
+      "title": "Lab 5: Cross Data Type",
       "description": "Oracle Cross Data Type",
       "filename": "../../cross-data-type/cross-data-type.md"
     },
     {
-      "title": "Lab 7: Datatype Demonstration tool",
+      "title": "Lab 6: Datatype Demonstration tool",
       "description": "Datatype Demonstration tool",
       "filename": "../../data-type-demonstration-tool/data-type-demonstration-tool.md"
     },
     {
-      "title": "Lab 8: JSON With Java",
+      "title": "Lab 7: JSON With Java",
       "description": "JSON With Java",
       "filename": "../../json-with-java/json-with-java.md"
     },
     {
-      "title": "Lab 9: ORDS as Microservice",
+      "title": "Lab 8: ORDS as Microservice",
       "description": "ORDS as Microservice",
       "filename": "../../ords-as-microservice/ords-as-microservice.md"
     },
     {
-      "title": "Lab 10: Spatial with Java",
+      "title": "Lab 9: Spatial with Java",
       "description": "Spatial with Java",
       "filename": "../../spatial-with-java/spatial-with-java.md"
     },
     {
-      "title": "Lab 11: XML with Java",
+      "title": "Lab 10: XML with Java",
       "description": "XML with Java",
       "filename": "../../xml-with-java/xml-with-java.md"
     },

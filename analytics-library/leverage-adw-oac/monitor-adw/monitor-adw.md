@@ -74,21 +74,40 @@ Open the browser page with your OAC canvas (previous lab) and click **Refresh Da
 
     ![No New Queries](../monitor-adw/images/ociadwhmonitoredsql3.png)
 
-10. Lets inspect the Data Set. It is set to _automatic caching_ and hence, _queries fetched from cache_.  
-Navigate to OAC, go to the **Data Pane > Data**, Right Click **DCA\_SALES\_DATA** and Select **Inspect**.  
+10. Navigate to OAC, go to **Navigator** on the top left and select **Data**
 
-    ![Inspect](../monitor-adw/images/projectdatasetinspectsmall.png)
+    ![](./images/navigator-data.png)
 
-11. Go to **General** tab and notice the **Data Access** is set _Automatic Caching_.
+11. Search for **DCA\_SALES\_DATA**, Right Click and select **Open**
 
-    ![Data Access](../monitor-adw/images/projectdatasetinspect2small.png)
+    ![](./images/dataset-open.png)
 
-12. We need to set it to _Live_ to make sure queries are fired against the database.  
-Click **Data Access** and change to _Live_ > Click **Save** and then **Close**.
+12. Click **Edit Definition** button from top right
 
-    ![Data Access Live](../monitor-adw/images/projectdatasetinspect3small.png)
+    ![](./images/dataset-edit-definition.png)
 
-13.   Lets regenerate the report to see if fresh queries are getting fired against the database.  
+13. Notice the **Data Access** is set to _Automatic Caching_ and hence, _queries fetched from cache_
+
+    ![](./images/dataset-caching.png)
+
+14. We need to set it to _Live_ to make sure queries are fired against the database.  
+Click **Data Access** and change to _Live_ > Click **Ok**.
+
+    ![](./images/dataset-live.png)
+
+15. Save Dataset
+
+    ![](./images/save-dataset-dca.png)
+
+15. Click Go Back arrow from the top left
+
+    ![](../connect-oac-adw/images/go-back.png)
+
+16. Go back to Home page. Click **Navigator** and select **Home**
+
+    ![](./images/data-home.png)
+
+17. Go Back to ADW, and regenerate the report to see if fresh queries are getting fired against the database.  
 Repeat Steps 2.4 and 2.5.  
 Now... if we refresh, fresh queries can be seen getting generated.
     
@@ -249,7 +268,7 @@ You may now [proceed to the next lab](#next)
 
 ## **Acknowledgements**
 
-- **Author** - Lucian Dinescu, Product Strategy, Analytics
-- **Contributors** -
-- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics
-- **Last Updated By/Date** - Lucian Dinescu, April 2021
+- **Author** - Lucian Dinescu (Oracle Analytics Product Strategy)
+- **Contributors** - 
+- **Reviewed by** - Shiva Oleti (Oracle Analytics Product Strategy), Sebastien Demanche (Oracle Cloud Center of Excellence)
+- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021
