@@ -257,7 +257,7 @@ An easy way to make sure all system parameters are correct in a Linux environmen
     $ <copy>sudo sed -i 's/:N/:Y/' /etc/oratab</copy>
     ````
 
-### Task 4: upgrade autoupgrade.jar file ###
+## Task 4: upgrade autoupgrade.jar file ##
 
 For the autoupgrade lab, we need to put the latest version in the new 19c Oracle home.
 

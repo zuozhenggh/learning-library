@@ -29,7 +29,7 @@ In this lab, you will
 
  Click on the supplied link on the LiveLabs Attendee Page. A new browser window should open and show you a running Linux desktop like this:
 
-     ![](./images/02-NoVNC-Desktop.png)
+    ![](./images/02-NoVNC-Desktop.png)
 
 ### Suggestion ####
 
@@ -49,12 +49,12 @@ In this lab, you will
  You are allowed to add your public key to the `authorized_keys` file in the image.
  It is out of the scope of this hands-on lab to demonstrate how to do this.
 
-### Next step: Lab 1 - Install 19c ###
+### Next step: Lab 2 - Install 19c ###
 
-**All labs depend on the 19c installation in lab 1**
+**All labs depend on the 19c installation in lab 2**
 
-- There is no dependency between the labs after lab 1
-- Please continue with your hands-on experience by running the steps in Lab 1.
+- There is no dependency between the labs after lab 2
+- Please continue with your hands-on experience by running the steps in Lab 2.
 - After finishing Lab 1, continue as instructed to the next lab or choose an exciting lab
     - If one lab is executing the upgrade, you can start another Lab if you want to
     - Every Lab has its dedicated instances and versions, so even the upgrade can run in parallel
