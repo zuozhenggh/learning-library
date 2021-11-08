@@ -488,6 +488,10 @@ algorithm, it will predict the number of nodes needed.
 
 You may now proceed to the next lab.
 
+## Learn More
+
+* [Setting Up the airportdb Database](https://dev.mysql.com/doc/airportdb/en/)
+
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager, Frédéric Descamps, MySQL Community Manager
