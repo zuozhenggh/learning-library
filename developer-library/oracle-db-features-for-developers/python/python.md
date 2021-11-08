@@ -418,7 +418,27 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
 **Note**: If you have already completed the HYBRID PARTITIONING lab the *SH* user has been granted the CREATE ANY DIRECTORY privilege.
 
-1.  Connect to the database as SYS and create a new DIRECTORY object.
+You need to create a file-system directory and place a JSON document in this directory.
+
+1. Create a directory as the **oracle** user
+
+    ````
+    <copy>
+    mkdir -p /home/oracle/labs/python/External
+    </copy>
+    ````
+
+2. Download a ZIP file containing *departments.dmp* and expand this in the directory you have just created
+
+    ````
+    <copy>
+    cd /home/oracle/labs/python/External
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/d0EfswxbBGSA49iEbxkERGZgHiOzJTTyIYPFyRQCfBA/n/c4u03/b/labfiles/o/deptJSON.zip
+    unzip deptJSON.zip
+    </copy>
+    ````
+
+3.  Connect to the database as SYS and create a new DIRECTORY object.
 
     ````
     <copy>
@@ -437,7 +457,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ![](./images/p_pyth_cr_dir.png " " )
 
-2.  Open the python interpreter and connect to the Oracle database as the *SH* user. Open a cursor.
+4.  Open the python interpreter and connect to the Oracle database as the *SH* user. Open a cursor.
 
     ````
     <copy>
@@ -457,7 +477,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ![](./images/step6.2-connectdb.png " " )
 
-3.  To create an external table pointing to the JSON document *departments.dmp*, execute the following in the Python shell.
+5.  To create an external table pointing to the JSON document *departments.dmp*, execute the following in the Python shell.
 
     ````
     <copy>
@@ -465,7 +485,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
     </copy>
     ````
 
-4.  Query the JSON table retrieving all the documents.
+6.  Query the JSON table retrieving all the documents.
 
     ````
     <copy>
@@ -477,7 +497,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ![](./images/p_pythQuery-12.png " " )
 
-5.  The data in the file *departments.dmp* is not a single JSON document. Each row is JSON data consisting of a *Department* object which contains an array of *employees* objects. Each employees object has a Name, a Job Title, and a Hire Date. The Oracle database can manipulate JSON directly, as you have seen with the SQL/JSON operator json\_query. Other operators include json\_value, json\_table, and so on.
+7.  The data in the file *departments.dmp* is not a single JSON document. Each row is JSON data consisting of a *Department* object which contains an array of *employees* objects. Each employees object has a Name, a Job Title, and a Hire Date. The Oracle database can manipulate JSON directly, as you have seen with the SQL/JSON operator json\_query. Other operators include json\_value, json\_table, and so on.
 
     Use Python to retrieve the data from our table, load it into an array, and print the first department name (the indentation is important).
 
@@ -498,7 +518,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ![](./images/step6.5-retrievedata.png " " )
 
-6.  Now determine how many employees there are per department.
+8.  Now determine how many employees there are per department.
 
     ````
     <copy>
@@ -522,5 +542,5 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 
 - **Author** - Troy Anthony
 - **Contributors** - Anoosha Pilli, Dylan McLeod, Arabella Yao
-- **Last Updated By/Date** - Kamryn Vinson, June 2021
+- **Last Updated By/Date** - Troy Anthony, November 2021
 

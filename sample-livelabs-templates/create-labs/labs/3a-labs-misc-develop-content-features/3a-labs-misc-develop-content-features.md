@@ -4,7 +4,7 @@
 
 We'll go over how to implement certain common markdown features and tips in this optional lab.
 
-Here up some resources front and center in case you missed them in the last lab:
+<!-- Here up some resources front and center in case you missed them in the last lab:
 
 - [LiveLabs Lab Markdown Template (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template)
 
@@ -18,7 +18,7 @@ Here up some resources front and center in case you missed them in the last lab:
 
 - [LiveLabs OCI Menu Navigation Common Path Pictures](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning))
 
-- [Porting Workshop to LiveLabs - Checklist](https://confluence.oraclecorp.com/confluence/display/LIVELABS/Porting+Workshop+to+LiveLabs+-+Checklist)
+- [Porting Workshop to LiveLabs - Checklist](https://confluence.oraclecorp.com/confluence/display/LIVELABS/Porting+Workshop+to+LiveLabs+-+Checklist) -->
 
 ### Objectives
 
@@ -168,7 +168,7 @@ This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
-- [LiveLabs Lab Markdown Template (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template)
+<!-- - [LiveLabs Lab Markdown Template (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template)
 
 - [Quick Tour of Markdown Syntax (Confluence)](https://confluence.oraclecorp.com/confluence/display/DCS/Quick+Tour+of+Markdown+Syntax)
 
@@ -178,7 +178,7 @@ This concludes this lab. You may now proceed to the next lab.
 
 - [LiveLabs Sample Workshop](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier)
 
-- [LiveLabs OCI Menu Navigation Common Path Pictures](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning))
+- [LiveLabs OCI Menu Navigation Common Path Pictures](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning)) -->
 
 ## Acknowledgements
 
