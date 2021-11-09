@@ -181,8 +181,11 @@ Description
 
     ![MDS](./images/04mysql08.png " ")
 
-10. Click on Show Advanced Options 
+10. Click on Show Advanced Options
 
+    - Select Networking
+ 
+    - Enter **mdshw** for hostname (Required for Oracle Anayltics Cloud) 
 
 11. Select Data Import tab. 
 
