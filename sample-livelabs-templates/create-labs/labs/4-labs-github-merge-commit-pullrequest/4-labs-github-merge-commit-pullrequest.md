@@ -170,12 +170,25 @@ You may now [proceed to the next lab](#next).
 
   ![](./images/git-hub-sync-ahead.png " ")
 
+### Issue: Clone failed
+  ![](./images/clone-failed.png " ")
+
+  1. Execute the following commands to make sure .gitconfig is updated:                           
+  
+    ```
+    <copy> git config --global core.longpaths true </copy>
+    ```
+
+    ```
+    <copy> git config --global core.ignorecase false </copy>
+    ```
+
 This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
-* [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
-* [Use GitHub Desktop](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+GitHub+Desktop)
+<!-- * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
+* [Use GitHub Desktop](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+GitHub+Desktop) -->
 
 ## Acknowledgements
 
