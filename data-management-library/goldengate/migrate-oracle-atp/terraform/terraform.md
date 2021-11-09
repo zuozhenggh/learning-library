@@ -9,8 +9,8 @@ This first lab is very important and where we will create all of our resources:
 - Virtual Cloud Network
 - Source Oracle database
 - Target Autonomous database
-- Goldengate database registrations
-- Goldengate deployment
+- GoldenGate database registrations
+- GoldenGate deployment
 
 *Estimated time*: 15 minutes
 
@@ -115,7 +115,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 	
-	After you ran the apply command, terraform will start installation of several virtual machines and an autonomous database. Be patient, it will approximately take 6 to 10 minutes, as it is now creating OCI GoldenGate, source and target databases, also registrations of them in Goldengate deployment. During terraform script, if you see an error **Service limits exceeded** in output, please visit the Appendix section for instructions to correct the issue.
+	After you ran the apply command, terraform will start installation of several virtual machines and an autonomous database. Be patient, it will approximately take 6 to 10 minutes, as it is now creating OCI GoldenGate, source and target databases, also registrations of them in GoldenGate deployment. During terraform script, if you see an error **Service limits exceeded** in output, please visit the Appendix section for instructions to correct the issue.
 	
 3. Make a copy of your output results in your notepad for later use.
 

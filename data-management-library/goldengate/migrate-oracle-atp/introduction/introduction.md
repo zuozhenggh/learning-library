@@ -42,12 +42,16 @@ In this workshop you will :
 - Virtual Cloud Network: we will create a VCN with a public sub-network and internet access to avoid complexity.
 - Source Oracle database: we will create a source database in a Virtual Machine with sample schema, which acts as our source on-premise database. Multiple preparations yet mandatory steps are automated by Terraform and bash script, such as creating GGADMIN schema, granting accesses, enabling supplemental logs etc.
 - Target Autonomous database: we will provision Oracle Autonomous Database to act as our target database.
-- Goldengate database registration: while our databases are being provisioned and configured, we will register them. Database registration is a critical part of GoldenGate deployment. There is no way to connect databases from Goldengate deployment without active registered databases.
-- Goldengate deployment: we will create a Microservices environment for an Autonomous Database that applies trails from source to target autonomous database.
+- GoldenGate database registration: while our databases are being provisioned and configured, we will register them. Database registration is a critical part of GoldenGate deployment. There is no way to connect databases from GoldenGate deployment without active registered databases.
+- GoldenGate deployment: we will create a Microservices environment for an Autonomous Database that applies trails from source to target autonomous database.
 
 	![](/images/architecture.png)
 
 All of the above resources are going to be deployed in Oracle Cloud Infrastructure using Terraform. It is not necessary to have prior knowledge of Terraform scripting. All you need to do is follow every step exactly as described.
+
+### Prerequisites
+
+* Make sure you have OCI account, please proceed to Task 1.
 
 ## **Task 1**: Create your OCI account
 
@@ -62,7 +66,7 @@ All of the above resources are going to be deployed in Oracle Cloud Infrastructu
 ## Learn More
 
 * [Terraform OCI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraform.htm)
-* [Oracle Goldengate](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/using-oracle-goldengate-microservices-oracle-cloud-marketplace.html)
+* [Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/19.1/oggmp/using-oracle-goldengate-microservices-oracle-cloud-marketplace.html)
 * [Oracle Autonomous Database](https://docs.oracle.com/solutions/?q=autonomous&cType=reference-architectures&sort=date-desc&lang=en)
 
 ## Acknowledgements

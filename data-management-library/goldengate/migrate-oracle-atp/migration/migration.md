@@ -4,14 +4,7 @@
 
 Up to now, we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous Database. 
 
-*Estimated time*: 15 minutes
-
-### Objectives
-
-Many Oracle Cloud Infrastructure (OCI) GoldenGate customers overlook the need to ensure that 
-the source and target database schemas to be replicated are in sync before replicating the data. 
-GoldenGate’s underlying architecture for data replication ensures 100% consistency for all 
-changes that occur on the source database. For each change on the source, such as an update or delete, GoldenGate guarantees the transaction was completed on the target. If the data didn’t exist on the target for an update or delete, then the replication of the transaction will fail and stop with an abnormal error. Many first-time GoldenGate users don’t understand this guaranteed consistency architecture and expect that GoldenGate would ignore these errors by default. However, if this was the case, then the target data would never match the source data.
+Many Oracle Cloud Infrastructure (OCI) GoldenGate customers overlook the need to ensure that the source and target database schemas to be replicated are in sync before replicating the data. GoldenGate’s underlying architecture for data replication ensures 100% consistency for all changes that occur on the source database. For each change on the source, such as an update or delete, GoldenGate guarantees the transaction was completed on the target. If the data didn’t exist on the target for an update or delete, then the replication of the transaction will fail and stop with an abnormal error. Many first-time GoldenGate users don’t understand this guaranteed consistency architecture and expect that GoldenGate would ignore these errors by default. However, if this was the case, then the target data would never match the source data.
 
 For the purposes of this lab, the source database is an on-premise 12c database and the target is Autonomous database.  There are seven source tables in HR schema and each table and associated resources, such as primary key constraints, will be created in the target schema as part of the target instantiation. 
 
@@ -30,8 +23,11 @@ To complete the lab, we will configure _**two extract**_ processes at the source
 * The second replicat is for applying **changed data**. We will call it **the primary replicat**. Once the first replicat process, the initial-load finish, we will create a replicat process for applying changed data captured during the initial load to the target database. But how do we know from which starting point we start to replicate? How do we ensure there are no duplicates?
 We will start applying changes after the **same SCN** we used for the initial-load extract. This is the instantiation SCN we used to mark the starting point for the replicat process. 
 
+*Estimated time*: 15 minutes
 
-We will do the below tasks: 
+### Objectives
+
+We will complete the below tasks: 
 * Add the extracts and replicats processes
 * Add transaction data and a checkpoint tables
 * Capture System Change Number (SCN) from the source database
