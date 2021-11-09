@@ -2,12 +2,6 @@
 
 # Welcome to Oracle MovieStream
 
-Oracle MovieStream is a fictitious on-line movie streaming company. Customers log into Oracle MovieStream using their computers, tablets and phones where they are presented with a targeted list of movies based on their past viewing habits. The company is now looking for better, smarter ways to track performance, identifying customers to target with campaigns that promote new services, new movies and new viewing platforms. Many of the scenarios in this workshop will very likely match the challenges you are seeing in your business and we hope the following labs and accompanying workshops will give you some insight into how Oracle can help you solve these common everyday business and technical challenges.
-
-### A handy guide to the MovieStream Universe
-
-There is an ever expanding list of MoiveStream workshops so we have created this handy guide to help you navigate the complete set of workshops. Which shop do you need to run first, where can I learn about machine learning, can I just jump to the lab on scripting? When is a good time to top up my bicket of popcorn? All these questions and more are covered below:
-
 ## Action! MovieStream Analytics Produce the Best Picture with Oracle Cloud - THE EPIC
 
 Introduction
