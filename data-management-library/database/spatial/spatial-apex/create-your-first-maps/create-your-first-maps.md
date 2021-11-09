@@ -16,9 +16,9 @@ Estimated Lab Time: 30 minutes
 * ....
 
 
-## Task 1: Create a new app with a Map page
+## Task 1: Create a new app with a map page using the wizard
 
-Create a new app with a map page using the wizard. 
+Create.... 
 
 1. Navigate to **App Builder** and click **Create**.
 ![Image alt text](images/create-map-01.png)
@@ -50,7 +50,7 @@ Create a new app with a map page using the wizard.
 10. Observe the page includes an interactive map showing airport location with tooltips as you configured.
 ![Image alt text](images/create-map-10.png)
 
-## Task 2: Inspect the Map page
+## Task 2: Inspect the map page
 
 First map under the covers...
 
@@ -68,15 +68,52 @@ First map under the covers...
 4. Scroll down in the Layer panel to see the other configuration options, including Column Mapping where the geometry data type is set. Here you are using Oracle's native spatial data type, SDO_GEOMETRY, and the column name is GEOMETRY.  
 ![Image alt text](images/create-map-14.png)
 
+## Task 3: Create a map from scratch
+
+Create map from scratch in new page
+
+1. Click **App Builder** and then **Create Page**. 
+![Image alt text](images/create-map-15.png)
+
+2. Select **Blank Page** and then click **Next**. You could select Map here to have the same wizard you saw in teh Creaet App wizard. But this step is to create a map from scratch., for example if you had an existing page.
+![Image alt text](images/create-map-16.png)
+
+3. Select option to create a new navigation menu entry and provide a name. Then click **Next**.
+![Image alt text](images/create-map-17.png)
+
+4. Review the summary and click **Finish**.
+![Image alt text](images/create-map-18.png)
+
+5. Drag **Map** from the Regions items at the bottom and drop under the Body section of the page layout.
+![Image alt text](images/create-map-19.png)
+
+    Observe the Map Region appears in the Page tree under Body with default name New. Click on **New** in the Page tree and observe its properties on the right.  Observe the Region Type is Map.
+    ![Image alt text](images/create-map-20.png)
+
+6. In the panel on the right, update the Region Title from New to a name of your choosing, for example **My Map Region**. Observe the title is updated in the page tree on the left.
+![Image alt text](images/create-map-21.png)
+
+7. Observe that the Map Region includes a child element called Layers with a default Layer called New. Layers are the data driven content to be rendered on the map. Clicl on the Layer **New** in teh page tree to see it's properties in the right panel.
+![Image alt text](images/create-map-22.png)
+
+8. Update the Layer Name to **Airports** and the Type to **Points**. Observe the Layer Name update in the page tree on on the left.
+![Image alt text](images/create-map-23.png)
+
+9. Scroll down in the Layer properties panel on the right. Update the **Source** to use the table **EBA\_SAMPLE\_AIRPORTS**. To limit the airports rendered in the layer, add the where clause **LAND_AREA_COVERED > 2500**.
+![Image alt text](images/create-map-24.png)
 
 
+10. Scroll down again in the Layer properties panel on the right to the **Column Mapping** section. This is where you configure the spatial column for rendering. Select geometry data type **SDO\_GEOMETRY** and geometry column **GEOMETRY**.
+![Image alt text](images/create-map-25.png)
 
+11.  Next you will add another Layer to your map. In the Page tree on the left, right-click on **Layers** under your Map Region and select **Create Layer**.  
+![Image alt text](images/create-map-26.png)
 
+12. Click on the newly created Layer in the Page tree under your Map Region. Then in the Layer details panel on the right, update the Name to **States**, Layer type to **Polygons**, and Source to **EBA\_SAMPLE\_SIMPLE\_STATES**.
+![Image alt text](images/create-map-27.png)
 
-
-
-
-
+13. Scroll down in the Layer details panel on the right to the Appearance section. Update the Fill and Stroke (i.e., outline) appearance to values of your choosing.
+![Image alt text](images/create-map-28.png)
 
 You may now [proceed to the next lab](#next).
 
