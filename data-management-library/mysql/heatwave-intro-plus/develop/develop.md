@@ -40,8 +40,34 @@ Estimated Time: 5 minutes
 ## **TASK 2:** Create PHP MySQL Application
 
 Estimated Time: 20 minutes
+Subtask 1 – Add HTTP port for Web Application
 
-Subtask 1 – Install App Server (APACHE)
+1. Navigation Menu > Networking > Virtual Cloud Networks
+
+2. Open MDS-VCN
+
+3. Click  Public Subnet-MDS-VCN
+
+4. Click Default Security List for mds_vcn
+
+18.	Click Add Ingress Rules page under Ingress Rule 1
+
+ Add an Ingress Rule with Source CIDR
+    ````
+    <copy>0.0.0.0/0</copy>
+    ````
+ Destination Port Range
+     ````
+    <copy>80</copy>
+     ````
+    Description
+     ````
+    <copy>HTTP port</copy>
+     ````
+
+    ![VCN](./images/03vcn12.png " ")
+
+Subtask 2 – Install App Server (APACHE)
 
 1.	If not already connected with SSH, on Command Line, connect to the Compute instance using SSH ... be sure replace the  "private key file"  and the "new compute instance ip"
 
@@ -75,7 +101,7 @@ Subtask 1 – Install App Server (APACHE)
 
     Example: http://129.213....
 
-Subtask 2 – Install PHP    
+Subtask 3 – Install PHP    
 
 1.	Install php:
 
@@ -120,7 +146,7 @@ phpinfo();
 
    Example: http://129.213.167.../info.php
 
-Subtask 3 – Create MDS / PHP connect app
+Subtask 4 – Create MDS / PHP connect app
 
 1.	Security update"   set SELinux to allow Apache to connect to MySQL
 
@@ -144,8 +170,8 @@ Subtask 3 – Create MDS / PHP connect app
 // Database credentials
 define('DB_SERVER', '10.0.1...');// MDS server IP address
 define('DB_USERNAME', 'admin');
-define('DB_PASSWORD', 'Welcome#123');
-define('DB_NAME', 'sys');
+define('DB_PASSWORD', 'Welcome#12345');
+define('DB_NAME', 'airportdb');
 //Attempt to connect to MySQL database
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 // Check connection
@@ -159,6 +185,8 @@ echo 'Host info: ' . mysqli_get_host_info($link);
 </copy>
     ````
 
+    - Test Config.php on Web sever http://150.230..../config.php 
+
 4.	Create dbtest.php
 
     ````
@@ -168,6 +196,7 @@ echo 'Host info: ' . mysqli_get_host_info($link);
     ````
     <copy>sudo nano dbtest.php</copy>
     ````
+
 5. Add the following code to the editor and save the file (ctr + o) (ctl + x)
 
     ````
