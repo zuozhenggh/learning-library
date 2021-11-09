@@ -3,7 +3,7 @@
 
 ## Introduction
 
-
+doc details link...
 
 Estimated Lab Time: 30 minutes
 
@@ -16,9 +16,9 @@ Estimated Lab Time: 30 minutes
 * ....
 
 
-## Task 1: 
+## Task 1: Create a new app with a Map page
 
-Create a new app with a map page using the wizard.
+Create a new app with a map page using the wizard. 
 
 1. Navigate to **App Builder** and click **Create**.
 ![Image alt text](images/create-map-01.png)
@@ -29,7 +29,7 @@ Create a new app with a map page using the wizard.
 3. Enter a name for your application and click **Add Page**.
 ![Image alt text](images/create-map-03.png)
 
-4. Select **Map** as the page type. 
+1. Select **Map** as the page type.  **Note this is the same wizard as using  Create Page in an existing application.**
 ![Image alt text](images/create-map-04.png)
 
 5. Enter a Page Name. (With this wizard, the Page Name will also be used as the name of the Map Region created in the page.)  Click the icon to the right of the table input to select the EBA_SAMPLE_AIRPORTS table. For geometry column, select GEOMETRY, and finally select a column to use a tooltip when mousing over an item in the map.
@@ -50,7 +50,7 @@ Create a new app with a map page using the wizard.
 10. Observe the page includes an interactive map showing airport location with tooltips as you configured.
 ![Image alt text](images/create-map-10.png)
 
-## Task 2: 
+## Task 2: Inspect the Map page
 
 First map under the covers...
 
@@ -60,8 +60,22 @@ First map under the covers...
 2. In the Page tree on the left, under **Body** click **My First Map**. This is the title of the Map Region created by the Create Page wizard and is, by default, the same as the Page title and can be changed as desired. In the Region details panel on the right, observe that this Region has a type of **Map**.  
 ![Image alt text](images/create-map-12.png)
 
-1. Map Regions include Layers which are the data-driven points, lines, and polygons displayed on top of a background map. When stepping through the Create Page wizard you selected a Map using the table EBA_SAMPLE_MAP_AIRPORTS. So the wizard has created one layer containing those airport locations. By default the Layer has the same name as the Page, i.e. My First Map. This can be changed as desired. To inspect this Layer, in the Page tree on the left panel, under Layers click on **My First Map**. Configuration details are displayed in the **Layer** panel on the right. For information about configuration items, click on the **Help** tab in the middle panel. When you then click on configuration items, help info is rovieed for that item.
+3. Map Regions include Layers which are the data-driven points, lines, and polygons displayed on top of a background map. When stepping through the Create Page wizard you selected a Map using the table EBA_SAMPLE_MAP_AIRPORTS. So the wizard has created one layer containing those airport locations. By default the Layer has the same name as the Page, i.e. My First Map. This can be changed as desired. 
+   
+   To inspect this Layer, in the Page tree on the left panel, under Layers click on **My First Map**. Configuration details are displayed in the **Layer** panel on the right. For information about configuration items, click on the **Help** tab in the middle panel. When you then click on configuration items, help info is displayed for that item. For example click in the **Layer Type** menu to see help on its options. 
 ![Image alt text](images/create-map-13.png)
+
+4. Scroll down in the Layer panel to see the other configuration options, including Column Mapping where the geometry data type is set. Here you are using Oracle's native spatial data type, SDO_GEOMETRY, and the column name is GEOMETRY.  
+![Image alt text](images/create-map-14.png)
+
+
+
+
+
+
+
+
+
 
 
 You may now [proceed to the next lab](#next).
