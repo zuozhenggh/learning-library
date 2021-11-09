@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Autonomous Data Warehouse: Data Loading and Management Using SQL on the MovieStream Dataset",
+    "workshoptitle": "Autonomous Data Warehouse: Load and explore the MovieStream Dataset with integrated Data Tools",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
