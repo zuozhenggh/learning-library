@@ -1,9 +1,9 @@
-# USE MDS HEATWAVE FOR DEVELOPMENT  
+# USE MySQL HEATWAVE FOR DEVELOPMENT  
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 ## Introduction
 
-MDS HeatWave can easily be used for development tasks with existing Oracle services, such as Oracle Cloud Analytics. New applications can also be created with the LAMP or other software stacks.
+MySQL HeatWave can easily be used for development tasks with existing Oracle services, such as Oracle Cloud Analytics. New applications can also be created with the LAMP or other software stacks.
 
 ![Connect](./images/architecture-oac-heatwave.png " ")
 
