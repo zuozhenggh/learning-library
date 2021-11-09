@@ -76,7 +76,7 @@ For this workshop, we need to create one new user.
   - Leave the **Password Expired** toggle button as off (note this controls whether the user will be prompted to change their password when they next login).
   - Leave the **Account is Locked** toggle button as off. 
   
-Next you will examine the form.
+  Next you will examine the form.
 
 6. When you examine the form, it should look like this:
 

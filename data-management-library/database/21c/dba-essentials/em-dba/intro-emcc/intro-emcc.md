@@ -4,36 +4,25 @@
 
 After you install Oracle Database 21c on your host, let's connect to the database, and get started with database administration using Oracle Enterprise Manager (Oracle EM).
 
-<if type="em-dba">
 **Oracle Enterprise Manager Cloud Control (Oracle EMCC)** is Oracle’s on-premise management solution providing centralized monitoring, administration, and lifecycle management functionality for the complete IT infrastructure. It offers a single dashboard to monitor and manage your entire computing environment from a web-based console.
 
 Oracle EM offers a comprehensive set of performance and health metrics that allows unattended monitoring of key components in your environment. These key components include but are not limited to applications, application servers, Oracle Databases, and the back-end components on which they rely, such as hosts, operating systems, storage, and so on.
-</if>
 
 Estimated Workshop Time: 1 hour 45 minutes
 
-<if type="dbae">
-### Access this Workshop
-[**EM - Oracle Database Administration (DBA)**](http://127.0.0.1:3001/mg-playground/projects/dba-essentials-test/workshops/freetier/?lab=intro-emcc)
-</if>
-
-<if type="em-dba">
 Watch this video on *Oracle EMCC Console Overview*.
 
 [](youtube:8VgdTYmfJYs)
-</if>
 
 ### Objectives
 
-In this workshop, you will learn how to *connect to SQL Plus* and *view container details*. You will *log in to Oracle EMCC* console from a web browser and *manage target Oracle Databases and listeners* from the cloud interface. You will access the *container homepage* from Oracle EMCC and manage your *favorites*.
+In this workshop, you will learn how to *connect to SQL Plus* and *view container details*. You will *log in to Oracle EMCC* console from a web browser and *manage target databases and listeners* from the cloud interface. You will access the *container homepage* from Oracle EMCC and manage your *favorites*.
 
 ### Prerequisites
 
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 
-<if type="em-dba">
 **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-</if>
 
 ## Appendix 1: Oracle EMCC Architecture
 
@@ -53,7 +42,7 @@ Oracle EMCC includes the following components:
 
    The agent enables you to convert an unmanaged host to a managed host and helps you monitor the targets running on the managed host. 
    
-   To learn more about managed hosts, see *What are managed targets and managed hosts?*
+   To learn more about managed hosts, see the *What are managed targets and managed hosts?* section below. 
 
  - **Oracle Management Service (OMS)**
 
@@ -93,7 +82,7 @@ Click on the next lab to **Get Started**.
 
 ## Learn More
 
-- [Oracle Enterprise Manager Cloud Control (EMCC)](https://docs.oracle.com/en/enterprise-manager/index.html)
+- [Oracle Enterprise Manager Cloud Control (Oracle EMCC)](https://docs.oracle.com/en/enterprise-manager/index.html)
 - [Oracle EMCC Release Notes](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emrel/cloud-control-release-notes-emrel.html#GUID-42C87BBB-CA6D-4A5E-8B59-AA94755724E0)
 - [Oracle Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/index.html)
 - [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
@@ -104,4 +93,4 @@ Click on the next lab to **Get Started**.
 
 - **Contributors** - Suresh Rajan
 
-- **Last Updated By/Date** - Manish Garodia, October 2021
+- **Last Updated By/Date** - Manish Garodia, November 2021

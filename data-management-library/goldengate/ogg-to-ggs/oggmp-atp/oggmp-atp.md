@@ -84,7 +84,7 @@ In this lab, you will:
 10. Enter the following `put` command to upload the SourceATP wallet file to /home/opc.
 
     ```
-    <copy>put <local-path>/<Wallet_ATP-filename>.zip</copy>
+    <copy>put <Wallet_ATP-filename>.zip</copy>
     ```
 
     ![](images/02-10-put.png " ")

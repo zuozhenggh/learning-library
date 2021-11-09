@@ -683,7 +683,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
 5. Now, Database Vault is correctly disabled!
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## **Appendix**: About the Product
 ### **Overview**
