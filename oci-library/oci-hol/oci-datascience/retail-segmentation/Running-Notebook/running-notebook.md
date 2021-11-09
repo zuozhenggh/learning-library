@@ -1,4 +1,4 @@
-# Lab: Running the Notebook
+# Lab 3: Running the Notebook
 
 ## Introduction
 
@@ -32,6 +32,11 @@ The code below will help you unzip the folder and move it to a separate folder o
 (insert code markdown) unzip Wallet_Your_DB_Name.zip -d destination_folder
 
 5. Download the Retail Segmentation notebook from this link and place it into the directory in Oracle Datascience.
+Also download the Customer Transactions data that the notebook will use. Both can be downloaded from the links below.
+
+![Segmentation.ipynb](./files/Segmentation.ipynb)
+
+![Customer_Transactions_masked.csv](./files/Customer_Transactions_masked.csv)
 
 ## Task 2: Installing the Kernel
 
@@ -45,8 +50,8 @@ The code below will help you unzip the folder and move it to a separate folder o
 
 ![](./images/searchGML.png)
 
-The kernel may already be displayed by defauly even before you search.
-Also, other machine learning libraries such as Tensorflow for CPU should work as well so long as it is CPU for CPU instanes and GPU for GPU instances.
+- The kernel may already be displayed by defauly even before you search.
+- Also, other machine learning libraries such as Tensorflow for CPU should work as well so long as it is CPU for CPU instanes and GPU for GPU instances.
 
 8. Click the down arrow on the right to expand the box for the kernel.
 
@@ -58,7 +63,10 @@ Also, other machine learning libraries such as Tensorflow for CPU should work as
 
 ![](./images/codeline.png)
 
-If it asks you for version number just press enter, and if it asks you to say yes, press y and then press enter,
+- If it asks you for version number just press enter, and if it asks you to say yes, press y and then press enter,
+
+
+
 
 ## Task 3: Running the Retail Segmentation Notebook
 
@@ -66,14 +74,20 @@ If it asks you for version number just press enter, and if it asks you to say ye
 
 ![](./images/openfile.png)
 
+
+
+
 2. Now, you must fill in the information in the third block of code.
 
 ![](./images/credentials.png)
 
-TNS_ADMIN will equal the directory which you put the wallet folder in.
-ADW_SID refers to a value within the tnsnames.ora file in the unzipped wallet folder.
-Set it to the value that ends with "low" which should look something like "databasename"_low
-ADW_USER and ADW_PASSWORD will be the username and password that you had created earlier using OML User Administration.
+- TNS ADMIN will equal the directory which you put the wallet folder in.
+- ADW SID refers to a value within the tnsnames.ora file in the unzipped wallet folder.
+- Set it to the value that ends with "low" which should look something like "databasename"_low
+- ADW USER and ADW PASSWORD will be the username and password that you had created earlier using OML User Administration.
+
+
+
 
 3. For the fourth block of code, underneath what you had just edited, make sure the string within the first set of quotes points to the location of the data file you had downloaded.
 

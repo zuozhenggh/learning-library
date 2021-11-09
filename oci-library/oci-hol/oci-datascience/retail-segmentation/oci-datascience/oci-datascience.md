@@ -1,4 +1,4 @@
-# Lab: Getting Started with OCI Data Science
+# Lab 2: Getting Started with OCI Data Science
 
 ## Introduction
 
