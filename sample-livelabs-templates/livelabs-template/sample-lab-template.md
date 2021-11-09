@@ -6,10 +6,10 @@
 
 Estimated Time: n minutes
 
-### About Product/Technology
+### About Product/Technology (Optional)
 Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
 
-### Objectives optional
+### Objectives
 
 *List objectives for this lab*
 
@@ -18,6 +18,13 @@ In this lab, you will:
 * Objective 2
 * Objective 3
 
+### Prerequisites (Optional)
+
+*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+
+This lab assumes you have:
+* An Oracle account
+* All previous labs successfully completed
 
 *This is the "fold" - below items are collapsed by default*
 
@@ -29,11 +36,19 @@ In this lab, you will:
 
 		![Image alt text](images/sample1.png)
 
-  To create a link to local file you want the reader to download, use this format:
+  To create a link to local file you want the reader to download, use the following format.
+
+	> **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
 
   Download the [starter file](files/starter-file.sql) SQL code.
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+	When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
+
+	> **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
+
+	Download the [sample JSON code](files/sample.json?download=1).
+
+  *IMPORTANT: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
 2. Sub step 2
 
