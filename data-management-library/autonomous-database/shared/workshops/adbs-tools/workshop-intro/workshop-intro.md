@@ -7,6 +7,8 @@ The purpose of this workshop is to introduce you to the suite of data tools buil
 
 Estimated Workshop Duration: 1 hour, 40 minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/nSxao-v3Scg).</if>
+
 ### Who Should Use This Workshop?
 
 Everyone can benefit from doing the lab exercises in this workshop: technical experts (data warehouse architects to database administrators), business users who want to focus on extracting meaning and insight from their own data, along with data scientists who want to build machine learning models within the context of a data warehouse project.

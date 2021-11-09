@@ -34,7 +34,7 @@ This lab assumes you have:
 
 ## Task 1: Access OML AutoML UI
 
-To access AutoML UI, you must sign into Oracle Machine Learning user interface, which also includes Oracle Machine Learning Notebooks, on Autonomous Database:
+To access AutoML UI, you must sign into the Oracle Machine Learning user interface, which also includes Oracle Machine Learning Notebooks, on Autonomous Database:
 To sign into Oracle Machine Learning (OML) Notebooks from the Autonomous Database Service Console:
 
 1. Select an Autonomous Database instance and on the Autonomous Database details page click **Service Console**.
@@ -76,13 +76,10 @@ When creating an Experiment, you must define the data source and the target of t
 
 6. In the **Predict** drop-down list, select the column **AFFINITY_CARD** from the ``CUSTOMERS360`` table. This is the target for your prediction.
 
-7. In the **Prediction Type** field, the prediction type is automatically selected based on your data definition. In this lab, select **Classification**.
-
-The supported prediction types are:
+7. In the **Prediction Type** field, the prediction type is automatically selected based on target field data type and cardinality. In this lab, **Classification** is automatically selected.	The supported prediction types are:
 
 	* Classification: For non-numeric data type, Classification is selected by default.
 	* Regression: For numeric data type, Regression is selected by default.
-
 8. In the **Case ID** field, select **CUST_ID**. The Case ID helps in data sampling and dataset split to make the results reproducible between experiments. It also aids in reducing randomness in the results. This is an optional field.  
 
 
@@ -111,7 +108,7 @@ To adjust additional settings of this experiment:
 	Note the following about the two options:
 
 	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of hyperparamter combinations and hence yields faster results.
-	* **Better Accuracy:** Select this option if you want emphasis placed on more accurate results.
+	* **Better Accuracy:** Select this option if you want more hyperparameter combinations to be tried for possibly more accurate models.
 
 > Note: This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
 
@@ -119,7 +116,7 @@ This completes the task of creating an experiment.
 
 
 ### Task 2.2 View Leader Board with Additional Metrics
-When an experiment runs, it starts to show the results in the Leader Board. When an experiment starts running, the status is displayed in a progress bar. Click Details next to the **Stop** button to view the experiment run details, as shown in the screen shot.
+When an experiment starts running, the status is displayed in a progress bar. When an experiment runs, it starts to show the results in the Leader Board. Click Details next to the **Stop** button to view the experiment run details, as shown in the screen shot.
 
 ![Experiment Progress bar](images/exp_progress_bar.png)
 
@@ -196,9 +193,13 @@ This completes the task of deploying the top model Naive Bayes to OML Services.
 
 The deployed models are listed under **Deployments** on the Models page. To view the metadata of the deployed model **CUST360_NB**:
 
-1. To go to Deployments, click the hamburger icon ![Image alt text](images/sample2.png) and then click  **Models** on the left navigation menu. Alternatively, you can click **Models** on the Oracle Machine Learning home page.  
+1. To go to Deployments, click the hamburger icon ![Image alt text](images/sample2.png) and then click  **Models** on the left navigation menu. Alternatively, you can click **Models** on the Oracle Machine Learning home page.
+
+  ![Models](images/models_option.png)
 
 2. On the Models page, click **Deployments**.
+
+	![Deployments](images/deployments_tab.png)
 
 2. The deployed model **CUST360_NB** is listed along with the metadata - Shared, version, namespace, owner, deployed date and URI under **Deployments** on the Models page.
 
@@ -246,11 +247,11 @@ To view the generated notebook Customer 360:
 
 3. The generated notebook _NB Customer 360_  opens in the notebook editor. This notebook contains the pre-generated heading _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_. Scroll down to view all the paragraphs in the notebook.
 
-* The paragraph titled _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_ contains the experiment metadata. Click the  Run icon to view the metadata.
+* The paragraph titled _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_ contains the experiment metadata. Click the  Run icon to run the markdown paragraph and view the metadata.
 
 	![Experiment metadata](images/experiment_metadata.png)
 
-* The paragraph titled _Get proxy code_ contains the code to get proxy object for the selected data that is the data form the Customers360 table. The paragraph titles _Prepare Training Data_ contains the code to prepare the training data.
+* The paragraph titled _Get proxy object for selected data_ contains the code to get the proxy object for the data used in the experiment, which is the Customers360 table here. The paragraph titled _Prepare Training Data_ contains the code to prepare the training data.
 
 	![Generated Notebook](images/generated_nb_1.png)
 

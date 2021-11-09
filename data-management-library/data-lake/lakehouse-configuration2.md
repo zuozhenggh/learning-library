@@ -67,24 +67,6 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
 8. In the **Explore and Connect** section, click **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click **+Add Cloud Storage**.
 
-    - In the **Name** field, enter 'MovieStreamGold'
-
-    **Note:** Take care not to use spaces in the name.
-
-    - Leave the Cloud Store selected as **Oracle**
-    - Copy and paste the following URI into the URI + Bucket field:
-
-    ```
-    <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o
-    </copy>
-    ```
-
-    - Select **No Credential** as this is a public bucket.
-    - Click the **Test** button to test the connection. Then click **Create**.
-
-9. In the **Explore and Connect** section, click **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click **+Add Cloud Storage**.
-
     - In the **Name** field, enter 'CustomerSales'
 
         > **Note:** Take care not to use spaces in the name.
@@ -102,9 +84,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
     - Select **No Credential** as this is a public bucket.
     - Click the **Test** button to test the connection. Then click **Create**.
 
-    We now have three cloud storage locations set up.
-
-    ![Cloud Storage Locations](./images/cloudstoragelocations.png " ")
+    We now have the cloud storage locations set up.
 
 ## Task 2: Load data from files in Object Storage using Data Tools
 
@@ -118,64 +98,39 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
     ![Select Load Data, then Cloud Storage](./images/loadfromstorage.png " ")
 
-3. From the MOVIESTREAMGOLD location, drag the **customer_contact** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we only have a single file, but we do want to load this into a single table. Click **OK**.
-
-4. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
-
-
-5. Click the pencil icon for the **customer_contact** task to view the settings for this load task.
-
-    ![View settings for customer_contact load task](./images/cc_viewsettings.png " ")
-
-6. Here we can see the list of columns and data types that will be created from the csv file. They all look correct, so click **Close** to close the settings viewer.
-
-7. Click the pencil icon for the **genre** task to view its settings. This should show just two columns to be created - **GENRE_ID** and **NAME**. Click **Close** to close the settings viewer.
-
-8. Now click the Play button to run the data load job.
-
-    ![Run the data load job](./images/rundataload.png " ")
-
-    The job should take about 20 seconds to run.
-
-9. Check that both data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
-
-    ![Check the job is completed](./images/loadcompleted.png " ")
-
-10. Now, to load some more data from the MovieStream landing area, click the **Data Load** link in the top left of your screen.
+3. Now, load some data from the MovieStream landing area, click the **Data Load** link in the top left of your screen.
 
     ![Click Data Load](./images/backtodataload.png " ")
 
-11. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
+4. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
 
-12. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
+5. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
 
     ![Click Data Load](./images/selectlanding.png " ")
 
-13. From the MOVIESTREAMLANDING location, drag the **customer_extension** folder over to the right hand pane and click **OK** to load all objects into one table.
+6. From the MOVIESTREAMLANDING location, drag the **customer_contact**, **customer_extension**, **customer_segment** folders over to the right hand pane and click **OK** to load all objects into one table for each of these folders.
 
-14. Drag the **customer_segment** folder over to the right hand pane and click **OK**.
+7. Drag the **genre** and **movie** folders over to the right hand pane and click **OK**.
 
-15. Drag the **pizza_location** folder over to the right hand pane and click **OK**.
+8. And for fun, drag the **pizza_location** folder over to the right hand pane and click **OK**.
 
-16. Click the Play button to run the data load job.
+9. Click the Play button to run the data load job.
 
     ![Run the data load job](./images/runload2.png " ")
 
     The job should take about 20 seconds to run.
 
-17. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
+10. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](./images/loadcompleted2.png " ")
 
-18. Click the **Done** button in the bottom right of the screen.
-
-19. From the CUSTOMERSALES location, drag the three folders with customer_sales as part of their name over to the right hand pane.
+11. From the CUSTOMERSALES location, drag all 4 of the folders over to the right hand pane.
 
     ![CustomerSales load task](./images/customersales3.png " ")
 
-20. Now click the Play button to run the data load job.
+12. Now click the Play button to run the data load job.
 
-    ![Run the data load job](./images/customersales4.png " ")
+13. Click the **Done** button in the bottom right of the screen.
 
 This completes the data load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake. We will be working with these tables in later labs.
 

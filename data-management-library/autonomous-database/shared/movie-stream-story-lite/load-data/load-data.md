@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:0_BOgvJw4N0)
+[](youtube:0_BOgvJw4N0)
 
 In this lab, you will create a new database user, then load and link data from the MovieStream data lake on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
 

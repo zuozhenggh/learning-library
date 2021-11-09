@@ -31,7 +31,7 @@ This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
-* [How to Use the GitHub Template](https://otube.oracle.com/media/Use+GitHub+Template/0_780dlc2i)
+<!-- * [How to Use the GitHub Template](https://otube.oracle.com/media/Use+GitHub+Template/0_780dlc2i) -->
 
 
 ## Acknowledgements
@@ -43,4 +43,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Last Updated By/Date:** Anuradha Chepuri, October 2021
+* **Last Updated By/Date:** Anuradha Chepuri, November 2021

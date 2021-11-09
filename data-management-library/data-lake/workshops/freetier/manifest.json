@@ -5,6 +5,7 @@
         {
             "title": "Introduction",
             "description": "Introduction to Oracle Cloud Data Lakehouse",
+            "type": "odbw",
             "filename": "./../../introduction.md"
         },
         {

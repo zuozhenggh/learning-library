@@ -73,25 +73,25 @@ The next few screens will ask us to configure variables to dictate the infrastru
 
 11.	Under Hyperion Financial Management Configuration, enter the following values (designed to create a low-footprint instance for a Hyperion application to rest on):
 
-	a)	NUMBER OF FINANCIAL MANAGEMENT NODE(S) - 1
-	b)	FINANCIAL MANAGEMENT INSTANCE SHAPE - VM Standard2.1
-	c)	BLOCK VOLUME SIZE (IN GB) - 100
-	d)	BLOCK VOLUME PERFORMANCE - 10
+*  NUMBER OF FINANCIAL MANAGEMENT NODE(S) - 1
+*  FINANCIAL MANAGEMENT INSTANCE SHAPE - VM Standard2.1
+*  BLOCK VOLUME SIZE (IN GB) - 100
+*  BLOCK VOLUME PERFORMANCE - 10
 
 ![Even more variables](images/provision9.png " ")
 
 12. We'll need to create a database for our Hyperion infrastructure. Select Create EPM Database. Enter the following values that pop up in the box below:
 
-	a)	DATABASE CONTAINER NAME - EPMCDB
-	b)	DATABASE PDB NAME - EPMDB
-	c)	DATABASE ADMIN USER PASSWORD - WElcome#1234#
-	d)	DATABASE VERSION - 12.1.0.2
-	e)	DATABASE EDITION -  ENTERPRISE_EDITION_EXTREME_PERFORMANCE
-	f)	DATABASE LICENSE - LICENSE_INCLUDED
-	g)	NUMBER OF DATABASE NODES - 1
-	h)	DATABASE INSTANCE SHAPE - VM Standard2.2
-	i)	DATABASE SIZE IN GB - 256
-	j)	Leave the character set settings to default.
+*  DATABASE CONTAINER NAME - EPMCDB
+*  DATABASE PDB NAME - EPMDB
+*  DATABASE ADMIN USER PASSWORD - WElcome#1234#
+*  DATABASE VERSION - 12.1.0.2
+*  DATABASE EDITION -  ENTERPRISE_EDITION_EXTREME_PERFORMANCE
+*  DATABASE LICENSE - LICENSE_INCLUDED
+*  NUMBER OF DATABASE NODES - 1
+*  DATABASE INSTANCE SHAPE - VM Standard2.2
+*  DATABASE SIZE IN GB - 256
+*  Leave the character set settings to default.
 
 ![Database provisioning, part 1](images/provision10.png " ")
 
@@ -99,11 +99,11 @@ The next few screens will ask us to configure variables to dictate the infrastru
 
 13. Time to configure the web server! In the Web Server Configuration box, enter the following values:
 
-	a)	NUMBER OF WEB SERVER NODES - 1
-	b)	SHAPE OF WEB SERVER NODE(S) - VM Standard2.1
-	c)	BLOCK VOLUME SIZE (IN GB) - 100
-	d)	BLOCK VOLUME PERFORMANCE - 10
-	e)	LISTEN PORT FOR WEB SERVER - 19000
+*  NUMBER OF WEB SERVER NODES - 1
+*  SHAPE OF WEB SERVER NODE(S) - VM Standard2.1
+*  BLOCK VOLUME SIZE (IN GB) - 100
+*  BLOCK VOLUME PERFORMANCE - 10
+*  LISTEN PORT FOR WEB SERVER - 19000
 
 ![Web server provisioning](images/provision12.png " ")
 
@@ -125,7 +125,7 @@ The next few screens will ask us to configure variables to dictate the infrastru
 
 ![Plan job running](images/provision16.png " ")
 
-18. Plan jobs are meant to test if the infrastructure can actually be deployed; this Plan job should succeed, showing that this . Once it has, click "Apply" to actually apply the stack. Again, the console will ask for some information; the defaults work again for us, so click "Apply" again.
+18. Plan jobs are meant to test if the infrastructure can actually be deployed; this Plan job should succeed, showing that this infrastructure is deployable. Once it has, click "Apply" to actually apply the stack. Again, the console will ask for some information; the defaults work again for us, so click "Apply" again.
 
 ![Applying the stack](images/provision17.png " ")
 
