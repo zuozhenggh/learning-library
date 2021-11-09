@@ -3,9 +3,9 @@
 
 ## Introduction
 
-MDS HeatWave can easily be used for development tasks with existing Oracle services. New applications can also be created with the LAMP or other software stacks.
+MDS HeatWave can easily be used for development tasks with existing Oracle services, such as Oracle Cloud Analytics. New applications can also be created with the LAMP or other software stacks.
 
-![Connect](./images/10addheat00.png " ")
+![Connect](./images/architecture-oac-heatwave.png " ")
 
 _Estimated Lab Time:_ 40 minutes
 
