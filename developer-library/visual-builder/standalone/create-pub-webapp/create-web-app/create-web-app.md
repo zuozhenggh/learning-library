@@ -8,7 +8,7 @@ Estimated Lab Time:  15 minutes
 
 ### Background
 
-Visual Builder, as the name suggests, is a *visual* development tool for web and mobile applications. It provides a rich graphical user interface that lets you design and develop applications by dragging and dropping _components_ on a page. Each component depends on a _business object_ for its data. A business object is just a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses these business objects through their REST endpoints.
+Visual Builder, as the name suggests, is a *visual* development tool for web and mobile applications. It provides a rich graphical user interface that lets you design and develop applications by dragging and dropping _components_ on a page. Each component depends on a _business object_ for its data. A business object is just a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through  REST endpoints that Visual Builder generates for you.
 
 In this lab, you'll create the Employee, Department, and Location business objects to build a simple Human Resources application. Each business object has its own set of fields as shown here:
 
@@ -202,7 +202,7 @@ In this task, we'll create the last business object we need, the Employee object
 
     Click **Create Field**.
 
-9.  Click the **Endpoints** tab and view the Resource APIs and REST endpoints created for the Employee business object. Because Employee refers to Department, you can see endpoints for both objects if you expand the **departmentObject** node.   
+9.  Now that we've created the fields we need, click the **Endpoints** tab to view the Resource APIs and REST endpoints created for the Employee business object. Because Employee refers to Department, you'll  see endpoints for both objects if you expand the **departmentObject** node.   
 
     ![](./images/vbcsca_cde_s9.png)
 
@@ -231,7 +231,7 @@ Now that we have our business objects, let's create a diagram that provides a vi
 
     The diagram looks just like the graphic in the Before You Begin section.
 
-    You can now [proceed to the next lab](#next).
+You can now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

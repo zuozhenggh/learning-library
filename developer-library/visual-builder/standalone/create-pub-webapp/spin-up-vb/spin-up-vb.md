@@ -37,7 +37,7 @@ If you just created a new Cloud account following the instructions in Getting St
 
   ![](./images/open.png)
 
-  You're now in Visual Builder and can [proceed to the next lab](#next). 
+You're now in Visual Builder and can [proceed to the next lab](#next). 
 
 ## Acknowledgements
 **Author** - Sheryl Manoharan, Visual Builder User Assistance

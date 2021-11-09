@@ -7,7 +7,7 @@ Estimated Lab Time:  15 minutes
 
 ### Background
 
-Now that you've created the Location, Department, and Employee business objects, we'll see how to create web pages to display data from these business objects. So far, you've only imported data for the Location object. You'll add data for the Department and Employee business objects in later labs, but set up the Department and Employee pages required to display that data in this lab.
+Now that you've created the Location, Department, and Employee business objects, we'll see how to create web pages to display data from these business objects. So far, you've only imported data for the Location object. You'll add data for the Department and Employee business objects in later labs, but set up Department and Employee pages to display that data in this lab.
 
 You'll create one page to display departments and another to display employees, both in table components. You'll also add a **Create** button to each page to let your users create a new department or a new employee (in other words, create a new instance of the business object). The button is associated with an _event_, and the event sets off an _action chain_, a sequence of actions that the application executes.
 
@@ -42,7 +42,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     ![](./images/vbcscp_dd_s7.png)
 
-8.  On the Bind Data page, under item\[i\], select the **id** and **name** check boxes (in that order). These two fields will show as columns in your Departments table.
+8.  On the Bind Data page, under **item\[i\]**, select the **id** and **name** check boxes (in that order). These two fields will show as columns in your Departments table.
 
     ![](./images/vbcscp_dd_s8.png)
 
@@ -79,7 +79,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
 4.  Leave the other values set to their defaults. Click **Finish**.
 
-    A **Create Department** button appears in a Toolbar component above the table on the main-start page. (You might need to click beside the **Create** button to see the Toolbar component.) Click the **Web Applications** tab to see the main-create-department page created in the pages list under **main**.
+    A **Create Department** button appears in a Toolbar component above the table on the main-start page. (You might need to click next to the button to see the Toolbar component.) Click the **Web Applications** tab to see the main-create-department page created in the pages list under **main**.
 
     ![](./images/vbcscp_cpd_s4_result.png)
 
@@ -95,7 +95,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
     ![](./images/vbcscp_cpd_s7.png)
 
-    Click **Save**. A message appears briefly and you are taken to the application's Diagram tab, which visually represents the application's main page flow.
+    Click **Save**. A message appears briefly and you are taken to the application's Diagram tab, which visually represents the application's **main** page flow.
 
     ![](./images/vbcscp_cpd_s7_result.png)
 
@@ -120,10 +120,10 @@ We'll now create a page to display employees, similar to the one you created to 
     ![](./images/vbcscp_cpe_s2.png)
 
 3.  Drag the **Heading** component from the Components palette and drop it onto the page.
-4.  Click the **Properties**, then in the heading's Properties pane, enter `Employees` in the **Text** field.
+4.  Click the **Properties** tab (if necessary), then in the heading's Properties pane, enter `Employees` in the **Text** field.
 5.  In the Components palette, scroll down to Collection and drag a **Table** component onto the page.
 6.  Click **Add Data**.
-7.  On the Locate Data page, select the **Employee** under Business Objects and click **Next**.
+7.  On the Locate Data page, select **Employee** under Business Objects and click **Next**.
 8.  On the Bind Data page, select the **id**, **name**, **hireDate**, and **email** check boxes under **item\[i\]**. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![Handle icon](./images/vbcscp_handle_icon.png) to reorder the columns as desired.
 
     ![](./images/vbcscp_cpe_s8.png)
@@ -147,10 +147,11 @@ We'll now create a page to display employees, similar to the one you created to 
     ![](./images/employees_table.png)
 
 ## Task 4: Add a Create Page for the Employee Business Object
+Add a Create page that lets your users create new employees.
 
 1.  Click the **Quick Start** tab, then click **Add Create Page**.
 2.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
-3.  On the Page Detail page, under Endpoint Structure, select the **hireDate**, **email**, and **department** check boxes (**name** is already selected, because it's a required field).
+3.  On the Page Detail page, select the **hireDate**, **email**, and **department** check boxes, in that order (**name** is already selected, because it's a required field).
 4.  Leave the **Button label** field and other values to their default values. Click **Finish**.
 
     ![](./images/vbcscp_cpc_s4.png)

@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop shows you how to develop a web application in Visual Builder that displays a user interface in which your users can view, edit, and create data.
+This workshop shows you how to develop a web application in Oracle Visual Builder for your users to view, create, and edit data. You'll see how easy it is to create a new web app, add some pages, and link them to each other. You'll also create business objects to store your app's data and learn how to build pages to edit the data.
 
 Estimated Workshop Time: 115 minutes
 
@@ -15,7 +15,10 @@ Take a look at this video to learn more, or just dive right into the labs.
 
 ### What Will You Learn?
 
-In this workshop, you'll learn how to create a new application, add some pages, and link them to each other. You'll also create some business objects and learn how to import data and build pages for editing the data.
+In this workshop, you will:
+- Provision a Visual Builder instance
+- Design and develop a simple Human Resources web app
+- Stage and publish the web app
 
 ### What Do You Need?
 
@@ -24,4 +27,4 @@ In this workshop, you'll learn how to create a new application, add some pages, 
 
 ## Acknowledgements
 * **Author** Sheryl Manoharan, Visual Builder User Assistance
-* **Last Updated By** - Sheryl Manoharan, June 2021
+* **Last Updated By** - November 2021
