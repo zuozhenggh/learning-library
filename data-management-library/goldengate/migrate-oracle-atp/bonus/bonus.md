@@ -42,7 +42,7 @@ In this part, you will create an APEX workspace in the target *Autonomous Transa
     | Password | **`GG##lab12345`** |
     | Workspace Name | HR_APP |
 
-    >**NOTE:** Workspace ID will be automatically generated for you, ignore and click **Create Workspace**.
+    > **NOTE:** Workspace ID will be automatically generated for you, ignore and click **Create Workspace**.
 
     ![](images/1.workspace_0.PNG)
 
@@ -345,4 +345,4 @@ I would like to thank Vahidin and Tsengel, experienced APEX and GenO lift implem
 
 * **Author** - Bilegt Bat-Ochir - Senior Technology Solution Engineer
 * **Contributors** - Vahidin Qerimi - Principal Technology Solution Engineer, Tsengel Ikhbayar - GenO lift implementation
-* **Last Updated By/Date** - Bilegt Bat-Ochir 9/1/2021
+* **Last Updated By/Date** - Bilegt Bat-Ochir 11/09/2021

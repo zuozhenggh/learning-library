@@ -16,7 +16,7 @@ To complete the lab, we will configure _**two extract**_ processes at the source
 
 * The migration step needs another 'special' type of extract process while changes are being captured by the first extract process from the source database. This 'special' process is called the **Initial-Load extract**. It captures data from a specified list of tables and later will be loaded into target database tables using the SCN.
 
-	>**NOTE:** The Oracle Database expdp and impdp are fully documented in the Oracle Documentation. You can also use the Replicate Data Using OCI GoldenGate, and it is preferred method of instantiation. However, we will use simple initial-load for purpose of this lab. You can also use [this quick start guide](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=797).
+	> **NOTE:** The Oracle Database expdp and impdp are fully documented in the Oracle Documentation. You can also use the Replicate Data Using OCI GoldenGate, and it is preferred method of instantiation. However, we will use simple initial-load for purpose of this lab. You can also use [this quick start guide](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=797).
 
 * When the initial-load extract finishes at the source, we will create the first replicat process to apply those changes. We will call it **Initial-Load replicat**, it is responsible for populating the target database using extracted data by the initial-load extract.
 
@@ -137,7 +137,7 @@ We will complete the below tasks:
 
 	![](/images/3.goldengate_ext_5.png)
 
-	>**NOTE:** You need to make sure [purge old trail files](https://docs.oracle.com/en/middleware/goldengate/core/21.3/ggmas/working-data-replications.html#GUID-41771EA7-8C7B-40D9-80EF-AF4DC0CA2FB5) in production scenario. The Purge Trail page works the same way as the Manager `PURGEOLDEXTRACTS` parameter in the Classic Architecture. It allows you to purge trail files when Oracle GoldenGate has finished processing them. Automating this task ensures that the trail files are periodically deleted to avoid excessive consumption of disk space. 
+	> **NOTE:** You need to make sure [purge old trail files](https://docs.oracle.com/en/middleware/goldengate/core/21.3/ggmas/working-data-replications.html#GUID-41771EA7-8C7B-40D9-80EF-AF4DC0CA2FB5) in production scenario. The Purge Trail page works the same way as the Manager `PURGEOLDEXTRACTS` parameter in the Classic Architecture. It allows you to purge trail files when Oracle GoldenGate has finished processing them. Automating this task ensures that the trail files are periodically deleted to avoid excessive consumption of disk space. 
 
 ## **Task 5**: Get the SCN from The Source Database
 
@@ -149,7 +149,7 @@ We will complete the below tasks:
 	 </copy>
 	```
 	
-	>**NOTE:** Make sure you replace _`ip_address_source_database`_ with your IP address for successful connection.
+	> **NOTE:** Make sure you replace _`ip_address_source_database`_ with your IP address for successful connection.
 
 2. You will be successfully connected to your source database, then run the below command to get the SCN:
 
@@ -278,7 +278,7 @@ We will complete the below tasks:
 	</copy>
 	```
 	
-	>**NOTE:** Make sure you replace _`ip_address_source_database`_ with your IP address for successful connection.
+	> **NOTE:** Make sure you replace _`ip_address_source_database`_ with your IP address for successful connection.
 
 	This statement updates a row in the countries table. Also, it must be captured by the **EXTPRIM** process. We now need to create the second replicat process to apply these captured changes at the source to the target database.
 
@@ -344,7 +344,7 @@ We will complete the below tasks:
 
 	![](/images/3.goldengate_repcont_6.png)
 
-	_**NOTE:** We captured System Change Number (SCN) from the source database, which increments whenever commit occurs. In GoldenGate terminology Commit Sequence Number (CSN) identifies a point in time when the transaction commits. Different naming, but same concept._
+	> **NOTE:** We captured System Change Number (SCN) from the source database, which increments whenever commit occurs. In GoldenGate terminology Commit Sequence Number (CSN) identifies a point in time when the transaction commits. Different naming, but same concept._
 
 11. You can open the **REPCONT** extract process and navigate to the statistics tab, where you will find if **REPCONT** applied the change data from the **EXTPRIM** replicat.
 
@@ -360,4 +360,4 @@ We will complete the below tasks:
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
 * **Contributors** - Tsengel Ikhbayar - GenO Lift Implementation
-* **Last Updated By/Date** - Bilegt Bat-Ochir 9/1/2021
+* **Last Updated By/Date** - Bilegt Bat-Ochir 11/09/2021
