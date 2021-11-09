@@ -9,7 +9,7 @@ Estimated Lab Time:  15 minutes
 
 Now that you've created the Location, Department, and Employee business objects, we'll see how to create web pages to display data from these business objects. So far, you've only imported data for the Location object. You'll add data for the Department and Employee business objects in later labs, but set up Department and Employee pages to display that data in this lab.
 
-You'll create one page to display departments and another to display employees, both in table components. You'll also add a **Create** button to each page to let your users create a new department or a new employee (in other words, create a new instance of the business object). The button is associated with an _event_, and the event sets off an _action chain_, a sequence of actions that the application executes.
+You'll create one page to display departments and another to display employees, both in table components. You'll also add a **Create** button to each page to let your users create a new department or a new employee (in other words, create a new instance of the business object in the database).
 
 ## Task 1: Use the main-start Page to Display Departments
 
@@ -204,7 +204,7 @@ It makes sense at this point to change the name of the main-start page to main-d
 
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
 
-    You may now [proceed to the next lab](#next).
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
