@@ -1,11 +1,11 @@
 # Introduction
 
-This workshop is designed to provide hands-on lab in creating a complete solution platform to filter, correlate, and process events in real-time using GoldenGate for Big data and GoldenGate stream Analytics.  
+This workshop includes hands-on labs with use cases to build pipelines with real-time data streams, and apply business rules to analyze and transform them, using GoldenGate Stream Analytics.  
 
 *Estimated Time*: 3 hours
 
 ## About GoldenGate Stream Analytics (GGSA)
-Golden Gate Stream Analytics is an environment that originally began as a Complex Event Processing engine and evolved to run on top of runtime frameworks with Apache Spark and Apache Kafka.  The tool is designed to ingest a stream of data from any source such as a database, GoldenGate, kafka, JMS, REST, or even a file system file.  Once the data is in GGSA you can run analytics on live data in real-time using transformation and action functionality of Spark and send the data downstream to any target of your choice.  
+
 
 **Architecture Overview**
 
@@ -18,9 +18,7 @@ In this workshop however, we will be reading streaming data from the file system
 
 In this workshop you will:
 * Navigate Oracle GoldenGate Stream Analytics UI
-* Walk-through an IoT Use Case
-* Create a pipeline for a Retail Use Case
-* Create dashboards and export artifacts
+* Create your HelloWorld Pipeline and publish it with Query and Filter added
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
@@ -29,7 +27,7 @@ In this workshop you will:
 
 | Lab Title | Description | Approx. Time |
 |--|------------------------------------------------------------|-------------|
-| Login and Navigation | This lab is designed to get the user familiar with the navigation and resources in the the GGSA application  | 25 minutes  |
+| Login and Navigation | This lab is designed to get the user familiar with the navigation and resources in the GGSA application  | 25 minutes  |
 | Streaming IoT Data | This lab will walk the user through a sample IoT scenario and how a pipeline is created | 30minutes |
 | Streaming Retail data | This lab will walk the user through a sample IoT scenario and how a pipeline is created | 70 minutes |
 | Publishing – Dashboard – Import/Export | Publishing – Dashboard – Import/Export | 25 minutes |
