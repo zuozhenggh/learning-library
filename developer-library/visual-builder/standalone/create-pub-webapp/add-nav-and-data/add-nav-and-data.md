@@ -2,15 +2,15 @@
 
 ## Introduction
 
-This lab shows you how to how to set up navigation between pages in a web app. It also shows how you can add data to your app.
+This lab shows you how to how to set up navigation between pages in a web app. It also demonstrates other ways of adding data to your app.
 
 Estimated Lab Time: 10 minutes
 
 ### Background
 
-Now that you've created the Department and Employee pages, you'll need to make sure users can navigate between these pages in your web app. You can do this by adding buttons that perform specific *actions* when you click them. In Visual Builder, this sequence of actions is known as an *action chain*. You can use and customize predefined actions or define your own. In this lab, you'll create buttons that take you from the Departments page to the Employees pages and back again. Each button is associated with an event, and the event sets off a navigation action chain.
+Now that you've created the Department and Employee pages, you'll need to make sure users can navigate between these pages in your web app. You can do this by adding buttons that perform specific *actions* when you click them. In Visual Builder, this sequence of actions is known as an *action chain*. You can use and customize predefined actions or define your own. In this lab, you'll add buttons that take you from the Departments page to the Employees pages and back again. Each button is associated with an event that sets off a navigation action chain.
 
-You'll also populate your app's business objects by importing data from a file. You did this for the Location business object in a previous lab, and you'll do the same for the Department and Employee business objects in this lab.
+You'll also populate your app's business objects by importing data from a file. You did this for the Location business object in a previous lab; you'll do the same for the Department and Employee business objects in this lab.
 
 ## Task 1: Create an Action Chain to Navigate from the Departments Page to the Employees Page
 

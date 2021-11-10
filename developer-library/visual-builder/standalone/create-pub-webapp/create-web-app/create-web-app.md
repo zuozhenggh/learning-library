@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab shows you how to use Oracle Visual Builder to create a basic web application and populate it with business objects.
+This lab shows you how to use Visual Builder to create a basic web application and populate it with business objects.
 
 Estimated Lab Time:  15 minutes
 
 ### Background
 
-Visual Builder, as the name suggests, is a *visual* development tool for web and mobile applications. It provides a rich graphical user interface that lets you design and develop applications by dragging and dropping _components_ on a page. Each component depends on a _business object_ for its data. A business object is just a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through  REST endpoints that Visual Builder generates for you.
+Visual Builder, as the name suggests, is a *visual* development tool for web and mobile applications. It provides a rich graphical user interface that lets you design and develop applications by dragging and dropping _components_ on a page. Each component depends on a _business object_ for its data. A business object is just a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through  REST endpoints that Visual Builder generates for you.
 
 In this lab, you'll create the Employee, Department, and Location business objects to build a simple Human Resources application. Each business object has its own set of fields as shown here:
 
@@ -16,13 +16,13 @@ In this lab, you'll create the Employee, Department, and Location business objec
 
 Once you have your business objects, you'll use them to build the HR web app in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
-**Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
+**Note:** Although this workshop uses business objects to build a web application, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
 
 ## Task 1: Create a Web Application
 
 The first thing we'll do is create the web application itself. Later, we'll construct the business objects we need so we can populate the app with data.
 
-1.  In the web browser, log in to Oracle Visual Builder.
+1.  In the web browser, log in to Visual Builder.
     -   If you don't have any applications, the landing page appears. Click **+ New Application**.
 
         ![](./images/vbcsca_cra_s1a.png)
@@ -125,6 +125,9 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 ## Task 3: Create a Department Business Object
 
+Create the Department business object, which will have fields to show a department's name and location. In this task, you'll set up the department's Location field to pull in data from the Location business object you created in the previous task, but you won't actually add data to the Department business object just yet.
+
+
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
 
     ![](./images/vbcsca_cdb_s1.png)
@@ -162,7 +165,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
 ## Task 4: Create an Employee Business Object
 
-In this task, we'll create the last business object we need, the Employee object, which contains the employee's name and identifying data. In this case, the Employee has a Reference type field that refers to the Department.
+In this task, we'll create the last business object we need, the Employee object, containing the employee's name and identifying data. In this case, the Employee has a Reference type field to  refer to the Department business object.
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
 2.  In the New Business Object dialog box, enter `Employee` in the **Label** field and click **Create**. `Employee` is also filled in automatically as the **Name** value.

@@ -10,7 +10,7 @@ Estimated Lab Time:  10 minutes
 
 So far in this workshop, you've built the HR web application to show employees, their departments, and locations. Now that your work designing the app is more or less complete, you can stage it to allow team members to test it thoroughly. After testing is complete, you can publish the application and make it available to users.
 
-Visual Builder provides different databases for the development, staging, and live phases of an application. You can use an empty database for the staging or live phase, or you can transfer data from one to another, or you can import specific data for each.
+Visual Builder provides different databases for the development, staging, and live phases of an application. You can use an empty database for the staging or live phase, you can transfer data from one to another, or you can import specific data for each.
 
 This lab shows you how to stage, publish, and access those apps within the Designer. You can also perform these operations from the application's Options menu on the Visual Applications page.
 
@@ -86,15 +86,15 @@ After you have successfully tested the staged application, you can publish it an
 
     The application opens in a new browser tab. The schema and the data from the staging database are copied to the live database.
 
-    To open your live app from the Visual Builder Home page, click **ORACLE Visual Builder** in the header and go to the Visual Applications page. Locate your application, click **Live** in the Status column, then select **hrwebapp**.
+    To open your live app from the Visual Builder Home page, click **ORACLE Visual Builder** in the header to go to the Visual Applications page. Locate the HR Application, click **Live** in the Status column, then select **hrwebapp** to open the app.
 
     ![](./images/vbcssp_pub_s4_result.png)
 
-4.  Make a note of your application's URL, which you can now share with public users.
+4.  Make a note of your application's URL. You can now share this URL with public users. Remember to close the browser tab when you're done using the application.
 
-    Close the browser tab when you're done using the application.
+    After your application is published, you will no longer be able to make changes to it. To do that, you'll need to create a new version from the application's Options menu on the Visual Applications page. This creates a development version of the app for you to work on while the published version stays live. Once you are ready to go live with your updates, you'll need to re-stage and re-publish the new version.
 
-    After you've published an application, you will no longer be able to make changes to it. To do that, you'll need to create a new version. This creates a development version of the app for you to work on while the published version stays live. Once you are ready to go live with your updates, you'll need to re-stage and re-publish the new version.
+    That's it for this workshop! If you want, click the user menu in the top-right corner and select Sign Out from the menu.
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
