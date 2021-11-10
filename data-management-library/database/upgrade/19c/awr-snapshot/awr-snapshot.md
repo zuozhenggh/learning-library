@@ -6,6 +6,9 @@ In this lab, you will execute an application workload on the UPGR database befor
 
 *Estimated Lab Time:* 15 Minutes.
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:vK94YigW94Y)
+
 ### About AWR Snapshots
 The Automatic Workload Repository (AWR) collects, processes, and maintains performance statistics for problem detection and self-tuning purposes. This data is both in memory and stored in the database. The gathered data can be displayed as both reports and views.
 

@@ -44,14 +44,14 @@ Learn how to
 
     Graph Studio consists of a set of pages accessed from the menu on the left. 
 
-    The Home icon ![ALT text is not available for this image](images/home.svg " ") takes you to the Home page.  
-    The Models icon ![ALT text is not available for this image](images/code-fork.svg " ") takes you to the Models page where you start modeling your existing tables and views as a graph and then create, or instanstiate, a graph.  
-    The Graph page ![ALT text is not available for this image](images/radar-chart.svg " ") lists existing graphs for use in notebooks.  
-    The Notebook page ![ALT text is not available for this image](images/notebook.svg " ") lists existing notebooks and lets you create a new one.  
-    The Jobs page ![ALT text is not available for this image](images/server.svg " ") lists the status of background jobs and lets you view the associated log if any.  
+    The Home icon ![ALT text is not available for this image](images/home.svg "") takes you to the Home page.  
+    The Models icon ![ALT text is not available for this image](images/code-fork.svg "") takes you to the Models page where you start modeling your existing tables and views as a graph and then create, or instanstiate, a graph.  
+    The Graph page ![ALT text is not available for this image](images/radar-chart.svg "") lists existing graphs for use in notebooks.  
+    The Notebook page ![ALT text is not available for this image](images/notebook.svg "") lists existing notebooks and lets you create a new one.  
+    The Jobs page ![ALT text is not available for this image](images/server.svg "") lists the status of background jobs and lets you view the associated log if any.  
 
 
-## Task 2: Create a small 2GB execution environment
+## Task 2: Create a small 4GB execution environment
 
 1. Before creating a graph we will **create an execution environment** for running notebook paragraphs and loading the graph into an in-memory representation.   
    
@@ -59,7 +59,7 @@ Learn how to
    Select the `Environment` menu item.  
 
    ![ALT text is not available for this image](images/ll-user-pulldown-menu.png " ")
-2. Enter a **value of 2 (GB)** for the memory size and then click `Create`.  
+2. Enter a **value of 4 (GB)** for the memory size and then click `Create`.  
 
    ![ALT text is not available for this image](images/ll-create-env-detail.png " ") 
 3. The Jobs page will show the status. Meanwhile let's start modeling and creating a graph from the existing tables.  

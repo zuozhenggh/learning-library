@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:IpUuoOcpgho)
+[](youtube:kFB9C36oIaw)
 
 Time to run a promotion to help keep our at-risk customers. Run a localized promotion by finding these customers' local pizza locations using Oracle Spatial's nearest neighbor algorithm.
 
@@ -34,7 +34,31 @@ In this lab, you will:
 
 > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
-## Task 1: Run spatial queries
+
+## Task 1: Open a SQL Worksheet
+
+In this lab you will run a series of SQL queries as the MOVIESTREAM user. You concluded Lab 2 by running a script in a SQL Worksheet to load data as the MOVIESTREAM user. You may return to that SQL Worksheet to perform this Lab. If that Worksheet was closed then open a new SQL Worksheet.
+
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
+
+    ![Details page of your Autonomous Database](images/2878884319.png " ")
+
+2. Enter MOVIESTREAM for the username and click **Next**. On the next form, enter the MOVIESTREAM password - which is the one you entered when creating your MOVIESTREAM user. Click **Sign in**.
+
+    ![Log in dialog for Database Actions](images/login-moviestream.png " ")
+
+3. In the Development section of the Database Actions page, click the SQL card to open a new SQL worksheet:
+
+    ![Go to SQL worksheet](images/sql-card.png " ")
+
+4. Enter your commands in the worksheet. You can use the shortcuts [Control-Enter] or [Command-Enter] to run the command and view the Query Result (tabular format). Clear your worksheet by clicking the trash:
+
+    ![Go to SQL worksheet](images/sql-worksheet.png " ")
+
+You are now ready to find the closest pizza shops to MovieStream customers using SQL.
+
+
+## Task 2: Run spatial queries
 
 Oracle Autonomous Database provides an extensive SQL API for spatial analysis. This includes spatial relationships, measurements, aggregations, transformations, and more. In this lab you focus on one of those spatial analysis operations, "nearest neighbor" analysis. Nearest neighbor analysis refers to identifying which item(s) are nearest to a location.
 

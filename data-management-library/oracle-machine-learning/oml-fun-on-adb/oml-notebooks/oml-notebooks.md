@@ -57,8 +57,8 @@ To create a notebook:
 
 	![Notebooks option in OML homepage](images/homepage_notebooks.png)
 
-2. On the Notebooks page, click **Create**. The Create Notebook window appears.
-	![Image alt text](images/sample1.png)
+2. On the Notebooks page, click **Create**. The Create Notebook dialog appears.
+	![Create Notebook dialog](images/create_notebook.png)
 
 3. In the Name field, enter **Test** Notebook.
 
@@ -69,7 +69,7 @@ To create a notebook:
 6. Click **OK**. Your notebook is created and it opens in the notebook editor.
 
 
-You can now use it to create an md paragraph, SQL paragraph, and python paragraph and do the following:
+You can now use it to create a Markdown paragraph, SQL paragraph, and python paragraph and do the following:
 
 ### Task 2.1: Call the Markdown interpreter and generate static html from Markdown plain text
 To call the Markdown interpreter and generate static html from Markdown plain text:
@@ -84,7 +84,7 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 
 	![Markdown tags for bold](images/md_bold.png)
 
-4. To display the text in italics, write the same text inside the a an asterisk pair or underscore pair as shown in the screenshot, and click Run.
+4. To display the text in italics, write the same text inside an asterisk pair or underscore pair as shown in the screenshot, and click Run.
 
 	![Markdown tags for italics](images/md_italics.png)
 
@@ -247,8 +247,8 @@ An interpreter allows using a specific data processing language at the backend t
 
 This is the initial binding order of the interpreters. You can change the order of the interpreter bindings by clicking and dragging an entry above or below others.
 
-* **Low** (Default): Provides the least level of resources for in-database operations, typically serial (non-parallel) execution. It supports the maximum number of concurrent in-database operations by multiple users. The interpreter with low priority is listed at the top of the interpreter list, and hence, is the default.
-* **Medium:** Provides a fixed number of CPUs to execute in-database operations in parallel, where possible. It supports a limited number of concurrent users, typically 1.25 times the number of CPUs allocated to the Autonomous Database instance.
+* **Low** (Default): Provides the least level of resources for in-database operations, typically serial (non-parallel) running of database operations. It supports the maximum number of concurrent in-database operations by multiple users. The interpreter with low priority is listed at the top of the interpreter list, and hence, is the default.
+* **Medium:** Provides a fixed number of CPUs to run in-database operations in parallel, where possible. It supports a limited number of concurrent users, typically 1.25 times the number of CPUs allocated to the Autonomous Database instance.
 * **High:** Provides the highest level of CPUs to run in-database operations in parallel, up to the number of CPUs allocated to the Autonomous Database instance. It offers the highest performance but supports the minimum number of concurrent in-database operations, typically 3.
 
 	> **Note:** The interpreter binding order that is set for a notebook applies to all the paragraphs in that notebook.
@@ -271,7 +271,7 @@ In this step, you learn how to set the interpreter bindings:
 
 	![Save interpreter binding order](images/save_order.png)
 
-Clicking **Save** hides the interpreter settings. You can verify it again by clicking the gear icon. This completes the task of changing the interpreter binding order.
+Clicking **Save** records the changes and hides the interpreter settings. You can verify it again by clicking the gear icon. This completes the task of changing the interpreter binding order.
 
 ## Step 5: Create Jobs to Schedule Notebook Run
 Jobs allow you to schedule the running of notebooks. On the Jobs page, you can create jobs, duplicate jobs, start and stop jobs, delete jobs, and monitor job status by viewing job logs, which are read-only notebooks. In this lab, you will learn how to create a job to schedule the running of the notebook Classification_DT.

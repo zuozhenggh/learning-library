@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this workshop, you will create a simple web shop for 80s,90s and 2000s memorabilia (movies, posters, mugs, wearables, caps, toys electronics).
+In this workshop, you will create a simple web shop for 80s, 90s and 2000s memorabilia (movies, posters, mugs, wearables, caps, toys electronics).
 
 This lab is organized into different topics, each topic consists of multiple steps. Some steps are a bit more advanced, they're marked as 'advanced' and you can skip them. After completing this workshop a user has a very good understanding what JSON features are available in Oracle Database and when to use them. A user will also have learned why Oracle database is better suited for JSON Development than MongoDB, etc.
 
@@ -24,6 +24,7 @@ Watch this quick video to know why JSON in Oracle Autonomous Database is awesome
 
 [](youtube:yiGFO139ftg)
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/uvlhnG-bjnY).</if>
 
 ### About JSON
 
@@ -84,7 +85,7 @@ In this workshop, you will explore:
 
 * An Oracle Cloud Account
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 

@@ -42,7 +42,7 @@ Watch our short video that explains key features in Oracle Big Data Service:
 ## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account or you can get a Free Trial account as described in the **Getting Started** lab in the **Contents** menu.
 
-> _**Notes:**    
+> **Notes:**    
  + If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)
  + For more information about service limits, see [Service Limits](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) in the Oracle Cloud Infrastructure documentation.
  + To submit a request to increase your service limits, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#Requesti) in the Oracle Cloud Infrastructure documentation.

@@ -8,6 +8,9 @@ In this Lab, you will use the SQL Performance Analyzer (SPA) which is a part of 
 
 ![](./images/performance_prescription_03.png " ")
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:9_f9IqFYc_A)
+
 You have collected SQL statements from the first load of HammerDB earlier in this workshop into two SQL Tuning Sets:
 
     STS_CaptureAWR

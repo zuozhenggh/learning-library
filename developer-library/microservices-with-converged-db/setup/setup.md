@@ -2,13 +2,17 @@
 
 ## Introduction
 
-In this lab we will provision and setup the resources to execute microservices in your tenancy.  
+In this lab, we will provision and setup the resources to execute microservices in your tenancy.  
 
-Estimates Lab Time - 25 minutes
+Estimated Time: 25 minutes
 <if type="multicloud-freetier">
 - Estimates Lab Time - 25 minutes
 + Estimates Lab Time - 25 minutes
 </if>
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:yqCbkHh9EVA)
 
 ### Objectives
 
@@ -80,7 +84,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.9.2.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.10.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 

@@ -1,10 +1,14 @@
-# Create tables, load tables
+# Create Tables, Load Tables
 
 ## Introduction
 
 This lab walks you through creating and loading NoSQL tables. This can be done a variety of different ways including using the Oracle Cloud Console, writing an application program, or triggering actions through a function. This lab will walk you through a couple of different approaches. Oracle NoSQL Database Cloud Service supports both schema-based and schema-less (JSON) modeling so we will create examples of both tables.
 
-Estimated Time: 25 minutes
+_Estimated Lab Time:_ 25 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:V8tWMOXpgIA)
 
 ### Objectives
 
@@ -266,7 +270,7 @@ In this task we are going to create tables using the Cloud Shell, and Oracle Clo
 
 ## Task 3:  Adding Data From the Oracle Cloud Console
 
-1. Make sure you see the 'Tables' screen. You should see 3 tables listed. You may or may not see the 'Always Free' tag, this displays depending on how you created the tables.
+1. Make sure you see the 'Tables' screen. You should see 3 tables listed. You may or may not see the 'Always Free' tag, this displays depending on how you created the tables.  You may see different values for read units, write units and storage.
 
     ![](./images/table-screen.png)
 

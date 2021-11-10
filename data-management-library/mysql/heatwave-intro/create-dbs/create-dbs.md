@@ -6,7 +6,11 @@
 
 In this lab, you will create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.  Finally you will add a HeatWave Cluster comprise of two or more HeatWave nodes.  
 
-Estimated Lab Time: 20 minutes
+_Estimated Lab Time:_ 20 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:Uz_PXHzO9ac) 
 
 ### Objectives
 
@@ -25,19 +29,17 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Create Virtual Cloud Network 
 
-*Note: Green Button users - Your Virtual Cloud Network already exist. Go to Task 2*
-
 1. Navigation Menu   
         Networking  
             Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
 
-2. 'click' **Start VCN Wizard**
+2. Click **Start VCN Wizard**
     ![VCN](./images/03vcn02.png " ")
 
 3. Select 'Create VCN with Internet Connectivity'
 
-    'click' 'Start VCN Wizard' 
+    Click 'Start VCN Wizard' 
     ![VCN](./images/03vcn03.png " ")
 
 4. Create a VCN with Internet Connectivity 
@@ -66,13 +68,13 @@ In this lab, you will be guided through the following tasks:
 8. Click 'View Virtual Cloud Network' to display the created VCN
     ![VCN](./images/03vcn06.png " ")
 
-9. On MDS-VCN page under 'Subnets in (root) Compartment', 'click'  '**Private Subnet-MDS-VCN**' 
+9. On MDS-VCN page under 'Subnets in (root) Compartment', click  '**Private Subnet-MDS-VCN**' 
      ![VCN](./images/03vcn07.png " ")
 
-10.	On Private Subnet-MDS-VCN page under 'Security Lists',  'click'  '**Security List for Private Subnet-MDS-VCN**'
+10.	On Private Subnet-MDS-VCN page under 'Security Lists',  click  '**Security List for Private Subnet-MDS-VCN**'
     ![VCN](./images/03vcn08.png " ")
 
-11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', 'click' '**Add Ingress Rules**' 
+11.	On Security List for Private Subnet-MDS-VCN page under 'Ingress Rules', click '**Add Ingress Rules**' 
     ![VCN](./images/03vcn09.png " ")
 
 12.	On Add Ingress Rules page under Ingress Rule 1
@@ -179,7 +181,7 @@ Description
 
     ![MDS](./images/04mysql08.png " ")
 
-10. 'click' on Show Advanced Options 
+10. Click on Show Advanced Options 
 
 
 11. Select Data Import tab. 
@@ -198,7 +200,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.us-ashburn-1.oraclecloud.com/p/lIdlQUQNNL7zTvct-yECI7b422-DTLI5PKrW2luTlRt-JbH7GCzkZ-hXTOUGRBZG/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
+    https://objectstorage.us-ashburn-1.oraclecloud.com/p/zRBSs7nKURyZRcIoV4QlYhascC5gkZcJeQoBS8c2ssyEPID3PSDAnh73OMClQQH4/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -208,7 +210,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.us-phoenix-1.oraclecloud.com/p/YStBr3efR5DEU6vJDkGMZ8f9NK-vawTf114iPirD7i3LW0_BC9mRpidzs2qTLVBB/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.us-phoenix-1.oraclecloud.com/p/vQk5N0AGtnaDJuwBdvA4CpqnXpOo96_XEzOEcTapd5I2dK6ZPzFRp7fFYF5_bGGN/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -218,7 +220,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.us-sanjose-1.oraclecloud.com/p/EXwPhz0h6gBUlu8gSiA9O97BB9JUoTECraqxAKGyueF1dYeW_fL2goa_d2rfeZMn/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.us-sanjose-1.oraclecloud.com/p/8ggUw6KN3odKB2111P0jvDcp0G4c9UhqqOhICQdLPa1OGEuqFhNDaCJ52txv3rT9/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -228,7 +230,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.ca-montreal-1.oraclecloud.com/p/8TzdLjwdzm8xmvTG6nTokE1yNE4dkE2IRq2aVmvjT4IC10f7PIeryyQyC4ROpr0X/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ca-montreal-1.oraclecloud.com/p/M-VE3R_PRlUZCdO7nkZm-NEIKCJibSbHfP39PhIQU8hnkTmbwdiH98_LQS-R02Sc/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -238,7 +240,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.ca-toronto-1.oraclecloud.com/p/mnDsSyuKkSEtHn6jU44zqViMKBTUySyTpoTLdSZGZf-UO7fqKEX7uqr_z2R_mxGO/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ca-toronto-1.oraclecloud.com/p/5hzfshBP7rSU7W-L1gzLUqLTQrU7Jd7BkA8IUoPjVj_hTs5BdDvC-ncv0E-pNyzm/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -250,7 +252,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/02z9LbgxbzO0L7RQvUpp51ol85tgnfJd1uSM3xGZ4CYjX9UAX2WR4ES9PH0zG-zr/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OhTbbGLOoiEt-mPIlWLvX1G1k-c8A7xSIb-ua6-Pc4KX9JHioWev8ipdO5LyoC55/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -260,8 +262,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.sa-santiago-1.oraclecloud.com/p/gnhSojOHKIDtg2cO-lZSEv0yYCIksDbnqylfOxVb0-X1H4MwNatOyOtzXYD3Si0N/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
-
+    https://objectstorage.sa-santiago-1.oraclecloud.com/p/V9-g6ijSAi4gUVayFYZsFbKLJRAxm3MaYR_S3YddXxhoBcm51vwjiAIB-yTL9I0x/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -271,7 +272,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.sa-vinhedo-1.oraclecloud.com/p/D5_AuuxEKdqsJpeieZNCgmUtpkvOKOU5_2gMnJHtDbbJekz1dag6dBElSmW3nQ0Y/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.sa-vinhedo-1.oraclecloud.com/p/a9QeIhMQzAgC6Zga-bOeSfBk47CgzNsuUEnxTYSh4P33WrS4-jgzpPoAJN4JvEai/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -283,17 +284,28 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.uk-london-1.oraclecloud.com/p/wF_0GlwqPaz-0YLaoXhQ2R_L2ev45F3yuhzA9fID4KS-wB4_GsDuYRV_svAS_d7d/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    https://objectstorage.uk-london-1.oraclecloud.com/p/l0jITzinEWEiAQmFNorC8s-4PAv-jwAMU97aEDjmTSfzlte-VUhJ7zPIYGXJMZh9/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
 
     <details>
+    <summary>UK West (Newport) Region - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.uk-cardiff-1.oraclecloud.com/p/hV2VaYxhcRGU1efgjnmwK_zY5hBL4tuT5UBo-RPYCyHXbFvQkDGzfTx2d_Vfqnsy/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
+
+    </copy>
+    ```
+    </details>
+    
+    <details>
     <summary>Germany Central (Frankfurt) Region - Copy and paste to PAR Source URL</summary>
     <br>
     ```
     <copy> 
-    https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/5CiMznUnIfiUducb8J2GSB7BrsbMQA4tA27qfOoLHFgxtgi6RIBCHcP6U3hlsYpK/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/kTZVWyDV2Rry4pLBxbf5Yjn87pC3dEAUuFE8JRJb2Nbv1FoDWNtuAfDChzQey2H0/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -303,7 +315,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.eu-zurich-1.oraclecloud.com/p/YBRZfD1n2iAcuqvqnwRvQuozrcjvxiRl0Rvp95UnCWLg74JDzdFvP1kuCaZYF5qi/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.eu-zurich-1.oraclecloud.com/p/3w2UjDyli22Jr4ymrLuo80wV0_Qp3fG144WjNedYPZ4w6OHbIMKQuwnXdDPgsV-x/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -313,7 +325,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.eu-amsterdam-1.oraclecloud.com/p/xr8B6l2kTzIu5OyryaSkiJo_1QU4QnH4AD_sx6PF_b21DmZBdoLwLF7c10Ot9Koe/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json   
+    https://objectstorage.eu-amsterdam-1.oraclecloud.com/p/3_Ez8iA8SCTn4AGRfs3m3PJBtBpl3MyZSn869_nDaIOFAiXB-fWJEjh2ta0tS8N-/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json   
     </copy>
     ```
     </details>
@@ -323,17 +335,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.me-jeddah-1.oraclecloud.com/p/8YbXOPZ0GyDFb69K4BkUv7690MqhTs8pqcE4zG5zOLNeSG3j_wZfIm7DcSQn5G0n/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json    
-    </copy>
-    ```
-    </details>
-
-    <details>
-    <summary>UAE East(Dubai) Region - Copy and paste to PAR Source URL</summary>
-    <br>
-    ```
-    <copy> 
-    https://objectstorage.me-dubai-1.oraclecloud.com/p/0xrSzhhg0bvExr9BgK-VTFAlUwJD5TaY1VB0cDGlFswagCS44raI0cg9VCypHECR/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.me-jeddah-1.oraclecloud.com/p/cqBq_4AhY4zX7Sq_v4ziwR3ojeonM6l8JzknXMOUNov-HRcKqwmpTKOk-QCJgxln/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json 
     </copy>
     ```
     </details>
@@ -343,7 +345,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.il-jerusalem-1.oraclecloud.com/p/Smo6bw6xGzG_TIIvIXqa657dNFVFnVb-pQ4pxhumdFsWvZCf1RAQV11eUKPqxNzm/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
+    https://objectstorage.il-jerusalem-1.oraclecloud.com/p/0OhJRlazP__cAgFoNTHPw2KSyVg6BlMP1NLxbHBDp7ZsI7X_7XyHimMJyLR4lQt3/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -356,7 +358,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.ap-tokyo-1.oraclecloud.com/p/hKcth9AOMgzW_bS2rVIiTT_JJ5tNGmqS1kjkWjMphMlnZDbtUj3ZuSehrSuDTCtC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json  
+    https://objectstorage.ap-tokyo-1.oraclecloud.com/p/N-Fj8lY5lJe4JKbf9-vbpBcBat4B5G9VBk-iC37d7Juz9lq_zR660gRrs3bmiblC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
     </copy>
     ```
     </details>
@@ -366,7 +368,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-osaka-1.oraclecloud.com/p/P9L6IfzKl2AWeu8e5Ekc9YVdR9lnvBLPkSiXe5vs9QsUsHHnYI78eba7ib-iWLnc/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-osaka-1.oraclecloud.com/p/lsDWl1s5qPZuRdN7hxjqY3Pnqena71I4j2QKSdDIbM6BVbNXxki4zs1SaqnPnp0g/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -376,7 +378,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-seoul-1.oraclecloud.com/p/cWMmcups3ZFFswzB4pknzotyEvRmCOcNft1AsJxBJlaEKajKdJIVfdMI70yVz6yD/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-seoul-1.oraclecloud.com/p/SCwM4wjV5i5dWBp0E7rtxNff6wS8NE2rpTm9IDrTOh6H2sQriR-WkqHU96KxdScV/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -387,7 +389,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-chuncheon-1.oraclecloud.com/p/VfIzozmxePRBgnozS5cWyoo1U8IJOWMJKOWV9Vkfp-r3Pq8hJeuj9GCjNxmT5ZGo/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-chuncheon-1.oraclecloud.com/p/cmF0S75URKX_kZbLs3zoGpVrrNq7g-a6tWXrcfQXKRDjXuW_U9llrvKgE5bwh72l/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -397,7 +399,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-sydney-1.oraclecloud.com/p/wOHQ85I_g0Xm5efGO1jWfk8Jg9hKQAJ7MxWTW1Qec8wLdGrYxi78qPgcdcKr92JG/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-sydney-1.oraclecloud.com/p/GOSs0oAPv--FGz-NssbiGjCqGSlfXWcRToN4Nr_7ouGfAQpIafAbLA5akUxdWqfu/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -407,7 +409,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-melbourne-1.oraclecloud.com/p/xrusIEweK7vvSuzdj6d_Oqm04l14gI-JFyHG92UHqmt9V3lADczMuOV1PnvY-jXe/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-melbourne-1.oraclecloud.com/p/_dxPlqS7R5T4O5HJdOfEsFg1toGjt1OvnxLwbyBbQLlydN-5mc3l4mmSOn8ZW5wc/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -417,7 +419,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-mumbai-1.oraclecloud.com/p/KxPwBh70ck0suWi8o0gmLP9vWwgnMznQKL7cilv-7T1zZsAXjY4Iun6p4lARU2vl/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-mumbai-1.oraclecloud.com/p/brAVESzCt9Us9EEnopyY_geGagLMzKSqbcJNgN3FSgXFZk5Ue_mviRmU9MzLcvy0/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -428,7 +430,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-hyderabad-1.oraclecloud.com/p/HicbLKYet2Ww47WmMvPhyrT7VUnj443tOj801k44ZqOoP3VZ0H06tfRRuUQim4xK/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
+    https://objectstorage.ap-hyderabad-1.oraclecloud.com/p/VJ-OUzthr26NbTkfOKtCxk4nGeJ9pdsAmOjclZtp6rINVMKbJNdsx0Ma2G3Suhj7/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
     </copy>
     ```
     </details>
@@ -462,7 +464,7 @@ Description
     DB Systems
 2. Choose the root Compartment. A list of DB Systems is displayed. 
     ![Connect](./images/10addheat01.png " ")
-3. In the list of DB Systems, 'click' the **MDS-HW** system. 'click' **More Action ->  Add HeatWave Cluster**.
+3. In the list of DB Systems, click the **MDS-HW** system. click **More Action ->  Add HeatWave Cluster**.
     ![Connect](./images/10addheat02.png " ")
 4. On the “Add HeatWave Cluster” dialog, select “MySQL.HeatWave.VM.Standard.E3” shape
 
@@ -480,11 +482,11 @@ algorithm, it will predict the number of nodes needed.
 
 9. Click “Add HeatWave Cluster” to create the HeatWave cluster
     ![Connect](./images/10addheat06.png " ")
-10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. 'click' the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
+10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/10addheat07.png " ")
 
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
