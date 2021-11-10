@@ -18,19 +18,19 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 1. Go to the top-left hamburger icon, navigate to **Oracle Database** and choose **Autonomous Transaction Processing**. It will show you all available ATP workload type databases. Click on **Target ATP** database.
 
-	![](/images/2.atp.PNG)
+	![](/images/2.atp.png)
 
 2. In **Tools** tab, where you will see **Database Actions**, click on **Open Database Actions**. You may need to enable a pop-up in your browser if it doesn't open anything.
 
-	![](/images/2.atp_1.PNG)
+	![](/images/2.atp-1.png)
 
 3. A new sign-in page opens, enter **ADMIN** in Username, when it asks you to enter the password, which is in the terraform output. Go and copy, then paste here.
 
-	![](/images/sql_dev_1.png)
+	![](/images/sql_dev-1.png)
 
 4. In the **DEVELOPMENT** section, click on **SQL**. 
 
-	![](/images/sql_dev_5.png)
+	![](/images/sql-dev-5.png)
 
 ## **Task 2**: Create Target Tables
 
@@ -38,7 +38,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 2. SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded **CreateTables.sql** file and drop it in the worksheet area. Then run create statements.
 
-	![](/images/sql_dev_2.png)
+	![](/images/sql-dev-2.png)
 
 	There should have **7** tables created after script execution.
 
@@ -52,7 +52,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 	</copy>
 	```
 
-	![](/images/sql_dev_3.png)
+	![](/images/sql-dev-3.png)
 
 2. Let's check whether the parameter `enable_goldengate_replicaton` is set to true. 
 
@@ -62,11 +62,11 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 	</copy>
 	```
 
-	![](/images/sql_dev_4.png)
+	![](/images/sql-dev-4.png)
 
 	We successfully enabled GGADMIN in our target Autonomous Database and created target HR database table structures. 
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+This concludes this lab. You may now **[proceed to the next lab](#next).**
 
 ## Acknowledgements
 

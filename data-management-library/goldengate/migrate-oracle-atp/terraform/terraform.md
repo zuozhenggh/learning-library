@@ -40,7 +40,7 @@ For a technical overview of this lab step, please watch the following video:
 
 1. Let's prepare our work directory. We will use Cloud Shell, it is located at the top right corner of the OCI web console
 
-	![](/images/0.Prep_0.PNG)
+	![](/images/0.prep-0.png)
 
 ## **Task 2**: Clone Lab Repository
 
@@ -55,7 +55,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![](/images/1.Git.PNG)
+	![](/images/1.git.png)
 
 ## **Task 3**: Generate SSH keys 
 
@@ -71,17 +71,17 @@ For a technical overview of this lab step, please watch the following video:
 
 2. Copy the output of public _**pem**_ file content, make sure you select the correct output as it shown in the below image:
 
-	![](/images/0.Prep_1.PNG)
+	![](/images/0.prep-1.png)
 
 ## **Task 4**: Add Public API keys
 
 1. Click on the top right corner of your OCI web console and then click on your **profile name**. 
 
-	![](/images/0.Prep_1-1.png)
+	![](/images/0.prep-1-1.png)
 
 2. Then navigate to the **API Keys** from the left pane and click on the **Add API Key** button. A small pop-up will appear and you need to choose the "Paste Public Key" radio button. Paste your **copied** public pem key there and click on the **Add** button.
 
-	![](/images/0.Prep_2.PNG)
+	![](/images/0.prep-2.png)
 
 2. A small confirmation will show after you added an API key. You need to copy **tenancy** and **region** values. Now in the cloud-shell, type the below command and modify **terraform.tfvars** file accordingly.
 
@@ -93,7 +93,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	> **Note:** This will open a new file, you have to press **i** key to enable editing, then "shift+insert" keys to paste copied parameter. When you are done editing press **esc** key and press **:wq** keys, then hit enter for save & quit.
 
-	![](/images/0.Prep_3.PNG)
+	![](/images/0.prep-3.png)
 
 ## **Task 5**: Terraforming
 
@@ -119,10 +119,10 @@ For a technical overview of this lab step, please watch the following video:
 	
 3. Make a copy of your output results in your notepad for later use.
 
-	![](/images/1.git_1.PNG)
+	![](/images/1.git-1.png)
 
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+This concludes this lab. You may now **[proceed to the next lab](#next).**
 
 ## **Appendix**: Troubleshooting
 
