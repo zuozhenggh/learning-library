@@ -13,7 +13,7 @@ Estimated time: 75 minutes (please note you can run other labs in this training 
 - Run the Autoupgrade pre-check phase and look at the results
 - Run the Autoupgrade deploy phase and watch the database being upgraded
 
-## Prerequisites ##
+### Prerequisites ###
 
 - You have access to the Upgrade to a 19c Hands-on-Lab client image
 - A new 19c database has been created in this image (previous lab)

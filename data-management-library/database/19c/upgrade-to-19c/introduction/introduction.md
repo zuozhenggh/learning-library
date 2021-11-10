@@ -6,7 +6,7 @@
 
 This hands-on lab can be run stand-alone but be aware that individual steps might take time to finish. Usually the hands-on lab is delivered as part of the PTS 19c Upgrade Workshop which fills the time waiting with explanations and information.
 
-Estimated time needed to complete all steps in this hands-on is about 3 hours.
+Estimated time: 3 hours.
 
 ## Objectives ##
 
@@ -15,14 +15,14 @@ Estimated time needed to complete all steps in this hands-on is about 3 hours.
 - Upgrade a database using Full Transportable tablespaces
 - Upgrade a database using unplugging a PDB and plugging it into a new 19c CDB (and upgrade)
 
-## Prerequisites ##
+### Prerequisites ###
 
 - A provisioned LiveLabs Environment
     - On the Attendee Page, you should see the NoVNC URL
-
- The labs have been set up to work with a NoVNC remove desktop environment using an HTML5 compatible browser. Most proxy systems will work with this setup.
-
- If you want to run (parts) of the workshop using a direct SSH connection, you need direct access to the Internet or a proxy that supports tunneling.
+- The labs have been set up to work with a NoVNC remove desktop environment using an HTML5 compatible browser. Most proxy systems will work with this setup.
+- If you want to run (parts) of the workshop using a direct SSH connection, you need direct access to the Internet or a proxy that supports tunneling.
+    - Lab 3-5 can be run using SSH only
+    - The setup of SSH for your keys (password authentication is not allowed) is not described in the lab.
 
 ## Access the labs
 

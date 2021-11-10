@@ -12,7 +12,7 @@
 - Plug the PDB into its new CDB running on 19c
 - Upgrade the PDB using the regular upgrade tools
 
-## Prerequisites ##
+### Prerequisites ###
 
 > **Warning** on copying and pasting commands with multiple lines from the browser screen; when you copy from outside of the NoVNC remote desktop and paste inside the NoVNC remove desktop, additional **enters**, or CRLF characters are pasted, causing some commands to fail. Solution: Open this lab inside the browser inside the Remote Desktop session.
 
