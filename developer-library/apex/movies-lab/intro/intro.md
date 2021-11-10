@@ -25,7 +25,7 @@ In this lab, you will:
 
 | # | Module | Est. Time |
 | --- | --- | --- |
-| - | [Getting Started](?lab=signing-up.md) | 5 min |
+| - | [Getting Started](?lab=signing-up) | 5 min |
 | 1 | [Creating the Application](?lab=create-app) | 5 min |
 | 2 | [Creating REST Data Sources](?lab=creating-rest-sources) | 15 min |
 | 3 | [Creating the Movie Search Page](?lab=creating-movie-search-page) | 20 min |
