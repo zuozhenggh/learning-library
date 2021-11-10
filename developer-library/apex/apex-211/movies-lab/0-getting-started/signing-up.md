@@ -4,7 +4,7 @@
 
 Oracle Application Express (APEX) is a feature of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. To begin this workshop, you will need to create an APEX workspace at [apex.oracle.com](apex.oracle.com).
 
-This lab assumes you are using Oracle APEX 21.1 or higher. If you already have an APEX 21.1 workspace provisioned, you can skip Task 1 and go straight to Task 2.
+This lab assumes you are using Oracle APEX 21.1 or higher. If you already have an APEX 21.1 workspace provisioned, you can go straight to Lab 1.
 
 ### What is an APEX Workspace?
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
