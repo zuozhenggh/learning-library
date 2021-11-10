@@ -1,14 +1,16 @@
-# Setup Database Management for Oracle Cloud Databases
+# Setting up Database Management for Oracle Cloud Databases
 
 ## Introduction
 
-In this lab, you will go through the steps to setup Database Management for Oracle Cloud Databases.
+In this lab, you will go through the steps to set up Database Management for Oracle Cloud Databases.
 
-Database Management service now also supports Oracle Databases, which are databases running on comanaged Oracle Cloud Database services, including bare metal, virtual machines, and Exadata Cloud.
+Database Management service now also supports Oracle Cloud Databases, which are Oracle Databases on the following Co-managed Oracle Database Cloud solutions:
+-	Bare Metal and Virtual Machine DB Systems
+-	Exadata Cloud Service
 
 ![Architecture](./images/architecture.png " ")
 
-Database Management features for Oracle Database service are available as part of two Management Options, which you can select when enabling Database Management.
+Database Management features for Oracle Cloud Databases are available as part of two Management Options, which you can select when enabling Database Management.
 
 The Full Management option includes all Database Management features for Oracle Database Enterprise Editions, including the following features. The Full Management option is also available for Oracle Database Standard Edition but doesn’t include Performance Hub features.
 
@@ -18,14 +20,14 @@ The Full Management option includes all Database Management features for Oracle 
 
 The Basic Management option includes the following features:
 
-* 14 basic monitoring metrics, such as CpuUtilization, StorageAllocated, and UserCalls. These metrics are displayed in the OCI Monitoring service and on the Database Details page of the database after Database Management is enabled.
+* 14 basic monitoring metrics, such as CpuUtilization, StorageAllocated, and UserCalls. These metrics are displayed in the OCI Monitoring service and on the **Database Details** page of the database after Database Management is enabled.
 * Active session history (ASH) analytics and SQL monitoring features in Performance Hub for multitenant container databases (CDBs). These features are not available for pluggable databases.
 
 Estimated Time: 50 minutes
 
 ### Objectives
 
-Setup Database Management to monitor and manage Oracle Databases on the following Co-managed Oracle Database Cloud solutions:
+Set up Database Management to monitor and manage Oracle Databases on the following Co-managed Oracle Database Cloud solutions:
 
 -   Bare Metal and Virtual Machine DB Systems
     
@@ -63,21 +65,23 @@ This lab assumes you have completed the following labs:
 
 ## Task 2: Assign IAM permissions
 
-1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Identity & Security**. Under **Identity**, click **Policies**.
+1.  From the Oracle Cloud console navigation menu located in the upper left, click **Identity & Security**. Under **Identity**, click **Policies**.
 
     ![Management Agents](./images/policy.png " ") 
 
-2. Click **Create Policy**. On the **Create Policy** dialog enter:
+2. Click **Create Policy**. In the **Create Policy** dialog :
 
-     **Name:** Policy-for-dbmgmt
+    ![Management Agents](./images/policy2.png " ") 
+
+     **Name:** Enter **Policy-for-dbmgmt**.
      
-     **Description:** Policy for OCI DB Management
+     **Description:** Enter **Policy for OCI DB Management**.
      
-     **Compartment:** Select root
+     **Compartment:** Select **root**.
      
-     Enable **Show manual editor**
+     Enable **Show manual editor**.
      
-     Enter following in **Policy Builder**:
+     Enter the following in **Policy Builder**:
 
     ```
     <copy>
@@ -94,8 +98,6 @@ This lab assumes you have completed the following labs:
     </copy>
     ```
 
-    ![Management Agents](./images/policy2.png " ") 
-
     Click **Create**
 
 ## Task 3: Create OCI Vault
@@ -104,29 +106,32 @@ This lab assumes you have completed the following labs:
 
     ![Management Agents](./images/vault.png " ") 
 
-2.  On the OCI Vaults page click **Create Vault**.
+2.  On the **OCI Vaults** page click **Create Vault**.
 
     ![Management Agents](./images/vault1.png " ")
 
-3.  Select "Create in Compartment" and enter "Name" : dgmgmt-vault
-
+3.  In the **Create Vault** dialog:
     ![Management Agents](./images/vault2.png " ")
+    
+    Create in Compartment: Select the name of compartment.
+    
+    Name: Enter **dbmgmt-vault**.
 
     Click **Create Vault**.
 
-4.  Click on the vault **dgmgmt-vault**.
+4.  Click the vault **dbmgmt-vault**.
 
     ![Management Agents](./images/vault3.png " ")
 
 ## Task 4: Create Key
 
-1. On the **Vault Details** page click **Create Key**. On the **Create Key** page select all defaults and enter "Name" : dbmgmt-key.
+1. On the **Vault Details** page click **Create Key**. On the **Create Key** page select all defaults and enter "Name" : **dbmgmt-key**.
 
     ![Management Agents](./images/key.png " ")
 
     Click **Create Key**.
 
-2. On the **Vault Details** page confirm the State of key is "Enabled". From the left navigation pane click **Secrets**.
+2. On the **Vault Details** page confirm the **State** of key is **Enabled**. From the left navigation pane click **Secrets**.
 
     ![Management Agents](./images/key1.png " ")
 
@@ -177,13 +182,13 @@ Refer [Create a Database Management Private Endpoint]( https://docs.oracle.com/e
 
     ![Management Agents](./images/endpoint1.png " ")
 
-     **Name:** dbmgmtpe
+     **Name:** Enter **dbmgmtpe**.
 
-     **Description:** Database Management Private Endpoint
+     **Description:** Enter **Database Management Private Endpoint**.
 
      **Choose Compartment:** Select the compartment in which you want the private endpoint to reside.
 
-     **Use this private endpoint for RAC databases:** Select this check box if you want to create a Database Management private endpoint for RAC Oracle Cloud Databases in the Virtual Machine DB system and Exadata Cloud service. The Database Management private endpoint for RAC Oracle Cloud Databases is a limited resource and you can create only one such private endpoint in your tenancy. Leave this unchecked.
+     **Use this private endpoint for RAC databases:** Select this check box if you want to create a Database Management private endpoint for RAC Oracle Cloud Databases in the Virtual Machine DB system and Exadata Cloud service. For the purpose of this livelab/workshop, leave this option unchecked.
 
      **Virtual Cloud Network :** Select the VCN in which the Oracle Cloud Database can be accessed. Select labVCN.
 
@@ -209,7 +214,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
     ![Management Agents](./images/seclist1.png " ")
 
-2.  Click on DB System **DBCS**.
+2.  Click DB System **DBCS**.
 
     ![Management Agents](./images/seclist2.png " ")
 
@@ -239,7 +244,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
      **Description:** Connection from DB Management Private Endpoint
 
-     Click on **Add Ingress Rules**.
+     Click **Add Ingress Rules**.
 
     ![Management Agents](./images/seclist6.png " ")
 
@@ -271,7 +276,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
      **Description:** Egress from DB Management PE to DBCS
 
-     Click on **Add Egress Rules**.
+     Click **Add Egress Rules**.
 
     ![Management Agents](./images/seclist7.png " ")
 
@@ -286,19 +291,19 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
     ![Management Agents](./images/manageddatabases.png " ")
 
-3.  On the **Enable Database Management** dialog:
+3.  In the **Enable Database Management** dialog:
 
     ![Management Agents](./images/enabledbmgmt1.png " ")
 
-     **Database Type:** Select **Bare metal, VM**
+     **Database Type:** Select **Bare metal, VM**.
 
-     **Database System:** DBCSDB
+     **Database System:** Select **DBCSDB**.
 
-     **Database Home:** Select default.
+     **Database Home:** Select the name of Database Home.
      
-     **Database:** Select default.
+     **Database:** Select the name of Database.
 
-     **Service Name:** Select default.
+     **Service Name:** Select the Service Name.
 
     ![Management Agents](./images/enabledbmgmt2.png " ")
 
@@ -314,26 +319,26 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
      Click **Enable Database Management**.
 
-4.  A confirmation message with a link to the Oracle Cloud Database's Work Requests page is displayed. Click the link to monitor the progress of the work request.
+4.  A confirmation message with a link to the Oracle Cloud Database's **Work Requests** page is displayed. Click the link to monitor the progress of the work request.
 
     ![Management Agents](./images/enabledbmgmt3.png " ")
 
 5.  You can verify if Database Management is successfully enabled on the following pages:
 
-* Database Management Administration page: Select the appropriate option in the Deployment Type drop-down list. After Database Management is enabled, the Oracle Cloud Database is listed as a Managed Database. Click Database Name **PROD** to view **Managed Database Details**.
+* **Database Management Administration** page: Select the appropriate option in the Deployment Type drop-down list. After Database Management is enabled, the Oracle Cloud Database is listed as a Managed Database. Click Database Name **PROD** to view **Managed Database Details**.
 
     ![Management Agents](./images/enabledbmgmt4.png " ")
 
     ![Management Agents](./images/enabledbmgmt7.png " ")
 
-* Database Details page of the Oracle Cloud Database: **Database Management** is set to **Full**. Select **Metrics** on the left pane under Resources and check if the database metrics are displayed.
+* **Database Details** page of the Oracle Cloud Database: **Database Management** is set to **Full**. Select **Metrics** on the left pane under Resources and check if the database metrics are displayed.
 
     ![Management Agents](./images/enabledbmgmt5.png " ")
 
     ![Management Agents](./images/enabledbmgmt6.png " ")
 
-    For ASH Analytics & SQL Monitoring click on **Performance Hub** on the Database Details page. **Performance Hub** page on Database Details will be a basic one.
-
+    For ASH Analytics & SQL Monitoring, click **Performance Hub** on the **Database Details** page. Note that the **Performance Hub** on the **Database Details** page does not include all the features that are available when **Performance Hub** is accessed from the Database Management **Managed Database Details** page.
+    
     ![Management Agents](./images/enabledbmgmt8.png " ")    
 
 ## Acknowledgements
