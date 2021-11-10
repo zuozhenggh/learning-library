@@ -12,6 +12,9 @@ Oracle Enterprise Manager enables you to get complete monitoring visibility into
 
 - Metric Extensions to monitor conditions specific to your environment
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:Qu0F2wVp3k0)
+
 ### Objectives
 The objective of this lab is to become familiar with Enterprise Monitoring capabilities using Oracle Enterprise Manager Cloud Control 13c.
 
