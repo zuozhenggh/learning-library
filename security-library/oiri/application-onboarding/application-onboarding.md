@@ -19,7 +19,15 @@ This lab assumes you have:
 
 ## Task 1: Start the OIG server
 
-1. Launch a browser window and Click on the bookmark *Workshop Links* and click on Weblogic Admin Console.
+1. On the browser window on the right preloaded with *Weblogic Admin Console* on one of the tabs, if not already logged in, click on the *Username* field and select the saved credentials or use the below to login.
+
+    ```
+    Username: <copy>weblogic</copy>
+    ```
+
+    ```
+    Password: <copy>Welcome1</copy>
+    ```
 
     ![](images/3-weblogic.png)
 
@@ -42,32 +50,29 @@ This lab assumes you have:
 1. Open a terminal session as oracle user and copy the entitlement file.
 
     ```
-    <copy>cd ~</copy>
-    ```
-    ```
-    <copy>unzip /u01/files/target/access/archived/documents_16-06-2021_09-51-31.zip -d /u01/files/target/access/</copy>
-    ```
-    ```
-    <copy>ls -latr /u01/files/target/access</copy>
+    <copy>
+    cd ~
+    unzip /u01/files/target/access/archived/documents_16-06-2021_09-51-31.zip -d /u01/files/target/access/
+    ls -latr /u01/files/target/access
+    </copy>
     ```
 
     ![](images/8-files.png)
 
-
 2. Copy the User accounts file
 
     ```
-    <copy>unzip /u01/files/target/accounts/archived/accounts_16-06-2021_09-53-03.zip -d /u01/files/target/accounts/</copy>
-    ```
-    ```
-    <copy>ls -latr /u01/files/target/accounts</copy>
+    <copy>
+    unzip /u01/files/target/accounts/archived/accounts_16-06-2021_09-53-03.zip -d /u01/files/target/accounts/
+    ls -latr /u01/files/target/accounts
+    </copy>
     ```
 
     ![](images/9-files.png)
 
 ## Task 3: Create Application Screen
 
-1. Click on *OIG Identity Console* under the *Workshop Links* bookmark folder. Login to the Identity Self Service console.
+1. On the browser window on the right preloaded with *OIG Identity Console* on one of the tabs, refresh/reload the page then click on the *Username* field and select the saved credentials or use the below to login
 
     ```
     Username: <copy>xelsysadm</copy>
