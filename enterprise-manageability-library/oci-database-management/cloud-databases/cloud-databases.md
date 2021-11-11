@@ -14,9 +14,9 @@ Database Management features for Oracle Cloud Databases are available as part of
 
 The Full Management option includes all Database Management features for Oracle Database Enterprise Editions, including the following features. The Full Management option is also available for Oracle Database Standard Edition but doesn’t include Performance Hub features.
 
-* Monitoring and managing capabilities for your fleet of databases
-* SKU features, which include advanced Performance Hub features, such as automatic database diagnostic monitor (ADDM) and blocking sessions and other features, such as scheduled fobs, tablespace monitoring, and database parameters
-* Features available as part of Basic Management
+* Monitoring and managing capabilities for your fleet of databases.
+* SKU features, which include advanced Performance Hub features, such as automatic database diagnostic monitor (ADDM) and blocking sessions and other features, such as scheduled fobs, tablespace monitoring, and database parameters.
+* Features available as part of Basic Management.
 
 The Basic Management option includes the following features:
 
@@ -98,24 +98,24 @@ This lab assumes you have completed the following labs:
     </copy>
     ```
 
-    Click **Create**
+    Click **Create**.
 
 ## Task 3: Create OCI Vault
 
-1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Identity & Security** and click **Vault**.
+1.  From the Oracle Cloud Console **Navigation menu** located in the upper left, click **Identity & Security** and click **Vault**.
 
     ![Management Agents](./images/vault.png " ") 
 
-2.  On the **OCI Vaults** page click **Create Vault**.
+2.  On the **OCI Vaults** page, click **Create Vault**.
 
     ![Management Agents](./images/vault1.png " ")
 
 3.  In the **Create Vault** dialog:
     ![Management Agents](./images/vault2.png " ")
     
-    Create in Compartment: Select the name of compartment.
+    **Create in Compartment:** Select the name of compartment.
     
-    Name: Enter **dbmgmt-vault**.
+    **Name:** Enter **dbmgmt-vault**.
 
     Click **Create Vault**.
 
@@ -125,19 +125,19 @@ This lab assumes you have completed the following labs:
 
 ## Task 4: Create Key
 
-1. On the **Vault Details** page click **Create Key**. On the **Create Key** page select all defaults and enter "Name" : **dbmgmt-key**.
+1. On the **Vault Details** page, click **Create Key**. On the **Create Key** page, select all the defaults and enter **"Name" : dbmgmt-key**.
 
     ![Management Agents](./images/key.png " ")
 
     Click **Create Key**.
 
-2. On the **Vault Details** page confirm the **State** of key is **Enabled**. From the left navigation pane click **Secrets**.
+2. On the **Vault Details** page, confirm the **State** of key is **Enabled**. In the left pane, click **Secrets**.
 
     ![Management Agents](./images/key1.png " ")
 
 ## Task 5: Create Secret
 
-1. Click **Create Secret**. On the **Create Secret** page enter following :
+1. Click **Create Secret**. On the **Create Secret** page, enter the following :
 
     ![Management Agents](./images/secret.png " ")
 
@@ -168,7 +168,7 @@ The private endpoint is a representation of Database Management in the VCN in wh
 Refer [Create a Database Management Private Endpoint]( https://docs.oracle.com/en-us/iaas/database-management/doc/perform-database-management-prerequisite-tasks.html#GUID-AC816009-3FE9-42A1-A133-83281E0790FD) for best practices.
 
 
-1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
+1.  From the Oracle Cloud Console **Navigation menu** located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
 
     ![Management Agents](./images/administration.png " ")
 
@@ -190,9 +190,9 @@ Refer [Create a Database Management Private Endpoint]( https://docs.oracle.com/e
 
      **Use this private endpoint for RAC databases:** Select this check box if you want to create a Database Management private endpoint for RAC Oracle Cloud Databases in the Virtual Machine DB system and Exadata Cloud service. For the purpose of this livelab/workshop, leave this option unchecked.
 
-     **Virtual Cloud Network :** Select the VCN in which the Oracle Cloud Database can be accessed. Select labVCN.
+     **Virtual Cloud Network:** Select the VCN in which the Oracle Cloud Database can be accessed. Select **labVCN**.
 
-     **Subnet :** Select a subnet within the selected VCN. Select lab-public-subnet1.
+     **Subnet:** Select a subnet within the selected VCN. Select **lab-public-subnet1**.
 
      **Network Security Group:** Optionally, select an NSG added to the Bare Metal or Virtual Machine DB system or the Exadata VM cluster. You can also click + Another Security Group to select another NSG. Leave as default.
 
@@ -210,7 +210,7 @@ Ingress rule for the Virtual Machine DB system's VCN: The Virtual Machine DB sys
 
 Egress rule for the Database Management private endpoint: The Database Management private IP address (from any port) can send requests to the Virtual Machine DB system's VCN (10.0.0.0/16) on port 1521.
 
-1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Oracle Database** and then **Bare Metal, VM and Exadata**.
+1.  From the Oracle Cloud Console **Navigation menu** located in the upper left, click **Oracle Database** and then **Bare Metal, VM and Exadata**.
 
     ![Management Agents](./images/seclist1.png " ")
 
@@ -218,20 +218,22 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
     ![Management Agents](./images/seclist2.png " ")
 
-3.  On the **DB System Details** page click **labVCN**.
+3.  On the **DB System Details** page, click **labVCN**. The **Virtual Cloud Networks** page that lists all the subnets available in the VCN, is displayed.
 
     ![Management Agents](./images/seclist3.png " ")
 
-4.  **Virtual Cloud Network Details** page has a list of subnets present under this VCN. Click **lab-public-subnet1** subnet.
+4.  Click **lab-public-subnet1** on the **Virtual Cloud Network Details** page.
 
     ![Management Agents](./images/seclist4.png " ")
 
-5.  On the **Subnet Details** page, click **Default Security List for labVCN** to go to **Security List Details** page which will have a list of Security List Ingress and Egress Rules.
+5.  On the **Subnet Details** page, click **Default Security List for labVCN** to go to **Security List Details** page. The **Security List Details** page lists the Security List Ingress and Egress Rules.
 
     ![Management Agents](./images/seclist5.png " ")
 
 6.  Click **Add Ingress Rules** to add a Ingress rule for the Virtual Machine DB system's VCN. The Virtual Machine DB system's VCN (on port 1521) can receive incoming traffic from the Database Management private IP address (10.0.0.69/32) from any port.
 
+    ![Management Agents](./images/seclist6.png " ")
+    
      **Source Type:** Select **CIDR**
 
      **Source CIDR:** 10.0.0.69/32
@@ -246,9 +248,7 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
      Click **Add Ingress Rules**.
 
-    ![Management Agents](./images/seclist6.png " ")
-
-7.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
+7.  From the Oracle Cloud Console **Navigation menu** located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
 
     ![Management Agents](./images/administration.png " ")
 
@@ -258,11 +258,13 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
     ![Management Agents](./images/endpoint3.png " ")
 
-10.  On the **Subnet Details** page, click **Default Security List for labVCN** to go to **Security List Details** page which will have a list of Security List Ingress and Egress Rules.
+10.  On the **Subnet Details** page, click **Default Security List for labVCN** to go to **Security List Details** page. The **Security List Details** page lists the Security List Ingress and Egress Rules.
 
     ![Management Agents](./images/seclist5.png " ")
 
 11.  Click **Egress Rules** on the left navigation pane and then click **Add Egress Rules**. Enter following details:
+
+    ![Management Agents](./images/seclist7.png " ")
 
      **Source Type:** Select **CIDR**
 
@@ -278,12 +280,9 @@ Egress rule for the Database Management private endpoint: The Database Managemen
 
      Click **Add Egress Rules**.
 
-    ![Management Agents](./images/seclist7.png " ")
-
-
 ## Task 8: Enable Database Management for Oracle Cloud Databases
 
-1.  From the Oracle Cloud Console **Navigation menu** (aka hamburger menu) located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
+1.  From the Oracle Cloud Console **Navigation menu** located in the upper left, click **Observability & Management**. Under **Database Management**, click **Administration**.
 
     ![Management Agents](./images/administration.png " ")
 
