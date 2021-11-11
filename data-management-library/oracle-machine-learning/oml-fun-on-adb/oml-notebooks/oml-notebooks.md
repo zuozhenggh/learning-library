@@ -39,13 +39,13 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
   ![Oracle Machine Learning Notebooks in ADW](images/adw_oml_notebooks.png)
 
-4. Enter your user credentials and click **Sign in**.
+4. Enter your user credentials and click **Sign in**. This opens the Oracle Machine Learning user interface homepage.
 
-	> **Note:** If you are using a LiveLabs tenancy, then the username is ``OMLUSER`` and the password is ``AAbbcc123456``.
+	>**Note:** The credential is what you have defined while creating the Oracle Machine Learning user.
 
-	![Oracle Machine Learning Notebooks Signin page](images/oml_signin_page.png)
+	![Oracle Machine Learning Notebooks Sign in page](images/oml_signin_page.png)
 
-5. Click **Notebooks** in the Quick Actions section.
+5. On your Oracle Machine Learning homepage, click **Notebooks** in the Quick Actions section.
 
 	![Notebooks option in OML homepage](images/homepage_notebooks.png)
 
@@ -92,7 +92,7 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 
 	![Markdown tags for bulleted points](images/md_bullets.png)
 
-6. To display the text in heading1, heading 2 and heading 2, prefix # (hash) to the text and click Run. For H1, H2, and H3, you must prefix 1, 2, and 3 hashes respectively.
+6. To display the text in heading1, heading 2 and heading 2, prefix # (hash) to the text and click Run. For H1, H2, and H3, you must prefix one, two, and three hashes respectively.
 
 	![Markdown tags for headings](images/md_heading_tags.png)
 
@@ -217,7 +217,7 @@ This step demonstrates how to create the Time Series notebook based on the Examp
 	![Create Time Series notebook from example template](images/create_notebook_time_series.png)
 
 
-4. Once the notebook is created, the message _Notebook OML4SQL Time Series 1 created in project OMLUSER Project_ is displayed, as shown in the screenshot.
+4. Once the notebook is created, the message _Notebook OML4SQL Time Series 1 created in project OMLUSER Project_ is displayed.
 
 
 5. To view the notebook, navigate to the Notebooks page from the left navigation menu.
@@ -280,7 +280,11 @@ To create a job:
 
 1. On the Oracle Machine Learning UI homepage, click **Jobs**. Alternatively, in the left navigation menu, click **Jobs**.
 
+	![Job](images/jobs.png)
+
 2. On the Jobs page, click **Create**. The Create Jobs dialog box opens.
+
+	![Create Job](images/create_job.png)
 
 3. In the **Name** field, enter `Job1`. The number of characters in the job name must not exceed 128 bytes.
 
@@ -304,11 +308,11 @@ To create a job:
 
 	* **Maximum Failures Allowed:** Select **3**. This specifies the maximum number of times a job can fail on consecutive scheduled runs. When the maximum number of failures is reached, the next run date column in the Jobs UI will show an empty value to indicate the job is no longer scheduled to run. The Status column may show the status as `Failed`.
 
-		> Note: Select Automatic Retry if you do not wish to specify the maximum failures allowed manually.  
+		> **Note:** Select Automatic Retry if you do not wish to specify the maximum failures allowed manually.  
 
 8. Click **OK**.
 
-
+This completes the task of creating a job.
 
 ## Learn More
 
@@ -319,4 +323,4 @@ To create a job:
 ## Acknowledgements
 * **Author** -  Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -   Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, October, 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, November, 2021
