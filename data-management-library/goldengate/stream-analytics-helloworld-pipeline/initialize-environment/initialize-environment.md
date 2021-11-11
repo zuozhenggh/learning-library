@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will review and startup all components required to successfully run this workshop.
+This lab provides steps to review and start up all the services that are required to run this workshop.
 
 *Estimated Time:* 10 Minutes.
 
@@ -16,8 +16,9 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## Task 1: Validate That Required Processes are Up and Running.
-1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
+## Task 1: Validate That Required Services are Up and Running.
+Now with access to your remote desktop session, validate your environment before you proceed to the subsequent labs.
+1. Open the command terminal and run the command **ggsa-services**, to check the status of all the ggsa services. The following services should be up and running:
 
     - GoldenGate Big Data Manager
     - Apache Zookeeper Server (Kafka)
@@ -28,7 +29,7 @@ This lab assumes you have:
     - Apache Spark Master
     - Apache Spark Slave
 
-2. On the web browser window on the right preloaded with *Golden Gate Stream Analytics* login page, click on the *Username* field and provide the credentials below to login.
+2. On the web browser window on the right preloaded with *Golden Gate Stream Analytics* login page, provide the credentials below to login:
 
     - Username
 
@@ -42,15 +43,9 @@ This lab assumes you have:
     <copy>welcome1</copy>
     ```
 
-    ![](images/ggsa-login.png " ")
+3. Confirm successful login. Note that it takes about 5 minutes after instance provisioning for all processes to fully start.
 
-3. Confirm successful login. Please note that it takes about 5 minutes after instance provisioning for all processes to fully start.
-
-    - Golden Gate Stream Analytics
-
-    ![](images/ggsa-landing.png " ")
-
-    - Double click on *Terminal* and execute the below command to check the status for all the services.
+    - Double click *Terminal* , and execute the below command to check the status of all the services:
 
     ```
     <copy>
@@ -60,13 +55,13 @@ This lab assumes you have:
 
     ![](images/ggsa-terminal-status.png " ")
 
-    If successful, the page above is displayed and as a result your environment is now ready.  
+    If successful, the page above is displayed and your environment is ready.  
 
     You may now [proceed to the next lab](#next).
 
-4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
+4. If you are unable to login, or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, validate the services:
 
-    - To check the status for all the service.
+    - Check the status of all services:
 
     ```
     <copy>
@@ -81,7 +76,7 @@ This lab assumes you have:
 
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
-    - Restart all the services.
+    - Restart all services:
 
     ```
     <copy>
@@ -89,7 +84,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    - If you find that a particular service is not running please restart that service using the below command.
+    - Restart a particular service:
 
     ```
     <copy>
@@ -97,7 +92,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    *Note*- The following are the service-name used in this workshop
+    *Note*- The following are the service names used in this workshop
 
     | Service Name                    |systemctl service             |
     |:-------------                   | :----------------------------|
@@ -106,7 +101,7 @@ This lab assumes you have:
     | Apache Kafka Server (Broker)    | kafka.service                |
     | MySQL Server                    | mysqld.service               |
     | Oracle Stream Analytics         | osa.service                  |
-    | The nginx HTTP and reverse proxy| rh-nginx118-nginx.service    |
+    | The nginx HTTP and reverse proxy| nginx.service    |
     | Apache Spark Master             | spark-master.service         |
     | Apache Spark Slave              | spark-slave.service          |
 
@@ -138,7 +133,7 @@ This lab assumes you have:
     <copy>sudo systemctl restart <Service-name></copy>
     ```
 
-    *Note*- The following are the service-name used in this workshop
+    *Note*- The following are the service names used in this workshop
 
     | Service Name                    |systemctl service             |
     |:-------------                   | :----------------------------|
@@ -147,12 +142,12 @@ This lab assumes you have:
     | Apache Kafka Server (Broker)    | kafka.service                |
     | MySQL Server                    | mysqld.service               |
     | Oracle Stream Analytics         | osa.service                  |
-    | The nginx HTTP and reverse proxy| rh-nginx118-nginx.service    |
+    | The nginx HTTP and reverse proxy| nginx.service    |
     | Apache Spark Master             | spark-master.service         |
     | Apache Spark Slave              | spark-slave.service          |
 
 
 ## Acknowledgements
-* **Author** - Ashish Kumar, LiveLabs Platform, NA Technology, July 2021
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
+* **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
+* **Contributors** - Ashish Kumar, Sumathi Nelapati
+* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, November 2021

@@ -53,5 +53,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-* **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Pratibha Manjunath , October 2020
+* **Contributors** - Kay Malcolm, Product Manager, Database Product Management; Sumathi Nelapatti, Principal Member Technical Staff
+* **Last Updated By/Date** - Pratibha Manjunath , November 2021
