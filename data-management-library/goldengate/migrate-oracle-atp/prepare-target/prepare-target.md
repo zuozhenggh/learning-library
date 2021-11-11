@@ -34,9 +34,9 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 ## **Task 2**: Create Target Tables
 
-1. Let's create our target tables for migration. Please download the target table creation script **[from here](./files/CreateTables.sql)**. Make sure to save these with the correct extension **.sql** not txt!
+1. Let's create our target tables for migration. Please download the target table creation script **[from here](./files/create-tables.sql)**. Make sure to save these with the correct extension **.sql** not txt!
 
-2. SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded **CreateTables.sql** file and drop it in the worksheet area. Then run create statements.
+2. SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded **create-tables.sql** file and drop it in the worksheet area. Then run create statements.
 
 	![](/images/sql-dev-2.png)
 
