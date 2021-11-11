@@ -219,7 +219,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
    Pivot the presentation so it becomes easier to modify the column configuration.
 
-   ![Pivot](images/change-representation.png)
+   ![Pivot](images/change-representation2.png)
 
 6. Change the "Treat As" for the columns `RACEID`, `DRIVERID` and `LAP` to "Attribute".
 
@@ -289,7 +289,7 @@ Let's have a first look at the data that we have available for our data challeng
 
   What was the most popular race between 2008 and 2020 according to the fans? This would be interesting to find out, as that race is likely to have a lot of the key factors that fans appreciate.
 
-1. On the homepage, click "Data", then click the "Races" dataset to create a new visualization project.
+1. On the homepage, click "Data", then click the "Races" dataset to create a new visualization workbook.
 
 	  ![](images/click-races3.png)
 
@@ -325,7 +325,7 @@ Let's have a first look at the data that we have available for our data challeng
 
    You see that the race with the lowest score according to the fans was Abu Dhabi GP of 2020.
 
-5. Finally, save the project by clicking on the Save icon and name it "All Races Overview".
+5. Finally, save the workbook by clicking on the Save icon and name it "All Races Overview".
 
    ![Banner](images/save-project5.png)
 
@@ -399,7 +399,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 	 ![Banner](images/add-dataset2.png)
 
-   Click on the `RACES` dataset and click "Add to Project".
+   Click on the `RACES` dataset and click "Add to Workbook".
 
 	 ![Banner](images/select-races.png)
 
@@ -410,6 +410,8 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 12. Inspect the data.
 
    ![Banner](images/inspect-table.png)
+
+	 Note that you can drag the visualization to another place on the canvas to create more  space to make it readable.
 
 	 (The columns may appear in a different order in your environment)
 
@@ -431,7 +433,7 @@ Apparently, the Brazilian GP of 2012 had the right elements to make it interesti
 
 How can we check whether our theories about the relationship between position changes, DNFs and score is correct? We can use smart visualizations for this, in particular correlation diagrams and box plots are well suited for this task.
 
-1. Create a new project by clicking on the Races data set from the homepage.
+1. Create a new workbook by clicking on the Races data set from the homepage.
 
    ![Banner](images/new-project-races.png)
 
@@ -537,7 +539,7 @@ How can we check whether our theories about the relationship between position ch
 
    How to read this type of chart? The mean of the data set is indicated by the small horizontal line within the boxes. We see that the mean fan score for races with wet weather is quite a bit higher than for races with dry weather. The top and bottom end of the boxes show where the mid 50% of the fan scores lie. We can conclude that scores of races in wet weather in general are significantly higher than races with dry weather. However, there are outliers that are quite far outside of the boxes. We see that there are dry weather races that also result in high scores. So again, the `WEATHER_WET` factor looks important, but we can safely assume that it is not the only factor that influences the score.
 
-14. Save the project by clicking on the Save icon and name it "Correlations".
+14. Save the workbook by clicking on the Save icon and name it "Correlations".
 
    ![Banner](images/save-correlations.png)
 

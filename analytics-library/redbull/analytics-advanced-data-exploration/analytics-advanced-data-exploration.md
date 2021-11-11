@@ -26,7 +26,7 @@ Estimated Lab Time: 20 minutes
 
 First of all, let's look closer at the visualizations that we already have to see what data is patterns are hidden away in them.
 
-1. On the home page, reopen the project of the previous lab by clicking on "Projects and Reports" and then on "Race Analysis".
+1. On the home page, reopen the workbook of the previous lab by clicking on "Workbooks and Reports" and then on "Race Analysis".
 
    ![Banner](images/open-race-analysis-project.png)
 
@@ -56,13 +56,13 @@ Now let's have a look at the pit stop information.
 
 1. Let's visualize a more recent race. In the filter, change the selected race to the Austrian Grand Prix of 2021.
 
-   Use the search box to look for "Austrian", then click on "2021 Austrian Grand Prix" in the list.
+   Delete any existing Grand Prix' from the filter. Then use the search box to look for "Austrian", then click on "2021 Austrian Grand Prix" in the list.
 
    ![Banner](images/search-austrian.png)
 
 2. We want to show whether a driver made a pit stop in a particular lap.
 
-   Click on the position chart to select its configuration, then drag `PIT_STOP` to the Shape attribute
+   Click on the position chart to select its configuration, then drag `PIT_STOP` (from the "Lap Times" data set) to the Shape attribute
 
 	 ![Banner](images/drag-pit-stop.png)
 
@@ -137,7 +137,7 @@ To visualize how well each car is doing, we'll calculate the time-delta between 
 
 	 Note 7: The presence of a safety car _may_ increase the score of races in general.
 
-7. Save the project by clicking on the Save icon.
+7. Save the workbook by clicking on the Save icon.
 
    ![Banner](images/save-simple.png)
 

@@ -68,7 +68,7 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
 1. **Download** the prepared notebook that contain the SQL instructions to Generate the new Features:
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/fBEurmSF69MM4KjqCMvPblGCHNAxpE1es1w1AM1sGK-nQbrhyTWSZkZdMwyZxUhZ/n/odca/b/workshops-livelabs-do-not-delete/o/notebook.json" target="\_blank">Notebook to Generate Features</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ZrrZp04CIH07Xc5Nq4lBo9muEwuiCRpSjPZ-NV8O1VSL4dDZ3_AVDaQEVkxevP63/n/odca/b/workshops-livelabs-do-not-delete/o/redbull-notebook.json" target="\_blank">Notebook to Generate Features</a>
 
    Save the file on your local machine. Make sure that the file is saved with extension `.json`.
 
@@ -92,7 +92,7 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
    ![pic1](images/import-notebook.png)
 
-7. Then select the notebook.json file from your file system.
+7. Then select the redbull-notebook.json file from your file system.
 
    You should see the message "1 out of 1 notebooks imported successfully" and the notebook "Red Bull Racing: Generate New Features" appears.
 
@@ -193,19 +193,23 @@ Now we're ready to train the ML model.
 
    **Please take care in selecting exactly these columns (and no others), as this will affect the outcome of the training process.**
 
-6. Now start the training of the model.
+6. Save the AutoML experiment configuration.
+
+   ![pic1](images/save-automl.png)
+
+7. Now start the training of the model.
 
    On the top right choose **Start > Faster Results**.
 
    ![pic1](images/save-start.png)
 
-7. Use the three small dots to open the window with progress of the training process (in case it is not yet open).
+8. Use the three small dots to open the window with progress of the training process (in case it is not yet open).
 
    This will allow you to follow the progress of the training process in detail.
 
    ![pic1](images/learning-summary.png)
 
-8. The training will take several minutes. During this time, AutoML tries out several different ML algorithms, with different configurations.
+9. The training will take several minutes. During this time, AutoML tries out several different ML algorithms, with different configurations.
 
    We will use the **Generalized Linear Model**.
 
@@ -219,7 +223,7 @@ Now we're ready to train the ML model.
 
    **IMPORTANT: Make a note of the exact model name, including the number. You will need this later.**
 
-## **Task 4:** Add the generated features to the RACES data set in Oracle Analytics Cloud
+## **Task 4:** Add the generated features to the Races data set in Oracle Analytics Cloud
 
 1. In case you don't have a window with Oracle Analytics Cloud open, you can open it as follows:
 
@@ -245,25 +249,33 @@ Now we're ready to train the ML model.
 
    ![pic1](images/edit-definition.png)
 
-5. Notice how the newly generated features are not yet added to the data set in OAC (there are no checkmarks next to them).
+5. When we ran the notebook, we created several new fields in the database table RACES (laps_with_change_pos_1, laps_with_change_pos_1_5, overtaken_positions_due_to_pitstop_total, overtaken_positions_real_total, max_comebackscore, rank_versus_position and safety_car).
 
-   Click "Add All" to add them, and then click "OK".
+   Click "Add All" to also add these newly columns in the data set in Oracle Analytics Cloud.
 
-   ![pic1](images/add-new-cols.png)
+   ![pic1](images/press-add-all.png)
 
-6. Now leave the data set screen by clicking on the top-left icon, and press "Save".
+6. Press "Save" to apply the changes.
 
-   ![pic1](images/leave-save.png)
+   ![pic1](images/save-changes.png)
+
+7. Go back to the home page.
+
+   ![pic1](images/home-page.png)
 
 ## **Task 5:** Import the trained model into Oracle Analytics Cloud
 
 Now we need to make the Machine Learning model that we built in the database available to Oracle Analytics Cloud.
 
-1. Click the ribbon on the top right, then Register ML Model. Then select the REDBULL connection.
+1. From the home page, click the ribbon on the top right, then Register ML Model. Then select the REDBULL connection.
 
    ![pic1](images/register-ml-model.png)
 
-2. Now select the model starting with GLM. Check your notes and verify it has the same name that you created earlier.
+2. Select the database connection.
+
+   ![pic1](images/select-db-conn.png)
+
+3. Now select the model starting with GLM. Check your notes and verify it has the same name that you created earlier.
 
    Then press Register.
 
@@ -332,6 +344,8 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
    ![pic1](images/save-data.png)
 
+   Don't worry about the warning message, this should disappear once you save the data flow.
+
 6. Save the Data Flow by clicking on the Save icon, then type `Predict Score DF` as the name and press "OK".
 
    ![pic1](images/save-df.png)
@@ -350,7 +364,7 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
 ## **Task 7:** Evaluate the accuracy of the model in Oracle Analytics Cloud
 
-1. On the homepage, click "Data", then click the "Predicted Scores" dataset to create a new visualization project.
+1. On the homepage, click "Data", then click the "Predicted Scores" dataset to create a new visualization workbook.
 
    ![pic1](images/create-project3.png)
 
@@ -397,6 +411,8 @@ Now it's time to predict the race score on our _test_ data set: 2020. We can do 
 
    Note that the predicted score follows the actual score in general. This is a pretty good first result!
    As a point of improvement, notice how on the races with lower actual scores, the predicted score tends to be a bit too high.
+
+   ![pic1](images/inspect2.png)
 
 ## **Task 9:** Bonus exercise: Predict the scores for the 2021 season
 
