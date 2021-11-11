@@ -55,7 +55,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![](/images/1.git.png)
+	![](/images/1.git-0.png)
 
 ## **Task 3**: Generate SSH keys 
 

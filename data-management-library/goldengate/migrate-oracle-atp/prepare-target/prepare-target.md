@@ -18,7 +18,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 1. Go to the top-left hamburger icon, navigate to **Oracle Database** and choose **Autonomous Transaction Processing**. It will show you all available ATP workload type databases. Click on **Target ATP** database.
 
-	![](/images/2.atp.png)
+	![](/images/2.atp-main.png)
 
 2. In **Tools** tab, where you will see **Database Actions**, click on **Open Database Actions**. You may need to enable a pop-up in your browser if it doesn't open anything.
 
