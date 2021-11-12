@@ -90,6 +90,12 @@ In this step, we will add a link from the Autonomous Data Warehouse to the publi
 			<td class="confluenceTd">https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
             </td>
 		</tr>
+				<tr>
+			<td colspan="1" class="confluenceTd">Americas</td>
+            <td colspan="1" class="confluenceTd">Phoenix</td>
+			<td colspan="1" class="confluenceTd">https://objectstorage.us-phoenix-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
+            </td>
+		</tr>
 		<tr>
 			<td colspan="1" class="confluenceTd"></td>
             <td colspan="1" class="confluenceTd">San Jose</td>
