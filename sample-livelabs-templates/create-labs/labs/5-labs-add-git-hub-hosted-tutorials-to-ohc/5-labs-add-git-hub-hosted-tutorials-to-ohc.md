@@ -56,7 +56,11 @@ To add a link to a lab from an OHC Tutorials page:
 This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
+<<<<<<< Updated upstream
 <!-- * [Add GitHub Hosted Tutorials to OHC](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Add+GitHub-Hosted+Tutorials+to+the+Oracle+Help+Center) -->
+=======
+
+>>>>>>> Stashed changes
 
 ## Acknowledgements
 
@@ -66,4 +70,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Last Updated By/Date:** Anuradha Chepuri, November 2021
+* **Last Updated By/Date:** Lauran Serhal & Anuradha Chepuri, November 2021
