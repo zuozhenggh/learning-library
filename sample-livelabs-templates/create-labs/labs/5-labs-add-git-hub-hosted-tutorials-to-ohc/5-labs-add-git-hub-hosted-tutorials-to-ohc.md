@@ -56,11 +56,7 @@ To add a link to a lab from an OHC Tutorials page:
 This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
-<<<<<<< Updated upstream
-<!-- * [Add GitHub Hosted Tutorials to OHC](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Add+GitHub-Hosted+Tutorials+to+the+Oracle+Help+Center) -->
-=======
 
->>>>>>> Stashed changes
 
 ## Acknowledgements
 
