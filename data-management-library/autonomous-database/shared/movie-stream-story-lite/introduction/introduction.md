@@ -13,6 +13,9 @@ There are two versions of this workshop:
 * [**Action! MovieStream Analytics Produce the Best Picture with Oracle Cloud**](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=865&clear=180&session=12485882445561) - dives into details of setting up the solution and analyzing data. Will take several hours to complete. 
 * **Action! MovieStream Analytics Produce the Best Short Film with Oracle Cloud** - this workshop!  A one hour version that performs much of the setup for you.
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/z2Er2yTP2BU).</if>
+
+
 There are also other workshops that focus on specific feature areas that also use the same business scenario.
 
 Oracle MovieStream is a fictitious movie streaming service - similar to those that you currently subscribe to. They face challenges that are typical to many organizations across industries. MovieStream must:
@@ -27,7 +30,7 @@ In this workshop, we'll start with two key components of MovieStream's architect
 
 ![architecture](images/architecture.png)
 
-You will learn how they built their solution and performed sophisticated analytics thru a series of labs that highlight the following:
+You will learn how they built their solution and performed sophisticated analytics through a series of labs that highlight the following:
 
 ### Objectives
 * Deploy an Autonomous Database instance

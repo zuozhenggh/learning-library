@@ -5,6 +5,7 @@
          {
             "title": "Introduction",
             "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
+            "type": "odbw",
             "filename": "../../intro/intro.md"
         },  {
             "title": "Getting Started",

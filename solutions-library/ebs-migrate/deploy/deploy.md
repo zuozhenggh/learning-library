@@ -35,7 +35,7 @@ This step will take you through how to provision an E-Business Suite instance fr
 
     b. Click **Next**.
 
-4. Enter a name for the database and create a password for the database. Enter a hostname and domain name for the database tier.
+4. Enter a name for the database and create a password for the database. Enter a hostname and domain name for the database tier; as well as the type of compute you desire.
 
     ![](./images/2.png " ")
 
@@ -55,11 +55,15 @@ This step will take you through how to provision an E-Business Suite instance fr
 
     **Logical Domain:** `example.com`
 
+    b. Then add an app tier node.
+
     ![](./images/3-2.png " ")
 
-    b. Click **Save Zone**
+    c. Click **Save Zone**
 
-    c. Click **Next**. 
+    ![](./images/3-2-2.png " ")
+
+    d. Click **Next**. 
 
 6. Do not change anything on the Extensibility Options menu. Click **Next**.
 
@@ -89,6 +93,7 @@ Congratulations, you have successfully migrated an EBS instance to the EBS Cloud
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
+    - Chris Wegenek, Cloud Engineering
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering - September 2021
 
 

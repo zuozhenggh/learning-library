@@ -51,14 +51,7 @@ This lab assumes you have:
 
 4. On the web browser window on the right preloaded with the *eShop application* login page, click on *click here to start shopping* to test
 
-    ![](./images/convg-novnc-landing " ")  
-
-    ```
-    username: <copy>weblogic</copy>
-    ```
-    ```
-    password: <copy>Oracle123!</copy>
-    ```
+    ![](./images/convg-novnc-landing.png " ")  
 
 You may now [proceed to the next lab](#next).
 
