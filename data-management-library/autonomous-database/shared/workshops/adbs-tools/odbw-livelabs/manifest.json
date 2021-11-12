@@ -10,6 +10,7 @@
         {
           "title": "Workshop Introduction",
           "description": "Inroduction to this workshop",
+          "type": "odbw",
           "filename": "../workshop-intro/workshop-intro.md"
         },
         {

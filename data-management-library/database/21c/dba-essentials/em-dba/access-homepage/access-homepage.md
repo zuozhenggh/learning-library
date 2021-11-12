@@ -8,14 +8,20 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-Log in to Oracle EMCC and access the container homepage. Switch between the Container Database (CDB) homepage and the Pluggable Database (PDB) homepage. Add pages to and remove pages from the favorites.
+Access the container homepage from Oracle EMCC. Switch between the Container Database (CDB) homepage and the Pluggable Database (PDB) homepage. Add pages to and remove pages from the favorites.
 
 ### Prerequisites
 
  - Oracle Database 21c installed and a CDB with at least one PDB created.
  - Oracle EMCC 13.5 installed with Oracle Database 19c as the repository.
  - You have completed -
-    - Lab: [Log in to Oracle EMCC](?lab=log-into-emcc)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Setup Compute Instance
+    - Lab: Initialize Environment
+    - Lab: Log in to Oracle EMCC
+ - You have added Oracle Database 21c and the listener as managed targets as explained in this task - [Add Oracle Database and Listener as targets](?lab=manage-targets#Task2:AddOracleDatabaseandListenerastargets).
+
+**Note:** If you have removed the targets Oracle Database 21c and the target listener from Oracle EMCC as per the previous lab, add them again as managed targets. 
 
 ## Task 1: Access Container Homepage
 
@@ -23,7 +29,7 @@ Log in to Oracle EMCC and access the container homepage. Switch between the Cont
 
     ![Databases Menu](../manage-targets/images/emcc-target-005-dbmenu.png)
 
-    The Databases page displays a list of Oracle Databases added to Oracle EMCC as managed targets.   
+    The Databases page displays a list of Oracle Databases added to Oracle EMCC as managed targets. Note that the **View** type selected is **Search list**.   
 	The values may differ depending on the system you are using.  
 
     ![Target Added](../manage-targets/images/emcc-target-014-dbhome.png)
@@ -52,7 +58,7 @@ From the homepage, you can monitor and administer your Oracle Database.
 
 You can alter the session and switch between containers in Oracle EMCC within a single login.
 
-This means that from the database instance homepage, you can switch to the CDB or the PDB homepage without logging out of Oracle EMCC. Similarly, from the PDB homepage, you can switch to the CDB or to another PDB homepage, if more than one PDB exists in the CDB.
+This means that from the Database Instance homepage, you can switch to the CDB or the PDB homepage without logging out of Oracle EMCC. Similarly, from the PDB homepage, you can switch to the CDB or to another PDB homepage, if more than one PDB exists in the CDB.
 
 1.  Open the container homepage for the Oracle Database instance as explained in *Task 1*.   
 
@@ -76,7 +82,7 @@ This means that from the database instance homepage, you can switch to the CDB o
 
     ![Select Container](images/emcc-dbhome-008-selectcontainer.png)
 
-	> You cannot open the database instance homepage from the CDB or the PDB homepage. To open the database instance homepage, go to the Databases page and click on the database instance name as explained in *Task 1*. 
+	> You cannot open the Database Instance homepage from the CDB or the PDB homepage. To open the Database Instance homepage, go to the Databases page and click on the Database Instance name, for example *orcl.us.oracle.com*, as explained in *Task 1*. 
 
 ## Task 3: View Target Information
 
@@ -134,7 +140,7 @@ You can add pages to the favorites and bookmark them in Oracle EMCC for easy acc
 
     ![Image alt text](images/emcc-dbhome-016-history.png)
 
-This brings you towards the completion of this workshop on *EM - Oracle Database Administration (DBA)*.
+This brings you towards the successful completion of this workshop on *Oracle EM Database Administration (DBA)*.
 
 ## Acknowledgements
 
@@ -142,4 +148,4 @@ This brings you towards the completion of this workshop on *EM - Oracle Database
 
 -   **Contributors** - Suresh Rajan, Kurt Engeleiter
 
--   **Last Updated By/Date** - Manish Garodia, October 2021
+-   **Last Updated By/Date** - Manish Garodia, November 2021

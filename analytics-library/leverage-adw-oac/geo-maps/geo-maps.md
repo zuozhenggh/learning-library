@@ -157,61 +157,56 @@ Click **M** to move Male to the Selections and click anywhere in the Filter Area
 
     ![M](../geo-maps/images/filtergender1small.png)
 
-11. Add **Gender** to the **Filter**.  
-Select **Gender** Drag and Drop to Filter Area.
-
-    ![Gender Filter](../geo-maps/images/filtergender.png)
-
-12. Move Map Visualization to the top.  
+11. Move Map Visualization to the top.  
 **Rearrange** a visualization on the canvas using drag and drop to a space between visualizations where you want to place it. The **target drop area** is displayed with a **blue outline**.
 Select **STATE # Customers** visualization and Drag it to the top of the Canvas.
 
     ![Move Map Visualization](../geo-maps/images/moveviztotop.png)
 
 
-13. Lets create a detailed tabular report.  
+12. Lets create a detailed tabular report.  
 Select: **CUST\_ID, FIRST\_NAME, LAST\_NAME, GENDER, AGE, ZIPCODE, CITY, STATE**, Right Click  and Select **Pick Visualization**.
 
     ![Pick Visualization](../geo-maps/images/pickvizsmall.png)
 
-14. Select **Table**.
+13. Select **Table**.
 
     ![Table Visualization](../geo-maps/images/pickviztablesmall.png)
 
 
-15. **Resize** viz to see all the columns.  
+14. **Resize** viz to see all the columns.  
 Resize a visualization by dragging its edges to the appropriate dimensions.
 
     ![Resize Visualization](../geo-maps/images/pickviztableresize0.png)
     ![Resize Visualization](../geo-maps/images/pickviztableresize.png)
 
 
-16. Switch **STATE** with **CITY**.  
+15. Switch **STATE** with **CITY**.  
 Go to Grammar Panel Rows section click **STATE** and and dropping it over **CITY**.
 
     ![Swap Data Elements](../geo-maps/images/pickviztableswitchstate1.png)
 
 
-17. Use Map as a filter.  
+16. Use Map as a filter.  
 Select the Map visualization, Right Click and Select **Use as Filter**.
 
     ![Map Use as Filter](../geo-maps/images/statecustomersuseasfilter.png)
 
-18. Filter for **Florida**.  
+17. Filter for **Florida**.  
 Click on **FL**.
 
     ![FL Filter](../geo-maps/images/statecustomersuseasfilterfl.png)
 
-19. Export the Table visualization.  
+18. Export the Table visualization.  
 Select Table visualization, go to **Export** icon on top right and select **File**.
 
     ![Export](../geo-maps/images/exporttabel.png)
 
-20. In the pop-up window Select **Format** as **Data (csv**).
+19. In the pop-up window Select **Format** as **Data (csv**).
 
     ![Export](../geo-maps/images/exporttabel2small.png)
 
-21. Check the downloaded csv file.  
+20. Check the downloaded csv file.  
 Notice that it has exported the entire data from the filtered table (FL)
 
     ![Export](../geo-maps/images/exporttabel3small.png)  
@@ -229,7 +224,7 @@ You may now [proceed to the next lab](#next)
 
 ## **Acknowledgements**
 
-- **Author** - Lucian Dinescu, Product Strategy, Analytics
-- **Contributors** -
-- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics
-- **Last Updated By/Date** - Lucian Dinescu, April 2021
+- **Author** - Lucian Dinescu (Oracle Analytics Product Strategy)
+- **Contributors** - 
+- **Reviewed by** - Shiva Oleti (Oracle Analytics Product Strategy), Sebastien Demanche (Oracle Cloud Center of Excellence)
+- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021

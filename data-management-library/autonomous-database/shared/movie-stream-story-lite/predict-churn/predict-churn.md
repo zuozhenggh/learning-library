@@ -4,7 +4,8 @@
 
 #### Video preview
 
-[] (youtube:Qwsw_AjLZ1Y)
+[](youtube:iK2T6iKaYqQ)
+
 
 Analyzing past performance lets you know customers that have already been lost. Lets get in front of this problem and predict those that are at risk using in database analytics.
 
@@ -175,7 +176,7 @@ In addition to that, **a customer churning today probably made that decision a w
     AGE, AVG_DISC_M3_11 (average discounts for the 9 months before the current quarter), GENDER, CREDIT_BALANCE, AVG_NTRANS_M3_5 (average number of transactions in the previous quarter), YRS_RESIDENCE, GENRE_THRILLER, GENRE_COMEDY, and GENRE_WAR
     ```
 4. Understand model performance.
-    Scrolling up to the **Leader Board** section, we can click the **Decition Tree** unique model name to open the diagnostics. Click on the Decision Tree **Model Name** link in blue.
+    Scrolling up to the **Leader Board** section, we can click the **Decision Tree** unique model name to open the diagnostics. Click on the Decision Tree **Model Name** link in blue.
 
     > **NOTE**: The exact random model name is unique to your model, so it will not appear as *DT_312651AA64* like the one below.
 

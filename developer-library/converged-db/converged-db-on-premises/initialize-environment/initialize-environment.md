@@ -12,73 +12,86 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## Task 1: Start And Validate The Required Processes are Up and Running.
-1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running:
-    
-    - Database Listeners
-    - Database Server Instances
-    - Nodejs eShop Application on docker container
-    - Oracle Rest Data Service 
-        ![](./images/convg-novnc-guide.png " ")
+## Task 1: Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-2. Open the *Workshop Guides* folder from the *Firefox* toolbar area above and select the correct guide for your workshop.
-    - On the *SQL-Developer* window on the right preloaded with saved credential
-    ![](./images/convg-novnc-landing.png " ")
+    - Database Listener
+        - LISTENER
+    - Database Server Instance
+        - convergedcdb
+    - Oracle Rest Data Service (ORDS)
+    - Application
+        - Nodejs eShop Application on docker container
 
-3. Click on *Terminal* icon on the desktop to start a terminal and execute the below command.
-    
-    - Go to folder /u01/script
+2. Validate that expected processes are up. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
-        ```
-        <copy>
-        cd /u01/script
-        </copy>
-        ```
-    - Run the script file to start the components.
+    ```
+    <copy>
+    ps -ef|grep LISTENER|grep -v grep
+    ps -ef|grep ora_|grep pmon|grep -v grep
+    ps -ef|grep ords|grep -v grep
+    docker ps -a
+    systemctl status oracle-database
+    systemctl status oracle-init-workshop
+    </copy>
+    ```
 
-        ```
-        <copy>
-        ./env_setup_db-workshop.sh
-        </copy>
-        ```
-        ![](./images/convg-terminal.png " ")
-        ![](./images/convg-application.png " ")
-4. The above command will start the database, listener, oracle rest data service and our eshop application. This script could take 2-5 minutes to run. Check for the "Finished starting servers" status before proceeding next.
-    
-    ![](./images/convg-final.png " ")
-    If successful, the page above is displayed and as a result your environment is now ready.  
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
+
+    ```
+    e.g. Restarting the DB and DB Listener
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
+
+4. On the web browser window on the right preloaded with the *eShop application* login page, click on *click here to start shopping* to test
+
+    ![](./images/convg-novnc-landing.png " ")  
 
 You may now [proceed to the next lab](#next).
 
-## Appendix 1: External Terminal Access (using SSH Key Based Authentication)
+## Appendix 1: Managing Startup Services
 
-While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+1. Database service (Database and Standard Listener).
 
-1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-
-    - From the web session where you completed your provisioning request, do:
-        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
-        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - OS User – “*oracle*”.
-
-2. First login as “*opc*” using your SSH Private Key
-
-3. Then sudo to “*oracle*”. E.g.
+    - Start
 
     ```
-    <copy>sudo su - oracle</copy>
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
+    ```
+    - Stop
+
+    ```
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>
+    systemctl status oracle-database
+    </copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
     ```
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-- **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform , NA Technology, July 2021
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

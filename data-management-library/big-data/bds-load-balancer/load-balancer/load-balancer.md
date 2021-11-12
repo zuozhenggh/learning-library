@@ -4,7 +4,7 @@
 
 Follow these steps to create and use a load balancer for a non-highly-available (non-HA) Big Data Service cluster.
 
-Estimated lab time: 60 minutes
+Estimated time: 60 minutes
 
 ## Task 1: Gather Information
 
@@ -12,14 +12,14 @@ Gather the following information before you start:
 
   | Information | What It Is and Where To Find It |
 | :--- | :--- |
-| SSH private key file | The name and location of the SSH private key file that is paired with with the SSH public key associated with the cluster. <br/><br/>The public key was associated with the cluster when the cluster was created. (See "Lab 2: Create a BDS Hadoop Cluster" in [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288).) If you don't have the private key, contact the cluster administrator or the person who created the cluster.<br/><br/>In the examples shown in this workshop, the example SSH key pair is `my-ssh-key` (the  private key) and `my-ssh-key.pub` (the public key). In the examples, the private key is located in `C:\Users\MYHOME\bds\ssh\`. |
-|Private IP address of the first utility node |The private IP address assigned to the first utility node when it was created. <br/><br/> Find this address in the **Node Information** box on the **Big Data > Clusters > Cluster Details > Nodes > Node Details** page for the first utility node of your cluster.<br/><br/>In the example shown in this workshop, the private IP address is `198.51.100.0`. Your IP address will be different. |
-|Public IP address of the first utility node |The public IP address of the first utility node. <br/><br/>If you followed the steps in the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288) workshop, this is the public IP address that you mapped to the node's private IP address. <br/><br/>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.  Note that IP addresses available via these solutions aren't reachable from the public internet. However, for convenience, they are called "public" in this lab.<br/><br/>In the examples shown in this workshop, the public IP address is `192.0.2.0`. Your IP address will be different.|
+| SSH private key file | The name and location of the SSH private key file that is paired with the SSH public key associated with the cluster. <br/><br/>The public key was associated with the cluster when the cluster was created. See "Lab 2: Create a BDS Hadoop Cluster" in [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288).) If you don't have the private key, contact the cluster administrator or the person who created the cluster.<br/><br/>In the examples shown in this workshop, the example SSH key pair is `my-ssh-key` (the  private key) and `my-ssh-key.pub` (the public key). In the examples, the private key is located in `C:\Users\MYHOME\bds\ssh\`. |
+|Private IP address of the first utility node |The first utility node that was created when the private IP address was assigned. <br/><br/> You can find this address by clicking **Node Information** followed by **Big Data**, **Clusters**, **Cluster Details**, **Nodes**, then **Node Details** for the first utility node of your cluster. <br/><br/> In the example shown in this workshop, the private IP address is `198.51.100.0`. Your IP address will be different. |
+|Public IP address of the first utility node |The first utility node for public IP address. <br/><br/>If you followed the steps in the [Getting Started with Oracle Big Data Service (Non-HA Cluster)](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=762&session=3565379308288) workshop, this is the public IP address that you mapped to the node's private IP address. <br/><br/>If you're using a bastion host, Oracle FastConnect, or Oracle IPSec VPN, find the IP addresses of the nodes assigned via those solutions.  Note that IP addresses available via these solutions aren't reachable from the public internet. However, for convenience, they are called "public" in this lab.<br/><br/>In the examples shown in this workshop, the public IP address is `192.0.2.0`. Your IP address will be different.|
 
 
 ## Task 2: Copy SSL Certificates from the Cluster
 
-In this step, you'll obtain a self-signed SSL certificate and key that are included in your cluster. They're located in the `/opt/cloudera/security/x509` directory of the first utility node.
+In this task, you'll obtain a self-signed SSL certificate and key that are included in your cluster. They're located in the `/opt/cloudera/security/x509` directory of the first utility node.
 
 You'll copy the following certificate and key from the first utility node:
 
@@ -34,7 +34,7 @@ To copy the files:
     <!--![](./images/launch-powershell.png "Launch Powershell")-->
     ![](./images/launch-powershell.png "")
 
-    **Note:** If you use a Virtual Private Network (VPN), you may need to disconnect from VPN before using PowerShell to connect to your cluster. Re-establish your VPN connection when you move on to **STEP 3: Create the Load Balancer,** below.
+    **Note:** If you use a virtual private network (VPN), you may need to disconnect from VPN before using PowerShell to connect to your cluster. Re-establish your VPN connection when you move on to **TASK 3: Create the Load Balancer,**.
 
 2. In PowerShell, use `ssh` with your private key to connect to the first utility node:
 
@@ -75,7 +75,7 @@ To copy the files:
     node.key
       ```
 
-4. Copy and save the file *name* of the PEM file for the first utility node. You can identify it by looking at the first part of the names, where ``<cluster>`` is the first seven letters of the cluster name and `un0` identifies the first utility node. For example, in a cluster named `mycluster`, the first utility node is:
+4. Copy and save the file name of the PEM file for the first utility node. You can identify it by looking at the first part of the names, where ``<cluster>`` is the first seven letters of the cluster name and `un0` identifies the first utility node. For example, in a cluster named `mycluster`, the first utility node is:
 
     `node_`**`myclustun0`**`.sub12345678901.myclustevcn.oraclevcn.com.pem`
 
@@ -140,11 +140,11 @@ To copy the files:
 
 ## Task 3: Create the Load Balancer
 
-1.   **Note:** If you use VPN to connect to Oracle Cloud, and you disconnected from VPN to perform STEP 2, above, reconnect to VPN before continuing.
+1. If you use VPN to connect to Oracle Cloud, and you disconnected from VPN to perform Task 2, reconnect to VPN before continuing.
 
   Sign in to the **Oracle Cloud Console** as an administrator. See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm).
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Load Balancer**.
+2.  **Navigation Menu** in the upper left corner, navigate to **Networking**, and select **Load Balancer**.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-loadbalance.png " ")
 
@@ -157,17 +157,17 @@ To copy the files:
 
     * **Load Balancer Name:** Enter a name to identify the load balancer; for example, `bds-load-balancer`.
 
-    * **Choose Visibility Type:** Click **Public** to create a load balancer that will be accessible from the public internet.
+    * **Choose visibility type:** Click **Public** to create a load balancer that will be accessible from the public internet.
 
     * **Assign a public IP address:** Click **Ephemeral IP Address** to have an ephemeral IP address assigned to the load balancer. An ephemeral IP address is an IP address that doesn't persist beyond the life of the resource. When the load balancer is deleted, this IP address will return to the pool of available IP addresses in the tenancy.
 
     * **Choose Total Bandwidth:** Accept the default **Small**.
 
-    * **Virtual Cloud Networking in *&lt;compartment&gt;*:** Click the **Select a virtual cloud network** list and select the VCN where your cluster is running. If the network is in a different compartment, click **Change Compartment** and select the compartment from the list.
+    * **Virtual Cloud Networking in my-comp *&lt;compartment&gt;*:** Click the **Select a virtual cloud network** list and select the VCN where your cluster is running. If the network is in a different compartment, click **Change Compartment** and select the compartment from the list.
 
-     * **Subnet in *&lt;compartment&gt;*:** Click the **Select a subnet** list and select a public subnet in your VCN to use for the load balancer. (A public subnet is required for a public load balancer.) If the subnet is in a different compartment, click **Change Compartment** and select the compartment from the list.
+     * **Subnet in my-comp *&lt;compartment&gt;*:** Click the **Select a subnet** list and select a public subnet in your VCN to use for the load balancer. (A public subnet is required for a public load balancer.) If the subnet is in a different compartment, click **Change Compartment** and select the compartment from the list.
 
-     * **Use network security groups to control traffic:** Leave this box unchecked.
+     * **Use network security groups to control traffic:** Leave this box unselected.
 
     <!--![](./images/create-lb-add-details.png "Create load balancer - Add details")-->
     ![](./images/create-lb-add-details.png "")
@@ -196,7 +196,7 @@ To copy the files:
 
         * **URL Path (URI):** Keep the default forward slash (**/**).
 
-        * **Use SSL:** Leave this box unchecked. You'll configure SSL for this backend set later.
+        * **Use SSL:** Leave this box unselected. You'll configure SSL for this backend set later.
 
         <!--![](./images/create-lb-add-backends.png "Create load balancer - Add backends")-->
         ![](./images/create-lb-add-backends.png "")
@@ -218,8 +218,8 @@ To copy the files:
 
 9. Click **Submit**. When the large load balancer status icon at the top of the **Load Balancer Details** page turns from orange to green and the label is "Active," you can continue with the steps below. It may take a few minutes to create the load balancer.
 
-  <!--![](./images/lb-status-large-icon.png "Load balancer status icon")-->
-  ![](./images/lb-status-large-icon.png "")
+   <!--![](./images/lb-status-large-icon.png "Load balancer status icon")-->
+   ![](./images/lb-status-large-icon.png "")
 
 ## Task 4: Create a Certificate Bundle
 
@@ -234,21 +234,21 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **Certificate Name:** Enter `first-util-node-cert-bundle` (or a name of your choice).
 
-    * **SSL Certificate:** In the **SSL Certificates** box, click the **select one** link, find and select the SSL certificate you downloaded from the first utility node; for example, `first-util-node-cert.pem` in `C:\Users\MYHOME\bds\ssl-files`, and click **Open**.
+    * **SSL Certificate:** In the **SSL Certificates** section, click the **select one** link, find and select the SSL certificate you downloaded from the first utility node; for example, `first-util-node-cert.pem` in `C:\Users\MYHOME\bds\ssl-files`, and click **Open**.
 
         ![](./images/add-cert-first-select.png "")
 
-      **Note:** If you don't see your `.pem` and `.key` files in the directory where you saved them in **STEP 2: Copy SSL Certificates from the Cluster**, above, make sure that all files types are displayed in the Windows **File Upload** dialog box by selecting **All Files (\*.\*)** from the list above the **Open** button.
+      **Note:** If you don't see your `.pem` and `.key` files in the directory where you saved them in **STEP 2: Copy SSL Certificates from the Cluster**, above, make sure that all files types are displayed in the Windows **File Upload** dialog box by selecting **All Files (\*.\*)** from the drop-down list.
 
       <!--![](./images/choose-file-type.png "Choose file type list")-->
       ![](./images/choose-file-type.png "")
 
-    * **Specify CA Certificate:** Check this box, and then click the **select one** link to add the same file that you just added for **SSL Certificate**, above; for example, `first-util-node-cert.pem`.
+    * **Specify CA Certificate:** Select this check box, and then click the **select one** link to add the same file that you just added for **SSL Certificate**, above; for example, `first-util-node-cert.pem`.
 
-    * **Specify Private Key**: Check this box, and then click the **select one** link to add the SSL key you downloaded from the first utility node; for example, `first-util-node.key`.
+    * **Specify Private Key**: Select this check box, and then click the **select one** link to add the SSL key you downloaded from the first utility node; for example, `first-util-node.key`.
 
-    <!--![](./images/add-cert-1.png "Add certification page ")-->
-    ![](./images/add-cert-1.png "")
+      <!--![](./images/add-cert-1.png "Add certification page ")-->
+      ![](./images/add-cert-1.png "")
 
 3. Click **Add Certificate**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the bundle to be added to the **Certificates** table at the bottom of the **Certificates** page.
 
@@ -265,13 +265,13 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
     <!--![](./images/edit-cm-backend-set.png "Edit CM backend set")-->
     ![](./images/edit-cm-backend-set.png "")
 
-3. On the **Edit Backend Set** page, enter the following information.
+3. On the **Edit Backend Set** page, enter the following information:
 
     * **Name:** This read-only field shows the name that was created for you by the wizard, for example, **bs\_lb\_2020-1117-1226**.
 
     * **Traffic Distribution Policy:** Accept the default **Weighted Round Robin**.
 
-    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example, **first-util-node-cert-bundle**.
+    * **Use SSL:** Check box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example, **first-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Check this box.
 
@@ -295,7 +295,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **Traffic Distribution Policy:** Accept the default **Weighted Round Robin**.
 
-    * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example, **first-util-node-cert-bundle**.
+    * **Use SSL:** Check box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example, **first-util-node-cert-bundle**.
 
     * **Verify Peer Certificate:** Check this box.
 
@@ -407,7 +407,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
 2. Click the **Action** ![](./images/action-menu-button.png) menu at the end of the row containing the listener, and select **Edit**.
 
-3. On the **Edit Listener** page, enter the following information. (Most of these options were set when you created the load balancer in **STEP 3: Create the Load Balancer**, above. The option you'll change in this step is **Use SSL**.)
+3. On the **Edit Listener** page, enter the following information. (Most of these options were set when you created the load balancer in **STEP 3: Create the Load Balancer**. The option you'll change in this step is **Use SSL**.)
 
     * **Name:** Read only.
 
@@ -417,7 +417,7 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
 
     * **Use SSL:** Select this box. Then, under **Certificate Name**, select the bundle you created with the self-signed SSL certificate for the first utility node; for example, **first-util-node-cert-bundle**.
 
-    * **Verify Peer Certificate:** Leave this box unchecked.
+    * **Verify Peer Certificate:** Leave this box unselected.
 
     * **Backend Set:** From the list, select the backend set you created for Cloudera Manager; for example, **bs\_lb\_2020-0928-1136**.  (This should be set already, because you selected it in **STEP 3: Create the Load Balancer**. Remember, the wizard assigned this name when you created the load balancer.)
 
@@ -462,8 +462,6 @@ In this step, you'll create a certificate bundle with the SSL certificate and ke
     * **Backend Set:** From the list, select the backend set you created for Big Data Studio in **STEP 7: Create a Backend Set for Big Data Studio**; for example, **data-studio-backend-set**.
 
 2. Click **Create Listener**, and then click **Close** in the **Work Request Submitted** dialog box. It may take a few moments for the listener to be added to the **Listeners** table.
-
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 

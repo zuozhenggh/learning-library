@@ -23,9 +23,7 @@ Oracle Spatial consists of the following:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -201,13 +199,13 @@ If you change any of it, the code may not compile and lead to errors.  Request y
 
     ![](./images/jdev-spatial-rest.png)
 
-2. Open Firefox if not already open, in other browser tab, open the URL *`http://localhost:7101/spatial/allCities`*. Data is retrieved by the **`getAllCities()`** method in **SpatialController.java**.
+2. On the web browser window on the right, open the URL *`http://localhost:7101/spatial/allCities`*. Data is retrieved by the **`getAllCities()`** method in **SpatialController.java**.
 
     ![](./images/spatial-rest-data.png)
 
 ## Task 5: Read SPATIAL data
 
-1. Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR  use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp** in bookmark toolbar.
+1. On the web browser window on the right, navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR  use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp** in bookmark toolbar.
 2. Click on the drop-down to see the list of datatypes shown in workshop.
 3. Select **SPATIAL** datatype and click on change view button to change.
 4. Click on blue fetch cities button.
@@ -241,7 +239,7 @@ You should see the 4 CITIES listed on the map which we inserted In the `CITY_POI
 
 ## Task 7: Delete SPATIAL data
 
-1. Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp** in bookmark toolbar.
+1. On the web browser window on the right, navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp** in bookmark toolbar.
 
 2. Click on the drop-down to see the list of datatypes shown in workshop.
 

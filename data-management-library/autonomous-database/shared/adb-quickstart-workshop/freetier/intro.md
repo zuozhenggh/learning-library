@@ -25,10 +25,10 @@ Oracle’s Autonomous Database is the perfect quick-start service for fast data 
 - **Lab 1:** Provision your first Autonomous Data Warehouse.
 - **Lab 2:** Explore the provided sample data sets that come with your Autonomous Database.
 - **Lab 3:** Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage, and troubleshoot data loads with errors.
-- **Lab 4:** Query files on the Oracle Cloud Infrastructure Object Storage (OCI) directly without loading them to your database.
+- **Lab 4:** Query files on the Oracle Cloud Infrastructure (OCI) Object Storage directly without loading them to your database.
 - **Lab 5:** Visualize your data using Oracle Analytics Desktop.
 
-**After reading the following workshop prerequisites, get started by clicking Getting Started in the Contents menu on the left.**
+**After reading the following workshop prerequisites, get started by clicking Get Started in the Contents menu on the left.**
 
 ## Workshop Prerequisites
 This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.

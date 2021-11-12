@@ -101,43 +101,53 @@ On Windows, you'll use PuTTY:
 
 4. Now that we're logged into the instance, we'll start configuring it.
 
-	1. In the terminal, execute the following command to install the GNOME desktop:
+In the terminal, execute the following command to install the GNOME desktop:
 	```
+	<copy>
 	sudo yum groupinstall "gnome-desktop" -y
+	</copy>
 	```
 
 ![Installing GNOME](images/vmconfig11.png " ")
 
-	2. Execute the following command to install TigerVNC:
+Execute the following command to install TigerVNC:
 	```
+	<copy>
 	sudo yum install "tigervnc-server" -y
+	</copy>
 	```
 
 ![Installing TigerVNC](images/vmconfig12.png " ")
 
-	3. Install the Reminna client using the following set of commands:
+Install the Reminna client using the following set of commands:
 	```
+	<copy>
 	wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 	sudo rpm -ivh epel-release-latest-7.noarch.rpm
 	sudo yum -y install remmina
+	</copy>
 	```
 
-	If you're prompted to accept a size of installation, accept.
+If you're prompted to accept a size of installation, accept.
 
 ![Installing Reminna](images/vmconfig13.png " ")
 
-	4. Install the Firefox browser using the following command:
+Install the Firefox browser using the following command:
 	```
+	<copy>
 	sudo yum install firefox
+	</copy>
 	```
 
-	If you're prompted to accept a size of installation, accept.
+If you're prompted to accept a size of installation, accept.
 
 ![Installing Firefox](images/vmconfig14.png " ")
 
-	5. Start the VNC server using the following command:
+Start the VNC server using the following command:
 	```
+	<copy>
 	- vncserver
+	</copy>
 	```
 
 ![Starting the VNC server](images/vmconfig15.png " ")
@@ -148,7 +158,9 @@ On Windows, you'll use PuTTY:
 
 On Mac or Linux, you'll type the command below:
 	```
+	<copy>
 	ssh -i <path_of_the_private_key> -L 5901:127.0.0.1:5901 opc@<public_IP_address>
+	</copy>
 	```
 
 The terminal will appear to freeze and not give any output; this is normal. Continue to the next step.

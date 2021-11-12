@@ -11,7 +11,7 @@ You can find more details at [Oracle Sharding on Docker](https://github.com/orac
 *Estimated Lab Time*: 15 Minutes
 
 Watch the video below for a walk through of the lab.
-[](youtube:1wTpz4k7wL8)
+[](youtube:lMZ8WdxeD7I)
 
  ![](./images/topology.jpg " ")  
 

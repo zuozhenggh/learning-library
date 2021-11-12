@@ -43,7 +43,9 @@ The SSH protocol uses a public/private key pair to secure its connections. If yo
 To generate a key-pair in either MacOS or a Linux environment, type the following in the command line interface (Terminal):
 
 ```
+<copy>
 ssh-keygen -t rsa -b 4096
+</copy>
 ```
 
 The system will prompt you for a location to save the keys; the default location is fine for our purposes, so simply press Enter. The system will then prompt for a passphrase to secure the key. Enter a password you know; alternatively, simply press Enter to have no passphrase on the key. If you do end up changing either the default location or passphrase of the key, make sure to make a note of it; we'll be using these keys later.
@@ -73,7 +75,9 @@ Keys are stored by default in the `.ssh` folder of your user directory. If you n
 
 ```
   # change this command to reflect the path to the public key file
+	<copy>
 	pbcopy < ~/.ssh/id_rsa.pub
+	</copy>
 ```
 
 **On Windows**
