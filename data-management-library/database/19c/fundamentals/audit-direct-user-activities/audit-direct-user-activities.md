@@ -36,103 +36,103 @@ Enter password: password
 Read the rows from the HR.EMPLOYEES table. Read the result from the [result1](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-audit-top-level-user-activities/files/result1.txt) text file.
 3. Create a procedure that allows the HR user to raise the employees’ salaries in PDB1.
 ```
-@/home/oracle/labs/create_proc.sql
+<copy>@/home/oracle/labs/create_proc.sql</copy>
 ```
 Read the result from the [result2](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-audit-top-level-user-activities/files/result2.txt) text file.
 
 ## Task 2: Create and Enable The Audit Policy
 1. Create the security officer. The security officer is the one responsible for managing audit policies.
 ```
-CREATE USER auditor_admin IDENTIFIED BY password;
+<copy>CREATE USER auditor_admin IDENTIFIED BY password;</copy>
 ```
 2. Grant the security officer the CREATE SESSION system privilege and the AUDIT_ADMIN role.
 ```
-GRANT create session, audit_admin TO auditor_admin;
+<copy>GRANT create session, audit_admin TO auditor_admin;</copy>
 ```
 3. Connect to PDB1 as auditor_admin.
 ```
-CONNECT auditor_admin@PDB1
+<copy>CONNECT auditor_admin@PDB1</copy>
 Enter password: password
 ```
 4. Create an audit policy that audits any salary increase.
 ```
-CREATE AUDIT POLICY pol_sal_increase
-                    ACTIONS UPDATE ON hr.employees;
+<copy>CREATE AUDIT POLICY pol_sal_increase
+                    ACTIONS UPDATE ON hr.employees;</copy>
 ```
 5. Enable the audit policy.
 ```
-AUDIT POLICY pol_sal_increase WHENEVER SUCCESSFUL;
+<copy>AUDIT POLICY pol_sal_increase WHENEVER SUCCESSFUL;</copy>
 ```
 
 ## Task 3: Audit The User Activities Including Recursive Statements
 1. In another session, session2, connect as HR and increase the salary for employee ID 106 through the RAISE_SALARY procedure.
 ```
-sqlplus hr@PDB1
+<copy>sqlplus hr@PDB1</copy>
 Enter password: password
 ```
 ```
-EXEC emp_admin.raise_salary(106,10)
+<copy>EXEC emp_admin.raise_salary(106,10)</copy>
 ```
 2. Still in session2, update the row directly and commit.
 ```
-UPDATE hr.employees SET salary=salary*0.1
-WHERE  employee_id = 106;
+<copy>UPDATE hr.employees SET salary=salary*0.1
+WHERE  employee_id = 106;</copy>
 ```
 ```
-COMMIT;
+<copy>COMMIT;</copy>
 ```
 3. Quit the session.
 ```
-EXIT
+<copy>EXIT</copy>
 ```
 ## Task 4: Display the Activities Audited
 1. Verify from session1 that the update actions executed through the PL/SQL procedure and directly by the UPDATE command are audited.
 ```
-SELECT action_name, object_name, sql_text
+<copy>SELECT action_name, object_name, sql_text
      FROM   unified_audit_trail
-     WHERE  unified_audit_policies = 'POL_SAL_INCREASE';
+     WHERE  unified_audit_policies = 'POL_SAL_INCREASE';</copy>
 ```
 Read the result from the [result3](https://docs.oracle.com/en/database/oracle/oracle-database/19/tutorial-audit-top-level-user-activities/files/result3.txt) text file.
 2. Disable the audit policy.
 ```
-NOAUDIT POLICY pol_sal_increase;
+<copy>NOAUDIT POLICY pol_sal_increase;</copy>
 ```
 3. Drop the audit policy.
 ```
-DROP AUDIT POLICY pol_sal_increase;
+<copy>DROP AUDIT POLICY pol_sal_increase;</copy>
 ```
 ## Task 5: Audit the Top-Level Statements Only
 1. Create an audit policy that audits any salary increase executed directly with an UPDATE command only.
 ```
-CREATE AUDIT POLICY pol_sal_increase_direct
-                    ACTIONS UPDATE ON hr.employees ONLY TOPLEVEL;
+<copy>CREATE AUDIT POLICY pol_sal_increase_direct
+                    ACTIONS UPDATE ON hr.employees ONLY TOPLEVEL;</copy>
 ```
 2. Enable the audit policy.
 ```
-AUDIT POLICY pol_sal_increase_direct WHENEVER SUCCESSFUL;
+<copy>AUDIT POLICY pol_sal_increase_direct WHENEVER SUCCESSFUL;</copy>
 ```
 3. In session2, connect as HR to PDB1.
 ```
-sqlplus hr@PDB1
+<copy>sqlplus hr@PDB1</copy>
 Enter password: password
 ```
 4. Increase the salary for employee ID 107 through the RAISE_SALARY procedure.
 ```
-EXEC emp_admin.raise_salary(107,30)
+<copy>EXEC emp_admin.raise_salary(107,30)</copy>
 ```
 5. Still in session2, update the row directly and commit.
 ```
-UPDATE hr.employees SET salary=salary*0.1
-WHERE  employee_id = 107;
+<copy>UPDATE hr.employees SET salary=salary*0.1
+WHERE  employee_id = 107;</copy>
 ```
 ```
-COMMIT;
+<copy>COMMIT;</copy>
 ```
 ## Task 6: Display The Top-Level Activities Audited
 1. Verify from session1 that the update actions executed through the PL/SQL procedure are not audited.
 ```
-SELECT action_name, object_name, sql_text FROM unified_audit_trail
-WHERE  unified_audit_policies = 'POL_SAL_INCREASE_DIRECT';
+<copy>SELECT action_name, object_name, sql_text FROM unified_audit_trail
+WHERE  unified_audit_policies = 'POL_SAL_INCREASE_DIRECT';</copy>
 
 ACTION_NAME  OBJECT_NAME
 ------------ ------------
@@ -146,37 +146,34 @@ Observe that only the direct UPDATE statement is audited as this is the purpose 
 ## Task 7: Clean Up the Environment
 1. In session1, disable the audit policy.
 ```
-NOAUDIT POLICY pol_sal_increase_direct;
+<copy>NOAUDIT POLICY pol_sal_increase_direct;</copy>
 ```
 2. Drop the audit policy.
 ```
-DROP AUDIT POLICY pol_sal_increase_direct;
+<copy>DROP AUDIT POLICY pol_sal_increase_direct;</copy>
 ```
 3. Connect as SYSTEM to PDB1.
 ```
-CONNECT system@PDB1
+<copy>CONNECT system@PDB1</copy>
 Enter password: password
 ```
 4. Drop the HR schema.
 ```
-DROP USER hr CASCADE;
+<copy>DROP USER hr CASCADE;</copy>
 ```
 5. Drop the auditor_admin user.
 ```
-DROP USER auditor_admin CASCADE;
+<copy>DROP USER auditor_admin CASCADE;</copy>
 ```
 6. Quit the session.
 ```
-EXIT
+<copy>EXIT</copy>
 ```
 ## Learn More
 
-- [New Features in Oracle Database 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/preface.html#GUID-E012DF0F-432D-4C03-A4C8-55420CB185F3)
-- [DBCA Silent Mode Commands](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/creating-and-configuring-an-oracle-database.html#GUID-EC3C396B-6FFB-4957-BC73-1BE8F4FD852E)
-- [Cloning a PDB or non-CDB](https://docs.oracle.com/en/database/oracle/oracle-database/19/multi/cloning-a-pdb.html#GUID-05702CEB-A43C-452C-8081-4CA68DDA8007)
 
 ## Acknowledgements
 
-- **Author** - Dominique Jeunot, Consulting User Assistance Developer
-- **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, September 21 2021
+- **Author** -
+- **Contributor** -
+- **Last Updated By/Date** - Blake Hendricks, Austin Specialist Hub, November 12 2021
