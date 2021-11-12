@@ -60,7 +60,7 @@ This new user/schema will hold the Grand Prix data.
 
 1. **Download** the 6 files that contain the data that we'll use in our analysis:
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/An-wzpD0TunNeaiG1NDmgyikXATXChAJnHL02LY7BA-Sq-Pd5by3M328nc32KGgq/n/odca/b/workshops-livelabs-do-not-delete/o/RACES.csv" target="\_blank">Races data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/mss-m7_Hu1acplYpDU9jQE6LQzYGMNCJAw2kv-TZtK7WZ8XB0IkWvnMLGQ77zx3p/n/odca/b/workshops-livelabs-do-not-delete/o/RACES.csv" target="\_blank">Races data</a>
 
    <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Ste8VTJD85wJLXrIIz8jvachpw197cfhUrv_l3ACX0-_9x0A15_icePdsLBgUtm-/n/odca/b/workshops-livelabs-do-not-delete/o/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
 
