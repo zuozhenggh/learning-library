@@ -22,9 +22,7 @@ ORDS will find and run the appropriate database workload (a query, an anonymous 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -33,7 +31,7 @@ This lab assumes you have:
 
 ## Task 1: Observe eSpeedShop analytical data
 
-1. Open a web browser, type *`http://localhost:7101/`* and hit enter to go to eSpeedShop application home page.
+1. On the web browser window on the right, type *`http://localhost:7101/`* and hit enter to go to eSpeedShop application home page.
 
 2. Navigate to the analytics module by clicking the Analytics link provided in application navigation bar at the top.
 

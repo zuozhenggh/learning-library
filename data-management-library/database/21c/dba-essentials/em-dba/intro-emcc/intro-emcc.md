@@ -12,11 +12,6 @@ Oracle EM offers a comprehensive set of performance and health metrics that allo
 
 Estimated Workshop Time: 1 hour 45 minutes
 
-<if type="dbae">
-### Access this Workshop
-[**EM - Oracle Database Administration (DBA)**](http://127.0.0.1:3001/mg-playground/projects/dba-essentials-test/workshops/freetier/?lab=intro-emcc)
-</if>
-
 <if type="em-dba">
 Watch this video on *Oracle EMCC Console Overview*.
 
@@ -25,7 +20,7 @@ Watch this video on *Oracle EMCC Console Overview*.
 
 ### Objectives
 
-In this workshop, you will learn how to *connect to SQL Plus* and *view container details*. You will *log in to Oracle EMCC* console from a web browser and *manage target Oracle Databases and listeners* from the cloud interface. You will access the *container homepage* from Oracle EMCC and manage your *favorites*.
+In this workshop, you will learn how to *connect to SQL Plus* and *view container details*. You will *log in to Oracle EMCC* console from a web browser and *manage target databases and listeners* from the cloud interface. You will access the *container homepage* from Oracle EMCC and manage your *favorites*.
 
 ### Prerequisites
 
@@ -53,7 +48,7 @@ Oracle EMCC includes the following components:
 
    The agent enables you to convert an unmanaged host to a managed host and helps you monitor the targets running on the managed host. 
    
-   To learn more about managed hosts, see *What are managed targets and managed hosts?*
+   To learn more about managed hosts, see the *What are managed targets and managed hosts?* section below. 
 
  - **Oracle Management Service (OMS)**
 
@@ -93,7 +88,7 @@ Click on the next lab to **Get Started**.
 
 ## Learn More
 
-- [Oracle Enterprise Manager Cloud Control (EMCC)](https://docs.oracle.com/en/enterprise-manager/index.html)
+- [Oracle Enterprise Manager Cloud Control (Oracle EMCC)](https://docs.oracle.com/en/enterprise-manager/index.html)
 - [Oracle EMCC Release Notes](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emrel/cloud-control-release-notes-emrel.html#GUID-42C87BBB-CA6D-4A5E-8B59-AA94755724E0)
 - [Oracle Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/index.html)
 - [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)

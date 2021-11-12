@@ -7,6 +7,10 @@ In this lab, you will create a database user.
 
 Estimated Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:het5eBAOa3E)
+
 ### Objectives
 
 In this lab, you will:
@@ -72,7 +76,7 @@ For this workshop, we need to create one new user.
   - Leave the **Password Expired** toggle button as off (note this controls whether the user will be prompted to change their password when they next login).
   - Leave the **Account is Locked** toggle button as off. 
   
-Next you will examine the form.
+  Next you will examine the form.
 
 6. When you examine the form, it should look like this:
 

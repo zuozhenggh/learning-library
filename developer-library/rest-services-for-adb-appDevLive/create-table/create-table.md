@@ -6,6 +6,10 @@ In this lab you will use Database Actions/SQL Developer Web to connect to your D
 
 Estimated Lab Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:xr957th1h3U)
+
 ### Objectives
 
 - Create and Auto-REST enable a table

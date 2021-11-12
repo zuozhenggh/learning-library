@@ -4,7 +4,10 @@
 
 This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure (OCI) and add it to the Oracle GoldenGate Service Manager.
 
-Estimated time: 5 minutes
+Estimated time: 10 minutes
+
+Watch the video below for a walk through of the lab.
+[](youtube:c73kK9JDuo8)
 
 ### Objectives
 

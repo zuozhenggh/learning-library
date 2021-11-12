@@ -9,6 +9,11 @@ In this lab, you create a PDB named PDB19 to act as the recovery catalog databas
 
 Estimated Time: 25 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:ZQpFzqnqSyo)
+
+
 ### Objectives
 
 In this lab, you will:

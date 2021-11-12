@@ -8,7 +8,7 @@ Oracle GoldenGate, the industry-leading data replication and integration softwar
 
 ![Diagram](images/onprem2oci.png)
 
-Estimated Lab Time: 120 minutes
+Estimated Time: 120 minutes
 
 ### About Oracle Cloud Infrastructure GoldenGate
 

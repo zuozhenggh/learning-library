@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:G7fzl4wmcow)
+[](youtube:G7fzl4wmcow)
 
 Oracle Database offers the richest SQL language support in the industry. Lean how to use SQL model clause to create custom aggregates and look at your data in different ways. Avoid falling off a complexity cliff by using SQL pattern matching to analyze a series of events. And, use other SQL techniques to find customers that are at risk and much, much more.
 

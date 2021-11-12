@@ -12,91 +12,90 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## Task 1: Start And Validate The Required Processes are Up and Running.
-1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running:
-    
-    - Database Listeners
-    - Database Server Instances
-    - eShop Application (Java Application)
-        ![](./images/convg-novnc-guide.png " ")
-2. Open the *Workshop Guides* folder from the *Firefox* toolbar area above and select the correct guide for your workshop.
-    - On the *SQL-Developer* window on the right preloaded.
-    ![](./images/convg-novnc-landing.png " ")
+## Task 1: Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-3. Click on *Terminal* icon on the desktop to start a terminal and execute the below command.
-    
-    - Go to folder /u01/script
+    - Database Listener
+        - LISTENER
+    - Database Server Instance
+        - convergedcdb
+    - Application
+        - eShop (Java Application)
 
-        ```
-        <copy>
-        cd /u01/script
-        </copy>
-        ```
-    - Run the script file to start the components.
-
-        ```
-        <copy>
-        ./env_setup_db-workshop.sh
-        </copy>
-        ```
-        ![](./images/convg-terminal.png " ")
-
-4. The above command will start the database, listener, oracle rest data service. This script could take 2-5 minutes to run. 
-         
-5. Start the WebLogic service:
-    - As an oracle user run the setWLS14Profile.sh script. This will setup the environment variables needed to start the WebLogic 14c Services.
-
-    ````
-    <copy>
-    cd /u01/middleware_demo/scripts/
-    . ./setWLS14Profile.sh
-    cd $DOMAIN_HOME/bin
-    </copy>
-    ````
-    - As an oracle user run startWebLogic.sh script. This will start the WebLogic services.
-
-    ````
-    <copy>
-    nohup ./startWebLogic.sh &
-    </copy>
-    ````
-    ![](./images/weblogic-start.png " ")
-    Check for the "Finished starting servers" status before proceeding next.
-
-    ![](./images/weblogic-final.png " ")
-    If successful, the page above is displayed and as a result your environment is now ready.  
-    
-You may now [proceed to the next lab](#next).
-
-## Appendix 1: External Terminal Access (using SSH Key Based Authentication)
-
-While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
-
-1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-
-    - From the web session where you completed your provisioning request, do:
-        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
-        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - OS User – “*oracle*”.
-
-2. First login as “*opc*” using your SSH Private Key
-
-3. Then sudo to “*oracle*”. E.g.
+2. Validate that expected processes are up. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
     ```
-    <copy>sudo su - oracle</copy>
+    <copy>
+    ps -ef|grep LISTENER|grep -v grep
+    ps -ef|grep ora_|grep pmon|grep -v grep
+    systemctl status oracle-database
+    systemctl status oracle-init-workshop
+    </copy>
+    ```
+
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
+
+    ```
+    e.g. Restarting the DB and DB Listener
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
+
+4. On the web browser window on the right preloaded with *WebLogic Admin Console* login page, click on the *Username* field and select the saved credentials or provide the credentials below to login.
+
+    ![](./images/adminconsole.png " ")  
+
+    ```
+    username: <copy>weblogic</copy>
+    ```
+    ```
+    password: <copy>Oracle123!</copy>
+    ```
+
+You may now [proceed to the next lab](#next).
+
+## Appendix 1: Managing Startup Services
+
+1. Database service (Database and Standard Listener).
+
+    - Start
+
+    ```
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
+    ```
+    - Stop
+
+    ```
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>
+    systemctl status oracle-database
+    </copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
     ```
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-- **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, JULY 2021
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021
