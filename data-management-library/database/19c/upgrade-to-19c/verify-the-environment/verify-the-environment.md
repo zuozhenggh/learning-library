@@ -14,7 +14,7 @@ In this lab, you will
 - Optionally connect using a ssh client
 - Setup the lab instructions inside the lab client
 
-### Requirements ###
+### Prerequisites ###
 
  To complete this lab, you need the following account credentials and assets:
 
@@ -23,7 +23,7 @@ In this lab, you will
     - Your IP address is visible on the Livelabs -> Launch Workshop page
     - The URL to the NoVNC Remote Desktop is also visible on this screen
 
-     ![](./images/01-LL-details.png)
+   ![](./images/01-LL-details.png)
 
 ## Task 1: Connect to the Hands-On Lab client image using NoVNC ##
 
@@ -54,10 +54,12 @@ In this lab, you will
 **All labs depend on the 19c installation in lab 2**
 
 - There is no dependency between the labs after lab 2
-- Please continue with your hands-on experience by running the steps in Lab 2.
+- Please continue with your hands-on experience by running the steps in Lab 2
 - After finishing Lab 1, continue as instructed to the next lab or choose an exciting lab
     - If one lab is executing the upgrade, you can start another Lab if you want to
     - Every Lab has its dedicated instances and versions, so even the upgrade can run in parallel
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements ##
 
