@@ -100,14 +100,14 @@ In this step, we will add a link from the Autonomous Data Warehouse to the publi
             </td>
 		</tr>
 				<tr>
-			<td colspan="1" class="confluenceTd">US West</td>
+			<td colspan="1" class="confluenceTd"></td>
             <td colspan="1" class="confluenceTd">San Jose</td>
 			<td colspan="1" class="confluenceTd">
                 https://objectstorage.us-sanjose-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
             </td>
 		</tr>
 		<tr>
-			<td colspan="1" class="confluenceTd">US East</td>
+			<td colspan="1" class="confluenceTd"></td>
             <td colspan="1" class="confluenceTd">Ashburn</td>
 			<td colspan="1" class="confluenceTd">
                 https://objectstorage.us-ashburn-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
@@ -150,26 +150,22 @@ All the MovieStream data files for this workshop are stored in a public bucket i
 
     ![Select to load data from cloud storage](images/loadfromstorage.png)
 
-3. The left hand side of the screen shows our **MOVIEDATA** cloud location, and a list of folders containing files for loading. Expand the **movies** folfer to show a list of csv files. We can see that there is a file for each month of sales data:
+3. The left hand side of the screen shows our **MOVIEDATA** cloud location, and a list of folders containing files for loading. Expand the **movie\_sales\_fact** folder to show a list of csv files. We can see that there is a file for each month of sales data:
 
     ![List of files of movie sales data](images/listfiles.png)
 
-4. As we want to load all the files into a single table, rather than selecting any one file, we want to drag the whole **movies** folder to the right hand pane. This then shows a prompt to confirm that we want to load all 35 objects to a single target table. Click **OK**.
+4. As we want to load all the files into a single table, rather than selecting any one file, we want to drag the whole **movie\_sales\_fact** folder to the right hand pane. This then shows a prompt to confirm that we want to load all 35 objects to a single target table. Click **OK**.
 
 5. We now have a card in the right hand pane, representing a single data loading task that we can run. Click the pencil icon to review its settings:
 
     ![Edit Data Load task](images/edittask.png)
 
-6. The settings show us that the column names for our new table have been derived from a header row in the CSV files. We can change the settings to suit our needs. First, change the target table name to **MOVIE_SALES_FACT** since this data will be our fact table for later analysis:
-
-    ![Change the target table name](images/moviesalesfact.png)
-
-7. Next, we need to specify the way in which some of the table columns store numeric values, as this will be important to our calculations later on. Scroll down the list of columns in the **Mapping** section and find the **LIST_PRICE** column. Specify its **Scale** setting as 2, to store numbers with 2 decimal places. Then, change the **Scale** setting to 3 for the columns **ACTUAL_PRICE** and **DISCOUNT_PERCENT**:
+6. The settings show us that the column names for our new table have been derived from a header row in the CSV files. We can change the settings to suit our needs. We need to specify the way in which some of the table columns store numeric values, as this will be important to our calculations later on. Scroll down the list of columns in the **Mapping** section and find the **LIST_PRICE** column. Specify its **Scale** setting as 2, to store numbers with 2 decimal places. Then, change the **Scale** setting to 3 for the columns **ACTUAL_PRICE** and **DISCOUNT_PERCENT**:
 
     ![Adjust the scale setting for numeric columns](images/adjustscale.png)
 
 
-8. Click the **Close** button to close the settings. Now, we can run the load task by clicking the run button. Confirm by clicking **Run** in the pop-up dialog.
+7. Click the **Close** button to close the settings. Now, we can run the load task by clicking the run button. Confirm by clicking **Run** in the pop-up dialog.
 
     ![Run data load](images/rundataload.png)
 
@@ -177,9 +173,9 @@ If your autonomous database is running with 8 OCPUs, and the object storage file
 
 Note that you can scale your autonomous database up and down to use more or fewer OCPUs from the console page on Oracle Cloud Infrastructure.
 
-9. Once the data load task is complete, a green tick icon appears next to it. Click **Explore Catalog** in the bottom right to check the data has loaded properly.
+8. Once the data load task is complete, a green tick icon appears next to it. Click **Explore Catalog** in the bottom right to check the data has loaded properly.
 
-10. Click **MOVIE_SALES_FACT** to examine the new table. This shows a preview of the data loaded in the table, and some other options. Click **Data Load Jobs** on the left hand side to check what happened in the load job. This shows us that 97890562 rows were loaded, and 0 rejected.
+9. Click **MOVIE_SALES_FACT** to examine the new table. This shows a preview of the data loaded in the table, and some other options. Click **Data Load Jobs** on the left hand side to check what happened in the load job. This shows us that 97890562 rows were loaded, and 0 rejected.
 
     ![Check data load](images/checkdataload.png)
 
