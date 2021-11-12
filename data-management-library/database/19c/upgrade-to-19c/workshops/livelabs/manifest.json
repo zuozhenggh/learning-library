@@ -8,25 +8,25 @@
           "filename": "../../introduction/introduction.md"
       },
       {
-          "title": "Lab 0: Verify the environment",
+          "title": "Lab 1: Verify the environment",
           "description": "Check that the supplied LiveLab environment has been setup and is running",
           "filename": "../../verify-the-environment/verify-the-environment.md"
       },
       {
-          "title": "Lab 1: Install the 19c Oracle Home",
+          "title": "Lab 2: Install the 19c Oracle Home",
           "description": "Install the 19c tree that is needed for all of the following Labs",
           "filename": "../../install-19c-oh/install-19c-oh.md"
       },
       {
-          "title": "Lab 2: Auto Upgrade",
+          "title": "Lab 3: Auto Upgrade",
           "filename": "../../autoupgrade/autoupgrade.md"
       },
       {
-          "title": "Lab 3: Full Transportable",
+          "title": "Lab 4: Full Transportable",
           "filename": "../../full-transportable/full-transportable.md"
       },
       {
-          "title": "Lab 4: Pluggable database",
+          "title": "Lab 5: Pluggable database",
           "filename": "../../pluggable-db/pluggable-db.md"
       },
       {
