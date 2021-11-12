@@ -151,11 +151,16 @@ All the MovieStream data files for this workshop are stored in a public bucket i
 
     ![Edit Data Load task](images/edittask.png)
 
-6. The settings show us that the column names for our new table have been derived from a header row in the CSV files. We can change the column names and data types, but in this case, they should be correct. However, we can change the target table name to **MOVIE_SALES_FACT** since this data will be our fact table for later analysis:
+6. The settings show us that the column names for our new table have been derived from a header row in the CSV files. We can change the settings to suit our needs. First, change the target table name to **MOVIE_SALES_FACT** since this data will be our fact table for later analysis:
 
     ![Change the target table name](images/moviesalesfact.png)
 
-7. Click the **Close** button to close the settings. Now, we can run the load task by clicking the run button. Confirm by clicking **Run** in the pop-up dialog.
+7. Next, we need to specify the way in which some of the table columns store numeric values, as this will be important to our calculations later on. Scroll down the list of columns in the **Mapping** section and find the **LIST_PRICE** column. Specify its **Scale** setting as 2, to store numbers with 2 decimal places. Then, change the **Scale** setting to 3 for the columns **ACTUAL_PRICE** and **DISCOUNT_PERCENT**:
+
+    ![Adjust the scale setting for numeric columns](images/adjustscale.png)
+
+
+8. Click the **Close** button to close the settings. Now, we can run the load task by clicking the run button. Confirm by clicking **Run** in the pop-up dialog.
 
     ![Run data load](images/rundataload.png)
 
@@ -163,9 +168,9 @@ If your autonomous database is running with 8 OCPUs, and the object storage file
 
 Note that you can scale your autonomous database up and down to use more or fewer OCPUs from the console page on Oracle Cloud Infrastructure.
 
-8. Once the data load task is complete, a green tick icon appears next to it. Click **Explore Catalog** in the bottom right to check the data has loaded properly.
+9. Once the data load task is complete, a green tick icon appears next to it. Click **Explore Catalog** in the bottom right to check the data has loaded properly.
 
-9. Click **MOVIE_SALES_FACT** to examine the new table. This shows a preview of the data loaded in the table, and some other options. Click **Data Load Jobs** on the left hand side to check what happened in the load job. This shows us that 97890562 rows were loaded, and 0 rejected.
+10. Click **MOVIE_SALES_FACT** to examine the new table. This shows a preview of the data loaded in the table, and some other options. Click **Data Load Jobs** on the left hand side to check what happened in the load job. This shows us that 97890562 rows were loaded, and 0 rejected.
 
     ![Check data load](images/checkdataload.png)
 
