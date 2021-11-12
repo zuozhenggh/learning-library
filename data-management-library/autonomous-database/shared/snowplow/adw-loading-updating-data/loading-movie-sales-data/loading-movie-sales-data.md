@@ -149,9 +149,7 @@ All the MovieStream data files for this workshop are stored in a public bucket i
 
 4. As we want to load all the files into a single table, rather than selecting any one file, we want to drag the whole **movie\_sales\_fact** folder to the right hand pane. This then shows a prompt to confirm that we want to load all 35 objects to a single target table. Click **OK**.
 
-5. We now have a card in the right hand pane, representing a single data loading task that we can run. Click the pencil icon to review its settings:
-
-    ![Edit Data Load task](images/edittask.png)
+5. We now have a card in the right hand pane, representing a single data loading task that we can run. Click the pencil icon to review and edit its settings.
 
 6. The settings show us that the column names for our new table have been derived from a header row in the CSV files. We can change the settings to suit our needs. We need to specify the way in which some of the table columns store numeric values, as this will be important to our calculations later on. Scroll down the list of columns in the **Mapping** section and find the **LIST_PRICE** column. Specify its **Scale** setting as 2, to store numbers with 2 decimal places. Then, change the **Scale** setting to 3 for the columns **ACTUAL_PRICE** and **DISCOUNT_PERCENT**:
 
