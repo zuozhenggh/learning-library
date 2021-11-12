@@ -54,7 +54,7 @@ This lab assumes you have:
     BEGIN
     DBMS_CLOUD.COPY_DATA (
     table_name => 'MOVIE_SALES_FACT',
-    file_uri_list => 'newlocation/d801_movie_sales_fact_m-201801.csv',
+    file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/movie_sales_fact/d1184_movie_sales_fact-JAN-2018.csv',
     format => '{"type":"csv","skipheaders":"1"}'
     );
     END;
@@ -85,4 +85,4 @@ Please *proceed to the next lab*.
 
 * **Author** - Keith Laker, ADB Product Management
 * **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-* **Last Updated By/Date** - Richard Green, June 2021
+* **Last Updated By/Date** - Mike Matthews, ADB Product Management, November 2021
