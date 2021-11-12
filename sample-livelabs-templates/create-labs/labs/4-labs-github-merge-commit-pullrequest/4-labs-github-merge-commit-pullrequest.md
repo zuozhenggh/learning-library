@@ -187,12 +187,10 @@ This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
-<<<<<<< Updated upstream
-<!-- * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
-* [Use GitHub Desktop](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+GitHub+Desktop) -->
-=======
 * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
->>>>>>> Stashed changes
+
+* [Use GitHub Desktop](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+GitHub+Desktop)
+
 
 ## Acknowledgements
 
