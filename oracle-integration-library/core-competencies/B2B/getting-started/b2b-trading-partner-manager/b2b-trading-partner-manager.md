@@ -37,11 +37,11 @@ This lab assumes you have:
 
 **Create the Host Profile**
 
-1.	In the left navigation pane, click B2B > Host Profile.
+1.	In the left navigation pane, click **Menu > B2B > Host Profile**
 2.	In the Host Company Name field, enter your company name
 		<copy>Acme</copy>
 		The name is currently only for reference and not used elsewhere.
-3.	Select a host identifier or, if none are defined, click Add icon. You add identifiers to the host profile on behalf of your company.
+3.	Select a host identifier or, if none are defined, click **Add** icon. You add identifiers to the host profile on behalf of your company.
 
 Note: This is typically a one-time activity that you perform before adding your first trading partner. Host identifiers define your company when acting as the host interacting with other trading partners. They identify and validate the source of the document when sent by the host. Identifiers defined here are used in two places:
 *	Transports
@@ -55,7 +55,7 @@ Note: This is typically a one-time activity that you perform before adding your 
 |EDI Group ID	|Acme|
 |EDI Group ID Qualifier|01|
 
-5.	Click Save.
+5.	Click **Save**.
 
 Note: If you change the host identifier value used in a deployed agreement, the changes only take effect after you explicitly redeploy the agreement between the host and the trading partner
 
@@ -66,14 +66,14 @@ You can create and manage trading partners. A trading partner is the external bu
 
 Trading partner concepts are provided. Refer [Getting Started with B2B in Oracle Integration](../workshops/freetier/?lab=gettingStartedB2B) Lab.
 
-1.	In the left navigation pane, click B2B > Trading Partners
-2.	Click Create. Enter the trading partner name as “Dell Inc" and an optional description. The Identifier field is automatically populated with the name you enter. The values for both must be unique. And click Create.
+1.	In the left navigation pane, click **Menu > B2B > Trading Partners**
+2.	Click **Create**. Enter the trading partner name as **Dell Inc** and an optional description. The Identifier field is automatically populated with the name you enter. The values for both must be unique. And click **Create**.
 
 **Select Contact**
 
 You can add ways to contact the trading partner, such as their name, email, phone number, or short message service (SMS) number. The Contact Type and Value fields are both free text fields. This enables you to enter custom text. Use this information to contact individuals offline, as needed. The Contacts field is currently provided only for reference and is not used in B2B for Oracle Integration
 
-1.	Click Contact tab. Select Contact Type as Email. Enter your email id under Value column and click on Save
+1.	Click **Contact** tab. Select Contact Type as **Email**. Enter your email id under Value column and click on **Save**
 ![](images/tpm-tp-contact-1.png)
 
 **Define B2B Identifiers**
@@ -82,7 +82,7 @@ You collect identifying information from your external trading partner and enter
 
 Understand the identifiers and Create values for each of the required identifiers.
 
-1. Click on B2B Identifiers tab. Select the below Identifiers and Values and click on + Icon to create multiple identifiers and click on Save
+1. Click on **B2B Identifiers** tab. Select the below Identifiers and Values and click on **+** Icon to create multiple identifiers and click on **Save**
 
 | Identifier Type | Purpose | Value |
 | --- | --- | --- |
@@ -105,7 +105,7 @@ Each transport is listed with its name, direction and type, status, and last upd
 <li>Failed</li>
 </ul>
 
-1.	Click Transports & Agreements tab. In the Transports section, click   to add a new Transport. Enter the details as per the below and click on Save.
+1.	Click **Transports & Agreements** tab. In the Transports section, click **+** to add a new Transport. Enter the details as per the below and click on **Save**.
 Note: . The AS2 and FTP transport protocols are currently supported
 
 | Field                         | Description                 |
@@ -125,11 +125,11 @@ Two integrations are created automatically under the covers when a transport is 
     <ul><li>B2B integration for receiving messages (Dell FTP Receive)</li>
 		<li>B2B integration for sending messages (Dell FTP Send)</li></ul>
 
-Click the action menu on a row to view available actions. Select **Deploy**
+Click the **Action** menu on a row to view available actions. Select **Deploy**
 
 ![](images\tpm-tp-Transport-1.png)
 
-Navigate to the Integrations page and note that both Integrations created and Status is 'Active'
+Navigate to the **Integrations** page and note that both Integrations created and Status is **Active**
 
 ![](images\tpm-tp-Transport-2.png)
 
@@ -138,11 +138,12 @@ This section describes about creating and managing agreements. You define one or
 
 Detailed agreement concepts are provided. See **Agreements** in [Getting Started with B2B in Oracle Integration](../workshops/freetier/?lab=gettingStartedB2B)
 
-In the left navigation pane, click B2B > Trading Partners
+In the left navigation pane, click **Menu > B2B > Trading Partners**
 
 **Define Outbound Agreement**
-1.	Click Transports & Agreements.
-2.	In the Outbound Agreements section, click Add (+) icon to add a new agreement.
+
+1.	Click **Transports & Agreements**
+2.	In the **Outbound Agreements** section, click **Add (+)** icon to add a new agreement.
 
 Enter the details as per below
 | Field                              | Value                       |
@@ -157,8 +158,8 @@ Enter the details as per below
 
 ![](images/tpm-tp-Agreement-Out-1.png)
 
-3.	Click Add
-4.	From the Action menu, select Deploy
+3.	Click **Add**
+4.	From the **Action** menu, select **Deploy**
 
 > **Note** : Deploy Transport and Transport agreements. You can deploy in any sequence and if you modify anything, you can just deploy the corresponding section. For example, if you modify outbound transport agreement then you can deploy(or redeploy) only outbound transport agreement
 

@@ -30,7 +30,7 @@ This lab assumes you have:
 
 There are two parties involved in any exchange - your company and an external trading partner.
 
-In the Oracle Integration UI, the menu, B2B > Host Profile denotes the configuration you need to complete on behalf of your company.
+In the Oracle Integration UI, the **Menu >B2B > Host Profile** denotes the configuration you need to complete on behalf of your company.
 
 The Host Profile has only B2B Identifiers for you to enter. This is where you will enter your company's identity information such as EDI Interchange ID and AS2 Identifier. Certain other types of configuration, such as Signing Certificates for your company, etc are entered in Connections, explained later.
 
@@ -40,7 +40,7 @@ When you send electronic documents to an external trading partner, some of the B
 
 A Trading Partner is an external business entity that your company interacts with, and sends or receives business transactions, such as orders and invoices, in electronic form.
 
-The menu, B2B > Trading Partners is the area where you need to register all your external trading partners and enter information on their behalf. Note that your trading partners cannot access these UI pages in your Oracle Integration instance. Therefore, as the B2B system administrator, you gather information from your external trading partners, offline, and enter that information in the Trading Partner UI pages.
+**Menu > B2B > Trading Partners** is the area where you need to register all your external trading partners and enter information on their behalf. Note that your trading partners cannot access these UI pages in your Oracle Integration instance. Therefore, as the B2B system administrator, you gather information from your external trading partners, offline, and enter that information in the Trading Partner UI pages.
 
 Similar to B2B for Oracle Integration, your external trading partner will have a B2B application of their own, and they will collect some information about your company, offline, and enter it into their B2B application, which you cannot directly access.
 
@@ -104,8 +104,16 @@ Transports are configuration objects that represent a concrete communication cha
 
 Currently, AS2 and FTP (includes SFTP) are supported protocols for B2B Trading Partner mode. If you wish to use another protocol adapter in Oracle Integration with B2B, you can do so only using the Standalone mode.
 
-You define a Transport for a B2B trading partner from the B2B > Transports and Agreements tab. Here's a sample screenshot for a trading partner with one AS2 and one FTP transport.
+You define a Transport for a B2B trading partner from the **Menu > B2B > Trading Partner > Edit Trading Partner > Transports and Agreements** tab. Here's a sample screenshot for a trading partner with one AS2 and one FTP transport.
 ![](./images/gettingStarted-TransportsOfComm.png)
+
+**FTP**
+
+File Transfer Protocol and Secure File Transfer Protocol (SFTP) are very commonly used for B2B communications. An FTP transport also works in conjunction with an FTP Connection.
+
+In an FTP Connection you specify the hostname, port, credentials and other security configuration. In the FTP transport, you enter the Input and Output Directory, File name pattern and other details.
+
+One important aspect of an FTP transport is that the receiving side polls the Input Directory on a time-based schedule. You can set up the schedule by clicking on the Receive Schedule action for an FTP transport.
 
 **AS2**
 
@@ -122,14 +130,6 @@ For example, if you wish to sign and encrypt the outbound messages:
 The simplest AS2 communication uses no encryption, no signing, no compression. If you are learning about AS2, you can start simple and add the security layers later.
 
 In AS2 there is a concept of an electronic read receipt, officially termed as MDN (Message Disposition Notification). It is a transport level acknowledgment used as a confirmation that the other party has received your message intact. B2B for Oracle Integration generates and consume MDN messages (when enabled), and correlate them to the original transmissions. A B2B Message Tracking UI, described later, allows you to view the AS2 messages and the MDN acknowledgments.
-
-**FTP**
-
-File Transfer Protocol and Secure File Transfer Protocol (SFTP) are very commonly used for B2B communications. An FTP transport also works in conjunction with an FTP Connection.
-
-In an FTP Connection you specify the hostname, port, credentials and other security configuration. In the FTP transport, you enter the Input and Output Directory, File name pattern and other details.
-
-One important aspect of an FTP transport is that the receiving side polls the Input Directory on a time-based schedule. You can set up the schedule by clicking on the Receive Schedule action for an FTP transport.
 
 ### *Agreements*
 
@@ -166,7 +166,7 @@ A B2B Schema is an optional object that represents a customized variant of one o
 
 As messages flow through the B2B Integrations for Receiving and Sending, each Inbound and Outbound message is persisted separately, in addition to the usual integration instance tracking.
 
-The persisted B2B messages can be viewed from a specialized UI, Monitoring > B2B Tracking.
+The persisted B2B messages can be viewed from a specialized UI, **Menu > Monitoring > B2B Tracking**.
 
 The sample screenshot below shows the B2B Tracking UI.
 ![](./images/gettingStarted-TrackMessages.png)

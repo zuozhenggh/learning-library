@@ -24,7 +24,7 @@ This lab assumes you have:
 ## Task 1: Create a new B2B schema
 You can create a new B2B schema based on a standard document type
 
-1. In the left navigation pane, click B2B > B2B Schemas
+1. In the left navigation pane, click **Menu > B2B > B2B Schemas**
 2. On the B2B Schemas page, click **Create**
 3. Enter the following details
 
@@ -32,9 +32,8 @@ You can create a new B2B schema based on a standard document type
 | --- | --- |
 | Name |PurchaseOrderSchema|
 | Identifier |This field is automatically populated with the document name. You can manually change this value |
-| Document Standard | Select the document standard X12. The document standard identifies the business protocol to follow when exchanging business documents between partners. Supported document standards are EDIFACT & X12 |
 | Description | Purchase Order Schema |
-| Document Standard	 | X12 |
+| Document Standard	 | X12 (Select the document standard X12. The document standard identifies the business protocol to follow when exchanging business documents between partners. Supported document standards are EDIFACT & X12)|
 | Document Version	 | 4010 |
 | Document Type	 | 850 (Purchase Order) |
 
@@ -43,7 +42,7 @@ You can create a new B2B schema based on a standard document type
 
 ![](images/POSchema-Structure.png)
 
-The above schematic structure represents the Transaction Set Segment (**ST**) standard EDI envelope Structure
+The below schematic structure represents the Transaction Set Segment (**ST**) standard EDI envelope Structure
 ![](images/x12_env_structure.png)
 
 [Refer the EDI X12 Documentation](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/edi-x12.html#GUID-7C278E59-A35E-41A2-8EB7-9E947FF32F4E)  to understand more details about every segment within Transaction Set (**ST**)
@@ -53,7 +52,7 @@ The above schematic structure represents the Transaction Set Segment (**ST**) st
 
 You can create a new B2B Document based on a standard document type
 
-1. In the left navigation pane, click B2B > B2B Documents
+1. In the left navigation pane, click **Menu > B2B > B2B Documents**
 2. On the B2B Documents page, click **Create**
 3. Enter the following details
 
@@ -61,9 +60,8 @@ You can create a new B2B Document based on a standard document type
 | --- | --- |
 | Name |PurchaseOrder4010Document|
 | Identifier |This field is automatically populated with the document name. You can manually change this value |
-| Document Standard | Select the document standard X12. The document standard identifies the business protocol to follow when exchanging business documents between partners. Supported document standards are EDIFACT & X12 |
 | Description | Purchase Order Schema |
-| Document Standard	 | X12 |
+| Document Standard	 | X12 (Select the document standard X12. The document standard identifies the business protocol to follow when exchanging business documents between partners. Supported document standards are EDIFACT & X12 ) |
 | Document Version	 | 4010 |
 | Document Type	 | 850 (Purchase Order) |
 
@@ -78,7 +76,7 @@ The details page for your new B2B document is displayed. The Document Schema fie
 ## Task 3: Customize a B2B Schema (Optional)
 You can create customized document definitions to use in your B2B integrations. Custom document definitions are useful for scenarios in which your trading partner requires specific customizations to meet certain business requirements.
 
-1. In the left navigation pane, click B2B > B2B Schemas
+1. In the left navigation pane, click **Menu > B2B > B2B Schemas**
 2. On the B2B Schemas page, **Clone** the **PurchaseOrderSchema** created in previous Task (Task2)
 ![](images/CustomizePOSchema4010-Clone.png)
 

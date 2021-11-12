@@ -44,13 +44,13 @@ Let's create a basic, outbound integration flow that receives an XML document th
 Note: This integration flow uses REST for simplicity. You can substitute the REST Adapter trigger connection with any other adapter, such as the FTP Adapter, NetSuite Adapter, ERP Cloud Adapter, available in Oracle Integration
 
 
-1. In the navigation pane, click Integrations.
+1. In the navigation pane, click **Integrations**
 
-2. On the Integrations page, click Create.
+2. On the Integrations page, click **Create**
 
-3. Select App Driven Orchestration as the style to use. The Create New Integration dialog is displayed.
+3. Select **App Driven Orchestration** as the style to use. The Create New Integration dialog is displayed.
 
-    enter the Name of the integration as per the value given below and then click on create
+    enter the Name of the integration as per the value given below and then click on **Create**
     ```
     <copy>PO Backend</copy>
     ```
@@ -70,24 +70,24 @@ The Adapter Endpoint Configuration Wizard opens
     ```
     <copy>/outbound</copy>
     ```
-    - Select POST as the action to perform on the endpoint.
-    - Select to configure both request and response for this endpoint and click on Next
+    - Select **POST** as the action to perform on the endpoint.
+    - Select to configure both **request** and **response** for this endpoint and click on **Next**
     ![REST Endpont Wizard diagram](images/b2b-outbound2.png)
 
-2. On the Request page:
+2. On the **Request** page:
     - Select XML Schema in the Select the request payload format field.
     - Click on Choose File and upload the file [AcmePurchaseOrder.xsd](files/AcmePurchaseOrder.xsd?download=1) and click on Next
     ![Request diagram](images/b2b-outbound3.png)
-3. In the Response page:
+3. In the **Response** page:
     - Select XML Schema in the response payload format field
     - Click on Choose File and upload the file [PurchaseOrderResult.xsd](files/PurchaseOrderResult.xsd?download=1)
-    - Click Next, and on the Summary page, click Done to complete the REST Adapter configuration.
-    - The integration flow is now represented as follows in the canvas and click on Save to save your integration flow
+    - Click **Next**, and on the Summary page, click **Done** to complete the REST Adapter configuration.
+    - The integration flow is now represented as follows in the canvas and click on **Save** to save your integration flow
     ![Response diagram](images/b2b-outbound4.png)
 ## Task 3: Configure the EDI Translate Action
 Add an EDI translate action to the flow to translate XML document to an EDI document
-1. On the right side of the canvas, click Actions  , drag & drop B2B action on the designer after the first Receive-App-Msg element.
-The Configure B2B Action wizard opens
+1. On the right side of the canvas, click **Actions**  , drag & drop B2B action on the designer after the first Receive-App-Msg element.
+The **Configure B2B Action** wizard opens
     - On the Basic Info page, enter the name as per the value given below for the action and select a mode as **B2B Trading Partner mode**, and click Next
     ```
     <copy>EDI-Generate</copy>
@@ -103,8 +103,8 @@ The Configure B2B Action wizard opens
 ## Task 4: Configure Mapping Actions
 Configure data mappings for the EDI-Generate action and Receive-App-Msg action in order to successfully parse the incoming XML message and translate it to EDI message.
 
-1. Click the Map to EDI-Generate action and select Edit.
-2. Click on Developer mode
+1. Click the **Map to EDI-Generate** action and select **Edit**
+2. Click on **Developer** mode
    ![Devmode diagram](images/b2b-outbound9.png)
 3. From Source, expand the root element, expand AcmePurchaseOrder and From Target, expand the root element, expand TranslateInput, expand edi-xml-document, expand transaction-data and map all the mandatory elements given below.
 
@@ -129,17 +129,17 @@ Configure data mappings for the EDI-Generate action and Receive-App-Msg action i
 Once you are done with the validation, test it and results should look like the screenshot given below.
    ![mapperTest diagram](images/mapperTest.png)
 
-4. Click Validate and then Close.
+4. Click **Validate** and then **Close**
 5. Save your integration flow.
 ## Task 5: Switch action after EDI-Generate activity
-1. Add a switch action after the EDI-Generate activity
+1. Add a **Switch** action after the EDI-Generate activity
     - For the If branch, Enter the Expression Name as **Success or Warning** and enter the following expression under Expression section. (You may have to select Expression Mode to enter the value given below). If there is an error on namespaces then you can search for **translation-status** and select that element for mapping.
     ```
     <copy>$EDI-Generate/nsmpr6:executeResponse/nsmpr9:TranslateOutput/nsmpr9:translation-status ="Success"</copy>
     ```
     Note:Your namespace prefix may include different values than nsmpr9 and nsmpr6.
 This expression indicates that if TranslateOutput > translation-status has a value of Success, then take this route. This is referred to as the success route
-    - Click on Validate and Click on Close and save your integration flow
+    - Click on **Validate** and Click on Close and save your integration flow
     - In the success route: Add **Integration** Action ->Enter name as **callTradingPartner** and select DELL FTP Send Integration (OR any other outbound B2B integration which you have created) and click on Next->Click on Next ->Click on Done and save your integration flow
 
     - Edit Map to callTradingPartner -> Select Developer mode and From Source, expand EDI-Generate -> executeResponse->TranslateOutput
@@ -161,7 +161,7 @@ This expression indicates that if TranslateOutput > translation-status has a val
     ![finalflow diagram](images/b2b-outbound15.png)
 
 ## Task 6: After Switch activity
-1. Edit Map to Receive-App-Msg activity.
+1. Edit **Map to Receive-App-Msg** activity.
 2. From Source, expand EDI-Generate Response ->executeResponse->TranslateOutput and From Target, expand Purchase Order Result and map the following elements as per the table given below.
 | Source | Target |
 | --- | --- |
@@ -172,8 +172,8 @@ This expression indicates that if TranslateOutput > translation-status has a val
 
 ## Task 7: 	Add Tracking Identifiers for Integration Tracking
 
-1. Click Actions Menu  in the top-right corner of canvas, and select Tracking
-2. In the resulting dialog, select **orderNumber** on the left and move it to the table on the right and click on Save.
+1. Click **Actions** Menu  in the top-right corner of canvas, and select Tracking
+2. In the resulting dialog, select **orderNumber** on the left and move it to the table on the right and click on **Save**
 3. Check for errors, Save the integration and click Close
    ![finalflow1 diagram](images/finalflow.png)
 
@@ -181,7 +181,7 @@ This expression indicates that if TranslateOutput > translation-status has a val
 ## Task 8:  Activate the Integration
 
 Check for errors, save, and activate the integration flow.
-1.	On the Integrations page, click on the activate button against your integration to activate it.
+1.	On the Integrations page, click on the **Activate** button against your integration to activate it.
 2.	Click Activate in the Activate Integration dialog and select **Enable Tracing** and **Include Payload** options
 
 
@@ -199,13 +199,13 @@ This feature would be very much useful when you have more than one trading partn
 
 ## Task 10: Monitoring
 
-1. Navigate to Monitoring->B2B Tracking page. You should see Business Messages under the Business Messages Tab for your specific Trading Partner.
+1. Navigate to **Menu > Monitoring > B2B Tracking** page. You should see Business Messages under the Business Messages Tab for your specific Trading Partner.
 
 		Tip:  Select the Filter to search based on Trading Partner Name
 
 2. Click on the **View** icon and inspect Message Logs, Payload
 
-3. Navigate to Monitoring->Integrations->Tracking page. You should see the backend integration and trading partner related integrations.
+3. Navigate to **Menu > Monitoring > Integrations >Tracking** page. You should see the backend integration and trading partner related integrations.
 
 ## Task 11: Exercise(Optional)
 
@@ -229,7 +229,7 @@ Follow the instructions given under [Setup the Environment Lab-Task2-From Step5 
 |Output Directory|/B2BWorkshop/B2BTPUSGEOut|
 |Output File Name|Order-%SEQ%.edi|
 |Integration name prefix|USGE|
-3. Deploy the transport and Agreements if not deployed.
+3. **Deploy** the Transport and Agreements if not deployed.
 4. Download [USGEPO.xml](files/USGEPO.xml?download=1)
 5. Go back to Integrations and test it with the new trading partner as you did for DellInc, [Refer previous task](../workshops/freetier/?lab=b2b-outbound-x12-ftp#Task9:Testtheintegration).
 6. Monitor the trading partner and backend integrations.
