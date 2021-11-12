@@ -136,9 +136,9 @@ This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
-* [Setting Up Environment](https://otube.oracle.com/media/Setting+Up+GitHub/0_93stcjpb)
+<!-- * [Setting Up Environment](https://otube.oracle.com/media/Setting+Up+GitHub/0_93stcjpb) -->
 * [Download and Install Git for Windows and Mac](https://git-scm.com/download/win)
-* [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
+<!-- * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf) -->
 
 
 ## Acknowledgements
