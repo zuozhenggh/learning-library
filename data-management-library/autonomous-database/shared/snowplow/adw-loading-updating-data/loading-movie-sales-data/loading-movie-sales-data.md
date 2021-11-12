@@ -145,9 +145,7 @@ All the MovieStream data files for this workshop are stored in a public bucket i
 
     ![Select to load data from cloud storage](images/loadfromstorage.png)
 
-3. The left hand side of the screen shows our **MOVIEDATA** cloud location, and a list of folders containing files for loading. Expand the **movie\_sales\_fact** folder to show a list of csv files. We can see that there is a file for each month of sales data:
-
-    ![List of files of movie sales data](images/listfiles.png)
+3. The left hand side of the screen shows our **MOVIEDATA** cloud location, and a list of folders containing files for loading. Expand the **movie\_sales\_fact** folder to show a list of csv files. We can see that there is a file for each month of sales data.
 
 4. As we want to load all the files into a single table, rather than selecting any one file, we want to drag the whole **movie\_sales\_fact** folder to the right hand pane. This then shows a prompt to confirm that we want to load all 35 objects to a single target table. Click **OK**.
 
