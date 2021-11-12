@@ -62,7 +62,7 @@ In this step, we will add a link from the Autonomous Data Warehouse to the publi
 
 8. Under **Object Store URI**, copy and paste the closest regional location to where your Autonomous Data Warehouse is running from the options below, so that the database can load data from the files as quickly as possible. 
 
-*For example, if your ADW is located in our UK-London data center then you would select the first regional URI string for "Europe, Middle East, Africa" which is for a public bucket located in the London data center: 'https://objectstorage.us-london-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/'*
+*For example, if your ADW is located in our UK-London data center then you would select the first regional URI string for "Europe, Middle East, Africa" which is for a public bucket located in the London data center: 'https://objectstorage.uk-london-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/'*
 :
 <div style="margin-left: 80px;">
 <br>
@@ -81,48 +81,43 @@ In this step, we will add a link from the Autonomous Data Warehouse to the publi
 		<tr>
 			<td colspan="1" class="confluenceTd">Europe, Middle East, Africa</td>
             <td colspan="1" class="confluenceTd">London</td>
-			<td class="confluenceTd">
-                https://objectstorage.us-london-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
+			<td class="confluenceTd">https://objectstorage.uk-london-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
             </td>
 		</tr>
 		<tr>
 			<td colspan="1" class="confluenceTd"></td>
             <td colspan="1" class="confluenceTd">Frankfurt</td>
-			<td class="confluenceTd">
-                https://objectstorage.us-frankfurt-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
+			<td class="confluenceTd">https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
             </td>
 		</tr>
 		<tr>
 			<td colspan="1" class="confluenceTd">Americas</td>
             <td colspan="1" class="confluenceTd">Phoenix</td>
-			<td colspan="1" class="confluenceTd">
-                https://objectstorage.us-phoenix-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
+			<td colspan="1" class="confluenceTd">https://objectstorage.us-phoenix-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
             </td>
 		</tr>
 				<tr>
 			<td colspan="1" class="confluenceTd"></td>
             <td colspan="1" class="confluenceTd">San Jose</td>
-			<td colspan="1" class="confluenceTd">
-                https://objectstorage.us-sanjose-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
+			<td colspan="1" class="confluenceTd">https://objectstorage.us-sanjose-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
             </td>
 		</tr>
 		<tr>
 			<td colspan="1" class="confluenceTd"></td>
             <td colspan="1" class="confluenceTd">Ashburn</td>
-			<td colspan="1" class="confluenceTd">
-                https://objectstorage.us-ashburn-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
+			<td colspan="1" class="confluenceTd">https://objectstorage.us-ashburn-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
             </td>
 		</tr>
 		<tr>
 			<td colspan="1" class="confluenceTd">Japan</td>
             <td colspan="1" class="confluenceTd">Tokyo</td>
-			<td colspan="1" class="confluenceTd">https://objectstorage.us-tokyo-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
+			<td colspan="1" class="confluenceTd">https://objectstorage.ap-tokyo-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="1" class="confluenceTd">Asia &amp; Oceania</td>
             <td colspan="1" class="confluenceTd">Mumbai</td>
-			<td colspan="1" class="confluenceTd">https://objectstorage.us-mumbai-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
+			<td colspan="1" class="confluenceTd">https://objectstorage.ap-mumbai-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/<br>
 			</td>
 		</tr>
 	</tbody>
