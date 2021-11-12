@@ -181,8 +181,11 @@ Description
 
     ![MDS](./images/04mysql08.png " ")
 
-10. Click on Show Advanced Options 
+10. Click on Show Advanced Options
 
+    - Select Networking
+ 
+    - Enter **mdshw** for hostname (Required for Oracle Anayltics Cloud) 
 
 11. Select Data Import tab. 
 
@@ -253,7 +256,7 @@ Description
     ```
     <copy> 
     https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/qzYmRurVINK-VXQQTBcoBqNGU8WxNk_0FvfU0_T1piBK1kioslc9-_8P8IVMVVjX/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
-    </copy>
+   </copy>
     ```
     </details>
     
@@ -487,6 +490,10 @@ algorithm, it will predict the number of nodes needed.
 
 
 You may now proceed to the next lab.
+
+## Learn More
+
+* [Setting Up the airportdb Database](https://dev.mysql.com/doc/airportdb/en/)
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
