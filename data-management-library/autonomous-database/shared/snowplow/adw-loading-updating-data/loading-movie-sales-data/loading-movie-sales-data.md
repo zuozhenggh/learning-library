@@ -1,4 +1,4 @@
-﻿# Loading Movie Sales Data
+﻿# Load Movie Sales Data
 
 ## Introduction
 
@@ -18,7 +18,7 @@ This lab assumes you have:
 
 ## Overview Of The Data Loading Process
 
-Autonomous Data Warehouse provides different ways to load data depending on your needs, including built-in tools to help you load data files, and a scripting-based approach that gives you more control. In this lab, we will learn how to populate a new data warehouse using the built-in Data Load tool. Later in this lab, we will use the same tool to load a set of data files containing just updates and corrections. In many cases with this type of sales analysis, you will get an initial file to load containing a "draft" view or soft-close view of the latest sales data. A "final", verified, sales data set is often then published later in the month after all the sales transactions have been processed and correctly booked. This is the scenario we are using in this workshop.
+Autonomous Data Warehouse provides different ways to load data depending on your needs, including built-in tools to help you load data files, and a scripting-based approach that gives you more control. In this lab, we will learn how to populate a new data warehouse using the built-in Data Load tool. Later in this workshop, we will use the same tool to load a set of data files containing just updates and corrections. In many cases with this type of sales analysis, you will get an initial file to load containing a "draft" view or soft-close view of the latest sales data. A "final", verified, sales data set is often then published later in the month after all the sales transactions have been processed and correctly booked. This is the scenario we are using in this workshop.
 
 ### What About Data Quality In Your Autonomous Data Warehouse?
 
@@ -36,7 +36,7 @@ A wide range of file formats are supported including comma-separated, tab delimi
 
 **Note** -  *All timings for data loading in this workshop assume an ADW instance is co-located in the same data center or close to one of the regional data centers containing the public buckets. If this is not the case then your timings for specific steps may vary*.
 
-## Task 1: Linking to OCI Object Storage
+## Task 1: Link to OCI Object Storage
 
 In this step, we will add a link from the Autonomous Data Warehouse to the public bucket on OCI Object Storage so that it can load data from this location.
 
@@ -60,7 +60,7 @@ In this step, we will add a link from the Autonomous Data Warehouse to the publi
 
 7. Enter the **Name** of the cloud storage location as "MovieData", and keep the default selection of **Cloud Store** as Oracle.
 
-8. Under **Object Store URI**, copy and paste the closest regional location to where your Autonomous Data Warehouse is running from the options below, so that the database can load data from the files as quickly as possible. 
+8. Under **Object Store URI**, copy and paste the closest regional location to where your Autonomous Data Warehouse is running from the options below, so that the database can load data from the files as quickly as possible.
 
 *For example, if your ADW is located in our UK-London data center then you would select the first regional URI string for "Europe, Middle East, Africa" which is for a public bucket located in the London data center: 'https://objectstorage.uk-london-1.oraclecloud.com/n/dwcsprod/b/moviestream_tools_live_lab_20211112/o/'*
 :
@@ -129,9 +129,9 @@ In this step, we will add a link from the Autonomous Data Warehouse to the publi
 
     ![Final view of Add Cloud Storage](images/location.png)
 
-10. Click the **Test** button to ensure the details are valid. Then click **Create**. 
+10. Click the **Test** button to ensure the details are valid. Then click **Create**.
 
-## Task 2: Loading Sales Data
+## Task 2: Load Sales Data
 
 ### Background
 
@@ -151,7 +151,7 @@ All the MovieStream data files for this workshop are stored in a public bucket i
 
 5. We now have a card in the right hand pane, representing a single data loading task that we can run. Click the pencil icon to review and edit its settings.
 
-6. The settings show us that the column names for our new table have been derived from a header row in the CSV files. We can change the settings to suit our needs. We need to specify the way in which some of the table columns store numeric values, as this will be important to our calculations later on. Scroll down the list of columns in the **Mapping** section and find the **LIST_PRICE** column. Specify its **Scale** setting as 2, to store numbers with 2 decimal places. Then, change the **Scale** setting to 3 for the columns **ACTUAL_PRICE** and **DISCOUNT_PERCENT**:
+6. The settings show us that the column names for our new table have been derived from a header row in the CSV files. We can change the settings to suit our needs. We need to specify the way in which some of the table columns store numeric values, as this will be important to our calculations later on. Scroll down the list of columns in the **Mapping** section and find the **LIST\_PRICE** column. Specify its **Scale** setting as 2, to store numbers with 2 decimal places. Then, change the **Scale** setting to 3 for the columns **ACTUAL\_PRICE** and **DISCOUNT\_PERCENT**:
 
     ![Adjust the scale setting for numeric columns](images/adjustscale.png)
 
@@ -160,13 +160,13 @@ All the MovieStream data files for this workshop are stored in a public bucket i
 
     ![Run data load](images/rundataload.png)
 
-If your autonomous database is running with 8 OCPUs, and the object storage files are located in the same region as your autonomous database, the data load task should take between 4 to 7 minutes. The time taken will vary depending on how many OCPUs there are, and how close the data is. 
+If your autonomous database is running with 8 OCPUs, and the object storage files are located in the same region as your autonomous database, the data load task should take between 4 to 7 minutes. The time taken will vary depending on how many OCPUs there are, and how close the data is.
 
 Note that you can scale your autonomous database up and down to use more or fewer OCPUs from the console page on Oracle Cloud Infrastructure.
 
 8. Once the data load task is complete, a green tick icon appears next to it. Click **Explore Catalog** in the bottom right to check the data has loaded properly.
 
-9. Click **MOVIE_SALES_FACT** to examine the new table. This shows a preview of the data loaded in the table, and some other options. Click **Data Load Jobs** on the left hand side to check what happened in the load job. This shows us that 97890562 rows were loaded, and 0 rejected.
+9. Click **MOVIE\_SALES\_FACT** to examine the new table. This shows a preview of the data loaded in the table, and some other options. Click **Data Load Jobs** on the left hand side to check what happened in the load job. This shows us that 97890562 rows were loaded, and 0 rejected.
 
     ![Check data load](images/checkdataload.png)
 
@@ -189,4 +189,4 @@ Please *proceed to the next lab*.
 
 * **Authors** - Keith Laker and Mike Matthews, ADB Product Management
 * **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-* **Last Updated By/Date** - Richard Green, November 2021
+* **Last Updated By/Date** - Mike Matthews, November 2021
