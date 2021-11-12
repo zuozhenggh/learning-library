@@ -1,5 +1,5 @@
 
-# Your HelloWorld Pipeline in 10 minutes!
+# Your HelloWorld Pipeline in 15 minutes!
 
 ## About this Lab
 

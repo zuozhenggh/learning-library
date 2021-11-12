@@ -5,28 +5,15 @@ This workshop includes hands-on labs with use cases to build pipelines with real
 *Estimated Time*: 3 hours
 
 ## About GoldenGate Stream Analytics (GGSA)
-
-
-
+The Oracle GoldenGate Stream Analytics (GGSA) runtime component is a complete solution platform for building applications to filter, correlate, and process events in real-time. With flexible deployment options of stand-alone Spark or Hadoop-YARN, it proves to be a versatile, high-performance event processing engine. GGSA enables Fast Data and Internet of Things (IOT) – delivering actionable insight and maximizing value on large volumes of high velocity data from varied data sources in real-time. It enables distributed intelligence and low latency responsiveness by pushing business logic to the network edge
 
 ### Objectives
 
 In this workshop you will:
-* Navigate Oracle GoldenGate Stream Analytics UI
 * Create your HelloWorld Pipeline and publish it with Query and Filter added
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-
-### Lab Overview
-
-| Lab Title | Description | Approx. Time |
-|--|------------------------------------------------------------|-------------|
-| Login and Navigation | This lab is designed to get the user familiar with the navigation and resources in the GGSA application  | 25 minutes  |
-| Streaming IoT Data | This lab will walk the user through a sample IoT scenario and how a pipeline is created | 30minutes |
-| Streaming Retail data | This lab will walk the user through a sample IoT scenario and how a pipeline is created | 70 minutes |
-| Publishing – Dashboard – Import/Export | Publishing – Dashboard – Import/Export | 25 minutes |
-| Appendix | This is intended to provide the user with screen shots of the lab exercises   | NA |
 
 
 ### Required Credentials for GoldenGate Stream Analytics
@@ -55,10 +42,10 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-* [GoldenGate Stream Analytics](https://www.oracle.com/middleware/technologies)
+* [GoldenGate Stream Analytics](https://docs.oracle.com/en/middleware/fusion-middleware/osa/19.1/using/index.html)
 
 ## Acknowledgements
 
-* **Author** - Hadi Javaherian, Solution Engineer
-* **Contributors** - Shrinidhi Kulkarni, Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
+* **Author** - Pratibha Manjunath, Senior User Assistance Developer
+* **Contributors** - Sumathi Nelapati
+* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, November 2021
