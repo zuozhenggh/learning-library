@@ -30,9 +30,9 @@ First of all, let's look closer at the visualizations that we already have to se
 
    ![Banner](images/open-race-analysis-project.png)
 
-2. We want to look only at the 2012 Brazilian GP.
+2. We want to look only at the 2012 Brazilian Grand Prix.
 
-   Remove the Abu Dhabi GP from the filter by clicking on the filter (top-left), then click on "2020 Abu Dhabi...".
+   Remove the Abu Dhabi Grand Prix from the filter by clicking on the filter (top-left), then click on "2020 Abu Dhabi...".
 
  	 ![Banner](images/remove-abu-dhabi.png)
 
@@ -92,7 +92,7 @@ For this we have to introduce the concept of the "ghost car". The ghost car is a
 
 To visualize how well each car is doing, we'll calculate the time-delta between each car and the ghost driver at each lap.
 
-1. Configure the filter to only select data for the 2012 Brazilian GP.
+1. Configure the filter to only select data for the 2012 Brazilian Grand Prix.
 
    ![Banner](images/conf-filter-brazil.png)
 
