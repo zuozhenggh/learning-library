@@ -2,7 +2,7 @@
 
 This workshop includes hands-on labs with use cases to build pipelines with real-time data streams, and apply business rules to analyze and transform them, using GoldenGate Stream Analytics.  
 
-*Estimated Time*: 3 hours
+*Estimated Time*: 1 Hour
 
 ## About GoldenGate Stream Analytics (GGSA)
 The Oracle GoldenGate Stream Analytics (GGSA) runtime component is a complete solution platform for building applications to filter, correlate, and process events in real-time. With flexible deployment options of stand-alone Spark or Hadoop-YARN, it proves to be a versatile, high-performance event processing engine. GGSA enables Fast Data and Internet of Things (IOT) – delivering actionable insight and maximizing value on large volumes of high velocity data from varied data sources in real-time. It enables distributed intelligence and low latency responsiveness by pushing business logic to the network edge
