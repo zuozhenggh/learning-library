@@ -21,7 +21,7 @@ Estimated time: 75 minutes (please note you can run other labs in this training 
 
 When in doubt or need to start the databases using the following steps:
 
-1. please log in as **oracle** user and execute the following command:
+1. Please log in as **oracle** user and execute the following command:
 
     ````
     $ <copy>. oraenv</copy>
@@ -47,7 +47,7 @@ When in doubt or need to start the databases using the following steps:
     Processing Database instance "DB19C": log file /u01/app/oracle/product/19.3.0/dbhome_19c/rdbms/log/startup.log
     ````
  
-## Task 1: prepare the Source database ##
+## Task 1: Prepare the Source database ##
 We will use the preinstalled 12.1.0.2 database for this exercise (although we could have used the 11.2 database or any other database).
 
 ### Open all PDBS ###
@@ -110,7 +110,7 @@ We will use the preinstalled 12.1.0.2 database for this exercise (although we co
     With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
     ````
 
-## Task 2: the Autoupgrade tool ##
+## Task 2: The Autoupgrade tool ##
 
 ### Create the Auto Upgrade Config file ###
 The Auto Upgrade tool is part of the 19c Oracle Home distribution. Previous versions (<= 18.4) will need a separate download and set up from MyOracle Support under note 2485457.1. In this example, we will only put one database into the configuration file, but you can add as many databases as needed.
@@ -399,7 +399,7 @@ The Auto Upgrade tool is part of the 19c Oracle Home distribution. Previous vers
 
     Your database is now upgraded to 19c (with all PDBs as well).
 
-## Task 3: check target database ##
+## Task 3: Check target database ##
 
 1. To check your target database, you can execute the following:
 
@@ -441,7 +441,7 @@ The Auto Upgrade tool is part of the 19c Oracle Home distribution. Previous vers
     ````
     The autoupgrade tool was successful. You can check the log files for details regarding this upgrade if you want to.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements ##
 
