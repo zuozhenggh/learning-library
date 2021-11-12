@@ -3,7 +3,7 @@
 
 ## About this Lab
 
-This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 10 minutes!
+This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 15 minutes!
 
 *Estimated Time*: 15 minutes
 
