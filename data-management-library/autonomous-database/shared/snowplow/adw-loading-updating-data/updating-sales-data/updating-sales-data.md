@@ -88,7 +88,7 @@ The job should take less than 2 minutes to run. Note that the primary key that w
 	</copy>
     ```
 
-4. This shows that our revenue has gone down slightly since we are now reporting a figure of $163,779,175 (vs. the previous value of $163,848,266):
+4. This shows that our revenue has gone down a little, since we are now reporting a figure of $160,305,830.975 (vs. the previous value of $160,365,556.83):
 
     ![Results of query to validate financial adjustments file processed successfuly](images/queryaftermerge.png)
 
