@@ -14,7 +14,7 @@ In this lab, you will learn how to:
 * Sign into Oracle Machine Learning user interface
 * Create the CUSTOMERS360 table.
 
-	>**Note:** You will use this table in the lab on AutoML UI and OML Services.
+	>**Note:** You will use this table in the _Using Oracle Machine Learning AutoML UI_ lab and _Using Oracle Machine Learning Services_ lab.
 
 ### Prerequisites
 * Sign up for a free tier Oracle Cloud account.
@@ -30,11 +30,11 @@ To provision an Oracle Autonomous Database:
 
 	![Create ADW Database](images/adw_database.png)
 
-	 Alternatively, you may click the left navigation pane on the upper left corner, and click **Autonomous Data Warehouse**.
+	 Alternatively, you may click the left navigation pane on the upper left corner, and click **Autonomous Data Warehouse** under **Oracle Database**.
 
 	![Autonomous Data Warehouse option under Oracle Database](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png "Autonomous Data Warehouse option under Oracle Database")
 
-2. From the Oracle Cloud Infrastructure Console, on the Oracle Autonomous Database page choose your region and select a compartment. Click **Create Autonomous Database**. This opens the Create Autonomous Database page.
+2. From the Oracle Cloud Infrastructure console, on the Oracle Autonomous Database page choose your region and select a compartment. Click **Create Autonomous Database**. This opens the Create Autonomous Database page.
 
    ![Create Autonomous Database option](images/create-autonomous-db.png)
 
@@ -56,9 +56,9 @@ To provision an Oracle Autonomous Database:
 
   ![Configure Database](images/db_configuration.png)
 
-8. Create your Autonomous Database administrator credentials by providing a password. You will need these credentials to sign in to this Autonomous Database instance.   
+8. Create your Autonomous Database administrator credentials by providing a password. You will need these credentials to sign into this Autonomous Database instance.   
 
-	>Note: The default administrator username is ADMIN.
+	>**Note:** The default administrator username is ADMIN.
 
 	![Database Administrator credentials](images/db_admin_credentials.png)
 
@@ -84,7 +84,7 @@ An administrator creates a new user account and user credentials for Oracle Mach
 
 To create a user account:
 
-1. Sign in to your OCI account, click the hamgurger on the left to open the left navigation pane, and click **Autonomous Data Warehouse**.
+1. Sign into your OCI account, click the hamgurger on the left to open the left navigation pane, and click **Autonomous Data Warehouse**.
 
 	![Oracle Autonomous Data Warehouse](images/adw.png)
 
@@ -165,7 +165,7 @@ This completes the task of signing into Oracle Machine Learning user interface.
 
 In this step, you will create a notebook and run a SQL query to create the table ``CUSTOMERS60``.
 
->**Note:** You will be using the table CUSTOMERS360 in the lab titled "Using Oracle Machine Learning Services".
+>**Note:** You will be using the table CUSTOMERS360 in the _Using Oracle Machine Learning AutoML UI_ lab and _Using Oracle Machine Learning Services_ lab.
 
 To create the table:
 
@@ -173,7 +173,7 @@ To create the table:
 
 2. On the Notebooks page, click **Create**.
 
-3. In the Create Notebook dialog, enter Customers_360 in the name field. and click **OK**.
+3. In the Create Notebook dialog, enter `Customers_360` in the name field. and click **OK**.
 
 4. Type ``%sql`` to connect to the SQL interpreter and press enter.
 
@@ -205,6 +205,7 @@ To create the table:
 
 	![Script to view Customers360 table](images/script_view_customers360.png)
 
+This completes the task of creating the CUSTOMERS360 table.
 
 ## Learn More
 
@@ -214,4 +215,4 @@ To create the table:
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, October 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, November 2021
