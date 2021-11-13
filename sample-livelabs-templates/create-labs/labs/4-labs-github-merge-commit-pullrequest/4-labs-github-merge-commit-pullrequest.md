@@ -174,7 +174,7 @@ You may now [proceed to the next lab](#next).
   ![](./images/clone-failed.png " ")
 
   1. Execute the following commands to make sure .gitconfig is updated:                           
-  
+
     ```
     <copy> git config --global core.longpaths true </copy>
     ```
@@ -187,8 +187,10 @@ This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
-<!-- * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
-* [Use GitHub Desktop](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+GitHub+Desktop) -->
+* [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
+
+* [Use GitHub Desktop](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+GitHub+Desktop)
+
 
 ## Acknowledgements
 
@@ -200,4 +202,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Kamryn Vinson, Product Manager, Database
 
-* **Last Updated By/Date:** Anuradha Chepuri, November, 2021
+* **Last Updated By/Date:** Lauran Serhal & Anuradha Chepuri, November, 2021
