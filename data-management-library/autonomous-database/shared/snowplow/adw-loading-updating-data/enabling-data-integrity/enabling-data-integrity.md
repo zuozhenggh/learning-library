@@ -1,11 +1,11 @@
 ﻿
-# Enabling Data Integrity
+# Enable Data Integrity
 
 ## Background
 
 Oracle Autonomous Data Warehouse supports the ability to define constraints against your data that enforce logical and business rules. In the example below, we are going to add a unique constraint and ensure that there are no empty rows in our data table.
 
-A unique constraint designates a column (it could also be a group of columns) as a unique key. To satisfy a unique constraint, no two rows in the table can have the same value for the unique key. The second step is to combine this concept with the NOT NULL constraint that was included in the definition of our data table to derive a **PRIMARY KEY**. The concept of a primary key concept is a key part of an efficient relational database. Without the primary key, along with the closely related concept of a foreign key, relational databases would simply not work. A primary key provides us with a fast and efficient way to uniquely identify each row in a table.   
+A unique constraint designates a column (it could also be a group of columns) as a unique key. To satisfy a unique constraint, no two rows in the table can have the same value for the unique key. The second step is to combine this concept with the NOT NULL constraint that was included in the definition of our data table to derive a **PRIMARY KEY**. The concept of a primary key is a key part of an efficient relational database. Without the primary key, along with the closely related concept of a foreign key, relational databases would simply not work. A primary key provides us with a fast and efficient way to uniquely identify each row in a table.   
 
 Estimated Lab Time: 5 minutes
 
@@ -22,7 +22,7 @@ This lab assumes you have:
 
 - Loaded movie sales data into your Autonomous Data Warehouse database in the previous lab.
 
-## Task 1: Adding Constraints
+## Task 1: Add Constraints
 
 1. Navigate to **SQL** in the Development section of Database Actions to launch SQL Developer Web.
 
@@ -36,7 +36,7 @@ This lab assumes you have:
     ```
     **NOTE:**  These two statements may take a 1-2 minutes to complete.
 
-## Task 2: Testing that the New Constraint Works
+## Task 2: Test that the New Constraint Works
 
 1. Check the value of total sales in the `movie_sales_fact` table:
 

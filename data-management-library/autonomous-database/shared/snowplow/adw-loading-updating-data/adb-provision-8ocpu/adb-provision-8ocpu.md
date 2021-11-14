@@ -1,4 +1,4 @@
-# Provisioning an Autonomous Database
+# Provision an Autonomous Database
 
 ## Introduction
 
@@ -21,7 +21,7 @@ This lab assumes you have:
 - **Note:** The timings and screenshots in this workshop are based on using 8 OCPUs. If you obtain a 30-day trial license and opt to configure fewer OCPUs or opt for an “Always Free” instance with 1 OCPU, the response times and query times will be longer.
 - Completed the steps in the **Getting Started** section seen in the Contents menu on the left.
 
-## Task 1: Choosing ADW from the Services Menu
+## Task 1: Choose ADW from the Services Menu
 
 1. Log in to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -48,7 +48,7 @@ This lab assumes you have:
 
     ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
 
-## Task 2: Creating the ADB Instance
+## Task 2: Create the ADB Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
