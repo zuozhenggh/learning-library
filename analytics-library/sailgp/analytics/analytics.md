@@ -177,7 +177,7 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
 ## Task 3: Find out Who the Winners of the Race Are
 
->NOTE: In the most recent update of Oracle Analytics Cloud, "Projects" have were renamed to "Workbooks". The functionality is unchanged. Please keep this in mind for the rest of the labs.
+>NOTE: In the most recent update of Oracle Analytics Cloud, "Projects" have were renamed to "Workbooks". The functionality is unchanged. Please keep in mind that the screenshots in the lab have not yet been updated to reflect this.
 
 1. Still in the data set editor, on the top right, click **Create Workbook**.
 
