@@ -98,7 +98,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
    ![pic1](images/save-dataset2.png)
 
-9. From the **Home Page**. Click **Create Project**.
+9. From the **Home Page**. Click **Create Workbook**.
 
    ![pic1](images/create-project.png)
 
@@ -362,7 +362,7 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
     ![pic1](images/column-types.png)
 
-24. **Save** the Data Set and click **Create Project** after.
+24. **Save** the Data Set and click **Create Workbook** after.
 
     ![pic1](images/save-and-create.png)
 

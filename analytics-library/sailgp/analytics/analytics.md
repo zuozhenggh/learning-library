@@ -179,7 +179,7 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
 >NOTE: In the most recent update of Oracle Analytics Cloud, "Projects" have were renamed to "Workbooks". The functionality is unchanged. Please keep this in mind for the rest of the labs.
 
-1. Still in the data set editor, on the top right, click **Create Project**.
+1. Still in the data set editor, on the top right, click **Create Workbook**.
 
    ![Change aggregation to average](images/create-project.png)
 
@@ -300,7 +300,7 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
    ![Conclusions](./images/conclusion-denmark.png)
 
-7. Save the project with name `Basic statistics on Bermuda race 4`.
+7. Save the workbook with name `Basic statistics on Bermuda race 4`.
 
    ![pic2](images/save-project.png)
 
