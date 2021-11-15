@@ -19,10 +19,10 @@ This lab assumes you have:
 
 An Edit page lets you edit a row in your table. In this task, you'll add an edit page that lets users change a department's Name and Location. 
 
-1.  Click **Web Applications** ![Web Applications icon](images/web_applications_icon.png), go to the **main-departments** page and click the **Table** component in the Page Designer. If necessary, click **Reload page** ![Reload page icon](images/reload_icon.png) to view the new departments.
+1.  Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png), go to the **main-departments** page and click the **Table** component in the Page Designer. If necessary, click **Reload page** ![Reload page icon](images/reload-icon.png) to view the new departments.
 2.  In the Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
 
-    ![](images/departments_add_edit_quick_start.png " ")
+    ![](images/departments-add-edit-quick-start.png " ")
 
 3.  On the Select Read Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the Department object's read endpoint.
 4.  On the Select Update Endpoint page, select **Department** under Business Objects again (if necessary) and click **Next**. As with the read endpoint, VB Studio will automatically select the Department object's update endpoint.
@@ -57,19 +57,19 @@ A Delete button lets you delete a selected row in your table. In this task, you'
 
 Now, let's test your web pages.
 
-1.  Click **Preview** ![Preview icon](images/preview_icon.png).
+1.  Click **Preview** ![Preview icon](images/preview-icon.png).
 
     The application opens in another browser tab. The three buttons you created are inactive.
 
 2.  Select a row. All the buttons are now active.
 3.  Click **Edit Department**.
 
-    ![](images/departments_edit.png " ")
+    ![](images/departments-edit.png " ")
 
 4.  On the Edit Department page, change the **Location** field to `Floor 4` and click **Save**. A success message appears briefly, and you are returned to the Departments page.
 5.  Select the row again and click **View Department Detail** to display the data.
 
-    ![](images/departments_detail.png " ")
+    ![](images/departments-detail.png " ")
 
 6.  Click **Back**.
 7.  Click **Create Department** and specify the name and location of a new department, and then click **Save**. A success message appears. The new department is displayed in the table.
@@ -113,7 +113,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 7: Test Your New Employee Pages
 
-1.  Click **Preview** ![Preview icon](images/preview_icon.png).
+1.  Click **Preview** ![Preview icon](images/preview-icon.png).
 
     The application opens in another browser tab, displaying the Departments page.
 
@@ -123,7 +123,7 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 3.  Select a row. All the buttons are now active.
 
-    ![](images/employees_edit.png " ")
+    ![](images/employees-edit.png " ")
 
 4.  Click **Edit Employee**.
 5.  On the Edit Employee page, change **Department** to `IT` and click **Save**. A success message appears, and you are returned to the Employees page.

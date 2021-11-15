@@ -23,14 +23,14 @@ This lab assumes you have:
 
 Share the HR web application you've created to create a URL that your team can use to try out the application.
 
-1.  If necessary, click **Workspaces** ![Workspaces icon](images/vbs_workspaces_icon.png)and **HR Visual Application** in the Workspaces table to open your workspace.
-2.  Click **Menu** ![Options menu icon](images/options_header_menu.png) in the header and select **Share**.
+1.  If necessary, click **Workspaces** ![Workspaces icon](images/vbs-workspaces-icon.png)and **HR Visual Application** in the Workspaces table to open your workspace.
+2.  Click **Menu** ![Options menu icon](images/options-header-menu.png) in the header and select **Share**.
 
     ![](images/share.png " ")
 
 3.  In the Share Visual Application dialog box, you'll see the URL that the hrwebapp will be shared to. (If you want, you can click the Copy icon to copy this URL, but we'll see how to get the URL after the application is shared.) Select **Use development data (my workspace)** to copy Department, Location, and Employee data from your workspace to your development environment's VB instance. Click **Share**.
 
-    ![](images/share_application.png " ")
+    ![](images/share-application.png " ")
 
     A brief confirmation appears, and the application is deployed to your VB instance.
 
@@ -39,18 +39,18 @@ Share the HR web application you've created to create a URL that your team can u
 
 Now that you've shared your application, you need to get its URL so you can pass it along to your team. You do this by opening the application itself, or by copying the URL when you shared the application. Remember that your team members will need the proper credentials to view your shared application.
 
-1.  Click **Menu** ![Options menu icon](images/options_header_menu.png) and select **Open Shared Applications**. If the option does not appear or is not active, it means your application is not yet fully deployed. Wait a while and try again.
+1.  Click **Menu** ![Options menu icon](images/options-header-menu.png) and select **Open Shared Applications**. If the option does not appear or is not active, it means your application is not yet fully deployed. Wait a while and try again.
 
-    ![](images/open_shared_application.png " ")
+    ![](images/open-shared-application.png " ")
 
     The shared application opens in a new browser tab. It includes all the changes you've made in your workspace, even those that were not pushed to the remote branch; it also displays data from your workspace.
 
-    ![](images/open_shared_application_result.png " ")
+    ![](images/open-shared-application-result.png " ")
 
 2.  Make a note of the application's URL to share with your team, then close the browser tab.
-3.  To view the same shared application now deployed to your development environment, click **Go to Project page** ![Go to Project Page icon](images/go_to_project_home_icon.png) in the header, then click **Environments** ![Environments icon](images/vbs_environments_icon.png) and **Deployments**. Expand **tutorial-hr-project** to view the shared application in your list of deployments.
+3.  To view the same shared application now deployed to your development environment, click **Go to Project page** ![Go to Project Page icon](images/go-to-project-home-icon.png) in the header, then click **Environments** ![Environments icon](images/vbs-environments-icon.png) and **Deployments**. Expand **tutorial-hr-project** to view the shared application in your list of deployments.
 
-    ![](images/shared_deployment.png " ")
+    ![](images/shared-deployment.png " ")
 
     If you click **hrwebapp**, the application opens in a new browser tab, similar to the shared application view from within the Designer. When you've finished using the application, close the browser tab.
 
