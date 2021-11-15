@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Oracle Cloud Infrastructure Database Management",
+    "workshoptitle": "Get started with Oracle Cloud Infrastructure Database Management",
 	"help": "livelabs-help-em_us@oracle.com",
     "tutorials": [
         {
@@ -46,6 +46,11 @@
             "title": "Lab 7: Exploring Oracle Cloud Infrastructure Database Management",
             "description": "Exploring Oracle Cloud Infrastructure Database Management",
             "filename": "../../dbmgmt-features/dbmgmt-features.md"
+        },
+        {
+            "title": "Lab 8: Setup Database Management for Oracle Cloud Databases",
+            "description": "Setup Database Management for Oracle Cloud Databases",
+            "filename": "../../cloud-databases/cloud-databases.md"
         },
         {
             "title": "Need Help?",

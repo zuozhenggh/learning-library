@@ -46,7 +46,7 @@ Before installing Verrazzano, we need to install the Verrazzano Platform Operato
     <copy>kubectl apply -f https://github.com/verrazzano/verrazzano/releases/download/v1.0.0/operator.yaml</copy>
     ```
 
-    ![verrazzano operator](images/1.png)
+    ![verrazzano operator](images/1.png " ")
 
     > This `operator.yaml` file contains information about the operator and the service accounts and custom resource definitions. By running this *kubectl apply* command, we are specifying whatever is in the `operator.yaml` file.
     > All deployments in Kubernetes happen in a namespace. When we deploy the Verrazzano Platform Operator, it happens in the namespace called "verrazzano-install".
@@ -57,7 +57,7 @@ Before installing Verrazzano, we need to install the Verrazzano Platform Operato
     <copy>kubectl -n verrazzano-install rollout status deployment/verrazzano-platform-operator</copy>
     ```
 
-    ![rollout status](images/2.png)
+    ![rollout status](images/2.png " ")
 
     > Confirm that the operator pod associated with the Verrazzano Platform Operator is correctly defined and running. A Pod is a unit which runs containers / images and Pods belong to nodes.
 
@@ -67,7 +67,7 @@ Before installing Verrazzano, we need to install the Verrazzano Platform Operato
     <copy>kubectl -n verrazzano-install get pods</copy>
     ```
 
-    ![running pod](images/3.png)
+    ![running pod](images/3.png " ")
 
 ## Task 2: Installation of the Verrazzano development profile
 
@@ -92,7 +92,7 @@ In this lab, we are going to install the *development profile of Verrazzano*, wh
 
 The following image describes the Verrazzano components that are installed with each profile.
 
-![Verrazzano Profile](images/4.png)
+![Verrazzano Profile](images/4.png " ")
 
 According to our DNS choice, we can use nip.io (wildcard DNS) or [Oracle OCI DNS](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm). In this lab, we are going to install using nip.io (wildcard DNS).
 
@@ -124,8 +124,8 @@ An ingress controller is something that helps provide access to Docker container
 
     > The console log contains information about all the steps performed by the platform operator for installing Verrazzano, the components being installed, and the URLs we can use for accessing them.
 
-    ![view logs](images/6.png)
-    ![view logs](images/7.png)
+    ![view logs](images/6.png " ")
+    ![view logs](images/7.png " ")
 
 3. To verify the successful installation, copy the following command and paste it in the *Cloud Shell*. It checks for the condition, if *InstallComplete* condition is met, and notifies you. Here *my-verrazzano* is the name of the *Verrazzano Custom Resource*.
 
@@ -133,7 +133,7 @@ An ingress controller is something that helps provide access to Docker container
     <copy>kubectl wait --timeout=20m --for=condition=InstallComplete verrazzano/my-verrazzano</copy>
     ```
 
-    ![wait for installation to complete](images/8.png)
+    ![wait for installation to complete](images/8.png " ")
 
 ## Task 3: Verification of a successful Verrazzano installation
 
@@ -145,7 +145,7 @@ Verrazzano installs multiple objects in multiple namespaces. Verrazzano componen
     <copy>kubectl get pods -n verrazzano-system</copy>
     ```
 
-    ![pods](images/9.png)
+    ![pods](images/9.png " ")
 
     Verrazzano installs several consoles. The endpoints for an installation are stored in the `Status` field of the installed Verrazzano Custom Resource.
 
@@ -155,7 +155,7 @@ Verrazzano installs multiple objects in multiple namespaces. Verrazzano componen
     <copy>kubectl get vz -o yaml</copy>
     ```
 
-    ![pods](images/10.png)
+    ![pods](images/10.png " ")
 
 Leave the *Cloud Shell* open; we need it for Lab 3.
 
