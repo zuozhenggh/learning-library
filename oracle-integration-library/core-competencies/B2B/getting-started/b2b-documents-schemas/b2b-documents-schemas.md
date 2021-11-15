@@ -95,13 +95,13 @@ The three tabs on the Details pane enable you to perform customizations.
 | Code List |A code list defines an enumeration of allowed values for the element. |
 | Notes  | Click to add Notes to the Element |
 
-6.	Select Code List Code list to add new code.
-7.	Click Add a New Code List (if the element does not already have a code list defined)
-8.	A placeholder code is created for you. Hover over it and select Edit. Add a currency code name and optional description, and click x to save your updates.
-9.	Click Add to add more codes and edit them as necessary for your business requirements. For this example, add EUR (for the Euro currency) and USD (for US dollars).
+6.	Select **Code list** to add new code.
+7.	Click **Add a New Code List** (if the element does not already have a code list defined)
+8.	A placeholder code is created for you. Hover over it and select Edit. Add a currency code name and optional description, and click **X** to save your updates.
+9.	Click **Add** to add more codes and edit them as necessary for your business requirements. For this example, add EUR (for the Euro currency) and USD (for US dollars).
 ![](images/CustomizePOSchema4010-EditCur02-2.png)
 
-10.	When complete, click X in the upper right corner to close the dialog. Click Save.
+10.	When complete, click **X** in the upper right corner to close the dialog. Click **Save**.
 The segment (CUR) and the element (CUR02) that you customized to deviate from the standard schema are identified by a dot.
 ![](images/CustomizePOSchema4010-EditCur02-3.png)
 
@@ -118,9 +118,9 @@ Typically, a host company shares the implementation guide for an EDI schema with
 
 In B2B for Oracle Integration, you can generate implementation guides for both standard and custom B2B schemas. The guide is generated as an HTML document, which you can edit to apply branding and print as a PDF file if necessary.
 
-1.	In the left navigation pane, click B2B > B2B Schemas
+1.	In the left navigation pane, click **Menu > B2B > B2B Schemas**
 2.	On the B2B Schemas page, Select any of the Schemas that you have created in the previous tasks.
-3.	Select Generate -> Implementation Guide
+3.	Select **Generate -> Implementation Guide**
 ![](images/CustomizePOSchema4010-ImplGuide-1.png)
 4. You can view and also Download the document
 The following image shows an example implementation guide:

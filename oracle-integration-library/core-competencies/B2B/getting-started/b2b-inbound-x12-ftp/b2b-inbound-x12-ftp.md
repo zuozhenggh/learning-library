@@ -155,34 +155,34 @@ Add a **For Each** Action. In the Create Action configure as per below and Selec
 
 ## Task 5:	Configure the B2B Translate Action
 
-Add a B2B action to the flow to translate EDI document to an XML document
-1.	On the right side of the canvas, click Actions, drag B2B, and drop it after the Assign-Current-Msg element.
+Add a **B2B action** to the flow to translate EDI document to an XML document
+1.	On the right side of the canvas, click **Actions**, drag **B2B**, and drop it after the **Assign-Current-Msg** element.
 The Configure B2B Action wizard opens.
-2.	On the Basic Info page, enter **Fetch-Message** as the name for the action and select a mode as **B2B Trading Partner mode**, and click Next.
+2.	On the Basic Info page, enter **Fetch-Message** as the name for the action and select the mode as **B2B Trading Partner mode**, and click Next.
 ![](images/inbound-beintegration-translate-1.png)
-3.	Select the B2B message direction as **Inbound** and choose the Operation as **FetchMessage** and click Next.
+3.	Select the B2B message direction as **Inbound** and choose the Operation as **FetchMessage** and click **Next**.
 
 ![](images/inbound-beintegration-translate-2.png)
 
 **Knowledge Point**: This operation retrieves an already processed B2B business message from the Oracle Integration persistence store. It outputs the B2B canonical XML format for a business message, given b2b-message-reference as input. The canonical XML format is represented by the edi-xml-document element. It is accessible inside an inbound backend integration. You use the mapper to transform it into a backend application format.
 
-4.	Select Document Definition as **Invoice Document 810 4030** and click on Next.
+4.	Select Document Definition as **Invoice Document 810 4030** and click on **Next**.
 >Note: Invoice Document 810 4030 is created based on Standard 810 4030 document
 
 ![](images/inbound-beintegration-translate-3.png)
 
-5.	On the Summary page, click Done to complete the configuration and save your integration flow.
+5.	On the Summary page, click **Done** to complete the configuration and save your integration flow.
 Note that the corresponding mapping element is automatically added to the integration flow
 
 ![](images/inbound-beintegration-1.png)
 
 ##	Task 6:	Configure Mapping Actions
 
-1.	Configure data mappings for the Fetch-Message action and B2B-Doc-Message element to pass B2B EDI message.
+1.	Configure data mappings for the **Fetch-Message** action and **B2B-Doc-Message** element to pass B2B EDI message.
 
 ![](images/inbound-beintegration-2.png)
 
-2.	Click Validate and then Close. Save your integration flow.
+2.	Click **Validate** and then **Close**. Save your integration flow.
 
 ##	Task 7:	Configure Log Activity to print Invoice Details from EDI Message
 
@@ -198,7 +198,7 @@ concat( "Received an Invoice:", BIG02, ", for the Purchase Order: ", BIG04, ". T
 Note: It is easy to search for any field element by selecting the Source Message elements. Search for BIG02,BIG04,TDS01 from $Fetch-Message Element and formulate the above concat expression.
 
 ![](images/inbound-beintegration-3.png)
-Validate and Close the Expression  Builder.
+**Validate** and **Close** the Expression  Builder.
 Save your Integration Flow.
 ##	Task	8:	Add Tracking Identifiers for Integration Tracking
 
@@ -207,11 +207,11 @@ Add **trading partner** as one of the tracking field from the execute -> Request
 ##	Task	9: Activate the Integration
 
 Check for errors, save, and activate the integration flow.
-1.	On the Integrations page, click on the activate button against your integration to activate it.
-2.	Click Activate in the Activate Integration dialog and select **Enable Tracing** and **Include Payload** options
+1.	On the Integrations page, click on the **Activate** button against your integration.
+2.	In the Activate Integration dialog, Select **Enable Tracing** and **Include Payload** options. Click **Activate**
 
 ## Task 10:	Deploy Inbound Agreement
-1.	Navigate to Trading Partner (Dell Inc). Select Transport and Agreements. Edit Inbound Agreement and select the Backend Integration **Process Inbound Vendor Invoices** (You need to copy the identifier and version from the Integration details and paste it in the Backend Integration text box as per the screenshot given below, it should look like PROCESS\_INBOUND\_VENDOR\_INVOICES|01.00.0000)
+1.	Navigate to **Trading Partner (Dell Inc)**. Select **Transport and Agreements** tab. Edit Inbound Agreement and select the Backend Integration **Process Inbound Vendor Invoices**.  (Alternatively You can copy the identifier and version which you can find from the respective Integration details.  After pasting the Identifier and the version should look like. PROCESS\_INBOUND\_VENDOR\_INVOICES|01.00.0000)
 
 ![](images/inbound-agreement-deploy.png)
 
@@ -244,7 +244,7 @@ Let's use Oracle Integration Test Console to simulate a 810 Invoice EDI message 
 
 	![](images/inbound-test-2.png)
 
-	-	Navigate to the File Server and check the  /B2BWorkshop/B2BTPDELLIn. You should see an edi file (Invoice-XX.edi ) generated by the external Trading Partner
+	-	Navigate to the **Menu > Settings > File Server > Files** and check the  **/B2BWorkshop/B2BTPDELLIn** directory. You should see an edi file (Invoice-XX.edi ) generated by the external Trading Partner
 
 2.	Navigate to **Integrations** page. Search for the B2B Integration – **Dell Inc FTP Receive** integration flow and Click on **Run** and Submit Now
 	-	Navigate to the **File server** and check the  /B2BWorkshop/B2BTPDELLIn directory. You should see an edi file is moved to **/B2BWorkshop/B2BTPDELLIn\_backup** renamed as **\_processed**. Indicating that the B2B integration had successfully handed over the edi document to Backend Integration

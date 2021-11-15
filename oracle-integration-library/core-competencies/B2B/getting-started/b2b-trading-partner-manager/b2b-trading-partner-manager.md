@@ -117,7 +117,7 @@ Note: . The AS2 and FTP transport protocols are currently supported
 | Output File Name             | Order-%SEQ%.edi              |
 | Integration Name Prefix      | Dell                       	|
 
-Click Add
+Click **Add**
 
 **B2B Integrations**
 
