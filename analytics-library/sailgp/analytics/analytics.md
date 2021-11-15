@@ -177,6 +177,8 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 
 ## Task 3: Find out Who the Winners of the Race Are
 
+>NOTE: In the most recent update of Oracle Analytics Cloud, "Projects" have were renamed to "Workbooks". The functionality is unchanged. Please keep this in mind for the rest of the labs.
+
 1. Still in the data set editor, on the top right, click **Create Project**.
 
    ![Change aggregation to average](images/create-project.png)
