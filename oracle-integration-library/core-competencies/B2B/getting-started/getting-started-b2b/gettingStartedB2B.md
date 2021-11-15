@@ -20,8 +20,8 @@ In this lab, you will learn several B2B concepts which will be implemented in th
 ### Prerequisites
 
 This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
+* An Oracle account and Oracle Integration Instance provisioned
+* All Pre-requisite setup is done
 
 
 ## Learn Concepts and Understand Navigation

@@ -76,11 +76,11 @@ The Adapter Endpoint Configuration Wizard opens
 
 2. On the **Request** page:
     - Select XML Schema in the Select the request payload format field.
-    - Click on Choose File and upload the file [AcmePurchaseOrder.xsd](files/AcmePurchaseOrder.xsd?download=1) and click on Next
+    - Click on **Choose File** and upload the file [AcmePurchaseOrder.xsd](files/AcmePurchaseOrder.xsd?download=1) and click on **Next**
     ![Request diagram](images/b2b-outbound3.png)
 3. In the **Response** page:
     - Select XML Schema in the response payload format field
-    - Click on Choose File and upload the file [PurchaseOrderResult.xsd](files/PurchaseOrderResult.xsd?download=1)
+    - Click on **Choose File** and upload the file [PurchaseOrderResult.xsd](files/PurchaseOrderResult.xsd?download=1)
     - Click **Next**, and on the Summary page, click **Done** to complete the REST Adapter configuration.
     - The integration flow is now represented as follows in the canvas and click on **Save** to save your integration flow
     ![Response diagram](images/b2b-outbound4.png)
@@ -95,9 +95,9 @@ The **Configure B2B Action** wizard opens
     ![BasicInfor diagram](images/b2b-outbound5.png)
     - Select Operation as **Outbound**
    ![Operation diagram](images/b2b-outbound6.png)
-    - Select Document Definition as Purchase Order (You must have created this as part of B2B activities) and click on Next
+    - Select Document Definition as Purchase Order (You must have created this as part of B2B activities) and click on **Next**
    ![DocumentDefinition diagram](images/b2b-outbound7.png)
-    - Review the Summary page, click on Done to complete the configuration and click on Save to save your integration flow. Click on RESET if required for a better view of your integration flow.
+    - Review the Summary page, click on **Done** to complete the configuration and click on Save to save your integration flow. Click on **RESET** if required for a better view of your integration flow.
    Note that the corresponding mapping element is automatically added to the integration flow
    ![Summary diagram](images/b2b-outbound8.png)
 ## Task 4: Configure Mapping Actions
@@ -140,9 +140,9 @@ Once you are done with the validation, test it and results should look like the 
     Note:Your namespace prefix may include different values than nsmpr9 and nsmpr6.
 This expression indicates that if TranslateOutput > translation-status has a value of Success, then take this route. This is referred to as the success route
     - Click on **Validate** and Click on Close and save your integration flow
-    - In the success route: Add **Integration** Action ->Enter name as **callTradingPartner** and select DELL FTP Send Integration (OR any other outbound B2B integration which you have created) and click on Next->Click on Next ->Click on Done and save your integration flow
+    - In the success route: Add **Integration** Action ->Enter name as **callTradingPartner** and select DELL FTP Send Integration (OR any other outbound B2B integration which you have created) and click on **Next**->**Click on Next** ->Click on **Done** and **Save** your integration flow
 
-    - Edit Map to callTradingPartner -> Select Developer mode and From Source, expand EDI-Generate -> executeResponse->TranslateOutput
+    - Edit Map to **callTradingPartner -> Select Developer mode and From Source, expand EDI-Generate -> executeResponse->TranslateOutput**
 | Source | Target |
 | --- | --- |
 | B2B Message Reference | components.schemas.request-wrapper->messages->b2b-message-reference |

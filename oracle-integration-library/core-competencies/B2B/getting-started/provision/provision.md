@@ -15,7 +15,6 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle account
-* All previous labs successfully completed
 
 ### Background
 
