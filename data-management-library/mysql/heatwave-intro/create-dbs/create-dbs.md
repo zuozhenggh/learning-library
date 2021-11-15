@@ -210,7 +210,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.us-phoenix-1.oraclecloud.com/p/vQk5N0AGtnaDJuwBdvA4CpqnXpOo96_XEzOEcTapd5I2dK6ZPzFRp7fFYF5_bGGN/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.us-phoenix-1.oraclecloud.com/p/bbL6aZuTtFkEg4oTSjGxkFl2ni7UqG8J9uCX-5WHHd67qG_yV2fUpfJVr6mAASOb/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -220,7 +220,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.us-sanjose-1.oraclecloud.com/p/8ggUw6KN3odKB2111P0jvDcp0G4c9UhqqOhICQdLPa1OGEuqFhNDaCJ52txv3rT9/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.us-sanjose-1.oraclecloud.com/p/gTwIFjGxs__5dy8RzqKHgaz6JjgBpqcIGiodRWgPCwBsyacNOjoLsybXkijCRJkh/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -230,7 +230,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.ca-montreal-1.oraclecloud.com/p/M-VE3R_PRlUZCdO7nkZm-NEIKCJibSbHfP39PhIQU8hnkTmbwdiH98_LQS-R02Sc/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ca-montreal-1.oraclecloud.com/p/Hi5OuQEaIUoRIiVpXxectQOG602Ie0Clb-tXRFKZjaCadeAVcBbZ7RulKyy5WHkK/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -240,7 +240,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.ca-toronto-1.oraclecloud.com/p/5hzfshBP7rSU7W-L1gzLUqLTQrU7Jd7BkA8IUoPjVj_hTs5BdDvC-ncv0E-pNyzm/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ca-toronto-1.oraclecloud.com/p/SA-hZy48_NjzM420pGYNEE2Q5XE9sneGHy1CNVMekt-zwhfF89yo9f318ClFdWKF/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -252,7 +252,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/OhTbbGLOoiEt-mPIlWLvX1G1k-c8A7xSIb-ua6-Pc4KX9JHioWev8ipdO5LyoC55/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.sa-saopaulo-1.oraclecloud.com/p/qzYmRurVINK-VXQQTBcoBqNGU8WxNk_0FvfU0_T1piBK1kioslc9-_8P8IVMVVjX/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -262,7 +262,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.sa-santiago-1.oraclecloud.com/p/V9-g6ijSAi4gUVayFYZsFbKLJRAxm3MaYR_S3YddXxhoBcm51vwjiAIB-yTL9I0x/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.sa-santiago-1.oraclecloud.com/p/_mjwJMQ2mWe5HVUeYgvGYRF2NGybIml2_M4lOveooEgN6r1-chjg5ItlufU24dZT/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -272,7 +272,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.sa-vinhedo-1.oraclecloud.com/p/a9QeIhMQzAgC6Zga-bOeSfBk47CgzNsuUEnxTYSh4P33WrS4-jgzpPoAJN4JvEai/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.sa-vinhedo-1.oraclecloud.com/p/pyD-ME06UHxjY7Agy19cxbwytY1nchmu7sI_yt7wpe_axSIJMvft1zCe7BQzmO2d/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -350,6 +350,15 @@ Description
     ```
     </details>
 
+    <details>
+    <summary>France South (Marseille)  - Copy and paste to PAR Source URL</summary>
+    <br>
+    ```
+    <copy> 
+    https://objectstorage.eu-marseille-1.oraclecloud.com/p/TCunSmwaRpBFR6Vft8bhddlX3lEy7fw2unoIkCjCCZ1JscMtHqPF4jxFiayOCGj_/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
+    </copy>
+    ```
+    </details>
     ## Asia Pacific (APAC)
     **Tenancy Regions** Please select the same region that you are creating MDS in 
 
@@ -358,7 +367,7 @@ Description
     <br>
     ```
     <copy> 
-    https://objectstorage.ap-tokyo-1.oraclecloud.com/p/N-Fj8lY5lJe4JKbf9-vbpBcBat4B5G9VBk-iC37d7Juz9lq_zR660gRrs3bmiblC/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
+    https://objectstorage.ap-tokyo-1.oraclecloud.com/p/BiO_UJkmKGkQpjh5dZNSe6CdCpMGx1himhTvHzBaoebm16JvETigjy2VZsW6hqdC/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -368,7 +377,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-osaka-1.oraclecloud.com/p/lsDWl1s5qPZuRdN7hxjqY3Pnqena71I4j2QKSdDIbM6BVbNXxki4zs1SaqnPnp0g/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-osaka-1.oraclecloud.com/p/nSqONNKWXkzjNFsGEYH5aZ-W-jv1zVuzz1AtLuOwIPHL8mvGvjV09Je9OoD_o-Sp/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -378,7 +387,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-seoul-1.oraclecloud.com/p/SCwM4wjV5i5dWBp0E7rtxNff6wS8NE2rpTm9IDrTOh6H2sQriR-WkqHU96KxdScV/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-seoul-1.oraclecloud.com/p/oKjZnACJpb6_WpL6u0T0f3YRe_SGXFMP3dOGRf-TbUO-h62dl_iJPyXcVkI6iBpA/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -389,7 +398,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-chuncheon-1.oraclecloud.com/p/cmF0S75URKX_kZbLs3zoGpVrrNq7g-a6tWXrcfQXKRDjXuW_U9llrvKgE5bwh72l/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-chuncheon-1.oraclecloud.com/p/eEUcaUsaAErg11FhPaC1iAA6v4g-UO-bWdmR-V11TZ0rzJfSn7nXSYSAmvLrm7L2/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -399,7 +408,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-sydney-1.oraclecloud.com/p/GOSs0oAPv--FGz-NssbiGjCqGSlfXWcRToN4Nr_7ouGfAQpIafAbLA5akUxdWqfu/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-sydney-1.oraclecloud.com/p/NKIaOmREA4Wo_OTK98Po1UkQKKh7ioiZhflIWhgqYEc7nsM9VopYJjiDlHG8lS6q/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -409,7 +418,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-melbourne-1.oraclecloud.com/p/_dxPlqS7R5T4O5HJdOfEsFg1toGjt1OvnxLwbyBbQLlydN-5mc3l4mmSOn8ZW5wc/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-melbourne-1.oraclecloud.com/p/3XjNGFSL5f5cbj6qavA4Nq7qHLpPW3FUMCC0MTmg3QdL2TkBXPzXy6n9rrVHl4X8/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -419,7 +428,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-mumbai-1.oraclecloud.com/p/brAVESzCt9Us9EEnopyY_geGagLMzKSqbcJNgN3FSgXFZk5Ue_mviRmU9MzLcvy0/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json
+    https://objectstorage.ap-mumbai-1.oraclecloud.com/p/qKJpoQUAPn1ccZxtKPFucUlGRHigExVhrX5kt5ivbblvgBfrbLQR5vC_noK_P9hi/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>
@@ -430,7 +439,7 @@ Description
     <br>
     ```
     <copy>
-    https://objectstorage.ap-hyderabad-1.oraclecloud.com/p/VJ-OUzthr26NbTkfOKtCxk4nGeJ9pdsAmOjclZtp6rINVMKbJNdsx0Ma2G3Suhj7/n/idazzjlcjqzj/b/airportdb-bucket/o/airportdb/@.manifest.json 
+    https://objectstorage.ap-hyderabad-1.oraclecloud.com/p/-4mCVxfFgJi1ObsCZKbRaUOi7ZRS6lpJerBtA_Ny5nAGD56OIQncsFUiybmM23tB/n/idazzjlcjqzj/b/airportdb-bucket-10282022/o/airportdb/@.manifest.json
     </copy>
     ```
     </details>

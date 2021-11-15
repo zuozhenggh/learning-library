@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this workshop there are seven lab exercises. They have been organized to help you become familiar with the setup and use of this service's key capabilities: performing common Database Management tasks using the Oracle Cloud. In this lab, we have simulated an on-premises database so you do not have to setup or use one of your own on-premises databases.
+In this workshop there are eight lab exercises. They have been organized to help you become familiar with the setup and use of this service's key capabilities: performing common Database Management tasks using the Oracle Cloud. In this lab, we have simulated an on-premises database so you do not have to setup or use one of your own on-premises databases.
 
 Estimated Workshop Time: 5 hours
 
@@ -24,6 +24,7 @@ In this workshop, you will:
 * Register the on-premises Oracle Database with the External Database service and enable the Database Management service.
 * Monitor the key performance and configuration metrics of your fleet of Oracle Databases.
 * Monitor and administer an on-premises Oracle Database(simulated).
+* Monitor and administer Oracle Cloud Databases.
 
 ### Prerequisites
 
