@@ -4,7 +4,7 @@
 
 This lab shows how you can share your web app with others using VB Studio.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Background
 So far in this workshop, you've built the HR web application to show employees, their departments, and locations. You've also added navigation between the different pages and buttons to view, edit, and delete employee records and departments. Now that your work in the Designer is more or less complete, you can share the application with your team and ask for feedback.
@@ -60,5 +60,5 @@ Now that you've shared your application, you need to get its URL so you can pass
 
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 <!--* **Last Updated By** - October 2021 --!>

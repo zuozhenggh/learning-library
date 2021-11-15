@@ -4,7 +4,7 @@
 
 This lab shows you how to set up navigation between pages in a web app. It also shows how you can add data to the app.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Background
 With your changes committed to a remote branch, you'll now create buttons that help users navigate between the Departments page and the Employees page in the web app. Each button is associated with an event that sets off a series of actions when you click it. In VB Studio, this sequence of actions is called an _action chain_. You can use and customize predefined actions, or define your own.
@@ -33,7 +33,7 @@ This lab assumes you have:
     An action chain with the ID ButtonActionChain is created. It contains only the Start action.
 
 6.  From the Navigation section of the Actions palette, drag the **Navigate** action to the **+** sign pointed to by the Start action.
-7.  In the Navigate action's properties, select **main-employees** from the **Target** list.
+7.  In the Navigate action's properties, select **main-employees** from the **Page** list.
 
     ![](images/departments_button_events_navigate.png)
 
@@ -54,7 +54,7 @@ This lab assumes you have:
     Another empty action chain with the ID ButtonActionChain is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the main-departments page.
 
 5.  Drag the **Navigate** action from the Navigation section to the **+** sign pointed to by the Start action.
-6.  In the Properties pane, select **main-departments** from the **Target** list.
+6.  In the Properties pane, select **main-departments** from the **Page** list.
 
     The action now has the label `Navigate main-departments`.
 
@@ -99,5 +99,5 @@ Let's now add data for the Department and Employee business objects. Instead of 
 
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 <!--* **Last Updated By/Date** - October 2021 --!>

@@ -4,7 +4,7 @@
 
 This lab shows how you can create pages and buttons that allow you to edit data, view details of data, and delete data in a table.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Background
 In a previous lab, you used a couple of Quick Starts to create pages that let your users add departments and employees. In this lab, you'll use the rest of them to add pages for users to edit and delete departments and employees. You'll also get a chance to test your web pages as they will appear to the user.
@@ -135,5 +135,5 @@ Now that we've added options to let users manage departments, we'll do the same 
     You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 <!--* **Last Updated By** - October 2021 --!>

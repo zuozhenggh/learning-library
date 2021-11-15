@@ -4,7 +4,7 @@
 
 This lab shows you how to publish your web app by merging your changes to the project's default branch.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Background
 When the process of reviewing your HR web app is done, you are ready to publish the application and make your changes public. Publishing saves your application's code to a remote branch and then to the project's default (`main`) branch. You can use the **Commit** and **Push** Git options in your workspace to save your changes to a remote branch (as we did in a previous lab), then use the **Merge** option to push your changes to `main`. Or, you can do all of this at the click of a single **Publish** button (as we'll do in this lab).
@@ -87,5 +87,5 @@ A deployed application does not automatically include its business object data, 
     If you now want to make changes to your application, you'll need to create a new branch off your project's `main` branch. You can do this in your existing workspace using the **Switch Branch** option in the Git repository menu. You can also clone this repository in a new workspace using the **Clone From Git** option on the Workspaces page and start afresh.
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 <!--* **Last Updated By** - October 2021 --!>

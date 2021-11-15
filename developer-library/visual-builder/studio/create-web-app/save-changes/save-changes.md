@@ -4,7 +4,7 @@
 
 This lab shows you how to save a web application's changes from your local branch to a remote branch, so others can view your work.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Background
 While developing the HR web application, you might have noticed a yellow dot in the header next to your Git repository:
@@ -77,5 +77,5 @@ Now that your changes have been pushed, let's check them in the remote `hrbranch
 
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 <!--* **Last Updated By** - October 2021 --!>

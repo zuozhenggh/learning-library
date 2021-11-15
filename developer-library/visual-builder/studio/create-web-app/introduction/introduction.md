@@ -32,5 +32,5 @@ This workshop requires:
 * [VB Studio](https://blogs.oracle.com/vbcs/category/vbc-visual-builder-studio) and [Visual Builder blogs](https://blogs.oracle.com/vbcs/)
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 <!--* **Last Updated By** - October 2021 --!>

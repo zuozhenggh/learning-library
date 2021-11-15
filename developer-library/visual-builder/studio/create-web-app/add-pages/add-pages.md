@@ -5,7 +5,7 @@
 This lab shows you how to create web pages to display the business objects you created in the previous lab.
 
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Background
 
@@ -215,5 +215,5 @@ It makes sense at this point to change the name of the main-start page to main-d
 
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 <!--* **Last Updated By** - October 2021 --!>

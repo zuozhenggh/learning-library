@@ -4,7 +4,7 @@
 
 This lab shows you how to create a project for a new visual application, which serves as the foundation to build a web application in Oracle Visual Builder Studio.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Background
 
@@ -110,5 +110,5 @@ For the purposes of this tutorial, let's assume that other members of your team 
 
     You may now [proceed to the next lab](#next).
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, October 2021
+* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 <!--* **Last Updated By** - October 2021 --!>
