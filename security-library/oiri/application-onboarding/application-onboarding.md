@@ -15,18 +15,24 @@ In this lab, you will:
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
     - Lab: Initialize Environment
 
 ## Task 1: Start the OIG server
 
-1. On the browser window on the right preloaded with *Weblogic Admin Console* on one of the tabs, if not already logged in, click on the *Username* field and select the saved credentials or use the below to login.
+1. On the web browser window on the right preloaded with *Weblogic Admin Console*, if not already logged in, click on the *Username* field and select the saved credentials or use the below to login.
+
+    - Username
 
     ```
-    Username: <copy>weblogic</copy>
+    <copy>weblogic</copy>
     ```
 
+    - Password
+
     ```
-    Password: <copy>Welcome1</copy>
+    <copy>Welcome1</copy>
     ```
 
     ![](images/3-weblogic.png)
@@ -72,14 +78,24 @@ This lab assumes you have:
 
 ## Task 3: Create Application Screen
 
-1. On the browser window on the right preloaded with *OIG Identity Console* on one of the tabs, refresh/reload the page then click on the *Username* field and select the saved credentials or use the below to login
+1. On the browser window on the right preloaded with *Weblogic Admin Console*, open the URL below in a new tab, then click on the *Username* field and select the saved credentials or use the below to login to the *OIG Identity Console*
+
+    - URL
 
     ```
-    Username: <copy>xelsysadm</copy>
+    <copy>http://oiri.livelabs.oraclevcn.com:14000/identity/faces/signin</copy>
     ```
 
+    - Username
+
     ```
-    Password: <copy>Welcome1</copy>
+    <copy>xelsysadm</copy>
+    ```
+
+    - Password
+
+    ```
+    <copy>Welcome1</copy>
     ```
 
     ![](images/10-oig.png)
@@ -273,4 +289,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - Keerti R, Brijith TG, Vineeth Boopathy, NATD Solution Engineering
 * **Contributors** -  Keerti R, Brijith TG, Vineeth Boopathy
-* **Last Updated By/Date** - Keerti R, NATD Solution Engineering, October 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2021
