@@ -93,7 +93,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
     - Connection Name: `SAILGP`
     - Client Credentials: Use the Browse button to upload the **wallet ZIP file** that you downloaded (it will automatically extract the `cwallet.sso` file from this zip bundle)
-    - Username: `sailgp`
+    - Username: `sailor`
     - Password: `Oracle_12345`
     - Service Name: Keep the default, the name of your database followed by the `_high` suffix
 
@@ -186,7 +186,7 @@ Earlier, we uploaded the data of this race to Autonomous Data Warehouse. Now, we
 	Now you are in the Visualization area!
 
 	> **Note:** As a general note, keep in mind that you can use the Undo/Redo buttons at the top right of the screen if you make any mistake in this section.
-   
+
    ![Undo](images/undo.png)
 
 2. Create a chart with race winners
