@@ -28,7 +28,9 @@ In this tutorial, you will:
 
 The HTML Server is the primary interface to the EnterpriseOne system.  
 
-1.	To access the EnterpriseOne HTML server, open a supported browser from any workstation connected to the internet.
+1.	To access the EnterpriseOne HTML server, open a supported browser from any workstation connected to the internet. (Firefox is recommended)
+
+    **Note:** If this is the first connection to any of the following URLs from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security. These web addresses are totally safe so you need not worry.
 
 2.  Using the public IP address for the instance and port number (Create a Trial Edition Instance in Oracle Cloud Infrastructure, Step 3) assigned to the HTML server as part of the final configuration and security list, enter the following URL into the browser:
 
@@ -38,7 +40,7 @@ The HTML Server is the primary interface to the EnterpriseOne system.
 
         https://129.146.104.179:8080/jde/owhtml/index.html
 
-    **Note:** If this is the first connection to this URL from the workstation or browser type, it will prompt you to confirm secure connection. This is due to JDE Trial Edition using a temporary SSL Certificate for security.
+
 
 3.  Click **Advanced** and then **Add Exception** to confirm that the connection is trusted.
 
@@ -263,4 +265,4 @@ Your environment is now fully functional and ready to go. Enjoy JDE on OCI!
     * Marc-Eddy Paul, Cloud Engineering
     * William Masdon, Cloud Engineering
     * Chris Wegenek, Cloud Engineering
-* **Last Updated By/Date:** AJ Kurzman, Cloud Engineering, 11/18/2020
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering, 11/2021
