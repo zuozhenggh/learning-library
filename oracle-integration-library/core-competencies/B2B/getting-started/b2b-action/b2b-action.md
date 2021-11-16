@@ -20,7 +20,7 @@ This lab assumes you have:
 
 ## B2B Actions Available in Trading Partner Mode
 
-This section describes the operations provided by the B2B action during trading partner mode configuration.
+The function of B2B Action is to produce schemas  that adhere to B2B global standards like X12. B2B Action works for both Inbound and Outbound. This section describes the operations provided by the B2B action during trading partner mode configuration.
 
 B2B action is available from Action Menu
 
@@ -31,7 +31,10 @@ The following operations are available in the inbound and outbound directions.
 Of these five operations, you must use the three **highlighted** below in your backend integrations. Those are the only ones you need to more fully understand. The remaining operations are used in the B2B transport integrations (that is, B2B integrations for receiving messages and sending messages). Because those integrations are automatically created, you don't need to understand their usage in as much detail.
 
 **Inbound**
+For inbound scenario, it would  be essentially EDI payload (This would be X12 or EDIFACT type documents) that are coming in, which  go through the EDI translation step that produces a translation output. This would mean once  the X12 documents actually go through the B2B Action, it would be generating an EDI  XML format which will then be mapped over to application formats that gets consumed by backend  applications like ERP Cloud, NetSuite, etc
+![](images/b2baction-inbound-2.png)
 
+Below are the operations supported in Inbound scenario.
 ![](images/b2baction-inbound-1.png)
 
 | Operation     | Used By                                | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -41,6 +44,10 @@ Of these five operations, you must use the three **highlighted** below in your b
 | <b>Mark As Error</b> | Inbound backend integration            | This operation provides for more robust error handling, in case of failures. This operation updates a B2B business message and reflects the failure to process this message by the backend integration, if an error occurs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 **Outbound**
+In the outbound case, once the application format  messages are mapped over to a EDI XML format, the EDI translate actually creates the X12  or EDIFACT or other payloads (example X12). Those transactions can then be transmitted and sent out to your trading partners. The essential function for B2B function is to produce schemas  that adhere to B2B global standards like X12.
+![](images/b2baction-outbound-2.png)
+
+Below are the operations supported in Outbound scenario.
 ![](images/b2baction-outbound-1.png)
 
 | Operation     | Used By                                             | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
