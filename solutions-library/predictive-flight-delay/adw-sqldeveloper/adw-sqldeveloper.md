@@ -19,7 +19,7 @@ Please use SQL Developer version 18.3 or later as this version contains enhancem
 ## Part 1. Connect SQL Developer to the ADW Instance
 In this section you will connect the SQL Developer to the ADW instance that you provisioned in Lab 100.
 
-### **STEP 1**: Download the Connection Wallet
+### Task 1: Download the Connection Wallet
 As ADW only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW service console. In this case, we will be showing you how to download the wallet file from the instance's details page.
 
 1.  In your databases's instance details page, click **DB Connection**.
@@ -35,7 +35,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 ![](./images/picture200-16.jpg)
 
-### **STEP 2**: Connect to the Database using SQL Developer
+### Task 2: Connect to the Database using SQL Developer
 Start SQL Developer and create a connection for your database using the default administrator account 'ADMIN' by following these steps.
 
 1.   Click the **New Connection** icon in the Connections toolbox on the top left of the SQL Developer homepage.
@@ -62,11 +62,11 @@ Start SQL Developer and create a connection for your database using the default 
 
 ## Part 2. Load Data File to the ADW Instance
 
-### **STEP 1**: Download the Data File to Your Local Computer
+### Task 1: Download the Data File to Your Local Computer
 
-For this lab, you will need a data file. Click [here](./files/flights_aircraft_weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport.
+For this lab, you will need a data file. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ToEvY1LAoW4Ql0qt3ba2xGWeRHhmEhiwNwzBWvUEVJrmcOZhyH0xY6XxHNNSjpxL/n/c4u04/b/labfiles/o/flights_aircraft_weather.zip) to download a zipfile of the data file and unzip it to a directory on your local computer. This data file is the resulting integrated table including flight, weather, and aircraft data at each time and each airport.
 
-### **STEP 2**: Load the Data File to the ADW Instance using SQL Developer Data Import Wizard**
+### Task 2: Load the Data File to the ADW Instance using SQL Developer Data Import Wizard**
 
 1. Click **Tables** in your user schema object tree. Clicking the right mouse button opens the context-sensitive menu in SQL Developer; select **Import Data**. 
 
@@ -119,4 +119,4 @@ On Step 2 of the Import Wizard, you control the import method and parameters. Le
 - **Author** - NATD Solution Engineering - Austin Hub (Joowon Cho)
 - **Last Updated By/Date** - Joowon Cho, Solutions Engineer, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+

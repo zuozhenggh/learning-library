@@ -1,6 +1,6 @@
-# Develop Python with Oracle Autonomous Database
+# Developing Python Apps using Oracle Autonomous Transaction Processing
 
-Welcome to the Develop Python on ATP Workshop. This workshop will walk you through the following tasks:
+Welcome to the Developing Python Apps using Oracle Autonomous Transaction Processing Workshop. This workshop will walk you through the following tasks:
 
 - Load Data into your ATP Instance
 - Setup Python application 
@@ -10,7 +10,7 @@ Welcome to the Develop Python on ATP Workshop. This workshop will walk you throu
 - Check the distance between customer and service provider
 
 
-***To log issues***, click here to go to the [issue](https://github.com/oracle/learning-library/issues/new) submission form.  Please provide the name of the workshop and the link when you submit an issue.
+
 
 ## Access the Workshop Using Our Web Interface
 

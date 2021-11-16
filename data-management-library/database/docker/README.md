@@ -33,7 +33,3 @@ Click here to request your trial account: [https://www.oracle.com/cloud/free](ht
 - [Upgrading to Oracle Database 19c](https://www.youtube.com/watch?v=lOzL5irmuJo)
 
 
-### Issues?
-Please submit an issue on our [issues](https://github.com/oracle/learning-library/issues) page.  We review it regularly.
-
--- Oracle Database Product Management

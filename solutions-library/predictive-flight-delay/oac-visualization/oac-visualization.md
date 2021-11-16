@@ -14,7 +14,7 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 
 ## Part 1. Visualize Results of Validation in OAC. 
 
-### **STEP 1**: Load the Validation Result Table onto OAC
+### Task 1: Load the Validation Result Table onto OAC
 
 1.   In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
@@ -32,7 +32,7 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 
 ![](./images/picture500-4.png)
 
-### **STEP 2**: Visualize Results of Validation using Combo chart
+### Task 2: Visualize Results of Validation using Combo chart
 1.   Once you have uploaded the validation result table onto OAC successfully, click **Visualize** tap.  
 ![](./images/picture500-5.png)
 
@@ -52,11 +52,11 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 
 ## Part 2. Visualize Results of Prediction in OAC. 
 
-### **STEP 1**: Load the Prediction Result Table onto OAC
+### Task 1: Load the Prediction Result Table onto OAC
 
 1. Repeat **Part 1.STEP 1** to load the prediction result table (**OT_Pred_Res**) onto OAC. 
 
-### **STEP 2**: Make a new CARRIER column on tap of Prepare
+### Task 2: Make a new CARRIER column on tap of Prepare
 1. Click **Option** button on the column of **UNIQUECARRIER** and select **Duplicate**. 
 ![](./images/picture500-8.png)
 
@@ -71,7 +71,7 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 
 ![](./images/picture500-11.png)
 
-### **STEP 3**: Visualize Results of Prediction using Bar graph
+### Task 3: Visualize Results of Prediction using Bar graph
 1.   Once you have uploaded the prediction result table onto OAC successfully, click **Visualize** tap.  
 
 2.   Make visualization by following below steps to visualize the prediction result. 
@@ -96,4 +96,4 @@ The following lab requires an Oracle Public Cloud account. You may use your own 
 - **Author** - NATD Solution Engineering - Austin Hub (Joowon Cho)
 - **Last Updated By/Date** - Joowon Cho, Solutions Engineer, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+

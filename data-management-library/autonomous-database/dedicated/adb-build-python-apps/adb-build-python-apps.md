@@ -18,17 +18,18 @@ As an application developer,
 ### Required Artifacts
 
    - An Oracle Cloud Infrastructure account.
-   - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
-   - A pre-provisioned dedicated autonomous database instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
+   - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
+   - A pre-provisioned dedicated autonomous database instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
    - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
 
-## STEP 1: Instances Setup
+## Task 1: Instances Setup
 
-- Login to your Oracle Cloud Infrastructure account and select *Compute* —> *Instances* from top left menu.
-    ![](./images/Compute1.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
-- Select the right Oracle Developer Cloud image you created in [Lab 5](?lab=lab-5-configuring-development-system).
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+
+- Select the right Oracle Developer Cloud image you created in [Lab 8](?lab=lab-8-configuring-development-system).
 
 - Copy the public IP address of the instance in a note pad. 
     ![](./images/Compute2.png " ")
@@ -51,7 +52,7 @@ As an application developer,
 
 - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-## STEP 2: Download sample python application
+## Task 2: Download sample python application
 
 - In your developer client ssh session,
 
@@ -65,7 +66,7 @@ As an application developer,
 
     ```
     <copy>
-    wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/700/ATPDpython.zip?raw=true
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/DhTOXBBDCJI5b-lStlkobmgro1fVMUgj8yZ3NArH_t4/n/atpdpreview11/b/adb-build-python-apps/o/ATPDpython.zip
     </copy>
     ```
 
@@ -78,10 +79,10 @@ As an application developer,
     ```
 
 
-## STEP 3: Transfer database wallet to developer client
+## Task 3: Transfer database wallet to developer client
 
-- Login to Oracle Cloud Infrastructure account and select *Autonomous Transaction Processing* from menu.
-    ![](./images/atpd1.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 - Click on Autonomous Database and select your previously created database.
     ![](./images/atpd2.png " ")
@@ -109,7 +110,7 @@ As an application developer,
     ![](./images/atpd5.png " ")
 
 
-## STEP 4: Run your python application
+## Task 4: Run your python application
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder.
 
@@ -176,6 +177,5 @@ Now that you have successfully SCP'd the encryption to your client machine, let'
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

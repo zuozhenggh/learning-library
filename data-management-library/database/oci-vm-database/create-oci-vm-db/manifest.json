@@ -1,32 +1,39 @@
 {
-    "tutorials": [
+  "workshoptitle": "Create a DBCS VM Database",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
       {
         "title": "Introduction",
         "filename": "introduction/intro.md"
       },
       {
-        "title": "Sign Up for Free Trial",
-        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+        "title": "Lab 1: Sign Up for Free Trial",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
       },
       {
-        "title": "Create SSH Keys",
+        "title": "Lab 2: Create SSH Keys",
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
       },
       {
-        "title": "Create a Virtual Cloud Network",
+        "title": "Lab 3: Create a Virtual Cloud Network",
         "filename": "create-virtual-cloud-network/create-virtual-cloud-network.md"
       },
       {
-        "title": "Create an Oracle Cloud Infrastructure VM Database",
-        "filename": "create-oci-vm-db/create-oci-vm-db.md"
+        "title": "Lab 4: Create an Oracle Cloud Infrastructure VM Database",
+        "filename": "create-oci-vm-db/create-oci-vm-db-vcn.md"
       },
       {
-          "title": "Optional: Add an Ingress Rule to Open Access to the DB",
+          "title": "(Optional) Lab 5: Add an Ingress Rule",
           "filename": "add-ingress-rule/add-ingress-rule.md"
-        },
-        {
-          "title": "Optional: Connect SQL Developer to an Oracle Cloud Infrastructure VM Database",
+      },
+      {
+          "title": "(Optional) Lab 6: Connect SQL Developer",
           "filename": "connect-oci-vm-db-sqldeveloper/connect-oci-vm-db-sqldeveloper.md"
-        }
+      },
+      {
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      }
     ]
 }

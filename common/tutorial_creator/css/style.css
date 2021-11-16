@@ -8,7 +8,7 @@
 }
 
 .navbar {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .btn {
@@ -35,14 +35,23 @@ img {
 #download_html,
 #download_manifest,
 #reset_manifest,
-#btn_image_files,
 #download_zip,
 #enter_json,
 #import_md, 
-#view_md_template {
+#import_html,
+#view_md_template,
+#md_to_check,
+#btn_images_to_check {
     font-size: 0.8rem;
     line-height: 0.8;
-    padding: .5rem .7rem;
+    padding: .5rem;
+    width: 150px;
+}
+
+#md_to_check,
+#btn_images_to_check,
+#btn_image_files {
+    width: auto;
 }
 
 #image_files {
@@ -67,7 +76,7 @@ img {
 #htmlBox,
 #previewBox {    
     height: 100%;
-    /*height: 69vh;*/
+    min-height: 69vh;
     vertical-align: top;
 }
 
@@ -126,4 +135,13 @@ textarea {
     width: 0.5rem !important;
     height: 0.5rem !important;
     vertical-align: unset !important;
+}
+
+#intro {
+    padding: 24px;    
+    font-size: 14px;
+}
+
+.card-body {
+    font-size: 14px;
 }

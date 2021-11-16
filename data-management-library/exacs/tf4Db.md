@@ -10,8 +10,10 @@ In this lab you will practice the following:
 * [Add database](#add-database)
 * [Delete database](#delete-database)
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
 
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
 ## Create database
 
 In this exercise, you will be creating a database using the following Terraform code template.
@@ -133,7 +135,7 @@ $ git commit -m "This is to commit changes made by ${myInitial}"
 
 Once you are happy with your work. You will **push** the commit in your branch to your new GitHub repo. This allows other people to see the changes you've made. If they're approved by the repository's owner, the changes can then be merged into the master branch.
 
-To push changes onto a new branch on GitHub, you'll want to run **[git push](http://git-scm.com/docs/git-push) origin yourbranchname**. GitHub will automatically create the branch for you on the remote repository:
+To push changes onto a new branch on GitHub, you will want to run **[git push](http://git-scm.com/docs/git-push) origin yourbranchname**. GitHub will automatically create the branch for you on the remote repository:
 
 ````
 <copy>git push origin ${myInitial}Branch1</copy>
@@ -201,3 +203,7 @@ Once you have the basic terraform config is setup, add database can be easily ac
 
 Similar to adding database, you can update the config by reduce the count of database or deleting the file all together, then run plan and apply to delete the database that you don't want.
 **Note**: most companies will want to take great care in delete database as data/information is the bread and butter of their business thus you will likely need to go through some formal process/workflow such as the GitHub workflow above.
+
+## References ##
+
+- [OCI Terraform Reference Manual](https://www.terraform.io/docs/providers/oci/index.html)

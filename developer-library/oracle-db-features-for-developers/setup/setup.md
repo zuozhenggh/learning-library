@@ -1,48 +1,86 @@
-# Setup - LiveLabs #
+# Sample Schema Setup
 
 ## Introduction
-This lab will show you how to setup your environment using Oracle Resource Manager.
+This lab will show you how to setup your database schemas for the subsequent labs.
 
-## Step 1: Install Sample Data
+Estimated Lab Time: 10 minutes
+
+## Task: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
-By completing the instruction below the sample schemas **SH**, **OE**, and **HR** will be installed. These schemas are used in Oracle documentation to show SQL language concepts and other database features. The schemas themselves are documented in Oracle Database Sample Schemas [Oracle Database Sample Schemas](https://www.oracle.com/pls/topic/lookup?ctx=dblatest&id=COMSC).
+By completing the instructions below the sample schemas **SH**, **OE**, and **HR** will be installed. These schemas are used in Oracle documentation to show SQL language concepts and other database features. The schemas themselves are documented in Oracle Database Sample Schemas [Oracle Database Sample Schemas](https://www.oracle.com/pls/topic/lookup?ctx=dblatest&id=COMSC).
 
-1.  Copy the following commands into your terminal. These commands download the files needed to run the lab.
+1. Run a *whoami* to ensure the value *oracle* comes back.)
 
     Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
+    ```
+    <copy>whoami</copy>
+    ```
 
-    ````
-    <copy>
-    cd /home/opc/
-
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/3chG0fCfimn_Dq6kER9r0qOBqjPLfM3I4b3l0EaN2w4/n/c4u03/b/labfiles/o/nfscripts.zip
-
-    unzip nfscripts.zip;
-
-    chmod +x *.sh
-
-    /home/opc/setupNF.sh
-    </copy>
-    ````
-
-    ![](./images/step1.1-setupscript1.png " " )
-
-    ![](./images/step1.1-setupscript2.png " " )
-
-2.  Install the Sample Schemas.
-
+2. If you are not the oracle user, log back in:
     ````
     <copy>
     sudo su - oracle
-    . /home/oracle/setupNF_DB.sh
+    </copy>
+    ````
+    
+    ![](./images/sudo-oracle.png " ")
+
+4.  Set the environment variables to point to the Oracle binaries.  When prompted for the SID (Oracle Database System Identifier), enter **ORCL**.
+    ````
+    <copy>
+    . oraenv
+    </copy>
+    ORCL
+    ````
+    ![](./images/oraenv.png " ")
+
+5. Get the Database sample schemas and unzip them. Then set the path in the scripts.
+
+    ````
+    <copy>
+    wget https://github.com/oracle/db-sample-schemas/archive/v19c.zip
+    unzip v19c.zip
+    cd db-sample-schemas-19c
+    perl -p -i.bak -e 's#__SUB__CWD__#'$(pwd)'#g' *.sql */*.sql */*.dat
     </copy>
     ````
 
-    ![](./images/step1.2-setupcomplete.png " " )
+    ![](./images/install-schema-zip.png " " )
+
+6.  Login using SQL*Plus as the **oracle** user.  
+
+    ````
+    <copy>
+    sqlplus system/Ora_DB4U@localhost:1521/orclpdb
+    </copy>
+    ````
+    ![](./images/start-sqlplus.png " ")
+
+7.  Install the Sample Schemas by running the script below.
+
+    ````
+    <copy>
+    @mksample Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U Ora_DB4U users temp /home/oracle/db-sample-schemas-19c/ localhost:1521/orclpdb
+    </copy>
+    ````
+
+    ![](./images/schemas-created.png " " )
+
+8. Exit SQL Plus and exit the oracle user to return to the opc user.
+
+    ```
+    <copy>exit
+    exit
+    </copy>
+    ```
+
+    ![](images/return-to-opc.png)
 
 Congratulations! Now you have the environment to run the labs.
+
+You may now *proceed to the next lab*.
 
 ## Oracle Database Sample Schemas Agreement
 
@@ -54,9 +92,8 @@ The above copyright notice and this permission notice shall be included in all c
 
 *THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*
 
-## Acknowledgements
+## **Acknowledgements**
 
 - **Author** - Troy Anthony, DB Product Management
-- **Last Updated By/Date** - Anoosha Pilli, Product Manager, DB Product Management, May 2020
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.
+- **Contributors** - Anoosha Pilli, Kay Malcolm
+- **Last Updated By/Date** - Kamryn Vinson, June 2021

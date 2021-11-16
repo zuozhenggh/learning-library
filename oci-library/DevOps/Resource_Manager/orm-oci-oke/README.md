@@ -6,7 +6,7 @@ Oracle Resource Manager template to create a Quick Create OKE cluster
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Configuring IAM to control user access in Resource Manager](#practice-1-configuring-iam-to-control-user-access-in-resource-manager) 
 
@@ -22,7 +22,7 @@ Oracle Resource Manager template to create a Quick Create OKE cluster
 The Oracle Cloud Infrastructure Resource Manager is a fully managed service that lets you provision infrastructure resources on Oracle Cloud Infrastructure using Terraform. You can bring in your Terraform template definition and easily create and manage your infrastructure resources. This allows you to use infrastructure-as-code to automate provisioning across all OCI resources including Compute, Networking,Load Balancers, Block and Object Storage, Developer Resources such as OKE Clusters. Resource Manager also integrates with Identity and Access Management (IAM) so you can define granular permissions for Terraform operations. It currently has support for CLI, SDK and Console. 
 
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant) 
 - To sign in to the Console, you need the following:
@@ -57,7 +57,10 @@ The Oracle Cloud Infrastructure Resource Manager is a fully managed service that
 1. Create a Stack by clicking on **Menu** --> **Resource Manager** --> **Stack**
 2. Click **Create Stack**
 
-   - **Select a Terraform Configuration (.zip) File to Upload:** *Upload the zip file [orm_oke_quick_create.zip](orm_oke_quick_create.zip)*
+   - Select **My Configuration**, choose the **.ZIP FILE** button, click the **Browse** link and select the terraform configuration zip file [orm_oke_quick_create.zip](orm_oke_quick_create.zip). Click **Select**.
+
+	![](./img/zip-file.png) 
+    
    - **Name:** *Quickly Create an OKE Cluster*
    - **Description:** *Quickly create a cluster with default settings, also creates a dedicated network*
    - **Create in Compartment:** *sandbox*

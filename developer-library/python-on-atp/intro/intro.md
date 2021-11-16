@@ -1,6 +1,8 @@
-# Introduction 
+# Introduction
 
-Welcome to the Python Development with Autonomous Transaction Processing Workshop. This workshop will introduce you to the most rapid and advanced full-stack development environment available today.
+Welcome to the Developing Python Apps using Oracle Autonomous Transaction Processing Workshop. This workshop will build three cloud-based microservice database applications using Python and the ATP database.
+
+## Workshop Overview
 
 In the next two hours you will experience a day in the life of Derek McCarthy – a full-stack developer for the fictious company Alpha Office. Derek has been hired to introduce new best practices to Alpha Office microservices developers. In this workshop you will take on Derek’s persona to build a series of three cloud-based microservices database applications. In doing so, you will leverage the latest and most advanced Oracle and open-source technologies.
 
@@ -14,9 +16,7 @@ Please proceed to the next lab.
 
 ### Acknowledgements
 
-- **Authors/Contributors** - Derrick Cameron
-- **Last Updated By/Date** - Kay Malcolm, April 2020
-- **Workshop Expiration Date** - April 31, 2021
+- **Authors/Contributors** - Derrick Cameron, Varun Yadav
+- **Last Updated By/Date** - Varun Yadav, July 2021
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
 

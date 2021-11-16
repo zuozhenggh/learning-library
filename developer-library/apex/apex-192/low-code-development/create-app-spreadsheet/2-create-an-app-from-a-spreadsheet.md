@@ -1,4 +1,4 @@
-# Create an App from a Spreadsheet
+# Create an APEX App from a Spreadsheet
 
 ## Introduction
 
@@ -6,12 +6,14 @@ After you have logged into your workspace, you can start creating APEX applicati
 
 While APEX developers spend the majority of their time in the App Builder, you should also investigate the SQL Workshop, where you can create and maintain database objects, Team Development, where you can track large APEX development projects, and the App Gallery, which contains numerous productivity and sample apps that can be installed within minutes.
 
+Estimated Time: 10-20 minutes
+
 ### Objectives
 
 - Load project and tasks data
 - Create and run an application
 
-## **Step 1**: Loading project and tasks data  
+## Task 1: Loading project and tasks data  
 
 1.  From your APEX workspace home page, click **App Builder**.
 2.  Click **Create a New App**.
@@ -38,7 +40,7 @@ While APEX developers spend the majority of their time in the App Builder, you s
 
     After clicking **Load Data** you will see a spinner until the wizard finishes loading the data.
 
-## **Step 2**: Creating an application
+## Task 2: Creating an application
 
 The Data Load wizard has created a new table and populated that table with the records from the sample data. Now you can create an app based on this new table.
 
@@ -57,16 +59,16 @@ The Data Load wizard has created a new table and populated that table with the r
 
 3. On the Create an Application page, click **Create App**.
 
-2. In the Create an Application page, review the pages listed. Click the **Edit** button for a page to review more details.
+4. In the Create an Application page, review the pages listed. Click the **Edit** button for a page to review more details.
 
-    Click **Check All** for Features, and then click **Create Application**.
+    Scroll down then click **Check All** for Features, and then click **Create Application**.
 
     ![](images/name-for-application.png " ")
     ![](images/create-application.png " ")
 
     When the wizard finishes creating the application, you will be redirected to the application's home page in the App Builder.
 
-## **Step 3**: Running and exploring the new app
+## Task 3: Running and exploring the new app
 
 1.  Click **Run Application**. This will open the runtime application in a new browser tab, allowing you to see how end users will view the app.
 
@@ -74,7 +76,7 @@ The Data Load wizard has created a new table and populated that table with the r
 
 2.  Enter your user credentials and click **Sign In**.
 
-    *Note: Use the same Username and Password you used to sign into the APEX Workspace.*
+    *Note: Use the same Username and Password you used to sign into the APEX Workspace. For this workshop your username should be DEMO and your password should be SecretPassw0rd.*
 
     ![](images/sign-in.png " ")
 
@@ -88,6 +90,6 @@ This completes this lab. You now know how to create an application from a spread
 
 ## Acknowledgements
 * **Author** - David Peake, Senior Principal Product Manager, Oracle Application Express
+* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Tom McGinn, Learning Architect, Database User Assistance, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

@@ -4,7 +4,13 @@
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Prerequisites](#Prerequisites)# ReservedIP Practice - Using Reserved Public IP 
+  
+## Table of Contents
+
+[Overview](#overview)
+
+[Prerequisites](#Prerequisites)
 
 [Practice 1: Sign in to OCI Console and create reserved public IP](#practice-1-sign-in-to-oci-console-and-create-reserved-public-ip)
 
@@ -24,7 +30,7 @@ A public IP address is an IPv4 address that is reachable from the internet. If a
 
 Certain types of resources in your tenancy are designed to be directly reachable from the internet and therefore automatically come with a public IP address. For example: a NAT gateway or a public load balancer. Other types of resources are directly reachable only if you configure them to be.
 
-## Pre-Requisites
+## Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
 
@@ -59,6 +65,8 @@ Certain types of resources in your tenancy are designed to be directly reachable
 - Click **Create Virtual Cloud Network**
 
 - Click **Close**
+
+**NOTE:** The option to "Create Virtual Cloud Network Plus Related Resources" may not be a selectable option in more recent versions of the UI. If this option is not available, create a subnet with parameters as specified in the picture below after you create this VCN. You will need the subnet when creating the Compute instance.
 
 ![]( img/RESERVEDIP_HOL003.PNG)
 ![]( img/RESERVEDIP_HOL004.PNG)

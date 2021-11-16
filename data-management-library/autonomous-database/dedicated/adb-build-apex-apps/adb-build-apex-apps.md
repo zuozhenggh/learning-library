@@ -24,28 +24,28 @@ Oracle Application Express (APEX) is a low-code development platform that enable
 - A pre-provisioned autonomous database with admin access.
 - A pre-provisioned developer client machine with network access to database.
 
-## STEP 1: Accessing the OCI Autonomous Transaction Processing console and finding APEX URL
+## Task 1: Accessing the OCI Autonomous Transaction Processing console and finding APEX URL
 
 - To get the APEX URL for your ATP Dedicated instance, log into the Oracle Cloud and navigate to Autonomous Transaction Processing option from the Hamburger menu. 
 - On the Autonomous Database console, select the ATP-Dedicated database you created.
 - On your database console, click on DB Connection -> Click on Application Connection -> copy the URL for APEX.
 - Save the URL as we are going to need it later in this lab.
 
-    ![](./images/NavigateATP1.png " ")
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
     ![](./images/selectADB.png " ")
     ![](./images/tools.png " ")
     ![](./images/getApexURL.png " ")
 
 
-## STEP 2: Setup VNC connection to the developer client VM and access APEX on the database as an admin user
+## Task 2: Setup VNC connection to the developer client VM and access APEX on the database as an admin user
 
 - Since ATP Dedicated instances are typically deployed in a private network, one way to get to your APEX console is via a developer client machine setup in the same network.
 
-- Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp) for instructions on setting up and connecting to a developer client machine.
+- Refer to [Lab 8](?lab=lab-8-configuring-development-system) for instructions on setting up and connecting to a developer client machine.
 
 - For the purpose of this lab we assume that your have already deployed and have ssh access to a developer client virtual machine in a public application subnet.
 
-- Alternatively, you may also access the Apex console of your dedicated ATP instance from your local web browser If you are in the same OCI Network / VCN as your database. For detailed instruction on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 5](?lab=lab-5-configuring-development-system).
+- Alternatively, you may also access the Apex console of your dedicated ATP instance from your local web browser If you are in the same OCI Network / VCN as your database. For detailed instruction on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp).
 
 
 - Open a terminal window on your machine and log into the developer VM.
@@ -85,7 +85,7 @@ Oracle Application Express (APEX) is a low-code development platform that enable
     ![](./images/SettingVNC4.png " ")
     ![](./images/SettingVNC6.png " ")
 
-## STEP 3: Setting up additional users on APEX
+## Task 3: Setting up additional users on APEX
 - When you have logged into the VNC, use the URL you saved in step 1 and paste it in the browser in the VNC to connect to APEX on your ATP-D database. You will the APEX login page for your database.
 
 - Login to APEX, by using the following credentials.
@@ -158,4 +158,3 @@ Oracle Application Express (APEX) is a low-code development platform that enable
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

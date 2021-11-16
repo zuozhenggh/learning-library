@@ -90,5 +90,5 @@ You will use **omluser1** later in this workshop.
 - **Author** - NATD Solution Engineering - Austin Hub (Joowon Cho)
 - **Last Updated By/Date** - Joowon Cho, Solutions Engineer, May 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+
 

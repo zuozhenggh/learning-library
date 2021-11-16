@@ -4,7 +4,14 @@ Oracle's Exadata Cloud Service (ExaCS) is deployed in a private VCN in the Oracl
 
 This lab walks you through the steps to deploy a VPN server in OCI and create an SSL VPN connection between a client machine (your desktop) and the ExaCS infrastructure. Once configured, a single VPN server can be shared among multiple users.
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+
+Watch the video below for an overview on how to setup VPN Connectivity to your Exadata Cloud Service Infrastructure
+
+<div style="max-width:768px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2171811/sp/217181100/embedIframeJs/uiconf_id/35965902/partner_id/2171811?iframeembed=true&playerId=kaltura_player&entry_id=1_nv8bf2lo&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_f6vcp771" width="768" height="432" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
 
 ## Objectives
 As a network admin,
@@ -35,7 +42,7 @@ The following illustration shows a network topology that can be used to provide 
 ## Steps
 
 
-### **STEP 1:   OS VM for the OpenVPN server**
+### **Task 1:   OS VM for the OpenVPN server**
 
 - Login to the Oracle Cloud Infrastructure using your tenancy, userId and password. 
 
@@ -75,7 +82,7 @@ The following illustration shows a network topology that can be used to provide 
 #### Note that while your ExaCS infrastructure and VPN server are in the same VCN, the ExaCS is in a private subnet while the VPN server is deployed in a public subnet for access over the internet. 
 
 
-### **STEP 2: Install and Configure OpenVPN Server**
+### **Task 2: Install and Configure OpenVPN Server**
 
 -   Use the following to ssh into centOS vm and download the openVPN rpm package
 
@@ -139,7 +146,7 @@ The following illustration shows a network topology that can be used to provide 
     ![](./images/Infra/configure_vpn/vpn_routing3.png " ")
 
 
-### **STEP 3: Install OpenVPN Client**
+### **Task 3: Install OpenVPN Client**
 
 - Launch your OpenVPN Access Server Client UI at **https://*<Your_VPN_Server_Public_IP>*:943** and download the OpenVPN client for your platforms.
     
@@ -161,7 +168,7 @@ The following illustration shows a network topology that can be used to provide 
 
     You may also setup your VPN server with multiple users. Follow the OpenVPN configuration guide to setup additional users.
 
-### **STEP 4: Connect SQL Developer to your ExaCS database**
+### **Task 4: Connect SQL Developer to your ExaCS database**
 - One of the pieces of information we need to connect to your ExaCS database is its service name. Follow below steps to construct the service name.
 - Service name is database-unique-name.host-domain-name. To find out database-unique-name, go to your cloud console and navigate to the web page where you find information about your ExaCS instance.
 - Find host-domain-name as shown in the picture below.

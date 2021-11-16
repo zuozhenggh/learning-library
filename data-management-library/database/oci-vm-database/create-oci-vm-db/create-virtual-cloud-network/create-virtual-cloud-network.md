@@ -1,23 +1,24 @@
 # Create an Oracle Cloud Virtual Cloud Network
-## Before You Begin
+
+## Introduction
 
 This lab walks you through the steps to create an instance of an Oracle Virtual Cloud Network (VCN). A virtual cloud network (VCN) provides the necessary network Infrastructure required to support resources, including Oracle Database instances. This includes a gateway, route tables, security lists, DNS and so on. Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the creation of a basic, public internet accessible VCN.
 
-### What Do You Need?
+### Prerequisites
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Create a Virtual Cloud Network instance
+## Task 1: Create a Virtual Cloud Network instance
 
-1. From the Console menu, select **Networking > Virtual Cloud Networks**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
-  ![](images/virtual-cloud-networks.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
-2. Select your compartment and click on **Networking Quickstart**. If you haven't created any compartments yet, just leave it as the default (root) compartment.
+2. Select your compartment and click on **Start VCN Wizard**. If you haven't created any compartments yet, just leave it as the default (root) compartment.
 
   ![](images/networking-quickstart.png " ")
 
-3. Be sure the default "VCN with Internet Connectivity" is selected and click **Start Workflow**.
+3. Be sure the default "VCN with Internet Connectivity" is selected and click **Start VCN Wizard**.
 
   ![](images/start-workflow.png " ")
 
@@ -31,7 +32,7 @@ This lab walks you through the steps to create an instance of an Oracle Virtual 
 
 6. On the summary screen, click **View Virtual Cloud Network**.
 
-  You can proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Want to Learn More?
 
@@ -39,6 +40,4 @@ This lab walks you through the steps to create an instance of an Oracle Virtual 
 
 ## Acknowledgements
 * **Author** -Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Tom McGinn, March 2020
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+* **Last Updated By/Date** - Kay Malcolm, November 2020

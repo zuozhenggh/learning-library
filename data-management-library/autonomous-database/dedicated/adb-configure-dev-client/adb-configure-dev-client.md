@@ -18,17 +18,17 @@ As a database user, DBA or application developer,
 ### Required Artifacts
 
 - An Oracle Cloud Infrastructure account with IAM privileges to provision compute instances
-- A pre-provisioned dedicated autonomous database instance. Refer [Lab 4](?lab=lab-4-provisioning-databases) on how provision an ATP database.
+- A pre-provisioned dedicated autonomous database instance. Refer [Lab 7](?lab=lab-7-provisioning-databases) on how provision an ATP database.
 - VNC Viewer or other suitable VNC client on your local laptop
 
 
-## STEP 1: Provision an OCI Marketplace Developer Client image instance
+## Task 1: Provision an OCI Marketplace Developer Client image instance
 
 We start with deploying a pre-configured client machine instance from the OCI marketplace.
 
 - Log into your cloud account using your tenant name, username and password.
-- Click Compute Instance in the left side menu under services.
-    ![](./images/createcompute.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 - Click create Instance.
     ![](./images/createcomputebutton.png " ")
@@ -64,7 +64,7 @@ We start with deploying a pre-configured client machine instance from the OCI ma
     ![](./images/computeready.png " ")
 
 
-## STEP 2: Download and transfer DB wallet to client machine
+## Task 2: Download and transfer DB wallet to client machine
 
 Let's first download the DB wallet to your local machine (laptop) and then scp / sftp it to the developer client machine.
 
@@ -72,7 +72,7 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
 
 - From your local browser, navigate to OCI console.
 
-- On the ATP console, select the dedicated ATP instance provisioned in [Lab 4](?lab=lab-4-provisioning-databases).
+- On the ATP console, select the dedicated ATP instance provisioned in [Lab 7](?lab=lab-7-provisioning-databases).
     ![](./images/doneprovision.png " ")
 
 - Click on  *DB Connection* to open up Database Connection pop-up window.
@@ -113,7 +113,7 @@ Let's first download the DB wallet to your local machine (laptop) and then scp /
     ```
 
 
-## STEP 3: Connect to dev client desktop over VNC
+## Task 3: Connect to dev client desktop over VNC
 
 First we shh into the dev client and invoke the VNC server that comes pre-installed.
 
@@ -169,7 +169,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 
   - If all goes well, you should now see a linux desktop in your VNC window.
 
-## STEP 4: Connect to your autonomous DB using SQL Developer, SQLCL and SQL Plus
+## Task 4: Connect to your autonomous DB using SQL Developer, SQLCL and SQL Plus
 
 1. In your VNC session, invoke SQL Developer from the top left Applications menu as shown below.
     ![](./images/sql-developer-vnc.png " ")
@@ -277,4 +277,3 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Last Updated By/Date** - Yaisah Granillo, March 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

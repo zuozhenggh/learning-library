@@ -17,14 +17,15 @@ As an application developer,
 ### Required Artifacts
 
 - An Oracle Cloud Infrastructure account.
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 5](?lab=lab-5-configuring-development-system).
-- A pre-provisioned dedicated autonomous database instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
+- A pre-provisioned dedicated autonomous database instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
 - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
-## STEP 1: Download sample java application
+## Task 1: Download sample java application
 
-- Login to your Oracle Cloud Infrastructure account and select *Compute* and *Instances* from the hamburger menu top left.
-    ![](./images/Compute1.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 - Select the right Oracle Developer Cloud image you created in earlier labs. 
 
@@ -58,7 +59,7 @@ As an application developer,
 cd /home/opc/
 
 
-wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/800/ATPDjava.zip?raw=true
+wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/v3Wdc2lzrxStw775qXuXEtQY-oV3uKKOpPuAjMCtgEA/n/atpdpreview11/b/adb-build-java-apps/o/ATPDjava.zip
 </copy>
 ```
 
@@ -84,7 +85,7 @@ mkdir ojdbc
 
 cd ojdbc/
 
-wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/800/ojdbc8-full.tar.gz?raw=true
+wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iv-ms2lpLm5NuFkTVm_PErpN0HeI_clDBUM7c7s1l9A/n/atpdpreview11/b/adb-build-java-apps/o/ojdbc8-full.tar.gz
 
 
 tar xzfv ojdbc8-full.tar.gz
@@ -92,10 +93,11 @@ tar xzfv ojdbc8-full.tar.gz
 ```
 
 
-## STEP 2: Transfer database wallet to developer client
+## Task 2: Transfer database wallet to developer client
 
-- Login to Oracle Cloud Infrastructure account and click on *Autonomous Transaction Processing* from top left menu.
-    ![](./images/atpd1.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
 - Click on Autonomous Database and select your previously created database.
     ![](./images/atpd2.png " ")
@@ -128,7 +130,7 @@ tar xzfv ojdbc8-full.tar.gz
 
 - Use a scp client such as winSCP to move your wallet to the client machine.
 
-## STEP 3: Run your java application
+## Task 3: Run your java application
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder.
 
@@ -223,6 +225,5 @@ Now that you have successfully SCP'd the encryption to your client machine, let'
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 

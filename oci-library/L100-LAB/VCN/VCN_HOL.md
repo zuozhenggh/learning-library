@@ -3,8 +3,11 @@
 ## Table of Contents
 
 [Overview](#overview)
-[Pre-Requisites](#pre-requisites)
+
+[Prerequisites](#Prerequisites)
+
 [Create Your VCN](#create-your-vcn)
+
 [Summary](#summary)
 
 **Note:** *Some of the UIs might look a little different than the screen shots included in the instructions, but you can still use the instructions to complete the hands-on labs.*
@@ -15,7 +18,7 @@ Oracle Cloud Infrastructure Compute lets you create multiple Virtual Cloud Netwo
 
 Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm) to gain a full understanding of the network components and their relationships.
 
-## Pre-Requisites
+## Prerequisites
 
 To sign in to the Console, you need the following:
 
@@ -31,9 +34,9 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     ![Setup a Network with a Wizard](images/setupVCN1.png)
 
-2. Select **VCN with Internet Connectivity**, and then click **Start Workflow**.
+2. Select **VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
 
-    ![Start Workflow](images/setupVCN2.png)
+    ![Start VCN Wizard](images/setupVCN2.png)
 
 3. Complete the following fields:
 

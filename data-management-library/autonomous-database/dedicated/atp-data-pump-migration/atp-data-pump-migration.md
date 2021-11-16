@@ -19,25 +19,26 @@ As a database admin or user,
 
 ### Required Artifacts
 - An Oracle Cloud Infrastructure account with privileges to create object storage buckets and dedicated autonomous databases.
-- Access to a pre-provisioned dedicated ATP instance. Refer to [Lab 4](?lab=lab-4-provisioning-databases).
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+- Access to a pre-provisioned dedicated ATP instance. Refer to [Lab 7](?lab=lab-7-provisioning-databases).
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 8](?lab=lab-8-configuring-development-system).
 
-## STEP 1: Download sample data pump export file from Oracle Learning Library github repo
+## Task 1: Download sample data pump export file from Oracle Learning Library github repo
 
 - Use the following command from your mac / PC to download a sample schema dump from OLL.
 
     ```
     <copy>
-    wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/autonomous-transaction-processing/dedicated/scripts/datapump/nodeapp.dmp?raw=true
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/8fcg4NskCWAIMvRpLE_ivj-a7baylei6XFF5_B1knzw/n/atpdpreview11/b/adb-data-pump/o/nodeapp.dmp
     </copy>
     ```
     
-## STEP 2: Create an object storage bucket and upload dump
+## Task 2: Create an object storage bucket and upload dump
 
 - Login to your OCI account with your user credentials.
 
-- Naviage to Object Storage from top left hamburger menu.
-    ![nav-to-obj-store](./images/nav-to-obj-store.png " ")
+- Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
+
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
 
 - Pick a compartment you have priviledge to,
     ![pick-compartment](./images/pick-compartment.png " ")
@@ -48,7 +49,7 @@ As a database admin or user,
 - Upload nodeapp.dmp downloaded from OLL.
     ![upload-dmp](./images/upload-dmp.png " ")
 
-## STEP 3: General an authentication token for your user account
+## Task 3: General an authentication token for your user account
 
 - Assuming you are logged into your OCI account, navigate to the user details page from the top right menu item as shown below.
     ![get-token1](./images/get-token1.png " ")
@@ -60,7 +61,7 @@ As a database admin or user,
     ![get-token3](./images/get-token3.png " ")
 
 
-## STEP 4: Setup Object Store user credentials in your target autonomous database
+## Task 4: Setup Object Store user credentials in your target autonomous database
 
 - Now that we have the credentials token, lets setup the target database to read from object store and import data.
 
@@ -68,9 +69,9 @@ As a database admin or user,
 
     **TWO ways to do this:**
 
-1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 6](?lab=lab-6-configuring-vpn-into-private-atp).
+1. If you connected to your OCI VPN you provisioned earlier, you may directly launch SQL*Developer on your local machine and connect to your dedicated ATP as discussed in [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp).
 
-2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 5](?lab=lab-5-configuring-development-system). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 6.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
+2. You may ssh to a developer client image provisioned in a public subnet as discussed in [Lab 8](?lab=lab-8-configuring-development-system). Once logged into your dev client, you may then launch SQL*Plus as discussed in Lab 8.  It is recommended you launch a dev client to use the command line import utility impdp later in this lab. Alternatively, you may also connect to your dev client over VNC and launch SQL Developer from there.
 
 Here, we will use a local SQL Developer to demonstate the steps needed to setup object store credentials.
 
@@ -94,7 +95,7 @@ Here, we will use a local SQL Developer to demonstate the steps needed to setup 
 
 - Ensure the pl/sql procedure executed successfully from the log message.
 
-## STEP 5: Import data from object store using impdp utility
+## Task 5: Import data from object store using impdp utility
 
 - If all went well so far, proceed to ssh into your developer client machine and run the data pump import command.
 
@@ -138,7 +139,7 @@ Here, we will use a local SQL Developer to demonstate the steps needed to setup 
 
     *connect\_string* - Connect string obtained from database console, it would be something like myDatabase_high
 
-    *directory* - Leave as shown above
+    *directory* - Leave as shown above for default or create your own directory object in database
 
     *dumpfile* - Use swift URL. If your .dmp file is in Ashburn, simply replace tenancy and bucket name
 
@@ -164,6 +165,6 @@ You may now connect to your autonomous database using a SQL client and validate 
 
 - **Author** - Tejus S. & Kris Bhanushali
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Yaisah Granillo, March 2020
+- **Last Updated By/Date** - Kris Bhanushali, June 2020
 
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+

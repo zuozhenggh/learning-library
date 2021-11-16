@@ -1,30 +1,28 @@
 # Oracle Restful Data Services (ORDS) in APEX
 
-<!-- Comment out table of contents
-## Table of Contents
-[Introduction](#introduction)
--->
-
 ## Introduction
 
 This lab walks you through the steps to enabling Oracle Restful Data Services (ORDS) with APEX in order to call and create APIs.
+
+Estimated Lab Time: 30 minutes
+
+*In addition to the workshop*, feel free to watch the walkthrough companion video:
+[](youtube:Zq0qEgF0bMU)
+
 
 ### Objectives
 -   Learn how to enable Oracle Restful Data Services (ORDS) with APEX
 -   Learn how to import SQL queries as APIs in APEX
 -   Learn how to create a REST API using APEX
 
-### Required Artifacts
+### Prerequisites
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
--   The estimated time to complete this lab is 20 minutes.
 
 ### Extra Resources
 -   To learn more about Oracle REST Data Services (ORDS), feel free to explore the capabilities by clicking on this link: [ORDS Documentation](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/19.4/index.html)
 
 
-## Part 1. Enable ORDS
-
-### **STEP 1**: Access Your APEX App
+## Task 1: Access Your APEX App
 
 1. Navigate to and click on **Oracle APEX** from the development page of your ADW instance service console.
 
@@ -34,7 +32,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/4.png " ")
 
-### **STEP 2**: Enable Oracle Restful Data Services (ORDS)
+## Task 1: Enable Oracle Restful Data Services (ORDS)
 
 1. Click on **SQL Workshop** and then on **RESTful Services**.
 
@@ -48,17 +46,17 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/7.png " ")
 
-## Part 2. Import and Create APIs
+## Task 1: Import APIs
 
-### **STEP 1**: Import APIs
-
-1. Click on **Import**. 
+1. Click on **Import**.
 
     ![](./images/8.png " ")
 
-2. You will download a data file from this workshop for your APIs. You can download it by clicking on the following text link: [Download ORDS-REST-DEMO.sql here](./files/ORDS-REST-DEMO.sql). Then, return back to your browser window.
+2. You will download a data file from this workshop for your APIs. You can download it by clicking on the following text link: [Download ORDS-REST-DEMO.sql here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/skySkRjML6D7AMy_dkaT0sNqFslo8lBl8LRPdlfCEMb2-pt6F6UMIC4ptCRIxmX_/n/c4u04/b/solutions-library/o/ORDS-REST-DEMO.sql). Then, return back to your browser window.
 
 3. Click on **Choose File** and select **ORDS-REST-DEMO.sql**, the file you just downloaded for this workshop.
+
+    ![](./images/25.png " ")
 
 4. Finish by clicking on **Import**.
 
@@ -73,7 +71,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
     ![](./images/10new.png " ")
 
 
-### **STEP 2**: Create APIs
+## Task 1: Create APIs
 
 1. Click on **warehouseAPI** to show the API template list.
 
@@ -96,15 +94,18 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 7. Change the **Source Type** to **Query**.
 
 8. Then, input the following into the Source box:
-> select * from OOW\_DEMO\_REGIONS
+
+    ```
+    <copy>select * from OOW_DEMO_REGIONS</copy>
+    ```
 
 9. Finish by clicking on **Create Handler**.
 
     ![](./images/14new.png " ")
 
-### **STEP 3**: Check and Test APIS
+## Task 1: Check and Test APIS
 
-1. You have now imported and created various RESTful APIs with APEX. 
+1. You have now imported and created various RESTful APIs with APEX.
 
 2. Grab the **Full URL** of the regions API you just created and paste it into your browser and press the enter button.
 
@@ -122,25 +123,31 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/18.png " ")
 
-## Part 3. Use HTML Web Page to Consume APIs
-
-### **STEP 1**: Copy API URLs
+## Task 1: Copy API URLs
 
 1. Under **warehouseAPI**, click on the **stores** API and copy the **Full URL** and paste it into a separate notes file (i.e. Notepad, Microsoft Word, Apple Notes, etc.) to be used later.
 
-    ![](./images/17v1.png " ")
+    ![](./images/17new.png " ")
 
 2. Next, do the same with the following 2 APIs, copying each **Full URL** and pasting each into that same separate notes file.  Be sure to label which URL is which so that you do not confuse them later.
-> product/inventoryForecastingAPI/{store\_add\}
-> product/trendingProductAPI/{store\_add\}
+    ```
+    <copy>
+    product/inventoryForecastingAPI/{store_add}
+    </copy>
+    ```
+    ```
+    <copy>
+    product/trendingProductAPI/{store_add}
+    </copy>
+    ```
 
    ![](./images/17v2.png " ")
 
    ![](./images/17v3.png " ")
 
-### **STEP 2**: Add API URLs to Web Page Code
+## Task 1: Add API URLs to Web Page Code
 
-1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](./files/WebPage.zip).
+1. You will download a data file from this workshop for your web page. You can download it by clicking on the following text link: [Download WebPage.zip here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RiNrtEdLlGsZEEXq8aK8fYACsPkqvULFhfVgMASf9jg9hp4uDJb0BGGn8_Thgjr_/n/c4u04/b/solutions-library/o/WebPage.zip).
 
 2. Then, go to your Downloads folder and unzip the .zip file.
 
@@ -150,13 +157,13 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 5. Next, copy your ‘Inventory Forecasting’ API URL, from your notes, into the "inventory forecast api url" variable in the code using the **DEFINE INVENTORY FORECAST API REQUEST URL** instructions provided in the code. (Note: Be sure to read the instructions carefully, as they are different than the instructions for the ‘stores’ API URL.)
 
--   **NOTE: When pasting the Inventory Forecasting API URL, erase everything after inventoryForecastingAPI/ . Make sure to keep the / character at the end**. Here is how your .js file should look:
+    **NOTE: When pasting the Inventory Forecasting API URL, erase everything after inventoryForecastingAPI/ . Make sure to keep the / character at the end**. Here is how your .js file should look:
 
     ![](./images/21version2.png " ")
 
 6. Once you have replaced the two URLs, you must resave the file. (Note: Make sure that you keep the .js file type when you save the file in your text editor. Also, be sure that when you are saving the updated file, you are replacing the original file in the **WebPage** folder.)
 
-### **STEP 3**: Test API Calls on Web Page
+## Task 1: Test API Calls on Web Page
 
 1. You have now implemented your API URLs from APEX into the code for the HTML Web Page, so your APIs are ready to be consumed!
 
@@ -168,7 +175,7 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
     ![](./images/22new.png " ")
 
-5. Once you select a store from the dropdown, you can click the **See Store Details** button to see the product details for the selected store.
+5. Once you select a store from the dropdown, you can click the **View Store Details** button to see the product details for the selected store.
 
     ![](./images/23new.png " ")
 
@@ -182,8 +189,6 @@ This lab walks you through the steps to enabling Oracle Restful Data Services (O
 
 ## Acknowledgements
 
-- **Author** - NATD Solution Engineering - Austin Hub (Jess Rein, Philip Pavlov)
-- **Last Updated By/Date** - Jess Rein, Solutions Engineer, March 2020
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
-
+- **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
+- **Contributor** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
+- **Last Updated By/Date** - Kamryn Vinson, June 2021

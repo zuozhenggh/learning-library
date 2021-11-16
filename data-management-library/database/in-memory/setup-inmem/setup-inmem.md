@@ -2,47 +2,71 @@
 
 ## Introduction
 
-### Objectives
-
--   Learn how to enable In-Memory on the Oracle Database
--   Explore various views to monitor In-Memory
-
-### Lab Prerequisites
-
-This lab assumes you have completed the following labs:
-* Lab: Login to Oracle Cloud
-* Lab: Generate SSH Key
-* Lab: Setup
-
-### Lab Preview
+In this lab, you will explore how to enable In-Memory on the Oracle Database and various views to monitor In-Memory.
 
 Watch the video below to get an explanation of enabling the In-Memory column store.
 
 [](youtube:dZ9cnIL6KKw)
 
+Quick walk through on how to enable In-Memory.
 
-## Step 1: Run the In-Memory Setup Scripts
-1.  Run this command to setup the schema, SSB, you will use for this lab.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
+[](youtube:oCES149OPeE)
+
+Estimated Time: 30 minutes
+
+### Objectives
+
+-   Learn how to enable In-Memory on the Oracle Database
+-   Explore various views to monitor In-Memory
+
+### Prerequisites
+
+This lab assumes you have completed the following labs:
+* Lab: Generate SSH Key (FreeTier and Paid accounts)
+* Lab: Environment Setup or Verify Setup
+
+## Task 0: Download the Lab Files
+
+1.  Open up the Oracle Cloud Shell or terminal of your choice and login to the compute instance you created in the previous lab.
+
+
+2.  Copy the following commands into your terminal.  These commands download the files needed to run the lab.
+
+    Note: If you are running in windows using putty, ensure your Session Timeout is set to greater than 0
+
     ````
     <copy>
     cd /home/opc/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/axp5T8m0cF0_p1N832Qo6ImwczP_V6bSQi9ABLti6Ug/n/c4u03/b/labfiles/o/inmemoryscript.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/7rIEJ9j2b0Tb67wW4ZGojy6ZD8UPS-ixDFC7QqLviXwoxDy2JRPNBn4RgSbS9ONd/n/c4u04/b/labfiles/o/multiscripts.zip
+    unzip multiscripts.zip; chmod +x *.sh
+    /home/opc/setupenv.sh
+    </copy>
+    ````
+
+## Task 1: Run the In-Memory Setup Scripts
+1.  Run this command to setup the schema, SSB, you will use for this lab.   This script takes about 15 minutes to complete.   It downloads the ssb.dmp file and then imports it.
+
+
+    ````
+    <copy>
+    cd /home/opc/
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iqwKnLwXAfgpXwrJCJzpG1VWi1AjJW7JL8Bzl9OP00VCEzzG5NhPn201Sj5qVLWC/n/c4u04/b/labfiles/o/inmemoryscript.sh
     chmod +x /home/opc/inmemoryscript.sh
     nohup /home/opc/inmemoryscript.sh &> setupinmem.out&
     </copy>
     ````
-    ![](./images/ssbexists.png " ") 
+    ![](./images/ssbexists.png " ")
 
-2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expeted.  The script should finish with 1 error*
+2.  To check the status of the script above run the command below.   You can also use the unix **jobs** command to see if the script is still running.  *Note:  Ignore the error that the SSB User exists, that is expected.  The script should finish with 1 error*
 
     ````
     <copy>
     tail -f /home/opc/setupinmem.out
     </copy>
     ````
-    ![](./images/inmemcomplete.png " ") 
+    ![](./images/inmemcomplete.png " ")
 
-## Step 2: Logging In and Enabling In-Memory
+## Task 2: Logging In and Enabling In-Memory
 
 1.  All scripts for this lab are stored in the labs/inmemory folder and are run as the oracle user.  Let's navigate there now.  We recommend you type the commands to get a feel for working with In-Memory. But we will also allow you to copy the commands via the COPY button.
 
@@ -57,61 +81,77 @@ Watch the video below to get an explanation of enabling the In-Memory column sto
 2. In-Memory is integrated into Oracle Database 12c and higher.  The IM column store is not enabled by default, but can be easily enabled via a few steps.  Before you enable it, let's take a look at the default configuration. Set your oracle environment
 
     ````
-    . oraenv
+    <copy>. oraenv</copy>
     ORCL
     ````
-     ![](images/step1num1.png) 
+     ![](images/step1num1.png)
 
     ````
     <copy>
     sqlplus / as sysdba
+    </copy>
+    ````
+
+    ````
+    <copy>
     show sga;
-    show parameter inmemory; 
+    </copy>
+    ````
+
+    ````
+    <copy>
+    show parameter inmemory;
+    </copy>
+    ````
+
+    ````
+    <copy>
     show parameter keep;
     </copy>
     ````
 
-     ![](images/step1num2.png) 
+     ![](images/step1num2.png)
 
     Notice that the SGA is made up of Fixed Size, Variable Size, Database Buffers and Redo.  There is no In-Memory in the SGA.  Let's enable it.
 
 3.  Enter the commands to enable In-Memory.  The database will need to be restarted for the changes to take effect.
-   
+
     ````
     <copy>
     alter system set inmemory_size=2G scope=spfile;
+    alter system set db_keep_cache_size=2G scope=spfile;
     shutdown immediate;
     startup;
     </copy>
     ````
-     ![](images/step1num3.png) 
+     ![](images/step1num3.png)
 
 
 4.  Now let's take a look at the parameters.
-   
+
     ````
     <copy>
     show sga;
-    show parameter inmemory; 
+    show parameter inmemory;
     show parameter keep;
     exit
     </copy>
     ````
-     ![](images/step1num4.png) 
+     ![](images/step1num4.png)
 
-## Step 3: Enabling In-Memory
+## Task 3: Enabling In-Memory
 
-The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssb account. 
+The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called pdb1 you must supply this alias when connecting to the ssb account.
 
 1.  Login to the pdb as the SSB user.  
     ````
     <copy>
-    sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
+    sqlplus ssb/Ora_DB4U@localhost:1521/pdb1
     set pages 9999
     set lines 200
     </copy>
     ````
-     ![](images/num1.png) 
+     ![](images/num1.png)
 
 2.  The In-Memory area is sub-divided into two pools:  a 1MB pool used to store actual column formatted data populated into memory and a 64K pool to store metadata about the objects populated into the IM columns store.  V$INMEMORY_AREA shows the total IM column store.  The COLUMN command in these scripts identifies the column you want to format and the model you want to use.  
 
@@ -125,7 +165,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     select * from v$inmemory_area;
     </copy>
     ````
-     ![](images/num2.png) 
+     ![](images/num2.png)
 
 3.  To check if the IM column store is populated with object, run the query below.
 
@@ -135,7 +175,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     column owner format a20
     --QUERY
 
-    select v.owner, v.segment_name name, v.populate_status status from v$im_segments v; 
+    select v.owner, v.segment_name name, v.populate_status status from v$im_segments v;
     </copy>
     ````
      ![](images/num3.png)   
@@ -169,26 +209,26 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
     --QUERY    
 
     SELECT table_name, cache, buffer_pool, compression, compress_for, inmemory,
-        inmemory_priority, inmemory_distribute, inmemory_compression 
-    FROM   user_tables; 
+        inmemory_priority, inmemory_distribute, inmemory_compression
+    FROM   user_tables;
     </copy>
     ````
      ![](images/step2num5.png)   
 
-By default the IM column store is only populated when the object is accessed.
+    By default the IM column store is only populated when the object is accessed.
 
 6.  Let's populate the store with some simple queries.
 
     ````
     <copy>
-    SELECT /*+ full(d)  noparallel (d )*/ Count(*)   FROM   date_dim d; 
-    SELECT /*+ full(s)  noparallel (s )*/ Count(*)   FROM   supplier s; 
-    SELECT /*+ full(p)  noparallel (p )*/ Count(*)   FROM   part p; 
-    SELECT /*+ full(c)  noparallel (c )*/ Count(*)   FROM   customer c; 
-    SELECT /*+ full(lo)  noparallel (lo )*/ Count(*) FROM   lineorder lo; 
+    SELECT /*+ full(d)  noparallel (d )*/ Count(*)   FROM   date_dim d;
+    SELECT /*+ full(s)  noparallel (s )*/ Count(*)   FROM   supplier s;
+    SELECT /*+ full(p)  noparallel (p )*/ Count(*)   FROM   part p;
+    SELECT /*+ full(c)  noparallel (c )*/ Count(*)   FROM   customer c;
+    SELECT /*+ full(lo)  noparallel (lo )*/ Count(*) FROM   lineorder lo;
     </copy>
     ````
-     ![](images/step2num6.png) 
+     ![](images/step2num6.png)
 
 7. Background processes are populating these segments into the IM column store.  To monitor this, you could query the V\$IM\_SEGMENTS.  Once the data population is complete, the BYTES\_NOT\_POPULATED should be 0 for each segment.  
 
@@ -202,14 +242,14 @@ By default the IM column store is only populated when the object is accessed.
     column bytes_not_populated format 999,999,999,999,999
     --QUERY
 
-    SELECT v.owner, v.segment_name name, v.populate_status status, v.bytes bytes_in_mem, v.bytes_not_populated 
+    SELECT v.owner, v.segment_name name, v.populate_status status, v.bytes bytes_in_mem, v.bytes_not_populated
     FROM v$im_segments v;
     </copy>
     ````
 
-     ![](images/lab4step7.png) 
+     ![](images/lab4step7.png)
 
-8.  Now let's check the total space usage. 
+8.  Now let's check the total space usage.
 
     ````
     <copy>
@@ -221,21 +261,20 @@ By default the IM column store is only populated when the object is accessed.
     </copy>
     ````
 
-    ![](images/part1step8a.png) 
+    ![](images/part1step8a.png)
 
-    ![](images/part1step8b.png) 
+    ![](images/part1step8b.png)
 
-In this Step you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a new static pool in the SGA, and once allocated it can be resized dynamically, but it is not managed by either of the automatic SGA memory features. 
+In this Step you saw that the IM column store is configured by setting the initialization parameter INMEMORY_SIZE. The IM column store is a new static pool in the SGA, and once allocated it can be resized dynamically, but it is not managed by either of the automatic SGA memory features.
 
-You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this Lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
+You also had an opportunity to populate and view objects in the IM column store and to see how much memory they use. In this lab we populated about 1471 MB of compressed data into the  IM column store, and the LINEORDER table is the largest of the tables populated with over 23 million rows.  Remember that the population speed depends on the CPU capacity of the system as the in-memory data compression is a CPU intensive operation. The more CPU and processes you allocate the faster the populations will occur.
 
 Finally you got to see how to determine if the objects were fully populated and how much space was being consumed in the IM column store.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Sr. Principal Product Manager, Oracle Database In-Memory
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, March 2020
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request.    Please include the workshop name and lab in your request. 
+- **Contributors** - Kay Malcolm, Director, DB Product Management
+- **Last Updated By/Date** - Didi Han, DB Product Management, May 2021

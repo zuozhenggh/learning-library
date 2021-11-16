@@ -1,30 +1,48 @@
 # Introduction
 
-Oracle Machine Learning is a powerful technique for analyzing data, and in this sequence of labs we will show you how to apply it to the most valuable data in your organization - existing enterprise data in Oracle Database. If you are an Oracle data professional but not a data scientist, this workshop will take you through your first machine learning project from data preparation to successful deployment of a model integrated into an APEX application.
+## About this Workshop
 
-Watch the video below for an introduction to Oracle Machine Learning and brief demo.
+Oracle Machine Learning is a powerful technique for analyzing data, and in this sequence of labs, we will show you how to apply it to the most valuable data in your organization - existing enterprise data in Oracle Database. If you are an Oracle data professional but not a data scientist, this workshop will take you through your first machine learning project from data preparation to a successful deployment of a model integrated into an APEX application.
+
+Watch the quick video on introduction to Oracle Machine Learning.
+
+[](youtube:O_BzGrIh5_Y)
+
+Estimated Workshop Time: 2 hours
+
+### Workshop Scenario - Alpha Office
+
+To illustrate this, you are going to work with Alpha Office, a fictitious company that sells high-cost products on installment plans. They have noticed that revenues and margins are down somewhat, and that appears to be because too many customers purchase a product, but then are not able to keep up the payments. They return the product which then has to be sold as used or refurbished.
+
+Alpha Office can purchase credit score information, but they need more than that. They need to be able to include data that predicts the likelihood of a customer being unable to continue payments and “involuntarily churning”. They need to do a better job of approvals to cut down this problem. So for each applicant, they need to determine if they have a suitable credit and payment profile. You are going to use machine learning, and customer data from their data warehouse, to build, train, and deploy a model that will do just that for them.
+
+This is a fictitious example, but it reflects a real-world need. You keep your most valuable data in Oracle Database. But do you get the most value out of that data? Are there business problems that you could help your company to solve with machine learning? After you have completed this lab, you will have some of the core expertise to start applying machine learning to your company’s data and business problems. We wish you lots of success!
+
+Watch the brief video below on Credit Scoring Predictions notebook.
 
 [](youtube:MMfgcD3sC9I)
 
-## Workshop Scenario - Alpha Office
+### Objective
 
-To illustrate this, you are going to work with Alpha Office, a fictitious company who sells high cost products on installment plans. They have noticed that revenues and margins are down somewhat, and that appears to be because too many customers purchase a product, but then are not able to keep up the payments. They return the product which then has to be sold as used or refurbished. 
+In this workshop you will:
+- Provision an Autonomous Database and load data into the ADW
+- Create machine learning model
+- Migrate machine learning model into ATP
+- Use prediction in an application
 
-Alpha Office can purchase credit score information, but they need more than that. They need to be able to include data that predicts the likelihood of a customer being unable to continue payments and “involuntarily churning”. They need to do a better job on approvals to cut down this problem. So for each applicant they need to determine if they have a suitable credit and payment profile. You are going to use machine learning, and customer data from their data warehouse, to build, train and deploy a model that will do just that for them.
+### Prerequisites
 
-This is a fictitious example, but it reflects a real world need. You keep your most valuable data in Oracle Database. But do you get the most value out of that data? Are there business problems that you could help your company to solve with machine learning? After you have completed this lab, you will have some of the core expertise to start applying machine learning to your company’s data and business problems. We wish you lots of success!
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
-We will lead you through all the steps to create an Oracle Cloud trial account, provision the services you need, and do the needed machine learning work. If you have an existing personal or company cloud account you are welcome to use that. Otherwise, the first step (if you haven’t already done so) is to create a free Oracle Cloud trial account, following the link below. You can complete this lab using just the free tier, though feel free to experiment with other services, since the free tier comes with a $300 credit valid for 30 days. As soon as you have an account, login and proceed to Lab 1. (Note that although the sign-up process will ask for a credit card, we will not charge that card unless you decide to upgrade to a paid subscription. So it’s safe to sign up - you won’t get an unexpected bill like with some other cloud vendors).
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## More Information on Oracle Machine Learning
+## Learn More
 
 [Oracle Machine Learning Product Page](https://www.oracle.com/database/technologies/datawarehouse-bigdata/machine-learning.html)
-
 
 ## Acknowledgements
 
 - **Authors/Contributors** - Derrick Cameron, Leah Bracken, Charlie Berger
-- **Last Updated By/Date** - Kay Malcolm, April 2020
-- **Workshop Expiration Date** - April 31, 2021
-
-See an issue?  Please open up a request [here](https://github.com/oracle/learning-library/issues).   Please include the workshop name and lab in your request. 
+- **Contributors** - Anoosha Pilli, Arabella Yao, Ayden Smith, Jeffrey Malcolm Jr, LiveLabs QA
+- **Last Updated By/Date** - Arabella Yao, August 2021
+- **Workshop Expiration Date** - March 31, 2022

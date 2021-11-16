@@ -8,7 +8,13 @@ The CLI is built on Python (version 2.7.5 or later), running on Mac, Windows, or
 
 This lab walks you through some examples using the OCI CLI for Exadata Cloud Service.
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+### Need Help?
+Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
+
+If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+Watch the video below for an overview on how to use OCI CLI commands to work with ExaCS
+
+<div style="max-width:768px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2171811/sp/217181100/embedIframeJs/uiconf_id/35965902/partner_id/2171811?iframeembed=true&playerId=kaltura_player&entry_id=1_c3lmxz1b&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_hygolyr9" width="768" height="432" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Kaltura Player" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe></div></div>
 
 ## Objectives
 
@@ -34,7 +40,7 @@ Note:
 
 ## Steps
 
-### **STEP 1: Connect to development client instance and verify OCI CLI version**
+### **Task 1: Connect to development client instance and verify OCI CLI version**
 
 To ensure OCI-CLI installed is the correct version needed for Exadata Cloud Service database, lets ssh into the dev client host and check version
     
@@ -46,7 +52,7 @@ oci --version</copy>
 
 
 
-### **STEP 2: Configure OCI CLI**
+### **Task 2: Configure OCI CLI**
 
 - This step describes the required configuration for the CLI and includes optional configurations that enable you to extend CLI functionality.
 
@@ -86,7 +92,7 @@ oci --version</copy>
     - **Enter a name for your key [oci_api_key]**: Press Return key
     - **Enter a passphrase for your private key (empty for no passphrase)**: Press Return key
     
-### **STEP 3: Add public key to Oracle Cloud Infrastructure**
+### **Task 3: Add public key to Oracle Cloud Infrastructure**
 
 - Now that you have a private / public key combo , you must add it to OCI Console:
 
@@ -121,7 +127,7 @@ Once you add the key run the below command to autocomplete OCI setup.
 
 ![](./images/oci-cli/OCISetupAutocomplete.png " ")
 
-### **STEP 4: Interacting with Oracle Exadata Cloud Service Database**
+### **Task 4: Interacting with Oracle Exadata Cloud Service Database**
 
 Now that you have setup OCI CLI, let us now look at examples of using Exadata Cloud Service Database. 
 
