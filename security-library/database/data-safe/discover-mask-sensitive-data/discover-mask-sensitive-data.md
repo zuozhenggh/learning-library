@@ -262,7 +262,7 @@ After you create a masking policy, you can run a data masking job against your t
 
 6. Review the Data Masking report in PDF format, and then close it.
 
-*Reviewer: I need a screenshot*
+*Reviewer: I need a screenshot for this*
 
 
 ## Task 7: Validate the masked data in your database
