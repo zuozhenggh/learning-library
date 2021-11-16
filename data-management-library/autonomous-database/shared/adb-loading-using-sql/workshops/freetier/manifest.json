@@ -5,7 +5,7 @@
       {
         "title": "Workshop Introduction",
         "description": "Inroduction to this workshop",
-        "filename": "../workshop-intro/workshop-intro.md"
+        "filename": "../../workshop-intro/workshop-intro.md"
       },
       {
         "title": "Getting Started",
@@ -15,22 +15,22 @@
       {
         "title": "Lab 1: Provisioning an Autonomous Database",
         "description": "Provisioning an Autonomous Database",
-        "filename": "../adb-provision-8ocpu/adb-provision-8ocpu.md"
+        "filename": "../../adb-provision-8ocpu/adb-provision-8ocpu.md"
       },
       {
         "title": "Lab 2: Loading Movie Sales Data",
         "description": "Loading Movie Sales Data",
-        "filename": "../loading-movie-sales-data/loading-movie-sales-data.md"
+        "filename": "../../loading-movie-sales-data/loading-movie-sales-data.md"
       },
       {
         "title": "Lab 3: Enabling Data Integrity",
         "description": "Enabling Data Integrity",
-        "filename": "../enabling-data-integrity/enabling-data-integrity.md"
+        "filename": "../../enabling-data-integrity/enabling-data-integrity.md"
       },
       {
         "title": "Lab 4: Updating the Sales Data",
         "description": "Finding Our Most Important Customers",
-        "filename": "../updating-sales-data/updating-sales-data.md"
+        "filename": "../../updating-sales-data/updating-sales-data.md"
       },      
       {
         "title": "Need Help?",
