@@ -54,15 +54,15 @@ First we are going to create an compartment. This allows for separation as well 
 
     ![Create Groups - Next group dataflow-admin](./images/newgroup2.png " ")
 
-Not all of these groups are needed in this lab, however, it is important to provide separation of duties for managing the lakehouse and these roles with policies will allow for that.
-Additional groups to create:
-- data-catalog-admin
-- data-catalog-users
-- data-flow-admin
-- data-flow-users
-- data-integration-admin
-- data-integration-users
-- data-lakehouse-admin
+    Not all of these groups are needed in this lab, however, it is important to provide separation of duties for managing the lakehouse and these roles with policies will allow for that.
+    Additional groups to create:
+    - data-catalog-admin
+    - data-catalog-users
+    - data-flow-admin
+    - data-flow-users
+    - data-integration-admin
+    - data-integration-users
+    - data-lakehouse-admin
 
     After these groups are added. Click on a group and click on Add User. You will add your account you signed into the cloud with to each of the groups for the purpose of the lab. Ideally there will be the administrator accounts that would only be in the admin groups and those wanting to execute and view the values will be the user accounts in the user groups.
 
@@ -114,16 +114,16 @@ Creating Object Storage Buckets allows for various types of data to be stored. F
 
 From the Home Menu click on Storage and then click on Buckets.
 
-![Create Storage Bucket](./images/object_storage1.png " ")
+   ![Create Storage Bucket](./images/object_storage1.png " ")
 
-Enter a Bucket Name, dataflow-warehouse and use the rest of the defaults and click Create.
+   Enter a Bucket Name, dataflow-warehouse and use the rest of the defaults and click Create.
 
-![Create Storage Bucket](./images/create_bucket.png " ")
+   ![Create Storage Bucket](./images/create_bucket.png " ")
 
-Next bucket, click on Create Bucket, Bucket Name, dataflow-logs and use the rest of the defaults and click Create.
-And one more Create Bucket, Bucket Name, moviestream-bucket and again use the defaults and click Create.
+   Next bucket, click on Create Bucket, Bucket Name, dataflow-logs and use the rest of the defaults and click Create.
+    And one more Create Bucket, Bucket Name, moviestream-bucket and again use the defaults and click Create.
 
-![Create Storage Bucket](./images/create_bucket2.png " ")
+   ![Create Storage Bucket](./images/create_bucket2.png " ")
 
 The dataflow buckets are for the processing of the data and logs and the moviestream-bucket data will allow you keep copies of the data for loading and processing.
 
