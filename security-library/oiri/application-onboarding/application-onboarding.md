@@ -103,6 +103,7 @@ This lab assumes you have:
 2. Select the Application box on the Manage tab.
 
     ![](images/11-application.png)
+    ![](images/11a-application.png)
 
 3. On the Applications page, click the Create menu on the toolbar, and then select the *Target* option to create a Target application.
 
