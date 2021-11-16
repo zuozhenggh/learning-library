@@ -151,7 +151,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_6_3.png " ")
 
-4. You will download a dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download Transactions_History.xlsx here](./files/Transactions_History.xlsx). Then, open your browser window again back to the APEX page.
+4. You will download a dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download Transactions_History.xlsx here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Z4cj61ZOj2ZNRp5SIEsqMB59Ue7I6CDGXtKKSDB-qFcWF4cwwXbCYVgrsPv6lis_/n/c4u04/b/solutions-library/o/Transactions_History.xlsx). Then, open your browser window again back to the APEX page.
 
 5. Continue by clicking on **Load Data** which allows you to load CSV, XLSX, XML, and JSON data.
 
@@ -173,7 +173,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_6_9.png " ")
 
-10. You will download another dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download US_CENSUS.csv here](./files/US_CENSUS.csv). 
+10. You will download another dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download US_CENSUS.csv here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0OzBrmXbolOgT0_sVANJFSTY0UzhlfBBVxpiEtReFvuCy-K8wspaDPcf2nVMH5FA/n/c4u04/b/solutions-library/o/US_CENSUS.csv). 
 
 11. Then, open your browser window and navigate back to the **Data Workshop** section in APEX to then click **Load Data** again for this new file.
 
