@@ -34,7 +34,7 @@ This lab assumes you have:
     <copy>CREATE UNIQUE INDEX idx_msf_order_num ON MOVIE_SALES_FACT(order_num);
     ALTER TABLE movie_sales_fact ADD primary KEY (order_num) USING INDEX idx_msf_order_num;</copy>
     ```
-    **NOTE:**  These two statements may take a 1-2 minutes to complete.
+    **NOTE:** These two statements may take a few minutes to complete. If you encounter an 'index does not exist' error running the two statements in sequence, run one and then the other.
 
 ## Task 2: Testing that the New Constraint Works
 
