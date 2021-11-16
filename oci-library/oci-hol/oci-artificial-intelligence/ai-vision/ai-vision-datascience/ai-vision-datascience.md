@@ -207,7 +207,7 @@ Each notebook contains certain feature demos as mentioned below.
 </table>
 
 ### 1. Download and Upload the Files
-Download [Document AI Demo 1](./files/document_demo1.ipynb) and [Document AI Demo 2](./files/decument_demo2.ipynb) files and upload them in the Notebook. 
+Download [Document AI Demo 1](./files/document_demo1.ipynb) and [Document AI Demo 2](./files/document_demo2.ipynb) files and upload them in the Notebook. 
     ![](./images/uploadFiles2.png " ")
 
 
