@@ -6,6 +6,10 @@ In this lab you will use Database Actions/SQL Developer Web to connect to your D
 
 Estimated Lab Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:xr957th1h3U)
+
 ### Objectives
 
 - Create and Auto-REST enable a table
@@ -117,7 +121,7 @@ This lab assumes you have completed the following labs:
 
     ![Click the copy icon for GET ALL](./images/sdw-39.png)
 
-6. You can use this** cURL command** we just copied in the **OCI Cloud Shell** or on your local compute if cURL is installed. Here is the command running:
+6. You can use this** cURL command** we just copied in the **Oracle Cloud Infrastructure Cloud Shell** or on your local compute if cURL is installed. Here is the command running:
 
     ```
     >curl --location \

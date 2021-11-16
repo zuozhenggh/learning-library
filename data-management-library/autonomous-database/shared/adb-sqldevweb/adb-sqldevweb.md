@@ -6,6 +6,10 @@ In this lab, you will explore the provided sample data sets that come with your 
 
 Estimated Time: 5 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:/t1f-N-CaqWA)
+
 ### Before you begin
 
 This lab uses SQL Worksheet, one of the features of the Database Actions web-based interface for Oracle Autonomous Database.
@@ -86,7 +90,7 @@ Run a query on a sample Oracle Autonomous Database data set.
 
 Please *proceed to the next lab*.
 
-## Want to learn more?
+## Learn more
 
 Go to [the documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sql-developer-web.html#GUID-102845D9-6855-4944-8937-5C688939610F) on connecting with the built-in Oracle Database Actions.
 

@@ -1,4 +1,4 @@
-# Provision Autonomous Database
+# Provision Oracle Autonomous Database
 
 ## Introduction
 
@@ -6,19 +6,23 @@ In this lab, you will provision the Oracle Autonomous Database (ADB) instance an
 
 Estimated Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:dhCPeTAErtY)
+
 ### Objectives
 
 In this lab, you will:
 
 - Provision an Oracle Autonomous Transaction Processing (ATP)instance
 - Create a new database user using Database Actions
-- Connect to Autonomous Transaction Processing database as a new user from SQL Developer Web
+- Connect to Oracle Autonomous Transaction Processing database as a new user from SQL Developer Web
 
 ### Prerequisites
 
 This workshop assumes you have:
 
-- Logged in to your own cloud account or a LiveLabs account.
+- An Oracle Free Tier, Always Free, Paid, or LiveLabs Cloud Account
 
 ## Task 1: Provision an ATP Instance
 
@@ -26,7 +30,7 @@ This workshop assumes you have:
 
     ![Select region on the far upper-right corner of the page.](./images/task3-1.png " ")
 
-2. Once you are logged in, you can view cloud services dashboard where all the services available to you. Click on navigation menu, search Oracle Database and choose Autonomous Transaction Processing (ATP).
+2. Once you are logged in, you can view cloud services dashboard where all the services available to you. Click on navigation menu, search **Oracle Database** and choose **Autonomous Transaction Processing** (ATP).
 
     **Note:** You can also directly access your Autonomous Transaction Processing service in the **Quick Actions** section of the dashboard.
 
@@ -43,7 +47,7 @@ This workshop assumes you have:
 
 5.  This brings up the **Create Autonomous Database** screen. Specify the configuration of the instance:
     - **Compartment** - Select a compartment for the database from the drop-down list.
-    - **Display Name** - Enter a memorable name for the database for display purposes. This lab uses **DEMOATP** as the Autonomous Database display name.
+    - **Display Name** - Enter a memorable name for the database for display purposes. This lab uses **DEMOATP** as the Oracle Autonomous Database display name.
     - **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) This lab uses **DEMOATP** as the database name.
 
     ![Enter the required details.](./images/task3-5.png " ")
@@ -51,7 +55,7 @@ This workshop assumes you have:
 6. Choose a workload type, deployment type and configure the database:
     - **Choose a workload type** - For this lab, choose __Transaction Processing__ as the workload type.
     - **Choose a deployment type** - For this lab, choose **Shared Infrastructure** as the deployment type.
-    - **Always Free** - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you to check **Always Free**.
+    - **Always Free** - If your Cloud Account is an Always Free account, you can select this option to create an always free Oracle Autonomous Database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you to check **Always Free**.
     - **Choose database version** - Select a database version 19c or 21c from the available database versions.
     - **OCPU count** - Number of CPUs for your service. Leave as it is. An Always Free databas comes with 1 CPU.
     - **Storage (TB)** - Storage capacity in terabytes. Leave as it is. An Always Free database comes with 20 GB of storage.
@@ -71,7 +75,7 @@ This workshop assumes you have:
     ![](./images/task3-72.png " ")
 
 
-8.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+8.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Oracle Autonomous Transaction Processing database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
     ![Database instance homepage.](./images/task3-81.png " ")
 
@@ -85,7 +89,7 @@ This workshop assumes you have:
 2. Give the **Username - ADMIN** and click **Next**.
     ![](./images/task4-2.png " ")
 
-3. Now give the **Password - WElcome123##** for the ADMIN user you created when you provisioned your Autonomous Database instance and click **Sign in** to sign in to Database Actions.
+3. Now give the **Password - WElcome123##** for the ADMIN user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in** to sign in to Database Actions.
     ![](./images/task4-3.png " ")
 
 4.  In Oracle Database Actions menu, select **Database Users** under Administration.
@@ -116,7 +120,7 @@ This workshop assumes you have:
     Notice that the new user is created successfully.
     ![](./images/task4-82.png " ")
 
-9. Click on the copy button for the DEMOUSER REST link and save it in a notepad. Edit the link in the notepad by removing the `/ords/demouser/_sdw/` at the end of the link and save it as Autonomous Database URL. Make sure the saved URL does not have backslash at the end.
+9. Click on the copy button for the DEMOUSER REST link and save it in a notepad. Edit the link in the notepad by removing the `/ords/demouser/_sdw/` at the end of the link and save it as Oracle Autonomous Database URL. Make sure the saved URL does not have backslash at the end.
 
     The saved link should look like this
 
@@ -134,7 +138,7 @@ This workshop assumes you have:
 2. Give the **Username - DEMOUSER** and click **Next**.
     ![](./images/task3-2-new.png " ")
 <!--
-3. Now give the **Password - WElcome123##** for the DEMOUSER user you created when you provisioned your Autonomous Database instance and click **Sign in** to sign in to Database Actions.
+3. Now give the **Password - WElcome123##** for the DEMOUSER user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in** to sign in to Database Actions.
     ![](./images/task3-3-new.png " ")
 
 1. Click on the navigation menu of the Oracle Database Actions and select **SQL** under Development.

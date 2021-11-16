@@ -26,7 +26,7 @@ In this lab, you will:
     <copy>curl -LSs https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/multicloud/verrazzano/alternate-version/bobs-books-comp-mod.yaml >~/bobs-books-comp-mod.yaml</copy>
     ```
 
-    ![Apply changes](images/1.png)
+    ![Apply changes](images/1.png " ")
 
 ## Task 2: Apply the Changes using kubectl
 
@@ -36,7 +36,7 @@ In this lab, you will:
     <copy>kubectl apply -f ~/bobs-books-comp-mod.yaml</copy>
     ```
 
-    ![Apply changes 1](images/2.png)
+    ![Apply changes 1](images/2.png " ")
 
     You can observe in the output; only *component.core.oam.dev/bobby-helidon* is configured and other components are unchanged.
 

@@ -1,10 +1,12 @@
-# Discover serverless apps using Oracle NoSQL Database Cloud Service
+# Introduction
 
 ## About this Workshop
 
 Modern applications benefit from predictable low latency, flexibility, and horizontal scale-out of NoSQL databases. Join us to learn how effortless it is to develop a modern application using Oracle Cloud Infrastructure and Oracle NoSQL Database Cloud Service. This lab is based on data from an airline baggage tracking application. This lab walks you through the steps to create tables in Oracle NoSQL Database Cloud Service (NDCS), load data into the database, and perform basic queries. In addition, it lets you use an application that was developed by the Oracle NoSQL team which has information found in an airline baggage tracking application.
 
-Estimated Time: 70 Minutes
+_Estimated Time:_ 70 Minutes
+
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/MmJHAg1F0AQ).</if>
 
 ### About NoSQL database
 Modern application developers have many choices when faced with deciding when and how to persist a piece of data. In recent years, NoSQL databases have become increasingly popular and are now seen as one of the necessary tools every application developer must have at their disposal. While 'tried and true' relational databases are great at solving classic application problems like data normalization, strict consistency, and arbitrarily complex queries to access that data, NoSQL databases take a different approach.

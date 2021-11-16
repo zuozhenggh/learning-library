@@ -8,11 +8,13 @@ The Java EE implementation offers increased functionality including a command li
 
 Watch the video below for a comprehensive overview of REST and how ORDS provides what you need to deliver RESTful Services for your Oracle Database.
 
-[](https://youtu.be/rvxTbTuUm5k)
+[](youtube:rvxTbTuUm5k)
+
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/t0MkIxMKhDo).</if>
 
 ### About this Workshop
 
-This lab will walk you through creating a REST service using Oracle REST Data Services (ORDS) on an Autonomous Database. You will start creating a table in the database and using the same UI, REST enable that table so that endpoints created for all major operations (create, update, query, delete). Next, the Batch Load API will be used to load millions of records into the database in seconds. Lastly, we will use OAuth to secure the REST service endpoints. This lab will be done entirely from within the OCI Cloud Console using Oracle Cloud Infrastructure.
+This lab will walk you through creating a REST service using Oracle REST Data Services (ORDS) on an Autonomous Database. You will start creating a table in the database and using the same UI, REST enable that table so that endpoints created for all major operations (create, update, query, delete). Next, the Batch Load API will be used to load millions of records into the database in seconds. Lastly, we will use OAuth to secure the REST service endpoints. This lab will be done entirely from within the Oracle Cloud Infrastructure Cloud Console using Oracle Cloud Infrastructure.
 
 Estimated Workshop Time: 60-90 minutes
 

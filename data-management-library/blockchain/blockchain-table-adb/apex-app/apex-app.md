@@ -6,6 +6,10 @@ In the lab, you will create an APEX workspace, define the rest end points and en
 
 Estimated time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:0vNYCULNhnI)
+
 ### Objectives
 
 In this lab, you will:
@@ -19,7 +23,8 @@ In this lab, you will:
 
 This workshop assumes you have:
 
-- All previous labs completed.
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Successfully completed the previous labs
 
 ## Task 1: Create APEX Workspace
 
@@ -27,7 +32,7 @@ This workshop assumes you have:
 
 	![](./images/task1-1.png " ")
 
-2. Click the Display Name of your Autonomous Database instance to navigate to your Autonomous Database instance details page. In this lab, click the provisioned **DEMOATP** instance.
+2. Click the Display Name of your Oracle Autonomous Database instance to navigate to your Oracle Autonomous Database instance details page. In this lab, click the provisioned **DEMOATP** instance.
 
 	![](./images/task1-2.png " ")
 
@@ -36,9 +41,9 @@ This workshop assumes you have:
     Click the **Tools** tab. Click **Open APEX**.
 	![](./images/task1-3.png " ")
 
-4. Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the Autonomous Transaction Processing instance.
+4. Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the Oracle Autonomous Transaction Processing instance.
 
-    In the lab, give the **password - WElcome123##** for the ADMIN user you created when you provisioned your Autonomous Database instance and click **Sign in to Administration** to sign in to APEX Workspace.
+    In the lab, give the **password - WElcome123##** for the ADMIN user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in to Administration** to sign in to APEX Workspace.
 	![](./images/task1-4.png " ")
 
 5. Click **Create Workspace**.

@@ -6,6 +6,10 @@ In this lab you will Securing the REST Endpoints you created in the previous lab
 
 Estimated Lab Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:oCJcYj8kbmY)
+
 ### Objectives
 
 - Create an OAuth2 token
@@ -208,7 +212,7 @@ This lab assumes you have completed the following labs:
     "output": "" 
     }'
     ```
-    and using the OCI Cloud Shell, run it again:
+    and using the Oracle Cloud Infrastructure Cloud Shell, run it again:
 
     ```
     > curl --location --request POST \
@@ -242,7 +246,7 @@ This lab assumes you have completed the following labs:
     }'
     ```    
 
-32. Now using the OCI Cloud Shell and your new cURL command with the **--header 'Authorization: Bearer VALUE'** section added with your token text, run the new cURL command. (**NOTE: your URL hostname will be different than the below command**)
+32. Now using the Oracle Cloud Infrastructure Cloud Shell and your new cURL command with the **--header 'Authorization: Bearer VALUE'** section added with your token text, run the new cURL command. (**NOTE: your URL hostname will be different than the below command**)
 
     ```
     curl -X POST --header 'Authorization: Bearer tW-AM_cDQu0l8oAsh707vw' \

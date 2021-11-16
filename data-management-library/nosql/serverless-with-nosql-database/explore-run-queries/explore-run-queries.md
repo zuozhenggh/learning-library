@@ -1,16 +1,20 @@
-# Explore data, run queries
+# Explore Data, Run Queries
 
 ## Introduction
 
-This lab picks up where lab 3 left off. We are going to explore in more detail the tables we created, load data, and execute queries using a python application.
+This lab picks up where lab 3 left off. We are going to explore in more detail the tables we created, load data, and execute queries using a Python application.
 
-Estimated Time: 25 minutes
+_Estimated Lab Time:_ 25 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:g1CATzd5wtg)
 
 ### Objectives
 
 * Understand the different tables
 * Read data with REST API
-* Read data with a python application
+* Read data with a Python application
 
 ### Prerequisites
 
@@ -22,7 +26,7 @@ Estimated Time: 25 minutes
 
 ## Task 1: Restart the Cloud Shell
 
-1. Lets get back into the Cloud Shell. From the earlier lab, you may have minimized it in which case you need to enlarge it. It is possible it may have become disconnected and/or timed out. In that case, restart it.
+1. Let's get back into the Cloud Shell. From the earlier lab, you may have minimized it in which case you need to enlarge it. It is possible it may have become disconnected and/or timed out. In that case, restart it.
 
     ![](./images/cloud-shell-phoenix.png)
 
@@ -91,7 +95,7 @@ The goal of this task is to understand the difference between the 2 data models 
     curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
     </copy>
     ````
-5. Read back the data that we just entered. Execute in the Cloud Shell. In the second two queries, we use a limit clause which limits the number of rows returned. We also use an orderby clause to sort the returned results.
+5. Read back the data that we just entered. Execute in the Cloud Shell. In the second two queries, we use a limit clause which limits the number of rows returned. We also use an order by clause to sort the returned results.
 
     ````
     <copy>
@@ -187,7 +191,7 @@ The goal of this task is to understand the difference between the 2 data models 
 
 ## Task 3: Read Data Using a Python CLI Application
 
-1. Create the python CLI application in the Cloud shell. Execute in Cloud Shell.
+1. Create the Python CLI application in the Cloud shell. Execute in Cloud Shell.
 
     ```
     <copy>
@@ -241,7 +245,7 @@ The goal of this task is to understand the difference between the 2 data models 
     WHERE d.bagInfo.flightLegs.flightNo =ANY 'BM866';
     </copy>
     ````
-    This will grab basic information for bags on flight BM866.  We are also renaming a field in the output.
+    This will grab basic information for bags on flight BM866. We are also renaming a field in the output.
 
     ````
     <copy>
@@ -266,29 +270,26 @@ The goal of this task is to understand the difference between the 2 data models 
 
 5. Write new queries to answer the following questions. This should give an appreciation of the types of queries that can be written against Oracle NoSQL Database Cloud Service.
 
-  Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD).
-  **Hint:** Every record has an actions array at: bagInfo.flightLegs.actions
+      - Retrieve the names and phone numbers for passengers that had a bag with any action on any flight leg that occurred at the Sydney Airport(SYD). **Hint:** Every record has an actions array at: bagInfo.flightLegs.actions
 
-  Find the number of bags on flight BM715.
-  **Hint:** The size of the bagInfo array represents the number of bags a passenger has checked.
+      - Find the number of bags on flight BM715. **Hint:** The size of the bagInfo array represents the number of bags a passenger has checked.
 
-  Find the names of passengers that had their bags initially loaded in Chicago.
-  **Hint:** Chicago Airport(ORD).
+      - Find the names of passengers that had their bags initially loaded in Chicago. **Hint:** Chicago Airport(ORD).
 
   **Note:** The Learn More contains a link to the SQL Reference Guide. Lab 3, Task 3 contains an example of the JSON record to look at.
 
-6. Type in **exit** to exit from the python application.
+6. Type in **exit** to exit from the Python application.
 
 7. Minimize the Cloud Shell by pressing the **minimize** key.
 
 
 ## Task 4: Clean Up
 
-This task deletes the tables that got created.
+This task deletes the tables and other OCI components that got created.
 
 <if type="paid">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **More Actions** and then **Delete** under that. This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -297,7 +298,7 @@ Set your compartment to 'demonosql'. Click the **freeTest** table, which will br
 
 <if type="freetier">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
+Set your compartment to 'demonosql'. Click the **freeTest** table, which will bring up the table details screen. Press **More Actions** and then **Delete** under that. This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -306,7 +307,7 @@ Set your compartment to 'demonosql'. Click the **freeTest** table, which will br
 
 <if type="livelabs">
 1. On the top left, go to menu, then **Databases**, then under Oracle NoSQL Database, press **Tables**
-Select your compartment. Click the **freeTest** table, which will bring up the table details screen. Press **Delete.** This will bring up a new screen and you will need to press **Delete** again.
+Select your compartment. Click the **freeTest** table, which will bring up the table details screen. Press **More Actions** and then **Delete** under that. This will bring up a new screen and you will need to press **Delete** again.
 
   ![](./images/delete-freetable.png)
 
@@ -316,29 +317,55 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
 2. Return to the 'Tables' screen and repeat the process for the **demo** and **demoKeyVal** tables.
 
 <if type="paid">
-3. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+3. If you created an API Key, delete that. It will show up as a fingerprint. Click your **Profile**, then **User Settings** and **API Key** on the left. Click the 3 dots on the right of the fingerprint you created. Click **Delete**.
+
+  ![](./images/delete-api.png)
+
+4. Remove the files added into your Cloud Shell. Open Cloud Shell and execute. Minimize Cloud Shell.
+
+    ````
+    <copy>
+    cd ~
+    rm -rf *
+    </copy>
+    ````
+
+5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Identity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
 
-4. The 'Compartments' screen appears and click **demonosql**
+6. The 'Compartments' screen appears and click **demonosql**
 
     ![](./images/select-demonosql.png)
 
-5. Press the **Delete** button. This will fire off a job that runs asynchronously.
+7. Press the **Delete** button. This will fire off a job that runs asynchronously.
 
     ![](./images/delete-demonosql.png)
 </if>
 
 <if type="freetier">
-3. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+3. If you created an API Key, delete that. It will show up as a fingerprint. Click your **Profile**, then **User Settings** and **API Key** on the left. Click the 3 dots on the right of the fingerprint you created. Click **Delete**.
+
+  ![](./images/delete-api.png)  
+
+4. Remove the files added into your Cloud Shell. Open Cloud Shell and execute. Minimize Cloud Shell.
+
+    ````
+    <copy>
+    cd ~
+    rm -rf *
+    </copy>
+    ````
+
+5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Identity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
 
-4. The 'Compartments' screen appears and click **demonosql**
+6. The 'Compartments' screen appears and click **demonosql**
 
     ![](./images/select-demonosql.png)
 
-5. Press the **Delete** button. This will fire off a job that runs asynchronously.
+7. Press the **Delete** button. This will fire off a job that runs asynchronously.
 
     ![](./images/delete-demonosql.png)
 </if>

@@ -4,12 +4,13 @@
 
 The requirements of many companies' business objectives demand the processing of very large volumes of data, in many different formats and imported from a large number of sources. To efficiently manage this information flood we need an high performance, integrated platform capable of minimizing transformations and copies while keeping secure and easy access to data.
 
-Oracle Cloud Lakehouse fully meets these challennges and becomes the primary, integrated platform for your data management and data analytics offering performance, availability and security.
+Oracle Cloud Lake House fully meets these challenges and becomes the primary, integrated platform for your data management and data analytics offering performance, availability and security.
 
-The Oracle Cloud Data Lakehouse LiveLab will demonnstrate a typical usage scenario, highlighting some of the tools building the foundation of the data lake house.
+The Oracle Cloud Data Lake House LiveLab will demonstrate a typical usage scenario, highlighting some of the tools building the foundation of the data lake house.
 
 Estimated Time: 70 minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/NnRfE-MLN-A).</if>
 
 ### Objectives
 
@@ -33,6 +34,6 @@ You will learn the following:
 
 ## Acknowledgements
 
-* **Author** - Michelle Malcher, Database Product Management
-* **Contributors** -  Massimo Castelli, Senior Director Product Management
+* **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
+* **Contributors** -  
 * **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021

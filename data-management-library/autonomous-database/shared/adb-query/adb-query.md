@@ -6,6 +6,10 @@ In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Objec
 
 Estimated Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:/PX7FrSYRTRM)
+
 ### Objectives
 
 -   Learn how to create external tables on top of files residing on the object store
@@ -63,7 +67,7 @@ Estimated Time: 10 minutes
 
 Please *proceed to the next lab*.
 
-## Want to learn more?
+## Learn more
 
 For more information about querying external data, see the documentation [Querying External Data with Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833).
 

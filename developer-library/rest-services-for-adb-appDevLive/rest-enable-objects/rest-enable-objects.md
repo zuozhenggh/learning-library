@@ -6,6 +6,10 @@ In this lab, you will use Database Actions and the REST console to build a REST 
 
 Estimated Lab Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:6Y_BArzNgaw)
+
 ### You can learn more about REST in the  **Learn More About REST** section the [introduction](../intro/intro.md) page of this lab.
 
 ### Objectives
@@ -255,7 +259,7 @@ This lab assumes you have completed the following labs:
 
     ![Copied cURL command](./images/rest-45.png)
 
-23. Using the OCI Cloud Shell, paste and run the cURL command and see that the count is returned as the output variable.
+23. Using the Oracle Cloud Infrastructure Cloud Shell, paste and run the cURL command and see that the count is returned as the output variable.
 
     ```
     curl -X POST \

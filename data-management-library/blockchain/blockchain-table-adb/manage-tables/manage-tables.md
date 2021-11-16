@@ -12,6 +12,10 @@ This lab walks you through the steps to create a Blockchain table, insert data, 
 
 Estimated Time: 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:ZEyDWdQVMhQ)
+
 ### Objectives
 
 In this lab, you will:

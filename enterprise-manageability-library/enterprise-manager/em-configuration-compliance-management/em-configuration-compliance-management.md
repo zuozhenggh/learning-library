@@ -5,6 +5,9 @@ The objective of this lab is to highlight Oracle Enterprise Manager Cloud Contro
 
 *Estimated Lab Time:* 60 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:xEKClAvB-Yg)
+
 ### About Configuration and Compliance Management
 
 Changes to configuration properties of database and host targets invariably happen, typically because of common events like patches and upgrades. At some point a change to one component can affect the overall system in a negative way. Detecting the root cause becomes paramount. With Configuration Management, one can continuously monitor and track configuration drifts of targets against the reference configuration. Enterprise Manger automatically collects a comprehensive set of configuration properties of all managed targets across the datacenter and cloud.
@@ -42,7 +45,7 @@ The IT Manager wants to get an inventory of all existing databases managed by En
 All the items in this step are read-only, primary goal is to learn about inventory usage details within Enterprise Manager for all supported targets
 
 ### Execution
-1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+1. On the browser window on the right preloaded with *Enterprise Manager*, if not already logged in, click on the *Username* field and login with the credentials provided below.
 
     ```
     Username: <copy>sysman</copy>

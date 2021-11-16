@@ -2,17 +2,19 @@
 
 ### About this Workshop
 
-Oracle MySQL Database Service is a fully managed database service that lets developers quickly develop and deploy secure, cloud native applications using the world’s most popular open-source database. MySQL Database Service is the only MySQL cloud service with an integrated, high performance, in-memory query accelerator—HeatWave. MySQL HeatWave enables customers to run sophisticated analytics directly against their operational MySQL databases—eliminating the need for complex, time-consuming, and expensive data movement and integration with a separate analytics database. HeatWave accelerates MySQL performance by orders of magnitude for analytics and mixed workloads. Optimized for Oracle Cloud Infrastructure (OCI), it is the only database service which runs on MySQL Enterprise Edition, and is 100% built, managed, and supported by the OCI and MySQL engineering teams.
+Oracle MySQL Database Service is a fully managed database service that lets developers quickly develop and deploy secure, cloud native applications using the world’s most popular open-source database. MySQL Database Service is the only MySQL cloud service with an integrated, high performance, in-memory query accelerator—HeatWave. MySQL HeatWave enables customers to run sophisticated analytics directly against their operational MySQL databases—eliminating the need for complex, time-consuming, and expensive data movement and integration with a separate analytics database. HeatWave accelerates MySQL performance by orders of magnitude for analytics and mixed workloads. Optimized for Oracle Cloud Infrastructure, it is the only database service which runs on MySQL Enterprise Edition, and is 100% built, managed, and supported by the Oracle Cloud Infrastructure and MySQL engineering teams.
 
 In this workshop, you will learn how to create a MySQL HeatWave Cluster, connect to the cluster using MySQL Shell and MySQL Workbench, and run queries on HeatWave. You will learn how easy it is to create and manage MySQL HeatWave, and how MySQL HeatWave enables you to make informed business-critical decision with real-time insights.
 
 
-Estimated Lab Time: 90 minutes
+_Estimated Lab Time:_ 90 minutes
+
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/ppolVUzOBSQ).</if>
 
 ### About Product/Technology
 MySQL HeatWave is a massively parallel, high performance, in-memory query accelerator for Oracle MySQL Database Service that accelerates MySQL performance by orders of magnitude for analytics and mixed workloads. It is the only service that enables customers to run OLTP and OLAP workloads directly from their MySQL database without the need of ETL process. MySQL Autopilot uses advanced machine-learning techniques to automates the database lifecycle operations including provisioning, data loading, query processing, and error handling. This minimizes manual administrative work and further improves HeatWave’s usability, performance, and scalability. MySQL HeatWave is also integrated with other Oracle Cloud services such as Data Integration Service and Oracle Analytics Cloud to provide a seamless end-to-end integration.
 
-MySQL Database Service with HeatWave is a fully managed service, optimized for Oracle Cloud Infrastructure (OCI). It enables you to:
+MySQL Database Service with HeatWave is a fully managed service, optimized for Oracle Cloud Infrastructure. It enables you to:
 
 -	Instantly provision MySQL instances and connect to a production ready, pre-configured MySQL database.
 -	Run OLTP and OLAP workload directly on a single MySQL platform without the need of ETL, and no change in your applications.
@@ -23,7 +25,7 @@ MySQL Database Service with HeatWave is a fully managed service, optimized for O
 
 *Lab Setup*
 
-  ![](./images/heatwave-bastion-architecture-compute.png " ") 
+  ![INTRO](./images/heatwave-bastion-architecture-compute.png " ") 
 
 
 *Introduction to HeatWave*
@@ -35,9 +37,7 @@ MySQL Database Service with HeatWave is a fully managed service, optimized for O
 
 In this lab, you will be guided through the following steps:
 
-- Create a Compartment
-- Create VCN
-- Create SSH Key on OCI Cloud Shell
+- Create SSH Key on Oracle Cloud Infrastructure Cloud Shell
 - Create MySQL Database for HeatWave (DB System) instance with sample data (airportdb)
 - Setup Compute instance
 - Connect to DB System using MySQL Shell through Compute Instance / Cloud Shell
@@ -50,7 +50,7 @@ In this lab, you will be guided through the following steps:
 ### Prerequisites
 
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Some Experience with MySQL Shell - [MySQL Site](https://dev.mysql.com/doc/mysql-shell/8.0/en/).
+* Some Experience with MySQL Shell - [MySQL Site](https://dev.MySQL.com/doc/MySQL-shell/8.0/en/).
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
