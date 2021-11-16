@@ -1,11 +1,11 @@
 {
-  "workshoptitle": "Oracle Identity Role Intelligence(OIRI) Workshop",
+  "workshoptitle": "Application Onboarding with Oracle Identity Governance (OIG) Workshop",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
       "description": "This lab provides an overview of this workshop.",
-      "filename": "../../introduction/introduction.md"
+      "filename": "../../introduction/intro-app-onboarding.md"
     },
     {
       "title": "Getting Started",
@@ -17,7 +17,7 @@
       "description": "How to download your ORM stack and update security rules for an existing VCN",
       "publisheddate": "09/28/2020",
       "filename": "../../prepare-setup/prepare-setup.md",
-      "type": "default"
+      "type": "app-onboarding"
     },
     {
       "title": "Lab 2: Environment Setup",
@@ -31,24 +31,8 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 4: Deploy Kubernetes Cluster And Start OIG Server",
-      "filename": "../../init-kub-nodes/init-kub-nodes.md"
-    },
-    {
-      "title": "Lab 5: Deploy OIRI In The Local Kubernetes Node",
-      "filename": "../../deploy-oiri/deploy-oiri.md"
-    },
-    {
-      "title": "Lab 6: Import Data into OIRI from OIG",
-      "filename": "../../data-import/data-import.md"
-    },
-    {
-      "title": "Lab 7: Role Mining",
-      "filename": "../../role-mining/role-mining.md"
-    },
-    {
-      "title": "Lab 8: Publish Roles to OIG",
-      "filename": "../../publish-roles/publish-role.md"
+      "title": "Lab 4: Application Onboarding",
+      "filename": "../../application-onboarding/application-onboarding.md"
     },
     {
       "title": "Need Help?",
