@@ -164,6 +164,8 @@ Data Discovery generates a sensitive data model that contains sensitive columns 
 
 15. From the drop-down list, select **Schema View** to sort the sensitive columns by table name.
 
+    *REVIEWER: Need to replace screenshot because I see ST_Manish in the Sensitive Type column*
+
     ![Schema View of sensitive data model](images/schema-view-sdm1.png "Schema View of sensitive data model")
 
 
