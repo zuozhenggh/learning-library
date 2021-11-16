@@ -14,6 +14,12 @@ In this workshop, you'll build a simple Human Resources visual application, usin
 
 As part of your project, you'll also create a _workspace_, a completely private area for you to work on your visual application. All your work within this space is stored in a clone of the project's Git repository, and is not visible to others until you share or publish your changes. A workspace also connects you to the development environment where you plan to host your application, which must be a separate Visual Builder (VB) instance.
 
+### Objectives
+In this lab, you will:
+* Create a project for a visual application and explore your project's environment
+* Add credentials to deploy the visual application to your Visual Builder instance
+* Add team members to your project
+
 
 ### Prerequisites
 
@@ -76,7 +82,7 @@ Everything you need to start building a visual application is now created for yo
 
 ## Task 3: Add Credentials to Deploy the Visual Application
 
-Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB  development instance.
+Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB development instance.
 
 1.  Click **Jobs** on the Builds page, then click **Configure** ![Configure icon](images/vbs-builds-configure-icon.png) for the `Visual-Application-Deploy` job.
 
@@ -108,7 +114,6 @@ For the purposes of this tutorial, let's assume that other members of your team 
 
     An email containing project details is sent to Clara Coder. Your recent activities feed is also updated.
 
-    You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 <!--* **Last Updated By** - October 2021 --!>

@@ -9,6 +9,11 @@ Estimated Time: 15 minutes
 ### Background
 In a previous lab, you used a couple of Quick Starts to create pages that let your users add departments and employees. In this lab, you'll use the rest of them to add pages for users to edit and delete departments and employees. You'll also get a chance to test your web pages as they will appear to the user.
 
+### Objectives
+In this lab, you will:
+* Add web pages to view details, edit data, and delete data
+* Test your web pages
+
 ### Prerequisites
 
 This lab assumes you have:
@@ -131,8 +136,6 @@ Now that we've added options to let users manage departments, we'll do the same 
 7.  Click **Create Employee** and specify the data for a new employee, then click **Save**. A success message appears, and the new employee is displayed in the table.
 8.  Select the new employee and click **Delete Employee**. A success message appears. The employee is no longer displayed.
 9.  Close the browser tab.
-
-    You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021

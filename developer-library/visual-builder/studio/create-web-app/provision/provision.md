@@ -9,13 +9,19 @@ Estimated Time: 20 minutes
 ### Background
 If you just created a new Cloud account following the instructions in Getting Started, you might want to wait before you attempt to create Visual Builder and VB Studio instances. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned and for the navigation menu to show. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
 
+### Objectives
+In this lab, you will:
+* Create an instance of Visual Builder
+* Create an instance of VB Studio
+* Connect your OCI account to your VB Studio instance (optional)
+
 ### Prerequisites
 This lab assumes you have:
 * An Oracle Cloud Account
 * A Chrome browser
 
 ## Task 1: Create an Instance of Visual Builder
-Provision a service instance of Visual Builder to host apps created in VB Studio. The Visual Builder instance serves as the runtime environment for the web app that you will create in VB Studio. You must provision the Visual Builder instance first, so you have it available for selection when you create a project in VB Studio.
+Provision a service instance of Visual Builder to host apps created in VB Studio. The Visual Builder instance provides the runtime environment for the web app you'll create in VB Studio. You must provision the Visual Builder instance first, so you have it available for selection as a deployment target when you create a project in VB Studio.
 
 1.  On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision:
 
@@ -72,7 +78,7 @@ Provision a service instance of VB Studio to develop and deploy your web app. Yo
 
   ![](./images/oci-free-account.png)
 
-  The free account provides a minimal set of resources (detailed [here](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-oracle-visual-builder-studio.html#GUID-759853ED-5561-4031-AC01-773D58992CA3)), sufficient to try out VB Studio. If this is enough for your needs, you can [directly jump to the next lab](#next) and get started with creating a project. If your data center does not include this free account or you want to explore more of VB Studio, continue with the following tasks to connect your own OCI account.
+  The free account provides a minimal set of resources (detailed [here](https://docs.oracle.com/en/cloud/paas/visual-builder/visualbuilder-administration/set-oracle-visual-builder-studio.html#GUID-759853ED-5561-4031-AC01-773D58992CA3)), sufficient to try out VB Studio. If this is enough for your needs, you can [jump to the next lab](#next) and get started with creating a project. If your data center does not include this free account or you want to explore more of VB Studio, continue with the following tasks to connect your own OCI account.
 
 ## Task 3: Set Up the OCI Account
 
@@ -247,9 +253,6 @@ With all the necessary information copied, connect your VB Studio instance to th
 3. Select the requirements check box, click **Validate**, then **Save**.
 
    ![](./images/oci-account.png)
-
-You may now [proceed to the next lab](#next) to create a project and run builds in VB Studio.
-
 
 ## Acknowledgements
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021

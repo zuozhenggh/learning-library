@@ -11,6 +11,11 @@ With your changes committed to a remote branch, you'll now create buttons that h
 
 You'll also populate your business objects by importing data from a file. You did this for the Location business object in a previous lab, and you'll do the same for the Department and Employee business objects here.
 
+### Objectives
+In this lab, you will:
+* Set up navigation between web pages
+* Import data for your business objects
+
 ### Prerequisites
 
 This lab assumes you have:
@@ -94,9 +99,6 @@ Let's now add data for the Department and Employee business objects. Instead of 
    Click **Close** after the file has been successfully imported. Nine employees are displayed in the table.
 
 	![](images/employees-data-import-result.png " ")
-
-  You may now [proceed to the next lab](#next).
-
 
 ## Acknowledgements
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021

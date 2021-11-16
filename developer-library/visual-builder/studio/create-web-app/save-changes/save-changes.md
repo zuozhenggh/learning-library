@@ -19,6 +19,11 @@ Saving changes to a remote branch is a two-step process: _commit_ and _push_. Th
 
 Once you commit and push your changes, all the changes from your local `hrbranch` become available to others in your project through the remote `hrbranch`.
 
+### Objectives
+In this lab, you will:
+* Commit your changes to the local repository
+* Push your changes from the local to the remote repository
+
 ### Prerequisites
 
 This lab assumes you have:
@@ -72,9 +77,6 @@ Now that your changes have been pushed, let's check them in the remote `hrbranch
     ![](images/git-view-hrbranch-logs.png " ")
 
     Now if a teammate (for example, Clara Coder) wanted to work on this web application, she could use the **Clone From Git** option on the Workspaces page to clone `hrbranch` in her workspace, then use it as a base for her updates.
-
-    You may now [proceed to the next lab](#next).
-
 
 ## Acknowledgements
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021

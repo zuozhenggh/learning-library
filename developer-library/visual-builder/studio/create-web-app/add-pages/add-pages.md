@@ -13,6 +13,11 @@ In the previous lab, you created the Location, Department, and Employee business
 
 You'll also add a **Create** button to each web page to let your users add new records (in other words, create new instances of the business object in the database).
 
+### Objectives
+In this lab, you will:
+* Add web pages to display data from business objects
+* Add web pages to create new instances of a business object
+
 ### Prerequisites
 
 This lab assumes you have:
@@ -210,9 +215,6 @@ It makes sense at this point to change the name of the main-start page to main-d
     ![](images/mainflow-json.png " ")
 
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
-
-    You may now [proceed to the next lab](#next).
-
 
 ## Acknowledgements
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021

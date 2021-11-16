@@ -13,6 +13,12 @@ No matter how you decide to save your changes, it's a good idea to always get yo
 
 Once your changes are successfully merged, VB Studio automatically deploys the web app to your environment's VB instance and creates a permanent URL to access the application.
 
+### Objectives
+In this lab, you will:
+* Create a merge request to publish your changes
+* Merge your changes and view the deployed application 
+* Import data to your deployed application
+
 ### Prerequisites
 
 This lab assumes you have:
