@@ -8,7 +8,7 @@ This hands-on lab can be run stand-alone but be aware that individual steps migh
 
 Estimated time: 3 hours.
 
-## Objectives ##
+### Objectives ###
 
 - Learn to install a new Oracle 19c Home
 - Upgrade a database by using the AutoUpgrade tool
@@ -29,13 +29,13 @@ Estimated time: 3 hours.
 - Use **Lab Contents** menu on the left side of the screen to access the labs.
     - If the menu is not displayed, click the menu button ![](./images/menu-button.png) on the top left to make it visible.
 
-- From the menu, click on the lab that you would like to run. For example, if you want to proceed to **Lab 0**, click **Lab 0: Verify the environment**.
+- From the menu, click on the lab that you would like to run. For example, if you want to proceed to **Lab 1**, click **Lab 1: Verify the environment**.
 
      ![](./images/menu.jpg "")
 
 - You may close the menu by clicking the  ![](./images/menu-button.png "") again.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements ##
 

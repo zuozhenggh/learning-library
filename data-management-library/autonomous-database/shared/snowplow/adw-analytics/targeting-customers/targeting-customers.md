@@ -46,11 +46,15 @@ We can find the customers who watched at least 1 family genre movie during a qua
 ```
 PATTERN (family+)
 ```
+The plus sign (+) after family means that at least one row must be found. The pattern defines a regular expression, which is a highly expressive way to search for patterns.
+
 And then the pattern ID defined as follows:
+
 ```
 DEFINE family as genre = 'Family',
 AND first(family.quarter_num_of_year) = last(family.quarter_num_of_year)
 ```
+
 1. The first step is to create a view over the `movie_sales_fact` table to filter the results to only show customer data for 2020. Copy and paste the following code:
 
     ```
@@ -84,13 +88,13 @@ AND first(family.quarter_num_of_year) = last(family.quarter_num_of_year)
 
 The pattern matching process can return information about the pattern it has discovered. Defining the information needed is done within the keyword  **`MEASURES`**.  In this case, we want to know the movie_id, the number of family movies that were watched by each customer and just to confirm our pattern matching process is working as expected, we return the quarter name of the first matched row and the quarter name for the pattern (*and those two columns should have identical values since that is the requirement from our business definition*):
 
-    ```
-    MEASURES
-    FIRST(family.quarter_name) AS first_quarter,
-    LAST(family.quarter_name) AS last_quarter,
-    count(family.movie_id) AS family_movies,
-    family.movie_id AS movie,
-    ```
+```
+MEASURES
+FIRST(family.quarter_name) AS first_quarter,
+LAST(family.quarter_name) AS last_quarter,
+count(family.movie_id) AS family_movies,
+family.movie_id AS movie,
+```
 
 1. Copy and paste the following code into your worksheet:
 
@@ -131,17 +135,17 @@ The pattern matching process can return information about the pattern it has dis
 
 Now that we understand how our pattern matching query is working, we can extend the pattern search criteria to include additional family-related genres by simply expanding the definition of our pattern as follows:
 
-    ```
-    PATTERN (comedy+ crime drama family+  quarter)
-    DEFINE
-    comedy as genre = 'Comedy',
-    crime as genre = 'Crime',
-    drama as genre = 'Drama',
-    family as genre = 'Family',
-    quarter as scifi.quarter_num_of_year = comedy.quarter_num_of_year
-    ```
+```
+PATTERN (comedy+ crime drama family+  quarter)
+DEFINE
+comedy as genre = 'Comedy',
+crime as genre = 'Crime',
+drama as genre = 'Drama',
+family as genre = 'Family',
+quarter as scifi.quarter_num_of_year = comedy.quarter_num_of_year
+```
 
-    **Note:** We are defining "family-related" genres as comedy, crime and drama as you can see in the above definition. The above means we are now looking for rows with at least one comedy movie, one crime movie, one drama movie and at least one family movie within a given quarter. Essentially we are looking for a specific pattern of movie streaming.
+**Note:** We are defining "family-related" genres as comedy, crime and drama as you can see in the above definition. The above means we are now looking for rows with at least one comedy movie, one crime movie, one drama movie and at least one family movie within a given quarter. Essentially we are looking for a specific pattern of movie streaming.
 
 1. If we insert the above into our first pattern matching query, we can then paste the following code into our SQL Worksheet:
 
@@ -180,17 +184,17 @@ A quick Zoom call with the marketing team reveals that they are really pleased t
 
 How can you adapt the previous query to pick out those customers that really enjoy family and sci-fi movies?  All we need to do is tweak our pattern statement! This means our pattern definition will now look like this:
 
-    ```
-    PATTERN (comedy+ crime drama family+ horror scifi+ quarter)
-    DEFINE
-    comedy as genre = 'Comedy',
-    crime as genre = 'Crime',
-    drama as genre = 'Drama',
-    family as genre = 'Family',
-    horror as genre = 'Horror',
-    scifi as genre = 'Sci-Fi',
-    quarter as LAST(scifi.quarter_num_of_year) = FIRST(comedy.quarter_num_of_year)
-    ```
+```
+PATTERN (comedy+ crime drama family+ horror scifi+ quarter)
+DEFINE
+comedy as genre = 'Comedy',
+crime as genre = 'Crime',
+drama as genre = 'Drama',
+family as genre = 'Family',
+horror as genre = 'Horror',
+scifi as genre = 'Sci-Fi',
+quarter as LAST(scifi.quarter_num_of_year) = FIRST(comedy.quarter_num_of_year)
+```
 
 
 1. We can run the following query to see how many customers match this new pattern:
@@ -286,4 +290,4 @@ Please *proceed to the next lab*.
 
 - **Author** - Keith Laker, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Keith Laker, July 2021
+- **Last Updated By/Date** - Kevin Lazarz, November 2021

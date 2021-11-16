@@ -7,7 +7,7 @@ The labs in this workshop walk you through all the steps to **develop workshops*
 ## What are Labs and Workshops?
 A lab is a new model adopted by the Database (DB) organization to enhance the tutorial experience. Labs are what the User Assistance community commonly knew as Oracle by example (OBE). Labs can be combined to form a workshop, formerly known as Hands-on Lab or HOL, or a Learning Path.
 
-An individual Markdown (.md) file is called a lab. A collection of labs is called a workshop. A workshop must contain more than one lab. You cannot create a single lab LiveLabs (LL) workshop. A LL workshop must contain more than just one lab. In most cases, this is not a problem since most of the LL workshops contain at least one common lab titled **Get Started** that guides the user on the different types of Cloud accounts.
+An individual Markdown (.md) file is called a lab. A collection of labs is called a workshop. A LiveLabs workshop must contain more than one lab. You cannot create a single lab LiveLabs (LL) workshop. In most cases, this is not a problem since most of the LL workshops contain at least one common lab titled **Get Started** that guides the user on the different types of Cloud accounts.
 
 ## What is GitHub?
 GitHub is a cloud-based version control system designed for software developers.
@@ -77,7 +77,6 @@ The following diagram shows the general workflow process that your need to follo
 ## Want to learn more about LiveLabs workshops and GitHub?
   * [Oracle LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1)
   * [Get started with GitHub](https://docs.github.com/en/get-started)
-
 
 ## Acknowledgements
 

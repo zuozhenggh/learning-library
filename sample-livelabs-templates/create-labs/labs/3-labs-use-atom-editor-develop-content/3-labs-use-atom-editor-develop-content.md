@@ -4,7 +4,7 @@
 
 You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output.
 
-**Note:** Oracle recommends the UA Developers to use Atom.
+> **Note:** Oracle recommends the UA Developers to use Atom.
 
 ### Objectives
 
@@ -183,8 +183,6 @@ This concludes this lab. You may now proceed to the next lab.
 ## Want to Learn More?
 <!-- [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 
-[LiveLabs Markdown Template Features](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New)
-
 [LiveLabs Sample Workshop](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier)
 
 [LiveLabs OCI Menu Navigation Common Path Picture](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning)) -->
@@ -200,4 +198,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Brianna Ambler
 
-* **Last Updated By/Date:** Anuradha Chepuri, October 2021
+* **Last Updated By/Date:** Lauran Serhal, November 2021
