@@ -28,7 +28,7 @@ Custom model training lets you tailor base models (through transfer learning app
 * An Oracle Free Tier, or Paid Cloud Account
 * Additional prerequisites (cloud services) are mentioned per lab
 * Familiar with OCI Policy.
-* Familiar with Python programming for SDK usage is strongly recommended.
+* Familiar with Python programming for SDK usage is recommended.
 * Request access to OCI Vision + review policy requirements
 
 
@@ -36,4 +36,8 @@ Custom model training lets you tailor base models (through transfer learning app
 
 ### Acknowledgements:
 * **Authors**
+    * Kate D'Orazio - Oracle AI Services
+    * Vaishnavi Kotturu - Oracle AI OCI Vision Services
+
 * **Last Updated By/Date**
+    * Vaishnavi Kotturu - Oracle AI OCI Vision Services, November 2021

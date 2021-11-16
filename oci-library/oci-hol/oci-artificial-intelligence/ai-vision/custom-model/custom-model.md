@@ -96,7 +96,10 @@ Congratulations on completing this lab!
 
 [Proceed to the next section](#next).
 
-## Acknowledgements
+### Acknowledgements:
 * **Authors**
+    * Kate D'Orazio - Oracle AI Services
+    * Vaishnavi Kotturu - Oracle AI OCI Vision Services
+
 * **Last Updated By/Date**
-    ![](./images/data-requirements.png " ")
+    * Vaishnavi Kotturu - Oracle AI OCI Vision Services, November 2021
