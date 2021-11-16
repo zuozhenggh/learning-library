@@ -109,13 +109,13 @@ Data Discovery generates a sensitive data model that contains sensitive columns 
 
 3. Click **Security Center**, and then click **Data Discovery**.
 
-    ![Data Discovery option in Security Center](images-new/data-discovery-security-center.png "Data Discovery option in Security Center")
+    ![Data Discovery option in Security Center](images/data-discovery-security-center.png "Data Discovery option in Security Center")
 
 4. From the **Compartment** drop-down list, select your compartment.
 
     A Data Discovery dashboard is displayed with statistics for the top five target databases in your compartment. Your dashboard is most likely empty because this is the first time you are using Data Discovery in this workshop.
 
-    ![Data Discovery page in OCI](images-new/data-discovery-page-oci.png "Data Discovery page in OCI")
+    ![Data Discovery page in OCI](images/data-discovery-page-oci.png "Data Discovery page in OCI")
 
 5. Click **Discover Sensitive Data**.
 
@@ -126,45 +126,45 @@ Data Discovery generates a sensitive data model that contains sensitive columns 
     - In the **Description** box, enter **Sensitive Data Model 1**.
     - Select your target database
 
-    ![Sensitive Data Model Information page](images-new/sensitive-data-model-information-page.png "Sensitive Data Model Information page")
+    ![Sensitive Data Model Information page](images/sensitive-data-model-information-page.png "Sensitive Data Model Information page")
 
 7. On the **Select Schemas** page, scroll down and select the **HCM** schema, and then click **Next**. You may need to click the right arrow button at the bottom of the page to navigate to page 2.
 
-    ![Select Schemas page](images-new/select-schemas-page.png "Select Schemas page")
+    ![Select Schemas page](images/select-schemas-page.png "Select Schemas page")
 
 8. On the **Select Sensitive Types** page, expand all of the categories by moving the **Expand All** slider to the right, and then scroll down the page and review the sensitive types. Notice that you can select individual sensitive types, sensitive categories, and all sensitive types. At the top of the page, select the **All** check box, and then click **Next**.
 
-    ![Select Sensitive Types page](images-new/select-sensitive-types-page.png "Select Sensitive Types page")
+    ![Select Sensitive Types page](images/select-sensitive-types-page.png "Select Sensitive Types page")
 
 9. On the **Select Discovery Options** page, select **Collect, display and store sample data**, and then click **Create Sensitive Data Model** at the bottom of the page to begin the data discovery process.
 
-    ![Select Discovery Options page page](images-new/select-discovery-options-page.png "Select Discovery Options page")
+    ![Select Discovery Options page page](images/select-discovery-options-page.png "Select Discovery Options page")
 
 10. After your sensitive data model is created, review its information on the **Sensitive Data Model Details** page.
 
     - The **Sensitive Data Model Information** tab lists information about your sensitive data model, including its name and Oracle Cloud identifier (OCID), the work request to create it, the compartment to which you saved it, the date and time when it was created and last updated, and the name of the target database associated with it. The pie chart compares the number of sensitive values per sensitive category and sensitive type.
     - The **Sensitive Columns** table lists the sensitive columns retrieved by the data discovery job. By default, the table is displayed in **Flat View**. For each sensitive column, you can view its schema name, table name, column name, sensitive type, parent column, data type, estimated row count, and sample data (if you retrieved sample data and if it exists). Review the sample data to get an idea of what it looks like.
 
-    ![Sensitive Data Model Details page](images-new/sensitive-data-model-details-page-sdm1.png "Sensitive Data Model Details page")
+    ![Sensitive Data Model Details page](images/sensitive-data-model-details-page-sdm1.png "Sensitive Data Model Details page")
 
 11. Position your mouse over the **Identification Information** category in the chart to view its value.
 
-    ![Identification Information category in sensitive data model chart](images-new/sdm-chart-identification-information.png "Identification Information category in sensitive data model chart")
+    ![Identification Information category in sensitive data model chart](images/sdm-chart-identification-information.png "Identification Information category in sensitive data model chart")
 
 12. With your mouse still over **Identification Information**, click the pie slice to drill down. Notice that the **Identification Information** category is now divided into two smaller categories (**Personal Identifiers** and **Public Identifiers**).
 
-    ![Personal and Public Identifiers in sensitive data model chart](images-new/sdm-chart-personal-public-identifiers.png "Personal and Public Identifiers in sensitive data model chart")
+    ![Personal and Public Identifiers in sensitive data model chart](images/sdm-chart-personal-public-identifiers.png "Personal and Public Identifiers in sensitive data model chart")
 
 
 13.  To drill-up, click the **All** link in the chart's breadcrumb.
 
 14. From the drop-down list, select **Sensitive Type View** to sort the sensitive columns by sensitive type. By default, all items are expanded in the view. You can collapse the items by moving the **Expand All** slider to the left.
 
-    ![Sensitive Type View of sensitive data model](images-new/sensitive-type-view-sdm1.png "Sensitive Type View of sensitive data model")
+    ![Sensitive Type View of sensitive data model](images/sensitive-type-view-sdm1.png "Sensitive Type View of sensitive data model")
 
 15. From the drop-down list, select **Schema View** to sort the sensitive columns by table name.
 
-    ![Schema View of sensitive data model](images-new/schema-view-sdm1.png "Schema View of sensitive data model")
+    ![Schema View of sensitive data model](images/schema-view-sdm1.png "Schema View of sensitive data model")
 
 
 16. Identify sensitive columns through referential relationships. That is, the sensitive columns are discovered because they have a relationship to another sensitive column and that relationship is defined in the database's data dictionary. For example, `MANAGER_ID` in the `EMPLOYEES` table is one such column.
@@ -176,12 +176,12 @@ Data Discovery generates a sensitive data model that contains sensitive columns 
 
 1. Click **Generate Report**. A **Generate Report** dialog box is displayed. Leave **PDF** selected, click **Generate Report**, and wait for the report to be 100% generated. Click **Close**.
 
-    ![Generate PDF report of SDM1](images-new/generate-pdf-report-sdm1.png "Generate PDF report of SDM1")
+    ![Generate PDF report of SDM1](images/generate-pdf-report-sdm1.png "Generate PDF report of SDM1")
 
 
 2. Click **Download Report**. Leave **PDF** selected, and click **Download Report**.
 
-    ![Download PDF report of SDM1](images-new/download-pdf-report-sdm1.png "Download PDF report of SDM1")
+    ![Download PDF report of SDM1](images/download-pdf-report-sdm1.png "Download PDF report of SDM1")
 
 
 3. In the dialog box, leave **Save File** selected, and then click **OK**. Browse to the desktop of your local computer, leave **SDM1.pdf** set as the file name, and then click **Save**. On your desktop, open SDM1.pdf and view the report.
@@ -189,7 +189,7 @@ Data Discovery generates a sensitive data model that contains sensitive columns 
     - The **Summary** table shows totals for columns and values scanned, sensitive types, sensitive types, sensitive columns, and sensitive values.
     - The **Sensitive Columns** table lists the sensitive columns in the sensitive data model. For each sensitive column, the table shows you its sensitive type, schema name, table name, column name, sensitive value count, column data matched, column name matched, and column comment matched. *REVIEWER: What are these last 3 items?*
 
-    ![PDF report of SDM1](images-new/pdf-report-sdm1.png "PDF report of SDM1")
+    ![PDF report of SDM1](images/pdf-report-sdm1.png "PDF report of SDM1")
 
 ## Task 4: Create a masking policy
 
@@ -201,7 +201,7 @@ Data Masking can generate a masking policy for your target database based on you
 
 3. Click **Data Masking**.
 
-    ![Data Masking in Security Center](images-new/data-masking-security-center.png "Data Masking in Security Center")
+    ![Data Masking in Security Center](images/data-masking-security-center.png "Data Masking in Security Center")
 
 4. Under **Related Resources**, click **Masking Policies**. The **Masking Policies** page is displayed.
 
@@ -215,14 +215,14 @@ Data Masking can generate a masking policy for your target database based on you
     - Choose how you want to create the masking policy: **Using a sensitive data model**
     - Sensitive Data Model: **SDM1**
 
-    ![Create Masking Policy panel using SDM1](images-new/create-masking-policy-sdm1.png "Create Masking Policy panel using SDM1")
+    ![Create Masking Policy panel using SDM1](images/create-masking-policy-sdm1.png "Create Masking Policy panel using SDM1")
 
 7. Review the Data Masking policy.
 
     - On the **Masking Policy Information** tab, you can view the masking policy name (and edit it), the Oracle Cloud Identifier (OCID) for the masking policy, the work request for the masking policy, the compartment in which the masking policy is stored, the target database and sensitive data model to which the masking policy is associated, and the date/time in which the masking policy was created and last updated.
     - The **Masking Columns** table lists all the sensitive columns and their associated masking formats. If needed, you can select a different masking policy for any sensitive column. You can click the pencil icon next to a masking format to edit it.
 
-    ![Masking Policy Details page for Mask SDM1](images-new/masking-policy-details-page-mask-sdm1.png "Masking Policy Details page for Mask SDM1")
+    ![Masking Policy Details page for Mask SDM1](images/masking-policy-details-page-mask-sdm1.png "Masking Policy Details page for Mask SDM1")
 
 
 ## Task 5: Mask sensitive data by using Data Masking
@@ -233,7 +233,7 @@ After you create a masking policy, you can run a data masking job against your t
 
 2. From the **Target Database** drop-down list, select your target database, and then click **Mask Data**. Wait for the data masking job to finish.
 
-    ![Mask Sensitive Data panel using ad01](images-new/mask-sensitive-data-panel-ad01.png "Mask Sensitive Data panel using ad01")
+    ![Mask Sensitive Data panel using ad01](images/mask-sensitive-data-panel-ad01.png "Mask Sensitive Data panel using ad01")
 
 
 3. When the data masking job is finished, review the **Masking Report** on the **Masking Report Details** page.
@@ -250,13 +250,13 @@ After you create a masking policy, you can run a data masking job against your t
 
 2. Leave **PDF** selected, and click **Generate Report**. Wait for the report to generate, and then click **Close**.
 
-    ![Generate PDF report for masked data](images-new/generate-pdf-masked-data.png "Generate PDF report for masked data")
+    ![Generate PDF report for masked data](images/generate-pdf-masked-data.png "Generate PDF report for masked data")
 
 3. Click **Download Report**. A **Download Report** dialog box is displayed.
 
 4. Leave **PDF** selected, and then click **Download Report**.
 
-    ![Download PDF report for masked data](images-new/download-pdf-masked-data.png "Download PDF report for masked data")
+    ![Download PDF report for masked data](images/download-pdf-masked-data.png "Download PDF report for masked data")
 
 5. In the dialog box, select **Open with**. Leave the default application selected, and then click **OK**.
 
@@ -271,7 +271,7 @@ After you create a masking policy, you can run a data masking job against your t
 
 2. Take a moment to review the original data.
 
-    ![Query results before masking](images-new/original-query-results.png "Query results before masking")
+    ![Query results before masking](images/original-query-results.png "Query results before masking")
 
 3. On the toolbar, click the **Run Statement** button (green circle with a white arrow) to execute the query.
 
@@ -279,7 +279,7 @@ After you create a masking policy, you can run a data masking job against your t
 
 5. Review the masked data. You can resize the panel to view more data, and you can scroll down and to the right.
 
-    ![Masked EMPLOYEE data](images-new/masked-query-results.png "Masked EMPLOYEE data")
+    ![Masked EMPLOYEE data](images/masked-query-results.png "Masked EMPLOYEE data")
 
 
 
