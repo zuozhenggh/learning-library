@@ -5,7 +5,7 @@
       {
         "title": "Workshop Introduction",
         "description": "Inroduction to this workshop",
-        "filename": "../workshop-intro/workshop-intro.md"
+        "filename": "../../workshop-intro/workshop-intro.md"
       },
       {
             "title": "Getting Started",
