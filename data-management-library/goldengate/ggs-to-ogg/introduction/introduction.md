@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully-managed, cloud native service on Oracle Cloud Infrastructure. If you're an existing Oracle GoldenGate customer with an on-premises installation or Marketplace image, then use this set of labs to help you pull data down from OCI GoldenGate to Oracle GoldenGate.
+Oracle GoldenGate, the industry-leading data replication and integration software, is now available as a fully-managed, cloud native service on Oracle Cloud Infrastructure (OCI). If you're an existing Oracle GoldenGate customer with an on-premises installation or Marketplace image, then use this set of labs to help you pull data down from OCI GoldenGate to Oracle GoldenGate.
 
 *For the purposes of this workshop, Autonomous Transaction Processing serves as the source database and Autonomous Data Warehouse serves as the target database.*
 
@@ -38,4 +38,4 @@ To successfully complete this LiveLab, you must have:
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, August 2021
+* **Last Updated By/Date** - Jenny Chan, November 2021
