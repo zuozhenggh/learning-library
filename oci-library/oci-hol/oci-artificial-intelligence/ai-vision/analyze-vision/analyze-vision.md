@@ -103,7 +103,7 @@ Next, fill out the dialog box:
 Then click Create
 ![](./images/pressbucketbutton.png " ")
 
-**Task 2b:** Upload the Downloaded training csv data file into Storage Bucket
+**Task 2b:** Upload image files into Storage Bucket
 
 Switch to OCI window and click the Bucket Name.
 
