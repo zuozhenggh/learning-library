@@ -27,7 +27,7 @@ This lab assumes you have:
     * Lab: Environment Setup
     * Lab: Initialize Environment
     * Lab: Create Datasource connections
-    
+
 ## Task 1: Configure Delta Comparison
 
 1. In the Oracle GoldenGate Veridata UI, click **Group Configuration**, select a group, click **Edit**, and click **Go to Compare Pair Configuration** to display the **Compare Pair Configuration** page.
@@ -138,4 +138,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Sukin Varghese, Jonathan Fu
-* **Last Updated By/Date** - Anuradha Chepuri, October 2021
+* **Last Updated By/Date** - Anuradha Chepuri, November 2021
