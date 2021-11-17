@@ -22,7 +22,7 @@
 
 When in doubt or need to start the databases using the following steps:
 
-1. please log in as **oracle** user and execute the following command:
+1. Please log in as **oracle** user and execute the following command:
 
     ````
     $ <copy>. oraenv</copy>
@@ -49,7 +49,7 @@ When in doubt or need to start the databases using the following steps:
     Processing Database instance "DB19C": log file /u01/app/oracle/product/19.3.0/dbhome_19c/rdbms/log/startup.log
     ````
  
-## Task 1: check the source database ##
+## Task 1: Check the source database ##
 
  Please login as the **oracle** user to check the status of the source database and pluggable databases.
 
@@ -95,7 +95,7 @@ When in doubt or need to start the databases using the following steps:
 
     So we have 1 PDB running in this environment in MOUNTED mode. In this lab, we will migrate this PDB from the DB18C environment to the new 19c environment.
 
-## Task 2: unplugging the source pluggable database ##
+## Task 2: Unplugging the source pluggable database ##
 
  There are many ways to migrate a PDB to a new CDB. Some will keep the datafiles in place, and other options will recreate the datafiles (double your storage size). If you are moving the data files to another storage system, you can, for example, use the Pluggable Archive option (this option will put all files into one zip file with a .pdb extension).
 
@@ -120,7 +120,7 @@ When in doubt or need to start the databases using the following steps:
     Version 18.3.0.0.0
     ````
 
-## Task 3: plug the PDB into the target 19c environment ##
+## Task 3: Plug the PDB into the target 19c environment ##
 
 1. First, we need to change the environment settings to the 19c environment:
 
@@ -178,7 +178,7 @@ When in doubt or need to start the databases using the following steps:
 
     The above example also shows that it is a **bad** custom to put the version name of the PDB in the name of the PDB. As displayed, it looks bizarre to have a `PDB18C01` in the DB19C location.
 
-## Task 4: upgrade the imported Pluggable Database ##
+## Task 4: Upgrade the imported Pluggable Database ##
 
  We cannot just open the PDB in the new 19c Oracle Home. If you tried to open it, it would fail since it does not have the correct 19c objects in its schema.
 
