@@ -325,7 +325,7 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
     jt.title,
     jt.job,
     jt.crew,
-    f.year,
+    TO_CHAR(f.year) as year,
     sum(f.actual_price) as revenue
     FROM movie_sales_fact f, json_movie_view jt
     WHERE jt.job = 'director'
@@ -345,7 +345,7 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
 
     ```
     <copy>SELECT
-    f.year,
+    TO_CHAR(f.year) as year,
     f.quarter_name,
     jt.movie_id,
     jt.title,
@@ -372,7 +372,7 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
     ```
     <copy>WITH movie_rev as (
     SELECT
-    f.year,
+    TO_CHAR(f.year) as year,
     f.quarter_name,
     jt.movie_id,
     jt.title,
@@ -412,4 +412,4 @@ Please *proceed to the next lab*.
 
 - **Author** - Keith Laker, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Keith Laker, July 2021
+- **Last Updated By/Date** - Kevin Lazarz, November 2021

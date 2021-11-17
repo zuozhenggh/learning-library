@@ -21,7 +21,7 @@ The aim of this workshop is to explore how Autonomous Data Warehouse can support
 
 * Learn how to enable data integrity features to manage data quality challenges 
 
-* Explore how to update existing data using Oracle's MERGE command
+* Explore how to update existing data by merging in updates
 
 * Learn more about how Autonomous Data Warehouse stores and manages your data
 
@@ -52,4 +52,4 @@ Oracle MovieStream is a fictitious on-line movie streaming company. Customers lo
 
 * **Contributors** - Nilay Panchal, Rick Green, Patrick Wheeler, Marty Gubar, Bud Endress, Jayant Mahto, Mike Matthews
 
-* **Last Updated By** - Brianna Ambler, July 2021
+* **Last Updated By** - Mike Matthews, November 2021

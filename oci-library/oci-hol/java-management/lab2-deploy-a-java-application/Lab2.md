@@ -20,11 +20,21 @@ In this lab, you will:
 
 1. Install your Oracle Linux Instance
 
+<<<<<<< HEAD
 2. Use the Create a VM Instance wizard to create a new compute instance. The wizard does several things when installing the instance: 
   - Creates and installs a compute instance running Oracle Linux.
   - Creates a VCN with the required subnet and components needed to connect your Oracle Linux instance to the internet.
   - Creates an `ssh` key pair you use to connect to your instance.
   <!--  -->
+=======
+2. Use the Create a VM Instance wizard to create a new compute instance. The wizard does several things when installing the instance:
+  - Creates and installs a compute instance running Oracle Linux.
+  
+  - Creates a VCN with the required subnet and components needed to connect your Oracle Linux instance to the internet.
+  
+  - Creates an `ssh` key pair you use to connect to your instance.
+
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 3. To get started installing your instance with the **Create a VM Instance** wizard, follow these steps:
   From the main landing page, select **Create a VM Instance** wizard. 
 
@@ -32,8 +42,12 @@ In this lab, you will:
     
   The **Create Compute Instance** page is displayed. It has a section for **Placement**, **Image and shape**, **Networking**, **Add SSH keys**, and **Boot volume**.
 
+<<<<<<< HEAD
   Choose the **Name** and **Compartment**. Select the compartment created previously.
    
+=======
+  Choose the **Name** and **Compartment**. Select the compartment created previously. 
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
     **Initial Options**
     - **Name**: `<name-for-the-instance>`
     - **Create in compartment**: `<your-compartment>`
@@ -47,7 +61,10 @@ In this lab, you will:
     - **Fault domain**: Oracle chooses the best placement
   
   Review the **Image and shape** settings. Take the default values provided by the wizard.
+<<<<<<< HEAD
     
+=======
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
     **Image**
     - **Image**: Oracle Linux 7.9
     - **Image build**: 2020.11.10-1
@@ -158,9 +175,15 @@ Activate the preceding command in the current window.
   
   Run the downloaded file and follow the instruction of installer. Leave default options, take note of the jdk installation path. 
 
+<<<<<<< HEAD
   Set environment variables on your system: Right-click on **My Computer** -> **Properties** -> **Advanced system settings** (on the top-left) -> **Environment Variables…** button on the bottom -> double-click on **Path** of **System variables** part of form. -> **New**-> paste paths for jdk and jre **bin** folder (for example: C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Java\jre1.8.0_161\bin).
 
   Set the **JAVA_HOME** environment variable. To set it, go to **System variables** form -> click **New** -> enter **JAVA_HOME** for **Variable name:** and **path/to/jdk** for **Variable value:** (for example: C:\Program Files\Java\jdk1.8.0_161).
+=======
+  Set environment variables on your system: Right-click on “My Computer” -> “Properties” -> “Advanced system settings” (on the top-left) -> “Environment Variables…” button on the bottom -> double-click on “Path” of “System variables” part of form. -> “New”-> paste paths for jdk and jre “bin” folder (for example: C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Java\jre1.8.0_161\bin).
+
+  Set the “JAVA_HOME” environment variable. To set it, go to “System variables” form -> click “New“ -> enter “JAVA_HOME” for “Variable name:” and “path/to/jdk” for “Variable value:” (for example: C:\Program Files\Java\jdk1.8.0_161).
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
   To check if Java has been installed, in **Command Prompt** window, enter this command. 
   ```

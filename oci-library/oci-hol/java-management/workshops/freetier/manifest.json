@@ -39,11 +39,14 @@
             "filename": "../../lab6-access-and-utilise-rest-api-via-jms-sdk-postman/Lab6.md"
         },
         {
+<<<<<<< HEAD
             "title": "Lab 7: Tracking Java Usage in a Container",
             "filename":"../../lab7-tracking-java-usage-in-a-container/Lab7.md"
             
         },
         {
+=======
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"

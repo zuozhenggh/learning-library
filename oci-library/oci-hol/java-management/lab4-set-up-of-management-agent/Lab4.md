@@ -30,29 +30,50 @@ In this lab, you will:
 2. Open up a **Terminal** or **Command Prompt** window in the local machine where the install key and management agent software file is saved
 
 3. Enter the following command to transfer the install key and management agent software file via scp into the remote host compute instance
+<<<<<<< HEAD
     ```
     scp <full_path_of_file_to_be_transfered_on_local_host> opc@<public_IP_Address>:<full_path_of_remote_directory_transferred_to>
     ```
+=======
+  ```
+  scp <full_path_of_file_to_be_transfered_on_local_host> opc@<public_IP_Address>:<full_path_of_remote_directory_transferred_to>
+
+  ```
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
 ## Task 2: Install Management Agent
 
 Install Management Agent (If your host is Windows, Skip to For **Windows** Section)
 
+<<<<<<< HEAD
 #### For Linux
+=======
+#### For **Linux**
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
 1. Login as a user with `sudo` privileges. 
   
 2. Navigate to the directory where you have downloaded the management agent software RPM file and run the following command to install the `RPM` file: 
 
+<<<<<<< HEAD
     ```
     sudo rpm -ivh <rpm_file_name.rpm>
     ```
+=======
+  ```
+  sudo rpm -ivh <rpm_file_name.rpm>
+  ```
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
   For example: `sudo rpm -ivh oracle.mgmt_agent-<VERSION>.rpm`
 
 3. The output will look similar to the following: 
 
+<<<<<<< HEAD
     ```
+=======
+  ```
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
     Preparing... ################################# [100%]
     
     Checking pre-requisites
@@ -80,6 +101,7 @@ Install Management Agent (If your host is Windows, Skip to For **Windows** Secti
       Usage:sudo
       /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=[RESPONSE_FILE]
     Agent install successful
+<<<<<<< HEAD
     ```
 4. The agent installation process does the following:
 
@@ -99,12 +121,37 @@ Install Management Agent (If your host is Windows, Skip to For **Windows** Secti
     ```
     sudo /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=<user_home_directory>/input.rsp
       Executing configure
+=======
+  ```
+4. The agent installation process does the following:
+
+- A new user called `mgmt_agent` is created. This will be the management agent user. If `mgmt_agent` user already exists, the agent installation process will use it to install the agent software.  
+    
+- When `mgmt_agent` daemon is created, the hard and soft nofile ulimit are set to 5000.
+     
+- All agent files are copied and installed by mgmt_agent user. The agent install base directory is the directory where the agent is installed. The directory is created as part of the agent installation process under `/opt/oracle/mgmt_agent` directory.
+     
+- By default, the `mgmt_agent` service is enabled and started automatically after the agent installation.
+         
+5. Configure the management agent by running the `setup.sh` script using a response file. 
+
+  ```
+  sudo /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=<full_path_of_response_file>
+  ```
+
+6. The output will look similar to the following: 
+
+  ```
+  sudo /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=<user_home_directory>/input.rsp
+    Executing configure
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
       Generating communication wallet
       Parsing input response file
       Validating install key
       Generating security artifacts
       Registering management agent
       Configuration Logs: /opt/oracle/mgmt_agent/configure-logs
+<<<<<<< HEAD
       Agent configuration successful
 
       Starting agent...
@@ -112,6 +159,15 @@ Install Management Agent (If your host is Windows, Skip to For **Windows** Secti
       In future agent can be started by directly running: sudo systemctl start mgmt_agent
       Please make sure that you delete input.rsp or store it in a secure location.
     ```
+=======
+    Agent configuration successful
+
+    Starting agent...
+    Agent started successfully
+    In future agent can be started by directly running: sudo systemctl start mgmt_agent
+    Please make sure that you delete input.rsp or store it in a secure location.
+  ```
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 **Skip to the next section Task 3** if the Management Agent has been **successfully** installed on a Linux host.
 
 If you would like to install the Management software agent on Windows, continue with the following section **For Windows**
@@ -128,6 +184,7 @@ If you would like to install the Management software agent on Windows, continue 
   
 5. Install and configure the management agent by running the `install.bat` script using a response file.
 
+<<<<<<< HEAD
     ```
     installer.bat <full_path_of_response_file>
     ```
@@ -169,6 +226,49 @@ If you would like to install the Management software agent on Windows, continue 
     In the future agent can be started by directly running: NET START mgmt_agent
     Please make sure that you delete C:\Users\input.rsp or store it in secure location.
     ```
+=======
+  ```
+  installer.bat <full_path_of_response_file>
+  ```
+
+6. The output will look similar to the following: 
+
+  ```
+  C:\Users\test_agent>installer.bat C:\Users\input.rsp
+  Checking pre-requisites
+
+        Checking if previous agent service exists
+        Checking if C:\Oracle\mgmt_agent\agent_inst directory exists
+        Checking if C:\Oracle\mgmt_agent\200820.0751 directory exists
+        Checking available disk space for agent install
+        Checking Java version
+                Java version: 1.8.0_261 found at C:\Program Files\Java\jdk1.8.0_261
+ 
+  Executing install
+        Unpacking software zip
+        Copying files to destination dir (C:\Oracle\mgmt_agent)
+        Initializing software from template
+        Creating mgmt_agent service 
+
+  Agent install successful 
+
+  Executing configure
+
+        Parsing input response file
+        Generating communication wallet
+        Validating install key
+        Generating security artifacts
+        Registering Management Agent
+
+  The mgmt_agent service is starting....
+  The mgmt_agent service was started successfully.
+
+
+  Agent setup completed and the agent is running
+  In the future agent can be started by directly running: NET START mgmt_agent
+  Please make sure that you delete C:\Users\input.rsp or store it in secure location.
+  ```
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
 7. The agent installation process does the following:
 
@@ -230,12 +330,20 @@ If successful, you should see a message similar to
 
   ![image of console navigation to java management service](/../images/console-navigation-jms.png)
 
+<<<<<<< HEAD
   Select the Fleet created in Lab 3.
+=======
+Select the Fleet created in Lab 3.
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
   ![image of fleet page](/../images/check-fleet-ocid-page.png)
 
 
+<<<<<<< HEAD
   Take note of the fleet ocid for steps 2-4.
+=======
+Take note of the fleet ocid for steps 2-4.
+>>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
   ![image of fleet ocid](/../images/check-fleet-ocid.png)
 
