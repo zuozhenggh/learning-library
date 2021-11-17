@@ -88,4 +88,4 @@ This concludes the workshop.
 ## Acknowledgements
 
 * **Author:** Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
-* **Last Updated By/Date:** Lauran Serhal, October 2021
+* **Last Updated By/Date:** Lauran Serhal, November 2021
