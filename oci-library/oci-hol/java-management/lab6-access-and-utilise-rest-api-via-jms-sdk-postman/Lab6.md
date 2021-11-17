@@ -21,15 +21,9 @@ In this lab, you will:
 #### Access Java SDK for JMS
 1. Download the [SDK](https://github.com/oracle/oci-java-sdk/releases) and extract it
 
-<<<<<<< HEAD
 2. Access the sample [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20210610/Fleet/GetFleet)
 
     ![image of java sdk example code](/../images/java_sdk-own.png)
-=======
-2. Access the a sample [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment)
-
-    ![image of java sdk example code](/../images/java-sdk-example-code.png)
->>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
 3. Copy the example SDK code into a .java File in the SDK downloaded. Ensure the file path for the newly created file adheres to the sample SDK code. 
 
@@ -42,7 +36,6 @@ In this lab, you will:
 5. A response is generated
     ![image of java sdk output](/../images/java-sdk-response.png)
 
-<<<<<<< HEAD
 #### Access Python SDK for JMS
 1. Set up a virtual environment
 
@@ -103,24 +96,6 @@ In this lab, you will:
 
 The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs
 - [Typescript SDK](https://github.com/oracle/oci-typescript-sdk/releases)
-=======
-
-#### Access Python SDK for JMS
-1. Download the [SDK](https://github.com/oracle/oci-python-sdk/releases) and extract it
-
-2. Access the a sample [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment)
-
-    ![image of python sdk example code](/../images/python-sample-code.png)
-
-3. Copy the example SDK code into a .py File in the SDK downloaded. Ensure the file path for the newly created file adheres to the sample SDK code. Run it
-
-    ![image of python sdk example code](/../images/python-sdk-response.png)
-
-4. The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs
-
-#### Download SDKs
-- [Typescript SDk](https://github.com/oracle/oci-typescript-sdk/releases)
->>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 - [.NET SDK](https://github.com/oracle/oci-dotnet-sdk/releases)
 - [Ruby SDK](https://github.com/oracle/oci-ruby-sdk/releases)
 - [GO SDK](https://github.com/oracle/oci-go-sdk/releases)
@@ -165,12 +140,8 @@ The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs
 
 
 #### Initialise Environment
-<<<<<<< HEAD
 
 1. Click **Collections** and then **`ONE_TIME_INITIALIZATION_CALL`**. Select **OCI_Environment** as saved previously.
-=======
-1. Click **Collections** and then **ONE_TIME_INITIALIZATION_CALL**. Select **OCI_Environment** as saved previously.
->>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
     ![image of initialisation script](/../images/initialise-postman.png)
 
@@ -183,11 +154,7 @@ The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs
     ![image of initialisation confirmation](/../images/initialise-confirmation.png)
 
 #### Send a Get Fleet Request
-<<<<<<< HEAD
 1. Add a request under **`OCI_REST_COLLECTION`**
-=======
-1. Add a request under **OCI_REST_COLLECTION**
->>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
     ![image of add request](/../images/add-request.png)
 

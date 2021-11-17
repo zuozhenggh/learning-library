@@ -15,10 +15,7 @@ In this lab, you will:
 
 ### Prerequisites:
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
-<<<<<<< HEAD
 *  Python version 3.6 and later is installed on your local machine
-=======
->>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
 ## Task 1: Generate an API Signing Key
 1. If you have generated your own keys, refer to the public documentation on how to [upload them](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and the public key fingerprint
@@ -130,18 +127,11 @@ To get a namespace, run the following command.
 
 If successful, the following will be returned, with xx as your unique namespace. 
 
-<<<<<<< HEAD
   ```
   {
     "data": "xx"
   }
   ```
-=======
-`{
-  "data": "xx"
-}
-`
->>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 ## Task 3: Access REST API via OCI CLI
 
 Open a **Terminal** or **Command Prompt**
@@ -173,11 +163,7 @@ If you encounter further issues, review the [Troubleshooting](https://docs.oracl
 
 Alternatively, you may seek help for
 - [API Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm)
-<<<<<<< HEAD
 - [Using the CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliusing.htm)
-=======
--[Using the CLI](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliusing.htm).
->>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
 You may review [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) in the OCI documentation.
 

@@ -38,19 +38,11 @@ In this lab, you will:
   
   ![image of fleet advanced options](/../images/create-fleet-advanced-configuration.png)
   
-<<<<<<< HEAD
   If you would like to keep the default name of the Install key, no changes are needed, or else deselect **Use Fleet Name** for Install Key Name and enter an alternative name for the management agent install key, for this example, enter "management-agent-install-key-fleet-1". 
   
   In the **Maximum Installations** field, specify a number that indicates the maximum number of installations that can be associated with the key. The default value is 1000, for this example enter **10**.
     
   In the **Valid For** field, specify a number that indicates the period for which the key is valid. The default value is 1 Year. 
-=======
-If you would like to keep the default name of the Install key, no changes are needed, or else deselect **Use Fleet Name** for Install Key Name and enter an alternative name for the management agent install key, for this example, enter "management-agent-install-key-fleet-1". 
-  
-In the **Maximum Installations** field, specify a number that indicates the maximum number of installations that can be associated with the key. The default value is 1000, for this example enter **10**.
-    
-In the **Valid For** field, specify a number that indicates the period for which the key is valid. The default value is 1 Year. 
->>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
      
 7. Click **Next**.You are prompted to review the fleet information and management agent configuration. If you wish to modify your choices, click **Previous**.
   
@@ -62,19 +54,11 @@ In the **Valid For** field, specify a number that indicates the period for which
      
   ![image of page to download management agent software](/../images/download-management-agent-software-new.png)
  
-<<<<<<< HEAD
   Select the appropriate software for the compute instance operating system then click **Close**
 
   ![image of download management agent software](/../images/download-management-agent-software-os.png)
 
   Click **Done** once both files have been downloaded.
-=======
-Select the appropriate software for the compute instance operating system then click **Close**
-
-  ![image of download management agent software](/../images/download-management-agent-software-os.png)
-
-Click **Done** once both files have been downloaded.
->>>>>>> 940e08bc64eab7e40a1392baf66e39eff466e4f4
 
 You may now **proceed to the next lab.**
 
