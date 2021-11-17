@@ -7,7 +7,7 @@ This guide shows you how to provision the Autonomous Data Warehouse service on t
 
 ## Task 1: Provision ADW
 
-1. In your Oracle CLoud Console, open the menu.
+1. In your Oracle Cloud Console, open the menu.
 
 ![](./images/openmenu.png)
 

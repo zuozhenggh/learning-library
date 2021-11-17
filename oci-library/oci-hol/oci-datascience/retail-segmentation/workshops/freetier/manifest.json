@@ -20,7 +20,7 @@
         {
             "title": "Lab 2: Setting up ADW",
             "description": "Setting up the ADW environment to run your Notebook",
-            "filename": "../../adw/adw.md"
+            "filename": "../../setup-adw/setup-adw.md"
         },
         {
             "title": "Lab 3: Running the Notebook ",

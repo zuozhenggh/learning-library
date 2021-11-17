@@ -34,9 +34,10 @@ The code below will help you unzip the folder and move it to a separate folder o
 5. Download the Retail Segmentation notebook from this link and place it into the directory in Oracle Datascience.
 Also download the Customer Transactions data that the notebook will use. Both can be downloaded from the links below.
 
-![Segmentation.ipynb](./files/Segmentation.ipynb)
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/rmWDKR_hSkiYDeSsVOuW8abwUZmQI8G-gZ5aWUGjPEe0gQQZ-g8o2SJYYI-iPjVW/n/orasenatdpltintegration03/b/Lumina/o/Segmentation.ipynb
 
-![Customer_Transactions_masked.csv](./files/Customer_Transactions_masked.csv)
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/1dzOB88QeywWzprMcoMMLw6xwYIpMDTbPFTdiFH6ZZ1miqaNE5t0vUD-KTYfNptT/n/orasenatdpltintegration03/b/Lumina/o/Customer_Transactions_masked.csv
+
 
 ## Task 2: Installing the Kernel
 
