@@ -1,4 +1,4 @@
-# Using ORM and Terraform to provision Hyperion Infrastructure
+# Use ORM and Terraform to provision Hyperion Infrastructure
 
 ## Introduction
 
@@ -19,15 +19,15 @@ In this lab, you will:
 * Use ORM to configure the variables within the Terraform files
 * Sit back and watch magic happen
 
-## Task 1: Download the boilerplate Terraform stack
+## Task 1: download the boilerplate Terraform stack
 
 We've written a Terraform stack that is provided freely for your use.
 
 Go to the following URL and download the `oci-hyperion.zip` file from this link [HERE](https://objectstorage.ap-mumbai-1.oraclecloud.com/p/NW_ovSp5VHJh6AJuzfhZ7Twf6nGiDHIII_HkCN4ZXmru0MKDtH-De9IB-h5ABs-Y/n/bm47mpuvclcd/b/HyperionHOL/o/oci-hyperion.zip).
 
-> NOTE: Terraform deployments can also be performed manually through a local computer. If you're curious about how to do this, we encourage reading up on Terraform as a tool; a link to their main page is cited below. In a manual deployment, you would unzip this file, install the Terraform command line tools onto your machine, and then utilize those commands in conjunction with manual editing of the `.tf` files to perform the deployment.
+**Note:** Terraform deployments can also be performed manually through a local computer. If you're curious about how to do this, we encourage reading up on Terraform as a tool; a link to their main page is cited below. In a manual deployment, you would unzip this file, install the Terraform command line tools onto your machine, and then utilize those commands in conjunction with manual editing of the `.tf` files to perform the deployment.
 
-## Task 2: Use ORM to configure variables and configure infrastructure
+## Task 2: use ORM to configure variables and configure infrastructure
 
 We'll now get ready to use the Resource Manager to deploy the Terraform stack we just downloaded.
 

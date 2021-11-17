@@ -1,5 +1,5 @@
 ﻿
-# Updating the Sales Data
+# Update the Sales Data
 
 ## Introduction
 
@@ -25,9 +25,9 @@ This lab assumes you have:
 MovieStream is a global business with finance departments distributed around the world. Each of these periodically generates a number of financial adjustments for customers in their respective countries. In practice, these will come in at various times and will need to be processed one-by-one. In this section we are going to process all the regional adjustment files at once, but it is important to bear in mind that each would usually be processed immediately on arrival (and therefore individually) so that we can always get the most up-to-date information from our warehouse. Below we will run the update process by merging in the adjustment files for all the countries into our fact table.
 
 
-## Task 1: Finding out the space usage of the Movie Sales data
+## Task 1: Find out the space usage of the Movie Sales data
 
-1. To find out how much space our movie sales table (movie\_sales\_fact) is consuming, we can run the following query our SQL worksheet
+1. To find out how much space our movie sales table (movie\_sales\_fact) is consuming, we can run the following query in our SQL worksheet:
 
     ```
     <copy>
@@ -46,7 +46,7 @@ MovieStream is a global business with finance departments distributed around the
     ![Query result showing space consumed by movie sales table](images/initialsize.png)
 
 
-## Task 2: Merging in the adjustments from files
+## Task 2: Merge in the adjustments from files
 
 In this task, we will merge in all the country-specific adjustment files into our fact table.
 
@@ -54,7 +54,7 @@ In this task, we will merge in all the country-specific adjustment files into ou
 
     ![Go to the Data Load tool](images/menudataload.png)
 
-2. As in the lab where you loaded the data, select **LOAD DATA** and **CLOUD STORAGE**, then click **Next**
+2. As in the lab where you loaded the data, select **LOAD DATA** and **CLOUD STORAGE**, then click **Next**.
 
 3. From the **MOVIEDATA** bucket, drag the **adjustments** folder into the right-hand pane and click **OK** to load all 47 objects into a single target table.
 
@@ -64,17 +64,17 @@ In this task, we will merge in all the country-specific adjustment files into ou
 
 5. In this case, we do not want to create a new table, but to merge all these adjustments into our current fact table. Change the Option from **Create Table** to **Merge into Table**. Then, under **Name**, select the **MOVIE\_SALES\_FACT** table.
 
-6. In the **Mapping** section, check the **Merge Key** box for the column **ORDER\_NUM** as this column will be the key column for the merge. This means that any records in the table with the same **ORDER\_NUM** value as one of the records in the adjustment file will be updated, and any adjustment file records with new **ORDER_\NUM** values will be added as new records in the table. The final settings should look like this:
+6. In the **Mapping** section, check the **Merge Key** box for the column **ORDER\_NUM** as this column will be the key column for the merge. This means that any records in the table with the same **ORDER\_NUM** value as one of the records in the adjustment file will be updated, and any adjustment file records with new **ORDER\_NUM** values will be added as new records in the table. The final settings should look like this:
 
     ![Settings to merge in adjustment files](images/mergeconfig.png)
 
 Click the **Close** icon when you have the settings as above.
 
-7. Click on the play icon to start the data load job, and click **Run** in the dialog box.
+7. Click the **Play** icon to start the data load job, and click **Run** in the dialog box.
 
 The job should take less than 2 minutes to run. Note that the primary key that we created earlier helps the database to quickly and efficiently locate the records that need to be updated by each MERGE statement.
 
-## Task 3: Verifying the results
+## Task 3: Verify the results
 
 1. Click the menu in the top left of the screen, and click **SQL** in the **Development** section.
 
@@ -88,7 +88,7 @@ The job should take less than 2 minutes to run. Note that the primary key that w
 	</copy>
     ```
 
-4. This shows that our revenue has gone down slightly since we are now reporting a figure of $163,779,175 (vs. the previous value of $163,848,266):
+4. This shows that our revenue has gone down a little, since we are now reporting a figure of $160,305,830.975 (vs. the previous value of $160,365,556.83):
 
     ![Results of query to validate financial adjustments file processed successfuly](images/queryaftermerge.png)
 
@@ -129,10 +129,8 @@ Oracle Autonomous Database automatically manages the data storage process for yo
 
 [Click here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/load-data.html#GUID-1351807C-E3F7-4C6D-AF83-2AEEADE2F83E) for more information about how to load data into Autonomous Database. 
 
-Please *proceed to the next lab*.
-
 ## **Acknowledgements**
 
 * **Authors** - Keith Laker and Mike Matthews, ADB Product Management
 * **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-* **Last Updated By/Date** - Richard Green, November 2021
+* **Last Updated By/Date** - Mike Matthews, November 2021

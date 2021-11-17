@@ -29,11 +29,11 @@ This lab assumes you have already completed the following:
 
 ## Task 1: Register External Databases
 
-1.  Login to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **External Database**.
+1.  Log in to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **External Database**.
 
 	![](./images/externaldatabase.png " ")
 
-2.  On the left panel click on **Container Databases** and then click on **Register External Container Database**.
+2.  On the left panel click **Container Databases** and then click **Register External Container Database**.
 
 	![](./images/externalcontainerdb.png " ")
 
@@ -41,7 +41,7 @@ This lab assumes you have already completed the following:
 
 	![](./images/externalcontainerdb1.png " ")
 
-4.  This will take you to **External Container Database Details** page. Click on **Connect to External Container Database**.
+4.  This will take you to **External Container Database Details** page. Click **Connect to External Container Database**.
 
 	![](./images/externalcontainerdb2.png " ")
 
@@ -77,7 +77,7 @@ This lab assumes you have already completed the following:
 
 	![](./images/externalcontainerdb6.png " ")
 
-7.  On the **External Container Database Details** page, scroll down and on the left panel under **Resources** click on **External Pluggable Databases** and then click on **Register External Pluggable Database**.
+7.  On the **External Container Database Details** page, scroll down and on the left panel under **Resources** click **External Pluggable Databases** and then click **Register External Pluggable Database**.
 
 	![](./images/externalpdb2.png " ")
 
@@ -85,7 +85,7 @@ This lab assumes you have already completed the following:
 
 	![](./images/externalpdb3.png " ")
 
-9.  This will take you to **External Pluggable Database Details** page. Click on **Connect to External Pluggable Database**.
+9.  This will take you to **External Pluggable Database Details** page. Click **Connect to External Pluggable Database**.
 
 	![](./images/externalpdb4.png " ")
 
@@ -123,18 +123,18 @@ This lab assumes you have already completed the following:
 
 12.  Perform steps 7 to 11 to add other pluggable databases with these service names - **FINANCE**, **SALES**, **HRSTAGE** and **HRUAT**.
 
-13.  On Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Oracle Database** and click on **External Database**. Verify all pluggable databases are registered under External pluggable databases.
+13.  On Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Oracle Database** and click **External Database**. Verify all pluggable databases are registered under External pluggable databases.
 
      ![](./images/pluggabledatabases.png " ")
 
      Congratulations, your databases are registered ! 
 
-     There is no need to perform Task 2-4 after registering your databases manually.
+     There is no need to perform Task 2 to 4 after registering your databases manually.
      Directly go to **Task 5: Enable Database Management**
 
 ## Task 2: Register External Databases (Using Terraform)
 
-1. Login to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**. 
+1. Log in to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**. 
 
 	![](../setup-on-premises-environment/images/developer-resmgr-stacks.png " ")
 
@@ -243,7 +243,7 @@ For pluggable\_databases array, copy the below values and paste under pluggable_
 
      ![](./images/createstack3.png " ")
 
-5. Your stack has now been created!  Now you can create your environment. 
+5. Your stack has now been created! Now you can create your environment. 
      ![](./images/stackcreated.png " ")
 
 ## Task 3: Terraform Plan (OPTIONAL)
@@ -260,7 +260,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 When using Resource Manager to deploy an environment, execute a terraform **Apply**. Let's do that now.
 
-1.  At the top of your page, click on **Stack Details**.  Click the button, **Apply**. This will register your Container and Pluggable Databases under External Database. This takes about 10 minutes, please be patient.
+1.  At the top of your page, click **Stack Details**.  Click the button, **Apply**. This will register your Container and Pluggable Databases under External Database. This takes about 10 minutes, please be patient.
 
      ![](./images/applyjob1.png " ")
 
@@ -270,11 +270,11 @@ When using Resource Manager to deploy an environment, execute a terraform **Appl
 
 ## Task 5: Enable Database Management
 
-1.  Login to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **External Database**. Click on **Pluggable Databases** and verify all pluggable databases are registered under External pluggable databases.
+1.  Log in to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **External Database**. Click **Pluggable Databases** and verify all pluggable databases are registered under External pluggable databases.
 
      ![](./images/pluggabledatabases.png " ")
 
-2.  Click on the database registered under External pluggable databases to display **External Pluggable Database** Details.
+2.  Click the database registered under External pluggable databases to display **External Pluggable Database** Details.
 
      ![](./images/pluggabledbdetails.png " ") 
 
