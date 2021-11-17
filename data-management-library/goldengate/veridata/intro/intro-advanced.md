@@ -8,7 +8,11 @@ The labs in this workshop walk you through several advanced features of Oracle G
 
 ### About Oracle GoldenGate Veridata
 Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
+In a nutshell, Oracle GoldenGate Veridata is a high-speed data comparison product offering of the GoldenGate Foundation suite family.
 
+Watch our short video that describes the salient features of the Oracle GoldenGate Foundation Suite:
+
+[](youtube:kdMUxSf9j0k)
 
 ### Objectives
 In this lab, you will:
@@ -34,5 +38,5 @@ Use these links to get more information about Oracle GoldenGate Veridata:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
+* **Contributors** -  Sukin Varghese, Senior Member of Technical staff, Jonathan Fu, Director Product Development
+* **Last Updated By/Date** - Anuradha Chepuri, November 2021

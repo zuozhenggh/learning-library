@@ -72,5 +72,5 @@ To configure Database Row Partitioning:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Sukin Varghese, Jonathan Fu
+* **Contributors** -  Sukin Varghese, Senior Member of Technical staff, Jonathan Fu, Director Product Development
 * **Last Updated By/Date** - Anuradha Chepuri, November 2021
