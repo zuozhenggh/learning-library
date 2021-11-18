@@ -137,19 +137,13 @@ Description
 
 5. Create Administrator Credentials
 
- Enter Username
-    ```
-    <copy>admin</copy>
-    ```
+ **Enter Username** (write username to notepad for later use)
+
     
- Enter Password
-    ```
-    <copy>Welcome#12345</copy>
-    ```   
- Confirm Password
-    ```
-    <copy>Welcome#12345</copy>
-    ```
+ **Enter Password** (write password to notepad for later use)
+ 
+ **Confirm Password** (value should match password for later use)
+
     ![MDS](./images/04mysql04.png " ")
 
 6. On Configure networking, keep the default values
