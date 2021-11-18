@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "My ToDo List App with React JS",
+  "workshoptitle": "React+Java+ADB = Native Cloud App",
   "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
@@ -23,6 +23,10 @@
       {
         "title": "Tutorial 3: Frontend (React JS)",
         "filename": "../../frontend/frontend.md"
+      },
+      {
+        "title": "Tutorial 4: Tear down",
+        "filename": "../../teardown/teardown.md"
       },
       {
         "title": "Need Help?",

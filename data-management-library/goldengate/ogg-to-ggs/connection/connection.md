@@ -1,10 +1,13 @@
-# Create a Trusted Connection Between Oracle GoldenGate and OCI GoldenGate
+# Create a trusted connection between Oracle GoldenGate and OCI GoldenGate
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate Service Manager. Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
+This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure (OCI) and add it to the Oracle GoldenGate Service Manager. Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
 
-Estimated Lab Time: 10 minutes
+Estimated time: 10 minutes
+
+Watch the video below for a walk through of the lab.
+[](youtube:c73kK9JDuo8)
 
 ### Objectives
 
@@ -18,47 +21,55 @@ In this lab, you will:
 
 To successfully complete this lab, you must have:
 
-* An on premises or Marketplace Oracle GoldenGate instance running
+* An on-premises or Marketplace Oracle GoldenGate instance running
 * The URL and log in credentials for the Oracle GoldenGate Service Manager
 * The log in credentials for the OCI GoldenGate Deployment Console
 
-## Task 1A: Using Chrome to Download the Root Certificate
+## Task 1A: Using Chrome to download the root certificate
 
-The following instructions show you how to download the Root Certificate using a Chrome web browser.
+The following instructions show you how to download the Root Certificate using a Chrome web browser in Windows.
 
-1.  Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
+> **Note:** *Mac users should follow Task 1B and use FireFox to download the root certificate.*
 
-2.  In your Chrome browser address bar, click the padlock icon, and then click **Certificate (Valid)**.
+1.  Launch the OCI GoldenGate Deployment Console if you don't already have it open, and log in.
+
+2.  In your Chrome browser address bar, click the padlock icon, and then click **Connection is secure**.
 
     ![](images/01-04-certificate.png " ")
 
-3.  In the Certificate window, click **Certification Path**, select **DigiCert**, and then click **View Certificate**.
+3.  Click **Certificate is valid**.
+
+    ![](images/01-03-certificate.png " ")
+
+4.  In the Certificate window, click **Certification Path**, select **DigiCert Global Root G2**, and then click **View Certificate**.
+
+    ![](images/01-04-certificate-window.png " ")
 
     Another Certificate window opens, displaying the details for the root DigiCert certificate.
 
     ![](images/01-04-digicert.png " ")
 
-4.  Click **Details**, and then click **Copy to File**.
+5.  Click **Details**, and then click **Copy to File**.
 
     ![](images/01-05.png " ")
 
-5.  In the Certificate Export Wizard, click **Next**.
+6.  In the Certificate Export Wizard, click **Next**.
 
-6.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
+7.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
 
     ![](images/01-07.png " ")
 
-7.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
+8.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
 
-8.  Click **Next**, and then click **Finish**.
+9.  Click **Next**, and then click **Finish**.
 
 A Certificate Export Wizard dialog displays **The export was successful**. You can close the Certificate windows.
 
-## Task 1B: Using FireFox to Download the Root Certificate
+## Task 1B: Using FireFox to download the root certificate
 
 The following instructions show you how to download the Root Certificate using a FireFox web browser.
 
-1.  Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
+1.  Launch the OCI GoldenGate Deployment Console if you don't already have it open, and log in.
 
 2.  In your FireFox browser address bar, click the padlock icon, and then next to Connection Secure, click **Show connection details** (right arrow icon).
 
@@ -72,9 +83,7 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/01b-04.png " ")
 
-5.  On the **Certificate** page, click **DigiCert Global Root CA**.
-
-    ![](images/01b-05.png " ")
+5.  On the **Certificate** page, click **DigiCert Global Root G2**.
 
 6.  Under the **Miscellaneous** section, for Download, click **PEM (cert)**, and save the PEM file to your local drive.
 
@@ -84,7 +93,7 @@ The following instructions show you how to download the Root Certificate using a
 
 1.  Open the on premises or Marketplace Oracle GoldenGate Service Manager in a browser window.
 
-> **Note:** *To open the Marketplace Oracle GoldenGate Service Manager, use the Public IP of the Marketplace Oracle GoldenGate compute instance from the OCI Console, and then enter `<public-ip>:<port 443>` in your browser address bar.*
+> **Note:** *To open the Marketplace Oracle GoldenGate Service Manager, use the Public IP of the Marketplace Oracle GoldenGate compute instance from the Oracle Cloud Console, and then enter `<public-ip>:<port 443>` in your browser address bar.*
 
 2.  In the navigation menu (hamburger icon), click **Certificate Management**.
 
@@ -110,7 +119,7 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/02-07-certlist.png " ")
 
-## Task 3: Add a Credential for Oracle GoldenGate to Connect to OCI GoldenGate
+## Task 3: Add a credential for Oracle GoldenGate to connect to OCI GoldenGate
 
 1.  Sign in to the OCI GoldenGate Deployment Console, and then use the Navigation menu (hamburger icon) to open the Administration Server's **Administrator** page.
 
@@ -122,9 +131,9 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/03-02b.png " ")
 
-3.  On the on premise or Marketplace Service Manager Overview page, locate the Administration Server, and then click the link in the Port column. The on premises or Marketplace Administration Server opens in a new browser.
+3.  On the on-premises or Marketplace Service Manager Overview page, locate the Administration Server, and then click the link in the Port column. The on premises or Marketplace Administration Server opens in a new browser.
 
-4.  Sign in to the on premise or Marketplace Oracle GoldenGate Administration Server with the same credentials used to log in to the Service Manager, and then use the Navigation menu to open the **Configuration** screen.
+4.  Sign in to the on-premises or Marketplace Oracle GoldenGate Administration Server with the same credentials used to log in to the Service Manager, and then use the Navigation menu to open the **Configuration** screen.
 
 5.  Under the Database tab, click **Add Credential**, and then complete the following fields:
 
@@ -145,4 +154,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, November 2021

@@ -2,9 +2,12 @@
 
 ## Introduction
 
-This lab walks you through the steps to capture and send data to OCI GoldenGate using an on premise or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Distribution Path to initiate sending the data to the target, and a Replicat to consume the data received.
+This lab walks you through the steps to capture and send data to Oracle Cloud Infrastructure (OCI) GoldenGate using an on-premises or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Distribution Path to initiate sending the data to the target, and a Replicat to consume the data received.
 
-Estimated Lab Time: 15 minutes
+Estimated time: 15 minutes
+
+Watch the video below for a walk through of the lab.
+[](youtube:KZ3kJIbGinY)
 
 ### About Extracts, Paths, and Replicats
 An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Server. A Replicat is a process that delivers data to the target.
@@ -14,13 +17,13 @@ An Extract is a process that extracts, or captures, data from a source database.
 In this lab, you will:
 * Add and run an Extract process to capture data to send to OCI GoldenGate
 * Add and run a Distribution Server Path to send the trail file to OCI GoldenGate
-* Add and run a Replicate process to consume the trail file sent from Oracle GoldenGate
+* Add and run a Replicat process to consume the trail file sent from Oracle GoldenGate
 
 ### Prerequisites
 
-This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Autonomous Transaction Processing and the target database is Oracle Autonomous Data Warehouse.
+This lab assumes that you completed all preceding labs. For the purposes of this lab, the source database used in this lab is Oracle Autonomous Transaction Processing (ATP) and the target database is Oracle Autonomous Data Warehouse (ADW).
 
-## Task 1: Add and Run an Extract in Oracle GoldenGate
+## Task 1: Add and run an Extract in Oracle GoldenGate
 
 This Extract process captures data from the source database to send to OCI GoldenGate.
 
@@ -50,7 +53,7 @@ This Extract process captures data from the source database to send to OCI Golde
     <copy>Table SRC_OCIGGLL.*;</copy>
     ```
 
-    ![](images/01-7-ext-params.png " ")
+    ![](images/01-07-ext-params.png " ")
 
 8.  Click **Create**. You're returned to the Administration Server Overview page.
 
@@ -62,7 +65,7 @@ This Extract process captures data from the source database to send to OCI Golde
 
     ![](images/02-ggs-extract-started.png " ")
 
-## Task 2: Add and Run a Distribution Server Path
+## Task 2: Add and run a Distribution Path
 
 The Distribution Path initiates the process to send the Oracle GoldenGate trail file to OCI GoldenGate.
 
@@ -78,7 +81,7 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
 5.  Click **Trail Name**, and then select the trail file created in STEP 1 above, to send to OCI GoldenGate. For example, select **E1**.
 
-6.  For **Generated Source URI**, click **Edit Source URI**, and then replace localhost (or the IP address) with the Internal FQDN of the on premise or Marketplace Oracle GoldenGate instance.
+6.  For **Generated Source URI**, click **Edit Source URI**, and then replace localhost (or the IP address) with the Internal FQDN of the on-premises or Marketplace Oracle GoldenGate instance.
 
     ![](images/02-07.png " ")
 
@@ -112,7 +115,7 @@ The Distribution Path initiates the process to send the Oracle GoldenGate trail 
 
     ![](images/02-15-rcvr.png " ")
 
-In this lab, you created and ran a Path on your on premise Oracle GoldenGate Distribution Server and sent a trail file from Oracle GoldenGate to OCI GoldenGate.
+In this lab, you created and ran a Path on your on-premises Oracle GoldenGate Distribution Server and sent a trail file from Oracle GoldenGate to OCI GoldenGate.
 
 ## Task 3: Add a Checkpoint table
 
@@ -134,7 +137,7 @@ In this lab, you created and ran a Path on your on premise Oracle GoldenGate Dis
 
 To return to the GoldenGate Deployment Console Home page, click **Overview** in the left navigation.
 
-## Task 4: Add and Run a Replicat
+## Task 4: Add and run a Replicat
 
 This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
@@ -176,7 +179,7 @@ This Replicat process consumes the trail file sent from Oracle GoldenGate.
 
     ![](images/04-12.png " ")
 
-13. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
+13. Return to the Oracle Cloud Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **SourceATP**.
 
 14. On the Source ATP Details page, click **Tools**, and then **Database Actions**.
 
@@ -201,11 +204,11 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
     ![](images/04-17.png " ")
 
-18. Navigate to the Oracle GoldenGate Marketplace Distribution Server. From the **Action** menu, select **Details**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** is listed with 10 inserts.
+18. Navigate to the Oracle GoldenGate Marketplace Distribution Server. From the **Action** menu, select **Details**, and then **Statistics**. Verify that **SRC\_OCIGGLL.SRC\_CITY** lists 10 inserts.
 
     ![](images/04-18.png " ")
 
-19. In the OCI GoldenGate Deployment Console, click the name of the Replicat to view its details, and then click Statistics to verify the Replicat applied the rows.
+19. In the OCI GoldenGate Deployment Console, click the name of the Replicat to view its details, and then click **Statistics** to verify the Replicat applied the rows.
 
     ![](images/image.png " ")
 
@@ -217,9 +220,9 @@ Insert into SRC_OCIGGLL.SRC_CITY (CITY_ID,CITY,REGION_ID,POPULATION) values (100
 
 In this lab, you created an Extract, a Distribution Path, and a Replicat, and you verified that data is moving from Oracle GoldenGate to OCI GoldenGate. You may now **proceed to the next lab**.
 
-## Learn More
+## Learn more
 
-* [Quickstart - Sending Data from Oracle GoldenGate to OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/qs-ogg-premise-cloud.html)
+* [Quickstart - Send Data from Oracle GoldenGate to OCI GoldenGate](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/qs-ogg-premise-cloud.html)
 * [Creating an Extract](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-3B004DB0-2F41-4FC2-BDD4-4DE809F52448)
 * [Create a Distribution Path](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/goldengate-deployment-console.html#GUID-19B3B506-ADF1-465E-87B5-91121FE44503)
 

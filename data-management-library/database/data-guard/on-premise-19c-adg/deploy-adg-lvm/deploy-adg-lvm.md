@@ -16,11 +16,11 @@ Estimated Time: 30 minutes
 
 This lab assumes you have already completed the following labs:
 
-- Setup Connectivity between the primary and the standby
+- Setup Connectivity Between Primary and Standby Host
 
 
 
-## Task 1: Prepare the standby host
+## **Task 1:** Prepare Standby Host
 
 The standby host has the database software only installed. You need do some Task s to prepare the standby host.
 
@@ -104,7 +104,7 @@ The standby host has the database software only installed. You need do some Task
     The command completed successfully
     [oracle@standby ~]$ 
     ```
-   
+
    
 
 ## Task 2: Configure Static Listeners 
@@ -114,11 +114,11 @@ A static listener is needed for initial instantiation of a standby database. The
 1. From the primary side
 
     - Switch to the **oracle** user, edit `listener.ora`
- 
+
     ```
     <copy>vi $ORACLE_HOME/network/admin/listener.ora</copy>
     ```
- 
+
     - Add following lines into listener.ora
     
     ```
@@ -207,7 +207,7 @@ A static listener is needed for initial instantiation of a standby database. The
 
 
 
-## Task 3: TNS Entries for Redo Transport 
+## **Task 3:** TNS Entries For Redo Transport 
 
 1. From the primary side, switch as **oracle** user, edit the `tnsnames.ora`
 
@@ -271,7 +271,7 @@ A static listener is needed for initial instantiation of a standby database. The
 
 
 
-## Task 4: Duplicate the Database to Standby  
+## **Task 4:** Duplicate Database To Standby  
 
 The standby database can be duplicated from the primary database.
 
@@ -304,9 +304,9 @@ The standby database can be duplicated from the primary database.
     ```
     [oracle@standby ~]$ <copy>vi /u01/app/oracle/product/19c/dbhome_1/dbs/initorclstby.ora</copy>
     ```
+
    
-   
-   
+
 3. Add the following lines into this file.
 
     ```
@@ -585,7 +585,7 @@ The standby database can be duplicated from the primary database.
 
 
 
-## Task 5: Configure Data Guard broker
+## **Task 5:** Configure Data Guard Broker
 
 1. Copy the following command.
 
@@ -703,7 +703,7 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020 
-* **Last Updated By/Date** - Minqiao Wang, Aug 2021
+* **Last Updated By/Date** - Minqiao Wang, Oct 2021
 
 
 
