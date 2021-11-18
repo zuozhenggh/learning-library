@@ -257,7 +257,7 @@ create table moviestream_log
 begin
     dbms_cloud.create_external_table(table_name => 'moviestream_labs',
                 file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/R-csuXKL9-Vn-fpstvXalGJftkjzCB1Te2iI1bA0dq7afsSdVHRd5H7dd2O5HLtp/n/c4u04/b/moviestream_lite_scripts/o/moviestream-lite-labs.json',
-                format => '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}',
+                format => json_object('skipheaders' value '0', 'delimiter' value '\n','ignoreblanklines' value 'true'),
                 column_list => 'doc varchar2(30000)'
             );
 end;
