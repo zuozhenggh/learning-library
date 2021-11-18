@@ -360,4 +360,4 @@ This concludes this lab. You may now **[proceed to the next lab](#next).**
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
 * **Contributors** - Tsengel Ikhbayar - GenO Lift Implementation
-* **Last Updated By/Date** - Bilegt Bat-Ochir 11/09/2021
+* **Last Updated By/Date** - Bilegt Bat-Ochir 18/09/2021

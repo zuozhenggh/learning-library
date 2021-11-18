@@ -4,7 +4,7 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "Welcome to migrate HR database application to Cloud using OCI GoldenGate Service workshop.",
+            "description": "Welcome to migrate HR database application using OCI GoldenGate workshop.",
             "filename": "./../../introduction/introduction.md"
         },
         {
