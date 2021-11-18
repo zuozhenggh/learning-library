@@ -34,7 +34,6 @@
       "filename": "./../../ggv-delta-comparison/ggv-delta-comparison.md"
     }
     ,
-
     {
         "title": "Lab 5: Configure Auto Partitions",
         "description": "This lab shows how to configure Automatic Row Partitioning in Oracle GoldenGate Veridata.",
