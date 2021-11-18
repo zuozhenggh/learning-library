@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This lab walks you through the steps to create a database table, create a proxy object, explore and prepare data, build and evaluate models, and use those models to score data using OML4Py. This will use a Classification example available in OML Notebooks. For illustrative purposes, Task 1 and Task 2 of this lab use iris from sklearn datasets to create a database table. The rest of the steps walk you through the example available in OML Notebooks that use the SH schema. The SH schema and associated data sets can be readily accessed in Oracle Autonomous Database.
+This lab walks you through the steps to create a database table, create a proxy object, explore and prepare data, build and evaluate models, and use those models to score data using OML4Py. This will use a classification example available in OML Notebooks. For illustrative purposes, Task 1 and Task 2 of this lab use iris from sklearn datasets to create a database table. The rest of the steps walk you through the example available in OML Notebooks that use the SH schema. The SH schema and associated data sets can be readily accessed in Oracle Autonomous Database.
 
 Estimated Time: 30 minutes
 ### About Oracle Machine Learning for Python(OML4Py)
-Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous Database, which includes Oracle Autonomous Data Warehouse (ADW), Oracle Autonomous Transaction Processing (ATP), and Oracle Autonomous JSON Database (AJD). By using Oracle Machine Learning Notebooks, you can use standard Python syntax and overloaded Python functions, use a natural Python API to in-database machine learning algorithms, invoke user-defined Python functions in database-spawned and controlled Python engines, and leverage automated machine learning (AutoML).
+Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous Database, which includes Oracle Autonomous Data Warehouse (ADW), Oracle Autonomous Transaction Processing (ATP), and Oracle Autonomous JSON Database (AJD). OML4Py is also included with Oracle Database on premises and Database Cloud Service with separate installation. By using Oracle Machine Learning Notebooks, you can use standard Python syntax and overloaded Python functions, use a natural Python API to in-database machine learning algorithms, invoke user-defined Python functions in database-spawned and controlled Python engines, and leverage automated machine learning (AutoML).
 ### Objectives
 
 In this lab, you will learn how to:
@@ -106,7 +106,7 @@ DEMO = oml.sync(table = "SUPPLEMENTARY_DEMOGRAPHICS", schema = "SH")
 z.show(DEMO.head())
 </copy>
 ```
-In this step, you are viewing a few rows from the SUPPLEMENTARY_DEMOGRAPHICS table.
+In this step, you are viewing a few rows from the SUPPLEMENTARY_DEMOGRAPHICS table using the overloaded head function.
 ![Top rows of DEMO.](images/rows_demo.png)
 
 ## Task 4: Explore the Data
@@ -123,7 +123,7 @@ In this example, use describe, shape and crosstab functions to explore and view 
 	```
 	![Statistical details of DEMO.](images/statistical_data_demo.png)
 
-2. Run the shape function to view the shape of an oml series data distribution, or of each column in an `oml.DataFrame`.
+2. Run the shape function to view the rows and columns of an `oml.DataFrame`.
 	```
 	<copy>
 	%python
@@ -333,7 +333,7 @@ Use the `oml.dt` class to build a Decision Tree model. You can build a model wit
 
 ## Task 7: Evaluate Your Model
 To evaluate your model you need to score the test data and then evaluate the model using various metrics.
-1. In this step, you will make predictions on the test case and add the `CASE_ID` as a supplement column so that you can uniquely associate scores with the original data. To do so run the below script.
+1. In this step, you will make predictions on the test case and add the `CASE_ID` as a supplemental column so that you can uniquely associate scores with the original data. To do so run the below script.
 	```
 	<copy>
 	%python
@@ -541,30 +541,29 @@ Here is a custom script to generate the metrics and charts as described above. R
 	```
 	You obtain an accuracy of 0.824789 or approximately 82.5% of the result are correctly predicted.
 
-## Task 8: Score Your Model
-After building and evaluating the model, you will now score the data.
-1. You can score new data using that model (`dt_mod`) using the predict function. Also, you'll reuse the test data to illustrate it.
+## Task 8: Score Data Using Your Model
+After building and evaluating the model you will now filter, predict the model in-database data.
+1. You can also display results of customers responding to affinity card with a probability greater than 0.5. You can also select the columns from the `RES_DF` dataset to display. To do so, run the following script.
+	```
+	<copy>
+	%python  
+	z.show(RES_DF[RES_DF['PROBABILITY_OF_1'] > 0.5][['PREDICTION', 'PROBABILITY_OF_1', 'CUST_ID', 'AFFINITY_CARD','EDUCATION','OCCUPATION', 'HOUSEHOLD_SIZE', 'YRS_RESIDENCE', 'OS_DOC_SET_KANJI','BULK_PACK_DISKETTES']])
+	</copy>
+	```
+	The output is similar to the following:
+	![Filtering result from RES_DF dataset on the basics of customers having an affinity greater than 50%.](images/prediction_result_res_df.png)
+
+2. Now use the model to make predictions on the test data by using the predict function. To do so run the below script.
 	```
 	<copy>
 	%python
 
-	RES_DF = dt_mod.predict(TEST_X, supplemental_cols = TEST_X[['CUST_ID', 'AFFINITY_CARD']], topN_attrs = True)
+	RES_DF = dt_mod.predict(TEST_X, supplemental_cols = TEST_X[['CUST_ID']], topN_attrs = True)
 	z.show(RES_DF)
 	</copy>
 	```
-	The output is similar to the following:
-	![Display of score using predict function on new data.](images/score_display_predict.png)
-
-2. You can also display the prediction result using the `RES_DF` dataset. To do so, run the following script.
-	```
-	<copy>
-	%python
-
-	z.show(RES_DF[RES_DF['PROBABILITY_OF_1'] > 0.5][['PREDICTION', 'PROBABILITY_OF_1'] + RES_DF.columns])
-	</copy>
-	```
-	The output is similar to the following:
-	![Prediction result using RES_DF dataset.](images/prediction_result_res_df.png)
+	where topN_attrs returns the top *N* most influential attributes of the predicted value. The output is similar to the following:
+	![Prediction of model on the test data.](images/score_display_predict.png)
 
 In this example, you classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top *N* attributes that are important to the model built.
 
@@ -577,11 +576,18 @@ OML4Py enables data scientists to hand-off their user-defined Python functions t
 	OML4Py Embedded Python Execution provides users the ability to invoke user-defined Python functions in one or more Python engines spawned and managed by the Oracle database environment.
 
 2. [Automated Machine Learning (Auto ML)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/about-automl.html#GUID-9F514C2B-1772-4073-807F-3E829D5D558C)
-	AutoML provides built-in data science expertise about data analytics and modeling that you can employ to build machine learning models.
+	AutoML provides built-in data science expertise about data analytics and modeling that you can employ to build machine learning models.Given below is an example on how you can automate the above scenario with the help of Auto ML by following the three steps:
+	1. Prepare the Demo data and then rank the classification algorithms from the set of supported Auto Ml algorithms with the 	 use of Algorithm Selection.
+	![The images shows how to prepare the demo data and rank the classification with the help of AutoML.](images/automl_algorithm_selections.png)
+	2. Identify the most relevant feature subset with the use of Automatic Feature Selection.
+	![It shows how AutoMl can be used for selection of relevant features.](images/automl_subset_feature_selection.png)
+	3. Finally tuning the hyperparameters for the classification algorithm with the help of Automatic Model Tuning.
+	![The image shows how to fine tune hyperparameters with help of AutoML](images/automl_hyperparameter_tuning.png)
+
 3. [Machine Learning Explainability (MLX)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/explain-model.html#GUID-1936962D-38AD-4E7E-9B96-EEE3EE2BD15C)
 	It is used in the process of explanation and interpretation of the machine learning model to identify the important features to help the model impact its prediction.
 
 ## Acknowledgements
 * **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation; Dhanish Kumar, Member of Technical Staff, User Assistance Developer.
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning.
-* **Last Updated By/Date** - Dhanish Kumar, October 2021
+* **Last Updated By/Date** - Dhanish Kumar, November 2021

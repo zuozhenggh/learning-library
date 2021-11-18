@@ -24,7 +24,7 @@
 
 When in doubt or need to start the databases using the following steps:
 
-1. please log in as **oracle** user and execute the following command:
+1. Please log in as **oracle** user and execute the following command:
 
     ````
     $ <copy>. oraenv</copy>
@@ -49,7 +49,7 @@ When in doubt or need to start the databases using the following steps:
     Processing Database instance "DB18C": log file /u01/app/oracle/product/18.1.0/dbhome_18c/rdbms/log/startup.log
     Processing Database instance "DB19C": log file /u01/app/oracle/product/19.3.0/dbhome_19c/rdbms/log/startup.log
     ````
-## Task 1: prepare the target 19c database ##
+## Task 1: Prepare the target 19c database ##
 
 The FTTS functionality requires an existing database as a target. For this, we will log into the existing 19c instance and create a new Pluggable Database.
 
@@ -188,7 +188,7 @@ The migration described in this lab requires a directory object for Datapump and
     SQL> <copy>exit</copy>
     ````
 
-## Task 2: prepare the Source database ##
+## Task 2: Prepare the Source database ##
 
  To run the full transportable operation, we'll have to take all data tablespaces into read-only mode – the same procedure as we would do for a regular transportable tablespace operation. Once the tablespace (in this case, just the USERS tablespace) is in read-only mode, we can copy the file(s) to the target location. In our example, we only have one tablespace (USERS) that contains user data. If you execute an FTTS in another environment, make sure you identify all tablespaces!
 
@@ -252,7 +252,7 @@ The migration described in this lab requires a directory object for Datapump and
     SQL> <copy>exit</copy>
     ````
 
-## Task 3: copy datafiles and import into 19c target PDB ##
+## Task 3: Copy datafiles and import into 19c target PDB ##
 
 1. First, we copy the files to the location we will use for the 19c target PDB:
 
@@ -327,7 +327,7 @@ Data Pump will take care of everything (currently except XDB and AWR) you need f
 
     By checking the log file, you need to determine if the errors harm your environment. In our migration, the errors should only be regarding a few users that could not be created.
 
-## Task 4: check the new upgraded target ##
+## Task 4: Check the new upgraded target ##
 
 The Data Pump process should have migrated the most crucial user in the database (PARKINGFINE). We can check the target database to see if our table has been imported as it should:
 
@@ -381,7 +381,7 @@ The Data Pump process should have migrated the most crucial user in the database
 
     The migration seems to be successful.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements ##
 

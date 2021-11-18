@@ -19,6 +19,7 @@ In this lab, you will:
 ###Prerequisites  
 This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
+
 ## Task 1: Log in to the Oracle Cloud Console
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator. You will complete all the labs in this workshop using this Cloud Administrator.
@@ -108,6 +109,8 @@ In later labs, you will need more information about your Data Catalog instance a
 ## Task 4: Add Three Data Asset Connections to the Oracle Object Storage Buckets
 
 After you register a data source as a data asset in your data catalog, you create data connections to your data asset to be able to harvest it. You can create multiple connections to your data source. At least one connection is needed to be able to harvest a data asset. In this lab, you will create three data connections to access the **moviestream\_sandbox**, **moviestream\_landing**, and **moviestream\_gold** Oracle Object Storage buckets that contain the data. The three buckets are located in a different tenancy than yours, **c4u04**; therefore, you will use three provided public pre-authenticated requests (PARs), one for each bucket. For information on PAR, see [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) in the _Oracle Cloud Infrastructure_ documentation.
+
+> **Note:** Pre-Authenticated Requests (PARs) are used in this workshop but are not yet supported by the metadata synchronization process and therefore will only work in limited circumstances. If your data must be public, please use public buckets instead.
 
 Add a connection to the **moviestream_sandbox** bucket to your new **`Data Lake`** data asset as follows:
 
@@ -509,4 +512,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author:** Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
 * **Contributor:** Marty Gubar, Product Manager, Server Technologies    
-* **Last Updated By/Date:** Lauran Serhal, October 2021
+* **Last Updated By/Date:** Lauran Serhal, November 2021
