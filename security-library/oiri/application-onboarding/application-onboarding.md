@@ -139,8 +139,8 @@ This lab assumes you have:
 6. In the Flat File Schema Properties table.
     * Select the Name column for username attribute.
     * Select the UID column for id attribute.
-    * Change the datatype of start_date attribute by selecting the Date datatype from the Data Type column.
-    * Mark the document_access as multivalued by selecting the corresponding checkbox in the MVA column.
+    * Change the datatype of `start_date` attribute by selecting the Date datatype from the Data Type column.
+    * Mark the `document_access` as multivalued by selecting the corresponding checkbox in the MVA column.
 
   ![](images/15-basicinfo.png)
 
@@ -150,7 +150,7 @@ This lab assumes you have:
 
 ## Task 5: Updating Schema Information
 
-1. Expand the *document_access* attribute and change the display name.
+1. Expand the *`document_access`* attribute and change the display name.
 
     ```
     Display Name : <copy>DMS Access</copy>
@@ -158,7 +158,7 @@ This lab assumes you have:
 
     ![](images/17-schema.png)
 
-2. Click the Advanced Setting icon for *document_access* attribute.
+2. Click the Advanced Setting icon for *`document_access`* attribute.
     * Select the Lookup and Entitlement checkbox.
     * Provide these details
 
@@ -174,7 +174,7 @@ This lab assumes you have:
 
   ![](images/18-schema.png)
 
-3. Select the Case Insensitive column for username,id and document_access attributes.
+3. Select the Case Insensitive column for username, id and `document_access` attributes.
 
     ![](images/19-schema.png)
 

@@ -64,8 +64,8 @@ You'll also populate your app's business objects by importing data from a file. 
 
 Let's now add data for the Department and Employee business objects. Instead of using the Data Manager to import data, this time you'll use each business object's **Data** tab to do the same thing.
 
-1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fi-wiD6trQb9wEpWYMyNHPwN8zN6x0a4N1fI_jzaCz56TT8syaJYAZZGc9-XzZ92/n/c4u04/b/solutions-library/o/Department.csv) and save the `Department.csv` file. The file contains six departments for the application.
-2.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/abJOgYP67N5pnLyKHe8-HCrZsxCmO7uibcaDbqneDDB8hzpy6wJDxJiKeJozGOjj/n/c4u04/b/solutions-library/o/Employee.csv) and save the `Employee.csv` file. The file contains nine employees for the application.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/1Mz1ckG1ORhQmDHfpV7bZofGoCI3zOieZfUeYVcqkVFFifJO6muyWFTaz-4xQ7kH/n/c4u03/b/oci-library/o/WMS4121Department.csv) and save the `Department.csv` file. The file contains six departments for the application.
+2.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CuAsioap8QTLRdQviVqKgkH-D5kFa0q3X45vTu1R0sMw9IPsKFzyXQz5T4d919vS/n/c4u03/b/oci-library/o/WMS4121Employee.csv) and save the `Employee.csv` file. The file contains nine employees for the application.
 3.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/vbcsnd_bo_icon.png) tab, then click the **Objects** tab.
 4.  Click **Department**, then click the **Data** tab. The departments you created are displayed.
 5.  Click **Import from File** ![Import from File icon](./images/vbcsnd_import_icon_transp.png).
