@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Migrate HR database and application to Oracle Cloud with OCI GoldenGate",
+    "workshoptitle": "Migrate an HR database and APEX application using GoldenGate",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {

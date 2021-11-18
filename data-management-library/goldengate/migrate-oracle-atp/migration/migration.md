@@ -4,7 +4,7 @@
 
 Up to now, we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous Database. 
 
-Many Oracle Cloud Infrastructure (OCI) GoldenGate customers overlook the need to ensure that the source and target database schemas to be replicated are in sync before replicating the data. GoldenGate’s underlying architecture for data replication ensures 100% consistency for all changes that occur on the source database. For each change on the source, such as an update or delete, GoldenGate guarantees the transaction was completed on the target. If the data didn’t exist on the target for an update or delete, then the replication of the transaction will fail and stop with an abnormal error. Many first-time GoldenGate users don’t understand this guaranteed consistency architecture and expect that GoldenGate would ignore these errors by default. However, if this was the case, then the target data would never match the source data.
+Many Oracle Cloud Infrastructure (OCI) GoldenGate customers overlook the need to ensure that the source and target database schemas to be replicated are in sync before replicating the data. GoldenGate’s underlying architecture for data replication ensures 100% consistency for all changes that occur on the source database. For each change on the source, such as an update or delete, GoldenGate guarantees the transaction was completed on the target. If the data didn’t exist on the target for an update or delete, then the replication of the transaction will fail and stop with an abnormal error. Usually, first-time GoldenGate users don’t understand this guaranteed consistency architecture and expect that GoldenGate would ignore these errors by default. However, if this was the case, then the target data would never match the source data.
 
 For the purposes of this lab, the source database is an on-premise 12c database and the target is Autonomous database.  There are seven source tables in HR schema and each table and associated resources, such as primary key constraints, will be created in the target schema as part of the target instantiation. 
 
@@ -16,7 +16,7 @@ To complete the lab, we will configure _**two extract**_ processes at the source
 
 * The migration step needs another 'special' type of extract process while changes are being captured by the first extract process from the source database. This 'special' process is called the **Initial-Load extract**. It captures data from a specified list of tables and later will be loaded into target database tables using the SCN.
 
-	> **NOTE:** The Oracle Database expdp and impdp are fully documented in the Oracle Documentation. You can also use the Replicate Data Using OCI GoldenGate, and it is preferred method of instantiation. However, we will use simple initial-load for purpose of this lab. You can also use [this quick start guide](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=797).
+	> **NOTE:** This is very simple initial-load method for purpose of this lab, because our source database size is small. The Oracle Database expdp and impdp are fully documented in the Oracle Documentation and it is preferred method of instantiation. You may also use [official instantiation document for this type of initial load](https://docs.oracle.com/en/middleware/goldengate/core/19.1/admin/instantiating-oracle-goldengate-initial-load.html#GUID-3AA4446C-6875-40BC-9944-006435FCF240)
 
 * When the initial-load extract finishes at the source, we will create the first replicat process to apply those changes. We will call it **Initial-Load replicat**, it is responsible for populating the target database using extracted data by the initial-load extract.
 
@@ -163,7 +163,7 @@ We will complete the below tasks:
 
 3. Copy the SCN output! The below image shows the successful output. In this workshop, SCN is **1667664**. We will also use this in the last step.
 
-	![](/images/3.goldengate-ext-scn.png)
+	![](/images/3.goldengate-ext-scn-1.png)
 
 ## **Task 6**: Configure the Initial-Load Extract at the Source Database.
 
@@ -200,7 +200,7 @@ We will complete the below tasks:
 
 7. In the overview dashboard, you should see **initload** extract is stopped. Click on **Action** button, choose **Details**. Initial-load takes only a matter of seconds to finish sample 7 tables. You can see actual extract process details in the **Report** tab. Please refer to the below recording for your reference of this step.
 
-	![](/images/3.goldengate-initial-load.gif)
+	![](/images/3.goldengate-initial-load-1.gif)
 
 	_RECAP:_ So far, we have configured two extract processes. EXTPRIM is capturing change data and INITLOAD captured every row of the source seven tables. Now we need to create two replicat processes for these two extracts.
 
