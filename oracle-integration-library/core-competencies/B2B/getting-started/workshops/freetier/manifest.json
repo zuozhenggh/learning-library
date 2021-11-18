@@ -7,7 +7,6 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
             "filename": "../../introduction/introduction.md"
         },
         {
@@ -17,7 +16,6 @@
         },
         {
             "title": "Provision Oracle Integration Instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../provision/provision.md"
         },
         {
