@@ -163,7 +163,7 @@ As in the normal process of Database Replay, after capturing the workload into f
 
     SQL>
     ```
-    ## Task 5: Replay the captured workload in `PDB19` using the `wrc` clients
+## Task 5: Replay the captured workload in `PDB19` using the `wrc` clients
 
 You are ready to start workload clients to replay the captured workload in `PDB19` with `wrc` clients.
 
