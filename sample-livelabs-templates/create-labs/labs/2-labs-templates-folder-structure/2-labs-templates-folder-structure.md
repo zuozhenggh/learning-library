@@ -1,21 +1,26 @@
 # Understand the learning-library Folder Structure
 
 ## Introduction
-This lab describes the prescribed folder structure that we need follow for developing labs and workshops.
+
+This lab describes the prescribed folder structure that we need follow for developing LiveLabs workshops.
+
 ### Objectives
-* Understand the learning-library folder structure.
-* Get to know the components of the workshop and the lab folders.
+
+* Understand the **learning-library** folder structure.
+* Familiarize yourself with the components of the workshop and the lab folders.
 
 ## Task 1: Folder Structure of the learning-library Repository
 
-The following image shows a folder structure of the "Getting Started with Oracle Big Data Service" workshop that is opened in the **Atom** Editor, through the project folder **bds**. You can see this structure at the following URL [https://github.com/oracle/learning-library/tree/master/data-management-library/big-data/bds-non-ha](https://github.com/oracle/learning-library/tree/master/data-management-library/big-data/bds-non-ha), or in the **data-management-library/big-data/bds-non-ha** folder of the clone on your machine.
-    ![](./images/temp-folder-structure-example1.png " ")
+The following image shows a folder structure of the **Getting Started with Oracle Big Data Service** LiveLabs workshop that is opened in the **Atom** Editor, through the project root folder **bds**. You can see this structure at the following URL [https://github.com/oracle/learning-library/tree/master/data-management-library/big-data/bds-non-ha](https://github.com/oracle/learning-library/tree/master/data-management-library/big-data/bds-non-ha), or in the **data-management-library/big-data/bds-non-ha** folder of the clone on your machine.    
+
+![](./images/temp-folder-structure-example1.png " ")
 
 ## Task 2: Understand the Components of the Workshop and Lab Folders
   The following describes the components of the above example:
   * The root folder of this example is the name of the project, **bds-non-ha**.
 
-      **Note:** You can create your project folder anywhere within your cloned repository. For example, the **bds** project folder is created in the **\learning-library\data-management-library\big-data**.
+>**Note:** You can create your project folder anywhere within your cloned repository. For example, the **bds** project folder is created in the **\learning-library\data-management-library\big-data** because it is a Big Data service.
+
   * Each lab has a separate folder, for example, **create-cluster**, **bds-create-hadoop-user** etc, containing respective `.md` files.
   * Each lab folder has an **images** folder that contains the screenshots that are used in the lab.
   * The **workshops** is the workshop folder, which contains the **freetier** folder that in turn contains the following:  `index.html`, `intro.md`, `manifest.json`, and `README.md` files.
@@ -43,4 +48,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Last Updated By/Date:** Anuradha Chepuri, November 2021
+* **Last Updated By/Date:** Lauran Serhal & Anuradha Chepuri, November 2021
