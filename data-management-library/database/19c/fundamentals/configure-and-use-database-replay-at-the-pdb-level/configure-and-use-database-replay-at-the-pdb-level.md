@@ -172,6 +172,11 @@ You are ready to start workload clients to replay the captured workload in `PDB1
     Note: Replay time stamps may be different then the one's shown below.
 
     ```
+    $ <copy>. oraenv</copy>
+    CDB1
+    ```
+
+    ```
     $ <copy>wrc REPLAYDIR=/home/oracle/PDB1/replay USERID=system SERVER=PDB19</copy>
 
     ...
