@@ -22,7 +22,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
 ## Task 1: Prepare the Primary Database
 
-1. Login to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**. *Note*: If you are in a workshop, double check your region to ensure you are on the assigned region.
+1. Log in to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**. *Note*: If you are in a workshop, double check your region to ensure you are on the assigned region.
 
 	![](./images/developer-resmgr-stacks.png " ")
 
@@ -77,7 +77,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
      ![](./images/applyjob3.png " ")
 
-2. Once this job succeeds, click on **Job Resources** and click on the resource against _oci\_core\_instance_. Click on **Workshop** and this will take you to the **Instance details** page. You can get the **Public IP address** of the primary instance from the **Instance details** page. Congratulations, your environment is created! Time to login to your instance to finish the configuration.
+2. Once this job succeeds, click on **Job Resources** and click on the resource against _oci\_core\_instance_. Click on **Workshop** and this will take you to the **Instance details** page. You can get the **Public IP address** of the primary instance from the **Instance details** page. Congratulations, your environment is created! Time to log in to your instance to finish the configuration.
 
      ![](images/jobresources.png " ")
      
@@ -93,8 +93,6 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
           ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
      
 
-     ![](images/logintoserver1.png " ")
-
 2. After successfully logging in, proceed to Task 5.
 
           ssh -i labkey opc@xxx.xxx.xxx.xxx
@@ -105,8 +103,6 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
           Activate the web console with: systemctl enable --now cockpit.socket
 
           [opc@workshop ~]$
-
-     ![](images/logintoserver2.png " ")
 
 ### Microsoft Windows using PuTTY
 

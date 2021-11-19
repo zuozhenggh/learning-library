@@ -101,7 +101,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     You can see that there's now a check mark in the **Required** column for the **Name** field.
 
-8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xt5U0wu9v1Ce78W2z6ncTyIdrWkZTlTT6e2GkZ4WneP3xaoHVNtnDsSsPjl9yYuo/n/c4u04/b/solutions-library/o/Location.csv) and save the `Location.csv` file to your file system. The file contains four locations for the application.
+8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/N2o2eijiTUZM78HyL9HHig4OsQLlOLQorVBrV8mUlJpbWJCMpY58nPJbHvFVlSR3/n/c4u03/b/oci-library/o/WMS4121Location.csv) and save the `Location.csv` file to your file system. The file contains four locations for the application.
 9.  In the Navigator's Business Object pane, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
     ![](./images/vbcsca_imp_s9.png)

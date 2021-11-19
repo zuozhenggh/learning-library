@@ -20,15 +20,19 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 	![](/images/2.atp-main.png)
 
-2. In **Tools** tab, where you will see **Database Actions**, click on **Open Database Actions**. You may need to enable a pop-up in your browser if it doesn't open anything.
+2. You will see **Database Actions**, please click on it. It would redirect you to the SQL web developer. 
 
 	![](/images/2.atp-1.png)
 
-3. A new sign-in page opens, enter **ADMIN** in Username, when it asks you to enter the password, which is in the terraform output. Go and copy, then paste here.
+	**Option A**: You will see a small notification saying that **Please wait. Initializing DB Actions**. This will only take few seconds, please do not press any button until it opens the SQL web developer in a new tab.
 
-	![](/images/sql_dev-1.png)
+	![](/images/2.atp-2.png)
 
-4. In the **DEVELOPMENT** section, click on **SQL**. 
+	**Option B**: If a sign-in page opens and asks you to provide username, please enter **ADMIN** and press next. Then it will ask you to enter a password, which is in your terraform output. Go and copy, then paste here.
+
+	![](/images/sql-dev-1.png)
+
+3. In the **DEVELOPMENT** section, click on **SQL**. 
 
 	![](/images/sql-dev-5.png)
 
@@ -72,4 +76,4 @@ This concludes this lab. You may now **[proceed to the next lab](#next).**
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
 * **Contributors** - Tsengel Ikhbayar - GenO Lift Implementation
-* **Last Updated By/Date** - Bilegt Bat-Ochir 11/09/2021
+* **Last Updated By/Date** - Bilegt Bat-Ochir 18/09/2021

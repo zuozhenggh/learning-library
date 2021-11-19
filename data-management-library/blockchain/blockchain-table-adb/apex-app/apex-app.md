@@ -43,7 +43,7 @@ This workshop assumes you have:
 
 4. Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the Oracle Autonomous Transaction Processing instance.
 
-    In the lab, give the **password - WElcome123##** for the ADMIN user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in to Administration** to sign in to APEX Workspace.
+    In the lab, give the **password - _WElcome123##_** for the ADMIN user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in to Administration** to sign in to APEX Workspace.
 	![](./images/task1-4.png " ")
 
 5. Click **Create Workspace**.
@@ -52,7 +52,7 @@ This workshop assumes you have:
 
 6. In the Create Workspace dialog, enter the following and click **Create Workspace**.
     - Database User: DEMOUSER
-    - Password : WElcome123## *Note:* The password field will be disabled as DEMOUSER is an existing database user.
+    - Password : _WElcome123##_ **Note:** The password field will be disabled as DEMOUSER is an existing database user.
     - Workspace Name : DEMOUSER
 
 	![](./images/task1-6.png " ")
@@ -62,7 +62,7 @@ This workshop assumes you have:
     Note: This will log you out of APEX Administration so that you can log into your new workspace.
     ![](./images/task1-7.png " ")
 
-8. On the APEX Workspace log in page, enter the **Password - WElcome123##** for the DEMOUSER workspace, check the Remember workspace and username checkbox, and then click **Sign In**.
+8. On the APEX Workspace log in page, enter the **Password - _WElcome123##_** for the DEMOUSER workspace, check the Remember workspace and username checkbox, and then click **Sign In**.
 
     ![](./images/task1-8.png " ")
 
@@ -75,7 +75,7 @@ This workshop assumes you have:
 	![](./images/task1-101.png " ")
     ![](./images/task1-102.png " ")
 
-11. Navigate back to the APEX workspace, paste the email address in the Email Address field, give the **Password - W3lcome123##** and confirm the password for the `demouser` and click **Apply Changes**.
+11. Navigate back to the APEX workspace, paste the email address in the Email Address field, give the **Password - _W3lcome123##_** and confirm the password for the `demouser` and click **Apply Changes**.
 
 	![](./images/task1-111.png " ")
 	![](./images/task1-112.png " ")
@@ -200,7 +200,7 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
     ![](./images/task3-6.png " ")
 
-7. In the Blockchain APEX application sign in page, give the **Username - DEMOUSER**, **Password - W3lcome123##** and click **Sign In**.
+7. In the Blockchain APEX application sign in page, give the **Username - DEMOUSER**, **Password - _W3lcome123##_** and click **Sign In**.
 
     ![](./images/task3-7.png " ")
 

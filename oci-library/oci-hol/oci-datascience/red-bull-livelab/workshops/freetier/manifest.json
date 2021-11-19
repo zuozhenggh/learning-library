@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Red Bull Analytics Hands-On Lab",
+    "workshoptitle": "Get started with Machine Learning and Red Bull Racing",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
