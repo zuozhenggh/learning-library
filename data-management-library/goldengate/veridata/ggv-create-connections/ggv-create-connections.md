@@ -109,7 +109,7 @@ You may now [proceed to the next lab](#next).
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Configuring Connections](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-75005B4D-5C24-4467-A68B-1FE66A168905)
 
-### Acknowledgements
+## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
+* **Contributors** -  Sukin Varghese, Senior Member of Technical staff, Jonathan Fu, Director Product Development, Rene Fontcha
+* **Last Updated By/Date** - Anuradha Chepuri, November 2021
