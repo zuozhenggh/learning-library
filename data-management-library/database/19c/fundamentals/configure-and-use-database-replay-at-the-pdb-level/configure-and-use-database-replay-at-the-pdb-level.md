@@ -147,7 +147,7 @@ As in the normal process of Database Replay, after capturing the workload into f
 1. Initialize the replay.
 
     ```
-    SQL> <copy>EXEC DBMS_WORKLOAD_REPLAY.PROCESS_CAPTURE ( -
+    SQL> <copy>EXEC DBMS_WORKLOAD_REPLAY.INITIALIZE_REPLAY ( -
         replay_name => 'R', replay_dir => 'OLTP')</copy>
     
     PL/SQL> procedure successfully completed.
