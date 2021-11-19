@@ -91,7 +91,7 @@ You will also be working in two seperate terminal windows labelled **Session1** 
     > >
     PL/SQL> procedure successfully completed.
     ```
-2. Open another terminal window, **Session2**. During the capture, in this session you will execute the workload on `PDB1` by executing the `/home/oracle/labs/19cnf/19cnf-lab-files/workload.sh` shell script.
+2. Open another terminal window, **Session2**. During the capture, in this session you will execute the workload on `PDB1` by executing the `$HOME/labs/19cnf/workload.sh` shell script.
 
     ```
     $ <copy>$HOME/labs/19cnf/workload.sh</copy>
@@ -167,7 +167,7 @@ As in the normal process of Database Replay, after capturing the workload into f
 
 You are ready to start workload clients to replay the captured workload in `PDB19` with `wrc` clients.
 
-1. In **Session2**, if the workload is still not finished, interrupt the `/home/oracle/labs/19cnf/19cnd-lab-files/workload.sh` shell script using `cntrl z`, quit the SQL*Plus session, and start the `wrc` process into `PDB19`.
+1. In **Session2**, if the workload is still not finished, interrupt the `$HOME/labs/19cnf/workload.sh` shell script using `cntrl z`, quit the SQL*Plus session, and start the `wrc` process into `PDB19`.
 
     Note: Replay time stamps may be different then the one's shown below.
 
@@ -229,7 +229,7 @@ You are ready to start workload clients to replay the captured workload in `PDB1
     ```
 ## Task 7: Reset your environment
 
-When the `wrc` client finally completes, `EXIT` out of **session2** and execute both the `/home/oracle/labs/19cnf/19cnf_lab_files/cleanup_PDBs_in_CDB1.sh` and `/home/oracle/labs/19cnf/19cnf_lab_files/DBReplay.sh` shell script in **session1** to drop and reset your `CDB1` as well as remove the Database Replay capture files.
+When the `wrc` client finally completes, `EXIT` out of **session2** and execute both the `$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh` and `$HOME/labs/19cnf/DBReplay.sh` shell script in **session1** to drop and reset your `CDB1` as well as remove the Database Replay capture files.
 
  
 ```
