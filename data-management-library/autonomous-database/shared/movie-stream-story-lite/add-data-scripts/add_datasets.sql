@@ -9,7 +9,7 @@ as
 
     csv_format      varchar2(1000) := '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":",", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}';
     pipe_format     varchar2(1000) := '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":"|", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}';
-    json_format     varchar2(1000) := '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}';
+    json_format     varchar2(1000) := '{"skipheaders":"0", "delimiter":"\\n", "ignoreblanklines":"true"}';
     parquet_format  varchar2(1000) := '{"type":"parquet",  "schema": "all"}';
     type table_array IS VARRAY(24) OF VARCHAR2(30); 
     table_list table_array := table_array( 'ext_genre',
@@ -121,7 +121,7 @@ begin
         dbms_cloud.create_external_table(
             table_name => 'ext_movie',
             file_uri_list => uri_gold || '/movie/*.json',
-            format => json_format,
+            format => json_object('skipheaders' value '0', 'delimiter' value '\n','ignoreblanklines' value 'true'),
             column_list => 'doc varchar2(30000)'
             );
 
@@ -592,7 +592,7 @@ begin
             file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o/movie/*.json',
             column_list => 'doc varchar2(32000)',
             field_list => 'doc char(30000)',
-            format => json_format
+            format => json_object('skipheaders' value '0', 'delimiter' value '\n','ignoreblanklines' value 'true')
             );            
 
      end;
