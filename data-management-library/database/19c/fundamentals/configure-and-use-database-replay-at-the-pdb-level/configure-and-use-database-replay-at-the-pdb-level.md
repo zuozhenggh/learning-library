@@ -238,13 +238,13 @@ Replay client 1 finished (11:50:11)
 $
 ```
 ```
-$<copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
+$ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
 
 ...
 $
 ```
 ```
-$<copy>$HOME/labs/19cnf/DBReplay.sh</copy>
+$ <copy>$HOME/labs/19cnf/DBReplay.sh</copy>
 
 ...
 $
