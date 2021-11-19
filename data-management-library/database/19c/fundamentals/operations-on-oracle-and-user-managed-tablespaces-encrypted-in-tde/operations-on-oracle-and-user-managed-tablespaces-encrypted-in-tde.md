@@ -32,7 +32,7 @@ sqlplus / AS SYSDBA</copy>
 ADMINISTER KEY MANAGEMENT CREATE KEYSTORE '/u01/app/oracle/admin/CDB1/tde_wallet' IDENTIFIED BY password;</copy>
 
 ```
-Try adding this using gedit to $ORACLE_HOME/network/admin/sqlnet.ora if you run into `ORA-28367: wallet does not exist`
+Try adding this using gedit to $ORACLE_HOME/network/admin/sqlnet.ora if you run into `ORA-28367: wallet does not exist`.
 ```
 <copy>
 WALLET_LOCATION=

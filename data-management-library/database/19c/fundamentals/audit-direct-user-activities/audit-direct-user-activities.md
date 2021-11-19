@@ -1,4 +1,4 @@
-# Clone a PDB from a Remote CDB by Using DBCA in Silent Mode
+# Audit Direct User Activities
 
 ## Introduction
 This 15-minute tutorial shows you how to audit top-level user activities in a database without collecting recursive user activity.
