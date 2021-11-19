@@ -62,6 +62,7 @@ You will also be working in two seperate terminal windows labelled **Session1** 
 
     ```
     $ <copy>sqlplus system@PDB1</copy>
+    
     Enter password: password
 
     SQL>
