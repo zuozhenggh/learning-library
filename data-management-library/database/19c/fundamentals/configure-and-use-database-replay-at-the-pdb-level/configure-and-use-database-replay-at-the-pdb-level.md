@@ -46,7 +46,7 @@ You will also be working in two seperate terminal windows labelled **Session1** 
 2. Execute the `DBReplay.sh` shell script in Session1. The script re- creates `PDB1` and `PDB19`, removing any existing database replay files.
 
     ```
-    $ <copy>/Desktop/labs/19cnf/19cnf-lab-files/DBReplay.sh</copy>
+    $ <copy>~/labs/19cnf/19cnf-lab-files/DBReplay.sh</copy>
     
     ...
     
