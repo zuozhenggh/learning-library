@@ -229,7 +229,7 @@ You are ready to start workload clients to replay the captured workload in `PDB1
     ```
 ## Task 7: Reset your environment
 
-When the `wrc` client finally completes, execute both the `/home/oracle/labs/19cnf/19cnf_lab_files/cleanup_PDBs_in_CDB1.sh` and `/home/oracle/labs/19cnf/19cnf_lab_files/DBReplay.sh` shell script to drop and reset your `CDB1` as well as remove the Database Replay capture files.
+When the `wrc` client finally completes, `EXIT` out of **session2** and execute both the `/home/oracle/labs/19cnf/19cnf_lab_files/cleanup_PDBs_in_CDB1.sh` and `/home/oracle/labs/19cnf/19cnf_lab_files/DBReplay.sh` shell script in **session1** to drop and reset your `CDB1` as well as remove the Database Replay capture files.
 
  
 ```
@@ -238,13 +238,13 @@ Replay client 1 finished (11:50:11)
 $
 ```
 ```
-$<copy>/home/oracle/labs/19cnf/19cnf_lab_files/cleanup_PDBs_in_CDB1.sh</copy>
+$<copy>/home/oracle/labs/19cnf/19cnf-lab-files/cleanup_PDBs_in_CDB1.sh</copy>
 
 ...
 $
 ```
 ```
-$<copy>/home/oracle/labs/19cnf/19cnf_lab_files/DBReplay.sh</copy>
+$<copy>/home/oracle/labs/19cnf/19cnf-lab-files/DBReplay.sh</copy>
 
 ...
 $
