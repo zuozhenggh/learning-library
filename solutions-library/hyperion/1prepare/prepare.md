@@ -1,4 +1,4 @@
-# Preparing Prerequisites for Hyperion on OCI
+# Prepare Prerequisites for Hyperion on OCI
 
 ## Introduction
 
@@ -18,7 +18,7 @@ In this lab, you will:
 * Make sure we have a way to view a desktop in that instances (RealVNC/VNC viewer of choice)
 * Make sure we have public/private keys to use to keep our instances secure
 
-## Task 1: Install PuTTY and PuTTYGen (Windows)
+## Task 1: install PuTTY and PuTTYGen (Windows)
 
 Most Unix-based OSs, including MacOS and various Linux distros, innately boot an SSH service to allow for SSH connections to remote instances. If you are using a Windows machine, this functionality was only recently added within Windows Terminal, and finding documentation on how to perform many of the actions you can perform on Unix-based machines is difficult.
 

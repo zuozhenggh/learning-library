@@ -1,4 +1,4 @@
-# Configuring Instances for Hyperion in OCI
+# Configure Instances for Hyperion in OCI
 
 ## Introduction
 
@@ -31,7 +31,7 @@ You should already be logged into the Oracle console; have these things ready as
 
 To find the last two, you might have to view the instances in the OCI console. Click on the menu, then on **Compute** --> **Instances**; a few instances with `eps` should pop up. Click on each of them to get the requisite information.
 
-## Task 1: Open ports on the security list
+## Task 1: open ports on the security list
 
 The first thing we need to do is to open up the requisite ports on the security list so that people can actually access our applications. Note that in a production scenario, we'd probably be more restrictive about who could connect to these ports by using different CIDR ranges; here, we use the non-restrictive `0.0.0.0/0`, which opens these ports to everyone.
 
@@ -59,7 +59,7 @@ The first thing we need to do is to open up the requisite ports on the security 
 
 6. You're now familiar with adding security rules to subnets. Perform the same exercise with the app and web subnets (`appsubnet` and `websubnet`, respectively). Add an ingress rule for both with a destination CIDR `0.0.0.0/0` and enter the Destination port as `3389`.
 
-## Task 2: Install a desktop interface on the bastion host
+## Task 2: install a desktop interface on the bastion host
 
 We now can access the instances we need. We'll start with configuring the bastion host.
 
@@ -195,7 +195,7 @@ On Windows, you'll have to do the following.
 
 ![Bastion host desktop](images/vmconfig19.png " ")
 
-## Task 3: Reset the passwords on the Windows instances
+## Task 3: reset the passwords on the Windows instances
 
 We'll now have to use our bastion host to reset the passwords of all 3 of the Windows instances that were spun up in the provisioning step.
 
