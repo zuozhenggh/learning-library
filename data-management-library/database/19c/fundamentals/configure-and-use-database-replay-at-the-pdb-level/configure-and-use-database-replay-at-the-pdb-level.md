@@ -46,7 +46,7 @@ You will also be working in two seperate terminal windows labelled **Session1** 
 2. Execute the `DBReplay.sh` shell script in Session1. The script re- creates `PDB1` and `PDB19`, removing any existing database replay files.
 
     ```
-    $ <copy>/home/oracle/labs/19cnf/19cnf-lab-files/DBReplay.sh</copy>
+    $ <copy>$HOME/labs/19cnf/DBReplay.sh</copy>
     
     ...
     
@@ -94,7 +94,7 @@ You will also be working in two seperate terminal windows labelled **Session1** 
 2. Open another terminal window, **Session2**. During the capture, in this session you will execute the workload on `PDB1` by executing the `/home/oracle/labs/19cnf/19cnf-lab-files/workload.sh` shell script.
 
     ```
-    $ <copy>/home/oracle/labs/19cnf/19cnf-lab-files/workload.sh</copy>
+    $ <copy>$HOME/labs/19cnf/workload.sh</copy>
     ```
 3. When you think the workload is sufficient for replay testing, stop the capture in **Session1**.
 
@@ -238,13 +238,13 @@ Replay client 1 finished (11:50:11)
 $
 ```
 ```
-$<copy>/home/oracle/labs/19cnf/19cnf-lab-files/cleanup_PDBs_in_CDB1.sh</copy>
+$<copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
 
 ...
 $
 ```
 ```
-$<copy>/home/oracle/labs/19cnf/19cnf-lab-files/DBReplay.sh</copy>
+$<copy>$HOME/labs/19cnf/DBReplay.sh</copy>
 
 ...
 $
