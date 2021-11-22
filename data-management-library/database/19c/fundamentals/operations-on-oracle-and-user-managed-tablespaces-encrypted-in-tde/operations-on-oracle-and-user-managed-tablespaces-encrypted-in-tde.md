@@ -181,11 +181,8 @@ The behavior is the same in pluggable databases (PDBs).
 ```
 <copy>EXIT</copy>
 ```
-## Learn More
+
 
 
 ## Acknowledgements
-
-- **Author** -
-- **Contributor** - r
 - **Last Updated By/Date** - Blake Hendricks, Austin Specialist Hub, November 12 2021

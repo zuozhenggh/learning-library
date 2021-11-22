@@ -169,11 +169,6 @@ Enter password: password
 ```
 <copy>EXIT</copy>
 ```
-## Learn More
-
 
 ## Acknowledgements
-
-- **Author** -
-- **Contributor** -
 - **Last Updated By/Date** - Blake Hendricks, Austin Specialist Hub, November 12 2021
