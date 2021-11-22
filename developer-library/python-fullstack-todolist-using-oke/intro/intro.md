@@ -24,7 +24,7 @@ In this 2 parts lab, you will:
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

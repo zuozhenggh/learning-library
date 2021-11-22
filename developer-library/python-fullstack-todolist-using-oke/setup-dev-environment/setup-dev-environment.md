@@ -423,7 +423,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   Note: Skipping this step will have issues while testing API gateways.
 
-Congratulations, you have completed lab 1; you may now [proceed to the next lab](#next).
+Congratulations, you have completed lab 1; you may now proceed to the next lab.
 
 ## Acknowledgements
 
