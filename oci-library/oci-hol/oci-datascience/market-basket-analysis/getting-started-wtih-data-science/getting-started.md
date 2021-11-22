@@ -126,33 +126,60 @@ This guide shows how to use the Resource Manager to provision the service using 
 
    This will take about 5 minutes.
 
-## Task 4: Prepare the House Sales Data for analysis
+## Task 4: Upload the Jupyter Notebook
 
-1. Download the dataset with the house prices and characteristics.
+1. Download the notebook and save it locally on your machine.
 
-    Download [The training dataset](files/housesales.csv) (the dataset is public). Depending on the browser you might have to use Left/Right click to do this. Make sure the extension of the saved file is .csv
+   The .ipynb notebook can be found at the below. 
 
-2. Review the dataset (e.g. use a text editor).
+   ![](files/Online_Retail_Notebook.ipynb)
 
-   The column names are explained [here](files/data-description.txt). This document also explains the possible list-of-values for categorical attributes.
+2. Upload the notebook
 
-3. Upload the dataset by dragging it to the left panel
+   Drag and drop the .ipynb file to the left hand side of the notebook session.
 
-   ![Upload Dataset](images/uploaddataset.png)
+   ![](images/upload_notebook.png)
 
-## Task 5: Start the Python notebook
+3. Select the installed kernel
 
-1. Download the wallet from your ADW instance by selecting Database Connection. Make sure that
+   Open the .ipynb file, and select the kernel on the top right side of the page.
 
-    If you don't have a launcher open yet, do so by going to File -> New Launcher. ![Start Python notebook](images/new-launcher.png).
+   ![](images/select_kernel.png)
 
-2. Start notebook
+   Select the kernel [conda env:mlcpuv1] from the drop down menu
 
-    It is **important** to select the Python environment with the right Conda environment that we just installed. Look for the notebook that uses Conda **"mlcpuv1"** and open it. ![Start Python notebook](images/start-python-notebook.png)
+   ![](images/select_kernel2.png)
+
+4. Install mlxtend and pvis
+
+   Next we will have to install the package mlxtend on the kernel. Mlxtend (which stands for machine learning extensions) is a Python library that consists of useful data
+   science tools. The library has its own Apriori Algorithm built in that we will use for the association rule learning. 
+
+   Pyvis is a Python library for interactive visualizations that we will use to visiualize the association of the different products.
+
+   Run the first cell that contains the command 'pip install mlxtend' and 'pip install pyvis by putting the cursor into the cell and selecting the play icon at the top of the page.
+
+   ![](images/install.png)
+
+   ![](images/play.png)
+
+5. Restart the Kernel
+
+   In order for the tools in the mlxtend package to become available, you must restart the kernel.
+
+   Select kernel in the drop down bar at the top of the page and then "Restart Kernel". Make sure to save everything first by selecting File -> Save Notebook.
+
+   ![](images/restart.png)
+
+6. Import all the necessary libraries
+
+   Run the second cell of the notebook that contains all the import statements. This will import the industry standard data science tools that we will use throughout the lab.
+
+   ![](images/imports.png)
 
 [Proceed to the next section](#next).
 
 ## Acknowledgements
-* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Senior Principal Product Manager - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
-* **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
+* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Senior Principal Product Manager - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management, Simon Weisser - Cloud Engineer
+* **Last Updated By/Date** - Simon Weisser, Dec 2021
 

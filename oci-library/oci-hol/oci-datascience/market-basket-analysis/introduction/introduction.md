@@ -15,10 +15,7 @@ In this workshop you will:
 * Get a high level overview on Oracle Cloud Infrastructure and the architecture for DS/ML
 * Learn how to train ML models for Market Basket Analysis
 * Learn to use OCI Data Science
-* Learn to use Oracle Machine Learning (in-database)
-* Learn to use Oracle Analytics Cloud (specifically ML features)
-* Learn how Graph database is related to ML
-* Learn how to integrate ML into an application (operationalize your results)
+* Learn to use Oracle Machine Learning
 
 ### Prerequisites
 
@@ -33,5 +30,4 @@ You will be introduced to Oracle Cloud and gain a high level overview of the pro
 
 ## Acknowledgements
 * **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Consulting Solution Architect - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
-* **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
-
+* **Last Updated By/Date** - Simon Weisser, December 2021

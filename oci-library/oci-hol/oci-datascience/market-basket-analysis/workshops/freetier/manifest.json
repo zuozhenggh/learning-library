@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Introduction to Data Science",
+    "workshoptitle": "Market Basket Analysis (Apriori Algorithm) with OCI Data Science",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -19,7 +19,7 @@
         },
         {
             "title": "Lab 2: Connecting to Jupyter Noebook through ADW (Optional)",
-            "filename": "../../adw-setup/adw.md"
+            "filename": "../../adw/adw.md"
         },
         {
             "title": "Lab 3: Data Exploration, Data Preparation and Building the Model ",

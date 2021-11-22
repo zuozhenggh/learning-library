@@ -18,61 +18,33 @@ In this lab you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 * OCI Data Science service with dependencies (see previous lab)
 
-## Task 1: Open the Notebook
+## Task 1: Locally Upload Dataset (optional)
 
-1. Download the notebook and save it locally on your machine.
+This task is only required if you did not set up an ADW (Autonomous Data Warehouse) instance. If you did, please proceed to Task 2
 
-   The .ipynb notebook can be found at the below. 
+1. Locally Download Dataset and Upload to Notebook
 
-   ![Online_Retail_Notebook.ipynb](files/Online_Retail_Notebook.ipynb)
+   Download the Online Retail Sales.
 
-2. Upload the notebook
+   ![](files/Online_Retail.csv)
 
-   Drag and drop the .ipynb file to the left hand side of the notebook session.
+2. Open your data science notebook and drag the csv file into your directory.
 
-   ![](images/drag_and_drop.png)
+   ![](images/drag.png)
 
-3. Select the installed kernel
+3. Import your csv into the Jupyter notebook. Run the first cell under 'Local File Storage'. This will read the csv file into a pandas dataframe and print the
+   first 5 rows of the dataframe.
 
-   Open the .ipynb file, and select the kernel on the top right side of the page.
-
-   ![](images/select_kernel.png)
-
-   Select the kernel [conda env:mlcpuv1] from the drop down menu
-
-   ![](images/select_kernel2.png)
-
-4. Install mlxtend
-
-   Next we will have to install the package mlxtend on the kernel. Mlxtend (which stands for machine learning extensions) is a Python library that consists of useful data
-   science tools. The library has its own Apriori Algorithm built in that we will use for the association rule learning.
-
-   Run the first cell that contains the command 'pip install mlxtend' by putting the cursor into the cell and selecting the play icon at the top of the page.
-
-   ![](images/play.png)
-
-
-5. Restart the Kernel
-
-   In order for the tools in the mlxtend package to become available, you must restart the kernel.
-
-   Select kernel in the drop down bar at the top of the page and then "Restart Kernel"
-
-   ![](images/restart.png)
-
-## Task 2: Data Exploration and Data Preparation
-
-   In this lab we will walk through the data exploration phase of the notebook. Before you begin, make sure to run the cell that contains all import statements to set
-   up the necessary environment. We will begin under the heading "Local File Storage".
-
-   1. Visualize the Pandas Data Frame 
-   
-   The first cell imports more libraries that are needed for the lab. The next cell reads the CSV file into a pandas dataframe, which we will be using for the rest of 
-   the lab. The shape in paranthesis indicates that there are 8 columns and 142961 rows in the data frame. You should be able to see the first 5 rows of the data frame.
+   ![](images/localcsv.png)
 
    ![](images/df_head.png)
 
-   2. Plot the top 5 products
+## Task 2: Data Exploration and Data Preparation
+
+In this lab we will walk through the data exploration phase of the notebook. Before you begin, make sure to run the cell that contains all import statements to set
+up the necessary environment. We will begin under the heading "Data Exploration and Data Preparation".
+
+1. Plot the top 5 products
 
    Next, you will set up a bar graph that shows the top 10 most column products by percente occurence. You can see here that there is no product appears very frequently
    (as the most common product only appears in 0.5% of the occurence). 
@@ -83,7 +55,7 @@ In this lab you will:
    data frame so that only products that appear more than 0.2% of the time remains in the dataset. As you can see, the reduced the number of rows in the dataframe down to
    1,742.
 
-   3. Feature Engineer
+2. Feature Engineering
 
    Next you will run a crosstab on the dataframe. Here you will create a new dataframe where each row is a unique customer id, each column is a unique product, and each
    value is the quantity the customer purchased of the product. This new data frame will allows us to focus on the columns of the initial data frame that actual provide 
@@ -116,7 +88,7 @@ In this lab you will:
 
     ![](images/web.png)
 
-## Task 4: Analyze the data
+## Task 4: Collaborative Filtering
 
 1. Reformat data
 
@@ -140,19 +112,19 @@ In this lab you will:
 
    Next you'll create a table that lists the most reccomended products based on cosine similarity.
 
-   ![](images/confusion.png)
+   ![](images/rankings.png)
 
-   For those intersted in the mathematical derivation of cosine similarity, you can read more about it ![here](https://en.wikipedia.org/wiki/Cosine_similarity)
+   If you're intersted in the mathematical derivation of cosine similarity, you can read more about it ![here](https://en.wikipedia.org/wiki/Cosine_similarity)
 
-# Task 4: Store the model in the catalog and deploy it
+## Task 5: Deploy model to model catalog
 
-1. Make sure you have a working model
+1. Create working model
 
-    The following requires that you built a model successfully in steps 1 to 4.
+    The following requires that you have successfully completed steps 1 to 4.
 
 2. Store the model in the model catalog
 
-    If we want applications/business processes to make good use of our model, then we need to deploy it first. We start by publishing the model to the model catalog. The following will **serialize** the model along with some other artifacts and store it in the catalog under the name "house-price-model".
+    If we want applications/business processes to make good use of our model, then we need to deploy it first. We start by publishing the model to the model catalog. The following will **serialize** the model along with some other artifacts and store it in the catalog under the name "online-retail-model".
 
     ```python
     <copy>
@@ -172,7 +144,7 @@ In this lab you will:
         data_science_env=True)
     with open(path.join(path_to_model_artifacts, "model.pkl"), "wb") as outfile: cloudpickle.dump(model, outfile)
     catalog_entry = generic_model_artifact.save(display_name='online-retail-model',
-        description='Model to reccommend online retaiL products')
+        description='Model to reccommend online retail products')
     </copy>
     ```
 
@@ -180,16 +152,16 @@ In this lab you will:
 
     Now we're going to deploy this model to its own compute instance. This will take the model from the catalog and create a runtime version of it that's ready to receive requests. This uses normal OCI compute shapes. Next, choose "Create Deployment".
 
-    ![](./images/go-to-model-catalog.png)
+    ![](./images/go-to-model-catalog3.png)
     ![](./images/create-deployment-button.png)
 
-    - Give the model deployment a name, e.g. "house price model deployment"
-    - Choose the right model (house-price-model)
+    - Give the model deployment a name, e.g. "online retail model deployment"
+    - Choose the right model (online-retail-model)
     - Choose a shape, one instance of VM.Standard2.1 is sufficient. Note that we could have chosen multiple instances, this is useful for models that are used very intensively.
 
     Finally, submit the deployment. This should take about 10 minutes. Finally, you should see that the compute instance is active.
 
-    ![](./images/deployed-model.png)
+    ![](./images/deployed-model3.png)
 Congratulations on completing this lab!
 
 [Proceed to the next section](#next).

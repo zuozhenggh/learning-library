@@ -35,12 +35,12 @@ This guide shows how to provision an Oracle Autonomous Data Warehouse
 
     Compartment - < whichever compartment you are working out of >
     Display name - AprioriLab
-    Workload Type - Data Warehous
+    Workload Type - Data Warehouse
     Deployment Type - Shared Infrastructure
     Database Version - 19c
     OCPU count - 1
     Storage (TB) - 1
-    Password - We will set the admin password to 'Welcome12345'. Feel free to change it as desired, but make sure to save this password as we will need it later.
+    Password - We will set the admin password to 'Welcome12345'. Feel free to change it as desired, but make sure to save this password as you will need it later.
     Access Type - Allow secure access from everywhere
     Choose a license type - License Included
 
@@ -166,7 +166,7 @@ This guide shows you how to create a new user for your autonomous database and g
 3. Create a new folder inside your notebook session by selecting the folder icon with a + sign
    and name this new folder 'wallet'.
 
-   Note: it is okay if your notebook is not identical to this example one. At this point, you should only have a conda folder, and the Online_Retail_Notebook.ipynb file.
+   Note: it is okay if your notebook is not identical to this example one. At this point, you should only have a conda folder, and the OnlineRetailNotebook.ipynb file.
 
    ![](images/folder.png)
 
@@ -176,21 +176,15 @@ This guide shows you how to create a new user for your autonomous database and g
 
     ![](images/move.png)
 
-5. Run the second sell of that notebook that continues all the import statements.
+5. Move to the first cell under Oracle Autonomous Database (ADB).
 
-    ![](images/import.png)
-
-    This contains the necessary libraries to export the table from the ADW instance into a pandas dataframe.
-
-6. Move to the first cell under Oracle Autonomous Database (ADB).
-
-   First we will fetch the ADW_SID. Inside the wallet folder, open the tnsnames.ora file. Copy the name the ends with "low" and paste it as the value in the ADW_SID line.
+   First we will fetch the ADW SID. Inside the wallet folder, open the tnsnames.ora file. Copy the name the ends with "low" and paste it as the value in the ADW SID line.
 
    ![](images/dblow.png)
 
    ![](images/adw_sid.png)
 
-   The TNS_ADMIN should be set to the path of the wallet folder which we created earlier. In this case, it would be /home/datascience/wallet. This wallet path must also
+   The TNS ADMIN should be set to the path of the wallet folder which we created earlier. In this case, it would be /home/datascience/wallet. This wallet path must also
    be specificied in the sqlnet.ora file inside the wallet folder. Open the file and set DIRECTORY="/home/datascience/wallet".
 
    ![](images/sqlnet.png)
@@ -203,15 +197,15 @@ This guide shows you how to create a new user for your autonomous database and g
 
    ![](images/sqloutput.png)
 
-7. The next cell defines a URI as your connection source. It also creates an enginer to connect to your database. Go ahead and run it.
+6. The next cell defines a URI as your connection source. It also creates an enginer to connect to your database. Go ahead and run it.
 
     ![](images/uri.png)
 
-8. You are now ready to read the data from the ADW instance into a pandas dataframe.
+7. You are now ready to read the data from the ADW instance into a pandas dataframe.
 
     ![](images/read_pd.png)
 
-    The read_sql_query uses the specified query to create the pandas dataframe. In this case, we will be selecting all the rows from the table we uploaded into the ADW instance.
+    The read sql query uses the specified query to create the pandas dataframe. In this case, we will be selecting all the rows from the table we uploaded into the ADW instance.
     Here, you would have the ability to filter out some of your data prior to uploading into the notebook, which would ultimately make the data wrangling and data explortation
     much cleaner. In addition, you have also set the con attribute (SQLAlechemy connetable) to the enginer that you previously specified.
 
@@ -222,6 +216,6 @@ This guide shows you how to create a new user for your autonomous database and g
 [Proceed to the next section](#next).
 
 ## Acknowledgements
-* **Authors** - Jeroen Kloosterman - Product Strategy Manager - Oracle Digital, Lyudmil Pelov - Senior Principal Product Manager - A-Team Cloud Solution Architects, Fredrick Bergstrand - Sales Engineer Analytics - Oracle Digital, Hans Viehmann - Group Manager - Spatial and Graph Product Management
-* **Last Updated By/Date** - Jeroen Kloosterman, Oracle Digital, Jan 2021
+* **Authors** - Simon Weisser, Cloud Engineer
+* **Last Updated By/Date** - Simon Weisser, December 2021
 
