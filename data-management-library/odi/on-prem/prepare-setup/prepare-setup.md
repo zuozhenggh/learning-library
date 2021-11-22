@@ -12,10 +12,15 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 ### Prerequisites
 This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
-- SSH Keys
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [odi-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/g9o9Bd0HWgL7u_jcH38L43JQsFBD2YNkxZTx-axVnks1OrDMy-vxwtIR4M4OaiBt/n/natdsecurity/b/stack/o/odi-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
+<if type="advanced">
+    - [odi-mkplc-advanced.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_EIwsXv5v6KkKcQldUQixExqAgJCbY826XovJec4I25rc4dHEZW4whrF-nb2QUye/n/natdsecurity/b/stack/o/odi-mkplc-advanced.zip)
+</if>
+<if type="basics">
+    - [odi-mkplc-basics.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/m4wcgeN1hw9D1zV3pgOkbRjwanAt5dIW7QsZS7znZNnHU63vh495UHhkiRtaDJHE/n/natdsecurity/b/stack/o/odi-mkplc-basics.zip)
+</if>
 
 2.  Save in your downloads folder.
 
@@ -27,7 +32,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
-| 8080           | Tomcat (Guacamole)                    |
+| 6080           | NoVnc                 |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
@@ -48,5 +53,4 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 
 * **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 * **Contributors** - Kay Malcolm, Product Manager, Database Product Management
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
-
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2021
