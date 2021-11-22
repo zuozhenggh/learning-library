@@ -4,7 +4,7 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "description":"Introduction to B2B Workshop"
+            "description":"Introduction to B2B Workshop",
             "filename": "../../introduction/introduction.md"
         },
         {
