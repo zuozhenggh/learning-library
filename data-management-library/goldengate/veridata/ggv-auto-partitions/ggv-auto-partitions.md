@@ -17,49 +17,51 @@ In this lab, you will:
 
 ### Prerequisites
 This lab assumes you have:
-
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* You have completed:
-    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
     * Lab: Create Datasource connections
-    * Lab: Create Groups and Compare Pairs. Create a Group by name **Group_AutoPartition**.
+    * Lab: Create Groups and Compare Pairs. Create a Group by name **`Group_AutoPartition`**.
     * Lab: Create Groups and Compare Pairs. Follow the Tasks 1 to 2 to create a compare pair.
 
 ## **Task 1:** Configure Automatic Row Partitioning
 To configure Automatic Row Partitioning:
+
 1. In the Oracle GoldenGate Veridata UI, click **Group Configuration**, select a group, click Edit, and click **Go to Compare Pair Configuration** to display the **Compare Pair Configuration** page.
+
 2. Click **Manual Mapping**.
+
 3. Select a Source **Schema** and a Target **Schema** under **Datasource Information**, and then select the tables from **Source Tables** and **Target Tables** for Manual Compare Pair Mapping. Enter:
+
     * Source schema: **SOURCE**
     * Target schema: **TARGET**
     * Source Table: **XMLTABLE**
     * Target Table: **XMLTABLE**
 
-![](./images/1_AP.png " ")
+    ![](./images/1_AP.png " ")
 
 4. Select the **Automatic Row Partitions** check box.
 
 5. Enter a numeric value between 2 to 100 in the text field.
 
-      Enter:
+    Enter:
 
-      * **Automatic Row Partitions**: **12**
+    * **Automatic Row Partitions**: **12**
 
-![](./images/2_AP.png " ")
+    ![](./images/2_AP.png " ")
 
 6. Click **Generate Mappings**. The control moves to the **Preview** tab.
 
-![](./images/3_AP.png " ")
+    ![](./images/3_AP.png " ")
 
 7. Click **Save** to save the generated compare pair.
 
-  The control moves to the **Existing Compare Pairs** tab.
-  Notice the compare pairs that have been generated with Automatic Row Partition.
+The control moves to the **Existing Compare Pairs** tab.
+Notice the compare pairs that have been generated with Automatic Row Partition.
 
-![](./images/4_AP.png " ")
-You may now proceed to the lab on [Creating and Executing Jobs](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=833&p210_type=1&session=1455719632468) to create a new job. Add the **Group_AutoPartition** Group to this job.
+    ![](./images/4_AP.png " ")
 
 You may now [proceed to the next lab](#next).
 
@@ -71,5 +73,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Sukin Varghese, Senior Member of Technical staff, Jonathan Fu, Director Product Development
-* **Last Updated By/Date** - Anuradha Chepuri, November 2021
+* **Contributors** -  Sukin Varghese , Jonathan Fu, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2021
