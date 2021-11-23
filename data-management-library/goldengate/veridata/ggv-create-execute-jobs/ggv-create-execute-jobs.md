@@ -62,5 +62,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021
