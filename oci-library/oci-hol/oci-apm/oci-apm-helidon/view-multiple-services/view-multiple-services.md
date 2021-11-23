@@ -47,7 +47,7 @@ Estimated time: 15 minutes
 	vi ~/helidon-quickstart-se/pom.xml
 	</copy>
 	```
-   	>NOTE: Please refer to the Lab3, Task1, step 3 for how to use the vi editor.
+   	>NOTE: For how to use the vi editor, refer to the Lab3, Task1, step 3
 
 2.	At the end of the dependencies section, find a line ***&lt;/dependencies&gt;*** and add the followings before that line:
 

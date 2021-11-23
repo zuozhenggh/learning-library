@@ -59,7 +59,7 @@ Estimated time: 10 minutes
 	vi ~/helidon-quickstart-se-2/pom.xml
 	</copy>
 	```
-   	>NOTE: Please refer to the Lab3, Task1, step 3 for how to use the vi editor.
+   	>NOTE: For how to use the vi editor, refer to the Lab3, Task1, step 3
 
 3.	Add the following repositories blocks between the ***properties*** and ***dependencies*** sections:
 

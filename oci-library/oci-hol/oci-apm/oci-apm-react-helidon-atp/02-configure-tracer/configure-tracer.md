@@ -22,8 +22,8 @@ Estimated time: 20 minutes
 * This Lab also assumes you have completed the tutorials in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196).
 
 ## Task 1: Launch Cloud Shell
-1. Launch the Oracle Cloud Shell
-The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration.
+1. Launch the Oracle Cloud Shell <br/>
+  The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration.
 
 	Click the Cloud Shell icon in the top-right corner of the Console.
 	![Cloud Shell](images/1-1-cloudshell.png " ")
@@ -44,7 +44,9 @@ The Oracle Cloud Shell is a small virtual machine running a Bash shell that you 
 	</copy>
 	```
 
-4. Add the following repositories blocks to the ***pom.xml*** file:
+	  >NOTE: If you are using the vi editor, type ***i*** to enter Insert mode, and make the text editable. Use allow keys to navigate the text and make changes to where you set the cursor. To save a file, press Esc key, then type ***:wq*** to write and quit the file. If you do not wish a change, press Esc then type ***:q!*** to discard your changes. Please refer to the editor references for more usages or how to use other editors.
+
+4. Add the following repositories blocks between the ***properties*** and ***build*** sections:
 
 			<repositories>
 				<repository>
@@ -54,7 +56,9 @@ The Oracle Cloud Shell is a small virtual machine running a Bash shell that you 
 					</repository>
 			</repositories>
 
-5.	Then add the following dependencies:
+	![pom.xml](images/2-1-1-pomxml.png " ")
+
+5.	At the end of the dependencies section, find a line ***&lt;/dependencies&gt;*** and add the followings before that line:
 
 			<dependency>
 			     <groupId>io.helidon.tracing</groupId>
@@ -71,6 +75,7 @@ The Oracle Cloud Shell is a small virtual machine running a Bash shell that you 
 			    <version>[1.0.1389,)</version>
 			</dependency>
 
+	![pom.xml](images/2-1-2-pomxml.png " ")
 
 ## Task 3: Modify application.yaml file
 
@@ -131,11 +136,11 @@ The Oracle Cloud Shell is a small virtual machine running a Bash shell that you 
 1.	Open ***Main.java*** with any editor.
 	``` bash
   <copy>
-  vi ~/helidon-quickstart-se/src/main/java/io/helidon/examples/quickstart/se/Main.java
+  vi ~/mtdrworkshop/backend/src/main/java/com/oracle/todoapp/Main.java
   </copy>
   ```
 
-2. Add the followings to configure the tracer with the application. (Refer to the sample image in the next step)
+2. Configure the tracer with the application. (Refer to the sample image in the next step)
 
  a.	Add the import statements below.
 
@@ -146,13 +151,13 @@ The Oracle Cloud Shell is a small virtual machine running a Bash shell that you 
 	</copy>
 	```
 
- b.	Add the following to the ***startServer*** method.
+ b.	 In the ***main*** method, find a line ***.addMediaSupport(JsonpSupport.create())***. Add the following above that line:
 	``` bash
 	<copy>
 	.tracer(TracerBuilder.create(config.get("tracing")).build())
 	</copy>
 	```
- c.	Add the following to the ***createRouting*** method.
+ c.	In the ***createRouting*** method, find a line ***.register("/todolist", corsSupport, todoListAppService)***. Add the following above that line:
 	``` bash
 	<copy>
 	.register(WebTracingConfig.create(config.get("tracing")))
@@ -175,14 +180,14 @@ Next, you will add custom spans to Java files to trace the workloads of the SQL 
 
 In this lab, we are adding custom spans to the first two, ***List All*** and ***Get by ID***.
 
-1. Add custom spans to **TodoListAppService** class
+1. Open ***TodoListAppService.java*** with any editor.
 
-	 Open ***TodoListAppService.java*** with any editor.
 	 ``` bash
 	 <copy>
 	 vi ~/mtdrworkshop/backend/src/main/java/com/oracle/todoapp/TodoListAppService.java
 	 </copy>
 	 ```
+   	>NOTE: For how to use the vi editor, refer to the Task2, step 2 in this Lab.
 
 	 a. Add the import statement below.
 
@@ -239,15 +244,14 @@ In this lab, we are adding custom spans to the first two, ***List All*** and ***
 	}
 	</copy>
 	```
-Refer to the screenshots of the ***TodoListAppService.java*** where the changes are highlighted in blue.
+Refer to the screenshots of the ***TodoListAppService.java*** where the changes are highlighted in blue. Observe that custom spans are added to the methods.
 
 	![TodoListAppService](images/5-1-TodoListAppService.png " ")
 	![TodoListAppService](images/5-2-TodoListAppService.png " ")
 	![TodoListAppService](images/5-3-TodoListAppService.png " ")
 
-2. Add custom spans to **TodoItemStorage.java** class
+2. Open ***TodoItemStorage.java*** with any editor.
 
-	Open ***TodoItemStorage.java*** with any editor.
 	``` bash
 	<copy>
 	vi ~/mtdrworkshop/backend/src/main/java/com/oracle/todoapp/TodoItemStorage.java
@@ -502,6 +506,9 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 	cd <project directory on your laptop>/oci-react-samples/mtdrworkshop/frontend
 	</copy>
 	```
+
+	![frontend directory](images/10-1-1-frontend.png " ")
+
 2.	from the ***frontend/public*** directory, open ***index.html*** with an editor.
 	``` bash
 	<copy>
@@ -555,8 +562,9 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 	![APM Browser Agent](images/11-4-browseragent.png " ")
 
-5. Click **select files** link to open a file browser dialog. Navigate to ***frontend/build*** directory, select all files. Click **Open**.
+5. Click **select files** link to open a file browser dialog. Then, navigate to ***frontend/build*** directory, select all files. Click **Open**.
 
+	![APM Browser Agent](images/11-8-3-browseragent.png " ")
 	![APM Browser Agent](images/11-5-browseragent.png " ")
 
 6. Review the list of files which will be replaced. Click **Upload**.
@@ -567,39 +575,55 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 	![APM Browser Agent](images/11-7-browseragent.png " ")
 
-8. Next, upload the files in the subfolders. Expand the ***“static”*** folder link from the tree view.
+8. Next, upload the files in the subfolders. Expand the **static** folder link from the tree view.
 
 	![APM Browser Agent](images/11-8-browseragent.png " ")
 
-9.	Expand the ***“js”*** folder link
+9.	Expand the **js** folder link
 
-	![APM Browser Agent](images/11-9-browseragent.png " ")
+	![APM Browser Agent](images/11-8-1-browseragent.png " ")
 
-10.	Click **Upload**, click **“select files”**, then select all files from the ***build/static/js*** folder. Then click **Open**.
+10.	Click **Upload**
 
-	![APM Browser Agent](images/11-10-browseragent.png " ")
+  ![APM Browser Agent](images/11-8-2-browseragent.png " ")
 
-11. Review the files that will be replaced and click **Upload**. Click **Close** when the upload is completed.
+11. click **“select files”**
+
+	![APM Browser Agent](images/11-8-3-browseragent.png " ")
+
+12. Select all files from the ***build/static/js*** folder. Then click **Open**.
+
+  ![APM Browser Agent](images/11-9-browseragent.png " ")
+
+13. Review the files that will be replaced and click **Upload**. Click **Close** when the upload is completed.
 
 	![APM Browser Agent](images/11-11-browseragent.png " ")
 
-12.	Open ***static/css*** folder and repeat the upload steps, similar to the above, and upload the files in your local css directory.
+14.	Select **static** from the pulldown menu to go back to the static directory
 
-	![APM Browser Agent](images/11-12-browseragent.png " ")
+	![APM Browser Agent](images/11-11-1-browseragent.png " ")
 
-13.	Go back to root directory in the tree view and find ***index.html***. Click the three dots at the right side of the row, then select **View Object Details**.
+15. Expand the **css** folder link. Upload the files from your local css directory, by repeating the upload steps similar to the steps 9 to 14.
+
+	![APM Browser Agent](images/11-11-2-browseragent.png " ")
+
+16.	After all the css files are uploaded, go back to root directory by selecting **(root)** from the pulldown menu.
+
+	![APM Browser Agent](images/11-11-3-browseragent.png " ")
+
+17. From the tree view and find ***index.html***. Click the three dots at the right side of the row, then select **View Object Details**.
 
 	![APM Browser Agent](images/11-13-browseragent.png " ")
 
-14.	Click the **URL Path** to open the application in a browser tab.
+18.	Click the **URL Path** to open the application in a browser tab.
 
 	![APM Browser Agent](images/11-14-browseragent.png " ")
 
-15.	Ensure that the application opens in a new browser tab without any error.
+19.	Ensure that the application opens in a new browser tab without any error.
 
 	![APM Browser Agent](images/11-15-browseragent.png " ")
 
-16.	Perform a few transactions to generate traffic. For example, add a new entery, press **Add**, verify that the new item was added to the list, then click **Done**.
+20.	Perform a few transactions to generate traffic. For example, add a new entery, press **Add**, verify that the new item was added to the list, then click **Done**.
 
 	![APM Browser Agent](images/11-16-browseragent.png " ")
 

@@ -18,7 +18,7 @@
             "filename": "../../01-create-domain/create-domain.md"
         },
         {
-            "title": "Lab 2: SConfigure APM Tracer for Maven, Helidon, Browser, and custom spans",
+            "title": "Lab 2: Configure APM Tracer for Maven, Helidon, Browser, and custom spans",
             "description": "Configure APM Tracer for Maven, Helidon, Browser, and custom spans",
             "filename": "../../02-configure-tracer/configure-tracer.md"
         },

@@ -22,8 +22,9 @@ Estimated time: 10 minutes
 
 ## Task 1: Launch the Cloud Shell and verify Helidon Prerequisites
 
-1. Launch the Oracle Cloud Shell
-The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration.
+1. Launch the Oracle Cloud Shell <br/>
+
+  The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration.
 
 	Click the Cloud Shell icon in the top-right corner of the Console.
 	![Cloud Shell](images/1-1-cloudshell.png " ")

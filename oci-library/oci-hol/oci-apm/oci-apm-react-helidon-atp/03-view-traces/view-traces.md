@@ -38,7 +38,7 @@ Estimated time: 10 minutes
 
 ## Task 3: Examine spans and their dimensions in the Trace Details page
 
-1.	In the **Trace Details** pane, observe multiple spans, issued from two different services, are nested in the trace. Examine the topology to understand how the two services are connected. Review the flow in the **Spans** view and perceive how the spans are distributed in the trace.
+1.	In the **Trace Details** page, you can observe how the spans are distributed in the trace. Examine the **Topology** view and the **Spans** view to understand how the two services are connected. You will see multiple spans, which are issued from two different services, are nested in a single trace. 
 
 	![Trace Explorer](images/3-1-trace_explorer.png " ")
 
