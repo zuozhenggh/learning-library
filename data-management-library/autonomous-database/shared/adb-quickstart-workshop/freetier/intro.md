@@ -2,9 +2,7 @@
 
 The labs in this workshop walk you through all the steps to get started using the **Oracle Autonomous Database on Shared Infrastructure (ADB-S)**.
 
-Oracle Autonomous Database provides secure, fully managed databases in the Oracle Cloud.
-
-### **Workshop Objectives**
+## **Workshop Objectives**
 - Provision a new Autonomous Database instance on Shared Infrastructure
 - Run Queries on the sample data sets
 - Upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create sample tables, load data into them from files on the OCI Object Storage
@@ -14,9 +12,8 @@ Oracle Autonomous Database provides secure, fully managed databases in the Oracl
 ### **Workshop Prerequisites**
 This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
-You are all set. **Let's begin! Click Get Started in the Contents menu on the left.**
+You are all set. **Let's begin! Click the next lab in the Contents menu on the left.**
 
-##  
 ## Want to Learn More About Autonomous Database?
 
 - <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html" target="\_blank">Oracle Autonomous Data Warehouse Documentation</a>
