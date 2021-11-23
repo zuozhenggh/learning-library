@@ -56,7 +56,7 @@ Estimated time: 20 minutes
 					</repository>
 			</repositories>
 
-	![pom.xml](images/2-1-1-pomxml.png " ")
+	![pom.xml](images/2-1-0-pomxml.png " ")
 
 5.	At the end of the dependencies section, find a line ***&lt;/dependencies&gt;*** and add the followings before that line:
 
