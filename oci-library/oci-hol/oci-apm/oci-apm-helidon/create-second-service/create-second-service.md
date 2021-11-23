@@ -59,9 +59,9 @@ Estimated time: 10 minutes
 	vi ~/helidon-quickstart-se-2/pom.xml
 	</copy>
 	```
+   	>NOTE: Please refer to the Lab3, Task1, step 3 for how to use the vi editor.
 
-
-3.	Add the following repositories blocks to the pom.xml file:
+3.	Add the following repositories blocks between the ***properties*** and ***dependencies*** sections:
 
 		<repositories>
 		  <repository>
@@ -70,8 +70,8 @@ Estimated time: 10 minutes
 		    <url>https://objectstorage.us-ashburn-1.oraclecloud.com/n/idhph4hmky92/b/prod-agent-binaries/o</url>
 		  </repository>
 		</repositories>
-
-4.	Then add the following dependencies:
+	![pom.xml](images/1-2-pomxml.png " ")
+4.	At the end of the dependencies section, find a line ***&lt;/dependencies&gt;*** and add the followings before that line:
 
 		<dependency>
 		    <groupId>io.helidon.tracing</groupId>
@@ -87,7 +87,7 @@ Estimated time: 10 minutes
 		    <artifactId>apm-java-agent-helidon</artifactId>
 		    <version>[1.0.1389,)</version>
 		</dependency>
-
+	![pom.xml](images/1-1-pomxml.png " ")
 5.	Save and close the file.
 
 ## Task 3: Modify application.yaml file
@@ -139,12 +139,15 @@ Estimated time: 10 minutes
 		 </copy>
 		 ```
 
- b.	Add the following to the startServer method. Refer to the sample image in the Lab 3, Task 3, step 2.
+ b.	In the startServer method, find a line ***.addMediaSupport(JsonpSupport.create())***. Add the following above that line:
 		 ``` bash
 		 <copy>
 		 .tracer(TracerBuilder.create(config.get("tracing")).build())
 		 </copy>
 		 ```
+Refer to the sample image below:
+
+	![Main.java](images/3-1-main_java.png " ")
 
 3.	Save and close the file.
 
@@ -200,8 +203,12 @@ Estimated time: 10 minutes
 	cd ~/helidon-quickstart-se-2/; mvn package -DskipTests=true
 	</copy>
 	```
-	![Cloud Shell](images/6-1-mvn.png " ")
 
+ 	 ![Cloud Shell](images/6-1-mvn.png " ")
+
+	>NOTE: If your build fails with an error, run java -version and make sure it points to the JDK 11. If it does not return openjdk version"11.0.7", go back to the task 1 in this Lab and re-run the export commands to set the environment variable. This can happen when a session is interrupted during the lab exercise. Confirm the java version returns 11.0.7 and re-execute the mvn package command.  
+
+  ![Cloud Shell](images/4-1-error-mvn.png " ")
 
 2.	Start the application by running the application jar file
 

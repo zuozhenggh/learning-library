@@ -18,7 +18,27 @@ Estimated time: 15 minutes
 
 * This tutorial requires the completion of the Lab 1,2,3 and 4.
 
-## Task 1: Task 1: Modify pom.xml
+## Task 1: Modify pom.xml file in the Helidon application
+
+1. Launch OCI Cloud Shell if not opened already.
+
+2. Ensure the Java version in the path is 11.0.7.
+	``` bash
+	<copy>
+	java -version
+	</copy>
+	```
+
+	if you completed the Lab1 in this workshop, but the Java version returned from the command is not 11.0.7, you may need to reset the JAVA_HOME environment variable. Run the following commands.
+
+	``` bash
+	<copy>
+	export JAVA_HOME=~/graalvm-ce-java11-20.1.0
+	export PATH="$JAVA_HOME/bin:$PATH"
+	</copy>
+	```
+
+## Task 2: Modify pom.xml
 
 1.	Change to ***helidon-quickstart-se*** directory, open ***pom.xml*** in an editor.
 
@@ -27,8 +47,9 @@ Estimated time: 15 minutes
 	vi ~/helidon-quickstart-se/pom.xml
 	</copy>
 	```
+   	>NOTE: Please refer to the Lab3, Task1, step 3 for how to use the vi editor.
 
-2.	Add the following dependency:
+2.	At the end of the dependencies section, find a line ***&lt;/dependencies&gt;*** and add the followings before that line:
 
 		<dependency>
 		    <groupId>io.helidon.security.integration</groupId>
@@ -48,7 +69,7 @@ Estimated time: 15 minutes
 		</dependency>
 	![Cloud Shell](images/1-1-pomxml.png " ")
 
-## Task 2: Replace GreetService Class
+## Task 3: Replace GreetService Class
 
 1.	Change to ***quickstart/se*** directory where the ***GreetService.java*** file resides.
 
@@ -57,9 +78,33 @@ Estimated time: 15 minutes
 	cd ~/helidon-quickstart-se/src/main/java/io/helidon/examples/quickstart/se
 	</copy>
 	```
+2.	Rename the ***GreetService.java*** to ***GreetService.javaorg***.
 
+	``` bash
+   <copy>
+   mv GreetService.java GreetService.javaorg
+   </copy>
+   ```
 
-2.	Replace the GreetService class with the code below.
+3.  Create a new file and name it ***GreetService.java***.
+	``` bash
+  <copy>
+  mv GreetService.java GreetService.javaorg
+  </copy>
+  ```
+4. Open the ***GreetService.java*** file you just created.
+
+	``` bash
+  <copy>
+  touch GreetService.java
+  </copy>
+  ```
+5. Open the file with an editor, then copy and paste the code below.
+	``` bash
+  <copy>
+  vi GreetService.java
+  </copy>
+  ```
 
 	``` bash
 	<copy>
@@ -169,7 +214,7 @@ Estimated time: 15 minutes
 		```
 
 
-## Task 3: Build and start the application
+## Task 4: Build and start the application
 
 1. Ensure the JAVA_HOME environment variable is set.
 
@@ -210,7 +255,7 @@ Estimated time: 15 minutes
 	```
 	![Cloud Shell](images/3-1-cloudshell.png " ")
 
-## Task 4: View the trace in the APM Trace Explorer
+## Task 5: View the trace in the APM Trace Explorer
 
 1.	From the OCI menu, select **Observability & Management**, then **Trace Explorer**.  Click a link of helidon-http service.
 

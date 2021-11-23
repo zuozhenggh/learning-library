@@ -46,7 +46,10 @@ Estimated time: 15 minutes
 	vi ~/helidon-quickstart-se/pom.xml
 	</copy>
 	```
-4. Add the following repositories blocks to the pom.xml file:
+
+	  >NOTE: If you are using the vi editor, type ***i*** to enter Insert mode, and make the text editable. Use allow keys to navigate the text and make changes to where you set the cursor. To save a file, press Esc key, then type ***:wq*** to write and quit the file. If you do not wish a change, press Esc then type ***:q!*** to discard your changes. Please refer to the editor references for more usages or how to use other editors.
+
+4. Add the following repositories blocks between the ***properties*** and ***dependencies*** sections:
 
 			<repositories>
 				<repository>
@@ -55,8 +58,8 @@ Estimated time: 15 minutes
 			    <url>https://objectstorage.us-ashburn-1.oraclecloud.com/n/idhph4hmky92/b/prod-agent-binaries/o</url>
 			  </repository>
 			</repositories>
-
-5.	Then add the following dependencies:
+	![pom.xml](images/1-2-pomxml.png " ")
+5.	At the end of the dependencies section, find a line ***&lt;/dependencies&gt;*** and add the followings before that line:
 
 			<dependency>
 			     <groupId>io.helidon.tracing</groupId>
@@ -102,7 +105,6 @@ Estimated time: 15 minutes
 	* Copy the above text and paste it into a text file, replace the endpoint and the private key, then copy the modified text into the yaml file.
 	* Make sure to keep the syntax of 2 space indentation.
 	* Refer to the screenshot image below to see how it should look like after the file is modified.
-
 	![application.yaml](images/2-1-applicationyaml.png " ")
 
 
@@ -125,13 +127,13 @@ Estimated time: 15 minutes
 		import io.helidon.tracing.TracerBuilder;
 		</copy>
 		```
- b.	Add the following to the startServer method by referencing the sample image below:
+ b.	In the startServer method, find a line ***.addMediaSupport(JsonpSupport.create())***. Add the following above that line:
 		 ``` bash
 		 <copy>
 		  .tracer(TracerBuilder.create(config.get("tracing")).build())
 		 </copy>
 		 ```
-
+Refer to the sample image below:
 
 	![Main.java](images/3-1-main_java.png " ")
 
@@ -159,6 +161,11 @@ Estimated time: 15 minutes
 	```
 
 	![Cloud Shell](images/4-1-mvn.png " ")
+
+
+	  >NOTE: If your build fails with an error, run java -version and make sure it points to the JDK 11. If the command does not return openjdk version"11.0.7", go back to the task 1 in this Lab and re-run the export commands to set the environment variable. This can happen when a session is interrupted during the lab exercise. Confirm the java version returns 11.0.7 and re-execute the mvn package command.
+
+    ![Cloud Shell](images/4-1-error-mvn.png " ")
 
 3.	Start the application by running the application jar file.
 	``` bash

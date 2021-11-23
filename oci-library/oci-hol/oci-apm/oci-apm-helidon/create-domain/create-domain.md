@@ -27,8 +27,10 @@ Estimated time: 10 minutes
 3. Enter the following parameters:
 *	Compartment name: **apmworkshop**
 *	Description: **APM workshop compartment**
+*	Accept the default values for the other fields, and click, **Create Compartment**
 	![OCI Console, Create Compartment](images/1-3-compartments.png " ")
-
+*	Verify that your apmworkshop compartment is created in the table
+		![OCI Console, Create Compartment](images/1-4-compartments.png " ")
 ## Task 2: Create an APM domain
 
 1.	From the OCI menu, select **Observability & Management**, then **Administration**.

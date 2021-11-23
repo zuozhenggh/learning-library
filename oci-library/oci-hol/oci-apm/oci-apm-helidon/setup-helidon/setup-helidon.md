@@ -19,6 +19,7 @@ Estimated time: 10 minutes
 
 * An Oracle Free Tier, Always Free, or a Paid Cloud Account
 
+
 ## Task 1: Launch the Cloud Shell and verify Helidon Prerequisites
 
 1. Launch the Oracle Cloud Shell
