@@ -32,7 +32,7 @@ As with most React applications (https://reactjs.org/), this application uses re
 - This lab requires the completion of lab 1 and the provision of the OCI components.
 
 
-## TASK 1: Set values for workshop environment variables
+## Task 1: Set values for workshop environment variables
 
 1. Set the root directory of the workshop
 
@@ -47,7 +47,7 @@ As with most React applications (https://reactjs.org/), this application uses re
 	<copy>cd $MTDRWORKSHOP_LOCATION; source addAndSourcePropertiesInBashrc.sh</copy>
 	```
 
-## TASK 2: Build and push the Docker images to the OCI Registry
+## Task 2: Build and push the Docker images to the OCI Registry
 
 1. Ensure that the "DOCKER_REGISTRY" variable is set
 
@@ -128,7 +128,7 @@ As with most React applications (https://reactjs.org/), this application uses re
 
 	```
 
-## TASK 3: Run Docker image locally and verify.
+## Task 3: Run Docker image locally and verify.
  We created our image using the command docker build. Now that we have an image, we can run that image and see if our application is running correctly. Since we are running a application that listens on a port, we will have to run this in Detach or background mode.
 
 1. Run image locally and verify the image is running.
@@ -151,7 +151,7 @@ As with most React applications (https://reactjs.org/), this application uses re
 	</copy>
 	```
 
-## TASK 4: Tag & push image to the registry.
+## Task 4: Tag & push image to the registry.
 
 1. Now that you have a docker image running locally, you are now ready to run it from OKE cluster. Give a tag to the image that you're going to push to Oracle Cloud Infrastructure Registry by entering:
 
@@ -175,7 +175,7 @@ In a couple of minutes, you should have successfully built and pushed the images
 	![](images/Public-access.png " ")
 
 
-## TASK 5: Deploy on Kubernetes and Check the Status
+## Task 5: Deploy on Kubernetes and Check the Status
 
 1. Verify the todo.yaml file.
    Ensure you have the image name in oracle docker registory, the name of the imagePullSecret that was created in step 5 of lab1.
@@ -243,7 +243,7 @@ In a couple of minutes, you should have successfully built and pushed the images
 
     In this app,  Flask app provides end points and data from ADB. The GUI is rendered using https://github.com/Semantic-Org/Semantic-UI in a html templates.
 
-## TASK 6: Configure the API Gateway (optional steps)
+## Task 6: Configure the API Gateway (optional steps)
 
 A common requirement is to build an API endpoints for docker applications with the HTTP/HTTPS URL of a back-end service.
 This can be done using Oracle API Gateway service.
@@ -251,7 +251,7 @@ This can be done using Oracle API Gateway service.
 The API Gateway protects any RESTful service running on Container Engine for Kubernetes, Compute, or other endpoints through policy enforcement, metrics and logging.
 Rather than exposing the Todo App directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
 
-1. From the hamburger  menu navigate **Developer Services** > **API Management > Create Gateway**
+1. From the hamburger menu navigate to **Developer Services** > **Gateways**
    ![](images/API-Gateway-menu.png " ")
 
 2. Configure the basic info: name, compartment, VCN and Subnet
@@ -286,7 +286,7 @@ Rather than exposing the Todo App directly, we will use the API Gateway to defin
 
 
 
-## TASK 7: Testing the backend application through the API Gateway
+## Task 7: Testing the backend application through the API Gateway
 
 1. Navigate to the newly create Gateway Deployment Detail an copy the endpoint
    ![](images/Gateway-endpoint.png " ")
@@ -305,3 +305,4 @@ That is it. You have now exposed the applications endpoints through Oracle API G
 
 * **Author** -  - Vijay Balebail, Director Product Management.
 * **Contributors** -  Satyabrata Mishra, Rajeev Rumale
+* **Last Updated By/Date** - Kamryn Vinson, November 2021
