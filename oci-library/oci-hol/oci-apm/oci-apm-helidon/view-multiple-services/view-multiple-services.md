@@ -89,23 +89,16 @@ Estimated time: 15 minutes
 3.  Create a new file and name it ***GreetService.java***.
 	``` bash
   <copy>
-  mv GreetService.java GreetService.javaorg
-  </copy>
-  ```
-4. Open the ***GreetService.java*** file you just created.
-
-	``` bash
-  <copy>
   touch GreetService.java
   </copy>
   ```
-5. Open the file with an editor, then copy and paste the code below.
+4. Open the ***GreetService.java*** file you just created.
 	``` bash
   <copy>
   vi GreetService.java
   </copy>
   ```
-
+5. Copy the code below and and paste it to the file.
 	``` bash
 	<copy>
 
