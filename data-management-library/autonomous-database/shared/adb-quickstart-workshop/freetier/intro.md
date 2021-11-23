@@ -10,7 +10,8 @@ The labs in this workshop walk you through all the steps to get started using th
 - Visualize your data using Oracle Analytics Desktop
 
 ### **Workshop Prerequisites**
-This workshop requires an Oracle Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
+
+This workshop requires an Oracle Cloud account. You may use your existing account or create one in the following lab.
 
 You are all set. **Let's begin! Click the next lab in the Contents menu on the left.**
 
