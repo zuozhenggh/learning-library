@@ -78,6 +78,19 @@ In this step you can choose between six different implementations of the Invento
     <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./deploy.sh</copy>
     ```
 
+   If you selected **Micronaut**, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-micronaut; ./deploy.sh</copy>
+    ```
+
+
+   If you selected **Quarkus**, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-quarkus; ./deploy.sh</copy>
+    ```
+
 ## Task 3: Verify application functionality
 
 1. Repeat **Lab 2: Step 3** to verify that the functionality of the GrabDish store remains the same while using the new implementation. You will need to use different order ID's, for example 166 and 167.

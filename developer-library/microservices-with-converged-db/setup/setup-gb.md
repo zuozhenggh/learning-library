@@ -139,6 +139,14 @@ ls -al $GRABDISH_LOG
 </copy>
 ```
 
+You can also cat through the logs by using the `showsetuplogs` shortcut command.
+
+```
+<copy>
+showsetuplogs
+</copy>
+```
+
 Once the setup has completed you are ready to move to the next lab. 
 
 Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
