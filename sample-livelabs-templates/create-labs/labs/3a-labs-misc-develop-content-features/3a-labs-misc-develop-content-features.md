@@ -20,6 +20,8 @@ We'll go over how to implement certain common markdown features and tips in this
 
 - [Porting Workshop to LiveLabs - Checklist](https://confluence.oraclecorp.com/confluence/display/LIVELABS/Porting+Workshop+to+LiveLabs+-+Checklist) -->
 
+In this lab, you will learn how to implement certain common markdown features and tips in this optional lab.
+
 ### Objectives
 
  * Linking to Absolute Path Images (on github)
@@ -135,7 +137,6 @@ Without using image scaling, all the screen shots you take for your workshop wil
 
 5. As a final note, it's in your best interest to take as large of a picture as you can and then scale it down using with the parameters above. LiveLabs allows the magnification of images so if you have larger base image, the audience will have more clarity.
 
-
 ## Task 6: Using the LintChecker
 The LintChecker is a great javascript function for QAing that you should take advantage of. It is especially handy in catching some of the more easily overlooked errors such as indentation and syntax errors.
 
@@ -174,8 +175,6 @@ This concludes this lab. You may now proceed to the next lab.
 
 - [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 
-- [LiveLabs Markdown Template New Features (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New)
-
 - [LiveLabs Sample Workshop](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier)
 
 - [LiveLabs OCI Menu Navigation Common Path Pictures](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning)) -->
@@ -186,5 +185,6 @@ This concludes this lab. You may now proceed to the next lab.
 * **Contributors**:
     * Kay Malcolm & Tom McGinn, Database Product Management
     * Didi Han
+    * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
 
-* **Last Updated By/Date** - Anuradha Chepuri, October 2021
+* **Last Updated By/Date** - Lauran Serhal, November 2021
