@@ -6,11 +6,9 @@ This lab walks you through the steps to access the container homepage from Oracl
 
 Estimated Time: 15 minutes
 
-**Note:** To run the labs and tasks related to Oracle EMCC, you would need Oracle Database 21c and the listener as managed targets in Oracle EMCC. If you have removed the Oracle Database and the listener from Oracle EMCC as per the previous lab, add them again as managed targets. 
-
 ### Objectives
 
-Log in to Oracle EMCC and access the container homepage. Switch between the Container Database (CDB) homepage and the Pluggable Database (PDB) homepage. Add pages to and remove pages from the favorites.
+Access the container homepage from Oracle EMCC. Switch between the Container Database (CDB) homepage and the Pluggable Database (PDB) homepage. Add pages to and remove pages from the favorites.
 
 ### Prerequisites
 
@@ -23,30 +21,26 @@ Log in to Oracle EMCC and access the container homepage. Switch between the Cont
     - Lab: Log in to Oracle EMCC
  - You have added Oracle Database 21c and the listener as managed targets as explained in this task - [Add Oracle Database and Listener as targets](?lab=manage-targets#Task2:AddOracleDatabaseandListenerastargets).
 
+**Note:** If you have removed the targets Oracle Database 21c and the target listener from Oracle EMCC as per the previous lab, add them again as managed targets. 
+
 ## Task 1: Access Container Homepage
 
 1.  From the **Targets** menu, select **Databases**.
 
-    ![Databases Menu](images/emcc-target-005-dbmenu.png)
+    ![Databases Menu](../manage-targets/images/emcc-target-005-dbmenu.png)
 
-    The Databases page displays a list of Oracle Databases added to Oracle EMCC as managed targets.   
+    The Databases page displays a list of Oracle Databases added to Oracle EMCC as managed targets. Note that the **View** type selected is **Search list**.   
 	The values may differ depending on the system you are using.  
 
-    ![Target Added](images/emcc-target-014-dbhome.png)
+    ![Target Added](../manage-targets/images/emcc-target-014-dbhome.png)
 
-<!-- EMCC UI changed
 2.  On the Databases page, select the Oracle Database name, for example *orcl.us.oracle.com*, and go to **View** > **Expand All Below**. 
 
     ![Databases Expand All](images/emcc-dbhome-001-expandall.png)
 
     Alternatively, click on the expand/collapse arrow next to the Oracle Database name. The list displays the database instance and the PDBs for each Oracle Database on the host.
 
-    ![Databases List](images/emcc-dbhome-002-dblist.png)-->
-
-2.  Under Database Load Map, the default **View Level** is *Database*. 
-	You can change the view level to: 
-	 - *Instance*: To display the Database Instance name.
-	 - *Pluggable Database*: To display the CDB and PDBs in each database. 
+    ![Databases List](images/emcc-dbhome-002-dblist.png)
 
 3.  Click on the container name to access the container homepage.
 
@@ -154,4 +148,4 @@ This brings you towards the successful completion of this workshop on *Oracle EM
 
 -   **Contributors** - Suresh Rajan, Kurt Engeleiter
 
--   **Last Updated By/Date** - Manish Garodia, October 2021
+-   **Last Updated By/Date** - Manish Garodia, November 2021

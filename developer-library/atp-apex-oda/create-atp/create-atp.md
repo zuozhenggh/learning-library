@@ -26,7 +26,7 @@ This workshop walks you through the steps to get started using the **Oracle Auto
 
 - Perfect for Developers!
 
-Watch our short video that explains Lab 1 - Create Autonomous Database and Lab 2 - Create APEX workshop and REST API:
+Watch our short video that explains Lab 1 - Create Autonomous Database and Lab 2 - Create APEX workspace and REST API:
 
 [](youtube:S9WPR0N0f2E)
 
@@ -58,9 +58,14 @@ In this lab, you will:
 
     ![ATPs](./images/atps.png)
 
-    You can leave the compartment as it is. It would say something like _<tenancy_name> (root)_. Write the Display name and Database name.
+    You can leave the compartment as it is. It would say something like _<tenancy_name> (root)_. 
 
-2. Make sure you select **Transaction Processing** and **Shared Infrastructure**.
+2. Fill Display and Database name details:
+
+    - **Display name**: atpworkshop
+    - **Database name**: atpworkshop
+
+3. Make sure you select **Transaction Processing** and **Shared Infrastructure**.
 
     ![ATP Creation](./images/atp_creation_1_2.png)
 
@@ -70,7 +75,7 @@ In this lab, you will:
 
     CPU and Storage are good with default values, the same for the database version.
 
-    Auto scaling you can leave it off but it is a nice feature as the ATP database will scale if the workload is increasing and scale down automatically if the workload reduces. Zero downtime during the process. It's cool, isn't it?
+    **Auto scaling** you can leave it off but it is a nice feature as the ATP database will scale if the workload is increasing and scale down automatically if the workload reduces. Zero downtime during the process. It's cool, isn't it?
 
 4. Under the Create Administrator credentials section, provide the **Administrator Password**. Enter any password you wish to use following the specific requirements imposed by ATP.
 
@@ -78,14 +83,13 @@ In this lab, you will:
 
     ![ATP Creation](./images/atp_creation_2.png)
 
-   Leave **Allow Secure Access From Everywhere** for the workshop and **License Included**.
+4. Leave **Secure access from everywhere** for the workshop and **License Included**.
 
 5. Click **Create Autonomous Database** button.
 
     ![ATP Creation](./images/atp_creation_3.png)
-    ![ATP Creation](./images/atp_creation_4.png)
 
-    After few seconds you will have your new Autonomous Database up and running.
+6. After few seconds you will have your new Autonomous Database up and running.
 
     Look around the details and get familiar with the buttons and tabs on this page.
 
@@ -102,4 +106,3 @@ You may now [proceed to the next lab](#next).
 - **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
-

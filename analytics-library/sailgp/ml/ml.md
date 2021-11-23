@@ -98,7 +98,7 @@ In the past we've gone onto the water with our boat many times in different wind
 
    ![pic1](images/save-dataset2.png)
 
-9. From the **Home Page**. Click **Create Project**.
+9. From the **Home Page**. Click **Create Workbook** and select the **Sail History** data set that you created earlier.
 
    ![pic1](images/create-project.png)
 
@@ -212,7 +212,9 @@ In the past we've gone onto the water with our boat many times in different wind
 
     ![pic1](images/service-level.png)
 
-8. Now start the training of the model.
+8. Click on the **Save button** at the top right.
+
+   Now start the training of the model.
 
     On the top right choose **Start** > **Faster Results**.
 
@@ -316,7 +318,7 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
     If all is well, `WIND_ANGLE` and `PREDICTION` will be shown in blue.
 
-    Now Apply the transformation.
+    Now **Apply** the transformation.
 
 17. Finally, add a step to save the resulting data to a new Data Set. Select **Save Data**.
 
@@ -362,7 +364,7 @@ The following assumes you already have Oracle Analytics Cloud open in your brows
 
     ![pic1](images/column-types.png)
 
-24. **Save** the Data Set and click **Create Project** after.
+24. **Save** the Data Set and click **Create Workbook** after.
 
     ![pic1](images/save-and-create.png)
 
@@ -400,11 +402,11 @@ Luckily, we can easily do this by converting the chart into a polar diagram.
 
    ![pic1](images/result-radar1.png)
 
-   For example, imagine the current wind speed is 10 knots. This is the green ellipse. Now find the point that's vertically in the highest position. This point indicates the maximum speed that we can obtain towards our target (upwind). The optimum angle to obtain this is 41 degrees and the expected boat speed towards the target will be 10 knots.
+   For example, imagine the current wind speed is 10 knots. This is the green ellipse. Now find the point that's vertically in the highest position. This point indicates the maximum speed that we can obtain towards our target (upwind). The optimum angle to obtain this is 42 degrees, the total boat speed will be 16.7 knots, and the expected boat speed towards the target will be around 10 knots.
 
    ![pic1](images/result-radar2.png)
 
-   Another example, imagine the current wind speed is 25 knots. This is the purple ellipse. In this case, the highest vertical point on the line shows that we can obtain a boat speed of 22 knots towards our target if we choose the perfect wind angle of 44 degrees.
+   Another example, imagine the current wind speed is 25 knots. This is the purple ellipse. Again, find the point that's vertically in the highest position. In this case the highest speed that we can obtain towards our target can be achieved by taking an angle of 48 degrees to the wind, the total boat speed will be 36 knots, and the expected boat speed towards the target will be around 22 knots.
 
 ## Task 7: Draw Conclusions
 In this lab we predicted what the boat speed will be based on wind speed and wind angle. We did this by training a ML model on historical measurements of wind conditions and resulting boat speed. Machine Learning was able to find the complicated relationship that exists between these variables. Something that's not easy to do for human beings!
