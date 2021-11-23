@@ -14,7 +14,7 @@ Estimated time: 10 minutes
 
 * This Lab requires the completion of Lab 1, 2 and 3
 
-## Task 1: Verify Java version
+## Task 1: Build another Maven project
 
 1. Launch OCI Cloud Shell, if not opened already.
 
