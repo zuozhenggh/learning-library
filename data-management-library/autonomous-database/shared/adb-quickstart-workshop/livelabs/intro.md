@@ -19,8 +19,8 @@ You are all set. **Let's begin! Click Get Started in the Contents menu on the le
 ##  
 ## Want to Learn More About Autonomous Database?
 
-- <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html" target="\_blank">Oracle Autonomous Data Warehouse Documentation</a>
-- <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html" target="\_blank">Additional Autonomous Data Warehouse Tutorials</a>
+- <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html" target="\_blank">Oracle Autonomous Data Warehouse documentation</a>
+- <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html" target="\_blank">Additional Autonomous Data Warehouse tutorials</a>
 
 ## Acknowledgements
 
