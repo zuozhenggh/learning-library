@@ -19,7 +19,7 @@ Estimated Time: ~25 minutes
 
 - This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
 
-## TASK 1: Launch the Cloud Shell and Clone mtdrworkshop GitHub repository
+## Task 1: Launch the Cloud Shell and Clone mtdrworkshop GitHub repository
 
 1. Launch Cloud Shell
 
@@ -60,9 +60,9 @@ Estimated Time: ~25 minutes
 
     >  **NOTE:** THE CLOUD SHELL WILL DISCONNECT AFTER A CERTAIN PERIOD OF INACTIVITY. IF YOU ARE DISCONNECTED OR LOGGED OFF AND RETURN TO CLOUD SHELL, MAKE SURE YOU ARE IN THE ~/mtdrworkshop DIRECTORY.
 
-## TASK 2: Create an OCI compartment and an OKE cluster in that compartment
+## Task 2: Create an OCI compartment and an OKE cluster in that compartment
 
- 1. Open up the hamburger menu in the top-left corner of the Console and select **Identity > Compartments**.
+ 1. Open up the hamburger menu in the top-left corner of the Console and select **Identity & Security > Compartments**.
 
   	![](images/15-identity-compartments.png " ")
 
@@ -125,9 +125,9 @@ Estimated Time: ~25 minutes
     There is no need to wait for the cluster to be fully provisioned at this point as we will verify cluster creation and create a kube config in order to access it in a later step.
 
 
-## TASK 3: Create the ATP database
+## Task 3: Create the ATP database
 
-1. Open up the hamburger menu in the top-left corner of the Console and select **Autonomous Transaction Processing**.
+1. Open up the hamburger menu in the top-left corner of the Console and select **Oracle Databse > Autonomous Transaction Processing**.
 
     ![](images/menu-autonomous.png " ")
 
@@ -260,7 +260,7 @@ Estimated Time: ~25 minutes
 
 -->
 
-## TASK 4: Create an OCI Registry and Auth key
+## Task 4: Create an OCI Registry and Auth key
 
 You are now going to create an Oracle Cloud Infrastructure Registry and an Auth key. The Oracle Cloud Infrastructure Registry is an Oracle-managed registry that enables you to simplify your development-to-production workflow by storing, sharing, and managing development artifacts such as Docker images.
 
@@ -325,7 +325,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     <copy>docker images </copy>
     ```
 
-## TASK 5: Access OKE from the Cloud Shell
+## Task 5: Access OKE from the Cloud Shell
 
   1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
@@ -354,7 +354,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
     ![](images/verifyOKEOutput.png " ")
 
 
-## TASK 6:  Create a imagePullSecret  for the Tutorial
+## Task 6:  Create a imagePullSecret  for the Tutorial
 
   To enable Kubernetes to pull an image from Oracle Cloud Infrastructure Registry when deploying an application, you need to create a Kubernetes secret. The secret includes all the login details you would provide if you were manually logging in to Oracle Cloud Infrastructure Registry using the docker login command, including your auth token.
 
@@ -371,7 +371,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
 
 
-## TASK 7: Access OKE from the Cloud Shell
+## Task 7: Access OKE from the Cloud Shell
 
 1. Create the mtdrworkshop/workingdir/mtdrworkshopclusterid.txt file
 
@@ -399,7 +399,7 @@ You are now going to create an Oracle Cloud Infrastructure Registry and an Auth 
 
   ![](images/verifyOKEOutput.png " ")
 
-## TASK 8: Configuring Network Security Rules
+## Task 8: Configuring Network Security Rules
 
 1. The network security rules control the inbound (Ingres) and the outbound (Egress) traffic. As we will be configuring the API Gateway in Part II, we will not set tight security rules at the Kubernetes cluster level.
 2. Navigate to **Developer Services > Kubernetes Clusters**
@@ -429,3 +429,4 @@ Congratulations, you have completed lab 1; you may now proceed to the next lab.
 
 * **Author** -  - Vijay Balebail, Director Product Management.
 * **Contributors** - Satyabrata Mishra, Rajeev Rumale
+* **Last Updated By/Date** - Kamryn Vinson, November 2021
