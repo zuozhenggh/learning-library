@@ -153,7 +153,7 @@ To publish the pipeline:
 
 1. Click **Publish** on the top-right corner.
 
- 
+ ![](./images/pubpplne.png "")
 
 2. Publish with defaults, for your pipeline to filter data in real-time.
 
