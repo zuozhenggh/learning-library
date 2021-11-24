@@ -1,6 +1,6 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "workshoptitle": "Load and update MovieStream data in Oracle Autonomous Data Warehouse using Data Tools",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Getting Started",
@@ -8,26 +8,29 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Introduction",
-            "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/introduction.md"
+            "title": "Workshop Introduction",
+            "description": "Inroduction to this workshop",
+            "filename": "../../workshop-intro/workshop-intro.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "title": "Lab 1: Provision an Autonomous Database",
+            "description": "Provisioning an Autonomous Database",
+            "filename": "../../adb-provision-8ocpu/adb-provision-8ocpu.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Load Movie Sales Data",
+            "description": "Loading Movie Sales Data",
+            "filename": "../../loading-movie-sales-data/loading-movie-sales-data.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: Enable Data Integrity",
+            "description": "Enabling Data Integrity",
+            "filename": "../../enabling-data-integrity/enabling-data-integrity.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 4: Update the Sales Data",
+            "description": "Finding Our Most Important Customers",
+            "filename": "../../updating-sales-data/updating-sales-data.md"
         },
         {
             "title": "Need Help?",

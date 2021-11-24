@@ -64,11 +64,11 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    ![pic2](images/loc-details3.png)
 
-5. Now we're ready to create a project for this data. Save the changes to the data set if you're being asked to.
+5. Now we're ready to create a workbook for this data. Save the changes to the data set if you're being asked to.
 
    ![pic2](images/create-project2.png)
 
-6. Now we want to visualize our coordinates (comprised of Latitude and Longitude). **Select** the `LAT` and `LON` columns (use Control to select multiple columns). Then **drag** them to the right canvas.
+6. Now we want to visualize our coordinates (comprised of Latitude and Longitude). **Select** the `LATITUDE` and `LONGITUDE` columns (use Control to select multiple columns). Then **drag** them to the right canvas.
 
    ![pic2](images/drag-latlon.png)
 
@@ -96,7 +96,7 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    This still isn’t perfect, because we cannot see the starting line. We have no context of the race course (starting line, marks, et cetera).
 
-11. Our next task will be to bring in the geographical elements for starting line, marks, et cetera. First **Save** the project as `Performance analysis`.
+11. Our next task will be to bring in the geographical elements for starting line, marks, et cetera. First **Save** the workbook as `Performance analysis`.
 
    ![pic2](images/save-project3.png)
 
@@ -106,7 +106,7 @@ To give you an impression, have a look at this video. You can see how teams are 
 
 ## Task 2: Add Geographical Data of the Race Course
 
-1. **Download** a file that contains all the geographical elements (such as starting line, waypoints and finish line) from <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/XfJRoExhW_0WX_aspj4H1U2Ce8vDA45SRZFW_27KmXYRFXbyRNhjvvU98cB5FbVG/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_bermuda.geojson" target="\_blank">File with Bermuda geo elements</a> to your local machine. Depending on your browser, you may have to use Right Click. Make sure that the file is saved with extension `.geojson`.
+1. **Download** a file that contains all the geographical elements (such as starting line, waypoints and finish line) from <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/F2tS5djZyR2uQ0oWZePiKUULfbAKCk4zticDoeFrGUmGpqCpvAZShQZMyhVsCEAg/n/odca/b/workshops-livelabs-do-not-delete/o/sailgp_bermuda.geojson" target="\_blank">File with Bermuda geo elements</a> to your local machine. Depending on your browser, you may have to use Right Click. Make sure that the file is saved with extension `.geojson`.
 
 2. From the ribbon on the **Home Page**, go to the Console.
 
@@ -125,6 +125,8 @@ To give you an impression, have a look at this video. You can see how teams are 
    This field in the file identifies each of the geographical elements with a number. This number corresponds to the leg to which the element belongs. For example, `trackelement=0` corresponds to the coordinates of the starting line, `trackelement=1` corresponds to the coordinates of the first waypoint after the start and `trackelement=6` corresponds to the coordinates of the finish line. See the image below for an explanation.
 
    ![pic2](images/trackelements.png)
+
+   Rename the Map Layer to **bermuda**.
 
    Check the "Trackelement" field. Click **Add**.
 
@@ -156,7 +158,7 @@ To give you an impression, have a look at this video. You can see how teams are 
 
    Now we're ready to include the geographical elements such as starting line, waypoints and finish line.
 
-1. From the Home Page, select **Project and Reports** or **Projects**, then click the project that we created earlier. We called it `Performance analysis` (containing the analysis of the start).
+1. From the Home Page, select **Workbooks and Reports**, then click the workbook that we created earlier. We called it `Performance analysis` (containing the analysis of the start).
 
    ![pic2](images/restart-project.png)
 
@@ -189,7 +191,7 @@ To give you an impression, have a look at this video. You can see how teams are 
    **Conclusion**: Already at the start, we see that the winner Great Britain is outperforming the other boats. Denmark and France could improve their timing on the start.
 	 It indeed appears that the start is very important for the final result of the race. We also notice that Spain has crossed the starting line early, they actually received a penalty for this.
 
-9. Save the project and go back to the Home Page.
+9. Save the workbook and go back to the Home Page.
 
    ![pic2](images/save-project4.png)
 

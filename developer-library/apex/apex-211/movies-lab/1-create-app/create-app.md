@@ -19,19 +19,19 @@ In this lab, you will:
 
 1. If you have not already logged into your Oracle APEX workspace, sign in using the workspace name, email, and password you signed up with.
 
-    ![](images/workspace-sign-in.png " ")
+    ![Screenshot of Oracle APEX sign-in page.](images/workspace-sign-in.png " ")
 
 2. At the top left of your workspace, click **App Builder**.
 
-    ![](images/workspace-home-edit.png " ")
+    ![Screenshot of Oracle APEX workspace home page with the App Builder button highlighted.](images/workspace-home-edit.png " ")
 
 3. On the App Builder page, click the **Create** button.
 
-    ![](images/app-builder-home-edit.png " ")
+    ![Screenshot of App Builder page with the Create button highlighted.](images/app-builder-home-edit.png " ")
 
 4. Click **New Application**.
 
-    ![](images/new-application-edit.png " ")
+    ![Screenshot of the Create an Application page with the New Application option highlighted.](images/new-application-edit.png " ")
 
 ## Task 2: Naming and Enhancing the Appearance of the App
 
@@ -39,7 +39,7 @@ In this lab, you will:
 
 2. Click the expand button next to Appearance.
 
-    ![](images/create-app-name-edit.png " ")
+    ![Screenshot of the Create an Application page with Movies Watchlist entered as Name (1) and Appearance expand button highlighted (2).](images/create-app-name-edit.png " ")
 
     * Select the **Vita-Dark theme**.
 
@@ -51,11 +51,11 @@ In this lab, you will:
 
     * Click **Save Changes**.
     
-    ![](images/edit-app-appearance-edit.png " ")
+    ![Screenshot of the Appearance dialog with Vita-Dark selected (1), Choose New Icon button highlighted (2), and Save Changes button highlighted (3).](images/edit-app-appearance-edit.png " ")
 
 3. In the Pages section of the Create Application wizard, click the **Edit** button next to Home.
 
-    ![](images/create-app-pre-edit-home-edit.png " ")
+    ![Screenshot Create an Application page with the Home page Edit button highlighted.](images/create-app-pre-edit-home-edit.png " ")
 
     * In the dialog, set Page Name: **My Watchlist**
 
@@ -67,23 +67,23 @@ In this lab, you will:
 
     * Click **Save Changes**.
 
-    ![](images/film-icon-edit.png " ")
+    ![Screenshot of the Edit Page dialog and the Select Icon dialog over it with My Watchlist entered as Page Name (1), Set Icon button highlighted (2), film entered in icon search field (3), fa-film icon highlighted (4), and Save Changes button highlighted (5).](images/film-icon-edit.png " ")
 
 4. Click **Create Application** to create your app and go to the application home page.
 
-    ![](images/create-application-edit.png " ")
+    ![Screenshot of the Create an Application page with the Create Application button highlighted.](images/create-application-edit.png " ")
 
 ## Task 3: Running the App
 
 1. On your application home page, click **Run Application**.
 
-    ![](images/app-home-edit.png " ")
+    ![Screenshot of application home page with the Run Application button highlighted.](images/app-home-edit.png " ")
 
 2. On the sign in page that opens in a new tab in your browser, enter your username and password that you used to sign in to your workspace.
 
 3. Click **Sign In**.
 
-    ![](images/app-sign-in-edit.png " ")
+    ![Screenshot of the runtime application sign-in page.](images/app-sign-in-edit.png " ")
 
 ## Task 4: Updating the Theme of the App
 
@@ -92,7 +92,7 @@ In this lab, you will:
 
 2. In the dev toolbar, click on **Customize** and then click **Theme Roller**.
 
-    ![](images/theme-roller-dev-bar-edit.png " ")
+    ![Screenshot of runtime application developer toolbar with Customize expanded (1) and Theme Roller selected (2).](images/theme-roller-dev-bar-edit.png " ")
 
 3. Within the Theme Roller, you can modify many different aspects of the application UI. You will use it right now to update the color scheme.
 
@@ -102,7 +102,7 @@ In this lab, you will:
 
     * Click on the color swatch next to **Header Accent** and paste the HEX code in the Hex text box.
 
-    ![](images/theme-roller-header-edit.png " ")
+    ![Screenshot of runtime application with Theme Roller open, Global Colors expanded (1), Primary Accent color picker open (2), and C74634 entered in the color picker Hex field (3).](images/theme-roller-header-edit.png " ")
 
     * Click on the color swatch next to **Body Accent** and paste the HEX code **312D2A** in the Hex text box.
 
@@ -116,7 +116,7 @@ In this lab, you will:
 
     * Close the Theme Roller window.
 
-    ![](images/save-style-edit.png " ")
+    ![Screenshot of runtime application with Theme Roller open and the Save As dialog open (1), with Style Name set as Movies - Dark (2) and the Save button highlighted (3).](images/save-style-edit.png " ")
 
 5. You have now updated the color scheme of your app.
 
@@ -126,7 +126,7 @@ In this lab, you will:
 
 2. Once registered, follow the [Getting Started](https://developers.themoviedb.org/3/getting-started/introduction) instructions on TMDB Developer site. You will need to enter some of your app and contact information:
 
-    ![](images/api-key-signup-edit.png " ")
+    ![Screenshot of The Movie Database API sign up page with Type of Use set to Website (1), Application Name set to Movies Watchlist (2), Application URL set to the URL of the runtime application (3), Application Summary set to a short description of the Movies Watchlist application (4), and the contact information field highlighted.](images/api-key-signup-edit.png " ")
 
 3. After you have received your API Key, copy it and store it somewhere where you will be able to easily access it.
 
@@ -136,7 +136,7 @@ In this lab, you will:
 
     - Click on the **Try it out** tab.
 
-    ![](images/details-api-edit.png " ")
+    ![Screenshot of TMDB Movie Details API page with the Try it out tab highlighted.](images/details-api-edit.png " ")
 
     - Under **Variables**, click the box next to **api_key** and paste your API key.
 
@@ -145,7 +145,7 @@ In this lab, you will:
     - Click the bright pink **Send Request** button.  
       *Note: If the Send Request button does not work, copy the link next to the button, paste it in a new browser tab and hit enter/return.*
 
-    ![](images/details-request-edit.png " ")
+    ![Screenshot of TMDB Movie Details API page Try it out tab with Your TMDb API key and Integer fields and Send Request button highlighted.](images/details-request-edit.png " ")
 
     - Now you can explore the data that gets returned when requesting the details for a single movie.  
 

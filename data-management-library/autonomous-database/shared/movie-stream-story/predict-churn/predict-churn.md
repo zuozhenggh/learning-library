@@ -472,7 +472,7 @@ We have prepared the final table called `MOVIESTREAM_CHURN` in the previous task
 
     Let's download a new **Oracle Machine Learning notebook** that has the code for scoring the table, and then import it into OML Notebooks.
 
-    [**CLICK HERE** to download the "Scoring customers with Churn Model" notebook file in JSON format](./../notebooks/Scoring_customers_with_Churn_Model.jso?download=1), and save it to a folder on your local computer.
+    [**CLICK HERE** to download the "Scoring customers with Churn Model" notebook file in JSON format](./files/Scoring_customers_with_Churn_Model.json?download=1), and save it to a folder on your local computer.
 
     Navigate back to the OML Notebooks screen, click the **Import** button and navigate to the folder where you just downloaded the notebook **Scoring\_customers\_with\_Churn\_Model.json** file.
 

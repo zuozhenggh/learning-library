@@ -39,7 +39,7 @@ This lab assumes you have completed the Getting Started lab.
 
 You can click **View VCN Details** and to verify both a Public and Private subnet were created.
 
-## Task 2: Create an ATP Instance
+## Task 2: Create an Autonomous Transaction Processing Instance
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
@@ -74,7 +74,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
 
-## Task 3: Load the ATP Schema
+## Task 3: Load the Autonomous Transaction Processing Schema
 
 1.  Click the following link to download the database schema.
 
@@ -82,7 +82,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 2.  Save `Archive.zip` to a download directory, and then unzip the file.
 
-3.  Back in the OCI Console, select your ATP instance from the Autonomous Databases list to view its details and access tools.
+3.  Back in the OCI Console, select your Autonomous Transaction Processing instance from the Autonomous Databases list to view its details and access tools.
 
     ![](./images/02-03-atp.png " ")
 
@@ -90,7 +90,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
     ![](./images/02-04-db-actions.png "")
 
-5.  Log in with the ADMIN user and password provided when you created the ATP instance.
+5.  Log in with the ADMIN user and password provided when you created the Autonomous Transaction Processing instance.
 
 6.  From the Database Actions menu, under **Development**, select **SQL**.
 
@@ -120,7 +120,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-## Task 4: Create an ADW Instance
+## Task 4: Create an Autonomous Data Warehouse Instance
 
 1.  Open the **Navigation Menu**, navigate to **Oracle Database**, and select **Autonomous Data Warehouse**.
 
@@ -154,9 +154,9 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
 
-## Task 5: Load the ADW Schema
+## Task 5: Load the Autonomous Data Warehouse Schema
 
-1.  Select your ADW instance from the Autonomous Databases list to view its details and access tools.
+1.  Select your Autonomous Data Warehouse instance from the Autonomous Databases list to view its details and access tools.
 
     ![](./images/04-01-adw.png " ")
 
@@ -164,7 +164,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
     ![](./images/05-04-db-actions.png " ")
 
-3.  Log in with the ADMIN user and password provided when you created the ATP instance.
+3.  Log in with the ADMIN user and password provided when you created the Autonomous Transaction Processing instance.
 
     ![](./images/02-05-login.png " ")
 
@@ -191,5 +191,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Jenny Chan, September 2021
+- **Last Updated By/Date** - Jenny Chan, November 2021
 - **PAR Expiration date** - March 31, 2022
