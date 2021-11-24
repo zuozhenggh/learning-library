@@ -165,7 +165,7 @@ def plot_local_feature_importance(explanation_json, time_step):
     fig.show()
 ```
 
-### Sample Local Feature Importance Plot for step 1 forecast
+### Sample Local feature importance plot for step 1 forecast
 
 ![Local Feature Importance for step 1 forecast](../images/local_feature_importance.png)
 
