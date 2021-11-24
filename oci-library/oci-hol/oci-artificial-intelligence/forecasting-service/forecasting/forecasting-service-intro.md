@@ -45,7 +45,7 @@ At a high level, here are the process of completing a full cycle of using foreca
 1. Create a Data Science Notebook Session: Data Science notebook sessions provide us with Jupyter Notebook that for interactive coding environment for building and training models.
 2. Create a project. A project is used to include and organize different assets, models and private endpoints for data connection in the same workspace.
 3. Create a data asset. Data asset is an abstracted data representation for a data source.Currently it supports inline data generated from  csv files uploaded in the notebook session folder. 
-4. Train a model. After specifying a data asset and the training parameters, you can train a forecasting  model.It will take 5-10 minutes or longer depending on the data size and number of models to be test as parameter. Once a model is trained successfully, it is deployed automatically with an endpoint ready to take any new incoming testing data.
+4. Train a model. After specifying a data asset and the training parameters, you can train a forecasting  model.It will take 5-10 minutes or longer depending on the data size and number of models to be test as parameter. Once a model is trained successfully, it is deployed automatically with an endpoint ready to generate forecast.
 5. Forecasting with new data. User can send newer data with same attributes of the training data to the deployment endpoint to get forecast results.
 
 Note that one project can have multiple data assets and multiple models.

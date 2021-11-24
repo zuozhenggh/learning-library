@@ -13,19 +13,24 @@
             "filename": "../../forecasting/forecasting-service-intro.md"
         },
         {
-            "title": "Lab 2: Data Science Notebook Set up",
+            "title": "Lab 1: Data Science Notebook Set up",
             "description": "Learn what data and format needed for training, and use the prepared sample data for nex steps.",
-            "filename": "../../forecasting/aforecasting-understand-data.md"
+            "filename": "../../forecasting/forecasting-service-create-ds-notebook.md"
         },
         {
-            "title": "Lab 3: Understand Data, Download Samples, Prepare data, Create Project",
+            "title": "Lab 2: Understand Data, Download Samples, Prepare data, Create Project",
             "description": "Learn how to create Forecast project",
-            "filename": "../../anomalies/anomaly-detection-project.md"
+            "filename": "../../forecasting/forecasting-understand-data.md"
         },
         {
-            "title": "Lab 4: Model Explainability",
-            "description": "Learn how to create data asset, build and deploy model, and perform detection",
-            "filename": "../../anomalies/anomaly-detection-model.md"
+            "title": "Lab 3: Train Model and Forecast",
+            "description": "Learn how to create data asset, build and deploy model, and perform Forecasting",
+            "filename": "../../forecasting/forecasting-service-model.md"
+        },
+        {
+            "title": "Lab 4: Generate Model Explainability",
+            "description": "Learn how to generate Explainability for model used for Forecasting",
+            "filename": "../../forecasting/explainability.md"
         },
         {
             "title": "Need Help?",

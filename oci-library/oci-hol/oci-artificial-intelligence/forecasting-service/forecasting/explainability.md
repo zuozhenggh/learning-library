@@ -1,4 +1,4 @@
-# Lab 5: (Advanced Session) How to Preprocess Raw Data for Training and Detection
+# Lab 4: Generate Model Explainability 
 
 ## Introduction
 
@@ -18,7 +18,7 @@ In this lab, you will:
 ### Prerequisites
 - Forecast ID from the create forecast API
 
-### Task 1: Get Global Explanation
+## Task 1: Get Global Explanation
 
 ### 1. Call the explanation API as shown below
 
@@ -134,7 +134,7 @@ def plot_global_feature_importance(explanation_json):
 
 ![Explanation API Call](../images/global_feature_importance.png)
 
-### Task 2: Get Local Explanation
+## Task 2: Get Local Explanation
 
 To get local explanation, there is no seperate api call required. Refer [api call above]
 
