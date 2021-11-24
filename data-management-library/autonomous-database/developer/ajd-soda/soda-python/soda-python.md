@@ -20,14 +20,16 @@ In this lab, you will:
 
 ## Task 1: Create Python application for MongoDB document store
 
-1. Connect to **[Your Initials]-ClientVM** Compute instance using SSH, if not connected, as user **opc**.
+1. Connect to **ClientVM** Compute instance using SSH as user **opc**.
     * For **Mac/Linux**: Use -L option to forward any connection to port **3389** on the local machine to port **3389** on your Compute node. Open a Microsoft Remote Desktop connection to **localhost**.
     * For **Windows**: Create a SSH tunnel from source port **5001** to **localhost:3389**. Open a Microsoft Remote Desktop connection to **localhost:5001**.
 
 2. Use the substitute user command to start a session as **oracle** user. 
 
     ````
+    <copy>
     sudo su - oracle
+    </copy>
     ````
 
     >**Note** : This step is not required if you prefer to use the Remote Desktop connection for this lab.
@@ -35,35 +37,55 @@ In this lab, you will:
 3. Create a new folder under `/home/oracle` as the location of our new Python application.
 
     ````
+    <copy>
     mkdir python-simple-project
 
     cd python-simple-project
+    </copy>
     ````
 
 4. Create two files for our new Python application.
 
     ````
+    <copy>
     touch simple-app.py
+    </copy>
+    ````
 
+    ````
+    <copy>
     touch requirements.pip
+    </copy>
     ````
 
 5. Create a Python virtual environment for development, and activate it.
 
     ````
+    <copy>
     pip3 install --user virtualenv
+    </copy>
+    ````
 
+    ````
+    <copy>
     virtualenv .
+    </copy>
+    ````
 
+    ````
+    <copy>
     . bin/activate
+    </copy>
     ````
 
 6. Use a text editor, **vim** on command line or **gEdit** on Remote Desktop, to add the following lines in requirements.pip:
 
     ````
+    <copy>
     Flask
     pymongo
     dnspython
+    </copy>
     ````
 
 7. Start developing the document store application. Here are the main sections, just look at the code, do not copy or execute anything now. The first section imports the required modules for the application.
@@ -85,10 +107,10 @@ In this lab, you will:
     dbn = os.environ['MONGO_DB_NAME']
     ````
 
-9. This section builds the connection string, defines the connection, and the collection used by the application. Use the information from Introduction STEP 5.6 to build your MongoDB connection string.
+9. This section builds the connection string, defines the connection, and the collection used by the application. Use the information from Introduction STEP 5.6 to build your MongoDB connection string. In this block of code, you will also need to replace `cluster_name` and `domain` with your actual values.
 
     ````
-    client = pymongo.MongoClient("mongodb+srv://" + usr + ":" + pwd + "@cluster_name.dsbwl.mongodb.net/" + dbn + "?retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb+srv://" + usr + ":" + pwd + "@cluster_name.domain.mongodb.net/" + dbn + "?retryWrites=true&w=majority")
     db = client[dbn]
     collection = db['SimpleCollection']
     ````
@@ -123,9 +145,10 @@ In this lab, you will:
         app.run(host= '0.0.0.0')
     ````
 
-13. Putting together all these sections, here is the code we have to write in our simple-app.py application file:
+13. Putting together all these sections, here is the code we have to write in our simple-app.py application file. Replace `cluster_name` and `domain` with your actual values in `MongoClient` connection string.
 
     ````
+    <copy>
     import os
     import json
     import pymongo
@@ -137,7 +160,7 @@ In this lab, you will:
     pwd = os.environ['MONGO_DB_PASS']
     dbn = os.environ['MONGO_DB_NAME']
 
-    client = pymongo.MongoClient("mongodb+srv://" + usr + ":" + pwd + "@cluster0.dsbwl.mongodb.net/" + dbn + "?retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb+srv://" + usr + ":" + pwd + "@cluster_name.domain.mongodb.net/" + dbn + "?retryWrites=true&w=majority")
     db = client[dbn]
     collection = db['SimpleCollection']
 
@@ -158,6 +181,7 @@ In this lab, you will:
 
     if __name__ == '__main__':
         app.run(host= '0.0.0.0')
+    </copy>
     ````
 
 ## Task 2: Run the Python application and check results
@@ -165,23 +189,29 @@ In this lab, you will:
 1. Export operating system required environment variables.
 
     ````
+    <copy>
     export MONGO_DB_USER=mongoUser
 
     export MONGO_DB_PASS=DBlearnPTS#21_
 
     export MONGO_DB_NAME=SimpleDatabase
+    </copy>
     ````
 
 2. Use **pip** package installer for Python to install the required packages we specified in requirements.pip file.
 
     ````
+    <copy>
     pip3 install -r requirements.pip
+    </copy>
     ````
 
 3. Run the application.
 
     ````
+    <copy>
     python3.6 simple-app.py
+    </copy>
     ````
 
 4. If you followed the steps correctly, you should see this output in the terminal:
@@ -209,6 +239,7 @@ In this lab, you will:
 7. Insert a JSON document in your MongoDB document store, from the ClientVM. You will need to open a new Terminal window, or another SSH connection, because the first one is locked until you stop the application with CTRL+C, as specified. However, you cannot stop the application now because you are communicating with it via REST calls.
 
     ````
+    <copy>
     curl --request POST \
       --url http://localhost:5000/ \
       --header 'content-type: application/json' \
@@ -222,15 +253,17 @@ In this lab, you will:
      "industry":"Financial Services",
      "employees":54234
     }'
+    </copy>
     ````
 
 8. Refresh the browser that you used to open your Python Flask application. You should see this first document in your collection.
 
-9. Insert another JSON document. If you want to insert JSON documents from your laptop (or another Linux computer with Internet access and a CURL client), you have to use the ClientVM Public IP Address in the URL.
+9. Insert another JSON document. If you want to insert JSON documents from your laptop (or another Linux computer with Internet access and a CURL client), you have to use the ClientVM Public IP Address in the URL instead of `localhost`.
 
     ````
+    <copy>
     curl --request POST \
-      --url http://[ClientVM Public IP Address]:5000/ \
+      --url http://localhost:5000/ \
       --header 'content-type: application/json' \
       --data '{
      "company":"Company Two",
@@ -242,6 +275,7 @@ In this lab, you will:
      "industry":"Retail",
      "employees":12345
     }'
+    </copy>
     ````
 
 10. Use your laptop web browser to access `http://[ClientVM Public IP Address]:5000/` and verify both documents have been inserted. 
@@ -270,14 +304,24 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
 3. If you use the Firefox browser on the Remote Desktop connection, it will be downloaded in folder `/home/oracle/Downloads/`. Create a new folder to place wallet files.
 
     ````
+    <copy>
     ls /home/oracle/Downloads/
+    </copy>
+    ````
     
-    mkdir /home/oracle/Wallet_[Your Initials]AJD
-
-    unzip /home/oracle/Downloads/Wallet_[Your Initials]AJD.zip -d /home/oracle/Wallet_[Your Initials]AJD/
+    ````
+    <copy>
+    mkdir /home/oracle/Wallet_WSAJD
+    </copy>
     ````
 
-4. Edit **sqlnet.ora** file in **Wallet_[Your Initials]AJD** folder, and set the value of `DIRECTORY` to `${TNS_ADMIN}`.
+    ````
+    <copy>
+    unzip /home/oracle/Downloads/Wallet_WSAJD.zip -d /home/oracle/Wallet_WSAJD/
+    </copy>
+    ````
+
+4. Edit **sqlnet.ora** file in **Wallet_WSAJD** folder, and set the value of `DIRECTORY` to `${TNS_ADMIN}`.
 
     ````
     WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="${TNS_ADMIN}")))
@@ -287,45 +331,61 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
 5. Set the TNS_ADMIN environment variable to the directory where the unzipped credentials files.
 
     ````
-    export TNS_ADMIN=/home/oracle/Wallet_[Your Initials]AJD
+    <copy>
+    export TNS_ADMIN=/home/oracle/Wallet_WSAJD
+    </copy>
     ````
 
 6. Add another line to **requirements.pip** file. **cx_Oracle** is a Python extension module that enables access to Oracle Database.
 
     ````
+    Flask
+    pymongo
+    dnspython
     cx_Oracle
     ````
 
 7. Install the packages listed in requirements.pip file. If some are already installed, **pip** package installer will skip them.
 
     ````
+    <copy>
     pip3 install -r requirements.pip
+    </copy>
     ````
 
 8. Get AJD service names for your instance from **tnsnames.ora** file.
 
     ````
-    cat /home/oracle/Wallet_[Your Initials]AJD/tnsnames.ora
+    <copy>
+    cat /home/oracle/Wallet_WSAJD/tnsnames.ora
+    </copy>
     ````
 
 9. Verify the connectivity using SQL*Plus, using the TP service. If the connection works, exit.
 
     ````
-    sqlplus demo/DBlearnPTS#21_@[ajd-name]_tp
-
-    exit
+    <copy>
+    sqlplus demo/DBlearnPTS#21_@wsajd_tp
+    </copy>
     ````
 
-10. Edit **simple-app.py** file, add the lines needed by this simple Python application to connect to Oracle AJD document store, and perform the same tasks it performed on MongoDB. 
+    ````
+    <copy>
+    exit
+    </copy>
+    ````
+
+10. You need to add the lines needed by this simple Python application to connect to Oracle AJD document store, and perform the same tasks it performed on MongoDB. The easiest way is to edit **simple-app.py** file, remove all lines, and paste the following code lines. Here are some notes about the changes.
+    * At this point, you will split the URL used by this Python micro-service, `base-URL/m/` for MongoDB and `base-URL/o/` for Oracle AJD.
     * In the header section we need to import cx_Oracle module. 
     * Second, it will retrieve the connection details for Oracle AJD from the operating system environment variables. 
     * Then it builds the connection string, defines the connection, and the collection used by the application, for Oracle AJD. Both MongoDB collection and Oracle AJD collection have the same name, **SimpleCollection**. 
     * Next code is added to define the two functions used to insert new JSON documents, and to retrieve JSON documents from the AJD document store. 
-    * Notice the small change in the URL used, `base-URL/m/` for MongoDB and `base-URL/o/` for Oracle AJD. 
 
 11. With all these changes, your **simple-app.py** now has the following contents:
 
     ````
+    <copy>
     # imports the required modules
     import os
     import json
@@ -346,7 +406,7 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
     o_srv = os.environ['ORCL_DB_SERV']
 
     # create MongoDB connection, and set collection used by application
-    client = pymongo.MongoClient("mongodb+srv://" + m_usr + ":" + m_pwd + "@cluster0.dsbwl.mongodb.net/" + m_dbn + "?retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb+srv://" + m_usr + ":" + m_pwd + "@cluster_name.domain.mongodb.net/" + m_dbn + "?retryWrites=true&w=majority")
     mdb = client[m_dbn]
     mcollection = mdb['SimpleCollection']
 
@@ -395,29 +455,34 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
     # main program module
     if __name__ == '__main__':
         app.run(host= '0.0.0.0')
+    </copy>
     ````
 
     >**Note** : Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you use collections of JSON documents in Autonomous Database, and deliver the experience of a NoSQL document-store with the Oracle RDBMS, offering the same development experience as pure-play document stores.
 
 12. Create a bash script called **variables.sh**, and add the following lines. 
     * Specify the correct name of your AJD wallet folder. 
-    * Replace `[ajd-name]_tp` with the name of your AJD instance service in lowercase, that you retrieved from **tnsnames.ora** file.
+    * Replace `wsajd_tp` with the name of your AJD instance service in lowercase, that you retrieved from **tnsnames.ora** file.
 
     ````
+    <copy>
     #!/bin/bash
     export MONGO_DB_PASS=DBlearnPTS#21_
     export MONGO_DB_USER=mongoUser
     export MONGO_DB_NAME=SimpleDatabase
-    export TNS_ADMIN=/home/oracle/Wallet_[Your Initials]AJD
+    export TNS_ADMIN=/home/oracle/Wallet_WSAJD
     export ORCL_DB_USER=demo
     export ORCL_DB_PASS=DBlearnPTS#21_
-    export ORCL_DB_SERV=[ajd-name]_tp
+    export ORCL_DB_SERV=wsajd_tp
+    </copy>
     ````
 
 13. Make this script executable.
 
     ````
+    <copy>
     chmod a+x variables.sh
+    </copy>
     ````
 
 
@@ -426,20 +491,25 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
 1. Run the script, with the dot and the space in front of it, to set the necessary values for all environment variables, required for our application.
 
     ````
+    <copy>
     . variables.sh
+    </copy>
     ````
 
 2. Run the application.
 
     ````
+    <copy>
     python3.6 simple-app.py
+    </copy>
     ````
 
 3. Insert a JSON document into MongoDB, from a Linux computer with Internet access and CURL, any REST client you may have on your computer, or the ClientVM compute node.
 
     ````
+    <copy>
     curl --request POST \
-      --url http://[ClientVM Public IP Address]:5000/m/ \
+      --url http://localhost:5000/m/ \
       --header 'content-type: application/json' \
       --data '{
      "company":"Company Three",
@@ -451,13 +521,15 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
      "industry":"Manufacturing",
      "employees":98765
     }'
+    </copy>
     ````
 
 4. Insert another JSON document into MongoDB.
 
     ````
+    <copy>
     curl --request POST \
-      --url http://[ClientVM Public IP Address]:5000/m/ \
+      --url http://localhost:5000/m/ \
       --header 'content-type: application/json' \
       --data '{
      "company":"Company Four",
@@ -469,13 +541,15 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
      "industry":"Manufacturing",
      "employees":44444
     }'
+    </copy>
     ````
 
 5. Insert a JSON document into Oracle AJD, from a Linux computer with Internet access and CURL, any REST client you may have on your computer, or the ClientVM compute node.
 
     ````
+    <copy>
     curl --request POST \
-      --url http://[ClientVM Public IP Address]:5000/o/ \
+      --url http://localhost:5000/o/ \
       --header 'content-type: application/json' \
       --data '{
      "company":"Company Five",
@@ -487,13 +561,15 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
      "industry":"Retail",
      "employees":5550
     }'
+    </copy>
     ````
 
 6. Insert another JSON document into Oracle AJD.
 
     ````
+    <copy>
     curl --request POST \
-      --url http://[ClientVM Public IP Address]:5000/o/ \
+      --url http://localhost:5000/o/ \
       --header 'content-type: application/json' \
       --data '{
      "company":"Company Six",
@@ -505,13 +581,15 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
      "industry":"Health Sciences",
      "employees":123123
     }'
+    </copy>
     ````
 
 7. Insert two more JSON documents into Oracle AJD, just to have 4 documents in each document store.
 
     ````
+    <copy>
     curl --request POST \
-      --url http://[ClientVM Public IP Address]:5000/o/ \
+      --url http://localhost:5000/o/ \
       --header 'content-type: application/json' \
       --data '{
      "company":"Company Seven",
@@ -525,7 +603,7 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
     }'
 
     curl --request POST \
-      --url http://[ClientVM Public IP Address]:5000/o/ \
+      --url http://localhost:5000/o/ \
       --header 'content-type: application/json' \
       --data '{
      "company":"Company Eight",
@@ -537,6 +615,7 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
      "industry":"Utilities",
      "employees":888
     }'
+    </copy>
     ````
 
 8. Use your laptop web browser to access `http://[ClientVM Public IP Address]:5000/m/` to retrieve documents from MongoDB. You can verify also on MongoDB Cloud interface, in your Cluster, user **Collections**. Use 🔄 Refresh button if necessary.
@@ -553,19 +632,25 @@ The client credentials Wallet_AJD-NAME.zip that you download contains the follow
 12. For MongoDB retrieve function, replace the first line with this one (make sure you preserve the same indentation because this is very important in Python):
 
     ````
+    <copy>
     documents = mcollection.find().limit(2).skip(2)
+    </copy>
     ````
 
     * For Oracle AJD retrieve function, replace the first line with this one:
 
     ````
+    <copy>
     documents = ocollection.find().limit(2).skip(2).getDocuments()
+    </copy>
     ````
 
 13. Run the application.
 
     ````
+    <copy>
     python3.6 simple-app.py
+    </copy>
     ````
 
 14. Refresh your browser where `http://[ClientVM Public IP Address]:5000/m/` and `http://[ClientVM Public IP Address]:5000/o/` are open, to see the changes. Now it shows only the last 2 documents from each collection, as the pagination is hardcoded into the Python functions.
@@ -578,6 +663,7 @@ As a final step of our lab, we will create a small application that will retriev
 1. Create a new file **simple-migrate.py**, with the following Python code. 
 
     ````
+    <copy>
     # imports the required modules
     import os
     import json
@@ -595,7 +681,7 @@ As a final step of our lab, we will create a small application that will retriev
     o_srv = os.environ['ORCL_DB_SERV']
 
     # create MongoDB connection, and set collection used by application
-    client = pymongo.MongoClient("mongodb+srv://" + m_usr + ":" + m_pwd + "@cluster0.dsbwl.mongodb.net/" + m_dbn + "?retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb+srv://" + m_usr + ":" + m_pwd + "@cluster_name.domain.mongodb.net/" + m_dbn + "?retryWrites=true&w=majority")
     mdb = client[m_dbn]
     mcollection = mdb['SimpleCollection']
 
@@ -620,12 +706,15 @@ As a final step of our lab, we will create a small application that will retriev
             content = doc.getContent()
             print('Migrated SODA document: ')
             print(content)
+    </copy>
     ````
 
 2. Run the migration application.
 
     ````
+    <copy>
     python3.6 simple-migrate.py
+    </copy>
     ````
 
 3. All 4 JSON documents from MongoDB are migrated to Oracle JSON.
