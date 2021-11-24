@@ -44,7 +44,4 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 
 ## **Acknowledgements**
 * **Authors**
-    * Jason Ding - Principal Data Scientist - Oracle AI Services
-    * Haad Khan - Senior Data Scientist - Oracle AI Services
-* **Last Updated By/Date**
-    * Haad Khan - Senior Data Scientist, May 2021
+    * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
