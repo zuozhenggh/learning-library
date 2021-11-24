@@ -16,137 +16,165 @@ In this lab, you will:
 - learn how to generate local explanation for all the time steps in the forecast forizon
 
 ### Prerequisites
-- Forecast ID ?
+- Forecast ID from the create forecast API
 
-## Task 1: Get Global Explanation
+### Task 1: Get Global Explanation
 
+### 1. Call the explanation API as shown below
 
-***Note***: All the data files needed in this session can be downloaded here:
-* [Example data](../files/example.csv) : an example data to show missing values, data status, distributions, monotonic attributes, etc.
-* [Building temperature data](../files/building_temperature.csv): temperature data for 2 buildings for later combination
-* [Building pressure data](../files/building_pressure.csv): pressure data for 2 buildings for later combination
+![Explanation API Call](../images/explanation_api.png)
 
-### Loading single data source
-
-**Example of Data loading**
-
-
-#### Task B: Join two dataframes together
-
-
-### Separate data for different models
-
-##  **STEP 2:** Exploring Data
-
-After the data being loaded, we now can start basic exploration to validate and identify potential issues of the data.
-
-There are many ways of data exploration, and can be very dependent on particular business scenarios.
-
-Here we only introduce some basic methods which are appropriate to time-series data.
-
-**Check data types and missing values**
-#### Monotonic Attributes
-
-Based on the graph of time-series, one may identify monotonic features, which may not be useful for model training, and can be removed.
-```Python
-example_df[['timestamp', 'sensor8', 'sensor9']].plot(x='timestamp', figsize=(14,3)) # Plot individual column
-```
-![](../images/lab2-time-series-plot2-motonic-signals.png)
-
-**Example**
-
-## Task 3: Preprocessing Data
-
-After having basic understanding on the data, we can start to preprocess and clean the data to fit for model training.
-
-### Keep only the timestamp and valid numeric sensor/signal attributes
-
-### Remove invalid observations
-
-### Remove known outliers/anomalies from training set
-
-#### How much data to remove/clean?
-
-##  **STEP 4:** Final Splitting and Formatting
-
-### Data Splitting
-
-
-### Formatting
-
-Currently, our anomaly detection service takes 2 types of data format, CSV format, or JSON format.
-
-#### CSV Format
-The CSV format is similar to the dataframe preprocessed by above steps. No extra steps is needed.
-* The CSV file need to head the header row, with first column as `timestamp`
-* Each row is one observation of all attributes at the particular timestamp.
-* Missing value is allowed, simple ignore it
-
-Example of csv file:
-```CSV
-timestamp,signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10
-2020-01-01 13:00:01,1,1.1,2,2.2,3,3.3,4,4.4,5,5.5
-2020-01-01 13:01:00,1,1.1,2,2.2,3,3.3,4,4.4,,
-2020-01-01 13:02:02,,1.12,2,2.02,3.01,3.32,4,,5.01,5.54
-...
-```
+### 2. Sample Json ouput
 
 #### JSON Format
-The JSON format is also straight-forward, it contains a key `signalNames` listing all attribute names, and a key `data` to list all actual values along with timestamp.
+The JSON format is also straight-forward, it contains a key `globalFeatureImportance` listing all the influencing features and their feature importance scores. 
 
 ```Json
 {
-    "requestType": "INLINE",
-    "signalNames": [ "sensor1", "sensor2", "sensor3", "sensor4", "sensor5", "sensor6", "sensor7", "sensor8", "sensor9", "sensor10" ],
-    "data": [
-        {
-            "timestamp": "2018-01-03T16:00:01",
-            "values": [ 0.8885, 0.6459, -0.0016, -0.9061, 0.1349, -0.4967, 0.4335, 0.4813, -1.0798, 0.2734 ]
-        },
-        {
-            "timestamp": "2018-01-03T16:00:02",
-            "values": [ 0.8825, 0.66, -0.01, -0.9161, 0.1349, -0.47, 0.45, 0.4234, -1.1339, 0.3423 ]
+    "objectStoreDetails": null,
+  "explanations": [
+    {
+      "targetColumn": "gasoline purchase",
+      "bestModel": "HoltWintersAdditiveMethod",
+      "bestHyperParameters": {
+        "hyperParameters": {
+          "frequencyOfSeasonality": 9,
+          "alpha": 0.12953689187153627,
+          "beta": 0.001,
+          "gamma": 0.04183519693490505
         }
-      ]
+      },
+      "hyperparameterSearchMethod": "NLOPT",
+      "bestModelSelectionMetric": "SMAPE",
+      "modelValidationScheme": "ROCV",
+      "globalFeatureImportance": {
+        "influencingFeatures": {"Y(t - 8)": 6.368269, "Y(t - 9)": 0.9920104, "Y(t - 4)": 0.9487139, 
+        "Y(t - 5)": 0.75489503, "Y(t - 6)": 0.56687367, "Y(t - 7)": 0.48659593, "Y(t)": 2.0871973, 
+        "Y(t - 1)": 1.7058487, "Y(t - 2)": 1.4861954, "Y(t - 3)": 1.2476459
+        }
+      },
+      "localFeatureImportance": {
+        "forecastHorizon": 7,
+        "influencingFeatures": [
+          {
+            "Y(t - 8)": 1.3487852, "Y(t - 9)": 0.7856572, "Y(t - 4)": -2.7679126, "Y(t - 5)": -1.4348975, 
+            "Y(t - 6)": -1.8177031, "Y(t - 7)": 0.14667921, "Y(t)": 0.38467708, "Y(t - 1)": 2.2558856,
+            "Y(t - 2)": -0.0032815093, "Y(t - 3)": -0.94642097
+          },
+          {
+            "Y(t - 8)": 0.65153044, "Y(t - 9)": 0.80354553, "Y(t - 4)": -2.770662, "Y(t - 5)": -1.43632,
+            "Y(t - 6)": -1.8195009, "Y(t - 7)": 0.25485802, "Y(t)": 0.38506135, "Y(t - 1)": 2.2581365,
+            "Y(t - 2)": -0.0032847794, "Y(t - 3)": -0.94736266
+          },
+          {
+            "Y(t - 8)": 0.66255754, "Y(t - 9)": 0.8192477, "Y(t - 4)": -2.7734115, "Y(t - 5)": -1.4377425,
+            "Y(t - 6)": -2.9878244, "Y(t - 7)": 0.1329602, "Y(t)": 0.38544565, "Y(t - 1)": 2.2603877, 
+            "Y(t - 2)": -0.0032880495, "Y(t - 3)": -0.9483044
+          },
+          {
+            "Y(t - 8)": 0.6722584, "Y(t - 9)": 0.8330451, "Y(t - 4)": -2.7761607, "Y(t - 5)": -2.2415307,
+            "Y(t - 6)": -1.6718373, "Y(t - 7)": 0.13490732,  "Y(t)": 0.38582996, "Y(t - 1)": 2.2626388,
+            "Y(t - 2)": -0.0032913196, "Y(t - 3)": -0.9492461
+          },
+          {
+            "Y(t - 8)": 0.6808036, "Y(t - 9)": 0.8451827, "Y(t - 4)": -4.127516, "Y(t - 5)": -1.3365475,
+            "Y(t - 6)": -1.6930972, "Y(t - 7)": 0.13662253, "Y(t)": 0.38621426, "Y(t - 1)": 2.2648897,
+            "Y(t - 2)": -0.00329459, "Y(t - 3)": -0.95018786
+          },
+          {
+            "Y(t - 8)": 0.6883419, "Y(t - 9)": 0.85587406, "Y(t - 4)": -2.6067908, "Y(t - 5)": -1.3513565,
+            "Y(t - 6)": -1.7118533, "Y(t - 7)": 0.13813569, "Y(t)": 0.38659853, "Y(t - 1)": 2.2671409,
+            "Y(t - 2)": -0.00329786, "Y(t - 3)": -1.3529193
+          },
+          {
+            "Y(t - 8)": 0.6950028, "Y(t - 9)": 0.86530524, "Y(t - 4)": -2.63204, "Y(t - 5)": -1.3644432,
+            "Y(t - 6)": -1.7284274, "Y(t - 7)": 0.13947278, "Y(t)": 0.38698283, "Y(t - 1)": 2.2693918,
+            "Y(t - 2)": -0.004514997, "Y(t - 3)": -0.8999726
+          }
+        ]
+      }
+    }
+  ],
+  "freeformTags": {},
+  "definedTags": {
+    "Oracle-Tags": {
+      "CreatedBy": "fc-mcs-team",
+      "CreatedOn": "2021-11-24T05:02:45.943Z"
+    }
+  },
+  "systemTags": {}
 }
 ```
+### Plotting the global feature importance 
 
-Here is a simple function to convert the dataframe into this JSON format.
+Here is a simple function to plot the global feature importance from the above json output.
 
 ```Python
-def convert_df_to_json(df, outfile_name):
-# NOTE: Assume the first column or the index in dataframe is the timestamp, will force to change it as timestamp in output
-    out_json = {'requestType': 'INLINE', 'signalNames': [], 'data': []}
-    column_0 = list(df.columns)[0]
-    if df.index.name == None:
-        df.index = df[column_0]
-        df.drop([column_0], inplace=True, axis=1)
-    out_json['signalNames'] = list(df.columns)
-    if df.index.dtype == 'O': # If the new index is string object
-        out_json['data'] = [{'timestamp': index, 'values': list(row.values)} for index, row in df.iterrows()]
-    else:
-        out_json['data'] = [{'timestamp': index.strftime('%Y-%m-%dT%H:%M:%SZ'), 'values': list(row.values)} for index, row in df.iterrows()]
+import plotly.express as px
+import plotly.graph_objects as go
 
-    with open(outfile_name, 'w') as file:
-        file.write(json.dumps(out_json, indent=2))
-    print(f"JSON output file save to {outfile_name}")
-    return out_json
+def plot_global_feature_importance(explanation_json):
+    df = pd.DataFrame()
+    global_feature_importance = explanation_json['explanations'][0]
+                                                ['globalFeatureImportance']['influencingFeatures']
+    df['Feature_Importance'] = global_feature_importance.values()
+
+    feature_names = global_feature_importance.keys()
+    df['Lagged Target Features of Product Type A'] = feature_names
+
+    title = "Global Feature Importance "
+    
+    fig = px.bar(df, y="Lagged Target Features of Product Type A", 
+                x='Feature_Importance', title=title).update_yaxes(categoryorder = "total ascending")
+    fig.update_traces(marker_color='lightgreen')
+    fig.show()
 ```
 
-#### Final Data Samples
-After those above steps, you should now be able to transform the raw data provided earlier to be like the following:
+### Sample Global feature importance plot
 
-* [processed training csv data](../files/demo-training-data.csv)
-    - 10 signals with timestamp column, with 10,000 observations
-* <a href="../files/demo-testing-data.json" target="_blank" download>processed testing json data</a>
-    - same 10 signals with timestamp column, 100 observations
+![Explanation API Call](../images/global_feature_importance.png)
+
+### Task 2: Get Local Explanation
+
+To get local explanation, there is no seperate api call required. Refer [api call above]
+
+The JSON format contains a key `localFeatureImportance` listing all the influencing features and their feature importance scores. 
+
+### Plotting the local feature importance 
+
+Here is a simple function to plot the local feature importance from the above json output.
+
+```Python
+import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
+
+def plot_local_feature_importance(explanation_json, time_step):
+    df = pd.DataFrame()
+    local_feature_importance = get_forecast_explanations['explanations'][0]['localFeatureImportance']
+                                                        ['influencingFeatures'][time_step]
+    df['Feature_Importance'] = local_feature_importance.values()
+    feature_names = local_feature_importance.keys()
+    df['Lagged Target Features of Product Type A'] = feature_names
+    df["Color"] = np.where(df["Feature_Importance"]<0, 'Negative', 'Positive')
+
+    title = "Local Feature Importance for step" + str(time_step) + " forecast " 
+    fig = px.bar(df, y="Lagged Target Features of Product Type A", x='Feature_Importance', 
+                 title=title, color='Color',  color_discrete_map={ 'Negative': 'red', 
+                 'Positive': 'lightgreen'}).update_yaxes(categoryorder = "total ascending")
+    fig.show()
+```
+
+### Sample Local Feature Importance Plot for step 1 forecast
+
+![Explanation API Call](../images/local_feature_importance.png)
+
+Similarly, by changing the time step, you can get the local feature importance for that corresponding forecast
 
 Congratulations on completing this lab! You now have finished all the sessions of this lab, please feel free to contact us if any additional questions.
 
 
 ## Acknowledgements
 * **Authors**
-    * Jason Ding - Principal Data Scientist - Oracle AI Services
-    * Haad Khan - Senior Data Scientist - Oracle AI Services
-* **Last Updated By/Date**
-    * Jason Ding - Principal Data Scientist, July 2021
+    * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
+
