@@ -99,7 +99,7 @@ Estimated time: 20 minutes
 		  properties:
 		    - key: com.oracle.apm.agent.log.level
 		      value: INFO
-			observation-log: "stdout"
+		  observation-log: "stdout"
 		  paths:
 		    - path: "/favicon.ico"
 		      enabled: false
@@ -116,7 +116,7 @@ Estimated time: 20 minutes
 
 	>Suggested Tips:
 	* Copy the above text and paste it into a text file, replace the endpoint and the private key, then copy the modified text into the yaml file.
-	* Make sure to keep the syntax of 2 space indentation.
+	* Make sure to keep the syntax of 2 space indentation. Deployment will fail with misconfigured indentation.
 	* Refer to the screenshot image below to see how it should look like after the file is modified.
 
 	![application.yaml](images/2-1-applicationyaml.png " ")
@@ -244,10 +244,16 @@ In this lab, we are adding custom spans to the first two, ***List All*** and ***
 	}
 	</copy>
 	```
+    > Tips to replace method. Comment the existing method, then paste the new code under the original method.
+
+  ![TodoListAppService](images/5-0-1-TodoListAppService.png " ")
+  ![TodoListAppService](images/5-0-2-TodoListAppService.png " ")
+
+
 Refer to the screenshots of the ***TodoListAppService.java*** where the changes are highlighted in blue. Observe that custom spans are added to the methods.
 
-	![TodoListAppService](images/5-1-TodoListAppService.png " ")
-	![TodoListAppService](images/5-2-TodoListAppService.png " ")
+  ![TodoListAppService](images/5-1-TodoListAppService.png " ")
+  ![TodoListAppService](images/5-2-TodoListAppService.png " ")
 	![TodoListAppService](images/5-3-TodoListAppService.png " ")
 
 2. Open ***TodoItemStorage.java*** with any editor.
@@ -340,7 +346,7 @@ Refer to the screenshots of the ***TodoListAppService.java*** where the changes 
 	</copy>
 	```
 
-	d. Add the following methods:
+	d. At the end of the file, find a line with one symbol "{". Add the following methods just above that line:
 	``` bash
 	<copy>
 	private void addConnectionInfo(Span span, String sql) {
@@ -356,10 +362,13 @@ Refer to the screenshots of the ***TodoListAppService.java*** where the changes 
 	}
 	</copy>
 	```
+
+	![TodoItemStorage.java](images/5-4-0-TodoItemStorage.png " ")
+
 Refer to the below screenshots of the ***TodoItemStorage.java*** where the changes are highlighted in blue.
 
-	![TodoItemStorage.java](images/5-4-TodoItemStorage.png " ")
-	![TodoItemStorage.java](images/5-5-TodoItemStorage.png " ")
+  ![TodoItemStorage.java](images/5-4-TodoItemStorage.png " ")
+  ![TodoItemStorage.java](images/5-5-TodoItemStorage.png " ")
 	![TodoItemStorage.java](images/5-6-TodoItemStorage.png " ")
 	![TodoItemStorage.java](images/5-7-TodoItemStorage.png " ")
 
@@ -395,14 +404,22 @@ Refer to the below screenshots of the ***TodoItemStorage.java*** where the chang
 	</copy>
 	```
 
+	![TodoItemStorage.java](images/5-5-0-buildsh.png " ")
+
 ## Task 7: Verify container registry from the root compartment
 
 1.	In the OCI console, click the menu from the top-left corner and open **Developer Services** > **Container Registry**.
-2.	From the tree view, select the repository you created in the Native Cloud App Workshop.
-3.	Ensure the access is Public. if the access is Private, change it to “Public” by **Actions** > **Change** to Public
+2.	Select **(root)** from the **Compartment** pulldown menu
+
+	![OCI Container Registry](images/7-0-1-registry.png " ")
+
+3.  From the tree view, select the repository you created in the Native Cloud App Workshop.
+4.	Ensure the access is Public.
+	![OCI Container Registry](images/7-0-2-registry.png " ")
+5. If the access is Private, change it to “Public” by **Actions** > **Change** to Public
 
 
-	![OCI Container Registry](images/7-1-registry.png " ")
+  ![OCI Container Registry](images/7-0-3-registry.png " ")
 
 ## Task 8: Deploy on Kubernetes and Check the status
 1.	From the ***mtdrworkshop/backend*** directory, run the ***deploy.sh*** script.
@@ -435,6 +452,13 @@ Refer to the below screenshots of the ***TodoItemStorage.java*** where the chang
 
 	![kubectl](images/8-2-kubectl.png " ")
 
+       > Debugging Tips: If the pods are not running, check the logs with the following command:</br> $**kubectl logs ${POD_NAME}**</br>
+         Pod names can be found by running the kubectl get pods command.
+         In the image below, the log shows a syntax error in the yaml file, which was caused by the misconfigured indentation.
+
+
+       ![Todo App](images/8-2-1-error.png " ")
+
 4. You can test the application with a browser on your laptop. Enter the URL: ***http://&lt;LB external-IP&gt;/todolist*** in the browwer, replacing the IP with the load balancer’s external IP copied in the previous step.
 
 	![Todo App](images/8-3-browser.png " ")
@@ -464,32 +488,41 @@ To run the application from the Gateway, you will need to add headers, which are
 
 	![OCI Gateway](images/9-5-gateway.png " ")
 
-6. Under the **Headers**, click **+ Another Header** to create a new entry field. Enter an asterisk "*****" to the field, then click Apply **Changes**.
+6. In the **Origins** section, replace the URL with the load balancer’s updated external IP, copied in the previous step.
 
-	![OCI Gateway](images/9-6-gateway.png " ")
+	![OCI Gateway](images/9-6-0-gateway.png " ")
 
-7. Click **Next**.
+  External IP can be found by the kubectl get services command.
 
-	![OCI Gateway](images/9-7-gateway.png " ")
+  ![OCI Gateway](images/9-6-2-gateway.png " ")
+
+7. Under the **Headers**, click **+ Another Header** to create a new entry field. Enter an asterisk "*****" to the field, then click **Apply Changes**.
+
+	![OCI Gateway](images/9-6-1-gateway.png " ")
 
 8. Click **Next**.
 
-	![OCI Gateway](images/9-8-gateway.png " ")
+	![OCI Gateway](images/9-7-1-gateway.png " ")
 
-9. Click **Save Changes**.
+9. For both **Route 1** and **Route 2**, change the URL with the Load Balancer's updated external IP. Then, click **Next**.
 
-	![OCI Gateway](images/9-9-gateway.png " ")
+	![OCI Gateway](images/9-7-2-gateway.png " ")
+	![OCI Gateway](images/9-7-2-1-gateway.png " ")
 
-10. Click **Copy** next to the Endpoint. This will copy the endpoint URL to the clipboard.
+10. Click **Save Changes**.
+
+	![OCI Gateway](images/9-7-3-gateway.png " ")
+
+11. Click **Copy** next to the Endpoint. This will copy the endpoint URL to the clipboard.
 
 	![OCI Gateway](images/9-10-gateway.png " ")
 
-11. Open a text editor and paste the copied endpoint and append ***‘/todolist’*** to it. Re-copy the entire URL to your clipboard. Your URL should look like below.
+12. Open a text editor and paste the copied endpoint and append ***‘/todolist’*** to it. Re-copy the entire URL to your clipboard. Your URL should look like below.
 
 		E.g.,
 		https://abcdefg12345one.apigateway.us-sanjose-1.oci.customer-oci.com/todolist
 
-12.	Open another browser tab and paste the URL to the browser’s address bar. Verify the response shows the data in a format similar to the below image.
+13.	Open another browser tab and paste the URL to the browser’s address bar. Verify the response shows the data in a format similar to the below image.
 
 	![OCI Gateway](images/9-11-gateway.png " ")
 
@@ -603,11 +636,27 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 	![APM Browser Agent](images/11-11-1-browseragent.png " ")
 
-15. Expand the **css** folder link. Upload the files from your local css directory, by repeating the upload steps similar to the steps 9 to 14.
+15. Expand the **css** folder link. Click Upload, Upload the files from your local css directory, by repeating the upload steps similar to the steps 9 to 14.
 
 	![APM Browser Agent](images/11-11-2-browseragent.png " ")
 
-16.	After all the css files are uploaded, go back to root directory by selecting **(root)** from the pulldown menu.
+16. Click **Upload**
+
+	![APM Browser Agent](images/11-11-2-0-browseragent.png " ")
+
+17. Click **select files**
+
+	![APM Browser Agent](images/11-11-2-1-browseragent.png " ")
+
+18. Select the files from your local ***build/static/css*** directory, then click **Open**
+
+	![APM Browser Agent](images/11-11-2-2-browseragent.png " ")
+
+19. Verify the file names to upload, then click **Upload**. Then click **Close**
+
+	![APM Browser Agent](images/11-11-2-3-browseragent.png " ")
+
+16.	After all the files are uploaded, go back to the root directory by selecting **(root)** from the pulldown menu.
 
 	![APM Browser Agent](images/11-11-3-browseragent.png " ")
 
