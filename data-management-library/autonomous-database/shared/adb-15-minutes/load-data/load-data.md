@@ -9,7 +9,7 @@ Estimated Time: 5 minutes
 ### Objectives
 
 In this lab, you will:
-* Learn how to define object storage credentials for your autonomous database
+* Learn how to define object storage credentials for your Autonomous Database
 * Learn how to load data from object storage using Data Tools
 
 
@@ -22,7 +22,7 @@ In this lab, you will:
 
 In this step, you will set up access to a bucket on Oracle Cloud Infrastructure Object Storage that contain data that we want to load.
 
-1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Click **Database Actions** to go to the suite of Autonomous Database tools.
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADB Instance" lab. In this example, the database name is "My Quick Start ADW." Click **Database Actions** to go to the suite of Autonomous Database tools.
 
     ![Details page of your Autonomous Database](images/service-details.png " ")
 
@@ -39,18 +39,19 @@ In this step, you will set up access to a bucket on Oracle Cloud Infrastructure 
 
     ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
-3. To add access to the MovieStream landing area which contains newly added files for us to load, click **+Add Cloud Storage** in the top right of your screen.
+3. To access source files in the data lake's landing zone, click **+Add Cloud Storage** in the top right of your screen.
 
     - In the **Name** field, enter 'MovieStreamLanding'.
 
-    **Note:** Take care not to use spaces in the name.
+    > **Note:** Take care not to use spaces in the name.
+
 
     - Leave Cloud Store selected as **Oracle**.
     - Copy and paste the following URI into the URI + Bucket field:
 
     ```
     <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
     </copy>
     ```
 
@@ -63,7 +64,7 @@ In this step, you will set up access to a bucket on Oracle Cloud Infrastructure 
 
 ## Task 2: Load data from files in Object Storage using Data Tools
 
-In this step we will perform some simple data loading tasks, loading both csv and partitioned parquet files from object storage into tables in our autonomous database.
+In this step, we will load both csv and partitioned parquet files from object storage into tables in our autonomous database.
 
 1. To load or link data from our newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
 
@@ -79,11 +80,11 @@ In this step we will perform some simple data loading tasks, loading both csv an
 
     ![View settings for sales_sample load task](images/view-sales-sample.png)
 
-5. The default action is to **Create Table** from the source. Notice the data loader derived the column names and data types from the parquet file. Update the name of the table from **SALES_SAMPLE** to **CUSTSALES**
+5. The default action is to **Create Table** from the source. Update the name of the new table from **SALES_SAMPLE** to **CUSTSALES**. Notice the data loader derived the column names and data types from the parquet file contents. 
 
     ![Update table name to custsales](images/update-sales-sample-name.png)
 
-5. We will load two more sources. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
+5. We will create tables and load two more sources. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
 
 5. Finally, drag the **customer** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
 

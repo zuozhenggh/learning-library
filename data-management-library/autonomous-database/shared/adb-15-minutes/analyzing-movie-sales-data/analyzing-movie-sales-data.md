@@ -3,6 +3,7 @@
 ## Introduction
 In this lab, use Oracle analytic SQL over both structured and semi-structured data to gain a better understanding of MovieStream's sales performance.
 
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -18,7 +19,7 @@ In this lab, use Oracle analytic SQL over both structured and semi-structured da
 - This lab requires completion of Labs 1 and 2 in the Contents menu on the left.
 
 ## Task 1: Navigate to the SQL Worksheet
-1. From the Data Load tool, navigate to the SQL Worksheet by clicking the hamburger menu in the top left and selecting **Development -> SQL**.
+1. From the Data Load tool, navigate to the SQL Worksheet by clicking the top-left hamburger menu and then selecting **Development -> SQL**.
 
     ![Go to SQL worksheet](images/goto-sql.png " ")
 
@@ -68,7 +69,7 @@ You are now ready to start analyzing MovieStream's performance using SQL.
 
 Time comparisons are one of the most common types of analyses. MovieStream has just completed sales for December. What is the year over year comparison for this latest month? What is this breakout by movie genre? Oracle SQL has a **LAG** function that facilitates these types of analyses.  
 
-1. Let's start by looking at sales in December for the latest two years for our major genres (we can use an INNER JOIN because there is always a current and previous year value):
+1. Let's start by looking at movie views and sales in December for the latest two years for our major genres:
 
     ```
     <copy>SELECT 
@@ -91,7 +92,7 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
     This result is fine, but to simplify comparisons we want to do a side-by-side comparison of sales across the two years.  Oracle SQL analytic functions will help solve that problem.
 
 
-2. The **LAG** function will allow us to compare this year vs last (or any other time comparison). In addition, we are going to leverage the SQL **WITH** clause. The **WITH** clause allows you to define in-line views - which greatly simplifies your queries by breaking a query down into smaller, understandable chunks. It's a very powerful tool to have in your toolbox. We'll be using these in-line views as "query blocks" - or named result sets that can be easily referenced. Here, we're using the **WITH** clause to set up the comparison to last year.
+2. The **LAG** function will allow us to compare this year vs last (or any other time comparison). In addition, we are going to leverage the SQL **WITH** clause. The **WITH** clause defines in-line views which greatly simplify your queries by breaking them down into named, smaller, understandable chunks. In-line views are then referenced like any other table or view in your SQL query. It's a very powerful tool to have in your toolbox. Here, we're using the **WITH** clause to set up the comparison to last year.
 
     ```
     <copy>WITH sales_vs_lastyear as (
@@ -110,8 +111,8 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
             ) as sales_last_year         
     FROM custsales c, genre g
     WHERE g.genre_id = c.genre_id
-    AND to_char(c.day_id, 'MON') in ('DEC')
-    AND g.name in ('Action','Drama','Comedy')
+      AND to_char(c.day_id, 'MON') in ('DEC')
+      AND g.name in ('Action','Drama','Comedy')
     GROUP BY TO_CHAR(c.day_id,'YYYY-MM'), c.genre_id, g.name
     ORDER BY genre, month
     )
@@ -128,7 +129,7 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
     ORDER BY sales_change DESC;</copy>
     ```
     
-    The subquery **sales\_vs\_lastyear** aggregates sales by genre and month for both this year and last. The **LAG** function is looking back "1" row for each genre name **PARTITION** - or grouping. The **ORDER BY** clause is critical to ensure that the prior row is indeed the prior month for that genre. The subquery is then used by the SELECT statement that calculates the sales change. 
+    The subquery **sales\_vs\_lastyear** aggregates sales by genre and month for both this year and last. The **LAG** function is looking back "1" row for each genre name **PARTITION** - or grouping. The **ORDER BY** clause is critical to ensure that the prior row is indeed the prior year for that genre. The subquery is then used by the SELECT statement that calculates the sales change. 
 
     You can see that Action and Comedy genres have shown a significant drop off in both sales and views. Even though Drama views have dropped, its sales has increased. And, its sales increase is making up for the other genres' shortfall.
 
@@ -150,63 +151,34 @@ In the following steps, the scripts will build a SQL query that will identify:
 
 Customers will be categorized into 5 buckets measured (using the NTILE function) in increasing importance. For example, an RFM combined score of 551 indicates that the customer is in the highest tier of customers in terms of recent visits (R=5) and activity on the site (F=5), however the customer is in the lowest tier in terms of spend (M=1). Perhaps this is a customer that performs research on the site, but then decides to buy movies elsewhere!
 
-1.  Binning customers' sales by value
+1.  Binning customers' based on behavior
 
-    Use the following query to segment customers into 5 distinct bins based on the value of their purchases:
+    Use the following query to segment customer behavior into 5 distinct bins based on the recency, frequency and monetary metrics:
 
     ```
     <copy>SELECT
-        m.cust_id,
-        c.first_name||' '||c.last_name as cust_name,
-        c.country,
-        c.gender,
-        c.age,
-        c.income_level,
-        NTILE (5) OVER (ORDER BY SUM(m.actual_price)) AS rfm_monetary
-    FROM custsales m
-    INNER JOIN customer c ON c.cust_id = m.cust_id
-    GROUP BY m.cust_id,
-        c.first_name||' '||c.last_name,
-        c.country,
-        c.gender,
-        c.age,
-        c.income_level
-    ORDER BY m.cust_id,
-    c.first_name||' '||c.last_name,
-    c.country,
-    c.gender,
-    c.age,
-    c.income_level;</copy>
+        cust_id,        
+        NTILE (5) OVER (ORDER BY max(day_ID)) AS rfm_recency,
+        NTILE (5) OVER (ORDER BY count(1)) AS rfm_frequency,
+        NTILE (5) OVER (ORDER BY SUM(actual_price)) AS rfm_monetary
+    FROM custsales
+    GROUP BY cust_id
+    ORDER BY cust_id
+    FETCH FIRST 10 ROWS ONLY;</copy>
     ```
     Below is a snapshot of the result (and your result may differ):
 
-    ![binned customers by sales](images/t4-bin-sales.png " ")
+    ![binned customers by sales, last visit and frequency](images/t4-bin-rfm.png " ")
     
     
-    The last column in the report shows the "Bin" value. A value of 1 in this column indicates that a customer is a low spending customer and a value of 5 indicates that a customer is a high spending customer. For more information about using the `NTILE` function, see [the SQL documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/NTILE.html#GUID-FAD7A986-AEBD-4A03-B0D2-F7F2148BA5E9).
+    The rfm\_* columns in the report shows the "bin" values based on the 5 quintiles described above.
+    
+    For more information about using the `NTILE` function, see [the SQL documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/NTILE.html#GUID-FAD7A986-AEBD-4A03-B0D2-F7F2148BA5E9).
 
-2.  Binning customer sales by frequency
 
-    The next step is to determine how frequently customers are watching movies on our platform. To do this, we simply calculate the number of movies watched by each customer and then bin that calculation across 5 buckets.
+3.  Add customer information to the  RFM query
 
-    ```
-    <copy>SELECT
-        cust_id,
-        NTILE (5) OVER (ORDER BY max(day_ID)) AS rfm_recency,
-        NTILE (5) OVER (ORDER BY count(1)) AS rfm_frequency
-    FROM custsales
-    GROUP BY cust_id
-    ORDER BY cust_id;</copy>
-    ```
-    This should return a result similar to the following (again, your results may differ):
-
-    ![binned customers by date and frequency](images/t4-bin-recency-frequence.png " ")
-
-    Now we can categorize customers based on when they last watched a movie (rfm\_recency) and how frequently they viewed movies (rfm\_frequency).
-
-3.  Create an RFM query
-
-    Now we use the **`WITH`** clause to combine these two queries to create an RFM query:
+    Now we use the **`WITH`** clause to create an RFM query and then join that to attributes coming from the CUSTOMER table. In addition, the query will focus on important customers (based on spend) that are at risk:
 
     ```
     <copy>WITH rfm AS (
@@ -234,22 +206,21 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
       AND r.rfm_recency = 1
     ORDER BY r.rfm_monetary desc, r.rfm_recency desc;</copy>
     ```
-    The result only shows customers who have history had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers!
+    The result only shows customers who historically had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers!
 
-    ![RFM query](images/t4-rfm
-    .png " ")
+    ![RFM query](images/t4-rfm.png " ")
 
 ## Task 5: Accessing JSON data in the data lake
 
 ### Overview
 
-Sometimes data does not come in a simple, tabular format. JSON format is an open standard file format which is typically used to simplify the way information can be moved around the web. 
+Sometimes data does not come in a simple, tabular format. JSON is an open standard file format which is typically used to simplify the way information can be moved around the web. 
 
 There is a movies data set in our data lake that contains key details about each of the rented movies. The fields in that file can be complex. For example, each movie has a **crew** associated with it and that crew is comprised of many **jobs**, such as "producer," "director," "writer," along with the names of the individuals. Each movie also has a list of award nominations and wins. An example of how this information is organized is shown below:
 
 ![JSON example](images/lab-3-json-doc.png " ")
 
-1. Create a table over this movies data set using the **DBMS_CLOUD** API. In this example, the movie data set is not loaded into Autonomous Database - the table is accessing the data set in the object store directly.
+1. Create a table over this movies data set using the **DBMS_CLOUD** API. In this example, the movie data set is not loaded into Autonomous Database - the table is accessing the data set in the object store when queried.
 
     ```
     <copy>
@@ -306,13 +277,10 @@ There is a movies data set in our data lake that contains key details about each
 
     ![simple json query result](images/t6-simple-query.png " ")
     
-    > **Note:** Each column has three components:
-
-    - the name of the source table - **movie** which is referenced using the letter **m**
-
-    - the column containing our json data - **doc**
-
-    - the name of the json attribute - **movie_id**, **title**, **budget** and **runtime**
+    Each column has three components:
+    * the name of the source table - **movie** which is referenced using the letter **m**
+    * the column containing our json data - **doc**
+    * the name of the json attribute - **movie_id**, **title**, **budget** and **runtime**
 
 2. Now that movie queries return data in column format, you can join that data with data stored in other Oracle Database tables.  Let's find the top 10 movies (JSON) based on customer sales (tabular).  This requires joining the **MOVIE\_ID** column from the **CUSTSALES** table with the json document's **movie\_id** attribute.
 
@@ -343,7 +311,7 @@ There is a movies data set in our data lake that contains key details about each
         m.doc.crew,
         m.doc.awards
     FROM movie m
-    WHERE m.doc.title in ('Rain Man','The Godfather');;</copy>
+    WHERE m.doc.title in ('Rain Man','The Godfather');</copy>
     ```
 
     It will return:
@@ -354,19 +322,17 @@ This is good - but the arrays are still part of a single record.  What if you wa
 
 ## Task 7: More sophisticated JSON queries
 
-The Academy Awards is an exciting time for the movie industry. It would be interesting to understand movie sales during that time. What happens to movie sales before and after the event? Specifically, what happens to sales for those movies that have won the Academy Award? This can be a challenging question. A movie has an **awards** column - but it is an array.  How do you find sales for a movie that's won the best picture?
-
-Your Autonomous Data Warehouse includes a number of helper packages that can simplify access to your JSON data. The **JSON_TABLE** function can be used to automatically translate JSON data into a row-column format so you can query the JSON data in exactly the same way as our movie sales data.
+Your Autonomous Data Warehouse includes a number of functions that simplify access to your JSON data. The **JSON_TABLE** function automatically translates JSON arrays into a row-column format so you can query the JSON data in exactly the same way as our movie sales data.
 
 1. Let's use the JSON_TABLE function to create a row for each movie -> award combination. Run the following command in your SQL Worksheet:
 
     ```
     <copy>SELECT 
-        m.doc.title, 
-        award    
+      m.doc.title, 
+      award    
     FROM movie m, 
-         JSON_TABLE(m.doc.awards, '$[*]' columns (award path '$')) jt
-    WHERE title IN ('Rain Man','The Godfather');</copy>
+        JSON_TABLE(m.doc.awards, '$[*]' columns (award path '$')) jt
+    WHERE m.doc.title IN ('Rain Man','The Godfather');</copy>
     ```
     You can now see the movie and its award in tabular format:
 
@@ -390,19 +356,31 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
     ![first 10 academy award winners](images/t7-award-winners-by-year.png " ")
 
-3. What were sales before and after the Academy Awards?  Let's see the results for past winners of the major awards.
+## Extra Credit: What's the Academy Awards impact on sales?
 
-    > **Note:** Note: For the following query, highlight the entire SQL text in the SQL Worksheet and then click run.
+The Academy Awards is an exciting time for the movie industry. It would be interesting to understand movie sales during that time. What happens to movie sales before and after the event? Specifically, what happens to sales for those movies that have won the Academy Award? This can be a challenging question. A movie has an **awards** column - but it is an array.  How do you find sales for a movie that's won the best picture?
+
+This final query ties together many of the previous concepts and adds a new one:
+* Query complex JSON data stored in the data lake
+* Combine that result with sales data in the data warehouse
+* Use SQL pattern matching to understand the impact of an event (the Academy Awards) on sales 
+
+1. What were sales before and after the Academy Awards?  Let's see the results for past winners of the major awards. Take a close look at the comments in the query to better understand the processing.
+
+    > **Note:** For the following query, highlight the entire SQL text in the SQL Worksheet and then click run.
 
     ```
     <copy>WITH academyAwardMovies as (
-    -- Find movies that won significant awards
-    SELECT distinct
-        to_number(m.doc.movie_id) as movie_id,
-        m.doc.title,
-        to_date('09/02/2020', 'DD/MM/YYYY') as award_date
-    FROM movie m, JSON_TABLE(m.doc.awards, '$[*]' columns (award path '$')) jt
-    WHERE jt.award in ('Academy Award for Best Picture','Academy Award for Best Actor','Academy Award for Best Actress','Academy Award for Best Director')
+        -- Find movies that won significant awards
+        SELECT distinct
+            to_number(m.doc.movie_id) as movie_id,
+            m.doc.title,
+            -- Date of the award
+            to_date('09/02/2020', 'DD/MM/YYYY') as award_date
+        FROM movie m, JSON_TABLE(m.doc.awards, '$[*]' columns (award path '$')) jt
+        WHERE
+        -- Major award winners 
+        jt.award in ('Academy Award for Best Picture','Academy Award for Best Actor','Academy Award for Best Actress','Academy Award for Best Director')
     ),
     academyAwardSales as (
         -- Get the sales for these movies before and after the award
@@ -413,11 +391,11 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
             c.day_id,
             a.award_date,
             count(1) as num_views
-        FROM custsales c, academyAwardMovies a
+        FROM custsales c, academyAwardMovies a -- join sales and award winning movies
         WHERE c.movie_id = a.movie_id      
-        AND day_id between a.award_date -14
+        AND day_id between a.award_date -14  -- 2 weeks before and after the award
                         AND a.award_date +14
-        AND day_id != a.award_date               
+        AND day_id != a.award_date           -- but don't include the award date    
         GROUP BY c.movie_id, a.title, c.day_id, a.award_date
         ORDER BY c.movie_id ASC, c.day_id ASC
     )
@@ -425,21 +403,21 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
         pre_award_views,
         post_award_views,
         post_award_views - pre_award_views as difference
-    FROM academyAwardSales 
+    FROM academyAwardSales  -- sales before and after the event for award winners
     MATCH_RECOGNIZE (
-        PARTITION BY movie_id ORDER BY day_id
+        PARTITION BY movie_id ORDER BY day_id   -- order records for each movie by day
         MEASURES
             classifier() event,
             match_number() match,
-            title as movie,
-            day_id as d,
-            sum(pre_award_views.num_views) as pre_award_views,
-            sum(post_award_views.num_views) as post_award_views
-        ONE ROW PER MATCH
+            title as movie,  -- alias the title from the movie
+            day_id as d,     -- alias the day 
+            sum(pre_award_views.num_views) as pre_award_views,   -- aggregate pre_award views from the pattern
+            sum(post_award_views.num_views) as post_award_views  -- aggregate post_award views from the pattern
+        ONE ROW PER MATCH                                        -- one row returned for each pattern match. 
         PATTERN (pre_award_views* post_award_views*)
         DEFINE
-            pre_award_views  as pre_award_views.day_id  < award_date,
-            post_award_views as post_award_views.day_id > award_date
+            pre_award_views  as pre_award_views.day_id  < award_date,  -- the appropriate measure is calculated
+            post_award_views as post_award_views.day_id > award_date   -- based on the match specified here
     )
     ORDER BY difference desc
     ;</copy>
@@ -463,17 +441,18 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 We covered alot of ground in this lab. You learned how to use different types of analytic functions, time series functions and subqueries to answer important questions about the business. 
 These features include:
 
-- Different ways of joining tables
-
 - Time-series functions
-
-- Analytic functions to calculate contribution (**RATIO\_TO\_REPORT** and **RANK**)
 
 - **NTILE** binning functions that helps categorize customer sales and activity
 
-Subsequent labs will showcase other types of database analytics that are equally if not more powerful.
+- SQL pattern matching to determine sales before and after an event
 
-You may now [proceed to the next lab](#next).
+## Learn more
+
+* [Enterprise Data Warehousing - an Integrated Data Lake](https://docs.oracle.com/en/solutions/oci-curated-analysis/index.html#GUID-7FF7A024-5EB0-414B-A1A5-4718929DC7F2)
+* [Autonomous Database Workshops](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/livelabs-workshop-cards?p100_product=82&me=65&clear=100)
+* [Autonomous Database web site](https://www.oracle.com/autonomous-database/)
+* [Autonmous Data Warehouse Videos](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/videos.html)
 
 ## **Acknowledgements**
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Deploy a complete data warehousing platform that can scale to your requirements.
+Deploy a complete data warehousing platform that scales to both your technical and analytic requirements.
 
 Estimated Time: 5 minutes
 
@@ -29,7 +29,7 @@ In this lab, you will:
     ![Oracle home page.](./images/navigation.png " ")
 
 
-3. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Database instances. <if type="freetier">Use the __List Scope__ drop-down menu to select a compartment that will contain your instance.</if><if type="livelabs">In the __List Scope__, enter the first part of the LiveLabs compartment assigned to you, then select the compartment from the list.</if>
+3. View the Autonmous Database instances that are optimized for different workloads by selecting from the **Workload Type** drop-down. <if type="freetier">Use the __Compartment__ drop-down menu to select the compartment that will contain your instance.</if><if type="livelabs">In the __List Scope__, enter the first part of the LiveLabs compartment assigned to you, then select the compartment from the list.</if>
 
 <if type="freetier">
     ![Check the workload type on the left.](images/list-scope-freetier.png " ")
@@ -80,7 +80,7 @@ In this lab, you will:
 3. Give basic information for the autonomous database:
 
 <if type="freetier">
-    - __Choose a compartment__ - Select the compartment you just created.
+    - __Choose a compartment__ - Select the compartment that will contain your Autonmous Database instance.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADW__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __MYQUICKSTART__.
 
@@ -94,17 +94,11 @@ In this lab, you will:
     ![Enter the required details.](./images/livelabs-adwname.png " ")
 </if>
 
-4. Choose a workload type. Select the workload type for your database from the choices:
-
-    - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
-    - __Transaction Processing__ - Or, you could have chosen Transaction Processing as the workload type.
+4. Choose __Data Warehouse__ workload type: 
 
     ![Choose a workload type.](./images/Picture100-26b.png " ")
 
-5. Choose a deployment type. Select the deployment type for your database from the choices:
-
-    - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
-    - __Dedicated Infrastructure__ - Or, you could have chosen Dedicated Infrastructure as the deployment type.
+5. Choose __Shared Infrastructure__ deployment type:
 
     ![Choose a deployment type.](./images/Picture100-26_deployment_type.png " ")
 
