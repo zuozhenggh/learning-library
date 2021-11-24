@@ -2,6 +2,9 @@
 
 The labs in this workshop walk you through all the steps to get started using the **Oracle Autonomous Database on Shared Infrastructure (ADB-S)**.
 
+<if type=“odbw”>If you would like to watch us do the workshop, click [here](https://youtu.be/otS5PvJcxMQ).
+</if>
+
 ## **Workshop Objectives**
 - Provision a new Autonomous Database instance on Shared Infrastructure
 - Run Queries on the sample data sets
