@@ -1,4 +1,4 @@
-# Lab 4: Generate Model Explainability 
+# Lab 4: Get Explainability for Forecast
 
 ## Introduction
 
@@ -132,7 +132,7 @@ def plot_global_feature_importance(explanation_json):
 
 ### Sample Global feature importance plot
 
-![Explanation API Call](../images/global_feature_importance.png)
+![Global Feature Importance ](../images/global_feature_importance.png)
 
 ## Task 2: Get Local Explanation
 
@@ -165,9 +165,9 @@ def plot_local_feature_importance(explanation_json, time_step):
     fig.show()
 ```
 
-### Sample Local Feature Importance Plot for step 1 forecast
+### Sample Local feature importance plot for step 1 forecast
 
-![Explanation API Call](../images/local_feature_importance.png)
+![Local Feature Importance for step 1 forecast](../images/local_feature_importance.png)
 
 Similarly, by changing the time step, you can get the local feature importance for that corresponding forecast
 
