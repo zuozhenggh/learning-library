@@ -1,4 +1,4 @@
-d#Lab 3: Train Anomaly Detection Model And Detect
+d#Lab 3: Train ForecastingService Model And Detect
 
 ## Introduction
 
