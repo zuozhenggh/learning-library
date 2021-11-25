@@ -1,46 +1,36 @@
 {
-    "workshoptitle": "Anomaly Detection with OCI Artificial Intelligence",
+    "workshoptitle": "Forecasting with OCI Artificial Intelligence",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "../../../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
+            "filename": "../../forecasting/item_1_pre-register-free-tier-account.md"
         },
         {
-            "title": "Introduction: Anomaly Detection",
+            "title": "Introduction: Forecasting Service",
             "description": "Learn how to build anomaly detection model and use it for detection",
-            "filename": "../../anomalies/anomaly-detection-intro.md"
+            "filename": "../../forecasting/item_2_forecasting-service-intro.md"
         },
         {
-            "title": "Lab 1: Understand Data And Download Samples",
+            "title": "Lab 1: Data Science Notebook Set up",
             "description": "Learn what data and format needed for training, and use the prepared sample data for nex steps.",
-            "filename": "../../anomalies/anomaly-detection-understand-data.md"
+            "filename": "../../forecasting/item_3_forecasting-service-create-ds-notebook.md"
         },
         {
-            "title": "Lab 2: Create Anomaly Detection Project",
-            "description": "Learn how to create AD project",
-            "filename": "../../anomalies/anomaly-detection-project.md"
+            "title": "Lab 2: Understand Data, Download Samples, Prepare data, Create Project",
+            "description": "Learn how to create Forecast project",
+            "filename": "../../forecasting/item_4_forecasting-understand-data.md"
         },
         {
-            "title": "Lab 3: Train Anomaly Detection Model And Detect",
-            "description": "Learn how to create data asset, build and deploy model, and perform detection",
-            "filename": "../../anomalies/anomaly-detection-model.md"
+            "title": "Lab 3: Train Model and Forecast",
+            "description": "Learn how to create data asset, build and deploy model, and perform Forecasting",
+            "filename": "../../forecasting/item_5_forecasting-service-model.md"
         },
         {
-            "title": "Lab 4: (Advanced) Access Anomaly Detection Service with Python SDKs",
-            "description": "Using Python SKD to call the AD services",
-            "filename": "../../anomalies/anomaly-detection-rest-api.md"
-        },
-        {
-            "title": "Lab 5: (Advanced) Access Anomaly Detection Service with OCI CLI",
-            "description": "Using OCI CLI to call the AD services",
-            "filename": "../../anomalies/anomaly-detection-oci-cli.md"
-        },
-        {
-            "title": "Lab 6: (Advanced) How to Preprocess Raw Data",
-            "description": "How to preprocess your raw dataset for training the model and detecting",
-            "filename": "../../anomalies/anomaly-detection-data-preprocessing.md"
+            "title": "Lab 4: Generate Model Explainability",
+            "description": "Learn how to generate Explainability for model used for Forecasting",
+            "filename": "../../forecasting/item_6_explainability.md"
         },
         {
             "title": "Need Help?",
