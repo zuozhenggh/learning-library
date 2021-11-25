@@ -1,10 +1,10 @@
-# Forecasting Service
+# Lab 1: Data Science Notebook Set up
 
 ## Introduction
 
-Our forecasting APIs can be used in a Jupyter notebook. API keys are needed for authentication purpose. In this session we will learn about API key generation and creating a notebook session to start using the forecasting APIs 
+ In this lab , we will learn how to set up Data Science notebook session to start using the Forecasting service APIs  Also, we will learn about API key generation as API keys are needed for authentication purpose.
 
-*Estimated Lab Time*: 20-30 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives:
 
@@ -92,11 +92,7 @@ Click on the open button:
 A New Notebook can be created by using Python 3 kernel. Also a new folder can be created and given a custom name by using the + button:
 ![](../images/lab1_task3_step7_python3.png " ")
 
-### Step 8:
-Files can be uploaded by using the upload button:
-![](../images/lab1_task3_step8_upload.png " ")
-
-### Step 9: Setting Up Authorization for to use forecasting APIs
+### Step 8: Setting Up Authorization for to use forecasting APIs
 Use the tenancy, user and fingerprint from the configuration file as shown in API key generation step. Also upload the private API key that you downloaded in the API key generation step and give its path to private_key_file. Don’t change the pass_phrase. 
 
 ![](../images/lab1_task3_step9_authorization.png " ")
@@ -105,5 +101,6 @@ Use the tenancy, user and fingerprint from the configuration file as shown in AP
 ## Acknowledgements
 * **Authors**
     * Anku Pandey - Data Scientist - Oracle AI Services
+    * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
 
 
