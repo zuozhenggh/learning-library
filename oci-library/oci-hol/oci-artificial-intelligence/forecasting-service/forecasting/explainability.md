@@ -20,11 +20,11 @@ In this lab, you will:
 
 ### Task 1: Get Global Explanation
 
-### 1. Call the explanation API as shown below
+### Step 1. Call the explanation API as shown below
 
 ![Explanation API Call](../images/explanation_api.png)
 
-### 2. Sample Json ouput
+### Step 2. Sample Json ouput
 
 #### JSON Format
 The JSON format is also straight-forward, it contains a key `globalFeatureImportance` listing all the influencing features and their feature importance scores. 
@@ -105,7 +105,7 @@ The JSON format is also straight-forward, it contains a key `globalFeatureImport
   "systemTags": {}
 }
 ```
-### Plotting the global feature importance 
+### Step 3. Plotting the global feature importance 
 
 Here is a simple function to plot the global feature importance from the above json output.
 
@@ -136,11 +136,11 @@ def plot_global_feature_importance(explanation_json):
 
 ### Task 2: Get Local Explanation
 
-To get local explanation, there is no seperate api call required. Refer [api call above]
+To get local explanation, there is no seperate api call required. Refer [#Step 1. Call the explanation API as shown below]
 
 The JSON format contains a key `localFeatureImportance` listing all the influencing features and their feature importance scores. 
 
-### Plotting the local feature importance 
+### Step 1. Plotting the local feature importance 
 
 Here is a simple function to plot the local feature importance from the above json output.
 
