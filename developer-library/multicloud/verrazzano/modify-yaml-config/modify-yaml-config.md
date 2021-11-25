@@ -30,7 +30,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>vi bobs-books-comp.yaml</copy>
     ```
 
-    ![Open file](images/6.png)
+    ![Open file](images/6.png " ")
 
 3. As part of Lab 5, you saved your Docker image full name. You need to copy the following line and paste it in your text editor. Then, you need to replace `docker image full name` with your Docker image name. Then copy the modified line and press *i* to insert the text in the `*bobs-books-comp.yaml*` file. Paste the output at line number 145 (make sure you keep the indentation) and comment out the exiting line with *#* as shown in the following image, then press *Esc* and then type *:wq* to save the file.
 
@@ -38,7 +38,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>image:  `docker image full name`</copy>
     ```
 
-    ![Insert line](images/3.png)
+    ![Insert line](images/3.png " ")
 
 ## Task 2: Apply the Changes using `kubectl`
 
@@ -48,7 +48,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>kubectl apply -f bobs-books-comp.yaml</copy>
     ```
 
-    ![Apply changes](images/4.png)
+    ![Apply changes](images/4.png " ")
 
     You can observe in the output; only *component.core.oam.dev/bobby-helidon* is configured and other components are unchanged.
 
