@@ -81,7 +81,7 @@ Here, we selected Gasoline  purchase data csv file to be uploaded
 ## Task 4: Inline Data preparation
 
 ### Step 1 :
-You need to load the data in notebook via below mentioned python commands. 
+You need to load the data in notebook via below mentioned python commands in a data frame
 Specify the correct path for the csv file that has the time series data.
 
 ```Python

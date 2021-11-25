@@ -12,7 +12,7 @@ The *OCI Forecasting Service* which is fully managed, serverless, multi-tenant s
 
 This workshop contains 4 required lab sessions for user to get familiar with required data, and the full cycle of building the forecasting model and generate forecasts. At the end of the workshop, user will be able to  understand how the training data should be prepared,leverage the APIs for model training and getting forecast along with explainability 
 
-*Estimated Lab Time*: 70 minutes (4 regular sessions)
+*Estimated Lab Time*: 90 minutes (4 lab sessions)
 
 ### Objectives:
 

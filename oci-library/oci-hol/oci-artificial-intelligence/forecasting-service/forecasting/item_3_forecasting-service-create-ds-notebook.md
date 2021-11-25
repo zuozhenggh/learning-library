@@ -4,7 +4,7 @@
 
  In this lab , we will learn how to set up Data Science notebook session to start using the Forecasting service APIs  Also, we will learn about API key generation as API keys are needed for authentication purpose.
 
-*Estimated Lab Time*: 20-30 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives:
 
