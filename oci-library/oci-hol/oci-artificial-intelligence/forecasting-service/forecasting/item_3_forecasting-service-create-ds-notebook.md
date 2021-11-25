@@ -41,7 +41,7 @@ Download the private key on your system. We will use this later for authorizatio
 ![](../images/lab1_task1_step4_savekey.png " ")
 
 ### Step 5:
-It takes a few minutes (5-10 minutes) for the newly created notebook session to become active. It can be seen under the project. Once it has become active, open it.  
+Save the contents of the configuration file preview in a text file on your system. Details such as user, fingerprint, tenancy, region etc. will be needed when setting up authorization for using the forecasting APIs.
 
 ![](../images/lab1_task1_step5_configurationfile.png " ")
 
