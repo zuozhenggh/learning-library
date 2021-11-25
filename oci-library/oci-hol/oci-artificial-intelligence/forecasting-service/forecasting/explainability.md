@@ -136,9 +136,9 @@ def plot_global_feature_importance(explanation_json):
 
 ### Task 2: Get Local Explanation
 
-To get local explanation, there is no seperate api call required. Refer 
+To get local explanation, there is no seperate api call required. The api call for get explanation will fetch both global and local explanations
 
-The JSON format contains a key `localFeatureImportance` listing all the influencing features and their feature importance scores. 
+To get local explanation, the key `localFeatureImportance` in the json output contains all the influencing features and their feature importance scores for all the time steps in the forecast horizon
 
 ### Step 1. Plotting the local feature importance 
 
