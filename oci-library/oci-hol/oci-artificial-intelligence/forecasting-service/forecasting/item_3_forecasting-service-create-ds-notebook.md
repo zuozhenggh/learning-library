@@ -101,5 +101,6 @@ Use the tenancy, user and fingerprint from the configuration file as shown in AP
 ## Acknowledgements
 * **Authors**
     * Anku Pandey - Data Scientist - Oracle AI Services
+    * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
 
 

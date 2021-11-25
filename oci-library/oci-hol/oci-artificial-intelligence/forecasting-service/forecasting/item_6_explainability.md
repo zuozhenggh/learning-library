@@ -177,4 +177,4 @@ Congratulations on completing this lab! You now have finished all the sessions o
 ## Acknowledgements
 * **Authors**
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
-
+    * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
