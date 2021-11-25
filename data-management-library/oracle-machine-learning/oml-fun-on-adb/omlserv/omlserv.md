@@ -9,7 +9,7 @@ Estimated Time: -- 30 minutes
 ### About Oracle Machine Learning Services
 OML Services extends OML functionality to support model deployment and model lifecycle management for both in-database OML models and third-party Open Neural Networks Exchange (ONNX) machine learning models via REST APIs. These third-party classification or regression models can be built using tools that support the ONNX format, which includes packages like Scikit-learn and TensorFlow, among several others.
 
-Oracle Machine Learning Services provides REST API endpoints hosted on Oracle Autonomous Database. These endpoints enable the storage of machine learning models along with its metadata, and the creation of scoring endpoints for the model.
+Oracle Machine Learning Services provides REST API endpoints hosted on Oracle Autonomous Database. These endpoints enable the storage of machine learning models along with their metadata, and the creation of scoring endpoints for the model.
 
 ### Objectives
 
@@ -39,10 +39,10 @@ This lab assumes you have:
     * Your OML user name and password
     * OML server name
     * Tenant name
-    * PDB name
+    * Database name
 * completed all previous labs successfully.
 
-## Task 1: Authenticate Your User Account with the Autonomous Database to Use OML Services
+## Task 1: Authenticate Your User Account with Your Autonomous Database Instance to Use OML Services
 
 1.  If you are using the LiveLab tenancy, use the OCI Cloud Shell to perform the steps in this lab. To access the OCI Cloud Shell, select your compartment and click on the Cloud Shell icon.
 
@@ -52,7 +52,7 @@ This lab assumes you have:
 
   ![Image alt text](images/oci-cloud-shell-2-new.png)
 
-2. To access Oracle Machine Learning Services using the REST API, you must provide an access token. To authenticate and obtain an access token, use cURL with the -d option to pass the user name and password for your Oracle Machine Learning Services account against the Oracle Machine Learning User Management Cloud Service token service. Use the following details to get an authentication token.
+2. To access Oracle Machine Learning Services using the REST API, you must acquire an access token. To authenticate and obtain an access token, use cURL with the -d option to pass the user name and password for your Oracle Machine Learning Services account against the Oracle Machine Learning User Management Cloud Service token service. Use the following details to get an authentication token.
     * Your OML user name
     * Your OML password
     * OML server URL
@@ -74,10 +74,10 @@ This lab assumes you have:
     export oml_password=<*******></copy>
 
     ```
-   In the above command,
+   In the command above,
      * omlserver url is the Autonomous Database URL and points to the region where the Autonomous Database instance resides. For example, if the Autonomous Database instance is in the Ashburn region, the URL will be https://adb.us-ashburn-1.oraclecloud.com.
      * tenant name is the Autonomous Database tenancy OCID and typically starts as ocid1.tenancy.oc1...
-     * DB2 is the pluggable database name.
+     * DB2 is the database name.
      * OMLUSER is your OML user name.
      * Finally, the set of asterisks within angle brackets is your OML password.
 
@@ -88,8 +88,8 @@ This lab assumes you have:
     -d '{"grant_type":"password", "username":"'${oml_username}'", "password":"'${oml_password}'"}'\
     "${omlserver}/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token"</copy>
     ```
-   Successfully running the above command results in a token as displayed below. In this example result, the token string is
-  truncated as indicated by the elipses (three dots).
+   Successfully running the command above results in a token as displayed below. In this example result, the token string is
+  truncated as indicated by the ellipses (three dots).
 
     ```
     {"accessToken":"eyJhbGci... KLbI1wQ==","expiresIn":3600,"tokenType":"Bearer"}
@@ -98,7 +98,7 @@ This lab assumes you have:
 3. A token is valid for an hour. You can refresh a token for up to 8 hours after generating it. Each refresh will extend its validity by an hour. In order to run the command to refresh the token (or any command that uses the token for authentication), you should save the returned token as a variable and use the variable for convenience. Enclose the token within single quotes:
 
     ```
-    <copy>export token = <'eyJhbGci... KLbI1wQ=='></copy>
+    <copy>export token = 'eyJhbGci... KLbI1wQ=='</copy>
     ```
    Here's the syntax for refreshing a token:
 
@@ -131,7 +131,7 @@ This lab assumes you have:
     ```
     <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" "${omlserver}/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token/revoke"</copy>
     ```
-   Running the above command produces a result similar to this:
+   Running the command above produces a result similar to this:
 
     ```
     HTTP/1.1 200 OK
@@ -161,7 +161,7 @@ This lab assumes you have:
     <copy>curl -i -X GET --header "Authorization: Bearer ${token}" "${omlserver}/omlmod/v1/api"</copy>
 
     ```
-   Here's the result, in a truncated form, of running the above command:
+   Here's the result, in a truncated form, of running the command above:
 
     ```
     "lifecycle": {
@@ -202,7 +202,7 @@ This lab assumes you have:
     <copy>curl -X GET --header "Authorization: Bearer ${token}" "${omlserver}/omlmod/v1/models" | jq</copy>
 
     ```
-   The result of running the above command is displayed below:
+   The result of running the command above is displayed below:
 
     ```
     {
@@ -241,7 +241,7 @@ This lab assumes you have:
     <copy>curl -X GET --header "Authorization: Bearer $token" "${omlserver}/omlmod/v1/models?modelName=automl_affcard_nb" | jq</copy>
 
     ```
-   Running the above command produces the model details for the model `automl_affcard_nb` as displayed below:
+   Running the command above produces the model details for the model `automl_affcard_nb` as displayed below:
 
     ```
     {
@@ -279,7 +279,7 @@ This lab assumes you have:
     <copy>curl -X GET --header "Authorization: Bearer $token" "${omlserver}/omlmod/v1/models?version=1.0&namespace=automl_affinity_card" | jq</copy>
 
     ```
-   The above command applies the filters and produces the following result:
+   The command above applies the filters and produces the following result:
 
     ```
     {
@@ -320,7 +320,8 @@ This lab assumes you have:
     * model URI=e.g. `automl_cust360_affinity_card_nb` (To get the URI for the model that you want the endpoint for, log in to OML Notebooks, go to the Models page,  Deployed tab.)
 
     ```
-    <copy>curl -X GET --header "Authorization: Bearer $token" "${omlserver}/omlmod/v1/models?version=1.0&namespace=automl_affinity_card" | jq</copy>
+    <copy>curl -X GET "${omlserver}/omlmod/v1/deployment/automl_cust360_affinity_card_nb" \
+    --header "Authorization: Bearer $token" | jq</copy>
 
     ```
    The endpoint details of the model with the model URI `automl_affinity_card_nb` are displayed below:
@@ -419,7 +420,7 @@ This lab assumes you have:
     -d '{"inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0}]} | jq</copy>
 
     ```
-   Here's the score for the above data. It indicates the probability value for each label.
+   Here's the score for the data above. It indicates the probability value for each label.
 
     ```
     {
@@ -444,7 +445,7 @@ This lab assumes you have:
 
 2.  Next, score a mini-batch of 2 records with the same model URI. Use the following data for the second record:
     * `YRS_RESIDENCE`=5
-    * `Y_BOX_GAMES`=1.
+    * `Y_BOX_GAMES`=1
 
     ```
     <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/automl_cust360_affinity_card_nb/score" \
@@ -454,7 +455,7 @@ This lab assumes you have:
                      {"YRS_RESIDENCE":5,"Y_BOX_GAMES":1}]}'} | jq</copy>
 
     ```
-   The scores for the above two records are displayed below:
+   The scores for the two records above are displayed below:
     ```
     {
       "scoringResults": [
@@ -486,6 +487,7 @@ This lab assumes you have:
     }
 
     ```
+   **Note:** The number of records you can pass in a batch is currently limited to 256.
 
 3. In this task, use Oracle's proprietary Cognitive Text functionality. This functionality provides endpoints to score a string of text to obtain information such as most relevant keywords, topics, text summary, sentiment, similarity to another text string and text features. The supported languages for Cognitive Text include English (America), Spanish, French and Italian. In this step, pass a text string to obtain keywords and its summary using the relevant end points. Here's the syntax for using the keywords endpoint:
 
@@ -499,7 +501,7 @@ This lab assumes you have:
             }' | jq</copy>
 
     ```
-   In the above syntax,
+   In the syntax above,
 
     * topN is an optional parameter, which determines the number of most relevant keywords to return. If you don't specify this parameter, by default 5 keywords are returned.
     * textList is a required parameter to pass the text string to be scored.
@@ -512,17 +514,17 @@ This lab assumes you have:
     --header "Authorization: Bearer ${token}" \
     --data '{
          "topN":2,
-         "textList":["With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects ? both on-premises and in the Cloud."]
+         "textList":["With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects - both on-premises and in the Cloud."]
             }' | jq</copy>
 
     ```
 
-   Here's the result of running the above command. Notice that the result includes a weight for each keyword returned.
+   Here's the result of running the command above. Notice that the result includes a weight for each keyword returned.
 
     ```
     [
       {
-        "text": "With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects ? both on-premises and in the Cloud.",
+        "text": "With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects - both on-premises and in the Cloud.",
         "keywordResults": [
            {
               "keyword": "algorithms",
@@ -546,11 +548,11 @@ This lab assumes you have:
     --header "Authorization: Bearer ${token}" \
     --data '{
      "topN":2,
-     "textList":["With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects ? both on-premises and in the Cloud."]
+     "textList":["With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects - both on-premises and in the Cloud."]
     }' | jq</copy>
 
     ```
-   Here's the result of running the above command. Two summary statements have been returned as the topN parameter was set to 2.
+   Here's the result of running the command above. Two summary statements have been returned as the topN parameter was set to 2.
 For each summary, an associated weight is also returned.
 
     ```
@@ -572,12 +574,11 @@ For each summary, an associated weight is also returned.
 
    The REST API is exposed as part of the Oracle Machine Learning Services on Oracle Autonomous Database cloud service. The Oracle Machine Learning Services REST API supports ONNX format model deployment through REST endpoints for:
 
-    * Classification models (both non-image models and image models)
-    * Regression models
+   * Classification models (both non-image models and image models)
+   * Regression models
 
-   To learn more about how OML Services support ONNX format models, see resources listed under the Learn More section of this lab.
+To learn more about how OML Services support ONNX format models, see resources listed under the Learn More section of this lab.
 
-   You may now proceed to the next lab.
 
 ## Learn More
 
@@ -588,4 +589,4 @@ For each summary, an associated weight is also returned.
 ## Acknowledgements
 * **Author** - Suresh Rajan, Senior Manager, Oracle Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning
-* **Last Updated By/Date** - Suresh Rajan, October 2021
+* **Last Updated By/Date** - Suresh Rajan, November 2021
