@@ -18,6 +18,10 @@ In this lab, you will:
 * Provision Oracle Autonomous JSON Database
 * Create MongoDB document store on MongoDB Cloud
 
+Watch the video below to see how to prepare your development environment for Python and SODA.
+
+[](youtube:AdnmMDB8NF8)
+
 ### Prerequisites
 * SSH Keys for Putty or OpenSSH (`id_rsa.ppk` or `id_rsa`, and `id_rsa.pub`)
     * SSH Keys can be obtained when the compute node is created (OpenSSH)
