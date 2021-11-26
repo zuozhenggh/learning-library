@@ -30,7 +30,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
    ![](images/deploy-all.png " ")
 
-2.  Once successfully created, check that the deployment pods are running:
+2.  Once successfully created, verify deployment pods are running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -40,7 +40,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
   Or, you can execute the `pods` shortcut command:
 
-3. Check that the **ingress-nginx-controller** load balancer service is running, and write down the external IP address.
+3. Verify the **ingress-nginx-controller** load balancer service is running, and write down the external IP address.
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
@@ -155,7 +155,7 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates.
 Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
 
-## Task 5: Add AI Food and Wine Pairing Service
+## Task 5: Verify AI Food and Wine Pairing Functionality
 
 1. Deploy the foodwinepairing-python service using the following command.
 
@@ -163,7 +163,7 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
     <copy>cd $GRABDISH_HOME/foodwinepairing-python;./deploy.sh</copy>
     ```
    
-2.  Check that the foodwinepairing-python pod is running:
+2.  Verify the foodwinepairing-python pod is running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -175,7 +175,7 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
     <copy>cd $GRABDISH_HOME/inventory-helidon;./deploy.sh true</copy>
     ```
   
-4.  Check that the the new inventory-helidon pod is running:
+4.  Verify the new inventory-helidon pod is running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -186,6 +186,7 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
 
    ![](images/orderwithfoodandwinepairing.png " ")
 
+Food wine pairing is used to recommend the suitable wines for the food which is ordered by the user. Here we train a Word2vec model for both Wine dataset and Food reviews using Gensim. The input{food item} is passed through the Word2Vec model to get the wine recommendations. Top 4 wines are given for the display. We used nltk library for data normalization{sentence tokenization, word tokenization, removing punctuation and removing stopwords,stemming, etc} and scikit-learn for tf-idf computations. By considering the aroma and non-aroma factors, the wine recommendations are suggested.
 
 ## Task 6: Show Metrics
 
@@ -367,8 +368,43 @@ As the deployments in the workshop are configured with `imagePullPolicy: Always`
 
 If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
+## Task 10: Develop, build, deploy, etc. in your own environment, outside Cloud Shell  (Study)
+
+The Cloud Shell is extremely convenient for development as it has various software pre-installed as well as software installed by the workshop, however it is certainly possible to do development outside the Cloud Shell.
+The following are the major considerations in doing so...
+
+- Building microservices will of course require the software required for a particular service to be installed. For example maven, GraalVM, etc.
+
+- Pushing microservices to the OCI repository will require logging into the repos via docker and for this you will need an authtoken. 
+You can re-use the auth token created in the workshop or easily create a new one (see setup lab doc). 
+Using the auth token you can then login to docker using the following format (replacing values as appropriate)...
+
+  ```
+  <copy>docker login -u yourtenancyname/oracleidentitycloudservice/youraccountuser@email.com us-ashburn-1.ocir.io</copy>
+  ```
+   You should then set the DOCKER_REGISTRY value in your environment like this...
+
+   ```
+   <copy>export DOCKER_REGISTRY=us-ashburn-1.ocir.io/yourtenancyname/yourcompartmentname</copy>
+   ```
+- Deploying microservices to your Kubernetes cluster will require you to install the OCI CLI and kubectl, and run the command found in the OCI console to create the kubeconfig file tha will give you access to the cluster.
+This can be found under `Developer Services->Kubernetes Clusters` where you will select your cluster and see the following page where you can copy the necessary command...
+
+   ![](images/accessclusterscreen.png " ")
+   You should then set the ORDER_PDB_NAME and INVENTORY_PDB_NAME values in your environment like this (note the value does not include the suffix of the service type, only the db name)...
+
+   ```
+   <copy>export ORDER_PDB_NAME=grabdisho</copy>
+   ```
+
+   ```
+   <copy>export INVENTORY_PDB_NAME=grabdishi</copy>
+   ```
+
+
+
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Author** - Paul Parkinson, Architect and Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
