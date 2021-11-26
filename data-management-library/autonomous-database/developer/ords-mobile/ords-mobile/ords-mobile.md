@@ -4,7 +4,7 @@
 
 dbNotify demo mobile application requires Oracle REST Data Services (ORDS) to communicate with your Oracle database. ORDS is preconfigured and available with all Oracle Autonomous Database instances, you just need to enable it. You can use Oracle Application Express (APEX) to enable and manage RESTful Web Services, and probably this is the easiest way. Oracle APEX also comes preconfigured and available with all Oracle Autonomous Database instances.
 
-![](./images/guide19.jpg =300x)
+![](./images/guide19.jpg "")
 
 Estimated Lab Time: 90 minutes
 
@@ -107,7 +107,7 @@ In this lab, you will:
     </copy>
     ````
 
-4. Create a trigger that will send to the mobile application any new message inserted into our table.
+4. Create a trigger that will send to the mobile application any new message inserted into your table.
 
     ````
     <copy>
@@ -147,7 +147,7 @@ In this lab, you will:
     </copy>
     ````
 
-5. Create the RESTful service that returns solved messages from our table.
+5. Create the RESTful service that returns solved messages from your table.
 
     ````
     <copy>
@@ -547,7 +547,7 @@ In this lab, you will:
 
    ![](./images/guide17.jpg "")
 
-12. It is a good practice to test the web service before using it in application development. The easiest way to do it is with cURL (Client URL). This is a `POST` call to the token endpoint of the ORDS instance using the client credentials retrieves the access token that can be used to perform REST API calls to our protected web service.
+12. It is a good practice to test the web service before using it in application development. The easiest way to do it is with cURL (Client URL). This is a `POST` call to the token endpoint of the ORDS instance using the client credentials retrieves the access token that can be used to perform REST API calls to your protected web service.
 
     ````
     <copy>
