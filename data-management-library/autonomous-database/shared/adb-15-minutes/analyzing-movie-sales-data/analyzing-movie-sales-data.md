@@ -9,7 +9,7 @@ Estimated Time: 5 minutes
 
 - Understand how to use SQL Worksheet
 
-- Bin customers by key metrics to find at-risk customers
+- Bin customers by key metrics
 
 
 ### Prerequisites
