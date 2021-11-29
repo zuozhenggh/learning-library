@@ -260,7 +260,7 @@ Estimated time: 15 minutes
 	![Cloud Shell](images/4-2-trace_explorer.png " ")
 
 
-This is the end of the workshop. You have learnt how to add the APM tracers to a Helidon based microservices by editing the configuring files such as pom.xml and application.yaml, and how to use APM Trace Explorer to trace the workflow within a service and across multiple services. For more information on APM, refer to the OCI documentation, **[Application Performance Monitoring](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/index.html)**.
+This is the end of the workshop. You have learnt how to add the APM tracers to Helidon based microservices by editing the configuring files such as pom.xml and application.yaml, and how to use APM Trace Explorer to trace the workflow within a service and across multiple services. For more information on APM, refer to the OCI documentation, **[Application Performance Monitoring](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/index.html)**.
 <br>
 
 You have completed the tutorials in this Workshop. You may now [proceed to the Need Help section ](#next) to review the common problems users face in the LiveLab, or exit the Workshop.
