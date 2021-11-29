@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will use OCI console to create an APM Domain. You will acquire Data Upload Endpoint and Data Keys, which are needed to configure APM tracer on the application.
+In this lab, you will use the Oracle Cloud console to create an APM Domain. You will acquire Data Upload Endpoint and Data Keys, that you will use to configure APM tracer on the application.
 
 Estimated time: 10 minutes
 
@@ -20,34 +20,34 @@ Estimated time: 10 minutes
 ## Task 1: Create an APM domain
 
 1.	From the OCI menu, select **Observability & Management**, then **Administration**.
-	![OCI Console Menu](images/2-1-domain.png " ")
+	![Oracle Cloud console Menu](images/2-1-domain.png " ")
 2.	Click **Create APM Domain**.
-  ![OCI Console, Create APM Domain](images/2-2-domain.png " ")
+  ![Oracle Cloud console, Create APM Domain](images/2-2-domain.png " ")
 3. Name your APM domain and select the compartment you created during the Native Cloud App Workshop.
 
 >Note: If you followed the instruction in the [Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) Workshop , the name of the compartment is ***“mtdrworkshop”***.
 
 4. Add a check to the **Create as Always Free Domain**, then click **Create**.
-  ![OCI Console, Create APM Domain](images/2-3-domain.png " ")
+  ![Oracle Cloud console, Create APM Domain](images/2-3-domain.png " ")
 
 5.	This may take few minutes. Press the refresh button periodically to check the status.
-  ![OCI Console, Create APM Domain](images/2-4-domain.png " ")
+  ![Oracle Cloud console, Create APM Domain](images/2-4-domain.png " ")
 6.	Once the job is completed, the status turns to Active with a green icon.
-  ![OCI Console, Create APM Domain](images/2-5-domain.png " ")
+  ![Oracle Cloud console, Create APM Domain](images/2-5-domain.png " ")
   For more details how to create an APM Domain, refer to the OCI documentation, [Create an APM Domain](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/create-apm-domain.html).
 
 ## Task 2: Obtain Data Upload Endpoint and Data Keys
 
-To upload observations to an APM domain, Data Upload Endpoint and Data Keys must be configured in the application’s configuration files. You can obtain the values of them at the OCI console.
+To upload observations to an APM domain, Data Upload Endpoint and Data Keys must be configured in the application’s configuration files. Next you are going to obtain the values for them and then enter them into the Oracle Cloud console.
 
 1.	Click the link to the APM domain just created.
-  ![OCI Console, APM Domain](images/3-1-domain.png " ")
+  ![Oracle Cloud console, APM Domain](images/3-1-domain.png " ")
 
 2.	In the **APM Domain Information** tab, find **Data Upload Endpoint**, then click **Copy**. Paste the copied value to a text file and save. You will need this value in the later steps in the workshop.
 
 3. Under **Data Keys**, find **auto\_generated\_private_data\_key**. Click **Copy** and save the value to the text file.
 4. In the same section, find **auto\_generated\_public_data\_key**. Click **Copy** and save the value.
-  ![OCI Console, APM Domain](images/3-2-domain.png " ")
+  ![Oracle Cloud console, APM Domain](images/3-2-domain.png " ")
 
 For more details on Data Upload Endpoint and Data keys, refer to the OCI documentation, [Obtaining Data Upload Endpoint and Data keys](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/obtain-data-upload-endpoint-and-data-keys.html).
 

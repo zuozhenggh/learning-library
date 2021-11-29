@@ -10,7 +10,7 @@ This workshop walks you through how to:
 * Trace the workflow using Oracle Trace Explorer
 
 
-Estimated Workshop Time: 40 minutes
+Estimated Workshop Time: 60 minutes
 
 ### About Oracle Cloud Infrastructure Application Performance Management (OCI APM)
 

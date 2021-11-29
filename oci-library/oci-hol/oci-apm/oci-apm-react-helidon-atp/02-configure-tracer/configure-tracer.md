@@ -1,20 +1,16 @@
-# Configure APM Tracer for Maven, Helidon, Browser, and add custom spans
+# Setup APM Tracer in Maven & Helidon, and build custom spans in Java
 
 ## Introduction
 
-In this tutorial, you will configure APM data sources on the application to gather data and upload to APM for monitoring. You will enable the APM Tracer in Helidon, configure the APM Browser agent, add custom spans to Java files, modify the Gateway to add APM headers, and finally rebuild the application.
+In this tutorial, you will configure APM data sources on the application to gather data and upload to APM for monitoring. You will enable the APM Tracer in Helidon and add custom spans to Java files, and finally rebuild the microservices project.
 
 Estimated time: 20 minutes
 
 ### Objectives
 
-* Modify configuration and java files to enable the APM Tracer
+* Modify configuration files to enable the APM Tracer
 *	Add custom spans to Java files to capture SQL executions
 *	Rebuild the application with APM Tracer configurations, and deploy it on Kubernetes
-*	Insert JavaScript to a html file to enable the APM Browser Agent
-*	Launch the application in a web browser, perform transactions to generate traffic
-
-
 
 ### Prerequisites
 
@@ -22,10 +18,9 @@ Estimated time: 20 minutes
 * This Lab also assumes you have completed the tutorials in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196).
 
 ## Task 1: Launch Cloud Shell
-1. Launch the Oracle Cloud Shell <br/>
+1. Launch the Oracle Cloud Shell from the Oracle Cloud Console by selecting the **>..** icon.  <br/><br/>
   The Oracle Cloud Shell is a small virtual machine running a Bash shell that you access through the Oracle Cloud Console. It comes with a pre-authenticate Command Line Interface (CLI) pre-installed and configured so you can immediately start working in your tenancy without spending time on its installation and configuration.
 
-	Click the Cloud Shell icon in the top-right corner of the Console.
 	![Cloud Shell](images/1-1-cloudshell.png " ")
 
 ## Task 2: Modify pom.xml file in the application
@@ -86,7 +81,7 @@ Estimated time: 20 minutes
 	vi ~/mtdrworkshop/backend/target/classes/application.yaml
 	</copy>
 	```
-	Add the following properties to the file. Replace ***&lt;data upload endpoint&gt;*** and ***&lt;private data key&gt;*** with the values collected from the OCI console in the earlier steps.
+	Add the following properties to the file. Replace ***&lt;data upload endpoint&gt;*** and ***&lt;private data key&gt;*** with the values collected from the Oracle Cloud console in the earlier steps.
 
 
 		tracing:
@@ -244,7 +239,7 @@ In this lab, we are adding custom spans to the first two, ***List All*** and ***
 	}
 	</copy>
 	```
-    > Tips to replace method. Comment the existing method, then paste the new code under the original method.
+    > **Tips replacing methods:** Comment the existing method, then paste the new code under the original method.
 
   ![TodoListAppService](images/5-0-1-TodoListAppService.png " ")
   ![TodoListAppService](images/5-0-2-TodoListAppService.png " ")
@@ -346,7 +341,7 @@ Refer to the screenshots of the ***TodoListAppService.java*** where the changes 
 	</copy>
 	```
 
-	d. At the end of the file, find a line with one symbol "{". Add the following methods just above that line:
+	d. At the end of the file, find a line with a curly-brace symbol **"}"**. Add the following methods just above that line:
 	``` bash
 	<copy>
 	private void addConnectionInfo(Span span, String sql) {
@@ -362,6 +357,8 @@ Refer to the screenshots of the ***TodoListAppService.java*** where the changes 
 	}
 	</copy>
 	```
+
+  Review the screenshot below. There is a curly brace at the end of the file.
 
 	![TodoItemStorage.java](images/5-4-0-TodoItemStorage.png " ")
 
@@ -408,7 +405,7 @@ Refer to the below screenshots of the ***TodoItemStorage.java*** where the chang
 
 ## Task 7: Verify container registry from the root compartment
 
-1.	In the OCI console, click the menu from the top-left corner and open **Developer Services** > **Container Registry**.
+1.	In the Oracle Cloud console, click the menu from the top-left corner and open **Developer Services** > **Container Registry**.
 2.	Select **(root)** from the **Compartment** pulldown menu
 
 	![OCI Container Registry](images/7-0-1-registry.png " ")
@@ -463,218 +460,6 @@ Refer to the below screenshots of the ***TodoItemStorage.java*** where the chang
 
 	![Todo App](images/8-3-browser.png " ")
 
-
-## Task 9: Add APM headers to the API Gateway
-
-To run the application from the Gateway, you will need to add headers, which are required by APM, to the CORS policy in the API Gateway that you setup in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) Workshop. APM Tracer uses several different headers. In this lab, to simplify the steps, we will add an asterisk to accept all headers in the CORS policy.
-
-1. From the OCI menu, select **Developer Services** > **Gateways**.
-
-	![OCI Menu](images/9-1-gateway.png " ")
-
-2. Select the gateway you created in the Native Cloud App Workshop.
-
-	![OCI Gateway](images/9-2-gateway.png " ")
-
-3. Click  **Deployments** under **Resources**, then click the name of the deployment you created in the Native Cloud App Workshop. In the example image, the deployment name is “todolist2”.
-
-	![OCI Gateway](images/9-3-gateway.png " ")
-
-4. Click **Edit**.
-
-	![OCI Gateway](images/9-4-gateway.png " ")
-
-5. Under **API Request Policies**, scroll down to find **CORS** section, then click **Edit**.
-
-	![OCI Gateway](images/9-5-gateway.png " ")
-
-6. In the **Origins** section, replace the URL with the load balancer’s updated external IP, copied in the previous step.
-
-	![OCI Gateway](images/9-6-0-gateway.png " ")
-
-  External IP can be found by the kubectl get services command.
-
-  ![OCI Gateway](images/9-6-2-gateway.png " ")
-
-7. Under the **Headers**, click **+ Another Header** to create a new entry field. Enter an asterisk "*****" to the field, then click **Apply Changes**.
-
-	![OCI Gateway](images/9-6-1-gateway.png " ")
-
-8. Click **Next**.
-
-	![OCI Gateway](images/9-7-1-gateway.png " ")
-
-9. For both **Route 1** and **Route 2**, change the URL with the Load Balancer's updated external IP. Then, click **Next**.
-
-	![OCI Gateway](images/9-7-2-gateway.png " ")
-	![OCI Gateway](images/9-7-2-1-gateway.png " ")
-
-10. Click **Save Changes**.
-
-	![OCI Gateway](images/9-7-3-gateway.png " ")
-
-11. Click **Copy** next to the Endpoint. This will copy the endpoint URL to the clipboard.
-
-	![OCI Gateway](images/9-10-gateway.png " ")
-
-12. Open a text editor and paste the copied endpoint and append ***‘/todolist’*** to it. Re-copy the entire URL to your clipboard. Your URL should look like below.
-
-		E.g.,
-		https://abcdefg12345one.apigateway.us-sanjose-1.oci.customer-oci.com/todolist
-
-13.	Open another browser tab and paste the URL to the browser’s address bar. Verify the response shows the data in a format similar to the below image.
-
-	![OCI Gateway](images/9-11-gateway.png " ")
-
-## Task 10: Insert a JavaScript to the index.html
-
-To capture traces from the browser, the **APM Browser Agent** needs to be deployed to the application's frontend. In this lab, you will  insert a JavaScript that configures the APM agent to ***index.html*** file.
-
-  >NOTE: This task assumes you completed the Tutorials of the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) Workshop, and cloned the workshop git repository on your laptop.
-
-1.	On your laptop, open a terminal. Go to your React JS project directory, which you created in the Native Cloud App Workshop, and change to ***mtdrworkshop/frontend*** directory.
-
-	``` bash
-	<copy>
-	cd <project directory on your laptop>/oci-react-samples/mtdrworkshop/frontend
-	</copy>
-	```
-
-	![frontend directory](images/10-1-1-frontend.png " ")
-
-2.	from the ***frontend/public*** directory, open ***index.html*** with an editor.
-	``` bash
-	<copy>
-	vi public/index.html
-	</copy>
-	```
-
-3.	Insert the following JavaScript to the ***index.html*** file, just below the ***&lt;head&gt;*** section.
-
-	``` bash
-	<copy>
-	<script>
-	window.apmrum = (window.apmrum || {});
-	window.apmrum.serviceName='todolist browser ';
-	window.apmrum.webApplication='My TodoList App';
-	window.apmrum.ociDataUploadEndpoint='<ociDataUploadEndpoint>';
-	window.apmrum.OracleAPMPublicDataKey='<APM_Public_Datakey>';
-	</script>
-	<script async crossorigin="anonymous" src="<ociDataUploadEndpoint>/static/jslib/apmrum.min.js"></script>
-	</copy>
-	```
-
-	*	**todolist browser** is the service name for your APM Browser Agent. If you don't set a value, the default service name ‘APM Browser’ is assigned.
-	*	**My TodoList App** is the web application name value.
-	*	**ociDataUploadEndpoint** is the Data Upload Endpoint value, which can be obtained from the Administration menu in the APM Domain page.  Replace with the value collected in the Lab 1. Note that there are ***two places where Data Upload Endpoint must be specified***.
-	*	**APM Public Datakey** is the APM Public Data key value. Replace with the value collected from the OCI console in the Lab 1.
-
-	![APM Browser Agent](images/10-1-browseragent.png " ")
-
-4.	Save and close the file.
-
-## Task 11: Build the frontend and upload to the OCI Object Storage
-
-1.	Make sure you are in the ***frontend*** directory, then run the **npm run build** command. It packages the build files into the ***‘build’*** folder for the deployment.
-	``` bash
-	<copy>
-	npm run build
-	</copy>
-	```
-	![APM Browser Agent](images/11-1-browseragent.png " ")
-
-2.	Next you will upload the files to the ***Object Storage***. You can either use the staci tool as instructed in the Native Cloud App Workshop, or use the OCI console. In this Lab, we will upload the built files using the OCI console. From the OCI menu, select **Storage** then **Buckets**.
-
-	![APM Browser Agent](images/11-2-browseragent.png " ")
-
-3.	Click the name of the bucket you created in the Native Cloud App Workshop.
-
-	![APM Browser Agent](images/11-3-browseragent.png " ")
-
-4.	Scroll down to the **Objects** section. You will see the files uploaded already from your Native Cloud App Workshop session. Replace them with the file you have just built in the previous steps. Click **Upload**.
-
-	![APM Browser Agent](images/11-4-browseragent.png " ")
-
-5. Click **select files** link to open a file browser dialog. Then, navigate to ***frontend/build*** directory, select all files. Click **Open**.
-
-	![APM Browser Agent](images/11-8-3-browseragent.png " ")
-	![APM Browser Agent](images/11-5-browseragent.png " ")
-
-6. Review the list of files which will be replaced. Click **Upload**.
-
-	![APM Browser Agent](images/11-6-browseragent.png " ")
-
-7. Click **Close**.
-
-	![APM Browser Agent](images/11-7-browseragent.png " ")
-
-8. Next, upload the files in the subfolders. Expand the **static** folder link from the tree view.
-
-	![APM Browser Agent](images/11-8-browseragent.png " ")
-
-9.	Expand the **js** folder link
-
-	![APM Browser Agent](images/11-8-1-browseragent.png " ")
-
-10.	Click **Upload**
-
-  ![APM Browser Agent](images/11-8-2-browseragent.png " ")
-
-11. click **“select files”**
-
-	![APM Browser Agent](images/11-8-3-browseragent.png " ")
-
-12. Select all files from the ***build/static/js*** folder. Then click **Open**.
-
-  ![APM Browser Agent](images/11-9-browseragent.png " ")
-
-13. Review the files that will be replaced and click **Upload**. Click **Close** when the upload is completed.
-
-	![APM Browser Agent](images/11-11-browseragent.png " ")
-
-14.	Select **static** from the pulldown menu to go back to the static directory
-
-	![APM Browser Agent](images/11-11-1-browseragent.png " ")
-
-15. Expand the **css** folder link. Click Upload, Upload the files from your local css directory, by repeating the upload steps similar to the steps 9 to 14.
-
-	![APM Browser Agent](images/11-11-2-browseragent.png " ")
-
-16. Click **Upload**
-
-	![APM Browser Agent](images/11-11-2-0-browseragent.png " ")
-
-17. Click **select files**
-
-	![APM Browser Agent](images/11-11-2-1-browseragent.png " ")
-
-18. Select the files from your local ***build/static/css*** directory, then click **Open**
-
-	![APM Browser Agent](images/11-11-2-2-browseragent.png " ")
-
-19. Verify the file names to upload, then click **Upload**. Then click **Close**
-
-	![APM Browser Agent](images/11-11-2-3-browseragent.png " ")
-
-16.	After all the files are uploaded, go back to the root directory by selecting **(root)** from the pulldown menu.
-
-	![APM Browser Agent](images/11-11-3-browseragent.png " ")
-
-17. From the tree view and find ***index.html***. Click the three dots at the right side of the row, then select **View Object Details**.
-
-	![APM Browser Agent](images/11-13-browseragent.png " ")
-
-18.	Click the **URL Path** to open the application in a browser tab.
-
-	![APM Browser Agent](images/11-14-browseragent.png " ")
-
-19.	Ensure that the application opens in a new browser tab without any error.
-
-	![APM Browser Agent](images/11-15-browseragent.png " ")
-
-20.	Perform a few transactions to generate traffic. For example, add a new entery, press **Add**, verify that the new item was added to the list, then click **Done**.
-
-	![APM Browser Agent](images/11-16-browseragent.png " ")
 
 
 You may now [proceed to the next lab](#next).

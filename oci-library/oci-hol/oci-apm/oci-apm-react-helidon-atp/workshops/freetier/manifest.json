@@ -18,14 +18,18 @@
             "filename": "../../01-create-domain/create-domain.md"
         },
         {
-            "title": "Lab 2: Configure APM Tracer for Maven, Helidon, Browser, and custom spans",
-            "description": "Configure APM Tracer for Maven, Helidon, Browser, and custom spans",
+            "title": "Lab 2: Setup APM Tracer in Maven & Helidon, and build custom spans in Java",
+            "description": "Setup APM Tracer in Maven & Helidon, and build custom spans in Java",
             "filename": "../../02-configure-tracer/configure-tracer.md"
+        },        {
+            "title": "Lab 3: Update API Gateway, configure APM Browser Agent, and update Object Storage",
+            "description": "Update API Gateway, configure APM Browser Agent, and update Object Storage",
+            "filename": "../../03-setup-browser/setup-browser.md"
         },
         {
-            "title": "Lab 3: View traces and spans in APM Trace Explorer",
+            "title": "Lab 4: View traces and spans in APM Trace Explorer",
             "description": "View traces and spans in APM Trace Explorer",
-            "filename": "../../03-view-traces/view-traces.md"
+            "filename": "../../04-view-traces/view-traces.md"
         },
         {
             "title": "Need Help?",
