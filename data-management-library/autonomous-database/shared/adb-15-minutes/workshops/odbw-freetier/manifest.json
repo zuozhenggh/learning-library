@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-          "title": "Introduction to MovieStream",
+          "title": "Introduction",
           "type": "odbw",
           "filename": "../../introduction/introduction.md"
         },

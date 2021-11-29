@@ -1,19 +1,16 @@
 # Analyze movie sales data
 
 ## Introduction
-In this lab, use Oracle analytic SQL over both structured and semi-structured data to gain a better understanding of MovieStream's sales performance.
+In this lab, use Oracle analytic SQL to gain a better understanding of customers.
 
-Estimated Time: 10 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
 - Understand how to use SQL Worksheet
 
-- Perform time series analyses
-
 - Bin customers by key metrics
 
-- Perform deeper analytics combining data stored in Autonomous Database tables and JSON data in data lake buckets
 
 ### Prerequisites
 - This lab requires completion of Labs 1 and 2 in the Contents menu on the left.
