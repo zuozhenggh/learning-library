@@ -36,7 +36,7 @@ In this workshop, you will learn how to:
     * Discover keywords and summaries for a text string using the Cognitive Text feature
 
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This workshop assumes you have:
 * An Oracle Cloud Account with an Autonomous Database instance and Cloud Shell.
@@ -46,4 +46,4 @@ This workshop assumes you have:
 ## Acknowledgements
 * **Authors** - Moitreyee Hazarika, Principal User Assistance Developer; Sarika Surampudi, Senior User Assistance Developer; Dhanish Kumar, Member Technical Staff; Suresh Rajan, Senior Manager, Oracle Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning
-* **Last Updated By/Date** - Suresh Rajan, October 2021
+* **Last Updated By/Date** - Suresh Rajan, November 2021
