@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Forecast will also give explainability for each of the individual time series in the dataset. Explainability report includes both global and local level explanations. Explanations provides insights on the features that are influencing the forecast. Global explanation represents the general model behaviour - e.g., which features does the model consider important ? Local explanation tells the impact of each feature at a single time step level. Forecast provides local explanations for all the forecasts that it generates
+Forecast will also give explainability for each of the target time series in the dataset. Explainability report includes both global and local level explanations. Explanations provides insights on the features that are influencing the forecast. Global explanation represents the general model behaviour - e.g., which features does the model consider important ? Local explanation tells the impact of each feature at a single time step level. Forecast provides local explanations for all the forecasts that it generates
 
 In this session, we will discuss how to get global and local explanation for the best model chosen by forecast, inorder to understand the features that are influencing the forecast
 
@@ -18,13 +18,13 @@ In this lab, you will:
 ### Prerequisites
 - Forecast ID from the create forecast API
 
-## Task 1: Get Global Explanation
+### Task 1: Get Global Explanation
 
-### 1. Call the explanation API as shown below
+### Step 1. Call the explanation API as shown below
 
 ![Explanation API Call](../images/explanation_api.png)
 
-### 2. Sample Json ouput
+### Step 2. Sample Json ouput
 
 #### JSON Format
 The JSON format is also straight-forward, it contains a key `globalFeatureImportance` listing all the influencing features and their feature importance scores. 
@@ -105,7 +105,7 @@ The JSON format is also straight-forward, it contains a key `globalFeatureImport
   "systemTags": {}
 }
 ```
-### Plotting the global feature importance 
+### Step 3. Plotting the global feature importance 
 
 Here is a simple function to plot the global feature importance from the above json output.
 
@@ -134,13 +134,13 @@ def plot_global_feature_importance(explanation_json):
 
 ![Global Feature Importance ](../images/global_feature_importance.png)
 
-## Task 2: Get Local Explanation
+### Task 2: Get Local Explanation
 
-To get local explanation, there is no seperate api call required. Refer [api call above]
+To get local explanation, there is no seperate api call required. The api call for get explanation will fetch both global and local explanations
 
-The JSON format contains a key `localFeatureImportance` listing all the influencing features and their feature importance scores. 
+To get local explanation, the key `localFeatureImportance` in the json output contains all the influencing features and their feature importance scores for all the time steps in the forecast horizon
 
-### Plotting the local feature importance 
+### Step 1. Plotting the local feature importance 
 
 Here is a simple function to plot the local feature importance from the above json output.
 
@@ -177,4 +177,4 @@ Congratulations on completing this lab! You now have finished all the sessions o
 ## Acknowledgements
 * **Authors**
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
-    * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
+
