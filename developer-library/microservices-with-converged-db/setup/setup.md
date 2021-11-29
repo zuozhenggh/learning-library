@@ -86,7 +86,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.10.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.11.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -218,6 +218,14 @@ Their log files are located in the $GRABDISH_LOG directory.
 ```
 <copy>
 ls -al $GRABDISH_LOG
+</copy>
+```
+
+You can also cat through the logs by using the `showsetuplogs` shortcut command.
+
+```
+<copy>
+showsetuplogs
 </copy>
 ```
 
