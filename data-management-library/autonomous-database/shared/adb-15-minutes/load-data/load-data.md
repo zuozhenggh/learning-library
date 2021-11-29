@@ -18,53 +18,7 @@ In this lab, you will:
 - This lab requires completion of Lab 1, **Provision an ADB Instance**, in the Contents menu on the left.
 
 
-<!-- ## Task 1: Configure the Object Storage connections
-
-In this step, you will set up access to a bucket on Oracle Cloud Infrastructure Object Storage that contain data that we want to load.
-
-1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADB Instance" lab. In this example, the database name is "My Quick Start ADW." Click **Database Actions** to go to the suite of Autonomous Database tools.
-
-    ![Details page of your Autonomous Database](images/service-details.png " ")
-
-2. Enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse. Click **Sign in**.
-
-    ![Log in dialog for Database Actions](images/2878884336.png " ")
-
-
-1. On the Database Actions home page, under **Data Tools**, click **DATA LOAD**.
-
-    ![Click DATA LOAD](images/dataload.png)
-
-2. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
-
-    ![Click CLOUD LOCATIONS](images/cloudlocations.png)
-
-3. To access source files in the data lake's landing zone, click **+Add Cloud Storage** in the top right of your screen.
-
-    - In the **Name** field, enter 'MovieStreamLanding'.
-
-    > **Note:** Take care not to use spaces in the name.
-
-
-    - Leave Cloud Store selected as **Oracle**.
-    - Copy and paste the following URI into the URI + Bucket field:
-
-    ```
-    <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
-    </copy>
-    ```
-
-    - Select **No Credential** as this is a public bucket.
-    - Click on the **Test** button to test the connection. Then click **Create**.
-
-4. The page now shows the newly created Cloud Location.
-
-    ![Click CLOUD LOCATIONS](images/cloudlocations2.png)
-
--->    
-
-## Task 2: Load data from files in Object Storage using Data Tools
+## Task 1: Load data from files in Object Storage using Data Tools
 
 In this step, we will load both csv and partitioned parquet files from object storage into tables in our autonomous database.
 
@@ -90,7 +44,7 @@ In this step, we will load both csv and partitioned parquet files from object st
 
     ![Click on Cloud Loactions](images/add-cloud-storage.png)
 
-2. Specify details about the landing zone that contains the source data:
+4. Specify details about the landing zone that contains the source data:
 
     - In the **Name** field, enter 'MovieStreamLanding'.
 
@@ -108,23 +62,23 @@ In this step, we will load both csv and partitioned parquet files from object st
     - Select **No Credential** as this is a public bucket.
     - Click on the **Test** button to test the connection. Then click **Create**.   
 
-3. From the MOVIESTREAMLANDING location, drag the **sales_sample** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we have 24 parquet files that we want to load into a single table. Click **OK**.
+5. From the MOVIESTREAMLANDING location, drag the **sales_sample** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we have 24 parquet files that we want to load into a single table. Click **OK**.
 
     ![Select sales_dample](images/select-sales-sample.png)
 
-4. Click on the pencil icon for the **sales_sample** task to view the settings for this load task.
+6. Click on the pencil icon for the **sales_sample** task to view the settings for this load task.
 
     ![View settings for sales_sample load task](images/view-sales-sample.png)
 
-5. The default action is to **Create Table** from the source. Update the name of the new table from **SALES_SAMPLE** to **CUSTSALES**. Notice the data loader derived the column names and data types from the parquet file contents. 
+7. The default action is to **Create Table** from the source. Update the name of the new table from **SALES_SAMPLE** to **CUSTSALES**. Notice the data loader derived the column names and data types from the parquet file contents. 
 
     ![Update table name to custsales](images/update-sales-sample-name.png)
 
-5. We will create tables and load two more sources. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
+8. We will create tables and load two more sources. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
 
-5. Finally, drag the **customer** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
+9. Finally, drag the **customer** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
 
-8. Now click on the Play button to run the data load job.
+10. Now click on the Play button to run the data load job.
 
     ![Run the data load job](images/rundataload.png)
 
