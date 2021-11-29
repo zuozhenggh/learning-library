@@ -18,7 +18,7 @@ In this lab, you will:
 - This lab requires completion of Lab 1, **Provision an ADB Instance**, in the Contents menu on the left.
 
 
-## Task 1: Configure the Object Storage connections
+<!-- ## Task 1: Configure the Object Storage connections
 
 In this step, you will set up access to a bucket on Oracle Cloud Infrastructure Object Storage that contain data that we want to load.
 
@@ -62,19 +62,55 @@ In this step, you will set up access to a bucket on Oracle Cloud Infrastructure 
 
     ![Click CLOUD LOCATIONS](images/cloudlocations2.png)
 
+-->    
+
 ## Task 2: Load data from files in Object Storage using Data Tools
 
 In this step, we will load both csv and partitioned parquet files from object storage into tables in our autonomous database.
 
-1. To load or link data from our newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADB Instance" lab. In this example, the database name is "My Quick Start ADW." Click **Database Actions** to go to the suite of Autonomous Database tools.
 
-    ![Click on Data Load](images/backtodataload.png)
+    ![Details page of your Autonomous Database](images/service-details.png " ")
+
+2. Enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse. Click **Sign in**.
+
+    ![Log in dialog for Database Actions](images/2878884336.png " ")
+
+
+1. On the Database Actions home page, under **Data Tools**, click **DATA LOAD**.
+
+    ![Click DATA LOAD](images/dataload.png)
+ 
 
 2. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
 
     ![Select Load Data, then Cloud Storage](images/loadfromstorage.png)
 
+3. This is your first time loading data. You will need to set up access to a bucket on Oracle Cloud Infrastructure Object Storage. Click **Done** on the help tip and then click the **+** sign.
+
+    ![Click on Cloud Loactions](images/add-cloud-storage.png)
+
+2. Specify details about the landing zone that contains the source data:
+
+    - In the **Name** field, enter 'MovieStreamLanding'.
+
+    > **Note:** Take care not to use spaces in the name.
+
+    - Leave Cloud Store selected as **Oracle**.
+    - Copy and paste the following URI into the URI + Bucket field:
+
+    ```
+    <copy>
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
+    </copy>
+    ```
+
+    - Select **No Credential** as this is a public bucket.
+    - Click on the **Test** button to test the connection. Then click **Create**.   
+
 3. From the MOVIESTREAMLANDING location, drag the **sales_sample** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we have 24 parquet files that we want to load into a single table. Click **OK**.
+
+    ![Select sales_dample](images/select-sales-sample.png)
 
 4. Click on the pencil icon for the **sales_sample** task to view the settings for this load task.
 

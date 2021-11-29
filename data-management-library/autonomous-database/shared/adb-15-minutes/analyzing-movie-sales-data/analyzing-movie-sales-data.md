@@ -62,7 +62,7 @@ You are now ready to start analyzing MovieStream's performance using SQL.
 
     When we executed the query the first time, Autonomous Database executed the query against our movie sales table and scanned all the rows. It returned the result of our query to our worksheet and then it stored the result in something called a **result cache**. When we then ran the same query again, Autonomous Database simply retrieved the result from its result cache! No need to scan all the rows again. This saved a lot of time and saved us money because we used hardly any compute resources.
 
-
+<!--
 ## Task 3: Compare sales to last year
 
 ### Overview
@@ -136,7 +136,9 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
     ![using lag](images/t2-sales-lag.png " ")
 
 
-## Task 4: Finding our most important customers
+-->
+
+## Task 3: Finding our most important customers
 
 ### Overview
 Let's pivot and look at customer behavior by utilizing an RFM analysis. RFM is a very commonly used method for analyzing customer value. It is commonly used in general customer marketing, direct marketing, and retail sectors.
@@ -210,6 +212,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
 
     ![RFM query](images/t4-rfm.png " ")
 
+<!--
 ## Task 5: Accessing JSON data in the data lake
 
 ### Overview
@@ -437,15 +440,17 @@ This final query ties together many of the previous concepts and adds a new one:
         * **MEASURES** refer to and perform calculations over the objects from the patterns **DEFINE** clause.
 
     Looks like the Academy Awards is very good for business!
-### Recap
-We covered alot of ground in this lab. You learned how to use different types of analytic functions, time series functions and subqueries to answer important questions about the business. 
-These features include:
 
-- Time-series functions
 
-- **NTILE** binning functions that helps categorize customer sales and activity
+-->
 
-- SQL pattern matching to determine sales before and after an event
+## Recap
+We accomplished alot in just 15 minutes! 
+
+- Deployed a production-ready, scalable, cost-effective data warehouse
+- Connected the database to a data lake and loaded data
+- Used Oracle analytic SQL to identify at-risk customers
+
 
 ## Learn more
 
@@ -456,6 +461,5 @@ These features include:
 
 ## **Acknowledgements**
 
-- **Authors** - Keith Laker and Marty Gubar, Oracle Autonomous Database Product Management
-- **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Marty Gubar, October 2021
+- **Authors** - Marty Gubar, Oracle Autonomous Database Product Management
+- **Last Updated By/Date** - Marty Gubar, November 2021
