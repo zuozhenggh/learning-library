@@ -138,8 +138,8 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
 ## Recap
 We accomplished alot in just 15 minutes! 
 
-* Deploy an Autonomous Database instance that is optimized for data warehousing workloads
-* Use Autonomous Database tools to load and link data lake sources
+* Deployed an Autonomous Database instance that is optimized for data warehousing workloads
+* Used Autonomous Database tools to load data lake sources
 * Use advanced SQL to uncover issues and possibilities
 
 
