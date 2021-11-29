@@ -186,7 +186,8 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
 
    ![](images/orderwithfoodandwinepairing.png " ")
 
-Food wine pairing is used to recommend the suitable wines for the food which is ordered by the user. Here we train a Word2vec model for both Wine dataset and Food reviews using Gensim. The input{food item} is passed through the Word2Vec model to get the wine recommendations. Top 4 wines are given for the display. We used nltk library for data normalization{sentence tokenization, word tokenization, removing punctuation and removing stopwords,stemming, etc} and scikit-learn for tf-idf computations. By considering the aroma and non-aroma factors, the wine recommendations are suggested.
+The food and wine pairing service uses AI/ML to recommend suitable wines for the food that is ordered on Grabdish. A Word2vec model is trained for a Wine reviews  dataset and Food reviews dataset. The order{food item} is passed through the Word2Vec model as an input to get wine recommendations. The best-match wines based on vector matching between the order feature vector, and wine feature vectors (aroma, and non-aroma) are suggested . While popular NLP techniques are used (Gensim, NLTK, and Scikit-learn), it is used in the context of microservices with the converged Oracle database. The trained Word2vec model can be imported in Oracle Machine Learning, in Open Neural Network eXchange (ONNX) model format.
+Note: This use case for GrabDish is inspired by [this article](https://towardsdatascience.com/robosomm-chapter-5-food-and-wine-pairing-7a4a4bb08e9e)
 
 ## Task 6: Show Metrics
 
