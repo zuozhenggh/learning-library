@@ -13,7 +13,7 @@ The workshop's business scenario is based on Oracle MovieStream - a fictitious m
 * Grow the business to become a dominant player in the streaming business and much, much more
 
 ### Objectives
-In the next 20 minutes, you will:
+In the next 15 minutes, you will:
 * Deploy an Autonomous Database instance that is optimized for data warehousing workloads
 * Use Autonomous Database tools to load and link data lake sources
 * Use advanced SQL to uncover issues and possibilities
