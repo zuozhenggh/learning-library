@@ -41,7 +41,7 @@ In this step, you will set up access to the two buckets on Oracle Cloud Infrastr
 
 1. In your database's details page, click the **Database Actions** button.
 
-	  ![Click Tools, then Database Actions](images/launchdbactions.png)
+	  ![Click Database Actions](images/launchdbactions.png)
 
 2. On the login screen, enter the username MOVIESTREAM, then click the blue **Next** button.
 
