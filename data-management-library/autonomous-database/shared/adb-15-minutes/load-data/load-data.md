@@ -20,9 +20,9 @@ In this lab, you will:
 
 ## Task 1: Load data from files in Object Storage using Data Tools
 
-Autonomous Database supports a variety of object stores, including Oracle Object Storage, Amazon S3, Azure Blob Storage, Google Cloud Storage and Wasabi Hot Cloud Storage [see the documentation for more details](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/data-load.html#GUID-E810061A-42B3-485F-92B8-3B872D790D85). In this step, we will load both csv and partitioned parquet files from Oracle Object Storage into tables in our Autonomous Database. 
+Autonomous Database supports a variety of object stores, including Oracle Object Storage, Amazon S3, Azure Blob Storage, Google Cloud Storage and Wasabi Hot Cloud Storage ([see the documentation for more details](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/data-load.html#GUID-E810061A-42B3-485F-92B8-3B872D790D85)). In this step, we will load both csv and partitioned parquet files from Oracle Object Storage into tables in our Autonomous Database. 
 
-1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADB Instance" lab. In this example, the database name is "My Quick Start ADW." Click **Database Actions** to go to the suite of Autonomous Database tools.
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADB Instance" lab. In this example, the database name is "My Quick Start ADB." Click **Database Actions** to go to the suite of Autonomous Database tools.
 
     ![Details page of your Autonomous Database](images/service-details.png " ")
 

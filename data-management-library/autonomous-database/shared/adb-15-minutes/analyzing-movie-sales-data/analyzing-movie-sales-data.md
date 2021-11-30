@@ -20,7 +20,7 @@ Estimated Time: 5 minutes
 
     ![Go to SQL worksheet](images/goto-sql.png " ")
 
-2. Learn more about the SQL Worksheet features using the helper tool or simply click the **X** on the top left of the tool to dismiss it. Run queries by entering your commands in the worksheet. You can use the shortcuts [Control-Enter] or [Command-Enter] to run the command and view the Query Result (tabular format). Clear your worksheet by clicking the trash:
+2. Learn more about the SQL Worksheet features using the help tips or simply click the **X** on the top left of a tip to dismiss it. You will run queries by entering your commands in the worksheet. You can use the shortcuts [Control-Enter] or [Command-Enter] to run the command and view the Query Result (tabular format). Clear your worksheet by clicking the trash:
 
     ![Go to SQL worksheet](images/sql-worksheet.png " ")
 
@@ -43,7 +43,7 @@ You are now ready to start analyzing MovieStream's performance using SQL.
     </copy>
     ```
    
-    Copy this SQL statement into the worksheet, and press the green **run command** arrow to start the query. This returns a result similar to the following:
+    Copy this SQL statement into the worksheet, and press the **run command** button to start the query. This returns a result similar to the following:
 
     ![top 5 genres](images/t2-top5-genre.png " ")
 
@@ -54,7 +54,7 @@ You are now ready to start analyzing MovieStream's performance using SQL.
 ## Task 3: Finding our most important customers
 
 ### Overview
-Let's pivot and look at customer behavior by utilizing an RFM analysis. RFM is a very commonly used method for analyzing customer value. It is commonly used in general customer marketing, direct marketing, and retail sectors.
+Let's pivot and look at customer behavior by utilizing an RFM analysis. RFM is a very commonly used method for analyzing customer value. It is often used in general customer marketing, direct marketing, and retail sectors.
 
 In the following steps, the scripts will build a SQL query to identify:
 
