@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Autonomous Database provides a complete and easy to use platform for database applications. This workshop introduces deploying a database optimized for data warehousing workloads, integrating that warehouse with a data lake and then analyzing data across the lakehouse using rich SQL capabilities.
+Autonomous Database provides a complete and easy to use platform for database applications. This workshop introduces deploying a database optimized for data warehousing workloads, integrating that warehouse with a data lake and then analyzing data using rich Oracle SQL capabilities.
 
 ### Objectives
 In the next 15 minutes, you will:

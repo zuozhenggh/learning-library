@@ -94,11 +94,11 @@ In this lab, you will:
     ![Enter password and confirm password.](./images/Picture100-26d.png " ")
 
 8. Choose network access:
-    - For this lab, accept the default, "Allow secure access from everywhere."
+    - For this lab, accept the default, "Secure access from everywhere."
     - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
-    ![Choose the network access.](./images/Picture100-26e.png " ")
+    ![Choose the network access.](./images/allow-secure-everywhere.png " ")
 
 9. Choose a license type. <if type="freetier">For this lab, choose __License Included__.</if><if type="livelabs">For this lab, choose __Bring Your Own License (BYOL)__.</if> The two license types are:
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
