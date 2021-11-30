@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Load data from the MovieStream data lake on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
+Load data on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
 
 Estimated Time: 5 minutes
 
@@ -20,15 +20,11 @@ In this lab, you will:
 
 ## Task 1: Load data from files in Object Storage using Data Tools
 
-In this step, we will load both csv and partitioned parquet files from object storage into tables in our autonomous database.
+Autonomous Database supports a variety of object stores, including Oracle Object Storage, Amazon S3, Azure Blob Storage, Google Cloud Storage and Wasabi Hot Cloud Storage [see the documentation for more details](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/data-load.html#GUID-E810061A-42B3-485F-92B8-3B872D790D85). In this step, we will load both csv and partitioned parquet files from Oracle Object Storage into tables in our Autonomous Database. 
 
 1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADB Instance" lab. In this example, the database name is "My Quick Start ADW." Click **Database Actions** to go to the suite of Autonomous Database tools.
 
     ![Details page of your Autonomous Database](images/service-details.png " ")
-
-2. Enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse. Click **Sign in**.
-
-    ![Log in dialog for Database Actions](images/2878884336.png " ")
 
 
 1. On the Database Actions home page, under **Data Tools**, click **DATA LOAD**.
@@ -40,11 +36,11 @@ In this step, we will load both csv and partitioned parquet files from object st
 
     ![Select Load Data, then Cloud Storage](images/loadfromstorage.png)
 
-3. This is your first time loading data. You will need to set up access to a bucket on Oracle Cloud Infrastructure Object Storage. Click **Done** on the help tip and then click the **+** sign.
+3. This is your first time loading data. Click **Done** on the help tip to set up access to a bucket on Oracle Cloud Infrastructure Object Storage. 
 
     ![Click on Cloud Loactions](images/add-cloud-storage.png)
 
-4. Specify details about the landing zone that contains the source data:
+4. Specify details about the object storage bucket that contains the source data:
 
     - In the **Name** field, enter 'MovieStreamLanding'.
 
@@ -62,7 +58,7 @@ In this step, we will load both csv and partitioned parquet files from object st
     - Select **No Credential** as this is a public bucket.
     - Click on the **Test** button to test the connection. Then click **Create**.   
 
-5. From the MOVIESTREAMLANDING location, drag the **sales_sample** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we have 24 parquet files that we want to load into a single table. Click **OK**.
+5. From the MOVIESTREAMLANDING location, drag the **sales_sample** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we have 24 parquet files partitioned by month that we want to load into a single table. Click **OK**.
 
     ![Select sales_dample](images/select-sales-sample.png)
 
@@ -73,6 +69,8 @@ In this step, we will load both csv and partitioned parquet files from object st
 7. The default action is to **Create Table** from the source. Update the name of the new table from **SALES_SAMPLE** to **CUSTSALES**. Notice the data loader derived the column names and data types from the parquet file contents. 
 
     ![Update table name to custsales](images/update-sales-sample-name.png)
+
+    Click **Close** after updating the table name.
 
 8. We will create tables and load two more sources. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
 
@@ -92,7 +90,7 @@ In this step, we will load both csv and partitioned parquet files from object st
 
     ![List movie genres](images/movie-genres.png)
 
-This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from both csv and parquet files in the MovieStream data lake. We will be working with these tables in the next lab.
+This completes the Data Load lab. We now have a full set of structured tables loaded into Autonomous Database instance from both csv and parquet files from object storage. We will be working with these tables in the next lab.
 
 Please *proceed to the next lab*.
 

@@ -24,45 +24,11 @@ In this lab, you will:
 </if>
 
 1. Log in to the Oracle Cloud Interface.
-2. Once you log in, you arrive at the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices and then click **Autonmous Database**.
+2. Once you log in, you arrive at the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices and then click **Autonomous Database**.
 
     ![Oracle home page.](./images/navigation.png " ")
 
-
-3. View the Autonmous Database instances that are optimized for different workloads by selecting from the **Workload Type** drop-down. <if type="freetier">Use the __Compartment__ drop-down menu to select the compartment that will contain your instance.</if><if type="livelabs">In the __List Scope__, enter the first part of the LiveLabs compartment assigned to you, then select the compartment from the list.</if>
-
-<if type="freetier">
-    ![Check the workload type on the left.](images/list-scope-freetier.png " ")
-
-   > **Note:** Avoid the use of the `ManagedCompartmentforPaaS` compartment as this is an Oracle default used for Oracle Platform Services.
-
-</if>
-<if type="livelabs">
-    ![](images/livelabs-listscope.png)
-</if>
-
-
-4. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, for example). You can also sort by __Workload Type__. 
-
-<if type="freetier">
-    ![Autonomous Databases console.](./images/no-adb-freetier.png " ")
-</if>
-<if type="livelabs">
-    ![](images/livelabs-nodb.png)
-</if>
-
-<if type="freetier">
-5. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
-
-    ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
-</if>
-
-<if type="freetier">
 ## Task 2: Create the Autonomous Database instance
-</if>
-<if type="livelabs">
-## Task 2: Create the Autonomous Database instance
-</if>
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -80,15 +46,15 @@ In this lab, you will:
 3. Give basic information for the autonomous database:
 
 <if type="freetier">
-    - __Choose a compartment__ - Select the compartment that will contain your Autonmous Database instance.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADW__.
+    - __Choose a compartment__ - Select the compartment that will contain your Autonomous Database instance. [Learn more about compartments in the documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADB__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __MYQUICKSTART__.
 
     ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
 </if>
 <if type="livelabs">
     - __Choose a compartment__ - Use the default compartment created for you.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADW__.
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADB__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __MOVIE+your user id__, for example, __MOVIE9352__.
 
     ![Enter the required details.](./images/livelabs-adwname.png " ")

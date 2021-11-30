@@ -20,14 +20,14 @@ Estimated Time: 5 minutes
 
     ![Go to SQL worksheet](images/goto-sql.png " ")
 
-2. Enter your commands in the worksheet. You can use the shortcuts [Control-Enter] or [Command-Enter] to run the command and view the Query Result (tabular format). Clear your worksheet by clicking the trash:
+2. Learn more about the SQL Worksheet features using the helper tool or simply click the **X** on the top left of the tool to dismiss it. Run queries by entering your commands in the worksheet. You can use the shortcuts [Control-Enter] or [Command-Enter] to run the command and view the Query Result (tabular format). Clear your worksheet by clicking the trash:
 
     ![Go to SQL worksheet](images/sql-worksheet.png " ")
 
 You are now ready to start analyzing MovieStream's performance using SQL.
 
 
-## Task 2: Explore sales data with fast performance
+## Task 2: Explore sales data
 
 1. Let's use a very simple query to look at sales for the top 5 movie genres.
 
@@ -43,21 +43,12 @@ You are now ready to start analyzing MovieStream's performance using SQL.
     </copy>
     ```
    
-    This returns a result similar to the following:
+    Copy this SQL statement into the worksheet, and press the green **run command** arrow to start the query. This returns a result similar to the following:
 
     ![top 5 genres](images/t2-top5-genre.png " ")
 
     
-    Note the time taken to run your query. In the above example, this was 0.532 seconds to run (*when you run your query the timing may vary slightly*).
-
-2. Now simply run the query again
-
-    ![group by query with result cache](images/t2-top5-genre-again.png " ")
-
-
-    This time the query ran much faster, taking just 0.005 seconds! So what happened?
-
-    When we executed the query the first time, Autonomous Database executed the query against our movie sales table and scanned all the rows. It returned the result of our query to our worksheet and then it stored the result in something called a **result cache**. When we then ran the same query again, Autonomous Database simply retrieved the result from its result cache! No need to scan all the rows again. This saved a lot of time and saved us money because we used hardly any compute resources.
+    As you can see, the Drama and Action genres dominate MovieStream sales with Adventure, Comedy and Sci-Fi genres rounding out the top 5.
 
 
 ## Task 3: Finding our most important customers
@@ -65,17 +56,17 @@ You are now ready to start analyzing MovieStream's performance using SQL.
 ### Overview
 Let's pivot and look at customer behavior by utilizing an RFM analysis. RFM is a very commonly used method for analyzing customer value. It is commonly used in general customer marketing, direct marketing, and retail sectors.
 
-In the following steps, the scripts will build a SQL query that will identify:
+In the following steps, the scripts will build a SQL query to identify:
 
 - Recency: when was the last time the customer accessed the site?
 
 - Frequency: what is the level of activity for that customer on the site?
 
-- Monetary: how much money has the customer spent?
+- Monetary Value: how much money has the customer spent?
 
 Customers will be categorized into 5 buckets measured (using the NTILE function) in increasing importance. For example, an RFM combined score of 551 indicates that the customer is in the highest tier of customers in terms of recent visits (R=5) and activity on the site (F=5), however the customer is in the lowest tier in terms of spend (M=1). Perhaps this is a customer that performs research on the site, but then decides to buy movies elsewhere!
 
-1.  Binning customers' based on behavior
+1.  Binning customers based on behavior
 
     Use the following query to segment customer behavior into 5 distinct bins based on the recency, frequency and monetary metrics:
 
@@ -145,10 +136,8 @@ We accomplished alot in just 15 minutes!
 
 ## Learn more
 
-* [Enterprise Data Warehousing - an Integrated Data Lake](https://docs.oracle.com/en/solutions/oci-curated-analysis/index.html#GUID-7FF7A024-5EB0-414B-A1A5-4718929DC7F2)
-* [Autonomous Database Workshops](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/livelabs-workshop-cards?p100_product=82&me=65&clear=100)
-* [Autonomous Database web site](https://www.oracle.com/autonomous-database/)
-* [Autonmous Data Warehouse Videos](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/videos.html)
+* [Oracle Autonomous Data Warehouse Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
+* [Additional Autonomous Data Warehouse Tutorials](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/tutorials.html)
 
 ## **Acknowledgements**
 
