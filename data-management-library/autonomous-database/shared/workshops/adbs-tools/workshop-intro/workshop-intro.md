@@ -7,7 +7,7 @@ The purpose of this workshop is to introduce you to the suite of data tools buil
 
 Estimated Workshop Duration: 1 hour, 40 minutes
 
-<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/nSxao-v3Scg).</if>
+If you would like to watch us do the workshop, click [here](https://youtu.be/nSxao-v3Scg).
 
 ### Who Should Use This Workshop?
 
