@@ -18,10 +18,10 @@
       "publisheddate": "10/14/2020",
       "filename": "./../../initialize-environment/initialize-environment.md"
     },
-        {
+    {
       "title": "Lab 2:  Use the Oracle GoldenGate Veridata Command-line Utilities ",
       "description": "This lab walks you through the command line utilities in Oracle GoldenGate Veridata.",
-      "filename": "./../../ggv-reports/ggv-import-export-vgpp.md"
+      "filename": "./../../ggv-import-export-vgpp/ggv-import-export-vgpp.md"
     },
     {
       "title": "Need Help?",

@@ -12,11 +12,11 @@ Oracle GoldenGate Veridata compares a source (original, or trusted) set of data 
 
 ### Objectives
 In this lab, you will:
-* Create Datasource Connections for source and target databases
-* Create Groups and Compare Pairs
-* Create and Run Jobs
-* Repair data and generate SQL files
-* View Reports
+* Use the Veridata Import-Export Utility
+* Vericom
+* VGPP
+*
+*
 
 ### Prerequisites
 * A Free Tier, Paid or LiveLabs Oracle Cloud account
