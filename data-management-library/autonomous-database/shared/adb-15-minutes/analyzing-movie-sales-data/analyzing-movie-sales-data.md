@@ -1,7 +1,7 @@
 # Analyze movie sales data
 
 ## Introduction
-In this lab, use Oracle analytic SQL to gain a better understanding of customers. 
+In this lab, use Oracle analytic SQL to gain a better understanding of customers.
 
 Estimated Time: 5 minutes
 
