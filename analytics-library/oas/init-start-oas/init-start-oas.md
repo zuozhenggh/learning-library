@@ -3,7 +3,7 @@
 ## Introduction
 This lab provides detailed instructions of connecting to Oracle Analytics Server (OAS). This compute instance comes with OAS installed and configured with Oracle database, both managed using Unix/Linux *systemd* services to automatically start and shutdown as required.
 
-*Estimated time:* 10 Minutes
+*Estimated Completion time:* 10 Minutes
 
 ### Objectives
 - Validate that the environment has been initialized and is ready
