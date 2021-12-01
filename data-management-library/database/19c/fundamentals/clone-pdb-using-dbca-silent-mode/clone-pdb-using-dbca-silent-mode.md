@@ -7,6 +7,10 @@ In this lab, you clone PDB1 from CDB1 as PDB2 in CDB2. Use the `workshop-install
 
 Estimated Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:iVwpljD1tpE)
+
 ### Objectives
 
 In this lab, you will:
@@ -132,7 +136,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
           107
     ```
 
-11. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`.
+11. (Optional) If in the previous step you find that you do not have an `HR.EMPLOYEES` table, run the `hr_main.sql` script to create the HR user and `EMPLOYEES` table in `PDB1`. After running the script, connect to CDB1 as the `SYS` user.
 
     ```
     SQL> <copy>@/home/oracle/labs/19cnf/hr_main.sql Ora4U_1234 USERS TEMP $ORACLE_HOME/demo/schema/log/</copy>
@@ -178,6 +182,8 @@ A common user is a database user that has the same identity in the `root` contai
 In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
 1. Run the `-createPluggableDatabase` command in DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
+
+    *This is the new feature!*
 
     ```
     $ <copy>dbca -silent \
@@ -238,7 +244,7 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
     Session altered.
     ```
 
-4. Check that PDB2 contains the `HR.EMPLOYEES` table. This command helps us to verify that PDB2 is a clone of PDB1 and its contents. The query result shows 107 rows.
+4. Check that PDB2 has the `HR.EMPLOYEES` table. This command helps us to verify that PDB2 is a clone of PDB1 and its contents. The query result shows 107 rows.
 
     ```
     SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
@@ -331,4 +337,4 @@ In this task, you use DBCA in silent mode to clone PDB1 on CDB2 as PDB2.
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, August 27 2021
+- **Last Updated By/Date** - Kherington Barley, Austin Specialist Hub, September 21 2021

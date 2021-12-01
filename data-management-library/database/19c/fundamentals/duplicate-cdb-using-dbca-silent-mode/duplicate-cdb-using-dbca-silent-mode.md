@@ -8,6 +8,8 @@ In this lab, you duplicate CDB1 twice by using the `createDuplicateDB` command o
 
 Estimated Time: 25 minutes
 
+
+
 ### Objectives
 
 In this lab, you will:
@@ -142,6 +144,8 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1, verify that the d
 In this task, you use the ``-createDuplicateDB`` command in DBCA to duplicate CDB1 as DUPCDB1. The database configuration type is set to `SINGLE`, which instructs DBCA to create a single individual database. The storage type is set to file system (FS). Because a listener is not specified in the DBCA command, DBCA automatically configures the default listener, LISTENER, for both DUPCDB1 and PDB1. After the DBCA command is finished running, verify that DUPCDB1 exists and contains PDB1, that PDB1 contains sample data, and that both DUPCDB1 and PDB1 use the default listener.
 
 1. Run the `-createDuplicateDB` command. This step takes a few minutes to complete.
+
+    *This is the new feature!*
 
     ```
     $ <copy>dbca -silent \
@@ -325,7 +329,7 @@ Execute the `-createDuplicateDB` command again to duplicate CDB1 as a single ind
 
 2. View the `listener.ora` file and verify that DBCA added the listener information for `LISTENER_OMFCDB1`.
 
-    Dynamic service registration does not make use of the `listener.ora` file; however, your listeners needs to be listed in this file if you want to manage them with the Listener Control Utility.
+    Dynamic service registration does not make use of the `listener.ora` file. However, your listeners must be listed in this file if you want to manage them with the Listener Control Utility.
 
     ```
     $ <copy>cat $ORACLE_HOME/network/admin/listener.ora</copy>
@@ -537,4 +541,4 @@ To restore your environment, delete DUPCDB1 and OMFCDB1 and disable `ARCHIVELOG`
 ## Acknowledgements
 - **Primary Author** - Dominique Jeunot's, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By** - Blake Hendricks, Solutions Engineer, August 27 2021
+- **Last Updated By** - Blake Hendricks, Solutions Engineer, September 21 2021

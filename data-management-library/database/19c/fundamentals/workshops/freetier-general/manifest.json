@@ -20,9 +20,9 @@
           "type": "freetier"
       },
       {
-          "title": "Verify Your Environment",
-          "description": "Steps to verify the workshop-installed compute instance.",
-          "filename": "./../../verify-environment/verify-environment.md",
+          "title": "Initialize Your Environment",
+          "description": "Steps to verify the workshop-installed compute instance and download the lab files.",
+          "filename": "./../../initialize-environment/initialize-environment.md",
           "type": "freetier"
       },
       {
@@ -32,14 +32,14 @@
           "type": "freetier"
        },
         {
-            "title": "Clone a PDB by Using DBCA in Silent Mode",
+            "title": "Clone a PDB from a Remote CDB by Using DBCA in Silent Mode",
             "description": "Clone a PDB by using DBCA in silent mode.",
             "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md",
             "type": "freetier"
         },
         {
-            "title": "Relocate a PDB by Using DBCA in Silent Mode",
-            "description": "Relocate a PDB by using DBCA in silent mode.",
+            "title": "Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode",
+            "description": "Relocate a PDB to a remote CDB by using DBCA in silent mode.",
             "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md",
             "type": "freetier"
         },

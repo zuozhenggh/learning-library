@@ -4,7 +4,9 @@
 
 Oracle Database 19c installer has a new feature that automatically runs `root` configuration scripts for you. This feature simplifies the installation process and helps you to avoid inadvertent permission errors. The installer lets you configure the `root` user or a sudoer user to run the configuration scripts. Both options require the user's password.
 
-In this lab, run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer. After you install the database, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created. Use the `workshop-staged` compute instance.
+In this lab, you run the Oracle Database 19c installer and configure the `oracle` user to execute the root scripts. The `oracle` user is already configured as a sudoer. Next, you examine the response file as well as the container database (CDB) and pluggable database (PDB) that get created. Use the `workshop-staged` compute instance.
+
+> **Note:** This lab is available for free and paid tier environments only.
 
 Estimated Time: 40 minutes
 
@@ -27,17 +29,15 @@ This lab assumes you have:
 
 *Be sure that you are using the `workshop-staged` compute instance.*
 
-1. In the **Oracle Database 19c New Features** workshop book on your desktop, click the lab named **Install Oracle Database 19c with Automatic Root Script Execution**.
+1. On your desktop, double-click the **Terminal** icon to open a terminal window. Notice that you are signed in to the Linux operating system as the `oracle` user. It's important that you run the Oracle Database 19c installer as the `oracle` user.
 
-2. On your desktop, double-click the **Terminal** icon to open a terminal window. Notice that you are signed in to the Linux operating system as the `oracle` user. It's important that you run the Oracle Database 19c installer as the `oracle` user.
-
-3. Change to the Oracle home directory.
+2. Change to the Oracle home directory.
 
     ```
     $ <copy>cd /u01/app/oracle/product/19c/dbhome_1</copy>
     ```
 
-4. List the files in the Oracle home directory. Notice that you have a `runInstaller` file and a `32904851` directory, which is the Oracle Database release update for 19.12.0.0.
+3. List the files in the Oracle home directory. Notice that you have a `runInstaller` file and a `32904851` directory, which is the Oracle Database release update for 19.12.0.0.
 
     ```
     $ <copy>ls</copy>
@@ -59,7 +59,7 @@ This lab assumes you have:
    demo        ldap           owm      sdk
     ```
 
-5. Launch the Oracle Database 19c installer by executing the `runInstaller` file. Include the `applyRU` parameter to apply the Oracle Database release update for 19.12.0.0. The installer first applies the patch (this takes about 7.5 minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch up to release 19.12, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will get installed.
+4. Launch the Oracle Database 19c installer by executing the `runInstaller` file. To apply the Oracle Database release update for 19.12.0.0, you can include the `applyRU` parameter. The installer first applies the patch (this takes about 7.5 minutes), and then it opens the Oracle Universal Installer wizard. If you don't want to patch the database to release 19.12, you can leave out the -`applyRU` parameter and value, and Oracle Database release 19.3 will be installed.
 
   *Enter the command carefully and check that it is correct before you run it! If you make an error while installing the database, you cannot easily undo the changes made to the compute instance. It is fastest to obtain a fresh `workshop-staged` compute instance and try the lab again.*
 
@@ -67,15 +67,15 @@ This lab assumes you have:
     $ <copy>./runInstaller -applyRU 32904851</copy>
     ```
 
-6. On the **Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
+5. On the **Configuration Option** page, leave **Create and configure a single instance database** selected, and click **Next**. This option creates a starter database with one container database (CDB) and one pluggable database (PDB).
 
     ![Select Configuration Option page](images/select-configuration-option-page.png "Select Configuration Option page")
 
-7. On the **System Class** page, leave **Desktop Class** selected, and click **Next**.
+6. On the **System Class** page, leave **Desktop Class** selected, and click **Next**.
 
     ![Select System Class page](images/select-system-class-page.png "Select System Class page")
 
-8. On the **Typical Installation** page, leave all the default values as is. Enter **Ora4U_1234** in the **Password** and **Confirm password** boxes, and then click **Next**.
+7. On the **Typical Installation** page, leave all the default values as is. Enter **Ora4U_1234** in the **Password** and **Confirm password** boxes, and then click **Next**.
 
     The following values will be configured:
 
@@ -92,7 +92,7 @@ This lab assumes you have:
     ![Typical Installation page](images/typical-installation-page.png "Typical Installation page")
 
 
-9. On the **Create Inventory** page, leave the default settings as is, and click **Next**.
+8. On the **Create Inventory** page, leave the default settings as is, and click **Next**.
 
     The following values will be configured:
 
@@ -101,7 +101,7 @@ This lab assumes you have:
 
     ![Create Inventory page](images/create-inventory-page.png "Create Inventory page")
 
-10. On the **Root script execution** page, do the following, and then click **Next**.
+9. On the **Root script execution** page, do the following, and then click **Next**.
 
     - Select the **Automatically run configuration scripts** check box. *This is the new feature!*
 
@@ -112,22 +112,22 @@ This lab assumes you have:
 
     ![Root script execution configuration page](images/root-script-execution-configuration-page.png "Root script execution configuration page")
 
-11. On the **Perform Prerequisite Checks** page, wait for the installer to verify that your environment meets the minimum installation and configuration requirements. If everything is fine, the **Summary** page is displayed.
+10. On the **Perform Prerequisite Checks** page, wait for the installer to verify that your environment meets the minimum installation and configuration requirements. If everything is fine, the **Summary** page is displayed.
 
     ![Perform Prerequisite Checks page](images/prerequisite-checks-page.png "Perform Prerequisite Checks page")
 
     ![Summary page](images/summary-page.png "Summary page")
 
-12. On the **Summary** page, click **Save Response File**. The **Save Response File** dialog box is displayed. Browse to and select the `/tmp` directory. Leave **db.rsp** as the name, and click **Save**.
+11. On the **Summary** page, click **Save Response File**. The **Save Response File** dialog box is displayed. Browse to and select the `/tmp` directory. Leave **db.rsp** as the name, and click **Save**.
 
-13. Click **Install** to begin installing the software.
+12. Click **Install** to begin installing the software.
 
-14. On the **Install Product** page, monitor the progress of the steps being executed.  When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes approximately 26 minutes to complete.
+13. On the **Install Product** page, monitor the progress of the steps being executed. When prompted to run the configuration scripts as the privileged user, click **Yes** to continue. The installation takes about 26 minutes to complete.
 
     ![Run configuration scripts prompt](images/run-configuration-scripts-prompt.png "Run configuration scripts prompt")
 
 
-15. Watch for the two lines in the progress information that pertain to automatic root script execution:
+14. Watch for the two lines in the progress information that pertain to automatic root script execution:
 
     - Execute Root Scripts
     - Running root scripts using specified configuration method
@@ -135,7 +135,7 @@ This lab assumes you have:
     ![Install Product page](images/install-product-page.png "Install Product page")
 
 
-16. On the **Finish** page, click **Close**. The installation is finished.
+15. On the **Finish** page, click **Close**. The installation is finished.
 
     ![Finish page](images/finish-page.png "Finish page")
 
@@ -199,7 +199,7 @@ This lab assumes you have:
     ```
 
 
-3. Using SQL\*Plus, connect to the `root` container of your database as the `SYS` user. SQL\*Plus is an interactive and batch query tool that is installed with every Oracle Database installation.
+3. Using SQL\*Plus, connect to the `root` container of your database as the `SYS` user. SQL\*Plus is an interactive and batch query tool that is installed with every Oracle Database installation. Notice the database version in the output. In the example below, the version is 19.12.0.0.0.
 
     ```
     $ <copy>sqlplus / as sysdba</copy>
@@ -216,18 +216,7 @@ This lab assumes you have:
     SQL>
     ```
 
-4. Verify that the database version is 19.12.
-
-    ```
-    SQL> <copy>SELECT banner_full FROM v$version;</copy>
-
-    BANNER_FULL
-    --------------------------------------------------------------------------------
-    Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-    Version 19.12.0.0.0
-    ```
-
-5. Verify that you are logged in to the `root` container as the `SYS` user.
+4. Verify that you are logged in to the `root` container as the `SYS` user.
 
     ```
     SQL> <copy>SHOW user</copy>
@@ -235,7 +224,7 @@ This lab assumes you have:
     USER is "SYS"
     ```
 
-6. Find the current container name. Because you're currently connected to the `root` container, the name is `CDB$ROOT`.
+5. Find the current container name. Because you're currently connected to the `root` container, the name is `CDB$ROOT`.
 
     ```
     SQL> <copy>SHOW con_name</copy>
@@ -245,7 +234,7 @@ This lab assumes you have:
     CDB$ROOT
     ```
 
-7. List all of the containers in the CDB by querying the `V$CONTAINERS` view. The results list three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
+6. List all the containers in the CDB by querying the `V$CONTAINERS` view. The output lists three containers - the `root` container (`CDB$ROOT`), the seed PDB (`PDB$SEED`), and the pluggable database (`ORCLPDB`).
 
     ```
     SQL> <copy>COLUMN name FORMAT A8</copy>
@@ -259,13 +248,13 @@ This lab assumes you have:
     ```
 
 
-8. Exit SQL*Plus.
+7. Exit SQL*Plus.
 
     ```
-    SQL> <copy>EXIT</copy>
+    SQL> <copy>exit</copy>
     ```
 
-9. Close the terminal window.
+8. Close the terminal window.
 
     ```
     $ <copy>exit</copy>
@@ -288,4 +277,4 @@ Congratulations! You successfully installed Oracle Database 19c using the automa
     - Jean-Francois Verrier, User Assistance Director, Database Development
     - S. Matt Taylor Jr., Document Engineering (DocEng) Consulting Member of Technical Staff
     - Rene Fontcha, Master Principal Solutions Architect
-- **Last Updated By/Date** - Jody Glover, Database team, August 27 2021
+- **Last Updated By/Date** - Jody Glover, Database team, September 21 2021

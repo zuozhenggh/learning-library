@@ -7,7 +7,7 @@ The fast recovery area is critical for databases because it stores backups, onli
 
 When you enable `FLASHBACK` mode on your database instance, Oracle copies images of each altered block in every data file into flashback logs stored in the flash recovery area. Starting in Oracle Database 19c, the management of space in the fast recovery area is simplified. Oracle Database monitors flashback logs in the fast recovery area and automatically deletes those that are beyond the retention period. You can set the retention period by configuring the `DB_FLASHBACK_RETENTION_TARGET` initialization parameter. By default, this parameter is set to 1 day (1440 minutes). The database retains at least 60 minutes of flashback data even if you specify a value less than 60.
 
-When you reduce the retention period, flashback logs that are dated beyond the retention period are deleted immediately. In scenarios where a sudden workload spike causes a large number of flashback logs to be created, the workload is monitored for a few days before flashback logs that are beyond the retention period are deleted. This avoids the overhead of recreating the flashback logs, if another peak workload occurs soon after. The `COMPATIBLE` initialization parameter must be set to 19.0.0 or higher for flashback logs to be automatically deleted.
+When you reduce the retention period, flashback logs that are dated beyond the retention period are deleted immediately. In scenarios where a sudden workload spike causes many flashback logs to be created, the workload is monitored for a few days before flashback logs that are beyond the retention period are deleted. This avoids the overhead of recreating the flashback logs, if another peak workload occurs soon after. The `COMPATIBLE` initialization parameter must be set to 19.0.0 or higher for flashback logs to be automatically deleted.
 
 In this lab, you enable `FLASHBACK` mode on CDB1 and set the flashback retention period to 70 minutes. You monitor the logs coming in for 70 minutes and then decrease the flashback retention period to 60 minutes and observe the changes to the logs. Use the `workshop-installed` compute instance.
 
@@ -229,7 +229,7 @@ Increase the fast recovery area size to 100GB to provide enough space for the fl
 
 ## Task 4: Generate flashback logs
 
-Activity needs to happen on the database for the database to generate flashback logs. To generate activity, you can run the `workload.sh` script in another terminal window. This script runs for approximately 70 minutes. You will see many SQL commands in the output.
+Activity must happen on the database for the database to generate flashback logs. To generate activity, you can run the `workload.sh` script in another terminal window. This script runs for about 70 minutes. You will see many SQL commands in the output.
 
 1. Double-click the **Terminal** icon on the desktop to open another terminal window. Let's call this terminal 2.
 
@@ -428,4 +428,4 @@ If you are done with the lab, but the `workshop.sh` script is still running, do 
 
 - **Author** - Dominique Jeunot, Consulting User Assistance Developer
 - **Contributor** - Jody Glover, Principal User Assistance Developer
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, August 27 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, September 21 2021
