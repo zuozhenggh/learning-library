@@ -9,7 +9,7 @@ Estimated Time: 5 minutes
 ### Objectives
 
 In this lab, you will:
-* Learn how to define object storage credentials for your Autonomous Database
+* Learn how to set up an Oracle Object Storage cloud location
 * Learn how to load data from object storage using Data Tools
 
 

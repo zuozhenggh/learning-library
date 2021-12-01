@@ -115,10 +115,10 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
         c.gender,
         c.age,
         c.income_level
-    FROM rfm r
-    INNER JOIN customer c ON c.cust_id = r.cust_id
-    WHERE r.rfm_monetary >= 5
-      AND r.rfm_recency = 1
+    FROM rfm r, customer c  
+    WHERE c.cust_id = r.cust_id
+      AND r.rfm_monetary >= 5
+      AND r.rfm_recency = 1      
     ORDER BY r.rfm_monetary desc, r.rfm_recency desc;</copy>
     ```
     The result only shows customers who historically had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers!
@@ -130,7 +130,7 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
 We accomplished alot in just 15 minutes! 
 
 * Deployed an Autonomous Database instance that is optimized for data warehousing workloads
-* Used Autonomous Database tools to load data lake sources
+* Used Autonomous Database tools to load object storage sources
 * Use advanced SQL to uncover issues and possibilities
 
 
