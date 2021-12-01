@@ -35,7 +35,7 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 	![Development option in ADW Service Console](images/adw_development.png)
 
 
-2. Click **Oracle Machine Learning Notebooks.**
+2. Click **Oracle Machine Learning User Interface.**
 
   ![Oracle Machine Learning Notebooks in ADW](images/adw_oml_notebooks.png)
 
@@ -59,7 +59,7 @@ To create a notebook:
 2. On the Notebooks page, click **Create**. The Create Notebook dialog opens.
 	![Create Notebook dialog](images/create_notebook.png)
 
-3. In the Name field, enter **Test** Notebook.
+3. In the Name field, enter **Test Notebook**.
 
 4. In the **Comments** field, enter comments, if any.
 
@@ -101,7 +101,7 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 To call the SQL interpreter and run SQL statements:
 
 1. Edit the paragraph tag and type ``%sql`` to call the SQL interpreter.
-2. Type select `table_name` from ``user_tables`` and click Run. The command returns the table names in a tabular format - a table with one column `TABLE_NAME`, as shown in the screenshot:
+2. Type ``select table_name from user_tables`` and click Run. The command returns the table names in a tabular format - a table with one column `TABLE_NAME`, as shown in the screenshot:
 
 	![SQL commands](images/sql_commands.png)
 
