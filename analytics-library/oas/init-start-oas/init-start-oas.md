@@ -99,6 +99,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     ```
 
 <if type="external">
+
 ## Task 2: Download and Stage Workshop Artifacts (not needed if using the remote desktop)
 In order to run this workshop, you will need a set of files that have been conveniently packaged and stage on the instance for you. If you are bypassing the remote desktop and  connecting directly to OAS UI from your local computer/workstation, proceed as indicated below.
 
@@ -161,8 +162,6 @@ Your workshop instance is configured to automatically start all processes needed
     ```
     <copy>sudo systemctl restart oas</copy>
     ```
-
-You may now [proceed to the next lab](#next).
 
 ## Learn more
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
