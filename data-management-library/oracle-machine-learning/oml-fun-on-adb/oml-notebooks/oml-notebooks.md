@@ -35,7 +35,7 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 	![Development option in ADW Service Console](images/adw_development.png)
 
 
-2. Click **Oracle Machine Learning User Interface.**
+2. Click **Oracle Machine Learning Notebooks.**
 
   ![Oracle Machine Learning Notebooks in ADW](images/adw_oml_notebooks.png)
 
@@ -159,7 +159,7 @@ import pandas as pd
 ```
 
 
-The command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH schema, as shown in the screenshot here:
+The ``z.show`` command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH schema, as shown in the screenshot here. Use the ``z.show`` command to display Python objects, proxy object content, and to display the desired data in the notebook. You will learn more about ``z.show`` in the lab on Oracle Machine Learning for Python.
 
 ![Python script](images/python_commands.png)
 
@@ -167,11 +167,11 @@ The command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH sche
 
 This step demonstrates how to create a notebook based on an Example template:
 
-1. Sign into your Oracle Machine Learning Notebook instance and click **Examples** in the Quick Actions section on the home page. Alternatively, you can go to the left navigation menu and click **Examples** under templates. The Examples page opens with all the templates listed.
+1. In your Oracle Machine Learning user interface, click **Examples** in the Quick Actions section on the home page. Alternatively, you can go to the left navigation menu and click **Examples** under templates. The Examples page opens with all the templates listed.
 
 	![Oracle Machine Learning homepage](images/homepage_examples.png)
 
-2. Navigate to the **OML4Py Classification DT** example template notebook, click it and then click **Create Notebook**.
+2. Navigate to the **OML4Py Classification DT** example template notebook. Alternatively, type DT in the search box on the upper right to get a list of the decision tree-related notebooks. Click the notebook and then click **Create Notebook**.
 
 	![Create Notebook](images/classification_DT_example.png)
 
@@ -192,7 +192,7 @@ This step demonstrates how to create a notebook based on an Example template:
 	![Notebooks in left navigation menu](images/notebooks_left_nav_pane.png)
 
 
-6. The Classification DT 1 notebook is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor and work on it.
+6. The Classification DT 1 notebook is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor. Note that you will run this notebook in the subsequent steps.
 
 	![Notebook listed](images/notebook_listed.png)
 
@@ -205,7 +205,7 @@ This step demonstrates how to create the Time Series notebook based on the Examp
 
 1. Go to the **Examples** page under Templates in your Oracle Machine Learning UI.
 
-2. Navigate to the **OML4SQL Time Series ESM** example template notebook, click it and then click **Create Notebook**.
+2. Navigate to the **OML4SQL Time Series ESM** example template notebook. Alternatively, type ESM in the search box on the upper right to get a list of the ESM-related notebooks. Click the notebook and then click **Create Notebook**.
 
 	![Create Notebook](images/oml4sql_time_series.png)
 
@@ -239,18 +239,18 @@ This completes the task of creating the Time Series notebook from the OML4SQL Ti
 
 An interpreter allows using a specific data processing language at the backend to process commands entered in a notebook paragraph. For the notebooks in Oracle Machine Learning Notebooks, you use the following interpreters:
 
-* SQL interpreter for SQL Statements within an Oracle Database interpreter group
-* PL/SQL  interpreter for PL/SQL scripts/statements within an Oracle Database interpreter group
+* SQL interpreter for SQL Statements
+* PL/SQL  interpreter for PL/SQL scripts/statements
 * Python interpreter to process Python scripts
 * md (MarkDown) interpreter for plain text formatting syntax so that it can be converted to HTML.
 
-This is the initial binding order of the interpreters. You can change the order of the interpreter bindings by clicking and dragging an entry above or below others.
+This is the initial binding order of the interpreters. You can change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
 
 * **Low** (Default): Provides the least level of resources for in-database operations, typically serial (non-parallel) running of database operations. It supports the maximum number of concurrent in-database operations by multiple users. The interpreter with low priority is listed at the top of the interpreter list, and hence, is the default.
 * **Medium:** Provides a fixed number of CPUs to run in-database operations in parallel, where possible. It supports a limited number of concurrent users, typically 1.25 times the number of CPUs allocated to the Autonomous Database instance.
 * **High:** Provides the highest level of CPUs to run in-database operations in parallel, up to the number of CPUs allocated to the Autonomous Database instance. It offers the highest performance but supports the minimum number of concurrent in-database operations, typically 3.
 
-	> **Note:** The interpreter binding order that is set for a notebook applies to all the paragraphs in that notebook.
+	> **Note:** The interpreter binding order that is set for a notebook applies to all the paragraphs in that notebook. However, you can override the binding of an individual paragraph also. This is an advanced topic, and is not covered in this workshop.
 
 In this step, you learn how to set the interpreter bindings:
 1. Open the **Classification_DT** notebook, and click ![gear icon](images/gear.png) on the top right corner in the notebook. This opens the interpreter settings.
@@ -261,7 +261,7 @@ In this step, you learn how to set the interpreter bindings:
 
 	![Drag and drop an interpreter binding](images/drag_int_binding.png)
 
-	>**Note:** You can disable a particular binding by deselecting it (turns from blue to white) or enable it by selecting it ( turns from white to blue).
+	>**Note:** You can disable a particular binding by deselecting it (turns from blue to white) or enable it by selecting it ( turns from white to blue). However, this does not require dragging the enabled interpreters above the disabled ones.
 
 
 	![Enable and disable interpreter binding](images/enable_disable_int_bindings.png)

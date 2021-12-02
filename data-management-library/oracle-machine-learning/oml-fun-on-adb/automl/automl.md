@@ -111,8 +111,8 @@ To adjust additional settings of this experiment:
 
 	Note the following about the two options:
 
-	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of hyperparamter combinations and hence yields faster results.
-	* **Better Accuracy:** Select this option if you want more hyperparameter combinations to be tried for possibly more accurate models.
+	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of pipeline combinations and hence yields faster results.
+	* **Better Accuracy:** Select this option if you want more pipeline combinations to be tried for possibly more accurate models. A pipeline is defined as an algorithm, selected data feature set, and set of algorithm hyperparameters. 
 
 > **Note:** This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
 
