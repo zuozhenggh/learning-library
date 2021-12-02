@@ -97,11 +97,11 @@ ORA-28365: wallet is not open
 ```
 5. Switch one of the Oracle-managed tablespaces to encryption.
 ```
-<copy>ALTER TABLESPACE system ENCRYPTION USING 'AES192' ENCRYPT;</copy>
+<copy>ALTER TABLESPACE system ENCRYPTION 'AES192' ENCRYPT;</copy>
 ```
 6. Switch one of the user-managed tablespaces to encryption.
 ```
-<copy>ALTER TABLESPACE omtbs ENCRYPTION USING 'AES192' ENCRYPT;</copy>
+<copy>ALTER TABLESPACE omtbs ENCRYPTION 'AES192' ENCRYPT;</copy>
 ```
 7. Check that the tablespaces are encrypted.
 ```
