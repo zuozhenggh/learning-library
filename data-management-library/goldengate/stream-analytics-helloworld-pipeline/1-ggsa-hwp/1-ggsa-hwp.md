@@ -1,15 +1,15 @@
 
 # Your HelloWorld Pipeline in 15 minutes!
 
+## Introduction
+
+A pipeline includes a sequence of data processing stages such as, Query, Pattern, Rule, Query Group, Custom, and Scoring. You can apply business logic to an input data stream, within a pipeline.
+
 ## About this Lab
 
 This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 15 minutes!
 
 *Estimated Time*: 15 minutes
-
-## Introduction
-
-A pipeline includes a sequence of data processing stages such as, Query, Pattern, Rule, Query Group, Custom, and Scoring. You can apply business logic to an input data stream, within a pipeline.
 
 ### Objectives
 In this Lab you will:
