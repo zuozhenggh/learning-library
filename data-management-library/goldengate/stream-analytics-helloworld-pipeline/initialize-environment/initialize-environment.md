@@ -150,4 +150,4 @@ Now with access to your remote desktop session, validate your environment before
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Ashish Kumar, Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, November 2021
+* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, December 2021

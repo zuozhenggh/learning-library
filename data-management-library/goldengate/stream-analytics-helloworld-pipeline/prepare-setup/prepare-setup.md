@@ -54,4 +54,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Pratibha Manjunath, Rene Fontcha
 * **Contributors** - Sumathi Nelapati, Principal Member Technical Staff
-* **Last Updated By/Date** - Pratibha Manjunath , November 2021
+* **Last Updated By/Date** - Pratibha Manjunath , December 2021

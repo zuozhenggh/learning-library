@@ -7,7 +7,7 @@ A pipeline includes a sequence of data processing stages such as, Query, Pattern
 
 *Estimated Time*: 15 minutes
 
-## About this Lab
+### About this Lab
 
 This lab provides steps to create a basic pipeline, add a query stage and a filter to it, and publish the pipeline; all this in less than 15 minutes!
 
@@ -20,7 +20,7 @@ In this Lab you will:
 - Add a Filter to the Query stage
 - Publish the Pipeline
 
-### **Prerequisites**
+### Prerequisites
 This Lab assumes you have:
 - A Free Tier, Paid, or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
@@ -171,4 +171,4 @@ To publish the pipeline:
 ## Acknowledgements
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer, GoldenGate Stream Analytics
 * **Contributors** - Prabhu Thukaram, Senior Director, Software Development
-* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, September 2021
+* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, December 2021

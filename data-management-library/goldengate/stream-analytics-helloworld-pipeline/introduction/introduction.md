@@ -48,4 +48,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Pratibha Manjunath, Senior User Assistance Developer
 * **Contributors** - Sumathi Nelapati
-* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, November 2021
+* **Last Updated By/Date** - Pratibha Manjunath, GoldenGate Stream Analytics, December 2021
