@@ -60,6 +60,12 @@ In this lab we will create a compute instance, install httpd server, attach bloc
 2. Once cloud Shell is launched. Enter command **ssh-keygen**, press enter for all prompts. This will create a ssh key pair. Enter command;
 ```
  <copy>
+ssh-keygen
+</copy>
+```
+
+```
+ <copy>
 bash
 cd .ssh
 cat id_rsa.pub
