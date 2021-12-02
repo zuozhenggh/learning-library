@@ -187,26 +187,26 @@ Follow steps below to establish a unique static hostname that will be enforced o
     ![](./images/novnc-landing-2.png " ")
     ![](./images/novnc-landing-3.png " ")
 
-4. Double-Click on *google-chrome.desktop* icon, Keep *Make Google Chrome the default browser* checked, uncheck *Automatic Usage Statistics & Crash reporting* and click *OK*
+10. Double-Click on *google-chrome.desktop* icon, Keep *Make Google Chrome the default browser* checked, uncheck *Automatic Usage Statistics & Crash reporting* and click *OK*
 
     ![](./images/novnc-custom-chrome-1a.png " ")
 
-5. Click on *Get Started*, on the next 3 pages click on *Skip*, and finally on *No Thanks*.
+11. Click on *Get Started*, on the next 3 pages click on *Skip*, and finally on *No Thanks*.
 
     ![](./images/novnc-custom-chrome-3a.png " ")
     ![](./images/novnc-custom-chrome-4a.png " ")
     ![](./images/novnc-custom-chrome-5a.png " ")
     ![](./images/novnc-custom-chrome-6a.png " ")
 
-6. Click in the *Three dots* at the top right, then select *"Bookmarks >> Show bookmarks bar"*
+12. Click in the *Three dots* at the top right, then select *"Bookmarks >> Show bookmarks bar"*
 
     ![](./images/add-bookmarks-01.png " ")
 
-7. Right-click anywhere in the *Bookmarks bar area*, then Uncheck *Show apps shortcuts* and *Show reading list*
+13. Right-click anywhere in the *Bookmarks bar area*, then Uncheck *Show apps shortcuts* and *Show reading list*
 
     ![](./images/add-bookmarks-04.png " ")
 
-8. Enter the URL below in the *Address* field and press *Enter* to access the *LiveLabs* homepage.
+14. Enter the URL below in the *Address* field and press *Enter* to access the *LiveLabs* homepage.
 
     ```
     <copy>http://bit.ly/golivelabs</copy>
@@ -214,30 +214,30 @@ Follow steps below to establish a unique static hostname that will be enforced o
 
     ![](./images/add-bookmarks-02.png " ")
 
-9. Click on the *star* at the end of the *Address* field, then on *Add bookmark* to create a bookmark to *LiveLabs* homepage
+15. Click on the *star* at the end of the *Address* field, then on *Add bookmark* to create a bookmark to *LiveLabs* homepage
 
     ![](./images/add-bookmarks-03.png " ")
 
-10. Keep everything unchanged and click on *Done*.
+16. Keep everything unchanged and click on *Done*.
 
     ![](./images/add-bookmarks-05.png " ")
 
-11. Click in the *Three dots* at the top right, then select *Settings*
+17. Click in the *Three dots* at the top right, then select *Settings*
 
     ![](./images/add-bookmarks-06.png " ")
 
-12. Scroll down to *On Startup* section, select *open a specific page or set of pages*, and select *Use current pages* or simply add the *LiveLabs* address you set earlier as bookmark.
+18. Scroll down to *On Startup* section, select *open a specific page or set of pages*, and select *Use current pages* or simply add the *LiveLabs* address you set earlier as bookmark.
 
     ![](./images/add-bookmarks-07.png " ")
 
-13. Run the following from terminal session to initialize LiveLabs browser windows.
+19. Run the following from terminal session to initialize LiveLabs browser windows.
 
     ```
     <copy>
     $HOME/.livelabs/init_ll_windows.sh
     </copy>
     ```
-14. If the *`desktop_app1_url`* and/or *`desktop_app2_url`* are applicable to the workshop, test with *chrome-window2* chrome profile to validate before proceeding to custom image creation.
+20. If the *`desktop_app1_url`* and/or *`desktop_app2_url`* are applicable to the workshop, test with *chrome-window2* chrome profile to validate before proceeding to custom image creation.
 
     e.g. The example below is from the *DB Security - Key Vault* workshop
 
@@ -251,7 +251,7 @@ Follow steps below to establish a unique static hostname that will be enforced o
     </copy>
     ```
 
-15. Update *vncserver* startup script to add dependency(ies) on primary service(s) supporting Web Apps behind *`desktop_app1_url`* and/or *`desktop_app2_url`*. This will prevent premature web browser startup leading to *404-page-not-found-error* when the app requested is not yet ready.
+21. Update *vncserver* startup script to add dependency(ies) on primary service(s) supporting Web Apps behind *`desktop_app1_url`* and/or *`desktop_app2_url`*. This will prevent premature web browser startup leading to *404-page-not-found-error* when the app requested is not yet ready.
 
     - Edit `/etc/systemd/system/vncserver_${appuser}@\:1.service` and append the dependent service(s) at the end of the starting with **After=**
 
@@ -269,18 +269,18 @@ Follow steps below to establish a unique static hostname that will be enforced o
 
     - Verify the output as shown above and confirm that the service dependency has been successfully added
 
-16. Close all browser windows opened.
+22. Close all browser windows opened.
 
-17. Right-Click anywhere in the desktop and Uncheck *Keep aligned*
+23. Right-Click anywhere in the desktop and Uncheck *Keep aligned*
 
     ![](./images/novnc-organize-desktop-1.png " ")
 
-18. Right-Click anywhere in the desktop and select *Organize Desktop by Name*
+24. Right-Click anywhere in the desktop and select *Organize Desktop by Name*
 
     ![](./images/novnc-organize-desktop-2.png " ")
     ![](./images/novnc-organize-desktop-3.png " ")
 
-19. Review *`$HOME/.bash_profile`* and confirm the presence of the following default code block (add if missing).
+25. Review *`$HOME/.bash_profile`* and confirm the presence of the following default code block (add if missing).
 
     ```
     # Get the aliases and functions
@@ -289,7 +289,7 @@ Follow steps below to establish a unique static hostname that will be enforced o
     fi
     ```
 
-20. After validating successful setup from URL displayed by above script, cleanup the setup directory "*/tmp/ll-setup*"
+26. After validating successful setup from URL displayed by above script, cleanup the setup directory "*/tmp/ll-setup*"
 
     ```
     <copy>
