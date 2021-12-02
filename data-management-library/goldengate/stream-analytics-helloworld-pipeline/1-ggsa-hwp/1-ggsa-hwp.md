@@ -7,7 +7,7 @@ This lab provides steps to create a basic pipeline, add a query stage and a filt
 
 *Estimated Time*: 15 minutes
 
-## What is a Pipeline?
+## Introduction
 
 A pipeline includes a sequence of data processing stages such as, Query, Pattern, Rule, Query Group, Custom, and Scoring. You can apply business logic to an input data stream, within a pipeline.
 
