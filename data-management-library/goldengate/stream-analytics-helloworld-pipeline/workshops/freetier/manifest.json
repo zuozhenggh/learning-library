@@ -26,7 +26,7 @@
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 4: Create Your HelloWorld Pipeline in 10 Minutes",
+      "title": "Lab 4: Create Your HelloWorld Pipeline in 15 Minutes",
       "description": "How to create a basic pipeline using a File stream and add a Query Stage and a Filter to it,",
       "filename": "../../1-ggsa-hwp/1-ggsa-hwp.md"
     },
