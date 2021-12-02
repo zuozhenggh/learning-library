@@ -3,7 +3,7 @@
 ## Introduction
 This lab describes how to install Node-RED on Oracle Autonomous Linux.
 
-Estimated ime: 20 minutes
+Estimated time: 20 minutes
 
 ### Objectives
 

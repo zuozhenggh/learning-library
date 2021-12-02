@@ -5,7 +5,7 @@
 In this lab, we will configure the Virtual Cloud Network to allow incoming traffic on port 1180 (the default port of Node-RED).
 Furthermore, we will also configure the firewall on Oracle Autonomous Linux (OAL) to allow incoming traffic on the same port.
 
-Estimated ime: 20 minutes
+Estimated time: 20 minutes
 
 ### Objectives
 * Configure Network Security List to allow incoming traffic on port 1880
