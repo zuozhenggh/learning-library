@@ -98,7 +98,7 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 
 
 ### Task 2.2: Call the SQL Interpreter and run SQL Statements
-To call the SQL interpreter and run SQL statements:
+Let’s create another paragraph to call the SQL interpreter and run SQL statements:
 
 1. Edit the paragraph tag and type ``%sql`` to call the SQL interpreter.
 2. Type ``select table_name from user_tables`` and click Run. The command returns the table names in a tabular format - a table with one column `TABLE_NAME`, as shown in the screenshot:
@@ -108,8 +108,8 @@ To call the SQL interpreter and run SQL statements:
 
 ### Task 2.3: Call the PL/SQL Interpreter and run PL/SQL Scripts
 
-To call the PL/SQL interpreter and run PL/SQL scripts:
-1. Edit the paragraph tag and type ``%script`` to call the PL/SQL interpreter.
+Let’s create another paragraph to call the PL/SQL interpreter and run PL/SQL scripts:
+1. In the new paragraph, type ``%script`` to call the PL/SQL interpreter.
 2. Type the following command and click Run. Alternatively, you can press Shift+Enter keys to run the paragraph.
 
     ```
@@ -142,7 +142,7 @@ The PL/SQL script successfully creates the table SMALL_TABLE. The PL/SQL script 
 
 
 ### Task 2.4: Call the Python Interpreter and run Python Statements
-To call the Python interpreter and run python statements:
+Let’s create another paragraph to call the Python interpreter and run python statements:
 1. Edit the paragraph tag and type ``%python`` to call the python interpreter.
 2. Type the following command and click Run.
 

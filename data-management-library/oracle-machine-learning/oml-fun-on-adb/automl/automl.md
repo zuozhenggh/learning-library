@@ -62,7 +62,7 @@ To sign into Oracle Machine Learning (OML) user interface from the Autonomous Da
 An Experiment can be described as a work unit that contains the definition of data source, prediction target, and prediction type along with optional settings. After an Experiment runs successfully, it presents you a list of machine learning models in the leader board. You can select any model for deployment, or use it to create a notebook based on the selected model.
 When creating an Experiment, you must define the data source and the target of the experiment. To create an Experiment:
 
-1. Click **AutoML** on your Oracle Machine Learning home page. The AutoML Experiments page opens.
+1. Click **AutoML** on your Oracle Machine Learning home page. Alternatively, you can go to the left navigation menu at the upper left corner of the page and click AutoML. The AutoML Experiments page opens.
 
 	![Homepage](images/homepage_automl.png)
 
@@ -78,13 +78,13 @@ When creating an Experiment, you must define the data source and the target of t
 
 5. In the **Data Source** field, click the search icon to open the Select Table dialog box. Select the **CUSTOMERS360** table and click **OK**.
 
-6. In the **Predict** drop-down list, select the column **AFFINITY_CARD** from the ``CUSTOMERS360`` table. This is the target for your prediction.
+6. In the **Predict** drop-down list, select the column **AFFINITY_CARD** from the ``CUSTOMERS360`` table. You can also type the column name and the column names are filtered for easier selection. This is the target for your prediction.
 
 7. In the **Prediction Type** field, the prediction type is automatically selected based on target field data type and cardinality. In this lab, **Classification** is automatically selected.	The supported prediction types are:
 
 	* Classification: For non-numeric data type, Classification is selected by default.
 	* Regression: For numeric data type, Regression is selected by default.
-8. In the **Case ID** field, select **CUST_ID**. The Case ID helps in data sampling and dataset split to make the results reproducible between experiments. It also aids in reducing randomness in the results. This is an optional field.  
+8. In the **Case ID** field, select **CUST_ID**. For easier selection, you can also type the column name and the column names are filtered. The Case ID helps in data sampling and dataset split to make the results reproducible between experiments. It also aids in reducing randomness in the results. This is an optional field.  
 
 
 ### Task 2.1: Adjust Additional Settings
@@ -112,7 +112,7 @@ To adjust additional settings of this experiment:
 	Note the following about the two options:
 
 	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of pipeline combinations and hence yields faster results.
-	* **Better Accuracy:** Select this option if you want more pipeline combinations to be tried for possibly more accurate models. A pipeline is defined as an algorithm, selected data feature set, and set of algorithm hyperparameters. 
+	* **Better Accuracy:** Select this option if you want more pipeline combinations to be tried for possibly more accurate models. A pipeline is defined as an algorithm, selected data feature set, and set of algorithm hyperparameters.
 
 > **Note:** This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
 
@@ -133,13 +133,11 @@ The Leader Board displays the top performing models relative to the model metric
 
 	![Leader Board](images/leaderboard_1.png)
 
-2. Click on any row in the Leader Board to enable the options - **Deploy, Rename**, and **Create Notebook**. Note that these options are greyed out if you do not click on the rows.
-
-3. Click **Metrics**. The **Select Additional Metrics** dialog opens.
+2. Click **Metrics**. The **Select Additional Metrics** dialog opens.
 
 	![Leader Board options](images/leaderboard_options.png)
 
-4. In the Select Additional Metrics dialog, click **Precision, Recall, ROC AUC**, and then click the close icon to close the dialog.
+3. In the Select Additional Metrics dialog, click **Precision, Recall, ROC AUC**, and then click the close icon to close the dialog.
 
 	![Select Additional Metrics dialog](images/select_metrics.png)
 
@@ -147,6 +145,7 @@ The Leader Board displays the top performing models relative to the model metric
 
 	![Leader Board showing selected metrics](images/leaderboard_2.png)
 
+4. Click on any row in the Leader Board to enable the options - **Deploy, Rename**, and **Create Notebook**. Note that these options are greyed out if you do not click on the rows.
 
 5. Click on the Naive Bayes model, and then click **Rename**. In the Rename Model dialog, enter `NB_Customer360` to rename the auto generated model name for Naive Bayes. Click **OK**.  	
 
@@ -164,6 +163,8 @@ The Leader Board displays the top performing models relative to the model metric
 
 
 * **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. Confusion Matrix is usually computed on a test dataset and helps in assessing the model quality. Here, the Confusion Matrix results are classified into true positive (actual = predicted = 1) and true negative (actual = predicted  = 0), and false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
+
+	>Note: The values shown here * 100 represent percentages of the test data that correspond to each of the confusion matrix entries.
 
 	![View Confusion Matrix](images/confusion_matrix.png)
 
