@@ -35,7 +35,7 @@ In this lab, you will create a basic integration flow to process the EDI documen
 
 
 ### Prerequisites
-> **Note** : This Lab assumes you have completed all the previous labs. Importantly, [Lab4: Defining B2B Schemas and Documents](../workshops/freetier/?lab=b2b-documents-schemas) & [Lab5: Working with B2B Trading Partner Manager](..workshops/freetier/?lab=b2b-trading-partner-manager)
+> **Note** : This Lab assumes you have completed all the previous labs. Importantly, [Lab2: Defining B2B Schemas and Documents](../workshops/freetier/?lab=b2b-documents-schemas) & [Lab3: Working with B2B Trading Partner Manager](..workshops/freetier/?lab=b2b-trading-partner-manager)
 
 ## Task 1: Create an Integration
 
