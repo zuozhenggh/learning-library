@@ -253,7 +253,7 @@ This is the initial binding order of the interpreters. You can change the order 
 	> **Note:** The interpreter binding order that is set for a notebook applies to all the paragraphs in that notebook. However, you can override the binding of an individual paragraph also. This is an advanced topic, and is not covered in this workshop.
 
 In this step, you learn how to set the interpreter bindings:
-1. Open the **Classification_DT** notebook, and click ![gear icon](images/gear.png) on the top right corner in the notebook. This opens the interpreter settings.
+1. Open the **Classification_DT** notebook, and click ![gear icon](images/gear.png) on the top right corner of the notebook. This opens the interpreter settings.
 
 	![Gear icon](images/interpreter_binding_icon.png)
 
@@ -322,4 +322,4 @@ This completes the task of creating a job.
 ## Acknowledgements
 * **Author** -  Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -   Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, November, 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, December, 2021

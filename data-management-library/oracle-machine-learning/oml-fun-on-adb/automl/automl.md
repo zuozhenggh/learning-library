@@ -261,7 +261,15 @@ To view the generated notebook Customer 360:
 
  	![Generated Notebook](images/notebooks_generated.png)
 
-3. The generated notebook _NB Customer 360_  opens in the notebook editor. This notebook contains the pre-generated heading _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_. Scroll down to view all the paragraphs in the notebook.
+3. The generated notebook _NB Customer 360_  opens in the notebook editor. This notebook contains the pre-generated heading _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_. Click the gear icon on the upper right corner of the notebook to view and set the interpreter binding order.
+
+	![gear icon](images/gear_icon.png)
+
+	You can change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
+
+	![Enable and disable interpreter binding](images/enable_disable_int_bindings.png)
+
+4. Scroll down to view all the paragraphs in the notebook.
 
 * The paragraph titled _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_ contains the experiment metadata. Click the  Run icon to run the markdown paragraph and view the metadata.
 
@@ -271,11 +279,11 @@ To view the generated notebook Customer 360:
 
 	![Generated Notebook](images/generated_nb_1.png)
 
-* The paragraph titled _Build Model_ contains the code to build the model. In this lab, it is the Naive Bayes model. The settings used to produce the model using AutoML are provided here in the ``nb_settings`` variable. The fourth paragraph contains the code to view the model details.
+* The paragraph titled _Build Model_ contains the code to build the model. In this lab, it is the Naive Bayes model. The settings used to produce the model using AutoML are provided here in the ``nb_settings`` variable. The paragraph titled _Show Model Details_ contains the code to view the model details.
 
 	![Generated Notebook](images/generated_nb_2.png)
 
-* The fifth paragraph contains the code to score the data, and the last paragraph to view the model quality metric.
+* The paragraph titled _Data for Scoring_ contains the code to score the data, and the paragraph _Show model quality metric_ contains the code to view the model quality metric.
 
 	![Generated Notebook](images/generated_nb_3.png)
 
@@ -291,4 +299,4 @@ This completes the task of creating a notebook based on a model and viewing the 
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, November, 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, December, 2021
