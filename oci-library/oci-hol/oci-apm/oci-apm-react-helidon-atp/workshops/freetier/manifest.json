@@ -13,21 +13,27 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Create APM Domain and obtain Data Upload Endpoint and Data Keys",
+            "title": "Lab 1: Verify My Todo application",
+            "description": "Verify My Todo application",
+            "filename": "../../00-verify-app/verify-app.md"
+        },
+        {
+            "title": "Lab 2: Create APM Domain and obtain Data Upload Endpoint and Data Keys",
             "description": "Create APM Domain and obtain Data Upload Endpoint and Data Keys",
             "filename": "../../01-create-domain/create-domain.md"
         },
         {
-            "title": "Lab 2: Setup APM Tracer in Maven & Helidon, and build custom spans in Java",
+            "title": "Lab 3: Setup APM Tracer in Maven & Helidon, and build custom spans in Java",
             "description": "Setup APM Tracer in Maven & Helidon, and build custom spans in Java",
             "filename": "../../02-configure-tracer/configure-tracer.md"
-        },        {
-            "title": "Lab 3: Update API Gateway, configure APM Browser Agent, and update Object Storage",
+        },
+        {
+            "title": "Lab 4: Update API Gateway, configure APM Browser Agent, and update Object Storage",
             "description": "Update API Gateway, configure APM Browser Agent, and update Object Storage",
             "filename": "../../03-setup-browser/setup-browser.md"
         },
         {
-            "title": "Lab 4: View traces and spans in APM Trace Explorer",
+            "title": "Lab 5: View traces and spans in APM Trace Explorer",
             "description": "View traces and spans in APM Trace Explorer",
             "filename": "../../04-view-traces/view-traces.md"
         },

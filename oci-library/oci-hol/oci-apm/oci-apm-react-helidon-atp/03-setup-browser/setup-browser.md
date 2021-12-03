@@ -17,8 +17,8 @@ Estimated time: 15 minutes
 
 ### Prerequisites
 
-* This lab requires completion of lab 1 & lab 2 of this workshop
-* This Lab also assumes you have completed the tutorials in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196).
+* This lab requires completion of lab 1, lab 2 and lab 3 of this workshop
+* This Lab also assumes you have completed the tutorials 1, 2 and 3 in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196).
 
 
 ## Task 1: Add APM headers to the API Gateway
@@ -123,8 +123,8 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 	*	**todolist browser** is the service name for your APM Browser Agent. If you don't set a value, the default service name ‘APM Browser’ is assigned.
 	*	**My TodoList App** is the web application name value.
-	*	**ociDataUploadEndpoint** is the Data Upload Endpoint value, which can be obtained from the Administration menu in the APM Domain page.  Replace with the value collected in the Lab 1. Note that there are ***two places where Data Upload Endpoint must be specified***.
-	*	**APM Public Datakey** is the APM Public Data key value. Replace with the value collected from the Oracle Cloud console in the Lab 1.
+	*	**ociDataUploadEndpoint** is the Data Upload Endpoint value, which can be obtained from the Administration menu in the APM Domain page.  Replace with the value collected in the Lab 2. Note that there are ***two places where Data Upload Endpoint must be specified***.
+	*	**APM Public Datakey** is the APM Public Data key value. Replace with the value collected from the Oracle Cloud console in the Lab 2.
 
 	![APM Browser Agent](images/10-1-browseragent.png " ")
 

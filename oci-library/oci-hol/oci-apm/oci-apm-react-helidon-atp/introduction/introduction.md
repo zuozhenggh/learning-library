@@ -10,7 +10,7 @@ This workshop walks you through how to:
 * Trace the workflow using Oracle Trace Explorer
 
 
-Estimated Workshop Time: 60 minutes
+Estimated Workshop Time: 65 minutes
 
 ### About Oracle Cloud Infrastructure Application Performance Management (OCI APM)
 
@@ -40,7 +40,7 @@ In this workshop, you will:
 
 * An Oracle Cloud Account
 *	Oracle Cloud Account Administrator role or manage apm-domains permission in the target compartment
-*	This lab uses My ToDo List Application that you can build with the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) Workshop in the LiveLabs. Complete all the tutorials in the workshop and ensure the application runs on the OCI API Gateway.
+*	This lab uses My ToDo List Application that you can build with the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) workshop in the LiveLabs. Complete the Tutorials 1 to 3 in the workshop and ensure the application runs on the OCI API Gateway. Note: Do not perform the Tutorial 4 as it is a cleanup lab that removes the application setup.
 
   ![](images/1-1-todoapp.png " ")
 
