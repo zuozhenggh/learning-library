@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will use  to set up an OCI compartment and create an APM Domain. You will acquire a Data Upload Endpoint and a Private Data Key, which are needed to configure the APM Tracer on the application.
+In this lab, you will use Oracle Cloud console to set up an OCI compartment and create an APM Domain. You will acquire a Data Upload Endpoint and a Private Data Key, which are needed to configure the APM Tracer on the application.
 
 Estimated time: 10 minutes
 
