@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial, you will add APM headers to the CORS policy in the API Gateway, which you created in the Native Cloud App Workshop, enable the APM Browser Agent to capture the frontend traces, and finally update the OCI Object Storage.
+In this tutorial, first, you will add APM headers to the CORS policy in the API Gateway that you created in the Native Cloud App Workshop, second, enable the APM Browser Agent to capture the frontend traces, and finally upload the files built by the React JS, to the OCI Object Storage.
 
 Estimated time: 15 minutes
 
