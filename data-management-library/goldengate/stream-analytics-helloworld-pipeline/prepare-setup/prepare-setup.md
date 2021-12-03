@@ -33,15 +33,15 @@ This workshop requires a certain number of ports to be available:
 | 443            | GGSA Console (https)                  | TCP
 | 6080           | noVNC Remote Desktop                  | TCP
 
-1.  Go to **Networking** >> **Virtual Cloud Networks**
+1.  Go to Networking >> Virtual Cloud Networks
 2.  Choose your network
-3.  Under **Resources**, select **Security Lists**
-4.  Click **Default Security Lists** under **Create Security List**
-5.  Click **Add Ingress Rules**
+3.  Under Resources, select Security Lists
+4.  Click Default Security Lists under Create Security List
+5.  Click Add Ingress Rules
 6.  Enter the following:  
     - Source CIDR: 0.0.0.0/0
     - Destination Port Range: *Refer to above table*
-7.  Click **Add Ingress Rules**
+7.  Click Add Ingress Rules
 
 ## Task 3: Setup Compute   
 Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
