@@ -1,21 +1,23 @@
-# Access and Utilise REST API via JMS SDKs and Postman
+# Access and Utilize REST API via JMS SDKs and Postman
 
 ## Introduction
 
-This lab walks you through the steps to set up the configuration on your local host machine to access Java Management Service (JMS) REST APIs via SDKs and Postman. 
+This lab walks you through the steps to set up the configuration on your local host machine to access Java Management Service (JMS) REST APIs via SDKs and Postman.
 
 Estimated Time: 15 minutes
 
 ### Objectives
+
 In this lab, you will:
 
 * Access API via SDK for JMS (Java and Python Examples)
 * Access REST API via Postman for JMS
 
-### Prerequisites:
+### Prerequisites
+
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 * You are using an Oracle Linux image on your host machine or compute instance for this workshop.
-* Access to the cloud environment and resources configured in Lab 5 
+* Access to the cloud environment and resources configured in Lab 5
 
 ## Task 1: Access SDKs for JMS
 
@@ -26,7 +28,7 @@ In this lab, you will:
 
     ![image of java sdk example code](/../images/java-sdk-own.png)
 
-3. Copy the example SDK code into a .java File in the SDK downloaded. Ensure the file path for the newly created file adheres to the sample SDK code. 
+3. Copy the example SDK code into a .java File in the SDK downloaded. Ensure the file path for the newly created file adheres to the sample SDK code.
 
     ![image of java sdk filepath](/../images/java-sdk-filepath.png)
 
@@ -39,31 +41,32 @@ In this lab, you will:
     ![image of java sdk output](/../images/java-sdk-response.png)
 
 ### Access Python SDK for JMS
+
 1. Set up a virtual environment
 
   Oracle recommends that you run the SDK in a virtual environment with virtualenv. This allows you to isolate the dependencies for the SDK and avoids any potential conflicts with other   Python packages which may already be installed (e.g. in your system-wide Python).
   lab
-  With Linux, virtualenv is usually in a separate package from the main Python package. If you need to install virtualenv, use `pip install virtualenv`. 
-  
+  With Linux, virtualenv is usually in a separate package from the main Python package. If you need to install virtualenv, use `pip install virtualenv`.
+
   Start by creating a new directory to work with:
-      
+
       ```
       <copy>
       mkdir testpy && cd testpy
       </copy>
       ```
-  
+
   To create and activate a virtual environment:
-  
+
       ```
       <copy>
       virtualenv <environment name>
       source <environment name>/bin/activatelab
       </copy>
       ```
-  
+
   For example:
-  
+
       ```
       <copy>
       virtualenv env
@@ -72,11 +75,11 @@ In this lab, you will:
       ```   
 
 2. Download the [SDK](https://github.com/oracle/oci-python-sdk/releases) and extract it. Delete the 'venv' folder and copy the rest of the contents to the `testpy` directory created in step 1.
-    
+
     ![image of python sdk ](/../images/python-sdk-contents.png)
 
 3. 'testpy' directory should contain the following:
-    
+
     ![image of python sdk example code](/../images/folder-structure.png)
 
 
@@ -84,11 +87,11 @@ In this lab, you will:
 lab
     ![image of python sdk example code](/../images/python-sample-code.png)
 
-5. Create a `get_fleet_example.py` file in the SDK downloaded and copy the example SDK code into it. 
-    
+5. Create a `get_fleet_example.py` file in the SDK downloaded and copy the example SDK code into it.
+
     ![image of python sdk example code](/../images/get-fleet.png)
 
-6. Ensure the file path for the newly created file adheres to the sample SDK code. 
+6. Ensure the file path for the newly created file adheres to the sample SDK code.
 
     ![image of python sdk example code](/../images/python-sdk-response.png)
 
@@ -116,11 +119,11 @@ The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs
 
 1. Download and install [Postman](https://www.postman.com/downloads/)
 
-2. Download [JSON Set Up Files](https://github.com/ashishksingh/postman_collection_for_oci_rest) 
-   
+2. Download [JSON Set Up Files](https://github.com/ashishksingh/postman_collection_for_oci_rest)
+
     ![image of postman github](/../images/github-postman.png)
 
-3. Login to Postman and Click **Import** to import JSON Set up files 
+3. Login to Postman and Click **Import** to import JSON Set up files
 
     ![image of Postman import](/../images/postman-import-json.png)
 
@@ -129,15 +132,15 @@ The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs
     ![image of Postman import](/../images/json-import.png)
 
 5. Click **Import**
-    
+
     ![image of Postman import files](/../images/import-github-json-postman.png)
 
 6. Click **Environments** and **OCI_Environment**
-    
+
     ![image of environment Variable](/../images/env-click.png)
 
-7. Input the **tenancyId, authUserID, keyFingerprint** from the ~/.oci/config file created in Lab 5 and fill in **Initial Value** and **Current Value** Columns. 
-    
+7. Input the **tenancyId, authUserID, keyFingerprint** from the ~/.oci/config file created in Lab 5 and fill in **Initial Value** and **Current Value** Columns.
+
     ![image of environment config file](/../images/env-configfile.png)
 
 8. Fill in the **privateKey** from the private key file downloaded in Lab 5. Type the following command to extract the private key
@@ -166,6 +169,7 @@ The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs
     ![image of initialisation confirmation](/../images/initialise-confirmation.png)
 
 ### Send a Get Fleet Request
+
 1. Add a request under **`OCI_REST_COLLECTION`**
 
     ![image of add request](/../images/add-request.png)
@@ -189,7 +193,7 @@ You may now **proceed to the next lab.**
 
 * If you encounter further issues, review the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) page.
 
-* Alternatively, you may seek help for 
+* Alternatively, you may seek help for
     * [SDK Configuration](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm)
     * [Java SDK](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdk.htm)
     * [Python SDK](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/pythonsdk.htm)
@@ -201,8 +205,9 @@ You may now **proceed to the next lab.**
 
 * You may review [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) in the OCI documentation.
 
-* If you are still unable to resolve your issue, you may open a a support service request using the **Help** menu in the OCI console. 
+* If you are still unable to resolve your issue, you may open a a support service request using the **Help** menu in the OCI console.
 
 ## Acknowledgements
+
 * **Author** - Esther Neoh, Java Management Service
 * **Last Updated By** - Esther Neoh, November 2021

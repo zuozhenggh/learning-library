@@ -91,6 +91,6 @@ Click on the next lab to **Get Started**.
 
 - **Author** - Manish Garodia, Principal User Assistance Developer, Database Technologies
 
-- **Contributors** - Suresh Rajan
+- **Contributors** - Suresh Rajan, Steven Lemme, Ashwini R
 
-- **Last Updated By/Date** - Manish Garodia, November 2021
+- **Last Updated By/Date** - Manish Garodia, December 2021
