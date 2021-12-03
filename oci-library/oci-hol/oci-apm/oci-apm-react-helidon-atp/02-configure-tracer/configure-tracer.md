@@ -466,5 +466,7 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
-- **Contributors** -
-- **Last Updated By/Date** - Yutaka Takatsu, September 2021
+- **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
+David Le Roy, Director, Product Management,<br>
+Avi Huber, Senior Director, Product Management
+- **Last Updated By/Date** - Yutaka Takatsu, December 2021

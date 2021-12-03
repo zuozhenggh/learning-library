@@ -98,7 +98,7 @@ Estimated time: 10 minutes
 	vi ~/helidon-quickstart-se-2/src/main/resources/application.yaml
 	</copy>
 	```
-2.	Update the application.yaml file as in the below example. Note the port number is ***8081***. Ensure to replace ***&lt;data upload endpoint&gt;*** and ***&lt;private data key&gt;*** with the values collected from the OCI console in the earlier steps.
+2.	Update the application.yaml file as in the below example. Note the port number is ***8081***. Ensure to replace ***&lt;data upload endpoint&gt;*** and ***&lt;private data key&gt;*** with the values collected from the Oracle Cloud console in the earlier steps.
 
 		app:
 		  greeting: "Hello from SE-2"
@@ -224,13 +224,13 @@ Refer to the sample image below:
 	</copy>
 	```
 
-	![OCI Console](images/6-2-greet_test.png " ")
+	![Oracle Cloud console](images/6-2-greet_test.png " ")
 
 
 ## Task 7: Verify the traces of the second service in APM Trace Explorer
 
 1.	From the OCI menu, select **Observability & Management**, then **Trace Explorer**.  Verify that there is a trace with the service name ***helidon-http2***.
-	![OCI Console](images/7-1-trace_explorer.png " ")
+	![Oracle Cloud console](images/7-1-trace_explorer.png " ")
 
  In the next Lab, you will modify the first service to call the second service.
 
@@ -239,5 +239,7 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
-* **Contributors** -
-* **Last Updated By/Date** - Yutaka Takatsu, September 2021
+- **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
+David Le Roy, Director, Product Management,<br>
+Avi Huber, Senior Director, Product Management
+* **Last Updated By/Date** - Yutaka Takatsu, December 2021

@@ -87,7 +87,7 @@ Estimated time: 15 minutes
 	vi ~/helidon-quickstart-se/src/main/resources/application.yaml
 	</copy>
 	```
-	Add the following properties to the file. Replace ***&lt;data upload endpoint&gt;*** and ***&lt;private data key&gt;*** with the values collected from the OCI console in the earlier steps. For more details, see [Use APM Tracer for Helidon](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/use-apm-tracer-helidon.html).  
+	Add the following properties to the file. Replace ***&lt;data upload endpoint&gt;*** and ***&lt;private data key&gt;*** with the values collected from the Oracle Cloud console in the earlier steps. For more details, see [Use APM Tracer for Helidon](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/use-apm-tracer-helidon.html).  
 
 
 		tracing:
@@ -212,5 +212,7 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
-- **Contributors** -
-- **Last Updated By/Date** - Yutaka Takatsu, September 2021
+- **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
+David Le Roy, Director, Product Management,<br>
+Avi Huber, Senior Director, Product Management
+- **Last Updated By/Date** - Yutaka Takatsu, December 2021
