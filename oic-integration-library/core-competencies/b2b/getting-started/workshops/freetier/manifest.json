@@ -14,7 +14,7 @@
         },
         {
             "title": "Provision Oracle Integration Instance",
-            "filename": "../../provision/provision.md"
+            "filename": "../../../../../common/provision-oic/provision.md"
         },
         {
             "title": "Setup the Environment",
