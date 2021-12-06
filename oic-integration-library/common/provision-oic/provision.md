@@ -9,12 +9,12 @@ Estimated Lab Time: 10 minutes
 ### Objectives
 
 In this lab, you will:
-* Provision Integration Instance
+* Provision Integration Instance.
 
 ### Prerequisites
 
 This lab assumes you have:
-* An Oracle account
+* An Oracle account.
 
 ### Background
 
