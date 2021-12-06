@@ -16,7 +16,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Successfully provisioned Oracle Integration Instance and able to access the homepage.
+* Successfully provisioned Oracle Integration Instance and able to access the home page.
 
 ## Task 1: Enable File Server
 
@@ -40,7 +40,7 @@ To enable File Server:
 
    ![](images/file_server_enablement2.png)
 
-6. Once complete, the OIC icon changes back to green with an Active status, and File Server shows as Enabled.
+6. Once complete, the OIC icon changes back to green with an Active status, and File Server shows as Enabled. You may need to log out and log back in to Oracle Integration to access the newly activated File Server.
 
    ![](images/file_server_enablement3.png)
 
