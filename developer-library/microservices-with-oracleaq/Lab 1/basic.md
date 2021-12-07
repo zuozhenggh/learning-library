@@ -8,11 +8,11 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 
 - Multi-Consumer classic queue with Payload as RAW and  ADT using PL/SQL and Java.
     
-    <copy>
-    
-    cd $OracleAQ_HOME; source basicCreateQueue.sh;
-    
-    </copy>
+        <copy>
+
+        cd $OracleAQ_HOME; source basicCreateQueue.sh;
+
+        </copy>
     
 
 **Task 2: Basic Enqueue**
@@ -21,11 +21,11 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 
 - Enqueue for multi-consumer classic queue with Payload as RAW using PL/SQL and Java.
     
-    <copy>
-    
-    cd $OracleAQ_HOME; source basicEnqueue.sh;
-    
-    </copy>
+        <copy>
+
+        cd $OracleAQ_HOME; source basicEnqueue.sh;
+
+        </copy>
 
 **Task 3: Basic Dequeue**
 
@@ -33,11 +33,11 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 
 - Dequeue for multi-consumer classic queue with Payload as RAW using PL/SQL and Java.
     
-     <copy>
-    
-    cd $OracleAQ_HOME; source basicDequeue.sh;
-    
-    </copy>
+         <copy>
+
+        cd $OracleAQ_HOME; source basicDequeue.sh;
+
+        </copy>
 
 **Task 4: Clean ups**
 
@@ -47,11 +47,11 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
    
 - Drop Queue Tables
 
-    <copy>
-    
-    cd $OracleAQ_HOME; source basicCleanups.sh;
-    
-    </copy>
+        <copy>
+
+        cd $OracleAQ_HOME; source basicCleanups.sh;
+
+        </copy>
     
     
     
