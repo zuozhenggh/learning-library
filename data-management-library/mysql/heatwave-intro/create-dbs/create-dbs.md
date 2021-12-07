@@ -1,4 +1,4 @@
-# CREATE MYSQL DATABASE SYSTEM AND HEATWAVE CLUSTER
+# Create MySQL Database System and HeatWave Cluster
 ![INTRO](./images/00_mds_heatwave_2.png " ")
 
 ## Introduction
@@ -26,9 +26,7 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Create Virtual Cloud Network
 
-1. Navigation Menu   
-        Networking  
-            Virtual Cloud Networks
+1. Click **Navigation Menu**, **Networking**, then **Virtual Cloud Networks**  
     ![VCN](./images/03vcn01.png " ")
 
 2. Click **Start VCN Wizard**

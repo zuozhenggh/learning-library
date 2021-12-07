@@ -1,11 +1,13 @@
 # Track Java Usage in a Container
 
 ## Introduction
+
 This lab will guide you in creating a Docker image on your compute instance and how to enable Java Management Service to track Java usage in a container.
 
 Estimated Time: 30 minutes
 
 ### Objectives
+
 In this lab, you will:
 
 * Install Docker on your compute instance
@@ -20,6 +22,7 @@ In this lab, you will:
 * A compute instance with the resources configured in Lab 1 to Lab 4 (Management Agent, Fleet, Compartments, SSH key pair login). The compute instance should also have **Oracle JDK 8** installed.
 
 ## Task 1: Install Docker on your compute instance
+
 The following steps will describe installation of Docker on a compute instance running Oracle Linux 7, which was covered in Lab 2.
 
 1. Perform an SSH login into your OCI compute instance.
@@ -97,6 +100,7 @@ The following steps will describe installation of Docker on a compute instance r
 You now have successfully installed Docker on your compute instance.
 
 ## Task 2: Create a simple Java application
+
 This task will guide you on how to create a simple Java application that can be used in the Docker image that will be built later. If you already have a Java application packaged in a jar format, you may skip ahead to Task 3.
 
 1. Perform an SSH login into your OCI compute instance.
@@ -106,12 +110,12 @@ This task will guide you on how to create a simple Java application that can be 
   * If you are not already in the home directory of your compute instance, navigate there by running this.
     ```
     <copy>
-    cd ~ 
+    cd ~
     </copy>
     ```
-  
+
   * For the purposes of this lab, we will create a simple Java application in your home directory which prints odd numbers. Create a new directory and enter it with your terminal.
-    
+
     ```
     <copy>
     mkdir OddNumbers
@@ -122,9 +126,9 @@ This task will guide you on how to create a simple Java application that can be 
     cd OddNumbers
     </copy>
     ```
-    
+
   * Create a simple application that prints odd numbers by entering these commands.
-    
+
     ```
     <copy>
     sudo nano OddNumbers.java
@@ -133,7 +137,7 @@ This task will guide you on how to create a simple Java application that can be 
     ```
     <copy>
     import java.lang.*;
-    
+
     public class OddNumbers {
         public static void main(String[] args) throws Exception {
             System.out.println("This is my second program in java");
@@ -151,9 +155,9 @@ This task will guide you on how to create a simple Java application that can be 
     }//End of OddNumbers Class
     </copy>
     ```
-    
-  * Compile the Java code using this command. 
-    
+
+  * Compile the Java code using this command.
+
     ```
     <copy>
     javac OddNumbers.java
@@ -161,28 +165,28 @@ This task will guide you on how to create a simple Java application that can be 
     ```
     Another file called OddNumbers.class should appear after the command.
     &nbsp;
-    
+
   * Run the following command to create a jar file.
-    
+
     ```
     <copy>
     jar -cfe OddNumbers.jar OddNumbers OddNumbers.class
     </copy>
     ```
-    
+
   * Test the jar file to see if the output and entry point is correct. Sample output shown below. For more information on jar file creation, see this [article](https://docs.oracle.com/    javase/tutorial/deployment/jar/build.html).
-    
+
     ```
     <copy>
     java -jar OddNumbers.jar
     </copy>
     ```
-    
+
     Sample Output:
-    
+
     ```
     This is my second program in java
-    List of odd numbers from 1 to 15: 
+    List of odd numbers from 1 to 15:
     1
     3
     5
@@ -196,6 +200,7 @@ This task will guide you on how to create a simple Java application that can be 
 You have now created a simple Java application.
 
 ## Task 3: Create a Docker image with Oracle JDK
+
 This section will provide guidance on creating a Docker image running a Oracle JDK within the compute instance. If you already have a Docker image with Oracle JDK on it, you may pull your image into the compute instance, skip this task and proceed with Task 4.
 
 > **Note:** Currently, only containers with Oracle JDKs are able to be detected by the Java Usage Tracker.
@@ -209,7 +214,7 @@ This section will provide guidance on creating a Docker image running a Oracle J
     cd ~
     </copy>
     ```
-    
+
     ```
     <copy>
     sudo yum install git
@@ -223,7 +228,7 @@ This section will provide guidance on creating a Docker image running a Oracle J
     git clone https://github.com/oracle/docker-images.git
     </copy>
     ```
-    
+
     ```
     <copy>
     cp docker-images/OracleJava/17/Dockerfile ~/OddNumbers
@@ -234,13 +239,13 @@ This section will provide guidance on creating a Docker image running a Oracle J
 
     ```
     <copy>
-    cd OddNumbers 
+    cd OddNumbers
     </copy>
     ```
-    
+
     ```
     <copy>
-    ls 
+    ls
     </copy>
     ```
 
@@ -250,7 +255,7 @@ This section will provide guidance on creating a Docker image running a Oracle J
 4. Edit the Dockerfile to include our jar file in the build by running these commands.
 
     ```
-    <copy> 
+    <copy>
     sudo nano Dockerfile
     </copy>
     ```
@@ -260,10 +265,10 @@ This section will provide guidance on creating a Docker image running a Oracle J
     <copy>
     ARG JAR_FILE=target/*.jar
     COPY OddNumbers.jar /
-    ENTRYPOINT ["java","-jar","/OddNumbers.jar"] 
+    ENTRYPOINT ["java","-jar","/OddNumbers.jar"]
     </copy>
     ```
-    
+
     ![image of dockerfile in nano text editor](/../images/dockerfile.png)
 
   * When done, save and exit the Nano text editor by pressing **CTRL+x** then **y** and then **ENTER**.
@@ -272,15 +277,15 @@ This section will provide guidance on creating a Docker image running a Oracle J
 
     ```
     <copy>
-    sudo docker build -t oddnumbers . 
+    sudo docker build -t oddnumbers .
     </copy>
     ```
 
 6. Verify that the image was created by running this.
 
     ```
-    <copy> 
-    sudo docker images 
+    <copy>
+    sudo docker images
     </copy>
     ```
 You should see your new image "oddnumbers" in the list.
@@ -288,8 +293,8 @@ You should see your new image "oddnumbers" in the list.
 
 7. Test the new docker image by running this command.
     ```
-    <copy> 
-    sudo docker run oddnumbers 
+    <copy>
+    sudo docker run oddnumbers
     </copy>
     ```
 The same output of odd numbers should appear.
@@ -297,19 +302,20 @@ The same output of odd numbers should appear.
 
 
 ## Task 4: Configure Java Usage Tracker Location
+
 You should now have a compute instance with Docker installed and a Docker image using Oracle JDK.
 
 1. To use JMS in a container, you must ensure that Java Usage Tracker records are written to `/var/log/java/usagetracker.log` on the container host (your compute instance). On **your compute instance**, run the following command.
     ```
-    <copy> 
-    sudo docker run -d -v /var/log/java/:/var/log/java/ -v /etc/oracle/java/:/etc/oracle/java/:ro --name odd-numbers oddnumbers:latest 
+    <copy>
+    sudo docker run -d -v /var/log/java/:/var/log/java/ -v /etc/oracle/java/:/etc/oracle/java/:ro --name odd-numbers oddnumbers:latest
     </copy>
     ```
 
 2. View more information about the running container by running this command.
     ```
-    <copy> 
-    sudo docker inspect odd-numbers 
+    <copy>
+    sudo docker inspect odd-numbers
     </copy>
     ```
 
@@ -318,15 +324,15 @@ You should now have a compute instance with Docker installed and a Docker image 
 
 ## Task 5: Verify Configuration
 
-1. You may wish to check the log files for your Java application. Start by running this command to display the log file content. 
+1. You may wish to check the log files for your Java application. Start by running this command to display the log file content.
 
     ```
-    <copy> 
-    cat /var/log/java/usagetracker.log 
+    <copy>
+    cat /var/log/java/usagetracker.log
     </copy>
     ```
-  You should be able to see the jar file (OddNumbers.jar) and the Java version (Java 17) used in your Docker container in the log file output. 
-    
+  You should be able to see the jar file (OddNumbers.jar) and the Java version (Java 17) used in your Docker container in the log file output.
+
     ![image of java logs](/../images/java-logs.png)
 
   > **Note:** You should only use this configuration with trusted containers or where you do not require isolation between the host and the container, or between containers.
@@ -335,8 +341,10 @@ You should now have a compute instance with Docker installed and a Docker image 
   ![image of fleet details page showing jar file in container](/../images/fleets-details-docker.png)
 
 ## Want to Learn More?
+
 * You may also find more Oracle resources for your containers at the Oracle Github repository [here](https://github.com/oracle/docker-images).
 
 ## Acknowledgements
+
 * **Author** - Alvin Lam, Java Management Service
 * **Last Updated By/Date** - Alvin Lam, November 2021

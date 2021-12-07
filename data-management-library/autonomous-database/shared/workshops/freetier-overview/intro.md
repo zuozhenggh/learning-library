@@ -1,8 +1,8 @@
-# Introduction                                  
+# Introduction
 
 The labs in this workshop walk you through all the steps to get started using the **Oracle Autonomous Database on Shared Infrastructure (ADB-S)**.
 
-<if type=“odbw”>If you would like to watch us do the workshop, click [here](https://youtu.be/otS5PvJcxMQ).
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/otS5PvJcxMQ).
 </if>
 
 ## **Workshop Objectives**
@@ -16,7 +16,7 @@ The labs in this workshop walk you through all the steps to get started using th
 
 This workshop requires an Oracle Cloud account. You may use your existing account or create one in the following lab.
 
-You are all set. **Let's begin! Click the next lab in the Contents menu on the left.**
+**Let's begin! If you need to create an account, please click Get Started in the Contents menu on the left. Otherwise, if you have an existing account, click "Lab 1: Provision Autonomous Database".**
 
 ## Want to Learn More About Autonomous Database?
 

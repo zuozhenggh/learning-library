@@ -1,22 +1,25 @@
-# Deploy a Java Application 
+# Deploy a Java Application
 
 ## Introduction
 
-This workshop walks you through the steps to deploy a simple Java application in a compute instance. 
+This workshop walks you through the steps to deploy a simple Java application in a compute instance.
 
 Estimated Time: 10 minutes
 
 ### Objectives
+
 In this workshop, you will:
 
 * Deploy a simple Java application
 
-### Prerequisites:
+### Prerequisites
+
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 * You are using an Oracle Linux image on your host machine or compute instance for this workshop.
-* Access to the cloud environment and resources configured in the previous workshop 
+* Access to the cloud environment and resources configured in the previous workshop
 
-## Task 1: Deploy a simple Java application 
+## Task 1: Deploy a simple Java application
+
 1. Install your Oracle Linux Instance.
 
 2. Use the Create a VM Instance wizard to create a new compute instance. The wizard does several things when installing the instance.
@@ -25,27 +28,27 @@ In this workshop, you will:
 * Creates an `ssh` key pair you use to connect to your instance.
 <!--  -->
 3. To get started installing your instance with the **Create a VM Instance** wizard, follow these steps:
-  From the main landing page, select **Create a VM Instance** wizard. 
+  From the main landing page, select **Create a VM Instance** wizard.
     ![image of quick actions menu on the main landing page](/../images/action-menu.png)
-    
+
     The **Create Compute Instance** page is displayed. It has a section for **Placement**, **Image and shape**, **Networking**, **Add SSH keys**, and **Boot volume**.
 
     Choose the **Name** and **Compartment**. Select the compartment created previously.
-   
+
     **Initial Options**
     * **Name**: `<name-for-the-instance>`
     * **Create in compartment**: `<your-compartment>`
     Enter a value for the name or leave the system supplied default.
-  
+
     Review the Placement settings. Take the default values provided by the wizard. The following is sample data. The actual values change over time or differ in a different data center.
-  
+
     **Placement**
     * **Availability domain**: AD-1 (For Free Tier, use **Always Free Eligible** option)
     * **Capacity type**: On-demand capacity
     * **Fault domain**: Oracle chooses the best placement
-  
+
     Review the **Image and shape** settings. Take the default values provided by the wizard.
-    
+
     **Image**
     * **Image**: Oracle Linux 7.9
     * **Image build**: 2020.11.10-1
@@ -64,7 +67,7 @@ In this workshop, you will:
     Review the **Add SSH** keys settings. Take the default values provided by the wizard.
 
     Select the **Generate a key pair for me** option.
-    
+
     Click **Save Private Key** and **Save Public Key** to save the private and public SSH keys for this compute instance.
 
     If you want to use your own SSH keys, select one of the options to provide your public key. Put your private and public key files in a safe location. You cannot retrieve keys again after the compute instance has been created.
@@ -95,9 +98,10 @@ In this workshop, you will:
     ```    
 5. Since you identified your public key when you created the instance, this command logs you into your instance. You can now issue commands to install and start your server.
 
-## Task 3: Install Java 8 and run Java Application 
+## Task 3: Install Java 8 and run Java Application
 
 ### For **Linux**
+
 1. Install JDK 8 in your instance.
   Install Oracle JDK 8 using `yum`.
     ```
@@ -136,10 +140,10 @@ In this workshop, you will:
     <copy>
     sudo nano HelloWorld.java
     </copy>
-    ``` 
+    ```
 
   In the file, paste the following text:
-  
+
     ```
     <copy>
     public class HelloWorld {
@@ -162,16 +166,17 @@ In this workshop, you will:
 4. To save the file, type **CTRL+x**. Before exiting, nano will ask you if you wish to save the file: Type **y** to save and exit, type n to abandon your changes and exit.
 
 ### For **Windows**
+
 1. Install JDK 8 in your instance.
-  Visit the [official Oracle page](https://www.oracle.com/java/technologies/downloads/#java8-windows) to download Java 8. 
-  
-  Run the downloaded file and follow the instruction of installer. Leave default options, take note of the jdk installation path. 
+  Visit the [official Oracle page](https://www.oracle.com/java/technologies/downloads/#java8-windows) to download Java 8.
+
+  Run the downloaded file and follow the instruction of installer. Leave default options, take note of the jdk installation path.
 
   Set environment variables on your system: Right-click on **My Computer** -> **Properties** -> **Advanced system settings** (on the top-left) -> **Environment Variables…** button on the bottom -> double-click on **Path** of **System variables** part of form. -> **New**-> paste paths for jdk and jre **bin** folder (for example: C:\Program Files\Java\jdk1.8.0\_161\bin; C:\Program Files\Java\jre1.8.0\_161\bin).
 
   Set the **JAVA\_HOME** environment variable. To set it, go to **System variables** form -> click **New** -> enter **JAVA\_HOME** for **Variable name:** and **path/to/jdk** for **Variable value:** (for example: C:\Program Files\Java\jdk1.8.0_161).
 
-  To check if Java has been installed, in **Command Prompt** window, enter this command. 
+  To check if Java has been installed, in **Command Prompt** window, enter this command.
     ```
     <copy>
     javac -help
@@ -181,12 +186,12 @@ In this workshop, you will:
 
 3. Build your Java application:
 
-  In the **Command Prompt** window, create a java file by entering this command 
+  In the **Command Prompt** window, create a java file by entering this command
     ```
     <copy>
     notepad HelloWorld.java
     </copy>
-    ``` 
+    ```
   In the file, paste the following text:
     ```
     <copy>
@@ -213,7 +218,7 @@ In this workshop, you will:
 
 5. Run your Java application:
 
-  To compile the program, type the following command and hit enter. 
+  To compile the program, type the following command and hit enter.
     ```
     <copy>
     javac HelloWorld.java
@@ -227,7 +232,7 @@ In this workshop, you will:
     </copy>
     ```
 
-  If all goes well, you will see the following response 
+  If all goes well, you will see the following response
     ```
     This is my first program in java
     List of even numbers from 1 to 15
@@ -240,19 +245,21 @@ In this workshop, you will:
     14
     ```
 
-6. The Java application is now deployed in your compute instance. 
+6. The Java application is now deployed in your compute instance.
 
 ## Task 4: Shutdown Compute
+
 Do remember to stop your compute instance after you are done running it to conserve resources and reduce charges. If you are using an always free tier compute instance, there are no associated charges
 
 You may now **proceed to the next lab.**
 
 ## Want to Learn More?
 
-* Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service. 
+* Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
 
 * If the problem still persists or if the problem you are facing is not listed, please refer to the [Getting Help and Contacting Support](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/contactingsupport.htm) section or you may open a a support service request using the **Help** menu in the OCI console.
 
 ## Acknowledgements
+
 * **Author** - Esther Neoh, Java Management Service
 * **Last Updated By** - Esther Neoh, November 2021

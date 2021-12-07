@@ -33,28 +33,24 @@ To connect to Oracle Database and run SQL commands, set the environment first.
 	$ <copy>cd /u01/app/oracle/product/21.0.0/dbhome_1/bin</copy>
 	```
 
-3. From `$ORACLE_HOME/bin`, run the command *oraenv* to set the environment variables, if not already set.
+3. Run the command *oraenv* to set the environment variables, if not already set.
 
 	```
 	$ <copy>./oraenv</copy>
 	```
 
-4. Enter Oracle SID *orcl*.
+4. Enter the Oracle SID *orcl*.
 
 	```
 	ORACLE_SID = [oracle] ? <copy>orcl</copy>
 	The Oracle base has been set to /u01/app/oracle
 	```
-
-5. Enter the Oracle home location. 
-
-	```
-	ORACLE_HOME = [/home/oracle] ? <copy>/u01/app/oracle/product/21.0.0/dbhome_1</copy>
-	```
+	
+	This command also sets the Oracle home path to `/u01/app/oracle/product/21.0.0/dbhome_1`.
 
 You have set the environment variables for the active terminal session. You can now connect to Oracle Database and run the commands.
 
-**Note:** Every time you open a new terminal window, you need to set the environment variables to connect to Oracle Database from that terminal. Environment variables from one terminal do not apply automatically to other terminals. 
+**Note:** Every time you open a new terminal window, you must set the environment variables to connect to Oracle Database from that terminal. Environment variables from one terminal do not apply automatically to other terminals. 
 
 ## Task 2: Connect to SQL Plus and Explore the Container
 
@@ -151,12 +147,15 @@ You have set the environment variables for the active terminal session. You can 
     orcl             OPEN                  0
     ```
 
+
+In this lab, you have learned how to connect to the SQL command-line and view the container details with basic SQL commands.
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 - **Author** - Manish Garodia, Principal User Assistance Developer, Database Technologies
 
-- **Contributors** - Suresh Rajan, Kurt Engeleiter, Dharma Sirnapalli, Subhash Chandra 
+- **Contributors** - Suresh Rajan, Kurt Engeleiter, Dharma Sirnapalli, Subhash Chandra, Steven Lemme
 
-- **Last Updated By/Date** - Manish Garodia, November 2021
+- **Last Updated By/Date** - Manish Garodia, December 2021
