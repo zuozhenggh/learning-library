@@ -4,10 +4,6 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 
     Estimated Time: 10 minutes
 
-    Estimates Lab Time - 10 minutes
-
-    Estimates Lab Time - 10 minutes
-
 **Objectives**
 
 - Create classic Queues
