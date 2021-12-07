@@ -30,8 +30,21 @@ Watch the video below for a quick walk through of the lab.
     <copy>cd $GRABDISH_HOME/mongodb-kafka-postgres;./install-all.sh</copy>
     ```
 
+2. Verify all pods and services are running by running the `pods` and `services` shortcut commands.
 
-2.  Undeploy any existing Order, Inventory, and Supplier Services and deploy the MongoDB, Postgres, and Kafka backed Order and Inventory implementations by copying and running the following commands.
+    ```
+    <copy>pods</copy>
+    ```
+
+   ![](images/kafkamongodbpostgresspods.png " ")
+    
+   ```
+    <copy>services</copy>
+    ```
+
+   ![](images/kafkamongodbpostgressservices.png " ")
+   
+3.  Undeploy any existing Order, Inventory, and Supplier Services and deploy the MongoDB, Postgres, and Kafka backed Order and Inventory implementations by copying and running the following commands.
 
     ```
     <copy>
@@ -43,12 +56,13 @@ Watch the video below for a quick walk through of the lab.
     </copy>
     ```
 
-3. Check that all pods and services are running by running the `msdataworkshop` command.
+4. Verify all pods and services are running by running the `msdataworkshop` command.
 
     ```
     <copy>msdataworkshop</copy>
     ```
 
+   ![](images/console-kafkamongodbpostgres.png " ")
 
 ## Task 2: Run tests on MongoDB, Postgres, Kafka implementations
 
@@ -134,7 +148,7 @@ Watch the video below for a quick walk through of the lab.
     </copy>
     ```
 
-3. Check that all pods and services are running by running the `msdataworkshop` command.
+3. Verify all pods and services are running by running the `msdataworkshop` command.
 
     ```
     <copy>msdataworkshop</copy>
