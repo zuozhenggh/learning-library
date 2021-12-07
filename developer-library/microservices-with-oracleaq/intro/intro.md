@@ -1,11 +1,11 @@
-# Unified Observability in Grafana with Converged Oracle Database
+# Oracle Advanced Queues workflows with classic Queues and Transactional evnt Queues
 ## Introduction and Overview
 
 [](youtube:v0nYRueADbo)
 
-This workshop will help you understand the technical capabilities inside and outside the Oracle converged database to support a scalable data and event-driven microservices architecture.
+This workshop will help you understand the technical capabilities of Advanced Queuing (AQ) and feature-rich message queuing system integrated with Oracle Database. 
 
-You will create an application with Helidon microservices and a Javascript front-end, using REST and messaging for communication.  The application will be deployed on Oracle Cloud Infrastructure Kubernetes cluster (OKE) and access pluggable Oracle Autonomous Transaction Processing databases.
+You will create an application with PLSQL and Java to demonstrate the delivery by the help of one time password.  The application will be deployed on Oracle Cloud Infrastructure Kubernetes cluster (OKE) and access pluggable Oracle Autonomous Transaction Processing databases.
 
 ![](./images/architecture.png " ")
 
@@ -23,7 +23,8 @@ Proceed to the next lab.
 * [https://developer.oracle.com/](https://developer.oracle.com/)
 
 ## Acknowledgements
-* **Authors** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
-* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Richard Exley, April 2021
+* **Authors** - Mayank Tayal, Developer Advocate
+* **Adapted for Cloud by** -  
+* **Contributors** - NA
+* **Last Updated By/Date** - Mayank Tayal, December 2021
+
