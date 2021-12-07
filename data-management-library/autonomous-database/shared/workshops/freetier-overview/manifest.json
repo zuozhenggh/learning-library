@@ -5,7 +5,6 @@
         {
             "title": "Introduction",
             "description": "Introduction to ADB on Shared Infrastructure",
-            "type": "odbw",
             "filename": "./intro.md"
         },
         {
