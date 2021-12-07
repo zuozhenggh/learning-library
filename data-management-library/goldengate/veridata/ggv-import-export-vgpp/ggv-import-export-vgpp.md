@@ -2,16 +2,25 @@
 
 ## Introduction
 This lab describes how to accomplish the following tasks using Oracle GoldenGate Veridata command-line utilities:
-  + Create Oracle GoldenGate Veridata configuration using the Veridata GoldenGate Parameter Processing program from the Oracle GoldenGate parameter files.
-  + Run the compare job using Vericom.
 
-You can use Oracle GoldenGate Veridata to verify the data that is being replicated by Oracle GoldenGate. You can compare the data of source and target.
+//You can use Oracle GoldenGate Veridata to verify the data that is being replicated by Oracle GoldenGate. You can compare the data of source and target.//
 
 With the mapping information of source database (db) and target db in the GoldenGate parameter file, you can use the parameter file to create the Oracle GoldenGate Veridata configuration.
 
+Veridata GoldenGate Parameter Processing (VGPP) is a command-line tool that uses the map and table parameter of extract and replicat parameter files to create the Oracle GoldenGate Veridata configurations. An Oracle GoldenGate Veridata parameter file contains all of the information required to extract or apply replicated data. The data-propagated replication is controlled by settings in the Extract and Replicat parameter files. Typically, the Extract parameter file specifies the tables to be replicated, the Replicat parameter file controls column mapping and restricts the tables. The Veridata GoldenGate Parameter Processing command-line utility accepts one or two parameter files as input. One of the files must be a Replicat parameter file, and the other optional file must be an Extract parameter file.
 Use the Veridata GoldenGate parameter processing command line utility to create Veridata configuration.
 
-Use the Import utility to import this configuration into Oracle GoldenGate Veridata and the Export utility to export this configuration from Oracle GoldenGate Veridata. Use Vericom to run the comparison job.
+Use the Import utility to import this configuration into Oracle GoldenGate Veridata and the Export utility to export this configuration from Oracle GoldenGate Veridata.
+
+Use Vericom to run the comparison job.
+
+*Estimated Lab Time*: 60 minutes
+
+### Objectives
+*  Create Oracle GoldenGate Veridata configuration using the Veridata GoldenGate Parameter Processing program from the Oracle GoldenGate parameter files.
+* Run the compare job using Vericom.
+
+### Prerequisites
 
 + **Linux or Windows. This lab describe the Linux command-line options.**
 + **Oracle Database 19c (19.3.0.0) or Microsoft SQL Server (for the repository)**
@@ -19,7 +28,7 @@ Use the Import utility to import this configuration into Oracle GoldenGate Verid
 + **An existing Oracle GoldenGate Veridata install that is functional, version 12.2.1.4.200714 and higher: [Oracle GoldenGate Downloads](https://www.oracle.com/middleware/technologies/goldengate-downloads.html)**
 
 ## Task 1: Run the Veridata GoldenGate Parameter Processing from the Oracle GoldenGate Parameter File
-Veridata GoldenGate Parameter Processing (VGPP) is a command-line tool that uses the map and table parameter of extract and replicat parameter files to create the Oracle GoldenGate Veridata configurations. An Oracle GoldenGate Veridata parameter file contains all of the information required to extract or apply replicated data. The data-propagated replication is controlled by settings in the Extract and Replicat parameter files. Typically, the Extract parameter file specifies the tables to be replicated, the Replicat parameter file controls column mapping and restricts the tables. The Veridata GoldenGate Parameter Processing command-line utility accepts one or two parameter files as input. One of the files must be a Replicat parameter file, and the other optional file must be an Extract parameter file.
+
 
 To run the Veridata GoldenGate Parameter Processing:
 1. Ensure that the parameter files you want to use are on the system where the Oracle GoldenGate Veridata is installed. If you need to copy the files from another system, then copy them as binary files, so that the `CHARSET` parameter is valid.
