@@ -4,11 +4,8 @@
   
   In this lab, we will provision and setup the resources to execute Oracle AQ in your tenancy.
 
-  Estimated Time: 5 minutes
-  
-    Estimates Lab Time - 5 minutes
-    
-    Estimates Lab Time - 5 minutes
+    Estimated Time: 5 minutes
+
 
 **Objectives**
 
