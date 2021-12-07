@@ -51,7 +51,7 @@ Autonomous Database supports a variety of object stores, including Oracle Object
 
     ```
     <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landing/o
+    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
     </copy>
     ```
 
