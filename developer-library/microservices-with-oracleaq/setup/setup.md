@@ -69,7 +69,7 @@
 
             <copy>
 
-            git clone -b 21.11.3 --single-branch https://github.com/oracle/microservices-datadriven/oracleAQ.git
+            git clone https://github.com/oracle/microservices-datadriven/oracleAQ.git
 
             </copy>
 
@@ -87,7 +87,7 @@
 
             <copy>
 
-            source microservices-datadriven/oracleAQ/setup.sh
+            source oracleAQ/setup.sh
 
             </copy>
     
@@ -103,7 +103,7 @@
 
             sed -i.bak '/oracleAQ/d' ~/.bashrc
   
-  Once the setup has completed you are ready to move on to Lab 2.
+  Once the setup has completed you are ready to move on to Lab 1.
 
 
 
@@ -114,11 +114,5 @@
   **Acknowledgements**
   
   **Authors -** Mayank Tayal, Developer Advocate
-  
-  **Adapted for Cloud by -** NA
-  
-  **Documentation -** NA
-  
-  **Contributors -** NA
-  
+ 
   **Last Updated By/Date -** Mayank Tayal, December 2021
