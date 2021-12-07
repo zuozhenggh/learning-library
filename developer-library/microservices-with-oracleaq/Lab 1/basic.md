@@ -4,9 +4,9 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 
 **Task 1: Create classic queues**
 
-    - Single consumer classic queue with Payload as RAW and  ADT using PL/SQL and Java.
+- Single consumer classic queue with Payload as RAW and  ADT using PL/SQL and Java.
 
-    - Multi-Consumer classic queue with Payload as RAW and  ADT using PL/SQL and Java.
+- Multi-Consumer classic queue with Payload as RAW and  ADT using PL/SQL and Java.
     
     <copy>
     
@@ -17,9 +17,9 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 
 **Task 2: Basic Enqueue**
 
-    - Enqueue for Single consumer classic queue with Payload as RAW using PL/SQL and Java.
+- Enqueue for Single consumer classic queue with Payload as RAW using PL/SQL and Java.
 
-    - Enqueue for multi-consumer classic queue with Payload as RAW using PL/SQL and Java.
+- Enqueue for multi-consumer classic queue with Payload as RAW using PL/SQL and Java.
     
     <copy>
     
@@ -29,9 +29,9 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 
 **Task 3: Basic Dequeue**
 
-    - Dequeue for Single consumer classic queue with Payload as RAW using PL/SQL and Java.
+- Dequeue for Single consumer classic queue with Payload as RAW using PL/SQL and Java.
 
-    - Dequeue for multi-consumer classic queue with Payload as RAW using PL/SQL and Java.
+- Dequeue for multi-consumer classic queue with Payload as RAW using PL/SQL and Java.
     
      <copy>
     
@@ -41,11 +41,11 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 
 **Task 4: Clean ups**
 
-   - Stop classic Queues
+- Stop classic Queues
    
-   - Drop classic Queues 
+- Drop classic Queues 
    
-   - Drop Queue Tables
+- Drop Queue Tables
 
     <copy>
     
