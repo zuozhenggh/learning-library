@@ -16,10 +16,9 @@ If you need any help please join the databasehome.slack.com (#microservices) cha
 Proceed to the next lab.
 
 ## Want to Learn More?
-
-* [Multitenant Database–Oracle 19c](https://www.oracle.com/database/technologies/multitenant.html)
-* [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)
-* [Microservices Architecture with the Oracle Database](https://www.oracle.com/technetwork/database/availability/trn5515-microserviceswithoracle-5187372.pdf)
+* [Advanced Queuing User's Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/)
+* [Advanced Queuing Java API Reference (Javadoc)](https://docs.oracle.com/en/database/oracle/oracle-database/19/jajms/)
+* [PL/SQL Packages and Types Reference](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/)
 * [https://developer.oracle.com/](https://developer.oracle.com/)
 
 ## Acknowledgements
