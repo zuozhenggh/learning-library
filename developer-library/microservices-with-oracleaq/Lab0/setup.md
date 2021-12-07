@@ -2,7 +2,7 @@
 
   **Introduction**
   
-  In this lab, we will provision and setup the resources to execute microservices in your tenancy.
+  In this lab, we will provision and setup the resources to execute Oracle AQ in your tenancy.
 
   Estimated Time: 5 minutes
   
