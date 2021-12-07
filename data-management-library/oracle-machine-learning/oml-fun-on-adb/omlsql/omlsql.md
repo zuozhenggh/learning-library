@@ -280,4 +280,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Sarika Surampudi, Senior User Assistance Developer, Oracle Database User Assistance Development
 * **Contributors** -  Mark Hornick, Sr. Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning
-* **Last Updated By/Date** - Sarika Surampudi, October 2021
+* **Last Updated By/Date** - Sarika Surampudi, December 2021
