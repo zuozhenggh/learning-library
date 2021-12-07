@@ -2,6 +2,19 @@
 
 Oracle Advanced queue with classic queue examples to demonstrate classic queue creation using different payloads, Enqueue , dequeue and cleanups.
 
+    Estimated Time: 10 minutes
+
+    Estimates Lab Time - 10 minutes
+
+    Estimates Lab Time - 10 minutes
+
+**Objectives**
+
+- Create classic Queues
+- Multi-consumer Enqueue 
+- Multi-consumer Dequeue
+
+
 **Task 1: Create classic queues**
 
 - Single consumer classic queue with Payload as RAW and  ADT using PL/SQL and Java.
