@@ -58,7 +58,11 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 **Acknowledgements**
 
 **Author -** Mayank Tayal, Developer Advocate 
+
 **Adapted for Cloud by -** 
+
 **Documentation -** 
+
 **Contributors -** 
+
 **Last Updated By/Date -** Mayank Tayal, December 2021
