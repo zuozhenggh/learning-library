@@ -22,15 +22,15 @@ Estimated Time: 50 minutes
 
 1. Sign in using your tenancy, user name, and password. Use the login option under **Oracle Cloud Infrastructure Direct Sign-In**.
 
-    ![](images/oci-login.png " ")
+    ![Log into OCI](images/oci-login.png " ")
 
 2. From the OCI Services menu, click **Networking** -> **Virtual Cloud Networks**. 
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png)
+    ![Click Virtual Cloud Network](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png)
 
     Select the compartment assigned to you from drop down menu on left side of the screen, and click **Create VCN**.
 
-    ![](images/create-vcn.png " ")
+    ![Select Compartment and Create VCN](images/create-vcn.png " ")
 
     >**Note:** Ensure the correct Compartment is selected under Compartment list.
 
@@ -40,7 +40,7 @@ Estimated Time: 50 minutes
       - **Create in compartment**: Ensure your compartment is selected
       - **IPv4 CIDR Block**: **10.0.0.0/16**
 
-    ![](images/vcn-details.png " ")
+    ![Create the First VCN](images/vcn-details.png " ")
 
 4. Click **Create VCN**.
 
@@ -48,11 +48,11 @@ Estimated Time: 50 minutes
 
 6. In VCN Details page, click **Internet Gateways** under Resources, and click **Create Internet Gateway**. Fill out the dialog box. Click **Create Internet Gateway** (ensure correct compartment is selected).
 
-    ![](images/create-internet-gateway01.png " ")
+    ![Create Internet Gateway for the First VCN](images/create-internet-gateway01.png " ")
 
 7. Click **Route Tables**, and click **Default Route Table for `<VCN_NAME>`**.
 
-    ![](images/route-tables.png " ")
+    ![Configure Default Route Table for the First VCN](images/route-tables.png " ")
 
 8. Click **Add Route Rules**. Fill out the dialog box:
 
@@ -60,7 +60,7 @@ Estimated Time: 50 minutes
       - **Destination CIDR Block**: **0.0.0.0/0**
       - **Target Internet Gateway**: Select the Internet Gateway created in Step 6
 
-    ![](images/route-rule.png " ")
+    ![Add Internet Gateway Route Rule for the First VCN](images/route-rule.png " ")
 
 9. Click **Add Route Rules**.
 
@@ -74,18 +74,18 @@ Estimated Time: 50 minutes
     - **Dhcp Options**: Select Default DHCP Options
     - **Security Lists**: Select Default Security List
 
-    ![](images/create-subnet01-1.png " ")
+    ![Create Subnet for the First VCN](images/create-subnet01-1.png " ")
 
-    ![](images/create-subnet01-2.png " ")
+    ![Create Subnet for the First VCN](images/create-subnet01-2.png " ")
 
 11. Leave all other options as default. Click **Create Subnet**.
 
-12. Once the Subnet is in the *Available* state, click **Local Peering Gateways**, then **Create Local Peering Gateway** (local peering gateway  is a component on a VCN for routing traffic to a locally peered VCN). Fill out the dialog box:
+12. Once the Subnet is in the *Available* state, click **Local Peering Gateways**, then **Create Local Peering Gateway** (local peering gateway is a component on a VCN for routing traffic to a locally peered VCN). Fill out the dialog box:
 
     - **Name**: Provide a name like lpg01
     - **Create in Compartment**: Select your compartment
 
-    ![](images/lpg01.png " ")
+    ![Create Local Peering Gateway for the First VCN](images/lpg01.png " ")
 
 13. Click **Create Local Peering Gateway**.
 
@@ -93,11 +93,11 @@ Estimated Time: 50 minutes
 
     - **IPv4 CIDR Block**: **172.16.0.0/16**
 
-    ![](images/second-vcn.png " ")
+    ![Create the Second VCN](images/second-vcn.png " ")
 
 15. Repeat Step 5 - 6 to add Internet Gateway for the second VCN.
 
-    ![](images/create-internet-gateway02.png " ")
+    ![Create Internet Gateway for the Second VCN](images/create-internet-gateway02.png " ")
 
 16. Add subnet for the second VCN. Click on your second VCN. Click **Subnets**, and then **Create Subnet**. Fill out the dialog box:
 
@@ -109,8 +109,8 @@ Estimated Time: 50 minutes
     - **Dhcp Options**: Select Default DHCP Options
     - **Security Lists**: Select Default Security List
 
-    ![](images/create-subnet02-1.png " ")
-    ![](images/create-subnet02-2.png " ")
+    ![Create Subnet for the Second VCN](images/create-subnet02-1.png " ")
+    ![Create Subnet for the Second VCN](images/create-subnet02-2.png " ")
 
 17. Leave all other options as default. Click **Create Subnet**.
 
@@ -125,7 +125,7 @@ Estimated Time: 50 minutes
     - **Destination CIDR Block**: **0.0.0.0/0**
     - **Target Internet Gateway**: Select the second VCN's Internet Gateway
 
-    ![](images/create-route-table.png " ")
+    ![Add Internet Gateway Route Rule for the Second VCN](images/create-route-table.png " ")
 
 19. Leave all other options as default, Click **Create**.
 
@@ -134,7 +134,7 @@ Estimated Time: 50 minutes
     - **Name**: Provide a name like lpg02
     - **Create in Compartment**: Select your compartment
 
-    ![](images/lpg02.png " ")
+    ![Create Local Peering Gateway for the Second VCN](images/lpg02.png " ")
 
     Click **Create Local Peering Gateway**.
 
@@ -144,8 +144,7 @@ Estimated Time: 50 minutes
 
 1. From OCI services menu, click **Compute** -> **Instances**.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png)
-
+    ![Click Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png)
 
 2. Click **Create Instance**. Fill out the dialog box:
 
@@ -160,7 +159,7 @@ Estimated Time: 50 minutes
         - **Image**: We recommend using the Latest **Oracle Linux** available
         - **Shape**: Use the default shape selected
 
-    ![](images/instance01-1.png " ")
+    ![Create the First Instance: Name, Placement, Image and Shape](images/instance01-1.png " ")
 
     - **Networking**: click **Edit**
 
@@ -171,12 +170,12 @@ Estimated Time: 50 minutes
         - **Public IP address**: check **Assign a public IPv4 address**
         - Click **Show advanced options**: un-check **Use network security groups to control traffic**
 
-    ![](images/instance01-2.png " ")
+    ![Create the First Instance: Networking](images/instance01-2.png " ")
 
     - **Add SSH keys:** Choose **Paste public keys** and paste the public key created under Cloud Shell in Lab 1
     - **Boot volume:** Leave the default
 
-    ![](images/instance01-3.png " ")
+    ![Create the First Instance: SSH Keys, Boot Volume](images/instance01-3.png " ")
 
 3. Click **Create**.
 
@@ -193,7 +192,7 @@ Estimated Time: 50 minutes
         - **Image**: We recommend using the Latest **Oracle Linux** available
         - **Shape**: Use the default shape selected
 
-    ![](images/instance02-1.png " ")
+    ![Create the Second Instance: Name, Placement, Image and Shape](images/instance02-1.png " ")
 
     - **Networking**: click **Edit**
 
@@ -204,7 +203,7 @@ Estimated Time: 50 minutes
         - **Public IP address**: check **Assign a public IPv4 address**
         - Click **Show advanced options**: un-check **Use network security groups to control traffic**
     
-    ![](images/instance02-2.png " ")
+    ![Create the Second Instance: Networking](images/instance02-2.png " ")
 
     - **Add SSH keys:** Choose **Paste public keys** and paste the public key created under Cloud Shell in Lab 1
     - **Boot volume:** Leave the default
@@ -215,7 +214,7 @@ Estimated Time: 50 minutes
 
 7. Configure the **first local peering gateway**. Go to your first VCN Details page, and click **Local Peering Gateways**. Hover over the action icon (3 vertical dots) and click **Establish Peering Connection**.
 
-    ![](images/configure-lpg01.png " ")
+    ![Establish Peering Connection for the First VCN](images/configure-lpg01.png " ")
 
 8. Fill out the dialog box:
 
@@ -227,15 +226,15 @@ Estimated Time: 50 minutes
 
     Click **Establish Peering Connection**.
 
-    ![](images/establish-peering-connection.png " ")
+    ![Establish Peering Connection to the Second VCN](images/establish-peering-connection.png " ")
 
 9. Verify the Local Peering Gateway shows Status as *Peered* and Peered information is correct.
 
-    ![](images/verify-peering.png " ")
+    ![Verify Status of Local Peering Gateway](images/verify-peering.png " ")
 
 10. We now need to configure Route Tables and Security Lists for the two VCNs. Navigate to the first VCN's Details page and click **Route Tables**, then **Default Route Table for `<FIRST_VCN_NAME>`**.
 
-    ![](images/default-route-table.png " ")
+    ![Configure Route Table for the First VCN](images/default-route-table.png " ")
 
 11. Click **Add Route Rules** and add the following rule:
 
@@ -244,20 +243,20 @@ Estimated Time: 50 minutes
     - Compartment:  Make sure the correct Compartment is selected
     - Target Local Peering Gateway: Select the Local Peering Gateway of the first VCN
 
-    ![](images/route-rule1.png " ")
+    ![Add Local Peering Gateway Route Rule for the First VCN](images/route-rule1.png " ")
 
 12. Click **Add Route Rules**.
 
 13. Navigate to your first VCN's Details page. Click **Security Lists**, then **Default Security List for `<FIRST_VCN_NAME>`**.
 
-    ![](images/security-list.png " ")
+    ![Configure Security List for the First VCN](images/security-list.png " ")
 
 14. Click **Add Ingress Rules**. Enter the following Ingress Rule. Ensure to leave **Stateless** flag un-checked.
 
     - Source CIDR: **172.16.0.0/24**
     - IP Protocol: **ICMP**
 
-    ![](images/ingress-rule1.png " ")
+    ![Add Ingress Rule for the First VCN](images/ingress-rule1.png " ")
 
 15. Click **Add Ingress Rules**.
 
@@ -274,7 +273,7 @@ Estimated Time: 50 minutes
     
     Click **Add Route Rules**.
 
-    ![](images/route-rule2.png " ")
+    ![Add Local Peering Gateway Route Rule for the Second VCN](images/route-rule2.png " ")
 
 17. Repeart Step 13 - 15 for the second VCN's Security List. Navigate to you VCN details page. Click **Security Lists**, then **Default Security List for `<SECOND_VCN_NAME>`**. 
     
@@ -286,7 +285,7 @@ Estimated Time: 50 minutes
     
     Click **Add Ingress Rules**.
     
-    ![](images/ingress-rule2.png " ")
+    ![Configure Security List for the Second VCN](images/ingress-rule2.png " ")
 
 **We now have two VCNs with one compute instance in each VCN. These VCNs have been connected using a Local Peering Gateway. Any instance in one VCN can reach any instance in the other VCN. Next we will test the connectivity.**
 
@@ -320,7 +319,7 @@ Estimated Time: 50 minutes
 
 5. Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-    ![](images/ssh.png " ")
+    ![SSH to the First Compute Instance](images/ssh.png " ")
 
 6. Enter command:
 
@@ -333,7 +332,7 @@ Estimated Time: 50 minutes
     >**Note:** Use Private IP of the compute instance that you are not connected to.
 
     **Verify the ping is successful.**
-    ![](images/peering-success.png " ")
+    ![Verify Peering is Successful](images/peering-success.png " ")
 
     If ping is successful, then we have successfully created VCN peering across two different VCNs.
 
@@ -343,24 +342,25 @@ Estimated Time: 50 minutes
 
 2. If your compute instances are not displayed, from OCI services menu, click **Instances** under **Compute**.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png)
+    ![Click Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png)
 
 3. Locate your compute instances. Click Action icon and then **Terminate**.
 
-    ![](images/terminate-instance.png " ")
+    ![Terminate Your Compute Instance](images/terminate-instance.png " ")
 
 4. Make sure **Permanently delete the attached boot volume** is checked. Click **Terminate instance**. Wait for the instance to be fully terminated.
 
-    ![](images/delete-boot-volume.png " ")
+    ![Permanently Delete the Attached Boot Volume](images/delete-boot-volume.png " ")
 
 5. Repeat Step 3 - 4 to delete the second compute instance.
 
 6. From OCI services menu, click **Virtual Cloud Networks** under **Networking**. A list of all VCNs will appear.
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png)
+
+    ![Click Virtual Cloud Networks](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png)
 
 7. Locate your VCN. Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
 
-    ![](images/terminate-vcn.png " ")
+    ![Terminate Your VCN](images/terminate-vcn.png " ")
 
 8. Repeat Step 7 to delete the second VCN.
 
