@@ -66,7 +66,7 @@
 
             
 
-            git clone https://github.com/oracle/microservices-datadriven.git;
+            git clone https://github.com/matayal/microservices-datadriven.git;
             
             cp -r ./microservices-datadriven/oracleAQ $HOME;
             
