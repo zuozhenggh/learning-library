@@ -62,7 +62,7 @@ To create a File stream:
 
 2. Select **File** from the list, to display the **Create Stream** screen.
 
- ![](./images/CreateStream.png "")
+ ![Create Stream Screen](./images/CreateStream.png "")
 
 3. Select **Create Pipeline with this source (Launch Pipeline Editor)**.
 
