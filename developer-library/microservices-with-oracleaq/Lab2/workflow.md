@@ -6,7 +6,7 @@ This Lab will help you to understand the workflow for OTP(one time password) bas
 
 **Task 2: Creation of required queues i.e., Customer, Deliverer, Application**
   
-          cd $oracleAQ_HOME; source workflowCreateQueues.sh;
+          cd $WORKFLOW_HOME; source workflowCreateQueues.sh;
     
 
 **Task 3: Place Order by Customer and application will generate OTP**
@@ -17,7 +17,7 @@ This Lab will help you to understand the workflow for OTP(one time password) bas
 
 3. Update DB tables to maintain Order track
        
-           cd $oracleAQ_HOME; source workflowEnqueue.sh;
+           cd $WORKFLOW_HOME; source workflowEnqueue.sh;
  
 
 **Task 4: Deliverer meets Customer**
@@ -28,7 +28,7 @@ This Lab will help you to understand the workflow for OTP(one time password) bas
 
 3. Deliverer requests to validate OTP by Application's DB: Enqueue by Deliverer(orderId, OTP, deliveryLocation, deliveryStatus)
     
-        cd $oracleAQ_HOME; source workflowDequeue.sh;
+        cd $WORKFLOW_HOME; source workflowDequeue.sh;
 
     
 
@@ -55,7 +55,7 @@ This Lab will help you to understand the workflow for OTP(one time password) bas
 - Drop user, deliverer, application Queue Tables
 
 
-       cd $oracleAQ_HOME; source workflowDequeue.sh;
+       cd $WORKFLOW_HOME; source workflowDequeue.sh;
 
 
 
