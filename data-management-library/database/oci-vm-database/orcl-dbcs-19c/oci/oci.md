@@ -4,7 +4,9 @@
 
 This is the first of several labs that are part of the Oracle Public Cloud Database Cloud Service workshop. These labs will give you a basic understanding of the Oracle Database Cloud Service and many of the capabilities around administration and database development.
 
-This lab will walk you through creating a new Database Cloud Service instance. You will also connect into a Database image using the SSH private key and familiarize yourself with the image layout. 
+This lab will walk you through creating a new Database Cloud Service instance. You will also connect into a Database image using the SSH private key and familiarize yourself with the image layout.
+
+Estimated Lab Time: 60 minutes
 
 ## Task 1: Verify Virtual Cloud Network (VCN)
 
@@ -21,24 +23,29 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
 
 3. Click the name of the Virtual Cloud Network (VCN).
 
-4. Under Subnets, click the name of the public subnet.
+4. Under Subnets, click the name of the Public subnet.
 
 5. Under Security Lists, click the name of the existing security list. 
 
 6. Review the Ingress Rules and Egress Rules defined in this security list.
 
+7. Make sure you have this Ingress Rule:
+    - CIDR Block: 10.0.0.0/24
+    - Destination Port Range: 1521
+    - Description: Database connection
+
 
 ## Task 2: Create Database
 
-1. Click on main menu ≡, then **Bare Metal, VM, and Exadata** under Databases. **Create DB System**.
+1. Click on main menu ≡, then **Oracle Database** > **Bare Metal, VM, and Exadata**. Click **Create DB System**.
 
-    - Select your compartment
+    - Select your compartment (default)
     - Name your DB system: WS-DB
-    - Select a shape type: Virtual Machine
+    - Select a shape type: Virtual Machine (default)
     - Select a shape: VM.Standard2.1
     - Oracle Database software edition: Enterprise Edition Extreme Performance
     - Choose Storage Management Software: Logical Volume Manager
-    - Add public SSH keys: Upload SSH key files > id_rsa.pub
+    - Generate SSH key pair, and save both Private Key and Public Key files on your computer.(*optionally select Upload SSH key files to use your own id_rsa.pub public key*)
     - Choose a license type: Bring Your Own License (BYOL)
 
 2. Specify the network information.
@@ -50,10 +57,10 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
 3. Click Next.
 
     - Database name: WSDB
-    - Database version: 19c
+    - Database version: 19c (default)
     - PDB name: PDB011
-    - Password: DBlearnPTS#20_
-    - Select workload type: Transaction Processing
+    - Password: DBlabsPTS#22_
+    - Select workload type: Transaction Processing (default)
     - Configure database backups: Enable automatic backups
 
 4. Click **Create DB System**.
@@ -64,11 +71,12 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
 1. Click on hamburger menu ≡, then Compute > **Instances**. Click **Create Instance**.
 
     - Name: WS-VM
-    - Image or operating system: Change Image > Oracle Images > Oracle Cloud Developer Image
+    - Image or operating system: Change Image > **Oracle Images**. Type 'dev' in the search field, and select Oracle Cloud Developer Image
+    - Shape: Change Shape > Intel: VM.Standard2.1
     - Virtual cloud network: WS-VCN
     - Subnet: Public Subnet
-    - Assign a public IP address
-    - Add SSH keys: Choose SSH key files > id_rsa.pub
+    - Assign a public IP address (default)
+    - Add SSH keys: Upload public key files (.pub), Browse and select the public key file saved from the DB System. (*optionally use your own SSH key files, id_rsa.pub*)
 
 2. Click **Create**.
 
@@ -83,11 +91,20 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
 
 4. Check DB System Details.
 
-5. Click on hamburger menu ≡, then **Bare Metal, VM, and Exadata**. Click **WS-DB** DB System. On the DB System Details page, copy Host Domain Name in your notes. In the table below, copy Database Unique Name in your notes. Click **Nodes** on the left menu, and copy Private IP Address in your notes.
+5. Click on hamburger menu ≡, then Oracle Database > **Bare Metal, VM, and Exadata**. Click **WS-DB** DB System. On the DB System Details page, copy **Host Domain Name** in your notes. In the table below, copy **Database Unique Name** in your notes. Click **Nodes** on the left menu, and copy **Private IP Address** in your notes. E.g.
+    - Host Domain Name: subXXXXXXXXXXXX.ws-vcn.oraclevcn.com
+    - Database Unique Name: WSDB_xxxxxx
+    - Node Private IP Address: 10.0.0.XX 
 
-6. Verify SSH connection from a Linux client.
+6. Verify SSH connection from a Linux client. Change the permissions on the private key file you saved from DB System. (Linux only)
 
-7. Connect to the Compute node using SSH. In OpenSSH, local port forwarding is configured using the -L option. Use this option to forward any connection to port 3389 on the local machine to port 3389 on your Compute node.
+    ````
+    <copy>
+    chmod 400 Downloads/ssh-key-XXXX-XX-XX.key
+    </copy>
+    ````
+
+7. Connect to the Compute node using SSH. In OpenSSH, local port forwarding is configured using the -L option. Use this option to forward any connection to port 3389 on the local machine to port 3389 on your Compute node. Change `id_rsa` with the private key file you saved on your computer. (Linux only)
 
     ````
     <copy>
@@ -95,17 +112,17 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
     </copy>
     ````
 
-8. Verify SSH connection from a Windows client.
+8. Set SSH connection from a Windows client. Use PuttyGen from your computer to convert the private key file you saved on your computer to Putty `.ppk` format. Click on Conversions > Import Key. Open the private key. Click on Save Private Key and Yes to save without a passphrase. Use the same name for the new `.ppk` key file, add only the extension `.ppk`. (Windows only)
 
-9. Connect to Compute Public IP Address port 22.
+9. Connect to Compute Public IP Address port 22. (Windows only)
 
     ![](./images/putty1.png "")
 
-10. Use the `id_rsa.ppk` private key. (Windows only)
+10. Use the `.ppk` private key you converted with PuttyGen. (Windows only)
 
     ![](./images/putty2.png "")
 
-11. Create a SSH tunnel from Source port 5001 to Destination localhost:3389. Click **Add**. Create another SSH tunnel from Source port 5500 to Destination localhost:5500. Click **Add**.(Windows only)
+11. Create a SSH tunnel from Source port 5001 to Destination localhost:3389. Click **Add**. (Windows only)
 
     ![](./images/putty4.png "")
 
@@ -116,11 +133,12 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
 
 ## Task 5: Verify DB connection using SQL*Plus.
 
-1. Try to connect to your DB System database using SQL*Plus.
+1. Try to connect to your DB System database using SQL*Plus. You may need to set the `LD_LIBRARY_PATH` environment variable required by SQL*Plus.
 
     ````
     <copy>
-    sqlplus sys/DBlearnPTS#20_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
+    export LD_LIBRARY_PATH=/usr/lib/oracle/21/client64/lib
+    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -132,7 +150,7 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
     </copy>
     ````
 
-3. Exit SQL*Plus.
+3. You will see `PDB011` in the list opened in `READ WRITE` mode. Exit SQL*Plus.
 
     ````
     <copy>
@@ -140,11 +158,11 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
     </copy>
     ````
 
-4. Connect to the pluggable database.
+4. Connect directly to the pluggable database.
 
     ````
     <copy>
-    sqlplus sys/DBlearnPTS#20_@<DB Node Private IP Address>:1521/pdb011.<Host Domain Name> as sysdba
+    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb011.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -206,13 +224,14 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
     yum -y localinstall msttcore-fonts-installer-2.6-1.noarch.rpm
 
     yum -y update sqldeveloper.noarch
+    yum update -y oracle-instantclient*
 
     sed -i 's/max_bpp=24/max_bpp=128\nuse_compression=yes/g' /etc/xrdp/xrdp.ini
 
     systemctl enable xrdp
 
     firewall-cmd --permanent --add-port=3389/tcp
-    firewall-cmd --permanent --add-port=5000/tcp
+    firewall-cmd --permanent --add-port=5500/tcp
     firewall-cmd --reload
 
     chcon --type=bin_t /usr/sbin/xrdp
@@ -220,11 +239,17 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
 
     systemctl start xrdp
 
-    echo -e "DBlearnPTS#21_\nDBlearnPTS#21_" | passwd oracle
+    echo -e "DBlabsPTS#22_\nDBlabsPTS#22_" | passwd oracle
 
     sed -i -e 's/^/#/' /etc/profile.d/oracle-instantclient*
 
-    printf "\nORACLE_HOME=/opt/oracle/product/19c/dbhome_1\nLD_LIBRARY_PATH=\$ORACLE_HOME/lib\nPATH=\$PATH:\$ORACLE_HOME/bin\nexport ORACLE_HOME LD_LIBRARY_PATH PATH\n" >> /etc/profile
+    printf "\nORACLE_HOME="$(find /usr -iname client64 | grep lib)"\nLD_LIBRARY_PATH=\$ORACLE_HOME/lib\nPATH=\$PATH:\$ORACLE_HOME/bin\nexport ORACLE_HOME LD_LIBRARY_PATH PATH\n" >> /etc/profile
+
+    # Shared library libomsodm.so is missing from the Instant Client Tools Package (RPM)
+    wget https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-tools-linux.x64-21.1.0.0.0.zip
+    unzip instantclient-tools-linux.x64-21.1.0.0.0.zip
+    install -m 755 -o root -g root instantclient_21_1/libomsodm.so /usr/lib/oracle/21/client64/lib/libomsodm.so
+    ldconfig
     </copy>
     ````
 
@@ -250,7 +275,9 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
 
     ![](./images/putty5.png "")
 
-9. When asked about username and password, use **oracle** and **DBlearnPTS#20_**.
+9. When asked about username and password, use **oracle** and **DBlabsPTS#22_**. 
+
+    >**Note** : Verify in the username dialog you are typing your password correctly. The standard US 101 keyboard is default on the compute node, `#` is `Shift+3` and `_` is `Shift+key-after-0`.
 
 10. After setting your language and keyboard layout, open a Terminal window using **Right-Click** and **Open Terminal**. Check if your keyboard works. If you need to select another keyboard layout, click the **On-Off** button in the upper right corner, and **Settings** button. You will find the options under Region & Language.
 
@@ -262,7 +289,7 @@ This lab will walk you through creating a new Database Cloud Service instance. Y
     </copy>
     ````
 
-12. It will ask for the full pathname of a JDK installation. This should be available in folder **/usr/java**. Type **/usr/java/latest** when asked.
+12. It may ask for the full pathname of a JDK installation. This should be available in folder **/usr/java**. Type **/usr/java/latest** when asked.
 
     ````
     Default JDK not found

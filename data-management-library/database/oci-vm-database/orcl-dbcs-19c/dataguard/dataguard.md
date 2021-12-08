@@ -14,9 +14,11 @@ Basic requirements:
 - Oracle Data Guard does not support Oracle Database Standard Edition. 
 - Active Data Guard requires Enterprise Edition - Extreme Performance.
 
+Estimated Lab Time: 45 minutes
+
 ## Task 1: Enable Data Guard
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System. 
+1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System. 
 
 2. Add to your notes the Availability Domain you see on the DB System Information page (e.g. IWcS:EU-FRANKFURT-1-AD-3).
 
@@ -28,24 +30,26 @@ Basic requirements:
 
     - Display name: WS-DBSb
     - Availability domain: AD2 (different from your DB System AD)
+    - Select a shape: VM.Standard2.1
     - Virtual cloud network: WS-VCN
     - Client Subnet: Public Subnet
     - Hostname prefix: WS-hostsb
-    - Password: DBlearnPTS#20_
+    - Protection mode: Maximum Performance
+    - Password: DBlabsPTS#22_
 
 6. Click **Enable Data Guard**.
 
-7. Click ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DBSb** DB System. Status is Provisioning... 
+7. Click ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Or use the breadcrumbs link **DB Systems**. Click **WS-DBSb** DB System. Status is Provisioning...
 
 8. If you want to see more details, click **Work Requests** in the lower left menu. Check Operation Create Data Guard having status In Progress... Wait until your Standby DB System is Available. On **WS-DBSb** DB System details page, click **Nodes** in the lower left menu, and and copy Public IP Address and Private IP Address in your notes.
 
 ## Task 2: Connect to Standby DB System
 
-1. Connect to the Standby DB System node using SSH.
+1. From your Compute node, connect to the Standby DB System node using SSH.
 
     ````
     <copy>
-    ssh -C -i id_rsa opc@<Standby Node Public IP Address>
+    ssh -C -i id_rsa opc@<Standby Node Private IP Address>
     </copy>
     ````
 
@@ -55,6 +59,17 @@ Basic requirements:
     <copy>
     sudo su - oracle
     </copy>
+    ````
+
+3. Set environment variables required by administration tools.
+
+    ````
+    <copy>
+    export PATH=$PATH:/u01/app/oracle/product/19.0.0/dbhome_1/bin
+    . oraenv
+    </copy>
+    ORACLE_SID = [oracle] ? WSDB
+    The Oracle base has been set to /u01/app/oracle
     ````
 
 3. The Data Guard command-line interface (DGMGRL) enables you to manage a Data Guard broker configuration and its databases directly from the command line, or from batch programs or scripts.
@@ -71,7 +86,7 @@ Basic requirements:
     <copy>
     CONNECT sysdg;
     </copy>
-    Password: DBlearnPTS#20_
+    Password: DBlabsPTS#22_
     Connected to "DBS001_fra2qq"
     Connected as SYSDBA.
     ````
@@ -229,11 +244,11 @@ Basic requirements:
 
 ## Task 3: Perform Switchover Operation
 
-1. Click ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System. 
+1. Click ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System. 
 
 2. On the DB System Details page, click the database name link **WSDB** in the bottom table called Databases.
 
-3. Click **Data Guard Associations** in the lower left menu. Observe Peer DB System and it's details like Peer Role, Shape, Availability Domain. Click **⋮** > **Switchover**. Enter the database admin password: DBlearnPTS#20_.
+3. Click **Data Guard Associations** in the lower left menu. Observe Peer DB System and it's details like Peer Role, Shape, Availability Domain. Click right menu **⋮** > **Switchover**. Enter the database admin password: DBlabsPTS#22_.
 
 4. Status will change to Updating... Click **Work Requests** in the lower left menu, and the Operation name link. Here you can see Log Messages, Error Messages, Associated Resources.
 
@@ -253,7 +268,7 @@ Basic requirements:
     <copy>
     CONNECT sysdg;
     </copy>
-    Password: DBlearnPTS#20_
+    Password: DBlabsPTS#22_
     Connected to "DBS001_fra2qq"
     Connected as SYSDBA.
     ````
@@ -524,11 +539,11 @@ Maximum Availability mode provides the highest level of data protection that is 
 
 ## Task 7: Test Fast-Start Failover with Maximum Availability 
 
-1. On Oracle cloud console, click ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DBSb** DB System. 
+1. On Oracle cloud console, click ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DBSb** DB System.
 
 2. On the DB System Details page, click the database name link **WSDB** in the bottom table called Databases.
 
-3. Click **Data Guard Associations** in the lower left menu. Click **⋮** > **Switchover**. Enter the database admin password: DBlearnPTS#20_. Wait for the status to become Available.
+3. Click **Data Guard Associations** in the lower left menu. Click **⋮** > **Switchover**. Enter the database admin password: DBlabsPTS#22_. Wait for the status to become Available.
 
 4. Launch DGMGRL.
 
@@ -544,7 +559,7 @@ Maximum Availability mode provides the highest level of data protection that is 
     <copy>
     CONNECT sysdg;
     </copy>
-    Password: DBlearnPTS#20_
+    Password: DBlabsPTS#22_
     Connected to "DBS001_fra2qq"
     Connected as SYSDBA.
     ````

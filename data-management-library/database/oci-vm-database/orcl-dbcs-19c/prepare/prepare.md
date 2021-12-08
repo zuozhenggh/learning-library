@@ -12,11 +12,15 @@ The sample database schemas provide a common platform for examples in each relea
 
 This lab explains how to connect to an active DB system with SSH, enable EM Express, create a new PDB in the existing CDB, and install HR sample schema.
 
+Estimated Lab Time: 45 minutes
+
 ## Task 1: Database Node SSH Connection
 
 1. After provisioning the DB System, Database State will be Backup In Progress... for a few minutes. Click **Nodes** on the left menu, and copy Public IP Address in your notes.
 
-2. Connect to the Database node using SSH.
+    >**Note** : You can copy the private key file from your computer to the **WS-VM** Compute instance, and connect to the Database node using the private IP address.
+
+2. Connect to the Database node using SSH. Change `id_rsa` with the private key file you saved on your computer. (Linux only)
 
     ````
     <copy>
@@ -24,7 +28,15 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-3. All Oracle software components are installed with **oracle** OS user. Use the substitute user command to start a session as **oracle** user.
+3. Connect to Database node Public IP Address port 22. (Windows only)
+
+    ![](./images/putty1.png "")
+
+4. Use the `.ppk` private key. (Windows only)
+
+    ![](./images/putty2.png "")
+
+5. All Oracle software components are installed with **oracle** OS user. Use the substitute user command to start a session as **oracle** user.
 
     ````
     <copy>
@@ -32,7 +44,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-4. You can verify the services provided by the Oracle Listener.
+6. You can verify the services provided by the Oracle Listener.
 
     ````
     <copy>
@@ -40,7 +52,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-5. You can connect to the database instance specified by environment variables.
+7. You can connect to the database instance specified by environment variables.
 
     ````
     <copy>
@@ -48,7 +60,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-6. List all pluggable databases.
+8. List all pluggable databases.
 
     ````
     <copy>
@@ -56,7 +68,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-7. Type **exit** command tree times followed by Enter to close all sessions (SQL*Plus, oracle user, and SSH).
+9. Type **exit** command tree times followed by Enter to close all sessions (SQL*Plus, oracle user, and SSH).
 
     ````
     <copy>
@@ -70,13 +82,30 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
 
 ## Task 2: Enterprise Manager Express 
 
-1. Connect to the Database node using SSH, this time adding an SSH tunneling or SSH port forwarding option for port 5500.
+1. Connect to the Database node Public IP Address using SSH, this time adding an SSH tunneling or SSH port forwarding option for port 5500. Change `id_rsa` with the private key file you saved on your computer. (Linux only)
 
     ````
     <copy>
     ssh -C -i id_rsa -L 5500:localhost:5500 opc@<DB Node Public IP Address>
     </copy>
     ````
+
+9. Connect to Database node Public IP Address port 22. (Windows only)
+
+    ![](./images/putty1.png "")
+
+10. Use the `.ppk` private key. (Windows only)
+
+    ![](./images/putty2.png "")
+
+11. Create a SSH tunnel from Source port 5500 to Destination localhost:5500. Click **Add**. (Windows only)
+
+    ![](./images/putty4.png "")
+
+12. Go back to Session, give it a name, and save it. When asked if you trust this host, click **Yes**. (Windows only)
+
+    ![](./images/putty3.png "")
+
 
 2. Use the substitute user command to start a session as **oracle** user.
 
@@ -115,14 +144,14 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
 7. Use the following credentials:
 
     - Username: system
-    - Password: DBlearnPTS#20_
+    - Password: DBlabsPTS#22_
     - Container Name: CDB$ROOT for the Container Database, or PDB011 for the Pluggable Database. Try both.
 
 8. Explore Enterprise Manager Express console, and see what this tool has to offer.
 
 ## Task 3: Create a Pluggable Database
 
-1. Connect to the Compute node using SSH.
+1. Connect to the Compute node using SSH, if not connected already. Change `id_rsa` with the private key file you saved on your computer.
 
     ````
     <copy>
@@ -130,31 +159,24 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-2. Connect to your DB System database using SQL*Plus.
+2. Use the substitute user command to start a session as **oracle** user.
 
     ````
     <copy>
-    sqlplus sys/DBlearnPTS#20_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
+    sudo su - oracle
     </copy>
     ````
 
-3. List pluggable databases.
+3. Connect to your DB System database using SQL*Plus.
 
     ````
     <copy>
-    show pdbs
+    export LD_LIBRARY_PATH=/usr/lib/oracle/21/client64/lib
+    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
     </copy>
     ````
 
-4. Create a new pluggable database called **PDB012**.
-
-    ````
-    <copy>
-    CREATE PLUGGABLE DATABASE pdb012 ADMIN USER Admin IDENTIFIED BY DBlearnPTS#20_;
-    </copy>
-    ````
-
-5. List pluggable databases and confirm the new pluggable database is there.
+4. List pluggable databases.
 
     ````
     <copy>
@@ -162,7 +184,23 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-6. Change the state of the new pluggable database PDB012 to **OPEN**.
+5. Create a new pluggable database called **PDB012**.
+
+    ````
+    <copy>
+    CREATE PLUGGABLE DATABASE pdb012 ADMIN USER Admin IDENTIFIED BY DBlabsPTS#22_;
+    </copy>
+    ````
+
+6. List pluggable databases and confirm the new pluggable database is there.
+
+    ````
+    <copy>
+    show pdbs
+    </copy>
+    ````
+
+7. Change the state of the new pluggable database PDB012 to **OPEN**.
 
     ````
     <copy>
@@ -170,7 +208,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-7. List pluggable databases and confirm it is **OPEN**.
+8. List pluggable databases and confirm it is **OPEN**.
 
     ````
     <copy>
@@ -178,15 +216,15 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-8. Connect to the new pluggable database.
+9. Connect to the new pluggable database.
 
     ````
     <copy>
-    conn sys/DBlearnPTS#20_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    conn sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
-9. Display the current container name.
+10. Display the current container name.
 
     ````
     <copy>
@@ -194,7 +232,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-10. List all users in PDB012.
+11. List all users in PDB012.
 
     ````
     <copy>
@@ -202,7 +240,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
     </copy>
     ````
 
-11. This pluggable database doesn't have Oracle Sample Schemas either. Exit SQL*Plus.
+12. This pluggable database doesn't have Oracle Sample Schemas either. Exit SQL*Plus.
 
     ````
     <copy>
@@ -216,7 +254,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
 
     ````
     <copy>
-    sqlplus sys/DBlearnPTS#20_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -253,7 +291,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
 
     ````
     <copy>
-    ADMINISTER KEY MANAGEMENT SET KEY FORCE KEYSTORE IDENTIFIED BY DBlearnPTS#20_ WITH BACKUP;
+    ADMINISTER KEY MANAGEMENT SET KEY FORCE KEYSTORE IDENTIFIED BY DBlabsPTS#22_ WITH BACKUP;
     </copy>
     ````
 
@@ -341,7 +379,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
 
     ````
     <copy>
-    sqlplus sys/DBlearnPTS#20_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -349,7 +387,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
 
     ````
     <copy>
-    @db-sample-schemas-19c/human_resources/hr_main.sql DBlearnPTS#20_ USERS TEMP DBlearnPTS#20_ /home/opc/logs/ <DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
+    @db-sample-schemas-19c/human_resources/hr_main.sql DBlabsPTS#22_ USERS TEMP DBlabsPTS#22_ /home/oracle/logs/ <DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
     </copy>
     ````
 
@@ -401,7 +439,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
 
     ````
     <copy>
-    sqlplus sys/DBlearnPTS#20_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -409,7 +447,7 @@ This lab explains how to connect to an active DB system with SSH, enable EM Expr
 
     ````
     <copy>
-    @db-sample-schemas-19c/sales_history/sh_main.sql DBlearnPTS#20_ USERS TEMP DBlearnPTS#20_ /home/opc/db-sample-schemas-19c/sales_history/ /home/opc/logs/ v3 <DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
+    @db-sample-schemas-19c/sales_history/sh_main.sql DBlabsPTS#22_ USERS TEMP DBlabsPTS#22_ /home/oracle/db-sample-schemas-19c/sales_history/ /home/oracle/logs/ v3 <DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
     </copy>
     ````
 
