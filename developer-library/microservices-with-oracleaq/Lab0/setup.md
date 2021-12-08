@@ -64,37 +64,41 @@
 
   1. To work with the application code, you need to make a clone from the GitHub repository using the following command.
 
-            <copy>
+            
 
-            git clone https://github.com/oracle/microservices-datadriven/oracleAQ.git
+            git clone https://github.com/oracle/microservices-datadriven.git;
+            
+            cp -r ./microservices-datadriven/oracleAQ $HOME;
+            
+            rm -r -f microservices-datadriven;
 
-            </copy>
+            
 
   2. Run the following command to edit your .bashrc file so that you will return to the workshop directory when you connect to cloud shell in the future.
    
-            <copy>
+            
 
             sed -i.bak '/oracleAQ/d' ~/.bashrc
 
-            </copy>
+            
 
  **Task 6: Start the Setup**
  
   1. Execute the following sequence of commands to start the setup.
 
-            <copy>
+            
 
             source oracleAQ/setup.sh
 
-            </copy>
+            
     
   Note, cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run this command to resume the setup:
 
-            <copy>
+            
 
             source setup.sh
 
-            </copy>
+            
     
   The setup process will typically take around 5 minutes to complete.
 
