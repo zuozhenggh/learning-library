@@ -70,7 +70,7 @@ This lab will explain the migration from Oracle AQ classic Queues to Oracle AQ T
 
 - Deliverer requests to validate OTP by Application's DB: Enqueue by Deliverer(orderId, OTP, deliveryLocation, deliveryStatus)
 
-    cd $WORKFLOW_HOME; source teqWorkflowDequeue.sh;
+        cd $WORKFLOW_HOME; source teqWorkflowDequeue.sh;
     
 **Task 8: Application Validates the OTP shared by Deliverer: DequeueBrowse from Application.**
 
@@ -92,7 +92,7 @@ This lab will explain the migration from Oracle AQ classic Queues to Oracle AQ T
 
 - Drop user, deliverer, application Queues
 
-    cd $WORKFLOW_HOME; source teqWorkflowCleanups.sh;
+        cd $WORKFLOW_HOME; source teqWorkflowCleanups.sh;
     
     
     
