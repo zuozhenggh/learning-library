@@ -19,7 +19,7 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
     
         
 
-        cd $OracleAQ_HOME; source basicCreateQueue.sh;
+        cd $WORKFLOW_HOME; source basicCreateQueue.sh;
 
   
     
@@ -32,7 +32,7 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
     
         
 
-        cd $OracleAQ_HOME; source basicEnqueue.sh;
+        cd $WORKFLOW_HOME; source basicEnqueue.sh;
 
        
 
@@ -44,7 +44,7 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
     
         
 
-        cd $OracleAQ_HOME; source basicDequeue.sh;
+        cd $WORKFLOW_HOME; source basicDequeue.sh;
 
        
 
@@ -58,7 +58,7 @@ Oracle Advanced queue with classic queue examples to demonstrate classic queue c
 
        
 
-        cd $OracleAQ_HOME; source basicCleanups.sh;
+        cd $WORKFLOW_HOME; source basicCleanups.sh;
 
         
     
