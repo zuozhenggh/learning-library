@@ -35,9 +35,9 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 	![Development option in ADW Service Console](images/adw_development.png)
 
 
-2. Click **Oracle Machine Learning Notebooks.**
+2. Click **Oracle Machine Learning User Interface.**
 
-  ![Oracle Machine Learning Notebooks in ADW](images/adw_oml_notebooks.png)
+  ![Oracle Machine Learning User Interface in ADW](images/adw_oml_notebooks.png)
 
 4. Enter your user credentials and click **Sign in**. This opens the Oracle Machine Learning user interface homepage.
 
@@ -49,7 +49,7 @@ This completes the task of accessing Oracle Machine Learning.
 
 
 
-## Task 2: Create a Notebook and define paragraphs the md, SQL, PL/SQL, and Python interpreters
+## Task 2: Create a Notebook and define paragraphs using the md, SQL, PL/SQL, and Python interpreters
 To create a notebook:
 
 1. On the Oracle Machine Learning homepage, click **Notebooks**. The Notebooks page opens.
@@ -237,7 +237,7 @@ This completes the task of creating the Time Series notebook from the OML4SQL Ti
 
 ## Task 4: Change Interpreter Bindings Order
 
-An interpreter allows using a specific data processing language at the backend to process commands entered in a notebook paragraph. For the notebooks in Oracle Machine Learning Notebooks, you use the following interpreters:
+An interpreter allows using a specific data processing language at the backend to process commands entered in a notebook paragraph. For the notebooks in Oracle Machine Learning User Interface, you use the following interpreters:
 
 * SQL interpreter for SQL Statements
 * PL/SQL  interpreter for PL/SQL scripts/statements
