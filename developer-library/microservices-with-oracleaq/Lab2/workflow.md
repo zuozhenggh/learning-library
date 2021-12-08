@@ -55,7 +55,7 @@ This Lab will help you to understand the workflow for OTP(one time password) bas
 - Drop user, deliverer, application Queue Tables
 
 
-       cd $WORKFLOW_HOME; source workflowDequeue.sh;
+       cd $WORKFLOW_HOME; source workflowCleanups.sh;
 
 
 
