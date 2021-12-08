@@ -32,12 +32,12 @@ When invoked, automatic partitioning performs the following operations in Autono
 
 ## Workshop Summary
 
-The workshop is designed to be used in a 19c Always Free Autonomouns Database (ADB) instance. In this case, a table need to be larger than 5 GBytes to be considered for partitioning. In non-free ADB services, tables must be at least 64GB.
+The workshop is designed to be used in a 19c Always Free Autonomous Database (ADB) instance where a table needs to be larger than 5 GBytes to be considered for auto partitioning. In non-free ADB services, tables must be at least 64GB.
 
 The steps are:
 
 - Create a 5GB non-partitioned table called APART, filled with random data
-- Run a test workload on APART
+- Run a test workload on the APART table
 - Run the auto partitioning _validate_ API to confirm that the table meets auto partitioning requirements
-- Execute the auto partitining _recommend_ task in report-only mode. The task will build a partitioned copy of the table and compare performance before vs after partitioning.
-- Use the _apply_ API to implement the auto partition recommendation. The APART table will be transforme into an ONLINE ALTER TABLE operation so that the production workload is not interrupted. 
+- Execute the auto partitioning _recommend_ task in report-only mode. The task will build a partitioned copy of the table and compare performance before vs. after partitioning.
+- Use the _apply_ API to implement the auto partition recommendation. The APART table will be transformed into an ONLINE ALTER TABLE operation so that the production workload is not interrupted. 

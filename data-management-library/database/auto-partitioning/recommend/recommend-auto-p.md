@@ -2,13 +2,15 @@
 
 ## Introduction
 
- In this Lab, we check to see whether partitioning the APART table will yield performance benefits.
+ In this Lab, we use auto partitioning to check whether partitioning the APART table will yield performance benefits for our workload.
 
 ## Task 1: Call the Recommend API and Report Results
 
 The recommend\_partition\_method procedure will perform an analysis of the workload queries and the table itself. From this information, a candidate partitioning scheme will be identified. Next, a partitioned copy of the table is built and the workload queries are re-tested on that. Finally, a summary report will be generated.
 
-The time to complete this proceure is dependent on the table size, the number of indexes, and the elapsed execution time for the captured workload. For this lab, the following example will take approcimately 20 mins to complete for a 5GB table in a 19c Always Free database instance.
+The time to complete the following proceure is dependent on the table size, the number of indexes, and the elapsed execution time for the captured workload (and auto partitioning may choose to use a subset of the workload rather than the whole thing). 
+
+The following example will take approcimately 20 mins to complete for a 5GB table in a 19c Always Free database instance.
 
     <copy>
      var rep clob
@@ -63,4 +65,4 @@ Key   : D
 =============================================
 `````
 
-The partitioning method is not a standard range partition because it needs to account for NULL partition keys and is will avoid creating a large number of partitions if, for example, a date value for D far into the future is inserted.
+The partitioning method is not a standard range partition because it needs to account for NULL partition keys and it allows us to avoid creating a large number of partitions if, for example, column D is inserted/updated with a date value far into the future.

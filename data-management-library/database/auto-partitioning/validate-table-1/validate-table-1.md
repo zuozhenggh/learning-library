@@ -6,6 +6,8 @@
 
 ## Task 1: Call the Validate API
 
+We can check to see if auto partitioning will consider the table:
+
     <copy>
      declare
      ret varchar2(1000);
@@ -18,7 +20,7 @@
      /
     </copy>
 
-Auto partitions needs a workload to test against the candidate table. Currently the workload does not exist:
+Auto partitioning needs a workload to test against the candidate table. Currently the workload does not exist, so this message is returned:
 
 `````
  Auto partitioning validation: INVALID: table is referenced by 0 full table scan queries in the SQL tuning set; 5 queries required
@@ -26,7 +28,9 @@ Auto partitions needs a workload to test against the candidate table. Currently 
 
 ## Task 2: Generate a Workload - Execute Test Queries
 
-Execute some queries that scan the APART table. This will generate a workload we can test against a partitioned version of the table.
+We will now create a workload that accesses the table. 
+
+Execute queries that scan the APART table. This will generate a workload auto partitioning can test against a partitioned version of the table.
 
     <copy>
      select /*+ TEST_QUERY */ sum(a) from apart 
@@ -53,9 +57,11 @@ Execute some queries that scan the APART table. This will generate a workload we
      where d between to_date('01-JUL-2020') and to_date('02-JUL-2020');
     </copy>
 
-## Task 2: Wait for Automatic SQL Tuning Set Population
+## Task 2: Wait for Automatic SQL Tuning Set (ASTS) Population
 
-The Auto STS Capture Task is responsible for capturing workload SQL in a SQL tuning set called SYS\_AUTO\_STS. This is the _automatic SQL tuning set_. Monitor the last schedule time and wait until the task has executed.
+The Auto STS Capture Task is responsible for capturing workload SQL in a SQL tuning set called SYS\_AUTO\_STS. This is the _automatic SQL tuning set_ or ASTS and is maintained automatically in Autonomous Database environments. 
+
+Use the following query to monitor the last schedule time and wait until the task has executed again - i.e. _after_ the workload queries were executed.
 
     <copy>
      select current_timestamp now from dual;
@@ -104,6 +110,8 @@ select /*+ TEST_QUERY */ avg(a) from apart where d between to_date('01-JUL-2020'
 
 ## Task 4: Call the Validate API Again
 
+We'll try validating again:
+
     <copy>
      declare
      ret varchar2(1000);
@@ -116,7 +124,7 @@ select /*+ TEST_QUERY */ avg(a) from apart where d between to_date('01-JUL-2020'
      /
     </copy>
 
-We are now ready to run the auto partitioning _recommend_ step:
+When the following message is returned, we are ready to run the auto partitioning _recommend_ step:
 
 `````
 Auto partitioning validation: VALID

@@ -1,4 +1,4 @@
-# Oracle Database Auto Partitioning Github
+# Oracle Database Auto Partitioning GitHub
 
 Automatic partitioning in Autonomous Database analyzes the application workload and automatically applies partitioning to tables and their indexes to improve performance or to allow better management of large tables.
 

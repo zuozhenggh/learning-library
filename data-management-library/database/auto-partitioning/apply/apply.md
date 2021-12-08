@@ -24,9 +24,11 @@ Execute the following command, entering the recomendation ID when prompted:
        exec dbms_auto_partition.apply_recommendation('&recommendation_id');
     </copy>
 
-A partitioned version of the table will be build on-line, using an ALTER TABLE MODIFY PARTITION ONLINE command. It will take approximately 10 minutes for a 5GB table in a 19c Always Free instance.
+A partitioned version of the table will be build on-line using an ALTER TABLE MODIFY PARTITION ONLINE command. It will take approximately 10 minutes for a 5GB table in a 19c Always Free instance.
 
 ## Task 2: Confirm that the Table Has Been Partitioned
+
+We now have a partitioned APART table:
 
     <copy>
     set trims on
