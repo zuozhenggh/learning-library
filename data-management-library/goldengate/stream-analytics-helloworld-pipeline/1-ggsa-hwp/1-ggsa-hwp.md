@@ -62,11 +62,11 @@ To create a File stream:
 
 2. Select **File** from the list, to display the **Create Stream** screen.
 
- ![Create Stream Screen](./images/CreateStream.png "")
+ ![Creating a File stream](./images/CreateStream.png "")
 
 3. Select **Create Pipeline with this source (Launch Pipeline Editor)**.
 
- ![](./images/CreateStream2.png "")
+ ![Launching Pipeline Editor from the Create Stream screen](./images/CreateStream2.png "")
 
 4. Click **Next**, to update the source details.
 
@@ -76,7 +76,7 @@ To upload the CSV file:
 
 1. On the **Source Details** screen, click **Upload File** to browse and upload the CSV file that you had created in **Task 1**.
 
- ![](./images/fileupload.png "")
+ ![Uploading a CSV file as the source stream](./images/fileupload.png "")
 
 2. Click **Next**, to display the **Data Format** screen.
 
@@ -86,7 +86,7 @@ To set the first record as header:
 
 1. On the **Data Format** screen, select **First record as header**.
 
- ![](./images/filerecasfrmt.png "")
+ ![Setting the first record as Header, in a File stream](./images/filerecasfrmt.png "")
 
 2. Click **Next**, to infer shape for the event.
 
@@ -96,7 +96,7 @@ To infer shape from stream:
 
 1. On the **Shape** screen, ensure **Infer Shape** and **From Stream** options are selected, and verify if the shape of the event is successfully inferred as shown in following screenshot.
 
- ![](./images/shape.png "")
+ ![Inferring Shape from a File stream](./images/shape.png "")
 
 2. Click **Save**, to open the **Create Pipeline** screen.
 
@@ -106,7 +106,7 @@ To create a pipeline:
 
 1. On the **Create Pipeline** screen, enter a name for the pipeline, and click **Save** to launch the Pipeline Editor.
 
- ![](./images/createpplne.png "")
+ ![Creating a Pipeline](./images/createpplne.png "")
 
 
 ## **Task 8:** View the Pipeline in the Pipeline Editor
@@ -115,7 +115,7 @@ To create a pipeline:
 
 2. You should eventually see the following screen, with a single node representing the source stream in the left pane, and the **Sources** used in the pipeline, in the right pane.
 
- ![](./images/pplneditor.png "")
+ ![Viewing a pipeline in the pipeline editor](./images/pplneditor.png "")
 
 ## **Task 9:** Add a Query Stage
 
@@ -135,7 +135,7 @@ To add a **Filter** to a **Query** stage:
 
 2. Click **Add a Filter**. In this example, the filter is **QuantitySold is greater than 4**, as shown in the following screenshot.
 
- ![](./images/addquery.png "")
+ ![Adding a Filter to a Query Stage](./images/addquery.png "")
 
 ## **Task 11:** Publish the Pipeline
 
@@ -143,7 +143,7 @@ To publish the pipeline:
 
 1. Click **Publish** on the top-right corner.
 
- ![](./images/pubpplne.png "")
+ ![Publishing a pipeline](./images/pubpplne.png "")
 
 2. Publish with defaults, for your pipeline to filter data in real-time.
 

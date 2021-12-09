@@ -53,7 +53,7 @@ Now with access to your remote desktop session, validate your environment before
     </copy>
     ```
 
-    ![](images/ggsa-terminal-status.png " ")
+    ![Checking the status of the GGSA services, using the command terminal](images/ggsa-terminal-status.png " ")
 
     If successful, the page above is displayed and your environment is ready.  
 
@@ -69,9 +69,9 @@ Now with access to your remote desktop session, validate your environment before
     </copy>
     ```
 
-    ![](images/ggsa-terminal2.png " ")
-    ![](images/ggsa-terminal3.png " ")
-    ![](images/ggsa-terminal4.png " ")
+    ![Validating the GGSA services, using the command terminal](images/ggsa-terminal2.png " ")
+    ![Validating the GGSA services, using the command terminal](images/ggsa-terminal3.png " ")
+    ![Validating the GGSA services, using the command terminal](images/ggsa-terminal4.png " ")
 
 
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
