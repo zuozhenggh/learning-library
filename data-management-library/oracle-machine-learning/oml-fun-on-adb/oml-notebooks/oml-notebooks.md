@@ -28,7 +28,7 @@ This lab assumes you have:
 
 ## Task 1: Sign into Oracle Machine Learning Notebooks
 
-A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Oracle Autonomous Database.
+A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning User Interface. You can access Oracle Machine Learning Notebooks from Oracle Autonomous Database.
 
 1. From the tab on your browser with your Oracle Autonomous Data Warehouse instance, click **Service Console**, then select **Development** on the left.
 

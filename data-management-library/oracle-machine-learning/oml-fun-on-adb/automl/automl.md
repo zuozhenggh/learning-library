@@ -34,8 +34,8 @@ This lab assumes you have:
 
 ## Task 1: Access Oracle Machine Learning AutoML UI
 
-To access AutoML UI, you must sign into the Oracle Machine Learning user interface, which also includes Oracle Machine Learning Notebooks, on Autonomous Database:
-To sign into Oracle Machine Learning (OML) user interface from the Autonomous Database Service Console:
+To access AutoML UI, you must sign into the Oracle Machine Learning User Interface, which also includes Oracle Machine Learning notebooks, on Autonomous Database:
+To sign into Oracle Machine Learning (OML) User Interface from the Autonomous Database Service Console:
 
 1. Select an Autonomous Database instance, and on the Autonomous Database details page click **Service Console**.
 
@@ -45,7 +45,7 @@ To sign into Oracle Machine Learning (OML) user interface from the Autonomous Da
 
   ![Development option](images/development.png)
 
-4. On the Development page click **Oracle Machine Learning Notebooks**.
+4. On the Development page click **Oracle Machine Learning User Interface**.
 
 	![OML Notebooks option](images/oml_notebooks_option.png)
 
