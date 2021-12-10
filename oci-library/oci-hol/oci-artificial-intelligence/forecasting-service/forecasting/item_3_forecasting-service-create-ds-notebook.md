@@ -98,9 +98,13 @@ Use the tenancy, user and fingerprint from the configuration file as shown in AP
 ![](../images/lab1_task3_step9_authorization.png " ")
 
 
+[Proceed to the next section](#next).
+
 ## Acknowledgements
 * **Authors**
-    * Anku Pandey - Data Scientist - Oracle AI Services
     * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
+    * Anku Pandey - Data Scientist - Oracle AI Services
+    * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
+    * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
 
 

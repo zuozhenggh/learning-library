@@ -176,5 +176,7 @@ Congratulations on completing this lab! You now have finished all the sessions o
 
 ## Acknowledgements
 * **Authors**
+    * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
+    * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
-
+    * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services

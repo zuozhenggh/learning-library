@@ -304,4 +304,6 @@ get_forecast_response['forecastResult']['metrics']['targetColumns']
 
 * **Authors**
     * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
-
+    * Anku Pandey - Data Scientist - Oracle AI Services
+    * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
+    * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services

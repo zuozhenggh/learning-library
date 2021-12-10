@@ -41,7 +41,11 @@ When you are finished don't forget to rate this workshop!  We rely on this feedb
 
     ![](https://github.com/oracle/learning-library/blob/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
 
+[Proceed to the next section](#next).
 
 ## **Acknowledgements**
 * **Authors**
     * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
+    * Anku Pandey - Data Scientist - Oracle AI Services
+    * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
+    * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services

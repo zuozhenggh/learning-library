@@ -3,14 +3,15 @@
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
-            "title": "Getting Started",
-            "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "../../forecasting/item_1_pre-register-free-tier-account.md"
-        },
-        {
             "title": "Introduction: Forecasting Service",
             "description": "Learn how to build anomaly detection model and use it for detection",
-            "filename": "../../forecasting/item_2_forecasting-service-intro.md"
+            "filename": "../../forecasting/item_1_forecasting-service-intro.md"
+        },
+        {
+            
+            "title": "Getting Started",
+            "description": "Sign up for and log into the Oracle Cloud",
+            "filename": "../../forecasting/item_2_pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Data Science Notebook Set up",
