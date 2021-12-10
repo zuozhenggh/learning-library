@@ -1,7 +1,7 @@
 # Protect Application Data by using Database Vault Operations Control
 
 ## Introduction
-In Oracle Database 18c, Oracle Database Vault provides command rules and realms to protect sensitive data from users with system privileges and object privileges (mandatory realms). A command rule controls whether a particular SQL command can be executed for a given circumstance. A realm can prevent a user from accessing protected objects if the user is not authorized in the realm. This protection requires the creation and configuration of command rules or realms.
+In Oracle Database 19c, Oracle Database Vault provides command rules and realms to protect sensitive data from users with system privileges and object privileges (mandatory realms). A command rule controls whether a particular SQL command can be executed for a given circumstance. A realm can prevent a user from accessing protected objects if the user is not authorized in the realm. This protection requires the creation and configuration of command rules or realms.
 
 Starting in Oracle Database 19c, Oracle Database Vault provides an extra layer of protection on the database objects. Database Vault Operations Control creates a wall between common users in databases and the customer database data that resides in the associated PDBs. Database Vault Operations Control prevents common users from accessing application local data that resides in PDBs. The capability allows you to store sensitive data for your business applications and manage the database without having to access the sensitive data in PDBs.
 
@@ -14,18 +14,18 @@ Estimated Time: 25 minutes
 In this lab, you will:
 
 - Prepare the environment
-- Create a Table in the PDB
-- Configure & Enable Database Vault in the CDB root
+- Create a table in the PDB
+- Configure & enable Database Vault in the CDB root
 - Enable Database Vault Operations
 - Test Database Vault Operations Control
-- Complete Administrative Tasks in PDBs
-- Add Users in an Exception List
-- Clean up Environment
+- Complete administrative tasks in PDBs
+- Add users in an exception list
+- Clean up environment
 
 ### Prerequisites
 
 This lab assumes you have:
-- Obtained and signed in to your `workshop-installed` compute instance.
+- Obtained and signed in to your `workshop-installed` compute instance
 
 ## Task 1: Prepare the environment
 
@@ -38,21 +38,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
     CDB1
     ```
 
-2. Run the `enable_ARCHIVELOG.sh` script and enter **CDB1** at the prompt to enable `ARCHIVELOG` mode on CDB1. The error  message at the beginning of the script is expected if the CDB is already shut down. You can ignore it.
-
-    ```
-    $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
-    CDB1
-    ```
-
-3. Run the `enable_ARCHIVELOG.sh` script again, and this time, enter **CDB2** at the prompt to enable `ARCHIVELOG` mode on CDB2.
-
-    ```
-    $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
-    CDB2
-    ```
-
-4. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Services Summary.
+2. Use the Listener Control Utility to verify whether the default listener (LISTENER) is started. Look for `status READY` for CDB1, PDB1, and CDB2 in the Services Summary.
 
     ```
     LSNRCTL> <copy>lsnrctl status</copy>
@@ -95,19 +81,19 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
     The command completed successfully
     ```
 
-5. If the default listener is not started, start it now.
+3. If the default listener is not started, start it now.
 
     ```
     $ <copy>lsnrctl start</copy>
     ```
 
-6. Connect to CDB1 as the `SYS` user.
+4. Connect to CDB1 as the `SYS` user.
 
     ```
     $ <copy>sqlplus / as sysdba</copy>
     ```
 
-7. Open PDB1. If PDB1 is already open, the results will say so; otherwise, PDB1 is opened.
+6. Open PDB1. If PDB1 is already open, the results will say so; otherwise, PDB1 is opened.
 
     ```
     SQL> <copy>alter pluggable database PDB1 open;</copy>
@@ -115,7 +101,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
     Pluggable database altered.
     ```
 
-8. Connect to PDB1.
+7. Connect to PDB1.
 
     ```
     SQL> <copy>alter session set container = PDB1;</copy>
@@ -128,7 +114,7 @@ To prepare your environment, enable `ARCHIVELOG` mode on CDB1 and CDB2, verify t
 1. Check that the user `SYS` is available in PDB1.
 
     ```
-    SQL> <copy>show con name</copy>
+    SQL> <copy>show con_name</copy>
 
     CON_NAME
     ------------------------------
@@ -163,6 +149,7 @@ DV_APP_PROTECTION status of NOT CONFIGURED means that Operations Control is not 
 In this task, you will configure Database Vault at the CDB root level, ensuring that the `DV_OWNER` role is granted locally in the CDB root to the common Oracle Database Vault owner, `C##SEC_ADMIN`. Granting `DV_OWNER` locally prevents the CDB common user with `DV_OWNER` from changing containers or logging into PDBs with this role and changing customer DV controls.
 
 1. Log in to the CDB root as `SYS`
+
     ```
     <SQL> <copy>connect sys/Ora4U_1234 as sysdba</copy>
     ```
@@ -173,18 +160,30 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
     <SQL> <copy>@drop_create_user_sec_admin.sql</copy>
     ```
 
-3. Configure Database Vault at the CDB root level ensuring that the `DV_OWNER` role is granted locally in the CDB root to the common Oracle Database Vault owner, `C##SEC_ADMIN`.
+3. Reconnect to CDB root after previous script forces exit from SQL*Plus.
 
     ```
-    <SQL><copy>exec DVSYS.CONFIGURE_DV ( dvowner_uname =>'c##sec_admin',-
+    $ <copy>sqlplus / as sysdba</copy>
+    ```
+
+    Verify that container is CDB root.
+
+    ```
+    <SQL> <copy>show con_name</copy>
+    ```
+
+4. Configure Database Vault at the CDB root level ensuring that the `DV_OWNER` role is granted locally in the CDB root to the common Oracle Database Vault owner, `C##SEC_ADMIN`.
+
+    ```
+    <SQL> <copy>exec DVSYS.CONFIGURE_DV ( dvowner_uname =>'c##sec_admin',-
                                          dvacctmgr_uname =>'c##accts_admin', -
-                                         force_local_dvowner => TRUE) > ></copy>
+                                         force_local_dvowner => TRUE)</copy>
     ```
 
-4. Observe the Oracle Database Vault status in the CDB root. Oracle Database Vault is configured but Database Vault Operations Control is not configured.
+5. Observe the Oracle Database Vault status in the CDB root. Oracle Database Vault is configured but Database Vault Operations Control is not configured.
 
     ```
-    <SQL><copy>SELECT * FROM dba_dv_status;</copy>
+    <SQL> <copy>SELECT * FROM dba_dv_status;</copy>
 
     NAME                     STATUS
     ------------------------ --------------
@@ -193,63 +192,62 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
     DV_ENABLE_STATUS         FALSE
     ```
 
-5. Log in to PDB1.
+6. Log in to PDB1.
 
-  ```
-  <SQL><copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
-  Connected.
-  ```
+    ```
+    <SQL> <copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
+    Connected.
+    ```
 
-6. Observe the Oracle Database Vault status in PDB1.
+7. Observe the Oracle Database Vault status in PDB1.
 
-  ```
-  <SQL><copy>SELECT * FROM dba_dv_status;</copy>
+    ```
+    <SQL> <copy>SELECT * FROM dba_dv_status;</copy>
 
-  NAME                     STATUS
-  ------------------------ --------------
-  DV_APP_PROTECTION        NOT CONFIGURED
-  DV_CONFIGURE_STATUS      FALSE
-  DV_ENABLE_STATUS         FALSE
-  ```
+    NAME                     STATUS
+    ------------------------ --------------
+    DV_APP_PROTECTION        NOT CONFIGURED
+    DV_CONFIGURE_STATUS      FALSE
+    DV_ENABLE_STATUS         FALSE
+    ```
 
-7. Check that the user SYS can still count the `HR.EMPLOYEES` table rows.
+8. Check that the user SYS can still count the `HR.EMPLOYEES` table rows.
 
-  ```
-  <SQL><copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
+    ```
+    <SQL> <copy>SELECT count(*) FROM HR.EMPLOYEES;</copy>
 
-  COUNT(*)
-  ----------
-         107
-  ```
+    COUNT(*)
+    ----------
+          107
+    ```
 
 ## Task 4: Enable Database Vault Operations Control
 
 1. In the CDB root, login as `C##ACCTS_ADMIN` and create a common user to grant the CREATE SESSION and SELECT ANY TABLE privileges.
 
     ```
-    <SQL><copy>CONNECT c##accts_admin</copy>
-    Enter password: Ora4U_1234
+    <SQL> <copy>CONNECT c##accts_admin/Ora4U_1234</copy>
     ```
     ```
-    <SQL><copy>CREATE USER c##common IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
+    <SQL> <copy>CREATE USER c##common IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
     ```
 
 2. Grant the CREATE SESSION and SELECT ANY TABLE privileges to the common user.
 
     ```
-    <SQL><copy> CONNECT / as sysdba</copy>
+    <SQL> <copy> CONNECT / as sysdba</copy>
     ```
     ```
-    <SQL><copy>GRANT create session, select any table TO c##common CONTAINER=ALL;</copy>
+    <SQL> <copy>GRANT create session, select any table TO c##common CONTAINER=ALL;</copy>
     ```
 
-3. Connect to PDB1 as the common user. Verify that the common user can query the `HR.EMPLOYEES`.
+3. Connect to PDB1 as the common user. Verify that the common user can query the `HR.EMPLOYEES` table.
 
     ```
-    SQL><copy>CONNECT c##common/Ora4U_1234@PDB1</copy>
+    SQL> <copy>CONNECT c##common/Ora4U_1234@PDB1</copy>
     ```
     ```
-    <SQL><copy>SELECT count(*) FROM hr.employees;</copy>
+    <SQL> <copy>SELECT count(*) FROM hr.employees;</copy>
 
     COUNT(*)
     ----------
@@ -259,10 +257,10 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 4. Enable Database Vault Operations Control in the CDB root. An error should occur when running this command because the Database Vault is not enabled in the CDB root. The next step will show how to first enable Oracle Database Vault in the CDB root.
 
     ```
-    SQL><copy>CONNECT / as sysdba</copy>
+    SQL> <copy>CONNECT / as sysdba</copy>
     ```
     ```
-    <SQL><copy>EXEC dvsys.dbms_macadm.enable_app_protection</copy>
+    <SQL> <copy>EXEC dvsys.dbms_macadm.enable_app_protection</copy>
     BEGIN dvsys.dbms_macadm.enable_app_protection; END;
     *
     ERROR at line 1:
@@ -271,35 +269,35 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
     ORA-06512: at line 1
     ```
 
-5. Log in the CDB1 as the Oracle Database Vault owner, `C##SEC_ADMIN`, and enable Oracle Database Vault in the CDB1.
+5. Log in to CDB1 as the Oracle Database Vault owner, `C##SEC_ADMIN`, and enable Oracle Database Vault in CDB1.
 
     ```
-    SQL><copy>CONNECT c##sec_admin/Ora4U_1234@CDB1</copy>
+    SQL> <copy>CONNECT c##sec_admin/Ora4U_1234@CDB1</copy>
     ```
     ```
-    <SQL><copy>EXEC dvsys.dbms_macadm.enable_dv</copy>
+    <SQL> <copy>EXEC dvsys.dbms_macadm.enable_dv</copy>
     ```
 
 6. Restart the database instance to enforce DV configuration and enabling.
 
     ```
-    SQL><copy>CONNECT / as sysdba</copy>
+    SQL> <copy>CONNECT / as sysdba</copy>
     ```
     ```
-    SQL><copy>shutdown immediate</copy>
+    SQL> <copy>shutdown immediate</copy>
     ```
     ```
-    SQL><copy>startup</copy>
+    SQL> <copy>startup</copy>
     ```
   If the PDB1 is not automatically opened, then manually open it.
     ```
-    <SQL><copy>ALTER PLUGGABLE DATABASE PDB1 OPEN;</copy>
+    <SQL> <copy>ALTER PLUGGABLE DATABASE PDB1 OPEN;</copy>
     ```
 
 7. Verify the Oracle Database Vault status in the CDB root. The result should show that the Oracle Database Vault is configured and enabled but Database Vault Operations Control is still not configured.
 
     ```
-    <SQL><copy>SELECT * FROM dba_dv_status;</copy>
+    <SQL> <copy>SELECT * FROM dba_dv_status;</copy>
 
     NAME                     STATUS
     ------------------------ --------------
@@ -311,20 +309,19 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 8. Log in to the CDB root as the common account with the `DV_OWNER` role to enable Database Vault Operations Control, even if the `DV_OWNER` role has been granted locally.
 
     ```
-    <SQL><copy>CONNECT c##sec_admin</copy>
-    Enter password: Ora4U_1234
+    <SQL> <copy>CONNECT c##sec_admin/Ora4U_1234</copy>
     ```
     ```
-    <SQL><copy>EXEC dvsys.dbms_macadm.enable_app_protection</copy>
+    <SQL> <copy>EXEC dvsys.dbms_macadm.enable_app_protection</copy>
     ```
 
 9. Verify the Oracle Database Vault Operations Control status in the CDB root.
 
     ```
-    <SQL><copy>CONNECT / as sysdba</copy>
+    <SQL> <copy>CONNECT / as sysdba</copy>
     ```
     ```
-    <SQL><copy>SELECT * FROM dba_dv_status;</copy>
+    <SQL> <copy>SELECT * FROM dba_dv_status;</copy>
 
     NAME                     STATUS
     ------------------------ --------------
@@ -335,10 +332,10 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 
 10. Verify the Oracle Database Vault Operations Control status in PDB1.
     ```
-    <SQL><copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
+    <SQL> <copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
     ```
     ```
-    <SQL><copy>SELECT * FROM dba_dv_status;</copy>
+    <SQL> <copy>SELECT * FROM dba_dv_status;</copy>
 
     NAME                     STATUS
     ------------------------ --------------
@@ -351,13 +348,13 @@ Observe that Oracle Database Vault Operations Control is enabled at the PDB leve
 
 ## Task 5: Test Database Vault Operations Control
 
-1. Connect to PDB1 as the common user. Verify that the common user cannot query the `HR.EMPLOYEES` due to insufficient privileges.
+1. Connect to PDB1 as the common user. Verify that the common user cannot query the `HR.EMPLOYEES` table due to insufficient privileges.
 
     ```
-    <SQL><copy>CONNECT c##common/Ora4U_1234@PDB1</copy>
+    <SQL> <copy>CONNECT c##common/Ora4U_1234@PDB1</copy>
     ```
     ```
-    <SQL><copy>SELECT * FROM hr.employees;</copy>
+    <SQL> <copy>SELECT * FROM hr.employees;</copy>
     SELECT * FROM hr.employees
                  *
     ERROR at line 1:
@@ -365,27 +362,26 @@ Observe that Oracle Database Vault Operations Control is enabled at the PDB leve
     ```
 ## Task 6: Complete administrative tasks in PDBs
 
-In this task, you back up the PDB although Oracle Database Vault Operations Control is enabled. Because database patching, backing up, restoring, and upgrading do not touch customer schemas, DBAs and privileged common users can still run tools as `SYSDBA` to patch the database (with `DV_PATCH_ADMIN` granted commonly in the CDB root), backup, restore, and upgrade the database although Oracle Database Vault Operations Control is enabled.
+In this task, you back up the PDB although Oracle Database Vault Operations Control is enabled. Because database patching, backing up, restoring, and upgrading do not touch customer schemas, DBAs and privileged common users can still run tools as `SYSDBA` to patch, backup, restore, and upgrade the database (with `DV_PATCH_ADMIN` granted commonly in the CDB root).
 
 1. Grant the `SYSDBA` privilege to the common user in PDB1.
 
     ```
-    <SQL><copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
+    <SQL> <copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
     ```
     ```
-    <SQL><copy>GRANT sysdba TO c##common;</copy>
+    <SQL> <copy>GRANT sysdba TO c##common;</copy>
     ```
 2. Quit the session.
 
     ```
-    <SQL><copy>exit</copy>
+    <SQL> <copy>exit</copy>
     ```
 
 3. Use RMAN to back up PDB1. Connect as the common user to PDB1.
 
     ```
-    $ <copy>rman target c##common@PDB1</copy>
-    target database password: Ora4U_1234
+    $ <copy>rman target c##common@PDB1/Ora4U_1234</copy>
     ```
     ```
     <rman> <copy>BACKUP DATABASE;</copy>
@@ -394,7 +390,7 @@ Although common users cannot query application data in PDBs, they can still comp
 
 4. Quit the RMAN session.
     ```
-    <rman><copy>exit</copy>
+    <rman> <copy>exit</copy>
     ```
 
 ## Task 7: Add users in an exception list to allow them operations in PDBs
@@ -406,28 +402,30 @@ HR application data in PDB1 is very sensitive and should be protected against co
 1. Log in as the `C##ACCTS_ADMIN` user who has been granted the `DV_ACCTMGR` role to create the common user C##REPORT.
 
     ```
-    $ <copy>sqlplus c##accts_admin</copy>
-    Enter password: Ora4U_1234
-
-    <SQL><copy>CREATE USER c##report IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
+    $ <copy>sqlplus c##accts_admin/Ora4U_1234</copy>
+    ```
+    ```
+    <SQL> <copy>CREATE USER c##report IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
     ```
 
 2. Grant the CREATE SESSION and SELECT ANY TABLE privileges to C##REPORT.
 
     ```
-    <SQL><copy>CONNECT / as sysdba</copy>
+    <SQL> <copy>CONNECT / as sysdba</copy>
     ```
     ```
-    <SQL><copy>GRANT create session, select any table TO c##report CONTAINER=ALL;<copy>
+    <SQL> <copy>GRANT create session, select any table TO c##report CONTAINER=ALL;</copy>
     ```
 
-3. Connect as the common user in PDB1 and check if the common user can query the application data in PDB1.
+3. Log in as the `C##REPORT` user in PDB1 and check if the user can query the application data in PDB1. Error should display as shown below.
 
     ```
-    <SQL><copy>CONNECT c##report/Ora4U_1234@PDB1</copy>
+    <SQL> <copy>CONNECT c##report/Ora4U_1234@PDB1</copy>
     ```
     ```
-    <SQL><copy>SELECT count(*) FROM hr.employees;</copy>
+    <SQL> <copy>SELECT count(*) FROM hr.employees;</copy>
+    ```
+    ```
     SELECT count(*) FROM hr.employees
     *
     ERROR at line 1:
@@ -439,16 +437,16 @@ The behavior is expected because Oracle Database Vault Operations Control is ena
 4. Add the user to the exception list of users and packages allowed to access local data in PDB1. This operation can only be completed in the CDB root.
 
     ```
-    <SQL><copy>CONNECT c##sec_admin/Ora4U_1234</copy>
+    <SQL> <copy>CONNECT c##sec_admin/Ora4U_1234</copy>
     ```
     ```
-    <SQL><copy>EXEC dvsys.dbms_macadm.add_app_exception (owner => 'C##REPORT', package_name => '')</copy>
+    <SQL> <copy>EXEC dvsys.dbms_macadm.add_app_exception (owner => 'C##REPORT', package_name => '')</copy>
     ```
 
 5. Query the exception list.
 
     ```
-    <SQL><copy>SELECT * FROM DVSYS.DBA_DV_APP_EXCEPTION;</copy>
+    <SQL> <copy>SELECT * FROM DVSYS.DBA_DV_APP_EXCEPTION;</copy>
 
     OWNER          PACKAGE
     -------------- --------------
@@ -460,10 +458,10 @@ Automation accounts frequently have procedure or functions that need to access l
 6. Re-connect as the common user in PDB1 and check that the common user can query the application data in PDB1.
 
     ```
-    <SQL><copy>CONNECT c##report/Ora4U_1234@PDB1</copy>
+    <SQL> <copy>CONNECT c##report/Ora4U_1234@PDB1</copy>
     ```
     ```
-    <SQL><copy>SELECT count(*) FROM hr.employees;</copy>
+    <SQL> <copy>SELECT count(*) FROM hr.employees;</copy>
 
     COUNT(*)
     ----------
@@ -475,40 +473,40 @@ Automation accounts frequently have procedure or functions that need to access l
 1. Disable Database Vault Operations Control.
 
     ```
-    <SQL><copy>CONNECT c##sec_admin/Ora4U_1234</copy>
+    <SQL> <copy>CONNECT c##sec_admin/Ora4U_1234</copy>
     ```
     ```
-    <SQL><copy>EXEC dvsys.dbms_macadm.disable_app_protection</copy>
+    <SQL> <copy>EXEC dvsys.dbms_macadm.disable_app_protection</copy>
     ```
 
 2. Revoke the SYSDBA privilege from the common user in PDB1.
 
     ```
-    <SQL><copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
+    <SQL> <copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
     ```
     ```
-    <SQL><copy>REVOKE sysdba FROM c##common;</copy>
+    <SQL> <copy>REVOKE sysdba FROM c##common;</copy>
     ```
 
 3. Drop the C##COMMON user in the CDB.
 
     ```
-    <SQL><copy>CONNECT c##accts_admin/Ora4U_1234</copy>
+    <SQL> <copy>CONNECT c##accts_admin/Ora4U_1234</copy>
     ```
     ```
-    <SQL><copy>DROP USER c##common CASCADE;</copy>
+    <SQL> <copy>DROP USER c##common CASCADE;</copy>
     ```
 
 4. Drop the C##REPORT user in the CDB.
 
     ```
-    <SQL><copy>DROP USER c##report CASCADE;</copy>
+    <SQL> <copy>DROP USER c##report CASCADE;</copy>
     ```
 
 5. Quit the session.
 
     ```
-    <SQL><copy>exit</copy>
+    <SQL> <copy>exit</copy>
     ```
 
 ## Learn More
