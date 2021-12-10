@@ -9,12 +9,12 @@ Estimated Time: -- 30 minutes
 ### About Oracle Machine Learning Services
 OML Services extends OML functionality to support model deployment and model lifecycle management for both in-database OML models and third-party Open Neural Networks Exchange (ONNX) machine learning models via REST APIs. These third-party classification or regression models can be built using tools that support the ONNX format, which includes packages like Scikit-learn and TensorFlow, among several others.
 
-Oracle Machine Learning Services provides REST API endpoints hosted on Oracle Autonomous Database. These endpoints enable the storage of machine learning models along with their metadata, and the creation of scoring endpoints for the model.
+Oracle Machine Learning Services provides REST endpoints through the Oracle Autonomous Database environment. These endpoints enable the storage of machine learning models along with their metadata, the creation of scoring endpoints for the model, and producing scores using these endpoints.
 
 ### Objectives
 
 In this lab, you will:
-* Authenticate your user account with the Autonomous Database to use OML Services.
+* Authenticate your user account with your Autonomous Database instance to use OML Services.
     * Obtain authentication token.
     * Refresh authentication token.
     * Revoke authentication token.
@@ -196,7 +196,7 @@ This lab assumes you have:
 
 
 
-2.  Get a list of saved models. For this step to work, you need to have models deployed in your OML user account. If you have completed Labs 2 , 3 or 4, your account should include deployed models. Refer back to Lab 4 Using OML AutoML UI  to know how to quickly create and save a  model.
+2.  Get a list of saved models. For this step to return results, you need to have models deployed in your OML user account. If you have completed Labs 2 , 3 or 4, your account should include deployed models. Refer back to Lab 4 Using OML AutoML UI  to know how to quickly create and save a  model.
 
     ```
     <copy>curl -X GET --header "Authorization: Bearer ${token}" "${omlserver}/omlmod/v1/models" | jq</copy>
@@ -408,10 +408,10 @@ This lab assumes you have:
     <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/${model_URI}/score" \
     --header "Authorization: Bearer ${token}" \
     --header 'Content-Type: application/json' \
-    -d '{"inputRecords":[{"XXX":value,"YYY":value}]}'| jq</copy>
+    -d '{"topNdetails":n,"inputRecords":[{"XXX":value,"YYY":value}]}'| jq</copy>
 
     ```
-   In the following example,  you specify the model URI `automl_affinity_card_nb` and a valid token generated in Task 1. The model was built using the Supplementary Demographics data set. To score with a single record, for XXX use `YRS_RESIDENCE` with the value of 10 and for YYY  use `Y_BOX_GAMES` with a value of 0. You want to predict the probability that the person associated with this record will purchase the affinity card.
+  In the syntax above, the parameter `topNdetails` is optional. It fetches the top n prediction details for the record you are scoring. Prediction details refer to the attributes or features that impact a prediction. In the following example,  you specify the model URI `automl_affinity_card_nb` and a valid token generated in Task 1. The model was built using the Supplementary Demographics data set. To score with a single record, for XXX use `YRS_RESIDENCE` with the value of 10 and for YYY  use `Y_BOX_GAMES` with a value of 0. You want to predict the probability that the person associated with this record will purchase the affinity card.
 
     ```
    <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/automl_cust360_affinity_card_nb/score" \
@@ -443,51 +443,80 @@ This lab assumes you have:
     ```
 
 
-2.  Next, score a mini-batch of 2 records with the same model URI. Use the following data for the second record:
+2.  Next, score a mini-batch of 2 records with the same model URI. For the first record, use the same data as in the singleton scoring step above. For the second record and the prediction details parameter, use the data shown below. You want to return the top 3 attributes that impact the predictions and, therefore, set `topNdetails` to 3.:
     * `YRS_RESIDENCE`=5
     * `Y_BOX_GAMES`=1
+    * `topNdetails` = 3
 
     ```
     <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/automl_cust360_affinity_card_nb/score" \
     --header "Authorization: Bearer ${token}" \
     --header 'Content-Type: application/json' \
-    -d '{"inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0},
+    -d '{"topNdetails:3", "inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0},
                      {"YRS_RESIDENCE":5,"Y_BOX_GAMES":1}]}'} | jq</copy>
 
     ```
-   The scores for the two records above are displayed below:
+    The scores for the above two records, along with the prediction details for each score, are displayed below:
+
     ```
     {
       "scoringResults": [
         {
-         "classifications": [
-           {
-             "label": "0",
-             "probability": 0.9850329798772426
-           },
-           {
-             "label": "1",
-             "probability": 0.014967020122757546
-           }
-         ]
+            "classifications": [
+                {
+                    "label": "0",
+                    "probability": 0.9850329798772426
+                },
+                {
+                    "label": "1",
+                    "probability": 0.014967020122757546
+                }
+                   ],
+            "details":  [
+                {
+                    "columnName": "YRS_RESIDENCE",
+                    "weight": 1.097
+                },
+                {
+                    "columnName": "Y_BOX_GAMES",
+                    "weight": 0.971
+                },
+                {
+                    "columnName": "CUST_YEAR_OF_BIRTH",
+                    "weight": 0.349
+                }
+                   ]
         },
         {
-         "classifications": [
-           {
-             "label": "0",
-             "probability": 0.9984975504253337
-           },
-           {
-             "label": "1",
-             "probability": 0.0015024495746662695
-           }
-         ]
-       }
-     ]
+            "classifications": [
+                {
+                    "label": "0",
+                    "probability": 0.9984975504253337
+                },
+                {
+                     "label": "1",
+                    "probability": 0.0015024495746662695
+                }
+                   ],
+            "details":         [
+                {
+                    "columnName": "YRS_RESIDENCE",
+                    "weight": 1.097
+                },
+                {
+                    "columnName": "CUST_YEAR_OF_BIRTH",
+                    "weight": 0.349
+                },
+                {
+                    "columnName": "Y_BOX_GAMES",
+                    "weight": 0.174
+                }
+                   ]
+        }
+      ]
     }
 
     ```
-   **Note:** The number of records you can pass in a batch is currently limited to 256.
 
 3. In this task, use Oracle's proprietary Cognitive Text functionality. This functionality provides endpoints to score a string of text to obtain information such as most relevant keywords, topics, text summary, sentiment, similarity to another text string and text features. The supported languages for Cognitive Text include English (America), Spanish, French and Italian. In this step, pass a text string to obtain keywords and its summary using the relevant end points. Here's the syntax for using the keywords endpoint:
 
