@@ -9,14 +9,14 @@ In Oracle Database 19c, you must close the TDE keystore to disallow operations o
 Estimated Time: 15 minutes
 
 ### Objectives
-1. Prepare the CDB to Use TDE
-2. Encrypt Oracle-managed and User-managed Tablespaces
-3. Handle Encrypted Data in Oracle-managed and User-managed Tablespaces When Keystore is Closed
-4. Clean Up the Environment
+- Prepare the CDB to Use TDE
+- Encrypt Oracle-managed and User-managed Tablespaces
+- Handle Encrypted Data in Oracle-managed and User-managed Tablespaces When Keystore is Closed
+- Clean Up the Environment
 
 ### Prerequisites
--Oracle Database 19c installed
--A container database (CDB): `CDB1` with `PDB1`
+- Oracle Database 19c installed
+- A container database (CDB): `CDB1` with `PDB1`
 
 ## Prepare your environment
 
