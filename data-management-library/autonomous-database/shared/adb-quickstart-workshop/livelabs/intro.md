@@ -12,9 +12,8 @@ Oracle Autonomous Database provides secure, fully managed databases in the Oracl
 - Visualize your data using Oracle Analytics Desktop
 
 ### Workshop Prerequisites
-This workshop requires an Oracle Cloud account. As a result of registering for LiveLabs, you will receive an email with instructions for accessing your account.
-
-You are all set. **Let's begin! Click the next lab in the Contents menu on the left.**
+- This workshop requires an Oracle Cloud account. As a result of registering for LiveLabs, you will receive an email with instructions for accessing your account.
+- In the Contents menu on the left, find Lab 1: Login to Oracle Cloud, Task 2, Step 3 and follow the email instructions.
 
 ## Want to Learn More About Autonomous Database?
 
