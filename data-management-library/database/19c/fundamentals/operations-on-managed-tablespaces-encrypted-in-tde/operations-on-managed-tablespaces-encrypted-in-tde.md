@@ -38,34 +38,29 @@ Estimated Time: 15 minutes
   ```
   <copy><copy>sqlplus / AS SYSDBA</copy>
   ```
-3. Create the keystore for the CDB in /u01/app/oracle/admin/CDB1/tde_wallet
+3. Add the wallet location
+  ```
+  <copy>
+  $HOME/labs/19cnf/add_wallet_location.sh</copy>
+  ```
+4. Create the keystore for the CDB in /u01/app/oracle/admin/CDB1/tde_wallet
   ```
   <copy>ADMINISTER KEY MANAGEMENT CREATE KEYSTORE '/u01/app/oracle/admin/CDB1/tde_wallet' IDENTIFIED BY password;</copy>
 
   ```
-Try adding this using gedit to $ORACLE_HOME/network/admin/sqlnet.ora if you run into `ORA-28367: wallet does not exist`.
-  ```
-  <copy>
-  WALLET_LOCATION=
-    (SOURCE=
-      (METHOD=file)
-      (METHOD_DATA=
-         (DIRECTORY=/u01/app/oracle/admin/CDB1/tde_wallet)
-         [(PKCS11=FALSE)]))</copy>
-   ```
-4. Open the keystore.
+5. Open the keystore.
   ```
   <copy>ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY password CONTAINER=ALL;</copy>
   ```
-5. Set the TDE master encryption key.
+6. Set the TDE master encryption key.
   ```
   <copy>ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY password WITH BACKUP CONTAINER=ALL;</copy>
   ```
-6. Create a user-managed tablespace.
+7. Create a user-managed tablespace.
   ```
   <copy>CREATE TABLESPACE omtbs DATAFILE '/u01/app/oracle/oradata/CDB1/omts01.dbf' SIZE 10M;</copy>
   ```
-7. Check that the tablespaces are not encrypted.
+8. Check that the tablespaces are not encrypted.
   ```
   <copy>SELECT tablespace_name, encrypted FROM dba_tablespaces;</copy>
 
