@@ -1,4 +1,4 @@
-# Enable Oracle Integration File Server
+# Enable File Server
 
 ## Introduction
 

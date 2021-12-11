@@ -1,4 +1,4 @@
-# B2B Concepts and Navigation
+# B2B Concepts
 
 ## Introduction
 

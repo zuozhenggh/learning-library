@@ -1,4 +1,4 @@
-# Oracle Integration B2B - Outbound Processing
+# A B2B Outbound Scenario
 
 ## Introduction
 

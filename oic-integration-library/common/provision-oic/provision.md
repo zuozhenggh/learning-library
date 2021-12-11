@@ -1,4 +1,4 @@
-# Provision an Instance of Oracle Integration
+# Provision Oracle Integration
 
 ## Introduction
 

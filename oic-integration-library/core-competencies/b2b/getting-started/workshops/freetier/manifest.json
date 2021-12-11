@@ -13,7 +13,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision Oracle Integration Instance",
+            "title": "Lab 1: Provision Oracle Integration",
             "filename": "../../../../../common/provision-oic/provision.md"
         },
         {
@@ -21,19 +21,19 @@
             "filename": "../../../../../common/enable-file-server/enable-file-server.md"
         },
         {
-            "title": "Lab 3: Setup the Environment",
+            "title": "Lab 3: Setup Workshop Prerequisites",
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 4: Getting Started with B2B in Oracle Integration",
+            "title": "Lab 4: B2B Concepts",
             "filename": "../../getting-started-b2b/gettingStartedB2B.md"
         },
         {
-            "title": "Lab 5: Working with B2B Documents and Schemas",
+            "title": "Lab 5: B2B Documents and Schemas",
             "filename": "../../b2b-documents-schemas/b2b-documents-schemas.md"
         },
         {
-            "title": "Lab 6: Working with B2B Trading Partner Manager",
+            "title": "Lab 6: B2B Trading Partner Manager",
             "filename": "../../b2b-trading-partner-manager/b2b-trading-partner-manager.md"
         },
         {
@@ -41,11 +41,11 @@
             "filename": "../../b2b-action/b2b-action.md"
         },
         {
-            "title": "Lab 8: Designing B2B Outbound Scenario",
+            "title": "Lab 8: A B2B Outbound Scenario",
             "filename": "../../b2b-outbound-x12-ftp/b2b-outbound-x12-ftp.md"
         },
         {
-            "title": "Lab 9: Designing B2B Inbound Scenario",
+            "title": "Lab 9: A B2B Inbound Scenario",
             "filename": "../../b2b-inbound-x12-ftp/b2b-inbound-x12-ftp.md"
         },
         {

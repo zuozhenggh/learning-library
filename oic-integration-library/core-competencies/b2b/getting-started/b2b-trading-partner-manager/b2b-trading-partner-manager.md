@@ -1,4 +1,4 @@
-# Working with Trading Partner Manager
+# B2B Trading Partner Manager
 
 ## Introduction
 

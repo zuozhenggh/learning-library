@@ -1,4 +1,4 @@
-# Setup the Lab prerequisites
+# Setup Workshop Prerequisites
 
 ## Introduction
 
