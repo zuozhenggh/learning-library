@@ -117,9 +117,10 @@ In B2B for Oracle Integration, you can generate implementation guides for both s
 1. In the left navigation pane, click ***B2B Schemas***.
 2. On the B2B Schemas page, select the ***PurchaseOrderSchema_Customized*** Schema and select ***Generate Implementation Guide***.
 ![Generate Implementation Guide](images/CustomizePOSchema4010-ImplGuide-1.png)
-3. From here you can View or Download the Implementation Guide. Click ***View*** to open a new browser window containing the Implementation Guide. Search for the EUR or USD Codes you added to this customized Schema.
+3. From here you can View or Download the Implementation Guide. Click ***View*** to open a new browser window containing the Implementation Guide. Search for the **EUR** or **USD** Codes you added to this customized Schema.  
 The following image shows an example Implementation Guide:
 ![Implementation Guide](images/CustomizePOSchema4010-ImplGuide-2.png)
+When done reviewing the Implementation Guide, exit the **Generate Implementation Guide** page.
 
 You may now [proceed to the next lab](#next).
 
