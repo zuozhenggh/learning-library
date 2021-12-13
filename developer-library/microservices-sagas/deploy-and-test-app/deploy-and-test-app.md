@@ -1,4 +1,4 @@
-# Data-centric microservices walkthrough with Helidon MP
+# Simplify Microservices Transactions Using Oracle Database Sagas
 
 ## Introduction
 
@@ -108,8 +108,4 @@ We created a self-signed certificate to protect the frontend-helidon service. Th
    The order should have been successfully placed, which is shown by the order status showing success.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
-* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
-* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Richard Exley, April 2021
+* **Author** - Paul Parkinson, Architect and Developer Evangelist
