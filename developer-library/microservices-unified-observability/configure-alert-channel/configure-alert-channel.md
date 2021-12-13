@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This lab will show you how...
+This lab will show you how to setup alert channels in order to be notified when certain monitoring criteria are hit.
+The lab will describe how to setup Slack to receive these notifications though the concept is the same for other channel types such as 
+Prometheus Alert Manager, Email, etc.
 
-Estimated lab Time - 5 minutes
-
-  -   ...
+Estimated lab Time - 10 minutes
   
 ## Task 1: Configure Alert Channel
 
@@ -36,18 +36,6 @@ Estimated lab Time - 5 minutes
      ![](images/slackalertchannelsetup5.png " ")
      ![](images/slackalertchannelsetup6.png " ")
      ![](images/slackalertchannelsetup7.png " ")
-
-     Note, 
-
-## Task 3: Use SQLci to re-enable propagation
-
-1. Verify
-
-       ```
-       <copy>services</copy>
-       ```
-
-     ![](images/grafana-loadbalancer-externalip.png " ")
 
      Note, 
 

@@ -2,13 +2,12 @@
 
 ## Introduction
 
-This lab will show you how...
+This lab will show you how setup an alert when an exception/failure occurs in the system and allow you to diagnose and debug the issue.
 
 Estimated lab Time - 5 minutes
 
-  -   ...
   
-## Task 1: Notice propagation metrics and create Alert for message failure case
+## Task 1: Notice propagation metrics and create Alert for message propgation failure case
 
 1. Create Alert in Grafana with Slack alert channel set up in earlier lab.
 
@@ -26,8 +25,6 @@ Estimated lab Time - 5 minutes
        ```
 
      ![](images/grafana-loadbalancer-externalip.png " ")
-
-     Note, 
 
 
 ## Task 3: Notice 'down' metric and Slack message from alert
