@@ -62,7 +62,7 @@ Estimated lab Time - 5 minutes
 
      ![](images/grafana-loadbalancer-externalip.png " ")
 
-     Note, 
+   
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist
