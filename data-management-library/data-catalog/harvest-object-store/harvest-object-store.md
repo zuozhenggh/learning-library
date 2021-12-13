@@ -21,7 +21,7 @@ In this lab, you will:
 
 Complete Lab0 : Step 1-3 and Lab1. Before you create an object storage data asset, you must create a dynamic group and an object storage resource access policy.
 
-## Task 1: Create a Dynamic Groups and Policies
+## Task 1: Create Dynamic Groups and Policies
 
 Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). You can then create policies to permit instances to make API calls against Oracle Cloud Infrastructure services. When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
 
