@@ -6,7 +6,7 @@ This lab shows you how to publish your web app by merging your changes to the pr
 
 Estimated Time: 15 minutes
 
-### Background
+### About this Lab
 When the process of reviewing your HR web app is done, you are ready to publish the application and make your changes public. Publishing saves your application's code to a remote branch and then to the project's default (`main`) branch. You can use the **Commit** and **Push** Git options in your workspace to save your changes to a remote branch (as we did in a previous lab), then use the **Merge** option to push your changes to `main`. Or, you can do all of this at the click of a single **Publish** button (as we'll do in this lab).
 
 No matter how you decide to save your changes, it's a good idea to always get your code reviewed and approved before you merge it to the project's `main` branch. Because the `main` code base is meant to be stable, it is usually protected, requiring code to be reviewed through a merge request. If your project was set up to protect the main branch, merging your changes will require approval. In this lab, you'll create a merge request to review your changes, but for demonstration purposes, you'll merge the code to the `main` branch without approval.
@@ -16,7 +16,7 @@ Once your changes are successfully merged, VB Studio automatically deploys the w
 ### Objectives
 In this lab, you will:
 * Create a merge request to publish your changes
-* Merge your changes and view the deployed application 
+* Merge your changes and view the deployed application
 * Import data to your deployed application
 
 ### Prerequisites

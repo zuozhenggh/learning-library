@@ -6,7 +6,7 @@ This lab shows how you can create pages and buttons that allow you to edit data,
 
 Estimated Time: 15 minutes
 
-### Background
+### About this Lab
 In a previous lab, you used a couple of Quick Starts to create pages that let your users add departments and employees. In this lab, you'll use the rest of them to add pages for users to edit and delete departments and employees. You'll also get a chance to test your web pages as they will appear to the user.
 
 ### Objectives

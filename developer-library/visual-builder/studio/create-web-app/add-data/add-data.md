@@ -6,7 +6,7 @@ This lab shows you how to set up navigation between pages in a web app. It also 
 
 Estimated Time: 10 minutes
 
-### Background
+### About this Lab
 With your changes committed to a remote branch, you'll now create buttons that help users navigate between the Departments page and the Employees page in the web app. Each button is associated with an event that sets off a series of actions when you click it. In VB Studio, this sequence of actions is called an _action chain_. You can use and customize predefined actions, or define your own.
 
 You'll also populate your business objects by importing data from a file. You did this for the Location business object in a previous lab, and you'll do the same for the Department and Employee business objects here.

@@ -6,7 +6,7 @@ This lab shows you how to save a web application's changes from your local branc
 
 Estimated Time: 10 minutes
 
-### Background
+### About this Lab
 While developing the HR web application, you might have noticed a yellow dot in the header next to your Git repository:
 
 ![](images/git-changes-badge.png)

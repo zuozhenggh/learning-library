@@ -6,7 +6,7 @@ This lab shows you how to create a project for a new visual application, which s
 
 Estimated Time: 15 minutes
 
-### Background
+### About this Lab
 
 You can create engaging web and mobile applications in VB Studio using a _visual application_ template, which provides everything you need to visually develop a web or mobile application.
 

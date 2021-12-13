@@ -6,7 +6,7 @@ This lab walks you through the process of provisioning an Oracle Visual Builder 
 
 Estimated Time: 20 minutes
 
-### Background
+### About this Lab
 If you just created a new Cloud account following the instructions in Getting Started, you might want to wait before you attempt to create Visual Builder and VB Studio instances. It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned and for the navigation menu to show. If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
 
 ### Objectives

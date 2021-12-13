@@ -6,7 +6,7 @@ This lab shows how you can share your web app with others using VB Studio.
 
 Estimated Time: 10 minutes
 
-### Background
+### About this lab
 So far in this workshop, you've built the HR web application to show employees, their departments, and locations. You've also added navigation between the different pages and buttons to view, edit, and delete employee records and departments. Now that your work in the Designer is more or less complete, you can share the application with your team and ask for feedback.
 
 Sharing an application, much like the preview option you've used in previous tutorials, lets you try out the application without committing its code to the project's Git repository (in this case, the changes you've made since your last push). But unlike a preview, which is visible only to you, a share action deploys your application to the VB instance associated with your development environment and creates a URL that you can pass along to your team. Your team can then test the behavior of your shared application and identify where it can be improved.

@@ -7,7 +7,7 @@ This lab shows you how to create web pages to display the business objects you c
 
 Estimated Time: 15 minutes
 
-### Background
+### About this Lab
 
 In the previous lab, you created the Location, Department, and Employee business objects. In this lab, you'll create web pages to display the data from these business objects within your application. So far, you've only imported data for the Location object. You'll add data for the Department and Employee business objects in later labs, but set up the Department and Employee pages required to display that data in this lab.
 
