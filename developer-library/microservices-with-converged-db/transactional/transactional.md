@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This lab will show you how to test different failure scenarios and compare/contrast the behavior when using different resources.
+This lab will show you how to test different failure scenarios and compare the behavior when using different resources.
 
 Estimated Time: 10 minutes
 
-Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walk-through of the lab.
 
 [](youtube:ivyPwQDl7GQ)
 
@@ -20,7 +20,7 @@ Watch the video below for a quick walk through of the lab.
 
 ### Prerequisites
 
-* Completion of Lab 1 Setup and Lab 2 Microservices Walk-through
+* Completion of Lab 1: Setup and Lab 2: Microservices Walk-through
 
 ## Task 1: Install MongoDB, Postgres, and Kafka, and Deploy Order and Inventory Services that Use Them
 
