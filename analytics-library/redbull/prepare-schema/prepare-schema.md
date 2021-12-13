@@ -10,7 +10,7 @@ We will:
 2. Log out and then login again in the Database Actions, now as the new F1 user.
 3. Load the data into the tables as the F1 user.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 - Learn how to load data into the data warehouse, so you can analyze it later.
@@ -114,8 +114,6 @@ This new user/schema will hold the Grand Prix data.
     ![Load Completed](images/load-completed.png)
 
 Congratulations! You've successfully loaded the data into Autonomous Data Warehouse.
-
-You can now proceed to the next lab.
 
 ## **Acknowledgements**
 
