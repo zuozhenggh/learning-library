@@ -12,13 +12,8 @@ Estimated lab Time - 10 minutes
 
 1. Create Alert in Grafana with Slack alert channel options...
 
-    ```
-    <copy>cd $GRABDISH_HOME/observability;./install.sh</copy>
-    ```
 
      ![](images/prometheusalertmanager.png " ")
-
-     Note, 
 
 
 ## Task 2: Notice 'down' metric and Slack message from alert
@@ -37,8 +32,8 @@ Estimated lab Time - 10 minutes
      ![](images/slackalertchannelsetup6.png " ")
      ![](images/slackalertchannelsetup7.png " ")
 
-     Note, 
+    
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Evangelist
+* **Author** - Paul Parkinson, Developer Advocate
 * **Last Updated By/Date** - Paul Parkinson, August 2021

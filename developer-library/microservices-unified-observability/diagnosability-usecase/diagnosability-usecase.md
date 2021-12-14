@@ -76,5 +76,5 @@ Estimated lab Time - 5 minutes
    
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Evangelist
+* **Author** - Paul Parkinson, Developer Advocate
 * **Last Updated By/Date** - Paul Parkinson, August 2021
