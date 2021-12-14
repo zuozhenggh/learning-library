@@ -55,11 +55,11 @@ Populating the custom property values for objects in a catalog can be a tedious 
 
 In this task you will set values of the Data Owner custom property for multiple objects
 
-1. Type ADW Schema name in the Search box and click **Search** on the Home tab.
+1. Type Autonomous Data Warehouse Schema name in the Search box and click **Search** on the Home tab.
 
     ![Click Search](./images/custom-properties11.png " ")
 
-2. Then click on the ADW Schema
+2. Then click on the Autonomous Data Warehouse Schema
 
     ![Click ADW Schema](./images/custom-properties12.png " ")
 
@@ -216,10 +216,10 @@ In this task you will link a glossary term to a Table object. You will then link
 * [Data Catalog Overview](https://docs.oracle.com/en-us/iaas/data-catalog/using/overview.htm)
 * [Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
 * [Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
-* [OCI Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
-* [Managing Groups in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
+* [Oracle Cloud Infrastructure Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [Managing Groups in Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
 * [Overview of VCNs and Subnets](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingVCNs_topic-Overview_of_VCNs_and_Subnets.htm#Overview)
-* [Managing Compartments in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
+* [Managing Compartments in Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
 
 ## Acknowledgements
 
