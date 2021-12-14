@@ -8,7 +8,7 @@ Estimated Time: 15 minutes
 
 ### About this Lab
 
-You can create engaging web and mobile applications in VB Studio using a _visual application_ template, which provides everything you need to visually develop a web or mobile application.
+VB Studio lets you create engaging web and mobile applications using a _visual application_ template, which provides everything you need to visually develop a web or mobile application.
 
 In this workshop, you'll build a simple Human Resources visual application, using a _project_ as a starting point. Every project in VB Studio is devoted to a discrete software effort, and the project you create in this lab is exclusive to the HR visual application. The project brings together all the tools you need to create your application, such as a Git repository to store your source code, a pipeline to provide continuous integration and delivery, an issue tracking system, and more.
 
@@ -29,7 +29,7 @@ This lab assumes you have:
 
 ## Task 1: Create a Project for a Visual Application
 
-As someone who creates a project, you'll automatically become the project's owner, responsible for project management. For the purposes of this tutorial, we'll assume that you're also the developer who will create the HR web application.
+As someone who creates a project, you'll automatically become the project's owner, responsible for project management. For the purposes of this workshop, we'll assume that you're also the developer who will create the HR web application.
 
 1.  On VB Studio's Organization page, click the **Projects** tab, then click **\+ Create**.
 
@@ -100,7 +100,7 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
 
 ## Task 4: Add Team Members
 
-For the purposes of this tutorial, let's assume that other members of your team will work with you on this visual application—which means you'll need to add them to this project. As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor.
+For the purposes of this workshop, let's assume that other members of your team will work with you on this visual application—which means you'll need to add them to this project. As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor.
 
 1.  Click **Project Home** ![Project Home icon](images/vbs-project-home-icon.png) in the left navigation.
 
@@ -108,7 +108,7 @@ For the purposes of this tutorial, let's assume that other members of your team 
 
     ![](images/team.png " ")
 
-3.  In the Add Member dialog box, enter the username of a teammate, select the new user's membership, and click **Add**. For demonstration purposes, this tutorial adds Clara Coder with the Developer Limited Access role, which lets her access most project components but limits management actions.
+3.  In the Add Member dialog box, enter the username of a teammate, select the new user's membership, and click **Add**. For demonstration purposes, this lab adds Clara Coder with the Developer Limited Access role, which lets her access most project components but limits management actions.
 
     ![](images/team-add-member.png " ")
 
