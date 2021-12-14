@@ -2,9 +2,7 @@
 
 ## Introduction
 
-Due to the nature of time-series forecast, the data required for training any machine learning algorithm needs to be formatted properly. Similarly here, our core ML algorithm behind our service has few basic requirements on the data to train an effective model.
-
-In this session, we will discuss the data requirements and formats, and provide sample dataset as examples. 
+In this session, we will discuss the data requirements and data formats required by our APIs, and provide sample datasets as examples. 
 
 
 ***Estimated Lab Time***: 20 minutes
@@ -20,53 +18,116 @@ In this lab, you will:
 - A Free tier or paid tenancy account in OCI
 
 ## Task 1: Understand Data Requirements
+ Our forecasting service provides an Auto-ML solution with multiple univariate/multivariate algorithms that can run on single series or multiple series at once. For this, there are some data validations and data format requirements that the input data must satisfy.
+### **Data Validations**
+For a successful forecast, the input data should pass the following data validations:
 
-The core of forecasting is an auto ML solution with multiple univariate/ multivariate algorithms that can run on single series or multiple series at once. 
-
-* The training data should have a target series with date and target values defined.
-* The training data can have an additional covariates that can help, to forecast target series.
-
-Additionally, the algorithm also has some requirements on data type, minimum number of  attributes and observations on the training data as follows:
-
-* Number of rows >= 10 and <= 5000
+* Number of rows for a time series >= 10 and <= 5000
 * Series length >= 3 X Forecast Horizon
 * Series length >= 2 X Major Seasonality
-* If the series is non-seasonal, at least one non-seasonal method needs to be available for running
-* If ensemble method is selected, at least 2 other methods need to be selected as well
+* If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
+* If ensemble method is selected, at least 2 other methods need to be selected as well.
 * Number of missing values <= 10% of series length
-* If there are missing values for 5 consecutive time steps, throw an error
+* If there are missing values for 5 consecutive time steps, throw an error.
 * All the timestamps in the primary data source should exist in the secondary data source also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
-* Check is there any duplicate date exists in Timeseries after grouping also(Check for both additional and primary data)
-* All values have to be >= 0
+* Check if there are any duplicate dates in timeseries after grouping also (Check for both additional and primary data).
+* All values have to be >= 0.
 
-### Data format requirement
+### **Data format requirements**
+The data should contain one timestamp column and other numeric attributes, and timestamp has to be the first column, which satisfy the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601).
 
-The service currently accepts *Inline Data* that can be generated from csv files.
-Detailed document on how to generate inline data from csv file can be referred in Task 3 below 
+Currently, our APIs support datasets that can be in one of the following formats:
 
-The data should only contain one timestamp and other numeric attributes, and timestamp has to be the first column, which satisfy the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601).
+**1. Single time series without any additional data:**
+Such datasets have only two columns in them. The first column should be a timestamp column and the second column should be the target column.
 
-#### CSV format
-CSV-formatted data should have comma-separated lines, with first line as the header, and other lines as data. Note the first column is the timestamp column.
-
-**Note:**
-* Missing value is permitted(with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1).
-* Do not have a new line as the last line. The last line should still be an observation with other attributes/signals.
-
-Here is an example of CSV-formatted data:
+**Here is a sample CSV-formatted data:**
 ```csv
-timestamp,target
+timestamp,target_column
 2020-07-13T00:00:00Z,20
 2020-07-14T00:00:00Z,30
 2020-07-15T00:00:00Z,28
+...
+...
 ```
+**2. Multiple time series without any additional data:** 
+The input data can have multiple time series in it(grouped data). For such datasets there must be a column to identify different time-series.
+
+**Here is a sample CSV-formatted data:**
+```csv
+timestamp,target_column,series_id
+2020-07-13T00:00:00Z,20,A
+2020-07-14T00:00:00Z,30,A
+2020-07-15T00:00:00Z,28,A
+....
+....
+2020-07-13T00:00:00Z,40,B
+2020-07-14T00:00:00Z,50,B
+2020-07-15T00:00:00Z,28,B
+....
+....
+2020-07-13T00:00:00Z,10,C
+2020-07-14T00:00:00Z,20,C
+2020-07-15T00:00:00Z,30,C
+....
+....
+``` 
+**3. Time series with additional data:** 
+The input data can have additional covariates that help in forecasting. We call the two datasets as primary and additional. The primary data should have three columns - timestamp, target column and a column for series id. The additional data must have a timestamp column and a series id column apart from the columns containing additional covariates.   
+
+**Here is a sample CSV-formatted data:**
+
+Primary data 
+```csv
+timestamp,target_column,series_id
+2020-07-13T00:00:00Z,20,A
+2020-07-14T00:00:00Z,30,A
+2020-07-15T00:00:00Z,28,A
+....
+....
+2020-07-13T00:00:00Z,40,B
+2020-07-14T00:00:00Z,50,B
+2020-07-15T00:00:00Z,28,B
+....
+....
+2020-07-13T00:00:00Z,10,C
+2020-07-14T00:00:00Z,20,C
+2020-07-15T00:00:00Z,30,C
+....
+....
+```
+Additional data 
+```csv
+timestamp,promotion,series_id
+2020-07-13T00:00:00Z,0,A
+2020-07-14T00:00:00Z,1,A
+2020-07-15T00:00:00Z,2,A
+....
+....
+2020-07-13T00:00:00Z,0,B
+2020-07-14T00:00:00Z,0,B
+2020-07-15T00:00:00Z,1,B
+....
+....
+2020-07-13T00:00:00Z,1,C
+2020-07-14T00:00:00Z,0,C
+2020-07-15T00:00:00Z,0,C
+....
+....
+```
+The service currently accepts *Inline Data* that can be generated from csv files.
+Steps on how to generate inline data from csv files are given in Task 3 below.
+**Note:**
+* Missing values are permitted (with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1).
+* The last line should be an observation with other attributes/signals.
 
 ## Task 2: Download Sample Data
 
-Here is a sample dataset to help you to easily understand how the training data looks like, Download the files to your local machine.
+Here is a sample dataset to help you to easily understand how the input data looks like, Download the files to your local machine.
 
-* [training csv data](../files/gasoline.csv)
-    - gasoline purchase column (target to be forecasted) & period column (timestamp) with 31 observations
+* [primary data](../files/favorita_13_beverages_primary.csv)
+* [additional data](../files/favorita_13_beverages_add.csv)
+  
 
 ## Task 3: Upload Data to Data Science Notebook
 
@@ -75,9 +136,6 @@ You need to upload the sample training data into data science notebook, to be us
 Click on upload and then browse to file which you desire to upload:
 ![](../images/lab2_task3_upload_data.png " ")
 
-Here, we selected Gasoline  purchase data csv file to be uploaded
-
-
 ## Task 4: Inline Data preparation
 
 ### Step 1 :
@@ -85,7 +143,8 @@ You need to load the data in notebook via below mentioned python commands in a d
 Specify the correct path for the csv file that has the time series data.
 
 ```Python
-df = pd.read_csv('gasoline.csv')
+df_primary = pd.read_csv('favorita_13_beverages_primary.csv')
+df_add = pd.read_csv('favorita_13_beverages_add.csv')
 ```
 
 ### Step 2 :
@@ -93,94 +152,81 @@ Convert the date field to "yyyy-mm-dd hh:mm:ss" format with below commands
 Use this link https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior for other date time formats
 
 ```Python
-df['period'] = pd.to_datetime(df['period'],format='%d/%m/%y').apply(lambda x: str(x))
+# modify date format
+df_primary['date'] = pd.to_datetime(df_primary['date'],
+                                        format='%d/%m/%y').apply(lambda x: str(x))
+# modify date format
+df_add['date'] = pd.to_datetime(df_add['date'],
+                                        format='%d/%m/%y').apply(lambda x: str(x))
 ```
 
 ### Step 3 :
 #### Setting variables to create forecast with below commands
-- Specify the column having dates in date_col
-- Specify the time-series of interest in target_col
-- prim_load : is the variable having inline data
+- prim_load : is the variable having inline primary data
+- add_load : is the variable having inline additional data 
 
 ```Python
-date_col = 'period'
-target_col = 'gasoline purchase'
-prim_load = df[[date_col,target_col]].values.transpose().tolist()
+#primary data
+col_order = ['date','sales','item_id']
+prim_load = df_primary[col_order].values.transpose().tolist()
 prim_load
 ```
 
 ```Json
-[['2021-01-01 00:00:00',
-  '2021-01-02 00:00:00',
-  '2021-01-03 00:00:00',
-  '2021-01-04 00:00:00',
-  '2021-01-05 00:00:00',
-  '2021-01-06 00:00:00',
-  '2021-01-07 00:00:00',
-  '2021-01-08 00:00:00',
-  '2021-01-09 00:00:00',
-  '2021-01-10 00:00:00',
-  '2021-01-11 00:00:00',
-  '2021-01-12 00:00:00',
-  '2021-01-13 00:00:00',
-  '2021-01-14 00:00:00',
-  '2021-01-15 00:00:00',
-  '2021-01-16 00:00:00',
-  '2021-01-17 00:00:00',
-  '2021-01-18 00:00:00',
-  '2021-01-19 00:00:00',
-  '2021-01-20 00:00:00',
-  '2021-01-21 00:00:00',
-  '2021-01-22 00:00:00',
-  '2021-01-23 00:00:00',
-  '2021-01-24 00:00:00',
-  '2021-01-25 00:00:00',
-  '2021-01-26 00:00:00',
-  '2021-01-27 00:00:00',
-  '2021-01-28 00:00:00',
-  '2021-01-29 00:00:00',
-  '2021-01-30 00:00:00'],
- [275,
-  291,
-  307,
-  281,
-  295,
-  268,
-  252,
-  279,
-  264,
-  288,
-  302,
-  287,
-  290,
-  311,
-  277,
-  245,
-  282,
-  277,
-  298,
-  303,
-  310,
-  299,
-  285,
-  250,
-  260,
-  245,
-  271,
-  282,
-  302,
-  285]]
+[['2013-01-01 00:00:00',
+  '2013-01-02 00:00:00',
+  '2013-01-03 00:00:00',
+  '2013-01-04 00:00:00',
+  '2013-01-05 00:00:00',
+  ...],
+ [0,
+  767,
+  987,
+  652,
+  1095,
+  ...],
+ ['13_BEVERAGES',
+  '13_BEVERAGES',
+  '13_BEVERAGES',
+  '13_BEVERAGES',
+  '13_BEVERAGES',
+  ...]]
+  ```
+  ```Python
+#additional data
+add_cols = ['date','onpromotion','item_id']
+add_load = df_add[add_cols].values.transpose().tolist()
+add_load
+```
+
+```Json
+[['2013-01-01 00:00:00',
+  '2013-01-02 00:00:00',
+  '2013-01-03 00:00:00',
+  '2013-01-04 00:00:00',
+  '2013-01-05 00:00:00',
+  ...],
+ [0,
+  0,
+  0,
+  0,
+  0,
+  ...],
+ ['13_BEVERAGES',
+  '13_BEVERAGES',
+  '13_BEVERAGES',
+  '13_BEVERAGES',
+  '13_BEVERAGES',
+  ...]]
   ```
 
 
 ## Task 5 : Create Project ID forecast
-Once, the data is prepared , you  will learn how to create the forecasting service project
-- Give any compartment ID that is available for the account
-- Create new project
-- Change displayName to - Give a custom name
-
-
-**Note** : It is not needed to create new projects everytime we run this notebook. A project id once created can be used again and again.
+Once, the data is prepared , you  will learn how to create the forecasting service project.
+In the payload:
+- compartmentId  will be same as tenancy id. Please visit Lab1 API Key generation.  
+- displayName can be given any custom name
+- description can be customized
 
 ```Python
 url = "https://forecasting.---------------------.oraclecloud.com/20220101/projects"
@@ -197,6 +243,9 @@ headers = {
   'Content-Type': 'application/json'
 }
 response = requests.request("POST", url, headers=headers, data=payload, auth=auth)
+```
+We store the response 
+```Python
 create_project_response = json.loads(response.text)
 create_project_response
 ```
@@ -212,6 +261,14 @@ create_project_response
 "freeformTags":{},
 "definedTags":{"Oracle-Tags":{"CreatedBy":"demo_user_2","CreatedOn":"2021-11-18T05:18:58.568Z"}},"systemTags":{}}
 ```
+We store the compartment id and project id which will be used when calling create forecast API. 
+```Python
+project_id = create_project_response['id']
+compartment_id = create_project_response['compartmentId']
+```
+
+
+**Note** : It is not needed to create new projects everytime we run this notebook. A project id once created can be used again and again.
 
 Congratulations on completing this lab!
 
