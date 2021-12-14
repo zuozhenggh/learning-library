@@ -2,17 +2,17 @@
 
 ## Introduction
 
-This lab walks you through the steps to sign into Oracle Machine Learning Notebooks, create an OML notebook from scratch, create an OML notebook based on the template example notebooks, and create jobs to schedule notebooks to run at specific day and time.
+This lab walks you through the steps to sign into Oracle Machine Learning Notebooks, create an OML notebook from scratch, create an OML notebook based on the example template notebooks, and create jobs to schedule notebooks to run at specific day and time.
 
 Estimated Time: 15 minutes
 
 ### About Oracle Machine Learning Notebooks
 Oracle Machine Learning Notebooks is a collaborative user interface supporting data scientists, analysts, developers, and DBAs. You can work with SQL, PL/SQL, and Python in the same notebook—using the most appropriate language for the problem at hand. You can also view notebook changes by team members in real time, interactively. Data science team members can explicitly share notebooks and version notebooks as well as schedule notebooks to run at a set time or a repeating schedule. By virtue of being included in Autonomous Database, machine learning functionality is automatically provisioned and managed.
-Through OML Notebooks, you have access to the in-database algorithms and analytics functions to explore and prepare data, build and evaluate models, score data, and deploy solutions.
+Through Oracle Machine Learning Notebooks, you have access to the in-database algorithms and analytics functions to explore and prepare data, build and evaluate models, score data, and deploy solutions.
 
 ### Objectives
 
-In this lab, you will:
+In this lab, you will learn how to:
 * Sign into Oracle Machine Learning Notebooks
 * Create an Oracle Machine Learning notebook from scratch
 * Create a notebook based on an example template
@@ -28,7 +28,7 @@ This lab assumes you have:
 
 ## Task 1: Sign into Oracle Machine Learning Notebooks
 
-A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Autonomous Database.
+A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Oracle Autonomous Database.
 
 1. From the tab on your browser with your Oracle Autonomous Data Warehouse instance, click **Service Console**, then select **Development** on the left.
 
@@ -45,9 +45,8 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 	![Oracle Machine Learning Notebooks Sign in page](images/oml_signin_page.png)
 
-5. On your Oracle Machine Learning homepage, click **Notebooks** in the Quick Actions section.
+This completes the task of accessing Oracle Machine Learning.
 
-	![Notebooks option in OML homepage](images/homepage_notebooks.png)
 
 
 ## Task 2: Create a Notebook and define paragraphs the md, SQL, PL/SQL, and Python interpreters
@@ -55,9 +54,9 @@ To create a notebook:
 
 1. On the Oracle Machine Learning homepage, click **Notebooks**. The Notebooks page opens.
 
-	![Notebooks option in OML homepage](images/homepage_notebooks.png)
+	![Notebooks option in Oracle Machine Learning homepage](images/homepage_notebooks.png)
 
-2. On the Notebooks page, click **Create**. The Create Notebook dialog appears.
+2. On the Notebooks page, click **Create**. The Create Notebook dialog opens.
 	![Create Notebook dialog](images/create_notebook.png)
 
 3. In the Name field, enter **Test** Notebook.
@@ -76,11 +75,11 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 
 1. Type ``%md`` and press Enter.
 
-2. Type ``"Hello World!"`` and click **Run**. The static html text is generated, as seen in the screenshot below.
+2. Type ``"Hello World!"`` and click **Run**. The static html text is generated, as shown in the screenshot below.
 
 	![Markdown tags for plain text](images/md_text.png)
 
-3. You can format the text in bold and italics. To display the text in bold, write the same text inside the tag **Hello World** and click Run.
+3. You can format the text in bold and italics. To display the text in bold, write the same text inside two asterisks pair as shown in the screenshot, and click Run.
 
 	![Markdown tags for bold](images/md_bold.png)
 
@@ -101,7 +100,7 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 ### Task 2.2: Call the SQL Interpreter and run SQL Statements
 To call the SQL interpreter and run SQL statements:
 
-1. Edit the paragraph tag and type %sql to call the SQL interpreter.
+1. Edit the paragraph tag and type ``%sql`` to call the SQL interpreter.
 2. Type select `table_name` from ``user_tables`` and click Run. The command returns the table names in a tabular format - a table with one column `TABLE_NAME`, as shown in the screenshot:
 
 	![SQL commands](images/sql_commands.png)
@@ -144,7 +143,7 @@ The PL/SQL script successfully creates the table SMALL_TABLE. The PL/SQL script 
 
 ### Task 2.4: Call the Python Interpreter and run Python Statements
 To call the Python interpreter and run python statements:
-1. Edit the paragraph tag and type %python to call the python interpreter.
+1. Edit the paragraph tag and type ``%python`` to call the python interpreter.
 2. Type the following command and click Run.
 
 ```
@@ -168,9 +167,9 @@ The command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH sche
 
 This step demonstrates how to create a notebook based on an Example template:
 
-1. Sign into your OML Notebook instance and click **Examples** in the Quick Actions section on the home page. Alternatively, you can go to the left navigation menu and click **Examples** under templates. The Examples page opens with all the templates listed.
+1. Sign into your Oracle Machine Learning Notebook instance and click **Examples** in the Quick Actions section on the home page. Alternatively, you can go to the left navigation menu and click **Examples** under templates. The Examples page opens with all the templates listed.
 
-	![OML homepage](images/homepage_examples.png)
+	![Oracle Machine Learning homepage](images/homepage_examples.png)
 
 2. Navigate to the **OML4Py Classification DT** example template notebook, click it and then click **Create Notebook**.
 

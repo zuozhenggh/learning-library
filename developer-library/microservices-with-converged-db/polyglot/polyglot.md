@@ -78,6 +78,31 @@ In this step you can choose between six different implementations of the Invento
     <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./deploy.sh</copy>
     ```
 
+   If you selected **Micronaut**, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-micronaut; ./deploy.sh</copy>
+    ```
+
+   If you selected **Quarkus**, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-quarkus; ./deploy.sh</copy>
+    ```
+
+   If you selected **GraalVM Native Image**, you will need to build the image in an environment/machine that has more memory/space than the cloud console.
+   Refer to the `Task 11: ` in Lab 2 for details on how to do this and run the following command to build and push the image from that environment:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-micronaut; ./build-native-image.sh</copy>
+    ```
+    
+   Then run the following command to deploy. This can be done from either the same environment/machine as the build or the cloud shell.
+    
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-micronaut; ./deploy-native-image.sh</copy>
+    ```
+    
 ## Task 3: Verify application functionality
 
 1. Repeat **Lab 2: Step 3** to verify that the functionality of the GrabDish store remains the same while using the new implementation. You will need to use different order ID's, for example 166 and 167.
@@ -89,6 +114,7 @@ In this step you can choose between six different implementations of the Invento
     ```
     <copy>
     for i in inventory-plsql inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go inventory-springboot; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
+    cd $GRABDISH_HOME/inventory-micronaut ; ./undeploy-native-image.sh
     cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh
     cd $GRABDISH_HOME
     </copy>

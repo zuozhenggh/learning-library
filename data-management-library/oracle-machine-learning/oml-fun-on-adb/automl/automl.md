@@ -9,12 +9,12 @@ Estimated Lab Time: 15 minutes
 ### About Oracle Machine Learning AutoML UI
 Oracle Machine Learning AutoML UI (OML AutoML UI) is a no-code user interface supporting automated machine learning for both data scientist productivity and non-expert user access to powerful in-database algorithms. Like the OML4Py AutoML API, it accelerates machine learning projects by giving quick feedback on data set suitability for producing useful models – alleviating much of the drudgery of the machine learning process.
 Oracle Machine Learning AutoML UI automates model building with minimal user input – you just have to specify the data and the target in what’s called an experiment and the tool does the rest. However, you can adjust some settings, such as the number of top models to select, the model selection metric, and even specific algorithms.
-With a few clicks, you can generate editable _starter_ notebooks. These notebooks contain data selection, building the selected model – including the settings used to produce that model – and scoring and evaluation code – all in Python using OML4Py. You can build on this _generated notebook_ to apply your own domain expertise to augment the solution. Similarly, you can deploy models from OML AutoML UI as REST endpoints to OML Services in just a few clicks.
+With a few clicks, you can generate editable _starter_ notebooks. These notebooks contain data selection, building the selected model – including the settings used to produce that model – and scoring and evaluation code – all in Python using OML4Py. You can build on this _generated notebook_ to apply your own domain expertise to augment the solution. Similarly, you can deploy models from OML AutoML UI as REST endpoints to Oracle Machine Learning (OML) Services in just a few clicks.
 
 ### Objectives
 
 
-In this lab, you will:
+In this lab, you will learn how to:
 * Access OML AutoML UI
 * Create an experiment
 * Edit and adjust experiment settings
@@ -28,14 +28,14 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-* An Oracle account
+* An Oracle Machine Learning account
 * All previous labs successfully completed
 
 
 ## Task 1: Access Oracle Machine Learning AutoML UI
 
 To access AutoML UI, you must sign into the Oracle Machine Learning user interface, which also includes Oracle Machine Learning Notebooks, on Autonomous Database:
-To sign into Oracle Machine Learning (OML) Notebooks from the Autonomous Database Service Console:
+To sign into Oracle Machine Learning (OML) user interface from the Autonomous Database Service Console:
 
 1. Select an Autonomous Database instance, and on the Autonomous Database details page click **Service Console**.
 
@@ -163,13 +163,15 @@ The Leader Board displays the top performing models relative to the model metric
 	![View Prediction Impact](images/prediction_impact.png)
 
 
-* **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. Confusion Matrix is usually computed on a test dataset and helps in assessing the model quality. Here, the Confusion Matrix results are presented as a percentage of the test data being classified into true positive (actual = predicted = 1) and true negative (actual = predicted  = 0), and false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
+* **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. Confusion Matrix is usually computed on a test dataset and helps in assessing the model quality. Here, the Confusion Matrix results are classified into true positive (actual = predicted = 1) and true negative (actual = predicted  = 0), and false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
 
 	![View Confusion Matrix](images/confusion_matrix.png)
 
 
 ## Task 3: Deploy Top Model to OML Services
 When you deploy a model using the OML AutoML UI, you create an Oracle Machine Learning Services endpoint for scoring. OML Services extends Oracle Machine Learning functionality to support model deployment and model lifecycle management for in-database OML models through REST APIs.
+
+>**Note:** Through OML AutoML UI, you deploy only in-database models, and not ONNX-format models.
 
 To deploy a model:  
 
