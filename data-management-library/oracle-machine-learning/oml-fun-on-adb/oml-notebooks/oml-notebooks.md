@@ -87,23 +87,19 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 
 1. Type ``%md`` and press Enter.
 
-2. Type ``"Hello World!"`` and click **Run**. The static html text is generated, as shown in the screenshot below.
+2. Type the following:  
 
-	![Markdown tags for plain text](images/md_text.png)
+	* To generate static html text, type the text `Hello World` inside double quotes
+	* To format the text in bold, type the text `Hello World` inside two asterisks pair
+	* To format the text in italics, type the text `Hello World` either inside an asterisk pair or an underscore pair, and click **Run**
 
-3. You can format the text in bold and italics. To display the text in bold, write the same text inside two asterisks pair as shown in the screenshot, and click Run.
+	![Markdown tags for plain text and other formatting](images/md_text_formatting.png)
 
-	![Markdown tags for bold](images/md_bold.png)
-
-4. To display the text in italics, write the same text inside an asterisk pair or underscore pair as shown in the screenshot, and click Run.
-
-	![Markdown tags for italics](images/md_italics.png)
-
-5. To display the text in a bulleted list, prefix * (asterisk) to the text, as shown in the screenshot below:
+3. To display the text in a bulleted list, prefix * (asterisk) to the text, as shown in the screenshot below:
 
 	![Markdown tags for bulleted points](images/md_bullets.png)
 
-6. To display the text in heading1, heading 2 and heading 2, prefix # (hash) to the text and click Run. For H1, H2, and H3, you must prefix one, two, and three hashes respectively.
+4. To display the text in heading1, heading 2 and heading 2, prefix # (hash) to the text and click Run. For H1, H2, and H3, you must prefix one, two, and three hashes respectively.
 
 	![Markdown tags for headings](images/md_heading_tags.png)
 
