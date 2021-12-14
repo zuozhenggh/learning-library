@@ -46,7 +46,7 @@ This lab assumes you have:
 
 1.  If you are using the LiveLab tenancy, use the OCI Cloud Shell to perform the steps in this lab. To access the OCI Cloud Shell, select your compartment and click on the Cloud Shell icon.
 
-	![Image alt text](images/oci-cloud-shell-1-new.png)
+	 ![Image alt text](images/oci-cloud-shell-1-new.png)
 
    On clicking the Cloud Shell icon, the OCI Cloud Shell command prompt is displayed in the lower half of the console as illustrated in the image below.
 
@@ -56,37 +56,44 @@ This lab assumes you have:
     * Your OML user name
     * Your OML password
     * OML server URL
-    * Tenant name
-    * Database name
 
    Here is the syntax:
      ```
      <copy>curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'\
      -d '{"grant_type":"password", "username":"'${oml_username}'", "password":"'${oml_password}'"}'\
-     "<OML server URL>/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token"</copy>
+     "<OML server URL>/omlusers/api/oauth2/v1/token"</copy>
      ```
-    Let's run an example command to obtain a token. First set variables for the parameters for ease of use in subsequent requests.
+   In the syntax above, OML server URL is the Autonomous Database URL and points to the region where the Autonomous Database instance resides. The URL also contains the database name and tenancy ID. You can obtain this URL information from the Development tab on the Autonomous Database service console. From your ADB instance details page, click open the service console.
+
+  ![Image alt text](images/adb-instance.png)
+
+   On the service console, click the Development link on the left panel.
+
+  ![Image alt text](images/adb-console.png)
+
+   Scroll down the Development page to view the Oracle Machine Learning RESTful Services tile, and copy the URL for your ADB instance.
+
+  ![Image alt text](images/development-tab.png)
+
+   Now, go back to the Cloud Shell interface and run a command to obtain a token. First set variables for the parameters for ease of use in subsequent requests.
 
     ```
     <copy>export omlserver=<omlserver url>
-    export database_name=DB2
     export oml_username=OMLUSER
     export oml_password=<*******></copy>
 
     ```
    In the command above,
-     * omlserver url is the Autonomous Database URL and points to the region where the Autonomous Database instance resides. For example, if the Autonomous Database instance is in the Ashburn region, the URL will be https://adb.us-ashburn-1.oraclecloud.com.
-     * tenant name is the Autonomous Database tenancy OCID and typically starts as ocid1.tenancy.oc1...
-     * DB2 is the database name.
+     * omlserver url is the URL that you copied from the ADB console. An example of omlserver URL is https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this URL ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
      * OMLUSER is your OML user name.
-     * Finally, the set of asterisks within angle brackets is your OML password.
+     * The set of asterisks within angle brackets is your OML password.
 
    Run the following command to obtain an authentication token that uses the variables set above.
 
     ```
     <copy>curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'\
     -d '{"grant_type":"password", "username":"'${oml_username}'", "password":"'${oml_password}'"}'\
-    "${omlserver}/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token"</copy>
+    "${omlserver}/omlusers/api/oauth2/v1/token"</copy>
     ```
    Successfully running the command above results in a token as displayed below. In this example result, the token string is
   truncated as indicated by the ellipses (three dots).
@@ -95,6 +102,7 @@ This lab assumes you have:
     {"accessToken":"eyJhbGci... KLbI1wQ==","expiresIn":3600,"tokenType":"Bearer"}
 
     ```
+
 3. A token is valid for an hour. You can refresh a token for up to 8 hours after generating it. Each refresh will extend its validity by an hour. In order to run the command to refresh the token (or any command that uses the token for authentication), you should save the returned token as a variable and use the variable for convenience. Enclose the token within single quotes:
 
     ```
@@ -103,7 +111,7 @@ This lab assumes you have:
    Here's the syntax for refreshing a token:
 
     ```
-    <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" -d '{"grant_type":"refresh_token", "refresh_token":"'${token}'"}' "${omlserver}/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token"</copy>
+    <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" -d '{"grant_type":"refresh_token", "refresh_token":"'${token}'"}' "${omlserver}/omlusers/api/oauth2/v1/token"</copy>
     ```
    Running a command to refresh a token results in an output similar to this:
 
@@ -129,7 +137,7 @@ This lab assumes you have:
 4. You can also revoke a token. You cannot use or refresh a token you have revoked. For this LiveLab, do not perform this step. The syntax is provided for your reference.
 
     ```
-    <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" "${omlserver}/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token/revoke"</copy>
+    <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" "${omlserver}/omlusers/api/oauth2/v1/token/revoke"</copy>
     ```
    Running the command above produces a result similar to this:
 
@@ -207,29 +215,45 @@ This lab assumes you have:
     ```
     {
       "items": [
-        {
-           "version": "1.0",
-           "modelType": "OML",
-           "createdBy": "OMLUSER",
-           "modelId": "71c51f2b-6178-4b18-a79d-383cb7afd0af",
-           "modelName": "automl_affcard_nb",
-           "links": [
-             {
-               "rel": "self",
-               "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
-             }
-           ],
-           "namespace": "automl_affinity_card",
-           "shared": false,
-           "storedOn": "2021-08-24T06:48:52.639Z"
-        }
-      ],
+          {
+            "version": "1.0",
+            "modelType": "OML",
+            "createdBy": "OMLUSER",
+            "modelId": "71c51f2b-6178-4b18-a79d-383cb7afd0af",
+            "modelName": "automl_affcard_nb",
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
+              }
+                     ],
+            "namespace": "automl_affinity_card",
+            "shared": false,
+            "storedOn": "2021-08-24T06:48:52.639Z"
+          },
+          {
+            "version": "1.0",
+            "modelType": "OML",
+            "createdBy": "OMLUSER",
+            "modelId": "6c6edf94-8b9c-4ca0-984a-271f23813793",
+            "modelName": "automl_cust360_affcard_nb",
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/6c6edf94-8b9c-4ca0-984a-271f23813793"
+              }
+                     ],
+            "namespace": "automl_cust360_affinity_card",
+            "shared": false,
+            "storedOn": "2021-09-06T04:54:08.908Z"
+          }
+               ],
       "links": [
-        {
-          "rel": "self",
-          "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models"
-        }
-      ]
+          {
+            "rel": "self",
+            "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models"
+          }
+              ]
     }
 
     ```
@@ -255,7 +279,7 @@ This lab assumes you have:
           "links": [
             {
               "rel": "self",
-              "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
+              "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
             }
       ],
           "namespace": "automl_affinity_card",
@@ -266,7 +290,7 @@ This lab assumes you have:
       "links": [
         {
           "rel": "self",
-          "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models"
+          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models"
         }
       ]
     }
@@ -293,7 +317,7 @@ This lab assumes you have:
           "links": [
             {
               "rel": "self",
-              "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
+              "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
             }
       ],
           "namespace": "automl_affinity_card",
@@ -304,7 +328,7 @@ This lab assumes you have:
       "links": [
         {
           "rel": "self",
-          "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models"
+          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models"
         }
       ]
     }
@@ -316,7 +340,7 @@ This lab assumes you have:
 1. Get model endpoint details for the model that you created in the preceding labs (Labs 2 through 4). Use the following values:
 
     * authentication token=generated in Task 1 or if expired then a refreshed or regenerated token
-    * omlserver= e.g. https://adb.us-ashburn-1.oraclecloud.com
+    * omlserver= e.g. https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this URL, ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
     * model URI=e.g. `automl_cust360_affinity_card_nb` (To get the URI for the model that you want the endpoint for, log in to OML Notebooks, go to the Models page,  Deployed tab.)
 
     ```
@@ -383,7 +407,7 @@ This lab assumes you have:
       "links": [
         {
           "rel": "self",
-          "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/deployment/automl_cust360_affinity_card_nb"
+          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/deployment/automl_cust360_affinity_card_nb"
         }
       ],
       "namespace": "automl_cust360_affinity_card",
@@ -618,4 +642,4 @@ To learn more about how OML Services support ONNX format models, see resources l
 ## Acknowledgements
 * **Author** - Suresh Rajan, Senior Manager, Oracle Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning
-* **Last Updated By/Date** - Suresh Rajan, November 2021
+* **Last Updated By/Date** - Suresh Rajan, December 2021
