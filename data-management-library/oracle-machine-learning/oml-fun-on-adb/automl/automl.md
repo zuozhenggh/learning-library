@@ -35,25 +35,29 @@ This lab assumes you have:
 ## Task 1: Access Oracle Machine Learning AutoML UI
 
 To access AutoML UI, you must sign into the Oracle Machine Learning User Interface, which also includes Oracle Machine Learning notebooks, on Autonomous Database:
-To sign into Oracle Machine Learning (OML) User Interface from the Autonomous Database Service Console:
+To sign into Oracle Machine Learning User Interface from the Autonomous Database Service Console:
 
-1. Select an Autonomous Database instance, and on the Autonomous Database details page click **Service Console**.
+1. On your Oracle Autonomous Database dashboard, click the Oracle Autonomous Database that you have provisioned.
+
+	![List of provisioned ADBs](images/provisioned_adb.png)
+
+2. On your Oracle Autonomous Database instance page, click **Service Console**. The Launch Service Console dialog opens. Wait till the Service Console opens.
 
 	![Service Console](images/service_console.png)
 
-2. Click **Development**.
+2. On the Service Console page, click **Development** on the left pane.
 
-  ![Development option](images/development.png)
+  ![Development option](images/adw_development.png)
 
-4. On the Development page click **Oracle Machine Learning User Interface**.
+4. On the Development page, click **Oracle Machine Learning User Interface**. This opens the Oracle Machine Learning sign in page.
 
 	![OML Notebooks option](images/oml_notebooks_option.png)
 
-5. Enter your username and password, and click **Sign in**. This opens the Oracle Machine Learning user interface homepage.
+5. Enter your username and password, and click **Sign in**. This opens the Oracle Machine Learning home page.
 
-6. On your Oracle Machine Learning homepage, click **AutoML** in the Quick Actions section.
+6. On your Oracle Machine Learning home page, click **AutoML** in the Quick Actions section.
 
-	![Homepage](images/homepage_automl.png)
+	![home page](images/homepage_automl.png)
 
 
 
@@ -64,7 +68,7 @@ When creating an Experiment, you must define the data source and the target of t
 
 1. Click **AutoML** on your Oracle Machine Learning home page. Alternatively, you can go to the left navigation menu at the upper left corner of the page and click AutoML. The AutoML Experiments page opens.
 
-	![Homepage](images/homepage_automl.png)
+	![home page](images/homepage_automl.png)
 
 2. Click **Create**. The Create Experiments page opens.
 
@@ -82,7 +86,7 @@ When creating an Experiment, you must define the data source and the target of t
 
 7. In the **Prediction Type** field, the prediction type is automatically selected based on target field data type and cardinality. In this lab, **Classification** is automatically selected.	The supported prediction types are:
 
-	* Classification: For non-numeric data type, Classification is selected by default.
+	* Classification: For non-numeric data type, Classification is selected by default. Classification may be selected for small cardinality numeric data as well.
 	* Regression: For numeric data type, Regression is selected by default.
 8. In the **Case ID** field, select **CUST_ID**. For easier selection, you can also type the column name and the column names are filtered. The Case ID helps in data sampling and dataset split to make the results reproducible between experiments. It also aids in reducing randomness in the results. This is an optional field.  
 
@@ -134,6 +138,8 @@ The Leader Board displays the top performing models relative to the model metric
 	![Leader Board](images/leaderboard_1.png)
 
 2. Click **Metrics**. The **Select Additional Metrics** dialog opens.
+
+	>**Note:** The additional metrics can be selected once the experiment has completed.
 
 	![Leader Board options](images/leaderboard_options.png)
 

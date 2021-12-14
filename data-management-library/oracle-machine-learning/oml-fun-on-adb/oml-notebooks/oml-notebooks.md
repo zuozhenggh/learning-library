@@ -1,19 +1,19 @@
-# Introduction to Oracle Machine Learning Notebooks
+# Introduction to Oracle Machine Learning
 
 ## Introduction
 
-This lab walks you through the steps to sign into Oracle Machine Learning Notebooks, create an OML notebook from scratch, create an OML notebook based on the example template notebooks, and create jobs to schedule notebooks to run at specific day and time.
+This lab walks you through the steps to sign into Oracle Machine Learning, create an OML notebook from scratch, create an OML notebook based on the example template notebooks, and create jobs to schedule notebooks to run at specific day and time.
 
 Estimated Time: 15 minutes
 
-### About Oracle Machine Learning Notebooks
-Oracle Machine Learning Notebooks is a collaborative user interface supporting data scientists, analysts, developers, and DBAs. You can work with SQL, PL/SQL, and Python in the same notebook—using the most appropriate language for the problem at hand. You can also view notebook changes by team members in real time, interactively. Data science team members can explicitly share notebooks and version notebooks as well as schedule notebooks to run at a set time or a repeating schedule. By virtue of being included in Autonomous Database, machine learning functionality is automatically provisioned and managed.
-Through Oracle Machine Learning Notebooks, you have access to the in-database algorithms and analytics functions to explore and prepare data, build and evaluate models, score data, and deploy solutions.
+### About Oracle Machine Learning
+Oracle Machine Learning is a collaborative user interface supporting data scientists, analysts, developers, and DBAs. You can work with SQL, PL/SQL, and Python in the same notebook—using the most appropriate language for the problem at hand. You can also view notebook changes by team members in real time, interactively. Data science team members can explicitly share notebooks and version notebooks as well as schedule notebooks to run at a set time or a repeating schedule. By virtue of being included in Autonomous Database, machine learning functionality is automatically provisioned and managed.
+Through Oracle Machine Learning, you have access to the in-database algorithms and analytics functions to explore and prepare data, build and evaluate models, score data, and deploy solutions.
 
 ### Objectives
 
 In this lab, you will learn how to:
-* Sign into Oracle Machine Learning Notebooks
+* Sign into Oracle Machine Learning
 * Create an Oracle Machine Learning notebook from scratch
 * Create a notebook based on an example template
 * Check and update the interpreter binding settings for a notebook
@@ -26,11 +26,11 @@ This lab assumes you have:
 * Access to OMLUSER account
 
 
-## Task 1: Sign into Oracle Machine Learning Notebooks
+## Task 1: Sign into Oracle Machine Learning
 
-A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning User Interface. You can access Oracle Machine Learning Notebooks from Oracle Autonomous Database.
+A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning. You can access Oracle Machine Learning from Oracle Autonomous Database.
 
-1. Sign into your OCI console, click on the left navigation menu and then click **Autonomous Database**.  
+1. Sign into your OCI console, click on the left navigation menu, and then click **Autonomous Database**.  
 
 	![ADB in OCI](images/adb_in_oci.png)
 
@@ -38,7 +38,7 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
   ![List of provisioned ADBs](images/provisioned_adb.png)        	  
 
-3. On your Oracle Autonomous Database instance page, click **Service Console**. The Launch Service Console dialog opens. Click **OK**.
+3. On your Oracle Autonomous Database instance page, click **Service Console**. The Launch Service Console dialog opens. Wait till the Service Console opens.
 
 	![ADW Service Console](images/service_console.png)
 
@@ -47,15 +47,15 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 	![Development option in ADW Service Console](images/adw_development.png)
 
-5. Click **Oracle Machine Learning User Interface.**
+5. Click **Oracle Machine Learning User Interface.** This opens the Oracle Machine Learning sign in page.
 
   ![Oracle Machine Learning User Interface in ADW](images/adw_oml_notebooks.png)
 
-6. Enter your user credentials and click **Sign in**. This opens the Oracle Machine Learning user interface homepage.
+6. Enter your user credentials and click **Sign in**. This opens the Oracle Machine Learning home page.
 
 	>**Note:** The credential is what you have defined while creating the Oracle Machine Learning user.
 
-	![Oracle Machine Learning Notebooks Sign in page](images/oml_signin_page.png)
+	![Oracle Machine Learning UI Sign in page](images/oml_signin_page.png)
 
 This completes the task of accessing Oracle Machine Learning.
 
@@ -64,9 +64,9 @@ This completes the task of accessing Oracle Machine Learning.
 ## Task 2: Create a Notebook and define paragraphs using the md, SQL, PL/SQL, and Python interpreters
 To create a notebook:
 
-1. On the Oracle Machine Learning homepage, click **Notebooks**. The Notebooks page opens.
+1. On the Oracle Machine Learning home page, click **Notebooks**. The Notebooks page opens.
 
-	![Notebooks option in Oracle Machine Learning homepage](images/homepage_notebooks.png)
+	![Notebooks option in Oracle Machine Learning home page](images/homepage_notebooks.png)
 
 2. On the Notebooks page, click **Create**. The Create Notebook dialog opens.
 	![Create Notebook dialog](images/create_notebook.png)
@@ -177,17 +177,23 @@ The ``z.show`` command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in 
 
 ## Task 3: Create a Notebook using a Template Example
 
-This step demonstrates how to create a notebook based on an Example template:
+Tasks 3.1 and 3.2 demonstrate how to create notebooks based on Example templates.
 
-1. In your Oracle Machine Learning user interface, click **Examples** in the Quick Actions section on the home page. Alternatively, you can go to the left navigation menu and click **Examples** under templates. The Examples page opens with all the templates listed.
+* Task 3.1 shows how to create the OML4Py Classification notebook based on the OML4Py Classification DT example template. The template builds and applies the classification Decision Tree algorithm to build a classification model based on the relationships between the predictor values and the target values. The template uses the Sales History (`SH`) schema.
+* Task 3.2 shows how to create the Time Series notebook based on the OML4SQL Time Series ESM example template. This template forecasts sales by using the Exponential Smoothing Algorithm for Time Series Data. It also used the `Sales` table in the SH schema.
 
-	![Oracle Machine Learning homepage](images/homepage_examples.png)
+### Task 3.1: Create an OML4Py Notebook using the Classification DT Template Example
+This step demonstrates how to create the OML4Py Classification notebook based on the OML4Py Classification DT (Decision Tree) Example template:
+
+1. On your Oracle Machine Learning home page, click **Examples** in the Quick Actions section. Alternatively, you can go to the left navigation menu and click **Examples** under templates. The Examples page opens with all the templates listed.
+
+	![Oracle Machine Learning home page](images/homepage_examples.png)
 
 2. Navigate to the **OML4Py Classification DT** example template notebook. Alternatively, type DT in the search box on the upper right to get a list of the decision tree-related notebooks. Click the notebook and then click **Create Notebook**.
 
 	![Create Notebook](images/classification_DT_example.png)
 
-3. The Create Notebook dialog opens. Provide a name for this notebook and click **OK**. In this example, enter **OML4Py Classification DT**.
+3. The Create Notebook dialog opens. The Name field displays the same name as the template. You can edit this name. In this example, enter **OML4Py Classification DT** and click **OK**.
 
 	> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
 
@@ -211,11 +217,11 @@ This step demonstrates how to create a notebook based on an Example template:
 This completes the task of creating a notebook from an Example template.
 
 
-### Task 3.1: Create a Time Series Notebook using the OML4SQL Time Series Template Example
+### Task 3.2: Create a Time Series Notebook using the OML4SQL Time Series Template Example
 
 This step demonstrates how to create the Time Series notebook based on the Example template:
 
-1. Go to the **Examples** page under Templates in your Oracle Machine Learning UI.
+1. Go to the **Examples** page under Templates in the OML menu or click **Examples** on the Oracle Machine Learning home page.
 
 2. Navigate to the **OML4SQL Time Series ESM** example template notebook. Alternatively, type ESM in the search box on the upper right to get a list of the ESM-related notebooks. Click the notebook and then click **Create Notebook**.
 
@@ -249,7 +255,7 @@ This completes the task of creating the Time Series notebook from the OML4SQL Ti
 
 ## Task 4: Change Interpreter Bindings Order
 
-An interpreter allows using a specific data processing language at the backend to process commands entered in a notebook paragraph. For the notebooks in Oracle Machine Learning User Interface, you use the following interpreters:
+An interpreter allows using a specific data processing language at the backend to process commands entered in a notebook paragraph. For the notebooks in Oracle Machine Learning, you use the following interpreters:
 
 * SQL interpreter for SQL Statements
 * PL/SQL  interpreter for PL/SQL scripts/statements
@@ -289,7 +295,7 @@ Jobs allow you to schedule the running of notebooks. On the Jobs page, you can c
 
 To create a job:
 
-1. On the Oracle Machine Learning UI homepage, click **Jobs**. Alternatively, in the left navigation menu, click **Jobs**.
+1. On the Oracle Machine Learning UI home page, click **Jobs**. Alternatively, in the left navigation menu, click **Jobs**.
 
 	![Job](images/jobs.png)
 
@@ -328,8 +334,8 @@ This completes the task of creating a job.
 ## Learn More
 
 
-* [Oracle Machine Learning Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
-* [Interactive Tour - Oracle Machine Learning Notebooks](https://docs.oracle.com/en/cloud/paas/autonomous-database/oml-tour/)
+* [Oracle Machine Learning UI](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
+* [Interactive Tour - Oracle Machine Learning UI](https://docs.oracle.com/en/cloud/paas/autonomous-database/oml-tour/)
 
 ## Acknowledgements
 * **Author** -  Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
