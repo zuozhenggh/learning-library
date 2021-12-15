@@ -1,4 +1,4 @@
-# Diagnosability and Debugging Use Case
+# Performance Monitoring Use Case
 
 ## Introduction
 
@@ -10,11 +10,21 @@ Estimated lab Time - 5 minutes
   
 ## Task 1: Notice perf metrics and create Alert for response time threshold
 
-1. Create Alert in Grafana with Slack alert channel set up in earlier lab.
+1. Notice `PlaceOrder average time` metric panel in `Order Service` section of the Grabdish dashboard, select the drop down menu of the panel and click `edit`.
 
-    ```
-    <copy>cd $GRABDISH_HOME/observability;./install.sh</copy>
-    ```
+    ![](images/placeorderpanel.png " ")
+   
+2. Select the `alert` tab and click the `create Alert` button
+
+    ![](images/createalertbutton.png " ")
+       
+3. Set the rule to evaluate every 1m for 5m, add a condition for avg() time above `.01`, and provide a message to be sent for the Slack notification (Slack channel should be the default for `Send to`)
+
+    ![](images/addalertruleforplaceorder.png " ")
+       
+3. You can click `Test rule` to verify the rule and then click `Apply` in the upper right corner.
+
+    ![](images/testrule.png " ")
 
 
 ## Task 2:  Install a load testing tool and start an external load balancer for the Order service
@@ -39,9 +49,6 @@ Estimated lab Time - 5 minutes
     <copy>export LB='123.123.123.123'</copy>
     ```
 
-<if type="multicloud-freetier">
-+ `export LB=$(kubectl get gateway msdataworkshop-order-helidon-appconf-gw -n msdataworkshop -o jsonpath='{.spec.servers[0].hosts[0]}')`
-</if>
 
 2. Install a load testing tool.  
 
@@ -53,85 +60,39 @@ Estimated lab Time - 5 minutes
 
 	![](images/install-k6.png " ")
 
-	(Alternatively) To install artillery:
-
-	```
-	<copy>cd $GRABDISH_HOME/artillery; npm install artillery@1.6</copy>
-	```
  
 ## Task 3: Load test 
 
 1.  Execute a load test using the load testing tool you have installed.  
 
-    Here is an example using k6:
-
     ```
-    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; test40usersFor5Minutes.sh</copy>
     ```
+    
+    *Note that you can adjust the alert rule condition(s) (as defined in task 1) as well as the number of users and duration of the load test conducted here as desired.
+    The values provided here are generally sufficient to reproduce the performance degradation and trigger the alert as desired.
 
-    Note the request rate. This is the number of http requests per second that were processed.
+## Task 4: Notice metrics and Slack message from alert due to rule condition being exceeded.
 
-    ![](images/perf1replica.png " ")
+   You will notice the health/heart of the PlaceOrder panel in Grafana console turn to yellow and then eventually to red.
 
-    (Or) Using artillery:
+     ![](images/yellowheart.png " ")
+     
+     ![](images/redheart.png " ")
+     
+   You will also notice a Slack message being sent with information about the alert.
+     
+     ![](images/slackfailure.png " ")
 
-    ```
-    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
-    ```
+## Task 5: Notice return to healthy state in PlaceOrder panel of dashboard and Slack message sent indicating response time is acceptable again
 
+   You will notice the health/heart of the PlaceOrder panel in Grafana console turn back to green.
 
-## Task 4: Notice metrics and Slack message from alert
-
-1. Identify the EXTERNAL-IP address of the Grafana LoadBalancer by executing the following command:
-
-       ```
-       <copy>services</copy>
-       ```
-
-     ![](images/grafana-loadbalancer-externalip.png " ")
-
-     Note, 
-
-## Task 5: Scale the database tier and load test again
-
-1. To scale the Order DB Autonomous Transaction Processing database to **2 OCPUs**, click the navigation icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
-
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
-
-2. Click **Scale Up/Down** and enter 2 in the OCPU field. Click **Update**.
-
-   ![](images/ScaleTo2dbocpuScreen1.png " ")
-
-   ![](images/ScaleTo2dbocpuScreen2.png " ")
-
-3. Wait until the scaling has completed (Lifecycle State: Available).
-
-   ![](images/ScaleTo2dbocpuScreen3.png " ")
-
-4. Execute the load test again.
-
-   For example:
-
-    ```
-    <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
-    ```
-
-   Note the request rate.  Throughput has increased.
-
-   ![](images/perf3replica2dbocpu.png " ")
-
-   (Or) Using artillery:
-
-    ```
-    <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
-    ```
-
-
-## Task 6: Notice metrics and Slack message from alert that response time is acceptable again
-
-1. Identify the EXTERNAL-IP address of the Grafana LoadBalancer by executing the following command:
-
-     ![](images/grafana-loadbalancer-externalip.png " ")
+   ![](images/placeorderhealthbacktonormal.png " ")
+   
+   You will also notice a Slack message being sent confirming the condtion is `OK` again.
+   
+   ![](images/slackmessagehealthbacktonormal.png " ")
 
 
 ## Task 7: Scale down the database 

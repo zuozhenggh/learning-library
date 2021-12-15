@@ -7,11 +7,15 @@ This lab will show you how setup an alert for when an exception/failure occurs i
 Estimated lab Time - 10 minutes
 
   
-## Task 1: Notice propagation metrics and create Alert for message propagation failure case
+## Task 1: Notice propagation health singlestat metric
 
-1. Create Alert in Grafana with Slack alert channel set up in earlier lab.
+1. Notice 
 
      ![](images/grafana-loadbalancer-externalip.png " ")
+     
+     Note that Grafana plans to support alert rules for singlestat panels such as this one in the future but does not currently.
+     
+     We demonstrate alert rules in the `Performance Monitoring Use Case` lab of this workshop.
 
 ## Task 2: Use SQLcl to disable propagation
 
@@ -67,7 +71,7 @@ Estimated lab Time - 10 minutes
        ```
 
 
-## Task 5: Notice metrics and Slack message from alert that messaging/propagation is working again
+## Task 5: Notice metric showing that messaging/propagation is working again
 
 1. Return to the Grafana dashboard and notice the up state for the `OrderDB to InventoryDB propagation` metric:
 
