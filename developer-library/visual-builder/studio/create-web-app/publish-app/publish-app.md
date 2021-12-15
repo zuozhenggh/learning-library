@@ -25,7 +25,7 @@ This lab assumes you have:
 * A Chrome browser
 * All previous labs successfully completed
 
-## Task 1: Create a Merge Request for Approval
+## Task 1: Create a merge request for approval
 
 Now that you are ready to publish your changes to the project's `main` branch, let's create a merge request to get someone to sign off on your changes.
 
@@ -47,7 +47,7 @@ Now that you are ready to publish your changes to the project's `main` branch, l
 
     You can't create another merge request from your workspace until your changes are merged, but you can use the **Commit** and **Push** options in the header's Git repository menu to update a merge request that's pending approval.
 
-## Task 2: Merge Changes to the Default Branch
+## Task 2: Merge changes to the default branch
 
 Assuming your merge request has been approved, let's now merge your changes to the project's `main` branch in the remote repository.
 
@@ -62,7 +62,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 
     ![](images/merge-mr-result.png " ")
 
-## Task 3: View the Deployed Application
+## Task 3: View the deployed application
 After your application is successfully deployed to the development environment, you can view it from your environment's list of deployments.
 
 1.  In the left navigation, click **Environments** ![Environments icon](images/vbs-environments-icon.png), then **Deployments**.
@@ -72,7 +72,7 @@ After your application is successfully deployed to the development environment, 
 
     The application opens in a new browser tab, but without any data. While you can use an empty database in your development environment, we'll see how to import data for the application in the next step.
 
-## Task 4: Import Data to the Deployed Application
+## Task 4: Import data to the deployed application
 A deployed application does not automatically include its business object data, so you'll need to manually import data for the application in the development environment. You can import the data you used in your workspace or add entirely different data, as we'll do now.
 
 1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/lCxTIc--7cvqEdu8cqRh4rnuAFVrORh4Ja20UxVNt3FjDVjsRPP3P5K5BJjjX-v4/n/c4u03/b/oci-library/o/WMS7601-HR_Application.zip) and download the `HR_Application.zip` file. The zip file contains CSV files of the Location, Department, and Employee business objects with more records and data.

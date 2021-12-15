@@ -27,7 +27,7 @@ This lab assumes you have:
 * A Chrome browser
 * A VB Studio instance and a separate VB instance
 
-## Task 1: Create a Project for a Visual Application
+## Task 1: Create a project for a visual application
 
 As someone who creates a project, you'll automatically become the project's owner, responsible for project management. For the purposes of this workshop, we'll assume that you're also the developer who will create the HR web application.
 
@@ -56,7 +56,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
     ![](images/project-home.png " ")
 
-## Task 2: Explore the Project Environment
+## Task 2: Explore the project environment
 
 Everything you need to start building a visual application is now created for you in this project. Let's step through some key components to better understand your project environment.
 
@@ -80,7 +80,7 @@ Everything you need to start building a visual application is now created for yo
 
     ![](images/build-pipeline.png " ")
 
-## Task 3: Add Credentials to Deploy the Visual Application
+## Task 3: Add credentials to deploy the visual application
 
 Now that your project is provisioned, let's set up the credentials that VB Studio will use to deploy your visual application to the VB development instance.
 
@@ -98,7 +98,7 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
     - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to the URL when your application is deployed (for example, https://host/something-else/0.1/index.html). This version number is useful to identify multiple versions during development, but when your app is ready to go live, you'll want to deselect this option to remove the version and replace it instead with **live** (https:/host/something-else/live/index.html).
     - Take note of the **Use clean database** option, also selected by default. This option uses a new database by default to store your application's data. To keep your data after initially importing it (which we'll do in a later lab), you'll need to select the **Keep existing environment data** option.
 
-## Task 4: Add Team Members
+## Task 4: Add team members
 
 For the purposes of this workshop, let's assume that other members of your team will work with you on this visual application—which means you'll need to add them to this project. As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor.
 
@@ -113,6 +113,8 @@ For the purposes of this workshop, let's assume that other members of your team 
     ![](images/team-add-member.png " ")
 
     An email containing project details is sent to Clara Coder. Your recent activities feed is also updated.
+
+    You may **proceed to the next lab**.
 
 ## Acknowledgements
 * **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
