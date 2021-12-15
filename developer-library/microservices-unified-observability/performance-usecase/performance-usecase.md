@@ -2,11 +2,10 @@
 
 ## Introduction
 
-This lab will show you how...
+This lab will show you how to set up alerts for metrics conditions and trigger them so that Slack notifications are sent as appropriate.
 
-Estimated lab Time - 5 minutes
+Estimated lab Time - 10 minutes
 
-  -   ...
   
 ## Task 1: Notice perf metrics and create Alert for response time threshold
 

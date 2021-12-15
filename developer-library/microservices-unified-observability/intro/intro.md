@@ -3,9 +3,15 @@
 
 This workshop will show you how to automatically configure and use Unified Observability in Grafana to analyze and correlate metrics, logs, and tracing, both in the app-tier and database tier, and all within one "single-pane of glass" (a single Grafana dashboard console).
 
-Both diagnosability (for troubleshooting issues) and performance optimization use cases will be demonstrated as will the ability to add your extend the framework to suite your own use cases. 
+Diagnosability and performance optimization use cases will be demonstrated as will the ability to configure and customize the framework to suite your own use cases. 
 
 ![](./images/unified-observability.png " ")
+
+As shown in the diagram above, the following popular CNCF and open source technologies and industry standards are used.
+ - Prometheus is used for metrics gathering by scraping Kubernetes microservice endpoints and the DB exporter endpoint. A Prometheus datasource is used Grafana.
+ - Promtail is used to gathering and push logs from Kubernetes microservice pods and the DB exporter pods to Loki. A Loki datasource is used Grafana.
+ - Jaeger is used for tracing (OpenTracing/OpenTelemetry) in the Kubernetes tier which the correlates to ECID tracing in the database tier. A Jaeger datasource is used Grafana.
+
 
 The "GrabDish" application and related infrastructure used in the [Simplify Microservices with converged Oracle Database Workshop](http://bit.ly/simplifymicroservices) and shown below will be reused for this purpose, however, the focus will be on observability. 
 
