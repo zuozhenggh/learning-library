@@ -9,13 +9,11 @@ Estimated lab Time - 10 minutes
   
 ## Task 1: Notice propagation health singlestat metric
 
-1. Notice 
-
-     ![](images/grafana-loadbalancer-externalip.png " ")
+  ![](images/propagationup.png " ")
      
-     Note that Grafana plans to support alert rules for singlestat panels such as this one in the future but does not currently.
+  Note that Grafana plans to support alert rules for singlestat panels such as this one in the future but does not currently.
      
-     We demonstrate alert rules in the `Performance Monitoring Use Case` lab of this workshop.
+  We demonstrate alert rules in the `Performance Monitoring Use Case` lab of this workshop.
 
 ## Task 2: Use SQLcl to disable propagation
 
@@ -56,7 +54,7 @@ Estimated lab Time - 10 minutes
 
 1. Return to the Grafana dashboard and notice the down state for the `OrderDB to InventoryDB propagation` metric:
 
-     ![](images/grafana-loadbalancer-externalip.png " ")
+     ![](images/propagationdown.png " ")
 
 
 ## Task 4: Use SQLcl to re-enable propagation
@@ -75,7 +73,7 @@ Estimated lab Time - 10 minutes
 
 1. Return to the Grafana dashboard and notice the up state for the `OrderDB to InventoryDB propagation` metric:
 
-     ![](images/grafana-loadbalancer-externalip.png " ")
+     ![](images/propagationup.png " ")
 
    
 Proceed to the next lab.
