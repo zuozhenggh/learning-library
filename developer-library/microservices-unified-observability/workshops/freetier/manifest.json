@@ -40,7 +40,12 @@
         "type": "event-freetier"
       },
       {
-        "title": "Lab 7: Tear down",
+        "title": "Lab 7: Better Understand and Modify Metrics, Logging, and Tracing (Optional)",
+        "filename": "../../extended-usage/extended-usage.md",
+        "type": "event-freetier"
+      },
+      {
+        "title": "Lab 8: Tear down",
         "filename": "../../../microservices-with-converged-db/teardown/teardown.md",
         "type": "event-freetier"
       },
