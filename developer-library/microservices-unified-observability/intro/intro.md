@@ -1,11 +1,15 @@
 # Unified Observability in Grafana with Converged Oracle Database
 ## Introduction and Overview
 
-[](youtube:v0nYRueADbo)
-
 This workshop will show you how to automatically configure and use Unified Observability in Grafana to analyze and correlate metrics, logs, and tracing, both in the app-tier and database tier, and all within one "single-pane of glass" (a single Grafana dashboard console).
 
 Both diagnosability (for troubleshooting issues) and performance optimization use cases will be demonstrated as will the ability to add your extend the framework to suite your own use cases. 
+
+![](./images/unified-observability.png " ")
+
+The "GrabDish" application and related infrastructure used in the [Simplify Microservices with converged Oracle Database Workshop](http://bit.ly/simplifymicroservices) and shown below will be reused for this purpose, however, the focus will be on observability. 
+
+We encourage you to check out the other workshop if you are interested in learning more about the technical capabilities inside and outside the Oracle converged database to support scalable data and event-driven microservices architectures, polyglot microservices, data and transaction patterns, etc.
 
 ![](./images/architecture.png " ")
 

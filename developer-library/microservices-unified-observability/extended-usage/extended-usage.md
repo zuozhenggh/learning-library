@@ -34,6 +34,7 @@ You will notice the related tracing changes in the dashboard
 
 The observability-exporter image correpsonding to the repos at https://github.com/oracle/oracle-db-appdev-monitoring  will soon be available as will more advanced customization of the DB log exporter, etc.
 
+Proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist

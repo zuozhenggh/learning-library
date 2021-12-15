@@ -76,6 +76,7 @@ Estimated lab Time - 10 minutes
      ![](images/slacktestalert.png " ")
 
     
+Proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate

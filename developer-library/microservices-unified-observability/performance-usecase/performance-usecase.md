@@ -94,19 +94,7 @@ Estimated lab Time - 5 minutes
    
    ![](images/slackmessagehealthbacktonormal.png " ")
 
-
-## Task 7: Scale down the database 
-
-1. To scale the Order database down to **1 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
-
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
-
-2. Click **Scale Up/Down** and enter 1 in the OCPU field. Click **Update**.
-
-   ![](images/ScaleTo1dbocpuScreen1.png " ")
-
-   ![](images/ScaleTo1dbocpuScreen2.png " ")
-
+Proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate
