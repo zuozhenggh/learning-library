@@ -21,7 +21,7 @@
         {
             "title": "Lab 2: Creating a Non-partitioned Table",
             "description": "Createe a table for auto partitioning to work on",
-            "filename": "../../create-table/setup-table.md"
+            "filename": "../../create-table/create-table.md"
         },
         {
             "title": "Lab 3: Validate the Table",
