@@ -13,7 +13,7 @@ We will do the following:
 - Evaluate the accuracy of the model: we will take a visual approach in OAC to compare predicted scores with actual scores.
 - Finally, we will draw conclusions on the entire exercise.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 - Learn how to generate new features from one or more data sets
@@ -449,4 +449,5 @@ What this tells us is that these factors are indeed important for the experience
 Congratulations on completing the workshop! Now you've learned the basics of machine learning, hopefully you are inspired to apply it to many more challenges!
 
 ## **Acknowledgements**
+
 - **Author** - Jeroen Kloosterman, Technology Product Strategy Director
