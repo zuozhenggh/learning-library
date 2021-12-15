@@ -18,9 +18,21 @@ You can extend the observability functionality provided here in a number of ways
 
 ## Task 2: Modify Application Tracing
 
-Study the tracing behavior in $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java 
+Study the tracing behavior in `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java` and `OrderServiceEventProducer.java`
 
-For example, the `@Traced` annotation, `tracer.buildSpan` logic, etc.
+Notice the `@Traced` MicroProfile annotation for automatically adding tracing spans for this method call.
+
+![](./images/annotationtrace.png " ")
+
+
+Notice the programmatically added spans via `tracer.buildSpan`  logic.
+
+![](./images/programmaticspan.png " ")
+
+
+Notice how the OpenTracing id is set as the ECID for end to end tracing across app/Kubernetes tier and database tier.
+
+![](./images/opentracingidsetasecid.png " ")
 
 Modify and save the source. Then rebuild, and redeploy by deleting the previous pod version (deployments are configured with image-pull=always) using the following command.
 
@@ -30,7 +42,7 @@ Modify and save the source. Then rebuild, and redeploy by deleting the previous 
      
 You will notice the related tracing changes in the dashboard
 
-The observability-exporter image correpsonding to the repos at https://github.com/oracle/oracle-db-appdev-monitoring  will soon be available as will more advanced customization of the DB log exporter, etc.
+The observability-exporter image corresponding to the repos at https://github.com/oracle/oracle-db-appdev-monitoring  will soon be available as will more advanced customization of the DB log exporter, etc.
 
 Proceed to the next lab.
 

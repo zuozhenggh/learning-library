@@ -21,7 +21,7 @@
         "type": "livelabs"
       },
       {
-        "title": "Lab 3: Enable Observability with DB Metrics, Logs Exporters",
+        "title": "Lab 3: Enable Observability with Database Metrics, Logs Exporters",
         "filename": "../../../microservices-with-converged-db/observability/observability.md",
         "type": "livelabs"
       },

@@ -8,11 +8,12 @@ Diagnosability and performance optimization use cases will be demonstrated as wi
 ![](./images/unified-observability.png " ")
 
 As shown in the diagram above, the following popular CNCF and open source technologies and industry standards are used.
- - Prometheus is used for metrics gathering by scraping Kubernetes microservice endpoints and the DB exporter endpoint. A Prometheus datasource is used Grafana.
- - Promtail is used to gathering and push logs from Kubernetes microservice pods and the DB exporter pods to Loki. A Loki datasource is used Grafana.
- - Jaeger is used for tracing (OpenTracing/OpenTelemetry) in the Kubernetes tier which the correlates to ECID tracing in the database tier. A Jaeger datasource is used Grafana.
+ - Prometheus is used for metrics gathering by scraping Kubernetes microservice endpoints and the database exporter endpoint. A Prometheus datasource is used in Grafana.
+ - Promtail is used to gathering and push logs from Kubernetes microservice pods and the database exporter pods to Loki. A Loki datasource is used in Grafana.
+ - Jaeger is used for tracing (OpenTracing/OpenTelemetry format) in the Kubernetes tier which then correlates to ECID tracing in the database tier. A Jaeger datasource is used in Grafana.
+    *More details on this can be found in the `Better Understand and Modify Metrics, Logging, and Tracing` lab.
 
-
+ Upcoming versions of this workshop will include use of additional microservice frameworks and language implementations such as Spring Boot, Micronaut, Quarkus, .NET, JavaScript, Python, Go, etc. and more detailed usage and use cases.
 
 The "GrabDish" application and related infrastructure used in the [Simplify Microservices with converged Oracle Database Workshop](http://bit.ly/simplifymicroservices) and shown below will be reused for this workshop, however, the focus will be on observability. 
 
