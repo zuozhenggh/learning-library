@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab will show you how setup an alert for when an exception/failure occurs in the system and allow you to diagnose and debug the issue.
+This lab will show you how to determine when an exception/failure occurs in the system and allow you to diagnose and debug the issue.
 
 Estimated lab Time - 10 minutes
 
