@@ -686,6 +686,6 @@ OML4Py enables data scientists to hand-off their user-defined Python functions t
 3. [Machine Learning Explainability (MLX)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/explain-model.html#GUID-1936962D-38AD-4E7E-9B96-EEE3EE2BD15C) is used to help explain and interpret the machine learning model by identifying the features that most impact model predictions.
 
 ## Acknowledgements
-* **Author** - Sarika Surampudi, Senior User Assistance Developer, Database Documentation; Dhanish Kumar, Member of Technical Staff, User Assistance Developer.
+* **Author** - Sarika Surampudi, Senior User Assistance Developer, Oracle Database User Assistance Development; Dhanish Kumar, Member of Technical Staff, User Assistance Developer.
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning.
 * **Last Updated By/Date** - Dhanish Kumar, December 2021
