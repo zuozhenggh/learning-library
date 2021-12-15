@@ -1,4 +1,4 @@
-# Better Understand and Modify Metrics, Logging, and Tracing (Optional)
+# Better Understand and Modify Metrics, Logging, and Tracing
 
 ## Introduction
 
