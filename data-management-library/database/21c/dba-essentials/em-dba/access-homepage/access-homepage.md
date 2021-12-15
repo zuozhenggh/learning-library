@@ -1,10 +1,10 @@
-# Access Container Home Page from Cloud Control
+# Access Container Home Page
 
 ## Introduction
 
 This lab walks you through the steps to access the container home page from Oracle Enterprise Manager Cloud Control (Oracle EMCC). You will also learn how to switch between containers and manage your favorites.
 
-Estimated Time: 15 minutes
+*Estimated Time:* 15 minutes
 
 ### Objectives
 
@@ -45,10 +45,10 @@ Access the container home page from Oracle EMCC. Switch between the Container Da
 	The values may differ depending on the system you are using.  
 
     ![Oracle Database Instance Home page](images/emcc-dbhome-003-instancehome.png)
-	
-	Follow the same steps to open the PDB home page. 
 
-4.  From the **Targets** menu, select **Databases**. Select the Oracle Database, and click **View** > **Expand All Below** to view the PDBs. 
+	Follow the same steps to open the PDB home page.
+
+4.  From the **Targets** menu, select **Databases**. Select the Oracle Database, and click **View** > **Expand All Below** to view the PDBs.
 
 5.  Click on the PDB name, for example *ORCLPDB*, to access the PDB home page.   
 	The values may differ depending on the system you are using.  
@@ -57,7 +57,7 @@ Access the container home page from Oracle EMCC. Switch between the Container Da
 
 You can perform various tasks depending on which home page you access. For example, from the Database Instance home page, you can monitor and administer your Oracle Database, such as start up and shut down the Database Instance, open and close PDBs, manage the memory, modify initialization parameters, and so on.
 
-From the CDB and the PDB home page, you can perform tasks on the CDB and the PDB respectively. 
+From the CDB and the PDB home page, you can perform tasks on the CDB and the PDB respectively.
 
 
 ## Task 2: Switch between Containers
@@ -85,12 +85,12 @@ That is, from the Database Instance home page, you can switch to the CDB or the 
 	It brings up the CDB homepage. The values may differ depending on the system you are using.  
 
     ![CDB Home page](images/emcc-dbhome-007-cdbhome.png)
-	
-	Similarly, follow the same steps to open the PDB home page. 
+
+	Similarly, follow the same steps to open the PDB home page.
 
 4.  Click the down arrow next to the CDB and select **All Containers**.   
 	The values may differ depending on the system you are using.  
-	
+
     ![All Containers](images/emcc-dbhome-008-allcontainerscdb.png)
 
 5. 	 In the Switch Container dialog box, select the PDB, for example *ORCLPDB*, from the containers list and click **OK**. The values may differ depending on the system you are using.  
@@ -110,7 +110,7 @@ That is, from the Database Instance home page, you can switch to the CDB or the 
 
 ## Task 3: View Target Information
 
-To view information about a target or to monitor a target, open the target home page. For this lab, view the target information for the Database Instance, the PDB, and the CDB. 
+To view information about a target or to monitor a target, open the target home page. For this lab, view the target information for the Database Instance, the PDB, and the CDB.
 
 1.  Open the container home page, if you are on some other page.   
 	From the **Targets** menu, select **Databases** to open the Databases page. Click on the container name, for example *orcl.us.oracle.com*, to open the container home page as explained in *Task 1* of this lab.   
@@ -126,7 +126,7 @@ To view information about a target or to monitor a target, open the target home 
 	The window displays the details of the Database Instance. The values may differ depending on the system you are using.
 
     ![Container Information](images/emcc-dbhome-012-containerinfo.png)
-    
+
 3.  Switch the container to PDB and view PDB details. Click the down arrow next to the container and select the PDB, *ORCLPDB*. The values may differ depending on the system you are using.
 
     ![Select ORCLPDB](images/emcc-dbhome-013-selectpdb.png)
@@ -157,13 +157,13 @@ To view information about a target or to monitor a target, open the target home 
 
 ## Task 4: Manage Your Favorites
 
-You can add pages to favorites and bookmark them in Oracle EMCC for easy access. Similarly, you can remove pages from favorites. 
+You can add pages to favorites and bookmark them in Oracle EMCC for easy access. Similarly, you can remove pages from favorites.
 
  - To add a page to favorites, open that page, and use the **Favorites** menu (star icon).
- - To remove a page from favorites, open that page, and use the **Favorites** menu (star icon). 
+ - To remove a page from favorites, open that page, and use the **Favorites** menu (star icon).
  - To remove one or more pages from favorites, use the **Manage Favorites** menu.
 
-For this lab, add the CDB home page to favorites and remove it from favorites. Ensure that you have the CDB home page open. Otherwise, follow the steps as explained in *Task 1* of this lab to open the CDB home page. 
+For this lab, add the CDB home page to favorites and remove it from favorites. Ensure that you have the CDB home page open. Otherwise, follow the steps as explained in *Task 1* of this lab to open the CDB home page.
 
 1.  Add the CDB home page to favorites. Click the **Favorites** menu (star icon) and select **Add Page to Favorites**.
 
@@ -197,7 +197,7 @@ For this lab, add the CDB home page to favorites and remove it from favorites. E
 
 This brings you towards the successful completion of this workshop on *Oracle EM Database Administration (DBA)*.
 
-In this workshop, you have learned how to use Oracle EMCC with an Oracle multitenant container database, manage target databases and listeners, and access the container home page. 
+In this workshop, you have learned how to use Oracle EMCC with an Oracle multitenant container database, manage target databases and listeners, and access the container home page.
 
 ## Acknowledgements
 

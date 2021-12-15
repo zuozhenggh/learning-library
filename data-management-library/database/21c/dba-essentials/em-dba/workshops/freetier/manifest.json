@@ -6,7 +6,7 @@
       "title": "Introduction",
       "description": "The workshop on Oracle Enterprise Manager Cloud Control (Oracle EMCC) Database Administration (DBA).",
       "filename": "./../../intro-emcc/intro-emcc.md",
-	  "type": "em-dba"
+      "type": "em-dba"
     },
     {
       "title": "Get Started",
@@ -54,7 +54,7 @@
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
     }
   ]
 }

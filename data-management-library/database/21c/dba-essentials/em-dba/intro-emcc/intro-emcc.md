@@ -1,4 +1,4 @@
-# Oracle Enterprise Manager Cloud Control (Oracle EMCC)
+# Introduction
 
 ## About this workshop
 
@@ -8,7 +8,7 @@ After you install Oracle Database 21c on your host, let's connect to the databas
 
 Oracle EM offers a comprehensive set of performance and health metrics that allows unattended monitoring of key components in your environment. These key components include but are not limited to applications, application servers, Oracle Databases, and the back-end components on which they rely, such as hosts, operating systems, storage, and so on.
 
-Estimated Workshop Time: 1 hour 45 minutes
+*Estimated Time:* 1 hour 45 minutes
 
 Watch this video on *Oracle EMCC Console Overview*.
 
@@ -30,7 +30,7 @@ The figure below shows a sample Oracle EMCC configuration and illustrates how th
 
 ![EMCC Architecture](images/emcc-architecture.png)
 
-**Note:** This figure depicts a load balancer and multiple Oracle Management Service (OMS) instances only to indicate how to deploy Oracle EMCC in a large organization. They are not prerequisites for an Oracle EM system installation. 
+**Note:** This figure depicts a load balancer and multiple Oracle Management Service (OMS) instances only to indicate how to deploy Oracle EMCC in a large organization. They are not prerequisites for an Oracle EM system installation.
 
 > If you do not have the load balancer, the Management Agents communicate directly with the OMS instances.
 
@@ -40,9 +40,9 @@ Oracle EMCC includes the following components:
 
  - **Oracle Management Agent**
 
-   The agent enables you to convert an unmanaged host to a managed host and helps you monitor the targets running on the managed host. 
-   
-   To learn more about managed hosts, see the *What are managed targets and managed hosts?* section below. 
+   The agent enables you to convert an unmanaged host to a managed host and helps you monitor the targets running on the managed host.
+
+   To learn more about managed hosts, see the *What are managed targets and managed hosts?* section below.
 
  - **Oracle Management Service (OMS)**
 
@@ -50,11 +50,11 @@ Oracle EMCC includes the following components:
 
  - **Oracle Management Repository**
 
-   A storage location for the information, which the Management Agent collects. It consists of objects such as database jobs, packages, procedures, views, and tablespaces. It organizes the data so that OMS can retrieve and display it on the Oracle EMCC console. 
+   A storage location for the information, which the Management Agent collects. It consists of objects such as database jobs, packages, procedures, views, and tablespaces. It organizes the data so that OMS can retrieve and display it on the Oracle EMCC console.
 
  - **Plug-ins**
 
-   Pluggable entities that help you monitor all types of targets in your environment. 
+   Pluggable entities that help you monitor all types of targets in your environment.
 
  - **Oracle Java Virtual Machine Diagnostics (JVMD) Engine**
 
@@ -62,7 +62,7 @@ Oracle EMCC includes the following components:
 
  - **Oracle EMCC Console**
 
-   The user interface that you see after logging in to Oracle EMCC. The console helps you monitor and administer your entire computing environment from one location on the network. 
+   The user interface that you see after logging in to Oracle EMCC. The console helps you monitor and administer your entire computing environment from one location on the network.
 
  - **EMCTL**
 
@@ -90,7 +90,5 @@ Click on the next lab to **Get Started**.
 ## Acknowledgements
 
 - **Author** - Manish Garodia, Principal User Assistance Developer, Database Technologies
-
 - **Contributors** - Suresh Rajan, Steven Lemme, Ashwini R
-
 - **Last Updated By/Date** - Manish Garodia, December 2021
