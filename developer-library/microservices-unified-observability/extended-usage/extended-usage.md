@@ -8,14 +8,12 @@ You can extend the observability functionality provided here in a number of ways
 
 ## Task 1: Modify Metrics Exporter config
 
-   Modify and save  $GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml 
-   and/or $GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml and run the following command.
-    
+   Modify and save  `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml`
+   and/or `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml and run the following command.`
     
     ```
     <copy>cd $GRABDISH_HOME/observability;./updatedbteqexporters.sh</copy>
     ```
-    
    You will notice the related configmap is updated and the deployment is reapplied such that they can be observed in the dashboard.
 
 ## Task 2: Modify Application Tracing

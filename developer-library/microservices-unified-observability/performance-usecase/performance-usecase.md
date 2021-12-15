@@ -75,13 +75,13 @@ Estimated lab Time - 10 minutes
 
    You will notice the health/heart of the PlaceOrder panel in Grafana console turn to yellow and then eventually to red.
 
-     ![](images/yellowheart.png " ")
+   ![](images/yellowheart.png " ")
      
-     ![](images/redheart.png " ")
+   ![](images/redheart.png " ")
      
    You will also notice a Slack message being sent with information about the alert.
      
-     ![](images/slackfailure.png " ")
+   ![](images/slackfailure.png " ")
 
 ## Task 5: Notice return to healthy state in PlaceOrder panel of dashboard and Slack message sent indicating response time is acceptable again
 
