@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Up to now we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous database. 
+Up to now we have created all of the necessary resources using Terraform in OCI. It is now time to prepare the Target Database, the Autonomous database.
 
 *Estimated time*: 10 minutes
 
@@ -14,13 +14,13 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 * This lab assumes that you completed all preceding labs.
 
-## **Task 1**: Open SQL Developer Web 
+## **Task 1**: Open SQL Developer Web
 
 1. Go to the top-left hamburger icon, navigate to **Oracle Database** and choose **Autonomous Transaction Processing**. It will show you all available ATP workload type databases. Click on **Target ATP** database.
 
 	![](/images/2.atp-main.png)
 
-2. You will see **Database Actions**, please click on it. It would redirect you to the SQL web developer. 
+2. You will see **Database Actions**, please click on it. It would redirect you to the SQL web developer.
 
 	![](/images/2.atp-1.png)
 
@@ -32,7 +32,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 	![](/images/sql-dev-1.png)
 
-3. In the **DEVELOPMENT** section, click on **SQL**. 
+3. In the **DEVELOPMENT** section, click on **SQL**.
 
 	![](/images/sql-dev-5.png)
 
@@ -46,7 +46,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 	There should have **7** tables created after script execution.
 
-## **Task 3**: Enable GGADMIN 
+## **Task 3**: Enable GGADMIN
 
 1. Now let's continue to unlock and change the password for Oracle GoldenGate user (ggadmin) in the Autonomous Database. Enable GGADMIN by running the following query.
 
@@ -58,7 +58,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 	![](/images/sql-dev-3.png)
 
-2. Let's check whether the parameter `enable_goldengate_replicaton` is set to true. 
+2. Let's check whether the parameter `enable_goldengate_replicaton` is set to true.
 
 	```
 	<copy>
@@ -68,9 +68,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 	![](/images/sql-dev-4.png)
 
-	We successfully enabled GGADMIN in our target Autonomous Database and created target HR database table structures. 
-
-This concludes this lab. You may now **[proceed to the next lab](#next).**
+	We successfully enabled GGADMIN in our target Autonomous Database and created target HR database table structures.
 
 ## Acknowledgements
 
