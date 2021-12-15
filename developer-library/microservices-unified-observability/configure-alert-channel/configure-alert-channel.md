@@ -6,34 +6,77 @@ This lab will show you how to setup alert channels in order to be notified when 
 The lab will describe how to setup Slack to receive these notifications though the concept is the same for other channel types such as 
 Prometheus Alert Manager, Email, etc.
 
+
 Estimated lab Time - 10 minutes
   
-## Task 1: Configure Alert Channel
+## Task 1: Configure Alert Channel for Slack notifications
 
-1. Create Alert in Grafana with Slack alert channel options...
-
-
-     ![](images/prometheusalertmanager.png " ")
-
-
-## Task 2: Notice 'down' metric and Slack message from alert
-
-2. Create Alert in Grafana with Slack alert channel Slack...
-
-       ```
-       <copy>services</copy>
-       ```
+*The following flow is essentially the same as that found  in the Grafana docs found 
+    [here](https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/). 
+    
+1. If you do not have admin privileges on a Slack workspace, create a workspace using the directions found [here](https://slack.com/create#email).  The following are some screen shot examples of the process.
 
      ![](images/slackalertchannelsetup1.png " ")
      ![](images/slackalertchannelsetup2.png " ")
      ![](images/slackalertchannelsetup3.png " ")
      ![](images/slackalertchannelsetup4.png " ")
      ![](images/slackalertchannelsetup5.png " ")
-     ![](images/slackalertchannelsetup6.png " ")
-     ![](images/slackalertchannelsetup7.png " ")
+
+
+2.  Obtain the Webhook URL from Slack.
+
+     In Slack, select the `Settings & administration` menu and `Manage apps`.
+
+     ![](images/slack-manageapps.png " ")
+
+     Search for `Incoming WebHooks` and select it.
+
+     ![](images/searchincomingwebhooks.png " ")
+     
+     Click the `Add To Slack` button
+     
+     ![](images/addtoslack.png " ")
+     
+     Select `#general` from the `Post to Channel` drop down and clikc the `Add incoming WebHooks integration` button
+     
+     ![](images/addincomingwebhooksintegration.png " ")
+     
+     Copy the `Webhook URL` 
+     
+     ![](images/copythewebhookurl.png " ")
+
+2. Add a Slack Notification channel in Grafana and configure it with the webhook URL.
+
+   Select the alarm bell icon on the left-hand side of Grafana and select `Notification channels` under the `Alerting` menu.
+
+     ![](images/alerting-notificationchannels.png " ")
+
+   Click `Add Channel`
+
+     ![](images/clickaddchannel.png " ")
+     
+   Name the channel, select `Slack` from the dropdown, and select `Optional Slack Settings` 
+   
+     ![](images/newslackalertchannel.png " ")
+     
+   Select `Every Channel Member` from the `Mention Chanell` dropdown, and paste the Webhook URL in the appropriate textfield. 
+   
+     ![](images/optionalslackchannelsettings.png " ")
+     
+   Under `Notification Settings` select `Default` checkbox and click the `Save` button
+   
+     ![](images/defaultcheckbox.png " ")
+
+3. Test Slack alert channel.
+
+      Click the `Test` button and notice `Test notification sent` message in Grafana and the notification message sent to Slack.
+      
+     ![](images/selecttest.png " ")
+     
+     ![](images/slacktestalert.png " ")
 
     
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Advocate
+* **Author** - Paul Parkinson, Architect and Developer Advocate
 * **Last Updated By/Date** - Paul Parkinson, August 2021

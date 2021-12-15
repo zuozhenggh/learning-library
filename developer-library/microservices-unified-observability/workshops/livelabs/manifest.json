@@ -26,7 +26,7 @@
         "type": "event-freetier"
       },
       {
-        "title": "Lab 4: Configure Slack (or Prometheus AlertManager, Email, ...) Alert Channel",
+        "title": "Lab 4: Configure Alert Channel",
         "filename": "../../configure-alert-channel/configure-alert-channel.md",
         "type": "event-freetier"
       },

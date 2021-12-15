@@ -92,7 +92,7 @@ Estimated lab Time - 5 minutes
 
      Note, 
 
-## Task 5: Load test and scale the database tier
+## Task 5: Scale the database tier and load test again
 
 1. To scale the Order DB Autonomous Transaction Processing database to **2 OCPUs**, click the navigation icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
@@ -148,5 +148,5 @@ Estimated lab Time - 5 minutes
 
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Advocate
+* **Author** - Paul Parkinson, Architect and Developer Advocate
 * **Last Updated By/Date** - Paul Parkinson, August 2021

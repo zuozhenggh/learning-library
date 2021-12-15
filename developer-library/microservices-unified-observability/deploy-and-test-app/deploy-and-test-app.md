@@ -108,7 +108,7 @@ We created a self-signed certificate to protect the frontend-helidon service. Th
    The order should have been successfully placed, which is shown by the order status showing success.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Advocate; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Author** - Paul Parkinson, Architect and Developer Advocate; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern

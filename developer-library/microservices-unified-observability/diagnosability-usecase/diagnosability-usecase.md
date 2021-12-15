@@ -13,7 +13,7 @@ Estimated lab Time - 5 minutes
 
      ![](images/grafana-loadbalancer-externalip.png " ")
 
-## Task 2: Use SQLci to disable propagation
+## Task 2: Use SQLcl to disable propagation
 
 1. Issue the following commands to connect to the Order PDB using SQLcl (SQLcl is pre-installed in Cloud Shell for you):
 
@@ -55,7 +55,7 @@ Estimated lab Time - 5 minutes
      ![](images/grafana-loadbalancer-externalip.png " ")
 
 
-## Task 4: Use SQLci to re-enable propagation
+## Task 4: Use SQLcl to re-enable propagation
 
 
 1.  If necessary, follow the steps in Task 2 to reconnect to the Order DB with SQLcl
@@ -76,5 +76,5 @@ Estimated lab Time - 5 minutes
    
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Advocate
+* **Author** - Paul Parkinson, Architect and Developer Advocate
 * **Last Updated By/Date** - Paul Parkinson, August 2021

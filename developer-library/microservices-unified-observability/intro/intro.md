@@ -3,13 +3,12 @@
 
 [](youtube:v0nYRueADbo)
 
-This workshop will help you understand the technical capabilities inside and outside the Oracle converged database to support a scalable data and event-driven microservices architecture.
+This workshop will show you how to automatically configure and use Unified Observability in Grafana to analyze and correlate metrics, logs, and tracing, both in the app-tier and database tier, and all within one "single-pane of glass" (a single Grafana dashboard console).
 
-You will create an application with Helidon microservices and a Javascript front-end, using REST and messaging for communication.  The application will be deployed on Oracle Cloud Infrastructure Kubernetes cluster (OKE) and access pluggable Oracle Autonomous Transaction Processing databases.
+Both diagnosability (for troubleshooting issues) and performance optimization use cases will be demonstrated as will the ability to add your extend the framework to suite your own use cases. 
 
 ![](./images/architecture.png " ")
 
-If you need any help please join the databasehome.slack.com (#microservices) channel.
 
 ### Let's Get Started
 
@@ -23,7 +22,6 @@ Proceed to the next lab.
 * [https://developer.oracle.com/](https://developer.oracle.com/)
 
 ## Acknowledgements
-* **Authors** - Paul Parkinson, Developer Advocate; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
-* **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Richard Exley, April 2021
+* **Author** - Paul Parkinson, Architect and Developer Advocate
+* **Last Updated By/Date** - Paul Parkinson, August 2021
+
