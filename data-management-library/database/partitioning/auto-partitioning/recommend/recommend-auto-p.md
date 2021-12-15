@@ -1,10 +1,18 @@
 # Execute the Recommendation Process
 
 ## Introduction
+ 
+### Objectives
+- Use auto partitioning to *recommend* a partitioning method and confirm it will  yield performance benefits for our workload.
 
- Use auto partitioning to check whether partitioning the APART table will yield performance benefits for our workload.
+### Prerequisites
+This lab assumes you have completed the following labs:
 
- Estimated Time: 20mins
+- Provision an ADB instance (19c, Always Free)
+- Create non-partitioned table
+- Validate the table
+
+Estimated Time: 20mins
 
 ## Task 1: Call the Recommend API and Report Results
 
@@ -68,3 +76,9 @@ Key   : D
 `````
 
 The partitioning method is not a standard range partition because it needs to account for NULL partition keys and it allows us to avoid creating a large number of partitions if, for example, column D is inserted/updated with a date value far into the future.
+
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+* **Author** - Nigel Bayliss, Dec 2021 
+* **Last Updated By/Date** - Nigel Bayliss, Dec 2021

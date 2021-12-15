@@ -2,7 +2,16 @@
 
 ## Introduction
 
-Accept the partitioning recommendation and create the partitioned table.
+### Objectives
+- Accept the partitioning recommendation and create the partitioned table.
+
+### Prerequisites
+This lab assumes you have completed the following labs:
+
+- Provision an ADB instance (19c, Always Free)
+- Create non-partitioned table
+- Validate the table
+- Execute recommend task
 
 Estimated Time: 10mins
 
@@ -57,3 +66,9 @@ APART         SYS_P1579            TABLE PARTITION           968
 APART         SYS_P1580            TABLE PARTITION           952
 APART         SYS_P1581            TABLE PARTITION           816
 `````
+
+This concludes the workshop.
+
+## Acknowledgements
+* **Author** - Nigel Bayliss, Dec 2021 
+* **Last Updated By/Date** - Nigel Bayliss, Dec 2021

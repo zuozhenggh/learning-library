@@ -2,9 +2,15 @@
 
 ## Introduction
 
-First, we will need to create a 5GB non-partitioned table. Autmomatic partitioning will then be used to recommend how is should be partitioned and then it will apply the recommendation.
+For auto partitioning to kick in, a non-partitioned table must be at least 5GB in Always Free Autonomous Database environments or 64GB in non-free Autonomous Database (transaction processing or data warehousing).
 
-For auto partitioning to kick in, the table must be at least 5GB in Always Free Autonomous Database environments or 64GB in non-free Autonomous Database (transaction processing or data warehousing).
+### Objectives
+- Create a 5GB non-partitioned table.
+
+### Prerequisites
+This lab assumes you have completed the following labs:
+
+- Provision an ADB instance (19c, Always Free).
 
 Estimated Time: 15mins
 
@@ -81,4 +87,8 @@ SIZE_IN_MEGABYTES
              5504         (this value will vary slightly depending on level of compression)
 `````
 
+You may now **proceed to the next lab**.
 
+## Acknowledgements
+* **Author** - Nigel Bayliss, Dec 2021 
+* **Last Updated By/Date** - Nigel Bayliss, Dec 2021

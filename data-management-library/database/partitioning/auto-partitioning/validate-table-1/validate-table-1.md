@@ -2,9 +2,16 @@
 
 ## Introduction
 
- Validate a candidate table, checking whether it is suitable for the auto partitioning recommendation step.
+### Objectives
+- *Validate* a candidate table to check it is suitable for auto partitioning.
 
- Estimated Time: 25mins
+### Prerequisites
+This lab assumes you have completed the following labs:
+
+- Provision an ADB Instance (19c, Always Free)
+- Create Non-partitioned Table
+
+Estimated Time: 25mins
 
 ## Task 1: Call the Validate API
 
@@ -131,3 +138,8 @@ When the following message is returned, we are ready to run the auto partitionin
 `````
 Auto partitioning validation: VALID
 `````
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+* **Author** - Nigel Bayliss, Dec 2021 
+* **Last Updated By/Date** - Nigel Bayliss, Dec 2021
