@@ -20,7 +20,9 @@ If you just created a new Cloud account following the instructions in Getting St
 
     ![](./images/platform.png)
 
-3.  On the Instances tab, click **Create Instance**:
+    A new Visual Builder tab opens.  
+
+3.  Click **Create Instance** on the Instances tab:
 
     ![](./images/create_instance.png)
 
@@ -35,9 +37,9 @@ If you just created a new Cloud account following the instructions in Getting St
 
   ![](./images/open.png)
 
-  You're now in Visual Builder and can move on to the next lab.
+You're now in Visual Builder and can [proceed to the next lab](#next). 
 
 ## Acknowledgements
 **Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - June 2021
+**Last Updated** - November 2021

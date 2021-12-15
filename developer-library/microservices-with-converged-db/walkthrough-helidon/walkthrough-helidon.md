@@ -4,7 +4,7 @@
 
 This lab will show you how to deploy the microservices on your Kubernetes cluster, walk through the functionality and explain how it works.
 
-Estimated Lab Time - 10 minutes
+Estimated Time: 10 minutes
 
 Quick walk through on how to deploy the microservices on your Kubernetes cluster.
 
@@ -17,12 +17,12 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
 ### Prerequisites
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [here](http://oracle.com/cloud/free).
-* The OKE cluster and the ATP databases that you created in Lab 1
+* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
+* The OKE cluster and the Autonomous Transaction Processing databases that you created in Lab 1
 
 ## Task 1: Deploy all the Microservices and the FrontEnd UI
 
-1.  Run the deploy script.  This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
+1.  Run the deploy script. This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
 
     ```
     <copy>cd $GRABDISH_HOME;./deploy.sh</copy>
@@ -30,7 +30,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
    ![](images/deploy-all.png " ")
 
-2.  Once successfully created, check that the services are running:
+2.  Once successfully created, verify deployment pods are running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -38,19 +38,18 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
   ![](images/pods-all-after-deploy.png " ")
 
-  Alternatively, you can execute the `pods` shortcut command:
+  Or, you can execute the `pods` shortcut command:
 
-3. Check that the **ingress-nginx-controller** load balancer service is running, and write down the external IP
-    address.
+3. Verify the **ingress-nginx-controller** load balancer service is running, and write down the external IP address.
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
     ```
 
     ![](images/ingress-nginx-loadbalancer-externalip.png " ")
-  
 
-  Alternatively, you can execute the `services` shortcut command.
+
+  Or, you can execute the `services` shortcut command.
 
 ## Task 2: Access the FrontEnd UI
 
@@ -60,7 +59,7 @@ You are ready to access the frontend page. Open a new browser tab and enter the 
 
 Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
 
-You will then be prompted to authenticate to access the Front End microservices.  The user is `grabdish` and the password is the one you entered in Lab 1.
+You will be prompted to authenticate to access the Front End microservices. The user is `grabdish` and the password is the one you entered in Lab 1.
 
 ![](images/frontendauthlogin.png " ")
 
@@ -68,7 +67,7 @@ You should then see the Front End home page. You've now accessed your first micr
 
 ![](images/ui-home-page.png " ")
 
-We created a self-signed certificate to protect the frontend-helidon service.  This certificate will not be recognized by your browser and so a warning will be displayed.  It will be necessary to instruct the browser to trust this site in order to display the frontend.  In a production implementation a certificate that is officially signed by a certificate authority should be used.
+We created a self-signed certificate to protect the frontend-helidon service. This certificate will not be recognized by your browser and so a warning is displayed. It will be necessary to instruct the browser to trust this site to display the frontend. In a production implementation a certificate that is officially signed by a certificate authority should be used.
 
 ## Task 3: Verify the Order and Inventory Functionality of GrabDish store
 
@@ -106,7 +105,7 @@ We created a self-signed certificate to protect the frontend-helidon service.  T
 
    ![](images/tx-show-order-67.png " ")
 
-   The order should have been successfully placed, which is demonstrated with the order status showing success.
+   The order should have been successfully placed, which is shown by the order status showing success.
 
 
 Although this might look like a basic transactional mechanic, the difference in the microservices environment is that it’s not using a two-phase XA commit, and therefore not using distributed locks. In a microservices environment with potential latency in the network, service failures during the communication phase or delays in long running activities, an application shouldn’t have locking across the services. Instead, the pattern that is used is called the saga pattern, which instead of defining commits and rollbacks, allows each service to perform its own local transaction and publish an event. The other services listen to that event and perform the next local transaction.
@@ -145,7 +144,7 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 
    ![](images/spatial-deliver-here.png " ")
 
-5. Your order is being fulfilled and will be delivered via the fastest route.
+5. Your order is being fulfilled and will be delivered through the fastest route.
 
    ![](images/spatial-delivery.png " ")
 
@@ -156,7 +155,41 @@ What is unique to Oracle and Advanced Queuing is that a JDBC connection can be i
 This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates.
 Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
 
-## Task 5: Show Metrics
+## Task 5: Verify AI Food and Wine Pairing Functionality
+
+1. Deploy the foodwinepairing-python service using the following command.
+
+    ```
+    <copy>cd $GRABDISH_HOME/foodwinepairing-python;./deploy.sh</copy>
+    ```
+   
+2.  Verify the foodwinepairing-python pod is running:
+
+    ```
+    <copy>kubectl get pods --all-namespaces</copy>
+    ```
+
+3. Redeploy inventory-helidon passing true to `./deploy.sh` using the following command. This will change the `isSuggestiveSaleAIEnabled` value in inventory-helidon-deployment.yaml to true and redeploy.                                                                                         
+  
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-helidon;./deploy.sh true</copy>
+    ```
+  
+4.  Verify the new inventory-helidon pod is running:
+
+    ```
+    <copy>kubectl get pods --all-namespaces</copy>
+    ```
+    ![](images/foodandwinepairingandrestartedinventorypods.png " ")
+
+5. Add inventory if necessary and place another order.  You should see that there is now a wine suggesting for you food order.
+
+   ![](images/orderwithfoodandwinepairing.png " ")
+
+The food and wine pairing service uses AI/ML to recommend suitable wines for the food that is ordered on Grabdish. A Word2vec model is trained for a Wine reviews  dataset and Food reviews dataset. The order{food item} is passed through the Word2Vec model as an input to get wine recommendations. The best-match wines based on vector matching between the order feature vector, and wine feature vectors (aroma, and non-aroma) are suggested . While popular NLP techniques are used (Gensim, NLTK, and Scikit-learn), it is used in the context of microservices with the converged Oracle database. The trained Word2vec model can be imported in Oracle Machine Learning, in Open Neural Network eXchange (ONNX) model format.
+Note: This use case for GrabDish is inspired by [this article](https://towardsdatascience.com/robosomm-chapter-5-food-and-wine-pairing-7a4a4bb08e9e)
+
+## Task 6: Show Metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
 
@@ -171,7 +204,7 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
 
    ![](images/metrics-show.png " ")
 
-## Task 6: Verify Health
+## Task 7: Verify Health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides health probes which check a given    container for its liveness (checking if the pod is up or down) and readiness (checking if the pod is ready to take
 requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **Tracing, Metrics, and Health** and click **Show Health: Liveness**
@@ -186,7 +219,7 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
    ![](images/health-liveness-yaml.png " ")
 
-4. In order to observe how OKE will manage the pods, the microservice has been created with the possibility to set up the liveliness to “false”. Click **Get Last Container Start Time** and note the time the container started.
+4. To observe how OKE will manage the pods, the microservice has been created with the possibility to set up the liveliness to “false”. Click **Get Last Container Start Time** and note the time the container started.
 
    ![](images/health-get-last-start.png " ")
 
@@ -203,9 +236,9 @@ requests or not). In this STEP you will see how the probes pick up the health th
 
    ![](images/health-liveness-restarted.png " ")
 
-## Task 7: Understand Passing Database Credentials to a Microservice (Study)
+## Task 8: Understand Passing Database Credentials to a Microservice (Study)
 
-In order to connect to an ATP database you need the following four pieces of information:
+To connect to an  'Oracle Autonomous Transaction Processing database you need the following four pieces of information:
    - Database user name
    - Database user password
    - Database Wallet
@@ -213,9 +246,9 @@ In order to connect to an ATP database you need the following four pieces of inf
 
 Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.yaml` to see how this is done.
 
-```
-<copy>cat $GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml</copy>
-```
+   ```
+   <copy>cat $GRABDISH_HOME/order-helidon/order-helidon-deployment.yaml</copy>
+   ```
 
 1. The **database user name** is passed as an environment variable:
 
@@ -234,7 +267,7 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
           key:  dbpassword
     ```
 
-   Note, code has also been implemented to accept the password from an OCI vault, however, this is not implemented in the workshop at this time.
+   Note, code has also been implemented to accept the password from a vault, however, this is not implemented in the workshop at this time.
 
    The secret itself was created during the setup using the password that you entered.  See `utils/main-setup.sh` for more details.
 
@@ -289,7 +322,7 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
 
    The URL references a TNS alias that is defined in the tnsnames.ora file that is contained within the wallet.
 
-## Task 8: Understand How Database Credentials are Used by a Helidon Microservice (Study)
+## Task 9: Understand How Database Credentials are Used by a Helidon Microservice (Study)
 
 Let’s analyze the `microprofile-config.properties` file.
 
@@ -315,9 +348,9 @@ Look for the inject portion. The `@Inject` has the data source under `@Named` as
 PoolDataSource atpOrderPdb;
 ```
 
-## Task 9: Understand shortcut commands and development process (Study)
+## Task 10: Understand shortcut commands and development process (Study)
 
-A number of shortcut commands are provided in order to analyze and debug the workshop kubernetes environment including the following:
+A number of shortcut commands are provided to analyze and debug the workshop kubernetes environment including the following:
 
 `msdataworkshop` - Lists all of the kubernetes resources (deployments, pods, services, secrets) involved in the workshop
 
@@ -331,13 +364,48 @@ As the deployments in the workshop are configured with `imagePullPolicy: Always`
 
 1. Modify microservice source
 2. Run `./build.sh` to build and push the newly modified microservice image to the repository
-3. Run `deletepod` (e.g. `deletepod order`) to delete the old pod and start a new pod with the new image
+3. Run `deletepod` (for example `deletepod order`) to delete the old pod and start a new pod with the new image
 4. Verify changes
 
 If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
+## Task 10: Develop, build, deploy, etc. in your own environment, outside Cloud Shell  (Study)
+
+The Cloud Shell is extremely convenient for development as it has various software pre-installed as well as software installed by the workshop, however it is certainly possible to do development outside the Cloud Shell.
+The following are the major considerations in doing so...
+
+- Building microservices will of course require the software required for a particular service to be installed. For example maven, GraalVM, etc.
+
+- Pushing microservices to the OCI repository will require logging into the repos via docker and for this you will need an authtoken. 
+You can re-use the auth token created in the workshop or easily create a new one (see setup lab doc). 
+Using the auth token you can then login to docker using the following format (replacing values as appropriate)...
+
+  ```
+  <copy>docker login -u yourtenancyname/oracleidentitycloudservice/youraccountuser@email.com us-ashburn-1.ocir.io</copy>
+  ```
+   You should then set the DOCKER_REGISTRY value in your environment like this...
+
+   ```
+   <copy>export DOCKER_REGISTRY=us-ashburn-1.ocir.io/yourtenancyname/yourcompartmentname</copy>
+   ```
+- Deploying microservices to your Kubernetes cluster will require you to install the OCI CLI and kubectl, and run the command found in the OCI console to create the kubeconfig file tha will give you access to the cluster.
+This can be found under `Developer Services->Kubernetes Clusters` where you will select your cluster and see the following page where you can copy the necessary command...
+
+   ![](images/accessclusterscreen.png " ")
+   You should then set the ORDER_PDB_NAME and INVENTORY_PDB_NAME values in your environment like this (note the value does not include the suffix of the service type, only the db name)...
+
+   ```
+   <copy>export ORDER_PDB_NAME=grabdisho</copy>
+   ```
+
+   ```
+   <copy>export INVENTORY_PDB_NAME=grabdishi</copy>
+   ```
+
+
+
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Author** - Paul Parkinson, Architect and Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern

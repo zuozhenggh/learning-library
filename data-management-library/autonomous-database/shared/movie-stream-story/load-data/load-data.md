@@ -4,7 +4,7 @@
 
 This lab takes you through the steps needed to load and link data from the MovieStream data lake on [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage.html) into an Oracle Autonomous Database instance in preparation for exploration and analysis.
 
-You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third party data integration tools. With the built-in tools, you can load data:
+You can load data into your Autonomous Database (either Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing) using the built-in tools as in this lab, or you can use other Oracle and third-party data integration tools. With the built-in tools, you can load data:
 
 + from files in your local device,
 + from tables in remote databases, or
@@ -16,21 +16,18 @@ You can also leave data in place in cloud object storage, and link to it from yo
 
 Estimated Time: 30 minutes
 
-### About Product
+### About product
 
 In this lab, we will learn more about the autonomous database's built-in Data Load tool - see the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/data-load.html#GUID-E810061A-42B3-485F-92B8-3B872D790D85) for more information.
 
 We will also learn how to exercise features of the DBMS\_CLOUD package to link and load data into the autonomous database using SQL scripts. For more information about DBMS_CLOUD, see its [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 
-
 ### Objectives
-
 
 + Learn how to define object storage credentials for your autonomous database
 + Learn how to load data from object storage using Data Tools
 + Learn how to load data from object storage using the DBMS\_CLOUD APIs executed from SQL
 + Learn how to enforce data integrity in newly loaded tables
-
 
 ### Prerequisites
 
@@ -38,27 +35,27 @@ We will also learn how to exercise features of the DBMS\_CLOUD package to link a
 
 + The MOVIESTREAM user must have been set up. If the user is not set up, please complete Lab 3 in this series (Create a Database User) before proceeding.
 
-## Task 1: Configure the Object Storage Connections
+## Task 1: Configure the Object Storage connections
 
-In this step, you will set up access to the two buckets on Oracle Cloud Infrastructure Object Storage that contain data that we want to load - the landing area, and the 'gold' area. 
+In this step, you will set up access to the two buckets on Oracle Cloud Infrastructure Object Storage that contain data that we want to load - the landing area, and the 'gold' area.
 
-1. In your database's details page, click the Tools tab. Click **Open Database Actions**
+1. In your database's details page, click the **Database Actions** button.
 
-	  ![Click on Tools, then Database Actions](images/launchdbactions.png)
+	  ![Click Database Actions](images/launchdbactions.png)
 
 2. On the login screen, enter the username MOVIESTREAM, then click the blue **Next** button.
 
-3. Enter the password for the MOVIESTREAM user you set up in the earlier lab.
+3. Enter the password for the MOVIESTREAM user you set up in the earlier lab. Click **Sign in**.
 
-4. Under **Data Tools**, click on **DATA LOAD**
+4. On the Database Actions Launchpad page, under **Data Tools**, click **DATA LOAD**
 
     ![Click DATA LOAD](images/dataload.png)
 
-5. In the **Explore and Connect** section, click on **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
+5. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
 
     ![Click CLOUD LOCATIONS](images/cloudlocations.png)
 
-6. To add access to the Moviestream landing area, click on **+Add Cloud Storage** in the top right of your screen.
+6. To add access to the Moviestream landing area, click **+Add Cloud Storage** in the top right of your screen.
 
 -   In the **Name** field, enter 'MovieStreamLanding'
 
@@ -72,13 +69,13 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_landi
 </copy>
 ```
 -   Select **No Credential** as this is a public bucket
--   Click on the **Test** button to test the connection. Then click **Create**.
+-   Click the **Test** button to test the connection. Then click **Create**.
 
-7. The page now invites us to load data from this area. In this case, we want to set up access to an additional cloud location first. Click on Data Load in the top left of your screen to go back to the main Data Load page.
+7. The page now invites us to load data from this area. In this case, we want to set up access to an additional cloud location first. Click Data Load in the top left of your screen to go back to the main Data Load page.
 
     ![Click Data Load](images/todataload.png)
 
-8. In the **Explore and Connect** section, click on **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click on **+Add Cloud Storage**.
+8. In the **Explore and Connect** section, click **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click **+Add Cloud Storage**.
 
 -   In the **Name** field, enter 'MovieStreamGold'
 
@@ -94,7 +91,7 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/
 ```
 
 -   Select **No Credential** as this is a public bucket
--   Click on the **Test** button to test the connection. Then click **Create**.
+-   Click the **Test** button to test the connection. Then click **Create**.
 
 We now have two cloud storage locations set up.
 
@@ -104,9 +101,9 @@ We now have two cloud storage locations set up.
 
 In this step we will perform some simple data loading tasks, to load in CSV files from object storage into tables in our autonomous database.
 
-1. To load or link data from our newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
+1. To load or link data from our newly configured cloud storage, click the **Data Load** link in the top left of your screen.
 
-    ![Click on Data Load](images/backtodataload.png)
+    ![Click Data Load](images/backtodataload.png)
 
 2. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
 
@@ -117,15 +114,15 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 4. Next, drag the **genre** folder over to the right hand pane. Again, click **OK** to load all files into a single table.
 
 
-5. Click on the pencil icon for the **customer_contact** task to view the settings for this load task.
+5. Click the pencil icon for the **customer_contact** task to view the settings for this load task.
 
     ![View settings for customer_contact load task](images/cc_viewsettings.png)
 
 6. Here we can see the list of columns and data types that will be created from the csv file. They all look correct, so click **Close** to close the settings viewer.
 
-7. Click on the pencil icon for the **genre** task to view its settings. This should show just two columns to be created - **GENRE_ID** and **NAME**. Click **Close** to close the settings viewer.
+7. Click the pencil icon for the **genre** task to view its settings. This should show just two columns to be created - **GENRE_ID** and **NAME**. Click **Close** to close the settings viewer.
 
-8. Now click on the Play button to run the data load job.
+8. Now click the Play button to run the data load job.
 
     ![Run the data load job](images/rundataload.png)
 
@@ -135,15 +132,15 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     ![Check the job is completed](images/loadcompleted.png)
 
-10. Now, to load some more data from the MovieStream landing area, click on the **Data Load** link in the top left of your screen.
+10. Now, to load some more data from the MovieStream landing area, click the **Data Load** link in the top left of your screen.
 
-    ![Click on Data Load](images/backtodataload.png)
+    ![Click Data Load](images/backtodataload.png)
 
 11. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
 
 12. This time, select **MOVIESTREAMLANDING** in the top left of your screen.
 
-    ![Click on Data Load](images/selectlanding.png)
+    ![Click Data Load](images/selectlanding.png)
 
 13. From the MOVIESTREAMLANDING location, drag the **customer_extension** folder over to the right hand pane and click **OK** to load all objects into one table.
 
@@ -151,7 +148,7 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
 15. Drag the **pizza_location** folder over to the right hand pane and click **OK**.
 
-16. Click on the Play button to run the data load job.
+16. Click the Play button to run the data load job.
 
     ![Run the data load job](images/runload2.png)
 
@@ -161,13 +158,13 @@ In this step we will perform some simple data loading tasks, to load in CSV file
 
     ![Check the job is completed](images/loadcompleted2.png)
 
-18. Click on the **Done** button in the bottom right of the screen.
+18. Click the **Done** button in the bottom right of the screen.
 
-## Task 3: Creating the Customer table
+## Task 3: Create the Customer table
 
 We have now loaded a number of tables, including two main tables containing information about MovieStream customers - CUSTOMER\_CONTACT and CUSTOMER\_EXTENSION. It will be useful to link these tables together to create a joined table of customer information. We can do this with some simple SQL.
 
-1. In the **Development** section, click on **SQL** to open a SQL Worksheet.
+1. In the **Development** section, click **SQL** to open a SQL Worksheet.
 
 2. Copy and paste the following script into the Worksheet. This script will create the table **CUSTOMER**, joining our customer information together.
 
@@ -199,7 +196,7 @@ create table CUSTOMER
                     ce.HOUSEHOLD_SIZE,         
                     ce.INCOME,                 
                     ce.INCOME_LEVEL,           
-                    ce.INSUFF_FUNDS_INCIDENTS, 
+                    ce.INSUFF_FUNDS_INCIDENTS,
                     ce.JOB_TYPE,               
                     ce.LATE_MORT_RENT_PMTS,    
                     ce.MARITAL_STATUS,         
@@ -216,11 +213,11 @@ create table CUSTOMER
             where cc.cust_id = ce.cust_id;
 </copy>
 ```
-3. Click on the **Run Script** button (or use the F5 key) to run the script.
+3. Click the **Run Script** button (or use the F5 key) to run the script.
 
     ![Run the script to create the customer table](images/runcustscript.png)
 
-4. To check that the table has been created correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
+4. To check that the table has been created correctly, click the bin icon to clear the worksheet and copy and paste the following statement:
 
 ```
 <copy>
@@ -228,23 +225,23 @@ select * from customer;
 </copy>
 ```
 
-5. Click on the Run button to run the statement. You should see customer information, like this:
+5. Click the Run button to run the statement. You should see customer information, like this:
 
     ![View customer data](images/custview.png)
 
 If you scroll to the right, you can see the columns that have been joined from the **customer\_extension** table, such as **age**, and **commute\_distance**.
 
-## Task 4: Using database APIs to load richer data files
+## Task 4: Use database APIs to load richer data files
 
 The DBMS\_CLOUD package is a feature of the autonomous database that enables us to extend the database to load from, and link to, cloud data storage systems such as Oracle Cloud Infrastructure Object Storage, Amazon S3, and Microsoft Azure Blob Storage. This package is used by the Data Load tool, but can also be exercised using SQL. For more information see the [DBMS\_CLOUD documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/dbms-cloud-package.html).
 
 In this step, we will use some additional features of the DBMS\_CLOUD APIs to load in some Parquet and JSON files with differently structured data.
 
->**Note** [Parquet](https://parquet.apache.org/documentation/latest/) is a common big data file format, where often many parquet files are used to store large volumes of data with a common type and with a common set of columns; in this case, the customer sales data for Moviestream. 
+>**Note** [Parquet](https://parquet.apache.org/documentation/latest/) is a common big data file format, where often many parquet files are used to store large volumes of data with a common type and with a common set of columns; in this case, the customer sales data for MovieStream.
 
-1.  Still in the SQL Worksheet viewer, click on the bin icon on the top toolbar to clear the worksheet.
+1.  Still in the SQL Worksheet viewer, click the bin icon on the top toolbar to clear the worksheet.
 
-    ![Click on the bin icon](images/binicon.png)
+    ![Click the bin icon](images/binicon.png)
 
 2.  Now, copy and paste the following script into the worksheet. This script will create the table **ext_custsales**, linking to the parquet files in the **custsales** folder in Object Store.
 
@@ -252,7 +249,7 @@ In this step, we will use some additional features of the DBMS\_CLOUD APIs to lo
 <copy>
 define uri_gold = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/adwc4pm/b/moviestream_gold/o'
 define parquet_format = '{"type":"parquet",  "schema": "all"}'
- 
+
 begin
     dbms_cloud.create_external_table(
         table_name => 'ext_custsales',
@@ -270,18 +267,18 @@ begin
                         OS VARCHAR2(4000 BYTE),
                         DAY_ID date,
                         APP VARCHAR2(4000 BYTE)'
-    ); 
+    );
 end;
 </copy>
 ```
 
-3.  Click on the **Run Script** button (or use the F5 key) to run the script.
+3.  Click the **Run Script** button (or use the F5 key) to run the script.
 
     ![Run the script to load the ext_custsales table](images/custsalesscript.png)
 
-    We now have a new **ext_custsales** table that links to all of the parquet files in the **custsales** folder of our data lake on object storage. 
-    
-4.  To check that the data has been linked correctly, click on the bin icon to clear the worksheet and copy and paste the following statement:
+    We now have a new **ext_custsales** table that links to all of the parquet files in the **custsales** folder of our data lake on object storage.
+
+4.  To check that the data has been linked correctly, click the bin icon to clear the worksheet and copy and paste the following statement:
 
 ```
 <copy>
@@ -289,12 +286,12 @@ select * from ext_custsales;
 </copy>
 ```
 
-5.  Click on the Run button to run the statement. You should see transactional data representing customer movie purchases and rentals, like this:
+5.  Click the Run button to run the statement. You should see transactional data representing customer movie purchases and rentals, like this:
 
     ![Data from ext_custsales](images/select-extcustsales.png)
 
 
-6.  For the purposes of later labs, it is useful for us to copy the data from **ext_custsales** over to a **custsales** table. To do this, click on the bin icon to clear the worksheet. Then, copy and paste the following statement into the worksheet, and click on the Run (or Run Script) button to run the statement:
+6.  For the purposes of later labs, it is useful for us to copy the data from **ext_custsales** over to a **custsales** table. To do this, click the bin icon to clear the worksheet. Then, copy and paste the following statement into the worksheet, and click the Run (or Run Script) button to run the statement:
 
 ```
 <copy>
@@ -304,7 +301,7 @@ create table custsales as select * from ext_custsales;
 
 > **Note:** This may take a minute or two, since it will be copying over 25m rows.
 
-7. Next, we will create an external table to link to the **movies.json** file. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+7. Next, we will create an external table to link to the **movies.json** file. To do this, click the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 <copy>
@@ -322,7 +319,7 @@ end;
 </copy>  
 ```
 
-8. This has created a simple external table (**ext_movie**) with the whole JSON structure in a single column. It will be useful to create a more structured table from this data. To do this, click on the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
+8. This has created a simple external table (**ext_movie**) with the whole JSON structure in a single column. It will be useful to create a more structured table from this data. To do this, click the bin icon in the top toolbar to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following script:
 
 ```
 <copy>
@@ -350,9 +347,9 @@ from ext_movie m;
 </copy>
 ```
 
-9.  Click on the **Run Script** button to run the script.
+9.  Click the **Run Script** button to run the script.
 
-10. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click on the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following lines:
+10. Part of our later data analysis will require us to have a TIME table in the autonomous database. Adding this table will simplify analytic queries that need to do time-series analyses. We can create this table with a few lines of SQL. Click the bin icon to clear the worksheet, and then the bin icon in the lower window to clear the output, then copy and paste the following lines:
 
 ```
 <copy>
@@ -362,9 +359,9 @@ FROM DUAL CONNECT BY ROWNUM < 732;
 </copy>  
 ```
 
-11. Click on the **Run Script** button to run the script.
+11. Click the **Run Script** button to run the script.
 
-12. It is useful for us to add some additional 'virtual' columns for different time dimensions that we can use in later analysis. To do this, click on the bin icon to clear the worksheet, then copy and paste the following script:
+12. It is useful for us to add some additional 'virtual' columns for different time dimensions that we can use in later analysis. To do this, click the bin icon to clear the worksheet, then copy and paste the following script:
 
 ```
 <copy>
@@ -385,9 +382,9 @@ add (
 );
 </copy>
 ```
-13. Click on the **Run Script** button to run the script.
+13. Click the **Run Script** button to run the script.
 
-14. To ensure the table has been created correctly, click on the bin icon to clear the worksheet, then copy and paste and Run the following query:
+14. To ensure the table has been created correctly, click the bin icon to clear the worksheet, then copy and paste and Run the following query:
 
 ```
 <copy>
@@ -399,7 +396,7 @@ select * from time;
 
     ![Rows from the TIME table](images/viewtimetable.png)
 
-## Task 5: Enforcing data integrity
+## Task 5: Enforce data integrity
 
 In this task, we will use the database's ability to define and enforce constraints to ensure that the data in the newly loaded tables remains valid. This will be important in later labs.
 
@@ -407,7 +404,7 @@ In this example, we will define primary key constraints for a number of tables, 
 
 We will also add constraints on the **movie** table to ensure that all the columns that contain JSON data must contain valid JSON, to ensure no bad data can exist in the table.
 
-1. Still in the SQL Worksheet viewer, click on the bin icon to clear the worksheet, then copy and paste and Run the following script:
+1. Still in the SQL Worksheet viewer, click the bin icon to clear the worksheet, then copy and paste and Run the following script:
 
 ```
 <copy>
@@ -439,7 +436,7 @@ alter table custsales add constraint fk_custsales_genre_id foreign key("GENRE_ID
 </copy>
 ```
 
-2.  To check one example of how the unique constraints work, we can now try to reload into the **pizza\_location** table the same data we have already loaded. This should return an error as the data already exists in the table and we do not want to duplicate it. To do this, click on the bin icon to clear the worksheet, then copy and paste and Run the following statement to check the number of rows in the **pizza\_location** table:
+2.  To check one example of how the unique constraints work, we can now try to reload into the **pizza\_location** table the same data we have already loaded. This should return an error as the data already exists in the table and we do not want to duplicate it. To do this, click the bin icon to clear the worksheet, then copy and paste and Run the following statement to check the number of rows in the **pizza\_location** table:
 
 ```
 <copy>
@@ -479,9 +476,7 @@ select count (*) from pizza_location;
 
 The count remains at 104 rows as there were no new rows to copy from the file.
 
-
 This completes the Data Load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream data lake, with suitable constraints set up on the tables to avoid errors in attempting to load duplicate rows or invalid data. We will be working with these tables in later labs.
-
 
 ## Acknowledgements
 

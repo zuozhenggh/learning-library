@@ -16,74 +16,74 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## Task 1: Start And Validate The Required Processes are Up and Running.
-1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running:
-    
-    - Database Listeners
-    - Database Server Instances 
+## Task 1: Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-2. On the *SQL-Developer* window on the right preloaded with saved credential
-    
-    ![](./images/convg-novnc-landing.png " ")
+    - Database Listener
+        - LISTENER
+    - Database Server Instance
+        - convergedcdb
+    - Oracle Rest Data Service (ORDS)
 
-3. The above command will start the oracle database service and Listeners. 
-
-    - click on the saved connection on *SQL-Developer* .
-
-    ![](./images/convg-final.png " ")
-    If successful, the page above is displayed and as a result your environment is now ready.  
-
-    You may now [proceed to the next lab](#next).
-
-4. If you are still unable to login or the login page is not functioning after reloading the application URL, open a terminal session and proceed as indicated below to validate the services.
-
-    - Database and Listener
-    ```
-    <copy>
-    sudo systemctl status oracle-database
-    </copy>
-    ```
-
-5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
-
-    - Database and Listener
+2. Validate that expected processes are up. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
     ```
     <copy>
-    sudo sudo systemctl restart oracle-database
+    ps -ef|grep LISTENER|grep -v grep
+    ps -ef|grep ora_|grep pmon|grep -v grep
+    ps -ef|grep ords|grep -v grep
+    systemctl status oracle-database
+    systemctl status oracle-init-workshop
     </copy>
     ```
+
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
+
+    ```
+    e.g. Restarting the DB and DB Listener
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
+
+You may now [proceed to the next lab](#next).
+
 ## Appendix 1: Managing Startup Services
 
-1. Database Service (Database and Listener).
+1. Database service (Database and Standard Listener).
 
     - Start
 
     ```
-    <copy>sudo systemctl start oracle-database</copy>
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
     ```
-
     - Stop
 
     ```
-    <copy>sudo systemctl stop oracle-database</copy>
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
     ```
 
     - Status
 
     ```
-    <copy>sudo systemctl status oracle-database</copy>
+    <copy>
+    systemctl status oracle-database
+    </copy>
     ```
 
     - Restart
 
     ```
-    <copy>sudo systemctl restart oracle-database</copy>
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
     ```
-
-**This concludes this lab. You may now [proceed to the next lab](#next).**
 
 ## Acknowledgements
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh
 * **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, Pragati Mourya.
-* **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, AUG 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

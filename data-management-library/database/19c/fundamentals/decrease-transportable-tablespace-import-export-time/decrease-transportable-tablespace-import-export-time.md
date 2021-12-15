@@ -17,6 +17,10 @@ In this lab, you try the time-saving parameters when performing two import and t
 
 Estimated Time: 25 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:oK9hiZIXXC0)
+
 ### Objectives
 
 In this lab, you will:

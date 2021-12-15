@@ -5,6 +5,9 @@ The objective of this lab is to explore upgrading your Oracle Database Software 
 
 *Estimated Lab Time:* 75 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:SbsS_nNiXHo)
+
 ### About Fleet Maintenance
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.
@@ -63,7 +66,7 @@ Software Standardization Advisor enables administrators to understand various da
 
   ![](images/em-fleet-maintenance-overview-2.png " ")
 
-1.  On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+1.  On the browser window on the right preloaded with *Enterprise Manager*, if not already logged in, click on the *Username* field and login with the credentials provided below.
 
     ```
     Username: <copy>sysman</copy>

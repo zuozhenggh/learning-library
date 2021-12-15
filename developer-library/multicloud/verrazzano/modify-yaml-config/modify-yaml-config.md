@@ -17,13 +17,12 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
 ## Task 1: Modify the bobs-books-comp.yaml file
 
-1. We have an application configuration file, *bobs-books-comp.yaml*. In Lab 2, we downloaded the source code. To change to the *bobs-books* directory, copy the following command and paste it in the *Cloud Shell*.
+1. We have an application configuration file, *bobs-books-comp.yaml*. In Lab 2, we downloaded the application yaml files.  To change to the Home directory which contains the yaml file, copy the following command and paste it in the *Cloud Shell*.
 
     ```bash
-    <copy>cd ~/verrazzano/examples/bobs-books/</copy>
+    <copy>cd ~</copy>
     ```
 
-    ![Change Directory](images/1.png)
 
 2. In this location, we have the configuration file for the bobs-books application. As part of Lab 5, we modified bobbys-helidon-stock-application and built a new Docker image for that component. In Lab 6, we pushed that Docker image to the Oracle Cloud Container Registry repository. Now, in this lab, we will modify the *bobs-books-comp.yaml* file so that it takes the new updated Docker image from the Oracle Cloud Container Registry repository. To modify the *bobs-books-comp.yaml* file, copy the following command and paste it in the *Cloud Shell*.
 
@@ -31,7 +30,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>vi bobs-books-comp.yaml</copy>
     ```
 
-    ![Open file](images/6.png)
+    ![Open file](images/6.png " ")
 
 3. As part of Lab 5, you saved your Docker image full name. You need to copy the following line and paste it in your text editor. Then, you need to replace `docker image full name` with your Docker image name. Then copy the modified line and press *i* to insert the text in the `*bobs-books-comp.yaml*` file. Paste the output at line number 145 (make sure you keep the indentation) and comment out the exiting line with *#* as shown in the following image, then press *Esc* and then type *:wq* to save the file.
 
@@ -39,7 +38,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>image:  `docker image full name`</copy>
     ```
 
-    ![Insert line](images/3.png)
+    ![Insert line](images/3.png " ")
 
 ## Task 2: Apply the Changes using `kubectl`
 
@@ -49,7 +48,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>kubectl apply -f bobs-books-comp.yaml</copy>
     ```
 
-    ![Apply changes](images/4.png)
+    ![Apply changes](images/4.png " ")
 
     You can observe in the output; only *component.core.oam.dev/bobby-helidon* is configured and other components are unchanged.
 

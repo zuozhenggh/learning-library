@@ -156,7 +156,7 @@ Follow these steps to create and connect to your Oracle E-Business Suite instanc
 
     h. **SSH Keys:** choose or paste the public key of an SSH Key Pair
 
-    i. **Configure Boot Volume:** leave all choices as is
+    i. **Configure Boot Volume:** leave all choices as is (unchecked)
 
     j. Click **Create** 
 
@@ -388,7 +388,7 @@ These steps will walk through the initial configuration of the source EBS instan
 
     ![](./images/25.png " ")
 
-  You can now access the applications using [http://myapps.example.com:8000/OA_HTML/AppsLogin](http://myapps.example.com:8000/OA_HTML/AppsLogin).
+  You can now access the applications using [http://myapps.example.com:8000/OA_HTML/AppsLogin](http://myapps.example.com:8000/OA_HTML/AppsLogin)
 
       ![](./images/26.png " ")
 
@@ -427,6 +427,7 @@ You may proceed to the next lab.
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
+    - Chris Wegenek, , Cloud Engineering
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering - September 2021
 
 

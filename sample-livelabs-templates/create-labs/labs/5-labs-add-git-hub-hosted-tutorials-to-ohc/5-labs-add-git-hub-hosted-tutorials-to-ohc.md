@@ -43,7 +43,7 @@ You must have OLL administrator privileges to view and edit content entries in O
 
 ## Task 3: Add a Link to the Lab from Oracle Help Center
 To add a link to a lab from an OHC Tutorials page:
-1. Open the [Self Publishing OHC Interface Page V3 application](https://apex.oraclecorp.com/pls/apex/f?p=40100:1:101812173799316:::::).
+<!-- 1. Open the [Self Publishing OHC Interface Page V3 application](https://apex.oraclecorp.com/pls/apex/f?p=40100:1:101812173799316:::::).
 2. In the **Search** field, enter your Product name and press **Enter**.
 3. Edit the release page for your Product to which, you want to add the lab.
     [](./images/ohc-edit-Pages.png " ")
@@ -51,21 +51,19 @@ To add a link to a lab from an OHC Tutorials page:
     [](./images/ohc-section-topics.png " ")
 5. Click **Topics** and then click **Create Topic**.
 
-6. In the **Create Topic** section, enter the title of the lab and, in **Href**, enter the URL you created in "**STEP 2:** Create the Target URL for a Lab".
+6. In the **Create Topic** section, enter the title of the lab and, in **Href**, enter the URL you created in "**STEP 2:** Create the Target URL for a Lab". -->
 
-**This concludes this lab.**
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
-* [Add GitHub Hosted Tutorials to OHC](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Add+GitHub-Hosted+Tutorials+to+the+Oracle+Help+Center)
+
 
 ## Acknowledgements
 
 * **Author:**
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
-
-* **Reviewed by:**  
+* **Contributors:**
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-* **Last Updated By/Date:** Anuradha Chepuri, November 2020
 
-
+* **Last Updated By/Date:** Lauran Serhal & Anuradha Chepuri, November 2021

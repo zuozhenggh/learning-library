@@ -31,6 +31,7 @@ This lab assumes you have:
 1. Open a terminal window on the desktop.
 
 2. Set the Oracle environment variables. At the prompt, enter **CDB1**.
+
     ```
     $ <copy>. oraenv</copy>
     CDB1
@@ -38,8 +39,7 @@ This lab assumes you have:
 
 3. Run the cleanup_PDBs_in_CDB1.sh shell script to recreate PDB1 and remove other PDBs in CDB1 if they exist. You can ignore any error messages.
     ```
-    $
-    <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
+    $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
     ```
    
 4. Execute the `$HOME/labs/glogin.sh` script to set formatting for all columns selected in queries. 
@@ -47,12 +47,16 @@ This lab assumes you have:
     ```
     $ <copy>$HOME/labs/19cnf/glogin.sh</copy>
     ```
+
 ## Task 2: Find the Oracle-supplied schemas that are now schema-only accounts.
-1. Sign in to SQL*Plus
+1. Sign in to SQL*Plus.
+   
     ```
     $ <copy>sqlplus / as sysdba</copy>
     ```
-2. Query Oracle-supplied schemas that are now schema-only accounts
+
+2. Query Oracle-supplied schemas that are now schema-only accounts.
+
     ```
     SQL> <copy>SELECT username FROM dba_users WHERE authentication_type = 'NONE' ORDER BY 1;</copy>
 
@@ -92,31 +96,42 @@ This lab assumes you have:
 
     31 rows selected.
     ```
+
 ## Task 3: Create schema-only account with administrative privileges. 
+
 1. Create new common user without password. 
+
     ```
     SQL> <copy>CREATE USER c##user NO AUTHENTICATION CONTAINER=ALL;</copy>
 
     User Created.
     ```
+    
 2. Grant the `sysoper` privilege to `c##user`.
+
     ```
     SQL> <copy>GRANT sysoper TO c##user CONTAINER=ALL;</copy>
 
     Grant succeeded.
     ```
+
 3. Query the new common user and its authentication type.
+
     ```
     SQL> <copy>SELECT username, authentication_type from dba_users WHERE username = 'C##USER';</copy>
     ```
+
 4. Query the password file view `pwfile_users`.
+
     ```
     SQL> <copy>SELECT username, authentication_type FROM v$pwfile_users;</copy>
     ```
+
 ## Learn More
 - [Ability to Grant or Revoke Administrative Privileges to and from Schema-Only Accounts](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/new-features.html#GUID-5A1DE85F-6485-402E-9D76-34D63186E555)
 - [Passwords Removed from Oracle Database Accounts](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/new-features.html#GUID-F56ECD44-1913-4E87-BB5E-DD2B1E2CEAC1)
 ## Acknowledgements
 
-- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Database team, September 2 2021
+- **Author**- Dominique Jeunot, Consulting User Assistance Developer
+- **Contributors** - Matthew McDaniel, Austin Specialists Hub, October 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, October 2021

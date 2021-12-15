@@ -71,7 +71,9 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Charlie Berger, Sr. Director, Product Management, Machine Learning, AI and Cognitive Analytics
-- **Last Updated By/Date** - Tom McGinn, Database Product Management
+- **Authors/Contributors** - Mark Hornick, Sr. Director, Data Science / Machine Learning PM
+
+- **Last Updated By/Date** - Siddesh Ujjni, Senior Cloud Engineer, October 2021
+
 - **Workshop Expiration Date** - March 2022
 

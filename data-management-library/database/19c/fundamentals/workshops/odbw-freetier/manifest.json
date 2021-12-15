@@ -5,6 +5,7 @@
         {
             "title": "Introduction",
             "description": "Introduction to Oracle Database 19c and the Oracle Database 19c New Features Workshop.",
+            "type": "odbw",
             "filename": "../../intro/intro.md"
         },
         {

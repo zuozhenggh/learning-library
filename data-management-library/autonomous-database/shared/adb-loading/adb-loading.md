@@ -9,7 +9,7 @@
 
 ## Introduction
 
-In this lab, you will create and load an autonomous database table with sample data from your local file system, upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create and load tables with data from the files on the OCI Object Storage, and troubleshoot data loads with errors.
+In this lab, you will create and load an Oracle Autonomous Database table with sample data from your local file system, upload files to the Oracle Cloud Infrastructure (OCI) Object Storage, create and load tables with data from the files on the OCI Object Storage, and troubleshoot data loads with errors.
 
 You can load data into your new autonomous database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]) using Oracle Database tools, and Oracle and 3rd party data integration tools. You can load data:
 
@@ -46,9 +46,9 @@ In Tasks 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
 ## Task 2: Load Local Data Using the Database Actions DATA LOAD Tool
 
-1. In your ADW Finance Mart database's details page, click the **Tools** tab. Click **Open Database Actions**.
+1. In your database's details page, click the **Database Actions** button.
 
-    ![Click Tools and Open Database Actions.](./images/Picture100-15.png " ")
+    ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
 2.  A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - admin**, and click **Next**. Enter the administrator **Password** you specified when creating the database. Click **Sign in**.
 
@@ -86,9 +86,12 @@ In Tasks 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
     ![Click EXPLORE in the Data Load page.](./images/click-explore-in-data-load-page.png " ")
 
-11. The Explore tool shows the *CHANNELS_LOCAL* table has been successfully created. You can click the table name to see the data.
+11. The Catalog shows the *CHANNELS_LOCAL* table has been successfully created. You can click the table name to see the data.
 
-    ![View the new table in the Explore tool.](./images/view-new-table.png " ")
+    ![View the new table in the Catalog.](./images/view-new-table.png " ")
+
+    ![See the new table's data.](./images/see-new-table-data.png " ")
+
 
 ## Task 3: Download Sample Data for Staging to Object Store
 
@@ -114,7 +117,7 @@ In OCI Object Storage, a bucket is the terminology for a container of multiple f
 
     ![Click Create Bucket.](images/click-create-bucket.png " ")
 
-4. **Bucket names must be unique per tenancy and region**; otherwise you will receive an "already exists" message. Enter the unique bucket name and click the **Create Bucket** button.
+4. **Bucket names must be unique per tenancy and region**; otherwise you will receive an "already exists" message. Enter the unique bucket name and click the **Create** button.
 
     ![Enter the required details and click Create.](images/click-create-to-create-the-bucket.png " ")
 
@@ -251,7 +254,7 @@ As an alternative to the wizard-guided data load, you can use the PL/SQL package
 
 For the fastest data loading experience, Oracle recommends uploading the source files to a cloud-based object store, such as *Oracle Cloud Infrastructure Object Storage*, before loading the data into your ADW or ATP database.
 
-To load data from files in cloud storage into your autonomous database, use the PL/SQL `DBMS_CLOUD` package. The `DBMS_CLOUD` package supports loading data files from the following Cloud sources: Oracle Cloud Infrastructure Object Storage, Oracle Cloud Infrastructure Object Storage Classic, Amazon AWS S3, Microsoft Azure Cloud Storage, and Google Cloud Storage.
+To load data from files in cloud storage into your Oracle Autonomous Database, use the PL/SQL `DBMS_CLOUD` package. The `DBMS_CLOUD` package supports loading data files from the following Cloud sources: Oracle Cloud Infrastructure Object Storage, Oracle Cloud Infrastructure Object Storage Classic, Amazon AWS S3, Microsoft Azure Cloud Storage, and Google Cloud Storage.
 
 This task shows how to load data from Oracle Cloud Infrastructure Object Storage using two of the procedures in the `DBMS_CLOUD` package:
 
@@ -266,7 +269,7 @@ This task shows how to load data from Oracle Cloud Infrastructure Object Storage
 
   ![Open SQL Web Developer](images/open-sql-web-dev.png)
 
-2. Unlike the previous steps where the Database Actions DATA LOAD tool gave you the option to automatically create the target autonomous database tables during the data load process, the following steps for loading with the `DBMS_CLOUD` package require you to first create the target tables.
+2. Unlike the previous steps where the Database Actions DATA LOAD tool gave you the option to automatically create the target Oracle Autonomous Database tables during the data load process, the following steps for loading with the `DBMS_CLOUD` package require you to first create the target tables.
 
     - Connected as your ADMIN user in SQL Worksheet, copy and paste <a href="./files/create_tables.txt" target="\_blank">this code snippet to create the required tables</a> to the worksheet. Take a moment to examine the script. You will first drop any tables with the same name before creating tables. Then click the **Run Script** button to run it.
 
@@ -313,9 +316,6 @@ This task shows how to load data from Oracle Cloud Infrastructure Object Storage
 1. Connected as your user in SQL Worksheet, run the following query to look at past and current data loads.
     ```
     $ <copy>select * from user_load_operations;</copy>
-    line 2
-    line 3
-    line x
     ```
     *Notice how this table lists the past and current load operations in your schema.  Any data copy and data validation operation will have backed-up records in your Cloud.*
 
@@ -350,4 +350,4 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, September 2021
+- **Last Updated By/Date** - Richard Green, November 2021

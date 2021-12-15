@@ -54,11 +54,20 @@ The key file must be placed in a location where it can be referenced by the Orac
 
     ![](./images/1.png " ")
 
-2. Read the private API key using the ``cat`` command and copy the private API key to your clipboard or in a text file on your desktop.
+2. You will need to read the private API key using the ``cat`` command and copy the private API key to your clipboard or in a text file on your desktop.
 
     ```
     <copy>
-    sudo cat /u01/install/APPS/.oci/myebscm.admin@example.com.pem
+    sudo su
+    cd /u01/install/APPS/.oci/
+    ls
+    </copy>
+    ```
+    From here you should see a user name and associated pem key such as ``myebscm.admin@example.com.pem``
+    Now run the cat command to print out the contents of the key (you may need to edit the name of the file in the command below)
+    ```
+    <copy>
+    cat /u01/install/APPS/.oci/myebscm.admin@example.com.pem
     </copy>
     ```
 
@@ -192,7 +201,11 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
 
     ![](./images/12.png " ")
 
-3. Verify the ssh connection by using the private IP of the source environment. 
+3. Verify the ssh connection by using the private IP of the source environment.
+
+    You can find the private IP of the environment by checking the information of the ebs instance you created in the OCI console.
+
+    ![](./images/PrivateIP.png " ")
     
     ```
     <copy>
@@ -276,6 +289,11 @@ In our case Application Tier Node, DB Tier Node and Backup module are on the sam
     ```
     <copy>
     archive log list;
+    </copy>
+    ```
+
+    ```
+    <copy>
     exit
     </copy>
     ```
@@ -306,6 +324,7 @@ You may proceed to the next lab.
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
+    - Chris Wegenek, Cloud Engineering
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering, September 2021
 
 

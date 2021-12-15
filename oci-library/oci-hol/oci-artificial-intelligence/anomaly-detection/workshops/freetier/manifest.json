@@ -1,11 +1,11 @@
 {
-    "workshoptitle": "Anomaly Detection with OCI Artificial Intelligence",
+    "workshoptitle": "Get started with Oracle Cloud Infrastructure Anomaly Detection",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
             "title": "Getting Started",
             "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "../../anomalies/pre-register-free-tier-account.md"
+            "filename": "../../../../../../common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Introduction: Anomaly Detection",

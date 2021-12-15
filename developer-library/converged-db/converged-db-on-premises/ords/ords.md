@@ -23,19 +23,16 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab : Login to Oracle Cloud
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
-    - Lab : Environment setup
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
 
 ## Task 1: Start ORDS in standalone mode
 
 1. The script (`env_setup_script.sh`) which was run in `Lab-3` starts the ORDS in standalone mode  
 
-2. Check if ORDS is connecting through the browser
-   Open the browser and enter the following URI in the address bar:
+2. Check if ORDS is connecting through the browser. On the web browser window on the right, open a new tab and navigate to the following
 
     ```
     http://localhost:9090/ords/
@@ -86,7 +83,7 @@ This lab assumes you have:
     ![](./images/ordsl8.png " ")
 
 9.	The RESTful Services Wizard will appear. Enter the below details and click **Next**.
-        
+
     ![](./images/ordsl10.png " ")
     <!-- ![](./images/ordsl9.png " ") -->
 

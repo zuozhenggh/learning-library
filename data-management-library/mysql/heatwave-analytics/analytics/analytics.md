@@ -20,9 +20,11 @@ In this lab, you will:
 ## Task 1: Create Oracle Analytics Cloud Instance 
 
 1. From the Cloud shell connect to MySQL DB System:
-    
+	
+	 Note: replace the `**PASSWORD**` with the password you have used creating MySQL DB System at Lab1/Task5.4.
+
     ```
-    <copy>mysqlsh --user=admin --password=Oracle.123 --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql</copy>
+    <copy>mysqlsh --user=admin --password=**PASSWORD** --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql</copy>
     ```
   
   	![connect to mysql shell](./images/Lab4-task1.1.png)
@@ -80,6 +82,8 @@ In this lab, you will:
 
 5. To create the connection, fill out with the following information:
 
+	 Note: replace the `**PASSWORD**` with the password you have used creating MySQL DB System at Lab1/Task5.4.
+
     ```
     Connection Name: <copy>MySQL_Connection</copy>
     ```
@@ -96,7 +100,7 @@ In this lab, you will:
     Username: <copy>admin</copy>
     ```
     ```
-    Password: <copy>Oracle.123</copy>
+    Password: **PASSWORD**
     ```
   
   	After you filled out the information, click _**Save**_.

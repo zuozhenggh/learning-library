@@ -10,6 +10,9 @@ It is important to mention that this feature works cross-platform and cross-Endi
 
 *Estimated Lab Time*: 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:cIC9UBdnJ7Q)
+
 ### About Transportable Export/Import
 You can use full transportable export/import to upgrade a database from an Oracle Database 11g Release 2 (11.2.0.3) or later to Oracle Database 19c.
 

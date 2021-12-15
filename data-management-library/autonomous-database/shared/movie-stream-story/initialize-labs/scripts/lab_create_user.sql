@@ -55,6 +55,7 @@ begin
     execute immediate 'grant oml_developer to ' || user_name;
     execute immediate 'grant graph_developer to ' || user_name;
     execute immediate 'grant console_developer to ' || user_name;
+    execute immediate 'grant dcat_sync to ' || user_name;
   
     -- These grants are required in order to make plsql automation to work
     execute immediate 'grant select on v$services to ' || user_name;

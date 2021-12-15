@@ -21,6 +21,8 @@ Watch this short video to preview how to provision Oracle E-Business Suite using
 ## Task 1: Log in to EBS Cloud Manager
 1. Navigate to your Oracle E-Business Suite Cloud Manager application using the Login URL recorded in your ``key-data.txt`` file.
 
+Note: If your login URL is not working or if your compute instance which contains the Cloud Manager image was ever stopped/turned off you may need to check and see if the application is running. The command for this can be found in the Lab "Optional: Managing the EBS Cloud Manager Virtual Machine."
+
 2. Log in with your Cloud Manager Admin credentials.
 
   ![](./images/ebscm-login.png " ")

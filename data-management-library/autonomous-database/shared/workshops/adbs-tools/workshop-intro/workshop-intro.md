@@ -7,6 +7,8 @@ The purpose of this workshop is to introduce you to the suite of data tools buil
 
 Estimated Workshop Duration: 1 hour, 40 minutes
 
+If you would like to watch us do the workshop, click [here](https://youtu.be/nSxao-v3Scg).
+
 ### Who Should Use This Workshop?
 
 Everyone can benefit from doing the lab exercises in this workshop: technical experts (data warehouse architects to database administrators), business users who want to focus on extracting meaning and insight from their own data, along with data scientists who want to build machine learning models within the context of a data warehouse project.
@@ -41,6 +43,6 @@ Many of the scenarios in the rest of this workshop will very likely match the ch
 
 ## Acknowledgements
 
-- Created By/Date - Keith Laker, Product Manager, Autonomous Database, March 2021
-- Contributors - Nilay Panchal, Rick Green, Patrick Wheeler, Marty Gubar, Bud Endress, Jayant Mahto, Mike Matthews
-- Last Updated By - Arabella Yao, August 2021
+- Created By/Date - Patrick Wheeler, Product Manager, Autonomous Database, March 2021
+- Contributors - Nilay Panchal, Rick Green, Keith Laker, Marty Gubar, Bud Endress, Jayant Mahto, Mike Matthews
+- Last Updated By - Rick Green, November 2021

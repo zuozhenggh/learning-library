@@ -7,7 +7,7 @@ Oracle Data Integrator (ODI) is Oracle's industry-leading, enterprise-class data
 
 ODI Web Edition needs to be deployed from OCI Marketplace before we can use Data Transforms. In this lab we will go through the steps to create an  ODI Web Edition instance.
 
-Estimated Lab Time: 60 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -130,7 +130,9 @@ To complete this lab, you need to have the following:
 
 6. In the **New Oracle Data Transforms Metadata Repository** section, pick the name of your Autonomous Database from the pick list at the top. (This pick list is populated with names of Autonomous Databases in the same Compartment as you're using here. This is why it was important to pick the Target Compartment carefully in the **General Settings** section above.)
 
-    **Important**: Be sure to check the box next to REGISTER ORACLE DATA TRANSFORMS WITH THE AUTONOMOUS DATABASE, DATABASE ACTIONS PAGE. This is what puts the Data Transforms card on your Database Actions page. 
+    **Important**: Be sure to check the box next to REGISTER ORACLE DATA TRANSFORMS WITH THE AUTONOMOUS DATABASE, DATABASE ACTIONS PAGE. This is what puts the Data Transforms card on your Database Actions page.
+
+    **Important**: Carefully type the passwords. Autonomous Database Admin password is not verified at this stage and deployment may fail if you type in incorrect password. For new passwords (VNC, SUPERVISOR and SCHEMA), follow the passwords guidelines. It is better to write these passwords in an editor and do copy and paste here. This will make sure that passwords are correctly entered.
 
     ![ALT text is not available for this image](images/3018104747.png)
 
@@ -138,11 +140,7 @@ To complete this lab, you need to have the following:
 
     ![ALT text is not available for this image](images/3018104748.png)
 
-    **Important**: What follows is a two-part deployment process:
-
-    * Deployment of the OCI components. This may take around 10 minutes. Data Transforms is still not ready to use at this stage!
-
-    * Deployment of the ODI components in your Autonomous Database. This may take around 30-40 minutes. 
+    **Important**:  Data Transforms is still not ready to use at this stage. Deployment of the ODI components in your Autonomous Database will take 10-15 minutes. 
 
     Because of the time required to set up Data Transforms completely, this is an ideal time to take a 10 min break from the workshop. We suggest a walk, a nice meal, or perhaps a coffee break. 
 
@@ -164,9 +162,9 @@ To complete this lab, you need to have the following:
 
     - **Starting ODI agents**
 
-  **All the above steps take around 30-40 minutes to finish. You can come back after 30 minutes and check for Data Transforms using direct URL as shown in Step 3. If it is not ready then give it another 10 minutes.**
+  **All the above steps take around 10-15 minutes to finish. You can come back after 15 minutes and check for Data Transforms using direct URL as shown in Step 3. If it is not ready then give it another 5 minutes.**
 
-  **In order to check the progress of the deployment script, one need to login to VNC viewer to the compute instance and check the log file. This is beyond the scope of this workshop. To keep steps simple, we simply wait for 30-40 minutes and launch the Data Transforms tool.** 
+  **In order to check the progress of the deployment script, one need to login to VNC viewer to the compute instance and check the log file. This is beyond the scope of this workshop. To keep steps simple, we simply wait for 10-15 minutes and launch the Data Transforms tool.**
 
 ## Task 3: Launch The Data Transforms Tool
 
@@ -191,13 +189,26 @@ Data Transforms tool can be launched by two methods:
 
 4. The page that appears provides both private and public URLs for accessing **Oracle Data Integrator - Web Edition** directly.  
 
-    ![ALT text is not available for this image](images/3018104789.png) 
+    ![ALT text is not available for this image](images/3018104789.png)
 
-5. You can also launch **Data Transforms** from Autonomous Database. You'll see a card for a fully pre-configured connection to your Autonomous Database. Click the **DATA TRANSFORMS** card.
+5. We need to perform few administration steps before we can successfully launch Data Transforms form Autonomous Database Actions menu. Click on the Data Transforms URL in previous step to launch Data Transform. Login with SUPERVISOR user and your password.
+
+    ![ALT text is not available for this image](images/lab04-task03-05.jpg)
+
+6. Click Administration and click Continue.
+
+    ![ALT text is not available for this image](images/lab04-task03-06.jpg)
+
+7. This is where Database user is mapped to Data Transforms user. There is a default map for ADMIN user to SUPERVISOR. Click + and add QTEAM user mapping to SUPERVISOR. Enter Database URL (as shown) and click Save. After this you will be able to launch Data Transforms from Autonomous Database Actions page.
+
+    ![ALT text is not available for this image](images/lab04-task03-07.jpg)
+
+
+8. You can also launch **Data Transforms** from Autonomous Database. You'll see a card for a fully pre-configured connection to your Autonomous Database. Click the **DATA TRANSFORMS** card.
 
     ![ALT text is not available for this image](images/3018124770.png)
 
-6. You will see the login screen for the Data Transforms tool. Specify username **SUPERVISOR** and the password that you provided in the ODI Web Edition deployment. Click **Connect**.
+9. You will see the login screen for the Data Transforms tool. Specify username **SUPERVISOR** and the password that you provided in the ODI Web Edition deployment. Click **Connect**.
 
     ![ALT text is not available for this image](images/3018123500.png)Follow the next lab for using Data Transforms to create a data flow.
 
@@ -215,4 +226,4 @@ In this section we've covered the following topics:
 
 - **Authors** - Jayant Mahto, ADB Product Management
 - **Contributors** - Patrick Wheeler, Mike Matthews, ADB Product Management
-- **Last Updated By/Date** - Jayant Mahto, Brianna Ambler June 2021
+- **Last Updated By/Date** - Jayant Mahto, Arabella Yao, October 2021

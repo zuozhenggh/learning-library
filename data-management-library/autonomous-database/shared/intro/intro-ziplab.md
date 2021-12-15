@@ -6,12 +6,12 @@ Oracle Autonomous Database is a family of self-driving, self-securing, and self-
 
 Watch the video below for an overview of the Autonomous Database.
 
-[](youtube:2HsVShulgx8)
+[](youtube:c-DUIePFKco)
 
 Please *proceed to the next lab*.
 
 ## **Acknowledgements**
 
 - **Authors/Contributors** - Kay Malcolm, Director, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, April 2020
+- **Last Updated By/Date** - Arabella Yao, Product Manager, DB Product Management, November 2020
 

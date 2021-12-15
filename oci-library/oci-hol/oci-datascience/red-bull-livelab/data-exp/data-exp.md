@@ -12,26 +12,26 @@ Before begining the project we need to understand the history of car racing (Gra
 
 An racing team's performance is largely dependent on the FIA technical regulation for the season. After the 2013 season, new engine regulations were made (Hybrid era). Mercedes-Benz is the most dominant team since, followed by Red Bull Racing and Scuderia Ferrari. Rules are set to change for 2022, so whatever analysis is made here will not apply for 2022 season and after. Only data after 2010 will be considered in the following analysis.
 
-Estimated Time: 1 hr
+Estimated Time: 60 minutes
 
 
-<b> Objectives </b>
+### Objectives
 
 In this lab, you will:
   * Download racing dataset prepared by Ergast to simplify the Exploratory Data Analysis process by:
 
     * Execute the notebook ```03.f1_analysis_EDA.ipynb``` to perform Data Analysis using ERGAST Data Model
 
-<b> Prerequisites </b>
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP 1**:  Download racing dataset prepared by Ergast to simplify the Exploratory Data Analysis process
+## **Task 1**:  Download racing dataset prepared by Ergast 
 
-We will use the dataset “data_f1” prepared by Ergast to simplify the Exploratory, but we could use all CSV prepared in the folder “data”
+We will use the dataset “data_f1” prepared by Ergast to simplify the Exploratory, but we could use all CSV prepared in the folder “data”. 
 
-![Image alt text](./images/eda.png)
+  ![Image alt text](./images/eda.png)
 
 1. Click on Terminal to open it. Download racing dataset:
   
@@ -49,7 +49,7 @@ We will use the dataset “data_f1” prepared by Ergast to simplify the Explora
   ![Image alt text](./images/files.png)
 
 
-## **STEP 2:** Execute the notebook 03.f1_analysis_EDA.ipynb to perform Data Analysis using ERGAST Data Model
+## **Task 2:** Execute the notebook 03.f1\_analysis\_EDA.ipynb
 
 1. Execute the notebook ```03.f1_analysis_EDA.ipynb``` (_Formula 1 Grand Prix Exploratory Data Analyis (EDA)_)
 
@@ -79,6 +79,7 @@ We will use the dataset “data_f1” prepared by Ergast to simplify the Explora
 7. Check Constructor Podiums
     ![Image alt text](./images/cp.png)
 
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer

@@ -84,6 +84,7 @@ Estimate Lab Time: 15 minutes
 3. Grant the user privileges it will need for the migration.
     ```
     <copy>
+    grant create user to orcl_user;
     grant create session to orcl_user;
     grant resource to orcl_user;
     grant create table to orcl_user;
@@ -104,6 +105,7 @@ Estimate Lab Time: 15 minutes
 
     ```
     <copy>
+    grant create user to movedata_user;
     grant create session to movedata_user;
     grant resource to movedata_user;
     grant create table to movedata_user;

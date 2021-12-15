@@ -1,4 +1,4 @@
-# Prepare Your Environment
+# Prepare your environment
 
 ## Introduction
 
@@ -6,24 +6,28 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 Estimated time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:RmiewRNMceQ)
+
 ### Objectives
 
 -   Learn how to provision a new Autonomous Database
 -   Create owner and load dataset to perform the lab
 
-## Task 1: Provisioning an Autonomous DB
+## Task 1: Provision an Autonomous Database
 
-  **Note:** If you plan to use an existing Autonomous DB in your own tenancy, or you are using an Oracle-provided environment, you can skip this step.
+  **Note:** If you plan to use an existing Autonomous Database in your own tenancy, or you are using an Oracle-provided environment, you can skip this step.
 
-1. Login to the Oracle Cloud Infrastructure
+1. Log in to the Oracle Cloud Infrastructure
 
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-      **Note:** You can also directly access your Autonomous DB service in the **Quick Actions** section of the dashboard
+      **Note:** You can also directly access your Autonomous Database service in the **Quick Actions** section of the dashboard
 
     ![](./images/adb-set_001.png " ")
 
-3. The following steps apply similarly to either Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP). So please **click on the provisioning of Autonomous DB of your choice** (here we choose an ADW but again you can also choose ATP if you prefer).
+3. The following steps apply similarly to either Autonomous Data Warehouse (ADW) or Autonomous Transaction Processing (ATP). So please **click the provisioning of Autonomous Database of your choice** (here we choose an Oracle Autonomous Data Warehouse but again you can also choose Oracle Autonomous Transaction Processing if you prefer).
 
     ![](./images/adb-set_002.png " ")
 
@@ -45,7 +49,7 @@ Estimated time: 10 minutes
     - **Compartment** - If needed, select your compartment
     - **Display name** - Enter a memorable name for the database for display purposes, for this lab, use *`ADB Security`*
     - **Database Name** - Enter *`ADBSEC01`*, it's important to use letters and numbers only, starting with a letter (the maximum length is 14 characters and Underscores are not supported)
-    - **Workload Type** - Select the type of your Autonomous DB to match your choice at Step 3 earlier above (here we select "Data Warehouse")
+    - **Workload Type** - Select the type of your Autonomous Database to match your choice at Step 3 earlier above (here we select "Data Warehouse")
     - **Deployment Type** - Leave *`Shared Infrastructure`* selected
 
          ![](./images/adb-set_005.png " ")
@@ -58,7 +62,7 @@ Estimated time: 10 minutes
     - **Storage** - Leave *`1`* selected
     - **Auto scaling** - Leave this checkbox selected
 
-      **Note:** You cannot scale up/down an Always Free Autonomous DB
+      **Note:** You cannot scale up/down an Always Free Autonomous Database
 
          ![](./images/adb-set_006.png " ")
 
@@ -81,20 +85,20 @@ Estimated time: 10 minutes
 
 10. Click [**Create Autonomous Database**]
 
-11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous DB is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
     ![](./images/adb-set_009.png " ")
 
 
 ## Task 2: Set up Application Schema and Users
 
-Although you can connect to your Autonomous DB using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your ADW or ATP
+Although you can connect to your Autonomous Database using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing
 
-1. In your ADB Security database's details page, click the **Tools** tab
+1. In your "`ADB Security`" database's details page, click the **Tools** tab
 
     ![](./images/adb-set_010.png " ")
 
-2. The Tools page provides you access to database administration and developer tools for Autonomous DB: Database Actions, Oracle Application Express, Oracle ML User Administration, and SODA Drivers. In the Database Actions box, click [**Open Database Actions**]
+2. The Tools page provides you access to database administration and developer tools for Autonomous Database: Database Actions, Oracle Application Express, Oracle ML User Administration, and SODA Drivers. In the Database Actions box, click [**Open Database Actions**]
 
     ![](./images/adb-set_011.png " ")
 
@@ -160,18 +164,18 @@ Although you can connect to your Autonomous DB using local PC desktop tools like
       </copy>
       ````
 
-    - Press [**F5**] or click on the "Run Scripts" icon
+    - Press [**F5**] or click the "Run Scripts" icon
 
          ![](./images/adb-set_015.png " ")
          ![](./images/adb-set_016.png " ")
 
     - Check that there are no errors
 
-8. **Your environment is ready to use!** and you may now [proceed to the next lab](#next)
+8. **Your environment is ready to use!** and you may now proceed to the next lab
 
 ## Want to Learn More?
 
-Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Data Warehouse.
+Click [autonomous workflow](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) for documentation on the typical workflow for using Autonomous Data Warehouse.
 
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM

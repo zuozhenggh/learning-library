@@ -1,0 +1,33 @@
+{
+  "workshoptitle": "Unified Observability in Grafana with Converged Oracle Database",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+      {
+        "title": "Introduction",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Getting started",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/event-register-free-tier-account.md"
+      },
+      {
+        "title": "Lab 1: Setup",
+        "filename": "../../../microservices-with-converged-db/setup/setup.md"
+      },
+      {
+        "title": "Lab 2: AQ....",
+        "filename": "../../lab2/lab2.md",
+        "type": "event-freetier"
+      },
+      {
+        "title": "Lab 7: Tear down",
+        "filename": "../../teardown/teardown.md",
+        "type": "event-freetier"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      }
+    ]
+}

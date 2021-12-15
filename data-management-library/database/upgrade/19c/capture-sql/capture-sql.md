@@ -8,6 +8,9 @@ In this lab, you will capture and preserve SQL statements and information as wel
 
 ![](./images/performance_prescription_01.png " ")
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:XTJC8yBDhkQ)
+
 ### About SQL Tuning Sets
 A SQL tuning set (STS) is a database object that you can use as input to tuning tools.
 An STS includes:

@@ -5,6 +5,7 @@
         {
             "title": "Introduction",
             "description": "Modern Application Development with Oracle REST Data Services Introduction",
+            "type": "odbw",
             "filename": "../../intro/intro.md"
         },
         {
