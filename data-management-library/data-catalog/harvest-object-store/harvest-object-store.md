@@ -49,7 +49,7 @@ In this task, you copy the OCID of the Data Catalog instance and use it as a res
         ```
         <copy>Any {resource.id = 'ocid1.user.oc1..<unique_ID>'}</copy>
         ```
-       
+
         ![Create Dynamic Group](./images/moviestream-dynamic-group-db.png " ")
 
     + Click **Create**. The **Dynamic Group Details** page is displayed. Click **Dynamic Groups** in the breadcrumbs to re-display the **Dynamic Groups** page.
@@ -60,7 +60,8 @@ In this task, you copy the OCID of the Data Catalog instance and use it as a res
 
          ![Dynamic Group created](./images/dynamic-group-created.png " ")
 
-#### Create an Object Storage Resources Access Policy         
+#### Create an Object Storage Resources Access Policy    
+
 After you create a dynamic group, you create policies to permit the dynamic group to access Oracle Cloud Infrastructure services. In this task, you create a policy to allow Data Catalog in your `data-catalog-livelab-work` compartment to access any object in your **Oracle Object Storage**, in any bucket. At a minimum, you must have `READ` permissions to all the individual resource types such as `objectstorage-namespaces`, `buckets`, and `objects`, or to the Object Storage aggregate resource type `object-family`.
 
 Create an access policy to grant ``READ`` permission to the **Object Storage** aggregate resource type ``object-family`` as follows:
@@ -108,7 +109,7 @@ Create an access policy to grant ``READ`` permission to the **Object Storage** a
 
   ![Create Data Asset](./images/create-data-asset-object.png " ")
 
-4. In the **Create Data Asset** panel, specify the data asset details as follows. You can use the values, which you have obtained from Step1 for filling the details, but for this lab, we will use an existing Object Storage buckets:    
+4. In the **Create Data Asset** panel, specify the data asset details as follows. You can use the values, which you have obtained from Task1 for filling the details, but for this lab, we will use an existing Object Storage buckets:    
        * **Name:** **`Oracle Object Storage Data Asset`**.
        * **Description:** **`Data Asset to access Oracle Object Storage buckets in a different tenancy than yours using public PARs`**.
        * **Type:** Select **Oracle Object Storage** from the drop-down list.
@@ -155,7 +156,6 @@ Add a connection to the **moviestream\_landing** bucket to your new **Oracle Obj
 
          ```   
        * **Make this the default connection for the data asset:** Leave this checkbox unchecked.
-
 
          ![Add Connection](./images/moviestream-landing-connection.png " ")
 
@@ -286,7 +286,6 @@ Harvest the data entities from a data asset as follows:
 
       > **Note:** You can use this page to view and add the bucket(s) and/or data entities you want to harvest from the **Available Buckets** section. Click the **bucket link** to display its nested data entities. Click the ![](./images/add-entity-icon.png>) icon next to each data entity that you want to include in the harvest job. You can search for a bucket or entity using the **Filter Bucket** and **Filter Bucket / data entities** search boxes.
 
-
       ![Step 2](./images/harvest-step-2-add-entities.png " ")
 
 7. Click **Next**. The **Create Job** page of the **Harvest** wizard (Step 3 of 3) is displayed. Specify the following for the job details:
@@ -349,8 +348,6 @@ Harvest the data entities from a data asset as follows:
 17. From the **Attributes** tab, view the data entity attribute details.
 
     ![Attribute](./images/custsales-attributes-tab.png " ")
-
-    **Congratulations!** You  can now **proceed to the next lab**.
 
 ## Learn More
 

@@ -33,6 +33,7 @@ Watch our short overview video that explains key features in Data Catalog.
 [](youtube:nY7mG2u6-Ew)
 
 ### Workshop Objectives
+
 In this workshop, you will:
 * Set up the required Oracle Cloud Infrastructure resources for Live Lab and Data Catalog
 * Create required users and associated IAM Policies for the Live Lab
@@ -43,6 +44,7 @@ In this workshop, you will:
 * Search and Discover data using the catalog
 
 ### Lab Breakdown
+
 - **Lab 0:** Prerequisites
 - **Lab 1:** Create a data catalog
 - **Lab 2:** Harvest metadata from Autonomous Database
