@@ -337,7 +337,7 @@ In Oracle Functions, an application is:
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn list apps
     NAME            ID
-    functionsApp    ocid1.fnapp.oc1.eu-frankfurt-1.aaaaaaaaf2snfvp2gxhghcsvadeffffdddd32rf7hqh3lbcgiztw2xkqrv74ha
+    functionsApp    ocid1.fnapp.oc1.eu-frankfurt-1.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     ```
 
     We are now setup to deploy our function.
@@ -392,7 +392,7 @@ In Oracle Functions, an application is:
     747aa001f428: Pushed 
     f9ef7f1bcb19: Pushed 
     02c055ef67f5: Pushed 
-    0.0.68: digest: sha256:2a9b72e1f08abc89ce3ac98bc1b074efe0bfccbc1103a14ba6b0b4c9745c623c size: 2623
+    0.0.68: digest: sha256:2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a size: 2623
     Updating function csv-to-adw-with-ords-and-fn using image fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn:0.0.68...
     Successfully created function: csv-to-adw-with-ords-and-fn with fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn:0.0.68
     ```
@@ -434,7 +434,7 @@ In Oracle Functions, an application is:
     For the **secret_ocid** parameter, use the OCID of the password you entered in the secrets service during the setup.
 
     ```
-    fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
+    fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4"
     ```
 
     Once the values are entered, run them in the OCI Cloud Shell. Be sure to press enter/return after each configuration and that you see the confirmation that the function was updated.
@@ -448,8 +448,8 @@ In Oracle Functions, an application is:
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn db_user "admin"
     functionsApp csv-to-adw-with-ords-and-fn updated db_user with admin
     
-    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
-    functionsApp csv-to-adw-with-ords-and-fn updated dbpwd_cipher with ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4"
+    functionsApp csv-to-adw-with-ords-and-fn updated dbpwd_cipher with ocid1.vaultsecret.oc1.eu-frankfurt-1.a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4
     
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn input_bucket "input-bucket"
     functionsApp csv-to-adw-with-ords-and-fn updated input_bucket with input-bucket

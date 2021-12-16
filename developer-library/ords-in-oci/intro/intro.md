@@ -1,4 +1,4 @@
-# Expanding Oracle REST Data Services into Oracle Cloud Infrastructure
+# Expand Oracle REST Data Services into Oracle Cloud Infrastructure
 
 ## About this Workshop
 
