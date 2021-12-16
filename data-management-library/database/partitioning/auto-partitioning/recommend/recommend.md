@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Auto partitioning evaluates the performance benefits of partitioning the candidate table.
+Use auto partitioning to evaluate the performance benefits of partitioning a candidate table.
 
 Estimated Time: 20mins
  

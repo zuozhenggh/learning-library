@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Use automatic indexing to partition the candidate table.
+Use automatic indexing to implement the recommended partitioning scheme.
 
 Estimated Time: 10mins
 
@@ -47,7 +47,7 @@ The "ID" is a *recommendation ID*, and is used to identify which recommendation 
 
 A partitioned version of the table will be build on-line using an ALTER TABLE MODIFY PARTITION ONLINE command. It will take approximately 10 minutes for a 5GB table in a 19c Always Free instance.
 
-## Task 2: Confirm that the Table Has Been Partitioned
+## Task 2: Confirm That Table is Partitioned
 
 1. Check that APART is now partitioned:
 

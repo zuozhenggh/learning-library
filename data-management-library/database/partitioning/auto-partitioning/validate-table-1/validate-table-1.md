@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Confirm that trhe selected table is a viable candidate for auto partitioning.
+Confirm that the chosen table is a viable candidate for auto partitioning.
 
 Estimated Time: 25mins
 
