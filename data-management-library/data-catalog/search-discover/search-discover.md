@@ -1,6 +1,5 @@
 # Search and Discover your data
 
-
 ## Introduction
 
 As a data consumer, data catalog provides a single place to search for data that is suitable for your needs. When the technical data has been harvested for all data sources in your organization, it is enriched with appropriate business context technical, and business users can easily search the catalog for data. Technical users may choose to browse the hierarchical view of data assets while business users can use business terms and names to search the catalog for relevant and related data.
@@ -82,7 +81,6 @@ You can use the **Browse Data Assets** option to conveniently view and navigate 
 
     > **NOTE:** You can always go back to the previous browse result by selecting the value in the **Path** in the left panel.
 
-
     ![Path](./images/path-section.png " ")
 
 4. Click **SALES\_HISTORY**. On the right pane, you can view all the details of the schema. .
@@ -131,8 +129,6 @@ You can explore data catalog objects by the tags linked with them. In the **Home
     ![Home](./images/home-tags-option.png " ")
 
     ![Search Result](./images/tag-search-result.png " ")
-
-
 
 ## Learn More
 

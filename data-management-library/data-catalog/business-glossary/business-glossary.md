@@ -22,7 +22,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-Complete Lab0 : Step 1-3 and Lab1
+Complete Lab0 : Task 1-3 and Lab1
 
 ## Task 1: Create a Business Glossary
 
@@ -72,7 +72,6 @@ In this task you will import the sample glossary provided in the workshop files.
 
     ![Imported Glossary](./images/import-glossary2.png " ")
 
-
 ## Task 3: Create a Category
 
 In a glossary, each term must be created within a category.
@@ -94,7 +93,6 @@ Here is how you create a category:
     ![Created Category](./images/create-category3.png " ")
 
 After the category is created, it is listed in the Hierarchy pane of the glossary details tab and you can create terms within this category. You can also create a category within another category creating nested categories.
-
 
 ## Task 4: Create a Term
 
@@ -118,7 +116,6 @@ Here is how you create a term:
 
     ![Created Term](./images/create-term3.png " ")
 
-
 ## Task 5: Export a Glossary
 
 You can export the glossary in your catalog either to be imported in another catalog or if you want to review and modify it before importing it back into the catalog.
@@ -139,8 +136,6 @@ Here is how you export a glossary.
 
     ![Exported Glossary](./images/export-glossary3.png " ")
 
-
-
 ## Task 6: Create a Custom Property
 
 Custom properties are used to define metadata to capture business context for data catalog object.
@@ -148,7 +143,6 @@ Custom properties are used to define metadata to capture business context for da
 When you harvest a data source using Data Catalog, some default properties are created in your data catalog for data entities and attributes. For example, description, data entity type, updated by, and last updated. Similar default properties are also available for data catalog objects like glossaries, categories, and terms.
 
 The default properties may not be sufficient to capture all the context for a data catalog object. More details such as business description, update frequency, certification status, or data owners, can provide more business context to the technical metadata. Business metadata help data consumers in understanding, discovery, classification, and collaboration.
-
 
 1.	On your data catalog instance Home tab, click **Custom Properties** to access the Custom Properties tab.
 
@@ -184,7 +178,6 @@ The default properties may not be sufficient to capture all the context for a da
 
 	•	**Allow multiple values**: Select this option if you want to permit multiple values for the custom property.
 
-
 7.	Select one or more **Data catalog object types** that you want to associate with the custom property.
 
 8.  Leave the optional **Enable events** field blank.
@@ -195,12 +188,9 @@ The default properties may not be sufficient to capture all the context for a da
 
 	•	**Show in search results**: Select this option if you want the custom property to be displayed in the search results list. You can select this option 	 for up to four custom properties. Only one of these four custom properties can be of the String (Rich Text) datatype.
 
-
 	•	**Allow filtering**: Select this option if you want the custom property to be displayed in the search results as Custom Filters. Typically, this option is selected for custom properties with the List of values option selected as well.
 
-
 	•	**Allow sorting**: Select this option if you want the search results to be sortable using the custom property.
-
 
 10.	In **View and Edit options**, select the Quick edit check box, if you want to configure the custom property to appear in the Attributes table of 	a data entity. For more information, see Editing Attribute Name and Custom Properties.
 
@@ -211,9 +201,6 @@ The default properties may not be sufficient to capture all the context for a da
 	The **Custom Property** is created.
 
     ![Created Custom Property](./images/custom-properties5.png " ")
-
-
-    **Congratulations!** You can now **proceed to the next lab**.
 
 ## Learn More
 
