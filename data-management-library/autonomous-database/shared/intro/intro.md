@@ -7,12 +7,12 @@ Watch the video below for an overview of Autonomous Database.  Afterwards, pleas
 
 
 
-[](youtube:2HsVShulgx8)
+[](youtube:c-DUIePFKco)
 
 
 ## Acknowledgements
 
 - **Authors/Contributors** - Kay Malcolm, Director, DB Product Management
-- **Last Updated By/Date** - Kay Malcolm, October 2020
+- **Last Updated By/Date** - Arabella Yao, Product Manager, DB Product Management, November 2020
 
 

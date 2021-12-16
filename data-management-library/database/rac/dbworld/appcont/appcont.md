@@ -6,9 +6,9 @@ This lab walks you through the use and functioning of Application Continuity.
 
 Estimated Lab Time: 20 Minutes
 
-Watch the video below for an overview of the Application Continuity lab
-[](youtube:KkwxbwII3O4)
+Watch the video below for a quick walk through of the lab.
 
+[](youtube:22lFTgvlrx8)
 
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
@@ -268,7 +268,7 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
 
 5. Connect to the database with SQL\*Plus as the HR user over the TAC-enabled service
     ````
-    sqlplus hr/W3lc0m3#W3lc0m3#@"(DESCRIPTION=(CONNECT_TIMEOUT=90)(RETRY_COUNT=50)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=tcp)(HOST=lvracdb-s01-2021-03-30-204603-scan.pub.racdblab.oraclevcn.com)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=tac_service.pub.racdblab.oraclevcn.com)))"
+    sqlplus hr/W3lc0m3#W3lc0m3#@"(DESCRIPTION=(CONNECT_TIMEOUT=90)(RETRY_COUNT=50)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=tcp)(HOST=<REPLACE SCAN NAME>)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=tac_service.pub.racdblab.oraclevcn.com)))"
     ````
 
     Update a row in the table EMP4AC.
@@ -321,6 +321,10 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
     Try the same procedure using the AC-enabled service
 
     ````
+    sqlplus hr/W3lc0m3#W3lc0m3#@"(DESCRIPTION=(CONNECT_TIMEOUT=90)(RETRY_COUNT=50)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=tcp)(HOST=<REPLACE SCAN NAME>)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=ac_service.pub.racdblab.oraclevcn.com)))"
+    ````
+
+    ````
     SQL> select empno, ename  from emp4ac where rownum < 10;
      EMPNO ENAME
     ---------- ----------
@@ -353,6 +357,9 @@ Application Continuity (whether AC or TAC) is enabled by setting attributes on t
       7770 Bob7770
 
     9 rows selected.
+
+          <<<<< RUN kill_session.sh ac_service.pub.racdblab.oraclevcn.com from another window now >>>>
+          
     SQL> update emp4ac set empno=8504 where empno=9999 and ename='Bob8504' and rownum < 10;
         1 row updated.
      SQL> commit;

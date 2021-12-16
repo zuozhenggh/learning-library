@@ -528,5 +528,3 @@ You may now [proceed to the next lab](#next).
 * **Author** - Sean Stacey
 * **Contributors** -
 * **Last Updated By/Date** -
-
-

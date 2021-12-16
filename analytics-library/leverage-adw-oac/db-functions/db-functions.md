@@ -137,22 +137,7 @@ Click **Validate** and click **Save**.
 
      ![Add Calculation](../db-functions/images/addcalculation2.png)
 
-12.  Create Best `Visualization` for **#Customers**  
-Select **#Customers** from Data Panel, Right-Click and Select **Create Best Visualization**
-
-     ![Create Best Visualization](../db-functions/images/customerscreatevizsmall.png)
-
-13.  A new **Tile** visualization pops-up.
-
-     ![Create Best Visualization](../db-functions/images/customerscreateviz1.png)
-
-14. Open the query log.  
-Open a new **Home** page > Click **Navigator** > Select **Console** > Click **Sessions and Query Cache** under _Configuration and Administration_ section, Pick-up the most recent entry and Click **View Log**.  
-The query log shows that **Count Distinct** is being used against the column in the query
-
-     ![Create Best Visualization](../db-functions/images/customerslog.png)
-
-15.  Lets switch to **SQL Developer Web** and run **APPROX\_COUNT\_DISTINCT** function in the ADW database. 
+12.  Lets switch to **SQL Developer Web** and run **APPROX\_COUNT\_DISTINCT** function in the ADW database. 
 
      **APPROX\_COUNT\_DISTINCT** returns the approximate number of rows that contain a distinct value for expr.  
      This function provides an alternative to the **COUNT (DISTINCT** expr) function, which returns the exact number of rows that contain distinct values of expr. APPROX\_COUNT\_DISTINCT processes large amounts of data significantly faster than COUNT, with negligible deviation from the exact result.
@@ -162,44 +147,44 @@ The query log shows that **Count Distinct** is being used against the column in 
      ![](../db-functions/images/customersaproxcaoundistinct.png)  
      Note: COUNT\_DISTINCT shows 4,096 and  APPROX\_COUNT\_DISTINCT shows 4,087
 
-16.  Lets switch back to your OAC project and check **EVALUATE\_AGGR** function.  
+13.  Lets switch back to your OAC project and check **EVALUATE\_AGGR** function.  
 EVALUATE and EVALUATE\_AGGR are functions in OAC that allow you to invoke functions from the underlying database. You can invoke the APPROX\_COUNT\_DISTINCT function of the database using EVALUATE\_AGGR
 
-17.  Create **Approx Count** new calculation.  
+14.  Create **Approx Count** new calculation.  
 In the Visualize canvas navigate to the bottom of the Data Panel, right-click **My Calculations**, and click **Add Calculation** to open the New Calculation dialog.  
 Enter Name **Approx Count**; In the expression builder pane, compose and edit an expression 'EVALUATE\_AGGR('APPROX\_COUNT\_DISTINCT(%1)',CUST\_ID)', Click **Validate**, Click **Save**.
 
      ![Create Best Visualization](../db-functions/images/addcalculation2.png)
 
-18.  Create Best Visualization for **Approx Count**. 
+15.  Create Best Visualization for **Approx Count**. 
 Expand My Calculations, Select **Approx Count**, Right-Click and Select **Create Best Visualization** 
 
      ![Create Best Visualization](../db-functions/images/approxcount.png)
 
-19.  Check the visualization.  
+16.  Check the visualization.  
 The calculation returns an approximate distinct count of Customer ID 
 
      ![Create Best Visualization](../db-functions/images/approxcountviz.png)
 
-20.  Go to the Query Log.  
+17.  Go to the Query Log.  
 Open a new **Home** page > Click **Navigator** > Select **Console** > Click **Sessions and Query Cache** under _Configuration and Administration_ section, Pick-up the most recent entry and Click **View Log**.  
 The query logs shows that the function approx\_count\_distinct is function shipped to database query 
 
      ![](../db-functions/images/approxcountlog.png)  
      ![](../db-functions/images/approxcountlog2.png)
 
-21.  Calculations performed using EVALUATE\_AGGR can be sliced and diced with attributes, but calculations with EVALUATE cannot be broken down by dimensions/attributes in the Data Set.
+18.  Calculations performed using EVALUATE\_AGGR can be sliced and diced with attributes, but calculations with EVALUATE cannot be broken down by dimensions/attributes in the Data Set.
 
-22.  Switch back to your OAC project and lets add **CATEGORY** attribute.  
+19.  Switch back to your OAC project and lets add **CATEGORY** attribute.  
 Double-Click on **CATEGORY** attribute from the Data Pane. 
 
      ![Add Category](../db-functions/images/approxcountvizcategsmall.png)
 
-23.  Check the visualization.  
+20.  Check the visualization.  
 
      ![](../db-functions/images/approxcountvizcateg1.png)
 
-24.  **Save** and **Close** the Project.  
+21.  **Save** and **Close** the Project.  
 Click the **Save** icon from top right.  
 
      ![Save](../db-functions/images/save.png)
@@ -251,7 +236,7 @@ Congrats, you have just finished this workshop.
 
 ## **Acknowledgements**
 
-- **Author** - Lucian Dinescu, Product Strategy, Analytics
-- **Contributors** -
-- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics
-- **Last Updated By/Date** - Lucian Dinescu, April 2021
+- **Author** - Lucian Dinescu (Oracle Analytics Product Strategy)
+- **Contributors** - 
+- **Reviewed by** - Shiva Oleti (Oracle Analytics Product Strategy), Sebastien Demanche (Oracle Cloud Center of Excellence)
+- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021

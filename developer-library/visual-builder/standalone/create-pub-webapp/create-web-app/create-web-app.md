@@ -2,27 +2,27 @@
 
 ## Introduction
 
-This lab shows you how to use Oracle Visual Builder to create a basic web application and populate it with business objects.
+This lab shows you how to use Visual Builder to create a basic web application and populate it with business objects.
 
 Estimated Lab Time:  15 minutes
 
 ### Background
 
-Oracle Visual Builder is a development tool for creating web and mobile applications by dragging and dropping components on a page. Components depend on a _business object_ for their data. A business object is just a resource -- like a purchase order or invoice -- that has fields to hold your application's data. It is similar to database table as it provides the structure for your data; in fact, business objects are stored in a database. Your web application accesses the business objects through their REST endpoints.
+Visual Builder, as the name suggests, is a *visual* development tool for web and mobile applications. It provides a rich graphical user interface that lets you design and develop applications by dragging and dropping _components_ on a page. Each component depends on a _business object_ for its data. A business object is just a resource—like a purchase order or invoice—that has fields to hold your application's data. It is similar to a database table, as it provides the structure for your data; in fact, business objects are stored in a database. Your application accesses the data in these business objects through  REST endpoints that Visual Builder generates for you.
 
-In this tutorial, you'll create the business objects shown here:
+In this lab, you'll create the Employee, Department, and Location business objects to build a simple Human Resources application. Each business object has its own set of fields as shown here:
 
 ![](./images/vbcsca_dbdiagram.png " ")
 
-Once you have your business objects, you'll use them to build a very simple Human Resources application in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
+Once you have your business objects, you'll use them to build the HR web app in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
-**Note:** Although this tutorial shows you how to build a web application using a business object, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
+**Note:** Although this workshop uses business objects to build a web application, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
 
 ## Task 1: Create a Web Application
 
 The first thing we'll do is create the web application itself. Later, we'll construct the business objects we need so we can populate the app with data.
 
-1.  In the web browser, log in to Oracle Visual Builder.
+1.  In the web browser, log in to Visual Builder.
     -   If you don't have any applications, the landing page appears. Click **+ New Application**.
 
         ![](./images/vbcsca_cra_s1a.png)
@@ -44,19 +44,22 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![](./images/vbcsca_cra_s3.png)
 
-    The Welcome page contains sets of tiles in three groups: Connect to Data, Create Apps, and Add Artifacts.
+    The Welcome page contains sets of tiles in three groups: Connect to Data, Create Apps, and Add Artifacts. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Components, Processes, and Source View.
 
-    In the toolbar, the `DEV` and `1.0` tags next to the application name indicate the status (development) and the version.
+    Take note of the header elements:
+    ![](./images/header.png)
+
+    The `DEV` and `1.0` tags next to the application name on the left indicate the application status (development) and version. Elements on the right let you perform various actions. For example, you can undo your most recent change, redo a change after clicking Undo, or search for a file. This workshop primarily demonstrates the options to preview your app and publish changes.
 
 4.  We want to create a web app, so under **Create Apps**, click **Web Apps**.
 
-    The Navigator opens in the Web Applications pane. On the far left side are tabs for **Mobile Applications**, **Web Applications**, **Services**, **Business Objects**, **Components**, **Processes**, and **Source View**.
+    The Navigator opens in the Web Apps pane.
 
-5.  Click **+ Web Application** (or click the **+** sign at the top of the pane).
+5.  Click **+ Web Application** (or the **+** sign at the top of the pane).
 
     ![](./images/vbcsca_cra_s5.png)
 
-6.  In the Create Web Application dialog box, enter `hrwebapp` in the **Application Name** field under **General Information**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
+6.  In the Create Web Application dialog box, enter `hrwebapp` in the **Application Name** field under General Information. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
     The application opens on the main-start page, which is automatically created for you. This is also the default name assigned to your application's home page.  
 
@@ -66,23 +69,22 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
 
-    In the Web Apps pane, expand the **hrwebapp** node to view the web application structure, then expand the **Flows** and **main** nodes to view the main-start page.
-
+    In the Web Apps pane, expand the **hrwebapp** node, then the **main** node to get a tree view of your web application.
 
 ## Task 2: Create a Location Business Object and Import Data from a File
 
-In this step, you'll create the Location business object and then import data for it.
+Let's create your first business object and add data to it by importing a CSV file. Every business object needs data associated with it, and there are many ways to do that, as you'll see.
 
 1.  Click the **Business Objects** ![Business Objects icon](./images/vbcsca_bo_icon.png) tab in the Navigator.
 2.  Click the **\+ Business Object** button.
-3.  In the New Business Object dialog box, enter `Location` in the **Label** field and click **Create**. `Location` is also filled in automatically as the **Name** value. When you create a business object, specify the singular form of the noun.
+3.  In the New Business Object dialog box, enter `Location` in the **Label** field. `Location` is also filled in automatically as the **Name** value. Click **Create**
 4.  Click the **Fields** tab.
 
     Every business object you create has five default fields: an ID, plus fields that provide information on who created and updated the object and when.
 
     ![](./images/vbcsca_imp_s4.png)
 
-5.  Click **\+ Field** to add a field specific to this business object. This is a very simple business object, so we'll add only one new field.
+5.  Click **\+** and select **Create Field** to add a field specific to this business object. This is a very simple business object, so we'll add only one new field.
 6.  In the pop-up box, enter:
 
     -   **Label**: `Name`
@@ -93,24 +95,22 @@ In this step, you'll create the Location business object and then import data fo
 
     ![](./images/vbcsca_imp_s6.png)
 
-7.  In the **Name** field's properties, select the **Required** check box under **Constraints**.
+7.  If necessary, click the **Properties** tab on the right to view the **Name** field's properties, then select the **Required** check box under **Constraints**.
 
     ![](./images/vbcsca_imp_s7.png)
 
     You can see that there's now a check mark in the **Required** column for the **Name** field.
 
-8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/xt5U0wu9v1Ce78W2z6ncTyIdrWkZTlTT6e2GkZ4WneP3xaoHVNtnDsSsPjl9yYuo/n/c4u04/b/solutions-library/o/Location.csv) and save the `Location.csv` file to your file system. The file contains four locations for the application.
-9.  In the Navigator's Business Object pane, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**.
+8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/N2o2eijiTUZM78HyL9HHig4OsQLlOLQorVBrV8mUlJpbWJCMpY58nPJbHvFVlSR3/n/c4u03/b/oci-library/o/WMS4121Location.csv) and save the `Location.csv` file to your file system. The file contains four locations for the application.
+9.  In the Navigator's Business Object pane, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
     ![](./images/vbcsca_imp_s9.png)
-
-    The Data Manager is what you use to import data from a variety of sources.
 
 10.  Click **Import from File**.
 
     ![](./images/vbcsca_imp_s10.png)
 
-11.  In the Import Data dialog box, click the import box, select `Location.csv`, and click **Import**.
+11.  In the Import Data dialog box,  click the upload box, browse to select `Location.csv`, and click **Import**.
 
     ![](./images/vbcsca_imp_s11.png)
 
@@ -120,17 +120,20 @@ In this step, you'll create the Location business object and then import data fo
 
     ![](./images/vbcsca_imp_s12.png)
 
-    In the next step, we'll associate these locations with the departments that are located on these floors.
+    In the next task, we'll associate these locations with departments.
 
 
 ## Task 3: Create a Department Business Object
+
+Create the Department business object, which will have fields to show a department's name and location. In this task, you'll set up the department's Location field to pull in data from the Location business object you created in the previous task, but you won't actually add data to the Department business object just yet.
+
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
 
     ![](./images/vbcsca_cdb_s1.png)
 
 2.  In the New Business Object dialog box, enter `Department` in the **Label** field and click **Create**. `Department` is also filled in automatically as the **Name** value.
-3.  Click the **Fields** tab, then click **\+ Field**.
+3.  Click the **Fields** tab, then **\+** and select **Create Field**.
 4.  In the pop-up box, enter:
 
     -   **Label**: `Name`
@@ -143,7 +146,7 @@ In this step, you'll create the Location business object and then import data fo
 
     A check mark is displayed in the **Required** column for the **Name** field.
 
-6.  Click **\+ Field** again, then enter or select:
+6.  Click **\+** and select **Create Field** again, then enter or select:
 
     -   **Label**: `Location`
     -   **Field Name**: `location` (automatically populated)
@@ -162,11 +165,11 @@ In this step, you'll create the Location business object and then import data fo
 
 ## Task 4: Create an Employee Business Object
 
-In this step, we'll create the last business object we need, the Employee object, which contains the employee's name and identifying data. In this case, the Employee has a Reference type field that refers to the Department.
+In this task, we'll create the last business object we need, the Employee object, containing the employee's name and identifying data. In this case, the Employee has a Reference type field to  refer to the Department business object.
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
 2.  In the New Business Object dialog box, enter `Employee` in the **Label** field and click **Create**. `Employee` is also filled in automatically as the **Name** value.
-3.  Click the **Fields** tab, then click **\+ Field**.
+3.  Click the **Fields** tab, then click **\+** and select **Create Field**.
 4.  In the pop-up box, enter:
 
     -   **Label**: `Name`
@@ -176,7 +179,7 @@ In this step, we'll create the last business object we need, the Employee object
     Click **Create Field**.
 
 5.  In the **Name** field's properties, select the **Required** check box under **Constraints**.
-6.  Click **\+ Field** again, then enter or select:
+6.  Click **\+** and select **Create Field** again, then enter or select:
 
     -   **Label**: `Department`
     -   **Field Name**: `department` (automatically populated)
@@ -186,7 +189,7 @@ In this step, we'll create the last business object we need, the Employee object
 
     Click **Create Field**.
 
-7.  Click **\+ Field** again, then enter or select:
+7.  Click **\+** and select **Create Field** again, then enter or select:
 
     -   **Label**: `Hire Date`
     -   **Field Name**: `hireDate` (automatically populated)
@@ -194,7 +197,7 @@ In this step, we'll create the last business object we need, the Employee object
 
     Click **Create Field**.
 
-8.  Click **\+ Field** again, then enter or select:
+8.  Click **\+** and select **Create Field** again, then enter or select:
 
     -   **Label**: `Email`
     -   **Field Name**: `email` (automatically populated)
@@ -202,17 +205,17 @@ In this step, we'll create the last business object we need, the Employee object
 
     Click **Create Field**.
 
-9.  Click the **Endpoints** tab and view the Resource APIs and REST endpoints created for the Employee business object. Because Employee refers to Department, you can see endpoints for both objects if you expand the **departmentObject** node.   
+9.  Now that we've created the fields we need, click the **Endpoints** tab to view the Resource APIs and REST endpoints created for the Employee business object. Because Employee refers to Department, you'll  see endpoints for both objects if you expand the **departmentObject** node.   
 
     ![](./images/vbcsca_cde_s9.png)
 
-    If you click an endpoint, an endpoint viewer allows you to perform operations on the endpoints. For example, you can test requests and view responses with specified parameter values:
+    If you click an endpoint, **getall_Employee** for example, an endpoint viewer allows you to perform operations on the endpoints. For example, you can test requests and view responses with specified parameter values:
 
     ![](./images/vbcsca_cde_s9_result.png)
 
     Click ![Back to Table icon](./images/vbcsca_backtotable_icon.png) Endpoints to return to the main Endpoints page.
 
-    Expand the **Resource APIs** node to see the URLs for accessing the metadata and data for the business object, then minimize it again.
+    Expand the **Resource APIs** node to see the URLs for accessing the metadata and data for the business object, then collapse it again.
 
 
 ## Task 5: Create a Business Object Diagram
@@ -231,9 +234,9 @@ Now that we have our business objects, let's create a diagram that provides a vi
 
     The diagram looks just like the graphic in the Before You Begin section.
 
-    So far, you've imported data only for the Location object. You'll add data for the Department and Employee business objects in a later tutorial.
+You can now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
-* **Last Updated By** - February 2021
+* **Last Updated By** - November 2021

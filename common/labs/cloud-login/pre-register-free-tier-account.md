@@ -76,6 +76,8 @@ If you already have a cloud account, skip to **Task 2**.
 
 ## Task 2: Sign in to Your Account
 
+_Please note that while your tenancy is initially created, you will only see a direct login. Once your tenancy is fully provisioned, you will see the screens as described below._
+
 1. Go to [cloud.oracle.com](https://cloud.oracle.com). Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
     ![](images/cloud-oracle.png " ")
@@ -94,11 +96,8 @@ If you already have a cloud account, skip to **Task 2**.
 
     ![](images/oci-console-home-page.png " ")
 
-You may now [proceed to the next lab](#next).
-
-
 ## **Acknowledgements**
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
 - **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
-- **Last Updated By** - Arabella Yao, August 2021
+- **Last Updated By** - Kevin Lazarz, October 2021

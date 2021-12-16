@@ -4,6 +4,7 @@
     "tutorials": [
         {
             "title": "Introduction",
+            "type": "odbw",
             "filename": "../../introduction/introduction-gb.md"
         },
         {
@@ -14,7 +15,7 @@
         {
             "title": "Lab 2: Connect Oracle GoldenGate to Autonomous Transaction Processing ",
             "description": "Connect Oracle GoldenGate to its Source Database",
-            "filename": "../../oggmp-atp/oggmp-atp.md"
+            "filename": "../../oggmp-atp/oggmp-atp-odbw.md"
         },
         {
             "title": "Lab 3: Create a trusted connection between Oracle GoldenGate and OCI GoldenGate",

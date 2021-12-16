@@ -5,6 +5,9 @@ In this lab, you will learn how IT can establish Database Private Cloud for enab
 
 *Estimated Lab Time:* 60 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:N6840yjGnME)
+
 ### About Multitenant Database Lifecycle Management
 Oracle Enterprise Manager Database Lifecycle Management Pack comes with out-of-box Deployment Procedures to provision, clone, and patch  various configurations of the Oracle Database. The Management Pack offers new capabilities that simplify support for the entire lifecycle of pluggable databases, including migration, plugging and unplugging. The Management Pack features include pluggable database (PDB) provisioning and management from the self-service portal, PDB patching and upgrades, and PDB relocation to new platforms.
 
@@ -33,7 +36,7 @@ The objective of this workshop is to highlight Oracle Enterprise Manager 13c Lif
 
 ## Task 1: Create Pluggable Database (PDB)
 
-1. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+1. On the browser window on the right preloaded with *Enterprise Manager*, if not already logged in, click on the *Username* field and login with the credentials provided below.
 
     ```
     Username: <copy>sysman</copy>

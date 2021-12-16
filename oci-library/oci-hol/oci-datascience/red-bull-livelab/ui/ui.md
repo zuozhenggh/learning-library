@@ -4,19 +4,19 @@
 
 This lab explains the steps to deploy the UI access, that aready exists in your jupyter notebook to predict first 5 drivers for a given race. So this lab is just to explain what these files and their functions are doing to and for our model.      
 
-Estimated Time: 1 hr
+Estimated Time: 60 minutes
 
-<b> Objectives </b>
+### Objectives
 
 In this lab, you will:
 * Deploy UI Access to predict first 5 drivers for a given race
 
-<b> Prerequisites </b>
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP 1**: Deploy UI Access to predict first 5 drivers in a given race
+## **Task 1**: Deploy UI Access to predict first 5 drivers in a given race
 
 Navigate to the ``` /redbull-analytics-hol/beginners/web ``` directory in your Jupyter Notebook session. Below we have provided a step-by-step explaination for deploying UI Access to predict first 5 drivers in a given race
 

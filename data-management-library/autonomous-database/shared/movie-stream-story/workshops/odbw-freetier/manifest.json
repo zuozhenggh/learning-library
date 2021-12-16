@@ -32,7 +32,7 @@
             "filename": "../../analyze-data/analyze-data.md"
         },
         {
-            "title": "Lab 5a: Analyzing Movie Sales Data",
+            "title": "Lab 5a: Analyze Movie Sales Data",
             "description": "Analyzing Movie Sales Data",
             "filename": "../../analyzing-movie-sales-data/analyzing-movie-sales-data.md"
           },
@@ -42,27 +42,27 @@
             "filename": "../../deeper-analysis-movie-sales-data/deeper-analysis-movie-sales-data.md"
           },
          {
-            "title": "Lab 5c: Finding Our Most Important Customers",
+            "title": "Lab 5c: Find Our Most Important Customers",
             "description": "Finding Our Most Important Customers",
             "filename": "../../finding-most-important-customers/finding-most-important-customers.md"
           },
           {
-            "title": "Lab 5d: Targeting Customers Based On Viewing Patterns",
+            "title": "Lab 5d: Target Customers Based On Viewing Patterns",
             "description": "Targeting Customers Based On Viewing Patterns",
             "filename": "../../targeting-customers/targeting-customers.md"
           },
           {
-            "title": "Lab 5e: Applying Machine Learning To Customer Demographics",
+            "title": "Lab 5e: Apply Machine Learning To Customer Demographics",
             "description": "Applying Machine Learning To Customer Demographics",
             "filename": "../../applying-machine-learning/applying-machine-learning.md"
           },
          {
-            "title": "Lab 5f: Managing Text Lists Using SQL",
+            "title": "Lab 5f: Manage Text Lists Using SQL",
             "description": "Managing Text Lists Using SQL",
             "filename": "../../managing-text-lists/managing-text-lists.md"
           },
           {
-            "title": "Lab 6: Working with JSON Data",
+            "title": "Lab 6: Work with JSON Data",
             "filename": "../../working-with-semi-structured-data/working-with-semi-structured-data.md"
         },
         {

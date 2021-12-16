@@ -1,23 +1,23 @@
-# Application Containers #
+# Application containers
 
 ## Introduction
-This is a series of 12 hands-on labs designed to familiarize you with the Application Container functionality of Oracle Multitenant. In these labs, we follow the journey of a notional company, Walt’s Malts, as their business expands from a single store to a global powerhouse – “from startup to starship”.
+This is a series of 12 hands-on labs designed to familiarize you with the Application Container functionality of Oracle Multitenant. In these labs, we follow the journey of a notional company, Walt’s Malts, as their business expands from a single store to a global powerhouse, “from startup to starship”.
 
-*Estimated Workshop Time*: 1 hour
+Estimated Time: 1 hour
 
 [](youtube:ZPOjjF3kCvo)
 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
+- SSH Private Key to access the host using SSH
 - You have completed:
     - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Clone, Plug and Drop
 
-## Task 0: Connect to Your Instance and Login
+## Task 0: Connect to your instance and log in
 
 This Lab assumes that you have already Initialized your environment as instructed in "*Lab: Clone, Plug and Drop*". If you haven't please return to that lab and execute "*Step 0*" at the minimum.
 
@@ -43,13 +43,13 @@ This Lab assumes that you have already Initialized your environment as instructe
 ## Task 1: Instant SaaS
 This section shows how Multitenant with Application Containers provides an instant SaaS architecture for an application formerly architected for standalone deployment.
 
-The tasks you will accomplish in this step are:
+The tasks you will do in this step are:
 - Setup Application Root - wmStore_Master
 - Install v1 of Application wmStore in Application Root
 - Create and sync Application Seed and provision Application PDBs for four franchises: Tulsa, California, Tahoe, NYC
 - Populate Application Tenant PDBs with demo data.
 
-In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Command Line (SQLcl).  Oracle **SQLcl** is the modern, command-line interface to the database.  **SQLcl** has many key features that add to the value of the utility, including command history, in-line editing, auto-complete using the TAB key and more.  You can learn more about **SQLcl** [here](https://www.oracle.com/database/technologies/appdev/sqlcl.html).
+In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Command Line (SQLcl).  Oracle **SQLcl** is the modern, command line interface to the database. **SQLcl** has many key features that add to the value of the utility, including command history, in-line editing, auto complete using the TAB key and more. You can learn more about **SQLcl** [at the Oracle SQLcl website](https://www.oracle.com/database/technologies/appdev/sqlcl.html).
 
 
 1. Start SQLcl, set the sqlformat for easier on-screen viewing, and connect to **CDB1**.
@@ -251,7 +251,7 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
 
     ![](./images/task1.3.4-insertvalues.png " ")
 
-4. Create the application seed PDB, which will be used to create additional application PDBs.  Open the application seed PDB after it is created.
+4. Create the application seed PDB, which will be used to create additional application PDBs. Open the application seed PDB after it is created.
 
     ```
     <copy>conn system/oracle@localhost:1523/wmStore_Master;</copy>
@@ -311,7 +311,7 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
 
     ![](./images/task1.6-createapppdb.png " ")
 
-7. Create franchise-specific data by running the supplied script.  In SQLcl we'll use the "cd" command to execute scripts from the correct directory.
+7. Create franchise-specific data by running the supplied script. In SQLcl we'll use the "cd" command to execute scripts from the correct directory.
 
     ```
     <copy>conn system/oracle@localhost:1523/wmStore_Master;</copy>
@@ -329,10 +329,10 @@ In the following labs, instead of SQL\*Plus you will use Oracle SQL Developer Co
 
     ![](./images/task1.7-createfranchise2.png " ")
 
-## Task 2: PDB Exploration
+## Task 2: PDB exploration
 In this section you will take a brief tour of the newly created SaaS estate.
 
-The tasks you will accomplish in this step are:
+The tasks you will do in this step are:
 - Look at the PDBs that have been created so far
 - Experiment with different classes of User
 - Perform queries against different franchises
@@ -408,7 +408,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task2.4-cannotusetulsa.png " ")
 
-5. Now you'll explore the data inside the application PDBs using some sample queries.  Note that each store has its own products, sales campaigns, and order quantities. First you'll create a script to query each franchise's sales by product by campaign
+5. Now you'll explore the data inside the application PDBs using some sample queries. Note that each store has its own products, sales campaigns, and order quantities. First you'll create a script to query each franchise's sales by product by campaign
 
     ```
     <copy>
@@ -462,9 +462,9 @@ The tasks you will accomplish in this step are:
 In this section you have observed how each application PDB has its own data through queries directly against each application PDB.  In an upcoming lab, you will learn how to run queries from the Application Root across multiple Application Tenant PDBs.
 
 ## Task 3: Upgrade from v1 to v2
-In this section we'll upgrade Application wmStore from v1 to v2. Despite each franchise having a separate tenant PDB, there is only one master application definition to be upgraded – in the Application Root. We run the upgrade script only once, against the Application Root. It is then simply a matter of synchronizing the tenant PDBs for each franchise for them to be upgraded to the new version. Note that this model allows for granular (per tenant/franchise) upgrade schedules.
+In this section we'll upgrade Application wmStore from v1 to v2. Despite each franchise having a separate tenant PDB, there is only one master application definition to be upgraded, in the Application Root. We run the upgrade script only once, against the Application Root. It is then simply a matter of synchronizing the tenant PDBs for each franchise for them to be upgraded to the new version. Note that this model allows for granular (per tenant/franchise) upgrade schedules.
 
-The tasks you will accomplish in this step are:
+The tasks you will do in this step are:
 - Upgrade application wmStore to v2
 - Synchronize three of four Application Tenant PDBs
 
@@ -623,10 +623,10 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task3.5-looknotupgradepdb.png " ")
 
-## Task 4: Containers Queries
-In this section we introduce a very powerful cross-container aggregation capability: **containers()** queries. Containers() queries allow an application administrator to connect to the Application Root and aggregate data with a single query across some or all Application Tenants (Franchises). This is another example of how Multitenant, with Application Containers, allows you to manage many Application Tenants as one, when needed. Notice values in the column Franchise come from Con$Name. Remember that containers() queries are executed in Root and all containers plugged into it.
+## Task 4: Containers queries
+In this section we introduce a very powerful cross-container aggregation capability: **containers()** queries. Containers() queries enable an application administrator to connect to the Application Root and aggregate data with a single query across some or all Application Tenants (Franchises). This is another example of how Multitenant, with Application Containers, enables you to manage many Application Tenants as one, when needed. Notice values in the column Franchise come from Con$Name. Remember that containers() queries are executed in Root and all containers plugged into it.
 
-The tasks you will accomplish in this step are:
+The task you will do in this step is:
 - Run Queries across containers
 
 1. Connect to the Application Master PDB as the application administrator.
@@ -681,7 +681,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task4.4-ordervolume.png " ")
 
-## Task 5: Application Compatibility
+## Task 5: Application compatibility
 In this section you will explore the PDBs and learn how to set compatibility at the Application Master.
 
 1. Connect to ``CDB1``.
@@ -783,13 +783,13 @@ In this section you will explore the PDBs and learn how to set compatibility at 
 
 
 
-## Task 6: Expansion Beyond Single CDB and Application Root Replicas
-In this section we follow the global expansion of Walt's Malts. In order to comply with requirements of data sovereignty and latency Walt's Malts has had to expand into a second CDB, CDB2. (In reality this would be in a separate server.) It is very important to note that we still only have a single master application definition, despite the application now being deployed across multiple CDBs.
+## Task 6: Expansion beyond single CDB and application root replicas
+In this section we follow the global expansion of Walt's Malts. To comply with requirements of data sovereignty and latency, Walt's Malts has had to expand into a second CDB, CDB2. (In reality this would be in a separate server.) It is very important to note that we still only have a single master application definition, despite the application now being deployed across multiple CDBs.
 
-The tasks you will accomplish in this step are:
+The tasks you will do in this step are:
 - Create and Open Application Root Replicas (ARRs): wmStore_International, wmStore_West
 - Create Proxy PDBs for the ARRs
-- Synchronize the ARRs via their proxies
+- Synchronize the ARRs by using their proxies
 - Create App Seeds for the ARRs
 - Provision the App PDBs for five new franchises
 - Add franchise-specific products for new franchises
@@ -837,7 +837,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task6.3-openarrs.png " ")
 
-4. Since the databases in CDB2 register with a listener with a non-default port (in this case, port 1524) you will need to update the ARRs with that port information.  This is critical, since the proxy PDBs you will create require this configuration in order to communicate with their target PDBs.
+4. Since the databases in CDB2 register with a listener with a non-default port (in this case, port 1524) you will need to update the ARRs with that port information. This is critical, since the proxy PDBs you will create require this configuration in order to communicate with their target PDBs.
 
     ```
     <copy>connect system/oracle@localhost:1524/wmStore_International</copy>
@@ -913,7 +913,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task6.7-openproxypdb.png " ")
 
-8. Synchronize the Application Root Replicas (ARRs) via their proxies.
+8. Synchronize the Application Root Replicas (ARRs) by using their proxies.
 
     ```
     <copy>conn system/oracle@localhost:1523/wmStore_International_Proxy</copy>
@@ -1048,7 +1048,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task6.14-provisionfranchise.png " ")
 
-15. Switch to the container root and open all of the pluggable databases.
+15. Switch to the container root and open all pluggable databases.
 
     ```
     <copy>alter session set container=CDB$Root;</copy>
@@ -1068,7 +1068,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task6.16-franchisedata.png " ")
 
-17. Connect to wmStore_Master and run a report of orders by franchise.  Note the results include the stores who's application PDBs reside in **CDB2**; these are accessed via the Proxy PDBs that were created in **CDB1**.
+17. Connect to wmStore_Master and run a report of orders by franchise. Note the results include the stores who's application PDBs reside in **CDB2**; these are accessed through the Proxy PDBs that were created in **CDB1**.
 
     ```
     <copy>connect wmStore_Admin/oracle@localhost:1523/wmStore_Master</copy>
@@ -1095,10 +1095,10 @@ The tasks you will accomplish in this step are:
 
 
 
-## Task 7: Durable Location Transparency
-This lab task demonstrates "durable location transparency". In the previous section we saw how Proxy PDBs can provide location transparency, allowing us to access remote application PDBs from the local Application Root. The Proxy PDBs for the Application Root Replicas (ARRs) provided local context (in the master Application Root) for the ARRs, which are physically located in a different CDB. This is a good example of location transparency. In this section, we see how these ARR Proxies can provide "durable location transparency". That is, location transparency that survives the physical reconfiguration of the Application Estate – specifically by relocating an Application PDB for a particular franchise from one CDB to another.
+## Task 7: Durable location transparency
+This lab task demonstrates "durable location transparency." In the previous section we saw how Proxy PDBs can provide location transparency, allowing us to access remote application PDBs from the local Application Root. The Proxy PDBs for the Application Root Replicas (ARRs) provided local context (in the master Application Root) for the ARRs, which are physically located in a different CDB. This is a good example of location transparency. In this section, we see how these ARR Proxies can provide "durable location transparency." That is, location transparency that survives the physical reconfiguration of the Application Estate – specifically by relocating an Application PDB for a particular franchise from one CDB to another.
 
-The tasks you will accomplish in this step are:
+The tasks you will do in this step are:
 - Run a report against wmStore_Master
 - Relocate Tahoe to wmStore_West
 - Run the report again
@@ -1159,12 +1159,12 @@ The tasks you will accomplish in this step are:
 
 Although we physically relocated an application PDB from one CDB to another, that move was transparent to our reporting application.
 
-## Task 8: Data Sharing
+## Task 8: Data sharing
 In this section we introduce the advanced concept of data sharing. We have already seen how Multitenant, with Application Containers, can provide an instant SaaS architecture for an application previously architected for standalone deployment. Technically this is done by installing a master application definition in an Application Root. Application PDBs for each tenant / franchise are plugged into this Application Root and the metadata for the database components of the Application definition is served from the Application root. Up to this point, all data - including data which may be considered part of the application definition "seed data" - has been local. In other words, there's a replica of this seed data in every Application PDB.
 
 In this lab we'll see how, in addition to metadata, common data may also be shared from Application Root. To do this we'll upgrade application wmStore to v3.0 and introduce various powerful data sharing capabilities.
 
-The tasks you will accomplish in this step are:
+The tasks you will do in this step are:
 - Upgrade Application wmStore to v3.0
 - Propagate the Upgrade to all franchises
 - Query the wm_Products table in a franchise PDB to see the sources of data
@@ -1284,7 +1284,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task8.1-createupgrade4.png " ")
 
-2. Sync some of the pluggable databases.
+2. Sync some pluggable databases.
 
     ```
     <copy>
@@ -1383,7 +1383,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task8.4-querymaster.png " ")
 
-5. Query against the container Tulsa.  Note all the data is visible but some data is being shared from the application master.
+5. Query against the container Tulsa. Note all the data is visible but some data is being shared from the application master.
 
     ```
     <copy>connect wmStore_Admin/oracle@localhost:1523/Tulsa</copy>
@@ -1401,15 +1401,15 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task8.5-querytulsa.png " ")
 
-## Task 9: Application Patches
+## Task 9: Application patches
 In this task we define an application patch. Patches are comparable to the application upgrades that we've seen in previous labs, but there are three important differences.
 - The types of operations that are allowed in a patch are more limited. Operations which are destructive are not allowed within a patch, including:
-    - Drop a table, column, index, trigger...
-    - create or replace view, package, procedure...
+    - Drop a table, column, index, trigger, and others.
+    - Create or replace view, package, procedure, and others.
 - Patches do not involve creation of Application Root Clones.
 - Patches are not version-specific. This means that a single patch may be applied to multiple application versions.
 
-The tasks you will accomplish in this step are:
+The tasks you will do in this step are:
 - Define patch 301 for application wmStore
 - Propagate the patch to the Application Root Replicas. Then apply it to three franchises (but not to all)
 
@@ -1524,7 +1524,7 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task9.1-createpatch2.png " ")
 
-2. Apply the patch to some but not all of the databases.
+2. Apply the patch to some but not all databases.
 
     ```
     <copy>
@@ -1540,10 +1540,10 @@ The tasks you will accomplish in this step are:
     ```
     ![](./images/task9.2-applypatch.png " ")
 
-## Task 10: DBA Views
-This section we introduce some of the DBA Views which are relevant to Application Containers.
+## Task 10: DBA views
+This section we introduce some DBA Views which are relevant to Application Containers.
 
-The tasks you will accomplish in this step are:
+The task you will do in this step is:
 - Explore various DBA Views as they relate to Application Containers
 
 1. DBA_PDBs
@@ -1679,11 +1679,11 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task10.7-dba_app_errors.png " ")
 
-## Task 11: Diagnosing and Correcting Problems, Restarting Sync
+## Task 11: Diagnosing and correcting problems, restarting sync
 This section will explore the ability to restart the patching process after diagnosing errors.
 
-The tasks you will accomplish in this step are:
-- Deliberately make a manual change to NYC that will conflict with applying patch 301
+The tasks you will do in this step are:
+- Make a manual change to NYC that will intentionally conflict with applying patch 301
 - Attempt to sync NYC to apply the patch - anticipating failure
 - Query relevant DBA views to identify the problem
 - Resolve the problem and restart the sync, which should now succeed.
@@ -1737,10 +1737,10 @@ The tasks you will accomplish in this step are:
 
     ![](./images/task11.4-syncsuccess.png " ")
 
-## Task 12: Container Map
+## Task 12: Container map
 This section we explore another location transparency technology: Container Map. Here we follow the expansion of Walt's Malts through the acquisition of a formerly independent distributor of Walt's Malts products. This company is named Terminally Chill, and their niche was selling Walt's Malts products through a number of small kiosks in various airports globally. The Terminally Chill application has a different design from the original wmStore application. Whereas wmStore was originally designed for standalone deployment, Terminally Chill used a single database to manage data for all kiosks in all airports. The application server tiers are designed to connect directly to a single database, with query predicates to retrieve data for the right airport and kiosk. In this lab, we'll see how Container Map can help accommodate applications of this design.
 
-The tasks you will accomplish in this step are:
+The tasks you will do in this step are:
 - Setup Application PDBs for new Airport franchises
 - Install v1 of Application "Terminal"
 - Sync Application PDBs

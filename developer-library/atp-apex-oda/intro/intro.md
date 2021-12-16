@@ -18,7 +18,7 @@ Estimated Workshop Time: 90 minutes.
 
 ## Task 1: Requirements
 
-1. An Oracle Trail Account. 
+1. An Oracle Trial Account. 
 Here's a video to help with signing up:[](youtube:4U-0SumNz6w)
 
 2. In order to walk through this workshop you need to develop the integration with **REST API**. We will use **Cloud shell** as part of the DevOps tool preinstalled that the **Oracle Cloud** have ready to use. You can learn more about **Oracle Cloud Shell** [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm).

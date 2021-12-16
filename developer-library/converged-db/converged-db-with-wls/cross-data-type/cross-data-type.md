@@ -20,16 +20,14 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
 ## Task 1: Connect to the Pluggable Database (PDB)
 
-1. Open Linux terminal on VNC. As Oracle user set Oracle Environment and connect to the PDB.
+1. As *oracle* user from your remote desktop session, set the environment and connect to the PDB.
 
     ```
     <copy>

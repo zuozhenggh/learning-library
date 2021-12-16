@@ -1,4 +1,4 @@
-# Failover and Reinstate
+# Failover And Reinstate
 
 ## Introduction
 A failover is an unplanned event that assumes the primary database is lost. The standby database is converted to a primary database immediately. A failover might result in some data loss when you use **Maximum Performance** protection mode. After a failover the old primary database must be reinstated as a physical standby which is made simpler with flashback database and Data Guard broker enabled. 
@@ -15,9 +15,9 @@ Estimated Time: 30 minutes
 This lab assumes you have already completed the following labs:
 
 - Deploy Active Data Guard
-- Test with Active Data Guard
+- Test With Active Data Guard
 
-## Task 1: Setup the current primary database flashback on
+## **Task 1:** Setup Current Primary Database Flashback On
 
 In the previous lab, you have done the Data Guard switch over. Now, the current primary database is the **ORCLSTBY** and the current standby database is the **ORCL**.
 
@@ -189,7 +189,7 @@ In the previous lab, you have done the Data Guard switch over. Now, the current 
 
 Now, the primary is the back to the **ORCL** database, and the standby database is disabled, which needs to be reinstated.
 
-## Task 3: Reinstate the previous primary database
+## **Task 3:** Reinstate Previous Primary Database
 
 1. Connect  to the current standby database, shutdown the database and startup mount before reinstating. 
 
@@ -273,4 +273,4 @@ Now, You have completed the fundamentals of the ADG labs. If you are interested,
 ## Acknowledgements
 
 * **Author** - Minqiao Wang, Oct 2020 
-* **Last Updated By/Date** - Minqiao Wang, Aug 2021
+* **Last Updated By/Date** - Minqiao Wang, Oct 2021

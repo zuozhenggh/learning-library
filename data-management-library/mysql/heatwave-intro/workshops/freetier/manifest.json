@@ -14,7 +14,7 @@
           },
      
           {
-              "title": "Lab 1: Create MySQL Database System",
+              "title": "Lab 1: Create MySQL Database System and HeatWave Cluster",
               "filename": "../../create-dbs/create-dbs.md"
           },
   
@@ -24,8 +24,8 @@
           },
              
           {
-              "title": "Lab 3: Setup HeatWave cluster",
-              "filename": "../../setup-heatwave/setup-heatwave.md"
+              "title": "Lab 3: Load HeatWave cluster",
+              "filename": "../../load-heatwave/load-heatwave.md"
           },
           
           {

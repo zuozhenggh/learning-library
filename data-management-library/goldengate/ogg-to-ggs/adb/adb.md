@@ -6,7 +6,7 @@ This lab walks you through the steps to create the required resources you'll use
 
 > **Note:** *This workshop uses Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
-Estimated time: 20 mins
+Estimated time: 20 minutes
 
 ### Objectives
 

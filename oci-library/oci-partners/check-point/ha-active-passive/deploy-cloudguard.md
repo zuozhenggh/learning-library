@@ -183,9 +183,7 @@ Estimated Time: 30 minutes.
 
 5. Select **backend** interface and click on **Assign Secondary Private IP Address** and fill out the dialog box for **backend** interface secondary IP address:
 
-      - **Public IP Type**: Select Reserved Public IP
-      - **Select Existing Reserved Public IP Address**:  If you have an existing IP you can select but in this case you will create a new public IP.
-      - **PublicIP Name**:  Enter a user-friendly name
+      - **Public IP Type**: No Public IP
       - **COMPARTMENT**: Ensure your compartment is selected
 
     ![](../common/images/45-CloudGuard1-Hub-VCN-backend-Instance-Floating-IP.png " ")
@@ -210,8 +208,8 @@ Estimated Time: 30 minutes.
 
 3. Select **Create Dynamic Group** and fill out the dialog box for creating dynamic group:
 
-      - **Name**: Select Reserved Public IP
-      - **Description**:  If you have an existing IP you can select but in this case you will create a new public IP.
+      - **Name**: Entery Dynamic Group Name 
+      - **Description**:  Enter Dynamic Group Description
       - **Matching Rules**:  Click on Rule-Builder With **Any of The Following** option
         - **Instance OCID**:
             - **Value**: Enter CloudGuard1 Instance OCID

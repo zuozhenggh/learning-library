@@ -7,6 +7,10 @@ In this lab, you clone PDB1 from CDB1 as PDB2 in CDB2. Use the `workshop-install
 
 Estimated Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:iVwpljD1tpE)
+
 ### Objectives
 
 In this lab, you will:

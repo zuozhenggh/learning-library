@@ -1,4 +1,4 @@
-# Testing with Active Data Guard and Perform a Switchover
+# Testing with Active Data Guard And Perform Switchover
 
 ## Introduction
 In this lab, You can run some testing with the ADG and Perform a Switchover.
@@ -17,7 +17,7 @@ This lab assumes you have already completed the following labs:
 
 - Deploy Active Data Guard
 
-## Task 1: Test transaction replication
+## **Task 1:** Test Transaction Replication
 
 1. Connect the primary side with **oracle** user, create a test user in orclpdb, and grant privileges to the user. You need open the pdb if it is closed.
 
@@ -182,7 +182,7 @@ If the `OPEN_MODE` is **READ ONLY**, you can run the following command in sqlplu
     SQL> 
     ```
 
-## Task 2: Check lag between the primary and standby
+## **Task 2:** Check Lag Between Primary And Standby
 
 There are several ways to check the lag between the primary and standby.
 
@@ -385,7 +385,7 @@ There are several ways to check the lag between the primary and standby.
 
 
 
-## Task 3: Switchover to the standby 
+## **Task 3:** Switchover To Standby 
 
 At any time, you can manually execute a Data Guard switchover (planned event) or failover (unplanned event). Customers may also choose to automate Data Guard failover by configuring Fast-Start failover. Switchover and failover reverse the roles of the databases in a Data Guard configuration – the standby database becomes primary and the original primary becomes the standby database. Refer to Oracle MAA Best Practices for additional information on Data Guard role transitions. 
 
@@ -524,6 +524,5 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020 
-* **Last Updated By/Date** - Minqiao Wang, Aug 2021
-* **Workshop Expiry Date** - Nov 30, 2021
+* **Last Updated By/Date** - Minqiao Wang, Oct 2021
 

@@ -6,6 +6,9 @@ In this lab you will learn how to use the Enterprise Manager Job System to autom
 
 *Estimated Lab Time*: 60 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:9rfSlEIv-oQ)
+
 ### About the Enterprise Manager Job System
 
 A job is a unit of work that you define to automate commonly-run tasks. Scheduling flexibility is one of the advantages of jobs. You can schedule a job to start immediately or start at a later date and time. You can also run the job once or at a specific interval, such as three times every month. The Enterprise Manager Job System serves these purposes:
@@ -37,7 +40,7 @@ In this lab you will learn:
 
 In this workshop we will first review the Job you ran in STEP 0 to set user *oracle*'s Named Credentials. This is a Read-Only exercise to explain how that Library job was created.
 
-1.  On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+1.  On the browser window on the right, preloaded with *Enterprise Manager*, if you are already logged in as user sysman, logout. Click on the *Username* field and login as emadmin. These credentials are provided below for reference
 
   ```
   Username: <copy>emadmin</copy>

@@ -11,6 +11,10 @@ In this lab, you verify that the listener on the `workshop-installed` compute in
 
 Estimated Time: 5 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:AzWNrlQ3_uo)
+
 ### Objectives
 
 In this lab, you will:

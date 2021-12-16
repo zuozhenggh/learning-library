@@ -56,6 +56,12 @@ Estimated Lab Time: 15 minutes
 
     You have now torn down all the resources you created for the EBS Cloud Manager Instance and its EBS Environments. 
 
+## More documentation on EBS Cloud Manager
+
+If you're interested in the full capabilities of EBS Cloud manager and would like to learn more follow the link below!
+
+[Full documentation on Oracle EBS Cloud Manager](https://docs.oracle.com/cd/E26401_01/doc.122/f35809/toc.htm)
+
 ## Acknowledgements
 
 * **Author:** William Masdon, Cloud Engineering

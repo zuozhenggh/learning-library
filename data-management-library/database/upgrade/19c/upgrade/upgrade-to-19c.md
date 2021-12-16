@@ -9,6 +9,9 @@ The only thing you need to provide is a config file in text format.
 
 *Estimated Lab Time*: 45 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:BRR3YjQL7Kc)
+
 
 ### About AutoUpgrade
 The AutoUpgrade utility identifies issues before upgrades, performs pre- and postupgrade actions, deploys upgrades, performs postupgrade actions, and starts the upgraded Oracle database.

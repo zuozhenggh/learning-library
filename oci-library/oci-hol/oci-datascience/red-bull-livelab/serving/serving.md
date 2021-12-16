@@ -10,19 +10,19 @@ This lab will walk you through the steps to deploy and serve the best trained mo
 
 It seems the Neural Network Classification is the best model to return the highest scores, correctly predicting the winner for 62% of the races.
 
-Estimated Time: 1 hr
+Estimated Time: 60 minutes
 
-<b> Objectives </b>
+### Objectives
 
 In this lab, you will:
 * Execute ``` 05.ML_Model_Serving.ipynb ``` to deploy the best ML model, which is served and consumed using REST API
 
-<b> Prerequisites </b>
+### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP 1**: Execute ``` 05.ML_Model_Serving.ipynb ``` to deploy the best ML model, served and consumed using REST API
+## **Task 1**: Deploy the Best Machine Learning Model
 
 Navigate to the ``` /redbull-analytics-hol/beginners/``` directory in your Jupyter Notebook session and execute ``` 05.ML_Model_Serving.ipynb ```. 
 
@@ -50,7 +50,7 @@ Navigate to the ``` /redbull-analytics-hol/beginners/``` directory in your Jupyt
 
   ![Image alt text](images/picture6.png)
 
-
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Ignacio Martinez, Principal Advanced Support Engineer
