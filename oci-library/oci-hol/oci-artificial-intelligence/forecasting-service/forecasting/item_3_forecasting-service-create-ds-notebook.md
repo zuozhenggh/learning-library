@@ -1,4 +1,4 @@
-# Lab 4: Data Science Notebook Set up
+# Lab 1: Data Science Notebook Set up
 
 ## Introduction
 
