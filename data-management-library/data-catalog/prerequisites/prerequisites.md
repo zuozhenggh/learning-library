@@ -6,7 +6,6 @@ This lab will walk you through the steps to set up the prerequisites before star
 
 Estimated Time: 45 minutes
 
-
 ### Objectives
 
 In this lab, you will:
@@ -14,8 +13,8 @@ In this lab, you will:
 * Set up an Autonomous Data Warehouse.
 * Upload sample data to Autonomous Data Warehouse.
 
-
 ## Task 1: Log on to the Oracle Cloud Console
+
 1. To sign in to Oracle Cloud at [cloud.oracle.com](https://cloud.oracle.com) you need:
 
     * Your cloud account name (also sometimes referred to as your tenancy name)
@@ -207,7 +206,6 @@ Next, you download the client credentials wallet file for the database. This fil
    4. Click **Download**.
       The wallet file gets downloaded as a zip file and is named **Wallet_&lt;databasename&gt;.zip**.
 
-
 ## Task 5: Prepare the Autonomous Data Warehouse
 
 In this workshop, **Autonomous Data Warehouse** serves as the **target data asset** for our data catalog tasks. In this step, you will configure your target Autonomous Data Warehouse database in order to complete all the labs in this workshop.
@@ -270,7 +268,6 @@ In this task, you create a new user on the Autonomous Data Warehouse and then ru
 
   ![Sales History Schema](./images/sales-history-schema.png " ")
 
-  **Congratulations!** You can now **proceed to the next lab**.
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)

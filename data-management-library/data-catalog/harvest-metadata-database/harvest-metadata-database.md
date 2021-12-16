@@ -82,7 +82,6 @@ To harvest a data asset, you must have created at least one connection to the da
 
 Here is how you harvest data entities from a data asset:
 
-
 1. Once the Connection is added, Click **Harvest** on the data asset **Summary** tab.
 
 	![Click Harvest](./images/harvest1.png " ")
@@ -119,10 +118,6 @@ Here is how you harvest data entities from a data asset:
 10. Click **Refresh** on the Data Asset details page if required and then click **Schemas** to see the harvested schema.
 
 	![Click Refresh](./images/harvest-job4.png " ")
-
-
-    **Congratulations!** You can now **proceed to the next lab**.
-
 
 ## Learn More
 

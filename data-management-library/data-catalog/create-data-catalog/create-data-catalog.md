@@ -13,6 +13,7 @@ In this lab, you will:
 * View Created Data Catalog Instance
 
 ###Prerequisites
+
 Complete Lab0 : Steps 1-3
 
 ## Task 1: Create a Data Catalog                                 
@@ -49,9 +50,6 @@ You complete a single form to create a Data Catalog instance. Oracle takes care 
 2. Click an instance name to open and use the data catalog.
 
     ![Click Instance Name](./images/view-data-catalog2.png " ")
-
-
-    **Congratulations!** You can now **proceed to the next lab**.
 
 ## Learn More
 
