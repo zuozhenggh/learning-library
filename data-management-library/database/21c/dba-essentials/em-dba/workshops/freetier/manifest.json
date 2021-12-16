@@ -1,10 +1,10 @@
 {
-  "workshoptitle": "DBA Essentials - Oracle EM Database Administration (DBA)",
+  "workshoptitle": "DBA Essentials - DB Admin with Enterprise Manager Cloud Control",
   "help": "livelabs-help-em_us_grp@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "The workshop on Oracle Enterprise Manager Cloud Control (Oracle EMCC) Database Administration (DBA).",
+      "description": "Introduction.",
       "filename": "./../../intro-emcc/intro-emcc.md",
       "type": "em-dba"
     },
@@ -23,7 +23,7 @@
       "title": "Lab 2: Setup Compute Instance",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "08/31/2021",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
     },
     {
       "title": "Lab 3: Initialize Environment",

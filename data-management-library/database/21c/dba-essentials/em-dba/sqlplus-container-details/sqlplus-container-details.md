@@ -86,7 +86,7 @@ You have set the environment variables for the active terminal session. You can 
 3.  View the container name and the container id.
 
     ```
-	SQL> <copy>show con_name</copy>
+    SQL> <copy>show con_name</copy>
 
     CON_NAME
     ------------------------------`  
@@ -99,7 +99,7 @@ You have set the environment variables for the active terminal session. You can 
     CON_ID
     ------------------------------
     1 
-	```
+    ```
 
 4.  View all PDBs in the CDB.
 
@@ -148,7 +148,6 @@ You have set the environment variables for the active terminal session. You can 
     ---------------- ------------ ----------
     orcl             OPEN                  0
     ```
-
 
 In this lab, you have learned how to connect to the SQL command-line and view the container details with basic SQL commands.
 
