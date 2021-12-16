@@ -12,13 +12,13 @@ Here is a case study on using the forecast api to get the global and local expla
 
 ### Objectives
 In this lab, you will:
-- learn how to generate global explanation
-- learn how to generate local explanation for all the time steps in the forecast forizon
+- Learn how to generate global explanation
+- Learn how to generate local explanation for all the time steps in the forecast forizon
 
 ### Prerequisites
 - You have completed all the task in Lab 3
 
-### Task 1: Get Global Explanation
+## Task 1: Get Global Explanation
 
 ### Step 1. Call the explanation API as shown below
 
@@ -95,7 +95,7 @@ def plot_global_feature_importance(get_forecast_explanations):
 
 ![Global Feature Importance ](../images/lab4_task1_global_feature_importance.png)
 
-### Task 2: Get Local Explanation
+## Task 2: Get Local Explanation
 
 To get local explanation, there is no seperate api call required. The api call for get explanation will fetch both global and local explanations
 
