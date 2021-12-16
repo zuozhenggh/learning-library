@@ -21,14 +21,13 @@ In this lab, you will:
 
 ### Prerequisites
 This lab assumes you have:
-
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* You have completed:
-    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
     * Lab: Create Datasource connections
-    * Lab: Create Groups and Compare Pairs. Create a Group by name **Group_DBPartition**.
+    * Lab: Create Groups and Compare Pairs. Create a Group by name **`Group_DBPartition`**.
     * Lab: Create Groups and Compare Pairs. Follow the Tasks 1 to 2 to create a compare pair.
 
 ## **Task 1:** Configure Database Row Partitioning
@@ -72,5 +71,5 @@ To configure Database Row Partitioning:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Sukin Varghese, Senior Member of Technical staff, Jonathan Fu, Director Product Development
-* **Last Updated By/Date** - Anuradha Chepuri, November 2021
+* **Contributors** -  Sukin Varghese , Jonathan Fu, Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2021

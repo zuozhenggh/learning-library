@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Get Started with Oracle GoldenGate Veridata",
+  "workshoptitle": "Get Started with Oracle GoldenGate Veridata Advanced Features",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -32,21 +32,17 @@
       "title": "Lab 4: Configure Delta Comparison",
       "description": "This lab shows how to configure Delta Partitioning in Oracle GoldenGate Veridata.",
       "filename": "./../../ggv-delta-comparison/ggv-delta-comparison.md"
-    }
-    ,
-
-    {
-        "title": "Lab 5: Configure Auto Partitions",
-        "description": "This lab shows how to configure Automatic Row Partitioning in Oracle GoldenGate Veridata.",
-        "filename": "./../../ggv-auto-partitions/ggv-auto-partitions.md"
-    }
-    ,
-    {
-        "title": "Lab 6: Configure Database Partitions",
-        "description": "This lab shows how to configure Database Partitioning in Oracle GoldenGate Veridata.",
-        "filename": "./../../ggv-database-partitions/ggv-db-partitions.md"
     },
-
+    {
+      "title": "Lab 5: Configure Auto Partitions",
+      "description": "This lab shows how to configure Automatic Row Partitioning in Oracle GoldenGate Veridata.",
+      "filename": "./../../ggv-auto-partitions/ggv-auto-partitions.md"
+    },
+    {
+      "title": "Lab 6: Configure Database Partitions",
+      "description": "This lab shows how to configure Database Partitioning in Oracle GoldenGate Veridata.",
+      "filename": "./../../ggv-database-partitions/ggv-db-partitions.md"
+    },
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",

@@ -17,7 +17,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-## Task 1: Prepare your environment
+## Task 1: Set up Oracle Database Vault
 
 1. Execute the `setup_DV_CDB1.sh` script to create and enable Oracle Database Vault in CDB1.
 
@@ -112,7 +112,7 @@ In this lab, you will:
     Audit Policy dropped.
     ```
 
-This works because we dictated that only `SYS` and `SYSTEM` users should be allowed to modify the `pol1` audit policy.
+This works because we specified that only `SYS` and `SYSTEM` users should be allowed to modify the `pol1` audit policy.
 
 ## Task 4: Create a new user with `DBA` privileges
 
@@ -129,18 +129,24 @@ This works because we dictated that only `SYS` and `SYSTEM` users should be allo
     SQL> <copy>CREATE USER dba_junior IDENTIFIED BY Ora4U_1234;</copy>
     User created.
     ```
-3. Grant the `DBA` privilege to `dba_junior`.
+
+3. Connect as the `SYS` user.
 
     ```
-    SQL> <copy>GRANT dba TO dba_junior;
-    Grant succeeded.</copy>
+    SQL> <copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba;</copy>
+    ```
+4. Grant the `DBA` privilege to `dba_junior`.
+
+    ```
+    SQL> <copy>GRANT dba TO dba_junior;</copy>
+    Grant succeeded.
     ```
 ## Task 5: Create and attempt to modify a new audit policy
 1. Connect to PDB1 as `dba_junior` and create an audit policy.
 
     ```
-    SQL> <copy>CONNECT dba_junior/Ora4U_1234@PDB1
-    Connected.</copy>
+    SQL> <copy>CONNECT dba_junior/Ora4U_1234@PDB1</copy>
+    Connected.
     ```
 2. Create new audit policy.
 
@@ -162,12 +168,16 @@ This works because we dictated that only `SYS` and `SYSTEM` users should be allo
 1. Attempt to execute `NOAUDIT` on `pol1` as `c##sec_admin`. First, connect to PDB1 as `c##sec_admin`.
 
     ```
-    SQL> <copy>CONNECT c##sec_admin@PDB1</copy>
+    SQL> <copy>CONNECT c##sec_admin/Ora4U_1234@PDB1</copy>
     ```
 2. Enable `NOAUDIT` on `pol1`.
 
     ```
     SQL> <copy>NOAUDIT POLICY pol1;</copy>
+
+    ERROR at line 1:
+    ORA-47400: Command Rule violation for AUDIT POLICY on POL1
+
     ```
 3. Although `c##sec_amdin` is the Database Vault owner, it cannot disable the `AUDIT POLICY` because of the command rule we established earlier.
 
@@ -190,6 +200,11 @@ This works because we dictated that only `SYS` and `SYSTEM` users should be allo
 
     ```
     SQL> <copy>DROP AUDIT POLICY pol1;</copy>
+    ```
+4. Exit SQL*Plus.
+
+    ```
+    SQL> <copy>EXIT</copy>
     ```
 ## Task 8: Clean your environment
 1. Clean your environment.
