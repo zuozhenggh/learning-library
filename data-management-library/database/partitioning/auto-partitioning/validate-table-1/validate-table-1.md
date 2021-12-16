@@ -35,9 +35,9 @@ This lab assumes you have completed the following labs:
 
 Auto partitioning needs a workload to test against the candidate table. Currently the workload does not exist, so this message is returned:
 
-`````
- Auto partitioning validation: INVALID: table is referenced by 0 full table scan queries in the SQL tuning set; 5 queries required
-`````
+    `````
+    Auto partitioning validation: INVALID: table is referenced by 0 full table scan queries in the SQL tuning set; 5 queries required
+    `````
 
 ## Task 2: Generate a Workload - Execute Test Queries
 
