@@ -1,4 +1,4 @@
-# Create the Recommended Partitioned Table
+# Apply the Recommendation
 
 ## Introduction
 

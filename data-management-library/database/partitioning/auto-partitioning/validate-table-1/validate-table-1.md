@@ -1,4 +1,4 @@
-# Check that Table is Suitable for Auto Partition Recommendation
+# Validate the Table
 
 ## Introduction
 
