@@ -15,11 +15,11 @@ In this lab, you will:
 
 ### Prerequisites:
 *	A free tier or paid tenancy account in OCI
-*   You have completed Lab 0 
+*   You have completed tasks in "Getting Started" 
 
 ## Task 1: API key generation  
 
-### Step 1
+### Step 1:
 
 Log in to your oracle cloud account, expand the Profile menu and click on User Settings:
 ![](../images/Lab1_task1_step1_login.png " ")
@@ -31,7 +31,6 @@ Under User Settings click on the API Keys under Resources on the left :
 ### Step 3: 
 
 Click on the Add API Key
-
 
 ![](../images/lab1_task1_step3_addkey.png " ")
 

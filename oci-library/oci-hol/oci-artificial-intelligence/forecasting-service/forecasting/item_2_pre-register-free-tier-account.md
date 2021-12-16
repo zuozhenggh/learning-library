@@ -13,40 +13,40 @@ If you already have access to an Oracle Cloud account, including an Oracle Cloud
 
 ## Task 1: Sign in to Your Account
 
-1. Go to [cloud.oracle.com](https://cloud.oracle.com) and Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+### Step 1: 
+Go to [cloud.oracle.com](https://cloud.oracle.com) and Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/cloud-oracle.png " ")
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/cloud-oracle.png " ")
+### Step 2:
+Expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields. 
 
-2. Expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields. 
+**Note:** Don't use SSO option. Use the Direct Sign-in.  
+![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/cloud-login-tenant.png "")
 
-    **Note:** Don't use SSO option. Use the Direct Sign-in.  
+### Step 3: 
+Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
+![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/oci-signin.png "")
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/cloud-login-tenant.png "")
-
-3. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/oci-signin.png "")
-
-4. You are now signed in to Oracle Cloud!
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/oci-console-home-page.png "")
+### Step 4: 
+You are now signed in to Oracle Cloud!
+![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/oci-console-home-page.png "")
 
 ## Task 2: Set Up Policy
 
 In order for users to create and manage the resources used in Forecasting service, the administrators of the tenancy need to add proper policy to grant permissions to users.
 
-### 1. Navigate to Policies
+### Step 1. Navigate to Policies
 
 Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
 ![](../images/policy-on-menu.png " ")
 
-### 2. Create Policy
+### Step 2. Create Policy
 
 Click Create Policy button. **Note only tenancy administrators or user in administrator group have permissions to create new policies.**
 
 ![](../images/policy-create-button.png " ")
 
-### 3. Create a new policy with the following statements:
+### Step 3. Create a new policy with the following statements:
 
 If you want to allow all the users in your tenancy to use forecasting service. Create a new policy with the below statement:
 
