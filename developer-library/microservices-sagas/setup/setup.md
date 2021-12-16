@@ -64,7 +64,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. Create a directory to contain the workshop code. The directory name is used to create a compartment of the same name in your tenancy. The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
     ```
-    <copy>mkdir grabdish
+    <copy>mkdir travelbooking
     </copy>
     ```
 
@@ -73,7 +73,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
     ```
-    <copy> cd grabdish
+    <copy>cd travelbooking
     </copy>
     ```
 
@@ -92,8 +92,8 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```
     <copy>
-    sed -i.bak '/grabdish/d' ~/.bashrc
-    echo "source $PWD/microservices-datadriven/grabdish/env.sh" >>~/.bashrc
+    sed -i.bak '/travelbooking/d' ~/.bashrc
+    echo "source $PWD/microservices-datadriven/travelbooking/env.sh" >>~/.bashrc
     </copy>
     ```
 
@@ -103,7 +103,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```
     <copy>
-    source microservices-datadriven/grabdish/env.sh
+    source microservices-datadriven/travelbooking/env.sh
     source setup.sh
     </copy>
     ```

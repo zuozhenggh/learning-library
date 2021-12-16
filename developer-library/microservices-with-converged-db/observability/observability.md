@@ -109,6 +109,8 @@ Watch the video below for a quick walk through of the lab.
     Create the two Derived Fields shown in the picture below.
     The values are as follows:
 
+       ```
+       <copy>services
         Name: traceIDFromSpanReported
         Regex: Span reported: (\w+)
         Query: ${__value.raw}
@@ -120,7 +122,9 @@ Watch the video below for a quick walk through of the lab.
         Query: ${__value.raw}
         Internal link enabled and `Jaeger` selected from the drop-down list
         (Optional) Debug log message: ECID=dfeda5242866aceb
-
+        </copy>
+       ```
+       
       ![](images/traceidfromspan.png " ")
 
       ![](images/traceIdFromEcid.png " ")

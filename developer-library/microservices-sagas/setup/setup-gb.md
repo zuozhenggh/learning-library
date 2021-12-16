@@ -58,8 +58,8 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```
     <copy>
-    sed -i.bak '/grabdish/d' ~/.bashrc
-    echo "source $PWD/microservices-datadriven/grabdish/env.sh" >>~/.bashrc
+    sed -i.bak '/travelbooking/d' ~/.bashrc
+    echo "source $PWD/microservices-datadriven/travelbooking/env.sh" >>~/.bashrc
     </copy>
     ```
 
@@ -69,7 +69,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```
     <copy>
-    source microservices-datadriven/grabdish/env.sh
+    source microservices-datadriven/travelbooking/env.sh
     source setup.sh
     </copy>
     ```
@@ -98,7 +98,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    ![](images/auth-token-region.png " ")
 
-  c. Enter "grabdish" in the description field and click Generate Token.
+  c. Enter "travelbooking" in the description field and click Generate Token.
 
    ![](images/generate-auth-token.png " ")
 

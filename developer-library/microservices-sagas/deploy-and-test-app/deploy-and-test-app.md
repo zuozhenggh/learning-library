@@ -59,7 +59,7 @@ You are ready to access the frontend page. Open a new browser tab and enter the 
 
 Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
 
-You will be prompted to authenticate to access the Front End microservices. The user is `grabdish` and the password is the one you entered in Lab 1.
+You will be prompted to authenticate to access the Front End microservices. The user is `travelbooking` and the password is the one you entered in Lab 1.
 
 ![](images/frontendauthlogin.png " ")
 
