@@ -20,7 +20,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 * An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
 * The OKE cluster and the Autonomous Transaction Processing databases that you created in Lab 1
 
-## Task 1: Deploy all the Microservices and the FrontEnd UI
+## Task 1: Deploy all the microservices and the FrontEnd UI
 
 1.  Run the deploy script. This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
 
@@ -69,7 +69,7 @@ You should then see the Front End home page. You've now accessed your first micr
 
 We created a self-signed certificate to protect the frontend-helidon service. This certificate will not be recognized by your browser and so a warning is displayed. It will be necessary to instruct the browser to trust this site to display the frontend. In a production implementation a certificate that is officially signed by a certificate authority should be used.
 
-## Task 3: Verify the Order and Inventory Functionality of GrabDish store
+## Task 3: Verify the Order and Inventory functionality of GrabDish store
 
 1. Click **Transactional** under **Labs**.
 

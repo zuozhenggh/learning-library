@@ -3,12 +3,21 @@
 ## Introduction
 
 This lab will show you how to setup alert channels in order to be notified when certain monitoring criteria are hit.
-The lab will describe how to setup Slack to receive these notifications though the concept is the same for other channel types such as 
-Prometheus Alert Manager, Email, etc.
 
 
-Estimated lab Time - 10 minutes
+Estimated lab Time - 5 minutes
+
+
+### Objectives
+
+-   Setup alert channels and Slack to receive these notifications (though )the concept is the same for other channel types such as 
+    Prometheus Alert Manager, Email, etc.)
   
+
+### Prerequisites
+
+This lab presumes you have already completed the earlier labs.
+
 ## Task 1: Create a Slack account and obtain the Webhook for it.
 
 *The following flow is essentially the same as that found  in the Grafana docs found 

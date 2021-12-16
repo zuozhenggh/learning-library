@@ -4,9 +4,19 @@
 
 This lab will show you how to determine when an exception/failure occurs in the system and allow you to diagnose and debug the issue.
 
-Estimated lab Time - 10 minutes
+Estimated lab Time - 5 minutes
 
+### Objectives
+
+-   Observe propagation health status
+-   Induce propagation failure and notice `DOWN` health status.
+-   Re-enable propagation and notice `UP` health status.
   
+  
+### Prerequisites
+
+This lab presumes you have already completed the earlier labs.
+
 ## Task 1: Notice propagation health singlestat metric
 
   ![](images/propagationup.png " ")

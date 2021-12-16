@@ -6,7 +6,17 @@ This lab will take a deeper dive into expliaining Metrics, Logging, and Tracing 
 
 You can extend the observability functionality provided here in a number of ways by modifying the metrics and log exporter config, tracing in your microservices, dashboards, etc.
 
-## Task 1: Modify Metrics Exporter config
+Estimated lab Time - 5 minutes
+
+### Objectives
+
+-   Understand the concepts of unified observability and modify the configuration of exporters and and microservices in order to see various metrics, logs, and tracing from both the application and database tier.
+
+### Prerequisites
+
+This lab presumes you have already completed the earlier labs.
+
+## Task 1: Modify metrics exporter config
 
    Modify and save  `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml`
    and/or `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml and run the following command.`
@@ -16,7 +26,7 @@ You can extend the observability functionality provided here in a number of ways
     ```
    You will notice the related configmap is updated and the deployment is reapplied such that they can be observed in the dashboard.
 
-## Task 2: Modify Application Tracing
+## Task 2: Modify application tracing
 
 Study the tracing behavior in `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java` and `OrderServiceEventProducer.java`
 

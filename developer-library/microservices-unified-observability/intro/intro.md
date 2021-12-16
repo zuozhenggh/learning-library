@@ -1,4 +1,5 @@
 # Unified Observability in Grafana with converged Oracle Database
+
 ## Introduction and Overview
 
 This workshop will show you how to automatically configure and use Unified Observability in Grafana to analyze and correlate metrics, logs, and tracing, both in the app-tier and database tier, and all within one "single-pane of glass" (a single Grafana dashboard console).

@@ -6,8 +6,18 @@ This lab will show you how to set up alerts for metrics conditions and trigger t
 
 Estimated lab Time - 10 minutes
 
+### Objectives
+
+-   Configure alert for when `PlaceOrder` average response time exceeds a given value.
+-   Load test the application to induce the alert
+-   Notice the health state of the metric in Grafana and the messages sent to Slack channel.
   
-## Task 1: Notice perf metrics and create Alert for response time threshold
+  
+### Prerequisites
+
+This lab presumes you have already completed the earlier labs.
+
+## Task 1: Notice perf metrics and create alert for response time threshold
 
 1. Notice `PlaceOrder average time` metric panel in `Order Service` section of the Grabdish dashboard, select the drop down menu of the panel and click `edit`.
 
@@ -83,7 +93,7 @@ Estimated lab Time - 10 minutes
      
    ![](images/slackfailure.png " ")
 
-## Task 5: Notice return to healthy state in PlaceOrder panel of dashboard and Slack message sent indicating response time is acceptable again
+## Task 5: Notice return to healthy state and Slack message sent indicating response time is acceptable.
 
    You will notice the health/heart of the PlaceOrder panel in Grafana console turn back to green.
 
