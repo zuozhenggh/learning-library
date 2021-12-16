@@ -34,26 +34,30 @@ This lab assumes you have:
 
 ## Task 1: Access Oracle Machine Learning AutoML UI
 
-To access AutoML UI, you must sign into the Oracle Machine Learning user interface, which also includes Oracle Machine Learning Notebooks, on Autonomous Database:
-To sign into Oracle Machine Learning (OML) user interface from the Autonomous Database Service Console:
+To access AutoML UI, you must sign into the Oracle Machine Learning User Interface, which also includes Oracle Machine Learning notebooks, on Autonomous Database:
+To sign into Oracle Machine Learning User Interface from the Autonomous Database Service Console:
 
-1. Select an Autonomous Database instance, and on the Autonomous Database details page click **Service Console**.
+1. On your Oracle Autonomous Database dashboard, click the Oracle Autonomous Database that you have provisioned.
+
+	![List of provisioned ADBs](images/provisioned_adb.png)
+
+2. On your Oracle Autonomous Database instance page, click **Service Console**. The Launch Service Console dialog opens. Wait till the Service Console opens.
 
 	![Service Console](images/service_console.png)
 
-2. Click **Development**.
+2. On the Service Console page, click **Development** on the left pane.
 
-  ![Development option](images/development.png)
+  ![Development option](images/adw_development.png)
 
-4. On the Development page click **Oracle Machine Learning Notebooks**.
+4. On the Development page, click **Oracle Machine Learning User Interface**. This opens the Oracle Machine Learning sign in page.
 
 	![OML Notebooks option](images/oml_notebooks_option.png)
 
-5. Enter your username and password, and click **Sign in**. This opens the Oracle Machine Learning user interface homepage.
+5. Enter your username and password, and click **Sign in**. This opens the Oracle Machine Learning home page.
 
-6. On your Oracle Machine Learning homepage, click **AutoML** in the Quick Actions section.
+6. On your Oracle Machine Learning home page, click **AutoML** in the Quick Actions section.
 
-	![Homepage](images/homepage_automl.png)
+	![home page](images/homepage_automl.png)
 
 
 
@@ -62,9 +66,9 @@ To sign into Oracle Machine Learning (OML) user interface from the Autonomous Da
 An Experiment can be described as a work unit that contains the definition of data source, prediction target, and prediction type along with optional settings. After an Experiment runs successfully, it presents you a list of machine learning models in the leader board. You can select any model for deployment, or use it to create a notebook based on the selected model.
 When creating an Experiment, you must define the data source and the target of the experiment. To create an Experiment:
 
-1. Click **AutoML** on your Oracle Machine Learning home page. The AutoML Experiments page opens.
+1. Click **AutoML** on your Oracle Machine Learning home page. Alternatively, you can go to the left navigation menu at the upper left corner of the page and click AutoML. The AutoML Experiments page opens.
 
-	![Homepage](images/homepage_automl.png)
+	![home page](images/homepage_automl.png)
 
 2. Click **Create**. The Create Experiments page opens.
 
@@ -78,13 +82,13 @@ When creating an Experiment, you must define the data source and the target of t
 
 5. In the **Data Source** field, click the search icon to open the Select Table dialog box. Select the **CUSTOMERS360** table and click **OK**.
 
-6. In the **Predict** drop-down list, select the column **AFFINITY_CARD** from the ``CUSTOMERS360`` table. This is the target for your prediction.
+6. In the **Predict** drop-down list, select the column **AFFINITY_CARD** from the ``CUSTOMERS360`` table. You can also type the column name and the column names are filtered for easier selection. This is the target for your prediction.
 
 7. In the **Prediction Type** field, the prediction type is automatically selected based on target field data type and cardinality. In this lab, **Classification** is automatically selected.	The supported prediction types are:
 
-	* Classification: For non-numeric data type, Classification is selected by default.
+	* Classification: For non-numeric data type, Classification is selected by default. Classification may be selected for small cardinality numeric data as well.
 	* Regression: For numeric data type, Regression is selected by default.
-8. In the **Case ID** field, select **CUST_ID**. The Case ID helps in data sampling and dataset split to make the results reproducible between experiments. It also aids in reducing randomness in the results. This is an optional field.  
+8. In the **Case ID** field, select **CUST_ID**. For easier selection, you can also type the column name and the column names are filtered. The Case ID helps in data sampling and dataset split to make the results reproducible between experiments. It also aids in reducing randomness in the results. This is an optional field.  
 
 
 ### Task 2.1: Adjust Additional Settings
@@ -111,8 +115,8 @@ To adjust additional settings of this experiment:
 
 	Note the following about the two options:
 
-	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of hyperparamter combinations and hence yields faster results.
-	* **Better Accuracy:** Select this option if you want more hyperparameter combinations to be tried for possibly more accurate models.
+	* **Faster Results:** Select this option if you want to get candidate models sooner, possibly at the expense of accuracy. This option works with a smaller set of pipeline combinations and hence yields faster results.
+	* **Better Accuracy:** Select this option if you want more pipeline combinations to be tried for possibly more accurate models. A pipeline is defined as an algorithm, selected data feature set, and set of algorithm hyperparameters.
 
 > **Note:** This option works with the broader set of hyperparameter options recommended by the internal meta-learning model. Selecting Better Accuracy will take longer to run your experiment, but may provide models with more accuracy.
 
@@ -133,13 +137,13 @@ The Leader Board displays the top performing models relative to the model metric
 
 	![Leader Board](images/leaderboard_1.png)
 
-2. Click on any row in the Leader Board to enable the options - **Deploy, Rename**, and **Create Notebook**. Note that these options are greyed out if you do not click on the rows.
+2. Click **Metrics**. The **Select Additional Metrics** dialog opens.
 
-3. Click **Metrics**. The **Select Additional Metrics** dialog opens.
+	>**Note:** The additional metrics can be selected once the experiment has completed.
 
 	![Leader Board options](images/leaderboard_options.png)
 
-4. In the Select Additional Metrics dialog, click **Precision, Recall, ROC AUC**, and then click the close icon to close the dialog.
+3. In the Select Additional Metrics dialog, click **Precision, Recall, ROC AUC**, and then click the close icon to close the dialog.
 
 	![Select Additional Metrics dialog](images/select_metrics.png)
 
@@ -147,6 +151,7 @@ The Leader Board displays the top performing models relative to the model metric
 
 	![Leader Board showing selected metrics](images/leaderboard_2.png)
 
+4. Click on any row in the Leader Board to enable the options - **Deploy, Rename**, and **Create Notebook**. Note that these options are greyed out if you do not click on the rows.
 
 5. Click on the Naive Bayes model, and then click **Rename**. In the Rename Model dialog, enter `NB_Customer360` to rename the auto generated model name for Naive Bayes. Click **OK**.  	
 
@@ -164,6 +169,8 @@ The Leader Board displays the top performing models relative to the model metric
 
 
 * **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. Confusion Matrix is usually computed on a test dataset and helps in assessing the model quality. Here, the Confusion Matrix results are classified into true positive (actual = predicted = 1) and true negative (actual = predicted  = 0), and false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
+
+	>Note: The values shown here * 100 represent percentages of the test data that correspond to each of the confusion matrix entries.
 
 	![View Confusion Matrix](images/confusion_matrix.png)
 
@@ -260,7 +267,15 @@ To view the generated notebook Customer 360:
 
  	![Generated Notebook](images/notebooks_generated.png)
 
-3. The generated notebook _NB Customer 360_  opens in the notebook editor. This notebook contains the pre-generated heading _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_. Scroll down to view all the paragraphs in the notebook.
+3. The generated notebook _NB Customer 360_  opens in the notebook editor. This notebook contains the pre-generated heading _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_. Click the gear icon on the upper right corner of the notebook to view and set the interpreter binding order.
+
+	![gear icon](images/gear_icon.png)
+
+	You can change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
+
+	![Enable and disable interpreter binding](images/enable_disable_int_bindings.png)
+
+4. Scroll down to view all the paragraphs in the notebook.
 
 * The paragraph titled _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_ contains the experiment metadata. Click the  Run icon to run the markdown paragraph and view the metadata.
 
@@ -270,11 +285,11 @@ To view the generated notebook Customer 360:
 
 	![Generated Notebook](images/generated_nb_1.png)
 
-* The paragraph titled _Build Model_ contains the code to build the model. In this lab, it is the Naive Bayes model. The settings used to produce the model using AutoML are provided here in the ``nb_settings`` variable. The fourth paragraph contains the code to view the model details.
+* The paragraph titled _Build Model_ contains the code to build the model. In this lab, it is the Naive Bayes model. The settings used to produce the model using AutoML are provided here in the ``nb_settings`` variable. The paragraph titled _Show Model Details_ contains the code to view the model details.
 
 	![Generated Notebook](images/generated_nb_2.png)
 
-* The fifth paragraph contains the code to score the data, and the last paragraph to view the model quality metric.
+* The paragraph titled _Data for Scoring_ contains the code to score the data, and the paragraph _Show model quality metric_ contains the code to view the model quality metric.
 
 	![Generated Notebook](images/generated_nb_3.png)
 
@@ -290,4 +305,4 @@ This completes the task of creating a notebook based on a model and viewing the 
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, November, 2021
+* **Last Updated By/Date** - Moitreyee Hazarika, December, 2021

@@ -33,7 +33,7 @@
       {
           "title": "Protect Application Data by Using Database Vault Operations Control",
           "description": "TBA",
-          "filename": "./../../protect-application-data-by-using-database-vault-operations-control/protect-application-data-by-using-database-vault-operations-control.md"
+          "filename": "./../../protect-application-database-vault-operations-control/protect-application-database-vault-operations-control.md"
       },
       {
           "title": "Restrict Users from Executing the AUDIT POLICY and NOAUDIT POLICY SQL Commands by Using Oracle Database Vault Command",
@@ -48,7 +48,7 @@
       {
           "title": "Handle Operations on Oracle-Managed and User-Managed Tablespaces Encrypted in TDE",
           "description": "TBA",
-          "filename": "./../../operations-on-oracle-and-user-managed-tablespaces-encrypted-in-tde/operations-on-oracle-and-user-managed-tablespaces-encrypted-in-tde.md"
+          "filename": "./../../operations-on-managed-tablespaces-encrypted-in-tde/operations-on-managed-tablespaces-encrypted-in-tde.md"
       },
         {
             "title": "Need Help?",
