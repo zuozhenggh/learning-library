@@ -10,7 +10,7 @@ The Forecasting Service at OCI (Oracle Cloud Infrastructure) will create customi
  
 The *OCI Forecasting Service* is a fully managed, serverless and multi-tenant service and is accessible over public *REST APIs* by authenticated users via Cloud Console (only Data Science Notebooks currently available). OCI CLI and SDK will be added in upcoming releases..
 
-This workshop contains four lab sessions for users to get familiar with data requirements, and the full cycle of building the forecasting model and generate forecasts. At the end of the workshop, users will be able to understand how the training data should be prepared, and leverage the APIs for model training and getting forecast along with explainability. 
+This workshop contains four lab sessions for users to get familiar with data requirements and the full cycle of building the forecasting model and generate forecasts. At the end of the workshop, users will be able to understand how the data should be prepared and leverage the APIs for model training and getting forecast along with explainability. 
 
 *Estimated Lab Time*: 90 minutes (4 lab sessions)
 
@@ -49,38 +49,6 @@ At a high level, here are the process of completing a full cycle of using foreca
 5. Forecasting with new data. Users can send new data with same attributes of the training data to the deployment endpoint to get forecast results.
 
 Note that one project can have multiple data assets and multiple models.
-
-## Task 1: Set Up Policy
-
-In order for users to create and manage the resources used in Forecasting service, the administrators of the tenancy need to add proper policy to grant permissions to users.
-
-### 1. Navigate to Policies
-
-Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
-![](../images/policy-on-menu.png " ")
-
-### 2. Create Policy
-
-Click Create Policy button. **Note only tenancy administrators or user in administrator group have permissions to create new policies.**
-
-![](../images/policy-create-button.png " ")
-
-### 3. Create a new policy with the following statements:
-
-If you want to allow all the users in your tenancy to use forecasting service. Create a new policy with the below statement:
-
-```
-<copy>allow any-user to manage ai-service-forecasting-service-family in tenancy</copy>
-```
-
-![](../images/policy-creating-process.png " ")
-
-If you want to limit access to a user group, you can create a new policy with the below statement:
-
-```
-<copy> allow group <group-name> to manage ai-service-forecasting-service-family in tenancy</copy>
-```
-
 [Proceed to the next section](#next).
 
 ## Acknowledgements

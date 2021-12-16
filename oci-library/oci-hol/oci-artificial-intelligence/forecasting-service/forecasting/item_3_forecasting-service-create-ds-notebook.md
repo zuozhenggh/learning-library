@@ -1,8 +1,8 @@
-# Lab 1: Data Science Notebook Set up
+# Lab 4: Data Science Notebook Set up
 
 ## Introduction
 
- In this lab , we will learn how to set up Data Science notebook session to start using the Forecasting service APIs  Also, we will learn about API key generation as API keys are needed for authentication purpose.
+ In this lab, we will learn how to set up a Data Science notebook session to start using the Forecasting service APIs. Also, we will learn about API key generation which are needed for authentication purpose.
 
 *Estimated Lab Time*: 30 minutes
 
@@ -10,11 +10,12 @@
 
 In this lab, you will:
 *	Learn how to generate API key 
-*	Learn how to create a project in Data Science 
-*	Learn how to set up a notebook session in a data science project 
+*	Learn how to create a project in Data Science service 
+*	Learn how to set up a notebook session inside a data science project 
 
 ### Prerequisites:
-*	A free tier or paid tenancy account in OCI 
+*	A free tier or paid tenancy account in OCI
+*   You have completed Lab 0 
 
 ## Task 1: API key generation  
 
@@ -36,7 +37,7 @@ Click on the Add API Key
 
 ### Step 4: 
 
-Download the private key on your system. We will use this later for authorization when using the forecasting APIs. After downloading,  click on Add button. 
+Download the private key on your system. We will use this later for authorization when using the forecasting APIs. After downloading, click on Add button. By clikcing on Add, this key would get listed under API Keys and become active.  
 
 ![](../images/lab1_task1_step4_savekey.png " ")
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this session, we will discuss the data requirements and data formats required by our APIs, and provide sample datasets as examples. 
+In this session, we will discuss the data requirements and data formats required by our APIs through some examples. 
 
 
 ***Estimated Lab Time***: 20 minutes
@@ -11,11 +11,12 @@ In this session, we will discuss the data requirements and data formats required
 
 In this lab, you will:
 - Understand the data requirements and data formats for training model and forecast 
-- Be able to download prepared sample datasets
+- Download prepared sample datasets
 - Upload the downloaded dataset into Data Science Notebook Session
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
+- You have completed Lab 1
 
 ## Task 1: Understand Data Requirements
  Our forecasting service provides an Auto-ML solution with multiple univariate/multivariate algorithms that can run on single series or multiple series at once. For this, there are some data validations and data format requirements that the input data must satisfy.
@@ -34,7 +35,12 @@ For a successful forecast, the input data should pass the following data validat
 * All values have to be >= 0.
 
 ### **Data format requirements**
-The data should contain one timestamp column and other numeric attributes, and timestamp has to be the first column, which satisfy the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601).
+The data should contain one timestamp column and other columns for target variable and series id (if using grouped data).
+- timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format e.g., 2020-07-13T00:00:00Z. If the input date doesn't follow this format then it needs to be converted in the requred format. Python code for converting different date strings to ISO 8601 format is provided in Step 2 of Task 4 in this lab.
+- target_column should contain target values of time series. For example it be sales number of a sales data 
+- series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
+
+**Note**: The column names used in the examples here are just for representation and actual data can have diffrent custom names.  
 
 Currently, our APIs support datasets that can be in one of the following formats:
 
@@ -73,7 +79,7 @@ timestamp,target_column,series_id
 ....
 ``` 
 **3. Time series with additional data:** 
-The input data can have additional covariates that help in forecasting. We call the two datasets as primary and additional. The primary data should have three columns - timestamp, target column and a column for series id. The additional data must have a timestamp column and a series id column apart from the columns containing additional covariates.   
+The input data can have additional influencers that help in forecasting. We call the two datasets as primary and additional. The primary data should have three columns - timestamp, target column and a column for series id. The additional data should have a timestamp column, a series id column and columns for additional influencers.   
 
 **Here is a sample CSV-formatted data:**
 
@@ -98,7 +104,7 @@ timestamp,target_column,series_id
 ```
 Additional data 
 ```csv
-timestamp,promotion,series_id
+timestamp,feature_1,series_id
 2020-07-13T00:00:00Z,0,A
 2020-07-14T00:00:00Z,1,A
 2020-07-15T00:00:00Z,2,A
@@ -119,14 +125,14 @@ The service currently accepts *Inline Data* that can be generated from csv files
 Steps on how to generate inline data from csv files are given in Task 3 below.
 **Note:**
 * Missing values are permitted (with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1).
-* The last line should be an observation with other attributes/signals.
+* The last row of input data should be an observation and not an empty row. 
 
 ## Task 2: Download Sample Data
 
 Here is a sample dataset to help you to easily understand how the input data looks like, Download the files to your local machine.
 
-* [primary data](../files/favorita_13_beverages_primary.csv)
-* [additional data](../files/favorita_13_beverages_add.csv)
+* [Primary data](../files/favorita_13_beverages_primary.csv)
+* [Additional data](../files/favorita_13_beverages_add.csv)
   
 
 ## Task 3: Upload Data to Data Science Notebook
@@ -221,7 +227,7 @@ add_load
   ```
 
 
-## Task 5 : Create Project ID forecast
+## Task 5 : Create Project ID 
 Once, the data is prepared , you  will learn how to create the forecasting service project.
 In the payload:
 - compartmentId  will be same as tenancy id. Please visit Lab1 API Key generation.  

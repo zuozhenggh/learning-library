@@ -1,4 +1,4 @@
-# Getting Started
+# Lab 0: Getting Started
 
 ## Introduction
 
@@ -13,13 +13,13 @@ If you already have access to an Oracle Cloud account, including an Oracle Cloud
 
 ## Task 1: Sign in to Your Account
 
-If you've signed out of the Oracle Cloud, use these steps to sign back in.
-
 1. Go to [cloud.oracle.com](https://cloud.oracle.com) and Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/cloud-oracle.png " ")
 
-2. Expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields.
+2. Expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields. 
+
+    **Note:** Don't use SSO option. Use the Direct Sign-in.  
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/cloud-login-tenant.png "")
 
@@ -31,18 +31,36 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/oci-console-home-page.png "")
 
-## **Rate this Workshop**
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
+## Task 2: Set Up Policy
 
-1.  Go back to your **workshop homepage** in LiveLabs by going back to your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
+In order for users to create and manage the resources used in Forecasting service, the administrators of the tenancy need to add proper policy to grant permissions to users.
 
-    ![](https://github.com/oracle/learning-library/blob/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
+### 1. Navigate to Policies
 
-3.  Click **Rate this workshop**
+Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Identity & Security and click it, and then select Policies item under Identity.
+![](../images/policy-on-menu.png " ")
 
-    ![](https://github.com/oracle/learning-library/blob/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
+### 2. Create Policy
 
+Click Create Policy button. **Note only tenancy administrators or user in administrator group have permissions to create new policies.**
+
+![](../images/policy-create-button.png " ")
+
+### 3. Create a new policy with the following statements:
+
+If you want to allow all the users in your tenancy to use forecasting service. Create a new policy with the below statement:
+
+```
+<copy>allow any-user to manage ai-service-forecasting-service-family in tenancy</copy>
+```
+
+![](../images/policy-creating-process.png " ")
+
+If you want to limit access to a user group, you can create a new policy with the below statement:
+
+```
+<copy> allow group <group-name> to manage ai-service-forecasting-service-family in tenancy</copy>
+```
 [Proceed to the next section](#next).
 
 ## **Acknowledgements**

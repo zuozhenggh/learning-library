@@ -15,6 +15,7 @@ In this lab, you will:
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
+- You have completed Lab 2 
 
 ## Task 1: Create a Forecast model
 
@@ -24,7 +25,7 @@ Creating a model requires 3 actions to kick off training the forecasting model.
 * Set other training parameters as show in below code snippet
 * Create Forecast API Call using the /forecasts url
 
-We pre-define some the parameters of the payload based on the input data
+We pre-define some the parameters of the payload based on the example input data (the one we uploaded in previous lab session)
 ```Python 
 date_col_primary = 'date'
 date_col_add = 'date'
@@ -34,7 +35,22 @@ id_col_add = 'item_id'
 data_frequency = 'DAY'
 forecast_frequency = 'DAY'
 forecast_horizon  = 14
+  
 ```
+
+In the example below we show how to create the payload for calling create forecast API. 
+- "compartmentId": same as tenancy id (refer Task 5 : Create Project ID in Lab 2)
+- "projectId": the one you get after creating a project (refer Task 5 : Create Project ID in Lab 2)
+- "targetVariables": name of the column in primary data having the target values
+- models: models selected for training. Here we are showing some the models implemented in our service.Our Auto-ML service selects the best model out of all the models selected for training. 
+- "forecastHorizon": number of future timesteps for which to forecast 
+- "forecastFrequency": 'DAY', 'WEEK', 'MONTH' or 'YEAR' depending on forecast frequency required 
+- "isDataGrouped": True if data is grouped or having additional data. False if using only one series with no additional data
+- "columnData": inline data (Please refer Task 4: Inline Data preparation in Lab 2)
+- "columnSchema": provide column name and data type for each column in the data source
+- "dataFrequency": 'DAY', 'WEEK', 'MONTH' or 'YEAR' depending on frequency of input data
+- "tsColName": name of the timestamp column 
+- "additionalDataSource": column schema for additional data to be provided if using additional data.This field should be removed if there is no additional data.
 
 ```Python
 %%time
@@ -223,7 +239,7 @@ The above code snippet give below response :
   'isForecastExplanationRequired': True},
  'forecastResult': None,
  'freeformTags': {},
- 'definedTags': {'Oracle-Tags': {'CreatedBy': 'fc-mcs-team',
+ 'definedTags': {'Oracle-Tags': {'CreatedBy': 'demo_user',
    'CreatedOn': '2021-12-14T09:17:08.153Z'}},
  'systemTags': {}}
 
@@ -231,9 +247,11 @@ The above code snippet give below response :
 
 ## Task 2: Get forecast and Prediction Intervals
 - Take the forecast ID from response above and create a *Get forecast API* call using below code snippet
-- Keep refreshing the code cell till the 'lifecycleState' changes from CREATING to ACTIVE 
+- Once the results are produced, the  'lifecycleState' changes to 'ACTIVE'. If it is 'CREATING', then you need to re-run the code below after sometimes.
 - The ```forecastResult``` key in the below ```get_forecast_response``` gives us the forecast for the given horizon  
 - We also get Prediction Intervals from ```predictionInterval``` key in the response
+
+It can take sometime to create the forecast depending on the models selected and the size of the input data.  For the dataset we have taken, it should take around 10-15 minutes to give results. Till then you can take a break or focus on other task.
 
 ```Python
 create_forecast_id = create_forecast_response['id']
@@ -246,7 +264,7 @@ headers = {}
 response = requests.request("GET", url, headers=headers, data=payload, auth=auth)
 get_forecast_response = json.loads(response.text)
 get_forecast_response
-```
+```  
 
 ```Json
 {'description': 'Training Forecast Model',
