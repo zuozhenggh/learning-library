@@ -16,7 +16,7 @@ In this lab, you will:
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
-- You have completed Lab 1
+- You have completed all the tasks in Lab 1
 
 ## Task 1: Understand Data Requirements
  Our forecasting service provides an Auto-ML solution with multiple univariate/multivariate algorithms that can run on single series or multiple series at once. For this, there are some data validations and data format requirements that the input data must satisfy.

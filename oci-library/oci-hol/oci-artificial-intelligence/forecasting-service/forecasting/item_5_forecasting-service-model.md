@@ -15,7 +15,7 @@ In this lab, you will:
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
-- You have completed Lab 2 
+- You have completed all the tasks in Lab 2 
 
 ## Task 1: Create a Forecast model
 

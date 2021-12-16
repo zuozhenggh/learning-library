@@ -16,7 +16,7 @@ In this lab, you will:
 - learn how to generate local explanation for all the time steps in the forecast forizon
 
 ### Prerequisites
-- Forecast ID from the create forecast API
+- You have completed all the task in Lab 3
 
 ### Task 1: Get Global Explanation
 

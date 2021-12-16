@@ -15,7 +15,7 @@ In this lab, you will:
 
 ### Prerequisites:
 *	A free tier or paid tenancy account in OCI
-*   You have completed tasks in "Getting Started" 
+*   You have completed all the tasks in Lab 0.  
 
 ## Task 1: API key generation  
 
