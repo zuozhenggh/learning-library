@@ -11,10 +11,9 @@ This lab shows how to manage the targets discovered by Oracle EMCC. You can view
 View the targets in Oracle EMCC. Add Oracle Database 21c and the Listener as targets in Oracle EMCC and remove them from managed targets. 
 
 ### Prerequisites
-
- - Oracle Database 21c installed and a Container Database (CDB) with at least one Pluggable Database (PDB) created.
- - Oracle EMCC 13.5 installed with Oracle Database 19c as the repository.
- - You have completed -
+This lab assumes you have -
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed -
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Setup Compute Instance
     - Lab: Initialize Environment
@@ -26,16 +25,16 @@ After logging in to Oracle EMCC, you can view the existing targets from the All 
 
 1.	From the **Targets** menu, select **All Targets** to open the All Targets page.
 
-	![All Targets](images/emcc-target-001-alltargetsmenu.png)
+    ![All Targets](images/emcc-target-001-alltargetsmenu.png)
 
 	The All Targets page displays a complete list of targets discovered by Oracle EMCC, such as Hosts, Oracle homes, Listeners, PDBs, and so on.   
     The values may differ depending on the system you are using.  
 
-	![Targets Home](images/emcc-target-002-targethome.png)
+    ![Targets Home](images/emcc-target-002-targethome.png)
 
 2. 	You can use the filters in the **Refine Search** pane on the left to view a specific target type.
 
-	![Refine Search](images/emcc-target-003-refinesearch.png)
+    ![Refine Search](images/emcc-target-003-refinesearch.png)
 
 	Click on a target name to open its home page and view the details.
 
@@ -111,8 +110,8 @@ For this lab, add one Oracle Database and one Listener as targets.
      - **Monitoring Password** - *We!come1*  
      - **Listeners** – Select the checbox for the listener, for example, *Listener_localhost.example.com*.  
 
-	Notice how Oracle EMCC also includes all the associated and discovered PDBs. However, you can manually add more PDBs as targets or remove the selected PDBs.   
-	If you have more CBDs and PDBs on your host, see [Oracle EMCC Documentation](https://docs.oracle.com/en/enterprise-manager/index.html).
+    Notice how Oracle EMCC also includes all the associated and discovered PDBs. However, you can manually add more PDBs as targets or remove the selected PDBs.   
+    If you have more CBDs and PDBs on your host, see [Oracle EMCC Documentation](https://docs.oracle.com/en/enterprise-manager/index.html).
 
 	<!--
 	With the Database Instance selected, click **Configure** to open the Database Instance Configure window.
@@ -124,7 +123,7 @@ For this lab, add one Oracle Database and one Listener as targets.
     ![Configure PDBs](images/emcc-target-011b-addremovepdbs.png)
 	-->
 
-	Leave the defaults for the remaining options and click **Next**.
+    Leave the defaults for the remaining options and click **Next**.
 
 8.  Review the target Oracle Database and the related listener. Click **Save**.   
     The values may differ depending on the system you are using.  
@@ -140,18 +139,18 @@ For this lab, add one Oracle Database and one Listener as targets.
 
     ![Target Added](images/emcc-target-015-dbhomesearch.png)
 
-You can start monitoring and managing your target Oracle Database and the target listener from Oracle EMCC.
+    You can start monitoring and managing your target Oracle Database and the target listener from Oracle EMCC.
 
-On the Databases page, you can change the **View** type to **Database Load Map** and display the target databases in a load map view.
+    On the Databases page, you can change the **View** type to **Database Load Map** and display the target databases in a load map view.
 
-![Target View Type](images/emcc-target-016-dbhomeloadmap.png)
+    ![Target View Type](images/emcc-target-016-dbhomeloadmap.png)
 
-In the load map view, you can select the **View Level** as:
- - **Database** - To display the target Oracle Databases.
- - **Instance** - To display the Database Instances.
- - **Pluggable Database** - To display the CDB and PDBs in each database.
+    In the load map view, you can select the **View Level** as:
+    - **Database** - To display the target Oracle Databases.
+    - **Instance** - To display the Database Instances.
+    - **Pluggable Database** - To display the CDB and PDBs in each database.
 
-**Note:** For this workshop, keep the **View** type as **Search list** which displays the target databases in a list view.
+    **Note:** For this workshop, keep the **View** type as **Search list** which displays the target databases in a list view.
 
 ## Task 3: Remove Oracle Database from managed targets
 
@@ -182,7 +181,7 @@ Removing an Oracle Database Instance or a Database System deletes the entire Ora
 
 The below screenshot gives an example of removing a target CDB, *CDB$ROOT*. The values may differ depending on the system you are using.  
 
-![Warning CDB Removal](images/emcc-target-020-warningcdbremove.png)
+    ![Warning CDB Removal](images/emcc-target-020-warningcdbremove.png)
 
 > **Note**: Oracle EMCC allows you to remove Oracle Databases or PDBs one at a time. You cannot remove multiple Oracle Databases together in a single step.
 
@@ -194,7 +193,7 @@ You can remove a listener from managed targets in Oracle EMCC. After removing a 
 
 1.  From the **Targets** menu, select **All Targets** to open the All Targets page.
 
-	![All Targets](images/emcc-target-001-alltargetsmenu.png)
+    ![All Targets](images/emcc-target-001-alltargetsmenu.png)
 
 2.  On the All Targets page, select the listener you want to remove.  
     For this lab, remove the listener for `orcl.us.oracle.com`. Right-click *LISTENER_localhost.example.com* and select **Target Setup** > **Remove Target**.  
@@ -222,9 +221,6 @@ In this lab, you have learned how to view your targets in Oracle EMCC, add and r
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
-
--   **Author** - Manish Garodia, Principal User Assistance Developer, Database Technologies
-
--   **Contributors** - Suresh Rajan, Kurt Engeleiter, Subhash Chandra, Steven Lemme, Ashwini R
-
--   **Last Updated By/Date** - Manish Garodia, December 2021
+- **Author** - Manish Garodia, Principal User Assistance Developer, Database Technologies
+- **Contributors** - Suresh Rajan, Kurt Engeleiter, Subhash Chandra, Steven Lemme, Ashwini R
+- **Last Updated By/Date** - Manish Garodia, December 2021

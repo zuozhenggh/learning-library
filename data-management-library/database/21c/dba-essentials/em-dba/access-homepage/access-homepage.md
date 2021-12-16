@@ -8,20 +8,19 @@ This lab walks you through the steps to access the container home page from Orac
 
 ### Objectives
 
-Access the container home page from Oracle EMCC. Switch between the Container Database (CDB) home page and the Pluggable Database (PDB) home page. Add pages to and remove pages from the favorites.
+- Access the container home page from Oracle EMCC.
+- Switch between the Container Database (CDB) home page and the Pluggable Database (PDB) home page.
+- Add pages to and remove pages from the favorites.
 
 ### Prerequisites
-
- - Oracle Database 21c installed and a CDB with at least one PDB created.
- - Oracle EMCC 13.5 installed with Oracle Database 19c as the repository.
- - You have completed -
+This lab assumes you have -
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed -
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Setup Compute Instance
     - Lab: Initialize Environment
     - Lab: Log in to Oracle EMCC
- - You have added Oracle Database 21c and the listener as managed targets as explained in this task - [Add Oracle Database and Listener as targets](?lab=manage-targets#Task2:AddOracleDatabaseandListenerastargets).
-
-**Note:** If you have removed the target Oracle Database 21c and the target listener from Oracle EMCC as per the previous lab, add them again as managed targets. 
+    - Lab: Manage Targets - Oracle Database and Listener (Please re-add the Oracle Database 21c and the listener managed targets removed at the end of this lab before proceeding).
 
 ## Task 1: Access Container Home page
 

@@ -19,7 +19,7 @@ Watch this video on *Oracle EMCC Console Overview*.
 In this workshop, you will learn how to *connect to SQL Plus* and *view container details*. You will *log in to Oracle EMCC* console from a web browser and *manage target databases and listeners* from the cloud interface. You will access the *container homepage* from Oracle EMCC and manage your *favorites*.
 
 ### Prerequisites
-
+This lab assumes you have -
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 
 **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
@@ -38,39 +38,39 @@ The figure below shows a sample Oracle EMCC configuration and illustrates how th
 
 Oracle EMCC includes the following components:
 
- - **Oracle Management Agent**
+- **Oracle Management Agent**
 
-   The agent enables you to convert an unmanaged host to a managed host and helps you monitor the targets running on the managed host.
+    The agent enables you to convert an unmanaged host to a managed host and helps you monitor the targets running on the managed host.
 
-   To learn more about managed hosts, see the *What are managed targets and managed hosts?* section below.
+    To learn more about managed hosts, see the *What are managed targets and managed hosts?* section below.
 
- - **Oracle Management Service (OMS)**
+- **Oracle Management Service (OMS)**
 
-   A web-based application to discover, monitor, and manage targets, and to store the collected information in a repository. It also renders the user interface for Oracle EMCC.
+    A web-based application to discover, monitor, and manage targets, and to store the collected information in a repository. It also renders the user interface for Oracle EMCC.
 
- - **Oracle Management Repository**
+- **Oracle Management Repository**
 
-   A storage location for the information, which the Management Agent collects. It consists of objects such as database jobs, packages, procedures, views, and tablespaces. It organizes the data so that OMS can retrieve and display it on the Oracle EMCC console.
+    A storage location for the information, which the Management Agent collects. It consists of objects such as database jobs, packages, procedures, views, and tablespaces. It organizes the data so that OMS can retrieve and display it on the Oracle EMCC console.
 
- - **Plug-ins**
+- **Plug-ins**
 
-   Pluggable entities that help you monitor all types of targets in your environment.
+    Pluggable entities that help you monitor all types of targets in your environment.
 
- - **Oracle Java Virtual Machine Diagnostics (JVMD) Engine**
+- **Oracle Java Virtual Machine Diagnostics (JVMD) Engine**
 
-   It enables you to diagnose performance problems in Java applications in the environment. It eliminates the need to reproduce problems, thus improving application availability and performance.
+    It enables you to diagnose performance problems in Java applications in the environment. It eliminates the need to reproduce problems, thus improving application availability and performance.
 
- - **Oracle EMCC Console**
+- **Oracle EMCC Console**
 
-   The user interface that you see after logging in to Oracle EMCC. The console helps you monitor and administer your entire computing environment from one location on the network.
+    The user interface that you see after logging in to Oracle EMCC. The console helps you monitor and administer your entire computing environment from one location on the network.
 
- - **EMCTL**
+- **EMCTL**
 
-   A command-line tool that enables you to execute tasks on the OMS and Management Agents. You can use it for tasks, such as starting and stopping OMS instances, setting properties on OMS instances, or getting a list of targets that the Management Agent monitors.
+    A command-line tool that enables you to execute tasks on the OMS and Management Agents. You can use it for tasks, such as starting and stopping OMS instances, setting properties on OMS instances, or getting a list of targets that the Management Agent monitors.
 
- - **EM CLI**
+- **EM CLI**
 
-   A command-line tool that is accessible through classic programming language constructs. It helps you create and run tasks from the command-line or by using a program. It enables you to access Oracle EMCC functionality from text-based consoles (shells and command-line windows) for a variety of operating systems.
+    A command-line tool that is accessible through classic programming language constructs. It helps you create and run tasks from the command-line or by using a program. It enables you to access Oracle EMCC functionality from text-based consoles (shells and command-line windows) for a variety of operating systems.
 
 ### What are managed targets and managed hosts?
 
