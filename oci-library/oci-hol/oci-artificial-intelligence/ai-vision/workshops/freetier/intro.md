@@ -36,8 +36,8 @@ Custom model training lets you tailor base models (through transfer learning app
 
 ### Acknowledgements:
 * **Authors**
-    * Kate D'Orazio - Oracle AI Services
-    * Vaishnavi Kotturu - Oracle OCI AI Vision Services
+    * Kate D'Orazio - Oracle OCI Vision Services
+    * Vaishnavi Kotturu - Oracle OCI Vision Services
 
 * **Last Updated By/Date**
-    * Vaishnavi Kotturu - Oracle OCI AI Vision Services, November 2021
+    * Vaishnavi Kotturu - Oracle OCI Vision Services, November 2021

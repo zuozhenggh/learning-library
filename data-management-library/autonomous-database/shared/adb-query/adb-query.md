@@ -6,10 +6,6 @@ In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Objec
 
 Estimated Time: 10 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:/PX7FrSYRTRM)
-
 ### Objectives
 
 -   Learn how to create external tables on top of files residing on the object store

@@ -15,7 +15,7 @@ You will create an application with Helidon microservices and a Javascript front
 
 If you need any help please join the databasehome.slack.com (#microservices) channel.
 
-<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/yLBEPjOWaz0).</if>
+If you would like to watch us do the workshop, click [here](https://youtu.be/yLBEPjOWaz0).
 
 ### Let's Get Started
 
