@@ -1,4 +1,4 @@
-# Create a new Autonomous Data Warehouse Database
+# Provision an Autonomous Database Instance
 
 ## Introduction
 
