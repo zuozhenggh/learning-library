@@ -588,4 +588,4 @@ In this section, you created a compartment, dynamic group a database and policie
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, June 2021
+- **Last Updated By/Date** - Brian Spendolini, December 2021

@@ -49,13 +49,20 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     ![ORDS ADB database in the list](./images/sdw-2.png)
 
-3. On the Autonomous Database Details page for our ORDS ADB database, click the **Tools** tab in the middle of the page
+3. On the Autonomous Database Details page for our ORDS ADB database, click the **Database Actions** button on the top of the page
 
-    ![Tools Tab](./images/sdw-3.png)
+    ![Database Actions Button](./images/sdw-3.png)
 
-    then click the **Database Actions** button.
+    this will pop up a modal window
 
-    ![Database Actions Button](./images/sdw-4.png)
+    ![Database Actions Modal](./images/sdw-4.png)
+
+    **NOTE**: If you have a pop-up blocker on your browser, you will have to view the blocked window and allow it to open.
+
+
+**The new browser window should automatically login you in directly to the Database Actions Page. If it does, you can then move to step 6.**
+
+**If it does not log you in automatically, continue with the next 2 steps (4 and 5).**
 
 4. On the Database Actions page that was opened in a new browser tab/window, enter **admin** as the username. Then left click the **Next** button.
 
@@ -649,4 +656,4 @@ In this section, you created a table, auto-REST enabled it and use that REST end
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, June 2021
+- **Last Updated By/Date** - Brian Spendolini, December 2021

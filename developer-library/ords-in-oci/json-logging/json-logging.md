@@ -460,4 +460,4 @@ In this section, you created a function to automate the loading of logs into a d
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager, Greg Verstraeten, Product Manager
-- **Last Updated By/Date** - Brian Spendolini, June 2021
+- **Last Updated By/Date** - Brian Spendolini, December 2021
