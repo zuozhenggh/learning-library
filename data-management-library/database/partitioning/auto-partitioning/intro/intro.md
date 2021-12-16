@@ -1,8 +1,6 @@
-# Workshop Introduction and Overview #
+# Introduction #
 
-Estimated time for entire workshop: 90 minutes
-
-## Introduction to Oracle Auto Partitioning ##
+## About this Workshop ##
 
 Automatic partitioning in Autonomous Database analyzes the application workload and automatically applies partitioning to tables and their indexes to improve performance or to allow better management of large tables.
 
@@ -16,24 +14,6 @@ Automatic partitioning chooses from the following partition methods:
 - LIST AUTOMATIC: This partitioning method applies to distinct partition key values.
 - HASH: Applies partitioning on the partition key's hash values.
 
-## How it Works
-
-When invoked, automatic partitioning performs the following operations in Autonomous Database.
-
-<h3>1/ Identify candidate tables for automatic partitioning by analyzing the workload for selected candidate tables.</h3>
-
-- By default, automatic partitioning uses the workload information collected in an Autonomous Database for analysis. 
-- Depending on the size of the workload, a sample of queries might be considered.
-
-<h3>2/ Evaluate partition schemes based on workload analysis and quantification and verification of the performance benefits:</h3>
-
-- Candidate empty partition schemes with synthesized statistics are created internally and analyzed for performance.
-- The candidate scheme with the highest estimated IO reduction is chosen as the optimal partitioning strategy and is internally implemented to test and verify performance.
-- If a candidate partition scheme does not improve performance beyond specified performance and regression criteria, automatic partitioning is not recommended.
-<h3>3/ Implement the optimal partitioning strategy, if configured to do so, for the tables analyzed by the automatic partitioning procedures.</h3>
-
-## Workshop Summary
-
 The workshop is designed to be used in a 19c Always Free Autonomous Database (ADB) instance where a table needs to be larger than 5 GBytes to be considered for auto partitioning. In non-free ADB services, tables must be at least 64GB.
 
 The steps are:
@@ -43,3 +23,30 @@ The steps are:
 - Run the auto partitioning _validate_ API to confirm that the table meets auto partitioning requirements
 - Execute the auto partitioning _recommend_ task in report-only mode. The task will build a partitioned copy of the table and compare performance before vs. after partitioning.
 - Use the _apply_ API to implement the auto partition recommendation. The APART table will be transformed into an ONLINE ALTER TABLE operation so that the production workload is not interrupted. 
+
+Estimated time for the entire workshop: 90 minutes
+
+### Objectives
+- Use automatic partitioning to optimally partition a non-partitioned table
+
+### Prerequisites
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
+
+## How it Works
+
+Automatic partitioning analyses the workload for selected candidate tables.
+
+- By default, automatic partitioning uses the workload information collected in an Autonomous Database for analysis. 
+- Depending on the size of the workload, a sample of queries might be considered.
+
+Automatic partitioning evaludates partition schemes based on workload analysis and quantification and verification of the performance benefits:
+
+- Candidate empty partition schemes with synthesized statistics are created internally and analyzed for performance.
+- The candidate scheme with the highest estimated IO reduction is chosen as the optimal partitioning strategy and is internally implemented to test and verify performance.
+- If a candidate partition scheme does not improve performance beyond specified performance and regression criteria, automatic partitioning is not recommended.
+
+Automatic partitioning implements the partitioning strategy.
+
+## Acknowledgements
+* **Author** - Nigel Bayliss, Dec 2021 
+* **Last Updated By/Date** - Nigel Bayliss, Dec 2021

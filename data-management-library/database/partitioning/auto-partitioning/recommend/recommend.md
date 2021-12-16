@@ -1,6 +1,10 @@
 # Execute the Recommendation Process
 
 ## Introduction
+
+Auto partitioning evaluates the performance benefits of partitioning the candidate table.
+
+Estimated Time: 20mins
  
 ### Objectives
 - Use auto partitioning to *recommend* a partitioning method and confirm it will  yield performance benefits for our workload.
@@ -12,16 +16,15 @@ This lab assumes you have completed the following labs:
 - Create non-partitioned table
 - Validate the table
 
-Estimated Time: 20mins
-
 ## Task 1: Call the Recommend API and Report Results
 
-The recommend\_partition\_method procedure will perform an analysis of the workload queries and the table itself. From this information, a candidate partitioning scheme will be identified. Next, a partitioned copy of the table is built and the workload queries are re-tested on that. Finally, a summary report will be generated.
+The *recommend\_partition\_method* procedure will perform an analysis of the workload queries and the table itself. From this information, a candidate partitioning scheme will be identified. Next, a partitioned copy of the table is built and the workload queries are re-tested on that. Finally, a summary report will be generated.
 
 The time to complete the following proceure is dependent on the table size, the number of indexes, and the elapsed execution time for the captured workload (and auto partitioning may choose to use a subset of the workload rather than the whole thing). 
 
-The following example will take approcimately 20 mins to complete for a 5GB table in a 19c Always Free database instance.
+1. Run the following PL/SQL block. It will take approcimately 20 mins to complete (for a 5GB table and the workload we captured earlier).
 
+    ````
     <copy>
      var rep clob
      set timing on
@@ -64,16 +67,17 @@ The following example will take approcimately 20 mins to complete for a 5GB tabl
 
      select :rep from dual;
     </copy>
+    ````
 
-The recommended partitioning scheme will look something like this:
+2. The PL/SQL block will output a message similar to this:
 
-`````
-=============================================
-ID:     D28FC3CF09DF1E1DE053D010000AF8F8
-Method: LIST(SYS_OP_INTERVAL_HIGH_BOUND("D", INTERVAL '2' MONTH, TIMESTAMP '2020-01-01 00:00:00')) AUTOMATIC 
-Key   : D
-=============================================
-`````
+      `````
+      =============================================
+      ID:     D28FC3CF09DF1E1DE053D010000AF8F8
+      Method: LIST(SYS_OP_INTERVAL_HIGH_BOUND("D", INTERVAL '2' MONTH, TIMESTAMP '2020-01-01 00:00:00')) AUTOMATIC 
+      Key   : D
+      =============================================
+      `````
 
 The partitioning method is not a standard range partition because it needs to account for NULL partition keys and it allows us to avoid creating a large number of partitions if, for example, column D is inserted/updated with a date value far into the future.
 

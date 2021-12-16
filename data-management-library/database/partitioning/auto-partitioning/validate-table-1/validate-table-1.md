@@ -2,6 +2,10 @@
 
 ## Introduction
 
+Confirm that trhe selected table is a viable candidate for auto partitioning.
+
+Estimated Time: 25mins
+
 ### Objectives
 - *Validate* a candidate table to check it is suitable for auto partitioning.
 
@@ -11,12 +15,11 @@ This lab assumes you have completed the following labs:
 - Provision an ADB Instance (19c, Always Free)
 - Create Non-partitioned Table
 
-Estimated Time: 25mins
-
 ## Task 1: Call the Validate API
 
-We can check to see if auto partitioning will consider the table:
+1. Check to see if auto partitioning considers the table a viable candidate for the auto partitioning process:
 
+    ````
     <copy>
      declare
      ret varchar2(1000);
@@ -28,6 +31,7 @@ We can check to see if auto partitioning will consider the table:
      end;
      /
     </copy>
+    ````
 
 Auto partitioning needs a workload to test against the candidate table. Currently the workload does not exist, so this message is returned:
 
@@ -37,10 +41,9 @@ Auto partitioning needs a workload to test against the candidate table. Currentl
 
 ## Task 2: Generate a Workload - Execute Test Queries
 
-We will now create a workload that accesses the table. 
+1. Generate a workload by executing a series of queries that scan the APART table. Later, auto partitioning retrieve this workload and test exceute it to measure the effect of partitioning the table.
 
-Execute queries that scan the APART table. This will generate a workload auto partitioning can test against a partitioned version of the table.
-
+    ````
     <copy>
      select /*+ TEST_QUERY */ sum(a) from apart 
      where d between to_date('01-MAR-2020') and to_date('05-mar-2020');
@@ -65,13 +68,15 @@ Execute queries that scan the APART table. This will generate a workload auto pa
      select /*+ TEST_QUERY */ avg(a) from apart 
      where d between to_date('01-JUL-2020') and to_date('02-JUL-2020');
     </copy>
+    ````
 
-## Task 2: Wait for Automatic SQL Tuning Set (ASTS) Population
+## Task 3: Wait for Automatic SQL Tuning Set (ASTS) Population
 
 The Auto STS Capture Task is responsible for capturing workload SQL in a SQL tuning set called SYS\_AUTO\_STS. This is the _automatic SQL tuning set_ or ASTS and is maintained automatically in Autonomous Database environments. 
 
-Use the following query to monitor the last schedule time and wait until the task has executed again - i.e. _after_ the workload queries were executed.
+1. Use the following query to monitor the last schedule time and wait until the task has executed again - i.e. _after_ the workload queries were executed.
 
+    ````
     <copy>
      select current_timestamp now from dual;
      
@@ -85,42 +90,47 @@ Use the following query to monitor the last schedule time and wait until the tas
      where dbid = sys_context('userenv','con_dbid') 
      and   task_name like '%STS%';
     </copy>
+    ````
 
-The interval is 900 seconds by default, so you will need to wait for up to 15 minutes.
+2. Keep running the query, monitior the LAST\_SCHEDULE\_TIME, and wait for it to change. Alternatively, look at the "AGO" column value and wait for it to show that the task ran a few seconds ago. The interval is 900 seconds by default, so you will need to wait for up to 15 minutes.
 
-`````
-NOW
-------------------------------------------
-07-DEC-21 13.37.15.285689000 EUROPE/LONDON
+    `````
+    NOW
+    ------------------------------------------
+    07-DEC-21 13.37.15.285689000 EUROPE/LONDON
 
-TASK_NAME                                                        STATUS     ENABL   INTERVAL LAST_SCHEDULE_TIME               AGO                
----------------------------------------------------------------- ---------- ----- ---------- -------------------------------- -------------------
-Auto STS Capture Task                                            SUCCEEDED  TRUE         900 07-DEC-21 13.23.14.891000000 GMT +00 00:14:00.492985
+    TASK_NAME                                                        STATUS     ENABL   INTERVAL LAST_SCHEDULE_TIME               AGO                
+    ---------------------------------------------------------------- ---------- ----- ---------- -------------------------------- -------------------
+    Auto STS Capture Task                                            SUCCEEDED  TRUE         900 07-DEC-21 13.23.14.891000000 GMT +00 00:14:00.492985
 
-`````
-Now confirm that the workload queries have been captured in the autmatic SQL tuning set.
+    `````
 
+2. Confirm that the workload queries have been captured in the automatic SQL tuning set.
+
+    ````
     <copy>
      select sql_text 
      from   dba_sqlset_statements 
      where  sql_text like '%TEST_QUERY%'
      and    sqlset_name = 'SYS_AUTO_STS';
     </copy>
+    ````
 
-`````
-SQL_TEXT                                                                                                                                              
----------------------------------------------------
-select /*+ TEST_QUERY */ sum(b) from apart where d between to_date('01-OCT-2020'                                                                      
-select /*+ TEST_QUERY */ sum(a) from apart where d = to_date('01-MAR-2020')                                                                           
-select /*+ TEST_QUERY */ sum(b) from apart where d between to_date('01-JAN-2020'                                                                      
-select /*+ TEST_QUERY */ avg(a) from apart where d between to_date('01-JUL-2020'   
-...etc
-`````
+    `````
+    SQL_TEXT                                                                                                                                              
+    ---------------------------------------------------
+    select /*+ TEST_QUERY */ sum(b) from apart where d between to_date('01-OCT-2020'                                                                      
+    select /*+ TEST_QUERY */ sum(a) from apart where d = to_date('01-MAR-2020')                                                                           
+    select /*+ TEST_QUERY */ sum(b) from apart where d between to_date('01-JAN-2020'                                                                      
+    select /*+ TEST_QUERY */ avg(a) from apart where d between to_date('01-JUL-2020'   
+    ...etc
+    `````
 
 ## Task 4: Call the Validate API Again
 
-We'll try validating again:
+1. Now that the workload has been captured in the automatic SQL tuning set, validate again:
 
+    ````
     <copy>
      declare
      ret varchar2(1000);
@@ -132,12 +142,13 @@ We'll try validating again:
      end;
      /
     </copy>
+    ````
 
-When the following message is returned, we are ready to run the auto partitioning _recommend_ step:
+    When the following message is returned, we are ready to run the auto partitioning _recommend_ step:
 
-`````
-Auto partitioning validation: VALID
-`````
+    `````
+    Auto partitioning validation: VALID
+    `````
 You may now **proceed to the next lab**.
 
 ## Acknowledgements

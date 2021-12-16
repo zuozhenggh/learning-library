@@ -2,6 +2,10 @@
 
 ## Introduction
 
+Use automatic indexing to partition the candidate table.
+
+Estimated Time: 10mins
+
 ### Objectives
 - Accept the partitioning recommendation and create the partitioned table.
 
@@ -13,9 +17,7 @@ This lab assumes you have completed the following labs:
 - Validate the table
 - Execute recommend task
 
-Estimated Time: 10mins
-
-## Task 1: Accept Recommendation and Build the Partitioned Table
+## Task 1: Apply the Recommendation to Initiate Partitioning
 
 In the previous lab, the PL/SQL procedure displayed a recommendation ID similar to this example:
 
@@ -27,20 +29,29 @@ Key   : D
 =============================================
 `````
 
-The recommendation ID is also displayed at the top of the recommendation report.
+The "ID" is a *recommendation ID*, and is used to identify which recommendation you want to apply. It is displayed at the top of the recommendation report too.
 
-Execute the following command, entering the recomendation ID when prompted:
+1. Execute the following command to initiate the partitioned table build, using your recomendation ID:
 
+    ````
     <copy>
-       exec dbms_auto_partition.apply_recommendation('&recommendation_id');
+       exec dbms_auto_partition.apply_recommendation('<your recommendation ID>');
     </copy>
+    ````
+    For example:
+
+    ````
+    exec dbms_auto_partition.apply_recommendation('D28FC3CF09DF1E1DE053D010000AF8F8');
+    ````
+
 
 A partitioned version of the table will be build on-line using an ALTER TABLE MODIFY PARTITION ONLINE command. It will take approximately 10 minutes for a 5GB table in a 19c Always Free instance.
 
 ## Task 2: Confirm that the Table Has Been Partitioned
 
-We now have a partitioned APART table:
+1. Check that APART is now partitioned:
 
+    ````
     <copy>
     set trims on
     set linesize 300
@@ -54,18 +65,21 @@ We now have a partitioned APART table:
     from   user_segments
     order by partition_name;
     </copy>
+    ````
 
-`````
-SEGMENT_NAME  PARTITION_NAME       SEGMENT_TYPE               MB
-------------- -------------------- ------------------ ----------
-APART         P_NULL               TABLE PARTITION         .0625
-APART         SYS_P1576            TABLE PARTITION           936
-APART         SYS_P1577            TABLE PARTITION           952
-APART         SYS_P1578            TABLE PARTITION           952
-APART         SYS_P1579            TABLE PARTITION           968
-APART         SYS_P1580            TABLE PARTITION           952
-APART         SYS_P1581            TABLE PARTITION           816
-`````
+    `````
+    SEGMENT_NAME  PARTITION_NAME       SEGMENT_TYPE               MB
+    ------------- -------------------- ------------------ ----------
+    APART         P_NULL               TABLE PARTITION         .0625
+    APART         SYS_P1576            TABLE PARTITION           936
+    APART         SYS_P1577            TABLE PARTITION           952
+    APART         SYS_P1578            TABLE PARTITION           952
+    APART         SYS_P1579            TABLE PARTITION           968
+    APART         SYS_P1580            TABLE PARTITION           952
+    APART         SYS_P1581            TABLE PARTITION           816
+    `````
+
+The table has a total of seven partitions, each approximately 9MB in size except for a partition intended to receive NULL partition keys. The partition sizes vary because compression factors are very sensitive to data content and data ordering.
 
 This concludes the workshop.
 
