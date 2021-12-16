@@ -2,21 +2,20 @@
 
 ## Introduction
 
-In this session, we will show you how to train a forecasting model, and make forecast with new data. 
+In this session, we will show you how to use our create and get forecast APIs. 
 
 ***Estimated Lab Time***: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
-- Learn to train a forecasting model with created data asset 
-- Learn to verify the trained model performance
-- Generate forecast for desired horizon set in payload of forecast train settings
+- Learn to use forecast API 
+- Learn to get forecasts and predictions intervals for the forecast horizon
+
 
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
-- Understand basic forecast model training and model selection process
-
+- You have completed all the tasks in Lab 2 
 
 ## Task 1: Create a Forecast model
 
@@ -26,12 +25,39 @@ Creating a model requires 3 actions to kick off training the forecasting model.
 * Set other training parameters as show in below code snippet
 * Create Forecast API Call using the /forecasts url
 
+We pre-define some the parameters of the payload based on the example input data (the one we uploaded in previous lab session)
+```Python 
+date_col_primary = 'date'
+date_col_add = 'date'
+target_col = 'sales'
+id_col_primary = 'item_id'
+id_col_add = 'item_id'
+data_frequency = 'DAY'
+forecast_frequency = 'DAY'
+forecast_horizon  = 14
+  
+```
+
+In the example below we show how to create the payload for calling create forecast API. 
+- "compartmentId": same as tenancy id (refer Task 5 : Create Project ID in Lab 2)
+- "projectId": the one you get after creating a project (refer Task 5 : Create Project ID in Lab 2)
+- "targetVariables": name of the column in primary data having the target values
+- models: models selected for training. Here we are showing some the models implemented in our service.Our Auto-ML service selects the best model out of all the models selected for training. 
+- "forecastHorizon": number of future timesteps for which to forecast 
+- "forecastFrequency": 'DAY', 'WEEK', 'MONTH' or 'YEAR' depending on forecast frequency required 
+- "isDataGrouped": True if data is grouped or having additional data. False if using only one series with no additional data
+- "columnData": inline data (Please refer Task 4: Inline Data preparation in Lab 2)
+- "columnSchema": provide column name and data type for each column in the data source
+- "dataFrequency": 'DAY', 'WEEK', 'MONTH' or 'YEAR' depending on frequency of input data
+- "tsColName": name of the timestamp column 
+- "additionalDataSource": column schema for additional data to be provided if using additional data.This field should be removed if there is no additional data.
+
 ```Python
 %%time
 
 url = "https://forecasting---------------------.oraclecloud.com/20220101/forecasts"
 
-payload = simplejson.dumps({
+payload = json.dumps({
   "compartmentId": compartment_id,
   "displayName": "Forecast Model",
   "description": "Training Forecast Model",
@@ -44,135 +70,168 @@ payload = simplejson.dumps({
       "modelType": "UNIVARIATE",
       "models": [
         "SMA",
-        "DMA"
+        "DMA",
+        "HWSA",
+        "HWSM",
+        "SES",
+        "DES",
+        "SA",
+        "SM",
+        "UAM",
+        "UHM",
+        "ARIMA",
+        "PROPHET"
       ]
     },
-    "forecastHorizon": 7,
+    "forecastHorizon": forecast_horizon,
     "confidenceInterval": "CI_5_95",
     "errorMeasure": "RMSE",
     "forecastTechnique": "ROCV",
-    "forecastFrequency": "DAY",
+    "forecastFrequency": forecast_frequency,
     "isForecastExplanationRequired": True,
     "dataSourceDetails": {
       "type": "INLINE",
       "dataSources": {
         "primaryDataSource": {
-          "isDataGrouped": False,
+          "isDataGrouped": True,
           "columnData": prim_load,
           "columnSchema": [
             {
-              "columnName": date_col,
+              "columnName": date_col_primary,
               "dataType": "DATE"
             },
             {
               "columnName": target_col,
               "dataType": "INT"
-            }
+            },
+            {
+              "columnName": id_col_primary,
+              "dataType": "STRING"
+            },
           ],
-          "tsColName": date_col,
+          "tsColName": date_col_primary,
           "tsColFormat": "yyyy-MM-dd HH:mm:ss",
-          "dataFrequency": "DAY"
+          "dataFrequency": data_frequency
+        },
+        "additionalDataSource": {
+          "isDataGrouped": True,
+          "columnData": add_load,
+          "columnSchema": [
+            {
+              "columnName": date_col_add,
+              "dataType": "DATE"
+            },
+            {
+              "columnName": "onpromotion",
+              "dataType": "INT"
+            },
+            {
+              "columnName": id_col_add,
+              "dataType": "STRING"
+            },
+          ],
+          "tsColName": date_col_add,
+          "tsColFormat": "yyyy-MM-dd HH:mm:ss",
+          "dataFrequency": data_frequency
         }
       }
     }
   }
-}, ignore_nan=True)
+})
 headers = {
   'Content-Type': 'application/json'
 }
-
 response = requests.request("POST", url, headers=headers, data=payload, auth=auth)
+```
+
+We store the response and get forecast id 
+```Python
 create_forecast_response = json.loads(response.text)
 create_forecast_response
 ```
 The above code snippet give below response :
 ```json
-
 {'description': 'Training Forecast Model',
- 'id': 'ocid.aiforecast.----------------------------',
+ 'id': 'ocid1.....................',
  'responseType': None,
- 'compartmentId': 'ocid.---------------------------------',
- 'projectId': 'ocid.forecastproject.-----------',
+ 'compartmentId': 'ocid1...................',
+ 'projectId': 'ocid1..................',
  'displayName': 'Forecast Model',
  'createdBy': None,
- 'timeCreated': '2021-11-18T05:20:19.029Z',
- 'timeUpdated': '2021-11-18T05:20:19.029Z',
+ 'timeCreated': '2021-12-14T09:17:09.525Z',
+ 'timeUpdated': '2021-12-14T09:17:09.525Z',
  'lifecyleDetails': None,
  'lifecycleState': 'CREATING',
  'failureMessage': None,
- 'forecastCreationDetails': {'targetVariables': ['gasoline purchase'],
+ 'forecastCreationDetails': {'targetVariables': ['sales'],
   'modelTrainingDetails': {'modelType': 'UNIVARIATE',
-   'models': ['SMA', 'DMA']},
+   'models': ['SMA',
+    'DMA',
+    'HWSA',
+    'HWSM',
+    'SES',
+    'DES',
+    'SA',
+    'SM',
+    'UAM',
+    'UHM',
+    'ARIMA',
+    'PROPHET']},
   'dataSourceDetails': {'type': 'INLINE',
    'dataSources': {'primaryDataSource': {'dataAssetId': None,
-     'isDataGrouped': False,
-     'tsColName': 'period',
+     'isDataGrouped': True,
+     'tsColName': 'date',
      'dataFrequency': 'DAY',
      'tsColFormat': 'yyyy-MM-dd HH:mm:ss',
-     'columnSchema': [{'columnName': 'period', 'dataType': 'DATE'},
-      {'columnName': 'gasoline purchase', 'dataType': 'INT'}],
-     'columnData': [['2021-01-01 00:00:00',
-       '2021-01-02 00:00:00',
-       '2021-01-03 00:00:00',
-       '2021-01-04 00:00:00',
-       '2021-01-05 00:00:00',
-       '2021-01-06 00:00:00',
-       '2021-01-07 00:00:00',
-       '2021-01-08 00:00:00',
-       '2021-01-09 00:00:00',
-       '2021-01-10 00:00:00',
-       '2021-01-11 00:00:00',
-       '2021-01-12 00:00:00',
-       '2021-01-13 00:00:00',
-       '2021-01-14 00:00:00',
-       '2021-01-15 00:00:00',
-       '2021-01-16 00:00:00',
-       '2021-01-17 00:00:00',
-       '2021-01-18 00:00:00',
-       '2021-01-19 00:00:00',
-       '2021-01-20 00:00:00',
-       '2021-01-21 00:00:00',
-       '2021-01-22 00:00:00',
-       '2021-01-23 00:00:00',
-       '2021-01-24 00:00:00',
-       '2021-01-25 00:00:00',
-       '2021-01-26 00:00:00',
-       '2021-01-27 00:00:00',
-       '2021-01-28 00:00:00',
-       '2021-01-29 00:00:00',
-       '2021-01-30 00:00:00'],
-      ['275',
-       '291',
-       '307',
-       '281',
-       '295',
-       '268',
-       '252',
-       '279',
-       '264',
-       '288',
-       '302',
-       '287',
-       '290',
-       '311',
-       '277',
-       '245',
-       '282',
-       '277',
-       '298',
-       '303',
-       '310',
-       '299',
-       '285',
-       '250',
-       '260',
-       '245',
-       '271',
-       '282',
-       '302',
-       '285']]},
-    'additionalDataSource': None}},
-  'forecastHorizon': 7,
+     'columnSchema': [{'columnName': 'date', 'dataType': 'DATE'},
+      {'columnName': 'sales', 'dataType': 'INT'},
+      {'columnName': 'item_id', 'dataType': 'STRING'}],
+     'columnData': [['2013-01-01 00:00:00',
+       '2013-01-02 00:00:00',
+       '2013-01-03 00:00:00',
+       '2013-01-04 00:00:00',
+       '2013-01-05 00:00:00',
+      ...],
+      ['0',
+       '767',
+       '987',
+       '652',
+       '1095',
+       '724',
+       ...],
+       ['13_BEVERAGES',
+       '13_BEVERAGES',
+       '13_BEVERAGES',
+       '13_BEVERAGES',
+       '13_BEVERAGES',
+       ...]]},
+       'additionalDataSource': {'dataAssetId': None,
+     'isDataGrouped': True,
+     'tsColName': 'date',
+     'dataFrequency': 'DAY',
+     'tsColFormat': 'yyyy-MM-dd HH:mm:ss',
+     'columnSchema': [{'columnName': 'date', 'dataType': 'DATE'},
+      {'columnName': 'onpromotion', 'dataType': 'INT'},
+      {'columnName': 'item_id', 'dataType': 'STRING'}],
+     'columnData': [['2013-01-01 00:00:00',
+       '2013-01-02 00:00:00',
+       '2013-01-03 00:00:00',
+       '2013-01-04 00:00:00',
+       '2013-01-05 00:00:00',
+       ...],
+       ['0',
+       '0',
+       '0',
+       '0',
+       '0',
+       ...],
+       ['13_BEVERAGES',
+       '13_BEVERAGES',
+       '13_BEVERAGES',
+       '13_BEVERAGES',
+       '13_BEVERAGES',
+       ...]]}}},
+       'forecastHorizon': 14,
   'confidenceInterval': 'CI_5_95',
   'errorMeasure': 'RMSE',
   'forecastTechnique': 'ROCV',
@@ -181,16 +240,18 @@ The above code snippet give below response :
  'forecastResult': None,
  'freeformTags': {},
  'definedTags': {'Oracle-Tags': {'CreatedBy': 'demo_user',
-   'CreatedOn': '2021-11-18T05:20:17.617Z'}},
+   'CreatedOn': '2021-12-14T09:17:08.153Z'}},
  'systemTags': {}}
 
 ```
 
 ## Task 2: Get forecast and Prediction Intervals
 - Take the forecast ID from response above and create a *Get forecast API* call using below code snippet
-- Keep refreshing the code cell till the 'lifecycleState' changes from CREATING to ACTIVE 
-- The ```forecastResult``` key in the below ```get_forecast_response``` gives us the forecast for the given horizon of 7 time steps 
+- Once the results are produced, the  'lifecycleState' changes to 'ACTIVE'. If it is 'CREATING', then you need to re-run the code below after sometimes.
+- The ```forecastResult``` key in the below ```get_forecast_response``` gives us the forecast for the given horizon  
 - We also get Prediction Intervals from ```predictionInterval``` key in the response
+
+It can take sometime to create the forecast depending on the models selected and the size of the input data.  For the dataset we have taken, it should take around 10-15 minutes to give results. Till then you can take a break or focus on other task.
 
 ```Python
 create_forecast_id = create_forecast_response['id']
@@ -203,55 +264,82 @@ headers = {}
 response = requests.request("GET", url, headers=headers, data=payload, auth=auth)
 get_forecast_response = json.loads(response.text)
 get_forecast_response
-```
+```  
 
 ```Json
 {'description': 'Training Forecast Model',
- 'id': 'ocid1.aiforecast.--------------------',
+'id': 'ocid1.....................',
  'responseType': None,
- 'compartmentId': 'ocid.---------------------',
- 'projectId': 'ocid1.---------------------',
+ 'compartmentId': 'ocid1...................',
+ 'projectId': 'ocid1..................',
  'displayName': 'Forecast Model',
  'createdBy': None,
- 'timeCreated': '2021-11-18T05:20:28.797Z',
- 'timeUpdated': '2021-11-18T05:20:28.815Z',
+ 'timeCreated': '2021-12-14T09:17:09.525Z',
+ 'timeUpdated': '2021-12-14T09:17:09.525Z',
  'lifecyleDetails': None,
  'lifecycleState': 'ACTIVE',
  'failureMessage': None,
  'forecastCreationDetails': None,
  'forecastResult': {'dataSourceType': 'INLINE',
-  'forecast': [{'targetColumn': 'gasoline purchase',
-    'dates': ['2021-01-31 00:00:00',
-     '2021-02-01 00:00:00',
-     '2021-02-02 00:00:00',
-     '2021-02-03 00:00:00',
-     '2021-02-04 00:00:00',
-     '2021-02-05 00:00:00',
-     '2021-02-06 00:00:00'],
-    'forecast': [299.0, 285.0, 250.0, 260.0, 245.0, 271.0, 282.0],
-    'predictionInterval': [{'upper': 326.71725, 'lower': 271.28275},
-     {'upper': 312.99637, 'lower': 257.00363},
-     {'upper': 278.42215, 'lower': 221.57785},
-     {'upper': 288.15268, 'lower': 231.8473},
-     {'upper': 273.7455, 'lower': 216.25449},
-     {'upper': 299.89047, 'lower': 242.10951},
-     {'upper': 311.59213, 'lower': 252.40787}]}],
+  'forecast': [{'targetColumn': '13_BEVERAGES',
+    'dates': ['2017-08-02 00:00:00',
+     '2017-08-03 00:00:00',
+     '2017-08-04 00:00:00',
+     '2017-08-05 00:00:00',
+     '2017-08-06 00:00:00',
+     '2017-08-07 00:00:00',
+     '2017-08-08 00:00:00',
+     '2017-08-09 00:00:00',
+     '2017-08-10 00:00:00',
+     '2017-08-11 00:00:00',
+     '2017-08-12 00:00:00',
+     '2017-08-13 00:00:00',
+     '2017-08-14 00:00:00',
+     '2017-08-15 00:00:00'],
+    'forecast': [1609.5647,
+     1343.6483,
+     1546.2831,
+     2087.823,
+     1794.3483,
+     1497.6057,
+     1382.0226,
+     1461.8567,
+     1259.3473,
+     1504.2533,
+     1968.2959,
+     1646.6401,
+     1511.9377,
+     1445.6711],
+    'predictionInterval': [{'upper': 2086.9155, 'lower': 1128.2715},
+     {'upper': 1839.9146, 'lower': 912.95483},
+     {'upper': 2013.9352, 'lower': 1082.0677},
+     {'upper': 2535.684, 'lower': 1612.1564},
+     {'upper': 2251.6038, 'lower': 1325.7798},
+     {'upper': 1958.7988, 'lower': 1043.9397},
+     {'upper': 1870.6536, 'lower': 925.10504},
+     {'upper': 1920.7454, 'lower': 977.78406},
+     {'upper': 1715.7109, 'lower': 792.765},
+     {'upper': 1948.4724, 'lower': 1027.3519},
+     {'upper': 2423.6401, 'lower': 1531.121},
+     {'upper': 2116.753, 'lower': 1183.1195},
+     {'upper': 1980.629, 'lower': 1068.0222},
+     {'upper': 1902.9133, 'lower': 979.5294}]}],
   'metrics': {'trainingMetrics': {'numberOfFeatures': 1,
-    'totalDataPoints': 30},
-   'targetColumns': [{'targetColumn': 'gasoline purchase',
-     'bestModel': 'SeasonalNaiveModel',
-     'errorMeasureValue': 19.163588,
+    'totalDataPoints': 1670},
+   'targetColumns': [{'targetColumn': '13_BEVERAGES',
+     'bestModel': 'ProphetModel',
+     'errorMeasureValue': 248.34917,
      'errorMeasureName': 'RMSE',
-     'numberOfMethodsFitted': 4,
-     'seasonality': 9,
-     'seasonalityMode': 'MULTIPLICATIVE',
+     'numberOfMethodsFitted': 13,
+     'seasonality': 7,
+     'seasonalityMode': 'ADDITIVE',
      'preprocessingUsed': {'aggregation': 'NONE',
-      'outlierDetected': 0,
+      'outlierDetected': 14,
       'missingValuesImputed': 0,
       'transformationApplied': 'NONE'}}]}},
  'freeformTags': {},
- 'definedTags': {'Oracle-Tags': {'CreatedBy': 'demo-user',
-   'CreatedOn': '2021-11-18T05:20:17.617Z'}},
+ 'definedTags': {'Oracle-Tags': {'CreatedBy': 'fc-mcs-team',
+   'CreatedOn': '2021-12-14T09:17:08.153Z'}},
  'systemTags': {}}
 
 ```
@@ -259,6 +347,7 @@ get_forecast_response
 Using below code , we can save the forecast as tabular data in a csv file with prediction intervals
 
 ```Python
+df_forecasts = pd.DataFrame({'forecast_dates':[],'upper':[],'lower':[],'forecast':[], 'series_id':[]})
 for i in range(len(get_forecast_response['forecastResult']['forecast'])):
     
     group = get_forecast_response['forecastResult']['forecast'][i]['targetColumn']
@@ -267,14 +356,16 @@ for i in range(len(get_forecast_response['forecastResult']['forecast'])):
                               ['forecast'][i]['predictionInterval'],dtype=float)
     out = pred_intervals
     out['forecast'] = point_forecast
-forecast_dates = pd.DataFrame({'forecast_dates': get_forecast_response['forecastResult']['forecast'][0]['dates']})
-forecasts = pd.concat([forecast_dates,out],axis=1) 
-file_name = target_col + '_forecast.csv'
-forecasts.to_csv('./Output/'+file_name, index = None)          
+    forecast_dates = pd.DataFrame({'forecast_dates':get_forecast_response['forecastResult']['forecast'][i]['dates']})
+    forecasts = pd.concat([forecast_dates,out],axis=1)
+    forecasts['series_id'] = group
+    df_forecasts = df_forecasts.append(forecasts, ignore_index = False)
+file_name = 'forecast.csv'
+df_forecasts.to_csv(file_name, index = None)          
 ```
 
 ## Task 3: Get Training Metrics report from the response
-* We can also retrieve training metrics report from the response which shows the best model selected using auto ml based on performance on selected error metric. Eg. RMSE in this example. 
+* We can also retrieve training metrics report from the response which shows the best model selected using Auto-ML based on performance on selected error metric. Eg. RMSE in this example. 
 * We also get seasonality , outlier detected and other preprocessing methods applied to the series
 
 
@@ -283,15 +374,15 @@ get_forecast_response['forecastResult']['metrics']['targetColumns']
 ```
 
 ```Json
-[{'targetColumn': 'gasoline purchase',
-  'bestModel': 'SeasonalNaiveModel',
-  'errorMeasureValue': 19.163588,
+[{'targetColumn': '13_BEVERAGES',
+  'bestModel': 'ProphetModel',
+  'errorMeasureValue': 248.34917,
   'errorMeasureName': 'RMSE',
-  'numberOfMethodsFitted': 4,
-  'seasonality': 9,
-  'seasonalityMode': 'MULTIPLICATIVE',
+  'numberOfMethodsFitted': 13,
+  'seasonality': 7,
+  'seasonalityMode': 'ADDITIVE',
   'preprocessingUsed': {'aggregation': 'NONE',
-   'outlierDetected': 0,
+   'outlierDetected': 14,
    'missingValuesImputed': 0,
    'transformationApplied': 'NONE'}}]
 ```
@@ -304,4 +395,6 @@ get_forecast_response['forecastResult']['metrics']['targetColumns']
 
 * **Authors**
     * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
-
+    * Anku Pandey - Data Scientist - Oracle AI Services
+    * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
+    * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services

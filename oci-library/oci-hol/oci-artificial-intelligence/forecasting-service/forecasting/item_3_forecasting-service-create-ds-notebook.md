@@ -2,7 +2,7 @@
 
 ## Introduction
 
- In this lab , we will learn how to set up Data Science notebook session to start using the Forecasting service APIs  Also, we will learn about API key generation as API keys are needed for authentication purpose.
+ In this lab, we will learn how to set up a Data Science notebook session to start using the Forecasting service APIs. Also, we will learn about API key generation which are needed for authentication purpose.
 
 *Estimated Lab Time*: 30 minutes
 
@@ -10,15 +10,16 @@
 
 In this lab, you will:
 *	Learn how to generate API key 
-*	Learn how to create a project in Data Science 
-*	Learn how to set up a notebook session in a data science project 
+*	Learn how to create a project in Data Science service 
+*	Learn how to set up a notebook session inside a data science project 
 
 ### Prerequisites:
-*	A free tier or paid tenancy account in OCI 
+*	A free tier or paid tenancy account in OCI
+*   You have completed all the tasks in Lab 0.  
 
 ## Task 1: API key generation  
 
-### Step 1
+### Step 1:
 
 Log in to your oracle cloud account, expand the Profile menu and click on User Settings:
 ![](../images/Lab1_task1_step1_login.png " ")
@@ -31,12 +32,11 @@ Under User Settings click on the API Keys under Resources on the left :
 
 Click on the Add API Key
 
-
 ![](../images/lab1_task1_step3_addkey.png " ")
 
 ### Step 4: 
 
-Download the private key on your system. We will use this later for authorization when using the forecasting APIs. After downloading,  click on Add button. 
+Download the private key on your system. We will use this later for authorization when using the forecasting APIs. After downloading, click on Add button. By clikcing on Add, this key would get listed under API Keys and become active.  
 
 ![](../images/lab1_task1_step4_savekey.png " ")
 
@@ -98,9 +98,13 @@ Use the tenancy, user and fingerprint from the configuration file as shown in AP
 ![](../images/lab1_task3_step9_authorization.png " ")
 
 
+[Proceed to the next section](#next).
+
 ## Acknowledgements
 * **Authors**
-    * Anku Pandey - Data Scientist - Oracle AI Services
     * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
+    * Anku Pandey - Data Scientist - Oracle AI Services
+    * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
+    * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
 
 
