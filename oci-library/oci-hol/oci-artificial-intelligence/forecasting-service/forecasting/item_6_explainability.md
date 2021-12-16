@@ -22,7 +22,7 @@ In this lab, you will:
 
 ### Step 1. Call the explanation API as shown below
 
-![Explanation API Call](../images/explanation_api.png)
+![Explanation API Call](../images/lab4_task1_explanation_api.png)
 
 ### Step 2. Sample Json ouput
 
@@ -75,7 +75,6 @@ Here is a simple function to plot the global feature importance from the above j
 ```Python
 import plotly.express as px
 import plotly.graph_objects as go
-import numpy as np
 
 def plot_global_feature_importance(get_forecast_explanations):
     global_feature_importance = get_forecast_explanations['explanations'][0]['globalFeatureImportance']['influencingFeatures']
@@ -94,7 +93,7 @@ def plot_global_feature_importance(get_forecast_explanations):
 
 ### Sample Global feature importance plot
 
-![Global Feature Importance ](../images/global_feature_importance.png)
+![Global Feature Importance ](../images/lab4_task1_global_feature_importance.png)
 
 ### Task 2: Get Local Explanation
 
@@ -127,7 +126,7 @@ def plot_local_feature_importance(get_forecast_explanations, time_step):
 
 ### Sample Local feature importance plot for step 1 forecast
 
-![Local Feature Importance for step 1 forecast](../images/local_feature_importance.png)
+![Local Feature Importance for step 1 forecast](../images/lab4_task2_local_feature_importance.png)
 
 Similarly, by changing the time step, you can get the local feature importance for that corresponding forecast.
 
