@@ -14,7 +14,10 @@ As shown in the diagram above, the following popular CNCF and open source techno
  - Jaeger is used for tracing (OpenTracing/OpenTelemetry format) in the Kubernetes tier which then correlates to ECID tracing in the database tier. A Jaeger datasource is used in Grafana.
     *More details on this can be found in the `Better Understand and Modify Metrics, Logging, and Tracing` lab.
 
- Upcoming versions of this workshop will include use of additional microservice frameworks and language implementations such as Spring Boot, Micronaut, Quarkus, .NET, JavaScript, Python, Go, etc. and more detailed usage and use cases.
+ Upcoming versions of this workshop will include the following.
+ - Use of the database operator for convenient setup of metrics and logs exporters, etc.
+ - Examples using additional microservice frameworks and polyglot implementations such as Spring Boot, Micronaut, Quarkus, .NET, JavaScript, Python, Go, etc. 
+ - More details on usage and use cases.
 
 The "GrabDish" application and related infrastructure used in the [Simplify Microservices with converged Oracle Database Workshop](http://bit.ly/simplifymicroservices) and shown below will be reused for this workshop, however, the focus will be on observability. 
 
