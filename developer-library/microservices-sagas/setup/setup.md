@@ -15,56 +15,56 @@ Watch the video below for a quick walk through of the lab.
 * Clone the setup and microservices code
 * Execute setup
 
-## Task 1: Log in to the Oracle Cloud Console and launch the Cloud Shell
+### Prerequisites
 
-If you haven't already, sign in to your account.
+- This workshop assumes you have an Oracle cloud account and have signed in to the account.
 
-## Task 2: Select the Home Region
+## Task 1: Select the Home Region
 
 Be sure to select the **home region** of your tenancy. Setup will only work in the home region.
 
-  ![](images/home-region.png " ")
+  ![Home Region](images/home-region.png " ")
 
-## Task 3: Check Your Tenancy Service Limits
+## Task 2: Check Your Tenancy Service Limits
 
-If you have a **fresh** free trial account with credits then you can be sure that you have enough quota and you can proceed to the next step.
+1. If you have a **fresh** free trial account with credits then you can be sure that you have enough quota and you can proceed to the next step.
 
-If, however, you have already used up some quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may reach are summarized in the following table.
+    If, however, you have already used up some quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may reach are summarized in the following table.
 
-| Service          | Scope  | Resource                                             | Available | Free Account Limit |
-|------------------|:------:|------------------------------------------------------|:---------:|:------------------:|
-| Compute          | AD-1   | Cores for Standard.E2 based VM and BM Instances      | **3**     | 6                  |
-| Container Engine | Region | Cluster Count                                        | **1**     | 1                  |
-| Database         | Region | Autonomous Transaction Processing Total Storage (TB) | **2**     | 2                  |
-|                  | Region | Autonomous Transaction Processing OCPU Count         | **4**     | 8                  |
-| LbaaS            | Region | 100Mbps Load Balancer Count                           | **3**     | 3                  |
+    | Service          | Scope  | Resource                                             | Available | Free Account Limit |
+    |------------------|:------:|------------------------------------------------------|:---------:|:------------------:|
+    | Compute          | AD-1   | Cores for Standard.E2 based VM and BM Instances      | **3**     | 6                  |
+    | Container Engine | Region | Cluster Count                                        | **1**     | 1                  |
+    | Database         | Region | Autonomous Transaction Processing Total Storage (TB) | **2**     | 2                  |
+    |                  | Region | Autonomous Transaction Processing OCPU Count         | **4**     | 8                  |
+    | LbaaS            | Region | 100Mbps Load Balancer Count                           | **3**     | 3                  |
 
-Quota usage and limits can be check through the console: **Limits, Quotas and Usage** in the **Governance & Administration** section , For example:
+2. Quota usage and limits can be check through the console: **Limits, Quotas and Usage** in the **Governance & Administration** section , For example:
 
-  ![](images/service-limit-example.png " ")
+    ![Service Limit Example](images/service-limit-example.png " ")
+  
+3. The Tenancy Explorer is used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
 
-The Tenancy Explorer is used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
+    ![Show SubCompartment](images/show-subcompartments.png " ")
 
-  ![](images/show-subcompartments.png " ")
+4. It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
 
-It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
-
-## Task 4: Launch Cloud Shell
+## Task 3: Launch Cloud Shell
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
-  ![](images/open-cloud-shell.png " ")
+  ![Open Cloud Shell](images/open-cloud-shell.png " ")
 
   NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
-## Task 5: Create a Folder to Contain the Workshop Code
+## Task 4: Create a Folder to Contain the Workshop Code
 
 1. Create a directory to contain the workshop code. The directory name is used to create a compartment of the same name in your tenancy. The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
     ```
-    <copy>mkdir travelbooking
+    <copy>mkdir travelagency
     </copy>
     ```
 
@@ -73,16 +73,16 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
     ```
-    <copy>cd travelbooking
+    <copy> cd travelagency
     </copy>
     ```
 
-## Task 6: Make a Clone of the Workshop Setup Script and Source Code
+## Task 5: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.11.3 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.12.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -92,18 +92,18 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```
     <copy>
-    sed -i.bak '/travelbooking/d' ~/.bashrc
-    echo "source $PWD/microservices-datadriven/travelbooking/env.sh" >>~/.bashrc
+    sed -i.bak '/travelagency/d' ~/.bashrc
+    echo "source $PWD/microservices-datadriven/travelagency/env.sh" >>~/.bashrc
     </copy>
     ```
 
-## Task 7: Start the Setup
+## Task 6: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
     ```
     <copy>
-    source microservices-datadriven/travelbooking/env.sh
+    source microservices-datadriven/travelagency/env.sh
     source setup.sh
     </copy>
     ```
@@ -129,29 +129,29 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
-    ![](images/get-user-ocid.png " ")
+    ![Get User OCID](images/get-user-ocid.png " ")
 
    Click Show to see the details and then click Copy to copy the user OCID to the clipboard, paste in the copied data in console.
 
-    ![](images/example-user-ocid.png " ")
+    ![Example OCID](images/example-user-ocid.png " ")
 
 3. The setup will ask for you to enter your Compartment OCID.
 
-    ![](images/get-comp-ocid.png " ")
+    ![Get Comp OCID](images/get-comp-ocid.png " ")
 
 4. The setup will automatically upload an Auth Token to your tenancy so that docker can log in to the Oracle Cloud Infrastructure Registry. If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room. This is done through the Oracle Cloud Console.
 
    Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
-   ![](images/get-user-ocid.png " ")
+   ![Get User OCID](images/get-user-ocid.png " ")
 
    On the User Details console, click Auth Tokens under Resources.
 
-   ![](images/auth-token.png " ")
+   ![Auth Token](images/auth-token.png " ")
 
    On the Auth Tokens screen, highlight the existing token(s) and delete by clicking Delete from the drop-down menu.
 
-   ![](images/delete-auth-token.png " ")
+   ![Delete Auth Token](images/delete-auth-token.png " ")
 
 5. The setup will ask you to enter an admin password for the databases. For simplicity, the same password will be used for both the order and inventory databases. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
@@ -167,16 +167,16 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     ```
    To confirm that there are no other un-terminated OKE clusters, click the Navigation Menu in the upper left of Oracle Cloud Console, navigate to Developer Services and click on Kubernetes Clusters (OKE).
 
-    ![](images/dev-services-menu.png " ")
+    ![Dev Services Menu](images/dev-services-menu.png " ")
 
-    ![](images/get-oke-info.png " ")
+    ![Get OKE Info](images/get-oke-info.png " ")
 
    If there are any un-terminated OKE cluster(s), please delete it(them) and continue with setup steps.
 
-    ![](images/get-oke-details.png " ")
+    ![Get OKE Details](images/get-oke-details.png " ")
 
 
-## Task 8: Monitor the Setup
+## Task 7: Monitor the Setup
 
 The setup will provision the following resources in your tenancy:
 
@@ -189,15 +189,15 @@ The setup will provision the following resources in your tenancy:
 
 You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
-   ![](images/duplicate-browser-tab.png " ")
+   ![Duplicate Browser](images/duplicate-browser-tab.png " ")
 
  From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
 
-   ![](images/select-compartment.png " ")
+   ![Select Compartment](images/select-compartment.png " ")
 
  Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
-## Task 9: Complete the Setup
+## Task 8: Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
@@ -225,13 +225,14 @@ showsetuplogs
 </copy>
 ```
 
-Once the setup has completed you are ready to [move on to Lab 2](#next).
 
 Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 
-* **Authors** - Paul Parkinson, Developer Advocate; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata; Irina Granat, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Authors** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata; Irina Granat, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern

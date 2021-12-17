@@ -4,12 +4,16 @@
 
 In this lab we will provision and setup the resources to execute microservices in your environment.
 
-Estimates Lab Time - 20 minutes
+Estimated Time:  20 minutes
 
 ### Objectives
 
 * Clone the setup and microservices code
 * Execute setup
+
+### Prerequisites
+
+- This workshop assumes you have an Oracle cloud account and have signed in to the account.
 
 ## Task 1: Select Your Compartment
 
@@ -17,21 +21,21 @@ Your own Oracle Cloud Infrastructure compartment for running this workshop has b
 
 1. Copy the compartment name (not OCID) from the workshop reservation page.
 
-   ![](images/copy-comp-name.png " ")
+   ![Copy Comp Name](images/copy-comp-name.png " ")
 
 2. Select the navigation menu from the top left corner of the Oracle Cloud Console and navigate to the Instances page in the Compute section.
 
-   ![](images/select-compute-instances.png " ")
+   ![Select Compute Instances](images/select-compute-instances.png " ")
 
 3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope".
 
-   ![](images/enter-comp-name.png " ")
+   ![Enter Comp Name](images/enter-comp-name.png " ")
 
 4. Select your compartment name from the drop down list.
 
-   ![](images/select-comp-name.png " ")
+   ![Select Comp Name](images/select-comp-name.png " ")
 
-   ![](images/correct-comp-name.png " ")
+   ![Correct Comp Name](images/correct-comp-name.png " ")
 
 ## Task 2: Launch the Cloud Shell
 
@@ -39,7 +43,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
-   ![](images/open-cloud-shell.png " ")
+   ![Open Cloud Shell](images/open-cloud-shell.png " ")
 
    NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
@@ -48,7 +52,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.11.3 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.12.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -58,8 +62,8 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```
     <copy>
-    sed -i.bak '/travelbooking/d' ~/.bashrc
-    echo "source $PWD/microservices-datadriven/travelbooking/env.sh" >>~/.bashrc
+    sed -i.bak '/travelagency/d' ~/.bashrc
+    echo "source $PWD/microservices-datadriven/travelagency/env.sh" >>~/.bashrc
     </copy>
     ```
 
@@ -69,7 +73,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```
     <copy>
-    source microservices-datadriven/travelbooking/env.sh
+    source microservices-datadriven/travelagency/env.sh
     source setup.sh
     </copy>
     ```
@@ -86,27 +90,27 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 2. The setup will ask for you to enter your Compartment OCID. This is included in the workshop reservation page console.
 
-   ![](images/get-compartment-ocid.png " ")
+   ![Get Compartment OCID](images/get-compartment-ocid.png " ")
 
 3. The setup will ask you to enter an Auth Token so that docker can log in to the Oracle Cloud Infrastructure Registry. Please follow these steps to create an Auth Token.
 
   a. Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
-   ![](images/get-gbuser-ocid.png " ")
+   ![Get GB User OCID](images/get-gbuser-ocid.png " ")
 
   b. On the left side of the page, click Auth Tokens and click Generate Token.
 
-   ![](images/auth-token-region.png " ")
+   ![Auth Token Region](images/auth-token-region.png " ")
 
-  c. Enter "travelbooking" in the description field and click Generate Token.
+  c. Enter "travelagency" in the description field and click Generate Token.
 
-   ![](images/generate-auth-token.png " ")
+   ![Generate Auth Token](images/generate-auth-token.png " ")
 
    The new Auth Token will be displayed.
 
   d. Click Copy to copy the Auth Token to the clipboard.
 
-   ![](images/generated-auth-token-value.png " ")
+   ![Generate Auth Token](images/generated-auth-token-value.png " ")
 
   e. Paste the Auth Token when requested by Setup. **Note**: The token is not displayed. Press Enter after pasting the token.
 
@@ -153,6 +157,8 @@ Once the setup has completed you are ready to move to the next lab.
 Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
 Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
