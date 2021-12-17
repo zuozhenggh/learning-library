@@ -103,7 +103,7 @@ Estimated Time:  10 minutes
    
    ![Slack OK](images/slackmessagehealthbacktonormal.png " ")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate

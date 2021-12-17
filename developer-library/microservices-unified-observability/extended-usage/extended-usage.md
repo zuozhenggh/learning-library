@@ -61,7 +61,7 @@ Estimated Time:  5 minutes
 
 The observability-exporter image corresponding to the repos at https://github.com/oracle/oracle-db-appdev-monitoring  will soon be available as will more advanced customization of the DB log exporter, etc.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist

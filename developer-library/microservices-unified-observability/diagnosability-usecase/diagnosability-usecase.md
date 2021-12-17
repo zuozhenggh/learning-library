@@ -87,7 +87,7 @@ This lab presumes you have already completed the earlier labs.
      ![Propagation Up](images/propagationup.png " ")
 
    
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate

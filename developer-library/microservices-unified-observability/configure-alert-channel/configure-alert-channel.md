@@ -87,7 +87,7 @@ Estimated Time:  5 minutes
      ![Test Alert](images/slacktestalert.png " ")
 
     
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate

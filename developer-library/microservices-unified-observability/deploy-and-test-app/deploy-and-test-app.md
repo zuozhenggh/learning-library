@@ -53,21 +53,20 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
 ## Task 2: Access the FrontEnd UI
 
-You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
+1.  Open a new browser tab and enter the external IP URL:
 
-`https://<EXTERNAL-IP>`
+    `https://<EXTERNAL-IP>`
 
-Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
+2. Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
 
-You will be prompted to authenticate to access the Front End microservices. The user is `grabdish` and the password is the one you entered in Lab 1.
+3. You will be prompted to authenticate to access the Front End microservices. The user is `grabdish` and the password is the one you entered in Lab 1.
 
-![FrontEnd](images/frontendauthlogin.png " ")
+    ![FrontEnd](images/frontendauthlogin.png " ")
 
-You should then see the Front End home page. You've now accessed your first microservice of the lab!
+4. You should then see the Front End home page. You've now accessed your first microservice of the lab!
 
-![UI Home Page](images/ui-home-page.png " ")
+    ![UI Home Page](images/ui-home-page.png " ")
 
-We created a self-signed certificate to protect the frontend-helidon service. This certificate will not be recognized by your browser and so a warning is displayed. It will be necessary to instruct the browser to trust this site to display the frontend. In a production implementation a certificate that is officially signed by a certificate authority should be used.
 
 ## Task 3: Verify the Order and Inventory functionality of GrabDish store
 
@@ -107,7 +106,7 @@ We created a self-signed certificate to protect the frontend-helidon service. Th
 
    The order should have been successfully placed, which is shown by the order status showing success.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata

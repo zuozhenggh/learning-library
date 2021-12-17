@@ -216,6 +216,7 @@ Watch the video below for a quick walk through of the lab.
 7. Click the `Jaeger` to view the corresponding trace information and drill down into detail.
       ![](images/traceinfo.png " ")
 
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist

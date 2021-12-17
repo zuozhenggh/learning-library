@@ -40,7 +40,7 @@ We encourage you to check out the other workshop if you are interested in learni
 ![Grabdish Architecture](./images/architecture.png " ")
 
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**.
 
 ## Learn More
 
