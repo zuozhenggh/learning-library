@@ -4,7 +4,7 @@
 
 This lab will show you how to determine when an exception/failure occurs in the system and allow you to diagnose and debug the issue.
 
-Estimated lab Time - 5 minutes
+Estimated Time:  5 minutes
 
 ### Objectives
 
@@ -19,11 +19,12 @@ This lab presumes you have already completed the earlier labs.
 
 ## Task 1: Notice propagation health singlestat metric
 
-  ![](images/propagationup.png " ")
+1. Notice propagation to and from the `Order` and `Inventory` databases of the event mesh are up.
+  ![Propagation Setup](images/propagationup.png " ")
      
-  Note that Grafana plans to support alert rules for singlestat panels such as this one in the future but does not currently.
+    *Note that Grafana plans to support alert rules for singlestat panels such as this one in the future but does not currently.
      
-  We demonstrate alert rules in the `Performance Monitoring Use Case` lab of this workshop.
+    We demonstrate alert rules in the `Performance Monitoring Use Case` lab of this workshop.
 
 ## Task 2: Use SQLcl to disable propagation
 
@@ -64,7 +65,7 @@ This lab presumes you have already completed the earlier labs.
 
 1. Return to the Grafana dashboard and notice the down state for the `OrderDB to InventoryDB propagation` metric:
 
-     ![](images/propagationdown.png " ")
+     ![Propagation Down](images/propagationdown.png " ")
 
 
 ## Task 4: Use SQLcl to re-enable propagation
@@ -83,10 +84,10 @@ This lab presumes you have already completed the earlier labs.
 
 1. Return to the Grafana dashboard and notice the up state for the `OrderDB to InventoryDB propagation` metric:
 
-     ![](images/propagationup.png " ")
+     ![Propagation Up](images/propagationup.png " ")
 
    
-Proceed to the next lab.
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate

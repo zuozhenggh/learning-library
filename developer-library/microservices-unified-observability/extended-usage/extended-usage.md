@@ -6,7 +6,7 @@ This lab will take a deeper dive into expliaining Metrics, Logging, and Tracing 
 
 You can extend the observability functionality provided here in a number of ways by modifying the metrics and log exporter config, tracing in your microservices, dashboards, etc.
 
-Estimated lab Time - 5 minutes
+Estimated Time:  5 minutes
 
 ### Objectives
 
@@ -14,19 +14,20 @@ Estimated lab Time - 5 minutes
 
 ### Prerequisites
 
-This lab presumes you have already completed the earlier labs.
+- This lab presumes you have already completed the earlier labs.
 
 ## Task 1: Modify metrics exporter config
 
-   Modify and save  
+1.    Modify and save  
    `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml`
    and/or 
    `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml and run the following command.`
    
-   Metrics are defined using the following toml convention.
+2. Notice metrics are defined using the following toml convention.
    
-![](./images/metricsconfig.png " ")
-    
+   ![Metrics Config](./images/metricsconfig.png " ")
+ 
+ 2. After making any changes, run the following command.   
     ```
     <copy>cd $GRABDISH_HOME/observability;./updatedbteqexporters.sh</copy>
     ```
@@ -34,33 +35,33 @@ This lab presumes you have already completed the earlier labs.
 
 ## Task 2: Modify application tracing
 
-Study the tracing behavior in `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java` and `OrderServiceEventProducer.java`
+1. Study the tracing behavior in `$GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java` and `OrderServiceEventProducer.java`
 
-Notice the `@Traced` MicroProfile annotation for automatically adding tracing spans for this method call.
+2. Notice the `@Traced` MicroProfile annotation for automatically adding tracing spans for this method call.
 
-![](./images/annotationtrace.png " ")
-
-
-Notice the programmatically added spans via `tracer.buildSpan`  logic.
-
-![](./images/programmaticspan.png " ")
+    ![Annotation Trace](./images/annotationtrace.png " ")
 
 
-Notice how the OpenTracing id is set as the ECID for end to end tracing across app/Kubernetes tier and database tier.
+3. Notice the programmatically added spans via `tracer.buildSpan`  logic.
 
-![](./images/opentracingidsetasecid.png " ")
+    ![Programmatic Span](./images/programmaticspan.png " ")
 
-Modify and save the source. Then rebuild, and redeploy by deleting the previous pod version (deployments are configured with image-pull=always) using the following command.
+
+4. Notice how the OpenTracing id is set as the ECID for end to end tracing across app/Kubernetes tier and database tier.
+
+    ![OpenTracing Id](./images/opentracingidsetasecid.png " ")
+
+5. Modify and save the source. Then rebuild, and redeploy by deleting the previous pod version (deployments are configured with image-pull=always) using the following command.
 
     ```
     <copy>cd $GRABDISH_HOME/order-helidon;./build.sh;deletepod order-helidon</copy>
     ```
      
-You will notice the related tracing changes in the dashboard
+6. Notice the related tracing changes in the dashboard.
 
 The observability-exporter image corresponding to the repos at https://github.com/oracle/oracle-db-appdev-monitoring  will soon be available as will more advanced customization of the DB log exporter, etc.
 
-Proceed to the next lab.
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist

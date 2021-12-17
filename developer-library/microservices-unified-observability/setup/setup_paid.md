@@ -4,26 +4,34 @@
 
 In this lab we will provision and setup the resources to execute microservices in your tenancy.  
 
-Estimates Lab Time - 25 minutes
-<if type="multicloud-freetier">
-- Estimates Lab Time - 25 minutes
-+ Estimates Lab Time - 25 minutes
-</if>
+Estimated Time:  25 minutes
 
 ### Objectives
 
 * Clone the setup and microservices code
 * Execute setup
 
-## Task 1: Log in to the Oracle Cloud Console and Launch the Cloud Shell
+### Prerequisites
 
-If you haven't already, sign in to your account.
+- This workshop assumes you have an Oracle cloud account and have signed in to the account.
+
+
+## Task 1: Launch Cloud Shell
+
+Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
+
+1. Click the Cloud Shell icon in the top-right corner of the Console.
+
+  ![Open Cloud Shell](images/open-cloud-shell.png " ")
+
+  NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+
 
 ## Task 2: Select the Home Region
 
-Be sure to select the **home region** of your tenancy.  Setup will only work in the home region.
+1. Be sure to select the **home region** of your tenancy.  Setup will only work in the home region.
 
-  ![](images/home-region.png " ")
+    ![Home Region](images/home-region.png " ")
 
 ## Task 3: Create group and IAM policies
 A user's permissions to access services comes from the groups to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
@@ -34,24 +42,24 @@ Here are the steps for creating a new group and assigning security policy requir
 
 1. Click the Navigation Menu in the upper left, navigate to Identity & Security and select Groups.
 
-  ![](images/id-groups.png " ")
+  ![Id Groups](images/id-groups.png " ")
 
 2. Click Create Group.
 
-  ![](images/create-group.png " ")
+  ![Create Group](images/create-group.png " ")
 
 3. In the Create Group dialog box, enter the following:
  - **Name**: Enter a unique name for your group, such as "MicroservicesAdmin”. Note that the group name cannot contain spaces.
  - **Description**: Enter a description (for example, “New group for microservices workshop”).
  - Click **Create**.
 
-    ![](images/new-group.png " ")
+    ![New Group](images/new-group.png " ")
 
-    ![](images/get-new-group.png " ")
+    ![Get New Group](images/get-new-group.png " ")
 
  4. Now, create a security policy that gives the group permissions to execute the setup steps for this workshop, entering a name, such as "Microservices-Policies".
 
-  ![](images/create-policy.png " ")
+  ![Create Policy](images/create-policy.png " ")
 
   Using **Edit Policy Statement** option, add the below statements to the policy created above.
 
@@ -68,7 +76,7 @@ Here are the steps for creating a new group and assigning security policy requir
     </copy>
     ```
 
-  ![](images/policy-statements.png " ")
+  ![Policy Statements](images/policy-statements.png " ")
 
 5. And finally, make sure your user account has been added to the group created in step#2.
 
@@ -86,23 +94,17 @@ If you have already used up some quota on your tenancy, perhaps while completing
 
 Quota usage and limits can be check through the console: **Governance & Administration** -- **Governance** -- **Limits, Quotas and Usage**, For example:
 
-  ![](images/service-limit-example.png " ")
+  ![Service Limit Example](images/service-limit-example.png " ")
 
 The Tenancy Explorer may be used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
 
-  ![](images/show-subcompartments.png " ")
+  ![Show Subcompartments](images/show-subcompartments.png " ")
 
 It may be necessary to delete some resources to make space to run the workshop.  Once you have sufficient space you may proceed to the next step.
 
 ## Task 5: Launch the Cloud Shell
 
-Cloud Shell is a small virtual machine running a "bash" shell which you access through the  'Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface which is set to the  'Oracle Cloud Console' tenancy region. It also provides up-to-date tools and utilities.
 
-1. Click the Cloud Shell icon in the top-right corner of the Console.
-
-  ![](images/open-cloud-shell.png " ")
-
-  NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
 ## Task 6: Create a Folder to Contain the Workshop Code
 
@@ -173,27 +175,27 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
-    ![](images/get-user-ocid.png " ")
+    ![Get User OCID](images/get-user-ocid.png " ")
 
    Click Show to see the details and then click Copy to copy the user OCID to the clipboard, paste in the copied data in console.
 
-    ![](images/example-user-ocid.png " ")
+    ![Example User OCID](images/example-user-ocid.png " ")
 
 3. The setup will ask for you to enter your Compartment OCID.
 
-    ![](images/get-comp-ocid.png " ")
+    ![Get Comp OCID](images/get-comp-ocid.png " ")
 
 4. The setup will automatically upload an Auth Token to your tenancy so that docker can log in to the OCI Registry.  If there is no space for a new Auth Token, the setup will ask you to remove an existing token to make room.  This can be done through the  'Oracle Cloud Console.
 
-    ![](images/get-user-ocid.png " ")
+    ![Get User OCID](images/get-user-ocid.png " ")
 
    On the User Details console, click Auth Tokens under Resources.
 
-    ![](images/auth-token.png " ")
+    ![Auth Token](images/auth-token.png " ")
 
    On the Auth Tokens screen, highlight the existing token(s) and delete by clicking Delete from the drop-down menu.
 
-    ![](images/delete-auth-token.png " ")
+    ![Delete Auth Token](images/delete-auth-token.png " ")
 
 5. The setup will ask you to enter an admin password for the databases.  For simplicity, the same password will be used for both the order and inventory databases.  Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
@@ -209,13 +211,13 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     ```
    To confirm that there are no other un-terminated OKE clusters, click the Navigation Menu in the upper left of Oracle Cloud Console, navigate to Developer Services and click on Kubernetes Clusters (OKE).
 
-    ![](images/dev-services-menu.png " ")
+    ![Dev Services Menu](images/dev-services-menu.png " ")
 
-    ![](images/get-oke-info.png " ")
+    ![Get OKE Info](images/get-oke-info.png " ")
 
    If there are any un-terminated OKE cluster(s), please delete it(them) and continue with setup steps.
 
-    ![](images/get-oke-details.png " ")
+    ![Get OKE Details](images/get-oke-details.png " ")
 
 ## Task 9: Monitor the Setup
 
@@ -230,11 +232,11 @@ The setup will provision the following resources in your tenancy:
 
 You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
-   ![](images/duplicate-browser-tab.png " ")
+   ![Duplicate Browswer Tab](images/duplicate-browser-tab.png " ")
 
  From the new browser window or tab, navigate around the console to view the resources within the new compartment.  The table includes the console navigation for each resource.  For example, here we show the database resources:
 
-   ![](images/select-compartment.png " ")
+   ![Select Compartment](images/select-compartment.png " ")
 
  Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.  
 
@@ -266,9 +268,9 @@ showsetuplogs
 </copy>
 ```
 
-Once the setup has completed you are ready to [move on to Lab 2](#next).  
-
 Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 

@@ -34,4 +34,4 @@ Proceed to the next lab.
 * [https://developer.oracle.com/](https://developer.oracle.com/)
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Architect and Developer Evangelist
+* **Author** - Paul Parkinson, Architect and Developer Advocate

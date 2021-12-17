@@ -4,7 +4,7 @@
 
 This lab will show you how to set up alerts for metrics conditions and trigger them so that Slack notifications are sent as appropriate.
 
-Estimated lab Time - 10 minutes
+Estimated Time:  10 minutes
 
 ### Objectives
 
@@ -15,25 +15,25 @@ Estimated lab Time - 10 minutes
   
 ### Prerequisites
 
-This lab presumes you have already completed the earlier labs.
+- This lab presumes you have already completed the earlier labs.
 
 ## Task 1: Notice perf metrics and create alert for response time threshold
 
 1. Notice `PlaceOrder average time` metric panel in `Order Service` section of the Grabdish dashboard, select the drop down menu of the panel and click `edit`.
 
-    ![](images/placeorderpanel.png " ")
+    ![Place Order Panel](images/placeorderpanel.png " ")
    
 2. Select the `alert` tab and click the `create Alert` button
 
-    ![](images/createalertbutton.png " ")
+    ![Create Alert](images/createalertbutton.png " ")
        
 3. Set the rule to evaluate every 1m for 5m, add a condition for avg() time above `.01`, and provide a message to be sent for the Slack notification (Slack channel should be the default for `Send to`)
 
-    ![](images/addalertruleforplaceorder.png " ")
+    ![Add Alert Rule](images/addalertruleforplaceorder.png " ")
        
 3. You can click `Test rule` to verify the rule and then click `Apply` in the upper right corner.
 
-    ![](images/testrule.png " ")
+    ![Test Rule](images/testrule.png " ")
 
 
 ## Task 2:  Install a load testing tool and start an external load balancer for the Order service
@@ -50,7 +50,7 @@ This lab presumes you have already completed the earlier labs.
     <copy>services</copy>
     ```
 
-    ![](images/ingress-nginx-loadbalancer-externalip.png " ")
+    ![Load Balancer](images/ingress-nginx-loadbalancer-externalip.png " ")
 
     Set the LB environment variable to the external IP address of the ext-order service. Replace 123.123.123.123 in the following command with the external IP address.
 
@@ -67,7 +67,7 @@ This lab presumes you have already completed the earlier labs.
 	<copy>cd $GRABDISH_HOME/k6; wget https://github.com/loadimpact/k6/releases/download/v0.27.0/k6-v0.27.0-linux64.tar.gz; tar -xzf k6-v0.27.0-linux64.tar.gz; ln k6-v0.27.0-linux64/k6 k6</copy>
 	```
 
-	![](images/install-k6.png " ")
+	![Install k6](images/install-k6.png " ")
 
  
 ## Task 3: Load test 
@@ -83,27 +83,27 @@ This lab presumes you have already completed the earlier labs.
 
 ## Task 4: Notice metrics and Slack message from alert due to rule condition being exceeded.
 
-   You will notice the health/heart of the PlaceOrder panel in Grafana console turn to yellow and then eventually to red.
+1. Notice the health/heart of the PlaceOrder panel in Grafana console turn to yellow and then eventually to red.
 
-   ![](images/yellowheart.png " ")
+   ![Health Yellow](images/yellowheart.png " ")
      
-   ![](images/redheart.png " ")
+   ![Health Red](images/redheart.png " ")
      
-   You will also notice a Slack message being sent with information about the alert.
+ 2. Also notice a Slack message being sent with information about the alert.
      
-   ![](images/slackfailure.png " ")
+   ![Slack Failure](images/slackfailure.png " ")
 
 ## Task 5: Notice return to healthy state and Slack message sent indicating response time is acceptable.
 
-   You will notice the health/heart of the PlaceOrder panel in Grafana console turn back to green.
+1. Notice the health/heart of the PlaceOrder panel in Grafana console turn back to green.
 
-   ![](images/placeorderhealthbacktonormal.png " ")
+   ![Health Normal](images/placeorderhealthbacktonormal.png " ")
    
-   You will also notice a Slack message being sent confirming the condtion is `OK` again.
+2. Also notice a Slack message being sent confirming the condtion is `OK` again.
    
-   ![](images/slackmessagehealthbacktonormal.png " ")
+   ![Slack OK](images/slackmessagehealthbacktonormal.png " ")
 
-Proceed to the next lab.
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate

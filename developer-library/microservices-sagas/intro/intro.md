@@ -1,15 +1,16 @@
 # Simplify Microservices Transactions Using Oracle Database Sagas
 ## Introduction and Overview
 
-[](youtube:v0nYRueADbo)
 
-This workshop will help you understand the technical capabilities of the forthcoming  the Oracle converged database to support a scalable data and event-driven microservices architecture.
+This workshop will help you understand the technical capabilities of the forthcoming saga support in the Oracle database.
 
-You will create an application.
+You will use a travel agency application 
+
+The application comes in three versions: PL/SQL, Java, and Apex
+
+Below is the architectural diagram of application.
 
 ![](./images/architecture.png " ")
-
-
 
 ### Let's Get Started
 
@@ -23,4 +24,4 @@ Proceed to the next lab.
 * [https://developer.oracle.com/](https://developer.oracle.com/)
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Architect and Developer Evangelist
+* **Author** - Paul Parkinson, Architect and Developer Advocate

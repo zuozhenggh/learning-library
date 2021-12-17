@@ -1,4 +1,4 @@
-# Observability (metrics, tracing, and logs)
+# Enable Observability with Database Metrics, Logs Exporters
 
 ## Introduction
 
@@ -10,8 +10,15 @@ Watch the video below for a quick walk through of the lab.
 
 [](youtube:MuoMHJ54PHE)
 
-  -   Install and configure Grafana, Prometheus, Loki, Promtail, and Jaeger
-  -   Understand single-pane-of glass unified observability using Grafana to analyze metrics, logs, and tracing of the microservices architecture across the application and Oracle database tier.
+### Objectives
+
+* Install and configure Grafana, Prometheus, Loki, Promtail, and Jaeger
+* Understand single-pane-of glass unified observability using Grafana to analyze metrics, logs, and tracing of the microservices architecture across the application and Oracle database tier.
+
+### Prerequisites
+
+- This lab presumes you have already completed the earlier labs.
+ 
 
 ## Task 1: Install and configure observability software and metrics and log exporters
 

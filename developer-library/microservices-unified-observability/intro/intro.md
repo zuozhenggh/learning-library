@@ -1,12 +1,26 @@
-# Unified Observability in Grafana with converged Oracle Database
+# Introduction
 
-## Introduction and Overview
+## About this Workshop
 
 This workshop will show you how to automatically configure and use Unified Observability in Grafana to analyze and correlate metrics, logs, and tracing, both in the app-tier and database tier, and all within one "single-pane of glass" (a single Grafana dashboard console).
 
+Estimated Workshop Time: 50 minutes
+
+###About Product/Technology
+
 Diagnosability and performance optimization use cases will be demonstrated as will the ability to configure and customize the framework to suite your own use cases. 
 
-![](./images/unified-observability.png " ")
+###Objectives
+
+- Learn about Oracle's unique ability to provide unified observability of metrics, logs, and tracing across application and data tiers in a single Grafana console.
+- Learn about observability technologies such as Grafana, Prometheus, Promtail, Loki, Jaeger, OpenTracing and OpenTelemetry, and the Oracle DB metric and log exporters.
+
+### Prerequisites
+
+- This workshop assumes you have an Oracle cloud account and have signed in to the account.
+
+
+![Unified Observability](./images/unified-observability.png " ")
 
 As shown in the diagram above, the following popular CNCF and open source technologies and industry standards are used.
  - Prometheus is used for metrics gathering by scraping Kubernetes microservice endpoints and the database exporter endpoint. A Prometheus datasource is used in Grafana.
@@ -23,14 +37,12 @@ The "GrabDish" application and related infrastructure used in the [Simplify Micr
 
 We encourage you to check out the other workshop if you are interested in learning more about the technical capabilities inside and outside the Oracle converged database to support scalable data and event-driven microservices architectures, polyglot microservices, data and transaction patterns, etc.
 
-![](./images/architecture.png " ")
+![Grabdish Architecture](./images/architecture.png " ")
 
 
-### Let's Get Started
+You may now proceed to the next lab.
 
-Proceed to the next lab.
-
-## Want to Learn More?
+## Learn More
 
 * [Multitenant Database–Oracle 19c](https://www.oracle.com/database/technologies/multitenant.html)
 * [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)

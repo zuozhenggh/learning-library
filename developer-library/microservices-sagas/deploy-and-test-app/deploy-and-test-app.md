@@ -108,4 +108,4 @@ We created a self-signed certificate to protect the frontend-helidon service. Th
    The order should have been successfully placed, which is shown by the order status showing success.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Architect and Developer Evangelist
+* **Author** - Paul Parkinson, Architect and Developer Advocate
