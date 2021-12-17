@@ -32,7 +32,7 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 1. Sign into your OCI console, click on the left navigation menu, and then click **Autonomous Database**.  
 
-	![ADB in OCI](images/adb_in_oci.png)
+	![ADB in OCI](images/adb-in-oci.png)
 
 2. The Autonomous Database dashboard lists all the databases that are provisioned in the tenancy. Click the Oracle Autonomous Database that you have provisioned.
 
