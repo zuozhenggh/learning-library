@@ -10,7 +10,7 @@ We will:
 2. Log out and then login again in the Database Actions, now as the new F1 user.
 3. Load the data into the tables as the F1 user.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 - Learn how to load data into the data warehouse, so you can analyze it later.
@@ -32,11 +32,13 @@ This new user/schema will hold the Grand Prix data.
 
    ![ADW Menu](images/open-redbull2.png)
 
-3. Go to **Tools** tab and click **Open Database Actions**.
+3. Click **Database Actions**.
+
+   (if your Autonomous Data Warehouse was created earlier, you can find the Database Actions under "Tools")
 
    ![ADW Menu](images/open-database-actions.png)
 
-   Login with user **ADMIN**, password **Oracle_12345** (you specified this upon creation of the Autonomous Data Warehouse earlier).
+   If asked, login with user **ADMIN**, password **Oracle_12345** (you specified this upon creation of the Autonomous Data Warehouse earlier).
 
 4. Click the **SQL** tile under **Development** section.
 
@@ -51,10 +53,6 @@ This new user/schema will hold the Grand Prix data.
 7. Click the **run-script** button (**NOT** the Run button). Then verify the output in the **Script Output** tab. The last lines in the output should indicate that the script has run successfully.
 
     ![ADW Menu](images/run-script.png)
-
-8. Log out from the Data Actions as the ADMIN user.
-
-   ![ADW Menu](images/signoutadmin.png)
 
 ## **Task 2**: Upload the Grand Prix data to Autonomous Data Warehouse
 
@@ -74,11 +72,13 @@ This new user/schema will hold the Grand Prix data.
 
    Save the files on your local machine. **Make sure that the files are saved with extension `.csv`**
 
-2. Next, come back to your `REDBULL` ADW console, go to **Tools** tab and click **Open Database Actions**.
+2. **Important**: Make sure that you **change to the "F1" user**. Note that you created this "F1" user earlier (when you ran the create_user.sql script).
 
-   ![Open Database Actions](images/open-database-actions.png)
+   Log out from the Data Actions (currently showing "ADMIN").
 
-   It's **important** that you **use the F1 user** (_not_ the ADMIN user) to log in. Note that you created this "F1" user earlier (when you ran the create_user.sql script).
+   ![ADW Menu](images/signoutadmin.png)
+
+   Now log in to Data Actions again using the following:
 
    - Username: F1
    - Password: Oracle_12345
@@ -91,7 +91,7 @@ This new user/schema will hold the Grand Prix data.
 
     ![Start Data Load](images/start-data-load.png)
 
-5. Select the files that you downloaded earlier.
+5. Select the files that you downloaded earlier (6 in total).
 
     ![Select Files](images/select-files.png)
 
@@ -114,8 +114,6 @@ This new user/schema will hold the Grand Prix data.
     ![Load Completed](images/load-completed.png)
 
 Congratulations! You've successfully loaded the data into Autonomous Data Warehouse.
-
-You can now proceed to the next lab.
 
 ## **Acknowledgements**
 

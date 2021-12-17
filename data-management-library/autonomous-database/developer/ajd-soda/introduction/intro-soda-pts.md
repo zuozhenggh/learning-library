@@ -18,6 +18,10 @@ In this lab, you will:
 * Provision Oracle Autonomous JSON Database
 * Create MongoDB document store on MongoDB Cloud
 
+Watch the video below to see how to prepare your development environment for Python and SODA.
+
+[](youtube:AdnmMDB8NF8)
+
 ### Prerequisites
 * SSH Keys for Putty or OpenSSH (`id_rsa.ppk` or `id_rsa`, and `id_rsa.pub`)
     * SSH Keys can be obtained when the compute node is created (OpenSSH)
@@ -75,11 +79,13 @@ In this lab, you will:
 
     ![](./images/putty2.png "")
 
-    ![](./images/putty3.png "")
-
-6. Create a SSH tunnel from source port 5001 to localhost:3389. (Windows only)
+6. Create a SSH tunnel from Source port 5001 to Destination localhost:3389. Click **Add**. (Windows only)
 
     ![](./images/putty4.png "")
+
+7. Go back to Session, give it a name, and save it. When asked if you trust this host, click **Yes**. (Windows only)
+
+    ![](./images/putty3.png "")
 
 
 ## Task 3: Configure Compute Node for development
