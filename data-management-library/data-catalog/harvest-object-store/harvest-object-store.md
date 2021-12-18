@@ -21,7 +21,7 @@ In this lab, you will:
 
 Complete Lab0 : Step 1-3 and Lab1. Before you create an object storage data asset, you must create a dynamic group and an object storage resource access policy.
 
-## Task 1: Create a Dynamic Groups and Policies
+## Task 1: Create Dynamic Groups and Policies
 
 Dynamic groups allow you to group Oracle Cloud Infrastructure compute instances as "principal" actors (similar to user groups). You can then create policies to permit instances to make API calls against Oracle Cloud Infrastructure services. When you create a dynamic group, rather than adding members explicitly to the group, you instead define a set of matching rules to define the group members. For example, a rule could specify that all instances in a particular compartment are members of the dynamic group. The members can change dynamically as instances are launched and terminated in that compartment.
 
@@ -47,12 +47,7 @@ In this task, you copy the OCID of the Data Catalog instance and use it as a res
     + Click the **Copy** button in the following code box to copy the dynamic rule, and then paste it in the **Rule 1** text box. This dynamic group will be used in a policy that allows the **`datacatalog`** Data Catalog to access the Object Storage buckets. Substitute the _your-data-catalog-instance-ocid_ with your **training-dcat-instance** Data Catalog instance OCID that you copied earlier.
 
         ```
-        <copy>Any {resource.id = 'your-data-catalog-instance-ocid'}</copy>
-        ```
-        In our example, the dynamic rule is as follows:
-
-        ```
-        <copy>Any {resource.id = 'ocid1.datacatalog.oc1.iad.aaaaaaaampatnmuyvhwqlg7vucnmkez3f2k7ouqyqfcooq7jtjdypbrqy5xq'}</copy>
+        <copy>Any {resource.id = 'ocid1.user.oc1..<unique_ID>'}</copy>
         ```
 
         ![Create Dynamic Group](./images/moviestream-dynamic-group-db.png " ")
@@ -65,7 +60,8 @@ In this task, you copy the OCID of the Data Catalog instance and use it as a res
 
          ![Dynamic Group created](./images/dynamic-group-created.png " ")
 
-#### Create an Object Storage Resources Access Policy         
+#### Create an Object Storage Resources Access Policy    
+
 After you create a dynamic group, you create policies to permit the dynamic group to access Oracle Cloud Infrastructure services. In this task, you create a policy to allow Data Catalog in your `data-catalog-livelab-work` compartment to access any object in your **Oracle Object Storage**, in any bucket. At a minimum, you must have `READ` permissions to all the individual resource types such as `objectstorage-namespaces`, `buckets`, and `objects`, or to the Object Storage aggregate resource type `object-family`.
 
 Create an access policy to grant ``READ`` permission to the **Object Storage** aggregate resource type ``object-family`` as follows:
@@ -99,7 +95,7 @@ Create an access policy to grant ``READ`` permission to the **Object Storage** a
           The newly created policy is displayed in the **Policies** page.
 
           ![Object Storage Policy created](./images/moviestream-object-storage-policy-created.png " ")
-        > **NOTE:**   You must have a **Free Tier/ Paid Oracle Cloud Account** and **OCI user** that is assigned to an **OCI group**.
+        > **NOTE:**   You must have a **Free Tier/ Paid Oracle Cloud Account** and **Oracle Cloud Infrastructure user** that is assigned to an **Oracle Cloud Infrastructure group**.
 
 ## Task 2: Create an Object Storage Data Asset
 
@@ -113,11 +109,11 @@ Create an access policy to grant ``READ`` permission to the **Object Storage** a
 
   ![Create Data Asset](./images/create-data-asset-object.png " ")
 
-4. In the **Create Data Asset** panel, specify the data asset details as follows. You can use the values, which you have obtained from Step1 for filling the details, but for this lab, we will use an existing Object Storage buckets:    
+4. In the **Create Data Asset** panel, specify the data asset details as follows. You can use the values, which you have obtained from Task1 for filling the details, but for this lab, we will use an existing Object Storage buckets:    
        * **Name:** **`Oracle Object Storage Data Asset`**.
        * **Description:** **`Data Asset to access Oracle Object Storage buckets in a different tenancy than yours using public PARs`**.
        * **Type:** Select **Oracle Object Storage** from the drop-down list.
-       * **URL:** Enter the swift URL for your OCI Object Storage resource. The URL format for an OCI Object Storage resource is as follows which includes your own _region-identifier_:
+       * **URL:** Enter the swift URL for your Oracle Cloud Infrastructure Object Storage resource. The URL format for an Oracle Cloud Infrastructure Object Storage resource is as follows which includes your own _region-identifier_:
 
         ```
         <copy>https://swiftobjectstorage.&ltregion-identifier&gt.oraclecloud.com</copy>
@@ -160,7 +156,6 @@ Add a connection to the **moviestream\_landing** bucket to your new **Oracle Obj
 
          ```   
        * **Make this the default connection for the data asset:** Leave this checkbox unchecked.
-
 
          ![Add Connection](./images/moviestream-landing-connection.png " ")
 
@@ -291,7 +286,6 @@ Harvest the data entities from a data asset as follows:
 
       > **Note:** You can use this page to view and add the bucket(s) and/or data entities you want to harvest from the **Available Buckets** section. Click the **bucket link** to display its nested data entities. Click the ![](./images/add-entity-icon.png>) icon next to each data entity that you want to include in the harvest job. You can search for a bucket or entity using the **Filter Bucket** and **Filter Bucket / data entities** search boxes.
 
-
       ![Step 2](./images/harvest-step-2-add-entities.png " ")
 
 7. Click **Next**. The **Create Job** page of the **Harvest** wizard (Step 3 of 3) is displayed. Specify the following for the job details:
@@ -355,18 +349,16 @@ Harvest the data entities from a data asset as follows:
 
     ![Attribute](./images/custsales-attributes-tab.png " ")
 
-    **Congratulations!** You  can now **proceed to the next lab**.
-
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)
 * [Data Catalog Overview](https://docs.oracle.com/en-us/iaas/data-catalog/using/overview.htm)
 * [Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
 * [Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
-* [OCI Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
-* [Managing Groups in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
+* [Oracle Cloud Infrastructure Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [Managing Groups in Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
 * [Overview of VCNs and Subnets](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingVCNs_topic-Overview_of_VCNs_and_Subnets.htm#Overview)
-* [Managing Compartments in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
+* [Managing Compartments in Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
 
 ## Acknowledgements
 

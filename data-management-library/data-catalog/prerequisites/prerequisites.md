@@ -6,16 +6,15 @@ This lab will walk you through the steps to set up the prerequisites before star
 
 Estimated Time: 45 minutes
 
-
 ### Objectives
 
 In this lab, you will:
 * Set up users and policies needed for Data Catalog.
-* Set up an Autonomous Data Warehouse (ADW).
-* Upload sample data to ADW.
-
+* Set up an Autonomous Data Warehouse.
+* Upload sample data to Autonomous Data Warehouse.
 
 ## Task 1: Log on to the Oracle Cloud Console
+
 1. To sign in to Oracle Cloud at [cloud.oracle.com](https://cloud.oracle.com) you need:
 
     * Your cloud account name (also sometimes referred to as your tenancy name)
@@ -133,7 +132,7 @@ To create a user group, follow these steps:
 
   2. On the **Autonomous Database** page, ensure that you are in the compartment that you have created for the **data-catalog-livelab-work** data catalog resources, and click **Create Autonomous Database**.
 
-    ![Click Create ADB](./images/create-adw-button.png " ")
+    ![Click Create ADW](./images/create-adw-button.png " ")
 
   3. Provide basic information for the Autonomous Database:
 
@@ -207,7 +206,6 @@ Next, you download the client credentials wallet file for the database. This fil
    4. Click **Download**.
       The wallet file gets downloaded as a zip file and is named **Wallet_&lt;databasename&gt;.zip**.
 
-
 ## Task 5: Prepare the Autonomous Data Warehouse
 
 In this workshop, **Autonomous Data Warehouse** serves as the **target data asset** for our data catalog tasks. In this step, you will configure your target Autonomous Data Warehouse database in order to complete all the labs in this workshop.
@@ -270,17 +268,16 @@ In this task, you create a new user on the Autonomous Data Warehouse and then ru
 
   ![Sales History Schema](./images/sales-history-schema.png " ")
 
-  **Congratulations!** You can now **proceed to the next lab**.
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)
 * [Data Catalog Overview](https://docs.oracle.com/en-us/iaas/data-catalog/using/overview.htm)
 * [Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
 * [Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
-* [OCI Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
-* [Managing Groups in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
+* [Oracle Cloud Infrastructure Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [Managing Groups in Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
 * [Overview of VCNs and Subnets](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingVCNs_topic-Overview_of_VCNs_and_Subnets.htm#Overview)
-* [Managing Compartments in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
+* [Managing Compartments in Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
 
 ## Acknowledgements
 

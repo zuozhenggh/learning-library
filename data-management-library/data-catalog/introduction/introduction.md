@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop introduces you to Oracle Cloud Infrastructure (OCI) Data Catalog and will give you a full tour of the service in a hands-on manner. Data Analysts, Data engineers and Data Stewards are some of the data professionals who can use Oracle Cloud Infrastructure Data Catalog and would benefit from this Live Lab.
+This workshop introduces you to Oracle Cloud Infrastructure Data Catalog and will give you a full tour of the service in a hands-on manner. Data Analysts, Data engineers and Data Stewards are some of the data professionals who can use Oracle Cloud Infrastructure Data Catalog and would benefit from this Live Lab.
 
 In this Live Lab, you will create a catalog, connect to data sources like Autonomous Data Warehouse and Object Storage, harvest metadata from them and enrich the technical metadata with business context. Finally, you will see how the catalog can be used to search, discover and understand data available in the data sources.
 
@@ -25,14 +25,15 @@ Using the Data Catalog service, you can:
 * Find the information you need by exploring the data assets, browsing the data catalog, or using the quick search bar.
 * Automate and manage harvesting jobs using schedules.
 * Integrate the enterprise class capabilities of your data catalog with other applications using REST APIs and SDKs.
-* Use hive-compatible meta store to process files in the data lake using OCI Data Flow. [Learn more](https://docs.oracle.com/en-us/iaas/data-flow/using/hive-metastore.htm#hive-metastore-using)
-* Use SQL queries in ADB to seamlessly query external tables based on files in the data lake. [Learn more](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external-data-catalog.html#GUID-480FAF23-453D-4B15-BF92-8435805EB8A5)
+* Use hive-compatible meta store to process files in the data lake using Oracle Cloud Infrastructure Data Flow. [Learn more](https://docs.oracle.com/en-us/iaas/data-flow/using/hive-metastore.htm#hive-metastore-using)
+* Use SQL queries in Autonomous Database to seamlessly query external tables based on files in the data lake. [Learn more](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external-data-catalog.html#GUID-480FAF23-453D-4B15-BF92-8435805EB8A5)
 
 Watch our short overview video that explains key features in Data Catalog.
 
 [](youtube:nY7mG2u6-Ew)
 
 ### Workshop Objectives
+
 In this workshop, you will:
 * Set up the required Oracle Cloud Infrastructure resources for Live Lab and Data Catalog
 * Create required users and associated IAM Policies for the Live Lab
@@ -43,6 +44,7 @@ In this workshop, you will:
 * Search and Discover data using the catalog
 
 ### Lab Breakdown
+
 - **Lab 0:** Prerequisites
 - **Lab 1:** Create a data catalog
 - **Lab 2:** Harvest metadata from Autonomous Database
@@ -57,10 +59,10 @@ In this workshop, you will:
 * [Data Catalog Overview](https://docs.oracle.com/en-us/iaas/data-catalog/using/overview.htm)
 * [Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/index.html)
 * [Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
-* [OCI Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
-* [Managing Groups in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
+* [Oracle Cloud Infrastructure Identity and Access Management](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
+* [Managing Groups in Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm)
 * [Overview of VCNs and Subnets](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingVCNs_topic-Overview_of_VCNs_and_Subnets.htm#Overview)
-* [Managing Compartments in OCI](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
+* [Managing Compartments in Oracle Cloud Infrastructure](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm)
 
 ## Acknowledgements
 
