@@ -65,5 +65,5 @@ Ready to learn more?
 
 
 ## Acknowledgements
-* **Author** - Muhammad Shuja, Principal Cloud Solution Engineer, ODP
-* **Last Updated By/Date** - 22-Dec-2021
+* **Author** - Muhammad Shuja, ODP
+* **Last Updated By/Date** - Muhammad Shuja, December 2021

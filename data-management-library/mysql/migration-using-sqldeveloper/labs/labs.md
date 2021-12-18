@@ -6,11 +6,11 @@ This is the migration lab, where you will start from installing Oracle SQL Devel
 
 Estimated Lab Time: 1 hr
 
-### About Oracle SQL Developer
-Use the latest version of Oracle SQL Developer (which is v 21.2 as of writing of this workshop). 
 
 
-## Objective
+**Objectives**
+
+
 In this lab, you will perform following: 
 * Download Latest Version & Install
 * Create Connections for the Target (ADB) database
@@ -22,7 +22,7 @@ In this lab, you will perform following:
 
 ## Task 1: Download Latest Version & Install
 
-This task will walk you through downloading and installing Oracle SQL Developer in a windows environment...
+Use the latest version of Oracle SQL Developer (which is v 21.2 as of writing of this workshop). This task will walk you through downloading and installing Oracle SQL Developer in a windows environment...
 
 Download and install SQL Developer on any windows pc (laptop/OCI), which has network access to both databases (source and target) as well as the repository database you choose (ADB in our case). You can download latest version of Oracle SQL Developer from following link for your appropriate platform. For thiw workshop, we'll choose Windows 64-bit with JDK 8 included from [https://www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
 
@@ -157,11 +157,12 @@ Note: SQL Developer does not migrate grant information from the source database.
 ## Task 3: Load MySQL JDBC Driver and Source Connection
 
   Setup MySQL JDBC driver and make connection in the SQL Developer
+  
   Fist you'll need to download the jar file for MySQL JDBC connectivity. Go to [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j) and click on Operating system dropdown, select "Platform Independent", then it will show you the options to download tar.gz file or zip file. Download the zip file and extract it, and within that folder you will find mysql-connector-XXX.jar file. In my case, I chose, mysql-connector-8.0.27.jar Follow the instructions below to attach the jar file in SQL Developer.
  
   **From Doc: 3.2.4.3 Before Migrating From MySQL**
 
-    To configure a MySQL database for migration, install MySQLConnector/J release 3.1.12 or 5.0.4 on the system where you have installed SQL Developer and set the appropriate SQL Developer preference. Follow these steps:
+  To configure a MySQL database for migration, install MySQLConnector/J release 3.1.12 or 5.0.4 on the system where you have installed SQL Developer and set the appropriate SQL Developer preference. Follow these steps:
   
   3.1 Ensure that you can connect to the MySQL database from the system where you have installed SQL       Developer.
   
@@ -243,8 +244,8 @@ The migration wizard can be invoked in a variety of contexts. You can right-clic
 
 You can follow the self-explanatory Wizard to provide details about the source and target connection, repository connection, database selected for migration, and objects under the database to be migrated and any data-type conversion required etc and at the end choose to create an offline script file for migration. You can refer to the [documentation](https://docs.oracle.com/en/database/oracle/sql-developer/19.4/rptug/migrating-third-party-databases.html#GUID-51B0F243-D970-43A0-BFA4-97477CB14C48) for explianation of the steps of this wizard.
 
-This workshop walked you through one scenario, of moving data from MySQL Database to Oracle Autonomous Transactions Processing (ADB).
+This workshop walked you through one scenario, of moving data from MySQL Database to Oracle Autonomous Database (ADB).
 
 ## Acknowledgements
-* **Author** - Muhammad Shuja, Principal Cloud Solution Engineer
-* **Last Updated By/Date** - Muhammad Shuja, Dec 22, 2021
+* **Author** - Muhammad Shuja, ODP
+* **Last Updated By/Date** - Muhammad Shuja, December 2021
