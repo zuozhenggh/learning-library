@@ -11,8 +11,14 @@ Use the latest version of Oracle SQL Developer (which is v 21.2 as of writing of
 
 
 ## Objective
-* Download Latest version of SQL Developer
-* Extract and Install
+In this lab, you will perform following: 
+* Download Latest Version & Install
+* Create Connections for the Target (ADB) database
+* Load MySQL JDBC Driver and Source Connection
+* Create User for Migration Repository
+* Create Migration Connection
+* Create Migration Repository
+* Complete Migration with the Wizard
 
 ## Task 1: Download Latest Version & Install
 
@@ -26,19 +32,6 @@ To install and start SQL Developer, you simply download its ZIP file and unzip i
 
 When you launch SQL Developer first time, it'll ask you importing project etc, select No. 
 
-1. Sub step 1
-
-	![Image alt text](images/sample1.png)
-
-2. Sub step 2
-
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
 
 ## Task 2: Create Connections for the Target (ADB) database
 
