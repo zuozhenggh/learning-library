@@ -38,39 +38,39 @@ To provision an Oracle Autonomous Database:
 
    ![Create Autonomous Database option](images/create-autonomous-db.png)
 
-4. On the Create Autonomous Database page, provide the basic information about the database. By default, a database name and a display name for the database are provided. You can modify these names to enter a user-friendly display name for the ADB instance to easily identify the resource. The display name does not have to be unique.    
+3. On the Create Autonomous Database page, provide the basic information about the database. By default, a database name and a display name for the database are provided. You can modify these names to enter a user-friendly display name for the ADB instance to easily identify the resource. The display name does not have to be unique.    
 
    ![Autonomous Database information](images/adb-basic-info.png)
 
-5. For Workload Type, click **Data Warehouse**.
+4. For Workload Type, click **Data Warehouse**.
 
 	 ![Autonomous Database Workload type](images/workload-type.png)
 
-6. For Deployment, select **Shared Infrastructure**.
+5. For Deployment, select **Shared Infrastructure**.
 
 	 ![Autonomous Database deployment type](images/deployment-type.png)
 
-7. For Database Configuration, select Always Free. For the Always Free option, the database configuration options - OCPU count, Storage, and Auto scaling are not available. You must upgrade to a paid account to avail of it.
+6. For Database Configuration, select Always Free. For the Always Free option, the database configuration options - OCPU count, Storage, and Auto scaling are not available. You must upgrade to a paid account to avail of it.
 
 	 >**Note:** You can create Always Free resources both in Free Tier and Paid accounts
 
   ![Configure Database](images/db-configuration.png)
 
-8. Create your Autonomous Database administrator credentials by providing a password. You will need these credentials to sign into this Autonomous Database instance.   
+7. Create your Autonomous Database administrator credentials by providing a password. You will need these credentials to sign into this Autonomous Database instance.   
 
 	>**Note:** The default administrator username is ADMIN.
 
 	![Database Administrator credentials](images/db-admin-credentials.png)
 
-9. For network access, select **Allow secure access from everywhere.**
+8. For network access, select **Allow secure access from everywhere.**
 
     ![Network Access settings](images/create-adw-network.png)
 
-10. For License, select **License Included**.
+9. For License, select **License Included**.
 
     ![License settings](images/create-adw-license.png)
 
-11. Click **Create Autonomous Database**. The Oracle Autonomous Data Warehouse instance starts provisioning. Once your Autonomous Database is created, the database details are listed with the status Available.
+10. Click **Create Autonomous Database**. The Oracle Autonomous Data Warehouse instance starts provisioning. Once your Autonomous Database is created, the database details are listed with the status Available.
 
 	  ![ADB details](images/adw-details.png)
 
@@ -128,7 +128,7 @@ To create a user account:
 	* **Email Address:** Enter the email ID of the user.
 	* Select the option **Generate password and email account details to user. User will be required to reset the password on first sign in** to auto generate a temporary password and send an email with the account credentials to the user. If you select this option, you need not enter values in the Password and Confirm Password fields; the fields are grayed out.
 	* **Password:** Enter a password for the user, if you choose to create a password for the user.
-	>**Note:** This option is disabled if you select the **Generate password...** option to auto generate a temporary password for the user.
+		>**Note:** This option is disabled if you select the **Generate password...** option to auto generate a temporary password for the user.
 
 	* **Confirm Password:** Enter a password to confirm the value that you entered in the Password field. By doing so, you create the password for the user. The user can change the password when first logging in.
 
@@ -136,16 +136,16 @@ To create a user account:
 
 This completes the task of creating an Oracle Machine Learning user.
 
-## Task 3: Sign into Oracle Machine Learning Notebooks
+## Task 3: Sign into Oracle Machine Learning
 
-A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning Notebooks. You can access Oracle Machine Learning Notebooks from Autonomous Database.
+A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning user interface. You can access Oracle Machine Learning user interface from Autonomous Database.
 
 1. From the tab on your browser with your ADW instance, click **Service Console**, then select **Development** on the left.
 
 	![Development option in ADW Service Console](images/adw-development.png)
 
 
-2. Click **Oracle Machine Learning Notebooks.**
+2. Click **Oracle Machine Learning Notebooks User Interface.**
 
 	 ![Oracle Machine Learning Notebooks in ADW](images/oml-notebooks-dev.png)
 
