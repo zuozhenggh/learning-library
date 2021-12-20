@@ -126,39 +126,36 @@ Database passwords must be 12 to 30 characters and contain at least one uppercas
 
 ## Task 5: Complete the Setup
 
-Once the majority of the setup has been completed the setup will periodically give a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
+1. Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
-If any of the background setup jobs are still running you can check their progress with the following command.
+    If any of the background setup jobs are still running you can monitor their progress with the following command.
 
-```
-<copy>
-ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
-</copy>
-```
+    ```
+    <copy>
+    ps -ef | grep "$TRAVELAGENCY_HOME/utils" | grep -v grep
+    </copy>
+    ```
 
-Their log files are located in the $GRABDISH_LOG directory.
+2. Their log files are located in the $TRAVELAGENCY_LOG directory.
 
-```
-<copy>
-ls -al $GRABDISH_LOG
-</copy>
-```
+    ```
+    <copy>
+    ls -al $TRAVELAGENCY_LOG
+    </copy>
+    ```
 
-You can also cat through the logs by using the `showsetuplogs` shortcut command.
+3. You can also cat through the logs by using the `showsetuplogs` shortcut command.
 
-```
-<copy>
-showsetuplogs
-</copy>
-```
+    ```
+    <copy>
+    showsetuplogs
+    </copy>
+    ```
 
-Once the setup has completed you are ready to move to the next lab.
 
 Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
-Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
-
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**.
 
 ## Acknowledgements
 

@@ -221,56 +221,57 @@ It may be necessary to delete some resources to make space to run the workshop. 
 
 ## Task 9: Monitor the Setup
 
-The setup will provision the following resources in your tenancy:
+1. The setup will provision the following resources in your tenancy:
 
-| Resources              |  Oracle Cloud Console Navigation                                            |
-|------------------------|-----------------------------------------------------------------------------|
-| Object Storage Buckets | Storage -- Object Storage -- Buckets                                        |
-| Databases (2)          | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing |
-| OKE Cluster            | Developer Services -- Containers -- Kubernetes Clusters (OKE)               |
-| Registry Repositories  | Developer Services -- Containers -- Container Registry                      |
+    | Resources              | Oracle Cloud Console Navigation                                               |
+    |------------------------|-------------------------------------------------------------------------------|
+    | Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
+    | Databases (2)          | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing   |
+    | OKE Cluster            | Developer Services -- Containers -- Kubernetes Clusters (OKE)                 |
+    | Registry Repositories  | Developer Services -- Containers -- Container Registry                        |
 
-You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
+2. You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
-   ![Duplicate Browswer Tab](images/duplicate-browser-tab.png " ")
+     ![Duplicate Browser](images/duplicate-browser-tab.png " ")
 
- From the new browser window or tab, navigate around the console to view the resources within the new compartment.  The table includes the console navigation for each resource.  For example, here we show the database resources:
+    From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
 
-   ![Select Compartment](images/select-compartment.png " ")
+    ![Select Compartment](images/select-compartment.png " ")
 
- Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.  
+    Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
 ## Task 10: Complete the Setup
 
-Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status.  Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
+1. Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
-If any of the background setup jobs are still running you can monitor their progress with the following command.
+    If any of the background setup jobs are still running you can monitor their progress with the following command.
 
-```
-<copy>
-ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
-</copy>
-```
+    ```
+    <copy>
+    ps -ef | grep "$TRAVELAGENCY_HOME/utils" | grep -v grep
+    </copy>
+    ```
 
-Their log files are located in the $GRABDISH_LOG directory.
+2. Their log files are located in the $TRAVELAGENCY_LOG directory.
 
-```
-<copy>
-ls -al $GRABDISH_LOG
-</copy>
-```
+    ```
+    <copy>
+    ls -al $TRAVELAGENCY_LOG
+    </copy>
+    ```
 
-You can also cat through the logs by using the `showsetuplogs` shortcut command.
+3. You can also cat through the logs by using the `showsetuplogs` shortcut command.
 
-```
-<copy>
-showsetuplogs
-</copy>
-```
+    ```
+    <copy>
+    showsetuplogs
+    </copy>
+    ```
 
-Note, the non-java-builds.sh script may continue to run even after the setup has completed.  The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
 
-You may now proceed to the next lab.
+Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
+
+You may now **proceed to the next lab.**.
 
 ## Acknowledgements
 

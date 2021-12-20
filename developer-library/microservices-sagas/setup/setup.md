@@ -6,10 +6,6 @@ In this lab, we will provision and setup the resources to execute microservices 
 
 Estimated Time: 25 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:yqCbkHh9EVA)
-
 ### Objectives
 
 * Clone the setup and microservices code
@@ -21,9 +17,9 @@ Watch the video below for a quick walk through of the lab.
 
 ## Task 1: Select the Home Region
 
-Be sure to select the **home region** of your tenancy. Setup will only work in the home region.
+1. Be sure to select the **home region** of your tenancy. Setup will only work in the home region.
 
-  ![Home Region](images/home-region.png " ")
+    ![Home Region](images/home-region.png " ")
 
 ## Task 2: Check Your Tenancy Service Limits
 
@@ -178,62 +174,104 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 ## Task 7: Monitor the Setup
 
-The setup will provision the following resources in your tenancy:
+1. The setup will provision the following resources in your tenancy:
 
-| Resources              | Oracle Cloud Console Navigation                                               |
-|------------------------|-------------------------------------------------------------------------------|
-| Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
-| Databases (2)          | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing   |
-| OKE Cluster            | Developer Services -- Containers -- Kubernetes Clusters (OKE)                 |
-| Registry Repositories  | Developer Services -- Containers -- Container Registry                        |
+    | Resources              | Oracle Cloud Console Navigation                                               |
+    |------------------------|-------------------------------------------------------------------------------|
+    | Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
+    | Databases (2)          | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing   |
+    | OKE Cluster            | Developer Services -- Containers -- Kubernetes Clusters (OKE)                 |
+    | Registry Repositories  | Developer Services -- Containers -- Container Registry                        |
 
-You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
+2. You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
-   ![Duplicate Browser](images/duplicate-browser-tab.png " ")
+     ![Duplicate Browser](images/duplicate-browser-tab.png " ")
 
- From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
+    From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
 
-   ![Select Compartment](images/select-compartment.png " ")
+    ![Select Compartment](images/select-compartment.png " ")
 
- Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+    Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
 ## Task 8: Complete the Setup
 
-Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
+1. Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
-If any of the background setup jobs are still running you can monitor their progress with the following command.
+    If any of the background setup jobs are still running you can monitor their progress with the following command.
 
-```
-<copy>
-ps -ef | grep "$GRABDISH_HOME/utils" | grep -v grep
-</copy>
-```
+    ```
+    <copy>
+    ps -ef | grep "$TRAVELAGENCY_HOME/utils" | grep -v grep
+    </copy>
+    ```
 
-Their log files are located in the $GRABDISH_LOG directory.
+2. Their log files are located in the $TRAVELAGENCY_LOG directory.
 
-```
-<copy>
-ls -al $GRABDISH_LOG
-</copy>
-```
+    ```
+    <copy>
+    ls -al $TRAVELAGENCY_LOG
+    </copy>
+    ```
 
-You can also cat through the logs by using the `showsetuplogs` shortcut command.
+3. You can also cat through the logs by using the `showsetuplogs` shortcut command.
 
-```
-<copy>
-showsetuplogs
-</copy>
-```
+    ```
+    <copy>
+    showsetuplogs
+    </copy>
+    ```
+
+## Task 9: Setup Oracle Saga Support and Application Queues
+
+1. Obtain the DB OCID and download the wallet 
+
+    ```
+    <copy>
+    oci db autonomous-database generate-wallet --autonomous-database-id "ocid1.autonomousdatabase.oc1.phx.anyhqljtoxm32yia3ejhfox4tcpcvuqkpg5y2kosaq34soqlmpbrccr7co3q" --file 'sagadb1_wallet.zip' --password 'Welcome1' --generate-type 'ALL'
+    </copy>
+    ```
+    ```
+    <copy>
+    oci db autonomous-database generate-wallet --autonomous-database-id "ocid1.autonomousdatabase.oc1.phx.anyhqljroxm32yia4y3ncqpoecip5sfu3grglrwh2gm7zh37tjjwpqs2xziq" --file 'sagadb2_wallet.zip' --password 'Welcome1' --generate-type 'ALL'
+    </copy>
+    ```
+
+2. need to replace 
+    - preauth link from objectstore or find better way
+    - values for dblink connection from tnsnames.ora
+    - pw for DBMS_CLOUD.CREATE_CREDENTIAL
+
+admin@saga2db
+    createusers,  walletupload
+admin@saga2
+    create , queue, walletupload, and link
+
+particpantadmins@saga2db
+    create queue, link
+
+sql /nolog 
+   set cloudconfig sagadb1_wallet.zip
+   connect admin@sagadb1_tp
+   @infra-setup/createtravelagencyuser.sql
+   set cloudconfig sagadb2_wallet.zip
+   connect admin@sagadb2_TP
+   @infra-setup/createparticipantusers.sql
+   connect flightuser@sagadb2_TP
+   @infra-setup/flight.sql
+   connect hoteluser@sagadb2_TP
+   @infra-setup/hotel.sql
+   connect caruser@sagadb2_TP
+   @infra-setup/car.sql
+   connect travelagencyuser@sagadb1_TP
+   @infra-setup/travelagencyqueue.sql
+   
+   connect travelagencyadmin run travelagencyqueue.sql
+   connect admin@sagadb2 run createusersdb2.sql
 
 
-Note, the non-java-builds.sh script may continue to run even after the setup has completed. The non-Java builds are only required in Lab 3 and so we can continue with Lab 2 while the builds continue in the background.
-
-You may now proceed to the next lab.
+You may now **proceed to the next lab.**.
 
 ## Acknowledgements
 
-* **Authors** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata; Irina Granat, Consulting Member of Technical Staff, Oracle MAA and Exadata
-* **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
-* **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
-* **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Richard Exley, April 2021
+* **Authors** - Paul Parkinson, Architect and Developer Advocate
+* **Last Updated By/Date** - Paul Parkinson, December 2021

@@ -1,8 +1,8 @@
-## Use Oracle Database Sagas with Apex Microservices
+## Use Oracle Database Sagas with Workflows
 
 ## Introduction
 
-This lab will show you how to use Oracle Database Sagas with Apex Microservices
+This lab will show you how to use Oracle Database Sagas with Workflows
 
 Estimated Time:  5 minutes
 
@@ -10,7 +10,7 @@ Estimated Time:  5 minutes
 
 ### Objectives
 
--   Add Apex saga participants
+-   Add Workflow saga participants
 -   Test sagas 
 
 ### Prerequisites
@@ -20,7 +20,7 @@ Estimated Time:  5 minutes
 
 ### Objectives
 
--   Understand the concepts of Oracle Database Sagas with Apex Microservices
+-   Understand the concepts of Oracle Database Sagas with Workflows
 
 ### Prerequisites
 
@@ -30,21 +30,21 @@ Estimated Time:  5 minutes
 
 1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
 
-   ![Apex Add Participant](./images/annotationtrace.png " ")
+   ![PL/SQL Add Participant](./images/annotationtrace.png " ")
 
 
 ## Task 2: Test Enroll/Enlist and Complete/Commit
 
 1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
 
-   ![Apex Add Participant](./images/annotationtrace.png " ")
+   ![PL/SQL Add Participant](./images/annotationtrace.png " ")
 
 
 ## Task 3: Test Enroll/Enlist and Compensate/Rollback
 
 1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
 
-   ![Apex Add Participant](./images/annotationtrace.png " ")
+   ![PL/SQL Add Participant](./images/annotationtrace.png " ")
 
 
 You may now proceed to the next lab.

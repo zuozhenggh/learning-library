@@ -19,15 +19,19 @@
         "filename": "../../osaga-plsql/osaga-plsql.md"
       },
       {
-        "title": "Lab 3: Using OSaga with APEX",
-        "filename": "../../osaga-apex/osaga-apex.md"
-      },
-      {
-        "title": "Lab 4: Using OSaga with Java",
+        "title": "Lab 3: Using OSaga with Java",
         "filename": "../../osaga-java/osaga-java.md"
       },
       {
-        "title": "Lab 5: Tear down",
+        "title": "Lab 4: Using OSaga with APEX",
+        "filename": "../../osaga-apex/osaga-apex.md"
+      },
+      {
+        "title": "Lab 5: Using OSaga with Workflows",
+        "filename": "../../osaga-workflows/osaga-workflows.md"
+      },
+      {
+        "title": "Lab 6: Tear down",
         "filename": "../../teardown/teardown.md"
       },
       {

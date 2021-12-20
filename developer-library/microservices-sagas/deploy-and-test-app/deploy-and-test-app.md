@@ -6,7 +6,7 @@ This lab will show you how to deploy the microservices on your Kubernetes cluste
 
 Estimated Lab Time - 10 minutes
 
-Quick walk through on how to deploy the microservices on your Kubernetes cluster.
+
 
 [](youtube:8gMmjbXSR68)
 
@@ -25,7 +25,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 1.  Run the deploy script. This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
 
     ```
-    <copy>cd $GRABDISH_HOME;./deploy.sh</copy>
+    <copy>cd $TRAVELAGENCY_HOME;./deploy.sh</copy>
     ```
 
    ![](images/deploy-all.png " ")

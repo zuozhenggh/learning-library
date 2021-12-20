@@ -1,37 +1,54 @@
 ## Use Oracle Database Sagas with Java Microservices
 
-This lab will show you how to deploy and run Java Microservices that use  Oracle Database Sagas
+## Introduction
 
-Estimated lab Time - 10 minutes
-  
-## Task 1: Deploy the Java Microservices
+This lab will show you how to use Oracle Database Sagas with Java Microservices
 
-1. Deploy the Java Microservices including their compensation logic.
-
-    ```
-    <copy>cd $GRABDISH_HOME/osaga-plsql.sh;./install.sh</copy>
-    ```
+Estimated Time:  5 minutes
 
 
-## Task 2: Run the application
 
-1. Identify the EXTERNAL-IP address of the Grafana LoadBalancer by executing the following command:
+### Objectives
 
-       ```
-       <copy>rn the app command</copy>
-       ```
+-   Add Java saga participants
+-   Test sagas 
 
-     ![](images/grafana-loadbalancer-externalip.png " ")
+### Prerequisites
+
+* An Oracle Cloud paid account or free trial in a region with Oracle database 21c available. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
+* The OKE cluster and the Autonomous Transaction Processing databases that you created in Lab 1
+
+### Objectives
+
+-   Understand the concepts of Oracle Database Sagas with Java Microservices
+
+### Prerequisites
+
+- This lab presumes you have already completed the earlier labs.
+
+## Task 1: Add Participants
+
+1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
+
+   ![Java Add Participant](./images/annotationtrace.png " ")
 
 
-Proceed to the next lab.
+## Task 2: Test Enroll/Enlist and Complete/Commit
 
-## Want to Learn More?
+1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
 
-* [Multitenant Database–Oracle 19c](https://www.oracle.com/database/technologies/multitenant.html)
-* [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)
-* [Microservices Architecture with the Oracle Database](https://www.oracle.com/technetwork/database/availability/trn5515-microserviceswithoracle-5187372.pdf)
-* [https://developer.oracle.com/](https://developer.oracle.com/)
+   ![Java Add Participant](./images/annotationtrace.png " ")
+
+
+## Task 3: Test Enroll/Enlist and Compensate/Rollback
+
+1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
+
+   ![Java Add Participant](./images/annotationtrace.png " ")
+
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Architect and Developer Advocate
+* **Author** - Paul Parkinson, Architect and Developer Evangelist
+* **Last Updated By/Date** - Paul Parkinson, December 2021
