@@ -26,22 +26,65 @@ Estimated Time:  5 minutes
 
 - This lab presumes you have already completed the earlier labs.
 
+## Task 1: Add Broker And Coordinator
+
+1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
+
+   ![PL/SQL Add Participant](./images/addcoordinatoraddbroker.png " ")
+
 ## Task 1: Add Participants
 
 1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
 
-   ![PL/SQL Add Participant](./images/annotationtrace.png " ")
+   ![PL/SQL Add Participant](./images/addparticipantflight.png " ")
 
 
 ## Task 2: Test Enroll/Enlist and Complete/Commit
 
 1.    Notice src and Complete/Commit path and make curl request .
+   ![PL/SQL Add Participant](./images/beginandenrollplsql.png " ")
+ 
+
+
+    ```
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
+    </copy>
+    ```
+
+
+    ```
+    <copy>
+        begin
+        dbms_saga.commit_saga('TravelAgency', saga_id);
+        end;
+        /
+    </copy>
+    ```
+
+
 
 
 ## Task 3: Test Enroll/Enlist and Compensate/Rollback
 
 1.    Notice src and Compensate/Rollback path and make curl request .
+   ![PL/SQL Add Participant](./images/beginandenrollplsql.png " ")
 
+ 
+
+    ```
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
+    </copy>
+    ```
+
+
+    ```
+    <copy>
+        begin
+        dbms_saga.rollback_saga('TravelAgency', saga_id);
+        end;
+        /
+    </copy>
+    ```
 
 
 You may now proceed to the next lab.

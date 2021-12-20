@@ -30,7 +30,7 @@ Estimated Time:  5 minutes
 
 1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
 
-   ![Apex Add Participant](./images/annotationtrace.png " ")
+   ![Apex Add Participant](./images/apex-addparticipant.png " ")
 
 
 ## Task 2: Test Enroll/Enlist and Complete/Commit
