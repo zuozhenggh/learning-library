@@ -47,8 +47,7 @@ Estimated Time:  5 minutes
 
 
     ```
-    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
-    </copy>
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga</copy>
     ```
 
 
@@ -57,7 +56,6 @@ Estimated Time:  5 minutes
         begin
         dbms_saga.commit_saga('TravelAgency', saga_id);
         end;
-        /
     </copy>
     ```
 
@@ -72,8 +70,7 @@ Estimated Time:  5 minutes
  
 
     ```
-    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
-    </copy>
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga</copy>
     ```
 
 
@@ -82,7 +79,6 @@ Estimated Time:  5 minutes
         begin
         dbms_saga.rollback_saga('TravelAgency', saga_id);
         end;
-        /
     </copy>
     ```
 

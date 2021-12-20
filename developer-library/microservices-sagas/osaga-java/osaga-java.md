@@ -70,8 +70,7 @@ Estimated Time:  10 minutes
 
 
     ```
-    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
-    </copy>
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga</copy>
     ```
 
 
@@ -105,8 +104,7 @@ Estimated Time:  10 minutes
 
 
     ```
-    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
-    </copy>
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga</copy>
     ```
 
 
