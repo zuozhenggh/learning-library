@@ -1,4 +1,4 @@
-# Introduction to Oracle Machine Learning
+# Use Oracle Machine Learning
 
 ## Introduction
 

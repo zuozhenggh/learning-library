@@ -1,4 +1,4 @@
-# Using Oracle Machine Learning AutoML UI
+# Use Oracle Machine Learning AutoML UI
 
 ## Introduction
 
