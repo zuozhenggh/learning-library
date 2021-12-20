@@ -35,16 +35,13 @@ Estimated Time:  5 minutes
 
 ## Task 2: Test Enroll/Enlist and Complete/Commit
 
-1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
-
-   ![PL/SQL Add Participant](./images/annotationtrace.png " ")
+1.    Notice src and Complete/Commit path and make curl request .
 
 
 ## Task 3: Test Enroll/Enlist and Compensate/Rollback
 
-1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
+1.    Notice src and Compensate/Rollback path and make curl request .
 
-   ![PL/SQL Add Participant](./images/annotationtrace.png " ")
 
 
 You may now proceed to the next lab.

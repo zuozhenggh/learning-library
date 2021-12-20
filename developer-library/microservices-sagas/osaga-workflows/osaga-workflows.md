@@ -4,8 +4,9 @@
 
 This lab will show you how to use Oracle Database Sagas with Workflows
 
-Estimated Time:  5 minutes
+The lab is not available yet but will be soon and until then the roadmap and some 
 
+Estimated Time:  15 minutes
 
 
 ### Objectives
@@ -26,25 +27,10 @@ Estimated Time:  5 minutes
 
 - This lab presumes you have already completed the earlier labs.
 
-## Task 1: Add Participants
-
-1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
-
-   ![PL/SQL Add Participant](./images/annotationtrace.png " ")
+## Task 1: Understand workflows
 
 
-## Task 2: Test Enroll/Enlist and Complete/Commit
 
-1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
-
-   ![PL/SQL Add Participant](./images/annotationtrace.png " ")
-
-
-## Task 3: Test Enroll/Enlist and Compensate/Rollback
-
-1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
-
-   ![PL/SQL Add Participant](./images/annotationtrace.png " ")
 
 
 You may now proceed to the next lab.
