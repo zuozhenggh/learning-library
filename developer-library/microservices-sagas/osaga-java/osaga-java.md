@@ -35,17 +35,79 @@ Estimated Time:  10 minutes
    ![Java Add Participant](./images/AQJmsSagaMessageListener.png " ")
    
    ![Java Add Participant](./images/AQJmsSagaMessageListener-methods.png " ")
+   
+   ![Java Add Participant](./images/javasagamessagelistnerimpl.png " ")
+
 
 
 ## Task 2: Test Enroll/Enlist and Complete/Commit
 
-1.    Notice src and Complete/Commit path and make curl request .
+
+1. Notice src and Complete/Commit path and make curl request .
+        ```
+        <copy>
+            curl http://LB_ADDRESS/travelagency/book
+        </copy>
+        ```
+   Copy the Saga Id in the response.
+
+2. Notice saga state, inventory count, and logs.
+
+    ```
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
+    </copy>
+    ```
+
+3. Make curl request to commit.
+
+    ```
+    <copy>
+        curl http://LB_ADDRESS/travelagency/commit?sagaId=[sagaid]
+    </copy>
+    ```
+
+4. Notice saga state, inventory count, and logs.
+
+
+    ```
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
+    </copy>
+    ```
 
 
 ## Task 3: Test Enroll/Enlist and Compensate/Rollback
 
-1.    Notice src and Compensate/Rollback path and make curl request .
 
+1. Notice src and Complete/Commit path and make curl request .
+        ```
+        <copy>
+            curl http://LB_ADDRESS/travelagency/book
+        </copy>
+        ```
+   Copy the Saga Id in the response.
+
+2. Notice saga state, inventory count, and logs.
+
+    ```
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
+    </copy>
+    ```
+
+3. Make curl request to rollback.
+
+    ```
+    <copy>
+        curl http://LB_ADDRESS/travelagency/rollback?sagaId=[sagaid]
+    </copy>
+    ```
+
+4. Notice saga state, inventory count, and logs.
+
+
+    ```
+    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
+    </copy>
+    ```
 
 
 You may now proceed to the next lab.
