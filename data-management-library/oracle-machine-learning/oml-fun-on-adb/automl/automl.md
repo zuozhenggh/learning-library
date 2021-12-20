@@ -295,6 +295,8 @@ To view the generated notebook Customer 360:
 
 This completes the task of creating a notebook based on a model and viewing the paragraphs contained in it.
 
+You may now proceed to the next lab.
+
 
 ## Learn More
 

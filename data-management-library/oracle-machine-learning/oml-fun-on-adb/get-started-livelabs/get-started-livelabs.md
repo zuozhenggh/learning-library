@@ -207,6 +207,8 @@ To create the table:
 
 This completes the task of creating the CUSTOMERS360 table.
 
+You may now proceed to the next lab.
+
 ## Learn More
 
 * [Get Started with Oracle Machine Learning for Python](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/get-started-with-oml4py.html#GUID-B45A76E6-CE48-4E49-B803-D25CA44B09ED)
