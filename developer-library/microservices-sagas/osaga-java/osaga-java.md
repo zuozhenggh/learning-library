@@ -4,7 +4,9 @@
 
 This lab will show you how to use Oracle Database Sagas with Java Microservices
 
-Estimated Time:  5 minutes
+   ![Java Add Participant](./images/javacodecomparison.png " ")
+
+Estimated Time:  10 minutes
 
 
 

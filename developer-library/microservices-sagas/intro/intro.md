@@ -10,7 +10,11 @@ The application comes in three versions: PL/SQL, Java, and Apex
 
 Below is the architectural diagram of application.
 
-![](./images/architecture.png " ")
+![](./images/travelagencyapp.png " ")
+
+![](./images/sagaflow.png " ")
+
+![](./images/osagacomparison.png " ")
 
 ### Let's Get Started
 
