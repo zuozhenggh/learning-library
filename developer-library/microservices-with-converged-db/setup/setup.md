@@ -2,15 +2,15 @@
 
 ## Introduction
 
-In this lab, we will provision and setup the resources to execute microservices in your tenancy.  
+In this tutorial, you'll provision and set up the resources to execute microservices in your tenancy.  
 
 Estimated Time: 25 minutes
 <if type="multicloud-freetier">
-- Estimates Lab Time - 25 minutes
-+ Estimates Lab Time - 25 minutes
+- Estimated Lab Time - 25 minutes
++ Estimated Lab Time - 25 minutes
 </if>
 
-Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walk-through of the lab.
 
 [](youtube:yqCbkHh9EVA)
 
@@ -19,7 +19,7 @@ Watch the video below for a quick walk through of the lab.
 * Clone the setup and microservices code
 * Execute setup
 
-## Task 1: Log in to the Oracle Cloud Console and launch the Cloud Shell
+## Task 1: Log in to the Oracle Cloud Console and Launch the Cloud Shell
 
 If you haven't already, sign in to your account.
 

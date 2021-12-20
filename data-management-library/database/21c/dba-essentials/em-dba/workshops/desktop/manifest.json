@@ -1,10 +1,10 @@
 {
-  "workshoptitle": "DBA Essentials - Oracle EM Database Administration (DBA)",
+  "workshoptitle": "DBA Essentials - DB Admin with Enterprise Manager Cloud Control",
   "help": "livelabs-help-em_us_grp@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "The workshop on Oracle Enterprise Manager Cloud Control (Oracle EMCC) Database Administration (DBA).",
+      "description": "Introduction.",
       "filename": "./../../intro-emcc/intro-emcc.md",
       "type": "em-dba"
     },
