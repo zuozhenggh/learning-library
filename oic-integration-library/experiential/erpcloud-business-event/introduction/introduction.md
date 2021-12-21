@@ -7,6 +7,12 @@ This workshop will showcase the event subscription capabilities to create an App
 
 Estimated workshop time: 1 hour
 
+## What is OCI Application Integration
+
+
+## Leveraging the ERP Adapter in OCI Application Integration
+
+
 
 
 
