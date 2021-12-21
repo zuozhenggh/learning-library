@@ -16,27 +16,47 @@ Estimated Lab Time: 45 minutes
 
 ## Task 1: Database Node SSH Connection
 
-1. After provisioning the DB System, Database State will be Backup In Progress... for a few minutes. Click **Nodes** on the left menu, and copy Public IP Address in your notes.
+1. After provisioning the DB System, Database State will be Backup In Progress... for a few minutes. Click **Nodes** on the left menu, and copy Public IP Address and Private IP Address in your notes.
 
-    >**Note** : You can copy the private key file from your computer to the **WS-VM** Compute instance, and connect to the Database node using the private IP address.
+    >**Note** : You can connect to the Database node using SSH from your laptop using Putty or Open SSH and ssh-key-XXXX-XX-XX.key private key file via the Public IP Address. Or you can connect to the Database node from your Compute node via the Private IP Address.
 
-2. Connect to the Database node using SSH. Change `id_rsa` with the private key file you saved on your computer. (Linux only)
+2. Use a text editor on your computer to edit ssh-key-XXXX-XX-XX.key private key file, and copy the contents. Exit root user session on the compute node and, as opc user, create a key file.
 
     ````
     <copy>
-    ssh -C -i id_rsa opc@<DB Node Public IP Address>
+    exit
+
+    vi id_rsa
     </copy>
     ````
 
-3. Connect to Database node Public IP Address port 22. (Windows only)
+3. Press **i** to insert text, and paste the contents of the private key.
 
-    ![](./images/putty1.png "")
+    ````
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpAIBAAKCAQEAuL7bH4Z1T7nDmyls77gr75x5eGaHL18RxGxyDGpq/ZtPQP2d
+    r+I/4ZLESVju8b7lJX1ONyS2XLPtqBCRkB/1+K3/815LA6zWj0E1Msd/XMCBlvGZ
+    ...
+    iuEfzTfzVDtPbc1kHsvD/todnGADB03lyGD0t7HZ+51eRKzvMmuaTg==
+    -----END RSA PRIVATE KEY-----
+    ````
+4. Change the permissions on the private key file. 
 
-4. Use the `.ppk` private key. (Windows only)
+    ````
+    <copy>
+    chmod 400 id_rsa 
+    </copy>
+    ````
 
-    ![](./images/putty2.png "")
+5. From your Compute node, connect to the Database node using SSH.
 
-5. All Oracle software components are installed with **oracle** OS user. Use the substitute user command to start a session as **oracle** user.
+    ````
+    <copy>
+    ssh -C -i id_rsa opc@<DB Node Private IP Address>
+    </copy>
+    ````
+
+6. All Oracle software components are installed with **oracle** OS user. Use the substitute user command to start a session as **oracle** user.
 
     ````
     <copy>
@@ -44,7 +64,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-6. You can verify the services provided by the Oracle Listener.
+7. You can verify the services provided by the Oracle Listener.
 
     ````
     <copy>
@@ -52,7 +72,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-7. You can connect to the database instance specified by environment variables.
+8. You can connect to the database instance specified by environment variables.
 
     ````
     <copy>
@@ -60,7 +80,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-8. List all pluggable databases.
+9. List all pluggable databases.
 
     ````
     <copy>
@@ -68,7 +88,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-9. Type **exit** command tree times followed by Enter to close all sessions (SQL*Plus, oracle user, and SSH).
+10. Type **exit** command tree times followed by Enter to close all sessions (SQL*Plus, oracle user, and SSH).
 
     ````
     <copy>
@@ -82,32 +102,31 @@ Estimated Lab Time: 45 minutes
 
 ## Task 2: Enterprise Manager Express 
 
-1. Connect to the Database node Public IP Address using SSH, this time adding an SSH tunneling or SSH port forwarding option for port 5500. Change `id_rsa` with the private key file you saved on your computer. (Linux only)
+1. From your laptop, connect to the Database node Public IP Address using SSH, this time adding an SSH tunneling or SSH port forwarding option for port 5500. (Linux only)
 
     ````
     <copy>
-    ssh -C -i id_rsa -L 5500:localhost:5500 opc@<DB Node Public IP Address>
+    ssh -C -i Downloads/ssh-key-XXXX-XX-XX.key -L 5500:localhost:5500 opc@<DB Node Public IP Address>
     </copy>
     ````
 
-9. Connect to Database node Public IP Address port 22. (Windows only)
+2. Connect to Database node Public IP Address port 22. (Windows only)
 
-    ![](./images/putty1.png "")
+    ![](./../oci/images/putty1.png "")
 
-10. Use the `.ppk` private key. (Windows only)
+3. Use the `.ppk` private key. (Windows only)
 
-    ![](./images/putty2.png "")
+    ![](./../oci/images/putty2.png "")
 
-11. Create a SSH tunnel from Source port 5500 to Destination localhost:5500. Click **Add**. (Windows only)
+4. Create a SSH tunnel from Source port 5500 to Destination localhost:5500. Click **Add**. (Windows only)
 
-    ![](./images/putty4.png "")
+    ![](./../oci/images/putty4.png "")
 
-12. Go back to Session, give it a name, and save it. When asked if you trust this host, click **Yes**. (Windows only)
+5. Go back to Session, give it a name, and save it. When asked if you trust this host, click **Yes**. (Windows only)
 
-    ![](./images/putty3.png "")
+    ![](./../oci/images/putty3.png "")
 
-
-2. Use the substitute user command to start a session as **oracle** user.
+6. Use the substitute user command to start a session as **oracle** user.
 
     ````
     <copy>
@@ -115,7 +134,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-3. Connect to the database instance specified by environment variables.
+7. Connect to the database instance specified by environment variables.
 
     ````
     <copy>
