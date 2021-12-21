@@ -24,7 +24,7 @@ Estimated Lab Time: 25 minutes
 
     ````
     <copy>
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -43,7 +43,7 @@ Estimated Lab Time: 25 minutes
 4. Use SQL Developer on your Compute node to connect to PDB012. Test and save this connection.
     - Name: SH@PDB012
     - Username: SH
-    - Password: DBlabsPTS#22_
+    - Password: DatabaseCloud#22_
     - Save password
     - Hostname: `<DB Node Private IP Address>`
     - Port: 1521
@@ -82,7 +82,7 @@ Estimated Lab Time: 25 minutes
 
     ````
     <copy>
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 

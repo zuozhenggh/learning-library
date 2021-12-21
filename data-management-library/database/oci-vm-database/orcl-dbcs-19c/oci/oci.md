@@ -10,7 +10,7 @@ Estimated Lab Time: 60 minutes
 
 ## Task 1: Verify Virtual Cloud Network (VCN)
 
-1. Login to Oracle cloud console using the Workshop Details received:
+1. Use Copy Password and click on Launch Console. Use the same initial password when asked to reset the password, so you don't have to remember it. You are in the Oracle cloud console using the Workshop Details received.
 
     - Login URL 	
     - Tenancy name
@@ -50,8 +50,8 @@ Estimated Lab Time: 60 minutes
 
 2. Specify the network information.
 
-    - Virtual cloud network: WS-VCN
-    - Client Subnet: Public Subnet
+    - Virtual cloud network: LLXXXXX-VCN
+    - Client Subnet: Public Subnet LLXXXXX-SUBNET-PUBLIC
     - Hostname prefix: ws-host
 
 3. Click Next.
@@ -59,7 +59,7 @@ Estimated Lab Time: 60 minutes
     - Database name: WSDB
     - Database version: 19c (default)
     - PDB name: PDB011
-    - Password: DBlabsPTS#22_
+    - Password: DatabaseCloud#22_
     - Select workload type: Transaction Processing (default)
     - Configure database backups: Enable automatic backups
 
@@ -138,7 +138,7 @@ Estimated Lab Time: 60 minutes
     ````
     <copy>
     export LD_LIBRARY_PATH=/usr/lib/oracle/21/client64/lib
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -162,7 +162,7 @@ Estimated Lab Time: 60 minutes
 
     ````
     <copy>
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb011.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb011.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -239,7 +239,7 @@ Estimated Lab Time: 60 minutes
 
     systemctl start xrdp
 
-    echo -e "DBlabsPTS#22_\nDBlabsPTS#22_" | passwd oracle
+    echo -e "DatabaseCloud#22_\nDatabaseCloud#22_" | passwd oracle
 
     sed -i -e 's/^/#/' /etc/profile.d/oracle-instantclient*
 
@@ -275,7 +275,7 @@ Estimated Lab Time: 60 minutes
 
     ![](./images/putty5.png "")
 
-9. When asked about username and password, use **oracle** and **DBlabsPTS#22_**. 
+9. When asked about username and password, use **oracle** and **DatabaseCloud#22_**. 
 
     >**Note** : Verify in the username dialog you are typing your password correctly. The standard US 101 keyboard is default on the compute node, `#` is `Shift+3` and `_` is `Shift+key-after-0`.
 

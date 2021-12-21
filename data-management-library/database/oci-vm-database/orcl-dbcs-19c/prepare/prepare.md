@@ -144,7 +144,7 @@ Estimated Lab Time: 45 minutes
 7. Use the following credentials:
 
     - Username: system
-    - Password: DBlabsPTS#22_
+    - Password: DatabaseCloud#22_
     - Container Name: CDB$ROOT for the Container Database, or PDB011 for the Pluggable Database. Try both.
 
 8. Explore Enterprise Manager Express console, and see what this tool has to offer.
@@ -172,7 +172,7 @@ Estimated Lab Time: 45 minutes
     ````
     <copy>
     export LD_LIBRARY_PATH=/usr/lib/oracle/21/client64/lib
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -188,7 +188,7 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
-    CREATE PLUGGABLE DATABASE pdb012 ADMIN USER Admin IDENTIFIED BY DBlabsPTS#22_;
+    CREATE PLUGGABLE DATABASE pdb012 ADMIN USER Admin IDENTIFIED BY DatabaseCloud#22_;
     </copy>
     ````
 
@@ -220,7 +220,7 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
-    conn sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    conn sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -254,7 +254,7 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -291,7 +291,7 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
-    ADMINISTER KEY MANAGEMENT SET KEY FORCE KEYSTORE IDENTIFIED BY DBlabsPTS#22_ WITH BACKUP;
+    ADMINISTER KEY MANAGEMENT SET KEY FORCE KEYSTORE IDENTIFIED BY DatabaseCloud#22_ WITH BACKUP;
     </copy>
     ````
 
@@ -379,7 +379,7 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -387,7 +387,7 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
-    @db-sample-schemas-19c/human_resources/hr_main.sql DBlabsPTS#22_ USERS TEMP DBlabsPTS#22_ /home/oracle/logs/ <DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
+    @db-sample-schemas-19c/human_resources/hr_main.sql DatabaseCloud#22_ USERS TEMP DatabaseCloud#22_ /home/oracle/logs/ <DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
     </copy>
     ````
 
@@ -439,7 +439,7 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -447,7 +447,7 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
-    @db-sample-schemas-19c/sales_history/sh_main.sql DBlabsPTS#22_ USERS TEMP DBlabsPTS#22_ /home/oracle/db-sample-schemas-19c/sales_history/ /home/oracle/logs/ v3 <DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
+    @db-sample-schemas-19c/sales_history/sh_main.sql DatabaseCloud#22_ USERS TEMP DatabaseCloud#22_ /home/oracle/db-sample-schemas-19c/sales_history/ /home/oracle/logs/ v3 <DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
     </copy>
     ````
 

@@ -146,8 +146,8 @@ Estimated Lab Time: 30 minutes
     - Client Subnet: Public Subnet
     - Hostname prefix: ws-hostb
     - Database name: WSDBB
-    - Password: DBlabsPTS#22_
-    - Enter the source database's TDE wallet or RMAN password: DBlabsPTS#22_
+    - Password: DatabaseCloud#22_
+    - Enter the source database's TDE wallet or RMAN password: DatabaseCloud#22_
 
 4. Click **Create Database**. Status is Provisioning...
 
