@@ -1,1 +1,3 @@
---introduction
+# Introduction
+
+## About this Workshop
