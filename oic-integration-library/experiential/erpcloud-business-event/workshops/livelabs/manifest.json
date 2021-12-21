@@ -9,7 +9,7 @@
         },
         {
             "title": "Introduction",
-            "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+            "description": "The ERP Cloud Business Event Workshop will cover the recommended steps to complete an end-to-end use case based on ERP Cloud Business Events in OCI Application Integration.",
             "filename": "../../introduction/introduction.md"
         },
         {
