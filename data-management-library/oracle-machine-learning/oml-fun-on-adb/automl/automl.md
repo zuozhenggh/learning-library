@@ -1,4 +1,4 @@
-# Using Oracle Machine Learning AutoML UI
+# Use Oracle Machine Learning AutoML UI
 
 ## Introduction
 
@@ -39,25 +39,25 @@ To sign into Oracle Machine Learning User Interface from the Autonomous Database
 
 1. On your Oracle Autonomous Database dashboard, click the Oracle Autonomous Database that you have provisioned.
 
-	![List of provisioned ADBs](images/provisioned_adb.png)
+	![List of provisioned ADBs](images/provisioned-adb.png)
 
 2. On your Oracle Autonomous Database instance page, click **Service Console**. The Launch Service Console dialog opens. Wait till the Service Console opens.
 
-	![Service Console](images/service_console.png)
+	![Service Console](images/service-console.png)
 
 2. On the Service Console page, click **Development** on the left pane.
 
-  ![Development option](images/adw_development.png)
+  ![Development option](images/adw-development.png)
 
 4. On the Development page, click **Oracle Machine Learning User Interface**. This opens the Oracle Machine Learning sign in page.
 
-	![OML Notebooks option](images/oml_notebooks_option.png)
+	![OML Notebooks option](images/oml-notebooks-option.png)
 
 5. Enter your username and password, and click **Sign in**. This opens the Oracle Machine Learning home page.
 
 6. On your Oracle Machine Learning home page, click **AutoML** in the Quick Actions section.
 
-	![home page](images/homepage_automl.png)
+	![home page](images/homepage-automl.png)
 
 
 
@@ -68,15 +68,15 @@ When creating an Experiment, you must define the data source and the target of t
 
 1. Click **AutoML** on your Oracle Machine Learning home page. Alternatively, you can go to the left navigation menu at the upper left corner of the page and click AutoML. The AutoML Experiments page opens.
 
-	![home page](images/homepage_automl.png)
+	![home page](images/homepage-automl.png)
 
 2. Click **Create**. The Create Experiments page opens.
 
-	![AutoML Experiment page](images/create_automl_exp.png)
+	![AutoML Experiment page](images/create-automl-exp.png)
 
 3. In the **Name** field, enter **Customers 360**.
 
-	![Create Experiment dialog](images/create_experiment.png)
+	![Create Experiment dialog](images/create-experiment.png)
 
 4. In the **Comments** field, enter comments, if any.
 
@@ -96,7 +96,7 @@ To adjust additional settings of this experiment:
 
 1. Expand the **Additional Settings** section on the Experiments page, and make the following changes:
 
-	![Additional Settings](images/additional_settings_bal_accr.png)
+	![Additional Settings](images/additional-settings-bal-accr.png)
 
 2. **Maximum Top Models:** Click the down arrow and set it to 3. This is the maximum number of top models to create. The default is 5 models. Fewer models built results is less time and the experiment will complete sooner.
 
@@ -111,7 +111,7 @@ To adjust additional settings of this experiment:
 
 5. Leave the other settings under **Additional Settings** as is, and click **Start** and then **Faster Results** to trigger the AutoML UI experiment to run.
 
-	![Experiment Start options](images/faster_results.png)
+	![Experiment Start options](images/faster-results.png)
 
 	Note the following about the two options:
 
@@ -126,7 +126,7 @@ This completes the task of creating an experiment.
 ### Task 2.2 View Leader Board with Additional Metrics
 When an experiment starts running, the status is displayed in a progress bar. When an experiment runs, it starts to show the results in the Leader Board. Click **Details** next to the **Stop** button to view the experiment run details, as shown in the screen shot.
 
-![Experiment Progress bar](images/exp_progress_bar.png)
+![Experiment Progress bar](images/exp-progress-bar.png)
 
 The Leader Board displays the top performing models relative to the model metric selected along with the algorithm and accuracy. In this lab, you will view the additional metrics Precision, Recall, ROC AUC for the models:
 
@@ -135,44 +135,44 @@ The Leader Board displays the top performing models relative to the model metric
 	>**Note:** Only when the experiment is completed, can you perform any of these actions listed here, including metrics 	selection.
 
 
-	![Leader Board](images/leaderboard_1.png)
+	![Leader Board](images/leaderboard-1.png)
 
 2. Click **Metrics**. The **Select Additional Metrics** dialog opens.
 
 	>**Note:** The additional metrics can be selected once the experiment has completed.
 
-	![Leader Board options](images/leaderboard_options.png)
+	![Leader Board options](images/leaderboard-options.png)
 
 3. In the Select Additional Metrics dialog, click **Precision, Recall, ROC AUC**, and then click the close icon to close the dialog.
 
-	![Select Additional Metrics dialog](images/select_metrics.png)
+	![Select Additional Metrics dialog](images/select-metrics.png)
 
 	The Leader Board now displays the selected metrics, as shown in the screenshot here. You can sort the rows by clicking the triangle to the right of each column name.
 
-	![Leader Board showing selected metrics](images/leaderboard_2.png)
+	![Leader Board showing selected metrics](images/leaderboard-2.png)
 
 4. Click on any row in the Leader Board to enable the options - **Deploy, Rename**, and **Create Notebook**. Note that these options are greyed out if you do not click on the rows.
 
 5. Click on the Naive Bayes model, and then click **Rename**. In the Rename Model dialog, enter `NB_Customer360` to rename the auto generated model name for Naive Bayes. Click **OK**.  	
 
-	![Rename model](images/rename_model.png)
+	![Rename model](images/rename-model.png)
 
 6. Click **OK**. A confirmation message is displayed once the renaming is complete, and the leader board refreshes to display the renamed model.
 
-	![Leaderboard showing renamed model](images/renamed_model.png)
+	![Leaderboard showing renamed model](images/renamed-model.png)
 
 5. Click on any model name to view the model details in the Model Detail dialog. Click **Prediction Impacts** and **Confusion Matrix** tab in the dialog to view the respective details, as shown in the screenshots below:
 
 * **Prediction Impact:** Displays the importance of the attributes in terms of the target prediction of the models. In this lab, the attribute HOUSEHOLD_SIZE has the highest impact on target prediction. Move your cursor over the prediction impact chart for each attribute to view the values.
 
-	![View Prediction Impact](images/prediction_impact.png)
+	![View Prediction Impact](images/prediction-impact.png)
 
 
 * **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. Confusion Matrix is usually computed on a test dataset and helps in assessing the model quality. Here, the Confusion Matrix results are classified into true positive (actual = predicted = 1) and true negative (actual = predicted  = 0), and false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
 
 	>Note: The values shown here * 100 represent percentages of the test data that correspond to each of the confusion matrix entries.
 
-	![View Confusion Matrix](images/confusion_matrix.png)
+	![View Confusion Matrix](images/confusion-matrix.png)
 
 
 ## Task 3: Deploy Top Model to OML Services
@@ -186,13 +186,13 @@ To deploy a model:
 
 2. Scroll down to the Leader Board, select the model **NB_CUSTOMER360** and click **Deploy**. The Deploy Model dialog opens.
 
-	![Deploy Model option in Leader Board](images/deploy_model_nb.png)
+	![Deploy Model option in Leader Board](images/deploy-model-nb.png)
 
 	>**Note:** You can also deploy a model from the Models page. You can access the Models page from the home page and the left navigation menu.  
 
 3. In the Deploy Models dialog, enter the following details:
 
-	![Deploy Model dialog](images/deploy_model.png)
+	![Deploy Model dialog](images/deploy-model.png)
 
 4. In the **Name** field, the model name is displayed here by default. In this example, the name `NB_CUSTOMER360` is displayed. This is the name that you renamed in the previous step. Edit this name to change it to **NaiveBayes_CUST360**. The model name must be a unique alphanumeric name with a maximum of 50 characters.
 
@@ -206,7 +206,7 @@ To deploy a model:
 
 9. Click **OK**. After a model is successfully deployed, it is listed on the Deployments page. To go to the Deployments page, click **Models** in the left navigation menu. Alternatively, you can click **Models** on the home page.    
 
-	![List of deployed models on the Deployments page](images/deployed_models.png)
+	![List of deployed models on the Deployments page](images/deployed-models.png)
 
 This completes the task of deploying the top model Naive Bayes to OML Services.
 
@@ -217,23 +217,23 @@ The deployed models are listed under **Deployments** on the Models page. To view
 
 1. To go to Deployments, click the hamburger icon ![Image alt text](images/sample2.png) and then click  **Models** on the left navigation menu. Alternatively, you can click **Models** on the Oracle Machine Learning home page.
 
-  ![Models](images/models_option.png)
+  ![Models](images/models-option.png)
 
 2. On the Models page, click **Deployments**.
 
-	![Deployments](images/deployments_tab.png)
+	![Deployments](images/deployments-tab.png)
 
 2. The deployed model **NaiveBayes_CUST360** is listed along with the metadata - Shared, version, namespace, owner, deployed date and URI under **Deployments** on the Models page.
 
-	![List of deployed models on the Deployments page](images/deployed_models.png)
+	![List of deployed models on the Deployments page](images/deployed-models.png)
 
 3. To view the metadata of the deployed model, click the name of the deployed model `NaiveBayes_CUST360`. The model metadata is listed in the **Model metadata for NaiveBayes_CUST360** dialog.
 
-	![View model metadata](images/naivebayes_cust360_metadata.png)
+	![View model metadata](images/naivebayes-cust360-metadata.png)
 
 4. To view the endpoint JSON, click the URI `nb_cust360`. All details of the deployed model are listed in the **OPEN API Specification for NaiveBayes_CUST360** dialog, as shown in the screenshot. Scroll down to view all details of the endpoint.
 
-	![View JSON endpoints](images/nb_cust360_endpoint.png)
+	![View JSON endpoints](images/nb-cust360-endpoint.png)
 
 
 This completes the task of viewing the metadata of the deployed model, and its endpoint.
@@ -245,15 +245,15 @@ You can create notebooks based on the top models produced in the experiment. Thi
 
 2. Scroll down to the Leader Board, click on the Naive Bayes model row, and then click **Create Notebook**. The Create Notebook dialog opens.
 
- 	![Create Notebook option in Leader Board](images/create_notebook_lb.png)
+ 	![Create Notebook option in Leader Board](images/create-notebook-lb.png)
 
 3. In the Create Notebook dialog, enter **NB Customers 360** in the **Notebook Name** field.
 
-	![Create Notebook from model dialog](images/create_notebook_from_mod.png)
+	![Create Notebook from model dialog](images/create-notebook-from-mod.png)
 
 4. Click **OK**. The notebook is created and listed in the Notebooks page. The message _Notebook NB Customer 360 successfully created_ is also displayed.
 
-	![Notebook creation message](images/nb_customer_message.png)		
+	![Notebook creation message](images/nb-customer-message.png)		
 
 This completes the task of creating the notebook NB Customer 360 based on the Naive Bayes model that is created by the AutoML experiment Customers 360.
 
@@ -265,35 +265,37 @@ To view the generated notebook Customer 360:
 
 2. The Notebooks page opens with all the notebooks listed in it. Click the **NB Customers 360** notebook to open it.
 
- 	![Generated Notebook](images/notebooks_generated.png)
+ 	![Generated Notebook](images/notebooks-generated.png)
 
 3. The generated notebook _NB Customer 360_  opens in the notebook editor. This notebook contains the pre-generated heading _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_. Click the gear icon on the upper right corner of the notebook to view and set the interpreter binding order.
 
-	![gear icon](images/gear_icon.png)
+	![gear icon](images/gear-icon.png)
 
 	You can change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
 
-	![Enable and disable interpreter binding](images/enable_disable_int_bindings.png)
+	![Enable and disable interpreter binding](images/enable-disable-int-bindings.png)
 
 4. Scroll down to view all the paragraphs in the notebook.
 
 * The paragraph titled _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_ contains the experiment metadata. Click the  Run icon to run the markdown paragraph and view the metadata.
 
-	![Experiment metadata](images/experiment_metadata.png)
+	![Experiment metadata](images/experiment-metadata.png)
 
 * The paragraph titled _Get proxy object for selected data_ contains the code to get the proxy object for the data used in the experiment, which is the Customers360 table here. The paragraph titled _Prepare Training Data_ contains the code to prepare the training data.
 
-	![Generated Notebook](images/generated_nb_1.png)
+	![Generated Notebook](images/generated-nb-1.png)
 
 * The paragraph titled _Build Model_ contains the code to build the model. In this lab, it is the Naive Bayes model. The settings used to produce the model using AutoML are provided here in the ``nb_settings`` variable. The paragraph titled _Show Model Details_ contains the code to view the model details.
 
-	![Generated Notebook](images/generated_nb_2.png)
+	![Generated Notebook](images/generated-nb-2.png)
 
 * The paragraph titled _Data for Scoring_ contains the code to score the data, and the paragraph _Show model quality metric_ contains the code to view the model quality metric.
 
-	![Generated Notebook](images/generated_nb_3.png)
+	![Generated Notebook](images/generated-nb-3.png)
 
 This completes the task of creating a notebook based on a model and viewing the paragraphs contained in it.
+
+You may now proceed to the next lab.
 
 
 ## Learn More
