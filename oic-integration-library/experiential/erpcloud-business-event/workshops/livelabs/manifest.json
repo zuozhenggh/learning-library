@@ -15,14 +15,14 @@
         {
             "title": "Lab 1: Create a new integration flow",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../lab-create-flow/lab-create-flow.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
+            "title": "Lab 2: Add an ERP Purchase Order Trigger activity",
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
+            "title": "Lab 3: Retrieve an ERP Purchase Order",
             "filename": "../../data-load/data-load.md"
         },
         {
