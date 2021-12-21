@@ -91,7 +91,7 @@ Estimated Lab Time: 60 minutes
 
 4. Check DB System Details.
 
-5. Click on hamburger menu ≡, then Oracle Database > **Bare Metal, VM, and Exadata**. Click **WS-DB** DB System. On the DB System Details page, copy **Host Domain Name** in your notes. In the table below, copy **Database Unique Name** in your notes. Click **Nodes** on the left menu, and copy **Private IP Address** in your notes. E.g.
+5. Click on main menu ≡, then Oracle Database > **Bare Metal, VM, and Exadata**. Click **WS-DB** DB System. On the DB System Details page, copy **Host Domain Name** in your notes. In the table below, copy **Database Unique Name** in your notes. Click **Nodes** on the left menu, and copy **Private IP Address** in your notes. E.g.
     - Host Domain Name: subXXXXXXXXXXXX.ws-vcn.oraclevcn.com
     - Database Unique Name: WSDB_xxxxxx
     - Node Private IP Address: 10.0.0.XX 

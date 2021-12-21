@@ -170,15 +170,15 @@ Estimated Lab Time: 45 minutes
 
 ## Task 3: Create a Pluggable Database
 
-1. Connect to the Compute node using SSH, if not connected already. Change `id_rsa` with the private key file you saved on your computer.
+1. From your laptop, connect to the Compute node using SSH, if not connected already.
 
     ````
     <copy>
-    ssh -C -i id_rsa opc@<Compute Public IP Address>
+    ssh -C -i Downloads/ssh-key-XXXX-XX-XX.key opc@<Compute Public IP Address>
     </copy>
     ````
 
-2. Use the substitute user command to start a session as **oracle** user.
+2. Use the substitute user command to start a session as **oracle** user. Or use the Terminal inside the remote desktop connection.
 
     ````
     <copy>
@@ -209,6 +209,8 @@ Estimated Lab Time: 45 minutes
     <copy>
     CREATE PLUGGABLE DATABASE pdb012 ADMIN USER Admin IDENTIFIED BY DatabaseCloud#22_;
     </copy>
+
+    Pluggable database created.
     ````
 
 6. List pluggable databases and confirm the new pluggable database is there.
@@ -225,6 +227,8 @@ Estimated Lab Time: 45 minutes
     <copy>
     ALTER PLUGGABLE DATABASE pdb012 OPEN;
     </copy>
+
+    Pluggable database altered.
     ````
 
 8. List pluggable databases and confirm it is **OPEN**.
@@ -259,25 +263,12 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-12. This pluggable database doesn't have Oracle Sample Schemas either. Exit SQL*Plus.
+12. This pluggable database doesn't have Oracle Sample Schemas either.
 
-    ````
-    <copy>
-    exit
-    </copy>
-    ````
 
 ## Task 4: Install HR Sample Schema
 
-1. Use the same Compute node SSH connection. Connect to the new pluggable database PDB012.
-
-    ````
-    <copy>
-    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
-    </copy>
-    ````
-
-2. List all tablespaces.
+1. List all tablespaces in PDB012.
 
     ````
     <copy>
@@ -285,7 +276,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-3. List all datafiles.
+2. List all datafiles.
 
     ````
     <copy>
@@ -293,20 +284,21 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-4. For the Oracle Sample Schemas, we need a tablespace called **USERS**. Try to create it.
+3. For the Oracle Sample Schemas, we need a tablespace called **USERS**. Try to create it.
 
     ````
     <copy>
     CREATE TABLESPACE users;
     </copy>
+
     ORA-28361: master key not yet set
     ````
 
-5. We get an error about a Master Key. To use Oracle Transparent Data Encryption (TDE) in a pluggable database (PDB), you must create and activate a master encryption key for the PDB.
+4. We get an error about a Master Key. To use Oracle Transparent Data Encryption (TDE) in a pluggable database (PDB), you must create and activate a master encryption key for the PDB.
 
-6. In a multitenant environment, each PDB has its own master encryption key which is stored in a single keystore used by all containers.
+5. In a multitenant environment, each PDB has its own master encryption key which is stored in a single keystore used by all containers.
 
-7. Create and activate a master encryption key in the PDB by executing the following command:
+6. Create and activate a master encryption key in the PDB by executing the following command:
 
     ````
     <copy>
@@ -314,7 +306,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-8. Now we can create tablespace **USERS**.
+7. Now we can create tablespace **USERS**.
 
     ````
     <copy>
@@ -322,7 +314,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-9. List all tablespaces to confirm the new tablespace was created.
+8. List all tablespaces to confirm the new tablespace was created.
 
     ````
     <copy>
@@ -330,7 +322,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-10. List all datafiles and see the corresponding files.
+9. List all datafiles and see the corresponding files.
 
     ````
     <copy>
@@ -338,7 +330,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-11. Exit SQL*Plus.
+10. Exit SQL*Plus.
 
     ````
     <copy>
@@ -346,7 +338,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-12. Download Oracle Sample Schemas installation package from GitHub.
+11. Download Oracle Sample Schemas installation package from GitHub.
 
     ````
     <copy>
@@ -354,7 +346,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-13. Unzip the archive.
+12. Unzip the archive.
 
     ````
     <copy>
@@ -362,7 +354,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-14. Open the unzipped folder.
+13. Open the unzipped folder.
 
     ````
     <copy>
@@ -370,7 +362,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-15. Run this Perl command to replace `__SUB__CWD__` tag in all scripts with your current working directory, so all embedded paths to match your working directory path.
+14. Run this Perl command to replace `__SUB__CWD__` tag in all scripts with your current working directory, so all embedded paths to match your working directory path.
 
     ````
     <copy>
@@ -378,7 +370,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-16. Go back to the parent folder (this should be /home/opc).
+15. Go back to the parent folder (this should be /home/opc).
 
     ````
     <copy>
@@ -386,7 +378,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-17. Create a new folder for logs.
+16. Create a new folder for logs.
 
     ````
     <copy>
@@ -394,7 +386,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-18. Connect to the **PDB012** pluggable database.
+17. Connect to the **PDB012** pluggable database.
 
     ````
     <copy>

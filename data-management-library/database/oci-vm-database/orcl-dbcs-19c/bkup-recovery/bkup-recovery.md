@@ -60,7 +60,7 @@ Estimated Lab Time: 30 minutes
 
 ## Task 2: Create a Full Database Backup
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
+1. On Oracle cloud console, click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
 2. Click the database name link **WSDB** in the bottom table called Databases.
 
