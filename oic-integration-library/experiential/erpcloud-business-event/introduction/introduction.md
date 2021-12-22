@@ -15,7 +15,7 @@ The Oracle ERP Cloud Adapter enables you to easily integrate on-premises or SaaS
 
 
 ## Learn More
-* [Oracle Application Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud)
+* [OCI Application Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud)
 * [Using the Oracle ERP Cloud Adapter with Oracle Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud/erp-adapter)
 
 
