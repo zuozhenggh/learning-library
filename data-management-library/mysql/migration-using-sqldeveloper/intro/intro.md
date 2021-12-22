@@ -3,10 +3,10 @@
 ## About this Workshop
 
 If you are considering moving your on-premise MySQL database to the cloud and in the process, also wants to migrate the database to Oracle Database, this workshop will guide you how to do it easily. 
-Following these step-by-step instructions, you can easily perform MySQL to Oracle Autonomous Database (ADB) migration using Oracle SQL Developer v 21.2. If you need to learn more this topic, you can refer to this blog: Need to Migrate MySQL Database to Oracle ADB ?
+Following these step-by-step instructions, you can easily perform MySQL to Oracle Autonomous Database (ADB) migration using Oracle SQL Developer v 21.2. To learn more about this type of migration: _Need to Migrate MySQL Database to Oracle ADB ?_ 
 
 
-Estimated Workshop Time: 1hr 
+Estimated Workshop Time: 1 hour
 
 ![Oracle SQL Developer icon](images/sqldv.jpg " ")
 
@@ -14,7 +14,7 @@ Oracle SQL Developer GUI - Migration Configured
 ![Oracle SQL Developer UI](images/sqldevUI.jpg " ")
 
 
-Oracle SQL Developer is a free, integrated development environment (IDE) that simplifies the development and management of Oracle Database in both traditional and Cloud deployments. If you have basic understanding of MySQL, Oracle Cloud and Autonomous Database, it will be useful to perform all of the steps in this document. However, even if you’re coming from MySQL background only, using this workshop you can complete the migration easily. 
+Oracle SQL Developer is a free, integrated development environment (IDE) that simplifies the development and management of Oracle Database in both traditional and Cloud deployments. If you have basic understanding of SQL and know-how of Oracle Cloud and Autonomous Database, it will be useful to perform all of the steps in this document. However, if you’re coming from MySQL background alone, using this workshop steps, you will still be able to complete the migration. 
 
 #### References in this Workshop
 
@@ -39,13 +39,13 @@ In this workshop, you will learn how to:
 
 For this post, it is assumed that you already have following in place:
 
-1. Source: MySQL database on-premise, with the necessary network access to target ADB instance as well as Oracle SQL Developer instance. And also database credentials to the source schemas/objects, which needs to be migrated.
+1. Source: MySQL database on-premise, with the necessary network access to target ADB instance as well as Oracle SQL Developer instance. And also database credentials to the source schemas/objects, and sample data in it, which needs to be migrated.
 
-2. Target: ATP (Autonomous Transactions Processing) instance setup in the OCI cloud, with all the required credentials for users, schema and object creation (eg Admin user) along with OCI network settings for connectivity and database wallet file. We will use this database for Migraiton repository as well. If you need help with creating sample ATP database, you can refer to this post: [Creating an Autonomous Transaction Processing (ATP) Database](https://blogs.oracle.com/weblogicserver/post/creating-an-autonomous-transaction-processing-atp-database).  Or you can follow next lab: Prerequisites Setup - Create ADB for Target (Optional if you already have ADB instance). At this stage, you just need to have running ATP instance. You can equally run this migration with ADW. 
+2. Target: ATP (Autonomous Transactions Processing) instance setup in the OCI cloud, with all the required credentials for users, schema and object creation (eg ADMIN user), along with network connectivity (VCN) between SQL Developer and MySQL and ATP database wallet file. We will use this database for Migraiton repository as well. If you need help with creating sample ATP database, you can refer to this post: [Creating an Autonomous Transaction Processing (ATP) Database](https://blogs.oracle.com/weblogicserver/post/creating-an-autonomous-transaction-processing-atp-database).  Or you can follow next lab: Prerequisites Setup - Create ADB for Target (Optional if you already have ADB instance). For this workshop, you just need to have running ATP instance. You can equally run this migration on ADW (Autonomous Datawarehouse).
 
-3. An environment, usually your laptop or another instance in OCI (Oracle Cloud Infrastructure), where you will install and run Oracle SQL Developer. We will follow windows based installation. If you want to set up in OCI instance, you can [create Windows instance](https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/overviewworkflowforWindows.htm) and [RDP from your laptop/desktop](https://blogs.oracle.com/pcoe/post/enable-windows-instance-access-via-rdp-on-oracle-compute-cloud-service) (for remote desktop sharing). Or you can also follow next lab: Prerequisites Setup - Create Windows VM to run Oracle SQL Developer (Optional, if you plan to install SQL Developer into your laptop).
+3. An environment, usually your laptop or another instance in OCI (Oracle Cloud Infrastructure), where you will install and run Oracle SQL Developer. We will follow windows based installation. If you want to set up in OCI instance, follow this: [create Windows instance](https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/overviewworkflowforWindows.htm) and [RDP from your laptop/desktop](https://blogs.oracle.com/pcoe/post/enable-windows-instance-access-via-rdp-on-oracle-compute-cloud-service) (for remote desktop sharing). Or you can also follow next lab: Prerequisites Setup - Create Windows VM to run Oracle SQL Developer (Optional, if you plan to install SQL Developer into your laptop).
 
-4. All above 3 environments should have network connectivity among each other, including allowing the required ports for the respective databases. Ideally, a VCN for ADB and SQL Developer instances in OCI and a VPN connectivity to MySQL on-premises. 
+4. All above 3 environments should have network connectivity among each other, including allowing the required ports for the respective databases (defauts: 1521 for ATP and 3306 for MySQL). Ideally, a VCN for ADB and SQL Developer instances in OCI and a VPN connectivity to MySQL on-premises. 
 
 *Let's get Started!*
 
@@ -65,5 +65,5 @@ Ready to learn more?
 
 
 ## Acknowledgements
-* **Author** - Muhammad Shuja, ODP
+* **Author** - Muhammad Shuja, Principal Cloud Solution Engineer, ODP - ANZ
 * **Last Updated By/Date** - Muhammad Shuja, December 2021
