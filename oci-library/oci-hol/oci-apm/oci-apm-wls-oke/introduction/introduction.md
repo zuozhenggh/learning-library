@@ -12,7 +12,7 @@ In this workshop, we will use a simple WebLogic web application that runs on a K
 
 
 
-Estimated Workshop Time: x minutes
+Estimated Workshop Time: 75 minutes
 
 ### About Oracle Cloud Infrastructure Application Performance Management (OCI APM)
 

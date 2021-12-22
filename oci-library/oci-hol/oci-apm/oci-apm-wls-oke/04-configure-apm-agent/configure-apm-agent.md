@@ -53,14 +53,18 @@ Estimated time: 15 minutes
 
    ![Oracle Cloud console, Upload ](images/4-1-6-upload.png " ")
 
-5.	Wait for the File Transfer completes. Then type ls command in the Cloud shell to confirm the file exists in the home directory.  
+5.	Wait for the File Transfer completes.
+
+   ![Oracle Cloud console, Cloud Shell ](images/4-1-7-cloudshell.png " ")
+
+6. Then type "ls" command in the Cloud shell to confirm the file exists in the home directory.  
 
     ``` bash
     <copy>
     cd ~/; ls
     </copy>
     ```
-   ![Oracle Cloud console, Cloud Shell ](images/4-1-7-cloudshell.png " ")
+   ![Oracle Cloud console, Cloud Shell ](images/4-1-7-2-cloudshell.png " ")
 
 ## Task 3: Copy the Java Agent installer to the file system
 
@@ -68,18 +72,18 @@ Estimated time: 15 minutes
 
     ``` bash
     <copy>
-    kubectl exec -it sample-domain1-admin-server -n sample-domain1-ns -- /bin/bash
+    kubectl cp apm-java-agent-installer-<version>.jar sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/
     </copy>
     ```
-
+    e.g., kubectl cp apm-java-agent-installer-1.2.1725.jar sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/
 
   >***NOTE***:
    - file system path must match the one you created in the earlier steps. In this example, mounted path is apmlab-fss.
-   - The Agent version in the image below is 1.2.1725. If you have an APM Agent with a different version, please change the file name to the version of the agent you have.
-  ![Oracle Cloud console, Cloud Shell ](images/4-1-7-1-cloudshell.png " ")
+   - The Agent version in the example above is 1.2.1725. If you have an APM Agent with a different version, please change the file name to the version of the agent you have.
 
 
-2.	Use kubectl command to remotely access the container in the Kubernetes pod.
+
+2.	Use below kubectl command to remotely access the container in the Kubernetes pod.
 
     ``` bash
     <copy>
@@ -197,7 +201,8 @@ In this task, you will add exclusions to the data capturing in the APM Agent, fo
     kubectl cp  ~/ProbeConfig.acml sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/<apm-agent-version>/ProbeConfig.acml
     </copy>
     ```
-    ![Oracle Cloud console, Cloud Shell ](images/4-5-3-cloudshell.png " ")      
+      
+    E.g., kubectl cp  ~/ProbeConfig.acml sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/1.2.1725/ProbeConfig.acml
 
 ## Task 6: Deploy the Java Agent
 
