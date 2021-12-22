@@ -9,8 +9,7 @@ for object and scene-based images.
 
 ### 1. Image Analysis
 
-* Object Detection is a fundamental image analysis feature. You can detect and locate the objects in an image. For example, the image is of a living room, Vision locates the objects therein, such as a chair, a sofa, and a TV.
-    It then draws bounding boxes around the objects and identifies them. You can also use it for visual anomaly detection.
+* Object Detection is a fundamental image analysis feature. You can detect and locate the objects in an image. For example, the image is of a living room, Vision locates the objects therein, such as a chair, a sofa, and a TV. It then draws bounding boxes around the objects and identifies them. You can also use it for visual anomaly detection.
 * Image Classification is a fundamental image analysis feature. Upload an image to Object Storage and you can put it in pre-determined classes, based on the objects within it.
 
 ### 2. Document AI
