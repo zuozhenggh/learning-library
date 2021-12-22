@@ -2,14 +2,9 @@
 
 ## Introduction
 
-This is the migration lab, where you will start from installing Oracle SQL Developer, to setting up appropriate user credentials and then creating migration repository and connections and run the Wizard to complete the database migration from MySQL to Oracle ADB instance in the cloud. 
-
-Estimated Lab Time: 1 hr
-
-
+This is the main migration lab steps, where you will start from installing Oracle SQL Developer, to setting up appropriate user credentials and then create migration repository and connections and run the Wizard to complete the database migration from MySQL to Oracle ADB instance in the cloud. 
 
 **Objectives**
-
 
 In this lab, you will perform following: 
 * Download Latest Version & Install
@@ -20,14 +15,15 @@ In this lab, you will perform following:
 * Create Migration Repository
 * Complete Migration with the Wizard
 
+
 ## Task 1: Download Latest Version & Install
+ Use the latest version of Oracle SQL Developer (which is v 21.2 as of writing of this workshop). This task will walk you through downloading and installing Oracle SQL Developer in a windows environment.
+ 
+ Download and install SQL Developer on any windows pc (laptop/OCI), which has network access to both databases (source and target) as well as the repository database you choose (ADB in our case). You can download latest version of Oracle SQL Developer from following link for your appropriate platform. For thiw workshop, we'll choose Windows 64-bit with JDK 8 included from [https://www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
 
-  Use the latest version of Oracle SQL Developer (which is v 21.2 as of writing of this workshop). This task will walk you through downloading and installing Oracle SQL Developer in a windows environment...
 
-  Download and install SQL Developer on any windows pc (laptop/OCI), which has network access to both databases (source and target) as well as the repository database you choose (ADB in our case). You can download latest version of Oracle SQL Developer from following link for your appropriate platform. For thiw workshop, we'll choose Windows 64-bit with JDK 8 included from [https://www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
+ **From Doc: 1.2 Installing and Getting Started with SQL Developer** 
 
-
-#### From Doc: 1.2 Installing and Getting Started with SQL Developer
   To install and start SQL Developer, you simply download its ZIP file and unzip it into a desired parent directory or folder, and then double-click the exe file name (sqldeveloper.exe) to open. 
 
   When you launch SQL Developer first time, it'll ask you importing project etc, select No. 
@@ -35,13 +31,12 @@ In this lab, you will perform following:
 
 ## Task 2: Create Connections for the Target (ADB) database
 
-  Once you're running SQL Developer, first you'll need to create appropriate user for the target schema, which is ATP in our case. You can use following SQL script to create a sample user for the connection, with appropriate roles. You can follow step 1 from this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). Or you can follow below lab: Connect Securely Using SQL Developer with a Connection Wallet. 
+ Once you're running SQL Developer, first you'll need to create appropriate user for the target schema, which is ATP in our case. You can use following SQL script to create a sample user for the connection, with appropriate roles. You can follow step 1 from this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). Or you can follow below lab: Connect Securely Using SQL Developer with a Connection Wallet. 
 
-<details>
-<summary>
-
-### Task 2.1 Connect Securely Using SQL Developer with a Connection Wallet (Click to expand)
-</summary>
+ <details>
+ <summary> 
+ Task 2.1 Connect Securely Using SQL Developer with a Connection Wallet (Click to expand)
+ </summary>
 
   This lab walks you through the steps to download and configure a *connection wallet* to connect securely to an Autonomous Database (Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]). You will use this connection wallet to connect to the database using **Oracle SQL Developer**. (Previous labs in this workshop used **SQL Developer Web** from a web browser, to access an autonomous database directly from the cloud console without a connection wallet. SQL Developer Web is a convenient browser-based tool, offering a subset of the features and functions in Oracle SQL Developer.)
 
@@ -55,7 +50,7 @@ In this lab, you will perform following:
   - Learn how to download and configure a connection wallet
   - Learn how to connect to your Autonomous Data Warehouse with Oracle SQL Developer
 
- ### Task 2.1.1: Download the Connection Wallet
+   Task 2.1.1: Download the Connection Wallet
 
   As ADW and ATP accept only secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page or from the ADW or ATP service console.
 
@@ -116,30 +111,25 @@ In this lab, you will perform following:
 </details>  
 
 
-<details>
- <summary>
+Task 2.2 Create User in Target
 
-### Task 2.2 Create User in Target (Click to Expand)
-  </summary>
+  Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that connection to create new user. You can execute following sample command as ADMIN user, using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
 
-  Once you've setup connectivity with ATP from SQL Developer, you can use the connection to create new user. You can execute following sample command as ADMIN user, using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
-
- ```
- <copy> CREATE USER targetuser IDENTIFIED BY xxxxxxxx; </copy>
- ```
- ```
- <copy>
- GRANT CONNECT, RESOURCE TO targetuser;
- GRANT CREATE SESSION TO targetuser;
- GRANT UNLIMITED TABLESPACE TO targetuser;
- GRANT CREATE ANY VIEW TO targetuser;
- GRANT SELECT ANY TABLE TO targetuser; </copy>
- ```
+  ```
+  <copy> CREATE USER targetuser IDENTIFIED BY xxxxxxxx; </copy>
+  ```
+  ```
+  <copy>
+  GRANT CONNECT, RESOURCE TO targetuser;
+  GRANT CREATE SESSION TO targetuser;
+  GRANT UNLIMITED TABLESPACE TO targetuser;
+  GRANT CREATE ANY VIEW TO targetuser;
+  GRANT SELECT ANY TABLE TO targetuser; </copy>
+  ```
     
- After executing above SQL commands, you can create a new connection named "ATP" in SQL Developer with the above TARGETUSER credentials and the ATP wallet file. 
+  After executing above SQL commands, you can create a new connection named "ATP" in SQL Developer with the above TARGETUSER credentials and the ATP wallet file. 
 
- Note: SQL Developer does not migrate grant information from the source database. The Oracle DBA must adjust (as appropriate) user, login, and grant specifications after the migration.
-</details>
+  Note: SQL Developer does not migrate grant information from the source database. The Oracle DBA must adjust (as appropriate) user, login, and grant specifications after the migration.
 
 ## Task 3: Load MySQL JDBC Driver and Source Connection
 
@@ -173,7 +163,7 @@ In this lab, you will perform following:
 
 ## Task 4: Create User for Migration Repository
 
-Since, we have planned to create repository in the ATP database, let’s create separate user for migration, in the target (ATP) database named: MIGRATIONS, with the required roles and privileges and tablespace quotas. We will use this connection/user to run our migration jobs in SQL Developer.
+  Since, we have planned to create repository in the ATP database, let’s create separate user for migration, in the target (ATP) database named: MIGRATIONS, with the required roles and privileges and tablespace quotas. We will use this connection/user to run our migration jobs in SQL Developer.
  
   **Note:** 
      Remove Repository: How to cleanly remove existing repository. If you already have a repository associated with a user/database, you can use that. Otherwise, if you want to re-create the repository, you should follow these steps to cleanly remove it:
@@ -181,54 +171,55 @@ Since, we have planned to create repository in the ATP database, let’s create 
      b.    Select menu Migration --> Repository Management --> Delete Repository
      c.    Then drop that migration (db) user with cascade and start over from previous step. That is, create new migration user with above roles and Privileges, etc. and so on.
  
-You can copy following (SQL) script and execute via SQL Developer – Worksheet. Make sure, you’re connected as ADMIN user in the worksheet in ATP (and not with the target DB user or any other user). Set password appropriately before copying the commands below, replacing xxxxx and execute in order.
+  You can copy following (SQL) script and execute via SQL Developer – Worksheet. Make sure, you’re connected as ADMIN user in the worksheet in ATP (and not with the target DB user or any other user). Set password appropriately before copying the commands below, replacing xxxxx and execute in order.
 
 
-``` 
-<copy>
-CREATE USER migrations IDENTIFIED BY xxxxxxx
-  DEFAULT TABLESPACE data TEMPORARY TABLESPACE temp;
-</copy>
-```
-```
-<copy>
-ALTER USER migrations QUOTA UNLIMITED ON data;
- </copy>
-```
-```
-<copy>
-GRANT CONNECT, RESOURCE, CREATE VIEW, CREATE MATERIALIZED VIEW,
-   CREATE PUBLIC SYNONYM TO migrations WITH ADMIN OPTION;
-</copy>
-``` 
-```
-<copy>
-GRANT  ALTER ANY ROLE, ALTER ANY SEQUENCE, ALTER ANY TABLE, ALTER TABLESPACE, ALTER ANY TRIGGER, COMMENT ANY TABLE, CREATE ANY SEQUENCE, CREATE ANY TABLE, CREATE ANY TRIGGER, CREATE ROLE, CREATE TABLESPACE, CREATE USER, DROP ANY SEQUENCE, DROP ANY TABLE, DROP ANY TRIGGER, DROP TABLESPACE, DROP USER, DROP ANY ROLE, GRANT ANY ROLE, INSERT ANY TABLE, SELECT ANY TABLE, UPDATE ANY TABLE TO migrations;
-</copy>
-``` 
+  ``` 
+  <copy>
+  CREATE USER migrations IDENTIFIED BY xxxxxxx
+    DEFAULT TABLESPACE data TEMPORARY TABLESPACE temp;
+  </copy>
+  ```
+  ```
+  <copy>
+  ALTER USER migrations QUOTA UNLIMITED ON data;
+  </copy>
+  ```
+  ```
+  <copy>
+  GRANT CONNECT, RESOURCE, CREATE VIEW, CREATE MATERIALIZED VIEW,
+    CREATE PUBLIC SYNONYM TO migrations WITH ADMIN OPTION;
+  </copy>
+  ``` 
+  ```
+  <copy>
+  GRANT  ALTER ANY ROLE, ALTER ANY SEQUENCE, ALTER ANY TABLE, ALTER TABLESPACE, ALTER ANY TRIGGER, COMMENT ANY TABLE, CREATE ANY SEQUENCE, CREATE ANY TABLE, CREATE ANY TRIGGER, CREATE ROLE, CREATE TABLESPACE, CREATE USER, DROP ANY SEQUENCE, DROP ANY TABLE, DROP ANY TRIGGER, DROP TABLESPACE, DROP USER, DROP ANY ROLE, GRANT ANY ROLE, INSERT ANY TABLE, SELECT ANY TABLE, UPDATE ANY TABLE TO migrations;
+  </copy>
+  ``` 
 
-NB: Once you are done with migration, you may like to revoke back those high privileges from MIGRATIONS user for security purposes.   
+  NB: Once you are done with migration, you may like to revoke back those high privileges from MIGRATIONS user for security purposes.   
 
 
 ## Task 5: Create Migration Connection
 
-In SQL Developer, create a database connection named Migration_Repository using the MIGRATIONS user created in previous step, to connect to ATP. For help with making such connection, you can refer back the above Task:2.2 Connect Securely Using SQL Developer with a Connection Wallet.
+  In SQL Developer, create a database connection named Migration_Repository using the MIGRATIONS user created in previous step, to connect to ATP. For help with making such connection, you can refer back the above Task:2.2 Connect Securely Using SQL Developer with a Connection Wallet.
 
 
 ## Task 6: Create Migration Repository
 
-Right click on Migrations_Repository connection that you created in the previous step and select Migration Repository and then select Associate Migration Repository. It will take some time to create the repository in the ATP database in the MIGRATIONS schema.
+  Right click on Migrations_Repository connection that you created in the previous step and select Migration Repository and then select Associate Migration Repository. It will take some time to create the repository in the ATP database in the MIGRATIONS schema.
 
 
 ## Task 7: Complete Migration with the Wizard
 
-The migration wizard can be invoked in a variety of contexts. You can right-click a third-party database connection (MySQL connect in our case) and select “Migrate to Oracle” or you can click from the menu “Tools>Migration>Migrate…”.
+  The migration wizard can be invoked in a variety of contexts. You can right-click a third-party database connection (MySQL connect in our case) and select “Migrate to Oracle” or you can click from the menu “Tools>Migration>Migrate…”.
 
-You can follow the self-explanatory Wizard to provide details about the source and target connection, repository connection, database selected for migration, and objects under the database to be migrated and any data-type conversion required etc and at the end choose to create an offline script file for migration. You can refer to the [documentation](https://docs.oracle.com/en/database/oracle/sql-developer/19.4/rptug/migrating-third-party-databases.html#GUID-51B0F243-D970-43A0-BFA4-97477CB14C48) for explianation of the steps of this wizard.
+  You can follow the self-explanatory Wizard to provide details about the source and target connection, repository connection, database selected for migration, and objects under the database to be migrated and any data-type conversion required etc and at the end choose to create an offline script file for migration. You can refer to the [documentation](https://docs.oracle.com/en/database/oracle/sql-developer/19.4/rptug/migrating-third-party-databases.html#GUID-51B0F243-D970-43A0-BFA4-97477CB14C48) for explianation of the steps of this wizard.
 
-This workshop walked you through one scenario, of moving data from MySQL Database to Oracle Autonomous Database (ADB).
+  This workshop walked you through one scenario, of moving data from MySQL Database to Oracle Autonomous Database (ADB).
 
-Learn more about this migration scenario: 
+
+Learn more about this migration scenario:
 * [Need to Migrate MySQL Database to Oracle ADB ?](http://docs.oracle.com)
 
 ## Acknowledgements

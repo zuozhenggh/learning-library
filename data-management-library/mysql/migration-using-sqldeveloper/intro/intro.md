@@ -1,9 +1,10 @@
 # Introduction
 
+This is step-by-step workshop to migrate MySQL database to Oracle Autonomous Database, using Oracle SQL Developer. 
+
 ## About this Workshop
 
-If you are considering moving your on-premise MySQL database to the cloud and in the process, also wants to migrate the database to Oracle Database, this workshop will guide you how to do it easily. 
-Following these step-by-step instructions, you can easily perform MySQL to Oracle Autonomous Database (ADB) migration using Oracle SQL Developer v 21.2. To learn more about this type of migration: _Need to Migrate MySQL Database to Oracle ADB ?_ 
+If you are considering moving your on-premise MySQL database to the cloud and in the process, also wants to migrate the database to Oracle Database (in our case Autonomous Database - ADB), this workshop will guide you how to do it easily. Following these step-by-step instructions, you can easily perform this migration using Oracle SQL Developer v 21.2. Here you can learn more about this type of migration: _Need to Migrate MySQL Database to Oracle ADB ?_ (draft)
 
 
 Estimated Workshop Time: 1 hour
@@ -14,17 +15,14 @@ Oracle SQL Developer GUI - Migration Configured
 ![Oracle SQL Developer UI](images/sqldevUI.jpg " ")
 
 
-Oracle SQL Developer is a free, integrated development environment (IDE) that simplifies the development and management of Oracle Database in both traditional and Cloud deployments. If you have basic understanding of SQL and know-how of Oracle Cloud and Autonomous Database, it will be useful to perform all of the steps in this document. However, if you’re coming from MySQL background alone, using this workshop steps, you will still be able to complete the migration. 
+Oracle SQL Developer is a free, integrated development environment (IDE) that simplifies the development and management of Oracle Database in both traditional and Cloud deployments. SQL Developer also provides migration capability from third-party databases. If you have basic understanding of SQL and know-how of Oracle Cloud and Autonomous Database, it will be quite easy to perform this workshop. However, if you’re coming from MySQL background alone, using this workshop steps, you will still be able to complete the migration. 
 
-#### References in this Workshop
+### References in this Workshop
 
 The main Oracle document for this migration can be found at the following link, which has been referenced in this post in some places. Wherever I have mentioned “From Doc”, the text is copied from following document and referenced as-is. [SQL Developer: Migrating Third-Party Databases](https://docs.oracle.com/en/database/oracle/sql-developer/21.2/rptug/migrating-third-party-databases.html)
 
 
-
-
-### Objectives
-
+## Objectives
 
 In this workshop, you will learn how to:
 * Download Latest Version & Install
@@ -35,7 +33,7 @@ In this workshop, you will learn how to:
 * Create Migration Repository
 * Complete Migration with the Wizard
 
-### Prerequisites 
+## Prerequisites 
 
 For this post, it is assumed that you already have following in place:
 
@@ -66,4 +64,5 @@ Ready to learn more?
 
 ## Acknowledgements
 * **Author** - Muhammad Shuja, Principal Cloud Solution Engineer, ODP - ANZ
+* **Reviewer** - Person, Org
 * **Last Updated By/Date** - Muhammad Shuja, December 2021
