@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Use OpenTracing for WebLogic Application on Kubernetes utilizing Oracle Application Performance Monitoring",
+    "workshoptitle": "Use OpenTracing for WebLogic on Kubernetes utilizing Oracle Application Performance Monitoring",
 	"help": "livelabs-help-em_us@oracle.com",
     "tutorials": [
         {
