@@ -10,7 +10,7 @@ Estimated Lab Time: 60 minutes
 
 ## Task 1: Verify Virtual Cloud Network (VCN)
 
-1. Use Copy Password and click on Launch Console. Use the same initial password when asked to reset the password, so you don't have to remember it. You are in the Oracle cloud console using the Workshop Details received.
+1. Use Copy Password to copy the initial password in your clipboard, and click on Launch Console. Use the same initial password when asked to reset the password, so you don't have to remember it. You are in the Oracle cloud console using the Workshop Details received.
 
     - Login URL 	
     - Tenancy name
@@ -29,11 +29,6 @@ Estimated Lab Time: 60 minutes
 
 6. Review the Ingress Rules and Egress Rules defined in this security list.
 
-7. Make sure you have this Ingress Rule:
-    - CIDR Block: 10.0.0.0/24
-    - Destination Port Range: 1521
-    - Description: Database connection
-
 
 ## Task 2: Create Database
 
@@ -45,7 +40,7 @@ Estimated Lab Time: 60 minutes
     - Select a shape: VM.Standard2.1
     - Oracle Database software edition: Enterprise Edition Extreme Performance
     - Choose Storage Management Software: Logical Volume Manager
-    - Generate SSH key pair, and save both Private Key and Public Key files on your computer.(*optionally select Upload SSH key files to use your own id_rsa.pub public key*)
+    - Generate SSH key pair, and save both Private Key and Public Key files on your computer. (optionally select Upload SSH key files to use your own id_rsa.pub public key)
     - Choose a license type: Bring Your Own License (BYOL)
 
 2. Specify the network information.

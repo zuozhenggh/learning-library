@@ -144,7 +144,7 @@ Estimated Lab Time: 30 minutes
     - Choose a license type: Bring Your Own License (BYOL)
     - Virtual cloud network: WS-VCN
     - Client Subnet: Public Subnet
-    - Hostname prefix: ws-hostb
+    - Hostname prefix: db-clone
     - Database name: WSDBB
     - Password: DatabaseCloud#22_
     - Enter the source database's TDE wallet or RMAN password: DatabaseCloud#22_

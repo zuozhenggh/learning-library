@@ -33,7 +33,7 @@ Estimated Lab Time: 45 minutes
     - Select a shape: VM.Standard2.1
     - Virtual cloud network: WS-VCN
     - Client Subnet: Public Subnet
-    - Hostname prefix: WS-hostsb
+    - Hostname prefix: db-hostsb
     - Protection mode: Maximum Performance
     - Password: DatabaseCloud#22_
 
