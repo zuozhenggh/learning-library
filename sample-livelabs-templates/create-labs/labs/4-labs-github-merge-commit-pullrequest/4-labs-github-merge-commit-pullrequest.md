@@ -2,27 +2,27 @@
 
 ## Introduction
 
-As a best practice, merge your library everyday or whenever you start your GitHub Desktop application. Merge pulls all the commits (changes) from the [upstream/master repository (production)](https://github.com/oracle/learning-library), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
+As a best practice, merge your library everyday or whenever you start your GitHub Desktop application. *Merge* pulls all the commits (changes) from the [upstream/master repository (production)](https://github.com/oracle/learning-library), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
 
 ### Objectives
 
-* Commit your changes.
-* Request for a review.
-* Test your content.
-* Create a Pull Request to upload your content to master.
+* Commit your changes
+* Request for a review
+* Test your content
+* Create a Pull Request to upload your content to master
 
 ### What Do You Need?
 * Git Environment Setup
 * GitHub Desktop client
 
 
-This lab assumes that you have successfully completed **Lab 3: Using Atom Editor to Develop Content** in the **Contents** menu on the right.
+This lab assumes that you have successfully completed **Lab 3: Use a Text Editor to Develop Markdown Content** in the **Contents** menu on the right.
 
 ## Task 1: Get Latest Updates from Production
 
 Before you develop you should ensure you have the latest content from production to ensure you are developing off the latest code set.
 
-1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is perform the following steps to sync.  This should be done before you commit.
+1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is, perform the following steps to sync.  This should be done before you commit.
 
   ![](./images/git-hub-sync-behind.png " ")
 
@@ -94,7 +94,7 @@ To share and view your workshop:
 
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
 
-Note:  *Before executing a PR, make sure you have run Step 1 above and that your personal github repo on the web is not behind.  Failure to do so will result in conflicts.  You cannot issue a pull request without syncing first.  PRs will not be approved without your LWMS ID (Workshop ID)*
+Note:  *Before executing a PR, make sure you have run Task 1 above and that your personal github repo on the web is not behind.  Failure to do so will result in conflicts.  You cannot issue a pull request without syncing first.  PRs will not be approved without your LWMS ID (Workshop ID)*
 
 > **Note:** The owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
 
@@ -122,7 +122,7 @@ To create a Pull Request:
 
   Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
 
-## Task 6: Accessing your workshop in GitHub
+## Task 6: Access your workshop in GitHub
 
 After your pull request is complete, wait a few minutes and perform the steps below.  Github pages takes approximately 5 minutes for the pages to be copied
 
@@ -139,16 +139,33 @@ After your pull request is complete, wait a few minutes and perform the steps be
   https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier
 
 ## Task 7: Change your status
-Now that your workshop is in the learning library, change your status.  If you are finished and ready to QA, change your status to **Self QA**, if you still have some work to do, change your status to **Moving to Github**.
-1. Go into the LWMS (Oracle employees only - bit.ly/oraclelivelabs) and click edit your workshop.
-4.  Go to the row for your workshop and change your workshop status to at least *Moving to GitHub* *Note: If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.*
-5.  Click on the ID for your workshop
-6.  On the edit page, scroll down and update the **Production GitHub URL** update it to the new oracle.github.io address you identified in step 3.
-7.  Update your Development GithHub URL to your personal github pages address
-8.  When you are finished with your workshop, set your workshop status to **Self QA**.
-9.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
+Now that your workshop is in the learning library, change your status.  If you are finished and ready to QA, change your status to **Self QA**. If you still have some work to do, change your status to **Moving to Github**.
+1. Go into the LWMS (Oracle employees only - [bit.ly/oraclelivelabs](https://bit.ly/oraclelivelabs)) and click **EDIT My Workshop(s)**.
 
-You may now [proceed to the next lab](#next).
+2.  Go to the row for your workshop and click the **WMS ID** of your workshop.
+>**Note:** If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.
+
+3.  On the *Workshop Details* page, update your **Workshop Status** to at least **Moving to GitHub**.
+
+4.  Scroll down and update the **Production GitHub URL**. Update it to the new oracle.github.io address you identified in Task 6.
+
+5.  Update the **Development GithHub URL** to your personal github pages address.
+
+6.  Still on the *Workshop Details* page, ensure the *Workshop Tile Description*, *Workshop Abstract*, *Workshop Homepage Description*, *Workshop Outline/Agenda*, *Workshop Prerequisites* are all up-to-date.
+
+7.  Click **LiveLabs Publishing** tab, ensure the *Workshop Duration*, *Always Free On?*, *Free Tier On?*, *Paid Tier On?*, *Green Button On?* are correct.
+
+8.  When you are finished with your workshop, set your **Workshop Status** to **Self QA**.
+
+9.  You will receive a **Self QA form** from LWMS. Download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/TOk7tJROybgLwiM94GX7nhzhesCm_KXP559p-zhwYZh90d6ZVCuFTyr3OkaE7RSO/n/c4u04/b/labfiles/o/QA%20document%20JulyLiveLabs%20QA%20Instructions%20v5%20July%202021.docx). Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
+
+10. After you finish self QA, set your **Workshop Status** to **Self QA Complete** in LWMS. Then, email your completed Self QA document to livelabs-help-db_us@oracle.com.
+
+11. A member of LiveLabs team will verify the QA within 2 business days. After we verify your QA, we will move the workshop into **QA Verification Complete**. Then, after we move the workshop into LiveLabs, you will receive a confirmation email from LWMS, indicating the workshop is now in **Production** status. We will reach out to you via LWMS if there are more changes needed. If you have not heard back from us after 2 days, don't hesitate to reach out to us via LWMS.
+
+12.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
+
+You may now **proceed to the next lab**.
 
 ## **Appendix**: Troubleshooting Tips
 ### Issue: Conflicts
@@ -199,4 +216,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Kamryn Vinson, Product Manager, Database
 
-* **Last Updated By/Date:** Lauran Serhal & Anuradha Chepuri, November, 2021
+* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, December 2021
