@@ -8,7 +8,6 @@ In Oracle GoldenGate Veridata, you can add mappings to the selected source and t
 *Estimated Lab Time*: 20 minutes
 
 
-
 ### Objectives
 In this lab, you will:
 * Add column mapping
