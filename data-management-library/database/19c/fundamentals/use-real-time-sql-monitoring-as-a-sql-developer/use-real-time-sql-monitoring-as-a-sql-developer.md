@@ -96,7 +96,7 @@ Open up new terminal window for **Session 2**.
   ```
 
 2. Get an overview of the long running queries.
-    ```
+```
     SQL> <copy>SELECT sql_id, status, sql_text FROM v$sql_monitor;</copy>
   SELECT sql_id, status, sql_text FROM v$sql_monitor
                                        *
@@ -104,7 +104,7 @@ Open up new terminal window for **Session 2**.
   ORA-00942: table or view does not exist
 
   SQL>
-    ```
+```
 
     Q1/ Traditionally, real-time SQL monitor is mainly used by DBAs because they are responsible for monitoring and tuning database performance. Real-time SQL monitor tracks and collects SQL and execution plan statistics in fixed views which are only accessible by users who have been granted the SELECT CATALOG ROLE role. A regular user, such as an application developer or a low-privileged user without the SELECT CATALOG ROLE role and SELECT privilege on the real-time SQL monitor fixed views, can write a SQL statement, execute it, see the SQL result set and its SQL plan using the explain plan command, but not its execution plan because it is stored in V$SQL_PLAN.
 
