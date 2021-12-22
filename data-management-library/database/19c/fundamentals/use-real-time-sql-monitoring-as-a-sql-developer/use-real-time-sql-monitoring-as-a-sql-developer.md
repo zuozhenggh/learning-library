@@ -106,11 +106,11 @@ Open up new terminal window for **Session 2**.
   SQL>
 ```
 
-   Q1/ Traditionally, real-time SQL monitor is mainly used by DBAs because they are responsible for monitoring and tuning database performance. Real-time SQL monitor tracks and collects SQL and execution plan statistics in fixed views which are only accessible by users who have been granted the SELECT CATALOG ROLE role. A regular user, such as an application developer or a low-privileged user without the SELECT CATALOG ROLE role and SELECT privilege on the real-time SQL monitor fixed views, can write a SQL statement, execute it, see the SQL result set and its SQL plan using the explain plan command, but not its execution plan because it is stored in V$SQL_PLAN.
+  Q1/ Traditionally, real-time SQL monitor is mainly used by DBAs because they are responsible for monitoring and tuning database performance. Real-time SQL monitor tracks and collects SQL and execution plan statistics in fixed views which are only accessible by users who have been granted the SELECT CATALOG ROLE role. A regular user, such as an application developer or a low-privileged user without the SELECT CATALOG ROLE role and SELECT privilege on the real-time SQL monitor fixed views, can write a SQL statement, execute it, see the SQL result set and its SQL plan using the explain plan command, but not its execution plan because it is stored in V$SQL_PLAN.
 
-    Is the SQLDEV user granted the SELECT_CATALOG_ROLE role? Is the SQLDEV user granted the SELECT privilege on V$SQL_PLAN? Can the SQLDEV user use real-time SQL monitor to view the execution plan for his SQL statement execution?
+  Is the SQLDEV user granted the SELECT_CATALOG_ROLE role? Is the SQLDEV user granted the SELECT privilege on V$SQL_PLAN? Can the SQLDEV user use real-time SQL monitor to view the execution plan for his SQL statement execution?
 
-    **A1/ No. The SQLDEV user is not granted the SELECT_CATALOG_ROLE role nor the SELECT privilege on the V$SQL_MONITOR view.**
+  **A1/ No. The SQLDEV user is not granted the SELECT_CATALOG_ROLE role nor the SELECT privilege on the V$SQL_MONITOR view.**
 
 3. Generate the SQL monitor report from the command line, run the REPORT_SQL_MONITOR function in the DBMS_SQLTUNE package.
 
