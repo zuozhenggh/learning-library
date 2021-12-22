@@ -18,7 +18,9 @@ In this lab you will:
 
 ## **Step 1:** Provision ADW
 
-    1. In your Oracle Cloud Console, open the menu.
+- Start from your Oracle Cloud Console
+
+    1. From your Oracle Cloud Console, open the menu.
 
     ![Open Menu](./images/openmenu.png)
 
@@ -49,6 +51,8 @@ In this lab you will:
 
 ## **Step 2:** Setting up Credentials
 
+- Within a few minutes, the Database will be available.
+
     1. Once the Database is available, click the DB Connection to bring up a new page.
 
     ![DB Connection Button](./images/dbconnectionbutton.png)
@@ -57,8 +61,8 @@ In this lab you will:
 
     ![DB Connection Page](./images/dbconnectionpage.png)
 
-Wallet Type should be Instance Wallet.
-This Wallet file will be used later.
+- Wallet Type should be Instance Wallet.
+- This Wallet file will be used later.
 
     3. Click the Tools option to move to the tools tab.
 
@@ -68,7 +72,7 @@ This Wallet file will be used later.
 
     ![DB Tools Page](./images/dbtoolspage.png)
 
-We will be creating an account here to use later.
+- We will be creating an account here to use later.
 
     5. Enter your Admin user and password to log in.
 

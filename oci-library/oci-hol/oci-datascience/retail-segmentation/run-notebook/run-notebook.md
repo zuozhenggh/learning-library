@@ -17,6 +17,8 @@ In this lab you will:
 
 ## **Step 1:** Placing Files into the Notebook
 
+- Our focus will now shift back to the datascience notebook.
+
     1. Return to your datascience notebook that you have created and press Open.
 
     ![Open Notebook Image](./images/opennotebook.png)
@@ -59,6 +61,8 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/p/1dzOB88QeywWzprMcoMMLw6xwYI
 
 ## **Step 2:** Installing the Kernel
 
+- Let us now shift our focus to installing a kernel to use for our datascience notebook.
+
     1. Press the + button on the top left to open up the launch, and double click the environment explorer.
 
     ![Plus Button Image](./images/plusbutton.png)
@@ -88,6 +92,8 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/p/1dzOB88QeywWzprMcoMMLw6xwYI
 
 
 ## **Step 3:** Running the Retail Segmentation Notebook
+
+- Now we can begin running the notebook itself.
 
     1. Open the data science notebook by double clicking it in the directory on the left hand side.
 
