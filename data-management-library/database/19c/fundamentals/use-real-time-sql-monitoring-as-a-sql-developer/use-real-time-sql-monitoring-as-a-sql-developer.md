@@ -37,10 +37,10 @@ Open up terminal window for **Session 1**.
 
 2. Set the Oracle environment variables. At the prompt, enter **CDB1**.
 
-    ```
-    $ <copy>. oraenv</copy>
-    CDB1
-    ```
+  ```
+  $ <copy>. oraenv</copy>
+  CDB1
+  ```
 
 3.	Check the privileges and roles granted to the SQLDEV user.
   ```
