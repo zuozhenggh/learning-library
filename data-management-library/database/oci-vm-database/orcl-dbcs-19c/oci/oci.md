@@ -52,7 +52,7 @@ Estimated Lab Time: 60 minutes
 
     - Virtual cloud network: LLXXXXX-VCN
     - Client Subnet: Public Subnet LLXXXXX-SUBNET-PUBLIC
-    - Hostname prefix: ws-host
+    - Hostname prefix: db-host
 
 3. Click Next.
 

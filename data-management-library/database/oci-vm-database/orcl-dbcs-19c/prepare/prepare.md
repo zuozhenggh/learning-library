@@ -203,35 +203,18 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-5. Create a new pluggable database called **PDB012**.
+5. Create a new pluggable database called **PDB012**. Click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
-    ````
-    <copy>
-    CREATE PLUGGABLE DATABASE pdb012 ADMIN USER Admin IDENTIFIED BY DatabaseCloud#22_;
-    </copy>
+6. Click the database name link **WSDB** in the bottom table called Databases. Click Pluggable Databases inthe left menu at the bottom o the page. Click Create Pluggable Database.
 
-    Pluggable database created.
-    ````
+    - Enter PDB Name: PDB012
+    - Unlock my PDB Admin account
+    - PDB Admin password: DatabaseCloud#22_
+    - TDE wallet password of database: DatabaseCloud#22_
 
-6. List pluggable databases and confirm the new pluggable database is there.
+7. Click on Database Details in the breadcrumb links at the top of the page. Click Pluggable Databases inthe left menu at the bottom o the page. Refresh page until PDB012 becomes Available.
 
-    ````
-    <copy>
-    show pdbs
-    </copy>
-    ````
-
-7. Change the state of the new pluggable database PDB012 to **OPEN**.
-
-    ````
-    <copy>
-    ALTER PLUGGABLE DATABASE pdb012 OPEN;
-    </copy>
-
-    Pluggable database altered.
-    ````
-
-8. List pluggable databases and confirm it is **OPEN**.
+8. List again pluggable databases in SQL*Plus to confirm the new pluggable database is there.
 
     ````
     <copy>
@@ -284,37 +267,17 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-3. For the Oracle Sample Schemas, we need a tablespace called **USERS**. Try to create it.
+3. Createa a new tablespace for applications.
 
     ````
     <copy>
-    CREATE TABLESPACE users;
+    CREATE TABLESPACE apps;
     </copy>
 
-    ORA-28361: master key not yet set
+    Tablespace created.
     ````
 
-4. We get an error about a Master Key. To use Oracle Transparent Data Encryption (TDE) in a pluggable database (PDB), you must create and activate a master encryption key for the PDB.
-
-5. In a multitenant environment, each PDB has its own master encryption key which is stored in a single keystore used by all containers.
-
-6. Create and activate a master encryption key in the PDB by executing the following command:
-
-    ````
-    <copy>
-    ADMINISTER KEY MANAGEMENT SET KEY FORCE KEYSTORE IDENTIFIED BY DatabaseCloud#22_ WITH BACKUP;
-    </copy>
-    ````
-
-7. Now we can create tablespace **USERS**.
-
-    ````
-    <copy>
-    CREATE TABLESPACE users;
-    </copy>
-    ````
-
-8. List all tablespaces to confirm the new tablespace was created.
+4. List all tablespaces to confirm the new tablespace was created.
 
     ````
     <copy>
@@ -322,7 +285,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-9. List all datafiles and see the corresponding files.
+5. List all datafiles and see the corresponding files.
 
     ````
     <copy>
@@ -330,7 +293,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-10. Exit SQL*Plus.
+6. Exit SQL*Plus.
 
     ````
     <copy>
@@ -338,7 +301,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-11. Download Oracle Sample Schemas installation package from GitHub.
+7. Download Oracle Sample Schemas installation package from GitHub.
 
     ````
     <copy>
@@ -346,7 +309,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-12. Unzip the archive.
+8. Unzip the archive.
 
     ````
     <copy>
@@ -354,7 +317,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-13. Open the unzipped folder.
+9. Open the unzipped folder.
 
     ````
     <copy>
@@ -362,7 +325,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-14. Run this Perl command to replace `__SUB__CWD__` tag in all scripts with your current working directory, so all embedded paths to match your working directory path.
+10. Run this Perl command to replace `__SUB__CWD__` tag in all scripts with your current working directory, so all embedded paths to match your working directory path.
 
     ````
     <copy>
@@ -370,7 +333,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-15. Go back to the parent folder (this should be /home/opc).
+11. Go back to the parent folder (this should be /home/opc).
 
     ````
     <copy>
@@ -378,7 +341,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-16. Create a new folder for logs.
+12. Create a new folder for logs.
 
     ````
     <copy>
@@ -386,7 +349,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-17. Connect to the **PDB012** pluggable database.
+13. Connect to the **PDB012** pluggable database.
 
     ````
     <copy>
@@ -394,7 +357,7 @@ Estimated Lab Time: 45 minutes
     </copy>
     ````
 
-19. Run the HR schema installation script. For more information about [Oracle Database Sample Schemas](https://github.com/oracle/db-sample-schemas) installation process, please follow the link. Make sure to replace **DB Node Private IP Address** and **Host Domain Name** with the actual values.
+14. Run the HR schema installation script. For more information about [Oracle Database Sample Schemas](https://github.com/oracle/db-sample-schemas) installation process, please follow the link. Make sure to replace **DB Node Private IP Address** and **Host Domain Name** with the actual values.
 
     ````
     <copy>
