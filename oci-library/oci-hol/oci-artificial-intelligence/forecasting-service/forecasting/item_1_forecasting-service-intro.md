@@ -49,6 +49,7 @@ At a high level, here are the process of completing a full cycle of using foreca
 5. Forecasting with new data. Users can send new data with same attributes of the training data to the deployment endpoint to get forecast results.
 
 Note that one project can have multiple data assets and multiple models.
+
 [Proceed to the next section](#next).
 
 ## Acknowledgements
