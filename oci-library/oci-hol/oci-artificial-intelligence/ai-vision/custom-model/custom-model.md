@@ -3,6 +3,7 @@
 ## Introduction
 In this session, we will show you how to create a vision project, select your training data, and train a custom model.
 
+*Estimated Lab Time*: 15 minutes
 
 ### Objectives
 

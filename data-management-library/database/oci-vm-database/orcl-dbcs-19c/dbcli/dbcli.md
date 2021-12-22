@@ -4,6 +4,8 @@
 
 The database CLI (dbcli) is a command line interface available on bare metal and virtual machine DB systems. After you connect to the DB system, you can use the database CLI to perform tasks such as creating Oracle database homes and databases.
 
+Estimated Lab Time: 45 minutes
+
 ### Operational Notes
 
 - The database CLI commands must be run as the root user.
@@ -23,17 +25,17 @@ dbcli command [parameters]
 where:
 
 - **command** is a verb-object combination such as create-database.
-- **parameters** include additional options for the command. Most parameter names are preceded with two dashes, for example, --help. Abbreviated parameter names are preceded with one dash, for example, -h. 
+- **parameters** include additional options for the command. Most parameter names are preceded with two dashes, for example, --help. Abbreviated parameter names are preceded with one dash, for example, -h.
 
 ## Task 1: DBCLI Update Command
 
 Occasionally, new commands are added to the database CLI and other commands are updated to support new features. You can use the **cliadm update-dbcli** command to update the database CLI with the latest new and updated commands. 
 
-1. Connect to the Database node using SSH.
+1. From your Compute node, connect to the Database node using SSH.
 
     ````
     <copy>
-    ssh -C -i id_rsa opc@<DB Node Public IP Address>
+    ssh -C -i id_rsa opc@<DB Node Private IP Address>
     </copy>
     ````
 
@@ -379,7 +381,7 @@ With dbcli command you can manage pluggable databases on the container database 
     52fa1489-2a1c-47d4-9124-9a2f40fc7ce0     PDB011               DBS001               READ WRITE           NO                   DBS001              
     ````
 
-3. Create a new pluggable database, name it **pdb2**. Provide a password for the Admin user, and the password of the Transparent Data Encryption Wallet when asked. Use 'DBlearnPTS#20_' for both passwords. A new job is generated.
+3. Create a new pluggable database, name it **pdb2**. Provide a password for the Admin user, and the password of the Transparent Data Encryption Wallet when asked. Use **DBlabsPTS#22_** for both passwords. A new job is generated.
 
     ````
     <copy>

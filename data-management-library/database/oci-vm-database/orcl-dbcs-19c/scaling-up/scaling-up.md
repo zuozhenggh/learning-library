@@ -8,9 +8,11 @@ Oracle Database on virtual machines uses remote block storage, and enables scali
 
 >**Note** : The total storage attached to an instance will be a sum of available storage, reco storage, and software size. Available storage is selected by the customer, reco storage is automatically calculated based on available storage, and software size is a fixed size Oracle database cost.
 
+Estimated Lab Time: 25 minutes
+
 ## Task 1: Check CPU Resources
 
-1. Connect to the Compute node using SSH.
+1. Connect to the Compute node using SSH, if not connected already.
 
     ````
     <copy>
@@ -22,7 +24,7 @@ Oracle Database on virtual machines uses remote block storage, and enables scali
 
     ````
     <copy>
-    sqlplus sys/DBlearnPTS#20_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -38,22 +40,20 @@ Oracle Database on virtual machines uses remote block storage, and enables scali
     cpu_count			     integer	 2
     ````
 
-4. Connect to your pluggable database as SH user.
-
-    ````
-    <copy>
-    conn sh/DBlearnPTS#20_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
-    </copy>
-    ````
+4. Use SQL Developer on your Compute node to connect to PDB012. Test and save this connection.
+    - Name: SH@PDB012
+    - Username: SH
+    - Password: DBlabsPTS#22_
+    - Save password
+    - Hostname: `<DB Node Private IP Address>`
+    - Port: 1521
+    - Service name: pdb012.`<Host Domain Name>`
 
 5. Run a test query, and write down the time it takes to complete.
 
     ````
     <copy>
-    set timing on
-    set linesize 130
-
-    SELECT
+    select count(*) from (SELECT
       a.cust_id,
       a.cust_last_name || ', ' || a.cust_first_name as customer_name,
       a.cust_city || ', ' || a.cust_state_province || ', ' || a.country_id as city_id,
@@ -65,25 +65,14 @@ Oracle Database on virtual machines uses remote block storage, and enables scali
       b.country_subregion as subregion,
       b.country_region as region
     FROM sh.customers a, sh.countries b
-    where a.country_id = b.country_id;
-    </copy>
-
-    55500 rows selected.
-
-    Elapsed: 00:00:28.67
-    ````
-
-6. Exit SQL*Plus.
-
-    ````
-    <copy>
-    exit
+    where a.country_id = b.country_id);
     </copy>
     ````
+
 
 ## Task 2: Change Shape for More CPUs
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System.
+1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
 2. On DB System Details page, click **Change Shape** button. Select VM.Standard2.2 shape. Click **Change Shape** to confirm.
 
@@ -93,7 +82,7 @@ Oracle Database on virtual machines uses remote block storage, and enables scali
 
     ````
     <copy>
-    sqlplus sys/DBlearnPTS#20_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -117,22 +106,13 @@ Oracle Database on virtual machines uses remote block storage, and enables scali
     </copy>
     ````
 
-7. Connect to your pluggable database as SH user.
-
-    ````
-    <copy>
-    conn sh/DBlearnPTS#20_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name>
-    </copy>
-    ````
+7. Use SQL Developer on your Compute node to connect to PDB012.
 
 8. Run again the test query, and compare the time it takes to complete with the previous run.
 
     ````
     <copy>
-    set timing on
-    set linesize 130
-
-    SELECT
+    select count(*) from (SELECT
       a.cust_id,
       a.cust_last_name || ', ' || a.cust_first_name as customer_name,
       a.cust_city || ', ' || a.cust_state_province || ', ' || a.country_id as city_id,
@@ -144,12 +124,8 @@ Oracle Database on virtual machines uses remote block storage, and enables scali
       b.country_subregion as subregion,
       b.country_region as region
     FROM sh.customers a, sh.countries b
-    where a.country_id = b.country_id;
+    where a.country_id = b.country_id);
     </copy>
-
-    55500 rows selected.
-
-    Elapsed: 00:00:11.23
     ````
 
 9. Type **exit** command two times followed by Enter to close all sessions (SQL*Plus, and SSH).
@@ -164,18 +140,18 @@ Oracle Database on virtual machines uses remote block storage, and enables scali
 
 ## Task 3: Scale Up Storage Volumes
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System.
+1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
 2. Under DB System Information review the allocated storage resources:
 
     - Available Data Storage: 256 GB
     - Total Storage Size: 712 GB
 
-3. Connect to the Database node using SSH.
+3. From your Compute node, connect to the Database node using SSH.
 
     ````
     <copy>
-    ssh -C -i Keys/KeysDry/id_rsa opc@<DB Node Public IP Address>
+    ssh -C -i id_rsa opc@<DB Node Private IP Address>
     </copy>
     ````
 
@@ -202,7 +178,7 @@ Oracle Database on virtual machines uses remote block storage, and enables scali
     tmpfs                                1.5G     0  1.5G   0% /run/user/54322
     ````
 
-5. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System.
+5. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
 6. On DB System Details page, click **Scale Storage Up** button. Set Available Data Storage (GB): 512, and click **Update**.
 
