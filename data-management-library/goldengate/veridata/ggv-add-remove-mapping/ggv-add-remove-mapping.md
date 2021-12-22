@@ -22,7 +22,7 @@ This lab assumes you have:
     * Lab: Environment Setup
     * Lab: Initialize Environment
     * Lab: Create Datasource connections
-    * Lab: Create Groups and Compare Pairs. Create a Group by name **`Group_Mapping`**.
+    * Lab: Create Groups and Compare Pairs. Create a Group by name **Group\_Mapping**.
     * Lab: Create Groups and Compare Pairs. Follow the Tasks 1 to 2 to create a compare pair.
 - The understanding of Lab: Create Jobs and Execute Jobs.
 
@@ -37,8 +37,8 @@ To Remove Column Mapping:
 
     * Source schema: **SOURCE**
     * Target schema: **TARGET**
-    * Source Table: **DUMMY_TABLE**
-    * Target Table: **DUMMY_TABLE**
+    * Source Table: **DUMMY\_TABLE**
+    * Target Table: **DUMMY\_TABLE**
 
 6. Click **Generate Mappings**. The control moves to the **Preview** tab.
 
@@ -64,17 +64,17 @@ To Remove Column Mapping:
 
     ![](./images/5-Remaining-Columns.png " ")
 
-12. Click **Job Configuration**, click **New** to create a new job by Job Name **Job_Mapping** by following the steps in **Lab - Create Jobs and Execute Jobs**. Select Group_Mapping job you created to add group to this job.
+12. Click **Job Configuration**, click **New** to create a new job by Job Name **Job\_Mapping** by following the steps in **Lab - Create Jobs and Execute Jobs**. Select **Group\_Mapping** group you created to add group to this job.
 
-13. Run the Job **Job_Mapping**.
+13. Run the Job **Job\_Mapping**.
 
-14. On the Home Page, click **Finished Jobs**, click the **out-of-sync** link for the Finished job link for the Finished job **Job_Mapping**::
+14. On the Home Page, click **Finished Jobs**, click the **out-of-sync** link for the Finished job link for the Finished job **Job\_Mapping**::
 
     ![](./images/6-FinishedJobs_Click-Out-of-Sync.png " ")
 
-Comparison is now complete for the columns **DUMMY_KEY** and **DUMMY_DATE**. The other 2 mapped columns (**DUMMY_STRING** and **DUMMY_NUMBER**) have been skipped from being mapped and compared.
+    Comparison is now complete for the columns **DUMMY\_KEY** and **DUMMY\_DATE**. The other 2 mapped columns (**DUMMY\_STRING** and **DUMMY\_NUMBER**) have been skipped from being mapped and compared.
 
-      ![](./images/7-ColumnsRemoved_Comparison_Complete.png " ")
+    ![](./images/7-ColumnsRemoved_Comparison_Complete.png " ")
 
 ## **Task 2:** Add Mappings
 
@@ -82,24 +82,24 @@ To add mappings:
 
 1. From the **Existing Compare Pairs** tab, select the columns (both Source and Target Columns) and click **Add Mapping** to add the columns for mapping.
 
-      [](./images/8-Select_Column_for_Add_Mapping.png " ")
+    ![](./images/8-Select_Column_for_Add_Mapping.png " ")
 
-      The columns **DUMMY_STRING** and **DUMMY_NUMBER** are added for mapping.
+      The columns **DUMMY\_STRING** and **DUMMY\_NUMBER** are added for mapping.
 2. Click **Save**
 
-    [](./images/9-Columns-Added-for-Mapping.png " ")
+    ![](./images/9-Columns-Added-for-Mapping.png " ")
 
     These columns are added for comparison.
 
-    [](./images/10-Columns-Added-for-Comparison.png " ")
+    ![](./images/10-Columns-Added-for-Comparison.png " ")
 
 3. Run the Job **Job_Mapping**.
 
-4. On the Home Page, click **Finished Jobs**, click the **out-of-sync** link for the Finished job **Job_Mapping**.
+4. On the Home Page, click **Finished Jobs**, click the **out-of-sync** link for the Finished job **Job\_Mapping**.
 
-5. Expand DUMMY_TABLE-DUMMY_TABLE notice that the **DUMMY_STRING** and **DUMMY_DATE** columns have also been added for comparison along the **DUMMY_KEY** and **DUMMY_NUMBER** columns.
+5. Expand **DUMMY\_TABLE-DUMMY\_TABLE** notice that the **DUMMY\_STRING** and **DUMMY\_DATE** columns have also been added for comparison along the **DUMMY\_KEY** and **DUMMY\_NUMBER** columns.
 
-    [](./images/11-Expand_Columns-to_View_Mappings.png " ")
+    ![](./images/11-Expand_Columns-to_View_Mappings.png " ")
 
 You may now [proceed to the next lab](#next).
 
