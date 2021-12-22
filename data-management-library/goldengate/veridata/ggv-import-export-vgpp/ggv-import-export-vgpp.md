@@ -75,7 +75,11 @@ To run the Export Utility:
 The Vericom command-line interface provides a tool for you to manage identities in the credential store and run comparisons. You can use the vericom tool to execute certain comparison tasks from the command shell of the operating system. The vericom tool runs the Oracle GoldenGate Veridata command-line interface and enables you to handle these activities with automated programs. You can easily use the Vericom tool without specifying the actual user name and password.
 
 To run the Vericom tool:
-1. Navigate to the **VERIDATA_DOMAIN_HOME/veridata/bin** directory.
+
+1. Open the terminal.
+2. Navigate to the
+
+/home/opc/VDT/user_projects/domains/base_domain/veridata/bin** directory.
 2. Run the vericom tool as follows:
    `vericom{.bat|.sh} required_parameter [ optional_parameter ]`
 
