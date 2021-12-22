@@ -22,11 +22,11 @@ In this lab, you will:
 ### Step 1:
 
 Log in to your oracle cloud account, expand the Profile menu and click on User Settings:
-![](../images/Lab1_task1_step1_login.png " ")
+![](../images/lab1_task1_step1_login.png " ")
 
 ### Step 2: 
 Under User Settings click on the API Keys under Resources on the left :
-![](../images/Lab1_task1_step2_apikey.png " ")
+![](../images/lab1_task1_step2_apikey.png " ")
 
 ### Step 3: 
 
