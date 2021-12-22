@@ -42,12 +42,17 @@
       "filename": "./../../ggv-create-groups-compare-pairs/ggv-create-groups-compare-pairs.md"
     },
     {
-      "title": "Lab 5:  Add and Remove Mappings ",
+      "title": "Lab 6: Create and Execute Jobs ",
+      "description": "This lab walks you through the steps to create Jobs and execute them.",
+      "filename": "./../../ggv-create-execute-jobs/ggv-create-execute-jobs.md"
+    },
+    {
+      "title": "Lab 7:  Add and Remove Mappings ",
       "description": "This lab walks you through the steps to add and remove mappings in Oracle GoldenGate Veridata.",
       "filename": "./../../ggv-add-remove-mapping/ggv-add-remove-mapping.md"
     },
     {
-      "title": "Lab 4:  Use the Oracle GoldenGate Veridata Command-line Utilities ",
+      "title": "Lab 8:  Use the Oracle GoldenGate Veridata Command-line Utilities ",
       "description": "This lab walks you through the command line utilities in Oracle GoldenGate Veridata.",
       "filename": "./../../ggv-import-export-vgpp/ggv-import-export-vgpp.md"
     },
