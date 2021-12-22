@@ -161,9 +161,11 @@ Now that your workshop is in the learning library, change your status.  If you a
 
 10. After you finish self QA, set your **Workshop Status** to **Self QA Complete** in LWMS. Then, email your completed Self QA document to livelabs-help-db_us@oracle.com.
 
-11. A member of LiveLabs team will verify the QA within 2 business days. After we verify your QA, we will move the workshop into **QA Verification Complete**. Then, after we move the workshop into LiveLabs, you will receive a confirmation email from LWMS, indicating the workshop is now in **Production** status. We will reach out to you via LWMS if there are more changes needed. If you have not heard back from us after 2 days, don't hesitate to reach out to us via LWMS.
+11. A member of LiveLabs team will verify the QA within 2 business days. After we verify your QA, we will move the workshop into **QA Verification Complete**. Then, after we move the workshop into LiveLabs, you will receive a confirmation email from LWMS, indicating the workshop is now in **Production** status - congratulations!
 
-12.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
+12. We will reach out to you via LWMS if there are more changes needed. If you have not heard back from us after 2 days, don't hesitate to reach out to us via LWMS.
+
+13.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
 
 You may now **proceed to the next lab**.
 
