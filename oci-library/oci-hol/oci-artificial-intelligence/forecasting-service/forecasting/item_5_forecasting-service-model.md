@@ -42,7 +42,7 @@ In the example below we show how to create the payload for calling create foreca
 - "compartmentId": same as tenancy id (refer Task 5 : Create Project ID in Lab 2)
 - "projectId": the one you get after creating a project (refer Task 5 : Create Project ID in Lab 2)
 - "targetVariables": name of the column in primary data having the target values
-- models: models selected for training. Here we are showing some the models implemented in our service.Our Auto-ML service selects the best model out of all the models selected for training. 
+- models: models selected for training. Here we are showing some the models implemented in our service.Our AutoML service selects the best model out of all the models selected for training. 
 - "forecastHorizon": number of future timesteps for which to forecast 
 - "forecastFrequency": 'DAY', 'WEEK', 'MONTH' or 'YEAR' depending on forecast frequency required 
 - "isDataGrouped": True if data is grouped or having additional data. False if using only one series with no additional data
@@ -256,7 +256,7 @@ It can take sometime to create the forecast depending on the models selected and
 ```Python
 create_forecast_id = create_forecast_response['id']
 create_forecast_id
-url = "https://forecasting-int.aiservice.us-ashburn-1.oci.oraclecloud.com/20220101/forecasts/{}".format(create_forecast_id)
+url = "https://forecasting-------------------------.oci.oraclecloud.com/20220101/forecasts/{}".format(create_forecast_id)
 
 payload={}
 headers = {}
@@ -344,7 +344,7 @@ get_forecast_response
 
 ```
 
-Using below code , we can save the forecast as tabular data in a csv file with prediction intervals
+Using below code, we can save the forecast as tabular data in a csv file with prediction intervals
 
 ```Python
 df_forecasts = pd.DataFrame({'forecast_dates':[],'upper':[],'lower':[],'forecast':[], 'series_id':[]})
@@ -365,8 +365,8 @@ df_forecasts.to_csv(file_name, index = None)
 ```
 
 ## Task 3: Get Training Metrics report from the response
-* We can also retrieve training metrics report from the response which shows the best model selected using Auto-ML based on performance on selected error metric. Eg. RMSE in this example. 
-* We also get seasonality , outlier detected and other preprocessing methods applied to the series
+* We can also retrieve training metrics report from the response which shows the best model selected using AutoML based on performance on selected error metric. Eg. RMSE in this example. 
+* We also get seasonality, outlier detected and other preprocessing methods applied to the series
 
 
 ```Python
