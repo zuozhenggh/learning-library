@@ -40,19 +40,20 @@ To Remove Column Mapping:
     * Source Table: **DUMMY\_TABLE**
     * Target Table: **DUMMY\_TABLE**
 
-6. Click **Generate Mappings**. The control moves to the **Preview** tab.
+4. Click **Generate Mappings**. The control moves to the **Preview** tab.
 
-7. Click **Save** to save the generated compare pair.
+5. Click **Save** to save the generated compare pair.
 
    The control moves to the **Existing Compare Pairs** tab.
 
-8. Click **Edit** under **Column Mapping**.
+6. Click **Edit** under **Column Mapping**.
     ![](./images/1_ColumnMapping_Edit.png " ")
 
-9. Click **User Defined**, and  
-    ![](./images/2_ColumnMapping_ClickUserDefined.png " ")
+7. Click **User Defined**.
 
-10. Select the columns to remove and then click **Remove Mapping**.
+    ![](./images/2_ClickUserDefined.png " ")
+
+8. Select the columns to remove and then click **Remove Mapping**.
 
     ![](./images/3-Select_Columns-to_Remove.png " ")
 
@@ -60,15 +61,17 @@ To Remove Column Mapping:
 
     ![](./images/4-Columns_Removed.png " ")
 
-11. Click **Save**. On the **Existing Column Mapping** tab, the remaining mapped columns are displayed.
+9. Click **Save**.
+
+  On the **Existing Column Mapping** tab, the remaining mapped columns **DUMMY\_KEY** and **DUMMY\_DATE** are displayed.
 
     ![](./images/5-Remaining-Columns.png " ")
 
-12. Click **Job Configuration**, click **New** to create a new job by Job Name **Job\_Mapping** by following the steps in **Lab - Create Jobs and Execute Jobs**. Select **Group\_Mapping** group you created to add group to this job.
+10. Click **Job Configuration**, click **New** to create a new job by Job Name **Job\_Mapping** by following the steps in **Lab - Create Jobs and Execute Jobs**, and then select **Group\_Mapping** group you created to add group to this job.
 
-13. Run the Job **Job\_Mapping**.
+11. Run the Job **Job\_Mapping**.
 
-14. On the Home Page, click **Finished Jobs**, click the **out-of-sync** link for the Finished job link for the Finished job **Job\_Mapping**::
+12. On the Home Page, click **Finished Jobs**, click the **out-of-sync** link for the Finished job link for the Finished job **Job\_Mapping**::
 
     ![](./images/6-FinishedJobs_Click-Out-of-Sync.png " ")
 
@@ -106,7 +109,7 @@ You may now [proceed to the next lab](#next).
 ## Want to Learn More?
 
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
-* [Configuring Partitions in Oracle GoldenGate Veridata ](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-03B3876F-7A79-43BA-9E14-8B216BD8F3BB)
+* [Configuring Column Mappings](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-00CDC229-E373-47FD-8D68-C6BAF0D4C237)
 
 
 ## Acknowledgements
