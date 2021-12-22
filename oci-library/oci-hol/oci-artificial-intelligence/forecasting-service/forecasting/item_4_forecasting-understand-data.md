@@ -19,7 +19,7 @@ In this lab, you will:
 - You have completed all the tasks in Lab 1
 
 ## Task 1: Understand Data Requirements
- Our forecasting service provides an Auto-ML solution with multiple univariate/multivariate algorithms that can run on single series or multiple series at once. For this, there are some data validations and data format requirements that the input data must satisfy.
+ Our forecasting service provides an AutoML solution with multiple univariate/multivariate algorithms that can run on single series or multiple series at once. For this, there are some data validations and data format requirements that the input data must satisfy.
 ### **Data Validations**
 For a successful forecast, the input data should pass the following data validations:
 

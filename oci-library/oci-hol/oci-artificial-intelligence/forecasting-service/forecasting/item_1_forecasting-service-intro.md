@@ -4,7 +4,7 @@
 
 Forecasting is a common data science problem across several industry domains. Companies try to forecast future key business metrics such as demand, sales, revenue, inventory etc. that aid in effective planning and goal setting. A few forecasting use cases are ATM cash management & credit card offers in finance and banking industry, sales based promotions in retail industry, effective transportation planning & demand forecasting in supply chain and logistic industry.   
 
-OCI forecasting service uses state-of-the-art machine learning & deep learning algorithms to deliver high quality and reliable forecasts with AUTO-ML capability such as automatic data pre-processing , developer-focused AI explainability. 
+OCI forecasting service uses state-of-the-art machine learning & deep learning algorithms to deliver high quality and reliable forecasts with AutoML capability such as automatic data pre-processing, developer-focused AI explainability. 
 
 The Forecasting Service at OCI (Oracle Cloud Infrastructure) will create customized Machine Learning models which are trained on the data uploaded by users. Users will be able submit historical data as inline data via forecasting end-points and get forecast for the desired horizon. In addition to providing forecasts, this service also focuses on explaining predictions from the model by leveraging state-of-the-art model explainability techniques.
  
@@ -34,7 +34,7 @@ This workshop contains four lab sessions for users to get familiar with data req
 ## Forecasting Service Concepts
 * Data Science Notebook Session: Learn how to to set up a [Data Science Notebook Session](https://docs.oracle.com/en-us/iaas/data-science/using/use-notebook-sessions.htm)
 * Project: Projects are collaborative workspaces for organizing data assets, models, and forecasting portals.
-* Data Assets: An abstracted data format to contain primary , additional and meta information of the actual data source for model training; it supports only *inline data generated from csv files* as data sources
+* Data Assets: An abstracted data format to contain primary, additional and meta information of the actual data source for model training; it supports only *inline data generated from csv files* as data sources
 * Model: The ML model that was trained by forecasting algorithms and can forecast using univariate/multivariate time-series data along with meta data. A few parameters with default values are exposed so that user can choose to select.
 * Forecasting: Once a model is trained successfully, it is automatically deployed into the cloud environment. Users can send new data to the API to get forecasting results.
 
