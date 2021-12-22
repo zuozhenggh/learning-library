@@ -74,15 +74,16 @@ Open up terminal window for **Session 1**.
 ### Task 2: Prepare Your Environment in Session 2
 
 Open up new terminal window for **Session 2**.
+
 1.	In Session2, connect as the SQLDEV developer in PDB1 and execute a long-running query
-  ```
+```
   $ <copy>sqlplus sqldev@PDB1</copy>
   Enter password: password
 
   SQL> <copy>SELECT count(*) FROM moni.moni_test t1, moni.moni_test t2
        WHERE  t1.c = t2.c AND t1.c = 1;</copy>
   …
-  ```
+```
 
 ### Task 3: Generate SQL Monitoring Report
 
