@@ -112,7 +112,7 @@ Estimated time: 15 minutes
 
    ![Oracle Cloud, Trace Explorer](images/6-4-3-traceexplorer.png " ")
 
-  >NOTE: You can also enable the APM browser Agent to collect client-side spans, and collect dimensions and values including user’s location, browser type, OS type, and Page load time information. For more information on the APM Browser Agent, refer to the Oracle Cloud Infrastructure Documentation > [Deploy the APM Browser Agent With Your Application](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/deploy-browser-agent-your-application.html).
+  >***NOTE***: You can also enable the APM browser Agent to collect client-side spans, and collect dimensions and values including user’s location, browser type, OS type, and Page load time information. For more information on the APM Browser Agent, refer to the Oracle Cloud Infrastructure Documentation > [Deploy the APM Browser Agent With Your Application](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/deploy-browser-agent-your-application.html).
 
 This is the end of the workshop. You have learnt that you can use a file system to add the APM Java Agent to a WebLogic container-packaged web application, without recreating a Docker image. You have also learnt how to configure APM Agent in Kubernetes cluster, and capture traces from the browser and backend WebLogic Server, and how to Use APM Trace Explorer to view traces and spans. For more information on APM, refer to the OCI documentation, **[Application Performance Monitoring](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/index.html)**.
 
