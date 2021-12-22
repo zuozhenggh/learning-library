@@ -104,6 +104,7 @@ Open up new terminal window for **Session 2**.
 
   SQL>
     ```
+
     Q1/ Traditionally, real-time SQL monitor is mainly used by DBAs because they are responsible for monitoring and tuning database performance. Real-time SQL monitor tracks and collects SQL and execution plan statistics in fixed views which are only accessible by users who have been granted the SELECT CATALOG ROLE role. A regular user, such as an application developer or a low-privileged user without the SELECT CATALOG ROLE role and SELECT privilege on the real-time SQL monitor fixed views, can write a SQL statement, execute it, see the SQL result set and its SQL plan using the explain plan command, but not its execution plan because it is stored in V$SQL_PLAN.
 
     Is the SQLDEV user granted the SELECT_CATALOG_ROLE role? Is the SQLDEV user granted the SELECT privilege on V$SQL_PLAN? Can the SQLDEV user use real-time SQL monitor to view the execution plan for his SQL statement execution?
@@ -111,83 +112,85 @@ Open up new terminal window for **Session 2**.
     **A1/ No. The SQLDEV user is not granted the SELECT_CATALOG_ROLE role nor the SELECT privilege on the V$SQL_MONITOR view.**
 
 3. Generate the SQL monitor report from the command line, run the REPORT_SQL_MONITOR function in the DBMS_SQLTUNE package.
-      ```
-      SQL> <copy>VARIABLE my_rept CLOB</copy>
-  SQL> <copy>BEGIN
-          :my_rept :=DBMS_SQLTUNE.REPORT_SQL_MONITOR();
-  END;</copy>
-  /  2    3    4
 
-  PL/SQL procedure successfully completed.
+```
+        SQL> <copy>VARIABLE my_rept CLOB</copy>
+    SQL> <copy>BEGIN
+            :my_rept :=DBMS_SQLTUNE.REPORT_SQL_MONITOR();
+    END;</copy>
+    /  2    3    4
 
-  SQL> <copy>SET LINESIZE 78</copy>
-  SQL> <copy>PRINT :my_rept</copy>
+    PL/SQL procedure successfully completed.
 
-  MY_REPT
-  ----------------------------------------------------------------
-  SQL Monitoring Report
+    SQL> <copy>SET LINESIZE 78</copy>
+    SQL> <copy>PRINT :my_rept</copy>
 
-  SQL Text
-  ------------------------------
-  SELECT count(*) FROM moni.moni_test t1, moni.moni_test t2 WHERE t1.c = t2.c AND t1.c = 1
+    MY_REPT
+    ----------------------------------------------------------------
+    SQL Monitoring Report
 
-  Global Information
-  ------------------------------
-   Status              :  EXECUTING
-   Instance ID         :  1
-   Session             :  SQLDEV (30:25679)
-   SQL ID              :  9fqxj0xpnt222
-   SQL Execution ID    :  16777217
-   Execution Started   :  01/07/2019 13:29:22
-   First Refresh Time  :  01/07/2019 13:29:31
-   Last Refresh Time   :  01/07/2019 13:30:02
-   Duration            :  43s
-   Module/Action       :  SQL*Plus/-
-   Service             :  pdb1
-   Program             :  sqlplus@edvmr1p0 (TNS V1-V3)
+    SQL Text
+    ------------------------------
+    SELECT count(*) FROM moni.moni_test t1, moni.moni_test t2 WHERE t1.c = t2.c AND t1.c = 1
 
-  Global Stats
-  ===================================================================
-  | Elapsed |   Cpu   |    IO    |  Other   | Buffer | Read | Read  |
+    Global Information
+    ------------------------------
+     Status              :  EXECUTING
+     Instance ID         :  1
+     Session             :  SQLDEV (30:25679)
+     SQL ID              :  9fqxj0xpnt222
+     SQL Execution ID    :  16777217
+     Execution Started   :  01/07/2019 13:29:22
+     First Refresh Time  :  01/07/2019 13:29:31
+     Last Refresh Time   :  01/07/2019 13:30:02
+     Duration            :  43s
+     Module/Action       :  SQL*Plus/-
+     Service             :  pdb1
+     Program             :  sqlplus@edvmr1p0 (TNS V1-V3)
 
-  | Time(s) | Time(s) | Waits(s) | Waits(s) |  Gets  | Reqs | Bytes |
-  ===================================================================
-  |     411 |     388 |     0.00 |       23 |    502 |   18 |   3MB |
-  ===================================================================
+    Global Stats
+    ===================================================================
+    | Elapsed |   Cpu   |    IO    |  Other   | Buffer | Read | Read  |
 
-  SQL Plan Monitoring Details (Plan Hash Value=183808681)
-  ================================================================================
-  ================================================================================
-  | Id   |        Operation         |       Name       |  Rows   | Cost |   Time
-    | Start  | Execs |   Rows   | Read | Read  | Mem  | Activity | Activity Detail
-   |
-  |      |                          |                  | (Estim) |      | Active(s
-  ) | Active |       | (Actual) | Reqs | Bytes |      |   (%)    |   (# samples)
-   |
-  ================================================================================
-  ================================================================================
-  |    0 | SELECT STATEMENT         |                  |         |      |       35
-  4 |     +9 |     1 |        0 |      |       |    . |          |
-   |
-  |    1 |   SORT AGGREGATE         |                  |       1 |      |       35
-  4 |     +9 |     1 |        0 |      |       |    . |          |
-   |
-  | -> 2 |    HASH JOIN             |                  |     39G | 193K |       41
-  3 |     +2 |     1 |       4G |      |       | 15MB |   100.00 | Cpu (413)
-   |
-  |    3 |     INDEX FAST FULL SCAN | MONI_TEST_C_INDX |    198K |  114 |
-  1 |     +9 |     1 |     200K |   18 |   3MB |    . |          |
-   |
-  | -> 4 |     INDEX FAST FULL SCAN | MONI_TEST_C_INDX |    198K |  114 |       40
-  4 |     +9 |     1 |    48640 |      |       |    . |          |
-   |
-  ================================================================================
+    | Time(s) | Time(s) | Waits(s) | Waits(s) |  Gets  | Reqs | Bytes |
+    ===================================================================
+    |     411 |     388 |     0.00 |       23 |    502 |   18 |   3MB |
+    ===================================================================
 
-  SQL>
+    SQL Plan Monitoring Details (Plan Hash Value=183808681)
+    ================================================================================
+    ================================================================================
+    | Id   |        Operation         |       Name       |  Rows   | Cost |   Time
+      | Start  | Execs |   Rows   | Read | Read  | Mem  | Activity | Activity Detail
+     |
+    |      |                          |                  | (Estim) |      | Active(s
+    ) | Active |       | (Actual) | Reqs | Bytes |      |   (%)    |   (# samples)
+     |
+    ================================================================================
+    ================================================================================
+    |    0 | SELECT STATEMENT         |                  |         |      |       35
+    4 |     +9 |     1 |        0 |      |       |    . |          |
+     |
+    |    1 |   SORT AGGREGATE         |                  |       1 |      |       35
+    4 |     +9 |     1 |        0 |      |       |    . |          |
+     |
+    | -> 2 |    HASH JOIN             |                  |     39G | 193K |       41
+    3 |     +2 |     1 |       4G |      |       | 15MB |   100.00 | Cpu (413)
+     |
+    |    3 |     INDEX FAST FULL SCAN | MONI_TEST_C_INDX |    198K |  114 |
+    1 |     +9 |     1 |     200K |   18 |   3MB |    . |          |
+     |
+    | -> 4 |     INDEX FAST FULL SCAN | MONI_TEST_C_INDX |    198K |  114 |       40
+    4 |     +9 |     1 |    48640 |      |       |    . |          |
+     |
+    ================================================================================
 
-  SQL> <copy>EXIT</copy>
-  $
-  ```
+    SQL>
+
+    SQL> <copy>EXIT</copy>
+    $
+
+```
 
 4.	In Session2, interrupt the long-running query.
   ```
@@ -200,7 +203,7 @@ Open up new terminal window for **Session 2**.
 
   SQL> <copy>EXIT</copy>
   $
-  ```
+```
 
   ## Learn More
 
