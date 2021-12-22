@@ -38,8 +38,8 @@
             "filename": "../../05-change-displayname/change-displayname.md"
         },
         {
-            "title": "Lab 6: View the trace with multiple services",
-            "description": "View the trace with multiple services",
+            "title": "Lab 6: View traces and spans in APM Trace Explorer",
+            "description": "View traces and spans in APM Trace Explorer",
             "filename": "../../06-view-traces/view-traces.md"
         },
 
