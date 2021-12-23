@@ -22,7 +22,7 @@ Estimated time: 10 minutes
 
 ## Task 1: Download the configuration file from the container to the Cloud Shell
 
-1.	Run the following command to copy ***AgentConfig.properties*** from the container.
+1.	Execute the following command to copy ***AgentConfig.properties*** from the container. Ensure to replace the **apm-agent-version** with that of the APM Java Agent you have, before running the command.
 
     ``` bash
     <copy>

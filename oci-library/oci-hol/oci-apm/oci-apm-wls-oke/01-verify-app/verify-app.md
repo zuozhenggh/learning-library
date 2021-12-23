@@ -74,7 +74,7 @@ Estimated time: 5 minutes
 
      ``` bash
      <copy>
-     http://<External IP of the Load Balancer>/ opdemo/?dsname=testDatasource
+     http://<External IP of the Load Balancer>/opdemo/?dsname=testDatasource
      </copy>
      ```
      Make sure the WebLogic Operator Demo application launches as in the image below. This is the target web application you will use to configure the APM Java Agent in this workshop.

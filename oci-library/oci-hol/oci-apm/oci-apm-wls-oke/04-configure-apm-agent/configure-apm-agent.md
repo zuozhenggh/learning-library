@@ -68,18 +68,17 @@ Estimated time: 15 minutes
 
 ## Task 3: Copy the Java Agent installer to the file system
 
-1.	Run the command below to copy the Java Agent installer file to the file system.
+1.	Run the command below to copy the Java Agent installer file to the file system. Ensure to replace the **apm-agent-version** with that of the APM Java Agent you have, before the command execution. 
 
     ``` bash
     <copy>
-    kubectl cp apm-java-agent-installer-<version>.jar sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/
+    kubectl cp apm-java-agent-installer-<apm-agent-version>.jar sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/
     </copy>
     ```
-    e.g., kubectl cp apm-java-agent-installer-1.2.1725.jar sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/
+    > e.g., kubectl cp apm-java-agent-installer-1.2.1725.jar sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/
 
-  >***NOTE***:
-   - file system path must match the one you created in the earlier steps. In this example, mounted path is apmlab-fss.
-   - The Agent version in the example above is 1.2.1725. If you have an APM Agent with a different version, please change the file name to the version of the agent you have.
+   >***NOTE***: file system path must match the one you created in the earlier steps. In this example, mounted path is ***apmlab-fss***.
+
 
 
 
@@ -127,7 +126,7 @@ Estimated time: 15 minutes
 
    ![Oracle Cloud console, Cloud Shell ](images/4-1-9-cloudshell.png " ")
 
-3.	From the ***apmagent*** directory, execute the command below to provision the APM Java agent. Replace the **APM Domain Private key** and **APM Domain Endpoint**, with the values saved in the Lab2, Task2.
+3.	From the ***apmagent*** directory, execute the command below to provision the APM Java agent. Replace the **APM Domain Private key** and **APM Domain Endpoint**, with the values saved in the Lab2, Task2. Please also change the **apm-agent-version** in the file name to the version of the agent you have.
 
     ``` bash
     <copy>
@@ -135,7 +134,6 @@ Estimated time: 15 minutes
     </copy>
     ```
 
-    >***NOTE***: The Agent version in the image example is 1.2.1725. If you have an APM Agent with a different version, please change the file name to the version of the agent you have.
 
     With a successful installation, you should see the output similar to below.
 
@@ -201,8 +199,8 @@ In this task, you will add exclusions to the data capturing in the APM Agent, fo
     kubectl cp  ~/ProbeConfig.acml sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/<apm-agent-version>/ProbeConfig.acml
     </copy>
     ```
-      
-    E.g., kubectl cp  ~/ProbeConfig.acml sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/1.2.1725/ProbeConfig.acml
+
+    > ***NOTE***: E.g., kubectl cp  ~/ProbeConfig.acml sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/1.2.1725/ProbeConfig.acml
 
 ## Task 6: Deploy the Java Agent
 
@@ -227,6 +225,10 @@ Next you will deploy the Java Agent by modifying the domain.yaml file to point t
     "-javaagent:/apmlab-fss/apmagent/oracle-apm-agent/bootstrap/ApmAgent.jar -Dweblogic.StdoutDebugEnabled=false"
     </copy>
     ```
+
+    ![Oracle Cloud console, Cloud Shell ](images/4-6-1-1-cloudshell.png " ")    
+
+    Save and close the file.
 
 4.	Recreate the Kubernetes pod by applying the yaml.
 

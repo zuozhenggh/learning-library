@@ -65,7 +65,7 @@ Estimated time: 20 minutes
 ## Task 2: Create security rules in the network
 
 
-1.	Point mouse cursor over the **“i”** icon next to Subnet and review the message. As the message indicates, security rules must be configured before mounting the file system, and that is what you will be doing the next.
+1.	Point mouse cursor over the **“i”** icon next to **Subnet** and review the message. As the message indicates, security rules must be configured before mounting the file system, and that is what you will be doing the next.
 
    ![Oracle Cloud console, Security Rules](images/3-2-1-securityrules.png " ")
 
@@ -144,7 +144,11 @@ Estimated time: 20 minutes
     >	***NOTE***: If the Cloud Shell is already running but the window is minimized, you can restore the window by clicking the bar icon or the arrow icon at the toolbar.
       ![Oracle Cloud console, Menu](images/3-3-2-menu.png " ")
 
-2.	Create a YAML file in your home directory, by running the command below.
+2.  Run the oci cd (Container Engine) command that you saved in the Lab 1, Task1, step6.
+
+   ![Oracle Cloud console, Cloud Shell](images/1-7-cloudshell.png " ")
+
+3.	Create a YAML file in your home directory, by running the command below.
 
 
     ``` bash
@@ -153,7 +157,7 @@ Estimated time: 20 minutes
     </copy>
     ```
 
-3.	Use any text editor (such as vi editor tool) to open the file for editing.
+4.	Use any text editor (such as vi editor tool) to open the file for editing.
 
     ``` bash
     <copy>
@@ -163,7 +167,7 @@ Estimated time: 20 minutes
 
     >***NOTE***: If you are using the vi editor, type ***i*** to enter Insert mode, and make the text editable. Use allow keys to navigate the text and make changes to where you set the cursor. To save a file, press Esc key, then type ***:wq*** to write and quit the file. If you do not wish a change, press Esc then type ***:q!*** to discard your changes. Please refer to the editor references for more usages.
 
-4. Manually copy the contents below and paste it to the file just created. Ensure to replace the **mntTargetID** and **server IP** with the values copied in the Lab 3, Task 1, step 10 in this Workshop.
+5. Manually copy the contents below and paste it to the file just created. Ensure to replace the **mntTargetID** and **server IP** with the values copied in the Lab 3, Task 1, step 10 in this Workshop.
 
 
         kind: StorageClass
@@ -209,9 +213,9 @@ Estimated time: 20 minutes
      >***Suggested Editing Tips***:
    	* Use your mouse to select the text above, and manually copy and paste it into a text file.
     * Auto copy is not provided as it may break the indentation.
-    * Replace the mntTargetId and the Server IP, then copy the modified text into the yaml file.
+    * Replace the ***mntTargetId*** and the ***Server IP***, then copy the modified text into the YAML file.
    	* Make sure to keep the syntax of 2 space indentation.
-   	* Refer to the screenshot image below to see how it should look like after the file is modified.Note that the Kubernetes objects, such as StorageClass, PersistentVolume and PersistentVolumeClass are configured in the YAML file.
+   	* Refer to the screenshot image below to see how it should look like after the file is modified. Verify that the Kubernetes objects, such as StorageClass, PersistentVolume and PersistentVolumeClass are configured in the YAML file.
        	![yaml](images/3-3-2-yaml.png " ")
 
 ## Task 4: Recreate Kubernetes pods
@@ -222,7 +226,7 @@ Estimated time: 20 minutes
 
     ``` bash
     <copy>
-    kubectl apply -f apmlab-fss.yaml -n sample-domain1-ns
+    cd ~; kubectl apply -f apmlab-fss.yaml -n sample-domain1-ns
     </copy>
     ```
 
@@ -261,7 +265,7 @@ Estimated time: 20 minutes
 
     ``` bash
     <copy>
-    cd ~; kubectl apply -f domain.yaml -n sample-domain1-ns
+    kubectl apply -f domain.yaml -n sample-domain1-ns
     </copy>
     ```
    ![Oracle Cloud console, Cloud Shell](images/3-3-6-cloudshell.png " ")
