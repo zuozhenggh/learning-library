@@ -36,7 +36,7 @@ For a successful forecast, the input data should pass the following data validat
 
 ### **Data format requirements**
 The data should contain one timestamp column and other columns for target variable and series id (if using grouped data).
-- timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format e.g., 2020-07-13T00:00:00Z. If the input date doesn't follow this format then it needs to be converted in the requred format. Python code for converting different date strings to ISO 8601 format is provided in Step 2 of Task 4 in this lab.
+- timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format e.g., 2020-07-13T00:00:00Z. If the input date doesn't follow this format then it needs to be converted in the required format. Python code for converting different date strings to ISO 8601 format is provided in Step 2 of Task 4 in this lab.
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
 
@@ -145,6 +145,20 @@ Click on upload and then browse to file which you desire to upload:
 ## Task 4: Inline Data preparation
 
 ### Step 1 :
+Import below necessary python modules for executing the scripts:
+
+```Python
+import pandas as pd
+import requests
+import json
+import ast
+import matplotlib.pyplot as plt
+import re
+import os
+import simplejson
+```
+
+### Step 2 :
 You need to load the data in notebook via below mentioned python commands in a data frame
 Specify the correct path for the csv file that has the time series data.
 
@@ -153,7 +167,7 @@ df_primary = pd.read_csv('favorita_13_beverages_primary.csv')
 df_add = pd.read_csv('favorita_13_beverages_add.csv')
 ```
 
-### Step 2 :
+### Step 3 :
 Convert the date field to "yyyy-mm-dd hh:mm:ss" format with below commands
 Use this link https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior for other date time formats
 
@@ -166,7 +180,7 @@ df_add['date'] = pd.to_datetime(df_add['date'],
                                         format='%d/%m/%y').apply(lambda x: str(x))
 ```
 
-### Step 3 :
+### Step 4 :
 #### Setting variables to create forecast with below commands
 - prim_load : is the variable having inline primary data
 - add_load : is the variable having inline additional data 

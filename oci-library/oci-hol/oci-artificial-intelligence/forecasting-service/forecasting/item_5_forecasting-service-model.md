@@ -344,7 +344,8 @@ get_forecast_response
 
 ```
 
-Using below code, we can save the forecast as tabular data in a csv file with prediction intervals
+Using below code, we can save the forecast as tabular data in a csv file with prediction intervals.
+
 
 ```Python
 df_forecasts = pd.DataFrame({'forecast_dates':[],'upper':[],'lower':[],'forecast':[], 'series_id':[]})
@@ -363,6 +364,10 @@ for i in range(len(get_forecast_response['forecastResult']['forecast'])):
 file_name = 'forecast.csv'
 df_forecasts.to_csv(file_name, index = None)          
 ```
+The forecast.csv will be saved in the same folder as the notebook file.
+
+![](../images/lab3_task2.png " ")
+
 
 ## Task 3: Get Training Metrics report from the response
 * We can also retrieve training metrics report from the response which shows the best model selected using AutoML based on performance on selected error metric. Eg. RMSE in this example. 
