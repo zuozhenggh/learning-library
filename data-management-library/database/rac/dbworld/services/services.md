@@ -5,9 +5,9 @@ This lab walks you through the steps to demonstrate many of the capabilities of 
 
 Estimated Time: 20 Minutes
 
-Watch the video for a quick walk through of Oracle Database services lab.
+Watch the video below for a quick walk through of the lab.
 
-[](youtube:rPUFNMGCzDc)
+[](youtube:HWdqRagr7UE)
 
 ### Prerequisites
 - An Oracle LiveLabs or Paid Oracle Cloud account
@@ -32,7 +32,7 @@ Oracle recommends that all users who share a service have the same service level
 For more information on Oracle Database Services visit [https://www.oracle.com/goto/ac](https://www.oracle.com/goto/ac)
 
 
-## Task 1: log in and Identify Database and Instance names
+## Task 1: Log in and identify database and instance names
 You should have already identified your database name and instance name.  Each place in this lab where you see **<REPLACE xxx NAME>** make sure you use your correct instance and database names.
 1.  Log in to the Oracle Cloud.
 2.  Once you are logged in, open up a 2nd web browser tab.
@@ -75,13 +75,14 @@ You should have already identified your database name and instance name.  Each p
 
     ![Validate Service is Running](./images/testy-crsctl.png " ")
 9. Exit from the grid user
+
     ````
     <copy>
     exit
     </copy>
-    ````
+````
 
-## Task 2:  Create a Service
+## Task 2:  Create a service
 
 **NOTE** For simplicity we will often use the EZConnect syntax to specify connect strings to the database:
 
@@ -98,21 +99,24 @@ user/password@**//hostname:port/servicename**  EZConnect does not support all se
     srvctl start service -d <REPLACE DATABASE NAME> -s svctest
     </copy>
     ````
+
     ![Add a Database Service](./images/lab6-step1-num6.png " ")
 
 2. Examine where the service is running by using **lsnrctl** to check the SCAN listener or a local listener on each node. **srvctl** will also show you where the service is running.
 
-   The Oracle Listener runs from the Grid Home. You will assume the *grid* identity to use lsnrctl
+    The Oracle Listener runs from the Grid Home. You will assume the *grid* identity to use lsnrctl
+
     ````
     <copy>
     srvctl status service -d <REPLACE DATABASE NAME> -s svctest
     </copy>
     ````
+
     ![Examine Database Service Status](./images/lab6-step1-num7.png " ")
 
-3.  Use the lsnrctl utility to list the services on both **node 1** and **node 2** as the *grid* user.
+3. Use the lsnrctl utility to list the services on both **node 1** and **node 2** as the *grid* user.
 
-If you are still running as the oracle user, exit to *opc* and then *su* to *grid*
+    If you are still running as the oracle user, exit to *opc* and then *su* to *grid*.
 
     ````
     <copy>
@@ -122,13 +126,14 @@ If you are still running as the oracle user, exit to *opc* and then *su* to *gri
     </copy>
     ````
 
-As the grid user
+    As the grid user
 
     ````
     <copy>
     lsnrctl services
     </copy>
-    ````
+    ````    
+
     ![Use LSNRCTL to View Registered Services](./images/lsnrctl-node1.png " ")
     ![Use LSNRCTL to View Registered Services](./images/lsnrctl-node2.png " ")
 
@@ -153,16 +158,17 @@ As the grid user
 
 1. Cause the service to fail over. After identifying which instance the service is being offered on, kill that instance by removing the SMON process at the operating system level.  Run this on **node 1**
 
-If you are still running as the *grid* user, exit to *opc* and then *su* to *oracle*
+    If you are still running as the *grid* user, exit to *opc* and then *su* to *oracle*
 
     ````
     <copy>
     exit
-    su - grid
+    sudo su - oracle
     export ORACLE_HOME=/u01/app/19.0.0.0/grid
     </copy>
     ````
-As the *oracle* user
+
+    As the *oracle* user
 
     ````
     <copy>
@@ -350,7 +356,7 @@ If it is not running start this service
 
     ![Add Connection Aliases to TNSNAMES.ORA File](./images/tnsnames-2.png " ")
 
-To run a client from either node, create an identical *tnsnames.ora* file on each node.
+    To run a client from either node, create an identical *tnsnames.ora* file on each node.
 
 5. Run the command to get your scan name
     ````
@@ -379,7 +385,7 @@ To run a client from either node, create an identical *tnsnames.ora* file on eac
 
 8. Use the CLBTEST alias to connect
 
-     ````
+    ````
     <copy>
     $ORACLE_HOME/bin/sqlplus hr/W3lc0m3#W3lc0m3#@CLBTEST
     </copy>
@@ -387,28 +393,29 @@ To run a client from either node, create an identical *tnsnames.ora* file on eac
 
 9. Create 10 connections using the alias CLBTEST and look at where the connections were established
 
-You can do this by issuing the **host** command from within SQL\*Plus and then re-issuing the sqlplus connection from the shell.
+    You can do this by issuing the **host** command from within SQL\*Plus and then re-issuing the sqlplus connection from the shell.
 
-For example:
+    For example:
+
     ````
     $ORACLE_HOME/bin/sqlplus hr/W3lc0m3#W3lc0m3#@CLBTEST
     SQL> host
     os-prompt>  $ORACLE_HOME/bin/sqlplus hr/W3lc0m3#W3lc0m3#@CLBTEST
     SQL> host
     ````
-Examine where the sessions have been created
+
+    Examine where the sessions have been created by executing the following SQL from a session connected as **SYS**
 
     ````
     SQL> select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
 
     INST_ID SERVICE_NAME             COUNT(*)
     ---------- -------------------- ----------
-         1     unisrv                   5
-         2     unisrv                   5
-
+        1     unisrv                   5
+        2     unisrv                   5
     ````
-    ![Examine GV$SESSION for Connected Sessions](./images/sqlplus-1.png " ")
 
+    ![Examine GV$SESSION for Connected Sessions](./images/sqlplus-1.png " ")
 
     The SCAN listener attempts to distribute connections based on SESSION COUNT by default. The connections will not always end up equally balanced across instances, but for a small number of connections created at intervals they generally do.
 
@@ -523,6 +530,7 @@ Examine where the sessions have been created
                (ADDRESS = (PROTOCOL = TCP)(HOST=secondary-scan)(PORT=1521)))
             (CONNECT_DATA=(SERVICE_NAME = gold-cloud)))
     ````    
+
     This is showing how a RAC and Data Guard environment would be specified. The assumption is that both the PRIMARY and SECONDARY sites are clustered environments, hence specifying a SCAN ADDRESS for each one.
 
     Oracle recommends the connection string configuration for successfully connecting at failover, switchover, fallback and basic startup. Set RETRY\_COUNT, RETRY\_DELAY, CONNECT\_TIMEOUT and TRANSPORT\_CONNECT\_TIMEOUT parameters in the tnsnames.ora file or in the URL to allow connection requests to wait for service availability and connect successfully. Use values that allow for your RAC and Data Guard failover times.
@@ -540,8 +548,8 @@ Examine where the sessions have been created
     RECSRV=(DESCRIPTION =
      (CONNECT_TIMEOUT=90)(RETRY_COUNT=20)(RETRY_DELAY=3)(TRANSPORT_CONNECT_TIMEOUT=3)
      (ADDRESS_LIST =(LOAD_BALANCE=on)
-     (ADDRESS = (PROTOCOL = TCP)(HOST=racnode-scan.tfexsubdbsys.tfexvcndbsys.oraclevcn.com)(PORT=1521)))
-     (CONNECT_DATA=(SERVICE_NAME = testy.pub.racdblab.oraclevcn.com)))
+     (ADDRESS = (PROTOCOL = TCP)(HOST=<REPLACE SCAN NAME>)(PORT=1521)))
+     (CONNECT_DATA=(SERVICE_NAME = <REPLACE SERVICE NAME>.pub.racdblab.oraclevcn.com)))
     </copy>
     ````
 
@@ -585,7 +593,7 @@ The acdemo application is a simple Java application that uses the Universal conn
     ````
     ![Examine JDBC Property File](./images/lbtest-properties.png " ")  
 
-You can see that the application will use the service *unisrv* to connect to the database. And will establish 20 connections. We are using the SCAN address in the URL, so with no modification we should see a balanced number of connections on each instance.
+    You can see that the application will use the service *unisrv* to connect to the database. And will establish 20 connections. We are using the SCAN address in the URL, so with no modification we should see a balanced number of connections on each instance.
 
 2. The unisrv service is configured as a uniform service (available on all instances).
 
@@ -594,7 +602,9 @@ You can see that the application will use the service *unisrv* to connect to the
     srvctl config service -d <REPLACE DB NAME> -s unisrv
     </copy>
     ````
-This should show both instances in the PREFERRED list if successful
+
+    This should show both instances in the PREFERRED list if successful
+
     ````
     Service name: unisrv
 
@@ -604,7 +614,8 @@ This should show both instances in the PREFERRED list if successful
     Preferred instances: racKPEMW1,racKPEMW2
     Available instances:
     ````  
-Check that the service is running on both instances
+
+    Check that the service is running on both instances
 
     ````
     <copy>
@@ -623,7 +634,7 @@ Check that the service is running on both instances
 
     ![Run the RUNLBTEST Script](./images/runlbtest.png " ")      
 
-Make sure acdemo is using the *unisrv* service     
+    Make sure acdemo is using the *unisrv* service     
 
 4. Look at the connection distribution by opening a SQL\*Plus connection, on either node, to the PDB associated with this service
 
@@ -631,81 +642,83 @@ Make sure acdemo is using the *unisrv* service
     sqlplus system/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.pub.racdblab.oraclevcn.com as sysdba
     ````
 
-and run the following SQL statement
+    and run the following SQL statement
 
-````
-<copy>
-set wrap off
-col service_name format  a20
-select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
-</copy>
-````
+    ````
+    <copy>
+    set wrap off
+    col service_name format  a20
+    select inst_id, service_name, count(*) from gv$session where service_name = 'unisrv' group by inst_id, service_name;
+    </copy>
+    ````
 
-This statement will show you the instance this service is running and the number of open connections on this service.
-It should be relatively even
+    This statement will show you the instance this service is running and the number of open connections on this service.
+    It should be relatively even
 
-````
-INST_ID    SERVICE_NAME           COUNT
----------- -------------------- ----------
-   1      unisrv                    10
-   2      unisrv                    10
-````
+    ````
+    INST_ID    SERVICE_NAME           COUNT
+    ---------- -------------------- ----------
+    1      unisrv                    10
+    2      unisrv                    10
+    ````
 
-The UCP pool manager will be handing these connections to worker threads as they need them. There are algorithms that influence this, such as those related to affinity (where you were connected before) or time-based (when your thread last requested a connection) but generally the connections are handed out equally (for connections on each instance and so forth)
+    The UCP pool manager will be handing these connections to worker threads as they need them. There are algorithms that influence this, such as those related to affinity (where you were connected before) or time-based (when your thread last requested a connection) but generally the connections are handed out equally (for connections on each instance and so forth)
 
 5. We know that nodes in a cluster may not be equal in capacity, nor may there be equal distribution of workload on each node.
 
-If you look at the current response time for acdemo it is fairly equal - probably 38-40 ms per request.
-````
-39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 5ms
-40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 6ms
-42 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 74535, avg response time from db 6ms
-37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 5ms
-41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 5ms
-37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 5ms
-````
+    If you look at the current response time for acdemo it is fairly equal - probably 5-6 ms per request.
 
-Consume CPU on one node with a database-external program. Download the CPU\_HOG utility to the opposite Node from where you are running the acdemo application. If, for example acdemo runs on Node-1, then download CPU\_HOG to Node-2.
+    ````
+    39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 5ms
+    40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 6ms
+    42 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 74535, avg response time from db 6ms
+    37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 5ms
+    41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 5ms
+    37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 5ms
+    ````
 
-````
-<copy>
-cd /home/oracle
-wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iMYwjIGTOrUvs4FQqoKY7ie7os3Ybocg1wob-G18rAneuZP-F__z_XoXUKB6hhIt/n/oradbclouducm/b/LiveLabTemp/o/cpuhog.zip
-</copy>
-````
-Unzip the utility and set the execution bit (\+x)
+    Consume CPU on one node with a database-external program. Download the CPU\_HOG utility to the opposite Node from where you are running the acdemo application. If, for example acdemo runs on Node-1, then download CPU\_HOG to Node-2.
 
-````
-<copy>
-cd /home/oracle
-mkdir /home/oracle/cpu_hog
-cd cpu_hog
-unzip ../cpuhog.zip
-chmod +x atm_cpuload_st.pl primes
-</copy>
-````
+    ````
+    <copy>
+    cd /home/oracle
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/iMYwjIGTOrUvs4FQqoKY7ie7os3Ybocg1wob-G18rAneuZP-F__z_XoXUKB6hhIt/n/oradbclouducm/b/LiveLabTemp/o/cpuhog.zip
+    </copy>
+    ````
+    Unzip the utility and set the execution bit (\+x)
 
-Start the CPU\_HOG utility, specifying a target load of 90%
+    ````
+    <copy>
+    cd /home/oracle
+    mkdir /home/oracle/cpu_hog
+    cd cpu_hog
+    unzip ../cpuhog.zip
+    chmod +x atm_cpuload_st.pl primes
+    </copy>
+    ````
 
-````
-<copy>
-cd /home/oracle/cpu_hog
-atm_cpuload_st 90
-</copy>
-````
+    Start the CPU\_HOG utility, specifying a target load of 90%
 
-![CPUHOG Program Running](./images/cpu_hog_running.png " ")
+    ````
+    <copy>
+    cd /home/oracle/cpu_hog
+    atm_cpuload_st.pl 90
+    </copy>
+    ````
 
-You should see some acdemo requests getting longer (they will periodically jump to 45 - 48 ms, a significant change) - this is because the threads are using connections on the overloaded node
+    ![CPUHOG Program Running](./images/cpu_hog_running.png " ")
 
-````
-39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 38ms
-40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 39ms
-42 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 74535, avg response time from db 40ms
-37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 47ms
-41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 47ms
-37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 40ms
-````
+    You should see some acdemo requests getting longer (they will periodically jump to 15 - 20 ms, a significant change) - this is because the threads are using connections on the overloaded node
+
+    ````
+    39 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 71989, avg response time from db 38ms
+    40 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 73685, avg response time from db 39ms
+    42 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 74535, avg response time from db 40ms
+    37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 47ms
+    41 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 47ms
+    37 borrowed, 0 pending, 0ms getConnection wait, TotalBorrowed 75376, avg response time from db 40ms
+    ````
+
 6. Enable runtime load balancing on the unisrv service
 
     ````
@@ -713,80 +726,80 @@ You should see some acdemo requests getting longer (they will periodically jump 
     srvctl modify service -d <REPLACE DB NAME> -s unisrv -rlbgoal SERVICE_TIME
     </copy>
     ````
-Confirm the config
+    Confirm the config
 
-````
-srvctl config service -d <REPLACE DB NAME> -s unisrv
-````
+    ````
+    srvctl config service -d <REPLACE DB NAME> -s unisrv
+    ````
 
-![Database Service Configuration](./images/unisrv_config_rlb.png " ")
+    ![Database Service Configuration](./images/unisrv_config_rlb.png " ")
 
 
 7. How Runtime Load Balancing (RLB) functions is that a smoothed rolling average of responses is calculated by service in the database. From this a metric is sent as a FAN event to subscribing clients. The RLB directive gives an indication to the client how database activity on each instance is performing (for that service). A guide is given to the pool to direct a portion of work to each instance - a lesser value to instances that are loaded.
 
-Examine the RLB statistics
+    Examine the RLB statistics
 
-````
-<copy>
-sqlplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.pub.racdblab.oraclevcn.com as sysdba
-</copy>
-````
+    ````
+    <copy>
+    sqlplus sys/W3lc0m3#W3lc0m3#@//<REPLACE SCAN NAME>/pdb1.pub.racdblab.oraclevcn.com as sysdba
+    </copy>
+    ````
 
-Enter the following in to SQL\*plus
+    Enter the following in to SQL\*plus
 
-````
-<copy>
-set colsep '|' pages 60 space 2 lines 132 num 8 verify off feedback off
-col user_data heading "Service Metrics" format A80 wrap
-break on SERVICE_NAME skip 1
+    ````
+    <copy>
+    set colsep '|' pages 60 space 2 lines 132 num 8 verify off feedback off
+    col user_data heading "Service Metrics" format A80 wrap
+    break on SERVICE_NAME skip 1
 
-SELECT
-TO_CHAR(ENQ_TIME, 'HH24:MI:SS') Enq_time, user_data
-FROM SYS.SYS$SERVICE_METRICS_TAB
-WHERE ENQ_TIME >= (select max(ENQ_TIME)- 60/1440/60 from SYS.SYS$SERVICE_METRICS_TAB )
-ORDER BY 1;
-</copy>
-````
+    SELECT
+    TO_CHAR(ENQ_TIME, 'HH24:MI:SS') Enq_time, user_data
+    FROM SYS.SYS$SERVICE_METRICS_TAB
+    WHERE ENQ_TIME >= (select max(ENQ_TIME)- 60/1440/60 from SYS.SYS$SERVICE_METRICS_TAB )
+    ORDER BY 1;
+    </copy>
+    ````
 
 
-You will see something similar to:
+    You will see something similar to:
 
-````
-ENQ_TIME  Service Metrics
---------  --------------------------------------------------------------------------------
+    ````
+    ENQ_TIME  Service Metrics
+    --------  --------------------------------------------------------------------------------
 
-10:03:37  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
-          1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=51 fla
-          g=GOOD aff=FALSE}{instance=racKPEMW1 percent=49 flag=GOOD aff=TRUE} } timestamp=
-          2021-09-07 09:59:37')
+    10:03:37  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
+            1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=51 fla
+            g=GOOD aff=FALSE}{instance=racKPEMW1 percent=49 flag=GOOD aff=TRUE} } timestamp=
+            2021-09-07 09:59:37')
 
-10:04:07  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
-          1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=25 fla
-          g=GOOD aff=TRUE}{instance=racKPEMW1 percent=75 flag=GOOD aff=FALSE} } timestamp=
-          2021-09-07 10:03:37')
+    10:04:07  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
+            1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=25 fla
+            g=GOOD aff=TRUE}{instance=racKPEMW1 percent=75 flag=GOOD aff=FALSE} } timestamp=
+            2021-09-07 10:03:37')
 
-10:04:07  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
-          1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=16 fla
-          g=GOOD aff=TRUE}{instance=racKPEMW1 percent=84 flag=GOOD aff=FALSE} } timestamp=
-          2021-09-07 10:04:07')
+    10:04:07  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
+            1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=16 fla
+            g=GOOD aff=TRUE}{instance=racKPEMW1 percent=84 flag=GOOD aff=FALSE} } timestamp=
+            2021-09-07 10:04:07')
 
-10:04:37  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
-          1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=11 fla
-          g=GOOD aff=TRUE}{instance=racKPEMW1 percent=89 flag=GOOD aff=TRUE} } timestamp=2
-          021-09-07 10:04:37')
-````
+    10:04:37  SYS$RLBTYP('noac.pub.racdblab.oraclevcn.com', 'VERSION=1.0 database=racKPEMW_iad
+            1pc service=noac.pub.racdblab.oraclevcn.com { {instance=racKPEMW2 percent=11 fla
+            g=GOOD aff=TRUE}{instance=racKPEMW1 percent=89 flag=GOOD aff=TRUE} } timestamp=2
+            021-09-07 10:04:37')
+    ````
 
-The ratio of percent:percent for the instances will trend towards more work guided away from the Node where CPU\_HOG is running, as shown above
+    The ratio of percent:percent for the instances will trend towards more work guided away from the Node where CPU\_HOG is running, as shown above
 
-````
-racKPEMW1 percent - racKPEMW1 percent
-     49                   51
-     75                   25
-     84                   16
-     89                   11
-````
+    ````
+    racKPEMW1 percent - racKPEMW1 percent
+        49                   51
+        75                   25
+        84                   16
+        89                   11
+    ````
 
-The connections are still distributed approximately 50:50 but the pool directs a greater quantity of work towards the instance(s) offering the best quality of service.
+    The connections are still distributed approximately 50:50 but the pool directs a greater quantity of work towards the instance(s) offering the best quality of service.
 
 You may now *proceed to the next lab*.  
 

@@ -9,6 +9,7 @@
       },
       {
         "title": "Introduction to MovieStream",
+        "type": "odbw",
         "filename": "../../introduction/introduction.md"
       },
       {

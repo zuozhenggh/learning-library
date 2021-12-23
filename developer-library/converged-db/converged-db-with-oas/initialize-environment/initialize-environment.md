@@ -12,44 +12,38 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## Task 1: Start And Validate The Required Processes are Up and Running.
-1. Now with access to your remote desktop session, proceed as indicated below to Start your environment using Environment script before you start executing the subsequent labs and validate the following Processes should be up and running:
-    
-    - Database Listeners
-    - Database Server Instances
-    - OAS Services
-    ![](./images/convg-novnc-guide.png " ")
+## Task 1: Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-2. Open the *Workshop Guides* folder from the *Firefox* toolbar area above and select the correct guide for your workshop.
-    - On the *SQL-Developer* window on the right preloaded with saved credential
-    ![](./images/convg-novnc-landing.png " ")
+    - Database Listener
+        - LISTENER
+    - Database Server Instance
+        - convergedcdb
+    - Oracle Analytics Server (OAS) Services
 
-3. Click on *Terminal* icon on the desktop to start a terminal and execute the below command.
-    
-    - Go to folder /u01/script
+2. Validate that expected processes are up. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
-        ```
-        <copy>
-        cd /u01/script
-        </copy>
-        ```
-    - Run the script file to start the components.
+    ```
+    <copy>
+    ps -ef|grep LISTENER|grep -v grep
+    ps -ef|grep ora_|grep pmon|grep -v grep
+    systemctl status oracle-database
+    systemctl status oracle-init-workshop
+    </copy>
+    ```
 
-        ```
-        <copy>
-        ./env_setup_oas-workshop.sh
-        </copy>
-        ```
-        ![](./images/convg-terminal.png " ")
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
 
-        Check for the "Finished starting servers" status before proceeding next.
-        ![](./images/oas-environment3.png " ")
+    ```
+    e.g. Restarting the DB and DB Listener
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
 
 4. Run "status.sh" file to get the status of all the services required for OAS. The command shows all the service names and their status.
 
@@ -61,23 +55,8 @@ This lab assumes you have:
     ```
     ![](./images/oas-environment5.png " ")
 
-    Check for the success status as shown above, before login to OAS screen.
+5. On the web browser window on the right preloaded with *Oracle Analytics Server UI* login page, click on the *Username* field and select the saved credentials or provide the credentials below to login.
 
-5. The above command will start the database, listener and OAS server. This script could take 2-5 minutes to run. Check for the "Finished starting servers" status before proceeding next.
-
-    - Open the *Workshop Links* folder from the *Firefox* toolbar area above and select the correct Links for your workshop. 
-    ![](./images/oas-login.png " ")
-    If successful, the page above is displayed and as a result your environment is now ready.  
-
-## Task 2: Login To Oracle Analytics Server
-
-1. Open the *Workshop Links* folder from the *Firefox* toolbar area above and select the correct Links for your workshop.   
-
-    ```
-    <copy>
-    http://localhost:9502/dv/ui
-    </copy>
-    ```
     ```
     Username	: <copy>Weblogic</copy>
     ```
@@ -86,7 +65,9 @@ This lab assumes you have:
     ```
 
     ![](./images/oas-login.png " ")
+
     click on *Sign In*
+
     ![](./images/oas-landing.png " ")
 
 
@@ -117,29 +98,43 @@ This lab assumes you have:
 
 You may now [proceed to the next lab](#next).
 
-## Appendix 1: External Terminal Access (using SSH Key Based Authentication)
+## Appendix 1: Managing Startup Services
 
-While you will only need the browser to perform all tasks included in this workshop, you can optionally use your preferred SSH client to connect to the instance should you prefer to run SSH Terminal tasks from a local client (e.g. Putty, MobaXterm, MacOS Terminal, etc.) or need to perform any troubleshooting task such as restarting processes, rebooting the instance, or just look around.
+1. Database service (Database and Standard Listener).
 
-1. Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-
-    - From the web session where you completed your provisioning request, do:
-        - For **Reserve Workshop on LiveLabs** - Navigate to "*My Reservations* >> *Launch Workshop* >> *Workshop Instructions* >> *Lab: Environment Setup*"
-        - For **Launch Free Trial Workshop** and **Run on Your Tenancy** - Click on the corresponding provisioning option and open *Lab: Environment Setup*
-    - Authentication OS User - “*opc*”
-    - Authentication method - *SSH RSA Key*
-    - OS User – “*oracle*”.
-
-2. First login as “*opc*” using your SSH Private Key
-
-3. Then sudo to “*oracle*”. E.g.
+    - Start
 
     ```
-    <copy>sudo su - oracle</copy>
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
+    ```
+    - Stop
+
+    ```
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>
+    systemctl status oracle-database
+    </copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
     ```
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

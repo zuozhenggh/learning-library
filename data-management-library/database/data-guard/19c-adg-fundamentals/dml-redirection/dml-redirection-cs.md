@@ -5,6 +5,10 @@ In this lab, we will enable the 19c New Feature Active Data Guard DML Redirectio
 
 Estimated Lab Time: 20 Minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:nvTV9UxRkMo)
+
 ### Enable Active Data Guard DML Redirection
 
 Oracle Active Data Guard 19c DML Redirection is a new feature which allow you to perform occasional DML using a read only standby database.

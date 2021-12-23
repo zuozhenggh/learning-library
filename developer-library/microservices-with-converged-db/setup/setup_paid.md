@@ -102,6 +102,8 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![](images/open-cloud-shell.png " ")
 
+  NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+
 ## Task 6: Create a Folder to Contain the Workshop Code
 
 1. Create a directory to contain the workshop code. The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter.  Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
@@ -125,7 +127,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.9.2.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 21.11.3 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -163,8 +165,8 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 2. The setup will ask for you to enter your User OCID.  
 
-   Be sure to provide the user OCID and not the user name or tenancy OCID. 
-   
+   Be sure to provide the user OCID and not the user name or tenancy OCID.
+
    The user OCID will look something like `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta` . Note the "ocid1.user" prefix.
 
    Note, sometimes the name link is missing in which case select the `User Settings` link. Do not select the "Tenancy" link.
@@ -201,18 +203,18 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```
     <copy>
-    You are limited to only one OKE cluster in this tenancy. This workshop will create one additional OKE cluster and so any other OKE clusters must be terminated. 
+    You are limited to only one OKE cluster in this tenancy. This workshop will create one additional OKE cluster and so any other OKE clusters must be terminated.
     Please confirm that no other un-terminated OKE clusters exist in this tenancy and then hit [RETURN]?
     </copy>
     ```
    To confirm that there are no other un-terminated OKE clusters, click the Navigation Menu in the upper left of Oracle Cloud Console, navigate to Developer Services and click on Kubernetes Clusters (OKE).
 
     ![](images/dev-services-menu.png " ")
-  
+
     ![](images/get-oke-info.png " ")
 
    If there are any un-terminated OKE cluster(s), please delete it(them) and continue with setup steps.
-   
+
     ![](images/get-oke-details.png " ")
 
 ## Task 9: Monitor the Setup
@@ -253,6 +255,14 @@ Their log files are located in the $GRABDISH_LOG directory.
 ```
 <copy>
 ls -al $GRABDISH_LOG
+</copy>
+```
+
+You can also cat through the logs by using the `showsetuplogs` shortcut command.
+
+```
+<copy>
+showsetuplogs
 </copy>
 ```
 

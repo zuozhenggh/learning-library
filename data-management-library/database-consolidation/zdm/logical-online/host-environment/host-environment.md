@@ -40,7 +40,7 @@ Estimate Lab Time: 20 minutes
     ```
 
 ## **Task 2: Set ZDM Group and User and Create Directories**
-1. Run code below to add the group zdm, create the user zdmuser, and add directories for the ZDM.
+1. Run code below to add the group zdm, create the user zdmuser, and add directories for the ZDM. Please bear in mind that enter must be needed to enter twice after having copied the below statement. 
 
     ```
     <copy>
@@ -61,7 +61,7 @@ Estimate Lab Time: 20 minutes
     * glib-devel
     * oraclelinux-developer-release-el7
 
-    Run the below command to check each of the 3 packages above:
+    Run the below command to check each of the 3 packages above. Please bear in mind that enter must be needed to enter twice after having copied the below statement :
 
     ```
     <copy>
@@ -161,7 +161,7 @@ Estimate Lab Time: 20 minutes
 
     ```
     <copy>
-    ./zdminstall.sh setup oraclehome=/u01/app/zdmhome oraclebase=/u01/app/zdmbase ziploc=/u01/app/zdmdownload/zdm21.1/zdm_home.zip -zdm
+    ./zdminstall.sh setup oraclehome=/u01/app/zdmhome oraclebase=/u01/app/zdmbase ziploc=/u01/app/zdmdownload/zdm21.2/zdm_home.zip -zdm
     </copy>
     ```
 
@@ -506,168 +506,7 @@ Estimate Lab Time: 20 minutes
     ```
 
 
-## **Task 8: Adding OGG self-signed Certificate**
-
-Oracle GoldenGate Hub uses a self-signed certificate which can cause an issue, in order to preempt this please copy the following so that it can be pasted on a file to be created on next step. 
-
-1. As the zdmuser, open the vi editor for a new file named zdm_add_cert.sh
-
-    ```
-    <copy>
-    sudo su - zdmuser
-    vi zdm_add_cert.sh
-    </copy>
-    ```
-2. 'i' command lets you insert text into the file.
-
-    ```
-    <copy>
-    i
-    </copy>
-    ```
-
-3. Paste the contents of the following script.
-
-    ```
-    <copy>
-    #!/bin/bash
-    #
-    # Copyright (c) 2019, 2020, Oracle and/or its affiliates. All rights reserved.
-    #
-    # NAME
-    # Workaround for SunCertPathBuilderException: unable to find valid certification path to requested target
-    #
-    # DESCRIPTION
-    # GoldenGate hub created using OCI Marketplace will have
-    # an Nginx server with a self-signed certificate which
-    # will cause above Java error.
-    # This script adds the specified GoldenGate hub's
-    # self-signed certificate to ZDM Server's JDK trust store.
-    #
-    # NOTES
-    # Set ORACLE_HOME environment variable to execute this script.
-    # Usage: zdm_add_cert.sh <gghub_hostname_or_ip>
-    #
-    #
-    REMHOST=$1
-    REMPORT=443
-    #Make sure we use the short host name (-s is not available in Solaris)
-    LOCALHOST_NAME=`/bin/hostname | /bin/cut -d . -f 1 | tr '[:upper:]' '[:lower:]'`
-    ORACLE_BASE=`$ORACLE_HOME/bin/orabase`
-    if [ $? -ne 0 ]; then
-    echo "ERROR: failed to determine Oracle base"
-    exit 1
-    fi
-    echo "stopping zdmserver"
-    $ORACLE_HOME/bin/zdmservice stop
-    if [ $? -eq 1 ]; then
-    echo "ERROR: failed to stop zdmserver"
-    exit 1
-    fi
-    JDKHOME="$ORACLE_HOME/jdk"
-    KEYTOOL="$JDKHOME/jre/bin/keytool"
-    KEYSTORE_PASS=changeit
-    JDKCACERTS="$JDKHOME/jre/lib/security/cacerts"
-    TMPDIR="/tmp/"
-    CERT_TO_IMPORT="${TMPDIR}${REMHOST}_${REMPORT}.pem"
-    for CACERTS in `ls $JDKCACERTS`
-    do
-    if [ -e "$CACERTS" ]
-    then
-    echo "Adding certs to $CACERTS"
-    set -e
-    rm -f $CERT_TO_IMPORT
-    if openssl s_client -connect $REMHOST:$REMPORT 1> $TMPDIR/keytool_stdout 2> $TMPDIR/output </dev/null
-    then
-    :
-    else
-    cat $TMPDIR/keytool_stdout
-    cat $TMPDIR/output
-    exit 1
-    fi
-    echo "extracting certificate from $CERT_TO_IMPORT"
-    if sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' < $TMPDIR/keytool_stdout > $CERT_TO_IMPORT
-    then
-    :
-    else
-    echo "ERROR: Unable to extract the certificate from $CERT_TO_IMPORT ($?)"
-    cat $TMPDIR/output
-    exit 1
-    fi
-    if $KEYTOOL -list -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT >/dev/null
-    then
-    echo "Key of $REMHOST found, deleting it."
-    $KEYTOOL -delete -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT
-    fi
-    $KEYTOOL -import -trustcacerts -noprompt -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT -file $CERT_TO_IMPORT
-    if [ $? -ne 0 ]; then
-    echo "ERROR: import failed"
-    exit 1
-    fi
-    if $KEYTOOL -list -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT -keystore "$CACERTS" >/dev/null
-    then
-    echo "Key of $REMHOST found in cacerts, deleting it."
-    $KEYTOOL -delete -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT -keystore "$CACERTS"
-    fi
-    $KEYTOOL -import -trustcacerts -noprompt -keystore "$CACERTS" -storepass ${KEYSTORE_PASS} -alias $REMHOST:$REMPORT -file $CERT_TO_IMPORT
-    if [ $? -ne 0 ]; then
-    echo "ERROR: import failed"
-    exit 1
-    fi
-    fi
-    done
-    cp $JDKCACERTS $ORACLE_BASE/crsdata/$LOCALHOST_NAME/security/
-    if [ $? -ne 0 ]; then
-    echo "ERROR: Failed to copy JRE cacerts file for ZDM"
-    exit 1
-    fi
-    echo "starting zdmserver"
-    $ORACLE_HOME/bin/zdmservice start
-    if [ $? -ne 0 ]; then
-    echo "ERROR: failed to start zdmserver"
-    exit 1
-    fi
-    </copy>
-    ```
-
-
-4. To save and quit vi editor press the ESC key and then copy the following and press Enter.
-
-    ```
-    <copy>
-    :wq!
-    </copy>
-    ```
-
-5. The file needs to have executable permissions, grant this by executing the following:
-
-    ```
-    <copy>
-    chmod a+x zdm_add_cert.sh
-    </copy>
-    ```
-
-6. Set the Oracle Home
-
-    ```
-    <copy>
-    export ORACLE_HOME=/u01/app/zdmhome
-    </copy>
-    ```
- 
-7. Execute the Script, replace <gghub_hostname_or_ip> with the GG Hub Compute Instance IP
-    
-    ```
-    <copy>
-    ./zdm_add_cert.sh <gghub_hostname_or_ip>
-    </copy>
-    ```    
-
-8. Executing the Script correctly will trigger the ZDM Service to stop and then start again, wait for some minutes for this operation to complete succesfully.        
-
-
-
-## **Task 9: Updating IPTables on the Source DB Server**
+## **Task 8: Updating IPTables on the Source DB Server**
 
 It is important to update the IPTables on the Source DB Server. In order to do so: 
 

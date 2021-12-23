@@ -11,15 +11,15 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {            
-            "title": "Lab 1: Setup Primary and Standby Compute Instance",
+            "title": "Lab 1: Setup Primary And Standby Compute Instance",
             "filename": "../../setup-environment/setup-environment.md"
         },
         {            
-            "title": "Lab 2: Prepare the Primary Database",
+            "title": "Lab 2: Prepare The Primary Database",
             "filename": "../../prepare-primary/prepare-primary.md"
         },
         {            
-            "title": "Lab 3: Setup Connectivity Between Primary and Standby",
+            "title": "Lab 3: Setup Connectivity Between Primary And Standby",
             "filename": "../../connect-primary-standby/connect-primary-standby.md"
         },
         {            
@@ -27,11 +27,11 @@
             "filename": "../../deploy-adg-lvm/deploy-adg-lvm.md"
         },
         {            
-            "title": "Lab 5: Testing with Active Data Guard and Perform a Switchover",
+            "title": "Lab 5: Testing With Active Data Guard And Perform A Switchover",
             "filename": "../../test-with-adg/test-with-adg.md"
         },
         {            
-            "title": "Lab 6: Perform a Failover",
+            "title": "Lab 6: Perform A Failover",
             "filename": "../../failover-and-reinstate/failover-and-reinstate.md"
         },
         {

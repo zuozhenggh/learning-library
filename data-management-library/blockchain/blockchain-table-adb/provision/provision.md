@@ -6,6 +6,10 @@ In this lab, you will provision the Oracle Autonomous Database (ADB) instance an
 
 Estimated Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:dhCPeTAErtY)
+
 ### Objectives
 
 In this lab, you will:
@@ -18,7 +22,7 @@ In this lab, you will:
 
 This workshop assumes you have:
 
-- Logged in to your own cloud account or a LiveLabs account.
+- An Oracle Free Tier, Always Free, Paid, or LiveLabs Cloud Account
 
 ## Task 1: Provision an ATP Instance
 
@@ -62,8 +66,8 @@ This workshop assumes you have:
 
 7. Create administrator credentials, choose network access and license type and click **Create Autonomous Database**.
 
-    - **Password** - Specify the password for **ADMIN** user of the service instance. For this lab, we use the password - **WElcome123##**.
-    - **Confirm Password** - Re-enter the password to confirm it. Make a note of this password. For this lab, re-enter and confirm password - **WElcome123##**.
+    - **Password** - Specify the password for **ADMIN** user of the service instance. For this lab, we use the password - **_WElcome123##_**.
+    - **Confirm Password** - Re-enter the password to confirm it. Make a note of this password. For this lab, re-enter and confirm password - **_WElcome123##_**.
     - **Choose network access** - For this lab, accept the default, **Allow secure access from everywhere**.
     - **Choose a license type** - For this lab, choose **License Included**.
 
@@ -85,7 +89,7 @@ This workshop assumes you have:
 2. Give the **Username - ADMIN** and click **Next**.
     ![](./images/task4-2.png " ")
 
-3. Now give the **Password - WElcome123##** for the ADMIN user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in** to sign in to Database Actions.
+3. Now give the **Password - _WElcome123##_** for the ADMIN user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in** to sign in to Database Actions.
     ![](./images/task4-3.png " ")
 
 4.  In Oracle Database Actions menu, select **Database Users** under Administration.
@@ -96,7 +100,7 @@ This workshop assumes you have:
 
 6. In the Create User page, under User tab, give the following details:
     - **User Name** - Give the new user a User Name. The username is case-sensitive. In the lab, we name the user **Username - DEMOUSER**.
-    - **Password** - Give the new user a password and confirm the Password. In this lab, we give the same password as admin user for ease of use, **Password - WElcome123##** and confirm the password.
+    - **Password** - Give the new user a password and confirm the Password. In this lab, we give the same password as admin user for ease of use, **Password - _WElcome123##_** and confirm the password.
     - **Quota on tablespace DATA** - Set a value for the Quota on tablespace DATA for the user. Click the drop-down and choose **500M**.
     - **Web Access** - Turn on the Web Access radio button to access the SQL Developer Web.
     - **Web access advanced features** - Expand the Web access advanced features and turn off the Authorization required radio button to disable the authorization for `demouser` REST services
@@ -134,7 +138,7 @@ This workshop assumes you have:
 2. Give the **Username - DEMOUSER** and click **Next**.
     ![](./images/task3-2-new.png " ")
 <!--
-3. Now give the **Password - WElcome123##** for the DEMOUSER user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in** to sign in to Database Actions.
+3. Now give the **Password - _WElcome123##_** for the DEMOUSER user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in** to sign in to Database Actions.
     ![](./images/task3-3-new.png " ")
 
 1. Click on the navigation menu of the Oracle Database Actions and select **SQL** under Development.
@@ -145,7 +149,7 @@ This workshop assumes you have:
 
     ![](./images/task5-2.png " ")
 -->
-3. On the Database Actions sign in page, give the **Username - DEMOUSER**, **Password - WElcome123##** and click **Sign In**.
+3. On the Database Actions sign in page, give the **Username - DEMOUSER**, **Password - _WElcome123##_** and click **Sign In**.
 
     ![](./images/task5-3.png " ")
 

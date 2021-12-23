@@ -6,6 +6,9 @@ This lab walks you through the steps to create an Oracle Cloud Infrastructure (O
 
 Estimated time: 20 minutes
 
+Watch the video below for a walk through of the lab.
+[](youtube:qW8ulWBx99s)
+
 ### About Oracle Cloud Infrastructure GoldenGate Resources
 
 A OCI GoldenGate **deployment** manages the resources it requires to function. The GoldenGate deployment also lets you access the GoldenGate deployment console, where you can create and manage Extracts and Replicats.
@@ -37,7 +40,7 @@ This lab assumes that you completed all preceding labs.
 
     ![](images/01-01-02a.png " ")
 
-2.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
+2.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select the compartment associated with your username. For example, if your LiveLab username is LL1234-user, expand root, and then select the compartment **LL1234-COMPARTMENT**.
 
 3.  On the Deployments page, click **Create Deployment**.
 
@@ -101,7 +104,7 @@ While the deployment is being created, you can register the source and target Au
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
-## Task 3: Unlock the GGADMIN user and supplemental logging
+## Task 3: Unlock the GGADMIN user and add supplemental logging
 
 Although the GGADMIN user is created during the database registration process, it is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
@@ -180,4 +183,4 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, October 2021

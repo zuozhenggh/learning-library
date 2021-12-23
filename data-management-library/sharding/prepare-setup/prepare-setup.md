@@ -7,7 +7,7 @@ This lab will show you how to download the Oracle Resource Manager (ORM) stack z
 
 Watch the video for a quick walk through of the Prepare Setup lab.
 
-[](youtube:LcQmt3LYA7k)
+[](youtube:DTIGmlj7Y3I) 
 
 ### Objectives
 -   Download ORM stack

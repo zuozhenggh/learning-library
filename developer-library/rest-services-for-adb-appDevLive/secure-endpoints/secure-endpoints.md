@@ -6,6 +6,10 @@ In this lab you will Securing the REST Endpoints you created in the previous lab
 
 Estimated Lab Time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:oCJcYj8kbmY)
+
 ### Objectives
 
 - Create an OAuth2 token

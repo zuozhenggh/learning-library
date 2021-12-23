@@ -1,4 +1,4 @@
-# Lakehouse: Putting it Together for Analytics
+# Lakehouse: Putting it together for Analytics
 
 ## Introduction
 
@@ -11,23 +11,23 @@ In this lab, you will:
 * Validate that new data is being loaded
 * Review the components of the Data Lake
 
-Estimated Time:15 minutes
+Estimated Time: 15 minutes
 
-## Task 1: SQL Queries
+## Task 1: SQL queries
 
 Navigate from the main menu to Autonomous Data Warehouse. Select the lakehousedb. If the database is not listed, double check the compartment is set to lakehouse1.
 
-![Database](./images/databaselisting.png " ")
+![Database](./images/Databaselisting.png " ")
 
-Click on the database and then proced to click on the Tools Tab and click on Open Database Actions.
+Click on the database and then proceed to click on the Tools Tab and click on Open Database Actions.
 
-![Database Actions](./images/dbactions.png " ")
+![Database Actions](./images/DBActions.png " ")
 
 Click on SQL to execute the query to create the table.
 
 ![SQL](./images/SQL_queries.png " ")
 
-You can just simply query the MOVIE_GENRE table to view data, or create the following view to see the additional data along with the join to the MOVIE_GENRE entity.
+You can just simply query the MOVIE GENRE table to view data, or create the following view to see the additional data along with the join to the MOVIE GENRE entity.
 
 ```
 <copy>
@@ -67,9 +67,9 @@ Click on DataCatalogLakehouse1 from the Data Catalogs. Verify compartment if you
 
 ![SQL](./images/Current_Catalog.png " ")
 
-Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity informaiton into the Data Asset, but for now in the lab you can run this manually.
+Click on Data Assets and click on Harvest using the dropdown menu for the database Data Asset. This harvesting for the Data Catalog should be scheduled to automatically pull the entity information into the Data Asset, but for now in the lab you can run this manually.
 
-Now if you go back to the Home Tab fro the Data Catalog, you will discover that there are now 8 Data Entities are being kept up to data in the Data Catalog.
+Now if you go back to the Home Tab from the Data Catalog, you will discover that there are now 8 Data Entities are being kept up to data in the Data Catalog.
 
 ![New Entities](./images/new_entities.png " ")
 
@@ -79,7 +79,65 @@ Click on Entities just to verify that all of the tables and views are now here.
 
 ## Task 3: View of the Oracle Data Lakehouse
 
-The Oracle Data Lakehouse uses the tools under the main menu of ANalytics & AI. The Data Lake header contains the services needed to create integrations, catalog and data flows to build the lakehouse. The configuration that was setup in the beginning allows for consistent security through out the different pieces of the data lake environment which also grants least privilege for administration, developers and consumers of the data lake.
+We have a database, csv and json files in our data lake but there can be all of the various data platforms and types of data stored in the data lake and even streamed. We don't always have to load data into a database to be able to use our data sets with other data sets and assets. There are simple queries to the object storage that will allow us to join the data together with our data warehouse in our data lakehouse. Here is just one example using the data that we have loaded in this short time.
+
+Navigate back to DBActions. Under Development, click on SQL. We are going to run a few queries here for analysis. At this point you can take the queries and information to analytics and reporting.
+
+Join the data to the existing customer data:
+
+```
+<copy>
+SELECT
+    DAY_ID,
+    GENRE.NAME,
+    CUSTSALES.CUST_ID,
+    AGE,
+    GENDER, 
+    STATE_PROVINCE
+FROM
+    ADMIN.CUSTSALES_CUSTSALES_2020_01 custsales, 
+    ADMIN.CUSTOMER_EXTENSION, 
+    ADMIN.CUSTOMER_CONTACT,
+    ADMIN.GENRE
+    where customer_extension.CUST_ID=custsales.cust_id
+    and customer_extension.CUST_ID=customer_contact.CUST_ID
+    and COUNTRY_CODE='US'
+    and genre.genre_id=custsales.genre_id;    
+</copy>    
+```
+
+Optionally you can also get the results using either external tables or Data Lake Accelerator. Here is an example to use an external table to access the JSON file in the object storage and join to the database tables.
+
+Create the external table or view to get the json file data that is stored in the object storage.
+```
+<copy>
+BEGIN
+DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
+table_name => 'json_movie_data_ext2',
+file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/ECSyjYVno_ekE_qrWZ-g3LwGvNvxkFkgcDAC3OeTUXvmXNxl1umLqf6NXDa2sL5Q/n/c4u04/b/data_lakehouse/o/export-stream-2020-updated.json',
+column_list => 'doc varchar2(32000)',
+field_list => 'doc char(30000)',
+format => json_object('delimiter' value '\n')
+);
+END;
+/
+</copy>
+```
+Query the data:
+```
+<copy>
+select *
+FROM JSON_MOVIE_DATA_EXT2,
+JSON_TABLE("DOC", '$[*]' COLUMNS
+"custid" number path '$.custid',
+"genreid" number path '$.genreid',
+"movieid" number path '$.movieid')
+</copy>
+```
+
+***Oracle Data Lakehouse
+
+The Oracle Data Lakehouse uses the tools under the main menu of Analytics & AI. The Data Lake header contains the services needed to create integrations, catalog and data flows to build the lakehouse. The configuration that was setup in the beginning allows for consistent security through out the different pieces of the data lake environment which also grants least privilege for administration, developers and consumers of the data lake.
 
 Take a quick view at the steps that you went through to create the lakehouse that ended with a view or queries to be utilized in further analysis.
 

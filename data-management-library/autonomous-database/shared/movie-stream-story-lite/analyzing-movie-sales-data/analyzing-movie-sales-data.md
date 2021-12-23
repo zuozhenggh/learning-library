@@ -5,6 +5,10 @@ In this lab, you will learn many of the basics for analyzing data across multipl
 
 Estimated time: 10 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:lgug4o8qqB8)
+
 ### Objectives
 
 - Understand how to use SQL Worksheet
@@ -21,9 +25,9 @@ Estimated time: 10 minutes
 ## Task 1: Log into the SQL Worksheet
 Make sure you are logged into Autonomous Database's **Database Tools** as the MOVIESTREAM user.   
 
-1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Click **Database Actions**.
 
-    ![Details page of your Autonomous Database](images/2878884319.png " ")
+    ![Click Database Actions](images/launchdbactions.png " ")
 
 2. Enter MOVIESTREAM for the username and click **Next**. On the next form, enter the MOVIESTREAM password - which is the one you entered when creating your MOVIESTREAM user. Click **Sign in**.
 
@@ -50,7 +54,7 @@ The main advantages of star schemas are that they:
 * Offer a direct and intuitive mapping between the business entities being analyzed by end users and the schema design.</li>
 * Offer highly optimized performance for typical data warehouse queries.</li>
 
-One of the key dimensions in the MovieStream data warehouse is **TIME**. Currently the time dimension table has a single column containing just the ids for each day. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter, and year. Therefore we need to expand the current time dimension to include these additional levels.
+One of the key dimensions in the MovieStream data warehouse is **TIME**. Currently the time dimension table has a single stored column containing just the ids for each day. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter, and year. This time table was expanded using computed virtual columns that are derived from the day_id.
 
 1. View the time dimension table.
 
@@ -63,7 +67,7 @@ One of the key dimensions in the MovieStream data warehouse is **TIME**. Current
 
 > **Note:** The TIME dimension table has a typical calendar hierarchy where days aggregate to weeks, months, quarters and years.
 
-Querying a data warehouse can involve working with a lot of repetitive SQL. This is where 'views' can be very helpful and very powerful. The code below is used to simplify the queries used throughout this workshop. The main focus here is to introduce the concept of joining tables together to returned a combined resultset.
+Querying a data warehouse can involve working with a lot of repetitive SQL. This is where 'views' can be very helpful and very powerful. The code below is used to simplify the queries used throughout this workshop. The main focus here is to introduce the concept of joining tables together to returned a combined result set.
 
 The code below uses a technique called **INNER JOIN** to join the dimension tables to the fact table.
 
@@ -133,34 +137,10 @@ In the previous SQL code we used an inner join to merge time, customer and genre
 
     The result will look like this:
 
-    |NAME|COUNT(M.GENRE_ID)|
-    |---|---|
-    |Action|1629149|
-    |Adventure|1088422|
-    |Animation|109517|
-    |Biography|187264|
-    |Comedy|1104148|
-    |Crime|416139|
-    |Documentary|22608|
-    |Drama|2488106|
-    |Family|609975|
-    |Fantasy|860680|
-    |Film-Noir|117250|
-    |History|51441|
-    |Horror|671819|
-    |Lifestyle|17327|
-    |Musical|336557|
-    |Mystery|190321|
-    |Reality-TV|8290|
-    |Romance|749525|
-    |Sci-Fi|793888|
-    |Sport|24646|
-    |Thriller|909956|
-    |Unknown|11814|
-    |War|191657|
-    |Western|45668|
+    ![inner join query](images/lab3-q1.png " ")
 
-    Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the next query.
+
+    Unless you had a detailed knowledge of all the available genres, you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the next query.
 
 2. Modify the above SQL to use an outer join:
 
@@ -176,35 +156,10 @@ In the previous SQL code we used an inner join to merge time, customer and genre
 
     The result will now look like this, where we can now see how many news category films were viewed in 2020:
 
-    |NAME|COUNT(M.GENRE_ID)|
-    |---|---|
-    |Action|1629149|
-    |Adventure|1088422|
-    |Animation|109517|
-    |Biography|187264|
-    |Comedy|1104148|
-    |Crime|416139|
-    |Documentary|22608|
-    |Drama|2488106|
-    |Family|609975|
-    |Fantasy|860680|
-    |Film-Noir|117250|
-    |History|51441|
-    |Horror|671819|
-    |Lifestyle|17327|
-    |Musical|336557|
-    |Mystery|190321|
-    |News|0|
-    |Reality-TV|8290|
-    |Romance|749525|
-    |Sci-Fi|793888|
-    |Sport|24646|
-    |Thriller|909956|
-    |Unknown|11814|
-    |War|191657|
-    |Western|45668|
+    ![outer join query](images/lab3-q2.png " ")
 
-    > **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the resultset you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now that we have our time dimension defined as a view and a view to simplify SQL queries against the fact table, we can move on to how SQL can help us explore the sales data.
+
+    > **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the result set you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now that we have our time dimension defined as a view and a view to simplify SQL queries against the fact table, we can move on to how SQL can help us explore the sales data.
 
 
 ## Task 4: Explore sales data with fast performance
@@ -221,33 +176,23 @@ In the previous SQL code we used an inner join to merge time, customer and genre
     GROUP BY year_name, quarter_name
     ORDER BY 1,2;</copy>
     ```
-    **Note**: In this query, we have returned a resultset where the data has been aggregated (or grouped by) year then, within year, by quarter. The ORDER BY clause sorts the resultset by year and then quarter. In addition there is a filter or WHERE clause that enables us to return only data for the year 2020.    
+    **Note**: In this query, we have returned a result set where the data has been aggregated (or grouped by) year then, within year, by quarter. The ORDER BY clause sorts the result set by year and then quarter. In addition, there is a filter or WHERE clause that enables us to return only data for the year 2020.    
 
     This should return something similar to the following:
 
-    |YEAR_NAME|QUARTER_NAME|SUM(ACTUAL_PRICE)|
-    |---|---|---|
-    |2020|Q1-2020|4888603.6299999645|
-    |2020|Q2-2020|6207591.609999965|
-    |2020|Q3-2020|5094875.069999959|
-    |2020|Q4-2020|5361403.959999974|
+    ![group by query](images/lab3-q3.png " ")
 
-    *elapsed: 1.315s*
+    *elapsed: 0.495s*  (your time may vary)
 
     Note the time taken to run your query. In the above example, this was 1.315 seconds to run (*when you run your query the timing may vary slightly*).
 
 2. Now simply run the query again
 
-    |YEAR_NAME|QUARTER_NAME|SUM(ACTUAL_PRICE)|
-    |---|---|---|
-    |2020|Q1-2020|4888603.6299999645|
-    |2020|Q2-2020|6207591.609999965|
-    |2020|Q3-2020|5094875.069999959|
-    |2020|Q4-2020|5361403.959999974|
+    ![group by query with result cache](images/lab3-q4.png " ")
 
-    *elapsed: 0.026*
+    *elapsed: 0.023*  (your time may vary)
 
-    This time the query ran much faster, taking just 0.026 seconds! So what happened?
+    This time the query ran much faster, taking just 0.023 seconds! So what happened?
 
     When we executed the query the first time, Autonomous Data Warehouse executed the query against our movie sales table and scanned all the rows. It returned the result of our query to our worksheet and then it stored the result in something called a **result cache**. When we then ran the same query again, Autonomous Data Warehouse simply retrieved the result from its result cache! No need to scan all the rows again. This saved a lot of time and saved us money because we used hardly any compute resources.
 
@@ -261,7 +206,7 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
 1. Let's start by looking at sales in December for the latest two years for our major genres (we can use an INNER JOIN because there is always a current and previous year value):
 
     ```
-    <copy>SELECT 
+    <copy>SELECT
         g.name as genre,
         TO_CHAR(c.day_id,'YYYY-MM') as month,
         ROUND(sum(c.actual_price),0) sales
@@ -275,21 +220,16 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
 
     This produces the following result:
 
-    |GENRE|MONTH|SALES|
-    |---|---|---|
-    |Action|2019-12|320577|
-    |Action|2020-12|280191|
-    |Comedy|2019-12|183968|
-    |Comedy|2020-12|169859|
-    |Drama|2019-12|295584|
-    |Drama|2020-12|369497|
+    ![this year vs last year](images/lab3-q5.png " ")
+
+    This result is fine, but to simplify comparisons you want to do a side-by-side comparison of sales across the two years.  Oracle SQL analytic functions will help solve that problem.
 
 
-2. The **LAG** function will allow us to compare this year vs last (or any other time comparison). In addition, we are going to leverage the SQL **WITH** clause. The **WITH** clause allows you to define in-line views - which greatly simplifies your queries. We'll be using these in-line views as "query blocks" - or named result sets that can be easily referenced. Here, we're using the **WITH** clause to set up the comparison to last year.
+2. The **LAG** function will allow us to compare this year vs last (or any other time comparison). In addition, we are going to leverage the SQL **WITH** clause. The **WITH** clause allows you to define in-line views - which greatly simplifies your queries by breaking a query down into smaller, understandable chunks. It's a very powerful tool to have in your toolbox. We'll be using these in-line views as "query blocks" - or named result sets that can be easily referenced. Here, we're using the **WITH** clause to set up the comparison to last year.
 
     ```
     <copy>WITH sales_vs_lastyear as (
-    SELECT 
+    SELECT
         g.name as genre,
         TO_CHAR(c.day_id,'YYYY-MM') as month,
         ROUND(SUM(c.actual_price),0) as sales,
@@ -304,8 +244,8 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
     GROUP BY TO_CHAR(c.day_id,'YYYY-MM'), c.genre_id, g.name
     ORDER BY genre, month
     )
-    SELECT 
-        genre, 
+    SELECT
+        genre,
         sales as sales,
         last_year as last_year,
         sales - last_year as change
@@ -313,228 +253,99 @@ Time comparisons are one of the most common types of analyses. MovieStream has j
     WHERE last_year is not null
     ORDER BY round(last_year - sales) DESC;</copy>
     ```
-    
-    The subquery **sales\_vs\_lastyear** aggregates sales by genre and month for both this year and last. The subquery is then used by the SELECT statement that calculates the sales change. 
 
-    You can see that Adventure and Action movies have shown strong a significant drop off. This drop off was more than offset by a large increase in Drama movies:
+    The subquery **sales\_vs\_lastyear** aggregates sales by genre and month for both this year and last. The **LAG** function is looking back "1" row for each genre name **PARTITION** - or grouping. The **ORDER BY** clause is critical to ensure that the prior row is indeed the prior month for that genre. The subquery is then used by the SELECT statement that calculates the sales change.
 
-    |GENRE|SALES|LAST_YEAR|CHANGE|
-    |---|---|---|---|
-    |Action|280191|320577|-40386|
-    |Comedy|169859|183968|-14109|
-    |Drama|369497|295584|73913|
+    You can see that Action and Comedy genres have shown a significant drop off. This drop off was more than offset by a large increase in Drama movies:
+
+    ![using lag](images/lab3-q6.png " ")
 
 ## Task 6: Understanding sales contributions
 
 ### Overview
 
-Drama sales are up; Action sales are down. How significant are these genres to MovieStream's success? And, which movies are important contributors within these genres?  We're going to find out.  
+In the MovieStream application, when customers select a movie to watch, they pick from a "shelf" that is broken out by genre. A movie may be both an adventure and comedy (and the movie table contains these details) - but the customer selected a movie via a specific genre in the application - and this genre is captured in the sales data.
 
-When customers select a movie to watch, they pick from a "shelf" that is broken out by genre. A movie may be an adventure/comedy (and the movie table contains these details) - but the customer selected a movie via a specific genre - and this genre is captured in the sales data.
+Explore the movie-genre relationship.
 
-1. Let's begin by looking at movie sales by genre.
+1. Let's begin by looking at the top movie-genre combinations.
 
     ```
-    <copy>WITH sales_by_genre as (
-    SELECT
-        g.name as genre,
-        m.title,
-        round(sum(c.actual_price),0) as sales        
-    FROM movie m, custsales c, genre g
-    WHERE m.movie_id = c.movie_id
-    AND c.genre_id = g.genre_id
-    GROUP BY g.name, m.title
+    <copy>WITH sales_by_movie_genre as (
+    SELECT        
+        c.movie_id,
+        c.genre_id,
+        round(sum(c.actual_price),0) as sales              
+    FROM custsales c
+    GROUP BY c.movie_id, c.genre_id
     )
-    SELECT 
-        genre, 
-        title,  
-        sales
-    FROM sales_by_genre
+    SELECT          
+        m.title,  
+        g.name as genre,
+        sales,
+        RANK () OVER ( order by sales desc ) as ranking
+    FROM sales_by_movie_genre s, movie m, genre g
+    WHERE g.genre_id = s.genre_id
+      AND m.movie_id = s.movie_id
     ORDER BY sales desc
     FETCH FIRST 20 ROWS ONLY;</copy>
     ```
- 
+
     Here are the top genre-movie combinations:
 
-    |GENRE|TITLE|SALES|
-    |---|---|---|
-    |Action|Avengers: Endgame|327423|
-    |Sci-Fi|Captain Marvel|298493|
-    |Adventure|Avengers: Endgame|289171|
-    |Sci-Fi|Spider-Man: Far from Home|248109|
-    |Action|Captain Marvel|240827|
-    |Adventure|Captain Marvel|239246|
-    |Fantasy|Aquaman|212570|
-    |Action|Spider-Man: Far from Home|209282|
-    |Adventure|Spider-Man: Far from Home|208749|
-    |Action|Aquaman|196869|
-    |Sci-Fi|Aquaman|191586|
-    |Adventure|Aquaman|177126|
-    |Family|The Lion King|168251|
-    |Animation|The Lion King|161655|
-    |Action|Avengers: Infinity War|150931|
-    |Sci-Fi|Avengers: Infinity War|149532|
-    |Family|Aladdin|142674|
-    |Action|Venom|140091|
-    |Drama|Room|138024|
-    |Drama|The Lion King|137991|
+    ![top 20 genre-movie combos](images/lab3-q7.png " ")
 
-    There are clearly movies - like Aquaman - that are popular across genres.
+    Again, the query starts with a subquery `sales_by_movie_genre` which calculates the sales for the movie-genre combinations.  Then, it **RANKS** the result by `sales` for the top 20.
 
-2. We'll now focus on three of MovieStream's most important genres: Drama, Action and Comedies. What are the top 20 genre/movie combinations? We are going to use the RANK function to help with this analysis:
+    There are clearly movies - like *Spider-Man: Far from Home* and *Avengers: End Game* - that are popular across genres. No matter what shelf they're on - people find and watch them! Of course, this leads to more questions. How important is a movie to its genre(s)? What are the most popular way that people are finding movies?
+
+2. Let's answer the second question - What are the most popular ways that people find movies that appear in multiple genres.
 
     ```
-    <copy>WITH sales_grouping as (
+    <copy>WITH top_movies AS (
+    -- top movies
+    SELECT c.movie_id,           
+           SUM(c.actual_price) as sales
+    FROM custsales c
+    GROUP BY c.movie_id
+    ORDER BY 2 DESC
+    FETCH FIRST 20 ROWS ONLY
+    ),
+    genre_ranking_by_movie as (
+        -- rank the genres for the top 10 movies
         SELECT
-            g.name as genre,
-            m.title as movie,
-            round(sum(c.actual_price),0) as sales
-        FROM movie m, custsales c, genre g
-        WHERE m.movie_id = c.movie_id
-        AND c.genre_id = g.genre_id
-        AND g.name IN ('Drama','Action','Comedy')
-        GROUP BY g.name, m.title
+            t.movie_id,
+            c.genre_id,
+            ROUND(SUM(c.actual_price), 0) as sales,
+            RANK () OVER ( PARTITION BY t.movie_id ORDER BY sum(c.actual_price) DESC ) as ranking
+        FROM top_movies t, custsales c
+        WHERE t.movie_id = c.movie_id
+        GROUP BY t.movie_id, c.genre_id    
     )
-    SELECT 
-        genre,
-        movie,
-        sales,
-        RANK () OVER ( order by sales desc ) as ranking
-    FROM sales_grouping
-    FETCH FIRST 20 ROWS ONLY;</copy>
+    SELECT m.title as movie,
+        g.name as genre,
+        r.sales,
+        r.ranking,
+        ROUND(RATIO_TO_REPORT (sales) OVER (PARTITION BY m.title), 2) as ratio
+    FROM genre_ranking_by_movie r, movie m, genre g
+    WHERE r.movie_id = m.movie_id
+    AND r.genre_id = g.genre_id
+    AND ranking <= 3
+    ORDER BY movie, ranking; </copy>
     ```
     The result is shown below:
 
-    |GENRE|MOVIE|SALES|RANKING|
-    |---|---|---|---|
-    |Action|Avengers: Endgame|327423|1|
-    |Action|Captain Marvel|240827|2|
-    |Action|Spider-Man: Far from Home|209282|3|
-    |Action|Aquaman|196869|4|
-    |Action|Avengers: Infinity War|150931|5|
-    |Action|Venom|140091|6|
-    |Drama|Room|138024|7|
-    |Drama|The Lion King|137991|8|
-    |Action|Aladdin|130577|9|
-    |Drama|The Godfather|127420|10|
-    |Action|Avatar|120613|11|
-    |Action|Spider-Man: Homecoming|117223|12|
-    |Action|Batman v Superman: Dawn of Justice|111758|13|
-    |Comedy|Spider-Man: Homecoming|111384|14|
-    |Action|The Incredibles|103692|15|
-    |Drama|The Ten Commandments|102949|16|
-    |Drama|Deadpool 2|101739|17|
-    |Drama|Boogie Nights|101569|18|
-    |Action|Gladiator|101229|19|
-    |Drama|Jaws|101181|20|
+    ![top genres per movie](images/lab3-q8.png " ")
 
-3. Okay, we know the top 20 genre/movie combinations - but it's not quite what we want. Let's refine the query to show the top movies WITHIN each genre. The RANK's **PARTITION BY** clause will enable this type of grouping:
+There were a few changes to this query.  First, there is a suquery that finds the top movies. The second suquery uses that as a source to rank the movie-genre combinations.  Notice, **RANK** has been updated to include a **PARTITION BY** in order to rank the top genres by movie.  Finally, the query adds a **RATIO\_TO\_REPORT** in order to easily view that genre's contribution relative to the other top genres.
 
-    ```
-    <copy>WITH sales_grouping as (
-        SELECT
-            g.name as genre,
-            m.title as movie,
-            round(sum(c.actual_price),0) as sales
-        FROM movie m, custsales c, genre g
-        WHERE m.movie_id = c.movie_id
-        AND c.genre_id = g.genre_id
-        AND g.name in ('Drama','Action','Comedy')
-        GROUP BY g.name, m.title
-    ),
-    movie_ranking_by_genre as (
-        SELECT 
-            genre,
-            movie,
-            sales,
-            RANK () OVER ( PARTITION BY genre ORDER BY sales DESC ) as ranking
-        FROM sales_grouping
-    )
-    SELECT * 
-    FROM movie_ranking_by_genre
-    WHERE ranking <= 5
-    ORDER BY genre ASC, ranking ASC;</copy>
-    ```
-    We can now see the most important movies for each genre:
-
-    |GENRE|MOVIE|SALES|RANKING|
-    |---|---|---|---|
-    |Action|Avengers: Endgame|327423|1|
-    |Action|Captain Marvel|240827|2|
-    |Action|Spider-Man: Far from Home|209282|3|
-    |Action|Aquaman|196869|4|
-    |Action|Avengers: Infinity War|150931|5|
-    |Comedy|Spider-Man: Homecoming|111384|1|
-    |Comedy|Chef|100777|2|
-    |Comedy|Deadpool 2|96248|3|
-    |Comedy|Lady Bird|91200|4|
-    |Comedy|Jumanji: Welcome to the Jungle|76383|5|
-    |Drama|Room|138024|1|
-    |Drama|The Lion King|137991|2|
-    |Drama|The Godfather|127420|3|
-    |Drama|The Ten Commandments|102949|4|
-    |Drama|Deadpool 2|101739|5|
-
- 4. But, what is each movie's contribution to its genre? To answer this question, we need to make one more update. The **ROLLUP** function in the **GROUP BY** adds summaries (subtotals and grandtotals) for each grouping. Note, you can put the **ROLLUP** clause in different parts of the query to achieve different results. For example, do you want to see the movie's sales contribution across the total genre sales (add the ROLLUP to the subquery)? Or, its contribution based on the current selection.  Below displays the contribution for the current selection:
-
-    ```
-    <copy>WITH sales_grouping as (
-        SELECT
-            g.name as genre,
-            m.title as movie,
-            round(sum(c.actual_price),0) as sales
-        FROM movie m, custsales c, genre g
-        WHERE m.movie_id = c.movie_id
-        AND c.genre_id = g.genre_id
-        AND g.name IN ('Drama','Action','Comedy')
-        GROUP BY g.name, m.title
-        ),
-        movie_ranking_by_genre as (
-            SELECT
-                genre,
-                movie,
-                sales,
-                RANK () OVER ( partition by genre order by sales desc ) as ranking
-            FROM sales_grouping
-        )
-        SELECT genre,
-            movie,
-            SUM(sales),
-            ROUND(RATIO_TO_REPORT (SUM(sales)) OVER (PARTITION BY genre), 2) * 2 as ratio
-        FROM movie_ranking_by_genre
-        WHERE ranking <= 5
-        GROUP BY ROLLUP(genre, movie)
-        ORDER BY 1 ASC, 3 DESC;</copy>
-    ```
-    Here's the top movies within each genre and its contribution:
-
-    |GENRE|MOVIE|SUM(SALES)|RATIO|
-    |---|---|---|---|
-    |Action|null|1125332|1|
-    |Action|Avengers: Endgame|327423|0.3|
-    |Action|Captain Marvel|240827|0.22|
-    |Action|Spider-Man: Far from Home|209282|0.18|
-    |Action|Aquaman|196869|0.18|
-    |Action|Avengers: Infinity War|150931|0.14|
-    |Comedy|null|475992|1|
-    |Comedy|Spider-Man: Homecoming|111384|0.24|
-    |Comedy|Chef|100777|0.22|
-    |Comedy|Deadpool 2|96248|0.2|
-    |Comedy|Lady Bird|91200|0.2|
-    |Comedy|Jumanji: Welcome to the Jungle|76383|0.16|
-    |Drama|null|608123|1|
-    |Drama|Room|138024|0.22|
-    |Drama|The Lion King|137991|0.22|
-    |Drama|The Godfather|127420|0.2|
-    |Drama|The Ten Commandments|102949|0.16|
-    |Drama|Deadpool 2|101739|0.16|
-    |null|null|2209447|2|
-
-Notice, we also added the **RATIO\_TO\_REPORT** analytic function in order to compute the movie's contribution to the total within the report.
+The result appears to show that - at least for best selling movies - people select the movie with an equivalent distribution across genres.
 
 ## Task 7: Finding our most important customers
 
 ### Overview
+Let's pivot and look at customers.
+
 This final example will enrich our existing understanding of customer behavior by utilizing an RFM analysis. RFM is a very commonly used method for analyzing customer value. It is commonly used in general customer marketing, direct marketing, and retail sectors.
 
 In the following steps, the scripts will build a SQL query that will identify:
@@ -576,29 +387,10 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     c.income_level;</copy>
     ```
     Below is a snapshot of the result (and your result may differ):
-    |CUST_ID|CUST_NAME|COUNTRY|GENDER|AGE|INCOME_LEVEL|RFM_MONETARY|
-    |---|---|---|---|---|---|---|
-    |1000001|Tamara Angermeier|Mexico|Female|59|B: 30,000 - 49,999|4|
-    |1000004|Gaik-Hong Pouzade|Mexico|Female|53|B: 30,000 - 49,999|4|
-    |1000007|Perryn Koleyan|Mexico|Male|23|C: 50,000 - 69,999|5|
-    |1000010|Tatiana Sanu|Mexico|Female|66|D: 70,000 - 89,999|2|
-    |1000013|Bryan Primeau|Mexico|Male|43|B: 30,000 - 49,999|4|
-    |1000015|Kung-Zheng Artamova|Mexico|Male|65|A: Below 30,000|3|
-    |1000017|Bandhura Höhne|Mexico|Female|50|A: Below 30,000|3|
-    |1000021|Akara Papaz|Mexico|Male|66|A: Below 30,000|1|
-    |1000022|Asma Pollini|Mexico|Male|28|A: Below 30,000|2|
-    |1000025|Lonan Sergeyev|Mexico|Male|34|C: 50,000 - 69,999|5|
-    |1000027|Ernesto Preetish|Mexico|Male|55|A: Below 30,000|2|
-    |1000028|Iliona Gallois|Mexico|Female|45|A: Below 30,000|4|
-    |1000029|Gisella De Pougy|Mexico|Non-binary|58|E: 90,000 - 109,999|2|
-    |1000030|Liparit Jongman|Mexico|Male|42|E: 90,000 - 109,999|3|
-    |1000031|Yetar Cabrero|Mexico|Female|48|F: Above 110,000|4|
-    |1000033|Zhora Xue|Mexico|Female|38|B: 30,000 - 49,999|5|
-    |1000037|Olive Morgia|Mexico|Female|23|F: Above 110,000|4|
-    |1000038|Reinhard Evdikimov|Mexico|Male|16|A: Below 30,000|5|
-    |1000041|Carol Peck|United States|Male|41|D: 70,000 - 89,999|3|
 
-    
+    ![binned customers by sales](images/lab3-q9.png " ")
+
+
     The last column in the report shows the "Bin" value. A value of 1 in this column indicates that a customer is a low spending customer and a value of 5 indicates that a customer is a high spending customer. For more information about using the `NTILE` function, see [the SQL documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/NTILE.html#GUID-FAD7A986-AEBD-4A03-B0D2-F7F2148BA5E9).
 
 2.  Binning customer sales by frequency
@@ -615,29 +407,9 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     ```
     This should return a result similar to the following (again, your results may differ):
 
-    |CUST_ID|RFM_RECENCY|RFM_FREQUENCY|
-    |---|---|---|
-    |1214447|2|1|
-    |1271576|4|1|
-    |1381292|2|1|
-    |1173092|1|1|
-    |1394001|1|1|
-    |1033689|2|1|
-    |1036695|2|1|
-    |1313963|2|1|
-    |1133180|1|1|
-    |1087817|1|1|
-    |1201112|1|1|
-    |1118736|1|1|
-    |1107833|1|1|
-    |1243613|2|1|
-    |1147187|2|1|
-    |1158471|2|1|
-    |1217452|1|1|
-    |1391390|1|1|
-    |1088817|1|1|
+    ![binned customers by date and frequency](images/lab3-q10.png " ")
 
-    Now we can identify those customers, based on when they last watched a movie (rfm\_recency). And, identify customers that watch the fewest number of movies, where the rfm\_frequency is 1, versus those customers that watch the most number of movies, where the rfm\_frequency is 5.
+    Now we can categorize customers based on when they last watched a movie (rfm\_recency) and how frequently they viewed movies (rfm\_frequency).
 
 3.  Create an RFM query
 
@@ -666,43 +438,23 @@ Customers will be categorized into 5 buckets measured (using the NTILE function)
     FROM rfm r
     INNER JOIN customer c ON c.cust_id = r.cust_id
     WHERE r.rfm_monetary >= 5
-      AND r.rfm_recency <= 1
+      AND r.rfm_recency = 1
     ORDER BY r.rfm_monetary desc, r.rfm_recency desc;</copy>
     ```
-    The result only shows customers who have history had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers.
+    The result only shows customers who have history had significant spend (equal to 5) but have not visited the site recently (equal to 1).  MovieStream does not want to lose these important customers!
 
-    |CUST_ID|CUST_NAME|RFM_RECENCY|RFM_FREQUENCY|RFM_MONETARY|COUNTRY|GENDER|AGE|INCOME_LEVEL|
-    |---|---|---|---|---|---|---|---|---|
-    |1351052|Akra Schockemohle|1|5|5|Kenya|Male|23|A: Below 30,000|
-    |1177510|Alicia Tilak|1|5|5|Mexico|Female|26|A: Below 30,000|
-    |1028719|Gerard Carlson|1|5|5|United States|Male|32|B: 30,000 - 49,999|
-    |1040970|Ward Larson|1|5|5|United States|Male|17|B: 30,000 - 49,999|
-    |1066885|Monty Morris|1|5|5|United States|Male|21|A: Below 30,000|
-    |1323975|Everette Cooley|1|5|5|United States|Male|24|A: Below 30,000|
-    |1091259|Jennifer Kirk|1|5|5|United States|Male|24|A: Below 30,000|
-    |1296904|Rubie Carosi|1|4|5|Italy|Female|27|E: 90,000 - 109,999|
-    |1144796|Pap Spinello|1|5|5|Hungary|Male|37|F: Above 110,000|
-    |1352324|Xuer-Nei Mendès|1|5|5|Kenya|Female|17|A: Below 30,000|
-    |1339142|Zhao-Dao Lamboglio|1|5|5|Jordan|Male|33|A: Below 30,000|
-    |1334789|Geet Werner|1|5|5|Jordan|Male|25|A: Below 30,000|
-    |1356569|Carmen Ferrari|1|5|5|Kenya|Male|26|A: Below 30,000|
-    |1355551|Tat Frommel|1|5|5|Kenya|Male|16|A: Below 30,000|
-    |1299978|Lancelot Sterner|1|5|5|Kenya|Male|26|A: Below 30,000|
-    |1356568|Troy Wullenweber|1|4|5|Kenya|Male|37|A: Below 30,000|
-    |1057387|Dutta Tilak|1|5|5|India|Male|26|A: Below 30,000|
-    |1183390|Venkatesh Kathiravan|1|5|5|India|Male|24|B: 30,000 - 49,999|
-    |1008586|Elaine Burnett|1|5|5|United States|Female|21|A: Below 30,000|
-    |1329199|Kris Woods|1|5|5|United States|Female|21|A: Below 30,000|
+    ![RFM query](images/lab3-q11.png " ")
+
 
 ### Recap
-We covered alot of ground in this lab. You learned how to use different types of analytic functions, time series functions and subqueries to answer important questions about the business. 
+We covered alot of ground in this lab. You learned how to use different types of analytic functions, time series functions and subqueries to answer important questions about the business.
 These features include:
 
 - Different ways of joining tables
 
 - Time-series functions
 
-- Analytic functions to calculate contribution (**RATIO\_TO\_REPORT** and **ROLLUP**)
+- Analytic functions to calculate contribution (**RATIO\_TO\_REPORT** and **RANK**)
 
 - **NTILE** binning functions that helps categorize customer sales and activity
 
@@ -714,4 +466,4 @@ You may now [proceed to the next lab](#next).
 
 - **Authors** - Keith Laker and Marty Gubar, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Marty Gubar, October 2021
+- **Last Updated By/Date** - Richard Green, November 2021

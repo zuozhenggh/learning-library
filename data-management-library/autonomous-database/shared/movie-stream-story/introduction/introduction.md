@@ -9,6 +9,12 @@
 
 Most workshops focus on teaching you about a cloud service or performing a series of tasks. This workshop is different. You will learn how to deliver high value solutions using Oracle Cloud data platform services. And, the workshop will do this in the context of a company that we all can relate to and understand.
 
+There are two versions of this workshop:
+* [**Action! MovieStream Analytics Produce the Best Picture with Oracle Cloud**](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=865&clear=180&session=12485882445561) - dives into details of setting up the solution and analyzing data. Will take several hours to complete.  You are here!
+* **Action! MovieStream Analytics Produce the Best Short Film with Oracle Cloud** - A one hour version that performs much of the setup for you.
+
+There are also other workshops that focus on specific feature areas that also use the same business scenario.
+
 Oracle MovieStream is a fictitious movie streaming service - similar to those that you currently subscribe to. They face challenges that are typical to many organizations across industries. MovieStream must:
 * Gain a better understanding of their customers to ensure that they love the service  
 * Offer the right products to the right customers at the right price  
@@ -43,7 +49,7 @@ The workshop will continue to evolve and highlight more capabilities that will h
 
 ## Acknowledgements
 * **Author** - Marty Gubar, Product Manager
-* **Last Updated By/Date** - Richard Green, Database User Assistance, September 2021
+* **Last Updated By/Date** - Richard Green, Database User Assistance, November 2021
 
 Data about movies in this workshop were sourced from **Wikipedia**.
 

@@ -3,7 +3,7 @@
 ## Introduction
 This lab walks you through the steps to create and manage an Oracle Machine Learning user.
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 

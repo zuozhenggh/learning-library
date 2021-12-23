@@ -48,19 +48,21 @@ Download the Backup Module from My Oracle Support to the backup module server.
 
 3. Copy the download link for the Backup Module. 
 
-    Access the latest version of the Backup Module from My Oracle Support [Patch 31254259](https://updates.oracle.com/download/31254259.html). 
+    Access the latest version of the Backup Module from My Oracle Support [Patch 33105050](https://updates.oracle.com/download/33105050.html). 
 
     Right click on the Download button and select **Copy link address**
+
+    ![](./images/downloadlink.png " ")
 
 4. Enter the wget command containing the patch name, your MyOracleSupport e-mail address, and the download link.
 
     Make sure to replace firstname.name@oracle.com with your MOS email address in this example: 
 
-        wget --output-document=p31254259_R12_Generic.zip --http-user=<MOS_Email_Address> --ask-password '<download link>'
+        wget --output-document=p33105050_R12_GENERIC.zip --http-user=<MOS_Email_Address> --ask-password '<download link>'
     
     Example:
 
-        wget --output-document=p31254259_R12_Generic.zip --http-user=firstname.name@oracle.com --ask-password 'https://updates.oracle.com/Orion/Download/process_form/p31254259_R12_GENERIC.zip?file_id=109968332&aru=23539624&userid=O-firstname.name@example.com&email=firstname.name@example.com.com&patch_password=&patch_file=p31254259_R12_GENERIC.zip'
+        wget --output-document=p33105050_R12_GENERIC.zip --http-user=firstname.name@oracle.com --ask-password 'https://updates.oracle.com/Orion/Download/process_form/p33105050_R12_GENERIC.zip?file_id=109968332&aru=23539624&userid=O-firstname.name@example.com&email=firstname.name@example.com.com&patch_password=&patch_file=p33105050_R12_GENERIC.zip'
 
     Enter your MyOracleSupport account password when prompted. 
 
@@ -69,7 +71,7 @@ Download the Backup Module from My Oracle Support to the backup module server.
 5. Extract the downloaded patch. Unzipping the patch zip file creates a directory named RemoteClone.
 
         <copy>
-        unzip p31254259_R12_Generic.zip
+        unzip p33105050_R12_GENERIC.zip
         </copy>
 
     ![](./images/23.png " ")
@@ -77,7 +79,7 @@ Download the Backup Module from My Oracle Support to the backup module server.
 6. Change to the RemoteClone directory and change the permission to "execute" for all the downloaded scripts.
 
         <copy>
-        cd 31254259
+        cd 33105050
         cd RemoteClone
         chmod +x *.pl
         chmod +x lib/*.sh
@@ -99,6 +101,7 @@ You may proceed to the next lab.
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
+    - Chris Wegenek, Cloud Engineering
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering, September 2021
 
 

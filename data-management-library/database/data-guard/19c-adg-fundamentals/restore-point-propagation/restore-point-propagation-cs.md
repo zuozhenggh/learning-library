@@ -17,6 +17,10 @@ Please note that Guaranteed Restore Points on the primary are replicated as regu
 
 Estimated Lab Time: 20 Minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:4KVfLFQWdiw)
+
 ### Objectives
 - Create a restore point in the primary database
 - Check the restore points

@@ -2,50 +2,50 @@
 
 ## Introduction
 
-This tutorial shows you how to stage and publish a web application.
+This lab shows you how to stage and publish your web app.
 
 Estimated Lab Time:  10 minutes
 
 ### Background
 
-Once you have created an Oracle Visual Builder application, you can stage it to allow team members to test it thoroughly. After testing is complete, you can publish the application and make it available to users.
+So far in this workshop, you've built the HR web application to show employees, their departments, and locations. Now that your work designing the app is more or less complete, you can stage it to allow team members to test it thoroughly. After testing is complete, you can publish the application and make it available to users.
 
-Oracle Visual Builder provides different databases for the development, staging, and live phases of an application. You can use an empty database for the staging or live phase, or you can transfer data from one to another, or you can import specific data for each.
+Visual Builder provides different databases for the development, staging, and live phases of an application. You can use an empty database for the staging or live phase, you can transfer data from one to another, or you can import specific data for each.
 
-This tutorial shows you how to stage, publish, and access those apps within the Designer. You can also perform these operations from the application's Options menu on the Visual Applications page. 
+This lab shows you how to stage, publish, and access those apps within the Designer. You can also perform these operations from the application's Options menu on the Visual Applications page.
 
 ## Task 1: Stage the Application
 
 Stage the application so that other users can test its behavior.
 
-1.  If necessary, log in to Oracle Visual Builder and access the HR Application you created.
-
-2.  Click the **Menu** ![Menu icon](./images/vbcssp_menu3_icon.png) icon in the header and select **Stage**.
+1.  Click the **Menu** ![Menu icon](./images/vbcssp_menu3_icon.png) icon in the header and select **Stage**.
 
     ![](./images/vbcssp_sta_s2.png)
 
-3.  In the Stage Application dialog box, select the **Populate Stage with Development data** option and click **Stage**.
+2.  In the Stage Application dialog box, select the **Populate Stage with Development data** option and click **Stage**.
 
     ![](./images/vbcssp_sta_s3.png)
 
     The application is staged, and its status as shown in the header changes from `DEV` to `STAGE`.
 
-4.  From the header **Menu** ![Menu icon](./images/vbcssp_menu3_icon.png), click **Open Staged Application**.
+3.  From the header **Menu** ![Menu icon](./images/vbcssp_menu3_icon.png), click **Open Staged Application**.
 
     ![](./images/vbcssp_sta_s4.png)
 
     The staged application opens in a new browser tab. The tables are populated with the data from Development.
 
-5.  Make a note of the URL of the staged application. You can share this URL with members of your group so that they can test it.
+    ![](./images/open_shared_application_result.png)
 
-    When you have finished using the application, close the browser tab to return to the  application in the Designer.
+4.  Make a note of the application's URL to share with your team.
+
+    When you have finished using the application, close the browser tab to return to the application in the Designer.
 
 
-## Task 2: Import Data Into the Application (Optional)
+## Task 2: Import Data Into the Application
 
-You can import data for the Department and Employee business objects from a zip file. You can skip directly to the publishing step if you wish.
+To add more records to your data in the staging database, let's import data for the Department and Employee business objects from a zip file.
 
-1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kcwuO0EddkCHQQnigbOXMoxJDD4xNLT6azZzK_dRbejWKG5XHRVra7DUO6K2dF2V/n/c4u04/b/solutions-library/o/HR_Application_Stage.zip) and save the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fxYS-wCkrWveFFyOH9qy9uyv24QowtS8uhdCDGmUvqJZqeFA7JAhkXHlOd6IXMpb/n/c4u03/b/oci-library/o/WMS4121HR_Application_Stage.zip) and save the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
 3.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/vbcssp_bo_icon.png) tab, then click **Menu** ![Menu icon](./images/vbcssp_menu2_icon.png) and select **Data Manager**.
 
     ![](./images/vbcssp_imp_s3.png)
@@ -86,12 +86,16 @@ After you have successfully tested the staged application, you can publish it an
 
     The application opens in a new browser tab. The schema and the data from the staging database are copied to the live database.
 
-4.  Make a note of the URL of the application. You can share this URL with public users.
+    To open your live app from the Visual Builder Home page, click **ORACLE Visual Builder** in the header to go to the Visual Applications page. Locate the HR Application, click **Live** in the Status column, then select **hrwebapp** to open the app.
 
-    When you've finished using the application, close the browser tab.
+    ![](./images/vbcssp_pub_s4_result.png)
 
-5.  If you want to, click the user menu in the top-right corner and select **Sign Out** from the menu. After you've published an application, you will no longer be able to make changes to it. Instead, create a new version of it and edit that.
+4.  Make a note of your application's URL. You can now share this URL with public users. Remember to close the browser tab when you're done using the application.
+
+    After your application is published, you will no longer be able to make changes to it. To do that, you'll need to create a new version from the application's Options menu on the Visual Applications page. This creates a development version of the app for you to work on while the published version stays live. Once you are ready to go live with your updates, you'll need to re-stage and re-publish the new version.
+
+    That's it for this workshop! If you want, click the user menu in the top-right corner and select Sign Out from the menu.
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
-* **Last Updated By** - February 2021
+* **Last Updated By** - November 2021

@@ -45,7 +45,7 @@ This lab assumes you have:
 
    ![pic2](images/to-homepage5.png)
 
-4. Open the Project that we created earlier by clicking on **Projects and Reports** or **Projects** and then click on `Performance analysis`.
+4. Open the workbook that we created earlier by clicking on **Workbooks and Reports** and then click on `Performance analysis`.
 
    ![pic2](images/open-project2.png)
 

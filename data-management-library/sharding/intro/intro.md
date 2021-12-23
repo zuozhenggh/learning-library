@@ -5,12 +5,14 @@ Oracle Database Sharding enables globally distributed, linearly scalable, multi-
 
 *Estimated Workshop Time:*  1 hour
 
-![](images/sharding1.jpg " ")
+![](images/sharding_intro.jpg " ")
 
 It is built on shared-nothing architecture, in which data is horizontally partitioned across databases that share no hardware or software. To learn more, see this [blog](https://blogs.oracle.com/database/sharding-oracle-database-cloud-service-v2).
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/MGGXnjVrLzI).</if>
+
 **Workshop Architecture**
-![](images/sharding2.jpg " ")
+![](images/sharding_arch.jpg " ")
 
 ### Objectives
 In this workshop, you will gain first-hand experience of how Oracle Database can store structured and unstructured data in same database with ten’s of petabytes of data.

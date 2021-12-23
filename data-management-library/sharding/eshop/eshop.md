@@ -14,7 +14,8 @@ We developed this application to demonstrate Oracle Sharding (a hyperscale globa
 
 *Estimated Lab Time*: 10 Minutes
 
-![](./images/app_front.jpg " ")
+Watch the video below for a walk through of the lab.
+[](youtube:EMhd5OolcbM)
 
 Typically, multiple technologies and products are required to develop such an application. For example, you would need a JSON database, a Text Index application, a relational database, and an Analytics engine, which makes it difficult to query data across multiple data stores. Further, using the traditional methods, you could spend several years and millions of dollars in licensing and development.
 
@@ -117,7 +118,7 @@ You can change the address shown in Saved Address if you want to ship products t
 
 ## Task 2: View Reports
 
-The application can create reports by emulating two large data sets from relational tables (customers, orders, line items) and non-relational tables (Products and Reviews - JSON, Text, sentiment analysis). And these Analytics reports are built from a single query spanning multiple data types from multiple shard databases.
+Navigate to application's home page and click on **REPORT** to view reports. You can view reports as logged-in user only. The application can create reports by emulating two large data sets from relational tables (customers, orders, line items) and non-relational tables (Products and Reviews - JSON, Text, sentiment analysis). And these Analytics reports are built from a single query spanning multiple data types from multiple shard databases.
 
 1.	Dollar value sale by month: A single query from LINE_ITEM accessing multiple shard databases.
 2.	Sentiment Percentage: A single query from Reviews accessing multiple shard databases.

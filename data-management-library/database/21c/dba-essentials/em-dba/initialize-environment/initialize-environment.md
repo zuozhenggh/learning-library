@@ -4,7 +4,7 @@
 
 In this lab we will review and startup all components required to successfully run this workshop.
 
-Estimated Time: 10 Minutes
+*Estimated Time:* 10 Minutes
 
 ### Objectives
 - Initialize the workshop environment.
@@ -22,23 +22,17 @@ This lab assumes you have -
     - Database Listeners
         - LISTENER
         - LISTENER_1522
-        - LISTENER_1523
-        - LISTENER_1524
-        - LISTENER_1525
     - Database Server Instances
         - emrep
-        - sales
-        - finance
-        - hr
-        - cdb186
         - db19c
+		- orcl
     - Enterprise Manager - Management server (OMS)
     - Enterprise Manager - Management Agent (emagent)
 
 2. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
 
     ```
-    Username: <copy>sysman</copy>
+    User name: <copy>sysman</copy>
     ```
     ```
     Password: <copy>welcome1</copy>
@@ -141,7 +135,7 @@ This lab assumes you have -
     </copy>
     ```
 
-    ![](images/update_ssh_creds-0.png " ")
+    ![](images/update-ssh-creds-0.png " ")
 
 ### **Update the Named Credentials with the new SSH Key**
 
@@ -149,29 +143,29 @@ This lab assumes you have -
 
 5. Click Edit. Replace the existing entry with the *SSH Private Key* you copied to *"/tmp"*. Keep the General section unchanged and update the *Credential Properties* as followed:
 
-    - Username: *oracle*
+    - User name: *oracle*
     - Delete any content from *SSH Public Key* Textbox
     - Click *Browse* to select the *Private Key*
 
-    ![](images/update_ssh_creds-1.png " ")
+    ![](images/update-ssh-creds-1.png " ")
 
 6. On the file browser, navigate to *+Other Locations* > *tmp* and select the file *rsa_priv*
 
-    ![](images/update_ssh_creds-2.png " ")
+    ![](images/update-ssh-creds-2.png " ")
 
 7. Click *Test and Save*
 
-    ![](images/update_ssh_creds-3.png " ")
-    ![](images/update_ssh_creds-4.png " ")
+    ![](images/update-ssh-creds-3.png " ")
+    ![](images/update-ssh-creds-4.png " ")
 
 8. Setup oracle Named Credentials using Job System. This will set up the user oracle password on the host and update the Named Credentials used in this workshop.
 Navigate to ***Enterprise*** > ***Job*** > ***Library*** and select "SETUP ORACLE CREDENTIALS"; Click Submit.
 
-    ![](images/named_creds_job.jpg " ")
+    ![](images/named-creds-job.jpg " ")
 
 9. Click Submit again on the Job submission Page
 
-    ![](images/named_creds_job_submit.jpg " ")
+    ![](images/named-creds-job-submit.jpg " ")
 
 10. The Job will be submitted successfully. Click on SETUP ORACLE CREDENTIALS Job link to view the Job
 
@@ -179,9 +173,9 @@ Navigate to ***Enterprise*** > ***Job*** > ***Library*** and select "SETUP ORACL
 
 11. The Job should show Status **Succeeded**
 
-    ![](images/named_creds_job_succeeded.jpg " ")
+    ![](images/named-creds-job-succeeded.jpg " ")
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Appendix 1: Managing Startup Services
 
@@ -270,7 +264,7 @@ If for any reason you want to login from a location that is external to your rem
 1.  Enterprise Manager 13c Console
 
     ```
-    Username: <copy>sysman</copy>
+    User name: <copy>sysman</copy>
     ```
     ```
     Password: <copy>welcome1</copy>

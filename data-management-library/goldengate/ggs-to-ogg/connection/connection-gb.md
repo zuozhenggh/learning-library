@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure and add it to the Oracle GoldenGate Service Manager. Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
+This lab walks you through the steps to download the root certificate from Oracle Cloud Infrastructure (OCI) and add it to the Oracle GoldenGate Service Manager. Adding the Oracle Cloud Infrastructure root certificate to Oracle GoldenGate creates a trusted TLS connection between OCI GoldenGate and Oracle GoldenGate.
 
 Estimated time: 10 minutes
 
@@ -25,42 +25,47 @@ To successfully complete this lab, you must have:
 
 ## Task 1A: Using Chrome to Download the Root Certificate
 
-The following instructions show you how to download the Root Certificate using a Chrome web browser.
+> **Note:** *Mac users should follow Task 1B and use FireFox to download the root certificate.*
 
-1.  Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
+1.  Launch the OCI GoldenGate Deployment Console if you don't already have it open, and log in.
 
-2.  In your Chrome browser address bar, click the padlock icon, and then click **Certificate (Valid)**.
+2.  In your Chrome browser address bar, click the padlock icon, and then click **Connection is secure**.
 
     ![](images/01-04-certificate.png " ")
 
-3.  In the Certificate window, click **Certification Path**, select **DigiCert**, and then click **View Certificate**.
+3.  Click **Certificate is valid**.
+
+    ![](images/01-03-certificate.png " ")
+
+4.  In the Certificate window, click **Certification Path**, select **DigiCert Global Root G2**, and then click **View Certificate**.
+
+    ![](images/01-04-certificate-window.png " ")
 
     Another Certificate window opens, displaying the details for the root DigiCert certificate.
 
     ![](images/01-04-digicert.png " ")
 
-4.  Click **Details**, and then click **Copy to File**.
+5.  Click **Details**, and then click **Copy to File**.
 
     ![](images/01-05.png " ")
 
-5.  In the Certificate Export Wizard, click **Next**.
+6.  In the Certificate Export Wizard, click **Next**.
 
-6.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
+7.  Select **Base-64 encoded X.509 (.CER)**, and then click **Next**.
 
     ![](images/01-07.png " ")
 
-7.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
+8.  Click **Browse** to select a location on your local machine to save the root certificate, and then enter a file name, such as **DigiCert-Root.cer**, and click **Save**.
 
-8.  Click **Next**, and then click **Finish**.
+9.  Click **Next**, and then click **Finish**.
 
 A Certificate Export Wizard dialog displays **The export was successful**. You can close the Certificate windows.
-
 
 ## Task 1B: Using FireFox to Download the Root Certificate
 
 The following instructions show you how to download the Root Certificate using a FireFox web browser.
 
-1.  Log in to the **Oracle Cloud Infrastructure Console** with your username and password. See [Signing in to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the *Oracle Cloud Infrastructure* documentation.
+1.  Launch the OCI GoldenGate Deployment Console if you don't already have it open, and log in.
 
 2.  In your FireFox browser address bar, click the padlock icon, and then next to Connection Secure, click **Show connection details** (right arrow icon).
 
@@ -74,9 +79,7 @@ The following instructions show you how to download the Root Certificate using a
 
     ![](images/01b-04.png " ")
 
-5.  On the **Certificate** page, click **DigiCert Global Root CA**.
-
-    ![](images/01b-05.png " ")
+5.  On the **Certificate** page, click **DigiCert Global Root G2**.
 
 6.  Under the **Miscellaneous** section, for Download, click **PEM (cert)**, and save the PEM file to your local drive.
 
@@ -141,4 +144,4 @@ In this lab, you created a trusted connection between Oracle GoldenGate and OCI 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, November 2021

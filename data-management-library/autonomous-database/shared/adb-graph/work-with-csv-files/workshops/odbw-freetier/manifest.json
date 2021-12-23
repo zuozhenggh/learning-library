@@ -5,6 +5,7 @@
         {
             "title": "Introduction",
             "description": "About this workshop",
+            "type": "odbw",
             "filename": "../../introduction/introduction.md"
         },
         {

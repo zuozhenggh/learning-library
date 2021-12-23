@@ -38,7 +38,7 @@ This lab assumes that you completed all preceding labs.
 
     ![](images/01-01-02a.png " ")
 
-2.  You may need to select a compartment. Under List Scope, from the Comparment dropdown, expand the root compartment, and then select your compartment.
+2.  You may need to select a compartment. Under List Scope, from the Compartment dropdown, expand the root compartment, and then select your compartment.
 
 3.  On the Deployments page, click **Create Deployment**.
 
@@ -173,4 +173,4 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, November 2021

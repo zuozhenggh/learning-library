@@ -28,9 +28,7 @@ Oracle’s JSON capabilities are focused on providing full support for schemales
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -39,7 +37,7 @@ This lab assumes you have:
 
 ## Task 1: Retrieve JSON data
 
-1. Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
+1. On the web browser window on the right preloaded with  **Oracle Weblogic Server Administration Console**, navigate to *`http://localhost:7101/resources/html/endPointChecker.html`*.
 
 2. Click on the drop-down to see the list of datatypes shown in workshop.
 
@@ -53,7 +51,7 @@ This lab assumes you have:
 
     ![](./images/json-search-product-292.png " ")
 
-6. To verify the product on eShop application, open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
+6. To verify the product on eShop application, open a new browser tab and navigate to *`http://localhost:7101/product/292`* to see the details of the product graphically.
     ![](./images/json-product-292.png " ")
 
 7.	Verify the PID, Details and Title.
@@ -68,7 +66,7 @@ This lab assumes you have:
 
 3.	You will observe the message “1 records updated”.
 
-4.	To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
+4.	To verify the product on eShop application, return to the browser tab on the right window loaded with the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
 
     ![](./images/json-product-292-updated.png " ")
 
@@ -96,7 +94,7 @@ This lab assumes you have:
 
     ![](./images/json-product-292-notavlbl.png " ")
 
-6. To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`*.
+6. To verify the product on eShop application, return to the browser tab on the right window loaded with the URL *`http://localhost:7101/product/292`*.
 
 7. You will find the product missing from the JSON database.
 
@@ -104,9 +102,7 @@ This lab assumes you have:
 
 ## Task 4: Insert JSON data
 
-1.	Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
-
-   If the tool is already open, continue...
+1.	On the web browser window on the right, navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* if not already opened
 
 2.	Click on the drop-down to see the list of datatypes shown in workshop.
 
@@ -133,7 +129,7 @@ This lab assumes you have:
 
     ![](./images/json-search-product-292.png " ")
 
-9. To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
+9. To verify the product on eShop application, return to the browser tab on the right window loaded with the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
 
     ![](./images/json-product-292.png " ")
 

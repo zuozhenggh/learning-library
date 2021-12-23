@@ -8,7 +8,9 @@ The Java EE implementation offers increased functionality including a command li
 
 Watch the video below for a comprehensive overview of REST and how ORDS provides what you need to deliver RESTful Services for your Oracle Database.
 
-[](https://youtu.be/rvxTbTuUm5k)
+[](youtube:rvxTbTuUm5k)
+
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/t0MkIxMKhDo).</if>
 
 ### About this Workshop
 

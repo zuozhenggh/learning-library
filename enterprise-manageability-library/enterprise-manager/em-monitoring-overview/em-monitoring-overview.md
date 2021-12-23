@@ -4,18 +4,21 @@ Oracle Enterprise Manager enables you to get complete monitoring visibility into
 
 - Single pane of glass monitoring for on-premises, hybrid, and Oracle Cloud Platform
 
-- Comprehensive set of predefined performance and health metrics that enables lights-out monitoring of critical components in your environment, such as applications, application servers, databases, as well as the back-end components on which they rely, such as hosts and storage.
+- Comprehensive set of predefined performance and health metrics that enables lights-out monitoring of critical components in your environment, such as applications, application servers, databases, as well as the back-end components on which they rely, such as hosts and storage
 
-- Rich set of alerting, incident management and notification capabilities to notify IT staff and integrate with your corporate ticketing systems.
+- Rich set of alerting, incident management and notification capabilities to notify IT staff and integrate with your corporate ticketing systems
 
 - Corrective Actions to auto-correct alerts and minimize service disruption
 
 - Metric Extensions to monitor conditions specific to your environment
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:Qu0F2wVp3k0)
+
 ### Objectives
 The objective of this lab is to become familiar with Enterprise Monitoring capabilities using Oracle Enterprise Manager Cloud Control 13c.
 
-*Estimated Lab Time*: 55 minutes
+*Estimated Time*: 55 minutes
 
 
 ### Lab Timing (Estimated)
@@ -46,7 +49,7 @@ The Overview pane shows the Target Status of your IT estate. The Status section 
 
     ![](images/emmonlab1step3.png " ")
 
-4. Click on the Red slice of the pie in the “Status” section. Note: You can ignore any differences between the count of targets in the screenshots vs. what you see in your lab environment. The number of targets may vary based on your lab environment.
+4. Click on the Red slice of the pie in the “Status” section. **Note:** You can ignore any differences between the count of targets in the screenshots vs. what you see in your lab environment. The number of targets may vary based on your lab environment.
 
     ![](images/emmonlab1step4.png " ")  
 
@@ -111,7 +114,7 @@ Incident Manager provides in one location the ability to search, view, manage, a
 
       - Incident Details contains information about the incident such as target name, creation date, type, and summary.
       - Tracking provides the priority, status, and ability to manage the incident.
-      incident resolution and provides the ability to diagnose and take action to resolve the incident.
+      - Guided Resolution provides the ability to diagnose and take action to resolve the incident.
 
      ![](images/emmonlab2step6.png " ")
 
@@ -212,6 +215,8 @@ As Best Practice:
 
 12.	Click OK to save changes, then you should see a Confirmation message . Click OK.
 
+     ![](images/emmonlab3step12pt1.png " ")
+
      ![](images/emmonlab3step12.png " ")
 
 13.	Navigate to “Database >> Monitoring >> All Metrics”.
@@ -302,7 +307,7 @@ Corrective Actions automates response to metric alerts and events. A Corrective 
 
      ![](images/emmonlab4step15.png " ")
 
-16.	Notice there is now a Corrective Action specified for Warning threshold violations. The Corrective Action will trigger when Tablespace Space Used (%) >= 85%. Also notice the Warning message at the top of the screen indicating that the metric settings for the target are managed by the monitoring templates associated through the Administration Groups.  Administration Groups will be discussed in Step 7 below, but this message indicates that if we want to keep this setting (i.e. associating the corrective action for this metric), you will also need to click on the ‘Template Override’ option at the bottom of the screen. Click Continue.
+16.	Notice there is now a Corrective Action specified for Warning threshold violations. The Corrective Action will trigger when Tablespace Space Used (%) >= 85%. Also notice the Warning message at the top of the screen indicating that the metric settings for the target are managed by the monitoring templates associated through the Administration Groups.  Administration Groups will be discussed in Task 7 below, but this message indicates that if we want to keep this setting (i.e. associating the corrective action for this metric), you will also need to click on the ‘Template Override’ option at the bottom of the screen. Click Continue.
 
      ![](images/emmonlab4step16.png " ")
 
@@ -400,7 +405,7 @@ For this lab, a metric extension has already been created and is in Editable sta
 
 ## Task 6: Monitoring Templates
 
-Monitoring templates enable you to deploy standardized monitoring setting across the targets in your data center. Enterprise Manager allows you to define monitoring settings on one target, and deploy the same settings to other targets. This feature is called Monitoring Template. When a change is made to a template, you can reapply the template across affected targets in order to propagate the new changes. The apply operation can be automated using Administration Groups and Template Collections. For any target, you can preserve custom monitoring settings by specifying metric settings that can never be overwritten by a template.
+Monitoring templates enable you to deploy standardized monitoring settings across the targets in your data center. Enterprise Manager allows you to define monitoring settings on one target, and deploy the same settings to other targets. This feature is called Monitoring Template. When a change is made to a template, you can reapply the template across affected targets in order to propagate the new changes. The apply operation can be automated using Administration Groups and Template Collections. For any target, you can preserve custom monitoring settings by specifying metric settings that can never be overwritten by a template.
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
 
@@ -460,7 +465,7 @@ Monitoring templates enable you to deploy standardized monitoring setting across
 
 ## Task 7: Administration Groups and Template Collections
 
-Administration groups are designed to simplify the process of setting up targets for management in Enterprise Manager. Typically, management settings such as monitoring settings and compliance standards are applied to a target manually or by custom scripts defined by the administrator. With Administration Groups, you first define a hierarchy of administration groups where targets in each group have the same management settings.  Next for each administration group, define and combine management settings (e.g. monitoring settings, compliance standards and cloud policies) into a container (called template collections) and associate them with the appropriate Administration Group. Once that one-time setup is done, all you need to do is add the target to the appropriate Administration Group, and Enterprise Manager will automatically apply the associated management settings to the target as it joins the group.  This greatly simplifies and streamlines the process of target setup. It also enables a datacenter to easily scale as new targets are added to Enterprise Manager for management.
+Administration Groups are designed to simplify the process of setting up targets for management in Enterprise Manager. Typically, management settings such as monitoring settings and compliance standards are applied to a target manually or by custom scripts defined by the administrator. With Administration Groups, you first define a hierarchy of Administration Groups where targets in each group have the same management settings.  Next for each Administration Group, define and combine management settings (e.g. monitoring settings, compliance standards and cloud policies) into a container (called template collections) and associate them with the appropriate Administration Group. Once that one-time setup is done, all you need to do is add the target to the appropriate Administration Group, and Enterprise Manager will automatically apply the associated management settings to the target as it joins the group.  This greatly simplifies and streamlines the process of target setup. It also enables a datacenter to easily scale as new targets are added to Enterprise Manager for management.
 
 1. Log into an Enterprise Manager VM (using provided IP). The Enterprise Manager credentials are “emadmin/welcome1”.
 
@@ -505,9 +510,9 @@ To create this hierarchy, use target properties to define the membership criteri
 
 10.	The Non-Production Template Collection contains two Monitoring Templates. Click OK once you are done reviewing the templates.
 
-     - Dev_Test_PDB_Monitoring_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Test".
+     - Dev\_Test\_PDB\_Monitoring\_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Test".
 
-     - Dev_Test_DB_Instance_Monitoring_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Test".
+     - Dev\_Test\_DB\_Instance\_Monitoring\_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Test".
 
      ![](images/emmonlab7step10.png " ")
 
@@ -517,11 +522,11 @@ To create this hierarchy, use target properties to define the membership criteri
 
 12.	The Production Template Collection contains 3 Monitoring Templates. Click OK once you are done reviewing the templates.
 
-     - Prod_PDB_Monitoring_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
+     - Prod\_PDB\_Monitoring\_Template: This monitoring template will be applied to Pluggable Database targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
 
-     - Prod_DB_Instance_Monitoring_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
+     - Prod\_DB\_Instance\_Monitoring\_Template: This monitoring template will be applied to Database Instance targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
 
-     - Prod_Host_Monitoring_Template: This monitoring template will be applied to Host targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
+     - Prod\_Host\_Monitoring\_Template: This monitoring template will be applied to Host targets that join the Admin Group with their Lifecycle Status target property defined as "Production".
 
      ![](images/emmonlab7step12.png " ")
 
@@ -585,7 +590,7 @@ To create this hierarchy, use target properties to define the membership criteri
 
      ![](images/emmonlab7step27.png " ")
 
-28.	Notice in the Synchronization Status section, there is now one additional (total of 4) synchronized targets for Monitoring Templates. Note: You may need to click on the page refresh icon if the count under Synchronized Targets doesn’t update right away.
+28.	Notice in the Synchronization Status section, there is now one additional (total of 4) synchronized targets for Monitoring Templates. **Note:** You may need to click on the page refresh icon if the count under Synchronized Targets doesn’t update right away.
 
      ![](images/emmonlab7step28.png " ")
 
@@ -723,7 +728,7 @@ Severity: In Critical
 
      ![](images/emmonlab8step28.png " ")
 
-    Note:  Rule Sets are evaluated and executed in the order specified under the Order column.  When you create your own rule set that has an action to create an incident, you typically want to reorder it such that its order is ahead of the out-of-box rule sets.  This is to ensure that your rule set that creates the incident will be used instead of the out-of-box rule set.   However, for this lab exercise, we can skip this step.
+    **Note:**  Rule Sets are evaluated and executed in the order specified under the Order column.  When you create your own rule set that has an action to create an incident, you typically want to reorder it such that its order is ahead of the out-of-box rule sets.  This is to ensure that your rule set that creates the incident will be used instead of the out-of-box rule set.   However, for this lab exercise, we can skip this step.
 
 ## Learn More?
 
@@ -735,4 +740,4 @@ Severity: In Critical
 - **Author** - Karilyn Loui, Oracle Enterprise Manager Product Management
 - **Contributing Author** - Ana McCollum, Daniel Suherman, Murtaza Husain, Oracle Enterprise Manager Product Management
 - **Adapted for Cloud** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Last Updated By/Date** – Daniel Suherman - Enterprise Manager Product Management [Apr 2021]
+- **Last Updated By/Date** – Desiree Abrokwa - Enterprise Manager Product Management [Dec 2021]

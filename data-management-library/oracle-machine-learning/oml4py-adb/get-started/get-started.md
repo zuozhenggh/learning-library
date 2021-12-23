@@ -3,7 +3,11 @@
 ## Introduction
 This lab walks you through the steps of accessing Oracle Machine Learning Notebooks, loading notebooks and running OML4Py scripts.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:J0GlX2uBLrQ)
 
 ### Objectives
 
@@ -39,7 +43,7 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 
     ![Oracle Machine Learning home page](images/oml-notebooks-homepage.png " ")
 
-## Task 2: Get familiar with the OML Notebooks
+## Task 2: Get familiar with OML Notebooks
 
 <if type="freetier">
 1. [**CLICK HERE** to download a ZIP file with all the notebooks we will use for these Labs (in JSON format)](./../notebooks/oml4py_labs_freetier.zip?download=1) which contain the notebooks for the Labs.  Save it to your local machine and __extract them__ to a memorable place.
@@ -48,9 +52,9 @@ You create notebooks in Oracle Machine Learning Notebooks. You can access Oracle
 1. [**CLICK HERE** to download a ZIP file with all the notebooks we will use for these Labs (in JSON format)](./../notebooks/oml4py_labs_livelabs.zip?download=1) which contain the notebooks for the Labs.  Save it to your local machine and __extract them__ to a memorable place.
   </if>
 
-> **NOTE:** If you have problems with downloading and extracting the ZIP file, please [**CLICK HERE** to download the "Lab 1: Get Started with OML4Py on Autonomous Database" notebook in JSON format](./../notebooks/lab1_get_started.json?download=1) which contains the notebook version of Lab1, save it to your local machine and import it like illustrated below.
+> **NOTE:** If you have problems with downloading and extracting the ZIP file, please [**CLICK HERE** to download the "Lab 1: Get Started with OML4Py on Autonomous Database" notebook in JSON format](./../notebooks/lab1_get_started.json?download=1) which contains the notebook version of Lab1, save it to your local machine and import it as illustrated below.
 
-  To load the downloaded notebook files:
+  To import the downloaded notebook files to OML Notebooks:
   - Go to the Notebooks page, and click **Import**.  
 
   ![Oracle Machine Learning Notebooks import](images/click-on-import-notebook.png " ")
@@ -78,7 +82,7 @@ For example, it displays the status and the number of users connected to the not
 
 OML Notebooks contain a default list of interpreter bindings, used to run scripts against the Autonomous Database that it is linked to.  For this lab, we will set the interpreter binding to "xxxx_medium", where xxxx is the database name.
 
-Click the interpreter bindings icon (![](images/interpreter_bindings_icon_small.png "")) in the upper right-corner of the Notebook (the gear) to view the list of available interpreter bindings.
+Click the interpreter bindings icon (![](images/interpreter_bindings_icon_small.png "")) in the upper right-corner of the notebook (the gear) to view the list of available interpreter bindings.
   ![Oracle Machine Learning Notebooks Interpreter Bindings](images/interpreter_bindings.png " ")
 
 The default service is low. Click to bind or unbind an interpreter. Drag-and-drop individual interpreter binding settings up or down to order which binding will be used by default. The first interpreter on the list becomes the default. Those highlighted in blue are active.

@@ -39,15 +39,15 @@ In this lab, you will:
 
 1. In this part of the workshop we are creating an APEX workspace. From the Autonomous Database Home page go to **Tools** section and select **Oracle Application Express** area.
 
-    ![ORDS](./images/apex_workspace1.png)
+    ![APEX access from ATP Dashboard](./images/apex_workspace1_new.png)
 
 2. This will open a new browser tab for Application Express Administration. Login as the Admin user, with the **Admin** password you specified at Autonomous Database creation time.
 
-    ![ORDS](./images/apex_workspace2.png)
+    ![Admin login](./images/apex_workspace2.png)
 
-3. Create the workshop Workspace on the Welcome to "Oracle Application Express" page, select **Create Workspace**.
+3. Create the workshop Workspace on the "Welcome to Oracle Application Express!" page, select **Create Workspace**.
 
-    ![ORDS](./images/apex_workspace3.png)
+    ![Create APEX workspace](./images/apex_workspace3_new.png)
 
     Use the following information to fill out the form:
 
@@ -57,23 +57,28 @@ In this lab, you will:
 
 4. Select **Create Workspace**.
 
-    ![ORDS](./images/apex_workspace4.png)
+    ![Create APEX workspace and User](./images/apex_workspace4.png)
 
     You will be returned to the Oracle APEX administration page, and a message will be displayed "**Workspace Created**".
 
 5. Sign in as the **ATP&#95;ODA** user by selecting the icon on the centre of the screen where you can see the name of the user, **ATP&#95;ODA**.
 
-    ![ORDS](./images/apex_workspace5.png)
+    ![Sign in as User Dashboard](./images/apex_workspace5.png)
 
-6. Add the **name of the workspace**, **user name** and **password**: **ATP&#95;ODA** and click **Sign in**.
+6. Fill the following details: **Name of the workspace**, **User name**, **Password** and click **Sign in**.
 
-    ![ORDS](./images/apex_workspace7.png)
+    - **Name of the workspace**: ATP&#95;ODA
+    - **User Name**: ATP&#95;ODA
+    - **Password**: Any password that meets the Oracle Cloud requirements.
+    
+
+    ![User Login Dashboard](./images/apex_workspace7.png)
 
     Now we are ready to create your APEX application on this workspace.
 
     You can check that you are correctly signed in with the **ATP&#95;ODA** user in the right top corner.
 
-    ![ORDS](./images/apex_workspace8.png)
+    ![APEX Dashboard](./images/apex_workspace8.png)
 
 ## Task 2: Create a Table with Quick SQL
 
@@ -110,7 +115,9 @@ Use Cases:
 
     ![Save SQL Script](./images/save-sql-script.png)
 
-5. Set the name of the script to `tasks` and confirm **Save Script**.
+5. Set the name of the script and confirm **Save Script**.
+
+    - Script name: `tasks`
 
     ![Save SQL Script Confirm](./images/apex_save_sql_script_confirm.png)
 
@@ -154,7 +161,7 @@ We are going to mock some data to use it later with your Custom Component.
 
     ![Object Browser Data](./images/apex_object_insert_row_1.png)
 
-1. Do the same with the second task entry.
+4. Do the same with the second task entry.
 
     To follow the same example we have created:
 
@@ -178,42 +185,46 @@ In the main menu, select **SQL Workshop**, click **RESTful Services**.
 
     ![REST Enable Register](./images/apex_rest_enable_register.png)
 
-1. Set the **Schema Alias** name to `tasks` and click **Save Schema Attributes** to confirm:
+2. Set the **Schema Alias** name and click **Save Schema Attributes** to confirm:
+
+    - **Schema Alias**: `tasks`
 
     ![REST Enable Save](./images/apex_rest_enable_save2.png)
 
-    You will see that the Schema is now enabled.
+3. You will see that the Schema is now enabled.
 
     ![REST Enable Success](./images/apex_rest_enable_register_success.png)
 
     We need to create a Module with the base path for your API, a Template and a Handler to resolve the request of a specific method (GET, PUT, DELETE, etc).
 
-3. Select **Modules** on the left and click **Create Module**:
+4. Select **Modules** on the left and click **Create Module**:
 
-    ![](./images/apex_rest_module.png)
+    ![Create Modules](./images/apex_rest_module.png)
 
-4. Fill **Module Name** and **Base Path** fields with the following data and click **Create Module**:
+5. Fill **Module Name** and **Base Path** fields with the following data and click **Create Module**:
 
-     - **Module Name**: `com.example.oda`
-     - **Base Path**: `/oda/`
+    - **Module Name**: `com.example.oda`
+    - **Base Path**: `/oda/`
 
-    ![](./images/apex_rest_module_create.png)
+    ![Details Module](./images/apex_rest_module_create.png)
 
-5. Confirm the module has been created.
+6. Confirm the module has been created.
 
-    ![](./images/apex_rest_module_create_success.png)
+    ![Module created ](./images/apex_rest_module_create_success.png)
 
-6. Scroll down and click **Create Template**:
+7. Scroll down and click **Create Template**.
 
-    ![](./images/apex_rest_module_create_template.png)
+    ![Create Templates](./images/apex_rest_module_create_template.png)
 
-1. Fill **URL Template** with `tasks/` and click **Create Template**:
+8. Fill **URL Template** and click **Create Template**.
 
-    ![](./images/apex_rest_template_create.png)
+    - **URL Template**: `tasks/`
+    
+    ![URL Template Info](./images/apex_rest_template_create.png)
 
-8. Confirm the Template has been created and click **Create Handler**:
+8. Confirm the Template has been created and click **Create Handler**.
 
-    ![](./images/apex_rest_handler_create.png)
+    ![Create Handler](./images/apex_rest_handler_create.png)
 
 9. Make sure the fields for the Handler are as follows:
 
@@ -221,7 +232,7 @@ In the main menu, select **SQL Workshop**, click **RESTful Services**.
     - **Source Type**: `Collection Query`
     - **Format**: `JSON`
 
-    ![](./images/apex_rest_handler_create_get.png)
+    ![Info Handler](./images/apex_rest_handler_create_get.png)
 
 10. On the **Source** area (Not comments area) we are going to run the SQL select to fetch the data form the schema:
 
@@ -231,15 +242,15 @@ In the main menu, select **SQL Workshop**, click **RESTful Services**.
 
     > NOTE: please, don't use "`;`" at the end of the SQL statement.
 
-    ![](./images/apex_rest_handler_source_query.png)
+    ![Source Info](./images/apex_rest_handler_source_query.png)
 
-11. Click **Create Handler** to save the changes on the GET handler:
+11. Click **Create Handler** to save the changes on the GET handler.
 
-    ![](./images/apex_rest_handler_create_confirm.png)
+    ![Create Handler](./images/apex_rest_handler_create_confirm.png)
 
-12. Confirm the Handler has been created and copy the **Full URL**:
+12. Confirm the Handler has been created and copy the **Full URL**.
 
-    ![](./images/apex_rest_handler_create_success.png)
+    ![Full URL Info](./images/apex_rest_handler_create_success.png)
 
 ## It works
 

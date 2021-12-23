@@ -195,7 +195,7 @@ In this lab, you will:
 	```
 
 	```
-	<copy>wget -O airport-db.zip https://bit.ly/3zLorXQ</copy>
+	<copy>wget -O airport-db.zip https://bit.ly/3pZ1PiW</copy>
 	```
 
 	![database sample download](./images/Lab1-task3.6-2.png)
@@ -275,13 +275,12 @@ In this task we will create an Oracle Analytics Cloud instance before we proceed
     
   ![MySQL DB System](./images/Lab1-task5.3.png)
 
-4. In the _**Create Administrator Credentials**_ section enter the following information:
+4. In the _**Create Administrator Credentials**_ section enter the username and choose a password of your own, but make sure to note it as you will be using it later through the workshop:
     
     ```
-    username: <copy>admin</copy>
-    ```
-    ```
-    password: <copy>Oracle.123</copy>
+    username: admin
+ 
+    password: **PASSWORD**
     ```
 	- In the _**Configure Networking**_ section make sure you select the same VCN, _**`analytics_vcn_test`**_ you have used to create the Compute Instance but for MySQL you will use a different subnet, the private one called _**`Private Subnet-analytics_vcn_test(Regional)`**_.
 

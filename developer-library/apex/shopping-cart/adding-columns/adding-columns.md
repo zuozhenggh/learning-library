@@ -7,15 +7,19 @@ To avoid data redundancy, you will need to create three additional tables to nor
 
 In this lab, you will learn how to add these three new columns to the **PRODUCTS** table and then create lookup tables for those new columns.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:klrFD971TtI)
 
 ### Objectives
 In this lab, you will:
-- Add new columns to the existing Products table.
-- Populate the new columns.
-- Create lookup tables.
+- Add new columns to the existing Products table
+- Populate the new columns
+- Create lookup tables
 
-## Task 1: Adding Columns to the Products Table
+## Task 1: Add Columns to the Products Table
 
 1. From your APEX workspace home page, click **SQL Workshop**.
 
@@ -67,7 +71,7 @@ In this lab, you will:
 
 15. Click **Finish**.
 
-## Task 2: Populating the new columns
+## Task 2: Populate the new columns
 
 1. From the Oracle APEX Home, click **SQL Workshop**.
 
@@ -129,7 +133,7 @@ In this lab, you will:
 
     ![](./images/sql-query-results.png " ")
 
-## Task 3: Creating Lookup Tables
+## Task 3: Create Lookup Tables
 Since multiple products may have the same values for Color, Department, and Clothing, to avoid repetition and make updates easy, you can create a lookup table for each. A lookup table stores the value of the available colors, departments, or clothing in a single place, and then each product can reference the value from the lookup table.
 
 You will create lookup tables based on the new three columns, after you will have created a lookup table, you will notice that a new table was created and the column in the PRODUCTS table has been renamed and the data type was changed to NUMBER.
@@ -223,9 +227,9 @@ The numeric value of the COLOR\_ID column will now store a reference to the syst
 
 ![](./images/lookup-table4.png " ")
 
-You now know how to add new columns to your existing tables, how to create lookup tables for reference information, and how to create and run a SQL script to populate your tables.
+You now know how to add new columns to your existing tables, how to create lookup tables for reference information, and how to create and run a SQL script to populate your tables. You may now **proceed to the next lab**. 
 
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021

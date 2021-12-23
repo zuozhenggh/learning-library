@@ -130,9 +130,16 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
 
 1.  Please log into to your OCI tenancy, if you are not already signed in. Example for Ashburn location:
 
+    ```
+    <copy>
     https://console.us-ashburn-1.oraclecloud.com/
+    </copy>
+    ```
+
 
 2.  On the Oracle Cloud Console home page, click the navigation menu in the upper-left corner, select **Identity**, and then select **Compartments**.
+
+    ![](./images/dropdown-menu.png " ")
 
     ![](./images/navigation-menu.png " ")
 
@@ -223,7 +230,6 @@ In this tutorial, OCI has been set up for the networking required to be able to 
 * **Contributors:**
     * Jeff Kalowes, Principal JDE Specialist
     * Mani Julakanti, Principal JDE Specialist
-    * Marc-Eddy Paul, Cloud Engineering
     * William Masdon, Cloud Engineering
     * Chris Wegenek, Cloud Engineering
-* **Last Updated By/Date:** AJ Kurzman, Cloud Engineering, 11/18/2020
+* **Last Updated By/Date:** * Chris Wegenek, Cloud Engineering 11/2021

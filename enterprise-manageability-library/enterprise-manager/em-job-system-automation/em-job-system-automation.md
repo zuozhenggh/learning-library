@@ -6,6 +6,9 @@ In this lab you will learn how to use the Enterprise Manager Job System to autom
 
 *Estimated Lab Time*: 60 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:9rfSlEIv-oQ)
+
 ### About the Enterprise Manager Job System
 
 A job is a unit of work that you define to automate commonly-run tasks. Scheduling flexibility is one of the advantages of jobs. You can schedule a job to start immediately or start at a later date and time. You can also run the job once or at a specific interval, such as three times every month. The Enterprise Manager Job System serves these purposes:

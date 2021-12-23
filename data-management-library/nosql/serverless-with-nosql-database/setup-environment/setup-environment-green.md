@@ -1,10 +1,10 @@
-# Prepare your environment
+# Prepare Your Environment
 
 ## Introduction
 
 This lab walks you through the steps necessary to create a proper operating environment.
 
-Estimated Time: 5 minutes
+_Estimated Lab Time:_ 5 minutes
 
 ### Objectives
 

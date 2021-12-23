@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:Z1HxSxr4wd4)
+[](youtube:6ik6ahjmYQQ)
 
 Use Oracle Graph analytics to create customer communities based on movie viewing behavior. Once you've created communities - make recommendations based on what your community members have watched.
 
@@ -31,11 +31,11 @@ In this lab, you will use the Graph Studio feature of Autonomous Database to:
 
 - This lab requires completion of Lab 1 and Lab 2.
 
-## Task 1: Log into graph studio
+## Task 1: Log into Graph Studio
 
 Graph Studio is a feature of Autonomous Database. It is available as an option under the **Tools** tab. You need a graph-enabled user to log into Graph Studio. When you created the MOVIESTREAM user in Lab 2 you had graph-enabled that user.
 
-1. In your Autonomous Database console, click the **Tools** tab and then **Graph Studio**.
+1. In your Autonomous Database Details page, click the **Tools** tab and then **Graph Studio**.
 
     Click **Tools**.
 
@@ -79,7 +79,7 @@ The MOVIE_RECOMMENDATIONS graph has been created for you from the tables CUSTOME
 
  You can import a notebook that has the graph queries and analytics. Each paragraph in the notebook has an explanation.  You can review the explanation, and then run the query or analytics algorithm.   
 
-  [Click here to download the notebook](./files/movie_movie_recommendations.dsnb) and save it to a folder on your local computer.  This notebook includes graph queries and analytics for the MOVIE_RECOMMENDATIONS graph.
+  [Click here to download the notebook](files/Movie_Movie_Recommendations.dsnb) and save it to a folder on your local computer.  This notebook includes graph queries and analytics for the MOVIE_RECOMMENDATIONS graph.
 
  1. Import a notebook by clicking on the notebook icon on the left, and then clicking on the **import notebook** icon on the far right.
 
@@ -109,4 +109,4 @@ The MOVIE_RECOMMENDATIONS graph has been created for you from the tables CUSTOME
 ## Acknowledgements
 * **Author** - Melli Annamalai, Product Manager, Oracle Spatial and Graph
 * **Contributors** -  Jayant Sharma
-* **Last Updated By/Date** - Melli Annamalai, October 2021
+* **Last Updated By/Date** - Rick Green, Database User Assistance, November 2021

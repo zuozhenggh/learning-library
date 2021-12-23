@@ -14,6 +14,11 @@ In this lab we will introduce a block corruption in the database and see Active 
 
 Estimated Lab Time: 40 Minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:05IR37v7kg8)
+
+05IR37v7kg8
 ### Objectives
 - Setup your environment
 - Corrupt the datafile

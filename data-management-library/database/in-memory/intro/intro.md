@@ -12,6 +12,8 @@ Watch the video below for an overview of Oracle In-Memory.
 
 [](youtube:JGM1taVRZHs)
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/QzCnO_Me97g).</if>
+
 ## Overview
 ### Database In-Memory and Performance
 

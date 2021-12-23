@@ -1,4 +1,4 @@
-# Oracle Database CI/CD for Developers - Lab 1: Use SQLcl for Database Change Management/Tracking
+# Use SQLcl for Database Change Management/Tracking
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Estimated Lab Time: 30-45 minutes
 
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:pPXxYPe0Fd4)
+[](youtube:h572hFZBKyA)
 
 
 ### Objectives
@@ -114,20 +114,20 @@ We can issue an OCI CLI command to download the Autonomous Database wallet.
 
    The format of the api is:
 
-   ```
-   oci db autonomous-database generate-wallet --autonomous-database-id ADB_OCID --file FILENAME.ZIP --password MY_PASSWORD
-   ```
+      ```
+      oci db autonomous-database generate-wallet --autonomous-database-id ADB_OCID --file FILENAME.ZIP --password MY_PASSWORD
+      ```
 
-   where we supply the Autonomous Database OCID, a filename and a password.
+      where we supply the Autonomous Database OCID, a filename and a password.
 
 6. At the **Cloud Shell prompt**, copy and paste the following to start building our command
 
-   ````
-   <copy>
-   oci db autonomous-database generate-wallet --autonomous-database-id 
-   </copy>
-   ````
-   ![copy and paste the following to start building our command](./images/ocid-1.png)
+      ````
+      <copy>
+      oci db autonomous-database generate-wallet --autonomous-database-id 
+      </copy>
+      ````
+      ![copy and paste the following to start building our command](./images/ocid-1.png)
 
 
 7. Using the **Autonomous Database Details Page**, click the **Copy** link next to the **OCID label** in the **Autonomous Database Information** section.
@@ -140,19 +140,19 @@ We can issue an OCI CLI command to download the Autonomous Database wallet.
 
 8. We can now add the rest of the command. **Copy and paste the following** into the cloud shell after the OCID you just pasted. Make sure there is a space between the OCID and the command we are about to paste in.
 
-   ````
-   <copy>
-   --file Wallet_LABADB.zip --password S3cr3tPassw0rd!!
-   </copy>
-   ````
+      ````
+      <copy>
+      --file Wallet_LABADB.zip --password S3cr3tPassw0rd!!
+      </copy>
+      ````
 
-   when the command **looks like the following**
+      when the command **looks like the following**
 
-   ![full command](./images/ocid-4.png)
+      ![full command](./images/ocid-4.png)
 
-   press **enter** and you will see the **wallet download**
+      press **enter** and you will see the **wallet download**
 
-   ![paste the OCID](./images/ocid-5.png)
+      ![paste the OCID](./images/ocid-5.png)
 
 9. In your home directory, you can issue an **ls** at the cloud shell prompt to see the file.
 
@@ -166,289 +166,301 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
 
 1. At a **command line**, get back to your home directory if not already there. You can do this by issuing a **cd** at the command prompt.
 
-   ````
-   <copy>
-   cd
-   </copy>
-   ````
+      ````
+      <copy>
+      cd
+      </copy>
+      ````
 
-   ![cd at the prompt](./images/dir-1.png)
+      ![cd at the prompt](./images/dir-1.png)
 
-   then, **create a directory** at the Cloud Shell prompt with the following command
+      then, **create a directory** at the Cloud Shell prompt with the following command
 
-   ````
-   <copy>
-   mkdir livelabs
-   </copy>
-   ````
+      ````
+      <copy>
+      mkdir livelabs
+      </copy>
+      ````
 
-   ![mkdir at the prompt](./images/dir-2.png)
+      ![mkdir at the prompt](./images/dir-2.png)
 
-   move into the directory with a cd livelabs command at the Cloud Shell prompt
+      move into the directory with a cd livelabs command at the Cloud Shell prompt
 
-   ````
-   <copy>
-   cd livelabs
-   </copy>
-   ````
+      ````
+      <copy>
+      cd livelabs
+      </copy>
+      ````
 
-   ![cd at the prompt](./images/dir-3.png)   
+      ![cd at the prompt](./images/dir-3.png)   
 
 2. Now, issue a **pwd** at the command prompt to ensure you are in the correct directory
 
-   ````
-   <copy>
-   pwd
-   </copy>
-   ````
+      ````
+      <copy>
+      pwd
+      </copy>
+      ````
 
-   ![pwd at the prompt](./images/dir-4.png)
+      ![pwd at the prompt](./images/dir-4.png)
 
 3. **Start SQLcl** but do not log into a database yet. SQLcl is already installed so all you need to do is issue the following command
+
       ````
       <copy>
       sql /nolog
       </copy>
       ````
+      
       ![sql at the prompt](./images/sql-1.png)
 
 4. Next, we have to tell SQLcl where to look for the Autonomous Database wallet. Remember, we downloaded it in our home directory and we can use the following command to set its location. Just remember to replace USER_NAME with your username. You can look at previous commands we ran to find the exact location if needed.
 
-   ````
-   <copy>
-   set cloudconfig /home/USER_NAME/Wallet_LABADB.zip
-   </copy>
-   ````
-   ![set cloudconfig at the prompt](./images/sql-2.png)
+      ````
+      <copy>
+      set cloudconfig /home/USER_NAME/Wallet_LABADB.zip
+      </copy>
+      ````
+      ![set cloudconfig at the prompt](./images/sql-2.png)
 
 5. Time to connect to the database. The syntax is:
-   ```
-   SQL> conn USERNAME@DB_NAME_high/medium/low/tp/tpurgent
-   ```
-   The **high/medium/low/tp/tpurgent** provide different levels of performance for various clients or applications to connect into the database. From the documentation:
 
-   - **tpurgent**: The highest priority application connection service for time critical transaction processing operations. This connection service supports manual parallelism.
-   - **tp**: A typical application connection service for transaction processing operations. This connection service does not run with parallelism.
-   - **high**: A high priority application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing.
-   - **medium**: A typical application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing. Using this service the degree of parallelism is limited to four (4).
-   - **low**: A lowest priority application connection service for reporting or batch processing operations. This connection service does not run with parallelism.
+      ```
+      SQL> conn USERNAME@DB_NAME_high/medium/low/tp/tpurgent
+      ```
+      The **high/medium/low/tp/tpurgent** provide different levels of performance for various clients or applications to connect into the database. From the documentation:
+
+      - **tpurgent**: The highest priority application connection service for time critical transaction processing operations. This connection service supports manual parallelism.
+      - **tp**: A typical application connection service for transaction processing operations. This connection service does not run with parallelism.
+      - **high**: A high priority application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing.
+      - **medium**: A typical application connection service for reporting and batch operations. All operations run in parallel and are subject to queuing. Using this service the degree of parallelism is limited to four (4).
+      - **low**: A lowest priority application connection service for reporting or batch processing operations. This connection service does not run with parallelism.
 
    With our database being named LABADB and connecting as the admin user, we would have the following connect command:
 
-   ```
-   SQL> conn admin@LABADB_high
-   ```
-   Run this command at your SQLcl command prompt
-   ````
-   <copy>
-   conn admin@LABADB_high
-   </copy>
-   ````  
-   ![connect to the database in SQLcl](./images/sql-3.png)
+      ```
+      SQL> conn admin@LABADB_high
+      ```
 
-   And then provide the password you used when creating the Autonomous Database at the password prompt and press enter
+      Run this command at your SQLcl command prompt
 
-   ![connected to the database in SQLcl](./images/sql-4.png)
+      ````
+      <copy>
+      conn admin@LABADB_high
+      </copy>
+      ````  
+      
+      ![connect to the database in SQLcl](./images/sql-3.png)
 
-   You should now be connected to the database.
+      And then provide the password you used when creating the Autonomous Database at the password prompt and press enter
 
-   If you **did not** set the wallet location with the cloudconfig command, you will see an error similar to the following:
-   ```
-   SQL> conn admin@LABADB_high
-      Password? (**********?) **************
-      USER          = admin
-      URL           = jdbc:oracle:thin:@LABADB_high
-      Error Message = IO Error: Unknown host specified  (CONNECTION_ID=SFPhQvISQv2G/WV4VNMOjA==)
-      USER          = admin
-      URL           = jdbc:oracle:thin:@LABADB_high:1521/LABADB_high
-      Error Message = IO Error: Unknown host specified  (CONNECTION_ID=lCiUbeENR4a/9HZDREoVIg==)
-   ```   
-   Just go back a step and set the wallet location.
+      ![connected to the database in SQLcl](./images/sql-4.png)
+
+      You should now be connected to the database.
+
+      If you **did not** set the wallet location with the cloudconfig command, you will see an error similar to the following:
+
+      ```
+      SQL> conn admin@LABADB_high
+         Password? (**********?) **************
+         USER          = admin
+         URL           = jdbc:oracle:thin:@LABADB_high
+         Error Message = IO Error: Unknown host specified  (CONNECTION_ID=SFPhQvISQv2G/WV4VNMOjA==)
+         USER          = admin
+         URL           = jdbc:oracle:thin:@LABADB_high:1521/LABADB_high
+         Error Message = IO Error: Unknown host specified  (CONNECTION_ID=lCiUbeENR4a/9HZDREoVIg==)
+      ```   
+
+      Just go back a step and set the wallet location.
 
 6. Time to **create a schema/user**, give that schema some **permissions** and then **create database objects**
 
    Run the following commands at our SQLcl prompt to create and configure the livelabs user
-   ````
-   <copy>
-   create user livelabs identified by "PAssw0rd11##11" quota unlimited on data;
-   </copy>
-   ````  
-   ![create the user](./images/sql-5.png)
 
-   Give our livelabs users some permissions to connect and create objects in the database
+      ````
+      <copy>
+      create user livelabs identified by "PAssw0rd11##11" quota unlimited on data;
+      </copy>
+      ````  
 
-   ````
-   <copy>
-   grant connect, resource to livelabs;
-   </copy>
-   ````  
-   ![grant the permissions](./images/sql-6.png)
+      ![create the user](./images/sql-5.png)
+
+      Give our livelabs users some permissions to connect and create objects in the database
+
+      ````
+      <copy>
+      grant connect, resource to livelabs;
+      </copy>
+      ````  
+      
+      ![grant the permissions](./images/sql-6.png)
  
 
 7. Now we are going to connect as the livelabs user. Issue the following command at the SQLcl prompt
 
-   ````
-   <copy>
-   conn livelabs@LABADB_high
-   </copy>
-   ```` 
-   ![connect as livelabs](./images/sql-7.png)
+      ````
+      <copy>
+      conn livelabs@LABADB_high
+      </copy>
+      ```` 
+      ![connect as livelabs](./images/sql-7.png)
 
-   And then provide the password we used to create the user at the password prompt.
+      And then provide the password we used to create the user at the password prompt.
 
-   ````
-   <copy>
-   PAssw0rd11##11
-   </copy>
-   ```` 
-   ![provide the password](./images/sql-8.png)
+      ````
+      <copy>
+      PAssw0rd11##11
+      </copy>
+      ```` 
+      ![provide the password](./images/sql-8.png)
  
 8. So we don't take any schema specific storage or DDL information, run the following at the SQLcl prompt.
 
-   ````
-   <copy>
-   set ddl storage off
-   set ddl segment_attributes off
-   set ddl tablespace off
-   </copy>
-   ```` 
-   ![DDL OFF!](./images/ddloff-1.png)
+      ````
+      <copy>
+      set ddl storage off
+      set ddl segment_attributes off
+      set ddl tablespace off
+      </copy>
+      ```` 
+      ![DDL OFF!](./images/ddloff-1.png)
 
 9. It's time to create some database objects. Run the following code.
 
    **Create a table**
-   ````
-   <copy>
-   CREATE TABLE trees
-      ( tree_id           NUMBER(6)
-      , tree_name         VARCHAR2(200)
-      , tree_street       VARCHAR2(500)
-      , tree_city         VARCHAR2(200)
-      , tree_state        VARCHAR2(200)
-      , tree_zip          NUMBER
-      , tree_description  VARCHAR2(4000)
-      , submitter_name    VARCHAR2(500)
-      , submitter_email   VARCHAR2(500)
-      , submition_date    timestamp
-      ) ;
-   </copy>
-   ```` 
 
-   **Create a procedure**
-   ````
-   <copy>
-   CREATE OR REPLACE PROCEDURE admin_email_set
-   IS
-   BEGIN
-         update trees
-            set submitter_email = 'jeff@thatjeff.com'
-         where submitter_email is null;
+      ````
+      <copy>
+      CREATE TABLE trees
+         ( tree_id           NUMBER(6)
+         , tree_name         VARCHAR2(200)
+         , tree_street       VARCHAR2(500)
+         , tree_city         VARCHAR2(200)
+         , tree_state        VARCHAR2(200)
+         , tree_zip          NUMBER
+         , tree_description  VARCHAR2(4000)
+         , submitter_name    VARCHAR2(500)
+         , submitter_email   VARCHAR2(500)
+         , submition_date    timestamp
+         ) ;
+      </copy>
+      ```` 
 
-   end admin_email_set;
-   /
-   </copy>
-   ```` 
+      **Create a procedure**
+      ````
+      <copy>
+      CREATE OR REPLACE PROCEDURE admin_email_set
+      IS
+      BEGIN
+            update trees
+               set submitter_email = 'jeff@thatjeff.com'
+            where submitter_email is null;
 
-   **Create an index**
-   ````
-   <copy>
-   CREATE UNIQUE INDEX tree_id_pk
-   ON trees (tree_id);
-   </copy>
-   ```` 
+      end admin_email_set;
+      /
+      </copy>
+      ```` 
 
-   **Insert some data**
-   ````
-   <copy>
-   PROMPT INSERTING into TREES
-   set define off
-   begin
-   INSERT INTO trees VALUES 
-         ( 1
-         , 'Cool Tree'
-         , '43 West Street'
-         , 'Cary'
-         , 'NC'
-         , 27511
-         , 'This tree is super cool'
-         , 'Jeff'
-         , 'jeff@thatjeff.com'
-         , systimestamp
-         );
-   INSERT INTO trees VALUES 
-         ( 2
-         , 'Christmas Tree red cedar'
-         , '112 Wilkinson Ave'
-         , 'Cary'
-         , 'NC'
-         , 27511
-         , 'Its about 25 feet tall'
-         , 'Jeff'
-         , 'jeff@thatjeff.com'
-         , systimestamp
-         );
-   INSERT INTO trees VALUES 
-         ( 3
-         , 'Dawn Redwood tree'
-         , '313 N Academy St'
-         , 'Cary'
-         , 'NC'
-         , 27511
-         , 'These 15 beautiful trees are not Cypress, they are Dawn Redwoods'
-         , 'Jeff'
-         , 'jeff@thatjeff.com'
-         , systimestamp
-         );
-   INSERT INTO trees VALUES 
-         ( 4
-         , 'Blackjack Oak at the Arts Center'
-         , '101 Dry Ave'
-         , 'Cary'
-         , 'NC'
-         , 27511
-         , 'At one time (approximately 1992 to 2011) the Capital Trees Program recorded and listed the champion trees in Wake County.'
-         , 'Jeff'
-         , 'jeff@thatjeff.com'
-         , systimestamp
-         );
-   INSERT INTO trees VALUES 
-         ( 5
-         , 'Test Tree'
-         , '4 East Street'
-         , 'Cary'
-         , 'NC'
-         , 27511
-         , 'Test Tree please delete'
-         , 'Jeff'
-         , 'jeff@thatjeff.com'
-         , systimestamp
-         );
-   INSERT INTO trees VALUES 
-         ( 6
-         , 'Tree with Cat'
-         , '2220 W Marilyn Cir'
-         , 'Cary'
-         , 'NC'
-         , 27511
-         , 'Tree with a cat in it'
-         , 'Jeff'
-         , 'jeff@thatjeff.com'
-         , systimestamp
-         );        
-   end;
-   /
-   </copy>
-   ```` 
+      **Create an index**
+      ````
+      <copy>
+      CREATE UNIQUE INDEX tree_id_pk
+      ON trees (tree_id);
+      </copy>
+      ```` 
+
+      **Insert some data**
+      ````
+      <copy>
+      PROMPT INSERTING into TREES
+      set define off
+      begin
+      INSERT INTO trees VALUES 
+            ( 1
+            , 'Cool Tree'
+            , '43 West Street'
+            , 'Cary'
+            , 'NC'
+            , 27511
+            , 'This tree is super cool'
+            , 'Jeff'
+            , 'jeff@thatjeff.com'
+            , systimestamp
+            );
+      INSERT INTO trees VALUES 
+            ( 2
+            , 'Christmas Tree red cedar'
+            , '112 Wilkinson Ave'
+            , 'Cary'
+            , 'NC'
+            , 27511
+            , 'Its about 25 feet tall'
+            , 'Jeff'
+            , 'jeff@thatjeff.com'
+            , systimestamp
+            );
+      INSERT INTO trees VALUES 
+            ( 3
+            , 'Dawn Redwood tree'
+            , '313 N Academy St'
+            , 'Cary'
+            , 'NC'
+            , 27511
+            , 'These 15 beautiful trees are not Cypress, they are Dawn Redwoods'
+            , 'Jeff'
+            , 'jeff@thatjeff.com'
+            , systimestamp
+            );
+      INSERT INTO trees VALUES 
+            ( 4
+            , 'Blackjack Oak at the Arts Center'
+            , '101 Dry Ave'
+            , 'Cary'
+            , 'NC'
+            , 27511
+            , 'At one time (approximately 1992 to 2011) the Capital Trees Program recorded and listed the champion trees in Wake County.'
+            , 'Jeff'
+            , 'jeff@thatjeff.com'
+            , systimestamp
+            );
+      INSERT INTO trees VALUES 
+            ( 5
+            , 'Test Tree'
+            , '4 East Street'
+            , 'Cary'
+            , 'NC'
+            , 27511
+            , 'Test Tree please delete'
+            , 'Jeff'
+            , 'jeff@thatjeff.com'
+            , systimestamp
+            );
+      INSERT INTO trees VALUES 
+            ( 6
+            , 'Tree with Cat'
+            , '2220 W Marilyn Cir'
+            , 'Cary'
+            , 'NC'
+            , 27511
+            , 'Tree with a cat in it'
+            , 'Jeff'
+            , 'jeff@thatjeff.com'
+            , systimestamp
+            );        
+      end;
+      /
+      </copy>
+      ```` 
 
 
-   To verify the code was successful, we can count the records from the trees table. Copy and run the following SQL Statement at the SQLcl prompt.
-   ````
-   <copy>
-   select count(*) from trees;
-   </copy>
-   ```` 
+      To verify the code was successful, we can count the records from the trees table. Copy and run the following SQL Statement at the SQLcl prompt.
+      ````
+      <copy>
+      select count(*) from trees;
+      </copy>
+      ```` 
 
-   ![check the records](./images/sql-9.png)
+      ![check the records](./images/sql-9.png)
 
 10. While **still logged into the database as our livelabs user**, we are going to use SQLcl to take a baseline of the objects in this schema. To do this, we issue a **Liquibase command at the SQLcl prompt**. The command **lb genschema -split** will pull all the Data Definition Language (DDL) for our database objects and put them into folders that correspond to their types (tables, indexes, triggers, etc). **Copy and paste the following command** then press enter.
 
@@ -463,78 +475,78 @@ Once the Autonomous Database wallet is downloaded, is time to connect to the dat
 
 1. To simulate applying our code in a new database without needing to create a new database we can use a new schema. We will be creating this new schema/user just as we did previously with our livelabs user. **Connect as the admin user** by issuing the following command at the SQLcl prompt
 
-   ````
-   <copy>
-   conn admin@LABADB_high
-   </copy>
-   ```` 
-   ![connect as livelabs](./images/apply-4.png)
+      ````
+      <copy>
+      conn admin@LABADB_high
+      </copy>
+      ```` 
+      ![connect as livelabs](./images/apply-4.png)
 
-   And then provide the password you used when creating the Autonomous Database at the password prompt and press enter
+      And then provide the password you used when creating the Autonomous Database at the password prompt and press enter
 
-   ![connected to the database in SQLcl](./images/apply-5.png)
+      ![connected to the database in SQLcl](./images/apply-5.png)
 
-   You should now be connected to the database.
+      You should now be connected to the database.
 
 
 5. Next, we will **create a new schema** to apply out code base to. Run the following command at the SQLcl prompt.
 
-   ````
-   <copy>
-   create user dbuser identified by "PAssw0rd11##11" quota unlimited on data;
-   </copy>
-   ```` 
+      ````
+      <copy>
+      create user dbuser identified by "PAssw0rd11##11" quota unlimited on data;
+      </copy>
+      ```` 
 
-   ![connect as livelabs](./images/apply-6.png)
+      ![connect as livelabs](./images/apply-6.png)
 
-   and grant that user some roles so they can connect to the database and create objects.
+      and grant that user some roles so they can connect to the database and create objects.
 
-   ````
-   <copy>
-   grant connect, resource to dbuser;
-   </copy>
-   ```` 
+      ````
+      <copy>
+      grant connect, resource to dbuser;
+      </copy>
+      ```` 
 
-   ![connect as livelabs](./images/apply-7.png)
+      ![connect as livelabs](./images/apply-7.png)
 
 6. We do not need to log out of SQLcl and log back in to change users. All you need to do is **issue a connect command**. Use the following command to log into the database as our new user.
 
-   ````
-   <copy>
-   conn dbuser@LABADB_high
-   </copy>
-   ```` 
-   ![connect as livelabs](./images/apply-8.png)
+      ````
+      <copy>
+      conn dbuser@LABADB_high
+      </copy>
+      ```` 
+      ![connect as livelabs](./images/apply-8.png)
 
-   And then provide the password we used to create the user at the password prompt.
+      And then provide the password we used to create the user at the password prompt.
 
-   ````
-   <copy>
-   PAssw0rd11##11
-   </copy>
-   ```` 
-   ![provide the password](./images/apply-9.png)
+      ````
+      <copy>
+      PAssw0rd11##11
+      </copy>
+      ```` 
+      ![provide the password](./images/apply-9.png)
 
 7. We can apply the code base we created in this schema with the following Liquibase command: **lb update -changelog controller.xml**. Now run this command at your SQLcl prompt.
 
-   ````
-   <copy>
-   lb update -changelog controller.xml
-   </copy>
-   ```` 
-   ![apply code with liquibase](./images/apply-10.png)
+      ````
+      <copy>
+      lb update -changelog controller.xml
+      </copy>
+      ```` 
+      ![apply code with liquibase](./images/apply-10.png)
 
 8. While still at the SQLcl prompt, we can issue a tables command and see our trees table as well as the tables Liquibase uses to apply and track our database changes.
 
-   ````
-   <copy>
-   tables
-   </copy>
-   ```` 
+      ````
+      <copy>
+      tables
+      </copy>
+      ```` 
 
-   ![tables command](./images/apply-11.png)
+      ![tables command](./images/apply-11.png)
 
-   You now have a new schema that has all the objects from our livelabs schema we can use in our upcoming change management tasks in the next sections of this lab.
+      You now have a new schema that has all the objects from our livelabs schema we can use in our upcoming change management tasks in the next sections of this lab.
 
 ## Acknowledgements
 

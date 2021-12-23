@@ -12,6 +12,9 @@ You will complete the lab step-by-step even though the entire action could be fu
 
 *Estimated Lab Time:* 30 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:Asor2Xus5m0)
+
 ### About Oracle Multitenant
 The multitenant architecture enables an Oracle database to function as a multitenant container database (CDB).
 

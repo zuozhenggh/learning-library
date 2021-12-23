@@ -254,93 +254,89 @@ In this step we need to configure the database to set up optimizer statistics to
 
     ![](images/emspasetup.png " ")
 
-4. Select OS Command in the Create library Job drop down list Click **Go**.
-
-    ![](images/a04978f5e6e7d3e03d34685c7212f413.jpg " ")
-
-5. Click the **Submit** button
+4. Click the **Submit** button
 
     ![](images/spasubmit.png " ")
 
-6. The job then runs and completes
+5. The job then runs and completes
 
     ![](images/emspajobconfirm.png " ")
 
-7. The job is now running. Continue with configuring SPA Quick Check. Navigate to ***Databases >> Targets >> Databases***
+6. The job is now running. Continue with configuring SPA Quick Check. Navigate to ***Databases >> Targets >> Databases***
 
     ![](images/emspadbtarget.png " ")
 
 
-8. Expand the *sales.subnet.vcn.oraclevcn.com* database. Click on *sales.subnet.vcn.oraclevcn.com\_HR* pluggable database.
+7. Expand the *sales.subnet.vcn.oraclevcn.com* database. Click on *sales.subnet.vcn.oraclevcn.com\_HR* pluggable database.
 
     ![](images/6273897d2614da4d3babab73299d5bc5.jpg " ")
 
-9. In ***sales.subnet.vcn.oraclevcn.com\_HR*** database Navigate to ***Performance >> SQL >> SQL Performance Analyzer Quick Check Setup***
+8. In ***sales.subnet.vcn.oraclevcn.com\_HR*** database Navigate to ***Performance >> SQL >> SQL Performance Analyzer Quick Check Setup***
 
     ![](images/52d28e53edc6e12a26eefd6df1487d20.jpg " ")
 
-10.  This is the page where you configure SPA Quick Check. Make sure that the selected SQL Tuning Set includes as many SQL statements as possible. If the application has specific workloads that are executed during End of Month, End of Year or even certain period during the day, then make sure to collect the workload in separate SQL Tuning Sets and merge them into a “Total Workload Tuning set”
+9.  This is the page where you configure SPA Quick Check. Make sure that the selected SQL Tuning Set includes as many SQL statements as possible. If the application has specific workloads that are executed during End of Month, End of Year or even certain period during the day, then make sure to collect the workload in separate SQL Tuning Sets and merge them into a “Total Workload Tuning set”
 
-11. In this example we are working with a SQL Tuning Set called PENDING\_STATS\_WKLD. Select: SQL Tuning Set: PENDING\_STATS\_WKLD. Select “Comparison Metric”: Buffer Gets **Click** Save.
+10. In this example we are working with a SQL Tuning Set called PENDING\_STATS\_WKLD. Select: SQL Tuning Set: PENDING\_STATS\_WKLD. Select “Comparison Metric”: Buffer Gets **Click** Save.
 
     ![](images/dd8e59451bf9d2de14f07592d390da6a.jpg " ")
 
-12.  Navigate ***Performance >> SQL >> Optimizer Statistics***
+11.  Navigate ***Performance >> SQL >> Optimizer Statistics***
 
       ![](images/4e82b571a46f839223bca1f879643bb0.jpg " ")
 
-13.  Click **Gather**
+12.  Click **Gather**
 
       ![](images/1e54f21d483e95189477069278b54053.jpg " ")
 
-14.  Select “Schema”. Check “Validate the impact of statistics on…..” Click **Next**.
+13.  Select “Schema”. Check “Validate the impact of statistics on…..” Click **Next**.
       ![](images/1d4b3ee3678078564de13336896fbe34.jpg " ")
 
-15.  Click  **Add**
+14.  Click  **Add**
 
       ![](images/07c9dde006c7bc0a1fc804ef62f5cd5a.jpg " ")
 
-16.  Click **Search**. Select: **STAT1, STAT2**. Click  **OK**.
+15.  Click **Search**. Select: **STAT1, STAT2**. Click  **OK**.
 
       ![](images/5f8e1b0229f48747aa96998dbbe0aa87.jpg " ")
 
-17.  Click **Next**
+16.  Click **Next**
 
       ![](images/47d4db96f2a225723e405f06171d2c7d.jpg " ")
 
-18.  Click **Next**
+17.  Click **Next**
 
       ![](images/a4faddf1878e9f72df40f1bde4e54bdf.jpg " ")
 
-19.  Click **Submit**
+18.  Click **Submit**
 
       ![](images/d2c4f87d66682e3ecbb6b9c62e639281.jpg " ")
 
-20. In the confirmation section on top, click on the SQL Performance Analyzer Task that was started. If you accidentally closed or lost this page, navigate to **DB Target** , then **Performance Menu** ,  then **SQL Performance Analyzer Home** , then **Select** the latest SPA task you just created at the bottom of the page.
+19. In the confirmation section on top, click on the SQL Performance Analyzer Task that was started. If you accidentally closed or lost this page, navigate to **DB Target** , then **Performance Menu** ,  then **SQL Performance Analyzer Home** , then **Select** the latest SPA task you just created at the bottom of the page.
 
     ![](images/24fee673a5a32b19e55b92dae376c233.jpg " ")
 
-21. You now have now a running SQL Performance Analyzer task. Wait until its Last Run Status is Completed.Click  on **Name**
+20. You now have now a running SQL Performance Analyzer task. Wait until its Last Run Status is Completed.Click  on **Name**
 
     ![](images/d7b97d687f8d9a904ed2e7ee68f5da89.jpg " ")
 
-22.  As you can see there are four SQL trials that have been executed. The first two have identified SQL statements with plan changes. In the last two trials it is only the statements with plan changes that have been executed. This will reduce the amount of time and resources used in a production system. Click on the eyeglasses icon for the second report.
+21.  As you can see there are four SQL trials that have been executed. The first two have identified SQL statements with plan changes. In the last two trials it is only the statements with plan changes that have been executed. This will reduce the amount of time and resources used in a production system. Click on the eyeglasses icon for the second report.
 
       ![](images/e74bda3508f98dbfb69f1e9e196d9c01.jpg " ")
 
-23.  As we can see the majority of our statements have had unchanged performance. We have a significant improvement but the most important thing to notice is that we have no regression. If there had been regression then we have the ability to tune the regressed statement or use SQL Plan Baselines to remediate the identified regressions. Note you can also use SQL Tuning Advisor to remediate regressions by implementing SQL Profile recommendations
+22.  As we can see the majority of our statements have had unchanged performance. We have a significant improvement but the most important thing to notice is that we have no regression. If there had been regression then we have the ability to tune the regressed statement or use SQL Plan Baselines to remediate the identified regressions. Note you can also use SQL Tuning Advisor to remediate regressions by implementing SQL Profile recommendations
 
       ![](images/emspapubobj.png " ")
 
-24.  Since this application has used stale statistics for a long period, then it would be good to have new statistics implemented. Click on **Publish Object Statistics**
+23.  Since this application has used stale statistics for a long period, then it would be good to have new statistics implemented. Click on **Publish Object Statistics**
 
       ![](images/bfd46716f39ec820e1c9c0c9982d5218.jpg " ")
 
-25. We can now change statistics for all tables where we have pending statistics. For the scope of this exercise we will only change statistics for schema STAT1. Click the **Checkbox** for schema STAT1 .Click **Publish**.
+24. We can now change statistics for all tables where we have pending statistics. For the scope of this exercise we will only change statistics for schema STAT1. Click the **Checkbox** for schema STAT1 .Click **Publish**.
 
     ![](images/1d3a02d5d46d720eefbe226143471f2c.jpg " ")
 
-26. Click **Yes**
+25. Click **Yes**
 
     ![](images/a8dc3af7bcf1c5b473e4f0037dd722a4.jpg " ")
 

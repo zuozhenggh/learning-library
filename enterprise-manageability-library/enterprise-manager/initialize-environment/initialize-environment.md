@@ -6,6 +6,10 @@ In this lab we will review and startup all components required to successfully r
 
 *Estimated Lab Time:* 10 Minutes.
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:6BD2Z4zzEhI)
+
 ### Objectives
 - Initialize the workshop environment.
 
@@ -181,8 +185,6 @@ Navigate to "***Enterprise >> Job >> Library***" and select "SETUP ORACLE CREDEN
 11. The Job should show Status **Succeeded**
 
     ![](images/named_creds_job_succeeded.jpg " ")
-
-You may now [proceed to the next lab](#next).
 
 ## Appendix 1: Managing Startup Services
 

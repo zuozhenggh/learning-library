@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[] (youtube:-6WkJz89vVA)
+[](youtube:BvSkiWWhuN4)
 
 In just a few minutes, Autonomous Database lets you deploy a complete data warehousing platform that can scale to your requirements. And, you can use its Database Tools to easily populate that warehouse from the data lake.
 

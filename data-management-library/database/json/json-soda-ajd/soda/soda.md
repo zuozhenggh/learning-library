@@ -18,7 +18,11 @@ end;
 </copy>
 ```
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:9I38EbsVWPQ)
 
 ### Objectives
 
@@ -214,7 +218,7 @@ In this lab, you will:
 	```
 	![](./images/soda2-5.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
