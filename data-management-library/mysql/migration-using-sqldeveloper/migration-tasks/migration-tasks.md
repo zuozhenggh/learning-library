@@ -1,8 +1,8 @@
-# Migration Workshop Lab
+# Setup and Run Migration in SQL Developer 
 
 ## Introduction
 
-This is the main migration lab steps, where you will start from installing Oracle SQL Developer, to setting up appropriate user credentials and then create migration repository and connections and run the Wizard to complete the database migration from MySQL to Oracle ADB instance in the cloud. 
+This is the core migration tasks lab. Sart this, once you have all prerequisites completed. This will cover, from downloading and installing Oracle SQL Developer, to setting up appropriate user credentials and then create migration repository and connections and run the Wizard to complete the database migration from MySQL to Oracle ADB instance in the cloud. This also provides extra labs, if you need additional help with certain tasks, eg how to make connection in SQL Developer to an Autonomous Database, etc. 
 
 ### Objectives
 
@@ -32,14 +32,17 @@ In this lab, you will perform following:
 
 ## Task 2: Create Connections for the Target (ADB) database
 
-  Once you're running SQL Developer, first you'll need to create appropriate user for the target schema, which is ATP in our case. You can use following SQL script to create a sample user for the connection, with appropriate roles. You can follow step 1 from this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). 
+  Once you're running SQL Developer, first you'll need to create appropriate user for the target schema, which is ATP in our case. You can use following SQL script to create a sample user for the connection, with appropriate roles. You can follow step 1 from this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). Or you can follow next task: **Task 2a: Other Reference Lab: How to Connect to Autonomous Database from SQL Developer** 
  
-  Or you can follow this lab: [Connect Securely Using SQL Developer with a Connection Wallet] (?lab=adb-provision-conditional). NB: After completing, don't forget to return back to this Migration Workshop Lab, Task 2.1, to complete rest of the below steps. 
+## Task 2a: Other Reference Lab: How to Connect to Autonomous Database from SQL Developer
 
- 
-### Task 2.1 Create User in Target
+  Click this link to follow the lab:  [Other Reference Lab: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet)
+  
+  Once complete, please return back to the **Task 2b** of this lab. 
 
-  Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that connection to create new user. You can execute following sample command as ADMIN user, using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
+## Task 2b: Create User in Target
+
+  1. Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that   connection to create new user. You can execute following sample command as ADMIN user, using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
 
   ```
   <copy> CREATE USER targetuser IDENTIFIED BY xxxxxxxx; </copy>
@@ -53,7 +56,7 @@ In this lab, you will perform following:
   GRANT SELECT ANY TABLE TO targetuser; </copy>
   ```
     
-  After executing above SQL commands, create a new connection named "ATP" in SQL Developer with the above TARGETUSER database credentials and the ATP wallet file. 
+  2. After executing above SQL commands, create a new connection named "ATP" in SQL Developer with the above TARGETUSER database credentials and the ATP wallet file. Just like we did in lab: [Other Reference Lab: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet)
 
   > **Note:** SQL Developer does not migrate grant information from the source database. The Oracle DBA must adjust (as appropriate) user, login, and grant specifications after the migration.
 
@@ -73,17 +76,17 @@ In this lab, you will perform following:
   
   3. In SQL Developer, if you have not already installed the MySQL JDBC driver using Check for Updates  (on the Help menu), do the following:
   
-  1. Click Tools, then Preferences, then Database, then Third Party JDBC Drivers.
+  4. Click Tools, then Preferences, then Database, then Third Party JDBC Drivers.
   
-  2. Click Add Entry.
+  5. Click Add Entry.
   
-  3. Select the jar file for the MySQL driver you downloaded from http://www.mysql.com/.
+  6. Select the jar file for the MySQL driver you downloaded from http://www.mysql.com/.
   
-  4.   Click OK.
+  7.   Click OK.
   
-  4. Ensure that the source database is accessible by the MySQL user that is used by SQL Developer for the  source connection. This user must be able to see any objects to be captured in the MySQL database; objects that the user cannot see are not captured. For example, if the user can execute a stored procedure but does not have sufficient privileges to see the source code, the stored procedure cannot be captured.
+  8. Ensure that the source database is accessible by the MySQL user that is used by SQL Developer for the  source connection. This user must be able to see any objects to be captured in the MySQL database; objects that the user cannot see are not captured. For example, if the user can execute a stored procedure but does not have sufficient privileges to see the source code, the stored procedure cannot be captured.
  
-  Under the Connections page, click on green plus sign to create New Database Connection. Once you perform above steps for JDBC driver, when you create a new connection, the "Database Type" dropdown includes the MySQL option. Provide MySQL User Name, Password, Host and Port info appropriately and set the name of the connection as MySQL in SQL Developer. Then Test the connection, Save and Close. For multi-schema migration, choose the user that has access to all other schemas that needs to be migrated.
+  9. Under the Connections page, click on green plus sign to create New Database Connection. Once you perform above steps for JDBC driver, when you create a new connection, the "Database Type" dropdown includes the MySQL option. Provide MySQL User Name, Password, Host and Port info appropriately and set the name of the connection as MySQL in SQL Developer. Then Test the connection, Save and Close. For multi-schema migration, choose the user that has access to all other schemas that needs to be migrated.
 
 
 ## Task 4: Create User for Migration Repository
@@ -125,7 +128,7 @@ In this lab, you will perform following:
 
 ## Task 5: Create Migration Connection
 
-  In SQL Developer, create a database connection named Migration_Repository using the MIGRATIONS user created in previous step, to connect to ATP. For help with making such connection, you can refer back the above lab: [Connect Securely Using SQL Developer with a Connection Wallet] (?lab=adb-provision-conditional). Once completed, return back to Task 6 in Migration Workshop Lab. 
+  In SQL Developer, create a database connection named Migration_Repository using the MIGRATIONS user created in previous step, to connect to ATP. For help with making such connection, you can refer back the above lab: [Other Reference Lab: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet). Once completed, return back to Task 6 in Migration Workshop Lab. 
 
 
 ## Task 6: Create Migration Repository

@@ -15,23 +15,23 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Prerequisite Setup - Create ADB for Target (Optional Lab)",
+            "title": "Prerequisite 1 - Create ADB as Target (Optional)",
             "description": "This lab will help you create Oracle ADB (ADW/ATP) instance for target purpose, if you don't already have that",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },
         {
-            "title": "Prerequisite Setup - Create Windows VM to run Oracle SQL Developer (Optional Lab)",
+            "title": "Prerequisite 2 - Create Windows VM to run Oracle SQL Developer (Optional)",
             "description": "This lab will help you create OCI Windows instance to later install SQL Developer. If you plan to run SQL Developer from your laptop or any desktop, you can skip this lab",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-ctd/lab5-create-windows-vm/create-windows-vm.md"
         },
         {
-            "title": "Migration Workshop Lab",
+            "title": "Lab: Setup and Run Migration in SQL Developer",
             "description": "All tasks to complete this migration",
-            "filename": "../../labs/labs.md"
+            "filename": "../../migration-tasks/migration-tasks.md"
         },
         {
-            "title": "Connect Securely Using SQL Developer with a Connection Wallet",
-            "description": "Connect Securely Using SQL Developer with a Connection Wallet",
+            "title": "Other Reference Lab: How to Connect to Autonomous Database from SQL Developer",
+            "description": "How to Make Connection to Autonomous Database from SQL Developer",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adw-connection-wallet/adw-connection-wallet.md"
         },
         {
