@@ -1,4 +1,4 @@
-# Observability (metrics, tracing, and logs)
+# Enable Observability with Database Metrics, Logs Exporters
 
 ## Introduction
 
@@ -10,8 +10,15 @@ Watch the video below for a quick walk through of the lab.
 
 [](youtube:MuoMHJ54PHE)
 
-  -   Install and configure Grafana, Prometheus, Loki, Promtail, and Jaeger
-  -   Understand single-pane-of glass unified observability using Grafana to analyze metrics, logs, and tracing of the microservices architecture across the application and Oracle database tier.
+### Objectives
+
+* Install and configure Grafana, Prometheus, Loki, Promtail, and Jaeger
+* Understand single-pane-of glass unified observability using Grafana to analyze metrics, logs, and tracing of the microservices architecture across the application and Oracle database tier.
+
+### Prerequisites
+
+- This lab presumes you have already completed the earlier labs.
+ 
 
 ## Task 1: Install and Configure Observability Software and Metrics with Log Exporters
 
@@ -109,6 +116,8 @@ Watch the video below for a quick walk through of the lab.
     Create the two Derived Fields shown in the picture below.
     The values are as follows:
 
+       ```
+       <copy>services
         Name: traceIDFromSpanReported
         Regex: Span reported: (\w+)
         Query: ${__value.raw}
@@ -120,7 +129,9 @@ Watch the video below for a quick walk through of the lab.
         Query: ${__value.raw}
         Internal link enabled and `Jaeger` selected from the drop-down list
         (Optional) Debug log message: ECID=dfeda5242866aceb
-
+        </copy>
+       ```
+       
       ![](images/traceidfromspan.png " ")
 
       ![](images/traceIdFromEcid.png " ")
@@ -205,6 +216,7 @@ Watch the video below for a quick walk through of the lab.
 7. Click the `Jaeger` to view the corresponding trace information and drill down into detail.
       ![](images/traceinfo.png " ")
 
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist

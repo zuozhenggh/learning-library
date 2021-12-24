@@ -21,7 +21,6 @@ In this lab, you will:
 
 Complete Lab 0-4.
 
-
 ## Task 1: Populate Custom Property for a Catalog Object
 
 You can set values of customer properties for each object of the associated type. In this task you will set value for the Data Owner customer property for a table.
@@ -73,7 +72,7 @@ In this task you will set values of the Data Owner custom property for multiple 
 
 5. Open the **Data Entity** sheet from the exported file to see all the existing Custom Properties.
 
-	**Note :** As none of the custom properties are associated with an attribute, the Excel file does not have an Attribute tab.
+	> **Note :** As none of the custom properties are associated with an attribute, the Excel file does not have an Attribute tab.
 
     ![Open Data Entity](./images/custom-properties15.png " ")
 
@@ -206,9 +205,6 @@ In this task you will link a glossary term to a Table object. You will then link
 11. You can now see all the **Objects** that are linked to the **Term**.
 
     ![Linked Objects](./images/link-glossary8.png " ")
-
-
-    **Congratulations!** You can now **proceed to the next lab**.
 
 ## Learn More
 
