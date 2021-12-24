@@ -148,42 +148,7 @@ Now that your workshop is in the learning library, change your status.  If you a
 8.  When you are finished with your workshop, set your workshop status to **Self QA**.
 9.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-2.  Go to the row for your workshop and click the **WMS ID** of your workshop.
->**Note:** If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.
-
-3.  On the *Workshop Details* page, update your **Workshop Status** to at least **Moving to GitHub**.
-
-4.  Scroll down and update the **Production GitHub URL**. Update it to the new oracle.github.io address you identified in Task 6.
-
-5.  Update the **Development GithHub URL** to your personal github pages address.
-
-6.  Still on the *Workshop Details* page, ensure the *Workshop Tile Description*, *Workshop Abstract*, *Workshop Homepage Description*, *Workshop Outline/Agenda*, *Workshop Prerequisites* are all up-to-date.
-
-7.  Click **LiveLabs Publishing** tab, ensure the *Workshop Duration*, *Always Free On?*, *Free Tier On?*, *Paid Tier On?*, *Green Button On?* are correct.
-
-8.  When you are finished with your workshop, set your **Workshop Status** to **Self QA**.
-
-9.  You will receive a **Self QA form** from LWMS. Download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/TOk7tJROybgLwiM94GX7nhzhesCm_KXP559p-zhwYZh90d6ZVCuFTyr3OkaE7RSO/n/c4u04/b/labfiles/o/QA%20document%20JulyLiveLabs%20QA%20Instructions%20v5%20July%202021.docx). Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
-
-10. After you finish self QA, set your **Workshop Status** to **Self QA Complete** in LWMS. Then, email your completed Self QA document to livelabs-help-db_us@oracle.com.
-
-11. A member of LiveLabs team will verify the QA within 2 business days. After we verify your QA, we will move the workshop into **QA Verification Complete**. Then, after we move the workshop into LiveLabs, you will receive a confirmation email from LWMS, indicating the workshop is now in **Production** status. We will reach out to you via LWMS if there are more changes needed. If you have not heard back from us after 2 days, don't hesitate to reach out to us via LWMS.
-
-12.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
-
-You may now **proceed to the next lab**.
-=======
 You may now [proceed to the next lab](#next).
->>>>>>> parent of 3fe867bde (Update 4-labs-github-merge-commit-pullrequest.md)
-=======
-You may now [proceed to the next lab](#next).
->>>>>>> parent of 3fe867bde (Update 4-labs-github-merge-commit-pullrequest.md)
-=======
-You may now [proceed to the next lab](#next).
->>>>>>> parent of 3fe867bde (Update 4-labs-github-merge-commit-pullrequest.md)
 
 ## **Appendix**: Troubleshooting Tips
 ### Issue: Conflicts
