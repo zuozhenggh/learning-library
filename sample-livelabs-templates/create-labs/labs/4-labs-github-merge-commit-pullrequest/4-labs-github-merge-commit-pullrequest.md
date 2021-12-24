@@ -150,6 +150,7 @@ Now that your workshop is in the learning library, change your status.  If you a
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 2.  Go to the row for your workshop and click the **WMS ID** of your workshop.
 >**Note:** If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.
 
@@ -174,6 +175,9 @@ Now that your workshop is in the learning library, change your status.  If you a
 12.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
 
 You may now **proceed to the next lab**.
+=======
+You may now [proceed to the next lab](#next).
+>>>>>>> parent of 3fe867bde (Update 4-labs-github-merge-commit-pullrequest.md)
 =======
 You may now [proceed to the next lab](#next).
 >>>>>>> parent of 3fe867bde (Update 4-labs-github-merge-commit-pullrequest.md)
