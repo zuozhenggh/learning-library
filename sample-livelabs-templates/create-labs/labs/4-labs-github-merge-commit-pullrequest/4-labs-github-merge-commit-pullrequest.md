@@ -2,27 +2,27 @@
 
 ## Introduction
 
-As a best practice, merge your library everyday or whenever you start your GitHub Desktop application. *Merge* pulls all the commits (changes) from the [upstream/master repository (production)](https://github.com/oracle/learning-library), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
+As a best practice, merge your library everyday or whenever you start your GitHub Desktop application. Merge pulls all the commits (changes) from the [upstream/master repository (production)](https://github.com/oracle/learning-library), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
 
 ### Objectives
 
-* Commit your changes
-* Request for a review
-* Test your content
-* Create a Pull Request to upload your content to master
+* Commit your changes.
+* Request for a review.
+* Test your content.
+* Create a Pull Request to upload your content to master.
 
 ### What Do You Need?
 * Git Environment Setup
 * GitHub Desktop client
 
 
-This lab assumes that you have successfully completed **Lab 3: Use a Text Editor to Develop Markdown Content** in the **Contents** menu on the right.
+This lab assumes that you have successfully completed **Lab 3: Using Atom Editor to Develop Content** in the **Contents** menu on the right.
 
 ## Task 1: Get Latest Updates from Production
 
 Before you develop you should ensure you have the latest content from production to ensure you are developing off the latest code set.
 
-1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is, perform the following steps to sync.  This should be done before you commit.
+1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is perform the following steps to sync.  This should be done before you commit.
 
   ![](./images/git-hub-sync-behind.png " ")
 
@@ -94,7 +94,7 @@ To share and view your workshop:
 
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
 
-Note:  *Before executing a PR, make sure you have run Task 1 above and that your personal github repo on the web is not behind.  Failure to do so will result in conflicts.  You cannot issue a pull request without syncing first.  PRs will not be approved without your LWMS ID (Workshop ID)*
+Note:  *Before executing a PR, make sure you have run Step 1 above and that your personal github repo on the web is not behind.  Failure to do so will result in conflicts.  You cannot issue a pull request without syncing first.  PRs will not be approved without your LWMS ID (Workshop ID)*
 
 > **Note:** The owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
 
@@ -122,7 +122,7 @@ To create a Pull Request:
 
   Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
 
-## Task 6: Access your workshop in GitHub
+## Task 6: Accessing your workshop in GitHub
 
 After your pull request is complete, wait a few minutes and perform the steps below.  Github pages takes approximately 5 minutes for the pages to be copied
 
@@ -139,9 +139,16 @@ After your pull request is complete, wait a few minutes and perform the steps be
   https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier
 
 ## Task 7: Change your status
-Now that your workshop is in the learning library, change your status.  If you are finished and ready to QA, change your status to **Self QA**. If you still have some work to do, change your status to **Moving to Github**.
-1. Go into the LWMS (Oracle employees only - [bit.ly/oraclelivelabs](https://bit.ly/oraclelivelabs)) and click **EDIT My Workshop(s)**.
+Now that your workshop is in the learning library, change your status.  If you are finished and ready to QA, change your status to **Self QA**, if you still have some work to do, change your status to **Moving to Github**.
+1. Go into the LWMS (Oracle employees only - bit.ly/oraclelivelabs) and click edit your workshop.
+4.  Go to the row for your workshop and change your workshop status to at least *Moving to GitHub* *Note: If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.*
+5.  Click on the ID for your workshop
+6.  On the edit page, scroll down and update the **Production GitHub URL** update it to the new oracle.github.io address you identified in step 3.
+7.  Update your Development GithHub URL to your personal github pages address
+8.  When you are finished with your workshop, set your workshop status to **Self QA**.
+9.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
 
+<<<<<<< HEAD
 2.  Go to the row for your workshop and click the **WMS ID** of your workshop.
 >**Note:** If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.
 
@@ -168,6 +175,9 @@ Now that your workshop is in the learning library, change your status.  If you a
 13.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
 
 You may now **proceed to the next lab**.
+=======
+You may now [proceed to the next lab](#next).
+>>>>>>> parent of 3fe867bde (Update 4-labs-github-merge-commit-pullrequest.md)
 
 ## **Appendix**: Troubleshooting Tips
 ### Issue: Conflicts
@@ -218,4 +228,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Kamryn Vinson, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, December 2021
+* **Last Updated By/Date:** Lauran Serhal & Anuradha Chepuri, November, 2021
