@@ -21,6 +21,15 @@ In this lab, you will:
 ## Task 1: Get Global Explanation
 
 ### Step 1. Call the explanation API as shown below
+```Python
+url = "https://forecasting-int.aiservice.us-ashburn-1.oci.oraclecloud.com/20220101/forecasts/{}/explanations/".format(create_forecast_id)
+
+payload={}
+headers = {}
+response = requests.request("GET", url, headers=headers, data=payload, auth=auth)
+get_forecast_explanations = json.loads(response.text)
+get_forecast_explanations
+```
 
 ![Explanation API Call](../images/lab4_task1_explanation_api.png)
 
@@ -89,6 +98,8 @@ def plot_global_feature_importance(get_forecast_explanations):
                  title=title).update_yaxes(categoryorder = "total ascending")
     fig.update_traces(marker_color='lightsalmon')
     fig.show()
+
+plot_global_feature_importance(get_forecast_explanations)
 ```
 
 ### Sample Global feature importance plot
@@ -122,6 +133,8 @@ def plot_local_feature_importance(get_forecast_explanations, time_step):
     fig = px.bar(df_imps, y="Features", x='Feature_Importance', title=title)
     fig.update_traces(marker_color='lightsalmon')
     fig.show()
+
+plot_local_feature_importance(get_forecast_explanations, time_step)
 ```
 
 ### Sample Local feature importance plot for step 1 forecast

@@ -95,6 +95,19 @@ A New Notebook can be created by using Python 3 kernel. Also a new folder can be
 ### Step 8: Setting Up Authorization for to use forecasting APIs
 Use the tenancy, user and fingerprint from the configuration file as shown in API key generation step. Also upload the private API key that you downloaded in the API key generation step and give its path to private_key_file. Don’t change the pass_phrase. 
 
+```Python
+from oci.signer import Signer
+
+auth = Signer(
+    tenancy='ocid1.tenancy.oc1-------------------------------------------',
+    user='ocid1.user.oc1..-------------------------------------------,
+    fingerprint='00:ff:00:::::::::::::::60',
+    private_key_file_location='api_key.pem',
+    pass_phrase='test'  # optional
+)
+
+```
+
 ![](../images/lab1_task3_step9_authorization.png " ")
 
 
