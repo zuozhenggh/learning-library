@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop walks you through how to enable OpenTracing for a WebLogic container-packaged web application deployed on Kubernetes cluster, using Oracle Application Performance Monitoring (APM).
+This workshop walks you through how to configure a WebLogic-on-Kubernetes for monitoring with the Oracle Application Performance Monitoring (APM) service. This enables automatic OpenTracing instrumentation, and metrics collection that are used to provide full, end-to-end monitoring and diagnostics for the application.  
 
 One way to deploy an APM Java agent in a Docker container-enabled Kubernetes cluster, is to first, provision the APM Java agent in the location where docker image was originally created, second, build a new Docker image with the APM Java agent, and third, push the image to the registry. You can then configure Kubernetes to use the new Docker image to enable the APM agent in the pods.
 
@@ -10,6 +10,7 @@ However, this method assumes you have administrator access to the Docker working
 
 In this workshop, we will use a simple WebLogic web application that runs on a Kubernetes cluster, as a target application to trace the user transactions.  As a prerequisite, please complete [Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850) workshop up to Lab 4, whereyou can set up the application, prior to starting this workshop.
 
+> ***NOTE***: The same approach demonstrated for WLS on Kubernetes can be used to configure other types of java application servers, such as Spring Boot, deployed on Kubernetes.
 
 
 Estimated Workshop Time: 75 minutes
@@ -33,7 +34,7 @@ In this workshop, you will:
 *	Create a file system in the Oracle Cloud Infrastructure, and mount it in the Kubernetes pods
 *	Download, provision and deploy the APM Java Agent
 * Apply custom storage configuration to the Kubernetes pods
-*	Change the display name of the spans by editing the agent configuration file
+*	Change the display name format of the spans by editing the agent configuration file
 *	Use APM Trace Explorer to view traces, spans, and span dimensions
 
 
