@@ -381,7 +381,7 @@ With dbcli command you can manage pluggable databases on the container database 
     52fa1489-2a1c-47d4-9124-9a2f40fc7ce0     PDB011               DBS001               READ WRITE           NO                   DBS001              
     ````
 
-3. Create a new pluggable database, name it **pdb2**. Provide a password for the Admin user, and the password of the Transparent Data Encryption Wallet when asked. Use **DBlabsPTS#22_** for both passwords. A new job is generated.
+3. Create a new pluggable database, name it **pdb2**. Provide a password for the Admin user, and the password of the Transparent Data Encryption Wallet when asked. Use **DatabaseCloud#22_** for both passwords. A new job is generated.
 
     ````
     <copy>
