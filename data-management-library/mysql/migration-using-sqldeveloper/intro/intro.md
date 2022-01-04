@@ -64,5 +64,5 @@ Ready to learn more?
 
 ## Acknowledgements
 * **Author** - Muhammad Shuja, Principal Cloud Solution Engineer, ODP - ANZ
-* **Reviewer** - Person, Org
+* **Reviewer** - Kaylien Phan, Outboun Product Manager
 * **Last Updated By/Date** - Muhammad Shuja, December 2021

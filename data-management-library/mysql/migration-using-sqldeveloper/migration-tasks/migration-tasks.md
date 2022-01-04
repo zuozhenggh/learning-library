@@ -32,11 +32,11 @@ In this lab, you will perform following:
 
 ## Task 2: Create Connections for the Target (ADB) database
 
-  Once you're running SQL Developer, first you'll need to create appropriate user for the target schema, which is ATP in our case. You can use following SQL script to create a sample user for the connection, with appropriate roles. You can follow step 1 from this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). Or you can follow next task: **Task 2a: Other Reference Lab: How to Connect to Autonomous Database from SQL Developer** 
+  Once you're running SQL Developer, first you'll need to create appropriate user for the target schema, which is ATP in our case. You can use following SQL script to create a sample user for the connection, with appropriate roles. You can follow step 1 from this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_Connecting%20SQL%20Developer%20to%20Autonomous%20Transaction%20Processing/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). Or you can follow next task: **Task 2a: Appendix: How to Connect to Autonomous Database from SQL Developer** 
  
-## Task 2a: Other Reference Lab: How to Connect to Autonomous Database from SQL Developer
+## Task 2a: Appendix: How to Connect to Autonomous Database from SQL Developer
 
-  Click this link to follow the lab:  [Other Reference Lab: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet)
+  Click this link to follow the lab:  [Appendix: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet)
   
   Once complete, please return back to the **Task 2b** of this lab. 
 
@@ -56,7 +56,7 @@ In this lab, you will perform following:
   GRANT SELECT ANY TABLE TO targetuser; </copy>
   ```
     
-  2. After executing above SQL commands, create a new connection named "ATP" in SQL Developer with the above TARGETUSER database credentials and the ATP wallet file. Just like we did in lab: [Other Reference Lab: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet)
+  2. After executing above SQL commands, create a new connection named "ATP" in SQL Developer with the above TARGETUSER database credentials and the ATP wallet file. Just like we did in lab: [Appendix: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet)
 
   > **Note:** SQL Developer does not migrate grant information from the source database. The Oracle DBA must adjust (as appropriate) user, login, and grant specifications after the migration.
 
@@ -128,7 +128,7 @@ In this lab, you will perform following:
 
 ## Task 5: Create Migration Connection
 
-  In SQL Developer, create a database connection named Migration_Repository using the MIGRATIONS user created in previous step, to connect to ATP. For help with making such connection, you can refer back the above lab: [Other Reference Lab: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet). Once completed, return back to Task 6 in Migration Workshop Lab. 
+  In SQL Developer, create a database connection named Migration_Repository using the MIGRATIONS user created in previous step, to connect to ATP. For help with making such connection, you can refer back the above lab: [Appendix: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet). Once completed, return back to Task 6 in Migration Workshop Lab. 
 
 
 ## Task 6: Create Migration Repository
