@@ -1,4 +1,4 @@
-# Lab 4: (Advanced Session) Access Anomaly Detection Service with REST API
+#  (Advanced Session) Access Anomaly Detection Service with REST API
 
 ## Introduction
 
@@ -8,14 +8,15 @@ In this lab session, we will show you how to set up authentication method in ord
 
 You can set up those configuration and execute those codes in the Oracle Cloud Shell.
 
-*Estimated Lab Time*: 45 minutes
+*Estimated Time*: 45 minutes
 
-### Objectives:
+### Objectives
 
 * Learn how to set up API Signing Key and Configure file
 * Lear to use Python SDK to communicate with our anomaly detection service endpoints
 
-### Prerequisites:
+### Prerequisites
+
 * Familiar with Python programming is required
 * Have a Python environment ready in local machine or use our Cloud Shell, or Oracle [Data Science Platform](https://www.oracle.com/data-science/)
 * Familiar with local editing tools, such as vi and nano, or editing IDEs, such as VS Code or Sublime
@@ -23,10 +24,9 @@ You can set up those configuration and execute those codes in the Oracle Cloud S
 * You have permission to use cloud shell; ask tenancy administrator to add policy if not.
 * If using your local machine, be sure to install/Update to the most updated version of Python library `oci` (version 2.42.0 or higher)
 
+> **Note:** The complete Python code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
 
-**Note:** The complete Python code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
-
-## **TASK 1:** Setup API Signing Key
+## TASK 1: Setup API Signing Key
 
 We need to generate proper authentication configuration (API Signing Key pair) in order to use OCI CLI to communicate properly to the services on your behalf.
 
@@ -55,17 +55,16 @@ Copy the values shown on the console, and save in your local computer, again lat
 The configuration content will be like the following:
 ```
 <copy>[DEFAULT]
-user=ocid1.user.oc1..aaaaaaaarssh232crtgy6md7xrvuwenlfv5gttjkq
-fingerprint=12:34:56:78:90:21:f1:90:55:25:17:12:84:ea:83:71
-tenancy=ocid1.tenancy.oc1..aaaaaaaagkbzgg6lpzrf47xzy4rjoxg4de6ncfiq2
+user=ocid1.user.oc1..aaaaaaaa.....
+fingerprint=11:11:11:11:11:11:11:11
+tenancy=ocid1.tenancy.oc1..aaaaaaaa.....
 region=us-ashburn-1
 key_file=<path to your private keyfile> # TODO </copy>
 ```
 
-
 To know more about API key and config file, please visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 
-## **TASK 2:** Activate Cloud Shell with Configuration
+## TASK 2: Activate Cloud Shell with Configuration
 
 ### 1. Get permission to Use Cloud shell
 
@@ -129,13 +128,12 @@ In Cloud Shell, run the following to get your username:
 <copy>whoami</copy>
 ```
 
-Then upload this script `anomaly_detection_rest_api_example.py` to the Cloud Shell, excute the following command to run all the actions of building a model and run detection.
+Then upload this script `anomaly_detection_rest_api_example.py` to the Cloud Shell, execute the following command to run all the actions of building a model and run detection.
 ```
 <copy>python3 anomaly_detection_rest_api_example.py</copy>
 ```
 
-More detailed information of the code are explaineda s follows.
-
+More detailed information of the code are explained as follows.
 
 ### 1. Configuration and Connection
 
@@ -164,13 +162,13 @@ from oci.ai_anomaly_detection.models.inline_detect_anomalies_request import Inli
 
 # change the following constants accordingly
 # ## If using the instance in data science platform, please refer this page https://dzone.com/articles/quick-and-easy-configuration-of-oracle-data-scienc to setup the content of config file
-CONFIG_FILENAME = "/home/<USERNAME>/.oci/config" # TODO: Update USERNAME
-SERVICE_ENDPOINT="https://anomalydetection.aiservice.us-ashburn-1.oci.oraclecloud.com" # Need to Update propery if different
-NAMESPACE = "idehhejtnbtc" # Need to Update propery if different
-BUCKET_NAME = "anomaly-detection-bucket" # Need to Update propery if different
-training_file_name="demo-training-data.csv" # Need to Update propery if different
+CONFIG_FILENAME = "/home/USERNAME/.oci/config" # TODO: Update USERNAME
+SERVICE_ENDPOINT="https://anomalydetection.aiservice.us-ashburn-1.oci.oraclecloud.com" # Need to Update properly if different
+NAMESPACE = "abcd....." # Need to Update properly if different
+BUCKET_NAME = "anomaly-detection-bucket" # Need to Update properly if different
+training_file_name="demo-training-data.csv" # Need to Update properly if different
 
-compartment_id = "ocid1.tenancy.oc1..aaaaaaaasuvbdyacvuwg7p5zdccy564al2bnlizwdabjoebpefmvksqve3na" #Compartment of the project, Need to Update propery if different
+compartment_id = "ocid1.tenancy.oc1..aaaa........" #Compartment of the project, Need to Update properly if different
 config = from_file(CONFIG_FILENAME)
 
 ad_client = AnomalyDetectionClient(
@@ -273,11 +271,22 @@ while get_model.data.lifecycle_state == Model.LIFECYCLE_STATE_CREATING:
 ### 5. Detection with the Model
 ```Python
 print("-*-*-*-DETECT-*-*-*-")
+## Method 1: Load the data from a csv file with first column as timestamp
+# df = pd.read_csv(filename)
+# signalNames = [e for e in df.columns if e != 'timestamp']
+
+## Method 2: create a random dataframe with the appropriate header
+num_rows = 200
 signalNames = ["temperature_1", "temperature_2", "temperature_3", "temperature_4", "temperature_5", "pressure_1", "pressure_2", "pressure_3", "pressure_4", "pressure_5"]
+df = pd.DataFrame(np.random.rand(num_rows, len(signalNames)), columns=signalNames)
+df.insert(0, 'timestamp', pd.date_range(start=date_today, periods=num_rows, freq='min'))
+df['timestamp'] = df['timestamp'].apply(lambda x: x.strftime('%Y-%m-%dT%H:%M:%SZ'))
+
+# Now create the Payload from the dataframe
 payloadData = []
-for i in range(10):
-    timestamp = datetime.strptime(f"2020-07-13T20:4{i}:46Z", "%Y-%m-%dT%H:%M:%SZ")
-    values = [ 0.3*i, 0.04713*(i-2)**2, 1.0, 0.5479, 1.291, 0.8059, 1.393, 0.0293, 0.1541, 0.2611]
+for index, row in df.iterrows():
+    timestamp = datetime.strptime(row['timestamp'], "%Y-%m-%dT%H:%M:%SZ")
+    values = list(row[signalNames])
     dItem = DataItem(timestamp=timestamp, values=values)
     payloadData.append(dItem)
 
@@ -290,9 +299,8 @@ print(detect_res.data)
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
-
 ## Acknowledgements
+
 * **Authors**
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services

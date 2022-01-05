@@ -4,17 +4,17 @@
 
  In this lab, you will get a quick tour of basic OML Services features. You will learn how to obtain an authentication token for your user account to get started with OML Services and then use OML Services to explore the APIs, get model information and score with a model. You will also get a chance to use Oracle's proprietary Cognitive Text model.
 
-Estimated Time: -- 30 minutes
+Estimated Time: 30 minutes
 
 ### About Oracle Machine Learning Services
 OML Services extends OML functionality to support model deployment and model lifecycle management for both in-database OML models and third-party Open Neural Networks Exchange (ONNX) machine learning models via REST APIs. These third-party classification or regression models can be built using tools that support the ONNX format, which includes packages like Scikit-learn and TensorFlow, among several others.
 
-Oracle Machine Learning Services provides REST API endpoints hosted on Oracle Autonomous Database. These endpoints enable the storage of machine learning models along with their metadata, and the creation of scoring endpoints for the model.
+Oracle Machine Learning Services provides REST endpoints through the Oracle Autonomous Database environment. These endpoints enable the storage of machine learning models along with their metadata, the creation of scoring endpoints for the model, and producing scores using these endpoints.
 
 ### Objectives
 
 In this lab, you will:
-* Authenticate your user account with the Autonomous Database to use OML Services.
+* Authenticate your user account with your Autonomous Database instance to use OML Services.
     * Obtain authentication token.
     * Refresh authentication token.
     * Revoke authentication token.
@@ -46,7 +46,7 @@ This lab assumes you have:
 
 1.  If you are using the LiveLab tenancy, use the OCI Cloud Shell to perform the steps in this lab. To access the OCI Cloud Shell, select your compartment and click on the Cloud Shell icon.
 
-	![Image alt text](images/oci-cloud-shell-1-new.png)
+	 ![Image alt text](images/oci-cloud-shell-1-new.png)
 
    On clicking the Cloud Shell icon, the OCI Cloud Shell command prompt is displayed in the lower half of the console as illustrated in the image below.
 
@@ -56,37 +56,44 @@ This lab assumes you have:
     * Your OML user name
     * Your OML password
     * OML server URL
-    * Tenant name
-    * Database name
 
    Here is the syntax:
      ```
      <copy>curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'\
      -d '{"grant_type":"password", "username":"'${oml_username}'", "password":"'${oml_password}'"}'\
-     "<OML server URL>/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token"</copy>
+     "<OML server URL>/omlusers/api/oauth2/v1/token"</copy>
      ```
-    Let's run an example command to obtain a token. First set variables for the parameters for ease of use in subsequent requests.
+   In the syntax above, OML server URL is the Autonomous Database URL and points to the region where the Autonomous Database instance resides. The URL also contains the database name and tenancy ID. You can obtain this URL information from the Development tab on the Autonomous Database service console. From your ADB instance details page, click open the service console.
+
+  ![Image alt text](images/adb-instance.png)
+
+   On the service console, click the Development link on the left panel.
+
+  ![Image alt text](images/adb-console.png)
+
+   Scroll down the Development page to view the Oracle Machine Learning RESTful Services tile, and copy the URL for your ADB instance.
+
+  ![Image alt text](images/development-tab.png)
+
+   Now, go back to the Cloud Shell interface and run a command to obtain a token. First set variables for the parameters for ease of use in subsequent requests.
 
     ```
     <copy>export omlserver=<omlserver url>
-    export database_name=DB2
     export oml_username=OMLUSER
     export oml_password=<*******></copy>
 
     ```
    In the command above,
-     * omlserver url is the Autonomous Database URL and points to the region where the Autonomous Database instance resides. For example, if the Autonomous Database instance is in the Ashburn region, the URL will be https://adb.us-ashburn-1.oraclecloud.com.
-     * tenant name is the Autonomous Database tenancy OCID and typically starts as ocid1.tenancy.oc1...
-     * DB2 is the database name.
+     * omlserver url is the URL that you copied from the ADB console. An example of omlserver URL is https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this URL ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
      * OMLUSER is your OML user name.
-     * Finally, the set of asterisks within angle brackets is your OML password.
+     * The set of asterisks within angle brackets is your OML password.
 
    Run the following command to obtain an authentication token that uses the variables set above.
 
     ```
     <copy>curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'\
     -d '{"grant_type":"password", "username":"'${oml_username}'", "password":"'${oml_password}'"}'\
-    "${omlserver}/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token"</copy>
+    "${omlserver}/omlusers/api/oauth2/v1/token"</copy>
     ```
    Successfully running the command above results in a token as displayed below. In this example result, the token string is
   truncated as indicated by the ellipses (three dots).
@@ -95,6 +102,7 @@ This lab assumes you have:
     {"accessToken":"eyJhbGci... KLbI1wQ==","expiresIn":3600,"tokenType":"Bearer"}
 
     ```
+
 3. A token is valid for an hour. You can refresh a token for up to 8 hours after generating it. Each refresh will extend its validity by an hour. In order to run the command to refresh the token (or any command that uses the token for authentication), you should save the returned token as a variable and use the variable for convenience. Enclose the token within single quotes:
 
     ```
@@ -103,7 +111,7 @@ This lab assumes you have:
    Here's the syntax for refreshing a token:
 
     ```
-    <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" -d '{"grant_type":"refresh_token", "refresh_token":"'${token}'"}' "${omlserver}/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token"</copy>
+    <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" -d '{"grant_type":"refresh_token", "refresh_token":"'${token}'"}' "${omlserver}/omlusers/api/oauth2/v1/token"</copy>
     ```
    Running a command to refresh a token results in an output similar to this:
 
@@ -129,7 +137,7 @@ This lab assumes you have:
 4. You can also revoke a token. You cannot use or refresh a token you have revoked. For this LiveLab, do not perform this step. The syntax is provided for your reference.
 
     ```
-    <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" "${omlserver}/omlusers/tenants/${tenant_name}/databases/${database_name}/api/oauth2/v1/token/revoke"</copy>
+    <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" "${omlserver}/omlusers/api/oauth2/v1/token/revoke"</copy>
     ```
    Running the command above produces a result similar to this:
 
@@ -196,7 +204,7 @@ This lab assumes you have:
 
 
 
-2.  Get a list of saved models. For this step to work, you need to have models deployed in your OML user account. If you have completed Labs 2 , 3 or 4, your account should include deployed models. Refer back to Lab 4 Using OML AutoML UI  to know how to quickly create and save a  model.
+2.  Get a list of saved models. For this step to return results, you need to have models deployed in your OML user account. If you have completed Labs 2 , 3 or 4, your account should include deployed models. Refer back to Lab 4 Using OML AutoML UI  to know how to quickly create and save a  model.
 
     ```
     <copy>curl -X GET --header "Authorization: Bearer ${token}" "${omlserver}/omlmod/v1/models" | jq</copy>
@@ -207,29 +215,45 @@ This lab assumes you have:
     ```
     {
       "items": [
-        {
-           "version": "1.0",
-           "modelType": "OML",
-           "createdBy": "OMLUSER",
-           "modelId": "71c51f2b-6178-4b18-a79d-383cb7afd0af",
-           "modelName": "automl_affcard_nb",
-           "links": [
-             {
-               "rel": "self",
-               "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
-             }
-           ],
-           "namespace": "automl_affinity_card",
-           "shared": false,
-           "storedOn": "2021-08-24T06:48:52.639Z"
-        }
-      ],
+          {
+            "version": "1.0",
+            "modelType": "OML",
+            "createdBy": "OMLUSER",
+            "modelId": "71c51f2b-6178-4b18-a79d-383cb7afd0af",
+            "modelName": "automl_affcard_nb",
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
+              }
+                     ],
+            "namespace": "automl_affinity_card",
+            "shared": false,
+            "storedOn": "2021-08-24T06:48:52.639Z"
+          },
+          {
+            "version": "1.0",
+            "modelType": "OML",
+            "createdBy": "OMLUSER",
+            "modelId": "6c6edf94-8b9c-4ca0-984a-271f23813793",
+            "modelName": "automl_cust360_affcard_nb",
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/6c6edf94-8b9c-4ca0-984a-271f23813793"
+              }
+                     ],
+            "namespace": "automl_cust360_affinity_card",
+            "shared": false,
+            "storedOn": "2021-09-06T04:54:08.908Z"
+          }
+               ],
       "links": [
-        {
-          "rel": "self",
-          "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models"
-        }
-      ]
+          {
+            "rel": "self",
+            "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models"
+          }
+              ]
     }
 
     ```
@@ -255,7 +279,7 @@ This lab assumes you have:
           "links": [
             {
               "rel": "self",
-              "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
+              "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
             }
       ],
           "namespace": "automl_affinity_card",
@@ -266,7 +290,7 @@ This lab assumes you have:
       "links": [
         {
           "rel": "self",
-          "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models"
+          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models"
         }
       ]
     }
@@ -293,7 +317,7 @@ This lab assumes you have:
           "links": [
             {
               "rel": "self",
-              "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
+              "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/71c51f2b-6178-4b18-a79d-383cb7afd0af"
             }
       ],
           "namespace": "automl_affinity_card",
@@ -304,7 +328,7 @@ This lab assumes you have:
       "links": [
         {
           "rel": "self",
-          "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/models"
+          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models"
         }
       ]
     }
@@ -316,7 +340,7 @@ This lab assumes you have:
 1. Get model endpoint details for the model that you created in the preceding labs (Labs 2 through 4). Use the following values:
 
     * authentication token=generated in Task 1 or if expired then a refreshed or regenerated token
-    * omlserver= e.g. https://adb.us-ashburn-1.oraclecloud.com
+    * omlserver= e.g. https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this URL, ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
     * model URI=e.g. `automl_cust360_affinity_card_nb` (To get the URI for the model that you want the endpoint for, log in to OML Notebooks, go to the Models page,  Deployed tab.)
 
     ```
@@ -383,7 +407,7 @@ This lab assumes you have:
       "links": [
         {
           "rel": "self",
-          "href": "https://adb.us-ashburn-1.oraclecloud.com/omlmod/v1/deployment/automl_cust360_affinity_card_nb"
+          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/deployment/automl_cust360_affinity_card_nb"
         }
       ],
       "namespace": "automl_cust360_affinity_card",
@@ -408,10 +432,10 @@ This lab assumes you have:
     <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/${model_URI}/score" \
     --header "Authorization: Bearer ${token}" \
     --header 'Content-Type: application/json' \
-    -d '{"inputRecords":[{"XXX":value,"YYY":value}]}'| jq</copy>
+    -d '{"topNdetails":n,"inputRecords":[{"XXX":value,"YYY":value}]}'| jq</copy>
 
     ```
-   In the following example,  you specify the model URI `automl_affinity_card_nb` and a valid token generated in Task 1. The model was built using the Supplementary Demographics data set. To score with a single record, for XXX use `YRS_RESIDENCE` with the value of 10 and for YYY  use `Y_BOX_GAMES` with a value of 0. You want to predict the probability that the person associated with this record will purchase the affinity card.
+  In the syntax above, the parameter `topNdetails` is optional. It fetches the top n prediction details for the record you are scoring. Prediction details refer to the attributes or features that impact a prediction. In the following example,  you specify the model URI `automl_affinity_card_nb` and a valid token generated in Task 1. The model was built using the Supplementary Demographics data set. To score with a single record, for XXX use `YRS_RESIDENCE` with the value of 10 and for YYY  use `Y_BOX_GAMES` with a value of 0. You want to predict the probability that the person associated with this record will purchase the affinity card.
 
     ```
    <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/automl_cust360_affinity_card_nb/score" \
@@ -443,51 +467,80 @@ This lab assumes you have:
     ```
 
 
-2.  Next, score a mini-batch of 2 records with the same model URI. Use the following data for the second record:
+2.  Next, score a mini-batch of 2 records with the same model URI. For the first record, use the same data as in the singleton scoring step above. For the second record and the prediction details parameter, use the data shown below. You want to return the top 3 attributes that impact the predictions and, therefore, set `topNdetails` to 3.:
     * `YRS_RESIDENCE`=5
     * `Y_BOX_GAMES`=1
+    * `topNdetails` = 3
 
     ```
     <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/automl_cust360_affinity_card_nb/score" \
     --header "Authorization: Bearer ${token}" \
     --header 'Content-Type: application/json' \
-    -d '{"inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0},
+    -d '{"topNdetails:3", "inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0},
                      {"YRS_RESIDENCE":5,"Y_BOX_GAMES":1}]}'} | jq</copy>
 
     ```
-   The scores for the two records above are displayed below:
+    The scores for the above two records, along with the prediction details for each score, are displayed below:
+
     ```
     {
       "scoringResults": [
         {
-         "classifications": [
-           {
-             "label": "0",
-             "probability": 0.9850329798772426
-           },
-           {
-             "label": "1",
-             "probability": 0.014967020122757546
-           }
-         ]
+            "classifications": [
+                {
+                    "label": "0",
+                    "probability": 0.9850329798772426
+                },
+                {
+                    "label": "1",
+                    "probability": 0.014967020122757546
+                }
+                   ],
+            "details":  [
+                {
+                    "columnName": "YRS_RESIDENCE",
+                    "weight": 1.097
+                },
+                {
+                    "columnName": "Y_BOX_GAMES",
+                    "weight": 0.971
+                },
+                {
+                    "columnName": "CUST_YEAR_OF_BIRTH",
+                    "weight": 0.349
+                }
+                   ]
         },
         {
-         "classifications": [
-           {
-             "label": "0",
-             "probability": 0.9984975504253337
-           },
-           {
-             "label": "1",
-             "probability": 0.0015024495746662695
-           }
-         ]
-       }
-     ]
+            "classifications": [
+                {
+                    "label": "0",
+                    "probability": 0.9984975504253337
+                },
+                {
+                     "label": "1",
+                    "probability": 0.0015024495746662695
+                }
+                   ],
+            "details":         [
+                {
+                    "columnName": "YRS_RESIDENCE",
+                    "weight": 1.097
+                },
+                {
+                    "columnName": "CUST_YEAR_OF_BIRTH",
+                    "weight": 0.349
+                },
+                {
+                    "columnName": "Y_BOX_GAMES",
+                    "weight": 0.174
+                }
+                   ]
+        }
+      ]
     }
 
     ```
-   **Note:** The number of records you can pass in a batch is currently limited to 256.
 
 3. In this task, use Oracle's proprietary Cognitive Text functionality. This functionality provides endpoints to score a string of text to obtain information such as most relevant keywords, topics, text summary, sentiment, similarity to another text string and text features. The supported languages for Cognitive Text include English (America), Spanish, French and Italian. In this step, pass a text string to obtain keywords and its summary using the relevant end points. Here's the syntax for using the keywords endpoint:
 
@@ -589,4 +642,4 @@ To learn more about how OML Services support ONNX format models, see resources l
 ## Acknowledgements
 * **Author** - Suresh Rajan, Senior Manager, Oracle Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning
-* **Last Updated By/Date** - Suresh Rajan, November 2021
+* **Last Updated By/Date** - Suresh Rajan, December 2021

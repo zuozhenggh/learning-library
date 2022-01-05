@@ -1,4 +1,4 @@
-# Lab 1: Understand Data And Download Samples
+#  Understand Data And Download Samples
 
 ## Introduction
 
@@ -6,7 +6,7 @@ Due to the nature of time-series anomaly detection, the data required for traini
 
 In this session, we will discuss the data requirements and formats, and provide some sample datasets as examples. We will also show you how to upload to Oracle object storage for later to create data assets and train the model.
 
-***Estimated Lab Time***: 25 minutes
+***Estimated Time***: 25 minutes
 
 ### Objectives
 
@@ -16,6 +16,7 @@ In this lab, you will:
 - Upload the downloaded dataset into OCI (Oracle Cloud Infrastructure) object storage
 
 ### Prerequisites
+
 - A Free tier or paid tenancy account in OCI
 - Familiar with OCI object storage to upload data
 
@@ -49,7 +50,7 @@ For Oracle Object Storage data source type, the service accepts two data formats
 #### CSV format
 CSV-formatted data should have comma-separated lines, with first line as the header, and other lines as data. Note the first column is the timestamp column.
 
-**Note:**
+> **Note:**
 * Missing value is permitted(with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1).
 * Do not have a new line as the last line. The last line should still be an observation with other attributes/signals.
 
@@ -62,9 +63,10 @@ timestamp,sensor1,sensor2,sensor3,sensor4,sensor5
 ```
 
 #### JSON format
+
 Similarly, JSON-formatted data should also contain timestamps and numeric attributes only, with the following keys:
 
-**Note:**
+> **Note:**
 * Missing value is coded as null without quote.
 
 ```json
@@ -90,7 +92,6 @@ Here are two prepared sample datasets to help you to easily understand how the t
     - 10 signals with timestamp column, with 10,000 observations
 * <a href="../files/demo-testing-data.json" target="_blank" download>testing json data for detection</a>
     - same 10 signals with timestamp column, 100 observations
-
 
 ## Task 3: Upload Data to Object Storage
 
@@ -126,15 +127,12 @@ Bucket detail window should be visible. Click Upload
 Click on Upload and then browse to file which you desire to upload.
 ![](../images/upload-sample-file.png " ")
 
-
 More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
-
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
-
 ## Acknowledgements
+
 * **Authors**
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
