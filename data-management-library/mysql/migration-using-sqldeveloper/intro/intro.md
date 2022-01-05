@@ -4,16 +4,16 @@
 
 This workshop provides step-by-step instuctions for MySQL users, to migrate MySQL database to Oracle Autonomous Database, using Oracle SQL Developer. 
 
+Estimated Workshop Time: 1.5 hours
+
 ### About this Workshop
 
 If you are considering moving your on-premise MySQL database to the cloud and in the process, also wants to migrate the database to Oracle Database (in our case Autonomous Database - ADB), this workshop will walk you throgh the steps using Oracle SQL Developer v 21.2. This is specially designed, keeping in mind MySQL users, who doesn't have much experience with Oracle Database and Oracle SQL Developer. There are certain prerequisites that you need to have in place, before you start working on core migration lab part. Additional lab references are provided to perform those prerequisites (1 & 2) as well. 
 
-Estimated Workshop Time: 1.5 hours
-
 ![Oracle SQL Developer icon](images/sqldv.jpg " ")
 
 Oracle SQL Developer GUI - Migration Configured 
-![Oracle SQL Developer UI](images/sqldevUI.jpg " ")
+![Oracle SQL Developer UI](images/sqldevui.jpg " ")
 
 
 Oracle SQL Developer is a free, integrated development environment (IDE) that simplifies the development and management of Oracle Database in both traditional and Cloud deployments. SQL Developer also provides migration capability from third-party databases. If you have basic understanding of SQL and know-how of Oracle Cloud and Autonomous Database, it will be quite easy to perform this workshop. However, if you’re coming from MySQL background alone, using this workshop steps, you will still be able to complete the migration. 
