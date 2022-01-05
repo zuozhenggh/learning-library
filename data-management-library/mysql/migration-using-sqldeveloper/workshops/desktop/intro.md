@@ -6,7 +6,7 @@ This workshop provides step-by-step instuctions for MySQL users, to migrate MySQ
 
 ### About this Workshop
 
-If you are considering moving your on-premise MySQL database to the cloud and in the process, also wants to migrate the database to Oracle Database (in our case Autonomous Database - ADB), this workshop will walk you throgh the steps using Oracle SQL Developer v 21.2. This is specially designed, keeping in mind MySQL users, who doesn't have much experience with Oracle Database and Oracle SQL Developer. There are certain prerequisites that you need to have in place, before you start working on core migration lab part. Additional lab references are provided to perform those prerequisites (1 & 2) as well. 
+If you are considering moving your on-premise MySQL database to the cloud and in the process, also wants to migrate the database to Oracle Database (in our case Autonomous Database - ADB), this workshop will walk you throgh the steps using Oracle SQL Developer v 21.2. This is specially designed, keeping in mind MySQL users, who doesn't have much experience with Oracle Database and Oracle SQL Developer. There are certain prerequisites that you need to have in place, before you start working on core migration lab part. Additional lab references are provided to perform those prerequisites (1 & 2) as well. One of the lab in this workshop provides steps to setup remode desktop connectivity to perform this workshop completely from your own desktop/laptop. 
 
 Estimated Workshop Time: 1.5 hours
 

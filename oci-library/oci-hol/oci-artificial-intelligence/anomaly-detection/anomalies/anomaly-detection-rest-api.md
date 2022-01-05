@@ -1,4 +1,4 @@
-# Lab 4: (Advanced Session) Access Anomaly Detection Service with REST API
+#  (Advanced Session) Access Anomaly Detection Service with REST API
 
 ## Introduction
 
@@ -8,14 +8,15 @@ In this lab session, we will show you how to set up authentication method in ord
 
 You can set up those configuration and execute those codes in the Oracle Cloud Shell.
 
-*Estimated Lab Time*: 45 minutes
+*Estimated Time*: 45 minutes
 
-### Objectives:
+### Objectives
 
 * Learn how to set up API Signing Key and Configure file
 * Lear to use Python SDK to communicate with our anomaly detection service endpoints
 
-### Prerequisites:
+### Prerequisites
+
 * Familiar with Python programming is required
 * Have a Python environment ready in local machine or use our Cloud Shell, or Oracle [Data Science Platform](https://www.oracle.com/data-science/)
 * Familiar with local editing tools, such as vi and nano, or editing IDEs, such as VS Code or Sublime
@@ -23,10 +24,9 @@ You can set up those configuration and execute those codes in the Oracle Cloud S
 * You have permission to use cloud shell; ask tenancy administrator to add policy if not.
 * If using your local machine, be sure to install/Update to the most updated version of Python library `oci` (version 2.42.0 or higher)
 
+> **Note:** The complete Python code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
 
-**Note:** The complete Python code file can be [downloaded here](../files/anomaly_detection_rest_api_example.py).
-
-## **TASK 1:** Setup API Signing Key
+## TASK 1: Setup API Signing Key
 
 We need to generate proper authentication configuration (API Signing Key pair) in order to use OCI CLI to communicate properly to the services on your behalf.
 
@@ -62,10 +62,9 @@ region=us-ashburn-1
 key_file=<path to your private keyfile> # TODO </copy>
 ```
 
-
 To know more about API key and config file, please visit [Generating API KEY](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm) and [SDK and CLI Configuration File](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 
-## **TASK 2:** Activate Cloud Shell with Configuration
+## TASK 2: Activate Cloud Shell with Configuration
 
 ### 1. Get permission to Use Cloud shell
 
@@ -135,7 +134,6 @@ Then upload this script `anomaly_detection_rest_api_example.py` to the Cloud She
 ```
 
 More detailed information of the code are explained as follows.
-
 
 ### 1. Configuration and Connection
 
@@ -301,9 +299,8 @@ print(detect_res.data)
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
-
 ## Acknowledgements
+
 * **Authors**
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
