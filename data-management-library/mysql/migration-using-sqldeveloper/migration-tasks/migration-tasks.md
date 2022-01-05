@@ -146,7 +146,7 @@ In this lab, you will perform following:
 
 
 Learn more about this migration scenario:
-* [Need to Migrate MySQL Database to Oracle ADB ?](http://docs.oracle.com)
+* [Need to Migrate MySQL Database to Oracle ADB ?](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/migrate-mysql.html#GUID-241F7C5A-1EC3-42D8-B960-B9751CB89D02)
 
 ## Acknowledgements
 * **Author** - Muhammad Shuja, Principal Cloud Solution Engineer, ODP - ANZ

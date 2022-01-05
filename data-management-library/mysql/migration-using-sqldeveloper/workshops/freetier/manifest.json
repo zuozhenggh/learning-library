@@ -31,7 +31,7 @@
         },
         {
             "title": "Appendix: How to Connect to Autonomous Database from SQL Developer",
-            "description": "How to Make Connection to Autonomous Database from SQL Developer",
+            "description": "How to Make Connection to Autonomous Database from SQL Developer with Wallet",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adw-connection-wallet/adw-connection-wallet.md"
         },
         {
