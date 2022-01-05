@@ -60,7 +60,7 @@ Estimated Lab Time: 30 minutes
 
 ## Task 2: Create a Full Database Backup
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
+1. On Oracle cloud console, click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
 2. Click the database name link **WSDB** in the bottom table called Databases.
 
@@ -144,10 +144,10 @@ Estimated Lab Time: 30 minutes
     - Choose a license type: Bring Your Own License (BYOL)
     - Virtual cloud network: WS-VCN
     - Client Subnet: Public Subnet
-    - Hostname prefix: ws-hostb
+    - Hostname prefix: db-clone
     - Database name: WSDBB
-    - Password: DBlabsPTS#22_
-    - Enter the source database's TDE wallet or RMAN password: DBlabsPTS#22_
+    - Password: DatabaseCloud#22_
+    - Enter the source database's TDE wallet or RMAN password: DatabaseCloud#22_
 
 4. Click **Create Database**. Status is Provisioning...
 
