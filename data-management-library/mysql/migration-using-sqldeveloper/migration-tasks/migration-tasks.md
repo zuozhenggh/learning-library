@@ -150,4 +150,4 @@ Learn more about this migration scenario:
 
 ## Acknowledgements
 * **Author** - Muhammad Shuja, Principal Cloud Solution Engineer, ODP - ANZ
-* **Last Updated By/Date** - Muhammad Shuja, December 2021
+* **Last Updated By/Date** - Muhammad Shuja, January 2022
