@@ -16,7 +16,7 @@ Estimated Lab Time: 25 minutes
 
     ````
     <copy>
-    ssh -C -i id_rsa opc@<Compute Public IP Address>
+    ssh -C -i Downloads/ssh-key-XXXX-XX-XX.key opc@<Compute Public IP Address>
     </copy>
     ````
 
@@ -24,7 +24,7 @@ Estimated Lab Time: 25 minutes
 
     ````
     <copy>
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -43,7 +43,7 @@ Estimated Lab Time: 25 minutes
 4. Use SQL Developer on your Compute node to connect to PDB012. Test and save this connection.
     - Name: SH@PDB012
     - Username: SH
-    - Password: DBlabsPTS#22_
+    - Password: DatabaseCloud#22_
     - Save password
     - Hostname: `<DB Node Private IP Address>`
     - Port: 1521
@@ -78,11 +78,11 @@ Estimated Lab Time: 25 minutes
 
 3. Read the warning: *Changing shapes stops a running DB System and restarts it on the selected shape. Are you sure you want to change the shape from VM.Standard2.1 to VM.Standard2.2?* Click again **Change Shape** to confirm.
 
-4. DB System Status will change to Updating... Wait for Status to become Available. Connect to your DB System database as SYSDBA using SQL*Plus.
+4. DB System Status will change to Updating... Wait for Status to become Available. Re-connect to your DB System database as SYSDBA using SQL*Plus.
 
     ````
     <copy>
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb012.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -128,7 +128,7 @@ Estimated Lab Time: 25 minutes
     </copy>
     ````
 
-9. Type **exit** command two times followed by Enter to close all sessions (SQL*Plus, and SSH).
+9. Type **exit** command two times followed by Enter to close all sessions (SQL*Plus, and oracle).
 
     ````
     <copy>
@@ -178,7 +178,7 @@ Estimated Lab Time: 25 minutes
     tmpfs                                1.5G     0  1.5G   0% /run/user/54322
     ````
 
-5. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
+5. On Oracle cloud console, click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
 6. On DB System Details page, click **Scale Storage Up** button. Set Available Data Storage (GB): 512, and click **Update**.
 
@@ -213,6 +213,66 @@ Estimated Lab Time: 25 minutes
     ````
 
     >**Note** : You noticed the button on Oracle cloud console is called **Scale Storage Up**. Because you can always scale up, in other words increase, the database service storage, and never scale down, or decrease.
+
+
+## Task 4: Enable Database Management Services
+
+1. From your Compute node, connect to your DB System database using SQL*Plus.
+
+    ````
+    <copy>
+    export LD_LIBRARY_PATH=/usr/lib/oracle/21/client64/lib
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
+    </copy>
+    ````
+
+2. Set required privileges for database monitoring user credentials.
+
+    ````
+    <copy>
+    GRANT CREATE PROCEDURE TO dbsnmp;
+    GRANT SELECT ANY DICTIONARY, SELECT_CATALOG_ROLE TO dbsnmp;
+    GRANT ALTER SYSTEM TO dbsnmp;
+    GRANT ADVISOR TO dbsnmp;
+    GRANT EXECUTE ON DBMS_WORKLOAD_REPOSITORY TO dbsnmp;
+    alter user dbsnmp identified by "DatabaseCloud#22_" account unlock;
+    exit
+    </copy>
+    ````
+
+3. Click on main menu ≡, then Observability & Management > Database Management > Administration. Click Private Endpoints in the left side menu. Click Create Private Endpoint.
+
+    - Name: WS_PE
+    - Description: Database Management Private Endpoint
+
+4. Click on main menu ≡, then Identity & Security > Vault. Click Create Vault.
+
+    - Name: WS-Vault
+
+5. When Vault is Active, click on it. Under Master Encryption Keys, click Create Key.
+
+    - Protection Mode: Software
+    - Name: WS-Key
+
+6. When Master Encryption Key is Enabled, click Secrets on the left menu. Click Create Secret.
+
+    - Name: WS-Secret
+    - Description: Database Management Password
+    - Encryption Key: WS-Key
+    - Secret Contents: DatabaseCloud#22_
+
+7. When Secret is Enabled, click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
+
+8. Click the database name link **WSDB** in the bottom table called Databases.
+
+9. On Database Information page, under Associated Services, see Database Management status Not Enabled. Click Enable.
+
+    - Database User Name: DBSNMP
+
+10. Leave the rest of the fileds with the default values, and click Enable Database Management.
+
+11. Database Status will change to Updating. Wait for Status to become Available. Click Metrics on the left side menu. Now you can see all performance metrics, because Database Management status is Full.
+
 
 ## Acknowledgements
 

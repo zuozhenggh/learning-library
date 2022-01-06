@@ -1,10 +1,10 @@
-d#Lab 3: Train Anomaly Detection Model And Detect
+# Train Anomaly Detection Model And Detect
 
 ## Introduction
 
 In this session, we will show you how to train an anomaly detection model, and make predictions with new data.
 
-***Estimated Lab Time***: 30 minutes
+***Estimated Time***: 30 minutes
 
 ### Objectives
 
@@ -14,9 +14,9 @@ In this lab, you will:
 - Upload testing data to check detection result
 
 ### Prerequisites
+
 - A Free tier or paid tenancy account in OCI
 - Understand basic model terminology FAP - False Alarm Probability
-
 
 ## Task 1: Create a Model
 
@@ -56,6 +56,7 @@ Typically, FAP can be set to be around the same level of percentage of anomalies
 As can be inferred from the formula, the more the number of false alarms allowed for the model to learn, the higher FAP will be.
 
 ###Train Fraction Ratio
+
 Train Fraction Ratio specifies the ratio of the whole training data used for our algorithm to learn the pattern and train the model. The rest (1-ratio) of training data will be used for our algorithm to evaluate and report model performance (e.g., FAP). The default value 0.7 or 70% specifies the model to use 70% of the data for training, and the rest 30% is used to produce model performance.
 
 In this demo data set, the default value for FAP and Train Fraction Ratio are appropriate, we will leave them as is.
@@ -102,7 +103,6 @@ You can move your mouse over the graph, the actual value & estimated value at a 
 You can also use the sliding bar under the graph to zoom in/out in different timestamp period.
 
 ![](../images/anomaly-result-graph.png " ")
-
 
 The part of the signal where the model has determined to be an anomaly is highlighted. There is also an option to download the anomaly detection result.
 
@@ -507,8 +507,6 @@ Notice that sometimes the estimated value and actual value have small difference
 You now have completed the full cycle of using the training data to create a model and deploy, and also making predictions with testing data.
 
 The next 2 sessions are optional for advanced users, which cover the topic on using REST API to integrate our services and how to prepare the training and testing data from raw data in different scenarios.
-
-[Proceed to the next section](#next).
 
 ## Acknowledgements
 

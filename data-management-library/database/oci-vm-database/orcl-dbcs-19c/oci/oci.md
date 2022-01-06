@@ -10,7 +10,7 @@ Estimated Lab Time: 60 minutes
 
 ## Task 1: Verify Virtual Cloud Network (VCN)
 
-1. Login to Oracle cloud console using the Workshop Details received:
+1. Use Copy Password to copy the initial password in your clipboard, and click on Launch Console. Use the same initial password when asked to reset the password, so you don't have to remember it. You are in the Oracle cloud console using the Workshop Details received.
 
     - Login URL 	
     - Tenancy name
@@ -29,11 +29,6 @@ Estimated Lab Time: 60 minutes
 
 6. Review the Ingress Rules and Egress Rules defined in this security list.
 
-7. Make sure you have this Ingress Rule:
-    - CIDR Block: 10.0.0.0/24
-    - Destination Port Range: 1521
-    - Description: Database connection
-
 
 ## Task 2: Create Database
 
@@ -45,21 +40,21 @@ Estimated Lab Time: 60 minutes
     - Select a shape: VM.Standard2.1
     - Oracle Database software edition: Enterprise Edition Extreme Performance
     - Choose Storage Management Software: Logical Volume Manager
-    - Generate SSH key pair, and save both Private Key and Public Key files on your computer.(*optionally select Upload SSH key files to use your own id_rsa.pub public key*)
+    - Generate SSH key pair, and save both Private Key and Public Key files on your computer. (optionally select Upload SSH key files to use your own id_rsa.pub public key)
     - Choose a license type: Bring Your Own License (BYOL)
 
 2. Specify the network information.
 
-    - Virtual cloud network: WS-VCN
-    - Client Subnet: Public Subnet
-    - Hostname prefix: ws-host
+    - Virtual cloud network: LLXXXXX-VCN
+    - Client Subnet: Public Subnet LLXXXXX-SUBNET-PUBLIC
+    - Hostname prefix: db-host
 
 3. Click Next.
 
     - Database name: WSDB
     - Database version: 19c (default)
     - PDB name: PDB011
-    - Password: DBlabsPTS#22_
+    - Password: DatabaseCloud#22_
     - Select workload type: Transaction Processing (default)
     - Configure database backups: Enable automatic backups
 
@@ -73,8 +68,8 @@ Estimated Lab Time: 60 minutes
     - Name: WS-VM
     - Image or operating system: Change Image > **Oracle Images**. Type 'dev' in the search field, and select Oracle Cloud Developer Image
     - Shape: Change Shape > Intel: VM.Standard2.1
-    - Virtual cloud network: WS-VCN
-    - Subnet: Public Subnet
+    - Virtual cloud network: LLXXXXX-VCN (default)
+    - Subnet: Public Subnet LLXXXXX-SUBNET-PUBLIC (default)
     - Assign a public IP address (default)
     - Add SSH keys: Upload public key files (.pub), Browse and select the public key file saved from the DB System. (*optionally use your own SSH key files, id_rsa.pub*)
 
@@ -91,12 +86,12 @@ Estimated Lab Time: 60 minutes
 
 4. Check DB System Details.
 
-5. Click on hamburger menu ≡, then Oracle Database > **Bare Metal, VM, and Exadata**. Click **WS-DB** DB System. On the DB System Details page, copy **Host Domain Name** in your notes. In the table below, copy **Database Unique Name** in your notes. Click **Nodes** on the left menu, and copy **Private IP Address** in your notes. E.g.
+5. Click on main menu ≡, then Oracle Database > **Bare Metal, VM, and Exadata**. Click **WS-DB** DB System. On the DB System Details page, copy **Host Domain Name** in your notes. In the table below, copy **Database Unique Name** in your notes. Click **Nodes** on the left menu, and copy **Private IP Address** in your notes. E.g.
     - Host Domain Name: subXXXXXXXXXXXX.ws-vcn.oraclevcn.com
     - Database Unique Name: WSDB_xxxxxx
     - Node Private IP Address: 10.0.0.XX 
 
-6. Verify SSH connection from a Linux client. Change the permissions on the private key file you saved from DB System. (Linux only)
+6. Verify SSH connection from a Linux client. Change the permissions on the private key file you saved from DB System. Change `ssh-key-XXXX-XX-XX` with the private key file you saved on your computer. (Linux only)
 
     ````
     <copy>
@@ -104,11 +99,11 @@ Estimated Lab Time: 60 minutes
     </copy>
     ````
 
-7. Connect to the Compute node using SSH. In OpenSSH, local port forwarding is configured using the -L option. Use this option to forward any connection to port 3389 on the local machine to port 3389 on your Compute node. Change `id_rsa` with the private key file you saved on your computer. (Linux only)
+7. Connect to the Compute node using SSH. In OpenSSH, local port forwarding is configured using the -L option. Use this option to forward any connection to port 3389 on the local machine to port 3389 on your Compute node.  (Linux only)
 
     ````
     <copy>
-    ssh -C -i id_rsa -L 3389:localhost:3389 opc@<Compute Public IP Address>
+    ssh -C -i Downloads/ssh-key-XXXX-XX-XX.key -L 3389:localhost:3389 opc@<Compute Public IP Address>
     </copy>
     ````
 
@@ -138,7 +133,7 @@ Estimated Lab Time: 60 minutes
     ````
     <copy>
     export LD_LIBRARY_PATH=/usr/lib/oracle/21/client64/lib
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/<Database Unique Name>.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -162,7 +157,7 @@ Estimated Lab Time: 60 minutes
 
     ````
     <copy>
-    sqlplus sys/DBlabsPTS#22_@<DB Node Private IP Address>:1521/pdb011.<Host Domain Name> as sysdba
+    sqlplus sys/DatabaseCloud#22_@<DB Node Private IP Address>:1521/pdb011.<Host Domain Name> as sysdba
     </copy>
     ````
 
@@ -239,7 +234,7 @@ Estimated Lab Time: 60 minutes
 
     systemctl start xrdp
 
-    echo -e "DBlabsPTS#22_\nDBlabsPTS#22_" | passwd oracle
+    echo -e "DatabaseCloud#22_\nDatabaseCloud#22_" | passwd oracle
 
     sed -i -e 's/^/#/' /etc/profile.d/oracle-instantclient*
 
@@ -275,7 +270,7 @@ Estimated Lab Time: 60 minutes
 
     ![](./images/putty5.png "")
 
-9. When asked about username and password, use **oracle** and **DBlabsPTS#22_**. 
+9. When asked about username and password, use **oracle** and **DatabaseCloud#22_**. 
 
     >**Note** : Verify in the username dialog you are typing your password correctly. The standard US 101 keyboard is default on the compute node, `#` is `Shift+3` and `_` is `Shift+key-after-0`.
 
@@ -299,7 +294,7 @@ Estimated Lab Time: 60 minutes
     </copy>
     ````
 
-13. You will receive a warning message that Java JDK is older than the recommended version for this SQL Developer. In order to save time, we will skip Java update for now.
+13. You may receive a warning message that Java JDK is older than the recommended version for this SQL Developer. In order to save time, we will skip Java update for now.
 
 14. Once JDK installation full pathname is set, SQL Developer can be started from **Applications** main menu, and **Programming**.
 
