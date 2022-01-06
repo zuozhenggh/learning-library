@@ -78,11 +78,6 @@ This lab assumes you have:
 
     ```
     SQL> <copy>ALTER PLUGGABLE DATABASE pdb1 OPEN;</copy>
-
-    ...
-
-    ERROR AT LINE 1: 
-    ORA-65019: pluggable database PDB1 already open
     ```
 
 ## Task 2: Create the Tablespaces for the Internal Partitions
@@ -94,7 +89,7 @@ In this task, you create two tablespaces to store data of the internal partition
     ```
     SQL> <copy>CONNECT system / password@PDB1</copy>
 
-    Session altered.
+    Connected.
 
     SQL>
     ```
@@ -239,7 +234,7 @@ In this task, you create the logical directories to store the source data files 
 
     ...
 
-    40 rows selected.
+    30 rows selected.
 
     SQL>
     ```
@@ -355,6 +350,15 @@ In this task, you create the logical directories to store the source data files 
     ```
     SQL> <copy>EXIT</copy>
     
+    ...
+
+    $
+    ```
+3. Cleanup the PDBs by running the `cleanup_PDBs_in_CDB1.sh` script.
+
+    ```
+    $ <copy>sh $HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
+
     ...
 
     $
