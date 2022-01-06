@@ -32,23 +32,23 @@ In this lab, you will perform following:
   When you launch SQL Developer first time, it'll ask you importing project etc, select No. 
 
 
-## Task 2: Create Connections for the Target (ADB) database
+## Task 2: Create Connection for the Target (ADB) database
 
-  Once you're running SQL Developer, first you'll need to create appropriate user for the target schema, which is ATP in our case. You can use following SQL script to create a sample user for the connection, with appropriate roles. You can follow step 1 from this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_Connecting%20SQL%20Developer%20to%20Autonomous%20Transaction%20Processing/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). 
+  Once you're running SQL Developer, first you'll need to create appropriate user for the target schema, which is ATP in our case. You can follow this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_Connecting%20SQL%20Developer%20to%20Autonomous%20Transaction%20Processing/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). 
   
-  Or you can follow next task: **Task 2a: Appendix: How to Connect to Autonomous Database from SQL Developer** 
+  OR you can follow next task: **Task 2a:**
  
 ## Task 2a: Appendix: How to Connect to Autonomous Database from SQL Developer
 
-  Click this link to follow the lab:  [Appendix: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet)
+  Click this link to follow the lab:  [Appendix: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet). You should create connection named ATP with user ADMIN. Once complete, please return back to the **Task 2b** of this lab. 
   
   ![Sample connection example)](images/adb-connection-example.png " ")
-  
-  Once complete, please return back to the **Task 2b** of this lab. 
 
 ## Task 2b: Create User in Target
 
-  1. Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that   connection to create new user. You can execute following sample command as ADMIN user, using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
+  1. Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that "ATP" connection to create new user as migration target schema in Oracle ADB. Here's sample command to follow. You can run these commands using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
+
+    ![Open Worksheet in SQL Developer and copy SQL commands and execute](images/worksheet-sql-commands.png " ")    
 
     ```
     <copy> 
@@ -64,12 +64,9 @@ In this lab, you will perform following:
     GRANT SELECT ANY TABLE TO targetuser; 
     </copy>
     ```
-    ![Open Worksheet in SQL Developer and copy SQL commands and execute](images/worksheet-sql-commands.png " ")    
   
-  2. After executing above SQL commands, create a new connection named "ATP" in SQL Developer with the above TARGETUSER database credentials and the ATP wallet file. Just like we did in lab: [Appendix: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet). Do remember to return back to Task 3. 
-
   > **Note:** SQL Developer does not migrate grant information from the source database. The Oracle DBA must adjust (as appropriate) user, login, and grant specifications after the migration.
-
+ 
 ## Task 3: Load MySQL JDBC Driver and Source Connection
 
   Setup MySQL JDBC driver and make connection in the SQL Developer
@@ -110,7 +107,7 @@ In this lab, you will perform following:
 
 ## Task 4: Create User for Migration Repository
 
-  Since, we have planned to create repository in the ATP database, let’s create separate user for migration, in the target (ATP) database named: MIGRATIONS, with the required roles and privileges and tablespace quotas. We will use this connection(SQL Developer) and user(database) to run our migration jobs in SQL Developer.
+  Since, we have planned to create repository in the ATP database, let’s create separate user for migration, in the target (ATP) database named: MIGRATIONS, with the required roles and privileges and tablespace quotas. We will use this connection(in SQL Developer) and user(database) to run our migration jobs in SQL Developer.
   
   > **Note: Remove Repository:** How to cleanly remove existing repository. If you already have a repository associated with a user/database, you can use that. Otherwise, if you want to re-create the repository, you should follow these steps to cleanly remove it first:
      a.    Migration --> Repository Management --> Truncate Repository
@@ -141,25 +138,35 @@ In this lab, you will perform following:
   </copy>
   ``` 
         
-
   > **Note:** Once you are done with migration, you may like to revoke back those high privileges from MIGRATIONS user for security purposes.   
 
 
 ## Task 5: Create Migration Connection
 
-  In SQL Developer, create a database connection named Migration_Repository using the MIGRATIONS user created in previous step, to connect to ATP. For help with making such connection, you can refer back the above lab: [Appendix: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet). Once completed, return back to Task 6 in Migration Workshop Lab. 
+  In SQL Developer, create a database connection named *Migration\_Repository* using the *MIGRATIONS* user created in previous step, to connect to ATP. Open *ATP* connection properties, change *ATP* name to *Migration_Repository* and username/password to *MIGRATIONS*/passwordxx, Test and Save. This will add new connection named Migration\-Repository, while keeping ATP connection as is. For detailed help with making such connection, you can refer back to the above lab: [Appendix: How to Connect to Autonomous Database from SQL Developer] (?lab=adw-connection-wallet). Once completed, return back to Task 6 in Migration Workshop Lab. 
 
   ![Create Repository Connection in SQL Developer](images/repository-connection.png " ")   
 
 ## Task 6: Create Migration Repository
 
-  Right click on Migrations_Repository connection that you created in the previous step and select Migration Repository and then select Associate Migration Repository. It will take some time to create the repository in the ATP database in the MIGRATIONS schema.
+  Right click on *Migrations\_Repository* connection that you created in the previous step and select Migration Repository and then select Associate Migration Repository. It will take some time to create the repository in the ATP database in the *MIGRATIONS* schema.
   
   ![Create Migration Repository with given db user](images/create-repository.png " ")  
 
 ## Task 7: Complete Migration with the Wizard
 
   The migration wizard can be invoked in a variety of contexts. You can right-click a third-party database connection (MySQL connect in our case) and select “Migrate to Oracle” or you can click from the menu “Tools>Migration>Migrate…”.
+
+  ![Launch Migration Wizard](images/run-wizard.png " ")  
+
+  ![Wizard Introduction](images/step-1.png " ")  
+
+  ![Define Connection for Migration Repository](images/step-2.png " ")  
+
+  ![Define Project Name and Directory location](images/step-3.png " ")  
+
+  ![Define Source DB](images/step-4.png " ")  
+
 
   You can follow the self-explanatory Wizard to provide details about the source and target connection, repository connection, database selected for migration, and objects under the database to be migrated and any data-type conversion required etc and at the end choose to create an offline script file for migration. You can refer to the [documentation](https://docs.oracle.com/en/database/oracle/sql-developer/19.4/rptug/migrating-third-party-databases.html#GUID-51B0F243-D970-43A0-BFA4-97477CB14C48) for explaination of the steps of this wizard.
 
