@@ -28,9 +28,9 @@ Estimated Lab Time: 25 minutes
     show parameter cpu_count
     </copy>
 
-    NAME				     TYPE	 VALUE
-    ------------------------------------ ----------- --------------------
-    cpu_count			     integer	 2
+    NAME        TYPE      VALUE
+    ----------- --------- --------------------
+    cpu_count   integer   2
     ````
 
 3. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System (or click DB System Details in the breadcrumb links).
@@ -54,9 +54,9 @@ Estimated Lab Time: 25 minutes
     show parameter cpu_count
     </copy>
 
-    NAME				     TYPE	 VALUE
-    ------------------------------------ ----------- ------------------------------
-    cpu_count			     integer	 4
+    NAME        TYPE      VALUE
+    ----------- --------- --------------------
+    cpu_count   integer   4
     ````
 
 8. After restarting the DB System on a new shape, your pluggable database is in mounted state. Open pluggable database PDB012.
@@ -173,19 +173,19 @@ Estimated Lab Time: 25 minutes
 
     - Name: WS-Vault
 
-5. When Vault is Active, click on it. Under Master Encryption Keys, click Create Key.
+5. When Vault is Active (refresh page), click on it. Under Master Encryption Keys, click Create Key.
 
     - Protection Mode: Software
     - Name: WS-Key
 
-6. When Master Encryption Key is Enabled, click Secrets on the left menu. Click Create Secret.
+6. When Master Encryption Key is Enabled (refresh page), click Secrets on the left menu. Click Create Secret.
 
     - Name: WS-Secret
     - Description: Database Management Password
     - Encryption Key: WS-Key
     - Secret Contents: DatabaseCloud#22_
 
-7. When Secret is Enabled, click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
+7. When Secret is Active (refresh page), click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
 8. Click the database name link **WSDB** in the bottom table called Databases.
 
@@ -195,7 +195,7 @@ Estimated Lab Time: 25 minutes
 
 10. Leave the rest of the fileds with the default values, and click Enable Database Management.
 
-11. Database Status will change to Updating. Wait for Status to become Available. Click Metrics on the left side menu. Now you can see all performance metrics, because Database Management status is Full.
+11. Database Status will change to Updating. Wait for Status to become Available (refresh page). Click Metrics on the left side menu. Now you can see all performance metrics, because Database Management status is Full.
 
 
 ## Acknowledgements

@@ -48,7 +48,7 @@ Estimated Lab Time: 30 minutes
 
 6. Review the backup called **Automatic Backup** in the bottom table called Backups. Click **Create Backup** button. Call it Manual-Backup, and click **Create Backup** to confirm. The new backup is added to the Backups table, having the State: Creating...
 
-7. Access Work Requests table, and click **Create Database Backup**. Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (2). Wait until this work request is 100% Complete. Under Associated Resources, click **WSDB** database name link.
+7. Access Work Requests table, and click **Create Database Backup**. Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (2). Wait until this work request is 100% Complete (refresh page). Under Associated Resources, click **WSDB** database name link.
 
 8. At this point you can see the Manual-Backup on Backups table is now Active.
 
@@ -58,7 +58,7 @@ Estimated Lab Time: 30 minutes
 
 2. Up on Database Details page, click **Restore** button. Set field **Restore to the timestamp** to the next possible value after your Automatic Backup Ended field - e.g. 10:00 UTC. Click **Restore Database** to confirm.
 
-3. Access Work Requests table, and click **Restore Database** having Status: In Progress... Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (1). Wait until this work request is 100% Complete. Under Associated Resources, click **WSDB** database name link.
+3. Access Work Requests table, and click **Restore Database** having Status: In Progress... Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (1). Wait until this work request is 100% Complete (refresh page). Under Associated Resources, click **WSDB** database name link.
 
 4. Connect again to the database instance specified by environment variables.
 
@@ -82,6 +82,8 @@ Estimated Lab Time: 30 minutes
     ````
 
 6. There are only two pluggable databases now, one seed PDB (system-supplied template that the CDB can use to create new PDBs) and one user-created PDBs (application data). Where did pluggable database PDB012 go? Pluggable database PDB012 was not created at the moment when the Automatic Backup you used to restore this database was taken.
+
+    >**Note** : If you created the PDB012 pluggable database before the Automatic Backup was completed, you may see this pluggable database after restore. Verify the sample schemas HR and SH, these schemas may have not been created when Automatic Backup was completed.
 
 7. Type **exit** command tree times followed by Enter to close all sessions (SQL*Plus, oracle user, and SSH).
 
@@ -109,29 +111,25 @@ Estimated Lab Time: 30 minutes
     - Backup Retention Period: 45 Days
     - Backup Schedule: 12:00AM - 2:00AM UTC
 
-4. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System. Or use the breadcrumbs link **DB System Details**.
-
-5. Click the database name link **WSDB** in the bottom table called Databases.
-
-6. Access Backups table, and next to Manual-Backup click ⋮ > **Create Database**. On the Create Database from Backup dialog, enter the following values:
+4. Access Backups table at the bottom of the page, and next to Manual-Backup click ⋮ > **Create Database**. On the Create Database from Backup dialog, enter the following values:
 
     - Select **Create a new DB system** radio button
     - Name your DB system: WS-DBb
     - Change Shape: VM.Standard2.1
     - Oracle Database software edition: Enterprise Edition Extreme Performance
     - Choose Storage Management Software: Logical Volume Manager
-    - Upload SSH key files: Browse and select the public key file saved from the first DB System. 
+    - Upload SSH key files: Browse and select the public key file saved from the first DB System (ssh-key-XXXX-XX-XX.key.pub). 
     - Choose a license type: Bring Your Own License (BYOL)
-    - Virtual cloud network: WS-VCN
-    - Client Subnet: Public Subnet
+    - Virtual cloud network: LLXXXXX-VCN
+    - Client Subnet: LLXXXXX-SUBNET-PUBLIC Public Subnet
     - Hostname prefix: db-clone
     - Database name: WSDBB
     - Password: DatabaseCloud#22_
     - Enter the source database's TDE wallet or RMAN password: DatabaseCloud#22_
 
-7. Click **Create Database**. Status is Provisioning...
+5. Click **Create Database**. Status is Provisioning...
 
-8. When it becomes Available, click **Nodes** on the left menu, and copy Public IP Address in your notes.
+6. When it becomes Available (refresh page), click **Nodes** on the left menu, and copy Public IP Address in your notes.
 
 ## Task 4: Verify Database Clone Created from Backup
 
@@ -165,11 +163,11 @@ Estimated Lab Time: 30 minutes
     show pdbs
     </copy>
 
-        CON_ID CON_NAME			  OPEN MODE  RESTRICTED
-    ---------- ------------------------------ ---------- ----------
-    	 2 PDB$SEED			  READ ONLY  NO
-    	 3 PDB011			  READ WRITE NO
-    	 4 PDB012			  READ WRITE NO
+        CON_ID CON_NAME       OPEN MODE  RESTRICTED
+    ---------- -------------- ---------- ----------
+             2 PDB$SEED       READ ONLY  NO
+             3 PDB011         READ WRITE NO
+             4 PDB012         READ WRITE NO
     ````
 
 5. Set current container connection to the pluggable database **PDB012**.
@@ -190,15 +188,15 @@ Estimated Lab Time: 30 minutes
     select TABLE_NAME, NUM_ROWS from DBA_TABLES where OWNER='HR';
     </copy>
 
-    TABLE_NAME				   NUM_ROWS
-    ---------------------------------------- ----------
-    REGIONS 					  4
-    LOCATIONS					 23
-    DEPARTMENTS					 27
-    JOBS						 19
-    EMPLOYEES					107
-    JOB_HISTORY					 10
-    COUNTRIES					 25
+    TABLE_NAME            NUM_ROWS
+    --------------------- --------
+    REGIONS                      4
+    LOCATIONS                   23
+    DEPARTMENTS                 27
+    JOBS                        19
+    EMPLOYEES                  107
+    JOB_HISTORY                 10
+    COUNTRIES                   25
 
     7 rows selected.
     ````

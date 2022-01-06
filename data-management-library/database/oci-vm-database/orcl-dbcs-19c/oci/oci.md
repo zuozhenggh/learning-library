@@ -22,11 +22,11 @@ Estimated Lab Time: 60 minutes
 2. Click on main menu ≡, then **Oracle Database** > **Bare Metal, VM, and Exadata**. Click **Create DB System**.
 
     - Select your compartment (default)
-    - Name your DB system: WS-DB
+    - Name your DB system: **WS-DB**
     - Select a shape type: Virtual Machine (default)
-    - Select a shape: VM.Standard2.1
-    - Oracle Database software edition: Enterprise Edition Extreme Performance
-    - Choose Storage Management Software: Logical Volume Manager
+    - Select a shape: **VM.Standard2.1**
+    - Oracle Database software edition: **Enterprise Edition Extreme Performance**
+    - Choose Storage Management Software: **Logical Volume Manager**
     - Generate SSH key pair, and save both Private Key and Public Key files on your computer. (optionally select Upload SSH key files to use your own id_rsa.pub public key)
     - Choose a license type: Bring Your Own License (BYOL)
 
@@ -34,33 +34,31 @@ Estimated Lab Time: 60 minutes
 
     - Virtual cloud network: LLXXXXX-VCN
     - Client Subnet: Public Subnet LLXXXXX-SUBNET-PUBLIC
-    - Hostname prefix: db-host
+    - Hostname prefix: **db-host**
 
 4. Click Next.
 
-    - Database name: WSDB
+    - Database name: **WSDB**
     - Database version: 19c (default)
-    - PDB name: PDB011
-    - Password: DatabaseCloud#22_
+    - PDB name: **PDB011**
+    - Password: **DatabaseCloud#22_**
     - Select workload type: Transaction Processing (default)
-    - Configure database backups: Enable automatic backups
+    - Configure database backups: **Enable automatic backups**
 
 5. Click **Create DB System**.
 
 
-## Task 2: Compute SSH Connection
+## Task 2: DB Node SSH Connection
 
-1. Wait for DB System to finish provisioning, and have status Available.
+1. Wait for DB System to finish provisioning, and have status Available (refresh page).
 
-2. Check DB System Details.
-
-3. Click on main menu ≡, then Oracle Database > **Bare Metal, VM, and Exadata**. Click **WS-DB** DB System. On the DB System Details page, copy **Host Domain Name** in your notes. In the table below, copy **Database Unique Name** in your notes. Click **Nodes** on the left menu, and copy **Public IP Address** and **Private IP Address** in your notes. E.g.
-    - Host Domain Name: subXXXXXXXXXXXX.ws-vcn.oraclevcn.com
+2. On the DB System Details page, copy **Host Domain Name** in your notes. In the table below, copy **Database Unique Name** in your notes. Click **Nodes** on the left menu, and copy **Public IP Address** and **Private IP Address** in your notes. E.g.
+    - Host Domain Name: pub.llXXXXXvcn.oraclevcn.com
     - Database Unique Name: WSDB_xxxxxx
     - Node Public IP Address: XX.XX.XX.XX
     - Node Private IP Address: 10.0.0.XX 
 
-4. Verify SSH connection from a Linux client. Change the permissions on the private key file you saved from DB System. Change `ssh-key-XXXX-XX-XX` with the private key file you saved on your computer. (Linux only)
+3. Verify SSH connection from a Linux client. Change the permissions on the private key file you saved from DB System. Change `ssh-key-XXXX-XX-XX` with the private key file you saved on your computer. (Linux only)
 
     ````
     <copy>
@@ -68,7 +66,7 @@ Estimated Lab Time: 60 minutes
     </copy>
     ````
 
-5. Connect to the DB Node using SSH. In OpenSSH, local port forwarding is configured using the -L option. Use this option to forward any connection to port 5500 on the local machine to port 5500 on your DB Node.  (Linux only)
+4. Connect to the DB Node using SSH. In OpenSSH, local port forwarding is configured using the -L option. Use this option to forward any connection to port 5500 on the local machine to port 5500 on your DB Node.  (Linux only)
 
     ````
     <copy>
@@ -76,21 +74,21 @@ Estimated Lab Time: 60 minutes
     </copy>
     ````
 
-6. Set SSH connection from a Windows client. Use PuttyGen from your computer to convert the private key file you saved on your computer to Putty `.ppk` format. Click on Conversions > Import Key. Open the private key. Click on Save Private Key and Yes to save without a passphrase. Use the same name for the new `.ppk` key file, add only the extension `.ppk`. (Windows only)
+5. Set SSH connection from a Windows client. Use PuttyGen from your computer to convert the private key file you saved on your computer to Putty `.ppk` format. Click on Conversions > Import Key. Open the private key. Click on Save Private Key and Yes to save without a passphrase. Use the same name for the new `.ppk` key file, add only the extension `.ppk`. (Windows only)
 
-7. Connect to DB Node Public IP Address port 22. (Windows only)
+6. Connect to DB Node Public IP Address port 22. (Windows only)
 
     ![](./images/putty1.png "")
 
-8. Use the `.ppk` private key you converted with PuttyGen. (Windows only)
+7. Use the `.ppk` private key you converted with PuttyGen. (Windows only)
 
     ![](./images/putty2.png "")
 
-9. Create a SSH tunnel from Source port 5500 to Destination localhost:5500. Click **Add**. (Windows only)
+8. Create a SSH tunnel from Source port 5500 to Destination localhost:5500. Click **Add**. (Windows only)
 
     ![](./images/putty4.png "")
 
-10. Go back to Session, give it a name, and save it. When asked if you trust this host, click **Yes**. (Windows only)
+9. Go back to Session, give it a name, and save it. When asked if you trust this host, click **Yes**. (Windows only)
 
     ![](./images/putty3.png "")
 

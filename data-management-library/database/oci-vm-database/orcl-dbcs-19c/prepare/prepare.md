@@ -249,6 +249,8 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
+    set linesize 130
+    col TABLE_NAME for a25
     select TABLE_NAME, NUM_ROWS from USER_TABLES;
     </copy>
     ````
@@ -257,7 +259,12 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
-    set linesize 130
+    col EMPLOYEE_ID heading ID
+    col FIRST_NAME for a10
+    col LAST_NAME for a10
+    col EMAIL for a8
+    col PHONE_NUMBER for a16
+    col COMMISSION_PCT heading PCT
     </copy>
     ````
 
@@ -307,6 +314,8 @@ Estimated Lab Time: 45 minutes
 
     ````
     <copy>
+    set linesize 130
+    col TABLE_NAME for a28
     select TABLE_NAME, NUM_ROWS from USER_TABLES;
     </copy>
     ````
