@@ -122,7 +122,7 @@ In this task, you create the logical directories to store the source data files 
 1. Create the logical directory `CENT18` to store the source data file `cent18.dat` for the `CENT18` external partition.
 
     ```
-    SQL> <copy>CREATE DIRECTORY cent18 AS '$HOME/labs/19cnf/CENT18';</copy>
+    SQL> <copy>CREATE DIRECTORY cent18 AS '/home/oracle/labs/19cnf/CENT18';</copy>
 
     Directory created.
 
@@ -132,7 +132,7 @@ In this task, you create the logical directories to store the source data files 
 2. Create the logical directory `CENT19` to store the source data file `cent19.dat` for the `CENT19` external partition.
 
     ```
-    SQL> <copy>CREATE DIRECTORY cent19 AS '$HOME/labs/19cnf/CENT19';</copy>
+    SQL> <copy>CREATE DIRECTORY cent19 AS '/home/oracle/labs/19cnf/CENT19';</copy>
 
     Directory created.
 
@@ -142,7 +142,7 @@ In this task, you create the logical directories to store the source data files 
 3. Create the logical directory `CENT20` to store the source data file `cent20.dat` for the `CENT20` external partition.
 
     ```
-    SQL> <copy>CREATE DIRECTORY cent20 AS '$HOME/labs/19cnf/CENT20';</copy>
+    SQL> <copy>CREATE DIRECTORY cent20 AS '/home/oracle/labs/19cnf/CENT20';</copy>
 
     Directory created.
 
