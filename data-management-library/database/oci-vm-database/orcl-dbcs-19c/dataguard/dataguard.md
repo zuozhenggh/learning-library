@@ -18,7 +18,7 @@ Estimated Lab Time: 45 minutes
 
 ## Task 1: Enable Data Guard
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System. 
+1. On Oracle cloud console, click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System. 
 
 2. Add to your notes the Availability Domain you see on the DB System Information page (e.g. IWcS:EU-FRANKFURT-1-AD-3).
 
@@ -45,11 +45,11 @@ Estimated Lab Time: 45 minutes
 
 ## Task 2: Connect to Standby DB System
 
-1. From your Compute node, connect to the Standby DB System node using SSH.
+1. Connect to the Standby DB System node using SSH (Use Putty on Windows).
 
     ````
     <copy>
-    ssh -C -i id_rsa opc@<Standby Node Private IP Address>
+    ssh -C -i Downloads/ssh-key-XXXX-XX-XX.key opc@<Standby Node Public IP Address>
     </copy>
     ````
 

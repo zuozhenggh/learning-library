@@ -10,25 +10,9 @@ When you use the Console, you can create full backups or set up automatic increm
 
 Estimated Lab Time: 30 minutes
 
-## Task 1: View Contents of Current Database Service
+## Task 1: Create a Full Database Backup
 
-1. Connect to the Database node using SSH, if not already connected.
-
-    ````
-    <copy>
-    ssh -C -i id_rsa opc@<DB Node Private IP Address>
-    </copy>
-    ````
-
-2. Use the substitute user command to start a session as **oracle** user, owner of Oracle software components.
-
-    ````
-    <copy>
-    sudo su - oracle
-    </copy>
-    ````
-
-3. Connect to the database instance specified by environment variables.
+1. Connect to the DB System database instance specified by environment variables, if not already connected.
 
     ````
     <copy>
@@ -36,7 +20,7 @@ Estimated Lab Time: 30 minutes
     </copy>
     ````
 
-4. List all pluggable databases.
+2. List all pluggable databases.
 
     ````
     <copy>
@@ -50,7 +34,7 @@ Estimated Lab Time: 30 minutes
     	 4 PDB012			  READ WRITE NO
     ````
 
-5. There are three pluggable databases now, one seed PDB (system-supplied template that the CDB can use to create new PDBs) and two user-created PDBs (application data). Exit SQL*Plus.
+3. There are three pluggable databases now, one seed PDB (system-supplied template that the CDB can use to create new PDBs) and two user-created PDBs (application data). Exit SQL*Plus.
 
     ````
     <copy>
@@ -58,19 +42,17 @@ Estimated Lab Time: 30 minutes
     </copy>
     ````
 
-## Task 2: Create a Full Database Backup
+4. On Oracle cloud console, click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
-1. On Oracle cloud console, click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
+5. Click the database name link **WSDB** in the bottom table called Databases.
 
-2. Click the database name link **WSDB** in the bottom table called Databases.
+6. Review the backup called **Automatic Backup** in the bottom table called Backups. Click **Create Backup** button. Call it Manual-Backup, and click **Create Backup** to confirm. The new backup is added to the Backups table, having the State: Creating...
 
-3. Review the backup called **Automatic Backup** in the bottom table called Backups. Click **Create Backup** button. Call it Manual-Backup, and click **Create Backup** to confirm. The new backup is added to the Backups table, having the State: Creating...
+7. Access Work Requests table, and click **Create Database Backup**. Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (2). Wait until this work request is 100% Complete. Under Associated Resources, click **WSDB** database name link.
 
-4. Access Work Requests table, and click **Create Database Backup**. Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (2). Wait until this work request is 100% Complete. Under Associated Resources, click **WSDB** database name link.
+8. At this point you can see the Manual-Backup on Backups table is now Active.
 
-5. At this point you can see the Manual-Backup on Backups table is now Active.
-
-## Task 3: Restore Database Service from Backup
+## Task 2: Restore Database Service from Backup
 
 1. Write down the Started and Ended times for backup called **Automatic Backup** in the bottom table called Backups - e.g. Started: 09:38:13 UTC, Ended: 09:56:36 UTC.
 
@@ -113,7 +95,7 @@ Estimated Lab Time: 30 minutes
     exit
     ````
 
-## Task 4: Configure Automatic Backups
+## Task 3: Automatic Backups and Clone from Backup
 
 1. You are on database **WSDB** page. Under Database Information details, review Backup Retention Period: 30 Days, and Backup Schedule: Anytime.
 
@@ -127,13 +109,11 @@ Estimated Lab Time: 30 minutes
     - Backup Retention Period: 45 Days
     - Backup Schedule: 12:00AM - 2:00AM UTC
 
-## Task 5: Create New Database Service from Backup
+4. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System. Or use the breadcrumbs link **DB System Details**.
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System. Or use the breadcrumbs link **DB System Details**.
+5. Click the database name link **WSDB** in the bottom table called Databases.
 
-2. Click the database name link **WSDB** in the bottom table called Databases.
-
-3. Access Backups table, and next to Manual-Backup click ⋮ > **Create Database**. On the Create Database from Backup dialog, enter the following values:
+6. Access Backups table, and next to Manual-Backup click ⋮ > **Create Database**. On the Create Database from Backup dialog, enter the following values:
 
     - Select **Create a new DB system** radio button
     - Name your DB system: WS-DBb
@@ -149,11 +129,11 @@ Estimated Lab Time: 30 minutes
     - Password: DatabaseCloud#22_
     - Enter the source database's TDE wallet or RMAN password: DatabaseCloud#22_
 
-4. Click **Create Database**. Status is Provisioning...
+7. Click **Create Database**. Status is Provisioning...
 
-5. When it becomes Available, click **Nodes** on the left menu, and copy Public IP Address in your notes.
+8. When it becomes Available, click **Nodes** on the left menu, and copy Public IP Address in your notes.
 
-## Task 6: Verify New Database Service Created from Backup
+## Task 4: Verify Database Clone Created from Backup
 
 1. From your Compute node, connect to the new WS-DBb Database node using SSH (the one you just created from backup).
 

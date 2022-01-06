@@ -31,11 +31,11 @@ where:
 
 Occasionally, new commands are added to the database CLI and other commands are updated to support new features. You can use the **cliadm update-dbcli** command to update the database CLI with the latest new and updated commands. 
 
-1. From your Compute node, connect to the Database node using SSH.
+1. Connect to the Database node using SSH (Use Putty on Windows).
 
     ````
     <copy>
-    ssh -C -i id_rsa opc@<DB Node Private IP Address>
+    ssh -C -i Downloads/ssh-key-XXXX-XX-XX.key opc@<DB Node Public IP Address>
     </copy>
     ````
 
@@ -471,11 +471,11 @@ With dbcli command you can manage pluggable databases on the container database 
 
 You can apply patches and updates with dbcli command. Our primary database should is (or will be) patched using the cloud console. For this exercise, we use the standby database.
 
-1. Connect to the Standby DB System node using SSH.
+1. Connect to the Standby DB System node using SSH (Use Putty on Windows).
 
     ````
     <copy>
-    ssh -C -i id_rsa opc@<Standby Node Public IP Address>
+    ssh -C -i Downloads/ssh-key-XXXX-XX-XX.key opc@<Standby Node Public IP Address>
     </copy>
     ````
 
