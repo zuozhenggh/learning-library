@@ -16,8 +16,16 @@
       "filename": "../../../install-sample-maps-app/install-sample-maps-app.md"
     },    
     {
-      "title": "Lab 3: Create your first maps",
-      "filename": "../../../create-your-first-maps/create-your-first-maps.md"
+      "title": "Lab 3: wizard",
+      "filename": "../../../create-map-with-wizard/create-map-with-wizard.md"
+    }, 
+    {
+      "title": "Lab 4: scratch",
+      "filename": "../../../create-map-from-scratch/create-map-from-scratch.md"
+    },  
+    {
+      "title": "Lab 5: analysis",
+      "filename": "../../../add-spatial-analysis/add-spatial-analysis.md"
     },
     {
       "title": "Need Help?",
