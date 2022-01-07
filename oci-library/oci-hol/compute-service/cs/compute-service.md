@@ -6,13 +6,7 @@ Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts,
 
 Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bestpracticescompute.htm) for important information about working with your Oracle Cloud Infrastructure Compute instance.
 
-Estimated Time: 30 minutes
-
-### Objectives
-In this lab, you will:
-- Create a compute instance
-- Connect to the compute instance
-- Install Apache HTTP server
+[](youtube:09kahbIF0Ew)
 
 ### Prerequisites
 
