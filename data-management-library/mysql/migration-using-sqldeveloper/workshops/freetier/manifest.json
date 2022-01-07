@@ -25,7 +25,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/oci-ctd/lab5-create-windows-vm/create-windows-vm.md"
         },
         {
-            "title": "Lab: Setup and Run Migration in SQL Developer",
+            "title": "Lab 1: Setup and Run Migration in SQL Developer",
             "description": "All tasks to complete this migration",
             "filename": "../../migration-tasks/migration-tasks.md"
         },
