@@ -14,9 +14,9 @@ The *OCI Anomaly Detection Service* which is serverless, multi-tenant service, w
 
 This workshop contains 3 required lab sessions for user to get familiar with required data, and the full cycle of building the anomaly detection model and make predictions, and 2 optional advanced sessions that help in-depth users to seamlessly integrate our services and understand how the training data should be prepared.
 
-*Estimated Lab Time*: 70 minutes (3 regular sessions) + 120 minutes (2 advanced sessions)
+*Estimated Time*: 70 minutes (3 regular sessions) + 120 minutes (2 advanced sessions)
 
-### Objectives:
+### Objectives
 
 * Understand a high level overview of the OCI Anomaly Detection Service
 * Understand the full cycle/workflow of services provided in the OCI Anomaly Detection
@@ -24,7 +24,8 @@ This workshop contains 3 required lab sessions for user to get familiar with req
 * (In Advanced Sessions) Learn to use REST API to interact with Anomaly Detection service
 * (In Advanced Sessions) Learn basic data analysis preprocessing techniques to prepare data for model training
 
-### Prerequisites:
+### Prerequisites
+
 * An Oracle Free Tier, or Paid Cloud Account
 * Grant proper permission for user to use the Anomaly Detection Service
 * Additional prerequisites (cloud services) are mentioned per lab
@@ -34,6 +35,7 @@ This workshop contains 3 required lab sessions for user to get familiar with req
 * Familiar with editing tools (vim, nano) or shell environments (cmd, bash, etc) (Optional for API integration)
 
 ## Anomaly Detection Service Concepts
+
 * Project: Projects are collaborative workspaces for organizing data assets, models, and detection portals.
 * Data Assets: An abstracted data format to contain meta information of the actual data source for model training; it supports multiple types of data sources (currently  Oracle Object Storage, Oracle Autonomous Transaction Processing, InfluxDB are supported).
 * Model: The ML model that trained by our Oracle patented algorithms that can detect anomalies in multivariate time-series data. A few parameters are exposed so user can choose to select, but also default values are suggested.
@@ -81,17 +83,15 @@ If you want to limit access to a user group, you can create a new policy with th
 <copy> allow group <group-name> to manage ai-service-anomaly-detection-family in tenancy</copy>
 ```
 
-**Note:** The anomaly detection service need data to build customized models, therefore, user also need to add policy to grant permissions to access data.
+> **Note:** The anomaly detection service need data to build customized models, therefore, user also need to add policy to grant permissions to access data.
 For example, in this lab session, we will use Oracle object storage as data source, so the administrators also need to add the following policy:
 
 ```
 <copy>allow any-user to manage object-family in tenancy</copy>
 ```
 
-
-[Proceed to the next section](#next).
-
 ## Acknowledgements
+
 * **Authors**
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
