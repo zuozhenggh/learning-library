@@ -171,7 +171,7 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
     <copy>exit</copy>
     ```
 
-## Task 3: Remove MySQL Community Installation and Iimport Databses
+## Task 3: Remove MySQL Community Installation and Import Databses
 1. Now that you understand how to connect, we can remove the MySQL Community installation
 
   **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
@@ -211,7 +211,7 @@ Please note that now you have 2 instances on the same server: one on 3306 and on
 2. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
 
     ```
-    <copy>eSHOW VARIABLES LIKE "%version%";</copy>
+    <copy>SHOW VARIABLES LIKE "%version%";</copy>
     ```
 
 3. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql>** 
