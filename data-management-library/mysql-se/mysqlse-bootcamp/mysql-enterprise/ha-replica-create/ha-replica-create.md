@@ -41,7 +41,7 @@ Source Private IP Address (MAIN)  student###-serverB :
 
 Replica Private IP Address (REPLICA) student###-serverA :	
 
-2.	ServerB (source): Make the replica a copy of the source in a shard folder to easily restore on the replica:
+2.	ServerB (source): Make the replica a copy of the source in a shared folder to easily restore on the replica:
 
     a. Inside /workshop/backups there is a folder for each student server. Search yours
 
@@ -62,7 +62,11 @@ Replica Private IP Address (REPLICA) student###-serverA :
 
     a. It’s mandatory that each server in a replication topology have a unique server id. There is a copy of the my.cnf ready to be used. It’s a duplicate of the one used for mysql-advanced instance, with a different server&#95; id
 
-    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-replica>** sudo cp /workshop/support/my.cnf.replica /mysql/etc/my.cnf
+    **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-replica>**
+
+    ```
+    <copy>sudo cp /workshop/support/my.cnf.replica /mysql/etc/my.cnf </copy>
+    ```
     ```
     <copy>exit</copy>
     ```
@@ -130,7 +134,7 @@ Replica Private IP Address (REPLICA) student###-serverA :
     ```
     <copy>SHOW SLAVE STATUS\G</copy>
     ```
-2.	ServerB (source): Let’s test that data are replicated. Connect to source and make some changes
+2.	ServerB (source): Let’s verify the replicated data. Connect to source and make some changes
 
     a. **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) mysql-source>** 
     ```

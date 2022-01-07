@@ -49,8 +49,9 @@ This lab assumes you have:
 ## Task 1: Create InnoDB Cluster 
 
 
-1.	Please remember that servers communication use full FQDN. To help you in later configuration, write here your environment. Be aware that subnets and domain names are different between instances
-2. To find out FQDN on our lab machines you can use the following command
+1. Please remember that servers communication use full FQDN. To help you in later configuration, write here your environment. Be aware that subnets and domain names are different between instances
+
+    To find out FQDN on our lab machines you can use the following command
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
@@ -60,17 +61,17 @@ This lab assumes you have:
 
     ServerB FQDN
 
-3. This is for the LAB only.  Practically in production deployment, instances deployment should be on its own VM.  And the port number should be the same for easy configuration.
-Production Recommended Deployment : Minimal 3 Instances 
-Instance	FQDN	Port	Private IP
-Primary
-(prev. Source)	Student###-serverB	3307	10.0.0.___
-Secondary-1
-(prev. Replica)	Student###-serverA	3307	10.0.0.___
-Secondary-2	Student###-serverB	3308	Same as primary
+    This is for the LAB only.  Practically in production deployment, instances deployment should be on its own VM.  And the port number should be the same for easy configuration.
 
-4.	Verify data model compatibility with Group replication requirements
-On ServerB:
+    Production Recommended Deployment : Minimal 3 Instances
+
+    ![Image alt text](images/ha-innodb-cluster-10.png)
+
+
+2. Verify data model compatibility with Group replication requirements
+
+    On ServerB:
+    
     a.	Connect to instance
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell-primary>** 
@@ -135,7 +136,7 @@ On ServerB:
     **![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)mysql-secondary-1>**
     
     ```
-    <copy>reset slave;</copy>
+    <copy>reset slave all;</copy>
     ```
 2.	Now we need a third instance, we create a new one on serverB
 Note : IN PRODUCTION USE THREE DIFFERENT SERVERS TO EXCLUDE SINGLE POINT OF FAILURES !

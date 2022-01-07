@@ -124,10 +124,11 @@ This lab assumes you have:
     ```
     b. **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
     ```
-    <copy>u -sh *</copy>
+    <copy>du -sh *</copy>
     ```
 ## Task 2: Use backup
 1.	Restore
+
     a.	Stop the server
 
     **![#00cc00](https://via.placeholder.com/15/00cc00/000000?text=+) shell>** 
