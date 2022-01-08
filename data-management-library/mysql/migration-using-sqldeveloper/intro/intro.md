@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This workshop provides step-by-step instuctions for MySQL users, to easily migrate MySQL database to Oracle Autonomous Database (either ATP or ADW), using Oracle SQL Developer. 
+This workshop provides step-by-step instuctions, to easily migrate MySQL database to Oracle Autonomous Database, using Oracle SQL Developer. This is specially designed for MySQL users, who don't have much experience with Oracle Database and Oracle SQL Developer.
 
 Estimated Workshop Time: 1.5 hours
 
 ### About this Workshop
 
-This workshop walks you through the steps to move on-premise MySQL database to OCI Cloud (Oracle Cloud Infrastructure) and in the process, also migrate MySQL database to Oracle Database, using Oracle SQL Developer v 21.2. This is specially designed for MySQL users, who don't have much experience with Oracle Database and Oracle SQL Developer. There are certain prerequisites (also included labs Prerequisite 1 & 2) that you will need to have in place, before you start working on core migration lab part. 
+This workshop walks you through the steps to move on-premise MySQL database to OCI Cloud (Oracle Cloud Infrastructure) and in the process, also migrate MySQL database to Oracle Autonomous Database - ATP (you can equally use with ADW), using Oracle SQL Developer v 21.2. The core migration steps are in Lab 1. There are certain prerequisites (included as labs Prerequisite 1 & 2). You can skip those prerequisites, if you already have that environment in place. Do read the Prerequisites section below for more details. The last Appendix lab reference is provided for steps to make connection to ADB from SQL Developer. 
 
 ![Oracle SQL Developer icon](images/sqldv.jpg " ")
 
@@ -16,7 +16,7 @@ Oracle SQL Developer GUI - Migration Configured
 ![Oracle SQL Developer UI](images/sqldevui.jpg " ")
 
 
-Oracle SQL Developer is a free, integrated development environment (IDE) that simplifies the development and management of Oracle Database in both traditional and Cloud deployments. SQL Developer also provides migration capability from third-party databases. If you have basic understanding of SQL and know-how of Oracle Cloud and Autonomous Database, it will be quite easy to perform this workshop. However, if you’re coming from MySQL background alone, using this workshop steps, you will still be able to complete the migration. 
+Oracle SQL Developer is a free, integrated development environment (IDE) that simplifies the development and management of Oracle Database in both traditional and Cloud deployments. SQL Developer also provides migration capability from third-party databases. 
 
 ### References in this Workshop
 
@@ -42,9 +42,9 @@ For this workshop, it is assumed that you already have following in place or you
 
 2. Target: ATP (Autonomous Transactions Processing) instance setup in the OCI cloud, with all the required credentials for user, schema and object creation (eg ADMIN user), along with network connectivity (VCN) between SQL Developer and MySQL and ATP database wallet file. We will use this database for Migraiton repository as well. You can equally run this migration on ADW (Autonomous Datawarehouse). Here's a How-to blog post: [Creating an Autonomous Transaction Processing (ATP) Database](https://blogs.oracle.com/weblogicserver/post/creating-an-autonomous-transaction-processing-atp-database).  Or you can follow this lab: [Prerequisite 1 - Create ADB as Target (Optional)] (?lab=adb-provision-conditional). This lab is optional, if you already have an ADB instance (just make sure, your ADB - port 1522 is accessable to SQL Developer instance on-premises or OCI cloud, depending on your scenario).
 
-3. An environment, usually your laptop or another instance in OCI (Oracle Cloud Infrastructure), where you will install and run Oracle SQL Developer. We will follow windows based installation. If you want to set up in OCI cloud, follow this doc: [create Windows instance](https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/overviewworkflowforWindows.htm) and [RDP from your laptop/desktop](https://blogs.oracle.com/pcoe/post/enable-windows-instance-access-via-rdp-on-oracle-compute-cloud-service) (for remote desktop sharing). Or you can also follow this  lab: [Prerequisite 2 - Create Windows VM to run Oracle SQL Developer (Optional)] (?lab=create-windows-vm). If you plan to run SQL Developer from your laptop or any desktop, you can skip this lab. Just make sure, your laptop/desktop has access to ADB and MySQL databases and ports.
+3. Client: An environment, usually your laptop or another instance in OCI (Oracle Cloud Infrastructure), where you will install and run Oracle SQL Developer. We will follow windows based installation. If you want to set up in OCI cloud, follow this doc: [create Windows instance](https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/overviewworkflowforWindows.htm) and [RDP from your laptop/desktop](https://blogs.oracle.com/pcoe/post/enable-windows-instance-access-via-rdp-on-oracle-compute-cloud-service) (for remote desktop sharing). Or you can also follow this  lab: [Prerequisite 2 - Create Windows VM to run Oracle SQL Developer (Optional)] (?lab=create-windows-vm). If you plan to run SQL Developer from your laptop or any desktop, you can skip this lab. Just make sure, your laptop/desktop has access to ADB and MySQL databases and ports.
 
-4. All above 3 environments should have network connectivity among each other, including allowing the required ports for the respective databases (defauts: 1522 for ATP and 3306 for MySQL). Ideally, a VCN for ADB and SQL Developer instances in OCI and a VPN connectivity (for security) to MySQL on-premises. 
+4. Networking: All above 3 environments should have network connectivity among each other, including allowing the required ports for the respective databases (defauts: 1522 for ATP and 3306 for MySQL). And you will also need a VCN for ADB and SQL Developer instances in OCI and a VPN connectivity (for security, if required) to connect to MySQL on-premises. 
 
 *Let's get Started!*
 
