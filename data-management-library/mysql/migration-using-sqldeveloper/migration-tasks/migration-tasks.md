@@ -4,6 +4,8 @@
 
 This is the core migration tasks lab. Sart this, once you have all prerequisites completed. This will cover, from downloading and installing Oracle SQL Developer, to setting up appropriate user credentials and then create migration repository and connections and run the Wizard to complete the database migration from MySQL to Oracle ADB instance in the cloud. This also provides extra labs, if you need additional help with certain tasks, eg how to make connection in SQL Developer to an Autonomous Database, etc. 
 
+Estimated Workshop Time: 1 hour
+
 ### Objectives
 
 In this lab, you will perform following: 
