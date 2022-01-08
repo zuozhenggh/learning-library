@@ -117,31 +117,29 @@ In this lab, you will perform following:
      c.    Then drop that migration (db) user with cascade and start over from previous step. That is, create new migration user with above roles and Privileges, etc. and so on.
  
 1. You can copy following (SQL) script and execute via SQL Developer – Worksheet. Make sure, you’re connected as ADMIN user in the worksheet in ATP (and not with the target DB user or any other user). Set password appropriately before copying the commands below, replacing xxxxx and execute in order.
-    
-    
-  ``` 
-  <copy>
-  CREATE USER migrations IDENTIFIED BY xxxxxxx DEFAULT TABLESPACE data TEMPORARY TABLESPACE temp;
-  </copy>
-  ```
-  ```
-  <copy>
-  ALTER USER migrations QUOTA UNLIMITED ON data;
-  </copy>
-  ```
-  ```
-  <copy>
-  GRANT CONNECT, RESOURCE, CREATE VIEW, CREATE MATERIALIZED VIEW, CREATE PUBLIC SYNONYM TO migrations WITH ADMIN OPTION;
-  </copy>
-  ``` 
-  ```
-  <copy>
-  GRANT ALTER ANY ROLE, ALTER ANY SEQUENCE, ALTER ANY TABLE, ALTER TABLESPACE, ALTER ANY TRIGGER, COMMENT ANY TABLE, CREATE ANY SEQUENCE, CREATE ANY TABLE, CREATE ANY TRIGGER, CREATE ROLE, CREATE TABLESPACE, CREATE USER, DROP ANY SEQUENCE, DROP ANY TABLE, DROP ANY TRIGGER, DROP TABLESPACE, DROP USER, DROP ANY ROLE, GRANT ANY ROLE, INSERT ANY TABLE, SELECT ANY TABLE, UPDATE ANY TABLE TO migrations;
-  </copy>
-  ``` 
+ 
+    ``` 
+    <copy>
+    CREATE USER migrations IDENTIFIED BY xxxxxxx DEFAULT TABLESPACE data TEMPORARY TABLESPACE temp;
+    </copy>
+    ```
+    ```
+    <copy>
+    ALTER USER migrations QUOTA UNLIMITED ON data;
+    </copy>
+    ```
+    ```
+    <copy>
+    GRANT CONNECT, RESOURCE, CREATE VIEW, CREATE MATERIALIZED VIEW, CREATE PUBLIC SYNONYM TO migrations WITH ADMIN OPTION;
+    </copy>
+    ``` 
+    ```
+    <copy>
+    GRANT ALTER ANY ROLE, ALTER ANY SEQUENCE, ALTER ANY TABLE, ALTER TABLESPACE, ALTER ANY TRIGGER, COMMENT ANY TABLE, CREATE ANY SEQUENCE, CREATE ANY TABLE, CREATE ANY TRIGGER, CREATE ROLE, CREATE TABLESPACE, CREATE USER, DROP ANY SEQUENCE, DROP ANY TABLE, DROP ANY TRIGGER, DROP TABLESPACE, DROP USER, DROP ANY ROLE, GRANT ANY ROLE, INSERT ANY TABLE, SELECT ANY TABLE, UPDATE ANY TABLE TO migrations;
+    </copy>
+    ``` 
         
-  > **Note:** Once you are done with migration, you may like to revoke back those high privileges from MIGRATIONS user for security purposes.   
-
+    > **Note:** Once you are done with migration, you may like to revoke back those high privileges from MIGRATIONS user for security purposes.   
 
 ## Task 5: Create Migration Connection
 
@@ -182,8 +180,9 @@ This is the end of the workshop. This workshop walked you through one scenario o
 
 
 Learn more about this migration scenario:
-* [Need to Migrate MySQL Database to Oracle ADB ?](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/migrate-mysql.html#GUID-241F7C5A-1EC3-42D8-B960-B9751CB89D02)
+* [Migration Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/migrate-mysql.html#GUID-241F7C5A-1EC3-42D8-B960-B9751CB89D02)
 
 ## Acknowledgements
 * **Author** - Muhammad Shuja, Principal Cloud Solution Engineer, ODP - ANZ
+* **Reviewer** - Kaylien Phan, Outbound Product Manager, Arabella Yao Product Manager, Nicole Champoin, Senior Product Manager. 
 * **Last Updated By/Date** - Muhammad Shuja, January 2022
