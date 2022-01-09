@@ -2,37 +2,35 @@
 
 ## About this Workshop
 
-In this workshop you will explore ...    map regions and spatial opertions...
+In this workshop you will explore mapping in Oracle APEX using the Map Region feature and Oracle Spatial. You will load a pre-built sample application with many useful examples, and then create interactive maps from scratch.
 
-![](./images/xxx.png " ")
+![](./images/intro-01.png " ")
 
 Estimated Workshop Time: xx hours
 
 
-### About Oracle Spatial and Oracle Application Express (APEX)
+### About Oracle Application Express (APEX) and Oracle Spatial
 
- Oracle Spatial ....
- Oracle APEX...
+Oracle Application Express (APEX) and Oracle Spatial are features of Oracle Database, including the Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) services. 
 
-  ![img alt text](./xxx.png)
+Oracle Application Express (APEX) is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere. More at [https://apex.oracle.com] (https://apex.oracle.com)
 
-...
-
-For more information please visit [https://oracle.com/xxx] (https://oracle.com/xxx)
+Oracle Spatial is a set of geospatial data management, analysis, and processing capabilities within Oracle Database. With a native data type, index, and set of analytics packages, location-based analysis is mainstream and co-located with all other database operations. More at [https://www.oracle.com/database/spatial] (https://www.oracle.com/database/spatial)
 
 ### Objectives
 
-  - xxx
+  - Understanding of APEX Map Region samples
+  - Ability to create and configure Map Region
+  - Ability to incorporate location analysis with Oracle Spatial
 
 
 ### Prerequisites
 
- <if type="freetier"> 
-   - ...  
-</if>
-<if type="reservation">  
-  - ...
-</if>
+  - Oracle APEX 21.2+. 
+  - Basic experience with Oracle APEX. If needed, review the following introductory LiveLabs APEX workshop: [Creating an App based on Existing Tables for Oracle Autonomous Cloud Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=628). 
+  - Basic experience with Oracle Spatial. If needed review the following introductory LiveLabs Spatial workshop: [Introduction to Oracle Spatial]( https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=736)
+
+
 
 *Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
@@ -40,7 +38,7 @@ For more information please visit [https://oracle.com/xxx] (https://oracle.com/x
 ## Acknowledgements
 
 * **Author** - David Lapp, Database Product Management, Oracle
-* **Last Updated By/Date** - David Lapp, Database Product Management, November 2021
+* **Last Updated By/Date** - David Lapp, Database Product Management, Jan 2022
 
 
 ## Need Help?

@@ -3,17 +3,18 @@
 
 ## Introduction
 
-....
+The Sample Maps application is showcase of mapping capabilities in Oracle APEX. A wide variety of examples are provided to serve as functional examples and starting points for further custumization. In this lab you will install and configure the Sample maps appication. 
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: xx minutes
 
 ### Objectives
 
-* ...
+* Install the Sample Maps application
+* Load supporting data
 
 ### Prerequisites
 
-* ....
+* APEX 21.2+
 
 
 ## Task 1: Install the application
