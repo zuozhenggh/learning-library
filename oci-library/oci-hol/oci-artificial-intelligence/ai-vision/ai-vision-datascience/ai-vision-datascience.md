@@ -46,14 +46,14 @@ Before you can start using Data Science, your tenancy administrator should set u
         </copy>
         ```
 
-        where data-scientists represents the name of your user group.
+    where data-scientists represents the name of your user group.
 
     * Dynamic Group Policies
         ```
         <copy>allow dynamic-group <dynamic-group> to manage data-science-family in tenancy</copy>
         ```
 
-        where dynamic-group represents the name of your dynamic group.
+    where dynamic-group represents the name of your dynamic group.
 
 
 ## **Task 1:** Navigate to the Data Science Notebook Session
@@ -68,18 +68,22 @@ Follow the below steps to open Notebook in DataScience:
 
     Select the Compartment in which want to create your project.
         ![](./images/select-comp.png " ")
+<!-- Click Create Project to create a new project. -->
+<!-- Select the Root Compartment -->
     
 
 3. Create Project
 
     Click Create Project to create a new project.
         ![](./images/create-project1.png " ")
+<!-- Select the Project named 'oci-vision-test' -->
     
 
 4. Enter Project Details
 
     Enter name and click Create Button.
         ![](./images/create-project2.png " ")
+<!-- Select the Notebook named 'Livelabs Notebook' -->
     
 
 5. Create Notebook Session
@@ -172,7 +176,9 @@ Each notebook contains certain feature demos as mentioned below.
 
 2. Execute the Notebooks
 
-    Open the Notebooks that you've just uploaded. Now go through each of the cells and run them one by one. You can click Shift+Enter on each cell to run the code in the cell.
+    Open the Notebooks that you've just uploaded.
+
+    Now go through each of the cells and run them one by one. You can click Shift+Enter on each cell to run the code in the cell.
 
     These notebooks demonstrate how you can be more productive by using the Image features of Vision service.
 
@@ -193,7 +199,9 @@ Each notebook contains certain feature demos as mentioned below.
 
 2. Execute the Notebooks
 
-    Open the Notebooks that you've just uploaded. Now go through each of the cells and run them one by one. You can click Shift+Enter on each cell to run the code in the cell.
+    Open the Notebooks that you've just uploaded.
+
+    Now go through each of the cells and run them one by one. You can click Shift+Enter on each cell to run the code in the cell.
 
     These notebooks demonstrate how you can be more productive by using the Document AI features of Vision service.
 
@@ -214,7 +222,9 @@ Each notebook contains certain feature demos as mentioned below.
 
 2. Execute the Notebooks
 
-    Open the Notebooks that you've just uploaded. Now go through each of the cells and run them one by one. You can click Shift+Enter on each cell to run the code in the cell.
+    Open the Notebooks that you've just uploaded.
+
+    Now go through each of the cells and run them one by one. You can click Shift+Enter on each cell to run the code in the cell.
 
     These notebooks demonstrate how you can be more productive by using the image and document AI features over batch input using Vision service.
 
@@ -222,7 +232,7 @@ Congratulations on completing this lab!
 
 [Proceed to the next section](#next).
 
-## Acknowledgements
+## Acknowledgements:
 * **Authors**
     * Kate D'Orazio - Oracle OCI Vision Services
     * Vaishnavi Kotturu - Oracle OCI Vision Services
