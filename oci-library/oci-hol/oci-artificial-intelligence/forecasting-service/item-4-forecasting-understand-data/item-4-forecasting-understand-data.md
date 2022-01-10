@@ -5,7 +5,7 @@
 In this session, we will discuss the data requirements and data formats required by our APIs through some examples. 
 
 
-***Estimated Lab Time***: 20 minutes
+***Estimated Time***: 20 minutes
 
 ### Objectives
 
@@ -131,8 +131,8 @@ Steps on how to generate inline data from csv files are given in Task 3 below.
 
 Here is a sample dataset to help you to easily understand how the input data looks like, Download the files to your local machine.
 
-* [Primary data](../files/favorita_13_beverages_primary.csv)
-* [Additional data](../files/favorita_13_beverages_add.csv)
+* [Primary data](files/favorita-13-beverages-primary.csv)
+* [Additional data](files/favorita-13-beverages-add.csv)
   
 
 ## Task 3: Upload Data to Data Science Notebook
@@ -140,11 +140,11 @@ Here is a sample dataset to help you to easily understand how the input data loo
 You need to upload the sample training data into data science notebook, to be used for *inline data* preparation for model training in next steps.
 
 Click on upload and then browse to file which you desire to upload:
-![](../images/lab2_task3_upload_data.png " ")
+![](images/lab2-task3-upload-data.png " ")
 
 ## Task 4: Inline Data preparation
 
-### Step 1 :
+### 1 :
 Import below necessary python modules for executing the scripts:
 
 ```Python
@@ -158,16 +158,16 @@ import os
 import simplejson
 ```
 
-### Step 2 :
+### 2 :
 You need to load the data in notebook via below mentioned python commands in a data frame
 Specify the correct path for the csv file that has the time series data.
 
 ```Python
-df_primary = pd.read_csv('favorita_13_beverages_primary.csv')
-df_add = pd.read_csv('favorita_13_beverages_add.csv')
+df_primary = pd.read_csv('favorita-13-beverages-primary.csv')
+df_add = pd.read_csv('favorita-13-beverages-add.csv')
 ```
 
-### Step 3 :
+### 3 :
 Convert the date field to "yyyy-mm-dd hh:mm:ss" format with below commands
 Use this link https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior for other date time formats
 
@@ -180,7 +180,7 @@ df_add['date'] = pd.to_datetime(df_add['date'],
                                         format='%d/%m/%y').apply(lambda x: str(x))
 ```
 
-### Step 4 :
+### 4 :
 #### Setting variables to create forecast with below commands
 - prim_load : is the variable having inline primary data
 - add_load : is the variable having inline additional data 
@@ -292,7 +292,7 @@ compartment_id = create_project_response['compartmentId']
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+You may now proceed to the next lab
 
 
 ## Acknowledgements
@@ -301,3 +301,4 @@ Congratulations on completing this lab!
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
+    * Last Updated By/Date: Ravijeet Kumar, January 2022

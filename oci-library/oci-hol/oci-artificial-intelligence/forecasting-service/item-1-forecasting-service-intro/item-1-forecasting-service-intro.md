@@ -12,7 +12,7 @@ The *OCI Forecasting Service* is a fully managed, serverless and multi-tenant se
 
 This workshop contains four lab sessions for users to get familiar with data requirements and the full cycle of building the forecasting model and generate forecasts. At the end of the workshop, users will be able to understand how the data should be prepared and leverage the APIs for model training and getting forecast along with explainability. 
 
-*Estimated Lab Time*: 90 minutes (4 lab sessions)
+*Estimated Workshop Time*: 90 minutes (4 lab sessions)
 
 ### Objectives:
 
@@ -50,7 +50,7 @@ At a high level, here are the process of completing a full cycle of using foreca
 
 Note that one project can have multiple data assets and multiple models.
 
-[Proceed to the next section](#next).
+You may now proceed to the next lab
 
 ## Acknowledgements
 * **Authors**
@@ -58,5 +58,6 @@ Note that one project can have multiple data assets and multiple models.
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
+    * Last Updated By/Date: Ravijeet Kumar, January 2022
 
 
