@@ -19,23 +19,23 @@ In this lab, you will perform following:
 
 ### Prerequisite
 
-Make sure you have followed the prerequisites requirement, mentioned in [Introduction] (?lab=intro), i.e. you've following in place: 
+Make sure you have followed the prerequisites requirement, mentioned in detail in the [Introduction] (?lab=intro), i.e. you've following in place: 
 
 1. Source: MySQL Database. 
 2. Target: ATP (Autonomous Transactions Processing) instance 
-3. Client: An system to run SQL Developer (Desktop or VM)
+3. Client: A Windows system to install SQL Developer (Desktop or VM)
 4. Network connectivity among all 3 above environments. 
 
 ## Task 1: Download Latest Version of SQL Developer & Install
 
-Use the latest version of Oracle SQL Developer (which is v 21.2 as of writing of this workshop). This task will walk you through downloading and installing Oracle SQL Developer in a windows environment.
+Use the latest version of Oracle SQL Developer (which is v 21.2 as of writing of this workshop). This task will walk you through downloading and installing Oracle SQL Developer in a Windows environment.
  
-Download and install SQL Developer on any windows pc (laptop/OCI), which has network access to both databases (source and target) as well as the repository database you choose (ADB in our case). You can download latest version of Oracle SQL Developer from following link for your appropriate platform. For this workshop, we'll choose Windows 64-bit with JDK 8 included from [https://www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
+Download and install SQL Developer on any Windows pc (laptop/OCI), which has network access to both databases (source and target) as well as the repository database you choose (ADB in our case). You can download latest version of Oracle SQL Developer from following link for your appropriate platform. For this workshop, we'll choose Windows 64-bit with JDK 8 included from [https://www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
 
 
   **From Doc: 1.2 Installing and Getting Started with SQL Developer** 
 
-  1. To install and start SQL Developer, you simply download its ZIP file and unzip it into a desired parent directory or folder, and then double-click the exe file name (sqldeveloper.exe) to open. 
+  1. To install and start SQL Developer, you simply download its ZIP file and unzip it into a desired parent directory or folder, and then double-click the exe file named (sqldeveloper.exe) to open. 
 
     ![Open Oracle SQL Developer by double-clicking this file (for windows)](images/executable-file.png " ")
 
@@ -44,11 +44,11 @@ Download and install SQL Developer on any windows pc (laptop/OCI), which has net
 
 ## Task 2: Create Connection for the Target (ADB) database
 
-  Once you're running SQL Developer, first you'll need to create appropriate user for the target schema, in the ATP database. You can use SQL Developer to create that user. First, you will need to establish connection to ATP from SQL Developer. 
+ Now, you'll need to create appropriate user for the target schema, in the ATP database. You can use SQL Developer as well, to create such user. First, you will need to establish connection to ATP from SQL Developer. There are two guides you can follow to create ATP connection in SQL Developer: 
 
 1. You can follow this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_Connecting%20SQL%20Developer%20to%20Autonomous%20Transaction%20Processing/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). 
   
-2. Either you use above (point 1) OR you can follow next task: **Task 2a:** to make such connection. I will use this. 
+2. OR you can follow next task: **Task 2a:** to make such connection. I would prefer this. 
  
 ## Task 2a: Appendix: How to Connect to Autonomous Database from SQL Developer
 
