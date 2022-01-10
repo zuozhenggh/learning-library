@@ -26,6 +26,7 @@ This lab assumes you have:
 * An Oracle account
 * Attended corresponding lecture
 * All previous labs successfully completed
+  
 
 ## Acknowledgements
 * **Author** - <Eugenio Galiano>
