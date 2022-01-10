@@ -8,7 +8,7 @@ In this session, we will discuss how to get global and local explanation for the
 
 Here is a case study on using the forecast api to get the global and local explanations
 
-***Estimated Lab Time***: 15 minutes
+***Estimated Time***: 15 minutes
 
 ### Objectives
 In this lab, you will:
@@ -31,7 +31,7 @@ get_forecast_explanations = json.loads(response.text)
 get_forecast_explanations
 ```
 
-![Explanation API Call](../images/lab4_task1_explanation_api.png)
+![Explanation API Call](images/lab4-task1-explanation-api.png)
 
 ### Step 2. Sample Json ouput
 
@@ -104,7 +104,7 @@ plot_global_feature_importance(get_forecast_explanations)
 
 ### Sample Global feature importance plot
 
-![Global Feature Importance ](../images/lab4_task1_global_feature_importance.png)
+![Global Feature Importance ](images/lab4-task1-global-feature-importance.png)
 
 ## Task 2: Get Local Explanation
 
@@ -139,7 +139,7 @@ plot_local_feature_importance(get_forecast_explanations, time_step)
 
 ### Sample Local feature importance plot for step 1 forecast
 
-![Local Feature Importance for step 1 forecast](../images/lab4_task2_local_feature_importance.png)
+![Local Feature Importance for step 1 forecast](images/lab4-task2-local-feature-importance.png)
 
 Similarly, by changing the time step, you can get the local feature importance for that corresponding forecast.
 
@@ -152,3 +152,4 @@ Congratulations on completing this lab! You now have finished all the sessions o
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
+    * Last Updated By/Date: Ravijeet Kumar, January 2022

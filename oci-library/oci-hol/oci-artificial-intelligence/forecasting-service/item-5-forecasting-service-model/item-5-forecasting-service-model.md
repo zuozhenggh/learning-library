@@ -4,7 +4,7 @@
 
 In this session, we will show you how to use our create and get forecast APIs. 
 
-***Estimated Lab Time***: 30 minutes
+*Estimated Time*: 30 minutes
 
 ### Objectives
 
@@ -366,7 +366,7 @@ df_forecasts.to_csv(file_name, index = None)
 ```
 The forecast.csv will be saved in the same folder as the notebook file.
 
-![](../images/lab3_task2.png " ")
+![](images/lab3_task2.png " ")
 
 
 ## Task 3: Get Training Metrics report from the response
@@ -394,7 +394,7 @@ get_forecast_response['forecastResult']['metrics']['targetColumns']
 
 **Congratulations on completing this lab!**
 
-[Proceed to the next section](#next).
+You may now proceed to the next lab
 
 ## Acknowledgements
 
@@ -403,3 +403,4 @@ get_forecast_response['forecastResult']['metrics']['targetColumns']
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
+    * Last Updated By/Date: Ravijeet Kumar, January 2022
