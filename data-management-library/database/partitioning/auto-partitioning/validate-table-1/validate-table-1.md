@@ -15,12 +15,16 @@ This lab assumes you have completed the following labs:
 - Provision an ADB Instance (19c, Always Free)
 - Create Non-partitioned Table
 
-## Task 1: Call the Validate API
+## Task 1: Validate your newly created nonpartitioned Table as Candidate for Auto Partitioning  
 
-1. Check to see if auto partitioning considers the table a viable candidate for the auto partitioning process:
+Valid candidate tables for auto partitioning must satisfy certain criteria. We already discussed that candidate tables must have a mimumum size for being eligible. Let's see whether this is sufficient. 
+
+1. Check to see if auto partitioning considers our newly created nonpartitioned table a viable candidate for a partitioning recommendation:
 
     ````
     <copy>
+     set serveroutput on
+    
      declare
      ret varchar2(1000);
      begin
@@ -33,13 +37,15 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-    Auto partitioning needs a workload to test against the candidate table. Currently the workload does not exist, so this message is returned:
+    Just having a sufficiently large enough nonpartitioned table is obviously not enough. Auto partitioning needs a workload to test against the candidate table. Currently the workload does not exist, so this message is returned:
 
     `````
     Auto partitioning validation: INVALID: table is referenced by 0 full table scan queries in the SQL tuning set; 5 queries required
     `````
+    
+## Task 2: Generate a representative Sample Workload - Execute Test Queries
 
-## Task 2: Generate a Workload - Execute Test Queries
+Partitioning improves the performance for your application. Our newly created table was never used yet as part of an application workload. For the purpose of this lab we will emulate your application by running a set of representative sample queries against our newly created table.
 
 1. Generate a workload by executing a series of queries that scan the APART table. Later, auto partitioning retrieve this workload and test exceute it to measure the effect of partitioning the table.
 
@@ -70,9 +76,9 @@ This lab assumes you have completed the following labs:
     </copy>
     ````
 
-## Task 3: Wait for Automatic SQL Tuning Set (ASTS) Population
+## Task 3: Wait for Oracle Autonomous Database to automatically collect your Application Workload
 
-The Auto STS Capture Task is responsible for capturing workload SQL in a SQL tuning set called SYS\_AUTO\_STS. This is the _automatic SQL tuning set_ or ASTS and is maintained automatically in Autonomous Database environments. 
+Oracle Autonomous Database automatically collects your workload information periodically every 15 minutes. The Auto STS Capture Task is responsible for capturing the workload SQL in a SQL tuning set called SYS\_AUTO\_STS. This is the _automatic SQL tuning set_ or ASTS that is maintained automatically in Autonomous Database environments. 
 
 1. Use the following query to monitor the last schedule time and wait until the task has executed again - i.e. _after_ the workload queries were executed.
 
@@ -105,7 +111,7 @@ The Auto STS Capture Task is responsible for capturing workload SQL in a SQL tun
 
     `````
 
-2. Confirm that the workload queries have been captured in the automatic SQL tuning set.
+3. Ater a maximum of 15 minutes after generating your workload the Autonomous Database has collected this workload. Confirm that the workload queries have been captured in the automatic SQL tuning set.
 
     ````
     <copy>
@@ -126,12 +132,14 @@ The Auto STS Capture Task is responsible for capturing workload SQL in a SQL tun
     ...etc
     `````
 
-## Task 4: Call the Validate API Again
+## Task 4: Validate your newly created nonpartitioned Table as Candidate again
 
 1. Now that the workload has been captured in the automatic SQL tuning set, validate again:
 
     ````
     <copy>
+     set serveroutput on
+     
      declare
      ret varchar2(1000);
      begin
@@ -148,7 +156,8 @@ The Auto STS Capture Task is responsible for capturing workload SQL in a SQL tun
 
     `````
     Auto partitioning validation: VALID
-    `````
+    ````` 
+   
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
