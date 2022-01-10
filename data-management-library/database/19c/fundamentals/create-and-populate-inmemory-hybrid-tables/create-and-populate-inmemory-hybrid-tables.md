@@ -238,6 +238,8 @@ In this task, you create the logical directories to store the source data files 
 
     SQL>
     ```
+    *Note:* Number of rows selected subject to change.
+    
     The execution of the query on the table rows automatically populates the data into the `IM` column store.
 
 2. Verify which partitions are populated into the `IM` column store.
