@@ -36,7 +36,7 @@ In this workshop, you will learn how to:
 
 ### Prerequisites 
 
-For this workshop, it is assumed that you already have following in place or you can follow the prerequisites labs to set those up:
+For this workshop, it is assumed that you already have following in place or you can use the prerequisites labs to set those up:
 
 1. Source: A running MySQL database on-premise, with the necessary network access to target ADB instance as well as Oracle SQL Developer instance. And also database credentials to the source schemas/objects, and sample data in it, which needs to be migrated.
 
