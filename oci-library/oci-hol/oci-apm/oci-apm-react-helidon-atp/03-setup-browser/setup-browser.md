@@ -13,13 +13,10 @@ Estimated time: 15 minutes
 * Rebuild the frontend application, then upload the revised files to the OCI Object Storage
 *	Launch the application in a web browser, perform transactions to generate traffic
 
-
-
 ### Prerequisites
 
 * This lab requires completion of lab 1, lab 2 and lab 3 of this workshop
 * This Lab also assumes you have completed the tutorials 1, 2 and 3 in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196).
-
 
 ## Task 1: Add APM headers to the API Gateway
 
@@ -87,11 +84,12 @@ To run the application from the Gateway, you will need to add headers, which are
 
 To capture traces from the browser, the **APM Browser Agent** needs to be deployed to the application's frontend. In this lab, you will  insert a JavaScript that configures the APM agent to ***index.html*** file.
 
-  >NOTE: This task assumes you completed the Tutorials of the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) Workshop, and cloned the workshop git repository on your laptop.
+  > **NOTE:** This task assumes you completed the Tutorials of the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) Workshop, and cloned the workshop git repository on your laptop.
 
 1.	On your laptop, open a terminal. Go to your React JS project directory, which you created in the Native Cloud App Workshop, and change to ***mtdrworkshop/frontend*** directory.
 
-	``` bash
+	```
+	bash
 	<copy>
 	cd <project directory on your laptop>/oci-react-samples/mtdrworkshop/frontend
 	</copy>
@@ -100,7 +98,8 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 	![frontend directory](images/10-1-1-frontend.png " ")
 
 2.	from the ***frontend/public*** directory, open ***index.html*** with an editor.
-	``` bash
+	```
+	bash
 	<copy>
 	vi public/index.html
 	</copy>
@@ -108,7 +107,8 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 3.	Insert the following JavaScript to the ***index.html*** file, just below the ***&lt;head&gt;*** section.
 
-	``` bash
+	```
+	bash
 	<copy>
 	<script>
 	window.apmrum = (window.apmrum || {});
@@ -133,11 +133,14 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 ## Task 3: Build the frontend and upload to the OCI Object Storage
 
 1.	Make sure you are in the ***frontend*** directory, then run the **npm run build** command. It packages the build files into the ***‘build’*** folder for the deployment.
-	``` bash
+
+	```
+  bash
 	<copy>
 	npm run build
 	</copy>
 	```
+
 	![APM Browser Agent](images/11-1-browseragent.png " ")
 
 2.	Next you will upload the files to the ***Object Storage***. You can either use the staci tool as instructed in the Native Cloud App Workshop, or use the Oracle Cloud console. In this Lab, we will upload the built files using the Oracle Cloud console. From the OCI menu, select **Storage** then **Buckets**.
@@ -232,9 +235,6 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 20.	Perform a few transactions to generate traffic. For example, add a new entery, press **Add**, verify that the new item was added to the list, then click **Done**.
 
 	![APM Browser Agent](images/11-16-browseragent.png " ")
-
-
-You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
