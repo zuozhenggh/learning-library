@@ -89,7 +89,7 @@ Make sure you have followed the prerequisites requirement, mentioned in [Introdu
 
     Follow the instructions below to attach this jar file in SQL Developer.
   
-  - **From Doc: 3.2.4.3 Before Migrating From MySQL**
+    **From Doc: 3.2.4.3 Before Migrating From MySQL**
 
     To configure a MySQL database for migration, install MySQLConnector/J release 3.1.12 or 5.0.4 on the system where you have installed SQL Developer and set the appropriate SQL Developer preference. Follow these steps:
   
@@ -163,7 +163,7 @@ Make sure you have followed the prerequisites requirement, mentioned in [Introdu
 
 ## Task 7: Complete Migration with the Wizard
 
-- The migration wizard can be invoked in a variety of contexts. You can right-click a third-party database connection (MySQL connect in our case) and select “Migrate to Oracle” or you can click from the menu “Tools>Migration>Migrate…”.
+  The migration wizard can be invoked in a variety of contexts. You can right-click a third-party database connection (MySQL connect in our case) and select “Migrate to Oracle” or you can click from the menu “Tools>Migration>Migrate…”.
 
   1. Here is the Migration Wizard link:
     ![Launch Migration Wizard](images/run-wizard.png " ")  
