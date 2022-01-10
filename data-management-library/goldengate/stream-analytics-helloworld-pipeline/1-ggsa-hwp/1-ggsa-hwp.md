@@ -44,15 +44,23 @@ Create a CSV file on your local drive with the data below:
 
 ## **Task 2:** Log in to GoldenGate Stream Analytics
 
-To log in to the GGSA instance:
+You should be already logged in after completing the lab *Initialize Environment*. If that's not the case, perform the following:
 
-1. In the Chrome browser, enter the host url **``<host>``: 9080/osa**.
+1. Double click on the *Get Started with Your Workshop* icon in the upper left corner in your remote desktop to launch a fresh browser session.
 
-2. Use the following credentials:
+2. On the web browser window on the right preloaded with *Golden Gate Stream Analytics* login page, provide the credentials below to login:
 
-* **User Name:** **osaadmin**
+    - Username
 
-* **Password:** **welcome1**
+    ```
+    <copy>osaadmin</copy>
+    ```
+
+    - Password
+
+    ```
+    <copy>xY3q3svdHt8=</copy>
+    ```
 
 ## **Task 3:** Create a File Stream
 

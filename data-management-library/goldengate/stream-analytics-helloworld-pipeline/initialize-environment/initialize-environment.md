@@ -40,7 +40,7 @@ Now with access to your remote desktop session, validate your environment before
     - Password
 
     ```
-    <copy>welcome1</copy>
+    <copy>xY3q3svdHt8=</copy>
     ```
 
 3. Confirm successful login. Note that it takes about 5 minutes after instance provisioning for all processes to fully start.

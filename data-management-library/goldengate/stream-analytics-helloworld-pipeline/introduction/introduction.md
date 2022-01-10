@@ -17,28 +17,9 @@ In this workshop you will:
 
 
 ### Required Credentials for GoldenGate Stream Analytics
+Please refer to */home/opc/README.txt*
 
-  ```
-  MySQL root password: <copy>OSADemo1111!</copy>
-  ```
-
-  ```
-  OSA_DEMO database password: <copy>Welcome123!</copy>
-  ```
-
-  ```
-  osaadmin password: <copy>welcome1</copy>
-  ```
-
-  ```
-  Spark Username: <copy>sparkadmin</copy>
-  ```
-
-  ```
-  Spark Password: <copy>Sparkadmin#123</copy>
-  ```
-
-You may now [proceed to the next lab](#next).
+You may now [proceed to the next lab].
 
 ## Learn More
 
