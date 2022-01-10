@@ -4,7 +4,7 @@
 
 In this session, we will show you how to use our create and get forecast APIs. 
 
-***Estimated Time***: 30 minutes
+*Estimated Time*: 30 minutes
 
 ### Objectives
 
