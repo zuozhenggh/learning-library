@@ -106,9 +106,8 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
-    ![](./images/Picture100-32.png " ")
-
-
+   ![](./images/Picture100-32.png " ")
+   
 ## Task 3: Connect with SQL Worksheet
 
 Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your Autonomous Data Warehouse or Autonomous Transaction Processing console.
