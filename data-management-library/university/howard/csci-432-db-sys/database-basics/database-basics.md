@@ -161,4 +161,4 @@ Run a query on a sample Oracle Autonomous Database data set.
 ## Acknowledgements
 
 - **Author** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, April 2021
+- **Last Updated By/Date** - Marion Smith, January 2022
