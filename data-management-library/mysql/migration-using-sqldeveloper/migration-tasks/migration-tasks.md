@@ -60,7 +60,8 @@ Make sure you have followed the prerequisites requirement, mentioned in detail i
 
   Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that "ATP" connection to create new user as migration target schema in Oracle ADB. Here's sample command to follow. You can run these commands using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
 
-  ![Open Worksheet in SQL Developer and copy SQL commands and execute](images/worksheet-sql-commands.png " ")    
+  ![Open Worksheet in SQL Developer and copy SQL commands and execute](images/worksheet-sql-commands.png " ") 
+
   ```
    <copy> 
    CREATE USER targetuser IDENTIFIED BY xxxxxxxx; 
