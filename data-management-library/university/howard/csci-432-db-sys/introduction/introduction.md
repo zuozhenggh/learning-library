@@ -1,6 +1,5 @@
 # Introduction
 
-## About this Workshop
 
 Howard University Database Systems Course.  Understand basic components of an Oracle database.
 
@@ -13,20 +12,20 @@ Howard University Database Systems Course.  Understand basic components of an Or
 
 In this lab, you will learn how to:
 * Provision a database
+* Connect with SQL worksheet
   
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
+* Attended course lecture
 
-*This is the "fold" - below items are collapsed by default*
+
 
 
 
 ## Acknowledgements
-* **Author** - <Eugenio Galiano>
-* **Contributors** -  <Kay Malcolm
-* **Last Updated By/Date** - <Marion Smith, January 2022>
+* **Author** - Eugenio Galiano
+* **Contributors** -  Kay Malcolm
+* **Last Updated By/Date** - Marion Smith, January 2022
