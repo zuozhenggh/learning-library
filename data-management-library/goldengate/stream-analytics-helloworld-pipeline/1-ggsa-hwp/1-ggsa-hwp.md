@@ -1,5 +1,5 @@
 
-# Your HelloWorld Pipeline in 15 minutes!
+# Create Your HelloWorld Pipeline
 
 ## Introduction
 

@@ -149,7 +149,7 @@ Now with access to your remote desktop session, validate your environment before
     | Apache Kafka Server (Broker)    | kafka.service                |
     | MySQL Server                    | mysqld.service               |
     | Oracle Stream Analytics         | osa.service                  |
-    | The nginx HTTP and reverse proxy| nginx.service    |
+    | The nginx HTTP and reverse proxy| nginx.service                |
     | Apache Spark Master             | spark-master.service         |
     | Apache Spark Slave              | spark-slave.service          |
 
@@ -172,13 +172,16 @@ If for any reason you want to login from a location that is external to your rem
     ```
 
     - URL
+
     ```
     <copy>https://[Instance Public_IP Address]/osa</copy>
     ```
 
-    *Note #1:* Substitute [Instance Public IP] with the correct host's public IP address
+    *Note:* Substitute *[Instance Public IP]* with the correct host's public IP address
 
-    *Note #2:* You may see an error on the browser while accessing the Web Console - “*Your connection is not private*” as shown below. Ignore and add the exception to proceed.
+2. You may see an error on the browser while accessing the Web Console - “*Your connection is not private*” as shown below. Ignore and add the exception to proceed.
+
+    For Chrome browser, click on *Advanced* to expand and select *Proceed to [Instance Public IP] (unsafe)*
 
     ![Privacy Error](images/login-ggsa-external-1.png " ")
     ![GGSA Login](images/login-ggsa-external-2.png " ")
