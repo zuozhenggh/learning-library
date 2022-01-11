@@ -36,7 +36,7 @@ Make sure you have followed the prerequisites requirement, mentioned in detail i
   **From Doc: 1.2 Installing and Getting Started with SQL Developer** 
 
   1. To install and start SQL Developer, you simply download its ZIP file and unzip it into a desired parent directory or folder, and then double-click the exe file named (sqldeveloper.exe) to open. 
-
+  
   ![Open Oracle SQL Developer by double-clicking this file (for windows)](images/executable-file.png " ")
 
   When you launch SQL Developer first time, it'll ask you importing project etc, select No. 
