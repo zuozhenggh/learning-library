@@ -44,7 +44,7 @@ Make sure you have followed the prerequisites requirement, mentioned in detail i
 
 ## Task 2: Create Connection for the Target (ADB) database
 
-  Now, you'll need to create appropriate user for the target schema, in the ATP database. You can use SQL Developer as well, to create such user. First, you will need to establish connection to ATP from SQL Developer. There are two guides you can follow to create ATP connection in SQL Developer: 
+  Now, you'll need to create appropriate user for the target schema, in the ATP database. You can use SQL Developer as well, to create such user. First, you will need to establish connection to ATP from SQL Developer. There are two guides you can follow to create ATP connection in SQL Developer:
 
 1. You can follow this link, for how to create connection to Autonomous Database from SQL Developer: [Connecting SQL Developer to Autonomous Transaction Processing](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/atp/OBE_Connecting%20SQL%20Developer%20to%20Autonomous%20Transaction%20Processing/connecting_sql_developer_to_autonomous_transaction_processing.html) (step 1 only). 
   
