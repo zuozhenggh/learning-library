@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to quickly provision an Oracle Autonomous Database (either Autonomous Data Warehouse [ADW] or Autonomous Transaction Processing [ATP]) on Oracle Cloud. 
+This lab walks you through the steps to quickly provision an Oracle Autonomous Database on Oracle Cloud. 
 
 ### Objectives
 
@@ -16,22 +16,16 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 -   This lab requires completion of the **Getting Started** section in the Contents menu on the left.  
 
-## Task 1: Choosing ADW or ATP from the Services Menu
+## Task 1: Choosing ADW from the Services Menu
 
 1. Log in to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     ![](./images/Picture100-36.png " ")
 
-3. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Data Warehouse database, so click **Autonomous Data Warehouse**.
+3. Click **Autonomous Data Warehouse**.
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
-
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. You can use the __List Scope__ drop-down menu to select a compartment. Select your __root compartment__, or __another compartment of your choice__ where you will create your new ADW instance. 
-
-5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the state of the databases (available, stopped, terminated, and so on). You can also sort by __Workload Type__. Here, the __Data Warehouse__ workload type is selected.
-
-    ![](./images/Compartment.png " ")
 
 
 ## Task 2: Creating the Autonomous Database Instance
@@ -66,10 +60,10 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 6. Configure the database:
 
     - __Always Free__ - For this lab, you can select this option to create an always free autonomous database, or not select this option and create a database using your paid subscription. An always free database comes with 1 CPU and 20 GB of storage.
-    - __Choose database version__ - Select a database version from the available versions.
-    - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__. If you choose an always free database, it comes with 1 CPU.
-    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. Or, if you choose an always free database, it comes with 20 GB of storage.
-    - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
+    - __Choose database version__ - Leave default - __19c__.
+    - __OCPU count__ - Leave default __1 CPU__. If you choose an always free database, it comes with 1 CPU.
+    - __Storage (TB)__ - Leave default. 
+    - __Auto Scaling__ - Leave default.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do __not__ select it.
 
     *Note: You cannot scale up/down an Always Free autonomous database.*
@@ -90,15 +84,10 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
     
 8. Choose network access:
     - For this lab, accept the default, "Allow secure access from everywhere".
-    - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
-    - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
-
+    
     ![](./images/Picture100-26e.png " ")
 
-9. Choose a license type. For this lab, choose __License Included__. The two license types are:
-
-    - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
-    - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
+9. Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
 
 10. Click __Create Autonomous Database__.
 
