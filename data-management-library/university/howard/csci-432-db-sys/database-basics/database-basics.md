@@ -7,7 +7,7 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 ### Objectives
 
--   Provision a new Autonomous Data Warehouse
+-   Getting Started with Oracle Database
 
 ### Prerequisites
 
