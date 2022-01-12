@@ -48,7 +48,7 @@ In this lab you will perform the following steps:
 
 ## Task 1: Review Tasks Completed in Advance
 
-In the interest of simplifying the setup and save time, the following steps were completed in advance and covered in this lab. Please review accordingly for reference
+In the interest of simplifying the setup and save time#, the following steps were completed in advance and covered in this lab. Please review accordingly for reference
 
 1. We have created and pre-patched an Oracle Home with 18.10 release using which will be use to create the gold image *[/u01/app/oracle/product/18/db\_home\_src, Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192]*
 
