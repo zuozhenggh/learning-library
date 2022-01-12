@@ -19,7 +19,7 @@ In this workshop you will:
 ### Required Credentials for GoldenGate Stream Analytics
 Please refer to */home/opc/README.txt*
 
-You may now [proceed to the next lab].
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 
