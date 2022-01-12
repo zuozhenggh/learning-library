@@ -108,7 +108,7 @@ Although you can connect to your autonomous database from local PC desktop tools
 
 3. Enter the Administrator **Password** you specified when creating the database. Click **Sign in**.
 
-    ![Enter the admin password.](./images/Picture100-16-password.png " ")
+    ![Enter the admin password.](./images/picture100-16-password.png " ")
 
 4. The Database Actions page opens. In the **Development** box, click **SQL**.
 
