@@ -1,4 +1,4 @@
-# Simplify Microservices Transactions Using Oracle Database Sagas
+# Simplify Microservice Transactions Using Oracle Database Sagas
 ## Introduction and Overview
 
 
