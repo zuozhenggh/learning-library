@@ -1,32 +1,14 @@
-# Automated Database Patching at Scale with Fleet Maintenance
+# Automated Database Patching at Scale with Fleet Maintenance UI
 
 ## Introduction
-The goal of this lab is to explore end-to-end automated patching and upgrades of the Oracle Database using Enterprise Manager.
+The goal of this lab is to explore end-to-end automated patching and upgrades of the Oracle Database using Enterprise Manager UI feature (starting from 13.5 RU1).
 
 *Estimated Lab Time*: 75 minutes
 
-Watch the video below for a quick walk through of the lab.
-[](youtube:NvFYUV2RGqs)
 
-### About Database Fleet Maintenance
+### About Database Fleet Maintenance UI
 
-Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.
-
-Benefits with Fleet Maintenance:
-- Minimum Downtime with Out of Place patching
-- Enterprise Scale with Enterprise Manger Deployment Procedures Framework
-- Single pane of glass for monitoring and managing entire patching and upgrade operations
-- Ability to schedule/retry/suspend/resume.
-- Database patching across different infrastructure including engineered systems like Exadata
-
-![](images/em-fleet-maintenance-overview-1.png " ")
-
-#### Video Preview
-Watch a preview of database patching using Oracle Enterprise Manager Fleet Maintenance:
-
-[](youtube:JlspEvqebHE)
-
-*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
+Starting from Enterprise Manager 13.5 RU 1, Enterprise Manager is equipped with a new interface to patch(update) and upgrade Database Fleet as an end-to-end automated solution.
 
 ### Objectives
 
@@ -255,7 +237,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 1.  Review the flow on Gold Image Deployment
 
-    ![](images/dadf62c68bd6d2180a20b977086a26a1.jpg " ")
+    ![](images/3.png " ")
 
 2. Run the block below to deploy a new Oracle Home
 
