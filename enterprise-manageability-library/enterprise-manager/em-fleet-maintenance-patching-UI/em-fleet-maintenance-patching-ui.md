@@ -231,7 +231,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
    -  target\_type – type of target to be patched. This should be oracle\_database in this case
    -  image\_id – ID of the Gold Image to which the target should be patched
 
-    ![](images/ca94c4b76f9c24eee24f4d06b35c6764.png =50%x* " ")
+    ![](images/ca94c4b76f9c24eee24f4d06b35c6764.png " ")
 
 ## Task 6: Deploy Image
 
