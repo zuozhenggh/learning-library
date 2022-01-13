@@ -14,11 +14,11 @@ Now that you've created the Location, Department, and Employee business objects,
 Let's create a table to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
 1.  Click the **Web Applications** ![Web Applications icon](./images/vbcscp_webapp_icon.png) tab in the Navigator.
-2.  Expand the **hrwebapp** and **main** nodes if necessary, then click **main-start**, the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the main-start tab just below the header.) You're viewing the Page Designer, with the Components palette visible.
+2.  Expand the **hrwebapp** and **main** nodes if necessary, then click **main-start**, the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the **main-start** tab just below the header.) You're viewing the Page Designer, with the Components palette visible.
 
     You may want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Let's give this main-start page a title. From the Components palette, drag the **Heading** component under Common and drop it onto the page.
+3.  Now let's give this main-start page a title. Click the Components palette, then drag the **Heading** component under Common and drop it onto the page.
 
     ![](./images/vbcscp_dd_s3.png)
 
@@ -30,7 +30,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     ![](./images/department_add_table.png)
 
-6.  Select the table if necessary, then click **Add Data** in the Properties pane to open the Add Data Quick Start.  
+6.  Select the table if necessary, then click **Add Data** in the Properties pane's Quick Start tab to open the Add Data Quick Start.  
 
     ![](./images/vbcscp_dd_s6.png)
 
@@ -97,9 +97,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
     ![](./images/vbcscp_cpd_s7_result.png)
 
-    By convention, a page name has its flow name as a prefix. This simple application uses only the **main** flow. More complex applications can have more than one flow.
-
-8.  Open the **main-start** page (you can either click the main-start tab just below the header or click the page in the Web Apps pane), then click **Reload page** ![Reload page icon](./images/vbcscp_reload_icon.png) to see the table row you created.
+8.  Double-click the **main-start** tile to open the page (you can also click the **main-start** tab just below the header or click the page in the Web Apps pane), then click **Reload page** ![Reload page icon](./images/vbcscp_reload_icon.png) to see the table row you created.
 
     ![](./images/vbcscp_cpd_s8.png)
 
@@ -109,7 +107,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
 We'll now create a page to display employees, similar to the one you created to show departments.
 
-1.  In the Web Apps tree, under **hrwebapp**, click **\+** (Create Root Page) next to the main node and select **Create Page**.
+1.  In the Web Apps tree, under **hrwebapp**, click **\+** next to the main node and select **Create Page**.
 
     ![](./images/vbcscp_cpe_s1.png)
 
@@ -120,7 +118,7 @@ We'll now create a page to display employees, similar to the one you created to 
 3.  Drag the **Heading** component from the Components palette and drop it onto the page.
 4.  Click the **Properties** tab (if necessary), then in the heading's Properties pane, enter `Employees` in the **Text** field.
 5.  In the Components palette, scroll down to Collection and drag a **Table** component onto the page.
-6.  Click **Add Data**.
+6.  Click **Add Data** under Quick Start in the Properties pane.
 7.  On the Locate Data page, select **Employee** under Business Objects and click **Next**.
 8.  On the Bind Data page, select the **id**, **name**, **hireDate**, and **email** check boxes under **item\[i\]**. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![Handle icon](./images/vbcscp_handle_icon.png) to reorder the columns as desired.
 
@@ -149,8 +147,7 @@ Add a Create page that lets your users create new employees.
 
 1.  Click the **Quick Start** tab, then click **Add Create Page**.
 2.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
-3.  On the Page Detail page, select the **hireDate**, **email**, and **department** check boxes, in that order (**name** is already selected, because it's a required field).
-4.  Leave the **Button label** field and other values to their default values. Click **Finish**.
+3.  On the Page Detail page, select the **hireDate**, **email**, and **department** check boxes, in that order (**name** is already selected, because it's a required field). Leave the **Button label** field and other values to their default values. Click **Finish**.
 
     ![](./images/vbcscp_cpc_s4.png)
 
@@ -169,7 +166,7 @@ Add a Create page that lets your users create new employees.
 
     ![](./images/vbcscp_cpc_s7_result.png)
 
-8.  Return to the main-employees page. (You can double-click the page tile in the page flow, in addition to using other navigation mechanisms.) If necessary, click **Reload page** ![Reload page icon](./images/vbcscp_reload_icon.png) to display the row you created.
+8.  Return to the main-employees page. (You can double-click the page tile, in addition to using other navigation mechanisms.) If necessary, click **Reload page** ![Reload page icon](./images/vbcscp_reload_icon.png) to display the row you created.
 
 9.  Click **Code** (next to **Design** in the Page Designer toolbar) to view the HTML code for the main-employees page. You can see the code for the heading, the toolbar, and the table within `div` elements. You could edit this code to create a customized user interface. The components and classes all begin with `oj-`, indicating that they are Oracle JavaScript Extension Toolkit (JET) components.  
 
@@ -196,7 +193,7 @@ It makes sense at this point to change the name of the main-start page to main-d
     ![](./images/vbcscp_cpn_s2.png)
 
 3.  Double-click **main-departments** to go to that page again.
-4.  Although you have changed its name, the main-departments page will continue to be the page where your application starts when you run it. To find out why, click **Source View** ![Source View icon](./images/vbcscp_sourceview_icon.png) in the Navigator and expand the **webApps**, **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json**.
+4.  Although you have changed its name, the main-departments page will continue to be the page where your application starts when you run it. To find out why, click **Source** ![Source icon](./images/vbcscp_sourceview_icon.png) in the Navigator and expand the **webApps**, **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json**.
 
     ![](./images/vbcscp_cpn_s4.png)
 
@@ -206,4 +203,4 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
-* **Last Updated By** - November 2021
+* **Last Updated By** - February 2022

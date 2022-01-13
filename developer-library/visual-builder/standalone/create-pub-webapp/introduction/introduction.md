@@ -7,7 +7,7 @@ This workshop shows how to develop a web application in Oracle Visual Builder fo
 Estimated Workshop Time: 115 minutes
 
 ### What Is Oracle Visual Builder?
-Oracle Visual Builder provides easy access to data from any REST-based service, and lets you create reusable business objects for storing and managing data. Using cloud-based visual development tools, you can create and test responsive web applications and native mobile apps without having to install any additional software. The visual designer enables you to quickly lay out pages in your applications by dragging and dropping UI components, customizing their attributes, and defining their behavior.  
+Oracle Visual Builder provides easy access to data from any REST-based service, and lets you create reusable business objects for storing and managing data. Using cloud-based visual development tools, you can create and test responsive web and mobile apps without having to install any additional software. It provides a rich set of visual tools that enable you to quickly lay out pages in your applications by dragging and dropping UI components and customizing their attributes to define behavior.  
 
 Take a look at this video to learn more, or just dive right into the labs.
 

@@ -44,12 +44,12 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![](./images/vbcsca_cra_s3.png)
 
-    The Welcome page contains sets of tiles in three groups: Connect to Data, Create Apps, and Add Artifacts. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Components, Processes, and Source View.
+    The Welcome page contains sets of tiles in three groups: Connect to Data, Create Apps, and Add Artifacts. On the far left are icons representing Mobile Applications, Web Applications, Services, Business Objects, Components, Processes, and Source View. This vertical toolbar is the Navigator.
 
-    Take note of the header elements:
+    Now take note of the header elements:
     ![](./images/header.png)
 
-    The `DEV` and `1.0` tags next to the application name on the left indicate the application status (development) and version. Elements on the right let you perform various actions. For example, you can undo your most recent change, redo a change after clicking Undo, or search for a file. This workshop primarily demonstrates the options to preview your app and publish changes.
+    The `DEV` and `1.0` tags next to the application name on the left indicate the application status (DEV for development) and version. Elements on the right let you perform various actions. For example, you can undo your most recent change, redo a change after clicking Undo, or search for a file. This workshop primarily demonstrates the options to preview your app and publish changes.
 
 4.  We want to create a web app, so under **Create Apps**, click **Web Apps**.
 
@@ -61,15 +61,17 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
 6.  In the Create Web Application dialog box, enter `hrwebapp` in the **Application Name** field under General Information. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    The application opens on the main-start page, which is automatically created for you. This is also the default name assigned to your application's home page.  
+    The application opens on the main-start page, which is automatically created for you. This is also the default name assigned to your application's home page. By convention, a page name has its flow name as a prefix. This simple application uses only the **main** flow. More complex applications can have more than one flow.
 
     ![](./images/vbcsca_cra_s7.png)
 
-    What you see under the main-start tab is your application's work area. Just under main-start are several horizontal tabs: Page Designer, Actions, Event Listeners, and so on. By default, the page opens in the Page Designer, showing the Components and the Structure tabs on the left. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the structure of your components will show in the Structure view.
+    What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: Page Designer, Actions, Event Listeners, and so on. By default, the page opens in the Page Designer, showing the Components, Data, and Structure tabs on the left. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the structure of your components will show in the Structure view.
 
-    On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
+    On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area. You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
-    In the Web Apps pane, expand the **hrwebapp** node, then the **main** node to get a tree view of your web application.
+    ![](./images/structure-view-move.png)
+
+    Lastly, in the Web Apps pane, expand the **hrwebapp** node, then the **main** node to get a tree view of your web application.
 
 ## Task 2: Create a Location Business Object and Import Data from a File
 
@@ -84,7 +86,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     ![](./images/vbcsca_imp_s4.png)
 
-5.  Click **\+** and select **Create Field** to add a field specific to this business object. This is a very simple business object, so we'll add only one new field.
+5.  Click **\+** and select **Field** to add a field specific to this business object. This is a very simple business object, so we'll add only one new field.
 6.  In the pop-up box, enter:
 
     -   **Label**: `Name`
@@ -101,7 +103,8 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     You can see that there's now a check mark in the **Required** column for the **Name** field.
 
-8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/N2o2eijiTUZM78HyL9HHig4OsQLlOLQorVBrV8mUlJpbWJCMpY58nPJbHvFVlSR3/n/c4u03/b/oci-library/o/WMS4121Location.csv) and save the `Location.csv` file to your file system. The file contains four locations for the application.
+8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/N2o2eijiTUZM78HyL9HHig4OsQLlOLQorVBrV8mUlJpbWJCMpY58nPJbHvFVlSR3/n/c4u03/b/oci-library/o/WMS4121Location.csv) to download a spreadsheet containing four locations for the application. Make sure you rename the downloaded file as `Location.csv`.
+
 9.  In the Navigator's Business Object pane, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
     ![](./images/vbcsca_imp_s9.png)
@@ -133,7 +136,7 @@ Create the Department business object, which will have fields to show a departme
     ![](./images/vbcsca_cdb_s1.png)
 
 2.  In the New Business Object dialog box, enter `Department` in the **Label** field and click **Create**. `Department` is also filled in automatically as the **Name** value.
-3.  Click the **Fields** tab, then **\+** and select **Create Field**.
+3.  Click the **Fields** tab, then **\+** and select **Field**.
 4.  In the pop-up box, enter:
 
     -   **Label**: `Name`
@@ -146,7 +149,7 @@ Create the Department business object, which will have fields to show a departme
 
     A check mark is displayed in the **Required** column for the **Name** field.
 
-6.  Click **\+** and select **Create Field** again, then enter or select:
+6.  Click **\+** and select **Field** again, then enter or select:
 
     -   **Label**: `Location`
     -   **Field Name**: `location` (automatically populated)
@@ -169,7 +172,7 @@ In this task, we'll create the last business object we need, the Employee object
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
 2.  In the New Business Object dialog box, enter `Employee` in the **Label** field and click **Create**. `Employee` is also filled in automatically as the **Name** value.
-3.  Click the **Fields** tab, then click **\+** and select **Create Field**.
+3.  Click the **Fields** tab, then click **\+** and select **Field**.
 4.  In the pop-up box, enter:
 
     -   **Label**: `Name`
@@ -179,7 +182,7 @@ In this task, we'll create the last business object we need, the Employee object
     Click **Create Field**.
 
 5.  In the **Name** field's properties, select the **Required** check box under **Constraints**.
-6.  Click **\+** and select **Create Field** again, then enter or select:
+6.  Click **\+** and select **Field** again, then enter or select:
 
     -   **Label**: `Department`
     -   **Field Name**: `department` (automatically populated)
@@ -189,7 +192,7 @@ In this task, we'll create the last business object we need, the Employee object
 
     Click **Create Field**.
 
-7.  Click **\+** and select **Create Field** again, then enter or select:
+7.  Click **\+** and select **Field** again, then enter or select:
 
     -   **Label**: `Hire Date`
     -   **Field Name**: `hireDate` (automatically populated)
@@ -197,7 +200,7 @@ In this task, we'll create the last business object we need, the Employee object
 
     Click **Create Field**.
 
-8.  Click **\+** and select **Create Field** again, then enter or select:
+8.  Click **\+** and select **Field** again, then enter or select:
 
     -   **Label**: `Email`
     -   **Field Name**: `email` (automatically populated)
@@ -228,7 +231,7 @@ Now that we have our business objects, let's create a diagram that provides a vi
 
 2.  In the Create Business Object Diagram dialog box, enter `HRDiagram` in the **Diagram name** field and click **Create**.
 
-3.  In the Properties pane, click **Select All** to see the three business objects you created and their relationships.
+3.  In the Properties pane, click **Select All** next to Business Objects to see the three business objects you created and their relationships.
 
     ![](./images/vbcsca_cde_s12.png)
 
@@ -239,4 +242,4 @@ You can now [proceed to the next lab](#next).
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
-* **Last Updated By** - November 2021
+* **Last Updated By** - February 2022
