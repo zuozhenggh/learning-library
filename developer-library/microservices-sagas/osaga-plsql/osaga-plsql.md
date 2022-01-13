@@ -26,7 +26,7 @@ Estimated Time:  5 minutes
 
 - This lab presumes you have already completed the earlier labs.
 
-## Task 1: Login to `sagadb1` database using SQLcl and add saga broker, coordinator, and TravelAgency participant/initiator
+## Task 1: Login to `sagadb1` database using SQLcl and add  TravelAgency participant/initiator
 
 1.    Enter the Cloud Shell and enter the following command to enter SQLcl
     ```
@@ -44,7 +44,7 @@ Estimated Time:  5 minutes
     ```  
         The output should look similar to the following.
 
-        ![SQLcl login](images/connectwithSQLcl.png " ")
+        ![SQLcl login to sagadb1](images/connectwithSQLcl.png " ")
       
 4.   Enter the following command to install the saga broker, coordinator, and `TravelAgencyPLSQL` participant/initiator along with it's associated saga callback package.
 
@@ -52,40 +52,35 @@ Estimated Time:  5 minutes
     <copy>@sql/1_saga1db.sql</copy>
     ```
 
-   Notice the PL/SQL calls made to do this installation and setup including the callback package for the TravelAgency which includes `request` and `response` operations.
-   These are all one time setup operations to configure the saga infrastructure and PL/SQL participants.
+   Notice the PL/SQL calls made including the callback package for the TravelAgency which includes `request` and `response` operations.
+   This is a one time setup operation to configure the PL/SQL participants.
    
-   ```
---Create Broker
-exec dbms_saga_adm.add_broker(broker_name => 'TEST');
-
---Create Coordinator (Note that if the coordinator is co-located with the broker, dblink_to_broker should be NULL)
-exec dbms_saga_adm.add_coordinator( coordinator_name => 'TravelCoordinator',  dblink_to_broker => null,   mailbox_schema => 'admin',  broker_name => 'TEST',  dblink_to_coordinator => 'travelagencyadminlink');
-
-create table travelagencytest(text VARCHAR2(100));
-create or replace package dbms_ta_cbk as
-function request(saga_id in raw, saga_sender in varchar2, payload in JSON default null) return JSON;
-procedure response(saga_id in raw, saga_sender in varchar2, payload in JSON default null);
-end dbms_ta_cbk;
-/
-create or replace package body dbms_ta_cbk as
-function request(saga_id in raw, saga_sender in varchar2, payload in JSON default null) return JSON as
-begin
-  null;
-end;
-
-procedure response(saga_id in raw, saga_sender in varchar2, payload in JSON default null) as
-begin
-  insert into travelagencytest values(saga_sender);
-  insert into travelagencytest values(json_serialize(payload));
-end;
-end dbms_ta_cbk;
-/
-
---Add participant
-exec dbms_saga_adm.add_participant(  participant_name => 'TravelAgencyPLSQL',   coordinator_name => 'TravelCoordinator' ,   dblink_to_broker => null ,   mailbox_schema => 'admin' ,   broker_name => 'TEST' ,   callback_package => 'dbms_ta_cbk' ,   dblink_to_participant => null);
-
-```
+    ```
+        --Add TravelAgency callback package
+        create table travelagencytest(text VARCHAR2(100));
+        create or replace package dbms_ta_cbk as
+        function request(saga_id in raw, saga_sender in varchar2, payload in JSON default null) return JSON;
+        procedure response(saga_id in raw, saga_sender in varchar2, payload in JSON default null);
+        end dbms_ta_cbk;
+        /
+        create or replace package body dbms_ta_cbk as
+        function request(saga_id in raw, saga_sender in varchar2, payload in JSON default null) return JSON as
+        begin
+          null;
+        end;
+        
+        procedure response(saga_id in raw, saga_sender in varchar2, payload in JSON default null) as
+        begin
+          insert into travelagencytest values(saga_sender);
+          insert into travelagencytest values(json_serialize(payload));
+        end;
+        end dbms_ta_cbk;
+        /
+        
+        --Add participant
+        exec dbms_saga_adm.add_participant(  participant_name => 'TravelAgencyPLSQL',   coordinator_name => 'TravelCoordinator' ,   dblink_to_broker => null ,   mailbox_schema => 'admin' ,   broker_name => 'TEST' ,   callback_package => 'dbms_ta_cbk' ,   dblink_to_participant => null);
+    
+    ```
 
 ## Task 2: Login to `sagadb2` database using SQLcl and add Flight, Hotel, and Car participants
 
@@ -103,15 +98,15 @@ exec dbms_saga_adm.add_participant(  participant_name => 'TravelAgencyPLSQL',   
    
    The output should look similar to the following.
 
-   ![SQLcl login](images/connectwithSQLclsaga2.png " ")
+   ![SQLcl login to sagadb2](images/connectwithSQLclsaga2.png " ")
 4.   Enter the following command to install `FlightPLSQL`, `HotelPLSQL`, and `CarPLSQL` participants and their saga callback packages.
 
         ```
         <copy>@sql/2_saga2db.sql</copy>
         ```
 
-       Notice the PL/SQL calls made to add the participants including the callback package for the TravelAgency which includes `request` and `response` operations.
-   Again this is a one time setup operations to configure the  PL/SQL participants.
+       Notice the PL/SQL calls made to in this script to add the participants including the callback package for the TravelAgency which includes `request` and `after_rollback` operations.
+   Again this is a one time setup operation to configure the PL/SQL participants.
    
        ```
         create table flighttest(text VARCHAR2(100));
@@ -145,6 +140,10 @@ exec dbms_saga_adm.add_participant(  participant_name => 'TravelAgencyPLSQL',   
         end;
         end dbms_flight_cbk;
         /
+     
+        --Add participant
+        exec dbms_saga_adm.add_participant(participant_name=> 'FlightPLSQL' ,  dblink_to_broker=> 'travelagencyadminlink',mailbox_schema=> 'admin',broker_name=> 'TEST', callback_package => 'dbms_flight_cbk' , dblink_to_participant=> 'participantadminlink');
+
        ```
 
 
@@ -153,19 +152,19 @@ exec dbms_saga_adm.add_participant(  participant_name => 'TravelAgencyPLSQL',   
 1.    In the TravelAgency/sagadb2 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
     ```
     <copy>
-declare
-  saga_id raw(16);
-  request JSON;
- begin
-  saga_id := dbms_saga.begin_saga('TravelAgencyPLSQL');
-  flightrequest := json('[{"flight":"myflight"}]');
-  dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'FlightPLSQL', 'TravelCoordinator', flightrequest);
-  hotelrequest := json('[{"hotel":"myhoteg"}]');
-  dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'CarPLSQL', 'TravelCoordinator', hotelrequest);
-  carrequest := json('[{"car":"mycar"}]');
-  dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'HotelPLSQL', 'TravelCoordinator', carrequest);
-end;
-/</copy>
+    declare
+      saga_id raw(16);
+      request JSON;
+     begin
+      saga_id := dbms_saga.begin_saga('TravelAgencyPLSQL');
+      flightrequest := json('[{"flight":"myflight"}]');
+      dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'FlightPLSQL', 'TravelCoordinator', flightrequest);
+      hotelrequest := json('[{"hotel":"myhoteg"}]');
+      dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'CarPLSQL', 'TravelCoordinator', hotelrequest);
+      carrequest := json('[{"car":"mycar"}]');
+      dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'HotelPLSQL', 'TravelCoordinator', carrequest);
+    end;
+    /</copy>
     ```
 
 2.   In the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
@@ -175,7 +174,7 @@ end;
     
         Note the value
 
-        ![SQLcl login](images/carcount2.png " ")
+        ![Car count of 2](images/carcount2.png " ")
       
 3.    Check the existence and status of the saga on both the TravelAgency/sagadb1 and Participants/sagadb2 by copying and pasting the following into SQLcl
 
@@ -185,7 +184,7 @@ end;
     
        You should notice the saga and it's status as `0` indicating it is in the active state.
 
-       ![SQLcl login](images/selectsagastatus-active.png " ")
+       ![Active saga status](images/selectsagastatus-active.png " ")
       
 4.    Once again, in the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
   
@@ -195,7 +194,7 @@ end;
           
        Note the value has decreased by one due to the active saga activity.
    
-       ![SQLcl login](images/carcount1.png " ")
+       ![Car count of 1](images/carcount1.png " ")
                
 5.    In the Participant/sagadb2 SQLcl console, copy and paste the following `rollback_saga` command, replacing `REPLACE_THIS_WITH_SAGAID` with the saga id from the query in step 3.
          ```
@@ -204,7 +203,7 @@ end;
           
        Note the value has decreased by one due to the active saga activity.
    
-       ![SQLcl login](images/exec-rollbacksaga.png " ")
+       ![Saga rollback command](images/exec-rollbacksaga.png " ")
        
 6.    Check the status of the saga on both the TravelAgency/sagadb1 and Participants/sagadb2 by copying and pasting the following into SQLcl
         ```
@@ -213,7 +212,7 @@ end;
     
         You should notice the saga and it's status as `3` indicating it is in the rolledback/aborted state.
 
-        ![SQLcl login](images/sagastatus3-rollback.png " ")
+        ![Rolledback saga status](images/sagastatus3-rollback.png " ")
             
 7.    Once again, in the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
          ```
@@ -222,7 +221,7 @@ end;
           
        Note the value has returned to the original value due to the compensating saga activity.
    
-       ![SQLcl login](images/carcount2.png " ")
+       ![Car count of 2](images/carcount2.png " ")
                
       
 
@@ -230,22 +229,22 @@ end;
 ## Task 4: Conduct saga commit test
 
 1.    In the TravelAgency/sagadb2 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
-    ```
-    <copy>
-declare
-  saga_id raw(16);
-  request JSON;
- begin
-  saga_id := dbms_saga.begin_saga('TravelAgencyPLSQL');
-  flightrequest := json('[{"flight":"myflight"}]');
-  dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'FlightPLSQL', 'TravelCoordinator', flightrequest);
-  hotelrequest := json('[{"hotel":"myhoteg"}]');
-  dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'CarPLSQL', 'TravelCoordinator', hotelrequest);
-  carrequest := json('[{"car":"mycar"}]');
-  dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'HotelPLSQL', 'TravelCoordinator', carrequest);
-end;
-/</copy>
-    ```
+        ```
+      <copy>
+        declare
+          saga_id raw(16);
+          request JSON;
+         begin
+          saga_id := dbms_saga.begin_saga('TravelAgencyPLSQL');
+          flightrequest := json('[{"flight":"myflight"}]');
+          dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'FlightPLSQL', 'TravelCoordinator', flightrequest);
+          hotelrequest := json('[{"hotel":"myhoteg"}]');
+          dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'CarPLSQL', 'TravelCoordinator', hotelrequest);
+          carrequest := json('[{"car":"mycar"}]');
+          dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'HotelPLSQL', 'TravelCoordinator', carrequest);
+        end;
+        / </copy>
+      ```
 
 2.   In the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
     ```
@@ -254,7 +253,7 @@ end;
     
         Note the value
 
-        ![SQLcl login](images/carcount2.png " ")
+        ![Car count of 2](images/carcount2.png " ")
       
 3.    Check the existence and status of the saga on both the TravelAgency/sagadb1 and Participants/sagadb2 by copying and pasting the following into SQLcl
 
@@ -264,7 +263,7 @@ end;
     
        You should notice the saga and it's status as `0` indicating it is in the active state.
 
-       ![SQLcl login](images/selectsagastatus-active.png " ")
+       ![Active saga status](images/selectsagastatus-active.png " ")
       
 4.    Once again, in the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
   
@@ -274,7 +273,7 @@ end;
           
        Note the value has decreased by one due to the active saga activity.
    
-       ![SQLcl login](images/carcount1.png " ")
+       ![Car count of 1](images/carcount1.png " ")
                
 5.    In the Participant/sagadb2 SQLcl console, copy and paste the following `commit_saga` command, replacing `REPLACE_THIS_WITH_SAGAID` with the saga id from the query in step 3.
          ```
@@ -283,7 +282,7 @@ end;
           
        Note the value has decreased by one due to the active saga activity.
    
-       ![SQLcl login](images/exec-rollbacksaga.png " ")
+       ![Saga commit command](images/exec-commitsaga.png " ")
        
 6.    Check the status of the saga on both the TravelAgency/sagadb1 and Participants/sagadb2 by copying and pasting the following into SQLcl
         ```
@@ -292,7 +291,7 @@ end;
     
         You should notice the saga and it's status as `3` indicating it is in the committed/completed state.
 
-        ![SQLcl login](images/sagastatus2-commit.png " ")
+        ![Committed saga status](images/sagastatus2-commit.png " ")
             
 7.    Once again, in the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
          ```
@@ -301,10 +300,8 @@ end;
           
        Note the value has remained reduced as the saga was successfully committed.
    
-       ![SQLcl login](images/carcount1.png " ")
-               
-      
-
+       ![Car count of 1](images/carcount1.png " ")
+             
 
 You may now proceed to the next lab.
 

@@ -26,11 +26,27 @@ Estimated Time:  10 minutes
 
 ### Prerequisites
 
-- This lab presumes you have already completed the earlier labs.
+- This lab presumes you have already completed the setup lab.
 
-## Task 1: Add Participants
+## Task 1: Add and start Java Participants
 
-1.    Add Participants with Complete/Commit and Compensate/Rollback Callbacks
+1.    Enter the Cloud Shell and cd to the `travelagency-springboot` directory which should be at the following location.
+
+        ```
+        <copy>
+            cd ~/microservices-datadriven/travelbooking/travelagency-springboot
+        </copy>
+        ```
+
+
+2.    Issue the following command.
+
+        ```
+        <copy>
+            java -jar target/travelagency-springboot-0.1.0.jar
+        </copy>
+        ```
+
 
    ![Java Add Participant](./images/AQJmsSagaMessageListener.png " ")
    
