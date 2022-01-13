@@ -25,11 +25,13 @@ Estimated Time:  15 minutes
 
 ### Prerequisites
 
-- This lab presumes you have already completed the earlier labs.
+- N/A at this time.
 
-## Task 1: Understand workflows
+## Task 1: Check out the Oracle APEX roadmap which includes the release of an amazing new Workflow product.
 
+1. See under https://apex.oracle.com/en/learn/resources/roadmap/
 
+    "Support for integrated workflow capabilities that provide human workflow with actionable emails, unified task list, and connectivity to external services with pre-built connectors.
 
 
 

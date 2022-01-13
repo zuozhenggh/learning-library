@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This lab will show you how to use Oracle Database Sagas with Java Microservices
+This lab will show you how to use Oracle Database Sagas with Java Microservices.
+
+The following shows a side by side comparison of the work required by the developer when not using Oracle Database Saga support contrasted with taking advantage of the support.
 
    ![Java Add Participant](./images/javacodecomparison.png " ")
 
 Estimated Time:  10 minutes
-
-
 
 ### Objectives
 
@@ -28,25 +28,71 @@ Estimated Time:  10 minutes
 
 - This lab presumes you have already completed the setup lab.
 
-## Task 1: Add and start Java Participants
+## Task 1: Add and start Java Participants (FlightJava, HotelJava, and CarJava)
+       
+1. Notice the AQjmsSagaMessageListener interface and implementation for/of the TravelParticipantApplication.java
+
+   ![Java Add Participant](./images/AQJmsSagaMessageListener.png " ")
+   
+   ![Java Add Participant](./images/AQJmsSagaMessageListener-methods.png " ")
+   
+   ![Java Add Participant](./images/javasagamessagelistnerimpl.png " ")
+   
+2.    Enter the Cloud Shell and cd to the `travelagency-java` directory which should be at the following location.
+
+        ```
+        <copy>cd ~/microservices-datadriven/travelbooking/travelparticipant-java</copy>
+        ```
+
+3.    Issue the following command.
+
+        ```
+        <copy>mvn clean install; java -jar target/travelparticipant.jar</copy>
+        ```
+
+      This will build and start a travel participant java service.
+
+4.    You will be prompted for the following.
+        - database password (the one you used when creating the participant/`sagadb2` PDB)
+        - TNS_ADMIN (accept the default)
+        - participant type (FlightJava, HotelJava, or CarJava).
+
+5.    You will then be asked whether the one-time setup call `add_participant` is needed for the participant type you selected. 
+If this is the first time you have started this participant type then select 'y', otherwise simply hit enter to use the default ('n')
+
+6.    The output should look like the following.
+
+
+7.   The participant is now running and listening for messages for the saga.
+
+8.   Repeat these steps for any of the other participant types (FlightJava, HotelJava, or CarJava)you didn't select. 
+
+     You can have as few or as many participants as you like in the saga. 
+     For example, you can just have a HotelJava participant for simplicity.
+    
+     If you do have more than one participant, it is convenient to open a new browser tab and Cloud Shell for each.
+
+
+## Task 2: Add and start Java TravelAgency Initiatory/Participant
 
 1.    Enter the Cloud Shell and cd to the `travelagency-springboot` directory which should be at the following location.
 
         ```
-        <copy>
-            cd ~/microservices-datadriven/travelbooking/travelagency-springboot
-        </copy>
+        <copy>cd ~/microservices-datadriven/travelbooking/travelagency-java</copy>
         ```
 
 
 2.    Issue the following command.
 
         ```
-        <copy>
-            java -jar target/travelagency-springboot-0.1.0.jar
-        </copy>
+        <copy>mvn clean install; java -jar target/travelagency.jar</copy>
         ```
 
+
+        ```
+        <copy>mvn clean install; java -jar target/travelagency-springboot-0.1.0.jar</copy>
+        ```
+3. Notice the AQjmsSagaMessageListener interface and implementation 
 
    ![Java Add Participant](./images/AQJmsSagaMessageListener.png " ")
    

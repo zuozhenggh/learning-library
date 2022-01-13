@@ -15,37 +15,7 @@ Estimated Time: 25 minutes
 
 - This workshop assumes you have an Oracle cloud account and have signed in to the account.
 
-## Task 1: Select the Home Region
-
-1. Be sure to select the **home region** of your tenancy. Setup will only work in the home region.
-
-    ![Home Region](images/home-region.png " ")
-
-## Task 2: Check Your Tenancy Service Limits
-
-1. If you have a **fresh** free trial account with credits then you can be sure that you have enough quota and you can proceed to the next step.
-
-    If, however, you have already used up some quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may reach are summarized in the following table.
-
-    | Service          | Scope  | Resource                                             | Available | Free Account Limit |
-    |------------------|:------:|------------------------------------------------------|:---------:|:------------------:|
-    | Compute          | AD-1   | Cores for Standard.E2 based VM and BM Instances      | **3**     | 6                  |
-    | Container Engine | Region | Cluster Count                                        | **1**     | 1                  |
-    | Database         | Region | Autonomous Transaction Processing Total Storage (TB) | **2**     | 2                  |
-    |                  | Region | Autonomous Transaction Processing OCPU Count         | **4**     | 8                  |
-    | LbaaS            | Region | 100Mbps Load Balancer Count                           | **3**     | 3                  |
-
-2. Quota usage and limits can be check through the console: **Limits, Quotas and Usage** in the **Governance & Administration** section , For example:
-
-    ![Service Limit Example](images/service-limit-example.png " ")
-  
-3. The Tenancy Explorer is used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
-
-    ![Show SubCompartment](images/show-subcompartments.png " ")
-
-4. It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
-
-## Task 3: Launch Cloud Shell
+## Task 1: Launch Cloud Shell
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
 
@@ -55,34 +25,16 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
-## Task 4: Create a Folder to Contain the Workshop Code
-
-1. Create a directory to contain the workshop code. The directory name is used to create a compartment of the same name in your tenancy. The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
-
-    ```
-    <copy>mkdir travelagency
-    </copy>
-    ```
-
-   All the resources created by the setup are created in this compartment. This will let you to quickly delete and cleanup afterward.  
-
-2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
-
-    ```
-    <copy> cd travelagency
-    </copy>
-    ```
-
-## Task 5: Make a Clone of the Workshop Setup Script and Source Code
+## Task 2: Make a Clone of the Workshop Source Code in your home directory
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 21.12.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 22.1.3 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
-   You should now see the directory `microservices-datadriven` in the directory that you created.
+   You should now see the directory `microservices-datadriven` in the home directory.
 
 2. Run the following command to edit your .bashrc file so that you will return to the workshop directory when you connect to cloud shell in the future.
 
@@ -90,17 +42,18 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     <copy>
     sed -i.bak '/travelagency/d' ~/.bashrc
     echo "source $PWD/microservices-datadriven/travelagency/env.sh" >>~/.bashrc
+   export JAVA_HOME=~/graalvm-ce-java11-20.1.0
+   export PATH=$JAVA_HOME/bin:$PATH
     </copy>
     ```
 
-## Task 6: Start the Setup
+## Task 3: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
     ```
-    <copy>
-    source microservices-datadriven/travelagency/env.sh
-    source setup.sh
+    <copy>cd ; 
+   mvn install:install-file –Dfile=C:\dev\app.jar -DgroupId=com.roufid.tutorials -DartifactId=example-app -Dversion=1.0
     </copy>
     ```
 
