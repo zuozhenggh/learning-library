@@ -1,6 +1,7 @@
 
 <!-- Updated April 12, 2021 -->
 
+
 ## Introduction
 
 This lab walks you through the steps to quickly provision an Oracle Autonomous Database on Oracle Cloud. 
@@ -13,12 +14,14 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 -   This lab requires completion of the **Getting Started** section in the Contents menu on the left.  
 
+
 ## Task 1: Choose ADW from the Services Menu
 
 1. Log in to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     ![](./images/picture100-36.png " ")
+
 
 3. Click **Autonomous Data Warehouse**.
 
@@ -29,7 +32,9 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
+
     ![](./images/picture100-23.png " ")
+
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 3. Provide basic information for the autonomous database:
@@ -45,7 +50,9 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
     - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
     - __Transaction Processing__ - Alternately, you could have chosen Transaction Processing as the workload type.
 
+
     ![](./images/picture100-26b.png " ")
+
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
@@ -78,21 +85,28 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
     - Re-enter the password to confirm it. Make a note of this password.
 
     ![](./images/picture100-26d.png " ")
+
     
 8. Choose network access:
     - For this lab, accept the default, "Allow secure access from everywhere".
-    
+   
     ![](./images/picture100-26e.png " ")
-
+    
 9. Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
 
 10. Click __Create Autonomous Database__.
+
 
     ![](./images/picture100-27.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
    ![](./images/picture100-32.png " ")
+
+11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
+
+   ![](./images/picture100-32.png " ")
+
    
 ## Task 3: Connect with SQL Worksheet
 
@@ -103,6 +117,7 @@ Although you can connect to your autonomous database from local PC desktop tools
     ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
 2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - admin**, and click **Next**.
+
 
     ![Enter the admin username.](./images/picture100-16.png " ")
 
@@ -117,6 +132,21 @@ Although you can connect to your autonomous database from local PC desktop tools
 5. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
 
     ![Click Next to take tour.](./images/picture100-sql-worksheet.png " ")
+=======
+    ![Enter the admin username.](./images/Picture100-16.png " ")
+
+3. Enter the Administrator **Password** you specified when creating the database. Click **Sign in**.
+
+    ![Enter the admin password.](./images/Picture100-16-password.png " ")
+
+4. The Database Actions page opens. In the **Development** box, click **SQL**.
+
+    ![Click on SQL.](./images/Picture100-16-click-sql.png " ")
+
+5. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
+
+    ![Click Next to take tour.](./images/Picture100-sql-worksheet.png " ")
+
 
 ## Task 4: Run scripts in SQL Worksheet
 

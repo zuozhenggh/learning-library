@@ -8,7 +8,6 @@ Howard University Database Systems Course.  Understand basic components of an Or
 
   [](youtube:zNKxJjkq0Pw)
 
-
 ### Prerequisites
 
 This lab assumes you have:
