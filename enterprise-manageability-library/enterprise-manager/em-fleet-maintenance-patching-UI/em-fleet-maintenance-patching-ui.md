@@ -8,7 +8,7 @@ The goal of this lab is to explore end-to-end automated patching and upgrades of
 
 ### About Database Fleet Maintenance UI
 
-Starting from Enterprise Manager 13.5 RU 1, Enterprise Manager is equipped with a new interface to patch(update) and upgrade Database Fleet as an end-to-end automated solution.
+Starting from Enterprise Manager 13.5 RU1, Enterprise Manager is equipped with a new interface to patch(update) and upgrade Database Fleet as an end-to-end automated solution. Creation of Gold Image and Subscription of database to the Gold Image is to be done by using emcli commands. In upcoming releases of Enterprise Manager, we plan to integrate these tasks with UI.
 
 ### Objectives
 
@@ -235,111 +235,102 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 ## Task 6: Deploy Image
 
-1.  Review the flow on Gold Image Deployment
+1.  Navigate to ***Targets >> Databases***
+
+    ![](images/2.png " ")
+
+    and, then ***Administration >> Fleet Maintenance***
 
     ![](images/3.png " ")
 
-2. Run the block below to deploy a new Oracle Home
+2. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
 
-    ```
-    <copy>emcli db_software_maintenance -performOperation -name="deploy1810" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -input_file="data:/home/oracle/fleet/deploy1810_hr.inp" -procedure_name_prefix="DEPLOY"</copy>
-    ```
-
-    **OR**  
-
-    ```
-    <copy>sh deploy1810_hr.sh</copy>
-    ```
-
-    ![](images/af4139d4bf2fd69f82fa8903e6520833.png " ")
+    ![](images/8.png " ")
 
     Where:
-    -  NEW\_ORACLE\_HOME\_LIST = Absolute path to the File System location where new Oracle Home will be deployed.
-    -  procedure\_name\_prefix = optional, prefix for the deployment procedure instance name
-    -  name = Name of the operation. This is a logical name and should be kept unique
-    -  purpose = There are standard purposes defined which can be performed by Fleet Operations. “DEPLOY\_DB\_SOFTWARE” is one of them. These are predefined and should not be changed. Admin shall select one of the below mentioned purposes as and when needed.
-    -  normal\_credential = This should be provided in the format \{ Named Credential: Credential Owner\} .
-    -  privilege\_credential = This should be provided in the format \{ Named Credential: Credential Owner\}
-    -  start\_schedule = Schedule when the stage and deploy should start if that needs to be done in future. Format: “*start\_time:yyyy/mm/dd HH:mm*”. It’s an optional parameter, if not provided, operation will start immediately
-    -  target\_type = The type of target being provided in this operation.
-    -  target\_list =
+    -  Image = Desired version of Oracle home, which our target database should run after successful completion of operation. In this example, we will select ***Tier #2 SI DB Linux64***.
+    -  Target Type = Desired target type, which can be Grid, RAC or SIDB. In this example, we will select ***Database Instance***.
+    -  Operation = Name of the operation, which can be update (patch) or upgrade. In this example, we will select ***Update***.
+    -  Type to filter = Selection criteria to highlight only those targets which qualify the selection, such as database naming.
 
-         1.  This is a comma separated list of targets which need to be patched.
-         2.  Targets of homogenous types are supported in a single fleet operation.
-         3.  The system will calculate the unique list of hosts based on this target list and start stage of Oracle home software on those hosts.
-         4.  If targets running from same Oracle home are provided in this list, the stage and deploy operation will be triggered only once and not for all targets.
+3. In this page, we will provide ***new Oracle Home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
 
-3. Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘DEPLOY\_SYSMAN\_\*’ run
+    ![](images/9.png " ")
 
-    ![](images/e3002b6d99e5a3654676f41911a3766d.png " ")
+    In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle Home doesn't impact existing target and hence its scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
 
-4. Review the Procedure Activity steps performed.
+    Once deployment of new Oracle Home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute the tasks immediately.  
 
-    ![](images/68541ee5acf4db8b4f26a5a794b1c15c.png " ")
+4. We can validate our entries (new Oracle Home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
+
+      ![](images/11.png " ")
+
+5. Review the validation result.
+
+    ![](images/12.png " ")
+
+    Incase of any error, we can fix it and choose revalidate.
+
+6. ***Submit*** the operation. Here, we can see that we have opted to deploy, migrate and update the database at once. These tasks will be performed independently based on their schedule.
+
+    ![](images/15.png " ")    
+
+    We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page.
+
+    ![](images/16.png " ")
+    ![](images/17.png " ")
+
+    Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
+
+7. Review the Deployment Procedures.
+
+    ![](images/18.png " ")
+
+   Select deployment procedure(dp) related to Deploy and click on it. It will show details of the activity performed by the dp.
+
+   ![](images/22.png " ")
+
+   Here, we see that the dp has successfully installed new Oracle Home.(putty screen show the new oracle home layout)
 
 ## Task 7: Migrate Listener
 
-1. Review and execute the following command to Migrate the Listener
+1.  In the above task 6, we had submitted migrate listener already. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
+Click on reschedule.
 
-    ```
-    <copy>emcli db_software_maintenance -performOperation -name="Migrate Listener" -purpose=migrate_listener -target_type=oracle_database -target_list="hr.subnet.vcn.oraclevcn.com" -normal_credential="ORACLE:SYSMAN" -privilege_credential="ROOT:SYSMAN"</copy>
-    ```  
+  ![](images/24.png " ")
 
-    **OR**  
+  In the new page, select immediately for start and reschedule.
 
-    ```
-    <copy>sh migrate_listener_hr_update.sh</copy>
-    ```
+  ![](images/25.png " ")
 
-    ![](images/3b1e1e85cf38e639a314570bc212a3ac.png " ")
+  We can now see that migrate operation is running. We can select it and see the various steps performed by it.
 
-2. Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘Fleet\_migrate\_\*’ run
+  ![](images/27.png " ")
 
-    ![](images/c90e201dd7b74e1dbe0cab82acafe6fa.png " ")
-
-3. Review the Procedure Activity steps performed.  
-
-    ![](images/91d2873ae19a8b7b53a5d31c842b5b9f.png " ")
+  ![](images/28.png " ")
 
 ## Task 8: Update Database – Patch 18.3 to 18.10
 
-1.  Review the flow on Update Database task. Once the deploy operation completes successfully. We are ready to run the final UPDATE operation which patches the database by switching it to the newly deployed home.
+1.  Similar to migrate listener, we had submitted Update Database in task 6. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 6). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
 
-    ![](images/427b340f11443b09283ed979935fe1fc.jpg " ")
+    Click on reschedule.
 
-2. Review and execute below command to update DB Target *hr.subnet.vcn.oraclevcn.com*
+   ![](images/29.png " ")
 
-    ```
-    <copy>emcli db_software_maintenance -performOperation -name="Update DB" -purpose=UPDATE_DB -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -database_credential=sales_SYS:SYSMAN</copy>
-    ```
+   In the new page, select immediately for start and reschedule.
 
-    **OR**
+   We can now see that update operation is running. We can select it and see the various steps performed by it.Here we can see that ***hr*** database is down for Oracle Home switch over. Now, ***hr*** database will run from new Oracle Home.
 
-    ```
-    <copy>sh update_hr.sh</copy>
-    ```
+   ![](images/31.png " ")
 
-    ![](images/8ddbd68dee0300c0223d11cc9407c08a.png " ")
+   Update operation was completed successfully.
 
-    Where:
-      - Name – Name of the operation. This is a logical name and should be kept unique  
-      - Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
+   ![](images/32.png " ")
 
-3. Navigate to the Procedure Activity Page and monitor the progress of this operation with ‘Fleet\_UPDATE\_...’ deployment procedure instance.
-
-    ![](images/7a784412472d166c3eb16a775dea578e.png " ")
-
-4. Review the Procedure Activity steps performed  
-
-    ![](images/b47cafe1b4d1342e408c52e86f3102ce.png " ")
-
-5. Verify the patched target by going to ***Targets >> Databases*** as shown below. Operation above will take 10-15 minutes to complete.
-
-    ![](images/425da84e806d9024383be869fda527d4.png " ")
 
 ## Task 9:  Rollback Database – Reversed Patch 18.10 to 18.3
 
-Once the database is updated, we will perform a rollback to 18.3
+Once the database is updated, we will perform a rollback to 18.3. Rollback operation is not supported by UI for EM 13.5 RU1 but it will be part of UI in upcoming release.
 
 1. Review and execute below command from the terminal to rollback DB Target ***hr.subnet.vcn.oraclevcn.com***
 
@@ -370,9 +361,9 @@ below.
 
 ## Task 10:  Cleanup Old Homes
 
-1. Clean up Database HR
+1. Clean up Database HR. Clean up operation is not supported by UI for EM 13.5 RU1 but it will be part of UI in upcoming release.
 
-In order to have an old empty home previously used by “***hr.subnet.vcn.oraclevcn.com***” at our disposal to demonstrate a cleanup operation, we will now re-update the database by running the commands from Step 8.
+   In order to have an old empty home previously used by “***hr.subnet.vcn.oraclevcn.com***” at our disposal to demonstrate a cleanup operation, we will now re-update the database by running the commands from Step 8.
 
 2. Review and execute below command to update DB Target ***hr.subnet.vcn.oraclevcn.com*** again to 18.10 version
 
