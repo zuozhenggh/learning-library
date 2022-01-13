@@ -3,19 +3,28 @@
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
-            "title": "Getting Started",
-            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-        },
-        {
             "title": "Introduction",
             "description": "The ERP Cloud Business Event Workshop will cover the recommended steps to complete an end-to-end use case based on ERP Cloud Business Events in OCI Application Integration.",
             "filename": "../../introduction/introduction.md"
         },
         {
+            "title": "Getting Started",
+            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+        },
+        {
             "title": "Lab 1: Create a new integration flow",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../lab-create-flow/lab-create-flow.md"
+        },
+        {
+            "title": "Provision an Instance",
+            "description": "Follow these steps to create a new Application Integration service instance",
+            "filename": ""
+        },
+        {
+            "title": "Lab Setup",
+            "description": ""
         },
         {
             "title": "Lab 2: Add an ERP Purchase Order Trigger activity",
