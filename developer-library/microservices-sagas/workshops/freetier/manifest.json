@@ -12,7 +12,7 @@
       },
       {
         "title": "Lab 1: Setup",
-        "filename": "../../../microservices-with-converged-db/setup/setup.md"
+        "filename": "../../setup/setup.md"
       },
       {
         "title": "Lab 2: Using OSaga with PL/SQL",

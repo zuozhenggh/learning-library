@@ -1,4 +1,4 @@
-## Use Oracle Database Sagas with Java Microservices
+# Use Oracle Database Sagas with Java Microservices
 
 ## Introduction
 

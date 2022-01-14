@@ -1,4 +1,4 @@
-## Use Oracle Database Sagas with PL/SQL Microservices
+# Use Oracle Database Sagas with PL/SQL Microservices
 
 ## Introduction
 
@@ -52,7 +52,7 @@ Estimated Time:  10 minutes
    Notice the PL/SQL calls made including the callback package for the TravelAgency which includes `request` and `response` operations.
    This is a one time setup operation to configure the PL/SQL participants.
    
-    ```
+    
         --Add TravelAgency callback package
         create table travelagencytest(text VARCHAR2(100));
         create or replace package dbms_ta_cbk as
@@ -77,13 +77,13 @@ Estimated Time:  10 minutes
         --Add participant
         exec dbms_saga_adm.add_participant(  participant_name => 'TravelAgencyPLSQL',   coordinator_name => 'TravelCoordinator' ,   dblink_to_broker => null ,   mailbox_schema => 'admin' ,   broker_name => 'TEST' ,   callback_package => 'dbms_ta_cbk' ,   dblink_to_participant => null);
     
-    ```
+    
 
 ## Task 2: Login to `sagadb2` database using SQLcl and add Flight, Hotel, and Car participants
 
 1.    Open a new browser tab with another OCI console and enter the Cloud Shell there. 
 
-        This is done for convenience so that one tab/Cloud Shell/SQLcl console can be use for saga initiator (TravelAgency) operations and the other for saga participant (Flight, Hotel, and Car) operations. 
+       This is done for convenience so that one tab/Cloud Shell/SQLcl console can be use for saga initiator (TravelAgency) operations and the other for saga participant (Flight, Hotel, and Car) operations. 
 
 2.    Repeat steps 1 and 2 in Task 1 in order to enter SQLcl.
 
@@ -96,6 +96,7 @@ Estimated Time:  10 minutes
    The output should look similar to the following.
 
    ![SQLcl login to sagadb2](images/connectwithSQLclsaga2.png " ")
+   
 4.   Enter the following command to install `FlightPLSQL`, `HotelPLSQL`, and `CarPLSQL` participants and their saga callback packages.
 
         ```
@@ -105,7 +106,7 @@ Estimated Time:  10 minutes
        Notice the PL/SQL calls made to in this script to add the participants including the callback package for the TravelAgency which includes `request` and `after_rollback` operations.
    Again this is a one time setup operation to configure the PL/SQL participants.
    
-       ```
+       
         create table flighttest(text VARCHAR2(100));
         create table flights(id NUMBER, available NUMBER);
         insert into flights values(1,2);
@@ -140,8 +141,8 @@ Estimated Time:  10 minutes
      
         --Add participant
         exec dbms_saga_adm.add_participant(participant_name=> 'FlightPLSQL' ,  dblink_to_broker=> 'travelagencyadminlink',mailbox_schema=> 'admin',broker_name=> 'TEST', callback_package => 'dbms_flight_cbk' , dblink_to_participant=> 'participantadminlink');
-
-       ```
+        
+       
 
 
 ## Task 3: Conduct saga rollback test
@@ -165,13 +166,14 @@ Estimated Time:  10 minutes
     ```
 
 2.   In the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
-    ```
-    <copy>select * from cars;</copy>
-    ```
     
-        Note the value
+      ```
+      <copy>select * from cars;</copy>
+      ```
+    
+      Note the value.
 
-        ![Car count of 2](images/carcount2.png " ")
+      ![Car count of 2](images/carcount2.png " ")
       
 3.    Check the existence and status of the saga on both the TravelAgency/sagadb1 and Participants/sagadb2 by copying and pasting the following into SQLcl
 
@@ -279,7 +281,7 @@ Estimated Time:  10 minutes
           
        Note the value has decreased by one due to the active saga activity.
    
-       ![Saga commit command](images/exec-commitsaga.png " ")
+       ![Saga commit command](images/commitsaga.png " ")
        
 6.    Check the status of the saga on both the TravelAgency/sagadb1 and Participants/sagadb2 by copying and pasting the following into SQLcl
         ```
