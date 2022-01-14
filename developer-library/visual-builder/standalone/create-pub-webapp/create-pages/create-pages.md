@@ -5,11 +5,11 @@ This lab shows you how to create web pages to display the business objects you c
 
 Estimated Lab Time:  15 minutes
 
-### Background
+### About this lab
 
 Now that you've created the Location, Department, and Employee business objects, we'll see how to create web pages to display data from these business objects. So far, you've only imported data for the Location object. You'll add data for the Department and Employee business objects in later labs, but set up Department and Employee pages to display that data in this lab. You'll create one page to display departments and another to display employees, both in table components. You'll also add a **Create** button to each page to let your users create a new department or a new employee (in other words, create a new instance of the business object in the database).
 
-## Task 1: Use the main-start Page to Display Departments
+## Task 1: Use the **main-start** page to display departments
 
 Let's create a table to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
@@ -18,7 +18,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     You may want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Now let's give this main-start page a title. Click the Components palette, then drag the **Heading** component under Common and drop it onto the page.
+3.  Now let's give this main-start page a title. Click the **Components** palette, then drag the **Heading** component under Common and drop it onto the page.
 
     ![](./images/vbcscp_dd_s3.png)
 
@@ -65,7 +65,7 @@ Let's create a table to display your departments on the main-start page. The Tab
     The main-start page now has a table with three columns: Id, Name, and Location. You won't see any information in your table because we are yet to import data for the Department business object.
 
 
-## Task 2: Add a Create Page for the Department Business Object
+## Task 2: Add a page to create departments
 
 Now that we have a way to show departments, we'll add a Create page that lets users create new departments. With the help of the Add Create Page Quick Start, we'll connect to our data source, the Department business object, and select the fields that we want the user to provide values for.
 
@@ -103,7 +103,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
 9.  Click **Design** to return to Design view.
 
-## Task 3: Add a Page to Display Employees
+## Task 3: Add a page to display employees
 
 We'll now create a page to display employees, similar to the one you created to show departments.
 
@@ -115,12 +115,22 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![](./images/vbcscp_cpe_s2.png)
 
-3.  Drag the **Heading** component from the Components palette and drop it onto the page.
 4.  Click the **Properties** tab (if necessary), then in the heading's Properties pane, enter `Employees` in the **Text** field.
-5.  In the Components palette, scroll down to Collection and drag a **Table** component onto the page.
-6.  Click **Add Data** under Quick Start in the Properties pane.
-7.  On the Locate Data page, select **Employee** under Business Objects and click **Next**.
-8.  On the Bind Data page, select the **id**, **name**, **hireDate**, and **email** check boxes under **item\[i\]**. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![Handle icon](./images/vbcscp_handle_icon.png) to reorder the columns as desired.
+
+
+5.  Now let's add a table to display employees. This time, instead of using the Components palette, let's use the Data palette, which provides a *Data-first approach* to UI design. It provides access to your business objects and allows you to drag and drop them onto the canvas to create UI components that readily map to them. To see this in action, click the **Data** tab, then expand the **Employee** business object.
+
+    ![](./images/data-palette-employee-object.png)
+
+    You see all the REST endpoints that Visual Builder created for you when the Employee business object was created.
+
+6. Drag and drop the **Get Many** REST endpoint (which provides a list of employees) onto the canvas.
+
+    ![](./images/data-palette-employee-object-table.png)
+
+7. Select **Table** in the pop-up menu to open the Add Data quick start. This quick start is similar to the one you used before to create the departments table, except that you don't need to associate a data source.
+
+7.  On the Bind Data page, select the **id**, **name**, **hireDate**, and **email** check boxes under **item\[i\]**. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![Handle icon](./images/vbcscp_handle_icon.png) to reorder the columns as desired.
 
     ![](./images/vbcscp_cpe_s8.png)
 
@@ -142,12 +152,14 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![](./images/employees_table.png)
 
-## Task 4: Add a Create Page for the Employee Business Object
+## Task 4: Add a page to create employees
 Add a Create page that lets your users create new employees.
 
-1.  Click the **Quick Start** tab, then click **Add Create Page**.
+1.  With the table selected on the main-employees page, click the **Quick Start** tab, then **Add Create Page**.
 2.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
-3.  On the Page Detail page, select the **hireDate**, **email**, and **department** check boxes, in that order (**name** is already selected, because it's a required field). Leave the **Button label** field and other values to their default values. Click **Finish**.
+3.  On the Page Detail page, select the **hireDate**, **email**, and **department** check boxes, in that order (**name** is already selected, because it's a required field).
+
+4. Leave the **Button label** field and other values to their default values. Click **Finish**.
 
     ![](./images/vbcscp_cpc_s4.png)
 
@@ -178,7 +190,7 @@ Add a Create page that lets your users create new employees.
 
 11.  Click **Structure** again to close the structure view.
 
-## Task 5: Change the Name of the main-start Page
+## Task 5: Change the name of the **main-start** page
 
 It makes sense at this point to change the name of the main-start page to main-departments, to match the name of the main-employees page.
 
