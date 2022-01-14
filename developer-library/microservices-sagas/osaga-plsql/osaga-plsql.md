@@ -217,13 +217,12 @@ Estimated Time:  10 minutes
          ```
          <copy>select * from cars;</copy>
          ```
-          
+    
        Note the value has returned to the original value due to the compensating saga activity.
    
        ![Car count of 2](images/carcount2.png " ")
                
       
-
 ## Task 4: Conduct saga commit test
 
 1.    In the TravelAgency/sagadb2 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
@@ -304,7 +303,7 @@ Estimated Time:  10 minutes
        ![Car count of 1](images/carcount1.png " ")
              
 
-You may now proceed to the next lab.
+Proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Evangelist

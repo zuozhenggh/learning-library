@@ -136,7 +136,7 @@ If this is the first time you have started this participant type then select 'y'
 
       Notice the successful commit outcome and that the ticket/inventory count is reduced as expected.
       
-You may now proceed to the next lab.
+Proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Evangelist

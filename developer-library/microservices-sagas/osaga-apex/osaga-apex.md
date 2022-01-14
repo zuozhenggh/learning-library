@@ -45,7 +45,7 @@ Estimated Time:  5 minutes
 
 
 
-You may now proceed to the next lab.
+Proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Evangelist
