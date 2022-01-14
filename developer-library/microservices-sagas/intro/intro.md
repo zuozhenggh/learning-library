@@ -1,8 +1,24 @@
-# Simplify Microservice Transactions Using Oracle Database Sagas
-## Introduction and Overview
+# Introduction
 
+## About this Workshop
 
 This workshop will help you understand the technical capabilities of the forthcoming saga support in the Oracle database.
+
+Estimated Workshop Time: 50 minutes
+
+###About Product/Technology
+
+PL/SQL, Java, and (in the near future) Apex Workflow saga examples will be demonstrated.
+
+###Objectives
+
+- Learn about Oracle's forthcoming saga support in the Oracle database and how to use the Osaga API.
+
+### Prerequisites
+
+- This workshop assumes you have an Oracle cloud account and have signed in to the account.
+
+
 
 A travel booking application is used to demonstrate.
 
