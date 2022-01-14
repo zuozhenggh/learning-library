@@ -4,7 +4,7 @@
 
 In this lab, we will provision two 21c ATP PDBs, clone the workshop source code, and setup the OSaga infrastructure
 
-Estimated Time: 25 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -15,6 +15,7 @@ Estimated Time: 25 minutes
 ### Prerequisites
 
 - This workshop assumes you have an Oracle cloud account and have signed in to the account.
+- The workshop also requires Always Free 21c ATP instances and so is limited to the following regions: Ashburn (IAD), Phoenix (PHX), Frankfurt (FRA) and London (LHR) regions
 
 ## Task 1: Provision 2 ATP 21c PDBs
 
