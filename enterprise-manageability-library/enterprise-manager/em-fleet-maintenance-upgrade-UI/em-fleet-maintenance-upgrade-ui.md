@@ -1,4 +1,4 @@
-# Automated Database Upgrade at Scale with Fleet Maintenance
+# Automated Database Upgrade at Scale with Fleet Maintenance UI
 
 ## Introduction
 The objective of this lab is to explore upgrading your Oracle Database Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance UI feature (starting from 13.5 RU1).
@@ -264,7 +264,7 @@ This step verifies if the image can be used to patch a specified database target
 
 ## Task 5: Create New Image Version
 
-In this section, you are adding DB software image version 19.7 to Gold Image *Tier1 SIDB Linux-x64*
+In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
 1. Review Reference Home Setup
 
@@ -274,7 +274,7 @@ In this section, you are adding DB software image version 19.7 to Gold Image *Ti
 
     ![](images/a3ba55228f1e4a239c81bd01ed86c299.png " ")
 
-3. Review and execute the following command to add Image version 19.7 to "*Tier1 SIDB Linux-x64*"
+3. Review and execute the following command to create new Image version 19.7 to "*Tier1-19 SIDB Linux-x64*"
 
     ```
     <copy>emcli db_software_maintenance -createSoftwareImage -input_file="data:/home/oracle/fleet/sidb19c_tier1.inp"</copy>
@@ -282,133 +282,130 @@ In this section, you are adding DB software image version 19.7 to Gold Image *Ti
 
     **OR**  
     ```
-    <copy>sh add_image_version197_tier1_sidb_x64.sh</copy>
+    <copy>sh create_image_version197_tier1_sidb_x64.sh</copy>
     ```
 
-    ![](images/d3f1d7ec4ab73bd6e50aab47fbf3ffca.png " ")
+    ![](images/create_image_197.png " ")
 
 4. Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘CreateGoldImage\*’ run
 
-    ![](images/98008aab963de3d4439767ccab3fbba0.png " ")
+    ![](images/197_procedure_activity.png " ")
 
 5. Review the Procedure Activity steps performed.
 
-    ![](images/0dedb16ddd453f5fa9d312229e9bd072.png " ")
+    ![](images/dp_197.png " ")
 
-    With the new version successfully added we can proceed to activate it by setting the Status *Current*
-
-6. View a list of versions available for the image
-
-    ```
-    <copy>emcli db_software_maintenance -getVersions -image_id=A5F3D8523BDF635BE0531A00000AA55B</copy>
-    ```
-
-    ![](images/9bba5ae0276141179ba6b22e984ba3f7.png " ")
-
-7. Using the VERSION ID from Step above, review and execute the following command to set Version Name 19.7 to Status Current
-
-    ```
-    <copy>emcli db_software_maintenance -updateVersionStatus -status=CURRENT -version_id=A79931EC777968D6E0532A00000A806B</copy>
-    ```
-
-    ![](images/7796c07b2b8273dc93221a84b784dc63.png " ")
 
 ## Task 6: Deploy New Image Version
 
-1. Run the block below to deploy a new Oracle Home.
+1. Before we deploy a new Oracle Home, we need to ensure that we unsubscribe finance database  from previous associated image. This step is required for UI as we can not have two different versions of Oracle home ( in this case 18c and 19c) in the same image id.
 
-    ```
-    <copy>emcli db_software_maintenance -performOperation -name="deploy197" -purpose=DEPLOY_DB_SOFTWARE -target_type=oracle_database -target_list=finance.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -input_file="data:/home/oracle/fleet/deploy197_finance.inp" -procedure_name_prefix="DEPLOY"</copy>
-    ```  
+Run the block below to unsubscribe finance database from ***Tier #1 SI DB Linux64*** image. If finance database is not subscribed to any image then we can move to next step, where we will subscribe it to 19.7 image.
 
-    **OR**  
+```
+<copy>
+emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database
+```
+```
+emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID from above output}"</copy>
+```
+![](images/unsubscribe_finance.png " ")
 
-    ```
-    <copy>sh deploy197_finance.sh</copy>
-    ```  
+We now need to subscribe finance database to 19.7 image which we had created in step 3 of previous task.      
 
-    ![](images/75e3dbfe7a2cfe2a8a6fc286d3f5caa2.png " ")
+```
+<copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=CDFEE39370A55D93E053E600000AEDB9</copy>
+```
 
-    Where:
-      - NEW\_ORACLE\_HOME\_LIST = Absolute path to the File System location where new Oracle Home will be deployed.
-      - procedure\_name\_prefix = optional, prefix for the deployment procedure instance name
-      - name = Name of the operation. This is a logical name and should be kept unique
-      - purpose = There are standard purposes defined which can be performed by Fleet Operations. “DEPLOY\_DB\_SOFTWARE” is one of them. These are predefined and should not be changed. Admin shall select one of the below mentioned purposes as and when needed.
-      - normal\_credential = This should be provided in the format \{Named Credential: Credential Owner\}.
-      - privilege\_credential = This should be provided in the format \{Named Credential: Credential Owner\}
-      - start\_schedule = Schedule when the stage and deploy should start if that needs to be done in future. Format: “start\_time:yyyy/mm/dd HH:mm”. It is an optional parameter, if not provided, operation will start immediately
-      - target\_type = The type of target being provided in this operation.
-      - target\_list =
-         1. This is a comma separated list of targets which need to be patched.
-         2. Targets of homogenous types are supported in a single fleet operation.
-         3. The system will calculate the unique list of hosts based on this target list and start stage of Oracle home software on those hosts.
-         4. If targets running from same Oracle home are provided in this list, the stage and deploy operation will be triggered only once and not for all targets.
+![](images/finance_subscribe_197.png " ")
 
-2. Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘DEPLOY\_SYSMAN\_\*’ run
 
-    ![](images/aa899356fbcdb73732d72b507bc6a7df.png " ")
+2. Now that we have completed the pre-req task (associating database to image), we can now upgrade the database. Navigate to ***Targets >> Databases >> Administration >> Fleet Maintenance***.  
 
-3. Review the Procedure Activity steps performed.
+    ![](images/37.png " ")
 
-    ![](images/2db6aa6336c6d7b6d846a90fad68f5c7.png " ")
+3. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
+
+  ![](images/9.png " ")
+
+  Where:
+  -  Image = Desired version of Oracle home, which our target database should run after successful completion of operation. In this example, we will select ***Tier1 SIDB 19c Linux-x64***.
+  -  Target Type = Desired target type, which can be Grid, RAC or SIDB. In this example, we will select ***Database Instance***.
+  -  Operation = Name of the operation, which can be update (patch) or upgrade. In this example, we will select ***Upgrade***.
+  -  Type to filter = Selection criteria to highlight only those targets which qualify the selection, such as database naming.
+
+4. In this page, we will provide ***new Oracle Home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
+
+  ![](images/41.png " ")
+
+  In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle Home doesn't impact existing target and hence its scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
+
+  Once deployment of new Oracle Home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute the tasks immediately.
+
+5. We can validate our entries (new Oracle Home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
+
+  ![](images/43.png " ")
+
+6. Review the validation result.
+
+  ![](images/44.png " ")
+
+   Incase of any error, we can fix it and choose revalidate.
+
+7. ***Submit*** the operation. Here, we can see that we have opted to deploy, migrate and update the database at once. These tasks will be performed independently based on their schedule.
+
+  ![](images/100.png " ")    
+
+ We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page.
+
+   ![](images/45.png " ")
+   ![](images/46.png " ")
+
+Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
+
+8. Review the Deployment Procedures.
+
+    ![](images/47.png " ")
+
+   Select deployment procedure(dp) related to Deploy and click on it. It will show details of the activity performed by the dp.
+
+   ![](images/49.png " ")
+
+   Here, we see that the dp has successfully installed new Oracle Home.
 
 ## Task 7: Migrate Listener to New Upgraded Home
 
-1. Review and execute the following command to Migrate the Listener
+1.  In the above task 6, we had submitted migrate listener already. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
 
-    ```
-    <copy>emcli db_software_maintenance -performOperation -name="Migrate Listener" -purpose=migrate_listener -target_type=oracle_database -target_list="finance.subnet.vcn.oraclevcn.com" -normal_credential="ORACLE:SYSMAN" -privilege_credential="ROOT:SYSMAN"</copy>
-    ```
+Click on reschedule.
+![](images/50.png " ")
 
-    **OR**
+We can now see that migrate operation is running. We can select it and see the various steps performed by it.
 
-    ```
-    <copy>sh migrate_listener_finance_update.sh</copy>
-    ```
+![](images/51.png " ")
 
-    ![](images/bc197f2a6ee3475949e203a1a250352d.png " ")
+![](images/52.png " ")
 
-2. Navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to Review Execution Details of this operation via Enterprise Manager Console. Click on ‘Fleet\_migrate\_\*’ run
-
-    ![](images/7d1f66b6cf7dcc1ef60ae87ae4a1f176.png " ")
-
-3. Review the Procedure Activity steps performed.
-
-    ![](images/5b63a9af8400bf71eb838f3a00cc2667.png " ")
 
 ## Task 8: Update Database – Upgrade to 19.7
 
 With the deploy operation completed successfully, we are ready to run the final UPDATE operation which upgrades the database by switching it to the newly deployed home.
 
-1. Review and execute below command to update DB Target *finance.subnet.vcn.oraclevcn.com*
+1.  Similar to migrate listener, we had submitted Update Database in task 6. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 6). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
 
-    ```
-    <copy>emcli db_software_maintenance -performOperation -name="Update DB" -purpose=UPDATE_DB -target_type=oracle_database -target_list=finance.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -database_credential=sales_SYS:SYSMAN</copy>
-    ```
+    Click on reschedule.
 
-    **OR**
+   ![](images/53.png " ")
 
-    ```
-    <copy>sh update_finance.sh</copy>
-    ```
+   In the new page, select immediately for start and reschedule.
 
-    ![](images/c1eb432957066af8ddc4062159d28f47.png " ")
+   We can now see that update operation is running. We can select it and see the various steps performed by it.
 
-    Where:  
-      - Name – Name of the operation. This is a logical name and should be kept unique  
-      - Purpose – There are standard purposes defined which can be performed by Fleet Operations. “UPDATE\_DB” is one of them.
+   ![](images/54.png " ")
 
-2. Navigate to the Procedure Activity Page and monitor the progress of this operation with ‘Fleet\_UPDATE\_...’ deployment procedure instance.
+   Update operation was completed successfully.
 
-    ![](images/5f7ea1d549b6bb5edf2cfadcc0fad0bc.png " ")
-
-3. Review the Procedure Activity steps performed
-
-    ![](images/fa46b7e21ac3396ec567446a8a12a6d2.png " ")
-
-4. Verify the Upgraded target by going to ***Targets >> Databases*** as shown below. Operation above will take \~40 minutes to complete.
-
-    ![](images/0dd5dbdbd9c2f2eac424cf9cf976aa34.png " ")
+   ![](images/55.png " ")
 
 ## Task 9: Cleanup Old Homes
 
