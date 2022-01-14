@@ -42,7 +42,7 @@ The following table shows a comparison of support between the MicroProfile Long 
 
 ### Let's Get Started
 
-Proceed to the next lab.
+You may now **proceed to the next lab.**..
 
 ## Want to Learn More?
 
