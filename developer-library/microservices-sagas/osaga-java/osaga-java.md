@@ -38,16 +38,16 @@ Estimated Time:  10 minutes
    
    ![Java Add Participant](./images/javasagamessagelistnerimpl.png " ")
    
-2.    Enter the Cloud Shell and cd to the `travelagency-java` directory which should be at the following location.
+2.    Enter the Cloud Shell, and issue the following command to build the travel participant Java service.
 
         ```
-        <copy>cd ~/microservices-datadriven/travelbooking/travelparticipant-java</copy>
+        <copy>cd ~/microservices-datadriven/travelbooking/travelparticipant-java; mvn clean install</copy>
         ```
 
-3.    Issue the following command.
+3.    Issue the following command to run the travel participant Java service.
 
         ```
-        <copy>mvn clean install; java -jar target/travelparticipant.jar</copy>
+        <copy>cd ~/microservices-datadriven/travelbooking/travelparticipant-java; java -jar target/travelparticipant.jar</copy>
         ```
 
       This will build and start a travel participant java service.
@@ -62,10 +62,9 @@ If this is the first time you have started this participant type then select 'y'
 
 6.    The output should look like the following.
 
-
 7.   The participant is now running and listening for messages for the saga.
 
-8.   Repeat these steps for any of the other participant types (FlightJava, HotelJava, or CarJava)you didn't select. 
+8.   Repeat steps 3 and 4 for any of the other participant types (FlightJava, HotelJava, or CarJava) you didn't select. 
 
      You can have as few or as many participants as you like in the saga. 
      For example, you can just have a HotelJava participant for simplicity.
@@ -75,99 +74,26 @@ If this is the first time you have started this participant type then select 'y'
 
 ## Task 2: Add and start Java TravelAgency Initiatory/Participant
 
-1.    Enter the Cloud Shell and cd to the `travelagency-springboot` directory which should be at the following location.
+1.    Notice use of the OSaga API and the AQjmsSagaMessageListener interface and implementation for/of the TravelAgencyApplication.java
+
+2.    Enter the Cloud Shell, and issue the following command to build the travel agency Java service.
 
         ```
-        <copy>cd ~/microservices-datadriven/travelbooking/travelagency-java</copy>
+        <copy>cd ~/microservices-datadriven/travelbooking/travelagency-java; mvn clean install</copy>
         ```
 
-
-2.    Issue the following command.
-
-        ```
-        <copy>mvn clean install; java -jar target/travelagency.jar</copy>
-        ```
-
+3.    Issue the following command to run the travel agency Java service.
 
         ```
-        <copy>mvn clean install; java -jar target/travelagency-springboot-0.1.0.jar</copy>
+        <copy>cd ~/microservices-datadriven/travelbooking/travelagency-java; java -jar target/travelagency.jar</copy>
         ```
-3. Notice the AQjmsSagaMessageListener interface and implementation 
 
-   ![Java Add Participant](./images/AQJmsSagaMessageListener.png " ")
-   
-   ![Java Add Participant](./images/AQJmsSagaMessageListener-methods.png " ")
-   
-   ![Java Add Participant](./images/javasagamessagelistnerimpl.png " ")
+4.    You will be prompted for the following.
+        - database password (the one you used when creating the participant/`sagadb2` PDB)
+        - TNS_ADMIN (accept the default)
 
-
-
-## Task 2: Test Enroll/Enlist and Complete/Commit
-
-
-1. Notice src and Complete/Commit path and make curl request .
-        ```
-        <copy>
-            curl http://LB_ADDRESS/travelagency/book
-        </copy>
-        ```
-   Copy the Saga Id in the response.
-
-2. Notice saga state, inventory count, and logs.
-
-    ```
-    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
-    </copy>
-    ```
-
-3. Make curl request to commit.
-
-    ```
-    <copy>
-        curl http://LB_ADDRESS/travelagency/commit?sagaId=[sagaid]
-    </copy>
-    ```
-
-4. Notice saga state, inventory count, and logs.
-
-
-    ```
-    <copy>select id, initiator, coordinator, owner, begin_time, status from saga</copy>
-    ```
-
-
-## Task 3: Test Enroll/Enlist and Compensate/Rollback
-
-
-1. Notice src and Complete/Commit path and make curl request .
-        ```
-        <copy>
-            curl http://LB_ADDRESS/travelagency/book
-        </copy>
-        ```
-   Copy the Saga Id in the response.
-
-2. Notice saga state, inventory count, and logs.
-
-    ```
-    <copy>select id, initiator, coordinator, owner, begin_time, status from saga$;
-    </copy>
-    ```
-
-3. Make curl request to rollback.
-
-    ```
-    <copy>
-        curl http://LB_ADDRESS/travelagency/rollback?sagaId=[sagaid]
-    </copy>
-    ```
-
-4. Notice saga state, inventory count, and logs.
-
-
-    ```
-    <copy>select id, initiator, coordinator, owner, begin_time, status from saga</copy>
-    ```
+5.    You will then be asked whether the one-time setup call `add_participant` is needed for `TravelAgencyJava`. 
+If this is the first time you have started the `TravelAgencyJava` then select 'y', otherwise simply hit enter to use the default ('n')
 
 
 You may now proceed to the next lab.

@@ -2,12 +2,13 @@
 
 ## Introduction
 
-In this lab, we will provision and setup the resources to execute microservices in your tenancy.  
+In this lab, we will provision two 21c ATP PDBs, clone the workshop source code, and setup the OSaga infrastructure
 
 Estimated Time: 25 minutes
 
 ### Objectives
 
+* Provision 
 * Clone the setup and microservices code
 * Execute setup
 
@@ -17,16 +18,40 @@ Estimated Time: 25 minutes
 
 ## Task 1: Provision 2 ATP 21c PDBs
 
-Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
+1. From the drop-down menu in the upper left of the OCI Console, select `Oracle Databases` and then `Autonomous Transaction Processing`
 
-1. Click the Cloud Shell icon in the top-right corner of the Console.
+   ![Open DB Menu](images/dbhamburgermenu.png " ")
 
-  ![Open Cloud Shell](images/open-cloud-shell.png " ")
+2. Click `Create Autonomous Database` button
 
-  NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+   ![Create Database](images/createdbmain.png " ")
+  
+3. Enter `sagadb1` for `Display Name` and `Database Name`
+
+   ![Database Name](images/createosaga1db.png " ")
+  
+4. Select `Always Free` option and `21c` from `Version` dropdown.
+
+   ![Select 21c](images/createdb21c.png " ")
+  
+5. Provide a password for `ADMIN` user, leave the default values for network and license, and click `Create Autonomous Database` button.
+
+   ![Create DB Button](images/createdbpwandlicense.png " ")
+  
+6. Notice the PDB is provisioning.
+
+   ![DB Provisioning](images/dbcreationstatus.png " ")
+  
+7. Repeat the process, creating a second database called `sagadb2`. Wait a few minutes until both databases are in `Available` state.
+
+   ![Open Cloud Shell](images/bothdbsavailable.png " ")
+  
+8. Select the drop-down menu on the far right of either database and select `Copy OCID` . This OCID will be used in Task 3 of the setup below.
+
+   ![Open Cloud Shell](images/copyocidforgetwallet.png " ")
 
 
-## Task 2: Launch Cloud Shell and Make a Clone of the Workshop Source Code in your home directory
+## Task 2: Launch Cloud Shell and make a clone of the workshop source code in your home directory
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
 
@@ -39,8 +64,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 2. Clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 22.1.3 --single-branch https://github.com/oracle/microservices-datadriven.git
-    </copy>
+    <copy>git clone -b 22.1.3 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
     ```
 
    You should now see the directory `microservices-datadriven` in the home directory.
@@ -58,10 +82,29 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 ## Task 3: Create DB Links Between the ATP PDBs and Setup Oracle Database Saga Infrastructure
 
-Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
+1. Run the following command, providing the OCID of the database that you copied in Task 1
 
-1. Click the Cloud Shell icon in the top-right corner of the Console.
+    ```
+    <copy>./getWalletForPDB.sh REPLACE_THIS_VALUE_WITH_DB_OCID</copy>
+    ```
+   
+   The output should look similar to the following.
+   
+     ![Open Cloud Shell](images/getwalletforpdb.png " ")
 
+2. Run the following command to install Java 11 (GraalVM)  
+
+    ```
+    <copy>./installGraalVM.sh</copy>
+    ```
+
+2. Run the following command to create DB Links between the two PDBs and install the Oracle Saga infrastructure.
+
+    ```
+    <copy>./createDBLinksAndOsagaInfra.sh</copy>
+    ```
+   
+   If at any point you are disconnected from the Cloud Shell, you can simply start from the last command that did not complete.
 
 You may now **proceed to the next lab.**.
 
