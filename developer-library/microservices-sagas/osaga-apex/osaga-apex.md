@@ -16,7 +16,6 @@ Estimated Time:  5 minutes
 ### Prerequisites
 
 * An Oracle Cloud paid account or free trial in a region with Oracle database 21c available. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
-* The OKE cluster and the Autonomous Transaction Processing databases that you created in Lab 1
 
 ### Objectives
 
