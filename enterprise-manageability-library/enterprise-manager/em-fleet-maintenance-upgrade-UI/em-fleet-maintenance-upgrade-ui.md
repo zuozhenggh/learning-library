@@ -274,7 +274,7 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
     ![](images/a3ba55228f1e4a239c81bd01ed86c299.png " ")
 
-3. Review and execute the following command to create new Image version 19.7 to "*Tier1-19 SIDB Linux-x64*"
+3. Review and execute the following command to create new Image version 19.7 to "*Tier1 SIDB 19c Linux-x64*"
 
     ```
     <copy>emcli db_software_maintenance -createSoftwareImage -input_file="data:/home/oracle/fleet/sidb19c_tier1.inp"</copy>
@@ -306,6 +306,7 @@ Run the block below to unsubscribe finance database from ***Tier #1 SI DB Linux6
 <copy>
 emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database
 ```
+
 ```
 emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID from above output}"</copy>
 ```
@@ -314,7 +315,7 @@ emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn
 We now need to subscribe finance database to 19.7 image which we had created in step 3 of previous task.      
 
 ```
-<copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=CDFEE39370A55D93E053E600000AEDB9</copy>
+<copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=D5807C29FD2A7F92E0538D00000A9A64</copy>
 ```
 
 ![](images/finance_subscribe_197.png " ")
