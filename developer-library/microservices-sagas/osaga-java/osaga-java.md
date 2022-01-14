@@ -8,12 +8,11 @@ The following shows a side by side comparison of the work required by the develo
 
    ![Java Add Participant](./images/javacodecomparison.png " ")
 
-Estimated Time:  10 minutes
+Estimated Time:  15 minutes
 
 ### Objectives
 
--   Add Java saga participants
--   Test sagas 
+-   Test sagas with Java participants
 
 ### Prerequisites
 

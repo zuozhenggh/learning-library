@@ -4,14 +4,11 @@
 
 This lab will show you how to use Oracle Database Sagas with PL/SQL Microservices
 
-Estimated Time:  5 minutes
-
-
+Estimated Time:  10 minutes
 
 ### Objectives
 
--   Setup Oracle Database Saga broker, coordinator, and PL/SQL participants
--   Test sagas
+-   Test sagas with PL/SQL participants
 
 ### Prerequisites
 
