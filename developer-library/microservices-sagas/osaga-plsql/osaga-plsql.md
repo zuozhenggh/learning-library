@@ -224,7 +224,6 @@ Estimated Time:  10 minutes
                
       
 
-
 ## Task 4: Conduct saga commit test
 
 1.    In the TravelAgency/sagadb2 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
@@ -266,9 +265,7 @@ Estimated Time:  10 minutes
       
 4.    Once again, in the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
   
-         ```
-         <copy>select * from cars;</copy>
-         ```
+         ```<copy>select * from cars;</copy>```
           
        Note the value has decreased by one due to the active saga activity.
    
@@ -288,14 +285,12 @@ Estimated Time:  10 minutes
         <copy>select id, initiator, coordinator, owner, begin_time, status from saga$ order by begin_time asc;</copy>
         ```
     
-        You should notice the saga and it's status as `3` indicating it is in the committed/completed state.
+       You should notice the saga and it's status as `3` indicating it is in the committed/completed state.
 
-        ![Committed saga status](images/sagastatus2-commit.png " ")
+       ![Committed saga status](images/sagastatus2-commit.png " ")
             
 7.    Once again, in the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
-         ```
-         <copy>select * from cars;</copy>
-         ```
+         ```<copy>select * from cars;</copy>```
           
        Note the value has remained reduced as the saga was successfully committed.
    
