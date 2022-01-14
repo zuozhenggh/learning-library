@@ -4,6 +4,8 @@
 
 In this workshop you will explore mapping in Oracle APEX using the Map Region feature and Oracle Spatial. You will load a pre-built sample application with many useful examples, and then create interactive maps from scratch.
 
+The Map Region is a native APEX feature introduced in APEX 21.2 providing the ability to configure interactive maps displaying spatial data from Oracle Spatial, GeoJSON, and coordinates. This workshop focuses on using Oracle Spatial as the spatial data source, so that both raw spatial data and spatial analysis results be easily incorporated.
+
 ![](./images/intro-01.png " ")
 
 Estimated Workshop Time: xx hours
@@ -15,7 +17,7 @@ Oracle Application Express (APEX) and Oracle Spatial are features of Oracle Data
 
 Oracle Application Express (APEX) is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere. More at [https://apex.oracle.com] (https://apex.oracle.com)
 
-Oracle Spatial is a set of geospatial data management, analysis, and processing capabilities within Oracle Database. With a native data type, index, and set of analytics packages, location-based analysis is mainstream and co-located with all other database operations. More at [https://www.oracle.com/database/spatial] (https://www.oracle.com/database/spatial)
+Oracle Spatial is a set of geospatial data management, analysis, and processing capabilities within Oracle Database. With a native spatial data type and analysis operations, location-based analysis is mainstream and co-located with all other database operations. More at [https://www.oracle.com/database/spatial] (https://www.oracle.com/database/spatial)
 
 ### Objectives
 
