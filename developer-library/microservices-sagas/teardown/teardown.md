@@ -16,7 +16,7 @@ Estimates Time: 3 minutes
 
 ## Task 1: Terminate the 21c ATP PDBs
 
-1. Enter the same `Oracle Databases` console page that was used to provision the 21c ATP PDBs during setup and select the `Terminate` option for `sagagdb1` and `sagadb2` PDBs
+1. Enter the same `Oracle Database` console page that was used to provision the 21c ATP PDBs during setup and select the `Terminate` option for `sagagdb1` and `sagadb2` PDBs
 
 ## Task 2: Delete the Directory
 
