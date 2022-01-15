@@ -261,7 +261,7 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
 ![Pod](images/43.png)
 
-4. On right side, you can view information about the **hello-helidon* application. Click **Legend**.
+4. On right side, you can view information about the **hello-helidon** application. Click **Legend**.
 
     ![Pod](images/44.png)
 
