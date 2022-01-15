@@ -9,11 +9,11 @@ Take a minute to watch a greeting from our Vice President of Product Management 
 
   [](youtube:-SuoMPlNMFI)
 
-### Overall Workshop Objectives
+### Objectives
 
-1. Learn about databases - provision and configure your database
+1. Learn about databases
 2. Understand tables, keys, and SQL basics
-3. Database entity relationships - importance of data models
+3. Database entity relationships
 4. Management workload types (OLTP, Analytical, Translytical, Real Time)
 5. Develop database applications - languages (SQL, Python, Node.js, Java)
 6. Data Integration - the key to data centric data management
@@ -27,7 +27,6 @@ Take a minute to watch a greeting from our Vice President of Product Management 
 
 To complete this course:
 * Attend corresponding course lecture for each lab
-* Be sure to complete each lab in order as they build on the previous lab materials
 
 
 
