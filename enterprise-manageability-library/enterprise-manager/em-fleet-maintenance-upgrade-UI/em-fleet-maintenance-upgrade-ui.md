@@ -308,6 +308,7 @@ emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subne
 ```
 
 ```
+<copy>
 emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID from above output}"</copy>
 ```
 ![](images/unsubscribe_finance.png " ")
