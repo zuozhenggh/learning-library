@@ -1,18 +1,24 @@
 
 <!-- Updated April 12, 2021 -->
-
+# Provision Autonomous Database and Connect Using SQL Worksheet
 
 ## Introduction
 
-This lab walks you through the steps to quickly provision an Oracle Autonomous Database on Oracle Cloud. 
+This lab walks you through the steps to quickly provision an Oracle Autonomous Database on Oracle Cloud. You will use this database in subsequent labs of this workshop. In this lab, you will then connect to the database using SQL Worksheet, a browser-based tool that is easily accessible from the Autonomous Data Warehouse.
+
+[](youtube:a6Jm7lYaCWI)
+
+Estimated lab time: 15 minutes
 
 ### Objectives
 
--   Getting Started with Oracle Database
+-   Provision a new Autonomous Data Warehouse
+-   Learn how to connect to your new autonomous database using SQL Worksheet
+
 
 ### Prerequisites
 
--   This lab requires completion of the **Getting Started** section in the Contents menu on the left.  
+-   This lab requires completion of the **Get Started** section in the Contents menu on the left.  
 
 
 ## Task 1: Choose ADW from the Services Menu
@@ -28,7 +34,7 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
 
-## Task 2: Creating the Autonomous Database Instance
+## Task 2: Create the Autonomous Database Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -103,10 +109,6 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
    ![](./images/picture100-32.png " ")
 
-11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
-
-   ![](./images/picture100-32.png " ")
-
    
 ## Task 3: Connect with SQL Worksheet
 
@@ -132,20 +134,6 @@ Although you can connect to your autonomous database from local PC desktop tools
 5. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
 
     ![Click Next to take tour.](./images/picture100-sql-worksheet.png " ")
-=======
-    ![Enter the admin username.](./images/Picture100-16.png " ")
-
-3. Enter the Administrator **Password** you specified when creating the database. Click **Sign in**.
-
-    ![Enter the admin password.](./images/Picture100-16-password.png " ")
-
-4. The Database Actions page opens. In the **Development** box, click **SQL**.
-
-    ![Click on SQL.](./images/Picture100-16-click-sql.png " ")
-
-5. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
-
-    ![Click Next to take tour.](./images/Picture100-sql-worksheet.png " ")
 
 
 ## Task 4: Run scripts in SQL Worksheet
