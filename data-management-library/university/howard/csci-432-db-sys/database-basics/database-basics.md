@@ -109,10 +109,6 @@ Estimated lab time: 15 minutes
 
    ![](./images/picture100-32.png " ")
 
-11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
-
-   ![](./images/picture100-32.png " ")
-
    
 ## Task 3: Connect with SQL Worksheet
 
