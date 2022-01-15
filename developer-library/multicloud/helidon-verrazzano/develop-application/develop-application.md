@@ -78,7 +78,7 @@ Helidon flavor
 Enter selection (Default: 1): 2
 ```
 
-3. For the most functionality, choose option **(2) quickstart** then **Enter** for the default answers. Note that you can have different default package and project group names because it uses the OS user name.
+3. For the most functionality, choose option **(2) quickstart** then **Enter** for the default answers. Note that you can have different default package and project group names because it uses the OS user name. Notedown the package name, you will need to use it while creating new Java class.
 
 
 ```bash
@@ -91,7 +91,7 @@ Project name (Default: quickstart-mp):
 Project groupId (Default: me.user-helidon): 
 Project artifactId (Default: quickstart-mp): 
 Project version (Default: 1.0-SNAPSHOT): 
-Java package name (Default: me.user.mp.quickstart): 
+Java package name (Default: me.user_name.mp.quickstart): 
 Switch directory to /home/user/quickstart-mp to use CLI
 
 Start development loop? (Default: n):
@@ -264,6 +264,7 @@ Be sure to stop the development loop with `CTRL+C`
 
 ```java
 <copy>
+package me.user_name.me.quickstart;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
