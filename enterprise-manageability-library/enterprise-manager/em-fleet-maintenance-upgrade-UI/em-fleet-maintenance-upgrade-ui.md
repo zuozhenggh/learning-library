@@ -277,7 +277,7 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 3. Review and execute the following command to create new Image version 19.7 to "*Tier1 SIDB 19c Linux-x64*"
 
     ```
-    <copy>emcli db_software_maintenance -createSoftwareImage -input_file="data:/home/oracle/fleet/sidb19c_tier1.inp"</copy>
+    <copy>emcli db_software_maintenance -createSoftwareImage -input_file="data:/home/oracle/fleet/sidb19c_tier1_ui.inp"</copy>
     ```
 
     **OR**  
