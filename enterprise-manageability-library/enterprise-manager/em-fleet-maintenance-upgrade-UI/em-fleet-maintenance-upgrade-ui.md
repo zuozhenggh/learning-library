@@ -309,17 +309,24 @@ emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subne
 
 ```
 <copy>
-emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID from above output}"</copy>
+emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=</copy>
 ```
 ![](images/unsubscribe_finance.png " ")
 
 We now need to subscribe finance database to 19.7 image which we had created in step 3 of previous task.      
 
-```
-<copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=D5807C29FD2A7F92E0538D00000A9A64</copy>
-```
 
 ![](images/finance_subscribe_197.png " ")
+
+
+```
+<copy>emcli db_software_maintenance -getImages</copy>
+```
+
+```
+<copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
+```
+
 
 
 2. Now that we have completed the pre-req task (associating database to image), we can now upgrade the database. Navigate to ***Targets >> Databases >> Administration >> Fleet Maintenance***.  
