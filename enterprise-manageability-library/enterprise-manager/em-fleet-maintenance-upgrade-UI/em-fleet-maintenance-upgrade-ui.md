@@ -303,13 +303,11 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 Run the block below to unsubscribe finance database from ***Tier #1 SI DB Linux64*** image. If finance database is not subscribed to any image then we can move to next step, where we will subscribe it to 19.7 image.
 
 ```
-<copy>
-emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database
+<copy>emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database</copy>
 ```
 
 ```
-<copy>
-emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=</copy>
+<copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=</copy>
 ```
 ![](images/unsubscribe_finance.png " ")
 
