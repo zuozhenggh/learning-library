@@ -7,10 +7,10 @@ This workshop will showcase the event subscription capabilities to create an App
 
 Estimated workshop time: 1 hour
 
-### What is OCI Application Integration
+## What is OCI Application Integration
 With OCI Application Integration (OAI), you have the power to *integrate* your cloud and on-premises applications, *automate* business processes, *gain insight* into your business processes, *develop* visual applications, use an SFTP-compliant file server to *store* and *retrieve* files, and *exchange* business documents with a B2B trading partner—all in one place.
 
-### Leveraging the ERP Adapter in OCI Application Integration
+## Leveraging the ERP Adapter in OCI Application Integration
 The Oracle ERP Cloud Adapter enables you to easily integrate on-premises or SaaS applications with Oracle ERP Cloud without having to know about the specific details involved in the integration. 
 
 The Oracle ERP Cloud Adapter provides the following key benefits: 
@@ -27,9 +27,16 @@ The Oracle ERP Cloud Adapter provides the following key benefits:
 - Enables you to upload files to Oracle WebCenter Content (Universal Content Manager) in encrypted or unencrypted format. 
 
 
-## Learn More
-* [OCI Application Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud)
-* [Using the Oracle ERP Cloud Adapter with Oracle Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud/erp-adapter)
+## What Will You Learn?
+
+
+## What Do You Need? 
+
+
+
+## Want to Learn More?
+* [Getting Started with OCI Application Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud)
+* [Using the Oracle ERP Cloud Adapter with OCI Application Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud/erp-adapter)
 
 
 ## Acknowledgements
