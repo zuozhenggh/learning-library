@@ -13,25 +13,25 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Lab 1: Create a new integration flow",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../lab-create-flow/lab-create-flow.md"
-        },
-        {
             "title": "Provision an Instance",
             "description": "Follow these steps to create a new Application Integration service instance",
             "filename": ""
         },
         {
-            "title": "Lab Setup",
-            "description": ""
+            "title": "Lab 1: Create ERP Connection",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../lab-1-create-erp-connection/lab-1-create-erp-connection.md"
         },
         {
-            "title": "Lab 2: Add an ERP Purchase Order Trigger activity",
+            "title": "Lab 2: Create a new integration flow",
+            "filename": "../../lab-2-create-flow/lab-2-create-flow.md"
+        },
+        {
+            "title": "Lab 3: Add an ERP Purchase Order Trigger activity",
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 3: Retrieve an ERP Purchase Order",
+            "title": "Lab 4: Retrieve an ERP Purchase Order",
             "filename": "../../data-load/data-load.md"
         },
         {
