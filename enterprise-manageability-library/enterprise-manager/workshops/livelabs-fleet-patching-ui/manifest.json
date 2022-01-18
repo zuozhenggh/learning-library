@@ -5,7 +5,7 @@
     {
       "title": "Introduction",
       "description": "Introduction to Automated Database Patching at Scale with Fleet Maintenance UI Workshop",
-      "filename": "./../../intro/intro-fleet-patching.md"
+      "filename": "./../../intro/intro-fleet-patching-ui.md"
     },
     {
       "title": "Lab 1: Environment Setup",

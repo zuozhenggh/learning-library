@@ -5,7 +5,7 @@
     {
       "title": "Introduction",
       "description": "Introduction to Automated Database Upgrade at Scale with Fleet Maintenance UI Workshop",
-      "filename": "./../../intro/intro-fleet-upgrade.md"
+      "filename": "./../../intro/intro-fleet-upgrade-ui.md"
     },
     {
       "title": "Lab 1: Environment Setup",

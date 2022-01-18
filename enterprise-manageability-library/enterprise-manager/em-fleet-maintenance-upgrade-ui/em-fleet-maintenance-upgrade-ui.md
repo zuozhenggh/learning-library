@@ -327,9 +327,13 @@ We now need to subscribe finance database to 19.7 image which we had created in 
 
 
 
-2. Now that we have completed the pre-req task (associating database to image), we can now upgrade the database. Navigate to ***Targets >> Databases >> Administration >> Fleet Maintenance***.  
+2. Now that we have completed the pre-req task (associating database to image), we can now upgrade the database. Navigate to ***Targets >> Databases***
 
-    ![](images/37.png " ")
+    ![](images/2.png " ")
+
+    and, then ***Administration >> Fleet Maintenance***
+
+    ![](images/3.png " ")
 
 3. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
 

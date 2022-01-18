@@ -4,7 +4,7 @@
 The Automated Database Patching at Scale with Fleet Maintenance is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
 - This Workshop VM comes preinstalled with Enterprise Manager 13.5 and Oracle Database targets - 18.3, 18.8, 18.10, 19.3 and 19.10
 - It's easy and quick to deploy with everything starting automatically in under 20 minutes
-- In this workshop, we explore the new UI to patch(update) Oracle targets. This new feature was introduced in Enterprise Manager 13.5 RU1.
+- In this workshop, we'll explore the new UI to patch(update) Oracle targets. This new feature was introduced in Enterprise Manager 13.5 RU1.
 
 *Estimated Time:* 60 minutes
 
