@@ -26,7 +26,7 @@ Estimated lab time: 15 minutes
 1. Log in to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-36.png " ")
+    ![](./images/picture100-36.png " ")
 
 
 3. Click **Autonomous Data Warehouse**.
