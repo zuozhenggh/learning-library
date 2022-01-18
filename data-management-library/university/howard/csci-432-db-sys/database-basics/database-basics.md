@@ -24,18 +24,19 @@ Estimated lab time: 15 minutes
 ## Task 1: Choose ADW from the Services Menu
 
 1. Log in to the Oracle Cloud.
-2. Each student has been granted their own compartment.  Which is a logical area that only they have the privleges to update.  Select your compartment by the student number you were assigned.
-
-    ![](./images/compartment.png " ")
-
-3. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
+   
+2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     ![](./images/picture100-36.png " ")
 
 
-4. Click **Autonomous Data Warehouse**.
+3. Click **Autonomous Data Warehouse**.
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
+4. Each student has been granted their own compartment.  This is a logical area that only they have the privleges to update.  Before creating the Autonomous Database, locate your compartment by the student number you were assigned.  This student number is available in Blackboard.  If you don't know your student number, click on the **Needs Help** lab.  Select your compartment under the Spring 2022 section.
+
+    ![](./images/compartment.png " ")
 
 
 ## Task 2: Create the Autonomous Database Instance
@@ -47,6 +48,7 @@ Estimated lab time: 15 minutes
 
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
+   
 3. Provide basic information for the autonomous database:
 
     - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
@@ -103,7 +105,7 @@ Estimated lab time: 15 minutes
    
     ![](./images/picture100-26e.png " ")
     
-9. Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
+9.  Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
 
 10. Click __Create Autonomous Database__.
 
