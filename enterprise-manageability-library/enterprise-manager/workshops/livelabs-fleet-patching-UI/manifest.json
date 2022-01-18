@@ -22,7 +22,7 @@
       "title": "Lab 3: Automated Database Patching at Scale with Fleet Maintenance UI",
       "description": "This lab walks you through the UI needed with Fleet Maintenance to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby",
       "publisheddate": "7/16/2020",
-      "filename": "./../../em-fleet-maintenance-patching-ui/em-fleet-maintenance-patching-ui.md"
+      "filename": "./../../em-fleet-maintenance-patching-UI/em-fleet-maintenance-patching-ui.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",
