@@ -7,7 +7,7 @@ This demo lab will walk you through the steps to create an end-to-end flow of th
 You will demo the following:
 - Initiate an App Driven integration flow
 - Define ERP Purchase Order (PO) Event trigger
-- Add the Create PO activity
+- Add the PO Record to DB activity
 - Define the Tracking Fields
 - Activate the integration
 
@@ -54,13 +54,22 @@ Add ERP PO Event trigger to the empty integration canvas.
 
     You can use a custom filter expression by inserting a different value under **ItemDescription**. The value you enter is case sensitive. 
 
-    ![](images/create-app-integration03.png)
+    ![](images/create-app-integration02.png)
 
 5. Click **Next**.
 
-6. On the Response page, for *Response Type*, choose **None**.
+6. On the Response page, for *Response Type*, choose **None**. Click **Next**.
+
+7. On the Summary page, click **Done**.
+
+    ![](images/create-app-integration03.png)
+
+8. On the integration canvas, from the Layout list, choose **Horizontal**. 
+
+    ![](images/create-app-integration04.png)
 
 
-## Task 3:
+## Task 3: Add the Create PO activity
+Invoke the Purchase Order 
 
 
