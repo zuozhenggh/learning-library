@@ -6,7 +6,7 @@ This demo lab will walk you through the steps to create an end-to-end flow of th
 ### Objectives
 You will demo the following:
 - Create a new App Driven integration flow
-- Add the ERP Purchase Order (PO) Event trigger
+- Define ERP Purchase Order (PO) Event trigger
 - Add the Crete PO activity
 - Define the Tracking Fields
 - Activate the integration
@@ -34,11 +34,25 @@ Accept all other default values.
 5. Click **Create**. 
 
 
-## Task 2:
-Add activities to the empty integration canvas.
+## Task 2: Define ERP Purchase Order (PO) Event trigger
+Add ERP PO Event trigger to the empty integration canvas.
 
-1. 
+1. Click the **+** sign below *START* in the integration canvas.
 
+2. Select the configured ERP Cloud adapter. This invokes the Oracle ERP Cloud Endpoint Configuration Wizard.
+
+3. In the *What do you want to call your endpoint?* field, enter `ERP_POEvent`. 
+
+4. On the Request page, select the following values:
+
+| **Field**        | **Value**          |       
+| --- | ----------- |
+| Define the purpose of the trigger         | **Receive Business Events raised within ERP Cloud**       |
+| Business Event for Subscription  | **Purchase Order Event** |
+| Filter Expr for Purchase Order Event | `kk` |
+|
+
+5. On the Response page, for *Response Type*, choose **None**.
 
 
 ## Task 3:

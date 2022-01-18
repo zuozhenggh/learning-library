@@ -13,22 +13,22 @@ Before you can build an integration, you have to create the connections to the a
 
 4. In the *Create Connection* dialog, enter the following information:
 
-| **Field**        | **Value**          |       
-| --- | ----------- |
-| Name         | `ERP_LLDemo`       |
-| Description  | `ERP Connection for Livelabs demo` |
-|
+    | **Field**        | **Value**          |       
+    | --- | ----------- |
+    | Name         | `ERP_LLDemo`       |
+    | Description  | `ERP Connection for Livelabs demo` |
+    |
 
-Keep all other values as default.
+    Keep all other values as default.
 
 5. In the *Oracle ERP Cloud Connection* dialog, enter the following information:
 
-| **Field**  | **Values** |
-|---|---|
-|ERP Cloud Host | `your-host-name` |
-|Security Policy | `Username Password Token`|
-|Username | `<user>`|
-|Password | `<password>`|
-|
+    | **Field**  | **Values** |
+    |---|---|
+    |ERP Cloud Host | `your-host-name` |
+    |Security Policy | `Username Password Token`|
+    |Username | `<user>`|
+    |Password | `<password>`|
+    |
 
 6. Click on **Test**, followed by **Save**. Exit the connection canvas by clicking the back button on the top left side of the screen.
