@@ -39,7 +39,7 @@ Estimated lab time: 15 minutes
 1. Click **Create Autonomous Database** to start the instance creation process.
 
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-23.png " ")
+    ![](./images/picture100-23.png " ")
 
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
@@ -49,7 +49,7 @@ Estimated lab time: 15 minutes
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __FirstName LastName__ example (John Smith).
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __YOURNAME__ example (JOHNSMITH).
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/database-name.png " ")
+    ![](./images/database-name.png " ")
 
 4. Choose a workload type. Select the workload type for your database from the choices:
 
@@ -57,7 +57,7 @@ Estimated lab time: 15 minutes
     - __Transaction Processing__ - Alternately, you could have chosen Transaction Processing as the workload type.
 
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-26b.png " ")
+    ![](./images/picture100-26b.png " ")
 
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
@@ -65,7 +65,7 @@ Estimated lab time: 15 minutes
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Alternately, you could have chosen Dedicated Infrastructure as the workload type.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-26-deployment-type.png " ")
+    ![](./images/picture100-26-deployment-type.png " ")
 
 6. Configure the database:
 
