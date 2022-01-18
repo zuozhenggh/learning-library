@@ -516,5 +516,6 @@ You may now [proceed to the next lab](#next).
   - **Authors**
     - Shefali Bhargava, Oracle Enterprise Manager Product Management
     - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+    - Romit Acharya, Oracle Enterprise Manager Product Management
   - **Contributors** -
-  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, July 2021
+  - **Last Updated By/Date** -Romit Acharya, Oracle Enterprise Manager Product Management, January 2022
