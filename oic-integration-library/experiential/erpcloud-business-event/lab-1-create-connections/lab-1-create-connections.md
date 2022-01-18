@@ -66,3 +66,5 @@ Create a connection witht the Oracle Autonomous Data Warehouse Adapter.
     
 4. 
 
+5.
+
