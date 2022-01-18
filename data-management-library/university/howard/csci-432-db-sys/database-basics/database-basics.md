@@ -24,12 +24,16 @@ Estimated lab time: 15 minutes
 ## Task 1: Choose ADW from the Services Menu
 
 1. Log in to the Oracle Cloud.
-2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
+2. Each student has been granted their own compartment.  Which is a logical area that only they have the privleges to update.  Select your compartment by the student number you were assigned.
+
+    ![](./images/compartment.png " ")
+
+3. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     ![](./images/picture100-36.png " ")
 
 
-3. Click **Autonomous Data Warehouse**.
+4. Click **Autonomous Data Warehouse**.
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
@@ -58,6 +62,7 @@ Estimated lab time: 15 minutes
 
 
     ![](./images/picture100-26b.png " ")
+    <b>Only choose the Data Warehouse as workload type for this course.  Do not choose one of the others. Each student is only allowed 1 OCPU instance for ADW.</b>
 
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
@@ -69,9 +74,8 @@ Estimated lab time: 15 minutes
 
 6. Configure the database:
 
-    - __Always Free__ - For this lab, you can select this option to create an always free autonomous database, or not select this option and create a database using your paid subscription. An always free database comes with 1 CPU and 20 GB of storage.
     - __Choose database version__ - Leave default - __19c__.
-    - __OCPU count__ - Leave default __1 CPU__. If you choose an always free database, it comes with 1 CPU.
+    - __OCPU count__ - Leave default __1 CPU__. Only 1 OCPU allowed for this course. 
     - __Storage (TB)__ - Leave default. 
     - __Auto Scaling__ - Leave default.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do __not__ select it.
@@ -79,6 +83,7 @@ Estimated lab time: 15 minutes
     *Note: You cannot scale up/down an Always Free autonomous database.*
 
     ![](./images/picture100-26c.png " ")
+    <b>Autonomous Database instance will be permanently removed by admin if over 1 OCPU.</b>
 
 7. Create administrator credentials:
 
@@ -118,6 +123,7 @@ Although you can connect to your autonomous database from local PC desktop tools
 
     ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
+   
 2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - admin**, and click **Next**.
 
 
@@ -153,11 +159,16 @@ Run a query on a sample Oracle Autonomous Database data set.
 
 3. When possible, ADW also caches the results of a query for you.  If you run identical queries more than once, you will notice a much shorter response time when your results have been cached.
 
-4. You can find more sample queries to run in the ADW documentation.
+4. You can find more sample queries to run in the <a href="https://www.oracle.com/autonomous-database/autonomous-data-warehouse/">ADW documentation.</a>
 
 
-    
+## Troubleshoot Tips
+
+    If you are having problems with any of the labs, please visit the Need Help? tab.
+
+
 ## Acknowledgements
 
 - **Author** - Richard Green, Principal Developer, Database User Assistance
+- **Contributors** -  Marion Smith, Technical Program Manager
 - **Last Updated By/Date** - Marion Smith, January 2022
