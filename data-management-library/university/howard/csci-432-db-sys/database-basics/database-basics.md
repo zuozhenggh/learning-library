@@ -148,10 +148,10 @@ Run a query on a sample Oracle Autonomous Database data set.
 
 1. Copy and paste the code snippet below to your SQL Worksheet. This query will run on the Star Schema Benchmark (ssb.customer), one of the two ADW sample data sets that you can access from any ADW instance. Take a moment to examine the script. Make sure you click the Run Statement button to run it in SQL Worksheet so that all the rows display on the screen.
 
-        select /* low */ c_city,c_region,count(*)
+        <copy>select /* low */ c_city,c_region,count(*)
         from ssb.customer c_low
         group by c_region, c_city
-        order by count(*);
+        order by count(*);</copy>
 
     ![Query Low Results SQL Worksheet](./images/ssb-query-low-results-sql-worksheet.png " ")
 
