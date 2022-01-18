@@ -307,7 +307,7 @@ Run the block below to unsubscribe finance database from ***Tier #1 SI DB Linux6
 ```
 
 ```
-<copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=</copy>
+<copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
 ```
 ![](images/unsubscribe_finance.png " ")
 
