@@ -1,6 +1,6 @@
 # Need Help?
 
-1. If you have questions or need help, please visit the group slack channel - DatabaseSystems CSCI 432
+1. If you have questions or need help, please visit the group Slack channel - DatabaseSystems CSCI 432
 
    ![](./images/howard-slack.png " ")
 
