@@ -5,14 +5,14 @@ This demo lab will walk you through the steps to create an end-to-end flow of th
 
 ### Objectives
 You will demo the following:
-- Create a new App Driven integration flow
+- Initiate an App Driven integration flow
 - Define ERP Purchase Order (PO) Event trigger
-- Add the Crete PO activity
+- Add the Create PO activity
 - Define the Tracking Fields
 - Activate the integration
 
 
-## Task 1: Create a new App Driven integration flow
+## Task 1: Initiate an App Driven integration flow
 We will start by creating a new integration and adding some basic info.
 
 1. In the left Navigation pane, and click **Integrations** > **Integrations**.
@@ -23,13 +23,13 @@ We will start by creating a new integration and adding some basic info.
 
 4. In the *Create New Integration* dialog, enter the following information:
 
-| **Field**        | **Value**          |       
-| --- | ----------- |
-| Name         | `LLERPEventDemo`       |
-| Description  | `ERP Event integration for Livelabs demo` |
-|
+    | **Field**        | **Value**          |       
+    | --- | ----------- |
+    | Name         | `LLERPEventDemo`       |
+    | Description  | `ERP Event integration for Livelabs demo` |
+    |
 
-Accept all other default values. 
+    Accept all other default values. 
 
 5. Click **Create**. 
 
@@ -45,12 +45,12 @@ Add ERP PO Event trigger to the empty integration canvas.
 
 4. On the Request page, select the following values:
 
-| **Field**        | **Value**          |       
-| --- | ----------- |
-| Define the purpose of the trigger         | **Receive Business Events raised within ERP Cloud**       |
-| Business Event for Subscription  | **Purchase Order Event** |
-| Filter Expr for Purchase Order Event | `kk` |
-|
+    | **Field**        | **Value**          |       
+    | --- | ----------- |
+    | Define the purpose of the trigger         | **Receive Business Events raised within ERP Cloud**       |
+    | Business Event for Subscription  | **Purchase Order Event** |
+    | Filter Expr for Purchase Order Event | `kk` |
+    |
 
 5. On the Response page, for *Response Type*, choose **None**.
 
