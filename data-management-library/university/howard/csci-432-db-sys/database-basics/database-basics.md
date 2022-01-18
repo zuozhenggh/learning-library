@@ -26,7 +26,7 @@ Estimated lab time: 15 minutes
 1. Log in to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-36.png " ")
+    ![](./images/picture100-36.png " ")
 
 
 3. Click **Autonomous Data Warehouse**.
@@ -39,7 +39,7 @@ Estimated lab time: 15 minutes
 1. Click **Create Autonomous Database** to start the instance creation process.
 
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-23.png " ")
+    ![](./images/picture100-23.png " ")
 
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
@@ -49,7 +49,7 @@ Estimated lab time: 15 minutes
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __FirstName LastName__ example (John Smith).
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __YOURNAME__ example (JOHNSMITH).
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/database-name.png " ")
+    ![](./images/database-name.png " ")
 
 4. Choose a workload type. Select the workload type for your database from the choices:
 
@@ -57,7 +57,7 @@ Estimated lab time: 15 minutes
     - __Transaction Processing__ - Alternately, you could have chosen Transaction Processing as the workload type.
 
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-26b.png " ")
+    ![](./images/picture100-26b.png " ")
 
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
@@ -65,7 +65,7 @@ Estimated lab time: 15 minutes
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Alternately, you could have chosen Dedicated Infrastructure as the workload type.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-26-deployment-type.png " ")
+    ![](./images/picture100-26-deployment-type.png " ")
 
 6. Configure the database:
 
@@ -78,7 +78,7 @@ Estimated lab time: 15 minutes
 
     *Note: You cannot scale up/down an Always Free autonomous database.*
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-26c.png " ")
+    ![](./images/picture100-26c.png " ")
 
 7. Create administrator credentials:
 
@@ -90,24 +90,24 @@ Estimated lab time: 15 minutes
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-26d.png " ")
+    ![](./images/picture100-26d.png " ")
 
     
 8. Choose network access:
     - For this lab, accept the default, "Allow secure access from everywhere".
    
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-26e.png " ")
+    ![](./images/picture100-26e.png " ")
     
 9. Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
 
 10. Click __Create Autonomous Database__.
 
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-27.png " ")
+    ![](./images/picture100-27.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
-   ![](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-32.png " ")
+   ![](./images/picture100-32.png " ")
 
    
 ## Task 3: Connect with SQL Worksheet
@@ -116,24 +116,24 @@ Although you can connect to your autonomous database from local PC desktop tools
 
 1. In your database's details page, click the **Database Actions** button.
 
-    ![Click the Database Actions button](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/click-database-actions-button.png " ")
+    ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
 2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - admin**, and click **Next**.
 
 
-    ![Enter the admin username.](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-16.png " ")
+    ![Enter the admin username.](./images/picture100-16.png " ")
 
 3. Enter the Administrator **Password** you specified when creating the database. Click **Sign in**.
 
-    ![Enter the admin password.](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-16-password.png " ")
+    ![Enter the admin password.](./images/picture100-16-password.png " ")
 
 4. The Database Actions page opens. In the **Development** box, click **SQL**.
 
-    ![Click on SQL.](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-16-click-sql.png " ")
+    ![Click on SQL.](./images/picture100-16-click-sql.png " ")
 
 5. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
 
-    ![Click Next to take tour.](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/picture100-sql-worksheet.png " ")
+    ![Click Next to take tour.](./images/picture100-sql-worksheet.png " ")
 
 
 ## Task 4: Run scripts in SQL Worksheet
@@ -147,7 +147,7 @@ Run a query on a sample Oracle Autonomous Database data set.
         group by c_region, c_city
         order by count(*);
 
-    ![Query Low Results SQL Worksheet](https://raw.githubusercontent.com/oracle/learning-library/data-management-library/university/howard/csci-432-db-sys/database-basics/images/ssb-query-low-results-sql-worksheet.png " ")
+    ![Query Low Results SQL Worksheet](./images/ssb-query-low-results-sql-worksheet.png " ")
 
 2. Take a look at the output response from your Autonomous Data Warehouse.
 
