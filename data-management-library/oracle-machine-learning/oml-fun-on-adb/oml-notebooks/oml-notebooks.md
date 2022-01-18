@@ -1,4 +1,4 @@
-# Introduction to Oracle Machine Learning
+# Use Oracle Machine Learning
 
 ## Introduction
 
@@ -32,30 +32,30 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 1. Sign into your OCI console, click on the left navigation menu, and then click **Autonomous Database**.  
 
-	![ADB in OCI](images/adb_in_oci.png)
+	![ADB in OCI](images/adb-in-oci.png)
 
 2. The Autonomous Database dashboard lists all the databases that are provisioned in the tenancy. Click the Oracle Autonomous Database that you have provisioned.
 
-  ![List of provisioned ADBs](images/provisioned_adb.png)        	  
+  ![List of provisioned ADBs](images/provisioned-adb.png)        	  
 
 3. On your Oracle Autonomous Database instance page, click **Service Console**. The Launch Service Console dialog opens. Wait till the Service Console opens.
 
-	![ADW Service Console](images/service_console.png)
+	![ADW Service Console](images/service-console.png)
 
 
 4. On the Service Console page, click **Development** on the left pane.
 
-	![Development option in ADW Service Console](images/adw_development.png)
+	![Development option in ADW Service Console](images/adw-development.png)
 
 5. Click **Oracle Machine Learning User Interface.** This opens the Oracle Machine Learning sign in page.
 
-  ![Oracle Machine Learning User Interface in ADW](images/adw_oml_notebooks.png)
+  ![Oracle Machine Learning User Interface in ADW](images/adw-oml-notebooks.png)
 
 6. Enter your user credentials and click **Sign in**. This opens the Oracle Machine Learning home page.
 
 	>**Note:** The credential is what you have defined while creating the Oracle Machine Learning user.
 
-	![Oracle Machine Learning UI Sign in page](images/oml_signin_page.png)
+	![Oracle Machine Learning UI Sign in page](images/oml-signin-page.png)
 
 This completes the task of accessing Oracle Machine Learning.
 
@@ -66,10 +66,10 @@ To create a notebook:
 
 1. On the Oracle Machine Learning home page, click **Notebooks**. The Notebooks page opens.
 
-	![Notebooks option in Oracle Machine Learning home page](images/homepage_notebooks.png)
+	![Notebooks option in Oracle Machine Learning home page](images/homepage-notebooks.png)
 
 2. On the Notebooks page, click **Create**. The Create Notebook dialog opens.
-	![Create Notebook dialog](images/create_notebook.png)
+	![Create Notebook dialog](images/create-notebook.png)
 
 3. In the Name field, enter **Test Notebook**.
 
@@ -93,15 +93,15 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 	* To format the text in bold, type the text `Hello World` inside two asterisks pair
 	* To format the text in italics, type the text `Hello World` either inside an asterisk pair or an underscore pair, and click **Run**
 
-	![Markdown tags for plain text and other formatting](images/md_text_formatting.png)
+	![Markdown tags for plain text and other formatting](images/md-text-formatting.png)
 
 3. To display the text in a bulleted list, prefix * (asterisk) to the text, as shown in the screenshot below:
 
-	![Markdown tags for bulleted points](images/md_bullets.png)
+	![Markdown tags for bulleted points](images/md-bullets.png)
 
 4. To display the text in heading1, heading 2 and heading 2, prefix # (hash) to the text and click Run. For H1, H2, and H3, you must prefix one, two, and three hashes respectively.
 
-	![Markdown tags for headings](images/md_heading_tags.png)
+	![Markdown tags for headings](images/md-heading-tags.png)
 
 
 
@@ -111,7 +111,7 @@ Let’s create another paragraph to call the SQL interpreter and run SQL stateme
 1. Edit the paragraph tag and type ``%sql`` to call the SQL interpreter.
 2. Type ``select table_name from user_tables`` and click Run. The command returns the table names in a tabular format - a table with one column `TABLE_NAME`, as shown in the screenshot:
 
-	![SQL commands](images/sql_commands.png)
+	![SQL commands](images/sql-commands.png)
 
 
 ### Task 2.3: Call the PL/SQL Interpreter and run PL/SQL Scripts
@@ -141,7 +141,7 @@ Let’s create another paragraph to call the PL/SQL interpreter and run PL/SQL s
 
 
 
-	![PL/SQL script](images/plsql_script.png)
+	![PL/SQL script](images/plsql-script.png)
 
 The PL/SQL script successfully creates the table SMALL_TABLE. The PL/SQL script in this example contains two parts:
 * The first part of the script contains the SQL statement CREATE TABLE to create a table named ``small_table``. It defines the table name, table column, data types, and size. In this example, the column names are ``NAME, ID1, ID2, ID3, ID4, and TEXT``.
@@ -169,7 +169,7 @@ import pandas as pd
 
 The ``z.show`` command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH schema, as shown in the screenshot here. Use the ``z.show`` command to display Python objects, proxy object content, and to display the desired data in the notebook. You will learn more about ``z.show`` in the lab on Oracle Machine Learning for Python.
 
-![Python script](images/python_commands.png)
+![Python script](images/python-commands.png)
 
 ## Task 3: Create a Notebook using a Template Example
 
@@ -183,32 +183,32 @@ This step demonstrates how to create the OML4Py Classification notebook based on
 
 1. On your Oracle Machine Learning home page, click **Examples** in the Quick Actions section. Alternatively, you can go to the left navigation menu and click **Examples** under templates. The Examples page opens with all the templates listed.
 
-	![Oracle Machine Learning home page](images/homepage_examples.png)
+	![Oracle Machine Learning home page](images/homepage-examples.png)
 
 2. Navigate to the **OML4Py Classification DT** example template notebook. Alternatively, type DT in the search box on the upper right to get a list of the decision tree-related notebooks. Click the notebook and then click **Create Notebook**.
 
-	![Create Notebook](images/classification_DT_example.png)
+	![Create Notebook](images/classification-dt-example.png)
 
 3. The Create Notebook dialog opens. The Name field displays the same name as the template. You can edit this name. In this example, enter **OML4Py Classification DT** and click **OK**.
 
 	> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
 
-	![Create Classification DT notebook from example template](images/create_notebook_classification.png)
+	![Create Classification DT notebook from example template](images/create-notebook-classification.png)
 
 
 4. Once the notebook is created, the message _Notebook Classification DT 1 created in project OMLUSER Project_ is displayed, as shown in the screenshot.
 
-	![Create notebook message](images/notebook_created_message.png)
+	![Create notebook message](images/notebook-created-message.png)
 
 
 5. To view the notebook, navigate to the Notebooks page from the left navigation menu.
 
-	![Notebooks in left navigation menu](images/notebooks_left_nav_pane.png)
+	![Notebooks in left navigation menu](images/notebooks-left-nav-pane.png)
 
 
 6. The Classification DT 1 notebook is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor. Note that you will run this notebook in the subsequent steps.
 
-	![Notebook listed](images/notebook_listed.png)
+	![Notebook listed](images/notebook-listed.png)
 
 This completes the task of creating a notebook from an Example template.
 
@@ -221,13 +221,13 @@ This step demonstrates how to create the Time Series notebook based on the Examp
 
 2. Navigate to the **OML4SQL Time Series ESM** example template notebook. Alternatively, type ESM in the search box on the upper right to get a list of the ESM-related notebooks. Click the notebook and then click **Create Notebook**.
 
-	![Create Notebook](images/oml4sql_time_series.png)
+	![Create Notebook](images/oml4sql-time-series.png)
 
 3. The Create Notebook dialog opens. Provide a name for this notebook and click **OK**. In this example, enter **OML4SQL Time Series 1**.
 
 	> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
 
-	![Create Time Series notebook from example template](images/create_notebook_time_series.png)
+	![Create Time Series notebook from example template](images/create-notebook-time-series.png)
 
 
 4. Once the notebook is created, the message _Notebook OML4SQL Time Series 1 created in project OMLUSER Project_ is displayed.
@@ -238,7 +238,7 @@ This step demonstrates how to create the Time Series notebook based on the Examp
 
 6. The notebook **OML4SQL Time Series 1** is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor and work on it.
 
-	![Notebook listed](images/notebook_list_1.png)
+	![Notebook listed](images/notebook-list-1.png)
 
 This completes the task of creating the Time Series notebook from the OML4SQL Time Series ESM Example template.
 
@@ -269,20 +269,20 @@ This is the initial binding order of the interpreters. You can change the order 
 In this step, you learn how to set the interpreter bindings:
 1. Open the **Classification_DT** notebook, and click ![gear icon](images/gear.png) on the top right corner of the notebook. This opens the interpreter settings.
 
-	![Gear icon](images/interpreter_binding_icon.png)
+	![Gear icon](images/interpreter-binding-icon.png)
 
 2. Click **medium** and drag and drop it on top of the list.
 
-	![Drag and drop an interpreter binding](images/drag_int_binding.png)
+	![Drag and drop an interpreter binding](images/drag-int-binding.png)
 
 	>**Note:** You can disable a particular binding by deselecting it (turns from blue to white) or enable it by selecting it ( turns from white to blue). However, this does not require dragging the enabled interpreters above the disabled ones.
 
 
-	![Enable and disable interpreter binding](images/enable_disable_int_bindings.png)
+	![Enable and disable interpreter binding](images/enable-disable-int-bindings.png)
 
 3. Once you successfully drag and drop it on top of the list, click **Save**.
 
-	![Save interpreter binding order](images/save_order.png)
+	![Save interpreter binding order](images/save-order.png)
 
 Clicking **Save** records the changes and hides the interpreter settings. You can verify it again by clicking the gear icon. This completes the task of changing the interpreter binding order.
 
@@ -297,11 +297,11 @@ To create a job:
 
 2. On the Jobs page, click **Create**. The Create Jobs dialog box opens.
 
-	![Create Job](images/create_job.png)
+	![Create Job](images/create-job.png)
 
 3. In the **Name** field, enter `Job1`. The number of characters in the job name must not exceed 128 bytes.
 
-	![Create Job](images/create_jobs1.png)
+	![Create Job](images/create-jobs1.png)
 
 4. In the **Notebook** field, click the search icon to select a notebook to create a job. Navigate through the OMLUSER workspace and OMLUSER project and select `Classification_DT`.
 
@@ -313,7 +313,7 @@ To create a job:
 
 7. Expand **Advanced Settings**, and specify the following settings:
 
-	![Create Job](images/create_jobs2.png)
+	![Create Job](images/create-jobs2.png)
 
 	* **Maximum Number of Runs:** Select **3**. This specifies the maximum number of times the job must run before it is stopped. When the job reaches the maximum run limit, it will stop.  
 
@@ -326,6 +326,8 @@ To create a job:
 8. Click **OK**.
 
 This completes the task of creating a job.
+
+You may now **proceed to the next lab**.
 
 ## Learn More
 
