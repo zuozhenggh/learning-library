@@ -1,0 +1,22 @@
+{
+    "workshoptitle": "Howard University Database Systems Course",
+    "help": "eugenio.galiano@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "../../get-started/get-started.md"
+        },
+        {
+            "title": "Lab 1: Database Basics",
+            "filename": "../../database-basics/database-basics.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename":"../../need-help/need-help.md"
+        }
+    ]
+}

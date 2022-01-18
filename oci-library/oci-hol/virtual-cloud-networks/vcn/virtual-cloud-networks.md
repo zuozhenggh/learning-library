@@ -8,11 +8,9 @@ Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Co
 
 [](youtube:mIYSgeX5FkM)
 
-Estimated Time: 15 minutes
+Here is an instructional video, going through the process of making a VCN:
 
-### Objectives
-In this lab, you will:
-- Create a virtual cloud network
+[](youtube:eOGPej8n_ws)
 
 ### Prerequisites
 
