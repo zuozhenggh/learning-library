@@ -50,6 +50,19 @@ Create a connection witht the Oracle Autonomous Data Warehouse Adapter.
 2. In the *Create Connection - Select Adapter* dialog, select the **Oracle ADW** adapter to use for this connection. To find the adapter, enter `adw` in the search field. Click on the highlighted adapter and hit **Select**.
     ![](images/create-adw-connection01.png)
 
-3.
+3. In the *Create Connection* dialog, enter the following information:
 
+    | **Field**  | **Values** |
+    |---|---|
+    |Service Name | `<adb-service-name>` |
+    |Security Policy | `JDBC Over SSL`|
+    |Wallet | **Upload wallet file (Zip)** |
+    |Wallet Password | `<password>`|
+    |Database Service Username | `<db-service-user>` |
+    |Database Service Password | `<db-service-password>` |
+    |
+
+    ![](images/create-adw-connection02.png)
+    
+4. 
 
