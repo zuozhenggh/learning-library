@@ -69,7 +69,7 @@ Add ERP PO Event trigger to the empty integration canvas.
     ![](images/create-app-integration04.png)
 
 
-## Task 3: Add the Create PO activity
+## Task 3: Add the PO Record to DB activity
 Invoke the Purchase Order 
 
 
