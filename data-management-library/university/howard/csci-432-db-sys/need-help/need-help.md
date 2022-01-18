@@ -4,6 +4,6 @@
 
    ![](./images/howard-slack.png " ")
 
-2. Attend Office Hours - Every Thursday 2-3pm (EST) at  <a href="http://bitly.com/dbclassoracle">dbclassoracle</a> 
+2. Attend Office Hours - Every Thursday 2-3pm (EST) at this Zoom link <a href="http://bitly.com/dbclassoracle">dbclassoracle</a> 
 
 
