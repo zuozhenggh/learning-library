@@ -29,8 +29,6 @@ This lab assumes you have:
 
 ## Task 1: Prepare your environment
 
-> **NOTE:** Unless otherwise stated, all passwords will be `Ora4U_1234`. When copying and pasting a command that includes a password, please replace the word `password` with `Ora4U_1234`. This only applies to instances created through OCI Resource Manager with our provided terraform scripts.
-
 1. Open a terminal window on the desktop and set the Oracle environment variables. At the prompt, enter **CDB1**.
 
     ```
@@ -50,7 +48,7 @@ This lab assumes you have:
     $ <copy>$HOME/labs/19cnf/glogin.sh</copy>
     ```
 
-4. This lab requires `ARCHIVELOG` mode to be enabled, execute the following shell script to enable it. At the prompt, enter **CDB1**.
+4. This lab required `ARCHIVELOG` mode to be enabled, execute the following shell script to enable it. At the prompt, enter **CDB1**.
 
     ```
     $ <copy>$HOME/labs/19cnf/enable_ARCHIVELOG.sh</copy>
@@ -123,7 +121,7 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 1. Log in to the CDB root as `SYS`
 
     ```
-    SQL> <copy>connect sys/password as sysdba</copy>
+    SQL> <copy>connect sys/Ora4U_1234 as sysdba</copy>
 
     Connected.
     ```
@@ -176,7 +174,7 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 6. Log in to PDB1.
 
     ```
-    SQL> <copy>CONNECT sys/password@PDB1 as sysdba</copy>
+    SQL> <copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
 
     Connected.
     ```
@@ -207,7 +205,7 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 
 1. In the CDB root, login as `C##ACCTS_ADMIN`.
     ```
-    SQL> <copy>CONNECT c##accts_admin/password</copy>
+    SQL> <copy>CONNECT c##accts_admin/Ora4U_1234</copy>
 
     Connected.
     ```
@@ -215,7 +213,7 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 2. Create a common user to grant the `CREATE SESSION` and `SELECT ANY TABLE` privileges.
 
     ```
-    SQL> <copy>CREATE USER c##common IDENTIFIED BY password CONTAINER=ALL;</copy>
+    SQL> <copy>CREATE USER c##common IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
 
     User created.
     ```
@@ -239,7 +237,7 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 5. Connect to PDB1 as the common user.
 
     ```
-    SQL> <copy>CONNECT c##common/password@PDB1</copy>
+    SQL> <copy>CONNECT c##common/Ora4U_1234@PDB1</copy>
 
     Connected.
     ```
@@ -277,7 +275,7 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 9.  Log in to CDB1 as the Oracle Database Vault owner, `C##SEC_ADMIN`.
 
     ```
-    SQL> <copy>CONNECT c##sec_admin/password@CDB1</copy>
+    SQL> <copy>CONNECT c##sec_admin/Ora4U_1234@CDB1</copy>
 
     Connected.
     ```
@@ -330,7 +328,7 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 16. Log in to the CDB root as the common account with the `DV_OWNER` role.
 
     ```
-    SQL> <copy>CONNECT c##sec_admin/password</copy>
+    SQL> <copy>CONNECT c##sec_admin/Ora4U_1234</copy>
     ```
 
 17.  Enable Database Vault Operations Control.
@@ -361,12 +359,12 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
 
 20. Connect to PDB1 as `SYS`.
     ```
-    SQL> <copy>CONNECT sys/password@PDB1 as sysdba</copy>
+    SQL> <copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
 
     Connected.
     ```
 
-21. Verify the Oracle Database Vault Operations Control status in PDB1.
+21. Verify the Oracle Database Vault Operations Control status in the CDB root.
     
     ```
     SQL> <copy>SELECT * FROM dba_dv_status;</copy>
@@ -385,7 +383,7 @@ Observe that Oracle Database Vault Operations Control is enabled at the PDB leve
 1. Connect to PDB1 as the common user.
 
     ```
-    SQL> <copy>CONNECT c##common/password@PDB1</copy>
+    SQL> <copy>CONNECT c##common/Ora4U_1234@PDB1</copy>
 
     Connected.
     ```
@@ -406,7 +404,7 @@ In this task, you back up the PDB although Oracle Database Vault Operations Cont
 1. Grant to PDB1 as `SYS`.
 
     ```
-    SQL> <copy>CONNECT sys/password@PDB1 as sysdba</copy>
+    SQL> <copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
 
     Connected.
     ```
@@ -428,7 +426,7 @@ In this task, you back up the PDB although Oracle Database Vault Operations Cont
 4. Use RMAN to back up PDB1. Connect as the common user to PDB1.
 
     ```
-    $ <copy>rman target c##common@PDB1/password</copy>
+    $ <copy>rman target c##common@PDB1/Ora4U_1234</copy>
 
     connected to target database: CDB1:PDB1 (DBID=30627184)
     ```
@@ -456,7 +454,7 @@ HR application data in PDB1 is very sensitive and should be protected against co
 1. Log in as the `C##ACCTS_ADMIN` user who has been granted the `DV_ACCTMGR` role.
 
     ```
-    $ <copy>sqlplus c##accts_admin/password</copy>
+    $ <copy>sqlplus c##accts_admin/Ora4U_1234</copy>
 
     Connected.
     ```
@@ -464,7 +462,7 @@ HR application data in PDB1 is very sensitive and should be protected against co
 2. Create the common user `C##REPORT`.
 
     ```
-    SQL> <copy>CREATE USER c##report IDENTIFIED BY password CONTAINER=ALL;</copy>
+    SQL> <copy>CREATE USER c##report IDENTIFIED BY Ora4U_1234 CONTAINER=ALL;</copy>
 
     User created.
     ```
@@ -488,7 +486,7 @@ HR application data in PDB1 is very sensitive and should be protected against co
 5. Log in as the `C##REPORT` user in PDB1.
 
     ```
-    SQL> <copy>CONNECT c##report/password@PDB1</copy>
+    SQL> <copy>CONNECT c##report/Ora4U_1234@PDB1</copy>
 
     Connected.
     ```
@@ -508,7 +506,7 @@ The behavior is expected because Oracle Database Vault Operations Control is ena
 7. Connect as `C##SEC_ADMIN`.
 
     ```
-    SQL> <copy>CONNECT c##sec_admin/password</copy>
+    SQL> <copy>CONNECT c##sec_admin/Ora4U_1234</copy>
 
     Connected.
     ```
@@ -536,7 +534,7 @@ Automation accounts frequently have procedure or functions that need to access l
 1. Re-connect as the common user in PDB1.
 
     ```
-    SQL> <copy>CONNECT c##report/password@PDB1</copy>
+    SQL> <copy>CONNECT c##report/Ora4U_1234@PDB1</copy>
     ```
 
 2. Check that the common user can query the application data in PDB1.
@@ -553,7 +551,7 @@ Automation accounts frequently have procedure or functions that need to access l
 1. Connect as `C##SEC_ADMIN`.
 
     ```
-    SQL> <copy>CONNECT c##sec_admin/password</copy>
+    SQL> <copy>CONNECT c##sec_admin/Ora4U_1234</copy>
 
     Connected.
     ```
@@ -569,7 +567,7 @@ Automation accounts frequently have procedure or functions that need to access l
 3. Connect to PDB1 as `SYS`.
 
     ```
-    SQL> <copy>CONNECT sys/password@PDB1 as sysdba</copy>
+    SQL> <copy>CONNECT sys/Ora4U_1234@PDB1 as sysdba</copy>
 
     Connected.
     ```
@@ -585,7 +583,7 @@ Automation accounts frequently have procedure or functions that need to access l
 5. Connect as `C##ACCTS_ADMIN`.
 
     ```
-    SQL> <copy>CONNECT c##accts_admin/password</copy>
+    SQL> <copy>CONNECT c##accts_admin/Ora4U_1234</copy>
 
     Connected.
     ```
@@ -619,8 +617,6 @@ Automation accounts frequently have procedure or functions that need to access l
     CDB1
     ```
 
-    You may now **proceed to the next lab**.
-
 
 ## Learn More
 
@@ -630,4 +626,4 @@ Automation accounts frequently have procedure or functions that need to access l
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
 - **Technical Contributor** - Kherington Barley, Austin Specalist Hub.
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialist Hub, December 21 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, December 21 2021
