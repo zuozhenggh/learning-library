@@ -43,8 +43,8 @@ This lab assumes you have:
     ```
     $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
     ```
-   
-3. Execute the `$HOME/labs/glogin.sh` script to set formatting for all columns selected in queries. 
+
+3. Execute the `$HOME/labs/glogin.sh` script to set formatting for all columns selected in queries.
 
     ```
     $ <copy>$HOME/labs/19cnf/glogin.sh</copy>
@@ -245,7 +245,7 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
     ```
 
 6. Verify that the common user can query the `HR.EMPLOYEES` table.
-   
+
     ```
     SQL> <copy>SELECT count(*) FROM hr.employees;</copy>
 
@@ -263,7 +263,7 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
     ```
 
 8.  Enable Database Vault Operations Control in the CDB root. An error should occur when running this command because the Database Vault is not enabled in the CDB root. The next step will show how to first enable Oracle Database Vault in the CDB root.
-   
+
     ```
     SQL> <copy>EXEC dvsys.dbms_macadm.enable_app_protection</copy>
     BEGIN dvsys.dbms_macadm.enable_app_protection; END;
@@ -298,19 +298,19 @@ In this task, you will configure Database Vault at the CDB root level, ensuring 
     ```
 
 12. Shutdown the database instance to enforce DV configuration and enabling.
-    
+
     ```
     SQL> <copy>shutdown immediate</copy>
     ```
 
 13. Start the database.
-    
+
     ```
     SQL> <copy>startup</copy>
     ```
 
 14. If the PDB1 is not automatically opened, then manually open it.
-    
+
     ```
     SQL> <copy>ALTER PLUGGABLE DATABASE PDB1 OPEN;</copy>
     ```
@@ -390,7 +390,7 @@ Observe that Oracle Database Vault Operations Control is enabled at the PDB leve
     Connected.
     ```
 2. Verify that the common user cannot query the `HR.EMPLOYEES` table due to insufficient privileges.
-   
+
     ```
     SQL> <copy>SELECT * FROM hr.employees;</copy>
     SELECT * FROM hr.employees
@@ -493,7 +493,7 @@ HR application data in PDB1 is very sensitive and should be protected against co
     Connected.
     ```
 6. Check if the user can query the application data in PDB1. Error should display as shown below.
-   
+
     ```
     SQL> <copy>SELECT count(*) FROM hr.employees;</copy>
 
@@ -559,7 +559,7 @@ Automation accounts frequently have procedure or functions that need to access l
     ```
 
 2. Disable Database Vault Operations Control.
-   
+
     ```
     SQL> <copy>EXEC dvsys.dbms_macadm.disable_app_protection</copy>
 
@@ -575,7 +575,7 @@ Automation accounts frequently have procedure or functions that need to access l
     ```
 
 4. Revoke the `SYSDBA` privilege from the common user in PDB1.
-   
+
     ```
     SQL> <copy>REVOKE sysdba FROM c##common;</copy>
 
@@ -591,7 +591,7 @@ Automation accounts frequently have procedure or functions that need to access l
     ```
 
 6. Drop the `C##COMMON` user in the CDB.
-   
+
     ```
     SQL> <copy>DROP USER c##common CASCADE;</copy>
 
