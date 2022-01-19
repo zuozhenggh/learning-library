@@ -277,6 +277,9 @@ The behavior is the same in pluggable databases (PDBs).
     SQL> <copy>EXIT</copy>
     ```
 
+    You may now **proceed to the next lab**.
+
+
 ## Acknowledgements
 
 - **Author**- Dominique Jeunot, Consulting User Assistance Developer
