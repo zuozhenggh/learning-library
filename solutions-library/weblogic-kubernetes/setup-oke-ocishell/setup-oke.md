@@ -30,7 +30,7 @@ This tutorial shows you the way the *Quick Start* feature creates and configures
 
 For more information about OKE and custom cluster deployment, see the [Oracle Container Engine](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm) documentation.
 
-## Task 1: Create an OKE cluster ####
+## **STEP 1**: Create an OKE cluster ####
 
 The *Quick Create* feature uses the default settings to create a *quick cluster* with new network resources as required. This approach is the fastest way to create a new cluster. If you accept all the default values, you can create a new cluster in just a few clicks. New network resources for the cluster are created automatically, along with a node pool and three worker nodes.
 
@@ -72,7 +72,7 @@ Wait until request to create node pool is initiated and then click **Close**. Th
 
 ![](images/070.cluster.master.active.png)
 
-## Task 2: Configure `kubectl` (Kubernetes Cluster CLI)
+## **STEP 2**: Configure `kubectl` (Kubernetes Cluster CLI)
 
 Oracle Cloud Infrastructure (OCI) Cloud Shell is a web browser-based terminal, accessible from the Oracle Cloud Console. Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI and other useful tools (*Git, kubectl, helm, OCI CLI*) to complete the operator tutorials. Cloud Shell is accessible from the Console. Your Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.
 
