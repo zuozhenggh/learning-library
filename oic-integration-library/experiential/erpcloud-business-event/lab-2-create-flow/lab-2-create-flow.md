@@ -1,7 +1,7 @@
 # Create the Purchase Order Event Integration flow
 
 ## Introduction
-This demo lab will walk you through the steps to create an end-to-end flow of the ERP Purchase Order Event integration.
+This demo lab will walk you through the steps to create an end-to-end integration of receiving ERP Purchase Order events and persisting the data in an ADW Table.
 
 ### Objectives
 You will demo the following:
@@ -63,7 +63,7 @@ Add ERP PO Event trigger to the empty integration canvas.
 
 6. Click **Next**.
 
-7. On the Response page, for *Response Type*, choose **None**. Click **Next**.
+7. On the Response page, for *Response Type* element, choose **None**. Click **Next**.
 
 8. On the Summary page, click **Done**.
 
