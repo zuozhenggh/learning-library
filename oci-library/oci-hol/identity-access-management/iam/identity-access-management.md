@@ -6,10 +6,6 @@ Oracle Cloud Infrastructure (OCI) Identity and Access Management (IAM) Service l
 
 Estimated time: 30 minutes
 
-There is a recording of the instructor going through this lab:
-
-[](youtube:wQU9mb9yX7o)
-
 ### Objectives
 In this lab, you will:
 - Create a compartment
@@ -220,5 +216,4 @@ We'll create a user, a group, and a security policy to understand the concept.
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar
 - **Adapted by** -  Tom McGinn, Database Product Management
 - **Contributors** - Arabella Yao, Product Manager, Database Product Management
-- **Last Updated By/Date** - Arabella Yao, December 2021
-
+- **Last Updated By/Date** - Arabella Yao, January 2022
