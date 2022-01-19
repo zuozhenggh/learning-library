@@ -44,7 +44,7 @@ This new user/schema will hold the Grand Prix data.
 
     ![ADW Menu](images/open-sql.png)
 
-5. **Download** <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/jC_T4nG83jOCnR93ELi24nCKmGqPZw7GO6fw3vahKqOrFmmbAZcgRcbdzvPwg4mC/n/odca/b/workshops-livelabs-do-not-delete/o/redbull-create-user.sql" target="\_blank">`redbull-create-user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
+5. **Download** <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/cEbDpmx0Imy3-L8SYZK4BQNnVLGVhkN_iJyQyjGc2So4qNse69_dSB513EzX_Hzu/n/fruktknlrefu/b/workshop-redbull-analytics/o/redbull-create-user.sql" target="\_blank">`redbull-create-user.sql`</a>. Save the file on your local machine. Make sure that the file is saved with extension `.sql`.
 
 6. Open the `redbull-create-user.sql` file with a text editor and copy-and-paste all of its contents into the database actions worksheet area. This file will create a new user "F1" for us.
 
@@ -58,17 +58,17 @@ This new user/schema will hold the Grand Prix data.
 
 1. **Download** the 6 files that contain the data that we'll use in our analysis:
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/vP6XaNcGjlu1W8TThO75ehALwJuA4OgVG_K_LyLEwJ6HGCUjaNIIMOJyYIh1aKxD/n/odca/b/workshops-livelabs-do-not-delete/o/RACES.csv" target="\_blank">Races data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/csfBbBQ7K-IPB7Y291WZXxGq0Anj0HrFGFVkGNvrslwNUF9IECSawn-FeHuUZHpb/n/fruktknlrefu/b/workshop-redbull-analytics/o/RACES.csv" target="\_blank">Races data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/TPFi3tHQVT21Ect8sowpATq0DVNb8szksMSK2NX3Oby3o6QmBuWUaSWggPkaqvRd/n/odca/b/workshops-livelabs-do-not-delete/o/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/66U9r_xOEIPGRRDMdJi_dFg-fQxuW8-JXDAhfMHWU6W4dsfcQYePrlk8LlnlWWbK/n/fruktknlrefu/b/workshop-redbull-analytics/o/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/mXEu65kUFpi4Kg7QPt6f7RM4h2jGYvmnFSVV38pb2pi4oBNsmJ3QI-tm120TbO20/n/odca/b/workshops-livelabs-do-not-delete/o/SAFETY_CAR.csv" target="\_blank">Safety Car data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/hrv8SfudQrS7TPzK4sFTf9RkGeQRWzvFkt2QFQQpWUyNWu9BNSSwzmAQZUIQOESp/n/fruktknlrefu/b/workshop-redbull-analytics/o/SAFETY_CAR.csv" target="\_blank">Safety Car data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/oWf_acJmIMFN_XTBlVXKhIR97kO8Ww_TU8nU-aHekxD1Fpy1IK49zx_d3w-GqSvq/n/odca/b/workshops-livelabs-do-not-delete/o/PIT_STOPS.csv" target="\_blank">Pit Stop data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/_COoaqGtyVNujZIRJR7s01SFQJoP5dcBTdV11safViNl0mPF0StK7GzA6w1n3Nph/n/fruktknlrefu/b/workshop-redbull-analytics/o/PIT_STOPS.csv" target="\_blank">Pit Stop data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/zSiu-rJu8FvLSAzi12UOtZk8S3f8RmRMP1OErBrbTPfBwjFpSIERhW5755yTaIzl/n/odca/b/workshops-livelabs-do-not-delete/o/RESULTS.csv" target="\_blank">Race Results data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/-VktiHjnhC11sLrLYCcNpE4cyAhm4GOTt0gXTVVRtJwxXRd_uGB04xTSc9XPOM4R/n/fruktknlrefu/b/workshop-redbull-analytics/o/RESULTS.csv" target="\_blank">Race Results data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/vj6p4kGjYizRm4S_8dOqeUBqBObmxqBaXRA2C4rm_PdRf6K7Ak5s7p2Y5em5Imz6/n/odca/b/workshops-livelabs-do-not-delete/o/DRIVER_STANDINGS.csv" target="\_blank">Driver Ranking data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/36bj7LUfjwcFk1QpH5vlMyHZwXslXcybkKEvO6KqLKDv1xXn0aUmvFundOeCdxwZ/n/fruktknlrefu/b/workshop-redbull-analytics/o/DRIVER_STANDINGS.csv" target="\_blank">Driver Ranking data</a>
 
    Save the files on your local machine. **Make sure that the files are saved with extension `.csv`**
 

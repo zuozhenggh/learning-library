@@ -51,15 +51,15 @@ Before you start using OCI Vision, your tenancy administrator should set up the 
 
 A Project is a way to organize multiple models in the same workspace. It is the first step to start.
 
-Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Vision Service item under AI services. Clicking the Vision Service Option will navigate one to the Vision Service Console. Once here, select Projects under "Custom Models" header on the left hand side of the console.
+1. Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and click it, and then select Vision Service item under AI services. Clicking the Vision Service Option will navigate one to the Vision Service Console. Once here, select Projects under "Custom Models" header on the left hand side of the console.
 
-![](./images/create-project1.png " ")
+    ![](./images/create-project1.png " ")
 
-The Create Project button navigates User to a form where they can specify the compartment in which to create a Vision Project. The project we create here is named "vision_demo".
+2. The Create Project button navigates User to a form where they can specify the compartment in which to create a Vision Project. The project we create here is named "vision_demo".
 
-![](./images/create-project2.png " ")
+    ![](./images/create-project2.png " ")
 
-Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.  
+3. Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane.  
 
 ## **Task 2:** Select Model Type
 
@@ -67,21 +67,21 @@ AI Vision Service supports training of an on-demand custom model for Object Dete
 
 ## **Task 3:** Select Training Data
 
-To train a custom model, you will need training data. There are two main options depending on if you already have an annotated dataset, or only have raw (unlabeled) images.
+1. To train a custom model, you will need training data. There are two main options depending on if you already have an annotated dataset, or only have raw (unlabeled) images.
 
-![](./images/select-training-data1.png " ")
+    ![](./images/select-training-data1.png " ")
 
-**Create a New dataset**: If you do not have any annotated images (you only have raw images you'd like to train your model on), select "Create a New Dataset".
+2. **Create a New dataset**: If you do not have any annotated images (you only have raw images you'd like to train your model on), select "Create a New Dataset".
 
-![](./images/select-training-data2.png " ")
+    ![](./images/select-training-data2.png " ")
 
-This will drive you to OCI Data Labeling service, where you can easily add labels or draw bounding boxes over your image content. To learn more about how to annotate images using OCI Data Labeling service, you can review documentation here [Adding and Editing Labels (oracle.com)](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/labels.htm).
+    This will drive you to OCI Data Labeling service, where you can easily add labels or draw bounding boxes over your image content. To learn more about how to annotate images using OCI Data Labeling service, you can review documentation here [Adding and Editing Labels (oracle.com)](https://docs.oracle.com/en-us/iaas/data-labeling/data-labeling/using/labels.htm).
 
-![](./images/select-training-data3.png " ")
+    ![](./images/select-training-data3.png " ")
 
-**Choose existing dataset**: If you have an existing annotated dataset, you can select it by clicking "Choose Existing Dataset." If you've previously annotated images using OCI Data Labeling service, select that button and select the dataset file of your choice. If you have annotated your images using some 3rd party tool, you can upload that dataset file to object storage and select via the "object storage" button. 
+3. **Choose existing dataset**: If you have an existing annotated dataset, you can select it by clicking "Choose Existing Dataset." If you've previously annotated images using OCI Data Labeling service, select that button and select the dataset file of your choice. If you have annotated your images using some 3rd party tool, you can upload that dataset file to object storage and select via the "object storage" button. 
 
-![](./images/select-training-data4.png " ")
+    ![](./images/select-training-data4.png " ")
 
 ## **Task 4:** Train your Custom Model
 
@@ -99,7 +99,7 @@ Congratulations on completing this lab!
 
 [Proceed to the next section](#next).
 
-## Acknowledgements:
+## Acknowledgements
 * **Authors**
     * Kate D'Orazio - Oracle OCI Vision Services
     * Vaishnavi Kotturu - Oracle OCI Vision Services
