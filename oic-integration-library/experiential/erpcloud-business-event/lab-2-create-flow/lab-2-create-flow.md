@@ -8,6 +8,7 @@ You will demo the following:
 - Initiate an App Driven integration flow
 - Define ERP Purchase Order (PO) Event trigger
 - Add the PO Record to DB Table activity
+- Map data between ERP trigger and ADW invoke
 - Define the Tracking Fields
 - Activate the integration
 
@@ -23,7 +24,7 @@ We will start by creating a new integration and adding some basic info.
 
 4. In the *Create New Integration* dialog, enter the following information:
 
-    | **Field**        | **Value**          |       
+    | **Element**        | **Value**          |       
     | --- | ----------- |
     | Name         | `LLERPEventDemo`       |
     | Description  | `ERP Event integration for Livelabs demo` |
@@ -43,9 +44,11 @@ Add ERP PO Event trigger to the empty integration canvas.
 
 3. On the Basic Info page, for *What do you want to call your endpoint?* element, enter `ERP_POEvent`. 
 
-4. On the Request page, select the following values:
+4. Click **Next**.
 
-    | **Field**        | **Value**          |       
+5. On the Request page, select the following values:
+
+    | **Element**        | **Value**          |       
     | --- | ----------- |
     | Define the purpose of the trigger         | **Receive Business Events raised within ERP Cloud**       |
     | Business Event for Subscription  | **Purchase Order Event** |
@@ -56,20 +59,20 @@ Add ERP PO Event trigger to the empty integration canvas.
 
     ![](images/create-app-integration02.png)
 
-5. Click **Next**.
+6. Click **Next**.
 
-6. On the Response page, for *Response Type*, choose **None**. Click **Next**.
+7. On the Response page, for *Response Type*, choose **None**. Click **Next**.
 
-7. On the Summary page, click **Done**.
+8. On the Summary page, click **Done**.
 
     ![](images/create-app-integration03.png)
 
-8. On the integration canvas, from the Layout list, choose **Horizontal**. 
+9. On the integration canvas, from the Layout list, choose **Horizontal**. 
 
     ![](images/create-app-integration04.png)
 
 
-9. Click **Save** to persist your changes. 
+10. Click **Save** to persist your changes. 
  
 
 ## Task 3: Add the PO Record to DB activity
@@ -81,14 +84,32 @@ Add the Oracle Autonomous Data Warehouse Adapter Event trigger to the integratio
 
 2. On the Basic Info page, select the following values:
 
-    | **Field**        | **Value**          |       
+    | **Element**        | **Value**          |       
     | --- | ----------- |
     | What do you want to call your endpoint? | `ADW_InsertPO`       | 
-    |What operation do you want to perform? | **Perform an Operation on a Table** |
+    | What operation do you want to perform? | **Perform an Operation on a Table** |
     | What operation do want to perform on Table? | **Insert** |
     |
 
+3. On the Table Operation page, select the following values:
 
+    | **Element**        | **Value**          |       
+    | --- | ----------- |
+    | Schema | **ADMIN**  |
+    | Table Type | **TABLE** |
+    | Table Name | \<keep blank> and click **Search** |
+    | Available | **PURCHASEORDERS** and click **>** to move the table to the *Selected* column |
+    |
 
+    ![](images/create-app-integration06.png)
 
+4. Click on **Import Tables**, wait and hit **Next**.
+
+5. When the *Select the parent database table* element appears, click **Next**.
+
+6. On the Summary page, click **Done**.
+
+    ![](images/create-app-integration07.png)
+
+7. Click **Save** to persist your changes. 
 
