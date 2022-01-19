@@ -84,6 +84,8 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
 
     ![](images/create-app-integration05.png)
 
+    This invokes the Oracle Autonomous Data Warehouse Endpoint Configuration Wizard.
+
 2. On the Basic Info page, select the following values:
 
     | **Element**        | **Value**          |       
