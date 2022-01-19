@@ -41,7 +41,7 @@ Add ERP PO Event trigger to the empty integration canvas.
 
 2. Select the configured ERP Cloud adapter. This invokes the Oracle ERP Cloud Endpoint Configuration Wizard.
 
-3. In the *What do you want to call your endpoint?* field, enter `ERP_POEvent`. 
+3. On the Basic Info page, for *What do you want to call your endpoint?* element, enter `ERP_POEvent`. 
 
 4. On the Request page, select the following values:
 
@@ -68,10 +68,27 @@ Add ERP PO Event trigger to the empty integration canvas.
 
     ![](images/create-app-integration04.png)
 
-You have completed the final step of Task 2. Please proceed to the next task. 
+
+9. Click **Save** to persist your changes. 
  
 
 ## Task 3: Add the PO Record to DB activity
-Invoke the Purchase Order 
+Add the Oracle Autonomous Data Warehouse Adapter Event trigger to the integration canvas.
+
+1. Hover you cursor over the **+** sign that is displayed after the trigger activity in the integration canvas. Click the **+** sign and select the ADW connection created in Lab 1. 
+
+    ![](images/create-app-integration05.png)
+
+2. On the Basic Info page, select the following values:
+
+    | **Field**        | **Value**          |       
+    | --- | ----------- |
+    | What do you want to call your endpoint? | `ADW_InsertPO`       | 
+    |What operation do you want to perform? | **Perform an Operation on a Table** |
+    | What operation do want to perform on Table? | **Insert** |
+    |
+
+
+
 
 

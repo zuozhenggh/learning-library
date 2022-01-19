@@ -54,7 +54,7 @@ Create a connection witht the Oracle Autonomous Data Warehouse Adapter.
 
     | **Field**        | **Value**          |       
     | --- | ----------- |
-    | Name         | `ADW_LLDemo`       |
+    | Name         | `LLDemo_ADW`       |
     | Description  | `ADW Connection for Livelabs demo` |
     |
 
