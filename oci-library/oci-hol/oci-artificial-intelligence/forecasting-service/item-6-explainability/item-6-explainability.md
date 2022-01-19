@@ -22,7 +22,7 @@ In this lab, you will:
 
 1. Call the explanation API using below code as shown below:
     ```Python
-    url = "https://forecasting-int.aiservice.us-ashburn-1.oci.oraclecloud.com/20220101/forecasts/{}/explanations/".format(create_forecast_id)
+    url = "https://forecasting----.------.------.---.oraclecloud.com/20220101/forecasts/{}/explanations/".format(create_forecast_id)
 
     payload={}
     headers = {}
