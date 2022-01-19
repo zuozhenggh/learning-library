@@ -34,6 +34,8 @@ We will start by creating a new integration and adding some basic info.
 
 5. Click **Create**. 
 
+6. Click **Save** to persist changes. 
+
 
 ## Task 2: Define ERP Purchase Order (PO) Event trigger
 Add ERP PO Event trigger to the empty integration canvas.
@@ -72,7 +74,7 @@ Add ERP PO Event trigger to the empty integration canvas.
     ![](images/create-app-integration04.png)
 
 
-10. Click **Save** to persist your changes. 
+10. Click **Save** to persist changes. 
  
 
 ## Task 3: Add the PO Record to DB activity
@@ -111,5 +113,5 @@ Add the Oracle Autonomous Data Warehouse Adapter Event trigger to the integratio
 
     ![](images/create-app-integration07.png)
 
-7. Click **Save** to persist your changes. 
+7. Click **Save** to persist changes. 
 
