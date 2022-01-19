@@ -7,7 +7,7 @@ This demo lab will walk you through the steps to create an end-to-end integratio
 You will demo the following:
 - Initiate an App Driven integration flow
 - Define ERP Purchase Order (PO) Event trigger
-- Add the PO Record to DB Table activity
+- Add the ADW invoke activity
 - Map data between ERP trigger and ADW invoke
 - Define the Tracking Fields
 - Activate the integration
@@ -77,7 +77,7 @@ Add ERP PO Event trigger to the empty integration canvas.
 10. Click **Save** to persist changes. 
  
 
-## Task 3: Add the PO Record to DB activity
+## Task 3: Add the ADW invoke activity
 Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canvas.
 
 1. Hover you cursor over the **+** sign that is displayed after the trigger activity in the integration canvas. Click the **+** sign and select the ADW connection created in Lab 1. 
@@ -101,7 +101,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | --- | ----------- |
     | Schema | **ADMIN**  |
     | Table Type | **TABLE** |
-    | Table Name | \<keep blank\>. and click **Search** |
+    | Table Name | <keep blank>. and click **Search** |
     | Available | **PURCHASEORDERS** and click **>** to move the table to the *Selected* column |
     |
 
@@ -116,4 +116,25 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     ![](images/create-app-integration07.png)
 
 7. Click **Save** to persist changes. 
+
+
+## Task 4: Map data between ERP trigger and ADW invoke
+Use the mapper to drag fields from the source structure (ERP PO event data)  to the target structure (ADW PO table) to map elements between the two.
+
+When we added the ADW invoke to the integration, a map icon was automatically added. 
+
+1. Hover you cursor over the ERP-ADW mapper, and click **Edit**.
+
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+
 

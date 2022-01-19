@@ -23,7 +23,7 @@ Create a connection witht the Oracle ERP Cloud Adapter.
 
     | **Field**        | **Value**          |       
     | --- | ----------- |
-    | Name         | `ERP_LLDemo`       |
+    | Name         | `LLDemo_ERP`       |
     | Description  | `ERP Connection for Livelabs demo` |
     |
 
