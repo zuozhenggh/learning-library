@@ -101,7 +101,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | --- | ----------- |
     | Schema | **ADMIN**  |
     | Table Type | **TABLE** |
-    | Table Name | \<keep blank\> and click **Search** |
+    | Table Name | \<keep blank\>. and click **Search** |
     | Available | **PURCHASEORDERS** and click **>** to move the table to the *Selected* column |
     |
 
