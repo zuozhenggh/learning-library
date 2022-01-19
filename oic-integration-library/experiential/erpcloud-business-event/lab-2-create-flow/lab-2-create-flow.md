@@ -78,7 +78,7 @@ Add ERP PO Event trigger to the empty integration canvas.
  
 
 ## Task 3: Add the PO Record to DB activity
-Add the Oracle Autonomous Data Warehouse Adapter Event trigger to the integration canvas.
+Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canvas.
 
 1. Hover you cursor over the **+** sign that is displayed after the trigger activity in the integration canvas. Click the **+** sign and select the ADW connection created in Lab 1. 
 
