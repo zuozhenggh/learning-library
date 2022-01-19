@@ -52,6 +52,16 @@ Create a connection witht the Oracle Autonomous Data Warehouse Adapter.
 
 3. In the *Create Connection* dialog, enter the following information:
 
+    | **Field**        | **Value**          |       
+    | --- | ----------- |
+    | Name         | `ADW_LLDemo`       |
+    | Description  | `ADW Connection for Livelabs demo` |
+    |
+
+    Keep all other values as default.
+
+4. In the *Oracle ADW Connection* dialog, enter the following information:
+
     | **Field**  | **Values** |
     |---|---|
     |Service Name | `<adb-service-name>` |
@@ -64,7 +74,7 @@ Create a connection witht the Oracle Autonomous Data Warehouse Adapter.
 
     ![](images/create-adw-connection02.png)
     
-4. 
+5. Click on **Test**, followed by **Save**. Exit the connection canvas by clicking the back button on the top left side of the screen.
 
-5.
+You have completed the final step of Lab 1. Please proceed to the next lab. 
 
