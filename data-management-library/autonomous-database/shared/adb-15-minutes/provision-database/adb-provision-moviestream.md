@@ -32,7 +32,7 @@ In this lab, you will:
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
-    ![Click Create Autonomous Database.](./images/Picture100-23.png " ")
+    ![Click Create Autonomous Database.](./images/create-adb-button.png " ")
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
 
@@ -62,11 +62,11 @@ In this lab, you will:
 
 4. Choose __Data Warehouse__ workload type: 
 
-    ![Choose a workload type.](./images/Picture100-26b.png " ")
+    ![Choose a workload type.](./images/adb-workload-type.png " ")
 
 5. Choose __Shared Infrastructure__ deployment type:
 
-    ![Choose a deployment type.](./images/Picture100-26_deployment_type.png " ")
+    ![Choose a deployment type.](./images/adb-deployment-type.png " ")
 
 6. Configure the database:
 
@@ -79,7 +79,7 @@ In this lab, you will:
 
     > **Note:** You cannot scale up/down an Always Free autonomous database.
 
-    ![Choose the remaining parameters.](./images/Picture100-26c.png " ")
+    ![Choose the remaining parameters.](./images/adb-configure.png " ")
 
 7. Create administrator credentials:
 
@@ -91,7 +91,7 @@ In this lab, you will:
     - The password must not be the same password that you set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![Enter password and confirm password.](./images/Picture100-26d.png " ")
+    ![Enter password and confirm password.](./images/admin-credential.png " ")
 
 8. Choose network access:
     - For this lab, accept the default, "Secure access from everywhere."
@@ -108,14 +108,14 @@ In this lab, you will:
     ![](./images/license.png " ")
 </if>
 <if type="livelabs">
-    ![](images/livelabs-byol.png)
+    ![](./images/livelabs-byol.png)
 </if>
 
 10. Click __Create Autonomous Database__.
 
 11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
-    ![Database instance homepage.](./images/Picture100-32.png " ")
+    ![Database instance homepage.](./images/adb-provisioning.png " ")
     Provisioning an Autonomous Database instance.
 
     ![Database instance homepage.](./images/adb-provisioned.png " ")
