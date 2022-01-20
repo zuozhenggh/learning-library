@@ -8,7 +8,7 @@ One way to deploy an APM Java agent in a Docker container-enabled Kubernetes clu
 
 However, this method assumes you have administrator access to the Docker working directory to recreate the image, which may not always be the case. In this workshop, we will use an alternative approach, to provision the APM Java agent in a file system mounted in the Oracle Cloud, and deploy it to the Kubernetes cluster, without updating the Docker image.
 
-In this workshop, we will use a simple WebLogic web application that runs on a Kubernetes cluster, as a target application to trace the user transactions.  As a prerequisite, please complete [Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850) workshop up to Lab 4, whereyou can set up the application, prior to starting this workshop.
+***PREREQUISITE:*** This workshop uses a simple WebLogic web application that runs on a Kubernetes cluster, as a target application to trace the user transactions. Prior to starting this workshop, be sure to complete the [Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850) workshop Labs 1-4, to set up the application.
 
 > ***NOTE***: The same approach demonstrated for WLS on Kubernetes can be used to configure other types of java application servers, such as Spring Boot, deployed on Kubernetes.
 
@@ -44,7 +44,7 @@ In this workshop, you will:
 
 * An Oracle Free or Paid Cloud Account
 *	Oracle Cloud Account Administrator role or manage apm-domains permission in the target compartment
-*	Completion of the [Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850) workshop, Lab 1 to Lab4.<br>(Labs 5 to 7 are not required for the APM workshop.)
+*	Completion of the [Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850) workshop, Lab 1 to Lab 4.<br>(Labs 5 to 7 are not required for the APM workshop.)
 
 
 
@@ -68,4 +68,4 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-- **Last Updated By/Date** - Yutaka Takatsu, December 2021
+- **Last Updated By/Date** - Yutaka Takatsu, January 2022

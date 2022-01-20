@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will create a file system in the Oracle cloud Infrastructure. You will also create security rules to allow network traffic and mount the file system to the Kubernetes pods.  
+In this lab, you will create a file system in the Oracle Cloud Infrastructure. You will also create security rules to allow network traffic and mount the file system to the Kubernetes pods.  
 
 
 Estimated time: 20 minutes
@@ -30,23 +30,28 @@ Estimated time: 20 minutes
 
    ![Oracle Cloud console, file systems](images/3-1-2-filesystem.png " ")
 
-3.	In the **File System Information** section, click **Edit Details**.
+
+3. On the Create File System page, in the **File System Information** section, click **Edit Details**.
 
    ![Oracle Cloud console, file systems](images/3-1-3-filesystem.png " ")
 
-4.	Enter ***apmlab-fss*** in the **Name** field. Set the same **Availability Domain** and **Compartment** where the cluster is running.  
+4.	On the Create File System page, enter ***apmlab-fss*** into the **Name** field.
+<br><br>
+Then drop down and select the **Availability Domain** and the **Compartment** where the cluster is running. You can find this information in the Cluster page (**Developer Services** > **Kubernetes Clusters (OKE)**).
 
    ![Oracle Cloud console, file systems](images/3-1-4-filesystem.png " ")
 
-5.	At the **Export Information** section verify the **Export Path** is set to /apmlab-fss. This is where the file system will be mounted. You will provision APM Java agent at this location.
 
-6.	At the **Mount Target Information**, click **Edit Details** to expand the section. Click the link **Click here to enable compartment selections**.
+5. Scrolling down the Create File System page, in the **Export Information** section, verify that the **Export Path** is set to /apmlab-fss. This is where the file system will be mounted. You will provision APM Java agent at this location.
+
+6. In the **Mount Target Information** section, click **Edit Details** (upper right side) to expand the section. Then click the link **Click here to enable compartment selections**.
+
 
    ![Oracle Cloud console, file systems](images/3-1-5-filesystem.png " ")
 
-7.	In the **Create in Compartment** field, ensure the same compartment that the cluster uses, is selected.
+7. In the Mount Target Information section, locate the **Create in Compartment** field, ensure the same compartment that the cluster uses, is selected.
 
-8.	Make sure **Create New Mount Target** is selected.  Select the same **Virtual Cloud Network** that the cluster is using. Select ***oke-k8sApiEndpoint-subnet..*** for **Subnet**. Leave the other fields by default and click **Create**.
+8. Next, then check that the **Create New Mount Target** is selected. Select the same **Virtual Cloud Network** that the cluster is using. Select ***oke-k8sApiEndpoint-subnet..*** for **Subnet**. Leave the other fields by default and click **Create**.
 
    ![Oracle Cloud console, file systems](images/3-1-6-filesystem.png " ")
 
@@ -58,14 +63,14 @@ Estimated time: 20 minutes
 
    ![Oracle Cloud console, file systems](images/3-1-8-filesystem.png " ")
 
-10.	Click **Copy** next to the **OCID**. Save the value in a text file on your laptop. Also, note down the **IP Address**. You will need these values in the next steps.
+10.	Click **Copy** next to the **OCID**. Save the value in a text file on your computer. Also, take a note of the **IP Address** as you will need these values in the next steps.
 
    ![Oracle Cloud console, file systems](images/3-1-9-filesystem.png " ")
 
 ## Task 2: Create security rules in the network
 
 
-1.	Point mouse cursor over the **“i”** icon next to **Subnet** and review the message. As the message indicates, security rules must be configured before mounting the file system, and that is what you will be doing the next.
+1. In the Mount Target Information section point your mouse cursor over the **“i”**  icon next to **Subnet** and review the message. As the message indicates, security rules must be configured before mounting the file system, and that is what you will be doing next.
 
    ![Oracle Cloud console, Security Rules](images/3-2-1-securityrules.png " ")
 
@@ -137,8 +142,7 @@ Estimated time: 20 minutes
 
 ## Task 3: Mount the file system to Kubernetes pods
 
-1.	Click the **>..** icon from the top right corner in the Oracle Cloud console, to start the Cloud Shell.
-
+1. Click the **>..**  icon from the top right corner in the Oracle Cloud console menu bar, to start a Cloud Shell environment which will appear at the bottom of your page.
    ![Oracle Cloud console, Menu](images/3-3-1-menu.png " ")
 
     >	***NOTE***: If the Cloud Shell is already running but the window is minimized, you can restore the window by clicking the bar icon or the arrow icon at the toolbar.
@@ -241,7 +245,7 @@ Estimated time: 20 minutes
     vi ~/domain.yaml
     </copy>
     ```
-3.	Find the **volumes:** section. At this point, the section is commented.
+3.	Find the **volumes:** section. At this point, the section is commented out.
 
    ![Oracle Cloud console, Cloud Shell](images/3-3-4-cloudshell.png " ")
 
@@ -335,4 +339,4 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-* **Last Updated By/Date** - Yutaka Takatsu, December 2021
+* **Last Updated By/Date** - Yutaka Takatsu, January 2022

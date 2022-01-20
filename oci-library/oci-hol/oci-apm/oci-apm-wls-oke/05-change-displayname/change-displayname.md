@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this step you will change the display format of the span names that show up in the APM Trace Explorer. By default, display name format is **Domain Name-Host Name-Port-Managed Server Name**. You will change the format to is **Domain Name-Managed Server Name** to leave out the host name and the port.
+In this lab you will change the display format of the span names that show up in the APM Trace Explorer. By default, the display name format is **Domain Name-Host Name-Port-Managed Server Name**. You will change the format to is **Domain Name-Managed Server Name** to leave out the host name and the port.
 
-You will modify the AgentConfig.properites file, located in the APM Agent directory, which resides in the file system associated with the container.  However, because there is no editing tool inside the container, you will copy the file from the container to the Cloud Shell, edit the file, then copy back to the container.
+You will modify the ***AgentConfig.properties*** file, located in the APM Agent directory, which resides in the file system associated with the container.  However, because there is no editing tool inside the container, you will copy the file from the container to the Cloud Shell, edit the file, then copy back to the container.
 
 
 Estimated time: 10 minutes
@@ -107,4 +107,4 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-* **Last Updated By/Date** - Yutaka Takatsu, December 2021
+* **Last Updated By/Date** - Yutaka Takatsu, January 2022

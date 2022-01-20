@@ -41,11 +41,11 @@ Estimated time: 15 minutes
 
    ![Oracle Cloud console, Cloud Shell](images/4-1-4-cloudshell.png " ")
 
-2.	Click the three-bar icon in the Cloud Shell title bar to open the menu. Then select **Upload**.
+2.	Click the navigation menu (three-bar icon) in the Cloud Shell title bar to open the menu. Then select **Upload**.
 
    ![Oracle Cloud console, Cloud Shell](images/4-1-5-cloudshell.png " ")
 
-3.	Click **select from your computer** link and select the Java agent installer file from your laptop. This is the file that you downloaded in the earlier steps.
+3.	Click **select from your computer** link and select the Java agent installer file from your computer. This is the file that you downloaded in the earlier steps.
 
    ![Oracle Cloud console, Browse dialog ](images/4-1-5-browse.png " ")
 
@@ -53,7 +53,7 @@ Estimated time: 15 minutes
 
    ![Oracle Cloud console, Upload ](images/4-1-6-upload.png " ")
 
-5.	Wait for the File Transfer completes.
+5.	Wait for the File Transfer to complete.
 
    ![Oracle Cloud console, Cloud Shell ](images/4-1-7-cloudshell.png " ")
 
@@ -68,7 +68,7 @@ Estimated time: 15 minutes
 
 ## Task 3: Copy the Java Agent installer to the file system
 
-1.	Run the command below to copy the Java Agent installer file to the file system. Ensure to replace the **apm-agent-version** with that of the APM Java Agent you have, before the command execution. 
+1.	Run the command below to copy the Java Agent installer file to the file system. Ensure to replace the **apm-agent-version** with that of the APM Java Agent you have, before the command execution.
 
     ``` bash
     <copy>
@@ -82,7 +82,7 @@ Estimated time: 15 minutes
 
 
 
-2.	Use below kubectl command to remotely access the container in the Kubernetes pod.
+2.	Use the kubectl command below to remotely access the container in the Kubernetes pod.
 
     ``` bash
     <copy>
@@ -258,4 +258,4 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-* **Last Updated By/Date** - Yutaka Takatsu, December 2021
+* **Last Updated By/Date** - Yutaka Takatsu, January 2022
