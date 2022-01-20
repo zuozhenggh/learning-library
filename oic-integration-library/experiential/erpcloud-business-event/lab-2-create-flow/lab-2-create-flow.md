@@ -124,7 +124,7 @@ Use the mapper to drag fields from the source structure (ERP PO event data)  to 
 When we added the ADW invoke to the integration, a map icon was automatically added. 
 
 1. Hover you cursor over the ERP-ADW mapper, and click **Edit**.
-
+    ![](images/create-app-integration08.png)
 
 2.
 
