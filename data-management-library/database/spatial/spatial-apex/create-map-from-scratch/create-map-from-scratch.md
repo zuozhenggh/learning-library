@@ -82,7 +82,9 @@ Estimated Lab Time: XX minutes
 ![Image alt text](images/create-map-29.png)
 
 5. Observe your map render with States and Airports layers. Click and drag the map to pan, and use the navigation control at the top right to zoom in and out. Click on an Airport to see the Info Window that you configured. Turn layers off and on with the checkboxes under the map.
-![Image alt text](images/create-map-30.png)
+
+-- need image here --
+
 
 Congratulations on creating your first map from scratch. In the next Lab you will incorporate spatial analysis into this map.
 
