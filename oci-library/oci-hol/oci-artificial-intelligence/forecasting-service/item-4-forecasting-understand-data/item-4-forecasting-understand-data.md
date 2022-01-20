@@ -44,88 +44,89 @@ The data should contain one timestamp column and other columns for target variab
 
 Currently, our APIs support datasets that can be in one of the following formats:
 
-**1. Single time series without any additional data:**
-Such datasets have only two columns in them. The first column should be a timestamp column and the second column should be the target column.
+1.  Single time series without any additional data:**
+    Such datasets have only two columns in them. The first column should be a timestamp column and the second column should be the target column.
 
-**Here is a sample CSV-formatted data:**
-```csv
-timestamp,target_column
-2020-07-13T00:00:00Z,20
-2020-07-14T00:00:00Z,30
-2020-07-15T00:00:00Z,28
-...
-...
-```
-**2. Multiple time series without any additional data:** 
-The input data can have multiple time series in it(grouped data). For such datasets there must be a column to identify different time-series.
+    **Here is a sample CSV-formatted data:**
+    ```csv
+    timestamp,target_column
+    2020-07-13T00:00:00Z,20
+    2020-07-14T00:00:00Z,30
+    2020-07-15T00:00:00Z,28
+    ...
+    ...
+    ```
+2.  Multiple time series without any additional data:** 
+    The input data can have multiple time series in it(grouped data). For such datasets there must be a column to identify different time-series.
 
-**Here is a sample CSV-formatted data:**
-```csv
-timestamp,target_column,series_id
-2020-07-13T00:00:00Z,20,A
-2020-07-14T00:00:00Z,30,A
-2020-07-15T00:00:00Z,28,A
-....
-....
-2020-07-13T00:00:00Z,40,B
-2020-07-14T00:00:00Z,50,B
-2020-07-15T00:00:00Z,28,B
-....
-....
-2020-07-13T00:00:00Z,10,C
-2020-07-14T00:00:00Z,20,C
-2020-07-15T00:00:00Z,30,C
-....
-....
-``` 
-**3. Time series with additional data:** 
-The input data can have additional influencers that help in forecasting. We call the two datasets as primary and additional. The primary data should have three columns - timestamp, target column and a column for series id. The additional data should have a timestamp column, a series id column and columns for additional influencers.   
+    **Here is a sample CSV-formatted data:**
+    ```csv
+    timestamp,target_column,series_id
+    2020-07-13T00:00:00Z,20,A
+    2020-07-14T00:00:00Z,30,A
+    2020-07-15T00:00:00Z,28,A
+    ....
+    ....
+    2020-07-13T00:00:00Z,40,B
+    2020-07-14T00:00:00Z,50,B
+    2020-07-15T00:00:00Z,28,B
+    ....
+    ....
+    2020-07-13T00:00:00Z,10,C
+    2020-07-14T00:00:00Z,20,C
+    2020-07-15T00:00:00Z,30,C
+    ....
+    ....
+    ``` 
+3.  Time series with additional data:** 
+    The input data can have additional influencers that help in forecasting. We call the two datasets as primary and additional. The primary data should have three columns - timestamp, target column and a column for series id. The additional data should have a timestamp column, a series id column and columns for additional influencers.   
 
-**Here is a sample CSV-formatted data:**
+    **Here is a sample CSV-formatted data:**
 
-Primary data 
-```csv
-timestamp,target_column,series_id
-2020-07-13T00:00:00Z,20,A
-2020-07-14T00:00:00Z,30,A
-2020-07-15T00:00:00Z,28,A
-....
-....
-2020-07-13T00:00:00Z,40,B
-2020-07-14T00:00:00Z,50,B
-2020-07-15T00:00:00Z,28,B
-....
-....
-2020-07-13T00:00:00Z,10,C
-2020-07-14T00:00:00Z,20,C
-2020-07-15T00:00:00Z,30,C
-....
-....
-```
-Additional data 
-```csv
-timestamp,feature_1,series_id
-2020-07-13T00:00:00Z,0,A
-2020-07-14T00:00:00Z,1,A
-2020-07-15T00:00:00Z,2,A
-....
-....
-2020-07-13T00:00:00Z,0,B
-2020-07-14T00:00:00Z,0,B
-2020-07-15T00:00:00Z,1,B
-....
-....
-2020-07-13T00:00:00Z,1,C
-2020-07-14T00:00:00Z,0,C
-2020-07-15T00:00:00Z,0,C
-....
-....
-```
-The service currently accepts *Inline Data* that can be generated from csv files.
-Steps on how to generate inline data from csv files are given in Task 3 below.
-**Note:**
-* Missing values are permitted (with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1).
-* The last row of input data should be an observation and not an empty row. 
+    Primary data 
+    ```csv
+    timestamp,target_column,series_id
+    2020-07-13T00:00:00Z,20,A
+    2020-07-14T00:00:00Z,30,A
+    2020-07-15T00:00:00Z,28,A
+    ....
+    ....
+    2020-07-13T00:00:00Z,40,B
+    2020-07-14T00:00:00Z,50,B
+    2020-07-15T00:00:00Z,28,B
+    ....
+    ....
+    2020-07-13T00:00:00Z,10,C
+    2020-07-14T00:00:00Z,20,C
+    2020-07-15T00:00:00Z,30,C
+    ....
+    ....
+    ```
+    Additional data 
+    ```csv
+    timestamp,feature_1,series_id
+    2020-07-13T00:00:00Z,0,A
+    2020-07-14T00:00:00Z,1,A
+    2020-07-15T00:00:00Z,2,A
+    ....
+    ....
+    2020-07-13T00:00:00Z,0,B
+    2020-07-14T00:00:00Z,0,B
+    2020-07-15T00:00:00Z,1,B
+    ....
+    ....
+    2020-07-13T00:00:00Z,1,C
+    2020-07-14T00:00:00Z,0,C
+    2020-07-15T00:00:00Z,0,C
+    ....
+    ....
+    ```
+    The service currently accepts *Inline Data* that can be generated from csv files.
+    Steps on how to generate inline data from csv files are given in Task 3 below.
+    
+    **Note:**
+    * Missing values are permitted (with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1).
+    * The last row of input data should be an observation and not an empty row. 
 
 ## Task 2: Download Sample Data
 
@@ -144,148 +145,145 @@ Click on upload and then browse to file which you desire to upload:
 
 ## Task 4: Inline Data preparation
 
-### 1 :
-Import below necessary python modules for executing the scripts:
+1.  Import below necessary python modules for executing the scripts:
 
-```Python
-import pandas as pd
-import requests
-import json
-import ast
-import matplotlib.pyplot as plt
-import re
-import os
-import simplejson
-```
+    ```Python
+    import pandas as pd
+    import requests
+    import json
+    import ast
+    import matplotlib.pyplot as plt
+    import re
+    import os
+    import simplejson
+    ```
 
-### 2 :
-You need to load the data in notebook via below mentioned python commands in a data frame
-Specify the correct path for the csv file that has the time series data.
+2.  You need to load the data in notebook via below mentioned python commands in a data frame
+    Specify the correct path for the csv file that has the time series data.
 
-```Python
-df_primary = pd.read_csv('favorita-13-beverages-primary.csv')
-df_add = pd.read_csv('favorita-13-beverages-add.csv')
-```
+    ```Python
+    df_primary = pd.read_csv('favorita-13-beverages-primary.csv')
+    df_add = pd.read_csv('favorita-13-beverages-add.csv')
+    ```
 
-### 3 :
-Convert the date field to "yyyy-mm-dd hh:mm:ss" format with below commands
-Use this link https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior for other date time formats
+3.  Convert the date field to "yyyy-mm-dd hh:mm:ss" format with below commands
+    Use this link https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior for other date time formats
 
-```Python
-# modify date format
-df_primary['date'] = pd.to_datetime(df_primary['date'],
-                                        format='%d/%m/%y').apply(lambda x: str(x))
-# modify date format
-df_add['date'] = pd.to_datetime(df_add['date'],
-                                        format='%d/%m/%y').apply(lambda x: str(x))
-```
+    ```Python
+    # modify date format
+    df_primary['date'] = pd.to_datetime(df_primary['date'],
+                                            format='%d/%m/%y').apply(lambda x: str(x))
+    # modify date format
+    df_add['date'] = pd.to_datetime(df_add['date'],
+                                            format='%d/%m/%y').apply(lambda x: str(x))
+    ```
 
-### 4 :
-#### Setting variables to create forecast with below commands
-- prim_load : is the variable having inline primary data
-- add_load : is the variable having inline additional data 
+4.  Setting variables to create forecast with below commands
+    - prim_load : is the variable having inline primary data
+    - add_load : is the variable having inline additional data 
 
-```Python
-#primary data
-col_order = ['date','sales','item_id']
-prim_load = df_primary[col_order].values.transpose().tolist()
-prim_load
-```
+    ```Python
+    #primary data
+    col_order = ['date','sales','item_id']
+    prim_load = df_primary[col_order].values.transpose().tolist()
+    prim_load
+    ```
 
-```Json
-[['2013-01-01 00:00:00',
-  '2013-01-02 00:00:00',
-  '2013-01-03 00:00:00',
-  '2013-01-04 00:00:00',
-  '2013-01-05 00:00:00',
-  ...],
- [0,
-  767,
-  987,
-  652,
-  1095,
-  ...],
- ['13_BEVERAGES',
-  '13_BEVERAGES',
-  '13_BEVERAGES',
-  '13_BEVERAGES',
-  '13_BEVERAGES',
-  ...]]
-  ```
-  ```Python
-#additional data
-add_cols = ['date','onpromotion','item_id']
-add_load = df_add[add_cols].values.transpose().tolist()
-add_load
-```
+    ```Json
+    [['2013-01-01 00:00:00',
+      '2013-01-02 00:00:00',
+      '2013-01-03 00:00:00',
+      '2013-01-04 00:00:00',
+      '2013-01-05 00:00:00',
+      ...],
+    [0,
+      767,
+      987,
+      652,
+      1095,
+      ...],
+    ['13_BEVERAGES',
+      '13_BEVERAGES',
+      '13_BEVERAGES',
+      '13_BEVERAGES',
+      '13_BEVERAGES',
+      ...]]
+      ```
+      ```Python
+    #additional data
+    add_cols = ['date','onpromotion','item_id']
+    add_load = df_add[add_cols].values.transpose().tolist()
+    add_load
+    ```
 
-```Json
-[['2013-01-01 00:00:00',
-  '2013-01-02 00:00:00',
-  '2013-01-03 00:00:00',
-  '2013-01-04 00:00:00',
-  '2013-01-05 00:00:00',
-  ...],
- [0,
-  0,
-  0,
-  0,
-  0,
-  ...],
- ['13_BEVERAGES',
-  '13_BEVERAGES',
-  '13_BEVERAGES',
-  '13_BEVERAGES',
-  '13_BEVERAGES',
-  ...]]
-  ```
+    ```Json
+    [['2013-01-01 00:00:00',
+      '2013-01-02 00:00:00',
+      '2013-01-03 00:00:00',
+      '2013-01-04 00:00:00',
+      '2013-01-05 00:00:00',
+      ...],
+    [0,
+      0,
+      0,
+      0,
+      0,
+      ...],
+    ['13_BEVERAGES',
+      '13_BEVERAGES',
+      '13_BEVERAGES',
+      '13_BEVERAGES',
+      '13_BEVERAGES',
+      ...]]
+      ```
 
 
 ## Task 5 : Create Project ID 
-Once, the data is prepared , you  will learn how to create the forecasting service project.
-In the payload:
-- compartmentId  will be same as tenancy id. Please visit Lab1 API Key generation.  
-- displayName can be given any custom name
-- description can be customized
+  Once, the data is prepared , you  will learn how to create the forecasting service project.
 
-```Python
-url = "https://forecasting.---------------------.oraclecloud.com/20220101/projects"
+  In the payload:
+  * compartmentId  will be same as tenancy id. Please visit Lab1 API Key generation.  
+  * displayName can be given any custom name
+  * description can be customized
 
-payload = json.dumps({
-  "displayName": "Forecast API Demo",
-  "compartmentId": "ocid-------------------",
-  "description": "Forecasting service API Demo",
-  "freeformTags": None,
-  "definedTags": None,
-  "systemTags": None
-})
-headers = {
-  'Content-Type': 'application/json'
-}
-response = requests.request("POST", url, headers=headers, data=payload, auth=auth)
-```
-We store the response 
-```Python
-create_project_response = json.loads(response.text)
-create_project_response
-```
+    ```Python
+    url = "https://forecasting.---------------------.oraclecloud.com/20220101/projects"
 
-```Json
-{"id":"ocid.forecastproject..-----------",
-"displayName":"Forecast API Demo",
-"compartmentId":"ocid.tenancy.----------",
-"description":"Forecasting service API Demo",
-"timeCreated":"2021-11-18T05:18:58.737Z",
-"timeUpdated":"2021-11-18T05:18:58.737Z",
-"lifecycleState":"ACTIVE",
-"freeformTags":{},
-"definedTags":{"Oracle-Tags":{"CreatedBy":"demo_user_2","CreatedOn":"2021-11-18T05:18:58.568Z"}},"systemTags":{}}
-```
-We store the compartment id and project id which will be used when calling create forecast API. 
-```Python
-project_id = create_project_response['id']
-compartment_id = create_project_response['compartmentId']
-```
+    payload = json.dumps({
+      "displayName": "Forecast API Demo",
+      "compartmentId": "ocid-------------------",
+      "description": "Forecasting service API Demo",
+      "freeformTags": None,
+      "definedTags": None,
+      "systemTags": None
+    })
+    headers = {
+      'Content-Type': 'application/json'
+    }
+    response = requests.request("POST", url, headers=headers, data=payload, auth=auth)
+    ```
+    We store the response using below command :
+    ```Python
+    create_project_response = json.loads(response.text)
+    create_project_response
+    ```
+
+    ```Json
+    {"id":"ocid.forecastproject..-----------",
+    "displayName":"Forecast API Demo",
+    "compartmentId":"ocid.tenancy.----------",
+    "description":"Forecasting service API Demo",
+    "timeCreated":"2021-11-18T05:18:58.737Z",
+    "timeUpdated":"2021-11-18T05:18:58.737Z",
+    "lifecycleState":"ACTIVE",
+    "freeformTags":{},
+    "definedTags":{"Oracle-Tags":{"CreatedBy":"demo_user_2","CreatedOn":"2021-11-18T05:18:58.568Z"}},"systemTags":{}}
+    ```
+    We store the compartment id and project id which will be used when calling create forecast API using below command:
+    ```Python
+    project_id = create_project_response['id']
+    compartment_id = create_project_response['compartmentId']
+    ```
 
 
 **Note** : It is not needed to create new projects everytime we run this notebook. A project id once created can be used again and again.
@@ -301,4 +299,4 @@ You may now proceed to the next lab
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, January 2022
+    * Last Updated By/Date: Ravijeet Kumar, 19th-January 2022

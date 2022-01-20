@@ -160,7 +160,8 @@ This lab assumes that you have:
     ```
     $ <copy>mkdir -p ~/labs/19cnf</copy>
     $ <copy>cd ~/labs/19cnf</copy>
-    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/69xu1SJ57wn73nV-T9dsSTDyY-w71d2o4iCoNkM2ceW9-rkqPFUqCbp7LeFwXQje/n/c4u04/b/labfiles/o/19cnf-lab-files.zip</copy>
+    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/oEnGreIEZra0-AyqOwJaNWdTnuclhymdqZwu4dxFIHyXKXRQrdalUkMZVJ9KvR_g/n/c4u04/b/II-19c/o/19c-new-features-lab-files.zip</copy>
+    $ <copy>mv 19c-new-features-lab-files.zip ./19cnf-lab-files.zip</copy>
     $ <copy>unzip -q 19cnf-lab-files.zip</copy>
     $ <copy>chmod -R +x ~/labs/19cnf</copy>
     $ <copy>ls -an</copy>
@@ -191,4 +192,4 @@ To restore one or more of your lab files on your `workshop-installed` compute in
 ## Acknowledgements
 
 - **Author**- Jody Glover, Principal User Assistance Developer, Database Development
-- **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, December 13 2021
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialist Hub, December 13 2021
