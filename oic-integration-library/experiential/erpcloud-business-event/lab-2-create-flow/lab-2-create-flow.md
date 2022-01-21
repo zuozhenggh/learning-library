@@ -9,7 +9,7 @@ You will demo the following:
 - Define ERP Purchase Order (PO) Event trigger
 - Add the ADW invoke activity
 - Map data between ERP trigger and ADW invoke
-- Define the Tracking Fields
+- Define Tracking Fields
 - Activate the integration
 
 
@@ -105,7 +105,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | Available | **PURCHASEORDERS** and click **>** to move the table to the *Selected* column |
     |
 
-    ![](images/create-app-integration06.png)
+    <img src="images/create-app-integration06.png" width="400">
 
 4. Click on **Import Tables**, wait and hit **Next**.
 
@@ -149,13 +149,41 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
     |
 
     <img src="images/create-app-integration09.png" width="500">
-3.
 
-4.
+3. Click **Validate**, then wait for the confirmation message *Mapping is valid and ready to use.*
 
-5.
+4. Click **Close**
 
-6.
-
+5. Click **Save** to persist changes. 
 
 
+## Task 5: Define Tracking Fields
+Manage business identifiers that enable you to track fields in messages during runtime. 
+
+A number icon is displayed at the top of the Integration canvas when identifiers have not been set. 
+
+1. Click the <img src="images/icon-actions-menu.png" width="20"> menu on the top right, then select **Tracking**.
+    <img src="images/create-app-integration11.png" width="200">
+
+2. From the *Source* section, expand **getPurchaseOrderResponse** > **result**, click **Load more**, expand **Value**, and click **Load more**. Drag the below fields from ERP PO source to the *Drag a trigger field here* sections:
+    - POHeaderId (primary)
+    - OrderNumber
+
+    ![](images/create-app-integration12.png)
+
+3. Click **Save**. 
+
+4. On the Integration canvas, click **Save**, followed by **Close**.
+
+## Task 6: Activate the integration
+
+1. On the *Integrations* page, go to the row of the integration to activate. Click on the <img src="images/icon-integration-activation.png" width="20"> icon to activate the integration.
+
+2. On the *Activate Integration* dialog, select **Enable Tracing**, followed by **Include Payload** options. 
+
+3. Click **Activate**.
+    
+    The activation will complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to *Active*. 
+
+
+You have completed the final step of Lab 2. Please proceed to the next lab. 
