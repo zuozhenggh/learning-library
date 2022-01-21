@@ -29,7 +29,7 @@ This lab assumes you have -
     - Enterprise Manager - Management server (OMS)
     - Enterprise Manager - Management Agent (emagent)
 
-2. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+2. On the *Web Browser* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and provide the credentials below to login.
 
     ```
     User name: <copy>sysman</copy>
@@ -47,7 +47,7 @@ This lab assumes you have -
 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
-4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
+4. If you are still unable to login or the login page is not functioning after reloading from the desktop icon *Get Started with your Workshop*, open a terminal session and proceed as indicated below to validate the services.
 
     - Database services (All databases and Standard Listener)
 
