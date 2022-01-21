@@ -123,10 +123,33 @@ Use the mapper to drag fields from the source structure (ERP PO event data)  to 
 
 When we added the ADW invoke to the integration, a map icon was automatically added. 
 
-1. Hover you cursor over the ERP-ADW mapper, and click **Edit**.
+1. Hover you cursor over the ERP-ADW **Mapper** icon, and click **Edit**.
     ![](images/create-app-integration08.png)
 
-2.
+2. Use the mapper to drag element nodes in the source ERP Cloud structure to element nodes in the target Oracle ADW structure.
+
+    Expand the Source node:
+
+        ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 <sequence> > Value
+
+    Expand the Target node:
+
+        ADW_InsertPO Request > Purchaseorders
+
+    Complete the mapping as below:    
+
+    | **Source** *(ERP_POCreateEvent)*        | **Target** *(ADW_InsertPO)* |
+    | --- | ----------- |
+    | PO Header Id | poheaderid |
+    | Order Number | ordernumber |
+    | Sold To Legal Entity Id | soldtolegalentityid |
+    | Creation Date | creationdate |
+    | Document Status | status |
+    | Total Amount | total |
+    |
+
+    ![](images/create-app-integration09.png)
+
 
 3.
 
