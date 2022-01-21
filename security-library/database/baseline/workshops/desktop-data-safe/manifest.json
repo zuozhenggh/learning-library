@@ -1,12 +1,12 @@
 {
-  "workshoptitle": "DB Security - Database Assessment Tool",
+  "workshoptitle": "DB Security - Data Safe",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
       "description": "Understand the architecture of this workshop and what it can do",
       "publisheddate": "09/01/2020",
-      "filename": "../../intro/intro-dbsat.md"
+      "filename": "../../intro/intro-data-safe.md"
     },
     {
       "title": "Get Started with noVNC Remote Desktop",
