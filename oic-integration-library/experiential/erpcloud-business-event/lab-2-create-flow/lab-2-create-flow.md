@@ -82,7 +82,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
 
 1. Hover you cursor over the **+** sign that is displayed after the trigger activity in the integration canvas. Click the **+** sign and select the ADW connection created in Lab 1. 
 
-    ![](images/create-app-integration05.png)
+    <img src="images/create-app-integration05.png" width="400">
 
     This invokes the Oracle Autonomous Data Warehouse Endpoint Configuration Wizard.
 
@@ -124,7 +124,7 @@ Use the mapper to drag fields from the source structure (ERP PO event data)  to 
 When we added the ADW invoke to the integration, a map icon was automatically added. 
 
 1. Hover you cursor over the ERP-ADW **Mapper** icon, and click **Edit**.
-    ![](images/create-app-integration08.png)
+    <img src="images/create-app-integration08.png" width="500">
 
 2. Use the mapper to drag element nodes in the source ERP Cloud structure to element nodes in the target Oracle ADW structure.
 
@@ -148,9 +148,7 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
     | Total Amount | total |
     |
 
-    ![](images/create-app-integration09.png)
-
-
+    <img src="images/create-app-integration09.png" width="500">
 3.
 
 4.
