@@ -1,4 +1,4 @@
--- Last Updated: Oct 11, 2021
+-- Last Updated: January 18, 2022
 
 1. training-dcat-compartment Compartment OCID:
 
@@ -6,17 +6,8 @@
 
 3. Tenancy OCID:
 
-4. Region-Identifier:
+4. Region-Identifier (Region shown on Console banner where your Data Catalog is deployed):
 
 5. Data Catalog Data Lake (data asset) Key:
 
 6. User OCID:
-
-
-
-
-
-
-
-
-
