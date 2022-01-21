@@ -652,7 +652,7 @@ You can save the python objects you create in one python session and load them i
 	The output is similar to the following:
 	![list of python model proxy objects in a datastore.](images/model-object-datastore.png)
 
-	- Run the following script to load the named python object from the datastore into the global workspace.
+	- Run the following script to load the named python object from the datastore into the user's workspace.
 	```
 	<copy>
 	%python
