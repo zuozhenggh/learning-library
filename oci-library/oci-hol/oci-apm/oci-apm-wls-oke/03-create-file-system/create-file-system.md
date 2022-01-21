@@ -5,7 +5,7 @@
 In this lab, you will create a file system in the Oracle Cloud Infrastructure. You will also create security rules to allow network traffic and mount the file system to the Kubernetes pods.  
 
 
-Estimated time: 20 minutes
+Estimated time: 30 minutes
 
 ### Objectives
 * Create a file system in the Oracle Cloud
@@ -104,9 +104,9 @@ Then drop down and select the **Availability Domain** and the **Compartment** wh
 
    ![Oracle Cloud console, Security Rules](images/3-2-6-securityrules.png " ")
 
-6.	Create additional rules for **TCP** destination port **2048**, **2049** and **2050**. Use the same values with the rule created above except for the **Destination Port Range**.
+6.	Click **+ Another Ingress Rule** button and create additional rules for **TCP** destination port **2048**, **2049** and **2050**. Use the same values with the rule created above except for the **Destination Port Range**.
 
-7.	Create security rules for **UDP** destination port **111** and **2048**.  
+7.	Create security rules for **UDP** destination port **111** and **2048**. <br><br> Click **Add Ingress Rules** button which creates 6 ingress rules in the security list.
 
    ![Oracle Cloud console, Security Rules](images/3-2-7-securityrules.png " ")
 
@@ -195,7 +195,7 @@ Then drop down and select the **Availability Domain** and the **Compartment** wh
           mountOptions:
             - nosuid
           nfs:
-            server:<Server IP of your Mount Target>
+            server: <Server IP of your Mount Target>
             path: "/apmlab-fss"
             readOnly: false
         ---
@@ -274,7 +274,7 @@ Then drop down and select the **Availability Domain** and the **Compartment** wh
     ```
    ![Oracle Cloud console, Cloud Shell](images/3-3-6-cloudshell.png " ")
 
-6.	Run the following command to ensure the pods are in the running state. You may need to wait for few minutes to see the status updated.
+6.	Run the following command to ensure the pods are in the running state. You may need to wait for a few minutes to see all the pods are restarted and their status updated.
 
     ``` bash
     <copy>

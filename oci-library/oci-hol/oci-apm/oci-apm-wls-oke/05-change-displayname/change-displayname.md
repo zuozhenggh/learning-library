@@ -96,7 +96,7 @@ Estimated time: 10 minutes
    ![Oracle Cloud console, Cloud Shell](images/5-3-1-cloudshell.png " ")
    ![Oracle Cloud console, Cloud Shell](images/5-3-2-cloudshell.png " ")
 
-
+5. type exit and return to the Cloud Shell. 
 
 
 You may now [proceed to the next lab](#next).

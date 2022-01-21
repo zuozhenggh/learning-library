@@ -13,7 +13,7 @@ However, this method assumes you have administrator access to the Docker working
 > ***NOTE***: The same approach demonstrated for WLS on Kubernetes can be used to configure other types of java application servers, such as Spring Boot, deployed on Kubernetes.
 
 
-Estimated Workshop Time: 75 minutes
+Estimated Workshop Time: 90 minutes
 
 ### About Oracle Cloud Infrastructure Application Performance Management (OCI APM)
 

@@ -4,7 +4,7 @@
 
 In this lab, you will download the APM Java Agent installer file from the Oracle Cloud console, upload it to the Oracle Cloud shell, transfer to the Kubernetes container, provision the Java Agent to the file system, and finally deploy the Agent to the WebLogic Server.
 
-Estimated time: 15 minutes
+Estimated time: 20 minutes
 
 ### Objectives
 * Download the APM Java Agent from the Oracle Cloud console
