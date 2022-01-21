@@ -150,7 +150,7 @@ In this example, use shape, describe and crosstab functions to explore and view 
 	</copy>
 	```
 	![Crosstab of attribute AFFINITY_CARD.](images/crosstab-affinity-card.png)
-4. Run the following script to view the distribution `HOUSEHOLD_SIZE` according to `AFFINITY_CARD` responders with the following setting. Click on the **Bar chart**, then click on **settings**. Drag the fields to titles as `HOUSEHOLD_SIZE` to **keys**, `AFFINITY_CARDS`  to **groups**, and count to **values**. Click on **Stacked** to get the required view.
+4. Run the following script to view the distribution of `HOUSEHOLD_SIZE` according to `AFFINITY_CARD` responders with the following setting. Click on the **Bar chart**, then click on **settings**. Drag the fields to titles as `HOUSEHOLD_SIZE` to **keys**, `AFFINITY_CARDS`  to **groups**, and count to **values**. Click on **Stacked** to get the required view.
 	```
 	<copy>
 	%python
