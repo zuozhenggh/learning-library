@@ -22,7 +22,7 @@ Estimated lab time: 45 minutes
 
 ### Homework Submission Process
 
-    To complete the homework assignment, run through this lab in its completion. In the last section of the lab, you will have to insert your own information into the employees table and run some queries against the tables. You will need to take a screenshot of the statements you created, as well as the results. Save as a PDF file, and upload the PDF file to Blackboard. If you complete all sections of this lab, you will not have any problems completing this homework. If you do run into problems, please review the session 2 lecture material or refer to the **Need Help?** section in the Contents menu on the left.  
+To complete the homework assignment, run through this lab in its completion. In the last section of the lab, you will have to insert your own information into the employees table and run some queries against the tables. You will need to take a screenshot of the statements you created, as well as the results. Save as a PDF file, and upload the PDF file to Blackboard. If you complete all sections of this lab, you will not have any problems completing this homework. If you do run into problems, please review the session 2 lecture material or refer to the **Need Help?** section in the Contents menu on the left.  
 
 
 ### Prerequisites
@@ -46,9 +46,13 @@ Estimated lab time: 45 minutes
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
-5. Each student has been granted their own compartment.  This is a logical area that only they have the privleges to update.  Before creating the Autonomous Database, locate your compartment by the student number you were assigned.  This student number is available in Blackboard.  If you don't know your student number, click on the **Need Help?** lab.  Select your compartment under the Spring 2022 section.
+5. Select your compartment under the Spring 2022 section.
 
     ![](./images/compartment.png " ")
+
+6. Click on the database you created in lab 1
+   
+    ![](./images/adb-compartment.png " ")
     
 ## Task 2: Connect with SQL Worksheet
 
@@ -88,49 +92,53 @@ We will be creating a basic company database application to store and manage dif
     -	the email must be UNIQUE – no duplicate email addresses
 
 2. Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement).
-
+    ```
     <copy>CREATE TABLE employees
-    ( employee_id    NUMBER(6)
-    , first_name     VARCHAR2(20)
-    , last_name      VARCHAR2(25)
-	 CONSTRAINT     emp_last_name_nn  NOT NULL
-    , email          VARCHAR2(25)
-	CONSTRAINT     emp_email_nn  NOT NULL
-    , phone_number   VARCHAR2(20)
-    , hire_date      DATE
-	CONSTRAINT     emp_hire_date_nn  NOT NULL
-    , job_id         VARCHAR2(10)
-	CONSTRAINT     emp_job_nn  NOT NULL
-    , salary         NUMBER(8,2)
-    , commission_pct NUMBER(2,2)
-    , manager_id     NUMBER(6)
-    , department_id  NUMBER(4)
-    , CONSTRAINT     emp_salary_min
-                     CHECK (salary > 0) 
-    , CONSTRAINT     emp_email_uk
-                     UNIQUE (email)
-    ) ;</copy>
+        ( employee_id    NUMBER(6)
+        , first_name     VARCHAR2(20)
+        , last_name      VARCHAR2(25)
+        CONSTRAINT     emp_last_name_nn  NOT NULL
+        , email          VARCHAR2(25)
+        CONSTRAINT     emp_email_nn  NOT NULL
+        , phone_number   VARCHAR2(20)
+        , hire_date      DATE
+        CONSTRAINT     emp_hire_date_nn  NOT NULL
+        , job_id         VARCHAR2(10)
+        CONSTRAINT     emp_job_nn  NOT NULL
+        , salary         NUMBER(8,2)
+        , commission_pct NUMBER(2,2)
+        , manager_id     NUMBER(6)
+        , department_id  NUMBER(4)
+        , CONSTRAINT     emp_salary_min
+                        CHECK (salary > 0) 
+        , CONSTRAINT     emp_email_uk
+                        UNIQUE (email)
+        ) ;
+    </copy> 	
+    
+    ``` 
 
-    Your results should look similar to this:
+Your results should look similar to this:
 
-        ![](./images/create-tables-employees.png " ")
+![](./images/create-tables-employees.png " ")     
 
-    In the create table statement we did not specify that employee_id should be UNIQUE because we will do that by creating a UNIQUE index on the employee_id. In this case we use an index because most of the time the access to this table will be through the employee_id so we want to make sure we have that column indexed as well as making it UNIQUE. 
+3. In the create table statement we did not specify that employee_id should be UNIQUE because we will do that by creating a UNIQUE index on the employee_id. In this case we use an index because most of the time the access to this table will be through the employee_id so we want to make sure we have that column indexed as well as making it UNIQUE. 
 
-2. Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
-
-
+    Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
+    ```
     <copy>CREATE UNIQUE INDEX emp_emp_id_pk
-    ON employees (employee_id);</copy>
-
+    ON employees (employee_id);
+    </copy> 	
+    
+    ``` 
     Your results should look similar to this:
 
-    ![](./images/create-unique-index.png " ")
+ ![](./images/create-unique-index.png " ")     
 
-3. Next create the DEPARTMENTS table. Like with EMPLOYEES there is a constraint that the department_name not be NULL, so when inserting data into this table, unless department_name has a value, the insert will fail.
+4. Next create the DEPARTMENTS table. Like with EMPLOYEES there is a constraint that the department_name not be NULL, so when inserting data into this table, unless department_name has a value, the insert will fail.
 
-4. Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
-
+    Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
+    ```
     <copy>CREATE TABLE departments
     ( department_id    NUMBER(4)
     , department_name  VARCHAR2(30)
@@ -138,6 +146,7 @@ We will be creating a basic company database application to store and manage dif
     , manager_id       NUMBER(6)
     , location_id      NUMBER(4)
     ) ;</copy>
+    ```
 
     Your results should look similar to this:
 
@@ -145,21 +154,22 @@ We will be creating a basic company database application to store and manage dif
 
 5. As with EMPLOYEES make sure department_id is unique so there are no duplicate department in the company, so we will create a UNIQUE index on department_id. 
 Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
-
+    ```
    <copy>CREATE UNIQUE INDEX dept_id_pk
     ON departments (department_id);</copy>
+    ```
 
     Your results should look similar to this:
 
     ![](./images/create-unique-index-dept.png " ")
 
-6. For the next several table creations, please follow the same process as above for the table creation. Copy the statements below and paste them into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting each piece of code. To run the code click green arrow circle (Run Statement). 
+For the next several table creations, please follow the same process as above for the table creation. Copy the statements below and paste them into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting each piece of code. To run the code click green arrow circle (Run Statement). 
 
-7. As you are creating the tables, examine the constraints that are being created with each and see if they make sense to have or if they are unnecessary? If you have any specific ideas you want to share, please share them on our next session.
+As you are creating the tables, examine the constraints that are being created with each and see if they make sense to have or if they are unnecessary? If you have any specific ideas you want to share, please share them on our next session.
 
-8. Create the JOBS table
-
-    <copy>CREATE TABLE jobs
+6. Create the JOBS table
+    ```
+<copy>CREATE TABLE jobs
     ( job_id         VARCHAR2(10)
     , job_title      VARCHAR2(35)
     CONSTRAINT     job_title_nn  NOT NULL
@@ -167,58 +177,65 @@ Copy the statement below and paste it into SQL Worksheet. Make sure to erase any
     , max_salary     NUMBER(6)
     ) ;</copy>
 
-9. Create a unique index on the jobs table to avoid duplicate job id’s.
-
+    ```
+    Create a unique index on the jobs table to avoid duplicate job id’s.
+    ```
     <copy>CREATE UNIQUE INDEX job_id_pk 
     ON jobs (job_id) ;</copy>
-
-10. Create the REGIONS table
-
+    ```
+7. Create the REGIONS table
+    ```
     <copy>CREATE TABLE regions
-        ( region_id      NUMBER 
-        CONSTRAINT  region_id_nn NOT NULL 
-        , region_name    VARCHAR2(25) 
-        );</copy>
+    ( region_id      NUMBER 
+    CONSTRAINT  region_id_nn NOT NULL 
+    , region_name    VARCHAR2(25) 
+    );</copy>
 
-11. Create a unique index on the regions table to avoid duplicate region id’s.
+    ```
+
+    Create a unique index on the locations table to avoid duplicate region id’s.
 
     <copy>CREATE UNIQUE INDEX reg_id_pk
     ON regions (region_id);</copy>
 
-12. Create the COUNTRIES table
+8. Create the COUNTRIES table
+    ```
+    CREATE TABLE countries 
+    ( country_id      CHAR(2) 
+    CONSTRAINT  country_id_nn NOT NULL 
+    , country_name    VARCHAR2(40) 
+    , region_id       NUMBER 
+    , CONSTRAINT     country_c_id_pk 
+        PRIMARY KEY (country_id) 
+    );</copy>
+    ```
 
-    <copy>CREATE TABLE countries 
-        ( country_id      CHAR(2) 
-        CONSTRAINT  country_id_nn NOT NULL 
-        , country_name    VARCHAR2(40) 
-        , region_id       NUMBER 
-        , CONSTRAINT     country_c_id_pk 
-                    PRIMARY KEY (country_id) 
-        );</copy>
-
-13. Create the LOCATIONS table
-
+9. Create the LOCATIONS table
+    ```
     <copy>CREATE TABLE locations
-        ( location_id    NUMBER(4)
-        , street_address VARCHAR2(40)
-        , postal_code    VARCHAR2(12)
-        , city       VARCHAR2(30)
-        CONSTRAINT     loc_city_nn  NOT NULL
-        , state_province VARCHAR2(25)
-        , country_id     CHAR(2)
-        ) ;</copy>
+    ( location_id    NUMBER(4)
+    , street_address VARCHAR2(40)
+    , postal_code    VARCHAR2(12)
+    , city       VARCHAR2(30)
+    CONSTRAINT     loc_city_nn  NOT NULL
+    , state_province VARCHAR2(25)
+    , country_id     CHAR(2)
+    ) ;</copy>
+    ```
 
-14. Create a unique index on the regions table to avoid duplicate location id’s
-
+10. Create a unique index on the regions table to avoid duplicate location id’s
+    ```
     <copy>CREATE UNIQUE INDEX loc_id_pk
     ON locations (location_id);</copy>
 
-15. Let’s create the JOB_HISTORY table which has some different requirements than the other tables we have created so far. First, we don’t want any null values in any of the fields. We want to make sure the information is as complete and accurate as possible, so we have NOT NULL constraints on most columns. Notice department_id has no such constraint because if a department disappears with a NOT NULL constraint you would be forced to put an invalid department number in that field.
+    ```
+
+Let’s create the JOB_HISTORY table which has some different requirements than the other tables we have created so far. First, we don’t want any null values in any of the fields. We want to make sure the information is as complete and accurate as possible, so we have NOT NULL constraints on most columns. Notice department_id has no such constraint because if a department disappears with a NOT NULL constraint you would be forced to put an invalid department number in that field.
     
 More interesting is the constraint placed on the table on the last clause. There is a constraint placed on the table, not on a particular column using the CHECK operator that compares the end_date with the start_date to make sure the end_date is later than the start_date. It would be pretty hard to end a job before you start it! This is an example of a table level constraint vs a column level constraint.
 
-16. Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
-
+11.  Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
+    ```
     <copy>CREATE TABLE job_history
         ( employee_id   NUMBER(6)
         CONSTRAINT    jhist_employee_nn  NOT NULL
@@ -232,18 +249,21 @@ More interesting is the constraint placed on the table on the last clause. There
         , CONSTRAINT    jhist_date_interval
         CHECK (end_date > start_date)
         ) ;</copy>
+    ```
 
-Your results should look similar to this:
+    Your results should look similar to this:
 
     ![](./images/create-table-job-history.png " ")
 
-17. What about a unique index on this table? Should it be on employee_id? What if you worked for the same company twice, at different times? If you have a unique index on employee_id you will not be able to enter that employee into this table more than once. Instead create a composite column unique index. We will select two columns from the table that will guarantee that there are no duplicate entries in the table, but that allow a returning employee’s information to be put into this table.
+What about a unique index on this table? Should it be on employee_id? What if you worked for the same company twice, at different times? If you have a unique index on employee_id you will not be able to enter that employee into this table more than once. Instead create a composite column unique index. We will select two columns from the table that will guarantee that there are no duplicate entries in the table, but that allow a returning employee’s information to be put into this table.
     
-In this case we will use the employees start_date along with the employee_id to create a unique index on the table. Run the statement below like you have been running the previous statements.
+12. In this case we will use the employees start_date along with the employee_id to create a unique index on the table. Run the statement below like you have been running the previous statements.
+    ```
     <copy>CREATE UNIQUE INDEX jhist_emp_id_st_date_pk 
     ON job_history (employee_id, start_date);</copy>
+    ```
 
-Your results should look similar to this:
+    Your results should look similar to this:
 
     ![](./images/create-unique-index-job-history.png " ")
 
@@ -258,42 +278,46 @@ For this lab we provide you with the relationships.
 
 1. Starting with the jobs table, create a primary key on the job_id column, because other tables will be checking that a particular job_id exists and will do so by relating their job_id columns to the jobs job_id column. Once a table is created, for updating the definition of a table the ALTER TABLE command is used. So we will alter the table jobs and add the constraint.
 
-2. Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
-
+    Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
+    ```
     <copy>ALTER TABLE jobs
     ADD ( CONSTRAINT job_id_pk
                 PRIMARY KEY(job_id)
     );</copy>
-
-Your results should look similar to this:
+    ```  
+    Your results should look similar to this:
 
     ![](./images/alter-table-jobs.png " ")
 
-3. Create a primary key constraint on the regions table for the region_id column.
-
+2. Create a primary key constraint on the regions table for the region_id column.
+    ```
     <copy>ALTER TABLE regions
     ADD ( CONSTRAINT reg_id_pk
                 PRIMARY KEY (region_id)
     );</copy>
+    ```
+    Your results should look similar to this:   
 
     ![](./images/alter-table-regions.png " ")
 
-4. For the countries table we are now going to create a foreign key that references the primary key we just created in the regions table. What this accomplishes is that any time a value is inserted into the region_id of the countries table, the database will check the region_id column in the regions table to see if the value being inserted already exists. If the value does not exist in the regions table, the insert into the countries table will fail. 
+3. For the countries table we are now going to create a foreign key that references the primary key we just created in the regions table. What this accomplishes is that any time a value is inserted into the region_id of the countries table, the database will check the region_id column in the regions table to see if the value being inserted already exists. If the value does not exist in the regions table, the insert into the countries table will fail. 
    
-5. Run the following statement on SQL like you have been doing with the other statements. 
-
+    Run the following statement on SQL like you have been doing with the other statements. 
+    ```
     <copy>ALTER TABLE countries
     ADD ( CONSTRAINT countr_reg_fk
                 FOREIGN KEY (region_id)
                 REFERENCES regions(region_id) 
     );</copy>
-
+    ``` 
+    Your results should look similar to this:   
+  
     ![](./images/alter-table-countries.png " ")
 
-6. For the locations table we will be adding two constraints. The first is a primary key constraint on the location_id so other tables can relate to the locations table. At the same time we will add a foreign key constraint to the table country_id column that relates it to the country_id column in the countries table. So no new locations can be added to the locations table without there being a valid country_id associated with it as verified by the existence of that country_id in the countries table (country_id column). 
+4. For the locations table we will be adding two constraints. The first is a primary key constraint on the location_id so other tables can relate to the locations table. At the same time we will add a foreign key constraint to the table country_id column that relates it to the country_id column in the countries table. So no new locations can be added to the locations table without there being a valid country_id associated with it as verified by the existence of that country_id in the countries table (country_id column). 
    
-7. Run the following statement:
-
+    Run the following statement:
+    ```
     <copy>ALTER TABLE locations
     ADD ( CONSTRAINT loc_id_pk
                 PRIMARY KEY (location_id)
@@ -301,11 +325,13 @@ Your results should look similar to this:
                 FOREIGN KEY (country_id)
                 REFERENCES countries(country_id) 
     );</copy>
-
+    ```
     ![](./images/alter-table-locations.png " ")
 
-8. Similarly the departments table will have a primary key on the department_id column and a foreign key on the location_id column relating the two tables through the location_id columns respectively. 
-Run the following statement:
+5. Similarly the departments table will have a primary key on the department_id column and a foreign key on the location_id column relating the two tables through the location_id columns respectively. 
+   
+    Run the following statement:
+    ```    
     <copy>ALTER TABLE departments
     ADD ( CONSTRAINT dept_id_pk
                 PRIMARY KEY (department_id)
@@ -313,13 +339,13 @@ Run the following statement:
                 FOREIGN KEY (location_id)
                 REFERENCES locations (location_id)
     );</copy>
-
+    ```
     ![](./images/alter-table-dept.png " ")
 
-9. The employees table has a primary key and several foreign key constraints. When inserting employee information into the table you want to make sure the information is as complete and accurate as possible. We want to ensure that employee_id is unique, that the department_id, job_id, and manager_id for the employee exist, so all these columns will have foreign key constraints relating them to the corresponding column on the appropriate tables. 
+6. The employees table has a primary key and several foreign key constraints. When inserting employee information into the table you want to make sure the information is as complete and accurate as possible. We want to ensure that employee_id is unique, that the department_id, job_id, and manager_id for the employee exist, so all these columns will have foreign key constraints relating them to the corresponding column on the appropriate tables. 
     
-10. Run the following statement:
-
+    Run the following statement:
+    ```
     <copy>ALTER TABLE employees
     ADD ( CONSTRAINT     emp_emp_id_pk
                         PRIMARY KEY (employee_id)
@@ -333,13 +359,14 @@ Run the following statement:
                         FOREIGN KEY (manager_id)
                         REFERENCES employees
     );</copy>
+    ```
 
     ![](./images/alter-table-employees.png " ")
 
-11. Our last table is job_history. When we created this table we already specified some constraints such as start_date must be before end_date. Like with the employees table, when we populate this table we need to make sure the information is complete and accurate by verifying against existing information in related tables. We create a composite primary key, like we created a composite unique index on the table comprising of employee_id and start_date, again think of a returning employee that could cause duplicate entries in the table. Then we create relationships to job_id, employee_id, and department_id on the corresponding tables.
+7. Our last table is job_history. When we created this table we already specified some constraints such as start_date must be before end_date. Like with the employees table, when we populate this table we need to make sure the information is complete and accurate by verifying against existing information in related tables. We create a composite primary key, like we created a composite unique index on the table comprising of employee_id and start_date, again think of a returning employee that could cause duplicate entries in the table. Then we create relationships to job_id, employee_id, and department_id on the corresponding tables.
 
-12. Run the following statement:
-
+    Run the following statement:
+    ```
     <copy>ALTER TABLE job_history
     ADD ( CONSTRAINT jhist_emp_id_st_date_pk
         PRIMARY KEY (employee_id, start_date)
@@ -353,6 +380,7 @@ Run the following statement:
                         FOREIGN KEY (department_id)
                         REFERENCES departments
         ) ;</copy>
+    ```
 
     ![](./images/alter-table-job-history.png " ")
 
@@ -361,10 +389,10 @@ Run the following statement:
 
 Now that we have create tables we need to load some data into them. There are many ways to load data into database tables but the simplest is to insert a row into a table. For each table we will insert data with the INSERT command. Notice that the syntax we are using does not include the column names we are inserting the data into, so there must be a one-to-one match between the values between parenthesis and the corresponding columns in the tables. If there was not a one-to-one match we would have to include the corresponding column name for which we are loading the data into.
 
-1. For each of the tables run the corresponding statement. Select all the INSERT statements for each table and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
+For each of the tables run the corresponding statement. Select all the INSERT statements for each table and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
 
-2. Load Regions Table 
-
+1. Load Regions Table 
+    ```
     <copy>INSERT INTO regions VALUES 
             ( 1
             , 'Europe' 
@@ -381,39 +409,40 @@ Now that we have create tables we need to load some data into them. There are ma
             ( 4
             , 'Middle East and Africa' 
             );</copy>
+    ```
 
     Your results should look similar to this:
 
     ![](./images/insert-into-regions.png " ")
 
-3. Load Countries Table
+2. Load Countries Table
 
-4. Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
-
+    Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
+    ```
     <copy>INSERT INTO countries VALUES 
-            ( 'US'
-            , 'United States of America'
-            , 2 
-            );
+        ( 'US'
+        , 'United States of America'
+        , 2 
+        );
     INSERT INTO countries VALUES 
-            ( 'CA'
-            , 'Canada'
-            , 2 
-            );
+        ( 'CA'
+        , 'Canada'
+        , 2 
+        );
     INSERT INTO countries VALUES 
-            ( 'UK'
-            , 'United Kingdom'
-            , 1 
-            );</copy>
-
+        ( 'UK'
+        , 'United Kingdom'
+        , 1 
+        );</copy>
+    ```
     Your results should look similar to this:
 
     ![](./images/insert-into-countries.png " ")
 
-5. Load Locations Table
+3. Load Locations Table
 
-6. Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
-
+     Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
+    ```
     <copy>INSERT INTO locations VALUES 
             ( 1400 
             , '2014 Jabberwocky Rd'
@@ -455,15 +484,15 @@ Now that we have create tables we need to load some data into them. There are ma
             , 'Oxford'
             , 'UK'
             );</copy>
-
+    ```
     Your results should look similar to this:
 
     ![](./images/insert-into-locations.png " ")
 
-7. Load Departments Table
+4. Load Departments Table
 
-8. Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
-
+    Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
+    ```
     <copy>INSERT INTO departments VALUES 
             ( 10
             , 'Administration'
@@ -512,19 +541,18 @@ Now that we have create tables we need to load some data into them. There are ma
             , 205
             , 1700
             );</copy>
-
+    ```
     Your results should look similar to this:
 
     ![](./images/insert-into-department.png " ")
-    
-9. Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
+ 
 
-10. Did you get any errors (you probably did not)? If you a see constraint violation don’t worry, we tried to insert a row that violated one of our defined constraints. All the other rows got loaded correctly. One violation does not stop the load process.
+    Did you get any errors (you probably did not)? If you a see constraint violation don’t worry, we tried to insert a row that violated one of our defined constraints. All the other rows got loaded correctly. One violation does not stop the load process.
 
-11. Load Jobs Table
+5. Load Jobs Table
 
-12. Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
-
+    Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
+    ```
     <copy>INSERT INTO jobs VALUES 
             ( 'AD_PRES'
             , 'President'
@@ -649,13 +677,13 @@ Now that we have create tables we need to load some data into them. There are ma
             , 4500
             , 10500
             );</copy>
-
+    ```
     ![](./images/insert-into-job-values.png " ")
 
-13. Load Employees Table
+6. Load Employees Table
 
-14. Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
-
+    Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
+    ```
     <copy>INSERT INTO employees VALUES 
             ( 100
             , 'Steven'
@@ -786,11 +814,12 @@ Now that we have create tables we need to load some data into them. There are ma
             , 201
             , 20
             );</copy>
+    ```
 
-16. Load Job_History Table
+7. Load Job_History Table
 
-17. Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
-
+    Select all the INSERT statements and past them into the SQL Worksheet (make sure you clear the worksheet before each paste by clicking on the trash can icon). After you paste the statements into the worksheet, highlight all of them by left-clicking the mouse and selecting all the rows, then click the green Run Statement button.
+    ```
     <copy>INSERT INTO job_history
     VALUES (102
         , TO_DATE('13-01-2001', 'dd-MM-yyyy')
@@ -857,12 +886,13 @@ Now that we have create tables we need to load some data into them. There are ma
             , 'AC_ACCOUNT'
             , 90
             );</copy>
+    ```
 
 
 ## Task 6: Creating Indexes
 
-1. To improve performance indexes can be created on tables. Now that we loaded data into our tables we create indexes to improve access to the data on the columns that will be queried most often. Run the statements below to create the indexes on the tables. 
-
+To improve performance indexes can be created on tables. Now that we loaded data into our tables we create indexes to improve access to the data on the columns that will be queried most often. Run the statements below to create the indexes on the tables. 
+```
     <copy>CREATE INDEX emp_department_ix
         ON employees (department_id);
     CREATE INDEX emp_job_ix
@@ -885,13 +915,14 @@ Now that we have create tables we need to load some data into them. There are ma
         ON locations (state_province);
     CREATE INDEX loc_country_ix
         ON locations (country_id);</copy>
+```
 
 ## Task 7: Creating Views and Querying its Data
 
 The Oracle Database allows the creation of objects called views, which consist of a virtual table comprising of columns from other tables. This allows users to view data that does not actually reside in a single table but on multiple tables without actually having to replicate or consolidate the data. This maintains simplicity of development, maintenance, and operations of databases.
 
-1. We will create an employee detailed view that joins the employees, jobs, departments, countries, and locations tables to provide us with a consolidated view of employees. 
-
+ 1. We will create an employee detailed view that joins the employees, jobs, departments, countries, and locations tables to provide us with a consolidated view of employees. 
+    ```
     <copy>CREATE OR REPLACE VIEW emp_details_view
     (employee_id,
     job_id,
@@ -939,14 +970,16 @@ The Oracle Database allows the creation of objects called views, which consist o
     AND c.region_id = r.region_id
     AND j.job_id = e.job_id 
     WITH READ ONLY;</copy>
+    ```
 
     Your results should look similar to this:
 
     ![](./images/create-replace-view-emp.png " ")
 
 2. Explore the information the view contains. Select row in the view by running the following statement:
-
+    ```
     <copy>select * from emp_details_view;</copy>
+    ```
 
     Your results should look similar to this:
 
@@ -954,31 +987,36 @@ The Oracle Database allows the creation of objects called views, which consist o
 
 ## Task 8: Homework deliverable
 
-1. Now that we have created a database, objects, constraints, indexes and so on, its time for you to add your own information to your database. You will need to create an INSERT statement like we used above to add data into tables to insert your information into the EMPLOYEES table. You need to provide correct information for each field. Please use your first and last name for the FIRST_NAME and LAST_NAME fields so when grading the assignment we know its yours. The other fields do not need to reflect any personal information. 
 
-2. You need to review and understand all the previous parts of this lab and examine the information that was inserted into each table because the employees table has a lot of foreign key constraints and NOT NULL constraints that need to be satisfied in order for your INSERT operation to work. If you get an error message similar to this when running your INSERT:
+Now that we have created a database, objects, constraints, indexes and so on, its time for you to add your own information to your database. 
+
+1. You will need to create an INSERT statement like we used above to add data into tables to insert your information into the EMPLOYEES table. You need to provide correct information for each field. Please use your first and last name for the FIRST_NAME and LAST_NAME fields so when grading the assignment we know its yours. The other fields do not need to reflect any personal information. 
+
+    You need to review and understand all the previous parts of this lab and examine the information that was inserted into each table because the employees table has a lot of foreign key constraints and NOT NULL constraints that need to be satisfied in order for your INSERT operation to work. If you get an error message similar to this when running your INSERT:
 
     ![](./images/insert-error-message.png " ")
+    It means that you have not satisfied one of the constraints. For example you may be using a DEPARTMENT_ID that does not exist in the DEPARTMENTS table. ***HINT***The MANAGER_ID field has to contain a value of an employee already in the EMPLOYEES table.
 
-3. When you successfully insert your information into the EMPLOYEES table take a snapshot of your work and add it to the pdf file you will submit. It should look something like this (this is an example of inserting into the job_history table you will be inserting into the EMPLOYEES table):
+
+2. When you successfully insert your information into the EMPLOYEES table take a snapshot of your work and add it to the pdf file you will submit. It should look something like this (this is an example of inserting into the job_history table you will be inserting into the EMPLOYEES table):
 
     ![](./images/insert-into-job-history.png " ")
 
-4. It means that you have not satisfied one of the constraints. For example you may be using a DEPARTMENT_ID that does not exist in the DEPARTMENTS table. ***HINT***The MANAGER_ID field has to contain a value of an employee already in the EMPLOYEES table.
 
-5. The second part of the deliverable is to create a SELECT statement that retrieves only your information from the EMP_DETAILS_VIEW. Do not show the whole table, only your information you entered into the EMPLOYEES table. As a reminder the EMP_DETAILS_VIEW will contain any updated information from the EMPLOYEES table. ***HINT***Use the WHERE clause in your SELECT statement and search for your last name. Your results should be similar to this. Take a snapshot of this output and add it to the pdf file you will submit. 
+3. The second part of the deliverable is to create a SELECT statement that retrieves only your information from the EMP_DETAILS_VIEW. Do not show the whole table, only your information you entered into the EMPLOYEES table. As a reminder the EMP_DETAILS_VIEW will contain any updated information from the EMPLOYEES table. ***HINT***Use the WHERE clause in your SELECT statement and search for your last name. Your results should be similar to this. Take a snapshot of this output and add it to the pdf file you will submit. 
 
     ![](./images/query-for-pdf.png " ")
 
-6. When successfully completed these two steps upload your results to Blackboard.
+4. When successfully completed these two steps upload your results to Blackboard.
 
 ## Task 9: LAB Cleanup
 
 ****NOTE: Running the statements below will wipe out your work, only do it if you want to start over or need to clean up your database for any reason*****
 
-1. When you are finished with this lab you can drop all your tables and associated objects to clean up your database. This will allow you to do the lab again and start with a clean database. Please notice that if you created any other tables or objects that were not specifically included in this lab you will have to clean up those objects also.
+When you are finished with this lab you can drop all your tables and associated objects to clean up your database. This will allow you to do the lab again and start with a clean database. Please notice that if you created any other tables or objects that were not specifically included in this lab you will have to clean up those objects also.
 
-2. Copy the following statements and execute them in SQL. Notice the "CASCADE CONSTRAINTS" clause included in the DROP TABLE statement. This will make sure that any indexes, keys, and any other contstraints that exist in the table get dropped as well. Without the CASCADE CONSTRAINTS clause the drop table will fail because you cannot drop a table that has a constraint association with another table, such as a primary/foreign key constraint.
+Copy the following statements and execute them in SQL. Notice the "CASCADE CONSTRAINTS" clause included in the DROP TABLE statement. This will make sure that any indexes, keys, and any other contstraints that exist in the table get dropped as well. Without the CASCADE CONSTRAINTS clause the drop table will fail because you cannot drop a table that has a constraint association with another table, such as a primary/foreign key constraint.
+    ```
 
     <copy>DROP TABLE employees CASCADE CONSTRAINTS;
     DROP TABLE departments CASCADE CONSTRAINTS;
@@ -987,14 +1025,13 @@ The Oracle Database allows the creation of objects called views, which consist o
     DROP TABLE locations CASCADE CONSTRAINTS;
     DROP TABLE regions CASCADE CONSTRAINTS;
     DROP TABLE countries CASCADE CONSTRAINTS;</copy>
-
-    ![](./images/drop-table-clean-up.png " ")
-
+    ```
+![](./images/drop-table-clean-up.png " ")
 
 
 ## Troubleshoot Tips
 
-    If you are having problems with any of the labs, please visit the **Need Help?** tab.
+If you are having problems with any of the labs, please visit the **Need Help?** tab.
 
 
 ## Acknowledgements
