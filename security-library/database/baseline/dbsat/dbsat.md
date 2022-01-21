@@ -5,7 +5,7 @@ This workshop introduces the functionality of Oracle Database Security Assessmen
 
 *Estimated Lab Time:* 110 minutes
 
-*Version tested in this lab:* Oracle DBSAT 2.2.1
+*Version tested in this lab:* Oracle DBSAT 2.2.2
 
 ### Video Preview
 Watch a preview of "*Understanding DBSAT (April 2018)*" [](youtube:XsPuiCPcyA0)
@@ -51,13 +51,13 @@ This lab assumes you have:
 3. Create a directory to install DBSAT
 
     ````
-    <copy>mkdir dbsat221</copy>
+    <copy>mkdir dbsat222</copy>
     ````
 
 4. Unzip the DBSAT zip file
 
     ````
-    <copy>unzip /u01/app/sources/dbsat-2.2.1.zip -d dbsat221</copy>
+    <copy>unzip /u01/app/sources/dbsat-2.2.2.zip -d dbsat222</copy>
     ````
 
     ![](./images/dbsat-001.png " ")
@@ -71,7 +71,7 @@ This lab assumes you have:
 1. Go to the dbsat directory just created
 
     ````
-    <copy>cd $DBSEC_LABS/dbsat/dbsat221</copy>
+    <copy>cd $DBSEC_LABS/dbsat/dbsat222</copy>
     ````
 
 2. Let's start by examining all DBSAT execution parameters
@@ -177,7 +177,7 @@ Please take a couple of minutes to scroll through the HTML report. You can click
 - Then the Summary table presents all the findings per section/domain along with their severity level
 
     **Note**:
-    - Having a “Total” of less than 80 findings might indicate that there were some issues collecting data
+    - Having a “Total” of less than 70 findings might indicate that there were some issues collecting data
     - You’ll find more details about the reasons at the bottom of the HTML report
     - The collector generated JSON file can also be used for further troubleshooting
     - If you run DBSAT against ADW/ATP or run the collector remotely you will get less than 80 findings
@@ -229,6 +229,7 @@ In this exercise, you will be guided by relevant DBSAT findings. This will provi
     **Note**:
     - This is a **Finding**
     - It seems that the database needs to be patched! This is an important finding as it is one of the most common ways hackers get into databases. They exploit vulnerable, unpatched, databases
+    - If it's in green, it means that the database is on the current patch
 
 2. You can always return to the Summary table by clicking **TOP** on the navigation panel (bottom right)
 
@@ -405,7 +406,7 @@ In this exercise, you will learn how to execute DBSAT discoverer. DBSAT discover
 1. Go to the scripts directory
 
     ````
-    <copy>cd $DBSEC_LABS/dbsat/dbsat221/Discover/conf</copy>
+    <copy>cd $DBSEC_LABS/dbsat/dbsat222/Discover/conf</copy>
     ````
 
 2. Copy the provided `sample_dbsat.config`, make the copy writable and open it for editing
@@ -937,7 +938,7 @@ In this exercise, you will be exposed to the DBSAT utilities ("`dbsat_diff`" & "
 2. Unzip `dbsat_util.zip`
 
     ````
-    <copy>unzip dbsat_util.zip -d dbsat221</copy>
+    <copy>unzip dbsat_util.zip -d dbsat222</copy>
     ````
 
     ![](./images/dbsat-050.png " ")
@@ -946,7 +947,7 @@ In this exercise, you will be exposed to the DBSAT utilities ("`dbsat_diff`" & "
 3. Go to the DBSAT directory
 
     ````
-    <copy>cd dbsat221</copy>
+    <copy>cd dbsat222</copy>
     ````
 
 4. Using "`dbsat_extract`", extract findings by their identifiers
@@ -997,7 +998,7 @@ In this exercise, you will be exposed to the DBSAT utilities ("`dbsat_diff`" & "
     - Create a directory object to read from the dbsat installation directory:
 
     ````
-    <copy>create or replace directory DBSAT_DIR as '/home/oracle/DBSecLab/livelabs/dbsat/dbsat221';</copy>
+    <copy>create or replace directory DBSAT_DIR as '/home/oracle/DBSecLab/livelabs/dbsat/dbsat222';</copy>
     ````
 
     - Create a table to store the JSON report:
