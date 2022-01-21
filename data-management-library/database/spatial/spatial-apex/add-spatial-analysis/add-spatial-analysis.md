@@ -60,7 +60,7 @@ You now have inputs for filtering airports by proximity to a state. Next you wil
 
 ## Task 4: Apply filters using Dynamic Actions
 
-You next create the actions that are invoked when state and/or distance values are chanhed by the user. 
+You next create the actions that are invoked when state and/or distance values are changed by the user. 
 
 9. Right-click on either your P3\_STATE or P3\_DISTANCE item and select **Create Dynamic Action**  (the action we create will be applied to both items).
 ![Image alt text](images/add-spatial-analysis-09.png) 
@@ -99,19 +99,19 @@ You next create the actions that are invoked when state and/or distance values a
     and sdo_within_distance(a.geometry, b.geometry, 'distance='|| :P3_DISTANCE ||' unit=KM') = 'TRUE'
     </copy>
     ```
-![Image alt text](images/add-spatial-analysis-15.png) 
+    ![Image alt text](images/add-spatial-analysis-15.png) 
 
 
-1.  ...Save and Run. Select Alabama and 100...
+1. Your page is now ready to view. Click **Save** and then the green **Run** button at the upper right.  Once the page is rendered, for state select **Alabama**. The map displays the selected state and airports within 100km (the default distance).
 ![Image alt text](images/add-spatial-analysis-16.png) 
 
-17. ...switch State...
+17. Change the selected state to **Kansas**. Observe the map now displays the selected state and airports with 100km.
 ![Image alt text](images/add-spatial-analysis-17.png) 
 
-18. ...change distance...
+1.  Increase the distance to 600km. Observe the map now displays additional airports within the larger distance. 
 ![Image alt text](images/add-spatial-analysis-18.png) 
 
-
+ As shown in the Sample Maps application that you installed at the beginning of this workshop, there is a tremendous amout of additional functionalty that can be achieved with Map Regions and Spatial. This workshop has introduced the basics and it is our hope that your interest has been picqued and that you will leverage the power of maps and spatial analyses in your APEX applications.
 
 
 ## Learn More
