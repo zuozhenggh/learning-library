@@ -3,7 +3,7 @@
 ## Introduction
 The goal of this lab is to explore end-to-end automated patching and upgrades of the Oracle Database using Enterprise Manager UI feature (starting from 13.5 RU1).
 
-*Estimated Lab Time*: 75 minutes
+*Estimated Time*: 75 minutes
 
 
 ### About Database Fleet Maintenance UI

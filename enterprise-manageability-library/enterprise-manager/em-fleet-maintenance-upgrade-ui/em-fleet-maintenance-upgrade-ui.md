@@ -3,7 +3,7 @@
 ## Introduction
 The objective of this lab is to explore upgrading your Oracle Database Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance UI feature (starting from 13.5 RU1).
 
-*Estimated Lab Time:* 75 minutes
+*Estimated Time:* 75 minutes
 
 Watch the video below for a quick walk through of the lab.
 [](youtube:SbsS_nNiXHo)
