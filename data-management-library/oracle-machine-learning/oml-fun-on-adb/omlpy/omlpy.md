@@ -5,8 +5,14 @@
 This lab walks you through the steps to create a database table, create a proxy object, explore and prepare data, build and evaluate models, and use those models to score data using OML4Py. This will use a classification example available in OML Notebooks. For illustrative purposes, Task 1 and Task 2 of this lab use iris data set from sklearn datasets to create a database table. The rest of the steps take you through the example that uses the SH schema and is available in OML Notebooks. In Oracle Autonomous Database (ADB), the SH schema and associated data sets are easily accessible.
 
 Estimated Time: 30 minutes
+
+
+
 ### About Oracle Machine Learning for Python(OML4Py)
 Oracle Machine Learning for Python (OML4Py) is a component of Oracle Autonomous (ADB), which includes Oracle Autonomous Data Warehouse (ADW), Oracle Autonomous Transaction Processing (ATP), and Oracle Autonomous JSON Database (AJD). OML4Py is also included with on-premise Oracle Database and Database Cloud Service with separate installation. By using OML Notebooks, you can use standard Python syntax and overloaded Python functions, use a natural Python API to load in-database machine learning algorithms, call user-defined Python functions in database-spawned and controlled Python engines, and leverage automated machine learning (AutoML).
+
+
+
 ### Objectives
 
 In this lab, you will learn how to:
@@ -20,14 +26,17 @@ In this lab, you will learn how to:
 *	Score data for deployment
 * Save and load python objects in a datastore instance
 
+
+
 ### Prerequisites
 
 This lab assumes you have:
 * An Oracle Machine Learning account
 * Completed Lab 1: Oracle Machine Learning Notebooks
 
-## Task 1: Create a Database Table
 
+
+## Task 1: Create a Database Table
 With OML4Py, you can create Python proxy objects that can be used to access, analyze, and manipulate data that resides in the database. OML4Py uses these proxy objects and transparently translates many standard Python functions into SQL.
 In this step, the iris data set is used for illustrative purposes to load the data into a temporary database table. Such temporary tables are automatically deleted when the OML Notebook connection to the database ends unless you have saved its proxy object to a datastore, which we'll discuss in step 10, before disconnecting.
 To use OML4Py, you must first import the `oml` module and the Pandas library. Use the `oml.push` function to create a temporary table.
@@ -67,6 +76,8 @@ To use OML4Py, you must first import the `oml` module and the Pandas library. Us
   You use the zeppelin-context z.show method to display Python objects and proxy object content. Here, you display the first few rows of IRIS_TMP using z.show.
 	![Top rows of IRIS_TMP.](images/rows-iris-temp.png)
 
+
+
 ## Task 2: Create a Persistent Database Table
 1. You can also create a persistent table using the create function and specifying a table name, IRIS as done below. The `oml.create` function creates a table in the database schema and returns an `oml.DataFrame` object. This table is now accessible both within OML4Py and directly from SQL. Use the z.show function to display the desired data in the notebook. To create the persistent table IRIS, run the following script.
 
@@ -88,6 +99,8 @@ To use OML4Py, you must first import the `oml` module and the Pandas library. Us
 	The output is as follows:
 	![Columns,Shape and Top rows of IRIS.](images/description-iris.png)
 
+
+
 ## Task 3: Create a Proxy Object for a Database Object
 1. Use the `oml.sync` function to create a Python object as a proxy for a database table or view. The `oml.sync` function returns an `oml.DataFrame` object or a dictionary of `oml.DataFrame` objects. The `oml.DataFrame` object returned by `oml.sync` is a proxy for the database object.  
 	```
@@ -101,6 +114,8 @@ To use OML4Py, you must first import the `oml` module and the Pandas library. Us
 	In this step, you are viewing a few rows from the SUPPLEMENTARY_DEMOGRAPHICS table using the overloaded head function.
 	![Top rows of DEMO.](images/rows-demo.png)
 
+
+
 ## Task 4: Explore the Data
 In this example, use shape, describe and crosstab functions to explore and view the data.
 1. Run the shape function to view the rows and columns of an `oml.DataFrame`.
@@ -110,7 +125,10 @@ In this example, use shape, describe and crosstab functions to explore and view 
 
 	DEMO.shape
 	</copy>
-	(4500, 14)
+
+	```
+	```
+	The output is (4500, 14).
 	```
 2. Use the transparency layer function `describe()` to calculate descriptive statistics that summarize the central tendency, dispersion, and shape of the DEMO table in each numeric column.Note that all computations are computed in the database and only the summary results are returned to the Python client, in this case, the notebook. Eliminating the need to move data greatly increases scalability.A few rows of the output are displayed using the `z.show` function.
 		```
@@ -132,7 +150,7 @@ In this example, use shape, describe and crosstab functions to explore and view 
 	</copy>
 	```
 	![Crosstab of attribute AFFINITY_CARD.](images/crosstab-affinity-card.png)
-4. To view the distribution of house size of the `AFFINITY_CARD` responders, run the following function:
+4. Run the following script to view the distribution of `HOUSEHOLD_SIZE` according to `AFFINITY_CARD` responders with the following setting. Click on the **Bar chart**, then click on **settings**. Drag the fields to titles as `HOUSEHOLD_SIZE` to **keys**, `AFFINITY_CARDS`  to **groups**, and count to **values**. Click on **Stacked** to get the required view.
 	```
 	<copy>
 	%python
@@ -141,6 +159,8 @@ In this example, use shape, describe and crosstab functions to explore and view 
 	</copy>
 	```
 	![Crosstab of attributes HOUSEHOLD_SIZE and AFFINITY_CARD.](images/crosstab-householdsize-affinitycard.png)
+
+
 
 ## Task 5: Prepare the Data
 In this step, you will create a `DEMO_DF` DataFrame, select the necessary columns for further analysis, display a few rows of the `DEMO_DF` DataFrame, and split your data into TRAIN and TEST sets.
@@ -178,6 +198,8 @@ In this step, you will create a `DEMO_DF` DataFrame, select the necessary column
 
 Since we’ll be using automatic data preparation provided by the in-database algorithms, no further data preparation is required.
 
+
+
 ## Task 6: Build Your Model
 Use the `oml.dt` class to build a Decision Tree model. You can build a model with default settings or specify custom model settings.
 1. To build a Decision Tree model with the default settings, run the following script:
@@ -199,7 +221,7 @@ Use the `oml.dt` class to build a Decision Tree model. You can build a model wit
 
 	The `oml.dt` class uses the Decision Tree algorithm for classification and a model object `dt_mod` is created with the default parameter settings.  The **fit** function builds the Decision Tree model according to the training data and parameter settings.
 	```
-	<copy>
+
 	Model Name: DT_CLAS_MODEL
 
 	Model Owner: OMLUSER
@@ -291,7 +313,7 @@ Use the `oml.dt` class to build a Decision Tree model. You can build a model wit
 	12     6.0       13        832           0                       (YRS_RESIDENCE <=(3.5E+000))                 HOME_THEATER_PACKAGE <=(5.0E-001))  (HOUSEHOLD_SIZE IN ("1" "2" "6-8" "9+")) AND (...
 	13     6.0       14        595           0                        (YRS_RESIDENCE >(3.5E+000))                  HOME_THEATER_PACKAGE >(5.0E-001))  (HOUSEHOLD_SIZE IN ("1" "2" "6-8" "9+")) AND (...
 	14     NaN        0       2725           0                                               None                                               None    
-	</copy>                                              (
+	                                              (
 		```
 2. To specify model settings and build a Decision Tree model, run the following script :
 	```
@@ -324,6 +346,8 @@ Use the `oml.dt` class to build a Decision Tree model. You can build a model wit
 `TREE_TERM_MINREC_NODE`: Specifies the minimum number of rows in a node. The default value is 10.
 * `TREE_TERM_MINREC_SPLIT`: Specifies the criteria for splits: minimum number of records in a parent node expressed as a value. No split is attempted if the number of records is below this value. The default value is 20.
 * `CLAS_MAX_SUP_BINS`: Specifies the maximum number of bins for each attribute. The default value is 32.
+
+
 
 ## Task 7: Evaluate Your Model
 To evaluate your model you need to score the test data using the model and then evaluate the model using various metrics.
@@ -532,9 +556,15 @@ To evaluate your model you need to score the test data using the model and then 
 	%python
 	dt_mod.score(TEST_X, TEST_Y)
 	</copy>
-	0.824789
+
+	```
+
+	```
+	The output is 0.824789
 	```
 	You obtain an accuracy of 0.824789 or approximately 82.5% of the result are correctly predicted.
+
+
 
 ## Task 8: Score Data for Deployment Using Your Model
 Having built and evaluated the model, you will now filter scores computed above. Such results can be computed in batch and materialized as a table for static lookup by applications and dashboards or results can be computed dynamically using in-database models using OML4Py functions or SQL queries.
@@ -559,6 +589,8 @@ Having built and evaluated the model, you will now filter scores computed above.
 	```
 	where `topN_attrs` returns the top **N** most influential attributes of the predicted value. For each attribute, three columns are provided: the attribute name, specific value, and corresponding weight of that attribute are provided. The output is similar to the following:
 	![Prediction of model on the test data.](images/score-display-predict.png)
+
+
 
 ## Task 9: Use the SQL Interface to Score Data and Display Prediction Details
 You can score data and make similar predictions using the SQL interface. The test data is materialized into DT\_TEST\_TABLE so that you can query it using SQL. The materialized method writes the contents of an Oracle Machine Learning proxy object (a view, a table, and so on) to an Oracle Database table.
@@ -601,6 +633,7 @@ You can score data and make similar predictions using the SQL interface. The tes
 	```
 	The output is similar to the following:
 	![Illustration of prediction of model on materialized test data and its greatest attribute influence on the prediction.](images/score-predict-sql-interface.png)
+
 
 
 ## Task 10: Save and Load Python Objects in a Datastore Instance
@@ -652,7 +685,7 @@ You can save the python objects you create in one python session and load them i
 	The output is similar to the following:
 	![list of python model proxy objects in a datastore.](images/model-object-datastore.png)
 
-	- Run the following script to load the named python object from the datastore into the global workspace.
+	- Run the following script to load the named python object from the datastore into the user's workspace.
 	```
 	<copy>
 	%python
@@ -667,6 +700,8 @@ You can save the python objects you create in one python session and load them i
 In this example, you classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top **N** attributes that are important to the model built.
 
 You may now **proceed to the next lab**.
+
+
 
 ## Learn More
 
@@ -685,7 +720,9 @@ OML4Py enables data scientists to hand-off their user-defined Python functions t
 
 3. [Machine Learning Explainability (MLX)](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/explain-model.html#GUID-1936962D-38AD-4E7E-9B96-EEE3EE2BD15C) is used to help explain and interpret the machine learning model by identifying the features that most impact model predictions.
 
+
+
 ## Acknowledgements
 * **Authors** - Sarika Surampudi, Senior User Assistance Developer, Oracle Database User Assistance Development; Dhanish Kumar, Member of Technical Staff, User Assistance Developer.
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning.
-* **Last Updated By/Date** - Dhanish Kumar, December 2021
+* **Last Updated By/Date** - Dhanish Kumar, January 2022
