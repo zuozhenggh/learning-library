@@ -82,7 +82,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
 
 1. Hover you cursor over the **+** sign that is displayed after the trigger activity in the integration canvas. Click the **+** sign and select the ADW connection created in Lab 1. 
 
-    <img src="images/create-app-integration05.png" width="400">
+    ![](images/create-app-integration05.png)
 
     This invokes the Oracle Autonomous Data Warehouse Endpoint Configuration Wizard.
 
@@ -138,7 +138,7 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
 
 
     Complete the mapping as below:    
-    
+
     | **Source** *(ERP_POCreateEvent)*        | **Target** *(ADW_InsertPO)* |
     | --- | ----------- |
     | PO Header Id | poheaderid |

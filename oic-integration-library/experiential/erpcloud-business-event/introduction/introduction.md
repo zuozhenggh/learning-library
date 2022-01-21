@@ -42,4 +42,4 @@ The Oracle ERP Cloud Adapter provides the following key benefits:
 ## Acknowledgements
 * **Author** - Ravi Chablani, Product Management - Oracle Integration
 * **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Ravi Chablani, December 2021
+* **Last Updated By/Date** - Ravi Chablani, January 2022
