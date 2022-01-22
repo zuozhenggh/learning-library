@@ -174,8 +174,8 @@ Then drop down and select the **Availability Domain** and the **Compartment** wh
 5. Manually copy the contents below and paste it to the file just created. Ensure to replace the **mntTargetID** and **server IP** with the values copied in the Lab 3, Task 1, step 10 in this Workshop.
 
 
-        kind: StorageClass
         apiVersion: storage.k8s.io/v1
+        kind: StorageClass
         metadata:
           name: apmlab-fss
         provisioner: oracle.com/apmlab-fss
