@@ -300,7 +300,7 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
 1. Before we deploy a new Oracle Home, we need to ensure that we unsubscribe finance database  from previous associated image. This step is required for UI as we can not have two different versions of Oracle home ( in this case 18c and 19c) in the same image id.
 
-Run the block below to unsubscribe finance database from ***Tier #1 SI DB Linux64*** image. If finance database is not subscribed to any image then we can move to next step, where we will subscribe it to 19.7 image.
+Review and execute the following command to unsubscribe finance database from ***Tier #1 SI DB Linux64*** image. If finance database is not subscribed to any image then we can move to next step, where we will subscribe it to 19.7 image.
 
 ```
 <copy>emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database</copy>
@@ -311,7 +311,7 @@ Run the block below to unsubscribe finance database from ***Tier #1 SI DB Linux6
 ```
 ![](images/unsubscribe_finance.png " ")
 
-We now need to subscribe finance database to 19.7 image which we had created in step 3 of previous task.      
+Review and execute the following command to subscribe finance database to 19.7 image which we had created in step 3 of previous task.      
 
 
 ![](images/finance_subscribe_197.png " ")
