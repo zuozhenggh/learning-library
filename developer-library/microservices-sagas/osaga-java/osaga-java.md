@@ -28,7 +28,8 @@ Estimated Time:  15 minutes
 
 ## Task 1: Add and start Java Participants (FlightJava, HotelJava, and CarJava)
        
-1. Notice the AQjmsSagaMessageListener interface and implementation in TravelParticipantApplication.java
+1. Notice [AQjmsSagaMessageListener.java](https://github.com/oracle/microservices-datadriven/blob/main/travelbooking/osaga-java-api/src/main/java/AQSaga/AQjmsSagaMessageListener.java)  interface and the implementation of it in 
+[TravelParticipantApplication.java](https://github.com/oracle/microservices-datadriven/blob/main/travelbooking/travelparticipant-java/src/main/java/osaga/travelagency/TravelParticipantApplication.java) 
 
    ![Java Add Participant](./images/AQJmsSagaMessageListener.png " ")
    
@@ -75,7 +76,8 @@ If this is the first time you have started this participant type then select 'y'
    
 ## Task 2: Add and start Java TravelAgency Initiatory/Participant
 
-1.    Notice use of the OSaga API and the AQjmsSagaMessageListener interface and implementation in TravelAgencyApplication.java
+1.    Notice use of the OSaga API and the  [AQjmsSagaMessageListener.java](https://github.com/oracle/microservices-datadriven/blob/main/travelbooking/osaga-java-api/src/main/java/AQSaga/AQjmsSagaMessageListener.java) interface and implementation in 
+[TravelAgencyApplication.java](https://github.com/oracle/microservices-datadriven/blob/main/travelbooking/travelagency-java/src/main/java/osaga/travelagency/TravelAgencyApplication.java)
 
 2.    Enter the Cloud Shell, and issue the following command to build the TravelAgency Java service.
 
