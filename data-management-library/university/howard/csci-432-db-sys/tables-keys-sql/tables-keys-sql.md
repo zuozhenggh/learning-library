@@ -118,11 +118,11 @@ We will be creating a basic company database application to store and manage dif
     
     ``` 
 
-Your results should look similar to this:
+    Your results should look similar to this:
 
-![](./images/create-tables-employees.png " ")     
+    ![](./images/create-tables-employees.png " ")     
 
-3. In the create table statement we did not specify that employee_id should be UNIQUE because we will do that by creating a UNIQUE index on the employee_id. In this case we use an index because most of the time the access to this table will be through the employee_id so we want to make sure we have that column indexed as well as making it UNIQUE. 
+3. In the create table statement we did not specify that employee_id should be UNIQUE because we will do that by creating a UNIQUE index on the employee_id. In this case we use an index because most of the time the access to this table will be through the employee_id so we want to make sure we have that column indexed as well as making it UNIQUE.. 
 
     Copy the statement below and paste it into SQL Worksheet. Make sure to erase anything else you have on the worksheet by clicking the trash can icon before pasting this code. To run the code click green arrow circle (Run Statement)
     ```
