@@ -75,6 +75,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     ```
     <copy>
     echo "cd ~/microservices-datadriven/travelbooking" >>~/.bashrc
+    export JAVA_HOME=~/graalvm-ce-java11-20.1.0
     echo "export JAVA_HOME=~/graalvm-ce-java11-20.1.0" >>~/.bashrc
     echo "export PATH=$JAVA_HOME/bin:$PATH" >>~/.bashrc
     source ~/.bashrc
