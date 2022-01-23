@@ -86,7 +86,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. Run the following command, providing the OCID of the database that you copied in Task 1
 
     ```
-    <copy>./getWalletForPDB.sh REPLACE_THIS_VALUE_WITH_DB_OCID</copy>
+    <copy>./getWalletForPDBs.sh REPLACE_THIS_VALUE_WITH_DB_OCID</copy>
     ```
    
    The output should look similar to the following.
