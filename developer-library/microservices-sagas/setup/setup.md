@@ -92,7 +92,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
    
    The output should look similar to the following.
    
-     ![Open Cloud Shell](images/getwalletforpdb.png " ")
+     ![Get Wallet For PDB](images/getwalletforpdb.png " ")
 
 2. Run the following command to install Java 11 (GraalVM)  
 
@@ -105,8 +105,15 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     ```
     <copy>./createDBLinksAndOsagaInfra.sh</copy>
     ```
+   You will be prompted for the admin password you used when creating sagapdb1 and sagapdb2.
    
-   If at any point you are disconnected from the Cloud Shell, you can simply start from the last command that did not complete.
+   ![Password prompt for dblink and osaga setup](images/pwpromptforjavasetup.png " ")
+     
+   This setup will take approximately 3 to 5 minutes at which time you should see successful output such as the following.  
+   
+   ![Osagae setup complete](images/osagasetupcomplete.png " ")
+   
+     If at any point you are disconnected from the Cloud Shell, you can start from the last command that did not complete.
 
 You may now **proceed to the next lab.**.
 
