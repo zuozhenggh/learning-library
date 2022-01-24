@@ -18,9 +18,11 @@ Estimates Time: 3 minutes
 
 1. Enter the same `Oracle Database` console page that was used to provision the 21c ATP PDBs during setup and select the `Terminate` option for `sagagdb1` and `sagadb2` PDBs
 
+   ![DB Provisioning](images/terminatedb.png " ")
+
 ## Task 2: Delete the Directory
 
-1. Delete the directory in your cloud shell where you installed the workshop.
+1. Enter the Cloud Shell and delete the directory where you installed the workshop.
 
     ```
     <copy>rm -rf ~/microservices-datadriven</copy>
