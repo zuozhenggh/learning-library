@@ -1,24 +1,53 @@
 # Fixing SQL Statements by Using Automatic SQL Diagnosis and Repair
 
+## Introduction
+
+Oracle Database enables the user to diagnose a SQL statements for poor performance. It also, gives recommendations to improve the performance by changing the SQL statement. The implementation is easy and automated, as the result of SQL Repair Advisor. This can be implemented after a SQL statement fails with a critical error, ORA-00600 error. After implementation, the applied SQL patch circumvents failure in future events by causing the query optimizer to choose an alternate execution plan. 
+
+The SQL Repair Advisor is run by creating and executing a diagnostic task using the `CREATE_DIAGNOSIS_TASK` and `EXECUTE_DIAGNOSIS_TASK` respectively. This reproduces the critical error and then attempts to produce a workaround in the form of a SQL patch. First, one must identify the problem SQL statement. Then, one must create a diagnostic task and execute it. Lastly, one will report the diagnostic task, apply the patch, and then, test the patch. 
+
+In order to remove the patch, `DBMS_SQLDIAG.DROP_SQL_PATCH` can be implemented with the patch name. The patch name can be queried using the view `DBA_SQL_PATCHES` or obtained from the explain plan section.
+
+### Objectives
+
+In this lab, you will:
+* Clean up PDBs and Format Tables
+* Execute Poor Performing SQL Statement
+* Diagnose SQL Statement and Determine Recommendations
+* Verify Recommendations and Implement
+* Test Implementation
+* Find and Implement Patches
+* Clean up Schema
+
+### Prerequisites
+
+This lab assumes you have:
+* Obtained and signed in to your `workshop-installed` compute instance.
+
 ## Overview
 
 In this practice, you diagnose, get, and implement recommendations for a SQL statement that gives a poor performance and for another SQL statement that fails with an ORA-00600 error.
 
-## Tasks
+## Task 1: Clean up PDBs and Format Tables
 
 1.	Execute the /home/oracle/labs/admin/cleanup_PDBs.sh shell script. The shell script drops all PDBs that may have been created by any of the practices in ORCL, and finally re-creates PDB1. You are in Session1.
      
      ```
      $ <copy>$HOME/labs/19cnf/cleanup_PDBs_in_CDB1.sh</copy>
+     
+     ...
 
      $
      ```
+
 
 2.	Before starting the practice, execute the $HOME/labs/DIAG/glogin.sh shell script. It sets formatting for all columns selected in queries.
 
      ```
      $ <copy>$HOME/labs/19cnf/glogin.sh</copy>
-     …
+     
+     ...
+
      $
      ```
 
@@ -26,18 +55,29 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
     
     ```
     $ <copy>$HOME/labs/19cnf/table.sh</copy>
+
+    ...
+
+    $
     ```
+
+## Task 2: Execute Poor Performing SQL Statement
 
 4.	Log in to PDB1 as DIAG and execute the query. The SQL statement executes with a poor performance.
     
      ```
      $ <copy>sqlplus system@PDB1</copy> 
-  
+
+     ...
 
      Enter password: <copy>Ora4U_1234</copy>
 
+     ...
      
      SQL> <copy>SELECT /*+ FULL(a) FULL (b) */ sum(a.num),sum(b.num),count(*) FROM tab1 a,diag.tab1 b WHERE a.id = b.id and a.id = 100;</copy>
+
+     ...
+
      SUM(A.NUM) SUM(B.NUM)   COUNT(*)
      ---------- ---------- ----------
        100        100          1
@@ -45,11 +85,15 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
      SQL> 
      ```
 
+## Task 3: Diagnose SQL Statement and Determine Recommendations
+
 5.	Call the function to diagnose and automatically implement the recommendations to improve performance of the SQL statement.
 
      ```
      SQL> <copy>DESC dbms_sqldiag</copy>
-     …   
+
+     ...
+
      FUNCTION SQL_DIAGNOSE_AND_REPAIR RETURNS NUMBER
      Argument Name                Type                In/Out Default?
      ---------------------------- ------------------- ------ -------
@@ -83,6 +127,7 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
      1 recommendations generated for incident 48653
       2    3    4    5    6    7    8    9   10   11   12   13   
      
+     ...
 
      PL/SQL procedure successfully completed.
 
@@ -94,6 +139,9 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
      SQL><code> SELECT finding_id, type FROM dba_advisor_recommendations 
      WHERE  task_name = to_char(:incident_id);</code>
      2
+
+     ...
+
       FINDING_ID TYPE
       ---------- ------------------------------
          1 EVOLVE PLAN
@@ -103,7 +151,13 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
 7.	Report the details of the recommendations.
      ```
      SQL> <code>VAR b_report CLOB</code>
+     
+     ...
+
      SQL>
+     ```
+     
+     ```
      SQL> <code>DECLARE
        v_tname  VARCHAR2(32767);
      BEGIN
@@ -113,11 +167,15 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
      /
       </code>
        2    3    4    5    6    7  
+     
+     ...
+
      PL/SQL procedure successfully completed.
+     
+     SQL> 
      ```
 
      ```
-     SQL> 
      SQL><code> DECLARE
       v_len   NUMBER(10);
        v_offset NUMBER(10) :=1;
@@ -131,7 +189,10 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
        END LOOP;
      END;
      /</code>
-       2    3    4    5    6    7    8    9   10   11   12   13  
+       2    3    4    5    6    7    8    9   10   11   12   13 
+
+     ...
+
      GENERAL INFORMATION
      SECTION
      ------------------------------------------------------------
@@ -241,9 +302,14 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
 
      SQL>
      ```
+
+## Task 4: Verify Recommendations and Implement
+
 8.	Check the SQL profile automatically created by the diagnosis and repair function.
      ```
      SQL> <code>SELECT sql_text, status FROM dba_sql_profiles;</code>
+
+     ...
 
      SQL_TEXT                                              STATUS
      ----------------------------------------------------- ----------
@@ -260,9 +326,17 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
      ```
      SQL> <code>EXPLAIN PLAN FOR SELECT /*+ FULL(a) FULL (b) */ sum(a.num),sum(b.num),count(*) FROM diag.tab1 a,diag.tab1 b WHERE a.id = b.id and a.id = 100;</code>
 
+     ...
+
      Explained.
 
+     SQL>
+     ```
+     
+     ```
      SQL><code>SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);</code>
+
+     ...
 
      PLAN_TABLE_OUTPUT
      ----------------------------------------------------------------
@@ -316,7 +390,10 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
           auto_apply_patch => 'YES');
      END;
      /</code>
-      2    3    4    5    6    7    8   
+      2    3    4    5    6    7    8 
+
+     ...
+
      DECLARE
      *
      ERROR at line 1:
@@ -332,20 +409,30 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
 
     A2/ The problem type PROBLEM_TYPE_ALT_PLAN_GEN refers to the constant 5 (refer task 5). As there are no other plans in DBA_SQL_PLAN_BASELINES for the same query, the function cannot satisfy the condition to find alternate plans.
 
+## Task 5: Test Implementation
+
 11.	You now test a failing SQL statement for which SQL Diagnose and Repair provides and implements a patch. Execute the /home/oracle/labs/DIAG/crash_delete.sql SQL script. The SQL statement fails with an ORA-00600 error. Press Enter after each pause.
 
      ```
      SQL><code>CONNECT system@PDB1</code>
      ```
 
+     ... 
+
      ```
      Enter password: <code>Ora4U_1234</code>
      Connected.
+
+     SQL>
      ```
+
+     ...
 
      ```
      SQL> <code>$HOME/oracle/labs/19cnf/crash_delete.sql</code>
-     SQL> set echo on
+     
+     ...
+
      SQL>
      SQL> -- This example generates a workaround for a crash. This bug has already
      SQL> -- been fixed but we toggle the bug fix using an underscore parameter
@@ -524,6 +611,9 @@ a.	Find the SQL_ID for the failing statement.
      SQL> <code>SELECT sql_id FROM v$sql 
          WHERE  sql_text LIKE 'delete%USE_HASH%';</code>
       2
+     
+     ...
+
      SQL_ID
      -------------
      53390wmjjqgra
@@ -531,9 +621,23 @@ a.	Find the SQL_ID for the failing statement.
      1 row selected.
 
      SQL>
+     ```
+
      b.	Call the function with SQL_ID as input and the appropriate problem type. (Refer task 5).
+     
+     ```
      SQL> <code>SET SERVEROUTPUT ON</code>
+     ```
+     
+     ...
+
+     ```
      SQL> <code>VAR incident_id NUMBER</code>
+     ```
+
+     ...
+
+     ````
      SQL> <code>DECLARE
        recom_count number(10);
      BEGIN
@@ -547,8 +651,10 @@ a.	Find the SQL_ID for the failing statement.
          dbms_output.put_line ( recom_count || ' recommendations generated for incident '||:incident_id);
      END;
      / </code>
-     1 recommendations generated for incident 96043
       2    3    4    5    6    7    8    9   10   11   12   13
+     
+     ...
+     1 recommendations generated for incident 96043
      PL/SQL procedure successfully completed.
 
      SQL>
@@ -560,6 +666,9 @@ a.	Find the SQL_ID for the failing statement.
      SQL> <code>SELECT finding_id, type FROM dba_advisor_recommendations 
      WHERE  task_name = to_char(:incident_id);</code>
      2
+
+     ...
+
      FINDING_ID TYPE
      ---------- ------------------------------
              1 SQL PATCH
@@ -569,6 +678,8 @@ a.	Find the SQL_ID for the failing statement.
      SQL>
      ```
 
+## Task 6: Find and Implement Patches
+
 14.	Find the SQL patch.
 
      ```
@@ -576,6 +687,9 @@ a.	Find the SQL_ID for the failing statement.
      WHERE  name = to_char(:incident_id)
      AND    sql_text LIKE 'delete%';</code>
       2   3  
+
+     ...
+
      NAME                     TASK_EXEC_NAME STATUS
      ------------------------ -------------- ----------
      96043                    EXEC_1         ENABLED
@@ -611,13 +725,19 @@ a.	Find the SQL_ID for the failing statement.
        */
      from simple_table t1 where t1.a = 'a' and rowid <> (select max(rowid) from simple_table t2 where t1.a= t2.a and t1.b = t2.b and t1.d=t2.d);</code>
      2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22
+
+     ...
      
      Explained.
+
+     SQL>
      ```
 
      ```
      SQL> <code>SELECT plan_table_output 
           FROM  TABLE(dbms_xplan.display('plan_table',null));</code>
+    
+     ...
 
      PLAN_TABLE_OUTPUT
      ----------------------------------------------------------------
@@ -668,42 +788,59 @@ a.	Find the SQL_ID for the failing statement.
      46 rows selected.
 
      SQL> 
+     ```
 
      A3/ The SQL patch is automatically implemented.
-     ```
+     
 
 15.	Re-execute the failing SQL statement with the implemented patch.
 
      ```
      SQL> <code>delete /*+ USE_HASH_AGGREGATION(@"SEL$80F8B8C6") USE_HASH(@"SEL$80F8B8C6" "T1"@"DEL$1") LEADING(@"SEL$80F8B8C6" "T2"@"SEL$1" "T1"@"DEL$1") FULL(@"SEL$80F8B8C6" "T1"@"DEL$1") FULL(@"SEL$80F8B8C6" "T2"@"SEL$1") OUTLINE(@"DEL$1") OUTLINE(@"SEL$1") OUTLINE(@"SEL$AD0B6B07") OUTLINE(@"SEL$7D4DB4AA") UNNEST(@"SEL$1") OUTLINE(@"SEL$75B5BFA2") MERGE(@"SEL$7D4DB4AA") OUTLINE_LEAF(@"SEL$80F8B8C6") ALL_ROWS OPT_PARAM('_optimizer_cost_model' 'fixed') DB_VERSION('11.1.0.7') OPTIMIZER_FEATURES_ENABLE('11.1.0.7') NO_INDEX(@"SEL$1" "T2"@"SEL$1") */ from simple_table t1 where t1.a = 'a' and rowid <> (select max(rowid) from simple_table t2 where t1.a= t2.a and t1.b = t2.b and t1.d=t2.d);</code>
 
+     ...
+
      1 row deleted.
+
+     SQL>
      ```
 
      ```
      SQL> <code>ROLLBACK;</code>
 
+     ...
+
      Rollback complete.
+
+     SQL>
      ```
 
      ```
      SQL> <code>EXIT</code>
+
+     ...
+     
      $
      ```
 
      Observe that the statement does not fail anymore.
+
+## Task 7: Clean up Schema
+
 16.	Set the fix for the error back ON and clean up the DIAG schema.
 
      ```
      $ <code>$HOME/oracle/labs/19cnf/cleanup_crash.sh</code>
-     …
+
+     ...
+
      $
      ```
 
 ## Learn More
 
-- [Managing Hybrid Partitioned Tables](https://docs.oracle.com/en/database/oracle/oracle-database/19/vldbg/manage_hypt.html#GUID-ACBDB3B2-0A16-4CFD-8FF1-A57C9B3D907F)
-- [Enhanced In-Memory External Table Support](https://blogs.oracle.com/in-memory/post/oracle-database-21c-enhanced-in-memory-external-table-support)
+- [Diagnosing and Resolving Problems](https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/diagnosing-and-resolving-problems.html#GUID-2F2E3F4B-ECE3-4AF0-91B0-4CB437FB21CC)
+- [SQL Diagnosability Package](https://docs.oracle.com/database/121/ARPLS/d_sqldiag.htm#ARPLS68285)
 
 ## Acknowledgements
 
