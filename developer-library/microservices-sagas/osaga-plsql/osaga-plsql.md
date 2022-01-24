@@ -153,7 +153,9 @@ Estimated Time:  10 minutes
     <copy>
     declare
       saga_id raw(16);
-      request JSON;
+      flightrequest JSON;
+      hotelrequest JSON;
+      carrequest JSON;
      begin
       saga_id := dbms_saga.begin_saga('TravelAgencyPLSQL');
       flightrequest := json('[{"flight":"myflight"}]');
@@ -231,7 +233,9 @@ Estimated Time:  10 minutes
       <copy>
         declare
           saga_id raw(16);
-          request JSON;
+          flightrequest JSON;
+          hotelrequest JSON;
+          carrequest JSON;
          begin
           saga_id := dbms_saga.begin_saga('TravelAgencyPLSQL');
           flightrequest := json('[{"flight":"myflight"}]');
@@ -241,7 +245,8 @@ Estimated Time:  10 minutes
           carrequest := json('[{"car":"mycar"}]');
           dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'HotelPLSQL', 'TravelCoordinator', carrequest);
         end;
-        / </copy>
+        / 
+      </copy>
       ```
 
 2.   In the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
