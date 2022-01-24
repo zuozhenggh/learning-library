@@ -35,12 +35,14 @@ Estimated Time:  10 minutes
     ```
 
 3.    Enter the following command and then enter your password when prompted to connect to `sagadb1`
+
     ```
     <copy>connect admin@sagadb1_tp</copy>
     ```  
-        The output should look similar to the following.
+    
+   The output should look similar to the following.
 
-        ![SQLcl login to sagadb1](images/connectwithSQLcl.png " ")
+   ![SQLcl login to sagadb1](images/connectwithSQLcl.png " ")
       
 4.   Enter the following command to install the saga broker, coordinator, and `TravelAgencyPLSQL` participant/initiator along with it's associated saga callback package.
 
