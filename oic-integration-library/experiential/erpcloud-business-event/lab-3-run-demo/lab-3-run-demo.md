@@ -10,7 +10,15 @@ This demo lab will walk you through the steps to rund the end-to-end demo flow.
 
 
 ## Task 1: Create Purchase Order in ERP Cloud
+1. Access your ERP Cloud environment. Login with a user having the correct roles and priviliges to create a PO. 
 
+2. Navigate to the **Procurement** Tab
+
+3. Click ... to open the PO actions menu.
+
+4. In the Order section, click **Create Order**. This open ... dialog.
+
+5. 
 
 
 
@@ -20,6 +28,7 @@ Use the Oracle Integration dashboard to see the data flow resulting from the cre
 1. In the navigation pane, click **Home** > **Monitoring** > **Integrations** > **Dashboard**
 
 2. 
+
 
 ## Task 3: Verify PO record in ADW Table
 
