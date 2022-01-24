@@ -148,7 +148,19 @@ Estimated Time:  10 minutes
 
 ## Task 3: Conduct saga rollback test
 
-1.    In the TravelAgency/sagadb1 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
+
+1.   In the Participant/sagadb2 SQLcl console, check the initial inventory level of one or more participants by copying and pasting the following. 
+    
+      ```
+      <copy>select * from cars;</copy>
+      ```
+    
+      Note the value.
+
+      ![Car count of 2](images/carcount2.png " ")
+      
+2.    In the TravelAgency/sagadb1 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
+
     ```
     <copy>
     declare
@@ -165,18 +177,9 @@ Estimated Time:  10 minutes
       carrequest := json('[{"car":"mycar"}]');
       dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'HotelPLSQL', 'TravelCoordinator', carrequest);
     end;
-    /</copy>
+    /
+    </copy>
     ```
-
-2.   In the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
-    
-      ```
-      <copy>select * from cars;</copy>
-      ```
-    
-      Note the value.
-
-      ![Car count of 2](images/carcount2.png " ")
       
 3.    Check the existence and status of the saga on both the TravelAgency/sagadb1 and Participants/sagadb2 by copying and pasting the following into SQLcl
 
