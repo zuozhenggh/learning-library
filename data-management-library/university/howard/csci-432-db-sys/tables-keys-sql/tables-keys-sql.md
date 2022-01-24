@@ -195,10 +195,10 @@ As you are creating the tables, examine the constraints that are being created w
     ```
 
     Create a unique index on the locations table to avoid duplicate region id’s.
-
+    ```
     <copy>CREATE UNIQUE INDEX reg_id_pk
     ON regions (region_id);</copy>
-
+    ```
 8. Create the COUNTRIES table
     ```
     <copy>CREATE TABLE countries 
@@ -1004,7 +1004,7 @@ Now that we have created a database, objects, constraints, indexes and so on, it
     ![](./images/insert-into-job-history.png " ")
 
 
-3. The second part of the deliverable is to create a SELECT statement that retrieves only your information from the EMPDETAILSVIEW. Do not show the whole table, only your information you entered into the EMPLOYEES table. As a reminder the EMPDETAILSVIEW will contain any updated information from the EMPLOYEES table. You CANNOT use the following fields to search for yourself: employee\_id, last\_name, or first\_name. Your SELECT statement will have to consist of a combination of attributes that uniquely identifies you but are not your employee id, first or last name. Your results should be similar to this. Take a snapshot of this output and add it to the pdf file you will submit. 
+3. The second part of the deliverable is to create a SELECT statement that retrieves only your information from the emp\_details\_view. Do not show the whole table, only your information you entered into the EMPLOYEES table. As a reminder the emp\_details\_view will contain any updated information from the EMPLOYEES table. You CANNOT use the following fields to search for yourself: employee\_id, last\_name, or first\_name. Your SELECT statement will have to consist of a combination of attributes that uniquely identifies you but are not your employee id, first or last name. Your results should be similar to this. Take a snapshot of this output and add it to the pdf file you will submit. 
 
     ![](./images/query-for-pdf.png " ")
 
