@@ -148,7 +148,7 @@ Estimated Time:  10 minutes
 
 ## Task 3: Conduct saga rollback test
 
-1.    In the TravelAgency/sagadb2 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
+1.    In the TravelAgency/sagadb1 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
     ```
     <copy>
     declare
