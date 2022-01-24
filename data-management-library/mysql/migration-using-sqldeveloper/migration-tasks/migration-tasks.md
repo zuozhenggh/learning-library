@@ -184,11 +184,12 @@ Make sure you have followed the prerequisites requirement, mentioned in detail i
   You can follow the self-explanatory Wizard to provide details about the source and target connection, repository connection, database selected for migration, and objects under the database to be migrated and any data-type conversion required etc and at the end choose to create an offline script file for migration. You can refer to the [documentation](https://docs.oracle.com/en/database/oracle/sql-developer/19.4/rptug/migrating-third-party-databases.html#GUID-51B0F243-D970-43A0-BFA4-97477CB14C48) for explaination of the steps of this wizard, if you need. 
 
 
-This is the end of the workshop. This workshop walked you through one scenario of moving data from MySQL Database to Oracle Autonomous Database (ADB) using Oracle SQL Developer. 
+## Conclusion
+  
+  This is the end of the workshop. This workshop walked you through one scenario of moving data from MySQL Database to Oracle Autonomous Database (ADB) using Oracle SQL Developer. 
 
-
-Learn more about this migration scenario:
-* [Migration Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/migrate-mysql.html#GUID-241F7C5A-1EC3-42D8-B960-B9751CB89D02)
+  Here's background Blog post on the same topic:
+  * [Migrating MySQL Database to Oracle Autonomous Database](https://blogs.oracle.com/cloud-infrastructure/post/migrating-mysql-database-to-oracle-autonomous-database)
 
 ## Acknowledgements
 * **Author** - Muhammad Shuja, Principal Cloud Solution Engineer, ODP - ANZ

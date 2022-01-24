@@ -22,19 +22,13 @@ To connect to Oracle Database and run SQL commands, set the environment first.
 
 1. Log in to your host as *oracle*, the user who can perform database administration.
 
-2. Open a terminal window and change the current working directory to `$ORACLE_HOME/bin`. This is the directory where the listener control utility is located.
+1. Open a terminal window and run the command *oraenv* to set the environment variables.
 
 	```
-	$ <copy>cd /u01/app/oracle/product/21.0.0/dbhome_1/bin</copy>
+	$ <copy>. oraenv</copy>
 	```
 
-3. Run the command *oraenv* to set the environment variables.
-
-	```
-	$ <copy>./oraenv</copy>
-	```
-
-4. Enter the Oracle SID *orcl*.
+1. Enter the Oracle SID *orcl*.
 
 	```
 	ORACLE_SID = [oracle] ? <copy>orcl</copy>
@@ -42,6 +36,12 @@ To connect to Oracle Database and run SQL commands, set the environment first.
 	```
 
 	This command also sets the Oracle home path to `/u01/app/oracle/product/21.0.0/dbhome_1`.
+
+1. Change the current working directory to `$ORACLE_HOME/bin`. This is the directory where the listener control utility is located.
+
+	```
+	$ <copy>cd /u01/app/oracle/product/21.0.0/dbhome_1/bin</copy>
+	```
 
 You have set the environment variables for the active terminal session. You can now connect to Oracle Database and run the commands.
 

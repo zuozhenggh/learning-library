@@ -162,22 +162,10 @@ In this lab, you will:
 
   Now that you have connected to the instance you can proceed to the next Task.
 
-4. From the established ssh connection, install MySQL Shell and MySQL client executing the following commands and the expected outputput should be as following:
-    
+4. From the established ssh connection, install MySQL Shell executing the following command, and the expected output should be as following:
+   
 	```
-	<copy>wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</copy>
-	```
-
-	![MySQL shell install](./images/Lab1-task3.4.png)
-
-	```
-	<copy>sudo yum localinstall -y mysql80-community-release-el7-3.noarch.rpm</copy>
-	```
-
-	![MySQL shell install](./images/Lab1-task3.4-1.png)
-
-	```
-	<copy>sudo yum install -y mysql-shell mysql-community-client</copy>  
+	<copy>sudo yum install -y mysql-shell</copy>  
 	```
 	![MySQL shell install](./images/Lab1-task3.4-2.png)
 
