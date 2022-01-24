@@ -109,9 +109,13 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
    
    ![Password prompt for dblink and osaga setup](images/pwpromptforjavasetup.png " ")
      
-   This setup will take approximately 3 to 5 minutes at which time you should see successful output such as the following.  
+   This setup will take one or two minutes and you should see output such as the following.  
    
    ![Osagae setup complete](images/osagasetupcomplete.png " ")
+   
+   And finally see successful completion and exit of the setup.
+   
+   ![Osagae setup complete](images/endofsagaoutput.png " ")
    
      If at any point you are disconnected from the Cloud Shell, you can start from the last command that did not complete.
 
