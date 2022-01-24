@@ -22,8 +22,8 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize the Environment
-		- Lab: Deploy Oracle Identity Governance(OIG) domain
-		- Lab: Deploy Oracle Access Manager(OAM) domain
+    - Lab: Deploy Oracle Identity Governance(OIG) domain
+    - Lab: Deploy Oracle Access Manager(OAM) domain
 
 ## Task 1: Prepare the environment for Container Creation
 
