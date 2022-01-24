@@ -95,7 +95,7 @@ If this is the first time you have started this participant type then select 'y'
         ```
 
 4.    You will be prompted for the following.
-        - database password (the one you used when creating the participant/`sagadb2` PDB)
+        - database password (the one you used when creating the travelagency/`sagadb1` PDB)
         - TNS_ADMIN (accept the default)
 
 5.    You will then be asked whether the one-time setup call `add_participant` is needed for `TravelAgencyJava`. 
