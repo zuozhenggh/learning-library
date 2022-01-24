@@ -37,13 +37,12 @@ The wizard provides a quick and easy way to create a new application and your fi
 ![Image alt text](images/create-map-05.png)
 
 6. Observe your new page is now listed under **Pages**. Click **Create Application**.
-   
-   -- need image here...--
+![Image alt text](images/create-map-06.png)
 
 7. You are navigated to the page where you manage your new application. Click **Run Application**.
 ![Image alt text](images/create-map-07.png)
 
-8. Sign in to your application.
+8. Sign in to your application using your APEX login username and password.
 ![Image alt text](images/create-map-08.png)
  
 9. The default layout we selected for our appliciation provides a home page with links to other pages. From the home page, navigate to the page you just created.
@@ -65,12 +64,10 @@ You will now inspect the Map Region created by the wizard.
 3. Map Regions include Layers which are the points, lines, and polygons (from Oracle Spatial, GeoJSON, or coordinates)  displayed on top of a background map. When stepping through the Create Page wizard, you selected a Map using the GEOMETRY column in table EBA\_SAMPLE\_MAP\_AIRPORTS (i.e., Oracle Spatial data). So the wizard has created one layer containing those airport locations. By default the Layer has the same name as the Page, i.e. **Airports Map**. This can be changed as desired. 
    
    To inspect this Layer, in the Page tree on the left panel, under Layers click on **Airports Map**. Configuration details are displayed in the **Layer** panel on the right. For information about configuration items, click on the **Help** tab in the middle panel. When you then click on configuration items, help info is displayed for that item. For example click in the **Layer Type** menu to see help on its options. 
+![Image alt text](images/create-map-13.png)
 
--- need image... ---
-
-4. Scroll down in the Layer panel to see the other configuration options, including Column Mapping where the geometry data type is set. Here you are using Oracle's native spatial data type, SDO_GEOMETRY, and the column name is GEOMETRY.  
-
--- need image... ---
+4. Scroll down in the Layer panel to see the other configuration options that were set by yhe wizard, including Column Mapping where the geometry data type is set. Here you are using Oracle's native spatial data type, SDO_GEOMETRY, and the column name is GEOMETRY.  
+![Image alt text](images/create-map-14.png)
 
 
 

@@ -122,22 +122,22 @@ If you have any issues accessing github, then you may also click the option uplo
 6. Finally, you can run a basic spatial query with this data.  Click on **SQL Workshop** and then  **SQL Commands**.
   ![Image alt text](images/install-sample-maps-27.png)
 
-7. The following query returns the number of airports with land coverge over 1000 acres that are within 100km of Texas. Notive the use of the native spatial operator **sdo_within_distance**.  Copy and paste the query into the SQL Commands window and then click **Run** at the top right.
+7. The following query returns the number of airports with land coverge over 1000 acres that are within 100km of Texas. Notive the use of the native spatial operator **sdo\_within\_distance**.  Copy and paste the query into the SQL Commands window and then click **Run** at the top right.
 
-   ```
-   <copy>
-   select count(a.id) as number_of_airports
-   from EBA_SAMPLE_MAP_AIRPORTS a, 
-        EBA_SAMPLE_MAP_SIMPLE_STATES b
-   where b.state_code= 'TX'
-   and land_area_covered > 1000
-   and sdo_within_distance(a.geometry, b.geometry, 'distance=100 unit=KM') = 'TRUE'
-   </copy>
-   ```
+      ```
+      <copy>
+      select count(a.id) as number_of_airports
+      from EBA_SAMPLE_MAP_AIRPORTS a, 
+           EBA_SAMPLE_MAP_SIMPLE_STATES b
+      where b.state_code= 'TX'
+      and land_area_covered > 1000
+      and sdo_within_distance(a.geometry, b.geometry, 'distance=100 unit=KM') = 'TRUE'
+      </copy>
+      ```
 
      ![Image alt text](images/install-sample-maps-28.png)
 
- 8. In the sdo_within_distance operator, update the distance to 300km and re-run. Observe the result changes based on the larger search area.
+ 8. In the sdo\_within\_distance operator, update the distance to 300km and re-run. Observe the result changes based on the larger search area.
      ![Image alt text](images/install-sample-maps-29.png)    
 
       In a later lab you will configure a map that dislpays the results of this query where the state and distance are controlled by the menus in the page.

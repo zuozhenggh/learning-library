@@ -29,8 +29,8 @@ Oracle Spatial is a set of geospatial data management, analysis, and processing 
 ### Prerequisites
 
   - Oracle APEX 21.2+. 
-  - Basic experience with Oracle APEX. If needed, review the following introductory LiveLabs APEX workshop: [Creating an App based on Existing Tables for Oracle Autonomous Cloud Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=628). 
-  - Basic experience with Oracle Spatial. If needed review the following introductory LiveLabs Spatial workshop: [Introduction to Oracle Spatial]( https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=736)
+  - Basic experience with Oracle APEX is helpful, though not required. If needed, review the following introductory LiveLabs APEX workshop: [Creating an App based on Existing Tables for Oracle Autonomous Cloud Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=628). 
+  - Basic experience with Oracle Spatial is helpful, though not required. If needed review the following introductory LiveLabs Spatial workshop: [Introduction to Oracle Spatial]( https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=736)
 
 
 
