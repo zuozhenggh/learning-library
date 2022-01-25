@@ -73,7 +73,6 @@ This lab assumes you have:
      Enter password: <copy>Ora4U_1234</copy>
 
      ...
-     SQL>
      ```
 
      ```
@@ -111,7 +110,7 @@ This lab assumes you have:
      ```
 
      ```
-     SQL> <copy> SET SERVEROUTPUT ON
+     SQL><code> SET SERVEROUTPUT ON
          VAR incident_id NUMBER
          DECLARE
          recom_count number(10);
@@ -126,7 +125,7 @@ This lab assumes you have:
              dbms_output.put_line ( recom_count || ' recommendations generated for incident '||:incident_id);
      end;
      /
-     </copy>
+     </code>
      1 recommendations generated for incident 48653
       2    3    4    5    6    7    8    9   10   11   12   13   
      
@@ -139,8 +138,8 @@ This lab assumes you have:
 
 6.	Find the recommendations generated from the diagnosis.
      ```
-     SQL> <copy> SELECT finding_id, type FROM dba_advisor_recommendations 
-     WHERE  task_name = to_char(:incident_id);</copy>
+     SQL><code> SELECT finding_id, type FROM dba_advisor_recommendations 
+     WHERE  task_name = to_char(:incident_id);</code>
      2
 
      ...
@@ -153,7 +152,7 @@ This lab assumes you have:
      ```
 7.	Report the details of the recommendations.
      ```
-     SQL> <copy>VAR b_report CLOB</copy>
+     SQL> <code>VAR b_report CLOB</code>
      
      ...
 
@@ -179,7 +178,7 @@ This lab assumes you have:
      ```
 
      ```
-     SQL> <copy> DECLARE
+     SQL><code> DECLARE
       v_len   NUMBER(10);
        v_offset NUMBER(10) :=1;
        v_amount  NUMBER(10) :=10000;
@@ -191,7 +190,7 @@ This lab assumes you have:
          v_offset := v_offset + v_amount;
        END LOOP;
      END;
-     /</copy>
+     /</code>
        2    3    4    5    6    7    8    9   10   11   12   13 
 
      ...
@@ -310,7 +309,7 @@ This lab assumes you have:
 
 8.	Check the SQL profile automatically created by the diagnosis and repair function.
      ```
-     SQL> <copy>SELECT sql_text, status FROM dba_sql_profiles;</copy>
+     SQL> <code>SELECT sql_text, status FROM dba_sql_profiles;</code>
 
      ...
 
@@ -327,7 +326,7 @@ This lab assumes you have:
 9.	Verify that the poor performing SQL statement is now using the SQL profile.
 
      ```
-     SQL> <copy>EXPLAIN PLAN FOR SELECT /*+ FULL(a) FULL (b) */ sum(a.num),sum(b.num),count(*) FROM diag.tab1 a,diag.tab1 b WHERE a.id = b.id and a.id = 100;</copy>
+     SQL> <code>EXPLAIN PLAN FOR SELECT /*+ FULL(a) FULL (b) */ sum(a.num),sum(b.num),count(*) FROM diag.tab1 a,diag.tab1 b WHERE a.id = b.id and a.id = 100;</code>
 
      ...
 
@@ -337,7 +336,7 @@ This lab assumes you have:
      ```
      
      ```
-     SQL> <copy>SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);</copy>
+     SQL><code>SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);</code>
 
      ...
 
@@ -385,14 +384,14 @@ This lab assumes you have:
     Q2/ What happens if you ask the diagnosis function to explore all alternative plans for the SQL query?
 
      ```
-     SQL> <copy> DECLARE
+     SQL><code> DECLARE
      BEGIN
        :incident_id := dbms_sqldiag.sql_diagnose_and_repair(
            sql_text => ' SELECT /*+ FULL(a) FULL (b) */ sum(a.num),sum(b.num),count(*) FROM diag.tab1 a,diag.   tab1 b WHERE a.id = b.id and a.id = 100',
           problem_type => DBMS_SQLDIAG.PROBLEM_TYPE_ALT_PLAN_GEN,
           auto_apply_patch => 'YES');
      END;
-     /</copy>
+     /</code>
       2    3    4    5    6    7    8 
 
      ...
@@ -417,13 +416,13 @@ This lab assumes you have:
 11.	You now test a failing SQL statement for which SQL Diagnose and Repair provides and implements a patch. Execute the /home/oracle/labs/DIAG/crash_delete.sql SQL script. The SQL statement fails with an ORA-00600 error. Press Enter after each pause.
 
      ```
-     SQL><copy>CONNECT system@PDB1</copy>
+     SQL><code>CONNECT system@PDB1</code>
      ```
 
      ... 
 
      ```
-     Enter password: <copy>Ora4U_1234</copy>
+     Enter password: <code>Ora4U_1234</code>
      Connected.
 
      ...
@@ -433,7 +432,7 @@ This lab assumes you have:
 
 
      ```
-     SQL> <copy>$HOME/oracle/labs/19cnf/crash_delete.sql</copy>
+     SQL> <code>$HOME/oracle/labs/19cnf/crash_delete.sql</code>
      
      ...
 
@@ -612,8 +611,8 @@ This lab assumes you have:
 a.	Find the SQL_ID for the failing statement.
 
      ```
-     SQL> <copy>SELECT sql_id FROM v$sql 
-         WHERE  sql_text LIKE 'delete%USE_HASH%';</copy>
+     SQL> <code>SELECT sql_id FROM v$sql 
+         WHERE  sql_text LIKE 'delete%USE_HASH%';</code>
       2
      
      ...
@@ -630,14 +629,14 @@ a.	Find the SQL_ID for the failing statement.
      b.	Call the function with SQL_ID as input and the appropriate problem type. (Refer task 5).
      
      ```
-     SQL> <copy>SET SERVEROUTPUT ON</copy>
+     SQL> <code>SET SERVEROUTPUT ON</code>
      
      ...
 
      ```
 
      ```
-     SQL> <copy>VAR incident_id NUMBER</copy>
+     SQL> <code>VAR incident_id NUMBER</code>
 
      ...
 
@@ -645,7 +644,7 @@ a.	Find the SQL_ID for the failing statement.
      ```
 
      ```
-     SQL> <copy>DECLARE
+     SQL> <code>DECLARE
        recom_count number(10);
      BEGIN
        :incident_id := dbms_sqldiag.sql_diagnose_and_repair(
@@ -657,7 +656,7 @@ a.	Find the SQL_ID for the failing statement.
          WHERE  task_name = to_char(:incident_id);
          dbms_output.put_line ( recom_count || ' recommendations generated for incident '||:incident_id);
      END;
-     / </copy>
+     / </code>
       2    3    4    5    6    7    8    9   10   11   12   13
      
      ...
@@ -670,8 +669,8 @@ a.	Find the SQL_ID for the failing statement.
 13.	Find the recommendations generated from the diagnosis.
 
      ```
-     SQL> <copy>SELECT finding_id, type FROM dba_advisor_recommendations 
-     WHERE  task_name = to_char(:incident_id);</copy>
+     SQL> <code>SELECT finding_id, type FROM dba_advisor_recommendations 
+     WHERE  task_name = to_char(:incident_id);</code>
      2
 
      ...
@@ -690,9 +689,9 @@ a.	Find the SQL_ID for the failing statement.
 14.	Find the SQL patch.
 
      ```
-     SQL> <copy>SELECT name, task_exec_name, status FROM dba_sql_patches 
+     SQL> <code>SELECT name, task_exec_name, status FROM dba_sql_patches 
      WHERE  name = to_char(:incident_id)
-     AND    sql_text LIKE 'delete%';</copy>
+     AND    sql_text LIKE 'delete%';</code>
       2   3  
 
      ...
@@ -709,7 +708,7 @@ a.	Find the SQL_ID for the failing statement.
      Q3/ Is the SQL patch implemented?
 
      ```
-     SQL> <copy>EXPLAIN PLAN FOR delete
+     SQL> <code>EXPLAIN PLAN FOR delete
       /*+
           USE_HASH_AGGREGATION(@"SEL$80F8B8C6")
           USE_HASH(@"SEL$80F8B8C6" "T1"@"DEL$1")
@@ -730,7 +729,7 @@ a.	Find the SQL_ID for the failing statement.
           OPTIMIZER_FEATURES_ENABLE('11.1.0.7')
           NO_INDEX(@"SEL$1" "T2"@"SEL$1")
        */
-     from simple_table t1 where t1.a = 'a' and rowid <> (select max(rowid) from simple_table t2 where t1.a= t2.a and t1.b = t2.b and t1.d=t2.d);</copy>
+     from simple_table t1 where t1.a = 'a' and rowid <> (select max(rowid) from simple_table t2 where t1.a= t2.a and t1.b = t2.b and t1.d=t2.d);</code>
      2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22
 
      ...
@@ -741,8 +740,8 @@ a.	Find the SQL_ID for the failing statement.
      ```
 
      ```
-     SQL> <copy>SELECT plan_table_output 
-          FROM  TABLE(dbms_xplan.display('plan_table',null));</copy>
+     SQL> <code>SELECT plan_table_output 
+          FROM  TABLE(dbms_xplan.display('plan_table',null));</code>
     
      ...
 
@@ -803,7 +802,7 @@ a.	Find the SQL_ID for the failing statement.
 15.	Re-execute the failing SQL statement with the implemented patch.
 
      ```
-     SQL> <copy>delete /*+ USE_HASH_AGGREGATION(@"SEL$80F8B8C6") USE_HASH(@"SEL$80F8B8C6" "T1"@"DEL$1") LEADING(@"SEL$80F8B8C6" "T2"@"SEL$1" "T1"@"DEL$1") FULL(@"SEL$80F8B8C6" "T1"@"DEL$1") FULL(@"SEL$80F8B8C6" "T2"@"SEL$1") OUTLINE(@"DEL$1") OUTLINE(@"SEL$1") OUTLINE(@"SEL$AD0B6B07") OUTLINE(@"SEL$7D4DB4AA") UNNEST(@"SEL$1") OUTLINE(@"SEL$75B5BFA2") MERGE(@"SEL$7D4DB4AA") OUTLINE_LEAF(@"SEL$80F8B8C6") ALL_ROWS OPT_PARAM('_optimizer_cost_model' 'fixed') DB_VERSION('11.1.0.7') OPTIMIZER_FEATURES_ENABLE('11.1.0.7') NO_INDEX(@"SEL$1" "T2"@"SEL$1") */ from simple_table t1 where t1.a = 'a' and rowid <> (select max(rowid) from simple_table t2 where t1.a= t2.a and t1.b = t2.b and t1.d=t2.d);</copy>
+     SQL> <code>delete /*+ USE_HASH_AGGREGATION(@"SEL$80F8B8C6") USE_HASH(@"SEL$80F8B8C6" "T1"@"DEL$1") LEADING(@"SEL$80F8B8C6" "T2"@"SEL$1" "T1"@"DEL$1") FULL(@"SEL$80F8B8C6" "T1"@"DEL$1") FULL(@"SEL$80F8B8C6" "T2"@"SEL$1") OUTLINE(@"DEL$1") OUTLINE(@"SEL$1") OUTLINE(@"SEL$AD0B6B07") OUTLINE(@"SEL$7D4DB4AA") UNNEST(@"SEL$1") OUTLINE(@"SEL$75B5BFA2") MERGE(@"SEL$7D4DB4AA") OUTLINE_LEAF(@"SEL$80F8B8C6") ALL_ROWS OPT_PARAM('_optimizer_cost_model' 'fixed') DB_VERSION('11.1.0.7') OPTIMIZER_FEATURES_ENABLE('11.1.0.7') NO_INDEX(@"SEL$1" "T2"@"SEL$1") */ from simple_table t1 where t1.a = 'a' and rowid <> (select max(rowid) from simple_table t2 where t1.a= t2.a and t1.b = t2.b and t1.d=t2.d);</code>
 
      ...
 
@@ -813,7 +812,7 @@ a.	Find the SQL_ID for the failing statement.
      ```
 
      ```
-     SQL> <copy>ROLLBACK;</copy>
+     SQL> <code>ROLLBACK;</code>
 
      ...
 
@@ -823,7 +822,7 @@ a.	Find the SQL_ID for the failing statement.
      ```
 
      ```
-     SQL> <copy>EXIT</copy>
+     SQL> <code>EXIT</code>
 
      ...
      
@@ -837,7 +836,7 @@ a.	Find the SQL_ID for the failing statement.
 16.	Set the fix for the error back ON and clean up the DIAG schema.
 
      ```
-     $ <copy>$HOME/oracle/labs/19cnf/cleanup_crash.sh</copy>
+     $ <code>$HOME/oracle/labs/19cnf/cleanup_crash.sh</code>
 
      ...
 
