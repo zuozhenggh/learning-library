@@ -367,7 +367,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       $
       ```
 
-c.	Switch back to oracle and collect the diagnostic data related to the second occurrence of the ORA-00600 errors in ORCL for SR12345.
+      c.	Switch back to oracle and collect the diagnostic data related to the second occurrence of the ORA-00600 errors in ORCL for SR12345.
      
       ```
       $ <copy>cd $HOME/u01/app/oracle/tfa/bin</copy>
