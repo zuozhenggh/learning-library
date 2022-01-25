@@ -1,4 +1,4 @@
-# LOAD HEATWAVE CLUSTER IN MYSQL DATABASE SYSTEM  
+# Load HeatWave cluster in MySQL Database System  
 ![INTRO](./images/00_mds_heatwave_2.png " ")
 
 ## Introduction
@@ -66,6 +66,7 @@ In this lab, you will be guided through the following task:
 * [MySQL Database Documentation](https://www.MySQL.com)
 
 ## Acknowledgements
+
 * **Author** - Perside Foster, MySQL Solution Engineering
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
 * **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, September 2021

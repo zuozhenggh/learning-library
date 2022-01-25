@@ -1,4 +1,4 @@
-# CONNECT TO MYSQL DATABASE SYSTEM
+# Connect to MySQL DB System
 ![INTRO](./images/00_mds_heatwave_2.png " ")
 
 ## Introduction

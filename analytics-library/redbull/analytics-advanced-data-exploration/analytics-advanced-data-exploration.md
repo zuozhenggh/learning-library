@@ -88,7 +88,7 @@ The position chart we've been using so far may seem quite rudimentary; although 
 
 This leaves one thinking that we might still be missing some essential insights. So how can we include the element of time to visualize a race?
 
-For this we have to introduce the concept of the "ghost car". The ghost car is a virtual car that drives at the exact average speed of the pack. This time has already been calculated for you and is available as
+For this we have to introduce the concept of the "ghost car". The ghost car is a virtual car that drives at the exact average speed of the pack. This time has already been calculated for you and is available as `MEDIAN_MILLISECONDS_CUMULATIVE`.
 
 To visualize how well each car is doing, we'll calculate the time-delta between each car and the ghost driver at each lap.
 
