@@ -23,7 +23,7 @@ The diagram below provides an overview of the OCI APM Service, its features, com
 
 Among other capabilities, OCI APM includes an implementation of a Distributed Tracing system. It collects and processes transaction trace data (spans) from the monitored application and make it available for viewing, dashboarding, exploration, alerts, etc. For more information on APM and Trace Explorer please refer to Application Performance Monitoring > **[Use Trace Explorer](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/use-trace-explorer.html)** section in the OCI Documentation.
 
-In the workshop, you will learn how to add APM Java Agent to a WebLogic application, deployed on a Kubernetes cluster. You will also learn how to create an APM domain and use Trace Explorer to search and view traces/spans in the APM User Interface.
+In the workshop, you will learn how to add the APM Java Agent on a file system mounted in the Oracle Cloud, to monitor a WebLogic application, deployed on a Kubernetes cluster. You will also learn how to create an APM domain in the Oracle Cloud and use Trace Explorer to search and view traces/spans in the APM User Interface.
 
 
 
@@ -67,5 +67,6 @@ You may now [proceed to the next lab](#next).
 - **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
+Mahesh Sharma, Consulting Member of Technical Staff,<br>
 Avi Huber, Senior Director, Product Management
 - **Last Updated By/Date** - Yutaka Takatsu, January 2022

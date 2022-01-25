@@ -106,6 +106,8 @@ Estimated time: 20 minutes
 
    ![Oracle Cloud console, Cloud Shell ](images/4-1-8-cloudshell.png " ")
 
+    >***NOTE***: The APM version may be different from what is showing in the example.
+
 
 ## Task 4: Provision the APM Java Agent
 
@@ -155,7 +157,9 @@ Estimated time: 20 minutes
 
 ## Task 5: Disable the maintenance spans
 
-In this task, you will add exclusions to the data capturing in the APM Agent, for the JAXRS server probe that generates static spans. Because there is no editing tool inside the container, you will copy an APM agent configuration file from the container to the Cloud Shell, edit the file, then copy back to the container. We plan to add the exclusion by default, to the product in the future.
+In this task, you will add exclusions to the data capture in the APM Agent, for the JAXRS server probe that generates a lot of static spans. This is an optional task if you are monitoring the real-life environment, but for the lab purpose, we would like to suppress the spans generated from the server maintenance, so that you can focus on the spans related to the browser navigations.
+
+Because there is no editing tool inside the container, you will copy an APM agent configuration file from the container to the Cloud Shell, edit the file, then copy back to the container. We plan to add the exclusion by default, to the product in the future.
 
 1.	Copy ***ProveConfig.acml*** from the container.
 
@@ -165,7 +169,7 @@ In this task, you will add exclusions to the data capturing in the APM Agent, fo
     </copy>
     ```   
 
-    >***NOTE***: The file path includes the APM Java Agent version. Change the directory name to the Agent version you have.
+    >***NOTE***: The file path includes the APM Java Agent version. Change the directory name to the Agent version you have. <br>E.g., kubectl cp sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/**1.2.1725**/ProbeConfig.acml ~/ProbeConfig.acml
 
     run "ls" command from the Home directory and confirm the file was transferred.  
     ```bash
@@ -200,7 +204,7 @@ In this task, you will add exclusions to the data capturing in the APM Agent, fo
     </copy>
     ```
 
-    > ***NOTE***: E.g., kubectl cp  ~/ProbeConfig.acml sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/1.2.1725/ProbeConfig.acml
+    > ***NOTE***: E.g., kubectl cp  ~/ProbeConfig.acml sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/**1.2.1725**/ProbeConfig.acml
 
 ## Task 6: Deploy the Java Agent
 
@@ -239,7 +243,7 @@ Next you will deploy the Java Agent by modifying the domain.yaml file to point t
     ```
     ![Oracle Cloud console, Cloud Shell ](images/4-6-2-cloudshell.png " ")    
 
-5.	Wait for few minutes, then run the following command to check the status of the pods. Make sure they are in the Running state.
+5.	Wait for a few minutes, then run the following command to check the status of the pods. Make sure they are in the Running state and Ready.
 
     ```bash
     <copy>
@@ -257,5 +261,6 @@ You may now [proceed to the next lab](#next).
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
+Mahesh Sharma, Consulting Member of Technical Staff,<br>
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, January 2022

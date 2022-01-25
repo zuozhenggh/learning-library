@@ -96,7 +96,7 @@ Estimated time: 10 minutes
    ![Oracle Cloud console, Cloud Shell](images/5-3-1-cloudshell.png " ")
    ![Oracle Cloud console, Cloud Shell](images/5-3-2-cloudshell.png " ")
 
-5. type exit and return to the Cloud Shell. 
+5. type exit and return to the Cloud Shell.
 
 
 You may now [proceed to the next lab](#next).
@@ -106,5 +106,6 @@ You may now [proceed to the next lab](#next).
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
+Mahesh Sharma, Consulting Member of Technical Staff,<br>
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, January 2022

@@ -16,7 +16,7 @@ Estimated time: 30 minutes
 
 ### Prerequisites
 
-* Requires OCI quota to create a file system and associated resources
+* OCI quota and permissions to create a file system and associated resources. See **[Creating File Systems](https://docs.oracle.com/en-us/iaas/Content/File/Tasks/creatingfilesystems.htm)** and **[Service Limits](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#top)** in the Oracle Cloud documentation.
 * Completion of the Lab 1 and Lab 2
 
 
@@ -37,7 +37,7 @@ Estimated time: 30 minutes
 
 4.	On the Create File System page, enter ***apmlab-fss*** into the **Name** field.
 <br><br>
-Then drop down and select the **Availability Domain** and the **Compartment** where the cluster is running. You can find this information in the Cluster page (**Developer Services** > **Kubernetes Clusters (OKE)**).
+Then drop down and select the **Compartment** where the cluster is running. You can find this information in the Cluster page (**Developer Services** > **Kubernetes Clusters (OKE)**). Leave the other fields with default values.
 
    ![Oracle Cloud console, file systems](images/3-1-4-filesystem.png " ")
 
@@ -98,45 +98,45 @@ Then drop down and select the **Availability Domain** and the **Compartment** wh
      *	Source CIDR: **0.0.0.0/0**
      *	IP Protocol: **TCP**
      *	Source Port Range:  leave as default (All)
-     *	Destination Port Range: **111** 	
-     *	Description: **Security rule for apmlab-fss**
+     *	Destination Port Range: **111,2048-2050** 	
+     *	Description: **Ingress security rule for apmlab-fss**
 
 
    ![Oracle Cloud console, Security Rules](images/3-2-6-securityrules.png " ")
 
-6.	Click **+ Another Ingress Rule** button and create additional rules for **TCP** destination port **2048**, **2049** and **2050**. Use the same values with the rule created above except for the **Destination Port Range**.
-
-7.	Create security rules for **UDP** destination port **111** and **2048**. <br><br> Click **Add Ingress Rules** button which creates 6 ingress rules in the security list.
+6.	Click **+ Another Ingress Rule** button and create additional rule for **UDP**, with the destination port range **111,2048**. Use the same values with the rule created above for the rest of the fields.<br><br> Click **Add Ingress Rules** button which creates 4 ingress rules in the security list.
 
    ![Oracle Cloud console, Security Rules](images/3-2-7-securityrules.png " ")
 
-8.	After the configuration, your security rules for the **Ingress Rules** should look like the image below, .
+7.	After the configuration, your **Ingress Rules** have 4 additional security rules as in the image below.
 
    ![Oracle Cloud console, Security Rules](images/3-2-8-securityrules.png " ")
 
-9.	Click **Egress Rules**, which located at the left side of the screen.
+8.	Click **Egress Rules**, which is located at the left side of the screen.
 
    ![Oracle Cloud console, Security Rules](images/3-2-9-securityrules.png " ")
 
-10.	Click **Add Egress Rules** button.
+9.	Click **Add Egress Rules** button.
 
    ![Oracle Cloud console, Security Rules](images/3-2-10-securityrules.png " ")
 
-11.	In the Add Egress Rules dialog, enter the following information:
+10.	In the **Add Egress Rules** dialog, enter the following information:
 
     *	Stressless: **No**
     *	Source Type: **CIDR**
     *	Source CIDR: **0.0.0.0/0**
     *	IP Protocol: **TCP**
     *	Source Port Range:  leave as default (All)
-    *	Destination Port Range: **111** 	
-    *	Description: **Security rule for apmlab-fss**
+    *	Destination Port Range: **111,2048-2050**
+    *	Description: **Egress security rule for apmlab-fss**
 
    ![Oracle Cloud console, Security Rules](images/3-2-11-securityrules.png " ")
 
-12.	Create additional rules for **TCP** destination port **2048**, **2049** and **2050**. Use the same values with the rule created above except for the **Destination Port Range**.
-13.	Create security rules for **UDP** destination port **111**.
-14.	After the configuration, your security rules for the **Egress Rules** should look like the image below.
+11.	Click **+ Another Egress Rule** button and create additional rule for **UDP**, with the destination port **111**. Use the same values with the rule created above for the rest of the fields.<br><br> Click **Add Egress Rules** button which creates 3 egress rules in the security list.
+
+   ![Oracle Cloud console, Security Rules](images/3-2-11-2-securityrules.png " ")
+
+12.	After the configuration, your **Egress Rules** has 3 additional security rules as in the image below.
 
    ![Oracle Cloud console, Security Rules](images/3-2-12-securityrules.png " ")
 
@@ -148,7 +148,7 @@ Then drop down and select the **Availability Domain** and the **Compartment** wh
     >	***NOTE***: If the Cloud Shell is already running but the window is minimized, you can restore the window by clicking the bar icon or the arrow icon at the toolbar.
       ![Oracle Cloud console, Menu](images/3-3-2-menu.png " ")
 
-2.  Run the oci cd (Container Engine) command that you saved in the Lab 1, Task1, step6.
+2.  Run the oci ce (Container Engine) command that you saved in the Lab 1, Task1, step6.
 
    ![Oracle Cloud console, Cloud Shell](images/1-7-cloudshell.png " ")
 
@@ -283,6 +283,8 @@ Then drop down and select the **Availability Domain** and the **Compartment** wh
     ```
     ![Oracle Cloud console, Cloud Shell](images/3-3-7-cloudshell.png " ")
 
+    >***NOTE***: Verify the **AGE** column to ensure the pods are restarted. It typically takes 5 to 7 minutes to have all the pods restarted.
+
 7.	Execute the following command to access the Kubernetes pods.
 
     ``` bash
@@ -338,5 +340,6 @@ You may now [proceed to the next lab](#next).
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
+Mahesh Sharma, Consulting Member of Technical Staff,<br>
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, January 2022
