@@ -29,7 +29,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
 1.	Log in as root to the server and install Trace File Analyzer in $ORACLE_BASE/tfa.
 
       ```
-      $ <code>cd $HOME/u01/app/oracle</code>
+      $ <copy>cd $HOME/u01/app/oracle</copy>
 
       ...
 
@@ -37,7 +37,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       ```
      
       ```
-      $ <code>unzip $HOME/oracle/labs/19cnf/TFA-LINUX_v19.2.1.zip</code>
+      $ <copy>unzip $HOME/oracle/labs/19cnf/TFA-LINUX_v19.2.1.zip</copy>
 
       ...
 
@@ -48,7 +48,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       ```
 
       ```
-      $ <code>sudo ./installTFA-LINUX</code>
+      $ <copy>sudo ./installTFA-LINUX</copy>
 
       ...
 
@@ -158,7 +158,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
 2.	Switch to oracle and check that the TFA Collector is running.
 
       ```
-      $ <code>$HOME/u01/app/oracle/tfa/bin/tfactl -help</code>
+      $ <copy>$HOME/u01/app/oracle/tfa/bin/tfactl -help</copy>
      
       ...
 
@@ -170,7 +170,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       ```
 
       ```
-      $ <code>cd /u01/app/oracle/tfa/bin</code>
+      $ <copy>cd /u01/app/oracle/tfa/bin</copy>
 
       ...
 
@@ -178,7 +178,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       ``` 
 
       ```
-      $ <code>sudo ./tfactl status</code>
+      $ <copy>sudo ./tfactl status</copy>
 
       ...
 
@@ -197,7 +197,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       Q1/ How do you get the list of possible types of SRDC?
 
       ```
-      $ ./tfactl collect -srdc -help
+      $ <copy>./tfactl collect -srdc -help </copy>
 
       ...
 
@@ -308,7 +308,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       a.	Collect diagnostic data for your service request SR12345 (this is a fake SR) for the ORA-00600 errors that occurred in Practice 6-1.
     
       ```    
-      $ <code>./tfactl collect -srdc ORA-00600 -sr SR12345</code>
+      $ <copy>./tfactl collect -srdc ORA-00600 -sr SR12345</copy>
 
       ...
 
@@ -320,7 +320,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       b.	Set the TEST MyOracleSupport (MOS) credentials within a wallet.
 
       ```
-      $ <code>./tfactl setupmos</code>
+      $ <copy>./tfactl setupmos</copy>
 
       ...
 
@@ -330,7 +330,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
 
       The wallet file is secured to be read/write by the root user only. This is the reason you have to log on as root.
       ```
-      $ <code>cd /u01/app/oracle/tfa/bin</code>
+      $ <copy>cd /u01/app/oracle/tfa/bin</copy>
 
       ...
 
@@ -339,7 +339,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
     
 
       ```
-      $ <code> sudo ./tfactl setupmos</code>
+      $ <copy> sudo ./tfactl setupmos</copy>
 
       ...
 
@@ -347,7 +347,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       ```
 
       ```
-      Enter User Id: <code>Test</code>
+      Enter User Id: <copy>Test</copy>
 
       ...
 
@@ -355,7 +355,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
       ```
 
       ```
-      Enter Password: <code>Ora4U_1234</code> 
+      Enter Password: <copy>Ora4U_1234</copy> 
 
       ...
      
@@ -370,7 +370,7 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
 c.	Switch back to oracle and collect the diagnostic data related to the second occurrence of the ORA-00600 errors in ORCL for SR12345.
      
       ```
-      $<code> cd $HOME/u01/app/oracle/tfa/bin</code>
+      $ <copy>cd $HOME/u01/app/oracle/tfa/bin</copy>
 
       ...
 
@@ -378,7 +378,7 @@ c.	Switch back to oracle and collect the diagnostic data related to the second o
       ```
 
       ```
-      $<code> ./tfactl collect -srdc ORA-00600 -sr SR12345</code>
+      $ <copy>./tfactl collect -srdc ORA-00600 -sr SR12345</copy>
 
       ...
 
@@ -427,7 +427,7 @@ c.	Switch back to oracle and collect the diagnostic data related to the second o
       Q2/ Which options would you use to upload the initialization parameter file to the SR in MOS?
 
       ```
-      $<code> ./tfactl upload -sr SR12345 -user TEST $ORACLE_HOME/dbs/initORCL.ora</code>
+      $ <copy>./tfactl upload -sr SR12345 -user TEST $ORACLE_HOME/dbs/initORCL.ora</copy>
 
       ...
 
