@@ -300,142 +300,142 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
          esexalogic           SRDC - Exalogic Full Exalogs Data Collection Information.
          ggintegratedmodenodb SRDC for GoldenGate extract/replicat abends problems.
          internalerror        SRDC for all other types of internal database errors.
-      $ 
-      ```
+       $ 
+       ```
 
-      A1/ The -help option is always useful in getting the possible values of options.
+       A1/ The -help option is always useful in getting the possible values of options.
 
-      a.	Collect diagnostic data for your service request SR12345 (this is a fake SR) for the ORA-00600 errors that occurred in Practice 6-1.
+       a.	Collect diagnostic data for your service request SR12345 (this is a fake SR) for the ORA-00600 errors that occurred in Practice 6-1.
     
-      ```    
-      $ <copy>./tfactl collect -srdc ORA-00600 -sr SR12345</copy>
+       ```    
+       $ <copy>./tfactl collect -srdc ORA-00600 -sr SR12345</copy>
 
-      ...
+       ...
 
-      MOS setup is not done. It is needed to upload collection to SR
-      Run: tfactl setupmos
-      $
-      ```
+       MOS setup is not done. It is needed to upload collection to SR
+       Run: tfactl setupmos
+       $
+       ```
 
-      b.	Set the TEST MyOracleSupport (MOS) credentials within a wallet.
+       b.	Set the TEST MyOracleSupport (MOS) credentials within a wallet.
 
-      ```
-      $ <copy>./tfactl setupmos</copy>
+       ```
+       $ <copy>./tfactl setupmos</copy>
 
-      ...
+       ...
 
-      Access Denied: Only TFA Admin can run this command
-      $
-      ```
+       Access Denied: Only TFA Admin can run this command
+       $
+       ```
 
-      The wallet file is secured to be read/write by the root user only. This is the reason you have to log on as root.
-      ```
-      $ <copy>cd /u01/app/oracle/tfa/bin</copy>
+       The wallet file is secured to be read/write by the root user only. This is the reason you have to log on as root.
+       ```
+       $ <copy>cd /u01/app/oracle/tfa/bin</copy>
 
-      ...
+       ...
 
-      $    
-      ```
+       $    
+       ```
     
 
-      ```
-      $ <copy> sudo ./tfactl setupmos</copy>
+       ```
+       $ <copy> sudo ./tfactl setupmos</copy>
 
-      ...
+       ...
 
-      $
-      ```
+       $
+       ```
 
-      ```
-      Enter User Id: <copy>Test</copy>
+       ```
+       Enter User Id: <copy>Test</copy>
 
-      ...
+       ...
 
-      $
-      ```
+       $
+       ```
 
-      ```
-      Enter Password: <copy>Ora4U_1234</copy> 
+       ```
+       Enter Password: <copy>Ora4U_1234</copy> 
 
-      ...
+       ...
      
-      Wallet does not exist ... creating
-      Wallet created successfully
-      USER details added/updated in the wallet
-      PASSWORD details added/updated in the wallet
-      SUCCESS - CERTIMPORT - Successfully imported certificate
-      $
-      ```
+       Wallet does not exist ... creating
+       Wallet created successfully
+       USER details added/updated in the wallet
+       PASSWORD details added/updated in the wallet
+       SUCCESS - CERTIMPORT - Successfully imported certificate
+       $
+       ```
 
-      c.	Switch back to oracle and collect the diagnostic data related to the second occurrence of the ORA-00600 errors in ORCL for SR12345.
+       c.	Switch back to oracle and collect the diagnostic data related to the second occurrence of the ORA-00600 errors in ORCL for SR12345.
      
-      ```
-      $ <copy>cd $HOME/u01/app/oracle/tfa/bin</copy>
+       ```
+       $ <copy>cd $HOME/u01/app/oracle/tfa/bin</copy>
 
-      ...
+       ...
 
-      $
-      ```
+       $
+       ```
 
-      ```
-      $ <copy>./tfactl collect -srdc ORA-00600 -sr SR12345</copy>
+       ```
+       $ <copy>./tfactl collect -srdc ORA-00600 -sr SR12345</copy>
 
-      ...
+       ...
 
-      Enter the time of the ORA-00600 [YYYY-MM-DD HH24:MI:SS,<RETURN>=ALL] :
-      Enter the Database Name [<RETURN>=ALL] : ORCL
+       Enter the time of the ORA-00600 [YYYY-MM-DD HH24:MI:SS,<RETURN>=ALL] :
+       Enter the Database Name [<RETURN>=ALL] : ORCL
 
-      1. Nov/12/2018 16:00:32 : [orcl] ORA-00600: internal error code, arguments: [13011], [72893], [4229649], [0], [4229649], [17], [], [], [], [], [], []
+       1. Nov/12/2018 16:00:32 : [orcl] ORA-00600: internal error code, arguments: [13011], [72893], [4229649], [0], [4229649], [17], [], [], [], [], [], []
 
-      Please choose the event : 1-1 [1] 
-      Selected value is : 1 ( Nov/12/2018 16:00:32 )
-      Scripts to be run by this srdc: ipspack rdahcve1210 rdahcve1120 rdahcve1110
-      Components included in this srdc: OS CRS DATABASE NOCHMOS
-      Collecting data for local node(s)
-      Scanning files from Nov/12/2018 10:00:32 to Nov/12/2018 22:00:32
-      WARNING: End time entered is after the current system time.
+       Please choose the event : 1-1 [1] 
+       Selected value is : 1 ( Nov/12/2018 16:00:32 )
+       Scripts to be run by this srdc: ipspack rdahcve1210 rdahcve1120 rdahcve1110
+       Components included in this srdc: OS CRS DATABASE NOCHMOS
+       Collecting data for local node(s)
+       Scanning files from Nov/12/2018 10:00:32 to Nov/12/2018 22:00:32
+       WARNING: End time entered is after the current system time.
 
-      Collection Id : 20181112171615hostname
+       Collection Id : 20181112171615hostname
 
 
-      Detailed Logging at : /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local/diagcollect_20181112171615_hostname.log
-      2018/11/12 17:16:19 UTC : NOTE : Any file or directory name containing the string .com will be renamed to replace .com with dotcom
-      2018/11/12 17:16:19 UTC : Collection Name : tfa_srdc_ora600_Mon_Nov_12_17_16_15_UTC_2018.zip
-      2018/11/12 17:16:19 UTC : Scanning of files for Collection in progress...
-      2018/11/12 17:16:19 UTC : Collecting additional diagnostic information...
-      2018/11/12 17:16:24 UTC : Getting list of files satisfying time range [11/12/2018 10:00:32 UTC, 11/12/2018 17:16:19 UTC]
-      2018/11/12 17:16:58 UTC : Collecting ADR incident files...
-      2018/11/12 17:17:57 UTC : Completed collection of additional diagnostic information...
-      2018/11/12 17:18:10 UTC : Completed Local Collection
-      2018/11/12 17:18:10 UTC : Uploading collection to SR - SR12345
-      2018/11/12 17:20:57 UTC : Failed to upload collection to SR
-      .-----------------------------------------.
-      |            Collection Summary           |
-      +--------------+-----------+-------+------+
-      | Host         | Status    | Size  | Time |
-      +--------------+-----------+-------+------+
-      | hostname     | Completed | 286MB | 111s |
-      '--------------+-----------+-------+------'
+       Detailed Logging at : /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local/diagcollect_20181112171615_hostname.log
+       2018/11/12 17:16:19 UTC : NOTE : Any file or directory name containing the string .com will be renamed to replace .com with dotcom
+       2018/11/12 17:16:19 UTC : Collection Name : tfa_srdc_ora600_Mon_Nov_12_17_16_15_UTC_2018.zip
+       2018/11/12 17:16:19 UTC : Scanning of files for Collection in progress...
+       2018/11/12 17:16:19 UTC : Collecting additional diagnostic information...
+       2018/11/12 17:16:24 UTC : Getting list of files satisfying time range [11/12/2018 10:00:32 UTC, 11/12/2018 17:16:19 UTC]
+       2018/11/12 17:16:58 UTC : Collecting ADR incident files...
+       2018/11/12 17:17:57 UTC : Completed collection of additional diagnostic information...
+       2018/11/12 17:18:10 UTC : Completed Local Collection
+       2018/11/12 17:18:10 UTC : Uploading collection to SR - SR12345
+       2018/11/12 17:20:57 UTC : Failed to upload collection to SR
+       .-----------------------------------------.
+       |            Collection Summary           |
+       +--------------+-----------+-------+------+
+       | Host         | Status    | Size  | Time |
+       +--------------+-----------+-------+------+
+       | hostname     | Completed | 286MB | 111s |
+       '--------------+-----------+-------+------'
 
-      Logs are being collected to: /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local
-      /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local/hostname.tfa_srdc_ora600_Mon_Nov_12_17_16_15_UTC_2018.zip
-      $
-      ```
+       Logs are being collected to: /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local
+       /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local/hostname.tfa_srdc_ora600_Mon_Nov_12_17_16_15_UTC_2018.zip
+       $
+       ```
 
-      Do not pay attention to the “Failed to upload collection to SR” message. The SR is a fake one.
+       Do not pay attention to the “Failed to upload collection to SR” message. The SR is a fake one.
 
-      Q2/ Which options would you use to upload the initialization parameter file to the SR in MOS?
+       Q2/ Which options would you use to upload the initialization parameter file to the SR in MOS?
 
-      ```
-      $ <copy>./tfactl upload -sr SR12345 -user TEST $ORACLE_HOME/dbs/initORCL.ora</copy>
+       ```
+       $ <copy>./tfactl upload -sr SR12345 -user TEST $ORACLE_HOME/dbs/initORCL.ora</copy>
 
-      ...
+       ...
 
-      SR12345 is not a valid SR number.
-      $
-      ```
+       SR12345 is not a valid SR number.
+       $
+       ```
 
-      A2/ The upload allows you to upload other files to your SR in MOS. The command above fails because the SR used is a fake one.
+       A2/ The upload allows you to upload other files to your SR in MOS. The command above fails because the SR used is a fake one.
 
 
 ## Learn More
