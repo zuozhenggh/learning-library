@@ -65,7 +65,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 2. Clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 22.1.3 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
+    <copy>git clone -b 22.1.4 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
     ```
 
    You should now see the directory `microservices-datadriven` in the home directory.
@@ -75,6 +75,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     ```
     <copy>
     echo "cd ~/microservices-datadriven/travelbooking" >>~/.bashrc
+    export JAVA_HOME=~/graalvm-ce-java11-20.1.0
     echo "export JAVA_HOME=~/graalvm-ce-java11-20.1.0" >>~/.bashrc
     echo "export PATH=$JAVA_HOME/bin:$PATH" >>~/.bashrc
     source ~/.bashrc
@@ -86,12 +87,12 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. Run the following command, providing the OCID of the database that you copied in Task 1
 
     ```
-    <copy>./getWalletForPDB.sh REPLACE_THIS_VALUE_WITH_DB_OCID</copy>
+    <copy>./getWalletForPDBs.sh REPLACE_THIS_VALUE_WITH_DB_OCID</copy>
     ```
    
    The output should look similar to the following.
    
-     ![Open Cloud Shell](images/getwalletforpdb.png " ")
+     ![Get Wallet For PDB](images/getwalletforpdb.png " ")
 
 2. Run the following command to install Java 11 (GraalVM)  
 
@@ -104,8 +105,19 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     ```
     <copy>./createDBLinksAndOsagaInfra.sh</copy>
     ```
+   You will be prompted for the admin password you used when creating sagapdb1 and sagapdb2.
    
-   If at any point you are disconnected from the Cloud Shell, you can simply start from the last command that did not complete.
+   ![Password prompt for dblink and osaga setup](images/pwpromptforjavasetup.png " ")
+     
+   This setup will take one or two minutes and you should see output such as the following.  
+   
+   ![Osagae setup complete](images/osagasetupcomplete.png " ")
+   
+   And finally see successful completion and exit of the setup.
+   
+   ![Osagae setup complete](images/endofsagaoutput.png " ")
+   
+     If at any point you are disconnected from the Cloud Shell, you can start from the last command that did not complete.
 
 You may now **proceed to the next lab.**.
 

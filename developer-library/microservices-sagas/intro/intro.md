@@ -46,8 +46,9 @@ You may now **proceed to the next lab.**..
 
 ## Want to Learn More?
 
+* [Blog On This Workshop](https://dzone.com/articles/simplify-microservice-transactions-with-oracle-dat)
+* [Related Blogs](https://dzone.com/users/4571557/paulparkinson.html)
 * [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)
-* [Blogs](https://dzone.com/users/4571557/paulparkinson.html)
 * [https://developer.oracle.com/](http://developer.oracle.com/microservices/)
 
 ## Acknowledgements
