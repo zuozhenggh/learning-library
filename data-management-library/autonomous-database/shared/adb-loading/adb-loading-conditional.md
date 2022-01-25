@@ -44,9 +44,9 @@ In Tasks 1 and 2, you will create one ADW table, **CHANNELS_LOCAL**, and load it
 
 ## Task 2: Load local data using the Database Actions DATA LOAD tool
 
-1. In your ADW Finance Mart database's details page, click the **Tools** tab. Click **Open Database Actions**.
+1. In your database's details page, click the **Database Actions** button.
 
-    ![Click Tools and Open Database Actions.](./images/Picture100-15.png " ")
+    ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
 2.  A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - admin**, and click **Next**. Enter the administrator **Password** you specified when creating the database. Click **Sign in**.
 
@@ -365,4 +365,4 @@ See the documentation [Loading Data with Autonomous Database](https://docs.oracl
 
 - **Author** - Nilay Panchal, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, September 2021
+- **Last Updated By/Date** - Richard Green, November 2021
