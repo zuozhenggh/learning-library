@@ -28,182 +28,182 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
 
 1.	Log in as root to the server and install Trace File Analyzer in $ORACLE_BASE/tfa.
 
-     ```
-     $ <code>cd $HOME/u01/app/oracle</code>
+      ```
+      $ <code>cd $HOME/u01/app/oracle</code>
 
-     ...
+      ...
 
-     $
-     ```
+      $
+      ```
      
-     ```
-     $ <code>unzip $HOME/oracle/labs/19cnf/TFA-LINUX_v19.2.1.zip</code>
+      ```
+      $ <code>unzip $HOME/oracle/labs/19cnf/TFA-LINUX_v19.2.1.zip</code>
 
-     ...
+      ...
 
-     Archive:  /home/oracle/labs/19cnf/TFA-LINUX_v19.2.1.zip
+      Archive:  /home/oracle/labs/19cnf/TFA-LINUX_v19.2.1.zip
       inflating: README.txt
       inflating: installTFA-LINUX
-     $
-     ```
+      $
+      ```
 
-     ```
-     $ <code>sudo ./installTFA-LINUX</code>
+      ```
+      $ <code>sudo ./installTFA-LINUX</code>
 
-     ...
+      ...
 
-     TFA Installation Log will be written to File : /tmp/tfa_install_6105_2018_10_15-11_55_44.log
+      TFA Installation Log will be written to File : /tmp/tfa_install_6105_2018_10_15-11_55_44.log
      
 
-     Starting TFA installation
+      Starting TFA installation
 
-     TFA Version: 183300 Build Date: 201810050542
+      TFA Version: 183300 Build Date: 201810050542
 
-     Enter a location for installing TFA (/tfa will be appended if not supplied) [/u01/app/oracle/tfa]:
-
-
-     Running Auto Setup for TFA as user oracle...
-
-     Would you like to do a [L]ocal only or [C]lusterwide installation ? [L|l|C|c] [C] : <code>L</code>
-     Installing TFA now...
-
-     Discovering Nodes and Oracle resources
-
-     Starting Discovery...
+      Enter a location for installing TFA (/tfa will be appended if not supplied) [/u01/app/oracle/tfa]:
 
 
-     No Grid Infrastructure Discovered on this system . . . . .
+      Running Auto Setup for TFA as user oracle...
 
-     <your_hostname>
-     Searching for running databases...
-     1. ORCL
+      Would you like to do a [L]ocal only or [C]lusterwide installation ? [L|l|C|c] [C] : <code>L</code>
+      Installing TFA now...
 
+      Discovering Nodes and Oracle resources
 
-     Searching out ORACLE_HOME for selected databases...
-
-
-     Getting Oracle Inventory...
-
-     ORACLE INVENTORY: /u01/app/oraInventory
+      Starting Discovery...
 
 
-     Discovery Complete...
+      No Grid Infrastructure Discovered on this system . . . . .
+
+      <your_hostname>
+      Searching for running databases...
+      1. ORCL
 
 
-     TFA Will be Installed on edvmr1p0...
+      Searching out ORACLE_HOME for selected databases...
 
-     TFA will scan the following Directories
-     ++++++++++++++++++++++++++++++++++++++++++++
 
-     .---------------------------------------------------------------
-     |                                 edvmr1p0                                |
-     +--------------------------------------------------------------| Trace Directory                                                | Resource |
-     +--------------------------------------------------------------
-     | /u01/app/oraInventory/ContentsXML                            | INSTALL  |
-     | /u01/app/oraInventory/logs                                   | INSTALL  |
-     | /u01/app/oracle/cfgtoollogs                                  | CFGTOOLS |
-     | /u01/app/oracle//clients/user_oracle/host_3132364359_110 | DBCLIENT |
-     | /u01/app/oracle//clients/user_oracle/host_3132364359_110 | DBCLIENT |
-     | /u01/app/oracle//rdbms/cdb19/CDB19/cdump                 | RDBMS    |
-     | /u01/app/oracle//rdbms/cdb19/CDB19/trace                 | RDBMS    |
-     | /u01/app/oracle//rdbms/orcl/ORCL/cdump                   | RDBMS    |
-     | /u01/app/oracle//rdbms/orcl/ORCL/trace                   | RDBMS    |
-     | /u01/app/oracle//tnslsnr                                 | TNS      |
-     | /u01/app/oracle//tnslsnr/hostname/listener/cdump         | TNS      |
-     | /u01/app/oracle//tnslsnr/hostname/listener/trace         | TNS      |
-     | /u01/app/oracle//tnslsnr/hostname/listener20181004112604 | TNS      |
-     | /u01/app/oracle//tnslsnr/hostname/listener20181004112604 | TNS      |
-     | /u01/app/oracle//tnslsnr/hostname/listener20181004114040 | TNS      |
-     | /u01/app/oracle//tnslsnr/hostname/listener20181004114040 | TNS      |
-     | /u01/app/oracle/product/19.1.0/dbhome_1/cfgtoollogs          | CFGTOOLS |
-     | /u01/app/oracle/product/19.1.0/dbhome_1/install              | INSTALL  |
-     | /u01/app/oracle/product/19.1.0/dbhome_1/rdbms/log            | RDBMS    |
-     | /u01/app/oracle/product/19.1.0/dbhome_2/cfgtoollogs          | CFGTOOLS |
-     | /u01/app/oracle/product/19.1.0/dbhome_2/install              | INSTALL  |
-     '--------------------------------------------------------------
-     Installing TFA on hostname:
-     HOST: hostname TFA_HOME: /u01/app/oracle/tfa/hostname/tfa_home
-     .---------------------------------------------------------------
-     | Host     | Status of TFA | PID  | Port  | Version    | Build ID             |
-     +----------+---------------+------+-------+------------+--------
-     | hostname | RUNNING       | 7955 | 42182 | 18.3.3.0.0 | 18330020181005054218 |
-     '----------+---------------+------+-------+------------+--------
+      Getting Oracle Inventory...
 
-     Running Inventory in All Nodes...
+      ORACLE INVENTORY: /u01/app/oraInventory
 
-     Summary of TFA Installation:
-     .-------------------------------------------------------------.
-     |                           hostname                          |
-     +---------------------+---------------------------------------+
-     | Parameter           | Value                                 |
-     +---------------------+---------------------------------------+
-     | Install location    | /u01/app/oracle/tfa/hostname/tfa_home |
-     | Repository location | /u01/app/oracle/tfa/repository        |
-     | Repository usage    | 0 MB out of 10240 MB                  |
-     '---------------------+---------------------------------------'
 
-     TFA is successfully installed...
+      Discovery Complete...
 
-     Usage : /u01/app/oracle/tfa/bin/tfactl <command> [options]
+
+      TFA Will be Installed on edvmr1p0...
+
+      TFA will scan the following Directories
+      ++++++++++++++++++++++++++++++++++++++++++++
+
+      .---------------------------------------------------------------
+      |                                 edvmr1p0                                |
+      +--------------------------------------------------------------| Trace Directory                                                | Resource |
+      +--------------------------------------------------------------
+      | /u01/app/oraInventory/ContentsXML                            | INSTALL  |
+      | /u01/app/oraInventory/logs                                   | INSTALL  |
+      | /u01/app/oracle/cfgtoollogs                                  | CFGTOOLS |
+      | /u01/app/oracle//clients/user_oracle/host_3132364359_110 | DBCLIENT |
+      | /u01/app/oracle//clients/user_oracle/host_3132364359_110 | DBCLIENT |
+      | /u01/app/oracle//rdbms/cdb19/CDB19/cdump                 | RDBMS    |
+      | /u01/app/oracle//rdbms/cdb19/CDB19/trace                 | RDBMS    |
+      | /u01/app/oracle//rdbms/orcl/ORCL/cdump                   | RDBMS    |
+      | /u01/app/oracle//rdbms/orcl/ORCL/trace                   | RDBMS    |
+      | /u01/app/oracle//tnslsnr                                 | TNS      |
+      | /u01/app/oracle//tnslsnr/hostname/listener/cdump         | TNS      |
+      | /u01/app/oracle//tnslsnr/hostname/listener/trace         | TNS      |
+      | /u01/app/oracle//tnslsnr/hostname/listener20181004112604 | TNS      |
+      | /u01/app/oracle//tnslsnr/hostname/listener20181004112604 | TNS      |
+      | /u01/app/oracle//tnslsnr/hostname/listener20181004114040 | TNS      |
+      | /u01/app/oracle//tnslsnr/hostname/listener20181004114040 | TNS      |
+      | /u01/app/oracle/product/19.1.0/dbhome_1/cfgtoollogs          | CFGTOOLS |
+      | /u01/app/oracle/product/19.1.0/dbhome_1/install              | INSTALL  |
+      | /u01/app/oracle/product/19.1.0/dbhome_1/rdbms/log            | RDBMS    |
+      | /u01/app/oracle/product/19.1.0/dbhome_2/cfgtoollogs          | CFGTOOLS |
+      | /u01/app/oracle/product/19.1.0/dbhome_2/install              | INSTALL  |
+      '--------------------------------------------------------------
+      Installing TFA on hostname:
+      HOST: hostname TFA_HOME: /u01/app/oracle/tfa/hostname/tfa_home
+      .---------------------------------------------------------------
+      | Host     | Status of TFA | PID  | Port  | Version    | Build ID             |
+      +----------+---------------+------+-------+------------+--------
+      | hostname | RUNNING       | 7955 | 42182 | 18.3.3.0.0 | 18330020181005054218 |
+      '----------+---------------+------+-------+------------+--------
+
+      Running Inventory in All Nodes...
+
+      Summary of TFA Installation:
+      .-------------------------------------------------------------.
+      |                           hostname                          |
+      +---------------------+---------------------------------------+
+      | Parameter           | Value                                 |
+      +---------------------+---------------------------------------+
+      | Install location    | /u01/app/oracle/tfa/hostname/tfa_home |
+      | Repository location | /u01/app/oracle/tfa/repository        |
+      | Repository usage    | 0 MB out of 10240 MB                  |
+      '---------------------+---------------------------------------'
+
+      TFA is successfully installed...
+
+      Usage : /u01/app/oracle/tfa/bin/tfactl <command> [options]
          commands:collect|collection|analyze|ips|run|start|stop|enable|disable|status|print|access|purge|directory|host|receiver|set|toolstatus|uninstall|nosetfa|syncnodes|setupmos|upload|availability|rest|events|search|changes|isa
-     For detailed help on each command use:
+      For detailed help on each command use:
        /u01/app/oracle/tfa/bin/tfactl <command> -help
 
 
-     $
-     ```
+      $
+      ```
 
 ## Task 2: Verify TFA Collector is Runnning
 
 2.	Switch to oracle and check that the TFA Collector is running.
 
-     ```
-     $ <code>$HOME/u01/app/oracle/tfa/bin/tfactl -help</code>
+      ```
+      $ <code>$HOME/u01/app/oracle/tfa/bin/tfactl -help</code>
      
-     ...
+      ...
 
-     Usage : /u01/app/oracle/tfa/bin/tfactl <command> [options]
+      Usage : /u01/app/oracle/tfa/bin/tfactl <command> [options]
          commands:collect|collection|analyze|ips|run|start|stop|enable|disable|status|print|access|purge|directory|host|receiver|set|toolstatus|uninstall|nosetfa|syncnodes|setupmos|upload|availability|rest|events|search|changes|isa
-     For detailed help on each command use:
+      For detailed help on each command use:
       /u01/app/oracle/tfa/bin/tfactl <command> -help
-     $
-     ```
+      $
+      ```
 
-     ```
-     $ <code>cd /u01/app/oracle/tfa/bin</code>
+      ```
+      $ <code>cd /u01/app/oracle/tfa/bin</code>
 
-     ...
+      ...
 
-     $
-     ``` 
+      $
+      ``` 
 
-     ```
-     $ <code>sudo ./tfactl status</code>
+      ```
+      $ <code>sudo ./tfactl status</code>
 
-     ...
+      ...
 
-     .---------------------------------------------------------------
-     | Host     | Status of TFA | PID   | Port  | Version    | Build ID             | Inventory Status |
-     +----------+---------------+-------+-------+------------+-------
-     | hostname | RUNNING       | 28467 | 55757 | 18.3.3.0.0 | 18330020181005054218 | COMPLETE         |
-     '----------+---------------+-------+-------+------------+-------
-     $
-     ```
+      .---------------------------------------------------------------
+      | Host     | Status of TFA | PID   | Port  | Version    | Build ID             | Inventory Status |
+      +----------+---------------+-------+-------+------------+-------
+      | hostname | RUNNING       | 28467 | 55757 | 18.3.3.0.0 | 18330020181005054218 | COMPLETE         |
+      '----------+---------------+-------+-------+------------+-------
+      $
+      ```
 
 ## Task 3: Collect all ORA-00600 Error using Service Request Data Collection (SRDC)
 
-     3.	Start a Service Request Data Collection (SRDC) for all ORA-00600 errors that occurred in  ORCL.
+3.	Start a Service Request Data Collection (SRDC) for all ORA-00600 errors that occurred in  ORCL.
 
-     Q1/ How do you get the list of possible types of SRDC?
+      Q1/ How do you get the list of possible types of SRDC?
 
-     ```
-     $ ./tfactl collect -srdc -help
+      ```
+      $ ./tfactl collect -srdc -help
 
-     ...
+      ...
 
-     Service Request Data Collection (SRDC).
+      Service Request Data Collection (SRDC).
 
-     Usage : /u01/app/oracle/tfa/bin/tfactl collect -srdc <srdc_profile> [-tag <tagname>] [-z <filename>] [-last <n><h|d>| -from <time> -to <time> | -for <time>] -database <database>
+      Usage : /u01/app/oracle/tfa/bin/tfactl collect -srdc <srdc_profile> [-tag <tagname>] [-z <filename>] [-last <n><h|d>| -from <time> -to <time> | -for <time>] -database <database>
          -tag <tagname>  The files will be collected into tagname directory inside repository
          -z <zipname>    The collection zip file will be given this name within the TFA collection repository
          -last  <n><h|d> Files from last 'n' [d]ays or 'n' [h]ours
@@ -300,142 +300,142 @@ In this practice, you collect diagnostic files for an ORA-00600 error, and uploa
          esexalogic           SRDC - Exalogic Full Exalogs Data Collection Information.
          ggintegratedmodenodb SRDC for GoldenGate extract/replicat abends problems.
          internalerror        SRDC for all other types of internal database errors.
-     $ 
-     ```
+      $ 
+      ```
 
-     A1/ The -help option is always useful in getting the possible values of options.
+      A1/ The -help option is always useful in getting the possible values of options.
 
-     a.	Collect diagnostic data for your service request SR12345 (this is a fake SR) for the ORA-00600 errors that occurred in Practice 6-1.
+      a.	Collect diagnostic data for your service request SR12345 (this is a fake SR) for the ORA-00600 errors that occurred in Practice 6-1.
     
-     ```    
-     $ <code>./tfactl collect -srdc ORA-00600 -sr SR12345</code>
+      ```    
+      $ <code>./tfactl collect -srdc ORA-00600 -sr SR12345</code>
 
-     ...
+      ...
 
-     MOS setup is not done. It is needed to upload collection to SR
-     Run: tfactl setupmos
-     $
-     ```
+      MOS setup is not done. It is needed to upload collection to SR
+      Run: tfactl setupmos
+      $
+      ```
 
-     b.	Set the TEST MyOracleSupport (MOS) credentials within a wallet.
+      b.	Set the TEST MyOracleSupport (MOS) credentials within a wallet.
 
-     ```
-     $ <code>./tfactl setupmos</code>
+      ```
+      $ <code>./tfactl setupmos</code>
 
-     ...
+      ...
 
-     Access Denied: Only TFA Admin can run this command
-     $
-     ```
+      Access Denied: Only TFA Admin can run this command
+      $
+      ```
 
-     The wallet file is secured to be read/write by the root user only. This is the reason you have to log on as root.
-     ```
-     $ <code>cd /u01/app/oracle/tfa/bin</code>
+      The wallet file is secured to be read/write by the root user only. This is the reason you have to log on as root.
+      ```
+      $ <code>cd /u01/app/oracle/tfa/bin</code>
 
-     ...
+      ...
 
-     $    
-     ```
+      $    
+      ```
     
 
-     ```
-     $ <code> sudo ./tfactl setupmos</code>
+      ```
+      $ <code> sudo ./tfactl setupmos</code>
 
-     ...
+      ...
 
-     $
-     ```
+      $
+      ```
 
-     ```
-     Enter User Id: <code>Test</code>
+      ```
+      Enter User Id: <code>Test</code>
 
-     ...
+      ...
 
-     $
-     ```
+      $
+      ```
 
-     ```
-     Enter Password: <code>Ora4U_1234</code> 
+      ```
+      Enter Password: <code>Ora4U_1234</code> 
 
-     ...
+      ...
      
-     Wallet does not exist ... creating
-     Wallet created successfully
-     USER details added/updated in the wallet
-     PASSWORD details added/updated in the wallet
-     SUCCESS - CERTIMPORT - Successfully imported certificate
-     $
-     ```
+      Wallet does not exist ... creating
+      Wallet created successfully
+      USER details added/updated in the wallet
+      PASSWORD details added/updated in the wallet
+      SUCCESS - CERTIMPORT - Successfully imported certificate
+      $
+      ```
 
 c.	Switch back to oracle and collect the diagnostic data related to the second occurrence of the ORA-00600 errors in ORCL for SR12345.
      
-     ```
-     $<code> cd $HOME/u01/app/oracle/tfa/bin</code>
+      ```
+      $<code> cd $HOME/u01/app/oracle/tfa/bin</code>
 
-     ...
+      ...
 
-     $
-     ```
+      $
+      ```
 
-     ```
-     $<code> ./tfactl collect -srdc ORA-00600 -sr SR12345</code>
+      ```
+      $<code> ./tfactl collect -srdc ORA-00600 -sr SR12345</code>
 
-     ...
+      ...
 
-     Enter the time of the ORA-00600 [YYYY-MM-DD HH24:MI:SS,<RETURN>=ALL] :
-     Enter the Database Name [<RETURN>=ALL] : ORCL
+      Enter the time of the ORA-00600 [YYYY-MM-DD HH24:MI:SS,<RETURN>=ALL] :
+      Enter the Database Name [<RETURN>=ALL] : ORCL
 
-     1. Nov/12/2018 16:00:32 : [orcl] ORA-00600: internal error code, arguments: [13011], [72893], [4229649], [0], [4229649], [17], [], [], [], [], [], []
+      1. Nov/12/2018 16:00:32 : [orcl] ORA-00600: internal error code, arguments: [13011], [72893], [4229649], [0], [4229649], [17], [], [], [], [], [], []
 
-     Please choose the event : 1-1 [1] 
-     Selected value is : 1 ( Nov/12/2018 16:00:32 )
-     Scripts to be run by this srdc: ipspack rdahcve1210 rdahcve1120 rdahcve1110
-     Components included in this srdc: OS CRS DATABASE NOCHMOS
-     Collecting data for local node(s)
-     Scanning files from Nov/12/2018 10:00:32 to Nov/12/2018 22:00:32
-     WARNING: End time entered is after the current system time.
+      Please choose the event : 1-1 [1] 
+      Selected value is : 1 ( Nov/12/2018 16:00:32 )
+      Scripts to be run by this srdc: ipspack rdahcve1210 rdahcve1120 rdahcve1110
+      Components included in this srdc: OS CRS DATABASE NOCHMOS
+      Collecting data for local node(s)
+      Scanning files from Nov/12/2018 10:00:32 to Nov/12/2018 22:00:32
+      WARNING: End time entered is after the current system time.
 
-     Collection Id : 20181112171615hostname
+      Collection Id : 20181112171615hostname
 
 
-     Detailed Logging at : /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local/diagcollect_20181112171615_hostname.log
-     2018/11/12 17:16:19 UTC : NOTE : Any file or directory name containing the string .com will be renamed to replace .com with dotcom
-     2018/11/12 17:16:19 UTC : Collection Name : tfa_srdc_ora600_Mon_Nov_12_17_16_15_UTC_2018.zip
-     2018/11/12 17:16:19 UTC : Scanning of files for Collection in progress...
-     2018/11/12 17:16:19 UTC : Collecting additional diagnostic information...
-     2018/11/12 17:16:24 UTC : Getting list of files satisfying time range [11/12/2018 10:00:32 UTC, 11/12/2018 17:16:19 UTC]
-     2018/11/12 17:16:58 UTC : Collecting ADR incident files...
-     2018/11/12 17:17:57 UTC : Completed collection of additional diagnostic information...
-     2018/11/12 17:18:10 UTC : Completed Local Collection
-     2018/11/12 17:18:10 UTC : Uploading collection to SR - SR12345
-     2018/11/12 17:20:57 UTC : Failed to upload collection to SR
-     .-----------------------------------------.
-     |            Collection Summary           |
-     +--------------+-----------+-------+------+
-     | Host         | Status    | Size  | Time |
-     +--------------+-----------+-------+------+
-     | hostname     | Completed | 286MB | 111s |
-     '--------------+-----------+-------+------'
+      Detailed Logging at : /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local/diagcollect_20181112171615_hostname.log
+      2018/11/12 17:16:19 UTC : NOTE : Any file or directory name containing the string .com will be renamed to replace .com with dotcom
+      2018/11/12 17:16:19 UTC : Collection Name : tfa_srdc_ora600_Mon_Nov_12_17_16_15_UTC_2018.zip
+      2018/11/12 17:16:19 UTC : Scanning of files for Collection in progress...
+      2018/11/12 17:16:19 UTC : Collecting additional diagnostic information...
+      2018/11/12 17:16:24 UTC : Getting list of files satisfying time range [11/12/2018 10:00:32 UTC, 11/12/2018 17:16:19 UTC]
+      2018/11/12 17:16:58 UTC : Collecting ADR incident files...
+      2018/11/12 17:17:57 UTC : Completed collection of additional diagnostic information...
+      2018/11/12 17:18:10 UTC : Completed Local Collection
+      2018/11/12 17:18:10 UTC : Uploading collection to SR - SR12345
+      2018/11/12 17:20:57 UTC : Failed to upload collection to SR
+      .-----------------------------------------.
+      |            Collection Summary           |
+      +--------------+-----------+-------+------+
+      | Host         | Status    | Size  | Time |
+      +--------------+-----------+-------+------+
+      | hostname     | Completed | 286MB | 111s |
+      '--------------+-----------+-------+------'
 
-     Logs are being collected to: /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local
-     /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local/hostname.tfa_srdc_ora600_Mon_Nov_12_17_16_15_UTC_2018.zip
-     $
-     ```
+      Logs are being collected to: /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local
+      /u01/app/oracle/tfa/repository/srdc_ora600_collection_Mon_Nov_12_17_16_15_UTC_2018_node_local/hostname.tfa_srdc_ora600_Mon_Nov_12_17_16_15_UTC_2018.zip
+      $
+      ```
 
-     Do not pay attention to the “Failed to upload collection to SR” message. The SR is a fake one.
+      Do not pay attention to the “Failed to upload collection to SR” message. The SR is a fake one.
 
-     Q2/ Which options would you use to upload the initialization parameter file to the SR in MOS?
+      Q2/ Which options would you use to upload the initialization parameter file to the SR in MOS?
 
-     ```
-     $<code> ./tfactl upload -sr SR12345 -user TEST $ORACLE_HOME/dbs/initORCL.ora</code>
+      ```
+      $<code> ./tfactl upload -sr SR12345 -user TEST $ORACLE_HOME/dbs/initORCL.ora</code>
 
-     ...
+      ...
 
-     SR12345 is not a valid SR number.
-     $
-     ```
+      SR12345 is not a valid SR number.
+      $
+      ```
 
-     A2/ The upload allows you to upload other files to your SR in MOS. The command above fails because the SR used is a fake one.
+      A2/ The upload allows you to upload other files to your SR in MOS. The command above fails because the SR used is a fake one.
 
 
 ## Learn More

@@ -24,9 +24,6 @@ In this lab, you will:
 This lab assumes you have:
 * Obtained and signed in to your `workshop-installed` compute instance.
 
-## Overview
-
-In this practice, you diagnose, get, and implement recommendations for a SQL statement that gives a poor performance and for another SQL statement that fails with an ORA-00600 error.
 
 ## Task 1: Clean up PDBs and Format Tables
 
@@ -70,10 +67,15 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
 
      ...
 
+     ```
+
+     ```
      Enter password: <copy>Ora4U_1234</copy>
 
      ...
-     
+     ```
+
+     ```
      SQL> <copy>SELECT /*+ FULL(a) FULL (b) */ sum(a.num),sum(b.num),count(*) FROM tab1 a,diag.tab1 b WHERE a.id = b.id and a.id = 100;</copy>
 
      ...
@@ -105,9 +107,9 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
      AUTO_APPLY_PATCH             VARCHAR2            IN     DEFAULT
 
      SQL> 
-     
+     ```
 
-    
+     ```
      SQL><code> SET SERVEROUTPUT ON
          VAR incident_id NUMBER
          DECLARE
@@ -423,10 +425,11 @@ In this practice, you diagnose, get, and implement recommendations for a SQL sta
      Enter password: <code>Ora4U_1234</code>
      Connected.
 
+     ...
+
      SQL>
      ```
 
-     ...
 
      ```
      SQL> <code>$HOME/oracle/labs/19cnf/crash_delete.sql</code>
@@ -627,17 +630,20 @@ a.	Find the SQL_ID for the failing statement.
      
      ```
      SQL> <code>SET SERVEROUTPUT ON</code>
-     ```
      
      ...
 
      ```
-     SQL> <code>VAR incident_id NUMBER</code>
+
      ```
+     SQL> <code>VAR incident_id NUMBER</code>
 
      ...
 
-     ````
+     SQL>
+     ```
+
+     ```
      SQL> <code>DECLARE
        recom_count number(10);
      BEGIN
