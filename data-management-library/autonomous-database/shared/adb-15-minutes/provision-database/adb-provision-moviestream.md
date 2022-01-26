@@ -18,10 +18,6 @@ In this lab, you will:
 
 
 ## Task 1: Choose Autonomous Database from the Services Menu
-</if>
-<if type="livelabs">
-## Task 1: Choose Autonomous Database from the Services Menu
-</if>
 
 1. Log in to the Oracle Cloud Interface.
 2. Once you log in, you arrive at the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices and then click **Autonomous Database**.
