@@ -20,7 +20,7 @@ This lab assumes you have:
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Initialize the Environment
+    - Lab: Initialize Environment
 
 ## Task 1: Install and Run the Oracle WebLogic Server Kubernetes Operator Docker Image
 

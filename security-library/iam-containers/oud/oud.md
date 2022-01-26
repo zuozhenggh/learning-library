@@ -21,7 +21,7 @@ This lab assumes you have:
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
-    - Lab: Initialize the Environment
+    - Lab: Initialize Environment
     - Lab: Deploy Oracle Identity Governance(OIG) domain
     - Lab: Deploy Oracle Access Manager(OAM) domain
 
