@@ -68,7 +68,7 @@ Estimated time: 15 minutes
    ![Oracle Cloud, Navigation Menu](images/6-2-1-menu.png " ")
 
 
-2.	Select the **Compartment** and the **APM Domain**. Review the traces captured.
+2.	On the Trace Explorer page, select the **Compartment** and the **APM Domain**. Review the traces captured.
 
    ![Oracle Cloud, Trace Explorer](images/6-2-2-traceexplorer.png " ")
 
@@ -112,9 +112,9 @@ Estimated time: 15 minutes
 
    ![Oracle Cloud, Trace Explorer](images/6-4-3-traceexplorer.png " ")
 
-  >***NOTE***: You can also enable the APM browser Agent to collect client-side dimensions, including  user’s location, browser type, OS type, and Page load time information. For more information on the APM Browser Agent, refer to the Oracle Cloud Infrastructure Documentation > [Deploy the APM Browser Agent With Your Application](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/deploy-browser-agent-your-application.html).
+  >***NOTE***: You can also enable the APM browser Agent to collect client-side dimensions, including  user’s location, browser type, OS type, and Page load time information. For more information on the APM Browser Agent, refer to the Oracle Cloud Infrastructure Documentation > **[Deploy the APM Browser Agent With Your Application](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/deploy-browser-agent-your-application.html)**.
 
-This is the end of the workshop. You have learnt that you can use a file system to add the APM Java Agent to a WebLogic container-packaged web application, without recreating a Docker image. You have also learnt how to configure APM Agent in the Kubernetes cluster, and how to Use APM Trace Explorer to view traces and spans. For more information on APM, refer to the OCI documentation, **[Application Performance Monitoring](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/index.html)**.
+This is the end of the workshop. You have learned that you can use a file system to add the APM Java Agent to a WebLogic container-packaged web application, without recreating a Docker image. You have also learned how to configure APM Agent in the Kubernetes cluster, and how to Use APM Trace Explorer to view traces and spans. For more information on APM, refer to the OCI documentation, **[Application Performance Monitoring](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/index.html)**.
 
 
 You have completed the tutorials in this Workshop. You may now [proceed to the Need Help section ](#next) to review the common problems users face in the LiveLab, or exit the Workshop.
@@ -124,5 +124,6 @@ You have completed the tutorials in this Workshop. You may now [proceed to the N
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
+Mahesh Sharma, Consulting Member of Technical Staff,<br>
 Avi Huber, Senior Director, Product Management
-* **Last Updated By/Date** - Yutaka Takatsu, December 2021
+* **Last Updated By/Date** - Yutaka Takatsu, January 2022
