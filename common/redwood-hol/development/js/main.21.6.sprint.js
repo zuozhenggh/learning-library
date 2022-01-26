@@ -1,9 +1,9 @@
 /*
 Author: Ashwin Agarwal
-Contributors: Tom McGinn
-Last updated: 3-Aug-2021 by Ashwin Agarwal
-Version: 21.5
-Feature added: DBDOC-2438 - Create a lint checker for LiveLabs markdown (updated Lint checker)
+Contributors: Tom McGinn, Kaylien Phan
+Last updated: 14-Jan-2022 by Kaylien Phan
+Version: 21.6.sprint (only to be used for LiveLab Sprints)
+Feature: This version uses 'Expand All Sections' & 'Collapse All Sections' instead of 'Tasks'
 */
 
 "use strict";
@@ -650,12 +650,7 @@ let main = function() {
                 if ($(this)[0].width > 100 || $(this)[0].height > 100 || $(this).attr("title") !== undefined) { // only images with title or width or height > 100 get wrapped (DBDOC-2397)
                     $(this).wrap("<figure></figure>"); //wrapping image tags with figure tags
                     if ($.trim($(this).attr("title"))) {
-                        let imgFileNameWithoutExtn = $(this).attr("src").split("/").pop().split('.').shift(); //extracting the image filename without extension
-                        // preparing image text file path with extension
-                        let imgFileNameWithPath = $(this).attr("src").split("/").slice(0, -2).join('/') + '/files/' + imgFileNameWithoutExtn + '.txt';
-                        $(this).parent().append('<figcaption><a href="' + imgFileNameWithPath + '">Description of illustration [' + imgFileNameWithoutExtn + ']</figcaption>');
-                    } else {
-                        $(this).removeAttr('title');
+                        $(this).removeAttr("title");
                     }
                 }
             });
@@ -1059,7 +1054,7 @@ let main = function() {
     // QA part of the code
     let performQA = function(articleElement, markdownContent, manifestFileContent) {
         let error_div = $(document.createElement('div')).attr('id', 'qa-report').html("<div id='qa-reportheader'></div><div id='qa-reportbody'><ol></ol></div>");
-        const more_info = "Please see <a href='https://confluence.oraclecorp.com/confluence/x/ep81Y' target='_blank'>using the LiveLabs template</a> for more information.";
+        const more_info = "Please see <a href='https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier/?lab=3a-labs-misc-develop-content-features' target='_blank'>using the LiveLabs template</a> for more information.";
 
         let urlExists = function(url, callback) {
             $.ajax({

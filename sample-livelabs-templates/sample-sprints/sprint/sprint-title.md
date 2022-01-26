@@ -7,7 +7,8 @@ Example: How to install ORDS?
 * try to minimize use of images/screenshotds - less is more (sometimes)
 * try to avoid referencing external files
 
-
+## Assumptions
+**(optional) - include prerequisites, etc.
 
 ## Learn More
 
@@ -16,7 +17,4 @@ Example: How to install ORDS?
 * [URL text 1](http://docs.oracle.com)
 * [URL text 2](http://docs.oracle.com)
 
-## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
