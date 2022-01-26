@@ -41,13 +41,14 @@ To upload observations to an APM domain, Data Upload Endpoint and Data Keys must
 1.	Click the link to the APM domain just created.
   ![Oracle Cloud console, APM Domain](images/3-1-domain.png " ")
 
-2.	In the **APM Domain Information** tab, find **Data Upload Endpoint**, then click **Copy**. Paste the copied value to a text file and save. You will need this value in the later steps in the workshop.
+2. From the APM Domain Details page, in the **APM Domain Information**  section, locate the **Data Upload Endpoint**, then click **Copy**. Also paste the copied value to a text file and save as you will need this endpoint later in the workshop.  
 
-3. Under **Data Keys**, find **auto\_generated\_private_data\_key**. Click **Copy** and save the value to the text file.
+3. In the **Data Keys**, section you find the **auto\_generated\_private_data\_key**. Click **Copy** and save the private key value to a text file.
+
 
   ![Oracle Cloud console, APM Domain](images/3-2-domain.png " ")
 
-> ***NOTE*** : Public datakey is required when configuring APM Browser Agent, which is not covered in this workshop.
+> ***NOTE*** : Public datakey is used when configuring the APM Browser Agent, which is not used in this workshop.
 
 For more details on Data Upload Endpoint and Data keys, refer to the OCI documentation, [Obtaining Data Upload Endpoint and Data keys](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/obtain-data-upload-endpoint-and-data-keys.html).
 
@@ -59,5 +60,6 @@ You may now [proceed to the next lab](#next).
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
+Mahesh Sharma, Consulting Member of Technical Staff,<br>
 Avi Huber, Senior Director, Product Management
-* **Last Updated By/Date** - Yutaka Takatsu, December 2021
+* **Last Updated By/Date** - Yutaka Takatsu, January 2022
