@@ -1,10 +1,20 @@
-# Configure the ZDM Environment
+# Migratign your Database
 
 ## Introduction
 In this lab on your host instance, you will:
 * Perform a migration on evaluation mode to troubleshoot any connectivity or setup issue
 * Learn how to to monitor an ongoing migration job
 * Migrate your Database
+
+Estimated Total Lab Time: 30 minutes
+
+### Workshop Objectives
+
+In this lab, you will:
+* Learn how to perform a logical online migration to Autonomous Database with ZDM.
+
+### Prerequisites
+This workshop section requires having completed all he previous sections.
 
 
 ## **Task 1: Run a Migration on Evaluation Mode**
@@ -76,7 +86,7 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
 
 4. ZDM will then proceed to create a migration job id that should look as follows:
 
-    ![](./images/zdm-job-id.png " ")
+    ![Screenshot of OCI Cloud Shell with ZDMCLI Migrate Database command output](./images/zdm-job-id.png " ")
 
 
 ## **Task 2: Evaluate a Migration Job**
@@ -91,7 +101,7 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
 
 2. You might need to execute the command several times until the evaluation is completed. Upon succesful completion of your migration in evaluation mode, you should see an output like the following:
 
-![](./images/zdm-job-eval-done.png " ")
+![Screenshot of OCI Cloud Shell with ZDMCLI Query Job output](./images/zdm-job-eval-done.png " ")
 
 ## **Task 3: Migrate your Database**
 
@@ -118,25 +128,25 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
     /u01/app/zdmhome/bin/zdmcli query job -jobid idnumber
     </copy>
     ```
-    ![](./images/zdm-job-pending.png " ")
+    ![Screenshot of OCI Cloud Shell with ZDMCLI Query Job output pending](./images/zdm-job-pending.png " ")
 
-    ![](./images/zdm-job-completed.png " ")
+    ![Screenshot of OCI Cloud Shell with ZDMCLI Query Job output completed](./images/zdm-job-completed.png " ")
 
 4. Congratulations, your database has now been migrated using Oracle Zero Downtime Migration Logical Online workflow. Let's go to the Target Autonomous Database and check its contents.
 
 5.  In your OCI Dashboard: select the hamburger menu, Oracle Database -> Autonomous Database.
-    ![Autonomous Menu](./images/menu-auton.png)
+    ![Screenshot of OCI Oracle Database Menu with Autonomous Database Option](./images/menu-auton.png)
 
 6. Select the target database.
-    ![Select Autonomous](./images/select-auton.png)
+    ![Screenshot of OCI Autonomous Databases available in current compartment](./images/select-auton.png)
 
 7. In the database menu go to __Tools__ -> __Open Database Actions__.
-    ![Database Action](./images/db-action.png)
+    ![Screenshot of selected Datatabase Tools with Database Action selected](./images/db-action.png)
 
 8. A new tab will open requesting for credentials. Fill in ADMIN for the username and the password will be `WELcome##1234`.
 
 9. Select SQL
-    ![Select SQL](./images/select-sql.png)
+    ![Screenshot of Database Actions Window with SQL option highlighted](./images/select-sql.png)
 
 
 10. Copy the query below and paste it on the Worksheet: 
@@ -148,10 +158,10 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
     ```
 
 11. This query will show us the contents of the table EMPL. If you remember, in Lab 3, we connected to the source database and ran a script that created the EMPL table and filled it with 1000 records. If the migration was succesful, the table and the same records will show here. Select 'Run Script'.
-    ![Run Query](./images/run-query.png)
+    ![Screenshot of Database Actions with Run Script option highlighted](./images/run-query.png)
 
 12. The result now shows on the __Query Result__ pane below.
-    ![query result](./images/query-result.png)
+    ![Screenshot of Database Actions with Query Result Highlighted](./images/query-result.png)
 
 
 ## **Summary**
@@ -171,4 +181,4 @@ __Learn More About Zero Downtime Migration (ZDM)__
 ## Acknowledgements
 * **Author** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
 * **Contributors** - LiveLabs Team, ZDM Development Team
-* **Last Updated By/Date** - Ricardo Gonzalez, August 2021
+* **Last Updated By/Date** - Ricardo Gonzalez, January 2022

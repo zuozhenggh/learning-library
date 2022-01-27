@@ -19,6 +19,14 @@ The reason your OCI directory is being copied to 'zdmuser', 'oracle', and 'opc' 
 
 Estimate Lab Time: 20 minutes
 
+### Workshop Objectives
+
+In this lab, you will:
+* Learn how to congifute the ZDM Service Node, generate and configure the required API Keys and configure connectivity between ZDM's Service Node and the GoldenGate Hub. 
+
+### Prerequisites
+This workshop section requires having completed all previous workshop sections.
+
 **Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually hit enter a second time. To avoid statement failure, please be cognizant of this and hit enter twice when pasting.
 
 ## **Task 1: Install OCI CLI**
@@ -90,25 +98,25 @@ Estimate Lab Time: 20 minutes
 
 3. Bear in mind you must be signed in to perform a download, please proceed to sign if you have not done so. Once signed in, click on Download, Accept the Licensing terms and download the ZDM binaries to your Desktop
 
-    ![Go to Download Link](./images/download-link.png)
+    ![Screenshot of ZDM Download Menu](./images/download-link.png)
 
-    ![Accept Terms](./images/accept-terms.png)
+    ![Screenshot of ZDM's Oracle License Agreement](./images/accept-terms.png)
 
 
 4. Go back to your Cloud Shell environment and click on the Hamburguer menu on the top left of Cloud Shell and click on the __Upload__ option, an upload window will appear
 
-    ![Cloud Shell Hamburguer Menu - Upload Option](./images/hamburguer-upload.png)
+    ![Screenshot of Cloud Shell Hamburguer Menu - Upload Option](./images/hamburguer-upload.png)
 
-    ![Upload Window](./images/upload-pane.png)
+    ![Screenshot of Cloud Shell Upload Window](./images/upload-pane.png)
 
 
 5. Click on __select from your computer__, select the recently ZDM downloaded binaries and click __Upload__
 
 
-    ![Select ZDM File](./images/zdm-file.png)
+    ![Screenshot of Cloud Shell select file window](./images/zdm-file.png)
 
 
-6. Upon finalizing the upload process, click on __Hide__, then exit the zdmuser and the opc user:
+6. Upon finalizing the upload process, click on __Hide__, then exit the opc user:
 
     ```
     <copy>
@@ -181,7 +189,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![Check Status](./images/check-status.png)
+    ![Screenshot of ZDM Service Status](./images/check-status.png)
 
 ## **Task 4: Generating API Keys**
 1. As 'zdmuser' go to 'zdmhome' directory.
@@ -205,16 +213,16 @@ Estimate Lab Time: 20 minutes
     ```
 
 3. On your OCI Dashboard navigate to and click on your user profile in the top right. Select the top option, your user.
-    ![Dashboard Profile](./images/dashboard-profile.png)
+    ![Screenshot of OCI Dashboard Profile](./images/dashboard-profile.png)
 
 4. Select 'API Keys' and 'Add API Key'.
-    ![Add API Keys](./images/add-api-keys.png)
+    ![Screenshot of OCI Add API Keys Menu](./images/add-api-keys.png)
 
 5. Paste your public OCI API key file you copied above and click "Add Key".
-    ![Paste Public Key](./images/paste-pub-key.png)
+    ![Screenshot of Add API Key Window](./images/paste-pub-key.png)
 
 6. You will see a configuration file preview. Copy its contents to clipboard. You will be using it to populate your configuration file in the following step.
-    ![Configuration File Preview](./images/config-file-preview.png)
+    ![Screenshot of Configuration File Preview](./images/config-file-preview.png)
 
 ## **Task 5: Creating Your Configuration File and Copying Your Directory**
 1. Back in your command prompt create your config file.
@@ -243,7 +251,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![Update Path](./images/update-path.png)
+    ![Screenshot of OCI Cloud Shell Configuration File Edit](./images/update-path.png)
 
 5. Press the escape key to escape insert.
 
@@ -306,7 +314,7 @@ Estimate Lab Time: 20 minutes
     ~/.oci/oci_api_key.pem
     </copy>
     ```
-    ![Update Key File Path](./images/update-keyfile-path.png)
+    ![Screenshot of OCI Cloud Shell Configuration File Edit](./images/update-keyfile-path.png)
 
 
 12. To save and quit vi editor.
@@ -335,7 +343,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![OCI CLI Test](./images/cli-test.png)
+    ![Screenshot of OCI Cloud Shell CLI Test listing OCI Regions](./images/cli-test.png)
 
 15. Repeat the steps for 'oracle'.
 
@@ -375,7 +383,7 @@ Estimate Lab Time: 20 minutes
     ~/.oci/oci_api_key.pem
     </copy>
     ```
-    ![Update Key File Path](./images/update-keyfile-path.png)
+    ![Screenshot of OCI Cloud Shell Configuration File Edit](./images/update-keyfile-path.png)
 
 
 19. To save and quit vi editor.
@@ -402,7 +410,7 @@ Estimate Lab Time: 20 minutes
     oci iam region list
     </copy>
     ```
-    ![OCI CLI Test](./images/cli-test.png)
+    ![Screenshot of OCI Cloud Shell CLI Test listing OCI Regions](./images/cli-test.png)
 
     
 22. Lock 'zdmuser' private key file.
@@ -452,7 +460,7 @@ Estimate Lab Time: 20 minutes
     </copy>
     ```
 
-    ![RSA Key Check](./images/cat-rsa.png)    
+    ![Screenshot of RSA Key Check](./images/cat-rsa.png)    
 
 
 ## **Task 7: Configuring Connectivity Between ZDM and the OGG Hub**
@@ -461,17 +469,17 @@ Estimate Lab Time: 20 minutes
 
 2. From your cloud account, select the top left hamburger menu and click on the __Compute__ Option. It will display different options, please click on __Instances__
 
-    ![Compute](./images/compute-menu.png)   
+    ![Screenshot of OCI Compute Menu with Instances Option](./images/compute-menu.png)   
 
 3. Right next to the Oracle GoldenGate Hub instance, you will see a Public IP address and a Private IP address. Copy the Private IP Adress and save it, you will need in the following steps. Then, proceed to Select the Oracle GoldenGate Compute Instances by clicking it's name.
 
-    ![Compute OGG](./images/compute-ogg.png)
+    ![Screenshot of OCI Compute Instances Menu with Instances in current compartment](./images/compute-ogg.png)
 
 4. On the Oracle GoldenGate Hub instance __Instance Information__ tab, scroll down and copy the instances's __Hostname__ and the __Internal FQDN__ information. You might have to click on __Show__ in order for the information to reveal.
 
 
 
-    ![Compute OGG 2](./images/compute-ogg-2.png)
+    ![Screenshot of OGG Compute Instance Information](./images/compute-ogg-info.png)
 
 5. Having copied the information, go back to your Cloud Shell and edit the /etc/hosts file
 
@@ -532,4 +540,4 @@ You may now [proceed to the next lab](#next).
 * **Author** - Zachary Talke, Solutions Engineer, NA Tech Solution Engineering
 - **Contributors** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
 * **Contributors** - LiveLabs Team, ZDM Development Team
-* **Last Updated By/Date** - Ricardo Gonzalez, August 2021
+* **Last Updated By/Date** - Ricardo Gonzalez, January 2022

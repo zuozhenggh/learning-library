@@ -9,6 +9,15 @@ In this lab you will:
 Estimate Lab Time: 40 minutes
 
 
+### Workshop Objectives
+
+In this lab, you will:
+* Learn about ZDM's response file and its parameters. You will also learn howto create and pre-fill a response file for your migration. 
+
+### Prerequisites
+This workshop section requires having completed all previous sections.
+
+
 ## **Task 1: Learn About the Response File**
 Oracle Zero Downtime Migration uses a response file to parse information relevant for your migration. The response file contains an important number of parameters that are user defined, which will guide ZDM throughout the database migration process. In this Lab, you will learn the fundamentals of ZDM response file and also the basic parameters that will be used during this specific migration. Please bear in mind that Oracle Zero Downtime Migration's Response File is extense and provides ample options for flexibility and each specific use case, hence, for the purposes of this workshop only the fundamental parameters will be covered.
 
@@ -358,27 +367,27 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
 
 3. Update the following lines in the file. Replace `<Update>` with the information. Be careful and make sure the entire text is pasted as there is a tendency for the first character to sometimes get cut off:
     * TARGETDATABASE\_OCID: On your Autonomous Database home page.
-    ![TargetDatabase OCID](./images/config-autonomous-1.png)
+    ![TargetDatabase OCID](./images/config-autonomous.png)
     * SOURCEDATABASE\_CONNECTIONDETAILS\_HOST: On your Compute Instance home page. For the purpose of this lab you can use the Private IP address provided.
-    ![Source DB Connection Details](./images/source-db-connection-1.png)
+    ![Source DB Connection Details](./images/source-db-connection.png)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_TENANTID: On your API key configuration file preview.
-    ![Configuration Tenancy](./images/config-tenancy-1.png)
+    ![Configuration Tenancy](./images/config-tenancy.png)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_USERID: On your API key configuration file preview.
-    ![Configuration User ID](./images/config-user-1.png)
+    ![Configuration User ID](./images/config-user.png)
     * OCIAUTHENTICATIONDETAILS\_USERPRINCIPAL\_FINGERPRINT: On your API key configuration file preview.
-    ![Configuration Fingerprint](./images/config-fingerprint-1.png)
+    ![Configuration Fingerprint](./images/config-fingerprint.png)
     * OCIAUTHENTICATIONDETAILS\_REGIONID: On your API key configuration file preview.
-    ![Configuration Region](./images/config-region-1.png)
+    ![Configuration Region](./images/config-region.png)
     * SOURCECONTAINERDATABASE\_CONNECTIONDETAILS\_HOST: On your Compute Instance home page. For the purpose of this lab you can use the Private IP address provided.
     ![Source DB Connection Details](./images/source-db-connection-1.png)
     * GOLDENGATEHUB\_URL: On your GG Hub Compute Instance home page copy the Internal FQDN, as an example, it should look something like this: __https://oggzdm.subnet1.labvcn.oraclevcn.com__
     ![GoldenGate HUB URL](./images/ogg-fqdn.png)
     * GOLDENGATEHUB\_COMPUTEID: On your GG Hub Compute Instance home page. Copy the OCID value.
-    ![GoldenGate Compute ID](./images/gg-compute-id-1.png)
+    ![GoldenGate Compute ID](./images/gg-compute-id.png)
     * DATAPUMPSETTINGS_DATABUCKET\_NAMESPACENAME: On your object storage bucket homepage.
-    ![Bucket Namespace](./images/bucket-namespace-1.png)
+    ![Bucket Namespace](./images/bucket-namespace.png)
     * DATAPUMPSETTINGS_DATABUCKET\_BUCKETNAME: On your object storage bucket homepage.
-    ![Bucket Name](./images/bucket-name-1.png)
+    ![Bucket Name](./images/bucket-name.png)
 
 
 
@@ -390,4 +399,4 @@ You may now [proceed to the next lab](#next).
 * **Author** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
 - **Contributors** - Zachary Talke, Solutions Engineer, NA Tech Solution Engineering
 * **Contributors** - LiveLabs Team, ZDM Development Team
-* **Last Updated By/Date** - Ricardo Gonzalez, August 2021
+* **Last Updated By/Date** - Ricardo Gonzalez, January 2022

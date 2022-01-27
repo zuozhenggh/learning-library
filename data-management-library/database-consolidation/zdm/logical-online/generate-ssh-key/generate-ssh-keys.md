@@ -8,10 +8,15 @@ If you already have an SSH key pair, you may use that to connect to your environ
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
-### LiveLabs (Green Button) Reservations - Please Read
-If you are creating an SSH Key for a workshop that will be running *inside a LiveLabs tenancy*, do not select Oracle Cloud Shell.  Select the options that correspond to the OS running on your local laptop.  You will be pasting your key into the LiveLabs reservation page so that we can pre-create your instance for you.
+Estimated Total Lab Time: 10 minutes
 
-![](./images/livelabs-reservation.png " ")
+### Workshop Objectives
+
+In this lab, you will:
+* Learn how to create SSH keys via the Oracle Cloud Shell
+
+### Prerequisites
+This workshop section requires having completed the previous section and having access to an Oracle Cloud account.
 
 ## Oracle Cloud Shell
 
@@ -20,7 +25,8 @@ Watch the video below for an overview of the Generate SSH Keys Cloud Shell optio
 
 The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
 
-*Note:  If you are making a reservation via the LiveLabs Green Button, you will need to choose the option that matches your laptop.  Your tenancy access will be provided AFTER you create your ssh key locally*
+
+## Tasks
 
 1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 

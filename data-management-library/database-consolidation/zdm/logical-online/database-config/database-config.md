@@ -11,6 +11,14 @@ Disclaimer: The Zero Downtime Migration service host should be a dedicated syste
 
 Estimate Lab Time: 15 minutes
 
+### Workshop Objectives
+
+In this lab, you will:
+* Learn how to Connect to the Source Database and create the required migration users.
+
+### Prerequisites
+This workshop section requires having setup a compute instance and the source database.
+
 
 ## **Task 1: Connect to Your Database and Configure required parameters**
 
@@ -158,7 +166,7 @@ Estimate Lab Time: 15 minutes
     ```
 
 
-4. After connecting to your container database create the user 'orcl_user'. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
+4. After connecting to your container database create the user 'zdml'. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
     ```
     <copy>
     create user zdml identified by WELcome##1234;
@@ -290,4 +298,4 @@ Please *proceed to the next lab*.
 * **Author** - Ameet Kumar Nihalani, Senior Principal Support Engineer, Oracle Cloud Database Migration
 * **Author** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
 * **Contributors** - LiveLabs Team, ZDM Development Team
-* **Last Updated By/Date** - Ricardo Gonzalez, August 2021
+* **Last Updated By/Date** - Ricardo Gonzalez, January 2022
