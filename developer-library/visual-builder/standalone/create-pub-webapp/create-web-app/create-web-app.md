@@ -4,7 +4,7 @@
 
 This lab shows you how to use Visual Builder to create a basic web application and populate it with business objects.
 
-Estimated Lab Time:  15 minutes
+Estimated Time:  15 minutes
 
 ### About this lab
 
@@ -16,7 +16,7 @@ In this lab, you'll create the Employee, Department, and Location business objec
 
 Once you have your business objects, you'll use them to build the HR web app in which every employee belongs to a department, and every department has a location. Your goal is to allow your users to add employee names and their departments to the database, and to change that data when necessary.
 
-**Note:** Although this workshop uses business objects to build a web application, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
+> **Note:** Although this workshop uses business objects to build a web application, you can also build Visual Builder applications based on REST services that expose other data sources. The basic principles of creating applications are the same, no matter what form your data takes.
 
 ## Task 1: Create a web app
 
@@ -105,7 +105,7 @@ Let's create your first business object and add data to it by importing a CSV fi
 
     You can see that there's now a check mark in the **Required** column for the **Name** field.
 
-8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/N2o2eijiTUZM78HyL9HHig4OsQLlOLQorVBrV8mUlJpbWJCMpY58nPJbHvFVlSR3/n/c4u03/b/oci-library/o/WMS4121Location.csv) to download the `Location.csv` file. This file contains four locations and  provides the data for the Location business object. 
+8.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/N2o2eijiTUZM78HyL9HHig4OsQLlOLQorVBrV8mUlJpbWJCMpY58nPJbHvFVlSR3/n/c4u03/b/oci-library/o/WMS4121Location.csv) to download the `Location.csv` file. This file contains four locations and  provides the data for the Location business object.
 
 9.  In the Navigator's Business Object pane, click **Menu** ![Menu icon](./images/vbcsca_menu_icon.png) and select **Data Manager**. The Data Manager is what you use to import data from a variety of sources.
 
@@ -131,7 +131,6 @@ Let's create your first business object and add data to it by importing a CSV fi
 ## Task 3: Create a Department business object
 
 Create the Department business object, which will have fields to show a department's name and location. In this task, you'll set up the department's Location field to pull in data from the Location business object you created in the previous task, but you won't actually add data to the Department business object just yet.
-
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
 
@@ -173,6 +172,7 @@ Create the Department business object, which will have fields to show a departme
 In this task, we'll create the last business object we need, the Employee object, containing the employee's name and identifying data. In this case, the Employee has a Reference type field to  refer to the Department business object.
 
 1.  In the Business Objects pane, click the **+** sign, then select **Business Object**.
+
 2.  In the New Business Object dialog box, enter `Employee` in the **Label** field and click **Create**. `Employee` is also filled in automatically as the **Name** value.
 3.  Click the **Fields** tab, then click **\+** and select **Field**.
 4.  In the pop-up box, enter:
@@ -238,8 +238,6 @@ Now that we have our business objects, let's create a diagram that provides a vi
     ![](./images/vbcsca_cde_s12.png)
 
     The diagram looks just like the graphic in the Before You Begin section.
-
-You can now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

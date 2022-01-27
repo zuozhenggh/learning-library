@@ -1,18 +1,24 @@
 
 <!-- Updated April 12, 2021 -->
-
+# Provision Autonomous Database and Connect Using SQL Worksheet
 
 ## Introduction
 
-This lab walks you through the steps to quickly provision an Oracle Autonomous Database on Oracle Cloud. 
+This lab walks you through the steps to quickly provision an Oracle Autonomous Database on Oracle Cloud. You will use this database in subsequent labs of this workshop. In this lab, you will then connect to the database using SQL Worksheet, a browser-based tool that is easily accessible from the Autonomous Data Warehouse.
+
+[](youtube:a6Jm7lYaCWI)
+
+Estimated lab time: 15 minutes
 
 ### Objectives
 
--   Getting Started with Oracle Database
+-   Provision a new Autonomous Data Warehouse
+-   Learn how to connect to your new autonomous database using SQL Worksheet
+
 
 ### Prerequisites
 
--   This lab requires completion of the **Getting Started** section in the Contents menu on the left.  
+-   This lab requires completion of the **Get Started** section in the Contents menu on the left.  
 
 
 ## Task 1: Choose ADW from the Services Menu
@@ -27,8 +33,11 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
+4. Each student has been granted their own compartment.  This is a logical area that only they have the privleges to update.  Before creating the Autonomous Database, locate your compartment by the student number you were assigned.  This student number is available in Blackboard.  If you don't know your student number, click on the **Needs Help** lab.  Select your compartment under the Spring 2022 section.
 
-## Task 2: Creating the Autonomous Database Instance
+    ![](./images/compartment.png " ")
+    
+## Task 2: Create the Autonomous Database Instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -52,6 +61,7 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 
     ![](./images/picture100-26b.png " ")
+    <b>Only choose the Data Warehouse as workload type for this course.  Do not choose one of the others. Each student is only allowed 1 OCPU instance for ADW.</b>
 
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
@@ -63,9 +73,8 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
 6. Configure the database:
 
-    - __Always Free__ - For this lab, you can select this option to create an always free autonomous database, or not select this option and create a database using your paid subscription. An always free database comes with 1 CPU and 20 GB of storage.
     - __Choose database version__ - Leave default - __19c__.
-    - __OCPU count__ - Leave default __1 CPU__. If you choose an always free database, it comes with 1 CPU.
+    - __OCPU count__ - Leave default __1 CPU__. Only 1 OCPU allowed for this course. 
     - __Storage (TB)__ - Leave default. 
     - __Auto Scaling__ - Leave default.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do __not__ select it.
@@ -73,6 +82,7 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
     *Note: You cannot scale up/down an Always Free autonomous database.*
 
     ![](./images/picture100-26c.png " ")
+    <b>Autonomous Database instance will be permanently removed by admin if over 1 OCPU.</b>
 
 7. Create administrator credentials:
 
@@ -103,10 +113,6 @@ This lab walks you through the steps to quickly provision an Oracle Autonomous D
 
    ![](./images/picture100-32.png " ")
 
-11.  Your instance will begin provisioning. In a few minutes the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, CPU count and storage size.
-
-   ![](./images/picture100-32.png " ")
-
    
 ## Task 3: Connect with SQL Worksheet
 
@@ -116,6 +122,7 @@ Although you can connect to your autonomous database from local PC desktop tools
 
     ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
+   
 2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - admin**, and click **Next**.
 
 
@@ -132,20 +139,6 @@ Although you can connect to your autonomous database from local PC desktop tools
 5. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
 
     ![Click Next to take tour.](./images/picture100-sql-worksheet.png " ")
-=======
-    ![Enter the admin username.](./images/Picture100-16.png " ")
-
-3. Enter the Administrator **Password** you specified when creating the database. Click **Sign in**.
-
-    ![Enter the admin password.](./images/Picture100-16-password.png " ")
-
-4. The Database Actions page opens. In the **Development** box, click **SQL**.
-
-    ![Click on SQL.](./images/Picture100-16-click-sql.png " ")
-
-5. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes.
-
-    ![Click Next to take tour.](./images/Picture100-sql-worksheet.png " ")
 
 
 ## Task 4: Run scripts in SQL Worksheet
@@ -154,10 +147,10 @@ Run a query on a sample Oracle Autonomous Database data set.
 
 1. Copy and paste the code snippet below to your SQL Worksheet. This query will run on the Star Schema Benchmark (ssb.customer), one of the two ADW sample data sets that you can access from any ADW instance. Take a moment to examine the script. Make sure you click the Run Statement button to run it in SQL Worksheet so that all the rows display on the screen.
 
-        select /* low */ c_city,c_region,count(*)
+        <copy>select /* low */ c_city,c_region,count(*)
         from ssb.customer c_low
         group by c_region, c_city
-        order by count(*);
+        order by count(*);</copy>
 
     ![Query Low Results SQL Worksheet](./images/ssb-query-low-results-sql-worksheet.png " ")
 
@@ -165,11 +158,16 @@ Run a query on a sample Oracle Autonomous Database data set.
 
 3. When possible, ADW also caches the results of a query for you.  If you run identical queries more than once, you will notice a much shorter response time when your results have been cached.
 
-4. You can find more sample queries to run in the ADW documentation.
+4. You can find more sample queries to run in the <a href="https://www.oracle.com/autonomous-database/autonomous-data-warehouse/">ADW documentation.</a>
 
 
-    
+## Troubleshoot Tips
+
+    If you are having problems with any of the labs, please visit the Need Help? tab.
+
+
 ## Acknowledgements
 
 - **Author** - Richard Green, Principal Developer, Database User Assistance
+- **Contributors** -  Marion Smith, Technical Program Manager
 - **Last Updated By/Date** - Marion Smith, January 2022

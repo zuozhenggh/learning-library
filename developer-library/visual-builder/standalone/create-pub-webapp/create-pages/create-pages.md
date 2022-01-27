@@ -1,9 +1,10 @@
 # Create Pages for Business Objects
+
 ## Introduction
 
 This lab shows you how to create web pages to display the business objects you created in the previous lab.
 
-Estimated Lab Time:  15 minutes
+Estimated Time:  15 minutes
 
 ### About this lab
 
@@ -70,7 +71,9 @@ Let's create a table to display your departments on the main-start page. The Tab
 Now that we have a way to show departments, we'll add a Create page that lets users create new departments. With the help of the Add Create Page Quick Start, we'll connect to our data source, the Department business object, and select the fields that we want the user to provide values for.
 
 1.  With the Departments table on the main-start page selected, click the **Quick Start** tab, then click **Add Create Page**.
+
 2.  On the Select Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**.
+
 3.  On the Page Detail page, under Endpoint Structure, select the **location** check box (the **name** check box is already selected, because name is a required field). Name and Location are the only fields the user needs to specify to create a department.
 
     ![](./images/department_add_create.png)
@@ -157,6 +160,7 @@ Add a Create page that lets your users create new employees.
 
 1.  With the table selected on the main-employees page, click the **Quick Start** tab, then **Add Create Page**.
 2.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
+
 3.  On the Page Detail page, select the **hireDate**, **email**, and **department** check boxes, in that order (**name** is already selected, because it's a required field).
 
 4. Leave the **Button label** field and other values to their default values. Click **Finish**.
@@ -166,6 +170,7 @@ Add a Create page that lets your users create new employees.
     A **Create Employee** button appears above the table, and the main-create-employee page appears in the pages list.
 
 5.  In the pages list, click the **main-create-employee** page to open it in the Page Designer.
+
 6.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the **General** tab of the Form Layout's properties, set the **Max Columns** value to **2**.
 
     ![](./images/employees_add_create_max_columns.png)
@@ -211,8 +216,7 @@ It makes sense at this point to change the name of the main-start page to main-d
 
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
 
-You may now [proceed to the next lab](#next).
-
 ## Acknowledgements
+
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
 * **Last Updated By** - February 2022
