@@ -61,9 +61,9 @@ Let's create a table to display your departments on the main-start page. The Tab
 
 12.  In the **Columns, Header Text** field, change `Name` to `Location`, then click ![Back to Table icon](./images/vbcscp_backtotable_icon.png) **Table** to return to the main **Data** tab.  
 
-    ![](./images/vbcscp_dd_s12.png)
+      ![](./images/vbcscp_dd_s12.png)
 
-    The main-start page now has a table with three columns: Id, Name, and Location. You won't see any information in your table because we are yet to import data for the Department business object.
+      The main-start page now has a table with three columns: Id, Name, and Location. You won't see any information in your table because we are yet to import data for the Department business object.
 
 
 ## Task 2: Add a page to create departments
