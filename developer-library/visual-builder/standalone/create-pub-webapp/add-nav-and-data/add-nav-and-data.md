@@ -64,7 +64,7 @@ You'll also populate your app's business objects by importing data from a file. 
 
     ![](./images/vbcsnd_cpc_s9.png)
 
-## Task 3: Import Data for the Business Objects
+## Task 3: Import data for the business objects
 
 Let's now add data for the Department and Employee business objects. Instead of using the Data Manager to import data, this time you'll use each business object's **Data** tab to do the same thing.
 

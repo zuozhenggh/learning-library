@@ -51,13 +51,13 @@ Let's create a table to display your departments on the main-start page. The Tab
 
 10.  On the Define Query page, click **Finish**.  
 
-    A Departments table with three empty columns is displayed on the main-start page. Notice that the second Name column (which maps to the location name field) shows simply as Name because that's what we set for the Display Field when we created the Location reference.
+     A Departments table with three empty columns is displayed on the main-start page. Notice that the second Name column (which maps to the location name field) shows simply as Name because that's what we set for the Display Field when we created the Location reference.
 
-    ![](./images/departments_table.png)
+     ![](./images/departments_table.png)
 
 11.  To make the location name column descriptive, click the **Data** tab in the Properties pane. Under **Table Columns**, click the ![Column Detail icon](./images/vbcscp_columndetail_icon.png) **Column Detail** arrow next to **Name (locationObject)**. You won't see the icon until you hover the mouse next to the field.
 
-    ![](./images/vbcscp_dd_s11.png)
+      ![](./images/vbcscp_dd_s11.png)
 
 12.  In the **Columns, Header Text** field, change `Name` to `Location`, then click ![Back to Table icon](./images/vbcscp_backtotable_icon.png) **Table** to return to the main **Data** tab.  
 
