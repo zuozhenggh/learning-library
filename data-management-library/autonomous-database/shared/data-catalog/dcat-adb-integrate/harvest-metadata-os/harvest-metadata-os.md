@@ -29,14 +29,7 @@ In this lab, you will:
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. You will complete all the labs in this workshop using this Cloud Administrator.
 See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/signingin.htm) in the _Oracle Cloud Infrastructure_ documentation.
 
-2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**.
-
-   ![](./images/sign-in.png " ")
-
-   The **Oracle Cloud Console** Home page is displayed.
-
-   ![](./images/oracle-cloud-console-home.png " ")
-
+2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
 ## Task 2: Create an Oracle Object Storage Data Asset
 
@@ -242,7 +235,7 @@ Create a filename pattern as follows:
 
     ![](./images/filename-patterns-1.png " ")
 
-3. Click **View Pattern Examples** for examples file pattern styles, sample files, pattern expressions, and the resulting logical data entities that are derived based on the pattern expression. A list of different pattern examples is displayed. Scroll-down the page to the **Non-Hive Style Folders** section, expand it, and then click **Select**.
+3. Click **View Pattern Examples** for examples file pattern styles, sample files, pattern expressions, and the resulting logical data entities that are derived based on the pattern expression. A list of different pattern examples is displayed. Scroll-down the page to the **Hive Style Folders Without Database** section, expand it, and then click **Select**.
 
     ![](./images/filename-patterns-examples.png " ")
 
@@ -293,8 +286,6 @@ Create a filename pattern as follows:
 
     When you harvest the data asset, the filename pattern is used to derive logical data entities. The names of the files in the Object Storage bucket are matched to the pattern expression and the logical data entities are formed.
 
-    ![](./images/file-pattern-assigned.png " ")
-
 >**Note:**    
 When you assign a new filename pattern to a data asset, the status of any harvested logical data entities is set to **Inactive**. You need to harvest the data asset again to derive the valid logical data entities again.
 
@@ -304,7 +295,7 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
 ### Harvest the Data Entities from the _**moviestream\_sandbox**_ Object Storage Bucket
 
-1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**.
+1. If you are still on the **Oracle Object Storage: Data Lake** page from the previous task, skip to step 5 below; otherwise, open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**.
 
 2. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance that contains the data asset that you want to harvest.
 
@@ -347,16 +338,11 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
     ![](./images/harvest-job-completed.png " ")
 
-9. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **1** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_sandbox`** root bucket. There is **1** corresponding file under the sub-folder under the root bucket.
+9. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **1** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_sandbox`** root bucket. There is **1** corresponding file under the sub-folder under the root bucket. You can drill-down on the **Log Messages** icon to display the job log. Close this tab.
 
     ![](./images/job-details.png " ")
 
-    > **Note:** The **logical data entities harvested** and the corresponding number of files shown in the above image might not match your results.
-
-10. Drill-down on the **Log Messages** icon to display the job log.
-
-    ![](./images/job-log-messages.png " ")
-
+    > **Note:** The **logical data entities harvested** and the corresponding number of files shown in the above image might not match your results in all three harvesting jobs. The three buckets that we are using in this workshop are shared by several other workshops that will add more folders and files; therefore, your results will always have more logical entities and files than what we show here.    
 
 ### Harvest the Data Entities from the _**moviestream\_landing**_ Object Storage Bucket
 
@@ -387,13 +373,13 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
     ![](./images/landing-harvest-completed.png " ")
 
-16. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **11** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_landing`** root bucket. There are **57** corresponding files under the sub-folders under the root bucket.
+    >**Note:** If the **Jobs** tab was already displayed from the previous harvesting job, refresh your browser to display the **`Harvest_Data_Lake_Landing`** job.
+
+16. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **11** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_landing`** root bucket. There are **57** corresponding files under the sub-folders under the root bucket. You can drill-down on the **Log Messages** icon to display the job log. Close this tab
 
     ![](./images/landing-job-details.png " ")
 
     > **Note:** The **logical data entities harvested** and the corresponding number of files shown in the above image might not match your results.
-
-17. Drill-down on the **Log Messages** icon to display the job log.
 
 ### Harvest the Data Entities from the _**moviestream\_gold**_ Object Storage Bucket
 
@@ -418,13 +404,15 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
     ![](./images/harvest-gold-completed.png " ")
 
+    >**Note:** If the **Jobs** tab was already displayed from the previous harvesting job, refresh your browser to display the **`Harvest_Data_Lake_Gold`** job.
+
 23. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details.  The **Logical data entities harvested** field shows **4** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_gold`** root bucket. There are **27** corresponding files under the sub-folders under this root bucket.
 
     ![](./images/gold-job-details.png " ")
 
     > **Note:** The **logical data entities harvested** and the corresponding number of files shown in the above image might not match your results.
 
-24. You can drill-down on the **Log Messages** icon to display the job log especially if there are errors or warnings.
+24. You can drill-down on the **Log Messages** icon to display the job log especially if there are errors or warnings. Close the **`Harvest_Data_Lake_Gold`** and **Jobs** tabs.
 
     After you harvest your data asset, you can browse or explore your data asset to view the data entities and attributes.
 
@@ -841,7 +829,7 @@ Create a filename pattern as follows:
 
 10. Click **Assign**. A message box is displayed indicating whether or not the file pattern assignment was successful. The selected filename pattern is assigned to the data asset. When you harvest the data asset, the filename pattern is used to derive logical data entities. The names of the files in the Object Storage bucket are matched to the pattern expression and the logical data entities are formed.
 
-    ![](./images/file-pattern-assigned.png " ")
+    ![](./images/assignment-successful.png " ")
 
     >**Note:**    
     When you assign a new filename pattern to a data asset, the status of any harvested logical data entities is set to **Inactive**. You need to harvest the data asset again to derive the valid logical data entities again.
@@ -893,11 +881,11 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
     ![](./images/harvest-job-completed.png " ")
 
-7. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **3** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_sandbox`** root bucket. There are **3** corresponding files under the sub-folder under the root bucket. You can drill-down on the **Log Messages** icon to display the job log.
+7. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **3** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_sandbox`** root bucket. There are **3** corresponding files under the sub-folder under the root bucket. You can drill-down on the **Log Messages** icon to display the job log. Close this tab.
 
     ![](./images/job-details.png " ")
 
-> **Note:** The **logical data entities harvested** and the corresponding number of files shown in the above image might not match your results. The buckets that we are using in this workshop are shared by several other workshops that will add more folders and files; therefore, your results will always have more logical entities and files than what we show here.  
+    > **Note:** The **logical data entities harvested** and the corresponding number of files shown in the above image might not match your results. The buckets that we are using in this workshop are shared by several other workshops that will add more folders and files; therefore, your results will always have more logical entities and files than what we show here.  
 
 ### Harvest the data entities from the _**moviestream\_landing**_ data asset.
 
@@ -928,6 +916,9 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
     ![](./images/landing-harvest-completed.png " ")
 
+    >**Note:** If the **Jobs** tab was already displayed from the previous harvesting job, refresh your browser to display the **`Harvest_Data_Lake_Landing`** job.
+
+
 13. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **11** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_landing`** root bucket. There are **57** corresponding files under the sub-folders under the root bucket. You can drill-down on the **Log Messages** icon to display the job log.
 
     ![](./images/landing-job-details.png " ")
@@ -957,7 +948,9 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
     ![](./images/harvest-gold-completed.png " ")
 
-19. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details.  The **Logical data entities harvested** field shows **4** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_gold`** root bucket. There are **27** corresponding files under the sub-folders under this root bucket. You can drill-down on the **Log Messages** icon to display the job log especially if there are errors or warnings.
+    >**Note:** If the **Jobs** tab was already displayed from the previous harvesting job, refresh your browser to display the **`Harvest_Data_Lake_Gold`** job.
+
+19. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **4** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_gold`** root bucket. There are **27** corresponding files under the sub-folders under this root bucket. You can drill-down on the **Log Messages** icon to display the job log especially if there are errors or warnings.
 
     ![](./images/gold-job-details.png " ")
 

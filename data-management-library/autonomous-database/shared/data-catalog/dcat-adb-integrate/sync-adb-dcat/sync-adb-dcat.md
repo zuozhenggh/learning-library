@@ -164,11 +164,11 @@ Create and run the PL/SQL procedures to initialize the lab before you synchroniz
     ![](./images/code-execution-complete.png " ")
 -->
 
-2. Copy your SQL Worksheet URL and paste it into a new browser tab.
+2. Copy your SQL Worksheet URL and paste it into a new browser tab. As the initialized script is running in the original worksheet, you'll check the status of the script execution in a new SQL Worksheet.
 
     ![](./images/copy-worksheet-url.png " ")
 
-3. View the status of the script execution in the new browser tab. Copy and paste the following code into your SQL Worksheet, and then click the **Run Script (F5)** icon in the Worksheet toolbar. You might need to re-run the following command few times before you can see the output if the script execution is not completed.
+3. View the status of the script execution in the new browser tab. Copy and paste the following code into your new SQL Worksheet, and then click the **Run Script (F5)** icon in the Worksheet toolbar. You might need to re-run the following command few times before you can see the output if the script execution is not completed.
 
     ```
     <copy>
@@ -197,32 +197,11 @@ Create and run the PL/SQL procedures to initialize the lab before you synchroniz
 In this task (in a later step), you will create a connection to your Data Catalog instance using the `set_data_catalog_conn` PL/SQL package procedure. This is required to synchronize the metadata with Data Catalog. An Autonomous Database instance can connect to a single Data Catalog instance. You only need to call this procedure once to set the connection. See [SET\_DATA\_CATALOG\_CONN Procedure](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-7734C568-076C-4BC5-A157-6DE11F548D2B). The credentials must have access to your Data Catalog asset and the data in the **`moviestream_sandbox`**, **`moviestream_landing`** and **`moviestream_gold`** Oracle Object Storage buckets that you use in this workshop.
 
 <if type="freetier">
-1. Define the following substitution variables, for repeated use in this task by using the SQL\*Plus **`DEFINE`** command. The variables will hold the necessary details for the Data Catalog connection such as the Data Catalog credential name, Compartment OCID, Data Asset key, and so on. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet.        
-_**Important:** Don't run the code yet. Complete the next step first where you will replace some of the place holders between the ' ' with the actual values that you saved in your local **`workshop-resources.txt`** text file in **Labs 1 and 2** in this workshop_.
-
-    ```
-    <copy>
-    define tenancy_ocid ='enter-your-tenancy-ocid'
-    define dcat_compartment = 'enter-your-compartment-ocid'
-    define dcat_sandbox_asset_key='enter-your-data-catalog-data-asset-key'  
-    define dcat_credential = 'OCI$RESOURCE_PRINCIPAL'
-    define obj_credential = 'OCI$RESOURCE_PRINCIPAL'
-    define uri_root = 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/WCoFAtux8IG4EPHU9TCBrsXbd6EQzqhF3-QVXEqROKeGgsbJPeIJnLZYHMhkiA7I/n/c4u04/b/moviestream_sandbox/o'
-    define user_ocid = 'enter-your-own-user-ocid'
-    </copy>
-    ```
-    >**Note:** Make sure that the URL for the **`uri_root`** value above, ends with _**/o**_ and not with an extra **/** such as _**/o/**_ to avoid an error message later in step 6.
-
-2. Open your local **`workshop-resources.txt`** text file, if it's not already open.
+1. Open your local **`workshop-resources.txt`** text file, if it's not already open. You will need the values of the Data Catalog OCID and the region identifier that you already gathered and saved in this file.
 
     ![](./images/workshop-resources-values.png " ")
 
-
-3. Replace the values of the **`tenancy_ocid`**, **`dcat_compartment`**, **`dcat_sandbox_asset_key`**, and **`user_ocid`** in the `DEFINE` statements in your SQL Worksheet with your own values that you have identified in **`workshop-resources.txt`** text file. Once you are done pasting the values in the SQL Worksheet, place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
-
-    ![](./images/define-variables.png " ")
-
-4. Enable Resource Principal to access Oracle Cloud Infrastructure Resources for the ADB instance. This creates the credential **`OCI$RESOURCE_PRINCIPAL`**. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
+2. Enable Resource Principal to access Oracle Cloud Infrastructure Resources for the ADB instance. This creates the credential **`OCI$RESOURCE_PRINCIPAL`**. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
     ```
     <copy>
@@ -235,7 +214,7 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
 
     >**Note:** You can use an Oracle Cloud Infrastructure Resource Principal with Autonomous Database. You or your tenancy administrator define the Oracle Cloud Infrastructure policies and a dynamic group that allows you to access Oracle Cloud Infrastructure resources with a resource principal. You do not need to create a credential object. Autonomous Database creates and secures the resource principal credentials you use to access the specified Oracle Cloud Infrastructure resources. See [Use Resource Principal to Access Oracle Cloud Infrastructure Resources](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/resource-principal.html#GUID-E283804C-F266-4DFB-A9CF-B098A21E496A)
 
-5. Confirm that the resource principal was enabled. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
+3. Confirm that the resource principal was enabled. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
 
     ```
     <copy>
@@ -247,12 +226,12 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
     ![](./images/query-resource-principal.png " ")
 
 
-6. Query the Object Storage bucket to ensure that the resource principal and privilege work. Use the `list_objects` function to list objects in the specified location on object storage, **`moviestream_sandbox`** bucket in our example (specified earlier using the `uri_root` variable). The results include the object names and additional metadata about the objects such as size, checksum, creation timestamp, and the last modification timestamp. Click **Copy** to copy and paste the following code into the SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
+4. Query the Object Storage bucket to ensure that the resource principal and privilege work. Use the `list_objects` function to list objects in the specified location on object storage, **`moviestream_sandbox`** bucket in our example. The results include the object names and additional metadata about the objects such as size, checksum, creation timestamp, and the last modification timestamp. Click **Copy** to copy and paste the following code into the SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet.
 
     ```
     <copy>
     select *
-    from dbms_cloud.list_objects('&obj_credential', '&uri_root/');
+    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/WCoFAtux8IG4EPHU9TCBrsXbd6EQzqhF3-QVXEqROKeGgsbJPeIJnLZYHMhkiA7I/n/c4u04/b/moviestream_sandbox/o/');
     </copy>
     ```
 
@@ -268,18 +247,18 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
 
     ![](./images/sandbox-bucket-storage.png " ")    
 
-7. Set the credentials to use with Data Catalog and Object Storage. The **`set_data_catalog_credential`** procedure sets the Data Catalog access credential that is used for all access to the Data Catalog. The **`set_object_store_credential`** procedure sets the credential that is used by the external tables for accessing the Object Storage. Changing the Object Storage access credential alters all existing synced tables to use the new credential. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
+5. Set the credentials to use with Data Catalog and Object Storage. The **`set_data_catalog_credential`** procedure sets the Data Catalog access credential that is used for all access to the Data Catalog. The **`set_object_store_credential`** procedure sets the credential that is used by the external tables for accessing the Object Storage. Changing the Object Storage access credential alters all existing synced tables to use the new credential. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Place the cursor on any line of code, and then click the **Run Script (F5)** icon in the Worksheet toolbar. The result is displayed in the **Script Output** tab at the bottom of the worksheet.
 
     ```
     <copy>
-    exec dbms_dcat.set_data_catalog_credential(credential_name => '&dcat_credential');
-    exec dbms_dcat.set_object_store_credential(credential_name => '&obj_credential');
+    exec dbms_dcat.set_data_catalog_credential(credential_name => 'OCI$RESOURCE_PRINCIPAL');
+    exec dbms_dcat.set_object_store_credential(credential_name => 'OCI$RESOURCE_PRINCIPAL');
     </copy>
     ```
 
     ![](./images/set-credentials.png " ")
 
-8. Create a connection to your Data Catalog instance using the `set_data_catalog_conn` procedure. This is required to synchronize the metadata with Data Catalog. An Autonomous Database instance can connect to a single Data Catalog instance. You only need to call this procedure once to set the connection. Click **Copy** to copy the following code, paste it into the SQL Worksheet. Replace the **region** and **catalog_id** place holders text with your **Region-Identifier** and **training-dcat-instance Data Catalog OCID** values that you already saved in the **workshop-resources.txt** file.
+6. Create a connection to your Data Catalog instance using the `set_data_catalog_conn` procedure. This is required to synchronize the metadata with Data Catalog. An Autonomous Database instance can connect to a single Data Catalog instance. You only need to call this procedure once to set the connection. Click **Copy** to copy the following code, paste it into the SQL Worksheet. Replace the **region** and **catalog_id** place holders text with your **Region-Identifier** and **training-dcat-instance Data Catalog OCID** values that you already saved in the **workshop-resources.txt** file.
 
     ```
     <copy>
@@ -292,7 +271,7 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
     </copy>
     ```
 
-9. Click the **Run Script (F5)** icon in the Worksheet toolbar. This could take a couple of minutes.
+7. Click the **Run Script (F5)** icon in the Worksheet toolbar. This could take a couple of minutes.
 
     ![](./images/region-dcat-ocid.png " ")
 
@@ -303,7 +282,7 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
     exec dbms_dcat.unset_data_catalog_conn;
     ```
 
-10. Query your current Data Catalog connections and review the the DCAT ocid, its compartment, and the credentials that are used to access Oracle Object Storage and Data Catalog. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet. For detailed information, see [Managing the Data Catalog Connection](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-BC3357A1-6F0E-4AEC-814E-71DB3E7BB63D).
+8. Query your current Data Catalog connections and review the the DCAT ocid, its compartment, and the credentials that are used to access Oracle Object Storage and Data Catalog. Click **Copy** to copy the following code, and then paste it into the SQL Worksheet. Click the **Run Statement** icon in the Worksheet toolbar. The result is displayed in the **Query Result** tab at the bottom of the worksheet. For detailed information, see [Managing the Data Catalog Connection](https://docs-uat.us.oracle.com/en/cloud/paas/exadata-express-cloud/adbst/ref-managing-data-catalog-connection.html#GUID-BC3357A1-6F0E-4AEC-814E-71DB3E7BB63D).
 
     ```
     <copy>
@@ -584,8 +563,8 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
 
     To copy a key value, double-click the cell to highlight the value, and then copy and paste it into a text editor of your choice. Copy the values for both `folder_key` and `data_asset_key` which you will need in the next command. In our example, the two key values from the previous query are as follows:
 
-    * **`folder_key`:** `05167d93-9b6b-4e1e-a283-758f01b3e55c`
-    * **`data_asset_key`:** `a669708d-ef3e-4e0c-b5df-50afb0e1ce40`
+    * **`folder_key`:** `d2112cbc-5d37-4bb4-b67d-a46113cfe74d`
+    * **`data_asset_key`:** `3dba9168-245f-4136-b7a6-d0c83115fc45`
 
     ![](./images/copy-folder-key-value.png " ")  
 
@@ -600,9 +579,9 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
     dbms_dcat.run_sync(synced_objects =>
         '{"asset_list": [
             {
-                "asset_id":"a669708d-ef3e-4e0c-b5df-50afb0e1ce40",
+                "asset_id":"3dba9168-245f-4136-b7a6-d0c83115fc45",
                 "folder_list":[
-                    "05167d93-9b6b-4e1e-a283-758f01b3e55c"
+                    "d2112cbc-5d37-4bb4-b67d-a46113cfe74d"
                ]
             }   
         ]}');                    
@@ -628,14 +607,14 @@ _**Important:** Don't run the code yet. Complete the next step first where you w
 
     ![](./images/view-log.png " ")
 
-    Your **logfile_table** name might not match the result shown in the above image. If you have more than one log file generated, query the most recent log file table. Using the `order by start_time desc` clause displays the most recent log file first. In our example, the most recent log table name is `DBMS_DCAT$1_LOG`.
+    Your **logfile_table** name might not match the result shown in the above image. If you have more than one log file generated, query the most recent log file table. Using the `order by start_time desc` clause displays the most recent log file first. In our example, the most recent log table name is `DBMS_DCAT$11_LOG`.
 
 4. Review the full log. Copy and paste the following script into your SQL Worksheet, and then click the **Run Statement** icon in the Worksheet toolbar. Substitute the log table name with your own log table name that you identified in the previous step.
 
     ```
     <copy>
     select *
-    from DBMS_DCAT$1_LOG
+    from DBMS_DCAT$11_LOG
     order by log_timestamp desc;
     </copy>
     ```
@@ -774,17 +753,18 @@ So far in this lab, you synchronized only the **`moviestream_sandbox`** Object S
     <!--![](./images/synch-output.png " ")-->
 
 
-2.  Copy and paste the following code into your SQL Worksheet to query the **`user_load_operations`** table to find the name of the logfile table name that contains information about the sync operation. Click the **Run Script (F5)** icon in the Worksheet toolbar. Note the name of the **`logfile_table`**.
+2.  Copy and paste the following code into your SQL Worksheet to query the **`user_load_operations`** table to find the name of the logfile table name that contains information about the sync operation. Click the **Run Script (F5)** icon in the Worksheet toolbar. Note the name of the **`logfile_table`**. The **`order by 1`** clause displays the most recent **DCAT_SYNC** operation if there were more than one performed.
 
     ```
     <copy>
     select type, status, logfile_table
     from USER_LOAD_OPERATIONS
-    where type = 'DCAT_SYNC';
+    where type = 'DCAT_SYNC'
+    order by 1;
     </copy>
     ```
 
-    ![](./images/find-logfile-name.png " ")
+      ![](./images/find-logfile-name.png " ")
 
 
 3.  Copy and paste the following code into your SQL Worksheet to query your **`logfile_table`** table that you identified in the previous to view the synchronization process information. Click the **Run Script (F5)** icon in the Worksheet toolbar. Substitute the logfile table name in the following query with your own logfile table name.
@@ -792,7 +772,7 @@ So far in this lab, you synchronized only the **`moviestream_sandbox`** Object S
     ```
     <copy>
     select *
-    from DBMS_DCAT$3_LOG;
+    from DBMS_DCAT$12_LOG;
     </copy>
     ```
 

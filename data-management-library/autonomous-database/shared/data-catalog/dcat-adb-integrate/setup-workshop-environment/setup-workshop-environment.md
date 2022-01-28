@@ -206,6 +206,9 @@ In this task, you create a new and empty business glossary in the newly created 
 
     ![](./images/specify-par.png " ")
 
+    >**Note:**     
+    If you are using an Apple Macintosh computer, you cannot use a PAR URL to import a glossary; instead, download the [moviestream-application.xlsx](files/moviestream-application.xlsx?download=1) glossary file to your local machine first. Next, click **Import**. In the **Open** dialog box, navigate to the folder that contains the glossary file, select it, and then click **Open**.
+
 7. An import job is triggered and a message is displayed. You can click the **View Job** link in the message to view the details of this job.
 
    ![](./images/import-job-initiated.png " ")
@@ -233,6 +236,8 @@ In this task, you create a new and empty business glossary in the newly created 
    The updated description is displayed in the **Default Properties** section.
 
    ![](./images/description-added.png " ")
+
+11. Close the **Glossaries** and **MovieStream Application** tabs.    
 
 
 ## Task 6: Create a Dynamic Group
@@ -432,15 +437,15 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**.
 
-   ![](./images/sign-in.png " ")
+   ![OCI Sign in](./images/sign-in.png " ")
 
    The **Oracle Cloud Console** Home page is displayed.
 
-   ![](./images/oracle-cloud-console-home.png " ")
+   ![Oracle Cloud Console Home Page](./images/oracle-cloud-console-home.png "Partial Oracle Cloud Console is displayed.")
 
 >**Note:** To zoom in (magnify) a displayed image in this workshop, hover over the image to display the magnifying glass icon, and then then click the image.
 
-   ![](./images/magnify-image.png " ")
+   ![Magnify Image](./images/magnify-image.png "Click an image to magnify it.")
 
 
 ## Task 2: (Optional) Create a Compartment
@@ -449,7 +454,7 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Compartments**.
 
-	 ![](./images/navigate-compartment.png " ")
+	 ![Navigate to Compartments](./images/navigate-compartment.png "Click the Navigation menu, and navigate to Compartments.")
 
     >**Note:** For faster navigation, you can pin items to make them appear in the **Pinned Links** section of the **Home** tab. To pin an item, hover over the menu item and then click the pin to the left of the item name. The **Recent** section of the **Home** tab shows recently used navigation items. To quickly find navigation menu items, use the **Search** box.
 
@@ -579,7 +584,8 @@ In this task, you create a new and empty business glossary in the newly created 
 
 5. Click **Import**. A **Note** message box is displayed indicating that some rich text formatting might be modified or lost on import. Click **Proceed**.
 
-   ![](./images/note-proceed.png " ")
+  ![](./images/note-proceed.png " ")
+
 
 6. In the **Open** dialog box for your local system, copy and enter the following public pre-authenticated request (PAR) URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Select **All Files** from the second drop-down list, and then click **Open**. See [Pre-Authenticated requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm).
 
@@ -589,6 +595,9 @@ In this task, you create a new and empty business glossary in the newly created 
     ```
 
     ![](./images/specify-par.png " ")
+
+    >**Note:**     
+    If you are using an Apple Macintosh computer, you cannot use a PAR URL to import a glossary; instead, download the [moviestream-application.xlsx](files/moviestream-application.xlsx?download=1) glossary file to your local machine first. Next, click **Import**. In the **Open** dialog box, navigate to the folder that contains the glossary file, select it, and then click **Open**.
 
 7. An import job is triggered and a message is displayed. You can click the **View Job** link in the message to view the details of this job.
 
@@ -617,6 +626,8 @@ In this task, you create a new and empty business glossary in the newly created 
    The updated description is displayed in the **Default Properties** section.
 
    ![](./images/description-added.png " ")
+
+11. Close the **Glossaries** and **MovieStream Application** tabs.
 
 
 ## Task 6: Create a Dynamic Group
