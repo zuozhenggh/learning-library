@@ -52,7 +52,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
 6.  Leave other fields to their default settings and click **Finish**.
 
-    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace as well as to your environments, repositories, and a recent activities feed. On the left are a series of tabs showing all the project components that are available.
+    Wait for the project to be provisioned. Once provisioning completes, you'll see the Project Home page, which serves as a window to your workspace, your environments, and repositories, as well as a recent activities feed. On the left are a series of tabs showing all the project components that are available.
 
     ![](images/project-home.png " ")
 
@@ -60,7 +60,7 @@ As someone who creates a project, you'll automatically become the project's owne
 
 Everything you need to start building a visual application is now created for you in this project. Let's step through some key components to better understand your project environment.
 
-1.  On the Project Home page, you'll see the **tutorial-hr-project.git** repository on the right in the Repositories tab. This Git repository stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link to see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. (The `main` branch is the default branch created when a new repository is generated and is the project's source of truth.)
+1.  On the Project Home page, you'll see the **tutorial-hr-project.git** repository under Workspaces as well as in the Repositories tab on the right. This Git repository stores your visual application's source files and is also known as the project's _remote_ repository. Click the **tutorial-hr-project.git** link to see your project's remote branches, `main` and `hrbranch`, created with initial content for your visual application. Select **hrbranch**; the `main` branch is the default branch created when a new repository is generated and is the project's source of truth.
 
     ![](images/repo.png " ")
 
@@ -90,13 +90,15 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
 
 2.  On the Job Configuration page, click **Steps**.
 
-3.  In the **Username** and **Password** fields, enter the credentials of a user who can deploy to the VB development instance. Click **Save**.
+3.  In the **Username** and **Password** fields, enter the credentials of a user who can deploy to the VB development instance.
 
     ![](images/build-auth-credentials.png)
 
-   **Tip:** While on this page, take a quick look at other advanced settings:
-    - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to the URL when your application is deployed (for example, https://host/something-else/0.1/index.html). This version number is useful to identify multiple versions during development, but when your app is ready to go live, you'll want to deselect this option to remove the version and replace it instead with **live** (https:/host/something-else/live/index.html).
+   **Tip:** Before you save your changes, take a quick look at other advanced settings on this page:
+    - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to the URL when your application is deployed (for example, https://host/something-else/**0.1**/index.html). This version number is useful to identify multiple versions during development, but when your app is ready to go live, you'll want to deselect this option to remove the version and replace it instead with **live** (https:/host/something-else/live/index.html).
     - Take note of the **Use clean database** option, also selected by default. This option uses a new database by default to store your application's data. To keep your data after initially importing it (which we'll do in a later lab), you'll need to select the **Keep existing environment data** option.
+
+    Click **Save**.
 
 ## Task 4: Add team members
 
@@ -117,5 +119,5 @@ For the purposes of this workshop, let's assume that other members of your team 
     You may **proceed to the next lab**.
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-<!--* **Last Updated By** - October 2021 --!>
+* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Last Updated By/Date** - Sheryl Manoharan, February 2022

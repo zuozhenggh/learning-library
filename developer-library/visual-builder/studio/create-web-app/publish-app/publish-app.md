@@ -30,7 +30,7 @@ This lab assumes you have:
 Now that you are ready to publish your changes to the project's `main` branch, let's create a merge request to get someone to sign off on your changes.
 
 1.  Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then **HR Visual Application** in the Workspaces table.
-2.  In the header, click **Publish**.
+2.  When your workspace opens, click **Publish** in the header.
 3.  In the Publish Changes dialog box, click **Merge After Review**.
 4.  Enter a message for your commit, select another project member as a reviewer, and click **Publish Changes**. 
 
@@ -40,7 +40,7 @@ Now that you are ready to publish your changes to the project's `main` branch, l
 
     ![](images/create-mr-result.png " ")
 
-5.  Return to the project home, then click **Merge Requests** ![Merge Requests icon](images/vbs-mergerequest-icon.png) in the left navigation. For a quick summary of the merge request, click **Details** ![Details icon](images/details-icon.png).
+5.  Return to the project home, then click **Merge Requests** ![Merge Requests icon](images/vbs-mergerequest-icon.png) in the left navigator. You'll see your merge request listed here. For a quick summary of the merge request, click **Details** ![Details icon](images/details-icon.png).
 6.  Click **#1 Merge Request for branch 'hrbranch'**. All details of the merge request, including its current status and all previous commits, will be shown:
 
     ![](images/create-mr-view.png " ")
@@ -65,7 +65,7 @@ Assuming your merge request has been approved, let's now merge your changes to t
 ## Task 3: View the deployed application
 After your application is successfully deployed to the development environment, you can view it from your environment's list of deployments.
 
-1.  In the left navigation, click **Environments** ![Environments icon](images/vbs-environments-icon.png), then **Deployments**.
+1.  In the left Navigator, click **Environments** ![Environments icon](images/vbs-environments-icon.png), then **Deployments**.
 2.  Expand the **tutorial-hr-project** that shows the **Deployed** status, then click the **hrwebapp** application.
 
     ![](images/deployed-application.png " ")
@@ -88,10 +88,10 @@ A deployed application does not automatically include its business object data, 
 
 4.  Refresh the **hrwebapp** application that you opened previously in a browser tab.
 
-    The application displays the newly imported data. Remember to close the browser tab when you're done using the application.
+    The application displays the newly imported data. You can now make a note of this URL to share with public users.  Remember to close the browser tab when you're done using the application.
 
     If you now want to make changes to your application, you'll need to create a new branch off your project's `main` branch. You can do this in your existing workspace using the **Switch Branch** option in the Git repository menu. You can also clone this repository in a new workspace using the **Clone From Git** option on the Workspaces page and start afresh.
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-<!--* **Last Updated By** - October 2021 --!>
+* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Last Updated By/Date** - Sheryl Manoharan, February 2022

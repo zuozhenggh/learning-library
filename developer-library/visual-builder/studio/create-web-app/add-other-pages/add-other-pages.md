@@ -24,7 +24,7 @@ This lab assumes you have:
 
 An Edit page lets you edit a row in your table. In this task, you'll add a page that lets users change a department's Name and Location. 
 
-1.  Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png), go to the **main-departments** page and click the **Table** component in the Page Designer. If necessary, click **Reload page** ![Reload page icon](images/reload-icon.png) to view the new departments.
+1.  Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png), then select the **main-departments** page.  Click **Page Designer** and select the **Table** component on the page. If necessary, click **Reload page** ![Reload page icon](images/reload-icon.png) to view the new departments.
 2.  In the Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
 
     ![](images/departments-add-edit-quick-start.png " ")
@@ -43,6 +43,8 @@ A Detail page lets you view additional details of a row in your table. In this t
 1.  In the Quick Start menu, click **Add Detail Page**.
 2.  On the Select Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the endpoint to read a single record.
 3.  On the Page Details page, select **name**. Expand the **locationObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **name**. With this selection, both the department's name and location will show as additional details for the user. Change the **Button label** field to `View Department Detail`. Click **Finish**.
+
+   ![](images/department-add-detail-page-fields.png " ")
 
     A **View Department Detail** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
@@ -85,7 +87,7 @@ Now, let's test your web pages.
 
 Now that we've added options to let users manage departments, we'll do the same for employees. In this task, you'll add an Edit page to update details of your employees.
 
-1.  Go to the **main-employees** page, then click the **Table** component in the Page Designer.
+1.  Go to the **main-employees** page, click **Page Designer**, and select the **Table** component.
 2.  Click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
 3.  On the Select Read Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
 4.  On the Select Update Endpoint page, again select **Employee** under Business Objects (if necessary) and click **Next**.
@@ -99,14 +101,14 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 ## Task 6: Add a page to view an employee's details and a button to delete an employee
 
-1.  Go to the **main-employees** page. If necessary, click the table, then click **Quick Start**.
+1.  Go to the **main-employees** page. Click the table, then **Quick Start** in the Properties pane.
 2.  In the Quick Start menu, click **Add Detail Page**.
 3.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
 4.  On the Page Details page, select **name**, **hireDate**, and **email**. Expand the **departmentObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **name**. Change the **Button label** field to `View Employee Detail`, then click **Finish**.
 
     A **View Employee Detail** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
-5.  In the Quick Start menu, click **Add Delete Action**.
+5.  Now click **Add Delete Action** in the Quick Start menu.
 6.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Finish**.
 
     A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
@@ -140,5 +142,5 @@ Now that we've added options to let users manage departments, we'll do the same 
     You may **proceed to the next lab**.
 
 ## Acknowledgements
-* **Created By/Date** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-<!--* **Last Updated By** - October 2021 --!>
+* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Last Updated By/Date** - Sheryl Manoharan, February 2022
