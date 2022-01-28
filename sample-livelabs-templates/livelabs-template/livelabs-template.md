@@ -253,15 +253,19 @@ This lab assumes you have:
 
 1. Files that you want the reader to download:
 
-  When the file type is not recognized by the browser, you can use this format:
+  When the file type is not recognized by the browser, you can use the following format.
+
+  > **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
 
   Download the [starter SQL code](files/starter-file.sql).
 
-  When the file type is recognized by the browser, it will attempt to render it. So you can use this format to force the download dialog box:
+  When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
+
+  > **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
 
   Download the [sample JSON code](files/sample.json?download=1).
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+  *IMPORTANT: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
 3. Conditional content example (type="livelabs")
 

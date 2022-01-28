@@ -19,6 +19,10 @@ This lab assumes you have:
 - SSH Keys
 - Performed *Lab: Prepare Setup*
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:4KdA855RwIo)
+
 ## Task 1A: Create Stack:  Compute + Networking
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud

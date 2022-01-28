@@ -18,11 +18,12 @@ This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 - SSH Private Key to access the host via SSH
 - You have completed:
+    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
 ## Task 0: Running your Lab
-
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -49,14 +50,12 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 2. Select **R** to reset the lab environment, then select **7**
 
 3. The above step will copy the GoldenGate configuration files to the GG Home directories, under ./dirprm.
-  
+
 4. Review the content of each of these files to explore how GoldenGate is being configured.
 
     ```
-    <copy>
-    cd /u01/gg4mysql/dirprm
-    view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby
-    </copy>
+    <copy> cd /u01/gg4mysql/dirprm
+    view /u01/gg4mysql/dirprm/create_mysql_to_hadoop_gg_procs.oby</copy>
     ```
     ```
     <copy>view /u01/gg4mysql/dirprm/mgr.prm</copy>
@@ -82,9 +81,9 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
 5. Start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done.
 
-    ```
-      <copy>startcass</copy>
-    ```
+    ````
+    <copy>startcass</copy>
+    ````
 Now we need to start the GG manager process on both the source and target. Keep these sessions opened for the rest of this lab.
 
 ## Task 2: GoldenGate Source Configuration
@@ -94,10 +93,8 @@ Now we need to start the GG manager process on both the source and target. Keep 
   ![](./images/f3.png " ")
 
     ```
-    <copy>
-    cd /u01/gg4mysql
-    ./ggsci
-    </copy>
+    <copy> cd /u01/gg4mysql
+    ./ggsci</copy>
     ```
     ```
     <copy> info all</copy>
@@ -114,10 +111,8 @@ Now we need to start the GG manager process on both the source and target. Keep 
   ![](./images/f4.png " ")
 
     ```
-    <copy>
-    cd /u01/gg4hadoop123010
-    ./ggsci
-    </copy>
+    <copy> cd /u01/gg4hadoop123010
+    ./ggsci</copy>
     ```
     ```
     <copy> info all</copy>	 
@@ -137,10 +132,8 @@ Now we need to start the GG manager process on both the source and target. Keep 
   ![](./images/f5.png " ")
 
     ```
-    <copy>
-    cd /u01/gg4mysql
-    ./ggsci
-    </copy>
+    <copy>cd /u01/gg4mysql
+    ./ggsci</copy>
     ```
     ```
     <copy>info all</copy>
@@ -173,10 +166,8 @@ Now that the source side is setup, let us configure GG on the target side (for C
   ![](./images/f7.png " ")
 
     ```
-    <copy>
-    cd /u01/gg4hadoop123010/dirprm
-    vi rcass.properties
-    </copy>
+    <copy>cd /u01/gg4hadoop123010/dirprm
+    vi rcass.properties</copy>
     ```
 
 2. Remove "---" from the items below as highlighted above
@@ -191,14 +182,12 @@ Now that the source side is setup, let us configure GG on the target side (for C
   ![](./images/f8.png " ")
 
     ```
-    <copy>
-    cd ..
-    ./ggsci
-    </copy>
+    <copy>cd ..
+    ./ggsci	</copy>
     ```
     ```
     <copy>start mgr</copy>
-    ```
+    ````
     ```
     <copy>info all</copy>		
     ```
@@ -267,7 +256,7 @@ Now that GG processes have been created and started on both the source and targe
   ![](./images/f14.png " ")
 
     ```
-      <copy>dmlsource</copy>
+    <copy>dmlsource</copy>
     ```
 
 7. Next we will do a count of the Cassandra tables to see if the changes were applied as expected. You can also do a cassselect to see all the data
@@ -292,8 +281,7 @@ Now that GG processes have been created and started on both the source and targe
     ```
 
 ## Summary
-In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
-`pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rcas’` read the remote trail files, created the Cassandra tables and wrote the data to those tables.
+In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rcas’` read the remote trail files, created the Cassandra tables and wrote the data to those tables.
 
 You may now *proceed to the next lab*.
 
@@ -304,5 +292,4 @@ You may now *proceed to the next lab*.
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** -  Brian Elliott, Data Integration Team, Oracle, July 2021
-
+* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020

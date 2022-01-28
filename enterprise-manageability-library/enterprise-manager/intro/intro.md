@@ -8,6 +8,8 @@ The EM Workshop is a fully functional Oracle Enterprise Manager environment conf
 
 *Estimated Time:* 420 minutes
 
+[](youtube:894JHZi3Ol4)
+
 ### About Oracle Enterprise Manager
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems.
 
@@ -68,6 +70,22 @@ In this workshop you will learn about:
 * Understand how to create an OS Command Job
 * Create a SQL command Job
 * Create Database Backup Job using Wizard
+
+#### 7. Real Application Testing
+* Run SQL Performance Analyzer to review SQL performance before 19c Upgrade
+* Capture workload of 18c Database
+* Run Database Replay of 18c Database Workload in 19c Database
+* Run Consolidation Replay in 2 separate Pluggable Databases
+
+#### 8. Enterprise Monitoring
+- Explore Enterprise Summary page and drill down to see a list of down targets
+- Triage unassigned incidents from Incident Manager and acknowledge then assign an incident
+- Change the Warning and Critical threshold of a metric from Metric and Collection Settings page. Go to the All Metrics page and review the metric in context of the thresholds
+- Create a new Corrective Action and associate it with a metric
+- Test a Metric Extension on a target to see the results then deploy the same Metric Extension to multiple targets
+- Create a Monitoring Template from a Database Instance target and deploy the Monitoring Template to other Database Instance targets to standardize monitoring settings across the enterprise
+- View the hierarchy of an existing Administrator Group
+- Review out-of-the-box incident rules shipped with Enterprise Manager
 
 ### Prerequisites
 

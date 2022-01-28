@@ -1,7 +1,7 @@
-# Analyzing Movie Sales Data
+# Analyze movie sales data
 
 ## Introduction
-This is the first in a series of SQL analytics labs.  You will learn many of the basics for analyzing data across multiple tables.  This includes using views to simplify sophisticated queries, performing time series analyses and more.
+This is the first in a series of SQL analytics labs. You will learn many of the basics for analyzing data across multiple tables. This includes using views to simplify sophisticated queries, performing time series analyses and more.
 
 Estimated time: 15 minutes
 
@@ -16,24 +16,24 @@ Estimated time: 15 minutes
 - Learn how to pivot data rows into columns to make analysis easier
 
 ### Prerequisites
-- This lab requires completion of Labs 1-4 in the Contents menu on the left.
+- This lab requires completion of Labs 1 through 4 in the Contents menu on the left.
 - You can complete the prerequisite labs in two ways:
 
     a. Manually run through the labs.
 
     b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
-## Task 1: Preparing The Data Warehouse Schema
+## Task 1: Prepare The data warehouse schema
 The MovieStream data warehouse uses an design approach called a 'star schema'. A star schema is characterized by one or more very large fact tables that contain the primary information in the data warehouse and a number of much smaller dimension tables (or lookup tables), each of which contains information about the entries for a particular attribute in the fact table.
 
 ![A simple data warehouse star schema.](https://docs.oracle.com/cd/A87860_01/doc/server.817/a76994/schemasa.gif)
 
 The main advantages of star schemas are that they:
 
-* Provide a direct and intuitive mapping between the business entities being analyzed by end users and the schema design.</li>
-* Provides highly optimized performance for typical data warehouse queries.</li>
+* Offer a direct and intuitive mapping between the business entities being analyzed by end users and the schema design.</li>
+* Offer highly optimized performance for typical data warehouse queries.</li>
 
-One of the key dimensions in the MovieStream data warehouse is **TIME**. Currently the time dimension table has a single column containing just the ids for each day. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter and year. Therefore we need to expand the current time dimension to include these additional levels.
+One of the key dimensions in the MovieStream data warehouse is **TIME**. Currently the time dimension table has a single column containing just the ids for each day. When doing type data warehouse analysis there is a need to view data across different levels within the time dimension such as week, month, quarter, and year. Therefore we need to expand the current time dimension to include these additional levels.
 
 1. View the time dimension table.
 
@@ -88,7 +88,7 @@ The code below uses a technique called **INNER JOIN** to join the dimension tabl
     INNER JOIN genre g ON m.genre_id = g.genre_id;
     </copy>
     ```
-There are lots of different types of joins that can be used within a SQL query to combine rows from one table with rows in another table. Typical examples are:
+There are lots of different types of joins you can use within a SQL query to combine rows from one table with rows in another table. Typical examples are:
 
 ### A) INNER JOIN
 An inner join, which is sometimes called a simple join, is a join of two or more tables that returns only those rows that satisfy the join condition. In the example above, only rows in the sales fact table will be returned where a corresponding row for day exists in the time dimension table and a corresponding row exists in the customer dimension table and a corresponding row exists in the genre dimension table.
@@ -97,7 +97,7 @@ An inner join, which is sometimes called a simple join, is a join of two or more
 An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you will typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next task.
 
 
-## Task 2: Learning More About Joins
+## Task 2: Learn more about joins
 In the previous SQL code we used an inner join to merge time, customer and genre dimensional data with the sales data. However, inner joins ignore rows in the dimension tables where there is no corresponding sales data. This means that some queries may need to use a different join method if you want to gain a deeper understanding of your sales data. Consider the following example:
 
 1. How many news category films were viewed in 2020?
@@ -114,10 +114,9 @@ In the previous SQL code we used an inner join to merge time, customer and genre
 
 2. The result will look like this:
 
-
     ![Result from an inner join](images/lab-5a-step-2-substep-2.png " ")
 
-    Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification". This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data sensification we use an OUTER JOIN in the SQL query. Compare the above result with the following:
+    Unless you had a detailed knowledge of all the available genres you would probably miss the fact that there is no row shown for the genre "News" because there were no purchases of movies within this genre during 2020. This type of analysis requires a technique that is often called "densification." This means that all the rows in a dimension table are returned even when no corresponding rows exist in the fact table. To achieve data densification we use an OUTER JOIN in the SQL query. Compare the above result with the following:
 
 3. Modify the above SQL to use an outer join:
 
@@ -136,10 +135,10 @@ In the previous SQL code we used an inner join to merge time, customer and genre
 
     ![Result from an inner join](images/lab-5a-step-2-substep-4.png " ")
 
-    > **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the resultset you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now we have our time dimension defined as a view and a view to simplify SQL queries against the fact table we can move on to how SQL can help us explore the sales data.
+    > **Note**: there is now a row for the genre "News" in the results table which shows that no news genre films were watched during 2020. When creating your own queries you will need to think carefully about the type of join needed to create the resultset you need. For the majority of examples in this workshop the JOIN requirements have been captured in the sales view created above. Now that we have our time dimension defined as a view and a view to simplify SQL queries against the fact table, we can move on to how SQL can help us explore the sales data.
 
 
-## Task 3: Exploring Sales Data
+## Task 3: Explore sales data
 
 1. To get started, let's use a very simple query to look at total movie sales by year and quarter, which extends the earlier simple SQL queries by adding a GROUP BY clause.
 
@@ -155,7 +154,7 @@ In the previous SQL code we used an inner join to merge time, customer and genre
     GROUP BY year_name, quarter_name
     ORDER BY 1,2;</copy>
     ```
-    **Note**: In this query, we have returned a resultset where the data has been aggregated (or grouped by) year then, within year, by quarter. The ORDER BY clause sorts the resultset by year and then quarter. In addition there is a filter or WHERE clause that allows us to return only data for the year 2020.
+    **Note**: In this query, we have returned a resultset where the data has been aggregated (or grouped by) year then, within year, by quarter. The ORDER BY clause sorts the resultset by year and then quarter. In addition there is a filter or WHERE clause that enables us to return only data for the year 2020.
 
 2. The result should look something like this:
 
@@ -174,9 +173,9 @@ In the previous SQL code we used an inner join to merge time, customer and genre
 
     If you want to understand a little bit more about **result cache**, then continue with Task 4; otherwise, just jump ahead to ** Task 5 - Analyzing Customer Viewing Habits**.
 
-## Task 4: Learn How ADW's RESULT CACHE Means Faster Queries (Optional)
+## Task 4: Learn how ADW's RESULT CACHE means faster queries (optional)
 
-A result cache is an area of memory within our Autonomous Data Warehouse that stores the results of database queries for reuse. The **cached** rows are shared across queries and sessions. What this means is that when we run a query, the first thing the database does is to search its cache memory to determine whether the result already exists in the result cache. If it does, then the database retrieves the result from memory instead of executing the query. If the result is not cached, then the database executes the query, returns the result and stores the result in the result cache so the next time the query is run, the results can simply be returned from the cache.
+A result cache is an area of memory within our Autonomous Data Warehouse that stores the results of database queries for reuse. The **cached** rows are shared across queries and sessions. What this means is that when we run a query, the first thing the database does is to search its cache memory to determine whether the result already exists in the result cache. If it does, then the database retrieves the result from memory instead of executing the query. If the result is not cached, then the database executes the query, returns the result and stores the result in the result cache so the next time the query runs, the results can simply be returned from the cache.
 
 But, how do you know if the results from a query are returned from the **result cache**?
 
@@ -215,7 +214,7 @@ But, how do you know if the results from a query are returned from the **result 
 
     ![Explain Plan shown in a tree-form](images/lab-5a-step-4-substep-5.png " ")
 
-    > **Note**: The plan above shows a lot of information that can be very helpful in terms of understanding how your query has been run by Autonomous Data Warehouse. However, at this point the information shown is not the main focus area for this workshop.
+    > **Note**: The plan above shows a lot of information that can be quite helpful in terms of understanding how your query has been run by Autonomous Data Warehouse. However, at this point the information shown is not the main focus area for this workshop.
 
 6. Now simply run the query again:
 
@@ -240,13 +239,13 @@ But, how do you know if the results from a query are returned from the **result 
 
     ![Query results with faster run time](images/lab-5a-step-4-substep-7.png " ")
 
-8. If you look at the explain plan again it will be the same explain plan as last time which is helpful in some ways but we want to dig a little deeper this time. To track the actual execution process, we need to switch over to the Autonomous Data Warehouse console. There should be a tab open in your browser which is labelled **Oracle Cloud Infrastructure**, or simply open a new tab and go to  **[cloud.oracle.com](http://cloud.oracle.com),**  then click on the card labeled **View all my resources **,  and find your data warehouse in the list of resources so that this page is now visible:
+8. If you look at the explain plan again it will be the same explain plan as last time, which is helpful in some ways, but we want to dig a little deeper this time. To track the actual execution process, we need to switch over to the Autonomous Data Warehouse console. There should be a tab open in your browser which is labelled **Oracle Cloud Infrastructure**, or simply open a new tab and go to **[cloud.oracle.com](http://cloud.oracle.com),** then click the card labeled **View all my resources **, and find your data warehouse in the list of resources so that this page is now visible:
 
     ![Autonomous Database Details page, with Tools tab selected](images/3038282369.png " ")
 
-9. Click the **Performance Hub** button to open the monitoring window.
+    Click the **Performance Hub** button to open the monitoring window.
 
-    **Note:** Your performance charts will look a little different because we have only just started using our new Autonomous Data Warehouse:
+9. Note that your performance charts will look a little different because we have only just started using our new Autonomous Data Warehouse:
 
     ![Monitoring window of Performance Hub](images/3038282370.png " ")
 
@@ -260,7 +259,7 @@ But, how do you know if the results from a query are returned from the **result 
 
 Now that we have some insight into how Autonomous Data Warehouse manages queries, let's expand our first query and begin to do some analysis of our sales data.
 
-## Task 5: Analyzing Customer Viewing Habits
+## Task 5: Analyze customer viewing habits
 
 1. Switch back to the tab where SQL Worksheet is running.
 
@@ -285,11 +284,11 @@ Now that we have some insight into how Autonomous Data Warehouse manages queries
 
     This shows that we have more customers buying movies on Fridays, Saturdays, Sundays and Mondays since these days show the highest revenue. The revenue for the days in the middle of week is still great, but definitely lower. But it's hard to see a clear pattern just by looking at the raw sales numbers.
 
-## Task 6: Calculating Each Day's Contribution
+## Task 6: Calculate each day's contribution
 
 ### Overview
 
-It would be helpful for our analysis if we could calculate the contribution that each day is providing to our overall sales. To do this, we need to use a special type of aggregation process within our query - we need a type of function that is called a **window** function. This type of function is very powerful since it allows us to calculate additional totals (or ratios, ranks, averages, maximum values, minimum values) as part of our query. In this case, we want to calculate the total revenue across all seven days and then divide each day's total by that aggregate total.
+It would be helpful for our analysis if we could calculate the contribution that each day is providing to our overall sales. To do this, we need to use a special type of aggregation process within our query - we need a type of function that is called a **window** function. This type of function is very powerful since it enables us to calculate additional totals (or ratios, ranks, averages, maximum values, minimum values) as part of our query. In this case, we want to calculate the total revenue across all seven days and then divide each day's total by that aggregate total.
 
 Let's start by defining the total for each day:   **```SUM(actual_price * quantity_sold)```**
 
@@ -346,9 +345,9 @@ We are going to extend the **```RATIO_TO_REPORT```** function a little further o
 
     ![Output from query showing more meaningful values for contribution calculation](images/lab-5a-step-6-substep-4.png " ")
 
-    We can see that Monday provides a significant contribution compared to the other weekdays, however, **Saturday**, **Sunday** and **Friday** are actually providing the highest levels of contribution across the whole week.  Now let's try to drill down and breakout the data across different dimensions to get some more insight.
+    We can see that Monday provides a significant contribution compared to the other weekdays, however, **Saturday**, **Sunday** and **Friday** are actually providing the highest levels of contribution across the whole week. Now let's try to drill down and breakout the data across different dimensions to get some more insight.
 
-## Task 7: Breaking Data Out By Specific Genre
+## Task 7: Break data out by specific genre
 
 Let's expand our focus and consider the types of movies that customers are watching each day. To do this, we can use the **SQL CASE** feature (which is similar to the IF() function in Excel) in conjunction with a count for each genre of movie as follows and examine the ratio of people streaming each genre on each day:
 
@@ -384,7 +383,7 @@ From the data we can see that viewing of Reality-TV related movies is definitely
 
 We are starting to get an interesting picture of our customers' viewing habits during the week. The next stage is to drill into this daily analysis and look at how the daily contributions change within each of the four reporting quarters.
 
-## Task 8: Breaking Data Out By Quarter
+## Task 8: Break data out by quarter
 
 It's most likely that when you are doing this type of analysis on your own data set, the obvious next step is to look at the same data over time to see if any other interesting patterns pop out.
 
@@ -427,7 +426,7 @@ It's most likely that when you are doing this type of analysis on your own data 
 
     ![Results with addition of PARTITION BY clause](images/lab-5a-step-8-substep-4.png " ")
 
-## Task 9: Creating An Excel-Like Pivot Table
+## Task 9: Create an Excel-like pivot table
 
 ### Overview
 
@@ -443,7 +442,7 @@ However, the challenge here is: it would be much easier if we could have a sprea
   )
   ```
 
-1. If we wrap a **PIVOT** operation around our previous query, this will allow us to swap rows for each quarter into columns so we can focus more easily on the contribution data:
+1. If we wrap a **PIVOT** operation around our previous query, this will enable us to swap rows for each quarter into columns so we can focus more easily on the contribution data:
 
     ```
     <copy>SELECT * FROM
@@ -467,7 +466,7 @@ However, the challenge here is: it would be much easier if we could have a sprea
 
     ![Query results with PIVOT](images/lab-5a-step-9-substep-2.png " ")
 
-### Wrapping It All Up
+### Wrap it all up
 
 From this result set, we can easily spot that Monday's contribution is declining over time whilst the contribution provided by Friday, Saturday and Sunday is increasing over time. This could have important knock-on effects for our networks and servers during those three days, so this trend will need to be watched closely to see how it develops further over time.
 
@@ -487,6 +486,6 @@ You may now [proceed to the next lab](#next).
 
 ## **Acknowledgements**
 
-- **Author** - Keith Laker, ADB Product Management
+- **Author** - Keith Laker, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Keith Laker, July 2021

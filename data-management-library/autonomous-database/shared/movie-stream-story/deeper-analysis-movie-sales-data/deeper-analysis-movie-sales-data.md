@@ -1,10 +1,10 @@
-﻿# Deeper Analysis of Movie Sales Data
+﻿# Deeper analysis of movie sales data
 
 ## Introduction
 
-**This lab is optional**. This lab is aimed at people who are accustomed to working with spreadsheets and are comfortable creating sophisticated formulas within their worksheets. In this lab we explore how to use the **`SQL MODEL`** clause to make SQL more spreadsheet-like in terms of inserting new rows and new calculations into a query.
+**This lab is optional**. This lab is for people who are accustomed to working with spreadsheets and are comfortable creating sophisticated formulas within their worksheets. In this lab we explore how to use the **`SQL MODEL`** clause to make SQL more spreadsheet-like in terms of inserting new rows and new calculations into a query.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -21,7 +21,7 @@ Estimated Lab Time: 10 minutes
     b. Provision your Autonomous Database and then go to the **Initialize Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
 
-### Going A Little Deeper
+### Go a little deeper
 
 Sometimes we will find that the data is organized in just the way we want it to be! In many cloud-based data warehouses, we are locked in to only viewing data in terms of the way it is stored. Making changes to the structure and organization of our data when it's in a spreadsheet is really easy - we can insert new rows and new columns to add new content.
 
@@ -34,9 +34,9 @@ What if we want to group the days of week into two new custom aggregates, effect
 - **new row 2 - Long Weekend** which consists of values for Monday, Friday, Saturday and Sunday
 
 
-## Task 1: Simplifying The Dataset
+## Task 1: Simplify the dataset
 
-To simplify the SQL in the following tasks, we are going to create view to setup the data set for the spreadsheet calculations in Task 2
+To simplify the SQL in the following tasks, we are going to create a view to setup the data set for the spreadsheet calculations in Task 2.
 
 1. Use the code below to create a view which will be used in the next set of tasks:
 
@@ -53,11 +53,11 @@ To simplify the SQL in the following tasks, we are going to create view to setup
     ```
 
 
-## Task 2: Revenue Analysis by Weekdays vs. Long Weekends
+## Task 2: Revenue analysis by weekdays versus long weekends
 
-In spreadsheets, we can refer to values by referencing the row + column position such as A1 + B2. This would allow us to see more clearly the revenue provided by each day and group of days so we can get some deeper insight into the most heavily trafficked days for movie-watching. How can we do this?
+In spreadsheets, we can refer to values by referencing the row + column position such as A1 + B2. This would enable us to see more clearly the revenue provided by each day and group of days so we can get some deeper insight into the most heavily trafficked days for movie-watching. How can we do this?
 
-Autonomous Data Warehouse has a unique SQL feature called the **`MODEL`** clause which creates a spreadsheet-like modeling framework over our data. Additional keywords allow us to create and populate new rows so that the revenue for the rows LONG WEEKEND and WEEKDAY can be calculated as follows:
+Autonomous Data Warehouse has a unique SQL feature called the **`MODEL`** clause which creates a spreadsheet-like modeling framework over our data. Additional keywords enable us to create and populate new rows so that the revenue for the rows LONG WEEKEND and WEEKDAY can be calculated as follows:
 
 <code>revenue['LONG WEEKEND'] = revenue['SUNDAY']+revenue['MONDAY']+revenue['FRIDAY']+revenue['SATURDAY']</code>
 
@@ -91,7 +91,7 @@ Autonomous Data Warehouse has a unique SQL feature called the **`MODEL`** clause
 See how easy it is to build upon existing discoveries using SQL to extend our understanding of the data! The concept of being able to add new rows using a spreadsheet-like approach within SQL is unique to Oracle. The MODEL clause creates two new rows that we identify as **LONG WEEKEND** and **WEEKDAY**. The calculation of revenue for these two new rows uses a similar approach to many spreadsheets: revenue for **LONG WEEKEND** is derived from adding together revenue for SUNDAY + MONDAY + FRIDAY + SATURDAY.
 
 
-## Task 3: Contribution Analysis by Weekdays vs. Long Weekends
+## Task 3: Contribution analysis by weekdays versus long weekends
 
 If we tweak the last query we can switch the MODEL clause to calculate contribution using a similar approach:
 
@@ -99,7 +99,7 @@ If we tweak the last query we can switch the MODEL clause to calculate contribut
 
 This statement calculates the contribution for the new row LONG WEEKEND by taking the revenue for MONDAY, FRIDAY, SATURDAY and SUNDAY and dividing it by the combined revenue from all seven days.
 
-1. Use the code below to amend the view created in Task 1 so that it includes the function RATIO\_TO\_REPORT to calculate the quarterly contribution for each day:
+1. Use the code below to change the view created in Task 1 so that it includes the function RATIO\_TO\_REPORT to calculate the quarterly contribution for each day:
 
     ```
     <copy>CREATE OR REPLACE VIEW vw_spreadsheet_data AS
@@ -140,7 +140,7 @@ This statement calculates the contribution for the new row LONG WEEKEND by takin
 
 
 
-## Task 4: Pivoting The Results So It's Even More Like A Spreadsheet
+## Task 4: Pivot the results s it's even more like a spreadsheet
 
 1. As with earlier examples, we can now use the pivot feature to swap the quarter names into columns, making the result look more like a typical spreadsheet:
 
@@ -184,10 +184,10 @@ Let's quickly recap what has been covered in this lab:
 - Learned how to combine spreadsheet-like operations with other SQL features such as PIVOT
 
 
-You may now [proceed to the next lab](#next).
+Please *proceed to the next lab*.
 
 ## **Acknowledgements**
 
-- **Author** - Keith Laker, ADB Product Management
+- **Author** - Keith Laker, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Keith Laker, August 2021

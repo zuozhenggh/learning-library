@@ -153,7 +153,9 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_6_3.png " ")
 
-4. You will download a dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download Transactions_History.xlsx here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/tiLcnsofnhiwFJYizKLKwbYBRp4zfev-DRL2x36y7cYb8vfiNmJ5czRuTea7-_6t/n/c4u04/b/solutions-library/o/Transactions_History.xlsx). Then, open your browser window again back to the APEX page.
+
+4. You will download a dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download Transactions_History.xlsx here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JJKMiuzk1VE9nRl0mH_wiJMkav3UesM3GRNNrnsOlx2YWPzifIbGQ1BsbqitqkWi/n/c4u04/b/solutions-library/o/Transactions_History.xlsx). Then, open your browser window again back to the APEX page.
+
 
 5. Continue by clicking on **Load Data** which allows you to load CSV, XLSX, XML, and JSON data.
 
@@ -175,7 +177,8 @@ As ADW only accepts secure connections to the database, you need to download a w
 
     ![](./images/Part_2_Step_6_9.png " ")
 
-10. You will download another dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download US_CENSUS.csv here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SpkkhmcYlaL8afMM6WCwSlwJJYewmTMz38Vgz4l0EsoQwwD0Hvg6V8ACUjVU4KhC/n/c4u04/b/solutions-library/o/US_CENSUS.csv). 
+10. You will download another dataset file from this workshop to load into your APEX app. You can download it by clicking on the following text link: [Download US_CENSUS.csv here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/n7aOith_Z8yFD6Tye-KX8qFiAf4PqaVOWPyJtYwa3Snr5vAVaJ2liwJyaED3LkMA/n/c4u04/b/solutions-library/o/US_CENSUS.csv). 
+
 
 11. Then, open your browser window and navigate back to the **Data Workshop** section in APEX to then click **Load Data** again for this new file.
 

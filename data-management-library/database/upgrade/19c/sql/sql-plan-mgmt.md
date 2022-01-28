@@ -14,6 +14,9 @@ You could now try to fix a specific plan which has been changed or just write do
 
 In this lab we use scripts written by Carlos Sierra.
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:2_b-gRm09cU)
+
 ### About SQL Plan Management
 
 SQL plan management is a preventative mechanism that enables the optimizer to automatically manage execution plans, ensuring that the database uses only known or verified plans.

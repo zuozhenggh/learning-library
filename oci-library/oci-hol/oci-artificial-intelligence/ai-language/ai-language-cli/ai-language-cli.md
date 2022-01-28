@@ -6,7 +6,7 @@ OCI Language can be called from the OCI Command Line Interface (CLI).
 
 In this lab session, we will show several code snippets to access our service with CLI.
 
-You do not need to execute those codes, but review them to understand what information and steps are needed to implement your own integration.
+You do not need to execute these codes, but review them to understand what information and steps are needed to implement your own integration.
 
 *Estimated Lab Time*: 10 minutes
 
@@ -19,6 +19,10 @@ You do not need to execute those codes, but review them to understand what infor
 * Have a Python environment ready in local
 * Familiar with local editing tools, vi and nano
 * Installed with Python libraries: `oci` and `requests`
+* If you don't have the permission to access the cloud shell, ask your administrator to add the below policy
+    ```
+    <copy>allow any-user to use cloud-shell in tenancy</copy>
+    ```
 
 ## CLI Setup
 
@@ -31,22 +35,18 @@ The CLI is a small-footprint tool that you can use on its own or with the Consol
 ### 1: Navigate to Cloud Shell
 
 Log into OCI Cloud Console. Navigate to Cloud Shell Icon on the top right and click it.
-![](./images/cloudShellIcon.png " ")
+    ![](./images/cloudShellIcon.png " ")
 
 ### 2: Enter Language CLI Command
 
 Enter any one of the Language Pre-Deployed CLI commands you want to execute.
+    ![](./images/cloudShellCommand.png " ")
 
-![](./images/cloudShellCommand.png " ")
-Below is the command for Language Detection used in the above image:
-```
-<copy>oci ai language detect-language --text "Zoom interface is really simple and easy to use. The learning curve is very short thanks to the interface. It is very easy to share the Zoom link to join the video conference. Screen sharing quality is just ok. Zoom now claims to have 300 million meeting participants per day. It chose Oracle Corporation co-founded by Larry Ellison and headquartered in Redwood Shores , for its cloud infrastructure deployments over the likes of Amazon, Microsoft, Google, and even IBM to build an enterprise grade experience for its product. The security feature is significantly lacking as it allows people to zoom bomb"</copy>
-```
 
 ### 2: View Result
 
 The Language service displays the results as shown below:
-![](./images/clousShellResult.png " ")
+    ![](./images/clousShellResult.png " ")
 
 
 
@@ -61,25 +61,34 @@ For a complete list of flags and options available for CLI commands, see the [Co
 ## **TASK 2:** Try issuing some of the OCI Language commands
 
 ### 1. Language Detection
-```
-<copy>oci ai language detect-language --text, -? | -h | --help
-```
+Run this command : oci ai language detect-language --text, -? | -h | --help
+    ```
+    <copy>oci ai language detect-language --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
+
 ### 2. Named Entity Recognition
-```
-<copy>oci ai language detect-entities --text, -? | -h | --help, --is-pii
-```
+Run this command : oci ai language detect-entities --text, -? | -h | --help, --is-pii
+    ```
+    <copy>oci ai language detect-entities --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
+
 ### 3. Key Phrase Extraction
-```
-<copy>oci ai language detect-key-phrases --text, -? | -h | --help
-```
+Run this command : oci ai language detect-key-phrases --text, -? | -h | --help
+    ```
+    <copy>oci ai language detect-key-phrases --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
+
 ### 4. Aspect-Based Sentiment Analysis
-```
-<copy>oci ai language detect-sentiments --text, -? | -h | --help
-```
+Run this command : oci ai language detect-sentiments --text, -? | -h | --help
+    ```
+    <copy>oci ai language detect-sentiments --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
+
 ### 5. Text Classification
-```
-<copy>oci ai language detect-text-classification --text, -? | -h | --help
-```
+Run this command : oci ai language detect-text-classification --text, -? | -h | --help
+    ```
+    <copy>oci ai language detect-text-classification --text "The European sovereign debt crisis was a period when several European countries experienced the collapse of financial institutions, high government debt, and rapidly rising bond yield spreads in government securities."</copy>
+    ```
 
 
 To know more about CLI, follow [CLI](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
@@ -88,4 +97,9 @@ Congratulations on completing this lab!
 
 [Proceed to the next section](#next).
 
-
+## Acknowledgements
+* **Authors**
+    * Rajat Chawla  - Oracle AI Services
+    * Ankit Tyagi -  Oracle AI Services
+* **Last Updated By/Date**
+    * Srijon Sarkar  - Oracle AI Services, September 2021

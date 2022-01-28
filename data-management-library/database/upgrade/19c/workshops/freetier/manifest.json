@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Upgrade to 19c",
+  "workshoptitle": "Hitchhiker's Guide for Upgrading to Oracle Database 19c",
   "support": "https://community.oracle.com/tech/developers/categories/database-19c",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
@@ -14,60 +14,60 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
-      "title": "Prepare Setup",
+      "title": "Lab 1: Prepare Setup",
       "description": "How to download your ORM stack and update security rules for an existing VCN",
       "publisheddate": "09/28/2020",
       "filename": "../../prepare-setup/prepare-setup.md"
     },
     {
-      "title": "Environment Setup",
+      "title": "Lab 2: Environment Setup",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc.md"
     },
     {
-      "title": "Initialize Environment",
+      "title": "Lab 3: Initialize Environment",
       "description": "Initialize Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Generate AWR Snapshot",
+      "title": "Lab 4: Generate AWR Snapshot",
       "filename": "../../awr-snapshot/awr-snapshot.md"
     },
     {
-      "title": "Capture and Preserve SQL",
+      "title": "Lab 5: Capture and Preserve SQL",
       "filename": "../../capture-sql/capture-sql.md"
     },
     {
-      "title": "AutoUpgrade",
+      "title": "Lab 6: AutoUpgrade",
       "filename": "../../upgrade/upgrade-to-19c.md"
     },
     {
-      "title": "AWR Compare Report",
+      "title": "Lab 7: AWR Compare Report",
       "filename": "../../awr-compare/awr-compare.md"
     },
     {
-      "title": "SQL Performance Analyzer",
+      "title": "Lab 8: SQL Performance Analyzer",
       "filename": "../../sql/sql-perf-analyzer.md"
     },
     {
-      "title": "SQL Plan Management",
+      "title": "Lab 9: SQL Plan Management",
       "filename": "../../sql/sql-plan-mgmt.md"
     },
     {
-      "title": "SQL Tuning Advisor",
+      "title": "Lab 10: SQL Tuning Advisor",
       "filename": "../../sql/sql-tuning-advisor.md"
     },
     {
-      "title": "Plugin UPGR into CDB2",
+      "title": "Lab 11: Plugin UPGR into CDB2",
       "filename": "../../upgrade/plugin-upgr-cdb2.md"
     },
     {
-      "title": "Transportable Export/Import",
+      "title": "Lab 12: Transportable Export/Import",
       "filename": "../../migrate-ftex/migrate-ftex.md"
     },
     {
-      "title": "Unplug Plug Upgrade",
+      "title": "Lab 13: Unplug Plug Upgrade",
       "filename": "../../upgrade/unplug-plug-upgr.md"
     },
     {

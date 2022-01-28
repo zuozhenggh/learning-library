@@ -20,10 +20,11 @@
             "type": "freetier"
         },
         {
-            "title": "Get Started with noVNC Remote Desktop",
-            "description": "Using noVNC Remote Desktop",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
-          },
+            "title": "Initialize Your Environment",
+            "description": "Steps to verify the workshop-installed compute instance and download the lab files.",
+            "filename": "./../../initialize-environment/initialize-environment.md",
+            "type": "freetier"
+        },
         {
             "title": "Lab 1: Install Oracle Database 19c with Automatic Root Script Execution",
             "description": "Install Oracle Database 19c with automatic configuration script execution.",
@@ -31,14 +32,14 @@
             "type": "freetier"
          },
           {
-              "title": "Lab 2: Clone a PDB by Using DBCA in Silent Mode",
-              "description": "Clone a PDB by using DBCA in silent mode.",
+              "title": "Lab 2: Clone a PDB from a Remote CDB by Using DBCA in Silent Mode",
+              "description": "Clone a PDB from a remote CDB by using DBCA in silent mode.",
               "filename": "./../../clone-pdb-using-dbca-silent-mode/clone-pdb-using-dbca-silent-mode.md",
               "type": "freetier"
           },
           {
-              "title": "Lab 3: Relocate a PDB by Using DBCA in Silent Mode",
-              "description": "Relocate a PDB by using DBCA in silent mode.",
+              "title": "Lab 3: Relocate a PDB to a Remote CDB by Using DBCA in Silent Mode",
+              "description": "Relocate a PDB to a remote CDB by using DBCA in silent mode.",
               "filename": "./../../relocate-pdb-using-dbca-silent-mode/relocate-pdb-using-dbca-silent-mode.md",
               "type": "freetier"
           },

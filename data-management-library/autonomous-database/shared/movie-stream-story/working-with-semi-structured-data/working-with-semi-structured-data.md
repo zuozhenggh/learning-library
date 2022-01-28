@@ -1,8 +1,14 @@
-﻿# Working with Semi-Structured Movie Data
+﻿# Work with semi-structured movie data
 
 ## Introduction
 
-Up to this point in our workshop, all the data we have been using has been **structured**. Structured data comes with a pre-determined definition. In our movie sales data, each record in our sales data files has a reference ID, a timestamp, a customer ID, associated customer demographic information, movie purchases, payment information, and so on. Each field in our data set has a clearly defined purpose, which makes it very quick and easy to query. In most real-world situations, you will have to deal with other types of data such as **semi-structured**.
+#### Video Preview
+
+[] (youtube:0_BOgvJw4N0)
+
+JSON provides an extremely flexible and powerful data model.  No wonder that it is such a popular storage format for developers. Oracle SQL allows you to analyze JSON data - including complex data types like arrays - in combination with structured tabular data.
+
+Up to this point in our workshop, all the data we have been using has been **structured**. Structured data comes with a pre-determined definition. In our movie sales data, each record in our sales data files has a reference ID, a timestamp, a customer ID, associated customer demographic information, movie purchases, payment information, and more. Each field in our data set has a clearly defined purpose, which makes it very quick and easy to query. In most real-world situations, you will need to deal with other types of data such as **semi-structured**.
 
 Estimated time: 15 minutes
 
@@ -23,21 +29,21 @@ Estimated time: 15 minutes
 
     b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the MOVIESTREAM user plus the required database objects.
 
-## What Is Semi-Structured Data?
+## What is semi-structured data
 
 Semi-structured data does not have predefined fields that have a clearly defined purpose. Typically most semi-structured data looks similar to a text-based document but most types of semi-structured data lack a precise structural definition and come in all shapes and sizes. This can make it very challenging to work with this type of data.
 
-There are many different types of semi-structured and unstructured data, so most cloud vendors offer separate database services to manage each type of data: document store databases, graph store databases, spatial store databases, XML databases, NoSQL databases, and so on. These separate database engines create data silos by locking data inside each type of database, making it almost impossible to do joined-up analysis across all your data. (If you want to learn more about the differences between structured, semi-structured and unstructured data then read the following blog post on [blogs.oracle.com](http://blogs.oracle.com) by Michael Chen: [Structured vs. Unstructured Data](https://blogs.oracle.com/bigdata/structured-vs-unstructured-data)).
+There are many different types of semi-structured and unstructured data, so most cloud vendors offer separate database services to manage each type of data: document store databases, graph store databases, spatial store databases, XML databases, NoSQL databases, and more. These separate database engines create data silos by locking data inside each type of database, making it almost impossible to do joined-up analysis across all your data. (If you want to learn more about the differences between structured, semi-structured and unstructured data then read the following blog post on [blogs.oracle.com](http://blogs.oracle.com) by Michael Chen: [Structured vs. Unstructured Data](https://blogs.oracle.com/bigdata/structured-vs-unstructured-data)).
 
 Oracle takes a very different approach to managing these different types of data.
 
-### A Converged Database Model For Managing All Your Data
+### A converged database model for managing all your data
 
-The Autonomous Data Warehouse is based on  a converged database model that has native support for all modern data types and the latest development paradigms built into one product.  It supports spatial data for location awareness, JSON and XML for document store type content streams for IoT device integration, in-memory technologies for real-time analytics, and of course, traditional relational data. By providing support for all of these data types, the converged Autonomous Data Warehouse can run all sorts of workloads from analysis of event streams to discovery of relationships across domains to blockchain processing to time series analysis and machine learning.
+The Autonomous Data Warehouse is based on a converged database model that has native support for all modern data types and the latest development paradigms built into one product. It supports spatial data for location awareness, JSON and XML for document store type content streams for IoT device integration, in-memory technologies for real-time analytics, and of course, traditional relational data. By providing support for all of these data types, the converged Autonomous Data Warehouse can run all sorts of workloads from analysis of event streams to discovery of relationships across domains to blockchain processing to time series analysis and machine learning.
 
 In this section of the workshop, you are going to work with some semi-structured data which is in a common format called **JSON**.
 
-### What is JSON?
+### What is JSON
 
 This format is probably the most commonly used way to manage data sets that are typically semi-structured in terms of the way they are organized. This format is an open standard file format which is typically used to simplify the way information can be moved around the web. It resembles human-readable text where data points consist of attribute–value pairs and/or arrays. It is a very common data format and it has a wide range of applications.
 
@@ -45,17 +51,17 @@ JSON is a language-independent data format. It was derived from JavaScript, but 
 
 Oracle's SQL language contains specific keywords that help you process JSON data. In this lab, you will learn how to process and query JSON data formats.
 
-### Overview Of Business Problem
+### Overview Of business problem
 
-The marketing team would like to create themed bundles of movies based on the scriptwriters. Our movie data set contains a series of columns that contain more detailed information. Each movie has a **crew** associated with it and that crew is comprised of jobs, such as "producer", "director", "writer", along with the names of the individuals. An example of how this information is organized is shown below:
+The marketing team would like to create themed bundles of movies based on the scriptwriters. Our movie data set has a series of columns that contain more detailed information. Each movie has a **crew** associated with it and that crew is comprised of jobs, such as "producer," "director," "writer," along with the names of the individuals. An example of how this information is organized is shown below:
 
 ![An example of data in JSON format](images/3038282398.png " ")
 
-This is in a format known as JSON and you can see that it is organized very differently from some of the other data that you have loaded into your new data warehouse. There is a single entry for "producer" but the corresponding key "names" actually has multiple values. This is referred to as an **array** - specifically a JSON array. Fortunately, the Autonomous Data Warehouse allows you to query this type of data (JSON arrays) using normal SQL as you will see below.
+This is in a format known as JSON and you can see that it is organized very differently from some other data that you have loaded into your new data warehouse. There is a single entry for "producer" but the corresponding key "names" actually has multiple values. This is referred to as an **array** - specifically a JSON array. Fortunately, the Autonomous Data Warehouse allows you to query this type of data (JSON arrays) using normal SQL as you will see below.
 
-Let's build a query for the marketing team that ranks each writer based on the amount of revenue for each film where they were involved, and look for writers who have suddenly had big hits in 2020 compared to other years. This would allow us to create promotion campaigns to bring attention to their earlier movies.
+Let's build a query for the marketing team that ranks each writer based on the amount of revenue for each film where they were involved, and look for writers who have suddenly had big hits in 2020 compared to other years. This would enable us to create promotion campaigns to bring attention to their earlier movies.
 
-## Task 1: Preparing The Data Warehouse Schema
+## Task 1: Prepare the data warehouse schema
 
 If you have already completed the lab **Analyzing Movie Sales Data** then you can skip this step since this is a repetition of Step 1 in that lab. Jump straight to the next step, Step 2.
 
@@ -134,7 +140,7 @@ An inner join, which is sometimes called a simple join, is a join of two or more
 ### B) OUTER JOIN
 An outer join extends the result of a simple join. An outer join returns all rows that satisfy the join condition and also returns some or all of those rows from one table for which no rows from the other satisfy the join condition. This join technique is often used with time dimension tables since you wil typically want to see all months or all quarters within a given year even if there were no sales for a specific time period. There is an example of this type of join in the next step.
 
-## Task 2: Loading JSON Movie Data
+## Task 2: Load JSON movie data
 
 In the previous labs of this workshop, we have loaded the data we want to use into our data warehouse. Autonomous Data Warehouse also allows you to leave your data in the Object Store and query it directly without having to load it first. This uses a feature called an External Table. There is a whole chapter on this topic in the documentation, [see here](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833), which explains all the different types of file formats (including JSON) that are supported.
 
@@ -186,9 +192,9 @@ Although queries on external data will not be as fast as queries on database tab
 
     ![Results of query showing the rows in the table](images/analytics-lab-2-step-1-substep-8.png " ")
 
-    As you can see, the data is shown in its native JSON format, i.e. there are no columns in the table for each identifier (movie_id, sku, list price, and so on). So how can we query this table if there is only one column?
+    As you can see, the data is shown in its native JSON format; that is, there are no columns in the table for each identifier (movie_id, sku, list price, and more). So how can we query this table if there is only one column?
 
-## Task 3: A Simple Query Over JSON Data
+## Task 3: A simple query over JSON data
 
 1. As a first step, let's show you how to query  JSON data using SQL. We can use special notation within our SQL query to convert the content above into a more normal looking table containing columns and rows. This approach is known as Simple Dot Notation and it looks very similar to the way we have constructed previous queries. Here is our first query which you can run in your SQL Worksheet:
 
@@ -214,7 +220,7 @@ Although queries on external data will not be as fast as queries on database tab
 
     - the name of the json attribute - **movie_id**, **title**, **budget** and **runtime**
 
-3. Some of the attributes in our JSON data set contain multiple entries. For example, cast and crew contain lists of names. To include these attributes in our query, we simply tell the SQL engine to loop over and collect all the values. Here is an example of how to extract the list of cast members and the names of the crew that worked on each movie:
+3. Some attributes in our JSON data set contain multiple entries. For example, cast and crew contain lists of names. To include these attributes in our query, we simply tell the SQL engine to loop over and collect all the values. Here is an example of how to extract the list of cast members and the names of the crew that worked on each movie:
 
     ```
     <copy>SELECT
@@ -231,9 +237,9 @@ Although queries on external data will not be as fast as queries on database tab
 
     ![Query result of looping to get lists of multiple values](images/analytics-lab-2-step-2-substep-4.png " ")
 
-Now let's try using some more advanced features that will allow us to convert the list of cast members and crew members into rows and columns of data. These can then be joined with our movie sales data, allowing us to combine unstructured movie JSON data with our structured movie sales data.
+Now let's try using some more advanced features that will enable us to convert the list of cast members and crew members into rows and columns of data. These can then be joined with our movie sales data, allowing us to combine unstructured movie JSON data with our structured movie sales data.
 
-## Task 4:  Simplifying JSON Queries
+## Task 4: Simplify JSON queries
 
 Your Autonomous Data Warehouse includes a number of helper packages that can simplify access to your JSON data. The **JSON_TABLE** function can be used to automatically translate JSON data into a row-column format so you can query the JSON data in exactly the same way as our movie sales data.
 
@@ -281,7 +287,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
      > **Note**: The number of records has increased compared with our source table (JSON\_MOVIE\_DATA\_EXT): 3,491 to over 56,000 values. The reason is that we have something called an "array" of data within the JSON document that contains the cast members and crew members associated with each movie. Essentially, this means that each movie has to be translated into multiple rows.
 
-4. Run the following query, which will return the columns of data that contain the arrays, i.e. multiple values, in the original JSON document:
+4. Run the following query, which will return the columns of data that contain the arrays; that is, multiple values, in the original JSON document:
 
     ```
     <copy>SELECT
@@ -301,7 +307,7 @@ Your Autonomous Data Warehouse includes a number of helper packages that can sim
 
 We can now use this view as the launch point for doing more analysis!
 
-## Task 5:  Building A More Sophisticated JSON Query
+## Task 5:  Build a more sophisticated JSON query
 
 In this query, we are using the **JSON_TABLE** function again, to convert our JSON data into a more natural row-column resultset.
 
@@ -322,9 +328,9 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
 
     ![Query results showing directors for each movie](images/sql-analytics-lab5-step4-substep2.png " ")
 
-## Task 6: Combining JSON Data And Relational Data
+## Task 6: Combine JSON data and relational data
 
-1. If we combine this result set with the previous query against our JSON data, we can see the total revenue by year for each movie director and find the top 5 movie directors within each year. To do this, we can create a query that joins the JSON data set with our movie sales fact table via the `movie_id` column. Run this query in your SQL Worksheet:
+1. If we combine this result set with the previous query against our JSON data, we can see the total revenue by year for each movie director and find the top 5 movie directors within each year. To do this, we can create a query that joins the JSON data set with our movie sales fact table by using the `movie_id` column. Run this query in your SQL Worksheet:
 
     ```
     <copy>SELECT
@@ -346,7 +352,7 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
 
     ![Query result of combining queries](images/lab-9-step-5-substep-2.png " ")
 
-## Task 7: Ranking Directors Based On Quarterly Movie Revenue
+## Task 7: Rank directors based on quarterly movie revenue
 
 1. We can extend the query by adding a ranking calculation, broken out by quarter within each year, to determine how much each director's films contributed to MovieStream's overall revenue. Note that we are reusing techniques from the previous lab, specifically SQL's window functions. The last column ranks each director based on the annual revenue of his or her movies.
 
@@ -372,7 +378,7 @@ In this query, we are using the **JSON_TABLE** function again, to convert our JS
 
     ![Query result showing top grossing directors](images/lab-9-step-6-substep-2.png " ")
 
-## Task 8: Finding The Top 5 Directors Based On Revenue
+## Task 8: Find the top 5 directors based on revenue
 
 1. The final part of this query is to add a filter so it only returns the top 5 directors in each quarter:
 
@@ -403,11 +409,9 @@ WHERE rank_rev <=5;</copy>
 
     ![Query result returning top 5 directors in each year](images/lab-9-step-7-substep-2.png " ")
 
-You may now [proceed to the next lab](#next).
-
 ## Recap
 
-In this lab, we have covered the following topics:
+In this lab, we covered the following topics:
 
 - How our Autonomous Data Warehouse makes it very easy to query unstructured data sets such as JSON data
 
@@ -415,8 +419,10 @@ In this lab, we have covered the following topics:
 
 - How SQL's analytic functions can be used in queries that also contain JSON data
 
+Please *proceed to the next lab*
+
 ## **Acknowledgements**
 
-- **Author** - Keith Laker, ADB Product Management
+- **Author** - Keith Laker, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Last Updated By/Date** - Keith Laker, August 3, 2021

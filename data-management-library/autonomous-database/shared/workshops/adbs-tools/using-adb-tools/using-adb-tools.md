@@ -6,6 +6,10 @@ This lab introduces the suite of data tools built into the Oracle Autonomous Dat
 
 Estimated Time: 1 hour, 15 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:OL_zq2UqYSI)
+
 ### Objectives
 In this lab, you will:
 - Familiarize with the suite of built-in database tools of the Oracle Autonomous Data Warehouse
@@ -61,7 +65,7 @@ There are two ways to access the Autonomous Database built-in tool suite:
 
 ### Access Autonomous Database Tools via the ADW Console
 
-On the Autonomous Data Warehouse console page, click the **Tools** tab, and in the **Database Actions** card, click the link to **Open Database Actions**:
+On the Autonomous Database Details page, click the **Database Actions** button:
 
   ![ALT text is not available for this image](images/database-tools.png)
 
@@ -70,14 +74,23 @@ On the Autonomous Data Warehouse console page, click the **Tools** tab, and in 
 When user QTEAM was created (in a previous step), a card appeared on the Database Users screen, similar to what is shown below. Notice the URI at the bottom of the card.
 
 1. Click the **Copy to clipboard** icon to copy this to your clipboard. This URI may be used to access the Database Actions page of Autonomous Database Tools directly, without needing to use the OCI Console.
+
   ![ALT text is not available for this image](images/2879073226.png)
+
 2. In the dialog that appears, sign in as user QTEAM, with the password assigned previously, and click **Sign In**.
+
   ![ALT text is not available for this image](images/qteam-login.png)
-3. This will take you to the Autonomous Data Warehouse **Database Actions** home page (shown below). This page has a card for each of the most common tasks that the data warehouse user would want to perform. The cards are grouped by theme. For example, here you see groups for Development and Data Tools. Each card has a title and description.  
+
+3. This will take you to the Autonomous Data Warehouse **Database Actions Launchpad** page (shown below). This page has a card for each of the most common tasks that the data warehouse user would want to perform. The cards are grouped by theme. There are groups for Development, Data Tools, Administration, and Monitoring. Each card has a title and description.  
+
   ![ALT text is not available for this image](images/database-actions.png)
+
 4. If you want more information about each of the tasks related to each card, then you can access the online help by clicking the **Question Mark** in the title bar, as indicated in the image below:
+
   ![ALT text is not available for this image](images/question-mark.png)
+
 5. This will pop out a tray containing links to the relevant topics in the Autonomous Data Warehouse documentation. To close the help tray, simply click the  **X**.
+
   ![ALT text is not available for this image](images/help.png)
 
 ### RECAP
@@ -110,7 +123,7 @@ Watch a video demonstration of the Data Load tool of Autonomous Database:
 
 ### Launch Your Data Load Workflow
 
-1. Click the **Data Load** card on the **Database Actions** home page.
+1. Click the **Data Load** card on the **Database Actions Launchpad** page.
 
   ![ALT text is not available for this image](images/data-load.png)
 
@@ -151,12 +164,13 @@ Below are the four files that you will be using during this part of the workshop
 
 **Before you proceed -**  be sure to take note of the location of the three files that you downloaded earlier to your local computer.
 
-3. To load the files from your local computer, you need to click on the first card in each of the first two rows of cards (in row one - **LOAD DATA** and row two - **LOCAL FILE** ) which will mark each box with a blue tick in the bottom right corner. To move forward to the next step in this process, simply click the blue **Next** button. 
+3. To load the files from your local computer, you need to click on the first card in each of the first two rows of cards (in row one - **LOAD DATA** and row two - **LOCAL FILE** ) which will mark each box with a blue tick in the bottom right corner. To move forward to the next step in this process, simply click the blue **Next** button.
   ![ALT text is not available for this image](images/load-local.png)
 4. This is where you need to locate the three files (Countries.csv, Days_Months.xlsx and Devices.xlsx) that you downloaded earlier! If they are easily accessible, then you can simply drag **ALL THREE** files at one time, and drop them onto to canvas as stated in the text on the screen.
   ![ALT text is not available for this image](images/upload.png)
-5. An alternative approach is to click **Select Files** button in the middle of the screen, which will open the file explorer on your local computer where you can locate your data files: Countries.csv, Days\_Months.xlsx, and Devices.xlsx. 
-  >**Note:** Even though you only picked three files, four cards will appear for the data TARGETS to be loaded.
+5. An alternative approach is to click **Select Files** button in the middle of the screen, which will open the file explorer on your local computer where you can locate your data files: Countries.csv, Days\_Months.xlsx, and Devices.xlsx.
+    >**Note:** Even though you only picked three files, four cards will appear for the data TARGETS to be loaded.
+
   ![ALT text is not available for this image](images/2879071275.png)
   Why do you have  ***four***  cards listed on the data loading screen? This is because your spreadsheet file **Days\_Months.xlsx** contains two worksheets: one for Days and one for Months. The data loading wizard automatically parsed your spreadsheet and created a separate data loading card for each worksheet. 
   ![ALT text is not available for this image](images/2879071187.png)
@@ -413,7 +427,7 @@ In this section of the workshop, you'll create a Business Model over table MOVIE
 15. Press the three dots on the top right of the card and select **Show DDL** from the list that appears. 
   ![ALT text is not available for this image](images/show-ddl.png)
 
-16. Experienced users of Oracle Database will note that the Business Model is implemented in the database as an Analytic View. Experienced or not, it's nice to know that you didn't have to type any of that DDL! Click **Close** to return to the Business Model screen, click the **three dots** on the Business Model's card again and this time select **Analyze** from the list that appears. 
+16. Experienced users of Oracle Database will note that the Business Model is implemented in the database as an Analytic View. Experienced or not, it's nice to know that you didn't have to type any of that DDL! Click **Close** to return to the Business Model screen, click the **three dots** on the Business Model's card again and this time select **Analyze** from the list that appears.
 
 17. You should see a data summary similar to this.
     ![ALT text is not available for this image](images/data-summary.png)
@@ -477,7 +491,7 @@ Watch a video demonstration of the Data Insights tool of Autonomous Database:
 ### Generate New Insights
 
 1. From the Autonomous Database **Tools** home page, click the **Data Insights** card. If this is the first time you've accessed this tool (or any other in the Built-In Tool Suite), you'll see a series of tool tips to show you how to use it.
-  
+
 2. If the tool tips do not appear, they can be accessed by clicking the binoculars icon on the upper-right of the screen (under your username). Click **Next** repeatedly to browse through the tool tips for the Data Insights module. (To exit at any time, press X in the upper right of the tool tip.)
   ![ALT text is not available for this image](images/insights.png)
 
@@ -492,13 +506,13 @@ Watch a video demonstration of the Data Insights tool of Autonomous Database:
     The Data Insights tool is now scouring through the data in your business model, looking for hidden patterns, anomalies, and outliers in the data set. You may be interested to know that these queries employ many of the built-in analytical capabilities of Oracle Database. A typical example is **Regression Slope**. Note that this process can take several minutes to complete, since a very large number of queries are being executed. This might be a good time to stretch, get a refreshment, and let Autonomous Database do the hard work for you! You can monitor the progress bar towards the upper left of the screen. While it is processing, the screen will refresh automatically as various insights appear on the screen. At any point, it is possible to disable auto-refresh to freeze a particular set of "gauges on the dashboard". This technique allows you to drill into a specific insight, while processing continues. You'll notice that it's possible to toggle between these two modes of *Enable Auto Refresh* and *Disable Auto Refresh*. When the search has completed, you'll see a dashboard with a bar chart (gauge) for each of the top twenty insights, as defined by the data patterns found to be most anomalous in the data set.
   ![ALT text is not available for this image](images/insight.png)
 
-  > **Note:** The whole process will take approximately 10 minutes.
+  > **Note:** Searching for Data Insights is CPU-intensive, and the time to complete the process is dependent in part on the CPU count of your Autonomous Database. If you use the always-free tier, which is limited to a single OCPU, the search may take 10 minutes or more. The time to complete the search for Data Insights can be dramatically reduced if you run with a higher CPU count, preferably with auto-scale enabled.
 
-4. Scroll down if necessary, click on one of these, such as the bar chart for "GENRE in June" (fifth item on the third row in this screenshot). This drills down into a detailed view of this Insight, similar to this:
+4. Scroll down if necessary, click on one of these, such as the bar chart for "GENRE in June" (fifth item on the third row in the above screenshot). This drills down into a detailed view of this Insight, similar to this:
   ![ALT text is not available for this image](images/june.png)
   This chart shows actual purchases (blue bars) vs expected purchases (green lines) of various movie genres in the month of June. Three segments have bold black borders. These indicate the most anomalous values, showing that the consumption of:
 
-    a. Comedies and Romances are higher than expected, and
+    a. Comedies and Romances is higher than expected, and
 
     b. Sci-Fi is lower than expected.
 
@@ -511,9 +525,10 @@ Watch a video demonstration of the Data Insights tool of Autonomous Database:
 In this exercise, you have run the Data Insights tool for what may be the first time. Over time it's likely that Data Insights will be run repeatedly over various data sets. You've also seen that, because of the vast number of queries that are involved in running the Data Insights tool, it can take some time to complete searching for Insights on a new data set. For these reasons, it can be very useful to be able to retrieve insights that have already been run. You'll walk through this process now in the following steps:
 
 7. Return to the home page, by clicking **Database Actions**.
-8. Click the **Data Insights** card to return to the Data Insights screen. 
-9. Click the three-bar menu to the upper right to open the list of **Recent Searches**. 
-10. Select the appropriate search from the list that appears. (There's only one in this example.) The data for this search will be retrieved. 
+8. Click the **Data Insights** card to return to the Data Insights screen.
+9. The most recent search will show up.
+10. If it does not show up, or if you want to retrieve other recent searches, you can click the three-bar menu to the upper right to open the list of **Recent Searches**. 
+11. Select the appropriate search from the list that appears. (There's only one in this example.) The data for this search will be retrieved. 
   ![ALT text is not available for this image](images/recent-search.png)
 
 ### Run Insights against Tables
@@ -540,22 +555,22 @@ Watch a video demonstration of the Catalog tool of Autonomous Database:
 Data is capital and the built-in Catalog tool allows you to maximize its value. Data Lineage and Impact Analysis are now at your fingertips in this integrated tool, which you explore in this part of the workshop.
 
 1. From the **Database Actions** page, select the **Catalog** card. You'll land on a page looking like this. 
-  ![ALT text is not available for this image](images/2879071201.png)
+  ![ALT text is not available for this image](images/catalog.png)
 2. To understand this screen, glance at the upper left to notice that for the current schema, entities of type **TABLE** are currently shown, with a card for each. On the upper right, you'll notice that the third icon from the right (card view) is selected. Click the button to its right to show the information in grid view:
-  ![ALT text is not available for this image](images/catalog-view.png)
+  ![ALT text is not available for this image](images/grid-view.png)
 3. Click the icon on the far right for list view:
   ![ALT text is not available for this image](images/list-view.png)
 4. Personal preference and different use cases may dictate which viewing option is preferable. For the purposes of this section of the workshop, click the **Card View** icon to return to that layout.
 
 ### Search The Catalog
 
-5. The catalog has a browser-like search capability. In the search bar across the top, enter "**movie sales**" (no quotes) and click **Enter**.
+5. The catalog has a browser-like search capability. In the search bar across the top, enter **movie sales** and click **Enter**.
 6. Only entities matching these criteria will be displayed.
   ![ALT text is not available for this image](images/movie-sales.png)
 
 ### Change the Filter
 
-7. On the upper left of the screen, just above the cards, is the **filter** icon. Click this.
+7. On the upper left of the screen, just above the cards, is the **filter** icon. If it is not highlighted, click it.
 8. Under Entity Type, click **More...** and check the boxes for Analytic View and Business Model. Then click **Apply**.
   ![ALT text is not available for this image](images/filter.png)
 9. You now see that the Entity Type list at the top has been expanded correspondingly, and that four cards are displayed. Besides the two tables you saw initially, there are now cards for the Business Model and the Analytic View on which it's based. 
@@ -569,15 +584,15 @@ An important consideration in understanding the reliability of data is its sourc
 
 11. Click the three dots on the upper right of the card for table **DEVICES**, and select **View Details**. On the left of the panel that appears, you'll see tabs for *Preview, Lineage, Impact, Statistics* and *Data Definition*. Here you'll notice the consistency of the widgets used between the various tools that you've explored in this lab. Preview is the default selection. You've seen Statistics and Data Definition elsewhere in this workshop.
 12. For this exercise, click **Lineage**. Various different levels of information are accessible by expanding the various cards as required. To do this, click the three dots to the right of the card and select **Expand***.* Even more information is visible by hovering the mouse pointer over specific areas of the screen. An example is shown below. 
-  ![ALT text is not available for this image](images/2879071199.png)
+  ![ALT text is not available for this image](images/lineage.png)
 13. Click **Close** in the lower right of the screen (or click the **Esc** button on your keyboard) to return to the main catalog view. 
 
 ### Impact Analysis
 
-You may think of impact analysis as the inverse of lineage. It shows which other entities are dependent on a specific entity. In this exercise, you'll look at the Impact Analysis for table MOVIE\_SALES\_2020Q2.
+You may think of impact analysis as the inverse of lineage. It shows which other entities are dependent on a specific entity. In this exercise, you'll look at the Impact Analysis for table **MOVIE\_SALES\_2020Q2**.
 
 14. Click the three dots for that card, select **View Details** and then select the **Impact** tab on the left of the screen that appears. You should spend some time exploring the Impact Analysis for this table. Depending on how you drill down (Expand), you may see a screen like this.
-  ![ALT text is not available for this image](images/2879071200.png)It's worth pausing here to reflect on quite how extensive the impact analysis is for this simple exercise. Here you have a single table, on which you built a business model. This is implemented as an analytic view, including a number of Attribute Dimensions. Against this, you ran an Data Insights job, which resulted in a large number of Insights queries.
+  ![ALT text is not available for this image](images/impact.png)It's worth pausing here to reflect on quite how extensive the impact analysis is for this simple exercise. Here you have a single table, on which you built a business model. This is implemented as an analytic view, including a number of Attribute Dimensions. Against this, you ran an Data Insights job, which resulted in a large number of Insights queries.
 15. If you **Expand** on **REQUEST\_INSIGHT_1** (on the right of the screen), you'll see some of the many queries that were executed as part of the Data Insights job, perhaps while you were sipping your coffee! Tip: You can return to a lower-resolution of data by selecting *Collapse* for an entity that had previously been *Expand*ed. 
 16. **RECAP** - This concludes the brief guided tour of the **Catalog** tool. In this section, you have seen:
 

@@ -16,9 +16,7 @@ In this chapter you will learn how to create the following mapping:
 This lab assumes you have:
 - Basic knowledge of Oracle Database
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -290,7 +288,7 @@ In this section , lets save and run the mapping we created to check how the data
   ![](./images/Capture33.PNG)  
 
 
-This concludes the lab on Using Split and Sort Components. You many proceed to the next lab.
+This concludes the lab on Using Split and Sort Components. You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)

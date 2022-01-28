@@ -1,7 +1,9 @@
 import oci
 import time
 import json
-from datetime import datetime
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
 
 from oci.config import from_file
 from oci.ai_anomaly_detection.models import *
@@ -22,11 +24,11 @@ from oci.ai_anomaly_detection.models.inline_detect_anomalies_request import Inli
 # ## If using the instance in data science platform, please refer this page https://dzone.com/articles/quick-and-easy-configuration-of-oracle-data-scienc to setup the content of config file
 CONFIG_FILENAME = "/home/<USERNAME>/.oci/config" # TODO: Update USERNAME
 SERVICE_ENDPOINT="https://anomalydetection.aiservice.us-ashburn-1.oci.oraclecloud.com" # Need to Update propery if different
-NAMESPACE = "idehhejtnbtc" # Need to Update propery if different
+NAMESPACE = "abcdefg" # Need to Update propery if different
 BUCKET_NAME = "anomaly-detection-bucket" # Need to Update propery if different
 training_file_name="demo-training-data.csv" # Need to Update propery if different
 
-compartment_id = "ocid1.tenancy.oc1..aaaaaaaasuvbdyacvuwg7p5zdccy564al2bnlizwdabjoebpefmvksqve3na" #Compartment of the project, Need to Update propery if different
+compartment_id = "ocid1.tenancy.oc1..aaaaaaaa....." #Compartment of the project, Need to Update propery if different
 config = from_file(CONFIG_FILENAME)
 
 ad_client = AnomalyDetectionClient(
@@ -52,7 +54,6 @@ project_id = create_res.data.id
 get_proj = ad_client.get_project(project_id=project_id)
 print("----READING---")
 print(get_proj.data)
-time.sleep(5)
 
 # LIST CALL
 list_proj = ad_client.list_projects(compartment_id=compartment_id)
@@ -82,14 +83,12 @@ da_details = CreateDataAssetDetails(
 create_res = ad_client.create_data_asset(create_data_asset_details=da_details)
 print("----CREATING----")
 print(create_res.data)
-time.sleep(5)
 da_id = create_res.data.id
 
 # READ CALL
 get_da = ad_client.get_data_asset(data_asset_id=da_id)
 print("----READING----")
 print(get_da.data)
-time.sleep(5)
 
 # LIST CALL
 list_da = ad_client.list_data_assets(
@@ -97,8 +96,7 @@ list_da = ad_client.list_data_assets(
 )
 print("----LISTING----")
 print(list_da.data)
-time.sleep(30)
-
+time.sleep(5)
 
 # MODEL
 print("-*-*-*-MODEL-*-*-*-")
@@ -118,38 +116,48 @@ mDetails = CreateModelDetails(
 create_res = ad_client.create_model(create_model_details=mDetails)
 print("----CREATING----")
 print(create_res.data)
-time.sleep(60)
 model_id = create_res.data.id
 
 # READ CALL
 get_model = ad_client.get_model(model_id=model_id)
 print("----READING----")
 print(get_model.data)
-time.sleep(60)
+time.sleep(10)
 while get_model.data.lifecycle_state == Model.LIFECYCLE_STATE_CREATING:
     get_model = ad_client.get_model(model_id=model_id)
     time.sleep(60)
     print(get_model.data.lifecycle_state)
+print(get_model.data)
 
 # LIST CALL
 list_model = ad_client.list_models(compartment_id=compartment_id, project_id=project_id)
 print("----LISTING----")
 print(list_model.data)
-time.sleep(30)
+time.sleep(10)
 
 
 # DETECT
 print("-*-*-*-DETECT-*-*-*-")
-signalNames = ["temperature_1", "temperature_2", "temperature_3", "temperature_4", "temperature_5", "pressure_1", "pressure_2", "pressure_3", "pressure_4", "pressure_5"]
+## Method 1: Load the data from a csv file with first column as timestamp
+# df = pd.read_csv(filename)
+# signalNames = [e for e in df.columns if e != 'timestamp']
 
+## Method 2: create a random dataframe with the appropriate header
+num_rows = 200
+signalNames = ["temperature_1", "temperature_2", "temperature_3", "temperature_4", "temperature_5", "pressure_1", "pressure_2", "pressure_3", "pressure_4", "pressure_5"]
+df = pd.DataFrame(np.random.rand(num_rows, len(signalNames)), columns=signalNames)
+df.insert(0, 'timestamp', pd.date_range(start=date_today, periods=num_rows, freq='min'))
+df['timestamp'] = df['timestamp'].apply(lambda x: x.strftime('%Y-%m-%dT%H:%M:%SZ'))
+
+# Now create the Payload from the dataframe
 payloadData = []
-for i in range(10):
-    timestamp = datetime.strptime(f"2020-07-13T20:4{i}:46Z", "%Y-%m-%dT%H:%M:%SZ")
-    values = [ 0.3*i, 0.04713*(i-2)**2, 1.0, 0.5479, 1.291, 0.8059, 1.393, 0.0293, 0.1541, 0.2611]
+for index, row in df.iterrows():
+    timestamp = datetime.strptime(row['timestamp'], "%Y-%m-%dT%H:%M:%SZ")
+    values = list(row[signalNames])
     dItem = DataItem(timestamp=timestamp, values=values)
     payloadData.append(dItem)
 
-inline = InlineDetectAnomaliesRequest( model_id=model_id, request_type="INLINE", signal_names=signalNames, data=payloadData)
+inline = InlineDetectAnomaliesRequest(model_id=model_id, request_type="INLINE", signal_names=signalNames, data=payloadData)
 
 detect_res = ad_client.detect_anomalies(detect_anomalies_details=inline)
 print("----DETECTING----")

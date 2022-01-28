@@ -26,7 +26,7 @@ Identifies the document category and subcategory that the text belongs to.
 
 Explore the Language service within the Oracle Cloud AI service group to perform NLP tasks like detecting languages, extracting key elements, classifying intent, detecting the sentiment, etc., in the text with a few simple steps.
 
-*Estimated Lab Time*: 40 minutes
+*Estimated Lab Time*: 1 hour
 
 ### Objectives:
 
@@ -43,7 +43,7 @@ Explore the Language service within the Oracle Cloud AI service group to perform
 * Additional prerequisites (cloud services) are mentioned per lab
 * Familiar with OCI Policy and SDK/CLI setup.
 * Familiar with Python/Java programming for SDK usage is strongly recommended.
-* Familiar with OCI  services like DataScience, DataFlow etc., are recommended, but not required.
+* Familiar with OCI services like DataScience, DataFlow etc., are recommended, but not required.
 * Familiar with editing tools (vim, nano) or shell environments (cmd, bash, etc) (Optional for API integration)
 
 <!-- ## AI Language Service Concepts -->
@@ -61,4 +61,4 @@ Explore the Language service within the Oracle Cloud AI service group to perform
     * Rajat Chawla  - Oracle AI OCI Langauge Services
     * Ankit Tyagi -  Oracle AI OCI Langauge Services
 * **Last Updated By/Date**
-    * Rajat Chawla  - Oracle AI OCI Langauge Services, August 2021
+    * Srijon Sarkar  - Oracle AI Services, September 2021

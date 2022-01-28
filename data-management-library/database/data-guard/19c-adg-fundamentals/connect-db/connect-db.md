@@ -1,4 +1,4 @@
-# Connect to the Database
+# Steps to Connect to the Database
 
 ## Introduction
 In this lab, we will create the connection to primary & standby databases.
@@ -29,7 +29,7 @@ Estimated Lab Time: 30 Minutes
 
   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
 
-3. In the List Scope section on the left, enter the first part of the compartment assigned to you in the Search field, then click on the compartment name.
+3. In the List Scope section on the left, enter the first part of the compartment assigned to you in the Search field, then click the compartment name.
 
   ![](images/select-compartment-livelabs.png)
 
@@ -38,11 +38,11 @@ Estimated Lab Time: 30 Minutes
 
 </if>
 
-1. Click on the name of the primary database (`ADGHOLD1`).
+1. Click the name of the primary database (`ADGHOLD1`).
 
   ![](images/db-systems-livelabs.png)
 
-2. Scroll down and click on the database name `DGHOL` to get to the database details screen.
+2. Scroll down and click the database name `DGHOL` to get to the database details screen.
 
   ![](./images/select-database.png)
 
@@ -54,12 +54,12 @@ Estimated Lab Time: 30 Minutes
 
   ![](./images/db-connection.png)
 
-4. The second thing we need to connect to the database is the IP Address from the host it is running on.
+4. The second thing we need to connect to the database using the IP from the host it is running on.
 
   To get that information, navigate to the Overview
-  -> Bare Metal, VM and Exadata
-  -> DB Systems (Select the **ADGHOLAD1** DB System)
-  -> DB System Details
+  Bare Metal, VM and Exadata
+  DB Systems (Select the **ADGHOLAD1** DB System)
+  DB System Details
 
   Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
   The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down.
@@ -92,10 +92,10 @@ Estimated Lab Time: 30 Minutes
 1. First, we need to know the service name from the standby Database and the IP address it listens to.
 
   To get that information, navigate to the Overview
-  -> Bare Metal, VM and Exadata
-  -> DB Systems  (Select the **ADGHOLAD2** DB System)
-  -> DB System Details
-  -> Database Details
+  Bare Metal, VM and Exadata
+  DB Systems  (Select the **ADGHOLAD2** DB System)
+  DB System Details
+  Database Details
 
   ![](./images/db-details-2.png)
 
@@ -112,7 +112,7 @@ Estimated Lab Time: 30 Minutes
   -> DB Systems
   -> DB System Details
 
-  Scroll down on the page and click on **Nodes(1)** to find on which host it resides.
+  Scroll down on the page and click **Nodes(1)** to find on which host it resides.
   The Public IP Address part is the IP Address we want to know. Make a copy of this on the clipboard or make sure to have this information noted down.
 
   ![](./images/nodes-2.png)
@@ -144,4 +144,4 @@ You have now successfully created a database connection to the primary and the s
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Database Product Management
-- **Last Updated By/Date** -  Tom McGinn, July 2021
+- **Last Updated By/Date** -  Suraj Ramesh, September 2021
