@@ -16,21 +16,21 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Setup the Environment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../1-labs-setup-environment/setup-environment.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Create a Function",
+            "filename": "../../2-labs-create-function/create-function.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: Prepare Data Sources",
+            "filename": "../../3-labs-prepare-data-sources/prepare-data-sources.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 4: Design ETL Data Flows in OCI DI",
+            "filename": "../../4-labs-design-oci-di-data-flows/develop-oci-di-flows.md"
         },
         {
             "title": "Need Help?",
