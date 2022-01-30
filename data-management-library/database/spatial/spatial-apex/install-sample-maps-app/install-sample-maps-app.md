@@ -66,13 +66,14 @@ This will take you to the Install Application wizard.
 1. You are now in the Sample Maps application which provides numerous examples of maps and spatial operations in APEX. On initial launch a warning message is displayed regarding data loading. Click on the **Data Loading** link within that message. You will navigate to a page where you complete loading of demo data.
 ![Image alt text](images/install-sample-maps-13.png)
 
-2. The Data Loading page shows the loading status of the States and Airports datasets used by the Sample Maps applocation and the rest of this workshop. Upon installation of the Sample Maps application, these datasets are only partially loaded. To complete the sample data loading, you may either load directly from files stored in github, or you may first download the files and load from your local system. In this case, you will load directly from github. 
+2. The Data Loading page shows the loading status of the States and Airports datasets used by the Sample Maps applocation and the rest of this workshop. Upon installation of the Sample Maps application, these datasets are only partially loaded. To complete the sample data loading, you may either load directly from files stored in github, or you may first download the files and load from your local system. If you are running APEX in a network that requires a proxy to access github, then you should use the latter option.
    
-   Click on the link to load **Directly from GitHub** and then click **Load Dataset** at the top right.
+   If your APEX instance does not require a proxy to access github (for example, apex.oracle.com or APEX wth Oracle Autonomous Database), then click on the button to load **Directly from GitHub** and then click **Load Dataset** at the top right.
 ![Image alt text](images/install-sample-maps-14.png)
-If you have any issues accessing github, then you may also click the option upload files which provides alternate instructions.
 
-3.  When data loading is complete you will see a notification at the top right, and the warning message is gone. The Sample Maps application is now ready to use.  
+   If your APEX instance requires a proxy to access github (for example, APEX running behind your corporate firewall), or if you have other issues loading directly from github, then click the button **Upload Files** which provides alternate instructions.
+
+1.  When data loading is complete you will see a notification at the top right, and the warning message is gone. The Sample Maps application is now ready to use.  
 ![Image alt text](images/install-sample-maps-15.png)
 
 
@@ -116,7 +117,7 @@ If you have any issues accessing github, then you may also click the option uplo
 5. Click on the **Data** tab to view the table contents. Since this table stores states, the geometries are polygons. APEX does not display a string representation of these values since they may include be extremely long sets of coordinates.
    ![Image alt text](images/install-sample-maps-25.png)
 
-6. Observe the tables with names like **MDRT_....$**. These are automatically created and managed behind the scnenes by the database to support spatial indexes on other tables. You never manually create, update, or delete these tables. They are soley to support spatial analysis operations and can be ignored.
+6. Observe the tables with names like **MDRT_....$**. These are automatically created and managed behind the scenes by the database to support spatial indexes on other tables. You never manually create, update, or delete these tables. They are soley to support spatial analysis operations and can be ignored.
    ![Image alt text](images/install-sample-maps-26.png)
 
 6. Finally, you can run a basic spatial query with this data.  Click on **SQL Workshop** and then  **SQL Commands**.

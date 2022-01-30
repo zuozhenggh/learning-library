@@ -17,7 +17,7 @@ Estimated Lab Time: XX minutes
 
 ## Task 1: Create a new page
 
-1. In the breadcrumbs at the to left, click on the link for your application home.
+1. In the breadcrumbs at the top left, click on the link for your application home.
 ![Image alt text](images/create-map-15a.png)
 
 2. Click on **Create Page**.
@@ -38,7 +38,7 @@ Estimated Lab Time: XX minutes
 
 ## Task 2: Add a map to the page
 
-1. Drag **Map** from the Regions pallete at the bottom and drop under the Body section of the page layout. Observe the Map Region appears in the Page tree under Body with default name New. Click on **New** in the Page tree and observe its properties on the right.  Observe the Region Type is Map.
+1. Drag **Map** from the Regions palette at the bottom and drop under the Body section of the page layout. Observe the Map Region appears in the Page tree under Body with default name New. Click on **New** in the Page tree and observe its properties on the right.  Observe the Region Type is Map.
     ![Image alt text](images/create-map-19.png)
 
 2. In the panel on the right, update the Region Title from New to a name of your choosing, for example **My Map Region**. Observe the title is updated in the page tree on the left.
@@ -50,14 +50,14 @@ Estimated Lab Time: XX minutes
 4. Update the Layer Name to **Airports** and the Type to **Points**. Observe the Layer Name update in the page tree on on the left.
 ![Image alt text](images/create-map-23.png)
 
-5. Scroll down in the Layer properties panel on the right. Update the **Source** to use the table **EBA\_SAMPLE\_AIRPORTS**. To limit the airports rendered in the layer, add the where clause **LAND\_AREA\_COVERED > 2500**.
+5. Scroll down in the Layer properties panel on the right. Update the **Source** to use the table **EBA\_SAMPLE\_MAP\_AIRPORTS** . To limit the airports rendered in the layer, add the where clause **LAND\_AREA\_COVERED > 2500**.
 ![Image alt text](images/create-map-24.png)
 
 
 6. Scroll down in the Layer properties panel on the right to the **Column Mapping** section. This is where you configure the spatial column for rendering. Select geometry data type **SDO\_GEOMETRY** and geometry column **GEOMETRY**.
 ![Image alt text](images/create-map-25.png)
 
-7. Scroll down in the Layer properties panel on the right to the **Info Window** section. This is where you can configure the content of a info window that pops up when clicking on an item in the map. Enable **Advanced Formatting** and paste in the following:
+7. Scroll down in the Layer properties panel on the right to the **Info Window** section. This is where you can configure the content of a info window that pops up when clicking on an item in the map. Enable **Advanced Formatting** by clicking the switch button and then paste the following into the text area **HTML Expression**:
     ```
     <copy>
     <strong>&AIRPORT_NAME.</strong><br>
@@ -72,7 +72,7 @@ Estimated Lab Time: XX minutes
 1.   In the Page tree on the left, right-click on **Layers** under your Map Region and select **Create Layer**.  
 ![Image alt text](images/create-map-26.png)
 
-2.  Click on the newly created Layer in the Page tree under your Map Region. Then in the Layer details panel on the right, update the Name to **States**, Layer type to **Polygons**, and Source to **EBA\_SAMPLE\_SIMPLE\_STATES**.
+2.  Click on the newly created Layer in the Page tree under your Map Region. Then in the Layer details panel on the right, update the Name to **States**, Layer type to **Polygons**, and Source to **EBA\_SAMPLE\_MAP\_SIMPLE\_STATES**.
 ![Image alt text](images/create-map-27.png)
 
 3.  Layers will be rendered in the order they appear under Layers in the page tree. To have Airports render on top States, drag the **States** layer above the Airports layer under Layers in the page tree. Scroll down in the Layer details panel on the right to the Column Mapping section section. Select geometry data type **SDO\_GEOMETRY** and geometry column **GEOMETRY**. Under Appearance, select a fill and stroke (outline) colors of your choosing. Set fill opacity to a value of your choosing, noting that a value of 1 means totally opaque so that the background map is not visible. 

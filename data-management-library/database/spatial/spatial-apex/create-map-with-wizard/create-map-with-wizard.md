@@ -55,7 +55,7 @@ The wizard provides a quick and easy way to create a new application and your fi
 
 You will now inspect the Map Region created by the wizard.
 
-1. In the Developer Toolbar at the bottom of the page, click on the **Edit Page** button.
+1. In the Developer Toolbar at the bottom of the page, click on the **Page 2** button to edit the page.
 ![Image alt text](images/create-map-11.png)
 
 2. In the Page tree on the left, under **Body** click **Airports Map**. This is the title of the Map Region created by the Create Page wizard. It is, by default, the same as the Page title and can be changed as desired. In the Region details panel on the right, observe that this Region has a type of **Map**.  
@@ -66,7 +66,7 @@ You will now inspect the Map Region created by the wizard.
    To inspect this Layer, in the Page tree on the left panel, under Layers click on **Airports Map**. Configuration details are displayed in the **Layer** panel on the right. For information about configuration items, click on the **Help** tab in the middle panel. When you then click on configuration items, help info is displayed for that item. For example click in the **Layer Type** menu to see help on its options. 
 ![Image alt text](images/create-map-13.png)
 
-4. Scroll down in the Layer panel to see the other configuration options that were set by yhe wizard, including Column Mapping where the geometry data type is set. Here you are using Oracle's native spatial data type, SDO_GEOMETRY, and the column name is GEOMETRY.  
+4. Scroll down in the Layer panel to see the other configuration options that were set by the wizard, including Column Mapping where the geometry data type is set. Here you are using Oracle's native spatial data type, SDO_GEOMETRY, and the column name is GEOMETRY.  
 ![Image alt text](images/create-map-14.png)
 
 
