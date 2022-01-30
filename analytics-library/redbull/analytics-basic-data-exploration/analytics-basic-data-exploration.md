@@ -443,12 +443,6 @@ How can we check whether our theories about the relationship between position ch
 
 	 Make sure you set the correct chart type (Scatter) configure the chart as shown in the screenshot.
 
-	    `SCORE` -> Values Y-Axis
-
-	    `OVERTAKEN_POSITIONS_TOTAL` -> Values X-Axis
-
-	    `NAME_YEAR` -> Category
-
 	 By default the fields may not be in the correct sections. In that case, drag the fields to their correct sections.
 
    ![Banner](images/create-correlation1.png)

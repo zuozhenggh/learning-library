@@ -57,7 +57,7 @@ This lab assumes you have already completed the following:
 
      **Username:** SYSTEM
 
-     **Password:** Ora_DB4U
+     **Password:** SYSTEM User Password
 
      **Credential name prefix:** orcl
 
@@ -101,7 +101,7 @@ This lab assumes you have already completed the following:
 
      **Username:** SYSTEM
 
-     **Password:** Ora_DB4U
+     **Password:** SYSTEM User Password
 
      **Credential name prefix:** mfg
 
@@ -152,7 +152,7 @@ This lab assumes you have already completed the following:
     container_database_name = ORCL
     connector_credential_name = orcl.cred
     connector_username = SYSTEM
-    connector_password = Ora_DB4U
+    connector_password = SYSTEM User Password for Container Database
     connector_role = NORMAL
     connector_hostname = workshop.subnet1.labvcn.oraclevcn.com
     connector_port = 1521
@@ -162,7 +162,7 @@ This lab assumes you have already completed the following:
     license_model = BYOL
     </copy>
     ```
-For pluggable\_databases array, copy the below values and paste under pluggable_databases field
+For pluggable\_databases array, copy the below values (update the system password) and paste under pluggable_databases field
 
     ```
     <copy>
@@ -175,7 +175,7 @@ For pluggable\_databases array, copy the below values and paste under pluggable_
       service = "FINANCE"
       credential_name = "fin.cred"
       username = "system"
-      password = "Ora_DB4U"
+      password = system user password
       role = "NORMAL"
       connector_name = "fin"
     }
@@ -188,7 +188,7 @@ For pluggable\_databases array, copy the below values and paste under pluggable_
       service = "SALES"
       credential_name = "sales.cred"
       username = "system"
-      password = "Ora_DB4U"
+      password = system user password
       role = "NORMAL"
       connector_name = "sales"
     }
@@ -201,7 +201,7 @@ For pluggable\_databases array, copy the below values and paste under pluggable_
       service = "HRUAT"
       credential_name = "hruat.cred"
       username = "system"
-      password = "Ora_DB4U"
+      password = system user password
       role = "NORMAL"
       connector_name = "hruat"
     }
@@ -214,7 +214,7 @@ For pluggable\_databases array, copy the below values and paste under pluggable_
       service = "HRSTAGE"
       credential_name = "hrstage.cred"
       username = "system"
-      password = "Ora_DB4U"
+      password = system user password
       role = "NORMAL"
       connector_name = "hrstage"
     }
@@ -227,7 +227,7 @@ For pluggable\_databases array, copy the below values and paste under pluggable_
       service = "MFG"
       credential_name = "mfg.cred"
       username = "system"
-      password = "Ora_DB4U"
+      password = system user password
       role = "NORMAL"
       connector_name = "mfg"
     }
