@@ -3,7 +3,7 @@
 ## Introduction
 In this lab on your host instance, you will:
 * Perform a migration on evaluation mode to troubleshoot any connectivity or setup issue
-* Learn how to to monitor an ongoing migration job
+* Learn how to monitor an ongoing migration job
 * Migrate your Database
 
 Estimated Total Lab Time: 30 minutes
@@ -66,7 +66,7 @@ The __-srcarg3 sudo_location__ option specifies the path for the sudo location
 ```
 -eval -skipadvisor
 ```
-Finally, the __-eval__ flag specifies that this is an Evaluation mode migration, hence ZDM will not be actually performing the migration but just a validation in order to verify everything is in order. The __-skipadvisor__ flag specifies that ZDM can skip the Pre-Migration advisor phase, which will not be required for the purposes of this workshop.
+Finally, the __-eval__ flag specifies that this is an Evaluation mode migration, hence ZDM will not be actually performing the migration but just a validation to verify everything is in order. The __-skipadvisor__ flag specifies that ZDM can skip the Pre-Migration advisor phase, which will not be required for the purposes of this workshop.
 
 2. Let's now proceed to perform a migration on Evaluation mode. Providing all the steps have been followed, the following zdmcli migrate database command and corresponding options, parameters and flags should work without requiring any modification. As the zdmuser, execute the following in your Cloud Shell: 
 
@@ -86,12 +86,12 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
 
 4. ZDM will then proceed to create a migration job id that should look as follows:
 
-    ![Screenshot of OCI Cloud Shell with ZDMCLI Migrate Database command output](./images/zdm-job-id.png " ")
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Migrate Database command output](./images/zdm-job-id.png " ")
 
 
 ## **Task 2: Evaluate a Migration Job**
 
-1. In order to evaluate the migration job, we will use the __/u01/app/zdmhome/bin/zdmcli query job -jobid idnumber__ command. Copy the command from below and replace idnumber with the assigned Job ID provided by ZDM on your migration, then, press Enter.
+1. To evaluate the migration job, we will use the __/u01/app/zdmhome/bin/zdmcli query job -jobid idnumber__ command. Copy the command from below and replace idnumber with the assigned Job ID provided by ZDM on your migration, then, press Enter.
 
     ```
     <copy>
@@ -101,11 +101,11 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
 
 2. You might need to execute the command several times until the evaluation is completed. Upon succesful completion of your migration in evaluation mode, you should see an output like the following:
 
-![Screenshot of OCI Cloud Shell with ZDMCLI Query Job output](./images/zdm-job-eval-done.png " ")
+![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Query Job output](./images/zdm-job-eval-done.png " ")
 
 ## **Task 3: Migrate your Database**
 
-1. You are now ready to migrate your database, in order to so, you will execute the same command as before, minus the __-eval__ flag. Copy the command from below, paste it on your Cloud Shell and press enter.
+1. You are now ready to migrate your database, to so, you will execute the same command as before, minus the __-eval__ flag. Copy the command from below, paste it on your Cloud Shell and press enter.
 
     ```
     <copy>
@@ -128,19 +128,19 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
     /u01/app/zdmhome/bin/zdmcli query job -jobid idnumber
     </copy>
     ```
-    ![Screenshot of OCI Cloud Shell with ZDMCLI Query Job output pending](./images/zdm-job-pending.png " ")
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Query Job output pending](./images/zdm-job-pending.png " ")
 
-    ![Screenshot of OCI Cloud Shell with ZDMCLI Query Job output completed](./images/zdm-job-completed.png " ")
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Query Job output completed](./images/zdm-job-completed.png " ")
 
 4. Congratulations, your database has now been migrated using Oracle Zero Downtime Migration Logical Online workflow. Let's go to the Target Autonomous Database and check its contents.
 
-5.  In your OCI Dashboard: select the hamburger menu, Oracle Database -> Autonomous Database.
-    ![Screenshot of OCI Oracle Database Menu with Autonomous Database Option](./images/menu-auton.png)
+5.  In your Oracle Cloud Infrastructure Dashboard: select the navigation menu, Oracle Database, Autonomous Database.
+    ![Screenshot of Oracle Cloud Infrastructure Oracle Database Menu with Autonomous Database Option](./images/menu-auton.png)
 
 6. Select the target database.
-    ![Screenshot of OCI Autonomous Databases available in current compartment](./images/select-auton.png)
+    ![Screenshot of Oracle Cloud Infrastructure Autonomous Databases available in current compartment](./images/select-auton.png)
 
-7. In the database menu go to __Tools__ -> __Open Database Actions__.
+7. In the database menu go to __Tools__, __Open Database Actions__.
     ![Screenshot of selected Datatabase Tools with Database Action selected](./images/db-action.png)
 
 8. A new tab will open requesting for credentials. Fill in ADMIN for the username and the password will be `WELcome##1234`.
@@ -166,7 +166,7 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
 
 ## **Summary**
 
-Congratulations, you have finished the Zero Downtime Logical Online Migration to ADB LiveLab.
+Congratulations, you have finished the Zero Downtime Logical Online Migration to Oracle Autonomous Database LiveLab.
 You have learned about Oracle Zero Downtime Migration (ZDM), its features and functionality and how to migrate, step-by-step, a database to the Oracle Cloud.
 
 __Learn More About Zero Downtime Migration (ZDM)__

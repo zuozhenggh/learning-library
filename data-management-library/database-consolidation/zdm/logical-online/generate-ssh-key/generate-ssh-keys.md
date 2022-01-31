@@ -4,7 +4,7 @@
 
 The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between endpoints. SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.
 
-If you already have an SSH key pair, you may use that to connect to your environment. We recommend you use the *Oracle Cloud Shell* to interface with the OCI compute instance you will create. Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop, and works independently of your network setup. However, if you prefer to connect via your laptop, please select an option based on your configuration.
+If you already have an SSH key pair, you may use that to connect to your environment. We recommend you use the *Oracle Cloud Shell* to interface with the Oracle Cloud Infrastructure compute instance you will create. Oracle Cloud Shell is browser-based, does not require installation or configuration of anything on your laptop, and works independently of your network setup. However, if you prefer to connect through your laptop, please select an option based on your configuration.
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
@@ -13,7 +13,7 @@ Estimated Total Lab Time: 10 minutes
 ### Workshop Objectives
 
 In this lab, you will:
-* Learn how to create SSH keys via the Oracle Cloud Shell
+* Learn how to create SSH keys by using the Oracle Cloud Shell
 
 ### Prerequisites
 This workshop section requires having completed the previous section and having access to an Oracle Cloud account.
@@ -23,7 +23,7 @@ This workshop section requires having completed the previous section and having 
 Watch the video below for an overview of the Generate SSH Keys Cloud Shell option.
 [](youtube:oq2Hk1Yy9Cg)
 
-The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
+The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the Oracle Cloud Infrastructure Console (Homepage). Cloud Shell comes with a pre-authenticated Oracle Cloud Infrastructure CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
 
 
 ## Tasks

@@ -22,7 +22,7 @@ This workshop section requires having setup a compute instance and the source da
 
 ## **Task 1: Connect to Your Database and Configure required parameters**
 
-**Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually hit enter a second time. To avoid statement failure, please be cognizant of this and hit enter twice when pasting.
+**Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually press enter a second time. To avoid statement failure, please be cognizant of this and press enter twice when pasting.
 
 1. Verify that you are user 'opc' in your instance.
 
@@ -262,7 +262,7 @@ This workshop section requires having setup a compute instance and the source da
 
 ## **Task 4: Change the Source Database System Password**
 
-In order to perform the migration, ZDM will require several passwords, for simplicity, let's change the Oracle Source Database System Password. This will help expedite the migration process when prompted for the different components passwords.
+To perform the migration, ZDM will require several passwords, for simplicity, let's change the Oracle Source Database System Password. This will help expedite the migration process when prompted for the different components passwords.
 
 1. Connect to your source database. 
     ```

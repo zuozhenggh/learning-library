@@ -2,9 +2,9 @@
 
 ## Introduction
 In this lab, you will be:
-  * Creating an authentication token for your Oracle Cloud Infrastructure (OCI) user profile.
+  * Creating an authentication token for your Oracle Cloud Infrastructure (Oracle Cloud Infrastructure) user profile.
   * Creating an object storage bucket.
-  * Logging into your migration target autonomous database and creating the credential file you will need to connect to your OCI user.
+  * Logging into your migration target autonomous database and creating the credential file you will need to connect to your Oracle Cloud Infrastructure user.
   * Creating movedata\_user in the autonomous database.
 
 Estimate Lab Time: 15 minutes
@@ -19,8 +19,8 @@ This workshop section requires having completed all previous sections.
 
 
 ## **Task 1: Create Authentication Token**
-1. Go to your OCI profile by selecting the icon in the top right and clicking user.
-    ![Screenshot of OCI Dashboard Profile](./images/dashboard-profile.png)
+1. Go to your Oracle Cloud Infrastructure profile by selecting the icon in the top right and clicking user.
+    ![Screenshot of Oracle Cloud Infrastructure Dashboard Profile](./images/dashboard-profile.png)
 
 2. Under Resources in the bottom left select Auth Tokens and click generate token.
     ![Screenshot of Authentication Token Menu](./images/auth-token.png)
@@ -30,8 +30,8 @@ This workshop section requires having completed all previous sections.
 
 ## **Task 2: Create an Object Storage Bucket**
 
-1. You will need an object storage bucket for your data during the migration as an intermediary point before being transferred to your target autonomous database. In your OCI Dashboard: select the hamburger menu, Storage -> Buckets.
-    ![Screenshot of OCI Storage Menu with Bucket option](./images/bucket-path.png)
+1. You will need an object storage bucket for your data during the migration as an intermediary point before being transferred to your target autonomous database. In your Oracle Cloud Infrastructure Dashboard: select the navigation menu, Storage, Buckets.
+    ![Screenshot of Oracle Cloud Infrastructure Storage Menu with Bucket option](./images/bucket-path.png)
 
 2. Select 'Create Bucket'.
     ![Screenshot of Buckets in Current compartment with Create Bucket button highlighted](./images/create-bucket.png)
@@ -44,8 +44,8 @@ This workshop section requires having completed all previous sections.
 
 ## **Task 3: Log Into SQL on the Autonomous Database**
 
-1. In your OCI Dashboard: select the hamburger menu, Oracle Database -> Autonomous Database.
-    ![Screenshot of OCI Oracle Database Menu with Autonomous Database option](./images/menu-auton.png)
+1. In your Oracle Cloud Infrastructure Dashboard: select the navigation menu, Oracle Database, Autonomous Database.
+    ![Screenshot of Oracle Cloud Infrastructure Oracle Database Menu with Autonomous Database option](./images/menu-auton.png)
 
 2. Select the target database.
     ![Screenshot of existing Databases in current compartment](./images/select-auton.png)
@@ -62,7 +62,7 @@ This workshop section requires having completed all previous sections.
 ## **Task 4: Run Credential Script**
 1. In the script below replace `<oci_user>`, `<oci_tenancy>`, `<api_private_key>`, and `<fingerprint>` with their respective information and paste it into SQL.
 
-    `<oci_user>`, `<oci_tenancy>`, and `<fingerprint>` are in the Configuration File Preview under API Keys in your OCI user profile from the previous labs.
+    `<oci_user>`, `<oci_tenancy>`, and `<fingerprint>` are in the Configuration File Preview under API Keys in your Oracle Cloud Infrastructure user profile from the previous labs.
 
     ![Screenshot of API Keys Menu with information](./images/view-config-prev.png)
 

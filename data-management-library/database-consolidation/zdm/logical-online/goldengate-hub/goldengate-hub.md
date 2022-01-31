@@ -1,4 +1,4 @@
-# Configuring the GoldenGate Hub
+# Configure GoldenGate Hub
 
 ## Introduction
 
@@ -49,7 +49,7 @@ This workshop section requires having access to an Oracle Cloud account, having 
 
 - Stateless - __Left Unchecked__
 - Source Type - __CIDR__
-- Source CIDR - __0.0.0.0/0__
+- Source CIDR - __keep as is__
 - IP Protocol - __TCP__
 - Source Port Range - __Left as is__
 - Destination Port Range - __443__
@@ -64,7 +64,7 @@ This workshop section requires having access to an Oracle Cloud account, having 
 
 - Stateless - __Left Unchecked__
 - Source Type - __CIDR__
-- Source CIDR - __0.0.0.0/0__
+- Source CIDR - __keep as is__
 - IP Protocol - __TCP__
 - Source Port Range - __Left as is__
 - Destination Port Range - __1521__
@@ -80,7 +80,7 @@ The list should now look as follows:
 
 1. Click the navigation menu in the upper left to show top level navigation choices. On the Search bar, type "Marketplace" and click on the __All Applications__ result on the right hand side.
 
-![Screenshot of marketplace results for the search function in OCI](./images/marketplace-search.png " ")
+![Screenshot of marketplace results for the search function in Oracle Cloud Infrastructure](./images/marketplace-search.png " ")
 
 3. On the Market Place search bar enter __GoldenGate Migration__ and select the __Oracle GoldenGate for Oracle - Database Migrations__ Image.
 
@@ -151,7 +151,7 @@ The Availability Domain must be the same as the rest of your resources. The Comp
 
 13. Upon creation, scroll down to the bottom of the logs and copy the __ogg\_image\_id__ __ogg\_instance_\_id__ and the __ogg\_public\_ip__. Save them for later use, you will require it during the migration
 
-![Screenshot of Oracle GoldenGate Image Creation Logs](./images/ogg-copy-ocid.png " ")
+![Screenshot of Oracle GoldenGate Image Creation Logs](./images/ogg-copy-Oracle Cloud Infrastructured.png " ")
 
 ## Task 2: Connecting to the GoldenGate Hub
 

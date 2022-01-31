@@ -1,12 +1,12 @@
-# Provision an Autonomous Database (ADW and ATP)
+# Provision an Autonomous Database (Oracle Autonomous Data Warehouse and Oracle Autonomous Transaction Processing)
 
 ## Introduction
 
 You will need to provision an autonomous database that will act as the target database we will be completing the migration with ZDM.
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. In this lab, you provision a new ATP instance.
+This lab walks you through the steps to get started using the Oracle Autonomous Database (Oracle Autonomous Data Warehouse and Oracle Autonomous Transaction Processing) on Oracle Cloud. In this lab, you provision a new Oracle Autonomous Transaction Processing instance.
 
- **Note:** While this lab uses ATP, the steps are identical for creating an ADW database. ZDM supports both type of databases as valid targets.
+ **Note:** While this lab uses Oracle Autonomous Transaction Processing, the steps are identical for creating an Oracle Autonomous Data Warehouse database. ZDM supports both type of databases as valid targets.
 
 Estimated Lab Time: 5 minutes
 
@@ -19,7 +19,7 @@ In this lab, you will:
 ### Prerequisites
 This workshop section requires having access to an Oracle Cloud account.
 
-## Task 1: Choosing ATP from the Services Menu
+## Task 1: Choosing Oracle Autonomous Transaction Processingfrom the Services Menu
 
 1. Login to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -40,7 +40,7 @@ This workshop section requires having access to an Oracle Cloud account.
     ![Autonomous Databases console.](images/database-atp-2.png " ")
 
 
-## Task 2: Creating the ADB instance
+## Task 2: Creating the Oracle Autonomous Database instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -109,7 +109,7 @@ This workshop section requires having access to an Oracle Cloud account.
 
 10. Click __Create Autonomous Database__.
 
-11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details including its name, database version, OCPU count, and storage size.
 
     ![Database instance homepage.](./images/database-instance-provisioning.png " ")
 
@@ -117,11 +117,11 @@ Please *proceed to the next lab*.
 
 ## Want to Learn More?
 
-Click [here](https://docs.oracle.com/en/cloud/paas/atp-cloud/index.html) for documentation on the typical workflow for using Autonomous Transaction Processing.
+Visit [Oracle Autonomous Transaction Processing's documentation](https://docs.oracle.com/en/cloud/paas/atp-cloud/index.html) for information on the typical workflow for using this database service.
 
 ## Acknowledgements
 
-- **Author** - Nilay Panchal, ADB Product Management
+- **Author** - Nilay Panchal, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Adapted for ZDM by** - Ameet Kumar Nihalani, Senior Principal Support Engineer, Oracle Cloud Database Migration
 - **Adapted for ZDM by** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration

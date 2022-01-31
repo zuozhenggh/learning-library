@@ -33,7 +33,7 @@ The __MIGRATION METHOD__ parameter specifies the type of migration to be perform
 DATA_TRANSFER_MEDIUM=OSS
 ```
 
-The __DATA TRANSFER MEDIUM__ parameter specifies the backup location of choice, for this lab, we will be using __OSS__ which is the Oracle OCI Object Storage
+The __DATA TRANSFER MEDIUM__ parameter specifies the backup location of choice, for this lab, we will be using __OSS__ which is the Oracle Cloud Infrastructure Object Storage
 
 
 &nbsp;
@@ -92,7 +92,7 @@ __API Related Parameters__
 OCIAUTHENTICATIONDETAILS_USERPRINCIPAL_TENANTID= ocid.tenancy
 ```
 
-The __OCIAUTHENTICATIONDETAILS USERPRINCIPAL TENANTID__ parameter specifies the Oracle Cloud Resource Identifier for the OCI Tenancy. In the following task, when preparing the response file, instructions on where to find this parameter will be provided.
+The __OCIAUTHENTICATIONDETAILS USERPRINCIPAL TENANTID__ parameter specifies the Oracle Cloud Resource Identifier for the Oracle Cloud Infrastructure Tenancy. In the following task, when preparing the response file, instructions on where to find this parameter will be provided.
 
 
 ```
@@ -118,7 +118,7 @@ The __OCIAUTHENTICATIONDETAILS USERPRINCIPAL PRIVATEKEYFILE__ parameter specifie
 ```
 OCIAUTHENTICATIONDETAILS_REGIONID=us-phoenix-1
 ```
-The __OCIAUTHENTICATIONDETAILS REGIONID__ parameter specifies the OCI Region Identifier. In the following task, when preparing the response file, instructions on where to find this parameter will be provided.
+The __OCIAUTHENTICATIONDETAILS REGIONID__ parameter specifies the Oracle Cloud Infrastructure Region Identifier. In the following task, when preparing the response file, instructions on where to find this parameter will be provided.
 
 
 

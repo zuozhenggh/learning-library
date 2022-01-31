@@ -2,20 +2,20 @@
 
 ## Introduction
 In this lab on your host instance, you will:
-* Install Oracle Cloud Infrastructure Command Line Interface (OCI CLI)
+* Install Oracle Cloud Infrastructure Command Line Interface (Oracle Cloud Infrastructure CLI)
 * Create a Zero Downtime Migration (ZDM) group and user
 * Add directories for ZDM  
 * Install and Start ZDM
 * Generate API keys
-* Create your OCI directories and configuration files under all 3 users: 'zdmuser', 'oracle', and 'opc'
+* Create your Oracle Cloud Infrastructure directories and configuration files under all 3 users: 'zdmuser', 'oracle', and 'opc'
 * Create RSA keys
 
 
 The CLI is a small-footprint tool that you can use on its own or with the Console to complete Oracle Cloud Infrastructure tasks. The CLI provides the same core functionality as the Console, plus additional commands. Some of these, such as the ability to run scripts, extend Console functionality.
 
-The API keys you are generating are to allow the OCI CLI you installed on your host instance to connect to your OCI user profile to run commands. The RSA keys will allow you to SSH connect directly to 'oci' from 'zdmuser' which will be needed when running the Zero Downtime Migration.
+The API keys you are generating are to allow the Oracle Cloud Infrastructure CLI you installed on your host instance to connect to your Oracle Cloud Infrastructure user profile to run commands. The RSA keys will allow you to SSH connect directly to 'oci' from 'zdmuser' which will be needed when running the Zero Downtime Migration.
 
-The reason your OCI directory is being copied to 'zdmuser', 'oracle', and 'opc' is so that each of these 3 users can utilize the OCI CLI.
+The reason your Oracle Cloud Infrastructure directory is being copied to 'zdmuser', 'oracle', and 'opc' is so that each of these 3 users can utilize the Oracle Cloud Infrastructure CLI.
 
 Estimate Lab Time: 20 minutes
 
@@ -27,9 +27,9 @@ In this lab, you will:
 ### Prerequisites
 This workshop section requires having completed all previous workshop sections.
 
-**Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually hit enter a second time. To avoid statement failure, please be cognizant of this and hit enter twice when pasting.
+**Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually press enter a second time. To avoid statement failure, please be cognizant of this and press enter twice when pasting.
 
-## **Task 1: Install OCI CLI**
+## **Task 1: Install Oracle Cloud Infrastructure CLI**
 1. Return to your compute instance command prompt as 'opc'. If you navigated away while creating your target database, you can reconnect through your command prompt with the following command. Replace < sshkeyname > and < Your Compute Instance Public IP Address > with the key file name and IP address of your source compute instance:
 
     ```
@@ -39,7 +39,7 @@ This workshop section requires having completed all previous workshop sections.
     ```
 
 
-2. Install OCI CLI. Respond y at the prompt.
+2. Install Oracle Cloud Infrastructure CLI. Respond y at the prompt.
 
     ```
     <copy>
@@ -212,13 +212,13 @@ This workshop section requires having completed all previous workshop sections.
     </copy>
     ```
 
-3. On your OCI Dashboard navigate to and click on your user profile in the top right. Select the top option, your user.
-    ![Screenshot of OCI Dashboard Profile](./images/dashboard-profile.png)
+3. On your Oracle Cloud Infrastructure Dashboard navigate to and click on your user profile in the top right. Select the top option, your user.
+    ![Screenshot of Oracle Cloud Infrastructure Dashboard Profile](./images/dashboard-profile.png)
 
 4. Select 'API Keys' and 'Add API Key'.
-    ![Screenshot of OCI Add API Keys Menu](./images/add-api-keys.png)
+    ![Screenshot of Oracle Cloud Infrastructure Add API Keys Menu](./images/add-api-keys.png)
 
-5. Paste your public OCI API key file you copied above and click "Add Key".
+5. Paste your public Oracle Cloud Infrastructure API key file you copied above and click "Add Key".
     ![Screenshot of Add API Key Window](./images/paste-pub-key.png)
 
 6. You will see a configuration file preview. Copy its contents to clipboard. You will be using it to populate your configuration file in the following step.
@@ -251,7 +251,7 @@ This workshop section requires having completed all previous workshop sections.
     </copy>
     ```
 
-    ![Screenshot of OCI Cloud Shell Configuration File Edit](./images/update-path.png)
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell Configuration File Edit](./images/update-path.png)
 
 5. Press the escape key to escape insert.
 
@@ -314,7 +314,7 @@ This workshop section requires having completed all previous workshop sections.
     ~/.oci/oci_api_key.pem
     </copy>
     ```
-    ![Screenshot of OCI Cloud Shell Configuration File Edit](./images/update-keyfile-path.png)
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell Configuration File Edit](./images/update-keyfile-path.png)
 
 
 12. To save and quit vi editor.
@@ -335,7 +335,7 @@ This workshop section requires having completed all previous workshop sections.
 
 
 
-14. Test OCI CLI as 'opc'. Ignore any warnings. If the output is similar to the image below the test was successful.
+14. Test Oracle Cloud Infrastructure CLI as 'opc'. Ignore any warnings. If the output is similar to the image below the test was successful.
 
     ```
     <copy>
@@ -343,7 +343,7 @@ This workshop section requires having completed all previous workshop sections.
     </copy>
     ```
 
-    ![Screenshot of OCI Cloud Shell CLI Test listing OCI Regions](./images/cli-test.png)
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell CLI Test listing Oracle Cloud Infrastructure Regions](./images/cli-test.png)
 
 15. Repeat the steps for 'oracle'.
 
@@ -383,7 +383,7 @@ This workshop section requires having completed all previous workshop sections.
     ~/.oci/oci_api_key.pem
     </copy>
     ```
-    ![Screenshot of OCI Cloud Shell Configuration File Edit](./images/update-keyfile-path.png)
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell Configuration File Edit](./images/update-keyfile-path.png)
 
 
 19. To save and quit vi editor.
@@ -403,14 +403,14 @@ This workshop section requires having completed all previous workshop sections.
     </copy>
     ```
 
-21. Test OCI CLI with 'oracle'. Ignore any warnings. If the output is similar to the image below the test was successful.
+21. Test Oracle Cloud Infrastructure CLI with 'oracle'. Ignore any warnings. If the output is similar to the image below the test was successful.
 
     ```
     <copy>
     oci iam region list
     </copy>
     ```
-    ![Screenshot of OCI Cloud Shell CLI Test listing OCI Regions](./images/cli-test.png)
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell CLI Test listing Oracle Cloud Infrastructure Regions](./images/cli-test.png)
 
     
 22. Lock 'zdmuser' private key file.
@@ -426,7 +426,7 @@ This workshop section requires having completed all previous workshop sections.
 
 ## **Task 6: Creating RSA Keys**
 
-1. As 'zdmuser' go to root directory and generate RSA keys. Hit enter key 3 times for no password and to save to /home/zdmuser/.ssh/id_rsa.
+1. As 'zdmuser' go to root directory and generate RSA keys. Press enter key 3 times for no password and to save to /home/zdmuser/.ssh/id_rsa.
 
     ```
     <copy>
@@ -465,15 +465,15 @@ This workshop section requires having completed all previous workshop sections.
 
 ## **Task 7: Configuring Connectivity Between ZDM and the OGG Hub**
 
-1. In order to configure connectivity between ZDM and the OGG Hub, you will need to modify the etc/hosts file. Let's first gather the relevant information, you will need to OGG Hub hostname, it's private IP and it's Internal FQDN.
+1. To configure connectivity between ZDM and the OGG Hub, you will need to modify the etc/hosts file. Let's first gather the relevant information, you will need to OGG Hub hostname, it's private IP and it's Internal FQDN.
 
-2. From your cloud account, select the top left hamburger menu and click on the __Compute__ Option. It will display different options, please click on __Instances__
+2. From your cloud account, select the top left navigation menu and click on the __Compute__ Option. It will display different options, please click on __Instances__
 
-    ![Screenshot of OCI Compute Menu with Instances Option](./images/compute-menu.png)   
+    ![Screenshot of Oracle Cloud Infrastructure Compute Menu with Instances Option](./images/compute-menu.png)   
 
 3. Right next to the Oracle GoldenGate Hub instance, you will see a Public IP address and a Private IP address. Copy the Private IP Adress and save it, you will need in the following steps. Then, proceed to Select the Oracle GoldenGate Compute Instances by clicking it's name.
 
-    ![Screenshot of OCI Compute Instances Menu with Instances in current compartment](./images/compute-ogg.png)
+    ![Screenshot of Oracle Cloud Infrastructure Compute Instances Menu with Instances in current compartment](./images/compute-ogg.png)
 
 4. On the Oracle GoldenGate Hub instance __Instance Information__ tab, scroll down and copy the instances's __Hostname__ and the __Internal FQDN__ information. You might have to click on __Show__ in order for the information to reveal.
 
@@ -516,7 +516,7 @@ This workshop section requires having completed all previous workshop sections.
 
 ## **Task 8: Updating IPTables on the Source DB Server**
 
-It is important to update the IPTables on the Source DB Server. In order to do so: 
+It is important to update the IPTables on the Source DB Server. To do so: 
 
 1. Switch to the opcuser, verify the Cloud Shell prompt is on __opc@workshop__ after entering exit: 
 
