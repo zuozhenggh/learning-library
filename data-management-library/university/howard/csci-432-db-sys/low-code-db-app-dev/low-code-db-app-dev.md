@@ -39,7 +39,54 @@ In this lab, you will:
    
     ![](./images/adb-compartment.png " ")
     
-## Task 2: 
+## Task 2: Setting Up APEX
+
+After you are connected and clicked on your database, we need to set up APEX and create a database user for the database application we will use for it. Until now we have been using the ADMIN account to use the database, but in real world deployments you would never do that but instead create a different account.
+
+1. Scroll down to where it says “APEX Instance” and click on the link right next to “Instance Name”, which should be your database name.
+
+    ![](images/apex-instance.png " ")
+
+2. This will take you to the APEX page. Click on “Launch APEX”. This step, or some of the following steps may take a few minutes and your screen may remain blank. Don’t worry.
+
+    ![](images/launch-apex.png " ")
+
+3. When done the APEX “Administration Services” window will appear. Here you need to type the Password that you used to create your database in Lab 1.
+
+    ![](images/administration-services.png " ")
+
+4. You will be re-directed to the APEX Welcome page. Click on “Create Workspace”.
+   
+    ![](images/welcome-page.png " ")
+
+5. This is where you will create a new database user. 
+    - <b>Database User:</b> make the database user your name so it will be easier for you to remember.
+    - <b>Password:</b> For the password field pick a new password, I suggest you use the same password you just used in the previous step (your database ADMIN user password), to make it easier to remember all passwords.
+    - <b>Workspace Name:</b> Use the same name as what you are using for the <b>Database User</b>.
+  
+  Click “Create Workspace”
+
+    ![](images/create-workspace.png " ")
+
+6. Once the workspace is created you will be placed in the main APEX development page.
+
+    ![](images/main-apex-dev-page.png " ")
+
+7. At this point we need to log off APEX from the ADMIN account we are currently connected as, and log back on as the new user we just created. You probably will see a warning on to top of your page indicating you need to do this. To log-off click on top right icon that says “admin internal” and click on “Sign out”.
+
+    ![](images/apex-sign-out.png " ")
+
+8. You will see the signed out successfully pop-up, click on “Return to Sign In Page”.
+
+    ![](images/sign-out-success.png " ")
+
+9. This will take you to the APEX sign-in page. Use the information you just used to create the new account above to log in.
+
+    ![](images/new-account-log-in.png " ")
+
+10. You are logged in to APEX and ready to develop your first application!
+
+    ![](images/logged-into-apex-ready.png " ")
 
 
 ## Task 3: Creating the App
