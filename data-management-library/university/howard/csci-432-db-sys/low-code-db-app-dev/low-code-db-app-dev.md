@@ -614,6 +614,10 @@ You want to be able to view the details of any movie you click on in your Movie 
 
     ![](images/4-4-8-movie-details.png " ")
 
+To complete your homework, please take a screenshot of your choice of movie details.  Your screenshot should look similar to the image below.
+
+![](images/homework-screenshot.png " ")
+
 ## Task 7: Creating Users and Watchlist Tables (Optional)
 
 Up to this point, most of the work has revolved around implementing REST data sources and creating pages to use that data on. In this lab, you will create and start to use local tables to store user and movie data. You will also add an application item and process, which will capture and store a user email and ID, as well as some of the movie details. This is what allows multiple users to have their own watchlist.
