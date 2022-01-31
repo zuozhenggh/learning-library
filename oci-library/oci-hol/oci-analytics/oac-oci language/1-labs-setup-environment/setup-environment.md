@@ -31,27 +31,27 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
 2.	Click **Create Policy**
 
 3.	In the **Create Policy** panel, complete the following fields:
-    a.	For **Name**, enter a name without any spaces. You can use alphanumeric characters, hyphens, periods, and underscores only.
-    b.	For **Description**, enter a description to help other users know the purpose of this set of policies.
-    c.	In **Policy Builder**, use the manual editor to add the following statements, then click **Create**.
+    * For **Name**, enter a name without any spaces. You can use alphanumeric characters, hyphens, periods, and underscores only.
+    * For **Description**, enter a description to help other users know the purpose of this set of policies.
+    * In **Policy Builder**, use the manual editor to add the following statements, then click **Create**.
 
 4.	The following policies should be set:
-    allow any-user to use ai-service-language-family in tenancy
-    allow group <group-name> to manage dis-workspaces in compartment <compartment-name>
-    allow group <group-name> to manage dis-work-requests in compartment <group-name>
-    allow group <group-name> to use virtual-network-family in compartment <group-name>
-    allow group <group-name> to manage tag-namespaces in compartment <group-name>
-    allow service dataintegration to use virtual-network-family in compartment <group-name>
-    allow group <group-name> to use object-family in compartment <group-name>
-    allow group <group-name> to use functions-family in compartment <group-name>
+    * allow any-user to use ai-service-language-family in tenancy
+    * allow group <group-name> to manage dis-workspaces in compartment <compartment-name>
+    * allow group <group-name> to manage dis-work-requests in compartment <group-name>
+    * allow group <group-name> to use virtual-network-family in compartment <group-name>
+    * allow group <group-name> to manage tag-namespaces in compartment <group-name>
+    * allow service dataintegration to use virtual-network-family in compartment <group-name>
+    * allow group <group-name> to use object-family in compartment <group-name>
+    * allow group <group-name> to use functions-family in compartment <group-name>
 
 5.	Once you have created an API gateway (Section 3 in the lab) and functions (Section 5 in the lab), you will also need to set the following policies:
-    allow any-user to use functions-family in compartment <functions-compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<api-gateway-compartment-OCID>'}
+    * allow any-user to use functions-family in compartment <functions-compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<api-gateway-compartment-OCID>'}
 
 6.	Once you have created a data integration workspace (Section 6 in the lab), you will also need to set the following policies:
-    allow any-user to read buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.operation = 'GetBucket'}
-    allow any-user to manage objects in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘}
-    allow any-user to manage buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.permission = 'PAR_MANAGE'}
+    * allow any-user to read buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.operation = 'GetBucket'}
+    * allow any-user to manage objects in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘}
+    * allow any-user to manage buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.permission =   'PAR_MANAGE'}
 
 
 ## Task 2: Create VCN with the right access levels
@@ -74,11 +74,11 @@ The API Gateway communicates on port 443, which is not open by default. You must
 4.	In the **Security Lists** section, select the Default Security List
 5.	Click **Add Ingress Rules**
 6.	Specify:
-    Source Type: CIDR
-    Source CIDR: 0.0.0.0/0
-    IP Protocol: TCP
-    Source Port Range: All
-    Destination Port Range: 443
+    * Source Type: CIDR
+    * Source CIDR: 0.0.0.0/0
+    * IP Protocol: TCP
+    * Source Port Range: All
+    * Destination Port Range: 443
 
 7.	Click **Add Ingress Rules** to add the new rule to the default security list.
     See documentation for more details.
@@ -89,11 +89,11 @@ The API Gateway communicates on port 443, which is not open by default. You must
 On the console, go to **Developer Services** and click **Gateways**, and then:
 1.	Click **Create Gateway**
 2.	Specify:
-    	a name for the new gateway, such as lab1-gateway
-    	the type of the new gateway as **Public**
-    	the name of the compartment in which to create API Gateway resources
-    	the name of the VCN to use with API Gateway (the one you just created)
-    	the name of the regional subnet in the VCN, select the **Public subnet** you just modified.
+    * a name for the new gateway, such as lab1-gateway
+    * the type of the new gateway as **Public**
+    * the name of the compartment in which to create API Gateway resources
+    * the name of the VCN to use with API Gateway (the one you just created)
+    * the name of the regional subnet in the VCN, select the **Public subnet** you just modified.
 3.	Click **Create Gateway**.
 
 When the new API gateway has been created, it is shown as Active in the list on the Gateways page.
