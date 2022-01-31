@@ -4,18 +4,33 @@
 
 This lab walks you through the process of creating a serverless function that will only run on demand. The function will conform to the schema required to be consumed by Oracle Data Integrate. The serverless function will call an AI service (OCI Language in this case).
 
-Estimated Lab Time: 90 minutes
+Estimated Lab Time: 120 minutes
 
-### About <Product/Technology> (Optional)
+
+### Objectives
+
+In this lab, you will:
+* Background
+* Create a Sentiment Function
+* Deploy the Function
+* Invoke the Function
+
+This lab assumes you have:
+* An Oracle account
+* All previous labs successfully completed
+
+
+## Task 1: Background
+
 Currently, OCI Language works on a single record at a time, as shown in the example below.
-OCI Language sample input
-{
-   "text": "I would like to buy a new XBox, because my Playstation
+		**OCI Language sample input**
+		{
+   	"text": "I would like to buy a new XBox, because my Playstation
              uses a resistor ACM-3423 that is not sold anymore."
-}
+					 }
 
-OCI Language sample output
-{
+		**OCI Language sample output**
+		{
     "entities": [
         {
             "text": "XBox",
@@ -41,16 +56,14 @@ OCI Language sample output
             "length": 17,
             "isPii": false
         }
-    ]
-}
+    		]
+			}
 
 Oracle Data Integration today supports calling functions, where the data payload is a single base 64 encoded string that contains the records to process, and a set of parameters.
 
 Sample Oracle Data Integration Function Input
-{
-"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==",
-"parameters":{"column":"info"}
-}
+		{"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==","parameters":{"column":"info"}
+    }
 
 Note that the encoded data is the base 64 encode version of a set of JSON Lines format (each line is a JSON for each record). Each record has an ID that will be used to associate the output.
 
@@ -106,29 +119,6 @@ Since we need to integrate the OCI Language service through an Oracle Function, 
 1.	Read the function input (decode the input)
 2.	Call the AI service multiple times (once for each record)
 3.	Aggregate the output of each call into a shape that Data Integrate can receive.
-
-
-### Objectives
-
-
-In this lab, you will:
-* Create a Sentiment Function
-* Deploy the Function
-* Invoke the Function
-
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
-
-*This is the "fold" - below items are collapsed by default*
-
-## Task 1: Concise Step Description
-
 (optional) Step 1 opening paragraph.
 
 1. Sub step 1
