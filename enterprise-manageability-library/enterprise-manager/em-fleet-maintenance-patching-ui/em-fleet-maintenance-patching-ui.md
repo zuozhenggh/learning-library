@@ -8,7 +8,26 @@ The goal of this lab is to explore end-to-end automated patching and upgrades of
 
 ### About Database Fleet Maintenance UI
 
+Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.
+
 Starting from Enterprise Manager 13.5 RU1, Enterprise Manager is equipped with a new interface to patch(update) and upgrade Database Fleet as an end-to-end automated solution. Creation of Gold Image and Subscription of database to the Gold Image is to be done by using emcli commands. In upcoming releases of Enterprise Manager, we plan to integrate these tasks with UI.
+
+Benefits with Fleet Maintenance:
+- Minimum Downtime with Out of Place patching
+- Enterprise Scale with Enterprise Manger Deployment Procedures Framework
+- Single pane of glass for monitoring and managing entire patching and upgrade operations
+- Ability to schedule/retry/suspend/resume.
+- Database patching across different infrastructure including engineered systems like Exadata
+
+![](images/em-fleet-maintenance-overview-1.png " ")
+
+#### Video Preview
+Watch a preview of database patching using Oracle Enterprise Manager Fleet Maintenance:
+
+[](youtube:JlspEvqebHE)
+
+*Note: Interfaces in this video may look different from the interfaces you will see. For updated information, please see steps below.*
+
 
 ### Objectives
 
