@@ -8,7 +8,7 @@ OCI forecasting service uses state-of-the-art machine learning & deep learning a
 
 The Forecasting Service at OCI (Oracle Cloud Infrastructure) will create customized Machine Learning models which are trained on the data uploaded by users. Users will be able submit historical data as inline data via forecasting end-points and get forecast for the desired horizon. In addition to providing forecasts, this service also focuses on explaining predictions from the model by leveraging state-of-the-art model explainability techniques.
  
-The *OCI Forecasting Service* is a fully managed, serverless and multi-tenant service and is accessible over public *REST APIs* by authenticated users via Cloud Console (only Data Science Notebooks currently available). OCI CLI and SDK will be added in upcoming releases..
+The *OCI Forecasting Service* is a fully managed, serverless and multi-tenant service and is accessible over public *REST APIs* by authenticated users via Cloud Console (Data Science Notebooks and Console available). OCI CLI and SDK will be added in upcoming releases.
 
 This workshop contains four lab sessions for users to get familiar with data requirements and the full cycle of building the forecasting model and generate forecasts. At the end of the workshop, users will be able to understand how the data should be prepared and leverage the APIs for model training and getting forecast along with explainability. 
 

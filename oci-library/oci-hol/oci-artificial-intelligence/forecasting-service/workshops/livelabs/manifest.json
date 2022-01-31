@@ -34,6 +34,11 @@
             "filename": "../../item-6-explainability/item-6-explainability.md"
         },
         {
+            "title": "Lab 5: Access Forecast Service from OCI Console",
+            "description": "Learn how to access Forecast Service from OCI Console",
+            "filename": "../../item-7-forecast-with-console/item-7-forecast-with-console.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
