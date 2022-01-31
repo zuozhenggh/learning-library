@@ -11,9 +11,11 @@ Estimated Lab Time: 120 minutes
 
 In this lab, you will:
 * Background
+* Create an Application
 * Create a Sentiment Function
 * Deploy the Function
 * Invoke the Function
+* Connect the Function to API Gateway
 
 This lab assumes you have:
 * An Oracle account
@@ -63,12 +65,14 @@ Currently, OCI Language works on a single record at a time, as shown in the exam
 Oracle Data Integration today supports calling functions, where the data payload is a single base 64 encoded string that contains the records to process, and a set of parameters.
 
 Sample Oracle Data Integration Function Input:
-			{"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==","parameters":{"column":"info"}
-    	}
+
+		{				"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==","parameters":{"column":"info"}
+    }
 
 Note that the encoded data is the base 64 encode version of a set of JSON Lines format (each line is a JSON for each record). Each record has an ID that will be used to associate the output.
 
-   	{"id":1,"info":"Zoom now claims to have 300 million meeting participants per day. It chose Oracle Corporation co-founded by Larry Ellison and headquartered in Redwood Shores , for its cloud infrastructure deployments over the likes of Amazon, Microsoft, Google, and even IBM to build an enterprise grade experience for its product. The security feature is significantly lacking as it allows people with disturbing zoombomb."
+   	{
+			"id":1,"info":"Zoom now claims to have 300 million meeting participants per day. It chose Oracle Corporation co-founded by Larry Ellison and headquartered in Redwood Shores , for its cloud 	  infrastructure deployments over the likes of Amazon, Microsoft, Google, and even IBM to build an enterprise grade experience for its product. The security feature is significantly lacking as it allows people with disturbing zoombomb."
  	 	}
 
 		{"id":2,"info":"Luis likes to work at Oracle and learn about data integration"
@@ -122,51 +126,176 @@ Since we need to integrate the OCI Language service through an Oracle Function, 
 3.	Aggregate the output of each call into a shape that Data Integrate can receive.
 (optional) Step 1 opening paragraph.
 
-1. Sub step 1
+## Task 2: Create an Application
 
-	![Image alt text](images/sample1.png)
+In order to add a function, first we need to create an **Application**.
+1.	Go to cloud console (cloud.oracle.com) and navigate to **Developer Services** > **Applications**
+2.	Click **Create Application**
+	You can think of an application as a bounded context where several functions can live.
+3.	Give it a name (we will refer to this name as <app-name> for the rest of the tutorial), pick the VCN you just created, and the public subnet that was created for that VCN.(from **Lab 1**)
+4.	Click **Create**
 
-2. Sub step 2
+Set up CLI so that it can deploy functions to the right compartment and container registry are used.
+1.	When you are in your Application, select **Getting Started**
+2.	Click **Cloud Shell Setup**
+3.	Click the **Launch Cloud Shell** button.
+ This will start a Linux virtual machine with all the configuration to set up functions.
+4.	Follow steps 1 through 7 under the “Setup fn CLI on Cloud Shell” section.
+ (If you need guidance, see this https://www.youtube.com/watch?app=desktop&t=483&v=TdQ6BL58Zfk&feature=youtu.be.)
+Step 4 in that list is not super clear, but https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatefncontext.htm is a bit more specific.
 
-  ![Image alt text](images/sample1.png)
+You can select any term for OCIR-REPO, it is just a prefix that will be used as the name of the container registry to use to deploy the function.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+## Task 3: Create a Sentiment Function
 
-5. Example with bold **text**.
+We will now create the function in the application. The function will do sentiment analysis on the input. The input will conform to the format that OCI Data Integration will generate (base 64 encoded jason lines).The fastest way to set things up is to have the system generate a **python template** for us that then we will modify.
 
-   If you add another paragraph, add 3 spaces before the line.
+1.	Run the following commands on the cloud shell:
 
-## Task 2: Concise Step Description
+	  {
+			cd ..
+    	fn init --runtime python sentiment
+			cd sentiment
+		}
 
-1. Sub step 1 - tables sample
+2.	Notice that this will generate three files for you. Modify the files with the content shown below. You can use an editor like **vi** to do so.
 
-  Use tables sparingly:
+		**func.yaml**
+		schema_version: 20180708
+		name: sentiment
+		version: 0.0.32
+		runtime: python
+		entrypoint: /python/bin/fdk /function/func.py handler
+		memory: 256
+		timeout: 300
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+		**requirements.txt**
+		fdk
+		pandas
+		numpy
+		avro-python3
+		---
+		#configparser==4.0.2
+		#cryptography==2.8
+		#configparser==3.5.0
+		#pyOpenSSL==18.0.0
+		oci>=2.39.0
+		#oci-cli
+		#six==1.14.0
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
 
-    - List item 1
-    - List item 2
+		**func.py**
+		import io
+		import json
+		import logging
+		import pandas
+		import base64
+		from avro.io import DatumReader
+		from avro.datafile import DataFileReader
+		from avro.io import BinaryDecoder
+		from fdk import response
+		import oci
+		from oci.ai_language.ai_service_language_client import AIServiceLanguageClient
+		def handler(ctx, data: io.BytesIO=None):
+		    signer = oci.auth.signers.get_resource_principals_signer()
+		    resp = do(signer,data)
+		    #resp = '[{"id":1,"length":4", "nested":[{"a":1}, {"a":2} ]}]'
+		    return response.Response(
+		        ctx, response_data=resp,
+		        headers={"Content-Type": "application/json"}
+		    )
+		def nr(dip, txt):
+		    details = oci.ai_language.models.DetectLanguageSentimentsDetails(text=txt)
+		    le = dip.detect_language_sentiments(detect_language_sentiments_details=details)
+		    if len(le.data.aspects) > 0:
+		      return json.loads(le.data.aspects.__repr__())
+		    return ""
+		def do(signer, data):
+		    dip = AIServiceLanguageClient(config={}, signer=signer)
+		    body = json.loads(data.getvalue())
+		    input_parameters = body.get("parameters")
+		    col = input_parameters.get("column")
+		    input_data = base64.b64decode(body.get("data")).decode()
+		    print(input_data, flush=True)
+		    df = pandas.read_json(input_data, lines=True)
+		    df['enr'] = df.apply(lambda row : nr(dip,row[col]), axis = 1)
+		    #Explode the array of apects into row per entity
+		    dfe = df.explode('enr',True)
+		    #Add a column for each property we want to return from entity struct
+		    ret=pandas.concat([dfe,pandas.DataFrame((d for idx, d in dfe['enr'].iteritems()))], axis=1)
+		    #Drop array of aspects column
+		    ret = ret.drop(['enr'],axis=1)
+		    #Drop the input text column we don't need to return that (there may be other columns there)
+		    ret = ret.drop([col],axis=1)
+		    str=ret.to_json(orient='records')
+		    return str
+		)
 
-3. Code examples
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
 
-4. Code examples that include variables
+## Task 4: Deploy the Function
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+Once you have edited the files in **Task 3**, deploy the function to your application , by running this cloud shell command:
+
+  fn -v deploy -app **app-name**
+
+
+## Task 5: Invoke the Function
+
+1.	Test the function by calling the command below. Make sure to replace **app-name** for the name of your application:
+
+					echo'{"data":"eyJpZCI6MSwiaW5wdXRUZXh0IjoiVGhlIEV1cm9wZWFuIHNvdmVyZWlnbiBkZWJ0IGNyaXNpcyB3YXMgYSBwZXJpb2Qgd2hlbiBzZXZlcmFsIEV1cm9wZWFuIGNvdW50cmllcyBleHBlcmllbmNlZCB0aGUgY29sbGFwc2Ugb2YgZmluYW5jaWFsIGluc3RpdHV0aW9ucywgaGlnaCBnb3Zlcm5tZW50IGRlYnQsIGFuZCByYXBpZGx5IHJpc2luZyBib25kIHlpZWxkIHNwcmVhZHMgaW4gZ292ZXJubWVudCBzZWN1cml0aWVzLiBUaGUgZGVidCBjcmlzaXMgYmVnYW4gaW4gMjAwOCB3aXRoIHRoZSBjb2xsYXBzZSBvZiBJY2VsYW5kJ3MgYmFua2luZyBzeXN0ZW0sIHRoZW4gc3ByZWFkIHByaW1hcmlseSB0byBQb3J0dWdhbCwgSXRhbHksIElyZWxhbmQsIEdyZWVjZSwgYW5kIFNwYWluIGluIDIwMDksIGxlYWRpbmcgdG8gdGhlIHBvcHVsYXJpc2F0aW9uIG9mIGFuIG9mZmVuc2l2ZSBtb25pa2VyIChQSUlHUykuIEl0IGhhcyBsZWQgdG8gYSBsb3NzIG9mIGNvbmZpZGVuY2UgaW4gRXVyb3BlYW4gYnVzaW5lc3NlcyBhbmQgZWNvbm9taWVzLiBUaGUgY3Jpc2lzIHdhcyBldmVudHVhbGx5IGNvbnRyb2xsZWQgYnkgdGhlIGZpbmFuY2lhbCBndWFyYW50ZWVzIG9mIEV1cm9wZWFuIGNvdW50cmllcywgd2hvIGZlYXJlZCB0aGUgY29sbGFwc2Ugb2YgdGhlIGV1cm8gYW5kIGZpbmFuY2lhbCBjb250YWdpb24sIGFuZCBieSB0aGUgSW50ZXJuYXRpb25hbCBNb25ldGFyeSBGdW5kIChJTUYpLiJ9Cg==", "parameters":{"column":"inputText"}}' | fn invoke App-Chenai sentiment
+
+2. The output should be JSON with aspect level sentiment information as below:
+
+		[{"id":1,"length":15,"offset":137,"scores":{"Negative":0.9999850187,"Neutral":0.0000149813,"Positive":0.0},"sentiment":"Negative","text":"government debt"}]
+3. Note that the function is registered in your container registry
+  	*	From the Console, click **Developer Services** > **Container Registry**
+		* You should be able to see the functions you just deployed in the container registry.
+		![Image alt text](images/sample1.png)
+
+
+## Task 6: Connect the Function to API Gateway
+
+We need to map your newly created function to an API endpoint that is accessible externally such as Postman.
+
+1.	From the Console, click **Developer Services** > **Gateways**, and select the gateway you created earlier in the lab.
+2.	Click **Deployments**
+3.	Click **Create Deployment**
+		Give the deployment a name and a prefix (i.e. /language)
+4.	Click **Next**, now you can add routes to your deployment.
+5.	Then **Add a Route**
+
+			* Specify a path, for instance /sentiment
+			* For methods, select POST (since we will be sending a body on the request)
+			* Type: Oracle Functions
+			* Select the sentiment application you created in Section 4.
+			* Select the name of the function “sentiment”
+6.	Click **Next** to review your route.
+8.	Review your Route and click **Create**
+
+	It will take a few minutes to deploy your API.
+	Test that you can hit your functions externally.
+	Now we will test the function you just created:
+9.	From the Console, click **Developer Services** > **Gateways**, and select the gateway you created earlier in the lab.
+2.	Click **Deployments**.
+3.	Select the deployment you just created (**language**)
+4.	This view will show you any metrics and calls made to these APIs.
+5.	In the **Deployment Information** section, you can click on the **Endpoint** to show the actual endpoint you can hit using Postman.
+6.	Copy the endpoint, it will look something like this:
+    https://lgl5i74uqyvecatyyzgtmsniy.apigateway.us-phoenix-1.oci.customer-oci.com/language
+
+7.	Append your route information to hit the endpoint, for example try making this Post call from Postman or any other tool that allows you to issue **POST** commands.
+
+   POST https://lgl4i74uqyvecatyyzgtmsniy.apigateway.us-phoenix-1.oci.customer-oci.com/language/sentiment
+
+	 	Body: {"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==","parameters":{"column":"info"}}
+  If you get an internal server error, most likely something is wrong with your permissions. In that case, make sure that:
+			* You have enabled an Ingress rule for destination port 443 (see Section 2)
+ 			* Your API gateway has permissions to invoke a function. (See this document for how to create the policy.)
+
+			ALLOW any-user to use functions-family in compartment <functions-compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<api-gateway-compartment-OCID>'}
+
 
 ## Learn More
 
