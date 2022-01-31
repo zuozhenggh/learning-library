@@ -84,7 +84,8 @@ The API Gateway communicates on port 443, which is not open by default. You must
     See documentation for more details.
 
 ## Task 3: Create an API Gateway
-    An API Gateway allows you to aggregate all the functions you created into a single end-point that can be consumed by your customers.
+
+An API Gateway allows you to aggregate all the functions you created into a single end-point that can be consumed by your customers.
 
 On the console, go to **Developer Services** and click **Gateways**, and then:
 1.	Click **Create Gateway**
