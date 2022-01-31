@@ -76,7 +76,6 @@ The output of the Oracle Data Integration Function will be a list of results tha
 
 This what the sample output should look like. Notice that it does not have nested structures.
 
-[
     {
         "id": 1,
         "is_pii": false,
@@ -95,7 +94,6 @@ This what the sample output should look like. Notice that it does not have neste
         "text": "300 million",
         "type": "CARDINAL"
     },
-…
     {
         "id": 2,
         "is_pii": true,
@@ -114,7 +112,7 @@ This what the sample output should look like. Notice that it does not have neste
         "text": "Oracle",
         "type": "ORG"
     }
-]
+
 
 Since we need to integrate the OCI Language service through an Oracle Function, we can use the function to serve as the entity that will:
 1.	Read the function input (decode the input)
