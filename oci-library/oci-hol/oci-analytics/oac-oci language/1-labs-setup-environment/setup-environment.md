@@ -1,17 +1,12 @@
-# Title of the Lab
+# Setup the Environment
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to prepare your OCI Environment to be able to carry all the next steps needed to create a function, create data pipelines, run OCI Language Service as well as visualize your data in OAC. ...
+This lab walks you through the steps to prepare your OCI Environment to be able to carry all the next steps needed to create a function, create data pipelines, run OCI Language Service as well as visualize your data in OAC.
 
-Estimated Lab Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+Estimated Lab Time: 90 minutes
 
 ### Objectives
-
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Set up Policies
@@ -20,16 +15,12 @@ In this lab, you will:
 * Confirm access to OCI Language Services
 
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
-
-*This is the "fold" - below items are collapsed by default*
 
 ## Task 1: Setup the Policies
 
@@ -40,32 +31,31 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
 2.	Click **Create Policy**
 
 3.	In the **Create Policy** panel, complete the following fields:
-a.	For **Name**, enter a name without any spaces. You can use alphanumeric characters, hyphens, periods, and underscores only.
-b.	For **Description**, enter a description to help other users know the purpose of this set of policies.
-c.	In **Policy Builder**, use the manual editor to add the following statements, then click **Create**.
+    a.	For **Name**, enter a name without any spaces. You can use alphanumeric characters, hyphens, periods, and underscores only.
+    b.	For **Description**, enter a description to help other users know the purpose of this set of policies.
+    c.	In **Policy Builder**, use the manual editor to add the following statements, then click **Create**.
 
 4.	The following policies should be set:
-allow any-user to use ai-service-language-family in tenancy
-
-allow group <group-name> to manage dis-workspaces in compartment <compartment-name>
-allow group <group-name> to manage dis-work-requests in compartment <group-name>
-allow group <group-name> to use virtual-network-family in compartment <group-name>
-allow group <group-name> to manage tag-namespaces in compartment <group-name>
-allow service dataintegration to use virtual-network-family in compartment <group-name>
-allow group <group-name> to use object-family in compartment <group-name>
-allow group <group-name> to use functions-family in compartment <group-name>
+    allow any-user to use ai-service-language-family in tenancy
+    allow group <group-name> to manage dis-workspaces in compartment <compartment-name>
+    allow group <group-name> to manage dis-work-requests in compartment <group-name>
+    allow group <group-name> to use virtual-network-family in compartment <group-name>
+    allow group <group-name> to manage tag-namespaces in compartment <group-name>
+    allow service dataintegration to use virtual-network-family in compartment <group-name>
+    allow group <group-name> to use object-family in compartment <group-name>
+    allow group <group-name> to use functions-family in compartment <group-name>
 
 5.	Once you have created an API gateway (Section 3 in the lab) and functions (Section 5 in the lab), you will also need to set the following policies:
 
-allow any-user to use functions-family in compartment <functions-compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<api-gateway-compartment-OCID>'}
+    allow any-user to use functions-family in compartment <functions-compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<api-gateway-compartment-OCID>'}
 
 6.	Once you have created a data integration workspace (Section 6 in the lab), you will also need to set the following policies:
-allow any-user to read buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.operation = 'GetBucket'}
-allow any-user to manage objects in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘}
-allow any-user to manage buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.permission = 'PAR_MANAGE'}
+    allow any-user to read buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.operation = 'GetBucket'}
+    allow any-user to manage objects in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘}
+    allow any-user to manage buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.permission = 'PAR_MANAGE'}
 
 
-# Task 2: Create VCN with the right access levels
+## Task 2: Create VCN with the right access levels
 
 We will create a virtual cloud network that will serve as the home for our serverless function and the API gateway we will create.
 
@@ -85,16 +75,16 @@ The API Gateway communicates on port 443, which is not open by default. You must
 4.	In the **Security Lists** section, select the Default Security List
 5.	Click **Add Ingress Rules**
 6.	Specify:
-Source Type: CIDR
-Source CIDR: 0.0.0.0/0
-IP Protocol: TCP
-Source Port Range: All
-Destination Port Range: 443
+    Source Type: CIDR
+    Source CIDR: 0.0.0.0/0
+    IP Protocol: TCP
+    Source Port Range: All
+    Destination Port Range: 443
 
 7.	Click **Add Ingress Rules** to add the new rule to the default security list.
 See documentation for more details.
 
-# Task 3: Create an API Gateway
+## Task 3: Create an API Gateway
 An API Gateway allows you to aggregate all the functions you created into a single end-point that can be consumed by your customers.
 
 On the console, go to **Developer Services** and click **Gateways**, and then:
@@ -109,7 +99,7 @@ On the console, go to **Developer Services** and click **Gateways**, and then:
 When the new API gateway has been created, it is shown as Active in the list on the Gateways page.
 See documentation for more details.
 
-# Task 4: Confirm access to OCI Language Services
+## Task 4: Confirm access to OCI Language Services
 This step ensures you are able to access OCI Language Service.
 
 Policy Pre-requisites
