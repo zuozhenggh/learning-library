@@ -64,15 +64,15 @@ Everything you need to start building a visual application is now created for yo
 
     ![](images/repo.png " ")
 
-2.  In the left navigation, click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png)to view the **HR Visual Application** workspace. This workspace contains a working copy of `hrbranch` and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
+2.  In the left navigator, click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png)to view the **HR Visual Application** workspace. This workspace contains a working copy of `hrbranch` and serves as your _local_ repository. The `hrbranch` initially has the same set of source files as the `main` branch, but as you work with your visual application, it will include the changes you make. Your changes can't be seen by others until you save them from the local branch to a remote branch.
 
     ![](images/workspace.png " ")
 
-3.  Click **Environments** ![Environments icon](images/vbs-environments-icon.png) in the left navigation to view the development environment that points to your VB instance. Here, you can view details of your VB instance and all the applications you deploy to this instance.  
+3.  Click **Environments** ![Environments icon](images/vbs-environments-icon.png) in the left navigator to view the development environment that points to your VB instance. Here, you can view details of your VB instance and all the applications you deploy to this instance.  
 
     ![](images/env.png " ")
 
-4.  Click **Builds** ![Builds icon](images/vbs-builds-icon.png) in the left navigation to view the default build jobs that package and deploy your visual application to the development instance. The `Visual-Application-Package` job generates the visual application's artifact files. The `Visual-Application-Deploy` job deploys the artifact files to the development instance.
+4.  Click **Builds** ![Builds icon](images/vbs-builds-icon.png) in the left navigator to view the default build jobs that package and deploy your visual application to the development instance. The `Visual-Application-Package` job generates the visual application's artifact files. The `Visual-Application-Deploy` job deploys the artifact files to the development instance.
 
     ![](images/build-jobs.png " ")
 
@@ -95,7 +95,7 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
     ![](images/build-auth-credentials.png)
 
    **Tip:** Before you save your changes, take a quick look at other advanced settings on this page:
-    - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to the URL when your application is deployed (for example, https://host/something-else/**0.1**/index.html). This version number is useful to identify multiple versions during development, but when your app is ready to go live, you'll want to deselect this option to remove the version and replace it instead with **live** (https:/host/something-else/live/index.html).
+    - Notice the **Include the application version in the URL** check box that's selected by default. This option adds a version to the URL when your application is deployed, for example, https://host/something-else/**0.1**/index.html. This version number is useful to identify multiple versions during development, but when your app is ready to go live, you'll want to deselect this option, so your application URL is something like https:/host/something-else/**live**/index.html, without a version number in it.
     - Take note of the **Use clean database** option, also selected by default. This option uses a new database by default to store your application's data. To keep your data after initially importing it (which we'll do in a later lab), you'll need to select the **Keep existing environment data** option.
 
     Click **Save**.
@@ -104,7 +104,7 @@ Now that your project is provisioned, let's set up the credentials that VB Studi
 
 For the purposes of this workshop, let's assume that other members of your team will work with you on this visual application—which means you'll need to add them to this project. As the project owner, you can control what others can do in this project by granting them membership as a Developer Full Access, Developer Limited Access, or Contributor.
 
-1.  Click **Project Home** ![Project Home icon](images/vbs-project-home-icon.png) in the left navigation.
+1.  Click **Project Home** ![Project Home icon](images/vbs-project-home-icon.png) in the left navigator.
 
 2.  On the Project Home page, click **Team**, then **\+ Add Member**.
 

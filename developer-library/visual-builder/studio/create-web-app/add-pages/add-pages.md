@@ -31,7 +31,7 @@ Let's create a table to display your departments on the `main-start` page. The T
 
     You may want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Let's give this `main-start` page a title. Click `main` on the page canvas—notice how the Bind Text component that contains this text is selected in the Structure view.
+3.  Let's give this `main-start` page a title. Click `main` on the page canvas—notice how the Bind Text component that contains this title text is selected in the Structure view.
 
     ![](images/department-heading.png " ")
 
@@ -65,7 +65,7 @@ Let's create a table to display your departments on the `main-start` page. The T
 
 10.  On the Define Query page, click **Finish**.  
 
-    A Departments table with three empty columns is displayed on the main-start page. Notice that the second Name column (which maps to the location name field) shows simply as Name because that's what we set for the Display Field when we created the Location reference.
+    A Departments table with three empty columns is displayed on the `main-start` page. Notice that the second Name column (which maps to the location name field) shows simply as Name because that's what we set for the Display Field when we created the Location reference.
 
     ![](images/departments-table.png " ")
 
@@ -90,7 +90,7 @@ Now that we have a way to show departments, we'll add a Create page that lets us
    ![](images/department-add-create.png " ")
 4.  Leave the Button label and other fields set to their default values. Click **Finish**.
 
-    A **Create Department** button appears in a Toolbar component above the table on the main-start page. (You might need to click next to the **Create Department** button to see the Toolbar component.) Click  **Web Applications** in the Navigator to see the `main-create-department` page created in the pages list under `main`.
+    A **Create Department** button appears in a Toolbar component above the table on the `main-start` page. (You might need to click next to the **Create Department** button to see the Toolbar component.) Click  **Web Applications** in the Navigator to see the `main-create-department` page created in the pages list under `main`.
 
     ![](images/department-add-create-result.png " ")
 
@@ -178,7 +178,7 @@ Add a Create page that lets your users create new employees.
 
     ![](images/employees-add-create.png " ")
 
-    A **Create Employee** button appears above the table, and the main-create-employee page appears in the pages list.
+    A **Create Employee** button appears above the table, and the `main-create-employee` page appears in the pages list.
 
 5.  In the pages list, click the **main-create-employee** page to open it in the Page Designer.
 6.  Click within the form on the page but outside of a component (that is, in the Form Layout component on the page). In the **General** tab of the Form Layout's properties, set the **Max Columns** value to **2**.
@@ -198,7 +198,7 @@ Add a Create page that lets your users create new employees.
 
     ![](images/employees-add-create-code.png " ")
 
-10.  Click **Design** to return to the main-employees page, then click **Structure** to view the component structure on the page.
+10.  Click **Design** to return to the `main-employees` page, then click **Structure** to view the component structure on the page.
 
     ![](images/employees-add-create-structure.png " ")
 

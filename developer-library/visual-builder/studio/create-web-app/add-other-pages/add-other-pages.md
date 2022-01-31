@@ -34,7 +34,7 @@ An Edit page lets you edit a row in your table. In this task, you'll add a page 
 
 5.  On the Page Details page, select **location** (**name** is already selected). Click **Finish**.
 
-    An **Edit Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
+    An **Edit Department** button is displayed in the toolbar on the `main-departments` page. The button is inactive.
 
 ## Task 2: Add a page to view a department's details
 
@@ -46,9 +46,9 @@ A Detail page lets you view additional details of a row in your table. In this t
 
    ![](images/department-add-detail-page-fields.png " ")
 
-    A **View Department Detail** button is displayed in the toolbar on the main-departments page. The button is inactive.
+    A **View Department Detail** button is displayed in the toolbar on the `main-departments` page. The button is inactive.
 
-4.  Click **Live**, select a row, and then click **View Department Detail** to open the main-department-detail page.
+4.  Click **Live**, select a row, and then click **View Department Detail** to open the `main-department-detail` page.
 5.  Click **Design** to return to Design view.
 6.  Click the **Input Text** field for the second **Name** label to open the Input Text's properties. In the **General** tab, change the **Label Hint** value to `Location`.
 
@@ -58,7 +58,7 @@ A Delete button lets you delete a selected row in your table. In this task, you'
 1.  Return to the **main-departments** page. Click **Quick Start** if necessary, and click **Add Delete Action**.
 2.  On the Select Endpoint page (the only page of the Quick Start), select **Department** under Business Objects (if necessary) and click **Finish**. As with other quick starts, the endpoint to delete a record will be automatically selected.
 
-    A **Delete Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
+    A **Delete Department** button is displayed in the toolbar on the `main-departments` page. The button is inactive.
 
 ## Task 4: Test your new Department pages
 
@@ -93,9 +93,9 @@ Now that we've added options to let users manage departments, we'll do the same 
 4.  On the Select Update Endpoint page, again select **Employee** under Business Objects (if necessary) and click **Next**.
 5.  On the Page Details page, select **hireDate**, **email**, and **department** (**name** is already selected) and click **Finish**.
 
-    An **Edit Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
+    An **Edit Employee** button is displayed in the toolbar on the `main-employees` page. The button is inactive.
 
-6.  Click **Live**, select a row, and click **Edit Employee** to open the main-edit-employee page.
+6.  Click **Live**, select a row, and click **Edit Employee** to open the `main-edit-employee` page.
 7.  Click **Design**.
 8.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab of the form's properties, set the **Max Columns** value to **2**. The fields now appear in two columns.
 
@@ -106,14 +106,14 @@ Now that we've added options to let users manage departments, we'll do the same 
 3.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
 4.  On the Page Details page, select **name**, **hireDate**, and **email**. Expand the **departmentObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **name**. Change the **Button label** field to `View Employee Detail`, then click **Finish**.
 
-    A **View Employee Detail** button is displayed in the toolbar on the main-employees page. The button is inactive.
+    A **View Employee Detail** button is displayed in the toolbar on the `main-employees` page. The button is inactive.
 
 5.  Now click **Add Delete Action** in the Quick Start menu.
 6.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Finish**.
 
-    A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
+    A **Delete Employee** button is displayed in the toolbar on the `main-employees` page. The button is inactive.
 
-7.  Click **Live**, select a row, and click **View Employee Detail** to open the main-employee-detail page.
+7.  Click **Live**, select a row, and click **View Employee Detail** to open the `main-employee-detail` page.
 8.  Click **Design**.
 9.  Click the **Input Text** component for the second **Name** label. In the Properties pane, change the **Label Hint** value to `Department`.
 10.  Click within the form on the page but outside of a component (that is, in the **Form Layout** component on the page). In the General tab, set the **Max Columns** value to **2**.
