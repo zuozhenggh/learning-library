@@ -9,7 +9,7 @@ Estimated Lab Time: xx minutes
 
 ### Objectives
 
-* Understand the basics of APEX Map Regions
+* Understand the basics of APEX Map Region
 
 ### Prerequisites
 

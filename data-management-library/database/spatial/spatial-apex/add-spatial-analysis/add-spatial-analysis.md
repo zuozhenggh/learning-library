@@ -9,8 +9,8 @@ Estimated Lab Time: xx minutes
 
 ### Objectives
 
-*  Understanding a basic spatial analysis operation
-*  Understanding the integration of spatial analysis into a Map Region 
+*  Understand a basic spatial analysis operation
+*  Understand the integration of spatial analysis into APEX Map Region 
 
 ### Prerequisites
 

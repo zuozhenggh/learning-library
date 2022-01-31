@@ -9,7 +9,7 @@ Estimated Lab Time: XX minutes
 
 ### Objectives
 
-* Understand the configuration of Map Regions
+* Understand the configuration of APEX Map Region
 
 ### Prerequisites
 

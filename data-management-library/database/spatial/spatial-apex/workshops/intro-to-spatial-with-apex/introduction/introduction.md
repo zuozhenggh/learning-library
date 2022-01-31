@@ -21,9 +21,9 @@ Oracle Spatial is a set of geospatial data management, analysis, and processing 
 
 ### Objectives
 
-  - Understanding of APEX Map Region samples
-  - Ability to create and configure Map Region
-  - Ability to incorporate location analysis with Oracle Spatial
+  - Understand APEX Map Region samples
+  - Learn to create and configure Map Region
+  - Learn to incorporate location analysis with Oracle Spatial
 
 
 ### Prerequisites
