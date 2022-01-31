@@ -46,7 +46,6 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
     allow group <group-name> to use functions-family in compartment <group-name>
 
 5.	Once you have created an API gateway (Section 3 in the lab) and functions (Section 5 in the lab), you will also need to set the following policies:
-
     allow any-user to use functions-family in compartment <functions-compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<api-gateway-compartment-OCID>'}
 
 6.	Once you have created a data integration workspace (Section 6 in the lab), you will also need to set the following policies:
@@ -82,22 +81,24 @@ The API Gateway communicates on port 443, which is not open by default. You must
     Destination Port Range: 443
 
 7.	Click **Add Ingress Rules** to add the new rule to the default security list.
-See documentation for more details.
+    See documentation for more details.
 
 ## Task 3: Create an API Gateway
-An API Gateway allows you to aggregate all the functions you created into a single end-point that can be consumed by your customers.
+    An API Gateway allows you to aggregate all the functions you created into a single end-point that can be consumed by your customers.
 
 On the console, go to **Developer Services** and click **Gateways**, and then:
 1.	Click **Create Gateway**
 2.	Specify:
-	a name for the new gateway, such as lab1-gateway
-	the type of the new gateway as **Public**
-	the name of the compartment in which to create API Gateway resources
-	the name of the VCN to use with API Gateway (the one you just created)
-	the name of the regional subnet in the VCN, select the **Public subnet** you just modified.
+    	a name for the new gateway, such as lab1-gateway
+    	the type of the new gateway as **Public**
+    	the name of the compartment in which to create API Gateway resources
+    	the name of the VCN to use with API Gateway (the one you just created)
+    	the name of the regional subnet in the VCN, select the **Public subnet** you just modified.
 3.	Click **Create Gateway**.
+
 When the new API gateway has been created, it is shown as Active in the list on the Gateways page.
 See documentation for more details.
+
 
 ## Task 4: Confirm access to OCI Language Services
 This step ensures you are able to access OCI Language Service.
@@ -106,31 +107,19 @@ Policy Pre-requisites
 1.	Navigate to **Identity & Security**, and then select **Policies** item under Identity.
 2.	Click **Create Policy**
 3.	Create a new Policy with the following statement:
-allow any-user to use ai-service-language-family in tenancy
+    allow any-user to use ai-service-language-family in tenancy
 4.	Click **Create**
+
 Get familiar with the Language AI Service
 1.	On the console, navigate to **Analytics & AI** > **Language**
 2.	In the Pre-trained models section, you can enter any text to analyze (or just keep the text there)
 3.	OCI Language has several capabilities, including sentiment analysis and entity extraction.
-Make sure those capabilities are selected and click **Analyze**
+    Make sure those capabilities are selected and click **Analyze**
 4.	Inspect the results you get. If you cannot analyze the text, you may have to check that your policies are set correctly.
 5.	Click the **Show JSON** button on the output of the analysis so that you can see the schema of the JSON that you get by calling each of the capabilities.
+
 We need to call the endpoint from Python code (or using some other SDK). In Section 5 we will write a couple of functions that will call OCI Language.
 
-1.  Login to Corporate VPN.
-
-2.  Access the **Oracle Workshop Management System (WMS)** page.
-    > **Note:** This page is only accessible to Oracle Employees.
-
-3.  Click **Submit a New Workshop**.
-
-4.  Fill in the required fields including the **Workshop Abstract** field *thoroughly*.  Failure to do so will prevent your workshop from being approved.
-
-5.  Click **Create**.
-
-6.  We recommend you don't start working on your workshop until your workshop has been approved by a council member.
-
-  ```
 
 ## Learn More
 
@@ -140,6 +129,6 @@ We need to call the endpoint from Python code (or using some other SDK). In Sect
 * [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - <Chenai Jarimani, Principal Cloud Architect, Cloud Engineering>
+* **Author** - Chenai Jarimani, Principal Cloud Architect, Cloud Engineering
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
