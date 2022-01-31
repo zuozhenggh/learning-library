@@ -194,36 +194,6 @@ Updating the Theme of the App
 
 5. You have now updated the color scheme of your app.
 
-Signing up for a TMDB API Key
-
-1. Go to [The Movie Database (TMDB)](https://www.themoviedb.org/signup) to sign up for a free account.
-
-2. Once registered, follow the [Getting Started](https://developers.themoviedb.org/3/getting-started/introduction) instructions on TMDB Developer site. You will need to enter some of your app and contact information:
-
-    ![](images/api-key-signup-edit.png " ")
-
-3. After you have received your API Key, copy it and store it somewhere where you will be able to easily access it.
-
-4. Make a sample API request to get the details of a single movie using your new API Key:
-
-    - Go to the [TMDB Movie Details](https://developers.themoviedb.org/3/movies/get-movie-details) page.
-
-    - Click on the **Try it out** tab.
-
-    ![](images/details-api-edit.png " ")
-
-    - Under **Variables**, click the box next to **api_key** and paste your API key.
-
-    - Under **Path Params**, click the box next to **movie_id** and type 505.
-
-    - Click the bright pink **Send Request** button.  
-      *Note: If the Send Request button does not work, copy the link next to the button, paste it in a new browser tab and hit enter/return.*
-
-    ![](images/details-request-edit.png " ")
-
-    - Now you can explore the data that gets returned when requesting the details for a single movie.  
-
-5. You can also go back to the **Definition** tab (next to Try it out) and scroll to the **Responses** section at bottom of the page to further explore the type of data that gets returned. Under Responses, Schema will show you the object fields and data types, while Example will give you example data without having to make a request like you did above.
 
 ## Task 4: Creating REST Data Sources
 
@@ -255,8 +225,8 @@ The first REST source you will create is the Popular Movies source because it is
 
 5. Name: **Popular Movies**
 
-6. URL Endpoint: **https://api.themoviedb.org/3/movie/popular?api\_key=API\_KEY&language=en-US&page=1**  
-*Note: Make sure to replace API\_KEY with the API code you get from TMDB API*
+6. URL Endpoint: **https://api.themoviedb.org/3/movie/popular?api\_key1c2f0993f616307716d7b80642e5b169&language=en-US&page=1**  
+*Note: API\_KEY was generated and replaced in the code.*
 
 7. Click **Next**.
 
@@ -266,8 +236,8 @@ The first REST source you will create is the Popular Movies source because it is
 
     * Base URL: **https://api.themoviedb.org/3/**
 
-    * Service URL Path: **movie/popular?api\_key=API\_KEY&language=en-US&page=1**  
-    *Note: Make sure you have replaced API\_KEY with the API code you get from TMDB API and that there are no spaces in your URL endpoint.*
+    * Service URL Path: **movie/popular?api\_key1c2f0993f616307716d7b80642e5b169&language=en-US&page=1**  
+    *Note: API\_KEY was generated and replaced in the above code. There should be no spaces in your URL endpoint.*
 
 9. Click **Next** again.
 
@@ -473,7 +443,7 @@ While the process for setting up the Movie Details REST source is similar to the
 
         - Name: **api_key**
 
-        - Value: *Insert your unique API key here.*
+        - Value: **1c2f0993f616307716d7b80642e5b169** (Insert your unique API key here.)*
 
     * Click on the **Advanced** button at the bottom of the dialog.
 
@@ -644,7 +614,7 @@ You want to be able to view the details of any movie you click on in your Movie 
 
     ![](images/4-4-8-movie-details.png " ")
 
-## Task 7: Creating Users and Watchlist Tables
+## Task 7: Creating Users and Watchlist Tables (Optional)
 
 Up to this point, most of the work has revolved around implementing REST data sources and creating pages to use that data on. In this lab, you will create and start to use local tables to store user and movie data. You will also add an application item and process, which will capture and store a user email and ID, as well as some of the movie details. This is what allows multiple users to have their own watchlist.
 
@@ -841,7 +811,7 @@ Finally, you will need a table to store some basic movie information in addition
 
 11. Now you will set up your Back, Add, Remove, and Mark Watched buttons.
 
-## Task 8: Implementing Movie Details Buttons and Movie Search Badges
+## Task 8: Implementing Movie Details Buttons and Movie Search Badges (Optional)
 
 In the previous task, you did the backend work to set up tables and application items. In this lab, you will be creating Add, Remove, Watched, and Back buttons that will control the flow between the Movie Search and Movie Details page, as well as the data stored in the watchlist table. You will also add a badge to the Cards on the Movie Search page to have a visual cue for movies that a user has already marked as added or watched.
 
