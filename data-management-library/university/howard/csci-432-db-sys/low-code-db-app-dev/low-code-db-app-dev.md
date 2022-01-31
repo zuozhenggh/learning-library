@@ -15,7 +15,34 @@ In this lab, you will:
 - Run your application.  
 - Sign up for a TMDB API key.
 
-## Task 1: Creating the App
+## Task 1: Connecting to your Oracle Cloud Database
+
+1. Log in to the Oracle Cloud at <a href="https://cloud.oracle.com">cloud.oracle.com</a>. Cloud Account Name is howarduniversity. Click "Next".
+2. Click on "Direct Sign-In" and enter your Cloud Account email and password.
+
+    ![](./images/direct-sign-in.png " ")
+
+3. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
+
+    ![](./images/picture100-36.png " ")
+
+
+4. Click **Autonomous Data Warehouse**.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
+5. From the Compartment drop down on the left side of the page, expand howarduniversity->spring2022->student1xx and select you student number.
+
+    ![](./images/hu-compartment.png " ")
+
+6. Click on the database you created in lab 1
+   
+    ![](./images/adb-compartment.png " ")
+    
+## Task 2: 
+
+
+## Task 3: Creating the App
 
 1. If you have not already logged into your Oracle APEX workspace, sign in using the workspace name, email, and password you signed up with.
 
@@ -154,20 +181,16 @@ Signing up for a TMDB API Key
 
 
 ## Stuck? Download the Application Here
-Stuck on a step or struggling with the lab? You can download a copy of the Movies Watchlist application through Lab 1 and follow the instructions below to import it into your Oracle APEX workspace.  
+Stuck on a step or struggling with the task? You can download a copy of the Movies Watchlist application through Lab 1 and follow the instructions below to import it into your Oracle APEX workspace.  
 
-- [Click here](./files/lab1.sql) to download a copy of the app at the end of Lab 1.
+- [Click here](./files/lab1.sql) to download a copy of the app at the end of Task 3.
 
 - You can import Lab 1 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
 
-## Task 2: Creating REST Data Sources
+## Task 4: Creating REST Data Sources
 
-## Introduction
-This lab will walk you through how to set up REST Data Sources that will be used to get movie data from TMDB API. You will use these REST sources in later labs to build out the movie search functionality.  Make sure you have easy access to your API key that you signed up for in the Introduction steps, as you will need it to build out the REST sources.
+This task will walk you through how to set up REST Data Sources that will be used to get movie data from TMDB API. You will use these REST sources in later tasks to build out the movie search functionality.  Make sure you have easy access to your API key that you signed up for in the Introduction steps, as you will need it to build out the REST sources.
 
-Estimated Lab Time: 15 minutes
-
-### Objectives
 In this lab, you will:  
 - Create a REST data source for The Movie Database Popular Movies.  
 - Create a REST data source for The Movie Database Search Movies.
@@ -333,15 +356,15 @@ The process to create the Search Movies source is similar to the process for the
 
     ![](images/2-3-6-create-source.png " ")
 
-7. Return to [Task 2](#Task2:EditingTheRESTSourceDataProfile) and follow the same steps for the Search Movies source to edit the data profile and create a POSTER_URL column.
+7. Return to [Task 4](#Task4:EditingTheRESTSourceDataProfile) and follow the same steps for the Search Movies source to edit the data profile and create a POSTER_URL column.
 
 
 ## Stuck? Download the Application Here
-Stuck on a step or struggling with the lab? You can download a copy of the Movies Watchlist application through Lab 2 and follow the instructions below to import it into your Oracle APEX workspace.
+Stuck on a step or struggling with the task? You can download a copy of the Movies Watchlist application through Lab 2 and follow the instructions below to import it into your Oracle APEX workspace.
 
-- [Click here](./files/lab2.sql) to download a copy of the app at the end of Lab 2.
+- [Click here](./files/lab2.sql) to download a copy of the app at the end of Lab 4.
 
-- You can import Lab 2 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
+- You can import Lab 4 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
 
 - Once the application is installed, you will need to update the API key for both the Popular Movies and Search Movies REST data sources.
 
@@ -369,15 +392,11 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
 - Follow the same process with the Search Movies REST source.
 
-## Task 3: Creating the Movie Search Page
+## Task 5: Creating the Movie Search Page
 
-## Introduction
 You will create and set up the Movie Search page in this lab so that you can view popular movies and search for a movie of your choice. The search functionality must be built out first in order to be able to create a watchlist even though the My Watchlist page is the home page of the application. You will need to first create a button on the home page that links to the Movie Search page. On the Movie Search page you will create regions that display the data from the REST data sources you created in the previous lab, and you will implement a search bar that lets you search for movies.
 
-Estimated Lab Time: 20 minutes
-
-### Objectives
-In this lab, you will:  
+In this task, you will:  
 - Add a button to link the Movie Search page to the Movie Watchlist page.  
 - Create a new page.  
 - Link the Popular Movies REST data source to the new page.  
@@ -400,15 +419,11 @@ You will need to create a button on the first page of the application before you
 
     ![](images/3-1-3-create-button.png " ")
 
-## Task 4: Creating the Movie Details Page
+## Task 6: Creating the Movie Details Page
 
-## Introduction
-In this lab, you will set up a new REST data source called Movie Details, that retrieves the details of a single movie. After the data source has been set up, you will create a new page that displays those movie details when a user clicks on a movie from the Movie Search page.
+In this task, you will set up a new REST data source called Movie Details, that retrieves the details of a single movie. After the data source has been set up, you will create a new page that displays those movie details when a user clicks on a movie from the Movie Search page.
 
-Estimated Lab Time: 10 minutes
-
-### Objectives
-In this lab, you will:  
+In this task, you will:  
 - Set up the Movie Details REST Data Source.  
 - Create a new page, Movie Details.  
 - Use the Movie Details REST source to display data on the Movie Details page.  
@@ -482,13 +497,13 @@ While the process for setting up the Movie Details REST source is similar to the
 
 4. On the REST Data Sources page, click on Movie Details.
 
-5. In Lab 2, you added a new column to the data profile for the full poster URL. You will now do the same thing for Movie Details, but you will add 2 visible columns:
+5. In Task 4, you added a new column to the data profile for the full poster URL. You will now do the same thing for Movie Details, but you will add 2 visible columns:
 
     * **POSTER\_URL**: CONCAT('https://image.tmdb.org/t/p/w500', POSTER\_PATH)
 
     * **BACKDROP\_URL**:  CONCAT('https://image.tmdb.org/t/p/w500', BACKDROP\_PATH)
 
-6. Follow the instructions in <a href="?lab=creating-rest-sources#Task2:EditingTheRESTSourceDataProfile" target="_blank">Lab 2, Task 2</a> to add the BACKDROP\_URL and POSTER\_URL columns.
+6. Follow the instructions in <a href="?lab=creating-rest-sources#Task2:EditingTheRESTSourceDataProfile" target="_blank">Task 4, Step 2</a> to add the BACKDROP\_URL and POSTER\_URL columns.
 
 Creating the Movie Details Page
 
@@ -651,15 +666,11 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
 - Follow the instructions in the <a href="?lab=creating-rest-sources#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 2 to update the Popular and Search Movies API keys.
 
-## Task 5: Creating Users and Watchlist Tables
+## Task 7: Creating Users and Watchlist Tables
 
-## Introduction
 Up to this point, most of the work has revolved around implementing REST data sources and creating pages to use that data on. In this lab, you will create and start to use local tables to store user and movie data. You will also add an application item and process, which will capture and store a user email and ID, as well as some of the movie details. This is what allows multiple users to have their own watchlist.
 
-Estimated Lab Time: 10 minutes
-
-### Objectives
-In this lab, you will:  
+In this task, you will:  
 - Set up the movie_users and watchlist tables using Quick SQL.  
 - Create an application process and item for storing user information.
 
@@ -852,32 +863,22 @@ Finally, you will need a table to store some basic movie information in addition
 
 11. Now you will set up your Back, Add, Remove, and Mark Watched buttons.
 
-## Resources
-
-- [Tour of SQL Workshop](https://www.youtube.com/watch?v=bdglHoq-Hbs)  
-
-- [Quick SQL Documentation](https://docs.oracle.com/en/database/oracle/application-express/21.1/aeutl/using-quick-sql.html#GUID-21EE36C2-F814-48C0-90EA-7D464E9014FD)
-
 ## Stuck? Download the Application Here
 Stuck on a step or struggling with the lab? You can download a copy of the Movies Watchlist application through Lab 5 and follow the instructions below to import it into your Oracle APEX workspace.
 
-- [Click here](./files/lab5-3.sql) to download a copy of the app at the end of Lab 5.
+- [Click here](./files/lab5-3.sql) to download a copy of the app at the end of Task 5.
 
-- You can import Lab 5 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
+- You can import Task 5 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
 
 - If you have not previously imported Lab 4, follow the instructions in the <a href="?lab=creating-movie-details-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 4 to provide credentials for the Movie Details REST source.
 
 - Follow the instructions in the <a href="?lab=creating-rest-sources#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 2 to update the Popular and Search Movies API keys.
 
-## Task 6: Implementing Movie Details Buttons and Movie Search Badges
+## Task 8: Implementing Movie Details Buttons and Movie Search Badges
 
-## Introduction
-In the previous lab, you did the backend work to set up tables and application items. In this lab, you will be creating Add, Remove, Watched, and Back buttons that will control the flow between the Movie Search and Movie Details page, as well as the data stored in the watchlist table. You will also add a badge to the Cards on the Movie Search page to have a visual cue for movies that a user has already marked as added or watched.
+In the previous task, you did the backend work to set up tables and application items. In this lab, you will be creating Add, Remove, Watched, and Back buttons that will control the flow between the Movie Search and Movie Details page, as well as the data stored in the watchlist table. You will also add a badge to the Cards on the Movie Search page to have a visual cue for movies that a user has already marked as added or watched.
 
-Estimated Lab Time: 15 minutes
-
-### Objectives
-In this lab, you will:  
+In this task, you will:  
 - Implement an Add button that inserts a movie into the watchlist table.  
 - Implement a Remove button that deletes a movie from the watchlist table.  
 - Implement a Watched button that marks a movie as watched in your watchlist table.  
@@ -1257,53 +1258,12 @@ Before you test the buttons you just implemented, you will add badges to the Mov
     
 4. In the Development Bar at the bottom of the page, click **Application XXXXX** to return to the application builder.
 
-## Resources
-
-- [App Builder Concepts](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/application-builder-concepts.html#GUID-6D22E307-6D48-49BC-9FDC-A7D8B037E46A)
-
-- [Universal Theme](https://apex.oracle.com/pls/apex/apex_pm/r/ut/getting-started)
-
-- [The Movie Database](https://www.themoviedb.org/)
-
-- [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
-
-- [Buttons Documentation](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/creating-buttons.html#GUID-F6DA76D1-2020-4930-8D26-12D0A3497C8E)
-
-- [Intro to Dynamic Actions Video](https://www.youtube.com/watch?v=hpcYevCC-Ow)  
-
-- [Dynamic Actions Documentation](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/managing-dynamic-actions.html#GUID-7E564715-E963-44AA-B620-5FFB5EFA62EE)  
-
-- [Understanding Page Processes](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/understanding-page-processes.html#GUID-DE72F8ED-A3A0-4FBC-8362-ABA47E543466)  
-
-- [Controlling Navigation Using Branches](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/controlling-navigation-using-branches.html#GUID-AE2164D3-6D95-4EB3-BF12-60C2278A1D0E) 
-
-## Resources
-
-- [REST Data Sources Documentation](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/managing-REST-data-sources.html#GUID-93D7A596-03A9-48AF-9FC9-6538BCC25DED)  
-
-- [REST Data Sources Video](https://www.youtube.com/watch?v=ctCwvD1qavs)  
-
-- [Explore APEX Plug-ins](https://apex.oracle.com/en/solutions/apps/#plug_ins)  
-
-## Resources 
-
-- **REST Source Row Selector:** Using a single period **.** for the Row Selector when setting up a REST data source instructs APEX to use the root of the JSON object that gets returned from TMDB Movie Details API. If you were to leave the field empty, APEX would automatically look for an array within the return object to use as the results, which is what happens for the Popular Movies and Search Movies sources. However, the Movie Details source comes back in a different format, so you have to include instructions for APEX to discover the correct data.
-
-	You can compare the Example responses for [Popular Movies](https://developers.themoviedb.org/3/movies/get-popular-movies) and [Movie Details](https://developers.themoviedb.org/3/movies/get-movie-details) from TMDB's API. Notice that Popular Movies has a "results" array in the response that contains the current popular movies, which is what APEX auto-detects, while the data for Movie Details is not returned in an array.  
-
-- [REST Data Sources Documentation](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/managing-REST-data-sources.html#GUID-93D7A596-03A9-48AF-9FC9-6538BCC25DED)  
-
-- [Modal Dialog Pages](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/creating-dialog-pages.html#GUID-BBFB0724-E33B-4846-AC94-A20E491B5D4E)  
-
-- [Variables in APEX](https://www.talkapex.com/2011/01/variables-in-apex/)  
-
-
 ## Stuck? Download the Application Here
 Stuck on a step or struggling with the lab? You can download a copy of the Movies Watchlist application through Lab 6 and follow the instructions below to import it into your Oracle APEX workspace.
 
-- [Click here](./files/lab6.sql) to download a copy of the app at the end of Lab 6.
+- [Click here](./files/lab6.sql) to download a copy of the app at the end of Task 6.
 
-- You can import Lab 6 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
+- You can import Task 6 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
 
 - If you have not previously imported Lab 4 or higher, follow the instructions in the <a href="?lab=creating-movie-details-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 4 to provide credentials for the Movie Details REST source.
 
