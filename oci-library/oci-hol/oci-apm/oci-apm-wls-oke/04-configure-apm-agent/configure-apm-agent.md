@@ -4,7 +4,7 @@
 
 In this lab, you will download the APM Java Agent installer file from the Oracle Cloud console, upload it to the Oracle Cloud shell, transfer to the Kubernetes container, provision the Java Agent to the file system, and finally deploy the Agent to the WebLogic Server.
 
-Estimated time: 15 minutes
+Estimated time: 20 minutes
 
 ### Objectives
 * Download the APM Java Agent from the Oracle Cloud console
@@ -41,11 +41,11 @@ Estimated time: 15 minutes
 
    ![Oracle Cloud console, Cloud Shell](images/4-1-4-cloudshell.png " ")
 
-2.	Click the three-bar icon in the Cloud Shell title bar to open the menu. Then select **Upload**.
+2.	Click the navigation menu (three-bar icon) in the Cloud Shell title bar to open the menu. Then select **Upload**.
 
    ![Oracle Cloud console, Cloud Shell](images/4-1-5-cloudshell.png " ")
 
-3.	Click **select from your computer** link and select the Java agent installer file from your laptop. This is the file that you downloaded in the earlier steps.
+3.	Click **select from your computer** link and select the Java agent installer file from your computer. This is the file that you downloaded in the earlier steps.
 
    ![Oracle Cloud console, Browse dialog ](images/4-1-5-browse.png " ")
 
@@ -53,7 +53,7 @@ Estimated time: 15 minutes
 
    ![Oracle Cloud console, Upload ](images/4-1-6-upload.png " ")
 
-5.	Wait for the File Transfer completes.
+5.	Wait for the File Transfer to complete.
 
    ![Oracle Cloud console, Cloud Shell ](images/4-1-7-cloudshell.png " ")
 
@@ -68,7 +68,7 @@ Estimated time: 15 minutes
 
 ## Task 3: Copy the Java Agent installer to the file system
 
-1.	Run the command below to copy the Java Agent installer file to the file system. Ensure to replace the **apm-agent-version** with that of the APM Java Agent you have, before the command execution. 
+1.	Run the command below to copy the Java Agent installer file to the file system. Ensure to replace the **apm-agent-version** with that of the APM Java Agent you have, before the command execution.
 
     ``` bash
     <copy>
@@ -82,7 +82,7 @@ Estimated time: 15 minutes
 
 
 
-2.	Use below kubectl command to remotely access the container in the Kubernetes pod.
+2.	Use the kubectl command below to remotely access the container in the Kubernetes pod.
 
     ``` bash
     <copy>
@@ -105,6 +105,8 @@ Estimated time: 15 minutes
 
 
    ![Oracle Cloud console, Cloud Shell ](images/4-1-8-cloudshell.png " ")
+
+    >***NOTE***: The APM version may be different from what is showing in the example.
 
 
 ## Task 4: Provision the APM Java Agent
@@ -155,7 +157,9 @@ Estimated time: 15 minutes
 
 ## Task 5: Disable the maintenance spans
 
-In this task, you will add exclusions to the data capturing in the APM Agent, for the JAXRS server probe that generates static spans. Because there is no editing tool inside the container, you will copy an APM agent configuration file from the container to the Cloud Shell, edit the file, then copy back to the container. We plan to add the exclusion by default, to the product in the future.
+In this task, you will add exclusions to the data capture in the APM Agent, for the JAXRS server probe that generates static spans in this particular WebLogic setup. This is an optional task if you are monitoring the real-life environment, but for the lab purpose, we would like to suppress the spans generated from the server maintenance, so that you can focus on the spans related to the browser navigations.
+
+Because there is no editing tool inside the container, you will copy an APM agent configuration file from the container to the Cloud Shell, edit the file, then copy back to the container. We plan to add the exclusion by default, to the product in the future.
 
 1.	Copy ***ProveConfig.acml*** from the container.
 
@@ -165,7 +169,7 @@ In this task, you will add exclusions to the data capturing in the APM Agent, fo
     </copy>
     ```   
 
-    >***NOTE***: The file path includes the APM Java Agent version. Change the directory name to the Agent version you have.
+    >***NOTE***: The file path includes the APM Java Agent version. Change the directory name to the Agent version you have. <br>E.g., kubectl cp sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/**1.2.1725**/ProbeConfig.acml ~/ProbeConfig.acml
 
     run "ls" command from the Home directory and confirm the file was transferred.  
     ```bash
@@ -200,7 +204,7 @@ In this task, you will add exclusions to the data capturing in the APM Agent, fo
     </copy>
     ```
 
-    > ***NOTE***: E.g., kubectl cp  ~/ProbeConfig.acml sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/1.2.1725/ProbeConfig.acml
+    > ***NOTE***: E.g., kubectl cp  ~/ProbeConfig.acml sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/oracle-apm-agent/config/**1.2.1725**/ProbeConfig.acml
 
 ## Task 6: Deploy the Java Agent
 
@@ -239,7 +243,7 @@ Next you will deploy the Java Agent by modifying the domain.yaml file to point t
     ```
     ![Oracle Cloud console, Cloud Shell ](images/4-6-2-cloudshell.png " ")    
 
-5.	Wait for few minutes, then run the following command to check the status of the pods. Make sure they are in the Running state.
+5.	Wait for a few minutes, then run the following command to check the status of the pods. Make sure they are in the Running state and Ready.
 
     ```bash
     <copy>
@@ -257,5 +261,6 @@ You may now [proceed to the next lab](#next).
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
+Mahesh Sharma, Consulting Member of Technical Staff,<br>
 Avi Huber, Senior Director, Product Management
-* **Last Updated By/Date** - Yutaka Takatsu, December 2021
+* **Last Updated By/Date** - Yutaka Takatsu, January 2022

@@ -24,16 +24,12 @@ Estimated lab time: 15 minutes
 ## Task 1: Choose ADW from the Services Menu
 
 1. Log in to the Oracle Cloud.
-2. Each student has been granted their own compartment.  Which is a logical area that only they have the privleges to update.  Select your compartment by the student number you were assigned.
-
-    ![](./images/compartment.png " ")
-
-3. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
+2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
     ![](./images/picture100-36.png " ")
 
 
-4. Click **Autonomous Data Warehouse**.
+3. Click **Autonomous Data Warehouse**.
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 

@@ -162,7 +162,7 @@ In this lab, you will:
 
   Now that you have connected to the instance you can proceed to the next Task.
 
-4. From the established ssh connection, install MySQL Shell and MySQL client executing the following commands and the expected outputput should be as following:
+4. From the established ssh connection, install MySQL Shell executing the following command, and the expected output should be as following:
    
 	```
 	<copy>sudo yum install -y mysql-shell</copy>  

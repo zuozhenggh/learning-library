@@ -28,19 +28,13 @@ To connect to Oracle Database and run SQL commands, set the environment first.
 
 1. Log in to your host as *oracle*, the user who can perform database administration.
 
-2. Open a terminal window and change the current working directory to `$ORACLE_HOME/bin`. 
+1. Open a terminal window and run the command *oraenv* to set the environment variables.
 
 	```
-	$ <copy>cd /u01/app/oracle/product/21.0.0/dbhome_1/bin</copy>
+	$ <copy>. oraenv</copy>
 	```
 
-3. Run the command *oraenv* to set the environment variables.
-
-	```
-	$ <copy>./oraenv</copy>
-	```
-
-4. Enter the Oracle SID *orcl*.
+1. Enter the Oracle SID *orcl*.
 
 	```
 	ORACLE_SID = [oracle] ? <copy>orcl</copy>
@@ -48,6 +42,12 @@ To connect to Oracle Database and run SQL commands, set the environment first.
 	```
 
 	This command also sets the Oracle home path to `/u01/app/oracle/product/21.0.0/dbhome_1`.
+
+1. Change the current working directory to `$ORACLE_HOME/bin`. 
+
+	```
+	$ <copy>cd /u01/app/oracle/product/21.0.0/dbhome_1/bin</copy>
+	```
 
 You have set the environment variables for the active terminal session. You can now connect to Oracle Database and run the commands.
 
@@ -94,7 +94,7 @@ A dispatcher starts automatically on the TCP/IP protocol. Log in to Oracle Datab
 
 ## Task 3: Set the HTTPS Port for CDB
 
-The default port for CDB is **5500**. For this lab, change the port to, say, `5501`.
+The default port for CDB is `5500`. For this lab, change the port to, say, *5501*.
 
 1. 	Verify that the container shows the CDB name, *CDB$ROOT*.
 
@@ -141,7 +141,7 @@ You have modified the port number for CDB successfully.  
 
 ## Task 4: Set the HTTPS Port for PDB
 
-The default port for PDB is **0**. For this lab, change the port to, say, *5502*.
+The default port for PDB is `0`. For this lab, change the port to, say, *5502*.
 
 1. View the existing PDBs in your Oracle Database.
 
