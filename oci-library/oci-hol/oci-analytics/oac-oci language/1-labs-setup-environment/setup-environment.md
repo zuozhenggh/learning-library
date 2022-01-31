@@ -37,21 +37,21 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
 
 4.	The following policies should be set:
     * allow any-user to use ai-service-language-family in tenancy
-    * allow group <group-name> to manage dis-workspaces in compartment <compartment-name>
-    * allow group <group-name> to manage dis-work-requests in compartment <group-name>
-    * allow group <group-name> to use virtual-network-family in compartment <group-name>
-    * allow group <group-name> to manage tag-namespaces in compartment <group-name>
-    * allow service dataintegration to use virtual-network-family in compartment <group-name>
-    * allow group <group-name> to use object-family in compartment <group-name>
-    * allow group <group-name> to use functions-family in compartment <group-name>
+    * allow group **group-name** to manage dis-workspaces in compartment **compartment-name**
+    * allow group **group-name** to manage dis-work-requests in compartment **compartment-name**
+    * allow group **group-name** to use virtual-network-family in compartment **compartment-name**
+    * allow group **group-name** to manage tag-namespaces in compartment **compartment-name**
+    * allow service dataintegration to use virtual-network-family in compartment **compartment-name**
+    * allow group **group-name** to use object-family in compartment **compartment-name**
+    * allow group **group-name** to use functions-family in compartment **compartment-name**
 
-5.	Once you have created an API gateway (Section 3 in the lab) and functions (Section 5 in the lab), you will also need to set the following policies:
-    * allow any-user to use functions-family in compartment <functions-compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<api-gateway-compartment-OCID>'}
+5.	Once you have created an API gateway (**Task 3** in the lab) and Functions (**Lab 2**), you will also need to set the following policies:
+    * allow any-user to use functions-family in compartment **functions-compartment-name** where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '**api-gateway-compartment-OCID**'}
 
-6.	Once you have created a data integration workspace (Section 6 in the lab), you will also need to set the following policies:
-    * allow any-user to read buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.operation = 'GetBucket'}
-    * allow any-user to manage objects in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘}
-    * allow any-user to manage buckets in compartment <group-name> where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘<data-integration-workspace-ocid>‘, request.permission =   'PAR_MANAGE'}
+6.	Once you have created a Data Integration workspace (**Lab 4**), you will also need to set the following policies:
+    * allow any-user to read buckets in compartment **group-name** where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘**data-integration-workspace-ocid**‘, request.operation = 'GetBucket'}
+    * allow any-user to manage objects in compartment **group-name** where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘**data-integration-workspace-ocid**‘}
+    * allow any-user to manage buckets in compartment **group-name** where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘**data-integration-workspace-ocid**‘, request.permission =   'PAR_MANAGE'}
 
 
 ## Task 2: Create VCN with the right access levels
