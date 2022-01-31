@@ -37,7 +37,7 @@ This workshop section requires having access to an Oracle Cloud account.
 
 5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
 
-    ![Autonomous Databases console.](images/database-atp-2.png " ")
+    ![Autonomous Databases console.](images/database-atp-second-screenshot.png " ")
 
 
 ## Task 2: Creating the Oracle Autonomous Database instance

@@ -151,7 +151,7 @@ The Availability Domain must be the same as the rest of your resources. The Comp
 
 13. Upon creation, scroll down to the bottom of the logs and copy the __ogg\_image\_id__ __ogg\_instance_\_id__ and the __ogg\_public\_ip__. Save them for later use, you will require it during the migration
 
-![Screenshot of Oracle GoldenGate Image Creation Logs](./images/ogg-copy-Oracle Cloud Infrastructured.png " ")
+![Screenshot of Oracle GoldenGate Image Creation Logs](./images/ogg-copy-ocid.png " ")
 
 ## Task 2: Connecting to the GoldenGate Hub
 
@@ -182,7 +182,7 @@ The browser will show warnings that the page is insecure because it uses a self-
 
 5. Enter the username and password (labeled credential) from the out copied from the ogg-credentials.json file from above. Click __Sign In__
 
-6. Click on the top left "Hamburguer" menu
+6. Click on the top left "Navigation" menu
 
 ![Screenshot of Oracle GoldenGate Services Manager](./images/ogg-hamburger.png " ")
 
@@ -213,7 +213,7 @@ Upon review, click __Submit__
 
 12. Enter the username and password (labeled credential) from the out copied from the ogg-credentials.json file from step 3 above. Do not enter the newly updated password.
 
-13. Click on the top left "Hamburguer" menu
+13. Click on the top left navigation menu
 
 ![Screenshot of Oracle GoldenGate Administrator Server](./images/ogg-hamburger-source.png " ")
 
@@ -244,7 +244,7 @@ Upon review, click __Submit__
 
 19. Enter the username and password (labeled credential) from the out copied from the ogg-credentials.json file from step 3 above. Do not enter the newly updated password.
 
-20. Click on the top left "Hamburguer" menu
+20. Click on the top left navigation menu
 
 ![Screenshot of Oracle GoldenGate Administrator Server](./images/ogg-hamburger-target.png " ")
 
