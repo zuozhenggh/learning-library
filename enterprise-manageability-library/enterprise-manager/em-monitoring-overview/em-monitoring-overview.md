@@ -189,7 +189,7 @@ As Best Practice:
 
 6. By default, the "Metrics with thresholds" view is displayed. This view will show metrics with a Warning or Critical threshold defined.
 
-     ![Database target home page, metric and collection settings](images/emmonlab3step6.png " ")
+     ![Database Target Home Page, metric and collection settings](images/emmonlab3step6.png " ")
 
 7. There are other out-of-box views available to select from.
 
