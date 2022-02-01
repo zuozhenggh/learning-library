@@ -1,14 +1,27 @@
-# Question that is answered by the Sprint
-Example: How to install ORDS? 
+# The titke must be a question: How do I XYZ?
 
 ## Answer
 * Description of soution/answer
 * be short & precise
 * try to minimize use of images/screenshotds - less is more (sometimes)
-* try to avoid referencing external files
+* use other LiveLabs Sprints if need be
 
-## Assumptions
-**(optional) - include prerequisites, etc.
+You can provide an answer that comprises multiple steps.
+Sometime a specific step relates to its own LiveLabs Sprints.
+Use the manifest to provide a link to related LiveLabs Sprints.
+(see example)
+
+1. First you need to do this
+
+loreum ipsum larum
+
+2. Then you need to to this
+
+Mauris sit amet dolor
+
+3. Now you are able to perform this
+
+This is were the answer to the question is provided
 
 ## Learn More
 
