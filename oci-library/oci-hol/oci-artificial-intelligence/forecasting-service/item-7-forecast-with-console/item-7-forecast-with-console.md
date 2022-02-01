@@ -28,11 +28,48 @@ In this lab, you will:
 1. If the user tenancy is not subscribed to US West (Phoenix) then user should look for tenancy region drop down for US West (Phoenix) and select it as below :
   ![](images/lab5-subscribe-us-west-phnx.png " ")
 
+2. Now, you need to create a Dynamic group in your tenancy by following below steps:
 
-2. User needs to create a Dynamic group in its tenancy as
+    - Go to Identity & Security from Sidebar Menu of OCI console and select Dynamic Groups
+        ![](images/lab5-select-dynamic-group.png " ")
 
-Name: DynamicGroupRPSTAccess Rule: ANY {resource.type='aiforecastproject'}
-Steps:
+    - Now, click on Create Dynamic Group
+        ![](images/lab5-click-create-dynamic-group.png " ")
+
+    - Now, fill in the below details in the relevant fields as shown in image:
+        Name: DynamicGroupRPSTAccess 
+        Rule: ANY {resource.type='aiforecastproject'}
+        ![](images/lab5-create-and-save-dynamic-group.png " ")
+
+    - Now, you can verify that dynamic group DynamicGroupRPSTAccess is created:    
+        ![](images/lab5-dynamic-group-created.png " ")
+
+3. Now, you need to create a Policy in your tenancy by following below steps:
+
+    - Go to Identity & Security from Sidebar Menu of OCI console and select Policies
+        ![](images/lab5-navigate-to-policy.png " ")
+
+
+    - Now, click on Create policy
+        ![](images/lab5-click-on-create-policy.png " ")
+
+
+    - Now, fill in the below details in the relevant fields as shown in image:
+
+        Name: FC_POLICY
+
+        Policy statements:
+        ```
+        Allow dynamic-group DynamicGroupRPSTAccess to manage objects in tenancy
+        Allow dynamic-group DynamicGroupRPSTAccess to read buckets in tenancy
+        ```
+
+        ![](images/lab5-create-policy.png " ")
+
+
+    - Now, you can verify that FC_POLICY policy is created:    
+        ![](images/lab5-policy-created.png " ")
+
 
 ## Task 2: Understand Data Requirements
  Our forecasting service provides an AutoML solution with multiple univariate/multivariate algorithms that can run on single series or multiple series at once. For this, there are some data validations and data format requirements that the input data must satisfy.
@@ -154,35 +191,36 @@ Here is a sample dataset to help you to easily understand how the input data loo
 
 ## Task 4: Upload Data to Object Storage
 
-You need to upload the sample training data into Oracle object storage, to be used for Data Asset creation for model training in next steps.
+After downloading the dataset , you need to upload the sample training data into Oracle object storage, to be used for Data Asset creation for model training in next steps.
 
 1.  Create an Object Storage Bucket (This step is optional in case the bucket is already created)
 
     First, From the OCI Services menu, click Object Storage.
-    ![](../images/cloudstoragebucket.png " ")
+    ![](images/lab5-switch-to-cloudstoragebucket.png " ")
 
-    Then, Select Compartment from the left dropdown menu. Choose the compartment matching your name or company name.
-    ![](../images/createCompartment.png " ")
+    Then, select Compartment from the left dropdown menu and choose the compartment matching your name or company name. Next, click on Create bucket and fill out the dialog box:
 
-    Next click Create Bucket.
-    ![](../images/createbucketbutton.png " ")
-
-    Next, fill out the dialog box:
     * Bucket Name: Provide a name <br/>
     * Storage Tier: STANDARD
+    
+    Then click Create
+    ![](images/lab5-fill-bucket-details.png " ")
 
-Then click Create
-![](../images/pressbucketbutton.png " ")
 
 2.  Upload the Downloaded training csv data file into Storage Bucket
 
-    Switch to OCI window and click the Bucket Name.
+    Switch to OCI window and click the bucket name that you created just now.
+    ![](images/lab5-bucket-created.png " ")
+    
 
-    Bucket detail window should be visible. Click Upload
-    ![](../images/bucketdetail.png " ")
+    Bucket detail window should be visible. Scroll down 
+    ![](images/lab5-bucket-details-window.png " ")
 
-    Click on Upload and then browse to file which you desire to upload.
-    ![](../images/upload-sample-file.png " ")
+
+    Click on Upload and then browse to file which you desire to upload
+    ![](images/lab5-upload-files-bucket.png " ")
+
+
 
     More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
@@ -190,17 +228,18 @@ Then click Create
 
 Project is a way to organize multiple data assets, models, deployments to the same workspace. It is the first step to start.
 
-1.  Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and   click it, and then select Forecasting item under AI services.
+1.  Log into OCI Cloud Console. Using the Burger Menu on the top left corner, navigate to Analytics and AI menu and  click it, and then select Forecasting item under AI services
 
-    Note: Users can select any compartment where they want the Forecast service project to reside.
+    ![](images/lab5-project-select-forecast-service.png " ")
 
-    ![](images/lab5-navigate-to-fc-menu.png " ")
+2.  Clicking the Forecasting Option will navigate one to the Forecast Console.
+    
+    Under Projects, select compartment and click Create Project
 
-2.  Clicking the Forecasting Option will navigate one to the Forecast Console. Once here, select Create Project.
-    ![](images/lab5-create-project.png " ")
+    ![](images/lab5-project-details.png " ")
 
-3.  The Create Project button navigates User to a form where they can specify the compartment in which to create an Anomaly Detection Project. The project we create here is named fc_demo.
-    ![](images/lab5-project-created.png " ")
+3.  The Create Project button navigates User to a form where they can specify the compartment in which to create a Forecast Project. The project we create here is named demo_forecast.
+    ![](images/lab5-create-new-project.png " ")
 
 4. Once the details are entered click the Create Button. If the project is successfully created it will show up in    projects pane. From here onwards, select ad_demo.
     ![](images/lab5-project-pane.png " ")
