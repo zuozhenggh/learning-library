@@ -20,7 +20,7 @@ This Lab assumes you have a VNC Server installed on your Compute Instance and a 
 3. You should now be logged in to your Compute Instance
 ![./images/tigervnc_screen.png]()
 
-4. Open the Firefox browser from *Applications* -> *Internet* -> *Firefox*
+4. Open the Firefox browser from *Applications*, *Internet*, *Firefox*
 ![./images/Gnome_internet_firefox.png]()
 
 Navigate to the SQL Developer Download site:
@@ -43,7 +43,7 @@ https://www.oracle.com/tools/downloads/sqldev-downloads.html
 
 ![./images/SQLDev_RPM.png]()
 
-8. Open a terminal window *Applications* -> *System Tools* -> *Terminal*
+8. Open a terminal window *Applications*, *System Tools*, *Terminal*
 
 ![./images/vnc_terminal.png]()
 
