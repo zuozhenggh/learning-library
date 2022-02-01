@@ -1,13 +1,15 @@
 # Shutting Down a Notebook Session
+
 ## Introduction
 
 When a notebook session is in an active state there is a boot volume, block storage, and compute attached to it. When the notebook is not being used it is possible to detach the computing resource and thus reduce costs. There are two methods for shutting down a notebook session. If a notebook session is deactivated, then the underlying computing resource is shut down and the boot volume and block storage are detached. However, the block storage, which is mounted at ``/home/datascience``, is persisted for later use. The boot volume is *not* persisted. Deactivated notebooks can be activated again and the block volume is automatically reattached. During activation, you can change the compute shape, increase the size of the block volume, change the VCN, and the subnet.
 
 If the notebook session and its block storage are no longer needed, then the notebook session can be terminated. Terminating a notebook session releases the underlying compute, boot volume and block storage. Since the boot volume and block storage are not persisted, any data on these volumes will be lost. It is not possible to reactivate a terminated notebook session.
 
-*Estimated Lab Time*: 10 minutes
+*Estimated Time*: 10 minutes
 
 ### Objectives
+
 In this lab, you:
 * Learn the different methods of shutting down a notebook session.
 * Understand the differences between deactivating and terminating a notebook session.
@@ -25,7 +27,7 @@ Before deactivating a notebook session, save all your work to the attached block
 1. Open the navigation menu.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**
-	
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
 
 1. Select the compartment for the project.
@@ -63,11 +65,8 @@ To keep the file changes in a notebook session’s boot volume and attached bloc
 
     ![](./../speed-up-ds-with-the-ads-sdk/images/terminate2.png)
 
-**Congratulations, you have successfully completed the workshop!**
-
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
     * [Jean-Rene Gauthier](https://www.linkedin.com/in/jr-gauthier/), Sr. Principal Product Data Scientist, January 2021
-
