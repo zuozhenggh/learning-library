@@ -1,4 +1,4 @@
-# The titke must be a question: How do I XYZ?
+# The title must be a question: How do I XYZ?
 
 ## Answer
 * Description of soution/answer
