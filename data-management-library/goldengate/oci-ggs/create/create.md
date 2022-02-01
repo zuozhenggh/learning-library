@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create an Oracle Cloud Infrastructure GoldenGate deployment.
+This lab walks you through the steps to create an Oracle Cloud Infrastructure (OCI) GoldenGate deployment.
 
 Estimated time: 5 minutes
 
