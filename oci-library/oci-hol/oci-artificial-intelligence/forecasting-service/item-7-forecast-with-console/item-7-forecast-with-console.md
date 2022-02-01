@@ -70,6 +70,16 @@ In this lab, you will:
     - Now, you can verify that FC_POLICY policy is created:    
         ![](images/lab5-policy-created.png " ")
 
+    - Post this step , you are ready to use Object Storage for OCI Forecasting service 
+    
+4.  In addition to above, ***tenancy admin** should allow group to manage forecasting service
+    Admin can do so by modifying the existing policy for the user group or new policy for user group
+    ```
+    Allow group <group-name> to manage ai-service-forecasting-family in <tenancy>
+    Allow group <group-name> to manage ai-service-forecasting-family in <compartment>
+    ```
+    ``` <group-name> ``` is the name of the group to which user is added   
+ 
 
 ## Task 2: Understand Data Requirements
  Our forecasting service provides an AutoML solution with multiple univariate/multivariate algorithms that can run on single series or multiple series at once. For this, there are some data validations and data format requirements that the input data must satisfy.
@@ -195,30 +205,32 @@ After downloading the dataset , you need to upload the sample training data into
 
 1.  Create an Object Storage Bucket (This step is optional in case the bucket is already created)
 
-    First, From the OCI Services menu, click Object Storage.
+    - First, From the OCI Services menu, click Object Storage
+
     ![](images/lab5-switch-to-cloudstoragebucket.png " ")
 
-    Then, select Compartment from the left dropdown menu and choose the compartment matching your name or company name. Next, click on Create bucket and fill out the dialog box:
+    - Then, select Compartment from the left dropdown menu and choose the compartment
+       Next, click on Create bucket 
 
-    * Bucket Name: Provide a name <br/>
-    * Storage Tier: STANDARD
-    
-    Then click Create
+    ![](images/lab5-compartment-create-bucket.png " ")
+
+    - Now,fill out the dialog box , fill Bucket Name & Storage Tier : STANDARD
     ![](images/lab5-fill-bucket-details.png " ")
 
 
 2.  Upload the Downloaded training csv data file into Storage Bucket
 
-    Switch to OCI window and click the bucket name that you created just now.
-    ![](images/lab5-bucket-created.png " ")
+    - Switch to OCI window and click the bucket name that you created just now.
+    ![](images/lab5-check-bucket-created.png " ")
     
 
-    Bucket detail window should be visible. Scroll down 
+    - Bucket detail window should be visible. Scroll down 
     ![](images/lab5-bucket-details-window.png " ")
 
 
-    Click on Upload and then browse to file which you desire to upload
-    ![](images/lab5-upload-files-bucket.png " ")
+    - Click on Upload and then browse to file which you desire to upload
+    ![](images/lab5-bucket-upload-files.png " ")
+
 
 
 
@@ -238,11 +250,11 @@ Project is a way to organize multiple data assets, models, deployments to the sa
 
     ![](images/lab5-project-details.png " ")
 
-3.  The Create Project button navigates User to a form where they can specify the compartment in which to create a Forecast Project. The project we create here is named demo_forecast.
+3.  The Create Project button navigates user to a form where they can specify the compartment in which to create a Forecast Project. The project we create here is named livelabs_forecast_demo.Once the details are entered click the Create Button.
     ![](images/lab5-create-new-project.png " ")
 
-4. Once the details are entered click the Create Button. If the project is successfully created it will show up in    projects pane. From here onwards, select ad_demo.
-    ![](images/lab5-project-pane.png " ")
+4.  If the project is successfully created it will show up in projects pane. From here onwards, select livelabs_forecast_demo.
+    ![](images/lab5-project-created.png " ")
 
 ## Task 6: Create Data Asset 
 
@@ -263,10 +275,10 @@ After a few seconds, the data asset will be shown in the data asset main panel.
 2.  Use the Train Model button to create a new data asset (Optional)
 
 The Create and Train Model will take user to a form with the option to either choose an existing dataset or create a new dataset. Select `Create a new data asset` radio button.
-![](../images/6_specify_ocs.png " ")
+![](images/6_specify_ocs.png " ")
 
 Create a new dataset navigates the User to a form, where they can specify the compartment of Object storage that houses the data. Click Create Button.
-![](../images/7_create_data_asset_form.png " ")
+![](images/7_create_data_asset_form.png " ")
 
 
 ## Task 7: Train a Forecast Model and Create Forecasts
