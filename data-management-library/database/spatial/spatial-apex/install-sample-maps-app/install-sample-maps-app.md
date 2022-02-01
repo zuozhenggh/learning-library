@@ -143,7 +143,7 @@ This will take you to the Install Application wizard.
       You now have installed and explored the Sample Maps application and data. Next you move on to begin creating your own application and maps.
 
 
-You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Learn More
 * 

@@ -88,7 +88,7 @@ Estimated Lab Time: 15 minutes
 Congratulations on creating your first map from scratch. In the next Lab you will incorporate spatial analysis into this map.
 
 
-You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Learn More
 * 
