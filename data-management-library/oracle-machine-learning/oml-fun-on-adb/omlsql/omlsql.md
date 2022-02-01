@@ -244,8 +244,8 @@ For a time series model, you use the `DM$VP` view to retrieve the forecasts for 
 	- `round(PREDICTION,2) FORECAST_SOLD`: Specifies the predicted value as `FORECAST_SOLD` rounded to two decimal places.
 	- `round(LOWER,2) LOWER_BOUND, round(UPPER,2) UPPER_BOUND`: Specifies the lower and upper confidence levels rounded to two decimal places.
 
-2. To see a visual representation of the predictions in OML Notebooks, run the same query above with the following settings:
-Click **settings** and drag `DATE_ID` to **keys** and `FORECASTED_SOLD (avg)`, `ACTUAL_SOLD (avge)`, `LOWER_BOUND (avg)`, and `UPPER_BOUND(avg)` to **values**.
+2. To see a visual representation of the predictions in OML Notebooks, run the same query above without ```DESC``` in the ORDER BY clause. Click the Line Chart graph and apply the following settings:
+Click **settings** and drag `DATE_ID` to **keys** and `FORECASTED_SOLD`, `ACTUAL_SOLD`, `LOWER_BOUND`, and `UPPER_BOUND` to **values**. By default, the columns in the **values** field show `(sum)`. For example, `ACTUAL_SOLD (sum)`. Click the column name and change it to `(avg)`. Change all the column names in the **values** field to show `(avg)`.
 
     ```
     <copy>
@@ -258,8 +258,9 @@ Click **settings** and drag `DATE_ID` to **keys** and `FORECASTED_SOLD (avg)`, `
     </copy>
     ```
 
+  ![Displays the Line Graph settings](images/timeseries-graph-settings.png)
 
-	![A visual representation of the forecast](images/timeseries-forecast-graph.png)
+  ![A visual representation of the forecast](images/timeseries-forecast-graph.png)
 
 
 
