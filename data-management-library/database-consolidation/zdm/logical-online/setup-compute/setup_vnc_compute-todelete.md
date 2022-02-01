@@ -77,7 +77,7 @@ Complete!
 ````
 vncserver
 ````
-You will be required to provide a *password* that you will need to remember to be able to access this server via VNC. There is no need to enter a *view-only password*.
+You will be required to provide a *password* that you will need to remember to be able to access this server by using VNC. There is no need to enter a *view-only password*.
 
 You will see output similar to:
 ````
