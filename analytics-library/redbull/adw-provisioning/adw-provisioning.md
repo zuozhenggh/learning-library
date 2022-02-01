@@ -54,8 +54,8 @@ To complete this lab, you need to have the following:
 
    ![ADW Form 3](images/adw_form_3.png)
 
-      - Password: `Oracle_12345`
-      - Confirm password: `Oracle_12345`
+      - Password: Create a secure password
+      - Confirm password: Confirm the secure password
       - Access Type: `Secure access from everywhere`
       - Choose a license type: `License Included`
 
