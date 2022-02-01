@@ -94,6 +94,6 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 - [oracle.com/enterprisemanager](https://www.oracle.com/enterprise-manager/)
 
 ## Acknowledgements
-- **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Contributors** - Dave Le Roy, Björn Bolltoft - Enterprise Manager Product Management
-- **Last Updated By/Date** - Alfredo Krieg - Master Principal Solutions Architect, NA Technology, January 2022
+- **Author** - Alfredo Krieg - Master Principal Solutions Architect, NA Technology
+- **Contributors** - 
+- **Last Updated By/Date** - 
