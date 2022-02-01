@@ -5,7 +5,7 @@
 
 In this lab you enhance your map from the previous lab by incorporating a spatial analysis. You will configure a search for airports located within a user-defined distance of a selected state.
 
-Estimated Lab Time: xx minutes
+Estimated Lab Time: 25 minutes
 
 ### Objectives
 
@@ -14,12 +14,12 @@ Estimated Lab Time: xx minutes
 
 ### Prerequisites
 
-* Lab 3: Create map fram scratch
+* Lab 3: Create map from scratch
 
 
 ## Task 1: Add a Region for filters 
 
-1. In the Page properties panel on the right, under Appearance change the Page Template to **Left Side Column**. 
+1. Click on the **Page 3: Airports and States Map** at the top of the tree on the left. Then in the Page properties panel on the right, under Appearance change the Page Template to **Left Side Column**. 
 ![Image alt text](images/add-spatial-analysis-01a.png)
    You should then see **LEFT COLUMN** in the layout. 
    ![Image alt text](images/add-spatial-analysis-01b.png)
@@ -35,7 +35,7 @@ Estimated Lab Time: xx minutes
 3. Drag a Select List item your filters region and update the name to **P3_STATE**.
 ![Image alt text](images/add-spatial-analysis-03.png) 
 
-4. In the Page Item properties on the right, scroll down to the section for List of Values. Set the Type as SQL Query and enter the following query:
+4. In the Page Item properties on the right, scroll down to the section for List of Values. Enable **Value Required** using the switch, set the Type as **SQL Query** and enter the following query:
       ```
       <copy>
       select name, state_code
@@ -74,7 +74,7 @@ You next create the actions that are invoked when state and/or distance values a
 
 11.   Dynamic Actions are configured with TRUE action(s) and FALSE action(s) which are invoked based on conditions that have been configured. In this case the client-side condition (P3\_DISTANCE >= 0) determines whether to invoke the TRUE Action (condition is met) or the FALSE Action (condition is not met). This will allow us to trap negative distance entry. 
 
-    When the client-side condition is TRUE, the action should sumbit the input values and refresh the page. Click on the action under True. In the Action properties on the right, under Identification set Action to **Refresh**.  Under Affected Elements, set Selection Type to **Region** and Region to **My Map Region** (or the name you used if different.) Observe in the page tree on the left that the True action changes to Refresh.
+    When the client-side condition is TRUE, the action should submit the input values and refresh the page. Click on the action under True. In the Action properties on the right, under Identification set Action to **Refresh**.  Under Affected Elements, set Selection Type to **Region** and Region to **My Map Region** (or the name you used if different.) Observe in the page tree on the left that the True action changes to Refresh.
 ![Image alt text](images/add-spatial-analysis-11.png)    
 
 12.   Next you will configure the action to invoke when the client-side condition is not met, meaning a negative distance value was entered. Under Dynamic Actions for either item, right-click on False and select **Create FALSE Action**.
@@ -83,7 +83,7 @@ You next create the actions that are invoked when state and/or distance values a
 13.  The FALSE Action invoked when distance is negative will be an popup message to the user. Click on the False action. In the Action properties on teh right, under Identification, set Action to **Alert**. Under Settings set the Title to **Invalid distance** (this will be the alert banner) and Message to **Distance must be >= 0** (this will be the alert body). Observe in the page tree on the left that the False action changes to Alert.
 ![Image alt text](images/add-spatial-analysis-13.png) 
 
-1.  Your Map Region currently includes a States layer displaying all states. You now adjust this layer to only display the state selected from the P3\_STATE menu. In the page tree on the left, under Layers click on States. In the Layer properties on the right, under Identification change Name to **Selected State**. Under Source set the Where Clause to **state\_code = :P3\_STATE**. Observe in the page tree on the left that the laye name changes to Selected State.
+1.  Your Map Region currently includes a States layer displaying all states. You now adjust this layer to only display the state selected from the P3\_STATE menu. In the page tree on the left, under Layers click on States. In the Layer properties on the right, under Identification change Name to **Selected State**. Under Source set the Where Clause to **state\_code = :P3\_STATE**. Observe in the page tree on the left that the layer name changes to Selected State.
        ```
       <copy>
        state_code = :P3_STATE
@@ -120,7 +120,7 @@ You next create the actions that are invoked when state and/or distance values a
 
  Finally confirm that submitting a negative distance results in the Error popup we configured earlier.
 
- As shown in the Sample Maps application that you installed at the beginning of this workshop, there is a tremendous amout of additional functionalty that can be achieved with Map Regions and Spatial. This workshop has introduced the basics and it is our hope that your interest has been picqued and that you will leverage the power of maps and spatial analyses in your APEX applications.
+ As shown in the Sample Maps application that you installed at the beginning of this workshop, there is a tremendous amount of additional functionally that can be achieved with Map Regions and Spatial. This workshop has introduced the basics and it is our hope that your interest has been piqued and that you will leverage the power of maps and spatial analyses in your APEX applications.
 
 
 ## Learn More

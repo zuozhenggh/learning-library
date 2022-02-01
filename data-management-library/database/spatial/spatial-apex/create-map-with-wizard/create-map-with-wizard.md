@@ -5,7 +5,7 @@
 
 Oracle APEX provides a wizard to create a variety of useful page types. In this lab you will use the wizard to create a new application and a page with a map. You then inspect the resulting page to gain an understanding of the Map Region.
 
-Estimated Lab Time: xx minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -33,7 +33,7 @@ The wizard provides a quick and easy way to create a new application and your fi
 ![Image alt text](images/create-map-04.png)
 **Note**: This is the same wizard as using  Create Page in an existing application.
 
-5. Enter the Page Name **Airports Map**. (With this wizard, the Page Name will also be used as the name of the Map Region created in the page.)  Click the icon to the right of the table input to select the **EBA\_SAMPLE\_AIRPORTS** table. For geometry column, select **GEOMETRY**, and finally select a column to use a tooltip when mousing over an item in the map.
+5. Enter the Page Name **Airports Map**. (With this wizard, the Page Name will also be used as the name of the Map Region created in the page.)  Click the icon to the right of the table input to select the **EBA\_SAMPLE\_MAP\_AIRPORTS** table. For geometry column, select **GEOMETRY**, and finally select a column to use a tooltip when mousing over an item in the map.
 ![Image alt text](images/create-map-05.png)
 
 6. Observe your new page is now listed under **Pages**. Click **Create Application**.
@@ -45,7 +45,7 @@ The wizard provides a quick and easy way to create a new application and your fi
 8. Sign in to your application using your APEX login username and password.
 ![Image alt text](images/create-map-08.png)
  
-9. The default layout we selected for our appliciation provides a home page with links to other pages. From the home page, navigate to the page you just created.
+9. The default layout we selected for our application provides a home page with links to other pages. From the home page, navigate to the page you just created.
 ![Image alt text](images/create-map-09.png)
 
 10. Observe the page includes an interactive map showing airport locations with tooltips as you configured.

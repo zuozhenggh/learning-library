@@ -3,9 +3,9 @@
 
 ## Introduction
 
-Oracle APEX provides access to a portfolio of sample applications that highlight specific areas of functionality. Among these is the Sample Maps application which showcases the mapping capabilities in Oracle APEX. A wide variety of examples are provided to serve as functional examples and starting points for further custumization. In this lab you will install and configure the Sample Maps appication. 
+Oracle APEX provides access to a portfolio of sample applications that highlight specific areas of functionality. Among these is the Sample Maps application which showcases the mapping capabilities in Oracle APEX. A wide variety of examples are provided to serve as functional examples and starting points for further customization. In this lab you will install and configure the Sample Maps application. 
 
-Estimated Lab Time: xx minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -85,14 +85,11 @@ This will take you to the Install Application wizard.
 2. In this page, clicking on an item in the report on the right centers on the item in the map and openns an info window. Clicking on the icon at the top left corner opens a navigation panel to access other pages in the application. 
    ![Image alt text](images/install-sample-maps-17.png)
 
-3. In this page, clicking on an item in the report on the right centers on the item in the map and opens an info window. Clicking on the icon at the top left corner opens a navigation panel. 
-   ![Image alt text](images/install-sample-maps-17.png)
-
-4. Click items in the navigation panel to access other pages in the application. 
+3. Click items in the navigation panel to access other pages in the application. 
    ![Image alt text](images/install-sample-maps-18.png)
 
 
-5. To close the navigation panel click the icon at the top left. You can also navigate to the application home page by clicking on **Sample Maps** on the top left.
+4. To close the navigation panel click the icon at the top left. You can also navigate to the application home page by clicking on **Sample Maps** on the top left.
    ![Image alt text](images/install-sample-maps-19.png)
 
 
@@ -108,7 +105,7 @@ This will take you to the Install Application wizard.
    
        ![Image alt text](images/install-sample-maps-22.png)
 
-       Then scroll to the right to see the geometry column. Since airports are stored as points, APEX displays a string representation of the point geometry value. Points are always based on a single coordinate so it makes seense for APEX to display the value in this way. 
+       Then scroll to the right to see the geometry column. Since airports are stored as points, APEX displays a string representation of the point geometry value. Points are always based on a single coordinate so it makes sense for APEX to display the value in this way. 
        ![Image alt text](images/install-sample-maps-23.png)
 
 4. Click on **EBA\_SAMPLE\_MAP\_SIMPLE_STATES**. Again, observe that the columns includes a column named GEOMETRY that has the type SDO\_GEOMETRY (Oracle's native spatial data type).
@@ -117,13 +114,13 @@ This will take you to the Install Application wizard.
 5. Click on the **Data** tab to view the table contents. Since this table stores states, the geometries are polygons. APEX does not display a string representation of these values since they may include be extremely long sets of coordinates.
    ![Image alt text](images/install-sample-maps-25.png)
 
-6. Observe the tables with names like **MDRT_....$**. These are automatically created and managed behind the scenes by the database to support spatial indexes on other tables. You never manually create, update, or delete these tables. They are soley to support spatial analysis operations and can be ignored.
+6. Observe the tables with names like **MDRT_....$**. These are automatically created and managed behind the scenes by the database to support spatial indexes on other tables. You never manually create, update, or delete these tables. They are solely to support spatial analysis operations and can be ignored.
    ![Image alt text](images/install-sample-maps-26.png)
 
 6. Finally, you can run a basic spatial query with this data.  Click on **SQL Workshop** and then  **SQL Commands**.
   ![Image alt text](images/install-sample-maps-27.png)
 
-7. The following query returns the number of airports with land coverge over 1000 acres that are within 100km of Texas. Notive the use of the native spatial operator **sdo\_within\_distance**.  Copy and paste the query into the SQL Commands window and then click **Run** at the top right.
+7. The following query returns the number of airports with land coverage over 1000 acres that are within 100km of Texas. Notice the use of the native spatial operator **sdo\_within\_distance**.  Copy and paste the query into the SQL Commands window and then click **Run** at the top right.
 
       ```
       <copy>
@@ -141,9 +138,9 @@ This will take you to the Install Application wizard.
  8. In the sdo\_within\_distance operator, update the distance to 300km and re-run. Observe the result changes based on the larger search area.
      ![Image alt text](images/install-sample-maps-29.png)    
 
-      In a later lab you will configure a map that dislpays the results of this query where the state and distance are controlled by the menus in the page.
+      In a later lab you will configure a map that displays the results of this query where the state and distance are controlled by the menus in the page.
 
-      You now have installed and explored the Sample Maps application and data. Next you move on to begin creating your own applcation and maps.
+      You now have installed and explored the Sample Maps application and data. Next you move on to begin creating your own application and maps.
 
 
 You may now [proceed to the next lab](#next).

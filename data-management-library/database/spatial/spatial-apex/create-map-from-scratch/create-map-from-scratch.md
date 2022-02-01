@@ -3,9 +3,9 @@
 
 ## Introduction
 
-In this lab you create a new page in your applcation and then configure a Map Region from scratch.  
+In this lab you create a new page in your application and then configure a Map Region from scratch.  
 
-Estimated Lab Time: XX minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 
@@ -17,7 +17,7 @@ Estimated Lab Time: XX minutes
 
 ## Task 1: Create a new page
 
-1. In the breadcrumbs at the top left, click on the link for your application home.
+1. In the breadcrumbs at the top left, click on the link for your application home. Then click on the **Layout** tab.
 ![Image alt text](images/create-map-15a.png)
 
 2. Click on **Create Page**.
@@ -44,7 +44,7 @@ Estimated Lab Time: XX minutes
 2. In the panel on the right, update the Region Title from New to a name of your choosing, for example **My Map Region**. Observe the title is updated in the page tree on the left.
     ![Image alt text](images/create-map-20.png)
 
-3. Observe that the Map Region includes a child element called Layers with a default Layer called New. Layers are the data driven content to be rendered on the map. Click on the Layer **New** in the page tree to see it's properties in the right panel.
+3. Observe that the Map Region includes a child element called Layers with a default Layer called New. Layers are the data driven content to be rendered on the map. Click on the Layer **New** in the page tree to see its properties in the right panel.
     ![Image alt text](images/create-map-21.png)
 
 4. Update the Layer Name to **Airports** and the Type to **Points**. Observe the Layer Name update in the page tree on on the left.
