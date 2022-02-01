@@ -103,9 +103,9 @@ This workshop section requires having completed all previous workshop sections.
     ![Screenshot of ZDM's Oracle License Agreement](./images/accept-terms.png)
 
 
-4. Go back to your Cloud Shell environment and click on the Hamburguer menu on the top left of Cloud Shell and click on the __Upload__ option, an upload window will appear
+4. Go back to your Cloud Shell environment and click on the navigation menu on the top left of Cloud Shell and click on the __Upload__ option, an upload window will appear
 
-    ![Screenshot of Cloud Shell Hamburguer Menu - Upload Option](./images/hamburguer-upload.png)
+    ![Screenshot of Cloud Shell navigation Menu - Upload Option](./images/navigation-menu-upload.png)
 
     ![Screenshot of Cloud Shell Upload Window](./images/upload-pane.png)
 
@@ -150,7 +150,7 @@ This workshop section requires having completed all previous workshop sections.
     ```
 
 
-10. Cd to the /tmp folder, copy the zdm binaries to the zdmdownload file and, unzip the files and cd to the unziped directory: 
+10. Cd to the /tmp folder, copy the zdm binaries to the zdmdownload file and, unzip the files and cd to the unziped directory. Bear in mind that at the time of creation of this workshop ZDM's current version was 21.2, if a newer version is available, please change the commands from 21.2 to the current version so that the unzip proceeds correctly: 
 
      ```
     <copy>

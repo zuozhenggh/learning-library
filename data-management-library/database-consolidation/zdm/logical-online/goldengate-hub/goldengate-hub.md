@@ -184,7 +184,7 @@ The browser will show warnings that the page is insecure because it uses a self-
 
 6. Click on the top left "Navigation" menu
 
-![Screenshot of Oracle GoldenGate Services Manager](./images/ogg-hamburger.png " ")
+![Screenshot of Oracle GoldenGate Services Manager](./images/ogg-validation-menu.png " ")
 
 7. Click on __Administrator__
 
@@ -215,7 +215,7 @@ Upon review, click __Submit__
 
 13. Click on the top left navigation menu
 
-![Screenshot of Oracle GoldenGate Administrator Server](./images/ogg-hamburger-source.png " ")
+![Screenshot of Oracle GoldenGate Administrator Server](./images/ogg-validation-menu-source.png " ")
 
 14. Click on __Administrator__
 
@@ -246,7 +246,7 @@ Upon review, click __Submit__
 
 20. Click on the top left navigation menu
 
-![Screenshot of Oracle GoldenGate Administrator Server](./images/ogg-hamburger-target.png " ")
+![Screenshot of Oracle GoldenGate Administrator Server](./images/ogg-validation-menu-target.png " ")
 
 21. Click on __Administrator__
 
