@@ -4,7 +4,7 @@
 
 In this workshop you will explore mapping in Oracle APEX using the Map Region feature and Oracle Spatial. You will install and explore a pre-built sample application with many useful mapping examples. You will then create your own application with and configure maps both using a wizard and from scratch.
 
-The Map Region is a native APEX feature introduced in APEX 21.2 providing the ability to configure interactive maps displaying spatial data from Oracle Spatial, GeoJSON, and coordinates. This workshop focuses on using Oracle Spatial as the spatial data source, so that both raw spatial data and spatial analysis results be easily incorporated.
+The Map Region is a native APEX feature introduced in APEX 21.1 providing the ability to configure interactive maps displaying spatial data from Oracle Spatial, GeoJSON, and coordinates. This workshop focuses on using Oracle Spatial as the spatial data source, so that both raw spatial data and spatial analysis results be easily incorporated.
 
 ![](./images/intro-01.png " ")
 
@@ -28,9 +28,9 @@ Oracle Spatial is a set of geospatial data management, analysis, and processing 
 
 ### Prerequisites
 
-  - Oracle APEX 21.2+. 
-  - Basic experience with Oracle APEX is helpful, though not required. If needed, review the following introductory LiveLabs APEX workshop: [Creating an App based on Existing Tables for Oracle Autonomous Cloud Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=628). 
-  - Basic experience with Oracle Spatial is helpful, though not required. If needed review the following introductory LiveLabs Spatial workshop: [Introduction to Oracle Spatial]( https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=736)
+  - Oracle APEX 21.1+. 
+  - Basic experience with Oracle APEX is recommended, though not required. If needed, review the following introductory LiveLabs APEX workshop: [Creating an App based on Existing Tables for Oracle Autonomous Cloud Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=628). 
+  - Basic experience with Oracle Spatial is recommended, though not required. If needed review the following introductory LiveLabs Spatial workshop: [Introduction to Oracle Spatial]( https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=736)
 
 
 

@@ -14,7 +14,7 @@ Estimated Lab Time: xx minutes
 
 ### Prerequisites
 
-* APEX 21.2+
+* APEX 21.1+
 
 
 ## Task 1: Install the application
