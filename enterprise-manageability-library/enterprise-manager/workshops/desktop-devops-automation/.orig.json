@@ -1,11 +1,11 @@
 {
-  "workshoptitle": "Deploy and Manage Oracle Databases with Ansible and Enterprise Manager",
+  "workshoptitle": "Oracle Enterprise Manager - Enterprise Monitoring Quick Tour",
   "help": "livelabs-help-mgmt_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "Introduction to Deploy and Manage Oracle Databases with Ansible and Enterprise Manager Workshop",
-      "filename": "./../../intro/intro-devops-workshop.md"
+      "description": "Introduction to Enterprise Monitoring workshop",
+      "filename": "./../../intro/intro-monitoring-overview.md"
     },
     {
       "title": "Get Started with noVNC Remote Desktop",
@@ -19,10 +19,10 @@
       "filename": "./../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 2: Deploy and Manage Oracle Databases with Ansible and Enterprise Manager: Workshop",
-      "description": "The objective is to become familiar with the extensibility capabilities of Oracle Enterprise Manager and how to integrate them with 3rd party automation/orchestration DevOps tools",
-      "publisheddate": "1/16/2022",
-      "filename": "./../../em-devops-automation/em-devops-automation.md"
+      "title": "Lab 2: Enterprise Monitoring Quick Tour",
+      "description": "The objective of this lab is to become familiar with Enterprise Monitoring capabilities using Oracle Enterprise Manager Cloud Control 13c.",
+      "publisheddate": "9/16/2021",
+      "filename": "./../../em-monitoring-overview/em-monitoring-overview.md"
     },
     {
       "title": "Appendix: Frequently Asked Questions (FAQ)",
