@@ -1,4 +1,4 @@
-# Oracle Integration B2B - Inbound Processing
+# A B2B Inbound Scenario
 
 ## Introduction
 
