@@ -1,4 +1,5 @@
 # How can I download my ADB Wallet using command line?
+Duration: 30 seconds
 
 ## Use OCI CL tool
 
@@ -10,9 +11,6 @@ oci db autonomous-database generate-wallet --autonomous-database-id <OCID of you
 </copy>
 ```
 
-## Assumptions
-* OCI CL locally installed 
-* or access to OCI CL via OCI Cloud Shell
 
 ## Learn More
 

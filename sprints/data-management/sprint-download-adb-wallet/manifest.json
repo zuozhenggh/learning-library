@@ -1,17 +1,22 @@
 {
     "workshoptitle": "LiveLabs Sprints",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "How can I download my ADB Wallet using command line?",
             "description": "",
             "filename": "sprint-download-adb-wallet.md"
         },
-      
         {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+            "title": "How to install OCI CL?",
+            "description": "",
+            "filename": "../../oci/sprint-install-ocicl/sprint-install-ocicl.md"
+        },
+        {
+            "title": "How to add autocomplete for OCI CL?",
+            "description": "",
+            "filename": "../../oci/sprint-autocomplete-for-ocicl/sprint-autocomplete-for-ocicl.md"
         }
+
     ]
 }

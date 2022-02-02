@@ -1,4 +1,5 @@
 # The title must be a question: How do I XYZ?
+Duration: 1 minute to 10 minute
 
 ## Answer
 * Description of soution/answer
