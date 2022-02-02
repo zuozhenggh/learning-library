@@ -51,7 +51,7 @@ In this lab you will perform the following steps:
 
 To save time, the following steps were already completed.
 
-1. An Oracle Home was created and pre-patched with an Oracle Database 18.10 release that will be used to create the gold image *[/u01/app/oracle/product/18/db\_home\_src, Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192]*
+1. An Oracle home was created and pre-patched with an Oracle Database 18.10 release that will be used to create the gold image *[/u01/app/oracle/product/18/db\_home\_src, Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192]*
 
 To ensure smooth execution of the use cases, we have pre-hosted the scripts to be used later at */home/oracle/fleet*
 
@@ -116,7 +116,7 @@ Software Standardization Advisor enables administrators to understand various da
 
     ![](images/06ff90fdba8aa5abebd066086e33f700.jpg " ")
 
-    The recommendation is based on a union of bugs included in the patches in all Oracle Homes and based on the configuration type.
+    The recommendation is based on a union of bugs included in the patches in all Oracle homes and based on the configuration type.
 
   <!-- This completes Step 1. In this section, you learned how to perform the following:
 
@@ -186,7 +186,7 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
     ```
     ![](images/1791b5df10396b908e81340d2c6abed4.png " ")
 
-4. Click on ***Enterprise >> Provisioning and Patching >> Procedure Activity*** to review Execution details of this operation via Enterprise Manager Console
+4. From the Enterprise Manager menu bar, navigate to the ***Enterprise*** drop-down menu and then ***Provisioning and Patching >> Procedure Activity*** to review Execution details of this operation via Enterprise Manager Console
 
     ![](images/e9091a9e1e04a1a988cb61d9171a483d.png " ")
 
@@ -218,7 +218,7 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
 
     ![](images/a9b1233fb416f91b34518744dc0d7e9a.png " ")
 
-    When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked as CURRENT is used to deploy the new Oracle Home.
+    When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked as CURRENT is used to deploy the new Oracle home.
 
 8.  Verify if Gold Image is Applicable
 
@@ -264,11 +264,11 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
 
 ## Task 6: Deploy Image
 
-1.  Navigate to ***Targets >> Databases***
+1.  From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then ***Databases***
 
     ![](images/2.png " ")
 
-    and, then ***Administration >> Fleet Maintenance***
+    and, then from ***Administration*** drop-down menu select ***Fleet Maintenance***
 
     ![](images/3.png " ")
 
@@ -282,15 +282,15 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
     -  Operation = Name of the operation, which can be update (patch) or upgrade. In this example, we will select ***Update***.
     -  Type to filter = Selection criteria to highlight only those targets which qualify the selection, such as database naming.
 
-3. In this page, we will provide ***new Oracle Home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
+3. In this page, we will provide ***new Oracle home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
 
     ![](images/9.png " ")
 
-    In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle Home doesn't impact existing target and hence its scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
+    In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle home doesn't impact existing target and hence its scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
 
-    Once deployment of new Oracle Home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute the tasks immediately.  
+    Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute the tasks immediately.  
 
-4. We can validate our entries (new Oracle Home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
+4. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
 
       ![](images/11.png " ")
 
@@ -319,7 +319,7 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
 
    ![](images/22.png " ")
 
-   Here, we see that the dp has successfully installed new Oracle Home.(putty screen show the new oracle home layout)
+   Here, we see that the dp has successfully installed new Oracle home.(putty screen show the new oracle home layout)
 
 ## Task 7: Migrate Listener
 
@@ -348,7 +348,7 @@ Click on reschedule.
 
    In the new page, select immediately for start and reschedule.
 
-   We can now see that update operation is running. We can select it and see the various steps performed by it.Here we can see that ***hr*** database is down for Oracle Home switch over. Now, ***hr*** database will run from new Oracle Home.
+   We can now see that update operation is running. We can select it and see the various steps performed by it.Here we can see that ***hr*** database is down for Oracle home switch over. Now, ***hr*** database will run from new Oracle home.
 
    ![](images/31.png " ")
 
@@ -388,7 +388,7 @@ below.
 
     ![](images/7afa56b6cb5fee053c57b141a5c08245.png " ")
 
-## Task 10:  Cleanup Old Homes
+## Task 10:  Cleanup Old homes
 
 1. Clean up Database HR. Clean up operation is not supported by UI for EM 13.5 RU1 but it will be part of UI in upcoming release.
 
@@ -455,7 +455,7 @@ below.
 
     ![](images/c2062c09719c5c4b41ceff3138b3d44e.png " ")
 
-9. Verify to confirm the old Oracle Home has been removed
+9. Verify to confirm the old Oracle home has been removed
 
     ```
     <copy>ls -l /u01/app/1806/hr</copy>
@@ -498,10 +498,10 @@ below.
 -   Create Oracle Database Software Gold Image
 -   Subscribe Database to Gold Image
 -   Deploy Gold Image to Database Host
--   Migrate Oracle Database Listener from old Oracle Home to newly Deployed Oracle Home
+-   Migrate Oracle Database Listener from old Oracle home to newly Deployed Oracle home
 -   Update (Patch) Database from 18.3 to 18.10
 -   Rollback (Un-patch) Database from 18.10 to 18.3
--   Clean up old Oracle Homes -->
+-   Clean up old Oracle homes -->
 
 This completes this lab.
 

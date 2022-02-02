@@ -46,9 +46,9 @@ In this lab you will perform the following steps:
 
 To save time, the following steps were already completed.
 
-1. An Oracle Home was created and pre-patched with an Oracle Database 18.10 release that will be used  to create the gold image [/u01/app/oracle/product/18/db\_home\_src, Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192]
+1. An Oracle home was created and pre-patched with an Oracle Database 18.10 release that will be used  to create the gold image [/u01/app/oracle/product/18/db\_home\_src, Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192]
 
-2. An Oracle Home was created and pre-patched with an Oracle Database 19.7 release that will be used to create the gold image [/u01/app/oracle/product/19/db\_home\_src, Orasidb19c\_home1\_2020\_05\_13\_04\_24\_10\_emcc.marketplace.com\_2953]
+2. An Oracle home was created and pre-patched with an Oracle Database 19.7 release that will be used to create the gold image [/u01/app/oracle/product/19/db\_home\_src, Orasidb19c\_home1\_2020\_05\_13\_04\_24\_10\_emcc.marketplace.com\_2953]
 
 3. Created of the first version of “Tier\#1” Gold Image
 
@@ -121,7 +121,7 @@ Software Standardization Advisor enables administrators to understand various da
 
     ![](images/06ff90fdba8aa5abebd066086e33f700.jpg " ")
 
-    The recommendation is based on a union of bugs included in the patches in all Oracle Homes and based on the configuration type.
+    The recommendation is based on a union of bugs included in the patches in all Oracle homes and based on the configuration type.
 
   <!-- This completes Step 1. In this section, you learned how to perform the following:
 
@@ -207,7 +207,7 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
 
     ![](images/8c48a86f30874b71459424dc8f69e05f.png " ")
 
-    When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked as CURRENT is used to deploy the new Oracle Home.
+    When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked as CURRENT is used to deploy the new Oracle home.
 
 4. Verify if Gold Image is Applicable.
 This step verifies if the image can be used to patch a specified database target. This is done by comparing the bug fixes available in the current Oracle home of the database target and the image. In effect this check is run to identify patch conflicts.
@@ -270,13 +270,13 @@ This step verifies if the image can be used to patch a specified database target
 
     ![](images/ed90e634e7779548a6f7aebecec5e189.png " ")
 
-## Task 5: Create New Image Version
+## Task 5: Create Gold Image
 
 In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
-1. Review Reference Home Setup
+1. Review Reference home Setup
 
-    Just as it was done for the first version of this image, a reference 19.7 Oracle Home is needed to create a new version of the image and was setup in advance. [*/u01/app/oracle/product/19/db\_home\_src*]. This reference Oracle Home is discovered in Enterprise Manager as shown below and will be used to create and new version of the Gold Image.
+    Just as it was done for the first version of this image, a reference 19.7 Oracle home is needed to create a new version of the image and was setup in advance. [*/u01/app/oracle/product/19/db\_home\_src*]. This reference Oracle home is discovered in Enterprise Manager as shown below and will be used to create and new version of the Gold Image.
 
 2. Navigate to “***Targets >> All Targets***” and type in “*Orasidb19c\_home1\_2020\_05\_13\_04\_24\_10\_emcc.marketplace.com\_2953*” in the “*Search Target Name*” box.
 
@@ -304,9 +304,9 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
     ![](images/dp_197.png " ")
 
 
-## Task 6: Deploy New Image Version
+## Task 6: Deploy Image
 
-1. Before we deploy a new Oracle Home, we need to ensure that we unsubscribe finance database  from previous associated image. This step is required for UI as we can not have two different versions of Oracle home ( in this case 18c and 19c) in the same image id.
+1. Before we deploy a new Oracle home, we need to ensure that we unsubscribe finance database  from previous associated image. This step is required for UI as we can not have two different versions of Oracle home ( in this case 18c and 19c) in the same image id.
 
 Review and execute the following command to unsubscribe finance database from ***Tier #1 SI DB Linux64*** image. If finance database is not subscribed to any image then we can move to next step, where we will subscribe it to 19.7 image.
 
@@ -335,11 +335,11 @@ Review and execute the following command to subscribe finance database to 19.7 i
 
 
 
-2. Now that we have completed the pre-req task (associating database to image), we can now upgrade the database. Navigate to ***Targets >> Databases***
+2. As we have completed the pre-requisite task (associating database to image), we can now upgrade the database. From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then ***Databases***
 
     ![](images/2.png " ")
 
-    and, then ***Administration >> Fleet Maintenance***
+    and, then from ***Administration*** drop-down menu select ***Fleet Maintenance***
 
     ![](images/3.png " ")
 
@@ -353,15 +353,15 @@ Review and execute the following command to subscribe finance database to 19.7 i
   -  Operation = Name of the operation, which can be update (patch) or upgrade. In this example, we will select ***Upgrade***.
   -  Type to filter = Selection criteria to highlight only those targets which qualify the selection, such as database naming.
 
-4. In this page, we will provide ***new Oracle Home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
+4. In this page, we will provide ***new Oracle home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
 
   ![](images/41.png " ")
 
-  In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle Home doesn't impact existing target and hence its scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
+  In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle home doesn't impact existing target and hence its scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
 
-  Once deployment of new Oracle Home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute the tasks immediately.
+  Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute the tasks immediately.
 
-5. We can validate our entries (new Oracle Home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
+5. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
 
   ![](images/43.png " ")
 
@@ -390,9 +390,9 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 
    ![](images/49.png " ")
 
-   Here, we see that the dp has successfully installed new Oracle Home.
+   Here, we see that the dp has successfully installed new Oracle home.
 
-## Task 7: Migrate Listener to New Upgraded Home
+## Task 7: Migrate Listener to New Upgraded home
 
 1.  In the above task 6, we had submitted migrate listener already. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
 
@@ -426,7 +426,7 @@ With the deploy operation completed successfully, we are ready to run the final 
 
    ![](images/55.png " ")
 
-## Task 9: Cleanup Old Homes
+## Task 9: Cleanup Old homes
 
 1. Review and execute the following command as a dry-run to report on cleanup impact for *finance.subnet.vcn.oraclevcn.com*  
 
@@ -464,7 +464,7 @@ With the deploy operation completed successfully, we are ready to run the final 
 
     ![](images/777053c04e0851859856c8d32b9d94c2.png " ")
 
-5. Verify to confirm that the two old Oracle Homes reported have been removed
+5. Verify to confirm that the two old Oracle homes reported have been removed
 
     ```
     <copy>ls -l /u01/app/18c/sales188 /u01/app/oracle/product/18/db_home1</copy>
@@ -508,12 +508,12 @@ This completes this lab.
 - Create Oracle Database Software Gold Image
 - Subscribe Database to Gold Image
 - Deploy Gold Image to Database Host
-- Migrate Oracle Database Listener from old Oracle Home to newly Deployed Oracle Home
+- Migrate Oracle Database Listener from old Oracle home to newly Deployed Oracle home
 - Update (Patch) Database from 18.8 to 18.10
 - Add new Version to an Existing Oracle Database Software Gold Image
 - Deploy new Gold Image Version to Database Host
 - Update (Upgrade) Database from 18.10 to 19.7
-- Clean up old Oracle Homes -->
+- Clean up old Oracle homes -->
 
 You may now [proceed to the next lab](#next).
 
