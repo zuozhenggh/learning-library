@@ -72,50 +72,8 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
 
     ![The Default Properties section of the Data Lake tab shows the data asset details such as URL, Namespace, and Data asset key.](./images/data-lake-tab.png " ")
 
-## Task 3: Gather Information About your Data Catalog Instance and Resources
 
-In later labs, you will need more information about your Data Catalog instance and other resources. You will gather that information now, and save the identified values in your local **`workshop-resources.txt`** text file. This will save you time and steps later.
-
-1. On the **Data Lake** tab that you are currently on from the previous task, copy the value for the **Data asset key** field, and then paste it in the **Data Catalog Data Lake (data asset) Key** section in your local **`workshop-resources.txt`** text file. Save the file.
-
-    ![workshop-resources.txt file.](./images/paste-data-asset-key.png " ")
-
-2. Find your _Tenancy's OCID_. From the **Oracle Cloud Console** banner, click the **Profile** icon. From the drop-down menu, click the **Tenancy** menu item. The **Tenancy Details** page for your tenancy is displayed. In the **Tenancy Information** tab, click the **Copy** link for the **OCID** field. The **Copy** link text changes briefly to **Copied** and then back to **Copy**.
-
-    ![](./images/find-tenancy-ocid.png " ")
-
-3. Paste the copied tenancy OCID value in the **Tenancy OCID** section in your local **`workshop-resources.txt`** text file. Save the file.
-
-    ![](./images/paste-tenancy-ocid.png " ")
-
-4. Find your _Region-Identifier_. This is the region where your Data Catalog instance is deployed which is displayed in the **Oracle Cloud Console** banner, **US East (Ashburn)** in this example. To find the _Region-Identifier_ for your displayed region, click the **Regions** drop-down list, and then click **Manage Regions**.
-
-    ![](./images/click-regions.png " ")
-
-5. On the **Infrastructure Regions** page, in the **Region** section, your Home Region to which you are subscribed is displayed along with your **Region Identifier**, `us-ashburn-1`, in our example. Copy your region identifier.
-
-    ![](./images/region-identifier.png " ")
-
-    >**Note:** In this example, the Home region happens to be the same as the region identifier; i.e. where the Data Catalog is deployed. In your case, your region identifier and Home region might be different. You must use the _Region-Identifier_ associated with the region that is showing on the **Oracle Cloud Console** banner.
-
-6. Paste the copied region identifier value in the **Region-Identifier** section in your local **`workshop-resources.txt`** text file. Save the file.
-
-    ![](./images/paste-region-identifier.png " ")
-
-7. Find your _User OCID_. From **Oracle Cloud Console** banner, click the **Profile** icon, and then click **User Settings** from the drop-down list.
-
-    ![](./images/user-settings.png " ")
-
-8. On the **User Details** page, in the **User Information** tab, click the **Copy** link for the **OCID** field. The **Copy** link text changes briefly to **Copied** and then back to **Copy**. Paste the copied OCID to your text editor and label it as the **User OCID** to easily identify it later.
-
-    ![](./images/user-details.png " ")
-
-9. Paste the copied user OCID value in the **User OCID** section in your local **`workshop-resources.txt`** text file. Save the file.
-
-    ![](./images/paste-user-ocid.png " ")
-
-
-## Task 4: Add Three Data Asset Connections to the Oracle Object Storage Buckets
+## Task 3: Add Three Data Asset Connections to the Oracle Object Storage Buckets
 
 After you register a data source as a data asset in your data catalog, you create data connections to your data asset to be able to harvest it. You can create multiple connections to your data source. At least one connection is needed to be able to harvest a data asset. In this lab, you will create three data connections to access the **moviestream\_sandbox**, **moviestream\_landing**, and **moviestream\_gold** Oracle Object Storage buckets that contain the data. The three buckets are located in a different tenancy than yours, **c4u04**; therefore, you will use three provided public pre-authenticated requests (PARs), one for each bucket. For information on PAR, see [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) in the _Oracle Cloud Infrastructure_ documentation.
 
@@ -212,7 +170,7 @@ After you register a data source as a data asset in your data catalog, you creat
     ![](./images/gold-connection-added.png " ")
 
 
-## Task 5: Create a Filename Pattern and Assign it to your Oracle Object Storage Data Asset
+## Task 4: Create a Filename Pattern and Assign it to your Oracle Object Storage Data Asset
 
 Your data lake typically has a large number of files that represent a single data set. You can group multiple Object Storage files into logical data entities in Data Catalog using filename patterns. A filename pattern is a regular expression that is created to group multiple Object Storage files into a logical data entity that can be used for search and discovery. Using logical data entities, you can organize your data lake content meaningfully and prevent the explosion of your entities and attributes in your Data Catalog.
 If an Object Storage file is matched with multiple filename patterns, it can be part of multiple logical data entities.
@@ -289,7 +247,7 @@ Create a filename pattern as follows:
 >**Note:**    
 When you assign a new filename pattern to a data asset, the status of any harvested logical data entities is set to **Inactive**. You need to harvest the data asset again to derive the valid logical data entities again.
 
-## Task 6: Harvest the Data Asset
+## Task 5: Harvest the Data Asset
 
 After you create a data asset in the Data Catalog repository, you harvest it to extract the data structure information into the Data Catalog and view its data entities and attributes. In this task, you will harvest the **moviestream\_sandbox**, **moviestream\_landing**, and **moviestream\_gold** Oracle Object Storage buckets that contain the data.
 
@@ -416,7 +374,7 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
     After you harvest your data asset, you can browse or explore your data asset to view the data entities and attributes.
 
-## Task 7: View Harvested Data Entities
+## Task 6: View Harvested Data Entities
 
 1. On the Data Catalog instance **Home** tab, click **Data Entities**.
 
@@ -441,7 +399,7 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
     ![](./images/custsales-attributes-tab.png " ")
 
-## Task 8: Customize the Business Name for the Object Storage Buckets
+## Task 7: Customize the Business Name for the Object Storage Buckets
 
 Customize the business names for each of the three Oracle Object Storage buckets that you use in this workshop.
 When you later perform the synchronization process between your ADB and Data Catalog instances, the schemas and tables are created automatically for you. By default, the names of the schemas will start with **DCAT$** concatenated with the data asset's name, **`Data Lake`**, and the folder's (bucket's) name such as **`moviestream_sandbox`**. All three bucket names start with **`moviestream_`** followed by **`sandbox`**, **`landing`**, or **`gold`**. To make the generated schema names a bit shorter, you will customize the business name for each bucket and remove the **`moviestream_`** prefix from their names. For example, the generated schema name for the **`moviestream_sandbox`** will be **`DCAT$DATA_LAKE_SANDBOX`** instead of **`DCAT$DATA_LAKE_MOVIESTREAM_SANDBOX`**.
@@ -811,7 +769,7 @@ Create a filename pattern as follows:
 
     ![](./images/ll-file-pattern-created.png " ")
 
-6. Assign the filename pattern that you just created to your **Data Lake** data asset. On the **Home** tab, click the **Data Assets** link to access the **Data Assets** tab.
+6. Assign the filename pattern that you just created to your **Data Lake** data asset. If the **Data Lake** details tab is still open, skip to step 8; Otherwise, on the **Home** tab, click the **Data Assets** link to access the **Data Assets** tab.
 
     ![](./images/ll-data-assets-link.png " ")
 
@@ -912,14 +870,12 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
         ![](./images/harvest-landing-step-3-1.png " ")
 
-12. Click **Create Job**. A message is briefly displayed about the job execution starting. The **Jobs** tab is displayed and the job is displayed in the list of jobs. If you have left the **Jobs** tab open from the previous step, you need to refresh your browser to display the new submitted job. If the harvest is successful, the harvest job **Last run status** column displays **Succeeded**. To display the job details, click the job name link in the **Name** column.
+12. Click **Create Job**. A message is briefly displayed about the job execution starting. The **Jobs** tab is displayed and the job is displayed in the list of jobs. If you have left the **Jobs** tab open from the previous step, you need to refresh your browser to display the new **`Harvest_Data_Lake_Landing`** submitted job. If the harvest is successful, the harvest job **Last run status** column displays **Succeeded**. To display the job details, click the job name link in the **Name** column.
 
     ![](./images/landing-harvest-completed.png " ")
 
-    >**Note:** If the **Jobs** tab was already displayed from the previous harvesting job, refresh your browser to display the **`Harvest_Data_Lake_Landing`** job.
 
-
-13. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **11** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_landing`** root bucket. There are **57** corresponding files under the sub-folders under the root bucket. You can drill-down on the **Log Messages** icon to display the job log.
+13. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **11** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_landing`** root bucket. There are **57** corresponding files under the sub-folders under the root bucket. You can drill-down on the **Log Messages** icon to display the job log. Close this tab.
 
     ![](./images/landing-job-details.png " ")
 
@@ -987,7 +943,7 @@ When you later perform the synchronization process between your ADB and Data Cat
 
 In **Lab 3**, you will also provide a custom property override for the schema name to use a short prefix instead of the data asset name as part of the generated schema name.
 
-1. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance link.
+1. If the **Data Lake** tab is still displayed, click it to display the **Oracle Object Storage: Data Lake** page, and then skip over to step 4 below; Otherwise, on the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance link.
 
     ![](./images/ll-dcat-instance.png " ")
 
@@ -1015,7 +971,7 @@ In **Lab 3**, you will also provide a custom property override for the schema na
 
     ![](./images/gold-displayed.png " ")
 
-7. Close the **Bucket: moviestream_gold** details tab. The **Oracle Object Storage: Data Lake** page is displayed.
+7. Close the **moviestream_gold** details tab. Click the **Data Lake** tab to display the **Oracle Object Storage: Data Lake** page.
 
     >**Note:** If the new name, **Gold**, is not displayed, click the **Refresh** button.
 
@@ -1029,7 +985,7 @@ In **Lab 3**, you will also provide a custom property override for the schema na
 
 10. In the **Edit Business Name** panel, change the name to **Landing**, and then click **Save Changes**. A **Successfully updated business name** message is displayed and the **Bucket: moviestream_landing** details tab is re-displayed. The bucket's new business name is displayed. The **Original Name** field displays the bucket's original name.
 
-11. Close the **Bucket: moviestream_landing** details tab. The **Oracle Object Storage: Data Lake** page is displayed.
+11. Close the **moviestream_landing** tab. Click the **Data Lake** tab to display the **Oracle Object Storage: Data Lake** page.
 
     ![](./images/ll-landing-data-lake-page.png " ")
 
@@ -1044,7 +1000,7 @@ In **Lab 3**, you will also provide a custom property override for the schema na
 
 14. In the **Edit Business Name** panel, change the name to **Landing**, and then click **Save Changes**. A **Successfully updated business name** message is displayed and the **Bucket: moviestream_sandbox** details tab is re-displayed. The bucket's new business name is displayed. The **Original Name** field displays the bucket's original name.
 
-15. Close the **Bucket: moviestream_sandbox** details tab. The **Oracle Object Storage: Data Lake** page is displayed.
+15. Close the **moviestream_sandbox** details tab. Click the **Data Lake** tab to display the **Oracle Object Storage: Data Lake** page.
 
     ![](./images/ll-sandbox-data-lake-page.png " ")
 
@@ -1069,4 +1025,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author:** Lauran Serhal, Consulting User Assistance Developer, Oracle Autonomous Database and Big Data
 * **Contributor:** Marty Gubar, Product Manager, Server Technologies    
-* **Last Updated By/Date:** Lauran Serhal, January 2022
+* **Last Updated By/Date:** Lauran Serhal, February 2022
