@@ -293,7 +293,7 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
 
 4. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
 
-      ![](images/11.png " ")
+    ![](images/11.png " ")
 
 5. Review the validation result.
 
