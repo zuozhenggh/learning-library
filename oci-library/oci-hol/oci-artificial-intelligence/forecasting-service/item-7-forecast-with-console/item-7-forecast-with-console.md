@@ -224,12 +224,12 @@ After downloading the dataset , you need to upload the sample training data into
     ![](images/lab5-check-bucket-created.png " ")
     
 
-    - Bucket detail window should be visible. Scroll down 
+    - Bucket detail window should be visible. Scroll down and click Upload
     ![](images/lab5-bucket-details-window.png " ")
 
 
-    - Click on Upload and then browse to file which you desire to upload
-    ![](images/lab5-bucket-upload-files.png " ")
+    - Browse to file which you desire to upload and click  Upload button at the botton
+    ![](images/lab5-bucket-upload-files-meta.png " ")
 
 
 
@@ -256,23 +256,56 @@ Project is a way to organize multiple data assets, models, deployments to the sa
 4.  If the project is successfully created it will show up in projects pane. From here onwards, select livelabs_forecast_demo.
     ![](images/lab5-project-created.png " ")
 
-## Task 6: Create Data Asset 
+5.  Click on your project you just created and go to project page.
+    ![](images/lab5-project-page.png " ")
 
-We now need to create a data asset to refer to the previously uploaded object storage.
-There are two ways to create data assets, showing as follows.
+## Task 6: Create Forecast
 
-1.  Directly create new data asset 
+1.  Click on the Create Forecast button , it will take you to Create Forecast Page:
+    ![](images/lab5-create-forecast.png " ")
 
-    Click the Data Asset menu on the middle left, and Click the Create Data Asset button.
-    ![](images/lab5-data-asset-1-create-directly-page.png " ")
+2.  First, you need to select a Data Asset needed to train a model and forecast.There are two types of Data Assets i.e. Primary and Additional. For each of the Data Asset types. Either, you can select a previously existing Data Asset or create a new Data Asset. As we dont have any existing Data Asset , we click on the Create  New Data Asset 
+    ![](images/lab5-data-asset-create-directly.png " ")
 
-Then you can specify the compartment of Object storage that houses the data. Click Create Button.
-![](images/7_create_data_asset_form.png " ")
+    Then, in Create Data Asset window, you can specify the compartment of Object storage that houses the data. 
+    Click Create Button.
+    ![](images/lab5-primary-data-details.png " ")
 
-After a few seconds, the data asset will be shown in the data asset main panel.
+    After a few seconds, the data asset will be shown in the data asset main panel,select the
+    data that we just created now
 
+    ![](images/lab5-select-created-primary-data-asset.png " ")
+    
+    Similarly, we can create Data Asset for Additional Data (Optional)
+    ![](images/lab5-select-additional-data.png " ")
+    ![](images/lab5-additional-data-details.png " ")
 
-2.  Use the Train Model button to create a new data asset (Optional)
+    Now , select the Addtional Data Asset created just now , and click Next
+    ![](images/lab5-select-created-additional-data-asset.png " ")
+
+       
+
+2.  Configure Schema :
+
+    Next , we provide schema for the primary and additional data in the next screen
+    In addition to schema , we also provide Time stamp format , Data frequency and Time stamp column
+    
+    ![](images/lab5-data-schema.png " ")
+
+    After filling the details, click Next
+
+3.  Configure Forecast :
+
+    Next, we provide details for Forecast configuration as below:
+    ![](images/lab5-configure-forecast.png " ")
+
+4.  Review the Configuration for Forecast and click Submit
+    ![](images/lab5-review-config.png " ")
+     
+    Once submitted, the model training and forecast is started and status is ***Creating**
+
+    ![](images/lab5-forecast-page.png " ")
+
 
 The Create and Train Model will take user to a form with the option to either choose an existing dataset or create a new dataset. Select `Create a new data asset` radio button.
 ![](images/6_specify_ocs.png " ")
