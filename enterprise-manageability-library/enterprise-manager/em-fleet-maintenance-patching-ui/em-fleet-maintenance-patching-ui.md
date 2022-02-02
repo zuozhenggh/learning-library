@@ -362,7 +362,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 Once the database is updated, we will perform a rollback to 18.3. Rollback operation is not supported by UI for EM 13.5 RU1 but it will be part of UI in upcoming release.
 
-1. Review and execute below command from the terminal to rollback DB Target ***hr.subnet.vcn.oraclevcn.com***
+1. Review and execute below command from the terminal to rollback database Target ***hr.subnet.vcn.oraclevcn.com***
 
     ```
     <copy>curl -i -X POST https://emcc.marketplace.com:7803/em/websvcs/restful/emws/db/fleetmaintenance/performOperation/rollback -H "Content-Type:application/json" -u sysman:welcome1 --data-binary "@/home/oracle/fleet/rollback_hr_payload.json" --insecure</copy>
@@ -395,7 +395,7 @@ below.
 
    In order to have an old empty home previously used by “***hr.subnet.vcn.oraclevcn.com***” at our disposal to demonstrate a cleanup operation, we will now re-update the database by running the commands from Step 8.
 
-2. Review and execute below command to update DB Target ***hr.subnet.vcn.oraclevcn.com*** again to 18.10 version
+2. Review and execute below command to update database target ***hr.subnet.vcn.oraclevcn.com*** again to 18.10 version
 
     ```
     <copy>emcli db_software_maintenance -performOperation -name="Update DB" -purpose=UPDATE_DB -target_type=oracle_database -target_list=hr.subnet.vcn.oraclevcn.com -normal_credential=ORACLE:SYSMAN -privilege_credential=ROOT:SYSMAN -database_credential=sales_SYS:SYSMAN</copy>
