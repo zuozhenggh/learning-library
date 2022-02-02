@@ -164,7 +164,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
      ```
      <copy>
      sudo su - oracle
-     sqlplus system/Ora_DB4U@localhost:1521/orclpdb
+     sqlplus system@localhost:1521/orclpdb
      </copy>
      ```
 
