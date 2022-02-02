@@ -202,12 +202,12 @@ As you are creating the tables, examine the constraints that are being created w
 8. Create the COUNTRIES table
     ```
     <copy>CREATE TABLE countries 
-        ( country\_id      CHAR(2) 
+        ( country_id      CHAR(2) 
           CONSTRAINT  country_id_nn NOT NULL 
         , country_name    VARCHAR2(40) 
         , region_id       NUMBER 
         , CONSTRAINT     country_c_id_pk 
-                     PRIMARY KEY (country\_id) 
+                     PRIMARY KEY (country_id) 
         );</copy>
     ```
 
@@ -220,7 +220,7 @@ As you are creating the tables, examine the constraints that are being created w
         , city       VARCHAR2(30)
           CONSTRAINT     loc_city_nn  NOT NULL
         , state_province VARCHAR2(25)
-        , country\_id     CHAR(2)
+        , country_id     CHAR(2)
         ) ;</copy>
     ```
 
@@ -915,7 +915,7 @@ To improve performance indexes can be created on tables. Now that we loaded data
     CREATE INDEX loc_state_province_ix	
            ON locations (state_province);
     CREATE INDEX loc_country_ix
-           ON locations (country\_id);</copy>
+           ON locations (country_id);</copy>
 ```
 
 ## Task 7: Creating Views and Querying its Data
@@ -930,7 +930,7 @@ The Oracle Database allows the creation of objects called views, which consist o
        manager_id,
        department_id,
        location_id,
-       country\_id,
+       country_id,
        first_name,
        last_name,
        salary,
@@ -947,7 +947,7 @@ The Oracle Database allows the creation of objects called views, which consist o
       e.manager_id, 
       e.department_id,
       d.location_id,
-      l.country\_id,
+      l.country_id,
       e.first_name,
       e.last_name,
       e.salary,
@@ -967,7 +967,7 @@ The Oracle Database allows the creation of objects called views, which consist o
       regions r
     WHERE e.department_id = d.department_id
       AND d.location_id = l.location_id
-      AND l.country\_id = c.country\_id
+      AND l.country_id = c.country_id
       AND c.region_id = r.region_id
       AND j.job_id = e.job_id 
     WITH READ ONLY;</copy>

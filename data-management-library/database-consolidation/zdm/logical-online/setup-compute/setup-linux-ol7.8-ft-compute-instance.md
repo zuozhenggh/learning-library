@@ -8,7 +8,7 @@ Estimated Lab Time:  15 minutes
 ### About Terraform and Oracle Cloud Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Oracle offers sample solutions to help you quickly create common Oracle cloud components.
 
-Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about OCI Resource Manager, preview the video below.
+Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model. To learn more about Oracle Cloud Infrastructure Resource Manager, preview the video below.
 
 [](youtube:udJdVCz5HYs)
 
@@ -55,7 +55,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-10.png " ")
 5. Once the apply job is complete, inspect the results.  
 ![Image alt text](images/db19c-freetier-step1-11.png " ")
-6. Scroll down the log.  You will notice that 6 objects were created:  A VCN, subnet, internet gateway, default security list, route table and dhcp options, each with their own Oracle Cloud ID (ocid).  We will focus on the subnet.  You will need this subnet information to create your compute instance
+6. Scroll down the log.  You will notice that 6 objects were created:  A VCN, subnet, internet gateway, default security list, route table and dhcp options, each with their own Oracle Cloud ID (Oracle Cloud Infrastructured).  We will focus on the subnet.  You will need this subnet information to create your compute instance
 ![Image alt text](images/db19c-freetier-step1-12.png " ")
 7. Copy the first subnet id to a notepad and save for the next step.  If you would like to further inspect the VCN, complete #s 8-12.  Otherwise skip to the next section.
 ![Image alt text](images/db19c-freetier-step1-13.png " ")
@@ -65,7 +65,7 @@ Now that your stack has been created, you will run an *apply* job to create the 
 ![Image alt text](images/db19c-freetier-step1-15.png " ")  
 10.  On the VCN homepage notice the 3 subnets that were created.  Each subnet is tied to an Availability Domain.  Click on the first subnet that matches AD-1.
 ![Image alt text](images/db19c-freetier-step1-16.png " ")  
-11.  Inspect the subnet homepage, find the OCID (Oracle Cloud ID).  Click **Copy**
+11.  Inspect the subnet homepage, find the Oracle Cloud InfrastructureD (Oracle Cloud ID).  Click **Copy**
 ![Image alt text](images/db19c-freetier-step1-17.png " ")  
 12. Copy the subnet ID to a notepad.
 ![Image alt text](images/db19c-freetier-step1-18.png " ")        
@@ -102,7 +102,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
     ![](./images/cloudshell.png " ")
 
-2.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+2.  Go to **Compute**, **Instance** and select the instance you created (make sure you choose the correct compartment)
 3.  On the instance homepage, find the Public IP addresss for your instance.
 
     ![](./images/linux-compute-step3-11.png " ")
@@ -117,7 +117,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 6.  Continue to STEP 5 on the left hand menu.
 
 ### MAC or Windows CYGWIN Emulator
-1.  Go to **Compute** -> **Instance** and select the instance you created (make sure you choose the correct compartment)
+1.  Go to **Compute**, **Instance** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP addresss for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
@@ -148,9 +148,9 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
     ![](./images/putty-setup.png " ")
 
-3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
+3. Click **Connection**, **Data** in the left navigation pane and set the Auto-login username to root.
 
-4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
+4. Click **Connection**, **SSH**, **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
 5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 

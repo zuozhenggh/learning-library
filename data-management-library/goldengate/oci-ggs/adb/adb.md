@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the required resources you'll use for OCI GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
+This lab walks you through the steps to create the required resources you'll use for Oracle Cloud Infrastructure (OCI) GoldenGate. We'll show you how to create a VCN and subnet, provision autonomous database instances, and load data into the databases.
 
 Estimated time: 20 mins
 
