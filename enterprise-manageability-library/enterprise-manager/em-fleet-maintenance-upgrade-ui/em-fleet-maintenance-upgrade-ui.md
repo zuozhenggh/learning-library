@@ -99,18 +99,17 @@ Software Standardization Advisor enables administrators to understand various da
 
     Next, we will review the report generated.
 
-5.  Click on **Generate Report**.
+5.  On the same page, click on **Generate Report**.
 
-6.  Click on **Current Configurations** to open the Excel report.
+6.  On the same page, click on **Current Configurations** to open the Excel report.
 
     ![](images/em-pollution-detection-2.png " ")
 
-    When opening the downloaded Excel Spreadsheet report, a warning on XLS format and file extension mismatch may pop up (see below). Simply click on “Yes” to
-    ignore the warning and open the file.
+    When you download the report, should a warning on XLS format and file extension mismatch pop up (like below). Simply click on “Yes” to ignore the warning and open the file.
 
     ![](images/d9ea997d07c30f80083e097f6b578200.png " ")
 
-    Current Configuration shows five different Oracle home software versions
+    From the report, you will see the current environment has five different Oracle home software versions.
 
     ![](images/84e0ac92b29e45e91b9d17a8e0b3a2da.jpg " ")
 
@@ -118,11 +117,11 @@ Software Standardization Advisor enables administrators to understand various da
 
     ![](images/em-pollution-detection-3.png " ")
 
-    The EM Recommended Configuration report recommends reducing 5 configurations and standardizing the database estate on 2 configurations, one based on 18c and the other based on 19c. This means All Oracle Homes of Release 18c should uptake the corresponding 18c configuration and the 19c homes will use the one based on Release 19c
+    The report recommends a reduction of the 5 configurations and standardizing the database estate to 2 configurations (18c and 19c). This means all Oracle homes for Release 18c should uptake the standard 18c configuration and the 19c Oracle homes the standard 19c configuration.
 
     ![](images/06ff90fdba8aa5abebd066086e33f700.jpg " ")
 
-    Recommendation is based on union of all bugs included in the Patches in all OHs and based on configuration type.
+    The recommendation is based on a union of bugs included in the patches in all Oracle Homes and based on the configuration type.
 
   <!-- This completes Step 1. In this section, you learned how to perform the following:
 
@@ -139,7 +138,9 @@ Software Standardization Advisor enables administrators to understand various da
 
 ### **Database Fleet Maintenance**
 
-Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscription based out of place patching solution. Gold Image(s) are software library entities storing archive of an upgraded software home. Targets, to be upgraded, subscribe to a relevant Gold Image. Target subscription persists through the lifecycle of the Target or Gold Image unless modified by an administrator. We will go through the following steps for this Fleet Maintenance Exercise.
+Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscription-based out-of-place patching solution. Out-of-place patching is a method where patching is performed by creating a copy of the Oracle home, applying patches to the copied home, and then switching services to the copied home.
+A gold image is the end of state software definition that contains information about the base software version plus the additional patches. Targets, to be upgraded, subscribe to a relevant Gold Image. Target subscription persists through the lifecycle of the Target or Gold Image unless modified by an administrator.
+
 
   ![](images/DB_Fleet_Upgrade.png " ")
 
@@ -147,13 +148,13 @@ Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscriptio
 
 We will go through steps for upgrading database target ***finance.subnet.vcn.oraclevcn.com***, a Single Instance Database currently at 18.10.0.0.0 version that was previously patched from 18.8.0.0.0 using Fleet Maintenance. The goal is to upgrade this target to 19.7.0.0.0.
 
-1.  Log on to Enterprise Manager Console and review the status and version of DB Target.
+1. Return to the browser page with the Oracle Enterprise Manager Console (log back in if needed) and from the EM home page, select the ***Targets*** drop-down menu and select ***Databases*** to review the status and version of database targets.
 
     ![](images/ec0b6926d4f65b52a771483ace24055c.png " ")
 
     ![](images/05ab9d53e622fe6b226647d67750c1dd.jpg " ")
 
-    You will see *finance.subnet.vcn.oraclevcn.com*. If target status is ‘DOWN’, start the target (using */home/oracle/start\_db\_finance.sh*).
+    You will see the *finance.subnet.vcn.oraclevcn.com* database. If the target status is ‘DOWN’, then start the target (using */home/oracle/start\_db\_finance.sh*).
 
 ## Task 4: Review Pre-Completed Patching Tasks
 
@@ -161,17 +162,23 @@ In this **[READ ONLY]** section, specific tasks related to patching on the targe
 
 ### **Create Gold Image** [READ-ONLY– This step has already been implemented]
 
-1. Review reference home setup
+1. Now look over the reference home setup *[Which has already been implemented]*
 
   Gold Image represents a software end state. An Enterprise Manager Software Library Gold Image is a software archive created from a patched oracle home uploaded to EM Software Library. Steps in this section are already implemented and are available here for review.
 
-  In order to create a Gold Image of the ‘recommended patch configuration’, you need to manually create such an Oracle Home as a pre-requisite step.
+  To create a Gold Image of the ‘recommended patch configuration’, you manually create an Oracle home as a pre-requisite step.
 
-  As the goal of this lab is to upgrade Database target from 18.10 to 19.7, a reference Oracle home fully patched to 18.10 *[Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192, /u01/app/oracle/product/18/db\_home\_src]* was created and used to create the initial version of the Gold Image as further described in the next steps.
+  The goal is to upgrade Oracle Database target from 18.10 to 19.7, a reference Oracle home fully patched to 18.10 *[Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192, /u01/app/oracle/product/18/db\_home\_src]* was created and used to create the initial version of the Gold Image as further described in the next steps.
 
-  This reference Oracle Home is discovered in Enterprise Manager as shown below and will be used for Gold Image Creation.
+  This reference Oracle home is discovered in Enterprise Manager as shown below and will be used for Gold Image Creation.
 
-2. Navigate to “***Targets >> All Targets***” and type in “*Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192*” in the “*Search Target Name*” box.
+2. From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then select ***All Targets.***
+
+Then on the All Targets page, in the upper left search field, type or copy “*Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192*” in the “Search Target Name” box.
+
+    ```
+    <copy>cOrasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192</copy>
+    ```
 
     ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
 
