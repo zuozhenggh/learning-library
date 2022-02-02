@@ -287,11 +287,11 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
     ![](images/9.png " ")
 
-    In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle home doesn't impact existing target and hence its scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
+    In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle home doesn't impact existing target and hence it is scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
 
-    Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute the tasks immediately.  
+    Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute these tasks immediately.  
 
-4. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
+4. We can validate our entries (new Oracle home, log file location, credentials) provided in previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes - Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
 
     ![](images/11.png " ")
 
@@ -320,7 +320,7 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
    ![](images/22.png " ")
 
-   Here, we see that the dp has successfully installed new Oracle home.(putty screen show the new oracle home layout)
+   Here, we see that the dp has successfully installed new Oracle home.(putty screen shows the new Oracle home layout)
 
 ## Task 7: Migrate Listener
 
