@@ -304,7 +304,7 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
     ![](images/dp_197.png " ")
 
 
-## Task 6: Deploy Image
+## Task 6: Subscribe Database
 
 1. Before we deploy a new Oracle home, we need to ensure that we unsubscribe finance database from previous associated image. This step is required for UI as we can not have two different versions of Oracle home (in this case 18c and 19c) in the same image id.
 
@@ -333,9 +333,9 @@ Review and execute the following command to subscribe finance database to 19.7 i
 <copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
 ```
 
+## Task 7: Deploy Image
 
-
-2. As we have completed the pre-requisite task (associating database to image), we can now upgrade the database. From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then ***Databases***
+1. As we have completed the pre-requisite task (associating database to image in Task 6), we can now upgrade the finance database. From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then ***Databases***
 
     ![](images/2.png " ")
 
@@ -343,7 +343,7 @@ Review and execute the following command to subscribe finance database to 19.7 i
 
     ![](images/3.png " ")
 
-3. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
+2. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
 
   ![](images/9.png " ")
 
@@ -353,7 +353,7 @@ Review and execute the following command to subscribe finance database to 19.7 i
   -  Operation = Name of the operation, which can be update (patch) or upgrade. In this example, we will select ***Upgrade***.
   -  Type to filter = Selection criteria to highlight only those targets which qualify the selection, such as database naming.
 
-4. In this page, we will provide ***new Oracle home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
+3. In this page, we will provide ***new Oracle home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
 
   ![](images/41.png " ")
 
@@ -361,17 +361,17 @@ Review and execute the following command to subscribe finance database to 19.7 i
 
   Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute the tasks immediately.
 
-5. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
+4. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
 
   ![](images/43.png " ")
 
-6. Review the validation result.
+5. Review the validation result.
 
   ![](images/44.png " ")
 
    Incase of any error, we can fix it and choose revalidate.
 
-7. ***Submit*** the operation. Here, we can see that we have opted to deploy, migrate and update the database at once. These tasks will be performed independently based on their schedule.
+6. ***Submit*** the operation. Here, we can see that we have opted to deploy, migrate and update the database at once. These tasks will be performed independently based on their schedule.
 
   ![](images/100.png " ")    
 
@@ -382,7 +382,7 @@ Review and execute the following command to subscribe finance database to 19.7 i
 
 Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
 
-8. Review the Deployment Procedures.
+7. Review the Deployment Procedures.
 
     ![](images/47.png " ")
 
@@ -392,9 +392,9 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 
    Here, we see that the dp has successfully installed new Oracle home.
 
-## Task 7: Migrate Listener to New Upgraded home
+## Task 8: Migrate Listener to New Upgraded home
 
-1.  In the above task 6, we had submitted migrate listener already. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
+1.  In the above task 7, we had submitted migrate listener. If this operation needs to be submitted separately, then we had to uncheck migrate listener in task 6 (review step 2 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
 
 Click on reschedule.
 ![](images/50.png " ")
@@ -406,11 +406,11 @@ We can now see that migrate operation is running. We can select it and see the v
 ![](images/52.png " ")
 
 
-## Task 8: Update Database – Upgrade to 19.7
+## Task 9: Update Database – Upgrade to 19.7
 
-With the deploy operation completed successfully, we are ready to run the final UPDATE operation which upgrades the database by switching it to the newly deployed home.
+With the deploy operation and migrate listener task completed successfully, we are ready to run the final UPDATE operation which will upgrade the finance database by switching it to the newly deployed home.
 
-1.  Similar to migrate listener, we had submitted Update Database in task 6. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 6). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
+1.  Similar to migrate listener, we had submitted Update Database in task 7. If this needs to be submitted separately, then we had to uncheck update database task ( review step 2 of task 6). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
 
     Click on reschedule.
 
@@ -426,7 +426,7 @@ With the deploy operation completed successfully, we are ready to run the final 
 
    ![](images/55.png " ")
 
-## Task 9: Cleanup Old homes
+## Task 10: Cleanup Old homes
 
 1. Review and execute the following command as a dry-run to report on cleanup impact for *finance.subnet.vcn.oraclevcn.com*  
 

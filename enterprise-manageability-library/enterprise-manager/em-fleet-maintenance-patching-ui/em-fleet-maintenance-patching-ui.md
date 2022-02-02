@@ -264,13 +264,14 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
 
 ## Task 6: Deploy Image
 
-1.  From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then ***Databases***
+1.  From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then select ***Databases***
 
     ![](images/2.png " ")
 
     and, then from ***Administration*** drop-down menu select ***Fleet Maintenance***
 
     ![](images/3.png " ")
+
 
 2. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
 
