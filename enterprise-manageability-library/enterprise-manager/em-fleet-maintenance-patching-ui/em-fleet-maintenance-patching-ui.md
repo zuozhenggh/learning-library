@@ -1,23 +1,23 @@
 # Automated Database Patching at Scale with Fleet Maintenance UI
 
 ## Introduction
-The goal of this lab is to explore end-to-end automated patching and upgrades of the Oracle Database using Enterprise Manager UI feature (starting from 13.5 RU1).
+In this workshop, you will experience the benefits of using the Oracle Enterprise Manager Fleet User Interface to automate the patching of multiple Oracle Databases in one flow.
 
-*Estimated Time*: 75 minutes
+*Estimated Time*: 60 minutes
 
 
-### About Database Fleet Maintenance UI
+### About the Database Fleet Maintenance UI capability in Oracle Enterprise Manager
 
-Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.
+Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Databases. Fleet Maintenance enables DBAs to automate patching of a wide range of Oracle Database configurations including Oracle RAC environments with Data Guard Standby.
 
-Starting from Enterprise Manager 13.5 RU1, Enterprise Manager is equipped with a new interface to patch(update) and upgrade Database Fleet as an end-to-end automated solution. Creation of Gold Image and Subscription of database to the Gold Image is to be done by using emcli commands. In upcoming releases of Enterprise Manager, we plan to integrate these tasks with UI.
+Starting with Enterprise Manager 13.5 RU1, Enterprise Manager offers a new interface to ease automated patching, update, and upgrade of your database fleet.
 
-Benefits with Fleet Maintenance:
-- Minimum Downtime with Out of Place patching
-- Enterprise Scale with Enterprise Manger Deployment Procedures Framework
-- Single pane of glass for monitoring and managing entire patching and upgrade operations
-- Ability to schedule/retry/suspend/resume.
-- Database patching across different infrastructure including engineered systems like Exadata
+Benefits of using the EM Fleet Maintenance capability include:
+- Minimizing downtime with use of Out of Place patching
+- Enterprise scalability using the Enterprise Manger Deployment Procedures Framework
+- A single pane of glass for monitoring and managing the entire patching and upgrade operations
+- Ability to schedule/retry/suspend/resume operations.
+- Patch Oracle Databases across different infrastructure including engineered systems like Oracle Exadata
 
 ![](images/em-fleet-maintenance-overview-1.png " ")
 
@@ -35,7 +35,7 @@ In this lab you will perform the following steps:
 | Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
 |----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
-| 2                    | Oracle Database Patching with Fleet Maintenance | 50 minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
+| 2                    | Oracle Database Patching with Fleet Maintenance | 50  minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
 
 
 ### Prerequisites
@@ -47,23 +47,23 @@ In this lab you will perform the following steps:
 
 *Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
-## Task 1: Review Tasks Completed in Advance
+## Task 1: Performed in Advance
 
-In the interest of simplifying the setup and save time, the following steps were completed in advance and covered in this lab. Please review accordingly for reference
+To save time, the following steps were already completed.
 
-1. We have created and pre-patched an Oracle Home with 18.10 release using which will be use to create the gold image *[/u01/app/oracle/product/18/db\_home\_src, Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192]*
+1. An Oracle Home was created and pre-patched with an Oracle Database 18.10 release that will be used to create the gold image *[/u01/app/oracle/product/18/db\_home\_src, Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192]*
 
-To ensure smooth execution of the intended use cases, we have pre-hosted the scripts to be used later at */home/oracle/fleet*
+To ensure smooth execution of the use cases, we have pre-hosted the scripts to be used later at */home/oracle/fleet*
 
 ## Task 2: Detect Configuration Pollution with Software Standardization Advisor
 
-This exercise enables us to analyze the database estate using Software Standardization.
+In this lab activity, you will analyze the database estate to identify any configuration drift (pollution) using the Software Standardization Advisor.
 
 Software Standardization Advisor enables administrators to understand various database configurations prevailing in their environment. Each deployment with a unique platform, release and patch level is identified as a distinct configuration. This provides the administrators a view of the configuration pollution in their estate. It also analyzes and provides a recommendation to standardize the environment and reduce the number of configurations required for managing the database estate.
 
   ![](images/em-fleet-maintenance-overview-2.png " ")
 
-1. On the browser window on the right preloaded with *Enterprise Manager*, if not already logged in, click on the *Username* field and login with the credentials provided below.
+1. On the browser page when the Enterprise Manager Cloud Control 13c login can be seen, copy and paste or type in these username and password credentials into the fields.
 
     ```
     Username: <copy>sysman</copy>
@@ -73,13 +73,13 @@ Software Standardization Advisor enables administrators to understand various da
     Password: <copy>welcome1</copy>
     ```
 
-    ![](../initialize-environment/images/em-login.png " ")
+    ![](images/patch.png " ")
 
-2.  Click on ***Targets >> Databases***.
+2.  After successful login, in the upper toolbar, locate the ***Targets*** icon and click the drop-down menu and then select ***Databases***.
 
     ![](images/038585c9308635261ae7e4aa956525af.png " ")
 
-3.  In the Databases targets page, click on ***Administration >> Software Standardization Advisor***
+3.  On the Databases targets page, click on the ***Administration*** tab, drop down the menu, and select Software ***Standardization Advisor***
 
     ![](images/software-std-advisor.jpg " ")
 
@@ -87,11 +87,12 @@ Software Standardization Advisor enables administrators to understand various da
 
     ![](images/em-pollution-detection-1.png " ")
 
-    A Software Configuration is identified by Database Release, Platform and set of Patches installed on the target.
+    A Software Configuration is identified by the database release, platform, and the patches installed on the target.
 
-    The Software Configuration Advisor run shows that there are 5 Unique Software Configurations in the environment as shown in the pie chart labelled as “Current Unique Software Configurations” and recommendation is to maintain 2 Software Configurations as shown in the pie chart labelled as “Recommended Software Configurations”.
+    In the analysis performed by the Software Configuration Advisor, it has identified that there are 5 unique software configurations in the environment (pie chart labeled “Current Unique Software Configurations”). The recommendation displayed is for only 2 Software Configurations ( pie chart labeled “Recommended Software Configurations”).
 
-    Let us observe details of the reports in next steps.
+    Next, we will review the report generated.
+
 
 5.  Click on **Generate Report**.
 

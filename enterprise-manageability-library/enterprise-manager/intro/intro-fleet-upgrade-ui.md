@@ -1,14 +1,16 @@
 # Introduction
 ## About this Workshop
-The Automated Database Upgrade at Scale with Fleet Maintenance is a fully functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
-- This Workshop VM comes preinstalled with Enterprise Manager 13.5 and Oracle Database targets - 18.3, 18.8, 18.10, 19.3 and 19.10
-- It's easy and quick to deploy with everything starting automatically in under 20 minutes
-- In this workshop, we'll explore the new UI to upgrade Oracle targets. This new feature was introduced in Enterprise Manager 13.5 RU1.
+
+This workshop provides a fully configured and functional Oracle Enterprise Manager environment configured to run predefined use cases against multiple Oracle Database targets:
+- The VM for this workshop comes preinstalled with Enterprise Manager 13.5 and Oracle Database targets - 18.3, 18.8, 18.10, 19.3 and 19.10
+- The environment deploys and starts up automatically in ~20 minutes
+- In this workshop, you will experience using the Fleet UI to upgrade multiple Oracle targets using the Oracle Enterprise Manager. This new UI was introduced in Enterprise Manager 13.5 RU1
+
 
 *Estimated Time:* 75 minutes
 
 ## About Oracle Enterprise Manager
-Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
+Oracle Enterprise Manager is Oracle’s on-premises management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
 
 Join Oracle's ***Wim Coekaerts***, *senior vice president of software development*, as he describes key innovations delivered in Oracle Enterprise Manager to help customers easily migrate their databases to the cloud and simplify management of hybrid IT environments
 
@@ -96,4 +98,4 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Contributors** - Dave Le Roy, Pankaj Chandiramani, Shefali Bhargava - Enterprise Manager Product Management
-- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, June 2021
+- **Last Updated By/Date** - Romit Acharya - Enterprise Manager Product Management, January 2022
