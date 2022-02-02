@@ -164,13 +164,13 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 2. From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then select ***All Targets.***
 
-Then on the All Targets page, in the upper left search field, type or copy “*Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192*” in the “Search Target Name” box.
+    Then on the All Targets page, in the upper left search field, type or copy “*Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192*” in the “Search Target Name” box.
 
     ```
     <copy>cOrasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192</copy>
     ```
 
-  ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
+    ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
 
 3. From the terminal on your remote desktop, Create the New Gold Image using the following emcli command
 
@@ -314,7 +314,7 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
 
 7. Review the Deployment Procedures.
 
-    ![](images/18.png " ")
+   ![](images/18.png " ")
 
    Select deployment procedure(dp) related to Deploy and click on it. It will show details of the activity performed by the dp.
 
@@ -324,8 +324,8 @@ Then on the All Targets page, in the upper left search field, type or copy “*O
 
 ## Task 7: Migrate Listener
 
-1.  In the above task 6, we had submitted migrate listener already. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
-Click on reschedule.
+1. In the above task 6, we had submitted migrate listener already. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
+  Click on reschedule.
 
   ![](images/24.png " ")
 
@@ -341,9 +341,9 @@ Click on reschedule.
 
 ## Task 8: Update Database – Patch 18.3 to 18.10
 
-1.  Similar to migrate listener, we had submitted Update Database in task 6. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 6). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
+1. Similar to migrate listener, we had submitted Update Database in task 6. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 6). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
 
-    Click on reschedule.
+   Click on reschedule.
 
    ![](images/29.png " ")
 
