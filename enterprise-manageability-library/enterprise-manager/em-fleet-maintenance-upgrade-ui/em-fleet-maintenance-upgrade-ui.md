@@ -142,7 +142,7 @@ Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscriptio
 A gold image is the end of state software definition that contains information about the base software version plus the additional patches. Targets, to be upgraded, subscribe to a relevant Gold Image. Target subscription persists through the lifecycle of the Target or Gold Image unless modified by an administrator.
 
 
-  ![](images/DB_Fleet_Upgrade.png " ")
+   ![](images/DB_Fleet_Upgrade.png " ")
 
 ### **Upgrading with Fleet Maintenance**
 
@@ -174,10 +174,10 @@ In this **[READ ONLY]** section, specific tasks related to patching on the targe
 
 2. From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then select ***All Targets.***
 
-Then on the All Targets page, in the upper left search field, type or copy “*Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192*” in the “Search Target Name” box.
+   Then on the All Targets page, in the upper left search field, type or copy “*Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192*” in the “Search Target Name” box.
 
     ```
-    <copy>cOrasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192</copy>
+    <copy>Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192</copy>
     ```
 
     ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
@@ -310,28 +310,28 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
 Review and execute the following command to unsubscribe finance database from ***Tier #1 SI DB Linux64*** image. If finance database is not subscribed to any image, then we can move to next step, where we will subscribe finance database to 19.7 Gold Image.
 
-```
-<copy>emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database</copy>
-```
+    ```
+    <copy>emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database</copy>
+    ```
 
-```
-<copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
-```
-![](images/unsubscribe_finance.png " ")
+    ```
+    <copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
+    ```
+    ![](images/unsubscribe_finance.png " ")
 
 Review and execute the following command to subscribe finance database to 19.7 image which we had created in step 3 of previous task.      
 
 
-![](images/finance_subscribe_197.png " ")
+    ![](images/finance_subscribe_197.png " ")
 
 
-```
-<copy>emcli db_software_maintenance -getImages</copy>
-```
+    ```
+    <copy>emcli db_software_maintenance -getImages</copy>
+    ```
 
-```
-<copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
-```
+    ```
+    <copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
+    ```
 
 ## Task 7: Deploy Image
 
@@ -345,17 +345,17 @@ Review and execute the following command to subscribe finance database to 19.7 i
 
 2. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
 
-  ![](images/9.png " ")
+    ![](images/9.png " ")
 
-  Where:
-  -  Image = Desired version of Oracle home, which our target database should run after successful completion of operation. In this example, we will select ***Tier1 SIDB 19c Linux-x64***.
-  -  Target Type = Desired target type, which can be Grid, RAC or SIDB. In this example, we will select ***Database Instance***.
-  -  Operation = Name of the operation, which can be update (patch) or upgrade. In this example, we will select ***Upgrade***.
-  -  Type to filter = Selection criteria to highlight only those targets which qualify the selection, such as database naming.
+    Where:
+    -  Image = Desired version of Oracle home, which our target database should run after successful completion of operation. In this example, we will select ***Tier1 SIDB 19c Linux-x64***.
+    -  Target Type = Desired target type, which can be Grid, RAC or SIDB. In this example, we will select ***Database Instance***.
+    -  Operation = Name of the operation, which can be update (patch) or upgrade. In this example, we will select ***Upgrade***.
+    -  Type to filter = Selection criteria to highlight only those targets which qualify the selection, such as database naming.
 
 3. In this page, we will provide ***new Oracle home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
 
-  ![](images/41.png " ")
+    ![](images/41.png " ")
 
   In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle home doesn't impact existing target and hence its scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
 
@@ -363,22 +363,22 @@ Review and execute the following command to subscribe finance database to 19.7 i
 
 4. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
 
-  ![](images/43.png " ")
+    ![](images/43.png " ")
 
 5. Review the validation result.
 
-  ![](images/44.png " ")
+    ![](images/44.png " ")
 
-   Incase of any error, we can fix it and choose revalidate.
+    Incase of any error, we can fix it and choose revalidate.
 
 6. ***Submit*** the operation. Here, we can see that we have opted to deploy, migrate and update the database at once. These tasks will be performed independently based on their schedule.
 
-  ![](images/100.png " ")    
+    ![](images/100.png " ")    
 
  We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page.
 
-   ![](images/45.png " ")
-   ![](images/46.png " ")
+    ![](images/45.png " ")
+    ![](images/46.png " ")
 
 Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
 
@@ -386,29 +386,29 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 
     ![](images/47.png " ")
 
-   Select deployment procedure(dp) related to Deploy and click on it. It will show details of the activity performed by the dp.
+    Select deployment procedure(dp) related to Deploy and click on it. It will show details of the activity performed by the dp.
 
-   ![](images/49.png " ")
+    ![](images/49.png " ")
 
-   Here, we see that the dp has successfully installed new Oracle home.
+    Here, we see that the dp has successfully installed new Oracle home.
 
 ## Task 8: Migrate Listener to New Upgraded home
 
 1.  In the above task 7, we had submitted migrate listener. If this operation needs to be submitted separately, then we had to uncheck migrate listener in task 6 (review step 2 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
 
-Click on reschedule.
-![](images/50.png " ")
+    Click on reschedule.
+    ![](images/50.png " ")
 
 We can now see that migrate operation is running. We can select it and see the various steps performed by it.
 
-![](images/51.png " ")
+    ![](images/51.png " ")
 
-![](images/52.png " ")
+    ![](images/52.png " ")
 
 
 ## Task 9: Update Database – Upgrade to 19.7
 
-With the deploy operation and migrate listener task completed successfully, we are ready to run the final UPDATE operation which will upgrade the finance database by switching it to the newly deployed home.
+With deploy operation and migrate listener task completed successfully, we are ready to run the final UPDATE operation which will upgrade the finance database by switching it to the newly deployed home.
 
 1.  Similar to migrate listener, we had submitted Update Database in task 7. If this needs to be submitted separately, then we had to uncheck update database task ( review step 2 of task 6). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
 
