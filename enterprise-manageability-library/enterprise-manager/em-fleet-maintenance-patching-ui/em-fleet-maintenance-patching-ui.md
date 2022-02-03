@@ -318,7 +318,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     ![](images/9.png " ")
 
-    Deployment of new Oracle home doesn't impact existing Oracle home and hence it is scheduled to run immediately. We can schedule it to run at a different time by selecting later in start schedule and providing new time to run this operation.
+    Deployment of new Oracle home does not impact existing Oracle home and hence it is scheduled to run immediately. We can schedule it to run at a different time by selecting later in start schedule and providing new time to run this operation.
 
     Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute these tasks immediately.  
 

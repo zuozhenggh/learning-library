@@ -31,7 +31,7 @@ In this lab you will perform the following steps:
 | Step No. | Feature                                                   | Approx. Time | Details                                                                                                              | Value Proposition |
 |----------------------|-----------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
-| 2                    | Oracle Database Upgrade with Fleet Maintenance | 1hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
+| 2                    | Oracle Database Upgrade with Fleet Maintenance | 1 hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -378,7 +378,7 @@ else make changes in the below command and execute it.
 
     ![](images/41.png " ")
 
-    Deployment of new Oracle home doesn't impact existing Oracle home and hence it is scheduled to run immediately. We can schedule it to run at a different time by selecting later in start schedule and providing new time to run this operation.
+    Deployment of new Oracle home does not impact existing Oracle home and hence it is scheduled to run immediately. We can schedule it to run at a different time by selecting later in start schedule and providing new time to run this operation.
 
     Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute these tasks immediately.
 
