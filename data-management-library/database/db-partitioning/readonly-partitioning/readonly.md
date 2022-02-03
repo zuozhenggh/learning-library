@@ -191,9 +191,7 @@ rem add a column to the table
 alter table ropt add (newcol number default 99);
 </copy>
 ```
-
-This might be surprising to you at first glance, but if you go back to how we defined data immutability you will see that adding a column does not violate our rule. Why did Oracle choose this approach? The answer is simple: if we had decided to use a SELECT * FROM <read only partition> as data immutability we had ruled out any schema evolution like adding a column for a partitioned table as soon as one partition was set to read only. This was considered an unacceptable limitation for partitioned tables.
-
+ 
 Now, what operations are not allowed? Anything that is considered changing the data immutability as defined earlier. Examples are
 
 Any form of DML on a read only partition:
