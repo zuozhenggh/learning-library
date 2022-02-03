@@ -4,11 +4,10 @@
 
 Oracle Cloud Infrastructure (OCI) Identity and Access Management (IAM) Service lets you control who has access to your cloud resources. You control the types of access a group of users has and to which specific resources. The purpose of this lab is to give you an overview of the IAM Service components and an example scenario to help you understand how they work together.
 
+Watch the video below for an overview of the lab.
+[](youtube:KahdJmhJlYI)
+
 Estimated time: 30 minutes
-
-There is a recording of the instructor going through this lab:
-
-[](youtube:wQU9mb9yX7o)
 
 ### Objectives
 In this lab, you will:
@@ -220,5 +219,4 @@ We'll create a user, a group, and a security policy to understand the concept.
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar
 - **Adapted by** -  Tom McGinn, Database Product Management
 - **Contributors** - Arabella Yao, Product Manager, Database Product Management
-- **Last Updated By/Date** - Arabella Yao, December 2021
-
+- **Last Updated By/Date** - Arabella Yao, January 2022
