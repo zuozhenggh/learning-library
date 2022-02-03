@@ -177,7 +177,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 3. From the terminal on your remote desktop, Create the New Gold Image using the following emcli command
 
     ```
-    <copy>cd fleet
+    <copy>cd ~/fleet
     cat create_image_Tier2_sidb_x64.sh</copy>
     ```
 

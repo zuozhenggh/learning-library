@@ -185,7 +185,7 @@ In this **[READ ONLY]** section, specific tasks related to patching on the targe
 3. Review “Create New Gold Image” from the terminal on your remote desktop using the following emcli command
 
     ```
-    <copy>cd fleet
+    <copy>cd ~/fleet
     cat create_image_Tier1_sidb_x64.sh</copy>
     ```
 
