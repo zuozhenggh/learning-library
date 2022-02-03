@@ -435,17 +435,17 @@ With deploy operation and migrate listener task completed successfully, we are r
 
     Click on reschedule.
 
-   ![](images/53.png " ")
+    ![](images/53.png " ")
 
-   In the new page, select immediately for start and reschedule.
+    In the new page, select immediately for start and reschedule.
 
-   We can now see that update operation is running. We can select it and see the various steps performed by it.
+    We can now see that update operation is running. We can select it and see the various steps performed by it.
 
-   ![](images/54.png " ")
+    ![](images/54.png " ")
 
-   Update operation was completed successfully.
+    Update operation was completed successfully.
 
-   ![](images/55.png " ")
+    ![](images/55.png " ")
 
 ## Task 10: Cleanup Old homes
 
