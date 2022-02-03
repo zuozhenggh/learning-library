@@ -28,7 +28,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
-- Provision an ADB Instance (19c, Always Free)
+- Provision an Oracle Autonomous Database and ADW Instance has been created
   
 ## Task 1: Create Range Partitioning
 
