@@ -51,7 +51,7 @@ This lab assumes you have:
 
     ![](images/em-login.png " ")
 
-If the login page is not functioning properly (Please note that it takes up to 15 minutes after instance provisioning for all processes to fully start), open a terminal session and restart Enterprise Manager Services (OMS and emagent).
+    If the login page is not functioning properly (Please note that it takes up to 15 minutes after instance provisioning for all processes to fully start), open a terminal session and restart Enterprise Manager Services (OMS and emagent).
 
     ```
     <copy>
@@ -65,7 +65,7 @@ If the login page is not functioning properly (Please note that it takes up to 1
     ![](images/em-landing-new.png " ")
 
     If successful, the page above is displayed and as a result your environment is now ready.
-    You should see 5 databases down in the EM Page. If you see more  databases down, then follow step 4 to bring them up.
+    You should see 5 databases down in the EM Page. If you see more databases down, then follow step 4 to bring them up.
 
 4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
 
