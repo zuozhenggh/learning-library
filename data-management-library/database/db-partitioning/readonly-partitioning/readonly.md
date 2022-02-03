@@ -279,15 +279,11 @@ rem drop everything succeeds
 drop table RDPT2 purge;
 </copy>
 ```
-
-Semantically you are not violating any data immutability when you remove a complete object. If you want to preserve this case you should address this with proper privilege management or, under some circumstances, by disabling the table level lock. The latter one prevents a drop table, but also all other operations that require an exclusive table level lock.
-
+ 
 You successfully made it to the end of module 'read only partitions and subpartitions'.    
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
+ 
 * [Readonly Partition](https://livesql.oracle.com/apex/livesql/file/content_ED7LSLT4HREACY60G0K23CO9J.html)
 * [Database VLDB and Partitioning Guide](https://docs.oracle.com/en/database/oracle/oracle-database/21/vldbg/partition-create-tables-indexes.html)
 
