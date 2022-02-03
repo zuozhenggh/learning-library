@@ -1,13 +1,29 @@
 # Introduction
 
-## About Oracle Enterprise Manager
+## About this Workshop
+This goal of this workshop is to become familiar with Enterprise Monitoring capabilities using Oracle Enterprise Manager Cloud Control 13c.
+
+*Estimated Workshop Time*: 70 minutes
+
+### About Oracle Enterprise Manager
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
 
 Join Oracle's ***Wim Coekaerts***, *senior vice president of software development*, as he describes key innovations delivered in Oracle Enterprise Manager to help customers easily migrate their databases to the cloud and simplify management of hybrid IT environments
 
 [](youtube:MZJQx6MuHA0)
 
-## Workshop Description
+### Objectives
+In this workshop, you will learn how to use:
+- Enterprise Summary
+- Incident Manager
+- Metric and Collection Settings
+- Corrective Actions
+- Metric Extensions 
+- Monitoring Templates
+- Administration Groups and Template Collections
+- Incident Rules
+
+## Summary
 Oracle Enterprise Manager enables you to get complete monitoring visibility into your IT infrastructure, applications stack and applications that are critical to running your business.
 
 - Single pane of glass monitoring for on-premises, hybrid, and Oracle Cloud Platform
