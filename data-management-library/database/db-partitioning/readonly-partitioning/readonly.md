@@ -40,6 +40,7 @@ drop table part4xchange purge;
 drop table np4xchange purge;
 drop table compart4xchange purge;
 drop table p4xchange purge;
+drop table RDPT2;
 </copy>
 ```
  
@@ -59,19 +60,28 @@ as select rownum, rownum*10, rpad('a',rownum,'b')
 from dual connect by level <= 100;
 </copy>
 ```
-
+    
 As you can see, we did specify read only for partition P1 but nowhere else, neither on table nor partition level. Let's see what we ended up with:
 
 ```
 <copy>
 rem metadata
 select table_name, def_read_only from user_part_tables where table_name='ROPT';
-rem currently existent partitions<br>
+rem currently existent partitions;
+</copy>
+```
+
+![Image alt text](images/lab7_01.png "Read only Partition")
+
+```
+<copy> 
 select partition_name, high_value, read_only
 from user_tab_partitions
 where table_name='ROPT';
 </copy>
 ```
+
+![Image alt text](images/lab7_02.png "Read only Partition")
 
 As probably expected, we only have one partition that is set to read only in this example. That means that:
 
@@ -85,6 +95,17 @@ rem change the status of a partition to read only
 alter table ropt modify partition for (5) read only;
 </copy>
 ```
+
+```
+<copy> 
+select partition_name, high_value, read_only
+from user_tab_partitions
+where table_name='ROPT';
+</copy>
+```
+
+![Image alt text](images/lab7_03.png "Read only Partition")
+
 
 As partition level attribute, read only can obviously be used in conjunction with other partition maintenance operations. The question now begs what does it really mean for partition maintenance operations, and especially when these PMOPs are executed in an online mode?
 
@@ -117,6 +138,16 @@ rem set everything read only, including the default property
 alter table ropt read only;
 </copy>
 ```
+
+```
+<copy> 
+select partition_name, high_value, read_only
+from user_tab_partitions
+where table_name='ROPT';
+</copy>
+```
+
+![Image alt text](images/lab7_04.png "Read only Partition")
 
 Let's now have a closer look what it means to have a partition set to read only and how Oracle describes data immutability in this context. The fundamental data immutability rule for read only tables and partitions is that only operations are allowed that must not change the data content of the partition at the point in time when a partition was set to read only. Or, in more sql-like words, the result of SELECT  column list at read only setting time  FROM  table  PARTITION  partition set to read only  within the partitioned tables must not change.
 
@@ -192,10 +223,62 @@ Last but not least, and this is no different to existing read only tables, you c
 </copy>
 ```
 
+![Image alt text](images/lab7_05.png "Read only Partition")
+
 ```
 <copy>
 rem drop everything succeeds
 drop table ropt purge;
+</copy>
+```
+ 
+## Task 3: Another example of readonly partitioned table
+
+```
+<copy>
+create table RDPT2
+(oid    number,
+odate   date,
+amount  number
+)read only
+partition by range(odate)
+(partition q1_2016 values less than (to_date('2016-04-01','yyyy-mm-dd')),
+partition q2_2016 values less than (to_date('2016-07-01','yyyy-mm-dd')),
+partition q3_2016 values less than (to_date('2016-10-01','yyyy-mm-dd'))read write,
+partition q4_2016 values less than (to_date('2017-01-01','yyyy-mm-dd'))read write);
+</copy>
+```
+
+Data in a read-only partition or subpartition cannot be modified.
+
+```
+<copy>
+insert into RDPT2 values(1,to_date('2016-01-20','yyyy-mm-dd'),100); 
+</copy>
+```
+![Image alt text](images/lab7_06.png "Read only Partition")
+
+
+
+```
+<copy>
+insert into RDPT2 values(1,to_date('2016-10-20','yyyy-mm-dd'),100);
+insert into RDPT2 values(1,to_date('2016-12-20','yyyy-mm-dd'),100);
+</copy>
+```
+
+```
+<copy>
+select * from RDPT2;
+</copy>
+```
+
+![Image alt text](images/lab7_07.png "Read only Partition")
+
+```
+<copy>
+rem drop everything succeeds
+drop table RDPT2 purge;
 </copy>
 ```
 
