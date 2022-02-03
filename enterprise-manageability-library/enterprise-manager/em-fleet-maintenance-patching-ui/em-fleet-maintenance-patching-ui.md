@@ -148,9 +148,10 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
     ![](images/ec0b6926d4f65b52a771483ace24055c.png " ")
 
+You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a pluggable database ‘HRPDB’. Both the container database and pluggable database targets have status ‘UP’ and version 18.3.0.0.0. If the target status is ‘DOWN’, then start the target (using */home/oracle/start\_db\_hr.sh*).
     ![](images/c064eebf1a17dfd14d9c5921a88f93cb.jpg " ")
 
-    You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a pluggable database ‘HRPDB’. Both the container database and pluggable database targets have status ‘UP’ and version 18.3.0.0.0. If the target status is ‘DOWN’, then start the target (using */home/oracle/start\_db\_hr.sh*).
+
 
 ## Task 4: Create Gold Image
 
@@ -164,10 +165,10 @@ We will go through steps for patching database target ***hr.subnet.vcn.oraclevcn
 
 2. From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then select ***All Targets.***
 
-    Then on the All Targets page, in the upper left search field, type or copy “*Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192*” in the “Search Target Name” box.
+    Then on the All Targets page, in the upper left search field, type or copy “*Orasidb18c\_home1\_2020\_05\_13\_04\_10\_9\_emcc.marketplace.com\_3192*” in the “Search Target Name” box. Click on Search icon and in the results page click on the target name.
 
     ```
-    <copy>cOrasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192</copy>
+    <copy>Orasidb18c_home1_2020_05_13_04_10_9_emcc.marketplace.com_3192</copy>
     ```
 
     ![](images/ea2416958193764cc47426f0ad8a0a67.jpg " ")
