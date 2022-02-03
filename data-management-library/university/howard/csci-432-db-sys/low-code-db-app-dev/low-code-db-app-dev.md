@@ -11,7 +11,7 @@ In this lab, you will:
 - Create a new application.  
 - Edit the appearance and theme of your application.  
 - Run your application.  
-- Sign up for a TMDB API key.
+  
 
 ## Task 1: Connecting to your Oracle Cloud Database
 
@@ -91,13 +91,11 @@ After you are connected and clicked on your database, we need to set up APEX and
 
 You will get started by creating a skeleton application and you will add to it in each lab until you have built a full application that allows you to create and manage a personal list of movies you have watched or want to watch.
 
-You will also need to sign up for an account on The Movie Database and obtain an API Key. A TMDB API Key is required for this tutorial, as authentication is needed to get data from The Movie Database API.
 
 In this task, you will:  
 - Create a new application.  
 - Edit the appearance and theme of your application.  
 - Run your application.  
-- Sign up for a TMDB API key.
 
 Creating the App
 
@@ -233,7 +231,7 @@ The first REST source you will create is the Popular Movies source because it is
 5. Name: **Popular Movies**
 
 6. URL Endpoint: **https://api.themoviedb.org/3/movie/popular?api\_key=1c2f0993f616307716d7b80642e5b169&language=en-US&page=1**  
-*Note: The TMDB API\_KEY = **1c2f0993f616307716d7b80642e5b169**
+*Note: The TMDB API\_KEY = 1c2f0993f616307716d7b80642e5b169
 
 7. Click **Next**.
 
@@ -244,7 +242,7 @@ The first REST source you will create is the Popular Movies source because it is
     * Base URL: **https://api.themoviedb.org/3/**
 
     * Service URL Path: **movie/popular?api\_key=1c2f0993f616307716d7b80642e5b169&language=en-US&page=1**  
-    *Note: Make sure you use the URL endpoint and that there are no spaces in your URL endpoint.*
+    *Note: Make sure you use the provided API\_KEY and that there are no spaces in your URL endpoint.*
 
 9. Click **Next** again.
 
@@ -261,6 +259,7 @@ The first REST source you will create is the Popular Movies source because it is
 11. Click **Create REST Data Source**.
 
 Editing The REST Source Data Profile 
+
 You have now created your new data source, but you are going to update it to improve the data you get from Popular Movies. One of the columns you get back from the TMDB Popular Movies API is POSTER\_PATH. It includes the unique poster identifier needed to grab the poster image for a movie. However, it does not contain the full URL, which means that if you want to use POSTER\_PATH, you have to manually add the first part of the URL when using it on the front end. Instead of having to add that each time you want to use the poster path, you can edit the Data Profile for Popular Movies and add a column derived from POSTER\_PATH that contains the entire URL so that later you can access it directly.
 
 1. In the REST Source Name column of the REST Data Sources page, click on your **Popular Movies** source.
@@ -294,6 +293,7 @@ You have now created your new data source, but you are going to update it to imp
 5. Click **Apply Changes** at the top of the REST Data Source page.
 
 Creating a Search Movies REST Data Source
+
 The process to create the Search Movies source is similar to the process for the Popular Movies source, but you will use a plug-in to assist with setting it up. Plug-ins are ready-to-use components created by other APEX developers that enable you to extend your APEX applications with custom functionality. A plug-in can be useful for creating REST data sources that return multiple pages of results. For example, when you make a request to TMDB search movies API, you must also include the page number within that request, and you can only get one page at a time with individual API calls. There is a REST data sources plug-in to work around this problem, which allows you to make one API request and get all results from all the pages.
 
 1. [Click here](./files/web_source_type_fixedpagesize.sql) to download the plug-in.  
@@ -367,7 +367,7 @@ The process to create the Search Movies source is similar to the process for the
 
     ![](images/3-search-discover.png " ")
 
-7. Return to [Task 2](#Task2:EditingTheRESTSourceDataProfile) and follow the same steps for the Search Movies source to edit the data profile and create a POSTER_URL column.
+7. Follow the same steps that you did for Popular Movies to edit the Search Movies data profile and create a POSTER_URL column.
 
 ## Task 5: Creating the Movie Search Page
 
@@ -381,6 +381,7 @@ In this task, you will:
 - Set up search functionality to allow a user to search for a movie.
 
 Creating the Add a Movie Button
+
 You will need to create a button on the first page of the application before you can create the Movie Search page, so that you have a way to open up the page when you want to search for movies.
 
 1. Return to the Movies Watchlist application home and click on page **1 - My Watchlist**.
@@ -424,6 +425,7 @@ You will need to create a button on the first page of the application before you
     ![](images/add-movie-settings-edit.png " ")
 
 Creating the Movie Search Page
+
 Now that you have a way of opening the Movie Search page, you will actually create the page in this step and do a little page setup before adding data.
 
 1. In the toolbar at the top of the Page Designer, click the **Create** button (3 buttons left of the Save button) and select the **Page** option. 
@@ -512,6 +514,7 @@ Now that you have a way of opening the Movie Search page, you will actually crea
     ![](images/2-search-page-css-edit.png " ")
 
 Setting up Popular and Searched Movies
+
 In this step, you will start to add data to your app using the REST data sources you set up in Task 4. First, you will be using the Popular Movies source to get the list of current popular movies and display them when a user has not searched for any movies.
 
 1. In the rendering pane of the Page Designer, right click on Content Body and select **Create Region**.
@@ -563,7 +566,7 @@ In this step, you will start to add data to your app using the REST data sources
         &lt;div class="movie-rating">
         &lt;span aria-hidden="true" class="fa fa-star">&lt;/span> &VOTE_AVERAGE.&lt;/div>
         ```  
-        *Note: In the HTML Expression, the &NAME. syntax is used to create a substitution string for the value of the VOTE_AVERAGE column for each movie. To learn more, check out the Resources section at the end of this lab.*
+        *Note: In the HTML Expression, the &NAME. syntax is used to create a substitution string for the value of the VOTE_AVERAGE column for each movie.*
 
         ![](images/3-popular-movies-card-edit-1.png " ")
 
@@ -595,7 +598,10 @@ In this step, you will start to add data to your app using the REST data sources
 
     * Cards per page: **25**
 
-    ![](images/3-searched-movies-pagination. the Search Bar
+    ![](images/3-searched-movies-pagination.png " ")
+
+Adding the Search Bar
+
 The final region that needs to be added to the Movie Search page is the search bar, which will allow a user to search for movies. Additionally, both the Popular and Searched movie regions are currently displaying at the same time on the Movie Search page. You want to only show one at a time based on the condition that the Searched Movies region displays only if the search bar page item has a value. If the search bar has no value, the page will only display the Popular Movies region.
 
 1. Right click on Dialog Header in the rendering pane and select **Create Region**.
@@ -674,6 +680,7 @@ The final region that needs to be added to the Movie Search page is the search b
     ![](images/4-query-edit.png " ")
 
 Linking Add Movie to Movie Search
+
 The last step in this task is linking your Add a Movie button on the Watchlist page to the Movie Search page. A modal dialog page like Movie Search cannot run on its own, which is why you need the Add a Movie button to access it.
 
 1. Go to page 1 by clicking the down arrow in the page navigation on the toolbar.
@@ -750,6 +757,7 @@ In this task, you will:
 - Connect the Movie Details page to the Movie Search page.
 
 Creating the Movie Details REST Data Source
+
 While the process for setting up the Movie Details REST source is similar to the Popular and Search Movies sources, it is a little more involved, because you have to define the response structure as well as specify variables to be able to query for any movie.
 
 1. Just like you did for Popular Movies and Search Movies, click on **Shared Components**. 
@@ -768,7 +776,7 @@ While the process for setting up the Movie Details REST source is similar to the
 
     * URL Endpoint: **https://api.themoviedb.org/3/movie/:movie_id**
 
-        - At the end of the URL Endpoint, you are creating a bind variable, :movie_id, using the : syntax. This is what will allow you to pass in any value for the movie ID so that you can get the details for any movie. To learn more about bind variables, see the Resources section at the end of this lab.
+        - At the end of the URL Endpoint, you are creating a bind variable, :movie_id, using the : syntax. This is what will allow you to pass in any value for the movie ID so that you can get the details for any movie.
 
     * Click somewhere within the Create REST Data Source dialog to unfocus from the URL Endpoint. APEX will display a URL Parameter line, where you can set the :movie_id parameter value.
 
@@ -786,7 +794,7 @@ While the process for setting up the Movie Details REST source is similar to the
 
         - Name: **api_key**
 
-        - Value: *Insert your unique API key here.*
+        - Value: **1c2f0993f616307716d7b80642e5b169**
 
     * Click on the **Advanced** button at the bottom of the dialog.
 
@@ -796,7 +804,7 @@ While the process for setting up the Movie Details REST source is similar to the
 
     * Type a single period **.** in the **Row Selector (leave empty for auto-detection)** text field and hit Enter/Return.
     
-        - This instructs APEX to use the root of the JSON object that gets returned from TMDB Movie Details API. To learn more, see the Resources section at the end of this lab.
+        - This instructs APEX to use the root of the JSON object that gets returned from TMDB Movie Details API. 
 
     * For the Returns parameter, select **Single Row**.
 
@@ -820,9 +828,10 @@ While the process for setting up the Movie Details REST source is similar to the
 
     * **BACKDROP\_URL**:  CONCAT('https://image.tmdb.org/t/p/w500', BACKDROP\_PATH)
 
-6. Follow the instructions in <a href="?lab=creating-rest-sources#Task2:EditingTheRESTSourceDataProfile" target="_blank">Lab 2, Task 2</a> to add the BACKDROP\_URL and POSTER\_URL columns.
+6. Follow the instructions in Task 4 to edit the Movie Details REST Data Profile and add the BACKDROP\_URL and POSTER\_URL columns.
 
 Creating the Movie Details Page
+
 Just like you did for the Movie Search page, you will create a new page and set a couple page properties before connecting the Movie Details REST source to the page.
 
 1. Go to your Movies Watchlist Application home.
@@ -860,6 +869,7 @@ Just like you did for the Movie Search page, you will create a new page and set 
     ![](images/2-details-template-options-edit.png " ")
 
 Connecting the Movie Details REST Source to Page
+
 When you set up the Movie Details API, you created the movie_id parameter. You can link that parameter to a page item that contains the movie id, which will allow you to call the details for whatever movie you select from the Movie Search page.
 
 1. In the Movie Details page, right click on the Content Body region and select **Create Region**.
@@ -897,6 +907,7 @@ When you set up the Movie Details API, you created the movie_id parameter. You c
     ![](images/movie-id-settings-edit.png " ")
 
 Connecting the Movie Details Page to Movie Search Page
+
 You want to be able to view the details of any movie you click on in your Movie Search page. You can link the Movie Details page to the Movie Search page like you did when setting up the Movie Search page and Add a Movie button. However, in order to get the details for the specific movie you clicked on, you have to pass the movie id from the search page to the details page.
 
 1. Navigate to page **2: Movie Search** by entering 2 in the Page Finder in the Page Designer toolbar and clicking Go.
@@ -963,6 +974,7 @@ In this task, you will:
 - Create an application process and item for storing user information.
 
 Creating the Movie Users Table
+
 The first table you need to create is the movie\_users table. It is very simple, but it needs to be created before the watchlist table so that you can access the user ID. The watchlist table has a foreign key, user\_id, that will link it to the movie\_users table and allow different users to have their own unique lists.
 
 1. In the Page Designer tab in your browser, click the dropdown next to SQL Workshop in the top navigation bar, hover over Utilities, and select **Quick SQL**. 
@@ -1011,6 +1023,7 @@ The first table you need to create is the movie\_users table. It is very simple,
 10. Now you will add an Application ID and Application Process, which will capture a user's email when they log in and assign them an ID so that you can keep track of their unique watchlist.
 
 Creating the Application Item and Process
+
 To store data within the movie\_users database, you will use an application process. The process grabs the user email when they log in and if they are a new user, it adds them to a local table, assigning them an ID. The ID of the current user is also stored in the application item, which will be needed when a user adds, removes, or updates items in their watchlist.
 
 1. Click on **App Builder** in the top APEX toolbar.
@@ -1094,6 +1107,7 @@ To store data within the movie\_users database, you will use an application proc
 12. Next, you'll set up a new table using Quick SQL to store all of a user's movies that they add to their list.
 
 Creating the Watchlist Table
+
 Finally, you will need a table to store some basic movie information in addition to the user information. This is what will display and be the source for the My Watchlist page.
 
 1. In the toolbar at the top of your APEX workspace, click the dropdown next to SQL Workshop, hover over Utilities, and select **Quick SQL**.
@@ -1140,7 +1154,7 @@ Finally, you will need a table to store some basic movie information in addition
 
 8. Click **Run**.
 
-9. Click **Run Now**. You should see 3 statements executed successfully.
+9. Click **Run Now**. You should see 4 statements executed successfully.
 
     ![](images/script-success.png " ")
 
@@ -1234,6 +1248,7 @@ Creating the Movie Details Buttons
     ![](images/1-watched-settings-edit.png " ")
 
 Implementing Button Actions
+
 Now that you have made the 4 buttons, it's time to connect actions to them. You first will connect each button to a database action so that APEX knows what SQL commands will be used for each. Then, you will need to implement those actions using a process for each button. You will also use a branch to redirect the user back to the previous page once the process is complete.
 
 1. In the rendering pane, click on the **BACK** button and scroll down to the Behavior section.
@@ -1378,7 +1393,10 @@ Now that you have made the 4 buttons, it's time to connect actions to them. You 
 
 18. Follow Step 15 again for the Searched Movies Full Card action.
 
-19. Click * Server-Side Conditions to Buttons
+19. Click **Save**. 
+    
+Server-Side Conditions to Buttons
+
 At this point, all of the buttons on the Movie Details page display at all times, regardless of whether or not you've already added a movie to your list or marked something as watched. You should really only show the Remove or Watched buttons if a movie exists in the watchlist table, meaning the user has added it. Similarly, you should only display the Added button if a user has not yet added a movie to the the watchlist table.
 
 To accomplish this, you are going to use Server-Side Conditions, like you did for the Popular Movies and Searched Movies regions on page 2. You will also add a condition for the Back button, so that it only displays if the previous page is the Movie Search page.
@@ -1525,7 +1543,7 @@ Before you test the buttons you just implemented, you will add badges to the Mov
     
 4. In the Development Bar at the bottom of the page, click **Application XXXXX** to return to the application builder.
 
-## Task 9: Implementing the Watchlist Page
+## Task 9: Implementing the Watchlist Page (Optional)
 
 Now that you have implemented functionality to find movies and add them to a list, you can use page 1 to view that list, search it, and modify it. In this task, you will be setting up the My Watchlist page to display each movie in the watchlist table and filter the list, which is the final piece of base functionality you will need to complete this app.
 
@@ -1536,6 +1554,7 @@ In this task, you will:
 - Add a search bar to directly search for movies.
 
 Creating the Watchlist Cards
+
 So far, you have only added a button in the Breadcrumb Bar region of page 1. You will start to flesh out the page by first adding a Cards region on the main page so that users can view their personal list of movies. It will be similar to the Cards regions on the Movie Search page, but these cards will be formatted a little differently and the source will not be a REST data source.
 
 1. Navigate to page 1 of your Movies Watchlist application.
@@ -1614,6 +1633,7 @@ So far, you have only added a button in the Breadcrumb Bar region of page 1. You
     ![](images/1-watchlist-attributes-bottom-edit.png " ")
 
 Connecting the Watchlist to the Movie Details Page
+
 In this step, you are going to connect the My Watchlist page to the Movie Details page to allow a user to view details for any movie on the list, as well as remove a movie from their list or mark a movie as "Watched" without having to go through the Movie Search.
 
 1. In the rendering pane, right click on the Actions section underneath the Watchlist region and select **Create Action**.
@@ -1650,6 +1670,7 @@ In this step, you are going to connect the My Watchlist page to the Movie Detail
     ![](images/app-example.png " ")
 
 Adding the Faceted Search
+
 The next step is allowing a user to filter through movies in their watchlist to make it easier for users to explore their movie list and find movies they could watch based on specific criteria. You'll do this by using a Faceted Search to create facets for columns we can filter the movie list with.
 
 1. In the Page Designer tab in your browser, right click on the Content Body region and select **Create Region**.
@@ -1762,7 +1783,7 @@ The next step is allowing a user to filter through movies in their watchlist to 
             + Display Value: **90 minutes to 2 hours**, Return Value: **90|120**
 
             + Display Value: **Less than 90 minutes**, Return Value: **|90**
-            *Note: The | syntax is used to define a range of return values. To learn more, see the Resources section at the end of this lab.*
+            *Note: The | syntax is used to define a range of return values.*
 
         - Sort → Sort at Runtime: **off** 
 
@@ -1812,7 +1833,8 @@ The next step is allowing a user to filter through movies in their watchlist to 
 
     * Source → Data Type: **Number**
 
-# a Sort By Item
+Adding a Sort By Item
+
 In addition to the Faceted Search, it would be helpful for there to be a "Sort By" feature that allows users to reorder their list of movies a few different ways.
 
 1. Right click on the Watchlist region in the rendering pane and select **Create Page Item**.
@@ -1889,7 +1911,7 @@ In addition to the Faceted Search, it would be helpful for there to be a "Sort B
 
     ![](images/4-watchlist-app-view.png " ")
 
-## Task 10: Improving the Movie Details Page
+## Task 10: Improving the Movie Details Page (Optional)
 
 At this point, you have built out the basic functionality of your Watchlist app. However, while the app is usable, it is not entirely user friendly. In this task, you will revamp the Movie Details page UI to make it easier to read and understand.
 
@@ -1899,6 +1921,7 @@ In this task, you will:
 - Style the regions with CSS.
 
 Creating the Movie Details Header
+
 On your current Movie Details page, all that displays are simple form fields with the data that comes from the Movie Details API. While that tells you information about a movie, you want to be able to view it in a nicer format. To start, you can utilize a few columns to create a nice header that includes the movie poster, the background image, and the movie title.
 
 1. In the Page Designer tab in your browser, navigate to page 3 - Movie Details.
@@ -2016,7 +2039,8 @@ On your current Movie Details page, all that displays are simple form fields wit
 
 8. Now you will have a nice header that includes the movie title, poster image, and background image, and some of the movie details.
 
-# the Movie Overview
+Adding the Movie Overview
+
 In addition to the header, you want to be able to see the overview of the movie, but formatted in a way that is better for viewing than in a form.
 
 1. In the rendering pane on the left, right click on Content Body and select **Create Region**.
@@ -2037,7 +2061,8 @@ In addition to the header, you want to be able to see the overview of the movie,
 
     ![](images/overview-settings-edit.png " ")
 
-# Custom CSS
+Adding Custom CSS
+
 As the last step for the Movie Details page enhancements, you will add some custom CSS to style the page header you created and the cast cards that will be added in Lab 9. While the original layout and format of the Cards can get you pretty far, a little custom CSS goes a long way in really rounding out the entire look of a region and a page.
 
 1. At the top of the rendering pane, click on **Page 3: Movie Details**.
