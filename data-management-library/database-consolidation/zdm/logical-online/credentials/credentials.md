@@ -1,4 +1,4 @@
-# Token Authentication, Credentials and Object Storage Configuration
+# Configure Token Authentication, Credentials and Object Storage
 
 ## Introduction
 In this lab, you will be:
@@ -112,6 +112,9 @@ This workshop section requires having completed all previous sections.
 
 3. Run the script by clicking on the __Run Script__ icon.
     ![ Database Actions with SQL option and Run Script option highlighted](./images/run-unlock-script.png)
+
+
+Please *proceed to the next lab*.
 
 ## Acknowledgements
 * **Author** - Zachary Talke, Solutions Engineer, NA Tech Solution Engineering

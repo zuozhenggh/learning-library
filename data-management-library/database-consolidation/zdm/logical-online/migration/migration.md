@@ -1,4 +1,4 @@
-# Migratign your Database
+# Migrate your Database
 
 ## Introduction
 In this lab on your host instance, you will:
@@ -21,52 +21,52 @@ This workshop section requires having completed all he previous sections.
 
 1. The migrate zdmcli command performs a migration and consists of several parameters. Let's review one by one to undertand them better.
 
-```
-/u01/app/zdmhome/bin/zdmcli migrate database -rsp /path/zdmresponsefile.rsp -sourcesid ORACLE_SID -sourcenode source_host_name -srcauth authentication_plugin_name -srcarg1 user:source_database_server_login_user_name -srcarg2 identity_file:ZDM_installed_user_private_key_file_location  -srcarg3 sudo_location:/sudo_location -eval -skipadvisor
-```
+    ```
+    /u01/app/zdmhome/bin/zdmcli migrate database -rsp /path/zdmresponsefile.rsp -sourcesid ORACLE_SID -sourcenode source_host_name -srcauth authentication_plugin_name -srcarg1 user:source_database_server_login_user_name -srcarg2 identity_file:ZDM_installed_user_private_key_file_location  -srcarg3 sudo_location:/sudo_location -eval -skipadvisor
+    ```
 
-Let's review one by one the different parameters that are part of this command:
+    Let's review one by one the different parameters that are part of this command:
 
-```
--rsp /path/zdmresponsefile.rsp
-```
-The __-rsp__ option specifies the migration response file path
+    ```
+    -rsp /path/zdmresponsefile.rsp
+    ```
+    The __-rsp__ option specifies the migration response file path
 
-```
--sourcesid ORACLE_SID
-```
-The __-sourcesid__ option specifies the ORACLE_SID of the source database. This option is used here instead of -source given that the source database is a single instance database with no Grid Infrastructure deployment.
+    ```
+    -sourcesid ORACLE_SID
+    ```
+    The __-sourcesid__ option specifies the ORACLE_SID of the source database. This option is used here instead of -source given that the source database is a single instance database with no Grid Infrastructure deployment.
 
-```
--sourcenode source_host_name
-```
-The __-sourcenode__ option specifices the Source Database Host Name
+    ```
+    -sourcenode source_host_name
+    ```
+    The __-sourcenode__ option specifices the Source Database Host Name
 
-```
--srcauth authentication_plugin_name
-```
-The __-srcauth__ option specifies the Authentication Plugin to be used, the default plugin is zdmauth.
+    ```
+    -srcauth authentication_plugin_name
+    ```
+    The __-srcauth__ option specifies the Authentication Plugin to be used, the default plugin is zdmauth.
 
 
-```
--srcarg1 user:source_database_server_login_user_name
-```
-The __-srcarg1 user:__ option specifies the Source Database Server Login user name
+    ```
+    -srcarg1 user:source_database_server_login_user_name
+    ```
+    The __-srcarg1 user:__ option specifies the Source Database Server Login user name
 
-```
--srcarg2 identity_file:ZDM_installed_user_private_key_file_location
-```
-The __-srcarg2 identity_file__ option specifies the ZDM installed user private key file location
+    ```
+    -srcarg2 identity_file:ZDM_installed_user_private_key_file_location
+    ```
+    The __-srcarg2 identity_file__ option specifies the ZDM installed user private key file location
 
-```
--srcarg3 sudo_location:/sudo_location
-```
-The __-srcarg3 sudo_location__ option specifies the path for the sudo location
+    ```
+    -srcarg3 sudo_location:/sudo_location
+    ```
+    The __-srcarg3 sudo_location__ option specifies the path for the sudo location
 
-```
--eval -skipadvisor
-```
-Finally, the __-eval__ flag specifies that this is an Evaluation mode migration, hence ZDM will not be actually performing the migration but just a validation to verify everything is in order. The __-skipadvisor__ flag specifies that ZDM can skip the Pre-Migration advisor phase, which will not be required for the purposes of this workshop.
+    ```
+    -eval -skipadvisor
+    ```
+    Finally, the __-eval__ flag specifies that this is an Evaluation mode migration, hence ZDM will not be actually performing the migration but just a validation to verify everything is in order. The __-skipadvisor__ flag specifies that ZDM can skip the Pre-Migration advisor phase, which will not be required for the purposes of this workshop.
 
 2. Let's now proceed to perform a migration on Evaluation mode. Providing all the steps have been followed, the following zdmcli migrate database command and corresponding options, parameters and flags should work without requiring any modification. As the zdmuser, execute the following in your Cloud Shell: 
 
@@ -101,7 +101,7 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
 
 2. You might need to execute the command several times until the evaluation is completed. Upon succesful completion of your migration in evaluation mode, you should see an output like the following:
 
-![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Query Job output](./images/zdm-job-eval-done.png " ")
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Query Job output](./images/zdm-job-eval-done.png " ")
 
 ## **Task 3: Migrate your Database**
 

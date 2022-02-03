@@ -74,7 +74,8 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![](images/copy-publickey-cloudshell.png " ")
 
-You may now [proceed to the next lab](#next) or paste it in the LiveLabs reservation page.
+
+Please *proceed to the next lab*.
 
 
 

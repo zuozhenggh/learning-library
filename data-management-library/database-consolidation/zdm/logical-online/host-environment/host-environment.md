@@ -533,8 +533,7 @@ It is important to update the IPTables on the Source DB Server. To do so:
     </copy>
     ```
 
-You may now [proceed to the next lab](#next). 
-
+Please *proceed to the next lab*.
 
 ## Acknowledgements
 * **Author** - Zachary Talke, Solutions Engineer, NA Tech Solution Engineering

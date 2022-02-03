@@ -393,7 +393,7 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
 
 4. After the lines are updated save and quit vi editor.
 
-You may now [proceed to the next lab](#next). 
+Please *proceed to the next lab*.
 
 ## Acknowledgements
 * **Author** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
