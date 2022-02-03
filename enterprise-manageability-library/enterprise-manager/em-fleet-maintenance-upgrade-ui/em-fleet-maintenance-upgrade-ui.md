@@ -415,7 +415,7 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 
 ## Task 8: Migrate Listener to New Upgraded home
 
-1.  In the above task 7, we had submitted migrate listener. If this operation needs to be submitted separately, then we had to uncheck migrate listener in task 6 (review step 2 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
+1.  In the above task 7, we had submitted migrate listener. If this operation needs to be submitted separately, then we had to uncheck migrate listener in task 6 (review step 3 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
 
     Click on reschedule.
     ![](images/50.png " ")
@@ -431,7 +431,7 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 
 With deploy operation and migrate listener task completed successfully, we are ready to run the final UPDATE operation which will upgrade the finance database by switching it to the newly deployed home.
 
-1.  Similar to migrate listener, we had submitted Update Database in task 7. If this needs to be submitted separately, then we had to uncheck update database task ( review step 2 of task 6). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
+1.  Similar to migrate listener, we had submitted Update Database in task 7. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 7). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
 
     Click on reschedule.
 
