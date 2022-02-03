@@ -8,6 +8,11 @@
             "filename": "sprint-download-adb-wallet.md"
         },
         {
+            "title": "Where do I find the ADB OCID?",
+            "description": "",
+            "filename": "../sprint-find-adb-ocid/sprint-find-adb-ocid.md"
+        },
+        {
             "title": "How to install OCI CL?",
             "description": "",
             "filename": "../../oci/sprint-install-ocicl/sprint-install-ocicl.md"
