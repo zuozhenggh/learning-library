@@ -19,7 +19,7 @@
             "title": "Lab : Provision an Autonomous Database Instance",
             "description": "Provision an Autonomous Database Instance",
             "type": "livelabs",
-            "filename": "../../adb-provision/adb-provision-conditional.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },   
         {
             "title": "Lab 2: Range Partitioning",
