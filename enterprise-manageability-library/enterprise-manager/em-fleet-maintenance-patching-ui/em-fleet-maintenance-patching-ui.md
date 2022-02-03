@@ -212,6 +212,13 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     After retrieving a list of the available images, one can view a list of versions available for a specific image with the following command:
 
+    If the image id is same as the one highlighted above, you may use the below command
+    ```
+    <copy>emcli db_software_maintenance -getVersions -image_id=A79587A072121E21E0532A00000A28AB</copy>
+    ```   
+
+    else make changes in the below command and execute it.
+
     ```
     <copy>emcli db_software_maintenance -getVersions -image_id={Insert IMAGE ID from List available gold images}</copy>
     ```   
@@ -226,7 +233,14 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     This step verifies if the image can be used to patch a specified database target. This is done by comparing the bug fixes available in the current Oracle home of the database target and the image. In effect this check is run to identify patch conflicts.
 
-    - Review and execute below emcli command:  
+    - Review and execute below emcli command. If the image id is same as the one highlighted above, you may use the below command:  
+
+    ```
+    <copy>emcli db_software_maintenance -checkApplicability -image_id=A79587A072121E21E0532A00000A28AB -target_list=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database > /home/oracle/applicability.out</copy>
+    ```
+
+    else
+
     ```
     <copy>emcli db_software_maintenance -checkApplicability -image_id={Insert IMAGE ID from List available gold images} -target_list=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database > /home/oracle/applicability.out</copy>
     ```
@@ -252,6 +266,13 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
     ![](images/1168b19325ea9b9c0624cf404d0cb689.jpg " ")
 
 2. Execute below command to subscribe the target hr.subnet.vcn.oraclevcn.com to Gold Image
+
+    If the image id is same as the one highlighted above, you may use the below command:
+    ```
+    <copy>emcli db_software_maintenance -subscribeTarget -target_name=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=A79587A072121E21E0532A00000A28AB</copy>
+    ```
+
+    else
 
     ```
     <copy>emcli db_software_maintenance -subscribeTarget -target_name=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id={Insert IMAGE ID from List available gold images}</copy>
