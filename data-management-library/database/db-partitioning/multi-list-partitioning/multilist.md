@@ -75,6 +75,9 @@ select partition_name, high_value
 from user_tab_partitions where table_name='MC';
 </copy>
 ```
+
+![Image alt text](images/lab8_01.png "Multi List Partition")
+
 Let us now insert some data into our previously created table and see where the data is actually stored, We intentionally insert some data that is explicitly aligned with the partition key values and some other data that isn't. We expect all records that do not match a specific partition to end up in the DEFAULT partition of the table.
 ```
 <copy>
@@ -92,6 +95,10 @@ rem content of partition p1 using partition extended syntax
 select * from mc partition (p1);
 </copy>
 ```
+
+![Image alt text](images/lab8_02.png "Multi Column Partition")
+
+
 With multi-column partitioning you can also use the partition extended syntax with the FOR () clause. Simply point to a fully qualified record, meaning you have to specify a complete partitioning key criteria, which is a value pair in our case. Using the FOR () clause will show you the complete content of the partition that contains the specified partition keys. In the following example we chose a value pair that is not explicitly defined for any of the partitions, so it points to the DEFAULT partition.
 ```
 <copy>
@@ -99,6 +106,10 @@ rem content of DEFAULT partition using the partitioned extended syntax PARTITION
 select * from mc partition for (1,3);
 </copy>
 ```
+
+![Image alt text](images/lab8_03.png "Multi Column Partition")
+
+
 Note that DEFAULT is not a value, so if you were to try to use it as "value" with the partitioned extended syntax you will get an error:
 ```
 <copy>

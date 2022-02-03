@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Oracle Database Partitioning",
+    "workshoptitle": "8 Partitioning Techniques in Oracle Database",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -16,10 +16,10 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision an Autonomous Database Instance",
+            "title": "Lab : Provision an Autonomous Database Instance",
             "description": "Provision an Autonomous Database Instance",
             "type": "livelabs",
-            "filename": "../../provision-adw/provision-adw.md"
+            "filename": "../../adb-provision/adb-provision-conditional.md"
         },   
         {
             "title": "Lab 2: Range Partitioning",

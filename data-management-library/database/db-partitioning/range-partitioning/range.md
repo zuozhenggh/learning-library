@@ -1,26 +1,19 @@
-# Range Partitioning - PENDING VERIFICATION - 01 Done
+# Range Partitioning
 
 ## Introduction
 
-Draft version 1.1 
-
-Range partitioning is useful when we have distinct data ranges that we want to store together. For example, we can partition data based on the date range if we have vast sales data. Range partitioning is useful when we have distinct data ranges that we want to store together. For example, we can partition data based on the date range if we have vast sales data. Another example is if we have substantial student data at a university level, based on the year of admission or subject chosen, data can be partitioned by range. 
-
-The PARTITION BY RANGE clause of the CREATE TABLE statement specifies that the table or index is to be range-partitioned. The PARTITION clauses identify the individual partition ranges, and the optional subclauses of a PARTITION clause can specify physical and other attributes specific to a partition segment. If not overridden at the partition level, partitions inherit the attributes of their underlying table.
+Range partitioning maps data to partitions based on ranges of partition key values that you establish for each partition. It is the most common type of partitioning used with dates. For example, you might want to partition sales data into monthly partitions. The PARTITION BY RANGE clause of the CREATE TABLE statement specifies that the table or index is range-partitioned. The PARTITION clauses identify the individual partition ranges, and the optional subclauses of a PARTITION clause can select physical and other attributes specific to a partition segment.
 
 ### Features
-
+ 
 *	Introduced with Oracle 8.0
-*	Range Partition Is a single level partition 
-*	Ideal for chronological data
-*	Data is organized by ranges 
-*	Data can be Split and merge as necessary 
+*	Range Partition Is a single level partition
+*	Ideal for chronological data 
+*	Data can be Split and merged as necessary
 
-### Challenges with Sales Data in E-Commerce
+### Sales Data based on Specific Date Range
 
-Here are some interesting facts about US Retail industry, US e-commerce sales are projected to continue to grow by double digits, up 17.9% in 2021 to $933.30 billion. Ecommerce penetration will continue to increase, more than doubling from 2019 to 23.6% in 2025. It means the growing volume of Customer and Sales Data and challenges with its manageability.
-
-The solution to managing such a vast volume of chronological or sales data would be to partition it based on date range or use Range partitioning
+Here are some interesting facts about the US Retail industry, Industry experts in US e-commerce project sales data to grow by double digits, up 17.9% in 2021 to $933.30 billion. Ecommerce penetration will continue to increase, more than doubling from 2019 to 23.6% in 2025. It means the growing volume of Customer and Sales Data and challenges with its manageability. The solution to managing such a vast volume of chronological or sales data would be to partition it based on date range or use Range partitioning.
 
 ![Image alt text](images/lab1_04.png "Range Partition")
 
@@ -36,23 +29,10 @@ In this lab, you will:
 This lab assumes you have completed the following lab:
 
 - Provision an ADB Instance (19c, Always Free)
+  
+## Task 1: Create Range Partitioning
 
-## Task 1: Cleanup
-
-Let us remove all the objects that we will create. Execute the following code snippet. You can safely ignore any 'table does not exist' error message. If a table does not exist, there is nothing wrong with not being able to drop it  .
-
-```
-<copy>
-rem cleanup of all objects;
-drop table sales_range_partition purge; 
-</copy>
-```
- 
-## Task 2: Create Range Partitioning
-
-Let's Create Range Partitioned Table:
-
-The table is partitioned by range using the values of the sales_date column. The partition bound is determined by the VALUES LESS THAN clause. For example, a value for sales\_date that is less than 01-OCT-2014 would be stored in the sales\_q3\_2014 partition.
+Let us Create Range Partitioned Table. The table is partitioned by range using the values of the sales\_date column. The partition bound is determined by the VALUES LESS THAN clause. 
 
 ```
 <copy>
@@ -111,7 +91,7 @@ INSERT INTO sales_range_partition VALUES (1001,100,'A',150,'20-AUG-2014',500,200
 </copy>
 ```
   
-Display data from a specified partition in the table. (DROP TABLE sales\_range\_partition).
+Display data from a specified partition in the table. 
 
 ```
 <copy>
@@ -135,6 +115,8 @@ Data in sales\_range\_partition table with and without Partition
  
 When you are finished testing the example, you can clean up the environment by dropping the table 
 
+## Task 2: Cleanup
+ 
 ```
 <copy>
 DROP TABLE sales_range_partition; 
