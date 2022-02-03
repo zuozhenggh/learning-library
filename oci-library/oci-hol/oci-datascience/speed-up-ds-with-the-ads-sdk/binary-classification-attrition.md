@@ -1,4 +1,4 @@
-# Binary Classification Model 
+# Binary Classification Model
 
 ## Introduction
 
@@ -16,9 +16,10 @@ The ``ADSEvaluator`` class is used to evaluate model performance. Since this is 
 
 After the models have been built and evaluated, it is often important to understand what features are important. This lab examines employee attrition data and an important part of this process is to understand the factors that tend to cause employees to resign. The ``ADSExplainer`` class provides information at the global level, which is the general trends in the behavior of the black-box machine learning model. It does this by providing feature importance data and graphs. It also provides Partial Dependence Plots (PDP) and Individual Conditional Expectations (ICE) plots. The Machine Learning Explainability (MLX) features in ``ADS`` also allow the data scientist to examine the local behavior of the machine learning model. That is, given a single prediction, what were the important features used by the model to make the prediction on a specific observation. This can often be quite different than the feature importance on a global scale.
 
-*Estimated Lab Time*: 90 minutes
+*Estimated Time*: 90 minutes
 
 ### Objectives
+
 In this lab, you will:
 * Learn how to execute cells in JupyterLab and perform other basic operations in a notebook.
 * Learn how to launch a **Notebook Example**.
@@ -30,6 +31,7 @@ In this lab, you will:
 * Learn about machine learning explainability (MLX) for global and local model behavior.
 
 ### Prerequisites
+
 This lab assumes that you have:
 * A Data Science notebook session.
 
@@ -65,15 +67,14 @@ A conda package is a collection of libraries, programs, components and metadata.
 1. You will receive a prompt related to what version number you want. Press `Enter` to select the default.
 1. Wait for the conda package to be installed.
 
-
 ## Task 4: Binary Classification Model
 
-To open the notebook, that is used in this lab, have the launcher open. The launcher is open by default but if it is currently closed it can be opened by clicking on **File** and then click on **New Launcher**. 
+To open the notebook, that is used in this lab, have the launcher open. The launcher is open by default but if it is currently closed it can be opened by clicking on **File** and then click on **New Launcher**.
 
 1. Click on the **Notebook Examples**. A drop down will appear.
     ![](./../speed-up-ds-with-the-ads-sdk/images/click-ne.png)
 
-1. Select the environment **mlcpuv1** and then the notebook **binary\_classification\_attrition.ipynb**. 
+1. Select the environment **mlcpuv1** and then the notebook **binary\_classification\_attrition.ipynb**.
     ![](./../speed-up-ds-with-the-ads-sdk/images/load-example.png)
 
 1. Click **Load Example**. The notebook will open in a new tab.
@@ -83,7 +84,6 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
     ![](./../speed-up-ds-with-the-ads-sdk/images/running-cell.png)
     ![](./../speed-up-ds-with-the-ads-sdk/images/finished-cell.png)
 
-
 1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
     ![](./../speed-up-ds-with-the-ads-sdk/images/restart-kernel.png)
     ![](./../speed-up-ds-with-the-ads-sdk/images/restart.png)
@@ -92,19 +92,14 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
 
 ## Task 5: Next Steps
 
-**Congratulations! You have successfully completed the lab**
-
 There are some other notebooks that you may find interesting. They can be accessed by clicking **File** then clicking **New Launcher**. This will open Launcher. Click **Notebook Examples** and select a notebook then click **Load Example**. Some notebooks of interest are:
 
 * **data\_visualizations.ipynb**: It provides a comprehensive overview of the data visualization tools in ADS. This includes smart data visualization for columns based on data types and values.
 * **transforming\_data.ipynb**: Learn about the ``ADSDatasetFactory`` and how it can clean and transform data.
 * **model\_from\_other\_library.ipynb**: See the capabilities of the ``ADSModel`` class. See how ``ADSModel`` makes the ADS pipeline completely modular and adaptable to 3rd party models.
 
-You may now *proceed to the next lab*.
-
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
     * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, January 2021
-
