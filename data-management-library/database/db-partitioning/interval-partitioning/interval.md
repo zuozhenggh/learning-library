@@ -5,6 +5,8 @@ Interval partitioning is an extension to range partitioning in which database ta
 
  ![Image alt text](images/lab02_01.png "Interval Partition")
 
+ This Lab will teach you how to create Interval Partitioning.
+
 ### Features
 
 *	Introduced with Oracle 11g
@@ -16,11 +18,9 @@ Interval partitioning is an extension to range partitioning in which database ta
 *	System generated names for interval 
 *	No need for any Partition management
 
-### Business Challenges 
+### Analysing Business Data at various intervals 
 
-In Financial Services or Retail Industry, when Business Analysts want to view sales data based on daily, monthly, quarterly or yearly, it is easier to partition data based on intervals. As the data keeps growing, the partitions keep getting created automatically. 
-
-This Lab will teach you how to create Interval Partitioning.
+In Financial Services or Retail Industry, when Business Analysts want to view sales data based on daily, monthly, quarterly or yearly, it is easier to partition data based on intervals. As the data keeps growing, the partitions keep getting created automatically.  
  
 ### Objectives
  
