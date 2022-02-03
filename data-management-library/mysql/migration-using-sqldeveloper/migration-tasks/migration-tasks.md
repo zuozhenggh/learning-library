@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is the core migration tasks lab. This will cover, from downloading and installing Oracle SQL Developer, to setting up appropriate user credentials and then create migration repository and connections and run the Wizard to complete the database migration from MySQL to Oracle ADB instance in the cloud. This also provides extra labs, if you need additional help with certain tasks, eg how to make connection in SQL Developer to an Autonomous Database, etc. 
+This is the core migration tasks lab. This will cover, from downloading and installing Oracle SQL Developer, to setting up appropriate user credentials and then create migration repository and connections and run the Wizard to complete the database migration from MySQL to Oracle Autonomous Database (ADB) instance in the cloud. This also provides extra labs, if you need additional help with certain tasks, eg how to make connection in SQL Developer to an Autonomous Database, etc. 
 
 Estimated Workshop Time: 1 hour
 
@@ -58,7 +58,7 @@ Make sure you have followed the prerequisites requirement, mentioned in detail i
 
 ## Task 2b: Create User in Target Database
 
-  Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that "ATP" connection to create new user as migration target schema in Oracle ADB. Here's sample command to follow. You can run these commands using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
+  Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that "ATP" connection to create new user as migration target schema in Oracle Autonomous Database. Here's sample command to follow. You can run these commands using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
 
   ![Open Worksheet in SQL Developer and copy SQL commands and execute](images/worksheet-sql-commands.png " ") 
 
