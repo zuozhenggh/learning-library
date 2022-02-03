@@ -343,6 +343,14 @@ Review and execute the following command to subscribe finance database to 19.7 i
 
     ![](images/3.png " ")
 
+    In order to complete the deployment of new image, we need to modify named credential root and set its scope to global. This can be achieved by running the below command in terminal.
+
+    ```
+   <copy>emcli modify_named_credential -cred_name=root -cred_scope=global</copy>
+    ```
+
+   ![](images/modify-root-credential.png " ")
+
 2. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
 
     ![](images/9.png " ")

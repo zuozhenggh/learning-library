@@ -87,6 +87,7 @@ Software Standardization Advisor enables administrators to understand various da
 
     ![](images/em-pollution-detection-1.png " ")
 
+    Graphs may look different from the ones represented in the workbook.
     A Software Configuration is identified by the database release, platform, and the patches installed on the target.
 
     In the analysis performed by the Software Configuration Advisor, it has identified that there are 5 unique software configurations in the environment (pie chart labeled “Current Unique Software Configurations”). The recommendation displayed is for only 2 Software Configurations ( pie chart labeled “Recommended Software Configurations”).
@@ -246,7 +247,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 ## Task 5: Subscribe Database
 
-1.  Review the flow on subscribing Targets to the Selected Gold Image
+1.  Below illustration describes the flow of subscribing Targets to the Selected Gold Image
 
     ![](images/1168b19325ea9b9c0624cf404d0cb689.jpg " ")
 
@@ -265,7 +266,15 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 ## Task 6: Deploy Image
 
-1.  From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then select ***Databases***
+1. In order to complete the deployment of new image, we need to modify named credential root and set its scope to global. This can be achieved by running the below command in terminal.
+
+    ```
+    <copy>emcli modify_named_credential -cred_name=root -cred_scope=global</copy>
+    ```
+
+    ![](images/modify-root-credential.png " ")
+
+    From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then select ***Databases***
 
     ![](images/2.png " ")
 
