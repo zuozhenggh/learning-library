@@ -297,7 +297,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     ![](images/9.png " ")
 
-    In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle home doesn't impact existing target and hence it is scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
+    Deployment of new Oracle home doesn't impact existing Oracle home and hence it is scheduled to run immediately. We can schedule it to run at a different time by selecting later in start schedule and providing new time to run this operation.
 
     Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute these tasks immediately.  
 

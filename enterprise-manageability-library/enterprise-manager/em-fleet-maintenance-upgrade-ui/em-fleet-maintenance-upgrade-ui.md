@@ -365,9 +365,9 @@ Review and execute the following command to subscribe finance database to 19.7 i
 
     ![](images/41.png " ")
 
-  In the above page, we have opted to ***Migrate Listener*** and ***Update Database*** by selecting the check box. This automatically takes care of Task 7 and Task 8 of the lab exercise. Deployment of new Oracle home doesn't impact existing target and hence its scheduled to run immediately. We can schedule it to run at a later time by selecting later in start schedule and providing new time to run this operation.
+    Deployment of new Oracle home doesn't impact existing Oracle home and hence it is scheduled to run immediately. We can schedule it to run at a different time by selecting later in start schedule and providing new time to run this operation.
 
-  Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute the tasks immediately.
+    Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute these tasks immediately.
 
 4. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
 
@@ -383,7 +383,7 @@ Review and execute the following command to subscribe finance database to 19.7 i
 
     ![](images/100.png " ")    
 
- We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page.
+    We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page.
 
     ![](images/45.png " ")
     ![](images/46.png " ")
@@ -407,7 +407,7 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
     Click on reschedule.
     ![](images/50.png " ")
 
-We can now see that migrate operation is running. We can select it and see the various steps performed by it.
+    We can now see that migrate operation is running. We can select it and see the various steps performed by it.
 
     ![](images/51.png " ")
 
