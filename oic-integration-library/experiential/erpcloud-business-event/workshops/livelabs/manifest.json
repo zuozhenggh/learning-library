@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Working with ERP Cloud Business Events in OCI Application Integration",
+    "workshoptitle": "Working with ERP Cloud Business Events in OCI Integration",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
@@ -14,8 +14,8 @@
         },
         {
             "title": "Provision an Instance",
-            "description": "Follow these steps to create a new Application Integration service instance",
-            "filename": ""
+            "description": "Follow these steps to create a new OCI Integration service instance",
+            "filename": "../../../core-competencies/b2b/getting-started/provision/provision.md"
         },
         {
             "title": "Lab 1: Create Connections",
