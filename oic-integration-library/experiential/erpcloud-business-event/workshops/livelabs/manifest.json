@@ -15,7 +15,7 @@
         {
             "title": "Provision an Instance",
             "description": "Follow these steps to create a new OCI Integration service instance",
-            "filename": "../../../core-competencies/b2b/getting-started/provision/provision.md"
+            "filename": "../../../../core-competencies/b2b/getting-started/provision/provision.md"
         },
         {
             "title": "Lab 1: Create Connections",
