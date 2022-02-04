@@ -1,66 +1,48 @@
-# Hash Partitioning - PENDING VERIFICATION
+# Hash Partitioning 
 
 ## Introduction
 
-Draft version 1.1 
-
-Composite hash-* partitioning enables hash partitioning along two dimensions.
-
-The composite hash-hash partitioning strategy has the most business value of the composite hash-* partitioned tables. This technique is beneficial to enable partition-wise joins along two dimensions.
+Hash partitioning maps data to partitions based on Oracle's hashing algorithm to the partitioning key that you identify. The hashing algorithm evenly distributes rows among partitions, giving partitions approximately the same size. Composite hash-* partitioning enables hash partitioning along two dimensions. The composite hash-hash partitioning strategy has the most business value of the composite hash-* partitioned tables. This technique is beneficial to enable partition-wise joins along two dimensions.
 
 ![Image alt text](images/lab4_02.png "Hash Partition")
 
 ### Features
 
 * Introduced with Oracle 8.1
-* Hash Partition Is a single level partition along with List and Range
+* Hash Partition Is a single level partition
 * Data is placed based on hash value of partition key
 * Ideal for equal data distribution
 * Number of partitions should be a power of 2 for equal data distribution
 
 
-In the following example, the number of subpartitions is specified when creating a composite hash-hash partitioned table; however, names are not specified. System generated names are assigned to partitions and subpartitions, which are stored in the default tablespace of the table.
+### Data Partition based on Product List or Hash Values 
 
-### Business Challenges 
-
-TBD 
- 
-### Objectives
-
-
- 
-In this lab, you will:
-* create Interval Hash Partitioned Table
-
-### Prerequisites
-This lab assumes you have completed the following lab:
-
-- Provision an ADB Instance (19c, Always Free)
-
-## Task 1: Cleanup
-
-Let us remove all the objects that we will create. Execute the following code snippet. You can safely ignore any 'table does not exist' error message. If a table does not exist, there is nothing wrong with not being able to drop it  .
+In a regular E-Commerce website, Product listing, filtering and sorting determines how easy or difficult it is for customers to browse through product catalogues. During usability tests by UI experts, there is a very high chance of customers purchasing a product that is well organized and easy to find. Below is a simple example of how online store data can be hash partitioned for cricket sports gears where each of these (bat, ball etc.) are named tablespaces.   
 
 ```
 <copy>
-rem cleanup of all objects
-drop table mc purge;
-drop table alp purge;
-drop table soon2bpart purge;
-drop table part4filter purge;
-drop table ropt purge;
-drop table part4xchange purge;
-drop table np4xchange purge;
-drop table compart4xchange purge;
-drop table p4xchange purge;
+CREATE TABLE cricketset
+     (id NUMBER,
+      name VARCHAR2 (60))
+   PARTITION BY HASH (id)
+   PARTITIONS 7 
+   STORE IN (bat, ball, stumps, wicket, gloves, pads, guards);
 </copy>
 ```
  
-## Task 2: Create Interval Hash Partitions
+### Objectives
 
-Let's Create Interval Hash Partitions Table:
+In this lab, you will:
+* Create Interval Hash Partitioned Table
+  
+### Prerequisites
+This lab assumes you have completed the following lab:
 
-The table is created with composite hash-hash partitioning. For this example, the table has four hash partitions for department\_id and each of those four partitions has eight subpartitions for course\_id.
+- Provision an Oracle Autonomous Database and ADW Instance has been created
+ 
+## Task 1: Create Interval Hash Partitions
+
+Let's Create Interval Hash Partitions Table with customer id as a hash value, and data is partitioned before 2016 and after 2016.
  
 ```
 <copy>
@@ -90,7 +72,7 @@ SELECT SUBSTR(TABLE_NAME,1,32), SUBSTR(PARTITION_NAME,1,32), SUBSTR(SUBPARTITION
 
 ![Image alt text](images/lab4_03.png "Display the partitions/subpartitions")
 
-## Task 3: Insert Data and View Partitioned Data
+## Task 2: Insert Data and View Partitioned Data
 
 ```
 <copy>
@@ -103,8 +85,6 @@ INSERT INTO sales_interval_hash VALUES (2105, 302, '15-OCT-16', 'A', 11, 75, 435
 </copy>
 ``` 
 
-The highlighted rows and columns are system generated Partitions and Sub Partitions
-
 Display the data in the table
 
 ```
@@ -115,13 +95,15 @@ select * from sales_interval_hash;
 
 ![Image alt text](images/lab4_04.png "Display the sales_interval_hash Data")
 
-Display the partitions and subpartitions in the table with this SQL query. Note that the structure of the table changed when data was added. Each unique time_id for 2016 generates a new partition with four subpartitions.
+Display the partitions and subpartitions in the table with this SQL query. Please note that the table's structure changed with new data. Each unique time\_id for 2016 generates a new partition with four subpartitions.
 
 ```
 <copy>
 SELECT SUBSTR(TABLE_NAME,1,32), SUBSTR(PARTITION_NAME,1,32), SUBSTR(SUBPARTITION_NAME,1,32) FROM USER_TAB_SUBPARTITIONS WHERE TABLE_NAME ='SALES_INTERVAL_HASH';
 </copy>
 ```
+
+The highlighted rows and columns are system generated Partitions and Sub Partitions
 
 ![Image alt text](images/lab4_05.png "Display the sales_interval_hash Data")
 
@@ -149,7 +131,7 @@ select * from SALES_INTERVAL_HASH PARTITION(SYS_P1754);
 
 ![Image alt text](images/lab4_07.png "Display the sales_interval_hash Data")
  
-cleanup table
+## Task 3: Cleanup
 
 ```
 <copy>
@@ -157,11 +139,7 @@ rem drop everything
 drop table sales_interval_hash purge;
 </copy>
 ```
-
-Semantically you are not violating any data immutability when you remove a complete object. If you want to preserve this case you should address this with proper privilege management or, under some circumstances, by disabling the table level lock. The latter one prevents a drop table, but also all other operations that require an exclusive table level lock.
-
-You successfully made it to the end of module 'read only partitions and subpartitions'.    
-
+ 
 You successfully made it to the end this lab Interval Partitions.    
 
 ## Learn More
