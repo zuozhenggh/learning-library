@@ -311,12 +311,13 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
  Review and execute the following command to unsubscribe finance database from ***Tier #1 SI DB Linux64*** image. If finance database is not subscribed to any image, then we can move to next step, where we will subscribe finance database to 19.7 Gold Image.
 
- ![](images/unsubscribe_finance.png " ")
-
  ```
  <copy>emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database</copy>
  ```
- If the image id is same as the one highlighted above, you may use the below command
+
+ ![](images/unsubscribe_finance.png " ")
+
+  If the image id is same as the one highlighted above, you may use the below command
  ```
  <copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="A5F3D8523BDF635BE0531A00000AA55B"</copy>
  ```
@@ -326,14 +327,15 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
  <copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID from above output}"</copy>
  ```
 
- Review and execute the following command to subscribe finance database to 19.7 image which we had created in step 3 of previous task.      
-
-
- ![](images/finance_subscribe_197.png " ")
+ Review and execute the following command to subscribe finance database to 19.7 image which we had created in step 3 of previous task.   
 
  ```
  <copy>emcli db_software_maintenance -getImages</copy>
  ```
+
+ ![](images/finance_subscribe_197.png " ")
+
+
  If the image id is same as the one highlighted above, you may use the below command
 
  ```
