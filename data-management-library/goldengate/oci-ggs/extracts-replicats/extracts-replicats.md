@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create and run an Extract, instantiate the target database using Oracle Data Pump, and create and run a Replicat in the Oracle GoldenGate Deployment Console.
+This lab walks you through the steps to create and run an Extract, instantiate the target database using Oracle Data Pump, and create and run a Replicat in the Oracle Cloud Infrastructure (OCI) GoldenGate Deployment Console.
 
 Estimated time: 15 minutes
 
@@ -12,7 +12,7 @@ An Extract is a process that extracts, or captures, data from a source database.
 ### Objectives
 
 In this lab, you will:
-* Log in to the Oracle GoldenGate deployment console
+* Log in to the OCI GoldenGate deployment console
 * Add transaction data and a checkpoint table
 * Add and run an Extract
 * Add and run a Replicat
