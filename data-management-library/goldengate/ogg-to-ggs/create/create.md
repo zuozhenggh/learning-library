@@ -116,7 +116,7 @@ Although the GGADMIN user is created during the database registration process, i
 
     ![](images/05-02.png " ")
 
-3.  On the SourceATP Database Details page, click **Open Database Actions**.
+3.  On the SourceATP Database Details page, click **Database Actions**.
 
     ![](images/05-04.png " ")
 

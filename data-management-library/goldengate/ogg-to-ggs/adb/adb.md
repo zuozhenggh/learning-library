@@ -88,7 +88,7 @@ You can click View VCN Details and see both a Public and Private subnet created.
 
     ![](./images/02-03-atp.png " ")
 
-4.  Click click **Open Database Actions**.
+4.  Click **Database Actions**.
 
     ![](./images/03-04-dbactions.png " ")
 
@@ -162,7 +162,7 @@ You can click View VCN Details and see both a Public and Private subnet created.
 
     ![](./images/04-01-adw.png " ")
 
-2.  Click **Open Database Actions**.
+2.  Click **Database Actions**.
 
 3.  Log in with the ADMIN user and password provided when you created the ADW instance.
 

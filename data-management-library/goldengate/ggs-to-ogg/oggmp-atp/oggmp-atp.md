@@ -90,7 +90,7 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
 13. Enter `ls` to list the contents in the current directory. You should see two files, `ogg-credentials.json` and your wallet file.
 
-14. Make a new directory called **wallet_ADW**, and then extract the contents of the wallet_ADW.zip to a new directory.
+14. Make a new directory called **wallet\_ADW**, and then extract the contents of the wallet\_ADW.zip to a new directory.
 
     ```
     <copy>mkdir wallet_ADW
