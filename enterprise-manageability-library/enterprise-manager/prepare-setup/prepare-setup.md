@@ -55,6 +55,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
 | 7803           | Enterprise Manager 13c Server         |
+| 80             | noVNC Remote Desktop (NGINX proxy)    |
 | 6080           | noVNC Remote Desktop                  |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
@@ -75,4 +76,4 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 ## Acknowledgements
   - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
   - **Contributors** -  
-  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
+  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2022
