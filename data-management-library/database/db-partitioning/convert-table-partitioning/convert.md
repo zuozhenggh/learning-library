@@ -1,20 +1,18 @@
-# Convert Non-partitioned Table to Partitioned Table - PENDING VERIFICATION
+# Convert Non-partitioned Table to Partitioned Table 
 
 ## Introduction
+ 
+Oracle Database provides a mechanism to move one or more partitions or to make other changes to the partitions' physical structures without significantly affecting the availability of the partitions for DML. This mechanism is called online table redefinition. A non partitioned table can be converted to a partitioned table with a MODIFY clause added to the ALTER TABLE SQL statement. In addition, the keyword ONLINE can be specified, enabling concurrent DML operations while the conversion is ongoing.
 
-Draft version 1.0 
-
-TBD
-
-Let's quickly demonstrate this with a simple example and introduce the rules what such a conversion means to indexes. The full set of details can be found in the documentation.
-
-### Business Challenges 
-
-TBD
+![Image alt text](images/lab8_01.png "Convert Non-partitioned Table")
+ 
 
 ### Features
 
-TBD
+* Indexes are converted and kept online throughout the conversion.
+* Default indexing rules to provide minimal to no access change behaviour.
+* Local indexes stay local if any of the partition keys of the two dimensions is included
+* Global prefixed partitioned indexes will be converted to local partitioned indexes.
  
 ### Objectives
  
@@ -24,28 +22,9 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
-- Provision an ADB Instance (19c, Always Free)
+- Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Cleanup
-
-Let us remove all the objects that we will create. Execute the following code snippet. You can safely ignore any 'table does not exist' error message. If a table does not exist, there is nothing wrong with not being able to drop it  .
-
-```
-<copy>
-rem cleanup of all objects
-drop table mc purge;
-drop table alp purge;
-drop table soon2bpart purge;
-drop table part4filter purge;
-drop table ropt purge;
-drop table part4xchange purge;
-drop table np4xchange purge;
-drop table compart4xchange purge;
-drop table p4xchange purge;
-</copy>
-```
- 
-## Task 2: Convert Non-partitioned Table to Partitioned Table
+## Task 1: Convert Non-partitioned Table to Partitioned Table
 
 Let's Convert Non-partitioned Table to Partitioned Table:
 
@@ -85,6 +64,8 @@ order by 1;
 </copy>
 ```
 
+![Image alt text](images/lab8_02.png "Convert Non-partitioned Table")
+
 ```
 <copy>
 rem partitioned index
@@ -95,8 +76,9 @@ order by 1;
 </copy>
 ```
 
-The conversion is not an in-place conversion: one of the key concepts of Oracle Partitioning is that data of individual partitions is, well, stored in individual physical segments. The nonpartitioned table has data stored "wherever" in the table. So for the duration of the conversion you will need the extra space for the new table partition and index segments. After the successful conversion the space for the old nonpart itioned table and its indexes will be freed.
-Let's kick off the conversion of the table. Note that we are doing an online conversion, so if you were able to spawn a second session that does DML against our table while the conversion is in place you'd experience that all your DML will go through without being blocked. We will also rely on the default index conversion rules that are defined, with the exception of one index. This helps to demonstrate the default behavior and to give you a glimpse insight into what you can do for indexes as part of the online conversion:
+![Image alt text](images/lab8_03.png "Convert Non-partitioned Table")
+
+The conversion is not an in-place conversion: one of the key concepts of Oracle Partitioning is that data of individual partitions is, well, stored in individual physical segments. The nonpartitioned table has data stored "wherever" in the table. So for the duration of the conversion, you will need the extra space for the new table partition and index segments. After the successful conversion,  Note that we are doing an online conversion. If you could spawn a second session that does DML against our table while the conversion is in place, you'd experience that all your DML will go through without being blocked.  
 
 ```
 <copy>
@@ -122,13 +104,13 @@ order by partition_position asc;
 </copy>
 ```
 
-What happened to the indexes? Oracle is smart enough to have a couple of default index conversion rules, that can be overwritten as we demonstrate with one index. The rules are:
+![Image alt text](images/lab8_04.png "Convert Non-partitioned Table")
 
-Global partitioned indexes are untouched and re tain their shape.
+Global partitioned indexes are untouched and retain their shape.
 Non-prefixed indexes will become global nonpartitioned tables.
 Prefixed indexes will become local partitioned indexes.
 Bitmap indexes will become local partitioned indexes.
-So let's check the index shape and their status:
+So let's check the indexed shape and their status.
 
 ```
 <copy>
@@ -152,6 +134,8 @@ order by 1;
 </copy>
 ```
 
+![Image alt text](images/lab8_05.png "Convert Non-partitioned Table")
+
 All the index partitions are also in a valid state:
 
 ```
@@ -165,16 +149,26 @@ order by 1;
 </copy>
 ```
 
+![Image alt text](images/lab8_06.png "Convert Non-partitioned Table")
+
+## Task 2: Cleanup
+ 
+
+```
+<copy>
+rem cleanup of all objects
+drop table SOON2BPART purge; 
+</copy>
+```
+
 You successfully made it to the end of module 'conversion to partitioned table'.   
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Automatic List Partitioning](https://livesql.oracle.com/apex/livesql/file/content_HU7JYQY0PKB0PHLIGNXWWEYLO.html)
+* [Database VLDB and Partitioning Guide](https://docs.oracle.com/en/database/oracle/oracle-database/21/vldbg/create-composite-partition-table.html#GUID-9ECF0F94-57BB-45F8-824F-48B320F23D9C)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
+- **Author** - Madhusudhan Rao, Principal Product Manager, Database
 * **Contributors** -  <Name, Group> -- optional
 * **Last Updated By/Date** - <Name, Month Year>
