@@ -355,7 +355,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 ## Task 7: Migrate Listener
 
-1. In the above task 6, we had submitted migrate listener already. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
+1. In the above task 6, we had submitted migrate listener. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of task 6). We see that this task is at scheduled state. In the interest of time and to complete this Live Lab workshop, we can change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
   Click on reschedule.
 
   ![](images/24.png " ")
@@ -372,19 +372,20 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 ## Task 8: Update Database – Patch 18.3 to 18.10
 
-1. Similar to migrate listener, we had submitted Update Database in task 6. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 6). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
+1. Similar to migrate listener, we had submitted Update Database in task 6. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 6). We see that this task is at scheduled state. In the interest of time and to complete this Live Lab workshop, we can change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update dp.
 
    Click on reschedule.
 
    ![](images/29.png " ")
 
    In the new page, select immediately for start and reschedule.
+   ![](images/31-reschedule.png " ")   
 
-   We can now see that update operation is running. We can select it and see the various steps performed by it.Here we can see that ***hr*** database is down for Oracle home switch over. Now, ***hr*** database will run from new Oracle home.
+   We have selected update operation and see the various steps performed by it. In the terminal, we can see that ***hr*** database is down for Oracle home switch over. After startup, ***hr*** database will run from new Oracle home.
 
    ![](images/31.png " ")
 
-   Update operation was completed successfully.
+   Update operation has completed successfully.
 
    ![](images/32.png " ")
 
@@ -402,7 +403,8 @@ Once the database is updated, we will perform a rollback to 18.3. Rollback opera
     **OR**
 
     ```
-    <copy>sh rollback_hr.sh</copy>
+    <copy>cd ~/fleet
+    sh rollback_hr.sh</copy>
     ```
 
     ![](images/acb8ad0f4fb9ad39503081f5cdfb9e79.png " ")

@@ -403,11 +403,11 @@ else make changes in the below command and execute it.
 
 Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
 
-7. Review the Deployment Procedures.
+7. Review the Deployment Procedures.Select deployment procedure(dp) related to Deploy and click on it.
 
     ![](images/47.png " ")
 
-    Select deployment procedure(dp) related to Deploy and click on it. It will show details of the activity performed by the dp.
+    It will show details of the activity performed by the dp.
 
     ![](images/49.png " ")
 
@@ -415,14 +415,20 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 
 ## Task 8: Migrate Listener to New Upgraded home
 
-1.  In the above task 7, we had submitted migrate listener. If this operation needs to be submitted separately, then we had to uncheck migrate listener in task 6 (review step 3 of previous task). As we have already submitted the dp to migrate listener, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
+1. In the above task 7, we had submitted migrate listener. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of task 6). We see that this task is at scheduled state. In the interest of time and to complete this Live Lab workshop, we can change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
 
     Click on reschedule.
     ![](images/50.png " ")
 
-    We can now see that migrate operation is running. We can select it and see the various steps performed by it.
+    In the new page, select immediately for start and reschedule.
+    ![](images/51-reschedule.png " ")
+
+    We can now see that migrate operation is running.
+    ![](images/51-Running.png " ")
+    We can select it and see the various steps performed by it.
 
     ![](images/51.png " ")
+    We can now see that the migration operation completed successfully.
 
     ![](images/52.png " ")
 
@@ -431,7 +437,7 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 
 With deploy operation and migrate listener task completed successfully, we are ready to run the final UPDATE operation which will upgrade the finance database by switching it to the newly deployed home.
 
-1.  Similar to migrate listener, we had submitted Update Database in task 7. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 7). As we have already submitted the dp to update database, we can now change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
+1.  Similar to migrate listener, we had submitted Update Database in task 7. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 7). In the interest of time and to complete this Live Lab workshop, we can change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
 
     Click on reschedule.
 
@@ -439,11 +445,14 @@ With deploy operation and migrate listener task completed successfully, we are r
 
     In the new page, select immediately for start and reschedule.
 
-    We can now see that update operation is running. We can select it and see the various steps performed by it.
+    ![](images/53-reschedule.png " ")
+    We can now see that update operation is running.
+    ![](images/53-running.png " ")
+    We can select it and see the various steps performed by it.
 
     ![](images/54.png " ")
 
-    Update operation was completed successfully.
+    Update operation has completed successfully.
 
     ![](images/55.png " ")
 
@@ -472,7 +481,8 @@ With deploy operation and migrate listener task completed successfully, we are r
     **OR**
 
     ```
-    <copy>sh cleanup_finance.sh</copy>
+    <copy>cd ~/fleet
+    sh cleanup_finance.sh</copy>
     ```
 
     ![](images/3f41abadf32e4b8d4900467985a093ef.png " ")
