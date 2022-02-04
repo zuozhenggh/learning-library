@@ -1,18 +1,22 @@
-# Read Only Partitions - PENDING VERIFICATION
+# Read Only Partitions 
 
 ## Introduction
 
-Draft version 1.0 
+We can set tables, partitions, and subpartitions to read-only status to protect data from unintentional DML operations by any user or trigger. Updating data in the partition that has the partition set to read-only will result in an error. The partition that is set to read-write will be successfully updated. 
 
-TBD
+ ![Image alt text](images/lab7_08.png "Read only Partition")
 
-### Business Challenges 
+### Making Previous quarter sales data as read-only 
 
-TBD
+In the financial services or retail sector, you can set the last quarter's sales data as read-only, and the rest of the data can allow read and write DML operations. 
 
 ### Features
 
-TBD
+* Read-only attribute guarantees data immutability. 
+* If not specified, each partition and subpartition will inherit read-only property from top-level parent 
+* ADD and MODIFY COLUMN are allowed and do not violate data immutability of existing data 
+* DROP/RENAME/SET UNUSED COLUMN are forbidden 
+* DROP [read only] PARTITION forbidden 
  
 ### Objectives
  
@@ -22,33 +26,11 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
-- Provision an ADB Instance (19c, Always Free)
+- Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Cleanup
+## Task 1: Create Read Only Partitions
 
-Let us remove all the objects that we will create. Execute the following code snippet. You can safely ignore any 'table does not exist' error message. If a table does not exist, there is nothing wrong with not being able to drop it  .
-
-```
-<copy>
-rem cleanup of all objects
-drop table mc purge;
-drop table alp purge;
-drop table soon2bpart purge;
-drop table part4filter purge;
-drop table ropt purge;
-drop table part4xchange purge;
-drop table np4xchange purge;
-drop table compart4xchange purge;
-drop table p4xchange purge;
-drop table RDPT2;
-</copy>
-```
- 
-## Task 2: Create Read Only Partitions
-
-Let's Create Read Only Partitions Table:
-
-We will demonstrate this functionality using a single level range partitioned table.
+Let's Create Read Only Partitions Table: 
 ```
 <copy>
 rem simple interval partitioned table with one read only partition
@@ -61,7 +43,7 @@ from dual connect by level <= 100;
 </copy>
 ```
     
-As you can see, we did specify read only for partition P1 but nowhere else, neither on table nor partition level. Let's see what we ended up with:
+As you can see, we did specify read-only for partition P1 but nowhere else, neither on table nor partition level. Let's see what we ended up with:
 
 ```
 <copy>
@@ -83,11 +65,7 @@ where table_name='ROPT';
 
 ![Image alt text](images/lab7_02.png "Read only Partition")
 
-As probably expected, we only have one partition that is set to read only in this example. That means that:
-
-The table level default is (and will stay) read write.
-Only partition p1 is defined as read only where it was explicitly defined.
-You can change the read only/read write attribute for existing partitions.
+As expected, we only have one partition set to read-only in this example. That means that: The table-level default is (and will stay) read-write. Only partition p1 is defined as read-only where it was explicitly defined. You can change the read-only/read-write attribute for existing partitions.
 
 ```
 <copy>
@@ -107,11 +85,8 @@ where table_name='ROPT';
 ![Image alt text](images/lab7_03.png "Read only Partition")
 
 
-As partition level attribute, read only can obviously be used in conjunction with other partition maintenance operations. The question now begs what does it really mean for partition maintenance operations, and especially when these PMOPs are executed in an online mode?
+As partition level attribute, read-only can be used in conjunction with other partition maintenance operations.
 
-The answer is simple: Oracle made the conscious design decision that we do not allow the combination of an online partition maintenance operations and a scenario where either one (or multiple) of the origin partitions are read only or where one (or multiple) of the target partitions (after the PMOP) are set to read only.
-
-So any attempt to combine issue an online PMOP with read only partitions you will get a runtime error, just like in the following split partition example:
 ```
 <copy>
 rem online PMOP will not work when one of the target partitions is read only
@@ -120,7 +95,7 @@ alter table ropt split partition for (5) into
 </copy>
 ```
 
-Read only is considered a guaranteed state for the time when a PMOP is started. It would be also ambiguous when to change the state if a change from read write to read only is taking place or vice versa. So for the statement to work you have to run it in offline mode, meaning that no data changes are allowed as soon as the PMOP starts:
+Read-only is considered a guaranteed state when a PMOP (partition maintenance operation) is started. It would also be ambiguous when to change the state if a change from read-write to read-only  
 
 ```
 <copy>
@@ -130,7 +105,7 @@ alter table ropt split partition for (5) into
 </copy>
 ```
 
-You can also set a whole table to read only. This will change the state for all existing partitions as well as the default of the table.Note that this is in line with other attributes.
+You can also set a whole table to read-only. This will change the state for all existing partitions as well as the default of the table. Note that this is in line with other attributes.
 
 ```
 <copy>
@@ -148,12 +123,6 @@ where table_name='ROPT';
 ```
 
 ![Image alt text](images/lab7_04.png "Read only Partition")
-
-Let's now have a closer look what it means to have a partition set to read only and how Oracle describes data immutability in this context. The fundamental data immutability rule for read only tables and partitions is that only operations are allowed that must not change the data content of the partition at the point in time when a partition was set to read only. Or, in more sql-like words, the result of SELECT  column list at read only setting time  FROM  table  PARTITION  partition set to read only  within the partitioned tables must not change.
-
-So what works?
-
-Any operation that does not change the content, but only the physical representation on disk. A classical example is moving a partition to introduce compression. Let's demonstrate this using a partition of our now fully read only table:
 
 ```
 <copy>
@@ -183,7 +152,7 @@ where table_name='ROPT' and partition_name='PB';
 </copy>
 ```
 
-Another operation that works on a table with read only partitions is adding a column. Such an operation works irrespective of whether the new column is nullable or not and whether the column has a default value.
+Another operation that works on a table with read-only partitions is adding a column. Such an operation works irrespective of whether the new column is nullable or not and whether the column has a default value.
 
 ```
 <copy>
@@ -192,8 +161,6 @@ alter table ropt add (newcol number default 99);
 </copy>
 ```
  
-Now, what operations are not allowed? Anything that is considered changing the data immutability as defined earlier. Examples are
-
 Any form of DML on a read only partition:
 
 ```
@@ -230,7 +197,7 @@ drop table ropt purge;
 </copy>
 ```
  
-## Task 3: Another example of readonly partitioned table
+## Task 2: Another example of readonly partitioned table
 
 ```
 <copy>
@@ -272,6 +239,8 @@ select * from RDPT2;
 ```
 
 ![Image alt text](images/lab7_07.png "Read only Partition")
+
+## Task 3: Cleanup
 
 ```
 <copy>
