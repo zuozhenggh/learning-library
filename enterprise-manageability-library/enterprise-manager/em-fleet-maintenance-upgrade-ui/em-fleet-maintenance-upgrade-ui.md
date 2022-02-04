@@ -323,7 +323,7 @@ If the image id is same as the one highlighted above, you may use the below comm
 else make changes in the below command and execute it.
 
 ```
-<copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
+<copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID from above output}"</copy>
 ```
 
 Review and execute the following command to subscribe finance database to 19.7 image which we had created in step 3 of previous task.      

@@ -214,7 +214,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     If the image id is same as the one highlighted above, you may use the below command
     ```
-    <copy>emcli db_software_maintenance -getVersions -image_id=A79587A072121E21E0532A00000A28AB</copy>
+    <copy>emcli db_software_maintenance -getVersions -image_id=A79586CA133F1E27E0532A00000A5633</copy>
     ```   
 
     else make changes in the below command and execute it.
@@ -236,7 +236,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
     - Review and execute below emcli command. If the image id is same as the one highlighted above, you may use the below command:  
 
     ```
-    <copy>emcli db_software_maintenance -checkApplicability -image_id=A79587A072121E21E0532A00000A28AB -target_list=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database > /home/oracle/applicability.out</copy>
+    <copy>emcli db_software_maintenance -checkApplicability -image_id=A79586CA133F1E27E0532A00000A5633 -target_list=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database > /home/oracle/applicability.out</copy>
     ```
 
     else
@@ -269,7 +269,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     If the image id is same as the one highlighted above, you may use the below command:
     ```
-    <copy>emcli db_software_maintenance -subscribeTarget -target_name=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=A79587A072121E21E0532A00000A28AB</copy>
+    <copy>emcli db_software_maintenance -subscribeTarget -target_name=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=A79586CA133F1E27E0532A00000A5633</copy>
     ```
 
     else
