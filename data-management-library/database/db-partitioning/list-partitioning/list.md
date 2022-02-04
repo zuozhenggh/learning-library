@@ -1,14 +1,10 @@
-# List Partitioning - PENDING VERIFICATION
+# List Partitioning 
 
 ## Introduction
 
-Draft version 1.1 
- 
-The semantics for creating list partitions are very similar to those for creating range partitions.
+List partitioning enables you to explicitly control how rows map to partitions by specifying a list of discrete values for each partitioning key in each partition's description. The advantage of list partitioning is that you can group and organize unordered and unrelated data sets. For a table with a region column as the partitioning key, the East Sales Region partition might contain New York, Virginia, and Florida values. The semantics for creating list partitions are similar to those for creating range partitions. 
 
-However, to create list partitions, you specify a PARTITION BY LIST clause in the CREATE TABLE statement, and the PARTITION clauses specify lists of literal values, which are the discrete values of the partitioning columns that qualify rows to be included in the partition. For list partitioning, the partitioning key can be one or multiple column names from the table.
-
-Available only with list partitioning, you can use the keyword DEFAULT to describe the value list for a partition. This identifies a partition that accommodates rows that do not map into any of the other partitions.
+The semantics for creating list partitions are similar to those for creating range partitions. You specify a PARTITION BY LIST clause in the CREATE TABLE statement to create list partitions. The partitioning key can be one or multiple column names from the table for list partitioning.
 
 ### Features
 
@@ -16,56 +12,32 @@ Available only with list partitioning, you can use the keyword DEFAULT to descri
 *	List Partition Is a single level partition  
 *	Data is organized in lists of values
 *	One or more unordered distinct values per list
-*	Ideal for segmentation of distinct values, example region
+*	Ideal for segmentation of distinct values, for example, region
 
-### Challenges with Weather forecasting Data
+### Weather forecasting or Sales forecasting based on Regional List
 
-Weather forecasting is the application of science and technology to predict the conditions of the atmosphere for a given location and time. Weather forecasts are made by collecting quantitative data about the current state of the atmosphere at a given place and using meteorology to project how the atmosphere will change.
-Weather forecasting is a part of the economy, for example, in 2009, the US spent approximately $5.1 billion on weather forecasting, producing benefits estimated at six times as much.
-The volume of data keeps growing, and analysing previous data can be performance intensive. Since the weather data has both the geographical location and date along with changes in temperature and humidity, this is a good case for partitioning data based on a regional list of values or using List partitioning. 
-
-Another good example would be partitioning sales data based on regions, as shown below task list. 
+Weather forecasts are made by collecting quantitative data about the current atmosphere at a given place and using meteorology to project how the atmosphere will change. Weather forecasting is a part of the economy. For example, in 2009, the US spent approximately $5.1 billion on weather forecasting, producing benefits estimated at six times as much.
+The volume of data keeps growing, and analysing previous regional data can be performance intensive. Since the weather data has geographical location, date, changes in temperature and humidity, this is a good case for partitioning data based on a regional list of values or using List partitioning. Another good example would be partitioning sales data based on regions for business reporting purposes, as shown below task list.
 
 
 ![Image alt text](images/lab3_01.png "List Partition")
+
+This Lab will teach you how to List Partitioning. 
   
 ### Objectives
  
 In this lab, you will:
-* create List Partitions
+* Create List Partitions
 
-### Prerequisites (Optional)
+### Prerequisites
+This lab assumes you have completed the following lab:
 
-This lab assumes you have:
- 
-* An Oracle LiveLabs or Paid Oracle Cloud account
-* Lab: Generate SSH Key
-* Lab: Build a DB System
+- Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Cleanup
-
-Let us remove all the objects that we will create. Execute the following code snippet. You can safely ignore any 'table does not exist' error message. If a table does not exist, there is nothing wrong with not being able to drop it  .
-
-```
-<copy>
-rem cleanup of all objects
-drop table mc purge;
-drop table alp purge;
-drop table soon2bpart purge;
-drop table part4filter purge;
-drop table ropt purge;
-drop table part4xchange purge;
-drop table np4xchange purge;
-drop table compart4xchange purge;
-drop table p4xchange purge;
-</copy>
-```
- 
-## Task 2: Create List Partitions
+## Task 1: Create List Partitions
 
 Let's Create List Partitions Table:
-
-We will demonstrate this functionality using a list partitioned table.
+ 
 ```
 <copy>
 CREATE TABLE sales_by_region ( 
@@ -97,7 +69,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 
 ![Image alt text](images/lab3_02.png "List Partition")
 
-## Task 3: Add New Partitions
+## Task 2: Add New Partitions
 
 Add a new partition to the table.
 
@@ -141,7 +113,6 @@ ALTER TABLE sales_by_region  MODIFY PARTITION region_central  ADD VALUES ('OK','
 </copy>
 ``` 
  
-
 Display the partitions in the table after modifying a partition.
 
 ```
@@ -173,7 +144,7 @@ SELECT * FROM sales_by_region;
 
 Display data from a specified partition in the table. When you are finished testing the example, you can clean up the environment by dropping the table (DROP TABLE sales_by_region).
 
-## Task 4: Partition Data by Partition Name
+## Task 3: Partition Data by Partition Name
 
 
 ```
@@ -183,6 +154,8 @@ SELECT * FROM sales_by_region PARTITION(region_east);
 ``` 
 
 ![Image alt text](images/lab3_06.png "List Partition")
+
+## Task 4: Cleanup
 
 ```
 <copy>

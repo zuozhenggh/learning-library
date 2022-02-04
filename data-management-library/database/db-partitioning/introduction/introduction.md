@@ -52,8 +52,7 @@ In this workshop, you will learn how to create the following partitions.
 
 * [Partitioning whitepaper ](https://www.oracle.com/technetwork/database/options/partitioning/partitioning-wp-12c-1896137.pdf)  
 * [Business Standard Report ](https://www.business-standard.com/article/economy-policy/digital-transaction-volume-grew-at-50-in-four-years-shows-data-121123101357_1.html)  
-* [Database Actions ](https://s1mybyae3gstojp-adw46557.adb.uk-london-1.oraclecloudapps.com/omlusers/) 
-
+ 
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
