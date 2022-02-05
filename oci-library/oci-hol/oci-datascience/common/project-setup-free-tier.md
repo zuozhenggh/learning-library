@@ -21,8 +21,7 @@ You create a Data Science project to organize your notebook sessions and models 
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Open the navigation menu.
-1. Under **Data and AI**, select **Data Sciences**, and then click **Projects**.
-    ![](../speed-up-ds-with-the-ads-sdk/images/select-projects.png)
+1. Under **Data and AI** and select **Data Sciences**. This will open the **Projects** page.
 1. Select the compartment where the project is to be created.
     ![](../speed-up-ds-with-the-ads-sdk/images/compartment.png)
 1. Click **Create Project**.
@@ -44,5 +43,5 @@ You can *proceed to the next lab*.
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
-    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, November 2020
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, February 2022
 
