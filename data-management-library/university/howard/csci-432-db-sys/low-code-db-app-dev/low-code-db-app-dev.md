@@ -367,9 +367,35 @@ The process to create the Search Movies source is similar to the process for the
 
     ![](images/3-search-discover.png " ")
 
-7. Follow the same steps that you did for Popular Movies to edit the Search Movies data profile and create a POSTER_URL column.
+7. Follow the same steps that you did for Popular Movies to edit the Search Movies data profile and create a POSTER_URL column. (Optional)
 
-## Task 5: Creating the Movie Search Page
+## Homework
+
+Now that you have successfully created a REST Data Source. You are going to submit a screenshot of one of your REST Sources, Search Movies.  Submit the screenshot as a PDF and have the URL visible at the top.
+
+1. Goto your Application - Movies Watchlist Home Page.  Click on **Shared Components**.
+
+    ![](images/shared-components.png " ")
+
+2. Under Data Sources, click on **REST Data Sources**.
+
+    ![](images/rest-data-sources.png " ")
+
+3. Click on **Search Movies**.
+   
+    ![](images/search-movies.png " ")
+
+4. Click on **Operations**, then click the button under **Test Operation**.
+
+    ![](images/operations.png " ")
+
+5. Your results should look similar to the screenshot below:
+   
+    ![](images/test-results.png " ")
+
+6. Upload the PDF to Blackboard.
+
+## Task 5: Creating the Movie Search Page (Optional)
 
 You will create and set up the Movie Search page in this task so that you can view popular movies and search for a movie of your choice. The search functionality must be built out first in order to be able to create a watchlist even though the My Watchlist page is the home page of the application. You will need to first create a button on the home page that links to the Movie Search page. On the Movie Search page you will create regions that display the data from the REST data sources you created in the previous task, and you will implement a search bar that lets you search for movies.
 
@@ -746,7 +772,7 @@ The last step in this task is linking your Add a Movie button on the Watchlist p
 
 	![](images/4-app-return-edit.png " ")
 
-## Task 6: Creating the Movie Details Page
+## Task 6: Creating the Movie Details Page (Optional)
 
 In this task, you will set up a new REST data source called Movie Details, that retrieves the details of a single movie. After the data source has been set up, you will create a new page that displays those movie details when a user clicks on a movie from the Movie Search page.
 
@@ -965,7 +991,7 @@ You want to be able to view the details of any movie you click on in your Movie 
 
     ![](images/movie-details-app-page.png " ")
 
-## Task 7: Creating Users and Watchlist Tables
+## Task 7: Creating Users and Watchlist Tables (Optional)
 
 Up to this point, most of the work has revolved around implementing REST data sources and creating pages to use that data on. In this task, you will create and start to use local tables to store user and movie data. You will also add an application item and process, which will capture and store a user email and ID, as well as some of the movie details. This is what allows multiple users to have their own watchlist.
 
@@ -1162,7 +1188,7 @@ Finally, you will need a table to store some basic movie information in addition
 
 11. Now you will set up your Back, Add, Remove, and Mark Watched buttons.
 
-## Task 8: Implementing Movie Details Buttons and Movie Search Badges
+## Task 8: Implementing Movie Details Buttons and Movie Search Badges (Optional)
 
 In the previous task, you did the backend work to set up tables and application items. In this task, you will be creating Add, Remove, Watched, and Back buttons that will control the flow between the Movie Search and Movie Details page, as well as the data stored in the watchlist table. You will also add a badge to the Cards on the Movie Search page to have a visual cue for movies that a user has already marked as added or watched.
 
