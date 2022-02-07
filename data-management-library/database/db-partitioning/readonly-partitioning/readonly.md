@@ -4,11 +4,7 @@
 
 We can set tables, partitions, and subpartitions to read-only status to protect data from unintentional DML operations by any user or trigger. Updating data in the partition that has the partition set to read-only will result in an error. The partition that is set to read-write will be successfully updated. 
 
- ![Image alt text](images/lab7_08.png "Read only Partition")
-
-### Making Previous quarter sales data as read-only 
-
-In the financial services or retail sector, you can set the last quarter's sales data as read-only, and the rest of the data can allow read and write DML operations. setting the partition as read-only can be a precautionary measure to avoid accidental data updating or deleting. 
+![Image alt text](images/lab7_08.png "Read only Partition")
 
 ### Features
 
@@ -17,7 +13,11 @@ In the financial services or retail sector, you can set the last quarter's sales
 * ADD and MODIFY COLUMN are allowed and do not violate data immutability of existing data 
 * DROP/RENAME/SET UNUSED COLUMN are forbidden 
 * DROP [read only] PARTITION forbidden 
- 
+
+### Making Previous quarter sales data as read-only 
+
+In the financial services or retail sector, you can set the last quarter's sales data as read-only, and the rest of the data can allow read and write DML operations. setting the partition as read-only can be a precautionary measure to avoid accidental data updating or deleting. 
+
 ### Objectives
  
 In this lab, you will:

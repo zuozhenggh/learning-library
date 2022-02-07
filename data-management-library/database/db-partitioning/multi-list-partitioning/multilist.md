@@ -13,10 +13,12 @@ Multi-column list partitioning enables you to partition a table based on list va
 * Functionality of DEFAULT partition (catch-it-all for unspecified values)
 * Ideal for segmentation of distinct value tuples, example (sensor_type, channel, ... )  
 
+### Multi-Column List Partitioning Usecase
+
+An excellent example for multi-column list partitioning is segregating sensor data along with various channel data on IoT (Internet of Things) applications, such as humidity, temperature, climate, pressure, air quality changes, etc. These sensors' measurement values change.
+
 Estimated Lab Time: 10 minutes
-
-To create a simple multi-column list partitioned table, you can issue the following command:
-
+ 
 ### Objectives
  
 In this lab, you will:
