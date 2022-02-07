@@ -309,43 +309,43 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
 1. Before we deploy a new Oracle home, we need to ensure that we unsubscribe finance database from previous associated image. This step is required for UI as we can not have two different versions of Oracle home (in this case 18c and 19c) in the same image id.
 
- Review and execute the following command to unsubscribe finance database from ***Tier #1 SI DB Linux64*** image. If finance database is not subscribed to any image, then we can move to next step, where we will subscribe finance database to 19.7 Gold Image.
+    Review and execute the following command to unsubscribe finance database from ***Tier #1 SI DB Linux64*** image. If finance database is not subscribed to any image, then we can move to next step, where we will subscribe finance database to 19.7 Gold Image.
 
- ```
- <copy>emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database</copy>
- ```
+    ```
+    <copy>emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database</copy>
+    ```
 
- ![](images/unsubscribe_finance.png " ")
+    ![](images/unsubscribe_finance.png " ")
 
-  If the image id is same as the one highlighted above, you may use the below command
- ```
- <copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="A5F3D8523BDF635BE0531A00000AA55B"</copy>
- ```
- else make changes in the below command and execute it.
+    If the image id is same as the one highlighted above, you may use the below command
+    ```
+    <copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="A5F3D8523BDF635BE0531A00000AA55B"</copy>
+    ```
+    else make changes in the below command and execute it.
 
- ```
- <copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID from above output}"</copy>
- ```
+    ```
+    <copy>emcli db_software_maintenance -unsubscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID from above output}"</copy>
+    ```
 
- Review and execute the following command to subscribe finance database to 19.7 image which we had created in step 3 of previous task.   
+    Review and execute the following command to subscribe finance database to 19.7 image which we had created in step 3 of previous task.   
 
- ```
- <copy>emcli db_software_maintenance -getImages</copy>
- ```
+    ```
+    <copy>emcli db_software_maintenance -getImages</copy>
+    ```
 
- ![](images/finance_subscribe_197.png " ")
+    ![](images/finance_subscribe_197.png " ")
 
 
- If the image id is same as the one highlighted above, you may use the below command
+    If the image id is same as the one highlighted above, you may use the below command
 
- ```
- <copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="D5807C29FD2A7F92E0538D00000A9A64"</copy>
- ```
+    ```
+    <copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="D5807C29FD2A7F92E0538D00000A9A64"</copy>
+    ```
 
- else make changes in the below command and execute it.
- ```
- <copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
- ```
+    else make changes in the below command and execute it.
+    ```
+    <copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="{Insert IMAGE ID of 19c from above output}"</copy>
+    ```
 
 ## Task 7: Deploy Image
 
