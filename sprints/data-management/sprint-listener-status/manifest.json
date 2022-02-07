@@ -3,15 +3,15 @@
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
-            "title": "How do I create a new database user?",
-            "description": "",
-            "filename": "sprint-create-user.md"
+            "title": "How do I check the listener status?",
+            "description": "Check Status of Oracle Database Listener",
+            "filename": "sprint-listener-status.md"
         },
         {
-            "title": "How can I grant common privileges to individual database users?",
-            "description": "",
-            "filename": "../sprint-grant-privileges/sprint-grant-privileges.md"
+            "title": "How do I restart the listener?",
+            "description": "Restart Oracle Database Listener",
+            "filename": "../sprint-restart-listener/sprint-restart-listener.md"
         }
-    
+
     ]
 }
