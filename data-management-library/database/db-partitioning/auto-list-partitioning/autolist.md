@@ -12,6 +12,11 @@ The automatic list partitioning method enables list partition creation on demand
 *  Extension to LIST partitioning
 *  System generated partition names for auto-created partitions
 *  Only requirement is no DEFAULT partition
+
+
+### Automatic List Partitioning Usecase
+
+A typical use case for automatic list partitioning is when a company currently deals with customers from the USA, UK, and Ireland. You want to partition your orders table based on the country. Another example is partitioning sensor data on IoT (Internet of Things) applications, such as humidity, temperature, climate, pressure, air quality changes, etc. These sensors' measurement values change.
  
 ### Objectives
  
