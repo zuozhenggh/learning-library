@@ -169,6 +169,7 @@ You successfully made it to the end of module 'conversion to partitioned table'.
 * [Database VLDB and Partitioning Guide](https://docs.oracle.com/en/database/oracle/oracle-database/21/vldbg/create-composite-partition-table.html#GUID-9ECF0F94-57BB-45F8-824F-48B320F23D9C)
 
 ## Acknowledgements
+
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database  
+* **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 

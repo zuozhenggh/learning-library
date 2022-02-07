@@ -155,6 +155,7 @@ You successfully made it to the end of module 'multi-column list partitioning'.
 * [Multi-column list Partitioning](https://livesql.oracle.com/apex/livesql/file/tutorial_EDVE861H5MO8DX16EGJ80HOTK.html)  
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+- **Author** - Madhusudhan Rao, Principal Product Manager, Database
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database  
+* **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 

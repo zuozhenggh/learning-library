@@ -133,6 +133,7 @@ You successfully made it to the end this lab Range Partitions.
 
 
 ## Acknowledgements
+
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database  
+* **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 
