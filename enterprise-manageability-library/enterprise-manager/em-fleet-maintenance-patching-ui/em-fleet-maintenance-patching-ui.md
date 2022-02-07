@@ -267,7 +267,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 2. Execute below command to subscribe the target hr.subnet.vcn.oraclevcn.com to Gold Image
 
-    If the image id is same as the one highlighted above, you may use the below command:
+    If the image id is same as the one highlighted above (Task 4, step 7), you may use the below command:
     ```
     <copy>emcli db_software_maintenance -subscribeTarget -target_name=hr.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id=A79586CA133F1E27E0532A00000A5633</copy>
     ```
@@ -318,11 +318,20 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     ![](images/9.png " ")
 
+    We can enter following values
+    Under Maintenance tasks
+        Destination Oracle Home as ```<copy>***/u01/app/1810/hr***</copy>```
+        Check both Migrate Listener and Update Database options
+    Under Credentials (We have already created these credentials in Enterprise Manager for this workshop. Please choose Named for all the below three options and from the dropdown menu, you can opt for values as suggested below)    
+        Named Host Credentials as ***ORACLE***
+        Privileged Host Credentials as ***ROOT***
+        SYSDBA Database Credentials as ***SYS_SALES***
+
     Deployment of new Oracle home does not impact existing Oracle home and hence it is scheduled to run immediately. We can schedule it to run at a different time by selecting later in start schedule and providing new time to run this operation.
 
     Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute these tasks immediately.  
 
-4. We can validate our entries (new Oracle home, log file location, credentials) provided in previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes - Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
+4. We can validate our entries (new Oracle home, log file location, credentials) provided in previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes - Quick and Full. We can select either of these. Full validation mode submits a deployment procedure. In this case choose Quick validation mode
 
     ![](images/11.png " ")
 
@@ -336,9 +345,11 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     ![](images/15.png " ")    
 
-    We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page.
+    We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page. Lets enter ```<copy>***HR_DB_Patching***</copy>```
 
     ![](images/16.png " ")
+
+    submit
     ![](images/17.png " ")
 
     Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
@@ -389,7 +400,9 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
    ![](images/32.png " ")
 
-
+   Lets validate the version of ***hr*** database. In the upper toolbar, locate the ***Targets*** icon and click the drop-down menu and then select ***Databases***. We can see the updated version of ***hr*** database.
+   ![](images/post_patch_db_version.png " ")
+   
 ## Task 9:  Rollback Database – Reversed Patch 18.10 to 18.3
 
 Once the database is updated, we will perform a rollback to 18.3. Rollback operation is not supported by UI for EM 13.5 RU1 but it will be part of UI in upcoming release.
