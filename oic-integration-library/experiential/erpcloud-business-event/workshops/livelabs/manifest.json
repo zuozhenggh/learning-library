@@ -13,9 +13,13 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Provision an Instance",
+            "title": "Provision an OCI Integration Instance",
             "description": "Follow these steps to create a new OCI Integration service instance",
             "filename": "../../../../core-competencies/b2b/getting-started/provision/provision.md"
+        },
+        {
+            "title": "Provision Oracle Autonomous Database",
+            "filename": "../../../../../../data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },
         {
             "title": "Lab 1: Create Connections",
