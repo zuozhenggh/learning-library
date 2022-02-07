@@ -11,7 +11,7 @@ Range partitioning maps data to partitions based on ranges of partition key valu
 *	Ideal for chronological data 
 *	Data can be Split and merged as necessary
 
-### Sales Data based on Specific Date Range
+### Sales data based on specific date range
 
 Here are some interesting facts about the US Retail industry, Industry experts in US e-commerce project sales data to grow by double digits, up 17.9% in 2021 to $933.30 billion. Ecommerce penetration will continue to increase, more than doubling from 2019 to 23.6% in 2025. It means the growing volume of Customer and Sales Data and challenges with its manageability. The solution to managing such a vast volume of chronological or sales data would be to partition it based on date range or use Range partitioning.
 
@@ -23,16 +23,16 @@ This Lab will teach you how to create Range Partitioning.
 ### Objectives
  
 In this lab, you will:
-* Create a Range Partitioned Table  
+* Create a range partitioned table  
 
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
   
-## Task 1: Create Range Partitioning
+## Task 1: Create range partitioning
 
-Let us Create Range Partitioned Table. The table is partitioned by range using the values of the sales\_date column. The partition bound is determined by the VALUES LESS THAN clause. 
+Let us Create range partitioned Table. The table is partitioned by range using the values of the sales\_date column. The partition bound is determined by the VALUES LESS THAN clause. 
 
 ```
 <copy>

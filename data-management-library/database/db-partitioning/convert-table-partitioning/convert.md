@@ -1,4 +1,4 @@
-# Convert Non-partitioned Table to Partitioned Table 
+# Convert non-partitioned table to partitioned table 
 
 ## Introduction
  
@@ -24,9 +24,9 @@ This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Convert Non-partitioned Table to Partitioned Table
+## Task 1: Convert non-partitioned table to partitioned table
 
-Let's Convert Non-partitioned Table to Partitioned Table:
+Let's Convert non-partitioned table to partitioned table:
 
 ```
 <copy>

@@ -14,7 +14,7 @@ The semantics for creating list partitions are similar to those for creating ran
 *	One or more unordered distinct values per list
 *	Ideal for segmentation of distinct values, for example, region
 
-### Weather forecasting or Sales forecasting based on Regional List
+### Weather forecasting or sales forecasting based on regional list
 
 Weather forecasts are made by collecting quantitative data about the current atmosphere at a given place and using meteorology to project how the atmosphere will change. Weather forecasting is a part of the economy. For example, in 2009, the US spent approximately $5.1 billion on weather forecasting, producing benefits estimated at six times as much.
 The volume of data keeps growing, and analysing previous regional data can be performance intensive. Since the weather data has geographical location, date, changes in temperature and humidity, this is a good case for partitioning data based on a regional list of values or using List partitioning. Another good example would be partitioning sales data based on regions for business reporting purposes, as shown below task list.
@@ -27,16 +27,16 @@ This Lab will teach you how to List Partitioning.
 ### Objectives
  
 In this lab, you will:
-* Create List Partitions
+* Create list partitioning
 
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Create List Partitions
+## Task 1: Create list partitioning
 
-Let's Create List Partitions Table:
+Let's create list partitioned table:
  
 ```
 <copy>
@@ -69,7 +69,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 
 ![Image alt text](images/lab3_02.png "List Partition")
 
-## Task 2: Add New Partitions
+## Task 2: Add new partitions
 
 Add a new partition to the table.
 
@@ -144,7 +144,7 @@ SELECT * FROM sales_by_region;
 
 Display data from a specified partition in the table. When you are finished testing the example, you can clean up the environment by dropping the table (DROP TABLE sales_by_region).
 
-## Task 3: Partition Data by Partition Name
+## Task 3: Partition data by partition name
 
 
 ```

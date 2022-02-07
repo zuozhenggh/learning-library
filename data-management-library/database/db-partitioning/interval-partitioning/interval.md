@@ -5,36 +5,35 @@ Interval partitioning is an extension to range partitioning in which database ta
 
  ![Image alt text](images/lab02_01.png "Interval Partition")
 
- This Lab will teach you how to create Interval Partitioning.
+ This Lab will teach you how to create interval partitioning.
 
 ### Features
 
 *	Introduced with Oracle 11g
-*	Extension to Range Partitioning
+*	Extension to range partitioning
 *	Full Automation for equal-sized range partitions
-*	Part of Composite Level Partitioning 
-*	Difference Interval and Range Partitioning
-*	Naming Template only for Range
+*	Part of composite level partitioning 
+*	Difference interval and range Partitioning 
 *	System generated names for interval 
-*	No need for any Partition management
+*	No need for any partition management
 
-### Analysing Business Data at various intervals 
+### Analysing business data at various intervals 
 
-In Financial Services or Retail Industry, when Business Analysts want to view sales data based on daily, monthly, quarterly or yearly, it is easier to partition data based on intervals. As the data keeps growing, the partitions keep getting created automatically.  
+When Business Analysts want to view sales data based on daily, monthly, quarterly or yearly, for example, in Financial Services or Retail Industry, it is easier to partition data based on intervals. As the data keeps growing, the partitions keep getting created automatically.  
  
 ### Objectives
  
 In this lab, you will:
-* Create Interval Partitions
+* Create interval partitions
 
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
   
-## Task 1: Create Interval Partitions
+## Task 1: Create interval partitions
 
-Let's Create Interval Partitions Table. The following example specifies two partitions with varying interval widths of one month.
+Let's create interval partitions table. The following example specifies two partitions with varying interval widths of one month.
  
 ```
 <copy>
@@ -54,7 +53,7 @@ INTERVAL(NUMTOYMINTERVAL(1, 'MONTH'))
 </copy>
 ```
 
-## Task 2: Auto Generate Interval Partitions
+## Task 2: Auto generate interval partitions
 
 
 insert records
@@ -125,6 +124,7 @@ You successfully made it to the end this lab Interval Partitions.
 * [Database VLDB and Partitioning Guide](https://docs.oracle.com/en/database/oracle/oracle-database/21/vldbg/partition-create-tables-indexes.html)
 
 ## Acknowledgements
+
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database  
+* **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 

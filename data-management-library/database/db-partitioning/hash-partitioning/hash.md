@@ -15,7 +15,7 @@ Hash partitioning maps data to partitions based on Oracle's hashing algorithm to
 * Number of partitions should be a power of 2 for equal data distribution
 
 
-### Data Partition based on Product List or Hash Values 
+### Data partition based on product list or hash values 
 
 In a regular E-Commerce website, Product listing, filtering and sorting determines how easy or difficult it is for customers to browse through product catalogues. During usability tests by UI experts, there is a very high chance of customers purchasing a product that is well organized and easy to find. Below is a simple example of how online store data can be hash partitioned for cricket sports gears where each of these (bat, ball etc.) are named tablespaces.   
 
@@ -40,9 +40,9 @@ This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
  
-## Task 1: Create Interval Hash Partitions
+## Task 1: Create interval hash partitions
 
-Let's Create Interval Hash Partitions Table with customer id as a hash value, and data is partitioned before 2016 and after 2016.
+Let's Create interval hash partitions table with customer id as a hash value, and data is partitioned before 2016 and after 2016.
  
 ```
 <copy>
@@ -72,7 +72,7 @@ SELECT SUBSTR(TABLE_NAME,1,32), SUBSTR(PARTITION_NAME,1,32), SUBSTR(SUBPARTITION
 
 ![Image alt text](images/lab4_03.png "Display the partitions/subpartitions")
 
-## Task 2: Insert Data and View Partitioned Data
+## Task 2: Insert data and view partitioned data
 
 ```
 <copy>
@@ -140,7 +140,7 @@ drop table sales_interval_hash purge;
 </copy>
 ```
  
-You successfully made it to the end this lab Interval Partitions.    
+You successfully made it to the end this lab interval partitioning.    
 
 ## Learn More
 

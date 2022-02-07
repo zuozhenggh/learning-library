@@ -14,23 +14,23 @@ We can set tables, partitions, and subpartitions to read-only status to protect 
 * DROP/RENAME/SET UNUSED COLUMN are forbidden 
 * DROP [read only] PARTITION forbidden 
 
-### Making Previous quarter sales data as read-only 
+### Making previous quarter sales data as read-only 
 
 In the financial services or retail sector, you can set the last quarter's sales data as read-only, and the rest of the data can allow read and write DML operations. Setting the partition as read-only can be a precautionary measure to avoid accidental data updating or deleting. 
 
 ### Objectives
  
 In this lab, you will:
-* create Read Only Partitions
+* create read only partitions
 
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Create Read Only Partitions
+## Task 1: Create read only partitions
 
-Let's Create Read Only Partitions Table: 
+Let's Create read only partitions Table: 
 ```
 <copy>
 rem simple interval partitioned table with one read only partition
