@@ -7,6 +7,7 @@ This lab walks you through the steps to create the required resources you'll use
 Estimated time: 20 mins
 
 ### Objectives
+
 -  Learn to provision a VCN and subnet
 -  Learn how to provision, connect, and load data into an Autonomous Transaction Processing (ATP) instance
 -  Learn how to provision an Autonomous Data Warehouse (ADW) instance
@@ -162,8 +163,6 @@ You can click View VCN Details and see both a Public and Private subnet were cre
     ![License Type](./images/01-08-license.png)
 
 9.  Click **Create Autonomous Database**. Once it finishes provisioning, you can click on the instance name to see details of it.
-
-You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
