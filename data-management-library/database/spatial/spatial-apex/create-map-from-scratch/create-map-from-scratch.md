@@ -90,10 +90,8 @@ Congratulations on creating your first map from scratch. In the next Lab you wil
 
 This concludes this lab. You may now proceed to the next lab.
 
-## Learn More
-* 
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle
-* **Last Updated By/Date**  - David Lapp, Database Product Management, xxx 2021
+* **Last Updated By/Date**  - David Lapp, Database Product Management, February 2022
 

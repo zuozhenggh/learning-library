@@ -5,7 +5,7 @@
 
 Oracle APEX provides a wizard to create a variety of useful page types. In this lab you will use the wizard to create a new application and a page with a map. You then inspect the resulting page to gain an understanding of the Map Region.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
@@ -76,10 +76,8 @@ Congratulations on creating your first maps. There is a lot of capability beyond
 
 This concludes this lab. You may now proceed to the next lab.
 
-## Learn More
-* 
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle
-* **Last Updated By/Date**  - David Lapp, Database Product Management, xxx 2021
+* **Last Updated By/Date**  - David Lapp, Database Product Management, February 2022
 

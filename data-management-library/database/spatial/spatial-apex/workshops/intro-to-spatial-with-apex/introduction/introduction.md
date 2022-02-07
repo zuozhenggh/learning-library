@@ -8,7 +8,7 @@ The Map Region is a native APEX feature introduced in APEX 21.1 providing the ab
 
 ![](./images/intro-01.png " ")
 
-Estimated Workshop Time: xx hours
+Estimated Workshop Time: 1 hour 15 minutes
 
 
 ### About Oracle Application Express (APEX) and Oracle Spatial
@@ -28,7 +28,7 @@ Oracle Spatial is a set of geospatial data management, analysis, and processing 
 
 ### Prerequisites
 
-  - Oracle APEX 21.1+. 
+  - Oracle APEX 21.1+ is required. However Oracle APEX 21.2 is recommended, as the steps and screen shots in this workshop are taken from APEX 21.2. If performing this workshop with APEX 21.1, then please expect occasional small differences in the user interface.
   - Basic experience with Oracle APEX is recommended, though not required. If needed, review the following introductory LiveLabs APEX workshop: [Creating an App based on Existing Tables for Oracle Autonomous Cloud Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=628). 
   - Basic experience with Oracle Spatial is recommended, though not required. If needed review the following introductory LiveLabs Spatial workshop: [Introduction to Oracle Spatial]( https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=736)
 
@@ -41,7 +41,7 @@ Oracle Spatial is a set of geospatial data management, analysis, and processing 
 
 * **Author** - David Lapp, Database Product Management, Oracle
 * **Contributors** - Jayson Hanes, Database Product Management, Oracle
-* **Last Updated By/Date** - 
+* **Last Updated By/Date** - David Lapp, February 2022
 
 
 ## Need Help?

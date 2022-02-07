@@ -14,7 +14,7 @@ Estimated Lab Time: 15 minutes
 
 ### Prerequisites
 
-* APEX 21.1+
+* Oracle APEX 21.1+ is required. However Oracle APEX 21.2 is recommended, as the steps and screen shots in this workshop are taken from APEX 21.2. If performing this workshop with APEX 21.1, then please expect occasional small differences in the user interface.
 
 
 ## Task 1: Install the application
@@ -32,6 +32,8 @@ Note: If your Workspace has existing application(s) then click **Create** and th
 4. Scroll down to **Sample Maps** and click **Download App**
 ![Image alt text](images/install-sample-maps-03.png)
 You will be prompted to same the application bundle to a local folder. 
+
+   Note: if you are redirected to github, then navigate to the folder for your APEX version and download **sample-maps.zip**.
 
 5. Return to your App Builder browser tab and click **Import**
 ![Image alt text](images/install-sample-maps-04.png)
@@ -145,10 +147,8 @@ This will take you to the Install Application wizard.
 
 This concludes this lab. You may now proceed to the next lab.
 
-## Learn More
-* 
-
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle
-* **Last Updated By/Date**  - David Lapp, Database Product Management, xxx 2022
+* **Contributors** - Carsten Czarski, Database Development, Oracle
+* **Last Updated By/Date**  - David Lapp, Database Product Management, February 2022
 
