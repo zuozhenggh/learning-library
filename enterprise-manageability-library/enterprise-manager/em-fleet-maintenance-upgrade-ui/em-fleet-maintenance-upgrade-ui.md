@@ -470,6 +470,8 @@ With deploy operation and migrate listener task completed successfully, we are r
 
     ![](images/55.png " ")
 
+    Lets validate the version of ***finance*** database. In the upper toolbar, locate the ***Targets*** icon and click the drop-down menu and then select ***Databases***. We can see the updated version of ***finance*** database.
+    ![](images/post_upgrade_db_version.png " ")
 ## Task 10: Cleanup Old homes
 
 1. Review and execute the following command as a dry-run to report on cleanup impact for *finance.subnet.vcn.oraclevcn.com*  
