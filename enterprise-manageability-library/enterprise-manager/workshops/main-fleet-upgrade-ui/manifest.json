@@ -16,7 +16,7 @@
       "title": "Lab 1: Initialize Environment",
       "description": "How to initialize and start all the workshop components",
       "publisheddate": "10/14/2020",
-      "filename": "./../../initialize-environment/initialize-environment.md"
+      "filename": "./../../initialize-environment/initialize-environment-upgrade-ui.md"
     },
     {
       "title": "Lab 2: Automated Database Upgrade at Scale with Fleet Maintenance UI",
