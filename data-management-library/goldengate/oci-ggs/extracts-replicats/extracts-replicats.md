@@ -7,6 +7,7 @@ This lab walks you through the steps to create and run an Extract, instantiate t
 Estimated time: 15 minutes
 
 ### About Extracts and Replicats
+
 An Extract is a process that extracts, or captures, data from a source database. A Replicat is a process that delivers data to a target database.
 
 ### Objectives
@@ -476,8 +477,6 @@ Before importing data to the target database, create a credential in the target 
 11. In the REP Replicat **Action** menu, select **Start**.
 
     The yellow exclamation point icon changes to a green checkmark.
-
-In this lab, you created and ran an Extract and Replicat. You may now **proceed to the next lab**.
 
 ## Learn more
 
