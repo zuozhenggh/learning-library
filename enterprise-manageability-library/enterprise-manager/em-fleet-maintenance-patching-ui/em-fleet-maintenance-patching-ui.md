@@ -349,7 +349,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     ![](images/16.png " ")
 
-    submit
+    Click on submit.
     ![](images/17.png " ")
 
     Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
@@ -402,7 +402,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
    Lets validate the version of ***hr*** database. In the upper toolbar, locate the ***Targets*** icon and click the drop-down menu and then select ***Databases***. We can see the updated version of ***hr*** database.
    ![](images/post_patch_db_version.png " ")
-   
+
 ## Task 9:  Rollback Database – Reversed Patch 18.10 to 18.3
 
 Once the database is updated, we will perform a rollback to 18.3. Rollback operation is not supported by UI for EM 13.5 RU1 but it will be part of UI in upcoming release.

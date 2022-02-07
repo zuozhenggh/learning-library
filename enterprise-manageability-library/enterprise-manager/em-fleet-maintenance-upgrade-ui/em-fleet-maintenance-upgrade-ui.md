@@ -379,11 +379,20 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
     ![](images/41.png " ")
 
+    We can enter following values
+    Under Maintenance tasks
+        Destination Oracle Home as ```<copy>***/u01/app/oracle/product/19/db_home1***</copy>```
+        Check both Migrate Listener and Update Database options
+    Under Credentials (We have already created these credentials in Enterprise Manager for this workshop. Please choose Named for all the below three options and from the dropdown menu, you can opt for values as suggested below)    
+        Named Host Credentials as ***ORACLE***
+        Privileged Host Credentials as ***ROOT***
+        SYSDBA Database Credentials as ***SYS_SALES***
+
     Deployment of new Oracle home does not impact existing Oracle home and hence it is scheduled to run immediately. We can schedule it to run at a different time by selecting later in start schedule and providing new time to run this operation.
 
     Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute these tasks immediately.
 
-4. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure.
+4. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure. In this case choose Quick validation.
 
     ![](images/43.png " ")
 
@@ -397,9 +406,11 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
     ![](images/100.png " ")    
 
-    We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page.
+    We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page.Lets enter ```<copy>***finance_19c_upgrade***</copy>```
 
     ![](images/45.png " ")
+
+    Click on submit.
     ![](images/46.png " ")
 
 Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
@@ -433,6 +444,8 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 
     ![](images/52.png " ")
 
+    Lets validate the version of ***finance*** database. In the upper toolbar, locate the ***Targets*** icon and click the drop-down menu and then select ***Databases***. We can see the updated version of ***finance*** database.
+    ![](images/post_upgrade_db_version.png " ")
 
 ## Task 9: Update Database – Upgrade to 19.7
 
