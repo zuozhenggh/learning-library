@@ -8,16 +8,18 @@ Estimated Lab Time: 5 minutes
 
 ### Objectives
 In this lab, you will:
-- Obtain access to an Oracle Autonomous Database (ADW or ATP) instance
 - Create a database table using a SQL script
 - Validate access to an Oracle ERP Cloud environment, and a user account with the correct privileges
 
 ### Prerequisites
 Satisfy the following prerequisites before you continue with this workshop:
 * Successfully provisioned Oracle Integration Instance and able to access the homepage. 
+* Successfully provisioned Oracle Autonomous Database, either ATP or ADW instance. 
 
 
-## Task 1: Obtain access to an Oracle Autonomous Database (ADW or ATP) instance
-Validate you have access to an Oracle Autonomous database environment. Follow these steps if you need to create a new Autonomous Database:
+## Task 1: Create a database table using a SQL script
+
+Follow these steps to create a DB table which will be used as part of this workshop. 
+
 
 

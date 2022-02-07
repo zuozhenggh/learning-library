@@ -22,6 +22,10 @@
             "filename": "../../../../../../data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },
         {
+            "title": "Lab Setup",
+            "filename": "../../setup/setup.md"
+        },
+        {
             "title": "Lab 1: Create Connections",
             "filename": "../../lab-1-create-connections/lab-1-create-connections.md"
         },
