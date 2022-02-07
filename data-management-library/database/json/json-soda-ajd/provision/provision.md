@@ -4,7 +4,11 @@
 
 This lab walks you through the steps to get started using the Oracle Autonomous JSON Database [AJD] on Oracle Cloud. In this lab, you will provision a new AJD instance and connect to the Autonomous Database using JSON.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:ICHM8bDast0)
 
 ### Objectives
 
@@ -193,7 +197,7 @@ In this lab, you will:
 
 You are now connected to your Autonomous Database using JSON.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 

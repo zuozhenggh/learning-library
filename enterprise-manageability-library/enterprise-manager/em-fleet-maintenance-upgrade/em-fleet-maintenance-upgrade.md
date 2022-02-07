@@ -5,6 +5,9 @@ The objective of this lab is to explore upgrading your Oracle Database Software 
 
 *Estimated Lab Time:* 75 minutes
 
+Watch the video below for a quick walk through of the lab.
+[](youtube:SbsS_nNiXHo)
+
 ### About Fleet Maintenance
 
 Database Fleet Maintenance is an end-to-end automated solution for patching and upgrade of Oracle Database. Fleet Maintenance enables DBAs to automate patching of wide range of DB Configurations including Oracle RAC environments with Data Guard Standby.

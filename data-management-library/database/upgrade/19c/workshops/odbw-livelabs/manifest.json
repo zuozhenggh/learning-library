@@ -6,6 +6,7 @@
     {
       "title": "Introduction",
       "description": "The Introduction to Upgrade to 19c Workshop.",
+      "type": "odbw",
       "filename": "../../introduction/introduction.md"
     },
     {

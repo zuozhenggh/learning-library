@@ -6,6 +6,8 @@ Automation is a critical component when it comes to managing Cloud workloads at 
 
 In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled) to create and list resources. Upon completion of this lab you should have a good understanding of how to use the OCI CLI to automate common tasks in OCI.
 
+Estimated Time: 45 minutes
+
 ## Task 1: Use the CLI to create a VCN with one public subnet
 
 1. In the Cloud Shell, enter the following command:
@@ -27,8 +29,9 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     AD_NAME="<insert the OCID>"
     </copy>
     ```
+    ![Save AD as a shell variable](images/ad.png " ")
 
-3. Return to the OCI Console and navigate to Identity -> Compartments. Copy the OCID of the assigned compartment.
+3. Return to the OCI Console and navigate to **Identity & Security -> Compartments**. Copy the OCID of the assigned compartment.
 
     ![](images/CLI_009.png " ")
 
@@ -41,6 +44,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     COMPARTMENT_ID="<compartment OCID value>"
     </copy>
     ```
+    ![Save Compartment ID](images/compartment_id.png " ")
 
 5. Create a new virtual cloud network with a unique CIDR block. You will need the OCID of your compartment.
 
@@ -59,8 +63,9 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     VCN_OCID="<vcn id>"
     </copy>
     ```
+    ![Save VCN OCID](images/vcn_ocid.png " ")
 
-7. Enter the following command to list VCN's:
+7. Enter the following command to list VCN's. Replace $COMPARTMENT_ID with your compartment OCID.
 
     ```
     <copy>
@@ -89,6 +94,8 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     SECURITY_LIST_OCID="<security list ocid>"
     </copy>
     ```
+    ![](images/security_list_ocid.png " ")
+
 
 10. Create a public subnet.
 
@@ -110,6 +117,8 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
+    ![](images/subnet_ocid.png " ")    
+
 12. Create an Internet Gateway. You will need the OCID of your VCN and Compartment.
 
     ```
@@ -127,6 +136,8 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     INTERNET_GATEWAY_OCID="<internet gateway id"
     </copy>
     ```
+    
+    ![](images/internet_gateway.png " ")
 
 14. Next, we will update the default route table with a route to the internet gateway. First, you will need to locate the OCID of the default route table.
 
@@ -156,11 +167,13 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
 
     ```
     <copy>
-    oci compute image list --compartment-id $COMPARTMENT_ID --query 'data[?contains("display-name",`Oracle-Linux`)]|[0:1].["display-name",id]'
+    oci compute image list --compartment-id $COMPARTMENT_ID --query 'data[?contains("display-name",`Oracle-Linux`)]|[0:1].["display-name",id]' --all
     </copy>
     ```
 
     You may find more information on the Query command [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliusing.htm#ManagingCLIInputandOutput).
+
+    ![](images/cli_query.png)        
 
 16. Save a note of the image ID for future use:
 
@@ -169,6 +182,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     IMAGE_ID="<image id>"
     </copy>
     ```
+    ![](images/image_id.png)    
 
 17. To determine what shapes are available in your tenancy, use this command:
 
@@ -178,15 +192,18 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
     </copy>
     ```
 
-18. Choose a shape from the output, for example, "VM.Standard2.1":
+18. Choose a shape from the output, for example, "VM.Standard1.4":
 
     ![](images/select-shape.png)
 
 19. Save the shape as a variable:
 
     ```
+    <copy>
     SHAPE="<shape>"
+    </copy>
     ```
+    ![](images/shape.png)
 
 20. Launch a compute instance with the following command.  We previously created a regional subnet because our command did not include a specific availability domain. For compute instances, we must specify an availability domain and subnet.
 
@@ -205,7 +222,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
 
     Capture the ``id:`` of the compute instance launch output.
 
-21. Check the status of the instances
+21. Check the status of the instance
 
     ```
     <copy>
@@ -215,24 +232,30 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
 
 22. Rerun the command every 30-60 seconds until the lifecycle-state is ``RUNNING``
 
+    ![](images/instance_status.png)
+
 ## Task 2: Delete the resources
 
 1. Switch to  OCI console window.
 
-2. If your Compute instance is not displayed, From OCI services menu Click **Instances** under **Compute**.
+2. If your Compute instance is not displayed, From OCI services menu Click **Compute** -> **Instances**.
 
-3. Locate first compute instance, Click Action icon and then **Terminate**.
+     ![](images/compute_instances.png " ")
+
+3. Locate your compute instance, Click the Action icon and then **Terminate**.
 
      ![](images/RESERVEDIP_HOL0016.PNG " ")
 
-4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate.
+4. Make sure Permanently delete the attached Boot Volume is checked, Click **Terminate Instance**. Wait for instance to fully Terminate.
 
      ![](images/RESERVEDIP_HOL0017.PNG " ")
 
-5. From OCI services menu Click **Virtual Cloud Networks** under **Networking**, list of all VCNs will
+5. From OCI services menu Click **Networking** -> **Virtual Cloud Networks**, a list of all VCNs will
 appear.
 
-6. Locate your VCN , Click Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
+     ![](images/vcn.png " ")
+
+6. Locate your VCN , Click the Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
 
      ![](images/RESERVEDIP_HOL0018.PNG " ")
 
@@ -246,5 +269,5 @@ appear.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-- **Last Updated By/Date** - Tom McGinn, August 2020
+- **Last Updated By/Date** - Kamryn Vinson, November 2021
 

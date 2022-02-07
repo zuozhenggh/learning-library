@@ -2,26 +2,26 @@
 
 ## Introduction
 
-For the purposes of this workshop, Oracle Autonomous Data Warehouse (ADW) serves as the source database for your Oracle GoldenGate Marketplace deployment. This lab walks you through the steps to connect your Oracle GoldenGate Marketplace deployment to ADW.
+For the purposes of this workshop, Oracle Autonomous Data Warehouse (ADW) serves as the source database for your Oracle GoldenGate Marketplace deployment. This lab walks you through the steps to connect your Oracle GoldenGate Marketplace deployment to Autonomous Data Warehouse.
 
 Estimated time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Download the ADW credentials
-* Upload the ADW credentials to the Oracle GoldenGate Marketplace compute instance
-* Add the ADW credentials in the Oracle GoldenGate Administration Server
+* Download the Autonomous Data Warehouse credentials
+* Upload the Autonomous Data Warehouse credentials to the Oracle GoldenGate Marketplace compute instance
+* Add the Autonomous Data Warehouse credentials in the Oracle GoldenGate Administration Server
 
 ### Prerequisites
 
 Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm#linux) to enter your private key for the Oracle GoldenGate Marketplace Compute instance.
 
-## Task 1: Download the Target ADW Client Credentials
+## Task 1: Download the Target Autonomous Data Warehouse Client Credentials
 
 1.  In the OCI Console breadcrumb, click **Autonomous Database**, and then select **TargetADW** from the list of databases.
 
-2.  On the Target ADW Autonomous Database Details page, click **DB Connection**.
+2.  On the Target Autonomous Data Warehouse Details page, click **DB Connection**.
 
     ![](images/02-01.png " ")
 
@@ -29,52 +29,103 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
     ![](images/02-02.png " ")
 
-3.  In the Download Client Credentials (Wallet) dialog, enter the Target ADW Admin password twice, and then click **Download**.
+3.  In the Download Client Credentials (Wallet) dialog, enter the Target Autonomous Data Warehouse Admin password twice, and then click **Download**.
 
 4.  Close the DB Connection panel.
 
-## Task 2: Upload the Target ADW Credentials to Oracle GoldenGate
+## Task 2: Upload the Target Autonomous Data Warehouse Credentials to Oracle GoldenGate
 
-1.  In the OCI Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
+1.  In the Oracle Cloud Console, open the navigation menu (hamburger icon), click **Compute**, and then click **Instances**.
 
     ![](images/02-01-compute.png " ")
 
 2.  Under **List Scope**, ensure that the correct **Compartment** is selected for your workshop. You can find your compartment information in the Workshop Details of this LiveLab.
 
-3.  Select **Oracle GoldenGate 21.1.0.0.1 Microservices Edition for Oracle**.
+3.  In the Oracle Cloud Console global header, click **Cloud Shell**. The Cloud Shell drawer opens at the bottom of your screen.
 
-    ![](images/02-03-compute-instances.png " ")
+    ![](images/02-03-cloudshell.png " ")
 
-4.  On the Instance Details page, under **Instance Access**, copy the **Public IP Address**.
+4.  From the Cloud Shell drawer menu (hamburger icon) select **Upload**.
+
+    ![](images/02-04-cs-upload.png " ")
+
+5.  In the File Upload to your Home Directory dialog, drag and drop or select the TargetADW wallet file you downloaded in Task 1, and then click **Upload**.
+
+    ![](images/02-05-upload.png " ")
+
+6.  Repeat step 5 to upload your SSH private key. Click **Hide** to close the File Transfers dialog.
+
+    ![](images/02-06-hide.png " ")
+
+7.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell:
+
+    ```
+    <copy>chmod 600 <private-SSH-key></copy>
+    ```
+
+8.  On the Instances in <compartment-name> page, copy the **Public IP Address**.
 
     ![](images/02-04.png " ")
 
-5.  Using a secure FTP client of your choosing, open a connection to the Oracle GoldenGate Marketplace instance using its Public IP Address.
+9.  In Cloud Shell, enter the following to connect to the Marketplace Oracle GoldenGate compute instance:
 
     ```
     <copy>sftp -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
-6.  Upload the wallet\_ATP.zip to /home/opc.
+10. Enter the following `put` command to upload the wallet\_ADW.zip to /home/opc.
 
     ```
-    <copy>put <local-path>/Wallet_ADW.zip</copy>
+    <copy>put Wallet_ADW.zip</copy>
     ```
 
-7.  SSH to the compute instance.
+11. Enter `exit` to close the sftp connection.
+
+
+12. SSH to the compute instance.
 
     ```
     <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
     ```
 
-8.  Upload the wallet\_ADW.zip and then extract its contents to a new directory, such as **wallet\_ADW**.
+13. Enter `ls` to list the contents in the current directory. You should see two files, `ogg-credentials.json` and your wallet file.
+
+14. Make a new directory called **wallet\_ADW**, and then extract the contents of the wallet\_ADW.zip to a new directory.
 
     ```
     <copy>mkdir wallet_ADW
 unzip Wallet_ADW.zip -d wallet_ADW</copy>
     ```
 
-## Task 3: Add the Target ADW Credential in the Oracle GoldenGate Administration Server
+15. Change directories to wallet_ADW.
+
+    ```
+    <copy>cd wallet_ADW</copy>
+    ```
+
+16. Enter `pwd`, and then copy the full path to the wallet files to be used in a later Task.
+
+> **Note:** Leave Cloud Shell open.
+
+## Task 3: Get the Marketplace Oracle GoldenGate oggadmin Credentials
+
+1.  Open Cloud Shell if you previously closed the connection and SSH to the compute instance.
+
+    ```
+    <copy>ssh -i <private-SSH-key> opc@<ip-address></copy>
+    ```
+
+2. Enter `ls` to list the contents of the current directory.
+
+3. Open `ogg-credentials.json` and copy the output.
+
+    ```
+    <copy>cat ogg-credentials.json</copy>
+    ```
+
+4.  Exit Cloud Shell.
+
+## Task 4: Add the Target Autonomous Data Warehouse Credential in the Oracle GoldenGate Administration Server
 
 1.  Launch the OCI GoldenGate Deployment Console.
 
@@ -109,16 +160,16 @@ unzip Wallet_ADW.zip -d wallet_ADW</copy>
 10. Enter the following information, and then click **Submit**:
 
     * For **Credential Domain**, enter **OracleGoldenGate**.
-    * For **Credential Alias**, enter the ADW database name (low) from /home/opc/wallet\_ADW/tnsnames.ora. For example, **adw&lt;user&gt;\_low**.
-    * For **User ID**, paste the ADW connection string from step 4.
+    * For **Credential Alias**, enter the Autonomous Data Warehouse database name (low) from /home/opc/wallet\_ADW/tnsnames.ora. For example, **adw&lt;user&gt;\_low**.
+    * For **User ID**, paste the Autonomous Data Warehouse connection string from step 4.
     * For **Password**, enter the ggadmin password created when you registered the Target Database.
 
     ![](images/04-10.png " ")
 
-In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target ADW database. You may now **proceed to the next lab**.
+In this lab, you created a connection from the Oracle GoldenGate Marketplace instance to the target Autonomous Data Warehouse database. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, February 2022

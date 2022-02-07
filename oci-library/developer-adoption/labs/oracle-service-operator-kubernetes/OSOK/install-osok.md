@@ -164,7 +164,7 @@ The OCI Service Operator for Kubernetes is packaged as Operator Lifecycle Manage
     </copy>
     ```
 
-The OSOK OLM bundle contains all the required details like CRDs, RBACs, Configmaps, deployment which will install the OSOK in the kubernetes cluster.
+The OSOK OLM bundle contains all the required details like CRDs, RBACs, Configmaps, deployment which will install the OSOK in the Kubernetes cluster.
 
 
 Install the OSOK Operator in the Kubernetes Cluster using below command

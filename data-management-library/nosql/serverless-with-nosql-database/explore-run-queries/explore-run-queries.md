@@ -1,10 +1,14 @@
-# Explore data, run queries
+# Explore Data, Run Queries
 
 ## Introduction
 
 This lab picks up where lab 3 left off. We are going to explore in more detail the tables we created, load data, and execute queries using a Python application.
 
-Estimated Time: 25 minutes
+_Estimated Lab Time:_ 25 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:g1CATzd5wtg)
 
 ### Objectives
 
@@ -91,7 +95,7 @@ The goal of this task is to understand the difference between the 2 data models 
     curl -X POST -H "Content-Type: application/json" -d @$FILE_NAME http://localhost:3000/demoKeyVal
     </copy>
     ````
-5. Read back the data that we just entered. Execute in the Cloud Shell. In the second two queries, we use a limit clause which limits the number of rows returned. We also use an orderby clause to sort the returned results.
+5. Read back the data that we just entered. Execute in the Cloud Shell. In the second two queries, we use a limit clause which limits the number of rows returned. We also use an order by clause to sort the returned results.
 
     ````
     <copy>
@@ -326,7 +330,7 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
     </copy>
     ````
 
-5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Identity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
 
@@ -353,7 +357,7 @@ Select your compartment. Click the **freeTest** table, which will bring up the t
     </copy>
     ````
 
-5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Indentity and Security** then **Compartments** under 'Identity.'
+5. Remove the 'demonosql' compartment. From upper left hand menu, go to **Identity and Security** then **Compartments** under 'Identity.'
 
     ![](./images/remove-compartment.png)
 

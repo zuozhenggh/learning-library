@@ -6,7 +6,7 @@ Watch the video below to get an overview of joins using Database In-Memory.
 [](youtube:y3tQeVGuo6g)
 
 Watch the video below for a walk through of the In-memory Joins and Aggregations lab.
-[](youtube:w62wQ5pkBMA)
+[](youtube:PC1kWntRrqg)
 
 ### Objectives
 
@@ -21,6 +21,8 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: Querying the In-Memory Column Store
+
+**NOTE:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise the last line will remain in the buffer until you hit* **ENTER!**
 
 ## Task 1: In-Memory Joins and Aggregation
 

@@ -4,7 +4,7 @@
 
 You can use your preferred editor to author and edit your Markdown (.md) content for rendering the Workshop output.
 
-**Note:** Oracle recommends the UA Developers to use Atom.
+> **Note:** Oracle recommends the UA Developers to use Atom.
 
 ### Objectives
 
@@ -14,7 +14,7 @@ You can use your preferred editor to author and edit your Markdown (.md) content
 * Preview the content in a browser.
 
 
-## Task 1: Install Your Text Editor 
+## Task 1: Install Your Text Editor
 
 You can use your preferred editor, however we recommend to download either Atom or Visual Studio Code. Below, there are instructions for both.
 
@@ -40,7 +40,7 @@ To install Visual Studio Code:
 4. Drag it to the Applications folder and double-click it to launch the text editor.
   ![](./images/vscode-drag.png " ")
 
-## Task 2: Install Live Server 
+## Task 2: Install Live Server
 
 ### **Option 1: Install Atom's Live Server Package**
 
@@ -136,13 +136,25 @@ To create your lab and workshop content:
     In this example, your project folder **labs** contains 5 labs and a workshop. Your **workshops\freetier** folder can be treated as another lab that includes an introduction to your workshop.
     ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
 
-12. For additional information on creating your labs and developing workshop content:
+<!-- 12. For additional information on creating your labs and developing workshop content:
 
 * Click [here](https://confluence.oraclecorp.com/confluence/display/DCS/Quick+Tour+of+Markdown+Syntax) for a quick tour that demonstrates commonly used Markdown syntax and their HTML equivalents.
 
-* Click [here](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) for a deeper dive into more robust Markdown Template features.
+* Click [here](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) for a deeper dive into more robust Markdown Template features. -->
 
-## Task 5: Preview Your Workshop and Labs Using Live Server
+## Task 5: Security
+
+1. Blur all personal information (IP addresses, intranet URLs, email addresses, OCIDs, usernames, and passwords) from images.
+  ![](./images/blur-ip.png " ")
+
+2. Every image must have a description: ![DESC] (…/…/name.png “ “)
+
+  ![](./images/image-desc.png " ")
+
+3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text.
+
+
+## Task 6: Preview Your Workshop and Labs Using Live Server
 ### **Option 1: Using Atom**
 
 1. First, start the **atom-live-server**. In the Atom editor, select **Packages > atom-live-server > Start server**.
@@ -164,18 +176,16 @@ To create your lab and workshop content:
   ![](./images/folder-nav.png " ")
 2. Right-click on the index.html file and select "Open with Live Server".
   ![](./images/right-click.png " ")
-3. The local version of your workshop will then be launched in your web browser. 
+3. The local version of your workshop will then be launched in your web browser.
 
-You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
-[Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
-
-[LiveLabs Markdown Template Features](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New)
+<!-- [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 
 [LiveLabs Sample Workshop](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier)
 
-[LiveLabs OCI Menu Navigation Common Path Picture](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning))
+[LiveLabs OCI Menu Navigation Common Path Picture](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning)) -->
 
 ## Acknowledgements
 * **Author:**
@@ -186,7 +196,6 @@ You may now [proceed to the next lab](#next).
 * **Reviewed by:**  
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+    * Brianna Ambler
 
-* **Last Updated By/Date:** Brianna Ambler, July 2021
-
-
+* **Last Updated By/Date:** Lauran Serhal, November 2021

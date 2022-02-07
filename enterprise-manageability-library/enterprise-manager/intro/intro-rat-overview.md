@@ -37,29 +37,51 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
 -	Self- service to request a PDB using PDBaaS
 -	Administrative Setup for PDBaaS (Private Cloud)- Review only
 
-#### 2. Database Fleet Maintenance - Patching
+#### 2. Find, Fix, Validate
+- View unified Database Performance via Performance Hub
+- Use Real-time Database Operations Monitoring to view long running database tasks
+- Identify Top SQL in a PDB and tune it using SQL Tuning Advisor
+- Use SQL Performance Analyzer Optimizer to gather statistics for validation
+- Use Database Workload Replay to run real workload against your changes for additional validation
+
+#### 3. Database Fleet Maintenance - Patching
 * Detect Configuration Pollution
 * Patch a Database target using a Gold Image
     - All Pluggable Databases in that Container Database will automatically get patched
     - Rollback and Cleanup
 
-#### 3. Database Fleet Maintenance - Upgrade
+#### 4. Database Fleet Maintenance - Upgrade
 * Detect Configuration Pollution
 * Upgrade Oracle DB Software at scale with minimal downtime
     - All Pluggable Databases in that Container Database will automatically get upgraded
     - Cleanup
 
-#### 4. Compliance and Drift Management
+#### 5. Compliance and Drift Management
 - Analyze, Increase standardization, reduce number of different configuration sets
 - Execute a one-time comparison to compare the latest reference configuration to one or more targets to determine the configuration differences
 - Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template
 - Run a review aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets
 - Host security compliance using custom compliance standard
 
-#### 5. Job System Automation
+#### 6. Job System Automation
 * Understand how to create an OS Command Job
 * Create a SQL command Job
 * Create Database Backup Job using Wizard
+
+#### 7. Enterprise Monitoring
+- Explore Enterprise Summary page and drill down to see a list of down targets
+- Triage unassigned incidents from Incident Manager and acknowledge then assign an incident
+- Change the Warning and Critical threshold of a metric from Metric and Collection Settings page. Go to the All Metrics page and review the metric in context of the thresholds
+- Create a new Corrective Action and associate it with a metric
+- Test a Metric Extension on a target to see the results then deploy the same Metric Extension to multiple targets
+- Create a Monitoring Template from a Database Instance target and deploy the Monitoring Template to other Database Instance targets to standardize monitoring settings across the enterprise
+- View the hierarchy of an existing Administrator Group
+- Review out-of-the-box incident rules shipped with Enterprise Manager
+
+#### 8. Deploy and Manage Oracle Databases with Ansible and Enterprise Manager
+- Install and configure Ansible to work with Oracle Enterprise Manager 13c
+- Review Oracle Enterprise Manager DBaaS setup for Pluggable Databases
+- Provision, resize, shutdown, start and delete a Pluggable Database using Ansible playbooks and EM's DBaaS capabilities
 
 ## More Information on Oracle Enterprise Manager
 Managing Your Hybrid Database Fleet
@@ -80,4 +102,4 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Contributors** - Dave Le Roy, Björn Bolltoft - Enterprise Manager Product Management
-- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, October 2020
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2022

@@ -1,4 +1,4 @@
-# Set connectivity between on-premise host and cloud host
+# Set Connectivity Between Primary And Standby Host
 
 ## Introduction
 In a Data Guard configuration, information is transmitted in both directions between the primary and standby databases. This requires basic configuration, network tuning and opening of ports at both primary and standby databases site. 
@@ -15,12 +15,12 @@ Estimated Time: 30 minutes
 
 This lab assumes you have already completed the following labs:
 
-- Setup environment for primary and standby
-- Prepare the Primary Database
+- Setup Environment For Primary And Standby
+- Prepare Primary Database
 
 In this Lab, you can use 2 terminal windows, one connected to the primary host, the other connected to the standby host. 
 
-## Task 1: Open the 1521 port for both database hosts
+## **Task 1:** Open The 1521 Port For Both Database Hosts
 
 1. Connect to the both hosts with **opc** user. Use putty tool (Windows) or command line (Mac, Linux).
 
@@ -40,7 +40,7 @@ In this Lab, you can use 2 terminal windows, one connected to the primary host, 
 
    
 
-## Task 2: Enable ssh connect for the oracle user
+## **Task 2:** Enable SSH Connect For The Oracle User
 
 1. Work as opc user, edit the ssh configure file on both side
 
@@ -87,7 +87,7 @@ In this Lab, you can use 2 terminal windows, one connected to the primary host, 
 
 
 
-## Task 4: Prompt-less SSH configure
+## **Task 4:** Prompt-less SSH Configure
 
 Now you will configure the prompt-less ssh for oracle users between the primary and the standby.
 
@@ -110,7 +110,7 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     Your identification has been saved in /home/oracle/.ssh/id_rsa.
     Your public key has been saved in /home/oracle/.ssh/id_rsa.pub.
     The key fingerprint is:
-    SHA256:2S+UtAXQdwgNLRA7hjLP4RsMfDM0pW3p75hus8UQaG8 oracle@adgstudent1
+    SHA256:2S***LP4Rs***hus8UQaG8 oracle@adgstudent1
     The key's randomart image is:
     +---[RSA 2048]----+
     |      o.==+= .   |
@@ -124,7 +124,9 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     |       o=o.      |
     +----[SHA256]-----+
     [oracle@primary ~]$ cat .ssh/id_rsa.pub
-    ssh-rsaAAAAB3NzaC1yc2EAAAADAQABAAABAQDCLV6NiFihUY4ItgfPLJR1EcjC7DjuVOL86G3VperrA8hEKP2uLSh7AeKm4MZmPPIzO/HlMw3KkhhUZNX/C+b29tQ2l8+fbCzzMGmZSAGmT2vEmot/9lVT714lrcfWNXv8qcj6x4wHUqygH87XSDcCRaQt7vUcFNITOb4yGRc9LcSQdlV1Yf1eOfUnkpB1fOoEXFfkAxgd1UeuFS0pIiejutqbPSeppu9X2RrbAmZymAVa7MiNNG2mZHftWJrigXsTwmgOgPlsAIcbutoVRGPcP1xc43ut9oUWk8reBEyDj8X2bgeafG+KeXD6YRh53lqIbTNY+k1sfHwyuUl oracle@workshop  
+    ssh-rsaAAAA***
+    ...
+    ***IbTNY+k1sfHwyuUl oracle@workshop  
     ```
 
     - From the standby side, edit the `authorized_keys` file, copy all the content in the id_rsa.pub into it, save and close
@@ -149,8 +151,8 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     ```
     [oracle@primary ~]$ <copy>ssh oracle@standby echo Test success</copy>
     The authenticity of host '158.101.136.61 (158.101.136.61)' can't be established.
-    ECDSA key fingerprint is SHA256:c3ghvWrZxvOnJc6aKWIPbFC80h65cZCxvQxBVdaRLx4.
-    ECDSA key fingerprint is MD5:a8:34:53:0f:3e:56:64:56:72:a1:cb:47:18:44:ac:4c.
+    ECDSA key fingerprint is SHA256:c3ghv***...***BVdaRLx4.
+    ECDSA key fingerprint is MD5:a8:***...***ac:4c.
     Are you sure you want to continue connecting (yes/no)? yes
     Warning: Permanently added '158.101.136.61' (ECDSA) to the list of known hosts.
     Test success
@@ -170,7 +172,7 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     Your identification has been saved in /home/oracle/.ssh/id_rsa.
     Your public key has been saved in /home/oracle/.ssh/id_rsa.pub.
     The key fingerprint is:
-    SHA256:60bMHAglf6pIHKjDnQAm+35L79itld48VVg1+HCQxIM oracle@dbstby
+    SHA256:60bMH***...***HCQxIM oracle@dbstby
     The key's randomart image is:
     +---[RSA 2048]----+
     |o.  ...     +o+o.|
@@ -184,29 +186,31 @@ Now you will configure the prompt-less ssh for oracle users between the primary 
     |    o.=o+ o.     |
     +----[SHA256]-----+
     [oracle@standby ~]$ cat .ssh/id_rsa.pub
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC61WzEm1bYRkPnFf96LoqeRGJKiSkeh9EFg3NzMBUmRq4rSWMsMkIkrLmrJUNF8I5tFMnS+AQZo5vrtU23NVvxsQHF7rKYiMm9ARkACQmr1th8kefc/sJMn3hQDm27FB5RLeZzbxyZoJAq7ZtLMfudlogaYxqLZLBnuHT8Oky5FOa1EUVOaqiKm8f7pPlqnxpf1QdO8lswMvInWh3Zq9newfTmuqt56shNd462uOyNjjCgRtmxsYXIxFhJecvDnkGJ+Tekq27nozB+c3GyQS8tsyPnjt3DRg35sXJFWOeEswmxqxAjP0KWDFlSZ3aNm4ESS3ZPaTfSlgx0E1 oracle@dbstby
+    ssh-rsa AAAAB3***
+    ...
+    ***kIPaTfSlgx0E1 oracle@dbstby
     [oracle@standby ~]$ 
     ```
 
     - From the primary side, edit the `authorized_keys` file, copy all the content in the `id_rsa.pub` into it, save and close
-
+    
     ```
     <copy>vi .ssh/authorized_keys</copy>
     ```
 
     - Change mode of the file.
-
+    
     ```
     <copy>chmod 600 .ssh/authorized_keys</copy>
     ```
 
     - From the standby side, test the connection from standby to primary, using the public ip or hostname of the primary hosts.
-
+    
     ```
     [oracle@standby ~]$ <copy>ssh oracle@primary echo Test success</copy>
     The authenticity of host '140.238.18.190 (140.238.18.190)' can't be established.
-    ECDSA key fingerprint is SHA256:1GMD9btUlIjLABsTsS387MUGD4LrZ4rxDQ8eyASBc8c.
-    ECDSA key fingerprint is MD5:ff:8b:59:ac:05:dd:27:07:e1:3f:bc:c6:fa:4e:5d:5c.
+    ECDSA key fingerprint is SHA256:1GMD***...***SBc8c.
+    ECDSA key fingerprint is MD5:ff:***...***5d:5c.
     Are you sure you want to continue connecting (yes/no)? yes
     Warning: Permanently added '140.238.18.190' (ECDSA) to the list of known hosts.
     Test success
@@ -217,7 +221,7 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, Oct 2020 
-* **Last Updated By/Date** - Minqiao Wang, Aug 2021
+* **Last Updated By/Date** - Minqiao Wang, Oct 2021
 
 
- 
+

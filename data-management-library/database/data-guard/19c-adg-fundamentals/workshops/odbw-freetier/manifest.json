@@ -6,6 +6,7 @@
             "title": "Introduction",
             "description":"Workshop Overview",
             "publisheddate": "26/02/2021",
+            "type": "odbw",
             "filename":"../../introduction/introduction.md"
         },
         {

@@ -22,7 +22,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
 ## Task 1: Prepare the Primary Database
 
-1. Login to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**. *Note*: If you are in a workshop, double check your region to ensure you are on the assigned region.
+1. Log in to the Oracle Cloud Console, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**. *Note*: If you are in a workshop, double check your region to ensure you are on the assigned region.
 
 	![](./images/developer-resmgr-stacks.png " ")
 
@@ -44,7 +44,7 @@ Click on the link below to download the Resource Manager zip files you need to b
 
      ![](images/createstack3.png "  ")
 
-6. Your stack has now been created! 
+6. Your stack has now been created!
    *Note*: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces. It will fail.
 
      ![](./images/stackcreated.png " ")
@@ -77,10 +77,10 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
      ![](./images/applyjob3.png " ")
 
-2. Once this job succeeds, click on **Job Resources** and click on the resource against _oci\_core\_instance_. Click on **Workshop** and this will take you to the **Instance details** page. You can get the **Public IP address** of the primary instance from the **Instance details** page. Congratulations, your environment is created! Time to login to your instance to finish the configuration.
+2. Once this job succeeds, click on **Job Resources** and click on the resource against _oci\_core\_instance_. Click on **Workshop** and this will take you to the **Instance details** page. You can get the **Public IP address** of the primary instance from the **Instance details** page. Congratulations, your environment is created! Time to log in to your instance to finish the configuration.
 
      ![](images/jobresources.png " ")
-     
+
      ![](images/instancedetails.png " ")
 
 ## Task 4: Connect to your Instance
@@ -89,24 +89,20 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 1.  Open up a terminal (MAC) or cygwin emulator as the opc user. Enter the ssh command shown below and then type yes when prompted.
 
-     
-          ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
-     
 
-     ![](images/logintoserver1.png " ")
+          ssh -i ~/.ssh/<sshkeyname> opc@<Your Compute Instance Public IP Address>
+
 
 2. After successfully logging in, proceed to Task 5.
 
           ssh -i labkey opc@xxx.xxx.xxx.xxx
           The authenticity of host 'xxx.xxx.xxx.xxx (xxx.xxx.xxx.xxx)' can't be established.
-          ECDSA key fingerprint is SHA256:Wq+YNHzgc1JUySBJuTRO0T4NKpeRz5Udw82Mn5RCe6c.
+          ECDSA key fingerprint is xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
           Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
           Warning: Permanently added 'xxx.xxx.xxx.xxx' (ECDSA) to the list of known hosts.
           Activate the web console with: systemctl enable --now cockpit.socket
 
           [opc@workshop ~]$
-
-     ![](images/logintoserver2.png " ")
 
 ### Microsoft Windows using PuTTY
 
@@ -168,7 +164,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
      ```
      <copy>
      sudo su - oracle
-     sqlplus system/Ora_DB4U@localhost:1521/orclpdb
+     sqlplus system@localhost:1521/orclpdb
      </copy>
      ```
 
@@ -192,9 +188,6 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
      ```
 
 You now have a fully functional Oracle Database 19c instance **ORCL** running on Oracle Cloud Compute, the default pdb name is **orclpdb**. This instance is your primary Oracle Database.
-
-
-You may now proceed to the next lab.
 
 ## Acknowledgements
 

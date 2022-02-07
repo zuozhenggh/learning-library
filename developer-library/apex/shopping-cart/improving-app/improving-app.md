@@ -4,7 +4,11 @@
 
 In this lab, you will learn how to make some pages publicly accessible.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:lwQ3lvul9iE)
 
 ### Objectives
 In this lab, you will:
@@ -12,7 +16,9 @@ In this lab, you will:
     - Products
     - Shopping Cart
     - Order Information
+
 - Disable the Navigation Menu
+
 - Enhance the Navigation Bar
 
 ## Task 1: Set Pages to be Public
@@ -22,7 +28,7 @@ Your customers don't need to log in the app to shop the products, so let's set t
 - Page 17: Shopping Cart
 - Page 18: Add to Cart
 
-Follow these tasks for the four listed pages:
+Follow these steps for the four listed pages:
 
 1. From the runtime application, navigate to the page.
 
@@ -41,7 +47,7 @@ Follow these tasks for the four listed pages:
 4. Navigate to Page Finder and go to the next page. 
     ![](./images/page-finder.png " ")
 
-## Task 2: Cleaning the Navigation Menu
+## Task 2: Clean the Navigation Menu
 Since the home page is the Products page and this is a public access page as some others too, it's not needed to have a navigation menu. 
 In this task, you will turn off displaying the navigation menu.
 
@@ -60,10 +66,10 @@ In this task, you will turn off displaying the navigation menu.
 
 5. Click **Apply Changes**.
 
-## Task 3: Enhancing the Navigation Bar List
+## Task 3: Enhance the Navigation Bar List
 Add a new navigation menu entry to allow:
-- Customers to go directly to the Shopping Cart.
-- Administrators to login and access to administration page.
+- Customers to go directly to the Shopping Cart
+- Administrators to login and access to administration page
 
 1. Click the Shared Components icon at the top right.
     ![](./images/shared-components3.png " ")
@@ -105,9 +111,9 @@ Add a new navigation menu entry to allow:
     ![](./images/new-entry.png " ")
 
 
-You now know how to enhance and mantain both navigation menu and navigation bar.
+You now know how to enhance and mantain both navigation menu and navigation bar. You may now **proceed to the next lab**. 
 
 ## **Acknowledgments**
 
 - **Author** - Monica Godoy, Principal Product Manager
-- **Last Updated By/Date** - Monica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021

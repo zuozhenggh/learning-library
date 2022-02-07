@@ -2,11 +2,15 @@
 
 ## Introduction
 
-Oracle Application Express (APEX) is a low-code application platform for Oracle Database. APEX Application Development, Autonomous Data Warehouse (ADW) and Autonomous Transaction Processing (ATP) are fully managed services, pre-integrated and pre-configured with APEX, for rapidly building and deploying modern data-driven applications in Oracle Cloud. Business users, citizen and application developers can create enterprise apps 20X faster with 100X less code—without having to learn complex web technologies with just a browser. To start, you will need to decide on the service you are going to use for this workshop, and then create an APEX workspace accordingly.
+Oracle Application Express (APEX) is a low-code application platform for Oracle Database. APEX Application Development, Autonomous Data Warehouse (ADW), and Autonomous Transaction Processing (ATP) are fully managed services, pre-integrated and pre-configured with APEX, for rapidly building and deploying modern data-driven applications in Oracle Cloud. Business users, citizen, and application developers can create enterprise apps 20X faster with 100X less code — without having to learn complex web technologies with just a browser. To start, you will need to decide on the service you are going to use for this workshop, and then create an APEX workspace accordingly.
 
 If you already have an APEX 21.1 Workspace provisioned, you can skip this lab.
 
 Estimated Time: 5 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:RcSCnZnDzDE)
 
 ### What is an APEX Workspace?
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. APEX applications are built on top of these database objects.
@@ -253,12 +257,12 @@ Signing up for apex.oracle.com is simply a matter of providing details on the wo
 
 ## **Summary**
 
-This completes lab 1. At this point, you know how to create an APEX Workspace and you are ready to start building amazing apps, fast.
+At this point, you know how to create an APEX Workspace and you are ready to start building amazing apps, fast.
 
-You may now *proceed to the next lab*.
+You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 
  - **Author** -  Salim Hlayel, Principal Product Manager
  - **Contributors** - Arabella Yao, Product Manager Intern, Database Management | Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
- - **Last Updated By/Date** - Monica Godoy, Principal Product Manager, October 2021
+ - **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021

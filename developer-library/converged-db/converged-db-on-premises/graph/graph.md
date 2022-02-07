@@ -22,9 +22,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -230,8 +228,8 @@ If you want to learn more about the Create Graph [Click here](#Appendix1:CreateG
 
 We will use the Graph Visualization component to run some PGQL queries and visualize the results as a graph instead of a tabular result. Make sure that you completed the previous step and that your graph has been loaded into memory and published otherwise this step will fail.
 
-   - GraphViz should be accessible at 
-    
+   - GraphViz should be accessible at
+
     ```
     <copy>
     http://localhost:7007/ui
@@ -391,7 +389,7 @@ Once the query is ready and the desired graph is selected, click Run to execute 
     </copy>
     ```
 33. From terminal window, execute the below command to exit from JSHELL.
-    
+
     ```
     <copy>
     /exit

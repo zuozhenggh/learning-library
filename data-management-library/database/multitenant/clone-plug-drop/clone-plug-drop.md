@@ -7,6 +7,10 @@ Estimated Time: 1 hour
 
 [](youtube:kzTQGs75IjA)
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:DknWBE-hUK4)
+
 ### Prerequisites
 
 This lab assumes you have:

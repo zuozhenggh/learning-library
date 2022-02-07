@@ -4,7 +4,11 @@
 
 This lab walks you through the steps to use and work with OML4Py datastores and the script repository.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:mUaiHQQ_bTo)
 
 ### About datastores
 Datastores exist in the user’s Oracle database schema. A datastore, and the objects it contains, persist in the database until explicitly deleted. By using a datastore, you can store Python objects in a named datastore entry. This named datastore can then be used in subsequent Python sessions, and even be made available to other users or programs by granting/revoking read permissions.
@@ -84,14 +88,14 @@ Scroll down to the beginning of Task 2.
 
   ![Lab 4 Task 2 screen](images/lab4-task2.png " ")  
   
-## Task 3: Save Python objects to datastore
+## Task 3: Save Python objects to a datastore instance
 Follow the flow of the notebook by scrolling to view and run each paragraph of this lab.
 
 Scroll down to the beginning of Task 3.
 
   ![Lab 4 Task 3 screen](images/lab4-task3.png " ")  
 
-## Task 4: Save model objects in a datastore
+## Task 4: Save model objects in a datastore instance
 Follow the flow of the notebook by scrolling to view and run each paragraph of this lab.
 
 Scroll down to the beginning of Task 4.

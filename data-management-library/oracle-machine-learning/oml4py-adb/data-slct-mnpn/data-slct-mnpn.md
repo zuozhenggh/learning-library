@@ -4,10 +4,14 @@
 
 This lab shows how to use the transparency layer classes to work with data and to perform exploratory analysis of the data.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:lF9sz3vYfuo)
 
 ### About data selection and manipulation
-The transparency layer classes allow you to convert select Python objects to Oracle Autonomous Database objects and also call a range of familiar Python functions that are overloaded to call the corresponding SQL on tables in the
+The transparency layer classes allow you to convert select Python objects to Oracle Autonomous Database objects. It allows users to call a range of familiar Python functions that are overloaded to invoke the corresponding SQL on tables in the
 database.
 The Oracle Machine Learning for Python (OML4Py) transparency layer supports functions that interact with database data and enables you to:
 * Load Python `pandas.DataFrame` objects to Oracle Database to create database tables
@@ -49,7 +53,7 @@ In this lab, you will learn how to:
 
 > **NOTE:** If you had problems downloading and extracting the ZIP file for the labs, please [**CLICK HERE** to download the lab2\_select\_manipulate\_data.json notebook file](./../notebooks/lab2_select_manipulate_data.json?download=1). Download the notebook file for this lab to your local machine and then import it like illustrated in **Lab 1, Task 2**.
 
-## Task 1: Import libraries and create Oracle Machine Learning dataFrame proxy object
+## Task 1: Import libraries and create Oracle Machine Learning DataFrame proxy object
 Follow the flow of the notebook by scrolling to view and run each paragraph of this lab.
 
 Scroll down to the beginning of Task 1.
@@ -84,7 +88,7 @@ Scroll down to the beginning of Task 5.
 
   ![Lab 2 Task 5 screen](images/lab2-task5.png " ")
 
-## Task 6: Use the crosstab and pivot_table functions on a dataFrame proxy object
+## Task 6: Use the crosstab and pivot_table functions on a DataFrame proxy object
 Follow the flow of the notebook by scrolling to view and run each paragraph of this lab.
 
 Scroll down to the beginning of Task 6.

@@ -7,7 +7,7 @@ This lab walks you through the steps to capture and send data to Oracle Cloud In
 Estimated time: 15 minutes
 
 Watch the video below for a walk through of the lab.
-[](youtube:sH8hTHw706o)
+[](youtube:KZ3kJIbGinY)
 
 ### About Extracts, Paths, and Replicats
 An Extract is a process that extracts, or captures, data from a source database. A Distribution Path is a source-to-destination configuration that uses the Distribution Server. A Replicat is a process that delivers data to the target.

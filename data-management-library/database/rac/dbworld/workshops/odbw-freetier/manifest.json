@@ -5,6 +5,7 @@
          {
             "title": "Introduction",
             "description": "This lab walks you through the steps to understand a RAC database and Grid Infrastructure",
+            "type": "odbw",
             "filename": "../../intro/intro.md"
         },
         {
@@ -25,7 +26,7 @@
         {
             "title": "Lab 3: Install Sample schema",
             "description": "This lab walks you through installing the sample schema.",
-            "filename": "../../services/setup.md"
+            "filename": "../../services/setup-sample-schema.md"
         },
         {
             "title": "Lab 4: Install Sample clients",

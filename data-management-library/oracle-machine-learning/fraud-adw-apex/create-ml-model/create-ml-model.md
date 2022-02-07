@@ -39,7 +39,7 @@ We have built the steps that are normally followed when exploring data and build
 
     ![](images/adw-open-ml-user-admin.png)
 
-    ![](images/oml-signin-admin.png)
+    ![](images/login_user.png)
 
 2. Click the home button to login in with the OMLUSER.
 
@@ -47,15 +47,15 @@ We have built the steps that are normally followed when exploring data and build
 
 3. Sign in with the omluser using the password <if type="freetier">you created</if><if type="livelabs">`AAbbcc123456`</if>.
 
-    ![](images/signin-to-oml.png)
+    ![](images/login_user.png)
 
 4. Click on Notebooks from the Quick Actions menu.
 
     ![](images/open-notebooks.png)
 
-5. Download the [Auto Insurance Claims Fraud - Unsupervised Learning.json](files/Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json?download=1) file.
+5. [**CLICK HERE** to download the AutoInsuranceClaimsFraudUnsupervisedLearning.json notebook file](files/AutoInsuranceClaimsFraudUnsupervisedLearning.json?download=1).
 
-6. Download the [Auto Insurance Claims Fraud - Supervised Learning.json](files/Auto-Insurance-Claims-Fraud-Supervised-Learning.json?download=1) file.
+6. [**CLICK HERE** to download the AutoInsuranceClaimsFraudSupervisedLearning.json notebook file](files/AutoInsuranceClaimsFraudSupervisedLearning.json?download=1).
 
 7. Click on **Import**.
 
@@ -65,7 +65,7 @@ We have built the steps that are normally followed when exploring data and build
 
     ![](images/import-unsuper-notebook.png)
 
-7. Repeat and import the **Auto-Insurance-Claims-Fraud-Unsupervised-Learning.json** notebook.
+7. Repeat and import the **Auto-Insurance-Claims-Fraud-Supervised-Learning.json** notebook.
 
     ![](images/import-super-notebook.png)
 
@@ -99,34 +99,53 @@ We have built the steps that are normally followed when exploring data and build
 
 This step discusses the result of each portion of the notebook.
 
-1. In the first table, the claims data illustrates the model input attributes.
+1. Lets use Python to access the datasets. You can access the datasets directly from Github or the database.
 
     ![](images/unsuper-1.png)
 
-2. The next section illustrates how we can graph our understanding of the data.
+2. Create dataset without the fraud flag column for unsupervised learning task(CLAIMS_UNSPV).
 
     ![](images/unsuper-2.png)
 
-3. Next, we'll build the model to train on.
+3. The next section illustrates how we can graph our understanding of the data.
 
     ![](images/unsuper-3.png)
 
-4. Using the model, we can display the most suspicious claims in descending order.
-
+4. Data Exploration - Use Visualizations to better understand the data (Find any missing Patterns etc.)
+    
     ![](images/unsuper-4.png)
 
-5. Then explore those suspicious claims.
+5. Build the Anomaly Detection Model - Using 1-Class SVM.
 
     ![](images/unsuper-5.png)
 
-6. Finally, build the table of suspicious claims.
+6. Examples of possible setting overrides for SVM - Update the Model Settings if required.
 
     ![](images/unsuper-6.png)
+
+7. Apply ML model to CLAIMS to flag which Claims are likely to be fraudulent.
+
+    ![](images/unsuper-9.png)
+
+8. Display Suspicious Claims by Number of Cars in Accident and Age of the Policy Holder.
+
+    ![](images/unsuper-7.png)
+
+9. Build the table of suspicious claims - Visualize using Oracle Analytics Cloud (OAC).
+
+    ![](images/unsuper-10.png)
+
+10. Finally, lets explore those suspicious claims.
+
+    ![](images/unsuper-8.png)
+
+
 
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-- **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, Cognitive Analytics and AI
-- **Last Updated By/Date** - Tom McGinn, Product Manager, DB Product Management, March 2021
+- **Author** - Mark Hornick , Sr. Director, Data Science / Machine Learning PM
+
+- **Last Updated By/Date** - Siddesh Ujjni, Senior Cloud Engineer, October 2021
 

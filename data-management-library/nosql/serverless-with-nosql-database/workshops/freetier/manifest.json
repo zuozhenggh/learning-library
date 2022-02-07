@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Using Oracle NoSQL Database Cloud Service",
+    "workshoptitle": "Discover Serverless Apps Using Oracle NoSQL Database Cloud Service",
     "include":  {"queries.sql":"../../files/queries.sql", "baggage_data_file.json":"../../files/baggage_data_file0.json"},
       "help": "livelabs-help-db_us@oracle.com",
       "tutorials": [

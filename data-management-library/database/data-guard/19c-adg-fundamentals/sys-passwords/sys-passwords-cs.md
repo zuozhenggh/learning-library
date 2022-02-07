@@ -12,6 +12,10 @@ Doing this right is important. When you change the SYS password in a Data Guard 
 
 Estimated Lab Time: 15 Minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:IXDzG0qkutY)
+
 ### Objectives
 - Change the SYS password
 - Log in to the database as the SYS user

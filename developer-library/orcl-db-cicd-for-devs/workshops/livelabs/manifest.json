@@ -5,6 +5,7 @@
         {
             "title": "Introduction",
             "description": "Oracle Database CI/CD for Developers",
+            "type": "odbw",
             "filename": "../../intro/intro.md"
         },
         {

@@ -14,19 +14,23 @@ Customers will be able to:
 - Clear the shopping cart
 - Proceed to checkout
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:Cvl9xMAqnm8)
 
 ### Objectives
 In this lab, you will:
-- Create a page to list the products in the Shopping Cart.
-- Create Application Items, Application Processes and Dynamic Actions to manage the Shopping Cart.
+- Create a page to list the products in the Shopping Cart
+- Create Application Items, Application Processes, and Dynamic Actions to manage the Shopping Cart
 
-## Task 1: Creating Application Items
+## Task 1: Create Application Items
 These items are needed to count the number of items in the shopping cart and the icon to display in the Navigation Bar.
 
 1. Click on **Shared Components**
     ![](./images/shared-components-icon.png " ")
-2. Under Application logic, click **Application Items**.
+2. Under Application Logic, click **Application Items**.
     ![](./images/application-items.png " ")
 3. Click **Create**.
 4. Create two items as follow:
@@ -39,12 +43,12 @@ These items are needed to count the number of items in the shopping cart and the
 5. Click **Create Application Item** and create the second item.
     ![](./images/create-application-tem.png " ")
 
-## Task 2: Creating Application Process
+## Task 2: Create Application Process
 This process is needed to refresh the number of items in the Shopping Cart, which will be shown in the navigation bar.
 
-1. Click on **Shared Components**
+1. Click on **Shared Components**.
     ![](./images/application-items2.png " ")
-2. Under Application logic, click **Application Processes**.
+2. Under Application Logic, click **Application Processes**.
     ![](./images/application-process.png " ")
 3. Click **Create** and enter the following:
     - For Name - enter **Initialize Shopping Cart Header**
@@ -74,10 +78,10 @@ This process is needed to refresh the number of items in the Shopping Cart, whic
 6. Click **Next**.        
 7. Click **Create Process**.   
 
-## Task 3: Creating a Normal Page - Shopping Cart
+## Task 3: Create a Normal Page - Shopping Cart
 The shopping cart page allows users to review and edit the products in the cart, also users can create the order or clear the shopping cart.
 
-1. Click on Application Home.  ***The ID of your application may vary***
+1. Click on Application Home.  ***The ID of your application may vary***.
     ![](./images/create-page.png " ") 
 2. Click **Create Page**.    
     ![](./images/create-page2.png " ") 
@@ -89,7 +93,7 @@ The shopping cart page allows users to review and edit the products in the cart,
 5. For Navigation Preference, select **Do not associate this page with a navigation menu entry** and click **Next**.
 6. Click **Finish**.
 
-## Task 4: Adding a Cards Region
+## Task 4: Add a Cards Region
 This region will list the items that have been added temporarily to the shopping cart. 
 
 1. In the new page created, navigate to the **Gallery Menu**.
@@ -119,7 +123,7 @@ This region will list the items that have been added temporarily to the shopping
             </copy>
         ```
 
-4. Click on Attributes and enter the following:
+4. Click on **Attributes** and enter the following:
     ![](./images/attributes.png " ")
     - Under Appearance section:
         - For Layout - select **Horizontal (Row)**
@@ -161,11 +165,11 @@ This region will list the items that have been added temporarily to the shopping
     - Under Card section:
         - For Primary Key Column 1 - select **ITEM** 
 
-## Task 5: Adding an Action to the Shopping Cart
+## Task 5: Add an Action to the Shopping Cart
 This action allows customers to open a page to edit a particular item in the shopping cart.
 
 1. In the Rendering tree (left pane), navigate to **Actions** under **Shopping Cart**.
-2. Right-click Actions and click **Create Action**.
+2. Right-click **Actions** and click **Create Action**.
     ![](./images/create-action.png " ")
 3. In the Property Editor, enter the following:
     - For Label - enter **Edit**
@@ -183,7 +187,7 @@ This action allows customers to open a page to edit a particular item in the sho
 
 This configures the (Edit) button to open page 18, passing the value of the PRODUCT_ID column of the current card as the value for the page item P18\_PRODUCT\_ID in that called page.       
 
-## Task 6: Adding Items and Buttons to the Page
+## Task 6: Add Items and Buttons to the Page
 
 1. Navigate to the **Gallery Menu**.
 2. Drag a **Static Content** region and drop it to the right of the Shopping Cart region to create a second region of content.
@@ -218,7 +222,7 @@ This configures the (Edit) button to open page 18, passing the value of the PROD
     - Set Display Extra Values - to **Off**
     - For Null Display Value - enter **- Select a Store -** 
 
-7. Navigate to the **Order Information** (left pane) region
+7. Navigate to the **Order Information** (left pane) region.
 8. Right-click the **Order Information** region  and click **Create Button**. 
      ![](./images/create-button.png " ")  
 9. Create two buttons as follows:
@@ -236,11 +240,11 @@ This configures the (Edit) button to open page 18, passing the value of the PROD
 
      ![](./images/buttons.png " ")      
 
-## Task 7: Adding Validations to the Page
+## Task 7: Add Validations to the Page
 1. In the Rendering tree (left pane), click **Processing** tab.
-2. Over Validating, right-click **Create Validation**.
+2. Over **Validating**, right-click **Create Validation**.
      ![](./images/create-validation.png " ")  
-3. Create three validations for the following items: Name, Email and Store
+3. Create three validations for the following items: Name, Email, and Store
 
     | Name |  Type (under Validation) | Item |
     | --- |  --- | --- | 
@@ -258,7 +262,7 @@ This configures the (Edit) button to open page 18, passing the value of the PROD
 
      ![](./images/validations.png " ") 
 
-     As these validations only applies when user proceeds to checkout, let's create that condition.
+     As these validations only apply when user proceeds to checkout, let's create that condition.
      Under Server-side Condition, set the following:
 
     | Name  | When Button Pressed |
@@ -269,36 +273,36 @@ This configures the (Edit) button to open page 18, passing the value of the PROD
 
      ![](./images/button-condition.png " ")       
     
-## Task 8: Adding Process to Create the Order
+## Task 8: Add Process to Create the Order
 
 1. On the **Processing** tab (left pane).
-2. Right-click Processing and click **Create Process**.
+2. Right-click **Processing** and click **Create Process**.
 3. In the Property Editor, enter the following:
      ![](./images/create-process.png " ")   
     - For Name - enter **Checkout**
     - For Type -select **Execute Code**
     - For PL/SQL Code - enter the following PL/SQL code:
 
-    ``` 
-    <copy>
-    BEGIN
-        MANAGE_ORDERS.create_order (
-                                    p_customer       => :P17_CUSTOMER_FULLNAME,
-                                    p_customer_email => :P17_CUSTOMER_EMAIL,
-                                    p_store          => :P17_STORE,
-                                    p_order_id       => :P17_ORDER_ID,
-                                    p_customer_id    => :P17_CUSTOMER_ID);   
-    END;                                    
-    </copy>
-    ```
+        ``` 
+        <copy>
+        BEGIN
+            MANAGE_ORDERS.create_order (
+                                        p_customer       => :P17_CUSTOMER_FULLNAME,
+                                        p_customer_email => :P17_CUSTOMER_EMAIL,
+                                        p_store          => :P17_STORE,
+                                        p_order_id       => :P17_ORDER_ID,
+                                        p_customer_id    => :P17_CUSTOMER_ID);   
+        END;                                    
+        </copy>
+        ```
 
     - For Success Message, enter **Order successfully created: &P17\_ORDER\_ID.**
-    - For When Button Pressed, select **Proceed**.
+    - For When Button Pressed, select **Proceed**
 
-## Task 9: Adding Process to Clear the Shopping Cart
+## Task 9: Add Process to Clear the Shopping Cart
 
 1. On the **Processing** tab (left pane).
-2. Right-click Processing and click **Create Process**.
+2. Right-click **Processing** and click **Create Process**.
 3. Create a second process to clear the shopping cart. In the Property Editor, enter the following:
     - For Name - enter **Clear Shopping Cart**
     - For Type - select **Execute Code**
@@ -312,12 +316,12 @@ This configures the (Edit) button to open page 18, passing the value of the PROD
     </copy>
     ```
 
-    - For When Button Pressed, select **Clear**.
+    - For When Button Pressed, select **Clear**
 
-## Task 10: Adding Branches to the Page
+## Task 10: Add Branches to the Page
 
 1. On the **Processing** tab (left pane).
-2. Right-click After Processing and click **Create Branch**.
+2. Right-click **After Processing** and click **Create Branch**.
      ![](./images/create-branch.png " ")  
 3. In the Property Editor, enter the following:     
     - For Name - enter **Go to Orders**
@@ -334,7 +338,7 @@ This configures the (Edit) button to open page 18, passing the value of the PROD
         - Click **OK**.
     - For When Button Pressed, select **Proceed**.
 
-4. Create a second branch when user clears the shopping cart. Right-click on After Processing and click **Create Branch**.
+4. Create a second branch when user clears the shopping cart. Right-click on **After Processing** and click **Create Branch**.
 5. In the Property Editor, enter the following:
     - For Name - enter **Go to Products**
     - Navigate to Target attribute and click **No Link Defined**
@@ -344,15 +348,15 @@ This configures the (Edit) button to open page 18, passing the value of the PROD
         - Click **OK**
     - For When Button Pressed, select **Clear**
 
-## Task 11: Adding Dynamic Actions
+## Task 11: Add Dynamic Actions
 In this task, you will create a dynamic actions to:
-- Update the badge and icon shown in the navigation bar after the customer has added / edited / removed a product from the shopping cart.
-- Refresh the shopping cart region.
+- Update the badge and icon shown in the navigation bar after the customer has added / edited / removed a product from the shopping cart
+- Refresh the shopping cart region
 
 1. Navigate to **Dynamic Actions** tab (left pane).
      ![](./images/create-da.png " ")  
 
-2. Right-click Dialog Closed and click **Create Dynamic Action**.
+2. Right-click **Dialog Closed** and click **Create Dynamic Action**.
      ![](./images/create-da2.png " ")  
 3. In the Property Editor, enter the following:    
     - Under Identification section: 
@@ -445,10 +449,10 @@ In this task, you will create a dynamic actions to:
 
 
 
-You now know how to add validations, processes, branches and dynamic actions to your APEX page.
+You now know how to add validations, processes, branches, and dynamic actions to your APEX page. You may now **proceed to the next lab**. 
 
 ## **Acknowledgments**
 
 - **Author** - Mónica Godoy, Principal Product Manager
 - **Contributors** - Shakeeb Rahman, Architect
-- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021

@@ -6,12 +6,12 @@ Oracle Autonomous Databaseは、自律運転（self-driving）、自己保護（
 
 Autonomous Databaseの概要については、以下の動画をご覧ください。
 
-[](youtube:2HsVShulgx8)
+[](youtube:c-DUIePFKco)
 
 *次のラボ*に進んでください。
 
 ## **Acknowledgements**
 
 - **著者/投稿者** - Kay Malcolm, Director, DB Product Management
-- **最終更新日** - Kay Malcolm, April 2020
+- **最終更新日** - Arabella Yao, Product Manager, DB Product Management, November 2020
 

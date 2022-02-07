@@ -1,0 +1,59 @@
+{
+  "workshoptitle": "Unified Observability in Grafana with converged Oracle Database",
+  "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+      {
+        "title": "Get started",
+        "description": "Login to Oracle Cloud",
+        "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+      },
+      {
+        "title": "Introduction",
+        "filename": "../../intro/intro.md"
+      },
+      {
+        "title": "Lab 1: Setup",
+        "filename": "../../setup/setup-gb.md"
+      },
+      {
+        "title": "Lab 2: Deploy and Test Data-centric Microservices Application",
+        "filename": "../../deploy-and-test-app/deploy-and-test-app.md",
+        "type": "livelabs"
+      },
+      {
+        "title": "Lab 3: Enable Observability with Database Metrics, Logs Exporters",
+        "filename": "../../../microservices-with-converged-db/observability/observability.md",
+        "type": "livelabs"
+      },
+      {
+        "title": "Lab 4: Configure Alert Channel",
+        "filename": "../../configure-alert-channel/configure-alert-channel.md",
+        "type": "livelabs"
+      },
+      {
+        "title": "Lab 5: Diagnosability and Debugging Use Case",
+        "filename": "../../diagnosability-usecase/diagnosability-usecase.md",
+        "type": "livelabs"
+      },
+      {
+        "title": "Lab 6: Performance Analysis Use Case",
+        "filename": "../../performance-usecase/performance-usecase.md",
+        "type": "livelabs"
+      },
+      {
+        "title": "Lab 7: Better Understand and Modify Metrics, Logging, and Tracing",
+        "filename": "../../extended-usage/extended-usage.md",
+        "type": "livelabs"
+      },
+      {
+        "title": "Lab 8: Tear down",
+        "filename": "../../../microservices-with-converged-db/teardown/teardown.md",
+        "type": "livelabs"
+      },
+      {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+      }
+    ]
+}

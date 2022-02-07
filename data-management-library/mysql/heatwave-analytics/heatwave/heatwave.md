@@ -46,17 +46,17 @@ In this lab, you will:
 
   	![database files](./images/Lab3-task1.1-2.png)
 
-  	Connect to MySQL DB System with MySQL Shell using MySQL DB private IP address, as the following command:
+  	Using MySQL DB private IP address and fill in the password you used creating the DB system at Lab1/Task5.4, Connect to MySQL DB System with MySQL Shell with the following command:
     
 	```
-    <copy>mysqlsh --user=admin --password=Oracle.123 --host=<mysql_private_ip_address> --port=3306 --js</copy>
+    <copy>mysqlsh --user=admin --password=**PASSWORD** --host=<mysql_private_ip_address> --port=3306 --js</copy>
     ```
   	![connect to mysql shell](./images/Lab3-task1.1-3.png)
 
 	> **Note:**  For the best practice it is recommended to remove the password from the command line as follows:
 	
 	```
-	export PASSWORD=Oracle.123
+	export PASSWORD=**PASSWORD**
 
 	mysqlsh --user=admin --password=`echo $PASSWORD` --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql
 	```
@@ -83,19 +83,16 @@ In this lab, you will:
 3. Check the imported data. From MySQL Shell execute the commands:
 
     ```
-    <copy>
-    \sql
-    </copy>
+    <copy> \sql  </copy>
     ```
-
     ```
-    <copy>
-    SHOW DATABASES;
-    </copy>
-		```
-	You should see the following output:
+    <copy> SHOW DATABASES; </copy> 
+    ```  
 
-	![MySQL Database](./images/Lab3-task1.3.png)
+	
+  You should see the following output:
+
+  ![MySQL Database](./images/Lab3-task1.3.png)
 
 	Continue with commands:
     ```
@@ -159,9 +156,12 @@ In this lab, you will:
 
 
   	If HeatWave nodes are in _**Active**_ status, you can run the following Auto Parallel Load command to load the airportdb tables into HeatWave, from your bastion host ssh connection, using the following command:
+
+    Note: replace the `**PASSWORD**` with the password you have used creating MySQL DB System at Lab1/Task5.4.
+
     ```
     <copy>
-    mysqlsh --user=admin --password=Oracle.123 --host=<mysql_private_ip_address> --port=3306 --sql
+    mysqlsh --user=admin --password=**PASSWORD** --host=<mysql_private_ip_address> --port=3306 --sql
     </copy>
     ```
 

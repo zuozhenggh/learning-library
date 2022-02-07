@@ -6,6 +6,10 @@ In this lab you will use the batch load API to load large amounts of data into a
 
 Estimated Lab Time: 20 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:t57IlegnhjA)
+
 ### Objectives
 
 - Load a CSV of over 2 million rows into the CSV_DATA table

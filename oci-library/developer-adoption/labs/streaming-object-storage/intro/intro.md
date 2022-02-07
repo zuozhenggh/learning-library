@@ -2,7 +2,7 @@
 
 ## What is OCI Streaming
 
-[Oracle Cloud Infrastrucutre Streaming](https://www.oracle.com/cloud-native/streaming/) is a real-time, managed service, Apache Kafka-compatible event streaming platform for developers and data scientists.OCI Streaming provides a fully managed, scalable, and durable messaging solution for ingesting continuous, high-volume streams of data that you can consume and process in real time. Streaming is tightly integrated with Oracle Cloud Infrastructure (OCI), Database, GoldenGate, and Integration Cloud.  The service also provides out-of-the-box integrations for hundreds of third-party products across categories such as DevOps, databases, big data, and SaaS applications.
+[Oracle Cloud Infrastructure Streaming](https://www.oracle.com/cloud-native/streaming/) is a real-time, managed service, Apache Kafka-compatible event streaming platform for developers and data scientists.OCI Streaming provides a fully managed, scalable, and durable messaging solution for ingesting continuous, high-volume streams of data that you can consume and process in real time. Streaming is tightly integrated with Oracle Cloud Infrastructure (OCI), Database, GoldenGate, and Integration Cloud.  The service also provides out-of-the-box integrations for hundreds of third-party products across categories such as DevOps, databases, big data, and SaaS applications.
 
 
 
@@ -28,7 +28,7 @@ Native integrations with Oracle Cloud Infrastructure services include Object Sto
 
 The Kafka Connect Harness provides out-of-the-box integrations with hundreds of data sources and sinks, including GoldenGate, Integration Cloud, Database, and compatible third-party offerings.
 
-![Serverless Infrastrucuture](./images/OCI-Stream1.png)
+![Serverless Infrastructure](./images/OCI-Stream1.png)
 
 
 
@@ -37,7 +37,7 @@ The Kafka Connect Harness provides out-of-the-box integrations with hundreds of 
 
 ***Open source Apache Kafka-compatible***
 
-Run open source software as an Oracle-managed service. Streaming’s Kafka compatibility significantly reduces vendor lock-in and helps customers easily adopt hybrid and multicloud architectures.
+Run open source software as an Oracle-managed service. Streaming’s Kafka compatibility significantly reduces vendor lock-in and helps customers easily adopt hybrid and multi-cloud architectures.
 
 ***Choice of APIs***
 
@@ -58,7 +58,7 @@ Customers with existing Kafka implementations, whether deployed on-premises or o
 
 ***Encryption and privacy***
 
-For security, the service provides data encryption both in transit and at rest. Streaming is integrated with Identity and Access Management (IAM) for fine-grained access control, as well as Private Endpointsand Vault (KMS) for data privacy.
+For security, the service provides data encryption both in transit and at rest. Streaming is integrated with Identity and Access Management (IAM) for fine-grained access control, as well as Private Endpoints and Vault (KMS) for data privacy.
 
 ***Fault tolerance and SLAs***
 

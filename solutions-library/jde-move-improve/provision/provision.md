@@ -40,73 +40,84 @@ On the Oracle Cloud Console home page, click the **Navigation** Menu Button in t
 
     ![](./images/jde-trial-edition-image.png " ")
 
-3.  On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version **(9.2.5.0 – default)** to deploy and the compartment (you created a compartment in Set Up Oracle Cloud Infrastructure for JDE Trial Edition Deployment, Step 2) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click **Launch Instance**.
+3.  On the information page for the JD Edwards EnterpriseOne Trial Edition image, select the version **(9.2.6.0 – default)** to deploy and the compartment (you created a compartment in Set Up Oracle Cloud Infrastructure for JDE Trial Edition Deployment, Step 2) to deploy to. Select the check box to accept the Oracle Standard Terms and Restrictions and then click **Launch Instance**.
 
     ![](./images/launch-instance.png " ")
 
 4.  Next, define the instance with the following options:
 
-    1. Instance Name: jdetrial
+    1. Instance Name: 
+    
+        ```
+        <copy>
+        jdetrial
+        </copy>
+        ```
 
-       ![](./images/instance-name.png " ")
+       ![](./images/instance-details.png " ")
 
-    2. Operating System or Image Source: Leave **JD Edwards EnterpriseOne Trial Edition** selected.
-
-       ![](./images/operating-system.png " ")
-
-    3. If the following is not visible on your screen, click on **Show Shape**, **Network and Storage Options**.  Depending on the region selected, there might be one or more availability domains. Select Availability Domain: **AD1** (if single AD available) or **AD3** (if multiple ADs available).
-
-       ![](./images/availability-domain.png " ")
+    2. Depending on the region selected, there might be one or more availability domains. Select Availability Domain: **AD1** (if single AD available) or **AD3** (if multiple ADs available).
+    
+    3. Operating System or Image Source: Leave **JD Edwards EnterpriseOne Trial Edition** selected.
 
     4. Instance Shape: Click on **Change Shape**.
 
-       ![](./images/change-shape.png " ")
-
-    5. Select **Virtual Machine**, then select a shape. For the purposes of this tutorial, select either an **Intel Skylake VM.Standard2.2** shape, or under the **Specialty and Legacy** series, select the **VM.Standard.E2.2** shape.
+    5. Select **Virtual Machine**, then select a shape. For the purposes of this tutorial, select either an **Intel Skylake VM.Standard2.2** shape, or under the **Specialty and Legacy** series, select the cheaper **VM.Standard.E2.2** shape.
 
        ![](./images/vm-shape.png " ")
 
-    6. Review and confirm the VNC: The Configure networking window populates by default. Ensure that the **Assign a public IP address** radio button is selected.
+    6. Review and confirm the Virtual Cloud Network and Subnets you created earlier are selected. Ensure that the **Assign a public IP address** radio button is selected.
 
-       ![](./images/public-ip.png " ")
+       ![](./images/instance-details2.png " ")
 
-    7. Configure Boot Volume to the default boot size of 100 GB as it will be sufficient for this tutorial.
+    7. In the Add SSH keys section, select the **Upload public key file (.pub)** radio button. Browse to select the public SSH key file you created earlier (Set Up OCI for JDE Trial Edition Deployment, STEP 1) by navigating to the location where the SSH files are stored. Alternatively, drag and drop the .pub file to the window.
+
+       ![](./images/ssh-upload.png " ")
+
+    8. Leave the Boot Volume section as is.
 
        ![](./images/boot-size.png " ")
 
-    8. In the Add SSH keys section, select the **Choose SSH Key file** radio button. Browse to select the public SSH key file you created earlier (Set Up OCI for JDE Trial Edition Deployment, STEP 1) by navigating to the location where the SSH files are stored. Alternatively, drag and drop the .pub file to the window.
-
-       ![](./images/ssh-upload.png " ")
 
     9. Click **Create**.
 
        ![](./images/create-button.png " ")
 
+    You've now finished the provisioning step and should now see the screen below. The orange box indicates that the instance is in the process of being provisioned.
+
+    ![](./images/orange-instance.png " ")
+
     **Note:** After a few minutes, the instance will be running and ready.  
 
-5.  Copy and take note of the **Public IP address** under the **Instance Access** section, which is required to connect to the instance – in this example, it is 129.213.43.190.
+5.  Copy and take note of the **Public IP address** under the **Instance Access** section, which is required to connect to the instance.
 
     ![](./images/finished-instance.png " ")
 
 ## Task 2:  Access the Oracle Cloud Infrastructure Instance
 
-To complete the setup of the JD Edwards EnterpriseOne Trial Edition, it is necessary to connect to the VM Instance. The user name on the instance is **opc**.  There isn’t a password, the account can only be accessed using the SSH private key.
+To complete the setup of the JD Edwards EnterpriseOne Trial Edition, it is necessary to connect to the VM Instance. 
+
+The user name for the instance is **opc**  and there isn’t a password. The instance can only be accessed using the SSH private key.
 
 
-###  Connect to an Oracle Cloud Infrastructure Compute Instance using a Mac, Linux or Unix based machine using Command Line SSH
+###  Option 1: Connect to an Oracle Cloud Infrastructure Compute Instance using a Mac, Linux or Unix based machine using Command Line SSH
 
 
 Mac OS X includes a command-line SSH client as part of the operating system. To use it, go to **Finder**, select **Go** and select **Utilities** from the top menu. Then look for **Terminal**. To connect over SSH you can use the following command on a Linux or UNIX style system:
 
-    $ ssh –l opc –i </path/to/privateKey> <PublicIP_Address>
+    $ ssh -i ./path/to/private/key opc@ip_address
 
 For example:
 
-    $ ssh –l opc –i ./keys/id_rsa 132.145.187.16
+```
+<copy>
+ssh -i ./keys/id_rsa opc@ip_address
+</copy>
+```
 
-Once connected, you can continue to Step 3.
+Once connected, you can continue and skip  ``Option 2``  below.
 
-### Connect to an Oracle Cloud Infrastructure Compute Instance using a Windows based machine
+### Option 2: Connect to an Oracle Cloud Infrastructure Compute Instance using a Windows based machine
 
 **Method 1:** Using SSH with Git Bash
 
@@ -116,13 +127,13 @@ Once connected, you can continue to Step 3.
 
 2.  To connect over SSH you can use the following command on a Linux or UNIX style system.
 
-        $ ssh –l opc –i </path/to/privateKey> <PublicIP_Address>
+        ssh -i ./path/to/private/key opc@ip_address
 
     For example:
 
-        $ ssh –l opc –i ./keys/id_rsa 132.145.187.16
+        ssh -i ./keys/id_rsa opc@ip_address
 
-    **Note:** Do not copy and paste the line above into Git Bash. Unpredictable results may occur.
+**Note:** Do not copy and paste the line above straight into Git Bash. Unpredictable results may occur.
 
 3.  If, after entering the ssh command, you receive a message like in the screen shot below, reply with YES.
 
@@ -180,18 +191,42 @@ During the first connection to a Trial Edition instance (after completing Connec
 
     **Note:** This must match the port number added to the ingress rules for the security list.
 
-2.	Enter a database system password (and confirmation) such as **JDE_Rules1**. The password must meet these guidelines:
+2.	Enter a database system password (and confirmation) such as:
+
+    ```
+    <copy>
+    JDE_Rules1
+    </copy>
+    ```
+
+    The password must meet these guidelines if you create your own:
     *	Must be between 8 and 10 characters.
     *	Must contain at least 1 letter and 1 number.
     *	May not contain any shell metadata characters such as $, |, @, and so on.
 
     ![](./images/db-system-password.png " ")
 
-3.  Enter a JDE user password (and confirmation): **JDE_Rules1**. Please follow the same password guidelines.
+3.  Enter a JDE user password (and confirmation):
+
+    ```
+    <copy>
+    JDE_Rules1
+    </copy>
+    ```
+
+    Please follow the same password guidelines if you create your own.
 
     ![](./images/jde-user-password.png " ")
 
-4.	Enter a Weblogic admin password (and confirmation): **JDE_Rules1**. Please follow the same password guidelines.
+4.	Enter a Weblogic admin password (and confirmation):
+    
+    ```
+    <copy>
+    JDE_Rules1
+    </copy>
+    ```
+    
+    Please follow the same password guidelines if you create your own.
 
     ![](./images/weblogic-admin-password.png " ")
 
@@ -210,7 +245,6 @@ At this point, the JD Edwards EnterpriseOne Trial Edition is ready for use.
 * **Contributors:**
     * Jeff Kalowes, Principal JDE Specialist
     * Mani Julakanti, Principal JDE Specialist
-    * Marc-Eddy Paul, Cloud Engineering
     * William Masdon, Cloud Engineering
     * Chris Wegenek, Cloud Engineering
-* **Last Updated By/Date:** AJ Kurzman, Cloud Engineering, 11/18/2020
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering, 11/21

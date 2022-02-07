@@ -6,6 +6,8 @@ In this workshop, you will provision an Oracle Autonomous Database instance, man
 
 Estimated Workshop Time: 1 hour, 15 minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/Frv6V1-gzR8).</if>
+
 ### Objectives
 
 In this workshop, you will:

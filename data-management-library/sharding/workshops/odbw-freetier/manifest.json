@@ -5,6 +5,7 @@
     {
       "title": "Introduction",
       "description": "Introduction",
+      "type": "odbw",
       "filename": "../../intro/intro.md"
     },
     {
