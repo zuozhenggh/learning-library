@@ -146,7 +146,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    Be sure to provide the user OCID and not the user name or tenancy OCID. The user OCID will look something like:
 
-    `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta`
+    `ocid1.user.oc1....<unique_ID>`
 
    Note the "ocid1.user" prefix.
 
