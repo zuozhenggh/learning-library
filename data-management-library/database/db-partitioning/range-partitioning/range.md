@@ -129,8 +129,6 @@ You successfully made it to the end this lab Range Partitions.
 
 * [Range Partitioning](https://livesql.oracle.com/apex/livesql/docs/vldbg/partitioning/range-partitioning-example.html)
 * [Database VLDB and Partitioning Guide](https://docs.oracle.com/en/database/oracle/oracle-database/21/vldbg/partition-create-tables-indexes.html)
-* [US E-commerce Forecast](https://www.emarketer.com/content/us-ecommerce-forecast-2021)
-
 
 ## Acknowledgements
 
