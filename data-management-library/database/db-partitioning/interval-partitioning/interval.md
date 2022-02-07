@@ -1,4 +1,4 @@
-# Interval Partitioning 
+# Interval partitioning 
 
 ## Introduction
 Interval partitioning is an extension to range partitioning in which database table partition is done based on intervals rather than just date itself. The INTERVAL clause of the CREATE TABLE statement establishes interval partitioning for the table. You must specify at least one range partition using the PARTITION clause. The range partitioning key value determines the high value of the range partitions, called the transition point. The database automatically creates interval partitions for data beyond that transition point. The lower boundary of every interval partition is the non-inclusive upper boundary of the previous range or interval partition. 

@@ -1,4 +1,4 @@
-# Auto-list Partitioning 
+# Auto-list partitioning 
 
 ## Introduction
  

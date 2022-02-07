@@ -1,4 +1,4 @@
-# Read Only Partitions 
+# Read only partitioning 
 
 ## Introduction
 
@@ -16,7 +16,7 @@ We can set tables, partitions, and subpartitions to read-only status to protect 
 
 ### Making Previous quarter sales data as read-only 
 
-In the financial services or retail sector, you can set the last quarter's sales data as read-only, and the rest of the data can allow read and write DML operations. setting the partition as read-only can be a precautionary measure to avoid accidental data updating or deleting. 
+In the financial services or retail sector, you can set the last quarter's sales data as read-only, and the rest of the data can allow read and write DML operations. Setting the partition as read-only can be a precautionary measure to avoid accidental data updating or deleting. 
 
 ### Objectives
  

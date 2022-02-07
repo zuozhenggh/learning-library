@@ -1,9 +1,9 @@
 {
-    "workshoptitle": "8 Partitioning Techniques in Oracle Database",
+    "workshoptitle": "8 partitioning techniques in Oracle Database",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -22,35 +22,35 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },   
         {
-            "title": "Lab 1: Range Partitioning",
+            "title": "Lab 1: Range partitioning",
             "filename": "../../range-partitioning/range.md"
         },
         {
-            "title": "Lab 2: Interval Partitioning",
+            "title": "Lab 2: Interval partitioning",
             "filename": "../../interval-partitioning/interval.md"
         },
         {
-            "title": "Lab 3: List Partitioning",
+            "title": "Lab 3: List partitioning",
             "filename": "../../list-partitioning/list.md"
         },
         {
-            "title": "Lab 4: Hash Partitioning",
+            "title": "Lab 4: Hash partitioning",
             "filename": "../../hash-partitioning/hash.md"
         },
         {
-            "title": "Lab 5: Auto List Partitioning",
+            "title": "Lab 5: Auto list partitioning",
             "filename": "../../auto-list-partitioning/autolist.md"
         }, 
         {
-            "title": "Lab 6: Read Only Partitions",
+            "title": "Lab 6: Read only partitions",
             "filename": "../../readonly-partitioning/readonly.md"
         }, 
         {
-            "title": "Lab 7: Multi Column List Partitioning",
+            "title": "Lab 7: Multi column list partitioning",
             "filename": "../../multi-list-partitioning/multilist.md"
         }, 
         {
-            "title": "Lab 8: Convert Non-Partitioned Table into Partitioned Table",
+            "title": "Lab 8: Convert non-partitioned table into partitioned iable",
             "filename": "../../convert-table-partitioning/convert.md"
         }, 
         {

@@ -1,4 +1,4 @@
-# List Partitioning 
+# List partitioning 
 
 ## Introduction
 

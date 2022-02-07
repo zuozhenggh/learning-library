@@ -1,4 +1,4 @@
-# Range Partitioning
+# Range partitioning
 
 ## Introduction
 

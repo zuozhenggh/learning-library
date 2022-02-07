@@ -1,4 +1,4 @@
-# Hash Partitioning 
+# Hash partitioning 
 
 ## Introduction
 

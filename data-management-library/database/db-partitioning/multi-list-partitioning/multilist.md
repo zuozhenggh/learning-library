@@ -1,4 +1,4 @@
-# Multi Column List Partitioning 
+# Multi column list partitioning 
 
 ## Introduction
   
