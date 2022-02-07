@@ -6,7 +6,7 @@ Partitioning large tables and indexes in Oracle Database ensure that an optimal 
 
 ### Challenges with growing Data Volume
 
-Let us consider the financial services sector, particularly retail banking, every time we do a transaction like debit, credit, fixed deposit, recurring deposit, auto EMI payment, utility bill payments etc. It makes an entry into the transaction master table, and the data is growing exponentially, as per the business standard report of December 31, 2021. The volume of digital transactions rose to 55.54 billion in FY21 from 10.85 billion in FY17, at a compounded annual growth rate of 50.42 per cent, according to the Ministry of Electronics & Information Technology (MeitY) India. So, with the growing volume of data, we can archive a significant portion of historical data into archival storage for on-demand retrieval; however, even if we consider data for the current financial year, it is in millions of records at a bank level. To run a query at this level would take a considerable amount of time and impacts the overall performance. It would be best to partition the data into smaller units per the business requirements and run these queries against this subset of data, which we call a partitioned table. For example, data can be partitioned based on region and then sub partitioned based on year or quarter.
+Let us consider the financial services sector, particularly retail banking, every time we do a transaction like debit, credit, fixed deposit, recurring deposit, auto EMI payment, utility bill payments etc. It makes an entry into the transaction master table, and the data is growing exponentially, as per the business standard report of December 31, 2021. The volume of digital transactions in India rose to 55.54 billion in FY21 from 10.85 billion in FY17, at a compounded annual growth rate of 50.42 per cent. So, with the growing volume of data, we can archive a significant portion of historical data into archival storage for on-demand retrieval; however, even if we consider data for the current financial year, it is in millions of records at a bank level. To run a query at this level would take a considerable amount of time and impacts the overall performance. It would be best to partition the data into smaller units per the business requirements.
 
 ![Image alt text](images/intro_01.png "Data Volume")
  
@@ -47,14 +47,21 @@ In this workshop, you will learn how to create the following partitions.
 * Read Only Partitions
 * Multi-Column List Partitioning
 * Convert Non-partitioned Table to Partitioned Table
+
+### Prerequisites
+This lab assumes you have the following:
+
+* Access to Oracle Database Standard or Enterprise Edition or Autonomous Database.
+* You have access to Paid or Free Tier cloud tenancy. 
   
 ## More information and References 
 
-* [Partitioning whitepaper ](https://www.oracle.com/technetwork/database/options/partitioning/partitioning-wp-12c-1896137.pdf)  
-* [Business Standard Report ](https://www.business-standard.com/article/economy-policy/digital-transaction-volume-grew-at-50-in-four-years-shows-data-121123101357_1.html)  
+* [Partitioning whitepaper ](https://www.oracle.com/technetwork/database/options/partitioning/partitioning-wp-12c-1896137.pdf)   
+* [Oracle Database Editions ](https://docs.oracle.com/cd/E11882_01/license.112/e47877/editions.htm#DBLIC109)
+
  
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** -   
-* **Last Updated By/Date** - <Madhusudhan Rao, Feb 2022>
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database  
+* **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 
