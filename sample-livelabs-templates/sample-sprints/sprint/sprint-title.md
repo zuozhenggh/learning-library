@@ -1,10 +1,15 @@
 # The title must be a question: How do I XYZ?
+Duration: 1 minute to 10 minute
 
 ## Answer
 * Description of soution/answer
 * be short & precise
 * try to minimize use of images/screenshotds - less is more (sometimes)
 * use other LiveLabs Sprints if need be
+
+If you use images make sure to provide alternate text, for example:
+
+![A walrus sitting in the snow](images/walrus.png)
 
 You can provide an answer that comprises multiple steps.
 Sometime a specific step relates to its own LiveLabs Sprints.
