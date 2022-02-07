@@ -172,8 +172,6 @@ You successfully made it to the end of module 'read only partitions and subparti
 
 * [Interval Partitioning](https://livesql.oracle.com/apex/livesql/file/content_EWT612PKY4EJZ4FEYTA52Q00.html)
 * [Database VLDB and Partitioning Guide](https://docs.oracle.com/en/database/oracle/oracle-database/21/vldbg/partition-create-tables-indexes.html)
-* [Weather Forecasting](https://en.wikipedia.org/wiki/Weather_forecasting)
-
 
 ## Acknowledgements
 
