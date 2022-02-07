@@ -8,7 +8,7 @@ We can set tables, partitions, and subpartitions to read-only status to protect 
 
 ### Making Previous quarter sales data as read-only 
 
-In the financial services or retail sector, you can set the last quarter's sales data as read-only, and the rest of the data can allow read and write DML operations. 
+In the financial services or retail sector, you can set the last quarter's sales data as read-only, and the rest of the data can allow read and write DML operations. setting the partition as read-only can be a precautionary measure to avoid accidental data updating or deleting. 
 
 ### Features
 
@@ -95,7 +95,7 @@ alter table ropt split partition for (5) into
 </copy>
 ```
 
-Read-only is considered a guaranteed state when a PMOP (partition maintenance operation) is started. It would also be ambiguous when to change the state if a change from read-write to read-only  
+Read-only is considered a guaranteed state when a PMOP (partition maintenance operation) is started. It would also be ambiguous when to change the state if a change from read-write to read-only.  
 
 ```
 <copy>
@@ -105,7 +105,7 @@ alter table ropt split partition for (5) into
 </copy>
 ```
 
-You can also set a whole table to read-only. This will change the state for all existing partitions as well as the default of the table. Note that this is in line with other attributes.
+You can also set a whole table to read-only. This will change the state for all existing partitions and the default of the table. Note that this is in line with other attributes.
 
 ```
 <copy>
@@ -134,6 +134,7 @@ where table_name='ROPT' and partition_name='PB';
 ```
 
 Let's move and compress this partition:
+
 ```
 <copy>
 rem do the move and compress
@@ -141,7 +142,7 @@ alter table ropt move partition pb compress for oltp;
 </copy>
 ```
 
-The partition move on the read only partition succeeded without raising any error. Checking the partition attributes again you now will see that the partition is compressed.
+The partition move on the read-only partition succeeded without raising any error. Rechecking the partition attributes, you now will see that the partition is compressed.
 
 ```
 <copy>
@@ -170,7 +171,7 @@ update ropt set col2=col2 where col1=88;
 </copy>
 ```
 
-Dropping or truncating a read only partition - since this is semantically equivalent to a DELETE FROM  table WHERE  partitioning criteria :
+Dropping or truncating a read-only partition - since this is semantically equivalent to a DELETE FROM  table WHERE  partitioning criteria.
 
 ```
 <copy>
