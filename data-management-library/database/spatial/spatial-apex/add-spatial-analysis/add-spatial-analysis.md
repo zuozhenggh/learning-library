@@ -20,9 +20,9 @@ Estimated Lab Time: 30 minutes
 ## Task 1: Add a Region for Filters 
 
 1. Click on the **Page 3: Airports and States Map** at the top of the tree on the left. Then in the Page properties panel on the right, under Appearance change the Page Template to **Left Side Column**. 
-![Update page template](images/add-spatial-analysis-01a.png)
+![Update Page template](images/add-spatial-analysis-01a.png)
    You should then see **LEFT COLUMN** in the layout. 
-   ![Update page template](images/add-spatial-analysis-01b.png)
+   ![Update Page template](images/add-spatial-analysis-01b.png)
 
 2. Drag a Static Content region to left column.
 ![Add Static Content Region](images/add-spatial-analysis-01c.png)
