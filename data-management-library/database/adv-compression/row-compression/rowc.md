@@ -76,6 +76,14 @@ insert into aud_log (log_date, log_detail) values ( date '2016-12-04', 'December
 </copy>
 ```
 
+row store compress advanced.
+
+```
+<copy>
+alter table aud_log modify default attributes row store compress advanced logging; 
+</copy>
+```
+
 view aud_log table data.
 
 ```
@@ -109,7 +117,7 @@ where index_name = 'PKY_AUD_LOG';
 </copy>
 ```
 
-![Image alt text](images/lab01_03.png "Row compression")
+![Image alt text](images/lab1_03.png "Row compression")
 
 When you are finished testing the example, you can clean up the environment by dropping the table 
 
