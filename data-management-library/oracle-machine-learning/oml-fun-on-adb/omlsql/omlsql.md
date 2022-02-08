@@ -28,8 +28,27 @@ This lab assumes you have:
 
 
 ## Task 1: Examine the Data
+1. Click the hamburger icon ![Image alt text](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/oml-fun-on-adb/automl/images/sample2.png) to open the left navigation menu and click **Notebooks**.
+2. The Notebooks page opens with all the notebooks listed in it. Click the **OML4SQL Time Series 1** notebook to open it.
+![Notebook listed](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/oml-fun-on-adb/oml-notebooks/images/notebook-list-1.png)
+3. The _OML4SQL Timeseries 1_ notebook opens in the notebook editor. Click the gear icon ![gear icon](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/oml-fun-on-adb/oml-notebooks/images/gear.png) on the top right corner of the notebook to view and set the interpreter binding order.
 
-You will use the `SALES` table from the `SH` schema. You can access the table by running the `SELECT` statements in OML Notebooks.
+	You can change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
+  ![Enable and disable interpreter binding](images/timeseries-interpreter-bindings.png)
+
+4. Click **Save** to set the interpreter bindings.
+
+5. Click the play icon next to the **OML4SQL Time Series ESM 1** title to run all paragraphs of the notebook.
+
+  ![Run all paragraphs](images/timeseries-run-all-paragraphs.png)
+6. A confirmation dialog opens. Click **OK** to run all paragraphs.
+![Run all paragraphs confirmation](images/timeseries-run-all-confirmation.png)
+7. The paragraphs start running one by one and display the status next to the paragraph titles. When the paragraph is running, the status displays **PENDING** and when it finishes, it displays **FINISHED**.
+![Paragraph running](images/timeseries-para-pending.png)
+
+ ![Paragraph finished](images/timeseries-para-finished.png)
+
+In this notebook you are using the `SALES` table from the `SH` schema. You can access the table by running the `SELECT` statements in OML Notebooks.
 The following table displays information about the attributes from the `SALES` table:
 
 | Attribute Name | Information |
@@ -49,23 +68,22 @@ The following steps help you to create a view and view the data:
 1. Prepare a view called `ESM_SH_DATA` by selecting the necessary columns from `SH.SALES` table. For this example, select `TIME_ID` and `AMOUNT_SOLD`.
 
     ```
-       <copy>
-    	%script
-    	CREATE OR REPLACE VIEW ESM_SH_DATA AS
-    	SELECT TIME_ID, AMOUNT_SOLD FROM SH.SALES;
+    <copy>
+    %script
+    CREATE OR REPLACE VIEW ESM_SH_DATA AS
+    SELECT TIME_ID, AMOUNT_SOLD FROM SH.SALES;
 
-    	</copy>
+    </copy>
 
+     ```
+
+  The output is as follows:
+    ```
+    View ESM_SH_DATA created.
+    --------------------------
     ```
 
-      The output is as follows:
-
-      ```
-      View ESM_SH_DATA created.
-
-      ---------------------------
-      ```
-
+>**Note:** If you are reserving a workshop on LiveLabs, some of the table views may already exist.
 
 2. Count the number of rows to ensure that we have the same amount of data. Run the following query:
 
@@ -244,8 +262,8 @@ For a time series model, you use the `DM$VP` view to retrieve the forecasts for 
 	- `round(PREDICTION,2) FORECAST_SOLD`: Specifies the predicted value as `FORECAST_SOLD` rounded to two decimal places.
 	- `round(LOWER,2) LOWER_BOUND, round(UPPER,2) UPPER_BOUND`: Specifies the lower and upper confidence levels rounded to two decimal places.
 
-2. To see a visual representation of the predictions in OML Notebooks, run the same query above without ```DESC``` in the ORDER BY clause. Click the Line Chart graph and apply the following settings:
-Click **settings** and drag `DATE_ID` to **keys** and `FORECASTED_SOLD`, `ACTUAL_SOLD`, `LOWER_BOUND`, and `UPPER_BOUND` to **values**. By default, the columns in the **values** field show `(sum)`. For example, `ACTUAL_SOLD (sum)`. Click the column name and change it to `(avg)`. Change all the column names in the **values** field to show `(avg)`.
+2. To see a visual representation of the predictions in OML Notebooks, run the same query above without ```DESC``` in the ```ORDER BY``` clause. Click the Line Chart graph and apply the following settings:
+Click **settings** and drag `DATE_ID` to **keys** and `FORECASTED_SOLD`, `ACTUAL_SOLD`, `LOWER_BOUND`, and `UPPER_BOUND` to **values**. By default, the columns in the **values** field show `(sum)`. For example,  `ACTUAL_SOLD (sum)`. Click the column name and change it to `(avg)`. Change all the column names in the **values** field to show `(avg)`.
 
     ```
     <copy>
@@ -257,6 +275,8 @@ Click **settings** and drag `DATE_ID` to **keys** and `FORECASTED_SOLD`, `ACTUAL
         ORDER BY CASE_ID;
     </copy>
     ```
+
+  ![Line Chart icon](images/timeseries-line-chart.png)
 
   ![Displays the Line Graph settings](images/timeseries-graph-settings.png)
 
