@@ -6,7 +6,7 @@ In this workshop you will explore mapping in Oracle APEX using the Map Region fe
 
 The Map Region is a native APEX feature introduced in APEX 21.1 providing the ability to configure interactive maps displaying spatial data from Oracle Spatial, GeoJSON, and coordinates. This workshop focuses on using Oracle Spatial as the spatial data source, so that both raw spatial data and spatial analysis results be easily incorporated.
 
-![](./images/intro-01.png " ")
+![Sample Maps App](./images/intro-01.png " ")
 
 Estimated Workshop Time: 1 hour 15 minutes
 
@@ -38,7 +38,6 @@ Oracle Spatial is a set of geospatial data management, analysis, and processing 
 
 
 ## Acknowledgements
-
 * **Author** - David Lapp, Database Product Management, Oracle
 * **Contributors** - Jayson Hanes, Database Product Management, Oracle
 * **Last Updated By/Date** - David Lapp, February 2022
