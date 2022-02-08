@@ -28,7 +28,7 @@ In this lab, you will:
 * A Salesforce Developer Account
 * Lab 2 was completed
 
-## **STEP 1**: Enable MFA Factors
+## Task 1: Enable MFA Factors
 
 * *Personas*:
     - Administrator
@@ -44,7 +44,7 @@ In this lab, you will:
 
     ![Image](images/L5001.png)
 
-## **STEP 2**: Define a Sign-On Policy for Salesforce
+## Task 2: Define a Sign-On Policy for Salesforce
 
 * *Personas*:
     - Administrator
@@ -151,7 +151,7 @@ However, you can build upon this policy by adding other sign-on rules to it. By 
     ![Image](images/L5014.png)
 
 
-## **STEP 3**: Sign-in as an end user with MFA
+## Task 3: Sign-in as an end user with MFA
 
 * *Personas*:
     - End User
@@ -260,7 +260,7 @@ D. Answer the security Question and click *Verify* .
 
    ![Image](images/L5026.png)
 
-## **STEP 4**: Block access via policy
+## Task 4: Block access via policy
 
 * *Personas*:
     - Administrator
@@ -281,7 +281,7 @@ D. Answer the security Question and click *Verify* .
 
     ![Image](images/L5028.png)
 
-## **STEP 5**: Test the updated policy  
+## Task 5: Test the updated policy  
 
 * *Personas*:
     - End User

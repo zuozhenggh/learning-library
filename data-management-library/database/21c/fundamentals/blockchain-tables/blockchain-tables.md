@@ -24,7 +24,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Create the blockchain table
+## Task 1: Create the blockchain table
 
 1. Create the AUDITOR user, owner of the blockchain table.
 
@@ -279,7 +279,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 2:** Insert rows into the blockchain table
+## Task 2: Insert rows into the blockchain table
 
 1. Insert a first row into the blockchain table.
 
@@ -429,7 +429,7 @@ In this lab, you will:
 
 
 
-## **STEP 3:** Delete rows from the blockchain table
+## Task 3: Delete rows from the blockchain table
 
 1. Delete the row inserted by `HR`.
 
@@ -521,7 +521,7 @@ In this lab, you will:
 
 
 
-## **STEP 4:** Drop the blockchain table
+## Task 4: Drop the blockchain table
 
 1. Drop the table.
 
@@ -576,7 +576,7 @@ In this lab, you will:
 
 
 
-## **STEP 5:** Check the validity of rows in the blockchain table
+## Task 5: Check the validity of rows in the blockchain table
 
 1. Create another blockchain table `AUDITOR.LEDGER_TEST`. Rows cannot be deleted until 5 days after they were inserted, allowing rows to be deleted. Moreover the blockchain table can be dropped only after 1 day of inactivity.
 

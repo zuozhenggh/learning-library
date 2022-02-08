@@ -1,4 +1,4 @@
-# Binary Classification Model 
+# Binary Classification Model
 
 ## Introduction
 
@@ -16,9 +16,10 @@ The ``ADSEvaluator`` class is used to evaluate model performance. Since this is 
 
 After the models have been built and evaluated, it is often important to understand what features are important. This lab examines employee attrition data and an important part of this process is to understand the factors that tend to cause employees to resign. The ``ADSExplainer`` class provides information at the global level, which is the general trends in the behavior of the black-box machine learning model. It does this by providing feature importance data and graphs. It also provides Partial Dependence Plots (PDP) and Individual Conditional Expectations (ICE) plots. The Machine Learning Explainability (MLX) features in ``ADS`` also allow the data scientist to examine the local behavior of the machine learning model. That is, given a single prediction, what were the important features used by the model to make the prediction on a specific observation. This can often be quite different than the feature importance on a global scale.
 
-*Estimated Lab Time*: 90 minutes
+*Estimated Time*: 90 minutes
 
 ### Objectives
+
 In this lab, you will:
 * Learn how to execute cells in JupyterLab and perform other basic operations in a notebook.
 * Learn how to launch a **Notebook Example**.
@@ -30,10 +31,11 @@ In this lab, you will:
 * Learn about machine learning explainability (MLX) for global and local model behavior.
 
 ### Prerequisites
+
 This lab assumes that you have:
 * A Data Science notebook session.
 
-## **STEP 1:** Working with JupyterLab
+## Task 1: Working with JupyterLab
 
 Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc..
 
@@ -41,7 +43,7 @@ Now that JupyterLab is open, it can be seen that the screen is split into two se
 
 There is a menu across the top of the screen. For this lab, the most interesting menu item is **Run**. It will allow you to execute code cells in the document. It is recommended that you manually execute the cells one at a time as you progress through the notebook. It is, generally important, that you execute them in order. To do this from the keyboard, press *shift + enter* in a cell and it will execute it and advance to the next cell. Alternatively, you can run all of the cells at once. To do this, click on Run then "Run Selected Cells".
 
-## **STEP 2:** Summary of Commands
+## Task 2: Summary of Commands
 
 The following is a summary of the steps that are covered in this lab along with the most important Python commands. You can use it as a reference guide for when you build your own models.
 
@@ -56,7 +58,7 @@ The following is a summary of the steps that are covered in this lab along with 
 1. **Local explanations**: ``local_explainer = explainer.local_explanation()``
 1. **Feature important**: ``global_explainer.feature_importance_summary()`` and ``global_explainer.compute_feature_importance()``
 
-## **STEP 3:** Install a Conda Package
+## Task 3: Install a Conda Package
 
 A conda package is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. There is an Environment Explore that allows you to learn about the different conda environments that are available. We are going to use the General Machine Learning for CPUs conda.
 
@@ -65,16 +67,20 @@ A conda package is a collection of libraries, programs, components and metadata.
 1. You will receive a prompt related to what version number you want. Press `Enter` to select the default.
 1. Wait for the conda package to be installed.
 
+## Task 4: Binary Classification Model
 
-## **STEP 4:** Binary Classification Model
-
-To open the notebook, that is used in this lab, have the launcher open. The launcher is open by default but if it is currently closed it can be opened by clicking on **File** and then click on **New Launcher**. 
+To open the notebook, that is used in this lab, have the launcher open. The launcher is open by default but if it is currently closed it can be opened by clicking on **File** and then click on **New Launcher**.
 
 1. Click on the **Notebook Examples**. A drop down will appear.
     ![](./../speed-up-ds-with-the-ads-sdk/images/click-ne.png)
 
+<<<<<<< HEAD
 1. Select the environment **mlcpuv1** and then the notebook **binary\_classification\_attrition.ipynb**. 
     ![](./../speed-up-ds-with-the-ads-sdk/images/load-example-generalml_p37_cpu_v1.png)
+=======
+1. Select the environment **mlcpuv1** and then the notebook **binary\_classification\_attrition.ipynb**.
+    ![](./../speed-up-ds-with-the-ads-sdk/images/load-example.png)
+>>>>>>> 691d591bea2a55a6dec53632a56f1fcb2790606b
 
 1. Click **Load Example**. The notebook will open in a new tab.
     ![](./../speed-up-ds-with-the-ads-sdk/images/binary-notebook.png)
@@ -83,16 +89,13 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
     ![](./../speed-up-ds-with-the-ads-sdk/images/running-cell.png)
     ![](./../speed-up-ds-with-the-ads-sdk/images/finished-cell.png)
 
-
 1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
     ![](./../speed-up-ds-with-the-ads-sdk/images/restart-kernel.png)
     ![](./../speed-up-ds-with-the-ads-sdk/images/restart.png)
 
 1. Step through the lab and look at the tools that are provided by Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes by analyzing the data and creating appropriate outputs.
 
-## **STEP 5:** Next Steps
-
-**Congratulations! You have successfully completed the lab**
+## Task 5: Next Steps
 
 There are some other notebooks that you may find interesting. They can be accessed by clicking **File** then clicking **New Launcher**. This will open Launcher. Click **Notebook Examples** and select a notebook then click **Load Example**. Some notebooks of interest are:
 
@@ -100,11 +103,8 @@ There are some other notebooks that you may find interesting. They can be access
 * **data\_visualizations.ipynb**: It provides a comprehensive overview of the data visualization tools in ADS. This includes smart data visualization for columns based on data types and values.
 * **transforming\_data.ipynb**: Learn about the ``ADSDatasetFactory`` and how it can clean and transform data.
 
-You may now *proceed to the next lab*.
-
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
     * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, February 2022
-

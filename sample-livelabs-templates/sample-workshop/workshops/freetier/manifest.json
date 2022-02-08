@@ -1,9 +1,8 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "The Title of the Workshop is Defined in the Manifest File",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
-    "support": "https://community.oracle.com/tech/developers/categories/autonomous-database-shared",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
@@ -32,14 +31,6 @@
         {
             "title": "Lab 4: Query Data",
             "filename": "../../query/query.md"
-        },
-        {
-            "title": "Lab 5: Analyze Data",
-            "filename": "../../analyze/analyze.md"
-        },
-        {
-            "title": "Lab 6: Visualize Data",
-            "filename": "../../visualize/visualize.md"
         },
         {
             "title": "Need Help?",

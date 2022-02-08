@@ -10,11 +10,11 @@ In this lab, you learn how to:
 ### Challenge
 Suppose that recent data breaches in your industry occurred due to stolen credentials of high-privileged users. You are notified by “Audit and Compliance” to quickly report high risk users on your target database and show their recent activity. You want to know who the users are and what entitlements they have.
 
-## STEP 1: Sign in to the Oracle Data Safe Console for your region
+## Task 1: Sign in to the Oracle Data Safe Console for your region
 - Go to your ATP details page.
 - Click on View Console under **Data Safe** status.
 
-## STEP 2: Run User Assessment on your target database
+## Task 2: Run User Assessment on your target database
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **User Assessment**. The User Assessment page is displayed.
 - Select the check box for your target database, and click **Assess**.
@@ -24,7 +24,7 @@ Suppose that recent data breaches in your industry occurred due to stolen creden
 - When the report is generated, view the totals in the **Critical Risk**, **High Risk**, **Medium Risk**, and **Low Risk** columns.
 - In the Last Generated Report column, click **View Report**. The User Assessment report is displayed.
 
-## STEP 3: Analyze the information in the User Assessment report
+## Task 3: Analyze the information in the User Assessment report
 
 - View the **User Risk** chart. This chart compares the number of critical, high, medium, and low risk users.
 - View the **User Roles** chart. This chart compares the number of users with the DBA, DV Admin, and Audit Admin roles.
@@ -35,7 +35,7 @@ Suppose that recent data breaches in your industry occurred due to stolen creden
 
    ![](./images/Img16.png " ")
 
-## STEP 4: Search the results for Critical and High risk users
+## Task 4: Search the results for Critical and High risk users
 
 - Click the **+** sign to view the list of columns that you can display in the table. Add and remove columns as you wish, and then close the list.
 
@@ -58,7 +58,7 @@ Suppose that recent data breaches in your industry occurred due to stolen creden
    ![](./images/Img21.jpg " ")
    ![](./images/Img22.jpg " ")
    
-## STEP 5: Use SQL Developer to make changes to the user accounts
+## Task 5: Use SQL Developer to make changes to the user accounts
 
 - Goto your ATP details page. Click on **Service Console**.
 
@@ -81,7 +81,7 @@ Note:
 <copy>revoke audit_admin from DBA_DEBRA</copy>
 ```
 
-## STEP 6: Re-run User Assessment on your target database
+## Task 6: Re-run User Assessment on your target database
 
 - Return to Oracle Data Safe.
 - Click the **Home** tab, and then click **User Assessment**.

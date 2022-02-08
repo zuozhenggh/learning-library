@@ -27,13 +27,13 @@ The lab environment for the workshop consists of :
 
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1** : Sign In to Oracle Cloud Infrastructure Console
+## Task 1: : Sign In to Oracle Cloud Infrastructure Console
 
 Sign in to your **Cloud Account** from Oracle Cloud website. You will be prompted to enter your cloud tenant, user name, and password.
 
 If this is your first time signing in to Oracle Cloud Infrastructure, or for detailed sign in instructions, refer to [*Getting Started with Oracle Cloud*](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/sign-your-cloud-account.html).
 
-## **STEP 2** : Create SSH Key Pair Using Cloud Shell
+## Task 2: : Create SSH Key Pair Using Cloud Shell
 
 **Note:** Skip this step if you already have an SSH key pair you like to use.
 
@@ -89,7 +89,7 @@ To use the Cloud Shell, your tenancy administrator must grant the required IAM (
 
 7. **IMPORTANT :** If you plan on using a different SSH client than **Cloud Shell** (e.g. PuTTY), copy the private key and (optionally) convert it to the destination tool's format. For example, PuTTY requires a PPK format which you can generate from the OpenSSH PEM key format using PuTTYgen. **Ensure the key remains intact during copy/paste.**
 
-## **STEP 3** : Provision Environment Using Resource Manager
+## Task 3: : Provision Environment Using Resource Manager
 
 **Resource Manager** removes the complexity and operational burden of deploying and managing infrastructure so you can focus on building great apps. With Resource Manager you can orchestrate most Oracle cloud resources using a point-and-click and easy-to-use interface.
 
@@ -202,7 +202,7 @@ When you run the apply job for a Stack, Terraform creates the resources and exec
 	|ADB Service Name TP|{ADB Service Name TP}|Database Service Name for TP workloads
 	|VM IP Address|{VM IP Address}|IP Address of the OCI VM
 
-## **STEP 4** : Validate Provisioning
+## Task 4: : Validate Provisioning
 
 ### Log In to the Compute Instance
 

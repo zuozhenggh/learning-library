@@ -34,7 +34,7 @@ _Estimated Lab Time_: 30 minutes
     * Lab 8: Mashing up additional Data Sets, Contextual Data Preparation
     * Lab 10: Geo Maps and Custom Binning
 
-## **STEP 1**: Enable Evaluate Support Level
+## Task 1: Enable Evaluate Support Level
 
 First step is to check **Evaluate Support Level** for your OAC instance.  
 That specifies who can issue database functions: \_EVALUATE, EVALUATE_ANALYTIC, EVALUATE\_AGGR, and EVALUATE\_PREDICATE.\_
@@ -71,7 +71,7 @@ Click **Navigator** and select **Home**
 6.  You make sure that **Data Access** is set to **Live** for the Data Sets that will be referenced by the Evaluate function.  
 By setting it to Live, you are ensuring that OAC Server always sends the query to the underlying database and does not retrieve results from cache.  
 You have already configured **DCA\_SALES\_DATA** to **Live**.
-## **STEP 2**: Leverage EVALUATE function
+## Task 2: Leverage EVALUATE function
 
 OAC transparently ships heavy-lift work down to the underlying database engines and makes the most of each specific capabilities of each database system, by automatically shipping proper syntaxes.  
 OAC Evaluate function enables users to create powerful analyses by directly invoking database functions. Evaluate provides a syntax to pass the specified database function with optional OA referenced columns as parameters. It is particularly useful when users wants to call a specialized database function to process a heavy calculation directly in the underlying database.
@@ -137,22 +137,7 @@ Click **Validate** and click **Save**.
 
      ![Add Calculation](../db-functions/images/addcalculation2.png)
 
-12.  Create Best `Visualization` for **#Customers**  
-Select **#Customers** from Data Panel, Right-Click and Select **Create Best Visualization**
-
-     ![Create Best Visualization](../db-functions/images/customerscreatevizsmall.png)
-
-13.  A new **Tile** visualization pops-up.
-
-     ![Create Best Visualization](../db-functions/images/customerscreateviz1.png)
-
-14. Open the query log.  
-Open a new **Home** page > Click **Navigator** > Select **Console** > Click **Sessions and Query Cache** under _Configuration and Administration_ section, Pick-up the most recent entry and Click **View Log**.  
-The query log shows that **Count Distinct** is being used against the column in the query
-
-     ![Create Best Visualization](../db-functions/images/customerslog.png)
-
-15.  Lets switch to **SQL Developer Web** and run **APPROX\_COUNT\_DISTINCT** function in the ADW database. 
+12.  Lets switch to **SQL Developer Web** and run **APPROX\_COUNT\_DISTINCT** function in the ADW database. 
 
      **APPROX\_COUNT\_DISTINCT** returns the approximate number of rows that contain a distinct value for expr.  
      This function provides an alternative to the **COUNT (DISTINCT** expr) function, which returns the exact number of rows that contain distinct values of expr. APPROX\_COUNT\_DISTINCT processes large amounts of data significantly faster than COUNT, with negligible deviation from the exact result.
@@ -162,50 +147,50 @@ The query log shows that **Count Distinct** is being used against the column in 
      ![](../db-functions/images/customersaproxcaoundistinct.png)  
      Note: COUNT\_DISTINCT shows 4,096 and  APPROX\_COUNT\_DISTINCT shows 4,087
 
-16.  Lets switch back to your OAC project and check **EVALUATE\_AGGR** function.  
+13.  Lets switch back to your OAC project and check **EVALUATE\_AGGR** function.  
 EVALUATE and EVALUATE\_AGGR are functions in OAC that allow you to invoke functions from the underlying database. You can invoke the APPROX\_COUNT\_DISTINCT function of the database using EVALUATE\_AGGR
 
-17.  Create **Approx Count** new calculation.  
+14.  Create **Approx Count** new calculation.  
 In the Visualize canvas navigate to the bottom of the Data Panel, right-click **My Calculations**, and click **Add Calculation** to open the New Calculation dialog.  
 Enter Name **Approx Count**; In the expression builder pane, compose and edit an expression 'EVALUATE\_AGGR('APPROX\_COUNT\_DISTINCT(%1)',CUST\_ID)', Click **Validate**, Click **Save**.
 
      ![Create Best Visualization](../db-functions/images/addcalculation2.png)
 
-18.  Create Best Visualization for **Approx Count**. 
+15.  Create Best Visualization for **Approx Count**. 
 Expand My Calculations, Select **Approx Count**, Right-Click and Select **Create Best Visualization** 
 
      ![Create Best Visualization](../db-functions/images/approxcount.png)
 
-19.  Check the visualization.  
+16.  Check the visualization.  
 The calculation returns an approximate distinct count of Customer ID 
 
      ![Create Best Visualization](../db-functions/images/approxcountviz.png)
 
-20.  Go to the Query Log.  
+17.  Go to the Query Log.  
 Open a new **Home** page > Click **Navigator** > Select **Console** > Click **Sessions and Query Cache** under _Configuration and Administration_ section, Pick-up the most recent entry and Click **View Log**.  
 The query logs shows that the function approx\_count\_distinct is function shipped to database query 
 
      ![](../db-functions/images/approxcountlog.png)  
      ![](../db-functions/images/approxcountlog2.png)
 
-21.  Calculations performed using EVALUATE\_AGGR can be sliced and diced with attributes, but calculations with EVALUATE cannot be broken down by dimensions/attributes in the Data Set.
+18.  Calculations performed using EVALUATE\_AGGR can be sliced and diced with attributes, but calculations with EVALUATE cannot be broken down by dimensions/attributes in the Data Set.
 
-22.  Switch back to your OAC project and lets add **CATEGORY** attribute.  
+19.  Switch back to your OAC project and lets add **CATEGORY** attribute.  
 Double-Click on **CATEGORY** attribute from the Data Pane. 
 
      ![Add Category](../db-functions/images/approxcountvizcategsmall.png)
 
-23.  Check the visualization.  
+20.  Check the visualization.  
 
      ![](../db-functions/images/approxcountvizcateg1.png)
 
-24.  **Save** and **Close** the Project.  
+21.  **Save** and **Close** the Project.  
 Click the **Save** icon from top right.  
 
      ![Save](../db-functions/images/save.png)
 
      Click **Go Back** left arrow ![Go Back](../db-functions/images/goback.png)
-## **STEP 3**: Performance impact of function shipping database functions
+## Task 3: Performance impact of function shipping database functions
 
 To demonstrate the performance impact of function shipping database functions, lets open the **SSB schema** on ADW and run a Count Distinct on Supplier Key.  
 The [SSB schema](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sample-queries.html#GUID-431A16E8-4C4D-4786-BE5C-30029AC1EFD8) provides a well-known large sample data set. The SSB schema in the Autonomous Database contains 1 TB of data. You can use this schema to test the performance of your service. The SSB schema contains the tables: lineorder, customer, supplier, part, and dwdate.
@@ -251,7 +236,7 @@ Congrats, you have just finished this workshop.
 
 ## **Acknowledgements**
 
-- **Author** - Lucian Dinescu, Product Strategy, Analytics
-- **Contributors** -
-- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics
-- **Last Updated By/Date** - Lucian Dinescu, April 2021
+- **Author** - Lucian Dinescu (Oracle Analytics Product Strategy)
+- **Contributors** - 
+- **Reviewed by** - Shiva Oleti (Oracle Analytics Product Strategy), Sebastien Demanche (Oracle Cloud Center of Excellence)
+- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), October 2021

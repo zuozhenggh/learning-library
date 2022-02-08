@@ -5,7 +5,7 @@ A comparison report is generated for each job, group, and compare pair that is f
 
 The comparison report tells you how extensive an out-of-sync problem is. It also provides performance statistics and, optionally, column details. The comparison report can be viewed by any user role.
 
-*Estimated Lab Time*: 15 minutes
+*Estimated Lab Time*: 30 minutes
 
 ### Objectives
 In this lab, you will:
@@ -13,18 +13,17 @@ In this lab, you will:
 
 ### Prerequisites
 This lab assumes you have:
-
-* A Free Tier, Paid or LiveLabs Oracle Cloud account
-* SSH Private Key to access the host via SSH
-* You have completed:
-    * Lab: Generate SSH Keys (Free-tier and Paid Tenants only)
-    * Lab: Prepare Setup (Free-tier and Paid Tenants only)
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- SSH Private Key to access the host via SSH (*Free-tier* and *Paid Tenants* only)
+- You have completed:
+    * Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
+    * Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     * Lab: Environment Setup
     * Lab: Initialize Environment
-* The following are required to complete this lab:
-    * Oracle GoldenGate Veridata installed
-    * Groups and Compare Pairs have been created as described in Lab: Create Groups, Compare Pairs, Jobs, and Run Jobs
-    * Jobs have been created and executed as described in Lab: Create Groups, Compare Pairs, Jobs, and Run Jobs
+    * Lab: Create Datasource Connections
+    * Lab: Create Groups and Compare Pairs.
+    * Lab: Create and Execute Jobs
+
 
 ## **STEP 1:** View a Report
 
@@ -41,17 +40,22 @@ This lab assumes you have:
     * **Compare Pair Like**: Retrieves reports for compare pairs whose names contain a string that matches the one you enter.
     * **Show Report Names Like**: Retrieves reports whose file names contain a string that match the one you enter.
 4. Select the Report from **Existing Reports**.
-      ![](./images/2-reports-selection-view.png " ")
-5. Click **View** to display the **Report View**.
-      ![](./images/3-reports-view-download-option.png " ")
-6. Click **Download this Report** in case you want to download and save the report for a future reference.  
+
+5. Click the **Report Name** link to display the **Report**.
+    ![](./images/2-reports-selection-view.png " ")
+
+6. Click **Download This Report** in case you want to download and save the report for a future reference.  
+
+    ![](./images/3-reports-view-download-option.png " ")
+
+Congratulations! You have completed this workshop!
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
-* [Comparision Report](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-8E57CC45-33E3-4068-8B19-47E222F70BF1)
+* [Comparison Report](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/working-jobs.html#GUID-8E57CC45-33E3-4068-8B19-47E222F70BF1)
 
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji (PM), Sukin Varghese (QA), GoldenGate
-* **Last Updated By/Date** - Anuradha Chepuri, Oracle GoldenGate User Assistance, April 2021
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021

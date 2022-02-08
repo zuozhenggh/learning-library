@@ -21,7 +21,7 @@ This lab assumes you have completed the following labs:
 - Connect and Provision ADB
 - Create a Machine Learning Model
 
-## **Step 1:** Run the APEX Application
+## Task 1: Run the APEX Application
 
 <if type="freetier">
 1. Download the pre-built APEX application from [here](files/f100.sql).
@@ -104,7 +104,7 @@ This lab assumes you have completed the following labs:
     ![](images/suspicious_claim.png)
 
 
-## **Step 2:** Use the APEX application to make decisions
+## Task 2: Use the APEX application to make decisions
 
 In this step, the experienced Claims Adjuster will focus on the most suspicious claims using their expertise and knowledge.
 
@@ -136,7 +136,7 @@ In this step, the experienced Claims Adjuster will focus on the most suspicious 
 
 6. Keep this browser tab open, as we'll use again.
 
-## **Step 3:** Build a supervised learning classification model
+## Task 3: Build a supervised learning classification model
 
 Finally, we'll build a new model using this "supervised" data to improve the model.
 
@@ -158,17 +158,52 @@ Finally, we'll build a new model using this "supervised" data to improve the mod
 
     ![](images/super-1.png)
 
-4. As with the unsupervised model, we graph our data understanding, split the model, identify influential attributes, and build supervised classification models.
-
     ![](images/super-2.png)
 
     ![](images/super-3.png)
+
+4. As with the unsupervised model, we graph our data understanding using the Visualization capabilities with OML.
 
     ![](images/super-4.png)
 
     ![](images/super-5.png)
 
-## **Step 4:** Analyze key factors of the supervised model
+5. Data Transformation - Perform One-hot-Encoding explicitly(However, one-hot encoding occurs automatically if PREP_AUTO is set to ON for model building) 
+
+    ![](images/super-6.png)
+
+    ![](images/super-7.png)
+
+6. Data Transformation - Replace None and nan values with 0
+
+    ![](images/super-8.png)
+
+7. Model Building - Attribute Importance and Visualize the top attributes.
+
+    ![](images/super-9.png)
+
+8. Build Multiple Supervised Learning Algorithms - Random Forest, GLM, Support Vector Machines, Decision Tree. (Extra Task : Update the Model settings to understand and obtain an optimum model)
+
+    ![](images/super-10.png)
+
+    ![](images/super-11.png)
+
+9. Model Evaluation - Evaluate the different Models.
+
+    ![](images/super-12.png)
+
+    ![](images/super-13.png)
+
+    ![](images/super-14.png)
+
+10. Apply the Model - also referred to as scoring, inferencing, or making predictions, can be performed within SQL queries. We will use the results using Oracle Analytics Cloud.
+
+    ![](images/super-15.png)
+
+    ![](images/super-16.png)
+
+
+## Task 4: Analyze key factors of the supervised model
 
 1. On the browser tab with the APEX application, click **Key Factors** from the left to show graphs of the key factors used to predict fraud from this data.
 
@@ -178,6 +213,8 @@ This concludes this lab and this workshop.
 
 ## Acknowledgements
 
-- **Author** - Charlie Berger, Senior Director of Product Management, Machine Learning, Cognitive Analytics and AI
-- **Last Updated By/Date** - Tom McGinn, Product Manager, DB Product Management, March 2021
+- **Author** - Mark Hornick, Sr. Director, Data Science / Machine Learning PM
+
+- **Last Updated By/Date** - Siddesh Ujjni, Senior Cloud Engineer, October 2021
+
 

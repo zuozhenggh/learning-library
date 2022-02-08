@@ -22,7 +22,7 @@ _Estimated Lab Time_: 20 minutes
     * Lab 5: Gaining Insights with Visual Data Dialog
     * Lab 6: Monitoring and Ad-hoc scaling up ADW activity for optimal OAC experience
 
-## **STEP 1**: Start your first analysis
+## Task 1: Start your first analysis
 
 Lets Start from the previous project and clean up the report a bit.
 

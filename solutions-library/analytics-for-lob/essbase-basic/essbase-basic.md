@@ -21,7 +21,7 @@ This lab requires:
 
 *Note:* Whenever there is a “Name” being assigned to any Resource / Application / Cube or to any database in this lab please follow the naming convention as “Sample_<FIRST_NAME>” to avoid duplication.
 
-## **Step 1:** Creating a Sample Application in Essbase19c
+## Task 1: Creating a Sample Application in Essbase19c
 
 1.	Login to the Essbase 19c web interface  using the corresponding Essbase endpoints. i.e. https://ip/essbase/jet
 
@@ -47,7 +47,7 @@ This lab requires:
 
 This concludes the creation of sample application from the “Catalog” in the Essabase 19c User Interface.
 
-## **Step 2:** Analyzing Essbase data using Smart View Add-ins
+## Task 2: Analyzing Essbase data using Smart View Add-ins
 
 In this section, we will be doing the following -
 
@@ -81,7 +81,7 @@ Essbase.
 
 7. You will be presented with the option to create ad hoc grid. Click Ad hoc analysis.
 
-## **Step 3:** Create Ad Hoc Grids
+## Task 3: Create Ad Hoc Grids
 
   ![](./images/smartview.png "")
 
@@ -183,7 +183,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
     ![](./images/image14_27.png "")
 
 
-## **Step 4:** Install the Smart View Cube Designer Extension
+## Task 4: Install the Smart View Cube Designer Extension
 
 1. On the ‘Smart View’ ribbon, select ‘Options’, and then ‘Extensions’.
 
@@ -214,7 +214,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 10. Restart Microsoft Office applications.
 
 
-## **Step 5:** Creating a Cube from Tabular Data in Cube Designer
+## Task 5: Creating a Cube from Tabular Data in Cube Designer
 
 This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About [Using Tabular Data to Create Cubes](https://docs.oracle.com/en/cloud/paas/analytics-cloud/esugc/using-tabular-data-create-cubes.html)
 
@@ -259,7 +259,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 * In this exercise, you saw how a normal flat file Excel sheet can be converted into an Essbase application and a cube. You could get the application workbook DBX (Design by Example) file in a matter of seconds with the dynamic capabilities of Essbase powered by the Cube Designer add-ins.
 
-## **Step 6:** Overview of the WEB-User Interface
+## Task 6: Overview of the WEB-User Interface
 
 ### Applications:
 1. Applications tab gives us the information about the Essbase applications and the cubes built under them.

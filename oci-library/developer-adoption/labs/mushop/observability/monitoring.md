@@ -17,7 +17,7 @@ In this lab, you will:
 
 * Completed the **Deploy the MuShop App** lab and have the app running
 
-## **STEP 1**: Review OKE Metrics
+## Task 1: Review OKE Metrics
 
 1. *OKE Cluster Metrics:* Navigate to **Developer Services -> Kubernetes Clusters -> <Your_Cluster_Name>**
 
@@ -51,11 +51,11 @@ In this lab, you will:
 
     ![OKE Worker Node Metric](images/node-metric.png)
 
-## **STEP 2**: Grafana Monitoring
+## Task 2: Grafana Monitoring
 
 Good news! You already installed Prometheus/Grafana as part of the umbrella chart during setup. Now let's revisit the charts and connect to some Grafana dashboards!
 
-1. Go back to your Cloud Shel by clicking on the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
+1. Go back to your Cloud Shell by clicking on the Cloud Shell icon in the Console header. Note that the OCI CLI running in the Cloud Shell will execute commands against the region selected in the Console's Region selection menu when the Cloud Shell was started.
 
   ![CloudShell](images/cloudshell-1.png " ")
 
@@ -124,7 +124,7 @@ Good news! You already installed Prometheus/Grafana as part of the umbrella char
 
     *Note:* You can install other dashboards from the [community](https://grafana.com/grafana/dashboards?dataSource=prometheus) or create your own
 
-## **STEP 3**: Autoscaling
+## Task 3: Autoscaling
 
 Scaling out a Deployment will ensure new Pods are created and scheduled to Nodes with available resources. Scaling will increase the number of Pods to the new desired state. Kubernetes also supports autoscaling of Pods, but it is outside of the scope of this tutorial. Scaling to zero is also possible, and it will terminate all Pods of the specified Deployment.
 
@@ -184,7 +184,7 @@ This step showcases the [Horizontal Pod Autoscaling](https://kubernetes.io/docs/
 
     ````shell
     <copy>
-    kubectl create -f src/load/load-dep.yaml
+    kubectl create -f https://raw.githubusercontent.com/oracle-quickstart/oci-cloudnative/master/src/load/load-dep.yaml
     </copy>
     ````
 
@@ -221,11 +221,11 @@ This step showcases the [Horizontal Pod Autoscaling](https://kubernetes.io/docs/
 
     ````shell
     <copy>
-    kubectl delete -f src/load/load-dep.yaml
+    kubectl delete -f https://raw.githubusercontent.com/oracle-quickstart/oci-cloudnative/master/src/load/load-dep.yaml
     </copy>
     ````
 
-    Notice that after few minutes the preasure will be reduced and targets will be reduced to the lowest level. At this point the Kubernetes will start to **scale down** and will bring the number of replicas back to minimum.
+    Notice that after few minutes the pressure will be reduced and targets will be reduced to the lowest level. At this point the Kubernetes will start to **scale down** and will bring the number of replicas back to minimum.
 
 You may now [proceed to the next lab](#next).
 

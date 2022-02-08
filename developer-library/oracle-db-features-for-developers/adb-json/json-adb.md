@@ -25,7 +25,7 @@ Estimated Lab Time: 20 minutes
 * Lab: Provision ADB
 <if type="21c">* Lab: Setup</if>
 
-## **STEP 1**:  Register for Geonames
+## Task 1:  Register for Geonames
 
 We will be using data provided by Geonames for this lab.
 
@@ -40,7 +40,7 @@ We will be using data provided by Geonames for this lab.
 
     ![](./images/geoNames2.png " " )
 
-## **STEP 2**: Connect to ADB with SQL Developer Web
+## Task 2: Connect to ADB with SQL Developer Web
  
 1.  Login to Oracle Cloud if you are not already logged in
 2.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
@@ -59,7 +59,7 @@ We will be using data provided by Geonames for this lab.
     ![](./images/ClearSDW.png " " )
 
 
-## **STEP 3**: Generate JSON Data
+## Task 3: Generate JSON Data
 
 Let us generate some JSON data into the database by retrieving sample documents from a web service. Oracle Database supports *JavaScript Object Notation (JSON)* data natively with relational database features, including transactions, indexing, declarative querying, and views.
 
@@ -117,7 +117,7 @@ This lab covers the use of database languages and features to work with JSON dat
     ![Geonames Sample Output](./images/TestAccess.png " ")
 
 
-## **STEP 4**: Store JSON Documents In Oracle Database
+## Task 4: Store JSON Documents In Oracle Database
 
 1.  Create a new table to store all JSON documents inside the pluggable database.
 
@@ -173,7 +173,7 @@ This lab covers the use of database languages and features to work with JSON dat
     ![](./images/jsonserialize.png " ")
 
 
-## **STEP 5**:  Simple Dot Notation
+## Task 5:  Simple Dot Notation
 
 Oracle Database SQL engine allows you to use a **simple-dot-notation (SDN)** syntax on your JSON data. With other words, you can write SQL queries that contain something like *TABLE\_Alias.JSON\_Column.JSON\_Property.JSON\_Property* which comes quite handy as the region attribute is an attribute of the nested object location within the JSON document. Remember, JSDN syntax is case sensitive.
 
@@ -193,7 +193,7 @@ The return value for a dot-notation query is always a string (data type VARCHAR2
 
 2.  Go ahead and test other queries of your choosing and review the output.
 
-## **STEP 6**: Retrieve Sample Data
+## Task 6: Retrieve Sample Data
 
 The objective for our lab is to retrieve information about castles in Europe, and use them as JSON documents in different scenarios. Imagine you are starting the development of a new mobile application that provides recommendations for tourists.  For convenience and comfort, we can encapsulate the communication with a web service into a function. This way, we don’t have to write all the code required for a simple request, which in most of the cases is even more complicated than our simple example here, because they require a more complex authentication.
 

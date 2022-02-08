@@ -73,7 +73,7 @@ You will need the following in order to complete this workshop:
 
 In this section, you will prepare your workstation. In addition the following zip file provides a key-data.txt to store all information that you will need to refer back to. We recommend you use this file to store your variables while going through the lab.
 
-Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/RPRU26R15Fc4DN8Q7QzD_Z8B-vXE-OgSnlbJFvCw9GKWr6TgbyXsgyPaSQPcoRh3/n/orasenatdpltoci03/b/EBS-HOL-Files/o/ebs-hol.zip) link to download the files.
+Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/vrY7zeM7llOTsL5UyR9u5jQzp8JZzDiir7YdPDyc81zdG8psYU3bWM4LuwAemOUJ/n/orasenatdpltoci03/b/EBS-HOL-Files/o/ebs-hol.zip) link to download the files.
 
 Additionally there is a terraform configuration included if you would do this lab using resource manager. This lab uses marketplace stack, but if you decide to use resource manager the terraform file is available.
 
@@ -134,10 +134,13 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 
 **Virtual Cloud Network (VCN)** – A virtual version of a traditional network – including subnets, route tables, and gateways – on which your instances run. A cloud network resides within a single region, but can cross multiple availability domains.
 
+## More Documentation
+[Full documentation on Oracle EBS Cloud Manager](https://docs.oracle.com/cd/E26401_01/doc.122/f35809/toc.htm)
+
 ## Acknowledgements
 
 * **Author:** Quintin Hill, Cloud Engineering
 * **Contributors:** Santiago Bastidas, Product Management Director
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
+* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, May 2021
 
 

@@ -24,7 +24,7 @@ Provision an Autonomous Datawarehouse instance and an Analytics Cloud instance.
 
 In order to provision an analytics cloud instance as part of a **Resource Manager** stack, an IDCS access token is required. If you don't have the necessary privileges, then proceed to Method 2.
 
-### STEP 1: Obtain IDCS Access Token
+### Task 1: Obtain IDCS Access Token
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Federation**.
 
@@ -52,11 +52,11 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![](./images/1.7.png " ")
 
-**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OVQA-GCUjlO9VwEdWqHSre02rNj4K6wZ3VsacpzsXNg/n/oradbclouducm/b/bucket-20200907-1650/o/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
+**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4FXNyecLtd_AfukXGOiSM1tU8w1GBzVPqwHJngsr2kNOMPuMejDi4-9P-uFHg-vr/n/c4u04/b/data-management-library-files/o/dw-hr-analytics/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
 
 8. You may now close the Identity Cloud Service Console.
 
-### STEP 2: Provision the Stack
+### Task 2: Provision the Stack
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
@@ -126,7 +126,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 ## **METHOD 2:** Independently Provision the Resources
 
-### STEP 1: Provision the Autonomous Data Warehouse
+### Task 1: Provision the Autonomous Data Warehouse
 
 1. Login to the OCI console and go the navigation menu using the Menu button in the top left.
 
@@ -158,7 +158,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
 **Note:** Keep this page open or make note of how to get here, since you would need to visit this page for information needed to connect to the database.
 
-### STEP 2: Provision the Analytics Cloud Instance
+### Task 2: Provision the Analytics Cloud Instance
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
 	
@@ -179,7 +179,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 You may now proceed to Lab 2.
 
 ## Acknowledgements
- - **Author** - Yash Lamba, Cloud Native Solutions Architect, September 2020
+ - **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, September 2020
  - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra,
  - **Last Updated By/Date** - Kay Malcolm, October 2020
 

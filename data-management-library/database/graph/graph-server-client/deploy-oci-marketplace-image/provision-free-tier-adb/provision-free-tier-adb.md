@@ -22,7 +22,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
 * An [Oracle Cloud Account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a training account whose details were given to you by an Oracle instructor.
 
-## **STEP 1**: Choose ATP from the Services Menu
+## Task 1: Choose ATP from the Services Menu
 
 1. Login to the Oracle Cloud.
 
@@ -48,7 +48,7 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 
     ![](images/Region.png)
 
-## **STEP 2**: Creating the ADB instance
+## Task 2: Creating the ADB instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -79,10 +79,10 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
 6. Configure the database, select the **Always Free** option:
 
     - **Always Free** - For this lab, you can select this option to create an always free autonomous database, or not select this option and create a database using your paid subscription. An always free database comes with 1 CPU and 20 GB of storage. Selecting Always Free will suffice for this lab.
-    - **Choose database version** - Select a database version from the available versions.
-    - **OCPU Count** - Number of CPUs for your service. For this lab, choose an always free database, which comes with 1 CPU.
-    - **Storage (TB)** - Select your storage capacity in terabytes. For this lab, specify **1 TB** of storage. Or, if you choose an always free database, it comes with 20 GB of storage.
-    - **Auto scaling** - For this lab, keep auto scaling should be **disabled**.
+    - **Choose database version** - Select a database version from the available versions (`19c` or `21c`).
+    - **OCPU Count** - Number of CPUs.
+    - **Auto scaling** - For this lab, keep auto scaling **disabled**.
+    - **Storage (TB)** - Storage capacity in terabytes.
     - **New Database Preview** - If a checkbox is available to preview a new database version, do **not** select it.
 
     ![](images/atp-choose-cpu-storage.jpg)
@@ -100,11 +100,11 @@ Watch a video demonstration of provisioning an autonomous database in Autonomous
     ![](images/Picture100-26d.png)
 
 8. Choose network access:
-    - For this lab, accept the default, "Allow secure access from everywhere".
+    - For this lab, accept the default, "Secure access from everywhere".
     - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID.
 
-    ![](images/Picture100-26e.png)
+    ![](images/network-access.jpg)
 
 9. Choose a license type. For this lab, choose **License Included**. The two license types are:
 
@@ -129,5 +129,5 @@ Click [here](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-clo
 
 - **Author** - Nilay Panchal, ADB Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, Database Management, July 2020
+- **Last Updated By/Date** - Ryota Yamanaka, Product Manager, August 2021
 

@@ -22,7 +22,7 @@ We offer two types of Cloud Accounts:
 - Username
 - Password
 
-## **Step 1:**  Login to Oracle Cloud
+## Task 1:  Login to Oracle Cloud
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com) and enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
@@ -44,7 +44,6 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
-- **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
-- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Kay Malcolm
-- **Last Updated By** - Rene Fontcha, February 2021
-
+- **Created By/Date** - Tom McGinn, Database Product Management, March 2020
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
+- **Last Updated By** - Tom McGinn, June 2021

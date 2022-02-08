@@ -40,7 +40,7 @@ Note:
 
 ## Steps
 
-### **STEP 1: Connect to development client instance and verify OCI CLI version**
+### **Task 1: Connect to development client instance and verify OCI CLI version**
 
 To ensure OCI-CLI installed is the correct version needed for Exadata Cloud Service database, lets ssh into the dev client host and check version
     
@@ -52,7 +52,7 @@ oci --version</copy>
 
 
 
-### **STEP 2: Configure OCI CLI**
+### **Task 2: Configure OCI CLI**
 
 - This step describes the required configuration for the CLI and includes optional configurations that enable you to extend CLI functionality.
 
@@ -92,7 +92,7 @@ oci --version</copy>
     - **Enter a name for your key [oci_api_key]**: Press Return key
     - **Enter a passphrase for your private key (empty for no passphrase)**: Press Return key
     
-### **STEP 3: Add public key to Oracle Cloud Infrastructure**
+### **Task 3: Add public key to Oracle Cloud Infrastructure**
 
 - Now that you have a private / public key combo , you must add it to OCI Console:
 
@@ -127,7 +127,7 @@ Once you add the key run the below command to autocomplete OCI setup.
 
 ![](./images/oci-cli/OCISetupAutocomplete.png " ")
 
-### **STEP 4: Interacting with Oracle Exadata Cloud Service Database**
+### **Task 4: Interacting with Oracle Exadata Cloud Service Database**
 
 Now that you have setup OCI CLI, let us now look at examples of using Exadata Cloud Service Database. 
 

@@ -18,7 +18,7 @@ Estimated Lab Time: 30 minutes
 * Successfully complete Lab 1: Load Spatial Data
 
 
-## **STEP 1:** Create Project
+## Task 1: Create Project
 
 1. From the left-panel menu, navigate to the Projects page and click **Create Project**.
 ![Image alt text](images/create-proj-1.png)
@@ -44,7 +44,7 @@ Estimated Lab Time: 30 minutes
 7. From here you control the layer display and interactivity settings. You will experiment with these capabilities in a later section. For the moment, just update the layer's Radius (size), Color, and Opacity and then click the **Back** link.
  ![Image alt text](images/create-proj-6.png)
 
-## **STEP 2:** Add Datasets
+## Task 2: Add Datasets
 
 1. Next you add your 2 police Datasets to the Project.  Click the **+** icon at the top of the Data Elements panel, select **Add Dataset**, use shift-enter to select both police Datasets and click **OK**.
  ![Image alt text](images/create-proj-7.png)
@@ -67,7 +67,7 @@ Estimated Lab Time: 30 minutes
  Click the **Back** link at the top of the Layer Settings panel to return to the Layers List.
 
 
-## **STEP 3:** Add Visualizations
+## Task 3: Add Visualizations
 
 1. Spatial Studio allows you to display your Datasets as maps and tables. To add visualizations click on the **Visualizations** button on the left and then drag-and-drop **Table** to the edge of the exiting map view. You will see a grey bar appear when the table can be dropped in.
 
@@ -98,7 +98,7 @@ Estimated Lab Time: 30 minutes
 
  ![Image alt text](images/add-viz-7.png)  
 
-## **STEP 4:** Save Project 
+## Task 4: Save Project 
     
 1. Click the **Save** button at the top right to save the Project and supply a name, for example **LiveLabs Spatial Intro**.
  ![Image alt text](images/create-proj-12.png)

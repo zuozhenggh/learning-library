@@ -1,11 +1,11 @@
-# Configuring the Network Security and Firewall
+# Configure the Network Security and Firewall
 
 ## Introduction
 
 In this lab, we will configure the Virtual Cloud Network to allow incoming traffic on port 1180 (the default port of Node-RED).
 Furthermore, we will also configure the firewall on Oracle Autonomous Linux (OAL) to allow incoming traffic on the same port.
 
-Estimated Lab Time: 20 minutes
+Estimated time: 20 minutes
 
 ### Objectives
 * Configure Network Security List to allow incoming traffic on port 1880
@@ -16,13 +16,14 @@ Estimated Lab Time: 20 minutes
 * A compute instance running OAL
 * Connected via SSH to your compute instance
 
-## **Step 1**: Configure Network Security List
+## Task 1: Configure Network Security List
 
-1. Using the menu, click on **Virtual Cloud Network** and then the VCN you created for this practice.
+1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**. Select the VCN by clicking on its name
 
-   ![Click on the VCN](images/vcn1.png " ")
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
 
 2. Now click on **Security Lists** on the left navigation bar for the VCN.
+
    ![Click on Security Lists](images/vcn2.png " ")
 
 3. Click on the **Default Security List**.
@@ -38,7 +39,7 @@ Estimated Lab Time: 20 minutes
 
    ![Add Ingress Rule](images/addIngress1.png " ")
 
-## **Step 2**: Update the OAL Firewall service
+## Task 2: Update the OAL Firewall service
 
 Change to your SSH session. We will now configure the firewall service on OAL to allow incoming traffic on port 1180.
 
@@ -48,8 +49,8 @@ You can control the currently configured firewall rules for which incoming traff
 
 ![Firewall Public Zone Rule](images/firewall-public-rules.png " ")
 
-**Congratiulations!** You have finished this lab. Now lets start up Node-RED in [next lab](#next).
+**Congratiulations!** You have finished this lab. Now lets start up Node-RED in next lab.
 
 ## Acknowledgements
-* **Author** - Kevin Lazarz, Program Manager, TE Hub
-* **Last Updated By/Date** - Kevin Lazarz, Program Manager, TE Hub March 2021
+* **Author** - Kevin Lazarz, Product Manager
+* **Last Updated By/Date** - Kevin Lazarz, Product Manager, November 2021

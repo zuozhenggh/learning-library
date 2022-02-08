@@ -35,7 +35,7 @@ To run this lab, you need to:
 - Have deployed a WebLogic on OCI domain using the marketplace.
 - Have migrated the application database from the source environment to OCI.
 
-## **STEP 1:** Locate the Scripts and Application in the Source Environment
+## Task 1: Locate the Scripts and Application in the Source Environment
 
 ### Using the docker on-premises environment:
 
@@ -70,43 +70,19 @@ You should already be in the on-premises environment logged in as the `oracle` u
     </copy>
     ```
 
-## **STEP 2:** Copy the Files Over
+## Task 2: Copy the Files Over
 
 1. Package the files into a ZIP archive:
 
     ```bash
     <copy>
-    zip wlst.zip SimpleDB.ear SimpleHTML.ear check.sh deploy_app.py deply_datasource.py deplopy.sh gen_env.sh oradatasource.tpl
+    zip wlst.zip SimpleDB.ear SimpleHTML.ear check.sh deploy_app.py deploy_datasource.py deploy.sh gen_env.sh oradatasource.tpl
     </copy>
     ```
 
 2. Copy the files to the target admin server:
 
-    If you provisioned in a *Public Subnet*, set the variable:
-
-    ```bash
-    <copy>
-    export TARGET_WLS_SERVER=<Public IP of the WLS Admin server>
-    </copy>
-    ```
-
-    Then run:
-    
-    ```bash
-    <copy>
-    scp wlst.zip opc@${TARGET_WLS_SERVER}:~/
-    </copy>
-    ```
-
-    Get into the admin server with SSH:
-
-    ```bash
-    <copy>
-    ssh opc@${TARGET_WLS_SERVER}
-    </copy>
-    ```
-
-    If you provisioned in a *Private Subnet* set the variables:
+    Set the variables:
 
     ```bash
     <copy>
@@ -157,7 +133,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
     </copy>
     ```
 
-## **STEP 3:** Edit the `gen_env.sh` File
+## Task 3: Edit the `gen_env.sh` File
 
 The `gen_env.sh` files calls the metadata endpoint to populate some of required field automatically, but it doesn't know about the database and data source, which we will need to populate manually.
 
@@ -176,13 +152,13 @@ export DB_DOMAIN=
 
 export DB_SID=RIDERS
 export DB_PDB=PDB
-export DB_PWD=YpdCNR6nua4nahj8__
+export DB_PWD=****************
 export DB_BUNDLE=basic
 
 export DS_NAME=JDBCConnection
 export DS_JNDI_NAME=jdbc.JDBCConnectionDS
 export DS_USER=riders
-export DS_PASSWORD=Nge29v2rv#1YtSIS#
+export DS_PASSWORD=********************
 
 export ADMIN_USERNAME=weblogic
 export ADMIN_PASSWORD=welcome1
@@ -213,6 +189,7 @@ It pulls the WebLogic information from the metadata endpoint v1 with calls to `c
     ```
     DB_HOST=<Private IP of the DB node>
     DB_DOMAIN=nonjrfdbsubnet.nonjrfvcn.oraclevcn.com <This is the part of the connection string without the CDB name>
+    DB_PWD=<Your SYS password>
     ```
 
 2. Save the file by typing `CTRL+x` then `y`.
@@ -225,7 +202,7 @@ It pulls the WebLogic information from the metadata endpoint v1 with calls to `c
     </copy>
     ```
 
-## **STEP 4:** Run the Deployment Script
+## Task 4: Run the Deployment Script
 
   ```bash
   <copy>
@@ -235,7 +212,7 @@ It pulls the WebLogic information from the metadata endpoint v1 with calls to `c
 
 ### You're done!
 
-## **STEP 5:** Check the Application Deployed Properly
+## Task 5: Check the Application Deployed Properly
 
 1. Go to the WebLogic Admin console (at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console if you deployed in a *Public Subnet*), or through the tunnel as you did earlier.
 

@@ -12,7 +12,7 @@ An APEX Workspace is a logical domain where you define APEX applications. Each w
 ### Where to Run the Lab
 This lab is designed for a [a LiveLabs environment](http://bit.ly/golivelabs). If you haven't already done so, reserve an environment to run this workshop.
 
-## **STEP 1**: Create an APEX Workspace on an Autonomous Transaction Processing instance
+## Task 1: Create an APEX Workspace on an Autonomous Transaction Processing instance
 
 In this step, you will create an *Autonomous Transaction Processing* database and provision an Oracle APEX Workspace.
 
@@ -22,11 +22,17 @@ In this step, you will create an *Autonomous Transaction Processing* database an
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
+<if type="livelabs">
+2. Select your compartment from the List Scope on the left by entering all or part of your LiveLabs user id in the search text field. Then select the compartment assigned to you for your reservation.
+
+    ![](images/livelabs-compartment.png)
+</if>
+
 2. Click **Create Autonomous Database**.
 
     ![](images/click-create-autonomous-database.png " ")
 
-3. Select your compartment. *If you are using a LiveLabs environment, be sure to select the compartment provided by the environment*. Leave Always Free unchecked, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.  
+3. Select your compartment. *If you are using a LiveLabs environment, use the default compartment provided by the environment*. Leave Always Free unchecked, enter **```SecretPassw0rd```** for the ADMIN password, then click **Create Autonomous Database**.  
 
     ![](images/atp-settings-1.png " ")
     ![](images/atp-settings-2-notaf.png " ")
@@ -93,4 +99,3 @@ You may now *proceed to the next lab*.
  - **Author/Contributors** -  Salim Hlayel, Principle Product Manager
  - **Contributor** - Oracle LiveLabs Team (Arabella Yao, Product Manager Intern | Jaden McElvey, Technical Lead)
  - **Last Updated By/Date** - Tom McGinn, Database Cloud Services, Product Management, June 2020
-

@@ -5,7 +5,7 @@ In this lab, you will run the application.
 
 Estimated Lab Time: 5 minutes
 
-## **STEP**: Running the Application
+## Task: Running the Application
 
 If the provided terraform scripts are used to launch the application, NAMD with CUDA is installed in the /mnt/block/NAMD/NAMD_2.13_CUDA folder and two example models are available in /mnt/block/work/NAMD_models folder.
 

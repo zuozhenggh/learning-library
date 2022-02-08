@@ -14,7 +14,7 @@ Estimated Lab Time: 25 minutes
 
 - Credentials of the EBS Database/ADW and the ADW used for the repositories.
 
-## **STEP 1:** Set up the EBS Data Server
+## Task 1: Set up the EBS Data Server
 
 A data server stores information according to a specific technical logic which is declared into **physical schemas** attached to this data server. Every database server or group of flat files that is used in Data Integrator, must be declared as a data server. 
 
@@ -55,7 +55,7 @@ A data server stores information according to a specific technical logic which i
 
     ![](./images/4.13.png " ")
     
-## **STEP 2:** Set up the Destination Data Server
+## Task 2: Set up the Destination Data Server
 
 1.  On the **Topology** tab, under **Physical Architecture**, expand **Technologies** and scroll down till you find **Oracle**. Right click on it and then choose **New Data Server**.
 
@@ -81,7 +81,7 @@ A data server stores information according to a specific technical logic which i
 
     ![](./images/4.18.png " ")
     
-## **STEP 3:** Create Models for Source and Destination Schemas
+## Task 3: Create Models for Source and Destination Schemas
 
 We will now create models based on the logical schema we created. 
 
@@ -97,7 +97,7 @@ We will now create models based on the logical schema we created.
 
     ![](./images/4.21.png " ")
 
-## **STEP 4:** Setting up an Integration Project
+## Task 4: Setting up an Integration Project
 
 Now that you have configured your connections to your source and destination, we will create the mapping and move the data between the two systems. An integration project is composed of several components. These components include organizational objects, such as folders, and development objects such as mappings or variables.
 
@@ -109,7 +109,7 @@ Now that you have configured your connections to your source and destination, we
 
 **Note**: For more about ODI integration projects, click [here](https://docs.oracle.com/middleware/1212/odi/ODIDG/projects.htm#ODIDG311).
 
-## **STEP 5:** Design your Mapping and Run the Integration
+## Task 5: Design your Mapping and Run the Integration
 
 1. Go back to the **Projects** section and expand your project. Under **First Folder**, **right-click** on **Mappings** and create a new mapping with a name of your choosing. Make sure to deselect **Create Empty Dataset**.
 
@@ -148,7 +148,7 @@ Now that you have configured your connections to your source and destination, we
 You may now proceed to Lab 5.
 
 ## Acknowledgements
-- **Author** - Yash Lamba, Cloud Native Solutions Architect, January 2021
+- **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, January 2021
 - **Contributor** - Clarence Ondieki, Cloud Engineer
 - **Last Updated By/Date** - Yash Lamba, January 2021
 

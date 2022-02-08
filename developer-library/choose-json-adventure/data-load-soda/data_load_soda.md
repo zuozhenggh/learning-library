@@ -22,7 +22,7 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 - You have completed the user setups steps.
 
-## **STEP 1:** Creating a Collection
+## Task 1: Creating a Collection
 
 **If this is your first time accessing the JSON Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
@@ -119,7 +119,9 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
     Cache-Control: private,must-revalidate,max-age=0
     ```
 
-## **STEP 2:** Loading JSON Data into a Collection
+## Task 2: Loading JSON Data into a Collection
+
+In this section, you will start by building up a URL that will allow you to access the SODA for REST APIs. You will then stage a file and use the newly created URL via cURL to load the file into the collection.
 
 1. The SODA APIs will be used to load the records into the collection. We will build the cURL command up similar as we did in the previous step. We start with again the user/password combination. **REMEMBER to use your password in place of PASSWORD**
 
@@ -165,11 +167,14 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 
     and we can run this in the OCI cloud shell. 
     
+    **Please refer to step 1 for a reminder on how to access the OCI Cloud Shell**
+
     
 2. We first need to stage the airportDelays.json file. Issue the following command in the OCI Cloud Shell:
 
+
     ```
-    curl -o airportDelays.json https://objectstorage.us-ashburn-1.oraclecloud.com/p/rQEg_sXqFmCO8Swe5vVesi3-hmiCfLsY0Yc8mr_k0zdX2NWhhm34zrwhs0uvg8K-/n/c4u03/b/developer-library/o/airportDelays.json
+    curl -o airportDelays.json https://objectstorage.us-ashburn-1.oraclecloud.com/p/MLihHjg3-Qc6SaUk16-H7FyekF-4o0dQxvRsk1uGywCPX1iZxGdqaYkAs5vcNR3B/n/c4u04/b/developer-library/o/airportDelays.json
     ```
 
 3. Now that we have the file staged, we can run the full cURL command to load the JSON into our collection. Use the OCI Cloud Shell to do this:
@@ -206,7 +211,7 @@ Simple Oracle Document Access (SODA) is a set of NoSQL-style APIs that let you c
 
     indicating that all 4408 JSON documents have been loaded.
 
-## **STEP 3**: Working with JSON Data in a Document Store: QBEs
+## Task 3: Working with JSON Data in a Document Store: QBEs
 
 A filter specification is a pattern expressed in JSON. You use it to select, from a collection, the JSON documents whose content matches it, meaning that the condition expressed by the pattern evaluates to true for the content of (only) those documents.
 

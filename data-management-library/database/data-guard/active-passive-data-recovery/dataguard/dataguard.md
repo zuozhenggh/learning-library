@@ -22,7 +22,7 @@ In this lab, you will:
 * Access to an Oracle cloud account
 * Familiarity with Oracle database
 
-## **STEP 1:** Provisioning the Primary Database
+## Task 1: Provisioning the Primary Database
 
 1. Spin up a database using Oracle Cloud Infrastructure to serve as the "Primary" database
 
@@ -60,7 +60,7 @@ In this lab, you will:
 
   ![](./screenshots/dg-screenshots/1-9.png)
 
-## **STEP 2:** Creating a Data Guard Association
+## Task 2: Creating a Data Guard Association
 
 1. Now that our database is provisioned and available, let's click on the database system name.
 
@@ -80,7 +80,7 @@ In this lab, you will:
 
   ![](./screenshots/dg-screenshots/2-5.png)
 
-## **STEP 3:** Connecting to Databases & Testing Data Guard Build
+## Task 3: Connecting to Databases & Testing Data Guard Build
 
 1. After the standby database has provisioned, we will need the IP address of the instance to connect to.
 
@@ -141,7 +141,7 @@ In this lab, you will:
     ```
   ![](./screenshots/dg-screenshots/3-9.png)
 
-## **STEP 4:** Performing a Data Guard Switchover 
+## Task 4: Performing a Data Guard Switchover 
 
 Data Guard switchovers are performed for events that are planned. The primary and standby databases reverse roles so that the needed measures can be performed on the respective database.
 
@@ -175,7 +175,7 @@ Data Guard switchovers are performed for events that are planned. The primary an
 
   ![](./screenshots/dg-screenshots/4-7.png)
 
-## **STEP 5:** Performing a Data Guard Failover
+## Task 5: Performing a Data Guard Failover
 
 Data Guard failovers are used for unforeseen disasters or downtime that is not planned. Data Guard will failover to the standby database from the primary in the event of any disaster or unplanned downtime. 
 

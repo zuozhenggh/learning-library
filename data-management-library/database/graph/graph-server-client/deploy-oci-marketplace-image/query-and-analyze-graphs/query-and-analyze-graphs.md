@@ -1,4 +1,4 @@
-# Query and Analyze the Graphs
+# Query and Analyze the Graph
 
 ## Introduction
 
@@ -8,21 +8,21 @@ The combined dataset is then used to perform the following common graph query an
 
 The following ER diagram depicts the relationships between the datasets.
 
-![ER Diagram of tables](images/er-diagram.jpg)
+![](images/er-diagram.jpg)
 
 Estimated Lab Time: 10 minutes
 
 ### Objectives
 
-- Learn how to query and analyze the Customer 360 graph with the Graph Server and Client kit.
+- Learn how to query and analyze the graph
 
 ### Prerequisites
 
-- This lab assumes you have successfully completed all the previous Labs (Lab 1 through Lab 6) and have the Python client up and running.
+- The Python client up and running
 
-## **STEP 1:** Get the Graph on Memory
+## Task 1: Get the Graph on Memory
 
-Assuming that the `customer_360` graph is already loaded onto the memory in the previous Lab, the graph can be attached with this command. If the graph is published, you can also access the graph from the new sessions.
+Assuming that the **customer_360** graph is already loaded onto the memory in the previous Lab, the graph can be attached with this command. If the graph is published, you can also access the graph from the new sessions.
 
 ```
 <copy>
@@ -32,7 +32,7 @@ graph = session.get_graph("customer_360")
 
 Now we can query this graph and run some analyses on it.
 
-## **STEP 2:** Pattern Matching
+## Task 2: Pattern Matching
 
 PGQL Query is convenient for detecting specific patterns.
 
@@ -61,7 +61,7 @@ graph.query_pgql("""
 +---------------------------------------------------------------+
 ```
 
-## **STEP 3:** Detection of Cycles
+## Task 3: Detection of Cycles
 
 Next we use PGQL to find a series of transfers that start and end at the same account, such as A to B to A, or A to B to C to A.
 
@@ -87,6 +87,8 @@ graph.query_pgql("""
 | xxx-yyy-201 | 2018-10-05 | 200.0     | xxx-yyy-202 | 2018-10-10 | 300.0     |
 +-----------------------------------------------------------------------------+
 ```
+
+This result will be visualized in the next section:
 
 ![](images/detection.jpg)
 
@@ -114,16 +116,19 @@ graph.query_pgql("""
 +-----------------------------------------------------------------------------+
 ```
 
+This result will be visualized in the next section:
+
 ![](images/detection2.jpg)
 
-## **STEP 4:** Influential Accounts
+## Task 4: Influential Accounts
+
+Let's find which accounts are influential in the network. There are various algorithms to score the importance and centrality of the vertices. We'll use the built-in PageRank algorithm as an example.
 
 1. Filter customers from the graph. (cf. [Filter Expressions](https://docs.oracle.com/cd/E56133_01/latest/prog-guides/filter.html))
 
     ```
     <copy>
-    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'"))
-    graph2
+    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'")); graph2
     </copy>
 
     PgxGraph(name: sub-graph_16, v: 6, e: 8, directed: True, memory(Mb): 0)
@@ -162,7 +167,7 @@ graph.query_pgql("""
     +-------------------------------------+
     ```
 
-## **STEP 5:** Community Detection
+## Task 5: Community Detection
 
 Let's find which subsets of accounts form communities. That is, there are more transfers among accounts in the same subset than there are between those and accounts in another subset. We'll use the built-in weakly / strongly connected components algorithm.
 
@@ -172,8 +177,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
 
     ```
     <copy>
-    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'"))
-    graph2
+    graph2 = graph.filter(pgx.EdgeFilter("edge.label()='TRANSFER'")); graph2
     </copy>
 
     PgxGraph(name: sub-graph_16, v: 6, e: 8, directed: True, memory(Mb): 0)
@@ -189,7 +193,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     PgxPartition(graph: sub-graph_16, components: 1)
     ```
 
-    The partition value is stored in a property named `WCC`.
+    The component value is stored in a property named **wcc**.
 
     ```
     <copy>
@@ -209,11 +213,9 @@ Let's find which subsets of accounts form communities. That is, there are more t
     +----------------------+
     ```
 
-    In this case, all six accounts form one partition by the WCC algorithm.
+    In this case, all six accounts form one component by the WCC algorithm.
 
-3. Run a strongly connected components algorithm, SCC Kosaraju, instead.
-
-    [Strongly Connected Component](https://docs.oracle.com/cd/E56133_01/latest/reference//analytics/algorithms/scc.html) (SCC) algorithm detects three partitions.
+3. Run a [Strongly Connected Component](https://docs.oracle.com/cd/E56133_01/latest/reference//analytics/algorithms/scc.html) algorithm, SCC Kosaraju, instead. It detects three components.
 
     ```
     <copy>
@@ -223,7 +225,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     PgxPartition(graph: sub-graph_16, components: 3)
     ```
 
-4. List partitions and number of vertices in each
+4. List components and number of vertices in each.
 
     ```
     <copy>
@@ -245,10 +247,7 @@ Let's find which subsets of accounts form communities. That is, there are more t
     +----------------------+
     ```
 
-5. List the other accounts in the same conneted component (partition) as John's account.
-
-    The partition (or component) id is added as a property named `SCC_KOSARAJU` for use in PGQL queries.
-    *John's account_no is xxx-yyy-201 as shown in Lab 6.*
+5. List the other accounts in the same connected component as John's account (= **xxx-yyy-201**). The component ID is added as a property named **SCC_KOSARAJ** for use in PGQL queries.
 
     ```
     <copy>
@@ -269,18 +268,17 @@ Let's find which subsets of accounts form communities. That is, there are more t
     | xxx-yyy-202 |
     | xxx-yyy-203 |
     | xxx-yyy-204 |
-    +-------------+]
+    +-------------+
     ```
 
     ![](images/community.jpg)
 
-    In this case, account `xxx-yyy-201` (John's account), `xxx-yyy-202`, `xxx-yyy-203`, and `xxx-yyy-204` form one partition, account `xxx-zzz-211` is a parition, and account `xxx-zzz-212` is a partition, by the SCC Kosaraju algorithm.
+    In this case, account **xxx-yyy-201** (John's account), **xxx-yyy-202**, **xxx-yyy-203**, and **xxx-yyy-204** form one partition, account **xxx-zzz-211** is a parition, and account **xxx-zzz-212** is a partition, by the SCC Kosaraju algorithm.
 
 You may now proceed to the next Lab.
 
 ## Acknowledgements ##
 
-* **Author** -  Jayant Sharma, Product Manager, Spatial and Graph
-* **Contributors** - Arabella Yao, Product Manager Intern, Database Management, and Jenny Tsai.
-* **Last Updated By/Date** - Ryota Yamanaka, Febrary 2021
-
+* **Author** - Jayant Sharma
+* **Contributors** - Arabella Yao, Jenny Tsai
+* **Last Updated By/Date** - Ryota Yamanaka, January 2022

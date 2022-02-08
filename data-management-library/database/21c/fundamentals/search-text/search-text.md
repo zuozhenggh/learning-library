@@ -17,7 +17,7 @@ In this lab, you will:
 * Lab: Create a DBCS VM Database
 * Lab: 21c Setup
 
-## **STEP 1:**  Enable the In-Memory column store in the CDB and set up the Oracle Text user in the PDB
+## Task 1:  Enable the In-Memory column store in the CDB and set up the Oracle Text user in the PDB
 
 1. Run the `setup_Text21c.sh` script.
 
@@ -81,7 +81,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 2:** Create a table, a `CONTEXT` index, and a `JSON` search index
+## Task 2: Create a table, a `CONTEXT` index, and a `JSON` search index
 
 1.  Connect in `PDB21` as `TEXTUSER`, create a table and insert rows.
 
@@ -159,7 +159,7 @@ In this lab, you will:
     SQL>`</pre
     ```
 
-## **STEP 3:** Populate the table and its text columns into the In-Memory Column Store
+## Task 3: Populate the table and its text columns into the In-Memory Column Store
 
 1. Enable IM Full Text Columns on the table.
 
@@ -238,7 +238,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 4:** Query the data from the In-Memory Column Store
+## Task 4: Query the data from the In-Memory Column Store
 
 1. Before dropping the indexes, observe whether the queries use the indexes or the data from the In-Memory column store.
 

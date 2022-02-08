@@ -19,7 +19,7 @@ Estimated Lab Time: 45 minutes.
 
 *Note:*  Whenever there is a “Name” being assigned for any resource creation in this lab please follow the naming convention as “<Resource_Name>_<FIRST_NAME>” to avoid duplication.
 
-## **Step 1:** Essbase 19c - Basic Topology
+## Task 1: Essbase 19c - Basic Topology
 
 ![](./images/image13_1.png "")
 
@@ -35,7 +35,7 @@ The Essbase19c instance procured will manage its users using the IDCS of Oracle 
 
 Essbase backups gets stored in the Object storage of the OCI and the connectivity to this is established by the service gateway.
 
-## **Step 2:** Deployment of Essbase 19c - Prerequisites
+## Task 2: Deployment of Essbase 19c - Prerequisites
 
 1. Go to cloud.oracle.com, click on the Person Icon.
 
@@ -156,7 +156,7 @@ Essbase backups gets stored in the Object storage of the OCI and the connectivit
 
     ![](./images/image13_24.png "")
 
-## **Step 3:** Setup Policies for Essbase19c Stack
+## Task 3: Setup Policies for Essbase19c Stack
 
 ### To Create Policies:
 
@@ -190,7 +190,7 @@ Essbase backups gets stored in the Object storage of the OCI and the connectivit
 
     ![](./images/image13update2.png "")
 
-## **Step 4:** Encrypt Values Using OCI Virtual Vault
+## Task 4: Encrypt Values Using OCI Virtual Vault
 
 Key Management (KMS) enables you to manage sensitive information when creating a server domain.
 
@@ -271,7 +271,7 @@ Keys need to be encrypted for the following fields: Essbase Administrator Passwo
 
     Reference : (Click here)[https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/encrypt-values-using-kms.html]
 
-## **Step 5:** Provision Essbase using Marketplace Listing
+## Task 5: Provision Essbase using Marketplace Listing
 
 As the Oracle Cloud Infrastructure administrator, you use Oracle Cloud Infrastructure to set up Essbase. Oracle Cloud Marketplace uses Oracle Resource Manager to provision the network, compute instances, Autonomous Transaction Processing database for storing Essbase metadata, and Load Balancer.
 
@@ -364,7 +364,7 @@ As the Oracle Cloud Infrastructure administrator, you use Oracle Cloud Infrastru
 
 31. You can modify the created resources and configure variables later. Logs are created that can be forwarded to Oracle Support, if necessary for troubleshooting. After deployment, you're ready to assign users to roles and permissions in the Essbase web interface. You can also perform additional network and security configuration.
 
-## **Step 6:** Post-Deployment Tasks
+## Task 6: Post-Deployment Tasks
 
 1. The list of outputs generated can be found from OCI-> ResourceManger-> jobs under EssbaseSalesPlay compartment.
 

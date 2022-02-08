@@ -22,7 +22,7 @@ Estimated lab time: 35 minutes
 
 6. [Connecting to a compute instance](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm)
 
-## Step 1: Create your VCN and Subnets
+## Task 1: Create your VCN and Subnets
 
 Set up a VCN to connect your Linux instance to the internet. You will configure all the components needed to create your virtual network.
 
@@ -58,7 +58,7 @@ This will create a VCN with the following components:
 
 6. After the workflow completes, click on **View Virtual Cloud Networks** and you will be directed to the details page of the VCN you created.
 
-## Step 2: Create reserved Public IP
+## Task 2: Create reserved Public IP
 
 1. Open the OCI navigation menu. Under Core Infrastructure, go to Networking and click **IP Management**.
 
@@ -75,7 +75,7 @@ This will create a VCN with the following components:
 4. You will see a list of the reseved IPs.
 
 
-## Step 3: Assigning the reserved IP to a new instance
+## Task 3: Assigning the reserved IP to a new instance
 
 Create an Oracle Linux instance and assign the IP after its creation.
 
@@ -140,7 +140,7 @@ Create an Oracle Linux instance and assign the IP after its creation.
 16. Click on the **Update** button. You will be taken back to the IP Adresses screen and you can see the Public Value populated with reserved IP value.
 
 
-## Step 4: Unassign Reserved Public IP
+## Task 4: Unassign Reserved Public IP
 
 1. Open the navigation menu. Under Core Infrastructure, select go to **Compute** then **Instances**.
 
@@ -160,7 +160,7 @@ Create an Oracle Linux instance and assign the IP after its creation.
 8. Click on the **Update** button. You will be taken back to the IP Adresses screen and you can see the Public Value populated with *(Not Assigned)* value.
 
 
-## Step 5: Delete the resources
+## Task 5: Delete the resources
 
 1. Open the navigation menu. Under Core Infrastructure, select **Instaces**. At the far right, click in the three dots ![](images/3dots.png " ") of the instance that will be deleted and select **Terminate**. Cehck the box **Permanently delete the attached boot volume** and click on **Terminate Instance**.
 

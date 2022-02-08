@@ -1,38 +1,40 @@
-# Manage Blockchain Tables (lab in Development)
+# Manage Blockchain Tables and Generate Certificate GUID
 
 ## Introduction
 
-Blockchain tables are append-only tables in which only insert operations are allowed. Deleting rows is either prohibited or restricted based on time. Rows in a blockchain table are made tamper-resistant by special sequencing & chaining algorithms. Users can verify that rows have not been tampered. A hash value that is part of the row metadata is used to chain and validate rows.
+Blockchain tables are insert-only tables that organize rows into a number of chains. Updating existing rows is not allowed. Deleting rows is either prohibited or restricted based on retention time. Rows in a blockchain table are made tamper-resistant by chaining each inserted row to the previous row in the chain using a cryptographic hash. Users can verify that rows have not been deleted or tampered. Blockchain tables address data protection challenges faced by enterprises and governments by focusing on protecting data from criminals, hackers, and fraud. Blockchain tables provide enhanced data security by preventing unauthorized modification or deletion of data that records important actions, assets, entities, and documents. Unauthorized modification of important records can result in loss of assets, loss of business, and possible legal issues. Use blockchain tables when immutability of data is critical for your applications and you need to maintain a tamper-resistant ledger of current and historical transactions.
 
-Blockchain tables enable you to implement a centralized ledger model where all participants in the blockchain network have access to the same tamper-resistant ledger.
+For enhanced fraud protection, an optional user signature can be added to a row. If you sign a blockchain table row, a digital certificate must be used. While verifying the chains in a blockchain table, the database needs the certificate to verify the row signature.
 
-A centralized ledger model reduces administrative overheads of setting a up a decentralized ledger network, leads to a relatively lower latency compared to decentralized ledgers, enhances developer productivity, reduces the time to market, and leads to significant savings for the organization. Database users can continue to use the same tools and practices that they would use for other database application development.
+Blockchain tables can be used to implement blockchain applications where the participants are different database users who trust Oracle Database to maintain a verifiable, tamper-resistant blockchain of transactions. All participants must have privileges to insert data into the blockchain table. The contents of the blockchain are defined and managed by the application. By leveraging a trusted provider with verifiable crypto-secure data management practices, such applications can avoid the distributed consensus requirements. This provides most of the protection of the distributed peer-to-peer blockchains, but with much higher throughput and lower transaction latency compared to peer-to-peer blockchains using distributed consensus. Blockchain tables can be used along with (regular) tables in transactions and queries. Database users can continue to use the same tools and practices that they would use for other database application development. Please see Oracle Database 19c or 21c documentation for more information about Blockchain Tables.
 
-This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table and manage the blockchain table.
+This lab walks you through the steps to create a Blockchain table, insert data, manage the rows in the table, manage the blockchain table and verify the rows in a blockchain table without signature.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 15 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:ZEyDWdQVMhQ)
 
 ### Objectives
 
 In this lab, you will:
 
-* Create the Blockchain table and insert rows
+* Create the Blockchain table and insert rows into the blockchain table
+* View Blockchain tables and its internal columns
 * Manage blockchain tables and rows in a blockchain table
-* Create a certificate directory and add your certificate
-* Sign a row in the blockchain table
-* Check the validity of rows in the blockchain table with and without signature
+* Verify the rows in a blockchain table without signature
 
 ### Prerequisites
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
-* Provisioned an Oracle Database 21c Instance
-* Have successfully completed the Setup lab
+* Have successfully completed the previous labs
 
-## **STEP 1:** Create a blockchain table
+## Task 1: Create a Blockchain Table
 
-1. The `CREATE BLOCKCHAIN TABLE` statement requires additional attributes. The `NO DROP`, `NO DELETE`, `HASHING USING`, and `VERSION` clauses are mandatory.
+1. The `CREATE BLOCKCHAIN TABLE` statement requires additional attributes. The `NO DROP`, `NO DELETE`, `HASHING USING`, and `VERSION` clauses are mandatory. “NO DELETE LOCKED” means that no rows can be deleted and LOCKED means that this setting can not be changed using ALTER TABLE later.
 
-    Create a Blockchain table named `bank_ledger` that will maintain a tamper-resistant ledger of current and historical transactions using the SHA2_512 hashing algorithm. Rows of the `bank_ledger` blockchain table can never be deleted. Moreover the blockchain table can be dropped only after 16 days of inactivity.
+    Copy and paste the query in SQL Developer Web worksheet and run the query to create a Blockchain table named `bank_ledger` that will maintain a tamper-resistant ledger of current and historical transactions using the SHA2_512 hashing algorithm. Rows of the `bank_ledger` blockchain table can never be deleted. Moreover the blockchain table can be dropped only after 16 days of inactivity.
 
 	```
 	<copy>
@@ -43,9 +45,13 @@ In this lab, you will:
 	</copy>
 	```
 
-	![](./images/table-created.png " ")
+	![](./images/task1-1.png " ")
 
-2. Describe the `bank_ledger` blockchain table to view the columns. Notice that the description displays only the visible columns.
+2. Click on the Refresh button in the Navigator tab to view that the table is created.
+
+	![](./images/task1-2.png " ")
+
+3. Run the query to describe the `bank_ledger` blockchain table to view the columns. Note that the description displays only the visible columns.
 
 	```
 	<copy>
@@ -53,27 +59,27 @@ In this lab, you will:
 	</copy>
 	```
 
-	![](./images/describe.png " ")
+	![](./images/task1-3.png " ")
 
-## **STEP 2:** Insert rows into the blockchain table
+## Task 2: Insert Rows into the Blockchain Table
 
-1. Insert records into the `bank_ledger` blockchain table.
+1. Copy and paste the below code snippet in the worksheet and run them to insert records into the `bank_ledger` blockchain table.
 
 	```
 	<copy>
-	INSERT INTO bank_ledger VALUES (999,to_date(sysdate,'dd-mm-yyyy'),100);
-	INSERT INTO bank_ledger VALUES (999,to_date(sysdate,'dd-mm-yyyy'),200);
-	INSERT INTO bank_ledger VALUES (999,to_date(sysdate,'dd-mm-yyyy'),500);
-	INSERT INTO bank_ledger VALUES (999,to_date(sysdate,'dd-mm-yyyy'),-200);
-	INSERT INTO bank_ledger VALUES (888,to_date(sysdate,'dd-mm-yyyy'),100);
-	INSERT INTO bank_ledger VALUES (888,to_date(sysdate,'dd-mm-yyyy'),200);
-	INSERT INTO bank_ledger VALUES (888,to_date(sysdate,'dd-mm-yyyy'),500);
-	INSERT INTO bank_ledger VALUES (888,to_date(sysdate,'dd-mm-yyyy'),-200);
+	INSERT INTO bank_ledger VALUES ('999',to_date(sysdate,'dd-mm-yyyy'),100);
+	INSERT INTO bank_ledger VALUES ('999',to_date(sysdate,'dd-mm-yyyy'),200);
+	INSERT INTO bank_ledger VALUES ('999',to_date(sysdate,'dd-mm-yyyy'),500);
+	INSERT INTO bank_ledger VALUES ('999',to_date(sysdate,'dd-mm-yyyy'),-200);
+	INSERT INTO bank_ledger VALUES ('888',to_date(sysdate,'dd-mm-yyyy'),100);
+	INSERT INTO bank_ledger VALUES ('888',to_date(sysdate,'dd-mm-yyyy'),200);
+	INSERT INTO bank_ledger VALUES ('888',to_date(sysdate,'dd-mm-yyyy'),500);
+	INSERT INTO bank_ledger VALUES ('888',to_date(sysdate,'dd-mm-yyyy'),-200);
 	commit;
 	</copy>
 	```
 
-	![](./images/insert.png " ")
+	![](./images/task2-1.png " ")
 
 2. Query the `bank_ledger` blockchain table to show the records.
 
@@ -83,9 +89,9 @@ In this lab, you will:
 	</copy>
 	```
 
-	![](./images/select-all.png " ")
+	![](./images/task2-2.png " ")
 
-## **STEP 3:** View Blockchain tables and its internal columns
+## Task 3: View Blockchain Tables and Its Internal Columns
 
 1. Run the command to view all the blockchain tables.
 
@@ -95,16 +101,9 @@ In this lab, you will:
 	</copy>
 	```
 
-2. Verify the attributes set for the blockchain table in the appropriate data dictionary view.
+	![](./images/task3-1.png " ")
 
-	```
-	<copy>
-	SELECT table_name, row_retention, row_retention_locked, table_inactivity_retention, hash_algorithm 
-	FROM user_blockchain_tables;
-	</copy>
-    ```
-
-3. Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
+2. Use the `USER_TAB_COLS` view to display all internal column names used to store internal information like the users number, the users signature.
 
 	```
 	<copy>
@@ -114,7 +113,11 @@ In this lab, you will:
 	</copy>
 	```
 
-4. Query the `bank_ledger` blockchain table to display all the values in the blockchain table including values of internal columns.
+	![](./images/task3-2.png " ")
+
+	The additional columns ending with $ are Oracle managed to maintain the chained sequence, cryptographic hash values, and support user signing. You can include these columns in your queries by referencing them explicitly.
+
+3. Query the `bank_ledger` blockchain table to display all the values in the blockchain table including values of internal columns.
 
 	```
 	<copy>
@@ -126,9 +129,11 @@ In this lab, you will:
 	</copy>
 	```
 
-## **STEP 4:** Manage blockchain tables
+	![](./images/task3-3.png " ")
 
-When you try to manage the rows using update, delete, truncate you get the error `operation not allowed on the blockchain table` if the rows are not outside the retention period.
+## Task 4: Manage Rows in a Blockchain Table
+
+When you try to manage the rows using update, delete, truncate you get the error `operation not allowed on the blockchain table` if the rows are within the retention period.
 
 1. Update a record in the `bank_ledger` blockchain table by setting deposit\_amount=0.
 
@@ -138,7 +143,7 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/update.png " ")
+	![](./images/task4-1.png " ")
 
 2. Delete a record in the `bank_ledger` blockchain table.
 
@@ -148,7 +153,8 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/delete.png " ")
+	![](./images/task4-2.png " ")
+
 
 3. Truncating the table `bank_ledger`.
 
@@ -158,10 +164,9 @@ When you try to manage the rows using update, delete, truncate you get the error
 	</copy>
 	```
 
-	![](./images/truncate.png " ")
+	![](./images/task4-3.png " ")
 
-
-## **STEP 5:** Manage rows in a blockchain table
+## Task 5: Manage Blockchain Tables
 
 Similar to managing rows within the retention period, managing the blockchain table using alter, drop will throw an error.
 
@@ -173,9 +178,10 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/drop.png " ")
+	![](./images/task5-1.png " ")
 
-2. Alter the table `bank_ledger` to not delete the rows until 20 days after insert.
+
+2. Alter the table `bank_ledger` to not delete the rows until 20 days after insert. Copy and paste the below query in the worksheet, highlight the query and then execute the query.
 
 	```
 	<copy>
@@ -183,9 +189,9 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/alter-1.png " ")
+	![](./images/task5-2.png " ")
 
-3. Create another table `bank_ledger_2`.
+3. Create another table `bank_ledger_2`. Click the refresh button to view the new table.
 
 	```
 	<copy>
@@ -196,9 +202,11 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/create-new-table.png " ")
+	![](./images/task5-3.png " ")
 
-4. Alter the table `bank_ledger_2` by specifying that the rows cannot be deleted until 20 days after they were inserted.
+4. ALTER can be used to increase the retention period but not to reduce it. For example, Alter with NO DELETE UNTIL 10 Days After Insert will fail with the error message - “ORA-05732: retention value cannot be lowered”.
+
+	Alter the table `bank_ledger_2` by specifying that the rows cannot be deleted until 20 days after they were inserted. Copy and paste the below query in the worksheet, highlight the query and then execute the query.
 
 	```
 	<copy>
@@ -206,7 +214,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/alter-new-table.png " ")
+	![](./images/task5-4.png " ")
 
 5. Run the command to view all the blockchain tables.
 
@@ -216,9 +224,15 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-## **STEP 6:** Verify rows without signature
+	![](./images/task5-5.png " ")
+
+## Task 6: Verify Rows Without Signature
+
+You can verify the integrity of blockchain tables by verifying that the chain integrity has not been compromised. Oracle provides DBMS_BLOCKCHAIN\_TABLE.VERIFY\_ROWS procedure, which verifies all rows on all applicable chains for integrity of HASH column value and optionally the SIGNATURE column value for rows created in the range of low\_timestamp to high\_timestamp. An appropriate exception is thrown if the integrity of chains is compromised.
 
 1. Verify the rows in blockchain table using DBMS\_BLOCKCHAIN\_TABLE.VERIFY_ROWS.
+
+	> *Note: It is expected that every blockchain table will have different instance Id values. Please do not be concerned if you do not see the same values in the output as in the screenshot. If the PL/SQL procedure is completed successfully, the blockchain table is verified successfully.*
 
 	```
 	<copy>
@@ -227,7 +241,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 		instance_id NUMBER;
 	BEGIN
 		FOR instance_id IN 1 .. 4 LOOP
-			DBMS_BLOCKCHAIN_TABLE.VERIFY_ROWS('ADMIN','BANK_LEDGER',
+			DBMS_BLOCKCHAIN_TABLE.VERIFY_ROWS('DEMOUSER','BANK_LEDGER',
 	NULL, NULL, instance_id, NULL, verify_rows);
 		DBMS_OUTPUT.PUT_LINE('Number of rows verified in instance Id '||
 	instance_id || ' = '|| verify_rows);
@@ -237,20 +251,16 @@ Similar to managing rows within the retention period, managing the blockchain ta
 	</copy>
 	```
 
-	![](./images/verify.png " ")
-
-2. DBA view of blockchain tables.
-
-	```
-	<copy>
-	select * from dba_blockchain_tables;
-	</copy>
-	```
+	![](./images/task6-1.png " ")
 
 You may now [proceed to the next lab](#next).
+
+## Learn more
+
+* For more information on validating a Blockchain Table and other Blockchain Table procedures, please see [DBMS\_BLOCKCHAIN\_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/21/arpls/dbms_blockchain_table.html) documentation.
 
 ## Acknowledgements
 
 * **Author** - Rayes Huang, Mark Rakhmilevich, Anoosha Pilli
-* **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-* **Last Updated By/Date** - Anoosha Pilli, April 2021
+* **Contributors** - Anoosha Pilli, Brianna Ambler, Product Manager, Oracle Database
+* **Last Updated By/Date** - Anoosha Pilli, September 2021

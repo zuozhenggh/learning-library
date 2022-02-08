@@ -17,7 +17,7 @@ Estimated Lab Time: 30-45 minutes
 - The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 - This lab assumes you have successfully provisioned Oracle Autonomous database an connected to ADB with SQL Developer web.
 
-## **STEP 1**: Create a user for Application Development
+## Task 1: Create a user for Application Development
 
 1. First, we want to create a database schema for our tables and data. We do this by creating a database user. To create a database user, we start by clicking the Database Actions Menu in the upper left of the page, then clicking Database Users in the Administration List. It is not good practice to use a SYS or SYSTEM user to create an application's tables, and neither is it good practice to use the ADMIN account to create applications.
 
@@ -55,7 +55,7 @@ Estimated Lab Time: 30-45 minutes
     ![SQL Output indicates User Altered](./images/sdw-6.png)
 
 
-## **STEP 2**: Load data into the Database
+## Task 2: Load data into the Database
 
 We need to load some data into the database so that we can create some REST services upon those tables and data. To do this, we need to login as our newly created user. We have two ways to switch users.
 
@@ -119,7 +119,7 @@ We need to load some data into the database so that we can create some REST serv
 
     **(right-click and download the file with the following link)**
 
-    [May 2018 Earthquakes](https://objectstorage.us-ashburn-1.oraclecloud.com/p/tKIZjBqerdxe-PkpUv5cELZaMRcUIYu1LVe2EqPez8A5of0XTih2eLdVGGV0t1on/n/c4u03/b/developer-library/o/may2018.csv)
+    [May 2018 Earthquakes](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CxG8xSfFrN_s9w71cw1cX-T9IMtlZtujwTNYwp9nWSjPBMR5TIZgPN-S3M4ubCLN/n/c4u04/b/developer-library/o/may2018.csv)
 
 6. Once on your desktop, drag the file into the Upload Data into New Table model. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
@@ -183,7 +183,7 @@ We need to load some data into the database so that we can create some REST serv
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
-## **STEP 3:** Auto-REST Enable a Table
+## Task 3: Auto-REST Enable a Table
 
 1. REST enabling a table couldn't be easier. To do this, find the table we just created named MAY2018 in the navigator on the left of the SQL Worksheet.
 
@@ -235,7 +235,7 @@ We need to load some data into the database so that we can create some REST serv
 
     The cURL for the table MAY2018 side out also will help you construct REST endpoints for update, delete and insert actions.
 
-## **STEP 4**: Securing the REST Endpoint
+## Task 4: Securing the REST Endpoint
 
 **If this is your first time accessing the REST Workshop, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 

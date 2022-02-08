@@ -30,7 +30,7 @@ Estimated Lab Time: 15 minutes
 ### Objectives 
 - Create an Autonomous Database with the latest features of Oracle Databases
 
-## **STEP 1**: Create a new Autonomous Data Warehouse Database
+## Task 1: Create a new Autonomous Data Warehouse Database
 
 1. Click on the hamburger **MENU** link at the upper left corner of the page.
 
@@ -84,7 +84,7 @@ Estimated Lab Time: 15 minutes
 
 3. Under **Create administration credentials** section:
 
-    > **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW. A suggested password for this lab is ADWwelcome-1234.
+    > **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW.
     >
     > **Reminder:** Note your password in a safe location as this cannot be easily reset.
 
@@ -134,7 +134,7 @@ You have just created an Autonomous Database with the latest features of Oracle 
 
 ## **Acknowledgements**
 
-- **Author** - Priscila Iruela - Database Business Development | Juan Antonio Martin Pedro - Analytics Business Development
+- **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
 - **Last Updated By/Date** - Kamryn Vinson, October 2020
 

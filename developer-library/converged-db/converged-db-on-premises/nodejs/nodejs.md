@@ -22,32 +22,29 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**:  Verify Application
+## Task 1:  Verify Application
 
-1. Open up a web browser and visit the Application URL indicated in your terminal.    
-
-    ```
-    URL: <copy>http://[your instance public-ip address]:3000/</copy>
-    ```
-
-3. Open up a web browser and visit the Application API indicated in your terminal.   
+1. On the web browser window on the right preloaded with two application tabs navigate to verify.    
 
     ```
-    URL: <copy>http://[your instance public-ip address]:3001/products</copy>
+    URL: <copy>http://localhost:3000/</copy>
     ```
-
     ![](./images/application_home_pageupdated.png " ")
 
-## **STEP 2**: Launch Postman
+2. Open up a web browser and visit the Application API indicated in your terminal.   
 
-1. Click on *Postman* icon on the desktop to launch it.
+    ```
+    URL: <copy>http://localhost:3001/products</copy>
+    ```
+
+## Task 2: Launch Postman
+
+1. Double Click on *Postman* icon on the desktop to launch it.
 
   ![](./images/postman1a.png " ")
 
@@ -60,53 +57,60 @@ This lab assumes you have:
 
 4. In the center of the screen from the drop down select **POST** Method and enter the information below. See the screenshot for additional details.
 
-    - For the URL Enter: localhost:3001/addproduct
+    - For the URL Enter:
+
+        ```
+        <copy>
+        http://localhost:3001/addproduct
+        </copy>
+        ```
     - Click on Body and select raw and then in the drop down choose JSON
     - In the data portion of the Body insert the JSON data below
 
-    ```
-    <copy>
-    {
-      "pid": "490",
-      "category": "Puma Shoe ",
-      "title": "Puma-shoe Demo3",
-      "details": "Puma-shoe-Original",
-      "price": "9",
-      "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
-    }
-    </copy>
-    ```
-    ![](./images/nodejs2a.png " ")
+        ```
+        <copy>
+        {
+        "pid": "490",
+        "category": "Puma Shoe ",
+        "title": "Puma-shoe Demo3",
+        "details": "Puma-shoe-Original",
+        "price": "9",
+        "picture": "https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom03/b/ConvergedbAppImage3/o/Puma-shoe-dietmar-hannebohn-_G94gB2cms0-unsplash.jpg"
+        }
+        </copy>
+        ```
+        ![](./images/nodejs2a.png " ")
 
 
 5. Click on the **Send** button, Postman should return the HTTP 200 after successfully adding the product in oracle database.
 
     ![](./images/postman_return.png " ")
 
-## **STEP 3**: Using HTTP GET method.
+## Task 3: Using HTTP GET method.
 
 1. Open a new tab
 
 2. To get product details you can use the get method. Fill out the form using the following information.  
     - From the Method drop down in the center select - GET  
     - To get list of all the product details enter the URL:
-    ```
-    <copy>http://localhost:3001/products</copy>
-    ```
+        ```
+        <copy>http://localhost:3001/products</copy>
+        ```
 
-    - To get the specific product details by using PID enter URL:  
-    ```
-    <copy>http://localhost:3001/products/490</copy>
-    ```
+    - To get the specific product details by using PID enter URL:
+
+        ```
+        <copy>http://localhost:3001/products/490</copy>
+        ```
     - Click on the **Send** button, Postman return the HTTP 200 Ok which is a successful GET.
 
-    ![](./images/postman10a.png " ")
+        ![](./images/postman10a.png " ")
 
 3. Open the browser and verify the above using link- http://localhost:3001/products/31
 
     ![](./images/nodejs-postman5a.png " ")
 
-## **STEP 4**: Using HTTP POST Method
+## Task 4: Using HTTP POST Method
 1. Open a new tab. Before applying the POST method, please check the product table format by using GET Method and the URL
 
     ```
@@ -120,21 +124,32 @@ This lab assumes you have:
 3. In the center of the screen from the drop down select **POST** Method and enter the information below.
 
     - Method: - POST  
-    - URL:   
-    ```
-    <copy>http://localhost:3001/updateProduct/13</copy>
-    ```
+    - URL:
+
+        ```
+        <copy>http://localhost:3001/updateProduct/13</copy>
+        ```
     - Click on Body and select raw and then in the drop down choose JSON
     - In the data portion of the Body insert the JSON data below
     - Click on the Send button, Postman return the HTTP 200 OK after successfully updating the product price.
 
-    ```
-    <copy>{"price": "12"}</copy>
-    ```
+        ```
+        <copy>{"price": "12"}</copy>
+        ```
 
-    ![](./images/postman12a.png " ")
+        ![](./images/postman12a.png " ")
 
-4. Verify product details by using HTTP GET method. Select the GET method, enter the URL http://localhost:3001/products/13 and click on Send. Notice the data in the body section and price is updated.  
+4. Verify product details by using HTTP GET method.
+    - Select the GET method
+    - Enter the URL
+
+        ```
+        <copy>
+        http://localhost:3001/products/13
+        </copy>
+        ```
+    - Click on **Send**.
+    Notice the data in the body section and price is updated.  
 
     ![](./images/postman_after_update.png " ")
 

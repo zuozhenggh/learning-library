@@ -5,7 +5,7 @@ In this lab, you will install LS-DYNA.
 
 Estimated Lab Time: 25 minutes
 
-## **STEP 1**: Download the Binaries
+## Task 1: Download the Binaries
 
 You can download the LS-DYNA binaries from the [LSTC Website](http://www.lstc.com/download/ls-dyna) or push it to your machine using scp.
 
@@ -44,7 +44,7 @@ tar -xf installer.tgz
 unzip installer.tgz
 </copy>
 ```
-## **STEP 2**: Install LS-DYNA
+## Task 2: Install LS-DYNA
 
 1. Untar the binaries on a shared location. By default, an HPC cluster has a NFS-share or a Gluster-share mounted on all the compute nodes.
 
@@ -58,7 +58,7 @@ unzip installer.tgz
 
     ```
 
-## **STEP 3**: Install MPI Libraries
+## Task 3: Install MPI Libraries
 
 **Intel MPI 2018**
 

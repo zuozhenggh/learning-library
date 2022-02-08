@@ -17,7 +17,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Set up the environment
+## Task 1: Set up the environment
 
 1. Execute the `/home/oracle/labs/M104786GC10/DP.sh` shell script. The shell script creates the table `HR.EMPLOYEES` to export in `PDB21`.
 
@@ -90,7 +90,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 2:** Export the table using the checksum
+## Task 2: Export the table using the checksum
 
 1. Export the table `HR.EMPLOYEES` and add a checksum to the dump file to be able to confirm that the dump file is still valid after the export and that the data is intact and has not been corrupted. An Oracle Data Pump export writes control information into the header block of a dump file: Oracle Database 21c extends the data integrity checks by adding an additional checksum for all the remaining blocks beyond the header within Oracle Data Pump and external table dump files. Use the `CHECKSUM` parameter during the export operation.
 
@@ -178,7 +178,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 3:** Import the table
+## Task 3: Import the table
 
 1. Drop the table before importing it.
 

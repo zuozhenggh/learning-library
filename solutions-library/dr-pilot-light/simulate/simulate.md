@@ -18,7 +18,7 @@ Estimated lab time: 1 hour
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * Configured [OCI Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/installation.html) for the python scripts to call resources in your tenancy.
 
-## **STEP 1:** The Disaster
+## Task 1: The Disaster
 
 ### Drain connections from Primary Region Load Balancer
 
@@ -50,11 +50,11 @@ Estimated lab time: 1 hour
 7. If you navigate to health/check traffic steering - you can see the health for the Primary region load balancer is now critical. If you visit the IP address of this load balancer, you will get 502 bad gateway. 
 8. Now, enter your DNS url in your web browswer, you should see the HTML indicating you are now seeing traffic steered to your standby region. 
 
-## **STEP 2:** Scaling the standby region compute node
+## Task 2: Scaling the standby region compute node
 
 ### Run Python scripts
 
-1. [Download the python file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/cT_e-91q3vOplvaxy4wCmuLrCjEQQAf6P6LlNYa_1PO2pz2Sncbgk6fdF5srgN98/n/c4u03/b/data-management-library-files/o/Labapi.py). Just copy the python files to your bastion instance. Then move your API key to the `.oci` folder. Then edit the config file with the correct configurations.
+1. [Download the python file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/G6awE8OJP3I-iGTkvqAanLt8Die91JHGt9fTNT4c5XM2da98QEkYIPmZuBLnfLcZ/n/c4u04/b/data-management-library-files/o/Labapi.py). Just copy the python files to your bastion instance. Then move your API key to the `.oci` folder. Then edit the config file with the correct configurations.
 
 2. This [link](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs) will help you setup the REST API key that python needs to run scaling script.
 

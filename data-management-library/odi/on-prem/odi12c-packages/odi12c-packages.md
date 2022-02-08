@@ -17,14 +17,12 @@ This chapter includes the following sections:
 This lab assumes you have:
 - Basic knowledge of Oracle Database
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:** Load Sales Administration Package Example
+## Task 1: Load Sales Administration Package Example
 This section contains the following topics:
   * Purpose
   * Developments Provided with Oracle Data Integrator
@@ -138,7 +136,7 @@ This section contains the following topics:
 
   5.  From the File main menu, select **Save**. The package is now ready to be executed.
 
-## **STEP 3:** Executing Your Development
+## Task 3: Executing Your Development
 This section describes how to execute the Load Sales Administration Package you have just created and the mappings Load TRG\_CUSTOMER and Load TRG\_SALES you have created in the lab *Working with Mappings*. This section also describes how to follow the execution and how to interpret the execution results.
 
 1. Executing the Load Sales Administration Package
@@ -164,7 +162,7 @@ This section describes how to execute the Load Sales Administration Package you 
 
   ![](./images/load_package_session_log.png)
 
-## **STEP 4:** Reviewing your Results
+## Task 4: Reviewing your Results
 
 **Interpreting the Results of the Load TRG\_CUSTOMER Session Step**
 
@@ -236,7 +234,7 @@ Refer to *Working with Scenarios* in the *Oracle Fusion Middleware Developer's G
 
 In the lab *Deploying Integrated Applications*, you will generate the *LOAD\_SALES\_ADMINISTRATION* scenario from a package and run this scenario from Oracle Data Integrator Studio.
 
-You many proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)

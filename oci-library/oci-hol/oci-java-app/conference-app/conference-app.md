@@ -11,7 +11,7 @@ Estimated Lab Time: 5 minutes
 ### Objectives
 - Clone and build a Helidon application that will be used to test some of the recent Java features.
 
-## **STEP 1**: The Conference Application
+## Task 1: The Conference Application
 
 1. The application is hosted on GitHub, just clone its repository:
 
@@ -41,7 +41,7 @@ Estimated Lab Time: 5 minutes
 
 3. Update the project's `pom.xml` to enable Preview Features as described in the previous section.
 
-## **STEP 2**: Build and test the Application
+## Task 2: Build and test the Application
 
 1. By now, you should know how to build and test an Helidon application. 
 

@@ -22,7 +22,7 @@ In this lab, you will:
 * Access to the cloud environment and resources configured in Lab 1
 * The Log Group created in Lab 2
 
-## **STEP 1**: Create a Custom Log Agent Config
+## Task 1: Create a Custom Log Agent Config
 
 An agent configuration provides instructions for both the Logging Service and a specific group of deployed agents to work together.  It is required for custom logs.  Follow these steps to create an agent configuration that will include importing syslog messages from our virtual machine created in Lab 1.
 
@@ -54,7 +54,7 @@ An agent configuration provides instructions for both the Logging Service and a 
 
 6.  Click **Save Changes**, then **Create Custom Log** to complete the task.
 
-## **STEP 2:** Review Log Data from Virtual Machine
+## Task 2: Review Log Data from Virtual Machine
 
 It may take a few minutes for the configuration to propagate to local machine agents.  This is a good time to catch up on email or get a coffee.  
 

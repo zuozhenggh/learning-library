@@ -30,7 +30,7 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## **STEP 1:** Running your Lab
+## Task 1: Running your Lab
 ### Access the graphical desktop
 For ease of execution of this workshop, JDeveloper 12c (12.2.1.4) has been pre-installed on your VM instance and can be accessed using any modern browser on your laptop or workstation and the details below
 
@@ -55,7 +55,7 @@ Password: <copy>Guac.LiveLabs_</copy>
 
   ![](./images/guacamole-landing.png " ")
 
-## **STEP 2:** Start JDeveloper 12c for SOA Suite Development
+## Task 2: Start JDeveloper 12c for SOA Suite Development
 
 Follow these steps to initialize your environment for SOA development using JDeveloper 12c. Oracle JDeveloper offers complete end-to-end development for Oracle's platform and Oracle's applications.
 

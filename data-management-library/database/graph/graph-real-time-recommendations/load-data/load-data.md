@@ -17,7 +17,7 @@ Estimated Lab Time : 15 minutes
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Successful completion of all steps in the previous lab
 
-## **STEP 1** : Login to the Compute Instance
+## Task 1: : Login to the Compute Instance
 
 You may use [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm) or any SSH client of your choice to SSH into the lab environment. Whatever method you choose, ensure the **SSH Keys** are setup for the client. Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm ) for configuring various SSH clients to connect to OCI Compute instance.
 
@@ -33,7 +33,7 @@ You may use [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/C
     <copy>sudo su - oracle</copy>
     ```
 
-## **STEP 2** : Create the Database Schema
+## Task 2: : Create the Database Schema
 
 1. Ensure you are in the SSH session connected as the **oracle** user.
 
@@ -84,7 +84,7 @@ You may use [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/C
     ```
     ![](./images/sqlplus-retail-schema-create.png)
 
-## **STEP 3** : Load the Dataset
+## Task 3: : Load the Dataset
 
 1. In the previous SSH connection as the **oracle** user, change directory to **/home/oracle/dataset** as all files for the load are in this folder.
 
@@ -119,7 +119,7 @@ You may use [Cloud Shell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/C
 
 5. Observe that over **540k** rows get loaded from the dataset.
 
-## **STEP 4** : Populate Tables for Graph
+## Task 4: : Populate Tables for Graph
 
 The transactional data that was just loaded needs to be normalized into relational entities, mainly **CUSTOMERS**, **PRODUCTS**, **PURCHASES** and **PURCHASES_DISTINCT**. These tables will be used to build the property graph later.
 

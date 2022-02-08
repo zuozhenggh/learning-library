@@ -6,7 +6,7 @@ In this lab, you will get first-hand experience with enhancing the application b
 
 If you review the **Project Tasks Search** page you can check and uncheck various facets. When you check a facet, the counts on all of the remaining facets will be updated to show the number of records that meet the new criteria.
 
-## **STEP 1**: Enhancing the Status Facet
+## Task 1: Enhancing the Status Facet
 Reviewing the facets, you will notice that Status is down the page and you can choose multiple values.
 
 1. From the runtime application, go to the search page by clicking **Project Tasks Search**. Given you ran this app from the APEX App Builder, a Developer Toolbar is displayed at the bottom of the screen. *Note - End users who log directly into the app will not see this toolbar.*
@@ -41,7 +41,7 @@ Reviewing the facets, you will notice that Status is down the page and you can c
 
     ![](images/runtime-status.png " ")   
 
-## **STEP 2**: Collapsing Facets
+## Task 2: Collapsing Facets
 1. You may have noticed that the facets go off the bottom of the page. Therefore, it would be preferable to collapse the last three facets, making it easier to see all available facets.
 
     Navigate back to the development environment (APEX App Builder) by using the edit link in the Developer toolbar, or manually navigating to the appropriate browser tab.

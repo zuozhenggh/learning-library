@@ -35,7 +35,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: OIM Get Direct Reports
+## Task 1: OIM Get Direct Reports
 1.  From the terminal session as “*oracle*” user and run the following commands to obtain an OIM token for manager JSMITH and store it in the HTTPie session store.
 
     E.g. First change to the following folder:
@@ -154,7 +154,7 @@ This lab assumes you have:
   	}
     ```
 
-## **STEP 2**: OIM Get User Properties
+## Task 2: OIM Get User Properties
 1. Login as “*oracle*” user and run the following commands to obtain an OIM token for manager MGRAFF and store it in the HTTPie session store.
 
     E.g. First change to the following folder:
@@ -329,7 +329,7 @@ This lab assumes you have:
   	}    
     ```
 
-## **STEP 3**: OIM Update User Profile
+## Task 3: OIM Update User Profile
 1. Login as “*oracle*” user and run the following commands to obtain an OIM token for manager MGRAFF and store it in the HTTPie session store.
 
     E.g. First change to the following folder:
@@ -475,7 +475,7 @@ This lab assumes you have:
   	}
     ```
 
-## **STEP 4**: OIM Approve Request
+## Task 4: OIM Approve Request
 1. Login as “*oracle*” user and run the following commands to obtain an OIM token for **XELSYSADM** as by default only administrators or approvers can see the request's assignee and approve requests.
 
     E.g. First change to the following folder:
@@ -670,7 +670,7 @@ This lab assumes you have:
   	}    
     ```
 
-## **STEP 5**: OAM Create OAuth Identity Domain
+## Task 5: OAM Create OAuth Identity Domain
 1. Login as “*oracle*” user and invoke the OAM REST API to create an OAuth identity domain.
 
     E.g. First change to the following folder:
@@ -721,7 +721,7 @@ This lab assumes you have:
   	}    
     ```
 
-## **STEP 6**: OAM Create OAuth Resource
+## Task 6: OAM Create OAuth Resource
 1. Login as “*oracle*” user and invoke the OAM REST API to create an OAuth resource.
 
     E.g. First change to the following folder:
@@ -777,7 +777,7 @@ This lab assumes you have:
   	}
     ```
 
-## **STEP 7**: OAM Create OAuth Client
+## Task 7: OAM Create OAuth Client
 1. Login as “*oracle*” user and invoke the OAM REST API to create an OAuth client.
 
     E.g. First change to the following folder:
@@ -838,7 +838,7 @@ This lab assumes you have:
   	redirectURIs = [{"url":"http://localhost:8080/Sample.jsp","isHttps":true}]    
     ```
 
-## **STEP 8**: OAM Create OAuth Token
+## Task 8: OAM Create OAuth Token
 1. Login as “*oracle*” user and invoke the OAM REST API to create an OAuth access token.
 
     E.g. First change to the following folder:
@@ -876,7 +876,7 @@ This lab assumes you have:
     }
     ```
 
-## **STEP 9**: OAM Validate OAuth Token
+## Task 9: OAM Validate OAuth Token
 1. Login as “*oracle*” user and invoke the OAM REST API to validate the OAuth access token.
 
     E.g. First change to the following folder:
@@ -918,7 +918,7 @@ This lab assumes you have:
   	}
     ```
 
-## **STEP 10**: OAM Delete OAuth Client, Resource and Domain
+## Task 10: OAM Delete OAuth Client, Resource and Domain
 1. Login as “*oracle*” user and invoke the OAM REST APIs to delete the OAuth client, resource and identity domain.
 
     E.g. First change to the following folder:

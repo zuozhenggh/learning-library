@@ -12,7 +12,7 @@ NAT gateway,  addresses these challenges and provides Oracle Cloud Infrastructur
 Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that can be reliably added to security whitelists.
 
 
-## **Step 1:** Sign in to OCI Console and create VCN
+## Task 1: Sign in to OCI Console and create VCN
 
 **Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
 
@@ -43,7 +43,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
 
-## **Step 2:** Create and connect to compute instance
+## Task 2: Create and connect to compute instance
 
 1. Go to your OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
@@ -98,7 +98,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 8.  Verify opc@`<COMPUTE_INSTANCE_NAME>` appears on the prompt.
 
-## **Step 3:** Configure NAT gateway
+## Task 3: Configure NAT gateway
 
 **We will now create a route table in the VCN.**
 
@@ -212,7 +212,7 @@ Dedicated IP Addresses: Each NAT gateway is assigned a dedicated IP address that
 
 19. Switch back to OCI console window and using above step, this time choose Allow Traffic. Switch back to ssh session and verify ping response is received.
 
-## **Step 4:** Delete the resources
+## Task 4: Delete the resources
 
 1. Switch to  OCI console window.
 

@@ -16,10 +16,10 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	We have content that supports certification. You can shortlist the workshops based on Focus Area, Product, and other filters on the right side of the LiveLabs workshops catalog. Please check with Oracle University for certification assistance.
 5.	How to view/Do we get the report of who is running the workshops?
     -	Brown buttons
-        - We track only the view count of the workshop, i.e., The number of hits for the apex link of a workshop. We do not track usage, it violates privacy rules set up by security and legal. 
-        - The views report is only available to Oracle employees, you must login with your SSO to view it. 
+        - We track only the view count of the workshop, i.e., The number of hits for the apex link of a workshop. We do not track usage, it violates privacy rules set up by security and legal.
+        - The views report is only available to Oracle employees, you must login with your SSO to view it.
         - To get the view count, go to [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1) homepage, click the Question mark icon on the top right corner of the page, then select Dashboard.
-        - Scroll down the Dashboard to the Workshop Views, select your workshop from the drop-down list. 
+        - Scroll down the Dashboard to the Workshop Views, select your workshop from the drop-down list.
     -	Green button
         - We track who took a workshop on the LiveLabs tenancy. We are allowed via CSSAP to track the workshop id and email for those who click the green button.
 6.	Which link should I share?
@@ -45,7 +45,7 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 ## **Development FAQ**
 
 1.	What should I do if I am making major updates to the workshop in production?
-    -	If the workshop is in production, and the updates are major (i.e. not fixes, spelling updates, revised screenshots, etc) place the workshop back In Development. 
+    -	If the workshop is in production, and the updates are major (i.e. not fixes, spelling updates, revised screenshots, etc) place the workshop back In Development.
     -	Create a new version of the workshop folder with the updated version
     -	Create new manifest copies of the changed files (i.e. setup.md is copied and called setup-v2.md)
     -	Proceed through the status’ like normal, submit Self QA
@@ -59,7 +59,9 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	Workshop videos can only be sourced from one of the official Oracle Youtube channels.  We have a LiveLabs YouTube channel.  Submit the video to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com) and we will review and upload it.
 5.	How to create a custom image from the Marketplace?
     -	Refer to [this](https://rpastijn.github.io/stuff/?lab=custom-image-mp-image) documentation on Github.
-6. What to do if my github local and staging environment are corrupted and need to delete it and then rebuilt it?
+6. Where can I locate the Self QA Checklist?
+    -   When you're ready to Self-QA, change your workshop status to "Self QA". This will trigger an e-mail containing the Self QA Checklist. It can also be found [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/mQVboV9nECbPbq4RYZofjCFkQRZD1FJk_RkLC8_Wut5wDtxh5s0Tu2_x5BklCdRa/n/c4u04/b/self-qa-form/o/qa-form/QA.docx).
+7. What to do if my github local and staging environment are corrupted and need to delete it and then rebuilt it?
     - Instructions to delete a forked repo on Github:
         - Go to Settings of Repo you want to unfork
         - Scroll down till danger zone section and click Delete this Repository
@@ -67,7 +69,7 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
         - Click “I understand the consequences, delete this repository” button.
     - Delete the same repo you just deleted on Github on your local machine as well.
     - After the successful deletion of repo on Github and local machine, follow the instructions from step 7 in lab 1 - Get Started with Git and Set up the GitHub Environment to rebuilt the repo.
-7.	Any questions related to Github?
+8.	Any questions related to Github?
     -	Join the Slack channel: #livelabs-authors-help and ask the question in the channel.
 
 ## **Workshops FAQ**
@@ -202,10 +204,10 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 
 1.	Do I need to be on VPN to access LiveLabs URL?
     -	No, LiveLabs passed CSSAP review and is available outside the firewall. It is accessible globally. Search for Oracle LiveLabs on the search engine of their choice, click on the apex link to go to LiveLabs homepage.
-2.	Who can run the workshop? 
+2.	Who can run the workshop?
     -	LiveLabs passed CSSAP review and is available outside the firewall. Anyone can run the workshops.
 3.	What do you need to run the workshop?
-    -	Brown Button (Freetier, Always Free, Paid tenancy) – You do need anything to run the workshop. 
+    -	Brown Button (Freetier, Always Free, Paid tenancy) – You do need anything to run the workshop.
     -	Green Button (LiveLabs tenancy) - An account of any type registered with Oracle (Eg: Gmail)
 4.	How to register for a workshop?
     -	Navigate to [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1).
@@ -239,5 +241,4 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 
 * **Author:** Anoosha Pilli, Product Manager, Database Product Management
 * **Reviewed by:** Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-* **Last Updated By/Date:** Kay Malcolm, February 2021
-
+* **Last Updated By/Date:** Lauran Serhal, November 2021

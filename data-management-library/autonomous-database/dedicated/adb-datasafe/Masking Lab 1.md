@@ -9,7 +9,7 @@ In this lab, you learn how to do the following:
 - Mask sensitive data by using the default masking formats in Data Masking
 - Validate the masked data in your ATP-D database
 
-## STEP 1: Check for sensitive data using SQL Developer
+## Task 1: Check for sensitive data using SQL Developer
 
 Connect to ATP-D DB using SQL Developer Web
 
@@ -25,7 +25,7 @@ Refer Step 5 from [Lab - Assess Users with Oracle Data Safe](https://github.com/
 - Review the query results. Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, `hire_date`, `job_id`, `salary`, and `manager_id` are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
 - Keep this tab open so that you can return to it later in part 4 when you view the masked data.
 
-## STEP 2: Discover sensitive data using Data Safe Discovery tool
+## Task 2: Discover sensitive data using Data Safe Discovery tool
 
 Sign in to the Oracle Data Safe Console in your region
 
@@ -76,7 +76,7 @@ Discover sensitive data by using Data Discovery
 5. To drill-up, position your mouse over an expanded sensitive category, and then click the **Collapse** button.
 6. Click the **Close** button (**X**) to close the expanded chart. Continue to work in the wizard.
 
-## STEP 3: Mask sensitive data using Data Safe Masking
+## Task 3: Mask sensitive data using Data Safe Masking
 
 - Click **Continue to mask the data**.
 
@@ -122,7 +122,7 @@ Discover sensitive data by using Data Discovery
 
    ![](./images/Img80.png " ")   
 
-## STEP 4: Verify masked data through SQL Developer
+## Task 4: Verify masked data through SQL Developer
 
 1. Return to SQL Developer Web. You should still have your query results from Part 2 in this lab.
 2. Take a moment to review the data.

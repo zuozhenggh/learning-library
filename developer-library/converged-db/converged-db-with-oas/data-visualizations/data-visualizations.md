@@ -35,9 +35,7 @@ The end result should look like below:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -54,7 +52,7 @@ Below pre-loaded data objects are available in Converged Database. And since OAS
 | FINANCIAL\_JSON\_UK\_VIEW | View | Relational | this view has been created on FINANCIALS\_UK\_JSON table to view data in relational format  |
 | FINANCIALS\_XML\_FRANCE\_GERMANY\_VIEW | View | Relational | this view has been created on FINANCIALS\_XML\_FRANCE  and FINANCIALS\_XML\_GERMANY table to view data in relational format  |
 
-## **STEP 1**: Create Data Set
+## Task 1: Create Data Set
 
 In this step, we will create individual data sets of different data types: json, xml and relational.
 
@@ -83,7 +81,7 @@ In this step, we will create individual data sets of different data types: json,
     - **FINANCIALS\_REL\_SPAIN\_ITALY**
     - **FINANCIALS\_XML\_FRANCE\_GERMANY\_VIEW**
 
-## **STEP 2**: Merge Data Sets Using Data Flow
+## Task 2: Merge Data Sets Using Data Flow
    **Data Flow :** Data flows enable you to organize and integrate your data to produce a curated data set that your users can analyze.  
    To build a data flow, you add steps. Each step performs a specific function, for example, add data, join tables, merge columns, transform data, save your data. Use the data flow editor to add and configure your steps. Each step is validated when you add or change it. When you've configured your data flow, you execute it to produce a data set.
 
@@ -150,7 +148,7 @@ Let's create a dataflow to merge all the different types of datasets created in 
     ![](./images/oascdb1.17.png " ")
 
 
-## **STEP 3**: Data Preparation ##
+## Task 3: Data Preparation ##
 In this step we will perform some data preparation steps to make data set ready for visualization.
 
 1. Complete data set is created in STEP 1. Now on Home Screen, click on "Data".
@@ -209,7 +207,7 @@ by providing relevant formats.
 9. Now click on "Apply Script" to complete data preparation steps. And now dataset is ready for visualization.
     ![](./images/oascdb34.png " ")
 
-## **STEP 4**: Build Visualizations ##
+## Task 4: Build Visualizations ##
 Let us analyze the data to get some insights using different kind of visualizations.  
 
 1. **Performance Tile**   
@@ -338,7 +336,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     ![](./images/oascdb1.23.1.png " ")
 
 
-## **STEP 5**: Data Action For Drill Down To Detail Report
+## Task 5: Data Action For Drill Down To Detail Report
 
 1.   Select (+) symbol on the bottom to add another canvas (refer to STEP 4 - point 11), in this canvas we will build the tabular report.  
     Select all the required columns (as shown below) and pick table as visualization.
@@ -364,7 +362,7 @@ To summarize key metrics like Revenue, we can use  "Performance Tile" visualizat
     ![](./images/oascdb64.png " ")
 
 
-## **STEP 6**: Adding Filters ##
+## Task 6: Adding Filters ##
 Filters are used to make canvas interactable for the users. Users can view desired data by adding filters to the canvas. In this way filters enable users to interact with canvas.
 
 1. Click (+) symbol on the top screen as shown in below screenshot and select the fields as required. Here we have selected Year, Month, Account Group.

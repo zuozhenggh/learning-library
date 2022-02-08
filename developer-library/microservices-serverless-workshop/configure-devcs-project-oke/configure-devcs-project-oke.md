@@ -22,7 +22,7 @@ This lab assumes you have completed the following labs:
 * Lab: Install the Front-end Client
 * Lab: Import a Developer Cloud Service Project
 
-## **Step 1**: Create DNS Zone
+## Task 1: Create DNS Zone
 
 1. So let’s create a couple of DNS Zones. These will be used later to modify the DNSZONE parameter in project. In the OCI Dashboard Menu go to **Networking \> DNS Zone Management**.
 
@@ -48,7 +48,7 @@ This lab assumes you have completed the following labs:
 
 Now let’s go back to DevCS instance and let’s configure Build Jobs and Git.
 
-## **Step 2**: Configuring Builds
+## Task 2: Configuring Builds
 
 In this project we have three types of builds, one for Fn Function (Serverless) deployment, other 4 for docker build jobs and finally 4 others for OKE build jobs that will deploy previously generated docker images in OKE cluster.
 
@@ -185,7 +185,7 @@ previous job:
 		- VM Template: VM\_Basic\_Template    
 		- Git Repo: microservice-payment.git
 
-## **Step 3**: Configuring Git repositories
+## Task 3: Configuring Git repositories
 
 Now let’s change the yaml in different GIT repositories to fit with your Tenancy details (review all but `db_management.git`, `discount-func.git` and `PizzaDeliveryMobileapp.git`).
 
@@ -233,7 +233,7 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
 
   ![](./images/image145.png " ")
 
-## **Step 4**: Create Policy
+## Task 4: Create Policy
 
 1. Now let’s create the policy above mentioned. In OCI Console Menu go to **Identity \> Policies**.
 
@@ -259,7 +259,7 @@ Now let’s change the yaml in different GIT repositories to fit with your Tenan
 
   A new policy is created.
 
-## **Step 5**: Run the Build Process
+## Task 5: Run the Build Process
 
 1. Now let’s run the build process to check if all the changes have been done correctly. Go back to DevCS Dashboard and select the  **Builds** menu. There select **Pipelines** tab:
 

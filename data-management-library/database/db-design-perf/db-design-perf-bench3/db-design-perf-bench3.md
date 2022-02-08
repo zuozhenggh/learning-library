@@ -13,7 +13,7 @@ Estimated lab time: 15 minutes
 
 -   This lab requires completion of the preceding labs in the Contents menu on the left.
 
-## **STEP 1:** Run Benchmark3 via Cloud Shell
+## Task 1: Run Benchmark3 via Cloud Shell
 
 1. Using Cloud Shell, run the benchmark3 shell script.
 
@@ -50,7 +50,7 @@ Estimated lab time: 15 minutes
 
     The 8 sessions will be launched and the initiating commit will occur automatically, thus you simply need to wait for the benchmark to complete.
 
-## **STEP 2:** Review the Results
+## Task 2: Review the Results
 
 1. The benchmark will produce a similar performance summary to the previous executions.
 
@@ -67,7 +67,7 @@ Estimated lab time: 15 minutes
 2. If you not have done so already, press Enter to exit the benchmark.
 
 
-## **STEP 3:** Final benchmark
+## Task 3: Final benchmark
 
 1. Using Cloud Shell, run the benchmark4 shell script. This is the final set of changes to the database design to improve performance.
 
@@ -92,7 +92,7 @@ Estimated lab time: 15 minutes
 
     The script will pause when it has rebuilt the schema back to the state and is ready to launch the benchmark. The 8 sessions will be launched and the initiating commit will occur automatically, thus you simply need to wait for the benchmark to complete.
 
-## **STEP 4:** Review the results
+## Task 4: Review the results
 
 1. The benchmark will produce a similar performance summary to the previous executions.
 

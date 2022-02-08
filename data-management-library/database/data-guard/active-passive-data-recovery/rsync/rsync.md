@@ -24,7 +24,7 @@ In this lab you will:
 * Familiarity with Linux commands
 
 
-## **STEP 1:** Syncing Files between two Folders on the same Local Machine
+## Task 1: Syncing Files between two Folders on the same Local Machine
 
 In the first part of this lab, we will sync files locally on our machines to get an introductory grasp of rsync.
 
@@ -72,7 +72,7 @@ In the first part of this lab, we will sync files locally on our machines to get
     <local_machine>$ ls primary_sync/ DR_sync/
     ```
 
-## **STEP 2:** Syncing Files between a Local Host and a Remote Server
+## Task 2: Syncing Files between a Local Host and a Remote Server
 
 In the second part of the lab, we will simulate how an administrator would sync files between a local machine and a remote server.
 
@@ -127,7 +127,7 @@ In the second part of the lab, we will simulate how an administrator would sync 
     opc@<remote_server>$ ls
     ```
 
-## **STEP 3:** Setting up Periodic and Automated Syncs using Cron
+## Task 3: Setting up Periodic and Automated Syncs using Cron
 
 In the third and **optional** part of the lab, we'll go through the steps of automating rsync by setting it up as a cron job. Cron is a Linux tool that enables periodic repetition of commands.
 
@@ -161,7 +161,7 @@ In the third and **optional** part of the lab, we'll go through the steps of aut
     <source_machine>$ crontab -l
     ```
 
-## **STEP 4:** Simulating DR with Rsync
+## Task 4: Simulating DR with Rsync
 
 In the fourth and final part of the lab, we'll go through the steps of simulating a DR scenario.
 

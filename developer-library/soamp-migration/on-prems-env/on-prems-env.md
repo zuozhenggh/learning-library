@@ -34,7 +34,7 @@ In this workshop, you will:
     - At least 25GB of disk space to download and install the VM image
     - VirtualBox with extension
 
-## **STEP 1:** Choose a path
+## Task 1: Choose a path
 
 Choose the option that best suits your needs:
 

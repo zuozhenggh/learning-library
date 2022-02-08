@@ -18,7 +18,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Create a mandatory profile in the CDB root
+## Task 1: Create a mandatory profile in the CDB root
 
 1. Connect to the CDB root in `CDB21`.
 
@@ -51,7 +51,7 @@ In this lab, you will:
     </copy>
     ```
 
-## **STEP 2:** Create the user  
+## Task 2: Create the user  
 
 1. Connect to PDB21
     ```
@@ -74,7 +74,7 @@ In this lab, you will:
     </copy>
     ```
 
-## **STEP 3:** Test
+## Task 3: Test
 
 1. Connect to profile\_test.
 

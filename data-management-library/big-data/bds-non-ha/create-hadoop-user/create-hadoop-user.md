@@ -6,7 +6,7 @@ Big Data Service nodes are by default assigned private IP addresses, which aren'
 
 In this lab, you will map the private IP address of the **first master node** to a new public IP address to make this node publicly available on the internet. _**This assumes that making the IP address public is an acceptable security risk.**_ You will also create a Hadoop Administrator (superuser) that will be used for the Big Data Service Cluster. This user will have full access to all the data and metadata on the cluster.
 
-Estimated Lab Time: 45 minutes
+Estimated Time: 45 minutes
 
 ### Objectives
 
@@ -16,22 +16,10 @@ Estimated Lab Time: 45 minutes
 * Access HDFS using the newly created user.
 * Add the new user to Hue.
 
-### What Do You Need?
-This lab assumes that you have successfully completed the following labs in the **Contents** menu:
+### Prerequisites   
+This lab assumes that you have successfully completed all of the preceding labs in the **Contents** menu.
 
-menu:
-<if type="freetier">
-+ **Lab 1: Setup the BDS Environment**
-</if>
-<if type="livelabs">
-+ **Lab 1: Review Creating BDS Environment Resources (Optional)**
-</if>
-+ **Lab 2: Create a BDS Hadoop Cluster**
-+ **Lab 3: Add Oracle Cloud SQL to the Cluster**
-+ **Lab 4: Access a BDS Node Using a Public IP Address**
-+ **Lab 5: Use Cloudera Manager and Hue to Access a BDS Cluster**
-
-## **STEP 1:** Gather Information About the Cluster
+## Task 1: Gather Information About the Cluster
 
 <if type="livelabs">
 1. Log in to the **Oracle Cloud Console**, if you are not already logged in, using your LiveLabs credentials and instructions. The **Oracle Cloud Console** Home page is displayed.
@@ -41,13 +29,13 @@ menu:
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator that you used to create the resources in **Lab 1**, if you are not already logged in. On the **Sign In** page, select your `tenancy` if needed, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 </if>
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Big Data**. 
-	
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/bigdata.png " ")
+2. Click the **Navigation** menu and navigate to **Analytics & AI > Big Data Service**.
+
+  ![](./images/big-data.png " ")
 
 3. On the **Clusters** page, click the **`training-cluster`** link in the **Name** column to display the **Cluster Details** page.
 
-4. In the **Cluster Information** tab, in the **Customer Network Information** section, click the **Copy** link next to **Subnet OCID**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in **STEP 2** in this lab.
+4. In the **Cluster Information** tab, in the **Customer Network Information** section, click the **Copy** link next to **Subnet OCID**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in **Task 2** in this lab.
 
   <if type="freetier">
   ![](./images/subnet-ocid.png " ")
@@ -57,7 +45,7 @@ menu:
   ![](./images/ll-subnet-ocid.png " ")
   </if>
 
-5. On the same page, in the **List of Cluster Nodes** section, in the **IP Address** column, find the private IP address for the first master node, **`traininmn0`**. Save the IP address as you will need it in later steps. In our example, the private IP address of our first master node in the cluster is <if type="freetier">**`10.0.0.10`**</if> <if type="livelabs">**`10.0.0.2`**</if>.
+5. On the same page, in the **List of Cluster Nodes** section, in the **IP Address** column, find the private IP address for the first master node, **`traininmn0`**. Save the IP address as you will need it in later tasks. In our example, the private IP address of our first master node in the cluster is <if type="freetier">**`10.0.0.10`**</if> <if type="livelabs">**`10.0.0.2`**</if>.
 
   <if type="freetier">
   ![](./images/mn0-private-ip.png " ")
@@ -67,9 +55,9 @@ menu:
   ![](./images/ll-mn0-private-ip.png " ")
   </if>
 
-## **STEP 2:** Map the Private IP Address of the First Master Node to a Public IP Address
+## Task 2: Map the Private IP Address of the First Master Node to a Public IP Address
 
-In this step, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first master node** to a new public IP address. You have done similar work in **Lab 4**.
+In this task, you will set three variables using the **`export`** command. The variables will be used in the **`oci network`** command that you will use to map the private IP address of the **first master node** to a new public IP address. You have done similar work in **Lab 4**.
 
 1. On the **Oracle Cloud Console** banner at the top of the page, click the **Cloud Shell** icon. It may take a few moments to connect and authenticate you.
 
@@ -92,7 +80,7 @@ In this step, you will set three variables using the **`export`** command. The v
     ```
     $ <copy>export SUBNET_OCID="subnet-ocid"</copy>
     ```
-    **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **STEP 1** of this lab. Press the **`[Enter]`** key to run the command.
+    > **Note:** In the preceding command, substitute **_``subnet-ocid``_** with your own **`subnet-ocid`** that you identified in **Task 1** of this lab. Press the **`[Enter]`** key to run the command.
 
     In our example, we replaced the **_``subnet-ocid``_** with our own **`subnet-ocid`**:
 
@@ -113,9 +101,9 @@ In this step, you will set three variables using the **`export`** command. The v
     ```
     $ <copy>export PRIVATE_IP="ip-address"</copy>
     ```
-  **Note:** In the preceding command, substitute **_`ip-address`_** with your first master node's private IP address. Press the **`[Enter]`** key to run the command.
+    > **Note:** In the preceding command, substitute **_`ip-address`_** with your first master node's private IP address. Press the **`[Enter]`** key to run the command.
 
-  In our example, we replaced the **_``ip-address``_** with the private IP address of our first master node that we identified in **STEP 1** of this lab.
+  In our example, we replaced the **_``ip-address``_** with the private IP address of our first master node that we identified in **Task 1** of this lab.
 
     <if type="freetier">
       ```
@@ -144,7 +132,7 @@ In this step, you will set three variables using the **`export`** command. The v
   ![](./images/ll-output-white-ip-address.png " ")
   </if>
 
-7.  To view the newly created reserved public IP address in the console, click the Navigation menu and navigate to  **Core Infrastructure > Networking > IP Management**. In the **IP Management** section on the left, the **Public IPs** option is selected by default. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** list.
+7.  To view the newly created reserved public IP address in the console, click the **Navigation** menu and navigate to **Networking**. In the **IP Management** section, click **Reserved IPs**. The new reserved public IP address is displayed in the **Reserved Public IP Addresses** page.
 
   <if type="freetier">
   ![](./images/mn0-reserved-public-ip.png " ")
@@ -154,13 +142,13 @@ In this step, you will set three variables using the **`export`** command. The v
   ![](./images/ll-mn0-reserved-public-ip.png " ")
   </if>
 
-## **STEP 3:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
+## Task 3: Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
-In this step, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
+In this task, you will connect to the first master node using SSH as user **`opc`** (the default Oracle Public Cloud user).
 
 Remember, in **Lab 2**, we used our own SSH public key pair that we created using Windows **PuTTYgen** named `mykey.pub` and associated that key with our cluster. In this lab, we will connect to our cluster using Windows **PuTTY** and provide the SSH private key named `mykey.ppk` which is associated with our `mykey.pub` public key. If you created or used an OpenSSH key pair (using your Linux system or Windows PowerShell), you cannot use PuTTY to connect to your cluster; instead, you will need to use your Linux system or Windows PowerShell using the **`ssh`** command below. PuTTY uses a different key file format than OpenSSH. For information on how to connect to your instance using SSH from a Unix-style system or from a Windows system using OpenSSH, see the [Connecting to Your Instance](https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Tasks/testingconnection.htm?Highlight=connect%20to%20an%20instance%20using%20ssh) OCI documentation.
 
-**Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
+> **Note:** You cannot use PuTTY while you are connected to a Virtual Private Network (VPN).
 
 ```
 <b>$</b> <copy>ssh –i private_key username@public-ip-address</copy>
@@ -172,12 +160,13 @@ Remember, in **Lab 2**, we used our own SSH public key pair that we created usin
 
 For additional information on connecting to a node in the cluster using SSH, see [Connect to a Cluster Node By Using Secure Shell (SSH)](https://docs.oracle.com/en/cloud/paas/big-data-service/user/connect-cluster-ssh.html) in the Using Oracle Big Data Service documentation.
 
-_If you are already connected to your cluster's first master node using the OpenSSH format with the **`ssh`** command above, you can skip the rest of the steps in this section and proceed to **STEP 4, Create the training Linux OS Administrator User**._
+_If you are already connected to your cluster's first master node using the OpenSSH format with the **`ssh`** command above, you can skip the rest of the tasks in this section and proceed to **Task 4, Create the training Linux OS Administrator User**._
 
 1. To SSH into your cluster using your Windows PuTTYgen generated SSH key pair, start Putty. The **PuTTY Configuration** window is displayed. In the **Category** pane, select the **Session** parameter, if not already selected. In the **Basic options for your PuTTY session** section, provide the following information:
 
     + **Host Name (or IP address):** **`opc@master-node-0-ip-address`**.    
-      **Note:** In the above string, substitute `master-node-0-ip-address` with your IP address that you created for your **`traininmn0`** master node.
+        > **Note:** In the above string, substitute `master-node-0-ip-address` with your IP address that you created for your **`traininmn0`** master node.
+
     + **Port:** **`22`**.
     + **Connection type:** **`SSH`**.   
     + **Saved Sessions:** A description of this ssh connection such as `ssh to traininmn0 on BDS cluster`.
@@ -202,7 +191,8 @@ _If you are already connected to your cluster's first master node using the Open
 
 3. In the **Category** pane, select the **Session** parameter, and then click **Save** to save your session for easier future access. Your saved session is displayed in the **Saved Sessions** list.
 
-  **Note:** The next time you need to connect to this node, select the connection name from the **Saved Sessions** list, click **Load**, and then click **Open**.  
+    > **Note:** The next time you need to connect to this node, select the connection name from the **Saved Sessions** list, click **Load**, and then click **Open**.  
+
   <if type="freetier">
   ![](./images/session-saved.png " ")
   </if>
@@ -231,7 +221,7 @@ _If you are already connected to your cluster's first master node using the Open
   ![](./images/ll-traininmn0-connected.png " ")
   </if>
 
-## **STEP 4:** Create the **`training`** Linux OS Administrator User
+## Task 4: Create the **`training`** Linux OS Administrator User
 
 Create the **`training`** Linux administrator user and the OS group **`supergroup`**. Assign **`training`** the **`supergroup`** superuser group as the primary group, and **hdfs**, **hadoop**, and **hive** as the secondary groups.
 
@@ -285,7 +275,7 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
 
     The preceding command creates a new user named **`training`** on each node of the cluster. The **`-g`** option assigns the **`supergroup`** group as the primary group for **`training`**. The **`-G`** option assigns the **`hdfs`**, **`hadoop`**, and **`hive`** groups as the secondary groups for **`training`**.
 
-    **Note:** Since the **`training`** user is part of the **hive** group, it is considered an administrator for Sentry.
+    > **Note:** Since the **`training`** user is part of the **hive** group, it is considered an administrator for Sentry.
 
 4. Use the linux **`id`** command to confirm the creation of the new user and to list its groups membership.
 
@@ -325,9 +315,9 @@ Create the **`training`** Linux administrator user and the OS group **`supergrou
     ![](./images/ll-hdfs-ls.png " ")
     </if>
 
-## **STEP 5:** Add the **`training`** User to Hue (optional)
+## Task 5: Add the **`training`** User to Hue (optional)
 
-In this step, you log into Hue as an administrator and add the **`training`** user as an administrator. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun10`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
+In this task, you log into Hue as an administrator and add the **`training`** user as an administrator. In a non-HA cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun10`** that you created in **Lab 5, Access a BDS Node Using a Public IP Address**.
 
 1. Open a Web browser window.
 
@@ -336,8 +326,8 @@ In this step, you log into Hue as an administrator and add the **`training`** us
     ```
     https://<ip-address>:8888
     ```
-  **Note:**    
-  In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**, which you created in a previous lab.
+    > **Note:**    
+    In the preceding command, substitute **_``ip-address``_** with your own **_``ip-address``_** that is associated with the **first utility node** in your cluster, **`traininun0`**, which you created in a previous lab.
 
   In our example, we used the reserved public IP address that is associated with our first utility node as follows:
 
@@ -369,7 +359,7 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
    ![](./images/add-users.png " ")
 
-6. In the **Hue Users - Create user** page, in **Step 1: Credentials (required)** of the wizard, enter the following information:
+6. In the **Hue Users - Create user** page, in **Task 1: Credentials (required)** of the wizard, enter the following information:
 
     + **Username:** **`training`**
     + **New Password:** **`Training123`**
@@ -378,7 +368,7 @@ In this step, you log into Hue as an administrator and add the **`training`** us
 
    ![](./images/hue-step1-credentials.png " ")
 
-7. Click the **Step 3: Advanced** link of the wizard, select the **Superuser status** checkbox, and then click **Add user**.
+7. Click the **Task 3: Advanced** link of the wizard, select the **Superuser status** checkbox, and then click **Add user**.
 
        ![](./images/hue-step3-Advanced.png " ")
 
@@ -397,11 +387,11 @@ In this step, you log into Hue as an administrator and add the **`training`** us
        ![](./images/hue-logout.png " ")
 
 
-       **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
+       > **Note:** For documentation on using Hue, see [Introduction to Hue](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/hue.html). You can also select **Help** from the **User** drop-down menu for general help topics.
 
   ![](./images/hue-doc.png " ")
 
-This concludes this lab. You may now [proceed to the next lab](#next).
+This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
 
@@ -422,4 +412,4 @@ This concludes this lab. You may now [proceed to the next lab](#next).
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     * Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, March 2021
+* **Last Updated By/Date:** Lauran Serhal, July 2021

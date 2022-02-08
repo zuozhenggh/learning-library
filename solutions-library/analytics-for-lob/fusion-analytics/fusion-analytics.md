@@ -21,7 +21,7 @@ Estimated Lab Time: 40 minutes.
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
 -   *To access the workshop environment*, you will need internet access and a modern web browser. Your instructor will provide you with a URL for the Oracle Fusion ERP Analytics instance and you will be assigned a username and password. Please refer to your instructor's confluence page for details.
 
-## **Step 1:** Explore the Interface and Pre-Built Content: KPI Cards, Decks, Alerts, and Analysis
+## Task 1: Explore the Interface and Pre-Built Content: KPI Cards, Decks, Alerts, and Analysis
 
 We’ll start our experience with Oracle Fusion ERP Analytics by getting a good understanding of the out-of-the-box KPIs that finance executives and management can use to stay on top of the business.
 
@@ -196,7 +196,7 @@ The product contains a library of 50+ pre-built Key Performance Indicators (KPIs
     d. Observed how an analyst can easily bring additional data sets – like HR data – into the platform to perform cross- functional analysis.
 
 
-## **Step 2:** Create a KPI with the Prebuilt ERP Data Model and External Data
+## Task 2: Create a KPI with the Prebuilt ERP Data Model and External Data
 
 Next, let's use the Financials-AP Invoice prebuilt subject area to create a KPI for Outstanding Invoice Amounts.  We will be also using an excel file that holds the target value the company set for Outstanding Invoices
 
@@ -307,7 +307,7 @@ Next, let's use the Financials-AP Invoice prebuilt subject area to create a KPI 
     ![](./images/2-18.png " ")
 
 
-## **Step 3:** Create an Analysis with the Pre-Built ERP Data Model
+## Task 3: Create an Analysis with the Pre-Built ERP Data Model
 
 1. Now, let's take a look at the out of the box GL profitability analysis and subject area and see how to customize and extend them to create new analysis and reports. Starting from the **My P&L** deck, we’re going to drill into the out of the box Net Income Analysis. Click the **Net Income PL** card **hamburger menu icon**.
 
@@ -432,7 +432,7 @@ Next, let's use the Financials-AP Invoice prebuilt subject area to create a KPI 
 
     ![](./images/3-17.png " ")
 
-## **Step 4:** Blend ERP data with External Data
+## Task 4: Blend ERP data with External Data
 
 -    Let's now go through how to extend your analysis by blending in an external data source that provides additional insight to your ERP data.
 

@@ -2,7 +2,7 @@
 
 In this lab, you learn how to create a REST API backend using Node.js.
 
-## **STEP 1:** Create the Node.js REST API backend
+## Task 1: Create the Node.js REST API backend
 
 You use Node.js and Express to create the REST API backend. After you install and download Node.js and npm, open a terminal window and create the application as follows:
 

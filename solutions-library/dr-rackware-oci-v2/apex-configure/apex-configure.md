@@ -12,7 +12,7 @@ Estimated Lab Time: 10-15 minutes
 ### Prerequisites
 - Successful completion of the first lab in this workshop
 
-## **STEP 1:** Create an APEX Workspace & Sample Application in the source instance
+## Task 1: Create an APEX Workspace & Sample Application in the source instance
 1. Navigate to the APEX instance through a web browser i.e https://\<public-ip>:8888/ords/drpdb and select **Administration Services** from the bottom of the page.
     ![](./images/apex-admin.PNG)
 2. Login using the username *admin* and the database admin password. If prompted, reset the password upon login. Once logged in select **Create Workspace**

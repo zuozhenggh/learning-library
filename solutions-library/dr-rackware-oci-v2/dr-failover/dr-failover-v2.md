@@ -12,7 +12,7 @@ Estimated Lab Time: 30-45 minutes
 ### Prerequisites
 - Successful completion of all previous labs in this workshop
 
-## **STEP 1:** Connect the new instance to the Backup database
+## Task 1: Connect the new instance to the Backup database
 1. Start an ssh connection to the newly created instance.
 2. Navigate to the root compartment and edit the *defaults.xml* file
     ```
@@ -43,7 +43,7 @@ Estimated Lab Time: 30-45 minutes
 *(This will make sure the new instance points to the backup database after every sync)*
 
 
-## **STEP 2:** Conduct the failover operation to activate the backup database
+## Task 2: Conduct the failover operation to activate the backup database
 
 1. Navigate to the standby database
     ![](./images/db-nav.PNG)
@@ -56,7 +56,7 @@ Estimated Lab Time: 30-45 minutes
 5. Navigate back to the StandbyDatabase DB system and look at the Peer Role under Data Guard Associations. It shows Disabled Standby which also reaffirms that the failover was successful.
     ![](./images/pr-role.PNG)
 
-## **STEP 3:** Verify the APEX application changes in the new Instance
+## Task 3: Verify the APEX application changes in the new Instance
 1. Navigate to the new APEX instance through a web browser i.e. https://\<target-public-ip>:8888/ords/drpdb
 2. Login with the same workspace & admin credentials created in step 3 & 5 of the lab **Configure APEX instance for DR**
     ![](./images/login.PNG)
@@ -67,7 +67,7 @@ Estimated Lab Time: 30-45 minutes
 5. Navigate to the **Products** using the shopping cart icon on the left to verify the "Hat" product was added.
     ![](./images/hat2.PNG)
 
-## **STEP 4:** Cleanup Process
+## Task 4: Cleanup Process
 1.  First navigate to OCI Console and terminate the Standby database and once the termination is successful then run the following command
 
 2.  Select **Destroy** from the dropdown menu.

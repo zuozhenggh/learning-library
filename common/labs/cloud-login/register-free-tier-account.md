@@ -16,9 +16,9 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 * Ability to receive SMS text verification (only if your email isn't recognized)
 * Credit card (you will not be charged unless you elect to upgrade the account later.)
 
-## **Step 1:** Create Your Free Trial Account
+## Task 1: Create Your Free Trial Account
 
-In this section, you will fill out the registration form at [oracle.com/cloud/free](https://myservices.us.oraclecloud.com/mycloud/signup?language=en).
+In this section, you will fill out the registration form at [oracle.com/cloud/free](https://signup.cloud.oracle.com).
 
 1.  Click on the "Start for free" button and enter the appropriate information to create your account.
     * Enter the same **email address** you used to register for Oracle Open World / Oracle Code One. A popup should appear recognizing your email. If not, the registration form will ask for additional information later.
@@ -43,7 +43,7 @@ In this section, you will fill out the registration form at [oracle.com/cloud/fr
 
 7. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign in page. You'll also receive a confirmation email containing sign in information.
 
-## **Step 2:** Sign in to Your Account
+## Task 2: Sign in to Your Account
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
@@ -72,6 +72,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
-- **Contributors** - Kay Malcolm, [John Peach](https://www.linkedin.com/in/jpeach/)
-- **Last Updated By/Date** - Kay Malcolm, Director, DB Product Management, October 2020
-
+- **Contributors** - John Peach
+- **Last Updated By/Date** - LiveLabs Team, October 2020

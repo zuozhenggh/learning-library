@@ -15,14 +15,14 @@ In this lab, you:
 * A tenancy that is configured to work with the Data Science service.
 * An account that has permission to create a Data Science project.
 
-## **Step 1:** Creating a Project
+## Task 1: Creating a Project
 
 You create a Data Science project to organize your notebook sessions and models within your project.
 
 1. At the top of this page in the **Workshop Details** section, note the name of the compartment. It generally has the format ``LL####-COMPARTMENT`` where ``####`` is a number.
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
-1. Open the navigation menu.
-1. Under **Data and AI** and select **Data Sciences**. This will open the **Projects** page.
+1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**. 
+	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
 1. Select the compartment, generally, you will need to expand (click the + symbol) the ``root`` and ``Livelabs`` sections. Then select the compartment name that you noted earlier.
     ![](../speed-up-ds-with-the-ads-sdk/images/compartment-green-button.png)
 1. Click **Create Project**.

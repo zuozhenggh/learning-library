@@ -17,7 +17,7 @@ Estimated Lab Time: 10 minutes
 * SSH Keys
   
 
-## **STEP**: Gather system details and connect to the Database using SSH
+## Task: Gather system details and connect to the Database using SSH
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Bare Metal, VM, and Exadata**.
 

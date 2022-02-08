@@ -1,9 +1,10 @@
-# Setup 21C Environment
+# Set up 21C Environment
 
 ## Introduction
+
 In this lab, you will run the scripts to setup the environment for the Oracle Database 21c workshop.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -14,25 +15,25 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Free Tier, Always Free, Paid or Cloud Account
 * Working knowledge of vi or nano
-* Completed Lab: SSH Keys
-* Completed Lab: Create a DBCS VM Database
+* SSH Keys
+* Create a DBCS VM Database
 * DBCS Public Address
 * Database Unique Name
 
-
-## **STEP 1**: Server Setup
+## Task 1: Server Setup
 
 1. If you aren't still logged in, login to Oracle Cloud and re-start the Oracle Cloud Shell otherwise skip to Step 3.
 2. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
-    $ <copy>ssh -i <<sshkeyname>> opc@</copy>123.123.123.123
+    $ <copy>ssh -i <<sshkeyname>> opc@</copy>< your_IP_address >
     Enter passphrase for key './myOracleCloudKey':
-    Last login: Tue Feb  4 15:21:57 2020 from 123.123.123.123
+    Last login: Tue Feb  4 15:21:57 2020 from < your_IP_address >
     [opc@tmdb1 ~]$
     ```
+
 3. You will need to create the directories for the container database as well as the pluggable databases.
 
     ```
@@ -54,19 +55,21 @@ In this lab, you will:
     sudo chmod 755 /u03/app/oracle/fast_recovery_area
     </copy>
     ```
+
 4. Once connected, you can switch to the "oracle" OS user.
 
     ```
     [opc@tmdb1 ~]$ <copy>sudo su - oracle</copy>
   	```
+
 5. The first step is to get all of the scripts needed to do this lab.
 
-    ````
+    ```
     <copy>
     cd /home/oracle
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/JfyNtfOG2TKVaSL_WhM5cZytuua4EfJh71je5CuxF4CH0DWFSVvEDoEitpmfT6Gg/n/c4u03/b/data-management-library-files/o/Cloud_21c_Labs.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/OKr2yAGkytLaadBqjdMiQKkiUjwgoyvyYaB0YVT2AA4G2sZWr3GG_QZRhv_4gYKS/n/c4u04/b/data-management-library-files/o/Cloud_21c_Labs.zip
     </copy>
-    ````
+    ```
 
 6.  Unzip Cloud\_21c\_Labs.zip
 
@@ -90,7 +93,8 @@ In this lab, you will:
     [oracle@da3 ~]$ <copy>/home/oracle/labs/update_pass.sh</copy>
     Enter the password you set during the DBSystem creation: WElcome123##
     ```
-## **STEP 2**: Database Create
+
+## Task 2: Database Create
 
 1. Now to create the `CDB21` database. There is an existing database on this server but the `CDB21` was created with everything needed for this workshop.
 
@@ -109,6 +113,7 @@ In this lab, you will:
     The Oracle base remains unchanged with value /u01/app/oracle
     [oracle@db1 ~]$
     ```
+
 3. Verify that your Oracle Database 21c `CDB21` and `PDB21` are created using the commands below.
 
     ```
@@ -117,6 +122,7 @@ In this lab, you will:
     sqlplus / as sysdba
     </copy>
     ```
+
     ```
     <copy>
     show pdbs
@@ -134,14 +140,15 @@ In this lab, you will:
 
 5. Then entry for `CDB21` should have been created when the database was created. So for `PDB21` just copy the entry for `CDB21` and change the value `CDB21` to `PDB21` in both places. Repeat this for `PDB21_2`.
 
-    ````
+    ```
 	  <copy>
 	  vi /u01/app/oracle/homes/OraDB21Home1/network/admin/tnsnames.ora
 	  </copy>
-	  ````
+	  ```
 
 6. There will be more in your tnsnames.ora but the for the three entries we care about should look like the entries below but with your hostname instead.
-    ````
+
+    ```
     CDB21 =
     (DESCRIPTION =
      (ADDRESS = (PROTOCOL = TCP)(HOST = db1.subnet11241424.vcn11241424.oraclevcn.com)(PORT = 1521))
@@ -168,53 +175,50 @@ In this lab, you will:
       (SERVICE_NAME = PDB21_2)
      )
     )
-
-    ````
+    ```
 
 7. Test the connection to CDB21.  Connect to CDB21 with SQL*Plus using the password **WElcome123##**.
 
-    ````
+    ```
 	  <copy>
 	  sqlplus sys@cdb21 AS SYSDBA
 	  </copy>
-	  ````
+	  ```
 
 8. Verify that the container name is **CDB$ROOT**.
 
-    ````
+    ```
     <copy>
 	  SHOW CON_NAME;
 	  </copy>
-	  ````
+	  ```
 
 9. Test the connection to PDB21 using the same password used in the earlier step.
 
-    ````
+    ```
     <copy>
     CONNECT sys@PDB21 AS SYSDBA
     </copy>
-    ````
+    ```
 
 10.  Show the container name. It should now display **PDB21**.
 
-    ````
+    ```
     <copy>
     SHOW CON_NAME;
     </copy>
-    ````
+    ```
 
 11. Exit SQL*Plus.
 
-    ````
+    ```
     <copy>
     exit
     </copy>
-    ````
-
-You may now [proceed to the next lab](#next).
+    ```
 
 ## Acknowledgements
+
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
-
+* **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, December 2021

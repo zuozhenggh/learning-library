@@ -15,7 +15,7 @@ In this lab, you will:
 
 * This lab assumes that you have successfully completed the lab - Query and Analyze the Customer 360 Graph
 
-## **STEP 1:** Open the graph viz web page
+## Task 1: Open the graph viz web page
 
 1. Replace *your-instance-ip-address* with your instance IP address in the URL and open Graph Visualization and check if this graph is successfully loaded.
 
@@ -23,7 +23,7 @@ In this lab, you will:
     http://your-instance-ip-address:7007/ui/
     ```
 
-## **STEP 2:** Run some queries and visualize the results
+## Task 2: Run some queries and visualize the results
 
 Next, let's run a few PGQL queries.
 

@@ -1,28 +1,33 @@
-# Introduction (lab in Development)
+# Introduction
 
 ## About this Workshop
 
-In this workshop, you will provision a 21c autonomous database instance, manage blockchain tables and rows in a blockchain table. Later, work with signatures in blockchain table in the database. Then build a simple web application using Application Express (APEX) to see how to work with Signatures for Blockchain Table.
+In this workshop, you will provision an Oracle Autonomous Database instance, manage blockchain tables and rows in a blockchain table. Then import a simple web application using Application Express (APEX) to see how to manage the rows, verify the rows without the signature in the blockchain table. Finally, you will provision and connect to the compute instance, install and deploy Node.js application in it to sign a row in the blockchain table.
 
-Estimated Lab Time: 60 minutes
+Estimated Workshop Time: 1 hour, 15 minutes
+
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/Frv6V1-gzR8).</if>
 
 ### Objectives
 
-In this lab, you will:
+In this workshop, you will:
 
-* Provision an Oracle Autonomous Database 21c Instance
-* Manage Blockchain Tables
-* Manage Rows in Blockchain Table
-* Work with Signatures for Blockchain Table
-* Build a web Application using Application Express (APEX)
-* Test the blockchain tables functionality in the application
+* Provision an Oracle Autonomous Database Instance
+* Create and manage Blockchain tables and rows in a Blockchain table
+* Import a web application using Application Express (APEX) and test the blockchain tables functionality in the application
+* Generate SSH keys
+* Install and deploy Node.js application in compute instance to sign a row in Blockchain table
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+This workshop assumes you have:
 
-You may now [proceed to the next lab](#next).
+* An Oracle Free Tier, Always Free, Paid, or LiveLabs Cloud Account
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
 * **Author** - Anoosha Pilli, Database Product Manager
+* **Contributors** -  Anoosha Pilli, Database Product Management
+* **Last Updated By/Date** - Anoosha Pilli, September 2021

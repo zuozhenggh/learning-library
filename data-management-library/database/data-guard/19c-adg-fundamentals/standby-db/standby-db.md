@@ -1,4 +1,4 @@
-# Create the Standby Database
+# Steps to Create the Standby Database
 
 ## Introduction
 In this lab, we will create the standby database.
@@ -17,12 +17,11 @@ Estimated Lab Time: 45 Minutes
 -   Create the standby database
 
 ### Prerequisites
-- - An Oracle LiveLabs or Paid Oracle Cloud account
-- Lab 1: Create the primary database
+- Create the primary database
 
-## **STEP**: Create the Standby database
+## Task: Create the Standby database
 
-To create the primary database we need to follow a wizard. 
+To create the primary database we need to follow a wizard.
 
 1. Lab 1 ended with this screen:
     ![](./images/create-dbcs-prim-11.png)
@@ -30,7 +29,7 @@ To create the primary database we need to follow a wizard.
 2. Scroll down to the part with the Databases in the DB System and click the Hamburger Menu and select **Enable Data Guard**
     ![](./images/create-stby-db-01.png)
 
-3. This will bring you to the wizard that will create the Standby database. The first part, you cannot modify this. The Standby database will be created with the Maximum Performance protection mode, meaning that it will use asynchronous redo transport mode. 
+3. This will bring you to the wizard that will create the Standby database. The first part, you cannot change this. The Standby database will be created with the Maximum Performance protection mode, meaning that it will use asynchronous redo transport mode.
     ![](./images/create-stby-db-02.png)
 
     This is not an issue. Even if synchronous mode is not required, this can be altered manually if needed.
@@ -78,4 +77,4 @@ You may now [proceed to the next lab](#next).
 
 - **Author** - Pieter Van Puymbroeck, Product Manager Data Guard, Active Data Guard and Flashback Technologies
 - **Contributors** - Robert Pastijn, Kamryn Vinson
-- **Last Updated By/Date** -  Kamryn Vinson, March 2021
+- **Last Updated By/Date** -  Suraj Ramesh, September 2021

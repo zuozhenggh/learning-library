@@ -38,7 +38,7 @@ In this lab, you will:
 
 
 
-## **STEP 1:** Create a Backup with the Oracle E-Business Suite Cloud Backup Module
+## Task 1: Create a Backup with the Oracle E-Business Suite Cloud Backup Module
 
 **FOLLOW ALONG AND READ CLOSELY, THERE ARE MANY VALUES AND STEPS THAT MUST BE COMPLETED ACCURATELY TO CREATE THE BACKUP.**
 
@@ -84,6 +84,14 @@ To ensure a successful backup, avoid activities that could interfere with the ba
     </copy>
     ```
 
+    If you run into a symbol lookup error stating "undefined symbol: Perl\_xs\_handshake," run the following command and then rerun the above command.
+
+    ```
+    <copy>
+    unset PERL5LIB
+    </copy>
+    ```
+
     ![](./images/25.png " ")
 
 4. On the first screen, choose **Option 1**, "Create E-Business Suite Backup and Upload to Oracle Cloud Infrastructure".
@@ -107,32 +115,64 @@ To ensure a successful backup, avoid activities that could interfere with the ba
 
     4. Enter the location of the context file on the database tier, including the complete file path.
 
-    5. Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.8 image from the OCI Marketplace**
+    5. Specify whether Transparent Data Encryption (TDE) is enabled for the source database. If TDE is enabled, then you must also enter the password for the TDE wallet. **TDE is not enabled by default on the source EBS 12.2.10 image from the OCI Marketplace**
 
     6. Finally, specify the location of the stage area directory you prepared to hold the temporary files that will be created on the database tier during the backup creation process.
 
     In the entries below a value depicted with:
     * <> -- will be a variable that should be recorded in your ``key-data.txt``.
-    * `** **` -- will be the value to enter
+    * A ``Copy`` option -- these should be copied from the doc and pasted into your terminal
     * `Press Enter to skip` -- will be for hitting the Enter key.  
 
-            Enter Fully Qualified Hostname (ex: **apps.example.com**) : <Fully_Qualified_Hostname> 
-            OS User Name : **oracle**
-            OS User Password [skip if not applicable] : Press Enter to skip
-            OS User Custom Private Key [skip if not applicable] : Press Enter to skip     
-            OS User Passphrase [skip if not applicable] : Press Enter to skip
-        
-            Context File : **/u01/install/APPS/12.1.0/appsutil/ebsdb_apps.xml**
-        
-            Database Transparent Data Encrypted ( TDE ): ( Yes | No ) : **No**
+ Hostname :
 
-            You have not entered Password or Custom Private Key location
-            We will be using default SSH key at /home/oracle/.ssh/id_rsa 	
-            Do you want to continue (Yes | No) : **Yes**
+        Enter Fully Qualified Hostname (ex: **apps.example.com**) : <Fully_Qualified_Hostname> 
 
-            Validating the details...
-            Stage Directory : **/u01/install/stage/dbStage**
+    OS User Name :
+    ```
+    <copy>
+    oracle
+    </copy>
+    ```
+
+    Passwords : (skip these)
+
+        OS User Password [skip if not applicable] : Press Enter to skip
+        OS User Custom Private Key [skip if not applicable] : Press Enter to skip  
+        OS User Passphrase [skip if not applicable] : Press Enter to skip
+
         
+    Context File :
+        ```
+        <copy>
+        /u01/install/APPS/19.0.0/appsutil/ebsdb_apps.xml
+        </copy>
+        ```       
+
+    Database Transparent Data Encrypted ( TDE ): ( Yes | No ) :
+        ```
+        <copy>
+        No
+        </copy>
+        ``` 
+
+    You have not entered Password or Custom Private Key location
+    We will be using default SSH key at /home/oracle/.ssh/id_rsa 	
+    Do you want to continue (Yes | No) : 
+        ```
+        <copy>
+        Yes
+        </copy>
+        ``` 
+
+    Validating the details...
+
+    Stage Directory :
+        ```
+        <copy>
+        /u01/install/stage/dbStage
+        </copy>
+        ``` 
         ![](./images/28.png " ")
 
 7. Next, indicate whether communication between the source application tier and Oracle Cloud Infrastructure Object Storage takes place through a proxy and you need to specify the proxy details.
@@ -155,26 +195,57 @@ To ensure a successful backup, avoid activities that could interfere with the ba
 
     For Oracle E-Business Suite Release 12.2 only, you must also specify the Oracle WebLogic Server administrator password for the source environment.
 
+    Hostname :
+
         Enter Fully Qualified Hostname (ex: **apps.example.com**) : <Fully_Qualified_Hostname> 
-        OS User Name : **oracle**
+
+    OS User Name :
+    ```
+    <copy>
+    oracle
+    </copy>
+    ```
+
+    Passwords : (skip these)
+
         OS User Password [skip if not applicable] : Press Enter to skip
         OS User Custom Private Key [skip if not applicable] : Press Enter to skip  
         OS User Passphrase [skip if not applicable] : Press Enter to skip
 
-        Context File : **/u01/install/APPS/fs1/inst/apps/ebsdb_apps/appl/admin/ebsdb_apps.xml**
+    Context File : 
+    ```
+    <copy>
+    /u01/install/APPS/fs1/inst/apps/ebsdb_apps/appl/admin/ebsdb_apps.xml
+    </copy>
+    ```
+
+    Apps Password :
 
         APPS Password (example: **apps**) : <apps_password>
         
-        You have not entered Password or Custom Private Key location
-        We will be using default SSH key at /home/oracle/.ssh/id_rsa 	
-        Do you want to continue (Yes | No) : **Yes**
 
-        Validating the details... 
-        Stage Directory : **/u01/install/stage/appsStage**
+    You have not entered Password or Custom Private Key location
+    We will be using default SSH key at /home/oracle/.ssh/id_rsa 	
+    Do you want to continue (Yes | No) : 
+    ```
+    <copy>
+    Yes
+    </copy>
+    ```
+
+
+    Stage Directory : 
+    ```
+    <copy>
+    /u01/install/stage/appsStage
+    </copy>
+    ```
+
+    Weblogic Password :
 
         WebLogic Server Admin Password (example: **welcome1**) : <weblogic_password>
         
-        ![](./images/30.png " ")
+    ![](./images/30.png " ")
 
 9. Enter details to specify how you want to create the backup on Oracle Cloud Infrastructure Object Storage.
 
@@ -186,17 +257,36 @@ To ensure a successful backup, avoid activities that could interfere with the ba
     - Backup Encryption Password - Specify a password to encrypt the application tier file system and database tier file system. If Transparent Data Encryption (TDE) is not enabled in the source database, then this password is also used to encrypt the database RMAN backup.
     - Confirm Backup Encryption Password - Re-enter the same backup encryption password to confirm it.
 
-            Backup Identifier Tag                           : **EBS1228COMPUTE**
+        Backup Identifier Tag : 
+        ```
+            <copy>
+            EBS1228COMPUTE
+            </copy>
+        ```
 
-            Backup Thread Count                             : **4**
+        Backup Thread Count :
+        ```
+            <copy>
+            4
+            </copy>
+        ```
 
-            Backup Archive Type ( tar | tgz )               : **tgz**
+        Backup Archive Type ( tar | tgz ) :
+        ```
+            <copy>
+            tgz
+            </copy>
+        ```
+
+        RMAN File Path : (Skip This)
 
             RMAN Advanced Configuration Parameter File Path : Press Enter to skip
+        
+        Backup Password :
 
-            Backup Encryption Password                      : **password**
-
-            Confirm Backup Encryption Password              : **password**
+            Backup Encryption Password : <password> (choose a password and add it to your .txt file)
+          
+            Confirm Backup Encryption Password : <password>
 
         ![](./images/31.png " ")
 
@@ -286,6 +376,6 @@ You may proceed to the next lab.
     - Aurelian Baetu, Technology Engineering HUB - Cloud Infrastructure
     - Santiago Bastidas, Product Management Director
     - Quintin Hill, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Dec 2020
+* **Last Updated By/Date:** William Masdon, Cloud Engineering, May 2021
 
 

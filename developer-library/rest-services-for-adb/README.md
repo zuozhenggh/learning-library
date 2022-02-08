@@ -30,15 +30,15 @@ This lab assumes you have completed the following labs:
 
 In this lab you will use the browser-based SQL and REST workshop tools, connect to your Autonomous Database and REST enable a table. You will then secure that REST endpoint all within a single UI.
 
-## **Step 1:**Connect to your Autonomous Database using SQL Developer Web
+## Task 1:Connect to your Autonomous Database using SQL Developer Web
 
-## **Step 2:**Create a user for Application development
+## Task 2:Create a user for Application development
 
-## **Step 3:**Load data into the database
+## Task 3:Load data into the database
 
-## **Step 4:**Auto-REST enable a table
+## Task 4:Auto-REST enable a table
 
-## **Step 5**: Securing the REST endpoint
+## Task 5: Securing the REST endpoint
 
 ## Conclusion
  In this lab, you had an opportunity to get an introduction to REST services.

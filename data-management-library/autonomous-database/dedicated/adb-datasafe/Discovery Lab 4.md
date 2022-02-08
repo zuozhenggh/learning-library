@@ -17,7 +17,7 @@ Follow these general steps:
 4. In SQL Developer Web, inspect the `HCM1.DEPARTMENTS.DEPARTMENT_ID` column. Inspect its type, size, and data. Analyzing the data helps you to define patterns for your sensitive type.
 5. In the Oracle Data Safe Console, create a sensitive type by using the **Create Like** option to model your sensitive type after **Employee ID Number**. Save your sensitive type as **Custom Department ID Number** in a custom sensitive category named **Sensitive Category**.
 
-## STEP 1: Review the predefined Sensitive Types
+## Task 1: Review the predefined Sensitive Types
 
 Sign in to the Oracle Data Safe Console in your region
 
@@ -54,7 +54,7 @@ Review the predefined sensitive types in the Oracle Data Safe Library
 - Clear the search field, and then press **Enter** to restore the list.
 - Keep this page open because you return to it later in the lab.
 
-## STEP 2: Create a Data Safe Sensitive Type and Category
+## Task 2: Create a Data Safe Sensitive Type and Category
 
 Connect to ATP-D DB using SQL Developer Web
 

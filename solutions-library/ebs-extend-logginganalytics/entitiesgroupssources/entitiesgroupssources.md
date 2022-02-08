@@ -19,7 +19,7 @@ Complete Lab 1 and 2 of this workshop
 * An Oracle Cloud Environment
 * EBS Cloud Manager, EBS 1-Click and Advanced Provisioned Instance, Network - All done in the previous workshop
 
-## **STEP 1:** Create Entities
+## Task 1: Create Entities
 
 **Note:** Our entities for our flow logs are automatically setup. In this step we will focus on our Entities and Log Sources from the agents installs. 
 
@@ -55,7 +55,7 @@ Complete Lab 1 and 2 of this workshop
 
   ![](./images/createcpn.png " ")
 
-## **STEP 2:** Create Host Log Group and EBS CPN Log Group
+## Task 2: Create Host Log Group and EBS CPN Log Group
 
 1. Navigate to Logging Analytics - Administration - Log Groups
 
@@ -67,7 +67,7 @@ Repeat and name the other group `EBS CPN Log Group`
 
   ![](./images/loggroups.png " ")
 
-## **STEP 3:** Associate Log sources
+## Task 3: Associate Log sources
   
 Now that you have your entities go to Logging Analytics - Administration - Sources
 
@@ -107,7 +107,7 @@ Now that you have your entities go to Logging Analytics - Administration - Sourc
 
   f. Repeat for the following Log Sources: EBS Concurrent Request Logs, EBS Conflict Resolution Manager Log, EBS Internal Concurrent Manager log, EBS Transaction Manager Logs, Output Post Processor Logs
 
-## **STEP 4:** View your logs in the Log Explorer
+## Task 4: View your logs in the Log Explorer
 
 Now that you have completed these steps you can go to the Log Explorer and view flow logs, ebs logs, host logs, and audit logs. In the next step we will create visualizations and dashboards based off this data.
 

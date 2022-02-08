@@ -4,6 +4,7 @@
 
 This lab walks you through the steps to use an existing Oracle Analytics Cloud (OAC) instance to connect to your Autonomous Data Warehouse (ADW) instance.
 
+Estimated Lab Time: 75 minutes
 
 *In addition to the workshop*, feel free to watch the walkthrough companion video:
 [](youtube:H_SGzbIW3DA)
@@ -13,24 +14,24 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 -   Learn how to navigate to an Oracle Analytics Cloud instance
 -   Learn how to connect the OAC instance to your ADW instance
 
-### Required Artifacts
+### Prerequisites
 -   The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
--   The estimated time to complete this lab is 40 minutes.
+
 
 ### Extra Resources
 -   To learn more about Oracle Analytics Cloud (OAC), feel free to explore the capabilities by clicking on this link: [OAC Overview](https://www.oracle.com/business-analytics/analytics-cloud.html)
 
-## **Step 0:** Create an OAC Instance (*ONLY* if you do not already have one)
+## Task 0: Create an OAC Instance (*ONLY* if you do not already have one)
 
 -   *Note*: If you already have an OAC instance provisioned, please skip "Part 0" and proceed to "Part 1" of this lab guide.
 
 1.   To begin, make sure to already be signed in to cloud.oracle.com with your account credentials as done before in the previous labs.
 
-2.   Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
-	
+2.   Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**.
+
    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
-3.   Make sure you are in the correct compartment by selecting your compartment from the dropdown on the lefthand side (hint: use the same compartment as your ADW instance).  Then, cllick on **Create Instance**.
+3.   Make sure you are in the correct compartment by selecting your compartment from the dropdown on the lefthand side (hint: use the same compartment as your ADW instance).  Then, click on **Create Instance**.
 
    ![](./images/ob.png " ")
 
@@ -50,29 +51,29 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
    ![](./images/0g.png " ")
 
-## **STEP 1**: Navigate to an OAC Instance
+## Task 1: Navigate to an OAC Instance
 
 1. If you are not already signed in, sign in to cloud.oracle.com with your account credentials as done in the previous labs.
 
-2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**. 
-	
+2. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Analytics Cloud**.
+
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-oac.png " ")
 
-3. Make sure that you are in the correct compartment by using the dropdown menu on the lefthand side of your screen.  Then, find your OAC instance that you will be using. For example, we are using the OAC instance **OACDEMO** shown below.  In order to access your instance, click on the **menu icon**, denoted by triple dots, on the right side of your instance. Then, click on **Open URL** which redirects you to a new page. Save this web page link for future use.
+3. Make sure that you are in the correct compartment by using the dropdown menu on the lefthand side of your screen.  Then, find your OAC instance that you will be using. For example, we are using the OAC instance **OACDEMO** shown below.  In order to access your instance, click on the **menu icon**, denoted by triple dots, on the right side of your instance. Then, click on **Analytics Home Page**. Save this web page link for future use.
 
     ![](./images/0a2.png " ")
 
-5. Welcome to the Oracle Analytics Cloud! Enjoy exploring it!
+4. Welcome to the Oracle Analytics Cloud! Enjoy exploring it!
 
     ![](./images/0g.png " ")
 
-## **STEP 2**: Connect OAC to ADW
+## Task 1: Connect OAC to ADW
 
-1. In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Connection** in the popped menu.
+1. In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Connection**.
 
     ![](./images/0h.png " ")
 
-2. Select the **Oracle Autonomous Data Warehouse Cloud** from the existing connection types.
+2. Select **Oracle Autonomous Data Warehouse Cloud** from the existing connection types.
 
     ![](./images/0i.png " ")
 
@@ -92,11 +93,11 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
     ![](./images/0j.png " ")
 
-5. You can now see your connection listed under the Connections tab in the Data page.
+    You can now see your connection listed under the Connections tab in the Data page.
 
     ![](./images/0k.png " ")
 
-## **STEP 3**: Configure a Database Connection
+## Task 1: Configure a Database Connection
 
 1. In the Oracle Analytics Cloud Homepage, click on the **Create** button on the top-right and then click on **Data Set** in the popped menu.
 
@@ -110,7 +111,7 @@ This lab walks you through the steps to use an existing Oracle Analytics Cloud (
 
     ![](./images/3.png " ")
 
-## **STEP 4**: Import the Datasets to OAC
+## Task 1: Import the Datasets to OAC
 
 Now we will import the following tables to OAC:
 > OOW\_DEMO\_STORES, OOW\_DEMO\_REGIONS, OOW\_DEMO\_ITEMS, and OOW\_DEMO\_SALES_HISTORY
@@ -139,7 +140,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 6. You are done with adding the first table.
 
-## **STEP 5**: Add Additional Datasets
+## Task 1: Add Additional Datasets
 
 1. Repeat "Part 3 STEP 1" and "Part 3 STEP 2" for the remaining 3 tables mentioned above
 > (OOW\_DEMO\_REGIONS, OOW\_DEMO\_ITEMS, and OOW\_DEMO\_SALES\_HISTORY tables ).
@@ -152,7 +153,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
     ![](./images/10.png " ")
 
-## **STEP 6**: Add and Join the Datasets
+## Task 1: Add and Join the Datasets
 
 1. First, navigate back to the Oracle Analytics Cloud home page. Once you are back on the home page, click on **Create**, then on **Data Flow** to create a new data flow.
 
@@ -212,11 +213,11 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 15. Now the 4 Data Sets have been joined.
 
-## **STEP 7**: Select Columns
+## Task 1: Select Columns
 
 1. Since we are done adding the Join steps, click on the **Circled Plus** button again and then on **Select Columns** to help finalize the columns we want to keep.
 
-![](./images/25.png " ")
+    ![](./images/25.png " ")
 
 2. All the columns will be selected. Let's select some columns we want to remove from this list by holding the ctrl button(Windows) or the command button(MacOS) and left clicking on the columns. Select the following:
 > *IS\_DEFAULT\_YN*, *REGION\_COLOR*, *REGION\_ZOOM*, *ROW\_VERSION\_NUMBER*, *N1*, *N2*, *N3*, *N4*, *REGION\_ID*, *ROW\_VERSION\_NUMBER\_1*, *ID\_2*, *CREATED\_ON*, *DATE\_OF\_SALE*, *PRODUCT\_ID*, *STORE\_ID*, and *ROW\_VERSION\_NUMBER\_2*.
@@ -227,7 +228,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 4. We are done with selecting our columns.
 
-## **STEP 8**: Rename Columns
+## Task 1: Rename Columns
 
 1. Let's rename some columns. Click on the **Circled Plus** button again and then on **Rename Columns** to help finalize the columns we want.
 
@@ -237,15 +238,15 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
     ![](./images/28.png " ")
 
-3. Next, keep scrolling down and under the **Source** column, find *ID_1* and change the value in the **Rename** column to *STORE_ID*.
+3. Next, keep scrolling down and under the **Source** column, find *ID_1* and change the value in the **Rename** column to *STORE\_ID*.
 
-4. Then, find *ID_3* and change the value in the **Rename** column to *ITEM_ID*.
+4. Then, find *ID_3* and change the value in the **Rename** column to *ITEM\_ID*.
 
 5. Finally, find **MSRP** and change the value in the **Rename** column to **SALE_PRICE**.
 
 6. We are done renaming columns.
 
-## **STEP 9**: Add Columns
+## Task 1: Add Columns
 
 1. Let's finish constructing our master table by adding columns. Do this by clicking on the **Circled Plus** button again and then on **Add Columns** to help finalize the columns.
 
@@ -303,9 +304,9 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
 18. In the code calculation box, type in (without the quotes): "1"
 
-    ![](./images/39.png " ")
-
 19. Scroll down and click **Validate**. After the calculation is validated, finish by clicking **Apply**.
+
+    ![](./images/39.png " ")
 
 20. Now, click the **Circled Plus** icon to make a **Branch**.
 
@@ -343,7 +344,7 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 
     ![](./images/48.png " ")
 
-29. After it's saved, click **Run Data Flow**.
+29. After it's saved, click the **Run Data Flow** button.
 
     ![](./images/49.png " ")
 
@@ -359,7 +360,5 @@ In the next steps, we show you how to import the **OOW\_DEMO\_STORES** table. Yo
 ## Acknowledgements
 
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
-- **Contributors** - Jeffrey Malcolm, QA Specialist, Kamryn Vinson, QA Specialist
-- **Last Updated By/Date** - Arabella Yao, Product Manager Intern, DB Product Management, July 2020
-
-
+- **Contributors** - Jeffrey Malcolm, QA Specialist
+- **Last Updated By/Date** - Kamryn Vinson, June 2021

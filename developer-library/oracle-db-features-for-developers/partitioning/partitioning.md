@@ -1,17 +1,17 @@
 # Hybrid Partitioning
 
-## Introduction 
+## Introduction
 In this lab, you will explore Hybrid Partitioning, a new feature introduced in Oracle Database 19c.
 
 Estimated Lab Time:  30 minutes
 
-## About Partitioning
+### About Partitioning
 
 Partitioning can provide tremendous benefit to a wide variety of applications by improving performance, manageability, and availability. It is not unusual for partitioning to greatly improve the performance of certain queries or maintenance operations. Moreover, partitioning can greatly simplify common administration tasks.
 
 Partitioning also enables database designers and administrators to solve some difficult problems posed by cutting-edge applications. Partitioning is a key tool for building multi-terabyte systems or systems with extremely high availability requirements.
 
-## About Hybrid Partitioning
+### About Hybrid Partitioning
 
 The Hybrid Partition Tables feature extends Oracle Partitioning by enabling partitions to reside in both Oracle Database segments and in external files and sources. This feature significantly enhances the functionality of partitioning for Big Data SQL where large portions of a table can reside in external partitions.
 
@@ -39,7 +39,7 @@ This lab assumes you have completed the following labs:
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
 
-## **Step 1**: Create External Directories
+## Task 1: Create External Directories
 
 1.  Login to the instance using Oracle Cloud Shell and ssh.
 
@@ -121,7 +121,7 @@ This lab assumes you have completed the following labs:
 
     The DBMS\_SQL package provides an interface to use dynamic SQL to parse any data manipulation language (DML) or data definition language (DDL) statement using PL/SQL. Using the UTL\_FILE package, PL/SQL programs can read and write operating system text files. UTL\_FILE provides a restricted version of the operating system stream file I/O. One use case is for exporting data into flat files, that will become external partitions.
 
-## **Step 2**: Review the current SALES table
+## Task 2: Review the current SALES table
 
 The Oracle environment is already set up so sqlplus can be invoked directly from the shell environment. Since the lab is being run in a pdb called orclpdb you must supply this alias when connecting to the ssh account.
 
@@ -198,7 +198,7 @@ The Oracle environment is already set up so sqlplus can be invoked directly from
 
 	![](images/p_sales_partitions.png " ")
 
-## **Step 3**: Rethink Storage Organization
+## Task 3: Rethink Storage Organization
 
 You can convert a table with only internal partitions to a hybrid partitioned table. For example, the SALES table could be converted to a hybrid partitioned table by adding external partition attributes using an ALTER TABLE command, then add external partitions. Note that at least one partition must be an internal partition. However, in this lab you will create a new hybrid partitioned table, as a copy of the SALES table instead.
 
@@ -321,7 +321,7 @@ The following procedure will be used to export individual partitions of a table 
 
     ![](images/p_export_part_all.png " ")
 
-## **Step 4**: Implement Hybrid Partition Tables
+## Task 4: Implement Hybrid Partition Tables
 
 In this example, we assume our OLTP application will continue to run on the original SALES table, and we can drop the partitions containing old data, for example, years 1998 and 1999. For reporting and compliancy, we will store old data outside the database, on a cheaper storage solution.
 
@@ -600,7 +600,7 @@ You will copy and then redefine a table (maintaining application transparency). 
 
     Additional foreign key constraints from the original SALES table could be added to the HYBRID_SALES table using the same methodology.
 
-## **Step 5**:  Compare internal and external partition operations
+## Task 5:  Compare internal and external partition operations
 
 Hybrid Partitioned Tables support many partition level operations, including:
 -	Creating a single level RANGE and LIST partitioning methods
@@ -744,7 +744,7 @@ Hybrid Partitioned Tables support many partition level operations, including:
 
     ![](images/p_prodid_13_3.png " ")
 
-## **Step 6**: Gathering Statistics
+## Task 6: Gathering Statistics
 
 1.  Gathering schema statistics for schemas with Hybrid Partitioned Tables is performed in the same way as usual.
 
@@ -797,4 +797,3 @@ Partitions of hybrid partitioned tables can reside on both Oracle tablespaces an
 - **Author** - Valentin Tabacaru, Database Product Management, Oracle PTS
 - **Contributors** - Troy Anthony, Anoosha Pilli,  Dylan McLeod
 - **Last Updated By/Date** - Kay Malcolm, August 2020
-

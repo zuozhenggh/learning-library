@@ -19,7 +19,7 @@ To set up the OCI tenancy, in this lab, you will:
 * SSH key
 
 
-## **STEP 1**: Create a Sub-Compartment
+## Task 1: Create a Sub-Compartment
 
 In this part of the lab, we create a sub-compartment to organize the resources we will create
 
@@ -110,7 +110,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     ![Click on the view virtual cloud network button on the bottom lefthand side of the screen](./images/2.5.png " ")
 
 
-## **STEP 3:**  Establish Security List Rules for Siebel
+## Task 3:  Establish Security List Rules for Siebel
 
 With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN
 

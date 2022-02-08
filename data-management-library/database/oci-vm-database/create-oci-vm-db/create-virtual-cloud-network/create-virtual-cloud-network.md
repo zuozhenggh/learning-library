@@ -8,7 +8,7 @@ This lab walks you through the steps to create an instance of an Oracle Virtual 
 
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1**: Create a Virtual Cloud Network instance
+## Task 1: Create a Virtual Cloud Network instance
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 

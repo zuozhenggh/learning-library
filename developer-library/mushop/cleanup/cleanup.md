@@ -16,7 +16,7 @@ Estimated time: 10 minutes
 
 - Your Oracle Cloud Trial Account
 
-## **STEP 1**: List any helm releases that may have been installed
+## Task 1: List any helm releases that may have been installed
 
 1. To get a better look at all the installed Helm Charts by using the **helm list** command.
 
@@ -35,7 +35,7 @@ Estimated time: 10 minutes
     mushop-utils            mushop-utilities        1               2020-01-31 20:32:05.864769 -0600 CST    deployed        mushop-setup-0.0.1              1.0
     ````
 
-## **STEP 2**: Clean Up MuShop App
+## Task 2: Clean Up MuShop App
 
 1. Remove the application from Kubernetes where --name mushop was used during install.
 
@@ -45,7 +45,7 @@ Estimated time: 10 minutes
     </copy>
     ````
 
-## **STEP 3**: Clean Up MuShop cluster dependencies
+## Task 3: Clean Up MuShop cluster dependencies
 
 1. Remove the application from Kubernetes where --name mushop-utils was used during install.
 
@@ -57,7 +57,7 @@ Estimated time: 10 minutes
 
 *Note:* When you execute the command `helm delete` for the mushop-utils chart release, the OCI LoadBalancer attached to the ingress kubernetes will also be terminated.
 
-## **STEP 4**: Terminate the OKE Cluster and Worker Nodes
+## Task 4: Terminate the OKE Cluster and Worker Nodes
 
 1. Delete the OKE Cluster
 

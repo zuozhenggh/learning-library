@@ -18,7 +18,7 @@ Estimated Lab Time: 35 minutes
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 * SSH Keys
   
-## **STEP 1**: Create a Virtual Cloud Network instance
+## Task 1: Create a Virtual Cloud Network instance
 Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the creation of a basic, public internet accessible VCN.
 
 1. Login to Oracle Cloud
@@ -44,7 +44,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
 6. On the summary screen, click **View Virtual Cloud Network**.
    
-## **STEP 2**: Create a Database Virtual Machine
+## Task 2: Create a Database Virtual Machine
 
 1. From the Console menu, click on **Bare Metal, VM, and Exadata**.
 
@@ -88,7 +88,7 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
     ![](images/database-VM-created.png " ")
 
-## **STEP 3**: Gather system details and connect to the Database using SSH
+## Task 3: Gather system details and connect to the Database using SSH
 
 1. Go back to the Oracle Cloud Console and click on the DB System you just created.  Note that you have a fully provisioned Database.
 2. In the Databases section, jot down your **Database Unique Name**.  You will need this for the next lab.
@@ -98,18 +98,18 @@ Fortunately, Oracle Cloud Infrastructure provides a wizard that simplifies the c
 
 4. On the resources tab, click **Nodes** to gather your IP address. Note your Public IP Address
 
-  ![](images/VM-DB-IP.png " ")
+  ![](images/vm-db-ip.png " ")
 
-4. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
+5. In Cloud Shell or your terminal window, navigate to the folder where you created the SSH keys and enter this command, using your IP address:
 
     ```
-    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>123.123.123.123
+    $ <copy>ssh -i ./myOracleCloudKey opc@</copy>< your_IP_address >
     Enter passphrase for key './myOracleCloudKey':
-    Last login: Tue Feb  4 15:21:57 2020 from 123.123.123.123
+    Last login: Tue Feb  4 15:21:57 2020 from < your_IP_address >
     [opc@tmdb1 ~]$
     ```
 
-5. Once connected, you can switch to the "oracle" OS user and connect using SQL*Plus:
+6. Once connected, you can switch to the "oracle" OS user and connect using SQL*Plus:
 
     ```
     [opc@tmdb1 ~]$ sudo su - oracle
@@ -150,4 +150,4 @@ Error:  Renderable Exception From Internal-API.You have reached your service lim
 
 ## Acknowledgements
 * **Author** - Tom McGinn, Learning Architect, Database User Assistance
-* **Last Updated By/Date** - Kay Malcolm, December 7, 2020
+* **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, December 2021

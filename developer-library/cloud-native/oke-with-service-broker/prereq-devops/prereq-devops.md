@@ -18,7 +18,7 @@ In this lab you will:
 - Install Kustomize >= 1.19.
 - Install Skaffold >= 1.18.
 
-## **STEP 1:** Install the OCI CLI
+## Task 1: Install the OCI CLI
 
 1. To install the OCI CLI on Linux or Mac OS X, run the command:
 
@@ -31,7 +31,8 @@ In this lab you will:
     Press **Enter** to use the defaults for all options.
 
 2. Restart your shell.
-    ```
+
+    ```bash
     <copy>
     exec -l $SHELL
     </copy>
@@ -39,7 +40,7 @@ In this lab you will:
 
 3. Configure the OCI CLI.
 
-    ```
+    ```bash
     <copy>
     oci setup config
     </copy>
@@ -55,7 +56,6 @@ In this lab you will:
     - name for the key: press **Enter** for the default.
     - Passphrase: press **Enter** for no passphrase.
 
-
     You should see an output like:
 
     ```bash
@@ -64,14 +64,13 @@ In this lab you will:
     Config written to ~/.oci/config
     ```
 
-
 4. Upload the public key to your OCI account.
 
     In order to use the CLI, you need to upload the public key generated to your user account.
 
     Get the key content with:
 
-    ```
+    ```bash
     <copy>
     cat ~/.oci/oci_api_key_public.pem
     </copy>
@@ -92,7 +91,7 @@ In this lab you will:
 
 5. Test your CLI.
 
-    ```
+    ```bash
     <copy>
     oci os ns get
     </copy>
@@ -100,7 +99,7 @@ In this lab you will:
 
     This command should output the namespace of your tenancy (usually the name of the tenancy or a randomized string).
 
-    ```
+    ```json
     {
         "data": "your-tenancy-namespace"
     }
@@ -108,7 +107,7 @@ In this lab you will:
 
     Make a note of the name of your tenancy namespace for later.
 
-## **STEP 2:** Install `kubectl`
+## Task 2: Install `kubectl`
 
 1. *If you are using Docker Desktop on Mac OS X or Windows, `kubectl` should already be installed, and you can skip the install step.*
 
@@ -117,7 +116,7 @@ In this lab you will:
     ```bash
     <copy>
     PLATFORM=$(uname)
-    curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/${PLATFORM}/amd64/kubectl"
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/${PLATFORM,,}/amd64/kubectl"
     chmod +x ./kubectl
     sudo mv ./kubectl /usr/local/bin/kubectl
     </copy>
@@ -131,7 +130,7 @@ In this lab you will:
     </copy>
     ```
 
-## **STEP 3:** Install Helm
+## Task 3: Install Helm
 
 1. To install helm on Mac OS X and Linux, use:
 
@@ -144,7 +143,7 @@ In this lab you will:
     For more detailed instructions for your specific OS, go to:
     [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/)
 
-## **STEP 4:** Install Kustomize
+## Task 4: Install Kustomize
 
 1. To install Kustomize on Mac OS X and Linux, use:
 
@@ -157,7 +156,7 @@ In this lab you will:
     For more detailed instructions for your specific OS, go to:
     [https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/](https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/).
 
-## **STEP 5:** Install Skaffold
+## Task 5: Install Skaffold
 
 1. To install Skaffold on Mac OS X and Linux, use:
 
@@ -171,8 +170,7 @@ In this lab you will:
     For more detailed instructions for your specific OS, go to:
     [https://skaffold.dev/docs/install/](https://skaffold.dev/docs/install/)
 
-    
-## **STEP 6:** Check OpenSSL
+## Task 6: Check OpenSSL
 
 1. Make sure you have OpenSSL installed with:
 

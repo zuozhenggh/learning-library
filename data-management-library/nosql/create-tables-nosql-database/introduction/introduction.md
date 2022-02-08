@@ -29,7 +29,7 @@ In this workshop you will:
 
 *  An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1:** Getting started with the Oracle NoSQL Database Cloud Service
+## Task 1: Getting started with the Oracle NoSQL Database Cloud Service
 
 The Oracle NoSQL Database Cloud Service is a server-less, fully managed data store that delivers predictable single digit response times and allows application to scale on demand via provisioning API calls. There are four simple steps to getting started with the Oracle NoSQL Database Cloud Service.
 

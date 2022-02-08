@@ -15,16 +15,14 @@ In this chapter you will explore the below features in EDQ:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: Data Profiling
     - Lab: Reference Data
 
-## **Step 1:** No Data Check
+## Task 1: No Data Check
 
 ### Auditing Data
 
@@ -67,7 +65,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
 **Note**: If desired, we can continue to develop this process using one or more of the end point output data stream triangles from the Processor by choosing “Data”, “No Data” or “All".
 
-## **Step 2**: Pattern Check
+## Task 2: Pattern Check
 
 1.	Now, find the “Pattern Check” processor in the Tool Palette. Drag and drop it into the canvas and rename it to “Cell Number in Right Format” by double clicking on processor.
 
@@ -97,7 +95,7 @@ We will now begin to create a new Process for Auditing our US Customer data. The
 
     Notice that there are 5424 Valid Records and 14 Invalid Records.
 
-## **Step 3**: List Check
+## Task 3: List Check
 
 1.	Return to the "Tool Palette" and find the “List Check” processor. Drag and drop it onto the "Project Canvas".
 
@@ -127,20 +125,6 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
-
-## Rate this Workshop
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
-
-1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
-
-If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020

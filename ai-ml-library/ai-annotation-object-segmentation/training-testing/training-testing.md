@@ -17,7 +17,7 @@ In this lab, you will learn about:
 This lab assumes you have:
 - Completed the previous lab, Annotating images with COCO Annotator
 
-## **STEP 1**: Download the Scripts
+## Task 1: Download the Scripts
 
 1. Copy the training script to a file
 ```
@@ -186,7 +186,7 @@ for i, d in enumerate(data_dicts):
 
 3. Place the two files with the above scripts into the `coco-annotation` directory on the instance and extract the contents. This should be the same directory where the `datasets` directory is located. The scripts are configured to look for the `datasets` directory in the location where they reside.
 
-## **STEP 2**: Review the Training Script and Run
+## Task 2: Review the Training Script and Run
 
 1. Open the script to get an understanding for the different parameters that can be changed for the training.
 
@@ -238,7 +238,7 @@ for i, d in enumerate(data_dicts):
 
     After `MAX_ITERATIONS` is hit, a model will be saved to `OUTPUT_DIR` with the name `model_final.pth` and the script will exit. Checkpoint models are also saved with the iteration number, such as `model_004999.pth`.
 
-## **STEP 3**: Review the Validation Script and Run
+## Task 3: Review the Validation Script and Run
 
 1. Open the prediction script to review the parameters
 

@@ -27,22 +27,22 @@ Estimated Lab Time: 45 minutes
 
 + Download some stations and bike trips data files from [Citibikes](https://www.citibikenyc.com/system-data) and some randomized weather data from a public bucket in Object Storage.
 
-## **STEP 1:** Gather Information About the Compartment and the Master Node Reserved Public IP Address
+## Task 1: Gather Information About the Compartment and the Master Node Reserved Public IP Address
 
 1. Log in to the **Oracle Cloud Console** as the Cloud Administrator, if you are not already logged in. On the **Sign In** page, select your `tenancy`, enter your `username` and `password`, and then click **Sign In**. The **Oracle Cloud Console** Home page is displayed.
 
-2. In the **Oracle Cloud Console** navigation menu, navigate to **Governance and Administration > Identity > Compartments > training-compartment**. In the row for the compartment, in the **OCID** column, hover over the OCID link and then click **Copy**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
+2. Click the **Navigation** menu and navigate to **Identity & Security > Compartments**. In the list of compartments, search for the **training-compartment**. In the row for the compartment, in the **OCID** column, hover over the OCID link and then click **Copy**. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
 
   ![](./images/compartment-ocid.png " ")
 
-3. In the **Oracle Cloud Console** navigation menu, navigate to **Core Infrastructure > Networking > Virtual Cloud Networks > IP Management**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
+3. Click the **Navigation** menu and navigate to **Networking > Reserved IPs**. The **Reserved Public IP Addresses** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected.
 
 4. In row for the `traininmn0-public-ip` reserved IP address, copy the reserved public IP address associated with the master node in the **Reserved Public IP** column. Next, paste that IP address to an editor or a file, so that you can retrieve it later in this lab. You might need this IP address to ssh to the master node, if you didn't save your ssh connection in Lab 6.
 
   ![](./images/traininmn0-ip-address.png " ")
 
 
-## **STEP 2:** Connect to the Cluster's First Master Node Using Secure Shell (SSH)
+## Task 2: Connect to the Cluster's First Master Node Using Secure Shell (SSH)
 
 In this step, you will connect to the first master node in your cluster, `traininmn0-public-ip`, using SSH as the **`training`** Hadoop Administrator user that you created in **Lab 6**.
 
@@ -89,7 +89,7 @@ In this lab, we will connect to our cluster using Windows **PuTTY** and provide 
     ![](./images/change-directory.png " ")
 
 
-## **STEP 3:** Download and Run HDFS Scripts to Set Up the HDFS Data
+## Task 3: Download and Run HDFS Scripts to Set Up the HDFS Data
 
 In this step, you download two scripts that will set up your HDFS environment and download the HDFS dataset from [Citibike System Data](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
 
@@ -220,7 +220,7 @@ To view the complete data files that are available, navigate to [Citibike System
     ![](./images/view-tripdata.png " ")
 
 
-## **STEP 4:** Query the Uploaded HDFS Data Using Hue
+## Task 4: Query the Uploaded HDFS Data Using Hue
 
 In this step, you log into Hue as the **`training`** administrator user and query the Hive tables that were created by the scripts that you ran in the previous step. Remember, in an BDS HA cluster, Hue runs on the **second utility node**. In a non-HA BDS cluster, Hue runs on the first utility node. You will use the reserved public IP address that is associated with **`traininun1`** that you created in **Lab 4, Access a BDS Node Using a Public IP Address**.
 
@@ -274,7 +274,7 @@ limit 10;</copy>
   ![](./images/hue-doc.png " ")
 
 
-## **STEP 5:** Download and Run Object Storage Scripts to Set Up the Object Storage Data
+## Task 5: Download and Run Object Storage Scripts to Set Up the Object Storage Data
 
 In this step, you will download two scripts that will set up your Object Storage environment and download the object storage dataset from [Citi Bikes NYC](https://www.citibikenyc.com/system-data). The scripts and a randomized weather data file are stored in a public bucket in Object Storage.
 
@@ -359,7 +359,7 @@ In this step, you will download two scripts that will set up your Object Storage
 
     ![](./images/data-downloaded-objstore.png " ")
 
-13. In the **Oracle Cloud Console** navigation menu, navigate to **Object Storage > Object Storage**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
+13. Click the **Navigation** menu and navigate to **Storage**. In the **Object Storage & Archive Storage** section, click **Buckets**. The **Buckets** page is displayed. In the **List Scope** on the left pane, make sure that your **training-compartment** is selected. In the list of available buckets, the newly created **training** bucket is displayed in the **Name** column. Click the **training** link.
 
     ![](./images/buckets-page.png " ")
 
@@ -397,5 +397,4 @@ In this step, you will download two scripts that will set up your Object Storage
     + Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
 * **Contributor:**
     + Martin Gubar, Director, Oracle Big Data Product Management
-* **Last Updated By/Date:** Lauran Serhal, January 2021
-
+* **Last Updated By/Date:** Lauran Serhal, May 2021

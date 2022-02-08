@@ -11,7 +11,7 @@ Each Autonomous Transaction Processing instance includes a dedicated instance of
 ### Prerequisites
 - Sign Up for Free Trial/Login to Oracle Cloud
 
-## **Step 1:** Create an Autonomous Transaction Processing instance
+## Task 1: Create an Autonomous Transaction Processing instance
 
 In this step, you will create an instance of the Autonomous Transaction Processing database service.
 
@@ -37,7 +37,7 @@ In this step, you will create an instance of the Autonomous Transaction Processi
 
     ![](images/status-available.png)
 
-## **Step 2:** Create a new workspace in APEX
+## Task 2: Create a new workspace in APEX
 
 When you first access APEX you will need to log in as an APEX instance administrator to create a workspace. A workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
 

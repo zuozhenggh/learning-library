@@ -23,7 +23,7 @@ Any software client you use to connect to Oracle Cloud Infrastructure must be co
 * Create a table with provisioned reads/sec, writes/sec, and GB storage
 * Write data to the table and read data from the table
 
-## **STEP 1:** Record your tenancy and user OCID
+## Task 1: Record your tenancy and user OCID
 
 1. Create a note file on your local system to record the following information:
 
@@ -48,7 +48,7 @@ Any software client you use to connect to Oracle Cloud Infrastructure must be co
 
   ![](images/copy-user-ocid.png)
 
-## **STEP 2:** Generate an API Signing Key
+## Task 2: Generate an API Signing Key
 
 To create a user API key, you will use `openssl` on your local system. If you are using Windows, we recommend the Git Bash Shell.
 

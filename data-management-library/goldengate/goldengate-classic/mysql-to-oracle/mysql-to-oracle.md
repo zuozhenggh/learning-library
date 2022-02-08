@@ -25,7 +25,7 @@ This lab assumes you have:
 Time to Complete -
 Approximately 60 minutes
 
-## **STEP 1:** - GoldenGate for Oracle Capture
+## Task 1: - GoldenGate for Oracle Capture
 
 1. Open a terminal session
 
@@ -116,7 +116,7 @@ Add the parameters to auto-tune the number of Appliers; with a minimum of 3 and 
 
 12. Save and close the file.
 
-## **STEP 2:** - GoldenGate MySQL Data Apply
+## Task 2: - GoldenGate MySQL Data Apply
 
 **MySQL data apply**
 
@@ -175,7 +175,7 @@ add schematrandata pdbeast.tpc</copy>
 ````
 
 
-## **STEP 3:** - GoldenGate for Oracle Integrated Extract and Apply
+## Task 3: - GoldenGate for Oracle Integrated Extract and Apply
 
 1. **Oracle Integrated Extract:**
 
@@ -226,7 +226,7 @@ add schematrandata pdbeast.tpc</copy>
 <copy>add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadmin.ggchkpoint</copy>
 ````
 
-## **STEP 4:** - GoldenGate for non-Oracle coordinated Replicat
+## Task 4: - GoldenGate for non-Oracle coordinated Replicat
 
 **MySQL Coordinated Replicat**
 
@@ -283,7 +283,7 @@ When prompted enter the password: Oracle1
 
 Enter "100" at the prompt, and return.
 
-## **STEP 5:** - GoldenGate - Verify Replication
+## Task 5: - GoldenGate - Verify Replication
 
 1. Verify data has been replicated
 
@@ -359,7 +359,7 @@ extract (second from (heartbeat_received_ts - incoming_heartbeat_ts)) Total_Lag
 from ggadmin.gg_heartbeat_history order by heartbeat_received_ts desc;</copy>
 ````
 
-## **STEP 6:** - GoldenGate - Replicate DDL
+## Task 6: - GoldenGate - Replicate DDL
 
 1. Replicate Oracle DDL
 On the database server:

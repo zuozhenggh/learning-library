@@ -17,7 +17,7 @@ Estimated time: 5 minutes
 - This lab assumes you have completed the **Prerequisites** lab seen in the Contents menu on the right. The lab requires an [Oracle Cloud account](https://myservices.us.oraclecloud.com/mycloud/signup?language=en). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
 
 
-## **STEP 1**: Choosing ADW or ATP from the Services Menu
+## Task 1: Choosing ADW or ATP from the Services Menu
 
 1. Login to the Oracle Cloud, as shown in the previous lab.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -38,7 +38,7 @@ Estimated time: 5 minutes
 
     ![](./images/Region.png " ")
 
-## **STEP 2**: Creating the ADB instance
+## Task 2: Creating the ADB instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -115,7 +115,7 @@ Estimated time: 5 minutes
 
     ![](./images/AlwaysFreeProvisioning.png " ")
 
-## **STEP 3**: Connect to your ADB with SQL Developer Web
+## Task 3: Connect to your ADB with SQL Developer Web
 
 While you can also connect to your autonomous database using local PC desktop tools like Oracle SQL Developer (see this [ADB lab](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-advanced-workshop/freetier/?lab=lab-6-using-wallets-for-secure) for an example), you can now conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
 

@@ -14,7 +14,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 * [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
-## **Step 1:** Sign in to OCI Console and create ADW instance
+## Task 1: Sign in to OCI Console and create ADW instance
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
     ![](./../grafana/images/Grafana_015.PNG " ")
@@ -65,7 +65,7 @@ Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous
 
 We now have a Autonomous Data Warehouse instance created. We have also downloaded the Client Credentials file. We will use this file when connecting to the database instance  using SQL Developer. Next we will create a Data file and use Object stroage to upload it to Database instance.
 
-## **Step 2:** Create Auth token for the user connect to ADW and load data
+## Task 2: Create Auth token for the user connect to ADW and load data
 
 In this section we will generate auth token for the user of this lab. An Auth token is an Oracle-generated token that you can use to authenticate with third-party APIs and Autonomous Database instance.
 
@@ -223,7 +223,7 @@ In this section we will generate auth token for the user of this lab. An Auth to
 
 We have successfully deployed a Autonomous Data Warehouse instance, populated a table using a file stored in Object storage and successfully run a query against the table.
 
-## **Step 3:** Delete the resources
+## Task 3: Delete the resources
 
 Delete Auth Token and Autonomous Data Warehouse
 

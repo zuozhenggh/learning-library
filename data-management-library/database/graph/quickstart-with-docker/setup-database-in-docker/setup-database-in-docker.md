@@ -20,7 +20,7 @@ In this lab, you will:
 
 * Cloned `oracle-pg` repository on your instance.
 
-## **STEP 1:** Build the Oracle Database Docker image
+## Task 1: Build the Oracle Database Docker image
 
 ### Install Docker build files from GitHub
 
@@ -84,7 +84,7 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 2.  Oracle Database 19c (19.3) for Linux x86-64 has been uploaded to Oracle Object Storage for you. Download the zip file to your compute instance by using its Pre-Authenticated Request (PAR) URL.
 
     ```
-    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LK1k7CgQxR2LcgcF1sG8E0Z_B3q3yNC4H62dZQ8xaSr7OBN7D6lcpIutXF17oZU6/n/c4u03/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/y_cbw9J5tvbAUFF6T2KmNaqnNIGc9RGXUy0i0KV-3FE0ZsSN0s6xEjTaWqrVeORX/n/c4u04/b/data-management-library-files/o/LINUX.X64_193000_db_home.zip</copy>
     ```
 
 You have finished uploading Oracle Database zip to your compute instance. You can now move to Build the Docker image.
@@ -167,7 +167,7 @@ You have finished uploading Oracle Database zip to your compute instance. You ca
 
     Note when the script completes, it lists the new Docker image: `oracle/database:19.3.0-ee`.
 
-## **STEP 2:** Start the containers
+## Task 2: Start the containers
 
 1. Change the directory to `$REPO_HOME/oracle-pg/docker/` and start the containers for **Oracle Database** only.
 
@@ -191,7 +191,7 @@ You have finished uploading Oracle Database zip to your compute instance. You ca
 
     Proceed to step 2 the database is up and running.
 
-## **STEP 3:** Configure the database
+## Task 3: Configure the database
 
 1. Connect to the Oracle Database server.
 

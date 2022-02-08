@@ -24,14 +24,13 @@ As a database user, DBA or application developer,
 - An Oracle Cloud Infrastructure account with IAM privileges to provision compute instances
 - VNC Viewer or other suitable VNC client on your local laptop
 
-## **STEP 1**: Provision an OCI Marketplace Forms Services image
+## Task 1: Provision an OCI Marketplace Forms Services image
 
 We start with deploying a pre-configured client machine instance from the OCI marketplace.
 
 1. Log into your cloud account using your tenant name, username and password.
-2. Click the **Navigation Menu** in the upper left and select **Marketplace**.
-
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/marketplace.png " ")	
+2. Click on Hamburger Menu, Select Marketplace and Click on All Applications
+      ![](./images/cloud_marketplace.png " ")
 
 3. Search for Oracle Forms Service.
       ![](./images/oracle_forms.png " ")
@@ -59,16 +58,14 @@ We start with deploying a pre-configured client machine instance from the OCI ma
     ![](./images/computeready.png " ")
 
 
-## **STEP 2**: Connect from your local laptop into your development system to complete the forms installation
+## Task 2: Connect from your local laptop into your development system to complete the forms installation
 
 First we ssh into the dev client and invoke the VNC server that comes pre-installed.
 
 1. SSH into your dev client compute instance with public ip details we got from instance details.
 
     ```
-    <copy>
-    $ ssh -i <private-key> opc@PublicIP
-    </copy>
+    <copy>$ ssh -i <private-key> opc@PublicIP</copy>
     ```
 2. When you login, the Oracle Forms Installation will continue and you will be prompted with if you want to use DBCS, choose N
 
@@ -116,11 +113,8 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
     can be found in readme file under Desktop folder
 
     ```
-        <copy>
         $ cd Desktop
         $ vi Readme
-        </copy>
-
 
         Excerpt from Readme file, make a note off these details.
           ------------------------------
@@ -157,9 +151,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 4.   Start your VNC server with the following command,
 
         ```
-        <copy>
-        $ vncserver -geometry 1280x1024
-        </copy>
+        <copy>$ vncserver -geometry 1280x1024</copy>
         ```
 
         ```
@@ -187,6 +179,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
       *Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer.*
 
 6. Create a tunnel for VNC through SSH,
+
    if you have MAC ,
 
           In a terminal window , issue the following command, with your public IP address at the end. This will create the SSH tunnel for you to use for VNC.
@@ -234,22 +227,20 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 
 9. If all goes well, you should now see a linux desktop in your VNC window.
 
-## **STEP 3**: Copy the SQL Scripts, Shell Scripts and Sample Forms files to your development system
-1. We have sample forms and sample database scripts that can be downloaded from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/QP5J-CoMLxkdSxU25SaE8_B5t1A18b6qe7j_Xv7TckRgD3yDxilgfJhp-TAJir1V/n/c4u03/b/developer-library/o/setup-oracle-forms.zip)
+## Task 3: Copy the SQL Scripts, Shell Scripts and Sample Forms files to your development system
+1. We have sample forms and sample database scripts that can be downloaded from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fbFOefHYChqsfjw3M1TLkdrks_S7i5-Ufq2dXxCtiZhyvLDHnEICwAYM4v3mXstQ/n/c4u04/b/developer-library/o/setup-oracle-forms.zip)
 
 2. Unzip the files and Copy the files over to your development system from your local Desktop
 
       ````
-      <copy>
-        scp -i  ~/.ssh/<privake key> ./files/customers.fmb opc@<public ip>:/home/opc/oracle/formsmodules
+      <copy>scp -i  ~/.ssh/<privake key> ./files/customers.fmb opc@<public ip>:/home/opc/oracle/formsmodules
         scp -i  ~/.ssh/<privake key> ./files/forms_conversion.sql opc@<public ip>:/home/opc/oracle/formsmodules
         scp -i  ~/.ssh/<privake key> ./files/forms_conversion_data_insert.sql opc@<public ip>:/home/opc/oracle/formsmodules
         scp -i  ~/.ssh/<privake key> ./files/frmf2xml.sh opc@<public ip>:/home/opc/oracle/formsmodules
-        scp -i  ~/.ssh/<privake key> ./files/formsXMLconvert.sh opc@<public ip>:/home/opc/oracle/formsmodules        
-      </copy>
+        scp -i  ~/.ssh/<privake key> ./files/formsXMLconvert.sh opc@<public ip>:/home/opc/oracle/formsmodules </copy>       
       ````
 
-## **STEP 4**: Connect to your DB in Development system using SQL Developer
+## Task 4: Connect to your DB in Development system using SQL Developer
 
 1. In your VNC session, invoke SQL Developer from the top left Applications menu as shown below.
     ![](./images/sql-developer-vnc.png " ")
@@ -258,9 +249,7 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
     *Note: In the event you have issues launching SQL Developer and it prompts with a java classpath error, simply add the following line to ~/.sqldeveloper/19.1.0/product.conf and retry.*
 
     ````
-    <copy>
-    SetJavaHome /usr/java/jdk1.8.0_231-amd64
-    </copy>
+    <copy>SetJavaHome /usr/java/jdk1.8.0_231-amd64</copy>
     ````
 
 2. Create an new connection in sql*developer and provide the following information,
@@ -280,21 +269,19 @@ First we ssh into the dev client and invoke the VNC server that comes pre-instal
 3. Test your connection and save. The *Status* bar will show *Success* if it is a successful connection!
 
 
-## **STEP 5**: Run the scripts to create sample schema and insert sample data.
+## Task 5: Run the scripts to create sample schema and insert sample data.
 
   1.  Open the script  forms_conversion_ddl.sql in SQL developer in VNC and execute the script. Make a note of the credential for order user in the script.
   2.  In the same session connect to orders user and run the insert script forms_conversion_data_insert.sql
 
 
-## **STEP 6**: Convert the Forms to XML files
+## Task 6: Convert the Forms to XML files
 
 Before migrating  to Oracle Applications Express, Forms file have to be converted to XML file using frmf2xml utility provided with Oracle Forms Service Image. In the downloaded scripts, formsXMLconvert.sh script that can be run to convert all the Forms files in the directory where it is run from.
 
     ````
-    <copy>
-      cd oracle/formsmodules/
-      sh formsXMLconvert.sh
-    </copy>
+    <copy>cd oracle/formsmodules/
+      sh formsXMLconvert.sh</copy>
 
     ````  
 After the script is run verify that you can see customers_fmb.xml
@@ -306,8 +293,3 @@ You may now *proceed to the next lab*.
 - **Author** -  Vanitha Subramanyam, Senior Solution Architect
 - **Contributors** - Vanitha Subramanyam, Senior Solution Architect
 - **Last Updated By/Date** - Vanitha Subramanyam, Senior Solution Architect, February 2021
-
-## Need Help?
- Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/forms-to-apex-migration-workshops). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
- If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

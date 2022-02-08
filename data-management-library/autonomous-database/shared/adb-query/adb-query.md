@@ -1,8 +1,10 @@
-# Query Data in External Files
+# Query data in external files
 
 ## Introduction
 
 In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Object Storage directly without loading them to your database.
+
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -11,21 +13,19 @@ In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Objec
 
 ### Prerequisites
 
-- The following lab requires an <a href="https://www.oracle.com/cloud/free/" target="\_blank">Oracle Cloud account</a>. You may use your own cloud account, a cloud account that you obtained through a trial, a LiveLabs account or a training account whose details were given to you by an Oracle instructor.
-- This lab assumes you have completed the **Prerequisites** and **Lab 1** seen in the Contents menu on the left.
-- Make sure you have completed the previous lab in the Contents menu on the left, *Loading Data*, before you proceed with this lab. In Loading Data, you created data files on the OCI Object Storage and you created the credential object, all of which you will use in this lab.
+- This lab requires completion of the Load Data lab in the Contents menu on the left.
 
-## **STEP 1**: Create External Tables with DBMS_CLOUD
+## Task 1: Create external tables with DBMS_CLOUD
 
-1.  If you are not already logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the hamburger menu and navigate into your ADW Finance Mart instance.
+1.  If you are not already logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the navigation menu and navigate into your ADW Finance Mart instance.
 
     ![Select autonomous Data Warehouse on the left navigation menu in the Oracle Cloud homepage.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
     ![Select your database instance.](images/step1.1-adb.png " ")
 
-2.  If you are not already logged in to SQL Worksheet, in your ADW Finance Mart Database Details page, click the **Tools** tab and then click **Open Database Actions**.
+2.  If you are not already logged in to SQL Worksheet, in your ADW Finance Mart Database Details page, click the **Database Actions** button.
 
-    ![Select Tools tab and click Open Database Actions.](./images/Picture100-15.png " ")
+    ![Click the Database Actions button.](./images/click-database-actions-button.png " ")
 
 3.  A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, **Username - ADMIN** and click **Next**.
 
@@ -37,35 +37,23 @@ In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Objec
 
 5.  The Database Actions page opens. In the **Development** box, click **SQL**.
 
-    ![Click on SQL.](./images/Picture100-16-click-sql.png " ")
+    ![Click SQL.](./images/Picture100-16-click-sql.png " ")
 
 6.  The SQL Worksheet appears. Before you proceed with the SQL Worksheet, perform the next two steps.
 
-7.  Download <a href="./files/create_external_tables_without_base_url.txt" target="\_blank">this code snippet</a> to a text editor.
+7.  Download <a href="./files/create_external_tables_without_base_url_v2.txt" target="\_blank">this code snippet</a> to a text editor.
 
-8.  Replace `<file_uri_base>` in the code with the base URL you copied in Loading Data Lab, Step 6. You should make 9 substitutions.
+8.  Replace `<bucket URI>` in the code with the base URL you copied in Loading Data Lab, Task 6.
 
     This code uses the **create\_external\_table** procedure of the **DBMS\_CLOUD** package to create external tables on the files staged in your object store. Note that you are still using the same credential and URLs of files on OCI Object Storage you used when loading data in Loading Data Lab.
 
-    For each `<file_uri_list>` statement:
+9.  Run the script in SQL Worksheet. In the Substitutions Variables dialog, paste the base URL you copied in Loading Data Lab, Task 6, and click **OK**.
 
-    - Change `us-phoenix-1` to your real region name. The name is case-sensitive.
-    - Change `idthydc0kinr` to your real namespace. The name is case-sensitive.
-    - Change `ADWCLab` to your real bucket name. The name is case-sensitive.
+    ![Click Run Script.](images/step1.5.png " ")
 
-    ![Replace all the placeholders in the code snippet.](./images/step1.4.png " ")
+    Now you have **external tables** for the sample data pointing to files in the object store. Any query on the external tables will return the same result as on the original tables.
 
-9.  Run the script in SQL Worksheet. In the Substitutions Variables dialog, paste the base URL you copied in Loading Data Lab, Step 6, and click **OK**.
-
-    ![Click Run Scipt. A dialog window opens up.](images/step1.5.png " ")
-
-    ![Enter the base URL and click Ok.](images/substitution-variables.png " ")
-
-    Now you have **external tables** for the sample data pointing to files in the object store. Any query against the external tables will return the same result as against the original tables.
-
-    ![Click Run Script.](./images/run_script_create_ext_tables_without_base_url.png " ")
-
-## **STEP 2**: Query External Data
+## Task 2: Query external data
 
 1.  Copy and paste <a href="./files/query_external_data.txt" target="\_blank">this code snippet</a> to a SQL Worksheet. Compared to the query in the previous lab, we only replaced the original table names **table\_name** with **table\_name\_ext** in the sample query.
 
@@ -75,12 +63,12 @@ In this lab, you will query files on the Oracle Cloud Infrastructure (OCI) Objec
 
 Please *proceed to the next lab*.
 
-## Want to Learn More?
+## Learn more
 
 For more information about querying external data, see the documentation [Querying External Data with Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/query-external.html#GUID-ABF95242-3E04-42FF-9361-52707D14E833).
 
 ## **Acknowledgements**
 
-- **Author** - Nilay Panchal, ADB Product Management
+- **Author** - Nilay Panchal, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, March 2021
+- **Last Updated By/Date** - Richard Green, November 2021

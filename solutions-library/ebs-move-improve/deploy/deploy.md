@@ -26,7 +26,7 @@ Watch this short video to preview how to deploy your Oracle E-Business Suite clo
     * `Client_ID`
     * `Client_Secret`
 
-## **STEP 1:** Sign in to the Oracle Cloud Infrastructure Console
+## Task 1: Sign in to the Oracle Cloud Infrastructure Console
 
 Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastructure console.
 
@@ -37,7 +37,7 @@ Use the tenancy administrator credentials to sign in to Oracle Cloud Infrastruct
     * **User name**: ``Tenancy Admin User``
     * **Password**: ``Tenancy Admin Password``
 
-## **STEP 2:** Deploy and Configure Oracle E-Business Suite Cloud Manager
+## Task 2: Deploy and Configure Oracle E-Business Suite Cloud Manager
 
 You will now deploy an E-Business Suite Cloud Manager using a Marketplace stack. The stack creates the following cloud resources:
 
@@ -51,7 +51,7 @@ You will now deploy an E-Business Suite Cloud Manager using a Marketplace stack.
 
 Then, the stack will configure Oracle E-Business Suite Cloud Manager to work with your OCI tenancy and the newly created OCI resources.
 
-1. In the Oracle Cloud Infrastructure console navigation menu, under **Solutions and Platform** select **Marketplace** and then click **Applications**.
+1. In the Oracle Cloud Infrastructure console navigation menu, under **Marketplace** select **All Applications**.
 
   ![](./images/1.png " ")
 
@@ -65,7 +65,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
     ![](./images/2.png " ")
 
-3. In the version drop-down list, ensure that the default of ```Oracle-EBS-Cloud-Manager-Stack-RM-20.2.1-default``` is selected.
+3. In the version drop-down list, ensure that the default is selected.
 
 4. In the Compartment drop-down list, select the parent compartment of the compartment where the Oracle E-Business Suite Cloud Manager Compute instance will be deployed. For example, mycompanytenancy(root).
 
@@ -85,7 +85,7 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
       1. **Compartment**: (the one chosen previously)
 
-      2. **Terraform Version**: 0.11.x
+      2. **Terraform Version**: 0.12.x
 
     d. Click Next
 
@@ -151,17 +151,13 @@ Then, the stack will configure Oracle E-Business Suite Cloud Manager to work wit
 
   After the job succeeds, you will have all the network resources (VCN, load balancer, subnets, and so on) required to deploy the Oracle E-Business Suite Cloud Manager Compute instance.
 
-11. On the **Application Information** tab you will find the details related to the EBS Cloud Manager Instance and Load Balancer.
-
-  ![](./images/10.png " ")
-
-12. This information can also be found at the bottom of your log outputs as shown below:
+11. You will find the details related to the EBS Cloud Manager Instance and Load Balancer at the bottom of your log outputs as shown below:
 
   Copy and paste **Private IP, Public IP, Login URL** and **LB Public IP** to your ``key-data.txt``. These variables are needed for the remainder of the procedures in this lab.
 
   ![](./images/11.png " ")
 
-## **STEP 3:** Update key-data.txt
+## Task 3: Update key-data.txt
 
 ### **Part 1:** Tenancy Info
 
@@ -194,7 +190,7 @@ Find the following under **Identity** -> **Compartments**
 
 Record the OCID for the compartment that was created in your `key-data.txt` as : `Oracle_Cloud_Compartment_OCID` 
 
-## **STEP 4:** Log in to Oracle E-Business Suite Cloud Manager
+## Task 4: Log in to Oracle E-Business Suite Cloud Manager
 
 Before logging into the Oracle E-Business Suite Cloud Manager web application, you need to add the **hostname** in the Login URL to your local computer hosts file.
 
@@ -250,7 +246,9 @@ Log into the Oracle E-Business Suite Cloud Manager using your IDCS credentials f
 
   Note: It may take some additional time for the load balancer to be properly configured. Sometimes it may take up to 30 minutes or an hour to configure. If you would like to check on the status of the load balancer,  in OCI go to **Networking** > **Load Balancers** and then check the **Overall Heatlh** status. If it is OK, the connection can be established. 
 
-  Note: Your browswer may give you an error when attempting to access the EBS Cloud Manager. If you run into an error using the EBS login URL try using a different browser or an incognito session. If this does not solve the problem, try adding ``:443`` after the url (i.e. ``https://myebscm.ebshol.org:443``).
+  Note: If your login URL is not working or if your compute instance which contains the Cloud Manager image was ever stopped/turned off you may need to check and see if the application is running. The command for this can be found in the Lab "Optional: Managing the EBS Cloud Manager Virtual Machine."
+
+  Note: Your browser may give you an error when attempting to access the EBS Cloud Manager. If you run into an error using the EBS login URL try using a different browser or an incognito session. If this does not solve the problem, try adding ``:443`` after the url (i.e. ``https://myebscm.ebshol.org:443``).
 
   ![](./images/14.png " ")
 
@@ -267,6 +265,7 @@ You may now proceed to the next lab.
   - Santiago Bastidas, Product Management Director
   - William Masdon, Cloud Engineering
   - Mitsu Mehta, Cloud Engineering
-* **Last Updated By/Date:** Quintin Hill, Cloud Engineering, Sept 2020
+  - Chris Wegenek, Cloud Engineering
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering, September 2021
 
 

@@ -12,7 +12,7 @@ Estimated Lab Time: 30-45 minutes
 ### Prerequisites
 - Succesful completion of all previous labs in this workshop
 
-## **Step 1:** Connect the new instance to the Backup database
+## Task 1: Connect the new instance to the Backup database
 1. Start an ssh connection to the newly created instance.
 2. Navigate to the root compartment and edit the *defaults.xml* file
     ```
@@ -43,7 +43,7 @@ Estimated Lab Time: 30-45 minutes
 *(This will make sure the new instance points to the backup database after every sync)*
 
 
-## **Step 2:** Conduct the failover operation to activate the backup database
+## Task 2: Conduct the failover operation to activate the backup database
 
 1. Navigate to the standby database
     ![](./images/db-nav.PNG)
@@ -56,7 +56,7 @@ Estimated Lab Time: 30-45 minutes
 5. Navigate back to the StandbyDatabase DB system and look at the Peer Role under Data Guard Associations. It shows Disabled Standby which also reaffirms that the failover was successful.
     ![](./images/pr-role.PNG)
 
-## **Step 3:** Verify the APEX application changes in the new Instance
+## Task 3: Verify the APEX application changes in the new Instance
 1. Navigate to the new APEX instance through a web browser i.e. https://\<target-public-ip>:8888/ords/drpdb
 2. Login with the same workspace & admin credentials created in step 3 & 5 of the lab **Configure APEX instance for DR**
     ![](./images/login.PNG)

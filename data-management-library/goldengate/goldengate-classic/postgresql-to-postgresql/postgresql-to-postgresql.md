@@ -31,7 +31,7 @@ This lab assumes you have:
     - Lab: Prepare Setup
     - Lab: Environment Setup
 
-## **STEP 1**: Installation of OGG for PostgreSQL
+## Task 1: Installation of OGG for PostgreSQL
 
 In this step you will install **Oracle GoldenGate for PostgreSQL** in new **"GoldenGate Home of the PostgreSQL"** directory.
 
@@ -50,7 +50,7 @@ inflating: /u01/ggpost/OGG-19.1.0.0-README.txt
 inflating: /u01/ggpost/release-notes-oracle-goldengate_19.1.0.200714.pdf
 ```
 
-## **STEP 2**:	Untar the GoldenGate executable
+## Task 2:	Untar the GoldenGate executable
 
 Go to the ***GoldenGate Home*** and untar the ***ggs_Linux_x64_PostgreSQL_64bit.tar*** executable.
 
@@ -65,7 +65,7 @@ total 333868
 <copy>tar -xf ggs_Linux_x64_PostgreSQL_64bit.tar  </copy>
 ```
 
-## **STEP 3**: Execute the ggsci commands from goldengate for postgreSQL home
+## Task 3: Execute the ggsci commands from goldengate for postgreSQL home
 1. Execute the ggsci command from terminal
 
 Execute remaining subdirectories in the installation location
@@ -102,7 +102,7 @@ Masterkey wallet files         /u01/ggpost/dirwlt: created.
 Dump files                     /u01/ggpost/dirdmp: created.
 ```
 
-## **STEP 4**:Edit the manager
+## Task 4:Edit the manager
 
 1. Edit the manager parameter
 
@@ -121,7 +121,7 @@ To specify this port, use the PORT parameter in the Manager parameter file.
 
 ```
 
-## **STEP 5**:Start the manager
+## Task 5:Start the manager
 To start Manager from GGSCI, issue the following command.
 
 ```
@@ -129,7 +129,7 @@ GGSCI (ogg-classic) 4> <copy>start mgr</copy>
 Manager started.
 
 ```
-## **STEP 6**: Manager status check
+## Task 6: Manager status check
 ***info all*** will display the status  for all Manager
 
 ```
@@ -190,7 +190,7 @@ Password=Madhu_123
 
 Save the text using ***wq!***
 
-## **STEP 7**: Extract configuration
+## Task 7: Extract configuration
 
 1. Enter into ***ggsci*** command prompt from the terminal
 
@@ -324,7 +324,7 @@ GGSCI (ogg-classic as ggadmin@sourcedsn) 11>
 
 ```
 
-## **STEP 8**: Replication configuration
+## Task 8: Replication configuration
 
 1. Edit Replicat parameter
 
@@ -405,7 +405,7 @@ Log Read Checkpoint  File ./dirdat/pa000000000
 GGSCI (ogg-classic as ggadmin@targetdsn) 7>
 ```
 
-## **STEP 9**: Execuating  DML statments against source database
+## Task 9: Execuating  DML statments against source database
 
 1. DML Operation :
 

@@ -38,7 +38,7 @@ This lab assumes you have completed the following labs:
 - Create a Machine Learning Model
 - Migrate ML Model to ATP
 
-## **STEP 1:** Prepare data for the lab in ATP
+## Task 1: Prepare data for the lab in ATP
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
@@ -147,7 +147,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/create-a-table.png  " ")
 
-## **STEP 2:** Import the APEX Application
+## Task 2: Import the APEX Application
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, select **Autonomous Transaction Processing**, choose your compartment and navigate to your ATP instance.
 
@@ -233,7 +233,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/alpha_office.png  " ")
 
-## **STEP 3:** Run the application and review on-the-fly prediction/scoring
+## Task 3: Run the application and review on-the-fly prediction/scoring
 
 1.  On the Alpha Office homepgae, select **Customer Walk-in** from the menu.
 
@@ -303,7 +303,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/overall-profile.png  " ")
 
-## **STEP 4:** Expose the ml model as a REST end point so any application can call it
+## Task 4: Expose the ml model as a REST end point so any application can call it
 
 1.  Select the **Home** button from the menu at the bottom of the screen. (Note: If you do not see the menu bar at the bottom of the page, switch to Oracle APEX tab which was opened earlier in the browser.)
 

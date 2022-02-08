@@ -1,12 +1,20 @@
-# Polyglot Microservices
+# Polyglot microservices
 
 ## Introduction
 
-This lab will show you how to switch the Inventory microservice to a Python, Node.js or Java Helidon SE implementation while retaining the same application functionality.
-
-Estimates Lab Time - 
+The illustration below shows four microservices: Order, Inventory, Delivery, Supplier, and the infrastructure required to run them.
 
 ![](images/architecture.png " ")
+
+For more information on microservices visit http://developer.oracle.com/microservices
+
+In this workshop, you'll switch the Inventory microservice to a Python, Node.js, .NET, Go, Spring Boot or Java Helidon SE implementation while retaining the same application functionality.
+
+Estimated Time - 10 minutes
+
+The following video provides a quick walk-through of how to switch the Inventory microservice to Python while retaining the same application functionality.
+
+[](youtube:zltpjX721PA)
 
 ### Objectives
 
@@ -15,11 +23,11 @@ Estimates Lab Time -
 
 ### Prerequisites
 
-- This lab assumes you have already completed Labs 1 through 4.
+This lab assumes you have already completed the earlier labs.
 
-## **STEP 1**: Undeploy the Java Helidon MP Inventory Microservice
+## Task 1: Undeploy the Java Helidon MP Inventory Microservice
 
-1. To undeploy the Inventory Helidon MP service, open the Cloud Shell and go to the
+1. To undeploy the Inventory Helidon MP service, open Cloud Shell and go to the
     inventory-helidon folder, using the following command.
 
     ```
@@ -28,58 +36,93 @@ Estimates Lab Time -
 
    ![](images/undeploy-inventory-helidon-mp.png " ")
 
-## **STEP 2**: Deploy an alternate implementation of the Inventory Microservice
+## Task 2: Deploy an Alternate Implementation of the Inventory Microservice
 
-In this step you can choose between three different implementations of the Inventory Microservice: (1) Java Helidon SE, (2) Python, or (3) Node.js
+In this step you can choose between six different implementations of the Inventory Microservice: PL/SQL, Python, NodeJS, .NET, Go, or Java Helidon SE.
 
 1. Select one of the alternate implementations and deploy the service for the selected implementation.  
 
-   If you selected Python, deploy this service:
+  If you selected **PL/SQL**, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-plsql; ./deploy.sh</copy>
+    ```
+
+   If you selected **Python**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-python; ./deploy.sh</copy>
     ```
 
-   If you selected Node.js, deploy this service:
+   If you selected **Node.js**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-nodejs; ./deploy.sh</copy>
     ```
 
-   If you selected .NET, deploy this service:
+   If you selected **.NET**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-dotnet; ./deploy.sh</copy>
     ```
 
-   If you selected Go, deploy this service:
+   If you selected **Go**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-go; ./deploy.sh</copy>
     ```
 
-   If you selected Java Helidon SE, deploy this service:
+   If you selected **Java Helidon SE**, deploy this service:
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./deploy.sh</copy>
     ```
 
-## **STEP 3**: Verify application functionality
-
-1. Repeat Lab 2 Step 5 to verify the order and inventory functionality of the GrabDish store remains the same using new order ID's, for example 166 and 167.
-
-## **STEP 4**: Re-deploy the Java Helidon MP Inventory Microservice
-
-1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following command.
+   If you selected **Micronaut**, deploy this service:
 
     ```
-    <copy>cd $GRABDISH_HOME/inventory-helidon-se; ./undeploy.sh; cd $GRABDISH_HOME/inventory-python; ./undeploy.sh; cd $GRABDISH_HOME/inventory-nodejs; cd $GRABDISH_HOME/inventory-dotnet; cd $GRABDISH_HOME/inventory-goe; ./undeploy.sh; cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh</copy>
+    <copy>cd $GRABDISH_HOME/inventory-micronaut; ./deploy.sh</copy>
+    ```
+
+   If you selected **Quarkus**, deploy this service:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-quarkus; ./deploy.sh</copy>
+    ```
+
+   If you selected **GraalVM Native Image**, you will need to build the image in an environment/machine that has more memory/space than the cloud console.
+   Refer to the `Task 11: ` in Lab 2 for details on how to do this and run the following command to build and push the image from that environment:
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-micronaut; ./build-native-image.sh</copy>
+    ```
+
+   Then run the following command to deploy. This can be done from either the same environment/machine as the build or the cloud shell.
+
+    ```
+    <copy>cd $GRABDISH_HOME/inventory-micronaut; ./deploy-native-image.sh</copy>
+    ```
+
+## Task 3: Verify Application Functionality
+
+1. Repeat **Lab 2: Step 3** to verify that the functionality of the GrabDish store remains the same while using the new implementation. You will need to use different order ID's, for example 166 and 167.
+
+## Task 4: Re-deploy the Java Helidon MP Inventory Microservice
+
+1. To undeploy any other inventory services and then deploy the Inventory Helidon MP service, issue the following commands:
+
+    ```
+    <copy>
+    for i in inventory-plsql inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go inventory-springboot; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
+    cd $GRABDISH_HOME/inventory-micronaut ; ./undeploy-native-image.sh
+    cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh
+    cd $GRABDISH_HOME
+    </copy>
     ```
 
 ## Acknowledgements
-* **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture; Paul Parkinson, Dev Lead for Data and Transaction Processing, Oracle Microservices Platform, Helidon
+* **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture; Paul Parkinson, Developer Evangelist; Mayank Tayal, Developer Advocate
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Tom McGinn, June 2020
-
+* **Last Updated By/Date** - Mayank Tayal, August 2021

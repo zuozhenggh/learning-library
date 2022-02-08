@@ -30,7 +30,7 @@ In this lab, you will:
     - The OCID of the target database
 
 
-## **STEP 1:** Enable Data Safe
+## Task 1: Enable Data Safe
 
 This step is not necessary if Data Safe is already been used in you tenancy and region. If it is not, follow these steps:
 
@@ -43,7 +43,7 @@ This step is not necessary if Data Safe is already been used in you tenancy and 
 4. Click **Enable Data Safe**. 
 
 
-## **STEP 2:** Create a Private Endpoint for the Database
+## Task 2: Create a Private Endpoint for the Database
 
 This step is only necessary if your database is private. Since it is highly recommended to make your EBS databases private, this step should be followed. If for demo purposes the database had been left public, you may skip this step. 
 
@@ -77,7 +77,7 @@ This step is only necessary if your database is private. Since it is highly reco
 
     ![](./images/2-1.png " ")
 
-## **STEP 3:** Create a User for Data Safe on the Target Database
+## Task 3: Create a User for Data Safe on the Target Database
 
 In this step, we will create a database user and grant them privileges which will allow them to be used as the Data Safe user. Before we can create the user, we must download a file from the Data Safe console that will give the created user the roles necessary to act as a Data Safe user. 
 
@@ -188,7 +188,7 @@ In this step, we will create a database user and grant them privileges which wil
     ![](./images/9.png " ")
 
 
-## **STEP 4:** Register the Target Database on the Data Safe Console
+## Task 4: Register the Target Database on the Data Safe Console
 
 1. Login to the Data Safe Service Console from OCI. 
 
@@ -229,7 +229,7 @@ In this step, we will create a database user and grant them privileges which wil
 Congratulations! You have successfully registered a database with Data Safe. You can now go to the **Home** tab on Data Safe and begin running assessments to gain additional insight into your EBS data. 
 
 
-## **STEP 5:** Monitor your Target Database on the Data Safe Console
+## Task 5: Monitor your Target Database on the Data Safe Console
 
 In this step, we will access the data on the target database we registered. Security and User Assessments will give us snapshots into the current security of the database. Data Discovery allows us to run jobs that discover potentially sensitive data on the database while Data Masking would mask the sensitive data (only for use on a non-production database). Activity Auditing allows users to view activity and data manipulation on the database. 
 

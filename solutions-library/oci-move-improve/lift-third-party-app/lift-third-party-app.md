@@ -24,7 +24,7 @@ Estimated Lab Time: 2 hour
 ### Administrative Notes
 Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premises E-Commerce application and capture a snapshot in the form of a .ova file, and convert it to a cloud-compatible VMDK. Should you wish to skip this part of the lab and proceed directly to Step 2, download the VMDK file contained [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FEBPspM96RVKRDzdnhbGbm3xlxazyLnK1TGhOGcFCOPDgEMcFJsT2fchnWyu7K94/n/orasenatdpltintegration03/b/workshop16/o/osCommerceDemo%201-disk001Ubuntu.vmdk). The VMDK is a large file (~2GB) and may take a significant time to download depending on your network speed.
 
-## **STEP 1:** Configuration of E-Commerce application [Optional]
+## Task 1: Configuration of E-Commerce application [Optional]
 ### **Download VirtualBox and Import Ubuntu Instance**
 1. If you do not have it on your local machine, make sure to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads). VirtualBox is free, open-source software that allows users to run multiple operating systems on a single machine and switch between OS Instances. Additionally, download the [osCommerceDemo.ova file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UOSAMIIZo-LhKlVvAaq7TJjeEyvVHK8Bahl6tLml-XWsEbCmHee2xYhrb2reWIXK/n/orasenatdpltintegration03/b/workshop16/o/osCommerceDemoUbuntu16.ova). Please reach out to your lab facilitator should you have any issues downloading the .ova file.
 
@@ -388,7 +388,7 @@ Step 1 of Lab 1 is optional. This section outlines how to configure an On-Premis
 
     ![](./images/21.png "")
 
-## **STEP 2:** Bringing Snapshot to the Cloud
+## Task 2: Bringing Snapshot to the Cloud
 
 ### **Create a Virtual Cloud Network (VCN)**
 
@@ -446,7 +446,7 @@ Note: This step can take a significant amount of time depending on your internet
 
     ![](./images/34.png "")
 
-## **STEP 3:** Create Custom Image and Instance
+## Task 3: Create Custom Image and Instance
 
 ### **Import the image**
 

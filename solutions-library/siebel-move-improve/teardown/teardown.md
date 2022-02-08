@@ -14,7 +14,7 @@ Estimated Lab Time: 15 minutes
 * Tenancy Admin User
 * Tenancy Admin Password
 
-## **STEP 1:** Delete the Siebel Virtual Machine In OCI
+## Task 1: Delete the Siebel Virtual Machine In OCI
 
 1. Navigate to the OCI home page.
 
@@ -36,7 +36,7 @@ Estimated Lab Time: 15 minutes
 
     ![Status should be terminated as shown](./images/terminated_instance_evidence.png " ")
 
-## **STEP 2:** Terminating the VCN
+## Task 2: Terminating the VCN
 
 1. Use the dropdown menu located in the upper lefthand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
     ![Navigate to compartments using the dropdown menu](./images/dropdown_networking_vcn.png " ")
@@ -60,7 +60,7 @@ Estimated Lab Time: 15 minutes
 
     After all the resouces have terminated the VCN itself will terminate and you may then click the close button.
 
-## **STEP 3:** Deleting the Siebel Compartment
+## Task 3: Deleting the Siebel Compartment
 
 1.  Use the dropdown menu located in the upper lefthand corner of the screen and select **Identity** then **Compartments**.
 

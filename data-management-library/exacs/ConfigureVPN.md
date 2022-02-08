@@ -42,7 +42,7 @@ The following illustration shows a network topology that can be used to provide 
 ## Steps
 
 
-### **STEP 1:   OS VM for the OpenVPN server**
+### **Task 1:   OS VM for the OpenVPN server**
 
 - Login to the Oracle Cloud Infrastructure using your tenancy, userId and password. 
 
@@ -82,7 +82,7 @@ The following illustration shows a network topology that can be used to provide 
 #### Note that while your ExaCS infrastructure and VPN server are in the same VCN, the ExaCS is in a private subnet while the VPN server is deployed in a public subnet for access over the internet. 
 
 
-### **STEP 2: Install and Configure OpenVPN Server**
+### **Task 2: Install and Configure OpenVPN Server**
 
 -   Use the following to ssh into centOS vm and download the openVPN rpm package
 
@@ -146,7 +146,7 @@ The following illustration shows a network topology that can be used to provide 
     ![](./images/Infra/configure_vpn/vpn_routing3.png " ")
 
 
-### **STEP 3: Install OpenVPN Client**
+### **Task 3: Install OpenVPN Client**
 
 - Launch your OpenVPN Access Server Client UI at **https://*<Your_VPN_Server_Public_IP>*:943** and download the OpenVPN client for your platforms.
     
@@ -168,7 +168,7 @@ The following illustration shows a network topology that can be used to provide 
 
     You may also setup your VPN server with multiple users. Follow the OpenVPN configuration guide to setup additional users.
 
-### **STEP 4: Connect SQL Developer to your ExaCS database**
+### **Task 4: Connect SQL Developer to your ExaCS database**
 - One of the pieces of information we need to connect to your ExaCS database is its service name. Follow below steps to construct the service name.
 - Service name is database-unique-name.host-domain-name. To find out database-unique-name, go to your cloud console and navigate to the web page where you find information about your ExaCS instance.
 - Find host-domain-name as shown in the picture below.

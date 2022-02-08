@@ -8,7 +8,7 @@ Estimated Lab Time: 15 minutes.
 
 *You should not keep the instances deployed on OCI as part of this workshop running once your are done, or use in any way for actual workloads: the database and WebLogic credentials are publically available and would be a security risk.*
 
-## **STEP 1:** Cleaning up the 'on-premises' environment
+## Task 1: Cleaning up the 'on-premises' environment
 
 ### If you used your local machine:
 
@@ -37,7 +37,7 @@ Estimated Lab Time: 15 minutes.
 
   ![](./images/delete-stack-local.png)
 
-## **STEP 2:** Tear Down the Application Database
+## Task 2: Tear Down the Application Database
 
 1. Go to the **Databases -> Bare Metal, VM and Exadata**.
 
@@ -49,7 +49,7 @@ Estimated Lab Time: 15 minutes.
 
     This will take several minutes.
 
-## **STEP 3:** Tear Down the SOA Environment
+## Task 3: Tear Down the SOA Environment
 
 *You need to terminate the database subnet before you can tear down the SOA deployment. The Resource Manager will not be able to clean up the VCN until the database subnet is removed.*
 
@@ -67,7 +67,7 @@ Estimated Lab Time: 15 minutes.
 
   ![](./images/delete-stack-soamp.png)
 
-## **STEP 4:** Tear Down the VCN
+## Task 4: Tear Down the VCN
 
 1. Go to **Networking -> Virtual Cloud Networks**.
 

@@ -23,6 +23,10 @@
             "filename": "../../clone/clone.md"
         },
         {
+            "title": "Optional: Managing the EBS Cloud Manager Virtual Machine",
+            "filename": "../../manage-VM/manage.md"
+        },
+        {
             "title": "Optional (Advanced):  Migrating an Oracle E-Business Suite environment to Oracle Cloud Infrastructure",
             "filename": "../../migrate/migrate.md"
         },

@@ -15,7 +15,7 @@ Estimated Lab Time: 15 minutes
 * Tenancy Admin Password
 * Cloud Manager Admin Credentials
 
-## **STEP 1:** Delete the EBS Environment from Cloud Manager
+## Task 1: Delete the EBS Environment from Cloud Manager
 
 1. Navigate to the Cloud Manager Environments page.
 
@@ -25,26 +25,24 @@ Estimated Lab Time: 15 minutes
 
     The environment will begin the deletion process. This will teardown all resources created by the environment. You can check the progress of the deletion by clicking the link next to Latest Activity. 
 
-    ![](./images/latestActivity.png " ")
-
     Once the environment has been destroyed, it will no longer appear on the Cloud Manager Environments page. 
 
     You can repeat this step for all other EBS environments you wish to delete. 
 
 
-## **STEP 2:** Teardown the Cloud Manager Instance
+## Task 2: Teardown the Cloud Manager Instance
 
-1. Navigate to the OCI console and login as the tenancy admin user. Go to **Resource Manager** > **Stacks** and select the stack you used to create the Cloud Manager environment (ensure that you are in the correct compartment if no items display).
+1. Navigate to the OCI console and login as the tenancy admin user. Go to **Developer Services** > **Resource Manager** > **Stacks** and select the stack you used to create the Cloud Manager environment (ensure that you are in the correct compartment if no items display).
 
     ![](./images/stacks.png " ")
 
-2. In the Stack Details Page, select **Terraform Actions** > **Destroy**. Name your destroy job whatever you like and then click **Destroy**.
+2. In the Stack Details Page, select **Destroy**. Name your destroy job whatever you like and then click **Destroy**.
 
     ![](./images/destroy.png " ")
 
     The job will run and teardown all resources created by the stack, including the Cloud Manager instance and the Networking components. 
 
-3. Once the destroy job has finished and the Cloud Manager has been deleted, you may go to **Governance** > **Compartment Explorer** and then select **ebshol_compartment** on the left side of the screen to validate that it is empty. 
+3. Once the destroy job has finished and the Cloud Manager has been deleted, you may go to **Governance & Administration** > **Governance** > **Tenancy Explorer** and then select **ebshol_compartment** on the left side of the screen to validate that it is empty. 
 
     Note: There may be resources still listed in the compartment, but they should have a status of **Terminated**. If there are still active resources in the compartment, you will need to destroy them before deleting the compartment. 
 
@@ -52,11 +50,17 @@ Estimated Lab Time: 15 minutes
 
     ![](./images/empty-compartment.png " ")
 
-    In the Compartment Explorer when viewing the **ebshol\_compartment** parent compartment (in this case the root compartment), you can click on the three dots to the right of **ebshol\_compartment** and then delete the compartment.
+    In the Tenancy Explorer when viewing the **ebshol\_compartment** parent compartment (in this case the root compartment), you can click on the three dots to the right of **ebshol\_compartment** and then delete the compartment.
 
     ![](./images/delete-compartment.png " ")
 
     You have now torn down all the resources you created for the EBS Cloud Manager Instance and its EBS Environments. 
+
+## More documentation on EBS Cloud Manager
+
+If you're interested in the full capabilities of EBS Cloud manager and would like to learn more follow the link below!
+
+[Full documentation on Oracle EBS Cloud Manager](https://docs.oracle.com/cd/E26401_01/doc.122/f35809/toc.htm)
 
 ## Acknowledgements
 
@@ -65,6 +69,7 @@ Estimated Lab Time: 15 minutes
   - Santiago Bastidas, Product Management Director
   - Quintin Hill, Cloud Engineering
   - Mitsu Mehta, Cloud Engineering
-* **Last Updated By/Date:** William Masdon, Cloud Engineering, Oct 2020
+  - Chris Wegenek, Cloud Engineering
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering, September 2021
 
 

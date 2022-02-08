@@ -18,7 +18,7 @@ This lab assumes you have already completed the following labs:
 
 - Deploy Active Data Guard with LVM or ASM
 
-## **STEP 1:** Test Transaction Replication
+## Task 1: Test Transaction Replication
 
 1. From on-premise side, create a test user in orclpdb, and grant privileges to the user. You need  to check if the pdb is open.
 
@@ -182,7 +182,7 @@ This lab assumes you have already completed the following labs:
     SQL> 
     ```
 
-## **STEP 2:** Check Lag between the Primary and Standby
+## Task 2: Check Lag between the Primary and Standby
 
 There are several ways to check the lag between the primary and standby.
 
@@ -190,8 +190,8 @@ There are several ways to check the lag between the primary and standby.
 
     ```
     <copy>
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/GpIAiohq4SyL1nDaXEBie2RUGoNT5zbdMetn4_wthYiv-9Kj3FM0l-NSSzVFQdQv/n/c4u03/b/data-management-library-files/o/workload.sh
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/A3dzkG4Z40jKafb2-LczoeC-Oa_xXnm2tte_T31AzmTe_2y5R0OpKMrZ0ObMrCAJ/n/c4u03/b/data-management-library-files/o/scn.sql
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Bq05Vhib-p_vraOu-wFpTEmyydA4d8qekXWXcb6W6M3pL43LVSAS2eFwKpYvAVxQ/n/c4u04/b/data-management-library-files/o/workload.sh
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/KNpGKB2VdoBWC5VWOHvD5vHg9P1OO5mqBJUxNonwY9LzaMaZ8Kcu7w3wBq9xgebW/n/c4u04/b/data-management-library-files/o/scn.sql
     </copy>
     ```
 
@@ -200,8 +200,8 @@ There are several ways to check the lag between the primary and standby.
 2. From on-premise side, run as **oracle** user, download scripts using the command you copied.
 
     ```
-    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/GpIAiohq4SyL1nDaXEBie2RUGoNT5zbdMetn4_wthYiv-9Kj3FM0l-NSSzVFQdQv/n/c4u03/b/data-management-library-files/o/workload.sh
-    --2020-10-31 02:48:08--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/GpIAiohq4SyL1nDaXEBie2RUGoNT5zbdMetn4_wthYiv-9Kj3FM0l-NSSzVFQdQv/n/c4u03/b/data-management-library-files/o/workload.sh
+    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Bq05Vhib-p_vraOu-wFpTEmyydA4d8qekXWXcb6W6M3pL43LVSAS2eFwKpYvAVxQ/n/c4u04/b/data-management-library-files/o/workload.sh
+    --2020-10-31 02:48:08--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/Bq05Vhib-p_vraOu-wFpTEmyydA4d8qekXWXcb6W6M3pL43LVSAS2eFwKpYvAVxQ/n/c4u04/b/data-management-library-files/o/workload.sh
     Resolving objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1.oraclecloud.com)... 134.70.31.247, 134.70.27.247, 134.70.35.189
     Connecting to objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1.oraclecloud.com)|134.70.31.247|:443... connected.
     HTTP request sent, awaiting response... 200 OK
@@ -212,8 +212,8 @@ There are several ways to check the lag between the primary and standby.
     
     2020-10-31 02:48:09 (10.5 MB/s) - ‘workload.sh’ saved [1442/1442]
     
-    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/A3dzkG4Z40jKafb2-LczoeC-Oa_xXnm2tte_T31AzmTe_2y5R0OpKMrZ0ObMrCAJ/n/c4u03/b/data-management-library-files/o/scn.sql
-    --2020-10-31 02:48:29--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/A3dzkG4Z40jKafb2-LczoeC-Oa_xXnm2tte_T31AzmTe_2y5R0OpKMrZ0ObMrCAJ/n/c4u03/b/data-management-library-files/o/scn.sql
+    [oracle@primary ~]$ wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/KNpGKB2VdoBWC5VWOHvD5vHg9P1OO5mqBJUxNonwY9LzaMaZ8Kcu7w3wBq9xgebW/n/c4u04/b/data-management-library-files/o/scn.sql
+    --2020-10-31 02:48:29--  https://objectstorage.us-ashburn-1.oraclecloud.com/p/KNpGKB2VdoBWC5VWOHvD5vHg9P1OO5mqBJUxNonwY9LzaMaZ8Kcu7w3wBq9xgebW/n/c4u04/b/data-management-library-files/o/scn.sql
     Resolving objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1.oraclecloud.com)... 134.70.35.189, 134.70.31.247, 134.70.27.247
     Connecting to objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1.oraclecloud.com)|134.70.35.189|:443... connected.
     HTTP request sent, awaiting response... 200 OK
@@ -386,7 +386,7 @@ There are several ways to check the lag between the primary and standby.
 
  
 
-## **STEP 3:** Test DML Redirection
+## Task 3: Test DML Redirection
 
 Starting  with Oracle DB 19c, we can run DML operations on Active Data Guard standby databases. This enables you to occasionally execute DMLs on read-mostly applications on the standby database.
 
@@ -563,7 +563,7 @@ Automatic redirection of DML operations to the primary can be configured at the 
 
 
 
-## **STEP 4:** Switchover to the Cloud 
+## Task 4: Switchover to the Cloud 
 
 At any time, you can manually execute a Data Guard switchover (planned event) or failover (unplanned event). Customers may also choose to automate Data Guard failover by configuring Fast-Start failover. Switchover and failover reverse the roles of the databases in a Data Guard configuration – the standby in the cloud becomes primary and the original on-premise primary becomes a standby database. Refer to Oracle MAA Best Practices for additional information on Data Guard role transitions. 
 
