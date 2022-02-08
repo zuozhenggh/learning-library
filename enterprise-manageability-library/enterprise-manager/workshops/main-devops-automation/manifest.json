@@ -4,7 +4,7 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "Introduction to Enterprise Manager Fundamentals Workshop",
+      "description": "Introduction to Deploy and Manage Oracle Databases with Ansible and Enterprise Manager Workshop",
       "filename": "./../../intro/intro-devops-workshop.md"
     },
     {
@@ -21,7 +21,7 @@
     {
       "title": "Lab 2: Deploy and Manage Oracle Databases with Ansible and Enterprise Manager: Workshop",
       "description": "The objective is to become familiar with the extensibility capabilities of Oracle Enterprise Manager and how to integrate them with 3rd party automation/orchestration DevOps tools",
-      "publisheddate": "7/16/2020",
+      "publisheddate": "1/16/2022",
       "filename": "./../../em-devops-automation/em-devops-automation.md"
     },
     {
