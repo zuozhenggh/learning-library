@@ -1,4 +1,4 @@
-# Install the Sample Maps application
+# Install the Sample Maps Application
 
 
 ## Introduction
@@ -17,7 +17,7 @@ Estimated Lab Time: 15 minutes
 * Oracle APEX 21.1+ is required. However Oracle APEX 21.2 is recommended, as the steps and screen shots in this workshop are taken from APEX 21.2. If performing this workshop with APEX 21.1, then please expect occasional small differences in the user interface.
 
 
-## Task 1: Install the application
+## Task 1: Install the Application
 
 1. Begin by clicking on **App Builder**.
 ![Image alt text](images/install-sample-maps-00.png)
@@ -79,7 +79,7 @@ This will take you to the Install Application wizard.
 ![Image alt text](images/install-sample-maps-15.png)
 
 
-## Task 3: Explore the Sample Maps application
+## Task 3: Explore the Sample Maps Application
 
 1. Clicking on any of the tiles navigates to the associated page in the application. As an example, click on **Map and Report**.
    ![Image alt text](images/install-sample-maps-16.png)
@@ -95,7 +95,7 @@ This will take you to the Install Application wizard.
    ![Image alt text](images/install-sample-maps-19.png)
 
 
-## Task 4: Explore the demo data
+## Task 4: Explore the Demo Data
 
 1. Return to APEX, click **SQL Workshop** and then **Object Browser**.
    ![Image alt text](images/install-sample-maps-20.png)

@@ -1,4 +1,4 @@
-# Create map from scratch
+# Create Map from Scratch
 
 
 ## Introduction
@@ -15,7 +15,7 @@ Estimated Lab Time: 15 minutes
 
 * Lab 2: Create map with wizard
 
-## Task 1: Create a new page
+## Task 1: Create a New Page
 
 1. In the breadcrumbs at the top left, click on the link for your application home. Then click on the **Layout** tab.
 ![Image alt text](images/create-map-15a.png)
@@ -36,7 +36,7 @@ Estimated Lab Time: 15 minutes
 5. Review the summary and click **Finish**.
 ![Image alt text](images/create-map-18.png)
 
-## Task 2: Add a map to the page
+## Task 2: Add a Map to the Page
 
 1. Drag **Map** from the Regions palette at the bottom and drop under the Body section of the page layout. Observe the Map Region appears in the Page tree under Body with default name New. Click on **New** in the Page tree and observe its properties on the right.  Observe the Region Type is Map.
     ![Image alt text](images/create-map-19.png)
@@ -67,7 +67,7 @@ Estimated Lab Time: 15 minutes
     ```
     ![Image alt text](images/create-map-25a.png)
 
-## Task 3: Add a layer to the map
+## Task 3: Add a Layer to the Map
 
 1.   In the Page tree on the left, right-click on **Layers** under your Map Region and select **Create Layer**.  
 ![Image alt text](images/create-map-26.png)

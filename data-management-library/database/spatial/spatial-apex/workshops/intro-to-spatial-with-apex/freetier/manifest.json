@@ -13,19 +13,19 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/apex/apex-212/common/1-sign-up-apex/1-sign-up-apex.md"
     },
     {
-      "title": "Lab 1: Install Sample Maps application",
+      "title": "Lab 1: Install Sample Maps Application",
       "filename": "../../../install-sample-maps-app/install-sample-maps-app.md"
     },    
     {
-      "title": "Lab 2: Create map with wizard",
+      "title": "Lab 2: Create Map with Wizard",
       "filename": "../../../create-map-with-wizard/create-map-with-wizard.md"
     }, 
     {
-      "title": "Lab 3: Create map from scratch",
+      "title": "Lab 3: Create Map from Scratch",
       "filename": "../../../create-map-from-scratch/create-map-from-scratch.md"
     },  
     {
-      "title": "Lab 4: Incorporate spatial analysis",
+      "title": "Lab 4: Incorporate Spatial Analysis",
       "filename": "../../../add-spatial-analysis/add-spatial-analysis.md"
     },
     {

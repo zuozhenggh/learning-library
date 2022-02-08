@@ -1,4 +1,4 @@
-# Incorporate spatial analysis
+# Incorporate Spatial Analysis
 
 
 ## Introduction
@@ -17,7 +17,7 @@ Estimated Lab Time: 30 minutes
 * Lab 3: Create map from scratch
 
 
-## Task 1: Add a Region for filters 
+## Task 1: Add a Region for Filters 
 
 1. Click on the **Page 3: Airports and States Map** at the top of the tree on the left. Then in the Page properties panel on the right, under Appearance change the Page Template to **Left Side Column**. 
 ![Image alt text](images/add-spatial-analysis-01a.png)
@@ -30,7 +30,7 @@ Estimated Lab Time: 30 minutes
 3. Rename to **My Filters Region** or a name of your choosing.
 ![Image alt text](images/add-spatial-analysis-02.png) 
 
-## Task 2: Add an Item for state selection 
+## Task 2: Add an Item for State Selection 
 
 1. Drag a Select List item your filters region and update the name to **P3_STATE**.
 ![Image alt text](images/add-spatial-analysis-03.png) 
@@ -49,7 +49,7 @@ Estimated Lab Time: 30 minutes
 3. In the Page Item properties on the right, scroll down to the section for Default. Set the Type to **Static** and value to **'Texas'** or another state of your choosing (in single quotes).
 ![Image alt text](images/add-spatial-analysis-05.png) 
 
-## Task 3: Add an Item for distance entry
+## Task 3: Add an Item for Distance Entry
 
 1. Drag Number Field into your filters region. Update the name to **P3_DISTANCE** and the label to **Proximity (km)**.  
 ![Image alt text](images/add-spatial-analysis-06.png) 
@@ -62,7 +62,7 @@ Estimated Lab Time: 30 minutes
 
 You now have inputs for filtering airports by proximity to a state. Next you will apply the filters using Dynamic Actions.
 
-## Task 4: Apply filters using Dynamic Actions
+## Task 4: Apply Filters using Dynamic Actions
 
 You next create the actions that are invoked when state and/or distance values are changed by the user. 
 

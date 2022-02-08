@@ -1,4 +1,4 @@
-# Create map with wizard
+# Create Map with Wizard
 
 
 ## Introduction
@@ -16,7 +16,7 @@ Estimated Lab Time: 10 minutes
 * Completion of Lab 1: Install Sample Maps application
 
 
-## Task 1: Create a new app with a map page using the wizard
+## Task 1: Create a New App with a Map Page using the Wizard
 
 The wizard provides a quick and easy way to create a new application and your first map. 
 
@@ -51,7 +51,7 @@ The wizard provides a quick and easy way to create a new application and your fi
 10. Observe the page includes an interactive map showing airport locations with tooltips as you configured.
 ![Image alt text](images/create-map-10.png)
 
-## Task 2: Inspect the map page
+## Task 2: Inspect the Map Page
 
 You will now inspect the Map Region created by the wizard.
 
