@@ -31,9 +31,9 @@ Note: If your Workspace has existing application(s) then click **Create** and th
 
 4. Scroll down to **Sample Maps** and click **Download App**
 ![Image alt text](images/install-sample-maps-03.png)
-You will be prompted to same the application bundle to a local folder. 
+You will be prompted to save the application bundle to a local folder. 
 
-   Note: if you are redirected to github, then navigate to the folder for your APEX version and download **sample-maps.zip**.
+   **Note:** If you are redirected to github, then navigate to the folder for your APEX version and download **sample-maps.zip**.
 
 5. Return to your App Builder browser tab and click **Import**
 ![Select Import](images/install-sample-maps-04.png)
