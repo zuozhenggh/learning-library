@@ -1,6 +1,6 @@
 {
-    "workshoptitle": "8 Partitioning Techniques in Oracle Database",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "workshoptitle": "Advanced Compression",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -11,38 +11,15 @@
           "title": "Get Started",
           "description": "Login to Oracle Cloud",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-        },
+        } 
+        ,   
         {
-            "title": "Lab 1: Range Partitioning",
-            "filename": "../../range-partitioning/range.md"
-        },
-        {
-            "title": "Lab 2: Interval Partitioning",
-            "filename": "../../interval-partitioning/interval.md"
-        },
-        {
-            "title": "Lab 3: List Partitioning",
-            "filename": "../../list-partitioning/list.md"
-        },
-        {
-            "title": "Lab 4: Hash Partitioning",
-            "filename": "../../hash-partitioning/hash.md"
-        },
-        {
-            "title": "Lab 5: Auto List Partitioning",
-            "filename": "../../auto-list-partitioning/autolist.md"
+            "title": "Lab 1: Advanced row compression",
+            "filename": "../../row-compression/rowc.md"
         }, 
         {
-            "title": "Lab 6: Read Only Partitions",
-            "filename": "../../readonly-partitioning/readonly.md"
-        }, 
-        {
-            "title": "Lab 7: Multi Column List Partitioning",
-            "filename": "../../multi-list-partitioning/multilist.md"
-        }, 
-        {
-            "title": "Lab 8: Convert Non-Partitioned Table into Partitioned Table",
-            "filename": "../../convert-table-partitioning/convert.md"
+            "title": "Lab 2: Automatic data optimization",
+            "filename": "../../auto-optimization/auto.md"
         }, 
         {
             "title": "Need Help?",
