@@ -2,9 +2,7 @@
 
 ## Introduction
 
-You will get started by creating a skeleton application and you will add to it in each lab until you have built a full application that allows you to create and manage a personal list of movies you have watched or want to watch.
-
-You will also need to sign up for an account on The Movie Database and obtain an API Key. A TMDB API Key is required for this tutorial, as authentication is needed to get data from The Movie Database API.
+You will get started by creating a skeleton application and you will add to it in each task until you have built a full application that allows you to create and manage a personal list of movies you have watched or want to watch.
 
 ### Objectives
 In this lab, you will:  
@@ -66,11 +64,11 @@ After you are connected and clicked on your database, we need to set up APEX and
 
     ![](images/create-workspace.png " ")
 
-6. Once the workspace is created you will be placed in the main APEX development page.
+6. Once the workspace is created you will be placed in the APEX Administration Services page by way of this newly created ADMIN account.
 
     ![](images/main-apex-dev-page.png " ")
 
-7. At this point we need to log off APEX from the ADMIN account we are currently connected as, and log back on as the new user we just created. You probably will see a warning on to top of your page indicating you need to do this. To log-off click on top right icon that says “admin internal” and click on “Sign out”.
+7. At this point we need to log out of APEX Administration Services and log back into the APEX development workspace that was previously created. You probably will see a warning on to top of your page indicating you need to do this. To log-off click on top right icon that says “admin internal” and click on “Sign out”.
 
     ![](images/apex-sign-out.png " ")
 
@@ -78,7 +76,7 @@ After you are connected and clicked on your database, we need to set up APEX and
 
     ![](images/sign-out-success.png " ")
 
-9. This will take you to the APEX sign-in page. Use the information you just used to create the new account above to log in.
+9. this will take you to the APEX development workspace sign-in page. Use the information you just used to create the new account above to log in.
 
     ![](images/new-account-log-in.png " ")
 
@@ -90,7 +88,6 @@ After you are connected and clicked on your database, we need to set up APEX and
 ## Task 3: Creating the Application
 
 You will get started by creating a skeleton application and you will add to it in each lab until you have built a full application that allows you to create and manage a personal list of movies you have watched or want to watch.
-
 
 In this task, you will:  
 - Create a new application.  
