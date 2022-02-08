@@ -1,3 +1,5 @@
+# Developing with JSON in the Oracle Database
+
 ## Introduction
 
 ### About this Workshop
@@ -85,14 +87,6 @@ In this workshop, you will explore:
 
 * An Oracle Cloud Account
 
-You may now proceed to the next lab.
-
-## Acknowledgements
-
-* **Author** - Beda Hammerschmidt, Architect
-* **Contributors** -  Anoosha Pilli, Product Manager, Oracle Database
-* **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
-
 ## Task 1: Connecting to your Oracle Cloud Database
 
 1. Log in to the Oracle Cloud at <a href="https://cloud.oracle.com">cloud.oracle.com</a>. Cloud Account Name is howarduniversity. Click "Next".
@@ -104,23 +98,19 @@ You may now proceed to the next lab.
 
     ![](./images/picture100-36.png " ")
 
+## Task 2: Provisioning an Autonomous JSON Database
 
-
-# Provisioning an Autonomous JSON Database
-
-## Introduction
-
-This lab walks you through the steps to get started using the Oracle Autonomous JSON Database [AJD] on Oracle Cloud. In this lab, you will provision a new AJD instance and connect to the Autonomous Database using JSON.
+This task walks you through the steps to get started using the Oracle Autonomous JSON Database [AJD] on Oracle Cloud. In this task, you will provision a new AJD instance and connect to the Autonomous Database using JSON.
 
 Estimated Time: 10 minutes
 
-Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walk through of the task.
 
 [](youtube:ICHM8bDast0)
 
 ### Objectives
 
-In this lab, you will:
+In this task, you will:
 
 * Learn how to provision a new Autonomous Database
 * Connect to your Autonomous Database using JSON
@@ -129,34 +119,19 @@ In this lab, you will:
 
 * Logged into your Oracle Cloud Account
 
-## Task 1: Choose AJD from the Services Menu
+**Choose AJD from the Services Menu**
 
-1. Login to the Oracle Cloud.
+1. Login to the Oracle Cloud if you have not already logged in.
 
-<if type="freetier">
-
-2. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **Region** in the top, right hand corner of the page.
-
-    ![Select region on the far upper-right corner of the page.](./images/region.png " ")
-
-</if>
-<if type="livelabs">
-
-2. If you are using a LiveLabs account, you need to be in the region your account was provisioned in. You can see your current default **Region** in the top, right hand corner of the page. Make sure that it matches the region on the LiveLabs Launch page.
-
-    ![Select region on the far upper-right corner of the page.](./images/region.png " ")
-
-</if>
-
-3. Click the navigation menu in the upper left to show top level navigation choices.
+2. Click the navigation menu in the upper left to show top level navigation choices.
 
     ![Oracle home page.](./images/navigation.png " ")
 
-4. Click on **Oracle Database** and choose **Autonomous JSON Database**.
+3. Click on **Oracle Database** and choose **Autonomous JSON Database**.
 
     ![Click Autonomous JSON Database](./images/adb-json.png " ")
 
-5. Use the __List Scope__ drop-down menu on the left to select a compartment. Make sure your workload type is __JSON Database__. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
+4. Use the __List Scope__ drop-down menu on the left to select a compartment. Make sure your workload type is __JSON Database__. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
 
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
 
@@ -170,7 +145,7 @@ In this lab, you will:
    > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
 </if>
 
-## Task 2: Create the AJD Instance
+**Create the AJD Instance**
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -265,7 +240,7 @@ In this lab, you will:
 
     ![Database instance homepage.](./images/provisioning.png " ")
 
-## Task 3: Connect to your Autonomous Database using "JSON Workshop" UI
+**Connect to your Autonomous Database using "JSON Workshop" UI**
 
 1. On the Autonomous Database Details page, click on the Tools tab.
 
@@ -301,32 +276,19 @@ In this lab, you will:
     ![](./images/tour10.png " ")
     ![](./images/tour11.png " ")
 
-
-
 You are now connected to your Autonomous Database using JSON.
 
-You may now proceed to the next lab.
+## Task 3: Working with JSON collections using the SODA (Simple Oracle Document Access) API
 
-## Learn More
+### Introduction
 
-* [Provision Autonomous JSON Database](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/ajdug/autonomous-provision.html#GUID-0B230036-0A05-4CA3-AF9D-97A255AE0C08)
-
-## Acknowledgements
-
-- **Author** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Tom McGinn, July 2021
-
-# Working with JSON collections using the SODA (Simple Oracle Document Access) API
-
-## Introduction
-
-Oracle is a relational database, meaning it typically stores data in rows and column of tables and JSON can be stored as a column value. For this lab though we first focus on the Document Store API SODA (Simple Oracle Document Access) which allows to store JSON data in a so-called collection. A JSON collection stores JSON documents alongside some metadata like the time of creation or update. Collections offer operations like inserts, deletes, index creation or queries.
+Oracle is a relational database, meaning it typically stores data in rows and column of tables and JSON can be stored as a column value. For this task though we first focus on the Document Store API SODA (Simple Oracle Document Access) which allows to store JSON data in a so-called collection. A JSON collection stores JSON documents alongside some metadata like the time of creation or update. Collections offer operations like inserts, deletes, index creation or queries.
 
 In order to create a collection all you have to specify is the collection's name. Unlike a relational table you do not have to provide any schema information. So, lets create a collection for the products we want to sell in the store.
 
 Estimated Time: 20 minutes
 
-Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walk through of the task.
 
 [](youtube:7H086A3JKbo)
 
@@ -343,7 +305,7 @@ In this lab, you will:
 
 * Have provisioned an Autonomous JSON Database instance and logged into the JSON
 
-## Task 1: Create Collection
+**Create Collection**
 
 1. To create a collection, click **Create Collection**.
 
@@ -361,7 +323,7 @@ In this lab, you will:
 
 	![](./images/refreshed.png)
 
-## Task 2: Insert Documents
+**Insert Documents**
 
 1. Double click **products** collection to show the **JSON-products** worksheet.
 
@@ -456,7 +418,7 @@ In this lab, you will:
 	</copy>
 	```
 
-## Task 3: Find JSON documents in a collection
+**Find JSON documents in a collection**
 
 Documents can be selected based on filter conditions - we call them 'Queries By Example' or 'QBE' for short. A QBE is a JSON document itself and it contains the fields and filter conditions that a JSON document in the collection must satisfy in order to be selected. QBEs are used with SODA (only); you can use SQL functions as an alternative.
 
@@ -533,7 +495,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	```
 	![](./images/less5-movie.png)
 
-## Task 4: JSON and Constraints
+**JSON and Constraints**
 
 Some values need to be unique, so how do we enforce this?
 
@@ -667,25 +629,13 @@ Some values need to be unique, so how do we enforce this?
 	</copy>
 	```
 
-You may now proceed to the next lab.
+## Task 4: Using SODA for REST
 
-## Learn More
-
-* [Creating B-Tree Indexes for JSON_VALUE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/indexes-for-json-data.html#GUID-FEE83855-780A-424B-9916-B899BFF2077B)
-
-## Acknowledgements
-
-- **Author** - Beda Hammerschmidt, Architect
-- **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
-
-# Using SODA for REST
-
-## Introduction
+### Introduction
 
 So far, all collection operations have been issued from a UI in the browser. In a real application these operations would be called directly from a programming language (for example using the open-source SODA drivers for Java, Python or NodeJS). Another option is to use REST.
 
-This lab is optional for those that wish to understand how to access Autonomous JSON Database through raw REST calls. Part of this lab involves loading more documents through a REST call. If you wish to move straight on to Lab 4, you can load the extra documents from SQL instead, using the following SQL code:
+In order to move on to Task 5, you now load the extra documents from SQL, using the following SQL code:
 
 ```
 <copy>
@@ -699,9 +649,9 @@ end;
 </copy>
 ```
 
-# Using SQL to work with JSON
+## Task 5: Using SQL to work with JSON
 
-## Introduction
+### Introduction
 
 So far, we've focused mostly on the document store API where we dealt with JSON data as a collection of documents. But there is another way to interact with your JSON data: SQL.
 
@@ -713,13 +663,13 @@ In the following we show you how you can use SQL to work with the JSON data in a
 
 Estimated Time: 30 minutes
 
-Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walk through of the task.
 
 [](youtube:MrSXStEfOF4)
 
 ### Objectives
 
-In this lab, you will:
+In this task, you will:
 
 * Use JSON_Serialize to convert binary JSON data to a human-readable string.
 * Use dot notation to extract values from JSON data.
@@ -728,7 +678,7 @@ In this lab, you will:
 
 * All previous labs have been successfully completed.
 
-## Task 1: SQL Developer Web
+**SQL Developer Web**
 
 1. Click on the navigation menu on the top left and select **SQL** under Development.
 
@@ -740,9 +690,7 @@ In this lab, you will:
 
     You see that the table 'PRODUCTS' has 5 columns: an 'ID' which is a unique identifier for the document, a 'JSON\_DOCUMENT' which holds the document, 2 metadata columns to keep track of creation and update timestamps and 'VERSION' which is typically a hash value for the document and allows to keep caches in sync (similar to an eTag). None of this is really important at this point as we will only use the JSON\_DOCUMENT column in the following examples.
 
-    *Learn more -* [Use Oracle Database Actions with JSON Collections](https://docs.oracle.com/en/cloud/paas/autonomous-json-database/ajdug/use-oracle-database-actions-json-collections1.html) and [Use SQL With JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-04377B36-654B-47C4-A480-535E00E46D1F)
-
-## Task 2: JSON_Serialize
+**JSON_Serialize**
 
 1. Because the JSON data is stored in a binary representation (for query and update efficiency) we need to convert it to a human-readable string using JSON_Serialize.
 
@@ -800,9 +748,7 @@ In this lab, you will:
     ```
     ![](./images/sql2-4.png " ")
 
-    *Learn more -* [Oracle SQL Function JSON_SERIALIZE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-in-oracle-database.html#GUID-667D37FF-F5FB-465D-B8AE-DAE88F191B2F), and [Simple Dot-Notation Access to JSON Data](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/simple-dot-notation-access-to-json-data.html#GUID-7249417B-A337-4854-8040-192D5CEFD576)
-
-## Task 3: Unnest JSON arrays
+**Unnest JSON arrays**
 
 All above examples extracted singleton values from the JSON data - values that only occurred once per document (like title or price). But JSON can have nested arrays - how can we access those?
 
@@ -854,9 +800,7 @@ All above examples extracted singleton values from the JSON data - values that o
     ```
     ![](./images/sql3-4.png " ")
 
-    *Learn more -* [SQL NESTED Clause Instead of JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_TABLE.html#GUID-D870AAFF-58B0-4162-AC11-4DDC74B608A5)
-
-## Task 4: Queries over JSON data
+**Queries over JSON data**
 
 The 'simple dot notation' as shown in the previous steps is a syntax simplification of the SQL/JSON operators. Compared to the 'simple dot notation' they're a bit more verbose but also allow for more customization. These operators are part of the SQL standard.
 
@@ -871,8 +815,6 @@ An array step uses square brackets; '[0]' selects the first value in an array. I
 Steps can be chained together. A path expression typically starts with the '$' symbol which refers to the document itself.
 
 Path expressions are evaluated in a 'lax' mode. This means that an object step like '.id' can also be evaluated on an array value: it then means to select the 'id' values of each object in the array. This will be explained a bit in JSON_Exists, where we also explain Path Predicates (filters).
-
-*Learn more -* [SQL/JSON Path Expressions](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-path-expressions.html#GUID-2DC05D71-3D62-4A14-855F-76E054032494)
 
 Now let's look at the different SQL/JSON operators step by step:
 
@@ -918,8 +860,6 @@ JSON_VALUE takes one scalar value from the JSON data and returns it as a SQL sca
     ```
     ![](./images/sql4-4.png " ")
 
-    *Learn more -* [SQL/JSON Function JSON_VALUE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_VALUE.html#GUID-0565F0EE-5F13-44DD-8321-2AC142959215)
-
 ### JSON_Query
 
 Unlike JSON\_Value (which returns one SQL scalar value) the function JSON\_Query can extract complex values (objects or arrays), and it can also return multiple values as a new JSON array. The result of JSON_Query is JSON data itself, for example an object or array.
@@ -943,9 +883,6 @@ Unlike JSON\_Value (which returns one SQL scalar value) the function JSON\_Query
     </copy>
     ```
     ![](./images/sql4-6.png " ")
-
-
-    *Learn more -* [SQL/JSON Function JSON_QUERY](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_QUERY.html#GUID-D64C7BE9-335D-449C-916D-1123539BF1FB)
 
 ### JSON_Exists
 
@@ -991,8 +928,6 @@ JSON_Exists is used to filter rows, therefore you find it in the WHERE clause. I
     SODA QBE filter expressions are rewritten to use JSON_Exists.
 
     *Note:* Indexes can be added to speed up finding the right documents.
-
-    *Learn more -* [SQL/JSON Condition JSON_EXISTS](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/condition-JSON_EXISTS.html#GUID-D60A7E52-8819-4D33-AEDB-223AB7BDE60A)
 
 ### JSON_Table
 
@@ -1085,10 +1020,7 @@ JSON\_Table is used to 'flatten' hierarchical JSON data to a table consisting of
     ```
     ![](./images/sql6-33.png " ")
 
-    *Learn more -* [SQL/JSON Function JSON_TABLE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/function-JSON_TABLE.html#GUID-0172660F-CE29-4765-BF2C-C405BDE8369A)
-
-
-## Task 6: JSON Generation functions
+**JSON Generation functions**
 
 SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row operators that generate one object/array per input row, and 2 are aggregate operators that generate one object/array for all input rows. These operators come in handy when you want to generate JSON data from existing tables or you want to bring JSON data into a different shape.
 
@@ -1228,7 +1160,6 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
     The value for the field 'movies' is the result of a subquery on the actor\_title\_map with a join on the actor's name.
 
-    *Learn more -* [Generation of JSON Data Using SQL](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/generation.html#GUID-6C3441E8-4F02-4E95-969C-BBCA6BDBBD9A)
 
 ## Acknowledgements
 
