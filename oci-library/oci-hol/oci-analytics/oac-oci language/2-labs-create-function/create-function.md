@@ -140,9 +140,9 @@ Set up CLI so that it can deploy functions to the right compartment and containe
 2.	Click **Cloud Shell Setup**
 3.	Click the **Launch Cloud Shell** button.
  This will start a Linux virtual machine with all the configuration to set up functions.
-4.	Follow steps 1 through 7 under the “Setup fn CLI on Cloud Shell” section.
- (If you need guidance, see this https://www.youtube.com/watch?app=desktop&t=483&v=TdQ6BL58Zfk&feature=youtu.be.)
-Step 4 in that list is not super clear, but https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatefncontext.htm is a bit more specific.
+4.	Follow steps **1** through **7** under the “Setup fn CLI on Cloud Shell” section.
+ (If you need guidance, see this [Document](https://www.youtube.com/watch?app=desktop&t=483&v=TdQ6BL58Zfk&feature=youtu.be)
+Step 4 in that list is not super clear, but [Document](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatefncontext.htm) is a bit more specific.
 
 You can select any term for OCIR-REPO, it is just a prefix that will be used as the name of the container registry to use to deploy the function.
 
