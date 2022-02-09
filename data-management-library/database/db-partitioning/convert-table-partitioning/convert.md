@@ -6,6 +6,7 @@ Oracle Database provides a mechanism to move one or more partitions or to make o
 
 ![Image alt text](images/convert-non-partitioned-intro.png "Convert Non-partitioned Table Introduction")
  
+Estimated Lab Time: 20 minutes
 
 ### Features
 

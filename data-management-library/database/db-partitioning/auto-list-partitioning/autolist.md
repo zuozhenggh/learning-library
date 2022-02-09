@@ -6,6 +6,8 @@ The automatic list partitioning method enables list partition creation on demand
  
  ![Image alt text](images/auto-list-partitioning-intro.png "Auto List Partition")
 
+ Estimated Lab Time: 20 minutes
+
 ### Features
 
 *  Partitions are created as data arrives automatically

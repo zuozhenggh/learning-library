@@ -6,6 +6,8 @@ We can set tables, partitions, and subpartitions to read-only status to protect 
 
 ![Image alt text](images/read-only-partition-intro.png "Read only Partition")
 
+Estimated Lab Time: 20 minutes
+
 ### Features
 
 * Read-only attribute guarantees data immutability. 

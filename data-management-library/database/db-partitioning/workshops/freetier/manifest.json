@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "8 partitioning techniques in Oracle Database",
+    "workshoptitle": "8 Partitioning techniques in Oracle Database",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},

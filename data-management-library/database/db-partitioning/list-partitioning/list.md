@@ -6,6 +6,8 @@ List partitioning enables you to explicitly control how rows map to partitions b
 
 The semantics for creating list partitions are similar to those for creating range partitions. You specify a PARTITION BY LIST clause in the CREATE TABLE statement to create list partitions. The partitioning key can be one or multiple column names from the table for list partitioning.
 
+Estimated Lab Time: 20 minutes
+
 ### Features
 
 *	Introduced with Oracle 9.0

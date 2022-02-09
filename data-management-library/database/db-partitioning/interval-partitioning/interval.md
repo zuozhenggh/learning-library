@@ -7,6 +7,8 @@ Interval partitioning is an extension to range partitioning in which database ta
 
  This Lab will teach you how to create interval partitioning.
 
+ Estimated Lab Time: 20 minutes
+
 ### Features
 
 *	Introduced with Oracle 11g

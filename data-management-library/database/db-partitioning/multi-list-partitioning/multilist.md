@@ -6,6 +6,8 @@ Multi-column list partitioning enables you to partition a table based on list va
 
 ![Image alt text](images/multi-list-partition-intro.png "Multi List Partition")
 
+Estimated Lab Time: 20 minutes
+
 ### Features
 
 * Data is organized in lists of multiple values (multiple columns)
@@ -16,8 +18,6 @@ Multi-column list partitioning enables you to partition a table based on list va
 ### Multi-Column List Partitioning Usecase
 
 An excellent example for multi-column list partitioning is segregating sensor data along with various channel data on IoT (Internet of Things) applications, such as humidity, temperature, climate, pressure, air quality changes, etc. These sensors' measurement values change.
-
-Estimated Lab Time: 10 minutes
  
 ### Objectives
  

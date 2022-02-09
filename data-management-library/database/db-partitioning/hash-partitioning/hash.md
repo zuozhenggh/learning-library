@@ -6,6 +6,8 @@ Hash partitioning maps data to partitions based on Oracle's hashing algorithm to
 
 ![Image alt text](images/hash-partition-introduction.png "Hash Partition") 
 
+Estimated Lab Time: 20 minutes
+
 ### Features
 
 * Introduced with Oracle 8.1

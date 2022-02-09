@@ -4,6 +4,8 @@
 
 Range partitioning maps data to partitions based on ranges of partition key values that you establish for each partition. It is the most common type of partitioning used with dates. For example, you might want to partition sales data into monthly partitions. The PARTITION BY RANGE clause of the CREATE TABLE statement specifies that the table or index is range-partitioned. The PARTITION clauses identify the individual partition ranges, and the optional subclauses of a PARTITION clause can select physical and other attributes specific to a partition segment.
 
+Estimated Lab Time: 20 minutes
+
 ### Features
  
 *	Introduced with Oracle 8.0

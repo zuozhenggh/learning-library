@@ -30,7 +30,7 @@ Partitioning enables data management operations such as.
 *  Optimizer statistics management,
 *  Backup and recovery
  
-Estimated Workshop Time:  120 minutes
+Estimated Workshop Time:  2 hour 40 minutes
 
 ## About this Workshop
 Oracle provides a comprehensive range of partitioning schemes to address every business requirement. Moreover, since it is entirely transparent in SQL statements, partitioning can be used with any application, from packaged OLTP applications to data warehouses. in this workshop, we will explore various partition types and their corresponding use cases.
