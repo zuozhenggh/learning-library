@@ -14,14 +14,6 @@ This workshop is loosely based on the video below where an "order processing sys
 
 This workshop is not a 'cookbook' or 'design guideline' on how to build an online shop - the purpose is to illustrate various JSON features that the Oracle Database offers. That said, you likely find that many examples are applicable to your business needs!
 
-The workshop uses the 'Autonomous JSON Database' cloud service. But everything shown here also works in other Oracle cloud and on-premise databases.
-
-You can complete this entire workshop using your web browser. There is no need to install any extra software. Obviously, when writing a real application, you would call many of the functionalities from a programming language like Java, JavaScript(nodeJS) or Python.
-
-This workshop consists of multiple 'labs' - each describing one aspect or feature. This lab has been designed for 19c AJD database but should also work on 21c AJD database and these concepts are also applicable to on-premise versions.
-
-Estimated Lab Time: 75-90 minutes
-
 Watch this quick video to know why JSON in Oracle Autonomous Database is awesome.
 
 [](youtube:yiGFO139ftg)
@@ -83,10 +75,6 @@ In this workshop, you will explore:
 *	How to perform transactions over JSON data,
 *	How to use stored procedures with JSON business logic.
 
-### Prerequisites
-
-* An Oracle Cloud Account
-
 ## Task 1: Connecting to your Oracle Cloud Database
 
 1. Log in to the Oracle Cloud at <a href="https://cloud.oracle.com">cloud.oracle.com</a>. Cloud Account Name is howarduniversity. Click "Next".
@@ -98,11 +86,21 @@ In this workshop, you will explore:
 
     ![](./images/picture100-36.png " ")
 
+4. Click **Autonomous Data Warehouse**.
+
+    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+
+5. From the Compartment drop down on the left side of the page, expand howarduniversity->spring2022->student1xx and select you student number.
+
+    ![](./images/hu-compartment.png " ")
+
+6. Click on the database you created in lab 1
+   
+    ![](./images/adb-compartment.png " ")
+    
 ## Task 2: Provisioning an Autonomous JSON Database
 
 This task walks you through the steps to get started using the Oracle Autonomous JSON Database [AJD] on Oracle Cloud. In this task, you will provision a new AJD instance and connect to the Autonomous Database using JSON.
-
-Estimated Time: 10 minutes
 
 Watch the video below for a quick walk through of the task.
 
@@ -115,154 +113,15 @@ In this task, you will:
 * Learn how to provision a new Autonomous Database
 * Connect to your Autonomous Database using JSON
 
-### Prerequisites
+1. In your database's details page, click the **Database Actions** button.
 
-* Logged into your Oracle Cloud Account
+    ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
-**Choose AJD from the Services Menu**
+2. The Database Actions page opens. In the **Development** box, click **JSON**.
 
-1. Login to the Oracle Cloud if you have not already logged in.
+    ![Click on SQL.](./images/click-json.png " ")
 
-2. Click the navigation menu in the upper left to show top level navigation choices.
-
-    ![Oracle home page.](./images/navigation.png " ")
-
-3. Click on **Oracle Database** and choose **Autonomous JSON Database**.
-
-    ![Click Autonomous JSON Database](./images/adb-json.png " ")
-
-4. Use the __List Scope__ drop-down menu on the left to select a compartment. Make sure your workload type is __JSON Database__. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
-
-    ![Check the workload type on the left.](images/livelabs-compartment.png " ")
-
-</if>
-<if type="freetier">
-    ![Check the workload type on the left.](./images/compartments.png " ")
-</if>
-    ![](./images/workload-type.png " ")
-
-<if type="freetier">
-   > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
-</if>
-
-**Create the AJD Instance**
-
-1. Click **Create Autonomous Database** to start the instance creation process.
-
-    ![Click Create Autonomous Database.](./images/create-adb.png " ")
-
-2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
-
-3. Provide basic information for the autonomous database:
-
-<if type="freetier">
-    - __Choose a compartment__ - Select a compartment for the database from the drop-down list.
-</if>
-<if type="livelabs">
-    - __Choose a compartment__ - Use the default compartment that includes your user id.
-</if>
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __JSONDB__.
-<if type="freetier">
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONDB__.
-
-    ![Enter the required details.](./images/adb-info.png " ")
-</if>
-<if type="livelabs">
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONDB__ and append you LiveLabs user id. For example, __JSONDB7199__.
-
-    ![](./images/adb-info-livelabs.png)
-</if>
-
-4. Choose a workload type: Select the workload type for your database from the choices:
-
-    - __JSON__ - For this lab, choose __JSON__ as the workload type.
-
-    ![Choose a workload type.](./images/workload-type2.png " ")
-
-5. Choose a deployment type: Select the deployment type for your database from the choices:
-
-    - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
-    - __Dedicated Infrastructure__ - Alternatively, you could have chosen Dedicated Infrastructure as the deployment type.
-
-    ![Choose a deployment type.](./images/deployment-type.png " ")
-
-6. Configure the database:
-
-    <if type="freetier">
-    - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
-    </if>
-    <if type="livelabs">
-    - __Always Free__ - For this lab, we recommend you leave Always Free unchecked.
-    </if>
-    - __Choose database version__ - Select 19c from the database version. Note: This lab should work on 21c AJD database as well.
-    - __OCPU count__ - Number of OCPUs for your service. For this lab, leave the default __1 OCPU__. If you choose an Always Free database, it comes with 1 OCPU.
-    - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, leave the default __1 TB__ of storage. If you choose an Always Free database, it comes with 20 GB of storage.
-    - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
-
-    *Note: You cannot scale up/down an Always Free autonomous database.*
-
-    ![Choose the remaining parameters.](./images/configuration.png " ")
-
-7. Create administrator credentials:
-
-    - __Password and Confirm Password__ - Specify the password for ADMIN user of the service instance and confirm the password.
-
-    The password must meet the following requirements:
-    - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
-    - The password cannot contain the username.
-    - The password cannot contain the double quote (") character.
-    - The password must be different from the last 4 passwords used.
-    - The password must not be the same password that is set less than 24 hours ago.
-    - Re-enter the password to confirm it. Make a note of this password.
-
-    ![Enter password and confirm password.](./images/administration.png " ")
-
-8. Choose network access:
-
-    - __Secure access from everywhere__ - For this lab, accept the default, "__Secure access from everywhere__.
-    - __Private endpoint access only__ - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
-    - __Configure access control rule__ - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
-
-    ![](./images/network-access.png " ")
-
-9. Choose a license type:
-
-    - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
-    - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service. For this lab, choose __License Included__.
-
-    ![](./images/license-type.png " ")
-
-10. Click __Create Autonomous Database__.
-
-    ![Click Create Autonomous Database.](./images/create-adb-final.png " ")
-
-11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous JSON database is ready to use! Have a look at your instance's details here including the Database Name, Database Version, OCPU Count, and Storage.
-
-    ![Database instance homepage.](./images/provisioning.png " ")
-
-**Connect to your Autonomous Database using "JSON Workshop" UI**
-
-1. On the Autonomous Database Details page, click on the Tools tab.
-
-    ![](./images/tools.png)
-
-2. The Tools page provides you access to Database Actions, Oracle Application Express, Oracle ML User Administration and SODA Drivers. In the Database Actions box, click **Open Database Actions**.
-
-    ![](./images/db-actions.png)
-
-3. On Database Actions page, sign in with the database instance's default administrator account, **Username - ADMIN** and click **Next**.
-
-    ![](./images/username.png)
-
-4. Provide the ADMIN user with the password you specified when creating the database. Click **Sign in**.
-
-    ![](./images/sign-in.png)
-
-5. It displays the Database Actions console. On the Database Actions console under **Development** choose **JSON** to manager your JSON documents.
-
-    ![](./images/json.png)
-
-6. It opens on a worksheet. The first time you open JSON, a series of pop-up informational boxes introduce the main features. Click Next to know more or click on `X` to close the pop-up.
+3. It opens on a worksheet. The first time you open JSON, a series of pop-up informational boxes introduce the main features. Click Next to know more or click on `X` to close the pop-up.
 
     ![](./images/tutorials.png " ")
     ![](./images/tour2.png " ")
@@ -286,8 +145,6 @@ Oracle is a relational database, meaning it typically stores data in rows and co
 
 In order to create a collection all you have to specify is the collection's name. Unlike a relational table you do not have to provide any schema information. So, lets create a collection for the products we want to sell in the store.
 
-Estimated Time: 20 minutes
-
 Watch the video below for a quick walk through of the task.
 
 [](youtube:7H086A3JKbo)
@@ -301,39 +158,35 @@ In this lab, you will:
 * Finding JSON document in a collection
 * JSON and Constraints
 
-### Prerequisites
-
-* Have provisioned an Autonomous JSON Database instance and logged into the JSON
-
 **Create Collection**
 
 1. To create a collection, click **Create Collection**.
 
-	![](./images/create-collection.png)
+    ![](./images/create-collection.png " ")
 
 2. Provide a name for your collection in the field **Collection Name - products** and click **Create**. Note that the collection name is case-sensitive. You must enter products in all lower-case, do not use PRODUCTS or Products.
 
-	![](./images/new-products.png)
+	![](./images/new-products.png " ")
 
 3. A notification pops up that displays `products` collections is created.
 
-	![](./images/popup.png)
+	![](./images/popup.png " ")
 
 4. Click the refresh button to verify `products` collection is created.
 
-	![](./images/refreshed.png)
+	![](./images/refreshed.png " ")
 
 **Insert Documents**
 
 1. Double click **products** collection to show the **JSON-products** worksheet.
 
-	![](./images/double-clicked.png)
+	![](./images/double-clicked.png " ")
 
 2. Click New JSON Document button.
 
-	![](./images/new-document.png)
+	![](./images/new-document.png " ")
 
-3. A New JSON Document panel displays. Copy the following JSON object, paste it in the worksheet and click **Create**.
+3. A New JSON Document panel displays. Copy the following JSON object, paste it in the worksheet and click **Create**. Make sure you erase the empty brackets on the worksheet before pasting this code into it.
 
 	```
 	<copy>
@@ -352,11 +205,11 @@ In this lab, you will:
 	</copy>
 	```
 
-	![](./images/paste1.png)
+	![](./images/paste1.png " ")
 
 4. A notification pops up that says A New Document is created and the new document is shown in the bottom section of the JSON workshop.
 
-	![](./images/popup2.png)
+	![](./images/popup2.png " ")
 
 5. Let's repeat this with the following documents:
 
@@ -439,8 +292,8 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"id":101}
 	</copy>
 	```
-	![](./images/id101.png)
-	![](./images/id101-results.png)
+	![](./images/id101.png " ")
+	![](./images/id101-results.png " ")
 
 3.	Find all DVDs:
 
@@ -451,7 +304,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"format":"DVD"}
 	</copy>
 	```
-	![](./images/dvd-results.png)
+	![](./images/dvd-results.png " ")
 
 4.	Find all non-movies:
 
@@ -462,7 +315,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"type":{"$ne":"movie"}}
 	</copy>
 	```
-	![](./images/not-movies.png)
+	![](./images/not-movies.png " ")
 
 5.	Find documents whose condition value contains "new", which means just document (with id) 101.
 
@@ -471,7 +324,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"condition":{"$like":"%new%"}}
 	</copy>
 	```
-	![](./images/new.png)
+	![](./images/new.png " ")
 
 6. Find bargains of all products costing 5 or less:
 
@@ -482,7 +335,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"price":{"$lte":5}}
 	</copy>
 	```
-	![](./images/less5.png)
+	![](./images/less5.png " ")
 
 7. Tighten previous query to choose only movie documents:
 
@@ -493,7 +346,7 @@ Now let's issue some simple queries on the *products* collection we just created
 	{"$and":[{"price":{"$lte":5}}, {"type":"movie"}]}
 	</copy>
 	```
-	![](./images/less5-movie.png)
+	![](./images/less5-movie.png " ")
 
 **JSON and Constraints**
 
@@ -513,7 +366,7 @@ Some values need to be unique, so how do we enforce this?
 	}
 	</copy>
 	```
-	![](./images/step4.1.png)
+	![](./images/step4.1.png " ")
 
 2. Use QBE:
 
@@ -527,11 +380,11 @@ Some values need to be unique, so how do we enforce this?
 	</copy>
 	```
 
-	![](./images/id100-2.png)
+	![](./images/id100-2.png " ")
 
 	Let's delete the {id:100, fruit:banana} last inserted document by clicking on the trash bin button.
 
-	![](./images/delete_document.png)
+	![](./images/delete_document.png " ")
 
 	It is likely we are looking up products by their id. Let's a create an index that gives fast access to 'id'. Make sure id is unique and numeric.
 
@@ -539,7 +392,7 @@ Some values need to be unique, so how do we enforce this?
 
 3.	Let's navigate to SQL Developer Web. Click the navigation menu on the top left and select **SQL** under Development.
 
-	![](./images/sql-dw.png)
+	![](./images/sql-dw.png " ")
 
 4. Copy and paste the query below in the worksheet and click Run query button to creates a unique index that solves all requirements (unique, numeric, present).
 
@@ -548,15 +401,13 @@ Some values need to be unique, so how do we enforce this?
 	create unique index product_id_idx on products (JSON_VALUE(json_document, '$.id.number()' ERROR ON ERROR));
 	</copy>
 	```
-	![](./images/index.png)
+	![](./images/index.png " ")
 
-	JSON_Value is a SQL/JSON function that extracts one value from the JSON data that is specified by a JSON Path Expression - in this case we extract the 'id' and convert the selected value to a SQL number. Here, *$.id.number()* is a standard, SQL/JSON path expression. You'll learn more about SQJ/JSON functions later in this lab.
-
-	*Learn more -* [SQL/JSON Path Expressions](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-path-expressions.html#GUID-2DC05D71-3D62-4A14-855F-76E054032494)
+	JSON_Value is a SQL/JSON function that extracts one value from the JSON data that is specified by a JSON Path Expression - in this case we extract the 'id' and convert the selected value to a SQL number. Here, *$.id.number()* is a standard, SQL/JSON path expression. You'll learn more about SQJ/JSON functions later in this task.
 
 5.	Once the product\_id\_idx is created, navigate back to JSON workshop. Click the navigation menu on the top left and select **JSON** under Development.
 
-	![](./images/json-nav.png)
+	![](./images/json-nav.png " ")
 
 6.	Try to insert some documents that do not have an id or a non-numeric id:
 
@@ -569,12 +420,12 @@ Some values need to be unique, so how do we enforce this?
 	{"id":"xxx","title":"Top Gun"}
 	</copy>
 	```
-	![](./images/create-error.png)
-	![](./images/error.png)
+	![](./images/create-error.png " ")
+	![](./images/error.png " ")
 
 7.  While we're at it lets add more 'checks' - we call them 'constraints'. Navigate back to the SQL Developer Web. Click the navigation menu on the top left and select **SQL** under Development.
 
-	![](./images/nav.png)
+	![](./images/nav.png " ")
 
 8. Check constraint to make sure every product has a title of string data type and price >=0. Add a constraint to make sure that every item has at least a title and the price. We want the price to be a non-negative number and title to be a string.
 
@@ -585,13 +436,13 @@ Some values need to be unique, so how do we enforce this?
 	alter table products add constraint required_fields check (JSON_EXISTS(json_document, '$?(@.title.type() == "string" && @.price.number() > 0)'));
 	</copy>
 	```
-	![](./images/sql-query.png)
+	![](./images/sql-query.png " ")
 
 	JSON_Exists is a SQL/JSON function that checks that a SQL/JSON path expression selects at least one value in the JSON data. The selected value(s) are not extracted – only their existence is checked. Here, *$?(@.title.type() == "string" && @.price.number() > 0)* i a standard, SQL/JSON path expressions. You'll learn more about SQJ/JSON functions later in this lab.
 
 9. Once the *products* table is altered, navigate back to JSON workshop. Click the navigation menu on the top left and select **JSON** under Development.
 
-	![](./images/nav2-json.png)
+	![](./images/nav2-json.png " ")
 
 10. Validate that the following documents cannot get inserted as fields are missing or of wrong type.
 
@@ -604,10 +455,12 @@ Some values need to be unique, so how do we enforce this?
 	{"id":"200","title":"Top Gun"}
 	</copy>
 	```
-	![](./images/tester.png)
-	![](./images/error2.png)
+	![](./images/tester.png " ")
+	![](./images/error2.png " ")
 
 11. The following document now satisfies all the constraints: the "id" is a unique number, the title is a string, and the price is a positive number.
+
+    Click New JSON Document icon, copy and paste the following query in the worksheet and click **Create**.
 
 	```
 	<copy>
@@ -635,6 +488,10 @@ Some values need to be unique, so how do we enforce this?
 
 So far, all collection operations have been issued from a UI in the browser. In a real application these operations would be called directly from a programming language (for example using the open-source SODA drivers for Java, Python or NodeJS). Another option is to use REST.
 
+Navigate back to the SQL Developer Web. Click the navigation menu on the top left and select **SQL** under Development.
+
+![](./images/nav.png " ")
+
 In order to move on to Task 5, you now load the extra documents from SQL, using the following SQL code:
 
 ```
@@ -661,8 +518,6 @@ A key characteristic of a JSON collection (like 'products') is that it is backed
 
 In the following we show you how you can use SQL to work with the JSON data in a collection.
 
-Estimated Time: 30 minutes
-
 Watch the video below for a quick walk through of the task.
 
 [](youtube:MrSXStEfOF4)
@@ -674,21 +529,21 @@ In this task, you will:
 * Use JSON_Serialize to convert binary JSON data to a human-readable string.
 * Use dot notation to extract values from JSON data.
 
-### Prerequisites
-
-* All previous labs have been successfully completed.
-
 **SQL Developer Web**
 
 1. Click on the navigation menu on the top left and select **SQL** under Development.
 
-    ![](./images/nav-sql.png)
+    ![](./images/nav-sql.png " ")
 
 2. On the left side, click on PRODUCTS - this is the table for the 'products' collection. To get the view displayed, you need to right-click on **PRODUCTS** and choose **Open**.
 
-    ![](./images/products-table.png)
+    ![](./images/products-table.png " ")
 
     You see that the table 'PRODUCTS' has 5 columns: an 'ID' which is a unique identifier for the document, a 'JSON\_DOCUMENT' which holds the document, 2 metadata columns to keep track of creation and update timestamps and 'VERSION' which is typically a hash value for the document and allows to keep caches in sync (similar to an eTag). None of this is really important at this point as we will only use the JSON\_DOCUMENT column in the following examples.
+
+3. When done looking at the table, click on **Close**.
+
+    ![](./images/close-sql.png " ")
 
 **JSON_Serialize**
 
@@ -1160,6 +1015,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
     The value for the field 'movies' is the result of a subquery on the actor\_title\_map with a join on the actor's name.
 
+## Homework
 
 ## Acknowledgements
 
