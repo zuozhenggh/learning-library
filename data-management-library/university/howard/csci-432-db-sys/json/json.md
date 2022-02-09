@@ -1017,9 +1017,4 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
 ## Homework
 
-## Acknowledgements
-
-* **Author** - Beda Hammerschmidt, Architect
-* **Contributors** -  Marion Smith, Technical Program Manager
-* **Last Updated By/Date** - Marion Smith, February 2022
 
