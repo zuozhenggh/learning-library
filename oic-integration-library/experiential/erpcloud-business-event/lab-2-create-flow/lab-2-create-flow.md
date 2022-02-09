@@ -54,10 +54,10 @@ Add ERP PO Event trigger to the empty integration canvas.
     | --- | ----------- |
     | Define the purpose of the trigger         | **Receive Business Events raised within ERP Cloud**       |
     | Business Event for Subscription  | **Purchase Order Event** |
-    | Filter Expr for Purchase Order Event | `<xpathExpr xmlns:ns0="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/" xmlns:ns2="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/types/">$eventPayload/ns2:result/ns0:Value/ns0:PurchaseOrderLine/ns0:ItemDescription=`**"LL demo"**`</xpathExpr>` |
+    | Filter Expr for Purchase Order Event | `<xpathExpr xmlns:ns0="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/" xmlns:ns2="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/types/">$eventPayload/ns2:result/ns0:Value/ns0:DocumentDescription=`**"LL demo"**`</xpathExpr>` |
     |
 
-    > **Note:** You can use a custom filter expression by inserting a different value under **ItemDescription**. The value you enter is case sensitive. 
+    > **Note:** You can use a custom filter expression by inserting a different value under **DocumentDescription**. The value you enter is case sensitive. 
 
     ![](images/create-app-integration02.png)
 
