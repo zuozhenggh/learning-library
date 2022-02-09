@@ -58,7 +58,7 @@ from user_tab_partitions where table_name='MC';
 </copy>
 ```
 
-![Image alt text](images/user-tab-partitions.png "Multi List Partition")
+![Image alt text](images/user-tab-partitions-select.png "Multi List Partition")
 
 Let us now insert some data into our previously created table and see where the data is actually stored.
 
