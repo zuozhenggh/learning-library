@@ -1,4 +1,4 @@
-## Accessing the database after you connect from the terminal
+## How do you access the database after you connect from the terminal?
 
 1. Log in as opc and then sudo to the grid user.
     login as: opc
