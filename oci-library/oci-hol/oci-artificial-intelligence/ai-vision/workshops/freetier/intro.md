@@ -33,6 +33,8 @@ Document AI is a key building block for scenarios like business process automati
 
 Custom model training lets you tailor base models (through transfer learning approaches) to make deep learning models tuned to your data. Model selection, resource planning, and deployment are all managed by Vision.
 
+In order to view in the console and complete the following labs, you can check the Get Started section [here](https://preview.content.oci.oracleiaas.com/en-us/iaas/vision/vision/using/home.htm?bundle=8941).
+
 ### Prerequisites
 * An Oracle Free Tier, or Paid Cloud Account
 * Additional prerequisites (cloud services) are mentioned per lab
