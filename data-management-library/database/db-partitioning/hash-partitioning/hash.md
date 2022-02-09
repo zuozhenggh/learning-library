@@ -142,7 +142,8 @@ drop table sales_interval_hash purge;
 </copy>
 ```
  
-You successfully made it to the end this lab interval partitioning.    
+You successfully made it to the end this lab Hash partitioning.  
+You have now successfully performed a failover. You may now [proceed to the next lab](#next).  
 
 ## Learn More
 

@@ -135,7 +135,7 @@ order by 1;
 </copy>
 ```
 
-![Image alt text](images/lab8_05.png "Convert Non-partitioned Table")
+![Image alt text](images/soon2part-table-3.png "Convert Non-partitioned Table")
 
 All the index partitions are also in a valid state:
 
@@ -150,7 +150,7 @@ order by 1;
 </copy>
 ```
 
-![Image alt text](images/lab8_06.png "Convert Non-partitioned Table")
+![Image alt text](images/soon2part-table-4.png "Convert Non-partitioned Table")
 
 ## Task 2: Cleanup
  
@@ -162,7 +162,7 @@ drop table SOON2BPART purge;
 </copy>
 ```
 
-You successfully made it to the end of module 'conversion to partitioned table'.   
+You successfully made it to the end of lab Convert non-partitioned table to partitioned table.   
 
 ## Learn More
 
