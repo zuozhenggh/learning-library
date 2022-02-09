@@ -7,6 +7,10 @@ Estimated Time: 1 hour
 
 [](youtube:kzTQGs75IjA)
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:DknWBE-hUK4)
+
 ### Prerequisites
 
 This lab assumes you have:
@@ -87,6 +91,14 @@ In this first task, you will create and explore a new pluggable database **PDB2*
     ```
     <copy>
     set sqlformat ANSICONSOLE
+    </copy>
+    ```
+
+    Let's also set the working directory in SQLcl to the lab script directory.
+
+    ```
+    <copy>
+    cd /home/oracle/labs/multitenant
     </copy>
     ```
 
@@ -970,6 +982,7 @@ Refreshable PDBs need to be in **read only** mode in order to refresh. You can q
     <copy>
     sql / as sysdba
     set sqlformat ANSICONSOLE
+    cd /home/oracle/labs/multitenant
     @whoami
     </copy>
     ```

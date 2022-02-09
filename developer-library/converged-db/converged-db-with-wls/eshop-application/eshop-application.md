@@ -23,9 +23,7 @@ The new application re-written in J2EE standards using JDeveloper to deploy on W
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -36,9 +34,7 @@ Handling database connections using WebLogic datasources gives the developers fr
 
 It improves application performance as connections are not created/closed within a class, they are managed by the application server and can be fetched while at runtime. It provides a facility for creating a pool of connectionsrecycling of connections in the pool is helpful for enterprise application performance It supports distributed transactions.
 
-1. Open the Firefox browser on the remote desktop and navigate to *`http://localhost:7101/console`* OR You can use the bookmark **Oracle Weblogic Server Administration Console** under **ConvergedDB-Workshp in Bookmark Toolbar**.
-
-2. Login with below credentials:
+1. On the web browser window on the right is a tab preloaded with  **Oracle Weblogic Server Administration Console**, provide the credentials below to login
 
     ```
     Username	: <copy>weblogic</copy>
@@ -300,7 +296,7 @@ In this step we will edit the recorded script a little to connect to the require
 
 ## Task 7: Verify eSHOP functionality
 
-1. Open the Firefox browser, access the application by navigating to *`http://localhost:7101/`*  or from the bookmarks toolbar, Click **ConvergeDB-Workshop**, and Click **eSpeedShop**.
+1. On the web browser window on the right, access the application by navigating to *`http://localhost:7101/`* .
 
 2. Navigate through all endpoints and features of the application like Dashboard, shopping cart, search etc.
 

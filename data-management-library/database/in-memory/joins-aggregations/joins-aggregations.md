@@ -5,39 +5,62 @@ Watch the video below to get an overview of joins using Database In-Memory.
 
 [](youtube:y3tQeVGuo6g)
 
+Watch the video below for a walk through of the In-memory Joins and Aggregations lab.
+[](youtube:PC1kWntRrqg)
+
 ### Objectives
 
 -   Learn how to enable In-Memory on the Oracle Database
 -   Perform various queries on the In-Memory Column Store
 
 ### Prerequisites
+This lab assumes you have:
+- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
+    - Lab: Initialize Environment
+    - Lab: Querying the In-Memory Column Store
 
-This lab assumes you have completed the following labs:
-* Lab: Generate SSH Key (FreeTier and Paid accounts)
-* Lab: Environment Setup or Verify Setup
-* Lab: Enabling In-Memory
-* Lab: Querying the IMC
+**NOTE:** *When doing Copy/Paste using the convenient* **Copy** *function used throughout the guide, you must hit the* **ENTER** *key after pasting. Otherwise the last line will remain in the buffer until you hit* **ENTER!**
 
-
-## Step: In-Memory Joins and Aggregation
+## Task 1: In-Memory Joins and Aggregation
 
 Up until now we have been focused on queries that scan only one table, the LINEORDER table. Let’s broaden the scope of our investigation to include joins and parallel execution. This section executes a series of queries that begin with a single join between the fact table, LINEORDER, and one of more dimension tables and works up to a 5 table join. The queries will be executed in both the buffer cache and the column store, to demonstrate the different ways the column store can improve query performance above and beyond just the basic performance benefits of scanning data in a columnar format.
 
 1.  Let's switch to the Part3 folder and log back in to the PDB.
+
     ````
     <copy>
     cd /home/oracle/labs/inmemory/Part3
-    sqlplus ssb/Ora_DB4U@localhost:1521/orclpdb
+    sqlplus ssb/Ora_DB4U@localhost:1521/pdb1
+    </copy>
+    ````
+
+    And adjust sqlplus display.
+
+    ````
+    <copy>
     set pages 9999
     set lines 100
-    <copy>    
+    </copy>
     ````
 
     ![](images/num1.png " ")
 
-2.  Join the LINEORDER and DATE\_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  Run the script 01\_join\_im.sql or run the queries below..  
+2.  Join the LINEORDER and DATE\_DIM tables in a "What If" style query that calculates the amount of revenue increase that would have resulted from eliminating certain company-wide discounts in a given percentage range for products shipped on a given day (Christmas eve 1996).  
 
-    ````
+    Run the script *01\_join\_im.sql*
+
+    ```
+    <copy>
+    @01_join_im.sql
+    </copy>    
+    ```
+
+    or run the queries below.  
+
+    ```
     <copy>
     set timing on
 
@@ -55,15 +78,25 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     @../imstats.sql
     </copy>
-    ````
+    ```
 
     ![](images/num2.png)
 
     The IM column store has no problem executing a query with a join because it is able to take advantage of Bloom filters.  It’s easy to identify Bloom filters in the execution plan. They will appear in two places, at creation time and again when it is applied. Look at the highlighted areas in the plan above. You can also see what join condition was used to build the Bloom filter by looking at the predicate information under the plan.
 
-3.  Let's run against the buffer cache now. Run the script 02\_join\_buffer.sql or run the queries below.
+3.  Let's run against the buffer cache now.
 
-    ````
+    Run the script *`02_join_buffer.sql`*
+
+    ```
+    <copy>
+    @02_join_buffer.sql
+    </copy>    
+    ```
+
+    or run the queries below.
+
+    ```
     <copy>
     set timing on
 
@@ -84,12 +117,22 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     @../imstats.sql
     </copy>
-    ````
+    ```
     ![](images/num3.png)
 
-4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results. Run the script 03\_3join\_im.sql or run the queries below.
+4. Let’s try a more complex query that encompasses three joins and an aggregation to our query. This time our query will compare the revenue for different product classes, from suppliers in a certain region for the year 1997. This query returns more data than the others we have looked at so far so we will use parallel execution to speed up the elapsed times so we don’t need to wait too long for the results.
 
-    ````
+    Run the script *03\_3join\_im.sql*
+
+    ```
+    <copy>
+    @03_3join_im.sql
+    </copy>    
+    ```
+
+    or run the queries below.
+
+    ```
     <copy>
     set timing on
 
@@ -113,7 +156,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     @../imstats.sql
     </copy>
-    ````
+    ```
 
     ![](images/num4a.png)
 
@@ -124,9 +167,19 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     This is where Oracle’s 30 plus years of database innovation kick in. By embedding the column store into Oracle Database we can take advantage of all of the optimizations that have been added to the database. In this case, the Optimizer has switched from its typical left deep tree execution to a right deep tree execution plan using an optimization called ‘swap\_join\_inputs’. What this means for the IM column store is that we are able to generate multiple Bloom filters before we scan the necessary columns for the fact table, meaning we are able to benefit by eliminating rows during the scan rather than waiting for the join to do it.
 
-5. Now let’s execute the query against the buffer cache. Run the script 04\_3join\_buffer.sql or run the queries below.
+5. Now let’s execute the query against the buffer cache.
 
-    ````
+    Run the script *04\_3join\_buffer.sql*
+
+    ```
+    <copy>
+    @04_3join_buffer.sql
+    </copy>    
+    ```
+
+    or run the queries below.
+
+    ```
     <copy>
     set timing on
     alter session set inmemory_query = disable;
@@ -151,7 +204,7 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
     @../imstats.sql
     </copy>
-    ````
+    ```
 
     ![](images/3join_buffer_p1.png)
 
@@ -162,82 +215,111 @@ Up until now we have been focused on queries that scan only one table, the LINEO
 
 6.  Up until this point we have been focused on joins and how the IM column store can execute them incredibly efficiently. Let’s now turn our attention to more OLAP style “What If” queries.  In this case our query examines the yearly profits from a specific region and manufacturer over our complete data set.
 Oracle has introduced a new Optimizer transformation, called Vector Group By. This transformation is a two-part process not dissimilar to that of star transformation.  First, the dimension tables are scanned and any WHERE clause predicates are applied. A new data structure called a key vector is created based on the results of these scans. The key vector is similar to a Bloom filter as it allows the join predicates to be applied as additional filter predicates during the scan of the fact table, but it also enables us to conduct the group by or aggregation during the scan of the fact table instead of having to do it afterwards. The second part of the execution plan sees the results of the fact table scan being joined back to the temporary tables created as part of the scan of the dimension tables, that is defined by the lines that start with LOAD AS SELECT. These temporary tables contain the payload columns (columns needed in the select list) from the dimension table(s). In 12.2 these tables are now pure in-memory tables as evidenced by the addition of the (CURSOR DURATION MEMORY) phrase that is appended to the LOAD AS SELECT phrases. The combination of these two phases dramatically improves the efficiency of a multiple table join with complex aggregations. Both phases are visible in the execution plan of our queries.
-To see this in action execute the query 10\_vgb\_im.sql or run the queries below.     
 
-  ````
-  <copy>
-  set timing on
+    To see this in action execute the query *10\_vgb\_im.sql*
 
-  SELECT
-    d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
-  from
-    LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
-  where
-    l.lo_orderdate = d.d_datekey
-    and l.lo_partkey = p.p_partkey
-    and l.lo_suppkey = s.s_suppkey
-    and l.lo_custkey = c.c_custkey
-    and s.s_region = 'AMERICA'
-    and c.c_region = 'AMERICA'
-  group by
-    d.d_year, c.c_nation
-  order by
-    d.d_year, c.c_nation;
+    ```
+    <copy>
+    @10_vgb_im.sql
+    </copy>    
+    ```
 
-  set timing off
+    or run the queries below.     
 
-  select * from table(dbms_xplan.display_cursor());
+    ```
+    <copy>
+    set timing on
 
-  @../imstats.sql
-  </copy>
-  ````
+    SELECT
+      d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
+    from
+      LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
+    where
+      l.lo_orderdate = d.d_datekey
+      and l.lo_partkey = p.p_partkey
+      and l.lo_suppkey = s.s_suppkey
+      and l.lo_custkey = c.c_custkey
+      and s.s_region = 'AMERICA'
+      and c.c_region = 'AMERICA'
+    group by
+      d.d_year, c.c_nation
+    order by
+      d.d_year, c.c_nation;
 
-  ![](images/vgb-im-p1.png)
+    set timing off
 
-  ![](images/vgb-im-p2.png)
+    select * from table(dbms_xplan.display_cursor());
+
+    @../imstats.sql
+    </copy>
+    ```
+
+    ![](images/vgb-im-p1.png)
+
+    ![](images/vgb-im-p2.png)
 
 
   Our query is more complex now and if you look closely at the execution plan you will see the creation and use of :KV000n structures which are the Key Vectors along with the Vector Group By operation.
 
-7. To see how dramatic the difference really is we can run the same query but we will disable vector group by operation. Run the script 11\_novgb\_im.sql or run the queries below.
+7. To see how dramatic the difference really is we can run the same query but we will disable vector group by operation.
 
-  ````
-  <copy>
-  set timing on
+    Run the *script 11\_novgb\_im.sql*
 
-  SELECT /*+ NO_VECTOR_TRANSFORM */
-    d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
-  from
-    LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
-  where
-    l.lo_orderdate = d.d_datekey
-    and l.lo_partkey = p.p_partkey
-    and l.lo_suppkey = s.s_suppkey
-    and l.lo_custkey = c.c_custkey
-    and s.s_region = 'AMERICA'
-    and c.c_region = 'AMERICA'
-  group by
-    d.d_year, c.c_nation
-  order by
-    d.d_year, c.c_nation;
+    ```
+    <copy>
+    @11_novgb_im.sql
+    </copy>    
+    ```
 
-  set timing off
+    or run the queries below.
 
-  select * from table(dbms_xplan.display_cursor());
+    ```
+    <copy>
+    set timing on
 
-  @../imstats.sql
-  </copy>
-  ````
+    SELECT /*+ NO_VECTOR_TRANSFORM */
+      d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
+    from
+      LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
+    where
+      l.lo_orderdate = d.d_datekey
+      and l.lo_partkey = p.p_partkey
+      and l.lo_suppkey = s.s_suppkey
+      and l.lo_custkey = c.c_custkey
+      and s.s_region = 'AMERICA'
+      and c.c_region = 'AMERICA'
+    group by
+      d.d_year, c.c_nation
+    order by
+      d.d_year, c.c_nation;
 
-  ![](images/11-novgb-im-p1.png)
+    set timing off
 
-  ![](images/11-novgb-im-p2.png)
+    select * from table(dbms_xplan.display_cursor());
 
-  We went from 0.99 seconds to 2.15 seconds. Note that the second query still ran in-memory and even took advantage of Bloom filters, but it ran twice as slow as the vector group by plan.
+    @../imstats.sql
+    </copy>
+    ```
 
-8. To execute the query against the buffer cache run the script 12\_vgb\_buffer.sql or run the queries below.
+    ![](images/11-novgb-im-p1.png)
 
-    ````
+    ![](images/11-novgb-im-p2.png)
+
+    We went from 0.99 seconds to 2.15 seconds. Note that the second query still ran in-memory and even took advantage of Bloom filters, but it ran twice as slow as the vector group by plan.
+
+8. To execute the query against the buffer cache
+
+    Run the script *12\_vgb\_buffer.sql*
+
+    ```
+    <copy>
+    @12_vgb_buffer.sql
+    </copy>    
+    ```
+
+    or run the queries below.
+
+    ```
     <copy>
     set timing on
     alter session set inmemory_query = disable;
@@ -264,7 +346,7 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
     @../imstats.sql
     </copy>
-    ````
+    ```
 
    ![](images/12-vgb-buffer-p1.png)
 
@@ -273,43 +355,53 @@ To see this in action execute the query 10\_vgb\_im.sql or run the queries below
 
     Note that like hash joins with Bloom filters, vector group by with key vectors can be performed on row-store objects. This only requires that Database In-Memory be enabled and shows just how flexible Database In-Memory is. You don't have to have all objects populated in the IM column store. Of course, the row store objects cannot be accessed as fast as column-store objects and cannot take advantage of all of the performance features available to IM column store scans.
 
-9. And finally let's take a look at how our query runs in the row-store with no Database In-Memory optimizations. Run the script 13\_novgb\_buffer.sql or run the queries below.
+9. And finally let's take a look at how our query runs in the row-store with no Database In-Memory optimizations.
 
-  ````
-  <copy>
-  set timing on
-  alter session set inmemory_query = disable;
+    Run the script *13\_novgb\_buffer.sql*
 
-  SELECT /*+ NO_VECTOR_TRANSFORM */
-    d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
-  from
-    LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
-  where
-    l.lo_orderdate = d.d_datekey
-    and l.lo_partkey = p.p_partkey
-    and l.lo_suppkey = s.s_suppkey
-    and l.lo_custkey = c.c_custkey
-    and s.s_region = 'AMERICA'
-    and c.c_region = 'AMERICA'
-  group by
-    d.d_year, c.c_nation
-  order by
-    d.d_year, c.c_nation;
+    ```
+    <copy>
+    @13_novgb_buffer.sql
+    </copy>    
+    ```
 
-  set timing off
+    or run the queries below.
 
-  select * from table(dbms_xplan.display_cursor());
+    ```
+    <copy>
+    set timing on
+    alter session set inmemory_query = disable;
 
-  @../imstats.sql
-  </copy>
-  ````
+    SELECT /*+ NO_VECTOR_TRANSFORM */
+      d.d_year, c.c_nation, sum(lo_revenue - lo_supplycost) profit
+    from
+      LINEORDER l, DATE_DIM d, PART p, SUPPLIER s, CUSTOMER C
+    where
+      l.lo_orderdate = d.d_datekey
+      and l.lo_partkey = p.p_partkey
+      and l.lo_suppkey = s.s_suppkey
+      and l.lo_custkey = c.c_custkey
+      and s.s_region = 'AMERICA'
+      and c.c_region = 'AMERICA'
+    group by
+      d.d_year, c.c_nation
+    order by
+      d.d_year, c.c_nation;
+
+    set timing off
+
+    select * from table(dbms_xplan.display_cursor());
+
+    @../imstats.sql
+    </copy>
+    ```
 
    ![](images/13-novgb-buffer-p1.png)
 
    ![](images/13-novgb-buffer-p2.png)
 
 
-  Compare the time from Step 6 at 0.99 seconds to the time running the query in the row-store of 7.17 seconds. Quite a dramatic difference. This is why we say that you can expect a 3-8x performance improvement with In-Memory Aggregation.
+   Compare the time from Step 6 at 0.99 seconds to the time running the query in the row-store of 7.17 seconds. Quite a dramatic difference. This is why we say that you can expect a 3-8x performance improvement with In-Memory Aggregation.
 
 
 ## Conclusion
@@ -323,10 +415,5 @@ Oracle Database adds In-Memory database functionality to existing databases, and
 ## Acknowledgements
 
 - **Author** - Andy Rivenes, Product Manager,  Database In-Memory
-- **Contributors** - Kay Malcolm, Anoosha Pilli, DB Product Management
-- **Last Updated By/Date** - Andy Rivenes, Product Manager,  Database In-Memory, September 2021
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.    Please include the workshop name and lab in your request.
+- **Contributors** - Kay Malcolm, Anoosha Pilli, Rene Fontcha
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

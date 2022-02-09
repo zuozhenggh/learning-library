@@ -5,24 +5,9 @@
         {
             "title": "Introduction",
             "description": "About this workshop",
-            "filename": "../../introduction/introduction.md"
-        },
-        {
-            "title": "Get Started",
-            "description": "Prerequisites for this workshop.",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/event-register-free-tier-account.md"
-        },
-        {
-            "title": "Lab 1: Provision an ADB Instance",
-            "description": "Provisioning an Autonomous Database Instance",
-            "type": "freetier",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
-        },
-        {
-            "title": "Lab 2: Create a graph-enabled database user",
-            "description": "Create a database user with the required roles and privileges",
-            "filename": "../../../create-user/create-user.md"
-        },                
+            "type": "odbw",
+            "filename": "../../introduction/introduction-ll.md"
+        },              
         {
             "title": "Lab 3: Load CSV files into the Autonomous Database",
             "description": "Load data from CSV files using Database Actions Data Load",
@@ -30,7 +15,7 @@
         },
         {
             "title": "Lab 4: Create a graph",
-            "filename": "../../create-graph/create-graph.md"
+            "filename": "../../create-graph/create-graph-ll.md"
         },
         {
             "title": "Lab 5: Query and visualize the graph",

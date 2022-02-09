@@ -33,14 +33,18 @@ This lab assumes you have:
     - Database Server
     - Admin Server (Admin server will take about 3-4 mins to start)
 
-2. On the *Firefox* window on the right preloaded Weblogic 12c console, if not then refresh the page or wait 2-3min to start Admin server then click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference.
+2. On the *Web Browser* window on the right preloaded Weblogic 12c console, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Web Browser* and are provided below for reference.
+
+    - Username
 
     ```
-    Username: <copy>weblogic</copy>
+    <copy>weblogic</copy>
     ```
 
+    - Password
+
     ```
-    Password: <copy>Welcome1</copy>
+    <copy>Welcome1</copy>
     ```
 
     ![](images/oiri-vnc.png " ")
@@ -56,50 +60,52 @@ This lab assumes you have:
 4. If you are still unable to login or the login page is not functioning after reloading from the *Workshop Links* bookmark folder, open a terminal session and proceed as indicated below to validate the services.
 
     - Database and Listener
-        ```
-        <copy>
-        sudo systemctl status oracle-database
-        </copy>
-        ```
-        ![](images/4-db.png " ")
+
+      ```
+      <copy>
+      sudo systemctl status oracle-database
+      </copy>
+      ```
+      ![](images/4-db.png " ")
 
     - WLS Admin Server And Node Manager
 
-        ```
-        <copy>
-        sudo systemctl status oiri-weblogic.service
-        </copy>
-        ```
-        ![](images/oiri-wls-service.png " ")
+      ```
+      <copy>
+      sudo systemctl status oiri-weblogic.service
+      </copy>
+      ```
+      ![](images/oiri-wls-service.png " ")
 
-        ```
-        <copy>
-        sudo systemctl status oiri-node.service
-        </copy>
-        ```
-        ![](images/oiri-node-service.png " ")
+      ```
+      <copy>
+      sudo systemctl status oiri-node.service
+      </copy>
+      ```
+      ![](images/oiri-node-service.png " ")
 
 5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
 
     - Database and Listener
-        ```
-        <copy>
-        sudo systemctl restart oracle-database
-        </copy>
-        ```
+
+      ```
+      <copy>
+      sudo systemctl restart oracle-database
+      </copy>
+      ```
 
     - WLS Admin Server And Node Manager
 
-        ```
-        <copy>
-        sudo systemctl restart oiri-weblogic.service
-        </copy>
-        ```
-        ```
-        <copy>
-        sudo systemctl restart oiri-node.service
-        </copy>
-        ```
+      ```
+      <copy>
+      sudo systemctl restart oiri-weblogic.service
+      </copy>
+      ```
+      ```
+      <copy>
+      sudo systemctl restart oiri-node.service
+      </copy>
+      ```
 
 You may now [proceed to the next lab](#next).
 
@@ -107,48 +113,83 @@ You may now [proceed to the next lab](#next).
 
 1. Database Service (Database and Listener).
 
+    - Start
+
     ```
-    Start: <copy>sudo systemctl start oracle-database</copy>
+    <copy>sudo systemctl start oracle-database</copy>
     ```
+
+    - Stop
+
     ```
-    Stop: <copy>sudo systemctl stop oracle-database</copy>
+    <copy>sudo systemctl stop oracle-database</copy>
     ```
+
+    - Status
+
     ```
-    Status: <copy>sudo systemctl status oracle-database</copy>
+    <copy>sudo systemctl status oracle-database</copy>
     ```
+
+    - Restart
+
     ```
-    Restart: <copy>sudo systemctl restart oracle-database</copy>
+    <copy>sudo systemctl restart oracle-database</copy>
     ```
+    
 2. OIRI Service (WLS Admin Server)
 
-    ```
-    Start: <copy>sudo systemctl start  oiri-weblogic.service</copy>
-    ```
-    ```
-    Stop: <copy>sudo systemctl stop oiri-weblogic.service</copy>
-    ```
-    ```
-    Status: <copy>sudo systemctl status oiri-weblogic.service</copy>
-    ```
-    ```
-    Restart: <copy>sudo systemctl restart oiri-weblogic.service</copy>
-    ```
-3. OIRI Service (Node Manager Service)
+    - Start
 
     ```
-    Start: <copy>sudo systemctl start oiri-node.service</copy>
+    <copy>sudo systemctl start  oiri-weblogic.service</copy>
     ```
+
+    - Stop
+
     ```
-    Stop: <copy>sudo systemctl stop oiri-node.service</copy>
+    <copy>sudo systemctl stop oiri-weblogic.service</copy>
     ```
+
+    - Status
+
     ```
-    Status: <copy>sudo systemctl status oiri-node.service</copy>
+    <copy>sudo systemctl status oiri-weblogic.service</copy>
     ```
+
+    - Restart
+
     ```
-    Restart: <copy>sudo systemctl restart oiri-node.service</copy>
+    <copy>sudo systemctl restart oiri-weblogic.service</copy>
+    ```
+
+3. OIRI Service (Node Manager Service)
+
+    - Start
+
+    ```
+    <copy>sudo systemctl start oiri-node.service</copy>
+    ```
+
+    - Stop
+
+    ```
+    <copy>sudo systemctl stop oiri-node.service</copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>sudo systemctl status oiri-node.service</copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>sudo systemctl restart oiri-node.service</copy>
     ```
 
 ## Acknowledgements
 * **Author** - Keerti R, Brijith TG, Anuj Tripathi, NATD Solution Engineering
 * **Contributors** -  Keerti R, Brijith TG, Anuj Tripathi
-* **Last Updated By/Date** - Ashish Kumar, NATD Solution Engineering, June 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2021

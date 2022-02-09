@@ -16,7 +16,6 @@ In this lab, you will:
 * Identify Data Miner interface components.
 * Create a Data Miner project.
 
-
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -64,7 +63,7 @@ After setting up Oracle Data Miner for use within SQL Developer, different inter
    ![](./images/data-preparation-3.png " ")
 
 4. SQL Developer **Connections** tab
-  
+
    ![](./images/data-preparation-4.png " ")
 
    Now, the SQL Developer interface should look like this:
@@ -81,5 +80,3 @@ After setting up Oracle Data Miner for use within SQL Developer, different inter
 * **Authors** - Balasubramanian Ramamoorthy, Amith Ghosh
 * **Contributors** - Laxmi Amarappanavar, Ashish Kumar, Priya Dhuriya, Maniselvan K, David Start, Pragati Mourya.
 * **Last Updated By/Date** - Ashish Kumar, LiveLabs Platform, NA Technology, AUG 2021
-
- 

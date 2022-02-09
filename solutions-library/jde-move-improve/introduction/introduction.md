@@ -47,7 +47,7 @@ In this lab, you will:
 
 ### JDE Trial Edition on Oracle Cloud Infrastructure Overview
 
-JD Edwards EnterpriseOne is a comprehensive suite of integrated global business applications. The machine image provided by Oracle allows organizations to create a trial instance of JD Edwards EnterpriseOne Release 9.2 in the Oracle Compute Cloud. This 'All-in-One' Demo/Sandbox image enables customers to explore new functionality in JD Edwards EnterpriseOne Applications Release 9.2, Update 4 and Tools Release 9.2.5.0 without installing JD Edwards EnterpriseOne in their data centers. New functionality may include:
+JD Edwards EnterpriseOne is a comprehensive suite of integrated global business applications. The machine image provided by Oracle allows organizations to create a trial instance of JD Edwards EnterpriseOne Release 9.2 in the Oracle Compute Cloud. This 'All-in-One' Demo/Sandbox image enables customers to explore new functionality in JD Edwards EnterpriseOne 9.2 Applications Release 22, and Tools Release 9.2.6.0 without installing JD Edwards EnterpriseOne in their data centers. New functionality may include:
 
 * New industry modules.
 * One view financial statements.
@@ -74,7 +74,6 @@ At this point, you are ready to start creating instances in OCI.
 * **Contributors:**
     * Jeff Kalowes, Principal JDE Specialist
     * Mani Julakanti, Principal JDE Specialist
-    * Marc-Eddy Paul, Cloud Engineering
     * William Masdon, Cloud Engineering
     * Chris Wegenek, Cloud Engineering
-* **Last Updated By/Date:** AJ Kurzman, Cloud Engineering, 11/18/2020
+* **Last Updated By/Date:** Chris Wegenek, Cloud Engineering, 11/2021

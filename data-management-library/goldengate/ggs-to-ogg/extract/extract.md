@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to capture and send data from OCI GoldenGate to an on premisess or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Receiver Path to initiate pulling the data down to the target, and a Replicat to consume the data received.
+This lab walks you through the steps to capture and send data from Oracle Cloud Infrastructure (OCI) GoldenGate to an on premises or Marketplace Oracle GoldenGate instance. You'll create an Extract to capture data from the source database, a Receiver Path to initiate pulling the data down to the target, and a Replicat to consume the data received.
 
 Estimated time: 25 minutes
 
@@ -58,7 +58,7 @@ This Extract process captures data from the source database to send to Oracle Go
 
     ![](images/02-04-trailname.png " ")
 
-5.  From the **Credential Domain** dropdown, select **OracleGoldenGate**, and then select the **Credential Alias** for the source ATP database.
+5.  From the **Credential Domain** dropdown, select **OracleGoldenGate**, and then select the **Credential Alias** for the source Autonomous Transaction Processing database.
 
     ![](images/02-05-cred-domain.png " ")
 
@@ -84,7 +84,7 @@ This Extract process captures data from the source database to send to Oracle Go
 
 ## Task 3: Add and Run a Receiver Path
 
-The Receiver Path initiates the process to pull the OCI GoldenGate trail file down to OCI GoldenGate.
+The Receiver Path initiates the process to pull the OCI GoldenGate trail file down to Oracle GoldenGate.
 
 1.  In the Marketplace Oracle GoldenGate Administration Server console, click **Receiver Server**.
 
@@ -114,7 +114,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
     ![](images/03-06-port-no.png " ")
 
-7.  Click **Trail Name**, and then enter the trail file name created in Task 1 above, to send to OCI GoldenGate. For example, enter **E1**.
+7.  Click **Trail Name**, and then enter the trail file name created in Task 1 above, to send to Oracle GoldenGate. For example, enter **E1**.
 
     ![](images/03-07-trailname.png " ")
 
@@ -126,7 +126,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
     ![](images/03-09-alias.png " ")
 
-10. For **Target Trail Name**, enter a two-character name for the Trail file when it is received by OCI GoldenGate. For example, **T1**.
+10. For **Target Trail Name**, enter a two-character name for the Trail file when it is received by Oracle GoldenGate. For example, **T1**.
 
     ![](images/03-10-target-trail.png " ")
 
@@ -144,7 +144,7 @@ The Receiver Path initiates the process to pull the OCI GoldenGate trail file do
 
     ![](images/02-15-rcvr.png " ")
 
-In this lab, you created and ran a Path on your on premisess Oracle GoldenGate Receiver Server and sent a trail file from OCI GoldenGate to Oracle GoldenGate.
+In this lab, you created and ran a Path on your on premises Oracle GoldenGate Receiver Server and sent a trail file from OCI GoldenGate to Oracle GoldenGate.
 
 ## Task 4: Add a Checkpoint Table
 
@@ -152,7 +152,7 @@ In this lab, you created and ran a Path on your on premisess Oracle GoldenGate R
 
     ![](images/04-01.png " ")
 
-2.  For target ADW database, click **Connect to Database**.
+2.  For target Autonomous Data Warehouse database, click **Connect to Database**.
 
     ![](images/04-02.png " ")
 
@@ -211,9 +211,9 @@ This Replicat process consumes the trail file sent from OCI GoldenGate.
 
 12. Return to the OCI Console and use the navigation menu (hamburger icon) to navigate back to **Oracle Database**, **Autonomous Transaction Processing**, and then **Source ATP**.
 
-13. On the Source ATP Details page, click **Tools**, and then **Database Actions**.
+13. On the Source Autonomous Transaction Processing Details page, click **Tools**, and then **Database Actions**.
 
-14. Use the Source ATP database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
+14. Use the Source Autonomous Transaction Processing database credentials in the Workshop details to log in to Database Actions, and then click **SQL**.
 
 15. Enter the following inserts, and then click **Run Script**:
 
@@ -259,4 +259,4 @@ In this lab, you created an Extract, a Receiver Path, and a Replicat, and you ve
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Werner He and Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, November 2021

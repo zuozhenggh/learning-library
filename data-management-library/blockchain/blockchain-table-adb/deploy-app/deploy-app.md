@@ -8,6 +8,10 @@ In this lab, we will install Node.js in the compute instance, Then to prepare fo
 
 Estimated Time: 25 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:2QHI3kH8H0o)
+
 ### Objectives
 
 In this lab, you will:
@@ -23,7 +27,8 @@ In this lab, you will:
 
 This workshop assumes you have:
 
-- Have successfully completed all the previous labs
+* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* Successfully completed the previous labs
 
 ## Task 1: Provision a Compute Instance
 
@@ -116,9 +121,9 @@ There are multiple ways to connect to your cloud instance. Choose the way to con
 
     ![](./images/lab5-putty-setup.png " ")
 
-3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root.
+3. Click **Connection** then **Data** in the left navigation pane and set the Auto-login username to root.
 
-4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
+4. Click **Connection** then **SSH** then **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
 5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE: You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 

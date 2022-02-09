@@ -4,7 +4,11 @@
 
 In this lab we will review and startup all components required to successfully run this workshop.
 
-*Estimated Lab Time:* 10 Minutes.
+*Estimated Time:* 10 Minutes.
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:6BD2Z4zzEhI)
 
 ### Objectives
 - Initialize the workshop environment.
@@ -35,7 +39,8 @@ This lab assumes you have:
     - Enterprise Manager - Management server (OMS)
     - Enterprise Manager - Management Agent (emagent)
 
-2. On the *Firefox* window on the right preloaded with *Enterprise Manager*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Firefox* and are provided below for reference
+2. On the browser window on the right preloaded with *Enterprise Manager*, click on the *Username*  and login with the credentials provided below. 
+(If the browser shows any certificate authority invalid error code, click on *Advanced* and add the exception to proceed as outlined in Appendix 2)
 
     ```
     Username: <copy>sysman</copy>
@@ -181,8 +186,6 @@ Navigate to "***Enterprise >> Job >> Library***" and select "SETUP ORACLE CREDEN
 
     ![](images/named_creds_job_succeeded.jpg " ")
 
-You may now [proceed to the next lab](#next).
-
 ## Appendix 1: Managing Startup Services
 
 1. Database services (All databases and Standard Listener)
@@ -262,6 +265,8 @@ You may now [proceed to the next lab](#next).
     ```
     <copy>sudo systemctl restart oracle-emcc</copy>
     ```
+
+You may now proceed to the next lab.
 
 ## Appendix 2: External Web Access
 

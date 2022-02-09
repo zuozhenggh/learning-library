@@ -10,6 +10,10 @@ To create each compute instance, you create and apply a stack in Resource Manage
 
 Estimated Time: 30 minutes
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:m-IHoTrOUoo)
+
 ### Objectives
 
 In this lab, you will:

@@ -1,4 +1,4 @@
-# Oracle Database Vault on Autonomous DB
+# Oracle Database Vault on an Autonomous Database
 
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Database Vault (DV). It gives the user an opportunity to learn how to configure those features in an Autonomous Database to prevent unauthorized privileged users from accessing sensitive data.
@@ -8,6 +8,10 @@ Managed database services run the risk of 'Admin snooping', allowing privileged 
 You can deploy controls to block privileged account access to application data and control sensitive operations inside the database. Trusted paths can be used to add additional security controls to authorized data access and database changes. IP addresses, usernames, client program names and other factors can be used as part of Oracle Database Vault security controls to increase security. **Oracle Database Vault secures existing database environments transparently, eliminating costly and time consuming application changes.**
 
 *Estimated Time:* 35 minutes
+
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:O_Hi2-vZ-zU)
 
 *Version tested in this lab:* Oracle Autonomous Database 19c
 
@@ -36,7 +40,7 @@ This lab assumes you have:
 - You have completed "Prepare Your Environment" step previously
 
 ### Lab Timing (estimated)
-| Step No. | Feature | Approx. Time |
+| Task No. | Feature | Approx. Time |
 |--|------------------------------------------------------------|-------------|
 | 1 | Enable Database Vault | <5 minutes |
 | 2 | Enable Separation of Duties (SoD) | <5 minutes |
@@ -55,15 +59,15 @@ We start by creating two DV user accounts:
 - **Database Vault account manager (`ACCTS_ADMIN_ACE`)**
     - This user is an optional but recommended role
     - `ACCTS_ADMIN_ACE` has the `DV_ACCTMGR` role and can create users and change user passwords
-- While DV owner can also become DV account manager, Oracle recommends maintaining separation of duties via two different accounts
+- While DV owner can also become DV account manager, Oracle recommends maintaining separation of duties by using two different accounts
 
 1. Open a SQL Worksheet on your Autonomous DB as the *`ADMIN`* user
     
-    - In OCI, select your ADB Security database created during the "Prepare Your Environment" step
+    - In Oracle Cloud Infrastructure (OCI), select your "`ADB Security`" database created during the "Prepare Your Environment" step
 
        ![](./images/adb-dbv_002.png " ")
 
-    - In your ADB Security database's details page, click the **Tools** tab
+    - In your "`ADB Security`" database's details page, click the **Tools** tab
 
        ![](../prepare-setup/images/adb-set_010.png " ")
 
@@ -115,7 +119,7 @@ We start by creating two DV user accounts:
 
     **Note:**
        - Copy/Paste the following SQL queries into SQL Worksheet
-       - Press [**F5**] or click on the "Run Scripts" icon
+       - Press [**F5**] or click the "Run Scripts" icon
        - Check that there are no errors
 
        ![](./images/adb-dbv_003.png " ")
@@ -218,11 +222,11 @@ Next we create a realm to secure the `SH1.CUSTOMERS` table from access by `DBA_D
 
 A realm is a protected zone inside the database where database schemas, objects, and roles can be secured. For example, you can secure a set of schemas, objects, and roles that are related to accounting, sales, or human resources. After you have secured these into a realm, you can use the realm to control the use of system and object privileges by specific accounts or roles. This enables you to enforce context-sensitive access controls for anyone who wants to use these schemas, objects, and roles.
 
-1. In order to demonstrate the effects of this realm, it's important to execute the same SQL query from these 3 users before and after creating the realm:
+1. To demonstrate the effects of this realm, it's important to execute the same SQL query from these 3 users before and after creating the realm:
     - To proceed, **open SQL Worksheet in 3 web-browser pages** connected with a different user (*`DBA_DEBRA`*, *`SH1`* and *`APPUSER`*) as shown in Task 1 previously
    
        **Note:**
-          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
+          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new web-browser window (Mozilla, Chrome, Edge, Safari, etc) or by using the "Incognito mode"!**
           - As reminder, the password of these users is the same (here `WElcome_123#`)
     
              ````
@@ -257,7 +261,7 @@ A realm is a protected zone inside the database where database schemas, objects,
           -	`DBA_DEBRA` because it has the DBA role
           - `APPUSER` because it have the "`READ ANY TABLE`" system privilege
 
-2. Now, let's create a realm to secure `SH1` tables by executing this query below as the *`SEC_ADMIN_OWEN`* user. So, please **open a 4th web-browser window using the "Incognito mode"!**
+2. Now, let's create a realm to secure `SH1` tables by executing this query below as the *`SEC_ADMIN_OWEN`* user. So, please **open a 4th web-browser window**
 
       ````
       <copy>
@@ -420,7 +424,7 @@ You may also want to capture an audit trail of unauthorized access attempts to y
     - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser window** connected with a different user (*`DBA_DEBRA`*, *`SH1`* and *`APPUSER`*)
    
        **Note:**
-          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
+          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new web-browser window (Mozilla, Chrome, Edge, Safari, etc) or by using the "Incognito mode"!**
           - As a reminder, the password of these users is the same (here `WElcome_123#`)
     
              ````
@@ -546,7 +550,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
     - To proceed, **re-execute the same SQL query in 3 different SQL Worksheet opened in 3 web-browser pages** connected with a different user (*`DBA_DEBRA`*, *`SH1`* and *`APPUSER`*)
    
        **Note:**
-          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new browser window using the "Incognito mode"!**
+          -  Attention, only one SQL Worksheet session can be open in a standard browser window at the same time, hence **open each of your sessions in a new web-browser window (Mozilla, Chrome, Edge, Safari, etc) or by using the "Incognito mode"!**
           - As reminder, the password of these users is the same (here `WElcome_123#`)
     
              ````
@@ -679,7 +683,7 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
 5. Now, Database Vault is correctly disabled!
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## **Appendix**: About the Product
 ### **Overview**

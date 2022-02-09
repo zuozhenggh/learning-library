@@ -52,7 +52,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![](./images/1.7.png " ")
 
-**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/OVQA-GCUjlO9VwEdWqHSre02rNj4K6wZ3VsacpzsXNg/n/oradbclouducm/b/bucket-20200907-1650/o/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
+**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4FXNyecLtd_AfukXGOiSM1tU8w1GBzVPqwHJngsr2kNOMPuMejDi4-9P-uFHg-vr/n/c4u04/b/data-management-library-files/o/dw-hr-analytics/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
 
 8. You may now close the Identity Cloud Service Console.
 
@@ -179,7 +179,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 You may now proceed to Lab 2.
 
 ## Acknowledgements
- - **Author** - Yash Lamba, Cloud Native Solutions Architect, September 2020
+ - **Author** - Yash Lamba, Cloud Native Solutions Architect, Massimo Castelli, Senior Director Product Management, September 2020
  - **Contributors** - Maharshi Desai, Frankie OToole, Clarence Ondieki, Shikhar Mishra, Srihareendra Bodduluri, Arvi Dinavahi, Devika Chandrasekhar, Shikhar Mishra,
  - **Last Updated By/Date** - Kay Malcolm, October 2020
 

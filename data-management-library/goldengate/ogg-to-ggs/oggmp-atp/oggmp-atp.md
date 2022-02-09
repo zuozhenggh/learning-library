@@ -6,6 +6,9 @@ For the purposes of this workshop, Oracle Autonomous Transaction Processing (ATP
 
 Estimated time: 10 minutes
 
+Watch the video below for a walk through of the lab.
+[](youtube:Vw2rWRLSRjk)
+
 ### Objectives
 
 In this lab, you will:
@@ -81,7 +84,7 @@ In this lab, you will:
 10. Enter the following `put` command to upload the SourceATP wallet file to /home/opc.
 
     ```
-    <copy>put <local-path>/<Wallet_ATP-filename>.zip</copy>
+    <copy>put <Wallet_ATP-filename>.zip</copy>
     ```
 
     ![](images/02-10-put.png " ")
@@ -96,7 +99,7 @@ In this lab, you will:
 
 13. Enter 'ls' to list the contents in the current directory. You should see two files, ogg-credentials.json and your wallet file.
 
-14. Make a new directory called **wallet_ATP** and then extract the contents to that directory.
+14. Make a new directory called **wallet\_ATP** and then extract the contents to that directory.
 
     ```
 <copy>mkdir wallet_ATP
@@ -105,7 +108,7 @@ unzip <wallet_ATP-filname>.zip -d wallet_ATP</copy>
 
     ![](images/02-14-unzip.png " ")
 
-14. Change directories to wallet_ATP.
+14. Change directories to wallet\_ATP.
 
     ```
     <copy>cd wallet_ATP</copy>

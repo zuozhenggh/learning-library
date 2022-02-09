@@ -2,9 +2,9 @@
 
 Oracle Cloud Infrastructure is responsible for securing the infrastructure that runs all the services offering by Oracle Cloud Infrastructure. This infrastructure is composed of the hardware, software, networking, and facilities that run Oracle Cloud Infrastructure services. Customer's responsibility is tied to which service they select on Oracle Cloud Infrastructure. Since its a shared security model, it becomes critical to secure your workloads. In this workshop you will be using OCI's partner Check Point's CloudGuard solution to secure your workloads.
 
-This workshop will cover automated and step-by-step(manual) approaches which you can follow to deploy your required components on Oracle Cloud Infrastructure with Check Point solution.
+This workshop will cover automated and step-by-step (manual) approaches which you can follow to deploy your required components on Oracle Cloud Infrastructure with Check Point solution.
 
-Since you will be using OCI Marketplace's product (CloudGuard) so make sure you have access to minimum **BYOL Listings** available on Oracle Cloud Infrastructure Marketplace. In production environment **PAID Listing** gives you access to active license.
+Since you will be using OCI Marketplace's product (CloudGuard) so make sure you have access to minimum **BYOL Listings** available on Oracle Cloud Infrastructure Marketplace. You can also deploy **PAID Listing** which gives you access to active license.
 
 ## CloudGuard Solution
 

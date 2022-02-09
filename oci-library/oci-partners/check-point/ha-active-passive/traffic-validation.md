@@ -24,11 +24,11 @@ Estimated Time: 20 minutes.
 
 2. You will be creating **3** different Network Host Objects to support inbound connection to **Web App1 VM** and **DB App1 VM** as per below table:
 
-    | Parameter                   | Value                                                                            |
-    |-----------------------------|----------------------------------------------------------------------------------|
-    | Frontend-Private-IP         | Primary CloudGuard Primary Interface Secondary Private IP;Example: 192.168.1.241 |
-    | Web-App1-VM                 | Web Spoke App1 VM Private IP; Example: 10.0.0.79                                 |
-    | DB-App1-VM                  | DB Spoke App1 VM Private IP; Example: 10.0.1.40                                  |
+    | Name                        | Value                                                                            | Comment                                                                            |
+    |-----------------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+    | Web-App1-VM                 | Web Spoke App1 VM Private IP; Example: 10.0.0.79                                 |Collect Correct Web App VM1 IP address from OCI Console                                |
+    | Frontend-Private-IP         | Primary CloudGuard Primary Interface Secondary Private IP;Example: 192.168.1.241 |Collect Correct CloudGuard1 Frontend i.e. Primary Interface's Secondary Private IP address from OCI Console                                |
+    | DB-App1-VM                  | DB Spoke App1 VM Private IP; Example: 10.0.1.40                                  |Collect Correct DB App VM1 IP address from OCI Console                                |
 
 3. Navigate to top right option **New > Host** to add a new Host.
 
@@ -65,7 +65,7 @@ Estimated Time: 20 minutes.
     | Name        | Value         |
     |-------------|---------------|
     | Web-VM-1777 | TCP Port 1777 |
-    | DB-VM-1777  | TCP Port 1778 |
+    | DB-VM-1778  | TCP Port 1778 |
 
 8. Navigate to top right option **New > More > Service > TCP Service** to add a new TCP Service.
 
@@ -89,19 +89,21 @@ Estimated Time: 20 minutes.
 
     ![](../common/images/Inbound-Support-Config-9.png " ")
 
-11. Add **eth0** interface as part of **ExternalZone** so when you assign inbound **NAT** policy you can choose Security Zone. Navigate to **checkpoint-cluster** which you created earlier and go to **Network Managment > Network eth0**. Click on **Modify** button to specifiy Security Zone, you should select ExternalZone from drop-down and click on **OK** button so save configuration:
+11. You will be adding **eth0** interface as part of **ExternalZone** to support **NAT** policy based on security zone. To do that navigate to **checkpoint-cluster**  properties which you created earlier and go to **Network Managment > Network eth0**. 
+
+12. Click on **Modify** button to specifiy Security Zone, you should select ExternalZone from drop-down and click on **OK** button so save configuration:
 
     ![](../common/images/Inbound-Support-Config-11.png " ")
 
-12. [Optional] If you see below window which you have not ignored select **Don't show this message again** and click **Yes**:
+14. [Optional] If you see below window which you have not ignored select **Don't show this message again** and click **Yes**:
 
     ![](../common/images/Inbound-Support-Config-12.png " ")
 
-13. You must enable **Logging** on security Policy. Navigate to your security policy and update Track value from **None** to **Log**
+15. You must enable **Logging** on security Policy. Navigate to your security policy and update Track value from **None** to **Log**
 
     ![](../common/images/Inbound-Support-Config-13.png " ")
 
-14. You will be creating **3** different NAT policies to support inbound connection from outside to ensure that they go to right VMs and management traffic is not impacted. You can follow below table to support the **NAT Policies** configuration:
+16. You will be creating **3** different NAT policies to support inbound connection from outside to ensure that they go to right VMs and management traffic is not impacted. You can follow below table to support the **NAT Policies** configuration:
 
     | Name                   | Original Source  | Original Destination | Original Services | Translated Source | Translated Destination | Translated Services | Install On     | Comment                                                      |
     |------------------------|------------------|----------------------|-------------------|-------------------|------------------------|---------------------|----------------|--------------------------------------------------------------|
@@ -109,25 +111,25 @@ Estimated Time: 20 minutes.
     | Traffic to Web App1 VM | ExternalZone     | Frontend-Private-IP  | Web-VM-1777       | Original          | Web-App1-VM            | ssh                 | Policy Targets | Ensure that Port 1777 inbound connection goes to Web APP1 VM |
     | Traffic to DB App1 VM  | ExternalZone     | Frontend-Private-IP  | DB-VM-1778        | Original          | DB-App1-VM             | ssh                 | Policy Targets | Ensure that Port 1778 inbound connection goes to DB APP1 VM  |
 
-15. Navigate to **SECURITY POLICIES > NAT** and click on **Rule** icon as below to add **NAT** policies on the top as per **Table** order:
+17. Navigate to **SECURITY POLICIES > NAT** and click on **Rule** icon as below to add **NAT** policies on the top as per **Table** order:
 
     ![](../common/images/Inbound-Support-Config-23.png " ")
 
-16. Your **NAT** policies should look like this as below:
+18. Your **NAT** policies should look like this as below:
 
     ![](../common/images/Inbound-Support-Config-15.png " ")
 
-17. Do a sanity check to make sure **TCP Services**, **Hosts**, **Security Policies** and **ExternalZones** are created/attached successfully. For example below images shows **TCP Services** and **Hosts**:
+19. Do a sanity check to make sure **TCP Services**, **Hosts**, **Security Policies** and **ExternalZones** are created/attached successfully. For example below images shows **TCP Services** and **Hosts**:
 
     ![](../common/images/Inbound-Support-Config-10.png " ")
 
     ![](../common/images/Inbound-Support-Config-14.png " ")
 
-18. Public your changes by clicking on **Publish** icon present on SmartConsole application:
+20. Public your changes by clicking on **Publish** icon present on SmartConsole application:
 
     ![](../common/images/Inbound-Support-Config-20.png " ")
 
-19. Install your policy on cluster target by Navigating to **SECURITY POLICIES > Policy** screen and make sure that policy gets applied successfully:
+21. Install your policy on cluster target by Navigating to **SECURITY POLICIES > Policy** screen and make sure that policy gets applied successfully:
 
     ![](../common/images/Inbound-Support-Config-17.png " ")
 
@@ -135,18 +137,18 @@ Estimated Time: 20 minutes.
 
     ![](../common/images/Inbound-Support-Config-19.png " ")
 
-20. Connect to **Web APP1** and **DB APP1** using **CloudGuard1 Frontend Interface Floating Public IP** over **SSH** unique port as per your configuration:
+22. Connect to **Web APP1** and **DB APP1** using **CloudGuard1 Frontend Primary Interface Floating Public IP** over **SSH** unique port as per your configuration:
 
     | VM       | Port  | IP                                   | Example                       |
     |----------|-------|--------------------------------------|-------------------------------|
-    | Web App1 | 1777  | Frontend Interface Floating Public IP | ssh opc@129.159.79.108 -p 1777 |
-    | DB App1  | 1778  | Frontend Interface Floating Public IP | ssh opc@129.159.79.108 -p 1778 |
+    | Web App1 | 1777  | Frontend Primary Interface Floating Public IP | ssh opc@129.159.79.108 -p 1777 |
+    | DB App1  | 1778  | Frontend Primary Interface Floating Public IP | ssh opc@129.159.79.108 -p 1778 |
 
-21. Below diagram validates that Inbound traffic is working towards your DB and Web Spoke VMs.
+23. Below diagram validates that Inbound traffic is working towards your DB and Web Spoke VMs.
 
    ![](../common/images/76-Verify-North-South-Inbound-Traffic1.png " ")
 
-22. You can also verify traffic from **Policy** screen on your **SmartConsole** application. You can filter ports 1777 and/or 1778:
+24. You can also verify traffic from **Policy** screen on your **SmartConsole** application. You can filter ports 1777 and/or 1778:
 
    ![](../common/images/76-Verify-North-South-Inbound-Traffic2.png " ")
 
@@ -174,12 +176,12 @@ Estimated Time: 20 minutes.
 
    ![](../common/images/Inbound-Support-Config-19.png " ")
 
-4. Connect to **Web APP1** and **DB APP1** using **CloudGuard1 Frontend Interface Floating Public IP** over **SSH** unique port as per your configuration:
+4. Connect to **Web APP1** and **DB APP1** using **CloudGuard1 Frontend Primary Interface Floating Public IP** over **SSH** unique port as per your configuration:
 
     | VM       | Port  | IP                                   | Example                       |
     |----------|-------|--------------------------------------|-------------------------------|
-    | Web App1 | 1777  | Frontend Interface Floating Public IP | ssh opc@129.159.79.108 -p 1777 |
-    | DB App1  | 1778  | Frontend Interface Floating Public IP | ssh opc@129.159.79.108 -p 1778 |
+    | Web App1 | 1777  | Frontend Primary Interface Floating Public IP | ssh opc@129.159.79.108 -p 1777 |
+    | DB App1  | 1778  | Frontend Primary Interface Floating Public IP | ssh opc@129.159.79.108 -p 1778 |
 
 5. Initiate a ping to **google.com** or publicly available site connection as per below diagram which validates that Outbound traffic from Web and DB spoke VMs is working fine.
 
@@ -197,12 +199,12 @@ Estimated Time: 20 minutes.
 
    ![](../common/images/80-Verify-East-West-Config.png " ")
 
-3. Connect to **Web APP1** and **DB APP1** using **CloudGuard1 Frontend Interface Floating Public IP** over **SSH** unique port as per your configuration:
+3. Connect to **Web APP1** and **DB APP1** using **CloudGuard1 Frontend Primary Interface Floating Public IP** over **SSH** unique port as per your configuration:
 
     | VM       | Port  | IP                                   | Example                       |
     |----------|-------|--------------------------------------|-------------------------------|
-    | Web App1 | 1777  | Frontend Interface Floating Public IP | ssh opc@129.159.79.108 -p 1777 |
-    | DB App1  | 1778  | Frontend Interface Floating Public IP | ssh opc@129.159.79.108 -p 1778 |
+    | Web App1 | 1777  | Frontend Primary Interface Floating Public IP | ssh opc@129.159.79.108 -p 1777 |
+    | DB App1  | 1778  | Frontend Primary Interface Floating Public IP | ssh opc@129.159.79.108 -p 1778 |
 
 4. Initiate a ping between **Web App1** and **DB App1** VMs as per below diagram which validates that traffic between Web and DB spoke VMs (vice-versa) is working fine.
 
@@ -280,12 +282,12 @@ Estimated Time: 20 minutes.
 
     ![](../common/images/ObjectStorage-Support-Config-2.png " ")
 
-17. Connect to **Web APP1** and **DB APP1** using **CloudGuard1 Frontend Interface Floating Public IP** over **SSH** unique port as per your configuration:
+17. Connect to **Web APP1** and **DB APP1** using **CloudGuard1 Frontend Primary Interface Floating Public IP** over **SSH** unique port as per your configuration:
 
     | VM       | Port  | IP                                   | Example                       |
     |----------|-------|--------------------------------------|-------------------------------|
-    | Web App1 | 1777  | Frontend Interface Floating Public IP | ssh opc@129.159.79.108 -p 1777 |
-    | DB App1  | 1778  | Frontend Interface Floating Public IP | ssh opc@129.159.79.108 -p 1778 |
+    | Web App1 | 1777  | Frontend Primary Interface Floating Public IP | ssh opc@129.159.79.108 -p 1777 |
+    | DB App1  | 1778  | Frontend Primary Interface Floating Public IP | ssh opc@129.159.79.108 -p 1778 |
 
 18. Do a **wget** to **Pre-Authentication Request** which you created earlier from Web and DB spoke VMs and you should get a response back.
 
@@ -295,7 +297,7 @@ Estimated Time: 20 minutes.
 
    ![](../common/images/84-Verify-OSN-Traffic2.png " ")
 
-## **Task 5: High Availability Failover Validation**
+## Task 5: High Availability Failover Validation
 
 1. Navigate to **CloudGuard1** instance attached VNIC details page and verify that **Frontend/Primary** and/or **Backend** interface has floating secondary IPs are available on primary instance.
 
@@ -303,35 +305,54 @@ Estimated Time: 20 minutes.
 
 2. Since you are using **R81** release there is an additional step which you need to ensure that HA failover happens successfully. Go to **expert** mode and run below commands on each **CloudGuard1** and **CloudGuard2** instances over SSH:
 
-   ```
-   <copy>
-   set expert-password
-   Enter a Unique Password, for example: Check@123
-   expert
-   $FWDIR/scripts/merge-bundle.sh
-   $FWDIR/scripts/cloud_ha_cli.py restart
-   </copy>
-   ```
+      ```
+      <copy>
+      set expert-password
+      Enter a Unique Password, for example: Check@123
+      expert
+      $FWDIR/scripts/merge-bundle.sh
+      $FWDIR/scripts/cloud_ha_cli.py restart
+      </copy>
+      ```
 
    Below image shows an example of above script on **CloudGuard1** instance. You have to make sure that you run on both CloudGuard instances.
 
-   ![](../common/images/HA-Failover-Config-1.png " ")
+      ![](../common/images/HA-Failover-Config-1.png " ")
 
-3. Reboot **CloudGuard1** instance or Suspend HA which will trigger failover automatically to **CloudGuard2** instance.
+4. You can manually trigger HA failover using provided commands as below: 
+
+      ```
+      <copy>
+      #### To bring down Cluster Member 
+      set cluster member admin down 
+      show cluster state 
+
+      #### To bring back up Cluster Member 
+      set cluster member admin up 
+      show cluster state 
+      </copy>
+      ```
+
+   Example: Below image reflect HA failover from **CloudGuard1** instance to **CloudGuard2** instance: 
+
+   ![](../common/images/failover-validation.png " ")
+
+
+   Or you can also Reboot **CloudGuard1** instance from OCI console to trigger failover automatically to **CloudGuard2** instance.
 
    ![](../common/images/87-Reboot-CloudGuard1.png " ")
 
-4. Within few seconds **CloudGuard2** instance should come up online/reachable and once you connect to **CloudGuard2** GUI using **admin/Check@123** credentials or password which you had setup in **Lab3**. You should see it became primary instance.
+5. Within few seconds **CloudGuard2** instance should become **Active** Firewall. You can also see on **SmartConsole** GUI where **CloudGuard2** instance became primary firewall.
 
    ![](../common/images/88-Failover-CloudGuard2.png " ")
 
-5. Navigate to **CloudGuard2** instance attached VNIC details page and verify that **Frontend/Primary** and/or **Backend** interface floating IPs has moved from **CloudGuard1** instance.
+6. Navigate to **CloudGuard2** instance attached VNIC details page and verify that **Frontend/Primary** and/or **Backend** interface floating IPs has moved from **CloudGuard1** instance.
 
    ![](../common/images/90-Failover-Success-CloudGuard2-frontend.png " ")
 
    ![](../common/images/91-Failover-Success-CloudGuard2-backend.png " ")
 
-6. You can verify that **CloudGuard2** is primary and **CloudGuard1** is secondary in your cluster:
+7. You can verify that **CloudGuard2** is primary and **CloudGuard1** is secondary in your cluster:
 
    ![](../common/images/89-Failover-Success-CloudGuard1.png " ")
 

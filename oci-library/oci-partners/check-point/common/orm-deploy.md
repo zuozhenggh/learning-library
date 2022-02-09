@@ -27,8 +27,10 @@ You will be using Terraform to create your lab environment.
 
 1.  Click on the link below to download the zip file which you need to build your environment.  
 
-    - Click here: [cloudguard-live-labs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/YeAMIiqXbz3bL3dhkNFUPcd7WO52XgoltG-vY3exhGjXKza2qbaiOtE0h4B8u8yi/n/partners/b/files/o/cloudguard-live-labs.zip)
+    - Click here: [cloudguard-live-labs.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/UM18sK95O9RDvnGr9YWlFYkcMvlF2OfU85B46b-zvJ6HozLUypRXBEsBC5DQON4j/n/partners/b/files/o/cloudguard-workshop-newcloudguard-live-labs.zip)
         - Packaged terraform **CloudGuard High Availability** use-case.
+
+    **Note**: Click here [cloudguard-live-labs-minimum-resources.zip]() file to deploy minimum required resources to support **CloudGuard High Availability** use-case.
 
 2.  Save in your local machine's downloads folder.
 
@@ -100,7 +102,7 @@ Based on your laptop config, choose the appropriate steps to connect to your ins
 
 **Congratulations! You have successfully completed the lab.**
 
-**PLEASE READ**: You must skip **Lab 1 to Lab2** now and proceed to **Lab 3** i.e. **Configure CloudGuard Instances**.
+**PLEASE READ**: You must skip **Lab 1 to Lab2** now and proceed to **Lab 3** i.e. **Configure CloudGuard(s)**.
 
 ## Learn More
 

@@ -13,6 +13,8 @@ Watch the video below for an overview of Oracle Multitenant.
 
 [Overview video on Oracle Multitenant](youtube:4mUwjBfztfU)
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/mH-_tNpwUAo).</if>
+
 ### Containers and pluggable databases
 
 A CDB includes zero, one, or many customer-created pluggable databases (PDBs). A PDB is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB. All Oracle databases before Oracle Database 12c were non-CDBs.

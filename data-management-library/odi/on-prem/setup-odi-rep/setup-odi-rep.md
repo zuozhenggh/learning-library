@@ -14,92 +14,47 @@ This lab will show you how to access an ODI instance using Apache Guacamole and 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## Task 0: Running your Lab
-### Access the graphical desktop
-For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+## Task 1: Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-1. Launch your browser to the following URL
+    - Database Listener
+        - LISTENER
+    - Database Server Instance
+        - orcl
 
-    ```
-    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-    ```
-
-2. Provide login credentials
-
-    ```
-    Username: <copy>oracle</copy>
-    ```
-    ```
-    Password: <copy>Guac.LiveLabs_</copy>
-    ```
-
-  ![](./images/guacamole-login.png " ")
-
-  *Note:* There is an underscore `_` character at the end of the password.
-
-3. Click on the *Terminal* Desktop icon to open a terminal session
-
-  ![](./images/guacamole-landing.png " ")
-
-
-4. In the terminal window, run the following initialize and start *ODI Studio* (one-time only)
-
-    ```
-    <copy>/home/oracle/Oracle/Middleware/Oracle_Home/odi/studio/odi.sh -clean -initialize &</copy>
-    ```
-
-  *Note:* If you close *ODI Studio* and need to re-open it, simply click on the desktop icon as show above or re-run the same script with *"-clean -initialize"*. The command above is to be executed one-time only otherwise the client will be re-initialized and any cache saved since your initial run will de discarded.
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
-
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-## Task 1: Launch and Configure ODI Studio
-
-1. A user *Oracle* from the remote desktop session you started above, launch a terminal client and Start the container database, all PDB's and the listener
+2. Validate that expected processes are up. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
     ```
     <copy>
-    cd ~/scripts/  
-    sh ./startup.sh
+    ps -ef|grep LISTENER|grep -v grep
+    ps -ef|grep ora_|grep pmon|grep -v grep
+    systemctl status oracle-database
     </copy>
     ```
 
-  *Note*: You may also run this script from your SSH client if preferred
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
 
-  ![](./images/db-startup.png " ")
+    ```
+    e.g. Restarting the DB and DB Listener
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
+4. On the right preloaded with the *Oracle Data Integrator*.
 
-2. From the same remote desktop session, Click on the "*Oracle Data Integrator*" icon.
+  ![](./images/odi-novnc-landing.png " ")  
 
-  ![](./images/guacamole-landing-odi-studio.png " ")    
+## Task 2: Configure ODI Studio  
 
-  ODI Studio will appear on screen.
-
-  ![](./images/odi_studio_1.png " ")    
-
-2. Click on "Connect to Repository".
+1. From the same remote desktop session, Click on "Connect to Repository".
 
   ![](./images/odi_studio_2a.png " ")
 
-3. Type in the wallet password and click OK
+2. Type in the wallet password and click OK
 
     ```
     Password: <copy>Welcome1#</copy>
@@ -107,39 +62,39 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
   ![](./images/odi_studio_2b.png " ")  
 
-4. Click "OK" when the default login username and password appear on screen.
+3. Click "OK" when the default login username and password appear on screen.
 
   ![](./images/odi_studio_3.png " ")
 
-5. Go to the Designer tab and select import to open the import wizard.
+4. Go to the Designer tab and select import to open the import wizard.
 
   ![](./images/odi_studio_4.png " ")
 
-6. Select "Smart Import" option and click ok.
+5. Select "Smart Import" option and click ok.
 
   ![](./images/odi_studio_5a.png " ")
 
-7.  Enter the path to the **ODI_Models.xml** file (`/home/oracle/ODI_Mappings_V1/ODI_Models.xml`) and click "Next".
+6.  Enter the path to the **ODI_Models.xml** file (`/home/oracle/ODI_Mappings_V1/ODI_Models.xml`) and click "Next".
 
   ![](./images/odi_studio_5b.png " ")  
 
   The import will take approximately 5 minutes
 
-8. Provide the export key. Export key can be obtained from the instructor and click "OK".
+7. Provide the export key. Export key can be obtained from the instructor and click "OK".
 
   ![](./images/odi_studio_5c.png " ")   
 
-9. Click "Next" on the next screen and then click on Finish.
+8. Click "Next" on the next screen and then click on Finish.
 
   ![](./images/odi_studio_5d.png " ")
 
   ![](./images/odi_studio_5e.png " ")
 
-10. Click close on the next screen.
+9. Click close on the next screen.
 
   ![](./images/odi_studio_5f.png " ")
 
-## Task 2: Import Mappings and Run Initial Load
+## Task 3: Import Mappings and Run Initial Load
 
 1. If you are new to ODI, import these mappings using smart import. Select import to open the import wizard
 
@@ -182,7 +137,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
   ![](./images/odi_env_reset_1d.png " ")  
 
 
-## Task 3: Test the environment
+## Task 4: Test the environment
 
 1. Expand **Model** and right-click on **`SRC_AGE_GROUP`** and select **View Data**
 
@@ -192,7 +147,42 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
   ![](./images/odi_models_2.png " ")      
 
-Congratulations!  Now you have the environment to run the ODI labs. You may proceed to the next lab.
+You may now [proceed to the next lab](#next).
+
+## Appendix 1: Managing Startup Services
+
+1. Database service (Database and Standard Listener).
+
+    - Start
+
+    ```
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
+    ```
+    - Stop
+
+    ```
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>
+    systemctl status oracle-database
+    </copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)

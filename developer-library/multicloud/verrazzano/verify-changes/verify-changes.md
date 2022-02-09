@@ -24,67 +24,80 @@ In this lab, you will:
     <copy>https://bobs-books.bobs-books.XX.XX.XX.XX.nip.io/bobbys-front-end/</copy>
     ```
 
-    ![Bob's Book](images/1.png)
+    ![Bob's Book](images/1.png " ")
 
 ## Task 2: Verify the Changes in the Verrazzano Console
 
 1. You determined the endpoints for the Verrazzano Console as part of Lab 4, but, if you want to get the link for the Verrazzano console, copy the following command and run it in the *Cloud Shell*.
 
     ```bash
-    <copy>kubectl get vz -o yaml</copy>
+    <copy>kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .</copy>
     ```
 
     You can see the link for the Verrazzano Console, select it to open the console.
 
-    ![Verrazzano Console](images/2.png)
+    The output should be similar to the following:
+        ```bash
+        $ kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .
+        {
+        "consoleUrl": "https://verrazzano.default.XX.XX.XX.XX.nip.io",
+        "elasticUrl": "https://elasticsearch.vmi.system.default.1XX.XX.XX.XX.nip.io",
+        "grafanaUrl": "https://grafana.vmi.system.default.XX.XX.XX.XX.nip.io",
+        "keyCloakUrl": "https://keycloak.default.XX.XX.XX.XX.nip.io",
+        "kialiUrl": "https://kiali.vmi.system.default.XX.XX.XX.XX.nip.io",
+        "kibanaUrl": "https://kibana.vmi.system.default.XX.XX.XX.XX.nip.io",
+        "prometheusUrl": "https://prometheus.vmi.system.default.XX.XX.XX.XX.nip.io",
+        "rancherUrl": "https://rancher.default.XX.XX.XX.XX.nip.io"
+        }
+        ```
 
 2. In Lab4, if you saved the password for the Verrazzano Console, you can use it to log in to the Verrazzano Console. Otherwise, run the following command in the *Cloud Shell* to get the password and paste it in your text editor.
 
     ```bash
-    <copy>kubectl get secret --namespace verrazzano-system verrazzano -o jsonpath={.data.password} | base64 --decode; echo</copy>
+    <copy>$ kubectl get secret --namespace verrazzano-system verrazzano -o jsonpath={.data.password} | base64 --decode; echo</copy>
     ```
 
-    ![Verrazzano Password](images/3.png)
+    ![Verrazzano Password](images/3.png " ")
 
 3. Enter *verrazzano* as the user name and use the output of the previous command from the text editor, as the password then click *Sign In*.
 
-    ![Sign In](images/4.png)
+    ![Sign In](images/4.png " ")
 
 4. Select the application name, 'bobs-books', under OAM Applications as shown below:
 
-    ![bobs-book application](images/5.png)
+    ![bobs-book application](images/5.png " ")
 
 5. Select the drop-down menu to sort by Name and then select the component Name, *bobby-helidon*.
 
-    ![Bobby Helidon](images/6.png)
+    ![Bobby Helidon](images/6.png " ")
 
 6. In the previous lab, we modified the *bobs-books-comp.yaml* file which provides the specification for every component. Now, in the Verrazzano console, we will verify the changes that we made in Lab 7. Select *bobby-helidon* in *Workload Spec*.
 
-    ![Workload spec](images/7.png)
+    ![Workload spec](images/7.png " ")
 
     You will see that this component is using the new Docker image from the Oracle Cloud Container Registery repository.
 
-    ![New Repository](images/8.png)
+    ![New Repository](images/8.png " ")
 
 ## Task 3: Verify the Changes in the Grafana Console
 
 1. Select *Home* to go back to the Verrazzano Home Page.
 
-    ![Home](images/9.png)
+    ![Home](images/13.png " ")
 
 2. Select the link for Grafana to open the *Grafana Console*.
 
-    ![Grafana](images/10.png)
+    ![Grafana](images/9.png " ")
 
 3. Select Home, as shown, type *Helidon*, and then select *Helidon Monitoring Dashboard*.
 
-    ![Helidon](images/11.png)
+    ![Helidon](images/10.png " ")
 
-    ![Helidon Dashboard](images/12.png)
+    ![Helidon Dashboard](images/11.png " ")
 
 4. In the ServiceID, select *bobs-books_default_bobs-books_bobby-helidon* and in the instance, select the newly created instance. In this case, you will get information for the modified *bobby-helidon-stock-application*.
 
-    ![New Component](images/13.png)
+    ![New Component](images/12.png " ")
 
 Congratulations!
 
@@ -94,4 +107,4 @@ You have successfully completed the labs.
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Kamryn Vinson, July 2021
+* **Last Updated By/Date** - Kamryn Vinson, January 2022
