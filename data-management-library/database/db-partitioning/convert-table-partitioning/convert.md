@@ -4,7 +4,7 @@
  
 Oracle Database provides a mechanism to move one or more partitions or to make other changes to the partitions' physical structures without significantly affecting the availability of the partitions for DML. This mechanism is called online table redefinition. A non partitioned table can be converted to a partitioned table with a MODIFY clause added to the ALTER TABLE SQL statement. In addition, the keyword ONLINE can be specified, enabling concurrent DML operations while the conversion is ongoing.
 
-![Image alt text](images/lab8_01.png "Convert Non-partitioned Table")
+![Image alt text](images/convert-non-partitioned-intro.png "Convert Non-partitioned Table Introduction")
  
 
 ### Features
@@ -64,7 +64,7 @@ order by 1;
 </copy>
 ```
 
-![Image alt text](images/lab8_02.png "Convert Non-partitioned Table")
+![Image alt text](images/soon2part-table.png "Convert Non-partitioned Table")
 
 ```
 <copy>
@@ -76,7 +76,7 @@ order by 1;
 </copy>
 ```
 
-![Image alt text](images/lab8_03.png "Convert Non-partitioned Table")
+![Image alt text](images/soon2part-table-2.png "Convert Non-partitioned SOON2BPART Table")
 
 The conversion is not an in-place conversion: one of the key concepts of Oracle Partitioning is that data of individual partitions is, well, stored in individual physical segments. The nonpartitioned table has data stored "wherever" in the table. So for the duration of the conversion, you will need the extra space for the new table partition and index segments. After the successful conversion,  Note that we are doing an online conversion. If you could spawn a second session that does DML against our table while the conversion is in place, you'd experience that all your DML will go through without being blocked.  
 
@@ -104,7 +104,7 @@ order by partition_position asc;
 </copy>
 ```
 
-![Image alt text](images/lab8_04.png "Convert Non-partitioned Table")
+![Image alt text](images/partition-position.png "Convert Non-partitioned Table Partition Position")
 
 Global partitioned indexes are untouched and retain their shape.
 Non-prefixed indexes will become global nonpartitioned tables.

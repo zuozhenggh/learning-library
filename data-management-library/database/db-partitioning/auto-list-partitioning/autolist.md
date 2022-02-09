@@ -4,7 +4,7 @@
  
 The automatic list partitioning method enables list partition creation on demand. An auto-list partitioned table is similar to a regular list partitioned table, except that this partitioned table is easier to manage. You can create an auto-list partitioned table using only the partitioning key values that are known. As data is loaded into the table, the database automatically creates a new partition if the loaded partitioning key value does not correspond to any of the existing partitions. Auto list partitions are created on-demand automatically, and the auto-list partitioning method is conceptually similar to the current interval partitioning method. The CREATE and ALTER TABLE SQL statements are updated with an additional clause to specify AUTOMATIC or MANUAL list partitioning. An automatic list-partitioned table must have at least one partition when created. 
  
- ![Image alt text](images/lab5_01.png "Auto List Partition")
+ ![Image alt text](images/auto-list-partitioning-intro.png "Auto List Partition")
 
 ### Features
 
@@ -55,7 +55,7 @@ SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_T
 </copy>
 ```
 
- ![Image alt text](images/lab5_02.png "Auto List Partition")
+ ![Image alt text](images/sales-auto-list-select.png "Auto List Partition")
 
 ```
 <copy>
@@ -63,7 +63,7 @@ SELECT TABLE_NAME, PARTITION_NAME, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TAB
 </copy>
 ```
 
- ![Image alt text](images/lab5_03.png "Auto List Partition")
+ ![Image alt text](images/sales-auto-list-select-2.png "Auto List Partition")
 
 Insert data with new SALES_STATE values
 
@@ -81,7 +81,7 @@ select * from SALES_AUTO_LIST;
 </copy>
 ```
 
-![Image alt text](images/lab5_04.png "Auto List Partition")
+![Image alt text](images/sales-auto-list-select-data.png "Auto List Partition")
 
  ```
 <copy>
@@ -89,7 +89,7 @@ SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_T
 </copy>
 ```
 
-![Image alt text](images/lab5_05.png "Auto List Partition")
+![Image alt text](images/sales-auto-list-select-data-2.png "Auto List Partition")
 
 ```
 <copy>
@@ -104,7 +104,7 @@ SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_T
 </copy>
 ```
 
-![Image alt text](images/lab5_06.png "Auto List Partition")
+![Image alt text](images/sales-auto-list-select-data-3.png "Auto List Partition")
 
 ```
 <copy>
@@ -112,7 +112,7 @@ SELECT TABLE_NAME, PARTITION_NAME, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TAB
 </copy>
 ```
 
-![Image alt text](images/lab5_07.png "Auto List Partition")
+![Image alt text](images/sales-auto-list-select-data-4.png "Auto List Partition")
 
 ```
 <copy>
@@ -120,7 +120,7 @@ select * from SALES_AUTO_LIST PARTITION(SYS_P1775);
 </copy>
 ```
 
-![Image alt text](images/lab5_08.png "Auto List Partition")
+![Image alt text](images/sales-auto-list-select-data-5.png "Auto List Partition")
 
 ## Task 2: Cleanup
 

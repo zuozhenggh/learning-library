@@ -4,7 +4,7 @@
 
 We can set tables, partitions, and subpartitions to read-only status to protect data from unintentional DML operations by any user or trigger. Updating data in the partition that has the partition set to read-only will result in an error. The partition that is set to read-write will be successfully updated. 
 
-![Image alt text](images/lab7_08.png "Read only Partition")
+![Image alt text](images/read-only-partition-intro.png "Read only Partition")
 
 ### Features
 
@@ -53,7 +53,7 @@ rem currently existent partitions;
 </copy>
 ```
 
-![Image alt text](images/lab7_01.png "Read only Partition")
+![Image alt text](images/ropt-table-select.png "Read only Partition")
 
 ```
 <copy> 
@@ -63,7 +63,7 @@ where table_name='ROPT';
 </copy>
 ```
 
-![Image alt text](images/lab7_02.png "Read only Partition")
+![Image alt text](images/ropt-table-select-2.png "Read only Partition")
 
 As expected, we only have one partition set to read-only in this example. That means that: The table-level default is (and will stay) read-write. Only partition p1 is defined as read-only where it was explicitly defined. You can change the read-only/read-write attribute for existing partitions.
 
@@ -82,7 +82,7 @@ where table_name='ROPT';
 </copy>
 ```
 
-![Image alt text](images/lab7_03.png "Read only Partition")
+![Image alt text](images/ropt-table-select-3.png "Read only Partition")
 
 
 As partition level attribute, read-only can be used in conjunction with other partition maintenance operations.
@@ -122,7 +122,7 @@ where table_name='ROPT';
 </copy>
 ```
 
-![Image alt text](images/lab7_04.png "Read only Partition")
+![Image alt text](images/user-tab-partitions.png "Read only Partition")
 
 ```
 <copy>
@@ -189,7 +189,7 @@ Last but not least, and this is no different to existing read only tables, you c
 </copy>
 ```
 
-![Image alt text](images/lab7_05.png "Read only Partition")
+![Image alt text](images/ropt-alter.png "Read only Partition Alter table")
 
 ```
 <copy>
@@ -222,7 +222,7 @@ Data in a read-only partition or subpartition cannot be modified.
 insert into RDPT2 values(1,to_date('2016-01-20','yyyy-mm-dd'),100); 
 </copy>
 ```
-![Image alt text](images/lab7_06.png "Read only Partition")
+![Image alt text](images/ropt-data-mod.png "RDPT2 Read only partition data modify")
 
 
 
@@ -239,7 +239,7 @@ select * from RDPT2;
 </copy>
 ```
 
-![Image alt text](images/lab7_07.png "Read only Partition")
+![Image alt text](images/ropt2-select.png "RDPT2 Read only Partition select")
 
 ## Task 3: Cleanup
 

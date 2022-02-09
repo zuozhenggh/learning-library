@@ -8,12 +8,12 @@ Partitioning large tables and indexes in Oracle Database ensure that an optimal 
 
 Let us consider the financial services sector, particularly retail banking, every time we do a transaction like debit, credit, fixed deposit, recurring deposit, auto EMI payment, utility bill payments etc. It makes an entry into the transaction master table, and the data is growing exponentially, as per the business standard report of December 31, 2021. The volume of digital transactions in India rose to 55.54 billion in FY21 from 10.85 billion in FY17, at a compounded annual growth rate of 50.42 per cent. So, with the growing volume of data, we can archive a significant portion of historical data into archival storage for on-demand retrieval; however, even if we consider data for the current financial year, it is in millions of records at a bank level. To run a query at this level would take a considerable amount of time and impacts the overall performance. It would be best to partition the data into smaller units per the business requirements.
 
-![Image alt text](images/intro_01.png "Data Volume")
+![Image alt text](images/partition-introduction-01.png "Partition Introduction")
  
 Large tables are difficult to manage, So large databases and indexes can be split into smaller, more manageable pieces. For example, if we have too many events in our database, we can easily partition that table into events based on region and months.  
  
 
-![Image alt text](images/intro_02.png "Data Volume")
+![Image alt text](images/data-volume.png "Data Volume")
 
 Benefits of Partitioning
 *  Increases performance by only working on the relevant data. 

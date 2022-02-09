@@ -20,7 +20,7 @@ Weather forecasts are made by collecting quantitative data about the current atm
 The volume of data keeps growing, and analysing previous regional data can be performance intensive. Since the weather data has geographical location, date, changes in temperature and humidity, this is a good case for partitioning data based on a regional list of values or using List partitioning. Another good example would be partitioning sales data based on regions for business reporting purposes, as shown below task list.
 
 
-![Image alt text](images/lab3_01.png "List Partition")
+![Image alt text](images/list-partitioning-introduction.png "List Partition introduction")
 
 This Lab will teach you how to List Partitioning. 
   
@@ -67,7 +67,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 </copy>
 ```
 
-![Image alt text](images/lab3_02.png "List Partition")
+![Image alt text](images/sales-by-region-select.png "Sales by region select")
 
 ## Task 2: Add new partitions
 
@@ -103,7 +103,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 </copy>
 ``` 
 
-![Image alt text](images/lab3_03.png "List Partition")
+![Image alt text](images/user-tab-partitions-select.png "user tab partitions select")
 
 Add new values to a list of partitioning keys.
 
@@ -121,7 +121,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 </copy>
 ``` 
 
-![Image alt text](images/lab3_04.png "List Partition")
+![Image alt text](images/sales-by-region-select-2.png "Sales by region select")
 
 Insert values into the table.
 
@@ -140,7 +140,7 @@ SELECT * FROM sales_by_region;
 </copy>
 ``` 
 
-![Image alt text](images/lab3_05.png "List Partition")
+![Image alt text](images/sales-by-region-select-3.png "Sales by region select")
 
 Display data from a specified partition in the table. When you are finished testing the example, you can clean up the environment by dropping the table (DROP TABLE sales_by_region).
 
@@ -153,7 +153,7 @@ SELECT * FROM sales_by_region PARTITION(region_east);
 </copy>
 ``` 
 
-![Image alt text](images/lab3_06.png "List Partition")
+![Image alt text](images/region-east-partition.png "region east partition")
 
 ## Task 4: Cleanup
 

@@ -4,7 +4,7 @@
 
 Hash partitioning maps data to partitions based on Oracle's hashing algorithm to the partitioning key that you identify. The hashing algorithm evenly distributes rows among partitions, giving partitions approximately the same size. Composite hash-* partitioning enables hash partitioning along two dimensions. The composite hash-hash partitioning strategy has the most business value of the composite hash-* partitioned tables. This technique is beneficial to enable partition-wise joins along two dimensions.
 
-![Image alt text](images/lab4_02.png "Hash Partition")
+![Image alt text](images/hash-partition-introduction.png "Hash Partition") 
 
 ### Features
 
@@ -70,7 +70,7 @@ SELECT SUBSTR(TABLE_NAME,1,32), SUBSTR(PARTITION_NAME,1,32), SUBSTR(SUBPARTITION
 </copy>
 ``` 
 
-![Image alt text](images/lab4_03.png "Display the partitions/subpartitions")
+![Image alt text](images/display-the-partitions.png "Display the partitions/subpartitions")
 
 ## Task 2: Insert data and view partitioned data
 
@@ -93,7 +93,7 @@ select * from sales_interval_hash;
 </copy>
 ```
 
-![Image alt text](images/lab4_04.png "Display the sales_interval_hash Data")
+![Image alt text](images/sales-interval-hash.png "Display the sales_interval_hash Data")
 
 Display the partitions and subpartitions in the table with this SQL query. Please note that the table's structure changed with new data. Each unique time\_id for 2016 generates a new partition with four subpartitions.
 
@@ -105,7 +105,7 @@ SELECT SUBSTR(TABLE_NAME,1,32), SUBSTR(PARTITION_NAME,1,32), SUBSTR(SUBPARTITION
 
 The highlighted rows and columns are system generated Partitions and Sub Partitions
 
-![Image alt text](images/lab4_05.png "Display the sales_interval_hash Data")
+![Image alt text](images/sales-interval-hash-data.png "Display the sales_interval_hash Data")
 
 insert a new record for year 2012 
 
@@ -121,7 +121,7 @@ select * from SALES_INTERVAL_HASH PARTITION(BEFORE_2016);
 </copy>
 ```
 
-![Image alt text](images/lab4_06.png "Display the sales_interval_hash Data")
+![Image alt text](images/partition-before-2016.png "Display partition before 2016 sales_interval_hash Data")
 
 ```
 <copy> 
@@ -129,7 +129,7 @@ select * from SALES_INTERVAL_HASH PARTITION(SYS_P1754);
 </copy>
 ```
 
-![Image alt text](images/lab4_07.png "Display the sales_interval_hash Data")
+![Image alt text](images/sys-partition-data.png "Display the sales_interval_hash Data")
  
 ## Task 3: Cleanup
 

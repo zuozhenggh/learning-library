@@ -4,7 +4,7 @@
   
 Multi-column list partitioning enables you to partition a table based on list values of multiple columns. Similar to single-column list partitioning, individual partitions can contain sets containing lists of values. Multi-column list partitioning is supported on a table using the PARTITION BY LIST clause on multiple columns of a table.
 
-![Image alt text](images/lab8_04.png "Multi List Partition")
+![Image alt text](images/multi-list-partition-intro.png "Multi List Partition")
 
 ### Features
 
@@ -58,7 +58,7 @@ from user_tab_partitions where table_name='MC';
 </copy>
 ```
 
-![Image alt text](images/lab8_01.png "Multi List Partition")
+![Image alt text](images/user-tab-partitions.png "Multi List Partition")
 
 Let us now insert some data into our previously created table and see where the data is actually stored.
 
@@ -79,7 +79,7 @@ select * from mc partition (p1);
 </copy>
 ```
 
-![Image alt text](images/lab8_02.png "Multi Column Partition")
+![Image alt text](images/mc-partition-select.png "Multi Column Partition")
 
 
 With multi-column partitioning you can also use the partition extended syntax with the FOR () clause. Point to a fully qualified record, meaning you have to specify a complete partitioning key criteria.
@@ -91,7 +91,7 @@ select * from mc partition for (1,3);
 </copy>
 ```
 
-![Image alt text](images/lab8_03.png "Multi Column Partition")
+![Image alt text](images/mc-partition-select-2.png "Multi Column Partition")
 
 
 Note that DEFAULT is not a value, so if you were to try to use it as "value" with the partitioned extended syntax you will get an error:

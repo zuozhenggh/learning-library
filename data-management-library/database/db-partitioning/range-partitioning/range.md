@@ -15,10 +15,10 @@ Range partitioning maps data to partitions based on ranges of partition key valu
 
 Here are some interesting facts about the US Retail industry, Industry experts in US e-commerce project sales data to grow by double digits, up 17.9% in 2021 to $933.30 billion. Ecommerce penetration will continue to increase, more than doubling from 2019 to 23.6% in 2025. It means the growing volume of Customer and Sales Data and challenges with its manageability. The solution to managing such a vast volume of chronological or sales data would be to partition it based on date range or use Range partitioning.
 
-![Image alt text](images/lab1_04.png "Range Partition")
+![Image alt text](images/range-partition-introduction.png "Range Partition Introduction")
 
 
-This Lab will teach you how to create Range Partitioning. 
+This Lab will teach you how to create range partitioning. 
 
 ### Objectives
  
@@ -79,7 +79,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 </copy>
 ```
 
-![Image alt text](images/lab1_01.png "USER_TAB_PARTITIONS Data")
+![Image alt text](images/user-tab-data.png "USER_TAB_PARTITIONS Data")
 
 Insert values into the table.
 
@@ -99,7 +99,7 @@ SELECT * FROM sales_range_partition PARTITION(sales_q1_2014);
 </copy>
 ```
 
-![Image alt text](images/lab1_02.png "sales_range_partition Data with Partition")
+![Image alt text](images/sales-range-partition.png "sales_range_partition Data with Partition")
 
 Display all the data in the table.
 
@@ -111,7 +111,7 @@ SELECT * FROM sales_range_partition;
 
 Data in sales\_range\_partition table with and without Partition
 
-![Image alt text](images/lab1_03.png "sales_range_partition Data")
+![Image alt text](images/sales-range-partition-data.png "sales_range_partition Data")
  
 When you are finished testing the example, you can clean up the environment by dropping the table 
 
