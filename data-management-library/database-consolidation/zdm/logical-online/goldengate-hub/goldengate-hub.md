@@ -15,11 +15,9 @@ Estimated Total Lab Time: 30 minutes
 In this lab, you will:
 * Learn how to configure the required GoldenGate Hub for ZDM's Logical Online Migration
 
-### Prerequisites
+## Task 1: Verify VCN Correct Configuration
 
 This workshop section requires having access to an Oracle Cloud account, having created SSH Keys and verify the Virtual Cloud Network Configuration. This last step will be described below.
-
-## Prerequisite: Verify VCN Correct Configuration
 
 1. Login to the Oracle Cloud.
 
@@ -47,13 +45,13 @@ This workshop section requires having access to an Oracle Cloud account, having 
 
 8. An __Add Ingress Rules__ pane will pop up. Enter the following parameters. 
 
-- Stateless - __Left Unchecked__
-- Source Type - __CIDR__
-- Source CIDR - __keep as is__
-- IP Protocol - __TCP__
-- Source Port Range - __Left as is__
-- Destination Port Range - __443__
-- Description - __OGG HTTPS__
+    - Stateless - __Left Unchecked__
+    - Source Type - __CIDR__
+    - Source CIDR - __keep as is__
+    - IP Protocol - __TCP__
+    - Source Port Range - __Left as is__
+    - Destination Port Range - __443__
+    - Description - __OGG HTTPS__
 
     ![Screenshot showing how to add Ingress rules](./images/ogg-add-rules.png " ")
 
@@ -61,22 +59,21 @@ This workshop section requires having access to an Oracle Cloud account, having 
 
 10. Once you have added a rule for __Port 443__, proceed with a rule for __Port 1521__. Click on the __Add Ingress Rules__ button, an __Add Ingress Rules__ pane will pop up. Enter the following parameters and Click on the __Add Ingress Rules__ button on the bottom:
 
+    - Stateless - __Left Unchecked__
+    - Source Type - __CIDR__
+    - Source CIDR - __keep as is__
+    - IP Protocol - __TCP__
+    - Source Port Range - __Left as is__
+    - Destination Port Range - __1521__
+    - Description - __Oracle DB__
 
-- Stateless - __Left Unchecked__
-- Source Type - __CIDR__
-- Source CIDR - __keep as is__
-- IP Protocol - __TCP__
-- Source Port Range - __Left as is__
-- Destination Port Range - __1521__
-- Description - __Oracle DB__
 
-
-The list should now look as follows:
+    The list should now look as follows:
 
     ![Screenshot of newly added Ingress Rules](./images/ogg-yes-rules.png " ")
 
 
-## Task 1: Setting up the GoldenGate Image from the Oracle Cloud Infrastructure Market Place
+## Task 2: Setting up the GoldenGate Image from the Oracle Cloud Infrastructure Market Place
 
 1. Click the navigation menu in the upper left to show top level navigation choices. On the Search bar, type "Marketplace" and click on the __All Applications__ result on the right hand side.
 
@@ -148,7 +145,7 @@ The list should now look as follows:
 
     ![Screenshot of Oracle GoldenGate Image Creation Logs](./images/ogg-copy-ocid.png " ")
 
-## Task 2: Connecting to the GoldenGate Hub
+## Task 3: Connecting to the GoldenGate Hub
 
 1. Open CloudShell
 

@@ -18,7 +18,7 @@ In this lab, you will:
 This workshop section requires having completed all previous sections.
 
 
-## **Task 1: Learn About the Response File**
+## Task 1: Learn About the Response File
 Oracle Zero Downtime Migration uses a response file to parse information relevant for your migration. The response file contains an important number of parameters that are user defined, which will guide ZDM throughout the database migration process. In this Lab, you will learn the fundamentals of ZDM response file and also the basic parameters that will be used during this specific migration. Please bear in mind that Oracle Zero Downtime Migration's Response File is extense and provides ample options for flexibility and each specific use case, hence, for the purposes of this workshop only the fundamental parameters will be covered.
 
 __Response File Parameters Required for this Migration__
@@ -253,7 +253,7 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
 &nbsp;
 
 
-## **Task 2: Create an empty Response File for your migration**
+## Task 2: Create an empty Response File for your migration
 
 1. Return to the Cloud Shell as 'zdmuser'.
 
@@ -286,7 +286,7 @@ The __DATAPUMPSETTINGS EXPORTDIRECTORYOBJECT PATH__ parameter specifies the dire
     </copy>
     ```
 
-## **Task 3: Prepare Out the Template File**
+## Task 3: Prepare Out the Template File
 1. Go into the migration file and delete all of the existing lines.
 
     ```

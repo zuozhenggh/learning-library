@@ -17,7 +17,7 @@ In this lab, you will:
 This workshop section requires having completed all he previous sections.
 
 
-## **Task 1: Run a Migration on Evaluation Mode**
+## Task 1: Run a Migration on Evaluation Mode
 
 1. The migrate zdmcli command performs a migration and consists of several parameters. Let's review one by one to undertand them better.
 
@@ -89,7 +89,7 @@ This workshop section requires having completed all he previous sections.
     ![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Migrate Database command output](./images/zdm-job-id.png " ")
 
 
-## **Task 2: Evaluate a Migration Job**
+## Task 2: Evaluate a Migration Job
 
 1. To evaluate the migration job, we will use the __/u01/app/zdmhome/bin/zdmcli query job -jobid idnumber__ command. Copy the command from below and replace idnumber with the assigned Job ID provided by ZDM on your migration, then, press Enter.
 
@@ -103,7 +103,7 @@ This workshop section requires having completed all he previous sections.
 
     ![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Query Job output](./images/zdm-job-eval-done.png " ")
 
-## **Task 3: Migrate your Database**
+## Task 3: Migrate your Database
 
 1. You are now ready to migrate your database, to so, you will execute the same command as before, minus the __-eval__ flag. Copy the command from below, paste it on your Cloud Shell and press enter.
 
@@ -164,7 +164,7 @@ This workshop section requires having completed all he previous sections.
     ![Screenshot of Database Actions with Query Result Highlighted](./images/query-result.png)
 
 
-## **Summary**
+## Summary
 
 Congratulations, you have finished the Zero Downtime Logical Online Migration to Oracle Autonomous Database LiveLab.
 You have learned about Oracle Zero Downtime Migration (ZDM), its features and functionality and how to migrate, step-by-step, a database to the Oracle Cloud.

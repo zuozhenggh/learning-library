@@ -29,7 +29,7 @@ This workshop section requires having completed all previous workshop sections.
 
 **Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually press enter a second time. To avoid statement failure, please be cognizant of this and press enter twice when pasting.
 
-## **Task 1: Install Oracle Cloud Infrastructure CLI**
+## Task 1: Install Oracle Cloud Infrastructure CLI
 1. Return to your compute instance command prompt as 'opc'. If you navigated away while creating your target database, you can reconnect through your command prompt with the following command. Replace < sshkeyname > and < Your Compute Instance Public IP Address > with the key file name and IP address of your source compute instance:
 
     ```
@@ -47,7 +47,7 @@ This workshop section requires having completed all previous workshop sections.
     </copy>
     ```
 
-## **Task 2: Set ZDM Group and User and Create Directories**
+## Task 2: Set ZDM Group and User and Create Directories
 1. Run code below to add the group zdm, create the user zdmuser, and add directories for the ZDM. Please bear in mind that enter must be needed to enter twice after having copied the below statement. 
 
     ```
@@ -63,7 +63,7 @@ This workshop section requires having completed all previous workshop sections.
     </copy>
     ```
 
-## **Task 3: Install Zero Downtime Migration**
+## Task 3: Install Zero Downtime Migration
 1. As 'opc' check that the following packages are installed:
     * expect
     * glib-devel
@@ -191,7 +191,7 @@ This workshop section requires having completed all previous workshop sections.
 
     ![Screenshot of ZDM Service Status](./images/check-status.png)
 
-## **Task 4: Generating API Keys**
+## Task 4: Generating API Keys
 1. As 'zdmuser' go to 'zdmhome' directory.
 
     ```
@@ -224,7 +224,7 @@ This workshop section requires having completed all previous workshop sections.
 6. You will see a configuration file preview. Copy its contents to clipboard. You will be using it to populate your configuration file in the following step.
     ![Screenshot of Configuration File Preview](./images/config-file-preview.png)
 
-## **Task 5: Creating Your Configuration File and Copying Your Directory**
+## Task 5: Creating Your Configuration File and Copying Your Directory
 1. Back in your command prompt create your config file.
 
     ```
@@ -424,7 +424,7 @@ This workshop section requires having completed all previous workshop sections.
     </copy>
     ```
 
-## **Task 6: Creating RSA Keys**
+## Task 6: Creating RSA Keys
 
 1. As 'zdmuser' go to root directory and generate RSA keys. Press enter key 3 times for no password and to save to /home/zdmuser/.ssh/id_rsa.
 
@@ -463,7 +463,7 @@ This workshop section requires having completed all previous workshop sections.
     ![Screenshot of RSA Key Check](./images/cat-rsa.png)    
 
 
-## **Task 7: Configuring Connectivity Between ZDM and the OGG Hub**
+## Task 7: Configuring Connectivity Between ZDM and the OGG Hub
 
 1. To configure connectivity between ZDM and the OGG Hub, you will need to modify the etc/hosts file. Let's first gather the relevant information, you will need to OGG Hub hostname, it's private IP and it's Internal FQDN.
 
@@ -514,7 +514,7 @@ This workshop section requires having completed all previous workshop sections.
     ```
 
 
-## **Task 8: Updating IPTables on the Source DB Server**
+## Task 8: Updating IPTables on the Source DB Server
 
 It is important to update the IPTables on the Source DB Server. To do so: 
 
