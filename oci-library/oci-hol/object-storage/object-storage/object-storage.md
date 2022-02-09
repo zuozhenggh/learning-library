@@ -10,6 +10,8 @@ Object Storage is a regional service and is not tied to any specific compute ins
 
 Estimated Time: 15 minutes
 
+[](youtube:ci-U-174T_8)
+
 **Object storage offers 2 tiers:**
 
 1. Use *Standard* for data to which you need fast, immediate, and frequent access. Data accessibility and performance justify a higher price point to store data in the Object Storage

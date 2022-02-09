@@ -8,6 +8,8 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 
 Estimated Time: 30 minutes
 
+[](youtube:09kahbIF0Ew)
+
 ### Objectives
 In this lab, you will:
 - Create a compute instance

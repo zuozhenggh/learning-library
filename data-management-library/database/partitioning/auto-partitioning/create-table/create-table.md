@@ -4,21 +4,33 @@
 
 In this Lab, we create a 5GB non-partitioned table. A table must be at least 5GB in Always Free Autonomous Database environments or 64GB in non-free Autonomous Database (transaction processing or data warehousing) to be considered a candidate table for auto partitioning.
 
+**Note: To run this workshop as-is you need to ensure to run it on a 19c Always Free Autonomous Database.**
+
+### Objectives
+- Create a sufficiently large nonpartitioned table with random data that will become your candidate table for auto partitioning.
+
+### Prerequisites
+This lab assumes you have completed the following lab:
+
+- Provision an ADB Instance (19c, Always Free)
+
+
 ## Task 1: Invoking Cloud Shell from the Oracle OCI 
 
 During this part of the workshop we will use OCI Cloud Shell, a web browser-based terminal accessible from the Oracle Cloud Console. Cloud Shell provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI, and other useful pre-installed tools like SQL command line. We are going to use SQL command line in Cloud Shell for this workshop. 
+
 
 1. From your Autonomous Database Details page, click the OCI Cloud Shell button:
 
 	![invoke oci cli](./images/apart_create_table_01.jpg)
 
-2. When the shell has started we need to download the wallet to connect to your autonomous database. 
+2. When the shell has started we need to download the wallet into Cloud Shell to connect to your autonomous database. 
    First, we need to copy the OCID of your newly created autonomous database. That is the unique identifier of your database.	
 
 	![copy the db ocid](./images/apart_create_table_02.jpg)
 
 
-3. 	In Cloud Shell, execute the following to being able to connect to your database. You need to insert your copied **autonomous database OCID** into the code below. For the database connection you are using ADMIN with the admin password you set up when provisioning your autonomous database.
+3. 	In Cloud Shell, execute the following to connect to your database. You need to insert your copied **autonomous database OCID** into the code below. For the database connection you are using ADMIN with the admin password you set up when provisioning your autonomous database.
 
 	The name of your service is your database name with suffix "_high", "_medium", or "_low". You can get this information also from the DB Connections button on your **Autonomous Database Details** screen.
 	
@@ -49,6 +61,9 @@ We are now creating a nonpartitioned table that will become our candidate table 
 1. Using Cloud Shell connect with user **ADMIN** in sqlcl as you have done before.
 	
 	```
+	sql /nolog
+	set cloudconfig wallet.zip
+	
 	-- We will run the example in the ADMIN user account
 	connect admin/<your_password>@<your_service>
 	  
@@ -75,13 +90,18 @@ We are now creating a nonpartitioned table that will become our candidate table 
 2. Load your table with random data in sqlcl as user **ADMIN**
 	
 	```
+	<copy>
 	--
-	-- Hints must be enabled for the INSERT statement
+	-- Hints must be enabled for this particular INSERT statement
+	-- because we want to force a particular join order. This will 
+	-- keep the random strings apart when written to storage, which will  
+	-- make compression less effective. We want to make the table large
+	-- as quickly as possible so that it qualifies for auto partitioning.
 	  
 	alter session set optimizer_ignore_hints = false;
 	  
 	-- Table data is compressed by default, so we will insert random data 
-	-- to make compreession less effective. Our aim it to create
+	-- to make compression less effective. The aim is to create
 	-- a large table as quickly as possible.
 	-- 
 	insert /*+ APPEND */ into apart
@@ -98,6 +118,7 @@ We are now creating a nonpartitioned table that will become our candidate table 
 	  
 	-- Commit the transaction
 	commit;
+	</copy>
 	```    
 
 ## Task 3: Checking the new table size
@@ -106,10 +127,17 @@ A candidate table for automatic partitioning must be at least 5 GB in size in a 
 1. Connect to sqlcl with user ADMIN as before and check the size of the table
 
 	```
+	<copy>
 	select sum(bytes)/(1024*1024) size_in_megabytes 
 	     from   user_segments
 	     where  segment_name = 'APART';
+	</copy>
 	```
 	It should show a size larger than 5GB, as shown below.
 
 	![sample table greater than 5gb](./images/apart_create_table_04.jpg)
+
+## Acknowledgements
+* **Author** - Nigel Bayliss, Dec 2021 
+* **Contributor** - Hermann Baer
+* **Last Updated By/Date** - Nigel Bayliss, Jan 2022
