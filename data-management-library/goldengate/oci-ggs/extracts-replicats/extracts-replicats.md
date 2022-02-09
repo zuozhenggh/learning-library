@@ -322,6 +322,8 @@ Before importing data to the target database, create a credential in the target 
     </copy>
     ```
 
+    > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
+
     ![](images/06-05.png " ")
 
 6.  Enter the following script and then click **Run Statement** to import data using ImpDP:
