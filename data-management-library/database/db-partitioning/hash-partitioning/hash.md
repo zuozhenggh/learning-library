@@ -64,7 +64,7 @@ CREATE TABLE sales_interval_hash
  );
 </copy>
 ```
-Display the partitions/subpartitions in the table with this SQL query. System generated names have been assigned to the partitions and subpartitions. Note that there are 32 subpartitions (4 x 8 = 32).
+Display the partitions/sub partitions in the table with this SQL query. System generated names have been assigned to the partitions and sub partitions. Note that there are 32 sub partitions (4 x 8 = 32).
  
 ```
 <copy>
@@ -97,7 +97,7 @@ select * from sales_interval_hash;
 
 ![Image alt text](images/sales-interval-hash.png "Display the sales_interval_hash Data")
 
-Display the partitions and subpartitions in the table with this SQL query. Please note that the table's structure changed with new data. Each unique time\_id for 2016 generates a new partition with four subpartitions.
+Display the partitions and sub partitions in the table with this SQL query. Please note that the table's structure changed with new data. Each unique time\_id for 2016 generates a new partition with four sub partitions.
 
 ```
 <copy>

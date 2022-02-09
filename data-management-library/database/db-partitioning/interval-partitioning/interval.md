@@ -19,7 +19,7 @@ Interval partitioning is an extension to range partitioning in which database ta
 *	System generated names for interval 
 *	No need for any partition management
 
-### Analysing business data at various intervals 
+### Analyzing business data at various intervals 
 
 When Business Analysts want to view sales data based on daily, monthly, quarterly or yearly, for example, in Financial Services or Retail Industry, it is easier to partition data based on intervals. As the data keeps growing, the partitions keep getting created automatically.  
  

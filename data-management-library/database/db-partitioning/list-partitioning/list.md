@@ -19,7 +19,7 @@ Estimated Lab Time: 20 minutes
 ### Weather forecasting or sales forecasting based on regional list
 
 Weather forecasts are made by collecting quantitative data about the current atmosphere at a given place and using meteorology to project how the atmosphere will change. Weather forecasting is a part of the economy. For example, in 2009, the US spent approximately $5.1 billion on weather forecasting, producing benefits estimated at six times as much.
-The volume of data keeps growing, and analysing previous regional data can be performance intensive. Since the weather data has geographical location, date, changes in temperature and humidity, this is a good case for partitioning data based on a regional list of values or using List partitioning. Another good example would be partitioning sales data based on regions for business reporting purposes, as shown below task list.
+The volume of data keeps growing, and analyzing previous regional data can be performance intensive. Since the weather data has geographical location, date, changes in temperature and humidity, this is a good case for partitioning data based on a regional list of values or using List partitioning. Another good example would be partitioning sales data based on regions for business reporting purposes, as shown below task list.
 
 
 ![Image alt text](images/list-partitioning-introduction.png "List Partition introduction")
@@ -168,7 +168,7 @@ drop table sales_by_region purge;
 
 Semantically you are not violating any data immutability when you remove a complete object. If you want to preserve this case you should address this with proper privilege management or, under some circumstances, by disabling the table level lock. The latter one prevents a drop table, but also all other operations that require an exclusive table level lock.
 
-You successfully made it to the end of lab 'read only partitions and subpartitions'. You may now [proceed to the next lab](#next).   
+You successfully made it to the end of lab 'read only partitions and sub partitions'. You may now [proceed to the next lab](#next).   
  
 ## Learn More
 

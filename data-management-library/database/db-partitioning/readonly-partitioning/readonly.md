@@ -2,7 +2,7 @@
 
 ## Introduction
 
-We can set tables, partitions, and subpartitions to read-only status to protect data from unintentional DML operations by any user or trigger. Updating data in the partition that has the partition set to read-only will result in an error. The partition that is set to read-write will be successfully updated. 
+We can set tables, partitions, and sub partitions to read-only status to protect data from unintentional DML operations by any user or trigger. Updating data in the partition that has the partition set to read-only will result in an error. The partition that is set to read-write will be successfully updated. 
 
 ![Image alt text](images/read-only-partition-intro.png "Read only Partition")
 
@@ -11,7 +11,7 @@ Estimated Lab Time: 20 minutes
 ### Features
 
 * Read-only attribute guarantees data immutability. 
-* If not specified, each partition and subpartition will inherit read-only property from top-level parent 
+* If not specified, each partition and sub partition will inherit read-only property from top-level parent 
 * ADD and MODIFY COLUMN are allowed and do not violate data immutability of existing data 
 * DROP/RENAME/SET UNUSED COLUMN are forbidden 
 * DROP [read only] PARTITION forbidden 
@@ -252,7 +252,7 @@ drop table RDPT2 purge;
 </copy>
 ```
  
-You successfully made it to the end of lab 'read only partitions and subpartitions'.You may now [proceed to the next lab](#next).   
+You successfully made it to the end of lab 'read only partitions and sub partitions'.You may now [proceed to the next lab](#next).   
 
 ## Learn More
  
