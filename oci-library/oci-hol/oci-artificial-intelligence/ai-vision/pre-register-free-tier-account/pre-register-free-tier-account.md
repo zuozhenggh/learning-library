@@ -99,6 +99,7 @@ Please note that while your tenancy is initially created, you will only see a di
 
 You may now [proceed to the next lab](#next).
 
+
 ## **Acknowledgements**
 
 - **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
