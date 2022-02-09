@@ -10,7 +10,7 @@ Quick walk through on how to verify your compute instance setup.
 
 [](youtube:R0J7CPVYmI4)
 
-*Note: The OCI Cloud Service Console navigation may look different then what you see in the video as it is subject to change.*
+*Note: The Oracle Cloud Infrastructure Cloud Service Console navigation may look different then what you see in the video as it is subject to change.*
 
 ### About Terraform and Oracle Cloud Resource Manager
 For more information about Terraform and Resource Manager, please see the appendix below.
@@ -93,7 +93,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 
 ### MAC or Windows CYGWIN Emulator
-1.  Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment)
+1.  Go to **Compute**, **Instances** and select the instance you created (make sure you choose the correct compartment)
 2.  On the instance homepage, find the Public IP address for your instance.
 
 3.  Open up a terminal (MAC) or cygwin emulator as the opc user.  Enter yes when prompted.
@@ -126,9 +126,9 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
     ![](./images/putty-setup.png " ")
 
-3. Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to root or the user specified in your workshop.
+3. Click **Connection**, **Data** in the left navigation pane and set the Auto-login username to root or the user specified in your workshop.
 
-4. Click **Connection** > **SSH** > **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
+4. Click **Connection**, **SSH**, **Auth** in the left navigation pane and configure the SSH private key to use by clicking Browse under Private key file for authentication.
 
 5. Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
@@ -218,7 +218,7 @@ You may now *proceed to the next lab*.
 
 ## Appendix: Troubleshooting Tips
 
-If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue via our  support forum.
+If you encountered any issues during the lab, follow the steps below to resolve them.  If you are unable to resolve, please skip to the **Need Help** section to submit your issue through our support forum.
 1. Can't login to instance
 2. Invalid public key
 3. Limits Exceeded
@@ -231,7 +231,7 @@ Participant is unable to login to instance
 #### Tips for fixing Issue #1
 There may be several reasons why you can't login to the instance.  Here are some common ones we've seen from workshop participants
 - Incorrectly formatted ssh key (see above for fix)
-- User chose to login from MAC Terminal, Putty, etc and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
+- User chose to login from MAC Terminal, Putty, and so on and the instance is being blocked by company VPN (shut down VPNs and try to access or use Cloud Shell)
 - Incorrect name supplied for ssh key (Do not use sshkeyname, use the key name you provided)
 - @ placed before opc user (Remove @ sign and login using the format above)
 - Make sure you are the oracle user (type the command *whoami* to check, if not type *sudo su - oracle* to switch to the oracle user)
