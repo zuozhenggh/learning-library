@@ -86,7 +86,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 22.1.2 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 22.1.5 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -146,7 +146,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    Be sure to provide the user OCID and not the user name or tenancy OCID. The user OCID will look something like:
 
-    `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta`
+    `ocid1.user.oc1....<unique_ID>`
 
    Note the "ocid1.user" prefix.
 
