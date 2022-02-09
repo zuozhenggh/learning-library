@@ -1,4 +1,4 @@
-# Database Cloud Service Patching
+# Database Cloud Service Patches and Updates
 
 ## Introduction
 
@@ -8,25 +8,27 @@ You can view all patches that have been applied, and if required, re-apply a pat
 
 Database Cloud Service specific patches for DB systems and database homes can be applied. Only the latest patch is available for DB systems while database homes supports both latest and older patches. You can find the list of currently available DB system and database home patches in the [Oracle Cloud Infrastructure technical documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/patchingDB.htm).
 
-## Task 1: Check Available Patches
+Estimated Lab Time: 15 minutes
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System.
+## Task 1: Check Available Updates
+
+1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
 2. Click the database name link **WSDB** in the bottom table called Databases. View Database Version field on the Database Information Page. 
 
     - Database Version: 19.7.0.0.0
 
-3. At the bottom of this page, click on **Patches**.
+3. At the bottom of this page, click on **Updates**.
 
-4. Verify if there are available patches in the table.
+4. Verify if there are available updates in the table.
 
     | Patch Description | State | Version  |
     |:----------|:----------|:----------|
     | Jul 2020 19c Database patch    | Available    | 19.8.0.0.200714    |
 
-## Task 2: Pre-Check Patch Compatibility
+## Task 2: Pre-Check Update Compatibility
 
-1. At the end of the patch row, click ⋮ > **Precheck**. Click **OK** in the Confirm dialog. Patch state is now Checking.
+1. At the end of the update row, click ⋮ > **Precheck**. Click **Run Precheck** in the Confirm dialog. Patch state is now Checking.
 
 2. Click on **Work Requests**. View the last one in the table:
 
@@ -46,7 +48,7 @@ Database Cloud Service specific patches for DB systems and database homes can be
 
 ## Task 3: Apply Patch
 
-1. At the bottom of this page, click again on **Patches**. At the end of the patch row, click ⋮ > **Apply**. Click **OK** in the Confirm dialog. Patch state is now Applying.
+1. At the bottom of this page, click again on **Updates**. At the end of the patch row, click ⋮ > **Apply**. Click **OK** in the Confirm dialog. Patch state is now Applying.
 
 2. Click on **Work Requests**. View the last one in the table:
 
@@ -68,7 +70,7 @@ Database Cloud Service specific patches for DB systems and database homes can be
 
     - Database Version: 19.8.0.0.0
 
-7. At the bottom of this page, click **Patch History**. Review the list of patches applied to this Database Service instance.
+7. At the bottom of this page, click **Update History**. Review the list of patches applied to this Database Service instance.
 
     | Description  | State  | Operation Type  |
     |:----------|:----------|:----------|

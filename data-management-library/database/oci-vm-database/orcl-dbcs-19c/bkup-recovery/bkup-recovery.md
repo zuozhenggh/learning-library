@@ -8,25 +8,11 @@ Backing up your database is a key aspect of any Oracle database environment. The
 
 When you use the Console, you can create full backups or set up automatic incremental backups with a few clicks. Similarly, you can view your backups and restore your database using the last known good state, a point-in-time, or SCN (System Change Number). You can also create a new database from your backup in an existing or a new DB system.
 
-## Task 1: View Contents of Current Database Service
+Estimated Lab Time: 30 minutes
 
-1. Connect to the Database node using SSH.
+## Task 1: Create a Full Database Backup
 
-    ````
-    <copy>
-    ssh -C -i id_rsa opc@<DB Node Public IP Address>
-    </copy>
-    ````
-
-2. Use the substitute user command to start a session as **oracle** user, owner of Oracle software components.
-
-    ````
-    <copy>
-    sudo su - oracle
-    </copy>
-    ````
-
-3. Connect to the database instance specified by environment variables.
+1. Connect to the DB System database instance specified by environment variables, if not already connected.
 
     ````
     <copy>
@@ -34,7 +20,7 @@ When you use the Console, you can create full backups or set up automatic increm
     </copy>
     ````
 
-4. List all pluggable databases.
+2. List all pluggable databases.
 
     ````
     <copy>
@@ -48,7 +34,7 @@ When you use the Console, you can create full backups or set up automatic increm
     	 4 PDB012			  READ WRITE NO
     ````
 
-5. There are three pluggable databases now, one seed PDB (system-supplied template that the CDB can use to create new PDBs) and two user-created PDBs (application data). Exit SQL*Plus.
+3. There are three pluggable databases now, one seed PDB (system-supplied template that the CDB can use to create new PDBs) and two user-created PDBs (application data). Exit SQL*Plus.
 
     ````
     <copy>
@@ -56,31 +42,25 @@ When you use the Console, you can create full backups or set up automatic increm
     </copy>
     ````
 
-## Task 2: Create a Full Database Backup
+4. On Oracle cloud console, click on main menu ≡, then **Bare Metal, VM, and Exadata** under Oracle Database. Click **WS-DB** DB System.
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System.
+5. Click the database name link **WSDB** in the bottom table called Databases.
 
-2. Click the database name link **WSDB** in the bottom table called Databases.
+6. Review the backup called **Automatic Backup** in the bottom table called Backups. Click **Create Backup** button. Call it Manual-Backup, and click **Create Backup** to confirm. The new backup is added to the Backups table, having the State: Creating...
 
-3. Review the backup called **Automatic Backup** in the bottom table called Backups. Click **Create Backup** button. Call it Manual-Backup, and click **Create Backup** to confirm. The new backup is added to the Backups table, having the State: Creating...
+7. Access Work Requests table, and click **Create Database Backup**. Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (2). Wait until this work request is 100% Complete (refresh page). Under Associated Resources, click **WSDB** database name link.
 
-4. Access Work Requests table, and click **Create Database Backup**. Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (2). Wait until this work request is 100% Complete. Under Associated Resources, click **WSDB** database name link.
+8. At this point you can see the Manual-Backup on Backups table is now Active.
 
-5. At this point you can see the Manual-Backup on Backups table is now Active.
+## Task 2: Restore Database Service from Backup
 
-## Task 3: Restore Database Service from Backup
+1. Write down the Started and Ended times for backup called **Automatic Backup** in the bottom table called Backups - e.g. Started: 09:38:13 UTC, Ended: 09:56:36 UTC.
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System.
+2. Up on Database Details page, click **Restore** button. Set field **Restore to the timestamp** to the next possible value after your Automatic Backup Ended field - e.g. 10:00 UTC. Click **Restore Database** to confirm.
 
-2. Click the database name link **WSDB** in the bottom table called Databases.
+3. Access Work Requests table, and click **Restore Database** having Status: In Progress... Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (1). Wait until this work request is 100% Complete (refresh page). Under Associated Resources, click **WSDB** database name link.
 
-3. Write down the Started and Ended times for backup called **Automatic Backup** in the bottom table called Backups - e.g. Started: 09:38:13 UTC, Ended: 09:56:36 UTC.
-
-4. Up on Database Details page, click **Restore** button. Set field **Restore to the timestamp** to the next possible value after your Automatic Backup Ended field - e.g. 10:00 UTC. Click **Restore Database** to confirm.
-
-5. Access Work Requests table, and click **Restore Database** having Status: In Progress... Review all Resources: Log Messages (2), Error Messages (0), Associated Resources (1). Wait until this work request is 100% Complete. Under Associated Resources, click **WSDB** database name link.
-
-6. Connect again to the database instance specified by environment variables.
+4. Connect again to the database instance specified by environment variables.
 
     ````
     <copy>
@@ -88,7 +68,7 @@ When you use the Console, you can create full backups or set up automatic increm
     </copy>
     ````
 
-7. List one more time all pluggable databases.
+5. List one more time all pluggable databases.
 
     ````
     <copy>
@@ -101,9 +81,11 @@ When you use the Console, you can create full backups or set up automatic increm
     	 3 PDB011			  READ WRITE NO
     ````
 
-8. There are only two pluggable databases now, one seed PDB (system-supplied template that the CDB can use to create new PDBs) and one user-created PDBs (application data). Where did pluggable database PDB012 go? Pluggable database PDB012 was not created at the moment when the Automatic Backup you used to restore this database was taken.
+6. There are only two pluggable databases now, one seed PDB (system-supplied template that the CDB can use to create new PDBs) and one user-created PDBs (application data). Where did pluggable database PDB012 go? Pluggable database PDB012 was not created at the moment when the Automatic Backup you used to restore this database was taken.
 
-9. Type **exit** command tree times followed by Enter to close all sessions (SQL*Plus, oracle user, and SSH).
+    >**Note** : If you created the PDB012 pluggable database before the Automatic Backup was completed, you may see this pluggable database after restore. Verify the sample schemas HR and SH, these schemas may have not been created when Automatic Backup was completed.
+
+7. Type **exit** command tree times followed by Enter to close all sessions (SQL*Plus, oracle user, and SSH).
 
     ````
     <copy>
@@ -115,55 +97,47 @@ When you use the Console, you can create full backups or set up automatic increm
     exit
     ````
 
-## Task 4: Configure Automatic Backups
+## Task 3: Automatic Backups and Clone from Backup
 
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System.
+1. You are on database **WSDB** page. Under Database Information details, review Backup Retention Period: 30 Days, and Backup Schedule: Anytime.
 
-2. Click the database name link **WSDB** in the bottom table called Databases. Under Database Information details, review Backup Retention Period: 30 Days, and Backup Schedule: Anytime.
-
-3. Click **Configure Automatic Backups** button. Set the following values:
+2. Click **Configure Automatic Backups** button. Set the following values:
 
     - Backup retention period: 45 days
     - Backup scheduling (UTC): 12:00AM - 2:00AM
 
-4. Click **Save Changes**. Database lifecycle state changes to Backup In Progress... Wait for Database to become Available. Under Database Information details, review againBackup Retention Period and Backup Schedule fields. New configuration is displayed:
+3. Click **Save Changes**. Database lifecycle state changes to Backup In Progress... Wait for Database to become Available. Under Database Information details, review againBackup Retention Period and Backup Schedule fields. New configuration is displayed:
 
     - Backup Retention Period: 45 Days
     - Backup Schedule: 12:00AM - 2:00AM UTC
 
-## Task 5: Create New Database Service from Backup
-
-1. On Oracle cloud console, click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. Click **WS-DB** DB System.
-
-2. Click the database name link **WSDB** in the bottom table called Databases.
-
-3. Access Backups table, and next to Manual-Backup click ⋮ > **Create Database**. On the Create Database from Backup dialog, enter the following values:
+4. Access Backups table at the bottom of the page, and next to Manual-Backup click ⋮ > **Create Database**. On the Create Database from Backup dialog, enter the following values:
 
     - Select **Create a new DB system** radio button
     - Name your DB system: WS-DBb
     - Change Shape: VM.Standard2.1
     - Oracle Database software edition: Enterprise Edition Extreme Performance
     - Choose Storage Management Software: Logical Volume Manager
-    - Upload SSH key files: id_rsa.pub
+    - Upload SSH key files: Browse and select the public key file saved from the first DB System (ssh-key-XXXX-XX-XX.key.pub). 
     - Choose a license type: Bring Your Own License (BYOL)
-    - Virtual cloud network: WS-VCN
-    - Client Subnet: Public Subnet
-    - Hostname prefix: ws-hostb
+    - Virtual cloud network: LLXXXXX-VCN
+    - Client Subnet: LLXXXXX-SUBNET-PUBLIC Public Subnet
+    - Hostname prefix: db-clone
     - Database name: WSDBB
-    - Password: DBlearnPTS#20_
-    - Enter the source database's TDE wallet or RMAN password: DBlearnPTS#20_
+    - Password: DatabaseCloud#22_
+    - Enter the source database's TDE wallet or RMAN password: DatabaseCloud#22_
 
-4. Click **Create Database**. Status is Provisioning...
+5. Click **Create Database**. Status is Provisioning...
 
-5. When it becomes Available, click **Nodes** on the left menu, and copy Public IP Address in your notes.
+6. When it becomes Available (refresh page), click **Nodes** on the left menu, and copy Public IP Address in your notes.
 
-## Task 6: Verify New Database Service Created from Backup
+## Task 4: Verify Database Clone Created from Backup
 
-1. Connect to the new WS-DBb Database node using SSH (the one you just created from backup).
+1. From your Compute node, connect to the new WS-DBb Database node using SSH (the one you just created from backup).
 
     ````
     <copy>
-    ssh -C -i id_rsa opc@<DBb Node Public IP Address>
+    ssh -C -i id_rsa opc@<DBb Node Private IP Address>
     </copy>
     ````
 
@@ -189,11 +163,11 @@ When you use the Console, you can create full backups or set up automatic increm
     show pdbs
     </copy>
 
-        CON_ID CON_NAME			  OPEN MODE  RESTRICTED
-    ---------- ------------------------------ ---------- ----------
-    	 2 PDB$SEED			  READ ONLY  NO
-    	 3 PDB011			  READ WRITE NO
-    	 4 PDB012			  READ WRITE NO
+        CON_ID CON_NAME       OPEN MODE  RESTRICTED
+    ---------- -------------- ---------- ----------
+             2 PDB$SEED       READ ONLY  NO
+             3 PDB011         READ WRITE NO
+             4 PDB012         READ WRITE NO
     ````
 
 5. Set current container connection to the pluggable database **PDB012**.
@@ -214,15 +188,15 @@ When you use the Console, you can create full backups or set up automatic increm
     select TABLE_NAME, NUM_ROWS from DBA_TABLES where OWNER='HR';
     </copy>
 
-    TABLE_NAME				   NUM_ROWS
-    ---------------------------------------- ----------
-    REGIONS 					  4
-    LOCATIONS					 23
-    DEPARTMENTS					 27
-    JOBS						 19
-    EMPLOYEES					107
-    JOB_HISTORY					 10
-    COUNTRIES					 25
+    TABLE_NAME            NUM_ROWS
+    --------------------- --------
+    REGIONS                      4
+    LOCATIONS                   23
+    DEPARTMENTS                 27
+    JOBS                        19
+    EMPLOYEES                  107
+    JOB_HISTORY                 10
+    COUNTRIES                   25
 
     7 rows selected.
     ````

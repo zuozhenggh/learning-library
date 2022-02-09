@@ -1,10 +1,10 @@
 {
-  "workshoptitle": "DBA Essentials - Oracle EM Database Administration (DBA)",
+  "workshoptitle": "DBA Essentials - DB Admin with Oracle Enterprise Manager Cloud Control",
   "help": "livelabs-help-em_us_grp@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "The workshop on Oracle Enterprise Manager Cloud Control (Oracle EMCC) Database Administration (DBA).",
+      "description": "Introduction.",
       "filename": "./../../intro-emcc/intro-emcc.md",
       "type": "em-dba"
     },
@@ -16,7 +16,7 @@
     {
       "title": "Lab 1: Initialize Environment",
       "description": "How to initialize and start all the workshop components.",
-      "publisheddate": "10/13/2021",
+      "publisheddate": "12/21/2021",
       "filename": "./../../initialize-environment/initialize-environment.md"
     },
     {
@@ -35,7 +35,7 @@
       "filename": "./../../manage-targets/manage-targets.md"
     },
     {
-      "title": "Lab 5: Access Container Home Page from Cloud Control",
+      "title": "Lab 5: Access Container Home Page",
       "description": "How to access the container home page from Oracle EMCC. Learn how to switch between containers and manage your favorites.",
       "filename": "./../../access-homepage/access-homepage.md"
     },

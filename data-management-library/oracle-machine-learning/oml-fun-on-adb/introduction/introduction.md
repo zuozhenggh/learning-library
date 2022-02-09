@@ -46,4 +46,4 @@ This workshop assumes you have:
 ## Acknowledgements
 * **Authors** - Moitreyee Hazarika, Principal User Assistance Developer; Sarika Surampudi, Senior User Assistance Developer; Dhanish Kumar, Member Technical Staff; Suresh Rajan, Senior Manager, Oracle Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning
-* **Last Updated By/Date** - Suresh Rajan, November 2021
+* **Last Updated By/Date** - Suresh Rajan, December 2021
