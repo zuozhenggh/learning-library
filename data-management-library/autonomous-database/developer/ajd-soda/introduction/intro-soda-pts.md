@@ -147,8 +147,6 @@ For some of the labs we need graphical user interface, and this can be achieved 
 
     echo -e "DBlearnPTS#21_\nDBlearnPTS#21_" | passwd oracle
 
-    sed -i -e 's/^/#/' /etc/profile.d/oracle-instantclient*
-
     printf "\nORACLE_HOME=/usr/lib/oracle/19.13/client64\nLD_LIBRARY_PATH=/usr/lib/oracle/19.13/client64/lib\nPATH=\$PATH:/usr/lib/oracle/19.13/client64/bin\nexport ORACLE_HOME LD_LIBRARY_PATH PATH\n" >> /etc/profile
     </copy>
     ````
