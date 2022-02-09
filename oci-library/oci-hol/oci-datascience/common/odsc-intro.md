@@ -16,7 +16,11 @@ The Data Science Service:
 * Integrates with the rest of the Oracle Cloud Infrastructure stack, including Functions, Data Flow, Autonomous Data Warehouse, and Object Storage.
 * Helps data scientists concentrate on methodology and domain expertise to deliver more models to production.
 
+<<<<<<< HEAD
+Estimated Workshop Time: 90 minutes
+=======
 Estimated Time: 2 hours
+>>>>>>> 691d591bea2a55a6dec53632a56f1fcb2790606b
 
 ### Objectives
 
@@ -35,5 +39,5 @@ Review the following concepts and terms to help you get started with the Data Sc
 ## Acknowledgements
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
-* **Last Updated By/Date**:
-    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, September 2020
+* **Last Updated By/Date**: 
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, February 2022
