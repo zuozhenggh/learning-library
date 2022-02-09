@@ -118,8 +118,7 @@ drop table interval_par_demo purge;
 </copy>
 ```
    
-You successfully made it to the end this lab Interval Partitions. 
-You have now successfully performed a failover. You may now [proceed to the next lab](#next).   
+You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next).   
 
 ## Learn More
 

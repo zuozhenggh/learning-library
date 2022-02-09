@@ -252,8 +252,7 @@ drop table RDPT2 purge;
 </copy>
 ```
  
-You successfully made it to the end of module 'read only partitions and subpartitions'. 
-You have now successfully performed a failover. You may now [proceed to the next lab](#next).   
+You successfully made it to the end of lab 'read only partitions and subpartitions'.You may now [proceed to the next lab](#next).   
 
 ## Learn More
  

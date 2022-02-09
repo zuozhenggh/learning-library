@@ -149,8 +149,7 @@ drop table mc purge;
 </copy>
 ```
 
-You successfully made it to the end of module 'multi-column list partitioning'.
-You have now successfully performed a failover. You may now [proceed to the next lab](#next). 
+You successfully made it to the end of lab 'multi-column list partitioning'. You may now [proceed to the next lab](#next). 
 
 ## Learn More
  
