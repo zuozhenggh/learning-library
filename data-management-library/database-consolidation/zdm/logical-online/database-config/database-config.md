@@ -11,16 +11,16 @@ Disclaimer: The Zero Downtime Migration service host should be a dedicated syste
 
 Estimate Lab Time: 15 minutes
 
-### Workshop Objectives
+###  Objectives
 
 In this lab, you will:
 * Learn how to Connect to the Source Database and create the required migration users.
 
 ### Prerequisites
-This workshop section requires having setup a compute instance and the source database.
+* This workshop section requires having setup a compute instance and the source database.
 
 
-## **Task 1: Connect to Your Database and Configure required parameters**
+## Task 1: Connect to Your Database and Configure required parameters
 
 **Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually press enter a second time. To avoid statement failure, please be cognizant of this and press enter twice when pasting.
 
@@ -123,7 +123,7 @@ This workshop section requires having setup a compute instance and the source da
     </copy>
     ```
 
-## **Task 2: Creating Users for Your Database Migration**
+## Task 2: Creating Users for Your Database Migration
 
 1.  Create a GoldenGate administration user, c##ggadmin, in CDB$ROOT, granting all of the permissions listed in the example. Please bear in mind that you may need to press enter twice after copying the following statement for it to fully create the users, grant the privileges and execute the required PL/SQL procedure.
 
@@ -184,7 +184,7 @@ This workshop section requires having setup a compute instance and the source da
     </copy>
     ```
 
-## **Task 3: Load Sample Table**
+## Task 3: Load Sample Table
 1. Connect to your database user. Enter password `WELcome##1234` at the prompt that you set for your user.
     ```
     <copy>
@@ -260,7 +260,7 @@ This workshop section requires having setup a compute instance and the source da
     </copy>
     ```
 
-## **Task 4: Change the Source Database System Password**
+## Task 4: Change the Source Database System Password
 
 To perform the migration, ZDM will require several passwords, for simplicity, let's change the Oracle Source Database System Password. This will help expedite the migration process when prompted for the different components passwords.
 

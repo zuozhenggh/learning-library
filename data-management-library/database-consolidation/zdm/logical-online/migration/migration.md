@@ -1,4 +1,4 @@
-# Migratign your Database
+# Migrate your Database
 
 ## Introduction
 In this lab on your host instance, you will:
@@ -8,65 +8,65 @@ In this lab on your host instance, you will:
 
 Estimated Total Lab Time: 30 minutes
 
-### Workshop Objectives
+### Objectives
 
 In this lab, you will:
 * Learn how to perform a logical online migration to Autonomous Database with ZDM.
 
 ### Prerequisites
-This workshop section requires having completed all he previous sections.
+* This workshop section requires having completed all he previous sections.
 
 
-## **Task 1: Run a Migration on Evaluation Mode**
+## Task 1: Run a Migration on Evaluation Mode
 
 1. The migrate zdmcli command performs a migration and consists of several parameters. Let's review one by one to undertand them better.
 
-```
-/u01/app/zdmhome/bin/zdmcli migrate database -rsp /path/zdmresponsefile.rsp -sourcesid ORACLE_SID -sourcenode source_host_name -srcauth authentication_plugin_name -srcarg1 user:source_database_server_login_user_name -srcarg2 identity_file:ZDM_installed_user_private_key_file_location  -srcarg3 sudo_location:/sudo_location -eval -skipadvisor
-```
+    ```
+    /u01/app/zdmhome/bin/zdmcli migrate database -rsp /path/zdmresponsefile.rsp -sourcesid ORACLE_SID -sourcenode source_host_name -srcauth authentication_plugin_name -srcarg1 user:source_database_server_login_user_name -srcarg2 identity_file:ZDM_installed_user_private_key_file_location  -srcarg3 sudo_location:/sudo_location -eval -skipadvisor
+    ```
 
-Let's review one by one the different parameters that are part of this command:
+    Let's review one by one the different parameters that are part of this command:
 
-```
--rsp /path/zdmresponsefile.rsp
-```
-The __-rsp__ option specifies the migration response file path
+    ```
+    -rsp /path/zdmresponsefile.rsp
+    ```
+    The __-rsp__ option specifies the migration response file path
 
-```
--sourcesid ORACLE_SID
-```
-The __-sourcesid__ option specifies the ORACLE_SID of the source database. This option is used here instead of -source given that the source database is a single instance database with no Grid Infrastructure deployment.
+    ```
+    -sourcesid ORACLE_SID
+    ```
+    The __-sourcesid__ option specifies the ORACLE_SID of the source database. This option is used here instead of -source given that the source database is a single instance database with no Grid Infrastructure deployment.
 
-```
--sourcenode source_host_name
-```
-The __-sourcenode__ option specifices the Source Database Host Name
+    ```
+    -sourcenode source_host_name
+    ```
+    The __-sourcenode__ option specifices the Source Database Host Name
 
-```
--srcauth authentication_plugin_name
-```
-The __-srcauth__ option specifies the Authentication Plugin to be used, the default plugin is zdmauth.
+    ```
+    -srcauth authentication_plugin_name
+    ```
+    The __-srcauth__ option specifies the Authentication Plugin to be used, the default plugin is zdmauth.
 
 
-```
--srcarg1 user:source_database_server_login_user_name
-```
-The __-srcarg1 user:__ option specifies the Source Database Server Login user name
+    ```
+    -srcarg1 user:source_database_server_login_user_name
+    ```
+    The __-srcarg1 user:__ option specifies the Source Database Server Login user name
 
-```
--srcarg2 identity_file:ZDM_installed_user_private_key_file_location
-```
-The __-srcarg2 identity_file__ option specifies the ZDM installed user private key file location
+    ```
+    -srcarg2 identity_file:ZDM_installed_user_private_key_file_location
+    ```
+    The __-srcarg2 identity_file__ option specifies the ZDM installed user private key file location
 
-```
--srcarg3 sudo_location:/sudo_location
-```
-The __-srcarg3 sudo_location__ option specifies the path for the sudo location
+    ```
+    -srcarg3 sudo_location:/sudo_location
+    ```
+    The __-srcarg3 sudo_location__ option specifies the path for the sudo location
 
-```
--eval -skipadvisor
-```
-Finally, the __-eval__ flag specifies that this is an Evaluation mode migration, hence ZDM will not be actually performing the migration but just a validation to verify everything is in order. The __-skipadvisor__ flag specifies that ZDM can skip the Pre-Migration advisor phase, which will not be required for the purposes of this workshop.
+    ```
+    -eval -skipadvisor
+    ```
+    Finally, the __-eval__ flag specifies that this is an Evaluation mode migration, hence ZDM will not be actually performing the migration but just a validation to verify everything is in order. The __-skipadvisor__ flag specifies that ZDM can skip the Pre-Migration advisor phase, which will not be required for the purposes of this workshop.
 
 2. Let's now proceed to perform a migration on Evaluation mode. Providing all the steps have been followed, the following zdmcli migrate database command and corresponding options, parameters and flags should work without requiring any modification. As the zdmuser, execute the following in your Cloud Shell: 
 
@@ -89,7 +89,7 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
     ![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Migrate Database command output](./images/zdm-job-id.png " ")
 
 
-## **Task 2: Evaluate a Migration Job**
+## Task 2: Evaluate a Migration Job
 
 1. To evaluate the migration job, we will use the __/u01/app/zdmhome/bin/zdmcli query job -jobid idnumber__ command. Copy the command from below and replace idnumber with the assigned Job ID provided by ZDM on your migration, then, press Enter.
 
@@ -101,9 +101,9 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
 
 2. You might need to execute the command several times until the evaluation is completed. Upon succesful completion of your migration in evaluation mode, you should see an output like the following:
 
-![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Query Job output](./images/zdm-job-eval-done.png " ")
+    ![Screenshot of Oracle Cloud Infrastructure Cloud Shell with ZDMCLI Query Job output](./images/zdm-job-eval-done.png " ")
 
-## **Task 3: Migrate your Database**
+## Task 3: Migrate your Database
 
 1. You are now ready to migrate your database, to so, you will execute the same command as before, minus the __-eval__ flag. Copy the command from below, paste it on your Cloud Shell and press enter.
 
@@ -164,7 +164,7 @@ Finally, the __-eval__ flag specifies that this is an Evaluation mode migration,
     ![Screenshot of Database Actions with Query Result Highlighted](./images/query-result.png)
 
 
-## **Summary**
+## Summary
 
 Congratulations, you have finished the Zero Downtime Logical Online Migration to Oracle Autonomous Database LiveLab.
 You have learned about Oracle Zero Downtime Migration (ZDM), its features and functionality and how to migrate, step-by-step, a database to the Oracle Cloud.
