@@ -1,12 +1,12 @@
-# Provision an Autonomous Database (ADW and ATP)
+# Provision an Autonomous Database (Oracle Autonomous Data Warehouse and Oracle Autonomous Transaction Processing)
 
 ## Introduction
 
 You will need to provision an autonomous database that will act as the target database we will be completing the migration with ZDM.
 
-This lab walks you through the steps to get started using the Oracle Autonomous Database (Autonomous Data Warehouse [ADW] and Autonomous Transaction Processing [ATP]) on Oracle Cloud. In this lab, you provision a new ATP instance.
+This lab walks you through the steps to get started using the Oracle Autonomous Database (Oracle Autonomous Data Warehouse and Oracle Autonomous Transaction Processing) on Oracle Cloud. In this lab, you provision a new Oracle Autonomous Transaction Processing instance.
 
- **Note:** While this lab uses ATP, the steps are identical for creating an ADW database. ZDM supports both type of databases as valid targets.
+ **Note:** While this lab uses Oracle Autonomous Transaction Processing, the steps are identical for creating an Oracle Autonomous Data Warehouse database. ZDM supports both type of databases as valid targets.
 
 Estimated Lab Time: 5 minutes
 
@@ -16,7 +16,10 @@ In this lab, you will:
 
 -   Learn how to provision a new Autonomous Database
 
-## Task 1: Choosing ATP from the Services Menu
+### Prerequisites
+This workshop section requires having access to an Oracle Cloud account.
+
+## Task 1: Choosing Oracle Autonomous Transaction Processingfrom the Services Menu
 
 1. Login to the Oracle Cloud.
 2. Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -31,38 +34,19 @@ In this lab, you will:
 
 4. Make sure your workload type is __Transaction Processing__ or __All__ to see your Autonomous Transaction Processing instances. Use the __List Scope__ drop-down menu to select a compartment. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
 
-    ![Check the workload type on the left.](images/database-atp-2.png " ")
-    </if>
-    <if type="freetier">
-    ![Check the workload type on the left.](images/database-atp-2.png " ")
-
-   > **Note:** Avoid the use of the `ManagedCompartmentforPaaS` compartment as this is an Oracle default used for Oracle Platform Services.
-   </if>
 
 5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, and so on). You can also sort by __Workload Type__. Here, the __Transaction Processing__ workload type is selected.
 
-    ![Autonomous Databases console.](images/database-atp-2.png " ")
+    ![Autonomous Databases console.](images/database-atp-second-screenshot.png " ")
 
-<if type="freetier">
-6. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
 
-    ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
-</if>
-
-## Task 2: Creating the ADB instance
+## Task 2: Creating the Oracle Autonomous Database instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
-    ![Click Create Autonomous Database.](./images/Picture100-23.png " ")
+    ![Click Create Autonomous Database.](./images/create-adb-button.png " ")
 
 2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
-
-    <if type="livelabs">
-    ![](./images/create-adb-screen-livelabs-default.png " ")
-    </if>
-    <if type="freetier">
-    ![](./images/create-adb-screen-freetier-default.png " ")
-    </if>
 
 3. Provide basic information for the autonomous database:
 
@@ -71,27 +55,19 @@ In this lab, you will:
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.)
     For this lab, use __TargetATP1__. Please bear in mind that there must not be another database with the same name, otherwise there will be an issue while creating and provisioning it. 
 
-    <if type="livelabs">
-    ![Enter the required details.](./images/Picture100-26-livelabs.png " ")
-    </if>
-    <if type="freetier">
-    ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
-    </if>
-
-
 4. Choose a workload type. Select the workload type for your database from the choices:
 
     - __Transaction Processing__ - For this lab, choose __Transaction Processing__ as the workload type.
     - __Data Warehouse__ - Alternatively, you could have chosen Data Warehouse as the workload type.
 
-    ![Choose a workload type.](./images/Picture100-26b.png " ")
+    ![Choose a workload type.](./images/choose-workload-type.png " ")
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Alternatively, you could have chosen Dedicated Infrastructure as the deployment type.
 
-    ![Choose a deployment type.](./images/Picture100-26_deployment_type.png " ")
+    ![Choose a deployment type.](./images/adb-deployment-type.png " ")
 
 6. Configure the database:
 
@@ -104,7 +80,7 @@ In this lab, you will:
 
     > **Note:** You cannot scale up/down an Always Free autonomous database.
 
-    ![Choose the remaining parameters.](./images/Picture100-26c.png " ")
+    ![Choose the remaining parameters.](./images/adb-configure-db.png " ")
 
 7. Create administrator credentials:
 
@@ -116,49 +92,38 @@ In this lab, you will:
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![Enter password and confirm password.](./images/Picture100-26d.png " ")
+    ![Enter password and confirm password.](./images/create-administrator-credentials.png " ")
 
 8. Choose network access:
     - For this lab, accept the default, "Allow secure access from everywhere".
     - If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
     - You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
 
-    ![Choose the network access.](./images/Picture100-26e.png " ")
+    ![Choose the network access.](./images/choose-network-access.png " ")
 
-<if type="livelabs">
-9. Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
-</if>
-<if type="freetier">
 9. Choose a license type. For this lab, choose __License Included__. The two license types are:
-</if>
 
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-<if type="livelabs">
-    ![Click Create Autonomous Database.](./images/Picture100-27-byol.png " ")
-</if>
-<if type="freetier">
-    ![](./images/license.png " ")
-</if>
 
 10. Click __Create Autonomous Database__.
 
-11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details including its name, database version, OCPU count, and storage size.
 
-    ![Database instance homepage.](./images/Picture100-32.png " ")
+    ![Database instance homepage.](./images/database-instance-provisioning.png " ")
 
 Please *proceed to the next lab*.
 
 ## Want to Learn More?
 
-Click [here](https://docs.oracle.com/en/cloud/paas/atp-cloud/index.html) for documentation on the typical workflow for using Autonomous Transaction Processing.
+Visit [Oracle Autonomous Transaction Processing's documentation](https://docs.oracle.com/en/cloud/paas/atp-cloud/index.html) for information on the typical workflow for using this database service.
 
 ## Acknowledgements
 
-- **Author** - Nilay Panchal, ADB Product Management
+- **Author** - Nilay Panchal, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Adapted for ZDM by** - Ameet Kumar Nihalani, Senior Principal Support Engineer, Oracle Cloud Database Migration
 - **Adapted for ZDM by** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Ricardo Gonzalez, August 2021
+- **Last Updated By/Date** - Ricardo Gonzalez, January 2022
