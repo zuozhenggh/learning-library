@@ -11,10 +11,18 @@ Disclaimer: The Zero Downtime Migration service host should be a dedicated syste
 
 Estimate Lab Time: 15 minutes
 
+###  Objectives
 
-## **Task 1: Connect to Your Database and Configure required parameters**
+In this lab, you will:
+* Learn how to Connect to the Source Database and create the required migration users.
 
-**Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually hit enter a second time. To avoid statement failure, please be cognizant of this and hit enter twice when pasting.
+### Prerequisites
+* This workshop section requires having setup a compute instance and the source database.
+
+
+## Task 1: Connect to Your Database and Configure required parameters
+
+**Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually press enter a second time. To avoid statement failure, please be cognizant of this and press enter twice when pasting.
 
 1. Verify that you are user 'opc' in your instance.
 
@@ -115,9 +123,9 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-## **Task 2: Creating Users for Your Database Migration**
+## Task 2: Creating Users for Your Database Migration
 
-1.  Create a GoldenGate administration user, c##ggadmin, in CDB$ROOT, granting all of the permissions listed in the example
+1.  Create a GoldenGate administration user, c##ggadmin, in CDB$ROOT, granting all of the permissions listed in the example. Please bear in mind that you may need to press enter twice after copying the following statement for it to fully create the users, grant the privileges and execute the required PL/SQL procedure.
 
     ```
     <copy>    
@@ -142,7 +150,7 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-3. Create a GoldenGate administration user, ggadmin, in the PDB, granting all of the permissions listed in the example
+3. Create a GoldenGate administration user, ggadmin, in the PDB, granting all of the permissions listed in the example. Please bear in mind that you may need to press enter twice after copying the following statement for it to fully create the users, grant the privileges and execute the required PL/SQL procedure.
 
     ```
     <copy>    
@@ -158,14 +166,15 @@ Estimate Lab Time: 15 minutes
     ```
 
 
-4. After connecting to your container database create the user 'orcl_user'. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
+4. After connecting to your container database create the user 'zdml'. If you would like you can replace `WELcome123ZZ` with a password of your choice. Write down or save the password as you will need it later.
     ```
     <copy>
     create user zdml identified by WELcome##1234;
     </copy>
     ```
 
-5. Grant the user privileges it will need for the migration.
+5. Grant the user privileges it will need for the migration. Please bear in mind that you may need to press enter twice after copying the following statement for it to fully create the users, grant the privileges and execute the required PL/SQL procedure.
+
     ```
     <copy>
     GRANT CONNECT,RESOURCE,CREATE TABLE,CREATE SEQUENCE to ZDML;
@@ -175,7 +184,7 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-## **Task 3: Load Sample Table**
+## Task 3: Load Sample Table
 1. Connect to your database user. Enter password `WELcome##1234` at the prompt that you set for your user.
     ```
     <copy>
@@ -191,7 +200,8 @@ Estimate Lab Time: 15 minutes
     ```
 
 
-2. As ZDML run the following code to create a sample table.
+2. As ZDML run the following code to create a sample table. Please bear in mind that you may need to press enter twice after copying the following statement for it to fully execute.
+
     ```
     <copy>
     SET ECHO OFF 
@@ -250,9 +260,9 @@ Estimate Lab Time: 15 minutes
     </copy>
     ```
 
-## **Task 4: Change the Source Database System Password**
+## Task 4: Change the Source Database System Password
 
-In order to perform the migration, ZDM will require several passwords, for simplicity, let's change the Oracle Source Database System Password. This will help expedite the migration process when prompted for the different components passwords.
+To perform the migration, ZDM will require several passwords, for simplicity, let's change the Oracle Source Database System Password. This will help expedite the migration process when prompted for the different components passwords.
 
 1. Connect to your source database. 
     ```
@@ -288,4 +298,4 @@ Please *proceed to the next lab*.
 * **Author** - Ameet Kumar Nihalani, Senior Principal Support Engineer, Oracle Cloud Database Migration
 * **Author** - Ricardo Gonzalez, Senior Principal Product Manager, Oracle Cloud Database Migration
 * **Contributors** - LiveLabs Team, ZDM Development Team
-* **Last Updated By/Date** - Ricardo Gonzalez, August 2021
+* **Last Updated By/Date** - Ricardo Gonzalez, January 2022

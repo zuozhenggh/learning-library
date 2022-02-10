@@ -3,11 +3,15 @@
 ## Create a Movies Watchlist
 
 ## Overview
-In this workshop, you will create an application where users can search for movies and add them to their personal watchlist. You will build out the application through each lab and cover many different APEX features to get a well-rounded understanding of app development with APEX.
+In this workshop, you will build a mobile-friendly Movie Watchlist app that you and your friends can use to search for movies and add them to your own personal movie watchlists.  
 
-You will use The Movie Database (TMDB) API to create REST data sources for finding movies and getting movie details. Using the data from TMDB, you will implement functionality to search for movies and view movie details. Once the movie search and details pages are built out, you will get an introduction to SQL Workshop in APEX, where you will use Quick SQL to create local tables to store user and movie data for their application.
+The app will source data from [The Movie Database (TMDB)](https://www.themoviedb.org/), an online community-based database with metadata for thousands of movies and TV shows, and an extensive API.  
 
-The final part of the lab is developing the Watchlist page, where you will work with the Cards and Faceted Search regions to build out a page where a user can view, sort, and filter through their movie watchlist to find movies and either remove them or mark them as watched.
+The workshop is organized into a total of ten labs, with the last two being optional. First, you will get your APEX environment and set up an API key on TMDB. Then, you will create REST Data Sources in APEX to connect to TMDB, and begin developing!  
+
+It will take about two hours to complete the workshop, but your time may vary depending on your experience with APEX. If you get stuck, don't worry! At the end of each lab, you will find an app export that will get you across the finish line.  
+
+Upon completing this workshop, you will have your very own simple movies watchlist app that is fun and easy to use! From there, you can continue to enhance this app by applying the concepts and techniques you learned. For example, you can use the Star Rating item to rate a movie once its been watched, or show which streaming providers have the movie using TMDB's rich API. The possibilities are endless, and you'll be fully prepared for your next movie night!  
 
 ### Lab Objectives
 In this lab, you will:  
@@ -47,7 +51,8 @@ Estimated Workshop Time: 2 hours
 
 ### Downloads
 
-- [Click here](./intro/files/movies-watchlist-full.sql) to download the completed application.
+- [Click here](./files/movies-watchlist.sql) to download the completed application and follow the instructions in the <a href="?lab=creating-movie-details-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 4 to import the application into your workspace.
+- If you have not already signed up for a The Movie Database API key, follow the instructions in <a href="?lab=create-app#Task5:SigningupforaTMDBAPIKey" target="_blank">Lab 1, Task 5</a> so you can import the full application.
 
 ## Learn More - *Useful Links*
 

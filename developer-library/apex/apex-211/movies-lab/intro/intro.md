@@ -1,10 +1,14 @@
 # Introduction
 ## About this Workshop
-In this workshop, you will create an application that allows you and your friends to search for movies and create personal watchlists. You will use [The Movie Database (TMDB)](https://www.themoviedb.org/), which is a database that contains a large amount of data about a vast number of movies and TV shows. TMDB has an extensive API that you will access in this workshop to get lists of popular movies, search for movies, and get details and cast lists for movies.
+In this workshop, you will build a mobile-friendly Movie Watchlist app that you and your friends can use to search for movies and add them to your own personal movie watchlists.  
 
-When individual users log into the app, the home page will display their own unique watchlist. They can add movies to their watchlist from either a list of current popular movies or by searching for a specific movie of their choice. After adding movies to their list, users can use filters to browse through their list based on release decade, runtime, and rating. When a user watches a movie on their list, they can mark that movie as "Watched" so that they can filter their movies by those they have watched and those they still want to watch.
+The app will source data from [The Movie Database (TMDB)](https://www.themoviedb.org/), an online community-based database with metadata for thousands of movies and TV shows, and an extensive API.  
 
-While the end result is a simple version of a movies watchlist application, you can continue to build it out far past what this workshop takes you through, using many of the same concepts you will learn. The Movie Database API has a lot of options that you can add to your application, such as streaming providers for individual movies, videos related to movies, upcoming movies, and more. There are also a lot of features in Oracle APEX that you can use to allow users to rate movies they have watched, make comments on movies, and more.
+The workshop is organized into a total of ten labs, with the last two being optional. First, you will get your APEX environment and set up an API key on TMDB. Then, you will create REST Data Sources in APEX to connect to TMDB, and begin developing!  
+
+It will take about two hours to complete the workshop, but your time may vary depending on your experience with APEX. If you get stuck, don't worry! At the end of each lab, you will find an app export that will get you across the finish line.  
+
+Upon completing this workshop, you will have your very own simple movies watchlist app that is fun and easy to use! From there, you can continue to enhance this app by applying the concepts and techniques you learned. For example, you can use the Star Rating item to rate a movie once its been watched, or show which streaming providers have the movie using TMDB's rich API. The possibilities are endless, and you'll be fully prepared for your next movie night!  
 
 Estimated Workshop Time: 2 hours
 
@@ -25,7 +29,7 @@ In this lab, you will:
 
 | # | Module | Est. Time |
 | --- | --- | --- |
-| - | [Getting Started](?lab=signing-up) | 5 min |
+| - | [Getting Started](?lab=1-sign-up-apex) | 5 min |
 | 1 | [Creating the Application](?lab=create-app) | 5 min |
 | 2 | [Creating REST Data Sources](?lab=creating-rest-sources) | 15 min |
 | 3 | [Creating the Movie Search Page](?lab=creating-movie-search-page) | 20 min |
@@ -44,7 +48,8 @@ In this lab, you will:
 
 ### Downloads
 
-- [Click here](./files/movies-watchlist-full.sql) to download the completed application.
+- [Click here](./files/movies-watchlist.sql) to download the completed application and follow the instructions in the <a href="?lab=creating-movie-details-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 4 to import the application into your workspace.
+- If you have not already signed up for a The Movie Database API key, follow the instructions in <a href="?lab=create-app#Task5:SigningupforaTMDBAPIKey" target="_blank">Lab 1, Task 5</a> so you can import the full application.
 
 ## Learn More - *Useful Links*
 

@@ -46,9 +46,9 @@ When you create a new data warehouse, you automatically get an account called AD
 
 For this workshop we need to create one new user.
 
-1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Click the **Database Actions** button.
 
-    ![Details page of your Autonomous Database](images/2878884319.png " ")
+    ![Click Database Actions](images/launchdbactions.png " ")
 
 2. Enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse. Click **Sign in**.
 
@@ -257,7 +257,7 @@ create table moviestream_log
 begin
     dbms_cloud.create_external_table(table_name => 'moviestream_labs',
                 file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/R-csuXKL9-Vn-fpstvXalGJftkjzCB1Te2iI1bA0dq7afsSdVHRd5H7dd2O5HLtp/n/c4u04/b/moviestream_lite_scripts/o/moviestream-lite-labs.json',
-                format => '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}',
+                format => json_object('skipheaders' value '0', 'delimiter' value '\n','ignoreblanklines' value 'true'),
                 column_list => 'doc varchar2(30000)'
             );
 end;
@@ -339,4 +339,4 @@ Please *proceed to the next lab*.
 
 * **Author** - Mike Matthews, Autonomous Database Product Management
 * **Contributors** -  Rick Green, Principal Developer, Database User Assistance, Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Mike Matthews, Autonomous Database Product Management, October 2021
+* **Last Updated By/Date** - Rick Green, November 2021
