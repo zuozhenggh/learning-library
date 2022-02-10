@@ -4,7 +4,7 @@
 
 This workshop will consist of a step by step logical online migration using DataPump to export/import the source/target database, an Oracle GoldenGate Hub for Database Synchronization and an Oracle Cloud Infrastructure (Oracle Cloud Infrastructure) object storage bucket as a backup location.
 
-Estimated Workshop Time: 3 hours
+Estimated Time: 3 hours
 
 
 ### About Zero Downtime Migration
