@@ -1,4 +1,4 @@
-# Multi column list partitioning 
+# Multi Column List Partitioning 
 
 ## Introduction
   
@@ -7,6 +7,10 @@ Multi-column list partitioning enables you to partition a table based on list va
 ![Image alt text](images/multi-list-partition-intro.png "Multi List Partition")
 
 Estimated Lab Time: 20 minutes
+
+### Multi Column List Partitioning 
+
+Multi-column list partitioning enables you to partition a table based on the list values of multiple columns. A multi-column list-partitioned table can only have one DEFAULT partition. 
 
 ### Features
 
@@ -29,7 +33,7 @@ This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Create a simple multi-column list partitioned table
+## Task 1: Create Multi Column List Partitioned Table
 
 ```
 <copy>

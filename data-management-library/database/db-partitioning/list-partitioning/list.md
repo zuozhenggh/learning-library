@@ -1,4 +1,4 @@
-# List partitioning 
+# List Partitioning 
 
 ## Introduction
 
@@ -7,6 +7,10 @@ List partitioning enables you to explicitly control how rows map to partitions b
 The semantics for creating list partitions are similar to those for creating range partitions. You specify a PARTITION BY LIST clause in the CREATE TABLE statement to create list partitions. The partitioning key can be one or multiple column names from the table for list partitioning.
 
 Estimated Lab Time: 20 minutes
+
+### About List Partitioning
+
+Unlike range partitioning, there is no apparent sense of order between partitions with list partitioning. You can also specify a default partition into which rows that do not map to any other partition are mapped. 
 
 ### Features
 
@@ -36,9 +40,9 @@ This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Create list partitioning
+## Task 1: Create List Partitioned Table
 
-Let's create list partitioned table:
+1. Let's create list partitioned table:
  
 ```
 <copy>
@@ -63,6 +67,8 @@ PARTITION BY LIST (state_code)
 </copy>
 ```
 
+2. View the data in sales\_by\_region table
+
 ```
 <copy>
 SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_BY_REGION';
@@ -71,9 +77,9 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 
 ![Image alt text](images/sales-by-region-select.png "Sales by region select")
 
-## Task 2: Add new partitions
+## Task 2: Add New Partitions
 
-Add a new partition to the table.
+1. Add a new partition to the table.
 
 ```
 <copy>
@@ -81,7 +87,7 @@ ALTER TABLE sales_by_region ADD PARTITION region_nonmainland VALUES ('HI','PR');
 </copy>
 ```
 
-Add a new partition to the table for NULL values.
+2. Add a new partition to the table for NULL values.
 
 ```
 <copy>
@@ -89,7 +95,7 @@ ALTER TABLE sales_by_region ADD PARTITION region_null VALUES (NULL);
 </copy>
 ```
 
-Add a new partition to the table for values that do not map to any other partition.
+3. Add a new partition to the table for values that do not map to any other partition.
 
 ```
 <copy>
@@ -97,7 +103,7 @@ ALTER TABLE sales_by_region ADD PARTITION VALUES (DEFAULT);
 </copy>
 ```  
 
-Display the partitions in the table after adding new partitions.
+4. Display the partitions in the table after adding new partitions.
 
 ```
 <copy>
@@ -107,7 +113,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 
 ![Image alt text](images/user-tab-partitions-select.png "user tab partitions select")
 
-Add new values to a list of partitioning keys.
+5. Add new values to a list of partitioning keys.
 
 ```
 <copy>
@@ -115,7 +121,7 @@ ALTER TABLE sales_by_region  MODIFY PARTITION region_central  ADD VALUES ('OK','
 </copy>
 ``` 
  
-Display the partitions in the table after modifying a partition.
+6. Display the partitions in the table after modifying a partition.
 
 ```
 <copy>
@@ -125,7 +131,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 
 ![Image alt text](images/sales-by-region-select-2.png "Sales by region select")
 
-Insert values into the table.
+7. Insert values into the table.
 
 ```
 <copy>
@@ -134,7 +140,7 @@ INSERT INTO sales_by_region VALUES (1002,200,'26-AUG-2014','My Store OK','OK');
 </copy>
 ``` 
 
-Display all the data in the table.
+8. Display all the data in the table.
 
 ```
 <copy>
@@ -144,10 +150,9 @@ SELECT * FROM sales_by_region;
 
 ![Image alt text](images/sales-by-region-select-3.png "Sales by region select")
 
-Display data from a specified partition in the table. When you are finished testing the example, you can clean up the environment by dropping the table (DROP TABLE sales_by_region).
+## Task 3: Partitioned Data by Partition Name
 
-## Task 3: Partition data by partition name
-
+Display data from a specified partition in the table.  
 
 ```
 <copy>
@@ -165,8 +170,6 @@ rem drop everything succeeds
 drop table sales_by_region purge;
 </copy>
 ```
-
-Semantically you are not violating any data immutability when you remove a complete object. If you want to preserve this case you should address this with proper privilege management or, under some circumstances, by disabling the table level lock. The latter one prevents a drop table, but also all other operations that require an exclusive table level lock.
 
 You successfully made it to the end of lab 'read only partitions and sub partitions'. You may now [proceed to the next lab](#next).   
  

@@ -1,10 +1,18 @@
-# Range partitioning
+# Range Partitioning
 
 ## Introduction
 
 Range partitioning maps data to partitions based on ranges of partition key values that you establish for each partition. It is the most common type of partitioning used with dates. For example, you might want to partition sales data into monthly partitions. The PARTITION BY RANGE clause of the CREATE TABLE statement specifies that the table or index is range-partitioned. The PARTITION clauses identify the individual partition ranges, and the optional subclauses of a PARTITION clause can select physical and other attributes specific to a partition segment.
 
 Estimated Lab Time: 20 minutes
+
+### About Range Partitioning
+
+Range partitioning is the most common type of partitioning and is used with dates. For a table with a date column as the partitioning key, the January-2010 partition would contain rows with partitioning key values from 01-Jan-2010 to 31-Jan-2010.
+
+Each partition has a VALUES LESS THAN clause that specifies a non-inclusive upper bound for the partitions. Any partitioning key values equal to or higher than this literal are added to the next higher partition. All partitions, except the first, have an implicit lower bound specified by the VALUES LESS THAN clause of the previous partition.
+
+A MAXVALUE literal can be defined for the highest partition. MAXVALUE represents a virtual infinite value that sorts higher than any possible value for the partitioning key, including the NULL value.
 
 ### Features
  
@@ -32,9 +40,9 @@ This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
   
-## Task 1: Create range partitioning
+## Task 1: Create Range Partitioned Table
 
-Let us Create range partitioned Table. The table is partitioned by range using the values of the sales\_date column. The partition bound is determined by the VALUES LESS THAN clause. 
+1. Let us Create range partitioned Table. The table is partitioned by range using the values of the sales\_date column. The partition bound is determined by the VALUES LESS THAN clause. 
 
 ```
 <copy>
@@ -56,7 +64,7 @@ PARTITION BY RANGE (sale_date)
 </copy>
 ```  
 
-Display the partitions in the table with this SQL query.
+2. Display the partitions in the table with this SQL query.
 
 ```
 <copy> 
@@ -64,7 +72,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 </copy>
 ```
 
-Add a new partition to the table.
+3. Add a new partition to the table.
 
 ```
 <copy>
@@ -73,7 +81,7 @@ ADD PARTITION sales_q1_2015 VALUES LESS THAN (TO_DATE('01-APR-2015','dd-MON-yyyy
 </copy>
 ```
 
-Display the partitions in the table after adding the new partition.
+4. Display the partitions in the table after adding the new partition.
 
 ```
 <copy>
@@ -83,7 +91,7 @@ SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_P
 
 ![Image alt text](images/user-tab-data.png "USER_TAB_PARTITIONS Data")
 
-Insert values into the table.
+5. Insert values into the table.
 
 ```
 <copy>
@@ -93,7 +101,7 @@ INSERT INTO sales_range_partition VALUES (1001,100,'A',150,'20-AUG-2014',500,200
 </copy>
 ```
   
-Display data from a specified partition in the table. 
+6. Display data from a specified partition in the table. 
 
 ```
 <copy>
@@ -103,7 +111,7 @@ SELECT * FROM sales_range_partition PARTITION(sales_q1_2014);
 
 ![Image alt text](images/sales-range-partition.png "sales_range_partition Data with Partition")
 
-Display all the data in the table.
+7. Display all the data in the table.
 
 ```
 <copy>
@@ -111,7 +119,7 @@ SELECT * FROM sales_range_partition;
 </copy>
 ```
 
-Data in sales\_range\_partition table with and without Partition
+8. Data in sales\_range\_partition table with and without Partition
 
 ![Image alt text](images/sales-range-partition-data.png "sales_range_partition Data")
  

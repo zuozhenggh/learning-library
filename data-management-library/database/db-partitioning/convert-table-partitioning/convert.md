@@ -1,12 +1,15 @@
-# Convert non-partitioned table to partitioned table 
+# Convert Non Partitioned Table into Partitioned Table 
 
 ## Introduction
  
-Oracle Database provides a mechanism to move one or more partitions or to make other changes to the partitions' physical structures without significantly affecting the availability of the partitions for DML. This mechanism is called online table redefinition. A non partitioned table can be converted to a partitioned table with a MODIFY clause added to the ALTER TABLE SQL statement. In addition, the keyword ONLINE can be specified, enabling concurrent DML operations while the conversion is ongoing.
+Oracle Database provides a mechanism to move one or more partitions or to make other changes to the partitions' physical structures without significantly affecting the availability of the partitions for DML.  
 
 ![Image alt text](images/convert-non-partitioned-intro.png "Convert Non-partitioned Table Introduction")
  
 Estimated Lab Time: 20 minutes
+
+### Converting a Non Partitioned Table into Partitioned Table 
+Converting a Non-Partitioned Table to a Partitioned Table can be quickly done with a MODIFY clause added to the ALTER TABLE SQL statement. In addition, the keyword ONLINE can be specified, enabling concurrent DML operations while the conversion is ongoing.
 
 ### Features
 
@@ -25,9 +28,9 @@ This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Convert non-partitioned table to partitioned table
+## Task 1: Convert Non Partitioned Table to Partitioned Table
 
-Let's Convert non-partitioned table to partitioned table:
+1. Let's Convert a non-partitioned table to a partitioned table
 
 ```
 <copy>
@@ -39,7 +42,7 @@ commit;
 </copy>
 ```
 
-Our sample table needs a couple of indexes, so let's create them:
+2. Our sample table needs a couple of indexes, so let's create them
 
 ```
 <copy>
@@ -53,7 +56,7 @@ create bitmap index i5_bix_soon2bpart on soon2bpart (col2,col3);
 </copy>
 ```
 
-Let's see the index metadata for our table as it exists prior to the conversion:
+3. Let's see the index metadata for our table as it exists before the conversion.
 
 ```
 <copy>
@@ -79,7 +82,7 @@ order by 1;
 
 ![Image alt text](images/soon2part-table-2.png "Convert Non-partitioned SOON2BPART Table")
 
-The conversion is not an in-place conversion: one of the key concepts of Oracle Partitioning is that data of individual partitions is, well, stored in individual physical segments. The non partitioned table has data stored "wherever" in the table. So for the duration of the conversion, you will need the extra space for the new table partition and index segments. After the successful conversion,  Note that we are doing an online conversion. If you could spawn a second session that does DML against our table while the conversion is in place, you'd experience that all your DML will go through without being blocked.  
+4. The conversion is not an in-place conversion: one of the critical concepts of Oracle Partitioning is that data of individual partitions are, well, stored in individual physical segments. The non-partitioned table has data stored "wherever" in the table. So for the duration of the conversion, you will need the extra space for the new table partition and index segments. After the successful conversion,  Note that we are doing an online conversion. If you could spawn a second session that does DML against our table while the conversion is in place, you'd experience that all your DML will go through without being blocked.  
 
 ```
 <copy>
@@ -92,7 +95,7 @@ update indexes (i3_prefix_but_ovrd_soon2bpart global);
 </copy>
 ```
 
-OK, the table is successfully converted. Let' see the table partitioning metadata:
+5. The table is now converted. Let's see the table partitioning metadata.
 
 ```
 <copy>
@@ -107,9 +110,8 @@ order by partition_position asc;
 
 ![Image alt text](images/partition-position.png "Convert Non-partitioned Table Partition Position")
 
-Global partitioned indexes are untouched and retain their shape. Non-prefixed indexes will become global non partitioned tables.
-Prefixed indexes will become local partitioned indexes. Bitmap indexes will become local partitioned indexes.
-So let's check the indexed shape and their status.
+6. Global partitioned indexes are untouched and retain their shape. Non-prefixed indexes will become global non-partitioned tables.
+Prefixed indexes will become local partitioned indexes. Bitmap indexes will become local partitioned indexes. So let's check the indexed shape and their status.
 
 ```
 <copy>
@@ -121,7 +123,7 @@ order by 1;
 </copy>
 ```
 
-You see that the conversion rules were applied as discussed, with the exception of index I1B_SOON2BPART which was defined as becoming a global non partitioned index as part of the conversion.
+7. You see that the conversion rules were applied as discussed, except index I1B\_SOON2BPART, which was defined as a global non-partitioned index as part of the conversion.
 
 ```
 <copy>
@@ -135,7 +137,7 @@ order by 1;
 
 ![Image alt text](images/soon2part-table-3.png "Convert Non-partitioned Table")
 
-All the index partitions are also in a valid state:
+8. All the index partitions are also in a valid state:
 
 ```
 <copy>

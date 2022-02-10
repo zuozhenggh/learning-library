@@ -1,4 +1,4 @@
-# Read only partitioning 
+# Read Only Partitioning 
 
 ## Introduction
 
@@ -7,6 +7,10 @@ We can set tables, partitions, and sub partitions to read-only status to protect
 ![Image alt text](images/read-only-partition-intro.png "Read only Partition")
 
 Estimated Lab Time: 20 minutes
+
+### About Read Only Partitioning
+
+The CREATE TABLE and ALTER TABLE SQL statements provide a read-only clause for partitions and sub partitions. The values of the read-only clause can be READ ONLY or READ WRITE. READ WRITE is the default value. Any attempt to update data in a partition or sub partition that is set to read-only results in an error.
 
 ### Features
 
@@ -30,9 +34,10 @@ This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Create read only partitions
+## Task 1: Create Read Only Partitioned Table
 
-Let's Create read only partitions Table: 
+1. Let's Create read only partitioned Table: 
+
 ```
 <copy>
 rem simple interval partitioned table with one read only partition
@@ -45,7 +50,7 @@ from dual connect by level <= 100;
 </copy>
 ```
     
-As you can see, we did specify read-only for partition P1 but nowhere else, neither on table nor partition level. Let's see what we ended up with:
+2. As you can see, we did specify read-only for partition P1 but nowhere else, neither on table nor partition level. Let's see what we ended up with:
 
 ```
 <copy>
@@ -67,7 +72,7 @@ where table_name='ROPT';
 
 ![Image alt text](images/ropt-table-select-2.png "Read only Partition")
 
-As expected, we only have one partition set to read-only in this example. That means that: The table-level default is (and will stay) read-write. Only partition p1 is defined as read-only where it was explicitly defined. You can change the read-only/read-write attribute for existing partitions.
+3. As expected, we only have one partition set to read-only in this example. That means that: The table-level default is (and will stay) read-write. Only partition p1 is defined as read-only where it was explicitly defined. You can change the read-only/read-write attribute for existing partitions.
 
 ```
 <copy>
@@ -87,7 +92,7 @@ where table_name='ROPT';
 ![Image alt text](images/ropt-table-select-3.png "Read only Partition")
 
 
-As partition level attribute, read-only can be used in conjunction with other partition maintenance operations.
+4. As partition level attribute, read-only can be used in conjunction with other partition maintenance operations.
 
 ```
 <copy>
@@ -97,7 +102,7 @@ alter table ropt split partition for (5) into
 </copy>
 ```
 
-Read-only is considered a guaranteed state when a PMOP (partition maintenance operation) is started. It would also be ambiguous when to change the state if a change from read-write to read-only.  
+5. Read-only is considered a guaranteed state when a PMOP (partition maintenance operation) is started. It would also be ambiguous when to change the state if a change from read-write to read-only.  
 
 ```
 <copy>
@@ -107,7 +112,7 @@ alter table ropt split partition for (5) into
 </copy>
 ```
 
-You can also set a whole table to read-only. This will change the state for all existing partitions and the default of the table. Note that this is in line with other attributes.
+6. You can also set a whole table to read-only. This will change the state for all existing partitions and the default of the table. Note that this is in line with other attributes.
 
 ```
 <copy>
@@ -135,7 +140,7 @@ where table_name='ROPT' and partition_name='PB';
 </copy>
 ```
 
-Let's move and compress this partition:
+7. Let's move and compress this partition:
 
 ```
 <copy>
@@ -144,7 +149,7 @@ alter table ropt move partition pb compress for oltp;
 </copy>
 ```
 
-The partition move on the read-only partition succeeded without raising any error. Rechecking the partition attributes, you now will see that the partition is compressed.
+8. The partition move on the read-only partition succeeded without raising any error. Rechecking the partition attributes, you now will see that the partition is compressed.
 
 ```
 <copy>
@@ -155,7 +160,7 @@ where table_name='ROPT' and partition_name='PB';
 </copy>
 ```
 
-Another operation that works on a table with read-only partitions is adding a column. Such an operation works irrespective of whether the new column is nullable or not and whether the column has a default value.
+9. Another operation that works on a table with read-only partitions is adding a column. Such an operation works irrespective of whether the new column is nullable or not and whether the column has a default value.
 
 ```
 <copy>
@@ -164,7 +169,7 @@ alter table ropt add (newcol number default 99);
 </copy>
 ```
  
-Any form of DML on a read only partition:
+10. Any form of DML on a read only partition:
 
 ```
 <copy>
@@ -173,7 +178,7 @@ update ropt set col2=col2 where col1=88;
 </copy>
 ```
 
-Dropping or truncating a read-only partition - since this is semantically equivalent to a DELETE FROM  table WHERE  partitioning criteria.
+11. Dropping or truncating a read-only partition - since this is semantically equivalent to a DELETE FROM  table WHERE  partitioning criteria.
 
 ```
 <copy>
@@ -187,20 +192,16 @@ Dropping a column (or setting a column to unused):
 <copy>
 rem drop column is not allowed
 alter table ropt drop column col2;
-Last but not least, and this is no different to existing read only tables, you can drop a table with one, multiple or all partitions in a read only state:
 </copy>
 ```
+
+Last but not least, and this is no different to existing read only tables, you can drop a table with one, multiple or all partitions in a read only state:
 
 ![Image alt text](images/ropt-alter.png "Read only Partition Alter table")
-
-```
-<copy>
-rem drop everything succeeds
-drop table ropt purge;
-</copy>
-```
  
-## Task 2: Another example of readonly partitioned table
+## Task 2: Another Example of Read Only Partitioned Table
+
+1. Create another read only partitioned table RDPT2
 
 ```
 <copy>
@@ -217,7 +218,7 @@ partition q4_2016 values less than (to_date('2017-01-01','yyyy-mm-dd'))read writ
 </copy>
 ```
 
-Data in a read-only partition or subpartition cannot be modified.
+2. Data in a read-only partition or sub partition cannot be modified.
 
 ```
 <copy>
@@ -226,7 +227,7 @@ insert into RDPT2 values(1,to_date('2016-01-20','yyyy-mm-dd'),100);
 ```
 ![Image alt text](images/ropt-data-mod.png "RDPT2 Read only partition data modify")
 
-
+3. Insert data into RDPT2 table.
 
 ```
 <copy>
@@ -234,6 +235,8 @@ insert into RDPT2 values(1,to_date('2016-10-20','yyyy-mm-dd'),100);
 insert into RDPT2 values(1,to_date('2016-12-20','yyyy-mm-dd'),100);
 </copy>
 ```
+
+4. View data in RDPT2 table.
 
 ```
 <copy>
@@ -248,6 +251,7 @@ select * from RDPT2;
 ```
 <copy>
 rem drop everything succeeds
+drop table ropt purge;
 drop table RDPT2 purge;
 </copy>
 ```

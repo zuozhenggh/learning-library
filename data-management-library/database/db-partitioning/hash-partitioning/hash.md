@@ -1,4 +1,4 @@
-# Hash partitioning 
+# Hash Partitioning 
 
 ## Introduction
 
@@ -7,6 +7,10 @@ Hash partitioning maps data to partitions based on Oracle's hashing algorithm to
 ![Image alt text](images/hash-partition-introduction.png "Hash Partition") 
 
 Estimated Lab Time: 20 minutes
+
+### About Hash Partitioning
+
+Hash partitioning is the ideal method for distributing data evenly across devices. Hash partitioning is also an easy-to-use alternative to range partitioning, predominantly when the data partitioned is not historical or has no obvious partitioning key.
 
 ### Features
 
@@ -42,9 +46,9 @@ This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
  
-## Task 1: Create interval hash partitions
+## Task 1: Create Interval Hash Partitioned Table
 
-Let's Create interval hash partitions table with customer id as a hash value, and data is partitioned before 2016 and after 2016.
+1. Let's Create interval hash partitioned table with customer id as a hash value, and data is partitioned before 2016 and after 2016.
  
 ```
 <copy>
@@ -64,7 +68,8 @@ CREATE TABLE sales_interval_hash
  );
 </copy>
 ```
-Display the partitions/sub partitions in the table with this SQL query. System generated names have been assigned to the partitions and sub partitions. Note that there are 32 sub partitions (4 x 8 = 32).
+
+2. Display the partitions/sub partitions in the table with this SQL query. System generated names have been assigned to the partitions and sub partitions. Note that there are 32 sub partitions (4 x 8 = 32).
  
 ```
 <copy>
@@ -74,7 +79,9 @@ SELECT SUBSTR(TABLE_NAME,1,32), SUBSTR(PARTITION_NAME,1,32), SUBSTR(SUBPARTITION
 
 ![Image alt text](images/display-the-partitions.png "Display the partitions/subpartitions")
 
-## Task 2: Insert data and view partitioned data
+## Task 2: Insert Data and View Partitioned Data
+
+1. Insert data into sales\_interval\_hash table
 
 ```
 <copy>
@@ -87,7 +94,7 @@ INSERT INTO sales_interval_hash VALUES (2105, 302, '15-OCT-16', 'A', 11, 75, 435
 </copy>
 ``` 
 
-Display the data in the table
+2. Display the data in the table
 
 ```
 <copy>
@@ -97,7 +104,7 @@ select * from sales_interval_hash;
 
 ![Image alt text](images/sales-interval-hash.png "Display the sales_interval_hash Data")
 
-Display the partitions and sub partitions in the table with this SQL query. Please note that the table's structure changed with new data. Each unique time\_id for 2016 generates a new partition with four sub partitions.
+3. Display the partitions and sub partitions in the table with this SQL query. Please note that the table's structure changed with new data. Each unique time\_id for 2016 generates a new partition with four sub partitions.
 
 ```
 <copy>
@@ -105,17 +112,19 @@ SELECT SUBSTR(TABLE_NAME,1,32), SUBSTR(PARTITION_NAME,1,32), SUBSTR(SUBPARTITION
 </copy>
 ```
 
-The highlighted rows and columns are system generated Partitions and Sub Partitions
+4. The highlighted rows and columns are system generated Partitions and Sub Partitions
 
 ![Image alt text](images/sales-interval-hash-data.png "Display the sales_interval_hash Data")
 
-insert a new record for year 2012 
+5. Insert a new record for year 2012 
 
 ```
 <copy> 
 INSERT INTO sales_interval_hash VALUES (2199, 302, '10-OCT-12', 'A', 11, 75, 4350.00);
 </copy>
 ``` 
+
+6. View data in sales\_interval\_hash table by partition before 2016 
 
 ```
 <copy> 
@@ -124,6 +133,8 @@ select * from SALES_INTERVAL_HASH PARTITION(BEFORE_2016);
 ```
 
 ![Image alt text](images/partition-before-2016.png "Display partition before 2016 sales_interval_hash Data")
+
+7. View data in sales\_interval\_hash table by system generated partition  
 
 ```
 <copy> 

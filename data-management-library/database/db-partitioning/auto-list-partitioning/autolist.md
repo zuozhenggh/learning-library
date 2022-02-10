@@ -1,12 +1,16 @@
-# Auto-list partitioning 
+# Auto-list Partitioning 
 
 ## Introduction
  
-The automatic list partitioning method enables list partition creation on demand. An auto-list partitioned table is similar to a regular list partitioned table, except that this partitioned table is easier to manage. You can create an auto-list partitioned table using only the partitioning key values that are known. As data is loaded into the table, the database automatically creates a new partition if the loaded partitioning key value does not correspond to any of the existing partitions. Auto list partitions are created on-demand automatically, and the auto-list partitioning method is conceptually similar to the current interval partitioning method. The CREATE and ALTER TABLE SQL statements are updated with an additional clause to specify AUTOMATIC or MANUAL list partitioning. An automatic list-partitioned table must have at least one partition when created. 
+The automatic list partitioning method enables list partition creation on demand. An auto-list partitioned table is similar to a regular list partitioned table, except that this partitioned table is easier to manage. You can create an auto-list partitioned table using only the partitioning key values that are known. As data is loaded into the table, the database automatically creates a new partition if the loaded partitioning key value does not correspond to any of the existing partitions. 
  
  ![Image alt text](images/auto-list-partitioning-intro.png "Auto List Partition")
 
  Estimated Lab Time: 20 minutes
+
+### About Auto-list Partitioning
+
+ Auto list partitions are created on-demand automatically, and the auto-list partitioning method is conceptually similar to the current interval partitioning method. The CREATE and ALTER TABLE SQL statements are updated with an additional clause to specify AUTOMATIC or MANUAL list partitioning. An automatic list-partitioned table must have at least one partition when created. 
 
 ### Features
 
@@ -30,9 +34,9 @@ This lab assumes you have completed the following lab:
 
 - Provision an Oracle Autonomous Database and ADW Instance has been created
 
-## Task 1: Create a simple auto-list partitioned table
+## Task 1: Create Auto-list Partitioned Table
 
-Create an automatic list partitioned table with one required partition:
+1. Create an automatic list partitioned table with one required partition:
  
 
 ```
@@ -50,6 +54,8 @@ CREATE TABLE sales_auto_list
 );
  </copy>
 ```
+
+2. View data in SALES\_AUTO\_LIST table
  
 ```
 <copy>
@@ -67,7 +73,7 @@ SELECT TABLE_NAME, PARTITION_NAME, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TAB
 
  ![Image alt text](images/sales-auto-list-select-2.png "Auto List Partition")
 
-Insert data with new SALES_STATE values
+3. Insert data into SALES\_AUTO\_LIST table
 
 ```
 <copy>
@@ -77,6 +83,8 @@ INSERT INTO SALES_AUTO_LIST VALUES(032, 'Luis Vargas', 'MICHIGAN', 42000, TO_DAT
 </copy>
 ```
 
+4. View data in SALES\_AUTO\_LIST table
+
 ```
 <copy>
 select * from SALES_AUTO_LIST;
@@ -84,6 +92,8 @@ select * from SALES_AUTO_LIST;
 ```
 
 ![Image alt text](images/sales-auto-list-select-data.png "Auto List Partition")
+
+5. View data in USER\_PART\_TABLES  
 
  ```
 <copy>
@@ -93,12 +103,16 @@ SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_T
 
 ![Image alt text](images/sales-auto-list-select-data-2.png "Auto List Partition")
 
+6. Insert data into SALES\_AUTO\_LIST table 
+
 ```
 <copy>
 INSERT INTO SALES_AUTO_LIST VALUES(015, 'Simone Blair', 'CALIFORNIA', 45000, TO_DATE ('11-JAN-2019','DD-MON-YYYY'));
 INSERT INTO SALES_AUTO_LIST VALUES(015, 'Simone Blair', 'OREGON', 38000, TO_DATE ('18-JAN-2019','DD-MON-YYYY'));
 </copy>
 ```
+
+7. View data in USER\_PART\_TABLES   
 
 ```
 <copy>
@@ -108,6 +122,8 @@ SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_T
 
 ![Image alt text](images/sales-auto-list-select-data-3.png "Auto List Partition")
 
+8. View data in SALES\_AUTO\_LIST table
+
 ```
 <copy>
 SELECT TABLE_NAME, PARTITION_NAME, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_AUTO_LIST';
@@ -115,6 +131,8 @@ SELECT TABLE_NAME, PARTITION_NAME, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TAB
 ```
 
 ![Image alt text](images/sales-auto-list-select-data-4.png "Auto List Partition")
+
+9. View data in SALES\_AUTO\_LIST table by partition name
 
 ```
 <copy>

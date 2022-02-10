@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "8 Partitioning techniques in Oracle Database",
+    "workshoptitle": "8 Partitioning Techniques in Oracle Database",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -11,46 +11,46 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Provision an Autonomous Database Instance",
-            "description": "Provision an Autonomous Database Instance",
+            "title": "Lab 1: Provision an Oracle Autonomous Database",
+            "description": "Provision an Oracle Autonomous Database",
             "type": "livelabs",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },   
         {
-            "title": "Lab 1: Range partitioning",
+            "title": "Lab 2: Range Partitioning",
             "filename": "../../range-partitioning/range.md"
         },
         {
-            "title": "Lab 2: Interval partitioning",
+            "title": "Lab 3: Interval Partitioning",
             "filename": "../../interval-partitioning/interval.md"
         },
         {
-            "title": "Lab 3: List partitioning",
+            "title": "Lab 4: List Partitioning",
             "filename": "../../list-partitioning/list.md"
         },
         {
-            "title": "Lab 4: Hash partitioning",
+            "title": "Lab 5: Hash Partitioning",
             "filename": "../../hash-partitioning/hash.md"
         },
         {
-            "title": "Lab 5: Auto list partitioning",
+            "title": "Lab 6: Auto List Partitioning",
             "filename": "../../auto-list-partitioning/autolist.md"
         }, 
         {
-            "title": "Lab 6: Read only partitioning",
+            "title": "Lab 7: Read Only Partitioning",
             "filename": "../../readonly-partitioning/readonly.md"
         }, 
         {
-            "title": "Lab 7: Multi column list partitioning",
+            "title": "Lab 8: Multi Column List Partitioning",
             "filename": "../../multi-list-partitioning/multilist.md"
         }, 
         {
-            "title": "Lab 8: Convert non-partitioned table into partitioned iable",
+            "title": "Lab 9: Convert Non Partitioned Table into Partitioned Table",
             "filename": "../../convert-table-partitioning/convert.md"
         }, 
         {
