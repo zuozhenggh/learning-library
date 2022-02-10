@@ -16,9 +16,9 @@ The following three security elements need to be configured for you to use a dat
 
 > **Note**: In an Oracle-provided environment, you are not granted privileges to use the Data Discovery and Data Masking features with your database.
 
-Begin by registering your Autonomous Transaction Database (ATP) with Oracle Data Safe. After registering it, run the `load-data-safe-sample-data_admin.sql` SQL script to load sample data into your database. This script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Masking feature on your database. Keep in mind, however, that to use Data Masking with your database, it is not enough to just enable Data Masking on the database. You also require the Discovery and Masking privilege on your database in the Oracle Data Safe Console.
+Begin by registering your Autonomous Transaction Database (ATP) with Oracle Data Safe. After registering it, run the `load-data-safe-sample-data_admin.sql` SQL script to load sample data into your database. This script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Masking feature on your database. Keep in mind, however, that to use Data Masking with your database, it is not enough to just enable Data Masking on the database. You also require permissions in IAM.
 
-Next, access Oracle Data Safe in Oracle Cloud Infrastructure and view the list of registered target databases to which you have access. Access and review both the Security Center and the Oracle Data Safe Console. You can access all features through either interface.
+Next, access Oracle Data Safe in Oracle Cloud Infrastructure and view the list of registered target databases to which you have access. Access and review Security Center. You can access all features through this interface.
 
 Estimated Lab Time: 30 minutes
 
@@ -30,7 +30,6 @@ In this lab, you will:
 - Run a SQL script using Oracle Database Actions to load sample data into your database
 - Access Oracle Data Safe and view the list of registered target databases to which you have access
 - Access and review Security Center
-- Access and review the Oracle Data Safe Console
 
 ### Prerequisites
 
@@ -156,53 +155,9 @@ This lab assumes you have:
 
 2. Under **Data Safe** on the left, click **Security Center**.
 
-    - In Security Center, you can access the five main features of Oracle Data Safe, including Security Assessment, User Assessment, Data Discovery, Data Masking, and Activity Auditing.
-    - The Security Assessment and User Assessment features are now native in Oracle Cloud Infrastructure. The Data Discovery, Data Masking, and Activity Auditing features as well as the dashboard are available through the Oracle Data Safe Console.
-    - By default, the Security Assessment page is displayed.
+    - In Security Center, you can access all the Oracle Data Safe features, including Security Assessment, User Assessment, Data Discovery, Data Masking, Activity Auditing, and Alerts.
+    - By default, the Dashboard is displayed.
     - Make sure your compartment is still selected under **List Scope**.
-
-    ![Security Center](images/security-center.png "Security Center")
-
-
-## Task 5: Access and review the Oracle Data Safe Console
-
-1. Click **Activity Auditing**.
-
-    - A new tab is opened.
-    - Activity Auditing is part of the Oracle Data Safe Console.
-
-2. To view the dashboard, click the **Home** tab.
-
-    - At the top of the page, new features with links to documentation and product announcements are listed.
-
-3. Directly above the dashboard, select your target database in the **Filter** box so that the dashboard displays data for only your database.
-
-    - The dashboard lets you monitor several activities at once.
-    - The Security Assessment and User Assessment charts in your dashboard are automatically populated after you register a target database.
-
-    ![Initial dashboard](images/dashboard-initial.png "Initial dashboard")
-
-
-3. Review the five tabs on the left side.
-
-    - These tabs let you navigate to each feature in Oracle Data Safe.
-    - The Security Assessment and User Assessment features are now available in the Oracle Cloud Infrastructure Console. Therefore, if you click either tab, you are returned to Oracle Cloud Infrastructure.
-    - The Data Discovery, Data Masking, and Activity Auditing features are part of the Oracle Data Safe Console.
-
-    ![Side tabs in the Oracle Data Safe Console](images/side-tabs-data-safe-console.png "Side tabs in the Oracle Data Safe Console")
-
-4. Click each top tab and review the content on the page.
-
-    - The **Home** tab shows a dashboard.
-    - The **Targets** tab shows you a read-only list of registered target databases to which you have access.
-    - The **Library** tab lets you access repository resources, which are used for discovering and masking sensitive data. Resources include sensitive types, sensitive data models, masking formats, and masking policies.
-    - The **Reports** tab lets you access prebuilt and custom built reports for all Oracle Data Safe features.
-    - The **Alerts** tab shows you all open alerts for the past week, by default. If you need to view more alerts, you can remove the filters.
-    - The **Jobs** tab shows you all current, past, and scheduled jobs. Notice that you have two jobs started already - one for User Assessment and one for Security Assessment.
-
-    ![Top tabs in the Oracle Data Safe Console](images/top-tabs-data-safe-console.png "Top tabs in the Oracle Data Safe Console")
-
-5. Return to the **Home** tab.
 
 
 ## Learn More
@@ -214,4 +169,4 @@ This lab assumes you have:
 
 ## Acknowledgements
   * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, September 27 2021
+  * **Last Updated By/Date** - Jody Glover, February 10, 2022

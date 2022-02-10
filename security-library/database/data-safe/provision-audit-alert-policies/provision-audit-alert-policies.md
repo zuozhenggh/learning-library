@@ -5,9 +5,12 @@ inject-note: true
 # Provision Audit and Alert Policies
 
 ## Introduction
-With Oracle Data Safe, you can provision audit and alert policies on your target databases by using the Activity Auditing feature. An audit policy defines specific events to track in a target database. You can provision basic, administrator, user, and custom audit policies, as well as audit policies designed to help you meet compliance standards. An alert is a message that notifies you when a particular audit event happens on a target database. The alerts generated depend on which alert policies you enabled for your database in Activity Auditing. An audit trail is a database table that stores audit data. In Oracle Data Safe, audit data collection copies audit data from the database's audit trail into the Oracle Data Safe audit table.
 
-Start by provisioning the recommended audit and alert policies on your Autonomous Transaction Processing (ATP) database and then review the details for the audit trail. Finish by enabling a custom audit policy on your Autonomous Database.
+When you register a target database, Oracle Data Safe automatically creates an audit profile, audit policy, and audit trail(s) for your target database. In Oracle Data Safe, you can start collecting audit data with a single click and provision audit and alert policies on your target databases. You can provision basic, administrator, user, and custom audit policies, as well as audit policies designed to help you meet compliance standards.
+
+An alert is a message that notifies you when a particular audit event happens on a target database. The alerts generated depend on which alert policies you enabled for your target database in Oracle Data Safe. An audit trail is a database table that stores audit data. Oracle Data Safe copies audit data from the database's audit trail into the Oracle Data Safe audit table.
+
+Start by reviewing the audit profile, audit policy, and audit trail that were automatically created when you registered your Autonomous Transaction Processing (ATP) database. Enable audit data collection and provision a few audit and alert policies on your target database.
 
 Estimated Lab Time: 20 minutes
 
@@ -15,193 +18,190 @@ Estimated Lab Time: 20 minutes
 
 In this lab, you will:
 
-- Provision audit and alert policies on your Autonomous Database by using the Activity Auditing wizard
-- View details for an audit trail
-- Enable a custom audit policy on your Autonomous Database
+- Review the global settings for Oracle Data Safe and the audit profile for your target database
+- Review the audit policy for your target database
+- Review the audit trail for your target database
+- View the quantity of audit records available on your target database for the discovered audit trail
+- Start audit data collection
+- Provision audit policies on your target database
+- Provision an alert policy on your target database
 
 ### Prerequisites
 
 This lab assumes you have:
 
 - Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
-- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that the Activity Auditing feature is enabled on your database and that you have privileges in Oracle Data Safe to use the Activity Auditing feature with your database.
+- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that the Activity Auditing feature is enabled on your target database and that you have privileges in Oracle Cloud Infrastructure Identity and Access Management (IAM) to use the Activity Auditing and Alerts features with your target database.
 - Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it (see [Register an Autonomous Database](?lab=register-autonomous-database))
-- Accessed either Security Center or the Oracle Data Safe Console
+- Accessed Security Center
 
 
 ### Assumptions
 
 - Your data values are most likely different than those shown in the screenshots.
 
+## Task 1: Review the global settings for Oracle Data Safe and the audit profile for your target database
 
-## Task 1: Provision audit and alert policies on your Autonomous Database by using the Activity Auditing wizard
+1. In Security Center, click **Activity Auditing**.
 
-1. If you are in the Oracle Data Safe Console, click the **Home** tab, and then click the **Activity Auditing** tab to access the Activity Auditing wizard.
+2. On the left, click **Settings**, and review the global settings.
 
-2. If you are in Security Center, click **Activity Auditing**.
+  Each regional Oracle Data Safe service has global settings for online retention period, archive retention period, and paid usage. Global settings are applied to all target databases unless their audit profiles override them. By default, the online retention period is set to the maximum value 12, the archive retention period is set to the minimum value 0, and paid usage is enabled for all target databases.
 
-3. On the **Select Targets for Auditing** page, select the check box for your target database, and then click **Continue**.
+3. Under **Related Resources**, click **Audit Profiles**.
 
-    ![Select Targets for Auditing page](images/select-targets-for-auditing-page.png "Select Targets for Auditing page")
+4. From the **Compartment** drop-down list under **List Scope**, make sure that your compartment is selected.
 
-4. On the **Retrieve Audit Policies** page, select the check box for your target database, and then click **Retrieve** to retrieve the currently deployed audit policies from your database.
+5. On the right, click the audit profile for your target database.
 
-    ![Retrieve Audit Policies page](images/retrieve-audit-policies-page.png "Retrieve Audit Policies page")
+6. Review the audit profile. Review the default settings for paid usage, online retention period, and offline retention period. All of these settings are inherited from the global settings for Oracle Data Safe, but can be modified here as needed.
 
-5. Wait until a green check mark is displayed in the **Retrieval Status** column, and then click **Continue**. The check mark means that all of the audit policies are successfully retrieved.
 
-    ![Green check mark under Retrieval Status](images/retrieval-status-green-checkmark.png "Green check mark under Retrieval Status")
+## Task 2: Review the audit policy for your target database
 
-6. On the **Review and Provision Audit and Alert Policies** page, review the types of audit policies already enabled on your target database.
+1. On the left, click **Activity Auditing**.
 
-    - The check mark under **Additional Policies** means that your target database has one or more predefined audit policies enabled on it.
-    - The check mark under **Compliance Standards** means that your target database has one or more compliance policies enabled on it; for example, the **Center for Internet Security (CIS) Configuration** audit policy.
-    - Currently, there are no basic, admin activity, or user activity audit policies provisioned on your target database, nor are there any alert policies.
+2. Under **Related Resources**, click **Audit Policies**.
 
-    ![Review and Provision Audit and Alert Policies page with pre-enabled audit policies](images/review-and-provision-audit-and-alert-policies-page.png "Review and Provision Audit and Alert Policies page with pre-enabled audit policies")
+3. From the **Compartment** drop-down list, select your compartment.
 
-7. Click your target database name to provision more policies.
+4. From the **Target Databases** drop-down list, select your target database.
 
-    ![target name in table](images/click-target-name.png "target name in table")
 
+5. On the right, click the name of the audit policy for your target database to view its details.
 
-8. On the **Audit Policies** tab in the **Configure Policy** dialog box, notice that the **Basic Auditing** and **Admin Activity Auditing** policies are selected to be provisioned. Oracle recommends that they be provisioned, so you can leave them selected. They are as follows:
+  When you register a target database, Oracle Data Safe automatically creates one audit policy resource for your target database.
 
-    - Critical Database Activity
-    - Login Events
-    - Database Schema Changes (DDL)
-    - Admin Activity
+6. Review the audit policies that are retrieved from your target database and their corresponding provisioning status.
 
-    ![Audit Policies tab in the Configure Policy dialog box](images/configure-policy-dialog-box-top-half.png "Audit Policies tab in the Configure Policy dialog box")
+  All the available unified audit policies for your target database are listed. You can choose to provision any number of those audit policies on your target database and set filters on users and roles.
 
-9. Expand **Custom Policies** to view the list of custom policies on your target database.
 
-    - If a custom policy is selected, it means that it is already created and enabled on your target database. There are two such policies on your database: `EMPSEARCH_SELECT_USAGE_BY_PETE` and `EMP_RECORD_CHANGES`.
+## Task 3: Review the audit trail for your target database
 
-    - If a custom policy is not selected, it means that it is created on your target database, but not yet enabled. There is one such policy on your database: `APP_USER_NOT_APP_SERVER`.
+1. In the breadcrumb at the top of the page, click **Activity Auditing**.
 
-    ![Custom policies](images/custom-audit-policies.png "Custom policies")
+2. On the left under **Related Resources**, click **Audit Trails**.
 
-10. Expand **Oracle Pre-defined Policies** to view the list of Oracle predefined audit policies on your target database. By default, the following policies are provisioned on an Autonomous Transaction Processing database:
+3. From the **Compartment** drop-down list, select your compartment.
 
-    - `ORA_ACCOUNT_MGMT`
-    - `ORA_DATABASE_PARAMETER`
-    - `ORA_SECURECONFIG`
-    - `ORA_DV_AUDPOL`
-    - `ORA_DV_AUDPOL2`
-    - `ORA_RAS_POLICY_MGMT`
-    - `ORA_RAS_SESSION_MGMT`
-    - `ORA_LOGON_FAILURES`
-    - `SYS_USER_ACTIONS`
-    - `COMMON_USER`
-    - `ADB_ADMIN_AUDIT`
-    - `ADB_MANDATORY_AUDIT`
+4. From the **Target Databases** drop-down list, select your target database.
 
-    ![Oracle Pre-defined policies](images/oracle-predefined-policies.png "Oracle Pre-defined policies")
+5. On the right, click the name of the audit trail for your target database.
 
-11. Next to **Audit Compliance Standards**, notice that the **Center for Internet Security (CIS) Configuration** policy is created and enabled by default.
+  When you registered your target database, Oracle Data Safe automatically discovered the audit trails on it and created one audit trail per target database audit trail.
 
-    ![Audit compliance standards](images/audit-compliance-standards.png "Audit compliance standards")
 
-12. Click the **Alert Policies** tab and review the alert policies selected to be provisioned. Oracle recommends that you provision all of these alert policies. They are as follows:
 
-    - Failed Logins by Admin User
-    - Profile Changes
-    - Database Parameter Changes
-    - Audit Policy Changes
-    - User Creation/Modification
-    - User Entitlement Changes
-    - Database Schema Changes
 
-    ![Selected alert polices](images/alert-policies.png "Selected alert polices")
+## Task 4: View the quantity of audit records available on your target database for the discovered audit trails
 
-13. Click **Provision** to start provisioning the audit and alert policies on your target database.
+1. In the breadcrumb at the top of the page, click **Activity Auditing**.
 
-14. On the **Review and Provision Audit and Alert Policies** page, wait for check marks to appear under all audit policy types, except for **All User Activity**, and then click **Continue**.
+2. On the left under **Related Resources**, click **Audit Profiles**.
 
-    ![Audit policies enabled](images/audit-policies-enabled.png "Audit policies enabled")
+3. From the **Compartment** drop-down list, select your compartment.
 
-15. On the **Start Audit Collection** page, observe the following defaults:
+4. From the **Target Databases** drop-down list, select your target database.
 
-    - The audit trail location is automatically set to `UNIFIED_AUDIT_TRAIL`, which is the default audit trail for Autonomous Databases.
-    - Audit collection is not yet started.
-    - The auto purge feature is not enabled by default. If you are signed in to Oracle Data Safe during a Free Trial, the auto purge option is not displayed.
-    - You need to configure an audit collection start date.
+5. On the right, click the name of the audit profile for your target database to view its details.
 
-    ![Start Audit Collection page](images/start-audit-collection-page.png "Start Audit Collection page")
+6. Scroll down to the **Compute Audit Volume** section.
 
-16. In the **Collect Audit Data From** column, click the calendar widget, and then configure a start date of 12 months ago, and then click **Done**.
+7. Click **Available on Target**.
 
-    ![Collection start date](images/collection-start-date.png "Collection start date")
+  The **Compute Available Volume** dialog box is displayed.
 
-17. Wait for the **To Be Collected**, **Collected**, and **Total** columns to populate. Don't worry if your numbers are different than those shown in the screenshot below.
+8. In the **Select Start Date** box, enter the current date. You can use the calendar widget to help you.
 
-    - The **To Be Collected** column shows you the number of records to be retrieved for the selected audit trail since the specified start date.
-    - The **Collected** column shows the number of audit records already collected for the current month for the target database (includes audit data collected from all the audit trails for the target database). This value helps you to determine whether you are going to exceed your monthly quota of one million records.
-    - The **Total** column totals the **To Be Collected** and **Collected** values for a target database. This value tells you the overall number of audit records you are going to collect for a target database for the current month.
+9. In the **Trail Locations** box, review the audit trails that are listed. An Autonomous Database always has the  `UNIFIED_AUDIT_TRAIL`.
 
-    ![To Be Collected, Collected, and Total columns](images/collection-values.png "To Be Collected, Collected, and Total columns")
+10. Click **Compute**. Oracle Data Safe calculates the available audit volume.
 
-18. Click **Start** to start collecting audit data.
+11. In the **Available in Target Database** column, view the number of audit records for the `UNIFIED_AUDIT_TRAIL`.
 
-    ![Start button](images/click-start.png "Start button")
+  Because you just provisioned the target database, there are a small number of audit records in the `UNIFIED_AUDIT_TRAIL`. But for an older target database where there are many more audit records, Oracle Data Safe splits up the numbers by month. These values help you decide on a start date for the Oracle Data Safe audit trail.
 
 
-19. In the **Start Audit Collection** dialog box, click **Start** to confirm that you want to start the `UNIFIED_AUDIT_TRAIL`.
+## Task 5: Start audit data collection
 
-    ![Start Audit Collection dialog box](images/start-audit-collection-dialog-box.png "Start Audit Collection dialog box")
+1. In the breadcrumb at the top of the page, click **Activity Auditing**.
 
-20. Wait for the message at the top of the page to state that `UNIFIED_AUDIT_TRAIL` is successfully created.
+2. On the left under **Related Resources**, click **Audit Trails**.
 
-21. Click **Done**.
+3. From the **Compartment** drop-down list, select your compartment.
 
-    ![Done button at the bottom of page](images/click-done.png "Done button at the bottom of page")
+4. From the **Target Databases** drop-down list, select your target database.
 
-22. Notice that you are directed to the **Audit Trails** page. From this page, you can manage all of the audit trails for your target databases. 
+5. On the right, click the name of the audit trail for your target database.
 
-    ![Audit Trails page](images/audit-trails-page.png "Audit Trails page")
+6. Click **Start**. A **Start Audit Trail: UNIFIED_AUDIT_TRAIL** dialog box is displayed.
 
-23. Observe that the **Collection State** column value changes from  `RUNNING` to `COLLECTING`, and then to `IDLE`. Collection takes approximately 2 minutes.
+7. Leave the default start date as is, and click **Start**.
 
+8. Wait for the status of the audit trail to go from **UPDATING** TO **ACTIVE**.  
 
+9. Notice that the **Collection State** changes to **Collecting/Idle**.
 
-## Task 2: View details for an audit trail
 
-1. In the **Collection State** column on the **Audit Trails** page, click **COLLECTING** or **IDLE** (if the audit data is collected).
+## Task 6: Provision audit policies
 
-    ![Collection State column](images/idle.png "Collection State column")
+1. On the left, click **Activity Auditing**.
 
-2. In the **Trail Log** dialog box, review the logs, and then click **X** to close the dialog box.
+2. Under **Related Resources**, click **Audit Policies**.
 
-    ![Trail Log dialog box](images/trail-log-dialog-box.png "Trail Log dialog box")
+3. From the **Compartment** drop-down list, select your compartment.
 
+4. From the **Target Databases** drop-down list, select your target database.
 
+5. On the right, click the name of the audit policy for your target database to view its details.
 
-## Task 3: Enable a custom audit policy on your Autonomous Database
+6. Click **Update and Provision**. The **Provision Audit Policies** page is displayed.
 
-Enable the custom audit policy named `APP_USER_NOT_APP_SERVER` on your Autonomous Database.
+7. Under **Basic Auditing**, select **Database Schema Changes** and **Critical Database Activity**.
 
-1. Click the **Audit Policies** tab.
+8. Under **Admin Activity Auditing**, select **Admin User Activity**.
 
-2. On the **Audit and Alert Polices** page, click the name of your target database.
+9. Under **Custom Policies**, select **EMPSEARCH_SELECT_USAGE_BY_PETE**.
 
-3. In the **Configure Policy** dialog box, expand **Custom Policies**, select the `APP_USER_NOT_APP_SERVER` unified auditing policy to enable it, and then click **Provision**.
+10. Click **Update and Provision** to provision the selected policies on your target database.
 
-    ![Select the APP_USER_NOT_APP_SERVER check box](images/app-user-not-app-server.png "Select the APP_USER_NOT_APP_SERVER check box")
+11. Wait for the provisioning to finish, and then view the updated policy information on the page.
 
-4. Click the **Home** tab and review the dashboard. Notice that the **All Activity**, **Admin Activity**, **Open Alerts**, **Feature Usage**, and **Audit Trails** charts now have data.
 
-    ![Dashboard after provisioning audit and alert policies](images/dashboard-post-audit-alert-policy-provisioning.png "Dashboard after provisioning audit and alert policies")
+## Task 7: Provision an alert policy on your target database
+
+1. In the breadcrumb, click **Security Center**.
+
+2. Click **Alerts**.
+
+3. Under **Related Resources**, click **Alert Policies**. A list of available alert policies is displayed.
+
+4. Click the **User Creation/Modification** alert policy to view its details. The **User Creation/Modification** page is displayed.
+
+5. Click **Apply Policy**. The **Apply And Enable Alert Policy To Target Databases** panel is displayed.
+
+6. Keep **Selected Targets Only** selected.
+
+7. In the **Target Databases** field, click and select the name of your target database.
+
+8. Click **Apply Policy**.
+
+9. Keep the panel open and view the progress information.
+
+10. After the alert policy is successfully provisioned, click **Close** to close the panel.
+
+11. On the **User Creation/Modification** page, click **View List** to view the target databases associated with the alert policy. Notice that your target database is listed.
+
 
 
 
 ## Learn More
 
-* [Activity Auditing Overview](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/activity-auditing-overview.html)
-* [Audit Policies](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html)
-* [Retrieve and Provision Audit Policies](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/retrieve-and-provision-audit-policies.html)
+* [Activity Auditing Overview](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-741E8CFE-041E-46C4-9C04-D849573A4DB7)
+* [Alerts Overview](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-37F8AC38-44D4-42D1-AE93-9775DCF21511)
 
 ## Acknowledgements
 
 * **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, September 27 2021
+* **Last Updated By/Date** - Jody Glover, February 10, 2022
