@@ -19,15 +19,27 @@
       "type": "external"
     },
     {
-      "title": "Lab 3: WIP",
-      "description": "TBD",
-      "filename": "../../",
+      "title": "Lab 4: Main Dashboard",
+      "description": "Main Dashboard",
+      "filename": "../../main-dashboard/main-dashboard.md",
       "type": "external"
     },
     {
-      "title": "Lab 4: WIP",
-      "description": "TBD",
-      "filename": "../../",
+      "title": "Lab 5: Channel Sales",
+      "description": "Channel Sales",
+      "filename": "../../channel-sales/channel-sales.md",
+      "type": "external"
+    },
+    {
+      "title": "Lab 6: On Time Delivery",
+      "description": "On Time Delivery",
+      "filename": "../../on-time-delivery/on-time-delivery.md",
+      "type": "external"
+    },
+    {
+      "title": "Lab 7: HR Analysis",
+      "description": "HR Analysis",
+      "filename": "../../hr-analysis/hr-analysis.md",
       "type": "external"
     },
     {
