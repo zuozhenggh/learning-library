@@ -6,12 +6,13 @@ This workshop walks you through how to configure a WebLogic-on-Kubernetes for mo
 
 One way to deploy an APM Java agent in a Docker container-enabled Kubernetes cluster, is to first, provision the APM Java agent in the location where docker image was originally created, second, build a new Docker image with the APM Java agent, and third, push the image to the registry. You can then configure Kubernetes to use the new Docker image to enable the APM agent in the pods.
 
-However, this method assumes you have administrator access to the Docker working directory to recreate the image, which may not always be the case. In this workshop, we will use an alternative approach, to provision the APM Java agent in a file system mounted in the Oracle Cloud, and deploy it to the Kubernetes cluster, without updating the Docker image.
+However, the above method assumes you have administrator access to the Docker working directory to recreate the image, which may not always be the case. In this workshop, we will use an alternative approach, to provision the APM Java agent in a file system mounted in the Oracle Cloud, and deploy it to the Kubernetes cluster, without updating the Docker image.
 
 ***PREREQUISITE:*** This workshop uses a simple WebLogic web application that runs on a Kubernetes cluster, as a target application to trace the user transactions. Prior to starting this workshop, be sure to complete the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop Labs 1-4, to set up the application.
 
 > ***NOTE***: The same approach demonstrated for WLS on Kubernetes can be used to configure other types of java application servers, such as Spring Boot, deployed on Kubernetes.
 
+![](images/apm_wls_setup.png " ")
 
 Estimated Workshop Time: 90 minutes
 

@@ -1,4 +1,4 @@
-# Token Authentication, Credentials and Object Storage Configuration
+# Configure Token Authentication, Credentials and Object Storage
 
 ## Introduction
 In this lab, you will be:
@@ -9,16 +9,16 @@ In this lab, you will be:
 
 Estimate Lab Time: 15 minutes
 
-### Workshop Objectives
+### Objectives
 
 In this lab, you will:
 * Learn how to create an authentication Token, Create an Object Storage Bucket and run the require credential scripts in the Target Autonomous Database.
 
 ### Prerequisites
-This workshop section requires having completed all previous sections.
+* This workshop section requires having completed all previous sections.
 
 
-## **Task 1: Create Authentication Token**
+## Task 1: Create Authentication Token
 1. Go to your Oracle Cloud Infrastructure profile by selecting the icon in the top right and clicking user.
     ![Screenshot of Oracle Cloud Infrastructure Dashboard Profile](./images/dashboard-profile.png)
 
@@ -28,7 +28,7 @@ This workshop section requires having completed all previous sections.
 3. Set a description and click generate token and make sure to write down the token displayed as you cannot get access to it again. If you lose the token you will need to generate a new one.
     ![Screenshot of Generate Token window](./images/token-desc.png)
 
-## **Task 2: Create an Object Storage Bucket**
+## Task 2: Create an Object Storage Bucket
 
 1. You will need an object storage bucket for your data during the migration as an intermediary point before being transferred to your target autonomous database. In your Oracle Cloud Infrastructure Dashboard: select the navigation menu, Storage, Buckets.
     ![Screenshot of Oracle Cloud Infrastructure Storage Menu with Bucket option](./images/bucket-path.png)
@@ -42,7 +42,7 @@ This workshop section requires having completed all previous sections.
 4. On the Details page the two most important pieces of information for us are the bucket name and namespace which we will need later.
     ![Screenshot of Bucket Information](./images/bucket-page.png)
 
-## **Task 3: Log Into SQL on the Autonomous Database**
+## Task 3: Log Into SQL on the Autonomous Database
 
 1. In your Oracle Cloud Infrastructure Dashboard: select the navigation menu, Oracle Database, Autonomous Database.
     ![Screenshot of Oracle Cloud Infrastructure Oracle Database Menu with Autonomous Database option](./images/menu-auton.png)
@@ -59,7 +59,7 @@ This workshop section requires having completed all previous sections.
     ![Screenshot of Oracle Database Actions window with highlighted SQL option](./images/select-sql.png)
 
 
-## **Task 4: Run Credential Script**
+## Task 4: Run Credential Script
 1. In the script below replace `<oci_user>`, `<oci_tenancy>`, `<api_private_key>`, and `<fingerprint>` with their respective information and paste it into SQL.
 
     `<oci_user>`, `<oci_tenancy>`, and `<fingerprint>` are in the Configuration File Preview under API Keys in your Oracle Cloud Infrastructure user profile from the previous labs.
@@ -96,7 +96,7 @@ This workshop section requires having completed all previous sections.
 2. Select 'Run Script'.
     ![Screenshot of Database Actions with SQL option and Run Script option highlighted](./images/cred-script.png)
 
-## **Task 5: Unlock GG User**
+## Task 5: Unlock GG User
 
 1. Delete the existing script by clicking on the __Trash Can__ icon.
     ![Screenshot of  Database Actions with SQL option and Delete Existing Script option highlighted](./images/delete-script.png)
@@ -112,6 +112,9 @@ This workshop section requires having completed all previous sections.
 
 3. Run the script by clicking on the __Run Script__ icon.
     ![ Database Actions with SQL option and Run Script option highlighted](./images/run-unlock-script.png)
+
+
+Please *proceed to the next lab*.
 
 ## Acknowledgements
 * **Author** - Zachary Talke, Solutions Engineer, NA Tech Solution Engineering
