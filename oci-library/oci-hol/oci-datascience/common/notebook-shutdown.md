@@ -25,11 +25,15 @@ Before deactivating a notebook session, save all your work to the attached block
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Open the navigation menu.
+<<<<<<< HEAD
+1. Under **Data and AI** and click **Data Science**. This will open the **Projects** page.
+=======
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
 
+>>>>>>> 691d591bea2a55a6dec53632a56f1fcb2790606b
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session to open the Projects page.
     ![](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
@@ -48,9 +52,7 @@ To keep the file changes in a notebook session’s boot volume and attached bloc
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Open the navigation menu.
-1. Under **Data and AI**, select **Data Science**, and then click **Projects**.
-    ![](./../speed-up-ds-with-the-ads-sdk/images/select-projects.png)
-
+1. Under **Data and AI** and select **Data Science**. This will open the **Projects** page.
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session and open the Projects page.
     ![](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
@@ -69,4 +71,4 @@ To keep the file changes in a notebook session’s boot volume and attached bloc
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
-    * [Jean-Rene Gauthier](https://www.linkedin.com/in/jr-gauthier/), Sr. Principal Product Data Scientist, January 2021
+    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, February 2022

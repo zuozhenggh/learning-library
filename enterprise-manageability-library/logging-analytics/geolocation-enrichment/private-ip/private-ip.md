@@ -3,7 +3,7 @@
 ## Introduction
 
 In Lab 1, you saw how to enrich Geolocation data for Public IPs. In this Lab, you will setup and configure a Logging Analytics Source to perform Geolocation Enrichment for both Private and Public addresses.
-You can see an example use case published at [Geolocation Blog for Private IPs](https.blogs.oracle.com).
+You can see an example use case published at [Geolocation Blog for Private IPs](https://blogs.oracle.com/observability/post/geolocation-enrichment-for-securing-private-ip-addresses).
 
 Estimated Lab Time: 30 minutes
 
@@ -15,7 +15,8 @@ In this lab, you will:
 
 ### Prerequisites
 
-* An Oracle Cloud Environment
+* You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cloud-infrastructure) enabled account.
+* Logging Analytics Service must be onboarded.
 * Working knowledge of OCI Logging Analytics and OCI in general.
 
 
@@ -48,7 +49,8 @@ Additional details are available in [Lookup documentation](https://docs.oracle.c
 Lookup is created using a Comma Separated Values (csv) file. You will use the mapping table provided by your Network Administrator and create the file.
 
 1. First create a Comma Separated Values (csv) file containing Private-Public IP mappings.</br>
-Here is a [sample lookup file](./images/private-public-ip-mapping.csv)
+Please save the [sample lookup file](./images/private-public-ip-mapping.csv) which we will upload later.
+This is what the csv file looks like.
     > **Note:** We have used only first 2 octets of Private IP as remaining 2 are variables.
     ```
     <copy>
@@ -74,7 +76,7 @@ Here you will see Lookups for Oracle sources already defined. For this Lab, you 
     d. And choose **csv** as the file extension for the file that you created above.</br>
     e. Once you have finished the configuration of your custom Lookup, click **Create** button and you will be returned to the Lookup listing page where you will see the newly added Lookup `Private Public IP Map`</br>
         ![](./images/admin-lookup-create.jpg " ")
-    f. Then watch for a **Successful** status to appear under the **Latest Status** heading.</br>
+    f. Refresh the Lookups listing page and watch for a **Successful** status to appear under the **Latest Status** heading.</br>
         ![](./images/admin-lookup-create-success.jpg " ")
     g. Then on the Lookups page, under the Name heading, click on the `Private Public IP Map` entry to be taken to a page with its details and verify in the Lookup Table section that the CSV data was imported under the Relationship\_ID and Public\_IP headings.</br>
         ![](./images/admin-lookup-create-success-table.jpg " ")
