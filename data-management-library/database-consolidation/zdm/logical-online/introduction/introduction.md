@@ -66,7 +66,7 @@ Customers can also leverage a designated backup location instead of using a dire
 For more information on Oracle Zero Downtime Migration please visit ZDM's [product website](www.oracle.com/goto/zdm).
 
 
-### Workshop Objectives
+### Objectives
 
 In this lab, you will:
 * Learn about Oracle Zero Downtime Migration Fundamentals
@@ -87,7 +87,7 @@ This workshop requires an Oracle Cloud account.
 Please *proceed to the next lab*.
 
 
-## Learn More About Zero Downtime Migration (ZDM)
+## Learn More
 
 * [Oracle Zero Downtime Migration - Product Page](http://www.oracle.com/goto/zdm)
 * [Oracle Zero Downtime Migration - Product Documentation](https://docs.oracle.com/en/database/oracle/zero-downtime-migration/)

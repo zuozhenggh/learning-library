@@ -9,13 +9,13 @@ In this lab, you will be:
 
 Estimate Lab Time: 15 minutes
 
-### Workshop Objectives
+### Objectives
 
 In this lab, you will:
 * Learn how to create an authentication Token, Create an Object Storage Bucket and run the require credential scripts in the Target Autonomous Database.
 
 ### Prerequisites
-This workshop section requires having completed all previous sections.
+* This workshop section requires having completed all previous sections.
 
 
 ## Task 1: Create Authentication Token

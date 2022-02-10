@@ -11,13 +11,13 @@ Disclaimer: The Zero Downtime Migration service host should be a dedicated syste
 
 Estimate Lab Time: 15 minutes
 
-### Workshop Objectives
+###  Objectives
 
 In this lab, you will:
 * Learn how to Connect to the Source Database and create the required migration users.
 
 ### Prerequisites
-This workshop section requires having setup a compute instance and the source database.
+* This workshop section requires having setup a compute instance and the source database.
 
 
 ## Task 1: Connect to Your Database and Configure required parameters

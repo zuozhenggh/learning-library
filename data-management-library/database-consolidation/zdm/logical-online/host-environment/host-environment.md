@@ -19,13 +19,13 @@ The reason your Oracle Cloud Infrastructure directory is being copied to 'zdmuse
 
 Estimate Lab Time: 20 minutes
 
-### Workshop Objectives
+### Objectives
 
 In this lab, you will:
 * Learn how to congifute the ZDM Service Node, generate and configure the required API Keys and configure connectivity between ZDM's Service Node and the GoldenGate Hub. 
 
 ### Prerequisites
-This workshop section requires having completed all previous workshop sections.
+* This workshop section requires having completed all previous workshop sections.
 
 **Disclaimer**: Throughout the workshop there will be locations where you are copying and pasting multiple lines of code at a time from the instructions into SQLPlus. However, the last line pasted will not commit until you manually press enter a second time. To avoid statement failure, please be cognizant of this and press enter twice when pasting.
 

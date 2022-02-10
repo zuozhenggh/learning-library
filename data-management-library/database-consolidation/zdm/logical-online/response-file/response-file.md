@@ -9,13 +9,13 @@ In this lab you will:
 Estimate Lab Time: 40 minutes
 
 
-### Workshop Objectives
+### Objectives
 
 In this lab, you will:
 * Learn about ZDM's response file and its parameters. You will also learn howto create and pre-fill a response file for your migration. 
 
 ### Prerequisites
-This workshop section requires having completed all previous sections.
+* This workshop section requires having completed all previous sections.
 
 
 ## Task 1: Learn About the Response File

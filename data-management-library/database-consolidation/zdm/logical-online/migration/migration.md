@@ -8,13 +8,13 @@ In this lab on your host instance, you will:
 
 Estimated Total Lab Time: 30 minutes
 
-### Workshop Objectives
+### Objectives
 
 In this lab, you will:
 * Learn how to perform a logical online migration to Autonomous Database with ZDM.
 
 ### Prerequisites
-This workshop section requires having completed all he previous sections.
+* This workshop section requires having completed all he previous sections.
 
 
 ## Task 1: Run a Migration on Evaluation Mode
