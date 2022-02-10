@@ -44,7 +44,7 @@ Stage the application so that other users can test its behavior.
 
 To add more records to your data in the staging database, let's import data for the Department and Employee business objects from a zip file.
 
-1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fxYS-wCkrWveFFyOH9qy9uyv24QowtS8uhdCDGmUvqJZqeFA7JAhkXHlOd6IXMpb/n/c4u03/b/oci-library/o/WMS4121HR_Application_Stage.zip) and save the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/5S6exvQp2dBc4abyGmhUHW11kcgnqkrIT0pBN5vP6Q-x6yVfEcp4kHdr0h1X7nM3/n/c4u04/b/oci-library/o/WID-4121/HR_Application_Stage.zip) and save the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
 
 2.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/vbcssp_bo_icon.png) tab, then click **Menu** ![Menu icon](./images/vbcssp_menu2_icon.png) and select **Data Manager**.
 
