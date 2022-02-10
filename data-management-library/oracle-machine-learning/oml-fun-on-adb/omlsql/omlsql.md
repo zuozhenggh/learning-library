@@ -28,20 +28,14 @@ This lab assumes you have:
 
 
 ## Task 1: Examine the Data
-1. Click the hamburger icon ![Image alt text](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/oml-fun-on-adb/automl/images/sample2.png) to open the left navigation menu and click **Notebooks**.
+1. Click the hamburger icon ![Hamburger image](images/hamburger.png) to open the left navigation menu and click **Notebooks**.
 2. The Notebooks page opens with all the notebooks listed in it. Click the **OML4SQL Time Series 1** notebook to open it.
-![Notebook listed](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/oml-fun-on-adb/oml-notebooks/images/notebook-list-1.png)
-3. The _OML4SQL Timeseries 1_ notebook opens in the notebook editor. Click the gear icon ![gear icon](https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/oracle-machine-learning/oml-fun-on-adb/oml-notebooks/images/gear.png) on the top right corner of the notebook to view and set the interpreter binding order.
-
-	You can change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
-  ![Enable and disable interpreter binding](images/timeseries-interpreter-bindings.png)
-
-4. Click **Save** to set the interpreter bindings.
-
+![Notebooks listed](images/notebooklist.png)
+3. The _OML4SQL Timeseries 1_ notebook opens in the notebook editor. Click the gear icon to view and set the interpreter binding order.
 5. Click the play icon next to the **OML4SQL Time Series ESM 1** title to run all paragraphs of the notebook.
 
   ![Run all paragraphs](images/timeseries-run-all-paragraphs.png)
-6. A confirmation dialog opens. Click **OK** to run all paragraphs.
+6.Click **OK** in the confirmation window to run all paragraphs.
 ![Run all paragraphs confirmation](images/timeseries-run-all-confirmation.png)
 7. The paragraphs start running one by one and display the status next to the paragraph titles. When the paragraph is running, the status displays **PENDING** and when it finishes, it displays **FINISHED**.
 ![Paragraph running](images/timeseries-para-pending.png)
@@ -83,7 +77,8 @@ The following steps help you to create a view and view the data:
     --------------------------
     ```
 
->**Note:** If you are reserving a workshop on LiveLabs, some of the table views may already exist.
+    >**Note:** If you are reserving a workshop on LiveLabs, some of the table views may already exist.
+
 
 2. Count the number of rows to ensure that we have the same amount of data. Run the following query:
 
