@@ -19,6 +19,9 @@ This lab assumes you have:
 <if type="config-compliance">
     - [emcc-mkplc-config-compliance.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/bitQwycuNAjsM8n7C1ugjbrsRUuceS2TWkfARO3xf-sUX11EsaEg2ug_iLBPCeKF/n/natdsecurity/b/stack/o/emcc-mkplc-config-compliance.zip)
 </if>
+<if type="devops-automation">
+    - [emcc-mkplc-devops-automation.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/BxNLU4NQeb7Y1_j3beNyqJx5Yf4ZosZS16cgdr_ClnhHS_S9vDZwLWCK7dE8uPlZ/n/natdsecurity/b/stack/o/emcc-mkplc-devops-automation.zip)
+</if>
 <if type="find-fix-validate">
     - [emcc-mkplc-find-fix-validate.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/e8Kxwmy0-2vSr9xL5je98lkZ-D4AbwsUl28tMDM-rSVex5FqJ1wAkx3Z4uFUv6Zv/n/natdsecurity/b/stack/o/emcc-mkplc-find-fix-validate.zip)
 </if>
@@ -52,6 +55,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
 | 7803           | Enterprise Manager 13c Server         |
+| 80             | noVNC Remote Desktop (NGINX proxy)    |
 | 6080           | noVNC Remote Desktop                  |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
@@ -72,4 +76,4 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 ## Acknowledgements
   - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
   - **Contributors** -  
-  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
+  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2022

@@ -18,7 +18,7 @@ In this workshop, you will learn how to use:
 - Incident Manager
 - Metric and Collection Settings
 - Corrective Actions
-- Metric Extensions 
+- Metric Extensions
 - Monitoring Templates
 - Administration Groups and Template Collections
 - Incident Rules
@@ -62,35 +62,47 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
 -	Self- service to request a PDB using PDBaaS
 -	Administrative Setup for PDBaaS (Private Cloud)- Review only
 
-#### 2. Database Fleet Maintenance - Patching
+#### 2. Find, Fix, Validate
+- View unified Database Performance via Performance Hub
+- Use Real-time Database Operations Monitoring to view long running database tasks
+- Identify Top SQL in a PDB and tune it using SQL Tuning Advisor
+- Use SQL Performance Analyzer Optimizer to gather statistics for validation
+- Use Database Workload Replay to run real workload against your changes for additional validation
+
+#### 3. Database Fleet Maintenance - Patching
 * Detect Configuration Pollution
 * Patch a Database target using a Gold Image
     - All Pluggable Databases in that Container Database will automatically get patched
     - Rollback and Cleanup
 
-#### 3. Database Fleet Maintenance - Upgrade
+#### 4. Database Fleet Maintenance - Upgrade
 * Detect Configuration Pollution
 * Upgrade Oracle DB Software at scale with minimal downtime
     - All Pluggable Databases in that Container Database will automatically get upgraded
     - Cleanup
 
-#### 4. Compliance and Drift Management
+#### 5. Compliance and Drift Management
 - Analyze, Increase standardization, reduce number of different configuration sets
 - Execute a one-time comparison to compare the latest reference configuration to one or more targets to determine the configuration differences
 - Continuous drift monitoring of multiple targets against a reference target for initialization parameters using customized configuration monitoring template
 - Run a review aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets
 - Host security compliance using custom compliance standard
 
-#### 5. Job System Automation
+#### 6. Job System Automation
 * Understand how to create an OS Command Job
 * Create a SQL command Job
 * Create Database Backup Job using Wizard
 
-#### 6. Real Application Testing
+#### 7. Real Application Testing
 * Run SQL Performance Analyzer to review SQL performance before 19c Upgrade
 * Capture workload of 18c Database
 * Run Database Replay of 18c Database Workload in 19c Database
 * Run Consolidation Replay in 2 separate Pluggable Databases
+
+#### 8. Deploy and Manage Oracle Databases with Ansible and Enterprise Manager
+- Install and configure Ansible to work with Oracle Enterprise Manager 13c
+- Review Oracle Enterprise Manager DBaaS setup for Pluggable Databases
+- Provision, resize, shutdown, start and delete a Pluggable Database using Ansible playbooks and EM's DBaaS capabilities
 
 ## More Information on Oracle Enterprise Manager
 Managing Your Hybrid Database Fleet
@@ -111,4 +123,4 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 ## Acknowledgements
 - **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
 - **Contributors** - Dave Le Roy, Björn Bolltoft - Enterprise Manager Product Management
-- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, October 2020
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2022
