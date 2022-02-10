@@ -46,7 +46,7 @@ Estimated Lab Time: 20 minutes
 
    ![pic1](images/manage-ml-users.png)
 
-   If sign-in is requested, sign in with `ADMIN`, password `Oracle_12345`.
+   If sign-in is requested, sign in with `ADMIN` and the secure password for the admin user.
 
 5. Check **Show All Users**, then click on the `F1` user.
 
@@ -80,7 +80,7 @@ We will run these SQL statements in a Notebook. A notebook is not just a conveni
 
    ![pic1](images/start-oml.png)
 
-4. Sign in with the user `F1`, password `Oracle_12345`.
+4. Sign in with the user `F1` and the secure password for the F1 user.
 
    ![pic1](images/sign-in-f1.png)
 
