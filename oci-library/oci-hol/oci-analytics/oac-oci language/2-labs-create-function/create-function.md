@@ -156,6 +156,7 @@ We will now create the function in the application. The function will do sentime
 			cd ..
     	fn init --runtime python sentiment
 			cd sentiment
+			ls
 		}
 
 2.	Notice that this will generate three files for you. Modify the files with the content shown below. You can use an editor like **vi** to do so.
@@ -260,32 +261,42 @@ Once you have edited the files in **Task 3**, deploy the function to your applic
 We need to map your newly created function to an API endpoint that is accessible externally such as Postman.
 
 1.	From the Console, click **Developer Services** > **Gateways**, and select the gateway you created earlier in the lab.
+
 2.	Click **Deployments**
+
 3.	Click **Create Deployment**
 		Give the deployment a name and a prefix (i.e. /language)
+
 4.	Click **Next**, now you can add routes to your deployment.
+
 5.	Then **Add a Route**
+- Specify a path, for instance /sentiment
+- For methods, select POST (since we will be sending a body on the request)
+- Type: Oracle Functions
+- Select the sentiment application you created in Section 4
+- Select the name of the function “sentiment”
 
-			* Specify a path, for instance /sentiment
-			* For methods, select POST (since we will be sending a body on the request)
-			* Type: Oracle Functions
-			* Select the sentiment application you created in Section 4.
-			* Select the name of the function “sentiment”
 6.	Click **Next** to review your route.
-8.	Review your Route and click **Create**
 
-	It will take a few minutes to deploy your API.
-	Test that you can hit your functions externally.
-	Now we will test the function you just created:
-9.	From the Console, click **Developer Services** > **Gateways**, and select the gateway you created earlier in the lab.
-2.	Click **Deployments**.
-3.	Select the deployment you just created (**language**)
-4.	This view will show you any metrics and calls made to these APIs.
-5.	In the **Deployment Information** section, you can click on the **Endpoint** to show the actual endpoint you can hit using Postman.
-6.	Copy the endpoint, it will look something like this:
+7.	Review your Route and click **Create**
+- It will take a few minutes to deploy your API.
+- Test that you can hit your functions externally.
+- Now we will test the function you just created:
+
+8.	From the Console, click **Developer Services** > **Gateways**, and select the gateway you created earlier in the lab.
+
+9.	Click **Deployments**.
+
+10.	Select the deployment you just created (**language**)
+
+11.	This view will show you any metrics and calls made to these APIs.
+
+12.	In the **Deployment Information** section, you can click on the **Endpoint** to show the actual endpoint you can hit using Postman.
+
+13.	Copy the endpoint, it will look something like this:
     https://lgl5i74uqyvecatyyzgtmsniy.apigateway.us-phoenix-1.oci.customer-oci.com/language
 
-7.	Append your route information to hit the endpoint, for example try making this Post call from Postman or any other tool that allows you to issue **POST** commands.
+14.	Append your route information to hit the endpoint, for example try making this Post call from Postman or any other tool that allows you to issue **POST** commands.
 
    POST https://lgl4i74uqyvecatyyzgtmsniy.apigateway.us-phoenix-1.oci.customer-oci.com/language/sentiment
 

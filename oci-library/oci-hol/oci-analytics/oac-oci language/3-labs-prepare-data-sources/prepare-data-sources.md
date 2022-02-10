@@ -2,82 +2,149 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+This lab walks you through the steps to prepare the sample data that will be used to perform sentiment analysis, in this case a set of hotel reviews.We will also create the buckets and databases to save the processed data.
 
-Estimated Lab Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+Estimated Lab Time: 60 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Create Object Storage Bucket
+* Download and Upload Sample Data
+* Prepare Target Database
+* Create Tables to Store Output Data
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
 
 This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
 
-*This is the "fold" - below items are collapsed by default*
+## Task 1: Create Object Storage Bucket
 
-## Task 1: Concise Step Description
+In this task we'll create 2 buckets one for storing source file with reviews and the other for staging. The staging bucket is a 'location' that OCI Data Integration needs to dump intermediate files before publishing data to a data warehouse
 
-(optional) Step 1 opening paragraph.
+1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
-1. Sub step 1
+2.	**Create a bucket** and name it “source-bucket”
 
-	![Image alt text](images/sample1.png)
+3.	Click **create** accepting all defaults.
 
-2. Sub step 2
+4.	Repeat steps **1** to **3** and name the bucket “data-staging”
 
-  ![Image alt text](images/sample1.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+## Task 2: Download and Upload Sample Data
 
-5. Example with bold **text**.
+For this exercise, we will assume that you have a set of customer reviews for a set of hotels.
 
-   If you add another paragraph, add 3 spaces before the line.
+1. 	Download (embedded in this document) hotel-reviews.csv to your local machine. This file contents hotel reviews for a handful of hotels, and we will use that as our data-source. We will perform sentiment and entity extraction analysis using Data Integration and AI Services.
 
-## Task 2: Concise Step Description
+2.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
-1. Sub step 1 - tables sample
+3.	Select the 'source-bucket' you created on **Task 1**.
 
-  Use tables sparingly:
+4.	On the bucket details page, under **Objects**, click **Upload**.
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+5.	In the Upload Objects panel, drag and drop the **hotel-reviews.csv** to the drop zone, or click **select files** to locate it on your machine.
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+6.	Click **Upload**, and then click **Close**.
 
-    - List item 1
-    - List item 2
 
-3. Code examples
+## Task 3: Prepare Target Database
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+In this task we'll create and configure your target Autonomous Data Warehouse database to add a schema and a table.
 
-4. Code examples that include variables
+1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Oracle Database**, and then select **Autonomous Data Warehouse**.
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+2.	Select your compartment and **Create Autonomous Database**.
+
+3.	On the options, set a **Display Name** and **Database Name**
+
+4.	Workload type: **Data warehouse**.
+
+5.	Remember your password (**labDatabase01**)
+
+6.	Access type Secure access from allowed IPs and VCNs only
+
+7.	Click **Create Autonomous Database** (Wait for your dataset to provision which may take up to 15mins)
+
+8.	On your database details page, click **Database Actions**.
+
+9.	On the **Tools** tab, click **Open Database Actions**.
+
+10.	Under **Development**, click **SQL**.
+
+11. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
+
+	Run the following script as shown in the image below:
+
+		CREATE USER USER1 IDENTIFIED BY "<enter user1 password here>";
+		GRANT DWROLE TO USER1;
+		ALTER USER USER1 QUOTA 200M ON DATA;
+
+
+## Task 4: Create Tables to Store Output Data
+
+Whilst we are in the Database Actions dashboard, we will create 3 Tables
+
+1.	A table to store the extracted entities
+2.	A table to store the extracted aspects and related entities
+3.	A table to store the raw reviews
+Follow the scripts below.
+**Create Raw Reviews Table**
+
+			CREATE TABLE USER1.REVIEWS
+			("RECORD_ID" INT,
+			"HOTEL_ID" VARCHAR2(200 BYTE),
+			"HOTEL_NAME" VARCHAR2(200 BYTE),
+			"REVIEW_DATE" DATE,
+			"REVIEW_RATING" INT,
+			"REVIEW" VARCHAR2(2000 BYTE),
+			"REVIEW_TITLE" VARCHAR2(200 BYTE)
+			)SEGMENT CREATION IMMEDIATE
+			PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
+			NOCOMPRESS LOGGING
+			STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+				PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+				BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+				TABLESPACE "LANGUAGE";
+
+**Create Extracted Entities Table**
+
+		CREATE TABLE USER1.ENTITIES
+		("RECORD_ID" INT,
+		"HOTEL_NAME" VARCHAR2(200 BYTE),
+		"ENTITY" VARCHAR2(200 BYTE),
+		"TYPE" VARCHAR2(200 BYTE),
+		"OFFSET" INT,
+		"LENGTH" INT
+		) SEGMENT CREATION IMMEDIATE
+		PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
+		NOCOMPRESS LOGGING
+		STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+			PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+			BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+			TABLESPACE "LANGUAGE";
+
+**Create Sentiment Table**
+
+		CREATE TABLE USER1.SENTIMENT
+	 	("RECORD_ID" INT,
+		"HOTEL_NAME" VARCHAR2(200 BYTE),
+		"ASPECT" VARCHAR2(200 BYTE),
+		"SENTIMENT" VARCHAR2(200 BYTE),
+		"OFFSET" INT,
+		"LENGTH" INT
+		) SEGMENT CREATION IMMEDIATE
+		PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
+ 		NOCOMPRESS LOGGING
+		STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+			PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+			BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+			TABLESPACE "LANGUAGE";
+
 
 ## Learn More
 

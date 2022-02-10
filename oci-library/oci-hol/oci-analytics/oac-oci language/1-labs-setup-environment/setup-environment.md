@@ -81,7 +81,7 @@ The API Gateway communicates on port 443, which is not open by default. You must
     * Destination Port Range: 443
 
 7.	Click **Add Ingress Rules** to add the new rule to the default security list.
-    See documentation for more details.
+    See [Documentation](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks/apigatewaycreatingpolicies.htm) for more details.
 
 ## Task 3: Create an API Gateway
 
