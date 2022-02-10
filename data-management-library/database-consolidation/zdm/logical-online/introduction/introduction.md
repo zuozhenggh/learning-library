@@ -1,6 +1,13 @@
 # Introduction
 
-## About Zero Downtime Migration
+## About this workshop
+
+This workshop will consist of a step by step logical online migration using DataPump to export/import the source/target database, an Oracle GoldenGate Hub for Database Synchronization and an Oracle Cloud Infrastructure (Oracle Cloud Infrastructure) object storage bucket as a backup location.
+
+Estimated Workshop Time: 3 hours
+
+
+### About Zero Downtime Migration
 
 Oracle Zero Downtime Migration (ZDM) is the Oracle Maximum Availability Architecture (MAA)-recommended solution to migrate Oracle Databases to the Oracle Cloud. ZDM's inherent design keeps the migration process as straightforward as possible and ensures the most negligible impact on production workloads. The Source Database to be migrated can be on-premises, deployed on Oracle Public Cloud Gen 1 or Oracle Cloud Infrastructure. The Target Database deployment can be in a Database Cloud Service on Oracle Cloud Infrastructure (Oracle Cloud Infrastructure) Virtual Machine, Exadata Cloud Service, Exadata Cloud at Customer, or Autonomous Database. ZDM automates the entire migration process, reducing the chance of human errors. ZDM leverages Oracle Database-integrated high availability (HA) technologies such as Oracle Data Guard and GoldenGate and follows all MAA best practices that ensure no significant downtime of production environments. Oracle ZDM supports both Physical and Logical Migration workflows. 
 
@@ -10,7 +17,7 @@ Oracle ZDM allows the source database to be a non-CDB or a container database (C
 
 The Zero Downtime Migration software offers a command line interface that you install and run on a host that you provision. The server where the Zero Downtime Migration software is installed is called the Zero Downtime Migration service host. You can run one or more database migration jobs from the Zero Downtime Migration service host.
 
-Estimated Total Time: 3 hours
+
 
 ### Migration Paths
 ZDM supports on-premises databases to be migrated to a variety of Oracle Cloud Database Services and the Exadata Database Machine On-Premises:  
@@ -59,14 +66,7 @@ Customers can also leverage a designated backup location instead of using a dire
 For more information on Oracle Zero Downtime Migration please visit ZDM's [product website](www.oracle.com/goto/zdm).
 
 
-## About Logical Online Migration to Autonomous Database
-
-As described above, Oracle Zero Downtime Migrations supports different workflows and methodologies. This workshop will consist on a step by step logical online migration using DataPump to export/import the source/target database, an Oracle GoldenGate Hub for Database Synchronization and an Oracle Cloud Infrastructure (Oracle Cloud Infrastructure) object storage bucket as a backup location.
-
-For more information on Oracle Zero Downtime Migration please refer to [Preparing for Database Migration](https://docs.oracle.com/en/database/oracle/zero-downtime-migration/21.1/zdmug/preparing-for-database-migration.html#GUID-46459904-7B68-4B7B-8EC6-C66423CEB6B9) in Oracle Zero Downtime Migration Documentation.
-
-
-### Workshop Objectives
+### Objectives
 
 In this lab, you will:
 * Learn about Oracle Zero Downtime Migration Fundamentals
@@ -81,9 +81,13 @@ In this lab, you will:
 ### Prerequisites
 This workshop requires an Oracle Cloud account.
 
-You may now [proceed to the next lab](#next).
+*Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)***
 
-## Learn More About Zero Downtime Migration (ZDM)
+
+Please *proceed to the next lab*.
+
+
+## Learn More
 
 * [Oracle Zero Downtime Migration - Product Page](http://www.oracle.com/goto/zdm)
 * [Oracle Zero Downtime Migration - Product Documentation](https://docs.oracle.com/en/database/oracle/zero-downtime-migration/)
