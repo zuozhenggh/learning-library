@@ -304,5 +304,5 @@ To find more detail about Service Bus, Enterprise Service Bus - please go to thi
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji
-* **Contributors** - Meghana Banka, Rene Fontcha, Kamryn Vinson
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
+* **Contributors** - Meghana Banka, Rene Fontcha, Kamryn Vinson, Sahaana Manavalan
+* **Last Updated By/Date** - Sahaana Manavalan, LiveLabs Developer, NA Technology, February 2022 

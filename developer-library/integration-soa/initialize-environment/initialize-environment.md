@@ -94,4 +94,4 @@ At this point, you're ready to start building amazing enterprise-grade orchestra
 ## Acknowledgements
 * **Author** - Daniel Tarudji
 * **Contributors** - Meghana Banka, Tom McGinn, Kamryn Vinson, Rene Fontcha, Sahaana Manavalan 
-* **Last Updated By/Date** - Sahaana Manavalan, NA Technology, February 2022
+* **Last Updated By/Date** - Sahaana Manavalan, LiveLabs Developer, NA Technology, February 2022 

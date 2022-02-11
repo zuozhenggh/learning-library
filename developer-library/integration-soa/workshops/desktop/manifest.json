@@ -8,27 +8,27 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Lab 1: Environment Setup",
-      "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-ssh-and-novnc.md"
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 2: Initialize Environment",
+      "title": "Lab 1: Initialize Environment",
       "description": "How to do Initialize the SOA Suite development with JDeveloper environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 3: Develop SOA Composite App Validate Payment",
+      "title": "Lab 2: Develop SOA Composite App Validate Payment",
       "description": "How to Develop SOA Composite for Validating Payment",
       "filename": "../../build-soa/build-soa.md"
     },
     {
-      "title": "Lab 4: Register App Validate Payment to Service Bus",
+      "title": "Lab 3: Register App Validate Payment to Service Bus",
       "description": "How to Register the Validate Payment to Service Bus",
       "filename": "../../register/register.md"
     },
     {
-      "title": "Lab 5: Enable REST API for Validate Payment App",
+      "title": "Lab 4: Enable REST API for Validate Payment App",
       "description": "How to enable REST-API for Validate Payment",
       "filename": "../../rest-api/rest-api.md"
     },
