@@ -382,8 +382,9 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
     We can enter following values
     Under Maintenance tasks
         Destination Oracle Home as
-         ```<copy>***/u01/app/oracle/product/19/db_home1***</copy>
-         ```
+        ```
+        <copy>/u01/app/oracle/product/19/db_home1</copy>
+        ```
     Check both Migrate Listener and Update Database options
     Under Credentials (We have already created these credentials in Enterprise Manager for this workshop. Please choose Named for all the below three options and from the dropdown menu, you can opt for values as suggested below)    
         Named Host Credentials as ***ORACLE***

@@ -321,7 +321,8 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
     We can enter following values
     Under Maintenance tasks
         Destination Oracle Home as
-        ```<copy>***/u01/app/1810/hr***</copy>
+        ```
+        <copy>/u01/app/1810/hr</copy>
         ```
 
     Check both Migrate Listener and Update Database options
