@@ -122,7 +122,7 @@ Note: The AS2 and FTP transport protocols are currently supported.
 |------------------------------|------------------------------|
 | Name                         | FTP                          |
 | Type                         | FTP                          |
-| Trading Partner's Connection | Select the FTP Connection you previously created (File Server). Refer to [Creating Connection with File Server](../workshops/freetier/?lab=setup#Task4:CreatingConnectionwithFileServer) for more information.           |
+| Trading Partner's Connection | Select the FTP Connection you previously created (File Server). Refer to [Creating Connection with File Server](../workshops/freetier/?lab=setup#Task4:CreatingConnectionwithFileServer) for more information.|
 | Output Directory             | /B2BWorkshop/B2BTPDELLOut    |
 | Output File Name             | Order-%SEQ%.edi              |
 | Integration Name Prefix      | Dell                         |
@@ -141,7 +141,7 @@ Deploy the Transport Integrations.
 2. Starting at the Oracle Integration **Home** page, select ***Integrations***, then ***Integrations*** again from the left Navigation pane and note the activated **Dell FTP Receive** and **Dell FTP Send** integrations.  
 ![Dell FTP Transport Integrations](images\tpm-tp-Transport-2.png)
 
-## Task 4: Create Agreements
+## Task 3: Create Agreements
 
 This section describes creating and managing Agreements. You define one or more Agreements for a B2B Trading Partner with an intent to send or receive only certain types of business documents to or from that Trading Partner.
 
