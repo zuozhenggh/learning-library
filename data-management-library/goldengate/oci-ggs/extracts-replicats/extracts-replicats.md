@@ -212,6 +212,9 @@ Before using Oracle Data Pump to export data from the source database, first cre
 END;</copy>
     ```
 
+    > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
+
+
     ![](images/05-10-create-credential.png " ")
 
 11. Use the following script to create the Export Data job using Oracle Data Pump ExpDP. Ensure that you replace the Object Store URI (`https://objectstorage.<region>.oraclecloud.com/n/<namespace>/b/<bucket-name>/o/`) with **your URI** from step 5. `SRC_OCIGGLL.dmp` is a file that will be created when this script runs.
@@ -318,6 +321,8 @@ Before importing data to the target database, create a credential in the target 
     END;
     </copy>
     ```
+
+    > **Note:** If you're using a federated user, then the username should be in the following format: `oracle/<user-name>`
 
     ![](images/06-05.png " ")
 
