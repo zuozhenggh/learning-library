@@ -1017,4 +1017,31 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
 ## Homework
 
+1. What is the title of the single drama movie from the 70s that is on a LaserDisk?
+    
+    Hint: use a QBE in the JSON Database Actions page
 
+2. What is the title of the single movie that hat the word ‘university’ in the plot?
+    
+    Hint: use a QBE in the JSON Database Actions page
+ 
+3. What is the title and the price of the most expensive movie of 1974?
+    
+    Hint: use SQL in the SQL Database Actions page
+
+
+4. Which year has the most movies and how does the SQL statement look like?
+
+    Hint: use SQL in the SQL Database Actions page
+
+    ```
+    <copy>
+    select  p.json\_document.year.number(), sum(1) from products p
+    group by  p.json\_document.year.number()
+    order by 2 DESC;
+    </copy>
+    ```
+   
+5. What is the output of the last query (with the actor\_title\_map) for the actor “Morgan Freeman” and how do you modify the SQL statement to just return this result.
+
+    replace ‘where jt.actor is not null’ with where jt.actor = ‘Morgan Freeman’
