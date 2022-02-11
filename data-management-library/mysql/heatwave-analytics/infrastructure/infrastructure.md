@@ -37,7 +37,7 @@ In this lab, you will:
     
   ![VCN Dashboard](./images/Lab1-task1.3.png)
 
-4. Select _**VCN with Internet Connectivity**_ and click _**Start VCN Wizard**_.
+4. Create _**VCN with Internet Connectivity**_ and click _**Start VCN Wizard**_.
 
   ![VCN Creation](./images/Lab1-task1.4.png)
 
