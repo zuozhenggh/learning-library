@@ -105,7 +105,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | Available | **PURCHASEORDERS** and click **>** to move the table to the *Selected* column |
     |
 
-    <img src="images/create-app-integration06.png" width="400">
+    ![](images/create-app-integration06.png)
 
 4. Click on **Import Tables**, wait and hit **Next**.
 
