@@ -124,7 +124,7 @@ Use the mapper to drag fields from the source structure (ERP PO event data)  to 
 When we added the ADW invoke to the integration, a map icon was automatically added. 
 
 1. Hover you cursor over the ERP-ADW **Mapper** icon, and click **Edit**.
-    <img src="images/create-app-integration08.png" width="500">
+   ![](images/create-app-integration08.png")
 
 2. Use the mapper to drag element nodes in the source ERP Cloud structure to element nodes in the target Oracle ADW structure.
 
@@ -164,7 +164,7 @@ Manage business identifiers that enable you to track fields in messages during r
 A number icon is displayed at the top of the Integration canvas when identifiers have not been set. 
 
 1. Click the <img src="images/icon-actions-menu.png" width="20"> menu on the top right, then select **Tracking**.
-    <img src="images/create-app-integration11.png" width="200">
+    ![](images/create-app-integration11.png)
 
 2. From the *Source* section, expand **getPurchaseOrderResponse** > **result**, click **Load more**, expand **Value**, and click **Load more**. Drag the below fields from ERP PO source to the *Drag a trigger field here* sections:
     - POHeaderId (primary)
@@ -178,7 +178,9 @@ A number icon is displayed at the top of the Integration canvas when identifiers
 
 ## Task 6: Activate the integration
 
-1. On the *Integrations* page, go to the row of the integration to activate. Click on the <img src="images/icon-integration-activation.png" width="20"> icon to activate the integration.
+1. On the *Integrations* page, click on the **Activate** icon.
+
+    ![](images/create-app-integration13.png)
 
 2. On the *Activate Integration* dialog, select **Enable Tracing**, followed by **Include Payload** options. 
 

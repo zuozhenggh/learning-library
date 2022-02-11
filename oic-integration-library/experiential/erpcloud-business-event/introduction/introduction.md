@@ -35,8 +35,8 @@ In this workshop, you will learn the following:
 ## Prerequisites
 This lab assumes you have the following:
 - Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
-- Oracle Integration environment
-- Oracle Autonomous Database instance (either ADW or ATP)
+- Oracle Integration instance
+- Oracle Autonomous Database environment (either ADW or ATP)
 - Oracle ERP Cloud access
 
 
