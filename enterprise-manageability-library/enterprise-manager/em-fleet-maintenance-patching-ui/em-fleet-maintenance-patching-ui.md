@@ -349,7 +349,8 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
     ![](images/15.png " ")    
 
     We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page. Lets enter
-    ```<copy>***HR_DB_Patching***</copy>
+    ```
+    <copy>HR_DB_Patching</copy>
     ```
 
     ![](images/16.png " ")
