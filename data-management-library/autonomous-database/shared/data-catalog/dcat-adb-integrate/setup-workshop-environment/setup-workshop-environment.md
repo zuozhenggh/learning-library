@@ -77,15 +77,15 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**.
 
-   ![OCI Sign in](./images/sign-in.png " ")
+   ![Click Sign In on the OCI Sign in screen.](./images/sign-in.png " ")
 
    The **Oracle Cloud Console** Home page is displayed.
 
-   ![Oracle Cloud Console Home Page](./images/oracle-cloud-console-home.png "Partial Oracle Cloud Console is displayed.")
+   ![The Oracle Cloud Console Home Page](./images/oracle-cloud-console-home.png "Partial Oracle Cloud Console is displayed.")
 
 >**Note:** To zoom in (magnify) a displayed image in this workshop, hover over the image to display the magnifying glass icon, and then then click the image.
 
-   ![Magnify Image](./images/magnify-image.png "Click an image to magnify it.")
+   ![An example of magnifying an image.](./images/magnify-image.png "Click an image to magnify it.")
 
 
 ## Task 2: (Optional) Create a Compartment
@@ -94,25 +94,25 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Compartments**.
 
-	 ![Navigate to Compartments](./images/navigate-compartment.png "Click the Navigation menu, and navigate to Compartments.")
+	 ![From the Navigation menu, navigate to Compartments.](./images/navigate-compartment.png "Click the Navigation menu, and navigate to Compartments.")
 
     >**Note:** For faster navigation, you can pin items to make them appear in the **Pinned Links** section of the **Home** tab. To pin an item, hover over the menu item and then click the pin to the left of the item name. The **Recent** section of the **Home** tab shows recently used navigation items. To quickly find navigation menu items, use the **Search** box.
 
-   ![](./images/pin-items.png " ")
+   ![An example on pinning an item for quicker access.](./images/pin-items.png " ")
 
 2. On the **Compartments** page, click **Create Compartment**.
 
-   ![](./images/click-create-compartment.png " ")
+   ![Click Create Compartment.](./images/click-create-compartment.png " ")
 
 3. In the **Create Compartment** dialog box, enter **`training-dcat-compartment`** in the **Name** field and **`Training Data Catalog Compartment`** in the **Description** field.
 
 4. In the **Parent Compartment** drop-down list, select your parent compartment, and then click **Create Compartment**.
 
-   ![](./images/create-compartment.png " ")
+   ![On the populated Create Compartment dialog box, click Create Compartment.](./images/create-compartment.png " ")
 
    The **Compartments** page is re-displayed and the newly created compartment is displayed in the list of available compartments.
 
-   ![](./images/compartment-created.png " ")
+   ![The newly created compartment is highlighted.](./images/compartment-created.png " ")
 
 ## Task 3: Create a Data Catalog Instance
 
@@ -145,11 +145,11 @@ Create a Data Catalog instance using the following steps.
 
 1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**.
 
-   ![](./images/navigate-data-catalog.png " ")
+   ![From the Navigation menu, navigate to Data Catalog.](./images/navigate-data-catalog.png " ")
 
 2. On the **Data Catalog Overview** page, click **Go to Data Catalogs**.
 
-   ![](./images/data-catalog-overview.png " ")    
+   ![Click Go to Data Catalogs.](./images/data-catalog-overview.png " ")    
 
 3. On the **Data Catalogs** page, click **Create Data Catalog**.
 
@@ -416,3 +416,9 @@ You may now proceed to the next lab.
 * **Author:** Lauran Serhal, Consulting User Assistance Developer, Oracle Database and Big Data
 * **Contributor:** Marty Gubar, Product Manager, Server Technologies    
 * **Last Updated By/Date:** Lauran Serhal, February 2022
+
+Data about movies in this workshop were sourced from Wikipedia.
+
+Copyright (C) Oracle Corporation.
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled [GNU Free Documentation License](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/adb-15-minutes/introduction/files/gnu-free-documentation-license.txt)
