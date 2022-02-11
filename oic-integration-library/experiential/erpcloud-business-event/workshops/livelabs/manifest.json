@@ -19,7 +19,7 @@
         },
         {
             "title": "Provision an Oracle Autonomous Database",
-            "filename": "images/adb-provision-conditional.md"
+            "filename": "../../../../../data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },
         {
             "title": "Lab Setup",

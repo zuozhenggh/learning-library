@@ -5,7 +5,7 @@ This demo lab will walk you through the steps to create an ERP Purchase Order an
 
 ### Objectives
 - Create Purchase Order (PO) in ERP Cloud
-- View message flow of the running integration
+- View message flow triggered by the PO Create Event
 - Verify PO record in ADW Table
 
 
