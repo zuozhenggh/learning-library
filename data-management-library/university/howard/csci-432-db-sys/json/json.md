@@ -1017,6 +1017,8 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
 ## Homework
 
+Answer these questions by writing appropriate queries to extract the data from the database.  You can write these queries however you want, but we are providing your with hints, whether you should use a JSON query or a SQl query.  As indicated in using the JSON database action page or the SQL database action page. Submit a screenshot of your screen with the answers or the queries in a word document. For all of these queries, you have run similar queries throughout the labs, so use them as the basis for your queries and substitute as appropriate.
+
 1. What is the title of the single drama movie from the 70s that is on a LaserDisk?
     
     Hint: use a QBE in the JSON Database Actions page
@@ -1026,22 +1028,13 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
     Hint: use a QBE in the JSON Database Actions page
  
 3. What is the title and the price of the most expensive movie of 1974?
-    
-    Hint: use SQL in the SQL Database Actions page
 
+    Hint: use SQL in the SQL Database Actions page
 
 4. Which year has the most movies and how does the SQL statement look like?
 
     Hint: use SQL in the SQL Database Actions page
 
-    ```
-    <copy>
-    select  p.json\_document.year.number(), sum(1) from products p
-    group by  p.json\_document.year.number()
-    order by 2 DESC;
-    </copy>
-    ```
-   
-5. What is the output of the last query (with the actor\_title\_map) for the actor “Morgan Freeman” and how do you modify the SQL statement to just return this result.
+5. Modify the query you ran in Step 8 of the last task (the last query you ran in the lab) to return information for the actor “Morgan Freeman”.
 
-    replace ‘where jt.actor is not null’ with where jt.actor = ‘Morgan Freeman’
+    Hint: modify the where jt.actor... clause to get information about Morgan Freeman
