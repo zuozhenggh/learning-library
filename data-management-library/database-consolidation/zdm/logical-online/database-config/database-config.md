@@ -9,7 +9,7 @@ ZDM will be running on the same server as the source database for the purpose of
 
 Disclaimer: The Zero Downtime Migration service host should be a dedicated system, but it can be shared for other purposes, as it is in this lab; however, the Zero Downtime Migration service host should not have Oracle Grid Infrastructure running on it.
 
-Estimate Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ###  Objectives
 

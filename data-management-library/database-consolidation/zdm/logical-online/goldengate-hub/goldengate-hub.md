@@ -8,7 +8,7 @@ ZDM's Logical Online Migration requires a GoldenGate Hub with two GoldenGate Mic
 ![Oracle Zero Downtime Migration Logical Online Workflow Step-by-Step visualization](./images/logical-online-backup-workflow.png " ")
 
 
-Estimated Total Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Workshop Objectives
 

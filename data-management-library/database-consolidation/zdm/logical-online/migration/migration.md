@@ -1,17 +1,16 @@
 # Migrate your Database
 
 ## Introduction
-In this lab on your host instance, you will:
-* Perform a migration on evaluation mode to troubleshoot any connectivity or setup issue
-* Learn how to monitor an ongoing migration job
-* Migrate your Database
+In this lab on your host instance, you will learn how to perform a logical online migration to Autonomous Database with ZDM.
 
-Estimated Total Lab Time: 30 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Learn how to perform a logical online migration to Autonomous Database with ZDM.
+* Perform a migration on evaluation mode to troubleshoot any connectivity or setup issue
+* Learn how to monitor an ongoing migration job
+* Migrate your Database
 
 ### Prerequisites
 * This workshop section requires having completed all he previous sections.
