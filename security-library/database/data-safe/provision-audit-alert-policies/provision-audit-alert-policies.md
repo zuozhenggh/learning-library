@@ -2,11 +2,11 @@
 inject-note: true
 ---
 
-# Provision Audit and Alert Policies
+# Audit Database Activity
 
 ## Introduction
 
-When you register a target database, Oracle Data Safe automatically creates an audit profile, audit policy, and audit trail(s) for your target database. In Oracle Data Safe, you can start collecting audit data with a single click and provision audit and alert policies on your target databases. You can provision basic, administrator, user, and custom audit policies, as well as audit policies designed to help you meet compliance standards.
+When you register a target database, Oracle Data Safe automatically creates an audit profile, audit policy, and one or more audit trails for your target database. In Oracle Data Safe, you can start collecting audit data with a single click and provision audit policies on your target databases. You can provision basic, administrator, user, and custom audit policies, as well as audit policies designed to help you meet compliance standards.
 
 An alert is a message that notifies you when a particular audit event happens on a target database. The alerts generated depend on which alert policies you enabled for your target database in Oracle Data Safe. An audit trail is a database table that stores audit data. Oracle Data Safe copies audit data from the database's audit trail into the Oracle Data Safe audit table.
 
