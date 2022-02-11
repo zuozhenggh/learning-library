@@ -38,118 +38,118 @@ This lab assumes you have completed the following lab:
 
 1. Create an automatic list partitioned table with one required partition:
  
-
-```
-<copy>
-CREATE TABLE sales_auto_list  
-(  
-   salesman_id   NUMBER(5)    NOT NULL,  
-   salesman_name VARCHAR2(30),  
-   sales_state   VARCHAR2(20) NOT NULL,  
-   sales_amount  NUMBER(10),  
-   sales_date    DATE         NOT NULL  
-)  
- PARTITION BY LIST (sales_state) AUTOMATIC  
- (PARTITION P_CAL VALUES ('CALIFORNIA')  
-);
- </copy>
-```
+      ```
+      <copy>
+      CREATE TABLE sales_auto_list  
+      (  
+         salesman_id   NUMBER(5)    NOT NULL,  
+         salesman_name VARCHAR2(30),  
+         sales_state   VARCHAR2(20) NOT NULL,  
+         sales_amount  NUMBER(10),  
+         sales_date    DATE         NOT NULL  
+      )  
+      PARTITION BY LIST (sales_state) AUTOMATIC  
+      (PARTITION P_CAL VALUES ('CALIFORNIA')  
+      );
+      </copy>
+      ```
 
 2. View data in SALES\_AUTO\_LIST table
  
-```
-<copy>
-SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_TABLES WHERE TABLE_NAME ='SALES_AUTO_LIST';
-</copy>
-```
+      ```
+      <copy>
+      SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_TABLES WHERE TABLE_NAME ='SALES_AUTO_LIST';
+      </copy>
+      ```
 
- ![Image alt text](images/sales-auto-list-select.png "Auto List Partition")
+      ![Image alt text](images/sales-auto-list-select.png "Auto List Partition")
 
-```
-<copy>
-SELECT TABLE_NAME, PARTITION_NAME, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_AUTO_LIST';
-</copy>
-```
+      ```
+      <copy>
+      SELECT TABLE_NAME, PARTITION_NAME, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_AUTO_LIST';
+      </copy>
+      ```
 
  ![Image alt text](images/sales-auto-list-select-2.png "Auto List Partition")
 
 3. Insert data into SALES\_AUTO\_LIST table
 
-```
-<copy>
-INSERT INTO SALES_AUTO_LIST VALUES(021, 'Mary Smith', 'FLORIDA', 41000, TO_DATE ('21-DEC-2018','DD-MON-YYYY'));
-INSERT INTO SALES_AUTO_LIST VALUES(032, 'Luis Vargas', 'MICHIGAN', 42000, TO_DATE ('31-DEC-2018','DD-MON-YYYY'))
-
-</copy>
-```
+      ```
+      <copy>
+      INSERT INTO SALES_AUTO_LIST VALUES(021, 'Mary Smith', 'FLORIDA', 41000, TO_DATE ('21-DEC-2018','DD-MON-YYYY'));
+      INSERT INTO SALES_AUTO_LIST VALUES(032, 'Luis Vargas', 'MICHIGAN', 42000, TO_DATE ('31-DEC-2018','DD-MON-YYYY')); 
+      </copy>
+      ```
 
 4. View data in SALES\_AUTO\_LIST table
 
-```
-<copy>
-select * from SALES_AUTO_LIST;
-</copy>
-```
+      ```
+      <copy>
+      select * from SALES_AUTO_LIST;
+      </copy>
+      ```
 
-![Image alt text](images/sales-auto-list-select-data.png "Auto List Partition")
+      ![Image alt text](images/sales-auto-list-select-data.png "Auto List Partition")
 
 5. View data in USER\_PART\_TABLES  
 
- ```
-<copy>
-SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_TABLES WHERE TABLE_NAME ='SALES_AUTO_LIST';
-</copy>
-```
+      ```
+      <copy>
+      SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_TABLES WHERE TABLE_NAME ='SALES_AUTO_LIST';
+      </copy>
+      ```
 
-![Image alt text](images/sales-auto-list-select-data-2.png "Auto List Partition")
+      ![Image alt text](images/sales-auto-list-select-data-2.png "Auto List Partition")
 
 6. Insert data into SALES\_AUTO\_LIST table 
 
-```
-<copy>
-INSERT INTO SALES_AUTO_LIST VALUES(015, 'Simone Blair', 'CALIFORNIA', 45000, TO_DATE ('11-JAN-2019','DD-MON-YYYY'));
-INSERT INTO SALES_AUTO_LIST VALUES(015, 'Simone Blair', 'OREGON', 38000, TO_DATE ('18-JAN-2019','DD-MON-YYYY'));
-</copy>
-```
+      ```
+      <copy>
+      INSERT INTO SALES_AUTO_LIST VALUES(015, 'Simone Blair', 'CALIFORNIA', 45000, TO_DATE ('11-JAN-2019','DD-MON-YYYY'));
+      INSERT INTO SALES_AUTO_LIST VALUES(015, 'Simone Blair', 'OREGON', 38000, TO_DATE ('18-JAN-2019','DD-MON-YYYY'));
+      </copy>
+      ```
 
 7. View data in USER\_PART\_TABLES   
 
-```
-<copy>
-SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_TABLES WHERE TABLE_NAME ='SALES_AUTO_LIST';
-</copy>
-```
+      ```
+      <copy>
+      SELECT TABLE_NAME, PARTITIONING_TYPE, AUTOLIST, PARTITION_COUNT FROM USER_PART_TABLES WHERE TABLE_NAME ='SALES_AUTO_LIST';
+      </copy>
+      ```
 
-![Image alt text](images/sales-auto-list-select-data-3.png "Auto List Partition")
+      ![Image alt text](images/sales-auto-list-select-data-3.png "Auto List Partition")
 
 8. View data in SALES\_AUTO\_LIST table
 
-```
-<copy>
-SELECT TABLE_NAME, PARTITION_NAME, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_AUTO_LIST';
-</copy>
-```
+      ```
+         <copy>
+         SELECT TABLE_NAME, PARTITION_NAME, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_AUTO_LIST';
+         </copy>
+      ```
 
-![Image alt text](images/sales-auto-list-select-data-4.png "Auto List Partition")
+      ![Image alt text](images/sales-auto-list-select-data-4.png "Auto List Partition")
 
 9. View data in SALES\_AUTO\_LIST table by partition name
 
-```
-<copy>
-select * from SALES_AUTO_LIST PARTITION(SYS_P1775);
-</copy>
-```
+      ```
+      <copy>
+      select * from SALES_AUTO_LIST PARTITION(SYS_P1775);
+      </copy>
+      ```
 
-![Image alt text](images/sales-auto-list-select-data-5.png "Auto List Partition")
+      ![Image alt text](images/sales-auto-list-select-data-5.png "Auto List Partition")
 
 ## Task 2: Cleanup
 
-```
-<copy>
-rem drop everything 
-drop table sales_interval_hash purge;
-</copy>
-```
+1. Clean up the environment by dropping the table
+
+      ```
+      <copy>
+      rem drop everything 
+      drop table sales_interval_hash purge;
+      </copy>
+      ```
   
 You successfully made it to the end of module 'auto-list partitioning' Lab.  You may now [proceed to the next lab](#next).
 

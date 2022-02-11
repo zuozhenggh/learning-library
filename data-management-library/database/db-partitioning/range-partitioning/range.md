@@ -44,96 +44,97 @@ This lab assumes you have completed the following lab:
 
 1. Let us Create range partitioned Table. The table is partitioned by range using the values of the sales\_date column. The partition bound is determined by the VALUES LESS THAN clause. 
 
-```
-<copy>
-CREATE TABLE sales_range_partition ( 
-    product_id       NUMBER(6), 
-    customer_id      NUMBER, 
-    channel_id       CHAR(1), 
-    promo_id         NUMBER(6), 
-    sale_date        DATE, 
-    quantity_sold    INTEGER, 
-    amount_sold      NUMBER(10,2) 
-) 
-PARTITION BY RANGE (sale_date) 
-( PARTITION sales_q1_2014 VALUES LESS THAN (TO_DATE('01-APR-2014','dd-MON-yyyy')), 
-   PARTITION sales_q2_2014 VALUES LESS THAN (TO_DATE('01-JUL-2014','dd-MON-yyyy')), 
-   PARTITION sales_q3_2014 VALUES LESS THAN (TO_DATE('01-OCT-2014','dd-MON-yyyy')), 
-   PARTITION sales_q4_2014 VALUES LESS THAN (TO_DATE('01-JAN-2015','dd-MON-yyyy')) 
-);
-</copy>
-```  
+    ```
+    <copy>
+    CREATE TABLE sales_range_partition ( 
+        product_id       NUMBER(6), 
+        customer_id      NUMBER, 
+        channel_id       CHAR(1), 
+        promo_id         NUMBER(6), 
+        sale_date        DATE, 
+        quantity_sold    INTEGER, 
+        amount_sold      NUMBER(10,2) 
+    ) 
+    PARTITION BY RANGE (sale_date) 
+    ( PARTITION sales_q1_2014 VALUES LESS THAN (TO_DATE('01-APR-2014','dd-MON-yyyy')), 
+    PARTITION sales_q2_2014 VALUES LESS THAN (TO_DATE('01-JUL-2014','dd-MON-yyyy')), 
+    PARTITION sales_q3_2014 VALUES LESS THAN (TO_DATE('01-OCT-2014','dd-MON-yyyy')), 
+    PARTITION sales_q4_2014 VALUES LESS THAN (TO_DATE('01-JAN-2015','dd-MON-yyyy')) 
+    );
+    </copy>
+    ```  
 
 2. Display the partitions in the table with this SQL query.
 
-```
-<copy> 
-SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_RANGE_PARTITION';
-</copy>
-```
+    ```
+    <copy> 
+    SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_RANGE_PARTITION';
+    </copy>
+    ```
 
 3. Add a new partition to the table.
 
-```
-<copy>
-ALTER TABLE sales_range_partition 
-ADD PARTITION sales_q1_2015 VALUES LESS THAN (TO_DATE('01-APR-2015','dd-MON-yyyy'));
-</copy>
-```
+    ```
+    <copy>
+    ALTER TABLE sales_range_partition 
+    ADD PARTITION sales_q1_2015 VALUES LESS THAN (TO_DATE('01-APR-2015','dd-MON-yyyy'));
+    </copy>
+    ```
 
 4. Display the partitions in the table after adding the new partition.
 
-```
-<copy>
-SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_RANGE_PARTITION';
-</copy>
-```
+    ```
+    <copy>
+    SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_RANGE_PARTITION';
+    </copy>
+    ```
 
-![Image alt text](images/user-tab-data.png "USER_TAB_PARTITIONS Data")
+    ![Image alt text](images/user-tab-data.png "USER_TAB_PARTITIONS Data")
 
 5. Insert values into the table.
 
-```
-<copy>
-INSERT INTO sales_range_partition VALUES (1001,100,'A',150,'10-FEB-2014',500,2000);
-INSERT INTO sales_range_partition VALUES (1002,110,'B',180,'15-JUN-2014',100,1000);
-INSERT INTO sales_range_partition VALUES (1001,100,'A',150,'20-AUG-2014',500,2000);
-</copy>
-```
+    ```
+    <copy>
+    INSERT INTO sales_range_partition VALUES (1001,100,'A',150,'10-FEB-2014',500,2000);
+    INSERT INTO sales_range_partition VALUES (1002,110,'B',180,'15-JUN-2014',100,1000);
+    INSERT INTO sales_range_partition VALUES (1001,100,'A',150,'20-AUG-2014',500,2000);
+    </copy>
+    ```
   
 6. Display data from a specified partition in the table. 
 
-```
-<copy>
-SELECT * FROM sales_range_partition PARTITION(sales_q1_2014);
-</copy>
-```
+    ```
+    <copy>
+    SELECT * FROM sales_range_partition PARTITION(sales_q1_2014);
+    </copy>
+    ```
 
-![Image alt text](images/sales-range-partition.png "sales_range_partition Data with Partition")
+    ![Image alt text](images/sales-range-partition.png "sales_range_partition Data with Partition")
 
 7. Display all the data in the table.
 
-```
-<copy>
-SELECT * FROM sales_range_partition;
-</copy>
-```
+    ```
+    <copy>
+    SELECT * FROM sales_range_partition;
+    </copy>
+    ```
 
-8. Data in sales\_range\_partition table with and without Partition
+    8. Data in sales\_range\_partition table with and without Partition
 
-![Image alt text](images/sales-range-partition-data.png "sales_range_partition Data")
- 
-When you are finished testing the example, you can clean up the environment by dropping the table 
-
+    ![Image alt text](images/sales-range-partition-data.png "sales_range_partition Data")
+    
+      
 ## Task 2: Cleanup
+
+1. Clean up the environment by dropping the table  
  
-```
-<copy>
-DROP TABLE sales_range_partition; 
-</copy>
-```
+    ```
+    <copy>
+    DROP TABLE sales_range_partition; 
+    </copy>
+    ```
   
-You successfully made it to the end this lab Range Partitions. You may now [proceed to the next lab](#next).
+    You successfully made it to the end this lab Range Partitions. You may now [proceed to the next lab](#next).
 
 ## Learn More
 

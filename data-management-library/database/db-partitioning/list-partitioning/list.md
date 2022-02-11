@@ -44,134 +44,136 @@ This lab assumes you have completed the following lab:
 
 1. Let's create list partitioned table:
  
-```
-<copy>
-CREATE TABLE sales_by_region ( 
-     product_id     NUMBER(6), 
-     quantity_sold  INTEGER, 
-     sale_date      DATE, 
-     store_name     VARCHAR(30), 
-     state_code     VARCHAR(2) 
-) 
-PARTITION BY LIST (state_code) 
-( 
-     PARTITION region_east 
-        VALUES ('CT','MA','MD','ME','NH','NJ','NY','PA','VA'), 
-     PARTITION region_west 
-        VALUES ('AZ','CA','CO','NM','NV','OR','UT','WA'), 
-     PARTITION region_south 
-        VALUES ('AL','AR','GA','KY','LA','MS','TN','TX'), 
-     PARTITION region_central 
-        VALUES ('IA','IL','MO','MI','ND','OH','SD') 
- );
-</copy>
-```
+      ```
+      <copy>
+      CREATE TABLE sales_by_region ( 
+         product_id     NUMBER(6), 
+         quantity_sold  INTEGER, 
+         sale_date      DATE, 
+         store_name     VARCHAR(30), 
+         state_code     VARCHAR(2) 
+      ) 
+      PARTITION BY LIST (state_code) 
+      ( 
+         PARTITION region_east 
+            VALUES ('CT','MA','MD','ME','NH','NJ','NY','PA','VA'), 
+         PARTITION region_west 
+            VALUES ('AZ','CA','CO','NM','NV','OR','UT','WA'), 
+         PARTITION region_south 
+            VALUES ('AL','AR','GA','KY','LA','MS','TN','TX'), 
+         PARTITION region_central 
+            VALUES ('IA','IL','MO','MI','ND','OH','SD') 
+      );
+      </copy>
+      ```
 
 2. View the data in sales\_by\_region table
 
-```
-<copy>
-SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_BY_REGION';
-</copy>
-```
+      ```
+      <copy>
+      SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_BY_REGION';
+      </copy>
+      ```
 
-![Image alt text](images/sales-by-region-select.png "Sales by region select")
+      ![Image alt text](images/sales-by-region-select.png "Sales by region select")
 
 ## Task 2: Add New Partitions
 
 1. Add a new partition to the table.
 
-```
-<copy>
-ALTER TABLE sales_by_region ADD PARTITION region_nonmainland VALUES ('HI','PR');
-</copy>
-```
+      ```
+      <copy>
+      ALTER TABLE sales_by_region ADD PARTITION region_nonmainland VALUES ('HI','PR');
+      </copy>
+      ```
 
 2. Add a new partition to the table for NULL values.
 
-```
-<copy>
-ALTER TABLE sales_by_region ADD PARTITION region_null VALUES (NULL);
-</copy>
-```
+      ```
+      <copy>
+      ALTER TABLE sales_by_region ADD PARTITION region_null VALUES (NULL);
+      </copy>
+      ```
 
 3. Add a new partition to the table for values that do not map to any other partition.
 
-```
-<copy>
-ALTER TABLE sales_by_region ADD PARTITION VALUES (DEFAULT);
-</copy>
-```  
+      ```
+      <copy>
+      ALTER TABLE sales_by_region ADD PARTITION VALUES (DEFAULT);
+      </copy>
+      ```  
 
 4. Display the partitions in the table after adding new partitions.
 
-```
-<copy>
-SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_BY_REGION';
-</copy>
-``` 
+      ```
+      <copy>
+      SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_BY_REGION';
+      </copy>
+      ``` 
 
-![Image alt text](images/user-tab-partitions-select.png "user tab partitions select")
+      ![Image alt text](images/user-tab-partitions-select.png "user tab partitions select")
 
 5. Add new values to a list of partitioning keys.
 
-```
-<copy>
-ALTER TABLE sales_by_region  MODIFY PARTITION region_central  ADD VALUES ('OK','KS');
-</copy>
-``` 
+      ```
+      <copy>
+      ALTER TABLE sales_by_region  MODIFY PARTITION region_central  ADD VALUES ('OK','KS');
+      </copy>
+      ``` 
  
 6. Display the partitions in the table after modifying a partition.
 
-```
-<copy>
-SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_BY_REGION';
-</copy>
-``` 
+      ```
+      <copy>
+      SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_BY_REGION';
+      </copy>
+      ``` 
 
-![Image alt text](images/sales-by-region-select-2.png "Sales by region select")
+   ![Image alt text](images/sales-by-region-select-2.png "Sales by region select")
 
 7. Insert values into the table.
 
-```
-<copy>
-INSERT INTO sales_by_region VALUES (1001,100,'25-AUG-2014','My Store MA','MA');
-INSERT INTO sales_by_region VALUES (1002,200,'26-AUG-2014','My Store OK','OK');
-</copy>
-``` 
+      ```
+      <copy>
+      INSERT INTO sales_by_region VALUES (1001,100,'25-AUG-2014','My Store MA','MA');
+      INSERT INTO sales_by_region VALUES (1002,200,'26-AUG-2014','My Store OK','OK');
+      </copy>
+      ``` 
 
 8. Display all the data in the table.
 
-```
-<copy>
-SELECT * FROM sales_by_region;
-</copy>
-``` 
+      ```
+      <copy>
+      SELECT * FROM sales_by_region;
+      </copy>
+      ``` 
 
-![Image alt text](images/sales-by-region-select-3.png "Sales by region select")
+      ![Image alt text](images/sales-by-region-select-3.png "Sales by region select")
 
 ## Task 3: Partitioned Data by Partition Name
 
-Display data from a specified partition in the table.  
+1. Display data from a specified partition in the table.  
 
-```
-<copy>
-SELECT * FROM sales_by_region PARTITION(region_east);
-</copy>
-``` 
+      ```
+      <copy>
+      SELECT * FROM sales_by_region PARTITION(region_east);
+      </copy>
+      ``` 
 
-![Image alt text](images/region-east-partition.png "region east partition")
+      ![Image alt text](images/region-east-partition.png "region east partition")
 
 ## Task 4: Cleanup
 
-```
-<copy>
-rem drop everything succeeds
-drop table sales_by_region purge;
-</copy>
-```
+1. Clean up the environment by dropping the table  
 
-You successfully made it to the end of lab 'read only partitions and sub partitions'. You may now [proceed to the next lab](#next).   
+      ```
+      <copy>
+      rem drop everything succeeds
+      drop table sales_by_region purge;
+      </copy>
+      ```
+
+      You successfully made it to the end of lab 'read only partitions and sub partitions'. You may now [proceed to the next lab](#next).   
  
 ## Learn More
 

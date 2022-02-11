@@ -1,34 +1,15 @@
 # Introduction
 
+## About this Workshop
+Oracle provides a comprehensive range of partitioning schemes to address every business requirement. Moreover, since it is entirely transparent in SQL statements, partitioning can be used with any application, from packaged OLTP applications to data warehouses. in this workshop, we will explore various partition types and their corresponding use cases.
+
+Estimated Workshop Time:  2 hour 40 minutes
+
 ### About Oracle Partitioning
  
 Oracle Partitioning enhances the manageability, performance and availability of large databases. It offers comprehensive partitioning methods to address different business requirements. We can apply Database partitioning on transactional, data warehousing, and mixed workload applications without changing any code. We can use partitioning on large tables and indexes to make them smaller objects that can be managed and accessed at a more advanced level of granularity.   
 
 Partitioning large tables and indexes in Oracle Database ensure that an optimal method is available for every business requirement and can enhance the manageability, performance and availability of almost any database application. Partitioning allows the breakdown of tables and indexes into smaller physical pieces while keeping the logical view of a single object.
-
-### Objectives
- 
-In this workshop, you will learn how to create the following partitions. 
-
-* Range Partitioning
-* Interval Partitioning
-* List Partitioning
-* Hash Partitioning
-* Auto-List Partitioning
-* Read Only Partitions
-* Multi-Column List Partitioning
-* Convert Non-partitioned Table to Partitioned Table
-
-### Prerequisites
-This lab assumes you have the following:
-
-* Access to Oracle Database Standard or Enterprise Edition or Autonomous Database.
-* You have access to Paid or Free Tier cloud tenancy. 
-
-## About this Workshop
-Oracle provides a comprehensive range of partitioning schemes to address every business requirement. Moreover, since it is entirely transparent in SQL statements, partitioning can be used with any application, from packaged OLTP applications to data warehouses. in this workshop, we will explore various partition types and their corresponding use cases.
-
-Estimated Workshop Time:  2 hour 40 minutes
 
 ### Challenges with growing Data Volume
 
@@ -55,6 +36,29 @@ Partitioning enables data management operations such as.
 *  Index creation and rebuilding,
 *  Optimizer statistics management,
 *  Backup and recovery
+
+### Objectives
+ 
+In this workshop, you will learn how to create the following partitions. 
+
+* Range Partitioning
+* Interval Partitioning
+* List Partitioning
+* Hash Partitioning
+* Auto-List Partitioning
+* Read Only Partitions
+* Multi-Column List Partitioning
+* Convert Non-partitioned Table to Partitioned Table
+
+### Prerequisites
+This lab assumes you have the following:
+
+* Access to Oracle Database Standard or Enterprise Edition or Autonomous Database.
+* You have access to Paid or Free Tier cloud tenancy. 
+
+
+
+
  
 ## Learn More
 
