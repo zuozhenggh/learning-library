@@ -28,9 +28,9 @@ The Oracle ERP Cloud Adapter provides the following key benefits:
 
 
 ## Objectives
-In this workshop, you will learn the following in Oracle Integration:
-- Create Connections and Integrations
-- Create an ERP Purchase Order, and track how that event triggers an integration flow
+In this workshop, you will learn the following:
+- Create Connections and Integrations in OIC
+- Capture ERP Purchase Order events and orchestrate the data to a target database table
 
 ## Prerequisites
 This lab assumes you have the following:
