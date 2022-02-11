@@ -9,13 +9,9 @@ Estimated Lab Time: 5 minutes
 ### Objectives
 In this lab, you will:
 - Learn how to create a database table using a SQL script
-- Validate access to an Oracle ERP Cloud environment, and a user account with the correct privileges
 
 ### Prerequisites
-Satisfy the following prerequisites before you continue with this workshop:
-* Successfully provisioned Oracle Integration Instance and able to access the homepage. 
-* Successfully provisioned Oracle Autonomous Database, either ATP or ADW instance. 
-
+This lab requires successful completion of the **Provision an Oracle Autonomous Database** section in the **Contents** menu on the left.
 
 ## Task 1: Create a database table using a SQL script
 Follow these steps to create a DB table which will be used as part of this workshop. 
@@ -98,7 +94,7 @@ Follow these steps to create a DB table which will be used as part of this works
     NOPARALLEL;
     ```
 
-8. Paste the script in SQL Worksheet, then click **Run It** button. This will create the **PURCHASEORDER** table. Verify table was created successfully when you see the notification in the **Script Output**. 
+8. Paste the script in SQL Worksheet, then click **Run It** button. This will create the **PURCHASEORDER** table. The table is created successfully when you see the notification in the **Script Output**. 
 
     ![Enter DB password](images/adb-navigation07.png)
 

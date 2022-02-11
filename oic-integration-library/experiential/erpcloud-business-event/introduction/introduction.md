@@ -7,7 +7,7 @@ This workshop will showcase the event subscription capabilities to create an App
 
 Estimated workshop time: 1 hour
 
-## What is OCI  Integration
+## What is OCI Integration
 With OCI Integration (OIC), you have the power to *integrate* your cloud and on-premises applications, *automate* business processes, *gain insight* into your business processes, *develop* visual applications, use an SFTP-compliant file server to *store* and *retrieve* files, and *exchange* business documents with a B2B trading partner—all in one place.
 
 ## Leveraging the ERP Adapter in OCI Integration
@@ -27,11 +27,17 @@ The Oracle ERP Cloud Adapter provides the following key benefits:
 - Enables you to upload files to Oracle WebCenter Content (Universal Content Manager) in encrypted or unencrypted format. 
 
 
-## What Will You Learn?
+## Objectives
+In this workshop, you will learn the following in Oracle Integration:
+- Create Connections and Integrations
+- Create an ERP Purchase Order, and track how that event triggers an integration flow
 
-
-## What Do You Need? 
-
+## Prerequisites
+This lab assumes you have the following:
+- Oracle Free Tier, Always Free, Paid or Live Labs Cloud Account
+- Oracle Integration environment
+- Oracle Autonomous Database instance (either ADW or ATP)
+- Oracle ERP Cloud access
 
 
 ## Want to Learn More?
@@ -41,5 +47,4 @@ The Oracle ERP Cloud Adapter provides the following key benefits:
 
 ## Acknowledgements
 * **Author** - Ravi Chablani, Product Management - Oracle Integration
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - Ravi Chablani, January 2022
+* **Last Updated By/Date** - Ravi Chablani, February 2022

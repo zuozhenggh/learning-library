@@ -1,7 +1,7 @@
 # Run Demo
 
 ## Introduction
-This demo lab will walk you through the steps to rund the end-to-end demo flow.
+This demo lab will walk you through the steps to create an ERP Purchase Order and validate how the data is processed in the integration flow. 
 
 ### Objectives
 - Create Purchase Order (PO) in ERP Cloud
