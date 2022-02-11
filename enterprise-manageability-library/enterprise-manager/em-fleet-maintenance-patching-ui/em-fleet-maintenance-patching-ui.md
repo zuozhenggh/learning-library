@@ -320,8 +320,11 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     We can enter following values
     Under Maintenance tasks
-        Destination Oracle Home as ```<copy>***/u01/app/1810/hr***</copy>```
-        Check both Migrate Listener and Update Database options
+        Destination Oracle Home as
+        ```<copy>***/u01/app/1810/hr***</copy>
+        ```
+
+    Check both Migrate Listener and Update Database options
     Under Credentials (We have already created these credentials in Enterprise Manager for this workshop. Please choose Named for all the below three options and from the dropdown menu, you can opt for values as suggested below)    
         Named Host Credentials as ***ORACLE***
         Privileged Host Credentials as ***ROOT***
@@ -331,7 +334,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     Once deployment of new Oracle home is complete, we can change the schedule of the Deployment Procedure for migrate listener and update database to execute these tasks immediately.  
 
-4. We can validate our entries (new Oracle home, log file location, credentials) provided in previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes - Quick and Full. We can select either of these. Full validation mode submits a deployment procedure. In this case choose Quick validation mode
+4. We can validate our entries (new Oracle home, log file location, credentials) provided in previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation. There are two validation modes - Quick and Full. We can select either of these. Full validation mode submits a deployment procedure. In this case choose Quick validation mode
 
     ![](images/11.png " ")
 
@@ -345,7 +348,9 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     ![](images/15.png " ")    
 
-    We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page. Lets enter ```<copy>***HR_DB_Patching***</copy>```
+    We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page. Lets enter
+    ```<copy>***HR_DB_Patching***</copy>
+    ```
 
     ![](images/16.png " ")
 
