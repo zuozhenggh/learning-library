@@ -1,7 +1,7 @@
 # Introduction
 ## About this Workshop
 
-DevOps adoption helps customers to automate and standardize processes, accelerate software delivery while keeping control of the operations, monitoring and lifecycle management of the environment. One thing to consider while implementing DevOps is the fact that the DevOps tool or toolchain is selected to support the desired business goal, however these tools alone do not equate to DevOps adoption. DevOps tools require deeper automation from specialized management tools like Oracle Enterprise Manager 13c (EM 13c). 
+DevOps adoption helps customers to automate and standardize processes, accelerate software delivery while keeping control of the operations, monitoring and lifecycle management of the environment. One thing to consider while implementing DevOps is the fact that the DevOps tool or toolchain is selected to support the desired business goal, however these tools alone do not equate to DevOps adoption. DevOps tools require deeper automation from specialized management tools like Oracle Enterprise Manager 13c (EM 13c).
 - This Workshop VM comes preinstalled with Enterprise Manager 13.5 and Oracle Database targets - 18.3, 18.8, 18.10, 19.3 and 19.10
 - It's easy and quick to deploy with everything starting automatically in under 20 minutes
 
@@ -24,7 +24,7 @@ DevOps orchestration tools like Ansible, Chef, Terraform, etc., can easily integ
 The following are covered in this workshop:
 * Install and configure Ansible to work with Oracle Enterprise Manager 13c
 * Review Oracle Enterprise Manager DBaaS setup for Pluggable Databases
-* Provision, resize, shutdown, start and delete a Pluggable Database using Ansible playbooks and EM's DBaaS capabilities 
+* Provision, resize, shutdown, start and delete a Pluggable Database using Ansible playbooks and EM's DBaaS capabilities
 
 ### Additional Workshop Supported Use Cases
 
@@ -77,6 +77,11 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
 - View the hierarchy of an existing Administrator Group
 - Review out-of-the-box incident rules shipped with Enterprise Manager
 
+#### 8. Deploy and Manage Oracle Databases with Ansible and Enterprise Manager
+- Install and configure Ansible to work with Oracle Enterprise Manager 13c
+- Review Oracle Enterprise Manager DBaaS setup for Pluggable Databases
+- Provision, resize, shutdown, start and delete a Pluggable Database using Ansible playbooks and EM's DBaaS capabilities
+
 ## Learn More
 Managing Your Hybrid Database Fleet
 [](youtube:TUaAweMX3S4)
@@ -94,6 +99,6 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 - [oracle.com/enterprisemanager](https://www.oracle.com/enterprise-manager/)
 
 ## Acknowledgements
-- **Author** - Rene Fontcha, Master Principal Solutions Architect, NA Technology
-- **Contributors** - Dave Le Roy, Björn Bolltoft - Enterprise Manager Product Management
-- **Last Updated By/Date** - Alfredo Krieg - Master Principal Solutions Architect, NA Technology, January 2022
+- **Author** - Alfredo Krieg - Master Principal Solutions Architect, NA Technology
+- **Contributors** -
+- **Last Updated By/Date** -
