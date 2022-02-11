@@ -93,5 +93,5 @@ At this point, you're ready to start building amazing enterprise-grade orchestra
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji
-* **Contributors** - Meghana Banka, Tom McGinn, Kamryn Vinson, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
+* **Contributors** - Meghana Banka, Tom McGinn, Kamryn Vinson, Rene Fontcha, Sahaana Manavalan 
+* **Last Updated By/Date** - Sahaana Manavalan, NA Technology, February 2022
