@@ -7,6 +7,7 @@ Data Pump Import lets you import data from Data Pump files residing on the Oracl
 
 This lab walks you through the steps to migrate a sample application schema using datapump import into your dedicated ATP database.
 
+Estimated Time: 1 hour
 
 ### Objectives
 
