@@ -21,8 +21,8 @@ In this lab, you will:
 - Perform activity on your target database to cause an alert in Oracle Data Safe
 - Review the generated alerts in Oracle Data Safe
 - View details for an alert and close it
-- Create a custom report
-- Generate and download an alerts report in PDF format
+- Create a custom alerts report
+- Generate and download a custom alerts report as a PDF
 
 ### Prerequisites
 
@@ -248,7 +248,7 @@ In this task, you access Oracle Database Actions in Oracle Cloud Infrastructure 
 5. Click the **click here** link to view the report.
 
 
-## Task 7: Generate and download an alerts report in PDF format
+## Task 7: Generate and download a custom alerts report as a PDF
 
 1. On the custom report page, click **Generate PDF/XLS Report**.
 
