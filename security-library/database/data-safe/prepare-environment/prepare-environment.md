@@ -8,9 +8,9 @@ inject-note: true
 
 The preparation required depends on how you want to run this workshop.
 
-- If you are using the Oracle free tier, then you can skip tasks 3, 4, and 5 below.
-- If you are using a paid account, the preparation required depends on the permissions that you have in your tenancy. If you are a member of the tenancy's `Administrators` group, then you can skip tasks 3, 4, and 5 below. If you are a regular user, then you need to enlist the help of a tenancy administrator in your organization to complete tasks 2, 3, 4, and 5 below.
-- If you are using an Oracle-provided environment, you can skip all of the tasks below, except for task 7 (Verify the setup), because your Oracle-provided environment already has the resources and permissions set up for you.
+- If you are using the Oracle free tier and you are a tenancy administrator, then you can skip tasks 3 and 4.
+- If you are using a paid account, the preparation required depends on the permissions that you have in your tenancy. If you are a tenancy administrator, then you can skip tasks 3 and 4. If you are a regular user, then you need to enlist the help of a tenancy administrator in your organization to complete tasks 2, 3, 4, and 5.
+- If you are using an Oracle-provided environment, you can skip all of the tasks because your Oracle-provided environment already has the resources and permissions set up for you.
 
 
 Estimated Lab Time: 15 minutes
@@ -23,9 +23,7 @@ In this lab, you will:
 - Create a compartment
 - Create a user group and add the user account to the group
 - Create an IAM policy for the user group
-- Grant additional privileges to the user group within Oracle Data Safe
 - Provision an Autonomous Transaction Processing database
-- Verify the setup
 
 
 ### Prerequisites
@@ -61,7 +59,7 @@ An Oracle Cloud Infrastructure Identity and Access Management (IAM) administrato
 
 > **Note**: If you have an existing compartment in your tenancy that you can use, or you are using an Oracle-provided environment, you can skip this task.
 
-1. From the navigation menu, select **Identity & Security**, and then **Compartments**. The **Compartments** page in Oracle Cloud Infrastructure Identity and Access Management (IAM) is displayed.
+1. From the navigation menu, select **Identity & Security**, and then **Compartments**. The **Compartments** page in IAM is displayed.
 
 2. Click **Create Compartment**. The **Create Compartment** dialog box is displayed.
 
@@ -97,7 +95,7 @@ A tenancy administrator needs to create a user group and add your Oracle Cloud a
 
 ## Task 4: Create an IAM policy for the user group
 
-An IAM administrator needs to create an IAM policy that allows the user group to which you belong to create an Autonomous Database in your compartment, and register the database with Oracle Data Safe, and use the database with Oracle Data Safe features.
+An IAM administrator needs to create an IAM policy that allows the user group to which you belong to create an Autonomous Database in your compartment, register the database with Oracle Data Safe, and use the database with Oracle Data Safe features.
 
 > **Note**: If you are a member of your tenancy's `Administrators` group, or you are using an Oracle-provided environment, you can skip this task.
 
@@ -107,7 +105,7 @@ An IAM administrator needs to create an IAM policy that allows the user group to
 
 3. Click **Create Policy**. The **Create Policy** page is displayed.
 
-4. Enter a name for the policy. It is helpful to name the policy after the group to which the policy pertains, for example, `dsg01 `.
+4. Enter a name for the policy. It is helpful to name the policy after a group name, for example, `dsg01 `.
 
 5. Enter a description for the policy, for example, **Policy for Data Safe group 1**.
 
@@ -122,42 +120,18 @@ An IAM administrator needs to create an IAM policy that allows the user group to
     Allow group {group name} to use autonomous-database in compartment {compartment name}
     ```
 
-    The first statement allows the user group to create an Autonomous Database in the specified compartment and then register it with Oracle Data Safe. The second statement allows the user group to utilize the database within Oracle Data Safe.
-
+    The first statement allows the user group to create an Autonomous Database, register it with Oracle Data Safe, and create and manage Oracle Data Safe resources in the specified compartment. The second statement allows the user group to access and use the Autonomous Database.
 
 9. Click **Create**.
 
 
-## Task 5: Grant additional privileges to the user group within Oracle Data Safe
-
-A tenancy administrator or an Oracle Data Safe administrator needs to grant the user group to which you belong the `manage` privilege on Activity Auditing, Data Discovery, and Data Masking by creating an authorization policy in the Oracle Data Safe Console.
-
-> **Note**: If you are a member of your tenancy's `Administrators` group, or you are using an Oracle-provided environment, you can skip this task.
-
-1. From the navigation menu, select **Oracle Database**, and then **Data Safe**.
-
-    The **Overview** page is displayed.
-
-2. From the **Overview** page for Oracle Data Safe, click **Security Center**.
-
-3. Click **Activity Auditing** to access the Oracle Data Safe Console.
-
-4. In the upper-right corner, click the **Security** tab.
-
-5. From the **Compartment** drop-down list, select the user's compartment (for example, dsc01).
-
-6. For the user group that you created, select **Manage** from the **All Features** drop-down list.
-
-7. Click **Save**.
-
-
-## Task 6: Provision an Autonomous Transaction Processing database
+## Task 5: Provision an Autonomous Transaction Processing database
 
 As an Oracle Cloud Infrastructure user, you need to provision an Autonomous Transaction Processing (ATP) database to use with Oracle Data Safe.
 
 > **Note**: If you plan to use an existing ATP database in your own tenancy, or you are using an Oracle-provided environment, you can skip this task.
 
-1. From the navigation menu in the Oracle Cloud Infrastructure Console, select **Oracle Database**, and then **Autonomous Transaction Processing**.
+1. From the navigation menu, select **Oracle Database**, and then **Autonomous Transaction Processing**.
 
 2. In the **Filters** section on the left, make sure your workload type is **Transaction Processing** or **All** so that you can view your database listing after you create it.
 
@@ -174,35 +148,17 @@ As an Oracle Cloud Infrastructure user, you need to provision an Autonomous Tran
     - **Deployment Type** - Leave **Shared Infrastructure** selected.
     - **Always Free** - Leave this option deselected (the slider should be to the left).
     - **Database version** - Leave **19c** selected.
-    - **OCPU Count** - Select **1**.
+    - **OCPU Count** - Leave **1** selected.
     - **Storage** - Leave **1** selected.
     - **Auto scaling** - Leave this checkbox selected.
     - **Password** and **Confirm Password** - Specify a password for the `ADMIN` database user and jot it down. The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character. It cannot contain your username or the double quote (") character.
     - **Access Type** - Leave **Allow secure access from everywhere** selected.
-    - **License Type** - Leave **License Included** selected.
+    - **License Type** - Select **License Included**.
 
 6. Click **Create Autonomous Database**. The **Autonomous Database Details** page is displayed.
 
 7. Wait a few minutes for your instance to provision. When it is ready, **AVAILABLE** is displayed below the large ATP icon.
 
-
-## Task 7: Verify the setup
-
-Verify that you can access your ATP database in your compartment and that its status reads AVAILABLE.
-
-> **Note**: If you just provisioned an ATP database in the previous task, then you can skip this task.
-
-1. Make sure that you have the correct region in Oracle Cloud Infrastructure selected.
-
-2. From the navigation menu, select **Oracle Database**, and then **Autonomous Transaction Processing**.
-
-3. From the **Compartment** drop-down list, browse to and select your compartment.
-
-4. On the right, click your database. The **Autonomous Database Information** tab is displayed.
-
-5. Verify that the database's status reads **AVAILABLE**.
-
-6. On the **Autonomous Database Information** tab, under **Data Safe**, verify that there is a **Register** option.
 
 
 ## Learn More
@@ -215,5 +171,5 @@ Verify that you can access your ATP database in your compartment and that its st
 
 ## Acknowledgements
 
-* **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, September 28 2021
+* **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
+* **Last Updated By/Date** - Jody Glover, February 12, 2022

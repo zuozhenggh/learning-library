@@ -83,9 +83,53 @@ This lab assumes you have:
 
 10. Refresh the **Target-Policy Associations** page and verify that the **User Creation/Modification** alert policy is now enabled on your target database.
 
+## Task 3: Perform some activities on your target database
+
+Use Oracle Database Actions to perform some activities on your target database to generate some audit data. You can access Database Actions from your database's Console in Oracle Cloud Infrastructure.
+
+1. Select the browser tab that is signed in to the Oracle Cloud Infrastructure Console. If needed, sign in again.
+
+2. In the Oracle Cloud Infrastructure Console, make sure that the correct region is selected in your tenancy.
+
+3. From the navigation menu, select **Oracle Database**, and then **Autonomous Transaction Processing**.
+
+4. Under **COMPARTMENT**, make sure that your compartment is selected.
+
+5. From the **Workload Type** drop-down list, select **All**.
+
+6. Click the name of your database.
+
+7. Click **Database Actions**. A new browser tab is opened displaying Launchpad for Database Actions.
+
+    - If you created the Autonomous Database yourself, then you are automatically signed in to your database as the `ADMIN` user.
+
+8. From the drop-down list in the upper-right corner of Launchpad, select **Sign Out**.
+
+9. Click **Sign In**.
+
+10. Enter `ADMIN` for the username, and then click **Next**.
+
+11. Enter an incorrect password, and then click **Sign in**. The message **An invalid user name or password was supplied.**
+
+12. Repeat step 11.
+
+13. This time, enter the correct password, and click **Sign in**.
+
+14. In the **Development** section, click **SQL**.
+
+15. If a help note is displayed, click the **X** button to close it.
+
+16. On the worksheet, run the following
+
+    ```
+    drop user MALFOY cascade;
+    create user MALFOY identified by Oracle123_Oracle123;
+    grant PDB_DBA to MALFOY;
+    ```
 
 
-## Task 3: Review the generated alerts based on the enabled alert policy
+
+## Task 4: Review the generated alerts based on the enabled alert policy
 
 1. Under **Related Resources**, click **Reports**.
 
@@ -99,9 +143,9 @@ This lab assumes you have:
 4. Review the alerts generated for **User Creation/Modification**.
 
 
-## Task 4: View details for an alert and close it
+## Task 5: View details for an alert and close it
 
-1. Click one of the alerts to view its details.
+1. Click the alert for **User Creation/Modification** to view its details.
 
 2. Review the following information about the alert:
 
@@ -121,7 +165,7 @@ This lab assumes you have:
 3. To close the alert, click **Close**.
 
 
-## Task 5: Generate and download an alerts report in PDF format
+## Task 6: Generate and download an alerts report in PDF format
 
 1. In the breadcrumb, click **All Alerts**.
 
