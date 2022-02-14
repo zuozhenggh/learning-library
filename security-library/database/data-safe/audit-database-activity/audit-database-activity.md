@@ -6,9 +6,9 @@ inject-note: true
 
 ## Introduction
 
-In Oracle Data Safe, you can provision audit policies on your target databases and collect audit data into the Oracle Data Safe repository. There are basic, administrator, user, Oracle pre-defined and custom audit policies, as well as audit policies designed to help you meet compliance standards. When you register an Autonomous Database, Oracle Data Safe automatically creates an audit profile, audit policy, and an audit trail.
+In Oracle Data Safe, you can provision audit policies on your target databases and collect audit data into the Oracle Data Safe repository. There are basic, administrator, user, Oracle pre-defined and custom audit policies, as well as audit policies designed to help you meet compliance standards. When you register a target database, Oracle Data Safe automatically creates an audit profile, audit policy, and audit trails relevant for the target database.
 
-Start by reviewing the audit profile, audit policy, and audit trail for your target database. Start audit data collection on your target database and provision a few audit policies. Analyze the audit events, view reports, and then create a custom audit report.
+Start by reviewing the audit profile, audit trail, and audit policy for your target database. Start audit data collection on your target database and provision a few audit policies. Analyze the audit events, view reports, and then create a custom audit report.
 
 Estimated Lab Time: 20 minutes
 
@@ -16,10 +16,11 @@ Estimated Lab Time: 20 minutes
 
 In this lab, you will:
 
-- Review the global settings for Oracle Data Safe and the audit profile for your target database
+- Review the global settings for Oracle Data Safe
+- Review the audit profile for your target database
 - Review the audit policy for your target database
-- Review the audit trail for your target database
-- View the quantity of audit records available on your target database for the discovered audit trail
+- Review the audit trail(s) for your target database
+- View the quantity of audit records available on your target database for the discovered audit trail(s)
 - Start audit data collection
 - Provision audit policies on your target database
 - Analyze audit events across all your target databases
@@ -40,9 +41,11 @@ This lab assumes you have:
 
 - Your data values are most likely different than those shown in the screenshots.
 
-## Task 1: Review the global settings for Oracle Data Safe and the audit profile for your target database
+## Task 1: Review the global settings for Oracle Data Safe
 
-1. In Security Center, click **Settings**, and review the global settings.
+1. In Security Center, click **Settings**.
+
+2. Review the global settings.
 
     - Each regional Oracle Data Safe service has global settings for paid usage, online retention period, and archive retention period.
     - Global settings are applied to all target databases unless their audit profiles override them.
@@ -50,25 +53,46 @@ This lab assumes you have:
 
     ![Global Settings](images/global-settings.png "Global Settings")
 
-2. On the left, click **Activity Auditing**.
 
-3. Under **Related Resources**, click **Audit Profiles**.
+## Task 2: Review the audit profile for your target database
 
-4. From the **Compartment** drop-down list under **List Scope**, make sure that your compartment is selected.
+1. On the left, click **Activity Auditing**.
 
-5. On the right, click the name of your target database to view its audit profile.
+2. Under **Related Resources**, click **Audit Profiles**.
 
-    ![Audit Profiles page](images/audit-profiles-details-page.png "Audit Profiles page")
+3. From the **Compartment** drop-down list under **List Scope**, make sure that your compartment is selected.
 
-6. Review the audit profile.
+4. On the right, review the audit profile information about your target database, and then click your target database name to view more detail.
+
+    ![Audit Profiles page](images/audit-profiles-page.png "Audit Profiles page")
+
+5. Review the details in the audit profile.
 
     - There are default settings for paid usage, online retention period, and offline retention period.
     - All initial audit profile settings are inherited from the global settings for Oracle Data Safe, but you can modify them here as needed.
 
     ![Audit Profile Details page](images/audit-profile-details-page.png "Audit Profile Details page")
 
+## Task 3: Review the audit trail(s) for your target database
 
-## Task 2: Review the audit policy for your target database
+1. In the breadcrumb at the top of the page, click **Activity Auditing**.
+
+2. On the left under **Related Resources**, click **Audit Trails**.
+
+3. From the **Compartment** drop-down list, select your compartment.
+
+4. From the **Target Databases** drop-down list, select your target database.
+
+5. On the right, notice that there is one audit trail discovered for your Autonomous Database (UNIFIED\_AUDIT\_TRAIL). Review the information in the table, and then click your target database name to view more detail.
+
+    ![Audit Trails page](images/audit-trails-page.png "Audit Trails page")
+
+6. Review the information on the **Audit Trail Details** page. This is where you can manage audit data collection for the audit trail.
+
+    ![Audit Trail Details page](images/audit-trail-details-page.png "Audit Trail Details page")
+
+
+## Task 4: Review the audit policy for your target database
 
 1. In the breadcrumb at the top of the page, click **Activity Auditing**.
 
@@ -90,26 +114,7 @@ This lab assumes you have:
     ![Audit Policies Details page](images/audit-policies-details-page.png "Audit Policies Details page")
 
 
-## Task 3: Review the audit trail for your target database
-
-1. In the breadcrumb at the top of the page, click **Activity Auditing**.
-
-2. On the left under **Related Resources**, click **Audit Trails**.
-
-3. From the **Compartment** drop-down list, select your compartment.
-
-4. From the **Target Databases** drop-down list, select your target database.
-
-5. On the right, notice that there is one audit trail discovered for your Autonomous Database (UNIFIED_AUDIT_TRAIL). Review the information in the table, and then click your target database name to view more detail.
-
-    ![Audit Trails page](images/audit-trails-page.png "Audit Trails page")
-
-6. Review the information on the **Audit Trail Details** page. This is where you can manage audit data collection for the audit trail.
-
-    ![Audit Trail Details page](images/audit-trail-details-page.png "Audit Trail Details page")
-
-
-## Task 4: View the quantity of audit records available on your target database for the discovered audit trails
+## Task 5: View the quantity of audit records available on your target database for the discovered audit trail(s)
 
 1. In the breadcrumb at the top of the page, click **Activity Auditing**.
 
@@ -142,7 +147,7 @@ This lab assumes you have:
     ![Available in Target Database column](images/available-in-target-database.png "Available in Target Database column")
 
 
-## Task 5: Start audit data collection
+## Task 6: Start audit data collection
 
 1. In the breadcrumb at the top of the page, click **Activity Auditing**.
 
@@ -156,7 +161,7 @@ This lab assumes you have:
 
 6. Click **Start**. A **Start Audit Trail: UNIFIED\_AUDIT\_TRAIL** dialog box is displayed.
 
-7. Configure a start date of 12 months ago, and then click **Start**.
+7. Configure a start date based on the data in the **Compute Audit Volume** region of the audit profile that you viewed in task 5 (step 10), and then click **Start**.
 
     ![Start Audit Trail dialog box](images/start-audit-trail-dialog-box.png "Start Audit Trail dialog box")
 
@@ -165,7 +170,7 @@ This lab assumes you have:
     ![Collection State Idle](images/collection-state-idle.png "Collection State Idle")
 
 
-## Task 6: Provision audit policies
+## Task 7: Provision audit policies
 
 1. In the breadcrumb at the top of the page, click **Activity Auditing**.
 
@@ -196,7 +201,7 @@ This lab assumes you have:
 12. Wait for the provisioning to finish, and then view the updated policy information on the page.
 
 
-## Task 7: Analyze audit events across all your target databases
+## Task 8: Analyze audit events across all your target databases
 
 1. In the breadcrumb at the top of the page, click **Activity Auditing**.
 
@@ -245,7 +250,7 @@ This lab assumes you have:
 
     ![Audit event table expander](images/audit-event-table-expander.png "Audit event table expander")
 
-## Task 8: View the All Activity report
+## Task 9: View the All Activity report
 
 1. Under **Related Resources**, click **Audit Reports**. Oracle Data Safe has the following predefined audit reports:
 
@@ -280,7 +285,7 @@ This lab assumes you have:
     ![All Activity report](images/all-activity-report.png "All Activity report")
 
 
-## Task 9: Create a custom audit report
+## Task 10: Create a custom audit report
 
 1. At the top of the All Activity report, add the following two filters. To add a filter, click **+ Another Filter**. When you are done setting the filter parameters, click **Apply**.
 
@@ -297,7 +302,6 @@ This lab assumes you have:
 
     ![Create Custom Report dialog box](images/create-custom-report-dialog-box.png "Create Custom Report dialog box")
 
-
 5. In the **Create Custom Report** dialog box, click the **click here** link to navigate to your custom report.
 
     - If you need to modify your custom report, you can click **Save Report** to save the changes.
@@ -305,7 +309,35 @@ This lab assumes you have:
 6. To view your custom report in the future, under **Related Resources**, click **Audit Reports**. Click the **Custom Reports** tab, and then click the name of your custom audit report.
 
 
+## Task 11: Generate and download a custom audit report as a PDF
 
+1. On the custom audit report page, click **Generate PDF/XLS Report**.
+
+    The **Generate Report** dialog box is displayed.
+
+2. Select **PDF**.
+
+3. For **Display Name**, enter **All Activity Report on schema: HCM1 in the target your-target-database-name**.
+
+4. (Optional) Enter a description.
+
+5. Select your compartment.
+
+6. Click **Generate Report** and wait until the PDF report is generated.
+
+    A message is displayed stating that report generation is complete.
+
+    ![Generate PDF of custom audit report](images/generate-pdf-custom-audit-report.png "Generate PDF of custom audit report")
+
+7. Click the **click here** link to download the report.
+
+    A dialog box is displayed providing you options to open or save the document.
+
+8. Save the report to your local computer.
+
+9. Open the PDF report and view it.
+
+    ![Custom audit report PDF](images/custom-audit-report-pdf.png "Custom audit report PDF")
 
 ## Learn More
 
@@ -314,4 +346,4 @@ This lab assumes you have:
 ## Acknowledgements
 
 * **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, February 12, 2022
+* **Last Updated By/Date** - Jody Glover, February 15, 2022
