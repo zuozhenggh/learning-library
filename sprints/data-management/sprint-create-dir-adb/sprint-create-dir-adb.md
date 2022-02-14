@@ -1,4 +1,4 @@
-# How do I Create a Directory in Autonomous Database?
+# How do I create a directory in Autonomous Database?
 Duration: 2 minutes
 
 ## Create Directory in Autonomous Database
