@@ -47,7 +47,7 @@ In this lab, you will learn the lifecycle of machine learning:
 ### Prerequisites
 
 * Oracle Database 21c installed
-* Access the Oracle database containing the customer insurance table and run the scripts to configure the user and prepare data.
+* Access the Oracle database containing the customer insurance table and run the scripts to configure the user and prepare data. The virtual machine used for this lab is the same VM that was used in the OML4PY Workshop of the previous lab. To see how to access it, you can use the following link:[preparation.md](/oml4py/preparation/preparation.md) file.
 * SSH private key with which you created your VM on OCI.
 
 >**Note:** If you have a Free Trial account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
@@ -58,8 +58,8 @@ In this lab, you will learn the lifecycle of machine learning:
 
 
 ## Acknowledgements
-* **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru,
-* **Last Updated By/Date** -  Adrian Castillo Mendoza, September 2021
+* **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru, Rajeev Rumale
+* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
