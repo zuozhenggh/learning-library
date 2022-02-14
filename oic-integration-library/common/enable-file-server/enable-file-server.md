@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the process of enabling the Oracle Integration File Server. By default, the File Server is not enable, but is required for this workshop.
+This lab walks you through the process of enabling the Oracle Integration File Server. By default, the File Server is not enabled, but is required for this workshop.
 
 Estimated Lab Time: 5 minutes
 
