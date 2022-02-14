@@ -1017,7 +1017,7 @@ SQL/JSON has 4 operators to generate JSON objects and arrays: 2 are per-row oper
 
 ## Homework
 
-Answer these questions by writing appropriate queries to extract the data from the database.  You can write these queries however you want, but we are providing your with hints, whether you should use a JSON query or a SQl query.  As indicated in using the JSON database action page or the SQL database action page. Submit a screenshot of your screen with the answers or the queries in a word document. For all of these queries, you have run similar queries throughout the labs, so use them as the basis for your queries and substitute as appropriate.
+Answer these questions by writing appropriate queries to extract the data from the database.  You can write these queries however you want, but we are providing your with hints, whether you should use a JSON query or a SQl query.  As indicated in using the JSON database action page or the SQL database action page. Submit a screenshot of each query and the result, and then submit to Blackboard. If you are unable to get your query to run, submit a portion of your work for project credit. For all of these queries, you have run similar queries throughout the labs, so use them as the basis for your queries and substitute as appropriate.
 
 1. What is the title of the single drama movie from the 70s that is on a LaserDisk?
     
