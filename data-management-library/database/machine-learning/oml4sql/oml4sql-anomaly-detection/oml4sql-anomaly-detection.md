@@ -15,7 +15,7 @@ In this workshop, you have a dataset representing 15k customers of an insurance 
 
 For more information about [OML4SQL API Guide](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD).
 
-Estimated Lab Time: 2 hours
+Estimated Lab Time: 2 hours.
 
 ### Objectives
 
@@ -35,7 +35,7 @@ In this lab, you will:
 
 ### Prerequisites
 
-* Oracle Database 21c installed on-premise;
+* Oracle Database 21c installed on-premise.
 * Access the Oracle database containing the customer insurance table and run the scripts to configure the user and prepare data.
 * SSH private key with which you created your VM on OCI.
 
@@ -64,11 +64,11 @@ In this lab, you will:
 
 ![view-SSH-Hosts](../oml4sql-anomaly-detection/images/view-ssh.png)
 
-3. Rigth clic on SSH Hots and then do clic in New SSH Host, write values in each field and then clic Ok.
+3. Right clic on SSH Hots and then do clic in New SSH Host, write values in each field and then clic Ok.
 
 ![ssh-remote-host](../oml4sql-anomaly-detection/images/ssh-remote-host.png)
 
-4. Rigth clic on the fisrt oml4sql tab in SSH Hosts an clic connect, and then right clic in the submenu oml4sql tab an clic connect.
+4. Right clic on the first oml4sql tab in SSH Hosts an clic connect, and then right clic in the submenu oml4sql tab an clic connect.
 Notice how the small padlock closes in both options, which represents that you are already remotely connected to your VM and you are ready to create a connection to your
 
 5. schema from SQL Developer.
@@ -353,8 +353,8 @@ With this practice, we can conclude that the SVM algorithm is very useful to sol
 
 
 ## Acknowledgements
-* **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru, Rajeev Rumale
-* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2021
+* **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru, Rajeev Rumale.
+* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2022.
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

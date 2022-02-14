@@ -20,5 +20,5 @@ The insurance business wants to analyze four business cases to get demographics 
 * Access the Oracle database containing the customer insurance table and run the scripts to configure the user and prepare data.
 
 ## Acknowledgements
-* **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru, Rajeev Rumale
-* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2022
+* **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru, Rajeev Rumale.
+* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2022.
