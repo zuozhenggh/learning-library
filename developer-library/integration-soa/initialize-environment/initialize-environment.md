@@ -43,7 +43,7 @@ Now with access to your remote desktop session, Follow these steps to initialize
 
 1. JDeveloper 12c has been prelaunched to window on the right.
 
-  ![](./images/jdev-open.png " ")
+  ![](./images/jdev-start.png " ")
 
 2. From the application server tab, click on the `+` sign to list App Servers, the Right-Click on *IntegratedWebLogicServer* and select *Start Server Instance*.
 
