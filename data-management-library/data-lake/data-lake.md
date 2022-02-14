@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Data is constantly growing being enhanced, validated and updated. That is why once you have the data assets you need to make sure that processing continues to manage the data assets and provide updated values you data lake.
+Data is constantly growing, being enhanced, validated, and updated. That is why once you have the data assets, you need to make sure that processing continues to manage the data assets and provide updated values to your data lake.
 
-OCI Data Flows handles these processes by loading new data or updating.
+OCI Data Flow handles these processes by loading or updating new data.
 
 Estimated time: 20 minutes
 
@@ -32,15 +32,16 @@ For creating the application, you need to have the java jar file and we are prov
 
 ![Create Data Flow](./images/df_createapp.png " ")
 
-For this example, choose Java, and check the box for entering the URL manually. Copy and paste from the following into the form. 
+For this example, choose Java, and check the box for entering the URL manually. Copy and paste from the following into the form.
 
 ![Create Data Flow](./images/df_app_details1.png " ")
-
+File URL:
 ```
 <copy>
 oci://dataflow_sample_apps@bigdatadatasciencelarge/dataflow-java-sample-1.0-SNAPSHOT.jar
 </copy>
 ```
+Main Class Name:
 ```
 <copy>
 com.oracle.oci.dataflow.samples.DataFlowJavaSample
@@ -52,11 +53,10 @@ And for the arguments:
 ${input} ${output}
 </copy>
 ```
-Click on Create Application.
 
 ![Create Data Flow](./images/df_app_details2.png " ")
 
-Now we can run the application. Copy and paste the following into the input and output arguments and click run.
+Copy and paste the following into the input and output arguments and click run. Now we can run the application.
 Input
 ```
 <copy>
@@ -64,7 +64,7 @@ https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/cu
 </copy>
 ```
 Output
-You will need to supply the namespace of your tenancy for your dataflow-warehouse bucket, and use this as the output for the process.
+You will need to supply the namespace of your tenancy (which you can find by clicking on your profile, Tenancy, and listed in Tenancy Information) for your dataflow-warehouse bucket, and use this as the output for the process.
 ```
 <copy>
 oci://dataflow-warehouse@NAMESPACE
@@ -89,21 +89,21 @@ Now let's go back to OCI Data Integrations because we export our data flows from
 
 ## Task 2: Create OCI Data Flow from Data Integration
 
-In this step, we are going to use again Quick Actions to click on Create Data Flow and then use the designer to setup the source and target along with any other filters we would like.
+Navigate to the Workspace Lakehouse in Data Integration and in this step, we are going to use again Quick Actions to click on Create Data Flow and then use the designer to setup the source and target along with any other filters we would like.
 
 ![Create Data Flow](./images/Create_dataflow.png " ")
 
-By default, at the bottom of the designer,  you want to enter the name for the New Data Flow, DataFlow_UploadGenre, and Select the Project that was created in the last lab.
+By default, at the bottom of the designer,  you want to enter the name for the New Data Flow, DataFlow_UploadGenre, and Select the Project that was created in the last lab which was Project_lakehouse.
 
 ![Create Data Flow](./images/dataflow1.png " ")
 
-Then click Create. This way you can save as you go along to in order not to lose any changes.
+Then click Create. This way you can save as you go along in order to not lose any changes.
 
-From the toolbar, there are sources, targets, filters, joins and other options. You are going to drag the source icon over to the design area. Then start to fill out the details for the source by clicking on Select, and then choose the ADW asset that was created in the first lab. Select the Default Connection, and in Schema, ADMIN. For the Entity choose the MOVIE_GENRE table. 
+From the toolbar, there are sources, targets, filters, joins and other options. You are going to drag the source icon over to the design area. Then start to fill out the details for the source by clicking on Select, and then choose the ADW asset that was created in the first lab. Select the Default Connection, and in Schema, ADMIN. For the Entity choose the MOVIE_GENRE table. If MOVIE_GENRE is not available, click Edit Data Entity and select MOVIE_GENRE.
 
 ![Create Data Flow](./images/dataflow2.png " ")
 
-Next you want to filter the data in order not to pull in the entire data set. If this was streaming it or large files this would be an important step.
+Next you want to filter the data in order not to pull in the entire data set. If this was streaming in or large files, this would be an important step. Drag the filter icon into the design area and create a filter condition.
 
 ![Create Data Flow](./images/dataflowfilter.png " ")
 
@@ -157,5 +157,5 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
-* **Contributors** - 
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
+* **Contributors** -
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021, Nagwang Gyamtso, Solution Engineering, February 2022

@@ -31,18 +31,18 @@ You can just simply query the MOVIE GENRE table to view data, or create the foll
 
 ```
 <copy>
-CREATE or REPLACE VIEW MOVIE_VW as
+CREATE OR REPLACE VIEW MOVIE_VW as
 SELECT
-    ENTERED_TIME,
-    PRICE,
-    CUSTID,LAST_NAME, COUNTRY,
-    GENREID,NAME,
-    MOVIEID,
-    ACTIVITY,
-    RECOMMENDED
+	TIME,
+	PRICE,
+	CUSTID,LAST_NAME, COUNTRY,
+	GENREID, NAME,
+	MOVIEID,
+	ACTIVITY,
+	RECOMMENDED
 FROM
-    ADMIN.MOVIE_GENRE, customer_contact,GENRE
-    where genre_id=genreid and custid=cust_id;
+	ADMIN.EXPORT_STREAM_2020_UPDATED, ADMIN.CUSTOMER_CONTACT,ADMIN.GENRE
+	where genre_id=genreid and CUSTID=cust_id;
 </copy>
 ```
 This view will demonstrate the combination for the customer, country and if they would recommend the movie and can be grouped by genre and other activities.
@@ -92,11 +92,11 @@ SELECT
     GENRE.NAME,
     CUSTSALES.CUST_ID,
     AGE,
-    GENDER, 
+    GENDER,
     STATE_PROVINCE
 FROM
-    ADMIN.CUSTSALES_CUSTSALES_2020_01 custsales, 
-    ADMIN.CUSTOMER_EXTENSION, 
+    ADMIN.CUSTSALES_CUSTSALES_2020_01 custsales,
+    ADMIN.CUSTOMER_EXTENSION,
     ADMIN.CUSTOMER_CONTACT,
     ADMIN.GENRE
     where customer_extension.CUST_ID=custsales.cust_id
@@ -151,4 +151,4 @@ Be sure to check out the labs on Oracle Machine Learning and how the Lakehouse f
 ## Acknowledgements
 
 * **Author** - Michelle Malcher, Database Product Management, Massimo Castelli, Senior Director Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021, Nagwang Gyamtso, Solution Engineering, February 2021

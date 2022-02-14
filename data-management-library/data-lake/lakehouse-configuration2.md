@@ -80,7 +80,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
     </copy>
     ```
     ![Click Data Load](./images/customersales2.png " ")
-    
+
     - Select **No Credential** as this is a public bucket.
     - Click the **Test** button to test the connection. Then click **Create**.
 
@@ -120,11 +120,11 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
     The job should take about 20 seconds to run.
 
-10. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
+10. Check that all six data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
-    ![Check the job is completed](./images/loadcompleted2.png " ")
+    ![Check the job is completed](./images/load_cloud_object.png " ")
 
-11. From the CUSTOMERSALES location, drag all 4 of the folders over to the right hand pane.
+11. Follow steps 3-5 for CUSTOMERSALES and drag all 4 of the folders over to the right hand pane.
 
     ![CustomerSales load task](./images/customersales3.png " ")
 
@@ -140,4 +140,4 @@ You may now proceed to the next lab.
 
 * **Author** - Michelle Malcher, Database Product Management
 * **Contributors** -  Niay Panchal, Mike Matthew and Marty Gubar, Autonomous Database Product Management
-* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021
+* **Last Updated By/Date** - Michelle Malcher, Database Product Management, September 2021, Nagwang Gyamtso, Solution Engineering, February 2022
