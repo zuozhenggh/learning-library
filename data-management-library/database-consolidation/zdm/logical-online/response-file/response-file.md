@@ -1,18 +1,15 @@
 # Configure the Response File
 
 ## Introduction
-In this lab you will:
-* Learn About ZDM's Response File
-* Create and Pre-fill a Response File for your Migration
+In this lab you will learn about ZDM's response file and its parameters. You will also learn howto create and pre-fill a response file for your migration. 
 
-
-Estimate Lab Time: 40 minutes
-
+Estimated Time: 40 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Learn about ZDM's response file and its parameters. You will also learn howto create and pre-fill a response file for your migration. 
+* Learn About ZDM's Response File
+* Create and Pre-fill a Response File for your Migration
 
 ### Prerequisites
 * This workshop section requires having completed all previous sections.
