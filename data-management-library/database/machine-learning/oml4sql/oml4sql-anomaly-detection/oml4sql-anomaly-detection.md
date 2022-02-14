@@ -13,7 +13,7 @@ The PL/SQL API and SQL language operators provide direct access to OML4SQL funct
 
 In this workshop, you have a dataset representing 15k customers of an insurance company. Each customer has around 30 attributes, and our goal is to train our database to find 4 Business Objectives that describe in [oml4sql-use-case.md](/data-management-library/database/machine-learning/oml4sql/oml4sql-use-case/oml4sql-use-case.md) file.
 
-For more information about [OML4SQL API Guide,](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD)
+For more information about [OML4SQL API Guide](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD).
 
 Estimated Lab Time: 2 hours
 
