@@ -9,11 +9,7 @@ inject-note: true
 
 To use a database with Oracle Data Safe, you first need to register it with Oracle Data Safe. If there is no option to register your database, it is because you are working in a region that does not have the Oracle Data Safe service enabled in it.
 
-The following security elements need to be configured for you to use a database with Oracle Data Safe:
-- A policy in Oracle Cloud Infrastructure Identity and Access Management (IAM) that grants you permission to use the Autonomous Database in your compartment and use all Oracle Data Safe features. If you are a tenancy administrator, a policy is not required. By default, when you register an Autonomous Database with Oracle Data Safe, your user account is automatically granted Oracle Data Safe permissions for that database. The privileges granted depend on whether you are a regular user or an administrator. A regular user can use User Assessment, Security Assessment, and Activity Auditing with the Autonomous Database. A tenancy administrator or an Oracle Data Safe administrator can use all the Oracle Data Safe features on any registered target database.
-- One or more Oracle Data Safe roles granted to the Oracle Data Safe service account on the database. The roles enable Oracle Data Safe features on the database. By default, the Oracle Data Safe service account on an Autonomous Database has all the roles granted, except for Data Masking.
-
-Begin by registering your Autonomous Transaction Database (ATP) with Oracle Data Safe. After registering it, run the `load-data-safe-sample-data_admin.sql` SQL script to load sample data into your database. This script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Masking feature on your database. Next, access Oracle Data Safe in Oracle Cloud Infrastructure and view the list of registered target databases to which you have access. Access and review Security Center. You can access all features through this interface.
+Begin by registering your Autonomous Transaction Database (ATP) with Oracle Data Safe. After registering it, run the `load-data-safe-sample-data_admin.sql` SQL script to load sample data into your target database. This script creates several tables with sample data that you can use to practice with the Oracle Data Safe features. It also enables the Data Masking feature on your target database (the other features are enabled by default). Next, access Oracle Data Safe in Oracle Cloud Infrastructure and view the list of registered target databases to which you have access. Access and review Security Center. You can access all Oracle Data Safe features through this interface.
 
 Estimated Lab Time: 30 minutes
 
@@ -152,4 +148,4 @@ This lab assumes you have:
 
 ## Acknowledgements
   * **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-  * **Last Updated By/Date** - Jody Glover, February 12, 2022
+  * **Last Updated By/Date** - Jody Glover, February 15, 2022

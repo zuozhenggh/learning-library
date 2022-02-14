@@ -503,5 +503,5 @@ You can select a user assessment to compare with the latest user assessment. Wit
 
 
 ## Acknowledgements
-* **Author** - Jody Glover, Principal User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, September 28 2021
+* **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
+* **Last Updated By/Date** - Jody Glover, February 15, 2022

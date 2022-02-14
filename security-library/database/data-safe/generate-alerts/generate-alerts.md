@@ -30,7 +30,7 @@ This lab assumes you have:
 
 - Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
 - Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that Activity Auditing is enabled on your target database, and that you have permissions in Oracle Cloud Infrastructure Identity and Access Management (IAM) to use the Alerts feature in Oracle Data Safe.
-- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. Make sure to have the `ADMIN` password for your target database on hand (see [Register an Autonomous Database](?lab=register-autonomous-database)). 
+- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. Make sure to have the `ADMIN` password for your target database on hand (see [Register an Autonomous Database](?lab=register-autonomous-database)).
 - Started audit data collection on your target database (see [Audit Database Activity](?lab=audit-database-activity))
 - Accessed Security Center
 
@@ -286,4 +286,4 @@ In this task, you access Oracle Database Actions in Oracle Cloud Infrastructure 
 ## Acknowledgements
 
 * **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, February 13, 2022
+* **Last Updated By/Date** - Jody Glover, February 15, 2022
