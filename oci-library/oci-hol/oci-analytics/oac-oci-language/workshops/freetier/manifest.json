@@ -33,6 +33,10 @@
             "filename": "../../4-labs-design-oci-di-data-flows/develop-oci-di-flows.md"
         },
         {
+            "title": "Lab 5: Visualize the Data in OAC",
+            "filename": "../../5-labs-visualize-the-data/visualize-the-data.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"

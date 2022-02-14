@@ -135,6 +135,8 @@ In order to add a function, first we need to create an **Application**.
 3.	Give it a name (we will refer to this name as <app-name> for the rest of the tutorial), pick the VCN you just created, and the public subnet that was created for that VCN.(from **Lab 1**)
 4.	Click **Create**
 
+![](./images/introduction.png " ")
+
 Set up CLI so that it can deploy functions to the right compartment and container registry are used.
 1.	When you are in your Application, select **Getting Started**
 2.	Click **Cloud Shell Setup**

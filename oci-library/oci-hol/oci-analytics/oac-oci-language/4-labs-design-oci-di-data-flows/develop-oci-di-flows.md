@@ -12,6 +12,9 @@ In this lab, you will:
 * Create a data asset for your source and staging data
 * Create a data asset for your target
 * Create the Data flow.
+* Run the Data flow
+
+![](./images/introduction.png " ")
 
 ### Prerequisites
 
@@ -97,6 +100,7 @@ In Data Entity select the hotels review data file and enter CSV as the File Type
 
 9.	You can confirm that you loaded the data correctly by going to the Data section. It takes a minute or two for the data to appear there.
 
+![](./images/introduction.png " ")
 
 
 10.	First, we will add an expression to change the format of our review_id field.
@@ -109,10 +113,13 @@ This will create a new expression step in your dataflow.
 
 13.	Clicking on the Data tab of the expression will allow you to see the newly created fields.
 
+![](./images/introduction.png " ")
 
 
 Now we will connect the function you created in section 5 to extract the aspect level sentiment from the review text.
 14.	From the operators toolbar, drag the Function (fn) operator into the canvas, and connect the output of your expression as the input into the function.
+
+![](./images/introduction.png " ")
 
 15.	Select the function you just added, in the Properties pane, navigate to the Details Pane.
 change the identifier to: SENTIMENT_FUNCTION
@@ -121,18 +128,18 @@ change the identifier to: SENTIMENT_FUNCTION
 Click OK to confirm your changes.
 
 17.	Now you will need to add or edit the properties below. Except for the BATCH_SIZE property (which you can edit), you can do this by clicking the Add Property button for each field.
-Name	Type	Data Type	Length	Value
-info	Input Attribute	VARCHAR	2000
-column	Function Configuration	VARCHAR		info
-BATCH_SIZE	Function Configuration	NUMERIC		1
-text	Output Attribute	VARCHAR	2000
-sentiment	Output Attribute	VARCHAR	2000
-offset	Output Attribute	INTEGER		
-length	Output Attribute	INTEGER		
+
+| Name | Type | Data Type | LENGTH | Value |
+| --- | --- | --- |
+| 1 | Some text or a link | More text  |
+| 2 |Some text or a link | More text |
+| 3 | Some text or a link | More text |
+
+![](./images/introduction.png " ")
 
 18.	Once you are done, navigate to the Map tab, and map the review field from the source attributes into the info field Function Input. You do this by “dragging” review in the left table into the info field.
 
-
+![](./images/introduction.png " ")
 
 Now we will map the output of the sentiment analysis to the Data Warehouse Table we created for this purpose:
 19.	From the operator’s toolbar, drag the Target operator into the canvas, and connect the output of your sentiment function as the input into the target operator.
@@ -154,6 +161,7 @@ In Schema, select the object storage location that you want to use for staging p
 
 Make sure the fields are mapped as follows:
 
+![](./images/introduction.png " ")
 
 
 
@@ -161,10 +169,12 @@ Make sure the fields are mapped as follows:
 
 When you are done with your data flow it will look something like this:
 
+![](./images/introduction.png " ")
 
-Running the data flow
+## Task 3: Run the Data Flow
 
 Now we need to execute the data flow. The process is as follows.
+
 1.	Navigate back to your workspace and click Create Integration Task in the Quick Actions menu.
 As part of the process of creation you need to select the project and the data flow you just created in Step 8.
 
@@ -174,35 +184,22 @@ As part of the process of creation you need to select the project and the data f
 
 4.	Click on the Tasks link in the Details menu, select the contextual menu for the task you just created, and click “Publish to Application”. Select the application you just created.
 
+ ![](./images/introduction.png " ")
+
 5.	Navigate back to the application you just created, select your integration task, and select Run on the contextual menu as shown below.
 
+![](./images/introduction.png " ")
 
 
 You will navigate to the Runs page where you will be able to monitor the execution of your integration task run. If there are any errors, make sure to check the logs to understand the cause of the run error.
 
+![](./images/introduction.png " ")
 
 
 6.	Assuming everything ran successfully, we can now navigate to our database and see if our tables got populated with the insights extracted from the reviews.
 
+![](./images/introduction.png " ")
 
-
-
-
-1. Sub step 1
-
-	![Image alt text](images/sample1.png)
-
-2. Sub step 2
-
-  ![Image alt text](images/sample1.png)
-
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
-
-5. Example with bold **text**.
-
-   If you add another paragraph, add 3 spaces before the line.
-
-## Task 2: Concise Step Description
 
 1. Sub step 1 - tables sample
 

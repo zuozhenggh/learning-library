@@ -34,6 +34,8 @@ In this task we'll create 2 buckets one for storing source file with reviews and
 
 4.	Repeat steps **1** to **3** and name the bucket “data-staging”
 
+![](./images/introduction.png " ")
+
 
 ## Task 2: Download and Upload Sample Data
 
@@ -51,6 +53,7 @@ For this exercise, we will assume that you have a set of customer reviews for a 
 
 6.	Click **Upload**, and then click **Close**.
 
+![](./images/introduction.png " ")
 
 ## Task 3: Prepare Target Database
 
@@ -74,6 +77,8 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 9.	On the **Tools** tab, click **Open Database Actions**.
 
+ ![](./images/introduction.png " ")
+
 10.	Under **Development**, click **SQL**.
 
 11. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
@@ -84,6 +89,7 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 		GRANT DWROLE TO USER1;
 		ALTER USER USER1 QUOTA 200M ON DATA;
 
+![](./images/introduction.png " ")
 
 ## Task 4: Create Tables to Store Output Data
 

@@ -100,6 +100,8 @@ On the console, go to **Developer Services** and click **Gateways**, and then:
 When the new API gateway has been created, it is shown as Active in the list on the Gateways page.
 See documentation for more details.
 
+![](./images/introduction.png " ")
+
 
 ## Task 4: Confirm access to OCI Language Services
 This step ensures you are able to access OCI Language Service.
@@ -121,6 +123,7 @@ Get familiar with the Language AI Service
 
 We need to call the endpoint from Python code (or using some other SDK). In Section 5 we will write a couple of functions that will call OCI Language.
 
+![](./images/introduction.png " ")
 
 ## Learn More
 
