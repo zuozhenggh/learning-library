@@ -11,7 +11,7 @@ In this workshop, you have a dataset representing 15k customers of an insurance 
   3. Compute the probability of purchase for a new/hypothetical customer, and grant it to sellers to qualify better their potential clients since the first contact.
   4. Identify rows that are most atypical in the input dataset. Consider each type of marital status to be separate, so the most anomalous rows per marital status group should be returned.
 
-Estimated Lab Time: 2 hours
+Estimated Lab Time: 2 hours.
 
 
 ## About Oracle Machine Learning for SQL (OML4SQL)
@@ -46,7 +46,7 @@ In this lab, you will learn the lifecycle of machine learning:
 
 ### Prerequisites
 
-* Oracle Database 21c installed
+* Oracle Database 21c installed.
 * Access the Oracle database containing the customer insurance table and run the scripts to configure the user and prepare data. The virtual machine used for this lab is the same VM that was used in the OML4PY Workshop of the previous lab. To see how to access it, you can use the following file: [preparation.md](/data-management-library/database/machine-learning/oml4py/preparation/preparation.md).
 * SSH private key with which you created your VM on OCI.
 
