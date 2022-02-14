@@ -28,7 +28,7 @@ In this lab, you will:
 
 > **Note** : This Lab assumes you have already completed [Defining Host Profile](../workshops/freetier/?lab=b2b-trading-partner-manager#Task1:ConfiguretheHostProfile) and [Create Trading Partners] (../workshops/freetier/?lab=b2b-trading-partner-manager#Task2:CreateTradingPartners)
 
-> **Note**: [Download Lab Artifacts](../workshops/freetier/?lab=setup#Task5:DownloadLabArtifacts)
+> **Note**: [Download Lab Artifacts](../workshops/freetier/?lab=setup#Task5:DownloadLabArtifacts) if, not done in previous sections
 
 ### *Create B2B Document*
 

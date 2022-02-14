@@ -37,7 +37,7 @@ In this lab, you will create a basic integration flow to process the EDI documen
 ### Prerequisites
 > **Note** : This Lab assumes you have completed all the previous labs. Importantly, [Lab5:B2B Schemas and Documents](../workshops/freetier/?lab=b2b-documents-schemas) & [Lab6: B2B Trading Partner Manager](../workshops/freetier/?lab=b2b-trading-partner-manager)
 
-> **Note**: [Download Lab Artifacts](../workshops/freetier/?lab=setup#Task5:DownloadLabArtifacts)
+> **Note**: [Download Lab Artifacts](../workshops/freetier/?lab=setup#Task5:DownloadLabArtifacts) if, not done in previous sections
 
 ## Task 1: Create an Integration
 
@@ -236,7 +236,8 @@ Follow the instructions from Step5 to Step9 given under [Setup the Environment](
 |Integration name prefix|USGE|
 3. ***Deploy*** the **Transport and Agreements** if not deployed.
 4. Copy&Paste the payload from **USGEPO.xml** (from the lab artifacts folder **b2b-getting-started\b2b-outbound-x12-ftp**)
-5. Go back to Integrations and test using the new trading partner as you did for DellInc, [Refer previous task](../workshops/freetier/?lab=b2b-outbound-x12-ftp#Task9:Testtheintegration).
+5. Go back to Integrations and test using the new trading partner as you did for DellInc
+[Refer previous the task "Test the integration"](../workshops/freetier/?lab=b2b-outbound-x12-ftp#Task9:Testtheintegration)
 6. Monitor the trading partner and backend integrations.
 
 You may now [proceed to the next lab](#next).

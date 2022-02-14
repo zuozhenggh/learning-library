@@ -49,7 +49,7 @@ In this workshop, you will learn how to:
 * An Oracle Free Tier or Paid Cloud Account.
 * A Chrome browser.
 
-You may now [proceed to the next lab](#next).
+You may now [proceed to the next section](#next).
 
 ## Learn More
 
