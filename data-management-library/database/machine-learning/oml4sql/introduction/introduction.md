@@ -24,7 +24,7 @@ OML4SQL offers a comprehensive set of in-database algorithms for performing a va
 
 The PL/SQL API and SQL language operators provide direct access to OML4SQL functionality in Oracle Database.
 
-For more information about [OML4SQL API Guide,](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD)
+For more information about [OML4SQL API Guide](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD).
 
 
 ### Objectives
@@ -54,7 +54,7 @@ In this lab, you will learn the lifecycle of machine learning:
 
 ## Learn More
 
-* [About Oracle Machine Learning for SQL](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD)
+* [About Oracle Machine Learning for SQL](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD).
 
 
 ## Acknowledgements

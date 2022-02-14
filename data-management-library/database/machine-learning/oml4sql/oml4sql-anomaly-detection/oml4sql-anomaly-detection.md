@@ -58,7 +58,7 @@ In this lab, you will:
 ## Task 3: Data Preparation
 
 1. It is recommended to have SQL Developer installed on your host machine so that you can interact with the data in a more friendly way.
-* You can download here [SQL Developer Download,](https://www.oracle.com/tools/downloads/sqldev-downloads.html).
+* You can download here [SQL Developer Download](https://www.oracle.com/tools/downloads/sqldev-downloads.html).
 
 2. Once installed SQL Developer, you need to configure the remote connection in SSH Hosts of SQL Developer feature, following these instructions:
 
@@ -162,7 +162,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
   Note the NULL specification for target column name.
 
-* For more information about SVM in Oracle check this link: [Support Vector Machine,](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/support-vector-machine.html#GUID-FD5DF1FB-AAAA-4D4E-84A2-8F645F87C344).
+* For more information about SVM in Oracle check this link: [Support Vector Machine](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/support-vector-machine.html#GUID-FD5DF1FB-AAAA-4D4E-84A2-8F645F87C344).
 
     ````
     <copy>
