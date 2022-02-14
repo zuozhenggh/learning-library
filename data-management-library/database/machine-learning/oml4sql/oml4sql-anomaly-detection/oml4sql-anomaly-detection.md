@@ -162,7 +162,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
   Note the NULL specification for target column name.
 
-* For more information about SVM in Oracle check this link: [Support Vector Machine,] (https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/support-vector-machine.html#GUID-FD5DF1FB-AAAA-4D4E-84A2-8F645F87C344)
+* For more information about SVM in Oracle check this link: [Support Vector Machine,](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/support-vector-machine.html#GUID-FD5DF1FB-AAAA-4D4E-84A2-8F645F87C344)
 
     ````
     <copy>
