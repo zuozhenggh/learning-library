@@ -21,4 +21,4 @@ The insurance business wants to analyze four business cases to get demographics 
 
 ## Acknowledgements
 * **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru, Rajeev Rumale
-* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2021
+* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2022
