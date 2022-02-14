@@ -18,13 +18,14 @@ Estimated Lab Time: 30 minutes
 
 In this lab, you will:
 
-- View sensitive data in your database
-- Discover sensitive data in your database by using the Data Discovery feature
+- View sensitive data in your target database
+- Discover sensitive data in your target database by using Data Discovery
 - Create a PDF of the Sensitive Data Model report
-- Create a masking policy
-- Mask sensitive data in your database by using the Data Masking feature
+- Create a masking policy for your target database
+- Mask sensitive data in your target database by using Data Masking
+- View the Data Masking report
 - Create a PDF of the Data Masking report
-- Validate the masked data in your database
+- Validate the masked data in your target database
 
 
 ### Prerequisites
@@ -41,7 +42,7 @@ This lab assumes you have:
 - Your data values are most likely different than those shown in the screenshots.
 
 
-## Task 1: View sensitive data in your database
+## Task 1: View sensitive data in your target database
 
 Use Oracle Database Actions to query sensitive data in your database. You can access Database Actions from your database's Console in Oracle Cloud Infrastructure.
 
@@ -92,7 +93,7 @@ Use Oracle Database Actions to query sensitive data in your database. You can ac
 
 
 
-## Task 2: Discover sensitive data by using Data Discovery
+## Task 2: Discover sensitive data in your target database by using Data Discovery
 
 In Data Discovery, you can select the sensitive types that you want to discover in your target database. Data Discovery then generates a sensitive data model that contains sensitive columns in your target database.
 
@@ -200,7 +201,7 @@ In Data Discovery, you can select the sensitive types that you want to discover 
 
 6. Close the PDF report and return to the **Sensitive Data Models Details** page.
 
-## Task 4: Create a masking policy
+## Task 4: Create a masking policy for your target database
 
 Data Masking can generate a masking policy for your target database based on your sensitive data model. It automatically tries to select a default masking format for each sensitive column. You can edit these default selections and select different ones as needed. Occasionally you are prompted to address masking formats in your masking policies that are causing issues.
 
@@ -248,7 +249,7 @@ Data Masking can generate a masking policy for your target database based on you
     ![Masking Columns Needing Attention section](images/masking-columns-needing-attention.png "Masking Columns Needing Attention section")
 
 
-## Task 5: Mask sensitive data by using Data Masking
+## Task 5: Mask sensitive data in your target database by using Data Masking
 
 After you create a masking policy, you can run a data masking job against your target database from the **Masking Policy Details** page. You can also run a data masking job from the **Data Masking** page.
 
@@ -268,7 +269,7 @@ After you create a masking policy, you can run a data masking job against your t
 
     ![Work Request page for masking job](images/work-request-masking-job.png "Work Request page for masking job")
 
-## Task 6: View the masking report
+## Task 6: View the Data Masking report
 
 1. While on the **Work Request** page, next to **Masking Report** on the **Work Request Information** tab, click **View Details**.
 
@@ -311,7 +312,7 @@ After you create a masking policy, you can run a data masking job against your t
     ![Data Masking PDF report](images/data-masking-pdf-report.png "Data Masking PDF report")
 
 
-## Task 8: Validate the masked data in your database
+## Task 8: Validate the masked data in your target database
 
 1. Return to the browser tab for **SQL | Oracle Database Actions**. You should have a SQL Worksheet open. If your session expired, sign in again as the `ADMIN` user.
 
