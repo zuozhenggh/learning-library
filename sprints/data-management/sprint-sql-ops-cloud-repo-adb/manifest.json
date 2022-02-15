@@ -3,9 +3,9 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How do I create, update, delete, and list cloud repositories?",
+            "title": "How do I use SQL install operations with a cloud code repository?",
             "description": "",
-            "filename": "sprint-create-manage-cloud-repo-adb.md"
+            "filename": "sprint-sql-ops-cloud-repo-adb.md"
         },
 
         {
@@ -21,15 +21,15 @@
         },
 
         {
-          "title": "How do I use file operations with a cloud code repository?",
+          "title": "How do I create, update, delete, and list cloud repositories?",
           "description": "",
-          "filename": "../sprint-file-ops-cloud-repo-adb/sprint-file-ops-cloud-repo-adb.md"
+          "filename": "../sprint-create-manage-cloud-repo-adb/sprint-create-manage-cloud-repo-adb.md"
         },
 
         {
-          "title": "How do I use SQL install operations with a cloud code repository?",
+          "title": "How do I use file operations with a cloud code repository?",
           "description": "",
-          "filename": "../sprint-sql-ops-cloud-repo-adb/sprint-sql-ops-cloud-repo-adb.md"
+          "filename": "../sprint-file-ops-cloud-repo-adb/sprint-file-ops-cloud-repo-adb.md"
         }
 
 
