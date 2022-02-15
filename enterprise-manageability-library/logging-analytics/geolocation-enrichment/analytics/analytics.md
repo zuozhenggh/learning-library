@@ -1,4 +1,4 @@
-# View and Analyse Geolocation Enriched data in Map Visualization
+# View and Analyze Geolocation Enriched data in Map Visualization
 
 
 ## Introduction
