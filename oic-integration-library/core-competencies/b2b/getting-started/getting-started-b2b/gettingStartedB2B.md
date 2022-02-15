@@ -25,7 +25,7 @@ This lab assumes you have:
 * An Oracle account and Oracle Integration Instance provisioned.
 * All Pre-requisite setup is done.
 
-## Learn Concepts and Understand Navigation
+##	Task	1: Learn Concepts and Understand Navigation
 
 ### *Host Company*
 
@@ -35,7 +35,7 @@ There are two parties involved in any exchange - your company and an external tr
 
 The Host Profile has only B2B Identifiers for you to enter. This is where you will enter your company's identity information such as EDI Interchange ID and AS2 Identifier. Certain other types of configuration, such as Signing Certificates for your company, etc. are entered in Connections, explained later.
 
-When you send electronic documents to an external trading partner, some of the B2B Identifiers you enter in the Host Profile are inserted into the message so that the recipient party can identify the sender of the message as being your company.
+When you send electronic documents to an external trading partner, some B2B Identifiers you enter in the Host Profile are inserted into the message so that the recipient party can identify the sender of the message as being your company.
 
 ### *Trading Partners*
 
@@ -68,15 +68,15 @@ The picture below shows how an Inbound message is processed through two integrat
 In the two-integration flow patterns, the **B2B Integration for Receiving Messages** performs these steps:
 
 1. Receive the message from the trading partner and perform various validity checks, for example:
-    * Is the message received from a known (i.e. registered) trading partner? Verify this based on authentication credentials, SSL certificates, HTTP headers, etc.
+    * Is the message received from a known (that is registered) trading partner? Verify this based on authentication credentials, SSL certificates, HTTP headers, etc.
     * Is the message signed or encrypted? If so, verify the signature and decrypt the message. This step is called Un-packaging akin to taking an object out of its packaging.
 2. Send a transport level acknowledgment back to the trading partner, if asked by the trading partner.
-3. Detect the type of payload. If it is a payload that requires translation (e.g. an EDI message), parse and translate the message.
+3. Detect the type of payload. If it is a payload that requires translation (for example, such as an EDI message), parse and translate the message.
 4. Send a translator level acknowledgment, if configured.
 
 The **Backend Integration** performs these steps:
 
-1. Convert the message into a format that a backend application, such as ERP, can directly consume (e.g. XML, JSON, CSV, etc.) and forward the message to a backend system for further processing.
+1. Convert the message into a format that a backend application, such as ERP, can directly consume (for example, such as XML, JSON, CSV, etc.) and forward the message to a backend system for further processing.
 
 #### Outbound
 
@@ -87,12 +87,12 @@ The picture below shows how an Outbound message is processed through two integra
 
 In the two-integration flow patterns, the **Backend Integration** performs these steps:
 
-1. Receive an event from a backend application such as ERP for a business document that needs to be sent out to an external trading partner.
+1. Receive an event from a backend application such as ERP for a business document that must be sent out to an external trading partner.
 2. Translate the message to an industry-standard B2B format, for example EDI (Electronic Data Interchange) format.
 
 The **B2B Integration for Sending Messages** performs these steps:
 
-1. Add headers, encrypt, sign, and compress the payload, as per your desired configuration. This step is called Packaging akin to wrapping an object into an envelope, putting it in a box, and making it ready for delivery.
+1. Add headers, encrypt, sign, and compress the payload, per your desired configuration. This step is called Packaging akin to wrapping an object into an envelope, putting it in a box, and making it ready for delivery.
 2. Transmits the message to the external trading partner's endpoint.
 3. If the trading partner responds with a transport level acknowledgment, update the status of the transmitted message accordingly.
 
@@ -122,7 +122,7 @@ An AS2 transport offers configuration options specific to AS2 that work in conju
 
 For example, if you wish to sign and encrypt the outbound messages:
 
-1. You use Oracle Integration Certificate management, accessed from the the **Home** page and clicking ***Settings***, then ***Certificates***, to upload your certificates.
+1. You use Oracle Integration Certificate management, accessed from the **Home** page and clicking ***Settings***, then ***Certificates***, to upload your certificates.
 2. You enter the signing and encryption certificate alias in the AS2 Connection selected in the AS2 Transport.
 3. You select an encryption and signing algorithms in the AS2 Transport configuration.
 
@@ -148,7 +148,7 @@ Below are example screenshots of two Inbound and two Outbound Agreements defined
 
 ### *B2B Documents and Schemas*
 
-A B2B Document is a mandatory object required by an Agreement, and specifies a data format and some additional configuration pertaining to the data format.
+A B2B Document is a mandatory object required by an Agreement, and specifies a data format and some additional configuration about the data format.
 
 A data format is specified using these properties:
 
@@ -165,7 +165,7 @@ A B2B Schema is an optional object that represents a customized variant of one o
 
 As messages flow through the B2B Integrations for Receiving and Sending, each Inbound and Outbound message is persisted separately, in addition to the usual integration instance tracking.
 
-The persisted B2B messages can be accessed from the the **Home** page and clicking ***Monitoring***, then ***B2B Tracking***.
+The persisted B2B messages can be accessed from the **Home** page and clicking ***Monitoring***, then ***B2B Tracking***.
 
 The sample screenshot below shows the B2B Tracking page.
 ![B2B Tracking](./images/gettingStarted-TrackMessages.png)
@@ -184,18 +184,18 @@ In the case where you receive an inbound message containing batched transaction,
 
 ![B2B Messages](./images/gettingStarted-WireMessages.png)
 
-### *Demystifying the Concepts*
+### *Demystify the Concepts*
 
 #### Use Case
 
-ACME Corp sends an X12 850 Purchase Order EDI document to Trading Partner Dell Inc via FTP. ACME Corp had configured Oracle Integration B2B message exchange agreement to send Purchase Order EDI document to External Trading Partner.
+ACME Corp sends an X12 850 Purchase Order EDI document to Trading Partner Dell Inc through, by using FTP. ACME Corp had configured Oracle Integration B2B message exchange agreement to send Purchase Order EDI document to External Trading Partner.
 
 ![B2B Outbound Purchase Order Use Case](./images/demystifying-concepts.png)
 
 * Acme Corp (Manufacturer of goods) an Oracle Integration Customer is the Host company.
 * Dell Inc (Supplier of goods) is the Trading Partner.
 * Host Company ERP Cloud Application Creates a purchase order. A Backend Integration in OIC translates the Purchase order to EDI X12 Structure.
-*	Oracle Integration B2B transports the Purchase Order to Trading Partner via agreed upon Communication Protocol which is FTP.
+*	Oracle Integration B2B transports the Purchase Order to Trading Partner through, by using agreed upon Communication Protocol which is FTP.
 * Acme Corp Sends the Purchase Order and Receives an 997 Acknowledgement from Trading Partner which is the Agreement configured for Outbound processing.
 
 **Relationship between Trading Partner and Agreements**
