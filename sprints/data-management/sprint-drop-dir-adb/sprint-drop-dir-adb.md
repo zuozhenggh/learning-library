@@ -1,4 +1,4 @@
-# How do I Drop a Directory in Autonomous Database?
+# How do I drop a directory in Autonomous Database?
 Duration: 1 minutes
 
 ## Drop Directory in Autonomous Database
