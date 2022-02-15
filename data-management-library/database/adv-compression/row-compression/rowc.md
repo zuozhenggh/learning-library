@@ -164,7 +164,8 @@ This lab assumes you have:
 
       ![Image alt text](images/tablespace-name.png "materialized view")
 
-3. GET\_COMPRESSION\_RATIO Procedure     
+3. Using Advisor – The GET\_COMPRESSION\_RATIO Procedure. Compression advisor typically provides fairly accurate estimates, of the actual compression results that may be obtained, after implementing compression.
+
 
       ```
       <copy>
