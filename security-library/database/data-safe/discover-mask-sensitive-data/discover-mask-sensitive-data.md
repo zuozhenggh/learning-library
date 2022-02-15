@@ -127,7 +127,7 @@ In Data Discovery, you can select the sensitive types that you want to discover 
 
     ![Sensitive Data Model Information page](images/sensitive-data-model-information-page.png "Sensitive Data Model Information page")
 
-7. For **Select Schemas**, leave **Select specific schemas only** selected. Scroll down and select the **HCM** schema, and then click **Next**. You may need to click the right arrow button at the bottom of the page to navigate to page 2.
+7. For **Select Schemas**, leave **Select specific schemas only** selected. Scroll down and select the **HCM1** schema, and then click **Next**. You may need to click the right arrow button at the bottom of the page to navigate to page 2.
 
     ![Select Schemas page](images/select-schemas-page.png "Select Schemas page")
 
