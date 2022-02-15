@@ -14,6 +14,8 @@ Tagging is a metadata system that allows you to organize and track resources wit
 If the tag key contains a blank value, you can type in a value or leave it blank. If the tag key contains a list, you must select a value from the list.
 5. Click **Add Tags**.
 
+![ Tag the Autonomous Database](images/tag-adbinstance.png "Tag the Autonomous Database")
+
 You have added a tag to your ADB instance in OCI.
 
 ## Learn More
