@@ -30,7 +30,7 @@ You can terminate your Data Catalog instance that you created in this workshop a
 
 2. On the **Data Catalogs** page, in the row for the **`training-dcat-instance`** Data Catalog instance, click the **Actions** icon (three dots), and then select **Terminate** from the context menu.
 
-   ![Click Terminate from the Actions context menu associated with your Data Catalog instance.](./images/dcat-instance-actions.png " ")
+   ![The training-dcat-instance Data Catalog instance is highlighted and labeled as 1. The Actions icon is highlighted and labeled as 2. The Actions context menu is displayed and labeled as 3. The Terminate menu option is highlighted.](./images/dcat-instance-actions.png " ")
 
 3. A **Terminate** dialog box is displayed. Enter **delete** in the **TYPE "DELETE" TO CONFIRM DELETE** field, and then click **Terminate**. The Data Catalog instance goes into a **Deleting** state. When the delete is completed, the instance is no longer displayed, and all of the resources in the deleted instance are permanently deleted.
 
