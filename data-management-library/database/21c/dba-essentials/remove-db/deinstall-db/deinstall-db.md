@@ -14,12 +14,11 @@ Remove the Oracle Database software, delete Oracle Database, and remove Oracle h
 
 ### Prerequisites
 This lab assumes you have -
-- A Free Tier, Paid or LiveLabs Oracle Cloud account.
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
 - Oracle Database 21c installed and configured.
 - Completed all previous labs successfully.
 
-
-## Task 1: Remove Oracle Database
+## **Task 1:** Remove Oracle Database
 
 To remove Oracle Database from your host system, do the following. 
 
@@ -219,7 +218,7 @@ To remove Oracle Database from your host system, do the following. 
 
     The above message confirms that you have completed the deinstallation and deleted Oracle Database from your host. You can close the terminal window.
 
-	> **Note:** The `deinstall` command deletes Oracle Database configuration files, user data, and fast recovery area (FRA) files even if they are located outside of the Oracle base directory path.
+> **Note:** The `deinstall` command deletes Oracle Database configuration files, user data, and fast recovery area (FRA) files even if they are located outside of the Oracle base directory path.
 
 You have successfully completed this workshop on *Oracle Database 21c Deinstallation*. 
 
