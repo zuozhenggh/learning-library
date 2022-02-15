@@ -26,8 +26,6 @@ Among other capabilities, OCI APM includes an implementation of a Distributed Tr
 
 In the workshop, you will learn how to add the APM Java Agent on a file system mounted in the Oracle Cloud, to monitor a WebLogic application, deployed on a Kubernetes cluster. You will also learn how to create an APM domain in the Oracle Cloud and use Trace Explorer to search and view traces/spans in the APM User Interface.
 
-
-
 ### Objectives
 
 In this workshop, you will:
@@ -38,31 +36,21 @@ In this workshop, you will:
 *	Change the display name format of the spans by editing the agent configuration file
 *	Use APM Trace Explorer to view traces, spans, and span dimensions
 
-
-
-
 ### Prerequisites
 
 * An Oracle Free Tier with 30-day free trial or Paid Cloud Account
 * Oracle Cloud resources and permissions to create a file system. See **[Creating File Systems](https://docs.oracle.com/en-us/iaas/Content/File/Tasks/creatingfilesystems.htm)** and **[Service Limits](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#top)** in the Oracle Cloud documentation.
 *	Oracle Cloud Account Administrator role or manage apm-domains permission in the target compartment. See **[Perform Oracle Cloud Infrastructure Prerequisites (APM)](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/perform-oracle-cloud-infrastructure-prerequisite-tasks.html)** in the Oracle Cloud documentation.
-*	Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop, Lab 1 to Lab 4.<br>(Labs 5 to 7 are not required for the APM workshop.)
-
-
+*	Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop, Task 1 to Task 4.<br>(Tasks 5 to 7 are not required for the APM workshop.)
 
 ### Reference
-*  Oracle LiveLabs **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop
+
+*  **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop
 
 ### More APM Workshops
+
 -	**[Use OpenTracing for Microservices with Helidon Utilizing Oracle Application Performance Monitoring](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=917&clear=180&session=14244965892057)**  Workshop
 -	**[Trace a Native Cloud App Utilizing Oracle Application Performance Monitoring](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=916&clear=180&session=101657907800993)** Workshop
-
-
-
-
-
-
-You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
