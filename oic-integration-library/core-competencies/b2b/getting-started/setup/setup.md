@@ -29,14 +29,14 @@ Configure File Server settings.
 
 1. Starting at the Oracle Integration **Home** page, select ***Settings***, then ***File Server*** from the left Navigation pane.
 2. Select ***Settings*** from left Navigation pane to open the File Server Settings page and review the File Server status and configurations.
-![File Server Settings page](images/file_server_settings.png)
+![File Server Settings page](images/file-server-settings.png)
 **Note**: Ensure the **Authentication Type** is set to ***Password or Key***.
 3. Select ***Files*** from left Navigation pane.
-![Navigation to Files](images/file_server_files1.png)
+![Navigation to Files](images/file-server-files1.png)
 4. From the top right click ***Create*** and create a Folder named ***B2BWorkshop***.
-![Create Folder](images/file_server_files2.png)
+![Create Folder](images/file-server-files2.png)
 5. Select the ***B2BWorkshop*** Folder and create two additional Folders named ***B2BTPDELLIn*** and ***B2BTPDELLOut***.
-![Workshop Folder structure](images/file_server_files3.png)
+![Workshop Folder structure](images/file-server-files3.png)
 **Note**: You will be using the above Folder structure in next labs.
 6. Select ***Users*** from left Navigation pane. Find and select the user you are currently logged in as.  
 If your user has not yet been configured to use File Server, click ***Select*** to configure your user.  
@@ -102,7 +102,7 @@ To expose your B2B integrations as an API, you will need to create a REST Connec
 3. From the **Create Connection** dialog, **Name** your connection ***REST Interface***. Set the **Role** to ***Trigger*** and leave the rest of the configurations as defaulted. Click ***Create***.  
 **Note**: If you get an error that the identifier already exists, change the Connection Name and remember this name for use later in the workshop.
 4. Set the **Security Policy** to ***OAuth 2.0 Or Basic Authentication***.  
-![REST Connection configuration](images/RESTInterface.png)
+![REST Connection configuration](images/rest-interface.png)
 5. Confirm your Connection by clicking ***Test***. You should see the **Connection REST Interface was tested successfully** confirmation message. Click ***Save*** and exit the Connection editor.
 
 ## Task 5: Download Lab Artifacts

@@ -4,7 +4,7 @@
 
 This lab walks you through the process of provisioning an instance of Oracle Integration, assuming you don't already have one available to you. If you do, you can skip this lab and move on to the next one.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
@@ -24,7 +24,7 @@ If you just created a new Cloud account following the instructions in Getting St
 
 1. On the Oracle Cloud Get Started page, select the region in the upper right where you want to create your Oracle Integration instance. Once created, instances are visible only in the region in which they were created.
 
-2. On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision. 
+2. On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision.
 
 	![](./images/hamburger.png)
 
@@ -34,7 +34,7 @@ If you just created a new Cloud account following the instructions in Getting St
 
 4. From the Compartment list, click through the hierarchy of compartments and select the one in which to create the instance. You may need to expand the + icon to find the compartment to use. Compartments can contain other compartments. It may take several minutes for the new compartment to appear after the policy has been created.
 
-	![](./images/compartment_expand.png)
+	![](./images/compartment-expand.png)
 
 5. Click the **Create** button.
 

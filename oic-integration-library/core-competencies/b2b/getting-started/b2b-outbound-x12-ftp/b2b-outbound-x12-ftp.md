@@ -21,7 +21,7 @@ High level steps of the Integration:
 | 7 |The B2B integration for sending messages instance uses an adapter (AS2 or FTP) to pack the message and then transmit it to the external trading partner through the AS2 or FTP protocol.|
 
 
-Estimated Lab Time: 60 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 

@@ -190,7 +190,7 @@ In the case where you receive an inbound message containing batched transaction,
 
 ACME Corp sends an X12 850 Purchase Order EDI document to Trading Partner Dell Inc via FTP. ACME Corp had configured Oracle Integration B2B message exchange agreement to send Purchase Order EDI document to External Trading Partner.
 
-![B2B Outbound Purchase Order Use Case](./images/DemystifyingConcepts.png)
+![B2B Outbound Purchase Order Use Case](./images/demystifying-concepts.png)
 
 * Acme Corp (Manufacturer of goods) an Oracle Integration Customer is the Host company.
 * Dell Inc (Supplier of goods) is the Trading Partner.

@@ -13,7 +13,7 @@ Trading Partner (Dell Inc) sends an 810 Invoice EDI document to Host ACME. ACME 
 |     3         |     Your backend integration instance   receives the Invoice 810 EDI message. Using a B2B Translation activity, the Invoice   810 EDI (X12 or EDIFACT) message is translated into a B2B canonical XML   format. |
 |     4         |     Further, down the line integration processes   the invoices for ex: maybe you want to create a payables invoice in the   ERP/Netsuite for the Purchase Order raised. In this exercise you will create   a log activity to capture some important fields from the translated EDI   Invoice message.|
 
-Estimated Lab Time: 60 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
