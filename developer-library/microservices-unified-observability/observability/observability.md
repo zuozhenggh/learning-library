@@ -2,10 +2,7 @@
 
 ## Introduction
 
-This lab will show you how to view and correlate metrics, logs, and tracing of application and data tiers in a single Grafana dashboard.
-
-Please see the  [Unified Observability in Grafana with converged Oracle Database Workshop](http://bit.ly/unifiedobservability) 
-for an more in-depth look at this topic including details of the metrics, logs, and tracing exporters.
+This lab will show you how you can trace microservice activity using Jaeger.
 
 Estimated Time: 25 minutes
 
