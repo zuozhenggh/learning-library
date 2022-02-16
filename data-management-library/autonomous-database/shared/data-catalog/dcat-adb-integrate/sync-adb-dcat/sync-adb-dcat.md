@@ -388,9 +388,11 @@ In this task (in a later step), you will create a connection to your Data Catalo
     </copy>
     ```
 
-    * To find your region that you will use in the above command, it is displayed in the **Console** banner, **US East (Ashburn)** in this example. This is the region where your Data Catalog is deployed. To find the region id associated with this region, click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region identifies that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
+    * To find your region id that you will use in the above command, it is displayed in the **Console** banner, **US East (Ashburn)** in this example. This is the region where your Data Catalog is deployed. To find the region id associated with this region, click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region identifies that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
 
       ![The region in this example is displayed and highlighted in the Console banner. On the Infrastructure Regions page, the region Identifier that is associated with the region displayed on the banner is highlighted.](./images/ll-regions-identifies.png " ")
+
+      >**Note:** If your region identifier that is associated with the region name displayed in the banner is not displayed on the **Infrastructure Regions** page, see the [Regions and Availability Domains documentation](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
 
       Paste your region identifier in the _`region => 'enter region id where your data catalog is deployed'`_ line in the above command in your SQL Worksheet.
 
