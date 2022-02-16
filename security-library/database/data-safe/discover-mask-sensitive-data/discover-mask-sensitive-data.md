@@ -34,7 +34,7 @@ This lab assumes you have:
 
 - Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
 - Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that your ATP database is registered with Oracle Data Safe, the Data Discovery and Data Masking features are enabled on your target database, and you have the appropriate permissions in Oracle Cloud Infrastructure Identity and Access Management to use the Data Discovery and Data Masking features with your target database.
-- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. Make sure to have the `ADMIN` password for your database on hand (see [Register an Autonomous Database](?lab=register-autonomous-database)).
+- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. Make sure to have the `ADMIN` password for your database on hand (see [Register an Autonomous Database with Oracle Data Safe](?lab=register-autonomous-database)).
 
 
 ### Assumptions

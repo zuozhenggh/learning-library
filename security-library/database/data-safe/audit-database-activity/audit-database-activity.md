@@ -8,7 +8,7 @@ inject-note: true
 
 In Oracle Data Safe, you can provision audit policies on your target databases and collect audit data into the Oracle Data Safe repository. There are basic, administrator, user, Oracle pre-defined and custom audit policies, as well as audit policies designed to help you meet compliance standards. When you register a target database, Oracle Data Safe automatically creates an audit profile, audit policy, and audit trails relevant for the target database.
 
-Start by reviewing the audit profile, audit trail, and audit policy for your target database. Start audit data collection on your target database and provision a few audit policies. Analyze the audit events, view reports, and then create a custom audit report.
+Start by reviewing the audit profile, audit trail, and audit policy for your target database. Start audit data collection on your target database and provision a few audit policies. Analyze the audit events, view reports, create a custom audit report, and download the custom audit report as a PDF.
 
 Estimated Lab Time: 20 minutes
 
@@ -26,6 +26,7 @@ In this lab, you will:
 - Analyze audit events across all your target databases
 - View the All Activity report
 - Create a custom audit report
+- Generate and download a custom audit report as a PDF
 
 ### Prerequisites
 
@@ -33,7 +34,7 @@ This lab assumes you have:
 
 - Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
 - Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that Activity Auditing is enabled on your target database, and that you have permissions in Oracle Cloud Infrastructure Identity and Access Management (IAM) to use the Activity Auditing feature in Oracle Data Safe.
-- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it (see [Register an Autonomous Database](?lab=register-autonomous-database))
+- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it (see [Register an Autonomous Database with Oracle Data Safe](?lab=register-autonomous-database))
 - Accessed Security Center
 
 
@@ -49,7 +50,7 @@ This lab assumes you have:
 
     - Each regional Oracle Data Safe service has global settings for paid usage, online retention period, and archive retention period.
     - Global settings are applied to all target databases unless their audit profiles override them.
-    - By default, the online retention period is set to the maximum value of 12 months, the archive retention period is set to the minimum value of 0 months, and paid usage is enabled for all target databases.
+    - By default, paid usage is enabled for all target databases, the online retention period is set to the maximum value of 12 months, and the archive retention period is set to the minimum value of 0 months.
 
     ![Global Settings](images/global-settings.png "Global Settings")
 
@@ -142,7 +143,9 @@ This lab assumes you have:
 
 11. In the **Available in Target Database** column, view the number of audit records for the `UNIFIED_AUDIT_TRAIL`.
 
-    - There is a small number of audit records in the `UNIFIED_AUDIT_TRAIL` because your target database has just been provisioned. However, for an older target database where there are many more audit records, Oracle Data Safe splits up the numbers by month. These values help you to decide on a start date for the Oracle Data Safe audit trail.
+    - There is a small number of audit records in the `UNIFIED_AUDIT_TRAIL` because your target database has just been provisioned.
+    - For an older target database, there are probably many more audit records.
+    - Oracle Data Safe splits up the numbers by month. These values help you to decide on a start date for the Oracle Data Safe audit trail.
 
     ![Available in Target Database column](images/available-in-target-database.png "Available in Target Database column")
 
@@ -157,15 +160,21 @@ This lab assumes you have:
 
 4. From the **Target Databases** drop-down list, select your target database.
 
-5. On the right, click the name of your target database. The **Audit Trail Details** page is displayed.
+5. On the right, click the name of your target database.
 
-6. Click **Start**. A **Start Audit Trail: UNIFIED\_AUDIT\_TRAIL** dialog box is displayed.
+    The **Audit Trail Details** page is displayed.
+
+6. Click **Start**.
+
+    A **Start Audit Trail: UNIFIED\_AUDIT\_TRAIL** dialog box is displayed.
 
 7. Configure a start date based on the data in the **Compute Audit Volume** region of the audit profile that you viewed in task 5 (step 10), and then click **Start**.
 
+    For example, if you have one month listed (Feb 2022), you can set the start date to the beginning of the month.
+
     ![Start Audit Trail dialog box](images/start-audit-trail-dialog-box.png "Start Audit Trail dialog box")
 
-8. Notice when the **Collection State** changes to **Idle**.
+8. Notice when the **Collection State** changes to **COLLECTING** and then to **IDLE**.
 
     ![Collection State Idle](images/collection-state-idle.png "Collection State Idle")
 
@@ -205,31 +214,41 @@ This lab assumes you have:
 
 1. In the breadcrumb at the top of the page, click **Activity Auditing**.
 
-    - By default, the Activity Auditing dashboard shows you a summary of audit events for the last one week for all target databases in the form of charts and tables. You can filter by compartment, time period, and target database.
+    By default, the Activity Auditing dashboard shows you a summary of audit events for the last one week for all target databases in the form of charts and tables. You can filter by compartment, time period, and target database.
 
 2. From the **Compartments** drop-down list on the left, select your compartment.
 
-3. From the **Targets** drop-down list on the left, select your target database.
+3. From the **Target Databases** drop-down list on the left, select your target database.
 
-    - The dashboard automatically is updated to include audit event statistics for only your target database.
+    The dashboard automatically is updated to include audit event statistics for only your target database.
 
-4. Review the **Failed Login Activity** chart. It shows you the number of failed logins on all or selected target databases for the specified time period. Currently there are no failed logins.
+4. Review the **Failed Login Activity** chart.
+
+    This chart shows you the number of failed logins on all or selected target databases for the specified time period. You may or may not have any failed logins at this point.
 
     ![Failed Login Activity chart](images/failed-login-activity-chart.png "Failed Login Activity chart")
 
-5. Review the **Admin Activity** chart. It shows you the number of database schema changes, logins, audit setting changes, and entitlement changes on all or selected target databases for the specified time period.
+5. Review the **Admin Activity** chart.
+
+    This chart shows you the number of database schema changes, logins, audit setting changes, and entitlement changes on all or selected target databases for the specified time period.
 
     ![Admin Activity chart](images/admin-activity-chart.png "Admin Activity chart")
 
-6. Review the **All Activity** chart. It shows you the total count of audit events on all or selected target databases for the specified time period.
+6. Review the **All Activity** chart.
+
+    This chart shows you the total count of audit events on all or selected target databases for the specified time period.
 
     ![All Activity chart](images/all-activity-chart.png "All Activity chart")
 
-7. On the **Events Summary** tab, review the statistics for audit event categories. Statistics include the number of target databases that have an audit event in each event category and the total number of events per category.
+7. On the **Events Summary** tab, review the statistics for audit event categories.
+
+    Statistics include the number of target databases that have an audit event in each event category and the total number of events per category.
 
     ![Events Summary tab](images/events-summary-tab.png "Events Summary tab")
 
-8. On the **Targets Summary** tab, review the various audit event counts per target database. Audit events include the number of login failures, schema changes, entitlement changes, audit settings changes, all activity (all audit events), database vault realm violations and command rule violations, and database vault policy changes. If there are no audit events for a target database, the target database isn't listed.
+8. On the **Targets Summary** tab, review the various audit event counts per target database.
+
+    Audit events include the number of login failures, schema changes, entitlement changes, audit settings changes, all activity (all audit events), database vault realm violations and command rule violations, and database vault policy changes. If there are no audit events for a target database, the target database isn't listed.
 
     ![Targets Summary tab](images/targets-summary-tab.png "Targets Summary tab")
 
@@ -298,7 +317,9 @@ This lab assumes you have:
 
 3. Click **Create Custom Report**.
 
-4. In the **Custom Report** dialog box, enter the report name **All Activity Report on schema: HCM1 in the target your-target-database-name**. Enter an optional description. Select your compartment. Click **Create Custom Report** and wait for the report to generate.
+    The **Custom Report** dialog box is displayed.
+
+4. Enter the report name **All Activity Report on schema: HCM1 in the target your-target-database-name**. Enter an optional description. Select your compartment. Click **Create Custom Report** and wait for the report to generate.
 
     ![Create Custom Report dialog box](images/create-custom-report-dialog-box.png "Create Custom Report dialog box")
 
