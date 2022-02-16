@@ -163,11 +163,10 @@ As a tenancy administrator or user with appropriate permissions to manage an Aut
     - **Database Name** - Enter **ad01**. It's important to use letters and numbers only, starting with a letter. The maximum length is 14 characters. Underscores are not supported.
     - **Workload Type** - Select **Transaction Processing**.
     - **Deployment Type** - Leave **Shared Infrastructure** selected.
-    - **Always Free** - Leave this option deselected (the slider should be to the left).
+    - **Always Free** - Select this option by moving the slider to the right.
     - **Database version** - Leave **19c** selected.
-    - **OCPU Count** - Leave **1** selected.
-    - **Storage** - Leave **1** selected.
-    - **Auto scaling** - Leave this checkbox selected.
+    - **OCPU Count** - You get **1** OCPU.
+    - **Storage** - You get 0.02TB of storage.
     - **Password** and **Confirm Password** - Specify a password for the `ADMIN` database user and jot it down. The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character. It cannot contain your username or the double quote (") character.
     - **Access Type** - Leave **Allow secure access from everywhere** selected.
     - **License Type** - Select **License Included**.
