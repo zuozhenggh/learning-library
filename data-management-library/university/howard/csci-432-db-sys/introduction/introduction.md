@@ -32,7 +32,3 @@ To complete this course:
 
 
 
-## Acknowledgements
-* **Author** - Eugenio Galiano
-* **Contributors** -  Kay Malcolm
-* **Last Updated By/Date** - Marion Smith, January 2022
