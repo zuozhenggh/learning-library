@@ -51,27 +51,27 @@ Partitioning improves the performance for your application. Our newly created ta
 
     ````
     <copy>
-     select /*+ TEST_QUERY */ sum(a) from apart 
+     select /* TEST_QUERY */ sum(a) from apart 
      where d between to_date('01-MAR-2020') and to_date('05-mar-2020');
-     select /*+ TEST_QUERY */ sum(a) from apart 
+     select /* TEST_QUERY */ sum(a) from apart 
      where d = to_date('01-MAR-2020');
-     select /*+ TEST_QUERY */ sum(b) from apart 
+     select /* TEST_QUERY */ sum(b) from apart 
      where d between to_date('01-JAN-2020') and to_date('05-JAN-2020');
-     select /*+ TEST_QUERY */ sum(c) from apart 
+     select /* TEST_QUERY */ sum(c) from apart 
      where d between to_date('01-APR-2020') and to_date('05-APR-2020');
-     select /*+ TEST_QUERY */ sum(a) from apart 
+     select /* TEST_QUERY */ sum(a) from apart 
      where d between to_date('01-JUN-2020') and to_date('02-JUN-2020');
-     select /*+ TEST_QUERY */ sum(b) from apart 
+     select /* TEST_QUERY */ sum(b) from apart 
      where d between to_date('01-DEC-2020') and to_date('31-DEC-2020');
-     select /*+ TEST_QUERY */ sum(a) from apart 
+     select /* TEST_QUERY */ sum(a) from apart 
      where d between to_date('01-AUG-2020') and to_date('31-AUG-2020');
-     select /*+ TEST_QUERY */ sum(b) from apart 
+     select /* TEST_QUERY */ sum(b) from apart 
      where d between to_date('01-OCT-2020') and to_date('01-OCT-2020');
-     select /*+ TEST_QUERY */ sum(c) from apart 
+     select /* TEST_QUERY */ sum(c) from apart 
      where d between to_date('01-FEB-2020') and to_date('05-FEB-2020');
-     select /*+ TEST_QUERY */ sum(a) from apart 
+     select /* TEST_QUERY */ sum(a) from apart 
      where d between to_date('01-MAY-2020') and to_date('02-MAY-2020');
-     select /*+ TEST_QUERY */ avg(a) from apart 
+     select /* TEST_QUERY */ avg(a) from apart 
      where d between to_date('01-JUL-2020') and to_date('02-JUL-2020');
     </copy>
     ````
@@ -125,10 +125,10 @@ Oracle Autonomous Database automatically collects your workload information peri
     `````
     SQL_TEXT                                                                                                                                              
     ---------------------------------------------------
-    select /*+ TEST_QUERY */ sum(b) from apart where d between to_date('01-OCT-2020'                                                                      
-    select /*+ TEST_QUERY */ sum(a) from apart where d = to_date('01-MAR-2020')                                                                           
-    select /*+ TEST_QUERY */ sum(b) from apart where d between to_date('01-JAN-2020'                                                                      
-    select /*+ TEST_QUERY */ avg(a) from apart where d between to_date('01-JUL-2020'   
+    select /* TEST_QUERY */ sum(b) from apart where d between to_date('01-OCT-2020'                                                                      
+    select /* TEST_QUERY */ sum(a) from apart where d = to_date('01-MAR-2020')                                                                           
+    select /* TEST_QUERY */ sum(b) from apart where d between to_date('01-JAN-2020'                                                                      
+    select /* TEST_QUERY */ avg(a) from apart where d between to_date('01-JUL-2020'   
     ...etc
     `````
 
