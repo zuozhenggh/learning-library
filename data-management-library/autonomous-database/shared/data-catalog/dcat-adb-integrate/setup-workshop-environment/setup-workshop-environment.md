@@ -77,11 +77,11 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**.
 
-   ![The username and password are displayed on the OCI Sign in screen. The tenancy's name and username are blurred. The Sign in button is highlighted.](./images/sign-in.png " ")
+   ![The blurred username and masked password are displayed on the OCI Sign in screen. The tenancy's name and username are blurred. The Sign In button is highlighted.](./images/sign-in.png " ")
 
    The **Oracle Cloud Console** Home page is displayed.
 
-   ![The Oracle Cloud Console Home Page is displayed.](./images/oracle-cloud-console-home.png "Partial Oracle Cloud Console is displayed.")
+   ![The partial Oracle Cloud Console Home Page is displayed.](./images/oracle-cloud-console-home.png "Partial Oracle Cloud Console is displayed.")
 
 >**Note:** To zoom in (magnify) a displayed image in this workshop, hover over the image to display the magnifying glass icon, and then then click the image.
 
@@ -108,7 +108,7 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
 4. In the **Parent Compartment** drop-down list, select your parent compartment, and then click **Create Compartment**.
 
-   ![On the populated Create Compartment dialog box, click Create Compartment.](./images/create-compartment.png " ")
+   ![On the completed Create Compartment dialog box, click Create Compartment.](./images/create-compartment.png " ")
 
    The **Compartments** page is re-displayed and the newly created compartment is displayed in the list of available compartments.
 
@@ -159,7 +159,7 @@ Create a Data Catalog instance using the following steps.
 
 5. Enter **`training-dcat-instance`** in the **Name** field.
 
-   ![The populated Create Data Catalog page is displayed. The Create Data Catalog button is highlighted.](./images/create-data-catalog.png " ")
+   ![The completed Create Data Catalog dialog box is displayed. The Create Data Catalog button is highlighted.](./images/create-data-catalog.png " ")
 
 6. Click **Create Data Catalog**. The Data Catalog instance is created and displayed in the **Data Catalogs** page.
 
@@ -173,29 +173,28 @@ In this task, you create a new and empty business glossary in the newly created 
 
 2. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog in the **Name** column.
 
-   ![The Data Catalog instance and its state are highlighted.](./images/click-data-catalog.png " ")
+   ![The Data Catalog instance and its Active state are highlighted.](./images/click-data-catalog.png " ")
 
 3. The Data Catalog **Home** page is displayed. Click the **Glossaries** link.
 
-   ![The Glossaries link is highlighted.](./images/click-glossaries.png " ")
+   ![The Home tab and the Glossaries link are highlighted.](./images/click-glossaries.png " ")
 
    The **Glossaries** tab is displayed.
 
-   ![The Create Glossary button is highlighted.](./images/click-create-glossary.png " ")
+   ![The Glossaries tab and the Create Glossary button are highlighted.](./images/click-create-glossary.png " ")
 
 
 4. Click **Create Glossary**. The **Create Glossary** panel is displayed. Enter **`MovieStream Application`** in the **Name** field, and then click **Create**.
 
-   ![The Create button on the populated Create Glossary panel is highlighted.](./images/create-glossary-panel.png " ")
+   ![The Create button on the completed Create Glossary panel is highlighted.](./images/create-glossary-panel.png " ")
 
    The **MovieStream Application** glossary tab is displayed.
 
-   ![On the Glossary: MovieStream Application details page, the Import button is highlighted.](./images/click-import.png " ")
+   ![On the "Glossary: MovieStream Application" details page, the Import button is highlighted.](./images/click-import.png " ")
 
 5. Click **Import**. A **Note** message box is displayed indicating that some rich text formatting might be modified or lost on import. Click **Proceed**.
 
   ![The Proceed button is highlighted.](./images/note-proceed.png " ")
-
 
 6. In the **Open** dialog box for your local system, copy and enter the following public pre-authenticated request (PAR) URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Select **All Files** from the second drop-down list, and then click **Open**. See [Pre-Authenticated requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm).
 
@@ -225,7 +224,7 @@ In this task, you create a new and empty business glossary in the newly created 
 
 9. Edit the default properties for your **MovieStream Application** glossary to include a description which you didn't specify when you created the glossary. In the **Glossary Hierarchy** pane, click the **MovieStream Application** glossary. In the **Default Properties** section on the right, click **Edit**.
 
-   ![In the Glossary Hierarchy pane, the MovieStream Application link is selected and highlighted. In the Summary tab, the Edit link next to the Default Properties section is highlighted.](./images/edit-glossary-description.png " ")
+   ![In the Glossary Hierarchy pane, the MovieStream Application link is selected and highlighted. In the Summary tab, the Edit link in the Default Properties section is highlighted.](./images/edit-glossary-description.png " ")
 
    The **Edit Default Properties** panel opens as an overlay.
 
@@ -247,7 +246,7 @@ In this task, you create a dynamic group that includes the specific compartment 
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
 
-  ![The Navigation menu is clicked. The navigation path to Dynamic Groups is displayed.](./images/navigate-dynamic-group.png " ")
+  ![The Navigation menu is clicked. The navigation path to Dynamic Groups is displayed and highlighted.](./images/navigate-dynamic-group.png " ")
 
 2. On the **Dynamic Groups** page, click **Create Dynamic Group**.
 
@@ -266,7 +265,7 @@ In this task, you create a dynamic group that includes the specific compartment 
 
 4. To find your _Compartment OCID_, copy the URL in the address bar of your current browser tab where the **Create Dynamic Group** page is displayed. Open a new browser tab. For example, in Chrome, you click the **New tab** icon.
 
-    ![The URL on the current tab in Chrome is highlighted and copied. Next, the New tab icon (plus icon) is clicked to create a new tab.](./images/copy-url-new-tab.png " ")
+    ![The URL on the current tab in Chrome is highlighted and copied and labeled as 1. Next, the New tab icon (plus icon) is clicked to create a new tab and labeled as 2.](./images/copy-url-new-tab.png " ")
 
 5. Paste the copied URL into the address bar of the new tab.
 
@@ -285,11 +284,11 @@ In this task, you create a dynamic group that includes the specific compartment 
 
 9. The **Dynamic Group Details** page is displayed. Click **Dynamic Groups** in the breadcrumbs to re-display the **Dynamic Groups** page.
 
-    ![On the Dynamic Group Details page, the breadcrumbs is displayed at the top of the page. The Dynamic Group Information and Matching Rules sections are displayed.](./images/dynamic-group-details.png " ")
+    ![On the Dynamic Group Details page, the breadcrumbs are displayed at the top of the page. The Dynamic Group Information and Matching Rules sections are displayed.](./images/dynamic-group-details.png " ")
 
     The newly created dynamic group is displayed.
 
-    ![The dynamic group is displayed on the Dynamic Groups page.](./images/dynamic-group-created.png " ")
+    ![The new dynamic group is displayed on the Dynamic Groups page.](./images/dynamic-group-created.png " ")
 
 
 ## Task 6: Create Access Policy for Dynamic Group         
@@ -299,7 +298,7 @@ After you have created a dynamic group, you need to create a policy to permit th
 
 2. On the **Policies** page, make sure that your **`training-dcat-compartment`** compartment is selected, and then click **Create Policy**.  
 
-    ![The Create Policy button is displayed on the On the Policies page. The List Scope section shows the training-dcat-compartment selected in the compartment drop-down list.](./images/create-os-policy.png " ")
+    ![The Create Policy button is highlighted. The List Scope section shows the training-dcat-compartment selected in the compartment drop-down list.](./images/create-os-policy.png " ")
 
     The **Create Policy** dialog box is displayed.
 
@@ -314,7 +313,7 @@ After you have created a dynamic group, you need to create a policy to permit th
         <copy>allow dynamic-group moviestream-dynamic-group to manage data-catalog-family in compartment training-dcat-compartment</copy>
         ```
 
-        ![On the completed Create Policy dialog box, the Create button is highlighted.](./images/dynamic-group-instances-os-policy.png " ")
+        ![On the completed Create Policy dialog box, the policy in the Policy Builder field and the Create button are highlighted.](./images/dynamic-group-instances-os-policy.png " ")
 
     + Click **Create**. The **Policy Detail** page is displayed Click **Policies** in the breadcrumbs to return to the **Dynamic Groups** page.
 
@@ -343,15 +342,15 @@ After you have created a dynamic group, you need to create a policy to permit th
        * **Display Name:** **`DB-DCAT Integration`**.
        * **Database Name:** **`TrainingADB`**.
 
-       ![The completed Provide basic information for the Autonomous Database section is diaplyed.](./images/adb-basic-info.png " ")
+       ![The completed "Provide basic information for the Autonomous Database" section is diaplyed.](./images/adb-basic-info.png " ")
 
 5. In the **Choose a workload type** section, accept the **Data Warehouse** default selection.
 
-       ![The selected Data Warehouse option of the Choose a workload type section is displayed and highlighted.](./images/adb-workload-type.png " ")
+       ![The selected Data Warehouse option of the "Choose a workload type" section is displayed and highlighted.](./images/adb-workload-type.png " ")
 
 6. In the **Choose a deployment type** section, accept the **Shared Infrastructure** default selection.
 
-       ![The selected Shared Infrastructure option of the Choose a deployment type section is displayed and highlighted.](./images/adb-deployment-type.png " ")
+       ![The selected Shared Infrastructure option of the "Choose a deployment type" section is displayed and highlighted.](./images/adb-deployment-type.png " ")
 
 7. In the **Configure the database** section, specify the following:
 
@@ -361,7 +360,7 @@ After you have created a dynamic group, you need to create a policy to permit th
        * **Auto scaling:** Select this checkbox. This allows the system to automatically use up to three times more CPU and IO resources to meet the workload demand.
        * **Storage:** **`1`** (TB).
 
-       ![The completed Configure the database section is displayed.](./images/adb-configure-db.png " ")
+       ![The completed "Configure the database" section is displayed.](./images/adb-configure-db.png " ")
 
        >**Note:** If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
 
@@ -373,15 +372,15 @@ After you have created a dynamic group, you need to create a policy to permit th
        **Important:** Make a note of this _password_ as you will need it to perform later tasks.
        * **Confirm password:** Confirm your password.
 
-       ![The completed Create administrator credentials section is displayed.](./images/adb-admin-credentials.png " ")
+       ![The completed "Create administrator credentials" section is displayed.](./images/adb-admin-credentials.png " ")
 
 9. In the **Choose network access** section, select the **Secure access from everywhere** access type.     
 
-    ![The selected Secure access from everywhere option of the Choose network access section is displayed and highlighted.](./images/adb-network-access.png " ")
+    ![The selected "Secure access from everywhere" option of the "Choose network access" section is displayed and highlighted.](./images/adb-network-access.png " ")
 
 10. In the **Choose a license type** section, accept the default __Bring Your Own License (BYOL)__. Select this type when your organization has existing database licenses.
 
-    ![The selected Bring Your Own License (BYOL) option of the Choose a license type section is displayed and highlighted. The Create Autonomous Database button is highlighted.](./images/adb-license-type.png " ")
+    ![The selected Bring Your Own License (BYOL) option of the "Choose a license type" section is displayed and highlighted. The Create Autonomous Database button is highlighted.](./images/adb-license-type.png " ")
 
 11. Click __Create Autonomous Database__.
 

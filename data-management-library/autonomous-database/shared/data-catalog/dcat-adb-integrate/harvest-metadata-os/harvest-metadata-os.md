@@ -45,11 +45,11 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
 
 3. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance where you want to create your data asset.
 
-    ![In the Name column, click the training-dcat-instance link.](./images/dcat-instance.png " ")
+    ![In the Name column, the training-dcat-instance link is highlighted.](./images/dcat-instance.png " ")
 
 4. On the **`training-dcat-instance`** **Home** page, in the **Quick Actions** tile, click **Create Data Asset**.
 
-    ![Click the Create Data Asset link.](./images/create-data-asset.png " ")
+    ![On the Home page, the Create Data Asset link is highlighted.](./images/create-data-asset.png " ")
 
 5. In the **Create Data Asset** panel, specify the data asset details as follows:    
     * **Name:** **`Data Lake`**.
@@ -66,11 +66,11 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
 
 6. Click **Create**.
 
-    ![In the completed Create Data Asset panel, click Create.](./images/create-data-asset-panel.png " ")
+    ![In the completed Create Data Asset panel, the Create button is highlighted.](./images/create-data-asset-panel.png " ")
 
     A `Data Asset created successfully` message box is displayed. The **Data Lake** tab is displayed. The details for the new data asset are displayed in the **Summary** tab.
 
-    ![The Default Properties section of the Summary tab in the Data Lake tab shows the data asset details such as URL, Namespace, and Data asset key.](./images/data-lake-tab.png " ")
+    ![The Default Properties section of the Summary tab in the Data Lake tab shows the data asset details such as the URL, Namespace, and Data asset key.](./images/data-lake-tab.png " ")
 
 
 ## Task 3: Add Three Data Asset Connections to the Oracle Object Storage Buckets
@@ -83,7 +83,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
 1. On the **Data Lake** tab, in the **Summary** tab, click **Add Connection**.
 
-    ![Click Add Connection.](./images/add-connection.png " ")
+    ![The Add Connection button is highlighted.](./images/add-connection.png " ")
 
 2. In the **Add Connection** panel, specify the connection details for the **moviestream_sandbox** Object Storage bucket data source as follows:
     * **Name:** **`Sandbox`**.
@@ -105,16 +105,15 @@ After you register a data source as a data asset in your data catalog, you creat
 
     ![A Connection successfully validated message is displayed.](./images/connection-validated.png " ")
 
-
 4. If the test was successful, click **Add**. A message box is displayed indicating whether or not the connection was added successfully. The **`Sandbox`** data source connection is added to the data asset and is displayed in the **Connections** section.
 
-    ![The newly created Sandbox connection is displayed.](./images/sandbox-connection-added.png " ")
+    ![The newly created Sandbox connection is displayed in the Connections section.](./images/sandbox-connection-added.png " ")
 
 ### Add a Connection to the **moviestream_landing** Bucket to the **`Data Lake`** Data Asset
 
 5.  On the **Data Lake** tab, in the **Summary** tab, in the **Connections** section, click **Add Connection**.
 
-    ![Click Add Connection.](./images/add-connection-2.png " ")
+    ![The Add Connection button is highlighted.](./images/add-connection-2.png " ")
 
 6. In the **Add Connection** panel, specify the connection details for the **moviestream_landing** Object Storage bucket data source as follows:
 
@@ -140,7 +139,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
 8. If the test was successful, click **Add**. A message box is displayed indicating whether or not the connection was added successfully. The **`Landing`** data source connection is added to the data asset and is displayed in the **Connections** section.
 
-    ![The newly created Landing connection is displayed.](./images/landing-connection-added.png " ")
+    ![The newly created Landing connection is displayed in the Connections section.](./images/landing-connection-added.png " ")
 
 ### Add a Connection to the **moviestream_gold** Bucket to the **`Data Lake`** Data Asset
 
@@ -167,7 +166,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
 12. If the test was successful, click **Add**. The **`Gold`** data source connection is added to the data asset and is displayed in the **Connections** section.
 
-    ![The newly created Gold connection is displayed.](./images/gold-connection-added.png " ")
+    ![The newly created Gold connection is displayed in the Connections section.](./images/gold-connection-added.png " ")
 
 
 ## Task 4: Create a Filename Pattern and Assign it to your Oracle Object Storage Data Asset
@@ -179,7 +178,7 @@ If an Object Storage file is matched with multiple filename patterns, it can be 
 
 Create a filename pattern as follows:
 
-1. On the **training-dcat-instance** page from the previous task, click the ![](./images/context-menu-icon.png>) (the plus sign) tab, and then select **Filename Patterns** from the **Context** menu.
+1. On the **training-dcat-instance** page from the previous task, click the ![Plus sign tab](./images/context-menu-icon.png>) (the plus sign) tab, and then select **Filename Patterns** from the **Context** menu.
 
     ![The Plus tab is clicked to display the context menu. The Filename Patterns menu option is highlighted.](./images/click-filename-patterns.png " ")
 
@@ -191,11 +190,11 @@ Create a filename pattern as follows:
     * **Name:** `folderLE`.
     * **Description:** `Map each Object Storage folder off the moviestream_sandbox, moviestream_landing, and moviestream_gold root buckets to Data Catalog Logical Entities using the selected regular expression`.
 
-    ![On the completed **Create Filename Pattern** panel, the selected Regular expression option and View Pattern Examples button are highlighted.](./images/filename-patterns-1.png " ")
+    ![On the completed Create Filename Pattern panel, the selected Regular expression option and View Pattern Examples button are highlighted.](./images/filename-patterns-1.png " ")
 
 3. Click **View Pattern Examples** for examples file pattern styles, sample files, pattern expressions, and the resulting logical data entities that are derived based on the pattern expression. A list of different pattern examples is displayed. Scroll-down the page to the **Hive Style Folders Without Database** section, expand it, and then click **Select**.
 
-    ![The Hive Style Folders Without Database section is expanded. The Select, Sample files, Pattern, and Resulting logical data entities fields are highlighted.](./images/filename-patterns-examples.png " ")
+    ![The Hive Style Folders Without Database section is expanded. The Select button, Sample files, Pattern, and Resulting logical data entities fields are highlighted.](./images/filename-patterns-examples.png " ")
 
     The **Create Filename Pattern** panel is re-displayed. The selected file pattern is displayed in the **Expression** field and the respective test filenames are displayed in the **Test filenames** field.
 
@@ -214,17 +213,17 @@ Create a filename pattern as follows:
 
 4. Click **Test Expression**. The **Resulting Logical Entities** based on the regular expression that you specified are displayed.
 
-    ![The Resulting Logical Entities section shows the results of the test. The Create button is highlighted.](./images/test-expression.png " ")
+    ![The Resulting Logical Entities section is highlighted and it shows the results of the test. The Create button is highlighted.](./images/test-expression.png " ")
 
     A message box displays the status of the test.    
 
 5. Click **Create**. The **File Patterns** tab is re-displayed. The newly created file pattern is displayed in the **Filename Patterns** list. You might need to click **Refresh** to display the file pattern.
 
-    ![The newly created folderLE filename pattern is displayed.](./images/file-pattern-created.png " ")
+    ![The newly created folderLE filename pattern is displayed and highlighted. The Refresh button is highlighted.](./images/file-pattern-created.png " ")
 
 6. Assign the filename pattern that you just created to your **Data Lake** data asset. On the **Home** tab, click the **Data Assets** link to access the **Data Assets** tab.
 
-    ![The Home tab and the Data Assets link are highlighted.](./images/data-assets-link.png " ")
+    ![The Home tab and the Data Assets(1) link are highlighted.](./images/data-assets-link.png " ")
 
 7. In the **Data Assets** list, click the **Data Lake** data asset for which you want to assign the filename pattern that you created.
 
@@ -259,7 +258,7 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
 3. On the Data Catalog instance **Home** tab, click **Data Assets**. The **Data Assets** tab is displayed.       
 
-    ![The Data Assets tab and Data Lake asset are highlighted.](./images/data-assets-tab.png " ")
+    ![The Data Assets tab and Data Lake data asset are highlighted.](./images/data-assets-tab.png " ")
 
 4. In the **Data Assets** list, click the **Data Lake** data asset. The **Oracle Object Storage: Data Lake** page is displayed.
 
@@ -269,7 +268,7 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
     ![Step 1 of the Harvest wizard, Select a Connection, is displayed. The Sandbox connection is selected and the Next button is highlighted.](./images/harvest-sandbox-step-1.png " ")
 
-6. The **Select Data Entities** page of the **Harvest** wizard (Step 2 of 3) is displayed. The **`moviestream_sandbox`** bucket is already displayed in the **Available Bucket** section. Click the ![](./images/add-entity-icon.png>) icon next it to add it to the **Selected Bucket / Data Entities** section to include it in the harvest job.
+6. The **Select Data Entities** page of the **Harvest** wizard (Step 2 of 3) is displayed. The **`moviestream_sandbox`** bucket is already displayed in the **Available Bucket** section. Click the ![Plus](./images/add-entity-icon.png>) icon next it to add it to the **Selected Bucket / Data Entities** section to include it in the harvest job.
 
     ![Step 2 of the Harvest wizard, Select Data Entities, is displayed. The moviestream_sandbox bucket is selected and the Next button is highlighted.](./images/harvest-sanding-step-2-1.png " ")
 
@@ -294,7 +293,7 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
 8. Click **Create Job**. A message is briefly displayed about the job execution starting. The **Jobs** tab is displayed and the job is displayed in the list of jobs. If the harvest is successful, the harvest job **Last run status** column displays **Succeeded**. To display the job details, click the job name link in the **Name** column.
 
-    ![The newly created harvest job is displayed on the Jobs tab with the status Succeeded.](./images/harvest-job-completed.png " ")
+    ![The newly created Sandbox bucket harvest job is displayed on the Jobs tab with the status Succeeded.](./images/harvest-job-completed.png " ")
 
 9. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details. The **Logical data entities harvested** field shows **3** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_sandbox`** root bucket. There are **3** corresponding files under the sub-folder under the root bucket. You can drill-down on the **Log Messages** icon to display the job log. Close this tab.
 
@@ -306,13 +305,13 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
 11. Return to the **Data Lake** tab from the previous step. If you have closed that tab, on the Data Catalog instance **Home** tab, in the **Quick Actions** tile, click **Browse Data Assets**. The **Browse Data Asset** tab is displayed that shows the **Oracle Object Storage: Data Lake** details.
 
-    ![On the Oracle Object Storage: Data Lake details page, the Harvest button is highlighted.](./images/click-harvest-landing.png " ")
+    ![On the Data Lake details page, the Harvest button is highlighted.](./images/click-harvest-landing.png " ")
 
 12. Click **Harvest**. The **Select a Connection** page of the **Harvest** wizard (Step 1 of 3) is displayed in the **Harvest Data Entities** tab. Select the **`Landing`** from the **Select a connection for the data asset you want to harvest** drop-down list. Click **Next**.
 
     ![Step 1 of the Harvest wizard, Select a Connection, is displayed. The Landing connection is selected and the Next button is highlighted.](./images/harvest-landing-step-1.png " ")
 
-13. The **Select Data Entities** page of the **Harvest** wizard (Step 2 of 3) is displayed. The **`moviestream_landing`** bucket is already displayed in the **Available Bucket** section. Click the ![Plus icon](./images/add-entity-icon.png>) icon next it to add it to the **Selected Bucket / Data Entities** section to include it in the harvest job.
+13. The **Select Data Entities** page of the **Harvest** wizard (Step 2 of 3) is displayed. The **`moviestream_landing`** bucket is already displayed in the **Available Bucket** section. Click the ![Plus](./images/add-entity-icon.png>) icon next it to add it to the **Selected Bucket / Data Entities** section to include it in the harvest job.
 
     ![Step 2 of the Harvest wizard, Select Data Entities, is displayed. The moviestream_landing bucket is selected and the Next button is highlighted.](./images/harvest-landing-step-2-1.png " ")
 
@@ -329,7 +328,7 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
 15. Click **Create Job**. A message is briefly displayed about the job execution starting. The **Jobs** tab is displayed and the job is displayed in the list of jobs. If the harvest is successful, the harvest job **Last run status** column displays **Succeeded**. To display the job details, click the job name link in the **Name** column.
 
-    ![The newly created harvest job is displayed on the Jobs tab with the status Succeeded.](./images/landing-harvest-completed.png " ")
+    ![The newly created Landing bucket harvest job is displayed on the Jobs tab with the status Succeeded.](./images/landing-harvest-completed.png " ")
 
     >**Note:** If the **Jobs** tab was already displayed from the previous harvesting job, refresh your browser to display the **`Harvest_Data_Lake_Landing`** job.
 
@@ -360,7 +359,7 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
 22. Click **Create Job**. The harvest job is created successfully and the **Jobs** tab is displayed. Click the job name link in the **Name** column.
 
-    ![The newly created harvest job is displayed on the Jobs tab with the status Succeeded.](./images/harvest-gold-completed.png " ")
+    ![The newly created Gold bucket harvest job is displayed on the Jobs tab with the status Succeeded.](./images/harvest-gold-completed.png " ")
 
     >**Note:** If the **Jobs** tab was already displayed from the previous harvesting job, refresh your browser to display the **`Harvest_Data_Lake_Gold`** job.
 
@@ -378,14 +377,13 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
 1. On the Data Catalog instance **Home** tab, click **Data Entities**.
 
-    ![On the selected Data Catalog instance Home page, the Data Entities link is highlighted.](./images/click-data-entities.png " ")
+    ![On the selected Data Catalog instance Home page, the Data Entities (19) link is highlighted.](./images/click-data-entities.png " ")
 
     > **Note:** The number of **Data Entities** shown in the above image might not match your results.
 
     The **Data Entities** tab is displayed along with the logical entities that were derived from the three Object Storage buckets during the harvesting process. You can use the different **Filters** on the page to refine the **Data Entities** list.
 
-    ![The Data Entities tab is a displayed. Some of the entities are displayed.](./images/data-entities-tab.png " ")
-
+    ![The partial Data Entities tab is a displayed. Some of the entities from the different buckets are displayed.](./images/data-entities-tab.png " ")
 
 2. In the **Data Entities** list, click the name link for the data entity you want to view. Click the **`custsales`** logical data entity that was derived from the **`moviestream_gold`** bucket.
 
@@ -397,7 +395,7 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
 4. From the **Attributes** tab, view the data entity attribute details.
 
-    ![The Attributes tab of custsales is selected and highlighted. The list of custsales attributes names and datatypes is displayed.](./images/custsales-attributes-tab.png " ")
+    ![The Attributes tab of custsales is selected. The list of custsales attributes names, datatypes, and partition keys is displayed.](./images/custsales-attributes-tab.png " ")
 
 ## Task 7: Customize the Business Name for the Object Storage Buckets
 
@@ -415,7 +413,7 @@ When you later perform the synchronization process between your ADB and Data Cat
 
 3. If you only have the one Data Asset created in this workshop, the **Oracle Object Storage: Data Lake** page is displayed.
 
-4. Click the **Buckets** tab. The three Oracle Object Storage buckets are displayed. If the buckets are not displayed, click **Refresh**.
+4. Click the **Buckets** tab. The three Oracle Object Storage buckets are displayed. If the buckets are not displayed, click the **Refresh** button.
 
     ![The Buckets tab is selected and highlighted. The three buckets in the buckets list are highlighted.](./images/buckets-tab-displayed.png " ")
 

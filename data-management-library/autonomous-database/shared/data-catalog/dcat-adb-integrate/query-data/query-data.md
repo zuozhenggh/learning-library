@@ -34,34 +34,34 @@ You can import, create, and work with notebooks in Oracle Machine Learning Noteb
 </if>
 
 <if type="freetier">
-5. On the **Autonomous Database Details** page, click **Service Console**.
+5. On the **Autonomous Database Details** page, click the **Service Console** button.
 
-   ![Click the highlighted Service Console button.](./images/service-console.png " ")
+   ![The Service Console button is highlighted.](./images/service-console.png " ")
 </if>
 
 <if type="livelabs">
-5. On the **Autonomous Database Details** page, click **Service Console**.
+5. On the **Autonomous Database Details** page, click the **Service Console** button.
 
-    ![Click the highlighted Service Console button.](./images/ll-service-console.png " ")   
+    ![The Service Console button is highlighted.](./images/ll-service-console.png " ")   
 </if>
 
 6. On the **Service Console** page, click the **Development** link on the left.
 
-    ![In the Autonomous Data Warehouse section on the left, click the Development link.](./images/development-link.png " ")
+    ![The Autonomous Data Warehouse section on the left is highlighted. The Development link is highlighted.](./images/development-link.png " ")
 
 7. Scroll-down the **Development** page, and then click the **Oracle Machine Learning User Interface** card.
 
-    ![From the list of displayed cards, click the highlighted Oracle Machine Learning User Interface card.](./images/oml-card.png " ")
+    ![From the partial list of displayed cards, the Oracle Machine Learning User Interface card is highlighted.](./images/oml-card.png " ")
 
 8. On the **SIGN IN** page, enter **`moviestream`** in the **Username** field, your password that you chose in **Lab 3 > Task 2** such as **`Training4ADB`** in the **Password** field, and then click **Sign In**.
 
     >**Note:** You specified the password for the `moviestream` user that was created when you ran the PL/SQL script in **Lab 3**, **Task 2: Initialize the Lab**.
 
-    ![On the Oracle Cloud Infrastructure Sign In page, the database name is blurred. The username and password fields are populated. Click Sign In.](./images/login-moviestream.png " ")
+    ![On the Oracle Cloud Infrastructure Sign In page, the database name is blurred. The username (moviestream) and password fields are populated. The Sign In button is highlighted.](./images/login-moviestream.png " ")
 
     The **Oracle Machine Learning** Home page is displayed.
 
-    ![The MOVIESTREAM username is displayed and highlighted in the Oracle ML banner. The How Do I section contains several clickable help topics. The Quick Actions section contains several clickable icons including the highlighted Notebooks icon.](./images/oml-home.png " ")
+    ![The MOVIESTREAM username is displayed and highlighted in the Oracle ML banner. The How Do I section contains several clickable help topics. The Quick Actions section is highlighted and it contains several clickable icons including the highlighted Notebooks icon.](./images/oml-home.png " ")
 
 
 ## Task 2: Import a Notebook
@@ -70,7 +70,7 @@ You can import a notebook from a local disk or from a remote location if you pro
 
 1. Click the following link to download the [workshop-data-lake-accelerator.json](files/workshop-data-lake-accelerator.json?download=1) OML Notebook.
 
-2. On the **Oracle Machine Learning** Home page, in the **Quick Actions** section, click **Notebooks**. The **Notebooks** page is displayed.    
+2. On the **Oracle Machine Learning** Home page, in the **Quick Actions** section, click the **Notebooks** button. The **Notebooks** page is displayed.    
 
     ![On the Notebooks page, the Import button is highlighted.](./images/notebooks-page.png " ")
 
@@ -98,11 +98,11 @@ An interpreter is a plug-in that allows you to use a specific data processing la
 
 1. Click on the gear icon on the top right of the notebook. The **Settings** panel is displayed. The list of available interpreters is displayed in the **Interpreter binding** section.
 
-    ![The gear icon shown as being clicked which displays the Settings panel and the list of available Interpreter bindings.](./images/settings-panel.png " ")
+    ![The gear icon shown as being clicked (labeled as 1) which displays the Settings panel (labeled as 2) and the list of available Interpreter bindings (labeled 3).](./images/settings-panel.png " ")
 
 2. Select at least one of the interpreters that indicate **%sql (default), %script, %python**. You can move the interpreters to change their order and bring the one you prefer to the top. The first interpreter in the list is the default. Click and drag the **your-database-name_medium %sql (default), %script, %python** interpreter to the top of the list to make it the default. Click **Save** to save your changes. See [About Interpreter Bindings and Notebooks](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/omlug/interpreters-and-notebooks.html).
 
-    ![The medium interpreter is shown as moved to the top of the other available interpreters. The Save button is highlighted.](./images/reorder-interpreter.png " ")
+    ![The medium interpreter is shown as moved to the top of the other available interpreters and highlighted. The Save button is highlighted.](./images/reorder-interpreter.png " ")
 
     The notebook **Editor** is re-displayed.
 
@@ -124,7 +124,7 @@ At the top of the notebook, you can find a toolbar which contains the following 
 3. Configuration, list of keyboard shortcuts, and display options.
 
 
-    ![The partial image shows the three sections highlighted with callouts 1, 2, 3 above each section from left to right.](./images/notebook-toolbar.png " ")
+    ![The partial image shows the three sections highlighted with callouts (circle with a number in the middle) 1, 2, 3 above each section from left to right.](./images/notebook-toolbar.png " ")
 
 On the far left of the toolbar, you can click the Notebook's title to edit it.
 
@@ -216,7 +216,7 @@ You can use this drop-down list to do the following:
 
     The code section of each paragraph is displayed. For example, paragraphs 1, 2, and 3 in the notebook use the **`%md`** (Markdown) interpreter while the paragraphs 4 and 5 use the **`%sql`** interpreter.
 
-    ![The first five paragraphs in the notebook are shown. The interpreter at the beginning of each paragraph is highlighted.](./images/code-displayed.png " ")
+    ![The first five paragraphs in the notebook are shown with a numbered callout next to each one (1 to 5). The interpreter type at the beginning of each paragraph is highlighted.](./images/code-displayed.png " ")
 
     In this notebook, the **`%md`** (Markdown) paragraphs provide useful information about the paragraphs. The **`%md`** Markdown interpreter generates static html from plain Markdown text. In this lab, you will review the code in each paragraph one at a time, run that paragraph, and review the results as desired.
 
