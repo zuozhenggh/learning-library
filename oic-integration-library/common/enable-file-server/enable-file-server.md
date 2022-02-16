@@ -4,7 +4,7 @@
 
 This lab walks you through the process of enabling the Oracle Integration File Server. By default, the File Server is not enabled, but is required for this workshop.
 
-Estimated Lab Time: 5 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -23,7 +23,7 @@ This lab assumes you have:
 To begin using File Server in Oracle Integration, it must first be enabled for the Oracle Integration instance in the Oracle Cloud Infrastructure Console. Enabling File Server is a one time action.
 
 If you select File Server from the navigation pane and it's not yet enabled for Oracle Integration, the following message appears:
-   ![](images/file_server_enablement0.png)
+   ![](images/file-server-enablement0.png)
 
 To enable File Server:
 
@@ -34,15 +34,17 @@ To enable File Server:
    The Integration Instance Details page is displayed.
 4. Click the Enable link for File Server on the Integration Instance Information tab.
 
-   ![](images/file_server_enablement1a.png)
+   ![](images/file-server-enablement1a.png)
 
 5. When prompted to confirm enabling File Server, click Enable. The OIC icon turns orange and its status changes to Updating. Enablement can take several minutes.
 
-   ![](images/file_server_enablement2.png)
+   ![](images/file-server-enablement2.png)
 
 6. Once complete, the OIC icon changes back to green with an Active status, and File Server shows as Enabled. You may need to log out and log back in to Oracle Integration to access the newly activated File Server.
 
-   ![](images/file_server_enablement3.png)
+   ![](images/file-server-enablement3.png)
+
+   You may now [proceed to the next lab](#next).
 
 ## Learn More
 

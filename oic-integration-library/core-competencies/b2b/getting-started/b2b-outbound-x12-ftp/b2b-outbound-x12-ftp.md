@@ -21,7 +21,7 @@ High level steps of the Integration:
 | 7 |The B2B integration for sending messages instance uses an adapter (AS2 or FTP) to pack the message and then transmit it to the external trading partner through the AS2 or FTP protocol.|
 
 
-Estimated Lab Time: 60 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -52,7 +52,7 @@ Note: This integration flow uses REST for simplicity. You can substitute the RES
 
 3. Select **App Driven Orchestration** as the style to use. The **Create New Integration** dialog is displayed.
 
-    enter the Name of the integration as per the value given below and then click on ***Create***
+    enter the Name of the integration per the value given below and then click on ***Create***
     ```
     <copy>PO Backend</copy>
     ```
@@ -68,7 +68,7 @@ The Adapter Endpoint Configuration Wizard opens
     ```
     <copy>Receive-App-Msg</copy>
     ```
-    - Enter the ***endpoint's relative resource URI*** as per the value given below
+    - Enter the ***endpoint's relative resource URI*** per the value given below
     ```
     <copy>/outbound</copy>
     ```
@@ -91,7 +91,7 @@ The Adapter Endpoint Configuration Wizard opens
 Add an EDI translate action to the flow to translate XML document to an EDI document
 1. On the right side of the canvas, click ***Actions***  , drag & drop ***B2B action*** on the designer after the first **Receive-App-Msg** element.
 The **Configure B2B Action** wizard opens
-    - On the **Basic Info** page, enter the **name** as per the value given below for the action and select a mode as ***B2B Trading Partner mode***, and click **Next**
+    - On the **Basic Info** page, enter the **name** per the value given below for the action and select a mode as ***B2B Trading Partner mode***, and click **Next**
 
     ```
     <copy>EDI-Generate</copy>
@@ -124,10 +124,10 @@ Configure data mappings for the EDI-Generate action and Receive-App-Msg action i
 | currencyCode | CUR02 |
 | currencyConversionRate | CUR03 |
 | lineItems | Loop-PO1 |
-| lineItems->SKU | PO101 |
-| lineItems->Quantity | PO102 |
-| lineItems->unitOfMeasure | PO103 |
-| lineItems->price | PO104 |
+| lineItems > SKU | PO101 |
+| lineItems > Quantity | PO102 |
+| lineItems > unitOfMeasure | PO103 |
+| lineItems > price | PO104 |
 | tradingPartnerId | Application Partner ID(This element is there under TranslateInput Node) |
 
 Once you are done with the validation, test it and results should look like the screenshot given below.
@@ -145,29 +145,28 @@ Once you are done with the validation, test it and results should look like the 
     Note:Your namespace prefix may include different values than nsmpr9 and nsmpr6.
 This expression indicates that if **TranslateOutput > translation-status** has a value of **Success**, then take this route. This is referred to as the success route
     - Click on ***Validate*** and Click on ***Close*** and Save your integration flow
-    - In the success route: Add ***Integration*** Action ->Enter name as **callTradingPartner** and select **DELL FTP Send Integration** (OR any other outbound B2B integration which you have created) and click on ***Next***->Click on ***Next*** ->Click on ***Done*** and ***Save*** your integration flow
-
-    - Edit **Map to callTradingPartner** -> Select **Developer mode** and From Source, expand **EDI-Generate -> executeResponse->TranslateOutput**
+    - In the success route: Add ***Integration*** Action. Enter name as **callTradingPartner** and select **DELL FTP Send Integration** (OR any other outbound B2B integration which you have created) and click on ***Next***. Click on ***Next***. Finally, Select ***Done*** and ***Save*** your integration flow
+    - Edit **Map to callTradingPartner** > Select **Developer mode** and From Source, expand **EDI-Generate > executeResponse > TranslateOutput**
 | Source | Target |
 | --- | --- |
-| B2B Message Reference | components.schemas.request-wrapper->messages->b2b-message-reference |
-| Trading Partner Name | components.schemas.request-wrapper->trading-partner |
-| connectivity-properties-code | Connectivity Properties->Localintegration->code |
-| connectivity-properties-version | Connectivity Properties->Localintegration->version |
+| B2B Message Reference | components.schemas.request-wrapper>messages>b2b-message-reference |
+| Trading Partner Name | components.schemas.request-wrapper>trading-partner |
+| connectivity-properties-code | Connectivity Properties>Localintegration>code |
+| connectivity-properties-version | Connectivity Properties>Localintegration>version |
 
     - Click on ***Validate*** and Click on ***Close*** and ***Save*** your integration flow
-    - In Otherwise route: Add ***Throw New Fault Action*** ->Enter name as **Error** ->click on ***Create*** and map the below elements
+    - In Otherwise route: Add ***Throw New Fault Action***. Enter name as **Error**. Click on ***Create*** and map the below elements
 
     $EDI-Generate/nsmpr7:executeResponse/nsmpr10:TranslateOutput/nsmpr10:validation-error to Code
     AND
     $EDI-Generate/nsmpr7:executeResponse/nsmpr10:TranslateOutput/nsmpr10:validation-error-report to Reason
     ![mappings diagram](images/b2b-outbound14.png)
-    - Validate and Close -> Save your integration flow.
+    - Validate and Close. Save your integration flow.
     ![finalflow diagram](images/b2b-outbound15.png)
 
 ## Task 6: After Switch activity
 1. Edit ***Map to Receive-App-Msg*** activity.
-2. From Source, expand **EDI-Generate Response ->executeResponse->TranslateOutput** and From Target, expand **Purchase Order Result** and map the following elements as per the table given below.
+2. From Source, expand **EDI-Generate Response > executeResponse> TranslateOutput** and From Target, expand **Purchase Order Result** and map the following elements per the table given below.
 | Source | Target |
 | --- | --- |
 | Translation Status | Translation Status |
@@ -196,8 +195,8 @@ Check for errors, ***save***, and ***activate*** the integration flow.
 
 2. Open the file **DellIncPO.xml** (from the lab artifacts folder **b2b-getting-started\b2b-outbound-x12-ftp**) and copy the data and paste it in the body of the request console and click on ***Test***
   ![TestConsole diagram](images/b2b-outbound17.png)
-3. Go to **Monitoring->Integrations->Tracking->** Cross check your backend integration and trading partner integration ran successfully.
-4. If you have FTP Client installed on your machine, you can login using the FTP details provided to you and cross check your edi file created under folder **/B2BWorkshop/B2BTPDELLOut**
+3. Go to **Monitoring >Integrations >Tracking** Cross check your backend integration and trading partner integration ran successfully.
+4. If you have FTP Client installed on your machine, you can login using the FTP details provided to you and cross check your EDI file created under folder **/B2BWorkshop/B2BTPDELLOut**
 5. In conclusion, you can use Oracle Integration to accept XML message and convert it into EDI format and send it to the trading partners dynamically.
 
 This feature will very much useful when we have more than one trading partner. We just define the trading partner on the user interface, integrations will be created automatically and files will be processed with the existing Backend Integration.
@@ -206,7 +205,7 @@ This feature will very much useful when we have more than one trading partner. W
 
 1. Navigate to **Menu > Monitoring > B2B Tracking** page. You should see Business Messages under the Business Messages Tab for your specific Trading Partner.
 
-		Tip:  Select the Filter to search based on Trading Partner Name
+Tip:  Select the Filter to search based on Trading Partner Name
 
 2. Click on the ***View*** icon and inspect **Message Logs, Payload**
 

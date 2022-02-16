@@ -20,7 +20,7 @@ This lab assumes you have:
 * All previous labs successfully completed.
 * Completed [B2B Concepts](../workshops/freetier/?lab=gettingStartedB2B) Lab which explains B2B concepts at a high level.
 
-## B2B Integration Action Trading Partner Mode
+##	Task	1: B2B Integration Action Trading Partner Mode
 
 The function of the B2B Integration Action is to work with schemas that adhere to B2B standards like X12. The B2B Integration Action works for both Inbound and Outbound messages. The B2B Integration Action supports a Standalone mode and a B2B Trading Partner mode. This section describes the operations of the B2B Trading Partner mode.
 

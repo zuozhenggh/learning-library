@@ -13,7 +13,7 @@ Trading Partner (Dell Inc) sends an 810 Invoice EDI document to Host ACME. ACME 
 |     3         |     Your backend integration instance   receives the Invoice 810 EDI message. Using a B2B Translation activity, the Invoice   810 EDI (X12 or EDIFACT) message is translated into a B2B canonical XML   format. |
 |     4         |     Further, down the line integration processes   the invoices for ex: maybe you want to create a payables invoice in the   ERP/Netsuite for the Purchase Order raised. In this exercise you will create   a log activity to capture some important fields from the translated EDI   Invoice message.|
 
-Estimated Lab Time: 60 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -46,7 +46,7 @@ In this lab, you will:
 
 ### *Verify Trading Partner Configuration (Dell Inc)*
 
-1.	If the Trading Partner (Dell Inc) is already created in the Trading Partner Manager Lab. Navigate to **Trading Partners**. ***Edit*** **Dell Inc**. Verify if the B2B Identifiers is configured as per below
+1.	If the Trading Partner (Dell Inc) is already created in the Trading Partner Manager Lab. Navigate to **Trading Partners**. ***Edit*** **Dell Inc**. Verify if the B2B Identifiers is configured per below
 
 | Identifier Type | Value |
 | --- | --- |
@@ -58,7 +58,7 @@ In this lab, you will:
 
 ### *Configure Transport & Inbound Agreements*
 
-1.	Click ***Transports & Agreements*** tab. In the Transports section, edit the **FTP** Transport and Configure as per below and Save.
+1.	Click ***Transports & Agreements*** tab. In the Transports section, edit the **FTP** Transport and Configure per below and Save.
 
 |     Name                                    |     FTP                                 |
 |---------------------------------------------|-----------------------------------------|
@@ -75,7 +75,7 @@ In this lab, you will:
 
 **Check Point:** Go to the Integrations page and note that both integrations are activated
 
-3.	In the **Inbound Agreements** section, click ***+*** to add a new Inbound Agreement. Enter the details as per the below and click on ***Add***.
+3.	In the **Inbound Agreements** section, click ***+*** to add a new Inbound Agreement. Enter the details per the below and click on ***Add***.
 
 | Field Name                   | Value                                                  |
 |------------------------------|--------------------------------------------------------|
@@ -86,7 +86,7 @@ In this lab, you will:
 
 The backend integration is yet to be defined. So, we will deploy the Inbound Agreement after creating the Backend Integration Flow
 
-### *Designing Backend Integration*
+### *Design Backend Integration*
 
 ## Task 1: Create an Integration
 
@@ -136,12 +136,12 @@ The Adapter Endpoint Configuration Wizard opens.
 		-	On the Summary page select ***Done***. ***Save*** your integration flow
 ##	Task 3: Configure For-Each Action
 
-Add a ***For Each*** Action. In the Create Action configure as per below and Select ***Create***
+Add a ***For Each*** Action. In the Create Action configure per below and Select ***Create***
 
 |     Field Name                    |    Value            |
 |-----------------------------|---------------------------------------------|
 |     Name                    |     Each-B2B-Doc                                                                         |
-|     Repeating Element       |     Drag and drop ‘message’ repeating element from the path execute   -> request-wrapper    |
+|     Repeating Element       |     Drag and drop ‘message’ repeating element from the path execute   > request-wrapper    |
 |     Current Element Name    |     B2B-Doc-Message	|
 
 ![For-Each-Activity-1](images/inbound-beintegration-foreach-1.png)
@@ -150,7 +150,7 @@ Add a ***For Each*** Action. In the Create Action configure as per below and Sel
 
 1.	Add an ***Assign*** activity within the **For Each** and name it as **Assign-Current-Msg**
 2.	Select the ***+*** action and configure **tracking\_var\_2** (select the variable from the drop-down list)
-3.	In the **Value** field Select the Pencil icon and provide **b2b-message-reference** from **B2B-Doc-Msg -> message**. Select ***Validate*** and ***Close***.
+3.	In the **Value** field Select the Pencil icon and provide **b2b-message-reference** from **B2B-Doc-Msg > message**. Select ***Validate*** and ***Close***.
 
 ![For-Each-Activity-2](images/inbound-beintegration-foreach-2.png)
 
@@ -203,7 +203,7 @@ Note: It is easy to search for any field element by selecting the Source Message
 Save your Integration Flow.
 ##	Task	8:	Add Tracking Identifiers for Integration Tracking
 
-Add **trading partner** as one of the tracking field from the execute -> Request-Wrapper
+Add **trading partner** as one of the tracking field from the execute > Request-Wrapper
 
 ##	Task	9: Activate the Integration
 
@@ -224,7 +224,7 @@ From the **Action** Menu deploy the **Inbound Agreement**
 
 We will Import and Activate an Integration Flow which Simulates a Supplier (Dell Inc) Trading Partner to send an Invoice (810) document to a defined FTP location so that host (Acme Corp) can process the Inbound Invoice document. This integration accepts an Invoice XML and pushes and 810 Invoice EDI message into a specific directory provided in the xml payload. In a real world scenario typically an ERP application (ex. ERP Cloud or NetSuite) generates the Receivables Invoice and sends the Invoice document to Acme Corp
 
-1.	From the Lab Artifacts **b2b-getting-started\b2b-inbound-x12-ftp** folder, Import the **OUTBOUND_XTP_DELL_INC_01.00.0001.iar** (Dell Inc Simulator Integration) and ***Activate*** the Integration with Tracing Enabled.
+1.	From the Lab Artifacts **b2b-getting-started\b2b-inbound-x12-ftp** folder, Import the **OUTBOUND\_XTP_DELL\_INC\_01.00.0001.iar** (Dell Inc Simulator Integration) and ***Activate*** the Integration with Tracing Enabled.
 
 ##	Task	12: Testing the B2B Inbound Integration Scenario
 
@@ -258,7 +258,7 @@ Let's use Oracle Integration Test Console to simulate a 810 Invoice EDI message 
 
 3.	Navigate to **Menu > Monitoring >B2B Tracking** page. You should see 2 Business Messages under the Business Messages Tab for your specific Trading Partner.
 
-		Tip:  Select the **Filter** to search based on Trading Partner Name
+	Tip:  Select the **Filter** to search based on Trading Partner Name
 
 	![](images/inbound-test-4.png)
 
