@@ -12,13 +12,28 @@ This demo lab will walk you through the steps to create an ERP Purchase Order an
 ## Task 1: Create Purchase Order in ERP Cloud
 1. Access your ERP Cloud environment. Login with a user having the correct roles and priviliges to create a PO. 
 
-2. Navigate to the **Procurement** Tab
+2. Navigate to the **Procurement** Tab.
 
-3. Click ... to open the PO actions menu.
+3. Click **Purchase Orders**.
 
-4. In the Order section, click **Create Order**. This open ... dialog.
+4. In the **Overview** section, click **Tasks** menu on the right.
+   ![](images/run-demo01.png)
 
-5. 
+    This opens the Tasks menu. 
+
+5. Under the *Orders* section, select **Create Order**.
+  ![](images/run-demo02.png)
+
+    The *Create Order* dialog is displayed.
+
+6. Enter a valid entry in the *Supplier* field, for example `ABC Consulting`, and select the corresponding supplier in the drop down. 
+
+    > You can search for valid suppliers using the **Search** icon. 
+
+7. Click **Create**.
+
+8. In the *Edit Document (Purchase Order)* page, enter the same value used under the *Filter Expr for Purchase Order Event*. For example: `"LL demo"` 
+
 
 
 

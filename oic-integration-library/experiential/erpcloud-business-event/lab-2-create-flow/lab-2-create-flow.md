@@ -101,13 +101,13 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | --- | ----------- |
     | Schema | **ADMIN**  |
     | Table Type | **TABLE** |
-    | Table Name | <keep blank>. and click **Search** |
-    | Available | **PURCHASEORDERS** and click **>** to move the table to the *Selected* column |
+    | Table Name | `<keep blank>` and click **Search** |
+    | Available | **PURCHASEORDER** and click **>** to move the table to the *Selected* column |
     |
 
     ![](images/create-app-integration06.png)
 
-4. Click on **Import Tables**, wait and hit **Next**.
+4. Click on **Import Tables**, wait and press **Next**.
 
 5. When the *Select the parent database table* element appears, click **Next**.
 
@@ -124,17 +124,17 @@ Use the mapper to drag fields from the source structure (ERP PO event data)  to 
 When we added the ADW invoke to the integration, a map icon was automatically added. 
 
 1. Hover you cursor over the ERP-ADW **Mapper** icon, and click **Edit**.
-   ![](images/create-app-integration08.png")
+   ![](images/create-app-integration08.png)
 
 2. Use the mapper to drag element nodes in the source ERP Cloud structure to element nodes in the target Oracle ADW structure.
 
     Expand the Source node:
 
-    - ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 <sequence> > Value
+       ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 <sequence> > Value
 
     Expand the Target node:
     
-    - ADW_InsertPO Request > Purchaseorders
+        ADW_InsertPO Request > Purchaseorder
 
 
     Complete the mapping as below:    
@@ -149,7 +149,7 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
     | Total Amount | total |
     |
 
-    <img src="images/create-app-integration09.png" width="500">
+   ![](images/create-app-integration09.png)
 
 3. Click **Validate**, then wait for the confirmation message *Mapping is valid and ready to use.*
 
@@ -163,7 +163,7 @@ Manage business identifiers that enable you to track fields in messages during r
 
 A number icon is displayed at the top of the Integration canvas when identifiers have not been set. 
 
-1. Click the <img src="images/icon-actions-menu.png" width="20"> menu on the top right, then select **Tracking**.
+1. Click the **Actions** menu on the top right, then select **Tracking**.
     ![](images/create-app-integration11.png)
 
 2. From the *Source* section, expand **getPurchaseOrderResponse** > **result**, click **Load more**, expand **Value**, and click **Load more**. Drag the below fields from ERP PO source to the *Drag a trigger field here* sections:
