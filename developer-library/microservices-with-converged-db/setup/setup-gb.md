@@ -65,7 +65,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
   </copy>
   ```
 
-   Note, cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run the same command again to resume.
+#   Note, cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run the same command again to resume.
 
    The setup process will typically take around 20 minutes to complete.  
 
