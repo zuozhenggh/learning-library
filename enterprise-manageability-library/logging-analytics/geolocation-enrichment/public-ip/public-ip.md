@@ -2,19 +2,18 @@
 
 ## Introduction
 
-In this Lab, you will set up and configure a Logging Analytics source to perform Geolocation enrichment for Public IP addresses. You can see an example use case published at [Geolocation Blog for Public IPs](https://blogs.oracle.com/observability/post/why-invest-in-geolocation-enrichment-of-logs).
+In this Lab, you will set up and configure a Logging Analytics source to perform Geolocation enrichment for Public IP addresses. You can see an example use case published at [Geolocation Blog for Private IPs](https.blogs.oracle.com)
 
 Estimated Lab Time: 30 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Configure an `FMW WLS Server Access Logs` (Oracle Fusion Middleware Weblogic Server) Log Source to setup Geolocation enrichment.
+* Configure an `FMW WLS Server Access Logs` Log Source to setup Geolocation enrichment.
 
 ### Prerequisites
 
-* You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cloud-infrastructure) enabled account.
-* Logging Analytics Service must be onboarded.
+* An Oracle Cloud Environment
 * Working knowledge of OCI Logging Analytics and OCI in general.
 
 

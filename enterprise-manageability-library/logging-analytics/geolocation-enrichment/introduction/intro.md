@@ -7,8 +7,7 @@ Estimated Lab Time: 40 minutes
 
 ### Prerequisites
 
-* You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cloud-infrastructure) enabled account.
-* Logging Analytics Service must be onboarded, see [onboarding instructions](https://youtu.be/fm76C3R4kPM).
+* An Oracle Cloud Environment
 * Working knowledge of OCI Logging Analytics and OCI in general.
 
 ## Acknowledgements

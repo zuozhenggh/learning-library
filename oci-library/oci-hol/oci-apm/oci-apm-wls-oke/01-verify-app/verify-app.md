@@ -4,15 +4,17 @@
 
 This workshop uses the **WebLogic Operator** Demo app-  a simple JSP-based WebLogic application you created in the prerequisite **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop. Verify the WebLogic Operator application is running and ready to configure the APM Java Agent.
 
+
 Estimated time: 5 minutes
 
 ### Objectives
-
 * Ensure the WebLogic Operator Demo application is running  
 
 ### Prerequisites
 
-* Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop, Tasks 1, 2, 3 and 4.
+* Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop, labs 1, 2, 3 and 4.
+
+
 
 ## Task 1: Verify the application in a browser
 
@@ -44,7 +46,9 @@ Estimated time: 5 minutes
 
    ![Oracle Cloud console, Cloud Shell](images/1-7-cloudshell.png " ")
 
+
    > ***NOTE***:  Save the command to a text file on your laptop, and execute it every time when you start a new Cloud Shell session, while working the labs in this workshop.
+
 
 8.	In the Cloud Shell, run the following command.
 
@@ -58,9 +62,11 @@ Estimated time: 5 minutes
 
    ![Oracle Cloud console, Cloud Shell](images/1-8-cloudshell.png " ")
 
+
 9.	Within the same command output, locate the LoadBalancer service. Note down the External-IP.
 
    ![Oracle Cloud console, Cloud Shell](images/1-9-cloudshell.png " ")
+
 
 10.	On your computer, open a new browser tab and access the application with the following URL pattern:
 
@@ -71,9 +77,15 @@ Estimated time: 5 minutes
      ```
      Make sure the WebLogic Operator Demo application launches as in the image below. This is the target web application you will use to configure the APM Java Agent in this workshop.
 
+
      ![WLS Operator Demo application](images/1-10-demoapp.png " ")
 
-     If you have not set up the application yet, or you cannot start the application, please visit the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop, and complete the tutorials from the Task 1 to Task 4.
+
+     If you have not set up the application yet, or you cannot start the application, please visit the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop, and complete the tutorials from the Lab 1 to Lab 4.
+
+
+
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
