@@ -28,6 +28,8 @@ In this task we'll create 2 buckets one for storing source file with reviews and
 
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
+![Create Bucket](./images/createbucket.png " ")
+
 2.	**Create a bucket** and name it “source-bucket”
 
 3.	Click **create** accepting all defaults.
@@ -41,7 +43,7 @@ In this task we'll create 2 buckets one for storing source file with reviews and
 
 For this exercise, we will assume that you have a set of customer reviews for a set of hotels.
 
-1. 	Download (embedded in this document) hotel-reviews.csv to your local machine. This file contents hotel reviews for a handful of hotels, and we will use that as our data-source. We will perform sentiment and entity extraction analysis using Data Integration and AI Services.
+1. 	Download this [Dataset](./files/Data.csv) to your local machine. This file contents hotel reviews for a handful of hotels, and we will use that as our data-source. We will perform sentiment 		 analysis using Data Integration and AI Services.
 
 2.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
@@ -49,11 +51,12 @@ For this exercise, we will assume that you have a set of customer reviews for a 
 
 4.	On the bucket details page, under **Objects**, click **Upload**.
 
-5.	In the Upload Objects panel, drag and drop the **hotel-reviews.csv** to the drop zone, or click **select files** to locate it on your machine.
+![Object Upload](./images/uploadfiles.png " ")
+
+5.	In the Upload Objects panel, drag and drop the **data.csv** to the drop zone, or click **select files** to locate it on your machine.
 
 6.	Click **Upload**, and then click **Close**.
 
-![](./images/introduction.png " ")
 
 ## Task 3: Prepare Target Database
 
@@ -61,25 +64,31 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Oracle Database**, and then select **Autonomous Data Warehouse**.
 
+![Create ADW](./images/createadw.png " ")
+
 2.	Select your compartment and **Create Autonomous Database**.
 
 3.	On the options, set a **Display Name** and **Database Name**
+
+![Create ADW](./images/createadw2.png " ")
 
 4.	Workload type: **Data warehouse**.
 
 5.	Remember your password (**labDatabase01**)
 
-6.	Access type Secure access from allowed IPs and VCNs only
+6.	Access type **Secure access from allowed IPs and VCNs only**
 
 7.	Click **Create Autonomous Database** (Wait for your dataset to provision which may take up to 15mins)
 
+![Create ADW](./images/createadw3.png " ")
+
 8.	On your database details page, click **Database Actions**.
 
-9.	On the **Tools** tab, click **Open Database Actions**.
+![Create ADW](./images/createadw4.png " ")
 
- ![](./images/introduction.png " ")
+9.	Under **Development**, click **SQL**.
 
-10.	Under **Development**, click **SQL**.
+![Create ADW](./images/createadw5.png " ")
 
 11. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
 
@@ -89,7 +98,8 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 		GRANT DWROLE TO USER1;
 		ALTER USER USER1 QUOTA 200M ON DATA;
 
-![](./images/introduction.png " ")
+![Create User](./images/createadw6.png " ")
+
 
 ## Task 4: Create Tables to Store Output Data
 
@@ -153,11 +163,6 @@ Follow the scripts below.
 
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>

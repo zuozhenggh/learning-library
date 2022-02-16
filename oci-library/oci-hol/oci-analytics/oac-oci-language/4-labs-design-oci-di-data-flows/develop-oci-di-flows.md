@@ -4,6 +4,8 @@
 
 This lab walks you through the steps to create the components necessary to create a data flow like the one shown in the graph below. In order to create source and target components, first we need to create a set of “data assets”. The data assets represent each of the elements in the diagram. We’ll start by creating the data asset for the source, and then the target.
 
+![Data Flow](./images/odidataflow.png " ")
+
 Estimated Lab Time: 90 minutes
 
 ### Objectives
@@ -14,7 +16,6 @@ In this lab, you will:
 * Create the Data flow.
 * Run the Data flow
 
-![](./images/introduction.png " ")
 
 ### Prerequisites
 
@@ -34,14 +35,18 @@ This lab assumes you have:
 
 1.	From the Console, click **Analytics & AI** > **Data Integration**, and navigate to the workspace you just created.
 
+![Workspace](./images/odiworkspace.png " ")
+
 2.	On your workspace Home page, click **Create Data Asset** from the Quick Actions tile.
 
 3.	On the **Create Data Asset** page, complete the General Information fields:
-				-   For **Name**, enter reviews-data-source without any spaces. You can use alphanumeric characters, hyphens, periods, and underscores only.
-				-   For **Description**, enter a description about your data asset.
-				-   From the **Type** dropdown, select **Oracle Object Storage**.
-				-   For **Tenant OCID**, enter the tenancy OCID. If needed, you can navigate to your tenancy information from the Profile icon on the top right corner of your cloud console.
-				-   For **OCI region**, you can copy the code that is shown in the url for instance “us-phoenix-1”
+    - For **Name**, enter reviews-data-source without any spaces. You can use alphanumeric characters, hyphens, periods, and underscores only.
+    - For **Description**, enter a description about your data asset.
+    - From the **Type** dropdown, select **Oracle Object Storage**.
+    - For **Tenant OCID**, enter the tenancy OCID. If needed, you can navigate to your tenancy information from the Profile icon on the top right corner of your cloud console.
+    - For **OCI region**, you can copy the code that is shown in the url for instance “us-phoenix-1”
+
+![Source Data Asset](./images/sourcedataasset.png " ")
 
 4.	Test the connection and **Create** the data asset.
 
@@ -60,27 +65,31 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 You can also click **Open** tab (plus icon) in the tab bar and select **Data Assets**, then click **Create Data Asset**.
 
 4.	On the **Create Data Asset** page, for **General Information**, set the following:
-- **Name**: Data_Warehouse (You can use alphanumeric characters, hyphens, periods, and underscores only).
-- **Identifier**: Auto-generated based on the value you enter for Name. You can change the auto-generated value, but after you save the data asset, you cannot update the identifier again.
-- **Description**: Optional
-- **Type**: Oracle Autonomous Data Warehouse
-- **Wallet File**: Drag and drop or browse to select the wallet file. See [Download a Wallet](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/adbconnecting.htm#access)
-- **Service Name**: Service level to connect to your Autonomous Data Warehouse database
+    - **Name**: Data_Warehouse (You can use alphanumeric characters, hyphens, periods, and underscores only).
+    - **Identifier**: Auto-generated based on the value you enter for Name. You can change the auto-generated value, but after you save the data asset, you cannot update the identifier again.
+    - **Description**: Optional
+    - **Type**: Oracle Autonomous Data Warehouse
+    - **Wallet File**: Drag and drop or browse to select the wallet file. See [Download a Wallet](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/adbconnecting.htm#access)
+    - **Service Name**: Service level to connect to your Autonomous Data Warehouse database
+
+![Target Data Asset](./images/targetdataasset.png " ")
 
 5.	In the **Connection** section, enter the following:
-		- **Name**: Default connection (Optionally, you can rename the connection)
-		- **Description**:  Optional (For example, Connect with BETA user)
-		- **User Name**: USER1
-		- **Password**: The password you created for USER1
+    - **Name**: Default connection (Optionally, you can rename the connection)
+    - **Description**:  Optional (For example, Connect with BETA user)
+    - **User Name**: USER1
+    - **Password**: The password you created for USER1
+
 6.	Click **Test Connection** to verify that you can connect to the data warehouse using the credentials you just provided.
+
 7.	Assuming your test was successful, click **Create**.
 
 ## Task 3: Create the Data flow
 
 To create a data flow, first you need to create a project in Data Integration. To create a project and a data flow:
 
-1.	On your workspace Home page, click Projects. You can also click Open tab (plus icon) in the tab bar and select Projects.
-2.	On the Projects page, click Create Project.
+1.	On your workspace **Home** page, click **Projects**. You can also click **Open** tab (plus icon) in the tab bar and select **Projects**.
+2.	On the Projects page, click **Create Project**.
 3.	On the Create Project page, enter “language-lab” for Name, and then click Create.
 
 Now we will create a data flow to ingest data the hotels review file we just ingested.
@@ -171,7 +180,7 @@ When you are done with your data flow it will look something like this:
 
 ![](./images/introduction.png " ")
 
-## Task 3: Run the Data Flow
+## Task 4: Run the Data Flow
 
 Now we need to execute the data flow. The process is as follows.
 
