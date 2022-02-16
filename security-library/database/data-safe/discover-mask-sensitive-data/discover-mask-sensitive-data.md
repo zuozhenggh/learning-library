@@ -89,7 +89,6 @@ Use Oracle Database Actions to query sensitive data in your database. You can ac
     - Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, and `hire_date`, are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
     - Keep this tab open so that you can return to it later.
 
-    ![Query results](images/original-query-results.png "Query results")
 
 
 
@@ -320,8 +319,6 @@ After you create a masking policy, you can run a data masking job against your t
 1. Return to the browser tab for **SQL | Oracle Database Actions**. You should have a SQL Worksheet open. If your session expired, sign in again as the `ADMIN` user.
 
 2. Take a moment to review the original data.
-
-    ![Query results before masking](images/original-query-results.png "Query results before masking")
 
 3. On the toolbar, click the **Run Statement** button (green circle with a white arrow) to execute the query.
 
