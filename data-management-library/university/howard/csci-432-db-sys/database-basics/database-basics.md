@@ -166,8 +166,3 @@ Run a query on a sample Oracle Autonomous Database data set.
     If you are having problems with any of the labs, please visit the Need Help? tab.
 
 
-## Acknowledgements
-
-- **Author** - Richard Green, Principal Developer, Database User Assistance
-- **Contributors** -  Marion Smith, Technical Program Manager
-- **Last Updated By/Date** - Marion Smith, January 2022
