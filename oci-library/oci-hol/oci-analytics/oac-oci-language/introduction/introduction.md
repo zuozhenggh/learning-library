@@ -22,6 +22,7 @@ In this workshop, you will learn how to:
 * Use OCI Data Integration to orchestrate a data flows
 * Visualize and analyze data using Oracle Analytics Cloud(OAC).
 
+
 ### Prerequisites
 
 This lab assumes you have:
