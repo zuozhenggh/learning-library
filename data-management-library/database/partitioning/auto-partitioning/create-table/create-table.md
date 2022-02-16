@@ -118,6 +118,8 @@ We are now creating a nonpartitioned table that will become our candidate table 
 	  
 	-- Commit the transaction
 	commit;
+
+	alter session set optimizer_ignore_hints = true;
 	</copy>
 	```    
 

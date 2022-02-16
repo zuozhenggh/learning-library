@@ -7,22 +7,20 @@ In this lab, you will download the APM Java Agent installer file from the Oracle
 Estimated time: 20 minutes
 
 ### Objectives
+
 * Download the APM Java Agent from the Oracle Cloud console
 *	Upload the APM Java Agent to the Cloud shell
 *	Copy the Java Agent installer from the Cloud shell to the file system
 *	Provision the APM Java Agent in the shared file system directory
 *	Deploy the Java Agent to the WebLogic Server
 
-
 ### Prerequisites
-* Completion of the Lab 1, 2 and 3
 
-
+* Completion of the Task 1, 2 and 3
 
 ## Task 1: Download APM Java Agent
 
 1.	Open navigation menu from the Oracle Cloud console, select **Observability & Management** > **Administration**.
-
 
    ![Oracle Cloud console, Navigation Menu](images/4-1-1-menu.png " ")
 
@@ -37,7 +35,6 @@ Estimated time: 20 minutes
 ## Task 2: Upload the APM Java Agent to the Cloud shell
 
 1.	Open the Cloud Shell by clicking the **>..** icon from the top right corner in the Oracle Cloud console.
-
 
    ![Oracle Cloud console, Cloud Shell](images/4-1-4-cloudshell.png " ")
 
@@ -64,6 +61,7 @@ Estimated time: 20 minutes
     cd ~/; ls
     </copy>
     ```
+
    ![Oracle Cloud console, Cloud Shell ](images/4-1-7-2-cloudshell.png " ")
 
 ## Task 3: Copy the Java Agent installer to the file system
@@ -75,12 +73,10 @@ Estimated time: 20 minutes
     kubectl cp apm-java-agent-installer-<apm-agent-version>.jar sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/
     </copy>
     ```
+
     > e.g., kubectl cp apm-java-agent-installer-1.2.1725.jar sample-domain1-ns/sample-domain1-admin-server:/apmlab-fss/apmagent/
 
    >***NOTE***: file system path must match the one you created in the earlier steps. In this example, mounted path is ***apmlab-fss***.
-
-
-
 
 2.	Use the kubectl command below to remotely access the container in the Kubernetes pod.
 
@@ -100,20 +96,13 @@ Estimated time: 20 minutes
 
     If you see the java agent installer file in the location, the file transfer was successful.
 
-
-
-
-
    ![Oracle Cloud console, Cloud Shell ](images/4-1-8-cloudshell.png " ")
 
     >***NOTE***: The APM version may be different from what is showing in the example.
 
-
 ## Task 4: Provision the APM Java Agent
 
-
 >***NOTE***: Make sure you are still in the Kubernetes container. If your command prompt does not show ***bash-4.2#***, you are back in the Cloud Shell due to the timeout. Execute the following command to log back in to the container. <br> kubectl exec -it sample-domain1-admin-server -n sample-domain1-ns -- /bin/bash
-
 
 1.	Move to the apmagent directory
 
@@ -122,6 +111,7 @@ Estimated time: 20 minutes
     cd /apmlab-fss/apmagent; ls
     </copy>
     ```
+
     You should see the apm-java-agent-installer file in the directory.
 
 2.	Run java -version command. Verify that Java is installed and the version returns in the output.
@@ -136,12 +126,12 @@ Estimated time: 20 minutes
     </copy>
     ```
 
-
     With a successful installation, you should see the output similar to below.
 
    ![Oracle Cloud console, Cloud Shell ](images/4-1-10-cloudshell.png " ")
 
 4.	Type "ls" command to verify ***oracle-apm-agent*** directory is created. Then exit the container and go back to the Cloud shell.
+
     ```bash
     <copy>
     cd /apmlab-fss/apmagent; ls
@@ -177,6 +167,7 @@ Because there is no editing tool inside the container, you will copy an APM agen
     cd ~;ls
     </copy>
     ```
+
    ![Oracle Cloud console, Cloud Shell ](images/4-5-1-cloudshell.png " ")
 
 2.	Open ***ProbeConfig.acml*** with an editor
@@ -241,6 +232,7 @@ Next you will deploy the Java Agent by modifying the domain.yaml file to point t
     kubectl apply -f domain.yaml -n sample-domain1-ns
     </copy>
     ```
+
     ![Oracle Cloud console, Cloud Shell ](images/4-6-2-cloudshell.png " ")    
 
 5.	Wait for a few minutes, then run the following command to check the status of the pods. Make sure they are in the Running state and Ready.
@@ -250,11 +242,8 @@ Next you will deploy the Java Agent by modifying the domain.yaml file to point t
     kubectl get pods -n sample-domain1-ns
     </copy>
     ```
+
     Once the pods are in the Running state, the APM Java Agent is active and listening to the WebLogic Server. It captures backend traces and spans which you can view in the APM Trace Explorer.
-
-
-
-You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
