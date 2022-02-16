@@ -8,9 +8,9 @@
             "filename": "sprint-enable-dataguard-adb.md"
         },
         {
-                    "title": "Other related Sprints  ",
-                    "description": "",
-                    "filename": ""
+          "title": "How to disable Data Guard for an ADB instance?",
+          "description": "",
+          "filename": "../sprint-disable-dataguard-adb/sprint-disable-dataguard-adb.md"
         }
     ]
 }
