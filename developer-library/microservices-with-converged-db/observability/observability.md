@@ -31,6 +31,9 @@ Watch the video below for a quick walk through of the lab.
     <copy>cd $GRABDISH_HOME/observability;./install.sh</copy>
     ```
 
+You will see some warning messages related to versions, etc. that may safely be ignored.
+
+
 2. Run the `/createMonitorsAndExporters.sh` script. This will do the following:
    - Create Prometheus ServiceMonitors to scrape the Frontend, Order, and Inventory microservices.
    - Create Prometheus ServiceMonitors to scrape the Order PDB, and Inventory PDB metric exporter services.
@@ -40,6 +43,8 @@ Watch the video below for a quick walk through of the lab.
     ```
     <copy>cd $GRABDISH_HOME/observability;./createMonitorsAndExporters.sh</copy>
     ```
+
+You will see some warning messages related to configmaps not existing as this is the initial setup that may safely be ignored.
 
 ## Task 2: Configure Grafana
 
@@ -172,6 +177,10 @@ Watch the video below for a quick walk through of the lab.
 3. Notice the collapsible panels for each microservices and their content which includes
     - Metrics about the kubernetes microservice runtime (CPU load, etc.)
     - Metrics about the kubernetes microservice specific to that microservice (`PlaceOrder Count`, etc.)
+  
+    Again, please see the  [Unified Observability in Grafana with converged Oracle Database Workshop](http://bit.ly/unifiedobservability) 
+for an more in-depth look at this topic including details of the metrics, logs, and tracing exporters, including info for panels with...
+
     - Metrics about the PDB used by the microservice (open sessions, etc.)
     - Metrics about the PDB specific to that microservice (inventory count)
 
@@ -179,19 +188,9 @@ Watch the video below for a quick walk through of the lab.
       ![](images/orderdashscreen.png " ")
       ![](images/inventorydashscreen.png " ")
 
-4. By default the status will show a value of `1` for `UP` status.
+4. If not already done, place an order using the application or run the scaling test in the earlier labs to see the metric activity in the dashboard.
 
-   This is corrected by selecting the `Edit` item in the/a `Status` panel dropdown
-      ![](images/editstatus.png " ")
-
-   Add a value mapping where `value` of `1` results in `text` of `UP`) under the `Field` tab as shown here:
-      ![](images/valuetest1upfield.png " ")
-
-   Click the `Apply` button in the upper right to apply changes.
-
-5. If not already done, place an order using the application or run the scaling test in the earlier labs to see the metric activity in the dashboard.
-
-6. Select the 'Explore' option from the drop-down menu of any panel to show that metric and time-span on the Explore screen
+5. Select the 'Explore' option from the drop-down menu of any panel to show that metric and time-span on the Explore screen
 
       ![](images/grabdishdashexplorebutton.png " ")
 
