@@ -4,7 +4,7 @@ Oracle Advanced Compression provides a comprehensive set of compression features
 
 ## About this Workshop
 
-Oracle provides various types of Advanced Compression features. We will work on some compression-based hands-on labs to understand the concepts and their corresponding use cases.
+Oracle provides various types of Advanced Compression features. We will work on compression-based hands-on labs to understand the concepts and their corresponding use cases.
 
 Estimated Workshop Time:  1 hour 20 minutes
 
@@ -28,9 +28,9 @@ The amount of data that enterprises are storing, and managing, is overgrowing - 
  
 ### Objectives
  
-* Enable OLTP Table compression 
-* Enable Advanced row compression
-* Enable Advanced Index compression
+* Enable OLTP Table Compression 
+* Enable Advanced Row Compression
+* Enable Advanced Index Compression
 * Enable Automatic Data Optimization
 
 ### Prerequisites
