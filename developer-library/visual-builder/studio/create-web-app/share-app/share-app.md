@@ -64,5 +64,5 @@ Now that you've shared your application, you need to get its URL so you can pass
     You may **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 * **Last Updated By/Date** - Sheryl Manoharan, February 2022

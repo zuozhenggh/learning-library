@@ -114,10 +114,10 @@ For the purposes of this workshop, let's assume that other members of your team 
 
     ![](images/team-add-member.png " ")
 
-    An email containing project details is sent to Clara Coder. Your recent activities feed is also updated.
+    Your recent activities feed is updated and an email containing project details is sent to Clara Coder. To receive email notifications, the teammate's email address must be verified and notifications set properly in Preferences. 
 
     You may **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 * **Last Updated By/Date** - Sheryl Manoharan, February 2022

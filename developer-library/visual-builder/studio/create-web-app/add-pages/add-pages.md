@@ -228,5 +228,5 @@ It makes sense at this point to change the name of the `main-start` page to `mai
     You may **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 * **Last Updated By/Date** - Sheryl Manoharan, February 2022

@@ -114,5 +114,5 @@ Let's now add data for the Department and Employee business objects. Instead of 
    You may **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 * **Last Updated By/Date** - Sheryl Manoharan, February 2022

@@ -142,5 +142,5 @@ Now that we've added options to let users manage departments, we'll do the same 
     You may **proceed to the next lab**.
 
 ## Acknowledgements
-* **Author** - Sheryl Manoharan, VB Studio User Assistance
+* **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
 * **Last Updated By/Date** - Sheryl Manoharan, February 2022
