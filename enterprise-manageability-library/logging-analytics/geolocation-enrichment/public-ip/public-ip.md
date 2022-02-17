@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this Lab, you will set up and configure a Logging Analytics source to perform Geolocation enrichment for Public IP addresses. You can see an example use case published at [Geolocation Blog for Private IPs](https://blogs.oracle.com/observability/post/why-invest-in-geolocation-enrichment-of-logs).
+In this Lab, you will set up and configure a Logging Analytics source to perform Geolocation enrichment for Public IP addresses. You can see an example use case published at [Geolocation Blog for Public IPs](https://blogs.oracle.com/observability/post/why-invest-in-geolocation-enrichment-of-logs).
 
 Estimated Lab Time: 30 minutes
 
