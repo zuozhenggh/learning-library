@@ -27,7 +27,8 @@ To create a vault with **resource tags** through the Command Line Interface (CLI
 
 ```
 <copy>
-oci kms management vault create --compartment-id <target_compartment_id> --display-name <vault_name> --vault-type <vault_type> --defined-tags <JSON_formatted_defined_tag> --freeform-tags <JSON_formatted_freeform_tag></copy>
+oci kms management vault create --compartment-id <target_compartment_id> --display-name <vault_name> --vault-type <vault_type> --defined-tags <JSON_formatted_defined_tag> --freeform-tags <JSON_formatted_freeform_tag>
+</copy>
 ```
 
 **Note:**

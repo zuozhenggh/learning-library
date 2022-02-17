@@ -19,6 +19,7 @@ To cancel the deletion of a vault through the Command Line Interface (CLI), run 
 ```
 <copy>
 oci kms management vault cancel-deletion --vault-id <target_vault_id>
+</copy>
 ```
 
 ## Learn More

@@ -18,7 +18,8 @@ To move a vault through the Command Line Interface (CLI), run the following comm
 
 ```
 <copy>
-oci kms management vault change-compartment --vault-id <target_vault_id> --compartment-id <new_compartment_id></copy>
+oci kms management vault change-compartment --vault-id <target_vault_id> --compartment-id <new_compartment_id>
+</copy>
 ```
 
 ## Learn More
