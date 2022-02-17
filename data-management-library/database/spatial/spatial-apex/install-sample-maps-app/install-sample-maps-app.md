@@ -149,6 +149,6 @@ This concludes this lab. You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle
-* **Contributors** - Carsten Czarski, Database Development, Oracle
+* **Contributors** - Carsten Czarski, APEX Development, Oracle
 * **Last Updated By/Date**  - David Lapp, Database Product Management, February 2022
 
