@@ -22,7 +22,7 @@ In this lab, you will learn how to:
 
 This lab assumes you have:
 * An Oracle Machine Learning account
-* Access to OMLUSER account.
+* Access to Oracle Machine LearningUSER account.
 
 
 ## Task 1: Sign into Oracle Machine Learning User Interface

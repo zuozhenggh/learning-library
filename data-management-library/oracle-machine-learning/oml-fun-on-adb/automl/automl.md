@@ -15,7 +15,7 @@ With a few clicks, you can generate editable _starter_ notebooks. These notebook
 
 
 In this lab, you will learn how to:
-* Access OML AutoML UI
+* Access Oracle Machine Learning AutoML UI
 * Create an experiment
 * Edit and adjust experiment settings
 * View the leaderboard and other settings
@@ -167,9 +167,9 @@ The Leader Board displays the top performing models relative to the model metric
 	Alternatively, you can click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the experiment page and click **AutoML** on the left navigation menu.
 
 ## Task 3: Deploy Top Model to Oracle Machine Learning Services
-When you deploy a model using the OML AutoML UI, you create an Oracle Machine Learning Services endpoint for scoring. OML Services extends Oracle Machine Learning functionality to support model deployment and model lifecycle management for in-database OML models through REST APIs.
+When you deploy a model using the Oracle Machine Learning AutoML UI, you create an Oracle Machine Learning Services endpoint for scoring. Oracle Machine Learning Services extends Oracle Machine Learning functionality to support model deployment and model lifecycle management for in-database OML models through REST APIs.
 
->**Note:** Through OML AutoML UI, you can deploy in-database models only, not ONNX-format models.
+>**Note:** Through Oracle Machine Learning AutoML UI, you can deploy in-database models only, not ONNX-format models.
 
 To deploy a model:  
 
@@ -207,7 +207,7 @@ To deploy a model:
 
 	![Deploy Model option in Leader Board](images/model-deployed-message.png)
 
-This completes the task of deploying the top model Naive Bayes to OML Services.
+This completes the task of deploying the top model Naive Bayes to Oracle Machine Learning Services.
 
 
 ## Task 4: View Oracle Machine Learning Models with Deployed Metadata and REST Endpoint
@@ -324,8 +324,8 @@ You may now proceed to the next lab.
 ## Learn More
 
 
-* [About OML AutoML UI](https://docs.oracle.com/en/database/oracle/machine-learning/oml-automl-ui/index.html)
-* [Blog: OML AutoML UI](https://blogs.oracle.com/machinelearning/post/introducing-oml-automl-user-interface)
+* [About Oracle Machine Learning AutoML UI](https://docs.oracle.com/en/database/oracle/machine-learning/oml-automl-ui/index.html)
+* [Blog: Oracle Machine Learning AutoML UI](https://blogs.oracle.com/machinelearning/post/introducing-oml-automl-user-interface)
 
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
