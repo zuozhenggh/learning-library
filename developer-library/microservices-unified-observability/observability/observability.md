@@ -46,7 +46,7 @@ Watch the video below for a quick walk through of the lab.
        <copy>services</copy>
        ```
 
-     ![](images/grafana-loadbalancer-externalip.png " ")
+     ![Grafana LB](images/grafana-loadbalancer-externalip.png " ")
 
      Note, it will take a few minutes for the LoadBalancer to provision during which time it will be in a `pending` state
 
@@ -58,25 +58,25 @@ Watch the video below for a quick walk through of the lab.
 
 3. Login using the default username `admin` and password `prom-operator`
 
-      ![](images/grafana_login_screen.png " ")
+      ![Grafana login](images/grafana_login_screen.png " ")
 
 4. View pre-configured Prometheus data source:
 
     Select the `Configuration` gear icon on the left-hand side and select `Data Sources`.
 
-      ![](images/configurationdatasourcesidemenu.png " ")
+      ![Configuration](images/configurationdatasourcesidemenu.png " ")
 
     Click `select` button of Prometheus option.
 
-      ![](images/selectprometheusdatasource.png " ")
+      ![Select Prometheus](images/selectprometheusdatasource.png " ")
 
     The URL for Prometheus should be pre-populated
 
-      ![](images/prometheusdatasourceurl.png " ")
+      ![Prometheus URL](images/prometheusdatasourceurl.png " ")
 
     Click `Test` button and verify success.
 
-      ![](images/saveandtestdatasourceisworking.png " ")
+      ![Test button](images/saveandtestdatasourceisworking.png " ")
 
     Click the `Back` button.
 
@@ -84,18 +84,18 @@ Watch the video below for a quick walk through of the lab.
 
     Click `Add data source`.
 
-      ![](images/adddatasourcebutton.png " ")
+      ![Add datasource](images/adddatasourcebutton.png " ")
 
     Click `select` button of Jaeger option.
 
-      ![](images/addjaegerdatasource.png " ")
+      ![Click select](images/addjaegerdatasource.png " ")
 
     Enter `http://jaeger-query.msdataworkshop:8086/jaeger` in the URL field.
 
-      ![](images/jaegerdatasourceurl.png " ")
+      ![Jaeger URL](images/jaegerdatasourceurl.png " ")
 
     Click the `Save and test` button and verify successful connection message.
-      ![](images/confirmjaeger.png " ")
+      ![Save and test](images/confirmjaeger.png " ")
 
     Click the `Back` button.
 
@@ -103,15 +103,15 @@ Watch the video below for a quick walk through of the lab.
 
     Click `Add data source`.
 
-      ![](images/adddatasourcebutton.png " ")
+      ![Add datasource](images/adddatasourcebutton.png " ")
 
     Click `select` button of Loki option.
 
-      ![](images/lokidatasource.png " ")
+      ![Select Loki](images/lokidatasource.png " ")
 
     Enter `http://loki-stack.loki-stack:3100` in the URL field
 
-      ![](images/lokidatasourceurl.png " ")
+      ![Enter Loki URL](images/lokidatasourceurl.png " ")
 
     Create the two Derived Fields shown in the picture below.
     The values are as follows:
@@ -132,13 +132,13 @@ Watch the video below for a quick walk through of the lab.
         </copy>
        ```
        
-      ![](images/traceidfromspan.png " ")
+      ![Trace id from span](images/traceidfromspan.png " ")
 
-      ![](images/traceIdFromEcid.png " ")
+      ![Trace id from ECID](images/traceIdFromEcid.png " ")
 
     Click the `Save & Test` button and verify successful connection message.
 
-      ![](images/lokiconnectedandlabelsfound.png " ")
+      ![Save and Test](images/lokiconnectedandlabelsfound.png " ")
 
     Click the `Back` button.
 
@@ -146,25 +146,25 @@ Watch the video below for a quick walk through of the lab.
 
     Select the `+` icon on the left-hand side and select `Import`
 
-      ![](images/importsidemenu.png " ")
+      ![Click plus sign icon](images/importsidemenu.png " ")
 
     Copy the contents of the [GrabDish Dashboard JSON](https://raw.githubusercontent.com/oracle/microservices-datadriven/main/grabdish/observability/dashboards/grabdish-dashboard.json)
 
     Paste the contents in the `Import via panel json` text field and click the `Load` button
-      ![](images/jsondashboardupload.png " ")
+      ![Paste contents of dashboard json](images/jsondashboardupload.png " ")
 
     Confirm upload and click `Import` button.
-      ![](images/confirmdashimport.png " ")
+      ![Click import](images/confirmdashimport.png " ")
 
 
 ## Task 3: Open and Study the Main GrabDish Grafana Dashboard Screen and Metrics
 
 1. Select the four squares icon on the left-hand side and select 'Dashboards'
-      ![](images/dashboardsidemenu.png " ")
+      ![Select four squares icon on left](images/dashboardsidemenu.png " ")
 
 2. In the `Dashboards` panel select `GrabDish Dashboard`
 
-      ![](images/dashboardlist.png " ")
+      ![Select GrabDish dashboard](images/dashboardlist.png " ")
 
 3. Notice the collapsible panels for each microservices and their content which includes
     - Metrics about the kubernetes microservice runtime (CPU load, etc.)
@@ -172,49 +172,39 @@ Watch the video below for a quick walk through of the lab.
     - Metrics about the PDB used by the microservice (open sessions, etc.)
     - Metrics about the PDB specific to that microservice (inventory count)
 
-      ![](images/frontenddashscreen.png " ")
-      ![](images/orderdashscreen.png " ")
-      ![](images/inventorydashscreen.png " ")
+      ![Frontend Dash](images/frontenddashscreen.png " ")
+      ![Order Dash](images/orderdashscreen.png " ")
+      ![Inventory Dash](images/inventorydashscreen.png " ")
 
-4. By default the status will show a value of `1` for `UP` status.
+4. If not already done, place an order using the application or run the scaling test in the earlier labs to see the metric activity in the dashboard.
 
-   This is corrected by selecting the `Edit` item in the/a `Status` panel dropdown
-      ![](images/editstatus.png " ")
+5. Select the 'Explore' option from the drop-down menu of any panel to show that metric and time-span on the Explore screen
 
-   Add a value mapping where `value` of `1` results in `text` of `UP`) under the `Field` tab as shown here:
-      ![](images/valuetest1upfield.png " ")
-
-   Click the `Apply` button in the upper right to apply changes.
-
-5. If not already done, place an order using the application or run the scaling test in the earlier labs to see the metric activity in the dashboard.
-
-6. Select the 'Explore' option from the drop-down menu of any panel to show that metric and time-span on the Explore screen
-
-      ![](images/grabdishdashexplorebutton.png " ")
+      ![Select Explore](images/grabdishdashexplorebutton.png " ")
 
 ## Task 4: Use Grafana to Drill Down on Metrics, Tracing, and Log Correlation and Logs to Trace Feature
 
 1. Click the `Split` button on the Explore screen.
-      ![](images/grafanaexploresplitpanebutton.png " ")
+      ![Select split](images/grafanaexploresplitpanebutton.png " ")
 
 2. Click the `Loki` option from the drop-down list on the right-hand panel.
-      ![](images/explorerscreen.png " ")
+      ![Select Loki](images/explorerscreen.png " ")
 
 3. Click the chain icon on either panel. This will result in the Prometheus metrics on the left and Loki logs on the right are of the same time-span.
-      ![](images/syncchain.png " ")
+      ![CLick chain icon](images/syncchain.png " ")
 
 4. Click the `Log browser` drop-down list on the right-hand panel and select the `app` label under "1. Select labels to search in"
-      ![](images/logbrowser.png " ")
+      ![Click log browser](images/logbrowser.png " ")
 
 5. Select the `order` (microservice) and `db-log-exporter-orderpdb` values under "2. Find values for selected label" and click `Show logs` button.
-      ![](images/ordermslabel.png " ")
-      ![](images/dblogexporterorderpdblabel.png " ")
+      ![Select order](images/ordermslabel.png " ")
+      ![Select db log exporter for orderpdb](images/dblogexporterorderpdblabel.png " ")
 
 6. Select one of the green info log entries to expand it. Notice the `Jaeger` button next to the trace id.
-      ![](images/spanreportedlogentry.png " ")
+      ![Notice Jaeger button](images/spanreportedlogentry.png " ")
 
 7. Click the `Jaeger` to view the corresponding trace information and drill down into detail.
-      ![](images/traceinfo.png " ")
+      ![Select Jaeger button](images/traceinfo.png " ")
 
 You may now **proceed to the next lab.**
 
