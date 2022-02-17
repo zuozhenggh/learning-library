@@ -3,9 +3,9 @@
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
-            "title": "How do I create a new database user?",
+            "title": "How do I drop a database user?",
             "description": "",
-            "filename": "sprint-create-user.md"
+            "filename": "sprint-drop-user.md"
         },
         {
             "title": "How can I grant common privileges to individual database users?",
@@ -13,9 +13,10 @@
             "filename": "../sprint-grant-privileges/sprint-grant-privileges.md"
         },
         {
-          "title": "How do I drop a database user?",
+          "title": "How do I create a new database user?",
           "description": "",
-          "filename": "../sprint-drop-user/sprint-drop-user.md"
+          "filename": "../sprint-create-user/sprint-create-user.md"
         }
+
     ]
 }
