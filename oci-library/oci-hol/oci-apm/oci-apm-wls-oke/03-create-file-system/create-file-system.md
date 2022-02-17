@@ -4,21 +4,19 @@
 
 In this lab, you will create a file system in the Oracle Cloud Infrastructure. You will also create security rules to allow network traffic and mount the file system to the Kubernetes pods.  
 
-
 Estimated time: 30 minutes
 
 ### Objectives
+
 * Create a file system in the Oracle Cloud
 *	Create security rules in the network
 *	Create a YAML file, which defines Storage Class, Persistent Volume and Persistent Volume Claim
 *	Mount the volume to the Kubernetes cluster by applying the YAML, which recreates the Kubernetes pods with the new storage configuration
 
-
 ### Prerequisites
 
 * OCI quota and permissions to create a file system and associated resources. See **[Creating File Systems](https://docs.oracle.com/en-us/iaas/Content/File/Tasks/creatingfilesystems.htm)** and **[Service Limits](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#top)** in the Oracle Cloud documentation.
-* Completion of the Lab 1 and Lab 2
-
+* Completion of the Task 1 and Lab 2
 
 ## Task 1: Create a file system in the Oracle Cloud
 
@@ -30,7 +28,6 @@ Estimated time: 30 minutes
 
    ![Oracle Cloud console, file systems](images/3-1-2-filesystem.png " ")
 
-
 3. On the Create File System page, in the **File System Information** section, click **Edit Details**.
 
    ![Oracle Cloud console, file systems](images/3-1-3-filesystem.png " ")
@@ -41,11 +38,9 @@ Then drop down and select the **Compartment** where the cluster is running. You 
 
    ![Oracle Cloud console, file systems](images/3-1-4-filesystem.png " ")
 
-
 5. Scrolling down the Create File System page, in the **Export Information** section, verify that the **Export Path** is set to /apmlab-fss. This is where the file system will be mounted. You will provision APM Java agent at this location.
 
 6. In the **Mount Target Information** section, click **Edit Details** (upper right side) to expand the section. Then click the link **Click here to enable compartment selections**.
-
 
    ![Oracle Cloud console, file systems](images/3-1-5-filesystem.png " ")
 
@@ -54,7 +49,6 @@ Then drop down and select the **Compartment** where the cluster is running. You 
 8. Next, then check that the **Create New Mount Target** is selected. Select the same **Virtual Cloud Network** that the cluster is using. Select ***oke-k8sApiEndpoint-subnet..*** for **Subnet**. Leave the other fields by default and click **Create**.
 
    ![Oracle Cloud console, file systems](images/3-1-6-filesystem.png " ")
-
 
     > ***NOTE***: Ensure that oke-k8sApiEndpoint-subnet.. is selected for the Subnet.
     ![Oracle Cloud console, file systems](images/3-1-7-filesystem.png " ")
@@ -69,7 +63,6 @@ Then drop down and select the **Compartment** where the cluster is running. You 
 
 ## Task 2: Create security rules in the network
 
-
 1. In the Mount Target Information section point your mouse cursor over the **“i”**  icon next to **Subnet** and review the message. As the message indicates, security rules must be configured before mounting the file system, and that is what you will be doing next.
 
    ![Oracle Cloud console, Security Rules](images/3-2-1-securityrules.png " ")
@@ -77,7 +70,6 @@ Then drop down and select the **Compartment** where the cluster is running. You 
 2.	Click the **Subnet** link to open the Subnet page.
 
    ![Oracle Cloud console, Security Rules](images/3-2-2-securityrules.png " ")
-
 
     >***NOTE***: If the click does not land at the subnet page properly, copy the subnet name and paste into the search box at the top of the Oracle Cloud console.  Find the correct link shows up under **Resources** and click.
    ![Oracle Cloud console, Security Rules](images/3-2-3-securityrules.png " ")
@@ -90,7 +82,6 @@ Then drop down and select the **Compartment** where the cluster is running. You 
 
    ![Oracle Cloud console, Security Rules](images/3-2-5-securityrules.png " ")
 
-
 5.	In the **Add Ingress Rules** dialog, enter the following information:
 
      *	Stateless: **No**
@@ -100,7 +91,6 @@ Then drop down and select the **Compartment** where the cluster is running. You 
      *	Source Port Range:  leave as default (All)
      *	Destination Port Range: **111,2048-2050** 	
      *	Description: **Ingress security rule for apmlab-fss**
-
 
    ![Oracle Cloud console, Security Rules](images/3-2-6-securityrules.png " ")
 
@@ -173,7 +163,6 @@ Then drop down and select the **Compartment** where the cluster is running. You 
 
 5. Manually copy the contents below and paste it to the file just created. Ensure to replace the **mntTargetID** and **server IP** with the values copied in the Lab 3, Task 1, step 10 in this Workshop.
 
-
         apiVersion: storage.k8s.io/v1
         kind: StorageClass
         metadata:
@@ -212,8 +201,6 @@ Then drop down and select the **Compartment** where the cluster is running. You 
               storage: 10Gi
           volumeName: apmlab-fsspv
 
-
-
      >***Suggested Editing Tips***:
    	* Use your mouse to select the text above, and manually copy and paste it into a text file.
     * Auto copy is not provided as it may break the indentation.
@@ -224,9 +211,7 @@ Then drop down and select the **Compartment** where the cluster is running. You 
 
 ## Task 4: Recreate Kubernetes pods
 
-
 1.	From the home directory, execute the following command to add the storage objects to the Kubernetes cluster.
-
 
     ``` bash
     <copy>
@@ -245,12 +230,12 @@ Then drop down and select the **Compartment** where the cluster is running. You 
     vi ~/domain.yaml
     </copy>
     ```
+
 3.	Find the **volumes:** section. At this point, the section is commented out.
 
    ![Oracle Cloud console, Cloud Shell](images/3-3-4-cloudshell.png " ")
 
 4.	Uncomment the **volume** section, then replace the values as below, then save the file.
-
 
         volumes:
         - name: apmlab-nfs
@@ -262,7 +247,6 @@ Then drop down and select the **Compartment** where the cluster is running. You 
 
    ![Oracle Cloud console, Cloud Shell](images/3-3-5-cloudshell.png " ")
 
-
     >***NOTE***: ensure that the line “volumes:” is set with the same indentation level with the line “env:”.
 
 5.	Run the following command. This will recreate the pods, with the new object configurations.
@@ -272,6 +256,7 @@ Then drop down and select the **Compartment** where the cluster is running. You 
     kubectl apply -f domain.yaml -n sample-domain1-ns
     </copy>
     ```
+
    ![Oracle Cloud console, Cloud Shell](images/3-3-6-cloudshell.png " ")
 
 6.	Run the following command to ensure the pods are in the running state. You may need to wait for a few minutes to see all the pods are restarted and their status updated.
@@ -281,6 +266,7 @@ Then drop down and select the **Compartment** where the cluster is running. You 
     kubectl get pods -n sample-domain1-ns
     </copy>
     ```
+
     ![Oracle Cloud console, Cloud Shell](images/3-3-7-cloudshell.png " ")
 
     >***NOTE***: Verify the **AGE** column to ensure the pods are restarted. It typically takes 5 to 7 minutes to have all the pods restarted.
@@ -300,6 +286,7 @@ Then drop down and select the **Compartment** where the cluster is running. You 
     cd /; ls
     </copy>
     ```
+
     ![Oracle Cloud console, Cloud Shell](images/3-3-8-cloudshell.png " ")
 
 9.	Move to the ***apmlab-fss*** and create a directory ***apmagent***
@@ -309,6 +296,7 @@ Then drop down and select the **Compartment** where the cluster is running. You 
     cd apmlab-fss; mkdir apmagent
     </copy>
     ```
+
 10.	Ensure the ***apmagent*** directory is created
 
     ``` bash
@@ -316,6 +304,7 @@ Then drop down and select the **Compartment** where the cluster is running. You 
     ls
     </copy>
     ```
+
     ![Oracle Cloud console, Cloud Shell](images/3-3-9-cloudshell.png " ")
 
 11.	Go back to the Cloud Shell.
@@ -326,14 +315,10 @@ Then drop down and select the **Compartment** where the cluster is running. You 
     exit
     </copy>
     ```
+
     ![Oracle Cloud console, Cloud Shell](images/3-3-10-cloudshell.png " ")
 
     >***Debugging TIPS***: If you cannot find the apmlab-fss directory, or the pods do not start running, execute the following command from the Cloud Shell to troubleshoot. <br> kubectl get events --sort-by=.metadata.creationTimestamp -n sample-domain1-ns
-
-
-
-
-You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 

@@ -1,15 +1,7 @@
 # Configure the ZDM Environment
 
 ## Introduction
-In this lab on your host instance, you will:
-* Install Oracle Cloud Infrastructure Command Line Interface (Oracle Cloud Infrastructure CLI)
-* Create a Zero Downtime Migration (ZDM) group and user
-* Add directories for ZDM  
-* Install and Start ZDM
-* Generate API keys
-* Create your Oracle Cloud Infrastructure directories and configuration files under all 3 users: 'zdmuser', 'oracle', and 'opc'
-* Create RSA keys
-
+In this lab on your host instance, you will learn how to congifute the ZDM Service Node, generate and configure the required API Keys and configure connectivity between ZDM's Service Node and the GoldenGate Hub. 
 
 The CLI is a small-footprint tool that you can use on its own or with the Console to complete Oracle Cloud Infrastructure tasks. The CLI provides the same core functionality as the Console, plus additional commands. Some of these, such as the ability to run scripts, extend Console functionality.
 
@@ -17,12 +9,19 @@ The API keys you are generating are to allow the Oracle Cloud Infrastructure CLI
 
 The reason your Oracle Cloud Infrastructure directory is being copied to 'zdmuser', 'oracle', and 'opc' is so that each of these 3 users can utilize the Oracle Cloud Infrastructure CLI.
 
-Estimate Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Learn how to congifute the ZDM Service Node, generate and configure the required API Keys and configure connectivity between ZDM's Service Node and the GoldenGate Hub. 
+
+* Install Oracle Cloud Infrastructure Command Line Interface (Oracle Cloud Infrastructure CLI)
+* Create a Zero Downtime Migration (ZDM) group and user
+* Add directories for ZDM  
+* Install and Start ZDM
+* Generate API keys
+* Create your Oracle Cloud Infrastructure directories and configuration files under all 3 users: 'zdmuser', 'oracle', and 'opc'
+* Create RSA keys
 
 ### Prerequisites
 * This workshop section requires having completed all previous workshop sections.

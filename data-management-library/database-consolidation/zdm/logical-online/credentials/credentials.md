@@ -1,18 +1,18 @@
 # Configure Token Authentication, Credentials and Object Storage
 
 ## Introduction
+In this lab, you will learn how to create an authentication Token, Create an Object Storage Bucket and run the require credential scripts in the Target Autonomous Database.
+
+Estimated Time: 15 minutes
+
+### Objectives
+
 In this lab, you will be:
+
   * Creating an authentication token for your Oracle Cloud Infrastructure (Oracle Cloud Infrastructure) user profile.
   * Creating an object storage bucket.
   * Logging into your migration target autonomous database and creating the credential file you will need to connect to your Oracle Cloud Infrastructure user.
   * Creating movedata\_user in the autonomous database.
-
-Estimate Lab Time: 15 minutes
-
-### Objectives
-
-In this lab, you will:
-* Learn how to create an authentication Token, Create an Object Storage Bucket and run the require credential scripts in the Target Autonomous Database.
 
 ### Prerequisites
 * This workshop section requires having completed all previous sections.

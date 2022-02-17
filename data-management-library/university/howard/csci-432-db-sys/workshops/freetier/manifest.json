@@ -23,8 +23,20 @@
             "filename": "../../low-code-db-app-dev/low-code-db-app-dev.md"
         }, 
         {
+            "title": "Lab 4: Developing with JSON in the Oracle Database",
+            "filename": "../../json/json.md"
+        },
+        {
+            "title": "Lab 5: Data Integration, the Key to Data Centric Data Management",
+            "filename": "../../data-integration/data-integration.md"
+        },          
+        {
             "title": "Need Help?",
             "filename":"../../need-help/need-help.md"
+        },
+        {
+            "title": "Acknowledgements",
+            "filename":"../../acknowledgements/acknowledgements.md"
         }
     ]
 }
