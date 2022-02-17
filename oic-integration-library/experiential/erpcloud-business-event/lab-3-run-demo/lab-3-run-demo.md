@@ -16,7 +16,7 @@ This demo lab will walk you through the steps to create an ERP Purchase Order an
 
 3. Click **Purchase Orders**.
 
-4. In the **Overview** section, click **Tasks** menu on the right.
+4. In the **Overview** section, click **Tasks** button on the right.
    ![](images/run-demo01.png)
 
     This opens the Tasks menu. 
@@ -32,10 +32,62 @@ This demo lab will walk you through the steps to create an ERP Purchase Order an
 
 7. Click **Create**.
 
-8. In the *Edit Document (Purchase Order)* page, enter the same value used under the *Filter Expr for Purchase Order Event*. For example: `"LL demo"` 
+    This opens the *Edit Document (Purchase Order)* page.
+    ![](images/run-demo03.png)
+
+8. Under *General* section, in the *Description* field, enter the same value used for *Lab 2 > Task 2 > Step 5: Filter Expr for Purchase Order Event*. For example: `"LL demo"` 
+
+9. In the *Lines* Tab, click **+** to add a Purchase Order row.
+    ![](images/run-demo04.png)
+
+10. Enter values in the below fields (sample values provided)
+    | **Field**        | **Value**          |       
+    | --- | ----------- |
+    | Line | `1` (Default)       |
+    | Type | **Goods** |
+    | Item | Start typing `AS1`, then select an item from the drop-down (or hit the search button to select a valid item)
+    | Description | Keep default |
+    | Quantity | Enter a valid number, eg. `2` |
+    | UOM | `Ea` (Default) |
+    | Base Price | Enter a valid number, eg. `200`)
+
+     ![](images/run-demo05.png)   
+
+11. Click the **EDIT** button under *Lines* section.
+    ![](images/run-demo06.png)
+
+    This opens the *Edit Line* page for the current purchase order line. 
+
+12. Enter a future date in either *Requested Delivery Date* or *Promised Delivery Date* fields. 
+    ![](images/run-demo07.png)
+
+13. Click **OK** at the top right of the *Edit Line* page and return to the parent window. 
+
+14. Click **Submit** to initiate the the Purchase Order processing. 
+    ![](images/run-demo08.png)
+
+    After submitting the Purchase Order, a confirmation message should appear with the PO number.
+
+15. Click **OK** to close the confirmation dialog. 
 
 
+## Task 2: Validate Purchase Order
+After the PO is submitted, the initial status becomes *Pending Approval*. The PO Create event will occur once the status changes to *Open*. 
 
+1. In the **Overview** section, click **Tasks** button on the right.
+
+    This opens the Tasks menu. 
+
+2. Under the *Orders* section, click on **Manage Orders**.
+
+3. Click **Search**. You should see the Purchase Orders for the current ERP Cloud user account. 
+
+4. Look for the Purchase Order in the list with the PO numbers which was created in the previous task.
+
+    > Note: The last created PO should generally be the top one in the list.
+
+5. Validate the PO Status. If it's *Open* then the Business Event has occured. Wait a couple of minutes and keep refreshing the page until the desired PO Status appears. 
+ 
 
 ## Task 2: View message flow of the running integration
 Use the Oracle Integration dashboard to see the data flow resulting from the create Purchase Order event in ERP Cloud. 
