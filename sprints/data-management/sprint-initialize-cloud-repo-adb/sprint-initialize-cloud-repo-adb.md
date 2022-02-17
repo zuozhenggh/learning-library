@@ -8,7 +8,7 @@ The DBMS\_CLOUD\_REPO initialization routines initialize a Cloud Code Repository
 To initialize a Cloud Code Repository:
 
 1. Create a credential to access the Cloud Code Repository.
-2. Depending on the repository, GitHub, Azure Repos, or AWS CodeCommit, call DBMS_CLOUD_REPO.INIT_REPO with the parameters for the particular repository to obtain a repository handle.
+2. Depending on the repository, GitHub, Azure Repos, or AWS CodeCommit, call DBMS\_CLOUD\_REPO.INIT\_REPO with the parameters for the particular repository to obtain a repository handle.
 
 The following example provide a sample for Github initialization. Please see the documentation under the 'Learn More' section to find examples of Azure Repos and AWS CodeCommit initialization.
 

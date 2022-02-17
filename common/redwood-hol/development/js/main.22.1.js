@@ -3,11 +3,11 @@ Author: Ashwin Agarwal
 Contributors: Tom McGinn, Kaylien Phan
 Version: 22.1
 
-Version     Author          Summary
+Version     Date             Author          Summary
 ---------------------------------------------------------
-21.9        Kevin Lazarz    Added fix for LLAPEX-403 (accessible html tables) 
-22.0        Kevin Lazarz    Added alt-text fix - add alt attribute to all images which do not have alt
-22.1        Kevin Lazarz    Added fix for landmark issue (LLAPEX-401) and list issue (LLAPEX-400)
+21.9        Feb-14-22       Kevin Lazarz    Added fix for LLAPEX-403 (accessible html tables) 
+22.0        Feb-14-22       Kevin Lazarz    Added alt-text fix - add alt attribute to all images which do not have alt
+22.1        Feb-15-22       Kevin Lazarz    Added fix for landmark issue (LLAPEX-401) and list issue (LLAPEX-400)
 
 */
 
