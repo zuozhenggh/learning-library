@@ -30,7 +30,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
    ![](images/deploy-all.png " ")
 
-2.  Once successfully created, check that the services are running:
+2.  Once successfully created, verify deployment pods are running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -40,7 +40,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
   Or, you can execute the `pods` shortcut command:
 
-3. Check that the **ingress-nginx-controller** load balancer service is running, and write down the external IP address.
+3. Verify the **ingress-nginx-controller** load balancer service is running, and write down the external IP address.
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
@@ -335,8 +335,41 @@ As the deployments in the workshop are configured with `imagePullPolicy: Always`
 
 If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
+## Task 10: Develop, build, deploy, etc. in your own environment, outside Cloud Shell  (Study)
+
+The Cloud Shell is extremely convenient for development as it has various software pre-installed as well as software installed by the workshop, however it is certainly possible to do development outside the Cloud Shell.
+The following are the major considerations in doing so...
+
+- Building microservices will of course require the software required for a particular service to be installed. For example maven, GraalVM, etc.
+
+- Pushing microservices to the OCI repository will require logging into the repos via docker and for this you will need an authtoken.
+You can re-use the auth token created in the workshop or easily create a new one (see setup lab doc).
+Using the auth token you can then login to docker using the following format (replacing values as appropriate)...
+
+  ```
+  <copy>docker login -u yourtenancyname/oracleidentitycloudservice/youraccountuser@email.com us-ashburn-1.ocir.io</copy>
+  ```
+   You should then set the DOCKER_REGISTRY value in your environment like this...
+
+   ```
+   <copy>export DOCKER_REGISTRY=us-ashburn-1.ocir.io/yourtenancyname/yourcompartmentname</copy>
+   ```
+- Deploying microservices to your Kubernetes cluster will require you to install the OCI CLI and kubectl, and run the command found in the OCI console to create the kubeconfig file tha will give you access to the cluster.
+This can be found under `Developer Services->Kubernetes Clusters` where you will select your cluster and see the following page where you can copy the necessary command...
+
+   ![](images/accessclusterscreen.png " ")
+   You should then set the ORDER_PDB_NAME and INVENTORY_PDB_NAME values in your environment like this (note the value does not include the suffix of the service type, only the db name)...
+
+   ```
+   <copy>export ORDER_PDB_NAME=grabdisho</copy>
+   ```
+
+   ```
+   <copy>export INVENTORY_PDB_NAME=grabdishi</copy>
+   ```
+
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Author** - Paul Parkinson, Architect and Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
