@@ -3,10 +3,17 @@
 ## Introduction
 This demo lab will walk you through the steps to create an ERP Purchase Order and validate how the data is processed in the integration flow. 
 
+Estimated Time: 10 minutes
+
 ### Objectives
+In this lab, you will:
 - Create Purchase Order (PO) in ERP Cloud
 - View message flow triggered by the PO Create Event
 - Verify PO record in ADW Table
+
+### Prerequisites
+This lab assumes you have:
+- Completed all previous labs successfully 
 
 
 ## Task 1: Create Purchase Order in ERP Cloud
@@ -28,7 +35,7 @@ This demo lab will walk you through the steps to create an ERP Purchase Order an
 
 6. Enter a valid entry in the *Supplier* field, for example `ABC Consulting`, and select the corresponding supplier in the drop down. 
 
-    > You can search for valid suppliers using the **Search** icon. 
+    > **Tip:** You can also search for valid suppliers using the **Search** icon. 
 
 7. Click **Create**.
 
@@ -44,12 +51,12 @@ This demo lab will walk you through the steps to create an ERP Purchase Order an
     | **Field**        | **Value**          |       
     | --- | ----------- |
     | Line | `1` (Default)       |
-    | Type | **Goods** |
+    | Type | `Goods` |
     | Item | Start typing `AS1`, then select an item from the drop-down (or hit the search button to select a valid item)
-    | Description | Keep default |
+    | Description | &lt;keep default&gt; |
     | Quantity | Enter a valid number, eg. `2` |
-    | UOM | `Ea` (Default) |
-    | Base Price | Enter a valid number, eg. `200`)
+    | UOM | `Ea` (default) |
+    | Base Price | Enter a valid number, eg. `200`
 
      ![](images/run-demo05.png)   
 
@@ -76,20 +83,21 @@ After the PO is submitted, the initial status becomes *Pending Approval*. The PO
 
 1. In the **Overview** section, click **Tasks** button on the right.
 
-    This opens the Tasks menu. 
+    This opens the *Tasks* menu. 
 
 2. Under the *Orders* section, click on **Manage Orders**.
 
-3. Click **Search**. You should see the Purchase Orders for the current ERP Cloud user account. 
+3. Click **Search**. You should see the Purchase Orders for the current user. 
 
-4. Look for the Purchase Order in the list with the PO numbers which was created in the previous task.
+4. Look for your Purchase Order in the list with the PO number displayed in the previous task.
 
-    > Note: The last created PO should generally be the top one in the list.
+    > **Tip:** The last created PO should generally be the top one in the list.
 
-5. Validate the PO Status. If it's *Open* then the Business Event has occured. Wait a couple of minutes and keep refreshing the page until the desired PO Status appears. 
- 
+5. Validate the PO Status. If it's *Open* then the Business Event has occured. 
+    > **Note:** If PO has another Status, such as *Pending Approval*, then wait a couple of minutes and keep refreshing the page until the desired PO Status appears. 
 
-## Task 2: View message flow of the running integration
+
+## Task 3: Track incoming PO Event in Integration
 Use the Oracle Integration dashboard to see the data flow resulting from the create Purchase Order event in ERP Cloud. 
 
 1. In the navigation pane, click **Home** > **Monitoring** > **Integrations** > **Dashboard**

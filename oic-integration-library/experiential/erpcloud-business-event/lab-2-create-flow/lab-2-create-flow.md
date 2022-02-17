@@ -13,7 +13,7 @@ You will demo the following:
 - Activate the integration
 
 
-## Task 1: Initiate an App Driven integration flow
+## **Task 1:** Initiate an App Driven integration Flow
 We will start by creating a new integration and adding some basic info.
 
 1. In the left Navigation pane, and click **Integrations** > **Integrations**.
@@ -101,7 +101,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | --- | ----------- |
     | Schema | **ADMIN**  |
     | Table Type | **TABLE** |
-    | Table Name | `<keep blank>` and click **Search** |
+    | Table Name | &lt;keep blank&gt; and click **Search** |
     | Available | **PURCHASEORDER** and click **>** to move the table to the *Selected* column |
     |
 
@@ -189,4 +189,4 @@ A number icon is displayed at the top of the Integration canvas when identifiers
     The activation will complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to *Active*. 
 
 
-You have completed the final step of Lab 2. Please proceed to the next lab. 
+You have completed the final step of Lab 2. Please **proceed to the next lab**. 
