@@ -31,7 +31,7 @@ This lab assumes you have:
 1. Click the hamburger icon ![Hamburger image](images/hamburger.png) to open the left navigation menu and click **Notebooks**.
 2. The Notebooks page opens with all the notebooks listed in it. Click the **OML4SQL Time Series 1** notebook to open it.
 ![Notebooks listed](images/notebooklist.png)
-3. The _OML4SQL Timeseries 1_ notebook opens in the notebook editor. Click the gear icon to view and set the interpreter binding order.
+3. The _OML4SQL Time Series 1_ notebook opens in the notebook editor. Click the gear icon to view and set the interpreter binding order.
 5. Click the play icon next to the **OML4SQL Time Series ESM 1** title to run all paragraphs of the notebook.
 
   ![Run all paragraphs](images/timeseries-run-all-paragraphs.png)
