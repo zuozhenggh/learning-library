@@ -13,10 +13,10 @@ Perform the following prerequisite steps as necessary:
 To restore and recover your database, do the following:
 1. On the Autonomous Database Details page, from the **More Actions** drop-down list, select **Restore** to display the **Restore** prompt.
 2. In the Restore prompt, select **Enter Timestamp** or **Select Backup** to restore to a point in time or to restore from a specified backup.
-  * Enter Timestamp: Enter a timestamp to restore to in the **Enter Timestamp** calendar field.
-  * Select Backup: Select a backup from the list of backups. Limit the number of backups you see by specifying a period using the **From** and **To** calendar fields.
-3. Click **Restore**.
-4. When the restore operation finishes your Autonomous Database instance opens and the Lifecycle State shows **Available**.
+3. Enter Timestamp: Enter a timestamp to restore to in the **Enter Timestamp** calendar field.
+4. Select Backup: Select a backup from the list of backups. Limit the number of backups you see by specifying a period using the **From** and **To** calendar fields.
+5. Click **Restore**.
+6. When the restore operation finishes your Autonomous Database instance opens and the Lifecycle State shows **Available**.
 
 **Notes:**
 * The restore operation also restores the DATA\_PUMP\_DIR directory and user defined directories to the timestamp you specified for the restore; files that were created after that timestamp would be lost.
