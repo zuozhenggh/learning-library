@@ -265,9 +265,20 @@ In this task (in a later step), you will create a connection to your Data Catalo
       /
     </copy>
     ```
-    * To find your _Region Identifier_ that you will use in the above command, it is displayed in the **Console** banner, **US East (Ashburn)** in this example. This is the region where your Data Catalog is deployed. To find the region id associated with this region, click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region Identifier that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
+
+    There are several ways to find out the region identifier (that you will use in the above command) which is associated with your region name that is displayed in the **Console** banner. This is the region where your Data Catalog instance was deployed.
+
+    * Examine your URL for your environment. It contains the region identifier. In the following example, the region name in the banner is **US West (Phoenix)**. You can find the region identifier that is associated with this region name in the URL which is **us-phoenix-1**.
+
+      ![The region id in this example is displayed and highlighted in the Console banner, US West (Phoenix). The URL in the Address bar shows the region identifier for this region name, us-phoenix-1.](./images/region-id-url-method.png " ")
+
+    * Click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region identifies that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
 
       ![The region in this example is displayed and highlighted in the Console banner. On the Infrastructure Regions page, the region Identifier that is associated with the region displayed on the banner is highlighted.](./images/ll-regions-identifies.png " ")
+
+      > **Note:** If your region identifier that is associated with the region name displayed in the banner is not displayed on the above **Infrastructure Regions** page, see the [Regions and Availability Domains documentation](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+
+      ![The partial Regions and Availability Domains documentation is displayed. The US East (Ashburn) region name and its associated region id, us-ashburn-1, are highlighted.](./images/regions-doc.png " ")
 
       Paste your copied _Region Identifier_ in the _`region => 'enter region id where your data catalog is deployed'`_ line in the above command in your SQL Worksheet.
 
@@ -388,11 +399,19 @@ In this task (in a later step), you will create a connection to your Data Catalo
     </copy>
     ```
 
-    * To find your region id that you will use in the above command, it is displayed in the **Console** banner, **US East (Ashburn)** in this example. This is the region where your Data Catalog is deployed. To find the region id associated with this region, click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region identifies that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
+    There are several ways to find out the region identifier (that you will use in the above command) which is associated with your region name that is displayed in the **Console** banner. This is the region where your Data Catalog instance was deployed.
+
+    * Examine your URL for your environment. It contains the region identifier. In the following example, the region name in the banner is **US West (Phoenix)**. You can find the region identifier that is associated with this region name in the URL which is **us-phoenix-1**.
+
+      ![The region id in this example is displayed and highlighted in the Console banner, US West (Phoenix). The URL in the Address bar shows the region identifier for this region name, us-phoenix-1.](./images/region-id-url-method-ll.png " ")
+
+    * Click the displayed region drop-down list on the banner to display the **Regions** drop-down menu. Click **Manage Regions**. On the **Infrastructure Regions** page, find and copy the region identifies that is associated with the region displayed on the banner which is **us-ashburn-1** in our example.
 
       ![The region in this example is displayed and highlighted in the Console banner. On the Infrastructure Regions page, the region Identifier that is associated with the region displayed on the banner is highlighted.](./images/ll-regions-identifies.png " ")
 
-      >**Note:** If your region identifier that is associated with the region name displayed in the banner is not displayed on the **Infrastructure Regions** page, see the [Regions and Availability Domains documentation](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+      > **Note:** If your region identifier that is associated with the region name displayed in the banner is not displayed on the above **Infrastructure Regions** page, see the [Regions and Availability Domains documentation](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+
+      ![The partial Regions and Availability Domains documentation is displayed. The US East (Ashburn) region name and its associated region id, us-ashburn-1, are highlighted.](./images/regions-doc.png " ")
 
       Paste your region identifier in the _`region => 'enter region id where your data catalog is deployed'`_ line in the above command in your SQL Worksheet.
 
