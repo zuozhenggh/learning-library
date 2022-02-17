@@ -19,12 +19,12 @@ Exponential data growth has put severe pressure from a cost, performance, scalab
 *	Storage costs to drop as the result of any compression deployments, and 
 *	No query performance degradation and only minimal Data Manipulation Language (DML) performance impact from compression.
  
-This Lab will teach you how to create advanced row compression. 
+This Lab will teach you how to Enable advanced row compression. 
 
 ### Objectives
  
 In this lab, you will:
-* Create advanced row compression 
+* Enable advanced row compression 
 
 ### Prerequisites 
 This lab assumes you have:
@@ -33,14 +33,15 @@ This lab assumes you have:
 * The IP address and instance name for your DB19c Compute instance
 * Successfully logged into your LiveLabs account
 * A Valid SSH Key Pair
+* Sample Schema has been Setup
   
-## Task 1: Create Table with Advanced Row Compression
+## Task 1: Enable Advanced Row Compression
 
 1. Create table sales with two partitions sales\_2013 which is of Basic compression, and sales\_2014 of advanced row compression 
 
       ```
       <copy>
-         CREATE TABLE sales (
+         CREATE TABLE sales_demo (
          prod_id     NUMBER     NOT NULL,
          cust_id     NUMBER     NOT NULL,
          time_id     DATE       default sysdate  )
@@ -55,25 +56,25 @@ This lab assumes you have:
 
       ```
       <copy> 
-      insert into sales (time_id, prod_id, cust_id) values ( date '2013-12-01', 1, 2); 
+      insert into sales_demo (time_id, prod_id, cust_id) values ( date '2013-12-01', 1, 2); 
       </copy>
       ```
 
       ```
       <copy>  
-      insert into sales (time_id, prod_id, cust_id) values ( date '2013-12-02',  1, 2); 
+      insert into sales_demo (time_id, prod_id, cust_id) values ( date '2013-12-02',  1, 2); 
       </copy>
       ```
 
       ```
       <copy>  
-      insert into sales (time_id, prod_id, cust_id) values ( date '2014-12-03',  1, 2); 
+      insert into sales_demo (time_id, prod_id, cust_id) values ( date '2014-12-03',  1, 2); 
       </copy>
       ```
 
       ```
       <copy>  
-      insert into sales (time_id, prod_id, cust_id) values ( date '2014-12-04',  1, 2);
+      insert into sales_demo (time_id, prod_id, cust_id) values ( date '2014-12-04',  1, 2);
       </copy>
       ```
 
@@ -81,11 +82,11 @@ This lab assumes you have:
 
       ```
       <copy>
-      select * from sales;
+      select * from sales_demo;
       </copy>
       ```
 
-      ![Image alt text](images/sales-data.png "Sales Table Data")
+      ![Image alt text](images/sales-demo.png "Sales Table Data")
 
       View compression for in user\_tab\_partitions.
 
@@ -93,12 +94,12 @@ This lab assumes you have:
       <copy>
       select table_name, partition_name, partition_position, compression, compress_for, interval, segment_created, high_value 
       from user_tab_partitions 
-      where table_name = 'SALES' 
+      where table_name = 'SALES_DEMO' 
       order by partition_position; 
       </copy>
       ```
 
-      ![Image alt text](images/compression-type.png "Sales Table Data")
+      ![Image alt text](images/sales-demo-view.png "Sales Table Data")
  
 ## Task 2: Create Materialized View 
 
@@ -106,27 +107,25 @@ This lab assumes you have:
 
       ```
       <copy>
-      create materialized view basic_mv ROW STORE COMPRESS BASIC as select * from SALES; 
+      create materialized view basic_mv ROW STORE COMPRESS BASIC as select * from SALES_DEMO; 
       </copy>
       ```
 
       ```
       <copy> 
-      create materialized view advanced_mv ROW STORE COMPRESS ADVANCED as select * from SALES;
+      create materialized view advanced_mv ROW STORE COMPRESS ADVANCED as select * from SALES_DEMO;
       </copy>
-      ```
+      ``` 
 
-2. view data in user_table
+2. you can view compression based on the table name
 
       ```
       <copy>
-      SELECT table_name, compression, compress_for, tablespace_name, num_rows, blocks, partitioned, memoptimize_read, memoptimize_write FROM user_tables; 
+      SELECT table_name, compression, compress_for, tablespace_name, num_rows, blocks, partitioned, memoptimize_read, memoptimize_write FROM user_tables where table_name='BASIC_MV';  
       </copy>
       ```
 
-      ![Image alt text](images/materialized-view.png "materialized view")
-
-3. you can view compression based on the table name
+      ![Image alt text](images/basic-mv.png "Basic Materialized view")
 
       ```
       <copy>
@@ -134,35 +133,30 @@ This lab assumes you have:
       </copy>
       ```
 
+      ![Image alt text](images/advanced-mv.png "Advanced Materialized view")
+
 ## Task 3: View Compressed and Un-compressed blocks
 
-1. create a large table from dba_objects
+1. View row count of sales table under SH schema which comes along with sample schema setup
+ 
 
       ```
       <copy>
-      create table my_dba_objects compress
-         as select * from dba_objects
-         order by 1,2,3;  
+      SELECT COUNT(*) FROM SH.SALES; 
       </copy>
       ```
 
-      ```
-      <copy>
-      select count(*) from my_dba_objects;
-      </copy>
-      ```
-
-      Row count is 72429
+      Row count is 918843
 
 2. Get tablespace name, owner from all_tables, this is optional step   
 
       ```
       <copy>
-      select table_name, tablespace_name, owner from all_tables where table_name='MY_DBA_OBJECTS';  
+      select table_name, tablespace_name, owner from all_tables where table_name='SALES';  
       </copy>
       ```
 
-      ![Image alt text](images/tablespace-name.png "materialized view")
+      ![Image alt text](images/tablespace-owner.png "table owner name ")
 
 3. Using Advisor – The GET\_COMPRESSION\_RATIO Procedure. Compression advisor typically provides fairly accurate estimates, of the actual compression results that may be obtained, after implementing compression.
 
@@ -180,7 +174,7 @@ This lab assumes you have:
       comptype_str varchar2(100);
       cmptype_str VARCHAR2(1000);
       BEGIN
-      DBMS_COMPRESSION.GET_COMPRESSION_RATIO ('SYSTEM', 'SYSTEM', 'MY_DBA_OBJECTS', '',
+      DBMS_COMPRESSION.GET_COMPRESSION_RATIO ('SYSTEM', 'SH', 'SALES', '',
       DBMS_COMPRESSION.COMP_ADVANCED, blkcnt_cmp, blkcnt_uncmp, row_cmp,
       row_uncmp, cmp_ratio, cmptype_str);
       DBMS_OUTPUT.PUT_LINE('Block count compressed = '|| blkcnt_cmp);
@@ -194,7 +188,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/compressed-blocks.png "materialized view")
+      ![Image alt text](images/compressed-blocks-sales.png "materialized view")
  
 
 ## Task 4: Cleanup
@@ -203,9 +197,18 @@ This lab assumes you have:
  
       ```
       <copy>
-      drop table my_dba_objects purge;
-      drop table sales purge; 
-      drop materialized view basic_mv ;
+      drop table sales_demo purge;  
+      </copy>
+      ```
+
+      ```
+      <copy> 
+      drop materialized view basic_mv ; 
+      </copy>
+      ```
+
+      ```
+      <copy> 
       drop materialized view advanced_mv ;
       </copy>
       ```
@@ -220,5 +223,5 @@ This lab assumes you have:
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database  
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database and Gregg Christman, Senior Product Manager
 * **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 

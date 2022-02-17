@@ -27,19 +27,25 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
         },
         {
-            "title": "Lab 3: OLTP Table Compression",
+            "title": "Lab 3: Sample Schema Setup",
+            "description": "Setup Schema",
+            "publisheddate": "3/24/2020",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/setup/setup.md"
+        },
+        {
+            "title": "Lab 4: OLTP Table Compression",
             "filename": "../../oltp-compression/oltp.md"
         },   
         {
-            "title": "Lab 4: Advanced Row Compression",
+            "title": "Lab 5: Advanced Row Compression",
             "filename": "../../row-compression/rowc.md"
         }, 
         {
-            "title": "Lab 5: Advanced Index Compression",
+            "title": "Lab 6: Advanced Index Compression",
             "filename": "../../index-compression/index.md"
         }, 
         {
-            "title": "Lab 6: Automatic Data Optimization",
+            "title": "Lab 7: Automatic Data Optimization",
             "filename": "../../auto-optimization/auto.md"
         }, 
         {

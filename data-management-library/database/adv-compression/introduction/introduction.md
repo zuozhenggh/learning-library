@@ -1,10 +1,10 @@
 # Introduction
  
-Oracle advanced compression provides a comprehensive set of compression features to reduce costs and improve performance by enabling compression for structured data, unstructured data, indexes and backups. Although storage cost savings and optimization across servers is the most tangible benefit, all of the features with advanced compression is designed to improve performance across components of your IT infrastructure, including memory, network bandwidth and storage.  
+Oracle Advanced Compression provides a comprehensive set of compression features to reduce costs and improve performance by enabling compression for structured data, unstructured data, indexes and backups. Although storage cost savings and optimization across servers is the most tangible benefit, all of the features with Advanced Compression are designed to improve performance across components of your IT infrastructure, including memory, network bandwidth and storage.  
 
 ## About this Workshop
 
-Oracle provides various types of advanced compression techniques. We will work on some compression-based hands-on labs to understand the concepts and their corresponding use cases.
+Oracle provides various types of Advanced Compression features. We will work on some compression-based hands-on labs to understand the concepts and their corresponding use cases.
 
 Estimated Workshop Time:  1 hour 20 minutes
 
@@ -28,10 +28,10 @@ The amount of data that enterprises are storing, and managing, is overgrowing - 
  
 ### Objectives
  
-* Create OLTP Table compression 
-* Create Advanced row compression
-* Advanced Index compression
-* Automatic Data Optimization
+* Enable OLTP Table compression 
+* Enable Advanced row compression
+* Enable Advanced Index compression
+* Enable Automatic Data Optimization
 
 ### Prerequisites
 This lab assumes you have the following:
@@ -47,5 +47,5 @@ This lab assumes you have the following:
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database  
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database and Gregg Christman, Senior Product Manager
 * **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 

@@ -18,12 +18,12 @@ Exponential data growth has put severe pressure from a cost, performance, scalab
 *	Segment and row-level ADO policies are evaluated and executed automatically in the background during maintenance windows or executed on demand. 
 *	Storage tiering is specified at the segment level and triggered by space pressure in the tablespace where the segment resides. 
  
-This Lab will teach you how to create automatic data optimization. 
+This Lab will teach you how to enable Automatic Data Optimization. 
 
 ### Objectives
  
 In this lab, you will:
-* Create automatic data optimization
+* Enable Automatic Data Optimization
 
 ### Prerequisites 
 This lab assumes you have:
@@ -33,7 +33,7 @@ This lab assumes you have:
 * Successfully logged into your LiveLabs account
 * A Valid SSH Key Pair
   
-## Task 1: Create automatic data optimization
+## Task 1: Enable Automatic Data Optimization
 
 1.  Create table students 
 
@@ -92,5 +92,5 @@ This lab assumes you have:
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database  
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database and Gregg Christman, Senior Product Manager
 * **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 

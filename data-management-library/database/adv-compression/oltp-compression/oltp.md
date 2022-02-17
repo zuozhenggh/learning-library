@@ -3,7 +3,7 @@
 ## Introduction
 
 Oracle has been a pioneer in database compression technology. Oracle Database 9i introduced Basic Table Compression several years ago that compressed data loaded using bulk load operations. Oracle Database 11g Release 1 introduced a new OLTP Table Compression feature that allows data to be compressed during all types of data manipulation operations, including conventional DML such as INSERT and UPDATE. In addition, 
-OLTP Table Compression reduces the associated compression overhead of write operations making it suitable for transactional or OLTP environments as well. OLTP Table Compression, therefore, extends the benefits of compression to all application workloads.
+OLTP Table Compression reduces the associated compression overhead of write operations making it suitable for transactional or OLTP environments as well. OLTP Table Compression, therefore, extends the benefits of compression to all application workloads. OLTP Table Compression was renamed to Advanced Row Compression starting with Oracle Database release 12c.
 
 Estimated Lab Time: 20 minutes
 
@@ -11,9 +11,9 @@ Estimated Lab Time: 20 minutes
 
 Oracle's OLTP Table Compression uses a unique compression algorithm specifically designed to work with OLTP applications. The algorithm eliminates duplicate values within a database block, even across multiple columns. Compressed blocks contain a structure called a symbol table that maintains compression metadata. When a block is compressed, duplicate values are eliminated by first adding a single copy of the duplicate value to the symbol table. Each duplicate value is then replaced by a short reference to the appropriate entry in the symbol table. 
 
-### SecureFiles
+### SecureFiles LOB Compression
 
-SecureFiles includes numerous architectural enhancements for significantly improved performance, scalability, efficient storage, and easier management SecureFiles Compression LOW maintains about 80% of the compression achieved through MEDIUM, utilizing 3x less CPU. Finally, SecureFiles Compression HIGH achieves the highest storage savings but incurs the most CPU overhead. SecureFiles Compression utilizes industry-standard compression algorithms to further minimize the storage requirements of SecureFiles data. With SecureFiles Compression, typical files such as documents or XML files, experience a reduction of 2x to 3x times in size.
+SecureFiles LOB Compression utilizes industry-standard compression algorithms to minimize the storage requirements of SecureFiles data. With SecureFiles LOB Compression, typical files such as documents or XML files experience a reduction of 2x to 3x times in size. There are three levels of SecureFiles LOB Compression:  LOW, MEDIUM, and HIGH. By default, SecureFiles LOB Compression uses the MEDIUM level, which typically provides good compression with a modest CPU overhead. In addition to SecureFiles LOB Compression, SecureFiles LOB Deduplication, a feature of Advanced Compression, eliminates duplicate copies of SecureFiles LOBs. SecureFiles LOB Compression was renamed Advanced LOB Compression, and SecureFiles LOB Deduplication was renamed Advanced LOB Deduplication in Oracle Database release 12c. Compression advisor typically provides fairly accurate estimates, of the actual compression results that may be obtained, after implementing compression.
  
 ### Benefits of OLTP Table Compression 
 
@@ -21,10 +21,10 @@ The compression ratio achieved in a given environment depends on the nature of t
 
 ### Objectives
  
-In this lab, you will create:
+In this lab, you will enable:
 * OLTP Table Compression 
-* SecureFiles Deduplication
-* SecureFiles Compression
+* SecureFiles LOB Deduplication
+* SecureFiles LOB Compression
 
 ### Prerequisites 
 This lab assumes you have:
@@ -34,7 +34,7 @@ This lab assumes you have:
 * Successfully logged into your LiveLabs account
 * A Valid SSH Key Pair
   
-## Task 1: Create OLTP Table Compression 
+## Task 1: Enable OLTP Table Compression 
 
 1. Create table Emp with OLTP Compression 
 
@@ -56,7 +56,7 @@ This lab assumes you have:
 
       ![Image alt text](images/emp-table.png "View EMP Table Compression")
 
-## Task 2: SecureFiles Deduplication
+## Task 2: SecureFiles LOB Deduplication
 
 1. Create tablespace. 
 
@@ -90,7 +90,7 @@ This lab assumes you have:
 
       ![Image alt text](images/images.png "User ILM Policies")
  
-## Task 3: SecureFiles Compression
+## Task 3: SecureFiles LOB Compression
 
 1. Create table with STORE AS SECUREFILE option 
  
@@ -153,5 +153,5 @@ This lab assumes you have:
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database  
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database and Gregg Christman, Senior Product Manager
 * **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 
