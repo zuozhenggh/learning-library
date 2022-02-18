@@ -4,7 +4,7 @@ Duration: 1 minutes
 ## Enable Application Continuity
 
 Enable application continuity for the TPURGENT service as the ADMIN user.
-The ENABLE_AC procedure takes three parameters: SERVICE NAME is the service name to change, FAILOVER_RESTORE, set to LEVEL1 to select Application Continuity(AC), and REPLAY_INITIATION_TIMEOUT, is the replay timeout that specifies how many seconds after a request is submitted to allow that request to replay.
+The ENABLE\_AC procedure takes three parameters: SERVICE NAME is the service name to change, FAILOVER\_RESTORE, set to LEVEL1 to select Application Continuity(AC), and REPLAY\_INITIATION\_TIMEOUT, is the replay timeout that specifies how many seconds after a request is submitted to allow that request to replay.
 
 ```
 <copy>
