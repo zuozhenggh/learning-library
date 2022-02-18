@@ -109,7 +109,7 @@ Now we will use the Graph Visualization component to explore the graph and run s
 
 3. Now let's add some labels and other visual context. These are known as highlights.
 
-4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/0oxhos9S_i5fYJHAfAjOMUYG5srWukq9W-9s47ya8s88iv_Szt8P5O-ko7EwAPJy/n/c4u04/b/data-management-library-files/o/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
+4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/highlights.json.zip) to download the highlights.json zip file. Unzip the file and note where it is unzipped.
 
 5. Click on the Load button under Highlights (on the right side of the screen).
 
