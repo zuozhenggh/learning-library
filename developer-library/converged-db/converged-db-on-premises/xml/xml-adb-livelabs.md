@@ -111,7 +111,7 @@ The password to all the schemas is *Oracle_4U*.
      ![](./images/xml_s4_p1.png " ")
 
 
-2. Click the link to download the insert.sql script from the object store. [Objectstore](https://objectstorage.us-ashburn-1.oraclecloud.com/p/-kQ88-JKc9t246bayH2JeVaLSSaxOyE0i4Npb4TxCW2XdSNPQPvmsQDza-gw5STU/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/Workshop_xml_script_atp.zip)
+2. Click the link to download the insert.sql script from the object store. [Objectstore](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/Workshop_xml_script_atp.zip)
     
 3. Unzip the downloaded folder and paste the contents of **insert.sql** and press play to run the script. 
    
