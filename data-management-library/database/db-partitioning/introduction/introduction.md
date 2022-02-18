@@ -13,7 +13,7 @@ Partitioning large tables and indexes in Oracle Database ensure that an optimal 
 
 ### Challenges with growing Data Volume
 
-Let us consider the financial services sector, particularly retail banking, every time we do a transaction like debit, credit, fixed deposit, recurring deposit, auto EMI payment, utility bill payments etc. It makes an entry into the transaction master table, and the data is growing exponentially, as per the business standard report of December 31, 2021. The volume of digital transactions in India rose to 55.54 billion in FY21 from 10.85 billion in FY17, at a compounded annual growth rate of 50.42 per cent. So, with the growing volume of data, we can archive a significant portion of historical data into archival storage for on-demand retrieval; however, even if we consider data for the current financial year, it is in millions of records at a bank level. To run a query at this level would take a considerable amount of time and impacts the overall performance. It would be best to partition the data into smaller units per the business requirements.
+Let us consider the financial services sector, particularly retail banking, every time we do a transaction like debit, credit, fixed deposit, recurring deposit, auto EMI payment, utility bill payments and others. It makes an entry into the transaction primary table, and the data is growing exponentially, per the business standard report of December 31, 2021. The volume of digital transactions in India rose to 55.54 billion in FY21 from 10.85 billion in FY17, at a compounded annual growth rate of 50.42 per cent. So, with the growing volume of data, we can archive a significant portion of historical data into archival storage for on-demand retrieval; however, even if we consider data for the current financial year, it is in millions of records at a bank level. To run a query at this level would take a considerable amount of time and impacts the overall performance. It would be best to partition the data into smaller units per the business requirements.
 
 ![Image alt text](images/partition-introduction-01.png "Partition Introduction")
  
@@ -56,10 +56,6 @@ This lab assumes you have the following:
 * Access to Oracle Database Standard or Enterprise Edition or Autonomous Database.
 * You have access to Paid or Free Tier cloud tenancy. 
 
-
-
-
- 
 ## Learn More
 
 * [Partitioning whitepaper ](https://www.oracle.com/technetwork/database/options/partitioning/partitioning-wp-12c-1896137.pdf)   

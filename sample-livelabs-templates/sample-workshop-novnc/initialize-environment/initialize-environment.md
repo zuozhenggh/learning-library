@@ -66,7 +66,7 @@ This lab assumes you have:
     ```
     <copy>
     cd ~
-    wget -O labs-novnc.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/DI8FDu8opoqAK7MoplCLgwUiVsf8uyNNbcLkaytAdJyGSMmgn0Jw14OMtG3vNLI-/n/c4u04/b/labfiles/o/labs-novnc.zip
+    wget -O labs-novnc.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/labs-novnc.zip
     unzip -qo labs-novnc.zip
     rm -f labs-novnc.zip
     cd labs/multitenant

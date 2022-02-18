@@ -127,7 +127,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 22.1.5 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 22.2.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
