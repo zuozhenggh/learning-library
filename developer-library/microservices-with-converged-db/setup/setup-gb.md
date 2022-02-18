@@ -17,21 +17,21 @@ Your own Oracle Cloud Infrastructure compartment for running this workshop has b
 
 1. Copy the compartment name (not OCID) from the workshop reservation page.
 
-   ![](images/copy-comp-name.png " ")
+   ![Copy Comp Name](images/copy-comp-name.png " ")
 
 2. Select the navigation menu from the top left corner of the Oracle Cloud Console and navigate to the Instances page in the Compute section.
 
-   ![](images/select-compute-instances.png " ")
+   ![Select component instances](images/select-compute-instances.png " ")
 
 3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope".
 
-   ![](images/enter-comp-name.png " ")
+   ![Enter component name](images/enter-comp-name.png " ")
 
 4. Select your compartment name from the drop down list.
 
-   ![](images/select-comp-name.png " ")
+   ![Enter component name](images/select-comp-name.png " ")
 
-   ![](images/correct-comp-name.png " ")
+   ![Enter correct component name](images/correct-comp-name.png " ")
 
 ## Task 2: Launch the Cloud Shell
 
@@ -39,7 +39,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
-   ![](images/open-cloud-shell.png " ")
+   ![Open Cloud Shell](images/open-cloud-shell.png " ")
 
    NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
@@ -48,7 +48,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 22.1.5 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 22.2.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -71,27 +71,27 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 2. The setup will ask for you to enter your Compartment OCID. This is included in the workshop reservation page console.
 
-   ![](images/get-compartment-ocid.png " ")
+   ![Get compartment](images/get-compartment-ocid.png " ")
 
 3. The setup will ask you to enter an Auth Token so that docker can log in to the Oracle Cloud Infrastructure Registry. Please follow these steps to create an Auth Token.
 
   a. Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
-   ![](images/get-gbuser-ocid.png " ")
+   ![Get user OCID](images/get-gbuser-ocid.png " ")
 
   b. On the left side of the page, click Auth Tokens and click Generate Token.
 
-   ![](images/auth-token-region.png " ")
+   ![Click Auth Tokens](images/auth-token-region.png " ")
 
   c. Enter "grabdish" in the description field and click Generate Token.
 
-   ![](images/generate-auth-token.png " ")
+   ![Generate Auth Token](images/generate-auth-token.png " ")
 
    The new Auth Token will be displayed.
 
   d. Click Copy to copy the Auth Token to the clipboard.
 
-   ![](images/generated-auth-token-value.png " ")
+   ![Copy Auth Token](images/generated-auth-token-value.png " ")
 
   e. Paste the Auth Token when requested by Setup. **Note**: The token is not displayed. Press Enter after pasting the token.
 
