@@ -264,7 +264,7 @@ Execute the impdb statement below from your compute with Instant Client software
 
     Master table "ADMIN"."SYS_IMPORT_SCHEMA_01" successfully loaded/unloaded
 
-    Starting "ADMIN"."SYS_IMPORT_SCHEMA_01": admin/********@atp18c_high directory=data_pump_dir credential=STORAGE_CREDENTIAL schemas=soe dumpfile=https://objectstorage.ap-seoul-1.oraclecloud.com/n/oraclepartnersas/b/STAGEBUCKET/o/soedump18C_1G.dmp logfile=import.log parallel=2
+    Starting "ADMIN"."SYS_IMPORT_SCHEMA_01": admin/********@atp18c_high directory=data_pump_dir credential=STORAGE_CREDENTIAL schemas=soe dumpfile=https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/soedump18C_1G.dmp logfile=import.log parallel=2
 
     Processing object type SCHEMA_EXPORT/USER
 
