@@ -1,4 +1,4 @@
-# Use Oracle Machine Learning for SQL
+# Introduction to Oracle Machine Learning for SQL
 
 ## Introduction
 
