@@ -16,7 +16,7 @@ Before you get started, please check your email account that you provided as you
 
 2. If I am having problems with the lab, how can I get help?
    
-  Either go to the slack channel and post your question or attend the office hours which are every Thursday at 2-3pm (EST) at  <a href="http://bitly.com/dbclassoracle">dbclassoracle</a> where you can chat with Oracle experts. 
+  Either go to the slack channel and post your question or attend the office hours which are every Thursday at 2-3pm (EST) at this Zoom link: <a href="https://howard.zoom.us/j/3589788466?pwd=dXIyK3lHcGxmK2tQU3UwaHRvbUJ3QT09">Howard University</a> where you can chat with Oracle experts. 
 
 ## Acknowledgements
 * **Author** - Eugenio Galiano

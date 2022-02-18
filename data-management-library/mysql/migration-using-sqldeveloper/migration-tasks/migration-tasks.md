@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is the core migration tasks lab. This will cover, from downloading and installing Oracle SQL Developer, to setting up appropriate user credentials and then create migration repository and connections and run the Wizard to complete the database migration from MySQL to Oracle ADB instance in the cloud. This also provides extra labs, if you need additional help with certain tasks, eg how to make connection in SQL Developer to an Autonomous Database, etc. 
+This is the core migration tasks lab. This will cover, from downloading and installing Oracle SQL Developer, to setting up appropriate user credentials and then create migration repository and connections and run the Wizard to complete the database migration from MySQL to Oracle Autonomous Database (ADB) instance in the cloud. This also provides extra labs, if you need additional help with certain tasks, eg how to make connection in SQL Developer to an Autonomous Database, etc. 
 
 Estimated Workshop Time: 1 hour
 
@@ -58,7 +58,7 @@ Make sure you have followed the prerequisites requirement, mentioned in detail i
 
 ## Task 2b: Create User in Target Database
 
-  Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that "ATP" connection to create new user as migration target schema in Oracle ADB. Here's sample command to follow. You can run these commands using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
+  Once you've setup connectivity with ATP from SQL Developer, as described above, you can use that "ATP" connection to create new user as migration target schema in Oracle Autonomous Database. Here's sample command to follow. You can run these commands using SQL Developer Worksheet. Set password appropriately before copying below command, replacing xxxxx.
 
   ![Open Worksheet in SQL Developer and copy SQL commands and execute](images/worksheet-sql-commands.png " ") 
 
@@ -184,11 +184,12 @@ Make sure you have followed the prerequisites requirement, mentioned in detail i
   You can follow the self-explanatory Wizard to provide details about the source and target connection, repository connection, database selected for migration, and objects under the database to be migrated and any data-type conversion required etc and at the end choose to create an offline script file for migration. You can refer to the [documentation](https://docs.oracle.com/en/database/oracle/sql-developer/19.4/rptug/migrating-third-party-databases.html#GUID-51B0F243-D970-43A0-BFA4-97477CB14C48) for explaination of the steps of this wizard, if you need. 
 
 
-This is the end of the workshop. This workshop walked you through one scenario of moving data from MySQL Database to Oracle Autonomous Database (ADB) using Oracle SQL Developer. 
+## Conclusion
+  
+  This is the end of the workshop. This workshop walked you through one scenario of moving data from MySQL Database to Oracle Autonomous Database (ADB) using Oracle SQL Developer. 
 
-
-Learn more about this migration scenario:
-* [Migration Documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/migrate-mysql.html#GUID-241F7C5A-1EC3-42D8-B960-B9751CB89D02)
+  Here's background Blog post on the same topic:
+  * [Migrating MySQL Database to Oracle Autonomous Database](https://blogs.oracle.com/cloud-infrastructure/post/migrating-mysql-database-to-oracle-autonomous-database)
 
 ## Acknowledgements
 * **Author** - Muhammad Shuja, Principal Cloud Solution Engineer, ODP - ANZ

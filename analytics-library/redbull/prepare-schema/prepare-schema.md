@@ -10,7 +10,7 @@ We will:
 2. Log out and then login again in the Database Actions, now as the new F1 user.
 3. Load the data into the tables as the F1 user.
 
-Estimated Time: 10 minutes
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 - Learn how to load data into the data warehouse, so you can analyze it later.
@@ -38,7 +38,7 @@ This new user/schema will hold the Grand Prix data.
 
    ![ADW Menu](images/open-database-actions.png)
 
-   If asked, login with user **ADMIN**, password **Oracle_12345** (you specified this upon creation of the Autonomous Data Warehouse earlier).
+   If asked, login with user **ADMIN** and the secure password (you specified this upon creation of the Autonomous Data Warehouse earlier).
 
 4. Click the **SQL** tile under **Development** section.
 
@@ -58,17 +58,17 @@ This new user/schema will hold the Grand Prix data.
 
 1. **Download** the 6 files that contain the data that we'll use in our analysis:
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/csfBbBQ7K-IPB7Y291WZXxGq0Anj0HrFGFVkGNvrslwNUF9IECSawn-FeHuUZHpb/n/fruktknlrefu/b/workshop-redbull-analytics/o/RACES.csv" target="\_blank">Races data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/dx3YybE7Ax5bQWGnbnO-ke42vjb4s9qnaHPoEFPNmDwp5u-nMf-lDTWWfhUmrkNK/n/fruktknlrefu/b/workshop-redbull-analytics/o/RACES.csv" target="\_blank">Races data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/66U9r_xOEIPGRRDMdJi_dFg-fQxuW8-JXDAhfMHWU6W4dsfcQYePrlk8LlnlWWbK/n/fruktknlrefu/b/workshop-redbull-analytics/o/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/M8g8i7K4yo6DSiv9mXN_jVtLIJZSGB4lmEhYZ0mfX9DuwJKAGMafM8XGzw5kIKXn/n/fruktknlrefu/b/workshop-redbull-analytics/o/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/hrv8SfudQrS7TPzK4sFTf9RkGeQRWzvFkt2QFQQpWUyNWu9BNSSwzmAQZUIQOESp/n/fruktknlrefu/b/workshop-redbull-analytics/o/SAFETY_CAR.csv" target="\_blank">Safety Car data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/PlYaI3Fp8SLzYwA_31L2Zj5_3aam_YbMRoIk4C1FEvhgqruQfa76pFyZwM4l2lyx/n/fruktknlrefu/b/workshop-redbull-analytics/o/SAFETY_CAR.csv" target="\_blank">Safety Car data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/_COoaqGtyVNujZIRJR7s01SFQJoP5dcBTdV11safViNl0mPF0StK7GzA6w1n3Nph/n/fruktknlrefu/b/workshop-redbull-analytics/o/PIT_STOPS.csv" target="\_blank">Pit Stop data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/OIUA5aX1tAkmoWpDty8VzBlKxm_TJDY8Sm12K2BbG1palHy5dnXPkfbNB2m0ZVDU/n/fruktknlrefu/b/workshop-redbull-analytics/o/PIT_STOPS.csv" target="\_blank">Pit Stop data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/-VktiHjnhC11sLrLYCcNpE4cyAhm4GOTt0gXTVVRtJwxXRd_uGB04xTSc9XPOM4R/n/fruktknlrefu/b/workshop-redbull-analytics/o/RESULTS.csv" target="\_blank">Race Results data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/5ijlW0pUZ2yr4wbs_NICe73AemtiCl_iI2fTKr85-vDkirQZs1MAwhpzYIH_w1dZ/n/fruktknlrefu/b/workshop-redbull-analytics/o/RESULTS.csv" target="\_blank">Race Results data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/36bj7LUfjwcFk1QpH5vlMyHZwXslXcybkKEvO6KqLKDv1xXn0aUmvFundOeCdxwZ/n/fruktknlrefu/b/workshop-redbull-analytics/o/DRIVER_STANDINGS.csv" target="\_blank">Driver Ranking data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/LC9WxthFNE_v46C40Wccor1Z9Qw1toNRagnqb4jPMhh3IVk0PbLSN1si5k5sphUk/n/fruktknlrefu/b/workshop-redbull-analytics/o/DRIVER_STANDINGS.csv" target="\_blank">Driver Ranking data</a>
 
    Save the files on your local machine. **Make sure that the files are saved with extension `.csv`**
 
@@ -81,7 +81,7 @@ This new user/schema will hold the Grand Prix data.
    Now log in to Data Actions again using the following:
 
    - Username: F1
-   - Password: Oracle_12345
+   - Password: Provide the secure password for the F1 user
 
 3. Click to the **Data Load** option, under the **Data Tools** section.
 
@@ -114,6 +114,8 @@ This new user/schema will hold the Grand Prix data.
     ![Load Completed](images/load-completed.png)
 
 Congratulations! You've successfully loaded the data into Autonomous Data Warehouse.
+
+You can now proceed to the next lab.
 
 ## **Acknowledgements**
 
