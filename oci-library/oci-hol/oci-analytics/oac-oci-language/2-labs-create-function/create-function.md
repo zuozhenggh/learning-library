@@ -138,7 +138,7 @@ Since we need to integrate the OCI Language service through an Oracle Function, 
 In order to add a function, first we need to create an **Application**.
 1.	Go to cloud console (cloud.oracle.com) and navigate to **Developer Services** > **Applications**
 
-![Create Application](./images/createapplication.png " ")
+   ![Create Application](./images/createapplication.png " ")
 
 2.	Click **Create Application**
 	You can think of an application as a bounded context where several functions can live.
@@ -149,7 +149,7 @@ In order to add a function, first we need to create an **Application**.
 Set up CLI so that it can deploy functions to the right compartment and container registry are used.
 1.	When you are in your Application, select **Getting Started**
 
-![Configure CLI](./images/configurecloudshell.png " ")
+   ![Configure CLI](./images/configurecloudshell.png " ")
 
 2.	Click **Cloud Shell Setup**
 3.	Click the **Launch Cloud Shell** button.
@@ -160,9 +160,9 @@ Set up CLI so that it can deploy functions to the right compartment and containe
 	* You can select any term for OCIR-REPO, it is just a prefix that will be used as the name of the container registry to use to deploy the function.
 5.	Before proceeding to the next lab test connection to the docker and log in :steps **8** to **11**
 
-![Test CLI](./images/testcloudshell.png " ")
+   ![Test CLI](./images/testcloudshell.png " ")
 
-![Login Docker](./images/dockerlogin.png " ")
+   ![Login Docker](./images/dockerlogin.png " ")
 
 ## Task 3: Create a Sentiment Function
 
@@ -177,7 +177,7 @@ We will now create the function in the application. The function will do sentime
 			ls
 		}
 
-![Create Sentiment Function](./images/createsentimentfunction.png " ")
+   ![Create Sentiment Function](./images/createsentimentfunction.png " ")
 
 2.	Notice that this will generate three files for you. Modify the files with the content shown below. You can use an editor like **vi** to do so.
 
@@ -260,7 +260,7 @@ Once you have edited the files in **Task 3**, deploy the function to your applic
 
   fn -v deploy -app **app-name**
 
-![Login Docker](./images/deployfunction.png " ")
+  ![Login Docker](./images/deployfunction.png " ")
 
 ## Task 5: Invoke the Function
 
@@ -290,7 +290,7 @@ We need to map your newly created function to an API endpoint that is accessible
 3.	Click **Create Deployment**
 		Give the deployment a name and a prefix (i.e. /language)
 
-![Deploy API1](images/deployapi1.png)
+   ![Deploy API1](images/deployapi1.png)
 
 4.	Click **Next**, now you can add routes to your deployment.
 
@@ -301,7 +301,7 @@ We need to map your newly created function to an API endpoint that is accessible
 - Select the sentiment application you created in Section 4
 - Select the name of the function “sentiment”
 
-![Deploy API2](images/deployapi2.png)
+   ![Deploy API2](images/deployapi2.png)
 
 6.	Click **Next** to review your route.
 
@@ -340,10 +340,6 @@ We need to map your newly created function to an API endpoint that is accessible
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>

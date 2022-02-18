@@ -33,8 +33,12 @@
             "filename": "../../4-labs-design-oci-di-data-flows/develop-oci-di-flows.md"
         },
         {
-            "title": "Lab 5: Visualize the Data in OAC",
-            "filename": "../../5-labs-visualize-the-data/visualize-the-data.md"
+            "title": "Lab 5: Provision your Oracle Analytics Instance(OAC)",
+            "filename": "../../5-labs-provision-oac/provisioning-oac.md"
+        },
+        {
+            "title": "Lab 6: Visualize the Data in OAC",
+            "filename": "../../6-labs-visualize-the-data/visualize-the-data.md"
         },
         {
             "title": "Need Help?",

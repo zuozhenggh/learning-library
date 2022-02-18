@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create the components necessary to create a data flow like the one shown in the graph below. In order to create source and target components, first we need to create a set of “data assets”. The data assets represent each of the elements in the diagram. We’ll start by creating the data asset for the source, and then the target.
 
-![Data Flow](./images/odidataflow.png " ")
+ ![Data Flow](./images/odidataflow.png " ")
 
 Estimated Lab Time: 90 minutes
 
@@ -35,7 +35,7 @@ This lab assumes you have:
 
 1.	From the Console, click **Analytics & AI** > **Data Integration**, and navigate to the workspace you just created.
 
-![Workspace](./images/odiworkspace.png " ")
+   ![Workspace](./images/odiworkspace.png " ")
 
 2.	On your workspace Home page, click **Create Data Asset** from the Quick Actions tile.
 
@@ -46,7 +46,7 @@ This lab assumes you have:
     - For **Tenant OCID**, enter the tenancy OCID. If needed, you can navigate to your tenancy information from the Profile icon on the top right corner of your cloud console.
     - For **OCI region**, you can copy the code that is shown in the url for instance “us-phoenix-1”
 
-![Source Data Asset](./images/sourcedataasset.png " ")
+   ![Source Data Asset](./images/sourcedataasset.png " ")
 
 4.	Test the connection and **Create** the data asset.
 
@@ -72,7 +72,7 @@ You can also click **Open** tab (plus icon) in the tab bar and select **Data Ass
     - **Wallet File**: Drag and drop or browse to select the wallet file. See [Download a Wallet](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/adbconnecting.htm#access)
     - **Service Name**: Service level to connect to your Autonomous Data Warehouse database
 
-![Target Data Asset](./images/targetdataasset.png " ")
+    ![Target Data Asset](./images/targetdataasset.png " ")
 
 5.	In the **Connection** section, enter the following:
     - **Name**: Default connection (Optionally, you can rename the connection)
@@ -110,7 +110,7 @@ Add a data source:
 
 9.	You can confirm that you loaded the data correctly by going to the Data section. It takes a minute or two for the data to appear there.
 
-![Data Flow Source](./images/dataflowsource.png " ")
+    ![Data Flow Source](./images/dataflowsource.png " ")
 
 10.	First, we will add an expression to change the format of our REVIEW-ID field.
     - Right click on the 3 vertical dots next to the **data source name.review-id** field
@@ -125,14 +125,14 @@ Add a data source:
 
 13.	Clicking on the Data tab of the expression will allow you to see the newly created fields.
 
-![Verify Expression](./images/expression1.png " ")
+    ![Verify Expression](./images/expression1.png " ")
 
 
 Now we will connect the function you created in **Lab 2** to extract the aspect level sentiment from the review text.
 
 14.	From the operators toolbar, drag the Function (fn) operator into the canvas, and connect the output of your expression as the input into the function.
 
-![Verify Expression](./images/expression2.png " ")
+    ![Verify Expression](./images/expression2.png " ")
 
 15.	Select the function you just added, in the **Properties** pane, navigate to the **Details** Pane. Change the identifier to: SENTIMENT_FUNCTION
 
@@ -140,21 +140,21 @@ Now we will connect the function you created in **Lab 2** to extract the aspect 
 
 17.	Now you will need to add or edit the properties below. Except for the BATCH_SIZE property (which you can edit), you can do this by clicking the Add Property button for each field.
 
-| Name | Type | Data Type | LENGTH | Value |
-| --- | --- | --- |
-| info | Input Attribute | VARCHAR  |2000|   |
-| column |Function Configuration | VARCHAR |    | info |
-| BATCH_SIZE | Function Configuration | NUMERIC|    | 1|
-| text | Output Attribute | VARCHAR|  2000  |  |
-| sentiment | Output Attribute | VARCHAR| 2000   |  |
-| offset | Output Attribute | INTEGER|    |  |
-| length | Output Attribute | INTEGER|    |  |
+   | Name | Type | Data Type | LENGTH | Value |
+   | --- | --- | --- |
+   | info | Input Attribute | VARCHAR  |2000|   |
+   | column |Function Configuration | VARCHAR |    | info |
+   | BATCH_SIZE | Function Configuration | NUMERIC|    | 1|
+   | text | Output Attribute | VARCHAR|  2000  |  |
+   | sentiment | Output Attribute | VARCHAR| 2000   |  |
+   | offset | Output Attribute | INTEGER|    |  |
+   | length | Output Attribute | INTEGER|    |  |
 
-![Function Parameters](./images/functionparameters.png " ")
+   ![Function Parameters](./images/functionparameters.png " ")
 
 18.	Once you are done, navigate to the **Map** tab, and map the review field from the source attributes into the info field Function Input. You do this by “dragging” review in the left table into the info field.
 
-![Function Mapping](./images/functionmapping.png " ")
+    ![Function Mapping](./images/functionmapping.png " ")
 
 Now we will map the output of the sentiment analysis to the Data Warehouse Table we created for this purpose during **Lab 3**
 
@@ -177,12 +177,13 @@ Now we will map the output of the sentiment analysis to the Data Warehouse Table
 
   Make sure the fields are mapped as follows:
 
-![Function Mapping](./images/functionmapping2.png " ")
+     ![Function Mapping](./images/functionmapping2.png " ")
 
 
 When you are done with your data flow it will look something like this:
 
-![Function Mapping](./images/functionmapping2.png " ")
+  ![Create Task](./images/completedataflow.png " ")
+
 
 ## Task 4: Run the Data Flow
 
@@ -191,7 +192,7 @@ Now we need to execute the data flow. The process is as follows.
 1.	Navigate back to your workspace and click **Create Integration Task** in the Quick Actions menu.
    As part of the process of creation you need to select the project and the data flow you just created in **Task 3**. If there are any errors with the data flow you would need to fix those until it successful validates as shown in the image below.
 
-![Create Task](./images/createtask2.png " ")
+    ![Create Task](./images/createtask2.png " ")
 
 2.	Go to your data integration workspace and select the **Applications** link. Then click **Create an Application**. Give it a name and click **Create**.
 
@@ -199,21 +200,21 @@ Now we need to execute the data flow. The process is as follows.
 
 4.	Click on the Tasks link in the **Details** menu, select the contextual menu for the task you just created, and click **Publish to Application**. Select the application you just created.
 
- ![Create Task](./images/createtask.png " ")
+    ![Create Task](./images/createtask.png " ")
 
 5.	Navigate back to the application you just created, select your integration task, and select **Run** on the contextual menu as shown below.
 
-![Run Task](./images/runtask1.png " ")
+    ![Run Task](./images/runtask1.png " ")
 
 
   You will navigate to the **Runs** page where you will be able to monitor the execution of your integration task run. If there are any errors, make sure to check the logs to understand the cause of the run error.
 
-![Task Status](./images/taskstatus.png " ")
+    ![Task Status](./images/taskstatus.png " ")
 
 
 6.	Assuming everything ran successfully, we can now navigate to our database and see if our tables got populated with the insights extracted from the reviews.
 
-![Validate Database](./images/validatedatabase.png " ")
+    ![Validate Database](./images/validatedatabase.png " ")
 
 
 

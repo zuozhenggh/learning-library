@@ -28,7 +28,7 @@ In this task we'll create 2 buckets one for storing source file with reviews and
 
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
-![Create Bucket](./images/createbucket.png " ")
+   ![Create Bucket](./images/createbucket.png " ")
 
 2.	**Create a bucket** and name it “source-bucket”
 
@@ -36,7 +36,7 @@ In this task we'll create 2 buckets one for storing source file with reviews and
 
 4.	Repeat steps **1** to **3** and name the bucket “data-staging”
 
-![](./images/introduction.png " ")
+   ![](./images/introduction.png " ")
 
 
 ## Task 2: Download and Upload Sample Data
@@ -51,7 +51,7 @@ For this exercise, we will assume that you have a set of customer reviews for a 
 
 4.	On the bucket details page, under **Objects**, click **Upload**.
 
-![Object Upload](./images/uploadfiles.png " ")
+   ![Object Upload](./images/uploadfiles.png " ")
 
 5.	In the Upload Objects panel, drag and drop the **data.csv** to the drop zone, or click **select files** to locate it on your machine.
 
@@ -64,13 +64,13 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Oracle Database**, and then select **Autonomous Data Warehouse**.
 
-![Create ADW](./images/createadw.png " ")
+   ![Create ADW](./images/createadw.png " ")
 
 2.	Select your compartment and **Create Autonomous Database**.
 
 3.	On the options, set a **Display Name** and **Database Name**
 
-![Create ADW](./images/createadw2.png " ")
+   ![Create ADW](./images/createadw2.png " ")
 
 4.	Workload type: **Data warehouse**.
 
@@ -80,15 +80,15 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 7.	Click **Create Autonomous Database** (Wait for your dataset to provision which may take up to 15mins)
 
-![Create ADW](./images/createadw3.png " ")
+   ![Create ADW](./images/createadw3.png " ")
 
 8.	On your database details page, click **Database Actions**.
 
-![Create ADW](./images/createadw4.png " ")
+   ![Create ADW](./images/createadw4.png " ")
 
 9.	Under **Development**, click **SQL**.
 
-![Create ADW](./images/createadw5.png " ")
+   ![Create ADW](./images/createadw5.png " ")
 
 11. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
 
@@ -98,7 +98,7 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 		GRANT DWROLE TO USER1;
 		ALTER USER USER1 QUOTA 200M ON DATA;
 
-![Create User](./images/createadw6.png " ")
+   ![Create User](./images/createadw6.png " ")
 
 
 ## Task 4: Create Tables to Store Output Data

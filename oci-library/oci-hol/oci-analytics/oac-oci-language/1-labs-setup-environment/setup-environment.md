@@ -112,7 +112,7 @@ We will create a virtual cloud network that will serve as the home for our serve
 Create a VCN with Internet access.
 1.	Open the navigation menu, click **Networking**, and then click **Virtual Cloud Networks**.
 
-![Create VCN](./images/createvcn.png " ")
+   ![Create VCN](./images/createvcn.png " ")
 
 2.	Click the button **Start VCN Wizard**.
 3.	Select **Create VCN with Internet Connectivity**
@@ -133,7 +133,7 @@ The API Gateway communicates on port 443, which is not open by default. You must
     * IP Protocol: TCP
     * Source Port Range: All
     * Destination Port Range: 443
-![](./images/introduction.png " ")
+   ![](./images/introduction.png " ")
 7.	Click **Add Ingress Rules** to add the new rule to the default security list.
     See [Documentation](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks/apigatewaycreatingpolicies.htm) for more details.
 
@@ -144,7 +144,7 @@ An API Gateway allows you to aggregate all the functions you created into a sing
 
 On the console, go to **Developer Services** and click **Gateways**, and then:
 
-![Create Gateway](./images/createapigateway.png " ")
+   ![Create Gateway](./images/createapigateway.png " ")
 
 1.	Click **Create Gateway**
 2.	Specify:
@@ -177,17 +177,17 @@ Policy Pre-requisites
 Get familiar with the Language AI Service
 1.	On the console, navigate to **Analytics & AI** > **Language**
 
-![Open AI Language](./images/openlanguageai.png " ")
+   ![Open AI Language](./images/openlanguageai.png " ")
 
 2.	In the Pre-trained models section, you can enter any text to analyze (or just keep the text there)
 
-![Open AI Language2](./images/openlanguageai2.png " ")
+   ![Open AI Language2](./images/openlanguageai2.png " ")
 
 3.	OCI Language has several capabilities, including sentiment analysis and entity extraction.
     Make sure those capabilities are selected and click **Analyze**
 4.	Inspect the results you get. If you cannot analyze the text, you may have to check that your policies are set correctly.
 
-![Open AI Language3](./images/openlanguageai3.png " ")
+   ![Open AI Language3](./images/openlanguageai3.png " ")
 
 5.	Click the **Show JSON** button on the output of the analysis so that you can see the schema of the JSON that you get by calling each of the capabilities.
 
