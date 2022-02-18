@@ -18,6 +18,8 @@ You may want to rotate wallets for any of the following reasons:
     * Regional Wallet: Wallet rotation for all Autonomous Databases for a given tenant and region.
 5. Click **Rotate Wallet**. In the Rotate Wallet dialog, click **Rotate**.
 
+![Rotate Wallet](images/rotate-wallet.png "Rotate Wallet")
+
 The Database Connection page shows: **Rotation in Progress**. After the rotation completes, the **Wallet last rotated** field shows the last rotation date and time.
 
 If you want to terminate all connections immediately after the wallet rotation completes, it is recommended that you stop and then start your instance. This provides the highest level of security for your database.
