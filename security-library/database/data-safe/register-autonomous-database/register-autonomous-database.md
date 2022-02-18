@@ -74,7 +74,7 @@ As the `ADMIN` user on the ATP database, run the `load-data-safe-sample-data_adm
 
 4. If a help note is displayed, click the **X** button to close it.
 
-5. Download the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_-MZwoh0FSIMw4mBEzCDUIDNmOLp-aO99DmibYCY_CM_45zpp7YAJGKWoMVnKZRW/n/c4u04/b/security-library/o/load-data-safe-sample-data_admin.sql) script, and then unzip it in a directory of your choice. Next, open the file in a text editor, such as NotePad.
+5. Download the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/AUKfPIGuTde04z4OnuaZN2EP0LxNl4hJWI2jZiTw23aWzSoa2_Byvs8OGPw20-dt/n/c4u04/b/livelabsfiles/o/security-library/load-data-safe-sample-data_admin.sql) script, and then unzip it in a directory of your choice. Next, open the file in a text editor, such as NotePad.
 
 6. Copy the entire script to the clipboard and then paste it into a worksheet in Database Actions.
 

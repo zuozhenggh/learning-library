@@ -11,7 +11,7 @@ This lab is optional for those that wish to understand how to access Autonomous 
 begin
 dbms_cloud.copy_collection(
 	collection_name => 'products',
-	file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/b3XNySsmYQLPsy2Aw8C_uz14NYTfv2lqJ9IKoLNDRfKj6uZzUKPUFc5MbloNP0Cz/n/c4u04/b/data-management-library-files/o/testdata.json',
+	file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/testdata.json',
 	format => '{ "recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "1000000" }'
 );
 end;
@@ -158,7 +158,7 @@ In this lab, you will:
 	```
 
 	![](./images/created.png)
-
+ 
 11. To verify that the new document was inserted, navigate to the tab with SQL Developer Web, click on the navigation menu on the top left and select **JSON** under Development.
 
 	![](./images/nav-json.png)
@@ -183,7 +183,7 @@ In this lab, you will:
 
 	```
 	<copy>
-	curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/b3XNySsmYQLPsy2Aw8C_uz14NYTfv2lqJ9IKoLNDRfKj6uZzUKPUFc5MbloNP0Cz/n/c4u04/b/data-management-library-files/o/testdata.json --output testdata.json
+	curl https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/testdata.json --output testdata.json
 	</copy>
 	```
 
