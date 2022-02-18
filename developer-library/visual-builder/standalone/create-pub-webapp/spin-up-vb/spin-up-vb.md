@@ -4,7 +4,7 @@
 
 This lab walks you through the process of provisioning an instance of Visual Builder, assuming you don't already have one available to you.  If you do, you can skip this lab and move on to the next one.
 
-Estimated Lab Time:  5 minutes
+Estimated Time:  5 minutes
 
 ### Background
 
@@ -20,10 +20,11 @@ If you just created a new Cloud account following the instructions in Getting St
 
     ![](./images/platform.png)
 
-3.  On the Instances tab, click **Create Instance**:
+    A new Visual Builder tab opens.  
+
+3.  Click **Create Instance** on the Instances tab:
 
     ![](./images/create_instance.png)
-
 
 4.  On the Create Instance page, fill in the information required.  Give your instance a unique name, one that is unlikely to be chosen by another user.  Be sure to select the Region nearest to your location.  Click **Next**.
 
@@ -35,9 +36,7 @@ If you just created a new Cloud account following the instructions in Getting St
 
   ![](./images/open.png)
 
-  You're now in Visual Builder and can move on to the next lab.
-
 ## Acknowledgements
-**Author** - Sheryl Manoharan, Visual Builder User Assistance
 
-**Last Updated** - June 2021
+**Author** - Sheryl Manoharan, Visual Builder User Assistance
+**Last Updated** - November 2021

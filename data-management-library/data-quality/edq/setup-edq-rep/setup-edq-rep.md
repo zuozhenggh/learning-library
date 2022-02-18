@@ -14,80 +14,84 @@ This lab will show you how to access your EDQ instance and create a new project.
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## Task 0: Running your Lab
-### Access the graphical desktop
-For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+## Task 1: Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-1. Launch your browser to the following URL
+    - Database Listeners
+    - Database Server Instances
+    - EDQ Services
 
-    ```
-    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-    ```
+    ![](./images/edq-novnc-guide.png " ")
 
-2. Provide login credentials
+2. On the web browser window on the right preloaded with *Weblogic Server Administration Console* login page, click on the *Username* field and provide the credentials below to login.
 
-    ```
-    Username: <copy>oracle</copy>
-    ```
-    ```
-    Password: <copy>Guac.LiveLabs_</copy>
-    ```
-
-  ![](./images/guacamole-login.png " ")
-
-  *Note*: There is an underscore `_` character at the end of the password.
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
-
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
+    - Username
 
     ```
-    <copy>sudo su - oracle</copy>
+    <copy>weblogic</copy>
     ```
 
-## Task 1: Review EDQ Instance
-
-1. From the remote desktop session, Click on the "*Firefox*" icon to launch the browser.
-
-    ![](./images/guacamole-landing.png " ")    
-
-2. Switch to the second tab preloaded with *"Weblogic Server Administration Console"*. Refresh the tab if needed and provide the login credentials as specified below.
+    - Password
 
     ```
-    URL: <copy>http://localhost:7001/console</copy>
-    ```
-    ```
-    Username: <copy>weblogic</copy>
-    ```
-    ```
-    Password: <copy>oraedq123</copy>
+    <copy>oraedq123</copy>
     ```
 
-    ![](images/weblogic_1.png " ")
+    ![](images/ws-edq-login.png " ")
 
-    **Note:** It takes about 10 minutes post instance startup for Weblogic Admin Console be active, if the page is still not up after 10 minutes, refer to the optional step below for manual startup.
+3. Confirm successful login. Please note that it takes about 10 minutes after instance provisioning for all processes to fully start.
 
-3.	In the landing home page, click on *servers*.
+    - Weblogic Server Administration Console.
+    
+    In the landing home page, click on *servers* and Confirm that EDQ server and Admin server are running.
 
-    ![](images/weblogic_2.png " ")
+    ![](images/ws-edq-landing-1.png " ")
+    ![](images/ws-edq-landing-2.png " ")
 
-4.  Confirm that EDQ server and Admin server are running.
+    If successful, the page above is displayed and as a result your environment is now ready.  
 
-    ![](images/weblogic_3.png " ")
+4. If you are still unable to login or the login page is not functioning after reloading , open a terminal session and proceed as indicated below to validate the services.
+
+    - Database and Listener
+    ```
+    <copy>
+    sudo systemctl status oracle-database
+    </copy>
+    ```
+
+    ![](images/edq-db-status.png " ")
+    ![](images/edq-db-status2.png " ")
+
+    - WLS Admin Server, EDQ Service
+    ```
+    <copy>
+    sudo systemctl status edq.services
+    </copy>
+    ```
+
+    ![](images/edq-status.png " ")
+
+5. If you see questionable output(s), failure or down component(s), restart the corresponding service(s) accordingly
+
+    - Database and Listener
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
+
+    - WLS Admin Server, EDQ service
+
+    ```
+    <copy>
+    sudo systemctl restart edq
+    </copy>
+    ```
 
 ## Task 2: Create New Project in EDQ
 
@@ -267,6 +271,60 @@ You may now [proceed to the next lab](#next).
     </copy>
     ```
 
+## Appendix 2: Managing Startup Services
+
+1. Database Service (Database and Listener).
+
+    - Start
+
+    ```
+    <copy>sudo systemctl start oracle-database</copy>
+    ```
+
+    - Stop
+
+    ```
+    <copy>sudo systemctl stop oracle-database</copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>sudo systemctl status oracle-database</copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>sudo systemctl restart oracle-database</copy>
+    ```
+
+2. EDQ Service (WLS Admin Server, EDQ service)
+
+    - Start
+
+    ```
+    <copy>sudo systemctl start edq</copy>
+    ```
+
+    - Stop
+
+    ```
+    <copy>sudo systemctl stop edq</copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>sudo systemctl status edq</copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>sudo systemctl restart edq</copy>
+    ```
+
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
 
@@ -274,5 +332,4 @@ You may now [proceed to the next lab](#next).
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Narayanan Ramakrishnan, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2021
-
 

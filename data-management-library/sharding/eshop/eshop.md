@@ -17,8 +17,6 @@ We developed this application to demonstrate Oracle Sharding (a hyperscale globa
 Watch the video below for a walk through of the lab.
 [](youtube:EMhd5OolcbM)
 
-![](./images/app_front.jpg " ")
-
 Typically, multiple technologies and products are required to develop such an application. For example, you would need a JSON database, a Text Index application, a relational database, and an Analytics engine, which makes it difficult to query data across multiple data stores. Further, using the traditional methods, you could spend several years and millions of dollars in licensing and development.
 
 The entire eShop application, including database configuration, front-end UI, and application logic, was developed within a two-week time frame.

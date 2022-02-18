@@ -9,10 +9,12 @@ In this workshop, you'll create a Shopping Cart application that allows managing
     * To manage the products, customers and stores
     * To access a dashboard to identify the top products
 * Customers
-    * To review, add, delete or edit the number of products in the shopping cart
+    * To review, add, delete, or edit the number of products in the shopping cart
     * To submit orders
 
 Estimated Workshop Time: 2 hours
+
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/ioduhe7gHvc).</if>
 
 ### Objectives
 In this lab, you will:
@@ -37,10 +39,11 @@ In this lab, you will:
 | 7 | [Create the Add to Cart Page](?lab=7-creating-add-to-cart-page) | 20 min |
 | 8 | [Improve the Products Page](?lab=8-improving-products) | 20 min |
 | 9 | [Improve the Application](?lab=9-improving-app) | 10 min |
+| 10 | [Terminate Oracle Autonomous Database Instance](?lab=terminate-adb) | 5 min |
 
 ### **Let's Get Started!**
 
-- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top of the page.
+- If the menu is not displayed, you can open by clicking the menu button (![Menu icon](./images/menu-button.png)) at the top-left of the page.
 
 ### Downloads
 
@@ -65,4 +68,4 @@ In this lab, you will:
 ## Acknowledgments
 
 - **Author** - Mónica Godoy, Principal Product Manager
-- **Last Updated By/Date** - Mónica Godoy, Principal Product Manager, September 2021
+- **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021

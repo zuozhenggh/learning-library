@@ -13,6 +13,8 @@ You will be using the VM.Standard2.2 shape with 4 OCPUs and 60GB of memory.
 
 For more about Virtual DB systems, click [Database Concepts: Overview](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Concepts/overview.htm).
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/bZjnAaJGUfs).</if>
+
 ### Workshop Objectives
 - Connect to a DB System
 - Workload Management with Database Services

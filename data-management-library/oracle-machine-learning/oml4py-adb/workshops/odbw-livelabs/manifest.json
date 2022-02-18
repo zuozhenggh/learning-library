@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Python Users: Build intelligent applications faster with Oracle Machine Learning",
+    "workshoptitle": "Introduction to Oracle Machine Learning for Python on Autonomous Database",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -10,7 +10,8 @@
         {
             "title": "Introduction",
             "filename": "../../introduction/introduction.md",
-            "type": "livelabs"
+            "type": "livelabs",
+            "type": "odbw"
         },
         {
             "title": "Lab 1: Getting Started with OML4Py",

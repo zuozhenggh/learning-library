@@ -60,9 +60,11 @@ In this lab, you will:
 
     You will have the **root compartment** selected, or pick the one you want.
 
-3. Fill the information as in the next image. Developer edition is perfect for this workshop and develop new **Digital Assistant** systems until you want to move to production.
+3. Fill the information as in the next image. **Development** edition is perfect for this workshop and develop new **Digital Assistant** systems until you want to move to production. Finally click "**Create**" bottom:
 
-    Finally click "**Create**" bottom:
+    - **Name**: ODA
+    - **Description**: My Oracle Digital Assistant
+    - **Shape**: Development
 
     ![ODA Menu](./images/oda_3.png)
 
@@ -105,4 +107,3 @@ You may now [proceed to the next lab](#next).
 - **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
 - **Last Updated By/Date** - Anoosha Pilli, March 2021
-

@@ -22,7 +22,7 @@ Watch the video below for a quick walk through of the lab.
 ### Objectives
 
 Learn how to
-- load CSV files into an Autonomous Database using Database Actions.
+- load CSV files into an Autonomous Database using Database Actions
 
 
 ### Prerequisites
@@ -37,7 +37,7 @@ Learn how to
 
    ![ALT text is not available for this image](images/../../query-graph/images/adb-details-page.png " ")  
 
-2. Click the Tools tab and then the Database Actions link to open it.
+2. Click the **Tools** tab and then the **Open Database Actions** link to open it.
    ![ALT text is not available for this image](images/adb-details-page-yyz.png " ")
 
 ## Task 2: Login as the graph-enabled user
@@ -46,11 +46,11 @@ Learn how to
    
     ![ALT text is not available for this image](./images/db-actions-graphuser-login.png " ")  
 
-    **Note:** *If necessary, do the following to create the user with the right roles and privileges*:
-    - Log in to Database Actions as the ADMIN user for your Autonomous Database.
-    - Select Administration and then Database Users from the navigation menu
-    - Click Create User
-    - Turn on the Web-Access and Graph buttons
+    >**Note:** *If necessary, do the following to create the user with the right roles and privileges*:
+    - Log in to Database Actions as the **ADMIN** user for your Autonomous Database
+    - Select **Administration** and then **Database Users** from the navigation menu
+    - Click **Create User**
+    - Turn on the **Web-Access** and **Graph** buttons
 
 ## Task 3: Download the sample datasets from the ObjectStore
 
@@ -75,23 +75,23 @@ Learn how to
 
 ## Task 4: Upload using Database Actions Data Load
 
-1. Click the Data Load card. 
+1. Click the **DATA LOAD** card. 
    
    ![ALT text is not available for this image](images/db-actions-dataload-card.png " ")
    
-   Then specify the location of your data. That is, make sure the Load Data and the Local File cards have a check mark. Click `Next`.
+   Then specify the location of your data. That is, make sure the **LOAD DATA** and the **LOCAL FILE** cards have a check mark. Click **Next**.
 
    ![ALT text is not available for this image](./images/db-actions-dataload-location.png)
 
-2. Click `Select Files`.
+2. Click **Select Files**.
    
       ![ALT text is not available for this image](images/db-action-dataload-file-browser.png " ") 
 
-    Navigate to the correct folder (for example, ~/downloads/random-acct-data) and select the `bank_account.csv` and the `bank_txns.csv` files.
+    Navigate to the correct folder (for example, ~/downloads/random-acct-data) and select the `bank_accounts.csv` and the `bank_txns.csv` files.
 
     ![ALT text is not available for this image](./images/db-actions-dataload-choose-files.png " ")
 
-3. Verify that the correct files were selected and then click `Run` icon.
+3. Verify that the correct files were selected and then click **Run** icon.
 ![ALT text is not available for this image](./images/db-actions-dataload-click-run.png " ")
 
 4. Confirm that you wish the data load job.
@@ -102,11 +102,11 @@ Learn how to
    
    ![ALT text is not available for this image](./images/dbactions-dataload-files-loaded.png " ")  
 
-   Click `Done` to exit.
+   Click **Done** to exit.
 
    ![ALT text is not available for this image](images/dbactions-click-done.png " ")
 
-6. Now open the SQL Worksheet.
+6. Now open the **SQL** Worksheet.
    ![ALT text is not available for this image](./images/db-actions-choose-sql-card.png " ")
 
 7. Navigate to the correct folder (for example, ~/downloads) and select the `fixup.sql` file and drag it into the SQL worksheet. 
@@ -134,13 +134,13 @@ Learn how to
       ```
 
       It does the following:
-      - Adds a primary key constraint to the `bank_accounts` table.
-      - Adds a column (`txn_id`) to the `bank_txns` table.
-      - Sets a value for the `txn_id` and commits the transaction.
-      - Adds a primary key constraint to the `bank_txns` table.
-      - Adds a foreign key constraint to the `bank_txns` table specifying that `from_acct_id` references `bank_accounts.acct_id`.
-      - Adds a second foreign key constraint to the `bank_txns` table specifying that `to_acct_id` references `bank_accounts_acct_id`.  
-      - Helps you verify that the addition of a `txn_id` column and the constraints.
+      - Adds a primary key constraint to the `bank_accounts` table
+      - Adds a column (`txn_id`) to the `bank_txns` table
+      - Sets a value for the `txn_id` and commits the transaction
+      - Adds a primary key constraint to the `bank_txns` table
+      - Adds a foreign key constraint to the `bank_txns` table specifying that `from_acct_id` references `bank_accounts.acct_id`
+      - Adds a second foreign key constraint to the `bank_txns` table specifying that `to_acct_id` references `bank_accounts.acct_id` 
+      - Helps you verify that the addition of a `txn_id` column and the constraints
 
 8. Execute the `fixup.sql` script in the SQL worksheet.  
    ![ALT text is not available for this image](./images/db-actions-sql-execute-fixup.png " ")  
@@ -155,6 +155,4 @@ Please **proceed to the next lab** to create a graph from these tables.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, October 2021
-
-  
+* **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021

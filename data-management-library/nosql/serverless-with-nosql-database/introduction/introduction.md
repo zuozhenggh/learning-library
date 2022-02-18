@@ -6,6 +6,8 @@ Modern applications benefit from predictable low latency, flexibility, and horiz
 
 _Estimated Time:_ 70 Minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/MmJHAg1F0AQ).</if>
+
 ### About NoSQL database
 Modern application developers have many choices when faced with deciding when and how to persist a piece of data. In recent years, NoSQL databases have become increasingly popular and are now seen as one of the necessary tools every application developer must have at their disposal. While 'tried and true' relational databases are great at solving classic application problems like data normalization, strict consistency, and arbitrarily complex queries to access that data, NoSQL databases take a different approach.
 

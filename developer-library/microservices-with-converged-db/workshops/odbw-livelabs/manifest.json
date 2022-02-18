@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Simplifying Microservices with converged Oracle Database",
+  "workshoptitle": "Simplify Microservices with converged Oracle Database",
   "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
@@ -9,6 +9,7 @@
       },
       {
         "title": "Introduction",
+        "type": "odbw",
         "filename": "../../intro/intro.md"
       },
       {

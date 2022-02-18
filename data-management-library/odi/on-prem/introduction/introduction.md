@@ -29,7 +29,7 @@ Key reasons why companies choose Oracle Data Integrator for their data integrati
 * Basic knowledge of Oracle Database
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-You many proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)

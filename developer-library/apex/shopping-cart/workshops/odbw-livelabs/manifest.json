@@ -4,6 +4,7 @@
     "tutorials": [
       {
         "title": "Introduction",
+        "type": "odbw",
         "filename": "../../intro/intro.md"
       },      
       {

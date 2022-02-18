@@ -104,7 +104,7 @@ While the deployment is being created, you can register the source and target Au
 
 The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
 
-## Task 3: Unlock the GGADMIN user and supplemental logging
+## Task 3: Unlock the GGADMIN user and add supplemental logging
 
 Although the GGADMIN user is created during the database registration process, it is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
@@ -116,7 +116,7 @@ Although the GGADMIN user is created during the database registration process, i
 
     ![](images/05-02.png " ")
 
-3.  On the SourceATP Database Details page, click **Tools**, and then click **Open Database Actions**.
+3.  On the SourceATP Database Details page, click **Database Actions**.
 
     ![](images/05-04.png " ")
 
@@ -183,4 +183,4 @@ In this lab, you created the OCI GoldenGate deployment and registered the source
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Julien Testut, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, September 2021
+* **Last Updated By/Date** - Jenny Chan, February 2022

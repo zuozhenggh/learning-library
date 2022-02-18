@@ -75,8 +75,8 @@ This lab assumes you have:
     ```
     <copy>
     cd /tmp/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/_27ATGCscU7T_sIKx4DFJDr6AkMr9rH5EgSpJsSs-kKkNmLRnIP2m0_1LMmHfi-p/n/c4u04/b/labfiles/o/init-inmemory.zip
-    unzip init-inmemory.zip; chmod +x init*.sh
+    wget -O init-inmemory.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/_27ATGCscU7T_sIKx4DFJDr6AkMr9rH5EgSpJsSs-kKkNmLRnIP2m0_1LMmHfi-p/n/c4u04/b/labfiles/o/init-inmemory.zip
+    unzip -qo init-inmemory.zip; chmod +x init*.sh
     ./init-inmemory.sh 2>&1 | tee /tmp/init-inmemory.log
     </copy>
     ```
