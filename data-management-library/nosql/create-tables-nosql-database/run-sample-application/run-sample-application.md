@@ -55,7 +55,7 @@ Oracle NoSQL Database Cloud Service is a fully managed database cloud service th
 
 ## Task 2: Download, build and run the sample application
 
-1. Download the provided [HelloWorld.java](https://objectstorage.us-ashburn-1.oraclecloud.com/p/8IuFbulh0nbFM91-CTJRy00yvrAT8pe76fIHTVOVt5G48RAE5O_HsnzMDZzYUs8l/n/c4u04/b/data-management-library-files/o/HelloWorld.java) file and move it to your home directory.
+1. Download the provided [HelloWorld.java](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/HelloWorld.java) file and move it to your home directory.
 
 2. Review the sample application. You can access the [JavaAPI Reference Guide](https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnjv/index.html) to reference Java classes, methods, and interfaces included in this sample application.
 
