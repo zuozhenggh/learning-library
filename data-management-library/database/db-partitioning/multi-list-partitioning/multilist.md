@@ -21,7 +21,7 @@ Multi-column list partitioning enables you to partition a table based on the lis
 
 ### Multi-Column List Partitioning Usecase
 
-An excellent example for multi-column list partitioning is segregating sensor data along with various channel data on IoT (Internet of Things) applications, such as humidity, temperature, climate, pressure, air quality changes, etc. These sensors' measurement values change.
+An excellent example for multi-column list partitioning is segregating sensor data and various channel data on IoT (Internet of Things) applications, such as humidity, temperature, climate, pressure and air quality changes. These sensors' measurement values keep changing constantly.
  
 ### Objectives
  
@@ -31,7 +31,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
-- Provision an Oracle Autonomous Database and ADW Instance has been created
+- Provision an Oracle Autonomous Database and Autonomous Data Warehouse has been created
 
 ## Task 1: Create Multi Column List Partitioned Table
 
