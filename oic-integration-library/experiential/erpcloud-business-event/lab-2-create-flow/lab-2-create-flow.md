@@ -27,7 +27,7 @@ We will start by creating a new integration and adding some basic info.
     | **Element**        | **Value**          |       
     | --- | ----------- |
     | Name         | `LLERPEventDemo`       |
-    | Description  | `ERP Event integration for Livelabs demo` |
+    | Description  | `ERP Event integration for LiveLabs demo` |
     |
 
     Accept all other default values. 
@@ -188,3 +188,8 @@ A number icon is displayed at the top of the Integration canvas when identifiers
 
 
 You have completed the final step of Lab 2. Please **proceed to the next lab**. 
+
+
+## Acknowledgements
+* **Author** - Ravi Chablani, Product Management - Oracle Integration
+* **Last Updated By/Date** - Ravi Chablani, February 2022

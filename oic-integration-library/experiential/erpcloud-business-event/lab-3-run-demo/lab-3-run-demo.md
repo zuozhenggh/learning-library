@@ -17,7 +17,7 @@ This lab assumes you have:
 
 
 ## Task 1: Create Purchase Order in ERP Cloud
-1. Access your ERP Cloud environment. Login with a user having the correct roles and priviliges to create a PO. 
+1. Access your ERP Cloud environment. Login with a user having the correct roles and privileges to create a PO. 
 
 2. Navigate to the **Procurement** Tab.
 
@@ -93,7 +93,7 @@ After the PO is submitted, the initial status becomes *Pending Approval*. The PO
 
     > **Tip:** The last created PO should generally be the top one in the list.
 
-5. Validate the PO Status. If it's *Open* then the Business Event has occured. 
+5. Validate the PO Status. If it's *Open* then the Business Event has occurred. 
     > **Note:** If PO has another Status, such as *Pending Approval*, then wait a couple of minutes and keep refreshing the page until the desired PO Status appears. 
 
 
@@ -152,5 +152,7 @@ Follow these steps to view the PO record in the designated DB table.
    ![Show PO data](images/sql-show-po-data.png)
 
 
-
+## Acknowledgements
+* **Author** - Ravi Chablani, Product Management - Oracle Integration
+* **Last Updated By/Date** - Ravi Chablani, February 2022
 

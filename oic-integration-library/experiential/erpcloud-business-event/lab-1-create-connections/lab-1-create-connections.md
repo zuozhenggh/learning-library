@@ -17,7 +17,7 @@ This lab assumes you have:
 
 
 ## **Task 1:** Create an Oracle ERP Cloud Adapter Connection 
-Create a connection witht the Oracle ERP Cloud Adapter.
+Create a connection with the Oracle ERP Cloud Adapter.
 
 1. Show the left Navigation menu, and click **Integrations** > **Connections**.
 
@@ -31,7 +31,7 @@ Create a connection witht the Oracle ERP Cloud Adapter.
     | **Field**        | **Value**          |       
     | --- | ----------- |
     | Name         | `LLDemo_ERP`       |
-    | Description  | `ERP Connection for Livelabs demo` |
+    | Description  | `ERP Connection for LiveLabs demo` |
     |
 
     Keep all other values as default.
@@ -50,7 +50,7 @@ Create a connection witht the Oracle ERP Cloud Adapter.
 
 
 ## **Task 2:** Create an Oracle Autonomous Data Warehouse Connection 
-Create a connection witht the Oracle Autonomous Data Warehouse Adapter.
+Create a connection with the Oracle Autonomous Data Warehouse Adapter.
 
 1. From the *Connections* window, click **Create**.
 
@@ -62,7 +62,7 @@ Create a connection witht the Oracle Autonomous Data Warehouse Adapter.
     | **Field**        | **Value**          |       
     | --- | ----------- |
     | Name         | `LLDemo_ADW`       |
-    | Description  | `ADW Connection for Livelabs demo` |
+    | Description  | `ADW Connection for LiveLabs demo` |
     |
 
     Keep all other values as default.
@@ -85,3 +85,7 @@ Create a connection witht the Oracle Autonomous Data Warehouse Adapter.
 
 You have completed the final step of Lab 1. Please **proceed to the next lab**. 
 
+
+## Acknowledgements
+* **Author** - Ravi Chablani, Product Management - Oracle Integration
+* **Last Updated By/Date** - Ravi Chablani, February 2022

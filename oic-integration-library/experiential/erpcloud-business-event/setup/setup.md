@@ -101,4 +101,6 @@ Follow these steps to create a DB table which will be used as part of this works
 Now you have an external table which will be used in the demo flow. 
 
 
-
+## Acknowledgements
+* **Author** - Ravi Chablani, Product Management - Oracle Integration
+* **Last Updated By/Date** - Ravi Chablani, February 2022
