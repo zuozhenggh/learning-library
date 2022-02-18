@@ -31,6 +31,7 @@
       "publisheddate": "10/14/2020",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
+  
     {
       "title": "Lab 4: Create Datasource Connections",
       "description": "This lab walks you through the steps to create datasource connections.",
