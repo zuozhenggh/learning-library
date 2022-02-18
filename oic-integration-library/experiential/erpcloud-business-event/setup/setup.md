@@ -40,7 +40,7 @@ Follow these steps to create a DB table which will be used as part of this works
 
     ![Enter DB password](images/adb-navigation05.png)
 
-6. The Database Actions page opens. In the Development box, click **SQL**.
+6. The Database Actions page opens. In the *Development* box, click **SQL**.
 
     ![Enter DB password](images/adb-navigation06.png)
 

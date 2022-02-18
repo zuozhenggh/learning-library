@@ -166,11 +166,9 @@ A number icon is displayed at the top of the Integration canvas when identifiers
 1. Click the **Actions** menu on the top right, then select **Tracking**.
     ![](images/create-app-integration11.png)
 
-2. From the *Source* section, expand **getPurchaseOrderResponse** > **result**, click **Load more**, expand **Value**, and click **Load more**. Drag the below fields from ERP PO source to the *Drag a trigger field here* sections:
-    - POHeaderId (primary)
-    - OrderNumber
+2. From the *Source* section, expand **getPurchaseOrderResponse** > **result**, click **Load more**, expand **Value**, and click **Load more**. Drag the **OrderNumber** field from ERP PO source to the *Drag a trigger field here* section:
 
-    ![](images/create-app-integration12.png)
+    ![](images/add-business-identifiers.png)
 
 3. Click **Save**. 
 

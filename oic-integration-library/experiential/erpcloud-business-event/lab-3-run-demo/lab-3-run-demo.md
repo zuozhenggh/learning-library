@@ -100,12 +100,56 @@ After the PO is submitted, the initial status becomes *Pending Approval*. The PO
 ## Task 3: Track incoming PO Event in Integration
 Use the Oracle Integration dashboard to see the data flow resulting from the create Purchase Order event in ERP Cloud. 
 
-1. In the navigation pane, click **Home** > **Monitoring** > **Integrations** > **Dashboard**
+1. In the Integration navigation pane, click **Home** > **Monitoring** > **Integrations** > **Tracking**
 
-2. 
+2. Find our corresponding Integration Instance, by matching the PO number which was generated in ERP Cloud. This should be under the column *Business Identifiers*.
+
+3. Click on your **Order Number** link to open the corresponding instance
+
+   ![](images/integration-instance-run.png)
+
+4. Review the 
 
 
 ## Task 3: Verify PO record in ADW Table
+Follow these steps to view the PO record in the designated DB table. 
+
+1. If you are not already logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the navigation menu.
+
+    ![Select Autonomous Database](../setup/images/adb-navigation01.png)
+
+    > Note: You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the **Quick Actions** section of the dashboard.
+
+2. Navigate into your demo database by clicking on the instance link.
+
+    ![Select Autonomous Database](../setup/images/adb-navigation02.png)
+
+    > Note: Similar steps apply to either Autonomous Data Warehouse or Autonomous Transaction Processing.
+
+3. In your ADW Database Details page, click the **Database Actions** button.
+
+    ![Select Autonomous Database](../setup/images/adb-navigation03.png)
+
+4. Sign-in with your database instance's default administrator account, Username = `ADMIN` and click **Next**.
+
+   ![Enter DB username](../setup/images/adb-navigation04.png)
+
+5.  Enter the **ADMIN** password and click **Sign in**.
+
+    ![Enter DB password](../setup/images/adb-navigation05.png)
+
+6. The Database Actions page opens. In the *Development* box, click **SQL**.
+
+    ![Enter DB password](../setup/images/adb-navigation06.png)
+
+
+7. The SQL Worksheet appears. In the *Navigator* on the left, select the **PURCHASEORDER** table, then right-click on **Open**.
+    ![Open PO table](images/sql-open-po-table.png)
+
+    This opens the *ADMIN.PURCHASEORDER* table window. 
+
+8. Click on **Data** in the left menu to display the table data. Verify the PO record is available. 
+   ![Show PO data](images/sql-show-po-data.png)
 
 
 
