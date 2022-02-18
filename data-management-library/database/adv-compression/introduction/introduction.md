@@ -6,7 +6,7 @@ Oracle Advanced Compression provides a comprehensive set of compression features
 
 Oracle provides various types of Advanced Compression features. We will work on compression based hands-on labs to understand the compression concepts and their corresponding use cases.
 
-Estimated Workshop Time:  1 hour 20 minutes
+Estimated Time:  2 hour 20 minutes
 
 ### Data compression can significantly reduce storage cost
 
