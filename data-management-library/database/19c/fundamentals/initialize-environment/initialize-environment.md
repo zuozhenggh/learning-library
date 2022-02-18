@@ -161,7 +161,7 @@ This lab assumes that you have:
     ```
     $ <copy>mkdir -p ~/labs/19cnf</copy>
     $ <copy>cd ~/labs/19cnf</copy>
-    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/69xu1SJ57wn73nV-T9dsSTDyY-w71d2o4iCoNkM2ceW9-rkqPFUqCbp7LeFwXQje/n/c4u04/b/labfiles/o/19cnf-lab-files.zip</copy>
+    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/19cnf-lab-files.zip</copy>
     $ <copy>unzip -q 19cnf-lab-files.zip</copy>
     $ <copy>chmod -R +x ~/labs/19cnf</copy>
     $ <copy>ls -an</copy>
