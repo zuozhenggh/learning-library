@@ -154,7 +154,7 @@ The Leader Board displays the top performing models relative to the model metric
 	![View Prediction Impact](images/prediction-impact.png)
 
 
-* **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. A confusion matrix is computed on a test dataset and helps in assessing the model quality. Here, the confusion matrix results are classified into true positive (actual = predicted = 1) and true negative (actual = predicted  = 0), and false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
+* **Confusion Matrix:** Characterizes the accuracy of a model, including the types of errors made. It is computed by OML AutoML UI on a random subset of the original data (based on the cross-validation process) to help assess the model quality. Because our target is binary, the results are classified into true positive (actual = predicted = 1), true negative (actual = predicted = 0), false positive (actual = 0, predicted = 1) and false negative (actual = 1, predicted = 0).
 
 	>Note: The values shown here represent percentages of the test data that correspond to each of the confusion matrix entries.
 

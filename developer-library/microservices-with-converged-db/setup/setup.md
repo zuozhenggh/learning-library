@@ -86,7 +86,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 22.1.5 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 22.2.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -103,7 +103,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-   Note, cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run the command to resume the setup.
+ #  Note, cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run the command to resume the setup.
 
    The setup process will typically take around 20 minutes to complete.  
 
