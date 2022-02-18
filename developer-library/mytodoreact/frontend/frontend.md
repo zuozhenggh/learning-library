@@ -95,7 +95,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	npm install
 	</copy>
 	```
-  - In case of errors, try the following command
+    In case of errors, try the following command
 	```
 	<copy>
 	npm audit fix --force
@@ -117,8 +117,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
  	![](images/api-gateway-navigate.png)
 
- - Click on your Gateway and go to Deployment
- - Copy the Deployment Endpoint
+   Click on your Gateway and go to Deployment
+   Copy the Deployment Endpoint
 
 	![](images/api-gtw-deploy.png)
 
@@ -156,7 +156,7 @@ Here you will run the application locally in development mode, then run in produ
 	```
 It correctly bundles React in production mode (into the build folder) and optimizes the build for the best performance.
 
-  ![](images/run-build.png " ")
+  ![](images/Run-build.png " ")
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
@@ -172,7 +172,7 @@ The build folder will be uploaded to object storage so you can access your appli
   ![](images/object-store-navigate.png)
   Create the 'mtdrworkshop' (or another name if that's taken) bucket
 
-  ![](images/create-bucket.png)
+  ![](images/Create-bucket.png)
 
   Enter in the bucket details.
   ![](images/bucket-details.png)
