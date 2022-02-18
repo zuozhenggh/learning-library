@@ -9,7 +9,7 @@ If you want to review the detailed steps on how to set up the workshop environme
 
 When your workshop reservation is available, the **Launch *workshop-name* Workshop** page is displayed in a new browser tab named **Attend the Workshop**. The **Workshop Details** section contains important information about your allocated resources that you will need throughout this workshop such as the login URL, tenancy name, user name and password, compartment name and OCID, and so on. This is all explained in detail in the next lab.   
 
-![](./images/ll-workshop-details-section.png " ")
+![The Workshop Details section of the Launch Access the Data Lake using Autonomous Database and Data Catalog Workshop page is displayed.](./images/ll-workshop-details-section.png " ")
 
 > **Note:** This lab is directed at administrator users because they are granted the required access permissions. In real life scenarios, you would create a new Data Catalog administrator user and a Data Catalog administrator group, and then add the new administrator user to the new group. Next, you create the Oracle Cloud Infrastructure Identity and Access Management (IAM) policies that are required to create and manage a Data Catalog and Autonomous Database instances.
 
@@ -77,15 +77,15 @@ See [Signing In to the Console](https://docs.cloud.oracle.com/en-us/iaas/Content
 
 2. On the **Sign In** page, select your tenancy, enter your username and password, and then click **Sign In**.
 
-   ![Click Sign In on the OCI Sign in screen.](./images/sign-in.png " ")
+   ![The blurred username and masked password are displayed on the OCI Sign in screen. The tenancy's name and username are blurred. The Sign In button is highlighted.](./images/sign-in.png " ")
 
    The **Oracle Cloud Console** Home page is displayed.
 
-   ![The Oracle Cloud Console Home Page](./images/oracle-cloud-console-home.png "Partial Oracle Cloud Console is displayed.")
+   ![The partial Oracle Cloud Console Home Page is displayed.](./images/oracle-cloud-console-home.png "Partial Oracle Cloud Console is displayed.")
 
 >**Note:** To zoom in (magnify) a displayed image in this workshop, hover over the image to display the magnifying glass icon, and then then click the image.
 
-   ![An example of magnifying an image.](./images/magnify-image.png "Click an image to magnify it.")
+   ![An example of magnifying an image. The magnifying glass icon with a plus sign is shown as hoovering over a sample image.](./images/magnify-image.png "Click an image to magnify it.")
 
 
 ## Task 2: (Optional) Create a Compartment
@@ -94,25 +94,25 @@ A Cloud Administrator can optionally create a compartment in your tenancy to hel
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Compartments**.
 
-	 ![From the Navigation menu, navigate to Compartments.](./images/navigate-compartment.png "Click the Navigation menu, and navigate to Compartments.")
+	 ![The Navigation menu is clicked. The navigation path to Compartments is displayed.](./images/navigate-compartment.png "Click the Navigation menu, and navigate to Compartments.")
 
     >**Note:** For faster navigation, you can pin items to make them appear in the **Pinned Links** section of the **Home** tab. To pin an item, hover over the menu item and then click the pin to the left of the item name. The **Recent** section of the **Home** tab shows recently used navigation items. To quickly find navigation menu items, use the **Search** box.
 
-   ![An example on pinning an item for quicker access.](./images/pin-items.png " ")
+   ![An example on pinning an item such as Data Lake/Data Catalog for quicker access is shown.](./images/pin-items.png " ")
 
 2. On the **Compartments** page, click **Create Compartment**.
 
-   ![Click Create Compartment.](./images/click-create-compartment.png " ")
+   ![The Compartments page is displayed. The Create Compartment button is highlighted.](./images/click-create-compartment.png " ")
 
 3. In the **Create Compartment** dialog box, enter **`training-dcat-compartment`** in the **Name** field and **`Training Data Catalog Compartment`** in the **Description** field.
 
 4. In the **Parent Compartment** drop-down list, select your parent compartment, and then click **Create Compartment**.
 
-   ![On the populated Create Compartment dialog box, click Create Compartment.](./images/create-compartment.png " ")
+   ![On the completed Create Compartment dialog box, click Create Compartment.](./images/create-compartment.png " ")
 
    The **Compartments** page is re-displayed and the newly created compartment is displayed in the list of available compartments.
 
-   ![The newly created compartment is highlighted.](./images/compartment-created.png " ")
+   ![The newly created compartment is highlighted with its status as Active.](./images/compartment-created.png " ")
 
 ## Task 3: Create a Data Catalog Instance
 
@@ -149,21 +149,21 @@ Create a Data Catalog instance using the following steps.
 
 2. On the **Data Catalog Overview** page, click **Go to Data Catalogs**.
 
-   ![Click Go to Data Catalogs.](./images/data-catalog-overview.png " ")    
+   ![The Go to Data Catalogs button is highlighted.](./images/data-catalog-overview.png " ")    
 
 3. On the **Data Catalogs** page, click **Create Data Catalog**.
 
-   ![](./images/data-catalog-page.png " ")
+   ![The Create Data Catalog button in the training-dcat-compartment is highlighted.](./images/data-catalog-page.png " ")
 
 4. Select the **`training-dcat-compartment`** compartment from the **Create In Compartment** drop-down list, if not already selected.
 
 5. Enter **`training-dcat-instance`** in the **Name** field.
 
-   ![](./images/create-data-catalog.png " ")
+   ![The completed Create Data Catalog dialog box is displayed. The Create Data Catalog button is highlighted.](./images/create-data-catalog.png " ")
 
 6. Click **Create Data Catalog**. The Data Catalog instance is created and displayed in the **Data Catalogs** page.
 
-   ![](./images/click-data-catalog.png " ")
+   ![The newly created Data Catalog instance is displayed with an Active state.](./images/click-data-catalog.png " ")
 
 ## Task 4: Create, Import, and Edit a Glossary
 
@@ -173,29 +173,28 @@ In this task, you create a new and empty business glossary in the newly created 
 
 2. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog in the **Name** column.
 
-   ![](./images/click-data-catalog.png " ")
+   ![The Data Catalog instance and its Active state are highlighted.](./images/click-data-catalog.png " ")
 
 3. The Data Catalog **Home** page is displayed. Click the **Glossaries** link.
 
-   ![](./images/click-glossaries.png " ")
+   ![The Home tab and the Glossaries link are highlighted.](./images/click-glossaries.png " ")
 
    The **Glossaries** tab is displayed.
 
-   ![](./images/click-create-glossary.png " ")
+   ![The Glossaries tab and the Create Glossary button are highlighted.](./images/click-create-glossary.png " ")
 
 
 4. Click **Create Glossary**. The **Create Glossary** panel is displayed. Enter **`MovieStream Application`** in the **Name** field, and then click **Create**.
 
-   ![](./images/create-glossary-panel.png " ")
+   ![The Create button on the completed Create Glossary panel is highlighted.](./images/create-glossary-panel.png " ")
 
    The **MovieStream Application** glossary tab is displayed.
 
-   ![](./images/click-import.png " ")
+   ![On the "Glossary: MovieStream Application" details page, the Import button is highlighted.](./images/click-import.png " ")
 
 5. Click **Import**. A **Note** message box is displayed indicating that some rich text formatting might be modified or lost on import. Click **Proceed**.
 
-  ![](./images/note-proceed.png " ")
-
+  ![The Proceed button is highlighted.](./images/note-proceed.png " ")
 
 6. In the **Open** dialog box for your local system, copy and enter the following public pre-authenticated request (PAR) URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Select **All Files** from the second drop-down list, and then click **Open**. See [Pre-Authenticated requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm).
 
@@ -204,38 +203,38 @@ In this task, you create a new and empty business glossary in the newly created 
     <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_scripts/o/dcat/MovieStream%20ApplicationExport.xlsx</copy>
     ```
 
-    ![](./images/specify-par.png " ")
+    ![The populated File name text field and Open button are highlighted.](./images/specify-par.png " ")
 
     >**Note:**     
     If you are using an Apple Macintosh computer, you cannot use a PAR URL to import a glossary; instead, download the [moviestream-application.xlsx](files/moviestream-application.xlsx?download=1) glossary file to your local machine first. Next, click **Import**. In the **Open** dialog box, navigate to the folder that contains the glossary file, select it, and then click **Open**.
 
 7. An import job is triggered and a message is displayed. You can click the **View Job** link in the message to view the details of this job.
 
-   ![](./images/import-job-initiated.png " ")
+   ![The Initiated MovieStream Application import job message is displayed.](./images/import-job-initiated.png " ")
 
    The import file is small; therefore, the job finishes instantly and the imported glossary is displayed. If the import file is large, you can monitor the status of the job from the Jobs tab. When the job is completed successfully, the contents of the Excel file are imported into your glossary.
 
-   ![](./images/glossary-imported.png " ")
+   ![The Summary tab of the imported glossary displays the glossary details. In the Glossary Hierarchy pane on the left, the Refresh glossary link and MovieStream Application name link are highlighted.](./images/glossary-imported.png " ")
 
 8. The imported glossary is displayed in the **Glossary Hierarchy** pane on the left. You can also click **Expand all** to view all of the details. The children of the **MovieStream Application** glossary are displayed. If the glossary details are not displayed, click **Refresh glossary**.
 
-   ![](./images/expand-all.png " ")
+   ![In the Glossary Hierarchy pane, the Expand all and MovieStream Application name link are highlighted. The MovieStream Application is expanded to show some of its immediate children and descendants.](./images/expand-all.png " ")
 
     >**Note:** The categories and terms created within a glossary are displayed in the **Glossary Hierarchy** tree navigation list. Expand each category to view terms created within that category. The summary information changes as you click different nodes in the glossary tree. You can use Expand All or Collapse All to expand or collapse all the nodes available in the glossary respectively. You can also use the search bar to search for categories and terms. If the glossary children are not displayed, click **Refresh glossary**.
 
 9. Edit the default properties for your **MovieStream Application** glossary to include a description which you didn't specify when you created the glossary. In the **Glossary Hierarchy** pane, click the **MovieStream Application** glossary. In the **Default Properties** section on the right, click **Edit**.
 
-   ![](./images/edit-glossary-description.png " ")
+   ![In the Glossary Hierarchy pane, the MovieStream Application link is selected and highlighted. In the Summary tab, the Edit link in the Default Properties section is highlighted.](./images/edit-glossary-description.png " ")
 
    The **Edit Default Properties** panel opens as an overlay.
 
 10. Enter "`Describes the assets related to the MovieStream data`" in the **Description** field. Click **Save Changes**.
 
-   ![](./images/add-description.png " ")
+   ![The populated Edit Default Properties panel is displayed. The Save Changes button is highlighted.](./images/add-description.png " ")
 
    The updated description is displayed in the **Default Properties** section.
 
-   ![](./images/description-added.png " ")
+   ![The updated description is shown and highlighted.](./images/description-added.png " ")
 
 11. Close the **Glossaries** and **MovieStream Application** tabs.
 
@@ -247,11 +246,11 @@ In this task, you create a dynamic group that includes the specific compartment 
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
 
-  ![](./images/navigate-dynamic-group.png " ")
+  ![The Navigation menu is clicked. The navigation path to Dynamic Groups is displayed and highlighted.](./images/navigate-dynamic-group.png " ")
 
 2. On the **Dynamic Groups** page, click **Create Dynamic Group**.
 
-  ![](./images/dynamic-group-page.png " ")
+  ![The Create Dynamic Group button is highlighted.](./images/dynamic-group-page.png " ")
 
 3. In the **Create Dynamic Group** dialog box, specify the following:
 
@@ -266,30 +265,30 @@ In this task, you create a dynamic group that includes the specific compartment 
 
 4. To find your _Compartment OCID_, copy the URL in the address bar of your current browser tab where the **Create Dynamic Group** page is displayed. Open a new browser tab. For example, in Chrome, you click the **New tab** icon.
 
-    ![](./images/copy-url-new-tab.png " ")
+    ![The URL on the current tab in Chrome is highlighted and copied and labeled as 1. Next, the New tab icon (plus icon) is clicked to create a new tab and labeled as 2.](./images/copy-url-new-tab.png " ")
 
 5. Paste the copied URL into the address bar of the new tab.
 
-    ![](./images/paste-url-new-tab.png " ")
+    ![The copied URL is pasted in the new tab's address bar.](./images/paste-url-new-tab.png " ")
 
 6. In the new tab, open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Compartments**. On the **Compartments** page, in the row for your **training-dcat-compartment**, hover over the **OCID link** in the **OCID** column, and then click **Copy** to copy the OCID for the **training-dcat-compartment**.
 
-    ![](./images/copy-compartment-ocid.png " ")
+    ![In the row for the training-dcat-compartment, hover over the OCID link in the OCID column, and then click the Copy link.](./images/copy-compartment-ocid.png " ")
 
 7. Click the original tab where you were creating the dynamic group policy. Paste the copied compartment OCID value to replace the **'your-compartment-ocid'** placeholder in the **Rule 1** text box.
 
 8. Click **Create**.
 
-    ![](./images/moviestream-dynamic-group-db.png " ")
+    ![The completed Create Dynamic Group dialog box is displayed. Rule 1 field and the Create button are highlighted.](./images/moviestream-dynamic-group-db.png " ")
 
 
 9. The **Dynamic Group Details** page is displayed. Click **Dynamic Groups** in the breadcrumbs to re-display the **Dynamic Groups** page.
 
-    ![](./images/dynamic-group-details.png " ")
+    ![On the Dynamic Group Details page, the breadcrumbs are displayed at the top of the page. The Dynamic Group Information and Matching Rules sections are displayed.](./images/dynamic-group-details.png " ")
 
     The newly created dynamic group is displayed.
 
-    ![](./images/dynamic-group-created.png " ")
+    ![The new dynamic group is displayed on the Dynamic Groups page.](./images/dynamic-group-created.png " ")
 
 
 ## Task 6: Create Access Policy for Dynamic Group         
@@ -299,7 +298,7 @@ After you have created a dynamic group, you need to create a policy to permit th
 
 2. On the **Policies** page, make sure that your **`training-dcat-compartment`** compartment is selected, and then click **Create Policy**.  
 
-    ![](./images/create-os-policy.png " ")
+    ![The Create Policy button is highlighted. The List Scope section shows the training-dcat-compartment selected in the compartment drop-down list.](./images/create-os-policy.png " ")
 
     The **Create Policy** dialog box is displayed.
 
@@ -314,15 +313,15 @@ After you have created a dynamic group, you need to create a policy to permit th
         <copy>allow dynamic-group moviestream-dynamic-group to manage data-catalog-family in compartment training-dcat-compartment</copy>
         ```
 
-        ![](./images/dynamic-group-instances-os-policy.png " ")
+        ![On the completed Create Policy dialog box, the policy in the Policy Builder field and the Create button are highlighted.](./images/dynamic-group-instances-os-policy.png " ")
 
-    + Click **Create**. The **Policy Detail** page is displayed. Click **Policies** in the breadcrumbs to return to the **Dynamic Groups** page.
+    + Click **Create**. The **Policy Detail** page is displayed Click **Policies** in the breadcrumbs to return to the **Dynamic Groups** page.
 
-          ![](./images/object-storage-policy-detail.png " ")
+          ![The new policy details page is displayed. The Policies link in the breadcrumbs is highlighted.](./images/object-storage-policy-detail.png " ")
 
           The newly created policy is displayed in the **Policies** page.
 
-          ![](./images/moviestream-dcat-policy-created.png " ")
+          ![The new policy, the description, and number of statements (1) are displayed on the Policies page.](./images/moviestream-dcat-policy-created.png " ")
 
     > **Note:** In this workshop, you will access public Oracle Object Storage buckets using specific public Pre-authenticated requests (PARs); therefore, you don't need to provide a policy statement to allow Data Catalog in your `training-dcat-compartment` to access any object in your **Oracle Object Storage** (since the public pars are not in this compartment); however, if you were not using public PARs, then in order to access your Oracle Object Storage buckets in your compartment (such as the training-dcat-compartment in this example), you would need the following policy statement:
 
@@ -343,15 +342,15 @@ After you have created a dynamic group, you need to create a policy to permit th
        * **Display Name:** **`DB-DCAT Integration`**.
        * **Database Name:** **`TrainingADB`**.
 
-       ![](./images/adb-basic-info.png " ")
+       ![The completed "Provide basic information for the Autonomous Database" section is diaplyed.](./images/adb-basic-info.png " ")
 
 5. In the **Choose a workload type** section, accept the **Data Warehouse** default selection.
 
-       ![](./images/adb-workload-type.png " ")
+       ![The selected Data Warehouse option of the "Choose a workload type" section is displayed and highlighted.](./images/adb-workload-type.png " ")
 
 6. In the **Choose a deployment type** section, accept the **Shared Infrastructure** default selection.
 
-       ![](./images/adb-deployment-type.png " ")
+       ![The selected Shared Infrastructure option of the "Choose a deployment type" section is displayed and highlighted.](./images/adb-deployment-type.png " ")
 
 7. In the **Configure the database** section, specify the following:
 
@@ -361,7 +360,7 @@ After you have created a dynamic group, you need to create a policy to permit th
        * **Auto scaling:** Select this checkbox. This allows the system to automatically use up to three times more CPU and IO resources to meet the workload demand.
        * **Storage:** **`1`** (TB).
 
-       ![](./images/adb-configure-db.png " ")
+       ![The completed "Configure the database" section is displayed.](./images/adb-configure-db.png " ")
 
        >**Note:** If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
 
@@ -373,29 +372,29 @@ After you have created a dynamic group, you need to create a policy to permit th
        **Important:** Make a note of this _password_ as you will need it to perform later tasks.
        * **Confirm password:** Confirm your password.
 
-       ![](./images/adb-admin-credentials.png " ")
+       ![The completed "Create administrator credentials" section is displayed.](./images/adb-admin-credentials.png " ")
 
 9. In the **Choose network access** section, select the **Secure access from everywhere** access type.     
 
-    ![](./images/adb-network-access.png " ")
+    ![The selected "Secure access from everywhere" option of the "Choose network access" section is displayed and highlighted.](./images/adb-network-access.png " ")
 
 10. In the **Choose a license type** section, accept the default __Bring Your Own License (BYOL)__. Select this type when your organization has existing database licenses.
 
-    ![](./images/adb-license-type.png " ")
+    ![The selected Bring Your Own License (BYOL) option of the "Choose a license type" section is displayed and highlighted. The Create Autonomous Database button is highlighted.](./images/adb-license-type.png " ")
 
 11. Click __Create Autonomous Database__.
 
 12.  The **Autonomous Database Details** page is displayed. The status of your ADB instance is **PROVISIONING**.
 
-    ![](./images/adb-provisioning.png " ")
+    ![The breadcrumbs and PROVISIONING Status on the Autonomous Database Details page are highlighted.](./images/adb-provisioning.png " ")
 
     In a few minutes, the instance status changes to **AVAILABLE**. At this point, your Autonomous Data Warehouse database instance is ready to use! Review your instance's details including its name, database version, OCPU count, and storage size.
 
-    ![](./images/adb-provisioned.png " ")
+    ![The breadcrumbs and AVAILABLE Status on the Autonomous Database Details page are highlighted. The Autonomous Database Information tab displays many details about your provisioned database.](./images/adb-provisioned.png " ")
 
 13. Click the **Autonomous Database** link in the breadcrumbs. The **Autonomous Database** page is displayed. The new Autonomous Database instance is displayed.
 
-    ![](./images/adb-page.png " ")
+    ![The provisioned Autonomous Database instance is displayed on the Autonomous Databases page. The state of the instance is AVAILABLE.](./images/adb-page.png " ")
 
 You may now proceed to the next lab.
 

@@ -52,7 +52,7 @@ This lab assumes you have:
 
 ## Task 1: Creating Tables
 
-Tables are the basic unit of data storage in an Oracle Database. Data is stored in rows and columns. You define a table with a table name, such as employees, and a set of columns. You give each column a column name, such as employee_id, last_name, and job_id; a datatype, such as VARCHAR2, DATE, or NUMBER; and a width. The width can be predetermined by the datatype, as in DATE. If columns are of the NUMBER datatype, define precision and scale instead of width. A row is a collection of column information corresponding to a single record.
+Tables are the basic unit of data storage in an Oracle Database. Data is stored in rows and columns. You define a table with a table name, such as employees, and a set of columns. You give each column a column name, such as employee\_id, last\_name, and job\_id; a datatype, such as VARCHAR2, DATE, or NUMBER; and a width. The width can be predetermined by the datatype, as in DATE. If columns are of the NUMBER datatype, define precision and scale instead of width. A row is a collection of column information corresponding to a single record.
 
 1. You can specify rules for each column of a table. These rules are called integrity constraints. One example is a NOT NULL integrity constraint. This constraint forces the column to contain a value in every row.
 
@@ -68,6 +68,9 @@ Tables are the basic unit of data storage in an Oracle Database. Data is stored 
     );
     </copy>
     ```
+
+
+    ![Create departments table](./images/create-dep-table.png)
 
 2. Tables can declarative specify relationships between tables, typically referred to as referential integrity. To see how this works we can create a "child" table of the DEPARTMENTS table by including a foreign key in the EMPLOYEES table that references the DEPARTMENTS table. For example:
 
@@ -89,7 +92,9 @@ Tables are the basic unit of data storage in an Oracle Database. Data is stored 
     </copy>
     ```
 
-     Foreign keys must reference primary keys, so to create a "child" table the "parent" table must have a primary key for the foreign key to reference.
+    ![Create employees table](./images/create-emp-table.png)
+
+    Foreign keys must reference primary keys, so to create a "child" table the "parent" table must have a primary key for the foreign key to reference.
 
 ## Task 2: Creating Triggers
 
@@ -112,6 +117,8 @@ Triggers are procedures that are stored in the database and are implicitly run, 
     </copy>
     ```
 
+    ![Create departments trigger](./images/create-dep-trigger.png)
+
     ```
     <copy>
     create or replace trigger EMPLOYEES_BIU
@@ -127,6 +134,8 @@ Triggers are procedures that are stored in the database and are implicitly run, 
     </copy>
     ```
 
+    ![Create employees trigger](./images/create-emp-trigger.png)
+
 ## Task 3: Inserting Data
 
 1. Now that we have tables created, and we have triggers to automatically populate our primary keys, we can add data to our tables. Because we have a parent child relationship, with the DEPARTMENTS table as the parent table, and the EMPLOYEES table as the child we will first INSERT a row into the DEPARTMENTS table.
@@ -141,6 +150,8 @@ Triggers are procedures that are stored in the database and are implicitly run, 
     </copy>
     ```
 
+    ![Insert records into departments table](./images/insert-dep-records.png)
+
 2. Lets verify that the insert was successful by running a SQL SELECT statement to query all columns and all rows of our table.
 
     ```
@@ -148,6 +159,8 @@ Triggers are procedures that are stored in the database and are implicitly run, 
     select * from departments;
     </copy>
     ```
+
+    ![Query departments table](./images/query-dep-table.png)
 
 3. You can see that an ID will have been automatically generated. You can now insert into the EMPLOYEES table a new row but you will need to put the generated DEPTID value into your SQL INSERT statement. The examples below show how we can do this using a SQL query, but you could simply enter the department number directly.
 
@@ -182,6 +195,8 @@ Triggers are procedures that are stored in the database and are implicitly run, 
     </copy>
     ```
 
+    ![Insert records into employees table](./images/insert-emp-records.png)
+
 ## Task 4: Indexing Columns
 
 Typically developers index columns for three major reasons:
@@ -204,6 +219,8 @@ Typically developers index columns for three major reasons:
     </copy>
     ```
 
+    ![Dictionary query](./images/dictionary-query.png)
+
 2. It is typically good form to index foreign keys, foreign keys are columns in a table that reference another table. In our EMPLOYEES and DEPARTMENTS table example the DEPTNO column in the EMPLOYEE table references the primary key of the DEPARTMENTS table.
 
     ```
@@ -213,6 +230,8 @@ Typically developers index columns for three major reasons:
     </copy>
     ```
 
+    ![Create index](./images/create-index.png)
+
 3. We may also determine that the EMPLOYEE table will be frequently searched by the NAME column. To improve the performance searches and to ensure uniqueness we can create a unique index on the EMPLOYEE table NAME column.
 
     ```
@@ -221,6 +240,8 @@ Typically developers index columns for three major reasons:
     on employees (name)
     </copy>
     ```
+
+    ![Create unique index](./images/create-unique-index.png)
 
     Oracle provides many other indexing technologies including function based indexes which can index expressions, such as an upper function, text indexes which can index free form text, bitmapped indexes useful in data warehousing. You can also create indexed organized tables, you can use partition indexes and more. Sometimes it is best to have fewer indexes and take advantage of in memory capabilities. All of these topics are beyond the scope of this basic introduction.
 
@@ -233,6 +254,8 @@ Typically developers index columns for three major reasons:
     select * from employees;
     </copy>
     ```
+
+    ![Query employees table](./images/query-emp-table.png)
 
 2. To query data from two related tables you can join the data
 
@@ -248,6 +271,8 @@ Typically developers index columns for three major reasons:
     </copy>
     ```
 
+    ![Join query](./images/join-query.png)
+
 3. As an alternative to a join you can use an inline select to query data.
 
     ```
@@ -262,6 +287,8 @@ Typically developers index columns for three major reasons:
     </copy>
     ```
 
+    ![Inline select query](./images/inline-select-query.png)
+
 ## Task 6: Adding Columns
 
 1. You can add additional columns after you have created your table using the ALTER TABLE ... ADD ... syntax. For example:
@@ -272,6 +299,8 @@ Typically developers index columns for three major reasons:
     add country_code varchar2(2);
     </copy>
     ```
+
+    ![Alter table to add a column](./images/alter-table-add-column.png)
 
 ## Task 7: Querying the Oracle Data Dictionary
 
@@ -285,6 +314,8 @@ Typically developers index columns for three major reasons:
     </copy>
     ```
 
+    ![Query Oracle Data Dictionary](./images/query-data-dictionary.png)
+
     ```
     <copy>
     select column_id, column_name , data_type
@@ -293,6 +324,8 @@ Typically developers index columns for three major reasons:
     order by column_id;
     </copy>
     ```
+
+    ![Query Oracle data dictionary](./images/query-data-dictionary2.png)
 
 ## Task 8: Updating Data
 
@@ -305,6 +338,8 @@ Typically developers index columns for three major reasons:
     </copy>
     ```
 
+    ![Update employees table](./images/update-emp-table.png)
+
 2. The query above will update all rows of the employee table and set the value of country code to US. You can also selectively update just a specific row.
 
     ```
@@ -315,6 +350,8 @@ Typically developers index columns for three major reasons:
     </copy>
     ```
 
+    ![Update employees table](./images/update-emp-table2.png)
+
 3. Lets run a Query to see what our data looks like
 
     ```
@@ -324,6 +361,8 @@ Typically developers index columns for three major reasons:
     order by name;
     </copy>
     ```
+
+    ![Select employees table](./images/select-emp-table.png)
 
 ## Task 9: Aggregate Queries
 
@@ -341,6 +380,8 @@ Typically developers index columns for three major reasons:
     </copy>
     ```
 
+    ![Aggregate query](./images/aggregate-query.png)
+
 ## Task 10: Compressing Data
 
 As your database grows in size to gigabytes or terabytes and beyond, consider using table compression. Table compression saves disk space and reduces memory use in the buffer cache. Table compression can also speed up query execution during reads. There is, however, a cost in CPU overhead for data loading and DML. Table compression is completely transparent to applications. It is especially useful in online analytical processing (OLAP) systems, where there are lengthy read-only operations, but can also be used in online transaction processing (OLTP) systems.
@@ -356,6 +397,8 @@ You specify table compression with the COMPRESS clause of the CREATE TABLE state
     </copy>
     ```
 
+    ![Compress data in both tables](./images/compress-data.png)
+
 ## Task 11: Deleting Data
 
 1. You can delete one or more rows from a table using the DELETE syntax. For example to delete a specific row:
@@ -367,6 +410,8 @@ You specify table compression with the COMPRESS clause of the CREATE TABLE state
     </copy>
     ```
 
+    ![Delete data in employees table](./images/delete-data-emp-table.png)
+
 ## Task 12: Dropping Tables
 
 1. You can drop tables using the SQL DROP command. Dropping a table will remove all of the rows and drop sub-objects including indexes and triggers. The following DROP statements will drop the departments and employees tables. The optional cascade constraints clause will drop remove constraints thus allowing you to drop database tables in any order.
@@ -377,6 +422,8 @@ You specify table compression with the COMPRESS clause of the CREATE TABLE state
     drop table employees cascade constraints;
     </copy>
     ```
+
+    ![Drop both employees and departments tables](./images/drop-tables.png)
 
 ## Task 13: Un-dropping Tables
 
@@ -393,6 +440,8 @@ You specify table compression with the COMPRESS clause of the CREATE TABLE state
     </copy>
     ```
 
+    ![Check if you can undrop the tables](./images/check-undrop-table.png)
+
 2. To undrop tables we use the flashback command, for example:
 
     ```
@@ -405,6 +454,8 @@ You specify table compression with the COMPRESS clause of the CREATE TABLE state
     from employees;
     </copy>
     ```
+
+    ![Undrop both the tables](./images/undrop-tables.png)
 
 ## Learn More
 

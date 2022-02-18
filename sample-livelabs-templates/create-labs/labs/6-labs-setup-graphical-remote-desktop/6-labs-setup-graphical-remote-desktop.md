@@ -55,6 +55,7 @@ Follow steps below to establish a unique static hostname that will be enforced o
     #  --------        ----------           -----------------------------------
     #  Rene Fontcha    02/17/2021           Initial Creation
     #  Rene Fontcha    10/07/2021           Added routine to update livelabs-get_started.sh
+    #  Rene Fontcha    02/11/2022           Added Google Chrome update
     #
     ###############################################################################
 
@@ -65,7 +66,6 @@ Follow steps below to establish a unique static hostname that will be enforced o
     hostnamectl set-hostname <host>.livelabs.oraclevcn.com
 
     # Add static name to /etc/hosts
-    #echo "\$(oci-metadata -g privateIp --value-only | head -1)   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
     echo "\$(oci-metadata -g privateIp |sed -n -e 's/^.*Private IP address: //p')   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
 
     # Update "livelabs-get_started.sh"
@@ -78,6 +78,9 @@ Follow steps below to establish a unique static hostname that will be enforced o
       mv -f livelabs-get_started.sh /usr/local/bin/
       rm -f livelabs-get_started.zip
     fi
+
+    # Update Google Chrome
+    yum update -y google-chrome-stable
 
     EOF
     </copy>
