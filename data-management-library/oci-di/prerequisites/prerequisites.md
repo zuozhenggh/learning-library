@@ -220,7 +220,7 @@ You will create a new user on the Autonomous Data Warehouse and will run a SQL s
 
   ![](./images/create-user-sql.png " ")
 
-9. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/OCI_DI_Workshop_files.zip) to your local directories. Unzip this file.
+9. **Download** the zip file [OCI DI Workshop files.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/OCI_DI_Workshop_files.zip) to your local directories. Unzip this file.
 
 10. In the same SQL worksheet, run the **ADW\_OCIDI\_LiveLabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you will need later in the workshop.
 
