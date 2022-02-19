@@ -381,4 +381,20 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
 - You can import Lab 3 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
 
-- Follow the instructions in the <a href="?lab=creating-rest-sources#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 2 to update the Popular and Search Movies API keys.
+- Once the application is installed, you will need to update the API key for both the Popular Movies and Search Movies regions on the Search Movies page.
+
+- Go to the App Home by clicking on **Edit Application** from the Application Installed success page.
+
+- Click on page **2 - Movie Search**.
+
+- Expand the **Parameters** section under Popular Movies.
+
+    - Click on **api_key**.
+
+    - Under Value, change Type to **Static**.
+
+    - Paste your unique TMDB API key in the **Static Value** text area.
+
+- Follow the same process for the Search Movies **api_key** parameter.
+
+- Click **Save**.

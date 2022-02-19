@@ -186,14 +186,24 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
 - Go to the App Home by clicking on **Edit Application** from the Application Installed success page.
 
-- Click on page **2 - Movie Search**.
+- Click on **Shared Components**.
 
-- Expand the **Parameters** section under Popular Movies.
+- Click on **REST Data Sources**.
 
-    - Click on **api_key**.
+- Click on **Popular Movies**.
 
-    - Paste your unique TMDB API key in the **Static Value** text area.
+- Click the **Parameters** tab at the top of the Popular Movies REST Data Source page.
 
-- Follow the same process for the Search Movies **api_key** parameter.
+    ![](images/rest-source-tabs-edit.png " ")
 
-- Click **Save**.
+- Click the **Edit** icon next to the **api_key** parameter.
+
+    ![](images/parameters-tab-edit.png " ")
+
+    - Within the Edit REST Data Source Parameter dialog, past your unique TMDB API key in the Value text box.
+
+    - Click **Apply Changes** to save and close the dialog.
+
+        ![](images/edit-parameter-edit.png " ")
+
+- Follow the same process for the Search Movies REST source.

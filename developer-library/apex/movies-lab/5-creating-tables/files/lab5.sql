@@ -28,16 +28,16 @@ prompt APPLICATION 38907 - Movies Watchlist
 -- Application Export:
 --   Application:     38907
 --   Name:            Movies Watchlist
---   Date and Time:   22:15 Friday February 18, 2022
+--   Date and Time:   20:00 Friday February 18, 2022
 --   Exported By:     LOW_CODER
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                      5
---       Items:                   34
---       Processes:                8
---       Regions:                 11
---       Buttons:                  6
---       Dynamic Actions:          2
+--       Items:                   27
+--       Processes:                5
+--       Regions:                  8
+--       Buttons:                  2
+--       Dynamic Actions:          1
 --     Shared Components:
 --       Logic:
 --         Items:                  1
@@ -118,7 +118,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'Movies Watchlist'
 ,p_last_updated_by=>'LOW_CODER'
-,p_last_upd_yyyymmddhh24miss=>'20220218221518'
+,p_last_upd_yyyymmddhh24miss=>'20220218195847'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -15682,102 +15682,9 @@ wwv_flow_api.create_page(
 ,p_alias=>'HOME'
 ,p_step_title=>'Movies Watchlist'
 ,p_autocomplete_on_off=>'OFF'
-,p_step_template=>wwv_flow_api.id(25101491220028948420)
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LOW_CODER'
-,p_last_upd_yyyymmddhh24miss=>'20220218221433'
-);
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(10781021293580112916)
-,p_plug_name=>'Watchlist'
-,p_region_template_options=>'#DEFAULT#'
-,p_component_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(25101520219354948445)
-,p_plug_display_sequence=>10
-,p_include_in_reg_disp_sel_yn=>'Y'
-,p_query_type=>'SQL'
-,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select id,',
-'       movie_id,',
-'       user_id,',
-'       watched_yn,',
-'       watched,',
-'       case when watched_yn = ''Y'' then ''Watched'' end as WATCHED_LABEL,',
-'       case when watched_yn = ''Y''',
-'            then ''Marked as watched '' || apex_util.get_since(watched)',
-'            else ''Added to watchlist '' || apex_util.get_since(created)',
-'            end as movie_status,',
-'       title,',
-'       poster_url,',
-'       release_date,',
-'       to_char(release_date, ''YYYY'') as release_year,',
-'       floor( to_char(release_date, ''YYYY'') / 10) * 10 as decade,',
-'       runtime,',
-'       vote_average,',
-'       created,',
-'       to_char(created, ''MM/YYYY'') as created_on,',
-'       created_by,',
-'       updated,',
-'       updated_by',
-'  from watchlist',
-' where user_id = :USER_ID',
-' order by case when :P1_SORT_BY = ''TITLE''  then title else null end,',
-'         case when :P1_SORT_BY = ''RECENT'' then created else null end desc,',
-'         case when :P1_SORT_BY = ''RATING'' then vote_average else null end desc'))
-,p_lazy_loading=>false
-,p_plug_source_type=>'NATIVE_CARDS'
-,p_ajax_items_to_submit=>'P1_SORT_BY'
-,p_plug_query_num_rows_type=>'SCROLL'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_show_total_row_count=>false
-);
-wwv_flow_api.create_card(
- p_id=>wwv_flow_api.id(10781021395279112917)
-,p_region_id=>wwv_flow_api.id(10781021293580112916)
-,p_layout_type=>'ROW'
-,p_title_adv_formatting=>false
-,p_title_column_name=>'TITLE'
-,p_sub_title_adv_formatting=>false
-,p_body_adv_formatting=>true
-,p_body_html_expr=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'Release Year: &RELEASE_YEAR.',
-'<br>',
-'Rating: &VOTE_AVERAGE.'))
-,p_second_body_adv_formatting=>false
-,p_second_body_column_name=>'MOVIE_STATUS'
-,p_badge_column_name=>'WATCHED_LABEL'
-,p_media_adv_formatting=>false
-,p_media_source_type=>'DYNAMIC_URL'
-,p_media_url_column_name=>'POSTER_URL'
-,p_media_display_position=>'BODY'
-,p_media_sizing=>'FIT'
-,p_pk1_column_name=>'ID'
-);
-wwv_flow_api.create_card_action(
- p_id=>wwv_flow_api.id(10781021484103112918)
-,p_card_id=>wwv_flow_api.id(10781021395279112917)
-,p_action_type=>'FULL_CARD'
-,p_display_sequence=>10
-,p_link_target_type=>'REDIRECT_PAGE'
-,p_link_target=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.::P3_ID,P3_PREVIOUS_PAGE_ID:&MOVIE_ID.,1'
-);
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(10781021532868112919)
-,p_plug_name=>'Filter'
-,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(25101517035607948442)
-,p_plug_display_sequence=>20
-,p_include_in_reg_disp_sel_yn=>'Y'
-,p_plug_display_point=>'REGION_POSITION_02'
-,p_plug_source_type=>'NATIVE_FACETED_SEARCH'
-,p_filtered_region_id=>wwv_flow_api.id(10781021293580112916)
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_attribute_01=>'N'
-,p_attribute_06=>'N'
-,p_attribute_09=>'N'
-,p_attribute_12=>'10000'
-,p_attribute_13=>'Y'
-,p_attribute_15=>'10'
+,p_last_upd_yyyymmddhh24miss=>'20210924191737'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(25101648894360948570)
@@ -15807,132 +15714,6 @@ wwv_flow_api.create_page_button(
 ,p_button_redirect_url=>'f?p=&APP_ID.:2:&SESSION.::&DEBUG.:2::'
 ,p_icon_css_classes=>'fa-plus'
 );
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(10781021604725112920)
-,p_name=>'P1_SEARCH'
-,p_item_sequence=>10
-,p_item_plug_id=>wwv_flow_api.id(10781021532868112919)
-,p_prompt=>'Search'
-,p_source=>'TITLE'
-,p_source_type=>'FACET_COLUMN'
-,p_display_as=>'NATIVE_SEARCH'
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'ROW'
-,p_attribute_02=>'FACET'
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(10781021720699112921)
-,p_name=>'P1_WATCHED_YN'
-,p_source_data_type=>'VARCHAR2'
-,p_item_sequence=>20
-,p_item_plug_id=>wwv_flow_api.id(10781021532868112919)
-,p_prompt=>'Watched'
-,p_source=>'WATCHED_YN'
-,p_source_type=>'FACET_COLUMN'
-,p_display_as=>'NATIVE_CHECKBOX'
-,p_lov=>'STATIC2:Yes;Y,No;N'
-,p_item_template_options=>'#DEFAULT#'
-,p_fc_show_label=>true
-,p_fc_collapsible=>false
-,p_fc_compute_counts=>true
-,p_fc_show_counts=>true
-,p_fc_zero_count_entries=>'H'
-,p_fc_show_more_count=>5
-,p_fc_filter_values=>false
-,p_fc_sort_by_top_counts=>true
-,p_fc_show_selected_first=>false
-,p_fc_show_chart=>false
-,p_fc_toggleable=>false
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(10781021936327112923)
-,p_name=>'P1_DECADE'
-,p_source_data_type=>'NUMBER'
-,p_item_sequence=>30
-,p_item_plug_id=>wwv_flow_api.id(10781021532868112919)
-,p_prompt=>'Decade'
-,p_source=>'DECADE'
-,p_source_type=>'FACET_COLUMN'
-,p_display_as=>'NATIVE_CHECKBOX'
-,p_item_template_options=>'#DEFAULT#'
-,p_fc_show_label=>true
-,p_fc_collapsible=>false
-,p_fc_compute_counts=>true
-,p_fc_show_counts=>true
-,p_fc_zero_count_entries=>'H'
-,p_fc_show_more_count=>5
-,p_fc_filter_values=>false
-,p_fc_sort_by_top_counts=>false
-,p_fc_show_selected_first=>false
-,p_fc_show_chart=>false
-,p_fc_toggleable=>false
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(10781022040082112924)
-,p_name=>'P1_RUNTIME'
-,p_source_data_type=>'NUMBER'
-,p_item_sequence=>40
-,p_item_plug_id=>wwv_flow_api.id(10781021532868112919)
-,p_prompt=>'Runtime'
-,p_source=>'RUNTIME'
-,p_source_type=>'FACET_COLUMN'
-,p_display_as=>'NATIVE_RANGE'
-,p_lov=>'STATIC2:Over 3 hours;180|,2 to 3 hours;120|180,90 minutes to 2 hours;90|120,Less than 90 minutes;|90'
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'Y'
-,p_attribute_02=>'N'
-,p_fc_show_label=>true
-,p_fc_collapsible=>false
-,p_fc_compute_counts=>true
-,p_fc_show_counts=>true
-,p_fc_zero_count_entries=>'H'
-,p_fc_show_more_count=>5
-,p_fc_filter_values=>false
-,p_fc_show_selected_first=>false
-,p_fc_show_chart=>false
-,p_fc_toggleable=>false
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(10781022138547112925)
-,p_name=>'P1_VOTE_AVERAGE'
-,p_source_data_type=>'NUMBER'
-,p_item_sequence=>50
-,p_item_plug_id=>wwv_flow_api.id(10781021532868112919)
-,p_prompt=>'Rating'
-,p_source=>'VOTE_AVERAGE'
-,p_source_type=>'FACET_COLUMN'
-,p_display_as=>'NATIVE_RANGE'
-,p_lov=>'STATIC2:Excellent;8|,Great;6|8,Fine;4|6,Bad;|4'
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'Y'
-,p_attribute_02=>'N'
-,p_fc_show_label=>true
-,p_fc_collapsible=>false
-,p_fc_compute_counts=>true
-,p_fc_show_counts=>true
-,p_fc_zero_count_entries=>'H'
-,p_fc_show_more_count=>5
-,p_fc_filter_values=>false
-,p_fc_show_selected_first=>false
-,p_fc_show_chart=>false
-,p_fc_toggleable=>false
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(10781022259641112926)
-,p_name=>'P1_SORT_BY'
-,p_item_sequence=>10
-,p_item_plug_id=>wwv_flow_api.id(10781021293580112916)
-,p_prompt=>'Sort By'
-,p_display_as=>'NATIVE_SELECT_LIST'
-,p_lov=>'STATIC2:Title;TITLE,Rating;RATING,Date Added;RECENT'
-,p_cHeight=>1
-,p_field_template=>wwv_flow_api.id(25101610644847948514)
-,p_item_template_options=>'#DEFAULT#'
-,p_warn_on_unsaved_changes=>'I'
-,p_lov_display_extra=>'YES'
-,p_attribute_01=>'NONE'
-,p_attribute_02=>'N'
-);
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(25280473919498558594)
 ,p_name=>'Refresh on Dialog Closed'
@@ -15950,25 +15731,6 @@ wwv_flow_api.create_page_da_action(
 ,p_execute_on_page_init=>'N'
 ,p_action=>'NATIVE_SUBMIT_PAGE'
 ,p_attribute_02=>'Y'
-);
-wwv_flow_api.create_page_da_event(
- p_id=>wwv_flow_api.id(10781022320419112927)
-,p_name=>'Refresh Watchlist'
-,p_event_sequence=>20
-,p_triggering_element_type=>'ITEM'
-,p_triggering_element=>'P1_SORT_BY'
-,p_bind_type=>'bind'
-,p_bind_event_type=>'change'
-);
-wwv_flow_api.create_page_da_action(
- p_id=>wwv_flow_api.id(10781022400534112928)
-,p_event_id=>wwv_flow_api.id(10781022320419112927)
-,p_event_result=>'TRUE'
-,p_action_sequence=>10
-,p_execute_on_page_init=>'N'
-,p_action=>'NATIVE_REFRESH'
-,p_affected_elements_type=>'REGION'
-,p_affected_region_id=>wwv_flow_api.id(10781021293580112916)
 );
 end;
 /
@@ -16014,7 +15776,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#:ui-dialog--stretch'
 ,p_dialog_attributes=>'close: function(event, ui) {apex.navigation.dialog.close(true,{dialogPageId:&APP_PAGE_ID.});}'
 ,p_last_updated_by=>'LOW_CODER'
-,p_last_upd_yyyymmddhh24miss=>'20220218215547'
+,p_last_upd_yyyymmddhh24miss=>'20220218195847'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(25195932285817809429)
@@ -16038,32 +15800,6 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_location=>'WEB_SOURCE'
 ,p_web_src_module_id=>wwv_flow_api.id(25102038602606019385)
-,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ads.id,',
-'       ads.adult,',
-'       ads.title,',
-'       ads.video,',
-'       ads.overview,',
-'       ads.popularity,',
-'       ads.vote_count,',
-'       ads.poster_path,',
-'       ads.release_date,',
-'       ads.vote_average,',
-'       ads.backdrop_path,',
-'       ads.original_title,',
-'       ads.original_language,',
-'       ads.poster_url,',
-'       case when w.watched_yn = ''Y'' then ''Watched''',
-'            when w.watched_yn = ''N'' then ''Added''',
-'            end as badge_label,',
-'       case when w.watched_yn = ''N'' then ''u-success''',
-'            end as badge_color',
-'  from #APEX$SOURCE_DATA# ads',
-'LEFT OUTER JOIN',
-'    -- doing inline select to limit rows to current user',
-'    (select * from watchlist where user_id = :USER_ID) w',
-'    ON w.movie_id = ads.ID'))
-,p_source_post_processing=>'SQL'
 ,p_lazy_loading=>false
 ,p_plug_source_type=>'NATIVE_CARDS'
 ,p_plug_query_num_rows_type=>'SCROLL'
@@ -16085,8 +15821,6 @@ wwv_flow_api.create_card(
 '<span aria-hidden="true" class="fa fa-star"></span> &VOTE_AVERAGE.</div>'))
 ,p_body_adv_formatting=>false
 ,p_second_body_adv_formatting=>false
-,p_badge_column_name=>'BADGE_LABEL'
-,p_badge_css_classes=>'&BADGE_COLOR.'
 ,p_media_adv_formatting=>false
 ,p_media_source_type=>'DYNAMIC_URL'
 ,p_media_url_column_name=>'POSTER_URL'
@@ -16101,7 +15835,7 @@ wwv_flow_api.create_card_action(
 ,p_action_type=>'FULL_CARD'
 ,p_display_sequence=>10
 ,p_link_target_type=>'REDIRECT_PAGE'
-,p_link_target=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.::P3_ID,P3_PREVIOUS_PAGE_ID:&ID.,2'
+,p_link_target=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.::P3_ID:&ID.'
 );
 wwv_flow_api.create_web_source_comp_param(
  p_id=>wwv_flow_api.id(25280472673426558582)
@@ -16137,32 +15871,6 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_location=>'WEB_SOURCE'
 ,p_web_src_module_id=>wwv_flow_api.id(10781081731074566053)
-,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select ads.id,',
-'       ads.adult,',
-'       ads.title,',
-'       ads.video,',
-'       ads.overview,',
-'       ads.popularity,',
-'       ads.vote_count,',
-'       ads.poster_path,',
-'       ads.release_date,',
-'       ads.vote_average,',
-'       ads.backdrop_path,',
-'       ads.original_title,',
-'       ads.original_language,',
-'       ads.poster_url,',
-'       case when w.watched_yn = ''Y'' then ''Watched''',
-'            when w.watched_yn = ''N'' then ''Added''',
-'            end as badge_label,',
-'       case when w.watched_yn = ''N'' then ''u-success''',
-'            end as badge_color',
-'  from #APEX$SOURCE_DATA# ads',
-'LEFT OUTER JOIN',
-'    -- doing inline select to limit rows to current user',
-'    (select * from watchlist where user_id = :USER_ID) w',
-'    ON w.movie_id = ads.ID'))
-,p_source_post_processing=>'SQL'
 ,p_lazy_loading=>false
 ,p_plug_source_type=>'NATIVE_CARDS'
 ,p_plug_query_num_rows=>25
@@ -16185,8 +15893,6 @@ wwv_flow_api.create_card(
 '<span aria-hidden="true" class="fa fa-star"></span> &VOTE_AVERAGE.</div>'))
 ,p_body_adv_formatting=>false
 ,p_second_body_adv_formatting=>false
-,p_badge_column_name=>'BADGE_LABEL'
-,p_badge_css_classes=>'&BADGE_COLOR.'
 ,p_media_adv_formatting=>false
 ,p_media_source_type=>'DYNAMIC_URL'
 ,p_media_url_column_name=>'POSTER_URL'
@@ -16201,7 +15907,7 @@ wwv_flow_api.create_card_action(
 ,p_action_type=>'FULL_CARD'
 ,p_display_sequence=>10
 ,p_link_target_type=>'REDIRECT_PAGE'
-,p_link_target=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.::P3_ID,P3_PREVIOUS_PAGE_ID:&ID.,2'
+,p_link_target=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.::P3_ID:&ID.'
 );
 wwv_flow_api.create_web_source_comp_param(
  p_id=>wwv_flow_api.id(10781019828063112902)
@@ -16280,19 +15986,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#:ui-dialog--stretch'
 ,p_last_updated_by=>'LOW_CODER'
-,p_last_upd_yyyymmddhh24miss=>'20220218202411'
-);
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(10781020219616112906)
-,p_plug_name=>'Buttons Bar'
-,p_region_template_options=>'#DEFAULT#:t-ButtonRegion--noUI'
-,p_plug_template=>wwv_flow_api.id(25101517992176948443)
-,p_plug_display_sequence=>10
-,p_include_in_reg_disp_sel_yn=>'Y'
-,p_plug_display_point=>'REGION_POSITION_01'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_attribute_01=>'N'
-,p_attribute_02=>'HTML'
+,p_last_upd_yyyymmddhh24miss=>'20210924204001'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(25280474200095558597)
@@ -16314,102 +16008,6 @@ wwv_flow_api.create_web_source_comp_param(
 ,p_page_plug_id=>wwv_flow_api.id(25280474200095558597)
 ,p_value_type=>'ITEM'
 ,p_value=>'P3_ID'
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(10781020417681112908)
-,p_button_sequence=>20
-,p_button_plug_id=>wwv_flow_api.id(10781020219616112906)
-,p_button_name=>'ADD_TO_WATCHLIST'
-,p_button_action=>'SUBMIT'
-,p_button_template_options=>'#DEFAULT#'
-,p_button_template_id=>wwv_flow_api.id(25101613114549948517)
-,p_button_is_hot=>'Y'
-,p_button_image_alt=>'Add To Watchlist'
-,p_button_position=>'NEXT'
-,p_button_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select null',
-'  from watchlist',
-' where movie_id = :P3_ID',
-'   and user_id = :USER_ID'))
-,p_button_condition_type=>'NOT_EXISTS'
-,p_database_action=>'INSERT'
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(10781020588240112909)
-,p_button_sequence=>30
-,p_button_plug_id=>wwv_flow_api.id(10781020219616112906)
-,p_button_name=>'REMOVE_FROM_WATCHLIST'
-,p_button_action=>'SUBMIT'
-,p_button_template_options=>'#DEFAULT#'
-,p_button_template_id=>wwv_flow_api.id(25101613114549948517)
-,p_button_image_alt=>'Remove From Watchlist'
-,p_button_position=>'NEXT'
-,p_button_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select null',
-'  from watchlist',
-' where movie_id = :P3_ID',
-'   and user_id = :USER_ID'))
-,p_button_condition_type=>'EXISTS'
-,p_database_action=>'DELETE'
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(10781020624711112910)
-,p_button_sequence=>40
-,p_button_plug_id=>wwv_flow_api.id(10781020219616112906)
-,p_button_name=>'MARK_WATCHED'
-,p_button_action=>'SUBMIT'
-,p_button_template_options=>'#DEFAULT#'
-,p_button_template_id=>wwv_flow_api.id(25101613114549948517)
-,p_button_is_hot=>'Y'
-,p_button_image_alt=>'I''ve Watched This'
-,p_button_position=>'NEXT'
-,p_button_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select null',
-'  from watchlist',
-' where movie_id =:P3_ID',
-'   and user_id = :USER_ID',
-'   and watched_yn = ''N'''))
-,p_button_condition_type=>'EXISTS'
-,p_database_action=>'UPDATE'
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(10781020318358112907)
-,p_button_sequence=>10
-,p_button_plug_id=>wwv_flow_api.id(10781020219616112906)
-,p_button_name=>'BACK'
-,p_button_action=>'REDIRECT_PAGE'
-,p_button_template_options=>'#DEFAULT#:t-Button--noUI:t-Button--iconLeft'
-,p_button_template_id=>wwv_flow_api.id(25101613205494948518)
-,p_button_image_alt=>'Back'
-,p_button_position=>'PREVIOUS'
-,p_button_redirect_url=>'f?p=&APP_ID.:2:&SESSION.::&DEBUG.:::'
-,p_button_condition=>'P3_PREVIOUS_PAGE_ID'
-,p_button_condition2=>'2'
-,p_button_condition_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
-,p_icon_css_classes=>'fa-chevron-left'
-);
-wwv_flow_api.create_page_branch(
- p_id=>wwv_flow_api.id(10781021052453112914)
-,p_branch_name=>'Redirect to previous page'
-,p_branch_action=>'f?p=&APP_ID.:&P3_PREVIOUS_PAGE_ID.:&SESSION.::&DEBUG.:::&success_msg=#SUCCESS_MSG#'
-,p_branch_point=>'AFTER_PROCESSING'
-,p_branch_type=>'REDIRECT_URL'
-,p_branch_sequence=>10
-);
-wwv_flow_api.create_page_item(
- p_id=>wwv_flow_api.id(10781021120108112915)
-,p_name=>'P3_PREVIOUS_PAGE_ID'
-,p_item_sequence=>240
-,p_item_plug_id=>wwv_flow_api.id(25280474200095558597)
-,p_prompt=>'Previous Page Id'
-,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>30
-,p_field_template=>wwv_flow_api.id(25101610644847948514)
-,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'N'
-,p_attribute_02=>'N'
-,p_attribute_04=>'TEXT'
-,p_attribute_05=>'BOTH'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(25280474433744558599)
@@ -16890,69 +16488,6 @@ wwv_flow_api.create_page_item(
 ,p_attribute_02=>'N'
 ,p_attribute_04=>'TEXT'
 ,p_attribute_05=>'BOTH'
-);
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(10781020736112112911)
-,p_process_sequence=>10
-,p_process_point=>'AFTER_SUBMIT'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'Add to watchlist'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'insert into watchlist',
-'    (',
-'        movie_id,',
-'        user_id,',
-'        watched_yn,',
-'        title,',
-'        poster_url,',
-'        release_date,',
-'        runtime,',
-'        vote_average',
-'    )',
-'values',
-'    (',
-'        :P3_ID,',
-'        :USER_ID,',
-'        ''N'',',
-'        :P3_TITLE,',
-'        :P3_POSTER_URL,',
-'        :P3_RELEASE_DATE,',
-'        :P3_RUNTIME,',
-'        :P3_VOTE_AVERAGE',
-'    );'))
-,p_process_clob_language=>'PLSQL'
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_when_button_id=>wwv_flow_api.id(10781020417681112908)
-);
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(10781020836093112912)
-,p_process_sequence=>20
-,p_process_point=>'AFTER_SUBMIT'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'Remove from watchlist'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'delete from watchlist ',
-' where movie_id = :P3_ID ',
-'   and user_id = :USER_ID;'))
-,p_process_clob_language=>'PLSQL'
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_when_button_id=>wwv_flow_api.id(10781020588240112909)
-);
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(10781020954726112913)
-,p_process_sequence=>30
-,p_process_point=>'AFTER_SUBMIT'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'Update watchlist'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'update watchlist',
-'   set watched_yn = ''Y'',',
-'       watched = SYSDATE',
-' where movie_id = :P3_ID',
-'   and user_id = :USER_ID;'))
-,p_process_clob_language=>'PLSQL'
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_when_button_id=>wwv_flow_api.id(10781020624711112910)
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(25280474269126558598)
