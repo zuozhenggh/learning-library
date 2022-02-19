@@ -81,9 +81,9 @@ This lab assumes you have:
 
 Let's now add data for the Department and Employee business objects. Instead of using the Data Manager to import data, this time you'll use each business object's Data tab to do the same thing.
 
-1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/9GWvQzpqrAMd7Sb6OVygKx0KDlgIVnFPfgEt7Oyzsvr-sj1V0NwIQNQlebrATPzx/n/c4u04/b/oci-library/o/WID-7061/Department.csv) and save the `Department.csv` file to your file system. The file contains six departments.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CSv7IOyvydHG3smC6R5EGtI3gc1vA3t-68MnKgq99ivKAbwNf8BVnXVQ2V3H2ZnM/n/c4u04/b/livelabsfiles/o/solutions-library/Department.csv) and save the `Department.csv` file to your file system. The file contains six departments.
 
-2.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/WpHZn6VKbWaOXBsDi3tGTdnMyCNeS72W-l18eGig8BLN1fnyT1lv-IwrAGLyb5oe/n/c4u04/b/oci-library/o/WID-7061/Employee.csv) and save the `Employee.csv` file to your file system. The file contains nine employees.
+2.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CSv7IOyvydHG3smC6R5EGtI3gc1vA3t-68MnKgq99ivKAbwNf8BVnXVQ2V3H2ZnM/n/c4u04/b/livelabsfiles/o/solutions-library/Employee.csv) and save the `Employee.csv` file to your file system. The file contains nine employees.
 
 3.  In the Navigator, click **Business Objects** ![Business Objects icon](images/bo-icon.png), then **Objects**. The business objects you created are displayed.
 
