@@ -50,7 +50,7 @@ The OCI Container Registry is where your Docker images are managed. A container 
 
     - Locate the following code fragment
 
-    ![](images/CORS-Main.png " ")
+    ![](images/cors-main-new.png " ")
     - Replace `eu-frankfurt-1` in  `"https://objectstorage.eu-frankfurt-1.oraclecloud.com"` with your region
 
     - Save the file
@@ -167,16 +167,16 @@ The setup script already creates an API gateway, but you still need to create th
   ![](images/cors-information.png)
 6. Configure the Headers
 
-    ![](images/Headers.png)
+    ![](images/headers-new.png)
 
 7. Configure the routes: we will define two routes:
     - /todolist for the first two APIs: GET, POST and OPTIONS
 
-        ![](images/Route-1.png)
+        ![](images/route-1-new.png)
 
     - /todolist/{id} for the remaining three APIs: (GET, PUT and DELETE)
 
-        ![](images/Route-2.png)
+        ![](images/route-2-new.png)
 
 
 ## **Task 5**: Testing the Backend Application Through the API Gateway
