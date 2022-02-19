@@ -227,7 +227,7 @@ In this task (in a later step), you will create a connection to your Data Catalo
     ```
     <copy>
     select *
-    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/WCoFAtux8IG4EPHU9TCBrsXbd6EQzqhF3-QVXEqROKeGgsbJPeIJnLZYHMhkiA7I/n/c4u04/b/moviestream_sandbox/o/');
+    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/xLD1tlFfRX2AJSpT1GNaB5S9VHFCrAgnWMbCWyPD43YtEibUDS8UEfzJ8MZBy6D7/n/c4u04/b/moviestream_sandbox/o/');
     </copy>
     ```
 
@@ -361,7 +361,7 @@ In this task (in a later step), you will create a connection to your Data Catalo
     ```
     <copy>
     select *
-    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/WCoFAtux8IG4EPHU9TCBrsXbd6EQzqhF3-QVXEqROKeGgsbJPeIJnLZYHMhkiA7I/n/c4u04/b/moviestream_sandbox/o/');
+    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/xLD1tlFfRX2AJSpT1GNaB5S9VHFCrAgnWMbCWyPD43YtEibUDS8UEfzJ8MZBy6D7/n/c4u04/b/moviestream_sandbox/o/');
     </copy>
     ```
 
