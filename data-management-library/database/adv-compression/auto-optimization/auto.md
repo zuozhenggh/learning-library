@@ -4,7 +4,7 @@
 
 The massive growth in data volume experienced by enterprises introduces significant challenges. Companies must quickly adapt to the changing business landscape without influencing the bottom line. IT managers need to manage their existing infrastructure to control costs efficiently yet deliver extraordinary application performance. Advanced Compression and Oracle Database together provide a robust set of compression, performance, and data storage optimization capabilities that enable IT managers to succeed in this complex environment. Using Advanced Compression, enterprises can efficiently manage their increasing data requirements throughout all components of their data center – minimizing CapEx and OpEx costs while continuing to achieve the highest levels of application performance.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### About Automatic Data Optimization
 

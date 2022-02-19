@@ -5,7 +5,7 @@
 Oracle has been a pioneer in database compression technology. Oracle Database 9i introduced Basic Table Compression several years ago that compressed data loaded using bulk load operations. Oracle Database 11g Release 1 introduced a new OLTP Table Compression feature that allows data to be compressed during all types of data manipulation operations, including conventional DML such as INSERT and UPDATE. In addition, 
 OLTP Table Compression reduces the associated compression overhead of write operations making it suitable for transactional or OLTP environments as well. OLTP Table Compression, therefore, extends the benefits of compression to all application workloads. OLTP Table Compression was renamed to Advanced Row Compression starting with Oracle Database release 12c.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### About OLTP Table Compression
 
