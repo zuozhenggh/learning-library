@@ -227,7 +227,7 @@ In this task (in a later step), you will create a connection to your Data Catalo
     ```
     <copy>
     select *
-    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_sandbox/o/');');
+    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_sandbox/o/');
     </copy>
     ```
 
