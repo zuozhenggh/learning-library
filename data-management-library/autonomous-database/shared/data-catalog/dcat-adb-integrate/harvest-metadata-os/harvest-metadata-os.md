@@ -93,7 +93,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
         ```
         <copy>
-        https://objectstorage.us-ashburn-1.oraclecloud.com/p/WCoFAtux8IG4EPHU9TCBrsXbd6EQzqhF3-QVXEqROKeGgsbJPeIJnLZYHMhkiA7I/n/c4u04/b/moviestream_sandbox/o/
+        https://objectstorage.us-ashburn-1.oraclecloud.com/p/xLD1tlFfRX2AJSpT1GNaB5S9VHFCrAgnWMbCWyPD43YtEibUDS8UEfzJ8MZBy6D7/n/c4u04/b/moviestream_sandbox/o/
         </copy>
         ```  
 
@@ -124,7 +124,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
         ```
         <copy>
-        https://objectstorage.us-ashburn-1.oraclecloud.com/p/vtAnTOoRSGlZ6izqz2XGtRjHpXo8EE_Zu9nVm48YmMCd-Tn8xak_hxHodY8R43Oa/n/c4u04/b/moviestream_landing/o/
+        https://objectstorage.us-ashburn-1.oraclecloud.com/p/SeVa0GpdGi4uQvG6_qKYiyYSMpOhyh3DK9EoejNlk-XUwhrlZ_tgueamXRpyoeci/n/c4u04/b/moviestream_landing/o/
         </copy>
         ```
 
@@ -153,7 +153,7 @@ After you register a data source as a data asset in your data catalog, you creat
     * **Pre-Authenticated Request URL:** Click **Copy** to copy the following URL, and then paste it in this field.
 
         ```
-        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/MsSJaLPX1fiPAdGS_TnW934DGmOMS2AUEA4r3r9KiaPJUmuSdMbSK5PXlywmqT0J/n/c4u04/b/moviestream_gold/o/</copy>
+        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/-TYitQYh4aZiwelE5BgwiNnYfpfgsvdFp4BlUgtY-U4LvgfNFlzY-Ii0bSgGyFR5/n/c4u04/b/moviestream_gold/o/</copy>
         ```
 
     * **Make this the default connection for the data asset:** Leave this checkbox unchecked.
@@ -635,7 +635,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
         ```
         <copy>
-        https://objectstorage.us-ashburn-1.oraclecloud.com/p/WCoFAtux8IG4EPHU9TCBrsXbd6EQzqhF3-QVXEqROKeGgsbJPeIJnLZYHMhkiA7I/n/c4u04/b/moviestream_sandbox/o/
+        https://objectstorage.us-ashburn-1.oraclecloud.com/p/xLD1tlFfRX2AJSpT1GNaB5S9VHFCrAgnWMbCWyPD43YtEibUDS8UEfzJ8MZBy6D7/n/c4u04/b/moviestream_sandbox/o/
         </copy>
         ```  
 
@@ -667,7 +667,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
         ```
         <copy>
-        https://objectstorage.us-ashburn-1.oraclecloud.com/p/vtAnTOoRSGlZ6izqz2XGtRjHpXo8EE_Zu9nVm48YmMCd-Tn8xak_hxHodY8R43Oa/n/c4u04/b/moviestream_landing/o/
+        https://objectstorage.us-ashburn-1.oraclecloud.com/p/SeVa0GpdGi4uQvG6_qKYiyYSMpOhyh3DK9EoejNlk-XUwhrlZ_tgueamXRpyoeci/n/c4u04/b/moviestream_landing/o/
         </copy>
         ```
 
@@ -697,7 +697,7 @@ After you register a data source as a data asset in your data catalog, you creat
     * **Pre-Authenticated Request URL:** Click **Copy** to copy the following URL, and then paste it in this field.    
 
         ```
-        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/MsSJaLPX1fiPAdGS_TnW934DGmOMS2AUEA4r3r9KiaPJUmuSdMbSK5PXlywmqT0J/n/c4u04/b/moviestream_gold/o/</copy>
+        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/-TYitQYh4aZiwelE5BgwiNnYfpfgsvdFp4BlUgtY-U4LvgfNFlzY-Ii0bSgGyFR5/n/c4u04/b/moviestream_gold/o/</copy>
         ```
 
     * **Make this the default connection for the data asset:** Leave this checkbox unchecked.
