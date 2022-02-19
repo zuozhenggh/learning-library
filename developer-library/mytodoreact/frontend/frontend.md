@@ -120,7 +120,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
    Click on your Gateway and go to Deployment
    Copy the Deployment Endpoint
 
-	![](images/api-gtw-deploy.png)
+	![](images/Api-gtw-deploy.png)
 
  - Paste the endpoint as the value of API_LIST and append "/todolist"
 
