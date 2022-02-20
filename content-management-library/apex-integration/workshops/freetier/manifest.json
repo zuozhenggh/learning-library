@@ -16,29 +16,30 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Provision an OCM Instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../lab1-provision/provision.md"
+            "filename": "../../lab1-provision-ocm/provision-ocm.md"
         },
         {
-            "title": "Lab 2: Setup Content Repository",
-            "filename": "../../lab2-repository/repository.md"
+            "title": "Lab 2: Provision & setup APEX",
+            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+            "filename": "../../lab2-provision-apex/setup-apex.md"
         },
         {
-            "title": "Lab 3: Configure Content Capture",
-            "filename": "../../lab3-capture/capture.md"
+            "title": "Lab 3: Setup Content Repository",
+            "filename": "../../lab3-repository/repository.md"
         },
         {
-            "title": "Lab 4: Create Website",
-            "filename": "../../lab4-website/website.md"
+            "title": "Lab 4: Configure Content Capture",
+            "filename": "../../lab4-capture/capture.md"
         },
         {
-            "title": "Lab 5: Setup APEX application",
-            "filename": "../../lab5-setup-apex/apex.md"
+            "title": "Lab 5: Create Website",
+            "filename": "../../lab5-website/website.md"
         },
         {
-            "title": "Lab 6: Configure Single Sign-on",
-            "filename": "../../lab6-security/security.md"
+            "title": "Lab 6: Setup APEX application",
+            "filename": "../../lab6-setup-apex/apex.md"
         },
         {
             "title": "Lab 7: Integrate OCM & APEX",

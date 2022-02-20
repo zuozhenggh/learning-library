@@ -19,13 +19,14 @@ Oracle Content Management is a cloud-based content hub to drive omni-channel con
 
 ### Objectives
 
-* Lab 1: Provision an Instance
-* Lab 2: Setup Content Repository
-* Lab 3: Configure Content Capture
-* Lab 4: Create webiste based on template
-* Lab 5: Setup APEX application
-* Lab 6: Configure Single Sign-on
-* Lab 7: Integrate OCM & APEX
+* Lab 1: Provision an OCM Instance
+* Lab 2: Provision & Setup APEX
+* Lab 3: Setup Content Repository
+* Lab 4: Configure Content Capture
+* Lab 5: Create webiste based on template
+* Lab 6: Setup APEX application
+* Lab 7: Configure Single Sign-on
+* Lab 8: Integrate OCM & APEX
 
 *Note: This lab assumes you are using Oracle APEX 20.2.*
 

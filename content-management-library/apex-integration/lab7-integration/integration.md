@@ -1,83 +1,116 @@
-# Title of the Lab
+# Integrate OCM & APEX
 
 ## Introduction
 
 *Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
 
-Estimated Lab Time: -- minutes
-
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+Estimated Lab Time: 10 minutes
 
 ### Objectives
 
 *List objectives for this lab using the format below*
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Configure Web Credentials
+* Change OCM Endpoint URL
+* Run end-to-end demonstration
 
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
+### Prerequisites 
 
 This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
 
-*This is the "fold" - below items are collapsed by default*
 
-## Task 1: Concise Step Description
+## Task 1: Configure OCM REST API web credentials
 
 (optional) Step 1 opening paragraph.
 
-1. Sub step 1
+1.	Login to APEX and click **App Builder** Icon. Click **Customer Tracker** from the list of application.
 
-	![Image alt text](images/sample1.png)
+2.	Click **Shared Components** icon and then click **Rest Data Source**s under Data source section as shown below
 
-2. Sub step 2
+  ![Datasource Menu](images/ds-menu.png)
 
-  ![Image alt text](images/sample1.png)
+3.	Click **ContractDS** REST data source
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+4.	Click Edit pencil icon as highlighted in below screen
 
-5. Example with bold **text**.
+  ![Datasource Details](images/datasource-details.png)
 
-   If you add another paragraph, add 3 spaces before the line.
+5.	Change value of **Endpoint URL** to your Oracle Content Management Instance URL. (Refer Lab 1 - Task 1.9 for OCM instance URL)
 
-## Task 2: Concise Step Description
+6.	Click **Apply Changes**
 
-1. Sub step 1 - tables sample
+7.	Click **Authentication** tab
+  ![Authentication](images/authentication.png)
 
-  Use tables sparingly:
+8. Click “Edit” pencil icon for “Credentials”
+  Change below attributes
+    * OAuth Scop: https://\<your-OCM-instanceurl>.oraclecloud.com/urn:opc:cec:all
+    * Client ID : Use the Client ID (Refer Lab 1 – Task 2.18)
+    * Client Secret : Use the Client Secret (Refer Lab 1 – Task 2.18)
+    * Valid for URLS: Add your OCM Instance URL (Refer Lab 1 - Task 1.9)
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+9. Click **Apply Changes**
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+10. Click **Edit** pencil icon for **Authentication Server**
+Change below attributes
+    * Endpoint URL : https://\<your-idcs-guid>.identity.oraclecloud.com
+    * *HTTPS Host name : \<your-idcs-guid>.identity.oraclecloud.com (Please do not prefix with http or https)
 
-    - List item 1
-    - List item 2
+11. Click **Apply Changes**
 
-3. Code examples
+## Task 2: Change Embed content URL
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+1.	Login to APEX and click **App Builder** Icon. Click **Customer Tracker** from the list of application.
 
-4. Code examples that include variables
+2.	Use search box and search for **50** as shown below
+  ![Find Page](images/find-page.png)
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+3.	Click “50-Customer” , this will open the page.
+
+4.	Search for “Resource” within page search box as shown below
+
+5.	Click the search result **Region->Assets->Source->Text**
+
+6.	Replace the above highlighted URL above under Source->Text with your Site URL created which was created in Lab 4- Task 3.7
+
+7.	Click “Save” and then run the application.
+
+## Task 3 : Allow Cross Origin Resource Sharing (CORS)
+1. Login to IDCS and Navigate to **Settings** > **Session Settings**
+![IDCS Settings](images/idcs-settings.png)
+2. Enable **Allow Cross-Origin Resource Sharing (CORS)** 
+
+3. Provide APEX instance domain name within **Allowed CORS Domain Names**. For example https://\<your-instance-specific>.**oraclecloudapps.com**
+
+4. Click **Save**
+
+## Task 4: Allow OCM embedding within APEX
+1. Login to OCM & Navigate to **System > Security**
+![Security Navigation](images/security-menu.png)
+
+2. Select Radio option **Enabled**
+
+![Security Settings](images/allow-domain.png)
+
+3. Add domain name of APEX application under **Allowed Domains** .For example https://\<your-instance-specific>.**oraclecloudapps.com**
+
+
+## Task 4: Run end-to-end demonstration.
+
+1.	Login to Customer Tracker application
+
+2.	Click   icon to navigate to dashboard page.
+
+3.	Click the customer name “Café Supremo”
+
+4.	Click “Contract” tab and it should show you available 
+contract documents from OCM as shown below
+
+5.	Click “Resources” tab and it will show you list of content from Site created in previous lab. 
 
 ## Learn More
 
