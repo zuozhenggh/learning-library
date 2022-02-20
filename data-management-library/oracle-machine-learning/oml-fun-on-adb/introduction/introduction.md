@@ -44,6 +44,6 @@ This workshop assumes you have:
 **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page](https://www.oracle.com/cloud/free/faq.html).
 
 ## Acknowledgements
-* **Authors** - Moitreyee Hazarika, Principal User Assistance Developer; Sarika Surampudi, Senior User Assistance Developer; Dhanish Kumar, Member Technical Staff; Suresh Rajan, Senior Manager, Oracle Database User Assistance Development
-* **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning
-* **Last Updated By/Date** - Suresh Rajan, December 2021
+* **Authors** - Moitreyee Hazarika, Principal User Assistance Developer; Sarika Surampudi, Principal User Assistance Developer; Dhanish Kumar, Member Technical Staff; Suresh Rajan, Senior Manager, Oracle Database User Assistance Development
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Consulting Member of Technical Staff, Oracle Machine Learning; Marcos Arancibia Coddou, Senior Principal Product Manager, Machine Learning
+* **Last Updated By/Date** - Suresh Rajan, February 2022

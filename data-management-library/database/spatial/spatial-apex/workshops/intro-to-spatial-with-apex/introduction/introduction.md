@@ -39,7 +39,7 @@ Oracle Spatial is a set of geospatial data management, analysis, and processing 
 
 ## Acknowledgements
 * **Author** - David Lapp, Database Product Management, Oracle
-* **Contributors** - Jayson Hanes, Database Product Management, Oracle
+* **Contributors** - Jayson Hanes, APEX Product Management, Oracle
 * **Last Updated By/Date** - David Lapp, February 2022
 
 
