@@ -23,20 +23,59 @@ In this lab, you will:
 * You are using an Oracle Linux image on your host machine or compute instance for this workshop.
 * Access to the cloud environment and resources configured in Lab 2
 
-## Task 1: Transfer of files to Compute Instance
+## Task 1: Prepare agent software and response file for Management Agent installation
 
-1. The last line in the response file `Service.plugin.jms.download=true` will download and enable the JMS plugin
+Before the set up of the Management Agent, it is important to understand the concepts behind the Java Management Service:
+
+* **Java Management Service (JMS)**: A reporting and management infrastructure integrated with Oracle Cloud Infrastructure Platform services to observe and manage your use of Java SE (on-premise or in the Cloud). It enables you to observe and manage the use of Java in your enterprise.
+
+* **Management Agents**: Can be installed on a host to allow a service plug-in to collect data from the host where you installed the Management Agent. In the case of JMS, the management agent allows the JMS plug-in to collect data about Java Applications, Java Runtimes and Installations from the host which can be either on-premise or in the Cloud. To set up a Management Agent, we will need a **response file**, which contains an **install key**.
+
+* **Install Key**: A token required by the **Management Agent** installation. It authorises the Management Agent to communicate with the Oracle Cloud Infrastructure. You can use a single agent install key for multiple Management Agent installations.
+This key has been automatically created for you in Lab 3, where the "Create New Management Agent Configuration" box was checked during Fleet creation.
+
+  ![image of create fleet options page](/../images/create-fleet.png)
+
+* **Response File**: For Management Agent installation to take place, a response file is also required. In Lab 3, we clicked **Download Install Key** during the creation of our fleet. The file that we downloaded is the response file which contains the install key, as observed in the `ManagementAgentInstallKey` field. The last line of our response file `Service.plugin.jms.download=true` will also download and enable the JMS plugin.
 
   ![image of input rsp file](/../images/input-rsp-updated.png)
 
-2. Open up a **Terminal** or **Command Prompt** window in the local machine where the install key and management agent software file is saved
 
-3. Enter the following command to transfer the install key and management agent software file via scp into the remote host compute instance
+In this lab, we will demonstrate the installation of the Management Agent by first downloading the management agent software, followed by preparing the response file downloaded previously in Lab 3.
+
+ >**Note:** During the preparation and installation process, you may refer to the bottom section on **Troubleshoot Management Agent Installation Issues** for tips on troubleshooting errors.
+
+1. Connect to your instance using SSH.
+
+2. Enter the following command to download the management agent software file via wget into the remote host compute instance.
+
+  ### For **Linux**
+  Download the management agent software using wget:
+
     ```
     <copy>
-    scp <full_path_of_file_to_be_transfered_on_local_host> opc@<public_IP_Address>:<full_path_of_remote_directory_transferred_to>
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/n/idtskf8cjzhp/b/installer/o/Linux-x86_64/latest/oracle.mgmt_agent.rpm
     </copy>
     ```
+
+  ### For **other operating systems**
+  Replace the link with the link for your operating system found on the [official documentation](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html). Under **Download the Agent Software Using a URL**, **right-click** and click **Copy Link Address** to copy the correct link.
+
+  ![image of obtaining link for management agent software](/../images/link-management-agent-software.png)
+
+3. Create an input.rsp response file on your instance. This will be used by the Management Agent installation script to read the agent parameters specific to your environment.
+
+    ```
+    <copy>
+    nano /tmp/input.rsp
+    </copy>
+    ```
+
+    Copy and paste the contents of the previously downloaded response file into the editor, and enter an Agent name under the **AgentDisplayName** field.
+
+    ![image of input rsp file with agent display name](/../images/input-rsp-add-agent-display-name.png " ")
+
+    To save the file, type **CTRL+x**. Before exiting, nano will ask you if you wish to save the file: Type **y** to save and exit, type **n** to abandon your changes and exit.
 
 ## Task 2: Install Management Agent
 
@@ -46,14 +85,13 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 
 1. Login as a user with `sudo` privileges.
 
-2. Navigate to the directory where you have downloaded the management agent software RPM file and run the following command to install the `RPM` file:
+2. Navigate to the directory where you have downloaded the management agent software RPM file and run the following commands to install the `RPM` file:
     ```
     <copy>
-    sudo rpm -ivh <rpm_file_name.rpm>
+    JDK_DIR=$(find /usr/java/ -name "jdk1.8*" -type d)
+    sudo JAVA_HOME="${JDK_DIR}" rpm -ivh <rpm_file_name.rpm>
     </copy>
     ```
-
-  For example: `sudo rpm -ivh oracle.mgmt_agent-<VERSION>.rpm`
 
 3. The output will look similar to the following:
 
@@ -61,29 +99,31 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
     Preparing... ################################# [100%]
 
     Checking pre-requisites
-
-    Checking if any previous agent service exists
+      Checking if any previous agent service exists
       Checking if OS has systemd or initd
       Checking available disk space for agent install
       Checking if /opt/oracle/mgmt_agent directory exists
       Checking if 'mgmt_agent' user exists
-      'mgmt_agent' user already exists, the agent will proceed installation without creating a new one.
+        'mgmt_agent' user already exists, the agent will proceed installation without creating a new one.
       Checking Java version
-      JAVA_HOME is not set. Trying default path
-      Java version: 1.8.0_231 found at /usr/bin/java
-
+        Trying /usr/java/jdk1.8.0_321-amd64
+        Java version: 1.8.0_321 found at /usr/java/jdk1.8.0_321-amd64/bin/java
+      Checking agent version
     Updating / installing...
-        1:oracle.mgmt_agent-<VERSION>202################################# [100%]
+      1:oracle.mgmt_agent-<VERSION>  ################################# [100%]
 
     Executing install
       Unpacking software zip
       Copying files to destination dir (/opt/oracle/mgmt_agent)
       Initializing software from template
+      Checking if JavaScript engine is available to use
       Creating 'mgmt_agent' daemon
-      Agent Install Logs: /opt/oracle/mgmt_agent/installer-logs/installer-log-0
+      Agent Install Logs: /opt/oracle/mgmt_agent/installer-logs/installer.log.0
+
       Setup agent using input response file (run as any user with 'sudo' privileges)
-      Usage:sudo
-      /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=[RESPONSE_FILE]
+      Usage:
+        sudo /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=[FULL_PATH_TO_INPUT.RSP]
+
     Agent install successful
     ```
 
@@ -99,26 +139,40 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 5. Configure the management agent by running the `setup.sh` script using a response file.
     ```
     <copy>
-    sudo /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=<full_path_of_response_file>
+    sudo /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=/tmp/input.rsp
     </copy>
     ```
     Sample output:
     ```
-    sudo /opt/oracle/mgmt_agent/agent_inst/bin/setup.sh opts=<user_home_directory>/input.rsp
-      Executing configure
-      Generating communication wallet
-      Parsing input response file
-      Validating install key
-      Generating security artifacts
-      Registering management agent
-      Configuration Logs: /opt/oracle/mgmt_agent/configure-logs
-      Agent configuration successful
+    Executing configure
 
-      Starting agent...
-      Agent started successfully
-      In future agent can be started by directly running: sudo systemctl start mgmt_agent
-      Please make sure that you delete input.rsp or store it in a secure location.
+    	Parsing input response file
+    	Validating install key
+    	Generating communication wallet
+    	Generating security artifacts
+    	Registering Management Agent
+    		Found service plugin(s): [jms]
+
+    Starting agent...
+    Agent started successfully
+
+    Starting plugin deployment for: [jms]
+    Deploying service plugin(s)...Done.
+    	jms : Successfully deployed service plugin
+
+    Agent setup completed and the agent is running.
+    In the future agent can be started by directly running: sudo systemctl start mgmt_agent
+
+    Please make sure that you delete /tmp/input.rsp or store it in secure location.
     ```
+
+6. Delete the input.rsp file after successful configuration.
+    ```
+    <copy>
+    rm /tmp/input.rsp
+    </copy>
+    ```
+
   **Skip to the next section Task 3** if the Management Agent has been **successfully** installed on a Linux host.
 
   If you would like to install the Management software agent on Windows, continue with the following section **For Windows**.
@@ -242,7 +296,7 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
     ```
 ## Task 5: Check that management agent is tagged with the Fleet OCID
 
-1. In the Oracle Cloud Console, open the navigation menu and click **Observability & Management**, and then click **Java Management**.
+1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
 
   ![image of console navigation to java management service](/../images/console-navigation-jms.png)
 
@@ -268,11 +322,11 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 
   ![image of agents details page](/../images/tagged-mgmt-agent.png)
 
-6. JMS has been linked to the management agent and will collect information on your Java runtimes. As the management agent will scan the instance periodically, the information may not appear immediately. To change the frequency, see steps 9 to 11.
+6. JMS has been linked to the management agent and will collect information on your Java runtimes. As the management agent will scan the instance periodically, the information may not appear immediately. The scanning frequency can also be changed in the Oracle Cloud Console.
 
-7. In the Oracle Cloud Console, open the navigation menu and click **Observability & Management**. Click **Java Management**.
+7. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
 
-  ![image of console navigation to java management](/../images/console-navigation-java-management.png)
+  ![image of console navigation to java management](/../images/console-navigation-jms.png)
 
 8. Select the compartment that the fleet is in and click the fleet.
 
@@ -280,28 +334,86 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 
   ![image of fleet details page](/../images/fleet-details-page-new.png)
 
-10. Change the **Java Runtime Discovery** and **Java Runtime Usage** to the desired value.
+10. Change the **Java Runtime Discovery** and **Java Runtime Usage** to the desired value. For this example, change **Java Runtime Discovery** to **3 hours**, and **Java Runtime Usage** to **5 minutes**.
 
   ![image of modify agent settings page](/../images/fleet-modify-agent-settings-new.png)
 
-11. If tagging and installation of management agents is successful, Java Runtimes will be indicated on the Fleet Main Page.
+## Task 6: Verify detection of Java applications and runtimes
+For the logging of applications to be visible, Java applications must be run again after the installation of the Management Agent. Now that the Management Agent has been set up in your compute instance, it will be able to detect new Java applications that have been executed. This can be observed in the Oracle Cloud Console.
+
+We shall demonstrate the detection of the Java compiler and HelloWorld application created in Lab 2.
+1. First, re-compile the HelloWorld.java file:
+
+    ```
+    <copy>
+    javac HelloWorld.java
+    </copy>
+    ```
+
+    Then execute the HelloWorld application:
+
+    ```
+    <copy>
+    java HelloWorld
+    </copy>
+    ```
+
+2. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**.
+
+  ![image of console navigation to java management](/../images/console-navigation-jms.png)
+
+3. Select the compartment that the fleet is in and click the fleet.
+
+4. Click **Java Runtimes** under **Resources**. If tagging and installation of management agents is successful, Java Runtimes will be indicated on the Fleet Main Page after 5 minutes.
+
+  You should see only one Java Runtime. This corresponds to the Java 8 installation from Lab 2.
 
   ![image of successful installation](/../images/successful-installation.png)
 
+12. Click **Applications** under **Resources**. You should now see two applications. The first is from the javac compiler command and the second is from the HelloWorld application.
+
+  ![image of applications after successful installation](/../images/successful-installation-applications.png)
+
+  You may now **proceed to the next lab.**
+
 ## Troubleshoot Management Agent Installation Issues
+
+**For Task 1**
+* If you are unable to download the management agent software using `wget`, you may download the software from the Oracle Cloud Console to your local machine and transfer it over to your compute using Secure Copy Protocol (SCP).
+
+* First, open the navigation menu, click **Observability & Management**, and then click **Fleets** under **Java Management**. Select the fleet that you have created.
+  ![image of console navigation to java management service](/../images/console-navigation-jms.png)
+
+* Click **Set Up Management Agent**.
+  ![image of fleet details page](/../images/fleet-details-page.png)
+* Click **Download management agent software**.
+  ![image of set up management agent page](/../images/fleet-set-up-management-agent.png)
+* Open up a **Terminal** or **Command Prompt** window in the local machine where the management agent software file is saved.
+* Enter the following command to transfer the management agent software file via scp into the remote host compute instance.
+
+    ```
+    <copy>
+    scp <full_path_of_file_to_be_transferred_on_local_host> opc@<public_IP_Address>:<full_path_of_remote_directory_transferred_to>
+    </copy>
+    ```
+  * In your compute instance, verify that the file transfer is successful by entering the following. You should see your management agent software file.
+    ```
+    <copy>
+    ls
+    </copy>
+    ```
 
 **For Task 2**
 
-* Ensure that /usr/share folder has write permissions
-* Uninstall and reinstall the management agent after permissions for the /usr/share folder have been updated
+* Ensure that /usr/share folder has write permissions.
+* Uninstall and reinstall the management agent after permissions for the /usr/share folder have been updated.
 
 **For Task 3**
 
-* Transfer the response file to /tmp folder where read permissions are allowed
+* Transfer the response file to /tmp folder where read permissions are allowed.
 
 ## Want to Learn More?
-
-* Refer to the [Installation of Management Agents](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html) and
+* Refer to the [Management Agent Concepts](https://docs.oracle.com/en-us/iaas/management-agents/doc/you-begin.html), [Installation of Management Agents](https://docs.oracle.com/en-us/iaas/management-agents/doc/install-management-agent-chapter.html) and
 [JMS Plugin for Management Agents](https://docs.oracle.com/en-us/iaas/jms/doc/installing-management-agent-java-management-service.html) sections of the JMS documentation for more details.
 
 * Use the [Troubleshooting](https://docs.oracle.com/en-us/iaas/jms/doc/troubleshooting.html#GUID-2D613C72-10F3-4905-A306-4F2673FB1CD3) chapter for explanations on how to diagnose and resolve common problems encountered when installing or using Java Management Service.
@@ -311,4 +423,4 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 ## Acknowledgements
 
 * **Author** - Esther Neoh, Java Management Service
-* **Last Updated By** - Esther Neoh, November 2021
+* **Last Updated By** - Xin Yi Tay, February 2022
