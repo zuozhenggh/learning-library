@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Remove Oracle Database 21c From Your Host System",
+  "workshoptitle": "DBA Essentials - Remove Oracle Database 21c from your host system",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -8,8 +8,8 @@
       "filename": "../../intro-deinstall/intro-deinstall.md"
     },
     {
-      "title": "Using noVNC Remote Desktop",
-      "description": "Using noVNC Remote Desktop",
+      "title": "Use noVNC Remote Desktop",
+      "description": "Use noVNC Remote Desktop",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {

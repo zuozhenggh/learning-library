@@ -11,7 +11,12 @@
             "title": "How do I create a new database user?",
             "description": "",
             "filename": "../sprint-create-user/sprint-create-user.md"
+        },
+        {
+          "title": "How do I drop a database user?",
+          "description": "",
+          "filename": "../sprint-drop-user/sprint-drop-user.md"
         }
-    
+
     ]
 }

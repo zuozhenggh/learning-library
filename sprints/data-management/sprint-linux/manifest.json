@@ -1,0 +1,13 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How do you connect to different Oracle databases that are installed in a same Linux server?",
+            "description": "",
+            "filename": "sprint-linux.md"
+        }
+
+
+    ]
+}

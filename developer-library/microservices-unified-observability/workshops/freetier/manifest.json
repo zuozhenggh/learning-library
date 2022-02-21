@@ -20,8 +20,8 @@
         "type": "event-freetier"
       },
       {
-        "title": "Lab 3: Enable Observability with Database Metrics, Logs Exporters",
-        "filename": "../../../microservices-with-converged-db/observability/observability.md",
+        "title": "Lab 3: Unified Observability",
+        "filename": "../../observability/observability.md",
         "type": "event-freetier"
       },
       {
