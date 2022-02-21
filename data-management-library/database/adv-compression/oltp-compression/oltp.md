@@ -54,7 +54,7 @@ This lab assumes you have:
       </copy>
       ```  
 
-      ![Image alt text](images/emp-table.png "View EMP Table Compression")
+      ![View EMP Table Compression](images/emp-table.png "View EMP Table Compression")
 
 ## Task 2: SecureFiles LOB Deduplication
 
@@ -88,7 +88,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/images.png "User ILM Policies")
+      ![User ILM Policies](images/images.png "User ILM Policies")
  
 ## Task 3: SecureFiles LOB Compression
 

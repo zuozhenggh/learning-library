@@ -84,7 +84,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/user-index.png "User Index")
+      ![User Index](images/user-index.png "User Index")
 
 ## Task 2: Create Materialized View  
 
@@ -104,7 +104,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/materialized-view.png "materialized view")  
+      ![materialized view](images/materialized-view.png "materialized view")  
 
 ## Task 3: Cleanup
 

@@ -69,7 +69,7 @@ This lab assumes you have:
     </copy>
     ```
 
-    ![Image alt text](images/user-ilmpolicies.png "User ILM Policies")
+    ![User ILM Policies](images/user-ilmpolicies.png "User ILM Policies")
 
  
 ## Task 2: Cleanup
