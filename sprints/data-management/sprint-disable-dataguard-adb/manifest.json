@@ -10,7 +10,22 @@
         {
           "title": "How to enable Data Guard for an ADB instance?",
           "description": "",
-          "filename": "../sprint-enable-dataguard-adb/sprint-enable-dataguard-adb.md
+          "filename": "../sprint-enable-dataguard-adb/sprint-enable-dataguard-adb.md"
+        },
+        {
+          "title": "How to add a standby database?",
+          "description": "",
+          "filename": "../sprint-add-standby-adb/sprint-add-standby-adb.md"
+        },
+        {
+          "title": "How to manually failover to a standby database?",
+          "description": "",
+          "filename": "../sprint-manual-failover-adb/sprint-manual-failover-adb.md"
+        },
+        {
+          "title": "How to switchover to a standby database?",
+          "description": "",
+          "filename": "../sprint-switchover-adb/sprint-switchover-adb.md"
         }
     ]
 }

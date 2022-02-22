@@ -44,7 +44,7 @@ If you prefer you can simply **import** the notebook and then execute each parag
    Note the download location. 
 
 	```
-	<copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/t51ZRZZCaEDUD9dehr6legEN9nKGpZGVgtzHZPnBhl0RistNzBJnck_fQCSTQr_h/n/c4u04/b/data-management-library-files/o/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb</copy>
+	<copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb</copy>
 	```
 
 

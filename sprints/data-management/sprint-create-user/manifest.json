@@ -11,7 +11,11 @@
             "title": "How can I grant common privileges to individual database users?",
             "description": "",
             "filename": "../sprint-grant-privileges/sprint-grant-privileges.md"
+        },
+        {
+          "title": "How do I drop a database user?",
+          "description": "",
+          "filename": "../sprint-drop-user/sprint-drop-user.md"
         }
-    
     ]
 }

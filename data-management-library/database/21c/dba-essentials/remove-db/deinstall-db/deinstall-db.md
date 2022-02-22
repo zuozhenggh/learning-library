@@ -10,16 +10,15 @@ Estimated Time: 10 minutes
 
 Remove the Oracle Database software, delete Oracle Database, and remove Oracle home from your host system using the *deinstall* command.
 
-**Note:** If you have any user data in Oracle base or Oracle home locations, then `deinstall` deletes this data. Move your data and files outside Oracle base and Oracle home before running `deinstall`.  
+> **Note:** If you have any user data in Oracle base or Oracle home locations, then `deinstall` deletes this data. Move your data and files outside Oracle base and Oracle home before running `deinstall`.  
 
 ### Prerequisites
 This lab assumes you have -
-- A Free Tier, Paid or LiveLabs Oracle Cloud account.
+- An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
 - Oracle Database 21c installed and configured.
 - Completed all previous labs successfully.
 
-
-## Task 1: Remove Oracle Database
+## **Task 1:** Remove Oracle Database
 
 To remove Oracle Database from your host system, do the following. 
 
@@ -28,20 +27,20 @@ To remove Oracle Database from your host system, do the following. 
 2.  Change the current working directory to `$ORACLE_HOME/deinstall`. This is the directory where `deinstall` is located.  
 
     ```
-	$ cd /u01/app/oracle/product/21.0.0/dbhome_1/deinstall
+	$ <copy>cd /u01/app/oracle/product/21.0.0/dbhome_1/deinstall</copy>
 	```
 
-	**Note:** Do not shut down the Oracle Database or stop any database processes before running `deinstall`.
+	> **Note:** Do not shut down the Oracle Database or stop any database processes before running `deinstall`.
 
 3.  Start the Oracle Database deinstallation process with this command.  
 
     ```
-	$ ./deinstall
+	$ <copy>./deinstall</copy>
 	```
 
-    **Note:** For every step, `deinstall` displays the default input values in brackets \[\]. You can either specify the values manually or press **Enter** to leave the default values and proceed. 
+    > **Note:** For every step, `deinstall` displays the default input values in brackets \[\]. You can either specify the values manually or press **Enter** to leave the default values and proceed. 
 
-	## Output
+	Output:
 
     ```
     Checking for required files and bootstrapping ...
@@ -81,7 +80,7 @@ To remove Oracle Database from your host system, do the following. 
 
     Press **Enter** to remove the current listener.
 
-	## Output
+	Output:
 
     ```
     Network Configuration check config END
@@ -93,7 +92,7 @@ To remove Oracle Database from your host system, do the following. 
 
 5.  If you have multiple Database Instances in your Oracle home, then you can either delete specific database instances or remove all instances together using `deinstall`.   
 
-    **Note:** To enter specific instance names that you want to delete, use comma as the separator. To remove all the instances, press **Enter**.
+    > **Note:** To enter specific instance names that you want to delete, use comma as the separator. To remove all the instances, press **Enter**.
 
     ```
 	Use comma as separator when specifying list of values as input
@@ -102,7 +101,7 @@ To remove Oracle Database from your host system, do the following. 
 
     For this lab, press **Enter** to remove the default single instance database.
 
-	## Output
+	Output:
 
     ```
 	###### For Database 'orcl' ###### Single Instance Database The diagnostic destination location of the database: /u01/app/oracle/diag/rdbms/orcl Storage type used by the Database: FS Database file location: /u01/app/oracle/oradata/ORCL,/u01/app/oracle/recovery_area/ORCL Fast recovery area location: /u01/app/oracle/recovery_area/ORCL database spfile location: /u01/app/oracle/dbs/spfileorcl.ora
@@ -115,11 +114,11 @@ To remove Oracle Database from your host system, do the following. 
 	Do you still want to modify the details of orcl database(s)? [n]: **Enter**
 	```
 
-    **Note:** If you enter `y` in this prompt, `deinstall` allows you to specify the details of your Oracle Database. You can manually enter each detail, such as the type of database, the diagnostic destination location, the storage type, the fast recovery area location, the spfile location, whether Archive Mode is enabled, and so on.  
+    > **Note:** If you enter `y` in this prompt, `deinstall` allows you to specify the details of your Oracle Database. You can manually enter each detail, such as the type of database, the diagnostic destination location, the storage type, the fast recovery area location, the spfile location, whether Archive Mode is enabled, and so on.  
 
     For this lab, press **Enter** to select the default value and `deinstall` automatically discovers the details of your Oracle Database.
 
-	## Output
+	Output:
 
     ```
     Database Check Configuration END
@@ -139,16 +138,16 @@ To remove Oracle Database from your host system, do the following. 
 7.  The `deinstall` command prompts you to confirm removing your Oracle Database. 
 
     ```
-    Do you want to continue (y - yes, n - no)? [n]:
+    Do you want to continue (y - yes, n - no)? [n]: y
     ```
 
-    Enter *y* to initiate the removal process.
+    Enter ***y*** to initiate the removal process.
 
-	**Note:** The default value is **n** which means no. If you directly press Enter or specify **n** here, then `deinstall` exits without removing the Oracle Database.   
+	> **Note:** The default value is **n** which means no. If you directly press Enter or specify **n** here, then `deinstall` exits without removing the Oracle Database.   
 
     The deconfiguration clean operation creates log files and completes removing the database.
 
-	## Output
+	Output:
 
     ```
     A log of this session will be written to: '/tmp/deinstall2021-06-27_09-52-56AM/logs/deinstall_deconfig2021-06-27_09-53-03-AM.out'
@@ -219,7 +218,7 @@ To remove Oracle Database from your host system, do the following. 
 
     The above message confirms that you have completed the deinstallation and deleted Oracle Database from your host. You can close the terminal window.
 
-**Note:** The `deinstall` command deletes Oracle Database configuration files, user data, and fast recovery area (FRA) files even if they are located outside of the Oracle base directory path.
+> **Note:** The `deinstall` command deletes Oracle Database configuration files, user data, and fast recovery area (FRA) files even if they are located outside of the Oracle base directory path.
 
 You have successfully completed this workshop on *Oracle Database 21c Deinstallation*. 
 
@@ -231,4 +230,4 @@ In this workshop, you have learned how to remove the database software, delete O
 
 - **Contributors** - Subrahmanyam Kodavaluru, Suresh Rajan, Prakash Jashnani, Malai Stalin, Subhash Chandra, Dharma Sirnapalli
 
-- **Last Updated By/Date** - Manish Garodia, January 2022
+- **Last Updated By/Date** - Manish Garodia, February 2022
