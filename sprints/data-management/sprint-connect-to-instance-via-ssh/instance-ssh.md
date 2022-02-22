@@ -6,7 +6,6 @@
 Remove brackets when writing out IP Address. 
 Example: ssh -i .ssh/test opc@132.226.31.189
 
-![Image alt text](images/terminal.png)
 
 
 
@@ -14,5 +13,5 @@ Example: ssh -i .ssh/test opc@132.226.31.189
 
 ## Acknowledgements
 * **Author** - Thea Lazarova, Solution Engineer Santa Monica
-* **Contributors** -  Andrew Hong, Solution Engineer Santa Monica
+
 
