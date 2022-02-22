@@ -13,21 +13,29 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
+            "title": "Lab 1: Setup the environment",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "filename": "../../1-labs-setup-environment/setup-environment.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 2: Create a function",
+            "filename": "../../2-labs-create-function/create-function.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 3: Prepare data sources",
+            "filename": "../../3-labs-prepare-data-sources/prepare-data-sources.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 4: Design ETL data flows in OCI DI",
+            "filename": "../../4-labs-design-oci-di-data-flows/develop-oci-di-flows.md"
+        },
+        {
+            "title": "Lab 5: Provision your Oracle Analytics(OAC) instance",
+            "filename": "../../5-labs-provision-oac/provisioning-oac.md"
+        },
+        {
+            "title": "Lab 6: Visualize the data in OAC",
+            "filename": "../../6-labs-visualize-the-data/visualize-the-data.md"
         },
         {
             "title": "Need Help?",

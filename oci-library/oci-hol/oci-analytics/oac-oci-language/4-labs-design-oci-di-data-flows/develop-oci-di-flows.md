@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to create the components necessary to create a data flow like the one shown in the graph below. In order to create source and target components, first we need to create a set of “data assets”. The data assets represent each of the elements in the diagram. We’ll start by creating the data asset for the source, and then the target.
 
- ![Data Flow](./images/odidataflow.png " ")
+   ![Data Flow](./images/odidataflow.png " ")
 
 Estimated Time: 90 minutes
 
@@ -50,7 +50,7 @@ This lab assumes you have:
 
 4.	Test the connection and **Create** the data asset.
 
-Repeat the same steps for your “staging” bucket location (if it is different). Currently the name of the data asset for the staging location needs to be capitalized.
+   Repeat the same steps for your “staging” bucket location (if it is different). Currently the name of the data asset for the staging location needs to be capitalized.
 
 
 ## **Task 2**: Create a data asset for your target
@@ -62,7 +62,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 2.	Navigate to the compartment where you created the workspace and select your workspace.
 
 3.	On your workspace **Home** page, click **Create Data Asset** from the **Quick Actions** tile.
-You can also click **Open** tab (plus icon) in the tab bar and select **Data Assets**, then click **Create Data Asset**.
+   You can also click **Open** tab (plus icon) in the tab bar and select **Data Assets**, then click **Create Data Asset**.
 
 4.	On the **Create Data Asset** page, for **General Information**, set the following:
     - **Name**: Data_Warehouse (You can use alphanumeric characters, hyphens, periods, and underscores only).
@@ -86,19 +86,23 @@ You can also click **Open** tab (plus icon) in the tab bar and select **Data Ass
 
 ## **Task 3**: Create the Data flow
 
-To create a data flow, first you need to create a project in Data Integration. To create a project and a data flow:
+  To create a data flow, first you need to create a project in Data Integration. To create a project and a data flow:
 
 1.	On your workspace **Home** page, click **Projects**. You can also click **Open** tab (plus icon) in the tab bar and select **Projects**.
+
 2.	On the Projects page, click **Create Project**.
+
 3.	On the **Create Project** page, enter “language-lab” for **Name**, and then click **Create**.
 
-Now we will create a data flow to ingest data the hotels review file we just ingested.
+   Now we will create a data flow to ingest data the hotels review file we just ingested.
 4.	On the **language-lab** project details page, click **Data Flows** in the submenu on the left.
-5.	Click **Create Data Flow**. The data flow designer opens in a new tab.
-6.	In the **Properties** panel, for **Name**, enter lab-data-flow, and click **Create**.
-The designer remains open for you to continue editing.
 
-Add a data source:
+5.	Click **Create Data Flow**. The data flow designer opens in a new tab.
+
+6.	In the **Properties** panel, for **Name**, enter lab-data-flow, and click **Create**.
+   The designer remains open for you to continue editing.
+
+   Add a data source:
 7.	Add a Source by dragging the **Source** icon into the data flow workspace area. Select the source you just added and navigate to the **Details** tab in the Properties pane.
 
 8.	Fill the properties as follows:
@@ -128,7 +132,7 @@ Add a data source:
     ![Verify Expression](./images/expression1.png " ")
 
 
-Now we will connect the function you created in **Lab 2** to extract the aspect level sentiment from the review text.
+   Now we will connect the function you created in **Lab 2** to extract the aspect level sentiment from the review text.
 
 14.	From the operators toolbar, drag the Function (fn) operator into the canvas, and connect the output of your expression as the input into the function.
 
@@ -156,7 +160,7 @@ Now we will connect the function you created in **Lab 2** to extract the aspect 
 
     ![Function Mapping](./images/functionmapping.png " ")
 
-Now we will map the output of the sentiment analysis to the Data Warehouse Table we created for this purpose during **Lab 3**
+   Now we will map the output of the sentiment analysis to the Data Warehouse Table we created for this purpose during **Lab 3**
 
 19.	From the operator’s toolbar, drag the **Target** operator into the canvas, and connect the output of your sentiment function as the input into the target operator.
 
@@ -175,14 +179,14 @@ Now we will map the output of the sentiment analysis to the Data Warehouse Table
 
 22.	Now we need to do a mapping exercise again, mapping the output of the function to the right fields in the target database table.
 
-  Make sure the fields are mapped as follows:
+    Make sure the fields are mapped as follows:
 
      ![Function Mapping](./images/functionmapping2.png " ")
 
 
-When you are done with your data flow it will look something like this:
+   When you are done with your data flow it will look something like this:
 
-  ![Create Task](./images/completedataflow.png " ")
+   ![Create Task](./images/completedataflow.png " ")
 
 
 ## **Task 4**: Run the Data Flow
@@ -222,6 +226,6 @@ This concludes this lab. You may now **proceed to the next lab**.
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering
+* **Contributors** -  Luis Cabrera-Cordon, Senior Director, AI Services
 * **Last Updated By/Date** - <Name, Month Year>

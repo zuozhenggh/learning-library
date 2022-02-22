@@ -66,7 +66,7 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
     <copy>
     allow service dataintegration to use virtual-network-family in compartment oac-compartment
     </copy>
-    ```    
+    ```
     ```
     <copy>
     allow group <oac-developers> to use object-family in compartment oac-compartment
@@ -82,7 +82,7 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
 5.	Once you have created an API gateway (**Task 3** in the lab) and Functions (**Lab 2**), you will also need to set the following policies:
 
     ```
-    <copy>allow any-user to use functions-family in compartment <functions-oac-compartment> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '**api-gateway-compartment-OCID**'}</copy>
+    <copy>allow any-user to use functions-family in compartment <functions-oac-compartment> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<api-gateway-compartment-OCID>'}</copy>
     ```
     where **functions-oac-compartment** is the name of your compartment and **compartment-OCID** is OCID # of the compartment.
 
@@ -90,17 +90,17 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
 
     ```
     <copy>
-    allow any-user to read buckets in compartment **oac-compartment** where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘**data-integration-workspace-ocid**‘, request.operation = 'GetBucket'}
+    allow any-user to read buckets in compartment <oac-compartment> where ALL {request.principal.type = 'disworkspace', request.principal.id = 'data-integration-workspace-ocid', request.operation = 'GetBucket'}
     </copy>
     ```
     ```
     <copy>
-    allow any-user to manage objects in compartment **oac-compartment** where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘**data-integration-workspace-ocid**‘}
+    allow any-user to manage objects in compartment <oac-compartment> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<data-integration-workspace-ocid>'}
     </copy>
     ```
     ```
     <copy>
-    allow any-user to manage buckets in compartment **oac-compartment** where ALL {request.principal.type = 'disworkspace', request.principal.id = ‘**data-integration-workspace-ocid**‘, request.permission =   'PAR_MANAGE'}
+    allow any-user to manage buckets in compartment <oac-compartment> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<data-integration-workspace-ocid>', request.permission = 'PAR_MANAGE'}
     </copy>
     ```
 
@@ -200,5 +200,5 @@ This concludes this lab. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering
-* **Contributors** -  <Name, Group> -- optional
+* **Contributors** -  Luis Cabrera-Cordon, Senior Director, AI Services
 * **Last Updated By/Date** - <Name, Month Year>

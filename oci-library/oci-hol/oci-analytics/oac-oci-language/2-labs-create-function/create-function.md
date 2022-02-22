@@ -344,6 +344,6 @@ This concludes this lab. You may now **proceed to the next lab**.
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering
+* **Contributors** -  Luis Cabrera-Cordon, Senior Director, AI Services
 * **Last Updated By/Date** - <Name, Month Year>

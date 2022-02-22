@@ -94,9 +94,7 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 	Run the following script as shown in the image below:
 
-		CREATE USER USER1 IDENTIFIED BY "<enter user1 password here>";
-		GRANT DWROLE TO USER1;
-		ALTER USER USER1 QUOTA 200M ON DATA;
+	    <copy>CREATE USER USER1 IDENTIFIED BY "<enter user1 password here>";GRANT DWROLE TO USER1;ALTER USER USER1 QUOTA 200M ON DATA;</copy>
 
    ![Create User](./images/createadw6.png " ")
 
@@ -107,10 +105,11 @@ Whilst we are in the Database Actions dashboard, we will create 2 Tables
 
 1.	A table to store the extracted aspects and related entities
 2.	A table to store the raw reviews
-Follow the scripts below.
+Follow the scripts below:
+
   **Create Raw Reviews Table**
 
-			CREATE TABLE USER1.REVIEWS
+			<copy>CREATE TABLE USER1.REVIEWS
 			("RECORD_ID" INT,
 			"HOTEL_ID" VARCHAR2(200 BYTE),
 			"HOTEL_NAME" VARCHAR2(200 BYTE),
@@ -124,12 +123,12 @@ Follow the scripts below.
 			STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
 				PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
 				BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-				TABLESPACE "LANGUAGE";
+				TABLESPACE "LANGUAGE";</copy>
 
 
   **Create Sentiment Table**
 
-		  CREATE TABLE USER1.SENTIMENT
+		  <copy>CREATE TABLE USER1.SENTIMENT
 	 	  ("RECORD_ID" INT,
 		  "HOTEL_NAME" VARCHAR2(200 BYTE),
 		  "ASPECT" VARCHAR2(200 BYTE),
@@ -142,13 +141,13 @@ Follow the scripts below.
 		  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
 			  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
 			  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-			  TABLESPACE "LANGUAGE";
+			  TABLESPACE "LANGUAGE";<copy>
 
 This concludes this lab. You may now **proceed to the next lab**.
 
 ## Learn More
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
+* **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering
+* **Contributors** -  Luis Cabrera-Cordon, Senior Director, AI Services
 * **Last Updated By/Date** - <Name, Month Year>
