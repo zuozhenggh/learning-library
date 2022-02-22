@@ -1,0 +1,13 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How do you create a managed SSH session?",
+            "description": "",
+            "filename": "sprint-how-do-you-create-a-managed-ssh-session.md"
+        }
+
+
+    ]
+}

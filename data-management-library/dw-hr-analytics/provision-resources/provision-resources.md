@@ -52,7 +52,7 @@ In order to provision an analytics cloud instance as part of a **Resource Manage
 
     ![](./images/1.7.png " ")
 
-**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/4FXNyecLtd_AfukXGOiSM1tU8w1GBzVPqwHJngsr2kNOMPuMejDi4-9P-uFHg-vr/n/c4u04/b/data-management-library-files/o/dw-hr-analytics/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
+**Note:** You may follow the video [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/mdw%20-%20idcs.mp4), if you are unsure of the steps above.
 
 8. You may now close the Identity Cloud Service Console.
 
