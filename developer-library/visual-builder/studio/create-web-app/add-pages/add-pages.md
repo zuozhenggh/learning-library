@@ -51,11 +51,11 @@ Let's create a table to display your departments on the `main-start` page. The T
 
     Quick Starts walk you through complex processes and help build the basics of your application quickly; in this task, we'll use the Add Data Quick Start to connect your table to the Department business object's data. The Quick Start wizard will prompt you to select your data source, select the fields from the business object that you want to show in your table, and filter data (which we won't do here).
 
-7.  On the Quick Start's Locate Data page, select **Department** under Business Objects, then click **Next**.  
+7.  On the Locate Data step of the Add Data wizard, select **Department** under Business Objects, then click **Next**.  
 
     ![](images/department-add-data.png " ")
 
-8.  On the Bind Data page, under item\[i\], select **id** and **name** (in that order). These two fields will show as columns in your Departments table.  
+8.  On the Bind Data step, under item\[i\], select **id** and **name** (in that order). These two fields will show as columns in your Departments table.  
 
     ![](images/department-add-data-selectfields.png " ")
 
@@ -63,7 +63,7 @@ Let's create a table to display your departments on the `main-start` page. The T
 
     ![](images/department-add-data-selectitemfields.png " ")
 
-10.  On the Define Query page, click **Finish**.  
+10.  On the Define Query step, click **Finish**.  
 
     A Departments table with three empty columns is displayed on the `main-start` page. Notice that the second Name column (which maps to the location name field) shows simply as Name because that's what we set for the Display Field when we created the Location reference.
 
@@ -84,8 +84,8 @@ Let's create a table to display your departments on the `main-start` page. The T
 Now that we have a way to show departments, we'll add a Create page that lets users create new departments. With the help of the Add Create Page Quick Start, we'll connect to our data source, the Department business object, and select the fields that we want the user to provide values for.
 
 1.  With the Departments table on the `main-start` page selected, click **Quick Start**, then click **Add Create Page**.
-2.  On the Select Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**.
-3.  On the Page Detail page, select **location** (**name** is already selected because it's a required field). Name and Location are the only fields the user needs to specify to create a department.
+2.  On the Select Endpoint step of the Add Create Page wizard, select **Department** under Business Objects (if necessary) and click **Next**.
+3.  On the Page Detail step, select **location** (**name** is already selected because it's a required field). Name and Location are the only fields the user needs to specify to create a department.
 
    ![](images/department-add-create.png " ")
 4.  Leave the Button label and other fields set to their default values. Click **Finish**.
@@ -145,7 +145,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
 6.  Select **Table** in the pop-up menu (the second Table option, not Table Dynamic) to open the Add Data quick start.  This quick start is similar to the one you used before to create the departments table, except that you don't need to associate a data source.
 
-7.  On the Bind Data page, select **id**, **name**, **hireDate**, and **email** under item\[i\]. The columns appear in the order selected; if you want to change the order, drag a **Handle** icon ![Handle icon](images/handle-icon.png) to reorder the columns as desired.
+7.  On the Bind Data step of the Add Data wizard, select **id**, **name**, **hireDate**, and **email** under item\[i\]. The columns appear in the order selected; if you want to change the order, drag a **Handle** icon ![Handle icon](images/handle-icon.png) to reorder the columns as desired.
 
     ![](images/employees-add-data-1.png " ")
 
@@ -153,7 +153,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![](images/employees-add-data-2.png " ")
 
-9.  On the Define Query page, click **Finish**.
+9.  On the Define Query step, click **Finish**.
 
     An empty Employees table is displayed. If all the fields don't show, resize the table to see all fields.
 
@@ -172,8 +172,8 @@ We'll now create a page to display employees, similar to the one you created to 
 Add a Create page that lets your users create new employees.
 
 1.  With the table selected on the `main-employees` page, click the **Quick Start** tab in the Properties pane, then click **Add Create Page**.
-2.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
-3.  On the Page Detail page, select **hireDate**, **email**, and **department**, in that order (**name** is already selected because it's a required field).
+2.  On the Select Endpoint step of the Add Create Page wizard, select **Employee** under Business Objects (if necessary) and click **Next**.
+3.  On the Page Detail step, select **hireDate**, **email**, and **department**, in that order (**name** is already selected because it's a required field).
 4.  Leave the Button label field and other fields set to their default values. Click **Finish**.
 
     ![](images/employees-add-create.png " ")
