@@ -508,7 +508,7 @@ If you already launched the workshop and logged in to the Console using the inst
 
     >**Note:** Bookmark the **Launch Access the Data Lake using Autonomous Database and Data Catalog Workshop** page for quicker access. You will refer to the resources listed on this page several time in this workshop.
 
-## Task 2: Create, Import, and Edit a Glossary
+## Task 2: Create and Import a Glossary
 
 In this task, you create a new and empty business glossary in your Data Catalog instance. Next, you import an existing glossary that you will download to your local file system into the new glossary. A business glossary is a managed vocabulary of business terms and concepts that can be used across your department or organization. A business glossary is organized in the hierarchy of categories, sub categories, and terms. Business concepts are common across teams or departments in an organization. When such common concepts are managed and organized formally through a business glossary, the teams within an organization are enabled to collaborate better and use the same vocabulary. For detailed information on using business glossaries, see [Using Business Glossaries](https://docs.oracle.com/en-us/iaas/data-catalog/using/enrich-business-glossary.htm) in the _Oracle Cloud Infrastructure_ documentation.
 
@@ -546,28 +546,27 @@ In this task, you create a new and empty business glossary in your Data Catalog 
 
    ![On the "Glossary: MovieStream Application" details page, the Import button is highlighted.](./images/click-import.png " ")
 
-7. Click the following link to download a previously exported glossary named [moviestream-application.xlsx](files/moviestream-application.xlsx?download=1).
+7. Click **Import**. A **Note** message box is displayed indicating that some rich text formatting might be modified or lost on import. Click **Proceed**.
 
+8. In the **Open** dialog box for your local system, copy and enter the following URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Make sure that the **Custom Files (.csv; .xlsx)** type is selected in the second drop-down field, and then click Open.
 
-8. Click **Import**. A **Note** message box is displayed indicating that some rich text formatting might be modified or lost on import. Click **Proceed**.
+    ```
+    <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_scripts/o/dcat/MovieStream%20ApplicationExport.xlsx</copy>
+    ```
 
-9. In the **Open** dialog box for your local system, navigate to your local folder where you downloaded the **`moviestream-application.xlsx`** glossary and select it. The file is displayed in the **File name** field. Make sure that the **Custom Files (*.csv;\*.xlsx)** type is selected in the second drop-down field, and then click **Open**.
+    ![The populated File name text field and Open button are highlighted.](./images/specify-url.png " ")
 
-
-    ![On the Open dialog box in MS-Windows, the local Downloads folder is highlighted. The Filename field shows the selected .xlsx glossary file in this folder. The Open button is highlighted.](./images/open-dialog.png " ")
-
-
-10. An import job is triggered and an "Initiated MovieStream Application import job" message is displayed. You can click the **View Job** link in the message to view the details of this job. When the job is completed successfully, the contents of the Excel file are imported into your glossary.
+9. An import job is triggered and an "Initiated MovieStream Application import job" message is displayed. You can click the **View Job** link in the message to view the details of this job. When the job is completed successfully, the contents of the Excel file are imported into your glossary.
 
     ![The Summary tab of the imported glossary displays the glossary details. In the Glossary Hierarchy pane on the left, the Refresh glossary link and MovieStream Application name link are highlighted.](./images/glossary-imported.png " ")
 
-11. The imported glossary is displayed in the **Glossary Hierarchy** pane on the left. You can also click **Expand all** to view all of the details. The children of the **MovieStream Application** glossary are displayed. If the glossary details are not displayed, click **Refresh glossary**.
+10. The imported glossary is displayed in the **Glossary Hierarchy** pane on the left. You can also click **Expand all** to view all of the details. The children of the **MovieStream Application** glossary are displayed. If the glossary details are not displayed, click **Refresh glossary**.
 
    ![In the Glossary Hierarchy pane, the Expand all and MovieStream Application name link are highlighted. The MovieStream Application is expanded to show some of its immediate children and descendants.](./images/expand-all.png " ")
 
     >**Note:** The categories and terms created within a glossary are displayed in the **Glossary Hierarchy** tree navigation list. Expand each category to view terms created within that category. The summary information changes as you click different nodes in the glossary tree. You can use Expand All or Collapse All to expand or collapse all the nodes available in the glossary respectively. You can also use the search bar to search for categories and terms. If the glossary children are not displayed, click **Refresh glossary**.
 
-12. Close the **Glossaries** and **MovieStream Application** tabs. The Data Catalog instance **Home** tab is re-displayed. The added glossary is reflected in the highlighted Glossary link.
+11. Close the **Glossaries** and **MovieStream Application** tabs. The Data Catalog instance **Home** tab is re-displayed. The added glossary is reflected in the highlighted Glossary link.
 
     ![The highlighted Glossary(1) link is highlighted.](./images/home-tab.png " ")
 
