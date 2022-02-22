@@ -29,9 +29,9 @@ Let's create a table to display your departments on the `main-start` page. The T
 1.  Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png) in the Navigator.
 2.  If necessary, expand the **hrwebapp** and **main** nodes, then click **main-start**, the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the **main-start** tab just below the header.) You're viewing the Page Designer.
 
-    You may want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
+    Click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Let's give this `main-start` page a title. Click `main` on the page canvas—notice how the Bind Text component that contains this title text is selected in the Structure view.
+3.  Let's give this `main-start` page a title. Click `main` on the page canvas—notice how the Bind Text component that contains this title text is selected in the Structure view. (If you're having trouble selecting the component, you'll need to expand the canvas area to better view its elements.)
 
     ![](images/department-heading.png " ")
 
@@ -143,7 +143,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![](images/data-palette-employee-object-table.png " ")
 
-6.  Select **Table** in the pop-up menu to open the Add Data quick start. This quick start is similar to the one you used before to create the departments table, except that you don't need to associate a data source.
+6.  Select **Table** in the pop-up menu (the second Table option, not Table Dynamic) to open the Add Data quick start.  This quick start is similar to the one you used before to create the departments table, except that you don't need to associate a data source.
 
 7.  On the Bind Data page, select **id**, **name**, **hireDate**, and **email** under item\[i\]. The columns appear in the order selected; if you want to change the order, drag a **Handle** icon ![Handle icon](images/handle-icon.png) to reorder the columns as desired.
 
