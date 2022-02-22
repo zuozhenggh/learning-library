@@ -29,10 +29,10 @@ An Edit page lets you edit a row in your table. In this task, you'll add a page 
 
     ![](images/departments-add-edit-quick-start.png " ")
 
-3.  On the Select Read Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the Department object's read endpoint.
-4.  On the Select Update Endpoint page, select **Department** under Business Objects again (if necessary) and click **Next**. As with the read endpoint, VB Studio will automatically select the Department object's update endpoint.
+3.  On the Select Read Endpoint step of the Add Edit Page wizard, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the Department object's read endpoint.
+4.  On the Select Update Endpoint step, select **Department** under Business Objects again (if necessary) and click **Next**. As with the read endpoint, VB Studio will automatically select the Department object's update endpoint.
 
-5.  On the Page Details page, select **location** (**name** is already selected). Click **Finish**.
+5.  On the Page Details step, select **location** (**name** is already selected). Click **Finish**.
 
     An **Edit Department** button is displayed in the toolbar on the `main-departments` page. The button is inactive.
 
@@ -41,8 +41,8 @@ An Edit page lets you edit a row in your table. In this task, you'll add a page 
 A Detail page lets you view additional details of a row in your table. In this task, you'll add a page for users to see more information about each of your departments.
 
 1.  In the Quick Start menu, click **Add Detail Page**.
-2.  On the Select Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the endpoint to read a single record.
-3.  On the Page Details page, select **name**. Expand the **locationObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **name**. With this selection, both the department's name and location will show as additional details for the user. Change the **Button label** field to `View Department Detail`. Click **Finish**.
+2.  On the Select Endpoint step of the Add Details Page wizard, select **Department** under Business Objects (if necessary) and click **Next**. VB Studio will automatically select the endpoint to read a single record.
+3.  On the Page Details step, select **name**. Expand the **locationObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **name**. With this selection, both the department's name and location will show as additional details for the user. Change the **Button label** field to `View Department Detail`. Click **Finish**.
 
    ![](images/department-add-detail-page-fields.png " ")
 
@@ -56,7 +56,7 @@ A Detail page lets you view additional details of a row in your table. In this t
 A Delete button lets you delete a selected row in your table. In this task, you'll add a delete button to remove a department if you wanted.
 
 1.  Return to the **main-departments** page. Click **Quick Start** if necessary, and click **Add Delete Action**.
-2.  On the Select Endpoint page (the only page of the Quick Start), select **Department** under Business Objects (if necessary) and click **Finish**. As with other quick starts, the endpoint to delete a record will be automatically selected.
+2.  On the Select Endpoint step (the only step of the Add Delete Action wizard), select **Department** under Business Objects (if necessary) and click **Finish**. As with other quick starts, the endpoint to delete a record will be automatically selected.
 
     A **Delete Department** button is displayed in the toolbar on the `main-departments` page. The button is inactive.
 
@@ -89,9 +89,9 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 1.  Go to the **main-employees** page, click **Page Designer**, and select the **Table** component.
 2.  Click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
-3.  On the Select Read Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
-4.  On the Select Update Endpoint page, again select **Employee** under Business Objects (if necessary) and click **Next**.
-5.  On the Page Details page, select **hireDate**, **email**, and **department** (**name** is already selected) and click **Finish**.
+3.  On the Select Read Endpoint step of the Add Edit Page wizard, select **Employee** under Business Objects (if necessary) and click **Next**.
+4.  On the Select Update Endpoint step, again select **Employee** under Business Objects (if necessary) and click **Next**.
+5.  On the Page Details step, select **hireDate**, **email**, and **department** (**name** is already selected) and click **Finish**.
 
     An **Edit Employee** button is displayed in the toolbar on the `main-employees` page. The button is inactive.
 
@@ -103,13 +103,13 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 1.  Go to the **main-employees** page. Click the table, then **Quick Start** in the Properties pane.
 2.  In the Quick Start menu, click **Add Detail Page**.
-3.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
-4.  On the Page Details page, select **name**, **hireDate**, and **email**. Expand the **departmentObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **name**. Change the **Button label** field to `View Employee Detail`, then click **Finish**.
+3.  On the Select Endpoint step of the Add Detail Page wizard, select **Employee** under Business Objects (if necessary) and click **Next**.
+4.  On the Page Details step, select **name**, **hireDate**, and **email**. Expand the **departmentObject** and **items** nodes (expand **item\[i\]** if it isn't already expanded) and select **name**. Change the **Button label** field to `View Employee Detail`, then click **Finish**.
 
     A **View Employee Detail** button is displayed in the toolbar on the `main-employees` page. The button is inactive.
 
 5.  Now click **Add Delete Action** in the Quick Start menu.
-6.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Finish**.
+6.  On the Select Endpoint step of the Add Delete Action wizard, select **Employee** under Business Objects (if necessary) and click **Finish**.
 
     A **Delete Employee** button is displayed in the toolbar on the `main-employees` page. The button is inactive.
 
