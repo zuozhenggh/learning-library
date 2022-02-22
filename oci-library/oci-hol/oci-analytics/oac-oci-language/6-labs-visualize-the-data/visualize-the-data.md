@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to visualize and analyze the extracted data of the reviews using Oracle Analytics Cloud.
 
-Estimated Lab Time: 90 minutes
+Estimated Time: 90 minutes
 
 ### Objectives
 
@@ -20,7 +20,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Create a Connection to Autonomous Data warehouse
+## **Task 1**: Create a Connection to Autonomous Data warehouse
 
 
 1.	Sign into Oracle Analytics Cloud.
@@ -34,7 +34,7 @@ This lab assumes you have:
 4.	Enter the credentials to the data warehouse (target database) you created in **Lab 3**. If you need a reminder on how to get the wallet, See [Download a Wallet](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/adbconnecting.htm#access)
 
 
-## Task 2: Create a new Dataset
+## **Task 2**: Create a new Dataset
 
 1.	Navigate to **Homepage** > **Create** > **Dataset**
 
@@ -53,7 +53,7 @@ This lab assumes you have:
 
 
 
-## Task 3: Create the Visualization
+## **Task 3**: Create the Visualization
 
 In this task we'll create workbook to visualize the insights from our sentiment data.
 
@@ -92,6 +92,7 @@ In this task we'll create workbook to visualize the insights from our sentiment 
 
 ![Visual1](./images/visual1.png " ")
 
+This concludes this **workshop**
 
 ## Learn More
 

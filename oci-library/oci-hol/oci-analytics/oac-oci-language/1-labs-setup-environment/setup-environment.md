@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to prepare your OCI Environment to be able to carry all the next steps needed to create a function, create data pipelines, run OCI Language Service as well as visualize your data in OAC.
 
-Estimated Lab Time: 90 minutes
+Estimated Time: 90 minutes
 
 ### Objectives
 
@@ -22,7 +22,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Setup the Policies
+## **Task 1**: Setup Policies
 
 Talk to your Administrator and make sure you can: Create VCN Networks, Function, API Gateways, use AI Services (Language) and Data Integration.
 
@@ -105,7 +105,7 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
     ```
 
 
-## Task 2: Create VCN with the right access levels
+## **Task 2**: Create VCN with the right access levels
 
 We will create a virtual cloud network that will serve as the home for our serverless function and the API gateway we will create.
 
@@ -138,7 +138,7 @@ The API Gateway communicates on port 443, which is not open by default. You must
     See [Documentation](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks/apigatewaycreatingpolicies.htm) for more details.
 
 
-## Task 3: Create an API Gateway
+## **Task 3**: Create an API Gateway
 
 An API Gateway allows you to aggregate all the functions you created into a single end-point that can be consumed by your customers.
 
@@ -159,7 +159,7 @@ When the new API gateway has been created, it is shown as Active in the list on 
 See [Documentantion](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks/apigatewaycreatinggateway.htm) for more details.
 
 
-## Task 4: Confirm access to OCI Language Services
+## **Task 4**: Confirm access to OCI Language Services
 This step ensures you are able to access OCI Language Service.
 
 Policy Pre-requisites
@@ -193,6 +193,7 @@ Get familiar with the Language AI Service
 
 We need to call the endpoint from Python code (or using some other SDK). In **Lab 2** we will write a couple of functions that will call OCI Language Service.
 
+This concludes this lab. You may now **proceed to the next lab**.
 
 ## Learn More
 

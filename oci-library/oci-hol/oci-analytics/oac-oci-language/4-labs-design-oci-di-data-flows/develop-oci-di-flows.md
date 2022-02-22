@@ -6,7 +6,7 @@ This lab walks you through the steps to create the components necessary to creat
 
  ![Data Flow](./images/odidataflow.png " ")
 
-Estimated Lab Time: 90 minutes
+Estimated Time: 90 minutes
 
 ### Objectives
 
@@ -31,7 +31,7 @@ This lab assumes you have:
 
 
 
-## Task 1: Create a data asset for your source and staging data
+## **Task 1**: Create a data asset for your source and staging data
 
 1.	From the Console, click **Analytics & AI** > **Data Integration**, and navigate to the workspace you just created.
 
@@ -53,7 +53,7 @@ This lab assumes you have:
 Repeat the same steps for your “staging” bucket location (if it is different). Currently the name of the data asset for the staging location needs to be capitalized.
 
 
-## Task 2: Create a data asset for your target
+## **Task 2**: Create a data asset for your target
 
 In Data Integration, we need to create a data asset for the data warehouse we just created. Once we transform, enrich and analyze your data, we will save the structured data to a set of tables in the autonomous data warehouse.
 
@@ -84,7 +84,7 @@ You can also click **Open** tab (plus icon) in the tab bar and select **Data Ass
 
 7.	Assuming your test was successful, click **Create**.
 
-## Task 3: Create the Data flow
+## **Task 3**: Create the Data flow
 
 To create a data flow, first you need to create a project in Data Integration. To create a project and a data flow:
 
@@ -185,7 +185,7 @@ When you are done with your data flow it will look something like this:
   ![Create Task](./images/completedataflow.png " ")
 
 
-## Task 4: Run the Data Flow
+## **Task 4**: Run the Data Flow
 
 Now we need to execute the data flow. The process is as follows.
 
@@ -216,7 +216,7 @@ Now we need to execute the data flow. The process is as follows.
 
     ![Validate Database](./images/validatedatabase.png " ")
 
-
+This concludes this lab. You may now **proceed to the next lab**.
 
 ## Learn More
 

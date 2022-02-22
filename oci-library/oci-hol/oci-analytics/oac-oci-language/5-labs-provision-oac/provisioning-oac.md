@@ -12,12 +12,12 @@ Watch our short video that explains how to provision your Oracle Analytics Cloud
 
 [](youtube:ZAqXlhivQCg)
 
-Estimated workshop Time 15 minutes.
+Estimated Time 15 minutes.
 
 ### Objectives
 - Create an Oracle Analytics Cloud Instance
 
-## Task 1: Create an Oracle Analytics Cloud (OAC) Instance
+## **Task 1**: Create an Oracle Analytics Cloud (OAC) Instance
 
 Return to the Oracle Cloud Infrastructure Console accessing from **Oracle Home Page** (oracle.com) and sign in into your cloud account.
 Click in **View Account** and **Sign in to Cloud**.
@@ -33,15 +33,15 @@ Click in **View Account** and **Sign in to Cloud**.
     Complete the form using the following information:
 
     - **Compartment**: Select a valid compartment in your tenancy
-    
+
     - **Instance Name**: `WORKSHOPADWOAC`
-    
+
     - **Description**: &lt;optional&gt;
-    
+
     - **Feature Set**: Enterprise Analytics (important)
-    
+
     - **Capacity**: 1 - Non Production
-    
+
     - **License Type**: "Subscribe to a new Analytics Cloud software > license and the Analytics Cloud." (You will use this service as part of the free Oracle Cloud trial that you requested for this workshop).
 
 3. Select **Create**.
@@ -60,6 +60,7 @@ Click in **View Account** and **Sign in to Cloud**.
 
     ![OAC Instance Active](./images/lab200_8.png)
 
+This concludes this lab. You may now **proceed to the next lab**.
 
 ## **Acknowledgements**
 

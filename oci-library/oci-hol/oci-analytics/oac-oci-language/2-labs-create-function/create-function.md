@@ -4,7 +4,7 @@
 
 This lab walks you through the process of creating a serverless function that will only run on demand. The function will conform to the schema required to be consumed by Oracle Data Integrate. The serverless function will call an AI service (OCI Language in this case).
 
-Estimated Lab Time: 120 minutes
+Estimated Time: 120 minutes
 
 
 ### Objectives
@@ -22,7 +22,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Background
+## **Task 1**: Background
 
 Currently, OCI Language works on a single record at a time, as shown in the example below:
 
@@ -133,7 +133,7 @@ Since we need to integrate the OCI Language service through an Oracle Function, 
 3.	Aggregate the output of each call into a shape that Data Integrate can receive.
 (optional) Step 1 opening paragraph.
 
-## Task 2: Create an Application
+## **Task 2**: Create an Application
 
 In order to add a function, first we need to create an **Application**.
 1.	Go to cloud console (cloud.oracle.com) and navigate to **Developer Services** > **Applications**
@@ -164,7 +164,7 @@ Set up CLI so that it can deploy functions to the right compartment and containe
 
    ![Login Docker](./images/dockerlogin.png " ")
 
-## Task 3: Create a Sentiment Function
+## **Task 3**: Create a Sentiment Function
 
 We will now create the function in the application. The function will do sentiment analysis on the input. The input will conform to the format that OCI Data Integration will generate (base 64 encoded jason lines).The fastest way to set things up is to have the system generate a **python template** for us that then we will modify.
 
@@ -254,7 +254,7 @@ We will now create the function in the application. The function will do sentime
 
 
 
-## Task 4: Deploy the Function
+## **Task 4**: Deploy the Function
 
 Once you have edited the files in **Task 3**, deploy the function to your application , by running this cloud shell command. If successful you can see it listed under Functions in your Application
 
@@ -262,7 +262,7 @@ Once you have edited the files in **Task 3**, deploy the function to your applic
 
   ![Login Docker](./images/deployfunction.png " ")
 
-## Task 5: Invoke the Function
+## **Task 5**: Invoke the Function
 
 1.	Test the function by calling the command below. Make sure to replace **app-name** for the name of your application:
 
@@ -279,7 +279,7 @@ Once you have edited the files in **Task 3**, deploy the function to your applic
 		![Container Registry](images/registry.png)
 
 
-## Task 6: Connect the Function to API Gateway
+## **Task 6**: Connect the Function to API Gateway
 
 We need to map your newly created function to an API endpoint that is accessible externally such as Postman.
 
@@ -337,6 +337,8 @@ We need to map your newly created function to an API endpoint that is accessible
 		```
 	    <copy>ALLOW any-user to use functions-family in compartment <functions-compartment-name> where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '<api-gateway-compartment-OCID>'}</copy>
 	    ```
+
+This concludes this lab. You may now **proceed to the next lab**.
 
 ## Learn More
 

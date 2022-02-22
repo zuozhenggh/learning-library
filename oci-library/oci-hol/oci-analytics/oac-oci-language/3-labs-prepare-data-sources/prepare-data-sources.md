@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to prepare the sample data that will be used to perform sentiment analysis, in this case a set of hotel reviews.We will also create the buckets and databases to save the processed data.
 
-Estimated Lab Time: 60 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -22,7 +22,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Create Object Storage Bucket
+## **Task 1**: Create Object Storage Bucket
 
 In this task we'll create 2 buckets one for storing source file with reviews and the other for staging. The staging bucket is a 'location' that OCI Data Integration needs to dump intermediate files before publishing data to a data warehouse
 
@@ -39,7 +39,7 @@ In this task we'll create 2 buckets one for storing source file with reviews and
    ![](./images/introduction.png " ")
 
 
-## Task 2: Download and Upload Sample Data
+## **Task 2**: Download and Upload Sample Data
 
 For this exercise, we will assume that you have a set of customer reviews for a set of hotels.
 
@@ -58,7 +58,7 @@ For this exercise, we will assume that you have a set of customer reviews for a 
 6.	Click **Upload**, and then click **Close**.
 
 
-## Task 3: Prepare Target Database
+## **Task 3**: Prepare Target Database
 
 In this task we'll create and configure your target Autonomous Data Warehouse database to add a schema and a table.
 
@@ -101,15 +101,14 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
    ![Create User](./images/createadw6.png " ")
 
 
-## Task 4: Create Tables to Store Output Data
+## **Task 4**: Create Tables to Store Output Data
 
-Whilst we are in the Database Actions dashboard, we will create 3 Tables
+Whilst we are in the Database Actions dashboard, we will create 2 Tables
 
-1.	A table to store the extracted entities
-2.	A table to store the extracted aspects and related entities
-3.	A table to store the raw reviews
+1.	A table to store the extracted aspects and related entities
+2.	A table to store the raw reviews
 Follow the scripts below.
-**Create Raw Reviews Table**
+  **Create Raw Reviews Table**
 
 			CREATE TABLE USER1.REVIEWS
 			("RECORD_ID" INT,
@@ -127,40 +126,25 @@ Follow the scripts below.
 				BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
 				TABLESPACE "LANGUAGE";
 
-**Create Extracted Entities Table**
 
-		CREATE TABLE USER1.ENTITIES
-		("RECORD_ID" INT,
-		"HOTEL_NAME" VARCHAR2(200 BYTE),
-		"ENTITY" VARCHAR2(200 BYTE),
-		"TYPE" VARCHAR2(200 BYTE),
-		"OFFSET" INT,
-		"LENGTH" INT
-		) SEGMENT CREATION IMMEDIATE
-		PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
-		NOCOMPRESS LOGGING
-		STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-			PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-			BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-			TABLESPACE "LANGUAGE";
+  **Create Sentiment Table**
 
-**Create Sentiment Table**
+		  CREATE TABLE USER1.SENTIMENT
+	 	  ("RECORD_ID" INT,
+		  "HOTEL_NAME" VARCHAR2(200 BYTE),
+		  "ASPECT" VARCHAR2(200 BYTE),
+		  "SENTIMENT" VARCHAR2(200 BYTE),
+		  "OFFSET" INT,
+		  "LENGTH" INT
+		  ) SEGMENT CREATION IMMEDIATE
+		  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
+ 		  NOCOMPRESS LOGGING
+		  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+			  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+			  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+			  TABLESPACE "LANGUAGE";
 
-		CREATE TABLE USER1.SENTIMENT
-	 	("RECORD_ID" INT,
-		"HOTEL_NAME" VARCHAR2(200 BYTE),
-		"ASPECT" VARCHAR2(200 BYTE),
-		"SENTIMENT" VARCHAR2(200 BYTE),
-		"OFFSET" INT,
-		"LENGTH" INT
-		) SEGMENT CREATION IMMEDIATE
-		PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255
- 		NOCOMPRESS LOGGING
-		STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-			PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-			BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-			TABLESPACE "LANGUAGE";
-
+This concludes this lab. You may now **proceed to the next lab**.
 
 ## Learn More
 

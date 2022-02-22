@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to visualize and analyze the extracted data of the reviews using Oracle Analytics Cloud.
 
-Estimated Lab Time: 90 minutes
+Estimated Time: 90 minutes
 
 ### Objectives
 
@@ -20,7 +20,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Create a Connection to Autonomous Data warehouse
+## **Task 1**: Create a Connection to Autonomous Data warehouse
 
 
 1.	Sign into Oracle Analytics Cloud.
@@ -31,7 +31,7 @@ This lab assumes you have:
 ![](./images/introduction.png " ")
 
 
-## Task 2: Create a new Dataset
+## **Task 2**: Create a new Dataset
 
 1.	Navigate to Data> Create > Create a New Dataset
 2.	Select the data warehouse you just created.
@@ -47,7 +47,7 @@ You may get a warning that doing so will treat record-id as an attribute (instea
 
 
 
-## Task 3: Create a Workbook/Project
+## **Task 3**: Create a Workbook/Project
 
 In this task we'll create and configure your target Autonomous Data Warehouse database to add a schema and a table.
 
