@@ -83,7 +83,7 @@ This lab assumes you have:
 	<copy>sudo kubeadm init --pod-network-cidr=10.244.0.0/16</copy>
 	```
 
-*Note : The network CIDR range used in above command for pod network initialization is 10.244.0.0/16 which is NON-OVERLAPPING to the host subnet CIDR of 10.0.0.0/24. The host subnet CIDR will remain the same for every luna user.*
+*Note : The network CIDR range used in above command for pod network initialization is 10.244.0.0/16 which is NON-OVERLAPPING to the host subnet CIDR of 10.0.0.0/24. The host subnet CIDR will remain the same for each deployment.*
 
 4. Enable kubectl to work with non-root users.
 
