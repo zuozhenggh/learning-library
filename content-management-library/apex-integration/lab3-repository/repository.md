@@ -1,29 +1,29 @@
 # Setup Content Repository
 
 ## Introduction
+In this lab we will setup Content repository where all content will be stored and managed. We will also define content structure with meta-data to store data along with file. At last we will provide access to IDCS app which was create in *Lab 1*
 
-OCM allows you to manage different kind of content at one place, the content are logically organized within content “Repository”. From repository, you can define rule to make content accessible across different channels.
 
 Estimated Lab Time: 10 minutes
 
 ### Background
 
-_(Explain Content Repository, Custom Digital Asset type & their relation)_
+Oracle Content Management's content management structure starts with repositories. A repository is a storage location for assets that you need for building web, mobile, or other user experiences in your organization. An asset can be a content item that represents an individual piece of content, such as a blog post, case study, or product information; or a digital asset that represents an image, video, or other type of media that you need in your experiences.
 
 ### Objectives
 
 In this lab, you will:
 
-- Create Custom Digital Asset type
-- Create Asset Repository
-- Add members to Repository
+* Create Custom Digital Asset type
+* Create Asset Repository
+* Add members to Repository
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 
-- An Oracle account
-- All previous labs successfully completed
+* An Oracle account
+* All previous labs successfully completed
 
 ## Task 1: Create Custom Digital Asset Type
 
@@ -37,17 +37,17 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
 
 3. Click the drop-down menu below the header and select **Asset Types** as shown below
 
-![Asset Type](images/asset-type-menu.png)
+   ![Asset Type](images/asset-type-menu.png)
 
 4. Click **Create** button on right top area to create asset type
    ![Create Asset](images/create-button.png)
 
 5. In the create Asset type form, enter below details
-   - **Name**: Contract
-   - **Display Name**: Contract
-   - **Choose asset type**: Select “Create a Digital Asset Type”
+   * **Name**: Contract
+   * **Display Name**: Contract
+   * **Choose asset type**: Select “Create a Digital Asset Type”
 
-![Create Asset Type](images/create-asset-type.png)
+   ![Create Asset Type](images/create-asset-type.png)
 
 6. Click **Create**
    This will open the form to provide more detail about asset type.
@@ -55,25 +55,25 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
 7. Under **Media Type** Tab:
    Search for “pdf” and select **pdf(application/pdf)**. Click **Add** button to add support for this file type. You can include more than one file types based on requirement so that your Asset type will only accept document of listed file types only.
 
-![Media Type](images/media-type.png)
+   ![Media Type](images/media-type.png)
 
 8. Navigate to **Definition** Tab:
    Drag **Text** data field from left side to **Digital Asset Type** Definition region.
    Enter below details on **Text Settings** form
-   _ Name: Contract Name
-   _ Number of data fields value: Single Value \* This field is required to have content: Checked
+   * Name: Contract Name
+   * Number of data fields value: Single Value \* This field is required to have content: Checked
 
-![Text Settings](images/text-settings.png)
+   ![Text Settings](images/text-settings.png)
 
 Click **Next** and then **OK**
 
 9. Repeat the above step by dragging another **Text** data field and use below details in **Text Settings** form
 
-   - Name: Party Name
-   - Number of data fields value: Single Value
-   - This field is required to have content: Unchecked
+   * Name: Party Name
+   * Number of data fields value: Single Value
+   * This field is required to have content: Unchecked
 
-Click **Next** and then **OK**
+   Click **Next** and then **OK**
 
 10. Click **Save** from top right and we are done with creating Custom Digital Asset type.
 
@@ -82,6 +82,7 @@ Click **Next** and then **OK**
 We will create Asset repository to manage all our content for this workshop.
 
 1. Navigate to vertical menu **ADMINISTRATION** and then click **Content**
+   
    ![Content Menu](./images/content-menu-ful-page.png)
 
 2. Click **Create**
@@ -96,16 +97,24 @@ We will create Asset repository to manage all our content for this workshop.
 ## Task 3: Grant access on repository to IDCS App
 
 1. Select the Demo asset repository and click Member menu from top section as shown below
-![Add Members](./images/members.png)
+
+   ![Add Members](./images/members.png)
 
 2. Search for Application name **OCM-APEX Integration**  which you created earlier in LAB 1 – Task 3. Select **Role** as **Manager** and click **ADD**
+   
    ![Add Members](./images/add-member.png)
 
 3.	Finally click **Done** to close window.
 
+## Summary
+
+This completes this lab. At this point, you know how to define Custom Digital Asset type, create Asset repository & assign member. Click on **Lab 4: Configure Content Capture** to setup content Capture to automate ingestion of email attachment.
+
+## Learn More
+
+* [Content Management Key Concepts](https://docs.oracle.com/en/cloud/paas/content-cloud/managing-assets/key-concepts.html)
 
 ## Acknowledgements
 
-- **Author** - <Name, Title, Group>
-- **Contributors** - <Name, Group> -- optional
-- **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Vinay Kumar, Director - Product Management, Oracle Content Management
+* **Last Updated By/Date** - Vinay Kumar, Feb 2022

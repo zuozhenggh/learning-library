@@ -3,7 +3,7 @@
 ## About this Workshop
 
 
-This workshop will show how to get started with Oracle Content Management (OCM) and then integrate Oracle APEX based application to consume content from OCM. You will learn how to setup content repository, Content Capture and finally integrated Oracle content with Oracle APEX via API & Embed option.
+This workshop will show how to get started with Oracle Content Management (OCM) and then integrate Oracle APEX based application to consume content from OCM. You will learn how to setup content repository, Content Capture and finally integrated Oracle content with Oracle APEX via API & Embed UI option.
 
 
 Estimated Lab Time: 120 minutes
@@ -19,14 +19,13 @@ Oracle Content Management is a cloud-based content hub to drive omni-channel con
 
 ### Objectives
 
-* Lab 1: Provision an OCM Instance
-* Lab 2: Provision & Setup APEX
+* Lab 1: Setup an OCM Instance
+* Lab 2: Setup an APEX Instance
 * Lab 3: Setup Content Repository
 * Lab 4: Configure Content Capture
 * Lab 5: Create webiste based on template
 * Lab 6: Setup APEX application
-* Lab 7: Configure Single Sign-on
-* Lab 8: Integrate OCM & APEX
+* Lab 7: Integrate OCM & APEX
 
 *Note: This lab assumes you are using Oracle APEX 20.2.*
 
@@ -38,14 +37,11 @@ Oracle Content Management is a cloud-based content hub to drive omni-channel con
 
 
 ## Learn More
-
 - [Oracle Content Management](https://www.oracle.com/in/content-management/)
 - [Documentation](https://docs.oracle.com/en/cloud/paas/content-cloud/index.html)
 - [Blogs](https://blogs.oracle.com/content-management/)
 - [Community](https://community.oracle.com/customerconnect/categories/oci-content-management)
 
 ## Acknowledgements
-
-- **Author** -  Vinay Kumar, Director- Product Management
-- **Contributors** - XYZ
-- **Last Updated By/Date** - Vinay Kumar, February 2021
+* **Author** - Vinay Kumar, Director - Product Management, Oracle Content Management
+* **Last Updated By/Date** - Vinay Kumar, Feb 2022

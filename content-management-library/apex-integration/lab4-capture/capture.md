@@ -1,10 +1,10 @@
-# Setup Content Capture
+# Configure Content Capture
 
 ## Introduction
 
 In this lab we will configure “Capture” capabilities to ingest email attachment from a configured email address and store that in asset repository.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 ### Background
 
@@ -19,18 +19,18 @@ section.
 
 In this lab, you will:
 
-- Create Procedure
-- Define Metadata
-- Configure Capture Source
-- Define Commit Target
-- Test Content Ingestion flow
+* Create Procedure
+* Define Metadata
+* Configure Capture Source
+* Define Commit Target
+* Test Content Ingestion flow
 
 ### Prerequisites
 
 This lab assumes you have:
 
-- An Oracle account
-- All previous labs successfully completed
+* An Oracle account
+* All previous labs successfully completed
 
 ## Task 1: Create Procedure
 
@@ -42,7 +42,7 @@ Procedures are defined content capture workflows, from the initial sourcing all 
 
 2. Click ![Add](images/plus-icon.png) icon to create new Procedure, this will open below form
 
-![Create Procedure](images/create-procedure.png)
+   ![Create Procedure](images/create-procedure.png)
 
 3. Provide Name as **Contract** and click **OK**
 
@@ -57,8 +57,8 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
 ![Metadata Tab](images/metadata-tab.png)
 
 2. Fill up the “Metadata Fields: New Metadata Field” forms with below details
-   - **Field Name** : Party Name
-   - **Data Type** : Alpha Numeric
+   * **Field Name** : Party Name
+   * **Data Type** : Alpha Numeric
   
 ![Metadata Tab](images/metadata-form.png)
 
@@ -75,69 +75,87 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
     * **Online** : Check this box
     * **Batch Prefix** : CON_
     * **Import Source** : Email Source
-![Import Process](./images/import-process.png)
+
+   ![Import Process](./images/import-process.png)
 
 3. Click **Next**
 
 4. Click **Next** to Image Settings stage without changing default values
 
 5. On **Document Profile** stage, change **Default Document Profile** to (Default)
-![General Settings](./images/email-source-general.png)
+
+   ![General Settings](./images/email-source-general.png)
 
 6.	As shown above, select Party Name under **Metadata Field Mappings** and then click **Edit** icon on top right corner.
 
 7.	Select **Metadata Attributes** as Subject and click **OK** 
-![Attributes](./images/meta-attribute.png)
+
+   ![Attributes](./images/meta-attribute.png)
 
 8.	Click **Next** and navigate to **Import Source Settings**
 
-9.	Select **Microsoft Exchange Web Services** and provide Service URL. Incase if you are using Office 365 then use https://outlook.office365.com/ews/exchange.asmx, otherwise refer documentation for more options.
-![Email Settings](./images/ms-exchange.png)
+9.	Select **Microsoft Exchange Web Services** and provide Service URL. Assuming you are using Office 365 then use https://outlook.office365.com/ews/exchange.asmx, otherwise refer [documentation](https://docs.oracle.com/en/cloud/paas/content-cloud/capturing-content/configure-import-processor-jobs.html#GUID-7C551069-6B76-4F96-87B0-72E97757BD4A) for more options.
 
-10.	As shown above Click ![Add](./images/plus-icon.png) icon for **Email Accounts** to Process and provide **Email address & Password**.
-![Credentials](./images/credentials.png)
+   ![Email Settings](./images/ms-exchange.png)
+
+   *Note: If you have Office 365 email account with Single Sign-on enable then you need to create OAuth application, please refer to Office 365 documentation for creating OAuth app. Alternatively you can create free account with Google Mail & create OAuth application.*
+
+10. As shown above Click ![Add](./images/plus-icon.png) icon for **Email Accounts** to Process and provide **Email address & Password**.
+
+   ![Credentials](./images/credentials.png)
 
 11.	Click **Verify** and then **OK**
 
-12.	Navigate to Message **Filter** tab, provide Folder name from which you want to process email. Typically, you will be using **Inbox**.
-![Message](./images/message.png)
+12. Navigate to Message **Filter** tab, provide Folder name from which you want to process email. Typically, you will be using **Inbox**.
+   
+   ![Message](./images/message.png)
 
 13. **Message Filters** is an optional step, you can provide your email address for **From Address** if that so that only email sent by you to Source Email address will be picked for processing.
 
-14.	Navigate to **Post-Processing** tab. You can either provide different folder name (make sure you create this folder in Source email account) to move message after processing or you can have default values.
-![Import Source](./images/import-source-settings.png)
+14. Navigate to **Post-Processing** tab. You can either provide different folder name (make sure you create this folder in Source email account) to move message after processing or you can have default values.
 
-15.	Click **Next** and set **Batch Processor** as **Commit Processor** on Post-Processing stage.
-![Email Commit](./images/email-commit.png)
+   ![Import Source](./images/import-source-settings.png)
 
-16.	Click **Next** to review setup and click **Submit**.
+15. Click **Next** and set **Batch Processor** as **Commit Processor** on Post-Processing stage.
+
+   ![Email Commit](./images/email-commit.png)
+
+16. Click **Next** to review setup and click **Submit**.
 
 
 ## Task 4: Define Commit Target
 
 1.	Skip **Processing** tab and navigate to **Commit**. Click add icon to create Commit Profile.
-![Commit Profile](./images/commit-profile.png)
+
+   ![Commit Profile](./images/commit-profile.png)
 
 2.	Enter the value in the form as shown below 
-![New Commit](./images/commit-form.png)
+
+   ![New Commit](./images/commit-form.png)
 
 3.	Click **Next** and navigate to Commit Driver Settings. Select Repository as **Demo**
-![Commit Driver ](./images/commit-driver.png)
+
+   ![Commit Driver ](./images/commit-driver.png)
 
 4.	Select **Assets** tab. Select the table row as shown below and click **Edit** icon
-![Asset](./images/commit-assets.png)
+
+   ![Asset](./images/commit-assets.png)
 
 5.	Select **Asset type** as Contract. Select **Contract Name** asset field and then click Edit icon to map Capture value.
-![Asset Type](./images/asset-type.png)
+
+   ![Asset Type](./images/asset-type.png)
 
 6.	Shuttle \<Document Title\> from left to right and click **OK**
-![Field Mapping](./images/asset-fields.png)
+   
+   ![Field Mapping](./images/asset-fields.png)
 
 7.	Repeat above step for **Asset Field** Party Name and shuttle Party Name as shown below
-![Field Mapping](./images/asset-field-mapping.png)
+
+   ![Field Mapping](./images/asset-field-mapping.png)
 
 8.	Click OK and Navigate to Post-Processing stage
-![Post Processing](./images/commit-post-proc.png)
+
+   ![Post Processing](./images/commit-post-proc.png)
 
 9.	Provide your email address to receive notification in case of any error. Click **Next** to see summary of configuration.
 
@@ -145,21 +163,23 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
 
 ##  Task 5: Test the Content Ingestion flow
 
-1.	Send Email with sample attachment file & subject having **Customer name** to configured (specified in Task 3.10) email address.
+1.	Send Email to configured email address (Refer Task 3.10) with any sample file as attachment and mention **Subject**  as **CafeSupremo**
+
+   ![Email](images/email.png)
+   
+   *For workshop we will use Subject as unique identifier to associate content with Customer*
 
 2.	After sometime check **Demo** Asset repository, email attachment will be avilalbe as asset.
+
 3.	Click asset & check the attribute to validate if Subject was populated in Party Name attribute.
 
+## Summary
 
+This completes this lab. At this point, you know how to configure Capture procedure to automate content ingestion from email account and store it in content repository along with meta-data. Click on **Lab 5: Create webiste based on template** to create site to distribute content.
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Content Capture Quick Tour](https://docs.oracle.com/en/cloud/paas/content-cloud/capturing-content/get-know-content-capture-procedures-page.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
-```
+* **Author** - Vinay Kumar, Director - Product Management, Oracle Content Management
+* **Last Updated By/Date** - Vinay Kumar, Feb 2022

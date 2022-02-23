@@ -1,4 +1,4 @@
-# Create an APEX Workspace
+# Setup an APEX Instance
 
 ## Introduction
 
@@ -10,9 +10,9 @@ Estimated Time: 5-10 minutes
 
 ### Objectives
 
-- Create an Autonomous Transaction Processing instance
-- Create a new workspace in APEX
-- Log in to your new workspace
+* Create an Autonomous Transaction Processing instance
+* Create a new workspace in APEX
+* Log in to your new workspace
 
 ## Task 1: Create an Autonomous Transaction Processing instance
 
@@ -81,10 +81,9 @@ Within your new database, APEX is not yet configured. Therefore, when you first 
 
 ## Summary
 
-This completes this lab. At this point, you know how to create a new Autonomous Transaction Processing instance and create an APEX workspace within it. Click on **Lab 2: Create an APEX App from a Spreadsheet** to build an APEX application in your workspace.
+This completes this lab. At this point, you know how to create a new Autonomous Transaction Processing instance and create an APEX workspace within it. Click on **Lab 3: Setup Content Repository** to create repository to manage content.
 
 ## Acknowledgements
-- **Author** - 
-- **Contributors** - 
-- **Last Updated By/Date** - 
+* **Author** - Vinay Kumar, Director - Product Management, Oracle Content Management
+* **Last Updated By/Date** - Vinay Kumar, Feb 2022
 

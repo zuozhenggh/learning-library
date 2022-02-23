@@ -2,10 +2,18 @@
 
 ## Introduction
 
-In this lab we will create Site in OCM using the site templated provided with workshop files.
+In this lab we will create site based on site template provided as part of workshop file.
+
+*Note:Oracle Content Management let you create unlimited website but Stater edition is limited to 1 site per instance*
 
 Estimated Lab Time: 20 minutes
 
+## Background
+
+As a site developer, you define the framework that site creators use to build sites, such as:
+* [standard templates](https://docs.oracle.com/en/cloud/paas/content-cloud/creating-experiences/understand-templates.html#GUID-0BA49046-671B-4DE0-8D64-ADBFECB2EC76), used as a framework for a site, based on a theme, with sample pages and content, custom components, and other resources you need to start building a site
+* [themes](https://docs.oracle.com/en/cloud/paas/content-cloud/creating-experiences/understand-themes.html), used to define the overall look and feel of a site, consisting of logos, style sheets, configuration files and background code that defines site navigation
+* [custom components](https://docs.oracle.com/en/cloud/paas/content-cloud/creating-experiences/manage-custom-components-and-layouts1.html#GUID-15CB1AE6-E45C-4BD7-AE4E-41F94AFA550F), used to add specific types of content to site pages, enabling you to develop compound elements that can be embedded within a site page, using any page technology of your choice
 
 ### Objectives
 
@@ -35,27 +43,32 @@ This lab assumes you have:
   ![Import Template](images/import-template.png)
 
 4.	Click **Upload** button and then upload the site template zip file **CafeSupremoSalesEnablement.zip**
-  ![Pick File](images/pick-template.png)
+  
+    ![Pick File](images/pick-template.png)
 
 5.	Select the uploaded file and then click **Create**
 
 6.	Wait for confirmation message for successful of template import and you will see the imported templated listed as below
-  ![Template](images/template-status.png)
+  
+    ![Template](images/template-status.png)
 
 ## Task 2: Create new Site
 
 1.	Navigate to **Sites** from side vertical menu
-![Site Menu](./images/site-menu.png)
+
+  ![Site Menu](./images/site-menu.png)
 
 2.	Click **Create** to create new site based on site template imported in previous task.
-![Choose Template](./images/choose-template.png)
+
+  ![Choose Template](./images/choose-template.png)
 
 3.	Click the Template to select and it will take you to next step
 
 4.	Select the Asset repository as **Demo** which we created in previous labs
 
 5.	Select **Localization Policy** as **SE2 Localization** and then click **Next**
-![Configure Site](./images/configure-site.png)
+
+  ![Configure Site](./images/configure-site.png)
 
 6.	Click **Next** and then provide name to your site as shown below. Please select **Duplicate Assets** for **Assets in the target repository**
 
@@ -65,43 +78,48 @@ This lab assumes you have:
 ## Task 3: Change site security from Public to Secure
 
 1.	Select the site and then click **More** menu to select **Properties**
-![Site Properties](./images/select-site.png)
+
+  ![Site Properties](./images/select-site.png)
 
 2.	Click **Security** tab and then change radio option from **No** to **Yes**. Select **Cloud Users** as shown below and finally click **Save**
-![Site Security](./images/site-security.png)
+
+  ![Site Security](./images/site-security.png)
 
 
 ## Task 4: Publish Site
 
 1.	Select the site and click “Publish”, it will show you below screen
-![Site Publish](./images/publish-site.png)
+
+  ![Site Publish](./images/publish-site.png)
 
 2.	Continue with default selected option and click **Ok**
 
 3.	Click **Publish**
-![Site Publish](./images/publish-items.png)
+
+  ![Site Publish](./images/publish-items.png)
 
 4.	Wait for publishing to complete and you will see “Published” icon as shown below
-![Site Status](./images/site-status.png)
+
+  ![Site Status](./images/site-status.png)
 
 5.	Click the toggle icon as shown below to change status of site from offline to online.
-![Site Online](./images/site-online.png)
+
+  ![Site Online](./images/site-online.png)
 
 6.	Select **Confirm** to proceed and click **Bring Online**
 
-![Bring Online](./images/online-confirm.png)
+  ![Bring Online](./images/online-confirm.png)
 
 7.	Right click the Site and select **View**. This will open the site in new tab. Copy the URL of site which will be like **https://**\<your-instan-name>**/site/authsite/**\<site-name>
 
+## Summary
+
+This completes this lab. At this point, you know how to create new site using template, change security setting & publish it. Click on **Lab 6: Setup APEX application** to setup Oracle APEX application to consume content.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Create your first website](https://docs.oracle.com/en/cloud/paas/content-cloud/creating-experiences/create-your-first-website1.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Vinay Kumar, Director - Product Management, Oracle Content Management
+* **Last Updated By/Date** - Vinay Kumar, Feb 2022

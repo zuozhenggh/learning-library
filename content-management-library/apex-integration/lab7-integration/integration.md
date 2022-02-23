@@ -2,13 +2,11 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+By now you have both Oracle Content Management & Oracle APEX application running, in this lab you will change the configure to experience the integration between two system. There are two mode of integration explained,  one is using REST API and another is by embedding the OCM interface within APEX.
 
 Estimated Lab Time: 10 minutes
 
 ### Objectives
-
-*List objectives for this lab using the format below*
 
 In this lab, you will:
 * Configure Web Credentials
@@ -31,20 +29,21 @@ This lab assumes you have:
 
 2.	Click **Shared Components** icon and then click **Rest Data Source**s under Data source section as shown below
 
-  ![Datasource Menu](images/ds-menu.png)
+    ![Datasource Menu](images/ds-menu.png)
 
 3.	Click **ContractDS** REST data source
 
 4.	Click Edit pencil icon as highlighted in below screen
 
-  ![Datasource Details](images/datasource-details.png)
+    ![Datasource Details](images/datasource-details.png)
 
 5.	Change value of **Endpoint URL** to your Oracle Content Management Instance URL. (Refer Lab 1 - Task 1.9 for OCM instance URL)
 
 6.	Click **Apply Changes**
 
 7.	Click **Authentication** tab
-  ![Authentication](images/authentication.png)
+  
+    ![Authentication](images/authentication.png)
 
 8. Click “Edit” pencil icon for “Credentials”
   Change below attributes
@@ -67,7 +66,8 @@ Change below attributes
 1.	Login to APEX and click **App Builder** Icon. Click **Customer Tracker** from the list of application.
 
 2.	Use search box and search for **50** as shown below
-  ![Find Page](images/find-page.png)
+  
+    ![Find Page](images/find-page.png)
 
 3.	Click “50-Customer” , this will open the page.
 
@@ -80,8 +80,10 @@ Change below attributes
 7.	Click “Save” and then run the application.
 
 ## Task 3 : Allow Cross Origin Resource Sharing (CORS)
+
 1. Login to IDCS and Navigate to **Settings** > **Session Settings**
-![IDCS Settings](images/idcs-settings.png)
+
+  ![IDCS Settings](images/idcs-settings.png)
 2. Enable **Allow Cross-Origin Resource Sharing (CORS)** 
 
 3. Provide APEX instance domain name within **Allowed CORS Domain Names**. For example https://\<your-instance-specific>.**oraclecloudapps.com**
@@ -89,12 +91,14 @@ Change below attributes
 4. Click **Save**
 
 ## Task 4: Allow OCM embedding within APEX
+
 1. Login to OCM & Navigate to **System > Security**
-![Security Navigation](images/security-menu.png)
+
+  ![Security Navigation](images/security-menu.png)
 
 2. Select Radio option **Enabled**
 
-![Security Settings](images/allow-domain.png)
+  ![Security Settings](images/allow-domain.png)
 
 3. Add domain name of APEX application under **Allowed Domains** .For example https://\<your-instance-specific>.**oraclecloudapps.com**
 
@@ -114,12 +118,10 @@ contract documents from OCM as shown below
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [OCM API Documentation](https://docs.oracle.com/en/cloud/paas/content-cloud/apisdk.html)
+* [Embed User Interface](https://docs.oracle.com/en/cloud/paas/content-cloud/solutions/embed-web-user-interface-other-applications.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Vinay Kumar, Director - Product Management, Oracle Content Management
+* **Last Updated By/Date** - Vinay Kumar, Feb 2022

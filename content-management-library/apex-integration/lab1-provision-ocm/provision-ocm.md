@@ -1,11 +1,18 @@
-# Provision an Instance
+# Setup an OCM Instance
 
 ## Introduction
 
-This lab walks you through the process of provisioning an instance of Oracle Content Management & Oracle APEX, assuming you don't already have one available to you. If you do, you can skip this lab and move on to the next one.
+This lab walks you through the process of provisioning an instance of Oracle Content Management, assuming you don't already have one available to you. If you do, you can skip this lab and move on to the next one.
+
 
 Estimated Time: 10 minutes
 
+### Background
+The Oracle Content Management **Starter Edition** offers a free content service tier with a limited feature set and limits on the number of users, assets, sites, and other items. However, it's sufficient to work with Oracle Content Management out of the box.
+
+To take advantage of the full feature set and to increase the number of users and other items, [upgrade to the Premium Edition](https://docs.oracle.com/en/cloud/paas/content-cloud/administer/starter-vs-premium-edition.html).
+
+For comparison of the features and limits in the Starter Edition vs. the Premium Edition, refer [documentation](https://docs.oracle.com/en/cloud/paas/content-cloud/administer/starter-vs-premium-edition.html).
 
 ### Objectives
 
@@ -33,18 +40,19 @@ This lab assumes you have:
 
 2. Select **oracleidentityservice** and click **Continue** button
 
-  ![Identity provider](images/identity-provider.png)
+    ![Identity provider](images/identity-provider.png)
 
 3. Enter your **User Name** and **Password** in the input fields and click **Sign In** button
 
- ![Sign In](images/sign-in.png)
+  ![Sign In](images/sign-in.png)
 
 4. After successful login click the navigation menu icon from left upper corner. From the menu click **Developer services** and then **Content Management – Overview** 
 
-![OCM Navigation Menu](images/ocm-oci-menu.png)
+  ![OCM Navigation Menu](images/ocm-oci-menu.png)
 
 5. Click **Create Instance** . If compartment is not selected by default for you then first you need to select **Compartment** <your tenancy>(root) from dropdown.
-![ Create Instance](images/create-instance.png)
+
+  ![ Create Instance](images/create-instance.png)
 
 6. Enter following details and Click **Create Instance**
     * **Instance** name as Demo
@@ -64,24 +72,25 @@ This lab assumes you have:
 
 9. Bookmark the URL (https://<your-tenancy-specific-id>.oraclecloud.com/   documents/home) as it’s your OCM instance URL for future login.
 
-![OCM Home page](images/ocm-homepage.png)
+  ![OCM Home page](images/ocm-homepage.png)
 
 ## Task 2: Create IDCS app for integrating OCM & APEX
 
 1. Assuming you are already logged in to https://cloud.oracle.com , Click side navigation menu to select **Identity & Service** and then click **Federation**
 
-![IDCS Navigation](images/idcs-menu.png)
+  ![IDCS Navigation](images/idcs-menu.png)
 
 2. Click **OracleIdentityService** as shown below
 
-![Identity Provider](images/identity-provider.png)
+  ![Identity Provider](images/identity-provider.png)
 
 3. Click **Oracle Identity Cloud Service Console**  link
 
-![Identity Service](images/idcs-service.png)
+  ![Identity Service](images/idcs-service.png)
 
 4. You will land on IDCS Dashboard page. Click side menu bar and then click Applications
-![IDC Dashboard](images/idcs-home.png)
+
+  ![IDC Dashboard](images/idcs-home.png)
 
 5.	Click ![Add](images/add-button.png) to create new application
 
@@ -99,13 +108,16 @@ This lab assumes you have:
 10. In the Authorization section choose **Allowed Grant** Types as **Client Credentials**
 
 11.	Scroll to section **Token Issuance policy** and click **Add Scope**
-![Token Policy](images/token-policy.png)
+
+  ![Token Policy](images/token-policy.png)
 
 12.	From the list select the OCM instance created by you, it will be named like **CECSAUTO_<Your InstanceName>CECSAUTO**. For example below is the instance created above with name **Demo** and highlighted row is corresponding to that
-![OCM Instances](images/ocm-instances.png)
+
+  ![OCM Instances](images/ocm-instances.png)
 
 13.	Select the below highlighted scope ending with **urn:opc:cec:all** and click **Add**
-![Security Resources](images/security-resources.png)
+
+  ![Security Resources](images/security-resources.png)
 
 14. Click **Next**
 
@@ -123,34 +135,39 @@ This lab assumes you have:
 
 21.	Click the **Activate Application** button at the Activate Application prompt to confirm. 
 
-### Summary
-TBD
 
 ## Task 3: Assign OCM roles to IDCS App
 
 1.	Click **Oracle Cloud Services** from side menu and then click your application name. The name of application will follow pattern **CECSAUTO_**\<Your InstanceName>**CECSAUTO**
-![Oracle Cloud service](images/oracle-cloud-service.png)
+
+  ![Oracle Cloud service](images/oracle-cloud-service.png)
 
 2.	Click **Application Roles** as shown below
-![Application Roles](./images/application-roles.png)
+
+  ![Application Roles](./images/application-roles.png)
 
 3.	Select the role **CECEnterpriseUser** and then click the icon on right side as shown below. Select **Assign Applications**
-![Assign Application](./images/assign-app.png)
+
+  ![Assign Application](./images/assign-app.png)
 
 4.	Search for your IDCS application created in previous task **OCM-APEX Integration** and then click **OK**
-![Add Application](./images/add-idcs-app.png)
+
+  ![Add Application](./images/add-idcs-app.png)
 
 5.	Repeat above step 3 & 4 for roles **CECContentAdministrator** & **CECRepositoryAdministrator**
 
-*(Add 45min wait time tdetails)*
-### Summary
-TBD
+  *Note: You will use this IDCS application later while assigning access to repository. Sometime it take approx 45min before it's visible as member in OCM*
+
+## Summary
+
+This completes this lab. At this point, you know how to create a new Oracle Content Management instance and create an IDCS app. Click on **Lab 2: Setup an APEX Instance** to provision Oracle Autonomous Transaction Processing instance and create an APEX workspace within it.
 
 ## Learn
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+
+* [Deploy Oracle Content Management](https://docs.oracle.com/en/cloud/paas/content-cloud/administer/create-instance-infrastructure-console.html)
+* [Administrative Interface](https://docs.oracle.com/en/cloud/paas/content-cloud/administer/administrative-interfaces.html)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+* **Author** - Vinay Kumar, Director - Product Management, Oracle Content Management
+* **Last Updated By/Date** - Vinay Kumar, Feb 2022

@@ -16,12 +16,12 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Provision an OCM Instance",
+            "title": "Lab 1: Setup an OCM Instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../lab1-provision-ocm/provision-ocm.md"
         },
         {
-            "title": "Lab 2: Provision & setup APEX",
+            "title": "Lab 2: Setup an Oracle APEX Instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../lab2-provision-apex/setup-apex.md"
         },
@@ -34,11 +34,11 @@
             "filename": "../../lab4-capture/capture.md"
         },
         {
-            "title": "Lab 5: Create Website",
+            "title": "Lab 5: Create webiste based on template",
             "filename": "../../lab5-website/website.md"
         },
         {
-            "title": "Lab 6: Setup APEX application",
+            "title": "Lab 6: Setup Oracle APEX application",
             "filename": "../../lab6-setup-apex/apex.md"
         },
         {
