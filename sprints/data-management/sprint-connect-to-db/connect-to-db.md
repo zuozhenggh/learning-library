@@ -5,5 +5,5 @@ To connect using SQL*Plus, you run the following command using the applicable co
 
 ## Acknowledgements
 * **Author** - Thea Lazarova, Solution Engineer Santa Monica
-* **Contributors** -  Andrew Hong, Solution Engineer Santa Monica
+
 

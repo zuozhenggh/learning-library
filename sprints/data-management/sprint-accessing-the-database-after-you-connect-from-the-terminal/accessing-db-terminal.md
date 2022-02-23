@@ -60,5 +60,5 @@
 
 ## Acknowledgements
 * **Author** - Thea Lazarova, Solution Engineer Santa Monica
-* **Contributors** -  Andrew Hong, Solution Engineer Santa Monica
+
 

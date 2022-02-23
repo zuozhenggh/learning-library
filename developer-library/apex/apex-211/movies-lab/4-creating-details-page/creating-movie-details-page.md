@@ -251,4 +251,4 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
         ![](images/details-creds-edit.png " ")
 
-- Follow the instructions in the <a href="?lab=creating-rest-sources#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 2 to update the Popular and Search Movies API keys.
+- Follow the instructions in the <a href="?lab=creating-movie-search-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 3 to update the Popular and Search Movies API keys.

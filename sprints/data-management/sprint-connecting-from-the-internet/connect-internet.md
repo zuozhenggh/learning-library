@@ -10,5 +10,5 @@ To use this method, you run the following command using the public IP address in
 
 ## Acknowledgements
 * **Author** - Thea Lazarova, Solution Engineer Santa Monica
-* **Contributors** -  Andrew Hong, Solution Engineer Santa Monica
+
 
