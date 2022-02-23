@@ -1,4 +1,4 @@
-# Deploy Oracle Identity Governance(OIG) Domain
+# Deploy Oracle Identity Governance (OIG) Domain
 
 ## Introduction
 
