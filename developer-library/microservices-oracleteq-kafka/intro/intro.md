@@ -2,9 +2,9 @@
 
 ## About this Workshop
 
-This workshop will help you understand what is Event Mesh using two message brokers and the technical capabilities inside the Converged Oracle Database to support a scalable event-driven microservices architecture.
+This workshop will help you understand Event Mesh using two message brokers and the technical capabilities inside the converged Oracle Database to support a scalable event-driven microservices architecture.
 
-You will create four event-driven microservice and two messaging brokers to allow the communication between them. In the first Lab you will create an Apache Kafka Broker, as the event broker for two microservices to communicate, written in Spring Boot. The second Lab will create an Oracle Transactional Event Queues (TEQ) and show the Kafka APIs working in the Kafka compatibility mode. Also, this module has the same Spring Boot producer and consumer microservices but with Kafka Java client for TEQ, using the okafka library. And finally, the third one will experience the concept of Event Mesh building a bridge between the both brokers with messages being produced on the Kafka side and consumed on the TEQ side.
+You will create four event-driven microservice and two messaging brokers to allow communication between them. In the first Lab, you will deploy an Apache Kafka broker to leverage the event-driven communication between two microservices written in Spring Boot. In the second Lab, you will create an Oracle Transactional Event Queues (TEQ) and experience the Kafka APIs working in the Kafka compatibility mode. Likewise, this module has the Spring Boot producer and consumer microservices but with Kafka Java client for TEQ, using the okafka library. And finally, in the third Lab, you will experiment with the concept of Event Mesh, building a bridge between Kafka and TEQ brokers, and see messages being produced on the Kafka side and consumed on the TEQ side.
 
 Estimated Workshop Time: 50 minutes
 
@@ -20,11 +20,11 @@ Estimated Workshop Time: 50 minutes
 
 ### Objectives
 
-* The first lab reviews the Kafka and Spring Boot Microservice built to produce and consume messages.
+* The first Lab reviews the Kafka and Spring Boot Microservice built to produce and consume messages.
 
-* The second lab will use Oracle Transactional Event Queues (TEQ) and okafka library, and demonstrate the Kafka compatibility of TEQ. Also, this module has the same Spring Boot producer and consumer microservices but using okafka in place of Kafka libraries, and TEQ in the database in place of Kafka broker.
+* The second Lab will use Oracle Transactional Event Queues (TEQ) and okafka library and demonstrate the Kafka compatibility of TEQ. Also, this module has the same Spring Boot producer and consumer microservices but uses okafka in place of Kafka libraries and TEQ in the database in place of Kafka broker.
 
-* The third lab will create the bridge between Kafka broker and Oracle Transactional Event Queues (TEQ), using Kafka connector and Oracle Database Messaging libraries, to demonstrate the flux of event produced on the Kafka side, moving to TEQ and being consumed at the TEQ side. This is the beginning experience of the Event Mesh approach.
+* The third Lab will interconnect the Kafka broker and the Oracle Transactional Event Queues (TEQ),  applying Kafka connector and Oracle Database Messaging libraries. This laboratory demonstrates the interoperability between the two brokers, with events flowing from the Kafka side to TEQ, finally consumed at the TEQ side.
 
 ### Prerequisites
 

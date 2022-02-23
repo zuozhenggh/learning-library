@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Event Mesh with Converged Oracle Database - Transactional Event Queue",
+  "workshoptitle": "Simplify Event-driven Apps with TEQ in Oracle Database (with Kafka interoperability)",
   "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
     {
