@@ -129,14 +129,14 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
 13.	Clicking on the Data tab of the expression will allow you to see the newly created fields.
 
-    ![Verify Expression](./images/expression1.png " ")
+    ![Verify Expression One](./images/expressionone.png " ")
 
 
    Now we will connect the function you created in **Lab 2** to extract the aspect level sentiment from the review text.
 
 14.	From the operators toolbar, drag the Function (fn) operator into the canvas, and connect the output of your expression as the input into the function.
 
-    ![Verify Expression](./images/expression2.png " ")
+    ![Verify Expression Two](./images/expressiontwo.png " ")
 
 15.	Select the function you just added, in the **Properties** pane, navigate to the **Details** Pane. Change the identifier to: SENTIMENT_FUNCTION
 
