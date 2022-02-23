@@ -114,7 +114,7 @@ This lab assumes you have:
       ```
       
 
-      ![Image alt text](images/new-images.png "User ILM Policies")
+      ![User ILM Policies](images/new-images.png "User ILM Policies")
  
 ## Task 4: Cleanup
 

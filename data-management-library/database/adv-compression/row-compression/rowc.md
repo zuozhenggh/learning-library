@@ -86,7 +86,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/sales-demo.png "Sales Table Data")
+      ![Sales Table Data](images/sales-demo.png "Sales Table Data")
 
       View compression for in user\_tab\_partitions.
 
@@ -99,7 +99,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/sales-demo-view.png "Sales Table Data")
+      ![Sales Table Data](images/sales-demo-view.png "Sales Table Data")
  
 ## Task 2: Create Materialized View 
 
@@ -125,7 +125,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/basic-mv.png "Basic Materialized view")
+      ![Basic Materialized view](images/basic-mv.png "Basic Materialized view")
 
       ```
       <copy>
@@ -133,7 +133,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/advanced-mv.png "Advanced Materialized view")
+      ![Advanced Materialized view](images/advanced-mv.png "Advanced Materialized view")
 
 ## Task 3: View Compressed and Un-compressed blocks
 
@@ -156,7 +156,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/tablespace-owner.png "table owner name ")
+      ![table owner name](images/tablespace-owner.png "table owner name ")
 
 3. Using Advisor – The GET\_COMPRESSION\_RATIO Procedure. Compression advisor typically provides fairly accurate estimates, of the actual compression results that may be obtained, after implementing compression.
 
@@ -188,7 +188,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/compressed-blocks-sales.png "materialized view")
+      ![materialized view](images/compressed-blocks-sales.png "materialized view")
  
 
 ## Task 4: Cleanup
