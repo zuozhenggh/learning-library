@@ -133,7 +133,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```bash
     <copy>
-    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/eventmesh-teq-kafka" >> ~/.bashrc
+    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/microservices-oracleteq-kafka" >> ~/.bashrc
     </copy>
     ```
 
