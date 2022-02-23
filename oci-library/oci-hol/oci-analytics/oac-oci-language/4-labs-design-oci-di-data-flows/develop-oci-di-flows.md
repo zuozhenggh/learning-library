@@ -181,7 +181,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
     Make sure the fields are mapped as follows:
 
-     ![Function Mapping](./images/functionmapping2.png " ")
+     ![Function Mapping Two](./images/functionmappingtwo.png " ")
 
 
    When you are done with your data flow it will look something like this:
@@ -196,7 +196,7 @@ Now we need to execute the data flow. The process is as follows.
 1.	Navigate back to your workspace and click **Create Integration Task** in the Quick Actions menu.
    As part of the process of creation you need to select the project and the data flow you just created in **Task 3**. If there are any errors with the data flow you would need to fix those until it successful validates as shown in the image below.
 
-    ![Create Task](./images/createtask2.png " ")
+    ![Create Task One](./images/createtasktwo.png " ")
 
 2.	Go to your data integration workspace and select the **Applications** link. Then click **Create an Application**. Give it a name and click **Create**.
 
@@ -204,11 +204,11 @@ Now we need to execute the data flow. The process is as follows.
 
 4.	Click on the Tasks link in the **Details** menu, select the contextual menu for the task you just created, and click **Publish to Application**. Select the application you just created.
 
-    ![Create Task](./images/createtask.png " ")
+    ![Create Task Two](./images/createtaskone.png " ")
 
 5.	Navigate back to the application you just created, select your integration task, and select **Run** on the contextual menu as shown below.
 
-    ![Run Task](./images/runtask1.png " ")
+    ![Run Task](./images/runtasktwo.png " ")
 
 
   You will navigate to the **Runs** page where you will be able to monitor the execution of your integration task run. If there are any errors, make sure to check the logs to understand the cause of the run error.
