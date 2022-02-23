@@ -23,8 +23,6 @@ In this workshop, you will learn how to:
 
 ### Prerequisites (Optional)
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
-
 This lab assumes you have:
 *  A valid email address
 *  Ability to receive SMS text verification (only if your email isn't recognized)
@@ -34,5 +32,5 @@ This lab assumes you have:
 * Marc Gueury - Application Development EMEA
 * Stuart Davey - MySQL EMEA
 * Mario Beck - MySQL EMEA
-* Last Updated <Feb 2022>
+* Last Updated: Feb 2022
 

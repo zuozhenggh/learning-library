@@ -30,43 +30,45 @@ We will install MySQL Database service:
 
 1. In the OCI menu, go to Database / MySQL. Click "Create MySQL Database System"
 
-	![Image alt text](images/mysql-before-create.png)
+	![Mysql Before Create](images/mysql-before-create.png)
 
 2. Please use these paramaters:
     - Name: mysql
     - Username: root
     - Password (2x): Welcome1! 
-    - In Configure Networking, choose the OKE VCN name : c (##2##)
+    - In Configure Networking, choose the VCN that was created by the OKE wizard : oke-vcn-quick-cluster1-xxxxx (##2##)
     - Subnet: oke-nodesubnet-quick-cluster1-xxxx-regional (##3##)
 
-	![Image alt text](images/mysql-create.png)
+	![MySQL Create](images/mysql-create.png)
 
 3. Click Create. 
-4. When the database is installed. Please note the Private IP Address (##4##). The MySQL port will be the default 3306.
+4. When the database is installed. Please note the Private IP Address (##4##). The MySQL port will be 3306.
 
-	![Image alt text](images/mysql-ip.png)
+	![MySQL IP](images/mysql-ip.png)
 
 5. Create a bastion to create a SSH Tunnel to our MySQL DB System:
 
 A longer explanation is available here:[https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service](https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service)
 
-5.1 The Bastion Service’s dashboard is located in Identity & Security
-    - Menu / Identity & Security
-    - Click Bastion
-    - Choose the VCN where MySQL is installed (##2##)
-    - Choose the Subnet where MySQL is installed (##3##)
-    - Use 0.0.0.0/0 for the CIDR allow block (See the blog above for more secure solution)
 
-	![Image alt text](images/bastion-create.png)
+5.1. The Bastion Service’s dashboard is located in Identity & Security
 
-5.3 Create a SSL Certificate
+  - Menu / Identity & Security
+  - Click Bastion
+  - Choose the VCN where MySQL is installed (##2##)
+  - Choose the Subnet where MySQL is installed (##3##)
+  - Use 0.0.0.0/0 for the CIDR allow block (See the blog above for more secure solution)
 
-- Back the Cloud shell
-- Create a SSH Certificate
+  ![Image alt text](images/bastion-create.png)
+
+5.2 Create a SSL Certificate
+
+  - Back the Cloud shell
+  - Create a SSH Certificate
 
 ```
 ssh-keygen -t rsa
-(Press Eenter a lot of times)
+(Press Enter a lot of times)
 cat $HOME/.ssh/id_rsa.pub
 
 ssh-rsa abcdefghijklAADAQABAAABAQDF9jXWObkl6n482Gxxxxxxxxxxxxxx marc_gueur@06671dff81b6
@@ -74,11 +76,11 @@ ssh-rsa abcdefghijklAADAQABAAABAQDF9jXWObkl6n482Gxxxxxxxxxxxxxx marc_gueur@06671
 
 Copy the key (##5##)
 
-5.4 Create a Bastion Session
+5.3 Create a Bastion Session
 
-- Back the Bastion
-- Create session
-- Enter
+  - Back in the Bastion screen
+  - Click Create session
+  - Enter
     - Session Type: SSH Port forwarding session
     - IP Address: 10.0.10.2 (your value from ##4##)
     - Port: 3306
@@ -90,7 +92,7 @@ Copy the key (##5##)
 - Copy SSH commands. It will look like this:
 
 ```
-ssh -i <privateKey> -N -L <localPort>:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com
+ssh -i &lt;privateKey&gt; -N -L &lt;localPort&gt;:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com
 ```
 
 
@@ -163,20 +165,13 @@ CREATE TABLE t1 (
  id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(20) NOT NULL
 );
-insert into t1( name ) values ( 'DOLPHIN');
-insert into t1( name ) values ( 'TIGER');
-insert into t1( name ) values ( 'PINGUIN');
-insert into t1( name ) values ( 'LION');
+insert into t1( name ) values ('DOLPHIN');
+insert into t1( name ) values ('TIGER');
+insert into t1( name ) values ('PINGUIN');
+insert into t1( name ) values ('LION');
 select * from t1;
 exit
 ```
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
 * **Author** - <Name, Title, Group>

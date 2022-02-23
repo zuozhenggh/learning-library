@@ -17,7 +17,7 @@ In this lab, you will:
 * Run the Java container in OKE
 * Configure secret and configMap to remove hardcoded value from the program
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * Followed the previous labs
@@ -32,13 +32,13 @@ Edit the file bin/env.sh to match your OCI connection details.
 cd bin
 cp env.sh.example env.sh
 vi env.sh
-...
+```
+```
 OCI_REGION=fra.ocir.io
 OCI_NAMESPACE=frabcdefghjij
 OCI_EMAIL=marc.gueury@oracle.com
 OCI_USERNAME=oracleidentitycloudservice/marc.gueury@oracle.com
 OCI_TOKEN="this_isAToken!"
-...
 ```
 
 - OCI_REGION: check the list [here] (https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryprerequisites.htm)
@@ -57,7 +57,7 @@ bin/create_registy_secret.sh
 
 In this demo too, the DB details are hardcoded. 
 1. If you are running MySQL database service, you will use the Private IP of MySQL
-2. If you are running MySQL in Kubernetes, you will use the Kubernetes service name for MySQL ( simply mysql in the sample above)  
+2. If you are running MySQL in Kubernetes, you will use the Kubernetes service name for MySQL ( named simply "mysql" in the sample above)  
 
 To modify them:
 
@@ -71,8 +71,8 @@ Replace
 ```
 By
 ```
-1. private String DB_URL = "jdbc:mysql://&lt;mysql ip address&gt;/db1?user=root&password=Welcome1!";
-2. private String DB_URL = "jdbc:mysql://mysql/db1?user=root&password=Welcome1!";
+   1. private String DB_URL = "jdbc:mysql://&lt;mysql ip address&gt;/db1?user=root&password=Welcome1!";
+or 2. private String DB_URL = "jdbc:mysql://mysql/db1?user=root&password=Welcome1!";
 ```
 
 Then we need also to change the kubernetes yaml file 
@@ -113,25 +113,31 @@ You will see
 1:DOLPHIN 2:TIGER 3:PINGUIN 4:LION
 ```
 
-## Task 2: SpringBoot - configMap and secrets
+## Task 4: SpringBoot - configMap and secrets
 
 In this demo, the DB details are stored in Kubernetes configMap or secrets.
-To modify them
 
 ```
 cd oke_mysql_java_101/demo2/v2
-vi bin/config.sh
-...
+cat bin/config.sh
+```
+```
 kubectl create secret generic db-secret --from-literal=username=root --from-literal=password=Welcome1!
-...
+kubectl apply -f webquerydb-cfg.yaml
+```
 
+We need to do the same change than above. Replace with your address MySQL IP or Kubernetes service name. 
+```
 vi webquerydb-cfg.yaml
+```
+```
 ...
     {
       "webquerydb.db.url": "jdbc:mysql://10.1.1.237/db1"
     }
 ...
-
+1. "webquerydb.db.url": "jdbc:mysql://&lt;mysql ip address&gt;/db1"
+or  2. "webquerydb.db.url": "jdbc:mysql://mysql/db1"
 ```
 
 Then we need also to change the kubernetes yaml file 
