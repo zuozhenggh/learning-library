@@ -78,7 +78,7 @@ Subtask 2 – Install App Server (APACHE)
 2.	Install app server
 
     ````
-    <copy>sudo yum install httpd</copy>
+    <copy>sudo yum install httpd -y </copy>
     ````
 
     ````
@@ -106,19 +106,7 @@ Subtask 3 – Install PHP
 1.	Install php:
 
     ````
-    <copy> sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm </copy>
-    ````
-    ````
-    <copy>sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm</copy>
-    ````
-    ````
-    <copy>sudo yum install yum-utils</copy>
-    ````
-    ````
-    <copy>sudo yum-config-manager --enable remi-php74</copy>
-    ````
-    ````
-    <copy>sudo yum install php php-cli php-mysqlnd php-zip php-gd php-mcrypt php-mbstring php-xml php-json php-mysql_xdevapi</copy>
+    <copy> sudo dnf module install php:7.4 -y</copy>
     ````
     ````
     <copy>php -v</copy>
@@ -126,6 +114,16 @@ Subtask 3 – Install PHP
     ````
     <copy>php -m |grep mysql</copy>
     ````
+    ````
+    <copy>sudo yum install php-cli php-mysqlnd php-zip php-gd php-mbstring php-xml php-json -y</copy>
+    ````
+    ````
+    <copy>php -m |grep mysql</copy>
+    ````
+    ````
+    <copy>php -v</copy>
+    ````
+
     ````
     <copy>sudo systemctl restart httpd</copy>
     ````
