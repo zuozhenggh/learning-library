@@ -1,4 +1,4 @@
-# Use Oracle Machine Learning Services
+# Introduction to Oracle Machine Learning Services
 
 ## Introduction
 
@@ -76,15 +76,16 @@ This lab assumes you have:
    Now, go back to the Cloud Shell interface and run a command to obtain a token. First set variables for the parameters for ease of use in subsequent requests.
 
     ```
-    <copy>export omlserver=<omlserver url>
-    export oml_username=OMLUSER
-    export oml_password=AAbbcc123456</copy>
+    <copy>export oml_username=OMLUSER
+    export oml_password=AAbbcc123456
+    export omlserver=<omlserver url></copy>
 
     ```
    In the command above,
-     * omlserver url is the URL that you copied from the ADB console, without the /omlusers/ segment in it. An example of omlserver URL is https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this URL ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
+    
      * OMLUSER is your OML user name.
      * AAbbcc123456 is your OML password.
+     * omlserver url is the URL that you copied from the ADB console, without the /omlusers/ segment in it. An example of omlserver URL is https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this URL ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
 
    Run the following command to obtain an authentication token using the variables set above and save the token string to the variable ``token``.
 
@@ -148,7 +149,7 @@ This lab assumes you have:
 
 1. View the content of OML Services REST APIs. You can return the API content in a readable format by using the Linux utility jq.  
 
-  **Note:** If you are using OCI Cloud Shell, you don't need to install the jq utility as OCI Cloud Shell comes with jq pre-installed. If you are using your own tenancy or a trial account and if you are not using OCI Cloud Shell, you can check if jq is installed by running the command rpm -qa jq. If this command returns an empty value, jq is not installed. Install the jq utility by running the following command.
+  **Note:** If you are using OCI Cloud Shell, you don't need to install the jq utility as OCI Cloud Shell comes with jq pre-installed. If you are using your own tenancy or a trial account and if you are not using OCI Cloud Shell, you can check if jq is installed by running the command rpm -qa jq. If this command returns an empty value, jq is not installed. In that case, install the jq utility by running the following command.
 
     ```
     <copy>sudo yum install jq</copy>
@@ -271,7 +272,8 @@ This lab assumes you have:
     ```
 
 4.  Next, get a list of models filtered by version=1.0 and namespace=`DEMO`.
-**Note**: The namespace parameter is case-sensitive.
+
+   **Note**: The namespace parameter is case-sensitive.
 
     ```
     <copy>curl -X GET --header "Authorization: Bearer $token" "${omlserver}/omlmod/v1/models?version=1.0&namespace=DEMO" | jq</copy>
@@ -315,8 +317,8 @@ This lab assumes you have:
 1. Get model endpoint details for the model that you created in the preceding lab (Lab 4). Use the following values:
 
     * authentication token=generated in Task 1 or if expired then a refreshed or regenerated token
-    * omlserver= e.g. https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this URL, ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
-    * model URI=e.g. `nb_cust360` (To get the URI for the model that you want the endpoint for, log in to OML Notebooks, go to the Models page,  Deployed tab.)
+    * omlserver= OML server URL that you copied from the ADB console (in Task 1 Step 2), without the /omlusers/ segment in it. This URL is already saved to the ``omlserver`` variable so you don't have to copy it again. An example of an OML server URL is https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this example URL, ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
+    * model URI=`nb_cust360` (To get the URI for the model that you want the endpoint for, log in to OML Notebooks, go to the Models page,  Deployed tab.)
 
     ```
     <copy>curl -X GET "${omlserver}/omlmod/v1/deployment/nb_cust360" --header "Authorization: Bearer $token" | jq</copy>
@@ -413,7 +415,7 @@ This lab assumes you have:
   In the syntax above, the parameter `topNdetails` is optional. It fetches the top n prediction details for the record you are scoring. Prediction details refer to the attributes or features that impact a prediction. In the following example,  you specify the model URI `nb_cust360` and a valid token generated in Task 1. The model was built using the Supplementary Demographics data set. To score with a single record, for XXX use `YRS_RESIDENCE` with the value of 10 and for YYY  use `Y_BOX_GAMES` with a value of 0. You want to predict the probability that the person associated with this record will purchase the affinity card.
 
     ```
-   <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/nb_cust360/score"  --header "Authorization: Bearer ${token}" --header 'Content-Type: application/json'  -d '{"inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0}]} | jq</copy>
+   <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/nb_cust360/score"  --header "Authorization: Bearer ${token}" --header 'Content-Type: application/json'  -d '{"inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0}]}' | jq</copy>
 
     ```
    Here's the score for the data above. It indicates the probability value for each label.
@@ -445,7 +447,7 @@ This lab assumes you have:
     * `topNdetails` = 3
 
     ```
-    <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/nb_cust360/score" --header "Authorization: Bearer ${token}" --header 'Content-Type: application/json' -d '{"topNdetails":3, "inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0},{"YRS_RESIDENCE":5,"Y_BOX_GAMES":1}]}'} | jq</copy>
+    <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/nb_cust360/score" --header "Authorization: Bearer ${token}" --header 'Content-Type: application/json' -d '{"topNdetails":3, "inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0},{"YRS_RESIDENCE":5,"Y_BOX_GAMES":1}]}' | jq</copy>
 
     ```
     The scores for the above two records, along with the prediction details for each score, are displayed below:
@@ -604,5 +606,5 @@ To learn more about how OML Services support ONNX format models, see resources l
 
 ## Acknowledgements
 * **Author** - Suresh Rajan, Senior Manager, Oracle Database User Assistance Development
-* **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Principal Member of Technical Staff, Oracle Machine Learning, Marcos Arancibia Coddou, Senior Principal Product Manager, Machine Learning
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Consulting Member of Technical Staff, Oracle Machine Learning; Marcos Arancibia Coddou, Senior Principal Product Manager, Machine Learning
 * **Last Updated By/Date** - Suresh Rajan, February 2022

@@ -14,19 +14,19 @@
         } 
         , 
         {
-            "title": "Lab 2: OLTP Table Compression",
+            "title": "Lab 2: OLTP table compression",
             "filename": "../../oltp-compression/oltp.md"
         },   
         {
-            "title": "Lab 3: Advanced Row Compression",
+            "title": "Lab 3: Advanced row compression",
             "filename": "../../row-compression/rowc.md"
         }, 
         {
-            "title": "Lab 4: Advanced Index Compression",
+            "title": "Lab 4: Advanced index compression",
             "filename": "../../index-compression/index.md"
         }, 
         {
-            "title": "Lab 5: Automatic Data Optimization",
+            "title": "Lab 5: Automatic data optimization",
             "filename": "../../auto-optimization/auto.md"
         }, 
         {
