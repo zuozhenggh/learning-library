@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this workshop, you will 
+In this workshop, you will: 
 * Setup an MySQL DB Service, Kubernetes cluster.
 * Create a simple Java program to connect to it. Run it in Docker.
 * Create a Spring Boot program that connects to MySQL. Run it in Kubernetes.

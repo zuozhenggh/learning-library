@@ -70,7 +70,8 @@ A longer explanation is available here:[https://blogs.oracle.com/mysql/post/usin
 ssh-keygen -t rsa
 (Press Enter a lot of times)
 cat $HOME/.ssh/id_rsa.pub
-
+```
+```
 ssh-rsa abcdefghijklAADAQABAAABAQDF9jXWObkl6n482Gxxxxxxxxxxxxxx marc_gueur@06671dff81b6
 ```
 
