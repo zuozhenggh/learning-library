@@ -173,43 +173,56 @@ We will now create the function in the application. The function will do sentime
 
 1.	Run the following commands on the cloud shell:
 
-	  {
-			cd ..
-    	fn init --runtime python sentiment
-			cd sentiment
-			ls
-		}
+1.	The following policies should be set:
+
+    ```
+    <copy>
+    cd ..
+    </copy>
+    ```
+    ```
+    <copy>
+    fn init --runtime python sentiment
+    </copy>
+    ```
+    ```
+    <copy>
+    cd sentiment
+    </copy>
+    ```
+    ```
+    <copy>
+    ls
+    </copy>
+    ```
+
+
 
    ![Create Sentiment Function](./images/createsentimentfunction.png " ")
 
 2.	Notice that this will generate three files for you. Modify the files with the content shown below. You can use an editor like **vi** to do so.
 
-		<copy>**func.yaml**
-		schema_version: 20180708
+3. 	**func.yaml**
+
+		<copy>schema_version: 20180708
 		name: sentiment
 		version: 0.0.32
 		runtime: python
 		entrypoint: /python/bin/fdk /function/func.py handler
 		memory: 256
-		timeout: 300
+		timeout: 300</copy>
 
-		**requirements.txt**
-		fdk
+4. 	**requirements.txt**
+
+		<copy>fdk
 		pandas
 		numpy
 		avro-python3
-		---
-		#configparser==4.0.2
-		#cryptography==2.8
-		#configparser==3.5.0
-		#pyOpenSSL==18.0.0
-		oci>=2.39.0
-		#oci-cli
-		#six==1.14.0
+		oci>=2.39.0</copy>
 
+5. 	**func.py**
 
-		**func.py**
-		import io
+		<copy>import io
 		import json
 		import logging
 		import pandas
