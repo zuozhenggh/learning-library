@@ -34,7 +34,6 @@ The Oracle Transactional Event Queues (TEQ) and its subscriber agent were provis
         grant execute on dbms_aqadm to user
         grant execute on dbms_aqin to user
         grant execute on dbms_aqjms to user
-        grant aq_administrator_role to user
         grant aq_user_role to user
         grant select_catalog_role to user
         </copy>

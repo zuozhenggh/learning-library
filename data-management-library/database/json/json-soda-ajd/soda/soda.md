@@ -4,7 +4,9 @@
 
 So far, all collection operations have been issued from a UI in the browser. In a real application these operations would be called directly from a programming language (for example using the open-source SODA drivers for Java, Python or NodeJS). Another option is to use REST.
 
-This lab is optional for those that wish to understand how to access Autonomous JSON Database through raw REST calls. Part of this lab involves loading more documents through a REST call. If you wish to move straight on to Lab 4, you can load the extra documents from SQL instead, using the following SQL code:
+This lab is optional for those that wish to understand how to access Autonomous JSON Database through raw REST calls. Part of this lab involves loading more documents through a REST call. If you wish to move straight on to Lab 4, you can load the extra documents from SQL instead, using the SQL code that follows.
+
+Note: To get to SQL, follow the instructions in Lab 2 Task 3, but instead of choosing JSON in the Database Actions console in step 5, choose SQL.
 
 ```
 <copy>

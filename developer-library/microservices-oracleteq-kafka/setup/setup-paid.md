@@ -104,13 +104,13 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 ## Task 6: Create a Folder to Contain the Workshop Code
 
-1. Create a directory to contain the workshop code. The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter.  Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
+1. Create a directory to contain the workshop code. The directory name is used to create a compartment of the same name in your tenancy. The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
-  ```bash
-  <copy>mkdir lab802</copy>
-  ```
+    ```bash
+    <copy>mkdir lab8022</copy>
+    ```
 
-  All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  
+   All the resources created by the setup are created using the directory name, for example the compartment is created with the same name. This will let you to quickly delete and cleanup afterward.  
 
 2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
@@ -133,7 +133,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```bash
     <copy>
-    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/eventmesh-teq-kafka" >> ~/.bashrc
+    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/microservices-oracleteq-kafka" >> ~/.bashrc
     </copy>
     ```
 

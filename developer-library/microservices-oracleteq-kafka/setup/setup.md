@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab we will provision and setup the resources to execute microservices in your environment.
+In this tutorial, you'll provision and set up the resources to execute workshop in your tenancy.  
 
-Estimates Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -15,39 +15,64 @@ Estimates Time: 15 minutes
 
 An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
 
-## Task 1: Select Your Compartment
+## Task 1: Log in to the Oracle Cloud Console and Launch the Cloud Shell
 
-Your own Oracle Cloud Infrastructure compartment for running this workshop has been assigned to you. The name of the compartment appears on the Launch page.
+If you haven't already, sign in to your account.
 
-1. Copy the compartment name (not OCID) from the workshop reservation page.
+## Task 2: Select the Home Region
 
-   ![compartment-name](images/copy-comp-name.png " ")
+Be sure to select the **home region** of your tenancy. Setup will only work in the home region.
 
-2. Select the navigation menu from the top left corner of the Oracle Cloud Console and navigate to the Instances page in the Compute section.
+  ![Oracle Cloud Infrastructure Home Region](images/home-region.png " ")
 
-   ![compute instance selection](images/select-compute-instances.png " ")
+## Task 3: Check Your Tenancy Service Limits
 
-3. Search for compartment using the compartment name from step#1 in the "Compartment" field under "List Scope".
+If you have a **fresh** free trial account with credits then you can be sure that you have enough quota and you can proceed to the next step.
 
-   ![search for compartment](images/enter-comp-name.png " ")
+If, however, you have already used up some quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may reach are summarized in the following table.
 
-4. Select your compartment name from the drop down list.
+| Service          | Scope  | Resource                                             | Available | Free Account Limit |
+|------------------|:------:|------------------------------------------------------|:---------:|:------------------:|
+| Database         | Region | Autonomous Transaction Processing Total Storage (TB) | **1**     | 2                  |
+|                  | Region | Autonomous Transaction Processing OCPU Count         | **2**     | 8                  |
 
-   ![select compartment name](images/select-comp-name.png " ")
+Quota usage and limits can be check through the console: **Limits, Quotas and Usage** in the **Governance & Administration** section , For example:
 
-   ![correct compartment name](images/correct-comp-name.png " ")
+  ![OCI Service Limit Example](images/service-limit-example.png " ")
 
-## Task 2: Launch the Cloud Shell
+The Tenancy Explorer is used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
 
-Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface connected to the tenancy. It also provides up-to-date tools and utilities.
+  ![OCI Show Subcompartments](images/show-subcompartments.png " ")
+
+It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
+
+## Task 4: Launch Cloud Shell
+
+Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
-   ![OCI Cloud Shell Opening](images/open-cloud-shell.png " ")
+  ![OCI Cloud Shell Opening](images/open-cloud-shell.png " ")
 
-   NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+  **NOTE:** Cloud Shell uses *websockets* to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
-## Task 3: Make a Clone of the Workshop Setup Script and Source Code
+## Task 5: Create a Folder to Contain the Workshop Code
+
+1. Create a directory to contain the workshop code. The directory name is used to create a compartment of the same name in your tenancy. The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
+
+    ```bash
+    <copy>mkdir lab8022</copy>
+    ```
+
+   All the resources created by the setup are created using the directory name, for example the compartment is created with the same name. This will let you to quickly delete and cleanup afterward.  
+
+2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
+
+    ```bash
+    <copy>cd lab8022</copy>
+    ```
+
+## Task 6: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
@@ -61,11 +86,15 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```bash
     <copy>
-    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/eventmesh-teq-kafka" >> ~/.bashrc
+    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/microservices-oracleteq-kafka" >>~/.bashrc
+    export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2
+    echo "export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2" >>~/.bashrc
+    echo "export PATH=$JAVA_HOME/bin/:$PATH" >>~/.bashrc
+    source ~/.bashrc
     </copy>
     ```
 
-## Task 4: Start the Setup
+## Task 7: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
@@ -76,9 +105,9 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-   Note, cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
+   Note, cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run this command to resume the setup:
 
-   ```bash
+    ```bash
     <copy>source $LAB_HOME/cloud-setup/setup.sh</copy>
     ```
 
@@ -155,8 +184,6 @@ Their log files are located in the $LAB_LOG directory.
 ```
 
 You may now **proceed to the next lab...**
-
-**Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
 ## Acknowledgements
 
