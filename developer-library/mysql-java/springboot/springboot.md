@@ -1,4 +1,4 @@
-# Run Spring Boot in Kubernetes"
+# Run Spring Boot in Kubernetes
 
 ## Introduction
 
@@ -7,7 +7,7 @@ In this lab, we include run the same Java code to get data from MySQL in Spring 
 Estimated Time: 20 minutes
 
 ### About Spring Boot
-Spring Boot is a simple framework to run Java program that includes a Webserver.
+Spring Boot is a simple framework to run Java programs that includes a Webserver.
 
 It is a production-grade Spring-based Applications that you can "just run". It is preconfigured with the Spring team's "opinionated view" of the best configuration and use of the Spring platform and third-party libraries so you can get started with minimum fuss. 
 
@@ -52,7 +52,7 @@ OCI_TOKEN="this_isAToken!"
 When all the environment variables are set, create the registry secret to allow Kubernetes to pull the image from the container registry
 
 ```
-bin/create_registy_secret.sh
+./create_registy_secret.sh
 ```
 
 ## Task 2: Spring Boot - Hardcoded values
@@ -120,7 +120,7 @@ You will see
 In this demo, the DB details are stored in Kubernetes configMap or secrets.
 
 ```
-cd oke_mysql_java_101/demo2/v2
+cd ../v2
 cat bin/config.sh
 ```
 ```
