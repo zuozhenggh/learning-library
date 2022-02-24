@@ -352,7 +352,7 @@ As an alternative to using the Data Transforms Tool, you can perform the necessa
 2. Select the entire text in the Worksheet and press the **green** button to run these two statements. You should see that both statements have executed successfully. Having completed this step you now have a table MOVIE\_SALES\_2020Q2, with data for just April, May, and June. The days have all been changed to title case. Refresh to see the new table created.
 ![ALT text is not available for this image](images/data-transforms.png)
 
-## Task 4: Create an Analytic View
+## Task 4: Analyze Data
 
 ### MovieStream Critics Corner: Analytic View
 
@@ -360,13 +360,13 @@ As an alternative to using the Data Transforms Tool, you can perform the necessa
 
 ### Overview
 
-You can only go so far looking at raw data. Before long you want a semantic model on top of it. That's where our Data Analysis tool comes in. We've made it simple to build sophisticated models on your data, by identifying dimensions, hierarchies, and measures - with a nice clean way of saying how to aggregate - sum, average, or whatever. But wait, there's more. We make it fast, too! Simple SQL written against the analytic view is re-written to ensure optimal data access, and because we know about the hierarchical structure of the data, we can pre-aggregate the totals and sub-totals you want, before you've even told us you want them! 
+You can only go so far looking at raw data. Before long you want a semantic model on top of it. That's where our Data Analysis tool comes in. We've made it simple to build sophisticated models on your data, by identifying dimensions, hierarchies, and measures - with a nice clean way of saying how to aggregate - sum, average, or whatever. But wait, there's more. We make it fast, too! Simple SQL written against the analytic view is re-written to ensure optimal data access, and because we know about the hierarchical structure of the data, we can pre-aggregate the totals and sub-totals you want, before you've even told us you want them! In addition, we provide tools to easily Analyze data using visual tools like pivot tables and charts.
 
 In this section of the workshop, you'll create an analytic view over the table MOVIE\_SALES\_2020Q2.
 
 1. Start by clicking the **Data Analysis** card in the ADB **Database Actions** page. The page on which you'll land has some text explaining the Data Analysis utility in some detail, but let's dive straight in.
 
-2. Click the drop down button on the **Select Schema** selection and choose the **QTEAM** schema. Hint: you can search for the schema by typing QTEAM in the search area.
+2. Click the drop down button on the **Select Schema** selection and choose the **QTEAM** schema.
 
     > **Hint:** you can search for the schema by typing QTEAM in the search area.
 
@@ -384,7 +384,7 @@ In this section of the workshop, you'll create an analytic view over the table M
 
 5. Press **Close** and select **Data Sources** from the panel at the left of the screen. You'll see that a star schema has been identified, based on the tables that you loaded in previous steps of this lab. All columns of the Fact Table, MOVIE\_SALES\_2020Q2, are already shown.
 
-6. Press the **three dots** to the right of the table **DAYS** and select **Expand**. Repeat this for the other three dimension tables. You should see the star schema laid out as follows:
+6. Press the **three dots** to the right of the table **DAYS** and select **Expand**. Repeat this for the other three dimension tables. Also, the tool has identified hierarchies and measures out of the box which can then be modified as per your needs. You should see the star schema laid out as follows:
   ![ALT text is not available for this image](images/expand-data-sources.png)
 
 ### Refine Your Hierarchies
@@ -412,7 +412,7 @@ In this section of the workshop, you'll create an analytic view over the table M
 
 ### Work With Measures
 
-13. Now expand **Measures**, from the list on the left of the screen. Notice that Auto-Business Model has identified SALES and PURCHASES as candidate Measures from the Fact Table (because these are numeric columns).
+13. Now expand **Measures**, from the list on the left of the screen. Notice that Auto-AV tool has identified SALES and PURCHASES as candidate Measures from the Fact Table (because these are numeric columns).
 
     a. Measure SALES is a dollar amount.
 
@@ -465,7 +465,7 @@ In this section of the workshop, you'll create an analytic view over the table M
 
     Notice that now, data is shown only for the month of April.
 
-26. Having completed this step, you now have an analytic view over the table **MOVIE_SALES_2020Q2**. This features hierarchies, measures (including aggregation expressions), and provides a preview pane in which to view the data and do some analysis. Now, let's explore some of the various navigation techniques available throughout the tool suite.
+26. Having completed this step, you now have an analytic view over the table **MOVIE\_SALES\_2020Q2**. This features hierarchies, measures (including aggregation expressions), and provides a preview pane in which to view the data and do some analysis. Now, let's explore some of the various navigation techniques available throughout the tool suite.
 
 27. There are 2 options to navigate to **Data Insights** and **Catalog**.
 
@@ -500,7 +500,7 @@ Watch a video demonstration of the Data Insights tool of Autonomous Database:
 
 3. In this exercise, you're going to follow a procedure exactly as laid out in these tool tips, thus:
 
-    a. Under *Analytic View/Table*, select Analytic View **MOVIE\_SALES\_2020Q2\_MODEL\_AV** (which is the basis for the Business Model you created in Task 4). 
+    a. Under *Analytic View/Table*, select Analytic View **MOVIE\_SALES\_2020Q2\_MODEL\_AV** (which is the basis for the Analytic View you created in Task 4). 
 
     b. Under *Column*, select **PURCHASES**.
 
@@ -567,19 +567,26 @@ Data is capital and the built-in Catalog tool allows you to maximize its value. 
 
 ### Search The Catalog
 
-5. The catalog has a browser-like search capability. In the search bar across the top, enter **movie sales** and click **Enter**.
+5. The catalog has a browser-like search capability. Click the search bar across the top, choose Entity type as "Table", and enter **movie sales** and click **Enter**.
+
+> **Hint:** To get a list of all Entity types, click the "..." option as shown below:
+
+  ![ALT text is not available for this image](images/click-three-dots-list-entity-types.png)
+
+  ![ALT text is not available for this image](images/choose-entity-type-table.png)
+
 6. Only entities matching these criteria will be displayed.
   ![ALT text is not available for this image](images/movie-sales.png)
 
 ### Change the Filter
 
-7. On the upper left of the screen, just above the cards, is the **filter** icon. If it is not highlighted, click it.
-8. Under Entity Type, click **More...** and check the boxes for Analytic View and Business Model. Then click **Apply**.
+7. On the search bar, clear the “movie sales” text and click the search bar.
+8. Choose the option under the search bar “type: TABLE OR”, then click “...” under Entity Type and select **Analytic View**. Next type “movie sales”. The text on the search bar should be as shown below:
   ![ALT text is not available for this image](images/filter.png)
-9. You now see that the Entity Type list at the top has been expanded correspondingly, and that four cards are displayed. Besides the two tables you saw initially, there are now cards for the Business Model and the Analytic View on which it's based. 
+9. Notice three cards are displayed. Besides the two tables you saw initially, there is now a card for the Analytic View created in task 3.  
   ![ALT text is not available for this image](images/three-entities.png)
-10. Clear the search by clicking **x** on the right end of the search bar. Now you see eight cards: six tables, a business model, and an analytic view.
-  ![ALT text is not available for this image](images/2879071198.png)
+10. Clear the text “movie sales” and click the Enter key. Now you see seven cards: six tables and an analytic view.
+  ![ALT text is not available for this image](images/seven-cards-including-analytic-view.png)
 
 ### Understand Data Lineage
 
