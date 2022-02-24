@@ -112,7 +112,7 @@ An implementation guide is a single, consolidated document with full details abo
 
 Typically, a host company shares the implementation guide for an EDI schema with their trading partners. This guide is shared especially when a schema has been customized to deviate from a standard X12 document. It points out the customizations made to the standard schema.
 
-In B2B for Oracle Integration, you can generate implementation guides for both standard and custom B2B schemas. The guide is generated as an HTML document, which you can edit to apply branding and print as a PDF document if necessary.
+In Oracle Integration B2B, you can generate implementation guides for both standard and custom B2B schemas. The guide is generated as an HTML document, which you can edit to apply branding and print as a PDF document if necessary.
 
 1. In the left navigation pane, click ***B2B Schemas***.
 2. On the B2B Schemas page, select the ***PurchaseOrderSchema_Customized*** Schema and select ***Generate Implementation Guide***.

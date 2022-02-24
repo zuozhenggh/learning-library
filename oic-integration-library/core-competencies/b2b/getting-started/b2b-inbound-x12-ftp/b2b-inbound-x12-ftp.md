@@ -287,7 +287,7 @@ In conclusion, you can use Oracle Integration B2B feature to automatically gener
 
 ## Learn More
 
-* [Develop flows in B2B for Oracle Integration](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/develop-b2b-flows-oracle-integration.html)
+* [Develop flows in Oracle Integration B2B](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/develop-b2b-flows-oracle-integration.html)
 * [B2B Tracking](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/b2b-tracking.html)
 
 ## Acknowledgements

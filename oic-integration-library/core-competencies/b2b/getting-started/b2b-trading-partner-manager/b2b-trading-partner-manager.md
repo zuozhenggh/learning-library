@@ -72,7 +72,7 @@ Refer to [B2B Concepts](../workshops/freetier/?lab=gettingStartedB2B) lab for mo
 
 ### *Define Contacts*
 
-You can add ways to contact the trading partner, such as their name, email, phone number, or short message service (SMS) number. You can select from the predefined Contact Types or enter your own custom Contact Type. Use this information to contact individuals offline, as needed. Contacts are currently provided only for reference and are not used in B2B for Oracle Integration.
+You can add ways to contact the trading partner, such as their name, email, phone number, or short message service (SMS) number. You can select from the predefined Contact Types or enter your own custom Contact Type. Use this information to contact individuals offline, as needed. Contacts are currently provided only for reference and are not used in Oracle Integration B2B.
 
 1. Click the ***Contacts*** tab. Select **Contact Type** as ***Email***. Enter your email id in the **Value** column and click ***Save***  
 ![Contacts](images/tpm-tp-contact-1.png)
@@ -173,7 +173,7 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 
-* [B2B for Oracle Integration in Trading Partner Mode](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/b2b-oracle-integration-intrading-partner-mode.html)
+* [Oracle Integration B2B in Trading Partner Mode](https://docs.oracle.com/en/cloud/paas/integration-cloud/integration-b2b/b2b-oracle-integration-intrading-partner-mode.html)
 
 ## Acknowledgements
 
