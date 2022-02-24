@@ -90,7 +90,7 @@ In this task we'll create workbook to visualize the insights from our sentiment 
      - You can use also use Top N to filter the top reviews, statistics such as trendlines to view average review rating over a period of time.
      - Lastly if you're not sure where to get started with building visualizations OAC had a new feature **Auto Insights** that you can leverage.
 
-![Visual1](./images/visual1.png " ")
+![Visual1](./images/visualize.png " ")
 
 This concludes this **workshop**
 
