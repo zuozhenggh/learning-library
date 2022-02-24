@@ -1,4 +1,4 @@
-# Advanced Row Compression
+# Advanced row compression
 
 ## Introduction
 
@@ -6,9 +6,9 @@ Advanced row compression enables table data to be compressed during all types of
 
 Estimated Time: 20 minutes
 
-### About Advanced Row Compression
+### About advanced row compression
 
-Advanced Row Compression uses a unique compression algorithm specifically designed to work with OLTP/DW applications. The algorithm eliminates duplicate values within a database block, even across multiple columns. Compressed blocks contain a structure called a symbol table that maintains compression metadata. When a block is compressed, duplicate values are eliminated by first adding a single copy of the duplicate value to the symbol table. Each duplicate value is then replaced by a short reference to the appropriate entry in the symbol table. Compressed data is self-contained within the database block through this innovative design, as the metadata used to translate compressed data into its original state is stored in the block header. When compared with competing compression algorithms that maintain a global database symbol table, Oracle’s approach offers significant performance benefits by not introducing additional I/O (needed with a global symbol table) when accessing compressed data
+Advanced row compression uses a unique compression algorithm specifically designed to work with OLTP/DW applications. The algorithm eliminates duplicate values within a database block, even across multiple columns. Compressed blocks contain a structure called a symbol table that maintains compression metadata. When a block is compressed, duplicate values are eliminated by first adding a single copy of the duplicate value to the symbol table. Each duplicate value is then replaced by a short reference to the appropriate entry in the symbol table. Compressed data is self-contained within the database block through this innovative design, as the metadata used to translate compressed data into its original state is stored in the block header. When compared with competing compression algorithms that maintain a global database symbol table, Oracle’s approach offers significant performance benefits by not introducing additional I/O (needed with a global symbol table) when accessing compressed data
 
 ### Data growth challenges 
 
@@ -35,7 +35,7 @@ This lab assumes you have:
 * A Valid SSH Key Pair
 * Sample Schema has been Setup
   
-## Task 1: Enable Advanced Row Compression
+## Task 1: Enable advanced Row Compression
 
 1. Create table sales with two partitions sales\_2013 which is of Basic compression, and sales\_2014 of advanced row compression 
 
@@ -86,7 +86,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/sales-demo.png "Sales Table Data")
+      ![Sales Table Data](images/sales-demo.png "Sales Table Data")
 
       View compression for in user\_tab\_partitions.
 
@@ -99,7 +99,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/sales-demo-view.png "Sales Table Data")
+      ![Sales Table Data](images/sales-demo-view.png "Sales Table Data")
  
 ## Task 2: Create Materialized View 
 
@@ -125,7 +125,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/basic-mv.png "Basic Materialized view")
+      ![Basic Materialized view](images/basic-mv.png "Basic Materialized view")
 
       ```
       <copy>
@@ -133,7 +133,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/advanced-mv.png "Advanced Materialized view")
+      ![Advanced Materialized view](images/advanced-mv.png "Advanced Materialized view")
 
 ## Task 3: View Compressed and Un-compressed blocks
 
@@ -156,7 +156,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/tablespace-owner.png "table owner name ")
+      ![table owner name](images/tablespace-owner.png "table owner name ")
 
 3. Using Advisor – The GET\_COMPRESSION\_RATIO Procedure. Compression advisor typically provides fairly accurate estimates, of the actual compression results that may be obtained, after implementing compression.
 
@@ -188,7 +188,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/compressed-blocks-sales.png "materialized view")
+      ![materialized view](images/compressed-blocks-sales.png "materialized view")
  
 
 ## Task 4: Cleanup
