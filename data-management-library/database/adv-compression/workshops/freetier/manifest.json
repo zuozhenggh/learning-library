@@ -33,19 +33,19 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/oracle-db-features-for-developers/setup/setup.md"
         },
         {
-            "title": "Lab 4: OLTP Table Compression",
+            "title": "Lab 4: OLTP table compression",
             "filename": "../../oltp-compression/oltp.md"
         },   
         {
-            "title": "Lab 5: Advanced Row Compression",
+            "title": "Lab 5: Advanced row compression",
             "filename": "../../row-compression/rowc.md"
         }, 
         {
-            "title": "Lab 6: Advanced Index Compression",
+            "title": "Lab 6: Advanced index compression",
             "filename": "../../index-compression/index.md"
         }, 
         {
-            "title": "Lab 7: Automatic Data Optimization",
+            "title": "Lab 7: Automatic data optimization",
             "filename": "../../auto-optimization/auto.md"
         }, 
         {

@@ -60,7 +60,7 @@ This lab assumes that you have successfully completed all of the preceding labs 
     ![The Workshop Details section of the Launch Workshop LiveLabs page is displayed. This section displays information that you will need in the workshop such as the workshop's URL, username, initial password, and so on.](./images/ll-workshop-details.png " ")
     </if>
 
-    The **SQL Worksheet** is displayed.   
+    A **Data Loading** box is displayed. Close it. The **SQL Worksheet** is displayed.    
 
     ![The ADMIN user is selected in the Navigator tab on the left on the worksheet. The ADMIN user is also displayed and highlighted in the worksheet's banner.](./images/start-sql-worksheet.png " ")
 
@@ -227,7 +227,7 @@ In this task (in a later step), you will create a connection to your Data Catalo
     ```
     <copy>
     select *
-    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/xLD1tlFfRX2AJSpT1GNaB5S9VHFCrAgnWMbCWyPD43YtEibUDS8UEfzJ8MZBy6D7/n/c4u04/b/moviestream_sandbox/o/');
+    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_sandbox/o/');
     </copy>
     ```
 
@@ -361,7 +361,7 @@ In this task (in a later step), you will create a connection to your Data Catalo
     ```
     <copy>
     select *
-    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/xLD1tlFfRX2AJSpT1GNaB5S9VHFCrAgnWMbCWyPD43YtEibUDS8UEfzJ8MZBy6D7/n/c4u04/b/moviestream_sandbox/o/');
+    from dbms_cloud.list_objects('OCI$RESOURCE_PRINCIPAL', 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_sandbox/o/');
     </copy>
     ```
 
