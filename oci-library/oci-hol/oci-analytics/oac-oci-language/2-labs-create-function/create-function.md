@@ -173,8 +173,6 @@ We will now create the function in the application. The function will do sentime
 
 1.	Run the following commands on the cloud shell:
 
-1.	The following policies should be set:
-
     ```
     <copy>
     cd ..
