@@ -14,8 +14,7 @@ In this lab, you will:
 * Prepare Target Database
 * Create Tables to Store Output Data
 
-### Prerequisites (Optional)
-
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle account
@@ -70,7 +69,7 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 3.	On the options, set a **Display Name** and **Database Name**
 
-   ![Create ADW](./images/createadw2.png " ")
+   ![Create ADW Two](./images/createadwtwo.png " ")
 
 4.	Workload type: **Data warehouse**.
 
@@ -80,15 +79,15 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 7.	Click **Create Autonomous Database** (Wait for your dataset to provision which may take up to 15mins)
 
-   ![Create ADW](./images/createadw3.png " ")
+   ![Create ADW Three](./images/createadwthree.png " ")
 
 8.	On your database details page, click **Database Actions**.
 
-   ![Create ADW](./images/createadw4.png " ")
+   ![Create ADW Four](./images/createadwfour.png " ")
 
 9.	Under **Development**, click **SQL**.
 
-   ![Create ADW](./images/createadw5.png " ")
+   ![Create ADW Five](./images/createadwfive.png " ")
 
 11. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
 
@@ -96,7 +95,7 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 	    <copy>CREATE USER USER1 IDENTIFIED BY "<enter user1 password here>";GRANT DWROLE TO USER1;ALTER USER USER1 QUOTA 200M ON DATA;</copy>
 
-   ![Create User](./images/createadw6.png " ")
+   ![Create User](./images/createadwsix.png " ")
 
 
 ## **Task 4**: Create Tables to Store Output Data

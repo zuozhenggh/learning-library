@@ -17,6 +17,9 @@ In this lab, you will:
 * Invoke the Function
 * Connect the Function to API Gateway
 
+
+### Prerequisites
+
 This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
@@ -290,18 +293,18 @@ We need to map your newly created function to an API endpoint that is accessible
 3.	Click **Create Deployment**
 		Give the deployment a name and a prefix (i.e. /language)
 
-   ![Deploy API1](images/deployapi1.png)
+   ![Deploy API One](images/deployapione.png)
 
 4.	Click **Next**, now you can add routes to your deployment.
 
 5.	Then **Add a Route**
-- Specify a path, for instance /sentiment
-- For methods, select POST (since we will be sending a body on the request)
-- Type: Oracle Functions
-- Select the sentiment application you created in Section 4
-- Select the name of the function “sentiment”
+	- Specify a path, for instance /sentiment
+	- For methods, select POST (since we will be sending a body on the request)
+	- Type: Oracle Functions
+	- Select the sentiment application you created in Section 4
+	- Select the name of the function “sentiment”
 
-   ![Deploy API2](images/deployapi2.png)
+   ![Deploy API Two](images/deployapitwo.png)
 
 6.	Click **Next** to review your route.
 
@@ -329,7 +332,7 @@ We need to map your newly created function to an API endpoint that is accessible
 
 	 	Body: <copy>{"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==","parameters":{"column":"info"}}</copy>
 
-  If you get an internal server error, most likely something is wrong with your permissions. In that case, make sure that
+  **Note** If you get an internal server error, most likely something is wrong with your permissions. In that case, make sure that
 	- You have enabled an Ingress rule for destination port 443 (see Section 2)
 	- Your API gateway has permissions to invoke a function. (See this [Document](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks/apigatewaycreatingpolicies.htm) for how to create the policy.)
 

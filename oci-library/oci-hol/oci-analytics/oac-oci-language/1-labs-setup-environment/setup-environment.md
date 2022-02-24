@@ -181,13 +181,13 @@ Get familiar with the Language AI Service
 
 2.	In the Pre-trained models section, you can enter any text to analyze (or just keep the text there)
 
-   ![Open AI Language2](./images/openlanguageai2.png " ")
+   ![Open AI Language Two](./images/openlanguageaitwo.png " ")
 
 3.	OCI Language has several capabilities, including sentiment analysis and entity extraction.
     Make sure those capabilities are selected and click **Analyze**
 4.	Inspect the results you get. If you cannot analyze the text, you may have to check that your policies are set correctly.
 
-   ![Open AI Language3](./images/openlanguageai3.png " ")
+   ![Open AI Language Three](./images/openlanguageaithree.png " ")
 
 5.	Click the **Show JSON** button on the output of the analysis so that you can see the schema of the JSON that you get by calling each of the capabilities.
 
