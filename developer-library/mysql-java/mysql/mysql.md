@@ -24,7 +24,7 @@ Open the OCI cloud console and clone this repository:
 git clone https://github.com/mgueury/oke_mysql_java_101.git
 ```
 
-## Option 1: Install MySQL Database Service
+## Option 1 : Install MySQL Database Service
 
 We will install MySQL Database service:
 
@@ -46,7 +46,7 @@ We will install MySQL Database service:
 
 	![MySQL IP](images/mysql-ip.png)
 
-## Option 1 - Create a bastion to create a SSH Tunnel to our MySQL DB System
+## Option 1 - Part 2 - Create a bastion to create a SSH Tunnel to our MySQL DB System
 
 A longer explanation is available here:[https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service](https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service)
 
@@ -111,7 +111,7 @@ ssh -4 -N -L 3306:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.a
 - Connect to the database
 
 ```
-mysql -h127.0.0.1 -uroot -pWelcome1!
+mysql -h127.0.0.1 -uroot -pWelcome1! -P3306
 exit
 ```
 
@@ -146,7 +146,7 @@ Then forward the MySQL port to your console and check if it works:
 
 ```
 kubectl port-forward deployment/mysql 3306 &
-mysql -h127.0.0.1 -uroot -pWelcome1!
+mysql -h127.0.0.1 -P3306 -uroot -pWelcome1!
 exit
 ```
 
