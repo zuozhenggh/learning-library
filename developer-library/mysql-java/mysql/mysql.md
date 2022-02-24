@@ -111,8 +111,8 @@ ssh -4 -N -L 3306:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.a
 - Connect to the database
 
 ```
-mysql -h127.0.0.1 -uroot -pWelcome1! -P3306
-exit
+mysqlsh root@127.0.0.1:3306 --password=Welcome1! --sql
+\exit
 ```
 
 Note the command to connect to the database (##1##)
@@ -146,8 +146,8 @@ Then forward the MySQL port to your console and check if it works:
 
 ```
 kubectl port-forward deployment/mysql 3306 &
-mysql -h127.0.0.1 -P3306 -uroot -pWelcome1!
-exit
+mysqlsh root@127.0.0.1:3306 --password=Welcome1! --sql
+\exit
 ```
 
 Note the command to connect to the database (##1##)
@@ -169,7 +169,7 @@ insert into t1( name ) values ('TIGER');
 insert into t1( name ) values ('PENGUIN');
 insert into t1( name ) values ('LION');
 select * from t1;
-exit
+\exit
 ```
 
 ## Acknowledgements
