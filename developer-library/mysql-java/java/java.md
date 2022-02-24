@@ -78,7 +78,7 @@ You will see:
 ```
 1 DOLPHIN
 2 TIGER
-3 PINGUIN
+3 PENGUIN
 4 LION
 ```
 
@@ -94,4 +94,5 @@ exit
 * Marc Gueury - Application Development EMEA
 * Stuart Davey - MySQL EMEA
 * Mario Beck - MySQL EMEA
+* Olivier Dasini - MySQL EMEA
 * Last Updated <Feb 2022>

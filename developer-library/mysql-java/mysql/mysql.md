@@ -46,12 +46,12 @@ We will install MySQL Database service:
 
 	![MySQL IP](images/mysql-ip.png)
 
-5. Create a bastion to create a SSH Tunnel to our MySQL DB System:
+## Option 1 - Create a bastion to create a SSH Tunnel to our MySQL DB System
 
 A longer explanation is available here:[https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service](https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service)
 
 
-5.1. The Bastion Service’s dashboard is located in Identity & Security
+1. The Bastion Service’s dashboard is located in Identity & Security
 
   - Menu / Identity & Security
   - Click Bastion
@@ -61,7 +61,7 @@ A longer explanation is available here:[https://blogs.oracle.com/mysql/post/usin
 
   ![Image alt text](images/bastion-create.png)
 
-5.2 Create a SSL Certificate
+2 Create a SSL Certificate
 
   - Back the Cloud shell
   - Create a SSH Certificate
@@ -76,7 +76,7 @@ ssh-rsa abcdefghijklAADAQABAAABAQDF9jXWObkl6n482Gxxxxxxxxxxxxxx marc_gueur@06671
 
 Copy the key (##5##)
 
-5.3 Create a Bastion Session
+3. Create a Bastion Session
 
   - Back in the Bastion screen
   - Click Create session
@@ -94,9 +94,7 @@ Copy the key (##5##)
 ```
 ssh -i &lt;privateKey&gt; -N -L &lt;localPort&gt;:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com
 ```
-
-
-6. Try to connect via the bastion 
+4. Try to connect via the bastion 
 
 - Back to the Cloud console
 - Modify the command
@@ -127,6 +125,7 @@ For reference, the explanation on how to install MySQL in Kubernetes is here:
 The git repository contains an example to create a MySQL server with username/password = root/Welcome1!
 
 ```
+cd oke_mysql_java_101
 kubectl create -f setup/oke_mysql.yaml 
 ```
 
@@ -167,13 +166,15 @@ CREATE TABLE t1 (
 );
 insert into t1( name ) values ('DOLPHIN');
 insert into t1( name ) values ('TIGER');
-insert into t1( name ) values ('PINGUIN');
+insert into t1( name ) values ('PENGUIN');
 insert into t1( name ) values ('LION');
 select * from t1;
 exit
 ```
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* Marc Gueury - Application Development EMEA
+* Stuart Davey - MySQL EMEA
+* Mario Beck - MySQL EMEA
+* Olivier Dasini - MySQL EMEA
+* Last Updated - Feb 2022

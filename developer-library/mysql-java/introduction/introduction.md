@@ -17,7 +17,7 @@ In this workshop, you will learn how to:
 * Create a simple Java program that connects to MySQL. 
 * Build your own docker container.
 * Create a Spring Boot program that connects to MySQL. 
-* Create a SpringBoot container. 
+* Create a Spring Boot container. 
 * Run a container in Kubernetes.
 * Create secrets and configMaps to store connection's details outside of the container.
 
@@ -32,5 +32,6 @@ This lab assumes you have:
 * Marc Gueury - Application Development EMEA
 * Stuart Davey - MySQL EMEA
 * Mario Beck - MySQL EMEA
-* Last Updated: Feb 2022
+* Olivier Dasini - MySQL EMEA
+* Last Updated - Feb 2022
 

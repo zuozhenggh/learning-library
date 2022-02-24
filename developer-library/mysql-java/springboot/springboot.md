@@ -7,7 +7,9 @@ In this lab, we include run the same Java code to get data from MySQL in Spring 
 Estimated Time: 20 minutes
 
 ### About Spring Boot
-Spring Boot Extension is Spring's convention-over-configuration solution for creating stand-alone, production-grade Spring-based Applications that you can "just run". It is preconfigured with the Spring team's "opinionated view" of the best configuration and use of the Spring platform and third-party libraries so you can get started with minimum fuss. 
+Spring Boot is a simple framework to run Java program that includes a Webserver.
+
+It is a production-grade Spring-based Applications that you can "just run". It is preconfigured with the Spring team's "opinionated view" of the best configuration and use of the Spring platform and third-party libraries so you can get started with minimum fuss. 
 
 ### Objectives
 
@@ -22,14 +24,14 @@ In this lab, you will:
 This lab assumes you have:
 * Followed the previous labs
 
-## Task 1: SpringBoot - Environment variables
+## Task 1: Environment variables
 
 First, let's finish the Kubernetes setup.
 
 Edit the file bin/env.sh to match your OCI connection details.
 
 ```
-cd bin
+cd oke_mysql_java_101/bin
 cp env.sh.example env.sh
 vi env.sh
 ```
@@ -53,7 +55,7 @@ When all the environment variables are set, create the registry secret to allow 
 bin/create_registy_secret.sh
 ```
 
-## Task 2: SpringBoot - Hardcoded values
+## Task 2: Spring Boot - Hardcoded values
 
 In this demo too, the DB details are hardcoded. 
 1. If you are running MySQL database service, you will use the Private IP of MySQL
@@ -89,7 +91,7 @@ with the same value used in the environment variables above
         image: &lt;OCI_REGION&gt;/&lt;OCI_NAMESPACE&gt;/marc/webquerydb:v1
 ```
 
-## Task 3: SpringBoot - Build and run
+## Task 3: Spring Boot - Build and run
 
 
 
@@ -110,10 +112,10 @@ curl http://123.123.123.123/query
 
 You will see
 ```
-1:DOLPHIN 2:TIGER 3:PINGUIN 4:LION
+1:DOLPHIN 2:TIGER 3:PENGUIN 4:LION
 ```
 
-## Task 4: SpringBoot - configMap and secrets
+## Task 4: Spring Boot - configMap and secrets
 
 In this demo, the DB details are stored in Kubernetes configMap or secrets.
 
@@ -168,10 +170,10 @@ curl http://123.123.123.123/query
 
 You will see
 ```
-1:DOLPHIN 2:TIGER 3:PINGUIN 4:LION
+1:DOLPHIN 2:TIGER 3:PENGUIN 4:LION
 ```
 
-If you reach this point, CONGRATULATION !! You have a MySQL database, a Springboot application in Java running in Kubernetes using configMap and secrets.
+If you reach this point, CONGRATULATION !! You have a MySQL database, a Spring Boot application in Java running in Kubernetes using configMap and secrets.
 
 ## Known issues
 
@@ -213,15 +215,9 @@ mysql -h127.0.0.1 -uroot -pWelcome1!
 exit
 ```
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA
 * Stuart Davey - MySQL EMEA
 * Mario Beck - MySQL EMEA
-* Last Updated <Feb 2022>
+* Olivier Dasini - MySQL EMEA
+* Last Updated - Feb 2022
