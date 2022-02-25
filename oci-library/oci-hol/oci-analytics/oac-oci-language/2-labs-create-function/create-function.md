@@ -289,6 +289,7 @@ Once you have edited the files in **Task 3**, deploy the function to your applic
 3. Note that the function is registered in your container registry
   	*	From the Console, click **Developer Services** > **Container Registry**
 		* You should be able to see the functions you just deployed in the container registry.
+		* Sometimes the registry is saved in the root compartment and you can always move to your personal compartment
 
 		![Container Registry](images/registry.png)
 
