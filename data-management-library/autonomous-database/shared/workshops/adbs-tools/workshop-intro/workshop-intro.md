@@ -44,8 +44,8 @@ Many of the scenarios in the rest of this workshop will very likely match the ch
 ## Acknowledgements
 
 - Created By/Date - Patrick Wheeler, Product Manager, Autonomous Database, March 2021
-- Contributors - Nilay Panchal, Rick Green, Keith Laker, Marty Gubar, Bud Endress, Jayant Mahto, Mike Matthews
-- Last Updated By - Rick Green, November 2021
+- Contributors - Nilay Panchal, Rick Green, Keith Laker, Marty Gubar, Bud Endress, Jayant Mahto, Mike Matthews, Ashish Jain
+- Last Updated By - Ashish Jain, Rick Green, February 2022
 
 Data about movies in this workshop were sourced from **Wikipedia**.
 
