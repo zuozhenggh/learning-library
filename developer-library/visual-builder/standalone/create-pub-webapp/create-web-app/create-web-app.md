@@ -61,11 +61,11 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
 6.  In the Create Web Application dialog box, enter `hrwebapp` in the **Application Name** field under General Information. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    The application opens on the main-start page, which is automatically created for you. This is also the default name assigned to your application's home page. By convention, a page name has its flow name as a prefix. This simple application uses only the **main** flow. More complex applications can have more than one flow.
+    The application opens on the main-start page, which is automatically created for you and set as your application's home page. By convention, a page name has its flow name as a prefix. This simple application uses only the **main** flow. More complex applications can have more than one flow.
 
     ![](./images/vbcsca_cra_s7.png)
 
-    What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: Page Designer, Actions, Event Listeners, and so on. By default, the page opens in the Page Designer, showing the Components, Data, and Structure tabs on the left. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the structure of your components will show in the Structure view.
+    What you see under the **main-start** tab is your application's work area. Just under **main-start** are several horizontal tabs: Page Designer, Actions, Event Listeners, and so on. By default, the page opens in the Page Designer, with the Components, Data, and Structure tabs on the left. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the structure of your components will show in the Structure view.
 
     On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
 
@@ -73,7 +73,7 @@ The first thing we'll do is create the web application itself. Later, we'll cons
 
     ![](./images/structure-view-move.png)
 
-    Lastly, expand the **hrwebapp** and **main** nodes in the Web Apps pane to get a tree view of your web application.
+    As a final step, expand the **hrwebapp** and **main** nodes in the Web Apps pane to get a tree view of your web application.
 
 ## Task 2: Create a Location business object and import data
 

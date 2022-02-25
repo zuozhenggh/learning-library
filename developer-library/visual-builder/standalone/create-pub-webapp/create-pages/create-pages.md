@@ -15,21 +15,23 @@ Now that you've created the Location, Department, and Employee business objects,
 Let's create a table to display your departments on the main-start page. The Table component is useful when you want to show lots of data in columns.
 
 1.  Click the **Web Applications** ![Web Applications icon](./images/vbcscp_webapp_icon.png) tab in the Navigator.
-2.  Expand the **hrwebapp** and **main** nodes if necessary, then click **main-start**, the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the **main-start** tab just below the header.) You're viewing the Page Designer, with the Components palette visible.
+2.  Expand the **hrwebapp** and **main** nodes if necessary, then click **main-start**, the page that was automatically created as the default home page for your web application. (You can also open the page by clicking the **main-start** tab just below the header.) You're viewing the Page Designer.
 
     You may want to click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Now let's give this main-start page a title. Click the **Components** palette, then drag the **Heading** component under Common and drop it onto the page.
+3.  Now let's give this main-start page a title. Click **main** on the page canvas—if you were to click **Structure**, you'll see that the title text belongs to the Bind Text component, selected in the Structure view. (If you're having trouble selecting the component, you'll need to expand the canvas area to better view the different elements.)
 
     ![](./images/vbcscp_dd_s3.png)
 
-4.  In the Heading's Properties pane, enter `Departments` in the **Text** field.
+4.  In the Bind Text component's Properties pane, replace `main` with `Departments` in the Value field.
 
     ![](./images/vbcscp_dd_s4.png)
 
-5.  In the Components palette, scroll down to **Collection** and drag a **Table** component onto the page below the heading. You'll use this table to display three columns that map to the department business object's id, name, and location fields.
+5.  Now click **Components** to open the Components palette and scroll down to Collection. Drag and drop a **Table** component onto the canvas.
 
     ![](./images/department_add_table.png)
+
+    A table with some sample data is added to the page. We'll use this table to display three columns that map to the department business object's id, name, and location fields.
 
 6.  Select the table if necessary, then click **Add Data** in the Properties pane's Quick Start tab to open the Add Data Quick Start.  
 
@@ -37,11 +39,11 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     Quick Starts walk you through complex processes and help build the basics of your application quickly; in this task, we'll use the Add Data Quick Start to connect your table to the Department business object's data. The Quick Start wizard will prompt you to select your data source, select the fields from the business object that you want to show in your table, and filter data (which we won't do here).
 
-7.  On the Locate Data page of the Quick Start, select **Department** under Business Objects, then click **Next**.  
+7.  On the Locate Data step of the Quick Start, select **Department** under Business Objects, then click **Next**.  
 
     ![](./images/vbcscp_dd_s7.png)
 
-8.  On the Bind Data page, under **item\[i\]**, select the **id** and **name** check boxes (in that order). These two fields will show as columns in your Departments table.
+8.  On the Bind Data step, under **item\[i\]**, select the **id** and **name** check boxes (in that order). These two fields will show as columns in your Departments table.
 
     ![](./images/vbcscp_dd_s8.png)
 
@@ -49,7 +51,7 @@ Let's create a table to display your departments on the main-start page. The Tab
 
     ![](./images/vbcscp_dd_s9.png)
 
-10.  On the Define Query page, click **Finish**.  
+10.  On the Define Query step, click **Finish**.  
 
      A Departments table with three empty columns is displayed on the main-start page. Notice that the second Name column (which maps to the location name field) shows simply as Name because that's what we set for the Display Field when we created the Location reference.
 
@@ -72,9 +74,9 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
 1.  With the Departments table on the main-start page selected, click the **Quick Start** tab, then click **Add Create Page**.
 
-2.  On the Select Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**.
+2.  On the Select Endpoint step of the Add Create Page Quick Start, select **Department** under Business Objects (if necessary) and click **Next**.
 
-3.  On the Page Detail page, under Endpoint Structure, select the **location** check box (the **name** check box is already selected, because name is a required field). Name and Location are the only fields the user needs to specify to create a department.
+3.  On the Page Detail step, under Endpoint Structure, select the **location** check box (the **name** check box is already selected, because name is a required field). Name and Location are the only fields the user needs to specify to create a department.
 
     ![](./images/department_add_create.png)
 
@@ -131,9 +133,9 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![](./images/data-palette-employee-object-table.png)
 
-7. Select **Table** in the pop-up menu to open the Add Data quick start. This quick start is similar to the one you used before to create the departments table, except that you don't need to associate a data source.
+7. Select **Table** in the pop-up menu (the second Table option, not Table Dynamic) to open the Add Data quick start. This quick start is similar to the one you used before to create the departments table, except that you don't need to associate a data source.
 
-7.  On the Bind Data page, select the **id**, **name**, **hireDate**, and **email** check boxes under **item\[i\]**. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![Handle icon](./images/vbcscp_handle_icon.png) to reorder the columns as desired.
+7.  On the Bind Data step of the Add Data Quick Start, select the **id**, **name**, **hireDate**, and **email** check boxes under **item\[i\]**. The columns appear in the order selected; if you want to change the order, drag a **Handle** ![Handle icon](./images/vbcscp_handle_icon.png) to reorder the columns as desired.
 
     ![](./images/vbcscp_cpe_s8.png)
 
@@ -141,7 +143,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     ![](./images/vbcscp_cpe_s9.png)
 
-10.  On the Define Query page, click **Finish**.
+10.  On the Define Query step, click **Finish**.
 
     An empty Employees table is displayed.
 
@@ -159,7 +161,7 @@ We'll now create a page to display employees, similar to the one you created to 
 Add a Create page that lets your users create new employees.
 
 1.  With the table selected on the main-employees page, click the **Quick Start** tab, then **Add Create Page**.
-2.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
+2.  On the Select Endpoint step of the Add Create Page Quick Start, select **Employee** under Business Objects (if necessary) and click **Next**.
 
 3.  On the Page Detail page, select the **hireDate**, **email**, and **department** check boxes, in that order (**name** is already selected, because it's a required field).
 

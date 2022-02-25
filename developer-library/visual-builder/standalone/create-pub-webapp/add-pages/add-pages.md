@@ -20,11 +20,11 @@ An Edit page lets you edit a row in your table. In this task, you'll add an edit
 
     ![](./images/vbcsmd_aep_s2.png)
 
-3.  On the Select Read Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**.
+3.  On the Select Read Endpoint step of the Add Edit Page Quick Start, select **Department** under Business Objects (if necessary) and click **Next**.
 
-4.  On the Select Update Endpoint page, select **Department** under Business Objects (if necessary)  and click **Next**.
+4.  On the Select Update Endpoint step, select **Department** under Business Objects (if necessary)  and click **Next**.
 
-5.  On the Page Details page, select **location** (**name** is already selected) and click **Finish**.
+5.  On the Page Details step, select **location** (**name** is already selected) and click **Finish**.
 
     An **Edit Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
@@ -35,9 +35,9 @@ A Detail page lets you view additional details of a row in your table. In this t
 
 1.  In the Quick Start menu, click **Add Detail Page**.
 
-2.  On the Select Endpoint page, select **Department** under Business Objects (if necessary) and click **Next**.
+2.  On the Select Endpoint step of the Add Detail Page Quick Start, select **Department** under Business Objects (if necessary) and click **Next**.
 
-3.  On the Page Details page, select **name**. Expand the **locationObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **name**. With this selection, both the department's name and location will show as additional details for the user. Change the Button label field to View Department Detail. Click **Finish**.  
+3.  On the Page Details step, select **name**. Expand the **locationObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **name**. With this selection, both the department's name and location will show as additional details for the user. Change the Button label field to View Department Detail. Click **Finish**.  
 
   ![](./images/department-add-detail-page-fields.png)
 
@@ -55,7 +55,7 @@ A Delete button lets you delete a selected row in your table. In this task, you'
 
 1.  Return to the **main-departments** page. Click the **Quick Start** tab if necessary, and click **Add Delete Action**.
 
-2.  On the Select Endpoint page (the only page of the Quick Start), select **Department** under Business Objects (if necessary) and click **Finish**.
+2.  On the Select Endpoint step (the only step of the Quick Start), select **Department** under Business Objects (if necessary) and click **Finish**.
 
     A **Delete Department** button is displayed in the toolbar on the main-departments page. The button is inactive.
 
