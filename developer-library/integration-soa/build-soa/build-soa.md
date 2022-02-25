@@ -147,14 +147,14 @@ The database adapter getpaymentInformation will connect to the SOA database. In 
 1. In the Create Database Connection dialog, enter the following details:
       - Create Connection In: Application Resources
       - Connection Name: SOA
-      - Connection Type: Java DB (Derby)
+      - Connection Type: Java DB / Apache Derby
 
-   ![](./images/validatepymnt17.png " ")
+   ![](./images/java-derby.png " ")
 
-2. Input Server Name (localhost), Port (1527) and Database (soainfra) for the preconfigured Java DB are filled in automatically. Click the Test Connection button and verify that your connection works.
+2. Input Server Name (localhost), Port (1527) and Database (soainfra) for the preconfigured Java DB / Apache Derby are filled in automatically. Click the Test Connection button and verify that your connection works.
 You should see “Success!” like in the screenshot below
 
-   ![](./images/validatepymnt18.png " ")
+   ![](./images/java-jerby-connection.png " ")
 
 3. Click OK.
 4. Ensure to save all changes by clicking the Save All icon at the top of JDeveloper.
@@ -194,6 +194,8 @@ If your log looks like this, everything is fine:
 Similarly inspect the Output Variable by changing to the Output tab.
 
    ![](./images/validatepymnt22.png " ")
+   
+
 
 13. In the BPEL process, just above the invoke activity, is the Assign activity `setCreditCardNumber`. Use an Assign activity to assign data to a variable. In this case, the credit card number is assigned that was passed into the BPEL process to the `getPaymentInformation` service.
 
@@ -300,6 +302,9 @@ As the BPEL process already includes variables that can be used in this transfor
 20. The Variable Chooser dialog will be displayed. Select the scope variable outputVariable. This variable will include the payment validation status.
    ![](./images/template2.png " ")
 
+   After modifying the variables :
+   ![](./images/change-variables.png " ")
+
 21. Click Ok. Now you can delete the scope variables.
 
 22. Next, open the Variables window by clicking the Property Structure icon on top of the BPEL process and choosing Variables.
@@ -390,5 +395,5 @@ To find more detail about BPEL, Process manager - please go to this [SOA 12c lin
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji
-* **Contributors** - Rene Fontcha, Meghana Banka, Kamryn Vinson
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
+* **Contributors** - Rene Fontcha, Meghana Banka, Kamryn Vinson, Sahaana Manavalan, Chethan BR
+* **Last Updated By/Date** - Sahaana Manavalan, LiveLabs Developer, NA Technology, February 2022
