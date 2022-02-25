@@ -264,7 +264,7 @@ We will now create the function in the application. The function will do sentime
 		    ret = ret.drop([col],axis=1)
 		    str=ret.to_json(orient='records')
 		    return str
-		)</copy>
+		</copy>
 
 
 
