@@ -11,6 +11,7 @@ Estimated Time: 30 minutes
 ### Objectives
 
 In this lab, you will:
+* Create and import a business glossary.
 * Create an Oracle Object Storage data asset.
 * Add three Object Storage connections for the newly created data asset.
 * Create a Filename Pattern and assign it to the Oracle Object Storage data asset.
@@ -92,9 +93,7 @@ After you register a data source as a data asset in your data catalog, you creat
     * **Pre-Authenticated Request URL:** Click **Copy** to copy the following URL, and then paste it in this field.
 
         ```
-        <copy>
-        https://objectstorage.us-ashburn-1.oraclecloud.com/p/xLD1tlFfRX2AJSpT1GNaB5S9VHFCrAgnWMbCWyPD43YtEibUDS8UEfzJ8MZBy6D7/n/c4u04/b/moviestream_sandbox/o/
-        </copy>
+        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/jTFkU1Mey2PizeVQDp2nkfpAV40OmI9rLejneNhQ9tNiDqkP4543H4Boy8gDaxos/n/c4u04/b/moviestream_sandbox/o/</copy>
         ```  
 
     * **Make this the default connection for the data asset:** Leave this checkbox unchecked.
@@ -123,9 +122,7 @@ After you register a data source as a data asset in your data catalog, you creat
     * **Pre-Authenticated Request URL:** Click **Copy** to copy the following URL, and then paste it in this field.
 
         ```
-        <copy>
-        https://objectstorage.us-ashburn-1.oraclecloud.com/p/SeVa0GpdGi4uQvG6_qKYiyYSMpOhyh3DK9EoejNlk-XUwhrlZ_tgueamXRpyoeci/n/c4u04/b/moviestream_landing/o/
-        </copy>
+        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/YtpqXpUpPx1pPXFQa4Githwxx4bxp12q2yZJsCyzN0Y9-kpYr5nAOvLvwZfLHxXF/n/c4u04/b/moviestream_landing/o/</copy>
         ```
 
     * **Make this the default connection for the data asset:** Leave this checkbox unchecked.
@@ -153,7 +150,7 @@ After you register a data source as a data asset in your data catalog, you creat
     * **Pre-Authenticated Request URL:** Click **Copy** to copy the following URL, and then paste it in this field.
 
         ```
-        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/-TYitQYh4aZiwelE5BgwiNnYfpfgsvdFp4BlUgtY-U4LvgfNFlzY-Ii0bSgGyFR5/n/c4u04/b/moviestream_gold/o/</copy>
+        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/B4TMFWDOLh-EPrzE2ivDAfOlizm7IjpI_SY94QgUTGJNMX3jgh0jnQFAtPPZVcWq/n/c4u04/b/moviestream_gold/o/</copy>
         ```
 
     * **Make this the default connection for the data asset:** Leave this checkbox unchecked.
@@ -511,9 +508,9 @@ If you already launched the workshop and logged in to the Console using the inst
 
     >**Note:** Bookmark the **Launch Access the Data Lake using Autonomous Database and Data Catalog Workshop** page for quicker access. You will refer to the resources listed on this page several time in this workshop.
 
-## Task 2: Create an Oracle Object Storage Data Asset
+## Task 2: Create and Import a Glossary
 
-Register your Oracle Object Storage data sources with Data Catalog as a data asset.
+In this task, you create a new and empty business glossary in your Data Catalog instance. Next, you import an existing glossary that you will download to your local file system into the new glossary. A business glossary is a managed vocabulary of business terms and concepts that can be used across your department or organization. A business glossary is organized in the hierarchy of categories, sub categories, and terms. Business concepts are common across teams or departments in an organization. When such common concepts are managed and organized formally through a business glossary, the teams within an organization are enabled to collaborate better and use the same vocabulary. For detailed information on using business glossaries, see [Using Business Glossaries](https://docs.oracle.com/en-us/iaas/data-catalog/using/enrich-business-glossary.htm) in the _Oracle Cloud Infrastructure_ documentation.
 
 1. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**.
 
@@ -529,9 +526,55 @@ Register your Oracle Object Storage data sources with Data Catalog as a data ass
 
     ![The Data Catalogs page in your assigned LiveLabs compartment is displayed. The training-dcat-instance Data Catalog instance provided for your is displayed on this page.](./images/ll-select-compartment.png " ")
 
-4. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog instance where you want to create your data asset.
+4. On the **Data Catalogs** page, click the **`training-dcat-instance`** Data Catalog in the **Name** column.
 
-5. On the **`training-dcat-instance`** **Home** page, in the **Data Assets** tile, click **Create Data Asset**.
+   ![The Data Catalog instance and its Active state are highlighted.](./images/click-data-catalog.png " ")
+
+5. The Data Catalog **Home** page is displayed. Click the **Glossaries** link.
+
+   ![The Home tab and the Glossaries link are highlighted.](./images/click-glossaries.png " ")
+
+   The **Glossaries** tab is displayed.
+
+   ![The Glossaries tab and the Create Glossary button are highlighted.](./images/click-create-glossary.png " ")
+
+6. Click **Create Glossary**. The **Create Glossary** panel is displayed. Enter **`MovieStream Application`** in the **Name** field and **`Describes the assets related to the MovieStream data`** in the **Description** field, and then click **Create**.
+
+   ![The Create button on the completed Create Glossary panel is highlighted.](./images/ll-create-glossary-panel.png " ")
+
+   The **MovieStream Application** glossary tab is displayed.
+
+   ![On the "Glossary: MovieStream Application" details page, the Import button is highlighted.](./images/click-import.png " ")
+
+7. Click **Import**. A **Note** message box is displayed indicating that some rich text formatting might be modified or lost on import. Click **Proceed**.
+
+8. In the **Open** dialog box for your local system, copy and enter the following URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Make sure that the **Custom Files (.csv; .xlsx)** type is selected in the second drop-down field, and then click Open.
+
+    ```
+    <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_scripts/o/dcat/MovieStream%20ApplicationExport.xlsx</copy>
+    ```
+
+    ![The populated File name text field and Open button are highlighted.](./images/specify-url.png " ")
+
+9. An import job is triggered and an "Initiated MovieStream Application import job" message is displayed. You can click the **View Job** link in the message to view the details of this job. When the job is completed successfully, the contents of the Excel file are imported into your glossary.
+
+    ![The Summary tab of the imported glossary displays the glossary details. In the Glossary Hierarchy pane on the left, the Refresh glossary link and MovieStream Application name link are highlighted.](./images/glossary-imported.png " ")
+
+10. The imported glossary is displayed in the **Glossary Hierarchy** pane on the left. You can also click **Expand all** to view all of the details. The children of the **MovieStream Application** glossary are displayed. If the glossary details are not displayed, click **Refresh glossary**.
+
+   ![In the Glossary Hierarchy pane, the Expand all and MovieStream Application name link are highlighted. The MovieStream Application is expanded to show some of its immediate children and descendants.](./images/expand-all.png " ")
+
+    >**Note:** The categories and terms created within a glossary are displayed in the **Glossary Hierarchy** tree navigation list. Expand each category to view terms created within that category. The summary information changes as you click different nodes in the glossary tree. You can use Expand All or Collapse All to expand or collapse all the nodes available in the glossary respectively. You can also use the search bar to search for categories and terms. If the glossary children are not displayed, click **Refresh glossary**.
+
+11. Close the **Glossaries** and **MovieStream Application** tabs. The Data Catalog instance **Home** tab is re-displayed. The added glossary is reflected in the highlighted Glossary link.
+
+    ![The highlighted Glossary(1) link is highlighted.](./images/home-tab.png " ")
+
+## Task 3: Create an Oracle Object Storage Data Asset
+
+Register your Oracle Object Storage data sources with Data Catalog as a data asset.
+
+1. On the **`training-dcat-instance`** **Home** page (from the previous task), in the **Data Assets** tile, click **Create Data Asset**.
 
     ![The Data Assets tile and the Create Data Asset button are highlighted.](./images/ll-create-data-asset.png " ")
 
@@ -614,7 +657,7 @@ In this lab and in several later labs, you'll use the information about the reso
     ![](./images/ll-paste-user-ocid.png " ")
 -->
 
-## Task 3: Add Three Data Asset Connections to the Oracle Object Storage Buckets
+## Task 4: Add Three Data Asset Connections to the Oracle Object Storage Buckets
 
 After you register a data source as a data asset in your data catalog, you create data connections to your data asset to be able to harvest it. You can create multiple connections to your data source. At least one connection is needed to be able to harvest a data asset. In this lab, you will create three data connections to access the **moviestream\_sandbox**, **moviestream\_landing**, and **moviestream\_gold** Oracle Object Storage buckets that contain the data. The three buckets are located in the **c4u04** tenancy; therefore, you will use three provided public pre-authenticated requests (PARs), one for each bucket. For information on PAR, see [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) in the _Oracle Cloud Infrastructure_ documentation.
 
@@ -635,7 +678,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
         ```
         <copy>
-        https://objectstorage.us-ashburn-1.oraclecloud.com/p/xLD1tlFfRX2AJSpT1GNaB5S9VHFCrAgnWMbCWyPD43YtEibUDS8UEfzJ8MZBy6D7/n/c4u04/b/moviestream_sandbox/o/
+        https://objectstorage.us-ashburn-1.oraclecloud.com/p/jTFkU1Mey2PizeVQDp2nkfpAV40OmI9rLejneNhQ9tNiDqkP4543H4Boy8gDaxos/n/c4u04/b/moviestream_sandbox/o/
         </copy>
         ```  
 
@@ -667,7 +710,7 @@ After you register a data source as a data asset in your data catalog, you creat
 
         ```
         <copy>
-        https://objectstorage.us-ashburn-1.oraclecloud.com/p/SeVa0GpdGi4uQvG6_qKYiyYSMpOhyh3DK9EoejNlk-XUwhrlZ_tgueamXRpyoeci/n/c4u04/b/moviestream_landing/o/
+        https://objectstorage.us-ashburn-1.oraclecloud.com/p/YtpqXpUpPx1pPXFQa4Githwxx4bxp12q2yZJsCyzN0Y9-kpYr5nAOvLvwZfLHxXF/n/c4u04/b/moviestream_landing/o/
         </copy>
         ```
 
@@ -697,7 +740,7 @@ After you register a data source as a data asset in your data catalog, you creat
     * **Pre-Authenticated Request URL:** Click **Copy** to copy the following URL, and then paste it in this field.    
 
         ```
-        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/-TYitQYh4aZiwelE5BgwiNnYfpfgsvdFp4BlUgtY-U4LvgfNFlzY-Ii0bSgGyFR5/n/c4u04/b/moviestream_gold/o/</copy>
+        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/B4TMFWDOLh-EPrzE2ivDAfOlizm7IjpI_SY94QgUTGJNMX3jgh0jnQFAtPPZVcWq/n/c4u04/b/moviestream_gold/o/</copy>
         ```
 
     * **Make this the default connection for the data asset:** Leave this checkbox unchecked.
@@ -713,7 +756,7 @@ After you register a data source as a data asset in your data catalog, you creat
     ![The newly created Gold connection is displayed.](./images/gold-connection-added.png " ")
 
 
-## Task 4: Create a Filename Pattern and Assign it to your Oracle Object Storage Data Asset
+## Task 5: Create a Filename Pattern and Assign it to your Oracle Object Storage Data Asset
 
 Your data lake typically has a large number of files that represent a single data set. You can group multiple Object Storage files into logical data entities in Data Catalog using filename patterns. A filename pattern is a regular expression that is created to group multiple Object Storage files into a logical data entity that can be used for search and discovery. Using logical data entities, you can organize your data lake content meaningfully and prevent the explosion of your entities and attributes in your Data Catalog.
 If an Object Storage file is matched with multiple filename patterns, it can be part of multiple logical data entities.
@@ -790,7 +833,7 @@ Create a filename pattern as follows:
     >**Note:**    
     When you assign a new filename pattern to a data asset, the status of any harvested logical data entities is set to **Inactive**. You need to harvest the data asset again to derive the valid logical data entities again.
 
-## Task 5: Harvest the Data Asset
+## Task 6: Harvest the Data Asset
 
 After you create a data asset in the Data Catalog repository, you harvest it to extract the data structure information into the Data Catalog and view its data entities and attributes. In this task, you will harvest the **moviestream\_sandbox**, **moviestream\_landing**, and **moviestream\_gold** Oracle Object Storage buckets that contain the data.
 
@@ -911,15 +954,18 @@ After you create a data asset in the Data Catalog repository, you harvest it to 
 
 After you harvest your data asset, you can browse or explore your data asset to view the data entities and attributes.
 
-## Task 6: View the Harvested Data Entities
+## Task 7: View the Harvested Data Entities
 
 1. On the Data Catalog instance **Home** tab, click **Data Entities**.
 
     ![On the selected Data Catalog instance Home page, the Data Entities link is highlighted.](./images/click-data-entities.png " ")
 
-    The **Data Entities** tab is displayed. Remember, there were a total of **18** logical entities that were derived from the three Object Storage buckets during the harvesting process: **3** from the **`moviestream_sandbox`** bucket, **11** from the **`moviestream_landing`** bucket, and **4** from the **`moviestream_gold`** bucket. Again, your results might be different than what we are showing here. You can use the different **Filters** on the page to refine the **Data Entities** list.
+    > **Note:** The **logical data entities harvested** shown in the above image might not match your results.
+
+    The **Data Entities** tab is displayed. Remember, in our example (your results might be different) there were a total of **18** logical entities that were derived from the three Object Storage buckets during the harvesting process: **3** from the **`moviestream_sandbox`** bucket, **11** from the **`moviestream_landing`** bucket, and **4** from the **`moviestream_gold`** bucket. Again, your results might be different than what we are showing here. You can use the different **Filters** on the page to refine the **Data Entities** list.
 
     ![The Data Entities tab is a displayed. Some of the entities are displayed.](./images/data-entities-tab.png " ")
+
 
 2. In the **Data Entities** list, click the name link for the data entity you want to view. Click the **`custsales`** logical data entity that was derived from the **`moviestream_gold`** bucket.
 
@@ -933,7 +979,7 @@ After you harvest your data asset, you can browse or explore your data asset to 
 
     ![The Attributes tab of custsales is selected and highlighted. The list of custsales attributes names and datatypes is displayed.](./images/custsales-attributes-tab.png " ")
 
-## Task 7: Customize the Business Name for the Object Storage Buckets
+## Task 8: Customize the Business Name for the Object Storage Buckets
 
 Customize the business names for each of the three Oracle Object Storage buckets that you use in this workshop.
 When you later perform the synchronization process between your ADB and Data Catalog instances, the schemas and tables are created automatically for you. By default, the names of the schemas will start with **DCAT$** concatenated with the data asset's name, **Data Lake**, and the folder's (bucket's) name such as **moviestream\_sandbox**. All three bucket names start with **moviestream\_** followed by **sandbox**, **landing**, or **gold**. To make the generated schema names a bit shorter, you will customize the business name for each bucket and remove the **moviestream_** prefix from their names. For example, the generated schema name for the **moviestream\_sandbox** will be **DCAT$DATA\_LAKE\_SANDBOX** instead of the default name of  **DCAT$DATA\_LAKE\_MOVIESTREAM\_SANDBOX**.

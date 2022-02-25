@@ -74,7 +74,7 @@ As the `ADMIN` user on the ATP database, run the `load-data-safe-sample-data_adm
 
 4. If a help note is displayed, click the **X** button to close it.
 
-5. Download the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/AUKfPIGuTde04z4OnuaZN2EP0LxNl4hJWI2jZiTw23aWzSoa2_Byvs8OGPw20-dt/n/c4u04/b/livelabsfiles/o/security-library/load-data-safe-sample-data_admin.sql) script, and then unzip it in a directory of your choice. Next, open the file in a text editor, such as NotePad.
+5. Download the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/load-data-safe-sample-data_admin.sql) script, and then unzip it in a directory of your choice. Next, open the file in a text editor, such as NotePad.
 
 6. Copy the entire script to the clipboard and then paste it into a worksheet in Database Actions.
 
@@ -105,7 +105,7 @@ As the `ADMIN` user on the ATP database, run the `load-data-safe-sample-data_adm
     - `REGIONS` - 4 rows
     - `SUPPLEMENTAL_DATA` - 149 rows
 
-12. If your data is different than what is specified above, rerun the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/_-MZwoh0FSIMw4mBEzCDUIDNmOLp-aO99DmibYCY_CM_45zpp7YAJGKWoMVnKZRW/n/c4u04/b/security-library/o/load-data-safe-sample-data_admin.sql) script.
+12. If your data is different than what is specified above, rerun the [load-data-safe-sample-data_admin.sql](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/load-data-safe-sample-data_admin.sql) script.
 
 13. Sign out of Database Actions, close the tab, and return to the **Autonomous Database | Oracle Cloud Infrastructure** tab.
 
@@ -155,4 +155,4 @@ As the `ADMIN` user on the ATP database, run the `load-data-safe-sample-data_adm
 ## Acknowledgements
 
 - **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, February 15, 2022
+- **Last Updated By/Date** - Jody Glover, February 22, 2022
