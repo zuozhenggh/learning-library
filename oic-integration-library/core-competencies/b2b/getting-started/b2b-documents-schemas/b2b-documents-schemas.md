@@ -122,7 +122,7 @@ The following image shows an example Implementation Guide:
 ![Implementation Guide](images/customizePOSchema4010-ImplGuide-2-1.png)
 When done reviewing the Implementation Guide, exit the **Generate Implementation Guide** page.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Learn More
 

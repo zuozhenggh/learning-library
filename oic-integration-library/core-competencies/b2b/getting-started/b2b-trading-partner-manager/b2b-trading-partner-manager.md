@@ -169,7 +169,7 @@ Refer to [B2B Concepts](../workshops/freetier/?lab=gettingStartedB2B) lab for mo
 
 Note: Deploy Transport and Transport Agreements. You can deploy in any sequence and if you modify anything, you can just deploy the corresponding section. For example, if you modify Outbound Transport Agreement then you can deploy (or redeploy) only Outbound Transport Agreement.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Learn More
 

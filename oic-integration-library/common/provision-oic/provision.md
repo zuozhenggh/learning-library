@@ -26,15 +26,15 @@ If you just created a new Cloud account following the instructions in Getting St
 
 2. On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision.
 
-	![](./images/hamburger.png)
+	![OCI Services](./images/hamburger.png)
 
 3. Open the navigation menu and click Developer Services. Under Application Integration, click Integration
 
-	![](./images/integration-landing-page.png)
+	![OCI Developer Services](./images/integration-landing-page.png)
 
 4. From the Compartment list, click through the hierarchy of compartments and select the one in which to create the instance. You may need to expand the + icon to find the compartment to use. Compartments can contain other compartments. It may take several minutes for the new compartment to appear after the policy has been created.
 
-	![](./images/compartment-expand.png)
+	![OCI Compartments](./images/compartment-expand.png)
 
 5. Click the **Create** button.
 
@@ -48,7 +48,7 @@ If you just created a new Cloud account following the instructions in Getting St
 | Message Packs |1|
 | Access Token | If this field is displayed, you are creating an instance as a non-federated user. Sign in as a federated user and restart creating an instance.|
 
-	![](./images/provision-oic-instance-1.png)
+	![OCI Federated User Login](./images/provision-oic-instance-1.png)
 
 7. You should see your instance in the Creating state. It will take several minutes for the instance to be created. When instance creation completes successfully, the instance shows as Active and you'll receive an email. You are now ready to access your instance.
 
@@ -59,9 +59,9 @@ Navigate to an Oracle Integration instance in the Oracle Cloud Infrastructure Co
 1. On the Oracle Cloud Get Started page, select the region in the upper right where you created your Oracle Integration instance. Open the navigation menu in the upper left and click Developer Services. Under Application Integration, click Integration.
 2. If needed, select the compartment where you created your Oracle Integration instance. You should see your instance.
 3. At the far right, click the Task menu and select Service Console. A new browser window will open to your Oracle Integration home page.
-	![](./images/oic-homepage.png)
+	![Oracle Integration Home Page](./images/oic-homepage.png)
 
-	You may now [proceed to the next lab](#next).
+	You may now **proceed to the next lab**.
 
 ## Learn More
 

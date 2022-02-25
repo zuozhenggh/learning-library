@@ -239,7 +239,7 @@ Follow the instructions from Step5 to Step9 given under [Setup the Environment](
 [Refer previous task "Test the integration"](../workshops/freetier/?lab=b2b-outbound-x12-ftp#Task9:Testtheintegration)
 6. Monitor the trading partner and backend integrations.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Learn More
 
