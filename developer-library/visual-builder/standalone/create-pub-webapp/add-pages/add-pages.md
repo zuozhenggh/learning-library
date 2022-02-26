@@ -95,10 +95,10 @@ Now that we've added options to let users manage departments, we'll do the same 
 1.  Go to the **main-employees** page, click the **Page Designer** tab and select the **Table** component. If necessary, click **Reload page** ![Reload page icon](./images/vbcsmd_refresh_icon.png) to view the list of new employees.
 2.  In the Properties pane, click **Quick Start** to display the Quick Start menu, then click **Add Edit Page**.
 
-3.  On the Select Read Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
+3.  On the Select Read Endpoint step of the Add Edit Page Quick Start, select **Employee** under Business Objects (if necessary) and click **Next**.
 
-4.  On the Select Update Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
-5.  On the Page Details page, select **hireDate**, **email**, and **department** (**name** is already selected). Click **Finish**.
+4.  On the Select Update Endpoint step, select **Employee** under Business Objects (if necessary) and click **Next**.
+5.  On the Page Details step, select **hireDate**, **email**, and **department** (**name** is already selected). Click **Finish**.
 
     An **Edit Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
@@ -112,14 +112,14 @@ Now that we've added options to let users manage departments, we'll do the same 
 
 1.  Go to the **main-employees** page. If necessary, click the table, then click the **Quick Start** tab.
 2.  In the Quick Start menu, click **Add Detail Page**.
-3.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Next**.
-4.  On the Page Details page, select **name**, **hireDate**, and **email**. Expand the **departmentObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **name**. Change the Button label field to View Employee Detail, then click **Finish**.
+3.  On the Select Endpoint step of the Add Detail Page Quick Start, select **Employee** under Business Objects (if necessary) and click **Next**.
+4.  On the Page Details step, select **name**, **hireDate**, and **email**. Expand the **departmentObject** and **items** nodes (**item\[i\]** is expanded automatically) and select **name**. Change the Button label field to View Employee Detail, then click **Finish**.
 
     A **View Employee Detail** button is displayed in the toolbar on the main-employees page. The button is inactive.
 
 5.  Now click **Add Delete Action** in the Quick Start menu.
 
-6.  On the Select Endpoint page, select **Employee** under Business Objects (if necessary) and click **Finish**.
+6.  On the Select Endpoint step of the Add Delete Action Quick Start, select **Employee** under Business Objects (if necessary) and click **Finish**.
 
     A **Delete Employee** button is displayed in the toolbar on the main-employees page. The button is inactive.
 

@@ -31,7 +31,7 @@ Let's create a table to display your departments on the `main-start` page. The T
 
     Click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Let's give this `main-start` page a title. Click `main` on the page canvas—notice how the Bind Text component that contains this title text is selected in the Structure view. (If you're having trouble selecting the component, you'll need to expand the canvas area to better view its elements.)
+3.  Let's give this `main-start` page a title. Click `main` on the page canvas—notice how the title text uses the Bind Text component, also selected in the Structure view. (If you're having trouble selecting the component, you'll need to expand the canvas area to better view its elements.)
 
     ![](images/department-heading.png " ")
 
