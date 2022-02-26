@@ -148,6 +148,8 @@ In Data Discovery, you can select the sensitive types that you want to discover 
 
 11. Position your mouse over the **Identification Information** category in the chart to view its value.
 
+    Your percentage value may be different than the value shown in the screenshot.
+
     ![Identification Information category in sensitive data model chart](images/sdm-chart-identification-information.png "Identification Information category in sensitive data model chart")
 
 12. With your mouse still over **Identification Information**, click the pie slice to drill down. Notice that the **Identification Information** category is now divided into two smaller categories (**Personal Identifiers** and **Public Identifiers**).
@@ -266,7 +268,7 @@ After you create a masking policy, you can run a data masking job against your t
 
     The **Work Request** page is displayed.
 
-3. Monitor the progress of the data masking job and wait for the status to read **SUCCEEDED**.
+3. Monitor the progress of the data masking job in the **Log Messages** table, and wait for the status to read **SUCCEEDED**.
 
     ![Work Request page for masking job](images/work-request-masking-job.png "Work Request page for masking job")
 
@@ -335,4 +337,4 @@ After you create a masking policy, you can run a data masking job against your t
 
 ## Acknowledgements
 * **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, February 15, 2022
+* **Last Updated By/Date** - Jody Glover, February 25, 2022
