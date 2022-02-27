@@ -1,9 +1,9 @@
 # Introduction
 
-## About this Workshop
+## About this Lab
 
 
-This workshop will show how to get started with Oracle Content Management (OCM) and then integrate Oracle APEX based application to consume content from OCM. You will learn how to setup content repository, Content Capture and finally integrated Oracle content with Oracle APEX via API & Embed UI option.
+This lab will show how to get started with Oracle Content Management (OCM) and then integrate Oracle APEX based application to consume content from OCM. You will learn how to setup content repository, Content Capture and finally integrated Oracle content with Oracle APEX via API & Embed UI option.
 
 
 Estimated Lab Time: 120 minutes

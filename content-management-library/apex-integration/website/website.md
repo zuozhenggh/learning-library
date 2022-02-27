@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will create site based on site template provided as part of workshop file.
+In this lab we will create site based on site template provided as part of lab file.
 
 *Note:Oracle Content Management let you create unlimited website but Stater edition is limited to 1 site per instance*
 
@@ -66,7 +66,7 @@ This lab assumes you have:
 
 3.	Click the Template to select and it will take you to next step
 
-4.	Select the Asset repository as **Demo** which we created in previous labs
+4.	Select the Asset repository as **Demo** which we created in previous labs.
 
 5.	Select **Localization Policy** as **SE2 Localization** and then click **Next**
 

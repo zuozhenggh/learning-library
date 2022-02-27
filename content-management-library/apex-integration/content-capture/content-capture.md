@@ -2,13 +2,13 @@
 
 ## Introduction
 
-In this lab we will configure “Capture” capabilities to ingest email attachment from a configured email address and store that in asset repository.
+In this session we will configure “Capture” capabilities to ingest email attachment from a configured email address and store that in asset repository.
 
 Estimated Lab Time: 15 minutes
 
 ### Background
 
-Content Capture feature allows you to configure content ingestion from various sources like Email, FTP, Scanner device etc. It also support orchestration of other document processing activity like OCR, file type conversion etc. In this workshop, we will keep the use case simple but you can refer documentation for more advance use cases.
+Content Capture feature allows you to configure content ingestion from various sources like Email, FTP, Scanner device etc. It also support orchestration of other document processing activity like OCR, file type conversion etc. In this session, we will keep the use case simple but you can refer documentation for more advance use cases.
 
 Let’s have a look at the basic process of capturing content and uploading it to Oracle Content Management.
 section.
@@ -50,7 +50,7 @@ Procedures are defined content capture workflows, from the initial sourcing all 
 
 ## Task 2: Define Metadata
 
-Navigate to **Metadata** tab and here we will create define metadata as **Party Name** to store subject of email (Assuming that email subject will have Party name just for this workshop purpose)
+Navigate to **Metadata** tab and here we will create define metadata as **Party Name** to store subject of email (Assuming that email subject will have Party name just for this session purpose)
 
 1. Click ![Add](images/plus-icon.png) on “Metadata Fields” section as shown below
 
@@ -169,7 +169,7 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
 
    ![Email](images/email.png)
    
-   *For workshop we will use Subject as unique identifier to associate content with Customer*
+   *For lab we will use Subject as unique identifier to associate content with Customer*
 
 2.	After sometime check **Demo** Asset repository, email attachment will be avilalbe as asset.
 

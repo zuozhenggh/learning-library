@@ -79,6 +79,8 @@ Within your new database, APEX is not yet configured. Therefore, when you first 
 
     ![](images/log-in-to-workspace.png " ")
 
+8. Bookmark the APEX application url.
+
 ## Summary
 
 This completes this lab. At this point, you know how to create a new Autonomous Transaction Processing instance and create an APEX workspace within it. Click on **Lab 3: Setup Content Repository** to create repository to manage content.

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will import sample APEX application **Customer Tracker** and configure Single Sign-on using IAM.
+In this session we will import sample APEX application **Customer Tracker** and configure Single Sign-on using IAM.
 
 Estimated Lab Time: 10 minutes
 
@@ -26,7 +26,7 @@ This lab assumes you have:
 ## Task 1: Import Customer Tracker sample application
 
 
-1.	Select “Import” from the option available on home page after login
+1. Login to APEX application (Refer Lab 2 - Task 2.8 for application URL) & Select **Import** from the option available on home page
 
 	![APEX Home](images/apex-home.png)
 
@@ -70,7 +70,7 @@ This lab assumes you have:
     * **Description** : APEX Sign in for Customer Tracker App
     * **Application URL** : <paste your APEX application URL> like https://&lt;your-instance-specific-value&gt;.oraclecloudapps.com/ords/f?p=100
 
-    *(**Note**: p=100 if you are assigning the same App ID while importing the app, otherwise provide the app if of your APEX application.)*
+    *(**Note**: p=100 if you are assigning the same App ID while importing the app, otherwise provide the app ID of your APEX application.)*
 
 6.	Click **Next**
 
@@ -112,7 +112,7 @@ This lab assumes you have:
 
   ![Web Credential Details](./images/iam-web-cred.png)
 
-5.	Provide Client ID & Client Secret which you got ing previous Task (step 13) and put the **Domain URL** in Valid for URLs *(do not include port number :443)*. You can refer to Lab1- Task 2.3 for **Domain URL**
+5.	Provide Client ID & Client Secret which you got ing previous Task (step 13) and put the **Domain URL** in Valid for URLs *(do not include port number :443)*. You can refer to Lab 1 - Task 2.3 for **Domain URL**
 
 6.	Click **Apply Change**
 
@@ -124,7 +124,7 @@ This lab assumes you have:
 
 8.	Click **IAM Authentication Scheme – Current** and then click **Show All**
 
-9.	Change below fields (You can refer to Lab1- Task 2.3 for **Domain URL**)
+9.	Change below fields (You can refer to Lab 1 - Task 2.3 for **Domain URL**)
       * Settings > Discovery URL : https://&lt; Domain URL &gt;/.well-known/openid-configuration
       * Post-Logout URL > Go To URL : https://&lt;your-apex-url&gt;.oraclecloudapps.com/ords/f?p=100
 

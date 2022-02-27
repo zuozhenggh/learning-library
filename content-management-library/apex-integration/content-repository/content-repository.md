@@ -1,7 +1,7 @@
 # Setup Content Repository
 
 ## Introduction
-In this lab we will setup Content repository where all content will be stored and managed. We will also define content structure with meta-data to store data along with file. At last we will provide access to IAM app which was create in *Lab 1*
+In this session we will setup Content repository where all content will be stored and managed. We will also define content structure with meta-data to store data along with file. At last we will provide access to IAM app which was create in *Lab 1*
 
 
 Estimated Lab Time: 10 minutes
@@ -81,7 +81,7 @@ Click **Next** and then **OK**
 
 ## Task 2: Create Asset repository
 
-We will create Asset repository to manage all our content for this workshop.
+We will create Asset repository to manage all our content for this lab.
 
 1. Navigate to vertical menu **ADMINISTRATION** and then click **Content**
    
@@ -102,7 +102,7 @@ We will create Asset repository to manage all our content for this workshop.
 
    ![Add Members](./images/members.png)
 
-2. Search for Application name **OCM-APEX Integration**  which you created earlier in LAB 1 – Task 3. Select **Role** as **Manager** and click **ADD**
+2. Search for Application name **OCM-APEX Integration**  which you created earlier in Lab 1 – Task 3. Select **Role** as **Manager** and click **ADD**
    
    ![Add Members](./images/add-member.png)
 

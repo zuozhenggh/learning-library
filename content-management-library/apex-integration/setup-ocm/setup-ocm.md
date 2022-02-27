@@ -5,7 +5,7 @@
 This lab walks you through the process of provisioning an instance of Oracle Content Management, assuming you don't already have one available to you. If you do, you can skip this lab and move on to the next one.
 
 
-Estimated Time: 10 minutes
+Estimated Lab Time: 10 minutes
 
 ### Background
 The Oracle Content Management **Starter Edition** offers a free content service tier with a limited feature set and limits on the number of users, assets, sites, and other items. However, it's sufficient to work with Oracle Content Management out of the box.
