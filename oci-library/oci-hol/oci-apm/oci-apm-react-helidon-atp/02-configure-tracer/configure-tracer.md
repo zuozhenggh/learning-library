@@ -405,7 +405,7 @@ Refer to the below screenshots of the ***TodoItemStorage.java*** where the chang
 
 	![OCI OKE](images/6-0-4-oke.png " ")
 
-	Open Cloud Shell, paste the text copied from the cluster page. 
+	Open Cloud Shell, paste the text copied from the cluster page.
 
 	![OCI OKE](images/6-0-5-oke.png " ")
 
@@ -491,4 +491,4 @@ You may now [proceed to the next lab](#next).
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-- **Last Updated By/Date** - Yutaka Takatsu, December 2021
+- **Last Updated By/Date** - Yutaka Takatsu, February 2022

@@ -238,4 +238,4 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-- **Last Updated By/Date** - Yutaka Takatsu, December 2021
+- **Last Updated By/Date** - Yutaka Takatsu, February 2022
