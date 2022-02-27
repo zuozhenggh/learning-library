@@ -18,32 +18,32 @@
         {
             "title": "Lab 1: Setup an OCM Instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../lab1-provision-ocm/provision-ocm.md"
+            "filename": "../../setup-ocm/setup-ocm.md"
         },
         {
             "title": "Lab 2: Setup an Oracle APEX Instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../lab2-provision-apex/setup-apex.md"
+            "filename": "../../setup-apex/setup-apex.md"
         },
         {
             "title": "Lab 3: Setup Content Repository",
-            "filename": "../../lab3-repository/repository.md"
+            "filename": "../../content-repository/content-repository.md"
         },
         {
             "title": "Lab 4: Configure Content Capture",
-            "filename": "../../lab4-capture/capture.md"
+            "filename": "../../content-capture/content-capture.md"
         },
         {
             "title": "Lab 5: Create webiste based on template",
-            "filename": "../../lab5-website/website.md"
+            "filename": "../../website/website.md"
         },
         {
             "title": "Lab 6: Setup Oracle APEX application",
-            "filename": "../../lab6-setup-apex/apex.md"
+            "filename": "../../apex-app/apex-app.md"
         },
         {
             "title": "Lab 7: Integrate OCM & APEX",
-            "filename": "../../lab7-integration/integration.md"
+            "filename": "../../integration/integration.md"
         },
         {
             "title": "Need Help?",
