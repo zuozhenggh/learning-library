@@ -1,4 +1,4 @@
-# How to enable Data Guard for an ADB instance?
+# How do I enable Data Guard for an ADB instance?
 Duration: 5 minutes
 
 When you enable Autonomous Data Guard the system creates a standby database that is continuously updated with the changes from the primary database. You can enable Autonomous Data Guard with a standby in the current region, a local standby, or with a standby in a different region, a cross-region standby.

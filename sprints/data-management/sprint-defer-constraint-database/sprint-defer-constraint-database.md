@@ -1,4 +1,4 @@
-# How to delay applying a foreign key constraint while updating thousands of rows in an Oracle database?
+# How can I delay applying a foreign key constraint while updating thousands of rows in an Oracle database?
 Duation: 2 minutes
 
 You are updating thousands of row and your statements should result in a referentially consistent state at the end. However your statements do not come in a referential order. So you want to delay applying the foreign key constraint until all the rows are updated.
