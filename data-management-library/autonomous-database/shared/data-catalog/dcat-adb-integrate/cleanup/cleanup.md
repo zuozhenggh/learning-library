@@ -30,7 +30,7 @@ You can terminate your Data Catalog instance that you created in this workshop a
 
 2. On the **Data Catalogs** page, in the row for the **`training-dcat-instance`** Data Catalog instance, click the **Actions** icon (three dots), and then select **Terminate** from the context menu.
 
-   ![Click Terminate from the Actions context menu associated with your Data Catalog instance.](./images/dcat-instance-actions.png " ")
+   ![The Data Catalog instance is highlighted and labeled as 1. The Actions icon is highlighted and labeled as 2. The Actions context menu is displayed and labeled as 3. The Terminate menu option is highlighted.](./images/dcat-instance-actions.png " ")
 
 3. A **Terminate** dialog box is displayed. Enter **delete** in the **TYPE "DELETE" TO CONFIRM DELETE** field, and then click **Terminate**. The Data Catalog instance goes into a **Deleting** state. When the delete is completed, the instance is no longer displayed, and all of the resources in the deleted instance are permanently deleted.
 
@@ -46,11 +46,11 @@ You can terminate your ADW instance that you created in this workshop as follows
 
 2. On the **Autonomous Databases** page, in the **List Scope** section, select the **`training-dcat-compartment`** compartment from the **Compartment** drop-down list. In the row for the **`DB-DCAT-Integration`** Autonomous Database instance, click the **Actions** icon (three dots), and then select **Terminate** from the context menu.
 
-   ![Click Terminate from the Actions context menu associated with your ADB instance.](./images/adb-instance-actions.png " ")
+   ![The Autonomous Database instance is highlighted and labeled as 1. The Actions icon is highlighted and labeled as 2. The Actions context menu is displayed and labeled as 3. The Terminate menu option is highlighted.](./images/adb-instance-actions.png " ")
 
-3. A **Terminate** dialog box is displayed. Enter **DB-DCAT Integration** in the **To confirm, enter the name of the database that you want to terminate** field, and then click **Terminate Autonomous Database**.
+3. A **Terminate Autonomous Database** dialog box is displayed. Enter **DB-DCAT Integration** in the **To confirm, enter the name of the database that you want to terminate** field, and then click **Terminate Autonomous Database**.
 
-    ![Click Terminate Autonomous Database to confirm the deletion.](./images/terminate-adb.png " ")
+    ![On the Terminate Autonomous Database dialog box, the Terminate Autonomous Database button is highlighted.](./images/terminate-adb.png " ")
 
     The **State** of the Autonomous Database instance goes into **Terminating**. When the ADB is deleted, the **State** changes to **Terminated**.
 

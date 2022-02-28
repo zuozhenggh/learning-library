@@ -32,9 +32,9 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
-- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that your target database is registered with Oracle Data Safe, the Data Discovery and Data Masking features are enabled on your target database, and you have the appropriate permissions in Oracle Cloud Infrastructure Identity and Access Management (IAM) to use the Data Discovery and Data Masking features with your target database.
-- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. Make sure to have the `ADMIN` password for your database on hand (see [Register an Autonomous Database with Oracle Data Safe](?lab=register-autonomous-database)).
+- Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console at `https://cloud.oracle.com`
+- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment))
+- Registered your target database with Oracle Data Safe and loaded sample data into it. Make sure to have the `ADMIN` password for your database on hand (see [Register an Autonomous Database with Oracle Data Safe](?lab=register-autonomous-database)).
 
 
 ### Assumptions
@@ -88,8 +88,6 @@ Use Oracle Database Actions to query sensitive data in your database. You can ac
 
     - Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, and `hire_date`, are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
     - Keep this tab open so that you can return to it later.
-
-
 
 
 ## Task 2: Discover sensitive data in your target database by using Data Discovery
@@ -147,6 +145,8 @@ In Data Discovery, you can select the sensitive types that you want to discover 
     ![Sensitive Data Model Details page bottom](images/sensitive-data-model-details-page-2.png "Sensitive Data Model Details page bottom")
 
 11. Position your mouse over the **Identification Information** category in the chart to view its value.
+
+    Your percentage value may be different than the value shown in the screenshot.
 
     ![Identification Information category in sensitive data model chart](images/sdm-chart-identification-information.png "Identification Information category in sensitive data model chart")
 
@@ -266,7 +266,11 @@ After you create a masking policy, you can run a data masking job against your t
 
     The **Work Request** page is displayed.
 
-3. Monitor the progress of the data masking job and wait for the status to read **SUCCEEDED**.
+3. Monitor the progress of the data masking job in the **Log Messages** table.
+
+    ![Log messages for data masking work request](images/masking-log-messages.png "Log messages for data masking work request")
+
+4. Wait for the status to read **SUCCEEDED**.
 
     ![Work Request page for masking job](images/work-request-masking-job.png "Work Request page for masking job")
 
@@ -335,4 +339,4 @@ After you create a masking policy, you can run a data masking job against your t
 
 ## Acknowledgements
 * **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, February 15, 2022
+* **Last Updated By/Date** - Jody Glover, February 26, 2022

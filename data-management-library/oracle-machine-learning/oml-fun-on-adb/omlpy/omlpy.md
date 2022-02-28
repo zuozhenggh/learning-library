@@ -1,4 +1,4 @@
-# Use Oracle Machine Learning for Python
+# Introduction to Oracle Machine Learning for Python
 
 ## Introduction
 
@@ -37,7 +37,34 @@ This lab assumes you have:
 
 
 ## Task 1: Create a Database Table
-With OML4Py, you can create Python proxy objects that can be used to access, analyze, and manipulate data that resides in the database. OML4Py uses these proxy objects and transparently translates many standard Python functions into SQL.
+With OML4Py, you can create Python proxy objects that can be used to access, analyze, and manipulate data that reside in the database. OML4Py uses these proxy objects and transparently translates many standard Python functions into SQL. First access the OML4Py Classification DT (1) notebook and then create the database table.
+
+### Access the OML4Py Classification DT (1) notebook
+
+This step illustrates how you can access the OML4Py Classification DT (1) notebook available on the Notebook page which was created in Lab 1. The OML4Py Classification DT (1) notebook was created based on the example template of the OML4Py Classification Decision Tree.
+1. Click the hamburger icon ![Hamburger Icon](images/hamburger-icon.png) on the top left screen. Click Notebooks to proceed to the Notebook page.
+	![Illustration of Hamburger Icon with OML.](images/hamburger-oml.png)
+	![Left pane navigation to Notebooks through hamburger icon.](images/left-pane-navigation.png)
+
+2. The Notebook page opens with the list of notebooks available. Click the OML4Py Classification DT (1) notebook to open it.
+	![List of Notebooks available.](images/list-notebooks-available.png)
+
+3. The OML4Py Classification DT (1) notebook opens up in the notebook editor. Click the gear icon ![Gear Icon](images/gear-icon.png) on the top right corner of the notebook to view and set the interpreter binding order.
+	![Illustration for getting the configuration for interpreter](images/getting-configuration-interpreter.png)
+	You can change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
+	![Illustration for configuring interpreter](images/configuring-interpreter.png)
+	Click **Save** to set the interpreter bindings.
+
+4. Click the play icon next to the title of the notebook to run all paragraphs.
+	![Illustration for running all paragraph](images/run-all-paragraphs.png)
+
+5. Click **OK** to confirm in the confirmation dialogue.
+	![Confirmation for running all paragraph](images/confirmation-run-all-paragraphs.png)
+
+6. The paragraphs start running one by one and display the status next to the paragraph titles. When the paragraph is running, the status displays **PENDING** and when it finishes, it displays **FINISHED**.
+	![Illustration for pending on a paragraph](images/pending-paragraph.png)
+	![Illustration for finished on a paragraph](images/finished-paragraph.png)
+
 In this step, the iris data set is used for illustrative purposes to load the data into a temporary database table. Such temporary tables are automatically deleted when the OML Notebook connection to the database ends unless you have saved its proxy object to a datastore, which we'll discuss in step 10, before disconnecting.
 To use OML4Py, you must first import the `oml` module and the Pandas library. Use the `oml.push` function to create a temporary table.
 1. Run the following scripts to import the `oml` package, the Pandas library, and set the display options:
@@ -637,13 +664,18 @@ You can score data and make similar predictions using the SQL interface. The tes
 
 
 ## Task 10: Save and Load Python Objects in a Datastore Instance
+
 You can save the python objects you create in one python session and load them in another session using the OML4Py datastore. Python objects and OML4Py proxy objects exist only during the current Python session, unless they are saved to a Datastore. OML4Py creates the datastore in the current user’s database schema. Until you delete the datastore and objects, they remain in the database. OML4Py provides functions for managing the objects in the datastore, such as `oml.ds.save`, `oml.ds.load`, `oml.ds.dir`, and so on.
 
-1. To save one or more python objects to a datastore, use the `oml.ds.save` function. Here the DataFrame object is stored to `ds_pydata` and python model object is stored to `ds_pymodel`.
-	- To save IRIS and res_df `oml.DataFrame` proxy object to the `ds_pydata` datastore, run the script below. You can give some descriptive text using the description argument, which will appear when you get information on the datastore.
+1. First insert a new paragraph at the bottom of the Notebook. Click on the gear icon in the top-right corner of the last paragraph. Then, click on **Insert new** in the drop-down list. The default paragraph shows %md indicating that it is a markdown paragraph. To run a Python code, enter %python to change it to a Python paragraph.
+	![Drop down-list of setting of a paragraph.](images/setting-paragraph.png)
+
+2. To save one or more python objects to a datastore, use the `oml.ds.save` function. Here the DataFrame object is stored to `ds_pydata` and python model object is stored to `ds_pymodel`.
+	- To save IRIS and res_df `oml.DataFrame` proxy object to the `ds_pydata` datastore, run the script below. Use the oml.sync function to create a python object as a proxy for IRIS table (see Task 3). You can give some descriptive text using the description argument, which will appear when you get information on the datastore.
 	```
 	<copy>
 	%python
+	IRIS = oml.sync(table='IRIS')
 	oml.ds.save(objs={'iris':IRIS, 'res_df':RES_DF},name="ds_pydata", description = "python datasets", overwrite=True)
 	</copy>
 	```
@@ -665,37 +697,48 @@ You can save the python objects you create in one python session and load them i
 	![List of all datastore available and their object_count, size, date and description.](images/datastore-list.png)
 	The output also includes the size in bytes consumed, the date, and the descriptive text provided by the user when loading the python objects into the datastore.
 
-2. In this step, you will use `oml.ds.load` function for loading one or more python objects from the datastore to the global workspace or the user's workspace.
-	- Run the following script to load all the python objects of a datastore into global Workspace and sort them by their name
-	```
-	<copy>
-	%python
-	sorted(oml.ds.load(name="ds_pydata"))
-	</copy>
-	```
-	![Sorted list of python proxy objects in a datastore.](images/sorted-objects-datastore.png)
+3. In this step, you will use `oml.ds.load` function for loading one or more python objects from the datastore to the global workspace or the user's workspace.
+	- Run the following script to load all the python objects of a datastore into global Workspace and sort them by their name.
+		```
+		<copy>
+		%python
+		sorted(oml.ds.load(name="ds_pydata"))
+		</copy>
+		```
+		![Sorted list of python proxy objects in a datastore.](images/sorted-objects-datastore.png)
 
 	- Run the following script to load the named python object from the datastore into the global workspace.
-	```
-	<copy>
-	%python
-	oml.ds.load(name="ds_pymodel", objs=["dt_mod"])
-	</copy>
-	```
-	The output is similar to the following:
-	![list of python model proxy objects in a datastore.](images/model-object-datastore.png)
+		```
+		<copy>
+		%python
+		oml.ds.load(name="ds_pymodel", objs=["dt_mod"])
+		</copy>
+		```
+		The output is similar to the following:
+		![list of python model proxy objects in a datastore.](images/model-object-datastore.png)
+
+	-	Run the following script to use the `dt_mod` model from the datastore to make predictions on the test data using the predict function.
+		```
+		<copy>
+		%python
+		RES_DS= dt_mod.predict(TEST_X, supplemental_cols = TEST_X)
+		z.show(RES_DS)
+		</copy>
+		```
+		The output is similar to the following:
+		![Rows of res_ds after prediction by loaded model.](images/rows-res-ds.png)
 
 	- Run the following script to load the named python object from the datastore into the user's workspace.
-	```
-	<copy>
-	%python
-	oml.ds.load(name="ds_pymodel", objs=["dt_mod"], to_globals=False)
-	</copy>
-	```
-	The output is similar to the following:
-	![Illustration of a dictionary object containing the models name and value.](images/loaded-dictionaryobject-datastore.png)
-	Also, the boolean input **to\_globals** is set to True by default. If to\_global=True then the `oml.ds.load` loads the python object to the global workspace. If to\_global=False, then the `oml.ds.load` function returns a dictionary object containing the object's name and value.
-	To learn more about how to use datastores to store python objects click this [link](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/save-python-objects-in-database.html#GUID-C02396D1-2B30-47A0-AE27-37B123E15710).
+		```
+		<copy>
+		%python
+		oml.ds.load(name="ds_pymodel", objs=["dt_mod"], to_globals=False)
+		</copy>
+		```
+		The output is similar to the following:
+		![Illustration of a dictionary object containing the models name and value.](images/loaded-dictionaryobject-datastore.png)
+		Also, the boolean input **to\_globals** is set to True by default. If to\_global=True then the `oml.ds.load` loads the python object to the global workspace. If to\_global=False, then the `oml.ds.load` function returns a dictionary object containing the object's name and value.
+		To learn more about how to use datastores to store python objects click this [link](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/save-python-objects-in-database.html#GUID-C02396D1-2B30-47A0-AE27-37B123E15710).
 
 In this example, you classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top **N** attributes that are important to the model built.
 
@@ -724,5 +767,5 @@ OML4Py enables data scientists to hand-off their user-defined Python functions t
 
 ## Acknowledgements
 * **Authors** - Sarika Surampudi, Senior User Assistance Developer, Oracle Database User Assistance Development; Dhanish Kumar, Member of Technical Staff, User Assistance Developer.
-* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning.
-* **Last Updated By/Date** - Dhanish Kumar, January 2022
+* **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning; Marcos Arancibia, Senior Principal Product Manager, Machine Learning.
+* **Last Updated By/Date** - Dhanish Kumar, February 2022

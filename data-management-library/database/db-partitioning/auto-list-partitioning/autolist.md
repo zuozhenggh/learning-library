@@ -22,7 +22,7 @@ The automatic list partitioning method enables list partition creation on demand
 
 ### Automatic list partitioning usecase
 
-A typical use case for automatic list partitioning is when a company currently deals with customers from the USA, UK, and Ireland. You want to partition your orders table based on the country. Another example is partitioning sensor data on IoT (Internet of Things) applications, such as humidity, temperature, climate, pressure, air quality changes, etc. These sensors' measurement values change.
+A typical use case for automatic list partitioning is when a company currently deals with customers from the USA, UK, and Ireland. You want to partition your orders table based on the country. Another example is partitioning sensor data on IoT (Internet of Things) applications, such as humidity, temperature, climate, pressure and air quality changes. These sensors' measurement values change.
  
 ### Objectives
  
@@ -32,7 +32,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
-- Provision an Oracle Autonomous Database and ADW Instance has been created
+- Provision an Oracle Autonomous Database and Autonomous Data Warehouse has been created
 
 ## Task 1: Create Auto-list Partitioned Table
 
