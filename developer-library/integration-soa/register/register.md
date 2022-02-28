@@ -176,7 +176,7 @@ A wizard will walk you through the steps of configuring the Business Service. Th
 
 8. Click **Ok**.
 
-    ![](./images/CreateBusinessService.png " ")
+    ![](./images/WSDLs.png " ")
 
 9. Confirm that ValidationPaymentPort is selected in the Port field when you return back to the wizard.
 10. Click **Next**
@@ -193,7 +193,7 @@ A wizard will walk you through the steps of configuring the Business Service. Th
 
     ![](./images/createbizsvc6.png " ")
 
-To find the composite deployment URI from the instance graphical desktop session, launch the included FireFox browser, then go to the [EM console](http://localhost:7101/em) and navigate to your composite.
+To find the composite deployment URI from the instance graphical desktop session, launch the Chrome browser, then go to the [EM console](http://localhost:7101/em) with **Username : weblogic** ,**Password : welcome1** and navigate to your composite. 
 
 16. Click the **Test** icon on the top right of screen. This will bring up a Web Service test page that lists your deployed endpoint.
 
@@ -304,5 +304,5 @@ To find more detail about Service Bus, Enterprise Service Bus - please go to thi
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji
-* **Contributors** - Meghana Banka, Rene Fontcha, Kamryn Vinson
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
+* **Contributors** - Meghana Banka, Rene Fontcha, Kamryn Vinson, Sahaana Manavalan
+* **Last Updated By/Date** - Sahaana Manavalan, LiveLabs Developer, NA Technology, February 2022 
