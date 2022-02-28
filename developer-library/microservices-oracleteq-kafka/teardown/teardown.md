@@ -42,4 +42,4 @@ In the Oracle Cloud Console navigate to the Compartments screen in the Identity 
 
 - **Authors** - Paulo Simoes, Developer Evangelist; Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 - **Contributors** - Mayank Tayal, Developer Evangelist; Sanjay Goil, VP Microservices and Oracle Database
-- **Last Updated By/Date** - Paulo Simoes, December 2021
+- **Last Updated By/Date** - Paulo Simoes, February 2022
