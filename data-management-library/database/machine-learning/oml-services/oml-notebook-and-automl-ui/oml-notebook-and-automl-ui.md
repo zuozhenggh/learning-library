@@ -1,43 +1,41 @@
-# Creating models using OML Notebook and AutoML UI
+# Creating models using OML Notebooks and OML AutoML UI
 
-In this section we will connect to OML notebooks and split the data in train and test chunks. We will use the train data to run the AutoML UI and create a good model to make our prediction. The model we will deploy it to be used with rest services in the next sections.
+In this section we will connect to OML Notebooks and split the data in train and test chunks. We will use the train data to run the OML AutoML UI and create a good model to make our prediction. We will deploy the model for use with OML Services REST endpoints in the next sections.
 
 Estimated Time: 15 minutes
 
 ### Objectives
 
-* Create an OML Notebook
-* Split the data into Train and Test Data
-* Use AutoML UI to create the models
+* Use OML AutoML UI to create the models
 * See the models created and Deploy one
-
 
 ### Prerequisites
 * Autonomous Database created
-* Data loaded in the database
 * OML user created
+* Data loaded in the database
 
-## Task 1: Introduce Insurance Customer Data
+
+##                                           
+
+## Task 1: Connect to OML Notebooks and display Insurance Customer Data
 
 * In the Autonomous Database instance details page. Click on the Service Console button.
-![ADB-instance-home](images/prerequisites-screenshot-22.jpg)
+  ![ADB-instance-home](images/prerequisites-screenshot-22.jpg)
 
 * A new page with the service console is opened. In the Overview section we see the details of this specific instance. We can go to the Development section in the left side.
-![ADB-service-console](images/prerequisites-screenshot-23.jpg)
+  ![ADB-service-console](images/prerequisites-screenshot-23.jpg)
 
-* In the Development section, click on Oracle Machine Learning Notebooks.
-![ADB-service-console](images/prerequisites-screenshot-24.jpg)
 
-* Connect to OML services in Autonomous Database
+* Click on **Oracle Machine Learning User Interface**.
+  ![ADB-service-console](images/prerequisites-screenshot-24.jpg)
 
-  Access the OML Services link and connect with the credentials that we created earlier. In our case the credentials are:
+* Login to OML Machine Learning User Interface in Autonomous Database
 
-   - Username: **OMLUSER**
-   - Password: **Welcome12345**
-
+  Access the Oracle Machine Learning Notebooks link and connect with the credentials that we created earlier. In our case the credentials are:
+    - Username: **OMLUSER**
+    - Password: **Welcome12345**
 
    ![ADB-OML-connect](images/prerequisites-screenshot-25.jpg)
-
 
 * Open a Scratchpad
 
@@ -49,61 +47,58 @@ Estimated Time: 15 minutes
     <copy> select * from customer_insurance;  </copy>
     ````
 
-
-
     ![customer-insurance](images/automl-screenshot-2.jpg)
 
  Notice the columns ``LTV`` and ``LTV_BIN`` when you scroll to the right. These are our targets for the machine learning.
 
-* Drop training and test tables if they exist
+ * Drop training and test tables if they exist
 
-    ````
-    <copy> %script
-    DROP TABLE Customer_insurance_train_classification;
+     ````
+     <copy> %script
+     DROP TABLE Customer_insurance_train_classification;
 
-    DROP TABLE Customer_insurance_test_classification;
-    </copy>
-    ````
-    ![drop-model-tables](images/automl-screenshot-3.jpg)
+     DROP TABLE Customer_insurance_test_classification;
+     </copy>
+     ````
+     ![drop-model-tables](images/automl-screenshot-3.jpg)
 
-    If the tables don't exist, the script will return an error. We will create the tables in the next steps
+     If the tables don't exist, the script will return an error. We will create the tables in the next steps
 
- * Create the training table for our Auto ML
+  * Create the training table for our AutoML UI
 
-    ````
-    <copy>
-    %script
-    create table Customer_insurance_train_classification as
-    select CUST_ID,"LAST","FIRST","STATE","REGION","SEX","PROFESSION","BUY_INSURANCE","AGE","HAS_CHILDREN","SALARY","N_OF_DEPENDENTS","CAR_OWNERSHIP","HOUSE_OWNERSHIP","TIME_AS_CUSTOMER","MARITAL_STATUS","CREDIT_BALANCE","BANK_FUNDS","CHECKING_AMOUNT","MONEY_MONTLY_OVERDRAWN","T_AMOUNT_AUTOM_PAYMENTS","MONTHLY_CHECKS_WRITTEN","MORTGAGE_AMOUNT","N_TRANS_ATM","N_MORTGAGES","N_TRANS_TELLER","CREDIT_CARD_LIMITS","N_TRANS_KIOSK","N_TRANS_WEB_BANK","LTV_BIN"
-    from customer_insurance
-    SAMPLE (85) SEED (1)
-    where cust_id not in ('CU12350','CU12331', 'CU12286')
-    </copy>
-    ````
-    ![create-training-table](images/automl-screenshot-4.jpg)
+     ````
+     <copy>
+     %script
+     create table Customer_insurance_train_classification as
+     select CUST_ID,"LAST","FIRST","STATE","REGION","SEX","PROFESSION","BUY_INSURANCE","AGE","HAS_CHILDREN","SALARY","N_OF_DEPENDENTS","CAR_OWNERSHIP","HOUSE_OWNERSHIP","TIME_AS_CUSTOMER","MARITAL_STATUS","CREDIT_BALANCE","BANK_FUNDS","CHECKING_AMOUNT","MONEY_MONTLY_OVERDRAWN","T_AMOUNT_AUTOM_PAYMENTS","MONTHLY_CHECKS_WRITTEN","MORTGAGE_AMOUNT","N_TRANS_ATM","N_MORTGAGES","N_TRANS_TELLER","CREDIT_CARD_LIMITS","N_TRANS_KIOSK","N_TRANS_WEB_BANK", "LTV","LTV_BIN"
+     from customer_insurance
+     SAMPLE (70) SEED (1)
+     where cust_id not in ('CU12350','CU12331', 'CU12286')
+     </copy>
+     ````
+     ![create-training-table](images/automl-screenshot-4.jpg)
 
-    Notice that we skip the ``LTV`` column so it would not influence the results. We keep the ``LTV_BIN`` column to be the target for learning.
-    Our goal is to learn how customers are classified in the 4 groups, that are the ``LTV_BIN`` groups. For this particular workshop we leave outside 3 specific customers so we can use them to demo the test of our models.
-
-
-* Create the test table for our Auto ML
-
-    ````
-    <copy>%script
-    create table Customer_insurance_test_classification as
-    select CUST_ID,"LAST","FIRST","STATE","REGION","SEX","PROFESSION","BUY_INSURANCE","AGE","HAS_CHILDREN","SALARY","N_OF_DEPENDENTS","CAR_OWNERSHIP","HOUSE_OWNERSHIP","TIME_AS_CUSTOMER","MARITAL_STATUS","CREDIT_BALANCE","BANK_FUNDS","CHECKING_AMOUNT","MONEY_MONTLY_OVERDRAWN","T_AMOUNT_AUTOM_PAYMENTS","MONTHLY_CHECKS_WRITTEN","MORTGAGE_AMOUNT","N_TRANS_ATM","N_MORTGAGES","N_TRANS_TELLER","CREDIT_CARD_LIMITS","N_TRANS_KIOSK","N_TRANS_WEB_BANK"
-    from customer_insurance
-    minus
-    select CUST_ID,"LAST","FIRST","STATE","REGION","SEX","PROFESSION","BUY_INSURANCE","AGE","HAS_CHILDREN","SALARY","N_OF_DEPENDENTS","CAR_OWNERSHIP","HOUSE_OWNERSHIP","TIME_AS_CUSTOMER","MARITAL_STATUS","CREDIT_BALANCE","BANK_FUNDS","CHECKING_AMOUNT","MONEY_MONTLY_OVERDRAWN","T_AMOUNT_AUTOM_PAYMENTS","MONTHLY_CHECKS_WRITTEN","MORTGAGE_AMOUNT","N_TRANS_ATM","N_MORTGAGES","N_TRANS_TELLER","CREDIT_CARD_LIMITS","N_TRANS_KIOSK","N_TRANS_WEB_BANK" from Customer_insurance_train_classification
-    </copy>
-    ````
-    ![create-test-table](images/automl-screenshot-5.jpg)
-
-    Notice that in the testing table we will not use any of the leading ``LTV`` or ``LTV_BIN`` columns. These column might be misleading in the process. We will still use them in our verification process.
+     Notice that we keep the ``LTV_BIN`` column to be the target for our supervised learning classification model.
+      For this particular workshop we exclude 3 specific customers so we will score 3 different models using their data.
 
 
+ * Create the test table for our Auto ML UI
 
-## Task 2: Use AutoML from Autonomous Database
+     ````
+     <copy>%script
+     create table Customer_insurance_test_classification as
+     select CUST_ID,"LAST","FIRST","STATE","REGION","SEX","PROFESSION","BUY_INSURANCE","AGE","HAS_CHILDREN","SALARY","N_OF_DEPENDENTS","CAR_OWNERSHIP","HOUSE_OWNERSHIP","TIME_AS_CUSTOMER","MARITAL_STATUS","CREDIT_BALANCE","BANK_FUNDS","CHECKING_AMOUNT","MONEY_MONTLY_OVERDRAWN","T_AMOUNT_AUTOM_PAYMENTS","MONTHLY_CHECKS_WRITTEN","MORTGAGE_AMOUNT","N_TRANS_ATM","N_MORTGAGES","N_TRANS_TELLER","CREDIT_CARD_LIMITS","N_TRANS_KIOSK","N_TRANS_WEB_BANK","LTV","LTV_BIN"
+     from customer_insurance
+     minus
+     select CUST_ID,"LAST","FIRST","STATE","REGION","SEX","PROFESSION","BUY_INSURANCE","AGE","HAS_CHILDREN","SALARY","N_OF_DEPENDENTS","CAR_OWNERSHIP","HOUSE_OWNERSHIP","TIME_AS_CUSTOMER","MARITAL_STATUS","CREDIT_BALANCE","BANK_FUNDS","CHECKING_AMOUNT","MONEY_MONTLY_OVERDRAWN","T_AMOUNT_AUTOM_PAYMENTS","MONTHLY_CHECKS_WRITTEN","MORTGAGE_AMOUNT","N_TRANS_ATM","N_MORTGAGES","N_TRANS_TELLER","CREDIT_CARD_LIMITS","N_TRANS_KIOSK","N_TRANS_WEB_BANK","LTV","LTV_BIN"
+      from Customer_insurance_train_classification
+     </copy>
+     ````
+     ![create-test-table](images/automl-screenshot-5.jpg)
+
+     Notice that in the testing table we will not use any of the leading ``LTV`` or ``LTV_BIN`` columns. These column might be misleading in the process. We will still use them in our verification process.
+
+## Task 2: Use OML AutoML UI from Oracle Autonomous Database
 
 * Go to the Main menu on the top left side near the Oracle Machine Learning icon.
 ![AutoML-menu](images/automl-screenshot-X06.jpg)
@@ -130,33 +125,34 @@ Estimated Time: 15 minutes
 
     ![AutoML-additional-settings](images/automl-screenshot-9.jpg)
 
-    Notice that we can choose the Database Service Level to High, and select by which metric should we compare the algorithms, and which predefined algorithms to include or exclude from this experiment.
+    Notice that we can set the Database Service Level to High, and select by which metric we should compare the models, and which predefined algorithms to include or exclude from this experiment.
 
       - Choose the following options for your experiment:
 
         - Database Service Level: **High**
-        - Model Metric: **F1**
-        - Weight Option: **Weighted**
+        - Model Metric: **BALANCED ACCURACY**
+
 
     ![AutoML-additional-settings](images/automl-screenshot-9a.jpg)
 
-    The F1 score is the harmonic mean of the precision and recall; where the precision is the number of true positive results divided by the number of all positive results, including those not identified correctly, and the recall is the number of true positive results divided by the number of all samples that should have been identified as positive. Precision is also known as positive predictive value, and recall is also known as sensitivity in diagnostic binary classification.
 
-    **F1-score = 2 × (precision × recall)/(precision + recall)**
+* In the **Features** section, we can deselect the following columns:
+    - First
+    - Last
+    - LTV
 
-    ![Precision and Recall](images/Model_metric.jpg)
+  In most cases the name of the candidate should not be a deciding factor so we will remove them from the model features. Also LTV column which is a computational numeric column that drive the LTV_BIN column might be missdirecting the model and this column is removed also.
+  ![AutoML-additional-settings](images/automl-screenshot-9b.jpg)
 
-* Run the Auto ML for classification by clicking **```Start```** and **```Better Accuracy```**.
-
+* Run OML Auto ML experiment by clicking **```Start```** and **```Better Accuracy```**.
   ![Run-AutoML](images/automl-screenshot-10.jpg)
 
-  The AutoML Classification will run for several minutes showing which top 5 algorithms have a higher Balanced Accuracy. The running process takes around 10 minutes.
+  The AutoML Classification will run for several minutes showing which top 5 algorithms have a Better Accuracy. The running process takes around 20 minutes.
 
-* And the result of the Auto ML
-
+* And the result of the experiment
   ![Classification Experiment Result](images/automl-screenshot-11.jpg)
 
-  Each model described here is based on an algorithm and ran against our training data. We can click on the model name and see its details.
+  Each model described here is based on one of the automatically selected algorithms. Select the **Support Vector Machine (Gaussian)** algorithm and click on the model name which starts with **SVMG_**.
 
   ![Chose a model](images/automl-screenshot-12.jpg)
 
@@ -164,11 +160,12 @@ Estimated Time: 15 minutes
 
   ![Model Prediction Impacts](images/automl-screenshot-13.jpg)
 
-  Notice how the other table columns impact differently our model and which column has a higher weight in it. We can click on the Confusion Matrix tab.
+  Notice how the other predictor columns impact our model differently and which columns have a higher weight. We can click on the Confusion Matrix tab.
 
   ![Model Confusion Matrix](images/automl-screenshot-14.jpg)
 
-  There we can see for each class: **LOW**, **MEDIUM**, **HIGH**, **VERY HIGH** what percentage of customers are actually in that class and what percentage are predicted to be in that class.
+  There we can see for each class: **LOW**, **MEDIUM**, **HIGH**, **VERY HIGH** what percentage of customers correctly predicted for each combination of actual and predicted values.
+
 
 * We can rename the Support Vector Machine model so it would be easier to recognize in the next sections. For this we can select the model and click on the Rename button.
 
@@ -178,28 +175,13 @@ Estimated Time: 15 minutes
 
   ![Model Rename ](images/automl-screenshot-X114.jpg)
 
-* The model is now renamed in the results page also.
+* The model is now renamed in the Leader Board.
 
   ![Model Rename ](images/automl-screenshot-X1114.jpg)
 
+* The next steps are to deploy the model for OML Services for access via Rest endpoints. Click on the Deploy button.
 
-## Task 3: Deploy the model for REST access using OML Services
-
-The next steps would be to take a model and deploy it for REST access.
-
-* Go to the Main menu on the top left side near the Oracle Machine Learning icon.
-  ![AutoML-menu](images/automl-screenshot-X06.jpg)
-
-* Choose Models.
   ![Models Menu](images/automl-screenshot-15.jpg)
-
-* We see the list of models created by the AutoML with their specific algorithm and target value.
-  ![Models List](images/automl-screenshot-16.jpg)
-
-* Click on the the  **SVMG** model based on the **Support Vector Machines Gaussian** algorithm and click Deploy. It is a powerful classification algorithm with very high F1 score
-
-  ![Deploy Model](images/automl-screenshot-X16.jpg)
-
 
   Enter the following details.
 
@@ -207,17 +189,29 @@ The next steps would be to take a model and deploy it for REST access.
     - Name: is prefilled with the Model name.
     - URI: choose a specific URI, for example: **classsvmg**
     - Version: **1**
+    - Namespace: OML
 
 
   Copy the Model URI in a accessible place because we are going to use it in the next sections of the workshop.
+  ![Deploy Model](images/automl-screenshot-17.jpg)
 
   Click OK.
 
-  ![Deploy Model](images/automl-screenshot-17.jpg)
+  We have a confirmation that the model was deployed successfully.
+  ![Deploy Model](images/automl-screenshot-X17.jpg)
 
-  The model will be deployed and a green banner will show the success of the deployment.
+## Task 3: Verify the model deployment.
 
-  ![Deploy Success](images/automl-screenshot-18.jpg)
+
+* Go to the Main menu on the top left side near the Oracle Machine Learning icon.
+  ![AutoML-menu](images/automl-screenshot-X06.jpg)
+
+* Choose Models.
+  ![AutoML-menu](images/automl-screenshot-18b.jpg)
+
+* We see the list of models created by the AutoML UI with their specific algorithm and target value.
+  ![Models List](images/automl-screenshot-16.jpg)
+
 
 * In the Deployment tab you can see the model and URI
 
@@ -226,9 +220,9 @@ The next steps would be to take a model and deploy it for REST access.
   We can now use REST APIs to query the model, model scoring and scoring for specific data.
 
 
-## Task 4: Verify the classification prediction
+## Task 4: Score data against the model using SQL
 
-  * Return to the OML Notebook Scratchpad we created earlier. Click on the menu and chose Notebooks.
+  * Return to the OML Notebooks Scratchpad we created earlier. Click on the menu and chose Notebooks.
   ![Classification Prediction](images/automl-screenshot-21.jpg)
 
 
@@ -238,30 +232,49 @@ The next steps would be to take a model and deploy it for REST access.
 
   * Run the following SQL statement using the ``CUST_IDs`` we picked in the train test split. You can replace the model name with the one used previously.
 
-   ````
-   <copy>%sql
-    SELECT a.cust_id,
-          a. Last,
-          a.First,
-          PREDICTION(SVMG USING a.*) PREDICTION,
-          PREDICTION_PROBABILITY(SVMG USING a.*)
-          PREDICTION_PROBABILITY,
-          b.LTV_BIN
-    FROM Customer_insurance_test_classification a,
-    Customer_insurance b
-   where a.cust_id = b.cust_id
-   and b.cust_id in ('CU12350','CU12331', 'CU12286')
-   </copy>
-   ````
+     ````
+     <copy>%sql
+         SELECT a.cust_id,
+               a. Last,
+               a.First,
+               PREDICTION(SVMG USING a.*) PREDICTION,
+               PREDICTION_PROBABILITY(SVMG USING a.*)  PREDICTION_PROBABILITY,
+               b.LTV_BIN
+         FROM Customer_insurance_test_classification a,
+         Customer_insurance b
+        where a.cust_id = b.cust_id
+        and b.cust_id in ('CU12350','CU12331', 'CU12286')
+     </copy>
+     ````
 
   ![Classification Prediction](images/automl-screenshot-34.jpg)
 
- In SQL statement it is returned the most probable group or class for the data provided. In out case the prediction is the same as the actual ``LTB_BIN`` column in ``CUSTOMER_INSURANCE`` initial table.
+ The SQL statement returns the most probable group or class for the data provided in the column PREDICTION with it’s corresponding prediction probability for each of the customers selected. In out case the prediction is the same as the actual ``LTB_BIN`` column in ``CUSTOMER_INSURANCE`` initial table.
+
+* Run the following SQL statement to compare the model predicted value with the actual value in the testing table.
+
+    ````
+    <copy>%sql
+          SELECT a.cust_id,
+                 a.Last,
+                 a.First,
+                 PREDICTION(SVMG USING a.*) PREDICTION,
+                 b.LTV_BIN
+          FROM Customer_insurance_test_classification a,
+          Customer_insurance b
+           where a.cust_id = b.cust_id and a.last = b.last
+    </copy>
+    ````
+
+    ![Classification Prediction](images/automl-screenshot-35.jpg)
+
+ The SQL statement returns the most probable group or class for the data provided in the column ``PREDICTION`` compared with the column ``LTV_BIN`` from the initial table.
+
 
 ## Acknowledgements
 * **Authors** -  Andrei Manoliu, Milton Wan
 * **Contributors** - Rajeev Rumale
-* **Last Updated By/Date** -  Andrei Manoliu, October 2021
+* **Last Updated By/Date** -  Andrei Manoliu, December 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

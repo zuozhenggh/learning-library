@@ -1,82 +1,24 @@
-# Loading an OML  model and score it using Rest Services
+# Loading an OML model in OML Services and using it
 
-In this section of the workshop we will import the Decision Tree model used on the OML4PY workshop Step 3 in our Autonomous Database and score it using REST APIs
+In this section of the workshop we will import and store the Decision Tree model in our OML Services repository and score it using REST APIs
 
 Estimated Time: 20 minutes
 
 ### Objectives
 We are going to run the next steps:
 * Extract the saved model to a file;
-* Load the model in the Autonomous Database repository;
+* Store the model in the OML Services repository;
 * Deploy the model;
 * Score a customer using the Decision Tree model;
 
 
 ### Prerequisites
-* Run the OML4PY workshop. (Optional)
 * Autonomous Database created
 * OML user created in Autonomous database
 * ``DTModel.mod`` on the VM
 
-##Import the Decision Tree model
-
-Task 1 can be performed only if OML4PY workshop was ran on the same VM prior the OML-Services workshop, otherwise you can **skip to Task 2**.
-
-## Task 1: Extract the saved model to a file
-
-* Connect to the VM and open a Terminal window.
-
-  ![VM-Terminal](images/model-import-01.jpg)
-
-* Run these commands one by one:
-
-````
-. setEnv
-
-. oraenv
-
-ORACLE_SID = [mlcdb] ? - Hit Enter
-````
-
-  ![VM-Terminal](images/model-import-02.jpg)
-
-* Go to the OML_Services folder.
-
-````
-$<copy> cd ~/OML-Services</copy>
-````
-
-  ![VM-Terminal](images/model-import-03.jpg)
-
-
-* Run the `prepare_model_import.sql` script to write the exported DT_MODEL to a file on the operating system.
-
-````
-$ <copy> sqlplus sys/MLlearnPTS#21_@localhost:1521/mlpdb1.sub07141037280.rehevcn.oraclevcn.com as sysdba @prepare_model_import.sql</copy>
-````
-
-The script runs the following steps.
-
-  ![VM-Terminal](images/model-import-04.jpg)
-
-  - Creates the **`dmuser`** OS folder
-  - Creates the **`DMDIR`** database directory
-  - Creates a procedure that writes a BLOB to a file
-  - Writes the saved Decision Tree model to a file named **`DTModel.mod`**
-
-  Now we have the model saved in a file, the next steps are to load the model in Autonomous Database, deploy it there and score a customer.
-
-To check the exported file run the command:
-
-````
-$<copy>ls ~/dmuser</copy>
-````
-
-  ![VM-Terminal](images/model-import-05.jpg)
-
-
-
-## Task: 2: Load the model in the Autonomous Database repository
+## 
+## Task: 1: Store the model in the OML Services repository
 
 *  In the Postman session opened run the following Get method to get the list of models deployed.
 
@@ -84,12 +26,12 @@ $<copy>ls ~/dmuser</copy>
 Operation: GET
 
 URI endpoint:
-<copy>https://adb.<region-prefix>.oraclecloud.com/omlmod/v1/models</copy>
+<copy>https://<oml-cloud-service-location-url>.oraclecloudapps.com/omlmod/v1/models</copy>
 
 ````
- - Replace **`<region-prefix>`** with your region. In our case: _eu-frankfurt-1_.
+ - Replace **`<oml-cloud-service-location-url>`** with your URL saved in chapter "Scoring OML model using OML Services" Task 1.2: Authorize OML Services User
 
- In the Authorization tab pick **Bearer Token** and paste the token copied from *Scoring OML using Rest Services Task 1*.
+ In the Authorization tab pick **Bearer Token** and paste the token copied from *Scoring OML using OML Services Task 1*.
 
  ![Model Import](images/model-import-06.jpg)
 
@@ -99,16 +41,16 @@ The response is just the **SVMG** model we used in our previous tasks.
 
 In case you get the Expired Token Error, rerun the generate Token command explained in **Scoring OML using Rest Services: Task 1**.
 
-* Open a new tab in Postman and run the following POST command to load the model in Autonomous Database.
+* Open a new tab in Postman and run the following POST command to store the model in OML Services repository.
 
 ````
 Operation: POST
 
 URI endpoint:
-<copy>https://adb.<region-prefix>.oraclecloud.com/omlmod/v1/models </copy>
+<copy>https://<oml-cloud-service-location-url>.oraclecloudapps.com/omlmod/v1/models</copy>
 
 ````
- - Replace **`<region-prefix>`** with your region. In our case: _eu-frankfurt-1_.
+ - Replace **`<oml-cloud-service-location-url>`** with your URL saved.
 
  In the Authorization tab pick **Bearer Token** and the token is pre-filled.
 
@@ -148,7 +90,7 @@ The response is that the model is created.
 Copy the **`modelId`** displayed in the JSON response.
 
 
-## Task: 3: Deploy the model
+## Task: 2: Deploy the model
 
 * Open a new tab in Postman and run the following POST command to deploy the model in Autonomous Database.
 
@@ -156,10 +98,11 @@ Copy the **`modelId`** displayed in the JSON response.
 Operation: POST
 
 URI endpoint:
-<copy>https://adb.<region-prefix>.oraclecloud.com/omlmod/v1/deployment </copy>
+<copy>https://<oml-cloud-service-location-url>.oraclecloudapps.com/omlmod/v1/deployment</copy>
 
 ````
-  - Replace **`<region-prefix>`** with your region. In our case: _eu-frankfurt-1_.
+ - Replace **`<oml-cloud-service-location-url>`** with your URL saved.
+
 
 In the Authorization tab pick **Bearer Token** and the token is pre-filled.
 
@@ -195,7 +138,7 @@ And the result is:
 The next step is to score a customer.
 
 
-## Task: 4: Score a customer using the Decision Tree model
+## Task: 3: Score a customer using the Decision Tree model
 
 In this step we are going to score Fran Hobbs against our Decision Tree imported model.
 
@@ -205,10 +148,10 @@ Enter the following details:
 Operation: POST
 
 URI endpoint:
-<copy>https://adb.<region-prefix>.oraclecloud.com/omlmod/v1/deployment/<model_URI>/score </copy>
+<copy>https://<oml-cloud-service-location-url>.oraclecloudapps.com/omlmod/v1/deployment/<model_URI>/score </copy>
 
 ````
- - Replace **`<region-prefix>`** with your region. In our case: _eu-frankfurt-1_.
+- Replace **`<oml-cloud-service-location-url>`** with your URL saved.
 
  - Replace **`<model_URI>`** with the model URI that we defined in previous task: **`dtmodel`**
 
@@ -283,7 +226,7 @@ In this case the percentages are different but it still has the highest probabil
 ## Acknowledgements
 * **Authors** -  Andrei Manoliu, Milton Wan
 * **Contributors** - Rajeev Rumale
-* **Last Updated By/Date** -  Andrei Manoliu, October 2021
+* **Last Updated By/Date** -  Andrei Manoliu, December 2021
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
