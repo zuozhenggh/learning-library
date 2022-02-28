@@ -257,7 +257,7 @@ Let's stop the consumer microservice.
     <copy>
         docker stop okafka-consumer
     </copy>
-```d
+```
 
 ## Task 6: Deep diving in the Code
 
