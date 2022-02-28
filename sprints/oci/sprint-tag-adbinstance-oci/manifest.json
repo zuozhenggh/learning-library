@@ -3,14 +3,14 @@
     "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
-            "title": " How can I tag my ADB instance in OCI?",
+            "title": "How can I tag my ADB instance in OCI?",
             "description": "",
             "filename": "sprint-tag-adbinstance-oci.md"
         },
         {
-                    "title": "Other related Sprints  ",
+                    "title": "Where do I find the ADB OCID",
                     "description": "",
-                    "filename": ""
+                    "filename": "../../data-management/sprint-find-adb-ocid/sprint-find-adb-ocid.md"
         }
     ]
 }

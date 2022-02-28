@@ -1,4 +1,4 @@
-# How to track OCPU usage in an auto-scalable autonomous database?
+# How do I track OCPU usage in an auto-scalable autonomous database?
 Duration: 5 minutes
 
 You have enabled auto scaling in your autonomous database. You want to track the instances when the auto scaling kicked in and added OCPU's for the load.
