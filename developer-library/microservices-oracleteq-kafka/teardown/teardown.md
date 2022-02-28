@@ -21,7 +21,8 @@ Estimates Time: 10 minutes
     It will take several minutes to run. The script will delete the Object Storage bucket,  Oracle Autonomous Database.
 
     ```bash
-        <copy>source cloud-setup/destroy.sh
+        <copy>
+        source $LAB_HOME/cloud-setup/destroy.sh
         </copy>
     ```
 
