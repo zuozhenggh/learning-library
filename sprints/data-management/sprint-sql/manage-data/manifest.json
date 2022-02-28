@@ -1,0 +1,36 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How to query the Oracle data dictionary?",
+            "description": "",
+            "filename": "../query-dictionary/query-dictionary.md"
+        },
+        {
+          "title": "How to update data in a table in a database?",
+          "description": "",
+          "filename": "../update-data/update-data.md"
+        },
+        {
+          "title": "How to write aggregate queries on table in a database?",
+          "description": "",
+          "filename": "../aggregate-queries/aggregate-queries.md"
+        },
+        {
+          "title": "How to compress data in a table in a database?",
+          "description": "",
+          "filename": "../compress-data/compress-data.md"
+        },
+        {
+          "title": "How to disable table compression in a database?",
+          "description": "",
+          "filename": "../uncompress-data/uncompress-data.md"
+        },
+        {
+          "title": "How to delete data in a table in a database?",
+          "description": "",
+          "filename": "../delete-data/delete-data.md"
+        }
+    ]
+}

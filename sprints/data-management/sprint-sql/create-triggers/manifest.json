@@ -1,0 +1,11 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How to create triggers to a table in a database?",
+            "description": "",
+            "filename": "./create-triggers.md"
+        }
+    ]
+}
