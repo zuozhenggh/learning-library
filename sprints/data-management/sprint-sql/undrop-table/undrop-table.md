@@ -1,52 +1,35 @@
-# How to un-drop a table in a database?
+# How to retrieve a dropped table in a database?
 
-## Introduction
+Duration: 1 minutes
 
-This lab walks you through the steps to un-drop a table in a database.
+If the RECYCLEBIN initialization parameter is set to ON (the default in 10g), then dropping this table will place it in the recycle bin. To see if you can un-drop a table run the following data dictionary query:
 
-Estimated Time: 2 minutes
+```
+<copy>
+select object_name, 
+    original_name, 
+    type, 
+    can_undrop, 
+    can_purge
+from recyclebin;
+</copy>
+```
 
-### Objectives
+To retrieve tables we use the flashback command:
 
-In this lab, you will:
+```
+<copy>
+FLASHBACK TABLE TABLE_NAME TO BEFORE DROP;
+</copy>
+```
 
-* Un-drop a table in a database
+For example, to retrieve employees table after checking the recycle bin:
 
-### Prerequisites
-
-* Have created departments and employees tables in a database
-
-## Task 1: Un-drop a table
-
-1. If the RECYCLEBIN initialization parameter is set to ON (the default in 10g), then dropping this table will place it in the recycle bin. To see if you can undrop a table run the following data dictionary query:
-
-    ```
-    <copy>
-    select object_name, 
-       original_name, 
-       type, 
-       can_undrop, 
-       can_purge
-    from recyclebin;
-    </copy>
-    ```
-
-    ![Check if you can undrop the tables](../images/check-undrop-table.png)
-
-2. To undrop tables we use the flashback command, for example:
-
-    ```
-    <copy>
-    flashback table DEPARTMENTS to before drop;
-    flashback table EMPLOYEES to before drop;
-    select count(*) departments 
-    from departments;
-    select count(*) employees
-    from employees;
-    </copy>
-    ```
-
-    ![Undrop both the tables](../images/undrop-tables.png)
+```
+flashback table EMPLOYEES to before drop;
+select count(*) employees
+from employees;
+```
 
 ## Learn More
 
