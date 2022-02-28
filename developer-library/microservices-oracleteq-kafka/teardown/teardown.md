@@ -31,7 +31,7 @@ Estimates Time: 10 minutes
 1. Delete the directory in your cloud shell where you installed the workshop.
 
     ```bash
-     <copy>rm -rf <directory name></copy>
+     <copy>rm -rf <directory name, e.g. lab8022></copy>
     ```
 
 ## Task 3: Delete the Compartment
