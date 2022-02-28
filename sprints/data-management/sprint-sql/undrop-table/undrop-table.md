@@ -1,6 +1,6 @@
 # How to retrieve a dropped table in a database?
 
-Duration: 1 minutes
+Duration: 1 minute
 
 If the RECYCLEBIN initialization parameter is set to ON (the default in 10g), then dropping this table will place it in the recycle bin. To see if you can un-drop a table run the following data dictionary query:
 

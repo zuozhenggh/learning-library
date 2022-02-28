@@ -1,6 +1,6 @@
 # How to insert data into a table in a database?
 
-Duration: 1 minutes
+Duration: 1 minute
 
 The INSERT statement adds one or more new rows of data to a database table.
 

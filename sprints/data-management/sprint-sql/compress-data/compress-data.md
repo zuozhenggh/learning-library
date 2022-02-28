@@ -1,6 +1,6 @@
 # How to compress data in a table in a database?
 
-Duration: 2 minute
+Duration: 2 minutes
 
 As your database grows in size to gigabytes or terabytes and beyond, consider using table compression. Table compression saves disk space and reduces memory use in the buffer cache. Table compression can also speed up query execution during reads. There is, however, a cost in CPU overhead for data loading and DML. Table compression is completely transparent to applications.
 

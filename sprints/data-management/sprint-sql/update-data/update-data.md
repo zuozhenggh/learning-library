@@ -1,6 +1,6 @@
 # How to update data in a table in a database?
 
-Duration: 1 minutes
+Duration: 1 minute
 
 You can use SQL to update values in your table, to do this we will use the update clause. To selectively update rows in a table, where clause is needed with a condition else all the rows in the table will be updated.
 

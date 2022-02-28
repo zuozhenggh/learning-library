@@ -1,6 +1,6 @@
 # How to write aggregate queries on table in a database?
 
-Duration: 2 minute
+Duration: 2 minutes
 
 Aggregate functions return a single result row based on groups of rows, rather than on single rows. This sum and average functions takes as an argument any numeric data type or any nonnumeric data type that can be implicitly converted to a numeric data type. The function returns the same data type as the numeric data type of the argument.
 
