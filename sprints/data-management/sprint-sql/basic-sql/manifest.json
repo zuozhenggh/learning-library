@@ -3,6 +3,11 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
+        "title": "What is Structured Query Language (SQL)?",
+        "description": "",
+        "filename": "../sql/sql.md"
+       },  
+       {
             "title": "How to create tables in a database?",
             "description": "",
             "filename": "../create-tables/create-tables.md"

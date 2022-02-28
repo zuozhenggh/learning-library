@@ -1,40 +1,56 @@
 # How to write aggregate queries on table in a database?
 
-## Introduction
+Duration: 2 minutes
 
-This lab walks you through the steps to write aggregate queries on table in a database.
+Aggregate functions return a single result row based on groups of rows, rather than on single rows. This sum and average functions takes as an argument any numeric data type or any nonnumeric data type that can be implicitly converted to a numeric data type. The function returns the same data type as the numeric data type of the argument.
 
-Estimated Time: 1 minute
+*COUNT* returns the number of rows returned by the query. If you specify the asterisk (*), then this function returns all rows, including duplicates and nulls. COUNT never returns null.
 
-### Objectives
+```
+<copy>
+select count(*)
+from table_name;
+</copy>
+```
 
-In this lab, you will:
+*SUM* returns the sum of values of a column.
 
-* Write aggregate queries on table in a database
+```
+<copy>
+select sum(column_name)
+from table_name;
+</copy>
+```
 
-### Prerequisites
+*AVG* returns average value of a column.
 
-* Have created departments and employees tables in a database and inserted records
+```
+<copy>
+select avg(column_name)
+from table_name;
+</copy>
+```
 
-## Task 1: Aggregate queries
+*MAX* returns maximum value of a column.
 
-1. You can sum data in tables using aggregate functions. We will use column aliases to rename columns for readability, we will also use the null value function (NVL) to allow us to properly sum columns with null values.
+```
+<copy>
+select max(column_name)
+from table_name;
+</copy>
+```
 
-    ```
-    <copy>
-    select 
-      count(*) employee_count,
-      sum(salary) total_salary,
-      sum(commission) total_commission,
-      min(salary + nvl(commission,0)) min_compensation,
-      max(salary + nvl(commission,0)) max_compensation
-    from employees;
-    </copy>
-    ```
+*MIN* returns minimum value of a column.
 
-    ![Aggregate query](../images/aggregate-query.png)
+```
+<copy>
+select min(column_name)
+from table_name;
+</copy>
+```
 
 ## Learn More
 
-* [Introduction to Oracle SQL Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=943)
+* Explore more [Aggregate Functions](https://docs.oracle.com/database/121/SQLRF/functions003.htm#SQLRF20035)
 * [SQL Language Reference](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC)
+* [Introduction to Oracle SQL Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=943)
