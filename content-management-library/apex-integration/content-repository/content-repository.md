@@ -1,10 +1,10 @@
-# Setup Content Repository
+# Setup content repository
 
 ## Introduction
 In this session we will setup Content repository where all content will be stored and managed. We will also define content structure with meta-data to store data along with file. At last we will provide access to IAM app which was create in *Lab 1*
 
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Background
 
@@ -18,13 +18,6 @@ In this lab, you will:
 * Create Asset Repository
 * Add members to Repository
 
-### Prerequisites
-
-This lab assumes you have:
-
-* An Oracle account
-* All previous labs successfully completed
-
 ## Task 1: Create Custom Digital Asset Type
 
 We need to have Custom Digital Asset type “Contract” with meta-data to capture document & meta-data.
@@ -33,24 +26,24 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
 
 2. Navigate to left side menu ADMINISTRATION and then click Content
 
-   ![Content Menu](images/content-menu.png)
+      ![Content Menu](images/content-menu.png)
 
 3. Click the drop-down menu below the header and select **Asset Types** as shown below
 
-   ![Asset Type](images/asset-type-menu.png)
+      ![Asset Type](images/asset-type-menu.png)
 
 4. Click **Create** button on right top area to create asset type
-   ![Create Asset](images/create-button.png)
+   
+      ![Create Asset](images/create-button.png)
 
 5. In the create Asset type form, enter below details
-   * **Name**: Contract
-   * **Display Name**: Contract
-   * **Choose asset type**: Select “Create a Digital Asset Type”
+      * **Name**: Contract
+      * **Display Name**: Contract
+      * **Choose asset type**: Select “Create a Digital Asset Type”
+      
+      ![Create Asset Type](images/create-asset-type.png)
 
-   ![Create Asset Type](images/create-asset-type.png)
-
-6. Click **Create**
-   ,this will open the form to provide more detail about asset type.
+6. Click **Create** ,this will open the form to provide more detail about asset type.
 
 7. Under **Media Type** Tab:
    Search for “pdf” and select **pdf(application/pdf)**. Click **Add** button to add support for this file type. You can include more than one file types based on requirement so that your Asset type will only accept document of listed file types only.
@@ -60,14 +53,14 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
 8. Navigate to **Definition** Tab:
    Drag **Text** data field from left side to **Digital Asset Type** Definition region.
    Enter below details on **Text Settings** form
-   * Name: Contract Name
-   * Number of data fields value: Single Value \* This field is required to have content: Checked
+      * Name: Contract Name
+      * Number of data fields value: Single Value \* This field is required to have content: Checked
 
-   ![Text Settings](images/text-settings.png)
+      ![Text Settings](images/text-settings.png)
 
-Click **Next** and then **OK**
+9. Click **Next** and then **OK**
 
-9. Repeat the above step by dragging another data field as below
+10. Repeat the above step by dragging another data field as below
 
   | Data Field  | Name | Required |
   | --- | --- | --- |
@@ -76,16 +69,17 @@ Click **Next** and then **OK**
   | Boolean | Auto Renewal | No |
 
 
-10. Click **Save** from top right and we are done with creating Custom Digital Asset type.
+11. Click **Save** from top right and we are done with creating Custom Digital Asset type.
+   
    ![Contract Asset type](images/contract-asset-type.png)
 
 ## Task 2: Create Asset repository
 
-We will create Asset repository to manage all our content for this lab.
+   We will create Asset repository to manage all our content for this lab.
 
 1. Navigate to vertical menu **ADMINISTRATION** and then click **Content**
    
-   ![Content Menu](./images/content-menu-ful-page.png)
+      ![Content Menu](./images/content-menu-ful-page.png)
 
 2. Click **Create**
 

@@ -1,14 +1,14 @@
-# Configure Content Capture
+# Configure content capture
 
 ## Introduction
 
 In this session we will configure “Capture” capabilities to ingest email attachment from a configured email address and store that in asset repository.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 20 minutes
 
 ### Background
 
-Content Capture feature allows you to configure content ingestion from various sources like Email, FTP, Scanner device etc. It also support orchestration of other document processing activity like OCR, file type conversion etc. In this session, we will keep the use case simple but you can refer documentation for more advance use cases.
+Content Capture feature allows you to configure content ingestion from various sources like Email, FTP, Scanner device and many more. It also support orchestration of other document processing activity like OCR, file type conversion and others. In this session, we will keep the use case simple but you can refer documentation for more advance use cases.
 
 Let’s have a look at the basic process of capturing content and uploading it to Oracle Content Management.
 section.
@@ -25,12 +25,6 @@ In this lab, you will:
 * Define Commit Target
 * Test Content Ingestion flow
 
-### Prerequisites
-
-This lab assumes you have:
-
-* An Oracle account
-* All previous labs successfully completed
 
 ## Task 1: Create Procedure
 

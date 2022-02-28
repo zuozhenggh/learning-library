@@ -1,11 +1,11 @@
-# Setup an OCM Instance
+# Setup an OCM instance
 
 ## Introduction
 
 This lab walks you through the process of provisioning an instance of Oracle Content Management, assuming you don't already have one available to you. If you do, you can skip this lab and move on to the next one.
 
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Background
 The Oracle Content Management **Starter Edition** offers a free content service tier with a limited feature set and limits on the number of users, assets, sites, and other items. However, it's sufficient to work with Oracle Content Management out of the box.
@@ -20,12 +20,6 @@ In this lab, you will:
 * Provision Oracle Content Management (Starter Edition)
 * Create IAM App for Integration(API Call)
 * Associate IAM App with OCM Instance
-
-### Prerequisites
-
-This lab assumes you have:
-* This lab requires completion of the Getting Started section in the Contents menu on the left.
-
 
 
 ## Task 1: Create an instance of Oracle Content Management

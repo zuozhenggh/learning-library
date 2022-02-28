@@ -1,4 +1,4 @@
-# Setup an APEX Instance
+# Setup an Oracle APEX instance
 
 ## Introduction
 
@@ -6,7 +6,7 @@ Oracle Application Express (APEX) is a feature of Oracle Database, including the
 
 An APEX Workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
 
-Estimated Time: 5-10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 

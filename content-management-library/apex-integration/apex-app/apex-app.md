@@ -4,7 +4,7 @@
 
 In this session we will import sample APEX application **Customer Tracker** and configure Single Sign-on using IAM.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 
 ### Objectives
@@ -14,13 +14,6 @@ In this lab, you will:
 * Create IAM app for SSO
 * Configure SSO Security
 * Verify Sample Application
-
-### Prerequisites
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
 
 
 ## Task 1: Import Customer Tracker sample application
@@ -125,8 +118,8 @@ This lab assumes you have:
 8.	Click **IAM Authentication Scheme – Current** and then click **Show All**
 
 9.	Change below fields (You can refer to Lab 1 - Task 2.3 for **Domain URL**)
-      * Settings > Discovery URL : https://&lt; Domain URL &gt;/.well-known/openid-configuration
-      * Post-Logout URL > Go To URL : https://&lt;your-apex-url&gt;.oraclecloudapps.com/ords/f?p=100
+      * Settings **Discovery URL** : https://&lt; Domain URL &gt;/.well-known/openid-configuration
+      * Post-Logout **URL**, set Go To URL : https://&lt;your-apex-url&gt;.oraclecloudapps.com/ords/f?p=100
 
 10.	Click **Apply Changes**
 

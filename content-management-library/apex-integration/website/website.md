@@ -1,12 +1,12 @@
-# Create Website based on site template
+# Create website based on template
 
 ## Introduction
 
 In this lab we will create site based on site template provided as part of lab file.
 
-*Note:Oracle Content Management let you create unlimited website but Stater edition is limited to 1 site per instance*
+*Note:Oracle Content Management let you create unlimited website but Starter edition is limited to 1 site per instance*
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ## Background
 
@@ -22,13 +22,6 @@ In this lab, you will:
 * Create New Site
 * Change Site Security
 * Publish Site
-
-### Prerequisites
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
 
 ## Task 1: Import Sales Enablement Site Template
 
@@ -117,7 +110,7 @@ This lab assumes you have:
 
   ![Bring Online](./images/online-confirm.png)
 
-7.	Right click the Site and select **View**. This will open the site in new tab. Copy the URL of site which will be like **https://**\&lt;your-instan-name&gt;**/site/authsite/Sales-Enablement/
+7.	Right click the Site and select **View**. This will open the site in new tab. Copy the URL of site which will be like **https://**&lt;your-instan-name&gt;**/site/authsite/Sales-Enablement/
 
 ## Summary
 

@@ -4,7 +4,7 @@
 
 By now you have both Oracle Content Management & Oracle APEX application running, in this lab you will change the configure to experience the integration between two system. There are two mode of integration explained,  one is using REST API and another is by embedding the OCM interface within APEX.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -12,12 +12,6 @@ In this lab, you will:
 * Configure Web Credentials
 * Change OCM Endpoint URL
 * Run end-to-end demonstration
-
-### Prerequisites 
-
-This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
 
 
 
@@ -87,7 +81,7 @@ Change below attributes
 
 ## Task 3 : Allow Cross Origin Resource Sharing (CORS)
 
-1. Login to IAM and Navigate to **Settings** > **Session Settings**
+1. Login to IAM and Navigate to **Session Settings** under **Settings** 
 
   ![Domain Settings](images/domain-settings.png)
 
@@ -101,7 +95,7 @@ Change below attributes
 
 ## Task 4: Allow OCM embedding within APEX
 
-1. Naviage to **Defaul** Domain > **Settings**
+1. Naviage to **Defaul** Domain and then **Settings**
 
   ![Security Navigation](images/security-menu.png)
 
@@ -114,7 +108,7 @@ Change below attributes
 4. Click **Save**
 
 
-## Task 4: Run end-to-end demonstration.
+## Task 4: Run end-to-end demonstration
 
 1.	Login to Customer Tracker application go to dashboard page.
 
@@ -122,7 +116,7 @@ Change below attributes
 
   ![Dashboard](images/apex-dash.png)
 
-3.	Click the **Contract** tab, it will show you all the contract for customer coming from OCM via REST API
+3.	Click the **Contract** tab, it will show you all the contract for customer coming from OCM using REST API
 
   ![Contract](images/apex-contract.png)
 

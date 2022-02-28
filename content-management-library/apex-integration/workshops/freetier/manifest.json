@@ -16,25 +16,25 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Setup an OCM Instance",
+            "title": "Lab 1: Setup an OCM instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../setup-ocm/setup-ocm.md"
         },
         {
-            "title": "Lab 2: Setup an Oracle APEX Instance",
+            "title": "Lab 2: Setup an Oracle APEX instance",
             "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../setup-apex/setup-apex.md"
         },
         {
-            "title": "Lab 3: Setup Content Repository",
+            "title": "Lab 3: Setup content repository",
             "filename": "../../content-repository/content-repository.md"
         },
         {
-            "title": "Lab 4: Configure Content Capture",
+            "title": "Lab 4: Configure content capture",
             "filename": "../../content-capture/content-capture.md"
         },
         {
-            "title": "Lab 5: Create webiste based on template",
+            "title": "Lab 5: Create website based on template",
             "filename": "../../website/website.md"
         },
         {

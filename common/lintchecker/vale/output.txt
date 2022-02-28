@@ -1,0 +1,52 @@
+
+ [4m../../../content-management-library/apex-integration/introduction/introduction.md[0m
+ 36:247  [33mwarning[0m  Don't use 'here' as the         Oracle.Accessibility_LinkText 
+                  context for a link. Use link                                  
+                  text that clearly identifies                                  
+                  the target of the link, such                                  
+                  as name of your target page.                                  
+
+
+ [4m../../../content-management-library/apex-integration/setup-apex/setup-apex.md[0m
+ 5:109  [31merror[0m  Use 'Oracle Autonomous Data     Oracle.Legal_ProductNames 
+               Warehouse' instead of 'ADW'.                              
+               Avoid incorrect Oracle product                            
+               names.                                                    
+ 5:153  [31merror[0m  Use 'Oracle Autonomous          Oracle.Legal_ProductNames 
+               Transaction Processing'                                   
+               instead of 'ATP'. Avoid                                   
+               incorrect Oracle product                                  
+               names.                                                    
+ 5:205  [31merror[0m  Use 'Oracle Autonomous          Oracle.Legal_ProductNames 
+               Transaction Processing'                                   
+               instead of 'ATP'. Avoid                                   
+               incorrect Oracle product                                  
+               names.                                                    
+ 53:86  [31merror[0m  Use 'Oracle Autonomous          Oracle.Legal_ProductNames 
+               Transaction Processing'                                   
+               instead of 'ATP'. Avoid                                   
+               incorrect Oracle product                                  
+               names.                                                    
+
+
+ [4m../../../content-management-library/apex-integration/integration/integration.md[0m
+ 76:1    [31merror[0m       Menu cascade found at                       Oracle.Accessibility_MenuCascade 
+                     'Click the search result                                                     
+                     Region->Resources->Identification->Title'.                                   
+                     Do not use symbols to separate menu                                          
+                     options as they cause translation issues.                                    
+ 78:4    [31merror[0m       Menu cascade found at 'Replace              Oracle.Accessibility_MenuCascade 
+                     the above highlighted URL                                                    
+                     above under Source->Text                                                     
+                     with your Site URL which was                                                 
+                     created in Lab 5- Task 4.7'.                                                 
+                     Do not use symbols to separate                                               
+                     menu options as they cause                                                   
+                     translation issues.                                                          
+ 119:95  [34msuggestion[0m  Use 'through, by using'                     Oracle.Terminology_Latin         
+                     instead of 'via'. Avoid Latin                                                
+                     abbreviations. Use them only                                                 
+                     in tables or where space is                                                  
+                     limited.                                                                     
+
+✖ [31m6 errors[0m, [33m1 warning[0m and [34m1 suggestion[0m in 8 files.
