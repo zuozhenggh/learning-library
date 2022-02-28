@@ -34,4 +34,3 @@ This lab assumes you have:
 * Mario Beck - MySQL EMEA
 * Olivier Dasini - MySQL EMEA
 * Last Updated - Feb 2022
-
