@@ -26,7 +26,7 @@ Estimated Time: 10 minutes
 
 This task will use the Apache Kafka Connect, a framework included in Apache Kafka that integrates Kafka with other systems. Oracle TEQ will provide a standard JMS package and related JDBC, Transaction packages to establish the connection and complete the transactional data flow.
 
-To simplify the deployment of a Kafka Connect, as done in Lab 2, we are using the container made available by [Confluent Apache Kafka Quick Start](https://developer.confluent.io/quickstart/kafka-docker/) and already installed during Lab 1.
+To simplify the deployment of a Kafka Connect, as done in Lab 2, we are using the container made available by [Confluent Apache Kafka Quick Start](https://developer.confluent.io/quickstart/kafka-docker/) and already installed during Lab 1. 
 
 You will configure the connection between the Kafka broker and the Oracle TEQ submitting the setup to Kafka [Connect REST API](https://docs.confluent.io/platform/current/connect/references/restapi.html).
 
@@ -38,16 +38,16 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
   "tasks.max": "1",
   "topics": "LAB8022_TOPIC",
   "java.naming.factory.initial": "oracle.jms.AQjmsInitialContextFactory",
-  "java.naming.provider.url": <connection string>,
-  "db_url": <connection string>,
-  "java.naming.security.principal": <username>,
-  "java.naming.security.credentials": <password>,
+  "java.naming.provider.url": "<connection string>",
+  "db_url": "<connection string>",
+  "java.naming.security.principal": "<username>",
+  "java.naming.security.credentials": "<password>",
   "jndi.connection.factory": "javax.jms.XAQueueConnectionFactory",
   "jms.destination.type": "topic",
-  "jms.destination.name": <teq topic name>,
+  "jms.destination.name": "<teq topic name>",
   "key.converter":"org.apache.kafka.connect.storage.StringConverter",
   "value.converter":"org.apache.kafka.connect.storage.StringConverter",
-  "confluent.topic.bootstrap.servers": <kafka broker address>,
+  "confluent.topic.bootstrap.servers": "<kafka broker address>",
   "confluent.topic.replication.factor": "1"
 }
 ```
@@ -65,7 +65,7 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
 
     ![Kafka Components status](images/kafka-containers-ps.png " ")
 
-    If the Kafka components are not running, you will need to rebuild them following instructions from [Extra Task](kafka-connect-teq#Extra-Task).
+    If the Kafka components are not running, you will need to rebuild them following instructions from Task 4 at the end of this page.
 
 2. Execute the following command providing the Oracle Database password. It will fill the parameters based on your previous created assets and set up the Connect Sync between the Kafka Topic from Lab 2 and Oracle TEQ from Lab 3:
 
@@ -172,7 +172,7 @@ Now that you have the Connector running, you can produce some messages and test 
 
 ## Task 3: Dequeue messages from Oracle TEQ
 
-After produce some messages, the expected behavior is the Connect Sync agent consume messages from Kafka Topic and enqueue them on Oracle TEQ. And, you will be able to dequeue them from Oracle TEQ using okafka consumer microservice or a PL/SQL procedure, for example. 
+After produce some messages, the expected behavior is the Connect Sync agent consume messages from Kafka Topic and enqueue them on Oracle TEQ. And, you will be able to dequeue them from Oracle TEQ using okafka consumer microservice or a PL/SQL procedure, for example.
 
 1. Dqueue message from Oracle TEQ
 
@@ -243,12 +243,47 @@ If you disconnect from Cloud Shell for a long time, you may need to reinstall Ka
         </copy>
     ```
 
-3. Execute the following sequence of commands to start the Kafka cluster and connect Broker to Lab8022 Network:
+3. Rebuild Kafka Cluster including Customised Connect image
+
+    ```bash
+    <copy>
+    cd $LAB_HOME/cloud-setup/confluent-kafka
+    source kafka-setup.sh
+    </copy>
+    ```
+
+4. Execute the following sequence of commands to start the Kafka cluster and connect Broker to Lab8022 Network:
 
     ```bash
     <copy>
     cd $LAB_HOME/cloud-setup/confluent-kafka
     ./docker-compose up -d
+    docker network connect lab8022network broker
+    </copy>
+    ```
+
+5. Connect broker to Lab8022 Network (Docker internal)
+
+    First, check if lab8022network exist
+
+    ```bash
+    <copy>
+    docker network ls
+    </copy>
+    ```
+
+    if network not exist, execute the following command to create it.
+
+    ```bash
+    <copy>
+    docker network create lab8022network
+    </copy>
+    ```
+
+    And, finally, connect broker to lab8022 network
+
+    ```bash
+    <copy>
     docker network connect lab8022network broker
     </copy>
     ```

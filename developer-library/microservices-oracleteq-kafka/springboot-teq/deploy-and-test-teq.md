@@ -8,9 +8,9 @@ Estimated Time: 15 minutes
 
 ### Objectives
 
-- Learn about Oracle Transactional Event Queues and okafka
-- Deploy and access the OKafka Producer Microservices
-- Deploy and access the OKafka Consumer Microservices
+- Learn about Oracle Transactional Event Queues and okafka library
+- Deploy and access the Oracle TEQ/okafka Producer Microservice
+- Deploy and access the Oracle TEQ/okafka Consumer Microservice
 - Learn how they work
 
 ### Prerequisites
@@ -100,7 +100,7 @@ The Oracle Transactional Event Queues is a powerful messaging backbone offered b
 
     ```bash
     <copy>
-        vi $LAB_HOME/springboot-oracle-teq/okafka-producer/src/main/resources/application.yaml
+        vi $LAB_HOME/springboot-oracleteq/okafka-producer/src/main/resources/application.yaml
     </copy>
     ```
 
@@ -123,7 +123,7 @@ The Oracle Transactional Event Queues is a powerful messaging backbone offered b
 
     ```bash
     <copy>
-        vi $LAB_HOME/springboot-oracle-teq/okafka-consumer/src/main/resources/application.yaml
+        vi $LAB_HOME/springboot-oracleteq/okafka-consumer/src/main/resources/application.yaml
     </copy>
     ```
 
@@ -156,7 +156,7 @@ The Oracle Transactional Event Queues is a powerful messaging backbone offered b
 
     ```bash
         <copy>
-        cd $LAB_HOME/springboot-oracle-teq
+        cd $LAB_HOME/springboot-oracleteq
         mvn clean install -DskipTests
         </copy>
     ```
@@ -165,7 +165,7 @@ The Oracle Transactional Event Queues is a powerful messaging backbone offered b
 
     ![Spring Boot Apps Build result](images/springboot-okafka-build-result.png " ")
 
-## Task 3: Deploy and Test Spring Boot TEQ Producer
+## Task 3: Deploy and Test Spring Boot Oracle TEQ Producer
 
 1. Deploy Oracle TEQ Producer Microservice
 
@@ -173,7 +173,7 @@ The Oracle Transactional Event Queues is a powerful messaging backbone offered b
 
     ```bash
         <copy>
-        cd $LAB_HOME/springboot-oracle-teq/okafka-producer
+        cd $LAB_HOME/springboot-oracleteq/okafka-producer
         ./build.sh
         </copy>
     ```
@@ -182,7 +182,7 @@ The Oracle Transactional Event Queues is a powerful messaging backbone offered b
 
     ```bash
         <copy>
-        docker run --detach --name=okafka-producer -p 8090:8080 okafka-producer:0.0.1-SNAPSHOT
+        docker run --detach --name=okafka-producer -p 8090:8080 oracle-developers-okafka-producer:0.0.1-SNAPSHOT
         </copy>
     ```
 
@@ -212,17 +212,17 @@ The Oracle Transactional Event Queues is a powerful messaging backbone offered b
         {"id":"0","statusMessage":"Successful"}
     ```
 
-## Task 4: Deploy and Test Spring Boot TEQ Consumer
+## Task 4: Deploy and Test Spring Boot Oracle TEQ Consumer
 
 Now that we have Producer running and publishing events inside the TEQ Broker, let's do the same with Consumer.
 
 1. Deploy Oracle TEQ Consumer Microservice
 
-    We will follow the same steps to deploy and test OKafka consumer microservice. Run these commands to build the image and deploy the Consumer inside the Docker Engine :
+    We will follow the same steps to deploy and test Oracle TEQ/okafka consumer microservice. Run these commands to build the image and deploy the Consumer inside the Docker Engine :
 
     ```bash
         <copy>
-        cd $LAB_HOME/springboot-oracle-teq/okafka-consumer
+        cd $LAB_HOME/springboot-oracleteq/okafka-consumer
         ./build.sh
         </copy>
     ```
@@ -231,7 +231,7 @@ Now that we have Producer running and publishing events inside the TEQ Broker, l
 
     ```bash
         <copy>
-        docker run --detach --name=okafka-consumer okafka-consumer:0.0.1-SNAPSHOT
+        docker run --detach --name=okafka-consumer oracle-developers-okafka-consumer:0.0.1-SNAPSHOT
         </copy>
     ```
 

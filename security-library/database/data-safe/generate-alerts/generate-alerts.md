@@ -28,10 +28,10 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
-- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that Activity Auditing is enabled on your target database, and that you have permissions in Oracle Cloud Infrastructure Identity and Access Management (IAM) to use the Alerts feature in Oracle Data Safe.
-- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it. Make sure to have the `ADMIN` password for your target database on hand (see [Register an Autonomous Database with Oracle Data Safe](?lab=register-autonomous-database)).
-- Started audit data collection on your target database (see [Audit Database Activity](?lab=audit-database-activity))
+- Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console at `https://cloud.oracle.com`
+- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment))
+- Registered your target database with Oracle Data Safe and loaded sample data into it. Make sure to have the `ADMIN` password for your target database on hand (see [Register an Autonomous Database with Oracle Data Safe](?lab=register-autonomous-database)).
+- Started audit data collection for your target database in Oracle Data Safe (see [Audit Database Activity](?lab=audit-database-activity))
 - Accessed Security Center
 
 
@@ -71,7 +71,7 @@ This lab assumes you have:
 5. Next to **Policy Applied On Target Databases**, click **View List** to view the target databases associated with the alert policy.
 
     The **Target-Policy Associations** page is displayed with the **Policy Name** filter set to **User Creation/Modification**.
-    Because you have not yet associated the alert policy with any target database, the table shows **No Target Policy Associations Available**.
+    Because you have not yet associated the alert policy with any target database, the table shows **No Target-Policy Associations Available**.
 
     ![No Target-Policy Associations Available](images/no-target-policy-associations.png "No Target-Policy Associations Available")
 
@@ -116,7 +116,7 @@ Access Oracle Database Actions in Oracle Cloud Infrastructure and perform some a
 
 2. Under **COMPARTMENT**, select your compartment.
 
-3. Click the name of your target database.
+3. On the right, click the name of your target database.
 
     The **Autonomous Database Details** page is displayed.
 
@@ -152,6 +152,8 @@ Access Oracle Database Actions in Oracle Cloud Infrastructure and perform some a
 
 13. Sign out, close the browser tab, and return to the **Autonomous Database | Oracle Cloud Infrastructure** browser tab.
 
+14. Wait a couple of minutes for Oracle Data Safe to produce the alerts.
+
 
 
 ## Task 4: Review the generated alerts in Oracle Data Safe
@@ -168,7 +170,7 @@ Access Oracle Database Actions in Oracle Cloud Infrastructure and perform some a
     - The **Alerts summary** chart shows that there are four alerts. Two are critical risk and two are medium risk.
     - The **Open Alerts** chart shows that there are four alerts on the current day.
     - The **Alerts Summary** tab shows the number of critical, high, and medium alerts along with target database counts. It also shows you the total number of alerts and target databases.
-    - The **Targets Summary** tab shows you the number of open, critical, high, and medium alerts.
+    - The **Targets Summary** tab shows the number of open, critical, high, and medium alerts.
 
     ![Alerts dashboard with data](images/alerts-dashboard-with-data.png "Alerts dashboard with data")
     ![Targets Summary tab](images/targets-summary.png "Targets Summary tab")
@@ -182,8 +184,7 @@ Access Oracle Database Actions in Oracle Cloud Infrastructure and perform some a
 7. Review the report.
 
     - The report currently does not have any filters set. It shows you all alerts for all target databases in the selected compartment.
-    - You can view the total number of target databases; total number of open and closed alerts, and the total number of critical, high, medium, and low alerts.
-    - You can click the **Targets** total to view the list of target databases. You can click the other totals to toggle a filter on the list of alerts.
+    - At the top of the report, you can view several totals, including the total number of target databases; total number of open and closed alerts, and the total number of critical, high, medium, and low alerts. You can click the **Targets** total to view the list of target databases. You can click the other totals to toggle a filter on the list of alerts.
     - At the bottom of the report, you can view the list of alerts. By default, the table shows you the alert name, alert status, alert severity, target databases on which the audited event occurred, and when the alert was created.
     - You have options to create a PDF or XLS report, create a custom report, open and close alerts, and specify which table columns you want displayed on the page.
 
@@ -235,7 +236,7 @@ Access Oracle Database Actions in Oracle Cloud Infrastructure and perform some a
 
 ## Task 6: Create a custom alerts report
 
-1. In the breadcrumb, click **All Alerts**.
+1. In the breadcrumb at the top of the page, click **All Alerts** to return to the All Alerts report.
 
 2. Apply two filters:
 
@@ -261,7 +262,7 @@ Access Oracle Database Actions in Oracle Cloud Infrastructure and perform some a
 
     The **Generate Report** dialog box is displayed.
 
-2. Select **PDF**.
+2. Leave **PDF** selected.
 
 3. For **Display Name**, enter **Failed Admin Logins for your-target-database-name**.
 
@@ -293,4 +294,4 @@ Access Oracle Database Actions in Oracle Cloud Infrastructure and perform some a
 ## Acknowledgements
 
 * **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, February 15, 2022
+* **Last Updated By/Date** - Jody Glover, February 26, 2022
