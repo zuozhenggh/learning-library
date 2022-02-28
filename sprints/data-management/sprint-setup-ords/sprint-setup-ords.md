@@ -1,7 +1,8 @@
 # How can I configure ORDS for an On-Premise Oracle Database?
+Duration: 10 minutes
 
 ORDS is deployed as a WAR file. Download the file  from the [Oracle REST Data Services download page](https://docs.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-rest-data-services/21.3/aelig&id=OTN_downloads).
-## Answer
+## Install and Configure ORDS
 
 **Install ORDS in standalone mode:**
 
@@ -50,4 +51,4 @@ You will get a **"404 error"** here as you have not configured APEX. This is bec
 When using the multitenant architecture, the recommended way is to set ```cdb.common.schema=false``` in the properties file, which will allow each PDB to run a different version of ORDS. Alternatively you can use ```cdb.common.schema=true``` in the properties file, which will mean all PDBs will have to use the same version of ORDS. Whichever option you choose, you will probably want to also use the ```db.serviceNameSuffix=.your_db_domain``` parameter to enable the pluggable mapping functionality.
 
 ## Learn More
-* Install Oracle Database (Enterprise Edition, Standard Edition or Standard Edition One) release 11g Release 2 or later, or Oracle Database 11g Release 2 Express Edition. See [Oracle Database 21c - Installation.](https://docs.oracle.com/en/database/oracle/oracle-database/21/install-and-upgrade.html)
+* To learn more about Installing, Configuring & Developing REST applications See [Oracle REST Data Services](https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/21.4/aelig/index.html)

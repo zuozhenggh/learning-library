@@ -184,7 +184,7 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
 - Once the application is installed, you will need to update the API key for both the Popular Movies and Search Movies REST data sources.
 
-- Click on **Edit Application** in the Application Installed success page to go to the app home.
+- Go to the App Home by clicking on **Edit Application** from the Application Installed success page.
 
 - Click on **Shared Components**.
 
@@ -196,14 +196,14 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
     ![](images/rest-source-tabs-edit.png " ")
 
-- Click the **Edit** icon next to the api_key parameter.
+- Click the **Edit** icon next to the **api_key** parameter.
 
     ![](images/parameters-tab-edit.png " ")
 
-    - Within the Edit REST Data Source Parameter dialog, replace **Value** with your unique API key that you got from The Movie Database.
+    - Within the Edit REST Data Source Parameter dialog, past your unique TMDB API key in the Value text box.
 
     - Click **Apply Changes** to save and close the dialog.
 
         ![](images/edit-parameter-edit.png " ")
 
-- Follow the same process with the Search Movies REST source.
+- Follow the same process for the Search Movies REST source.

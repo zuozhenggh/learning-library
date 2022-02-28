@@ -1,0 +1,11 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How to compress data in a table in a database?",
+            "description": "",
+            "filename": "./compress-data.md"
+        }
+    ]
+}

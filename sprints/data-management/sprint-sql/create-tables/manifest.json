@@ -1,0 +1,11 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How to create tables in a database?",
+            "description": "",
+            "filename": "./create-tables.md"
+        }
+    ]
+}
