@@ -166,7 +166,7 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
 2.  Verify the foodwinepairing-python pod is running:
 
     ```
-    <copy>kubectl get pods --all-namespaces</copy>
+    <copy>kubectl get pods --all-namespaces</copy> 
     ```
 
 3. Redeploy inventory-helidon passing true to `./deploy.sh` using the following command. This will change the `isSuggestiveSaleAIEnabled` value in inventory-helidon-deployment.yaml to true and redeploy.                                                                                         
@@ -279,13 +279,13 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
 
    ![](images/db-user-secret.png " ")
 
-3. The **database wallet** is defined as a volume with the contents coming from a kubernetes secret:
+3. The **database wallet** is defined as a volume with the contents coming from a Kubernetes secret:
 
     ```
     volumes:
       - name: creds
         secret:
-          secretName: db-wallet-secret
+          secretName: order-db-tns-admin-secret
     ```
 
    The volume is mounted as a filesystem:
@@ -303,11 +303,11 @@ Let’s analyze the Kubernetes deployment YAML file: `order-helidon-deployment.y
       value: "jdbc:oracle:thin:@%ORDER_PDB_NAME%_tp?TNS_ADMIN=/msdataworkshop/creds"
     ```
 
-   Setup had previeously downloaded a regional database wallet and created the db-wallet-secret secret containing the wallet files.  See `utils/db-setup.sh` for more details.
+   Setup had previously downloaded a regional database wallet and created the order-db-tns-admin-secret secret containing the wallet files.  See `utils/db-setup.sh` for more details.
 
     ```
     <copy>
-    kubectl describe secret db-wallet-secret -n msdataworkshop
+    kubectl describe secret order-db-tns-admin-secret -n msdataworkshop
     </copy>
     ```
 

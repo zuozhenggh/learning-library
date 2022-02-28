@@ -239,9 +239,8 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 - You can import Lab 4 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
 
 - You will be prompted to provide credentials for the Movie Details REST data source set up in this lab. You can see in the screenshot below that Credentials for Movie Details does not already exist in your workspace.  
-*Note: If you did not complete or import Labs 2 or 3, the Already Existed value for Credentials for Search Movies would also be No.*
 
-    ![](images/details-blank-edit.png " ")  
+    ![](images/4-import-details-blank.png " ")  
 
 - Within the Credentials for Movie Details row:
 
@@ -251,6 +250,6 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
     - In the Verify Client Secret/Password column, past your API key again.
 
-        ![](images/details-creds-edit.png " ")
+        ![](images/4-stuck-details-edited.png " ")
 
-- Follow the instructions in the <a href="?lab=creating-rest-sources#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 2 to update the Popular and Search Movies API keys.
+- Follow the instructions in the <a href="?lab=creating-movie-search-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 3 to update the Popular and Search Movies API keys.
