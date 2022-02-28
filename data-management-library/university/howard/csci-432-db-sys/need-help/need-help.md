@@ -4,6 +4,6 @@
 
    ![](./images/howard-slack.png " ")
 
-2. Attend Office Hours - Every Thursday 2-3pm (EST) at this Zoom link: <a href="https://howard.zoom.us/j/3589788466?pwd=dXIyK3lHcGxmK2tQU3UwaHRvbUJ3QT09">Howard University</a> 
+2. Attend Office Hours - Every Monday 3:30-4:30pm (EST) at this Zoom link: <a href="https://howard.zoom.us/j/3589788466?pwd=dXIyK3lHcGxmK2tQU3UwaHRvbUJ3QT09">Howard University</a> 
 
 
