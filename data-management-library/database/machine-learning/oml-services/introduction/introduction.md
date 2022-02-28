@@ -15,7 +15,7 @@ Estimated Time: 1 hour
 * Prepare the customer insurance data
 * Use AutoML to create a machine learning model
 * Use Postman to score the machine learning model using REST APIs  
-* Use Curl to score the machine-learning model using REST APIs in command line
+* Use Curl to score the machine-learning model using REST APIs in command line.
 
 
 ### Prerequisites
