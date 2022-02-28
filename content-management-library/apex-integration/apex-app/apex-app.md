@@ -15,6 +15,10 @@ In this lab, you will:
 * Configure SSO Security
 * Verify Sample Application
 
+### Prerequisites (Optional)
+
+This lab assumes you have:
+* An Oracle APEX instance with **21.1.x version**
 
 ## Task 1: Import Customer Tracker sample application
 
