@@ -1,4 +1,4 @@
-# How to switchover to a standby database?
+# How can I switchover to a standby database?
 Duration: 5 minutes
 
 When you perform a switchover the primary database becomes the standby database, and the standby database becomes the primary database, with no data loss. A switchover is typically done to test failover to the standby database for audit or certification reasons, or to test your application's failover procedures when Autonomous Data Guard is enabled.

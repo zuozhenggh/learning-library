@@ -1,0 +1,11 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How to disable table compression in a database?",
+            "description": "",
+            "filename": "./uncompress-data.md"
+        }
+    ]
+}

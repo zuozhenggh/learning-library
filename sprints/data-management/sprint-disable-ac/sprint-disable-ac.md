@@ -1,4 +1,4 @@
-# How to disable Application Continuity?
+# How do I disable Application Continuity?
 Duration: 1 minutes
 
 ## Disable Application Continuity
