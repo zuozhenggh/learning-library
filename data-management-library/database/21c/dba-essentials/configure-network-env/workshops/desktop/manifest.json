@@ -15,7 +15,7 @@
     {
       "title": "Lab 1: HTTPS Port for CDB and PDB",
       "description": "How to view and set the HTTPS port number for both Container Database (CDB) and Pluggable Database (PDB).",
-      "filename": "./../../https-cdb-pdb/https-cdb-pdb.md"
+      "filename": "./../../https-port-cdb-pdb/https-port-cdb-pdb.md"
     },
     {
       "title": "Lab 2: Listener Operations",

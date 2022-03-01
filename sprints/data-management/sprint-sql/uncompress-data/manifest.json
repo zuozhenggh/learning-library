@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to disable table compression in a database?",
+            "title": "How can I disable table compression in the Oracle database?",
             "description": "",
             "filename": "./uncompress-data.md"
         }

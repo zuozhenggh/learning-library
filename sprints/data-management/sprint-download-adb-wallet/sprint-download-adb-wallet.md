@@ -1,4 +1,5 @@
-# How can I download the ADB Wallet using command line?
+# How can I download the ADB Wallet using the command line?
+
 Duration: 1 minute
 
 ## Use OCI CLI tool
