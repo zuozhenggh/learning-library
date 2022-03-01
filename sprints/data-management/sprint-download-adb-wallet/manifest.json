@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How can I download the ADB Wallet using command line?",
+            "title": "How can I download the ADB Wallet using the command line?",
             "description": "",
             "filename": "sprint-download-adb-wallet.md"
         },
