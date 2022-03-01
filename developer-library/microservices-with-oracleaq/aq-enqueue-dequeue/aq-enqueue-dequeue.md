@@ -18,46 +18,59 @@ This lab will give an understanding of Advanced Queues creation using different 
 
 ## Task 1: Create Advanced Queues(AQ)
 
-![createAQ](./images/create-aq.png " ")
+1. Below are the code samples to create AQ:
 
-- Single consumer classic queue with Payload as ADT, RAW and JSON using PL/SQL.
+    ![createAQ](./images/create-aq.png " ")
 
-- Multi-Consumer classic queue with Payload as RAW using PL/SQL.  
+    - Single consumer classic queue with Payload as ADT, RAW and JSON using PL/SQL.
 
-```bash
-<copy>cd $ORACLEAQ_HOME; source createAQ.sh;
-</copy>
-```
+    - Multi-Consumer classic queue with Payload as RAW using PL/SQL.  
+
+2. Execute the following sequence of commands into cloud shell:
+
+    ```bash
+    <copy>cd $ORACLEAQ_HOME; source createAQ.sh;
+    </copy>
+    ```
 
 ## Task 2: AQ Enqueue
 
-![enqueueAQ](./images/enqueue-aq.png " ")
+1. Below are the code samples to Enqueue AQ:
 
-- Enqueue for Single consumer classic queue with Payload as ADT and RAW using PL/SQL.
+    ![enqueueAQ](./images/enqueue-aq.png " ")
 
-- Enqueue for multi-consumer classic queue with Payload as RAW using PL/SQL.
+    - Enqueue for Single consumer classic queue with Payload as ADT and RAW using PL/SQL.
 
-```bash
-<copy>cd $ORACLEAQ_HOME; source enqueueAQ.sh;
-</copy>
-```
+    - Enqueue for multi-consumer classic queue with Payload as RAW using PL/SQL.
+
+2. Execute the following sequence of commands into cloud shell:
+
+    ```bash
+    <copy>cd $ORACLEAQ_HOME; source enqueueAQ.sh;
+    </copy>
+    ```
 
 ## Task 3: Basic Dequeue
 
-![dequeueAQ](./images/dequeue-aq.png " ")
+1. Below are the code samples to dequeue AQ
 
-- Dequeue for Single consumer classic queue with Payload as ADT and RAW using PL/SQL.
+    ![dequeueAQ](./images/dequeue-aq.png " ")
 
-- Dequeue for multi-consumer classic queue with Payload as RAW using PL/SQL.
+    - Dequeue for Single consumer classic queue with Payload as ADT and RAW using PL/SQL.
 
-```bash
-<copy>cd $ORACLEAQ_HOME; source dequeueAQ.sh;
-</copy>
-```
+    - Dequeue for multi-consumer classic queue with Payload as RAW using PL/SQL.
+
+2. Execute the following sequence of commands into cloud shell:
+
+    ```bash
+    <copy>cd $ORACLEAQ_HOME; source dequeueAQ.sh;
+    </copy>
+    ```
 
 ## Task 4: AQ creation, Enqueue and Dequeue using Java
 
 1. Point to Point
+   - Execute the following sequence of commands into cloud shell:
 
     ```bash
     <copy> curl http://localhost:8081/oracleAQ/pointToPointAQ 
@@ -65,6 +78,7 @@ This lab will give an understanding of Advanced Queues creation using different 
     ```
 
 2. Publisher Subscriber
+   - Execute the following sequence of commands into cloud shell:
 
     ```bash
     <copy> curl http://localhost:8081/oracleAQ/pubSubAQ 
@@ -75,20 +89,24 @@ This lab will give an understanding of Advanced Queues creation using different 
 
 ## Task 5: Cleanups
 
-  ![cleanupAQ](./images/cleanup-aq.png " ")
+1. Below are the code samples to cleanup AQ
 
-- Stop classic Queues
+    ![cleanupAQ](./images/cleanup-aq.png " ")
 
-- Drop classic Queues
+    - Stop classic Queues
 
-- Drop Queue Tables
+    - Drop classic Queues
 
-```bash
-<copy>cd $ORACLEAQ_HOME; source cleanupAQ.sh;
-</copy>
-```
+    - Drop Queue Tables
 
-Proceed to the next [lab](#next).
+2. Execute the following sequence of commands into cloud shell:
+
+    ```bash
+    <copy>cd $ORACLEAQ_HOME; source cleanupAQ.sh;
+    </copy>
+    ```
+
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
