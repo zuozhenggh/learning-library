@@ -4,48 +4,43 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "filename": "../intro/intro.md"
+            "filename": "../../intro/intro.md"
         },
         {
-            "title": "Getting Started",
-            "description": "Prerequisites",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        },
-        {
-            "title": "Lab 1: Set up an Oracle Kubernetes Engine instance on the Oracle Cloud Infrastructure",
-            "filename": "../setup-oke-ocishell/setup-oke-ocishell.md"
+            "title": "Lab 1: Configure Kubectl to access an Oracle Kubernetes Engine instance on the Oracle Cloud Infrastructure",
+            "filename": "../../configure-oke-ocishell/configure-oke-ocishell.md"
         },
         {
             "title": "Lab 2: Install Verrazzano",
-            "filename": "../install-verrazzano/install-verrazzano.md"
+            "filename": "../../install-verrazzano-ll/install-verrazzano-ll.md"
         },
         {
             "title": "Lab 3: Deploy Bobs Books sample application",
-            "filename": "../deploy-bobsbook/deploy-bobsbook.md"
+            "filename": "../../deploy-bobsbook-ll/deploy-bobsbook-ll.md"
         },
         {
             "title": "Lab 4: Access the Bobs Books sample application Explore Verrazzano, Grafana and Kiali Console",
-            "filename": "../access-application/access-application.md"
+            "filename": "../../access-application-ll/access-application-ll.md"
         },
 		{
             "title": "Lab 5: Modifying the Application component and Creation of new image",
-            "filename": "../modify-helidonstock/modify-helidonstock.md"
+            "filename": "../../modify-helidonstock-ll/modify-helidonstock-ll.md"
         },
 		{
             "title": "Lab 6: Pushing new component image in Oracle Cloud Container Registry",
-            "filename": "../pushing-new-image/pushing-new-image.md"
+            "filename": "../../pushing-new-image-ll/pushing-new-image-ll.md"
         },
 		{
             "title": "Lab 7: Modifying Application Configuration file to Re-deploy modified component",
-            "filename": "../modify-yaml-config/modify-yaml-config.md"
+            "filename": "../../modify-yaml-config-ll/modify-yaml-config-ll.md"
         },
 	    {
             "title": "Lab 5-7: ALTERNATE VERSION with simplified solution",
-            "filename": "../alternate-version/alternate-version.md"
+            "filename": "../../alternate-version/alternate-version.md"
         },
 		{
             "title": "Lab 8: Verifying the changes through application access and Curated stack",
-            "filename": "../verify-changes/verify-changes.md"
+            "filename": "../../verify-changes-ll/verify-changes-ll.md"
         },
       {
         "title": "Need Help?",
