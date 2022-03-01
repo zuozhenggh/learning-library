@@ -102,7 +102,7 @@ ps -ef | grep "$ORACLEAQ_HOME" | grep -v grep
 
 > **Note:**  Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
-Once the setup has been completed you are ready to [move on to Lab 2](#next).
+Once the setup has been completed you are ready to **proceed to the next lab.**
 
 ## Acknowledgements
 
