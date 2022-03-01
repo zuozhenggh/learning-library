@@ -315,7 +315,7 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
     <copy>emcli db_software_maintenance -getTargetSubscriptions -target_name=finance.subnet.vcn.oraclevcn.com  -target_type=oracle_database</copy>
     ```
 
-    ![](images/unsubscribe_finance.png " ")
+    ![](images/unsubscribe_finance.png "unsubscribe finance db")
 
     If the image id is same as the one highlighted above, you may use the below command
     ```
@@ -333,7 +333,7 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
     <copy>emcli db_software_maintenance -getImages</copy>
     ```
 
-    ![](images/finance_subscribe_197.png " ")
+    ![](images/finance_subscribe_197.png "subscribe finance db to new image")
 
 
     If the image id is same as the one highlighted above, you may use the below command
@@ -351,11 +351,11 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
 1. As we have completed the pre-requisite task (associating database to image in Task 6), we can now upgrade the finance database. From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then ***Databases***
 
-    ![](images/2.png " ")
+    ![](images/navigation.png "navigation")
 
     and, then from ***Administration*** drop-down menu select ***Fleet Maintenance***
 
-    ![](images/3.png " ")
+    ![](images/admin-fm.png "navigation admin-fm")
 
     In order to complete the deployment of new image, we need to modify named credential root and set its scope to global. This can be achieved by running the below command in terminal.
 
@@ -363,11 +363,11 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
    <copy>emcli modify_named_credential -cred_name=root -cred_scope=global</copy>
     ```
 
-   ![](images/modify-root-credential.png " ")
+   ![](images/modify-root-credential.png "update root credential")
 
 2. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
 
-    ![](images/9.png " ")
+    ![](images/options.png "choose options")
 
     Where:
     -  Image = Desired version of Oracle home, which our target database should run after successful completion of operation. In this example, we will select ***Tier1 SIDB 19c Linux-x64***.
@@ -377,7 +377,7 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
 3. In this page, we will provide ***new Oracle home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
 
-    ![](images/41.png " ")
+    ![](images/input-values.png "enter values for operation")
 
     We can enter following values
     Under Maintenance tasks
@@ -397,17 +397,17 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
 4. We can validate our entries (new Oracle home, log file location, credentials) of previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation.  There are two validation modes Quick and Full. We can select either of these. Full validation mode submits a deployment procedure. In this case choose Quick validation.
 
-    ![](images/43.png " ")
+    ![](images/validation-modes.png "available validation modes")
 
 5. Review the validation result.
 
-    ![](images/44.png " ")
+    ![](images/result-validation.png "result validation")
 
     In case of any error, we can fix it and choose revalidate.
 
 6. ***Submit*** the operation. Here, we can see that we have opted to deploy, migrate and update the database at once. These tasks will be performed independently based on their schedule.
 
-    ![](images/100.png " ")    
+    ![](images/final-review.png "final-review")    
 
     We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page. Lets enter
 
@@ -415,20 +415,20 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
     <copy>finance_19c_upgrade</copy>
     ```
 
-    ![](images/45.png " ")
+    ![](images/op-name.png "operation name")
 
     Click on submit.
-    ![](images/46.png " ")
+    ![](images/submit.png "submit operation")
 
 Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
 
 7. Review the Deployment Procedures (DP).
 
 Select the DP related to Deploy and click on it.
-    ![](images/47.png " ")
+    ![](images/all-dp.png "all-dp-submitted")
 
 It will show details of the activity performed by the DP.
-    ![](images/49.png " ")
+    ![](images/dp-deploy.png "dp-deploy")
 
 Here, we see that the DP has successfully installed new Oracle home.
 
@@ -437,19 +437,19 @@ Here, we see that the DP has successfully installed new Oracle home.
 1. In task 7 (above), we submitted a migration of the listener. If it needs to be submitted separately, then you need to uncheck migrate listener task (review step 3 of task 6). We see that this task has a scheduled state. In the interest of time and to complete this workshop, we can change it to run immediately. To do so, navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate DP.
 
     Click on reschedule.
-    ![](images/50.png " ")
+    ![](images/migrate-dp.png "migrate-dp")
 
     In the new page, select immediately for start and reschedule.
-    ![](images/51-reschedule.png " ")
+    ![](images/51-reschedule.png "reschdule dp")
 
     We can now see that migrate operation is running.
-    ![](images/51-Running.png " ")
+    ![](images/51-Running.png "dp running post reschedule")
     We can select it and see the various steps performed by it.
 
-    ![](images/51.png " ")
+    ![](images/dp-migrate-details.png "dp-migrate-details")
     We can now see that the migration operation completed successfully.
 
-    ![](images/52.png " ")
+    ![](images/dp-migrate-completed.png "dp-migrate-completed")
 
     Lets validate the version of ***finance*** database. In the upper toolbar, locate the ***Targets*** icon and click the drop-down menu and then select ***Databases***. We can see the updated version of ***finance*** database.
     ![](images/post_upgrade_db_version.png " ")
@@ -462,23 +462,23 @@ After the deploy operation and migrate listener task have completed successfully
 
     Click on reschedule.
 
-    ![](images/53.png " ")
+    ![](images/update.png "update dp")
 
     In the new page, select immediately for start and reschedule.
 
-    ![](images/53-reschedule.png " ")
+    ![](images/53-reschedule.png "update dp reschedule")
     We can now see that update operation is running.
-    ![](images/53-running.png " ")
+    ![](images/53-running.png "update dp running")
     We can select it and see the various steps performed by it.
 
-    ![](images/54.png " ")
+    ![](images/update-dp-steps.png "update-dp-steps")
 
     Update operation has completed successfully.
 
-    ![](images/55.png " ")
+    ![](images/update-dp-completed.png "update-dp-completed ")
 
     Lets validate the version of ***finance*** database. In the upper toolbar, locate the ***Targets*** icon and click the drop-down menu and then select ***Databases***. We can see the updated version of ***finance*** database.
-    ![](images/post_upgrade_db_version.png " ")
+    ![](images/post_upgrade_db_version.png "db version post operation")
 ## Task 10: Cleanup Old homes
 
 1. Review and execute the following command as a dry-run to report on cleanup impact for *finance.subnet.vcn.oraclevcn.com*  
