@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to create tables in a database?",
+            "title": "How can I create tables in the Oracle database?",
             "description": "",
             "filename": "./create-tables.md"
         }

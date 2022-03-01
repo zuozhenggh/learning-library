@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to drop a table in a database?",
+            "title": "How can I drop a table in the Oracle database?",
             "description": "",
             "filename": "./drop-table.md"
         }

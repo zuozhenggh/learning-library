@@ -8,17 +8,17 @@
         "filename": "../sql/sql.md"
        },  
        {
-            "title": "How to create tables in a database?",
+            "title": "How can I create tables in the Oracle database?",
             "description": "",
             "filename": "../create-tables/create-tables.md"
         },
         {
-          "title": "How to insert data into a table in a database?",
+          "title": "How can I insert data into a table in the Oracle database?",
           "description": "",
           "filename": "../insert-data/insert-data.md"
         },
         {
-          "title": "How to query a table in a database?",
+          "title": "How can I query a table in the Oracle database?",
           "description": "",
           "filename": "../query-tables/query-tables.md"
         }
