@@ -18,19 +18,25 @@ This Lab will help you understand OTP workflow (one-time-password)/ Second-Facto
 
 ## Task 1: Creation of required queues- User, Deliverer, Application
 
-![createWoekflow queues](./images/workflow-create-teq.png " ")
+1. Below are the code samples to create required queues
 
-```bash
+  ![createWoekflow queues](./images/workflow-create-teq.png " ")
+   
+2. Execute the following sequence of commands into cloud shell:
 
-<copy>cd $ORACLEAQ_HOME; source workflowCreateTEQ.sh;
+  ```bash
 
-</copy>
+  <copy>cd $ORACLEAQ_HOME; source workflowCreateTEQ.sh;
 
-```
+  </copy>
+
+  ```
 
 ## Task 2: User placed the order, and Application will generate 4-digit OTP
 
-![workflowTEQ](./images/workflow-teq.png " ")
+Below are the code samples to create the workflow
+
+  ![workflowTEQ](./images/workflow-teq.png " ")
 
   1. User places an order
 
@@ -87,18 +93,22 @@ This Lab will help you understand OTP workflow (one-time-password)/ Second-Facto
         - Message(OrderId, username, 9707 , deliveryLocation, "FAILED")
 
     4. Deliverer declines delivery to User.
+    
+     - Execute the following sequence of commands into cloud shell:
 
-```bash
+    ```bash
 
-<copy>cd $ORACLEAQ_HOME; source workflowEnqueueDequeueTEQ.sh;
+    <copy>cd $ORACLEAQ_HOME; source workflowEnqueueDequeueTEQ.sh;
 
-</copy>
+    </copy>
 
-```
+    ```
 
-[VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ)
+    [VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ)
 
 ## Task 5: Workflow using Java
+
+1. Execute the following sequence of commands into cloud shell:
 
 ```bash
 
@@ -110,21 +120,25 @@ This Lab will help you understand OTP workflow (one-time-password)/ Second-Facto
 
 ## Task 6: Cleanups: Drop the QueueTables(User, Deliverer, Application)
 
-![cleanupWorkflow](./images/workflow-cleanup-teq.png " ")
+1. Below are the code samples to cleanup workflow Queues
 
-- Stop User, Deliverer, Application Queues
+  ![cleanupWorkflow](./images/workflow-cleanup-teq.png " ")
 
-- Drop User, Deliverer, Application Queues
+  - Stop User, Deliverer, Application Queues
 
-```bash
+  - Drop User, Deliverer, Application Queues
 
-<copy>cd $ORACLEAQ_HOME; source workflowCleanupTEQ.sh;
+2. Execute the following sequence of commands into cloud shell:
 
-</copy>
+  ```bash
 
-```
+  <copy>cd $ORACLEAQ_HOME; source workflowCleanupTEQ.sh;
 
-Proceed to the next [lab](#next).
+  </copy>
+
+  ```
+
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
