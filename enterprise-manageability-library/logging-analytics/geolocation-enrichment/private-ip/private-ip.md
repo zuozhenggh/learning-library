@@ -100,7 +100,7 @@ In this task, you will configure a Log Source to add Extended Fields and Field E
       c. In the **Example Base Field Content**, type in **172.17.38.179** as the IP address.</br>
       d. In the **Extract Expression**, type in **{Relationship ID:\d+.\d+}**</br>
       e. Verify the checkbox is enabled and then click the **Test Definition** button to verify the **Relationship ID** in **Test Results** table displays a green **Success** under the Match Status heading. You can ignore any warnings that may appear.</br>
-      f. Click **Add** button to save the entry.
+      f. Click the blue **Add** button to save the entry.
       ![](./images/admin-source-edit-ext-field-add1.jpg " ")
 
 4. Now create the **Public IP** field from the **Host IP Address (Client)** field.</br>
@@ -109,7 +109,7 @@ In this task, you will configure a Log Source to add Extended Fields and Field E
       c. In the **Example Base Field Content**, type in **172.16.138.209** as the IP address.</br>
       d. In the **Extract Expression**, type in **{Public IP:\S+}**</br>
       e. Verify the checkbox is enabled and then click the **Test Definition** button to verify the **Public IP** in **Test Results** table displays a green **Success** under the Match Status heading. You can ignore any warnings that may appear.</br>
-      f. Click the **Add** button to return to the Extended Fields Tab.
+      f. Click the blue **Add** button to return to the Extended Fields Tab.
       ![](./images/admin-source-edit-ext-field-add2.jpg " ")
 
 5. Observe the 2 new rows that appear under the **Extended Fields** tab

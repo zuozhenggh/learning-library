@@ -1,4 +1,4 @@
-# Deploy Oracle Access Manager(OAM) Domain
+# Deploy Oracle Access Manager (OAM) Domain
 
 ## Introduction
 

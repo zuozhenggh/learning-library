@@ -45,7 +45,7 @@ This lab assumes you have completed the following labs:
 
     **(right-click and download the file with the following link)**
 
-    [csv data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Q4ShRkHMFyl4RiSUfoR5zH_KS8rfFeRDpM-wHkY6Ytt4YcpmnlOiOpoPUNzdzbtf/n/c4u04/b/developer-library/o/csv_data.csv)
+    [csv data](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/csv_data.csv)
 
 6. Once on your desktop, **drag the file into the Upload Data into New Table model**. You can also click the Select Files button and find where you downloaded it via your operating system's/Web Browser's file browser.
 
