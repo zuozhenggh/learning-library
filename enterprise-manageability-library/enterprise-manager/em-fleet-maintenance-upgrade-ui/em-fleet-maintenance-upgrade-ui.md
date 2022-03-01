@@ -425,14 +425,12 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 7. Review the Deployment Procedures (DP).
 
 Select the DP related to Deploy and click on it.
-
     ![](images/47.png " ")
 
-    It will show details of the activity performed by the DP.
-
+It will show details of the activity performed by the DP.
     ![](images/49.png " ")
 
-    Here, we see that the DP has successfully installed new Oracle home.
+Here, we see that the DP has successfully installed new Oracle home.
 
 ## Task 8: Migrate Listener to New Upgraded home
 
