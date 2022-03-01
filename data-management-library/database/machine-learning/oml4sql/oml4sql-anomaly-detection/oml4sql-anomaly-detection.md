@@ -57,7 +57,9 @@ In this lab, you will:
 
 ## Task 3: Data Preparation
 
-1. It is recommended to have SQL Developer installed on your host machine so that you can interact with the data in a more friendly way.
+1. It is recommended to have SQL Developer installed on your host machine so that you can interact with the data in a more friendly way. You need access to remote desktop with novnc link that you copied from of Resource Manager/Stacks/Stack Details/Application Information/Remote Desktop/copy, once you enter in the VM remote, you need open a Linux terminal and execute the command  ". setEnv" and wait for that start database service, If it asks you to replace the scripts in the terminal type A for all questions.
+To see the service name, open other Linux Terminal and execute lsnrctl status command.    
+
 * You can download here [SQL Developer Download](https://www.oracle.com/tools/downloads/sqldev-downloads.html).
 
 2. Once installed SQL Developer, you need to configure the remote connection in SSH Hosts of SQL Developer feature, following these instructions:
@@ -75,7 +77,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
 ![conection-ssh](../oml4sql-anomaly-detection/images/conection-ssh.png)
 
-6. Create SQL Developer new database connection with **SYS** user to your Oracle 21c Pluggable Database, and test connectivity with password: **MLlearnPTS#21_**.
+6. Create SQL Developer new database connection with **SYS** user to your Oracle 21c Pluggable Database, and test connectivity with password: **MLlearnPTS#21_** and service name: mlpdb1.livelabs.oraclevcn.com
 
 ![Database-connection-SYS](../oml4sql-anomaly-detection/images/Database-connection-SYS.png)
 
@@ -185,7 +187,7 @@ Notice how the small padlock closes in both options, which represents that you a
     <copy>
 	SELECT setting_name, setting_value
 	  FROM user_mining_model_settings
-	 WHERE model_name = 'SVMO_CUST_Class_sample'
+	 WHERE model_name = 'SVMO_CUST_CLASS_SAMPLE'
 	ORDER BY setting_name;
     </copy>
     ````
@@ -198,7 +200,7 @@ Notice how the small padlock closes in both options, which represents that you a
     <copy>
 	SELECT attribute_name, attribute_type
 	  FROM user_mining_model_attributes
-	 WHERE model_name = 'SVMO_CUST_Class_sample'
+	 WHERE model_name = 'SVMO_CUST_CLASS_SAMPLE'
 	ORDER BY attribute_name;
     </copy>
     ````
@@ -212,7 +214,7 @@ Notice how the small padlock closes in both options, which represents that you a
 	WITH
 	mod_dtls AS (
 	SELECT *
-	  FROM TABLE(DBMS_DATA_MINING.GET_MODEL_DETAILS_SVM('SVMO_CUST_Class_sample'))
+	  FROM TABLE(DBMS_DATA_MINING.GET_MODEL_DETAILS_SVM('SVMO_CUST_CLASS_SAMPLE'))
 	),
 	model_details AS (
 	SELECT D.class, A.attribute_name, A.attribute_value, A.coefficient
@@ -233,7 +235,7 @@ Notice how the small padlock closes in both options, which represents that you a
     ````
     <copy>
 	 SELECT view_name, view_type FROM user_mining_model_views
-	WHERE model_name='SVMO_CUST_Class_sample'
+	WHERE model_name='SVMO_CUST_CLASS_SAMPLE'
 	ORDER BY view_name;
     </copy>
     ````
@@ -257,7 +259,7 @@ Find the top 5 outliers - customers that differ the most from  the rest of the p
 	col pd format a90
 	SELECT cust_id, pd FROM
 	(SELECT cust_id,
-			PREDICTION_DETAILS(SVMO_CUST_Class_sample, 0 using *) pd,
+			PREDICTION_DETAILS(SVMO_CUST_CLASS_SAMPLE, 0 using *) pd,
 			rank() over (order by prediction_probability(
 						 SVMO_CUST_Class_sample, 0 using *) DESC, cust_id) rnk
 	 FROM cust_data_one_class_pv)
@@ -280,7 +282,7 @@ These statistics will not be influenced by outliers and are likely to provide a 
 		   round(avg(TIME_AS_CUSTOMER)) TIME_AS_CUSTOMER,
 		   count(*) cnt
 	FROM cust_data_one_class_pv
-	WHERE prediction(SVMO_CUST_Class_sample using *) = 1
+	WHERE prediction(SVMO_CUST_CLASS_SAMPLE using *) = 1
 	GROUP BY SEX
 	ORDER BY SEX;
     </copy>
@@ -300,7 +302,7 @@ Necessary data preparation on the input attributes is performed automatically du
 	select ROUND(prob_typical,5)*100||'%' Probability_BUY
 	from
 	(select
-	prediction_probability(SVMO_CUST_Class_sample, 1 using
+	prediction_probability(SVMO_CUST_CLASS_SAMPLE, 1 using
 								 44 AS age,
 								 3 AS TIME_AS_CUSTOMER,
 								 'Programmer/Developer' AS PROFESSION,
