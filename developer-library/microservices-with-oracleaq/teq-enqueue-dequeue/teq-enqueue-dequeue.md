@@ -100,4 +100,4 @@ Transactional Event Queues(TEQ) samples to create queues using different payload
 ## Acknowledgements
 
 - **Author** - Mayank Tayal, Developer Advocate
-- **Last Updated By/Date** - Mayank Tayal, February 2021
+- **Last Updated By/Date** - Mayank Tayal, February 2022
