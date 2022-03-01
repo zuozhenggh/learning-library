@@ -26,7 +26,7 @@ This workshop helps you learn how to start and stop a listener and view listener
 
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
 
-**Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+> **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 ## Appendix 1: About Listener Configuration
 
@@ -42,12 +42,12 @@ A client is an application that connects to Oracle Database to send and receiv
 **Service**   
 The client application uses a *Service name* to identify an Oracle Database instance and connect to it . A service name is a logical representation of an Oracle Database. A database can have one or more services associated with it.
 
-For example, the listener status returns a service name *orcl.us.oracle.com* which represents an Oracle Database instance.
+For example, the listener status returns a service name *CDB1* which represents an Oracle Database instance.
 
 ```
 ...
-Service "orcl.us.oracle.com" has 1 instance(s). 
-  Instance "orcl", status READY, has 1 handler(s) for this service...
+Service "CDB1" has 1 instance(s).
+  Instance "CDB1", status READY, has 1 handler(s) for this service...
 ```
 
 A single instance Oracle Database can interface with a client as multiple services.
@@ -64,7 +64,7 @@ The *listener.ora* file carries configuration parameters that determine the beh
  - Oracle Database services
  - Control parameters
 
-The following example gives a glimpse of the `listener.ora` file. Here, the listener assumes the default name, *LISTENER*.
+The following example gives a glimpse of the `listener.ora` file. Here, the listener assumes the default name, *LISTENER*. The values may differ depending on the system you are using.
 
 ```
 ...
@@ -95,7 +95,7 @@ The elements involved in client connections to Oracle Database are:
  - **Naming methods** -   
    While connecting to an Oracle Database service, the client application uses a resolution method, called the *naming method*. This method resolves the connect identifier to a connect descriptor.
 
-The following example shows a connect descriptor that enables a client to connect to Oracle Database with the service name *orcl.us.oracle.com*.
+The following example shows a connect descriptor that enables a client to connect to Oracle Database with the service name *CDB1*. The values may differ depending on the system you are using.
 
 ```
 ...
@@ -103,8 +103,7 @@ The following example shows a connect descriptor that enables a client to connec
 DESCRIPTION=
    (ADDRESS=(PROTOCOL=tcp)(HOST=my-server)(PORT=1521))
    (CONNECT_DATA=
-      (SERVICE_NAME=orcl.us.oracle.com))
-
+      (SERVICE_NAME=CDB1))
 ...
 ```
 
@@ -136,4 +135,4 @@ Click on the next lab to **Get Started**.
 
 - **Author**: Manish Garodia, Principal User Assistance Developer, Database Technologies
 - **Contributors**: Suresh Rajan, Prakash Jashnani, Malai Stalin, Subhash Chandra, Dharma Sirnapalli, Subrahmanyam Kodavaluru, Manisha Mati
-- **Last Updated By/Date**: Manish Garodia, January 2022
+- **Last Updated By/Date**: Manish Garodia, February 2022

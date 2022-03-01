@@ -1,4 +1,5 @@
-# How to add a standby database?
+# How do I add a standby database?
+
 Duration: 5 minutes
 
 When you enable Autonomous Data Guard you create one standby database, either in the current region (local), or in a remote region (cross-region). After you enable Autonomous Data Guard, you can add a second standby database.

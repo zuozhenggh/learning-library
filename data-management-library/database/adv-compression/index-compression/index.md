@@ -1,4 +1,4 @@
-# Advanced Index Compression 
+# Advanced index compression 
 
 ## Introduction
 
@@ -6,14 +6,14 @@ Indexes are used extensively inside OLTP databases since they can efficiently su
 
 Estimated Time: 20 minutes
 
-### About Advanced Index Compression
+### About Advanced index compression
 
-Advanced Index Compression LOW works well on all supported indexes, including those indexes that are not good candidates (indexes with no duplicate values or few duplicate values for a given number of leading columns of the index) with the existing Prefix Compression feature. Advanced Index Compression HIGH works at the block level to provide the best compression for each block. This means that users do not need knowledge of data characteristics – Advanced Index Compression HIGH automatically chooses the right compression per block.The HIGH level of Advanced Index Compression provides significant space savings while also improving performance for queries that are executed using indexes. Advanced Index Compression LOW and HIGH both provide significant space savings while also improving performance for queries that are executed using indexes.
+Advanced index compression LOW works well on all supported indexes, including those indexes that are not good candidates (indexes with no duplicate values or few duplicate values for a given number of leading columns of the index) with the existing Prefix Compression feature. Advanced Index Compression HIGH works at the block level to provide the best compression for each block. This means that users do not need knowledge of data characteristics – Advanced Index Compression HIGH automatically chooses the right compression per block.The HIGH level of Advanced Index Compression provides significant space savings while also improving performance for queries that are executed using indexes. Advanced Index Compression LOW and HIGH both provide significant space savings while also improving performance for queries that are executed using indexes.
 
 ### Key Features
 
 * Gives higher compression ratios.
-* Employs more complex compression algorithms than Advanced Index Compression LOW.
+* Employs more complex compression algorithms than advanced index compression LOW.
 * Stores data in a compression unit, which is a special on-disk format.
 
 ### Expectations from adapting a compression technique 
@@ -21,7 +21,7 @@ Advanced Index Compression LOW works well on all supported indexes, including th
 *	Storage costs to drop as the result of any compression deployments, and 
 *	No query performance degradation and only minimal Data Manipulation Language (DML) performance impact from compression.
  
-This Lab will teach you how to enable Advanced Index Compression. 
+This Lab will teach you how to enable advanced index compression. 
 
 ### Objectives
  
@@ -36,7 +36,7 @@ This lab assumes you have:
 * Successfully logged into your LiveLabs account
 * A Valid SSH Key Pair
   
-## Task 1: Enable Advanced Index Compression
+## Task 1: Enable advanced index compression
 
 1. create table aud_log 
 
@@ -84,7 +84,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/user-index.png "User Index")
+      ![User Index](images/user-index.png "User Index")
 
 ## Task 2: Create Materialized View  
 
@@ -104,7 +104,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/materialized-view.png "materialized view")  
+      ![materialized view](images/materialized-view.png "materialized view")  
 
 ## Task 3: Cleanup
 
@@ -120,7 +120,7 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Oracle Advanced Compression](https://www.oracle.com/technetwork/database/options/compression/advanced-compression-wp-12c-1896128.pdf) 
+* [Oracle advanced compression](https://www.oracle.com/technetwork/database/options/compression/advanced-compression-wp-12c-1896128.pdf) 
  
 ## Acknowledgements
 
