@@ -27,9 +27,9 @@ In this lab, you will:
 
 Before the set up of the Management Agent, it is important to understand the concepts behind the Java Management Service:
 
-* **Java Management Service (JMS)**: A reporting and management infrastructure integrated with Oracle Cloud Infrastructure Platform services to observe and manage your use of Java SE (on-premise or in the Cloud). It enables you to observe and manage the use of Java in your enterprise.
+* **Java Management Service (JMS)**: A reporting and management infrastructure integrated with Oracle Cloud Infrastructure Platform services to observe and manage your use of Java SE (on-premises or in the Cloud). It enables you to observe and manage the use of Java in your enterprise.
 
-* **Management Agents**: Can be installed on a host to allow a service plug-in to collect data from the host where you installed the Management Agent. In the case of JMS, the management agent allows the JMS plug-in to collect data about Java Applications, Java Runtimes and Installations from the host which can be either on-premise or in the Cloud. To set up a Management Agent, we will need a **response file**, which contains an **install key**.
+* **Management Agents**: Can be installed on a host to allow a service plug-in to collect data from the host where you installed the Management Agent. In the case of JMS, the management agent allows the JMS plug-in to collect data about Java Applications, Java Runtimes and Installations from the host which can be either on-premises or in the Cloud. To set up a Management Agent, we will need a **response file**, which contains an **install key**.
 
 * **Install Key**: A token required by the **Management Agent** installation. It authorises the Management Agent to communicate with the Oracle Cloud Infrastructure. You can use a single agent install key for multiple Management Agent installations.
 This key has been automatically created for you in Lab 3, where the "Create New Management Agent Configuration" box was checked during Fleet creation.
