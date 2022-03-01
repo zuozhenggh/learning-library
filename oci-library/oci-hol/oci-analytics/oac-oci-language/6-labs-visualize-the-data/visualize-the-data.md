@@ -27,20 +27,29 @@ This lab assumes you have:
 
 2.	Click the **Create** icon.
 
+  ![New Connection](./images/newconnection.png " ")
+
 3.	Select **Create Connection**, and select **Oracle Autonomous Data Warehouse**
 
   ![Connect ADW](./images/createconnection.png " ")
 
 4.	Enter the credentials to the data warehouse (target database) you created in **Lab 3**. If you need a reminder on how to get the wallet, See [Download a Wallet](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/adbconnecting.htm#access)
 
+  ![Define Connection](./images/defineconnection.png " ")
 
 ## **Task 2**: Create a new Dataset
 
 1.	Navigate to **Homepage** > **Create** > **Dataset**
 
+  ![Open Homepage](./images/openhomepage.png " ")
+
 2.	Select the data warehouse you just created.
 
-3.	Drag the 3 tables from the USER1 data base that you just populated into the canvas: REVIEWS, SENTIMENT and ENTITIES
+  ![Create Dataset](./images/createdataset.png " ")
+
+3.	Drag the two tables from the USER1 database that you just populated into the canvas: REVIEWS and SENTIMENT
+
+  ![Drag Tables](./images/dragtables.png " ")
 
 4.	Drag them on top of each other. This will automatically create some JOINS.
 
@@ -51,6 +60,7 @@ This lab assumes you have:
 
 6.	Save your dataset.
 
+  ![Save Dataset](./images/savedataset.png " ")
 
 
 ## **Task 3**: Create the Visualization
@@ -59,9 +69,15 @@ In this task we'll create workbook to visualize the insights from our sentiment 
 
 1.	1.	Click **Create > Workbook** . This will take you to a wizard that will ask you to select a dataset.
 
+  ![Create Workbook](./images/createworkbook.png " ")
+
 2.	Add the dataset you just created. Click **Add to Workbook**.
 
+  ![Add Dataset](./images/adddataset.png " ")
+
 3.	Navigate to **Visualize** tab, and drag  a stacked bar visualization into the canvas.
+
+  ![Drag Stacked Bar](./images/dragstakedbar.png " ")
 
 4.	Navigate to the **Data** tab.
 
@@ -69,6 +85,8 @@ In this task we'll create workbook to visualize the insights from our sentiment 
     - For **Name** select COUNT OF SENTIMENT
     - For the **Function** enter COUNT(SENTIMENT)
     - Click **Validate** and **Save**
+
+  ![Add Calculation](./images/countsentiment.png " ")
 
 6.	Drag COUNT OF SENTIMENT into the Value (Y-Axis) of the visualization.
 
@@ -78,6 +96,8 @@ In this task we'll create workbook to visualize the insights from our sentiment 
 8.	For the **Color**, select **Sentiment**.
 
 9.	Right Click on the bars show, and click **Color > Manage Assignments**
+
+  ![Customize Chart](./images/customizechart.png " ")
 
 10.	Set Negative to Orange, and Positive to Green.
 
