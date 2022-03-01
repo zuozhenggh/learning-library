@@ -297,16 +297,16 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then select ***Databases***
 
-    ![](images/2.png " ")
+    ![](images/targets-databases.png " ")
 
     and, then from ***Administration*** drop-down menu select ***Fleet Maintenance***
 
-    ![](images/3.png " ")
+    ![](images/admin-fm.png " ")
 
 
 2. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
 
-    ![](images/8.png " ")
+    ![](images/db-selection.png " ")
 
     Where:
     -  Image = Desired version of Oracle home, which our target database should run after successful completion of operation. In this example, we will select ***Tier #2 SI DB Linux64***.
@@ -316,7 +316,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 3. In this page, we will provide ***new Oracle home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
 
-    ![](images/9.png " ")
+    ![](images/input-values.png " ")
 
     We can enter following values
     Under Maintenance tasks
@@ -337,37 +337,37 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 4. We can validate our entries (new Oracle home, log file location, credentials) provided in previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation. There are two validation modes - Quick and Full. We can select either of these. Full validation mode submits a deployment procedure. In this case choose Quick validation mode
 
-    ![](images/11.png " ")
+    ![](images/validation-mode.png " ")
 
 5. Review the validation result.
 
-    ![](images/12.png " ")
+    ![](images/review-validation.png " ")
 
     Incase of any error, we can fix it and choose revalidate.
 
 6. ***Submit*** the operation. Here, we can see that we have opted to deploy, migrate and update the database at once. These tasks will be performed independently based on their schedule.
 
-    ![](images/15.png " ")    
+    ![](images/submit.png " ")    
 
     We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page. Lets enter
     ```
     <copy>HR_DB_Patching</copy>
     ```
 
-    ![](images/16.png " ")
+    ![](images/submit-name.png " ")
 
     Click on submit.
-    ![](images/17.png " ")
+    ![](images/final-submit.png " ")
 
     Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
 
 7. Review the Deployment Procedures (DP).
 
-   ![](images/18.png " ")
+   ![](images/review-dp.png " ")
 
    Select DP related to Deploy and click on it. It will show details of the activity performed by the DP.
 
-   ![](images/22.png " ")
+   ![](images/dp-layout.png " ")
 
    Here, we see that the DP has successfully installed new Oracle home.(putty screen shows the new Oracle home layout)
 
@@ -376,17 +376,17 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 1. In task 6 (above), we submitted a migration of the listener. If it needs to be submitted separately, then you need to uncheck migrate listener task (review step 3 of task 6). We see that this task has a scheduled state. In the interest of time and to complete this workshop, we can change it to run immediately. To do so, navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate DP.
   Click on reschedule.
 
-  ![](images/24.png " ")
+  ![](images/mig-listener-rsch.png " ")
 
   In the new page, select immediately for start and reschedule.
 
-  ![](images/25.png " ")
+  ![](images/listener-rsch.png " ")
 
   We can now see that migrate operation is running. We can select it and see the various steps performed by it.
 
-  ![](images/27.png " ")
+  ![](images/select-listener.png " ")
 
-  ![](images/28.png " ")
+  ![](images/listener-details.png " ")
 
 ## Task 8: Update Database – Patch 18.3 to 18.10
 
@@ -394,18 +394,18 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
    Click on reschedule.
 
-   ![](images/29.png " ")
+   ![](images/db-update.png " ")
 
    In the new page, select immediately for start and reschedule.
    ![](images/31-reschedule.png " ")   
 
    We have selected update operation and see the various steps performed by it. In the terminal, we can see that ***hr*** database is down for Oracle home switch over. After startup, ***hr*** database will run from new Oracle home.
 
-   ![](images/31.png " ")
+   ![](images/hr-new-home.png " ")
 
    Update operation has completed successfully.
 
-   ![](images/32.png " ")
+   ![](images/hr-new-home-completed.png " ")
 
    Lets validate the version of ***hr*** database. In the upper toolbar, locate the ***Targets*** icon and click the drop-down menu and then select ***Databases***. We can see the updated version of ***hr*** database.
    ![](images/post_patch_db_version.png " ")
