@@ -28,7 +28,7 @@ Transactional Event Queues(TEQ) samples to create queues using different payload
 
   - Multi-Consumer TEQ with Payload as JSON Type using PL/SQL.
 
-2. Execute the following sequence of commands into cloud 
+2. Execute the following sequence of commands into cloud shell
 
   ```bash
   <copy>cd $ORACLEAQ_HOME; source createTEQ.sh;
@@ -45,7 +45,7 @@ Transactional Event Queues(TEQ) samples to create queues using different payload
 
   - Enqueue for multi-Consumer TEQ with Payload as Object Type using PL/SQL.
 
-2. Execute the following sequence of commands into cloud 
+2. Execute the following sequence of commands into cloud shell
 
   ```bash
   <copy>cd $ORACLEAQ_HOME; source enqueueTEQ.sh;
@@ -62,7 +62,7 @@ Transactional Event Queues(TEQ) samples to create queues using different payload
 
   - Enqueue for multi-Consumer TEQ with Payload as Object Type using PL/SQL.
 
-2. Execute the following sequence of commands into cloud 
+2. Execute the following sequence of commands into cloud shell
 
   ```bash
   <copy>cd $ORACLEAQ_HOME; source dequeueTEQ.sh;
@@ -71,7 +71,7 @@ Transactional Event Queues(TEQ) samples to create queues using different payload
 
 ## Task 4: TEQ Enqueue and Dequeue using Java
 
-1. Execute the following sequence of commands into cloud 
+1. Execute the following sequence of commands into cloud shell
 
   ```bash
   <copy> curl http://localhost:8081/oracleAQ/pubSubTEQ </copy>
@@ -88,7 +88,7 @@ Transactional Event Queues(TEQ) samples to create queues using different payload
   - Stop classic Queues
   - Drop classic Queues
 
-2. Execute the following sequence of commands into cloud 
+2. Execute the following sequence of commands into cloud shell
 
   ```bash
   <copy>cd $ORACLEAQ_HOME; source cleanupTEQ.sh;
