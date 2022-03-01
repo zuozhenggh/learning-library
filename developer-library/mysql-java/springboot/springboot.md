@@ -28,7 +28,7 @@ This lab assumes you have:
 
 First, let's finish the Kubernetes setup.
 
-Edit the file bin/env.sh to match your OCI connection details.
+Edit the file bin/env.sh to match your Oracle Cloud connection details.
 
 ```
 <copy>cd oke_mysql_java_101/bin
@@ -214,7 +214,7 @@ Caused by: java.lang.IllegalArgumentException: invalid target release: 11
 
 ### Connect to MySQL Database System from kubectl
 
-Connect to it via a kubernetes mysql-client
+Connect to it through a kubernetes mysql-client
 ```
 <copy>kubectl run -it --rm --image=mysql --restart=Never mysql-client -- mysql -h10.1.1.237 -uroot -pWelcome1!
 # Press enter to see the prompt
@@ -232,7 +232,7 @@ kubectl wait --for=condition=Ready pod/mysql-jump-server
 kubectl port-forward pod/mysql-jump-server 3306:3306 &
 mysql -h127.0.0.1 -uroot -pWelcome1!
 exit
-</copy>
+</copy> 
 ```
 
 ## Acknowledgements
