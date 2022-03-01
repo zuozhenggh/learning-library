@@ -10,7 +10,7 @@ Oracle Cloud Infrastructure (OCI) Data Labeling is a service for building labele
 
 **About the data:**
 
-We obtained coherent diffraction images generated from cancerous blood samples from East Carolina University. Each of these JPG images is labelled with one of three classifications based on the features present in the image. The three classifications are: cell, debris, and stripe.
+We obtained coherent diffraction images generated from cancerous blood samples from East Carolina University. Each of these JPG images is labeled with one of three classifications based on the features present in the image. The three classifications are: cell, debris, and stripe.
 
 *Estimated Workshop Time*: 90 minutes
 
