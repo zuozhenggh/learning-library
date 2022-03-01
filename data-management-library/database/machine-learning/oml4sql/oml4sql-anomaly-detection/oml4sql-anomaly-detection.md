@@ -66,7 +66,7 @@ To see the service name, open other Linux Terminal and execute lsnrctl status co
 
 ![view-SSH-Hosts](../oml4sql-anomaly-detection/images/view-ssh.png)
 
-3. Right clic on SSH Hots and then do clic in New SSH Host, write values in each field and then clic Ok.
+3. Right clic on SSH Hots and then do clic in New SSH Host, write values in each field and then clic Ok. The public and private IP can be obtained from OCI, entering Compute/Instances and you will be able to see and copy this data. 
 
 ![ssh-remote-host](../oml4sql-anomaly-detection/images/ssh-remote-host.png)
 

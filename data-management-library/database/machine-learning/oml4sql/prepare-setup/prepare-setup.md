@@ -32,6 +32,7 @@ We strongly recommend using this stack to create a self-contained/dedicated VCN 
 Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
+  -  You need to check the option *Need Remote Access via SSH?* in the Main Configuration of the Edit Stack process, and you need to have an SSH public and private key previously, for can upload a .pub file.  
 
 You may now [proceed to the next lab](#next).
 
