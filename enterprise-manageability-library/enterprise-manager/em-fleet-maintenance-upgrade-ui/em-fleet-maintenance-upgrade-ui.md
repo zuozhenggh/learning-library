@@ -31,7 +31,7 @@ In this lab you will perform the following steps:
 | Step No. | Feature                                                   | Approx. Time | Details                                                                                                              | Value Proposition |
 |----------------------|-----------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                            | 10 minutes  | Analyze the database estate using Software Standardization.                                                          |                   |
-| 2                    | Oracle Database Upgrade with Fleet Maintenance | 1 hr 5 min   | Upgrade your Oracle DB Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance |                   |
+| 2                    | Oracle Database Upgrade with Fleet Maintenance | 1 hr 5 min   | Upgrade your Oracle Database Software at scale with minimal downtime using Oracle Enterprise Manager 13c Fleet Maintenance. |                   |
 
 ### Prerequisites
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
@@ -40,7 +40,7 @@ In this lab you will perform the following steps:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
+*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Oracle Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
 
 ## Task 1: Performed in Advance
 
@@ -52,9 +52,9 @@ To save time, the following steps were already completed.
 
 3. Created of the first version of “Tier\#1” Gold Image
 
-4. Subscription of *finance.subnet.vcn.oraclevcn.com* Database to above image
+4. Subscription of *finance.subnet.vcn.oraclevcn.com* database to above image
 
-5. Patching of *finance.subnet.vcn.oraclevcn.com* Database from 18.8 to 18.10 using Fleet Maintenance
+5. Patching of *finance.subnet.vcn.oraclevcn.com* database from 18.8 to 18.10 using Fleet Maintenance
 
 We recommend that you read through each of the steps, review the *emcli* command, its verbs and deployment procedures to get an understanding of what it takes to do it from scratch. For a full end-to-end hands-on execution of “patching” lab, we highly recommend the *Automated Database Patching at Scale with Fleet Maintenance* Lab.
 
@@ -139,7 +139,7 @@ Software Standardization Advisor enables administrators to understand various da
 
 ### **Database Fleet Maintenance**
 
-Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscription-based out-of-place patching solution. Out-of-place patching is a method where patching is performed by creating a copy of the Oracle home, applying patches to the copied home, and then switching services to the copied home.
+Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscription-based Out of Place patching solution. Out of Place patching is a method where patching is performed by creating a copy of the Oracle home, applying patches to the copied home, and then switching services to the copied home.
 A gold image is the end of state software definition that contains information about the base software version plus the additional patches. Targets, to be upgraded, subscribe to a relevant Gold Image. Target subscription persists through the lifecycle of the Target or Gold Image unless modified by an administrator.
 
 
@@ -159,7 +159,7 @@ We will go through steps for upgrading database target ***finance.subnet.vcn.ora
 
 ## Task 4: Review Pre-Completed Patching Tasks
 
-In this **[READ ONLY]** section, specific tasks related to patching on the target DB to be upgraded have already been performed using Fleet Maintenance. These tasks are fully covered by the  *Automated Database Patching at Scale with Fleet Maintenance* Lab and are listed here for your information only
+Just for your reference, specific tasks related to patching on the target database to be upgraded have already been performed using Fleet Maintenance. These tasks are fully covered by the  *Automated Database Patching at Scale with Fleet Maintenance* Lab and are listed here for your information only
 
 ### **Create Gold Image** [READ-ONLY– This step has already been implemented]
 
@@ -192,7 +192,7 @@ In this **[READ ONLY]** section, specific tasks related to patching on the targe
 
     ![](images/e4a3896e00184146230d4d974e64a528.png " ")
 
-3. List Available Gold Images. Execute the following commands from the terminal to see the list of Gold Images available for deployment, locate ‘Tier \#1 SI DB Linux64*’* in the emcli command output:
+4. List Available Gold Images. Execute the following commands from the terminal to see the list of Gold Images available for deployment, locate ‘Tier \#1 SI DB Linux64*’* in the emcli command output:
 
     ```
     <copy>emcli db_software_maintenance -getImages</copy>
@@ -210,7 +210,7 @@ In this **[READ ONLY]** section, specific tasks related to patching on the targe
 
     When a Gold Image is created for the first time, its first version is created as per the input and marked as current. Whenever we run a DEPLOY operation for a target, Gold Image version marked as CURRENT is used to deploy the new Oracle home.
 
-4. Verify if Gold Image is Applicable.
+5. Verify if Gold Image is Applicable.
 This step verifies if the image can be used to patch a specified database target. This is done by comparing the bug fixes available in the current Oracle home of the database target and the image. In effect this check is run to identify patch conflicts.
 
     - Review and execute below emcli command:  
@@ -226,9 +226,9 @@ This step verifies if the image can be used to patch a specified database target
     - **Applicable and Image has more bug fixes**: The image contains more bug fixes than those applied on the database. The list of extra bugs is displayed. The image can be applied on the specified target.
     - **Not Applicable**: The database contains more bug fixes than those included in the image. The list of missing bugs is displayed. The administrator has to create a new version of the image that includes the missing bugs before the database can uptake the same.
 
-### **Subscribe Database** - [READ ONLY – This step has already been implemented]
+### **Subscribe Database** - [JUST FOR REFERENCE – This step has already been implemented]
 
-5.  Review emcli command:
+6.  Review emcli command:
 
     ```
     <copy>emcli db_software_maintenance -subscribeTarget -target_name=finance.subnet.vcn.oraclevcn.com -target_type=oracle_database -image_id="A5F3D8523BDF635BE0531A00000AA55B"</copy>
@@ -241,9 +241,9 @@ This step verifies if the image can be used to patch a specified database target
       - target\_type – type of target to be patched. This should be oracle\_database in this case
       - image\_id – ID of the Gold Image to which the target should be patched
 
-### **Deploy Image** - [READ ONLY – This step has already been implemented]
+### **Deploy Image** - [JUST FOR REFERENCE – This step has already been implemented]
 
-6. Review emcli command encapsulated in shell script
+7. Review emcli command encapsulated in shell script
 
     ```
     <copy>cat deploy1810_finance.sh</copy>
@@ -251,9 +251,9 @@ This step verifies if the image can be used to patch a specified database target
 
     ![](images/81d4a98e953a1d2ee999a1b718fd825b.png " ")
 
-### **Migrate Listener** - [READ ONLY – This step has already been implemented]
+### **Migrate Listener** - [JUST FOR REFERENCE – This step has already been implemented]
 
-7. Review emcli command encapsulated in shell script
+8. Review emcli command encapsulated in shell script
 
     ```
     <copy>cat migrate_listener_finance_update.sh</copy>
@@ -261,9 +261,9 @@ This step verifies if the image can be used to patch a specified database target
 
     ![](images/17322b2523052b40c7d105c51b6a2967.png " ")
 
-### **Update Database** – Patch to 18.10 - [READ ONLY – This step has already been implemented]
+### **Update Database** – Patch to 18.10 - [JUST FOR REFERENCE – This step has already been implemented]
 
-8. Review emcli command encapsulated in shell script
+9. Review emcli command encapsulated in shell script
 
     ```
     <copy>cat update_finance.sh</copy>
@@ -403,7 +403,7 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
     ![](images/44.png " ")
 
-    Incase of any error, we can fix it and choose revalidate.
+    In case of any error, we can fix it and choose revalidate.
 
 6. ***Submit*** the operation. Here, we can see that we have opted to deploy, migrate and update the database at once. These tasks will be performed independently based on their schedule.
 
@@ -422,19 +422,21 @@ In this section, we will create Gold Image *Tier1-19 SIDB Linux-x64*
 
 Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
 
-7. Review the Deployment Procedures.Select deployment procedure(dp) related to Deploy and click on it.
+7. Review the Deployment Procedures (DP).
+
+Select the DP related to Deploy and click on it.
 
     ![](images/47.png " ")
 
-    It will show details of the activity performed by the dp.
+    It will show details of the activity performed by the DP.
 
     ![](images/49.png " ")
 
-    Here, we see that the dp has successfully installed new Oracle home.
+    Here, we see that the DP has successfully installed new Oracle home.
 
 ## Task 8: Migrate Listener to New Upgraded home
 
-1. In the above task 7, we had submitted migrate listener. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of task 6). We see that this task is at scheduled state. In the interest of time and to complete this Live Lab workshop, we can change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
+1. In task 7 (above), we submitted a migration of the listener. If it needs to be submitted separately, then you need to uncheck migrate listener task (review step 3 of task 6). We see that this task has a scheduled state. In the interest of time and to complete this workshop, we can change it to run immediately. To do so, navigate to ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate DP.
 
     Click on reschedule.
     ![](images/50.png " ")
@@ -456,7 +458,7 @@ Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate 
 
 ## Task 9: Update Database – Upgrade to 19.7
 
-With deploy operation and migrate listener task completed successfully, we are ready to run the final UPDATE operation which will upgrade the finance database by switching it to the newly deployed home.
+After the deploy operation and migrate listener task have completed successfully, we are ready to run the final UPDATE operation which will upgrade the finance database by switching it to the newly deployed home.
 
 1.  Similar to migrate listener, we had submitted Update Database in task 7. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 7). In the interest of time and to complete this Live Lab workshop, we can change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update.
 
@@ -556,7 +558,7 @@ With deploy operation and migrate listener task completed successfully, we are r
     ![](images/7626fd3264e4a514fde576ecd9369456.png " ")
 
 
-This completes this lab.
+That completes the Automated Database Upgrade at Scale with Fleet Maintenance UI workshop.
 
 <!-- In this lab, you learned how to perform the following:
 - Create Oracle Database Software Gold Image
@@ -575,8 +577,8 @@ You may now [proceed to the next lab](#next).
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
   - [Oracle Enterprise Manager Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
-  - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
-  - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
+  - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/lifecycle.html)
+  - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/cloud.html)
 
 ## Acknowledgements
   - **Authors**

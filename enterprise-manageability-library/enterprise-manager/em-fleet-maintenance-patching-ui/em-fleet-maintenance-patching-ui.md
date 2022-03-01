@@ -35,7 +35,7 @@ In this lab you will perform the following steps:
 | Step No. | Feature                                                    | Approx. Time | Details                                                                                                                                                                    | Value Proposition |
 |----------------------|------------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
 | 1                    | Detect Configuration Pollution                             | 10 minutes  | Analyze the database estate using Software Standardization.                                                                                                                |                   |
-| 2                    | Oracle Database Patching with Fleet Maintenance | 50  minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Pluggable Databases in that Container Database will automatically get patched. |                   |
+| 2                    | Oracle Database Patching with Fleet Maintenance | 50  minutes  | Patch a Database target using a Gold Image. As part of patching the Container Database, all Oracle Pluggable Databases in that Container Database will automatically get patched. |                   |
 
 
 ### Prerequisites
@@ -133,7 +133,7 @@ Software Standardization Advisor enables administrators to understand various da
 
 ### **Database Fleet Maintenance**
 
-Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscription-based out-of-place patching solution. Out-of-place patching is a method where patching is performed by creating a copy of the Oracle home, applying patches to the copied home, and then switching services to the copied home.
+Enterprise Manager Database Fleet Maintenance is a Gold Image Target subscription-based Out of Place patching solution. Out of Place patching is a method where patching is performed by creating a copy of the Oracle home, applying patches to the copied home, and then switching services to the copied home.
 
 A gold image is the end of state software definition that contains information about the base software version plus the additional patches. Targets, to be patched, subscribe to a relevant Gold Image. Target subscription persists through the lifecycle of the Target or Gold Image unless modified by an administrator.
 
@@ -160,7 +160,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     Gold Image represents a software end state. An Enterprise Manager Software Library Gold Image is a software archive created from a patched oracle home uploaded to EM Software Library.
 
-    To create a Gold Image of the ‘recommended patch configuration’, you manually create an Oracle home as a pre-requisite step. The goal is to patch Oracle Database 18.3 targets with Database 18.10 RU, a reference Oracle home fully patched to 18.10 *[/u01/app/oracle/product/18/db\_home\_src]* was created and used to create the initial version of the Gold Image as further described in the next steps.
+    To create a Gold Image of the ‘recommended patch configuration’, you manually create an Oracle home as a pre-requisite step. The goal is to patch Oracle Database 18.3 targets with Oracle Database 18.10 RU, a reference Oracle home fully patched to 18.10 *[/u01/app/oracle/product/18/db\_home\_src]* was created and used to create the initial version of the Gold Image as further described in the next steps.
 
     This patched reference Oracle home is discovered in Enterprise Manager as shown below and will be used for Gold Image Creation.
 
@@ -361,19 +361,19 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
     Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
 
-7. Review the Deployment Procedures.
+7. Review the Deployment Procedures (DP).
 
    ![](images/18.png " ")
 
-   Select deployment procedure(dp) related to Deploy and click on it. It will show details of the activity performed by the dp.
+   Select DP related to Deploy and click on it. It will show details of the activity performed by the DP.
 
    ![](images/22.png " ")
 
-   Here, we see that the dp has successfully installed new Oracle home.(putty screen shows the new Oracle home layout)
+   Here, we see that the DP has successfully installed new Oracle home.(putty screen shows the new Oracle home layout)
 
 ## Task 7: Migrate Listener
 
-1. In the above task 6, we had submitted migrate listener. If this needs to be submitted separately, then we had to uncheck migrate listener task ( review step 3 of task 6). We see that this task is at scheduled state. In the interest of time and to complete this Live Lab workshop, we can change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate dp.
+1. In task 6 (above), we submitted a migration of the listener. If it needs to be submitted separately, then you need to uncheck migrate listener task (review step 3 of task 6). We see that this task has a scheduled state. In the interest of time and to complete this workshop, we can change it to run immediately. To do so, navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate DP.
   Click on reschedule.
 
   ![](images/24.png " ")
@@ -390,7 +390,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 ## Task 8: Update Database – Patch 18.3 to 18.10
 
-1. Similar to migrate listener, we had submitted Update Database in task 6. If this needs to be submitted separately, then we had to uncheck update database task ( review step 3 of task 6). We see that this task is at scheduled state. In the interest of time and to complete this Live Lab workshop, we can change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update dp.
+1. Similar to listener migration, that submitted for Update Database in task 6. If it needs to be submitted separately, then you need to uncheck the update database task (review step 3 of task 6). We see that this task is at scheduled state. In the interest of time and to complete this Live Lab workshop, we can change its schedule to run immediately. Navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select update DP.
 
    Click on reschedule.
 
@@ -412,7 +412,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 ## Task 9:  Rollback Database – Reversed Patch 18.10 to 18.3
 
-Once the database is updated, we will perform a rollback to 18.3. Rollback operation is not supported by UI for EM 13.5 RU1 but it will be part of UI in upcoming release.
+Once the database is updated, we will perform a rollback to Oracle Database 18.3. In a future release capability is being planned to perform rollback of an operation using the UI.
 
 1. Review and execute below command from the terminal to rollback database Target ***hr.subnet.vcn.oraclevcn.com***
 
@@ -444,7 +444,7 @@ below.
 
 ## Task 10:  Cleanup Old homes
 
-1. Clean up Database HR. Clean up operation is not supported by UI for EM 13.5 RU1 but it will be part of UI in upcoming release.
+1. Clean up Database HR. In a future release capability is being planned to perform cleanup of an operation using the UI.
 
    In order to have an old empty home previously used by “***hr.subnet.vcn.oraclevcn.com***” at our disposal to demonstrate a cleanup operation, we will now re-update the database by running the commands from Step 8.
 
@@ -470,7 +470,7 @@ below.
 
     ![](images/444749cbf21602a501446fe9c14b1949.png " ")
 
-4. Verify and confirm that the target has been re-patched to 18.10 by going to Targets Databases as shown below
+4. Verify and confirm that the target has been re-patched to Oracle Database 18.10 by going to Targets Databases as shown below
 
     ![](images/05d8c8153c8c990ac80810fef434baa3.png " ")
 
@@ -557,7 +557,7 @@ below.
 -   Rollback (Un-patch) Database from 18.10 to 18.3
 -   Clean up old Oracle homes -->
 
-This completes this lab.
+That completes the Automated Database Patching at Scale with Fleet Maintenance UI workshop.
 
 You may now [proceed to the next lab](#next).
 
@@ -565,8 +565,8 @@ You may now [proceed to the next lab](#next).
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
   - [Oracle Enterprise Manager Fleet Maintenance](https://www.oracle.com/manageability/enterprise-manager/technologies/fleet-maintenance.html)
   - [Enterprise Manager Documentation Library](https://docs.oracle.com/en/enterprise-manager/index.html)
-  - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/lifecycle.html)
-  - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/cloud.html)
+  - [Database Lifecycle Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/lifecycle.html)
+  - [Database Cloud Management](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/cloud.html)
 
 ## Acknowledgements
   - **Authors**
