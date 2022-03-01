@@ -1,0 +1,11 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How can I write aggregate queries on a table in the Oracle database?",
+            "description": "",
+            "filename": "./aggregate-queries.md"
+        }
+    ]
+}

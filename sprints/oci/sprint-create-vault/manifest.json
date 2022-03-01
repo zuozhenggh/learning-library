@@ -3,7 +3,7 @@
     "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to create a new vault?",
+            "title": "How do I create a new vault?",
             "description": "",
             "filename": "sprint-create-vault.md"
         },

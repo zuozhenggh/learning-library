@@ -1,4 +1,4 @@
-# OLTP Table Compression
+# OLTP table compression
 
 ## Introduction
 
@@ -7,7 +7,7 @@ OLTP Table Compression reduces the associated compression overhead of write oper
 
 Estimated Time: 20 minutes
 
-### About OLTP Table Compression
+### About OLTP table compression
 
 Oracle's OLTP Table Compression uses a unique compression algorithm specifically designed to work with OLTP applications. The algorithm eliminates duplicate values within a database block, even across multiple columns. Compressed blocks contain a structure called a symbol table that maintains compression metadata. When a block is compressed, duplicate values are eliminated by first adding a single copy of the duplicate value to the symbol table. Each duplicate value is then replaced by a short reference to the appropriate entry in the symbol table. 
 
@@ -15,7 +15,7 @@ Oracle's OLTP Table Compression uses a unique compression algorithm specifically
 
 SecureFiles LOB Compression utilizes industry-standard compression algorithms to minimize the storage requirements of SecureFiles data. With SecureFiles LOB Compression, typical files such as documents or XML files experience a reduction of 2x to 3x times in size. There are three levels of SecureFiles LOB Compression:  LOW, MEDIUM, and HIGH. By default, SecureFiles LOB Compression uses the MEDIUM level, which typically provides good compression with a modest CPU overhead. In addition to SecureFiles LOB Compression, SecureFiles LOB Deduplication, a feature of Advanced Compression, eliminates duplicate copies of SecureFiles LOBs. SecureFiles LOB Compression was renamed Advanced LOB Compression, and SecureFiles LOB Deduplication was renamed Advanced LOB Deduplication in Oracle Database release 12c. Compression advisor typically provides fairly accurate estimates, of the actual compression results that may be obtained, after implementing compression.
  
-### Benefits of OLTP Table Compression 
+### Benefits of OLTP table compression 
 
 The compression ratio achieved in a given environment depends on the nature of the data being compressed, specifically the cardinality of the data. In general, customers can expect to reduce their storage space consumption by a factor of 2x to 3x by using the OLTP Table Compression feature. That is, the amount of space consumed by uncompressed data will be two to three times larger than that of the compressed data.
 
@@ -34,9 +34,9 @@ This lab assumes you have:
 * Successfully logged into your LiveLabs account
 * A Valid SSH Key Pair
   
-## Task 1: Enable OLTP Table Compression 
+## Task 1: Enable OLTP table compression 
 
-1. Create table Emp with OLTP Compression 
+1. Create table Emp with OLTP table compression
 
       ```
       <copy>
@@ -54,7 +54,7 @@ This lab assumes you have:
       </copy>
       ```  
 
-      ![Image alt text](images/emp-table.png "View EMP Table Compression")
+      ![View EMP Table Compression](images/emp-table.png "View EMP Table Compression")
 
 ## Task 2: SecureFiles LOB Deduplication
 
@@ -88,7 +88,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      ![Image alt text](images/images.png "User ILM Policies")
+      ![User ILM Policies](images/images.png "User ILM Policies")
  
 ## Task 3: SecureFiles LOB Compression
 
@@ -114,7 +114,7 @@ This lab assumes you have:
       ```
       
 
-      ![Image alt text](images/new-images.png "User ILM Policies")
+      ![User ILM Policies](images/new-images.png "User ILM Policies")
  
 ## Task 4: Cleanup
 
