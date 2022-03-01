@@ -21,7 +21,8 @@ Estimates Time: 10 minutes
     It will take several minutes to run. The script will delete the Object Storage bucket,  Oracle Autonomous Database.
 
     ```bash
-        <copy>source cloud-setup/destroy.sh
+        <copy>
+        source $LAB_HOME/cloud-setup/destroy.sh
         </copy>
     ```
 
@@ -30,7 +31,7 @@ Estimates Time: 10 minutes
 1. Delete the directory in your cloud shell where you installed the workshop.
 
     ```bash
-     <copy>rm -rf <directory name></copy>
+     <copy>rm -rf <directory name, e.g. lab8022></copy>
     ```
 
 ## Task 3: Delete the Compartment
@@ -41,4 +42,4 @@ In the Oracle Cloud Console navigate to the Compartments screen in the Identity 
 
 - **Authors** - Paulo Simoes, Developer Evangelist; Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 - **Contributors** - Mayank Tayal, Developer Evangelist; Sanjay Goil, VP Microservices and Oracle Database
-- **Last Updated By/Date** - Paulo Simoes, December 2021
+- **Last Updated By/Date** - Paulo Simoes, February 2022

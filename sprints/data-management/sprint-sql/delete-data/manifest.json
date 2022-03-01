@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to delete data in a table in a database?",
+            "title": "How can I delete data in a table in the Oracle database?",
             "description": "",
             "filename": "./delete-data.md"
         }

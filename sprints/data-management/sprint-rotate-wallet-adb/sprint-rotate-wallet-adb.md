@@ -1,4 +1,4 @@
-# How to rotate a wallet in ADB?
+# How can I rotate a wallet in ADB?
 Duration: 5 minutes
 
 Wallet rotation lets you invalidate existing client certification keys for a database instance or for all Autonomous Database instances in a region.
