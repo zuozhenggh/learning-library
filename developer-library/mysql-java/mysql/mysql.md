@@ -17,20 +17,21 @@ MySQL Database Service is a fully managed service, running on Oracle Cloud Infra
 * Option 2: Install MySQL inside the Kubernetes cluster
 * Or both !
 
-## Clone the GIT repository
-Open the OCI cloud console and clone this repository:
+## Task 1: Clone the GIT repository
+Open the Oracle Cloud Console and clone this repository:
 
 ```
-git clone https://github.com/mgueury/oke_mysql_java_101.git
+<copy>git clone https://github.com/mgueury/oke_mysql_java_101.git</copy>
 ```
+## Task 2: Install MySQL
 
-## Option 1 : Install MySQL Database Service
+## Option 1: Install MySQL Database Service
 
 We will install MySQL Database service:
 
-1. In the OCI menu, go to Database / MySQL. Click "Create MySQL Database System"
+1. In the Oracle Cloud Menu, go to Database / MySQL. Click "Create MySQL Database System"
 
-	![Mysql Before Create](images/mysql-before-create.png)
+	![MySQL Before Create](images/mysql-before-create.png)
 
 2. Please use these paramaters:
     - Name: mysql
@@ -46,7 +47,7 @@ We will install MySQL Database service:
 
 	![MySQL IP](images/mysql-ip.png)
 
-## Option 1 - Part 2 - Create a bastion to create a SSH Tunnel to our MySQL DB System
+## Option 1 - Part 2: Create a bastion to create a SSH Tunnel to our MySQL DB System
 
 A longer explanation is available here:[https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service](https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service)
 
@@ -95,7 +96,7 @@ Copy the key (##5##)
 ```
 ssh -i &lt;privateKey&gt; -N -L &lt;localPort&gt;:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com
 ```
-4. Try to connect via the bastion 
+4. Try to connect through the bastion 
 
 - Back to the Cloud console
 - Modify the command
@@ -106,14 +107,16 @@ ssh -i &lt;privateKey&gt; -N -L &lt;localPort&gt;:10.0.10.2:3306 -p 22 ocid1.bas
 
 - Example
 ```
-ssh -4 -N -L 3306:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com &
+<copy>ssh -4 -N -L 3306:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com &
+</copy>
 ````
 
 - Connect to the database
 
 ```
-mysqlsh root@127.0.0.1:3306 --password=Welcome1! --sql
+<copy>mysqlsh root@127.0.0.1:3306 --password=Welcome1! --sql
 \exit
+</copy>
 ```
 
 Note the command to connect to the database (##1##)
@@ -126,37 +129,41 @@ For reference, the explanation on how to install MySQL in Kubernetes is here:
 The git repository contains an example to create a MySQL server with username/password = root/Welcome1!
 
 ```
-cd oke_mysql_java_101
+<copy>cd oke_mysql_java_101
 kubectl create -f setup/oke_mysql.yaml 
+</copy>
 ```
 
 To allow the connection to the MySQL database from your console you need
 to run the following MySQL commands:
 
 ```
-kubectl exec -it deployment/mysql -- bash
+<copy>kubectl exec -it deployment/mysql -- bash
 mysql -uroot -pWelcome1!
 CREATE USER 'root'@'%' IDENTIFIED BY 'Welcome1!';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 exit
 exit
+</copy>
 ```
 This will connect to MySQL in the container. And create a user that may log in from the console.
 
 Then forward the MySQL port to your console and check if it works:
 
 ```
-kubectl port-forward deployment/mysql 3306 &
+<copy>kubectl port-forward deployment/mysql 3306 &
 mysqlsh root@127.0.0.1:3306 --password=Welcome1! --sql
 \exit
+</copy>
 ```
 
 Note the command to connect to the database (##1##)
 
-## Create the table
+## Task 3: Create the table
 
 Connect to the database using command (##1##). Run this:
 ```
+<copy>
 show databases;
 create database db1;
 use db1;
@@ -171,6 +178,7 @@ insert into t1( name ) values ('PENGUIN');
 insert into t1( name ) values ('LION');
 select * from t1;
 \exit
+</copy>
 ```
 
 ## Acknowledgements
