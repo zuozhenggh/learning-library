@@ -98,20 +98,7 @@ In this workshop, you will explore:
    
     ![](./images/adb-compartment.png " ")
     
-## Task 2: Provisioning an Autonomous JSON Database
-
-This task walks you through the steps to get started using the Oracle Autonomous JSON Database [AJD] on Oracle Cloud. In this task, you will provision a new AJD instance and connect to the Autonomous Database using JSON.
-
-Watch the video below for a quick walk through of the task.
-
-[](youtube:ICHM8bDast0)
-
-### Objectives
-
-In this task, you will:
-
-* Learn how to provision a new Autonomous Database
-* Connect to your Autonomous Database using JSON
+## Task 2: Get Started with JSON Database
 
 1. In your database's details page, click the **Database Actions** button.
 
