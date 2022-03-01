@@ -205,10 +205,10 @@ Finally, you will need a table to store some basic movie information in addition
 ## Stuck? Download the Application Here
 Stuck on a step or struggling with the lab? You can download a copy of the Movies Watchlist application through Lab 5 and follow the instructions below to import it into your Oracle APEX workspace.
 
-- [Click here](./files/lab5-3.sql) to download a copy of the app at the end of Lab 5.
+- [Click here](./files/lab5.sql) to download a copy of the app at the end of Lab 5.
 
 - You can import Lab 5 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
 
-- If you have not previously imported Lab 4, follow the instructions in the <a href="?lab=creating-movie-details-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 4 to provide credentials for the Movie Details REST source.
+- When the install wizard prompts you for Credentials, follow the instructions in the <a href="?lab=creating-movie-details-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 4 to update the API key for the Movie Details REST source.
 
-- Follow the instructions in the <a href="?lab=creating-rest-sources#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 2 to update the Popular and Search Movies API keys.
+- Follow the instructions in the <a href="?lab=creating-movie-search-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 3 to update the Popular and Search Movies API keys.

@@ -56,6 +56,9 @@ In this step, we are going to generate an *Authentication Token*, that we will u
 
     ![Login to Oracle Cloud Container Registry](images/6.png " ")
 
+    > If you are able to Sign-In in Oracle Cloud Infrastructure using Oracle Cloud Infrastructure Direct Sign-in as shown below in the screenshot, then in that case your username will be as follows:`NAMESPACE_OF_YOUR_TENANCY`/`YOUR_ORACLE_CLOUD_USERNAME`. 
+    ![](images/14.png)
+
 4. Go back to the Container Registry, select *Hamburger Menu -> Developer Services -> Container Registry*.
 
     ![Container Registry](images/7.png " ")

@@ -8,8 +8,8 @@ Oracle Database provides a mechanism to move one or more partitions or to make o
  
 Estimated Lab Time: 20 minutes
 
-### Converting a Non Partitioned Table into Partitioned Table 
-Converting a Non-Partitioned Table to a Partitioned Table can be quickly done with a MODIFY clause added to the ALTER TABLE SQL statement. In addition, the keyword ONLINE can be specified, enabling concurrent DML operations while the conversion is ongoing.
+### Convert a Non Partitioned Table into Partitioned Table 
+Convert a Non-Partitioned Table to a Partitioned Table with a MODIFY clause added to the ALTER TABLE SQL statement. In addition, the keyword ONLINE can be specified, enabling concurrent DML operations while the conversion is ongoing.
 
 ### Features
 
@@ -26,7 +26,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
-- Provision an Oracle Autonomous Database and ADW Instance has been created
+- Provision an Oracle Autonomous Database and Autonomous Data Warehouse has been created
 
 ## Task 1: Convert Non Partitioned Table to Partitioned Table
 
@@ -82,7 +82,7 @@ This lab assumes you have completed the following lab:
 
     ![Image alt text](images/soon2part-table-2.png "Convert Non-partitioned SOON2BPART Table")
 
-4. The conversion is not an in-place conversion: one of the critical concepts of Oracle Partitioning is that data of individual partitions are, well, stored in individual physical segments. The non-partitioned table has data stored "wherever" in the table. So for the duration of the conversion, you will need the extra space for the new table partition and index segments. After the successful conversion,  Note that we are doing an online conversion. If you could spawn a second session that does DML against our table while the conversion is in place, you'd experience that all your DML will go through without being blocked.  
+4. The conversion is not an in-place conversion: one of the critical concepts of Oracle Partitioning is that data of individual partitions are, well, stored in individual physical segments. The non-partitioned table has data stored "wherever" in the table. You will need the extra space for the new table partition and index segments during the conversion. After the successful conversion,  Note that we are doing an online conversion. If you could spawn a second session that does DML against our table while the conversion is in place, you'd experience that all your DML will go through without being blocked. 
 
     ```
     <copy>
