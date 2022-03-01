@@ -23,19 +23,19 @@ Interval partitioning is an extension of range partitioning that instructs the d
 *	System generated names for interval 
 *	No need for any partition management
 
-### Analyzing business data at various intervals 
+### Analyze Business Data at Various Intervals 
 
-When Business Analysts want to view sales data based on daily, monthly, quarterly or yearly, for example, in Financial Services or Retail Industry, it is easier to partition data based on intervals. As the data keeps growing, the partitions keep getting created automatically.  
+When Business Analysts want to view sales data based on daily, monthly, quarterly or yearly, for example, in Financial Services or Retail Industry, it is easier to partition data based on intervals. As the data grows, the partitions keep getting created automatically.  
  
 ### Objectives
  
-In this lab, you will:
-* Create interval partitions
+In this lab:
+* Let us Create interval partitioned table
 
 ### Prerequisites
 This lab assumes you have completed the following lab:
 
-- Provision an Oracle Autonomous Database and ADW Instance has been created
+- Provision an Oracle Autonomous Database and Autonomous Data Warehouse has been created
   
 ## Task 1: Create Interval Partitioned Table
 

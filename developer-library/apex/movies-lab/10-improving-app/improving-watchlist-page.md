@@ -147,6 +147,6 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
 - You can import Lab 10 to your APEX workspace by clicking **Import** in the App Builder home page and following the wizard steps.
 
-- If you have not previously imported Lab 4 or higher, follow the instructions in the <a href="?lab=creating-movie-details-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 4 to provide credentials for the Movie Details REST source and the Movie Cast source (Lab 9).
+- When you are prompted by the install wizard for Credentials, follow the instructions in the <a href="?lab=creating-movie-details-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 4 to provide credentials for the Movie Cast REST data source as well as Movie Details.
 
-- Follow the instructions in the <a href="?lab=creating-rest-sources#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 2 to update the Popular and Search Movies API keys.
+- Follow the instructions in the <a href="?lab=creating-movie-search-page#Stuck?DownloadtheApplicationHere" target="_blank">Stuck?</a> section of Lab 3 to update the Popular and Search Movies API keys.

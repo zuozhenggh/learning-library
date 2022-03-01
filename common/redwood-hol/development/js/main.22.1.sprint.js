@@ -1,12 +1,14 @@
 /*
 Author: Ashwin Agarwal
 Contributors: Tom McGinn, Kaylien Phan
-Version: 22.0.sprint
+Version: 22.1.sprint
 
-Version     Author          Summary
+Version     Date             Author          Summary
 ---------------------------------------------------------
-21.9        Kevin Lazarz    Added fix for LLAPEX-403 (accessible html tables) 
-22.0        Kevin Lazarz    Added alt-text fix - add alt attribute to all images which do not have alt
+21.9        Feb-14-22       Kevin Lazarz    Added fix for LLAPEX-403 (accessible html tables) 
+22.0        Feb-14-22       Kevin Lazarz    Added alt-text fix - add alt attribute to all images which do not have alt
+22.1        Feb-15-22       Kevin Lazarz    Added fix for landmark issue (LLAPEX-401) and list issue (LLAPEX-400)
+
 
 */
 
@@ -213,6 +215,12 @@ let main = function() {
         }).done(function() {
             $("main").html(articleElement); //placing the article element inside the main tag of the Tutorial template
             setTimeout(setupContentNav, 0); //sets up the collapse/expand button and open/close section feature
+
+            //FOllowing code will make sure that landmarks have a unique title (LLAPEX-401)
+            document.getElementsByTagName("header")[0].setAttribute("title", "livelabs header");
+            document.getElementsByTagName("main")[0].setAttribute("title", "livelabs main");
+            document.getElementsByTagName("footer")[0].setAttribute("title", "livelabs footer");
+            //END of fix for landmarks
 
             // Following code makes tables accessible (see LLAPEX-403)
             $("table").attr("role","presentation"); //add role to table
@@ -448,7 +456,9 @@ let main = function() {
                         });
 
                         $(ul).each(function() {
-                            $(this).wrapInner('<a href="' + unescape(setParam(window.location.href, queryParam, getMDFileName(tutorial.filename))) + '#' + $(this).find('li').attr('data-unique') + '"></a>');
+                            // $(this).wrapInner('<a href="' + unescape(setParam(window.location.href, queryParam, getMDFileName(tutorial.filename))) + '#' + $(this).find('li').attr('data-unique') + '"></a>'); // Orignal Code
+                            // Below Code fixes the issue LLAPEX-400
+                            $(this).wrapInner($(this).find('li').attr('data-unique'));
                         });
                         $(ul).appendTo(div);
                     }

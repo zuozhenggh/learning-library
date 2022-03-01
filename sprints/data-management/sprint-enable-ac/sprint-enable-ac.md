@@ -1,4 +1,4 @@
-# How to enable Application Continuity?
+# How do I enable Application Continuity?
 Duration: 1 minutes
 
 ## Enable Application Continuity
