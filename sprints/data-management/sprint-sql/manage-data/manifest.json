@@ -3,32 +3,32 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to query the Oracle data dictionary?",
+            "title": "How can I query the Oracle data dictionary?",
             "description": "",
             "filename": "../query-dictionary/query-dictionary.md"
         },
         {
-          "title": "How to update data in a table in a database?",
+          "title": "How can I update data in a table in Oracle database?",
           "description": "",
           "filename": "../update-data/update-data.md"
         },
         {
-          "title": "How to write aggregate queries on table in a database?",
+          "title": "How can I write aggregate queries on table in Oracle database?",
           "description": "",
           "filename": "../aggregate-queries/aggregate-queries.md"
         },
         {
-          "title": "How to compress data in a table in a database?",
+          "title": "How can I compress data in a table in Oracle database?",
           "description": "",
           "filename": "../compress-data/compress-data.md"
         },
         {
-          "title": "How to disable table compression in a database?",
+          "title": "How can I disable table compression in Oracle database?",
           "description": "",
           "filename": "../uncompress-data/uncompress-data.md"
         },
         {
-          "title": "How to delete data in a table in a database?",
+          "title": "How can I delete data in a table in Oracle database?",
           "description": "",
           "filename": "../delete-data/delete-data.md"
         }

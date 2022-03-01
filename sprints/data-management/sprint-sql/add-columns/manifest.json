@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to add columns to a table in a database?",
+            "title": "How can I add columns to a table in Oracle database?",
             "description": "",
             "filename": "./add-columns.md"
         }

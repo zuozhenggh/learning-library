@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to update data in a table in a database?",
+            "title": "How can I update data in a table in Oracle database?",
             "description": "",
             "filename": "./update-data.md"
         }

@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to un-drop a table in a database?",
+            "title": "How can I retrieve a dropped table in Oracle database?",
             "description": "",
             "filename": "./undrop-table.md"
         }

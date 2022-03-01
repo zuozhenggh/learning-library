@@ -1,8 +1,10 @@
-# How to index columns in a database?
+# How can I index columns in Oracle database?
 
 Duration: 2 minutes
 
-Typically developers index columns for three major reasons:
+## Index columns in Oracle database
+
+Typically we index columns for three major reasons:
 - To enforce unique values within a column
 - To improve data access performance
 - To prevent lock escalation when updating rows of tables that use declarative referential integrity
@@ -32,6 +34,8 @@ order by table_name, column_name, column_position;
 </copy>
 ```
 
+### Example
+
 It is typically good form to index foreign keys, foreign keys are columns in a table that reference another table. For example, if there are two tables - EMPLOYEES and DEPARTMENTS table and the DEPTNO column in the EMPLOYEE table references the primary key of the DEPARTMENTS table. To index the depno column of your departments table and call it employee_dept\_no\_fk\_idx the SQL is:
 
 ```
@@ -52,5 +56,6 @@ Oracle provides many other indexing technologies including function based indexe
 
 ## Learn More
 
+* Explore more about [Creating Index](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_5010.htm)
 * [Introduction to Oracle SQL Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=943)
 * [SQL Language Reference](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC)

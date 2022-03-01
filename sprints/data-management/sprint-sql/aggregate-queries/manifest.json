@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to write aggregate queries on table in a database?",
+            "title": "How can I write aggregate queries on table in Oracle database?",
             "description": "",
             "filename": "./aggregate-queries.md"
         }
