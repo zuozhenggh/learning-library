@@ -13,9 +13,8 @@ MySQL Database Service is a fully managed service, running on Oracle Cloud Infra
 * Automate database specific tasks such as configuration, security patching, backup, high availability, and monitoring.
 
 ### Objectives
-* Option 1: Install MySQL Database Service
-* Option 2: Install MySQL inside the Kubernetes cluster
-* Or both !
+* Install MySQL 
+* Create the table
 
 ## Task 1: Clone the GIT repository
 Open the Oracle Cloud Console and clone this repository:
@@ -24,6 +23,10 @@ Open the Oracle Cloud Console and clone this repository:
 <copy>git clone https://github.com/mgueury/oke_mysql_java_101.git</copy>
 ```
 ## Task 2: Install MySQL
+
+* Option 1: Install MySQL Database Service
+* Option 2: Install MySQL inside the Kubernetes cluster
+* Or both !
 
 ## Option 1: Install MySQL Database Service
 
@@ -163,8 +166,7 @@ Note the command to connect to the database (##1##)
 
 Connect to the database using command (##1##). Run this:
 ```
-<copy>
-show databases;
+<copy>show databases;
 create database db1;
 use db1;
 
@@ -187,3 +189,5 @@ select * from t1;
 * Mario Beck - MySQL EMEA
 * Olivier Dasini - MySQL EMEA
 * Last Updated - Feb 2022
+
+

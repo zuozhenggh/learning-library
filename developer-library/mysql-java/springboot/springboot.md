@@ -31,9 +31,10 @@ First, let's finish the Kubernetes setup.
 Edit the file bin/env.sh to match your OCI connection details.
 
 ```
-cd oke_mysql_java_101/bin
+<copy>cd oke_mysql_java_101/bin
 cp env.sh.example env.sh
 vi env.sh
+</copy>
 ```
 ```
 OCI_REGION=fra.ocir.io
@@ -52,7 +53,8 @@ OCI_TOKEN="this_isAToken!"
 When all the environment variables are set, create the registry secret to allow Kubernetes to pull the image from the container registry
 
 ```
-./create_registy_secret.sh
+<copy>./create_registy_secret.sh
+</copy>
 ```
 
 ## Task 2: Spring Boot - Hardcoded values
@@ -64,8 +66,9 @@ In this demo too, the DB details are hardcoded.
 To modify them:
 
 ```
-cd oke_mysql_java_101/demo2/v1
+<copy>cd oke_mysql_java_101/demo2/v1
 vi src/main/java/com/mysql/web/basic/BasicController.java
+</copy>
 ````
 Replace
 ```
@@ -80,7 +83,8 @@ or 2. private String DB_URL = "jdbc:mysql://mysql/db1?user=root&password=Welcome
 Then we need also to change the kubernetes yaml file 
 
 ```
-vi webquerydb1.yaml 
+<copy>vi webquerydb1.yaml 
+</copy>
 ```
 Replace
 ```
@@ -97,17 +101,22 @@ with the same value used in the environment variables above
 
 Then build the docker image, push it to the registry and run it,
 ```
-bin/build.sh
+<copy>bin/build.sh
 bin/push.sh
 kubectl apply -f webquerydb1.yaml 
 kubectl get pods | grep webquerydb
 kubectl get service webquerydb-service
-
+</copy>
+```
+```
 NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)        AGE
 webquerydb-service   LoadBalancer   10.96.105.230   123.123.123.123   80:32114/TCP   18d
 
-# Here you will get the EXTERNAL-IP of the service. Then use it to test
-curl http://123.123.123.123/query
+```
+Here you will get the EXTERNAL-IP of the service. Then use it to test
+```
+<copy>curl http://123.123.123.123/query
+</copy>
 ```
 
 You will see
@@ -120,17 +129,20 @@ You will see
 In this demo, the DB details are stored in Kubernetes configMap or secrets.
 
 ```
-cd ../v2
+<copy>cd ../v2
 cat bin/config.sh
+</copy>
 ```
 ```
-kubectl create secret generic db-secret --from-literal=username=root --from-literal=password=Welcome1!
+<copy>kubectl create secret generic db-secret --from-literal=username=root --from-literal=password=Welcome1!
 kubectl apply -f webquerydb-cfg.yaml
+</copy>
 ```
 
 We need to do the same change than above. Replace with your address MySQL IP or Kubernetes service name. 
 ```
-vi webquerydb-cfg.yaml
+<copy>vi webquerydb-cfg.yaml
+</copy>
 ```
 ```
 ...
@@ -145,7 +157,8 @@ or  2. "webquerydb.db.url": "jdbc:mysql://mysql/db1"
 Then we need also to change the kubernetes yaml file 
 
 ```
-vi webquerydb2.yaml 
+<copy>vi webquerydb2.yaml
+</copy>
 ```
 Replace
 ```
@@ -160,12 +173,16 @@ with the same value used in the environment variables above
 Then rebuild the program, docker image and deploy it in Kubernetes
 
 ```
-bin/config.sh
+<copy>bin/config.sh
 bin/build.sh
 bin/push.sh
 kubectl apply -f webquerydb2.yaml
-# Same EXTERNAL IP than above
-curl http://123.123.123.123/query
+</copy>
+```
+Same EXTERNAL IP than above
+```
+<copy>curl http://123.123.123.123/query
+</copy>
 ```
 
 You will see
@@ -199,20 +216,23 @@ Caused by: java.lang.IllegalArgumentException: invalid target release: 11
 
 Connect to it via a kubernetes mysql-client
 ```
-kubectl run -it --rm --image=mysql --restart=Never mysql-client -- mysql -h10.1.1.237 -uroot -pWelcome1!
+<copy>kubectl run -it --rm --image=mysql --restart=Never mysql-client -- mysql -h10.1.1.237 -uroot -pWelcome1!
 # Press enter to see the prompt
 exit
+</copy>
 ```
 
 ### Forward the port of MySQL Database System to localhost
 
 Do not forget to change your IP address
 ```
+<copy>
 kubectl run --restart=Never --image=alpine/socat mysql-jump-server -- -d -d tcp-listen:3306,fork,reuseaddr tcp-connect:10.1.1.237:3306
 kubectl wait --for=condition=Ready pod/mysql-jump-server
 kubectl port-forward pod/mysql-jump-server 3306:3306 &
 mysql -h127.0.0.1 -uroot -pWelcome1!
 exit
+</copy>
 ```
 
 ## Acknowledgements
