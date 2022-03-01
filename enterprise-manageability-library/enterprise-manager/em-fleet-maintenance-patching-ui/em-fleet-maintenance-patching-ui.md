@@ -293,20 +293,20 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
     <copy>emcli modify_named_credential -cred_name=root -cred_scope=global</copy>
     ```
 
-    ![](images/modify-root-credential.png " ")
+    ![](images/modify-root-credential.png "emcli to modify root credentials")
 
     From the Enterprise Manager menu bar, navigate to the ***Targets*** drop-down menu and then select ***Databases***
 
-    ![](images/targets-databases.png " ")
+    ![](images/targets-databases.png "navigation")
 
     and, then from ***Administration*** drop-down menu select ***Fleet Maintenance***
 
-    ![](images/admin-fm.png " ")
+    ![](images/admin-fm.png "navigation")
 
 
 2. In this page, we will select relevant ***Image Name***, ***Target Type*** and ***Operation***.
 
-    ![](images/db-selection.png " ")
+    ![](images/db-selection.png "selection")
 
     Where:
     -  Image = Desired version of Oracle home, which our target database should run after successful completion of operation. In this example, we will select ***Tier #2 SI DB Linux64***.
@@ -316,7 +316,7 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 3. In this page, we will provide ***new Oracle home location***, select which ***tasks*** can be performed, select ***credential model***, provide ***log file location*** under options and select any   ***custom scripts*** to run as part of the operation.
 
-    ![](images/input-values.png " ")
+    ![](images/input-values.png "input values")
 
     We can enter following values
     Under Maintenance tasks
@@ -337,37 +337,37 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
 4. We can validate our entries (new Oracle home, log file location, credentials) provided in previous page and validate the desired operation. Validation acts as a precheck before we submit the main operation. There are two validation modes - Quick and Full. We can select either of these. Full validation mode submits a deployment procedure. In this case choose Quick validation mode
 
-    ![](images/validation-mode.png " ")
+    ![](images/validation-mode.png "quick and full valdiation modes")
 
 5. Review the validation result.
 
-    ![](images/review-validation.png " ")
+    ![](images/review-validation.png "result of valdiation")
 
     Incase of any error, we can fix it and choose revalidate.
 
 6. ***Submit*** the operation. Here, we can see that we have opted to deploy, migrate and update the database at once. These tasks will be performed independently based on their schedule.
 
-    ![](images/submit.png " ")    
+    ![](images/submit.png "submit operation")    
 
     We need to provide a name to the task, which will help us to view these tasks under Procedure Activity Page. Lets enter
     ```
     <copy>HR_DB_Patching</copy>
     ```
 
-    ![](images/submit-name.png " ")
+    ![](images/submit-name.png "job name")
 
     Click on submit.
-    ![](images/final-submit.png " ")
+    ![](images/final-submit.png "monitor")
 
     Clicking on Monitor Progress will take us to Procedure Activity Page. Alternate navigation to review the submitted deployment procedures is ***Enterprise >> Provisioning and Patching >> Procedure Activity***
 
 7. Review the Deployment Procedures (DP).
 
-   ![](images/review-dp.png " ")
+   ![](images/review-dp.png "review")
 
    Select DP related to Deploy and click on it. It will show details of the activity performed by the DP.
 
-   ![](images/dp-layout.png " ")
+   ![](images/dp-layout.png "review dp for layout OH")
 
    Here, we see that the DP has successfully installed new Oracle home.(putty screen shows the new Oracle home layout)
 
@@ -376,17 +376,17 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 1. In task 6 (above), we submitted a migration of the listener. If it needs to be submitted separately, then you need to uncheck migrate listener task (review step 3 of task 6). We see that this task has a scheduled state. In the interest of time and to complete this workshop, we can change it to run immediately. To do so, navigate to  ***Enterprise >> Provisioning and Patching >> Procedure Activity*** and select migrate DP.
   Click on reschedule.
 
-  ![](images/mig-listener-rsch.png " ")
+  ![](images/mig-listener-rsch.png "DP for migrate listener")
 
   In the new page, select immediately for start and reschedule.
 
-  ![](images/listener-rsch.png " ")
+  ![](images/listener-rsch.png "reschedule migrate dp")
 
   We can now see that migrate operation is running. We can select it and see the various steps performed by it.
 
-  ![](images/select-listener.png " ")
+  ![](images/select-listener.png "select DP")
 
-  ![](images/listener-details.png " ")
+  ![](images/listener-details.png "details of DP")
 
 ## Task 8: Update Database – Patch 18.3 to 18.10
 
@@ -394,21 +394,21 @@ You will see the ***hr.subnet.vcn.oraclevcn.com*** container database has a plug
 
    Click on reschedule.
 
-   ![](images/db-update.png " ")
+   ![](images/db-update.png "DP update")
 
    In the new page, select immediately for start and reschedule.
-   ![](images/31-reschedule.png " ")   
+   ![](images/31-reschedule.png "Update DP reschedule")   
 
    We have selected update operation and see the various steps performed by it. In the terminal, we can see that ***hr*** database is down for Oracle home switch over. After startup, ***hr*** database will run from new Oracle home.
 
-   ![](images/hr-new-home.png " ")
+   ![](images/hr-new-home.png "layout of new oracle home")
 
    Update operation has completed successfully.
 
-   ![](images/hr-new-home-completed.png " ")
+   ![](images/hr-new-home-completed.png "DP completed")
 
    Lets validate the version of ***hr*** database. In the upper toolbar, locate the ***Targets*** icon and click the drop-down menu and then select ***Databases***. We can see the updated version of ***hr*** database.
-   ![](images/post_patch_db_version.png " ")
+   ![](images/post_patch_db_version.png "new version check")
 
 ## Task 9:  Rollback Database – Reversed Patch 18.10 to 18.3
 
