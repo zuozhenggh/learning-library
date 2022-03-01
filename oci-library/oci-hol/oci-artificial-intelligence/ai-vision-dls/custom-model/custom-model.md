@@ -1,0 +1,112 @@
+# Lab 2: Create Custom AI Vision Model
+
+## Introduction
+In this lab, ...
+
+*Estimated Time*:
+
+### Objectives
+
+In this lab, you will:
+-  
+
+### Prerequisites and Setup
+
+- A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
+- End user must have full administrator privileges to complete these steps
+
+## **Policy Setup**
+
+Before you start using OCI Data Labeling Service, your tenancy administrator should set up the following policies by following below steps:
+
+1. Add IAM resources necessary for AI Vision usage. Note that <values> should be replaced with end-user's own values.
+  a. Policy (e.g. named AIVisionPolicy) with the following statements:
+  ```
+  <copy>Allow group ImageClassification_Group to manage ai-service-vision-family in tenancy</copy>
+  ```
+  ```
+  <copy>Allow group ImageClassification_Group to manage object-family in tenancy</copy>
+  ```
+
+
+## **Task 1:** Create a Vision Project
+
+1. From the OCI services menu, click 'Vision' under 'AI Services'
+![](./images/vision.png)
+
+2. Click on 'Projects' under 'Custom Models'
+![](./images/click-on-projects.png)
+
+3. Click 'Create Project' and enter details for your Project:
+
+  a. Select desired compartment
+
+  b. Name: Enter a name for your project that you can recognize, e.g. image-classification-demo
+
+  c. Click 'Create project'
+  ![](./images/create-project.png)
+
+## **Task 2:** Create a Custom Image Classification Model
+
+1. Select 'Create Model'
+![](./images/create-model.png)
+
+2. Enter details for your model
+
+  a. Type: Image Classification
+
+  b. Training Data: Choose existing dataset
+
+  c. Data source: Data Labeling Services
+
+  d. Choose the dataset that you created earlier
+
+  e. Click 'Next'
+  ![](./images/model-details.png)
+
+## **Task 3:** Train Custom Model and Submit
+1. Enter training details for the model
+
+  a. Give the model a display name that you will recognize, e.g. image-classification-model
+
+  b. Training duration: Recommended training (May take up to 24 hours)
+
+  c. Click 'Next'
+
+  ![](./images/model-training-details.png)
+
+
+2. Review that the model information is correct and click 'Create and train'
+![](./images/create-and-train.png)
+
+Note: This step might vary in time. Wait for the model to appear as 'Active'.
+
+## **Task 4:** Test the Model On New Images
+
+1. Navigate to the Project Details page and click on the model just created
+![](./images/project-detail-page.png)
+
+2.Upload images from local machine to test the newly created model.
+
+  a. Select 'Local file' under 'Image source'
+
+  b. Select 'select one...' under the 'Upload image section'. Navigate to the folder containing the biomedical images on your local machine and select any photo (cell, debris, or stripe).
+  ![](./images/upload-image.png)
+
+   c. Examine confidence measurements under the 'Results' pane
+   ![](./images/confidence.png)
+
+
+
+
+Congratulations on completing this lab!
+
+[Proceed to the next section](#next).
+
+## Acknowledgements
+* **Authors**
+    * Samuel Cacela - Staff Cloud Engineer
+    * Gabrielle Prichard - Cloud Solution Engineer
+
+* **Last Updated By/Date**
+    * Gabrielle Prichard - Cloud Solution Engineer, February 2022
