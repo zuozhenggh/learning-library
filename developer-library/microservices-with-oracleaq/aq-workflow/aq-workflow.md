@@ -146,4 +146,4 @@ Below are the code samples to create the workflow
 
 - **Author** - Mayank Tayal, Developer Advocate
 
-- **Last Updated By/Date** - Mayank Tayal, February 2021
+- **Last Updated By/Date** - Mayank Tayal, February 2022
