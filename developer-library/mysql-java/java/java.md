@@ -25,9 +25,9 @@ This lab assumes you have:
 
 Check the Dockerfile 
 
-```
-cd oke_mysql_java_101/demo1
-cat Dockerfile
+```bash
+<copy>cd oke_mysql_java_101/demo1
+cat Dockerfile</copy>
 ```
 ```
 FROM openjdk:11
@@ -42,7 +42,7 @@ Note: in the previous labs, we have forwarded the MySQL 3306 to localhost(127.0.
 Check the java program
 
 ```
-cat QueryDB.java
+<copy>cat QueryDB.java</copy>
 ```
 ```
 import java.sql.*;
@@ -67,9 +67,9 @@ public class QueryDB {
 
 To build and run the docker container, do this:
 
-```
-bin/build.sh
-docker run --net=host querydb
+```bash
+<copy>bin/build.sh
+docker run --net=host querydb</copy>
 ```
 Comment: The "-net=host" is needed because MySQL is accessed on 127.0.0.1.
 
@@ -84,10 +84,10 @@ You will see:
 
 To check what the container contains:
 
-```
-docker run -it --entrypoint /bin/bash querydb
+```bash
+<copy>docker run -it --entrypoint /bin/bash querydb
 ls
-exit
+exit</copy>
 ```
 
 ## Acknowledgements
