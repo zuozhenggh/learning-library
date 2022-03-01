@@ -34,7 +34,7 @@ This Lab will help you understand OTP workflow (one-time-password)/ Second-Facto
 
 ## Task 2: User placed the order, and Application will generate 4-digit OTP
 
-1. Below are the code samples to create the workflow
+Below are the code samples to create the workflow
 
   ![workflowAQ](./images/workflow-aq.png " ")
 
@@ -104,7 +104,7 @@ This Lab will help you understand OTP workflow (one-time-password)/ Second-Facto
 
     ```
 
-[VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ)
+   [VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ)
 
 ## Task 5: Workflow using Java
 
@@ -122,23 +122,23 @@ This Lab will help you understand OTP workflow (one-time-password)/ Second-Facto
 
 1. Below are the code samples to cleanup workflow Queues
 
-  ![cleanupWorkflow](./images/workflow-cleanup-aq.png " ")
+     ![cleanupWorkflow](./images/workflow-cleanup-aq.png " ")
 
-  - Stop User, deliverer, application Queues
+     - Stop User, deliverer, application Queues
 
-  - Drop User, deliverer, application Queues
+     - Drop User, deliverer, application Queues
 
-  - Drop User, deliverer, application Queue Tables  
+     - Drop User, deliverer, application Queue Tables  
 
 2. Execute the following sequence of commands into cloud shell:
 
-  ```bash
+     ```bash
 
-  <copy>cd $ORACLEAQ_HOME; source workflowCleanupAQ.sh;
+     <copy>cd $ORACLEAQ_HOME; source workflowCleanupAQ.sh;
 
-  </copy>
+     </copy>
 
-  ```
+     ```
 
  You may now **proceed to the next lab.**
 
