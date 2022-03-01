@@ -112,4 +112,4 @@ You may now **proceed to the next lab.**
 
 - **Author** - Mayank Tayal, Developer Advocate
 
-- **Last Updated By/Date** - Mayank Tayal, February 2021
+- **Last Updated By/Date** - Mayank Tayal, February 2022
