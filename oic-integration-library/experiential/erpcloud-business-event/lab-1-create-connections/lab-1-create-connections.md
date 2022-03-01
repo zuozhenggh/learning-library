@@ -1,4 +1,4 @@
-# Create an Oracle ERP Cloud Adapter Connection 
+# Create Connections
 Before you can build an integration, you have to create the connections to the applications with which you want to share data. Follow these steps to create an ERP Cloud connection.
 
 ## Introduction
@@ -16,7 +16,7 @@ This lab assumes you have:
 - Completed the Lab Setup
 
 
-## **Task 1:** Create an Oracle ERP Cloud Adapter Connection 
+## **Task 1:** Create an Oracle ERP Cloud Adapter connection 
 Create a connection with the Oracle ERP Cloud Adapter.
 
 1. Show the left Navigation menu, and click **Integrations** > **Connections**.

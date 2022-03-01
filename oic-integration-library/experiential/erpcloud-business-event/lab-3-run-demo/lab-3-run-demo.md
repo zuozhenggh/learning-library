@@ -1,4 +1,4 @@
-# Run Demo
+# Run end-to-end demo
 
 ## Introduction
 This demo lab will walk you through the steps to create an ERP Purchase Order and validate how the data is processed in the integration flow. 
@@ -8,7 +8,8 @@ Estimated Time: 10 minutes
 ### Objectives
 In this lab, you will:
 - Create Purchase Order (PO) in ERP Cloud
-- View message flow triggered by the PO Create Event
+- Validate PO status
+- Track message flow triggered by the PO Create Event
 - Verify PO record in ADW Table
 
 ### Prerequisites
@@ -23,13 +24,13 @@ This lab assumes you have:
 
 3. Click **Purchase Orders**.
 
-4. In the **Overview** section, click **Tasks** button on the right.
-   ![](images/run-demo01.png)
+4. In the *Overview* section, click **Tasks** button on the right.
+   ![Tasks in Overview section](images/overview-tasks.png)
 
     This opens the Tasks menu. 
 
 5. Under the *Orders* section, select **Create Order**.
-  ![](images/run-demo02.png)
+  ![Create Purchase Order](images/create-order-action.png)
 
     The *Create Order* dialog is displayed.
 
@@ -40,12 +41,12 @@ This lab assumes you have:
 7. Click **Create**.
 
     This opens the *Edit Document (Purchase Order)* page.
-    ![](images/run-demo03.png)
+    ![Enter PO info](images/enter-po-info.png)
 
 8. Under *General* section, in the *Description* field, enter the same value used for *Lab 2 > Task 2 > Step 5: Filter Expr for Purchase Order Event*. For example: `"LL demo"` 
 
-9. In the *Lines* Tab, click **+** to add a Purchase Order row.
-    ![](images/run-demo04.png)
+9. In the *Lines* Tab, click **+** to add a Purchase Order line row.
+    ![Add PO Line](images/add-po-line.png)
 
 10. Enter values in the below fields (sample values provided)
     | **Field**        | **Value**          |       
@@ -58,27 +59,27 @@ This lab assumes you have:
     | UOM | `Ea` (default) |
     | Base Price | Enter a valid number, eg. `200`
 
-     ![](images/run-demo05.png)   
+     ![Review PO line](images/review-po-line.png)
 
 11. Click the **EDIT** button under *Lines* section.
-    ![](images/run-demo06.png)
+    ![Edit PO line](images/edit-po-line.png)
 
     This opens the *Edit Line* page for the current purchase order line. 
 
 12. Enter a future date in either *Requested Delivery Date* or *Promised Delivery Date* fields. 
-    ![](images/run-demo07.png)
+    ![Add PO line delivery date](images/add-delivery-date.png)
 
 13. Click **OK** at the top right of the *Edit Line* page and return to the parent window. 
 
 14. Click **Submit** to initiate the the Purchase Order processing. 
-    ![](images/run-demo08.png)
+    ![Submit PO](images/submit-po.png)
 
     After submitting the Purchase Order, a confirmation message should appear with the PO number.
 
 15. Click **OK** to close the confirmation dialog. 
 
 
-## Task 2: Validate Purchase Order
+## Task 2: Validate Purchase Order status
 After the PO is submitted, the initial status becomes *Pending Approval*. The PO Create event will occur once the status changes to *Open*. 
 
 1. In the **Overview** section, click **Tasks** button on the right.
@@ -97,21 +98,31 @@ After the PO is submitted, the initial status becomes *Pending Approval*. The PO
     > **Note:** If PO has another Status, such as *Pending Approval*, then wait a couple of minutes and keep refreshing the page until the desired PO Status appears. 
 
 
-## Task 3: Track incoming PO Event in Integration
+## Task 3: Track message flow triggered by the PO Create Event
 Use the Oracle Integration dashboard to see the data flow resulting from the create Purchase Order event in ERP Cloud. 
 
 1. In the Integration navigation pane, click **Home** > **Monitoring** > **Integrations** > **Tracking**
 
-2. Find our corresponding Integration Instance, by matching the PO number which was generated in ERP Cloud. This should be under the column *Business Identifiers*.
+2. Find our corresponding Integration Instance, by matching the PO number which was generated in ERP Cloud. This should be under the columns *Primary Identifier* or *Business Identifiers*.
 
-3. Click on your **Order Number** link to open the corresponding instance
+3. Click on your **Order Number** link to open the corresponding integration instance.
 
-   ![](images/integration-instance-run.png)
+   ![Find the Integration Instance](images/integration-instance-run.png)
 
-4. Review the 
+    The flow ran successfully if it is displayed with a green line.
+
+    ![Completed integration flow](images/completed-integration-flow.png)
+
+4. Click on the **Actions** menu on the top right of the screen, and select **View Activity Stream**.
+    
+     ![Open Activity Stream](images/open-activity-stream.png)
+
+5. In the Activity Steam window, click on the different **Message** links to review the flow of request and response messages. 
+
+6. Click **Close** after reviewing the Activity Stream. 
 
 
-## Task 3: Verify PO record in ADW Table
+## Task 4: Verify PO record in ADW Table
 Follow these steps to view the PO record in the designated DB table. 
 
 1. If you are not already logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the navigation menu.
@@ -151,6 +162,8 @@ Follow these steps to view the PO record in the designated DB table.
 8. Click on **Data** in the left menu to display the table data. Verify the PO record is available. 
    ![Show PO data](images/sql-show-po-data.png)
 
+
+You have completed the final step of this workshop. Thank you! 
 
 ## Acknowledgements
 * **Author** - Ravi Chablani, Product Management - Oracle Integration
