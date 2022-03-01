@@ -5,18 +5,18 @@ This lab shows you how to perform Flashback Drop on a dropped table in Oracle Da
 
 Estimated Time: 10 minutes
 
-### **About Flashback Drop**
+### About Flashback Drop
 Oracle Database's Flashback Drop enables you to reverse the effects of dropping (deleting) a table, returning the dropped table to the Oracle Database along with dependent objects such as indexes and triggers. This feature stores dropped objects in a recycle bin, from which you can retrieve them until the recycle bin is purged, either explicitly or because space is needed.
 
 As with Flashback Table, you can use Flashback Drop while the Oracle Database is open. Also, you can perform the flashback without undoing changes in objects not affected by the Flashback Drop operation. Flashback Table is more convenient than forms of media recovery that require taking the Oracle Database offline and restoring files from backup.
 
-**Note:** A table must reside in a locally managed tablespace so that you can recover the table using Flashback Drop. Also, you cannot recover tables in the `SYSTEM` tablespaces with Flashback Drop, regardless of the tablespace type.
+>Note: A table must reside in a locally managed tablespace so that you can recover the table using Flashback Drop. Also, you cannot recover tables in the `SYSTEM` tablespaces with Flashback Drop, regardless of the tablespace type.
 
-### **Objectives**
+### Objectives
 - Drop a table
 - Recover the dropped table
 
-### **Prerequisites**
+### Prerequisites
 - Oracle Database 21c installed and a container database (CDB) with at least one pluggable database (PDB) created.
 - You have completed:
     - Lab: Prepare Setup (_Free-Tier_ and _Paid Tenants_ only)
@@ -34,7 +34,7 @@ In this task, you will drop the `appuser.regions` table using the following step
     ```
     $ <copy>./sqlplus / as sysdba</copy>
     ```
-    ## Output
+    Output:
     ```
     SQL*Plus: Release 21.0.0.0.0 - Production on Thu Dec 16 08:10:35 2021
     Version 21.3.0.0.0
@@ -50,7 +50,7 @@ In this task, you will drop the `appuser.regions` table using the following step
     ```
     SQL> <copy>alter session set container=orclpdb;</copy>
     ```
-    ## Output
+    Output:
     ```
     Session altered.
     ```
@@ -59,7 +59,7 @@ In this task, you will drop the `appuser.regions` table using the following step
     ```
     SQL> <copy>drop table appuser.regions;</copy>
     ```
-    ## Output
+    Output:
     ```
     Table dropped.
     ```
@@ -68,7 +68,7 @@ In this task, you will drop the `appuser.regions` table using the following step
     ```
     SQL> <copy>select * from appuser.regions;</copy>
     ```
-    ## Output
+    Output:
     ```
     select * from appuser.regions
                           *
@@ -83,7 +83,7 @@ In this task, you recover the `appuser.regions` table from the recycle bin using
     ```
     SQL> <copy>flashback table appuser.regions to before drop;</copy>
     ```
-    ## Output
+    Output:
     ```
     Flashback complete.
     ```
@@ -92,7 +92,7 @@ In this task, you recover the `appuser.regions` table from the recycle bin using
     ```
     SQL> <copy>select * from appuser.regions;</copy>
     ```
-    ## Output
+    Output:
     ```
             ID NAME
     ---------- --------------------

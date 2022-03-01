@@ -5,15 +5,15 @@ This lab shows you how to perform Flashback Table on a table in Oracle Database.
 
 Estimated Time: 10 minutes
 
-### **About Flashback Table**
+### About Flashback Table
 Oracle Database's Flashback Table enables you to rewind one or more tables to their contents at a previous time without affecting other Oracle Database objects. Thus, you can recover from logical data corruptions such as table rows added or deleted accidentally. Unlike point-in-time recovery, the Oracle Database remains available during the flashback operation.
 
-### **Objectives**
+### Objectives
 - Enable row movement on a table
 - Simulate user error
 - Perform Flashback Table operation
 
-### **Prerequisites**
+### Prerequisites
 - Oracle Database 21c installed and a container database (CDB) with at least one pluggable database (PDB) created.
 - You have completed:
     - Lab: Prepare Setup (_Free-Tier_ and _Paid Tenants_ only)
@@ -31,7 +31,7 @@ In this task, you enable row movement on the `appuser.regions` table using the f
     ```
     $ <copy>./sqlplus / as sysdba</copy>
     ```
-    ## Output
+    Output:
     ```
     SQL*Plus: Release 21.0.0.0.0 - Production on Thu Dec 16 08:07:22 2021
     Version 21.3.0.0.0
@@ -47,7 +47,7 @@ In this task, you enable row movement on the `appuser.regions` table using the f
     ```
     SQL> <copy>alter session set container = orclpdb;</copy>
     ```
-    ## Output
+    Output:
     ```
     Session altered.
     ```
@@ -56,7 +56,7 @@ In this task, you enable row movement on the `appuser.regions` table using the f
     ```
     SQL> <copy>alter table appuser.regions enable row movement;</copy>
     ```
-    ## Output
+    Output:
     ```
     Table altered.
     ```
@@ -69,7 +69,7 @@ In this task, you simulate user error by changing data in the `appuser.regions` 
     ```
     SQL> <copy>select * from appuser.regions;</copy>
     ```
-    ## Output
+    Output:
     ```
             ID NAME
     ---------- --------------------
@@ -82,7 +82,7 @@ In this task, you simulate user error by changing data in the `appuser.regions` 
     ```
     SQL> <copy>select to_char(current_timestamp,'YYYY-MM-DD HH:MI:SS') from dual;</copy>
     ```
-    ## Output
+    Output:
     ```
     TO_CHAR(CURRENT_TIM
     -------------------
@@ -94,7 +94,7 @@ In this task, you simulate user error by changing data in the `appuser.regions` 
     SQL> <copy>update appuser.regions set name = 'ORACLE';</copy>
     SQL> commit;
     ```
-    ## Output
+    Output:
     ```
     3 rows updated.
     Commit complete.
@@ -104,7 +104,7 @@ In this task, you simulate user error by changing data in the `appuser.regions` 
     ```
     SQL> <copy>select * from appuser.regions;</copy>
     ```
-    ## Output
+    Output:
     ```
             ID NAME
     ---------- --------------------
@@ -121,7 +121,7 @@ In this task, you rewind the `appuser.regions` table to a point before you perfo
     ```
     SQL> <copy>flashback table appuser.regions to timestamp to_timestamp('2021-12-16 08:08:39','YYYY-MM-DD HH:MI:SS');</copy>
     ```
-    ## Output
+    Output:
     ```
     Flashback complete.
     ```
@@ -130,7 +130,7 @@ In this task, you rewind the `appuser.regions` table to a point before you perfo
     ```
     SQL> <copy>select * from appuser.regions;</copy>
     ```
-    ## Output
+    Output:
     ```
             ID NAME
     ---------- --------------------

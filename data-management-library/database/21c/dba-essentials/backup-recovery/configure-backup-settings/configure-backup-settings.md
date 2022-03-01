@@ -6,7 +6,7 @@ This lab shows you how to configure the Oracle Database for several backup-relat
 
 Estimated Time: 20 minutes
 
-### **Objectives**
+### Objectives
 
 - View backup settings
 - Configure backup device settings
@@ -15,7 +15,7 @@ Estimated Time: 20 minutes
 - Configure control file and server parameter file automatic backups
 - Enable block change tracking
 
-### **Prerequisites**
+### Prerequisites
 
 - Oracle Database 21c installed and a container database (CDB) with at least one pluggable database (PDB) created.
 - You have completed:
@@ -32,7 +32,7 @@ In this task, you can view all the existing backup settings by using the followi
     $ <copy>./rman</copy>
     ```
 
-    ## Output
+    Output:
     ```
     Recovery Manager: Release 21.0.0.0.0 - Production on Thu Dec 16 07:38:21 2021
     Version 21.3.0.0.0
@@ -46,7 +46,7 @@ In this task, you can view all the existing backup settings by using the followi
     RMAN> <copy>connect target;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     connected to target database: ORCL (DBID=1016703368)
     ```
@@ -57,7 +57,7 @@ In this task, you can view all the existing backup settings by using the followi
     RMAN> <copy>show all;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     using target database control file instead of recovery catalog
     RMAN configuration parameters for database with db_unique_name ORCL are:
@@ -91,7 +91,7 @@ In this task, you configure backup device settings using the following steps.
     RMAN> <copy>configure default device type to disk;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     new RMAN configuration parameters:
     CONFIGURE DEFAULT DEVICE TYPE TO DISK;
@@ -104,7 +104,7 @@ In this task, you configure backup device settings using the following steps.
     RMAN> <copy>show default device type;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     RMAN configuration parameters for database with db_unique_name ORCL are:
     CONFIGURE DEFAULT DEVICE TYPE TO DISK;
@@ -122,7 +122,7 @@ In this task, you configure backup optimization settings using the following ste
     RMAN> <copy>configure backup optimization on;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     new RMAN configuration parameters:
     CONFIGURE BACKUP OPTIMIZATION ON;
@@ -135,7 +135,7 @@ In this task, you configure backup optimization settings using the following ste
     RMAN> <copy>show backup optimization;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     RMAN configuration parameters for database with db_unique_name ORCL are:
     CONFIGURE BACKUP OPTIMIZATION ON;
@@ -153,7 +153,7 @@ In this task, you configure retention policy settings using the following steps.
     RMAN> <copy>configure retention policy to recovery window of 31 days;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     new RMAN configuration parameters:
     CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 31 DAYS;
@@ -166,7 +166,7 @@ In this task, you configure retention policy settings using the following steps.
     RMAN> <copy>show retention policy;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     RMAN configuration parameters for database with db_unique_name ORCL are:
     CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 31 DAYS;
@@ -186,7 +186,7 @@ In this task, you configure the control file and server parameter file automatic
     RMAN> <copy>configure controlfile autobackup on;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     new RMAN configuration parameters:
     CONFIGURE CONTROLFILE AUTOBACKUP ON;
@@ -199,7 +199,7 @@ In this task, you configure the control file and server parameter file automatic
     RMAN> <copy>show controlfile autobackup;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     RMAN configuration parameters for database with db_unique_name ORCL are:
     CONFIGURE CONTROLFILE AUTOBACKUP ON;
@@ -225,7 +225,7 @@ In this task, you enable block change tracking using the following steps.
     $ <copy>./sqlplus / as sysdba</copy>
     ```
 
-    ## Output
+    Output:
     ```
     SQL*Plus: Release 21.0.0.0.0 - Production on Thu Dec 16 07:40:53 2021
     Version 21.3.0.0.0
@@ -243,12 +243,12 @@ In this task, you enable block change tracking using the following steps.
     SQL> <copy>alter system set db_create_file_dest = '/u01/app/oracle/oradata/ORCL';</copy>
     ```
 
-    ## Output
+    Output:
     ```
     System altered.
     ```
 
-**Note:** The `db_create_file_dest` specifies the default location for Oracle-managed files. In this lab, the `db_create_file_dest` parameter is set to `/u01/app/oracle/oradata/ORCL,` the storage location for data files and control files.
+    >Note: The `db_create_file_dest` specifies the default location for Oracle-managed files. In this lab, the `db_create_file_dest` parameter is set to `/u01/app/oracle/oradata/ORCL,` the storage location for data files and control files.
 
 3. Use the following command to enable block change tracking.
 
@@ -256,7 +256,7 @@ In this task, you enable block change tracking using the following steps.
     SQL> <copy>alter database enable block change tracking;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     Database altered.
     ```
@@ -267,7 +267,7 @@ In this task, you enable block change tracking using the following steps.
     SQL> <copy>select status, filename from v$block_change_tracking;</copy>
     ```
 
-    ## Output
+    Output:
     ```
     STATUS   FILENAME
     -------- -------------------------------------------------------------------------------

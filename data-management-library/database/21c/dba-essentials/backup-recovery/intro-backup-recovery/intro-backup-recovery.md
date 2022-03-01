@@ -1,11 +1,11 @@
-# Backup and Recovery Operations for Oracle Database 21c
+# Introduction
 
 ## About this Workshop
 This workshop introduces you to Oracle Database backup and recovery with the Recovery Manager (RMAN). After completing this workshop, you should be familiar with the basic concepts of Oracle Database backup and recovery operations, know how to implement a disk-based backup strategy, and perform repairs to database files.
 
 Estimated Workshop Time: 2 hours
 
-### **Objectives**
+### Objectives
 In this workshop, you will learn the following Oracle Database activities.
 - Configure recovery settings
 - Configure backup settings
@@ -15,10 +15,10 @@ In this workshop, you will learn the following Oracle Database activities.
 - Rewind a table using Flashback Table
 - Recover a dropped table using Flashback Drop
 
-### **Prerequisites**
+### Prerequisites
 A Free Tier, Paid or LiveLabs Oracle Cloud account  
 
-**Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page](https://www.oracle.com/cloud/free/faq.html).
+>Note: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. [Click here for the Free Tier FAQ page](https://www.oracle.com/cloud/free/faq.html).
 
 
 ## Appendix 1: Overview of Oracle Database Backup and Recovery

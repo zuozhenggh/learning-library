@@ -5,12 +5,12 @@ This lab shows you how to perform a whole backup of your Oracle Database and the
 
 Estimated Time: 20 minutes
 
-### **Objectives**
+### Objectives
 - Perform a whole Oracle Database backup
 - Display backup information stored in the RMAN repository
 - Validate backups
 
-### **Prerequisites**
+### Prerequisites
 - Oracle Database 21c installed and a container database (CDB) with at least one pluggable database (PDB) created.
 - You have completed:
     - Lab: Prepare Setup (_Free-Tier_ and _Paid Tenants_ only)
@@ -25,7 +25,7 @@ In this task, you back up the whole Oracle Database using the following steps.
     ```
     $ <copy>./rman</copy>
     ```
-    ## Output
+    Output:
     ```
     Recovery Manager: Release 21.0.0.0.0 - Production on Thu Dec 16 07:53:57 2021
     Version 21.3.0.0.0
@@ -37,7 +37,7 @@ In this task, you back up the whole Oracle Database using the following steps.
     ```
     RMAN> <copy>connect target;</copy>
     ```
-    ## Output
+    Output:
     ```
     connected to target database: ORCL (DBID=1016703368)
     ```
@@ -46,7 +46,7 @@ In this task, you back up the whole Oracle Database using the following steps.
     ```
     RMAN> <copy>backup database plus archivelog;</copy>
     ```
-    ## Output
+    Output:
     ```
     Starting backup at 16-DEC-21
     current log archived
@@ -118,7 +118,7 @@ In this task, you display backup information stored in the RMAN repository using
     ```
     RMAN> <copy>list backup summary;</copy>
     ```
-    ## Output
+    Output:
     ```
     List of Backups
     ===============
@@ -146,7 +146,7 @@ In this task, you display backup information stored in the RMAN repository using
     ```
     RMAN> <copy>list backup of datafile 3;</copy>
     ```
-    ## Output
+    Output:
     ```
     List of Backup Sets
     ===================
@@ -193,7 +193,7 @@ In this task, you validate backups using the following steps.
     ```
     RMAN> <copy>validate datafile 3;</copy>
     ```
-    ## Output
+    Output:
     ```
     Starting validate at 16-DEC-21
     using channel ORA_DISK_1
@@ -220,7 +220,7 @@ In this task, you validate backups using the following steps.
     ```
     RMAN> <copy>restore tablespace users validate;</copy>
     ```
-    ## Output
+    Output:
     ```
     Starting restore at 16-DEC-21
     using channel ORA_DISK_1

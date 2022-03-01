@@ -5,13 +5,13 @@ This lab shows you how to configure the Oracle Database for several recovery set
 
 Estimated Time: 20 minutes
 
-### **Objectives**
+### Objectives
 - Set the environment
 - Configure the Fast Recovery Area
 - Enable archiving of redo log files
 - Enable Flashback Database
 
-### **Prerequisites**
+### Prerequisites
 - Oracle Database 21c installed and a container database (CDB) with at least one pluggable database (PDB) created.
 - You have completed:
     - Lab: Prepare Setup (_Free-Tier_ and _Paid Tenants_ only)
@@ -44,9 +44,9 @@ In this task, you set up the environment using the following steps.
 
 You have set the environment variables for the active terminal session. You can now connect to Oracle Database and run the commands.
 
-**Note**: Every time you open a new terminal window, you need to set the environment variables to connect to Oracle Database from that terminal. Environment variables from one terminal do not apply automatically to other terminals. 
+>Note: Every time you open a new terminal window, you need to set the environment variables to connect to Oracle Database from that terminal. Environment variables from one terminal do not apply automatically to other terminals. 
 
-Alternatively, you may run the script file `.set-env-db.sh` from the home location and enter the number for `ORACLE_SID`, for example, _3_ for `orcl`. It sets the environment variables automatically.
+Alternatively, you may run the script file `.set-env-db.sh` from the home location and enter the number for `ORACLE_SID`, for example, `3` for `orcl`. It sets the environment variables automatically.
 
 
 ## Task 2: Configure the Fast Recovery Area
@@ -60,7 +60,7 @@ In this task, you configure the fast recovery area using the following steps.
     ```
     $ <copy>./sqlplus / as sysdba</copy>
     ```
-    ## Output
+    Output:
     ```
     SQL*Plus: Release 21.0.0.0.0 - Production on Thu Dec 16 07:31:06 2021
     Version 21.3.0.0.0
@@ -76,7 +76,7 @@ In this task, you configure the fast recovery area using the following steps.
     ```
     SQL> <copy>show parameter recovery;</copy>
     ```
-    ## Output
+    Output:
     ```
     NAME                                 TYPE        VALUE
     ------------------------------------ ----------- ------------------------------
@@ -86,13 +86,13 @@ In this task, you configure the fast recovery area using the following steps.
     remote_recovery_file_dest            string
     ```
 
-    **Note:** The `**db_recovery_file_dest**` parameter sets the location of the fast recovery area. Oracle recommends placing the fast recovery area on a separate storage device from the Oracle Database files. The `**db_recovery_file_dest_size**` parameter shows the size of your fast recovery area. The size of your fast recovery area may differ from what is shown in this example. Generally, the default size present for the fast recovery area might not be sufficient for your files.
+    >Note: The `db_recovery_file_dest` parameter sets the location of the fast recovery area. Oracle recommends placing the fast recovery area on a separate storage device from the Oracle Database files. The `db_recovery_file_dest_size` parameter shows the size of your fast recovery area. The size of your fast recovery area may differ from what is shown in this example. Generally, the default size present for the fast recovery area might not be sufficient for your files.
 
 3. Use the following command to set the fast recovery area size to a larger size to store the Oracle Database files sufficiently. In this case, it is set to `10GB`.
     ```
     SQL> <copy>alter system set db_recovery_file_dest_size=10G;</copy>
     ```
-    ## Output
+    Output:
     ```
     System altered.
     ```
@@ -101,7 +101,7 @@ In this task, you configure the fast recovery area using the following steps.
     ```
     SQL> <copy>show parameter recovery;</copy>
     ```
-    ## Output
+    Output:
     ```
     NAME                                 TYPE        VALUE
     ------------------------------------ ----------- ------------------------------
@@ -121,7 +121,7 @@ In this task, you enable archiving of the redo log files using the following ste
     ```
     SQL> <copy>archive log list;</copy>
     ```
-    ## Output
+    Output:
     ```
     Database log mode              No Archive Mode
     Automatic archival             Disabled
@@ -139,7 +139,7 @@ In this task, you enable archiving of the redo log files using the following ste
     ```
     $ <copy>./rman</copy>
     ```
-    ## Output
+    Output:
     ```
     Recovery Manager: Release 21.0.0.0.0 - Production on Thu Dec 16 07:32:10 2021
     Version 21.3.0.0.0
@@ -151,7 +151,7 @@ In this task, you enable archiving of the redo log files using the following ste
     ```
     RMAN> <copy>connect target;</copy>
     ```
-    ## Output
+    Output:
     ```
     connected to target database: ORCL (DBID=1016703368)
     ```
@@ -160,7 +160,7 @@ In this task, you enable archiving of the redo log files using the following ste
     ```
     RMAN> <copy>shutdown immediate;</copy>
     ```
-    ## Output
+    Output:
     ```
     database closed
     database dismounted
@@ -171,7 +171,7 @@ In this task, you enable archiving of the redo log files using the following ste
     ```
     RMAN> <copy>startup mount;</copy>
     ```
-    ## Output
+    Output:
     ```
     connected to target database (not started)
     Oracle instance started
@@ -189,7 +189,7 @@ In this task, you enable archiving of the redo log files using the following ste
     ```
     RMAN> <copy>backup database;</copy>
     ```
-    ## Output
+    Output:
     ```
     Starting backup at 16-DEC-21
     allocated channel: ORA_DISK_1
@@ -234,7 +234,7 @@ In this task, you enable archiving of the redo log files using the following ste
     ```
     RMAN> <copy>alter database archivelog;</copy>
     ```
-    ## Output
+    Output:
     ```
     Statement processed
     ```
@@ -243,7 +243,7 @@ In this task, you enable archiving of the redo log files using the following ste
     ```
     RMAN> <copy>alter database open;</copy>
     ```
-    ## Output
+    Output:
     ```
     Statement processed
     ```
@@ -252,7 +252,7 @@ In this task, you enable archiving of the redo log files using the following ste
     ```
     RMAN> <copy>backup database plus archivelog;</copy>
     ```
-    ## Output
+    Output:
     ```
     Starting backup at 16-DEC-21
     current log archived
@@ -326,7 +326,7 @@ In this task, you enable Flashback Database using the following steps.
     ```
     RMAN> <copy>alter database flashback on;</copy>
     ```
-    ## Output
+    Output:
     ```
     Statement processed
     ```

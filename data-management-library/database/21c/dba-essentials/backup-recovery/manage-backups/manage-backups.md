@@ -5,18 +5,18 @@ This lab shows you how to manage backups after you create them.
 
 Estimated time: 20 minutes
 
-### **About Managing Backups**
+### About Managing Backups
 An essential part of a backup and recovery strategy is managing backups after creating them. Backup management includes deleting obsolete backups and performing periodic checks to ensure that backups are available and usable. In a multi-tenant environment, you can manage backups for the whole multi-tenant container database (CDB) or one or more pluggable databases (PDBs).
 
 You manage backups by deleting obsolete backups and performing periodic checks to ensure that backups are available and usable.
 
-### **Objectives**
+### Objectives
 - Display backup information
 - Cross-check backups
 - Delete expired backups
 - Monitor fast recovery area space usage
 
-### **Prerequisites**
+### Prerequisites
 - Oracle Database 21c installed and a container database (CDB) with at least one pluggable database (PDB) created.
 - You have completed:
     - Lab: Prepare Setup (_Free-Tier_ and _Paid Tenants_ only)
@@ -34,7 +34,7 @@ In this task, you display backup information using the following steps.
     ```
     $ <copy>./rman</copy>
     ```
-    ## Output
+    Output:
     ```
     Recovery Manager: Release 21.0.0.0.0 - Production on Thu Dec 16 07:57:11 2021
     Version 21.3.0.0.0
@@ -46,7 +46,7 @@ In this task, you display backup information using the following steps.
     ```
     RMAN> <copy>connect target;</copy>
     ```
-    ## Output
+    Output:
     ```
     connected to target database: ORCL (DBID=1016703368)
     ```
@@ -55,7 +55,7 @@ In this task, you display backup information using the following steps.
     ```
     RMAN> <copy>select session_key, input_type, status, start_time, end_time, elapsed_seconds/3600 hrs from v$rman_backup_job_details;</copy>
     ```
-    ## Output
+    Output:
     ```
     SESSION_KEY INPUT_TYPE    STATUS                  START_TIM END_TIME         HRS
     ----------- ------------- ----------------------- --------- --------- ----------
@@ -63,7 +63,7 @@ In this task, you display backup information using the following steps.
              13 DB FULL       COMPLETED               16-DEC-21 16-DEC-21       .015
     ```
 
-    **Note:** `SESSION_KEY` is the unique key for the RMAN session in which the backup job occurred.  
+    >Note: `SESSION_KEY` is the unique key for the RMAN session in which the backup job occurred.  
 
 
 ## Task 2: Cross-check Backups
@@ -77,7 +77,7 @@ In this task, you cross-check backups using the following steps.
     ```
     RMAN> <copy>list backup summary;</copy>
     ```
-    ## Output
+    Output:
     ```
     using target database control file instead of recovery catalog
 
@@ -107,7 +107,7 @@ In this task, you cross-check backups using the following steps.
     ```
     RMAN> <copy>crosscheck backup;</copy>
     ```
-    ## Output
+    Output:
     ```
     allocated channel: ORA_DISK_1
     channel ORA_DISK_1: SID=51 device type=DISK
@@ -150,7 +150,7 @@ In this task, you cross-check backups using the following steps.
     ```
     RMAN> <copy>crosscheck backupset 1;</copy>
     ```
-    ## Output
+    Output:
     ```
     using channel ORA_DISK_1
     crosschecked backup piece: found to be 'AVAILABLE'
@@ -168,7 +168,7 @@ In this task, you delete expired backups using the following steps.
     ```
     RMAN> <copy>delete expired backup;</copy>
     ```
-    ## Output
+    Output:
     ```
     using channel ORA_DISK_1
     specification does not match any backup in the repository
@@ -186,7 +186,7 @@ In this task, you monitor the space usage of fast recovery area using the follow
     ```
     RMAN> <copy>select * from v$recovery_file_dest;</copy>
     ```
-    ## Output
+    Output:
     ```
     NAME                                                                            
     --------------------------------------------------------------------------------
@@ -200,7 +200,7 @@ In this task, you monitor the space usage of fast recovery area using the follow
     ```
     RMAN> <copy>select file_type, percent_space_used PCT_USED, percent_space_reclaimable PCT_RECLAIM, number_of_files NO_FILES from v$recovery_area_usage;</copy>
     ```
-    ## Output
+    Output:
     ```
     FILE_TYPE                 PCT_USED PCT_RECLAIM   NO_FILES
     ----------------------- ---------- ----------- ----------

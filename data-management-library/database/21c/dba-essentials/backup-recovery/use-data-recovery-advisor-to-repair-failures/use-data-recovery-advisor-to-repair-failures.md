@@ -5,10 +5,10 @@ This lab shows you how to repair failures using Data Recovery Advisor.
 
 Estimated Time: 20 minutes
 
-### **About Data Recovery Advisor**
+### About Data Recovery Advisor
 The Data Recovery Advisor is an Oracle Database feature that automatically diagnoses data failures, determines and presents appropriate repair options, and performs repairs if requested by the user. By providing a centralized tool for automated data repair, Data Recovery Advisor improves the manageability and reliability of an Oracle Database.
 
-**Note:** Data Recovery Advisor can only be used to diagnose and repair failures in multitenant container databases (CDBs). It is not supported for pluggable databases (PDBs).
+>Note: Data Recovery Advisor can only be used to diagnose and repair failures in multitenant container databases (CDBs). It is not supported for pluggable databases (PDBs).
 
 The Recovery Manager (RMAN) provides a command-line interface to the Data Recovery Advisor. You can use the following RMAN commands to diagnose and repair data failures for the Oracle Database, including for Oracle Real Application Clusters (RAC) Databases:
 
@@ -18,10 +18,10 @@ The Recovery Manager (RMAN) provides a command-line interface to the Data Recove
 
 - `REPAIR FAILURE`: Use this command to automatically repair failures listed by the most recent `ADVISE FAILURE` command.
 
-### **Objectives**
+### Objectives
 - Perform Oracle advised recovery
 
-### **Prerequisites**
+### Prerequisites
 - Oracle Database 21c installed and a container database (CDB) with at least one pluggable database (PDB) created.
 - You have completed:
     - Lab: Prepare Setup (_Free-Tier_ and _Paid Tenants_ only)
@@ -39,7 +39,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     $ <copy>./sqlplus / as sysdba</copy>
     ```
-    ## Output
+    Output:
     ```
     SQL*Plus: Release 21.0.0.0.0 - Production on Thu Dec 16 08:02:07 2021
     Version 21.3.0.0.0
@@ -55,7 +55,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     SQL> <copy>alter pluggable database orclpdb open;</copy>
     ```
-    ## Output
+    Output:
     ```
     Pluggable database altered.
     ```
@@ -64,7 +64,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     SQL> <copy>alter session set container = orclpdb;</copy>
     ```
-    ## Output
+    Output:
     ```
     Session altered.
     ```
@@ -73,7 +73,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     SQL> <copy>select * from appuser.regions;</copy>
     ```
-    ## Output
+    Output:
     ```
             ID NAME
     ---------- --------------------
@@ -86,7 +86,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     SQL> <copy>select name from v$datafile;</copy>
     ```
-    ## Output
+    Output:
     ```
     NAME
     --------------------------------------------------------------------------------
@@ -101,7 +101,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     SQL> <copy>alter pluggable database orclpdb close;</copy>
     ```
-    ## Output
+    Output:
     ```
     Pluggable database altered.
     ```
@@ -127,7 +127,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     SQL> <copy>alter pluggable database orclpdb open;</copy>
     ```
-    ## Output
+    Output:
     ```
     alter pluggable database orclpdb open
     *
@@ -146,7 +146,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     $ <copy>./rman</copy>
     ```
-    ## Output
+    Output:
     ```
     Recovery Manager: Release 21.0.0.0.0 - Production on Thu Dec 16 08:05:11 2021
     Version 21.3.0.0.0
@@ -158,7 +158,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     RMAN> <copy>connect target;</copy>
     ```
-    ## Output
+    Output:
     ```
     connected to target database: ORCL (DBID=1016703368)
     ```
@@ -167,7 +167,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     RMAN> <copy>list failure;</copy>
     ```
-    ## Output
+    Output:
     ```
     using target database control file instead of recovery catalog
     Database Role: PRIMARY
@@ -184,7 +184,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     RMAN> <copy>advise failure;</copy>
     ```
-    ## Output
+    Output:
     ```
     Database Role: PRIMARY
 
@@ -221,7 +221,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     RMAN> <copy>repair failure;</copy>
     ```
-    ## Output
+    Output:
     ```
     Strategy: The repair includes complete media recovery with no data loss
     Repair script: /u01/app/oracle/diag/rdbms/orcl/orcl/hm/reco_4206624240.hm
@@ -266,7 +266,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     RMAN> <copy>list failure;</copy>
     ```
-    ## Output
+    Output:
     ```
     Database Role: PRIMARY
 
@@ -282,7 +282,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     $ <copy>./sqlplus / as sysdba</copy>
     ```
-    ## Output
+    Output:
     ```
     SQL*Plus: Release 21.0.0.0.0 - Production on Thu Dec 16 08:06:14 2021
     Version 21.3.0.0.0
@@ -298,7 +298,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     SQL> <copy>alter pluggable database orclpdb open;</copy>
     ```
-    ## Output
+    Output:
     ```
     Pluggable database altered.
     ```
@@ -307,7 +307,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     SQL> <copy>alter session set container = orclpdb;</copy>
     ```
-    ## Output
+    Output:
     ```
     Session altered.
     ```
@@ -316,7 +316,7 @@ In this task, you perform failure recovery using the following steps.
     ```
     SQL> <copy>select * from appuser.regions;</copy>
     ```
-    ## Output
+    Output:
     ```
             ID NAME
     ---------- --------------------
