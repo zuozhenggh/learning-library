@@ -11,7 +11,7 @@ OML4SQL offers a comprehensive set of in-database algorithms for performing a va
 The PL/SQL API and SQL language operators provide direct access to OML4SQL functionality in Oracle Database.
 
 
-In this workshop, you have a dataset representing 15k customers of an insurance company. Each customer has around 30 attributes, and our goal is to train our database to find 4 Business Objectives that describe in [oml4sql-use-case.md](/data-management-library/database/machine-learning/oml4sql/oml4sql-use-case/oml4sql-use-case.md) file.
+In this workshop, you have a dataset representing 15k customers of an insurance company. Each customer has around 30 attributes, and our goal is to train our database to find 4 Business Objectives that describe in [OML4SQL Use Case](./../../oml4sql/workshops/livelabs/?lab=oml4sql-use-case).
 
 For more information about [OML4SQL API Guide](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD).
 
@@ -41,7 +41,7 @@ In this lab, you will:
 
 ## Task 1: Business Understanding
 
-1. Review Business Objectives that describe in next section [Customer Insurance Use Case to OML4SQL Workshop](/oml4sql/oml4sql1/oml4sql-use-case.md).
+1. Review Business Objectives that describe in next section [Customer Insurance Use Case to OML4SQL Workshop](./../../oml4sql/workshops/livelabs/?lab=oml4sql-use-case).
 
 ## Task 2: Data Understanding
 
@@ -155,7 +155,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
 ## Task 4: Modeling
 
-* CREATE A Model with the name: **SVMO_CUST_Class_sample**
+* CREATE A Model with the name: SVMO\_CUST\_Class_sample
   We use One-Class Support Vector Machine, Support Vector Machine (SVM) as a one-class classifier is used for detecting anomalies. Oracle Machine Learning for SQL uses SVM as the one-class classifier for anomaly detection. When SVM is used for anomaly detection, it has the classification machine learning function but no target.
 
   One-class SVM models, when applied, produce a prediction and a probability for each case in the scoring data. If the prediction is 1, the case is considered typical. If the prediction is 0, the case is considered anomalous. This behavior reflects the fact that the model is trained with normal data.
@@ -224,7 +224,7 @@ Notice how the small padlock closes in both options, which represents that you a
 	  FROM model_details
 	 WHERE ROWNUM < 50;
     </copy>
-    ```` 	 
+    ````
 
 ![model-details](../oml4sql-anomaly-detection/images/model-details.png)
 
@@ -236,7 +236,7 @@ Notice how the small padlock closes in both options, which represents that you a
 	WHERE model_name='SVMO_CUST_Class_sample'
 	ORDER BY view_name;
     </copy>
-    ```` 	 
+    ````
 
 ![model-views](../oml4sql-anomaly-detection/images/model-views.png)
 
