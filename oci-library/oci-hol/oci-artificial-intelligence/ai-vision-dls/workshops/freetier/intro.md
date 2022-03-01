@@ -8,7 +8,11 @@ You can upload images to detect and classify objects in them. If you have lots o
 
 Oracle Cloud Infrastructure (OCI) Data Labeling is a service for building labeled datasets to more accurately train AI and machine learning models. With OCI Data Labeling, developers and data scientists assemble data, create and browse datasets, and apply labels to data records through user interfaces and public APIs. The labeled datasets can be exported for model development across Oracle’s AI and data science services for a seamless model-building experience.
 
-*Estimated Workshop Time*:
+**About the data:**
+
+We obtained coherent diffraction images generated from cancerous blood samples from East Carolina University. Each of these JPG images is labelled with one of three classifications based on the features present in the image. The three classifications are: cell, debris, and stripe.
+
+*Estimated Workshop Time*: 90 minutes
 
 ### Objectives
 
@@ -33,4 +37,4 @@ In this workshop, you will:
     * Gabrielle Prichard - Cloud Solution Engineer
 
 * **Last Updated By/Date**
-    * Gabrielle Prichard - Cloud Solution Engineer, February 2022
+    * Gabrielle Prichard - Cloud Solution Engineer, March 2022

@@ -1,9 +1,9 @@
 # Lab 2: Create Custom AI Vision Model
 
 ## Introduction
-In this lab, ...
+In this lab, you will use the labeled dataset created in Lab 1 to train a custom image classification model. The image classification model will classify the images as either cell, stripe, or debris within a certain confidence.
 
-*Estimated Time*:
+*Estimated Time*: 30 minutes
 
 ### Objectives
 
@@ -109,4 +109,4 @@ Congratulations on completing this lab!
     * Gabrielle Prichard - Cloud Solution Engineer
 
 * **Last Updated By/Date**
-    * Gabrielle Prichard - Cloud Solution Engineer, February 2022
+    * Gabrielle Prichard - Cloud Solution Engineer, March 2022

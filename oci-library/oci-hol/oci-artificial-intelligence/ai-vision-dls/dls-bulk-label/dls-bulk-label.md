@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, we will provide a .zip file containing biomedical images separated into 3 subfolders based on how each image has been medically classified. In this lab, participants will download this .zip file, bulk upload the images to object storage, and will create a labeled dataset using the Data Labeling Service and custom bulk-labeling code.
 
-*Estimated Time*:
+*Estimated Time*: 60 minutes
 
 ### Objectives
 
@@ -22,7 +22,7 @@ In this lab, you will:
 - Ensure that you have Python SDK installed on your machine by following the steps [here](https://docs.oracle.com/en-us/iaas/tools/python/2.57.0/installation.html#install)
   * Note that if you have a Python version of less than 3, it is necessary to replace all instances of 'python3' in the CLI operations mentioned in this lab with 'python'. In these lab instructions, we will assume that the user has Python3.
 
-**Required Download:** Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/vrY7zeM7llOTsL5UyR9u5jQzp8JZzDiir7YdPDyc81zdG8psYU3bWM4LuwAemOUJ/n/orasenatdpltoci03/b/EBS-HOL-Files/o/ebs-hol.zip) link to download the files needed throughout the lab.
+**Required Download:** Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/j8C5pBw0Nco_tjY_ggsCEHlJUk9IDWms8hGHtGkRIt-EqCGPWZWicJLwxBJE-brX/n/orasenatdpltintegration03/b/all-images-live-lab/o/Biomedical_Demo.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
 
 ## **Policy Setup**
 
@@ -72,7 +72,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 
     d. Add a description
 
-    e. Include the following rule. Replace the information in '<>' with your own values.
+    e. Include the following rule. Replace the information in '<>' with your own value.
 
       ```
       <copy>ALL {datalabelingdataset.compartment.id='<compartment OCID>'}</copy>
@@ -136,7 +136,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
 
 ## **Task 2:** Upload the Images From Your Local Machine Into Your Bucket
 Note: These instructions are Mac OS compatible
-1. On your local machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own.
+1. On your local machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values.
     ```
     <copy>export DL_BucketName="<your bucket name>"</copy>
     ```
@@ -144,7 +144,7 @@ Note: These instructions are Mac OS compatible
     <copy>export DL_Compartment=<OCID of your Compartment></copy>
     ```
 
-2. On your local machine, execute the following commands to set environment variables for the directory named "Cell" that contains your .jpg/.jpeg image files to be labeled accordingly. Be sure to replace the information in "<>" with your own.
+2. On your local machine, execute the following commands to set environment variables for the directory named "Cell" that contains your .jpg/.jpeg image files to be labeled accordingly. Be sure to replace the information in "<>" with your own values.
     ```
     <copy>export DL_LabelDirectory="<path to Cell folder>"</copy>
     ```
@@ -155,7 +155,7 @@ Note: These instructions are Mac OS compatible
     ```
 4. Repeat Steps 2 and 3, replacing "Cell" and "c" with "Stripe" and "s", which represent another category into which our images will be classified.
 
-5. Repeat Steps 2 and 3, replacing "Cell" and "c" with "Debris" and "d", which represent another category into which our images will be classified.
+5. Repeat Steps 2 and 3, replacing "Stripe" and "s" with "Debris" and "d", which represent another category into which our images will be classified.
 
 6. Confirm that the images have been uploaded to object storage and have been prepended with the appropriate letter.
 ![](./images/obj-storage-upload-confirm.png)
@@ -211,7 +211,7 @@ Note: These instructions are Mac OS compatible
 2. Download the bulk-labeling tool to your machine. Navigate to the link [here](https://github.com/scacela/oci-dls-bulk-labeling), select 'Code' and select 'Download ZIP' to download the tool locally.
 ![](./images/download-bulk-labeling-code.png)
 
-3. Open the file named config.py from the bulk-labeling tool contents, and replace the values with your own (config_file_path, region_identifier, compartment_id, dataset_id, labels).
+3. Open the file named config.py from the bulk-labeling tool contents, and replace the values with your own (config file path, region identifier, compartment id, dataset id, labels).
 
   Note: Enter "cell", "stripe", "debris" as the 3 labels.
 
@@ -221,6 +221,10 @@ Note: These instructions are Mac OS compatible
     ```
     <copy>python3 main.py</copy>
     ```
+
+6. Verify that your images have been labeled by navigating to the dataset created earlier and selecting one of the images.
+![](./images/verify-label1.png)
+![](./images/verify-label2.png)
 
 Congratulations on completing this lab!
 
@@ -232,4 +236,4 @@ Congratulations on completing this lab!
     * Gabrielle Prichard - Cloud Solution Engineer
 
 * **Last Updated By/Date**
-    * Gabrielle Prichard - Cloud Solution Engineer, February 2022
+    * Gabrielle Prichard - Cloud Solution Engineer, March 2022
