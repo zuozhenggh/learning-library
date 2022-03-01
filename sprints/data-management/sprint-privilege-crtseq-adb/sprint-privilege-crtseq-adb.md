@@ -1,4 +1,4 @@
-# How to handle insufficient privileges error while creating a sequence in an autonomous database?
+# How can I handle insufficient privileges error while creating a sequence in an autonomous database?
 Duration: 2 minutes
 
 You want to create a sequence in an autonomous database and you face this error:

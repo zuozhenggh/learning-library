@@ -165,7 +165,7 @@ Create a Data Catalog instance using the following steps.
 
    ![The newly created Data Catalog instance is displayed with an Active state.](./images/click-data-catalog.png " ")
 
-## Task 4: Create, Import, and Edit a Glossary
+## Task 4: Create and Import a Glossary
 
 In this task, you create a new and empty business glossary in the newly created Data Catalog instance. Next, you  import an existing glossary from your local file system into the new glossary. You use a business glossary to define your concepts across your business domain. Creating a business glossary brings common understanding of the vocabulary used throughout your organization. In Data Catalog, you create categories and terms in a glossary to manage and organize your business concepts. Terms are the actual definitions of business concepts as agreed upon by different business stakeholders in your company. You use terms to organize your data entities and attributes. You can edit a glossary, category, or term to modify their default properties such as name, owner, status, and description, or any custom property that is associated with a glossary, category, or term. For detailed information on managing glossaries, see [Managing a Business Glossary](https://docs.oracle.com/en-us/iaas/data-catalog/using/manage-glossary.htm#create-glossary) in the _Oracle Cloud Infrastructure_ documentation.
 
@@ -184,9 +184,9 @@ In this task, you create a new and empty business glossary in the newly created 
    ![The Glossaries tab and the Create Glossary button are highlighted.](./images/click-create-glossary.png " ")
 
 
-4. Click **Create Glossary**. The **Create Glossary** panel is displayed. Enter **`MovieStream Application`** in the **Name** field, and then click **Create**.
+4. Click **Create Glossary**. The **Create Glossary** panel is displayed. Enter **`MovieStream Application`** in the **Name** field and **`Describes the assets related to the MovieStream data`** in the **Description** field, and then click **Create**.
 
-   ![The Create button on the completed Create Glossary panel is highlighted.](./images/create-glossary-panel.png " ")
+   ![The Create button on the completed Create Glossary panel is highlighted.](./images/ll-create-glossary-panel.png " ")
 
    The **MovieStream Application** glossary tab is displayed.
 
@@ -196,17 +196,16 @@ In this task, you create a new and empty business glossary in the newly created 
 
   ![The Proceed button is highlighted.](./images/note-proceed.png " ")
 
-6. In the **Open** dialog box for your local system, copy and enter the following public pre-authenticated request (PAR) URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Select **All Files** from the second drop-down list, and then click **Open**. See [Pre-Authenticated requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm).
-
+6. In the **Open** dialog box for your local system, copy and enter the following URL that represents a glossary that was exported from a different Data Catalog instance in the **File name** text box. Select **All Files** from the second drop-down list, and then click **Open**.
 
     ```
     <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_scripts/o/dcat/MovieStream%20ApplicationExport.xlsx</copy>
     ```
 
-    ![The populated File name text field and Open button are highlighted.](./images/specify-par.png " ")
+    ![The populated File name text field and Open button are highlighted.](./images/specify-url.png " ")
 
     >**Note:**     
-    If you are using an Apple Macintosh computer, you cannot use a PAR URL to import a glossary; instead, download the [moviestream-application.xlsx](files/moviestream-application.xlsx?download=1) glossary file to your local machine first. Next, click **Import**. In the **Open** dialog box, navigate to the folder that contains the glossary file, select it, and then click **Open**.
+    If you are using an Apple Macintosh computer, you cannot use a URL to import a glossary; instead, download the [moviestream-application.xlsx](files/moviestream-application.xlsx?download=1) glossary file to your local machine first. Next, click **Import**. In the **Open** dialog box, navigate to the folder that contains the glossary file, select it, and then click **Open**.
 
 7. An import job is triggered and a message is displayed. You can click the **View Job** link in the message to view the details of this job.
 
@@ -222,21 +221,7 @@ In this task, you create a new and empty business glossary in the newly created 
 
     >**Note:** The categories and terms created within a glossary are displayed in the **Glossary Hierarchy** tree navigation list. Expand each category to view terms created within that category. The summary information changes as you click different nodes in the glossary tree. You can use Expand All or Collapse All to expand or collapse all the nodes available in the glossary respectively. You can also use the search bar to search for categories and terms. If the glossary children are not displayed, click **Refresh glossary**.
 
-9. Edit the default properties for your **MovieStream Application** glossary to include a description which you didn't specify when you created the glossary. In the **Glossary Hierarchy** pane, click the **MovieStream Application** glossary. In the **Default Properties** section on the right, click **Edit**.
-
-   ![In the Glossary Hierarchy pane, the MovieStream Application link is selected and highlighted. In the Summary tab, the Edit link in the Default Properties section is highlighted.](./images/edit-glossary-description.png " ")
-
-   The **Edit Default Properties** panel opens as an overlay.
-
-10. Enter "`Describes the assets related to the MovieStream data`" in the **Description** field. Click **Save Changes**.
-
-   ![The populated Edit Default Properties panel is displayed. The Save Changes button is highlighted.](./images/add-description.png " ")
-
-   The updated description is displayed in the **Default Properties** section.
-
-   ![The updated description is shown and highlighted.](./images/description-added.png " ")
-
-11. Close the **Glossaries** and **MovieStream Application** tabs.
+9. Close the **Glossaries** and **MovieStream Application** tabs.
 
 
 ## Task 5: Create a Dynamic Group

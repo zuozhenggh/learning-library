@@ -1,4 +1,4 @@
-# How to manually failover to a standby database?
+# How can I manually failover to a standby database?
 Duration: 10 minutes
 
 When Autonomous Data Guard cannot automatically fail over to a local Standby database, if a local Standby database is available you can perform a manual failover to make the local Standby database the Primary database. If a cross-region Standby is available, you can perform a switchover to make the cross-region Standby database the Primary database and if the switchover fails, you can initiate a manual failover to the cross-region Standby. It is possible for data loss to occur with a manual failover.

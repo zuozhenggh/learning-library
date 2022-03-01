@@ -153,7 +153,7 @@ This lab assumes that you have already completed the earlier labs.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
-2. Click **Scale Up/Down** and enter 2 in the OCPU field. Click **Update**.
+2. Select DB1, the database that contains the order schema, click **More Actions**, and enter 2 in the OCPU field. Click **Update**.
 
    ![](images/ScaleTo2dbocpuScreen1.png " ")
 
@@ -189,7 +189,7 @@ This lab assumes that you have already completed the earlier labs.
 
 2. Click **Scale Up/Down** and enter 1 in the OCPU field. Click **Update**.
 
-   ![](images/ScaleTo1dbocpuScreen1.png " ")
+   ![](images/ScaleTo2dbocpuScreen1.png " ")
 
    ![](images/ScaleTo1dbocpuScreen2.png " ")
 

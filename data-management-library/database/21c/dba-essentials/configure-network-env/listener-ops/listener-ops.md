@@ -14,7 +14,9 @@ Check the listener status, stop the listener, restart the listener, and view lis
 
 This lab assumes you have -
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- Completed all previous labs successfully.
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
 
 ## Task 1: Set the Environment
 
@@ -49,7 +51,7 @@ You have set the environment variables for the active terminal session. You can 
 
 > **Note:** Every time you open a new terminal window, you must set the environment variables to connect to Oracle 	Database from that terminal. Environment variables from one terminal do not apply automatically to other terminals.
 
-Alternatively, you may run the script file `.set-env-db.sh` from the home location and enter the number for `ORACLE_SID`. It sets the environment variables automatically. 
+Alternatively, you may run the script file `.set-env-db.sh` from the home location and enter the number for `ORACLE_SID`. It sets the environment variables automatically.
 
 ## Task 2: View the Listener Configuration
 
@@ -61,7 +63,7 @@ Run the `lsnrctl status` command to check whether the listener is up and running
 	$ <copy>./lsnrctl status</copy>
 	```
 
-	## Output 
+	## Output
 
 	The values may differ depending on the system you are using.
 
@@ -113,7 +115,7 @@ The listener starts automatically when the host system turns on. If a problem oc
 	$ <copy>./lsnrctl stop</copy>
 	```
 
-	## Output 
+	## Output
 
 	The values may differ depending on the system you are using.
 
@@ -133,16 +135,16 @@ The listener starts automatically when the host system turns on. If a problem oc
 	```
 	$ <copy>./sqlplus system@CDB1</copy>
 	```
-	
+
 	## Output
-	
+
 	```
 	SQL*Plus: Release 21.0.0.0.0 - Production on Thu Feb 17 14:20:00 2022
 	Version 21.4.0.0.0
 
 	Copyright (c) 1982, 2021, Oracle.  All rights reserved.
 
-	Enter password: 
+	Enter password:
 	ERROR:
 	ORA-12541: TNS:no listener
 	```
@@ -206,7 +208,7 @@ The listener starts automatically when the host system turns on. If a problem oc
 	You will see an output indicating that the listener service is running.
 
 1. Once again log in to SQL Plus as *SYSTEM* using the password and service name.   
-   For this lab, the password is *Ora_DB4U* and the service name is *CDB1*. 
+   For this lab, the password is *Ora_DB4U* and the service name is *CDB1*.
 
 	```
 	$ <copy>./sqlplus system/Ora_DB4U@CDB1</copy>
@@ -222,7 +224,7 @@ The listener starts automatically when the host system turns on. If a problem oc
 
 	Copyright (c) 1982, 2021, Oracle.  All rights reserved.
 
-	Enter password: 
+	Enter password:
 	Last Successful login time: Thu Feb 17 14:07:14 +00:00
 
 	Connected to:
