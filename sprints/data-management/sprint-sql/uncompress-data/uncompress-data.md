@@ -1,4 +1,4 @@
-# How can I disable table compression in Oracle database?
+# How can I disable table compression in the Oracle database?
 
 Duration: 1 minute
 

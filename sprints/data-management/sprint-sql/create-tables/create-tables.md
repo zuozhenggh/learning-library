@@ -1,4 +1,4 @@
-# How can I create tables in Oracle database?
+# How can I create tables in the Oracle database?
 
 Duration: 2 minutes
 

@@ -1,4 +1,4 @@
-# How can I write aggregate queries on table in Oracle database?
+# How can I write aggregate queries on a table in the Oracle database?
 
 Duration: 2 minutes
 

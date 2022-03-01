@@ -1,4 +1,4 @@
-# How can I create triggers to a table in Oracle database?
+# How can I create triggers for a table in the Oracle database?
 
 Duration: 2 minutes
 

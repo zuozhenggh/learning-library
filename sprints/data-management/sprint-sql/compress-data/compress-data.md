@@ -1,4 +1,4 @@
-# How can I compress data in a table in Oracle database?
+# How can I compress data in a table in the Oracle database?
 
 Duration: 2 minutes
 

@@ -1,4 +1,4 @@
-# How can I retrieve a dropped table in Oracle database?
+# How can I retrieve a dropped table in the Oracle database?
 
 Duration: 1 minute
 

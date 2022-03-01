@@ -1,4 +1,4 @@
-# How can I add columns to a table in Oracle database?
+# How can I add columns to a table in the Oracle database?
 
 Duration: 1 minute
 

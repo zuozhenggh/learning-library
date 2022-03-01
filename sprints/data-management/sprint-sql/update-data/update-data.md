@@ -1,4 +1,4 @@
-# How can I update data in a table in Oracle database?
+# How can I update data in a table in the Oracle database?
 
 Duration: 1 minute
 

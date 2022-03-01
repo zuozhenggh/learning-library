@@ -1,4 +1,4 @@
-# How can I query a table in Oracle database?
+# How can I query a table in the Oracle database?
 
 Duration: 2 minutes
 

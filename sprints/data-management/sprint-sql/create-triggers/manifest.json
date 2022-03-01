@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How can I create triggers to a table in Oracle database?",
+            "title": "How can I create triggers for a table in the Oracle database?",
             "description": "",
             "filename": "./create-triggers.md"
         }

@@ -1,4 +1,4 @@
-# How can I index columns in Oracle database?
+# How can I index columns in the Oracle database?
 
 Duration: 2 minutes
 
