@@ -1,54 +1,43 @@
-# How to un-drop a table in a database?
+# How can I retrieve a dropped table in the Oracle database?
 
-## Introduction
+Duration: 1 minute
 
-This lab walks you through the steps to un-drop a table in a database.
+## Retrieve a dropped table
 
-Estimated Time: 2 minutes
+If the RECYCLEBIN initialization parameter is set to ON (the default in 10g), then dropping this table will place it in the recycle bin. To see if you can un-drop a table run the following data dictionary query:
 
-### Objectives
+```
+<copy>
+select object_name, 
+    original_name, 
+    type, 
+    can_undrop, 
+    can_purge
+from recyclebin;
+</copy>
+```
 
-In this lab, you will:
+To retrieve tables we use the flashback command:
 
-* Un-drop a table in a database
+```
+<copy>
+FLASHBACK TABLE TABLE_NAME TO BEFORE DROP;
+</copy>
+```
 
-### Prerequisites
+### Example
 
-* Have created departments and employees tables in a database
+For example, to retrieve employees table after checking the recycle bin:
 
-## Task 1: Un-drop a table
-
-1. If the RECYCLEBIN initialization parameter is set to ON (the default in 10g), then dropping this table will place it in the recycle bin. To see if you can undrop a table run the following data dictionary query:
-
-    ```
-    <copy>
-    select object_name, 
-       original_name, 
-       type, 
-       can_undrop, 
-       can_purge
-    from recyclebin;
-    </copy>
-    ```
-
-    ![Check if you can undrop the tables](../images/check-undrop-table.png)
-
-2. To undrop tables we use the flashback command, for example:
-
-    ```
-    <copy>
-    flashback table DEPARTMENTS to before drop;
-    flashback table EMPLOYEES to before drop;
-    select count(*) departments 
-    from departments;
-    select count(*) employees
-    from employees;
-    </copy>
-    ```
-
-    ![Undrop both the tables](../images/undrop-tables.png)
+```
+flashback table EMPLOYEES to before drop;
+select count(*) employees
+from employees;
+```
 
 ## Learn More
 
+* Explore more about [Recovering a Dropped Table Using Oracle Flashback Drop](https://docs.oracle.com/database/121/ADMQS/GUID-5A842A1B-4A32-46D1-9269-3F51244BBEB9.htm#ADMQS0944)
+* Learn more about [Recovering a Dropped Table](https://docs.oracle.com/en/database/oracle/oracle-database/tutorial-rec-flashback/index.html?opt-release-19c?learningpath=true&appuser=nobody&appsession=9331452079823&contentid=26524&activityname=Recover%20a%20Dropped%20Table%20Using%20Oracle%20Flashback%20Drop&eventid=6362)
 * [Introduction to Oracle SQL Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=943)
 * [SQL Language Reference](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC)

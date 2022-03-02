@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to add a standby database?",
+            "title": "How do I add a standby database?",
             "description": "",
             "filename": "sprint-add-standby-adb.md"
         },
