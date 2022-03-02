@@ -75,7 +75,7 @@ To work with the application code, you need to make a clone from the GitHub repo
 
 ## Task 6: Start the Setup
 
-- Execute the below command into cloud shell to start the setup.
+1. Execute the below command into cloud shell to start the setup.
   
     ```bash
     <copy>
@@ -83,11 +83,11 @@ To work with the application code, you need to make a clone from the GitHub repo
     </copy>
     ```
   
-- Enter the password to be used for database connection and wait for the ATP provisioning when you will see the message: **"Action completed. Waiting until the resource has entered state: ('AVAILABLE',)".**
+2. Enter the password to be used for database connection and wait for the ATP provisioning when you will see the message: **"Action completed. Waiting until the resource has entered state: ('AVAILABLE',)".**
+
+3. The setup process will typically take around 5 minutes to complete.
 
 > **Note:** Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then re-run the above command to resume the setup.
-
-The setup process will typically take around 5 minutes to complete.
 
 ## Task 7: Complete the Setup
 
