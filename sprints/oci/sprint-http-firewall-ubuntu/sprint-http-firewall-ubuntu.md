@@ -1,4 +1,4 @@
-# How to allow incoming http traffic (port 80) on an Ubuntu instance?
+# How can I allow incoming http traffic (port 80) on an Ubuntu instance?
 Duration: 5 minutes
 
 ## Update iptables

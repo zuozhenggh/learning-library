@@ -3,7 +3,7 @@
     "help": "livelabs-help-oci_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to configure the VNC to allow ingress traffic on port 80?",
+            "title": "How can I configure the VNC to allow ingress traffic on port 80?",
             "description": "",
             "filename": "sprint-vcn-ingress-port80.md"
         },
