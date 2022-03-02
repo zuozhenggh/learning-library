@@ -70,20 +70,20 @@ This lab will give an understanding of Advanced Queues creation using different 
 ## Task 4: Create AQ, Enqueue and Dequeue using Java
 
 1. Point to Point
-   - Execute the following sequence of commands into cloud shell:
+    - Execute the following sequence of commands into cloud shell:
 
-    ```bash
-    <copy> curl http://localhost:8081/oracleAQ/pointToPointAQ 
-    </copy>
-    ```
+        ```bash
+        <copy> curl http://localhost:8081/oracleAQ/pointToPointAQ 
+        </copy>
+        ```
 
 2. Publisher Subscriber
-   - Execute the following sequence of commands into cloud shell:
+    - Execute the following sequence of commands into cloud shell:
 
-    ```bash
-    <copy> curl http://localhost:8081/oracleAQ/pubSubAQ 
-    </copy>
-    ```
+        ```bash
+        <copy> curl http://localhost:8081/oracleAQ/pubSubAQ 
+        </copy>
+        ```
 
     You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/enqueueDequeueAQ/EnqueueDequeueAQ.java)
 
