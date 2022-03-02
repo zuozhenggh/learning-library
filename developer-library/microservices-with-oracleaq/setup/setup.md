@@ -58,31 +58,32 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 ## Task 5: Make a Clone of the Workshop Setup Script and Source Code
 
-To work with the application code, you need to make a clone from the GitHub repository using the following command.  
+To work with the application code, you need to make a clone from the GitHub repository.  
 
-```bash
-<copy>
-git clone https://github.com/oracle/microservices-datadriven.git;
-cp -r ./microservices-datadriven/workshops/oracleAQ $HOME;     
-rm -r -f microservices-datadriven; 
-cd oracleAQ;
-</copy>
-```
+1. Execute the following sequence of commands into cloud shell:
 
-You should now see the directory `oracleAQ` in the directory that you clone.
+    ```bash
+    <copy>
+    git clone https://github.com/oracle/microservices-datadriven.git;
+    cp -r ./microservices-datadriven/workshops/oracleAQ $HOME;     
+    rm -r -f microservices-datadriven; 
+    cd oracleAQ;
+    </copy>
+    ```
+
+2. You should now see the directory `oracleAQ` in the directory that you clone.
 
 ## Task 6: Start the Setup
 
-- Execute the below command to start the setup.
+- Execute the below command into cloud shell to start the setup.
   
-```bash
-<copy>
-source setup.sh
-</copy>
-```
+    ```bash
+    <copy>
+    source setup.sh
+    </copy>
+    ```
   
-- Enter the password to be used for database connection and wait for the ATP provisioning when you will see the message:
-"Action completed. Waiting until the resource has entered state: ('AVAILABLE',)".
+- Enter the password to be used for database connection and wait for the ATP provisioning when you will see the message: **"Action completed. Waiting until the resource has entered state: ('AVAILABLE',)".**
 
 > **Note:** Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then re-run the above command to resume the setup.
 
@@ -92,13 +93,13 @@ The setup process will typically take around 5 minutes to complete.
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has been completed you will see the message: **SETUP COMPLETED**.
 
-If any of the background setup jobs are still running you can monitor their progress with the following command.
+1. If any of the background setup jobs are still running you can monitor their progress with the following command into cloud shell.
 
-```bash
-<copy>
-ps -ef | grep "$ORACLEAQ_HOME" | grep -v grep
-</copy>
-```
+    ```bash
+    <copy>
+    ps -ef | grep "$ORACLEAQ_HOME" | grep -v grep
+    </copy>
+    ```
 
 > **Note:**  Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 

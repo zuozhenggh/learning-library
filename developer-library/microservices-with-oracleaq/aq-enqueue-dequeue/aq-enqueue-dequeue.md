@@ -67,7 +67,7 @@ This lab will give an understanding of Advanced Queues creation using different 
     </copy>
     ```
 
-## Task 4: AQ creation, Enqueue and Dequeue using Java
+## Task 4: Create AQ, Enqueue and Dequeue using Java
 
 1. Point to Point
    - Execute the following sequence of commands into cloud shell:
@@ -85,9 +85,9 @@ This lab will give an understanding of Advanced Queues creation using different 
     </copy>
     ```
 
-[VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/workflowTEQ/EnqueueDequeueAQ.java)
+    You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/enqueueDequeueAQ/EnqueueDequeueAQ.java)
 
-## Task 5: Cleanups
+## Task 5: Cleanup
 
 1. Below are the code samples to cleanup AQ
 

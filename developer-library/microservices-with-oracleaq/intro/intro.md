@@ -50,7 +50,7 @@ Oracle Transactional Event Queues (TEQ) are a high-performance partitioned imple
 
 ### Let's Get Started
 
-Proceed to the next [lab](#next).
+You may now **proceed to the next lab.**
 
 ## Want to Learn More?
 

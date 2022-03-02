@@ -10,13 +10,13 @@ This workflow relies on a secure and verified delivery from an Application to th
 
 This Lab will help you understand OTP workflow (one-time-password)/ Second-Factor Authentication/ 2FA based on order delivery with multiconsumer classic Queues.
 
-![workflow](./images/Workflow.png " ")
+![workflow](./images/workflow.png " ")
 
 ### Prerequisites
 
 - This workshop assumes you have an Oracle cloud account and configured setup in Lab 1.
 
-## Task 1: Creation of required queues- User, Deliverer, Application
+## Task 1: Create queues
 
 1. Below are the code samples to create required queues
 
@@ -64,9 +64,9 @@ Below are the code samples to create the workflow
 
       - Message(OrderId, username, 9707 , deliveryLocation, "PENDING")
 
-## Task 4: Application Validates the OTP shared by Deliverer
+## Task 4: OTP verification
 
-- **Application validation is successful:**
+- **Application verification for OTP is successful:**
 
     1. Application updates DELIVERY STATUS as "DELIVERED" in the exiting record.
 
@@ -80,7 +80,7 @@ Below are the code samples to create the workflow
 
     4. Deliverer handover the order to User.
 
-- **Application validation is failed:**
+- **Application validation for OTP is failed:**
 
     1. Application updates DELIVERY STATUS as "FAILED" in the Database.
 
@@ -94,7 +94,7 @@ Below are the code samples to create the workflow
 
     4. Deliverer declines delivery to User.
 
-    - Execute the following sequence of commands into cloud shell:
+    Execute the following sequence of commands into cloud shell:
 
     ```bash
 
@@ -104,19 +104,19 @@ Below are the code samples to create the workflow
 
     ```
 
-   [VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ)
+    You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ)
 
 ## Task 5: Workflow using Java
 
 1. Execute the following sequence of commands into cloud shell:
 
-  ```bash
+    ```bash
 
-  <copy> curl http://localhost:8081/oracleAQ/workflowAQ </copy>
+    <copy> curl http://localhost:8081/oracleAQ/workflowAQ </copy>
 
-  ```
+    ```
 
-[VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/workflowTEQ/WorkflowAQ.java)
+    You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/workflowAQ/WorkflowAQ.java)
 
 ## Task 6: Cleanups: Drop the QueueTables(User, Deliverer, Application)
 
