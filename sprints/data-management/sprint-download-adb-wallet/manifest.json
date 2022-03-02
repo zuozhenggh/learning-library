@@ -13,12 +13,12 @@
             "filename": "../sprint-find-adb-ocid/sprint-find-adb-ocid.md"
         },
         {
-            "title": "How to install OCI CLI?",
+            "title": "How do I install OCI CLI?",
             "description": "",
             "filename": "../../oci/sprint-install-ocicl/sprint-install-ocicl.md"
         },
         {
-            "title": "How to add autocomplete for OCI CLI?",
+            "title": "How can I add autocomplete for OCI CLI?",
             "description": "",
             "filename": "../../oci/sprint-autocomplete-for-ocicl/sprint-autocomplete-for-ocicl.md"
         }

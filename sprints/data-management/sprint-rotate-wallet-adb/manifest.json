@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to rotate a wallet in ADB?",
+            "title": "How can I rotate a wallet in ADB?",
             "description": "",
             "filename": "sprint-rotate-wallet-adb.md"
         },
