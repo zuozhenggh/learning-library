@@ -9,8 +9,8 @@ Estimated Time: 10 minutes
 ### Objectives
 
 - Deploy and access the Kafka Cluster
-- Deploy and access the Kafka Producer Microservices
-- Deploy and access the Kafka Consumer Microservices
+- Deploy and access the Kafka Producer Microservice
+- Deploy and access the Kafka Consumer Microservice
 - Learn how they work
 
 ### Prerequisites
@@ -119,7 +119,7 @@ The Kafka Producer and Consumer were written using Spring Boot and Spring Kafka 
 
     ```bash
         <copy>
-        docker run --detach --name=kafka-producer --network lab8022network -p 8080:8080 kafka-producer:0.0.1-SNAPSHOT
+        docker run --detach --name=kafka-producer --network lab8022network -p 8080:8080 oracle-developers-kafka-producer:0.0.1-SNAPSHOT
         </copy>
     ```
 
@@ -187,7 +187,7 @@ Now that we have Producer running and publishing events inside the Kafka Broker,
 
     ```bash
         <copy>
-        docker run --detach --name=kafka-consumer --network lab8022network kafka-consumer:0.0.1-SNAPSHOT
+        docker run --detach --name=kafka-consumer --network lab8022network oracle-developers-kafka-consumer:0.0.1-SNAPSHOT
         </copy>
     ```
 

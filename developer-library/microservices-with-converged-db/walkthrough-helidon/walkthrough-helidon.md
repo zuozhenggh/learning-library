@@ -162,19 +162,19 @@ Oracle JET web component <oj-spatial-map> provides access to mapping from an Ora
     ```
     <copy>cd $GRABDISH_HOME/foodwinepairing-python;./deploy.sh</copy>
     ```
-   
+
 2.  Verify the foodwinepairing-python pod is running:
 
     ```
-    <copy>kubectl get pods --all-namespaces</copy> 
+    <copy>kubectl get pods --all-namespaces</copy>
     ```
 
 3. Redeploy inventory-helidon passing true to `./deploy.sh` using the following command. This will change the `isSuggestiveSaleAIEnabled` value in inventory-helidon-deployment.yaml to true and redeploy.                                                                                         
-  
+
     ```
     <copy>cd $GRABDISH_HOME/inventory-helidon;./deploy.sh true</copy>
     ```
-  
+
 4.  Verify the new inventory-helidon pod is running:
 
     ```
@@ -369,15 +369,15 @@ As the deployments in the workshop are configured with `imagePullPolicy: Always`
 
 If changes have been made to the deployment yaml then re-run `./deploy.sh` in the appropriate microservice's directory.
 
-## Task 10: Develop, build, deploy, etc. in your own environment, outside Cloud Shell  (Study)
+## Task 11: Develop, build, deploy, etc. in your own environment, outside Cloud Shell  (Study)
 
 The Cloud Shell is extremely convenient for development as it has various software pre-installed as well as software installed by the workshop, however it is certainly possible to do development outside the Cloud Shell.
 The following are the major considerations in doing so...
 
 - Building microservices will of course require the software required for a particular service to be installed. For example maven, GraalVM, etc.
 
-- Pushing microservices to the OCI repository will require logging into the repos via docker and for this you will need an authtoken. 
-You can re-use the auth token created in the workshop or easily create a new one (see setup lab doc). 
+- Pushing microservices to the OCI repository will require logging into the repos via docker and for this you will need an authtoken.
+You can re-use the auth token created in the workshop or easily create a new one (see setup lab doc).
 Using the auth token you can then login to docker using the following format (replacing values as appropriate)...
 
   ```

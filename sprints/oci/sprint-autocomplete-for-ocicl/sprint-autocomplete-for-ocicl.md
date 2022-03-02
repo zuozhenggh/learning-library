@@ -1,4 +1,4 @@
-# How to add autocompletion to OCI CLI?
+# How can I add autocompletion to OCI CLI?
 Duration: 2 minutes
 
 ## Adding autocompletion to OCI CLI

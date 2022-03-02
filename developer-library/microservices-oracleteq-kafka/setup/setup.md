@@ -77,7 +77,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```bash
-    <copy>git clone -b 22.1.4 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
+    <copy>git clone -b 22.2.2 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
     ```
 
    You should now see the directory `microservices-datadriven` in the directory that you created.
@@ -86,7 +86,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```bash
     <copy>
-    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/microservices-oracleteq-kafka" >>~/.bashrc
+    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/oracleteq-kafka" >>~/.bashrc
     export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2
     echo "export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2" >>~/.bashrc
     echo "export PATH=$JAVA_HOME/bin/:$PATH" >>~/.bashrc
@@ -131,7 +131,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ![OCI User OCID example](images/example-user-ocid.png " ")
 
-3. The setup will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin". Please don't forget your database password because during the labs you will be asked to provide it again.
+3. The setup will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin." Please don't forget your database password because you will have to provide it again during the labs.
 
 **Note**: The passwords typed are not displayed.
 
@@ -161,8 +161,13 @@ Also, the setup will pull a GraalVM CE java11 to your Cloud Shell (local) Docker
 As result you will see the following:
 
   ```bash
-  REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-  ghcr.io/graalvm/graalvm-ce   java11-22.0.0.2     9c09d46390b6        2 months ago        1.32GB
+  REPOSITORY                        TAG                 IMAGE ID            CREATED             SIZE
+  cp-kafka-connect-custom           0.1.0               b7c09d1ca0c1        6 minutes ago       1.43GB
+  ghcr.io/graalvm/graalvm-ce        ol8-java11          87c0795cf942        5 days ago          1.34GB
+  confluentinc/cp-kafka-connect     7.0.1               ce86628e990d        6 weeks ago         1.39GB
+  confluentinc/cp-server            7.0.1               81fddf506c55        6 weeks ago         1.54GB
+  confluentinc/cp-schema-registry   7.0.1               43303c1d5097        6 weeks ago         1.64GB
+  confluentinc/cp-zookeeper         7.0.1               3a7ea656f1af        6 weeks ago         780MB
   ```
 
 **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
