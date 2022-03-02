@@ -3,7 +3,8 @@ Duration: 5 minutes
 
 ## Update iptables
 
-The Ubuntu firewall is disabled by default. However, you still need to update your iptables configuration to allow HTTP traffic. Update iptables with the following commands.
+You need to update your iptables configuration to allow HTTP traffic. 
+Update <code>iptables</code> with the following commands.
 
 ```
 <copy>
@@ -12,4 +13,8 @@ sudo netfilter-persistent save
 </copy>
 ```
 
+## Learn More
+
+* [Example: Install PHP and Apache on Ubuntu in OCI](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/apache-on-ubuntu/01oci-ubuntu-apache-summary.htm)
+* [Networking Documentation](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 
