@@ -1,0 +1,23 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How to allow incoming http traffic (port 80) on an Ubuntu instance?",
+            "description": "",
+            "filename": "sprint-http-firewall-ubuntu.md"
+        },
+        {
+            "title": "How to configure the VNC to allow ingress traffic on port 80?",
+            "description": "",
+            "filename": "sprint-http-firewall-ubuntu.md"
+        },
+        {
+            "title": "How do I create a VCN?",
+            "description": "",
+            "filename": "../sprint-create-vcn.md"
+        }
+        
+    
+    ]
+}
