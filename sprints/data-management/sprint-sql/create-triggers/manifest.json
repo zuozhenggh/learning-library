@@ -6,6 +6,11 @@
             "title": "How can I create triggers for a table in the Oracle database?",
             "description": "",
             "filename": "./create-triggers.md"
+        },
+        {
+            "title": "How can I disable triggers for a table in the Oracle database?",
+            "description": "",
+            "filename": "../disable-triggers/disable-triggers.md"
         }
     ]
 }
