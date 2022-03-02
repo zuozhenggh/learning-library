@@ -1,0 +1,12 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How do I get Compression Ratio?",
+            "description": "",
+            "filename": "sprint-dbms-compression.md"
+        }
+
+    ]
+}
