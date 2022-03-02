@@ -1,7 +1,7 @@
 # Use DLS to Bulk Label Dataset
 
 ## Introduction
-In this lab, we will provide a .zip file containing biomedical images separated into 3 subfolders based on how each image has been medically classified. In this lab, participants will download this .zip file, bulk upload the images to object storage, and will create a labeled dataset using the Data Labeling Service and custom bulk-labeling code.
+In this lab, we will provide a ZIP file containing biomedical images separated into 3 subfolders based on how each image has been medically classified. In this lab, participants will download this ZIP file, bulk upload the images to object storage, and will create a labeled dataset using the Data Labeling Service and custom bulk-labeling code.
 
 *Estimated Time*: 60 minutes
 
@@ -11,7 +11,7 @@ In this lab, you will:
 - Create an Object Storage Bucket and load images from your local machine into the Bucket
 - Create a Data Labeling Service dataset and bulk label the images that were loaded into Object Storage
 
-### Prerequisites and Additional Requirements
+### Prerequisites
 
 - An Oracle Free Tier, or Paid Cloud Account
 - Ensure that you have OCI-CLI installed. If unsure, run the following in your local command line and make sure your namespace is returned.
@@ -22,7 +22,7 @@ In this lab, you will:
 - Ensure that you have Python SDK installed on your machine by following the steps [here](https://docs.oracle.com/en-us/iaas/tools/python/2.57.0/installation.html#install)
   * Note that if you have a Python version of less than 3, it is necessary to replace all instances of 'python3' in the CLI operations mentioned in this lab with 'python'. In these lab instructions, we will assume that the user has Python3.
 
-**Required Download:** Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/j8C5pBw0Nco_tjY_ggsCEHlJUk9IDWms8hGHtGkRIt-EqCGPWZWicJLwxBJE-brX/n/orasenatdpltintegration03/b/all-images-live-lab/o/Biomedical_Demo.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
+**Required Download:** Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/f-1dBsWg9DAGhViJqzilRjdlGZOWrKbXAak6t1SUUq12pkgSubfxUVMD9bUYuwHC/n/orasenatdpltintegration03/b/all-images-live-lab/o/Biomedical_Demo.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
 
 ## **Policy Setup**
 
@@ -44,7 +44,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   f. Click 'Create Compartment'
   ![](./images/create-compartment.png)
 
-2. Retrieve the compartment OCID
+2. Retrieve the compartment OCID and record it. You will need this later.
 
 3. Make a group and add your user to it.
 
@@ -61,7 +61,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   e. Select user you want to add to the group.
 
 
-4.  Create a Dynamic Group
+4.  Create a Dynamic Group.
 
     a. From the OCI services menu, click 'Dynamic Groups' under 'Identity'
     ![](./images/dynamic-group.png)
@@ -117,10 +117,10 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
       ```
 ## **Task 1:** Create an Object Storage Bucket
 
-1. From the OCI services menu, click 'Buckets' under 'Object Storage & Archive Storage'
+1. From the OCI services menu, click 'Buckets' under 'Object Storage & Archive Storage.'
   ![](./images/obj-storage-bucket.png)
 
-2. Set your Compartment to the desired Compartment using the drop down under List Scope
+2. Set your Compartment to the desired Compartment using the drop down under List Scope.
   ![](./images/select-compartment.png)
 
 3. Click 'Create Bucket' and enter details for your Bucket:
@@ -144,12 +144,12 @@ Note: These instructions are Mac OS compatible
     <copy>export DL_Compartment=<OCID of your Compartment></copy>
     ```
 
-2. On your local machine, execute the following commands to set environment variables for the directory named "Cell" that contains your .jpg/.jpeg image files to be labeled accordingly. Be sure to replace the information in "<>" with your own values.
+2. On your local machine, execute the following commands to set environment variables for the directory named "Cell" that contains your JPG/JPEG image files to be labeled accordingly. Be sure to replace the information in "<>" with your own values.
     ```
     <copy>export DL_LabelDirectory="<path to Cell folder>"</copy>
     ```
 
-3. Execute the following command to bulk-upload the .jpg/.jpeg image files to your bucket from the "Cell" folder, appending the prefix "c" to the objects that will be created from this bulk-upload command, which will be used to bulk-label the records in our Dataset later in this lab.
+3. Execute the following command to bulk-upload the JPG/JPEG image files to your bucket from the "Cell" folder, appending the prefix "c" to the objects that will be created from this bulk-upload command, which will be used to bulk-label the records in our Dataset later in this lab.
     ```
     <copy>oci os object bulk-upload --bucket-name "${DL_BucketName}" --src-dir $DL_LabelDirectory --content-type 'image/jpeg' --object-prefix c</copy>
     ```
@@ -161,16 +161,16 @@ Note: These instructions are Mac OS compatible
 ![](./images/obj-storage-upload-confirm.png)
 
 ## **Task 3:** Create a Data Labeling Service Dataset
-1. From the OCI services menu, click 'Data Labeling' under 'Machine Learning'
+1. From the OCI services menu, click 'Data Labeling' under 'Machine Learning.'
 ![](./images/dls.png)
 
-2. Click on 'Datasets'
+2. Click on 'Datasets.'
 ![](./images/datasets.png)
 
-3. Set your Compartment to the same Compartment where you created your Bucket using the drop down under List Scope
+3. Set your Compartment to the same Compartment where you created your Bucket using the drop down under List Scope.
 ![](./images/compartment-dls.png)
 
-4. Create your dataset by clicking 'Create dataset'
+4. Create your dataset by clicking 'Create dataset.'
 
   a. Name: enter a name for your DLS Dataset that you can recognize, e.g. image-classification-demo
 
@@ -217,7 +217,7 @@ Note: These instructions are Mac OS compatible
 
 4. Open your Command-Line Interface (CLI) and navigate to the folder where the bulk-labeling tool files exist on your machine.
 
-5. Bulk-label the records in your DLS Dataset by running the following command
+5. Bulk-label the records in your DLS Dataset by running the following command:
     ```
     <copy>python3 main.py</copy>
     ```
