@@ -16,18 +16,21 @@ PL/SQL, Java, and (in the near future) Python AQ/ TEQ Workflow examples will be 
 
 ### Prerequisites
 
-- This workshop assumes you have an Oracle cloud account and have signed in to the account.
+- An Oracle Cloud Account- Please view this workshop's LiveLabs landing page to see which environments are supported.
 
-## Task 1: What is Queuing?
+>**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+
+## What is Queuing?
 
 Transactional Event Queue (TEQ) and Advanced Queuing (AQ) stores user messages in abstract storage units called queues. When web, mobile, IoT, and other data-driven and event-driven applications stream events or communicate with each other as part of a workflow, producer applications enqueue messages and consumer applications dequeue messages.
 
-## Task 2: Introduction to Transactional Event Queues and Advanced Queuing
+# Introduction to Transactional Event Queues and Advanced Queuing
 
 Transactional Event Queues (TEQ) are highly optimized implementations of AQ previously called AQ Sharded Queues. Both TEQ and AQ in the Oracle database address the requirements from data-driven and event-driven architectures in modern enterprise applications.
  ![intro](./images/intro.gif " ")
 
-## Task 3: Transactional Event Queues Leverage Oracle Database
+## Transactional Event Queues Leverage Oracle Database
 
 Oracle Transactional Event Queues (TEQ) provide database-integrated message queuing functionality. This highly optimized and partitioned implementation leverages the functions of Oracle database so that producers and consumers can exchange messages with high throughput, by storing messages persistently, and propagating messages between queues on different databases.
 Oracle Transactional Event Queues (TEQ) are a high-performance partitioned implementation with multiple event streams per queue, while Advanced Queuing (AQ) is a disk-based implementation for simpler workflow use cases. Naming nomenclature for TEQ and AQ in Oracle Database Release 21c are as follows:
@@ -38,7 +41,7 @@ Oracle Transactional Event Queues (TEQ) are a high-performance partitioned imple
 | Persistent messages | AQ Sharded queues | TEQ queues         |
 | Buffered messages   | AQ classic queues | AQ buffered queues |
 
-## Task 4: Transactional Event Queues and Advanced Queuing Implementation
+## Transactional Event Queues and Advanced Queuing Implementation
 
 - Point-to-Point Messaging
     A point-to-point message is aimed at a specific target. Senders and receivers decide on a common queue in which to exchange messages. Each message is consumed by only one receiver.

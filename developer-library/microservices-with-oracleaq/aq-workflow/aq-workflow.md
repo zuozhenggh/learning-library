@@ -118,7 +118,7 @@ Below are the code samples to create the workflow
 
     You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/workflowAQ/WorkflowAQ.java)
 
-## Task 6: Cleanups: Drop the QueueTables(User, Deliverer, Application)
+## Task 6: Drop the queues
 
 1. Below are the code samples to cleanup workflow Queues
 

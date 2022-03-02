@@ -79,7 +79,7 @@ Transactional Event Queues(TEQ) samples to create queues using different payload
 
     You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/enqueueDequeueTEQ/EnqueueDequeueTEQ.java)
 
-## Task 5: Cleanup
+## Task 5: Drop TEQ
 
 1. Below are the code samples to cleanup TEQ
 

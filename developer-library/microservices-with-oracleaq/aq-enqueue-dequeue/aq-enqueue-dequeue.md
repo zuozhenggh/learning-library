@@ -87,7 +87,7 @@ This lab will give an understanding of Advanced Queues creation using different 
 
     You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/enqueueDequeueAQ/EnqueueDequeueAQ.java)
 
-## Task 5: Cleanup
+## Task 5: Drop queues
 
 1. Below are the code samples to cleanup AQ
 
