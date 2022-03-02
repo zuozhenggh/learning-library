@@ -559,7 +559,7 @@ below.
 
 That completes the Automated Database Patching at Scale with Fleet Maintenance UI workshop.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)

@@ -569,7 +569,7 @@ That completes the Automated Database Upgrade at Scale with Fleet Maintenance UI
 - Update (Upgrade) Database from 18.10 to 19.7
 - Clean up old Oracle homes -->
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
