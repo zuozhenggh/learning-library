@@ -47,7 +47,7 @@ In this lab, you will:
 
 * Data information of insurance clients is like this:
 
-![cust_insur_ltv-table](../oml4sql-anomaly-detection/images/cust_insur_ltv-table.png)
+![cust_insur_ltv-table](../oml4sql-anomaly-detection/images/cust-insur-ltv-table.png)
 
 * Sample of single record is like this:
 
@@ -66,7 +66,7 @@ To see the service name, open other Linux Terminal and execute lsnrctl status co
 
 ![view-SSH-Hosts](../oml4sql-anomaly-detection/images/view-ssh.png)
 
-3. Right clic on SSH Hots and then do clic in New SSH Host, write values in each field and then clic Ok. The public and private IP can be obtained from OCI, entering Compute/Instances and you will be able to see and copy this data. 
+3. Right clic on SSH Hots and then do clic in New SSH Host, write values in each field and then clic Ok. The public and private IP can be obtained from OCI, entering Compute/Instances and you will be able to see and copy this data.
 
 ![ssh-remote-host](../oml4sql-anomaly-detection/images/ssh-remote-host.png)
 
@@ -79,7 +79,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
 6. Create SQL Developer new database connection with **SYS** user to your Oracle 21c Pluggable Database, and test connectivity with password: **MLlearnPTS#21_** and service name: mlpdb1.livelabs.oraclevcn.com
 
-![Database-connection-SYS](../oml4sql-anomaly-detection/images/Database-connection-SYS.png)
+![Database-connection-SYS](../oml4sql-anomaly-detection/images/database-connection-sys.png)
 
 7. Once the database connection is open and SQL Developer Worksheet is ready, execute this script to create the user oml4sql_user and grant privileges to work with OML4SQL API, and generate a copy of table CUST_INSUR_LTV.
 
@@ -108,7 +108,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
 8. Create SQL Developer new database connection with **oml4sql_user** user to your Oracle 21c Pluggable Database, and test connectivity with password: **oml4sql_user**.
 
-![oml4sql_user-connection](../oml4sql-anomaly-detection/images/oml4sql_user-connection.png)
+![oml4sql_user-connection](../oml4sql-anomaly-detection/images/oml4sql-user-connection.png)
 
 9. Copy and execute this script with oml4sql_user:
 
