@@ -27,27 +27,29 @@ This lab assumes you have:
 
 	![APEX Home](images/apex-home.png)
 
-2. Drag & drop the Apex application file **CustomerTracker.zip**  and click **Next**. Choose file type as **Database Application, Page or Component Export**
+2. Download [Customer Tracker APEX application](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/wms-id-10041-get-started-with-cec-and-apex/Customer-Tracker-APEX-App.zip) zip file.
+
+3. Drag & drop the Apex application file **CustomerTracker.zip**  and click **Next**. Choose file type as **Database Application, Page or Component Export**
 
   ![Import](images/import.png)
 
-3.	Screen will show you **File Import Confirmation** stage, just click **Next**
+4.	Screen will show you **File Import Confirmation** stage, just click **Next**
 
-4.	In next stage of **Install Database Application** , choose **Reuse Application ID 100 from Export file** for Install as Application. (We are reusing application ID so that you can refer the application URL as is at other places in the document. If you already have application and you can choose “Auto Assign Application ID. In that case remember to change Application id in URL where it’s referred)
+5.	In next stage of **Install Database Application** , choose **Reuse Application ID 100 from Export file** for Install as Application. (We are reusing application ID so that you can refer the application URL as is at other places in the document. If you already have application and you can choose “Auto Assign Application ID. In that case remember to change Application id in URL where it’s referred)
   
     ![Install DB](images/install-db.png)
 
-5.	Finally click **Install Application** and wait for next screen
+6.	Finally click **Install Application** and wait for next screen
 
-6.	Keep Clicking **Next** till you get last button with **Install**
+7.	Keep Clicking **Next** till you get last button with **Install**
  
   ![Install App](images/install-app.png)
 
-7. You will get below confirmation scree.
+8. You will get below confirmation scree.
   
     ![Install Complete](images/install-complete.png)
 
-8. Click **Edit Application** to complete this lab
+9. Click **Edit Application** to complete this lab
     ![Edit App](images/edit-app.png)
 
 ## Task 2: Create IAM application for SSO

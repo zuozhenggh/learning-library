@@ -18,12 +18,12 @@ As a site developer, you define the framework that site creators use to build si
 ### Objectives
 
 In this lab, you will:
-* Import Sample Site Template
+* Import Site Template
 * Create New Site
 * Change Site Security
 * Publish Site
 
-## Task 1: Import Sales Enablement Site Template
+## Task 1: Import Site Template
 
 1.	Navigate to **Developer** for side vertical menu
 
@@ -37,13 +37,15 @@ In this lab, you will:
 
   ![Import Template](images/import-template.png)
 
-4.	Click **Upload** button and then upload the site template zip file **CafeSupremoSalesEnablement.zip**
+4.  Download [CafeSupremoSalesEnablement.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/wms-id-10041-get-started-with-cec-and-apex/CafeSupremoSalesEnablement.zip)
+
+5. Click **Upload** button and then upload the site template zip file **CafeSupremoSalesEnablement.zip**
   
     ![Pick File](images/pick-template.png)
 
-5.	Select the uploaded file and then click **Ok**
+6.	Select the uploaded file and then click **Ok**
 
-6.	Wait for confirmation message for successful of template import and you will see the imported templated listed as below
+7.	Wait for confirmation message for successful of template import and you will see the imported templated listed as below
   
     ![Template](images/template-status.png)
 

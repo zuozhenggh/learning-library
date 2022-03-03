@@ -1,7 +1,7 @@
 # Setup content repository
 
 ## Introduction
-In this session we will setup Content repository where all content will be stored and managed. We will also define content structure with meta-data to store data along with file. At last we will provide access to IAM app which was create in *Lab 1*
+In this session we will setup Content repository where all content will be stored and managed. We will also define content structure with meta-data to store data along with file. At last we will provide access to IAM app which was create in *Lab 1*.
 
 
 Estimated Time: 10 minutes
