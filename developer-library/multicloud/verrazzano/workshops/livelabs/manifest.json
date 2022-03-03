@@ -4,6 +4,7 @@
     "tutorials": [
         {
             "title": "Introduction",
+            "type": "livelabs",
             "filename": "../../intro/intro.md"
         },
         {
@@ -12,27 +13,33 @@
         },
         {
             "title": "Lab 2: Install Verrazzano",
-            "filename": "../../install-verrazzano-ll/install-verrazzano-ll.md"
+            "type": "livelabs",
+            "filename": "../../install-verrazzano/install-verrazzano.md"
         },
         {
-            "title": "Lab 3: Deploy Bobs Books sample application",
-            "filename": "../../deploy-bobsbook-ll/deploy-bobsbook-ll.md"
+            "title": "Lab 3: Deploy Bobby's Books sample application",
+            "type": "livelabs",
+            "filename": "../../deploy-bobsbook/deploy-bobsbook.md"
         },
         {
-            "title": "Lab 4: Access the Bobs Books sample application Explore Verrazzano, Grafana and Kiali Console",
-            "filename": "../../access-application-ll/access-application-ll.md"
+            "title": "Lab 4: Access the Bobby's Books sample application Explore Verrazzano, Grafana and Kiali Console",
+            "type": "livelabs",
+            "filename": "../../access-application/access-application.md"
         },
 		{
             "title": "Lab 5: Modifying the Application component and Creation of new image",
-            "filename": "../../modify-helidonstock-ll/modify-helidonstock-ll.md"
+            "type": "livelabs",
+            "filename": "../../modify-helidonstock/modify-helidonstock.md"
         },
 		{
             "title": "Lab 6: Pushing new component image in Oracle Cloud Container Registry",
-            "filename": "../../pushing-new-image-ll/pushing-new-image-ll.md"
+            "type": "livelabs",
+            "filename": "../../pushing-new-image/pushing-new-image.md"
         },
 		{
             "title": "Lab 7: Modifying Application Configuration file to Re-deploy modified component",
-            "filename": "../../modify-yaml-config-ll/modify-yaml-config-ll.md"
+            "type": "livelabs",
+            "filename": "../../modify-yaml-config/modify-yaml-config.md"
         },
 	    {
             "title": "Lab 5-7: ALTERNATE VERSION with simplified solution",
@@ -40,7 +47,8 @@
         },
 		{
             "title": "Lab 8: Verifying the changes through application access and Curated stack",
-            "filename": "../../verify-changes-ll/verify-changes-ll.md"
+            "type": "livelabs",
+            "filename": "../../verify-changes/verify-changes.md"
         },
       {
         "title": "Need Help?",

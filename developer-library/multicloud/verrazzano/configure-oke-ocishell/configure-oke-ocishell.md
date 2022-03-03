@@ -1,8 +1,8 @@
-# Create Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)
+# Configure KUBECTL to interact with the Oracle Container Engine for Kubernetes (OKE) on Oracle Cloud Infrastructure (OCI)
 
 ## Introduction
 
-This lab walks you through the steps to create a managed Kubernetes environment on the Oracle Cloud Infrastructure.
+This lab walks you through the steps to create configuration file, which allow access to Kubernetes environment on the Oracle Cloud Infrastructure.
 
 ### About Product/Technology
 
@@ -27,23 +27,27 @@ You will use the *Cloud Shell* to complete this workshop.
 
 We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It needs a `kubeconfig` file. This will be generated using the OCI CLI which is pre-authenticated, so there’s no setup to do before you can start using it.
 
-1. Click *Access Cluster* on your cluster detail page.
+1. In the Console, select the *Hamburger Menu -> Developer Services -> Kubernetes Clusters (OKE)* as shown.
 
-    > If you moved away from that page, then open the navigation menu and under *Developer Services*, select *Kubernetes Clusters (OKE)*. Select your cluster and go the detail page.
+    ![Hamburger Menu](../setup-oke-ocishell/images/1.png " ")
 
-    ![Access Cluster](images/8.png " ")
+2. Select the compartment, which is assinged to you. Then click on the *cluster1* cluster.
+
+3. Click *Access Cluster* on your cluster detail page.
+
+    ![Access Cluster](../setup-oke-ocishell/images/8.png " ")
 
     > A dialog is displayed from which you can open the Cloud Shell and contains the customized OCI command that you need to run, to create a Kubernetes configuration file.
 
-2. Leave the default *Cloud Shell Access* and first select the *Copy* link to copy the `oci ce...` command to the Cloud Shell.
+4. Leave the default *Cloud Shell Access* and first select the *Copy* link to copy the `oci ce...` command to the Cloud Shell.
 
-    ![Copy kubectl Config](images/9.png " ")
+    ![Copy kubectl Config](../setup-oke-ocishell/images/9.png " ")
 
-3. Now, click *Launch Cloud Shell* to open the built in console. Then close the configuration dialog before you paste the command into the *Cloud Shell*.
+5. Now, click *Launch Cloud Shell* to open the built in console. Then close the configuration dialog before you paste the command into the *Cloud Shell*.
 
-    ![Launch Cloud Shell](images/10.png " ")
+    ![Launch Cloud Shell](../setup-oke-ocishell/images/10.png " ")
 
-4. Copy the command from the clipboard (Ctrl+V or right click and copy) into the Cloud Shell and run the command.
+6. Copy the command from the clipboard (Ctrl+V or right click and copy) into the Cloud Shell and run the command.
 
     For example, the command looks like the following:
 
@@ -51,9 +55,9 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
     oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.phx.aaaaaaaaaezwen..................zjwgm2tqnjvgc2dey3emnsd --file $HOME/.kube/config --region us-phoenix-1 --token-version 2.0.0
     ```
 
-    ![kubectl config](images/11.png " ")
+    ![kubectl config](../setup-oke-ocishell/images/11.png " ")
 
-5. Now check that `kubectl` is working, for example, using the `get node` command. you may need to run this command several times until you see the output similar to following.
+7. Now check that `kubectl` is working, for example, using the `get node` command. you may need to run this command several times until you see the output similar to following.
 
     ```bash
     <copy>kubectl get node</copy>
@@ -69,9 +73,9 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 
     > If you see the node's information, then the configuration was successful.
 
-6. You can minimize and restore the terminal size at any time using the controls at the top right corner of the Cloud Shell.
+8. You can minimize and restore the terminal size at any time using the controls at the top right corner of the Cloud Shell.
 
-    ![cloud shell](images/13.png " ")
+    ![cloud shell](../setup-oke-ocishell/images/13.png " ")
 
 Leave this *Cloud Shell* open; we will use it for further labs.
 
