@@ -42,7 +42,7 @@ In this task we'll create 2 buckets one for storing source file with reviews and
 
 For this exercise, we will assume that you have a set of customer reviews for a set of hotels.
 
-1. 	Download this [Dataset](./files/Data.csv) to your local machine. This file contents hotel reviews for a handful of hotels, and we will use that as our data-source. We will perform sentiment 		 analysis using Data Integration and AI Services.
+1. 	Download this [Dataset](./files/hotel.csv) to your local machine. This file contents hotel reviews for a handful of hotels, and we will use that as our data-source. We will perform sentiment 		 analysis using Data Integration and AI Services.
 
 2.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
