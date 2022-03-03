@@ -26,11 +26,11 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
 
 2. Navigate to left side menu ADMINISTRATION and then click Content
 
-      ![Content Menu](images/content-menu.png)
+      ![Content Menu](images/content-menu.png =20%x*)
 
 3. Click the drop-down menu below the header and select **Asset Types** as shown below
 
-      ![Asset Type](images/asset-type-menu.png)
+      ![Asset Type](images/asset-type-menu.png =50%x*)
 
 4. Click **Create** button on right top area to create asset type
    
@@ -41,7 +41,7 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
       * **Display Name**: Contract
       * **Choose asset type**: Select “Create a Digital Asset Type”
       
-      ![Create Asset Type](images/create-asset-type.png)
+      ![Create Asset Type](images/create-asset-type.png =50%x*)
 
 6. Click **Create** ,this will open the form to provide more detail about asset type.
 
@@ -71,7 +71,7 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
 
 11. Click **Save** from top right and we are done with creating Custom Digital Asset type.
    
-   ![Contract Asset type](images/contract-asset-type.png)
+   ![Contract Asset type](images/contract-asset-type.png =50%x*)
 
 ## Task 2: Create Asset repository
 

@@ -97,18 +97,18 @@ Change below attributes
 
 1. Naviage to **Defaul** Domain and then **Settings**
 
-  ![Security Navigation](images/security-menu.png)
+  ![Security Navigation](images/security-menu.png =50%x*)
 
 2. Select Radio option **Enabled**
 
-  ![Security Settings](images/allow-domain.png)
+  ![Security Settings](images/allow-domain.png =50%x*)
 
 3. Add domain name of APEX application under **Allowed Domains** .For example https://&lt;your-instance-specific&gt;.**oraclecloudapps.com**
 
 4. Click **Save**
 
 
-## Task 4: Run end-to-end demonstration
+## Task 5: Run end-to-end demonstration
 
 1.	Login to Customer Tracker application go to dashboard page.
 

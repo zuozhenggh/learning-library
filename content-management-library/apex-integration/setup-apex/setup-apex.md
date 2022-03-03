@@ -16,7 +16,7 @@ Estimated Time: 10 minutes
 
 ## Task 1: Create an Autonomous Transaction Processing instance
 
-In this step, you will create an instance of the Autonomous Transaction Processing database service.
+In this step, you will create an instance of the Autonomous Transaction Processing database service. If you already have  _*Oracle APEX 20.2.* *_ then you can leverage that and skip this lab.
 
 1.  From the Cloud Dashboard, select the navigation menu icon in the upper left-hand corner and then select **Autonomous Transaction Processing**.
 

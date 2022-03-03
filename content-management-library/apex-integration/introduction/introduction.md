@@ -27,7 +27,6 @@ Oracle Content Management is a cloud-based content hub to drive omni-channel con
 * Lab 6: Setup Oracle APEX application
 * Lab 7: Integrate OCM & APEX
 
-*Note: This lab assumes you are using Oracle APEX 20.2.*
 
 ### Prerequisites
 

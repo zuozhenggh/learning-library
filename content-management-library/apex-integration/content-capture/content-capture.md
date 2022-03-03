@@ -139,15 +139,15 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
 
 5.	Select **Asset type** as Contract. Select **Contract Name** asset field and then click Edit icon to map Capture value.
 
-   ![Asset Type](./images/asset-type.png)
+   ![Asset Type](./images/asset-type.png =50%x*)
 
 6.	Shuttle &lt;Document Title &gt; from left to right and click **OK**
    
-   ![Field Mapping](./images/asset-fields.png)
+   ![Field Mapping](./images/asset-fields.png =50%x*)
 
 7.	Repeat above step for **Asset Field** Party Name and shuttle Party Name as shown below
 
-   ![Field Mapping](./images/asset-field-mapping.png)
+   ![Field Mapping](./images/asset-field-mapping.png =50%x*)
 
 8.	Click OK and Navigate to Post-Processing stage
 

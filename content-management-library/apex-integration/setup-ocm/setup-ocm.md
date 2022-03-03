@@ -54,7 +54,7 @@ In this lab, you will:
     * Enter your email address for **Notification Email**
     * Select **License Type** as **Starter Edition**
 
-    ![Create Instance details](images/instance-details.png)
+    ![Create Instance details](images/instance-details.png =50%x*)
 
 7. Wait till your instance provision is completed as shown below
   
@@ -72,7 +72,7 @@ In this lab, you will:
 
 1. Assuming you are already logged in to https://cloud.oracle.com , Click side navigation menu to select **Identity & Security** and then click **Domains**
 
-    ![IAM Navigation](images/iam-menu.png)
+    ![IAM Navigation](images/iam-menu.png =50%x*)
 
 2. Click **Default** domain and go to detail page. Copy the **Domain URL** for future use.
 
@@ -84,13 +84,13 @@ In this lab, you will:
 
 4.	Select **Confidential Application** 
 
-    ![Confidential Application](images/app-type.png)
+    ![Confidential Application](images/app-type.png =50%x*)
 
 5.	Enter below details
 
     * Name: OCM-APEX Integration
     * Description : App to call OCM API from APEX
-    ![Confidential Application](images/app-details.png)
+    ![Confidential Application](images/app-details.png =50%x*)
 
 6. Click **Next**
 
@@ -121,7 +121,7 @@ In this lab, you will:
 16.	Click the **Activate Application** to confirm
 
 17.	Scroll down **General Information** section to get **ClientID** and **ClientSecret**. Copy this details to notepad as this will be used later in the lab.
-  ![Client Details](images/client-details.png)
+  ![Client Details](images/client-details.png =50%x*)
 
 18. Scroll down **Token Issuance Policy** and copy the **Scope URL** for future use.
   ![Scope URL](images/token-scope.png)
@@ -144,7 +144,7 @@ In this lab, you will:
 
 4.	Search for your application created in previous task **OCM-APEX Integration** and then click **Add**
 
-  ![Add Application](./images/select-app.png)
+  ![Add Application](./images/select-app.png =50%x*)
 
 5.	Repeat above step 3 & 4 for roles **CECContentAdministrator** & **CECRepositoryAdministrator**. You might have to navigate to next page using page navigation option available at bottom of table to select this roles.
 

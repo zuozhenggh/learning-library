@@ -81,7 +81,7 @@ In this lab, you will:
   ![Site Properties](./images/select-site.png)
 
 2. Enable the **Embeddable Site**
-  ![Embeddable Site](images/site-prop.png)
+  ![Embeddable Site](images/site-prop.png =50%x*)
 
 3. Click **Security** tab and then change radio option from **No** to **Yes**. Select **Cloud Users** as shown below and finally click **Save**
 
