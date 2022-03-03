@@ -38,11 +38,11 @@ If, however, you have already used up some quota on your tenancy, perhaps while 
 
 Quota usage and limits can be check through the console: **Limits, Quotas and Usage** in the **Governance & Administration** section , For example:
 
-  ![OCI Service Limit Example](images/service-limit-example.png " ")
+  ![Oracle Cloud Infrastructure Service Limit Example](images/service-limit-example.png " ")
 
 The Tenancy Explorer is used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
 
-  ![OCI Show Subcompartments](images/show-subcompartments.png " ")
+  ![Oracle Cloud Infrastructure Show Subcompartments](images/show-subcompartments.png " ")
 
 It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
 
@@ -52,7 +52,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
-  ![OCI Cloud Shell Opening](images/open-cloud-shell.png " ")
+  ![Oracle Cloud Infrastructure Cloud Shell Opening](images/open-cloud-shell.png " ")
 
   **NOTE:** Cloud Shell uses *websockets* to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
@@ -125,11 +125,11 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
-    ![Obtain OCI User OCID](images/get-user-ocid.png " ")
+    ![Obtain Oracle Cloud Infrastructure User OCID](images/get-user-ocid.png " ")
 
    Click Show to see the details and then click Copy to copy the user OCID to the clipboard, paste in the copied data in console.
 
-    ![OCI User OCID example](images/example-user-ocid.png " ")
+    ![Oracle Cloud Infrastructure User OCID example](images/example-user-ocid.png " ")
 
 3. The setup will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin." Please don't forget your database password because you will have to provide it again during the labs.
 
@@ -141,7 +141,7 @@ The setup will provision the following resources in your tenancy:
 
 | Resources              | Oracle Cloud Console Navigation                                               |
 |------------------------|-------------------------------------------------------------------------------|
-| Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
+| Object Storage Buckets | Storage -- Object Storage -- Buckets                                          |
 | Database               | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing   |
 
 You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
@@ -150,7 +150,7 @@ You should monitor the setup progress from a different browser window or tab.  I
 
  From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
 
-   ![Select the OCI Compartment](images/select-compartment.png " ")
+   ![Select the Oracle Cloud Infrastructure Compartment](images/select-compartment.png " ")
 
 Also, the setup will pull a GraalVM CE java11 to your Cloud Shell (local) Docker Repository. Run the following command to check your local docker repository:
 
