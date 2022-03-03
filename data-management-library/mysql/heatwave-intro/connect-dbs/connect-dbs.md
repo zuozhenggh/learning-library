@@ -229,4 +229,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributor** - Frédéric Descamps, MySQL Community Manager 
-* **Last Updated By/Date** - Perside Foster, September 2021
+* **Last Updated By/Date** - Perside Foster, February 2022

@@ -1,4 +1,4 @@
-# How to disable Data Guard for an ADB instance?
+# How do I disable Data Guard for an ADB instance?
 Duration: 5 minutes
 
 When you enable Autonomous Data Guard the system creates a standby database that is continuously updated with the changes from the primary database. Once Autonomous Data Guard is enabled, you can disable it as needed.

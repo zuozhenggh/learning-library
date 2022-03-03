@@ -96,88 +96,47 @@ You have now created your new data source, but you are going to update it to imp
 5. Click **Apply Changes** at the top of the REST Data Source page.
 
 ## Task 3: Creating a Search Movies REST Data Source
-The process to create the Search Movies source is similar to the process for the Popular Movies source, but you will use a plug-in to assist with setting it up. Plug-ins are ready-to-use components created by other APEX developers that enable you to extend your APEX applications with custom functionality. A plug-in can be useful for creating REST data sources that return multiple pages of results. For example, when you make a request to TMDB search movies API, you must also include the page number within that request, and you can only get one page at a time with individual API calls. There is a REST data sources plug-in to work around this problem, which allows you to make one API request and get all results from all the pages.
+The process to create the Search Movies data source is similar to Popular Movies, but you will use the Pagination setting in the Create REST Data Source wizard to get all the movies from one search. Typically, you can only get one page of movie results at a time with individual requests to TMDB search movies API. Setting up Pagination allows you to make one API request and get all results from all pages.
 
-1. [Click here](./files/web_source_type_fixedpagesize.sql) to download the plug-in.  
+1. On the REST Data Sources page, click **Create**. 
 
-2. In your App Builder, return to your Movies Watchlist application home by clicking the Application XXXXX link under the APEX toolbar.
+2. Select **From Scratch** and click **Next**.
 
-    ![](images/2-3-2-app-home.png " ")
+3. Name: **Search Movies**
 
-3. Click **Export/Import**.
-
-    ![](images/2-3-3-export.png " ")
-
-    * Click **Import**.
-
-    * Click on the Drag and Drop region to open the file selector.
-
-        - In your Downloads folder, select the **web\_source\_type\_fixedpagesize.sql** file.
-
-        - Click **Open**.
-
-    * File Type: **Plug-in**
-
-    * Click **Next**.
-
-    ![](images/2-3-3-file.png " ")
-
-    * Click **Next**.
-
-    * Click **Install Plug-in**.
-
-    * You should finish on the Plug-ins page within the Shared Components of your Application and see your imported plug-in. You can now create your Search Movies REST source with this plugin.
-
-4. Navigate to the Shared Components page by clicking the **Shared Components** link in the page path below the APEX toolbar.
-
-    ![](images/2-3-4-shared-comp.png " ")
-
-5. Under Data Sources, click on **REST Data Sources**.
-
-6. Click **Create**. 
-
-    * Select **From Scratch** and click **Next**.
-
-    * REST Data Source Type: **Fixed Page Size Plug-In for api.themoviedb.org [Plug-in]**
-
-    * Name: **Search Movies**
-
-    * URL Endpoint: **https://api.themoviedb.org/3/search/movie?api\_key=API\_KEY&language=en-US&query=harry%20potter&page=1&include\_adult=false**  
+4. URL Endpoint: **https://api.themoviedb.org/3/search/movie?api\_key=API\_KEY&language=en-US&query=harry%20potter&include\_adult=false**  
     *Note: Make sure to replace API\_KEY with the API code you get from TMDB API and that there are no spaces in your URL endpoint.*
 
+5. Click **Next**.
+
+    ![](images/2-3-5-create-search.png " ")
+
+6. When you set up the Popular Movies REST data source, you created a remote server for TMDB API. APEX recognizes that remote server based on the Search Movies URL and automatically splits the URL into the correct Base URL and Service URL paths. Click **Next** again.
+
+7. On the Settings page, set Pagination Type to **Page Number**.
+
+    * Page Number URL Parameter: **page**
+
+    * Fixed Page Size: **20**
+
     * Click **Next**.
 
-    ![](images/2-3-6-create-search.png " ")
+    ![](images/2-3-7-search-page.png " ")
 
-    * When you set up the Popular Movies REST data source, you created a remote server for TMDB API. APEX recognizes that remote server based on the Search Movies URL and automatically splits the URL into the correct Base URL and Service URL paths. Click **Next** again.
+8. Click **Discover** to view a preview of data that has been generated.  
+    *Note: Adding authentication is not necessary because you included your TMDB API key in the URL endpoint.*
 
-    * Authentication Required: **on**
-
-    * Authentication Type: **URL Query String**
-
-    * Name: **api_key**
-
-    * Value: *Insert your unique API key here.*
-
-    * Click **Discover**.
-
-    ![](images/2-3-6-discover-search.png " ")
-
-    * You should be able to view a preview of the table of data that has been generated.
-
-    * Click **Create REST Data Source**.  
+9. Click **Create REST Data Source**.  
 
     ![](images/2-3-6-create-source.png " ")
 
-7. Return to [Task 2](#Task2:EditingTheRESTSourceDataProfile) and follow the same steps for the Search Movies source to edit the data profile and create a POSTER_URL column.
+10. Return to [Task 2](#Task2:EditingTheRESTSourceDataProfile) and follow the same steps for the Search Movies source to edit the data profile and create a POSTER_URL column.
 
 ## Resources
 
 - [REST Data Sources Documentation](https://docs.oracle.com/en/database/oracle/application-express/21.1/htmdb/managing-REST-data-sources.html#GUID-93D7A596-03A9-48AF-9FC9-6538BCC25DED)  
 
 - [REST Data Sources Video](https://www.youtube.com/watch?v=ctCwvD1qavs)  
-
-- [Explore APEX Plug-ins](https://apex.oracle.com/en/solutions/apps/#plug_ins)  
 
 ## Stuck? Download the Application Here
 Stuck on a step or struggling with the lab? You can download a copy of the Movies Watchlist application through Lab 2 and follow the instructions below to import it into your Oracle APEX workspace.
@@ -188,7 +147,7 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
 - Once the application is installed, you will need to update the API key for both the Popular Movies and Search Movies REST data sources.
 
-- Click on **Edit Application** in the Application Installed success page to go to the app home.
+- Go to the App Home by clicking on **Edit Application** from the Application Installed success page.
 
 - Click on **Shared Components**.
 
@@ -200,14 +159,14 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
     ![](images/rest-source-tabs-edit.png " ")
 
-- Click the **Edit** icon next to the api_key parameter.
+- Click the **Edit** icon next to the **api_key** parameter.
 
     ![](images/parameters-tab-edit.png " ")
 
-    - Within the Edit REST Data Source Parameter dialog, replace **Value** with your unique API key that you got from The Movie Database.
+    - Within the Edit REST Data Source Parameter dialog, past your unique TMDB API key in the Value text box.
 
     - Click **Apply Changes** to save and close the dialog.
 
         ![](images/edit-parameter-edit.png " ")
 
-- Follow the same process with the Search Movies REST source.
+- Follow the same process for the Search Movies REST source.

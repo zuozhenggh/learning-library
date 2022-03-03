@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to handle insufficient privileges error while creating a sequence in an autonomous database?",
+            "title": "How can I handle insufficient privileges error while creating a sequence in an autonomous database?",
             "description": "",
             "filename": "sprint-privilege-crtseq-adb.md"
         },
