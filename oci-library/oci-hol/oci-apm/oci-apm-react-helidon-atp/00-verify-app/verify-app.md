@@ -19,11 +19,11 @@ Estimated time: 5 minutes
 
 1. Launch the Oracle Cloud Shell from the Oracle Cloud Console by selecting the **>..** icon.
   ![Oracle Cloud console, Cloud Shell](images/1-1-cloudshell.png " ")
-  
+
 2. Change to ***mtdrworkshop*** directory by executing the following command.
 	``` bash
 	<copy>
-	cd ~/mtdrworkshop;ls -l
+	cd ~/reacttodo/oci-react-samples/mtdrworkshop;ls -l
 	</copy>
 	```
 	If you have completed the Native Cloud App workshop, the output should be similar to the image below.
@@ -68,4 +68,4 @@ If the application is not running, or if you see errors, review the steps in the
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-* **Last Updated By/Date** - Yutaka Takatsu, December 2021
+* **Last Updated By/Date** - Yutaka Takatsu, February 2022

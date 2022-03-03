@@ -1,83 +1,40 @@
-# How to insert data into a table in a database?
+# How can I insert data into a table in the Oracle database?
 
-## Introduction
+Duration: 1 minute
 
-This lab walks you through the steps to insert data into a table in a database.
+## Insert data into a table
 
-Estimated Time: 2 minutes
+The INSERT statement adds one or more new rows of data to a database table.
 
-### Objectives
+Insert values to all the columns in the same order as columns in the table:
 
-In this lab, you will:
+```
+<copy>
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+</copy>
+```
 
-* Insert data into a table in a database
+To add values to specific columns, specify the column names and values to be inserted in order:
 
-### Prerequisites
+```
+<copy>
+INSERT INTO table_name (column1_name, column2_name, column3_name, ...)
+VALUES (value1, value2, value3. ...);
+</copy>
+```
 
-* Have created departments and employees tables in a database
+### Example
 
-## Task 1: Insert data into a table
+For example, to insert new values into name and location columns in an existing departments table:
 
-1. Now that we have tables created, and we have triggers to automatically populate our primary keys, we can add data to our tables. Because we have a parent child relationship, with the DEPARTMENTS table as the parent table, and the EMPLOYEES table as the child we will first INSERT a row into the DEPARTMENTS table.
-
-    ```
-    <copy>
-    insert into departments (name, location) values
-        ('Finance','New York');
-
-    insert into departments (name, location) values
-        ('Development','San Jose');
-    </copy>
-    ```
-
-    ![Insert records into departments table](../images/insert-dep-records.png)
-
-2. Lets verify that the insert was successful by running a SQL SELECT statement to query all columns and all rows of our table.
-
-    ```
-    <copy>
-    select * from departments;
-    </copy>
-    ```
-
-    ![Query departments table](../images/query-dep-table.png)
-
-3. You can see that an ID will have been automatically generated. You can now insert into the EMPLOYEES table a new row but you will need to put the generated DEPTID value into your SQL INSERT statement. The examples below show how we can do this using a SQL query, but you could simply enter the department number directly.
-
-    ```
-    <copy>
-    insert into EMPLOYEES 
-        (name, job, salary, deptno) 
-        values
-        ('Sam Smith','Programmer', 
-            5000, 
-        (select deptno 
-        from departments 
-        where name = 'Development'));
-
-    insert into EMPLOYEES 
-        (name, job, salary, deptno) 
-        values
-        ('Mara Martin','Analyst', 
-        6000, 
-        (select deptno 
-        from departments 
-        where name = 'Finance'));
-
-    insert into EMPLOYEES 
-        (name, job, salary, deptno) 
-        values
-        ('Yun Yates','Analyst', 
-        5500, 
-        (select deptno 
-        from departments 
-        where name = 'Development'));
-    </copy>
-    ```
-
-    ![Insert records into employees table](../images/insert-emp-records.png)
+```
+insert into departments (name, location) 
+values ('Finance','New York');
+```
 
 ## Learn More
 
+* Explore more about [Insert Statement](https://docs.oracle.com/cd/B12037_01/appdev.101/b10807/13_elems025.htm)
 * [Introduction to Oracle SQL Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=943)
 * [SQL Language Reference](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC)

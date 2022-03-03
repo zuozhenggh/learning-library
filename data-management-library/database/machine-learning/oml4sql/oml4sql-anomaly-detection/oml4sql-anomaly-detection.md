@@ -11,7 +11,7 @@ OML4SQL offers a comprehensive set of in-database algorithms for performing a va
 The PL/SQL API and SQL language operators provide direct access to OML4SQL functionality in Oracle Database.
 
 
-In this workshop, you have a dataset representing 15k customers of an insurance company. Each customer has around 30 attributes, and our goal is to train our database to find 4 Business Objectives that describe in [oml4sql-use-case.md](/data-management-library/database/machine-learning/oml4sql/oml4sql-use-case/oml4sql-use-case.md) file.
+In this workshop, you have a dataset representing 15k customers of an insurance company. Each customer has around 30 attributes, and our goal is to train our database to find 4 Business Objectives that describe in [OML4SQL Use Case](./../../oml4sql/workshops/livelabs/?lab=oml4sql-use-case).
 
 For more information about [OML4SQL API Guide](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD).
 
@@ -41,13 +41,13 @@ In this lab, you will:
 
 ## Task 1: Business Understanding
 
-1. Review Business Objectives that describe in next section [Customer Insurance Use Case to OML4SQL Workshop](/oml4sql/oml4sql1/oml4sql-use-case.md).
+1. Review Business Objectives that describe in next section [Customer Insurance Use Case to OML4SQL Workshop](./../../oml4sql/workshops/livelabs/?lab=oml4sql-use-case).
 
 ## Task 2: Data Understanding
 
 * Data information of insurance clients is like this:
 
-![cust_insur_ltv-table](../oml4sql-anomaly-detection/images/cust_insur_ltv-table.png)
+![cust_insur_ltv-table](../oml4sql-anomaly-detection/images/cust-insur-ltv-table.png)
 
 * Sample of single record is like this:
 
@@ -57,14 +57,16 @@ In this lab, you will:
 
 ## Task 3: Data Preparation
 
-1. It is recommended to have SQL Developer installed on your host machine so that you can interact with the data in a more friendly way.
+1. It is recommended to have SQL Developer installed on your host machine so that you can interact with the data in a more friendly way. You need access to remote desktop with novnc link that you copied from of Resource Manager/Stacks/Stack Details/Application Information/Remote Desktop/copy, once you enter in the VM remote, you need open a Linux terminal and execute the command  ". setEnv" and wait for that start database service, If it asks you to replace the scripts in the terminal type A for all questions.
+To see the service name, open other Linux Terminal and execute lsnrctl status command.    
+
 * You can download here [SQL Developer Download](https://www.oracle.com/tools/downloads/sqldev-downloads.html).
 
 2. Once installed SQL Developer, you need to configure the remote connection in SSH Hosts of SQL Developer feature, following these instructions:
 
 ![view-SSH-Hosts](../oml4sql-anomaly-detection/images/view-ssh.png)
 
-3. Right clic on SSH Hots and then do clic in New SSH Host, write values in each field and then clic Ok.
+3. Right clic on SSH Hots and then do clic in New SSH Host, write values in each field and then clic Ok. The public and private IP can be obtained from OCI, entering Compute/Instances and you will be able to see and copy this data.
 
 ![ssh-remote-host](../oml4sql-anomaly-detection/images/ssh-remote-host.png)
 
@@ -75,9 +77,9 @@ Notice how the small padlock closes in both options, which represents that you a
 
 ![conection-ssh](../oml4sql-anomaly-detection/images/conection-ssh.png)
 
-6. Create SQL Developer new database connection with **SYS** user to your Oracle 21c Pluggable Database, and test connectivity with password: **MLlearnPTS#21_**.
+6. Create SQL Developer new database connection with **SYS** user to your Oracle 21c Pluggable Database, and test connectivity with password: **MLlearnPTS#21_** and service name: mlpdb1.livelabs.oraclevcn.com
 
-![Database-connection-SYS](../oml4sql-anomaly-detection/images/Database-connection-SYS.png)
+![Database-connection-SYS](../oml4sql-anomaly-detection/images/database-connection-sys.png)
 
 7. Once the database connection is open and SQL Developer Worksheet is ready, execute this script to create the user oml4sql_user and grant privileges to work with OML4SQL API, and generate a copy of table CUST_INSUR_LTV.
 
@@ -106,7 +108,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
 8. Create SQL Developer new database connection with **oml4sql_user** user to your Oracle 21c Pluggable Database, and test connectivity with password: **oml4sql_user**.
 
-![oml4sql_user-connection](../oml4sql-anomaly-detection/images/oml4sql_user-connection.png)
+![oml4sql_user-connection](../oml4sql-anomaly-detection/images/oml4sql-user-connection.png)
 
 9. Copy and execute this script with oml4sql_user:
 
@@ -155,7 +157,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
 ## Task 4: Modeling
 
-* CREATE A Model with the name: **SVMO_CUST_Class_sample**
+* CREATE A Model with the name: SVMO\_CUST\_Class_sample
   We use One-Class Support Vector Machine, Support Vector Machine (SVM) as a one-class classifier is used for detecting anomalies. Oracle Machine Learning for SQL uses SVM as the one-class classifier for anomaly detection. When SVM is used for anomaly detection, it has the classification machine learning function but no target.
 
   One-class SVM models, when applied, produce a prediction and a probability for each case in the scoring data. If the prediction is 1, the case is considered typical. If the prediction is 0, the case is considered anomalous. This behavior reflects the fact that the model is trained with normal data.
@@ -185,7 +187,7 @@ Notice how the small padlock closes in both options, which represents that you a
     <copy>
 	SELECT setting_name, setting_value
 	  FROM user_mining_model_settings
-	 WHERE model_name = 'SVMO_CUST_Class_sample'
+	 WHERE model_name = 'SVMO_CUST_CLASS_SAMPLE'
 	ORDER BY setting_name;
     </copy>
     ````
@@ -198,7 +200,7 @@ Notice how the small padlock closes in both options, which represents that you a
     <copy>
 	SELECT attribute_name, attribute_type
 	  FROM user_mining_model_attributes
-	 WHERE model_name = 'SVMO_CUST_Class_sample'
+	 WHERE model_name = 'SVMO_CUST_CLASS_SAMPLE'
 	ORDER BY attribute_name;
     </copy>
     ````
@@ -212,7 +214,7 @@ Notice how the small padlock closes in both options, which represents that you a
 	WITH
 	mod_dtls AS (
 	SELECT *
-	  FROM TABLE(DBMS_DATA_MINING.GET_MODEL_DETAILS_SVM('SVMO_CUST_Class_sample'))
+	  FROM TABLE(DBMS_DATA_MINING.GET_MODEL_DETAILS_SVM('SVMO_CUST_CLASS_SAMPLE'))
 	),
 	model_details AS (
 	SELECT D.class, A.attribute_name, A.attribute_value, A.coefficient
@@ -224,7 +226,7 @@ Notice how the small padlock closes in both options, which represents that you a
 	  FROM model_details
 	 WHERE ROWNUM < 50;
     </copy>
-    ```` 	 
+    ````
 
 ![model-details](../oml4sql-anomaly-detection/images/model-details.png)
 
@@ -233,10 +235,10 @@ Notice how the small padlock closes in both options, which represents that you a
     ````
     <copy>
 	 SELECT view_name, view_type FROM user_mining_model_views
-	WHERE model_name='SVMO_CUST_Class_sample'
+	WHERE model_name='SVMO_CUST_CLASS_SAMPLE'
 	ORDER BY view_name;
     </copy>
-    ```` 	 
+    ````
 
 ![model-views](../oml4sql-anomaly-detection/images/model-views.png)
 
@@ -257,7 +259,7 @@ Find the top 5 outliers - customers that differ the most from  the rest of the p
 	col pd format a90
 	SELECT cust_id, pd FROM
 	(SELECT cust_id,
-			PREDICTION_DETAILS(SVMO_CUST_Class_sample, 0 using *) pd,
+			PREDICTION_DETAILS(SVMO_CUST_CLASS_SAMPLE, 0 using *) pd,
 			rank() over (order by prediction_probability(
 						 SVMO_CUST_Class_sample, 0 using *) DESC, cust_id) rnk
 	 FROM cust_data_one_class_pv)
@@ -280,7 +282,7 @@ These statistics will not be influenced by outliers and are likely to provide a 
 		   round(avg(TIME_AS_CUSTOMER)) TIME_AS_CUSTOMER,
 		   count(*) cnt
 	FROM cust_data_one_class_pv
-	WHERE prediction(SVMO_CUST_Class_sample using *) = 1
+	WHERE prediction(SVMO_CUST_CLASS_SAMPLE using *) = 1
 	GROUP BY SEX
 	ORDER BY SEX;
     </copy>
@@ -300,7 +302,7 @@ Necessary data preparation on the input attributes is performed automatically du
 	select ROUND(prob_typical,5)*100||'%' Probability_BUY
 	from
 	(select
-	prediction_probability(SVMO_CUST_Class_sample, 1 using
+	prediction_probability(SVMO_CUST_CLASS_SAMPLE, 1 using
 								 44 AS age,
 								 3 AS TIME_AS_CUSTOMER,
 								 'Programmer/Developer' AS PROFESSION,
