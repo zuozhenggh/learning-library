@@ -1,9 +1,10 @@
-# How do you connect to the database from VCN?
+# How do I connect to the database from VCN?
+
+Duration: 2 minutes
 
 To connect using SQL*Plus, you run the following command using the applicable connection string:
-    sqlplus system/<password>@<connection_string>
 
-## Acknowledgements
-* **Author** - Thea Lazarova, Solution Engineer Santa Monica
-
+    <copy>
+    sqlplus system/< password>@< connection_string>
+    <copy/>
 
