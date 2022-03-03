@@ -1,8 +1,8 @@
-# Modify the Bob's Book Application and Create a New Application Component Image
+# Modify the Bobby's Book Application and Create a New Application Component Image
 
 ## Introduction
 
-In this lab, we will modify bobbys-helidon-stock-application through the *Cloud Shell*. Later, we will create a new Docker image for bobbys-helidon-stock-application. This bobbys-helidon-stock-application image is a component for the Bob's Books application.
+In this lab, we will modify bobbys-helidon-stock-application through the *Cloud Shell*. Later, we will create a new Docker image for bobbys-helidon-stock-application. This bobbys-helidon-stock-application image is a component for the Bobby's Books application.
 
 ### Objectives
 
@@ -17,7 +17,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
 ## Task 1: Modify bobbys-helidon-stock-application
 
-1. Select the Bob's Book tab, then click *Books*, and then click on the image for *The Hobbit* book, as shown:
+1. Select the Bobby's Book tab, then click *Books*, and then click on the image for *The Hobbit* book, as shown:
 
     ![Bobs Book](images/1.png " ")
 
@@ -25,7 +25,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
     ![The Hobbit](images/2.png " ")
 
-2. We want to convert the book name to upper case letters (THE HOBBIT). We need to download the source code for the Bob's Books application. Make sure, you are in the home folder. Copy the following commands and paste it in the *Cloud Shell*.
+2. We want to convert the book name to upper case letters (THE HOBBIT). We need to download the source code for the Bobby's Books application. Make sure, you are in the home folder. Copy the following commands and paste it in the *Cloud Shell*.
 
     ```bash
     <copy>cd ~
@@ -34,7 +34,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
     ![Clone Repository](images/3.png " ")
 
-3. To view the files inside the Bob's Book application, copy the following command and paste it in the *Cloud Shell*.
+3. To view the files inside the Bobby's Book application, copy the following command and paste it in the *Cloud Shell*.
 
     ```bash
     <copy>ls -la ~/examples/bobs-books/</copy>
@@ -176,17 +176,19 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
     ![End Points](images/17.png " ")
 
-7. Now you have both the Tenancy Namespace and Endpoint for your region. Copy the following command and paste it in your text editor. Then replace the `END_POINT_OF_YOUR_REGION` with the endpoint of your region name and `NAMESPACE_OF_YOUR_TENANCY` with your tenancy's namespace.
+7. Now you have both the Tenancy Namespace and Endpoint for your region. Copy the following command and paste it in your text editor. Then replace the `END_POINT_OF_YOUR_REGION` with the endpoint of your region name, `NAMESPACE_OF_YOUR_TENANCY` with your tenancy's namespace and `your_first_name` with your first name in lower case.
 
     ```bash
-    <copy>docker build --force-rm=true -f Dockerfile -t END_POINT_OF_YOUR_REGION/NAMESPACE_OF_YOUR_TENANCY/helidon-stock-application:1.0 .</copy>
+    <copy>docker build --force-rm=true -f Dockerfile -t END_POINT_OF_YOUR_REGION/NAMESPACE_OF_YOUR_TENANCY/helidon-stock-application-your_first_name:1.0 .</copy>
     ```
 
     ![Docker Build](images/18.png " ")
 
     ![Docker Build](images/19.png " ")
+ 
+    >> For example, in my case the command is `docker build --force-rm=true -f Dockerfile -t iad.ocir.io/tenancynamespace/helidon-stock-application-ankit`.
 
-This creates the Docker image, which we will push into the Oracle Cloud Container Registry repository in Lab 6. You need to copy the replaced full image name `END_POINT_OF_YOUR_REGION`/`NAMESPACE_OF_YOUR_TENANCY`/helidon-stock-application:1.0 in your text editor; we will need it in Lab 6 and Lab 7.
+This creates the Docker image, which we will push into the Oracle Cloud Container Registry repository in Lab 6. You need to copy the replaced full image name `END_POINT_OF_YOUR_REGION/NAMESPACE_OF_YOUR_TENANCY/helidon-stock-application-your_first_name:1.0`  in your text editor.In Lab 6, when you will need to create the repository, you need to give it name `helidon-stock-application-your_first_name`.
 
 Leave the *Cloud Shell* open; we need it for next lab.
 

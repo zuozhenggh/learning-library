@@ -38,7 +38,7 @@ This lab assumes you have:
 
 ## Task 1: Register your database with Oracle Data Safe
 
-1. Sign in to Oracle Cloud Infrastructure with your Oracle Cloud account. Make sure that you have the correct region selected.
+1. Sign in to Oracle Cloud Infrastructure at `https://cloud.oracle.com` with your Oracle Cloud account. Make sure that you have the correct region selected.
 
 2. From the navigation menu, select **Oracle Database**, and then **Autonomous Transaction Processing**.
 
@@ -120,6 +120,9 @@ As the `ADMIN` user on the ATP database, run the `load-data-safe-sample-data_adm
 
 3. From the **Compartment** drop-down list under **List Scope**, select your compartment. Your registered target database is listed on the right.
 
+    - A target database with an **ACTIVE** status means that it is currently registered with Oracle Data Safe.
+    - A target database with a **DELETED** status means that it is no longer registered with Oracle Data Safe.
+
     ![Target Databases page in OCI](images/target-databases-page-oci.png "Target Databases page in OCI")
 
 3. Click the name of your target database to view its registration details.
@@ -138,21 +141,26 @@ As the `ADMIN` user on the ATP database, run the `load-data-safe-sample-data_adm
 
     The **Target Databases** page is displayed.
 
-2. Under **Data Safe** on the left, click **Security Center**.
+2. Under **Data Safe** on the left, click **Security Center** and review the dashboard. Scroll down to view all the charts. Make sure your compartment is selected under **List Scope**.
 
     - In Security Center, you can access all the Oracle Data Safe features, including the dashboard, Security Assessment, User Assessment, Data Discovery, Data Masking, Activity Auditing, Alerts, and Settings.
-    - By default, the dashboard is displayed and the **Security Assessment** and **User Assessment** charts are automatically populated. Scroll down to view all the charts in the dashboard.
-    - Make sure your compartment is selected under **List Scope**.
+    - When you register a target database, Oracle Data Safe automatically creates a security assessment and user assessment for you. Therefore, the **Security Assessment**, **User Assessment**, **Feature Usage**, and **Operations Summary** charts in the dashboard already have data.
+    - During registration, Oracle Data Safe also discovers audit trails on your target database. That is why the **Audit Trails** chart in the dashboard shows one audit trail with the status **In Transition** for your Autonomous Database. Later you start this audit trail to collect audit data into Oracle Data Safe.
 
     ![Initial Dashboard](images/dashboard-initial.png "Initial Dashboard")
 
+    Bottom three charts of the dashboard:
+
+    ![Dashboard bottom three charts](images/dashboard-bottom-three-charts.png "Dashboard bottom three charts")
+
+
 ## Learn More
 
-- [Target Database Registration](https://docs.oracle.com/en/cloud/paas/data-safe/admds/target-database-registration.html)
+- [Target Database Registration](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=ADMDS-GUID-B5F255A7-07DD-4731-9FA5-668F7DD51AA6)
 - [Loading Data with Autonomous Data Warehouse](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/load-data.html#GUID-1351807C-E3F7-4C6D-AF83-2AEEADE2F83E)
 
 
 ## Acknowledgements
 
 - **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, February 22, 2022
+- **Last Updated By/Date** - Jody Glover, February 26, 2022

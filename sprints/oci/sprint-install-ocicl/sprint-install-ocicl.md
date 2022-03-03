@@ -1,4 +1,4 @@
-# How can I access Oracle Cloud via command line?
+# How do I install Oracle Cloud Command Line Interface (OCI CLI)?
 Duration: 10 minutes
 
 ## Install & configure OCI CLI

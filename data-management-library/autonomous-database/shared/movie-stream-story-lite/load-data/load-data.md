@@ -256,7 +256,7 @@ create table moviestream_log
 -- Create the MOVIESTREAM_LABS table that allows you to query all of the labs and their associated scripts
 begin
     dbms_cloud.create_external_table(table_name => 'moviestream_labs',
-                file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/R-csuXKL9-Vn-fpstvXalGJftkjzCB1Te2iI1bA0dq7afsSdVHRd5H7dd2O5HLtp/n/c4u04/b/moviestream_lite_scripts/o/moviestream-lite-labs.json',
+                file_uri_list => 'https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/movie-stream-story-lite/add-data-scripts/moviestream-lite-labs.json',
                 format => json_object('skipheaders' value '0', 'delimiter' value '\n','ignoreblanklines' value 'true'),
                 column_list => 'doc varchar2(30000)'
             );
@@ -267,7 +267,7 @@ end;
 declare
     b_plsql_script blob;            -- binary object
     c_plsql_script clob;    -- converted to clob
-    uri_scripts varchar2(2000) := 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/R-csuXKL9-Vn-fpstvXalGJftkjzCB1Te2iI1bA0dq7afsSdVHRd5H7dd2O5HLtp/n/c4u04/b/moviestream_lite_scripts/o'; -- location of the scripts
+    uri_scripts varchar2(2000) := 'https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/movie-stream-story-lite/add-data-scripts'; -- location of the scripts
     uri varchar2(2000);
 begin
 

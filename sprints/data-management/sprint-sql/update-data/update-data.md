@@ -1,59 +1,38 @@
-# How to update data in a table in a database?
+# How can I update data in a table in the Oracle database?
 
-## Introduction
+Duration: 1 minute
 
-This lab walks you through the steps to update data in a table in a database.
+## Update data in a table
 
-Estimated Time: 2 minutes
+You can use SQL to update values in your table, to do this we will use the update clause. To selectively update rows in a table, where clause is needed with a condition else all the rows in the table will be updated.
 
-### Objectives
+```
+<copy>
+UPDATE table-Name
+SET column1-name = value1, column2-name = value2
+WHERE condition;
+</copy>
+```
 
-In this lab, you will:
+### Example
 
-* Update data in a table in a database
+For example, the query below will update all rows of the employee table and set the value of country_code column to US.
 
-### Prerequisites
+```
+update employees
+set country_code = 'US';
+```
 
-* Have created departments and employees tables in a database and inserted records
+Or, you can also selectively update just a specific row like this:
 
-## Task 1: Update data in a table
-
-1. You can use SQL to update values in your table, to do this we will use the update clause.
-
-    ```
-    <copy>
-    update employees
-    set country_code = 'US';
-    </copy>
-    ```
-
-    ![Update employees table](../images/update-emp-table.png)
-
-2. The query above will update all rows of the employee table and set the value of country code to US. You can also selectively update just a specific row.
-
-    ```
-    <copy>
-    update employees
-    set commission = 2000
-    where  name = 'Sam Smith';
-    </copy>
-    ```
-
-    ![Update employees table](../images/update-emp-table2.png)
-
-3. Lets run a Query to see what our data looks like
-
-    ```
-    <copy>
-    select name, country_code, salary, commission
-    from employees
-    order by name;
-    </copy>
-    ```
-
-    ![Select employees table](../images/select-emp-table.png)
+```
+update employees
+set commission = 2000
+where  name = 'Sam Smith';
+```
 
 ## Learn More
 
+* Explore more about [Update Statement](https://docs.oracle.com/javadb/10.8.3.0/ref/rrefsqlj26498.html)
 * [Introduction to Oracle SQL Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=943)
 * [SQL Language Reference](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/sqlrf/Introduction-to-Oracle-SQL.html#GUID-049B7AE8-11E1-4110-B3E4-D117907D77AC)

@@ -72,7 +72,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	<copy>
 	mkdir reacttoo
 	cd reacttodo
-	git clone https://github.com/peterrsongg/oci-react-samples.git
+	git clone https://github.com/oracle/oci-react-samples.git
 	</copy>
 	```
 
@@ -198,7 +198,13 @@ The build folder will be uploaded to object storage so you can access your appli
 	cd staci
 	</copy>
 	```
+  - go mod init staci
 
+	```
+	<copy>
+	go mod init staci
+	</copy>
+	```
   - go get -d
 
 	```

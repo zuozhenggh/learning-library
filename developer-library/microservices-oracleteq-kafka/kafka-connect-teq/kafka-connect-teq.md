@@ -22,15 +22,15 @@ Estimated Time: 10 minutes
 - Java 1.8
 - Oracle TEQ JMS 1.1+ Client Jars
 
-## Task 1: Setup Kafka Connect
+## **Task** 1: Setup Kafka Connect
 
 This task will use the Apache Kafka Connect, a framework included in Apache Kafka that integrates Kafka with other systems. Oracle TEQ will provide a standard JMS package and related JDBC, Transaction packages to establish the connection and complete the transactional data flow.
 
-To simplify the deployment of a Kafka Connect, as done in Lab 2, we are using the container made available by [Confluent Apache Kafka Quick Start](https://developer.confluent.io/quickstart/kafka-docker/) and already installed during Lab 1.
+To simplify the deployment of a Kafka Connect, as done in Lab 2, we are using the container made available by [Confluent Apache Kafka Quick Start](https://developer.confluent.io/quickstart/kafka-docker/) and already installed during Lab 1. 
 
 You will configure the connection between the Kafka broker and the Oracle TEQ submitting the setup to Kafka [Connect REST API](https://docs.confluent.io/platform/current/connect/references/restapi.html).
 
-The kafka2teq-connect-configuration.json file below has the configuration required to create a Connect Sync agent. The topics is already filled with Kafka Topic created during Lab 2, if it was changed, you need change here too.
+The kafka2teq-connect-configuration.json file below has the configuration required to create a Connect Sync agent. The topics is already filled with Kafka Topic created during Lab 2, if it was changed, you need change this configuration too.
 
 ```json
 {
@@ -38,16 +38,16 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
   "tasks.max": "1",
   "topics": "LAB8022_TOPIC",
   "java.naming.factory.initial": "oracle.jms.AQjmsInitialContextFactory",
-  "java.naming.provider.url": <connection string>,
-  "db_url": <connection string>,
-  "java.naming.security.principal": <username>,
-  "java.naming.security.credentials": <password>,
+  "java.naming.provider.url": "<connection string>",
+  "db_url": "<connection string>",
+  "java.naming.security.principal": "<username>",
+  "java.naming.security.credentials": "<password>",
   "jndi.connection.factory": "javax.jms.XAQueueConnectionFactory",
   "jms.destination.type": "topic",
-  "jms.destination.name": <teq topic name>,
+  "jms.destination.name": "<teq topic name>",
   "key.converter":"org.apache.kafka.connect.storage.StringConverter",
   "value.converter":"org.apache.kafka.connect.storage.StringConverter",
-  "confluent.topic.bootstrap.servers": <kafka broker address>,
+  "confluent.topic.bootstrap.servers": "<kafka broker address>",
   "confluent.topic.replication.factor": "1"
 }
 ```
@@ -65,7 +65,7 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
 
     ![Kafka Components status](images/kafka-containers-ps.png " ")
 
-    If the Kafka components are not running, you will need to rebuild them following instructions from [Extra Task](kafka-connect-teq#Extra-Task).
+    If the Kafka components are not running, you will need to rebuild them following instructions from Task 4 at the end of this page.
 
 2. Execute the following command providing the Oracle Database password. It will fill the parameters based on your previous created assets and set up the Connect Sync between the Kafka Topic from Lab 2 and Oracle TEQ from Lab 3:
 
@@ -129,7 +129,7 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
     }
     ```
 
-## Task 2: Enqueueing messages on Kafka Broker
+## **Task** 2: Enqueueing messages on Kafka Broker
 
 Now that you have the Connector running, you can produce some messages and test the message transfer. The messages would be enqueued by the Kafka Producer and dequeued from the Oracle TEQ. We can use the Kafka Producer Microservice built during Lab 2 or operate Kafka producer inside the container to enqueue messages.
 
@@ -170,9 +170,9 @@ Now that you have the Connector running, you can produce some messages and test 
     >LAB8022 - Sync Message from Kafka to TEQ 4
     ```
 
-## Task 3: Dequeue messages from Oracle TEQ
+## **Task** 3: Dequeue messages from Oracle TEQ
 
-After produce some messages, the expected behavior is the Connect Sync agent consume messages from Kafka Topic and enqueue them on Oracle TEQ. And, you will be able to dequeue them from Oracle TEQ using okafka consumer microservice or a PL/SQL procedure, for example. 
+After produce some messages, the expected behavior is the Connect Sync agent consume messages from Kafka Topic and enqueue them on Oracle TEQ. And, you will be able to dequeue them from Oracle TEQ using okafka consumer microservice or a PL/SQL procedure, for example.
 
 1. Dqueue message from Oracle TEQ
 
@@ -221,7 +221,7 @@ After produce some messages, the expected behavior is the Connect Sync agent con
 
     ```
 
-## Task 4: Reinstall Kafka Components (optional)
+## **Task** 4: Reinstall Kafka Components (optional)
 
 If you disconnect from Cloud Shell for a long time, you may need to reinstall Kafka components because the local docker was cleaned up. This task helps you to perform this rebuild.
 
@@ -243,7 +243,16 @@ If you disconnect from Cloud Shell for a long time, you may need to reinstall Ka
         </copy>
     ```
 
-3. Execute the following sequence of commands to start the Kafka cluster and connect Broker to Lab8022 Network:
+3. Rebuild Kafka Cluster including Customised Connect image
+
+    ```bash
+    <copy>
+    cd $LAB_HOME/cloud-setup/confluent-kafka
+    source kafka-setup.sh
+    </copy>
+    ```
+
+4. Execute the following sequence of commands to start the Kafka cluster and connect Broker to Lab8022 Network:
 
     ```bash
     <copy>
@@ -253,13 +262,41 @@ If you disconnect from Cloud Shell for a long time, you may need to reinstall Ka
     </copy>
     ```
 
+5. Connect broker to Lab8022 Network (Docker internal)
+
+    First, check if lab8022network exist
+
+    ```bash
+    <copy>
+    docker network ls
+    </copy>
+    ```
+
+    if network not exist, execute the following command to create it.
+
+    ```bash
+    <copy>
+    docker network create lab8022network
+    </copy>
+    ```
+
+    And, finally, connect broker to lab8022 network
+
+    ```bash
+    <copy>
+    docker network connect lab8022network broker
+    </copy>
+    ```
+
 ## Wrap up
 
 In this Lab, you learned how to build a bridge between two different event brokers, expanding the possibilities of your decoupled architecture enabling the processing of messages per best-of-the-breed tools. That is the getting start of the Event Mesh concept.
 
-In a graphical view, what we did was described [here](https://youtu.be/wDRIMzlYh9U).
+The following animation describe what we builded in this workshop especially in this laboratory. 
 
-You may now **proceed to the next lab...**
+[Workshop Animation](https://youtu.be/wDRIMzlYh9U).
+
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 
