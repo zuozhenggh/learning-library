@@ -38,11 +38,11 @@ If, however, you have already used up some quota on your tenancy, perhaps while 
 
 Quota usage and limits can be check through the console: **Limits, Quotas and Usage** in the **Governance & Administration** section , For example:
 
-  ![OCI Service Limit Example](images/service-limit-example.png " ")
+  ![Oracle Cloud Infrastructure Service Limit Example](images/service-limit-example.png " ")
 
 The Tenancy Explorer is used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
 
-  ![OCI Show Subcompartments](images/show-subcompartments.png " ")
+  ![Oracle Cloud Infrastructure Show Subcompartments](images/show-subcompartments.png " ")
 
 It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
 
@@ -52,7 +52,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
-  ![OCI Cloud Shell Opening](images/open-cloud-shell.png " ")
+  ![Oracle Cloud Infrastructure Cloud Shell Opening](images/open-cloud-shell.png " ")
 
   **NOTE:** Cloud Shell uses *websockets* to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
@@ -77,7 +77,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```bash
-    <copy>git clone -b 22.1.4 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
+    <copy>git clone -b 22.2.2 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
     ```
 
    You should now see the directory `microservices-datadriven` in the directory that you created.
@@ -86,7 +86,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```bash
     <copy>
-    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/microservices-oracleteq-kafka" >>~/.bashrc
+    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/oracleteq-kafka" >>~/.bashrc
     export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2
     echo "export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2" >>~/.bashrc
     echo "export PATH=$JAVA_HOME/bin/:$PATH" >>~/.bashrc
@@ -125,13 +125,13 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
-    ![Obtain OCI User OCID](images/get-user-ocid.png " ")
+    ![Obtain Oracle Cloud Infrastructure User OCID](images/get-user-ocid.png " ")
 
    Click Show to see the details and then click Copy to copy the user OCID to the clipboard, paste in the copied data in console.
 
-    ![OCI User OCID example](images/example-user-ocid.png " ")
+    ![Oracle Cloud Infrastructure User OCID example](images/example-user-ocid.png " ")
 
-3. The setup will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin". Please don't forget your database password because during the labs you will be asked to provide it again.
+3. The setup will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin." Please don't forget your database password because you will have to provide it again during the labs.
 
 **Note**: The passwords typed are not displayed.
 
@@ -141,7 +141,7 @@ The setup will provision the following resources in your tenancy:
 
 | Resources              | Oracle Cloud Console Navigation                                               |
 |------------------------|-------------------------------------------------------------------------------|
-| Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
+| Object Storage Buckets | Storage -- Object Storage -- Buckets                                          |
 | Database               | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing   |
 
 You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
@@ -150,7 +150,7 @@ You should monitor the setup progress from a different browser window or tab.  I
 
  From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
 
-   ![Select the OCI Compartment](images/select-compartment.png " ")
+   ![Select the Oracle Cloud Infrastructure Compartment](images/select-compartment.png " ")
 
 Also, the setup will pull a GraalVM CE java11 to your Cloud Shell (local) Docker Repository. Run the following command to check your local docker repository:
 
@@ -161,8 +161,13 @@ Also, the setup will pull a GraalVM CE java11 to your Cloud Shell (local) Docker
 As result you will see the following:
 
   ```bash
-  REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-  ghcr.io/graalvm/graalvm-ce   java11-22.0.0.2     9c09d46390b6        2 months ago        1.32GB
+  REPOSITORY                        TAG                 IMAGE ID            CREATED             SIZE
+  cp-kafka-connect-custom           0.1.0               b7c09d1ca0c1        6 minutes ago       1.43GB
+  ghcr.io/graalvm/graalvm-ce        ol8-java11          87c0795cf942        5 days ago          1.34GB
+  confluentinc/cp-kafka-connect     7.0.1               ce86628e990d        6 weeks ago         1.39GB
+  confluentinc/cp-server            7.0.1               81fddf506c55        6 weeks ago         1.54GB
+  confluentinc/cp-schema-registry   7.0.1               43303c1d5097        6 weeks ago         1.64GB
+  confluentinc/cp-zookeeper         7.0.1               3a7ea656f1af        6 weeks ago         780MB
   ```
 
 **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.

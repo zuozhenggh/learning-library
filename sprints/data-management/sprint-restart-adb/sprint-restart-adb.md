@@ -1,4 +1,4 @@
-# How to restart an ADB instance?
+# How do I restart an ADB instance?
 Duration: 1 minutes
 
 ## Restart Autonomous Database

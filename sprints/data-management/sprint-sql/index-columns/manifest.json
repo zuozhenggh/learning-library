@@ -3,9 +3,14 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to index columns in a database?",
+            "title": "How can I index columns in the Oracle database?",
             "description": "",
             "filename": "./index-columns.md"
+        },
+        {
+            "title": "How can I drop the index in the Oracle database?",
+            "description": "",
+            "filename": "../drop-index/drop-index.md"
         }
     ]
 }
