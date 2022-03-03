@@ -1,7 +1,7 @@
-# How do I create a VCN?
+# How do I create a VCN using OCI CLI?
 Duration: 1 minute
 
-## Create a virtual cloud network (VCN)
+## Create a virtual cloud network (VCN) using OCI CLI
 
 Before you can launch any instances, you have to create a virtual cloud network (VCN) and related resources. The following tasks are used to prepare the network environment:
 
