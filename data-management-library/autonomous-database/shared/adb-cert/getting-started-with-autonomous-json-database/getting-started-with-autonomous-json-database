@@ -163,14 +163,14 @@ Notice that all the inputed documents have an ID field-- `ID 100`, `ID 101`, `ID
     <copy>
     {
         "id": 100
-        "fruit": "banana"
+        "title": "Looper"
     }
     </copy>
     ```
 
 We can see that the creation went through and the new JSON document is now uploaded, thus allowing users to upload JSON files with duplicate field values. In practice, however, we may want to restrict certain fields, like **ID** for example from being duplicated accross JSON documents.
 
-2. Delete the previous `JSON` document made so there is only one document with `"ID":100` 
+2. Delete the previous `JSON` document made for the `title` *Looper* so there is only one document with `"ID":100` 
 
     ![](./images/T4-1.1.png)
 
@@ -192,7 +192,7 @@ We can see that the creation went through and the new JSON document is now uploa
     <copy>
     {
         "id": 100
-        "fruit": "banana"
+        "title": "Looper"
     }
     </copy>
     ```
