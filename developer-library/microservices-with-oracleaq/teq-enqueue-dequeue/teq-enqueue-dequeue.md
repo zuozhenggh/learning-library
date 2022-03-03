@@ -47,10 +47,10 @@ Transactional Event Queues(TEQ) samples to create queues using different payload
 
 2. Execute the following sequence of commands into cloud shell
 
-  ```bash
-  <copy>cd $ORACLEAQ_HOME; source enqueueTEQ.sh;
-  </copy>
-  ```
+    ```bash
+    <copy>cd $ORACLEAQ_HOME; source enqueueTEQ.sh;
+    </copy>
+    ```
 
 ## Task 3: Dequeue in TEQ
 

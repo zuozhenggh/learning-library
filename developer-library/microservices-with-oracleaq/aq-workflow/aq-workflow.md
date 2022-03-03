@@ -24,13 +24,13 @@ This Lab will help you understand OTP workflow (one-time-password)/ Second-Facto
 
 2. Execute the following sequence of commands into cloud shell:
 
-  ```bash
+    ```bash
 
-  <copy>cd $ORACLEAQ_HOME; source workflowCreateAQ.sh;
+    <copy>cd $ORACLEAQ_HOME; source workflowCreateAQ.sh;
 
-  </copy>
+    </copy>
 
-  ```
+    ```
 
 ## Task 2: The user places the order, and the Application generates a 4-digit OTP
 
