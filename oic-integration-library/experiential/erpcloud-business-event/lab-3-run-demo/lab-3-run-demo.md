@@ -125,42 +125,42 @@ Use the Oracle Integration dashboard to see the data flow resulting from the cre
 ## Task 4: Verify PO record in ADW Table
 Follow these steps to view the PO record in the designated DB table. 
 
-1. If you are not already logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the navigation menu.
+1. If you are not already logged in to Oracle Cloud Console, log in and select **Autonomous Data Warehouse** from the navigation menu.
 
-    ![Select Autonomous Database](../setup/images/adb-navigation01.png)
+    ![Select Autonomous Database](../setup/images/adb-navigation.png)
 
     > Note: You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the **Quick Actions** section of the dashboard.
 
 2. Navigate into your demo database by clicking on the instance link.
 
-    ![Select Autonomous Database](../setup/images/adb-navigation02.png)
+    ![Select Autonomous Database](../setup/images/select-adb-instance.png)
 
     > Note: Similar steps apply to either Autonomous Data Warehouse or Autonomous Transaction Processing.
 
 3. In your ADW Database Details page, click the **Database Actions** button.
 
-    ![Select Autonomous Database](../setup/images/adb-navigation03.png)
+    ![Select Autonomous Database](../setup/images/click-database-actions.png)
 
 4. Sign-in with your database instance's default administrator account, Username = `ADMIN` and click **Next**.
 
-   ![Enter DB username](../setup/images/adb-navigation04.png)
+   ![Enter DB username](../setup/images/enter-username.png)
 
 5.  Enter the **ADMIN** password and click **Sign in**.
 
-    ![Enter DB password](../setup/images/adb-navigation05.png)
+    ![Enter DB password](../setup/images/enter-password.png)
 
 6. The Database Actions page opens. In the *Development* box, click **SQL**.
 
-    ![Enter DB password](../setup/images/adb-navigation06.png)
+    ![Open SQL](../setup/images/open-sql.png)
 
 
 7. The SQL Worksheet appears. In the *Navigator* on the left, select the **PURCHASEORDER** table, then right-click on **Open**.
-    ![Open PO table](images/sql-open-po-table.png)
+    ![Open PO table](images/open-po-table.png)
 
     This opens the *ADMIN.PURCHASEORDER* table window. 
 
 8. Click on **Data** in the left menu to display the table data. Verify the PO record is available. 
-   ![Show PO data](images/sql-show-po-data.png)
+   ![Show PO data](images/show-po-data.png)
 
 
 You have completed the final step of this workshop. Thank you! 

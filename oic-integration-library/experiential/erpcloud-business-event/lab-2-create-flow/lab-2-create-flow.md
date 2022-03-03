@@ -20,7 +20,7 @@ We will start by creating a new integration and adding some basic info.
 2. On the Integrations page, click **Create**. 
 3. On the *Integration Style* dialog, select **App Driven Orchestration**, followed by **Select**. 
 
-    ![Select Integration Style](images/create-app-integration01.png)
+    ![Select Integration Style](images/select-integration-style.png)
 
 4. In the *Create New Integration* dialog, enter the following information:
 
@@ -57,9 +57,10 @@ Add ERP PO Event trigger to the empty integration canvas.
     | Filter Expr for Purchase Order Event | `<xpathExpr xmlns:ns0="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/" xmlns:ns2="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/types/">$eventPayload/ns2:result/ns0:Value/ns0:DocumentDescription=`**"LL demo"**`</xpathExpr>` |
     |
 
-    > **Note:** You can use a custom filter expression by inserting a different value under **DocumentDescription**. The value you enter is case sensitive. 
+    > **Tip:** You can use a custom filter expression by inserting a different value under **DocumentDescription**. The value you enter is case sensitive. 
+    ![ERP Adapter Wizard Request](images/erp-adapter-request.png)
 
-    ![](images/create-app-integration02.png)
+    > **Note:** The Filter is not required, however it does allow you to control when and which integration should be triggered. This is useful if there are multiple integrations subscribed to the same PO Create event in ERP Cloud. Without the filter expression, all integrations subscribed to the PO Create event will get triggered whenever that specific event occurs. 
 
 6. Click **Next**.
 
@@ -67,11 +68,11 @@ Add ERP PO Event trigger to the empty integration canvas.
 
 8. On the Summary page, click **Done**.
 
-    ![](images/create-app-integration03.png)
+    ![ERP Adapter Wizard Summary](images/erp-adapter-summary.png)
 
 9. On the integration canvas, from the Layout list, choose **Horizontal**. 
 
-    ![](images/create-app-integration04.png)
+    ![Horizontal Flow layout](images/horizontal-flow-layout.png)
 
 
 10. Click **Save** to persist changes. 
@@ -82,7 +83,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
 
 1. Hover you cursor over the **+** sign that is displayed after the trigger activity in the integration canvas. Click the **+** sign and select the ADW connection created in Lab 1. 
 
-    ![](images/create-app-integration05.png)
+    ![Add ADW Connection](images/add-adw-connection.png)
 
     This invokes the Oracle Autonomous Data Warehouse Endpoint Configuration Wizard.
 
@@ -105,7 +106,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | Available | **PURCHASEORDER** and click **>** to move the table to the *Selected* column |
     |
 
-    ![](images/create-app-integration06.png)
+    ![Choose Table in AWD Wizard](images/adw-wizard-choose-table.png)
 
 4. Click on **Import Tables**, wait and press **Next**.
 
@@ -113,7 +114,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
 
 6. On the Summary page, click **Done**.
 
-    ![](images/create-app-integration07.png)
+    ![Summary in ADW Wizard](images/adw-wizard-summary.png)
 
 7. Click **Save** to persist changes. 
 
@@ -124,7 +125,7 @@ Use the mapper to drag fields from the source structure (ERP PO event data)  to 
 When we added the ADW invoke to the integration, a map icon was automatically added. 
 
 1. Hover you cursor over the ERP-ADW **Mapper** icon, and click **Edit**.
-   ![](images/create-app-integration08.png)
+   ![Edit ERP-ADW Mapper](images/mapper-edit-erp-adw.png)
 
 2. Use the mapper to drag element nodes in the source ERP Cloud structure to element nodes in the target Oracle ADW structure.
 
@@ -149,7 +150,7 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
     | Total Amount | total |
     |
 
-   ![](images/create-app-integration09.png)
+   ![Completed ERP Mapping](images/mapper-completed-erp-adw.png)
 
 3. Click **Validate**, then wait for the confirmation message *Mapping is valid and ready to use.*
 
@@ -161,14 +162,15 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
 ## Task 5: Define Tracking Fields
 Manage business identifiers that enable you to track fields in messages during runtime. 
 
-A number icon is displayed at the top of the Integration canvas when identifiers have not been set. 
+> **Note:** If you have not yet configured at least one business identifier **Tracking Field** in your integration, then an error icon is displayed in the design canvas. 
+    ![Error Icon in Design Canvas](images/error-icon.png)
 
 1. Click the **Actions** menu on the top right, then select **Tracking**.
-    ![](images/create-app-integration11.png)
+    ![Open Business Identifiers For Tracking](images/open-business-identifiers.png)
 
 2. From the *Source* section, expand **getPurchaseOrderResponse** > **result**, click **Load more**, expand **Value**, and click **Load more**. Drag the **OrderNumber** field from ERP PO source to the *Drag a trigger field here* section:
 
-    ![](images/add-business-identifiers.png)
+    ![Assign Business Identifiers](images/assign-business-identifiers.png)
 
 3. Click **Save**. 
 
@@ -178,7 +180,7 @@ A number icon is displayed at the top of the Integration canvas when identifiers
 
 1. On the *Integrations* page, click on the **Activate** icon.
 
-    ![](images/create-app-integration13.png)
+    ![Click to Activate Integration](images/click-activate-integration.png)
 
 2. On the *Activate Integration* dialog, select **Enable Tracing**, followed by **Include Payload** options. 
 

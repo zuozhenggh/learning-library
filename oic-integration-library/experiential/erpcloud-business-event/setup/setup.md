@@ -8,41 +8,45 @@ Estimated Lab Time: 5 minutes
 
 ### Objectives
 In this lab, you will:
-- Learn how to create a database table using a SQL script
+- Obtain Database Connection details
+- Create Database Table using a SQL script
+- Set up prerequisites to create an Oracle ERP Cloud Adapter connection
 
 ### Prerequisites
-This lab requires successful completion of the **Provision an Oracle Autonomous Database** section in the **Contents** menu on the left.
+* Completion of the **Provision an Oracle Autonomous Database** section in the **Contents** menu on the left
+* Access to an Oracle ERP Cloud user account with privileges to assign specific roles to an integration user. 
+
 
 ## Task 1: Create a database table using a SQL script
 Follow these steps to create a DB table which will be used as part of this workshop. 
 
 1. If you are not already logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the navigation menu.
 
-    ![Select Autonomous Database](images/adb-navigation01.png)
+    ![Select Autonomous Database](images/adb-navigation.png)
 
-    > Note: You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the **Quick Actions** section of the dashboard.
+    > **Note:** You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the **Quick Actions** section of the dashboard.
 
 2. Navigate into your demo database by clicking on the instance link.
 
-    ![Select Autonomous Database](images/adb-navigation02.png)
+    ![Select Autonomous Database](images/select-adb-instance.png)
 
-    > Note: Similar steps apply to either Autonomous Data Warehouse or Autonomous Transaction Processing.
+    > **Note:** Similar steps apply to either Autonomous Data Warehouse or Autonomous Transaction Processing.
 
 3.  If you are not already logged in to SQL Worksheet, in your ADW Database Details page, click the **Database Actions** button.
 
-    ![Select Autonomous Database](images/adb-navigation03.png)
+    ![Click Database Actions](images/click-database-actions.png)
 
 4. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, Username = `ADMIN` and click **Next**.
 
-   ![Enter DB username](images/adb-navigation04.png)
+   ![Enter DB username](images/enter-username.png)
 
 5.  Enter the **ADMIN** password you specified when creating the database and click **Sign in**.
 
-    ![Enter DB password](images/adb-navigation05.png)
+    ![Enter DB password](images/enter-password.png)
 
 6. The Database Actions page opens. In the *Development* box, click **SQL**.
 
-    ![Enter DB password](images/adb-navigation06.png)
+    ![Open SQL](images/open-sql.png)
 
 7. The SQL Worksheet appears. Copy below code snippet:
     ```
@@ -96,10 +100,39 @@ Follow these steps to create a DB table which will be used as part of this works
 
 8. Paste the script in SQL Worksheet, then click **Run It** button. This will create the **PURCHASEORDER** table. The table is created successfully when you see the notification in the **Script Output**. 
 
-    ![Enter DB password](images/adb-navigation07.png)
+    ![Past SQL Script](images/paste-run-sql-script.png)
 
 Now you have an external table which will be used in the demo flow. 
 
+
+## Task 2: Set up prerequisites to create an Oracle ERP Cloud Adapter connection
+
+We will assign required roles to an Integration User. You specify this user account when creating an Oracle ERP Cloud Adapter connection on the Connections page.
+
+
+1. Login to Oracle ERP Cloud
+
+2. Select **Navigator** > **Tools** > **Security Console**.
+    ![](images/erp-open-security-console.png)
+
+3. Associate the Integration User with the Following Roles and Privileges:
+
+    | Role |
+    | -----|
+    | Integration Specialist | 
+    | Oracle ERP Cloud-specific data access to the integration user | 
+    | AttachmentsUser |
+    | SOAOperator |
+    | FND_MANAGE_CATALOG_SERVICE_PRIV | 
+    | 
+
+
+
+
+## Learn More
+* [Prerequisites for Creating an ERP Cloud Adapter Connection](https://docs.oracle.com/en/cloud/paas/integration-cloud/erp-adapter/prerequisites-creating-connection.html)
+* [Using the Oracle ERP Cloud Adapter with Oracle Integration
+](https://docs.oracle.com/en/cloud/paas/integration-cloud/erp-adapter)
 
 ## Acknowledgements
 * **Author** - Ravi Chablani, Product Management - Oracle Integration
