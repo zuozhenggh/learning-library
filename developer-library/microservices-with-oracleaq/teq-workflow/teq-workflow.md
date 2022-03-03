@@ -32,7 +32,7 @@ This Lab will help you understand OTP workflow (one-time-password)/ Second-Facto
 
     ```
 
-## Task 2: User placed the order, and Application will generate 4-digit OTP
+## Task 2: The user places the order, and the Application generates a 4-digit OTP
 
 Below are the code samples to create the workflow
 
