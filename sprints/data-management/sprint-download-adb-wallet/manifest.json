@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How can I download my ADB Wallet using command line?",
+            "title": "How can I download the ADB Wallet using OCI CLI?",
             "description": "",
             "filename": "sprint-download-adb-wallet.md"
         },
@@ -13,12 +13,12 @@
             "filename": "../sprint-find-adb-ocid/sprint-find-adb-ocid.md"
         },
         {
-            "title": "How to install OCI CL?",
+            "title": "How do I install OCI CLI?",
             "description": "",
             "filename": "../../oci/sprint-install-ocicl/sprint-install-ocicl.md"
         },
         {
-            "title": "How to add autocomplete for OCI CL?",
+            "title": "How can I add autocomplete for OCI CLI?",
             "description": "",
             "filename": "../../oci/sprint-autocomplete-for-ocicl/sprint-autocomplete-for-ocicl.md"
         }

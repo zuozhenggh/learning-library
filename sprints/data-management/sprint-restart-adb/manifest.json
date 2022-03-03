@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to restart an ADB instance?",
+            "title": "How do I restart an ADB instance?",
             "description": "",
             "filename": "sprint-restart-adb.md"
         },

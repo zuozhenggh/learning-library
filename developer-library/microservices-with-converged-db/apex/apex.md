@@ -17,13 +17,13 @@ Watch the video below for a quick walk through of the lab.
 
 ### Prerequisites
 
-* An Oracle Autonomous Transaction Processing database (created in Lab 1)
+* The Oracle Autonomous Transaction Processing database named DB2 (created in Lab 1)
 
 ## Task 1: Create a new workspace in APEX
 
 When you first access APEX you will need to log in as an APEX instance administrator to create a workspace. A workspace is a logical domain where you define APEX applications. Each workspace is linked to one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more.
 
-1. Navigate to the Oracle Autonomous Transaction Processing database instance named INVENTORYDB (Display Name) created in Lab 1. Click the **Tools** tab and then the **Open APEX** button.
+1. Navigate to the Oracle Autonomous Transaction Processing database instance named DB2 (Display Name), containing the inventory schema, created in Lab 1. Click the **Tools** tab and then the **Open APEX** button.
 
     ![](images/click-open-apex.png)
 
