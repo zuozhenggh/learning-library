@@ -83,7 +83,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
 6. Create SQL Developer new database connection with **SYS** user to your Oracle 21c Pluggable Database, and test connectivity with password: **MLlearnPTS#21_** and service name: mlpdb1.livelabs.oraclevcn.com
 
-  ![database-connection-sys](../oml4sql-anomaly-detection/images/database-connection-sys.png)
+  ![database-connection](../oml4sql-anomaly-detection/images/database-connection.png)
 
 7. Once the database connection is open and SQL Developer Worksheet is ready, execute this script to create the user oml4sqluser and grant privileges to work with OML4SQL API, and generate a copy of table CUST\_INSUR\_LTV.
 
