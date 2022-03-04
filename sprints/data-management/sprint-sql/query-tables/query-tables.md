@@ -1,64 +1,51 @@
 # How to query a table in a database?
 
-## Introduction
+Duration: 2 minutes
 
-This lab walks you through the steps to query a table in a database.
+To select data from a single table it is reasonably easy, simply use the SELECT ... FROM ... WHERE ... ORDER BY ... syntax.
 
-Estimated Time: 2 minutes
+Specifying the asterisk selects all columns from all tables, views, or materialized views listed in the FROM clause.
 
-### Objectives
+```
+<copy>
+select * from table_name;
+</copy>
+```
 
-In this lab, you will:
+To select specific columns with a condition and display the result in a specific order:
 
-* Query a table in a database
+```
+<copy>
+select column1_name, column2_name, .. 
+from table_name
+where condition
+order by column1_name;
+</copy>
+```
 
-### Prerequisites
+For example, to query data from two related tables - departments and employees you can join the data:
 
-* Have created departments and employees tables in a database and inserted records
+```
+select e.name employee,
+        d.name department,
+        e.job,
+        d.location
+from departments d, employees e
+where d.deptno = e.deptno(+)
+order by e.name;
+```
 
-## Task 1: Query data in a table
+Also, as an alternative to a join you can use an inline select to query data.
 
-1. To select data from a single table it is reasonably easy, simply use the SELECT ... FROM ... WHERE ... ORDER BY ... syntax.
-
-    ```
-    <copy>
-    select * from employees;
-    </copy>
-    ```
-
-    ![Query employees table](../images/query-emp-table.png)
-
-2. To query data from two related tables you can join the data
-
-    ```
-    <copy>
-    select e.name employee,
-           d.name department,
-           e.job,
-           d.location
-    from departments d, employees e
-    where d.deptno = e.deptno(+)
-    order by e.name;
-    </copy>
-    ```
-
-    ![Join query](../images/join-query.png)
-
-3. As an alternative to a join you can use an inline select to query data.
-
-    ```
-    <copy>
-    select e.name employee,
-          (select name 
-           from departments d 
-           where d.deptno = e.deptno) department,
-           e.job
-    from employees e
-    order by e.name;
-    </copy>
-    ```
-
-    ![Inline select query](../images/inline-select-query.png)
+```
+select e.name employee,
+        (select name 
+        from departments d 
+        where d.deptno = e.deptno) department,
+        e.job
+from employees e
+order by e.name;
+```
 
 ## Learn More
 

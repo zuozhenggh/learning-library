@@ -1,33 +1,20 @@
 # How to drop a table in a database?
 
-## Introduction
+Duration: 1 minute
 
-This lab walks you through the steps to drop a table in a database.
+You can drop tables using the SQL DROP command. Dropping a table will remove all of the rows and drop sub-objects including indexes and triggers.
 
-Estimated Time: 1 minute
+```
+<copy>
+drop table table_name;
+</copy>
+```
 
-### Objectives
+For example, the following DROP statements will drop the employees tables. The optional cascade constraints clause will drop remove constraints thus allowing you to drop database tables in any order.
 
-In this lab, you will:
-
-* Drop a table in a database
-
-### Prerequisites
-
-* Have created departments and employees tables in a database
-
-## Task 1: Drop a table
-
-1. You can drop tables using the SQL DROP command. Dropping a table will remove all of the rows and drop sub-objects including indexes and triggers. The following DROP statements will drop the departments and employees tables. The optional cascade constraints clause will drop remove constraints thus allowing you to drop database tables in any order.
-
-    ```
-    <copy>
-    drop table departments cascade constraints;
-    drop table employees cascade constraints;
-    </copy>
-    ```
-
-    ![Drop both employees and departments tables](../images/drop-tables.png)
+```
+drop table employees cascade constraints;
+```
 
 ## Learn More
 

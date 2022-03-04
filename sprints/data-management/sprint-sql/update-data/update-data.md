@@ -1,57 +1,31 @@
 # How to update data in a table in a database?
 
-## Introduction
+Duration: 1 minute
 
-This lab walks you through the steps to update data in a table in a database.
+You can use SQL to update values in your table, to do this we will use the update clause. To selectively update rows in a table, where clause is needed with a condition else all the rows in the table will be updated.
 
-Estimated Time: 2 minutes
+```
+<copy>
+UPDATE table-Name
+SET column1-name = value1, column2-name = value2
+WHERE condition;
+</copy>
+```
 
-### Objectives
+For example, the query below will update all rows of the employee table and set the value of country_code column to US.
 
-In this lab, you will:
+```
+update employees
+set country_code = 'US';
+```
 
-* Update data in a table in a database
+Or, you can also selectively update just a specific row like this:
 
-### Prerequisites
-
-* Have created departments and employees tables in a database and inserted records
-
-## Task 1: Update data in a table
-
-1. You can use SQL to update values in your table, to do this we will use the update clause.
-
-    ```
-    <copy>
-    update employees
-    set country_code = 'US';
-    </copy>
-    ```
-
-    ![Update employees table](../images/update-emp-table.png)
-
-2. The query above will update all rows of the employee table and set the value of country code to US. You can also selectively update just a specific row.
-
-    ```
-    <copy>
-    update employees
-    set commission = 2000
-    where  name = 'Sam Smith';
-    </copy>
-    ```
-
-    ![Update employees table](../images/update-emp-table2.png)
-
-3. Lets run a Query to see what our data looks like
-
-    ```
-    <copy>
-    select name, country_code, salary, commission
-    from employees
-    order by name;
-    </copy>
-    ```
-
-    ![Select employees table](../images/select-emp-table.png)
+```
+update employees
+set commission = 2000
+where  name = 'Sam Smith';
+```
 
 ## Learn More
 

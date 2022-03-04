@@ -1,33 +1,22 @@
 # How to add columns to a table in a database?
 
-## Introduction
+Duration: 1 minute
 
-This lab walks you through the steps to add columns to a table in a database.
+You can add additional columns after you have created your table using the *ALTER TABLE ... ADD ...* syntax.
 
-Estimated Time: 1 minute
+```
+<copy>
+alter table table_name
+add column_name column_datatype;
+</copy>
+```
 
-### Objectives
+For example, to add a new column called 'country_code' of datatype varchar2 to 'employees' table, the query looks like this:
 
-In this lab, you will:
-
-* Add columns to a table in a database
-
-### Prerequisites
-
-* Have created departments and employees tables in a database
-
-## Task 1: Add column to a table
-
-1. You can add additional columns after you have created your table using the ALTER TABLE ... ADD ... syntax. For example:
-
-    ```
-    <copy>
-    alter table EMPLOYEES 
-    add country_code varchar2(2);
-    </copy>
-    ```
-
-    ![Alter table to add a column](../images/alter-table-add-column.png)
+```
+alter table employees 
+add country_code varchar2(2);
+```
 
 ## Learn More
 

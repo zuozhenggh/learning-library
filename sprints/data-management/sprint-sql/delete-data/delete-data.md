@@ -1,33 +1,25 @@
 # How to delete data in a table in a database?
 
-## Introduction
+Duration: 1 minute
 
-This lab walks you through the steps to delete data in a table in a database.
+You can delete one or more rows from a table using the DELETE syntax.
 
-Estimated Time: 1 minute
+To delete all rows in the table:
 
-### Objectives
+```
+<copy>
+delete from table_name;
+</copy>
+```
 
-In this lab, you will:
+For example, to delete a specific row:
 
-* Delete data in a table in a database
-
-### Prerequisites
-
-* Have created departments and employees tables in a database and inserted records
-
-## Task 1: Delete data in a table
-
-1. You can delete one or more rows from a table using the DELETE syntax. For example to delete a specific row:
-
-    ```
-    <copy>
-    delete from employees 
-    where name = 'Sam Smith';
-    </copy>
-    ```
-
-    ![Delete data in employees table](../images/delete-data-emp-table.png)
+```
+<copy>
+delete from table_name 
+where condition;
+</copy>
+````
 
 ## Learn More
 

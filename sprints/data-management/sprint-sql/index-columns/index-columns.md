@@ -1,68 +1,54 @@
 # How to index columns in a database?
 
-## Introduction
-
-This lab walks you through the steps to index columns in a database.
-
-Estimated Time: 2 minutes
-
-### Objectives
-
-In this lab, you will:
-
-* Index columns in a database
-
-### Prerequisites
-
-* Have created departments and employees tables in a database
-
-## Task 1: Index columns
+Duration: 2 minutes
 
 Typically developers index columns for three major reasons:
 - To enforce unique values within a column
 - To improve data access performance
 - To prevent lock escalation when updating rows of tables that use declarative referential integrity
 
-1. When a table is created and a PRIMARY KEY is specified an index is automatically created to enforce the primary key constraint. If you specific UNIQUE for a column when creating a column a unique index is also created. To see the indexes that already exist for a given table you can run the following dictionary query.
+Creating an index is easy. All you need to do is identify which column(s) you want to index and give it a name!
 
-    ```
-    <copy>
-    select table_name "Table", 
-        index_name "Index", 
-        column_name "Column", 
-        column_position "Position"
-    from  user_ind_columns 
-    where table_name = 'EMPLOYEES' or 
-        table_name = 'DEPARTMENTS'
-    order by table_name, column_name, column_position
-    </copy>
-    ```
+```
+<copy>
+create index index_name on table_name (column1_name, column2_name, … );
+</copy>
+```
 
-    ![Dictionary query](../images/dictionary-query.png)
+When a table is created and a PRIMARY KEY is specified an index is automatically created to enforce the primary key constraint.
 
-2. It is typically good form to index foreign keys, foreign keys are columns in a table that reference another table. In our EMPLOYEES and DEPARTMENTS table example the DEPTNO column in the EMPLOYEE table references the primary key of the DEPARTMENTS table.
+To see the indexes that already exist for a given table(s) you can run the following dictionary query.
 
-    ```
-    <copy>
-    create index employee_dept_no_fk_idx 
-    on employees (deptno)
-    </copy>
-    ```
+```
+<copy>
+select table_name "Table", 
+    index_name "Index", 
+    column_name "Column", 
+    column_position "Position"
+from  user_ind_columns 
+where table_name = 'table1_name' or 
+    table_name = 'table2_name'
+order by table_name, column_name, column_position;
+</copy>
+```
 
-    ![Create index](../images/create-index.png)
+It is typically good form to index foreign keys, foreign keys are columns in a table that reference another table. For example, if there are two tables - EMPLOYEES and DEPARTMENTS table and the DEPTNO column in the EMPLOYEE table references the primary key of the DEPARTMENTS table. To index the depno column of your departments table and call it employee_dept\_no\_fk\_idx the SQL is:
 
-3. We may also determine that the EMPLOYEE table will be frequently searched by the NAME column. To improve the performance searches and to ensure uniqueness we can create a unique index on the EMPLOYEE table NAME column.
+```
+create index employee_dept_no_fk_idx 
+on employees (deptno)
+```
 
-    ```
-    <copy>
-    create unique index employee_ename_idx
-    on employees (name)
-    </copy>
-    ```
+We may also determine that the EMPLOYEE table will be frequently searched by the NAME column. To improve the performance searches and to ensure uniqueness we can create a unique index on the EMPLOYEE table NAME column.
 
-    ![Create unique index](../images/create-unique-index.png)
+```
+create unique index employee_ename_idx
+on employees (name)
+```
 
-    Oracle provides many other indexing technologies including function based indexes which can index expressions, such as an upper function, text indexes which can index free form text, bitmapped indexes useful in data warehousing. You can also create indexed organized tables, you can use partition indexes and more. Sometimes it is best to have fewer indexes and take advantage of in memory capabilities. All of these topics are beyond the scope of this basic introduction.
+Similarly, if you specify UNIQUE for a column when creating a column a unique index is also created.
+
+Oracle provides many other indexing technologies including function based indexes which can index expressions, such as an upper function, text indexes which can index free form text, bitmapped indexes useful in data warehousing. You can also create indexed organized tables, you can use partition indexes and more. Sometimes it is best to have fewer indexes and take advantage of in memory capabilities. All of these topics are beyond the scope of this basic introduction.
 
 ## Learn More
 
