@@ -1,4 +1,4 @@
-# How do I create Oracle user account?? 
+# How do I create Oracle user account in Oracle Linux?  
 Duration: 10 minutes
 
 OPC is the default user when creating compute instances in Oracle cloud infrastructure. Additionally, you might want to create an oracle user for specific installations. This sprint will help you create an oracle user in your Oracle Linux environment. 
