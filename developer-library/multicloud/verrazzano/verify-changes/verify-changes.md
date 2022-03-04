@@ -1,4 +1,4 @@
-# Verify the Changes in the Bob's Book Application, Verrazzano Console, and Grafana Console
+# Verify the Changes in the Bobby's Book Application, Verrazzano Console, and Grafana Console
 
 ## Introduction
 
@@ -8,7 +8,7 @@ In Lab 7, we applied changes in bobbys-helidon-stock-application and the pod for
 
 In this lab, you will:
 
-* Verify the changes in the Bob's Books application.
+* Verify the changes in the Bobby's Books application.
 * Verify the changes in the Verrazzano Console.
 * Verify the changes in the Grafana Console.
 
@@ -16,15 +16,15 @@ In this lab, you will:
 
 * You should have a text editor, where you can paste the commands and URLs and modify them, as per your environment. Then you can copy and paste the modified commands for running them in the *Cloud Shell*.
 
-## Task 1: Verify the Changes in Bob's Books Application
+## Task 1: Verify the Changes in Bobby's Books Application
 
-1. Open the Bob's Books tab and select Refresh. If you have closed that tab, then copy and paste the following command in the text editor and replace the XX.XX.XX.XX  with the EXTERNAL_IP for the application. You will notice that the Book Name is in all upper case letters.
+1. Open the Bobby's Books tab and select Refresh. If you have closed that tab, then copy and paste the following command in the text editor and replace the XX.XX.XX.XX  with the EXTERNAL_IP for the application. You will notice that the Book Name is in all upper case letters.
 
     ```bash
     <copy>https://bobs-books.bobs-books.XX.XX.XX.XX.nip.io/bobbys-front-end/</copy>
     ```
 
-    ![Bob's Book](images/1.png " ")
+    ![Bobby's Book](images/1.png " ")
 
 ## Task 2: Verify the Changes in the Verrazzano Console
 

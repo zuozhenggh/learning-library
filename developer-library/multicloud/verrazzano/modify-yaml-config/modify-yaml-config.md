@@ -1,4 +1,4 @@
-# Modify the Bob's Books Configuration YAML File
+# Modify the Bobby's Books Configuration YAML File
 
 ## Introduction
 
@@ -62,25 +62,25 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
     ```bash
     $ kubectl get pods -n bobs-books
-    NAME                                               READY  STATUS   RESTARTS  AGE
-    bobbys-coherence-0                                 2/2    Running  0         130m
-    bobbys-front-end-adminserver                       4/4    Running  0         127m
-    bobbys-front-end-managed-server1                   4/4    Running  0         126m
-    bobbys-helidon-stock-application-64fb55cd5b-f8zzp  0/2    PodInitializing  0         10s
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  2/2    Running  0         130m
-    bobs-bookstore-adminserver                         4/4    Running  0         127m
-    bobs-bookstore-managed-server1                     4/4    Running  0         126m
-    mysql-65d864bf8c-xf64p                             2/2    Running  0         130m
-    robert-helidon-bfdfb58b8-58qfs                     2/2    Running  0         130m
-    robert-helidon-bfdfb58b8-lkw8m                     2/2    Running  0         130m
-    roberts-coherence-0                                2/2    Running  0         130m
-    roberts-coherence-1                                2/2    Running  0         130m
-    bobbys-helidon-stock-application-64fb55cd5b-f8zzp  1/2    Running  0         28s
-    bobbys-helidon-stock-application-64fb55cd5b-f8zzp  2/2    Running  0         34s
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  2/2    Terminating  0         130m
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  0/2    Terminating  0         130m
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  0/2    Terminating  0         130m
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  0/2    Terminating  0         130m
+    NAME                                         READY  STATUS   RESTARTS  AGE
+    bobbys-coherence-0                           2/2    Running      0         130m
+    bobbys-front-end-adminserver                 4/4    Running      0         127m
+    bobbys-front-end-managed-server1             4/4    Running      0         126m
+    bobbys-helidon-stock-application-64fb55-zzp  0/2    PodInitializing  0     10s
+    bobbys-helidon-stock-application-77867f-8h5  2/2    Running      0         130m
+    bobs-bookstore-adminserver                   4/4    Running      0         127m
+    bobs-bookstore-managed-server1               4/4    Running      0         126m
+    mysql-65d864bf8c-xf64p                       2/2    Running      0         130m
+    robert-helidon-bfdfb58b8-58qfs               2/2    Running      0         130m
+    robert-helidon-bfdfb58b8-lkw8m               2/2    Running      0         130m
+    roberts-coherence-0                          2/2    Running      0         130m
+    roberts-coherence-1                          2/2    Running      0         130m
+    bobbys-helidon-stock-application-64fb55-zzp  1/2    Running      0         28s
+    bobbys-helidon-stock-application-64fb55-zzp  2/2    Running      0         34s
+    bobbys-helidon-stock-application-77867f-8h5  2/2    Terminating  0         130m
+    bobbys-helidon-stock-application-77867f-8h5  0/2    Terminating  0         130m
+    bobbys-helidon-stock-application-77867f-8h5  0/2    Terminating  0         130m
+    bobbys-helidon-stock-application-77867f-8h5  0/2    Terminating  0         130m
     $
     ```
 
