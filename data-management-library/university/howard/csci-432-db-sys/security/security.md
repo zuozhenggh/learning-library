@@ -8,15 +8,6 @@ Managed database services run the risk of 'Admin snooping', allowing privileged 
 
 You can deploy controls to block privileged account access to application data and control sensitive operations inside the database. Trusted paths can be used to add additional security controls to authorized data access and database changes. IP addresses, usernames, client program names and other factors can be used as part of Oracle Database Vault security controls to increase security. **Oracle Database Vault secures existing database environments transparently, eliminating costly and time consuming application changes.**
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:O_Hi2-vZ-zU)
-
-*Version tested in this lab:* Oracle Autonomous Database 19c
-
-### Video Preview
-Watch a preview of "*Oracle Database Vault Introduction (May 2021)*" [](youtube:vSVr7avZ4Hg)
-
 ### Objectives
 Oracle Database vault comes pre-installed with your Autonomous database.
 In this lab you will:
@@ -28,10 +19,6 @@ In this lab you will:
 You will use the `SH1` schema containing multiple tables such as `CUSTOMERS` or `COUNTRIES` tables which contain sensitive information and need to be protected from privileged users such as the schema owner (**user `SH1`**) and DBA (**user `DBA_DEBRA`**). But the data in these tables should be available to the application user (**user `APPUSER`**).
 
    ![](./images/adb-dbv-001.png " ")
-
-**Note:**
-- **In this lab, the Configure/Enable/Disable DV command syntax is only for Autonomous Database Shared.**
-- Other Oracle Database deployments, including Autonomous Database Dedicated, Exadata Cloud Service, Database Systems, and on-premises database, use a slightly different syntax.
 
 ## Task 1: Connecting to your Oracle Cloud Database
 
@@ -59,37 +46,22 @@ You will use the `SH1` schema containing multiple tables such as `CUSTOMERS` or 
 
 ## Task 2: Set up Application Schema and Users
 
-Although you can connect to your Autonomous Database using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your Oracle Autonomous Data Warehouse or Oracle Autonomous Transaction Processing
+Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your Autonomous Data Warehouse or Autonomous Transaction Processing console.
 
-1. In your "`ADB Security`" database's details page, click the **Tools** tab
+1. In your database's details page, click the **Database Actions** button.
 
-    ![](./images/adb-set-010.png " ")
+    ![Click the Database Actions button](./images/click-database-actions-button.png " ")
 
-2. The Tools page provides you access to database administration and developer tools for Autonomous Database: Database Actions, Oracle Application Express, Oracle ML User Administration, and SODA Drivers. In the Database Actions box, click [**Open Database Actions**]
+2. The Database Actions page opens. In the **Development** box, click **SQL**.
 
-    ![](./images/adb-set-011.png " ")
+    ![Click on SQL.](./images/picture100-16-click-sql.png " ")
 
-3. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, Username "*`admin`*", and click [**Next**]
+3. The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click **Next** to take a tour through the informational boxes or click X to skip the tour.
 
-    ![](./images/adb-set-012.png " ")
+    ![Click Next to take tour.](./images/picture100-sql-worksheet.png " ")
 
-4. Enter the admin Password you specified when creating the database, here *`WElcome_123#`*
 
-      ````
-      <copy>WElcome_123#</copy>
-      ````
-
-    ![](./images/adb-set-013.png " ")
-
-5. Click [**Sign in**]
- 
-6. The Database Actions page opens. In the Development box, click [**SQL**]
-
-    ![](./images/adb-set-014.png " ")
-
-  **Note:** The first time you open SQL Worksheet, a series of pop-up informational boxes introduce you to the main features. Click [**Next**] to take a tour through the informational boxes
-
-7. Copy/Paste the following SQL queries and run them into SQL Worksheet
+4. Copy/Paste the following SQL queries and run them into SQL Worksheet
 
     - To create the working schema
 
@@ -138,7 +110,7 @@ Although you can connect to your Autonomous Database using local PC desktop tool
 
     - Check that there are no errors
 
-8. **Your environment is ready to use!**
+5. **Your environment is ready to use!**
 
 ## Task 3: Enable Database Vault
 
@@ -152,39 +124,7 @@ We start by creating two DV user accounts:
     - `ACCTS_ADMIN_ACE` has the `DV_ACCTMGR` role and can create users and change user passwords
 - While DV owner can also become DV account manager, Oracle recommends maintaining separation of duties by using two different accounts
 
-1. Open a SQL Worksheet on your Autonomous DB as the *`ADMIN`* user
-    
-    - In Oracle Cloud Infrastructure (OCI), select your "`ADB Security`" database created during the "Prepare Your Environment" step
-
-       ![](./images/adb-dbv-002.png " ")
-
-    - In your "`ADB Security`" database's details page, click the **Tools** tab
-
-       ![](../prepare-setup/images/adb-set-010.png " ")
-
-    - The Tools page provides you access to database administration and developer tools for Autonomous Database: Database Actions, Oracle Application Express, Oracle ML User Administration, and SODA Drivers. In the Database Actions box, click [**Open Database Actions**]
-
-       ![](../prepare-setup/images/adb-set-011.png " ")
-
-    - A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account (user *`admin`*) and click [**Next**]
-
-       ![](../prepare-setup/images/adb-set-012.png " ")
-
-    - Enter the admin Password you specified when creating the database (here *`WElcome_123#`*)
-    
-      ````
-      <copy>WElcome_123#</copy>
-      ````
-
-    - Click [**Sign in**]
-
-       ![](../prepare-setup/images/adb-set-013.png " ")
-
-    - The Database Actions page opens. In the Development box, click [**SQL**]
-
-       ![](../prepare-setup/images/adb-set-014.png " ")
-
-2. Create the Database Vault owner and account manager users
+1. Create the Database Vault owner and account manager users
 
       ````
       <copy>
@@ -215,7 +155,7 @@ We start by creating two DV user accounts:
 
        ![](./images/adb-dbv-003.png " ")
 
-3. Configure the Database Vault user accounts
+2. Configure the Database Vault user accounts
 
       ````
       <copy>EXEC DBMS_CLOUD_MACADM.CONFIGURE_DATABASE_VAULT('sec_admin_owen', 'accts_admin_ace');</copy>
@@ -224,7 +164,7 @@ We start by creating two DV user accounts:
    ![](./images/adb-dbv-004.png " ")
 
 
-4. Verify that Database Vault is configured but not yet enabled
+3. Verify that Database Vault is configured but not yet enabled
 
       ````
       <copy>SELECT * FROM DBA_DV_STATUS;</copy>
@@ -234,7 +174,7 @@ We start by creating two DV user accounts:
 
     **Note:** `DV_CONFIGURE_STATUS` must be **TRUE**
 
-5. Now, enable Database Vault
+4. Now, enable Database Vault
 
       ````
       <copy>EXEC DBMS_CLOUD_MACADM.ENABLE_DATABASE_VAULT;</copy>
@@ -242,7 +182,7 @@ We start by creating two DV user accounts:
 
        ![](./images/adb-dbv-006.png " ")
     
-6. You must “restart” the database to complete the Database Vault enabling process
+5. You must “restart” the database to complete the Database Vault enabling process
 
     - Restart the database from the console by selecting "**Restart**" in "More Actions" drop-list as shown
 
@@ -258,7 +198,7 @@ We start by creating two DV user accounts:
 
     **Note:** `DV_ENABLE_STATUS` should be **TRUE**
 
-7. Now, Database Vault is enabled!
+6. Now, Database Vault is enabled!
 
 ## Task 4: Enable Separation of Duties (SoD)
 
