@@ -1,4 +1,4 @@
-# How to configure the VNC to allow ingress traffic on port 80?
+# How can I configure the VNC to allow ingress traffic on port 80?
 Duration: 10 minutes
 
 ## Create an Ingress Rule for your VCN - example port 80

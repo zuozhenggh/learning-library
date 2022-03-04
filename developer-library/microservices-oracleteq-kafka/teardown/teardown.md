@@ -14,7 +14,7 @@ Estimates Time: 10 minutes
 
 - Have successfully completed the earlier labs
 
-## Task 1: Delete the Workshop Resources
+## **Task** 1: Delete the Workshop Resources
 
 1. Run the following command to delete the resources created in you tenancy. It will delete everything except the compartment.
 
@@ -26,7 +26,7 @@ Estimates Time: 10 minutes
         </copy>
     ```
 
-## Task 2: Delete the Directory
+## **Task** 2: Delete the Directory
 
 1. Delete the directory in your cloud shell where you installed the workshop.
 
@@ -34,7 +34,7 @@ Estimates Time: 10 minutes
      <copy>rm -rf <directory name, e.g. lab8022></copy>
     ```
 
-## Task 3: Delete the Compartment
+## **Task** 3: Delete the Compartment
 
 In the Oracle Cloud Console navigate to the Compartments screen in the Identity section. Select the compartment that was created for the workshop and delete it. Note, even when the script in step 1 has completed, it can take some time for Oracle Cloud Infrastructure to fully remove all the resources. It will not be possible to delete the compartment until this has completed.
 
