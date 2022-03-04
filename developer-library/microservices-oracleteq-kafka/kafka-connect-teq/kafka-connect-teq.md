@@ -22,7 +22,7 @@ Estimated Time: 10 minutes
 - Java 1.8
 - Oracle TEQ JMS 1.1+ Client Jars
 
-## Task 1: Setup Kafka Connect
+## **Task** 1: Setup Kafka Connect
 
 This task will use the Apache Kafka Connect, a framework included in Apache Kafka that integrates Kafka with other systems. Oracle TEQ will provide a standard JMS package and related JDBC, Transaction packages to establish the connection and complete the transactional data flow.
 
@@ -30,7 +30,7 @@ To simplify the deployment of a Kafka Connect, as done in Lab 2, we are using th
 
 You will configure the connection between the Kafka broker and the Oracle TEQ submitting the setup to Kafka [Connect REST API](https://docs.confluent.io/platform/current/connect/references/restapi.html).
 
-The kafka2teq-connect-configuration.json file below has the configuration required to create a Connect Sync agent. The topics is already filled with Kafka Topic created during Lab 2, if it was changed, you need change here too.
+The kafka2teq-connect-configuration.json file below has the configuration required to create a Connect Sync agent. The topics is already filled with Kafka Topic created during Lab 2, if it was changed, you need change this configuration too.
 
 ```json
 {
@@ -129,7 +129,7 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
     }
     ```
 
-## Task 2: Enqueueing messages on Kafka Broker
+## **Task** 2: Enqueueing messages on Kafka Broker
 
 Now that you have the Connector running, you can produce some messages and test the message transfer. The messages would be enqueued by the Kafka Producer and dequeued from the Oracle TEQ. We can use the Kafka Producer Microservice built during Lab 2 or operate Kafka producer inside the container to enqueue messages.
 
@@ -170,7 +170,7 @@ Now that you have the Connector running, you can produce some messages and test 
     >LAB8022 - Sync Message from Kafka to TEQ 4
     ```
 
-## Task 3: Dequeue messages from Oracle TEQ
+## **Task** 3: Dequeue messages from Oracle TEQ
 
 After produce some messages, the expected behavior is the Connect Sync agent consume messages from Kafka Topic and enqueue them on Oracle TEQ. And, you will be able to dequeue them from Oracle TEQ using okafka consumer microservice or a PL/SQL procedure, for example.
 
@@ -221,7 +221,7 @@ After produce some messages, the expected behavior is the Connect Sync agent con
 
     ```
 
-## Task 4: Reinstall Kafka Components (optional)
+## **Task** 4: Reinstall Kafka Components (optional)
 
 If you disconnect from Cloud Shell for a long time, you may need to reinstall Kafka components because the local docker was cleaned up. This task helps you to perform this rebuild.
 
@@ -292,9 +292,11 @@ If you disconnect from Cloud Shell for a long time, you may need to reinstall Ka
 
 In this Lab, you learned how to build a bridge between two different event brokers, expanding the possibilities of your decoupled architecture enabling the processing of messages per best-of-the-breed tools. That is the getting start of the Event Mesh concept.
 
-In a graphical view, what we did was described [here](https://youtu.be/wDRIMzlYh9U).
+The following animation describe what we builded in this workshop especially in this laboratory. 
 
-You may now **proceed to the next lab...**
+[Workshop Animation](https://youtu.be/wDRIMzlYh9U).
+
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 

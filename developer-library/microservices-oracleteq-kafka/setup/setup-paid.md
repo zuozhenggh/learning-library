@@ -84,7 +84,7 @@ If you have already used up some quota on your tenancy, perhaps while completing
 
 Quota usage and limits can be check through the console: **Governance & Administration** -- **Governance** -- **Limits, Quotas and Usage**, For example:
 
-  ![OCI Service Limits Example](images/service-limit-example.png " ")
+  ![Oracle Cloud Infrastructure Service Limits Example](images/service-limit-example.png " ")
 
 The Tenancy Explorer may be used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
 
@@ -98,7 +98,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
-  ![Open OCI Cloud Shell](images/open-cloud-shell.png " ")
+  ![Open Oracle Cloud Infrastructure Cloud Shell](images/open-cloud-shell.png " ")
 
   NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
@@ -184,7 +184,7 @@ The setup will provision the following resources in your tenancy:
 
 | Resources              | Oracle Cloud Console Navigation                                               |
 |------------------------|-------------------------------------------------------------------------------|
-| Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
+| Object Storage Buckets | Storage -- Object Storage -- Buckets                                          |
 | Database               | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing   |
 
 You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
@@ -193,7 +193,7 @@ You should monitor the setup progress from a different browser window or tab.  I
 
  From the new browser window or tab, navigate around the console to view the resources within the new compartment.  The table includes the console navigation for each resource.  For example, here we show the database resources:
 
-   ![Select the OCI Compartment](images/select-compartment.png " ")
+   ![Select the Oracle Cloud Infrastructure Compartment](images/select-compartment.png " ")
 
 Also, the setup will pull a GraalVM CE java11-21.3.0 to your Cloud Shell (local) Docker Repository. Run the following command to check your local docker repository:
 
