@@ -56,7 +56,7 @@ In this lab, you will:
 
    ![Advanced](images/3.png " ")
 
-4. Select *Proceed to bobs-books.bobs-books. EXTERNAL_IP .nip.io(unsafe)* to access the application. If you are the not getthing this option for proceed, just type *thisisunsafe* without any space. Do the same for opening other URLs of Bobby's Books application.
+4. Select *Proceed to bobs-books.bobs-books. EXTERNAL_IP .nip.io(unsafe)* to access the application. If you are the not getting this option for proceed, just type *thisisunsafe* without any space anywhere inside this chrome browser window. As you are typing in the chrome browser window, you can't see it, but as soon as you finish typing *thisisunsafe*, you can see application page immediately.
 
    ![Unsafe access](images/4.png " ")
 
@@ -132,7 +132,7 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
    ![Advanced](images/14.png " ")
 
-3. Select *Proceed to verrazzano default XX.XX.XX.XX.nip.io(unsafe)*. If you are the not getthing this option for proceed, just type *thisisunsafe* without any space. Do the same for opening other URLs of Verrazzano Consoles.
+3. Select *Proceed to verrazzano default XX.XX.XX.XX.nip.io(unsafe)*. If you are the not getting this option for proceed, just type *thisisunsafe* without any space. Do the same for opening other URLs of Verrazzano Consoles.
 
    ![Proceed](images/15.png " ")
 
@@ -201,7 +201,7 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
     ![Advanced](images/27.png " ")
 
-4. Select *grafana.vmi.system.default.XX.XX.XX.XX.nip.io(unsafe)*. If you are the not getthing this option for proceed, just type *thisisunsafe* without any space.
+4. Select *grafana.vmi.system.default.XX.XX.XX.XX.nip.io(unsafe)*. If you are the not getting this option for proceed, just type *thisisunsafe* without any space.
 
     ![proceed](images/28.png " ")
 
