@@ -16,11 +16,11 @@
       },
       {
         "title": "Lab 2: Deploy and Test Kafka Broker and Kafka Producer and Consumer Microservices",
-        "filename": "../../springboot-kafka/deploy-and-test-kafka.md"
+        "filename": "../../deploy-and-test-kafka/deploy-and-test-kafka.md"
       },
       {
         "title": "Lab 3: Deploy and Test Oracle TEQ Broker and OKafka Producer and Consumer Microservices",
-        "filename": "../../springboot-teq/deploy-and-test-teq.md"
+        "filename": "../../deploy-and-test-teq/deploy-and-test-teq.md"
       },
       {
         "title": "Lab 4: Connect Kafka Broker with Oracle TEQ Broker",
@@ -33,7 +33,7 @@
       {
         "title": "Need Help?",
         "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+        "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
       }
     ]
 }
