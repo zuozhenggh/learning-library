@@ -1,8 +1,8 @@
-# Deploy and Test Kafka Broker and Kafka Producer and Consumer Microservices
+# Setup the connection between Kafka and Oracle Transactional Event Queues
 
 ## Introduction
 
-This lab will show you the interoperability of Transactional Event Queue with Apache Kafka. Oracle Transactional Event Queue (TEQ) makes it easy to implement event-based applications, as we experienced in the previous lab. It is also highly integrated with Apache Kafka supporting bi-directional information flow between TEQ and Kafka so that changes are available in TEQ or Kafka as soon as possible in near-real-time.
+This laboratory will show you the interoperability of Transactional Event Queues with Apache Kafka. Oracle Transactional Event Queues (TEQ) makes it easy to implement event-based applications, as we experienced in the previous lab. It is also highly integrated with Apache Kafka supporting bi-directional information flow between TEQ and Kafka so that changes are available in TEQ or Kafka as soon as possible in near-real-time.
 
 Estimated Time: 10 minutes
 
@@ -15,11 +15,11 @@ Estimated Time: 10 minutes
 
 ### Prerequisites
 
-- This lab assumes you have already completed the earlier labs.
+- This laboratory assumes you have already completed the earlier laboratories.
   - Kafka Broker: Confluent Platform 3.3.0 or above, or Kafka 0.11.0 or above
-  - Oracle Transactional Event Queue
+  - Oracle Transactional Event Queues
 - Connect: Confluent Platform 4.1.0 or above, or Kafka 1.1.0 or above
-- Java 1.8
+- Java 1.8+
 - Oracle TEQ JMS 1.1+ Client Jars
 
 ## **Task 1:** Setup Kafka Connect
@@ -52,11 +52,16 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
 }
 ```
 
-1. First, verify if Kafka Components are still running:
+1. First, verify if Kafka Components are still running. Execute the following commands:
 
     ```bash
     <copy>
     cd $LAB_HOME/cloud-setup/confluent-kafka
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     ./docker-compose ps
     </copy>
     ```
@@ -65,13 +70,18 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
 
     ![Kafka Components status](images/kafka-containers-ps.png " ")
 
-    If the Kafka components are not running, you will need to rebuild them following instructions from Task 4 at the end of this page.
+    If the Kafka components are not running, you will need to rebuild them following instructions from [Task 4](#task4reinstallkafkacomponentsoptional) at the end of this page.
 
 2. Execute the following command providing the Oracle Database password. It will fill the parameters based on your previous created assets and set up the Connect Sync between the Kafka Topic from Lab 2 and Oracle TEQ from Lab 3:
 
     ```bash
     <copy>
     cd $LAB_HOME/kafka-connect-teq
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     ./setup-kafka2teq-connect.sh 
     </copy>
     ```
