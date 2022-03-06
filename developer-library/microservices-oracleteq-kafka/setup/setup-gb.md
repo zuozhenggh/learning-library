@@ -15,7 +15,7 @@ Estimates Time: 15 minutes
 
 An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
 
-## Task 1: Select Your Compartment
+## **Task 1:** Select Your Compartment
 
 Your own Oracle Cloud Infrastructure compartment for running this workshop has been assigned to you. The name of the compartment appears on the Launch page.
 
@@ -37,7 +37,7 @@ Your own Oracle Cloud Infrastructure compartment for running this workshop has b
 
    ![correct compartment name](images/correct-comp-name.png " ")
 
-## Task 2: Launch the Cloud Shell
+## **Task 2:** Launch the Cloud Shell
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface connected to the tenancy. It also provides up-to-date tools and utilities.
 
@@ -47,7 +47,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    > **Note:** Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
-## Task 3: Make a Clone of the Workshop Setup Script and Source Code
+## **Task 3:** Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
@@ -65,7 +65,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-## Task 4: Start the Setup
+## **Task 4:** Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
@@ -106,7 +106,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 > **Note:** The passwords typed are not displayed.
 
-## Task 8: Monitor the Setup
+## **Task 5:** Monitor the Setup
 
 The setup will provision the following resources in your tenancy:
 
@@ -143,7 +143,7 @@ As result you will see the following:
 
 > **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
-## Task 9: Complete the Setup
+## **Task 6:** Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 

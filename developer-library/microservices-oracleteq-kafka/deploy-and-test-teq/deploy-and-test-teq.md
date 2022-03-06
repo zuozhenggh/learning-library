@@ -68,7 +68,7 @@ The Oracle Transactional Event Queues (TEQ) and its subscriber agent were provis
  </copy>
  ```
 
-## **Task** 1: Verify configurations and build applications
+## **Task 1:** Verify configurations and build applications
 
 The Oracle Transactional Event Queues is a robust messaging backbone offered by Converged Oracle Database that allows you to build an enterprise-class data-centric microservices architecture. The okafka library contains Oracle specific implementation of Kafka Client Java APIs. Its implementation is built on AQ-JMS APIs; thus, it is required to have the connection details.
 
@@ -165,7 +165,7 @@ The Oracle Transactional Event Queues is a robust messaging backbone offered by 
 
  ![Spring Boot Apps Build result](images/springboot-okafka-build-result.png " ")
 
-## **Task** 2: Deploy and Test Spring Boot Oracle TEQ Producer
+## **Task 2:** Deploy and Test Spring Boot Oracle TEQ Producer
 
 1. Deploy Oracle TEQ Producer Microservice
 
@@ -212,7 +212,7 @@ The Oracle Transactional Event Queues is a robust messaging backbone offered by 
   {"id":"0","statusMessage":"Successful"}
  ```
 
-## **Task** 3: Deploy and Test Spring Boot Oracle TEQ Consumer
+## **Task 3:** Deploy and Test Spring Boot Oracle TEQ Consumer
 
 Now that we have Producer running and publishing events inside the TEQ Broker, you will do the same with Consumer.
 
@@ -249,7 +249,7 @@ Now that we have Producer running and publishing events inside the TEQ Broker, y
 
  ![Spring Boot TEQ Consumer Running Logs](images/springboot-okafka-consumer-test.png " ")
 
-## **Task** 4: Stop Oracle TEQ Consumer
+## **Task 4:** Stop Oracle TEQ Consumer
 
 Let's stop the consumer microservice.
 
@@ -259,7 +259,7 @@ Let's stop the consumer microservice.
  </copy>
 ```
 
-## **Task** 5: Deep diving in the Code (optional)
+## **Task 5:** Deep diving in the Code (optional)
 
 Now, we invite you to compare the codes for Kafka and okafka Microservices and see that minor modifications make it possible to use almost the Kafka microservice code to build the TEQ / okafka microservices. For example:
 

@@ -15,17 +15,17 @@ Estimated Time: 15 minutes
 
 An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
 
-## Task 1: Log in to the Oracle Cloud Console and Launch the Cloud Shell
+## **Task 1:** Log in to the Oracle Cloud Console and Launch the Cloud Shell
 
 If you haven't already, sign in to your account.
 
-## Task 2: Select the Home Region
+## **Task 2:** Select the Home Region
 
 Be sure to select the **home region** of your tenancy. Setup will only work in the home region.
 
   ![Oracle Cloud Infrastructure Home Region](images/home-region.png " ")
 
-## Task 3: Check Your Tenancy Service Limits
+## **Task 3:** Check Your Tenancy Service Limits
 
 If you have a **fresh** free trial account with credits then you can be sure that you have enough quota and you can proceed to the next step.
 
@@ -46,7 +46,7 @@ The Tenancy Explorer is used to locate existing resources: **Governance & Admini
 
 It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
 
-## Task 4: Launch Cloud Shell
+## **Task 4:** Launch Cloud Shell
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
 
@@ -56,7 +56,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   > **Note:** Cloud Shell uses *websockets* to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
-## Task 5: Create a Folder to Contain the Workshop Code
+## **Task 5:** Create a Folder to Contain the Workshop Code
 
 1. Create a directory to contain the workshop code. The directory name is used to create a compartment of the same name in your tenancy. The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
@@ -72,7 +72,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     <copy>cd lab8022</copy>
     ```
 
-## Task 6: Make a Clone of the Workshop Setup Script and Source Code
+## **Task 6:** Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
@@ -94,7 +94,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-## Task 7: Start the Setup
+## **Task 7:** Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
@@ -135,7 +135,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 > **Note:** The passwords typed are not displayed.
 
-## Task 8: Monitor the Setup
+## **Task 8:** Monitor the Setup
 
 The setup will provision the following resources in your tenancy:
 
@@ -172,7 +172,7 @@ As result you will see the following:
 
 > **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
-## Task 9: Complete the Setup
+## **Task 9:** Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 

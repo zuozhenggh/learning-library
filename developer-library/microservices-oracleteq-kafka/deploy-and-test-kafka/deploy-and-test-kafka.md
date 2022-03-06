@@ -18,7 +18,7 @@ Estimated Time: 10 minutes
 - *[Optional]* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
 - A Docker Engine accessible.
 
-## **Task** 1: Run Kafka Broker and Create a Topic
+## **Task 1:** Run Kafka Broker and Create a Topic
 
 1. Execute the following sequence of commands to start the Kafka cluster and connect Broker to Lab8022 Network:
 
@@ -60,7 +60,7 @@ Estimated Time: 10 minutes
 
  After a WARNING message that you can disregard, you will see the message **"Created topic LAB8022_TOPIC."**
 
-## **Task** 2: Verify configurations and build applications
+## **Task 2:** Verify configurations and build applications
 
 The Kafka Producer and Consumer adopt Spring Boot and Spring Kafka frameworks. The Producer exposes a REST service that will produce a message and publish it in the Kafka Broker created. And on the other side, the Consumer will subscribe to the same topic and consume messages—a straightforward and typical case but instructive and essential when compared with the next lab.
 
@@ -102,7 +102,7 @@ The Kafka Producer and Consumer adopt Spring Boot and Spring Kafka frameworks. T
 
  ![Spring Boot Apps Build result](images/springboot-kafka-build-result.png " ")
 
-## **Task** 3: Deploy and Test Spring Boot Kafka Producer
+## **Task 3:** Deploy and Test Spring Boot Kafka Producer
 
 1. Deploy Kafka Producer Microservice
 
@@ -168,7 +168,7 @@ The Kafka Producer and Consumer adopt Spring Boot and Spring Kafka frameworks. T
 
  You will need to press Crtl+C to stop this process.
 
-## **Task** 4: Deploy and Test Spring Boot Kafka Consumer
+## **Task 4:** Deploy and Test Spring Boot Kafka Consumer
 
 Now that we have Producer running and publishing events inside the Kafka Broker, you will do the same with Consumer.
 
