@@ -5,7 +5,7 @@
 In this tutorial, you will create a compute instance using the public subnet created in the previous tutorial, configure firewall settings, and install EM agent to the compute from the EMCC console.
 
 
-Estimated time: 5 minutes
+Estimated time: 15 minutes
 
 
 ## Task 1: Create a compute instance
@@ -170,7 +170,7 @@ Estimated time: 5 minutes
 
    ![EMCC Console](images/3-6-emcc.png " ")
 
-    > ***NOTE:*** In case the wizard returns warnings for missing packages, update the package in the EM agent host, and try the agent install again. E.g., if the warning is: "Checking for libnsl-2.28-18 Not found", run **sudo yum install libnsl**. 
+    > ***NOTE:*** In case the wizard returns warnings for missing packages, update the package in the EM agent host, and try the agent install again. E.g., if the warning is: "Checking for libnsl-2.28-18 Not found", run **sudo yum install libnsl**.
 
 7.  Once the installation is succeeded, you will see a screen similar to the image below. Click **Done** to exit the wizard.
 

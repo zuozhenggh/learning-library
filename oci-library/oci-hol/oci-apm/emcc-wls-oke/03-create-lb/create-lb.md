@@ -5,7 +5,7 @@
 
 Once you have a private subnet in the Kubernetes cluster VCN, you can create load balancer services in Kubernetes. In this tutorial, you will collect domain information from the WebLogic services, create YAML files, enter the domain and private subnet information into the files, and finally apply the YAML to create load balancer services in Kubernetes.
 
-Estimated time: 5 minutes
+Estimated time: 15 minutes
 
 ## Task 1: Collect WebLogic information
 
