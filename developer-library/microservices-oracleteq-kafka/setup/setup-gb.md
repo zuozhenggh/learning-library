@@ -45,7 +45,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    ![Oracle Cloud Infrastructure Cloud Shell Opening](images/open-cloud-shell.png " ")
 
-   NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+   > **Note:** Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
 ## Task 3: Make a Clone of the Workshop Setup Script and Source Code
 
@@ -76,7 +76,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-   Note, cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
+   Cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
 
    ```bash
     <copy>source $LAB_HOME/cloud-setup/setup.sh</copy>
@@ -90,9 +90,9 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    User information is available in the Oracle Cloud Console.
 
-   The user OCID will look something like `ocid1.user.oc1..aaaaaa==========l4oi======fasdf===f4===bta`. Note the "ocid1.user" prefix.
+   The user OCID will look something like `ocid1.user.oc1..aaaaaa==========l4oi======fasdf===f4===bta`. Pay attention to the "ocid1.user" prefix.
 
-   Note, sometimes the name link is missing in which case select the `User Settings` link. Do not select the "Tenancy" link.
+   Sometimes the name link is missing in which case select the `User Settings` link. Do not select the "Tenancy" link.
 
    Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
@@ -104,7 +104,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 3. The setup will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin." Please don't forget your database password because you will have to provide it again during the labs.
 
-**Note**: The passwords typed are not displayed.
+> **Note:** The passwords typed are not displayed.
 
 ## Task 8: Monitor the Setup
 
@@ -141,7 +141,7 @@ As result you will see the following:
   confluentinc/cp-zookeeper         7.0.1               3a7ea656f1af        6 weeks ago         780MB
   ```
 
-**Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+> **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
 ## Task 9: Complete the Setup
 
@@ -159,9 +159,7 @@ Their log files are located in the $LAB_LOG directory.
 <copy>ls -al $LAB_LOG</copy>
 ```
 
-You may now **proceed to the next lab...**
-
-**Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 

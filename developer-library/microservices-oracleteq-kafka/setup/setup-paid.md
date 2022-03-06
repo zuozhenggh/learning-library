@@ -43,7 +43,7 @@ Here are the steps for creating a new group and assigning security policy requir
 
 3. In the Create Group dialog box, enter the following:
 
-    - **Name**: Enter a unique name for your group, such as "MicroservicesAdmin”. Note that the group name cannot contain spaces.
+    - **Name**: Enter a unique name for your group, such as "MicroservicesAdmin”. The group name cannot contain spaces.
     - **Description**: Enter a description (for example, “New group for microservices workshop”).
     - Click **Create**.
 
@@ -100,7 +100,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![Open Oracle Cloud Infrastructure Cloud Shell](images/open-cloud-shell.png " ")
 
-  NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+  > **Note:** Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
 ## Task 6: Create a Folder to Contain the Workshop Code
 
@@ -121,7 +121,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 ## Task 7: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
-[//]: # (#TODO change the repo url and branch)
+[//]: #
 
     ```bash
     <copy>git clone -b 22.2.2 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
@@ -148,7 +148,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-   Note, the cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
+   The cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run this command to resume the setup:
 
     ```bash
     <copy>source $LAB_HOME/cloud-setup/setup.sh</copy>
@@ -160,9 +160,9 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    Be sure to provide the user OCID and not the user name or tenancy OCID.
 
-   The user OCID will look something like `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta` . Note the "ocid1.user" prefix.
+   The user OCID will look something like `ocid1.user.oc1..xxxxxxxxxxx5dhxbl4oiasdfasdfasdfasdf4mjhbta`. Pay attention to the "ocid1.user" prefix.
 
-   Note, sometimes the name link is missing in which case select the `User Settings` link. Do not select the "Tenancy" link.
+   Sometimes the name link is missing in which case select the `User Settings` link. Do not select the "Tenancy" link.
 
    Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
@@ -177,6 +177,8 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     ![Get Compartment OCID](images/get-comp-ocid.png " ")
 
 4. The setup will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin." Please don't forget your database password because you will have to provide it again during the labs.
+
+> **Note:** The passwords typed are not displayed.
 
 ## Task 8: Monitor the Setup
 
@@ -213,7 +215,7 @@ As result you will see the following:
   confluentinc/cp-zookeeper         7.0.1               3a7ea656f1af        6 weeks ago         780MB
   ```
 
-**Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+> **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
 ## Task 9: Complete the Setup
 
