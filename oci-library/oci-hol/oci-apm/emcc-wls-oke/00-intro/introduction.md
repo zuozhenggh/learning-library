@@ -12,6 +12,8 @@ In a nutshell, this can be done in three-fold steps:
 
 Although OKE was used as an example in this workshop, the approach using the Kubernetes load balancer service to monitor WebLogic Server with EMCC, could be also used in the hosted solutions in other cloud platforms, such as Azure Kubernetes Service (AKS).
 
+  ![EMCC console Middleware Home Page monitoring WLS on Kubernetes  ](images/emcc.png " ")
+
 ***PREREQUISITES***
 * This workshop uses a simple WebLogic web application that runs on a Kubernetes cluster, as a target application to trace the user transactions. Prior to starting this workshop, be sure to complete the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop Labs 1-4, to set up the application.
 * The workshop assumes you have set up Oracle Enterprise Manager Cloud Control (EMCC) 13c in the Oracle Cloud. You can either manually install EMCC to a compute instance, or provision **[Oracle Enterprise Manager App](https://blogs.oracle.com/observability/post/oracle-enterprise-manager-is-now-available-on-oracle-cloud-marketplace)** from the **[Oracle Cloud Marketplace](https://cloudmarketplace.oracle.com/marketplace)**.
@@ -39,7 +41,7 @@ Finally, the EM Agent was pushed from the OMS and installed in the agent compute
 
 The block diagram below explains the above-mentioned details.  
 
-  ![](images/diagram.png " ")
+  ![EMCC with WLS on OKE setup diagram](images/diagram.png " ")
 
 
 ## Limitations
