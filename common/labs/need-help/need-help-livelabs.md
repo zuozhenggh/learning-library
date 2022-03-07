@@ -82,10 +82,10 @@ If the workshop asks you to open cloud shell, but you cannot access it, please m
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
-	![Compute Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+   ![Compute Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 2. Select the compartment you were assigned. Expand the **root** compartment and then the **Livelabs** compartment. Select the compartment assigned to you.
-  ![Select Compartment](images/select-compartment.png " ")
+   ![Select Compartment](images/select-compartment.png " ")
 
 3. Relaunch your cloud shell. You should be able to open your cloud shell.
    ![Cloud Shell](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/cloud-shell.png " ")
