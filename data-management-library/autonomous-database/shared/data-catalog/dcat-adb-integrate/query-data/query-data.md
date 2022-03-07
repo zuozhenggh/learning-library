@@ -246,6 +246,8 @@ You can use this drop-down list to do the following:
 
     ![The output is displayed in the result section of the paragraph using the **Area Chart** graph format. The output toolbar that enables you to select a different output format is highlighted.](./images/top-sales-output.png " ")
 
+    >**Note:** If the status of one or more paragraphs shows **ERROR**, reset your notebook connection as follows: Click the **Navigation** menu on the Notebook banner, and then select **Notebook Sessions**. On the **Notebook Sessions** page, select your notebook, and then click **Stop**. Next, re-run the notebook.
+
 5. Click **Bar Chart** on the toolbar to change the output display format.
 
     ![The Bar Chart icon is shown as clicked and the bar chart output is displayed.](./images/top-sales-bar-chart.png " ")
