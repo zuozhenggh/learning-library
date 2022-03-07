@@ -1,8 +1,8 @@
-# Workshop Setup
+# Workshop setup
 
 ## Introduction
 
-In this tutorial, you'll provision and set up the resources to execute workshop in your tenancy.  
+In this laboratory, you'll provision and set up the resources to execute workshop in your tenancy.  
 
 Estimated Time: 15 minutes
 

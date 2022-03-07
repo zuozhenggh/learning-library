@@ -1,8 +1,8 @@
-# Workshop Setup
+# Workshop setup
 
 ## Introduction
 
-In this lab we will provision and setup the resources to execute microservices in your environment.
+In this laboratory, we will provision and setup the resources to execute microservices in your environment.
 
 Estimates Time: 15 minutes
 
