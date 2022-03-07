@@ -415,7 +415,7 @@ In this task, we will clone an existing ADB instance. You can use the cloning fe
 
 You may now **proceed to the next lab**.
 
-## **Acknowledgements**
+## Acknowledgements
 
 - **Author** - Kamryn Vinson, Database Product Management
 - **Last Updated By/Date** - Kamryn Vinson, February 2022
