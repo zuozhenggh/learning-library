@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "In Autonomous Database how to I create user and grant access to database actions?",
+            "title": "In Autonomous Database how do I create user and grant access to database actions?",
             "description": "",
             "filename": "sprint-adb-dbactions.md"
         }  
