@@ -1,4 +1,4 @@
-# In Autonomous Database, how can I grant another user access to view tables?
+# In Autonomous Database how can I grant another user access to view tables?
 Duration: 10 minutes
 
 ##  Manage User Roles and Privileges on Autonomous Database
@@ -16,7 +16,7 @@ There are several options to create users on Autonomous Database. You can use Or
       ```
 ## Grant create session to johndoe
 
-1. Grant create session to johndoe
+1. Grant create session to user named johndoe
 
       ```
       <copy> 

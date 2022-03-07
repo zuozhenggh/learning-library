@@ -3,9 +3,9 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "In Autonomous Database how can I grant another user access to view tables?",
+            "title": "How do I call a procedure in Oracle Apex on a button submit and pass page parameters?",
             "description": "",
-            "filename": "sprint-adb-tableaccess.md"
+            "filename": "sprint-apex-callprocedure.md"
         }  
     ]
 }
