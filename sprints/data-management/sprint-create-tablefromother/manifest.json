@@ -1,0 +1,11 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How do i create one table from another table including data?",
+            "description": "",
+            "filename": "sprint-create-tablefromother.md"
+        }  
+    ]
+}
