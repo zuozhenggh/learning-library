@@ -77,15 +77,15 @@ If any of these three conditions are true, some ports in your network may be clo
 
 ## Cannot Access Cloud Shell?
 
-   ![](images/policy-missing.png " ")
+   ![Policy Missing Error](images/policy-missing.png " ")
 If the workshop asks you to open cloud shell, but you cannot access it, please make sure that you are in the compartment assigned to you.
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+	![Compute Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 2. Select the compartment you were assigned. Expand the **root** compartment and then the **Livelabs** compartment. Select the compartment assigned to you.
-  ![](images/select-compartment.png " ")
+  ![Select Compartment](images/select-compartment.png " ")
 
 3. Relaunch your cloud shell. You should be able to open your cloud shell.
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/cloud-shell.png " ")
+   ![Cloud Shell](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/cloud-shell.png " ")
