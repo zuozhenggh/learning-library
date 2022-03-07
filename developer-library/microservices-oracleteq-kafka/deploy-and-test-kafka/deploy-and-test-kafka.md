@@ -79,11 +79,11 @@ Estimated Time: 10 minutes
 
 The Kafka Producer and Consumer adopt Spring Boot and Spring Kafka frameworks. The Producer exposes a REST service that will produce a message and publish it in the Kafka Broker created. And on the other side, the Consumer will subscribe to the same topic and consume messages—a straightforward and typical case but instructive and essential when compared with the next lab.
 
-The workshop made available the both microservices source codes, we invite you to investigate the code to be familiar with Spring Boot and how connect with Apache Kafka to allow asynchronous communication between microservices. After this navigation, you have to confirm the microservices configurations present in a properties file, following [Externalized configuration pattern](https://microservices.io/patterns/externalized-configuration.html) of microservices, and also the third factor from [twelve-factor methodology](https://12factor.net).
+This workshop makes the source codes of the two microservices available; We invite you to investigate the code to familiarize yourself with Spring Boot and how it connects with Apache Kafka, which allows for asynchronous communication between microservices. After this navigation, you must confirm the microservices settings present in a properties file, following microservices [External Configuration Pattern](https://microservices.io/patterns/externalized-configuration.html) and also the third factor of [Twelve Factor Methodology](https://12factor.net).
 
 1. Review Producer microservices properties
 
-    You have to review the Producer microservice properties to confirm that it will connect with right Apache Kafka Broker and Topic. Remembering that both were configured during workshop setup tasks and Kafka Broker runs at address Broker:9092. But, as we are working Docker engine from Cloud Shell environment, Kafka broker is advertised for other nodes on port 29092.
+    You have to review the Producer microservice properties to confirm connecting with the right Apache Kafka Broker and Topic. Remember that both were configured during workshop setup tasks, and Kafka Broker runs at address Broker:9092. But, as we are working on the Docker engine from the Cloud Shell environment, Kafka broker is advertised for other nodes on port 29092.
 
     To verify the producer configuration, you can execute the follow command:
 
@@ -100,13 +100,13 @@ The workshop made available the both microservices source codes, we invite you t
 
 2. Review the Consumer Configurations
 
-    Follow the same concepts and practices of Producer, Consumer microservices has its configuration externalized and they should point to right Apache Kafka broker that Producer is connected. The following command allow you list the contents of Consumer properties.
+    Following the same concepts and practices of Producer, Consumer microservice has its configuration externalized and should point to the right Apache Kafka broker that Producer is connected. The following command allows you to list the contents of Consumer properties.
 
     ```bash
     <copy>cat $LAB_HOME/springboot-kafka/kafka-consumer/src/main/resources/application.yaml</copy>
     ```
 
-    And, likewise with Producer case, Consumer should to point to the above bootstrap servers and topic.
+    And, likewise in the Producer case, the Consumer should point to the above bootstrap servers and topic.
 
     > **Note:** If you change these configurations, you will have to modify these parameters.
 

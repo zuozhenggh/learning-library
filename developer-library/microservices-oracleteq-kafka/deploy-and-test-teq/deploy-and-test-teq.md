@@ -70,9 +70,11 @@ The Oracle Transactional Event Queues (TEQ) and its subscriber agent were provis
 
 ## **Task 1:** Verify configurations and build applications
 
-The Oracle Transactional Event Queues is a robust messaging backbone offered by converged Oracle Database that allows you to build an enterprise-class data-centric microservices architecture. The okafka library contains Oracle specific implementation of Kafka Client Java APIs. Its implementation is built on AQ-JMS APIs; thus, it is required to have the connection details.
+The Oracle Transactional Event Queues is a robust messaging backbone offered by the converged Oracle Database that allows you to build an enterprise-class data-centric microservices architecture. The okafka library contains Oracle specific implementation of Kafka Client Java APIs. Its implementation is built on AQ-JMS APIs; thus, it is required to have the connection details.
 
-1. Configure Oracle TEQ Producer and Consumer
+As the Database is generated during setup based on your environment, you will need to adjust the parameters from each microservices informing the correct data to the connection (Oracle Database TNS Name, Service Name, and Host Name and Port). These properties are stored in the *application.yaml* file from each microservices.
+
+1. Obtain JMS connection information
 
     Configuring a JMS connection is straightforward; you have to get the information about the Database instance and how we should follow to connect from the security perspective. We use Oracle Autonomous Transaction Processing (ATP) in this lab; we have to use a wallet. Again, the setup already brings us the wallet to facilitate this laboratory.
 
@@ -92,11 +94,11 @@ The Oracle Transactional Event Queues is a robust messaging backbone offered by 
     (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=xxxxxxxxxxxxxxx_lab8022_tp.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com, OU=Oracle BMCS US, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
     ```
 
-2. Fill the Connection properties.
+2. Setup Producer microservices properties
 
-    As the Database was generated during setup based on your environment, you will need to adjust the parameters from each microservices informing the correct data to the connection (Oracle Database TNS Name, Service Name, and Host Name and Port). These properties are stored in the *application.yaml* file from each microservices.
+    You have to review the Producer microservice properties to fill the required connection properties, which at the end are the JDBC connection string and Oracle TEQ Topic Name.
 
-    For the Producer:
+    Edit the producer configuration filling the Oracle Database Instance Name, Service Name, TNS Name, Bootstrap Servers (e.g. Oracle Database endpoint and port), and the Oracle TEQ Topic Name.
 
     ```bash
     <copy>
@@ -119,7 +121,11 @@ The Oracle Transactional Event Queues is a robust messaging backbone offered by 
     replication-factor: 1
     ```
 
-    For Consumer:
+3. Setup Consumer microservices properties
+
+    You have to do the same edition to the Consumer microservice to fill the required connection properties.
+
+    Edit the consumer configuration filling the Oracle Database Instance Name, Service Name, TNS Name, Bootstrap Servers (e.g., Oracle Database endpoint and port), the Oracle TEQ Topic Name. However, you have an additional field, the **Group ID**, that represents the subscriber agent created to allow dequeue from the TOPIC/QUEUE.
 
     ```bash
     <copy>
@@ -150,7 +156,7 @@ The Oracle Transactional Event Queues is a robust messaging backbone offered by 
     max-poll-records: 100 
     ````
 
-3. Build the Applications
+4. Build the Applications
 
     Likewise the previous lab, we used Maven to build the applications Producer and Consumer and the configuration module. Run this command to build them:
 
@@ -167,18 +173,27 @@ The Oracle Transactional Event Queues is a robust messaging backbone offered by 
 
 ## **Task 2:** Deploy and Test Spring Boot Oracle TEQ Producer
 
-1. Deploy Oracle TEQ Producer Microservice
+Now that we have the applications successfully built, we can deploy them and test them. Let's start with the Producer.
 
-    Now that we have the applications successfully built, we can deploy them and test them. Let's start with the Producer. Run these commands to build the image and deploy the Producer inside the Docker Engine:
+1. Deploy Oracle TEQ Producer microservice
+
+    Run the following sequence of commands to build the container image and deploy it to the Docker Engine:
 
     ```bash
     <copy>
     cd $LAB_HOME/springboot-oracleteq/okafka-producer
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     ./build.sh
     </copy>
     ```
 
-    Now, let's run the Producer :
+2. Run the Oracle TEQ Producer microservice container
+
+    After create and register the container image with your Producer microservices, you can run it executing the following command:
 
     ```bash
     <copy>
@@ -196,9 +211,9 @@ The Oracle Transactional Event Queues is a robust messaging backbone offered by 
 
     ![Spring Boot OKafka Producer Running Logs](images/springboot-okafka-producer-running.png " ")
 
-2. Test the Producer Microservice
+3. Test the Oracle TEQ Producer microservice
 
-    We will use the cURL command to test our Producer.
+    To test your microservices just submit a message to its REST endpoint using a cURL command:
 
     ```bash
     <copy>
@@ -214,11 +229,11 @@ The Oracle Transactional Event Queues is a robust messaging backbone offered by 
 
 ## **Task 3:** Deploy and Test Spring Boot Oracle TEQ Consumer
 
-Now that we have Producer running and publishing events inside the TEQ Broker, you will do the same with Consumer.
+Now that you have Producer running and publishing events inside the Oracle TEQ Topic, you will do the same with Consumer.
 
-1. Deploy Oracle TEQ Consumer Microservice
+1. Deploy Oracle TEQ Consumer microservice
 
-    We will follow the same steps to deploy and test Oracle TEQ/okafka consumer microservice. Run these commands to build the image and deploy the Consumer inside the Docker Engine :
+    Run the following sequence of commands to build the container image and deploy it to the Docker Engine:
 
     ```bash
     <copy>
@@ -227,7 +242,7 @@ Now that we have Producer running and publishing events inside the TEQ Broker, y
     </copy>
     ```
 
-    Now, let's run the Consumer :
+2. Run the Oracle TEQ Consumer microservice container
 
     ```bash
     <copy>
@@ -235,7 +250,7 @@ Now that we have Producer running and publishing events inside the TEQ Broker, y
     </copy>
     ```
 
-    We can check the logs and see the Consumer running:
+    You  can check the logs and see the Consumer running:
 
     ```bash
     <copy>
@@ -245,13 +260,15 @@ Now that we have Producer running and publishing events inside the TEQ Broker, y
 
     ![Spring Boot TEQ Consumer Running Logs](images/springboot-okafka-consumer-running.png " ")
 
-    And finally, We can now produce and consume messages from Kafka Broker; the result inside logs of Consumer will be:
+3. Test the Oracle TEQ Consumer microservice
+
+    And finally, You can now produce and consume messages from Oracle TEQ; the result inside Consumer logs should be similar to:
 
     ![Spring Boot TEQ Consumer Running Logs](images/springboot-okafka-consumer-test.png " ")
 
 ## **Task 4:** Stop Oracle TEQ Consumer
 
-Let's stop the consumer microservice.
+As the following laboratory will require that messages produced in Oracle TEQ stay there, please stop the Oracle TEQ Consumer microservice.
 
 ```bash
  <copy>

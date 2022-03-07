@@ -16,8 +16,8 @@ Estimated Time: 10 minutes
 ### Prerequisites
 
 - This laboratory assumes you have already completed the earlier laboratories.
-  - Kafka Broker: Confluent Platform 3.3.0 or above, or Kafka 0.11.0 or above
-  - Oracle Transactional Event Queues
+    1. Kafka Broker: Confluent Platform 3.3.0 or above, or Kafka 0.11.0 or above
+    2. Oracle Transactional Event Queues
 - Connect: Confluent Platform 4.1.0 or above, or Kafka 1.1.0 or above
 - Java 1.8+
 - Oracle TEQ JMS 1.1+ Client Jars
@@ -70,7 +70,7 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
 
     ![Kafka Components status](images/kafka-containers-ps.png " ")
 
-    If the Kafka components are not running, you will need to rebuild them following instructions from [Task 4](#task4reinstallkafkacomponentsoptional) at the end of this page.
+    > **Note:** If the Kafka components are not running, you have to rebuild them executing the instructions from [Task 4](#task4reinstallkafkacomponentsoptional).
 
 2. Execute the following command providing the Oracle Database password. It will fill the parameters based on your previous created assets and set up the Connect Sync between the Kafka Topic from Lab 2 and Oracle TEQ from Lab 3:
 
@@ -274,37 +274,37 @@ If you disconnect from Cloud Shell for a long time, you may need to reinstall Ka
 
 5. Connect broker to Lab8022 Network (Docker internal)
 
-    First, check if lab8022network exist
+    1. check if lab8022network exist
 
-    ```bash
-    <copy>
-    docker network ls
-    </copy>
-    ```
+        ```bash
+        <copy>
+        docker network ls
+        </copy>
+        ```
 
-    if network not exist, execute the following command to create it.
+    2. if network not exist, execute the following command to create it.
 
-    ```bash
-    <copy>
-    docker network create lab8022network
-    </copy>
-    ```
+        ```bash
+        <copy>
+        docker network create lab8022network
+        </copy>
+        ```
 
-    And, finally, connect broker to lab8022 network
+    3. And, finally, connect broker to lab8022 network
 
-    ```bash
-    <copy>
-    docker network connect lab8022network broker
-    </copy>
-    ```
+        ```bash
+        <copy>
+        docker network connect lab8022network broker
+        </copy>
+        ```
 
 ## Wrap up
 
 In this Lab, you learned how to build a bridge between two different event brokers, expanding the possibilities of your decoupled architecture enabling the processing of messages per best-of-the-breed tools. That is the getting start of the Event Mesh concept.
 
-The following animation describe what we builded in this workshop especially in this laboratory. 
+The following animation describe what we builded in this workshop especially in this laboratory.
 
-[Workshop Animation](https://youtu.be/wDRIMzlYh9U).
+[](youtube:wDRIMzlYh9U)
 
 You may now **proceed to the next lab**
 
