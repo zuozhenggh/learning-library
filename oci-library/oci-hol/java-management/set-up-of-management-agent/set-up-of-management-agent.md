@@ -216,13 +216,6 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
     <copy>
     @ECHO off
 
-    REM ----------------------------------------------------------------------------------------------------------------------------------
-    REM Copyright (c) 2022, Oracle and/or its affiliates. All rights reserved.
-    REM The script is for Demo purpose only
-    REM Usage: installer.bat <Full_Path_To_Java_Home> <Full_Path_To_Input.rsp>
-    REM use system env variables for paths "c:\Program Files" -> "c:\PROGRA~1" and "c:\Program Files (x86)" -> "c:\PRPGRA~2 respectively
-    REM ----------------------------------------------------------------------------------------------------------------------------------
-
     REM STEP1: CHECKING FOR ADMINISTRATOR PERMISSIONS
     ECHO Administrative permissions required for installation of management agent. Detecting permissions...
 
@@ -389,13 +382,6 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
     ```
     <copy>
     @ECHO off
-
-    REM ---------------------------------------------------------------------------------------------------------------------------------
-    REM Copyright (c) 2022, Oracle and/or its affiliates. All rights reserved.
-    REM The script is for Demo purpose only
-    REM Usage:  jms-configure
-    REM use system env variables for paths "c:\Program Files" -> "c:\PROGRA~1" and "c:\Program Files (x86)" -> "c:\PRPGRA~2 respectively
-    REM ---------------------------------------------------------------------------------------------------------------------------------
 
     REM CONFIGURE JMS USAGE TRACKER
     REM Temporary prefix path variable with system32 to prefer system commands
