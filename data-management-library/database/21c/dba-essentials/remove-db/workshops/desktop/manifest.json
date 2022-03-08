@@ -8,7 +8,7 @@
       "filename": "../../intro-deinstall/intro-deinstall.md"
     },
     {
-      "title": "Use noVNC Remote Desktop",
+      "title": "Use noVNC remote desktop",
       "description": "Use noVNC Remote Desktop",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
@@ -18,7 +18,7 @@
       "filename": "../../deinstall-db/deinstall-db.md"
     },
     {
-      "title": "Need Help?",
+      "title": "Need help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
