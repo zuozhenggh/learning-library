@@ -1,4 +1,4 @@
-# MySql to Oracle
+# MySql to Oracle Workshop
 
 ## Introduction
 
