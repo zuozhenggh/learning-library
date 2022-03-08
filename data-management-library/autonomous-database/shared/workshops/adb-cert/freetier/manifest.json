@@ -13,9 +13,14 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Lab 1: Autonomous Database on Shared Infrastructure",
-            "description": "Start and Stop ADB",
-            "filename": "./../../../adb-cert/adb-cert.md"
+            "title": "Lab 1: Identity and Access Management (IAM) Service",
+            "description": "Oracle Cloud Free Tier Account",
+            "filename": "../adb-iam/adb-iam.md"
+        },
+        {
+            "title": "Lab 2: Autonomous Database on Shared Infrastructure",
+            "description": "Autonomous Database on Shared Infrastructure",
+            "filename": "../adb-cert/adb-cert.md"
         },
         {
             "title": "Need Help?",
