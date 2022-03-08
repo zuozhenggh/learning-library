@@ -44,6 +44,18 @@ You will use the `SH1` schema containing multiple tables such as `CUSTOMERS` or 
    
     ![](./images/adb-compartment.png " ")
 
+7. If your database icon is green and says running under it, proceed to Task 2 below. If your database is stopped, the ADW/ATP icon on the left is yellow says stopped under it then, under the More Actions drop down list, select “Start”, and confirm start.
+
+    ![](./images/adw-stopped.png " ")
+
+8. Confirm start.
+
+    ![](./images/confirm-start.png " ")
+
+9.  Wait a few moments until the icon on the left turns from yellow to green.
+
+    ![](./images/yellow-to-green.png " ")
+
 ## Task 2: Set up Application Schema and Users
 
 Although you can connect to your autonomous database from local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Worksheet directly from your Autonomous Data Warehouse or Autonomous Transaction Processing console.
@@ -80,6 +92,7 @@ Although you can connect to your autonomous database from local PC desktop tools
 
       </copy>
       ````
+      ![](./images/adb-set-015.png " ")
 
     - To create the working users
 
@@ -102,11 +115,9 @@ Although you can connect to your autonomous database from local PC desktop tools
 
       </copy>
       ````
+     ![](./images/adb-set-016.png " ")
 
     - Press [**F5**] or click the "Run Scripts" icon
-
-         ![](./images/adb-set-015.png " ")
-         ![](./images/adb-set-016.png " ")
 
     - Check that there are no errors
 
@@ -184,17 +195,17 @@ We start by creating two DV user accounts:
     
 5. You must “restart” the database to complete the Database Vault enabling process
 
-    - Restart the database from the console by selecting "**Restart**" in "More Actions" drop-list as shown
+    - For these changes to take effect you must restart your database. You should still be on the Database Console page on one of the tabs on your web browser. If not, on a new tab follow the steps in “Task 2” and select **Restart** from the "More Actions" drop-list as shown. 
 
        ![](./images/adb-dbv-007.png " ")
 
-    - Once restart completes, go back to the SQL Worksheet as the `ADMIN` user and verify DV is enabled
+    - Once restart completes, go back to the SQL Worksheet (you should still have a SQL Worksheet tab open, if not follow steps in Task 1 to open SQL Worksheet) and verify DV is enabled. Copy, paste, and run the statement below in SQL Worksheet
 
       ````
       <copy>SELECT * FROM DBA_DV_STATUS;</copy>
       ````
 
-       ![](./images/adb-dbv-008.png " ")
+       ![](./images/dba-dv-status.png " ")
 
     **Note:** `DV_ENABLE_STATUS` should be **TRUE**
 
@@ -206,13 +217,18 @@ In Autonomous DB, the `ADMIN` user has all privileges, including the privileges 
 
 In the "Prepare your environment" step you created the user `DBA_DEBRA`. This user has the `DBA` role on the Autonomous DB
 
-1. To demonstrate the effects of the DB Vault SoD on a DBA account, open the SQL Worksheet as the *`DBA_DEBRA`* user (as reminder, the password is `WElcome_123#`)
-    
-      ````
-      <copy>WElcome_123#</copy>
-      ````
+1. To demonstrate the effects of the DB Vault SoD on a DBA account, open the SQL Worksheet as the DBA_DEBRA user (as reminder, the password is `WElcome_123#`). You must log off as ADMIN and log on as *`DBA_DEBRA`*. On the top right of the SQL Worksheet click on the drop-down menu that says ADMIN and select Sign Out
 
-2. View `DBA_DEBRA`'s roles
+
+    ![](./images/dba-sign-out.png " ")
+
+    - After you sign out, click on Sign In and use the Username DBA\_DEBRA and the password Welcome\_123# 
+
+       ![](./images/dba-sign-in.png " ")
+
+    - Once signed in select SQL to go into SQL Worksheet 
+
+2. View `DBA_DEBRA`'s roles by running the following statement in SQL Worksheet like you have been doing (copy, paste, run arrow)
 
       ````
       <copy>SELECT * FROM session_roles ORDER BY 1;</copy>
