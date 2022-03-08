@@ -22,7 +22,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Configure GoldenGate
 
-## **STEP 1:** GoldenGate for Oracle
+## Task 1: GoldenGate for Oracle
 
 Open a terminal session
 
@@ -39,38 +39,61 @@ Open a terminal session
 <copy>mkdir /u01/app/oracle/product/19.1.0/oggWallet</copy>
 ````
 
-2. GLOBALS configuration
+2. GLOBALS configuration Oracle
 
-In each $OGG_HOME directory, edit the file GLOBALS
+![](./images/GLOBALS.png " ")
+
+In the GoldenGate home directory for Oracle, edit the file GLOBALS
 
 ````
-<copy>vi GLOBALS</copy>
+<copy>vi /u01/app/oracle/product/19.1.0/gg/GLOBALS</copy>
 ````
-````
-<copy>Set the GGSCHEMA parameter
-Oracle: ggschema pdbeast.ggadmin
-MySQL: ggschema ggadmin
-Set the CHECKPOINTTABLE parameter</copy>
-````
+Input the following parameters into the file GLOBALS
 
-## **STEP 2:**- GoldenGate for non-Oracle (MySQL)
+````
+<copy>ggschema pdbeast.ggadmin
+CHECKPOINTTABLE ggadmin.ggchkpoint
+WALLETLOCATION /u01/app/oracle/product/19.1.0/oggWallet</copy>
+````
+3. GLOBALS configuration MySQL
 
-Open a terminal session
+![](./images/GLOBALS.png " ")
+
+In the Goldengate home directory for MySQL, edit the file GLOBALS
+
+````
+<copy>vi /u01/app/oracle/product/19.1.0/oggmysql/GLOBALS</copy>
+````
+Input the following parameters into the file GLOBALS
+
+```
+<copy>ggschema ggadmin
+CHECKPOINTTABLE ggadmin.ggchkpoint
+WALLETLOCATION /u01/app/oracle/product/19.1.0/oggWallet</copy>
+```
+## Task 2:- GoldenGate for non-Oracle (MySQL)
+
+Open a terminal session. This session will be used for configuring the MySQL side
 ````
 <copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
 ````
-1. Oracle source
 ````
 <copy>sudo su - oracle</copy>
 ````
 
-````
-<copy>sudo service mysqld start</copy>
-````
+1. Configure MySQL target
+
+Configure GG Home for MySQL
 ````
 <copy>export OGG_HOME=/u01/app/oracle/product/19.1.0/oggmysql</copy>
 ````
 
+Open GGSCI
+````
+<copy>cd $OGG_HOME
+./ggsci</copy>
+````
+2. Log in to the database as ggadmin and add a checkpointtable
 ````
 <copy>dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@</copy>
 ````
@@ -79,41 +102,26 @@ Open a terminal session
 <copy>ADD CHECKPOINTTABLE ggadmin.ggchkpoint</copy>
 ````
 
-2. MySQL target
-
-checkpointtable ggadmin.ggchkpoint
-
-1. Set the WALLETLOCATION parameter to the disk location in step 1.
-
-For Oracle Source replication
-
+3. Start the GoldenGate Software Command Interpreter in another window for configuring the Oracle side
 ````
-<copy>WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet</copy>
+<copy>ssh -i (sshkey) opc@xxx.xxx.xx.xxx</copy>
 ````
-
-MySQL target apply
-
 ````
-<copy>WALLETLOCATION /opt/app/oracle/product/19.1.0/oggWallet</copy>
+<copy>sudo su - oracle</copy>
+````
+````
+<copy>cd $OGG_HOME
+./ggsci</copy>
 ````
 
-1. Save and close the files.
-
-2. Start the GoldenGate Software Command Interpreter in both windows.
-
-````
-<copy./ggsci</copy>
-````
->
 4. **OGG Credential Store**
 
-In GGSCI, create the OGG Credential Store by executing the command:
+In GGSCI, create the OGG Credential Store by executing the command in both sessions:
 ````
 <copy>add credentialstore</copy>
 ````
-5. Add OGG database user credentials into each credential store.
 
-6. **Oracle**
+6. Add credentials on the Oracle side
 
 ````
 <copy>alter credentialstore add user c##ggadmin@orcl password Oracle1 alias oggcapture</copy>
@@ -126,7 +134,7 @@ In GGSCI, create the OGG Credential Store by executing the command:
 <copy>alter credentialstore add user ggadmin@pdbwest password Oracle1 alias ggapplywest</copy>
 ````
 
-7. **MySQL**
+7. Add credentials on the MySQL side
 ````
 <copy>alter credentialstore add user ggadmin password @Oracle1@ alias oggcapture</copy>
 ````
@@ -135,7 +143,7 @@ In GGSCI, create the OGG Credential Store by executing the command:
 ````
 
 
-## **STEP 3:**- OGG Master Key and Wallet
+## Task 3:- OGG Master Key and Wallet
 
 1. In the Oracle GGSCI, create the OGG Wallet.
 Command:
@@ -148,6 +156,9 @@ Command:
 
 **Oracle GG**
 
+````
+<copy>open wallet</copy>
+````
 ````
 <copy>add masterkey</copy>
 ````
@@ -189,8 +200,17 @@ Command:
 Version         Creation Date                            Status
 2020-09-10T15:22:28.000+00:00   Current
 
-## **STEP 4:**- GoldenGate Checkpoint Table
+## Task 4:- GoldenGate Checkpoint Table
+In SQLplus, make sure the pluggable databases PDBEAST and PDBWEST are open.
 
+In the Oracle side terminal session:
+````
+<copy>sqlplus / as sysdba</copy>
+````
+````
+<copy>show pdbs;</copy>
+````
+If the pluggable databases PDBEAST and PDBWEST are not in read write mode, set them to open:
 ````
 <copy>alter pluggable database PDBEAST open;
 alter pluggable database PDBWEST open;</copy>
@@ -223,7 +243,7 @@ Connect to the target database:
 <copy>add checkpointtable</copy>
 ````
 
-## **STEP 5:**- GoldenGate Heartbeat
+## Task 5:- GoldenGate Heartbeat
 
 1.  OGG Heartbeat
 
@@ -265,7 +285,7 @@ In GGSCI, create and activate OGG Integrated Heartbeat
 ````
 <copy>add heartbeattable, targetonly</copy>
 ````
-## **STEP 6:**- GoldenGate Manager		  
+## Task 6:- GoldenGate Manager		  
 **OGG Manager**
 
 To configure the OGG Manager process in both the Oracle and MySQL OGG environments:
@@ -318,7 +338,7 @@ startupvalidationdelay 2</copy>
 ./ggsci</copy>
 ```
 
-## **STEP 7:**- Startup GoldenGate
+## Task 7:- Startup GoldenGate
 
 1. Oracle:
 ````
@@ -333,11 +353,9 @@ You may now *proceed to the next lab*.
 
 ## Learn More
 
-* [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/)
+* [Oracle GoldenGate 21.3 | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/)
 
 ## Acknowledgements
-* **Author** - Brian Elliott, Data Integration November 2020
+* **Author** - Andrew Hong, Data Integration February 2022
 * **Contributors** - Madhu Kumar, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
-
-
