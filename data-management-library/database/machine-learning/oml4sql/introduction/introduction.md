@@ -1,17 +1,17 @@
-# Introduction to Oracle Machine Learning for SQL (OML4SQL)
+# OML4SQL using One-Class Support Vector Machine (SVM) for Anomaly Detection
 
 ## About this Workshop
 
 This workshop introduces you to Oracle Machine Learning for SQL  (OML4SQL) on Oracle Database. OML4SQL supports scalable in-database data exploration and preparation using native SQL & PLSQL syntax, invocation of in-database machine learning algorithms for model building.
 
-In this workshop, you have a dataset representing 15k customers of an insurance company. Each customer has around 30 attributes, and our goal is to train our database to find 4 Business Objectives that are described in section [oml4sql-use-case.md](/data-management-library/database/machine-learning/oml4sql/oml4sql-use-case/oml4sql-use-case.md).
+In this workshop, you have a dataset representing 15k customers of an insurance company. Each customer has around 30 attributes, and our goal is to build machine learning models to meet four business objectives that are described in section [OML4SQL Use Case](./../../oml4sql/workshops/livelabs/?lab=oml4sql-use-case).
 
-  1. Find the most atypical members of this customer group (outlier identification).
+  1. Find the most atypical members of this customer group.
   2. Discover the common demographic characteristics of the most typical customers with insurance.
   3. Compute the probability of purchase for a new/hypothetical customer, and grant it to sellers to qualify better their potential clients since the first contact.
   4. Identify rows that are most atypical in the input dataset. Consider each type of marital status to be separate, so the most anomalous rows per marital status group should be returned.
 
-Estimated Lab Time: 2 hours.
+Estimated Time: 2 hours.
 
 
 ## About Oracle Machine Learning for SQL (OML4SQL)
@@ -27,7 +27,7 @@ The PL/SQL API and SQL language operators provide direct access to OML4SQL funct
 For more information about [OML4SQL API Guide](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmapi/introduction-to-oml4sql.html#GUID-429CF74D-C4B7-4302-9C33-5292A664E2AD).
 
 
-### Objectives
+## Objectives
 
 In this lab, you will learn the lifecycle of machine learning:
 
@@ -44,13 +44,19 @@ In this lab, you will learn the lifecycle of machine learning:
 
 
 
-### Prerequisites
+## Prerequisites
 
 * Oracle Database 21c installed.
-* Access the Oracle database containing the customer insurance table and run the scripts to configure the user and prepare data. The virtual machine used for this lab is the same VM that was used in the OML4PY Workshop of the previous lab. To see how to access it, you can use the following file: [preparation.md](/data-management-library/database/machine-learning/oml4py/preparation/preparation.md).
+* Access the Oracle database containing the customer insurance table and run the scripts to configure the user and prepare data. The virtual machine used for this lab is the same VM that was used in the OML4PY Workshop of the previous lab.
 * SSH private key with which you created your VM on OCI.
 
 >**Note:** If you have a Free Trial account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+
+
+
+You may now [proceed to the next lab](#next).
+
+
 
 ## Learn More
 

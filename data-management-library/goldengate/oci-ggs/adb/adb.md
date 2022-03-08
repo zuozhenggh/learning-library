@@ -114,9 +114,11 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 
 10. Copy and paste the SQL script from **OCIGGLL\_OCIGGS\_SRC\_USER\_SEED\_DATA.sql** a new SQL Worksheet.
 
-    ![Pasted schema script in SQL Worksheep](./images/02-10-atp-schema.png " ")
+    ![Pasted schema script in SQL Worksheet](./images/02-10-atp-schema.png " ")
 
 11. Click **Run Script**. The Script Output tab displays confirmation messages.
+
+	>**Note:** *If you find that running the entire script does not create the tables, then try running each table creation statement one at a time until all the tables are created.*
 
 12. In the Navigator tab, look for the SRC\_OCIGGLL schema and then select tables from their respective dropdowns to verify the schema and tables were created. You may need to log out and log back in if you can't locate SRC\_OCIGGLL.
 
@@ -175,5 +177,5 @@ You can click View VCN Details and see both a Public and Private subnet were cre
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated** - February 2022
+- **Last Updated** - March 2022
 - **PAR Expiration date** - March 31, 2022

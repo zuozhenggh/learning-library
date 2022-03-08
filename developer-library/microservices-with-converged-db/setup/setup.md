@@ -86,7 +86,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 22.2.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>git clone -b 22.2.3 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
@@ -193,7 +193,7 @@ You should monitor the setup progress from a different browser window or tab.  I
 
  From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
 
-   ![](images/select-compartment.png " ")
+   ![](images/db-example.png " ")
 
  Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 

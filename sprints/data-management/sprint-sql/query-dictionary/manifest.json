@@ -3,9 +3,14 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How to query the Oracle data dictionary?",
+            "title": "How can I query the Oracle data dictionary?",
             "description": "",
             "filename": "./query-dictionary.md"
+        },
+        {
+            "title": "How can I query a table in the Oracle database?",
+            "description": "",
+            "filename": "../query-tables/query-tables.md"
         }
     ]
 }
