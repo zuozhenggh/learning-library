@@ -1,4 +1,4 @@
-# Python Micro-service with Oracle Autonomous and MongoDB
+# Python micro-service with Oracle Autonomous and MongoDB
 
 ## Introduction
 
@@ -253,7 +253,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     
     # set MongoDB connection variables
     m_usr = 'mongoUser'
-    m_pwd = 'DBlearnPTS#21_'
+    m_pwd = 'DBlearnPTS#22_'
     m_dbn = 'SimpleDatabase'
     m_sdn = '[sub_domain_name]'
     

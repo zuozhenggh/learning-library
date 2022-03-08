@@ -1,4 +1,4 @@
-# Python SODA Micro-service with Autonomous Database for JSON
+# Python SODA micro-service with Autonomous Database for JSON
 
 ## Introduction
 
@@ -70,85 +70,24 @@ In this lab, you will:
 
     - Name: DEVM
     - Image and shape: click **edit**.
-    - Change Image: **Oracle Autonomous Linux 7.9**
+    - Change Image:
+        - Image source: Image OCID
+        - Image OCID: ocid1.image.oc1..aaaaaaaamy3s2rymthz4dvguafjcwkipcvrybelu7z6yn7ustuodxh4dhv6q
     - Shape: VM.Standard.E2.1.Micro (Always Free-eligible)
     - Download the private and public keys: **Save Private Key**, Save Public Key.
 
 2. Click **Create**. Wait for Compute Instance to finish provisioning, and have status Available. On the Instance Details page, copy Public IP Address in your notes.
 
-3. Connect to the Compute node using SSH. (Mac/Linux only)
+3. Use your laptop web browser to open the URL returned by the script, replacing **[DEVM public-ip address]** with the actual values. (if the URL doesn't work, give it a couple of minutes to start the graphical user interface)
 
-    ````
-    ssh -C -i ssh-key-YYYY-MM-DD.key opc@[DEVM public-ip address]
-    ````
+    http://[DEVM public-ip address]/livelabs/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true&reconnect=true
 
-4. Connect to the Compute node using **Putty**. (Windows only)
+4. Check if your keyboard works. If you need to select another keyboard layout, click the **On-Off** button in the upper right corner, and **Settings** button. You will find the options under Region & Language.
 
-    ![](./images/putty1.png "")
-
-5. Use **PuttyGen** from your computer to convert the private key file you saved on your computer to Putty `.ppk` format. Click on Conversions > Import Key. Open the private key. Click on Save Private Key and Yes to save **without a passphrase**. Use the same name for the new `.ppk` key file, add only the extension `.ppk`. Use the `ssh-key-YYYY-MM-DD.ppk` private key to connect. (Windows only)
-
-    ![](./images/putty2.png "")
-
-7. Go back to Session, give it a name, and save it. When asked if you trust this host, click **Yes**.
-
-    ![](./images/putty3.png "")
+5. Click Applications > Favorites > Firefox to launch the web browser on the DEVM Compute Node remote desktop. Navigate to cloud.orale.com, and login to Oracle cloud console using your Cloud Account Name, User Name, and Password.
 
 
-## Task 3: Configure Compute Node for development
-
-Developers usually need a graphical user interface, and this can be achieved using a Remote Desktop connection. Copy and paste these blocks of commands into your SSH connection, and hit **Enter** after each one.
-
-1. Create oracle user.
-
-    ````
-    <copy>
-    sudo groupadd oinstall
-    sudo groupadd dba
-    sudo groupadd oper
-    sudo useradd -g oinstall -G dba,oper oracle
-    </copy>
-    ````
-
-2. Use the substitute user command to start a session as **root** user.
-
-    ````
-    <copy>
-    sudo su - || (sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd && sudo su -)
-    </copy>
-    ````
-
-3. Install Oracle Instant Client. 
-
-    ````
-    <copy>
-    yum -y install gnome* --exclude=gnome-session-wayland-session
-    yum -y install oracle-release-el7
-    yum-config-manager --enable ol7_developer_EPEL
-    yum -y install oracle-instantclient19.13-basic.x86_64 oracle-instantclient19.13-devel.x86_64 oracle-instantclient19.13-jdbc.x86_64 oracle-instantclient19.13-odbc.x86_64 oracle-instantclient19.13-sqlplus.x86_64 oracle-instantclient19.13-tools.x86_64
-    firewall-cmd --permanent --add-port=5000/tcp
-    firewall-cmd --reload
-    </copy>
-    ````
-
-4. Install the remote desktop tools, type **oracle** when asked.
-
-    ````
-    <copy>
-    cd /tmp
-    rm -rf ll-setup
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Nx05fQvoLmaWOPXEMT_atsi0G7Y2lHAlI7W0k5fEijsa-36DcucQwPUn6xR2OIH8/n/natdsecurity/b/misc/o/setup-novnc-livelabs.zip -O setup-novnc-livelabs.zip
-    unzip -o  setup-novnc-livelabs.zip -d ll-setup
-    cd ll-setup/
-    chmod +x *.sh .*.sh
-    ./setup-novnc-livelabs.sh
-    </copy>
-    ````
-
-5. These commands will take 50 minutes to execute. Continue with the next Task.
-
-
-## Task 4: Provision Oracle Autonomous JSON Database (AJD)
+## Task 3: Provision Oracle Autonomous JSON Database (AJD)
 
 1. Click on main menu ≡, then Oracle Database > **Autonomous JSON Database**. **Create Autonomous Database**.
 
@@ -170,6 +109,30 @@ Developers usually need a graphical user interface, and this can be achieved usi
     - Access Type: Secure access from everywhere
 
 4. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
+
+5. Next to the big green box, click DB Connection > Download wallet.
+
+    - Password: DBlearnPTS#22_
+    - Click Download > Save file.
+
+6. Open another tab in Firefox on remote desktop, and navigate to **bit.ly/SODAjson**. Use this lab guide to copy and paste commands on the DEVM Compute Node remote desktop.
+
+7. Click Applications > System Tools > Terminal on the DEVM Compute Node remote desktop. Run the following commands. Use Shift+Ctrl+V to paste the block in Terminal, and hit **Enter** after it.
+
+    ````
+    <copy>
+    unzip Downloads/Wallet_AJDEV.zip -d Wallet_AJDEV
+    sed -i 's/?\/network\/admin/\${TNS_ADMIN}/g' Wallet_AJDEV/sqlnet.ora
+    export TNS_ADMIN=/home/oracle/Wallet_AJDEV
+    export LD_LIBRARY_PATH=/usr/lib/oracle/19.13/client64/lib
+    export PATH=$PATH:/usr/lib/oracle/19.13/client64/bin/
+    </copy>
+    ````
+
+
+## Task 4: Prepare Document Store
+
+1. Use the web browser on the DEVM Compute Node remote desktop to access AJDEV instance under Oracle Database > **Autonomous JSON Database**.
 
 5. On Tools tab, under Oracle Application Express, click **Open APEX**. On Administration Services login page, use password for ADMIN.
 
@@ -228,60 +191,12 @@ Developers usually need a graphical user interface, and this can be achieved usi
 
 14. Click Development > JSON (under first button), and follow the tips. This is the interface you will use to manage your JSON collections in this document store.
 
-## Task 5: Back to Compute Node SSH connection
 
-1. Wait until all commands finished, there is a 'Completed!' success message at the end. Exit root user session. 
-
-    ````
-    <copy>
-    exit
-    </copy>
-    ````
-
-2. Use your laptop web browser to open the URL returned by the script, replacing **[DEVM public-ip address]** with the actual values.
-
-    http://[DEVM public-ip address]/livelabs/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true&reconnect=true
-
-3. Follow the wizard to complete your remote desktop environment. 
-
-    - Language: English. Next
-    - Select Keyboard. Next
-    - Set Location Services Off. Next
-    - Skip Online Accounts settings.
-    - Start Using Oracle Linux Server.
-    - Close Getting Started dialog.
-
-4. Check if your keyboard works. If you need to select another keyboard layout, click the **On-Off** button in the upper right corner, and **Settings** button. You will find the options under Region & Language.
-
-5. Click Applications > Favorites > Firefox to launch the web browser on the DEVM Compute Node remote desktop. Navigate to cloud.orale.com, and login to Oracle cloud console using your Cloud Account Name, User Name, and Password.
-
-6. Click on main menu ≡, then Oracle Database > **Autonomous JSON Database**. Click **AJDEV**.
-
-7. Next to the big green box, click DB Connection > Download wallet.
-
-    - Password: DBlearnPTS#22_
-    - Click Download > Save file.
-
-8. Open another tab in Firefox on remote desktop, and navigate to **bit.ly**. Use the lab guide to copy and paste commands on the DEVM Compute Node remote desktop.
-
-9. Click Applications > System Tools > Terminal on the DEVM Compute Node remote desktop. Run the following commands. Use Shift+Ctrl+V to paste the block in Terminal, and hit **Enter** after it.
-
-    ````
-    <copy>
-    unzip Downloads/Wallet_AJDEV.zip -d Wallet_AJDEV
-    sed -i 's/?\/network\/admin/\${TNS_ADMIN}/g' Wallet_AJDEV/sqlnet.ora
-    export TNS_ADMIN=/home/oracle/Wallet_AJDEV
-    export LD_LIBRARY_PATH=/usr/lib/oracle/19.13/client64/lib
-    export PATH=$PATH:/usr/lib/oracle/19.13/client64/bin/
-    </copy>
-    ````
-
-
-## Task 6: Develop micro-service with SODA for Python
+## Task 5: Develop micro-service with SODA for Python
 
 Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-service application that will allow you to insert and retrieve JSON documents using REST calls.
 
-1. Create a new folder under `/home/oracle` as the location of the Python application. Create a Python virtual environment for development, and activate it.
+1. Use Terminal window on the DEVM Compute Node remote desktop. Create a new folder under `/home/oracle` as the location of the Python application. Create a Python virtual environment for development, and activate it.
 
     ````
     <copy>
