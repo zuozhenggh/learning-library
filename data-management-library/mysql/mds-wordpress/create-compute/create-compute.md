@@ -8,7 +8,7 @@ When working in the cloud, there are often times when your servers and services 
 
 Today, you will use the Compute Instance to connect from the browser to a MDS DB System
 
-_Estimated Lab Time:_ 10 minutes
+_Estimated Time:_ 15 minutes
 
 
 
@@ -137,7 +137,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
 ![CONNECT](./images/05compute08-a.png " ")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 

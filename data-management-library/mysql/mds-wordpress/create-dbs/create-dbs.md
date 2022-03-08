@@ -7,7 +7,7 @@
 
 Set up a Standalone MySQL Database service instance: With the Standalone option, users get a single-instance MDS back-ended by resilient and secure Oracle Cloud Infrastructure Block Volumes. 
 
-_Estimated Lab Time:_ 10 minutes
+_Estimated Time:_ 10 minutes
  
 
 ### Objectives
@@ -127,7 +127,7 @@ In this lab, you will be guided through the following tasks:
     ![MDS](./images/04mysql11-1.png" ")
 
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 

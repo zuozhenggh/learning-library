@@ -8,7 +8,7 @@
 
 Set up a Virtual Cloud Network (VCN) to connect your Linux instance to the internet. You will configure all the components needed to create your virtual network.
 
-_Estimated Lab Time:_ 10 minutes
+_Estimated Time:_ 15 minutes
 
 ### Objectives
 
@@ -129,7 +129,7 @@ Description
 6.	On Security List for Default Security List for mds_vcn page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn13.png " ")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 

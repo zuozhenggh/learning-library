@@ -1,6 +1,8 @@
 # Introduction
 ![INTRO](./images/00_mds_image.png " ") 
-### About this Workshop
+
+
+## About this Workshop
 
 WordPress is a versatile content management system (CMS) and a powerful website builder. MySQL Database Service(MDS) is a fully managed Oracle Cloud Infrastructure (OCI) native service. Together they create a resilient hosting infrastructure for your web application. Use this workshop as a starting point and have a complete installation built on top of Oracle Linux and Oracle MySQL Database Service. 
 
@@ -11,6 +13,7 @@ _Estimated Lab Time:_ 1 hour
 The following architecture diagram illustrates the system that you will be creating. A single node WordPress CMS and one instance of MySQL Database Service. All of the  components are in an Oracle Cloud Infrastructure region. The Oracle Cloud Infrastructure region has an availability domain with a VCN that has an Internet Gateway, a public subnet, and a private subnet. The WordPress CMS is located in the public subnet and Oracle MySQL Database Service is located in the private subnet.
 
   ![INTRO](./images/oci-wordpress-mds-std.png " ") 
+
 
 ### Objectives
 

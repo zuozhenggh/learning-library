@@ -8,10 +8,10 @@ When working in the cloud, there are often times when your servers and services 
 
 Today, you will use the Compute Instance to connect from the browser to a MDS DB System
 
-_Estimated Lab Time:_ 10 minutes
+_Estimated Time:_ 20 minutes
 
 
-### Objectives
+## Objectives
 
 In this lab, you will be guided through the following tasks:
 
@@ -219,8 +219,6 @@ phpinfo();
     - Your Email: your email
     - Click Install WordPress.
     - From a browser access http://instance public IP/wp-login.php and star managing your new WordPress installation.
-
-You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
