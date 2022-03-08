@@ -9,7 +9,7 @@ Version     Date             Author          Summary
 22.0        Feb-14-22       Kevin Lazarz    Added alt-text fix - add alt attribute to all images which do not have alt
 22.1        Feb-15-22       Kevin Lazarz    Added fix for landmark issue (LLAPEX-401) and list issue (LLAPEX-400)
 22.2        Feb-17-22       Kevin Lazarz    Role back LLAPEX-400 due issues in some workshops
-22.3        Mar-08-22       Kevin Lazarz    Temp fix for list issues LLAPEX-400, added QA check for images missing alt-text
+22.3        Mar-08-22       Kevin Lazarz    Temp fix for list issues LLAPEX-400, added QA check for images missing alt-text, changed numbering for table header
 */
 
 "use strict";
@@ -233,7 +233,7 @@ let main = function() {
                 {   
                     var table = tables[i];
                     var capt = table.createCaption();
-                    var tit = capt.textContent='Table: ' + title + ' ' + (i+1);
+                    var tit = capt.textContent='Table ' + (i+1) + ': ' + title;
                     table.setAttribute("role", "presentation");
                 };
             // END OF TABLE ACCESSIBILITY ENHANCEMENT
