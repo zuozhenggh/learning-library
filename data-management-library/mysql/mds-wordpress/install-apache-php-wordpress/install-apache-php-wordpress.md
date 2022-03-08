@@ -218,8 +218,9 @@ phpinfo();
     - Password: WordPresss admin password
     - Your Email: your email
     - Click Install WordPress.
-    - From a browser access http://instance public IP/wp-login.php and star managing your new WordPress installation.
-
+    
+You may now **follow the instuctions on:**
+ * [First Steps with WordPress](https://wordpress.org/support/article/first-steps-with-wordpres)
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributors** - Frédéric Descamps, MySQL Community Manager, Orlando Gentil, Principal Training Lead and Evangelist
