@@ -19,12 +19,12 @@
       },
       {
         "title": "Lab 2: Deploy and Test Kafka Broker and Kafka Producer and Consumer Microservices",
-        "filename": "../../springboot-kafka/deploy-and-test-kafka.md",
+        "filename": "../../deploy-and-test-kafka/deploy-and-test-kafka.md",
         "type": "event-freetier"
       },
       {
         "title": "Lab 3: Deploy and Test Oracle TEQ Broker and okafka Producer and Consumer Microservices",
-        "filename": "../../springboot-teq/deploy-and-test-teq.md",
+        "filename": "../../deploy-and-test-teq/deploy-and-test-teq.md",
         "type": "event-freetier"
       },
       {
