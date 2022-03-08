@@ -24,8 +24,8 @@
     },
     {
       "title": "Lab 2: Create MySQL HeatWave",
-      "description": "Create MySQL HeatWave using OCI CLI",
-      "filename": "../../provision/provision.md"
+      "description": "Create MySQL HeatWave using OCI Console",
+      "filename": "../../heatwave/heatwave.md"
     },
     {
       "title": "Lab 3: Load data into MySQL HeatWave",
@@ -33,24 +33,29 @@
       "filename": "../../data-load/data-load.md"
     },
     {
-      "title": "Lab 4: Deploy Grafana to Oracle Kubernetes Engine",
-      "description": "Deploy Grafana to Oracle Kubernetes Engine",
-      "filename": "../../app/app.md"
-    },
-    {
-      "title": "Lab 5: Deploy Superset to Oracle Kubernetes Engine",
-      "description": "Deploy Superset to Oracle Kubernetes Engine",
+      "title": "Lab 4: Enable MySQL HeatWave cluster",
+      "description": "Enable MySQL HeatWave cluster",
       "filename": "../../enable-heatwave-cluster/enable-heatwave-cluster.md"
     },
     {
-      "title": "Lab 6: Deploy Zeppelin to Oracle Kubernetes Engine",
-      "description": "Deploy Zeppelin to Oracle Kubernetes Engine",
-      "filename": "../../query/query.md"
+      "title": "Lab 5: Manage MySQL with phpMyAdmin",
+      "description": "Manage MySQL with phpMyAdmin",
+      "filename": "../../phpadmin/phpmyadmin.md"
     },
     {
-      "title": "Lab 7: Deploy PHPAdmin to Oracle Kubernetes Engine",
-      "description": "Deploy PHPAdmin to Oracle Kubernetes Engine",
-      "filename": "../../query/query.md"
+      "title": "Lab 6: Monitor MySQL with customized dashboard",
+      "description": "Monitor MySQL with customized dashboard",
+      "filename": "../../grafana/grafana.md"
+    },
+    {
+      "title": "Lab 7: Build analytics dashboard with Superset on MySQL HeatWave",
+      "description": "Build analytics dashboard with Superset on MySQL HeatWave",
+      "filename": "../../superset/superset.md"
+    },
+    {
+      "title": "Lab 8: Build interactive analytics notebook with Zeppelin on MySQL HeatWave",
+      "description": "Build interactive analytics notebook with Zeppelin on MySQL HeatWave",
+      "filename": "../../zeppelin/zeppelin.md"
     },
     {
       "title": "Need Help?",
