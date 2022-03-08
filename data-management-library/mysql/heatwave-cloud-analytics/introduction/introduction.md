@@ -2,11 +2,11 @@
 
 ## About this Workshop
 
-This workshop will cover the migration of a conventional LAMP stack application from any cloud or on-premises environment to Oracle Cloud Infrastructure (OCI). We will walk you through the process of 
-* Converting a conventional PHP/Apache/MySQL application to OCI Kubernetes and MySQL HeatWave
-* Automating OCI resource provisioning using Terraform with OCI Resource Manager
+This workshop will cover the flexibility of using popular open-source tools such as Superset, Grafana and Zepplin with MySQL HeatWave to leverage the cloud-scale capabilities of Oracle Cloud Infrastructure to implement cloud-native analytics. We will walk you through the process of 
+* Creating Oracle Kubernetes Engine and MySQL HeatWave
 * Loading data into MySQL HeatWave using mysqlsh and auto-pilot utility
-* Speeding up SQL queries with MySQL HeatWave
+* Deploying open-source analytics tools (Superset, Grafana and Zeppelin) to analyze data in MySQL HeatWave
+
 
 [](youtube:oU5p-MztPCA)
 
@@ -25,10 +25,10 @@ HeatWave is a distributed, scalable, shared-nothing, in-memory, hybrid columnar,
 ### Objectives
 
 In this workshop, you will learn how to:
-* Provision the OCI Kubernetes Engine and MySQL HeatWave cluster
-* Deploy a PHP application to OCI Kubernetes Engine
-* Load data into MySQL HeatWave
-* Improve query performance on MySQL HeatWave
+* Creating Oracle Kubernetes Engine and MySQL HeatWave
+* Loading data into MySQL HeatWave using mysqlsh and auto-pilot utility
+* Deploying open-source analytics tools (Superset, Grafana and Zeppelin) to analyze data in MySQL HeatWave
+
 
 ### Prerequisites (Optional)
 
@@ -38,8 +38,6 @@ In this workshop, you will learn how to:
 
 ## Acknowledgements
 * **Author** 
-             - Rayes Huang, Cloud Solution Architect, OCI APAC
-			 - Ryan Kuan, Cloud Engineer, MySQL APAC
+			 - Ivan Ma, MySQL Engineer, MySQL JAPAC, Ryan Kuan, Cloud Engineer, MySQL APAC
 * **Contributors** 
-			 - Perside Foster, MySQL Solution Engineering 
 * **Last Updated By/Date** - Ryan Kuan, March 2021

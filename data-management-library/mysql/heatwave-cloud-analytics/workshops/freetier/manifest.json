@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Modernize MySQL Applications with OCI Cloud-Native Technology",
+  "workshoptitle": "Open-source Data Engineering with MySQL HeatWave",
   "include": {
     "starter-file.sql": "../../data-load/files/starter-file.sql",
     "sample.json": "../../data-load/files/sample.json",
@@ -9,7 +9,7 @@
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+      "description": "Building cloud native solution using popular open-source data engineering tools such as Superset, Grafana with MySQL HeatWave",
       "filename": "../../introduction/introduction.md"
     },
     {
@@ -18,13 +18,13 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
     },
     {
-      "title": "Lab 1: Create compartment",
-      "description": "Create OCI Compartment for the lab",
-      "filename": "../../requirement/requirement.md"
+      "title": "Lab 1: Create Oracle Kubernetes Engine",
+      "description": "Create Oracle Kubernetes Engine using OCI Console",
+      "filename": "../../oke/oke.md"
     },
     {
-      "title": "Lab 2: Provision OCI Kubernetes and MySQL HeatWave using OCI Resource Manager",
-      "description": "Provision OCI Kubernetes and MySQL HeatWave using OCI Resource Manager",
+      "title": "Lab 2: Create MySQL HeatWave",
+      "description": "Create MySQL HeatWave using OCI CLI",
       "filename": "../../provision/provision.md"
     },
     {
@@ -33,18 +33,23 @@
       "filename": "../../data-load/data-load.md"
     },
     {
-      "title": "Lab 4: Deploy PHP application to OCI Kubernetes",
-      "description": "Deploy PHP application to OCI Kubernetes",
+      "title": "Lab 4: Deploy Grafana to Oracle Kubernetes Engine",
+      "description": "Deploy Grafana to Oracle Kubernetes Engine",
       "filename": "../../app/app.md"
     },
     {
-      "title": "Lab 5: Enable MySQL HeatWave Cluster",
-      "description": "Enable MySQL HeatWave Cluster",
+      "title": "Lab 5: Deploy Superset to Oracle Kubernetes Engine",
+      "description": "Deploy Superset to Oracle Kubernetes Engine",
       "filename": "../../enable-heatwave-cluster/enable-heatwave-cluster.md"
     },
     {
-      "title": "Lab 6: Acclerate complex queries using MySQL HeatWave",
-      "description": "Accelerate complex queries using MySQL HeatWave",
+      "title": "Lab 6: Deploy Zeppelin to Oracle Kubernetes Engine",
+      "description": "Deploy Zeppelin to Oracle Kubernetes Engine",
+      "filename": "../../query/query.md"
+    },
+    {
+      "title": "Lab 7: Deploy PHPAdmin to Oracle Kubernetes Engine",
+      "description": "Deploy PHPAdmin to Oracle Kubernetes Engine",
       "filename": "../../query/query.md"
     },
     {

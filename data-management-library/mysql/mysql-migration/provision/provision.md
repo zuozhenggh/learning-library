@@ -62,5 +62,5 @@ In this lab, you will provision the following OCI resources using Resource Manag
 * **Author** 
              - Rayes Huang, Cloud Solution Architect, OCI APAC, Ryan Kuan, Cloud Engineer, MySQL APAC
 * **Contributors** 
-			 - Perside Foster, MySQL Solution Engineering 
+			 - Perside Foster, MySQL Solution Engineering, Howie Owi, OCI Solution Specialist, OCI APAC
 * **Last Updated By/Date** - Ryan Kuan, March 2021
