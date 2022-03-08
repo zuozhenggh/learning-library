@@ -185,20 +185,124 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 
 3. Navigate to the directory where you have downloaded the management agent software `ZIP` file and unzip it to any preferred location.
 
-4. Login as an Administrator user and open a Command Prompt window. To install a management agent on **Windows 10**, you must first create a system environment variable `OVERRIDE_VERSION_CHECK` with value `true`.
-
-5. Install and configure the management agent by running the `install.bat` script using a response file.
-
+4. Login as an **Administrator** and open a Command Prompt window.
+    To check if you are currently running the Command Prompt as an Administrator, enter the following:
     ```
     <copy>
-    installer.bat <full_path_of_response_file>
+    ECHO Administrative permissions required for installation of management agent. Detecting permissions...
+
+    NET SESSION >nul 2>&1
+    IF %ERRORLEVEL% == 0 (
+      ECHO Success: Administrative permissions detected.
+    ) ELSE (
+      ECHO Failure: Current permissions insufficient. Please reopen the Command Prompt with administrative permissions.
+    )
     </copy>
     ```
 
-6. The output will look similar to the following:
+    If permissions are insufficient, close and reopen the Command Prompt as an Administrator, and perform the check again.
+
+5. Proceed to create a batch installer script in the same location as the unzipped management agent software folder by entering the following command:
 
     ```
-    C:\Users\test_agent>installer.bat C:\Users\input.rsp
+    <copy>
+    notepad installer-wrapper.bat
+    </copy>
+    ```
+
+    In the file, paste the following text:
+
+    ```
+    <copy>
+    @ECHO off
+
+    REM ----------------------------------------------------------------------------------------------------------------------------------
+    REM Copyright (c) 2022, Oracle and/or its affiliates. All rights reserved.
+    REM The script is for Demo purpose only
+    REM Usage: installer.bat <Full_Path_To_Java_Home> <Full_Path_To_Input.rsp>
+    REM use system env variables for paths "c:\Program Files" -> "c:\PROGRA~1" and "c:\Program Files (x86)" -> "c:\PRPGRA~2 respectively
+    REM ----------------------------------------------------------------------------------------------------------------------------------
+
+    REM STEP1: CHECKING FOR ADMINISTRATOR PERMISSIONS
+    ECHO Administrative permissions required for installation of management agent. Detecting permissions...
+
+    NET SESSION >nul 2>&1
+    IF %ERRORLEVEL% == 0 (
+      ECHO Success: Administrative permissions detected. Continuing with installation...
+    ) ELSE (
+      ECHO Failure: Current permissions insufficient. Please reopen the Command Prompt with administrative permissions.
+      EXIT /B 1
+    )
+
+    SET argC=0
+    SET javaHome=%1
+    SET rspPath=%2
+
+    set rspPath=%rspPath:"=%
+    set javaHome=%javaHome:"=%
+
+    REM Temporary prefix path variable with system32 to prefer system commands
+    SETLOCAL
+    PATH=C:\Windows\system32;%PATH%
+
+    FOR %%x in (%*) do Set /A argC+=1
+
+    IF %argC% LSS 2 (
+        ECHO Minimum arguments are missing
+        ECHO Usage:- to execute: installer-wrapper.bat ^<Java Home path^> ^<Full_Path_To_Input.rsp^>
+        EXIT /b 1
+      )
+
+    REM ECHO parameters passed : %*
+
+    REM STEP2: SET JAVA HOME
+    ECHO setting JAVA_HOME to %javaHome%
+    REM Check if bin\java exists
+    IF EXIST "%javaHome%\bin\java.exe" (
+        SET JAVA_HOME=%javaHome%
+        ECHO Java home set to %javaHome%
+      ) ELSE (
+        ECHO Java home is not as expected. bin directory does not exists under %javaHome%
+        EXIT /b 1
+      )
+
+    REM STEP3: SET VERSION CHECK
+    SET OVERRIDE_VERSION_CHECK=true
+    REM STEP4: INSTALL AGENT
+    installer.bat %rspPath%
+
+    </copy>
+    ```
+
+    The script does the following:
+
+    * Checks if you are currently running the Command Prompt as an Administrator.
+    * Creates environment variables for the paths of JAVA_HOME and the response file.
+    * Checks if the command for execution in the next step is entered correctly.
+    * Checks if Java is accessible after setting JAVA_HOME.
+    * Helps to create a system environment variable `OVERRIDE_VERSION_CHECK` with value `true`. This is necessary for the installation of a management agent on **Windows 10**.
+    * Executes the `installer.bat` file needed for the installation and configuration of the management agent.
+
+  Save the file by going to the File option and clicking the Save button. Close the notepad window and move to the command prompt window again.
+
+
+6. Open a Command Prompt window as an **Administrator** and install and configure the management agent by running the `installer-wrapper.bat` script as follows:
+
+    ```
+    <copy>
+    installer-wrapper.bat "<full_path_to_java_home>" "<full_path_of_response_file>"
+    </copy>
+    ```
+
+7. The output will look similar to the following:
+
+    ```
+    C:\Users\test_agent>installer-wrapper.bat "C:\Program Files\Java\jdk.1.8.0_261" "C:\Users\input.rsp"
+    setting JAVA_HOME to C:\Program Files\Java\jdk1.8.0_261
+    Java home set to C:\Program Files\Java\jdk1.8.0_261
+    Found OVERRIDE_VERSION_CHECK environment variable. This flag allows to install Agent on non-supported platforms.
+    Please remove this environment variable and retry agent install if you want to use only supported platforms.
+
     Checking pre-requisites
 
           Checking if previous agent service exists
@@ -232,10 +336,10 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
     Please make sure that you delete C:\Users\input.rsp or store it in secure location.
     ```
 
-7. The agent installation process does the following:
+8. The agent installation process does the following:
 
 * A new directory is created as part of the agent installation process: `C:\Oracle\mgmt_agent`.
-* The agent install base directory is the directory where the agent will be installed. By default, the agent is installed under `C:\Oracle directory`. This default directory can be changed by setting the `AGENT_INSTALL_BASEDIR` environment variable before running the `install.bat` script.
+* The agent install base directory is the directory where the agent will be installed. By default, the agent is installed under `C:\Oracle directory`. This default directory can be changed by setting the `AGENT_INSTALL_BASEDIR` environment variable before running the `installer-wrapper.bat` script.
 * Log files from the agent installation are located under `C:\Oracle\mgmt_agent\installer-logs` directory.
 
 ## Task 3: Verify Management Agent Installation
@@ -272,22 +376,58 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 
 ### For Windows:
 
-1. Open a command prompt as an administrator, and run the following commands.
+1. Open a command prompt as an **administrator**, and create the following script for configuring the usage tracker.
+
     ```
     <copy>
-    dir /b C:\Oracle\mgmt_agent\agent_inst\config\destinations\OCI\services\jms >%TEMP%\version.txt
-    set /p VERSION=<%TEMP%\version.txt
-    powershell -ep Bypass C:\Oracle\mgmt_agent\agent_inst\config\destinations\OCI\services\jms\%VERSION%\scripts\setup.ps1
+    notepad jms-configure.bat
     </copy>
     ```
 
-2. This script creates the file `C:\Program Files\Java\conf\usagetracker.properties` with appropriate permissions. By default, the file contains the following lines:
+    In the file, paste the following text:
+
+    ```
+    <copy>
+    @ECHO off
+
+    REM ---------------------------------------------------------------------------------------------------------------------------------
+    REM Copyright (c) 2022, Oracle and/or its affiliates. All rights reserved.
+    REM The script is for Demo purpose only
+    REM Usage:  jms-configure
+    REM use system env variables for paths "c:\Program Files" -> "c:\PROGRA~1" and "c:\Program Files (x86)" -> "c:\PRPGRA~2 respectively
+    REM ---------------------------------------------------------------------------------------------------------------------------------
+
+    REM CONFIGURE JMS USAGE TRACKER
+    REM Temporary prefix path variable with system32 to prefer system commands
+    setlocal EnableDelayedExpansion
+    PATH=C:\Windows\system32;%PATH%
+    IF exist C:\Oracle\mgmt_agent\agent_inst\config\destinations\OCI\services\jms (
+    	ECHO Setting JMS configuration
+    	DIR /b C:\Oracle\mgmt_agent\agent_inst\config\destinations\OCI\services\jms >%TEMP%\version.txt
+    	SET /p VERSION=<%TEMP%\version.txt
+    	POWERSHELL -ep Bypass C:\Oracle\mgmt_agent\agent_inst\config\destinations\OCI\services\jms\!VERSION!\scripts\setup.ps1
+    ) ELSE (
+    	ECHO JMS Plugin Folder does not exist, please install management agent and try running it again.
+    )
+    </copy>
+    ```
+    Go to the File option and click the Save button to save the file. Close the notepad window.
+
+2. Move to the command prompt window again and run the script that you just created to configure the usage tracker.
+    ```
+    <copy>
+    jms-configure.bat
+    </copy>
+    ```
+
+
+3. This script creates the file `C:\Program Files\Java\conf\usagetracker.properties` with appropriate permissions. By default, the file contains the following lines:
 
     ```
     com.oracle.usagetracker.logToFile = C:\ProgramData\Oracle\Java\usagetracker.log
     com.oracle.usagetracker.additionalProperties = java.runtime.name
     ```
-3. If successful, you should see a message similar to:
+4. If successful, you should see a message similar to:
     ```
     [C:\ProgramData\Oracle\Java\] folder has been created.
     [C:\ProgramData\Oracle\Java\usagetracker.log] file has been created.
