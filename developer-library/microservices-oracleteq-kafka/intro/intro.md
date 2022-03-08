@@ -10,7 +10,7 @@ Estimated Workshop Time: 50 minutes
 
 ### About Product/Technology
 
-* [Oracle Transactional Event Queues](https://docs.oracle.com/en/database/oracle/oracle-database/21/adque/index.html) is a powerful messaging backbone offered by Converged Oracle Database that allows you to build an enterprise-class data-centric microservices architecture.
+* [Oracle Transactional Event Queues](https://docs.oracle.com/en/database/oracle/oracle-database/21/adque/index.html) is a powerful messaging backbone offered by converged Oracle Database that allows you to build an enterprise-class data-centric microservices architecture.
 
 * [Kafka](https://kafka.apache.org) is an open-source distributed event streaming platform used for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.
 
@@ -28,19 +28,22 @@ Estimated Workshop Time: 50 minutes
 
 ### Prerequisites
 
-* This workshop assumes you have an Oracle cloud account and have signed into the account.
+* This workshop assumes you have an Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
+
+>**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 ## Event Mesh Architecture Overview
 
-![Kafka and Oracle TEQ Event Mesh](images/kafka-oracle-teq-event-mesh.png " ")
-
-As shown in the diagram above, we have:
+As shown in the followed diagram, we have:
 
 * A Kafka Broker and a set of services consuming and producing for it.
 
 * An Oracle TEQ Broker with another set of services around it.
 
 * And connector between Kafka and Oracle TEQ enabling a communication path between them.
+
+![Kafka and Oracle TEQ Event Mesh](images/kafka-oracle-teq-event-mesh.png " ")
 
 You may now **proceed to the next lab**
 
