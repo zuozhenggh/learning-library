@@ -1,8 +1,8 @@
-# Deploy and Test Kafka Broker and Kafka Producer and Consumer Microservices
+# Setup the connection between Kafka and Oracle Transactional Event Queues
 
 ## Introduction
 
-This lab will show you the interoperability of Transactional Event Queue with Apache Kafka. Oracle Transactional Event Queue (TEQ) makes it easy to implement event-based applications, as we experienced in the previous lab. It is also highly integrated with Apache Kafka supporting bi-directional information flow between TEQ and Kafka so that changes are available in TEQ or Kafka as soon as possible in near-real-time.
+This laboratory will show you the interoperability of Transactional Event Queues with Apache Kafka. Oracle Transactional Event Queues (TEQ) makes it easy to implement event-based applications, as we experienced in the previous lab. It is also highly integrated with Apache Kafka supporting bi-directional information flow between TEQ and Kafka so that changes are available in TEQ or Kafka as soon as possible in near-real-time.
 
 Estimated Time: 10 minutes
 
@@ -15,14 +15,14 @@ Estimated Time: 10 minutes
 
 ### Prerequisites
 
-- This lab assumes you have already completed the earlier labs.
-  - Kafka Broker: Confluent Platform 3.3.0 or above, or Kafka 0.11.0 or above
-  - Oracle Transactional Event Queue
+- This laboratory assumes you have already completed the earlier laboratories.
+    1. Kafka Broker: Confluent Platform 3.3.0 or above, or Kafka 0.11.0 or above
+    2. Oracle Transactional Event Queues
 - Connect: Confluent Platform 4.1.0 or above, or Kafka 1.1.0 or above
-- Java 1.8
+- Java 1.8+
 - Oracle TEQ JMS 1.1+ Client Jars
 
-## **Task** 1: Setup Kafka Connect
+## **Task 1:** Setup Kafka Connect
 
 This task will use the Apache Kafka Connect, a framework included in Apache Kafka that integrates Kafka with other systems. Oracle TEQ will provide a standard JMS package and related JDBC, Transaction packages to establish the connection and complete the transactional data flow.
 
@@ -52,11 +52,16 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
 }
 ```
 
-1. First, verify if Kafka Components are still running:
+1. First, verify if Kafka Components are still running. Execute the following commands:
 
     ```bash
     <copy>
     cd $LAB_HOME/cloud-setup/confluent-kafka
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     ./docker-compose ps
     </copy>
     ```
@@ -65,13 +70,18 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
 
     ![Kafka Components status](images/kafka-containers-ps.png " ")
 
-    If the Kafka components are not running, you will need to rebuild them following instructions from Task 4 at the end of this page.
+    > **Note:** If the Kafka components are not running, you have to rebuild them executing the instructions from [Task 4](#task4reinstallkafkacomponentsoptional).
 
 2. Execute the following command providing the Oracle Database password. It will fill the parameters based on your previous created assets and set up the Connect Sync between the Kafka Topic from Lab 2 and Oracle TEQ from Lab 3:
 
     ```bash
     <copy>
     cd $LAB_HOME/kafka-connect-teq
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     ./setup-kafka2teq-connect.sh 
     </copy>
     ```
@@ -129,7 +139,7 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
     }
     ```
 
-## **Task** 2: Enqueueing messages on Kafka Broker
+## **Task 2:** Enqueueing messages on Kafka Broker
 
 Now that you have the Connector running, you can produce some messages and test the message transfer. The messages would be enqueued by the Kafka Producer and dequeued from the Oracle TEQ. We can use the Kafka Producer Microservice built during Lab 2 or operate Kafka producer inside the container to enqueue messages.
 
@@ -170,7 +180,7 @@ Now that you have the Connector running, you can produce some messages and test 
     >LAB8022 - Sync Message from Kafka to TEQ 4
     ```
 
-## **Task** 3: Dequeue messages from Oracle TEQ
+## **Task 3:** Dequeue messages from Oracle TEQ
 
 After produce some messages, the expected behavior is the Connect Sync agent consume messages from Kafka Topic and enqueue them on Oracle TEQ. And, you will be able to dequeue them from Oracle TEQ using okafka consumer microservice or a PL/SQL procedure, for example.
 
@@ -221,7 +231,7 @@ After produce some messages, the expected behavior is the Connect Sync agent con
 
     ```
 
-## **Task** 4: Reinstall Kafka Components (optional)
+## **Task 4:** Reinstall Kafka Components (optional)
 
 If you disconnect from Cloud Shell for a long time, you may need to reinstall Kafka components because the local docker was cleaned up. This task helps you to perform this rebuild.
 
@@ -264,37 +274,37 @@ If you disconnect from Cloud Shell for a long time, you may need to reinstall Ka
 
 5. Connect broker to Lab8022 Network (Docker internal)
 
-    First, check if lab8022network exist
+    1. check if lab8022network exist
 
-    ```bash
-    <copy>
-    docker network ls
-    </copy>
-    ```
+        ```bash
+        <copy>
+        docker network ls
+        </copy>
+        ```
 
-    if network not exist, execute the following command to create it.
+    2. if network not exist, execute the following command to create it.
 
-    ```bash
-    <copy>
-    docker network create lab8022network
-    </copy>
-    ```
+        ```bash
+        <copy>
+        docker network create lab8022network
+        </copy>
+        ```
 
-    And, finally, connect broker to lab8022 network
+    3. And, finally, connect broker to lab8022 network
 
-    ```bash
-    <copy>
-    docker network connect lab8022network broker
-    </copy>
-    ```
+        ```bash
+        <copy>
+        docker network connect lab8022network broker
+        </copy>
+        ```
 
 ## Wrap up
 
 In this Lab, you learned how to build a bridge between two different event brokers, expanding the possibilities of your decoupled architecture enabling the processing of messages per best-of-the-breed tools. That is the getting start of the Event Mesh concept.
 
-The following animation describe what we builded in this workshop especially in this laboratory. 
+The following animation describe what we builded in this workshop especially in this laboratory.
 
-[Workshop Animation](https://youtu.be/wDRIMzlYh9U).
+[](youtube:wDRIMzlYh9U)
 
 You may now **proceed to the next lab**
 

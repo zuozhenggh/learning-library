@@ -1,4 +1,4 @@
-# Anomaly Detection with OML4SQL, using One-Class Support Vector Machine (SVM)
+# OML4SQL using One-Class Support Vector Machine (SVM) for Anomaly Detection
 
 ## About this Workshop
 
@@ -6,7 +6,7 @@ This workshop introduces you to Oracle Machine Learning for SQL  (OML4SQL) on Or
 
 In this workshop, you have a dataset representing 15k customers of an insurance company. Each customer has around 30 attributes, and our goal is to build machine learning models to meet four business objectives that are described in section [OML4SQL Use Case](./../../oml4sql/workshops/livelabs/?lab=oml4sql-use-case).
 
-  1. Find the most atypical members of this customer group (outlier identification).
+  1. Find the most atypical members of this customer group.
   2. Discover the common demographic characteristics of the most typical customers with insurance.
   3. Compute the probability of purchase for a new/hypothetical customer, and grant it to sellers to qualify better their potential clients since the first contact.
   4. Identify rows that are most atypical in the input dataset. Consider each type of marital status to be separate, so the most anomalous rows per marital status group should be returned.
