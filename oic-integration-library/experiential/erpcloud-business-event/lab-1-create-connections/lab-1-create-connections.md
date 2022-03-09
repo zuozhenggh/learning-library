@@ -69,7 +69,7 @@ Create a connection with the Oracle Autonomous Data Warehouse Adapter.
 
 4. In the *Oracle ADW Connection* dialog, enter the following information:
 
-    | **Field**  | **Values** |
+    | **Field**  | **Value** |
     |---|---|
     |Service Name | `<adb-service-name>` |
     |Security Policy | `JDBC Over SSL`|
