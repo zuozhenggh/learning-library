@@ -61,8 +61,8 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
 5. Type the password, confirm the password by typing it again and click **Download**.
 
-      - Password: `Oracle_12345`
-      - Confirm Password: `Oracle_12345`
+      - Password: Type the secure password
+      - Confirm Password: Confirm the secure password
 
    ![AWD Wallet Password](images/adw_wallet_password.png)
 
@@ -102,7 +102,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
     >
     > **Username**: `F1`
     >
-    > **Password**: `Oracle_12345`
+    > **Password**: Provide the secure password for the F1 user
     >
     > **Service Name**: Keep the default, the name of your database followed by the `_high` suffix.
     >
@@ -442,12 +442,6 @@ How can we check whether our theories about the relationship between position ch
    Configure the correlation diagram using the fields `OVERTAKEN_POSITIONS_TOTAL`, `SCORE` and `NAME_YEAR` as follows.
 
 	 Make sure you set the correct chart type (Scatter) configure the chart as shown in the screenshot.
-
-	    `SCORE` -> Values Y-Axis
-
-	    `OVERTAKEN_POSITIONS_TOTAL` -> Values X-Axis
-
-	    `NAME_YEAR` -> Category
 
 	 By default the fields may not be in the correct sections. In that case, drag the fields to their correct sections.
 

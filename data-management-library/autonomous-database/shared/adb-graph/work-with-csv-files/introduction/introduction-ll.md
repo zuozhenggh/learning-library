@@ -20,7 +20,7 @@ Watch the following two videos for more information on Graph Studio. The first i
 ### Objectives
 
 In this workshop you will:
-* Connect to your autonomous database using SQLDeveloperWeb (aka Database Actions SQL) and load two CSV files
+* Connect to your autonomous database using Database Actions and load two CSV files
 * Connect to your autonomous database using **Graph Studio**
 * Create a graph using PGQL's (a graph query language) CREATE PROPERTY GRAPH statement
 * Load the graph into memory for analysis

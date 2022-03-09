@@ -109,14 +109,14 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 <if type="freetier">
     - __Choose a compartment__ - Select the compartment you just created.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADW__.
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __MyQuickStart__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __MYQUICKSTART__.
 
     ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
 </if>
 <if type="livelabs">
     - __Choose a compartment__ - Use the default compartment created for you.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __My Quick Start ADW__.
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use ____MyQuickStart__ ADW__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __MOVIE+your user id__, for example, __MOVIE9352__.
 
     ![Enter the required details.](./images/livelabs-adwname.png " ")
@@ -165,7 +165,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
     - For this lab, accept the default, "Secure access from everywhere."
     - If you want to allow traffic only from the IP addresses and VCNs you specify - where access to the database from all public IPs or VCNs is blocked, select "Secure access from allowed IPs and VCNs only" in the Choose network access area.
     - If you want to restrict access to a private endpoint within an OCI VCN, select "Private endpoint access only" in the Choose network access area.
-    - If the "Require mutual TLS (mTLS) authentication" option is selected, mTLS will be required to authenticate connections to your Autonomous Database. TLS connections allow you to connect to your Autonomous Database without a wallet, if you use a JDBC thin driver with JDK8 or above. TLS connections require you to use an access control list (ACL) or private endpoint.
+    - If the "Require mutual TLS (mTLS) authentication" option is selected, mTLS will be required to authenticate connections to your Autonomous Database. TLS connections allow you to connect to your Autonomous Database without a wallet, if you use a JDBC thin driver with JDK8 or above. See the [documentation for network options](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5) for options to allow TLS, or to require only mutual TLS (mTLS) authentication.
 
     ![Choose the network access type.](./images/Picture100-26e.png " ")
 
@@ -200,4 +200,4 @@ See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-wa
 
 - **Author** - Nilay Panchal, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
-- **Last Updated By/Date** - Richard Green, September 2021
+- **Last Updated By/Date** - Richard Green, January 2022

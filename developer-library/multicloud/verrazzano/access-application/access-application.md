@@ -56,6 +56,7 @@ In this lab, you will:
 
    ![Advanced](images/3.png " ")
 
+
 4. Select *Proceed to bobs-books.bobs-books. EXTERNAL_IP .nip.io(unsafe)* to access the application. If you are the not getting this option for proceed, just type *thisisunsafe* without any space anywhere inside this chrome browser window. As you are typing in the chrome browser window, you can't see it, but as soon as you finish typing *thisisunsafe*, you can see application page immediately. You can find more details [here](https://verrazzano.io/latest/docs/faq/faq/#enable-google-chrome-to-accept-self-signed-verrazzano-certificates).
 
    ![Unsafe access](images/4.png " ")
@@ -133,13 +134,14 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
 3. Select *Proceed to verrazzano default XX.XX.XX.XX.nip.io(unsafe)*. If you are the not getting this option for proceed, just type *thisisunsafe* without any space. Do the same for opening other URLs of Verrazzano Consoles. You can find more details [here](https://verrazzano.io/latest/docs/faq/faq/#enable-google-chrome-to-accept-self-signed-verrazzano-certificates).
 
+
    ![Proceed](images/15.png " ")
 
 4. Because it redirects to the Keycloak console  URL for authentication, again on this page, click *Advanced*.
 
    ![Keycloak Authentication](images/16.png " ")
 
-5. Select *Proceed to Keycloak default XX.XX.XX.XX.nip.io(unsafe)*. If you are the not getthing this option for proceed, just type *thisisunsafe* without any space.
+5. Select *Proceed to Keycloak default XX.XX.XX.XX.nip.io(unsafe)*. If you are the not getting this option for proceed, just type *thisisunsafe* without any space.
 
    ![Proceed](images/17.png " ")
 

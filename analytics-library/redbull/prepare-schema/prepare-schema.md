@@ -38,7 +38,7 @@ This new user/schema will hold the Grand Prix data.
 
    ![ADW Menu](images/open-database-actions.png)
 
-   If asked, login with user **ADMIN**, password **Oracle_12345** (you specified this upon creation of the Autonomous Data Warehouse earlier).
+   If asked, login with user **ADMIN** and the secure password (you specified this upon creation of the Autonomous Data Warehouse earlier).
 
 4. Click the **SQL** tile under **Development** section.
 
@@ -60,7 +60,7 @@ This new user/schema will hold the Grand Prix data.
 
    <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/dx3YybE7Ax5bQWGnbnO-ke42vjb4s9qnaHPoEFPNmDwp5u-nMf-lDTWWfhUmrkNK/n/fruktknlrefu/b/workshop-redbull-analytics/o/RACES.csv" target="\_blank">Races data</a>
 
-   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Qk2s_tDHTI0i2nRLWxLrf8oUWqSNu1yevqJ15O2H7U2L9lXITpb3tvkbs-H-hAHR/n/fruktknlrefu/b/workshop-redbull-analytics/o/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
+   <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/M8g8i7K4yo6DSiv9mXN_jVtLIJZSGB4lmEhYZ0mfX9DuwJKAGMafM8XGzw5kIKXn/n/fruktknlrefu/b/workshop-redbull-analytics/o/LAP_TIMES.csv" target="\_blank">Lap Times data</a>
 
    <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/PlYaI3Fp8SLzYwA_31L2Zj5_3aam_YbMRoIk4C1FEvhgqruQfa76pFyZwM4l2lyx/n/fruktknlrefu/b/workshop-redbull-analytics/o/SAFETY_CAR.csv" target="\_blank">Safety Car data</a>
 
@@ -81,7 +81,7 @@ This new user/schema will hold the Grand Prix data.
    Now log in to Data Actions again using the following:
 
    - Username: F1
-   - Password: Oracle_12345
+   - Password: Provide the secure password for the F1 user
 
 3. Click to the **Data Load** option, under the **Data Tools** section.
 
