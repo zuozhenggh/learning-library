@@ -76,7 +76,7 @@ In this lab, you will:
     - Shape: VM.Standard.E2.1.Micro (Always Free-eligible)
     - Download the private and public keys: **Save Private Key**, Save Public Key.
 
-2. Click **Create**. Wait for Compute Instance to finish provisioning, and have status Available. On the Instance Details page, copy Public IP Address in your notes.
+2. Click **Create**. Wait for Compute Instance to finish provisioning, and have status Available (click browser Refresh button). On the Instance Details page, copy Public IP Address in your notes.
 
 3. Use your laptop web browser to open the URL returned by the script, replacing **[DEVM public-ip address]** with the actual values. (if the URL doesn't work, give it a couple of minutes to start the graphical user interface)
 
@@ -84,7 +84,7 @@ In this lab, you will:
 
 4. Check if your keyboard works. If you need to select another keyboard layout, click the **On-Off** button in the upper right corner, and **Settings** button. You will find the options under Region & Language.
 
-5. Click Applications > Favorites > Firefox to launch the web browser on the DEVM Compute Node remote desktop. Navigate to cloud.orale.com, and login to Oracle cloud console using your Cloud Account Name, User Name, and Password.
+5. Click Applications > Favorites > Firefox to launch the web browser on the DEVM Compute Node remote desktop. Navigate to cloud.oracle.com, and login to Oracle cloud console using your Cloud Account Name, User Name, and Password.
 
 
 ## Task 3: Provision Oracle Autonomous JSON Database (AJD)
@@ -108,7 +108,7 @@ In this lab, you will:
 
     - Access Type: Secure access from everywhere
 
-4. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
+4. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available (click browser Refresh button).
 
 5. Next to the big green box, click DB Connection > Download wallet.
 
@@ -117,7 +117,7 @@ In this lab, you will:
 
 6. Open another tab in Firefox on remote desktop, and navigate to **bit.ly/SODAjson**. Use this lab guide to copy and paste commands on the DEVM Compute Node remote desktop.
 
-7. Click Applications > System Tools > Terminal on the DEVM Compute Node remote desktop. Run the following commands. Use Shift+Ctrl+V to paste the block in Terminal, and hit **Enter** after it.
+7. Click Applications > System Tools > Terminal on the DEVM Compute Node remote desktop. Run the following commands. Use **Shift+Ctrl+V** to paste the block in Terminal, and hit **Enter** after it.
 
     ````
     <copy>
@@ -152,11 +152,12 @@ In this lab, you will:
 
 8. Click **Sign In**. Oracle APEX uses low-code development to let you build data-driven apps quickly without having to learn complex web technologies. This also gives you access to Oracle REST Data Services, that allows developers to readily expose and/or consume RESTful Web Services by defining REST end points.
 
-9. On Oracle Cloud Infrastructure Console, click **Database Actions** next to the big green box.
+9. On Oracle Cloud Infrastructure Console, click **Database Actions** next to the big green box. Allow pop-ups from cloud.oracle.com.
 
-10. Click Development > SQL (first button), and run the following code:
+10. Click Development > SQL (first button), and run the following code using Run Script button:
 
     ````
+    <copy>
     BEGIN 
        ords_admin.enable_schema (
           p_enabled => TRUE,
@@ -168,6 +169,7 @@ In this lab, you will:
       commit ;
     END ; 
     /
+    </copy>
     ````
 
     >**Note** : For all code you run in SQL Developer Web, make sure you receive a success message:
@@ -176,10 +178,12 @@ In this lab, you will:
     PL/SQL procedure successfully completed.
     ````
 
-11. Grant **SODA_APP** to DEMO user. This role provides privileges to use the SODA APIs, in particular, to create, drop, and list document collections.
+11. Grant **SODA_APP** to DEMO user. This role provides privileges to use the SODA APIs, in particular, to create, drop, and list document collections. Use Run Statement button to execute this command.
 
     ````
+    <copy>
     GRANT SODA_APP TO demo;
+    </copy>
     ````
 
 12. Click **ADMIN** upper right corner, and **Sign Out**. 
@@ -196,7 +200,7 @@ In this lab, you will:
 
 Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-service application that will allow you to insert and retrieve JSON documents using REST calls.
 
-1. Use Terminal window on the DEVM Compute Node remote desktop. Create a new folder under `/home/oracle` as the location of the Python application. Create a Python virtual environment for development, and activate it.
+1. Use Terminal window on the DEVM Compute Node remote desktop. Create a new folder under `/home/oracle` as the location of the Python application. Create a Python virtual environment for development, and activate it. Copy the block of commands using Copy button, paste in Terminal window using **Shift+Ctrl+V**, and hit **Enter** after it.
 
     ````
     <copy>
@@ -216,7 +220,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-3. Add the following lines in requirements.pip, click Save, and close the editor.
+3. Add the following lines in requirements.pip, click **Save**, and close the editor.
 
     ````
     <copy>
@@ -243,7 +247,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-6. Paste the following code in simple-app.py file. Verify all connection variables are correct. Click Save, and close the editor.
+6. Paste the following code in simple-app.py file. Verify all connection variables are correct. Click **Save**, and close the editor.
 
     ````
     <copy>
@@ -309,7 +313,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     * Running on http://X.X.X.X:5000/ (Press CTRL+C to quit)
     ````
 
-9. Use Terminal main menu to click File > New Tab, to open a new tab. Use the new tab to perform two POST request with CURL client.
+9. Use Terminal main menu to click File > **New Tab**, to open a new tab. Use the new tab to perform two POST request with CURL client.
 
     ````
     <copy>
@@ -397,6 +401,65 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     CTRL+C
     </copy>
     ````
+
+
+## Task 6: The Advantage of Apex and SQL Knowledge
+
+1. Use the web browser tab where Oracle Application Express (Apex) is open. Click SQL Workshop > **SQL Commands**. Run this SQL query:
+
+    ````
+    <copy>
+    select TABLE_NAME from USER_TABLES;
+    </copy>
+    ````
+
+2. Describe the table that holds JSON documents data in the collection.
+
+    ````
+    <copy>
+    desc "SimpleCollection"
+    </copy>
+    ````
+
+3. Dot-notation is designed for easy queries to return JSON values. Run a JSON dot-notation query.
+
+    ````
+    <copy>
+    SELECT co.JSON_DOCUMENT.company, 
+           co.JSON_DOCUMENT.address.country Country, 
+           co.JSON_DOCUMENT.address.city City, 
+           co.JSON_DOCUMENT.industry, 
+           co.JSON_DOCUMENT.employees 
+        FROM "SimpleCollection" co;
+    </copy>
+    ````
+
+4. Click App Builder > Create. Click New Application.
+
+    - Name: Companies
+
+5. Click Add Page. Interactive Report.
+
+    - Page Name: Report
+    - SQL Query:
+
+    ````
+    <copy>
+    SELECT co.JSON_DOCUMENT.company, 
+           co.JSON_DOCUMENT.address.country Country, 
+           co.JSON_DOCUMENT.address.city City, 
+           co.JSON_DOCUMENT.industry, 
+           co.JSON_DOCUMENT.employees 
+        FROM "SimpleCollection" co;
+    </copy>
+    ````
+    
+6. Click Add Page. Click Create Application. Click Run Application.
+
+    - Username: demo
+    - Password: DBlearnPTS#22_
+
+7. Click Report.
 
 
 ## Acknowledgements
