@@ -216,9 +216,12 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
     <copy>
     @ECHO off
 
+    REM Temporary prefix path variable with system32 to prefer system commands
+    SETLOCAL
+    PATH=C:\Windows\system32;%PATH%
+    
     REM STEP1: CHECKING FOR ADMINISTRATOR PERMISSIONS
     ECHO Administrative permissions required for installation of management agent. Detecting permissions...
-
     NET SESSION >nul 2>&1
     IF %ERRORLEVEL% == 0 (
       ECHO Success: Administrative permissions detected. Continuing with installation...
@@ -226,28 +229,24 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
       ECHO Failure: Current permissions insufficient. Please reopen the Command Prompt with administrative permissions.
       EXIT /B 1
     )
-
+    
     SET argC=0
     SET javaHome=%1
     SET rspPath=%2
-
+    
     set rspPath=%rspPath:"=%
     set javaHome=%javaHome:"=%
-
-    REM Temporary prefix path variable with system32 to prefer system commands
-    SETLOCAL
-    PATH=C:\Windows\system32;%PATH%
-
+    
     FOR %%x in (%*) do Set /A argC+=1
-
+    
     IF %argC% LSS 2 (
         ECHO Minimum arguments are missing
         ECHO Usage:- to execute: installer-wrapper.bat ^<Java Home path^> ^<Full_Path_To_Input.rsp^>
         EXIT /b 1
       )
-
+    
     REM ECHO parameters passed : %*
-
+    
     REM STEP2: SET JAVA HOME
     ECHO setting JAVA_HOME to %javaHome%
     REM Check if bin\java exists
@@ -258,7 +257,7 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
         ECHO Java home is not as expected. bin directory does not exists under %javaHome%
         EXIT /b 1
       )
-
+    
     REM STEP3: SET VERSION CHECK
     SET OVERRIDE_VERSION_CHECK=true
     REM STEP4: INSTALL AGENT
