@@ -41,7 +41,7 @@ Estimated time: 25 minutes
 
    ![Oracle Cloud Console, Instances](images/1-4-oci.png " ")
 
-    > ***NOTE:*** Ask your EMCC Administrator if you do not know the region or compartment of the OMS instance.
+    > **NOTE:** Ask your EMCC Administrator if you do not know the region or compartment of the OMS instance.
 
 5. In the **Instance Details** page, click **Copy** next to the **Public IP address** and **Internal FQDN**, and write down the values to a text file. You will need these values later in this tutorial. Then click the link to the **Subnet**.
 
@@ -343,7 +343,7 @@ In this task, you will download ***jamagent.war*** from the EMCC console.
     ![EMCC Console, Middleware Home page](images/4-18-emcc.png " ")
 
 
-    > ***NOTE:*** You will see the JVM targets appear under a **Default** JVM pool target, and not associated with your OKE WebLogic Domain. This happens because the IP that is registered in the EMCC is that of the Kubernetes load balancer service, and not of the actual host where JVM runs. You can manually add the association to the WebLogic Domain target, which is explained in the next task.
+    > **NOTE:** You will see the JVM targets appear under a **Default** JVM pool target, and not associated with your OKE WebLogic Domain. This happens because the IP that is registered in the EMCC is that of the Kubernetes load balancer service, and not of the actual host where JVM runs. You can manually add the association to the WebLogic Domain target, which is explained in the next task.
 
 
 19. In the JVM target home page, observe that data is coming in to the EMCC.
@@ -415,9 +415,9 @@ Additionally, you can configure **Oracle Cloud Infrastructure Application Perfor
 
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** -
-Rupesh Kumar, Consulting Member of Technical Staff,<br>
-Renjit Clement, Principal Member Technical Staff,<br>
-Ravi Mohan, Senior Software Development Manager,<br>
-Steven Lemme, Senior Principal Product Manager,<br>
+Rupesh Kumar, Consulting Member of Technical Staff,  
+Renjit Clement, Principal Member Technical Staff,  
+Ravi Mohan, Senior Software Development Manager,  
+Steven Lemme, Senior Principal Product Manager,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

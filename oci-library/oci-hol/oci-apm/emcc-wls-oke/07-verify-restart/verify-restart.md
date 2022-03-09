@@ -23,7 +23,7 @@ Estimated time: 10 minutes
     cd ~; vi domain.yaml
     </copy>
     ```
-    > ***NOTE:*** domain.yaml is the Domain Custom Resource yaml that contains the necessary parameters for the WebLogic Kubernetes Operator to start and stop the WebLogic domain. For more information, refer to the **[WebLogic Kubernetes Operator documentation](https://oracle.github.io/weblogic-kubernetes-operator/)**  documentation.
+    > **NOTE:** domain.yaml is the Domain Custom Resource yaml that contains the necessary parameters for the WebLogic Kubernetes Operator to start and stop the WebLogic domain. For more information, refer to the **[WebLogic Kubernetes Operator documentation](https://oracle.github.io/weblogic-kubernetes-operator/)**  documentation.
 
    ![Oracle Cloud Shell](images/1-2-cloudshell.png " ")
 
@@ -40,7 +40,7 @@ Estimated time: 10 minutes
 
    Save and close the file with ***esc + :wq***. 	
 
-    > ***NOTE:*** Ensure the indentation is at the same level with the restartVersion parameter in the next row.
+    > **NOTE:** Ensure the indentation is at the same level with the restartVersion parameter in the next row.
 
 4.  Run the kubectl get pods command to view the IP addresses of the pods.
 
@@ -128,9 +128,9 @@ You may now [proceed to the next tutorial](#next).
 
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** -
-Renjit Clement, Principal Member Technical Staff,<br>
-Rupesh Kumar, Consulting Member of Technical Staff,<br>
-Ravi Mohan, Senior Software Development Manager,<br>
-Steven Lemme, Senior Principal Product Manager,<br>
-Avi Huber, Senior Director, Product Management
+Renjit Clement, Principal Member Technical Staff,  
+Rupesh Kumar, Consulting Member of Technical Staff,  
+Ravi Mohan, Senior Software Development Manager,  
+Steven Lemme, Senior Principal Product Manager,  
+Avi Huber, Senior Director, Product Management  
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

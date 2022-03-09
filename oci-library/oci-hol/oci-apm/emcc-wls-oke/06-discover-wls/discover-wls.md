@@ -28,7 +28,7 @@ Estimated time: 20 minutes
     * Unique Domain Identifier: **OKE-WLS**
     * Agent: Select the EM agent created in the previous tutorial
 
-    > ***NOTE:*** You can run **kubectl get svc -n sample-domain1-ns** in the Cloud Shell to find the External-IP of the load balancer service for the Admin Server.
+    > **NOTE:** You can run **kubectl get svc -n sample-domain1-ns** in the Cloud Shell to find the External-IP of the load balancer service for the Admin Server.
 
    ![EMCC Console, Add FMW domain wizard](images/1-3-emcc.png " ")
 
@@ -66,7 +66,7 @@ Estimated time: 20 minutes
 
 4.  In the domain home page, observe the status and performance information of the WebLogic servers displayed. Click ***managed-server1*** link.
 
-    > ***NOTE:***  It may take few minutes after the discovery for some metrics to display the values.  
+    > **NOTE:**  It may take few minutes after the discovery for some metrics to display the values.  
 
    ![EMCC Console, WLS Domain target home page, Servers](images/2-4-emcc.png " ")
 
@@ -82,7 +82,7 @@ Estimated time: 20 minutes
 7. Optionally, you can navigate to **All Metrics** page (**WebLogic Server** > **Monitoring** > **All Metrics**)
    to examine each metric data and analyze the performance and the availability of the WebLogic Server target.
 
-    > ***NOTE:*** Example image below shows the last 7 days of the metric data (WebLogic Server metric, JVM Memory – Heap Memory Usage (KB)) collected from another OKE based WebLogic Server that is running for some time.
+    > **NOTE:** Example image below shows the last 7 days of the metric data (WebLogic Server metric, JVM Memory – Heap Memory Usage (KB)) collected from another OKE based WebLogic Server that is running for some time.
 
    ![EMCC Console, WLS Domain target home page, All Metrics page, JVM heap Usage](images/2-7-emcc.png " ")
 
@@ -96,7 +96,7 @@ Estimated time: 20 minutes
 
    ![EMCC Console, WLS target, Latest Configuration page](images/3-2-emcc.png " ")
 
-    > ***NOTE:*** As mentioned in the Limitation section in the Introduction of this workshop, only JMX based configurations are collected. Because there is no local agent in the target host, file-based configurations are not collected.
+    > **NOTE:** As mentioned in the Limitation section in the Introduction of this workshop, only JMX based configurations are collected. Because there is no local agent in the target host, file-based configurations are not collected.
 
 
 
@@ -106,9 +106,9 @@ You may now [proceed to the next tutorial](#next).
 
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** -
-Renjit Clement, Principal Member Technical Staff,<br>
-Rupesh Kumar, Consulting Member of Technical Staff,<br>
-Ravi Mohan, Senior Software Development Manager,<br>
-Steven Lemme, Senior Principal Product Manager,<br>
+Renjit Clement, Principal Member Technical Staff,  
+Rupesh Kumar, Consulting Member of Technical Staff,  
+Ravi Mohan, Senior Software Development Manager,  
+Steven Lemme, Senior Principal Product Manager,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

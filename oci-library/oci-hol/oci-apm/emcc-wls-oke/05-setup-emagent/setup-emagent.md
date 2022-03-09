@@ -92,7 +92,7 @@ Estimated time: 15 minutes
 
         <Public IP address of the OMS host> <FQDN of the OMS host>
 
-    > ***NOTE:*** Ask your EMCC Administrator if you do not know the IP address and the FQDN of the OMS host/compute instance.
+    > **NOTE:** Ask your EMCC Administrator if you do not know the IP address and the FQDN of the OMS host/compute instance.
 
    ![Terminal](images/2-1-terminal.png " ")
 
@@ -130,7 +130,7 @@ Estimated time: 15 minutes
 
    ![Terminal](images/2-2-terminal.png " ")
 
-    > ***NOTE:*** If you do not have permission to access the OMS host, please ask your EM administrator to add the EM Agent information to the hosts file in the OMS host.
+    > **NOTE:** If you do not have permission to access the OMS host, please ask your EM administrator to add the EM Agent information to the hosts file in the OMS host.
 
 
 7.  Type the following in the terminal window to ensure the OMS Upload port is open in the firewall settings.
@@ -142,7 +142,7 @@ Estimated time: 15 minutes
     </copy>
     ```
 
-    > ***NOTE:*** Please also make sure that an ingress rule for the port 4903 is created in the security list in the VCN, which is used by the OMS host. This is required for the EM agent to upload any data to the OMS. To create a security rule, please refer to the Tutorial 4, Task 1.
+    > **NOTE:** Please also make sure that an ingress rule for the port 4903 is created in the security list in the VCN, which is used by the OMS host. This is required for the EM agent to upload any data to the OMS. To create a security rule, please refer to the Tutorial 4, Task 1.
 
 ## Task 3: Install EM agent in the compute instance
 
@@ -164,7 +164,7 @@ Estimated time: 15 minutes
 
 5.  Enter the directory where the agent files will be installed. **/home/opc/agent** is specified in the image below, as an example. Select **SSH Key based named credentials** that can access the Oracle Cloud compute instance. Leave the other fields with the default values, then click **Next**.
 
-    > ***NOTE:*** If you have not created a SSH based named credential, go to **Setup** > **Security** > **Named Credentials**. Please refer to the EMCC Security Guide documentation > ***[Configuring and Using Target Credentials](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emsec/security-features.html#GUID-E2792E49-FBF5-4A25-837B-4225CFD16012)*** for how to create SSH key based named credentials.
+    > **NOTE:** If you have not created a SSH based named credential, go to **Setup** > **Security** > **Named Credentials**. Please refer to the EMCC Security Guide documentation > ***[Configuring and Using Target Credentials](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emsec/security-features.html#GUID-E2792E49-FBF5-4A25-837B-4225CFD16012)*** for how to create SSH key based named credentials.
 
    ![EMCC Console, Add Target wizard](images/3-5-emcc.png " ")
 
@@ -172,7 +172,7 @@ Estimated time: 15 minutes
 
    ![EMCC Console, Add Target wizard](images/3-6-emcc.png " ")
 
-    > ***NOTE:*** In case the wizard returns warnings for missing packages, update the package in the EM agent host, and try the agent install again. E.g., if the warning is: "Checking for libnsl-2.28-18 Not found", run **sudo yum install libnsl**.
+    > **NOTE:** In case the wizard returns warnings for missing packages, update the package in the EM agent host, and try the agent install again. E.g., if the warning is: "Checking for libnsl-2.28-18 Not found", run **sudo yum install libnsl**.
 
 7.  Once the installation is succeeded, you will see a screen similar to the image below. Click **Done** to exit the wizard.
 
@@ -190,9 +190,9 @@ You may now [proceed to the next tutorial](#next).
 
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** -
-Renjit Clement, Principal Member Technical Staff,<br>
-Rupesh Kumar, Consulting Member of Technical Staff,<br>
-Ravi Mohan, Senior Software Development Manager,<br>
-Steven Lemme, Senior Principal Product Manager,<br>
+Renjit Clement, Principal Member Technical Staff,  
+Rupesh Kumar, Consulting Member of Technical Staff,  
+Ravi Mohan, Senior Software Development Manager,  
+Steven Lemme, Senior Principal Product Manager,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

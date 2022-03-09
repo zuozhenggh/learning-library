@@ -45,7 +45,7 @@ Estimated time: 5 minutes
    ![Oracle Cloud console, Cloud Shell](images/1-7-cloudshell.png " ")
 
 
-   > ***NOTE***:  Save the command to a text file on your laptop, and execute it every time when you start a new Cloud Shell session, while working the labs in this workshop.
+   > **NOTE:**  Save the command to a text file on your laptop, and execute it every time when you start a new Cloud Shell session, while working the labs in this workshop.
 
 
 8.	In the Cloud Shell, run the following command.
@@ -94,6 +94,6 @@ You may now [proceed to the next tutorial](#next).
 
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** -
-Steven Lemme, Senior Principal Product Manager,<br>
+Steven Lemme, Senior Principal Product Manager,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

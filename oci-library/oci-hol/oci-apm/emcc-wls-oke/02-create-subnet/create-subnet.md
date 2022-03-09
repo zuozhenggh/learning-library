@@ -58,9 +58,9 @@ You may now [proceed to the next tutorial](#next).
 
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** -
-Renjit Clement, Principal Member Technical Staff,<br>
-Rupesh Kumar, Consulting Member of Technical Staff,<br>
-Ravi Mohan, Senior Software Development Manager,<br>
-Steven Lemme, Senior Principal Product Manager,<br>
+Renjit Clement, Principal Member Technical Staff,  
+Rupesh Kumar, Consulting Member of Technical Staff,  
+Ravi Mohan, Senior Software Development Manager,  
+Steven Lemme, Senior Principal Product Manager,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

@@ -34,7 +34,7 @@ Estimated time: 5 minutes
 6. Create two Ingress Rules with the information shown below.  As for the **Ingress Rule 2**, replace the CIDR with the **public IP of the OMS instance** to allow access only from the OMS host.  
 
 
-    > ***NOTE***:  Ask your EMCC Administrator if you do not know the IP address of the OMS host/compute instance.
+    > **NOTE:**  Ask your EMCC Administrator if you do not know the IP address of the OMS host/compute instance.
 
   * Ingress Rule 1:
       * Stateless: **No**
@@ -55,7 +55,7 @@ Estimated time: 5 minutes
    ![Oracle Cloud console, Ingress Rule 1](images/1-6-vcn.png " ")
    ![Oracle Cloud console, Ingress Rule 2](images/1-7-vcn.png " ")
 
-   > ***NOTE***: You can also restrict the SSH access to enhance the security in the Ingress Rule 1. For example, if you have a Bastion host in the VCN, you can limit the access to the port 22 only from the OMS and the Bastion host. You can still connect to the EM agent instance through the bastion host, using two-step-SSH connection for development and maintenance purposes.
+   > **NOTE:** You can also restrict the SSH access to enhance the security in the Ingress Rule 1. For example, if you have a Bastion host in the VCN, you can limit the access to the port 22 only from the OMS and the Bastion host. You can still connect to the EM agent instance through the bastion host, using two-step-SSH connection for development and maintenance purposes.
 
 
 7. In the same **Create Security List** window, click **+Another Egress Rule** button, create an Egress rule with the following information. Then click **Create Security List**.
@@ -112,9 +112,9 @@ You may now [proceed to the next tutorial](#next).
 
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** -
-Renjit Clement, Principal Member Technical Staff,<br>
-Rupesh Kumar, Consulting Member of Technical Staff,<br>
-Ravi Mohan, Senior Software Development Manager,<br>
-Steven Lemme, Senior Principal Product Manager,<br>
+Renjit Clement, Principal Member Technical Staff,  
+Rupesh Kumar, Consulting Member of Technical Staff,  
+Ravi Mohan, Senior Software Development Manager,  
+Steven Lemme, Senior Principal Product Manager,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

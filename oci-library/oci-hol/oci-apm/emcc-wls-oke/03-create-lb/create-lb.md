@@ -177,7 +177,7 @@ Estimated time: 15 minutes
 
     **wlsoke-mng1-svc** and **wlsoke-mng2-svc** are the names of the load balancer services, for the managed WebLogic servers.  Ensure the expected values are entered and the indentation is set correctly. Save the file with ***esc + :wg***.
 
-    > ***NOTE***:  Refer to the screenshot image below to see how it should look like after the file is modified.
+    > **NOTE:**  Refer to the screenshot image below to see how it should look like after the file is modified.
        ![Oracle Cloud Shell, managed-lb.yaml file](images/3-2-yaml.png " ")
 
 
@@ -221,9 +221,9 @@ You may now [proceed to the next tutorial](#next).
 
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** -
-Renjit Clement, Principal Member Technical Staff,<br>
-Rupesh Kumar, Consulting Member of Technical Staff,<br>
-Ravi Mohan, Senior Software Development Manager,<br>
-Steven Lemme, Senior Principal Product Manager,<br>
+Renjit Clement, Principal Member Technical Staff,  
+Rupesh Kumar, Consulting Member of Technical Staff,  
+Ravi Mohan, Senior Software Development Manager,  
+Steven Lemme, Senior Principal Product Manager,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022
