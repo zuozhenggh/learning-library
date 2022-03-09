@@ -30,9 +30,9 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Create Virtual Cloud Network 
 
-1. Navigation Menu   
-        Networking  
-            Virtual Cloud Networks
+1. Click Navigation Menu   
+    Select Networking  
+    Select Virtual Cloud Networks
     ![VCN](./images/03vcn01.png " ")
 
 2. Click **Start VCN Wizard**
@@ -129,7 +129,8 @@ Description
 6.	On Security List for Default Security List for mds_vcn page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn13.png " ")
 
-You may now **proceed to the next lab**.
+You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)”
+
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 

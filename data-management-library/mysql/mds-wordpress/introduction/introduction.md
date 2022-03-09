@@ -4,7 +4,7 @@
 
 ## About this Workshop
 
-WordPress is a versatile content management system (CMS) and a powerful website builder. MySQL Database Service(MDS) is a fully managed Oracle Cloud Infrastructure (OCI) native service. Together they create a resilient hosting infrastructure for your web application. Use this workshop as a starting point and have a complete installation built on top of Oracle Linux and Oracle MySQL Database Service. 
+WordPress is a versatile content management system (CMS) and a powerful website builder. MySQL Database Service(MDS) is a fully managed Oracle Cloud Infrastructure (OCI) native service. Together they create a resilient hosting infrastructure for your web application. Use this workshop as a starting point and have a complete installation is built on Oracle Linux and Oracle MySQL Database Service. 
 
 
 _Estimated Lab Time:_ 1 hour
@@ -31,8 +31,13 @@ In this lab, you will be guided through the following steps:
 * A web browser
 * An SSH Terminal - Cloud Shell (provided in the OCI console). 
   Alternatively, terminal with SSH (Linux or MAC), Windows machine with GitBash/Putty or WSL (Windows Subsystem for Linux).
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
 
-You may now proceed to the **Get Started Lab**.
+**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+
+You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)”
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 

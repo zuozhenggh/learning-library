@@ -4,9 +4,12 @@
 
 ## Introduction
 
-When working in the cloud, there are often times when your servers and services are not exposed to the public internet. The Oracle Cloud Infrastructure (OCI) MySQL cloud service is an example of a service that is only accessible through private networks. Since the service is fully managed, we keep it siloed away from the internet to help protect your data from potential attacks and vulnerabilities. It’s a good practice to limit resource exposure as much as possible, but at some point, you’ll likely want to connect to those resources. That’s where Compute Instance, also known as a Bastion host, enters the picture. This Compute Instance Bastion Host is a resource that sits between the private resource and the endpoint which requires access to the private network and can act as a “jump box” to allow you to log in to the private resource through protocols like SSH.  This bastion host requires a Virtual Cloud Network and Compute Instance to connect with the MySQL DB Systems. 
+Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances . You can create instances as needed to meet your compute and application requirements. After you create an instance, you can access it securely from your computer or cloud shell.
 
-Today, you will use the Compute Instance to connect from the browser to a MDS DB System
+
+**Create Linux Compute Instance**
+
+In this lab, you use Oracle Cloud Infrastructure to create an Oracle Linux instance. In another lab, you will use it to install the required LAMP stack (Linux Apache MySQL PHP) components.
 
 _Estimated Time:_ 15 minutes
 
@@ -137,13 +140,8 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
 ![CONNECT](./images/05compute08-a.png " ")
 
-You may now **proceed to the next lab**.
+You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)”
 
-## Learn More
-
-* [Cloud Shell](https://www.oracle.com/devops/cloud-shell/?source=:so:ch:or:awr::::Sc)
-* [Virtual Cloud Network](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
-* [OCI Bastion Service ](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/Bastion/Tasks/connectingtosessions.htm)
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 

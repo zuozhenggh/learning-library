@@ -3,9 +3,11 @@
 
 ## Introduction
 
+Oracle MySQL Database Service (MDS) is a fully-managed database service deployed within Oracle Cloud Infrastructure (OCI) that supports operators and developers looking to rapidly deploy secure, cloud-native applications.
+
 **Create your Oracle MySQL Database Service**
 
-Set up a Standalone MySQL Database service instance: With the Standalone option, users get a single-instance MDS back-ended by resilient and secure Oracle Cloud Infrastructure Block Volumes. 
+You will set up a **Standalone** MySQL Database service instance in this lab. With the Standalone option, users get a single-instance MDS back-ended by resilient and secure Oracle Cloud Infrastructure Block Volumes. This option is typically recommended for test and development environments.
 
 _Estimated Time:_ 10 minutes
  
@@ -127,11 +129,7 @@ In this lab, you will be guided through the following tasks:
     ![MDS](./images/04mysql11-1.png" ")
 
 
-You may now **proceed to the next lab**.
-
-## Learn More
-
-* [Setting Up the airportdb Database](https://dev.mysql.com/doc/airportdb/en/)
+You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)”
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
