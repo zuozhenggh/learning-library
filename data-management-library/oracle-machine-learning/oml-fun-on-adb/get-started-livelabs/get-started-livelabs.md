@@ -132,7 +132,11 @@ To create a user account:
 
 	* **Confirm Password:** Enter the password to confirm the value that you entered in the **Password** field. By doing so, you create the password for the user. The user can change the password when first Signing in.
 
-8. Click **Create**.
+8. Click **Create**. After the user is created, it is listed on the Oracle Machine Learning User Administration page.
+
+	 ![Oracle Autonomous Data Warehouse](images/omluser-created.png)
+
+	 > **Note:** Click on the home icon on the top right corner of the Oracle Machine Learning User Administration page to open the Oracle Machine Learning Notebooks home page.
 
 This completes the task of creating an Oracle Machine Learning user.
 
@@ -172,25 +176,14 @@ In this step, you will create a notebook and run a SQL query to create the table
 
 To create the table:
 
-1. On the Oracle Machine Learning home page, click **Notebooks**. The Notebooks page opens.
+1. On the Oracle Machine Learning home page, click **Scratchpad**. The Scratchpad is a convenient one-click access to a notebook for running SQL statements, PL/SQL scripts, and Python scripts. Here, you will run a SQL script to create the CUSTOMER360 table.
 
-	![Notebooks option in OML homepage](images/homepage-notebooks.png)
-
-	Alternatively, you can click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the home page to open the left navigation menu. Click **Notebooks**.
+	![Notebooks option in OML homepage](images/homepage-scratchpad.png)
 
 
-	![Notebooks option in hamburger](images/hamburger-notebooks.png)
+2. The Scratchpad opens with three paragraphs - `%sql` (SQL), `%script` (PL/SQL), `%python` (Python). Click the paragraph with `%sql`, and press enter.
 
-2. On the Notebooks page, click **Create**.
-
-	![Create Notebook dialog](images/create-notebook.png)
-
-3. In the Create Notebook dialog, enter `Customers_360` in the name field. and click **OK**.
-
-4. Type ``%sql`` to connect to the SQL interpreter and press Enter.
-
-	![SQL tag](images/tag-sql.png)
-
+	![Create Notebook dialog](images/scratchpad.png)
 
 5. Enter the following script and click the Run icon ![run icon](images/run.png):
 
