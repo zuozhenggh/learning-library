@@ -405,7 +405,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
 ## Task 6: The Advantage of Apex and SQL Knowledge
 
-1. Use the web browser tab where Oracle Application Express (Apex) is open. Click SQL Workshop > **SQL Commands**. Run this SQL query:
+1. Use the web browser tab where Oracle Application Express (Apex) is open, or open Apex from AJDEV using the browser on your laptop. Click SQL Workshop > **SQL Commands**. Run this SQL query:
 
     ````
     <copy>
@@ -413,7 +413,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-2. Describe the table that holds JSON documents data in the collection.
+2. Describe the table that holds JSON documents data in the collection. The name of the column that stores JSON documents is JSON_DOCUMENT.
 
     ````
     <copy>
@@ -421,7 +421,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-3. Dot-notation is designed for easy queries to return JSON values. Run a JSON dot-notation query.
+3. SQL dot-notation syntax is designed for easy queries to return JSON values from tables. Run a JSON dot-notation query.
 
     ````
     <copy>
@@ -434,7 +434,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-4. Click App Builder > Create. Click New Application.
+4. JSON data can be accessed via SQL from your applications. Click App Builder > Create. Click New Application.
 
     - Name: Companies
 
@@ -459,7 +459,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     - Username: demo
     - Password: DBlearnPTS#22_
 
-7. Click Report.
+7. Click Report. With Oracle Autonomous Database as a document store, JSON data is valued in the same way as relational data.
 
 
 ## Acknowledgements
