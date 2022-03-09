@@ -67,7 +67,7 @@ For this workshop we need to create one new user.
  - username: **MOVIESTREAM**
  - password: create a suitably strong password, and make note of it, as you will need to provide it in an upcoming step.
 
-    >**Note:** Rules for User Passwords: Autonomous Data Warehouse requires strong passwords. User passwords user must meet the following default password complexity rules:
+    >**Note:** Rules for User Passwords: Autonomous Database requires strong passwords. User passwords user must meet the following default password complexity rules:
 
     - Password must be between 12 and 30 characters long
 
@@ -79,7 +79,7 @@ For this workshop we need to create one new user.
 
     - Cannot be one of the last four passwords used for the same username
 
-    - Cannot contain the double quote (") character
+    - Cannot contain the double quote (") or exclamation (!) characters
 
     There is more information available in the documentation about password rules and how to create your own password rules; see here: [Create Users on Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/manage-users-create.html#GUID-B5846072-995B-4B81-BDCB-AF530BC42847)
 
@@ -87,8 +87,6 @@ For this workshop we need to create one new user.
 - Toggle the **Web Access** button to **On**.
 - Toggle the **OML** button to **On**.
 - In the upper right section of the Create User dialog, select **UNLIMITED** from the drop down menu for Quota on tablespace DATA.
-
-    >**Note:** If you are using an Always Free autonomous database instance, the **UNLIMITED** option will not be available. In this case, simply select **20GB** in the list. This will be sufficient for the whole workshop.
 
 - Leave the **Password Expired** toggle button as off (Note: this controls whether the user is prompted to change their password when they next log in).
 - Leave the **Account is Locked** toggle button as off. 
@@ -149,12 +147,12 @@ Now you need to switch from the ADMIN user to the MOVIESTREAM user, before start
 
 4. This will launch the Database Actions home page.
 
-    ![The Database Actions home page](images/2878885105.png " ")
+    ![The Database Actions home page](images/dbactions-home.png " ")
 
 
 ## Task 4: Configure the Object Storage connections
 
-In this step, you will set up access to the two buckets on Oracle Cloud Infrastructure Object Storage that contain data that we want to load - the landing area, and the 'gold' area.
+In this step, you will set up access to a bucket on Oracle Cloud Infrastructure Object Storage that contains "gold" data that we want to load.
 
 1. On the Database Actions home page, under **Data Tools**, click **DATA LOAD**.
 
@@ -180,7 +178,7 @@ In this step, you will set up access to the two buckets on Oracle Cloud Infrastr
     ```
 
     - Select **No Credential** as this is a public bucket.
-    - Click on the **Test** button to test the connection. Then click **Create**.
+    - Then click **Create**.
 
 4. The page now shows the newly created Cloud Location.
 

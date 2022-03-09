@@ -1,4 +1,4 @@
-# Oracle Machine Learning for SQL (OML4SQL)
+# OML4SQL using One-Class Support Vector Machine (SVM) for Anomaly Detection
 
 ## Introduction
 
