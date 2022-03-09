@@ -10,11 +10,10 @@ Estimated Lab Time: 5 minutes
 In this lab, you will:
 - Obtain Database Connection details
 - Create Database Table using a SQL script
-- Set up prerequisites to create an Oracle ERP Cloud Adapter connection
+
 
 ### Prerequisites
 * Completion of the **Provision an Oracle Autonomous Database** section in the **Contents** menu on the left
-* Access to an Oracle ERP Cloud user account with privileges to assign specific roles to an integration user. 
 
 
 ## Task 1: Obtain Database Connection details
@@ -108,36 +107,9 @@ Follow these steps to create a DB table which will be used as part of this works
 
 Now you have an external table which will be used in the demo flow. 
 
+You have completed the final step of this lab.
 
-## Task 3: Set up prerequisites to create an Oracle ERP Cloud Adapter connection
-
-We will assign required roles to an Integration User. You specify this user account when creating an Oracle ERP Cloud Adapter connection on the Connections page.
-
-
-1. Login to Oracle ERP Cloud
-
-2. Select **Navigator** > **Tools** > **Security Console**.
-    ![](images/erp-open-security-console.png)
-
-3. Associate the integration user with the Following Roles and Privileges:
-
-    | Grant Type | Name | Code |
-    | ---- | ---- | ---- |
-    | Function Security Policy | Manage Webservices catalog | FND_MANAGE_CATALOG_SERVICE_PRIV
-    | Role | Integration Specialist | FND_INTEGRATION_SPECIALIST_JOB
-    | Role | Attachments User | AttachmentsUser |
-    | Role | SOA Operator | SOAOperator |FND_MANAGE_CATALOG_SERVICE_PRIV | 
-    | 
-
-    > **Tip:** Create a custom integration role with above Privilege and Roles, and assign the role to the integration user. 
-
-
-
-## Learn More
-* [Prerequisites for Creating an ERP Cloud Adapter Connection](https://docs.oracle.com/en/cloud/paas/integration-cloud/erp-adapter/prerequisites-creating-connection.html)
-* [Using the Oracle ERP Cloud Adapter with Oracle Integration
-](https://docs.oracle.com/en/cloud/paas/integration-cloud/erp-adapter)
 
 ## Acknowledgements
 * **Author** - Ravi Chablani, Product Management - Oracle Integration
-* **Last Updated By/Date** - Ravi Chablani, February 2022
+* **Last Updated By/Date** - Ravi Chablani, March 2022

@@ -6,14 +6,15 @@ In this lab you will assign a custom role to an integration service user. This u
 Estimated Time: 10 minutes
 
 ### Objectives
-- Create a custom Integration role
-- Create an Integration Service user with custom role
+* Create a custom Integration role
+* Create an Integration Service user with custom role
 
 
 ### Prerequisites
 This lab assumes you have
-- An Oracle ERP account
-- Privileges in ERP Cloud to create roles and assign them to users
+* An Oracle ERP Cloud account
+* Access to an ERP Cloud user account with privileges to assign specific roles to an integration user. 
+
 
 ## Task 1: Create a custom Integration role
 
