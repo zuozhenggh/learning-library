@@ -56,10 +56,9 @@ In this lab, you will:
 
    ![Advanced](images/3.png " ")
 
-4. Select *Proceed to bobs-books.bobs-books. EXTERNAL_IP .nip.io(unsafe)* to access the application. If you are the not getting this option for proceed, just type *thisisunsafe* without any space anywhere inside this chrome browser window. As you are typing in the chrome browser window, you can't see it, but as soon as you finish typing *thisisunsafe*, you can see application page immediately.
+4. Select *Proceed to bobs-books.bobs-books. EXTERNAL_IP .nip.io(unsafe)* to access the application. If you are the not getting this option for proceed, just type *thisisunsafe* without any space anywhere inside this chrome browser window. As you are typing in the chrome browser window, you can't see it, but as soon as you finish typing *thisisunsafe*, you can see application page immediately. You can find more details [here](https://verrazzano.io/latest/docs/faq/faq/#enable-google-chrome-to-accept-self-signed-verrazzano-certificates).
 
    ![Unsafe access](images/4.png " ")
-
    ![Robert Bookstore](images/5.png " ")
 
 5. To open the Bobby's Book Store Home page, open a new tab and copy the following URL and replace *XX.XX.XX.XX* with your `EXTERNAL_IP` address, as shown in the following image.
@@ -132,7 +131,7 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
    ![Advanced](images/14.png " ")
 
-3. Select *Proceed to verrazzano default XX.XX.XX.XX.nip.io(unsafe)*. If you are the not getting this option for proceed, just type *thisisunsafe* without any space. Do the same for opening other URLs of Verrazzano Consoles.
+3. Select *Proceed to verrazzano default XX.XX.XX.XX.nip.io(unsafe)*. If you are the not getting this option for proceed, just type *thisisunsafe* without any space. Do the same for opening other URLs of Verrazzano Consoles. You can find more details [here](https://verrazzano.io/latest/docs/faq/faq/#enable-google-chrome-to-accept-self-signed-verrazzano-certificates).
 
    ![Proceed](images/15.png " ")
 
