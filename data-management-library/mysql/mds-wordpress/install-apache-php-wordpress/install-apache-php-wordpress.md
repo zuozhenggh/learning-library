@@ -169,7 +169,7 @@ phpinfo();
     <copy>sudo setsebool -P httpd_can_network_connect_db 1</copy>   
     ````
 
-## **TASK 4:** Install MySQL Shell
+## **TASK 4:** Install MySQL Shell,  and create the WordPress user and database.
 
 1. Install MySQL Shell and setup wordpress database
 
@@ -198,8 +198,9 @@ phpinfo();
     ````
 
     ````
-    <copy>\quit;</copy>   
+    <copy>\q;</copy>   
     ````
+
 ## **TASK 5:** Configure WordPress
 
 1. From a browser access http://instance public IP/wp-admin/setup-config.php.
