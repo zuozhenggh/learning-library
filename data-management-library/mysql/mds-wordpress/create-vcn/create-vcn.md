@@ -112,10 +112,10 @@ Description
 
 5.	Click Add Ingress Rules page under Ingress Rule 1
 
- Add an Ingress Rule with Source CIDR
-    ````
+ Add an Ingress Rule with Source CIDR 
+    ```
     <copy>0.0.0.0/0</copy>
-    ````
+    ```
  Destination Port Range
      ````
     <copy>80,443</copy>
