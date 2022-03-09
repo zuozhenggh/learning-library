@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Oracle Machine Learning for SQL (OML4SQL)",
+  "workshoptitle": "OML4SQL using One-Class Support Vector Machine (SVM) for Anomaly Detection",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
