@@ -110,7 +110,7 @@ To create a user account:
 
 6. On the Oracle Machine Learning User Administration Sign in page, enter the username and password to sign in.
 
-	>**Note:** The username is ADMIN. The password is what is you have defined while provisioning the Autonomous Database instance.   
+	>**Note:** The username is ADMIN. For the password, use the password you defined while provisioning the Autonomous Database instance.   
 
 	![Oracle Machine Learning User Administration Sign in page](images/database-admin-signin.png)
 
