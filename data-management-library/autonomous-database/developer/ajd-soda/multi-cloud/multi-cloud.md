@@ -1,4 +1,4 @@
-# Python Micro-service with Oracle Autonomous and MongoDB
+# Python micro-service with Oracle Autonomous and MongoDB
 
 ## Introduction
 
@@ -61,7 +61,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     </copy>
     ````
 
-2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click Save, and close the editor. This micro-service has 2 URLs: 
+2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor. This micro-service has 2 URLs: 
 
     - base-URL/**oracle**/ for Oracle Autonomous Database
     - base-URL/**mongo**/ for MongoDB
@@ -237,7 +237,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     </copy>
     ````
 
-2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click Save, and close the editor.
+2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor.
     
     ````
     <copy>
@@ -253,7 +253,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     
     # set MongoDB connection variables
     m_usr = 'mongoUser'
-    m_pwd = 'DBlearnPTS#21_'
+    m_pwd = 'DBlearnPTS#22_'
     m_dbn = 'SimpleDatabase'
     m_sdn = '[sub_domain_name]'
     
