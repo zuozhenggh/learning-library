@@ -73,7 +73,7 @@ Estimated time: 5 minutes
 
      ``` bash
      <copy>
-     http://<External IP of the Traefik Load Balancer>/console
+     http://<External IP of the Traefik load balancer>/console
      </copy>
      ```
      * Username: weblogic

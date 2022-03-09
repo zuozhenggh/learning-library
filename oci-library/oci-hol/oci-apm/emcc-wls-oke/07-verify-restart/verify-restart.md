@@ -6,6 +6,9 @@ In this optional tutorial, you will restart the WebLogic Server pods using the W
 
 Estimated time: 10 minutes
 
+* Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
+* Completion of the preceding tutorials in this workshop
+
 
 ## Task 1: Restart the Kubernetes Pods
 
@@ -26,14 +29,14 @@ Estimated time: 10 minutes
 
 3.  Locate the parameter **serverStartPolicy**. Notice the value is **"IF_NEEDED"**.
 
-   ![Oracle Cloud Shell](images/1-3-cloudshell.png " ")
+   ![Oracle Cloud Shell, domain.yaml file](images/1-3-cloudshell.png " ")
 
    Hit the “i” key to enter the editing mode. Comment out this line, duplicate to create another row, and set the value to **“NEVER"**, as in the example below. Note the value is case sensitive.
 
          #  serverStartPolicy: "IF_NEEDED"
            serverStartPolicy: "NEVER"
 
-   ![Oracle Cloud Shell](images/1-4-cloudshell.png " ")
+   ![Oracle Cloud Shell, domain.yaml file](images/1-4-cloudshell.png " ")
 
    Save and close the file with ***esc + :wq***. 	
 
@@ -75,7 +78,7 @@ Estimated time: 10 minutes
     </copy>
     ```
 
-   ![Oracle Cloud Shell](images/1-7-cloudshell.png " ")
+   ![Oracle Cloud Shell, domain.yaml file](images/1-7-cloudshell.png " ")
 
    Close the file with ***esc + :wq***.
 
@@ -99,7 +102,7 @@ Estimated time: 10 minutes
 
    ![Oracle Cloud Shell](images/1-8-cloudshell.png " ")
 
-    However, the change made in the WebLogic IP has no impact on the EMCC monitoring.  This is because the EM agent does not directly communicate with the pods where WebLogic Servers are running; instead, it connects with the Load Balancer services, which automatically handles the mapping when the pods are regenerated.  
+    However, the change made in the WebLogic IP has no impact on the EMCC monitoring.  This is because the EM agent does not directly communicate with the pods where WebLogic Servers are running; instead, it connects with the load balancer services, which automatically handles the mapping when the pods are regenerated.  
 
 ## Task 2: Verify the monitoring in EM Console
 
@@ -107,15 +110,15 @@ Estimated time: 10 minutes
 
     Click the link to the **managed-server1**.
 
-   ![EMCC Console](images/2-1-emcc.png " ")
+   ![EMCC Console, Middleware Home page](images/2-1-emcc.png " ")
 
 2. In the WebLogic Server target home page, observe the downtime was recorded in the target availability while the pods were regenerated, but EMCC regarded the new WebLogic Server running in the new pod, as the same target.
 
-   ![EMCC Console](images/2-2-emcc.png " ")
+   ![EMCC Console, WLS target home page](images/2-2-emcc.png " ")
 
 3. In the WebLogic Server target home page, select **WebLogic Server** > **Monitoring** > **Performance Summary**. In the dashboard, you can see the metric data collected from the old pod was preserved.
 
-   ![EMCC Console](images/2-3-emcc.png " ")
+   ![EMCC Console, WLS Performance Summary dashboard page](images/2-3-emcc.png " ")
 
 
 

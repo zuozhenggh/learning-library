@@ -6,18 +6,21 @@ This workshop provides step-by-step instructions for how to set up the monitorin
 
 In a nutshell, this can be done in three-fold steps:
 
-*	Step 1: Set up Kubernetes Load Balancer service in a private subnet for each WebLogic Server, allowing TCP communication within the **Virtual Cloud Network (VCN)**.
+*	Step 1: Set up Kubernetes load balancer service in a private subnet for each WebLogic Server, allowing TCP communication within the **Virtual Cloud Network (VCN)**.
 *	Step 2: Install an EM agent in the same VCN with the Kubernetes cluster. Here you need to create a compute instance in the Oracle Cloud to install the agent. Also, create a public subnet in the VCN and configure security rules, allowing traffic from/to the **Oracle Management Service (OMS)**, which is set up in a different VCN.
-*	Step 3: Use the EMCC console to remotely discover the WebLogic domain, using the EM agent created in step 2, connecting to the IP of the Load balancer service.
+*	Step 3: Use the EMCC console to remotely discover the WebLogic domain, using the EM agent created in step 2, connecting to the IP of the load balancer service.
 
 Although OKE was used as an example in this workshop, the approach using the Kubernetes load balancer service to monitor WebLogic Server with EMCC, could be also used in the hosted solutions in other cloud platforms, such as Azure Kubernetes Service (AKS).
 
   ![EMCC console Middleware Home Page monitoring WLS on Kubernetes  ](images/emcc.png " ")
 
-***PREREQUISITES***
+### PREREQUISITES
 * This workshop uses a simple WebLogic web application that runs on a Kubernetes cluster, as a target application to trace the user transactions. Prior to starting this workshop, be sure to complete the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop Labs 1-4, to set up the application.
 * The workshop assumes you have set up Oracle Enterprise Manager Cloud Control (EMCC) 13c in the Oracle Cloud. You can either manually install EMCC to a compute instance, or provision **[Oracle Enterprise Manager App](https://blogs.oracle.com/observability/post/oracle-enterprise-manager-is-now-available-on-oracle-cloud-marketplace)** from the **[Oracle Cloud Marketplace](https://cloudmarketplace.oracle.com/marketplace)**.
-* An Oracle Free Tier with 30-day free trial or Paid Cloud Account
+* An Oracle Free Tier with 30-day free trial or Paid Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported. 
+>**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+
 
 # How to use this workshop
 
@@ -33,11 +36,11 @@ Estimated Workshop Time: 100 minutes
 
 WebLogic domain was provisioned in OKE by following the steps described in the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop. Access to the WebLogic pods is restricted in the private subnet.
 
-To enable the communication between the WebLogic Servers and the EM Agent in the VCN, Kubernetes Load Balancer service was set up in a private subnet and connected to each WebLogic Server pod. Each Load Balancer service has an external IP (private IP), allowing access from the same VCN. Ports (7001 for admin server, and the port 8001 for managed servers) were opened in the Load Balancers to bridge the communication between the WebLogic Server services and the EM Agent.
+To enable the communication between the WebLogic Servers and the EM Agent in the VCN, Kubernetes load balancer service was set up in a private subnet and connected to each WebLogic Server pod. Each load balancer service has an external IP (private IP), allowing access from the same VCN. Ports (7001 for admin server, and the port 8001 for managed servers) were opened in the load balancers to bridge the communication between the WebLogic Server services and the EM Agent.
 
 Within the VCN, a new compute instance was created in a public subnet for the EM agent installation, and the firewall was configured to communicate with the Oracle Management Service (OMS) instance. OMS is the central unit of EMCC and runs in a different VCN in the Oracle Cloud.
 
-Finally, the EM Agent was pushed from the OMS and installed in the agent compute instance. WebLogic domain and related targets were discovered from the Middleware home page in the EMCC console, using the ports and the external IPs of the Load Balancer as discovery parameters.
+Finally, the EM Agent was pushed from the OMS and installed in the agent compute instance. WebLogic domain and related targets were discovered from the Middleware home page in the EMCC console, using the ports and the external IPs of the load balancer as discovery parameters.
 
 The block diagram below explains the above-mentioned details.  
 
@@ -46,7 +49,7 @@ The block diagram below explains the above-mentioned details.
 
 ## Limitations
 
-Because EMCC monitors the WebLogic Servers remotely through the Kubernetes Load Balancer, it is crucial to know that certain limitations exist. For example, shell-script-based metrics or file-based metrics cannot be monitored, for both WebLogic target metrics and configurations. This is because an EM agent does not exist in the target host in this model, while script or file-based metrics require a local agent.
+Because EMCC monitors the WebLogic Servers remotely through the Kubernetes load balancer, it is crucial to know that certain limitations exist. For example, shell-script-based metrics or file-based metrics cannot be monitored, for both WebLogic target metrics and configurations. This is because an EM agent does not exist in the target host in this model, while script or file-based metrics require a local agent.
 
 However, considering that the out-of-box metrics included in the EMCC’s WebLogic Server management are predominantly JMX based, the method described in this document is considered as an effective monitoring solution to the WebLogic on Kubernetes, when the exceptions are understood. Known limitations when monitoring WebLogic using this model:
 

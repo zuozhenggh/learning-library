@@ -6,16 +6,18 @@ Now you have the EM agent running in the same VCN with the Kubernetes cluster. I
 
 Estimated time: 20 minutes
 
+* Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
+* Completion of the preceding tutorials in this workshop
 
 ## Task 1: Discover WebLogic Domain
 
 1.  From the menu bar in the EMCC console, select **Targets** (A double ring icon) > **Middleware** to navigate to the Middleware home page.
 
-   ![EMCC Console](images/1-1-emcc.png " ")
+   ![EMCC Console, Targets menu](images/1-1-emcc.png " ")
 
 2. In the **Middleware** home page, click **Add** > **Oracle Fusion Middleware/WebLogic Domain**
 
-   ![EMCC Console](images/1-2-emcc.png " ")
+   ![EMCC Console, Middleware home page](images/1-2-emcc.png " ")
 
 3. In the **Add Oracle Fusion Middleware/WebLogic Domain: Find Targets** page, enter the following information in the fields. Then click **Continue**.
 
@@ -28,23 +30,23 @@ Estimated time: 20 minutes
 
     > ***NOTE:*** You can run **kubectl get svc -n sample-domain1-ns** in the Cloud Shell to find the External-IP of the load balancer service for the Admin Server.
 
-   ![EMCC Console](images/1-3-emcc.png " ")
+   ![EMCC Console, Add FMW domain wizard](images/1-3-emcc.png " ")
 
 4. Confirmation window appears upon successful completion on the search. Click **Close**.
 
-   ![EMCC Console](images/1-4-emcc.png " ")
+   ![EMCC Console, Add FMW domain wizard, Confirmation](images/1-4-emcc.png " ")
 
 5. In the **Assign Agents** page, review the targets found, then click **Add Targets**.
 
-   ![EMCC Console](images/1-5-emcc.png " ")
+   ![EMCC Console, Add FMW domain wizard, Assign Agents](images/1-5-emcc.png " ")
 
 6.  **Confirmation** window shows up. Click **Close**.
 
-   ![EMCC Console](images/1-6-emcc.png " ")
+   ![EMCC Console, Add FMW domain wizard, Conformation](images/1-6-emcc.png " ")
 
 7. In the **Results** page, click **OK**.
 
-   ![EMCC Console](images/1-7-emcc.png " ")
+   ![EMCC Console, Add FMW domain wizard, Results](images/1-7-emcc.png " ")
 
 
 
@@ -52,47 +54,47 @@ Estimated time: 20 minutes
 
 1.  In the **Middleware** home page, confirm the WebLogic Domain, WebLogic Servers and the WebLogic cluster were added to the Target section. Refresh the page to see the status updated. It may take few minutes to see the targets fully in the running status.
 
-   ![EMCC Console](images/2-1-emcc.png " ")
+   ![EMCC Console, Middleware home page](images/2-1-emcc.png " ")
 
 2.  Click the **WebLogic Domain** target link from the table view.
 
-   ![EMCC Console](images/2-2-emcc.png " ")
+   ![EMCC Console, Middleware home page, WLS Domain target](images/2-2-emcc.png " ")
 
 3.  Domain Home page opens. Click **Servers**.
 
-   ![EMCC Console](images/2-3-emcc.png " ")
+   ![EMCC Console, Domain Target home page](images/2-3-emcc.png " ")
 
 4.  In the domain home page, observe the status and performance information of the WebLogic servers displayed. Click ***managed-server1*** link.
 
     > ***NOTE:***  It may take few minutes after the discovery for some metrics to display the values.  
 
-   ![EMCC Console](images/2-4-emcc.png " ")
+   ![EMCC Console, WLS Domain target home page, Servers](images/2-4-emcc.png " ")
 
 
 5.  In the WebLogic Server target home page, select **WebLogic Server** > **Monitoring** > **Performance Summary**, to open a WebLogic Server Performance dashboard.
 
-   ![EMCC Console](images/2-5-emcc.png " ")
+   ![EMCC Console, WLS Domain target home page, Target menu](images/2-5-emcc.png " ")
 
 6. In the **Performance Summary** page, review the dashboard and verify that the metric data is coming in to the EMCC console. The image below is the summary of the past 15 minutes.  You can also check out the other dashboards as in the JVM performance to ensure the metric data is collected.
 
-   ![EMCC Console](images/2-6-emcc.png " ")
+   ![EMCC Console, WLS Domain target home page, Performance Summary dashboard page](images/2-6-emcc.png " ")
 
 7. Optionally, you can navigate to **All Metrics** page (**WebLogic Server** > **Monitoring** > **All Metrics**)
    to examine each metric data and analyze the performance and the availability of the WebLogic Server target.
 
     > ***NOTE:*** Example image below shows the last 7 days of the metric data (WebLogic Server metric, JVM Memory – Heap Memory Usage (KB)) collected from another OKE based WebLogic Server that is running for some time.
 
-   ![EMCC Console](images/2-7-emcc.png " ")
+   ![EMCC Console, WLS Domain target home page, All Metrics page, JVM heap Usage](images/2-7-emcc.png " ")
 
 ## Task 3: Verify the configuration data collected from the WebLogic target
 
 1. Next, let’s review the configuration metrics of the WebLogic target. Select **WebLogic Server** > **Configurations**.
 
-   ![EMCC Console](images/3-1-emcc.png " ")
+   ![EMCC Console, WLS target home page, target menu](images/3-1-emcc.png " ")
 
 2. In the **Latest Configuration** page, review the values that are collected.
 
-   ![EMCC Console](images/3-2-emcc.png " ")
+   ![EMCC Console, WLS target, Latest Configuration page](images/3-2-emcc.png " ")
 
     > ***NOTE:*** As mentioned in the Limitation section in the Introduction of this workshop, only JMX based configurations are collected. Because there is no local agent in the target host, file-based configurations are not collected.
 

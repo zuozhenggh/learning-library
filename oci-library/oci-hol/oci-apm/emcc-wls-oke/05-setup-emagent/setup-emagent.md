@@ -7,6 +7,8 @@ In this tutorial, you will create a compute instance using the public subnet cre
 
 Estimated time: 15 minutes
 
+* Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
+* Completion of the preceding tutorials in this workshop
 
 ## Task 1: Create a compute instance
 
@@ -24,20 +26,20 @@ Estimated time: 15 minutes
      * Compartment: Select the same compartment where you have the cluster
      * Availability domain: Select a default AD
 
-   ![Oracle Cloud console, Instances](images/1-3-instances.png " ")
+   ![Oracle Cloud console, Create Instance](images/1-3-instances.png " ")
 
 
      * Image: Accept the default Linux image
      * Shape: Select a shape. VM.Standard 2.1 is selected in the example
 
-   ![Oracle Cloud console, Instances](images/1-4-instances.png " ")
+   ![Oracle Cloud console, Create Instance](images/1-4-instances.png " ")
 
 
      * Primary network: Select the option, **Select existing virtual cloud network**. Then select a VCN, which is used by the OKE cluster
      * Subnet: Select the option, **Select existing subnet**. Then select the subnet created in the previous tutorial
      * Public IP address: Select the option, **Select Assign a public IPv4 address**
 
-   ![Oracle Cloud console, Instances](images/1-5-instances.png " ")
+   ![Oracle Cloud console, Create Instance](images/1-5-instances.png " ")
 
 
      * Add SSH keys: Select any option to add SSH keys. Upload public key file was selected in the example
@@ -45,7 +47,7 @@ Estimated time: 15 minutes
 
     Click **Create** button.
 
-   ![Oracle Cloud console, Instances](images/1-6-instances.png " ")
+   ![Oracle Cloud console, Create Instance](images/1-6-instances.png " ")
 
 4. Wait for few minutes for the provisioning to complete.
 
@@ -78,7 +80,7 @@ Estimated time: 15 minutes
 
 3. Add the following entries to the ***hosts*** file.
 
-    a)  Kubernetes Load Balancer IPs and the matching WebLogic Server names saved in the Tutorial 3, Task 3, Step 3.
+    a)  Kubernetes load balancer IPs and the matching WebLogic Server names saved in the Tutorial 3, Task 3, Step 3.
 
         E.g.,)
         10.0.x.248 sample-domain1-admin-server
@@ -146,39 +148,39 @@ Estimated time: 15 minutes
 
 1. Launch your Enterprise Manager Cloud Control 13.5 in a browser. Log on with your credentials.
 
-   ![EMCC Console](images/3-1-emcc.png " ")
+   ![EMCC Console, Login page](images/3-1-emcc.png " ")
 
 2. From the menu bar, navigate to the **Setup** (a gear icon) **Add Target** > **Add Targets Manually**.
 
-   ![EMCC Console](images/3-2-emcc.png " ")
+   ![EMCC Console, Setup menu](images/3-2-emcc.png " ")
 
 3. In the  **Add Target Manually** page, click  **Install Agent on Host**.
 
-   ![EMCC Console](images/3-3-emcc.png " ")
+   ![EMCC Console, Add Targets page](images/3-3-emcc.png " ")
 
 4.  In the **Add Target** page, click **Add**. Enter the FQDN of the EM Agent compute instance, saved in the Tutorial 5, Task 1, Step 5.  Click **Next**.
 
-   ![EMCC Console](images/3-4-emcc.png " ")
+   ![EMCC Console, Add Target wizard](images/3-4-emcc.png " ")
 
 5.  Enter the directory where the agent files will be installed. **/home/opc/agent** is specified in the image below, as an example. Select **SSH Key based named credentials** that can access the Oracle Cloud compute instance. Leave the other fields with the default values, then click **Next**.
 
     > ***NOTE:*** If you have not created a SSH based named credential, go to **Setup** > **Security** > **Named Credentials**. Please refer to the EMCC Security Guide documentation > ***[Configuring and Using Target Credentials](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emsec/security-features.html#GUID-E2792E49-FBF5-4A25-837B-4225CFD16012)*** for how to create SSH key based named credentials.
 
-   ![EMCC Console](images/3-5-emcc.png " ")
+   ![EMCC Console, Add Target wizard](images/3-5-emcc.png " ")
 
 6.  Review the entries and click **Deploy Agent**. The EM agent installation takes about 10 minutes.
 
-   ![EMCC Console](images/3-6-emcc.png " ")
+   ![EMCC Console, Add Target wizard](images/3-6-emcc.png " ")
 
     > ***NOTE:*** In case the wizard returns warnings for missing packages, update the package in the EM agent host, and try the agent install again. E.g., if the warning is: "Checking for libnsl-2.28-18 Not found", run **sudo yum install libnsl**.
 
 7.  Once the installation is succeeded, you will see a screen similar to the image below. Click **Done** to exit the wizard.
 
-   ![EMCC Console](images/3-7-emcc.png " ")
+   ![EMCC Console, Add Target wizard](images/3-7-emcc.png " ")
 
 8.  From the menu bar, select **Setup** > **Manage Cloud Control** > **Agents**. Confirm the agent is added, and the status shows green UP arrow icon.
 
-   ![EMCC Console](images/3-8-emcc.png " ")
+   ![EMCC Console, Manage Cloud Control, Agents page](images/3-8-emcc.png " ")
 
 
 

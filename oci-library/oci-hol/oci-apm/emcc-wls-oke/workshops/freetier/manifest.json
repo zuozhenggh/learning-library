@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Monitor WebLogic Server on Oracle Container Engine for Kubernetes managed by WebLogic Kubernetes Operator using Oracle Enterprise Manager Cloud Control",
+  "workshoptitle": "Monitor WebLogic Server on Kubernetes managed by WebLogic Kubernetes Operator using Oracle Enterprise Manager Cloud Control",
 	"help": "livelabs-help-em_us@oracle.com",
     "tutorials": [
         {
@@ -18,13 +18,13 @@
             "filename": "../../01-verify-wls/verify-wls.md"
         },
         {
-            "title": "Tutorial 2: Create a private subnet for Load Balancer services",
-            "description": "Create a private subnet for Load Balancer services",
+            "title": "Tutorial 2: Create a private subnet for load balancer services",
+            "description": "Create a private subnet for load balancer services",
             "filename": "../../02-create-subnet/create-subnet.md"
         },
         {
-            "title": "Tutorial 3: Create Kubernetes Load balancer services",
-            "description": "Create Kubernetes Load balancer services",
+            "title": "Tutorial 3: Create Kubernetes load balancer services",
+            "description": "Create Kubernetes load balancer services",
             "filename": "../../03-create-lb/create-lb.md"
         },
         {

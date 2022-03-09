@@ -1,4 +1,4 @@
-# Create Kubernetes Load balancer services
+# Create Kubernetes load balancer services
 
 ## Introduction
 
@@ -6,6 +6,9 @@
 Once you have a private subnet in the Kubernetes cluster VCN, you can create load balancer services in Kubernetes. In this tutorial, you will collect domain information from the WebLogic services, create YAML files, enter the domain and private subnet information into the files, and finally apply the YAML to create load balancer services in Kubernetes.
 
 Estimated time: 15 minutes
+
+* Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
+* Completion of the preceding tutorials in this workshop
 
 ## Task 1: Collect WebLogic information
 
@@ -18,7 +21,7 @@ Estimated time: 15 minutes
     ```
      Note down the service names for the WebLogic admin server and WebLogic managed servers. They are **sample-domain1-admin-server**, **sample-domain1-managed-server1**, **sample-domain1-managed-server2** in the image below, for example.  
 
-   ![Oracle Cloud Shell](images/1-1-kubectl.png " ")
+   ![Oracle Cloud Shell, kubectl get svc](images/1-1-kubectl.png " ")
 
 2. Execute ***kubectl describe svc*** command to obtain label names of the WebLogic admin server service.
 
@@ -33,7 +36,7 @@ Estimated time: 15 minutes
       *	weblogic.domainUID
       *	weblogic.serverName
 
-   ![Oracle Cloud Shell](images/1-2-kubectl.png " ")
+   ![Oracle Cloud Shell, kubectl describe svc, admin server](images/1-2-kubectl.png " ")
 
    Open a text file in your computer, write down the values of the parameters. You will need these values in the subsequent steps to create a YAML file.
 
@@ -44,7 +47,7 @@ Estimated time: 15 minutes
     kubectl describe svc sample-domain1-managed-server1 -n sample-domain1-ns
     </copy>
     ```
-   ![Oracle Cloud Shell](images/1-3-kubectl.png " ")
+   ![Oracle Cloud Shell, kubectl describe svc, managed server 1](images/1-3-kubectl.png " ")
 
 5.  Repeat the steps described in the \#3 above to collect the information from the **managed-server-2**.
 
@@ -53,10 +56,10 @@ Estimated time: 15 minutes
     kubectl describe svc sample-domain1-managed-server2 -n sample-domain1-ns
     </copy>
     ```
-   ![Oracle Cloud Shell](images/1-4-kubectl.png " ")
+   ![Oracle Cloud Shell, kubectl describe svc, managed server 2](images/1-4-kubectl.png " ")
 
 
-## Task 2:  Create YAML files to set up Load Balancer services
+## Task 2:  Create YAML files to set up load balancer services
 
 1. Using the Oracle Cloud Shell, from the home directory, create YAML files.
 
@@ -103,7 +106,7 @@ Estimated time: 15 minutes
             port: 7001
             targetPort: 7001
 
-    *	**wlsoke-admin-svc** is the name of the Load balancer service, for the WebLogic Administration server.
+    *	**wlsoke-admin-svc** is the name of the load balancer service, for the WebLogic Administration server.
     *	Default values are preconfigured for the **namespace**, **weblogic.ServerName** , **weblogic.domainName**, and **weblogic.domainUID**. If you used a different namespace or server names at the domain creation, replace with the values collected from the Kubernetes service in the previous steps.
 
     Save the file with ***esc + :wg***.
@@ -114,7 +117,7 @@ Estimated time: 15 minutes
      * Replace the ***OCID of the Private Subnet***, then copy the modified text into the YAML file.
      * Make sure to keep the syntax of 2 space indentation.
      * Refer to the screenshot image below to see how it should look like after the file is modified.
-         ![yaml](images/3-1-yaml.png " ")
+         ![Oracle Cloud Shell, admin-lb.yaml file](images/3-1-yaml.png " ")
 
 
 4. Next, Open the ***managed-lb.yaml*** with an editor. This will be the YAML file that configures the load balancer services for the WebLogic managed servers, **managed-server1** and **managed-server2**.
@@ -172,10 +175,10 @@ Estimated time: 15 minutes
 
 
 
-    **wlsoke-mng1-svc** and **wlsoke-mng2-svc** are the names of the Load balancer services, for the managed WebLogic servers.  Ensure the expected values are entered and the indentation is set correctly. Save the file with ***esc + :wg***.
+    **wlsoke-mng1-svc** and **wlsoke-mng2-svc** are the names of the load balancer services, for the managed WebLogic servers.  Ensure the expected values are entered and the indentation is set correctly. Save the file with ***esc + :wg***.
 
     > ***NOTE***:  Refer to the screenshot image below to see how it should look like after the file is modified.
-       ![yaml](images/3-2-yaml.png " ")
+       ![Oracle Cloud Shell, managed-lb.yaml file](images/3-2-yaml.png " ")
 
 
     >  This YAML configures two managed WebLogic Servers in a single file, and three hyphens “---” are used as separators. If you have more than two managed servers, you can add sections in the file, collect server names from the ***kubectl describe pod*** command, and populate them in the YAML file.
@@ -191,7 +194,7 @@ Estimated time: 15 minutes
     kubectl apply -f managed-lb.yaml -n sample-domain1-ns
     </copy>
     ```
-    ![Oracle Cloud Shell](images/3-3-kubectl.png " ")
+    ![Oracle Cloud Shell, kubectl apply yaml files](images/3-3-kubectl.png " ")
 
 
 2.  Wait for few minutes, then run the following command to verify the load balancer services are created. Make sure they have EXTERNAL-IPs assigned.
@@ -201,9 +204,9 @@ Estimated time: 15 minutes
     kubectl get svc -n sample-domain1-ns
     </copy>
     ```
-3.  Open a text file on your computer and write down the **names of the WebLogic Server services**, and the matching **External IPs of the Load Balancer services**. You will need these values later when configuring the hosts file in the EM agent compute instance.
+3.  Open a text file on your computer and write down the **names of the WebLogic Server services**, and the matching **External IPs of the load balancer services**. You will need these values later when configuring the hosts file in the EM agent compute instance.
 
-    ![Oracle Cloud Shell](images/3-4-kubectl.png " ")
+    ![Oracle Cloud Shell, kubectl get svc](images/3-4-kubectl.png " ")
 
         Format: <External IP of the matching LB> <WLS Server service name>
         E.g.,
