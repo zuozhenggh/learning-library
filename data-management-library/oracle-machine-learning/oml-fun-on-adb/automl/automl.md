@@ -61,14 +61,11 @@ When creating an Experiment, you must define the data source and the target of t
 
 3. In the **Name** field, enter **Customers 360**.
 
-
 4. In the **Comments** field, enter comments, if any.
 
-5. In the **Data Source** field, click the search icon to open the Select Table dialog. Under Schema, click **ADMIN** and on the right pane, click **CUSTOMERS360** from the list of tables. Click **OK**.
+5. In the **Data Source** field, click the search icon to open the Select Table dialog. On the Select Table dialog, the OMLUSER schema is selected by default. On the right pane, click **CUSTOMERS360** from the list of tables. Click **OK**.
 
-	>**Note:** The Customers360 table is present in the ADMIN schema.
-
-	![Create Experiment dialog](images/select-customer360.png)
+	![Create Experiment dialog](images/select-customer360-omluser.png)
 
 6. In the **Predict** drop-down list, select the column **AFFINITY_CARD** from the ``CUSTOMERS360`` table. You can also type the column name and the column names are filtered for easier selection. This is the target for your prediction.
 
@@ -276,7 +273,8 @@ To view the generated notebook Customer 360:
 
 2. The Notebooks page opens with all the notebooks listed in it. Click the **NB Customers 360** notebook to open it.
 
- 	![Generated Notebook](images/notebooks-listed-final.png)
+ 	<if type="livelabs"> ![Generated Notebook](images/notebooks-listed-final.png) </if>
+	<if type="freetier"> ![Generated Notebook](images/notebooks-5.png) </if>
 
 3. The generated notebook _NB Customer 360_  opens in the notebook editor. Click the gear icon on the upper right corner of the notebook to view and set the interpreter binding order.
 

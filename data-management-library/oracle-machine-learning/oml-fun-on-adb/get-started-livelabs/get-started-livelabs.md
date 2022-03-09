@@ -132,13 +132,13 @@ To create a user account:
 
 	* **Confirm Password:** Enter the password to confirm the value that you entered in the **Password** field. By doing so, you create the password for the user. The user can change the password when first Signing in.
 
-8. Click **Create**. After the user is created, it is listed on the Oracle Machine Learning User Administration page.
+8. Click **Create**. After the user is created, it is listed on the Oracle Machine Learning User Administration page. This completes the task of creating an Oracle Machine Learning user.
 
 	 ![Oracle Autonomous Data Warehouse](images/omluser-created.png)
 
 	 > **Note:** Click on the home icon on the top right corner of the Oracle Machine Learning User Administration page to open the Oracle Machine Learning Notebooks home page.
 
-This completes the task of creating an Oracle Machine Learning user.
+
 
 ## Task 3: Sign into Oracle Machine Learning
 
@@ -170,22 +170,22 @@ This completes the task of signing into Oracle Machine Learning user interface.
 
 ## Task 4: Create the CUSTOMERS360 table
 
-In this step, you will create a notebook and run a SQL query to create the table ``CUSTOMERS60``.
+In this step, you will create the table ``CUSTOMERS60`` by using the Scratchpad. The Scratchpad is a one-click access to a notebook for running SQL statements, PL/SQL scripts, and Python scripts. The Scratchpad is available on the Oracle Machine Learning Notebooks home page. After you run your scripts, the Scratchpad is automatically saved as a notebook by the default name _Scratchpad_ in the Notebooks page. You can access it later in the Notebooks page. You will learn more about notebooks in Lab 1.
 
 >**Note:** You will be using the table CUSTOMERS360 in the _Using Oracle Machine Learning AutoML UI_ lab and _Using Oracle Machine Learning Services_ lab.
 
 To create the table:
 
-1. On the Oracle Machine Learning home page, click **Scratchpad**. The Scratchpad is a convenient one-click access to a notebook for running SQL statements, PL/SQL scripts, and Python scripts. Here, you will run a SQL script to create the CUSTOMER360 table.
+1. On the Oracle Machine Learning home page, click **Scratchpad**. The Scratchpad opens.
 
 	![Notebooks option in OML homepage](images/homepage-scratchpad.png)
 
 
-2. The Scratchpad opens with three paragraphs - `%sql` (SQL), `%script` (PL/SQL), `%python` (Python). Click the paragraph with `%sql`, and press enter.
+2. By default, the Scratchpad opens with three paragraphs: `%sql` (SQL), `%script` (PL/SQL), and `%python` (Python). Here, you will use the SQL paragraph to run a SQL statement to create the CUSTOMER360 table. On the SQL paragraph, click after the `%sql` tag, and press enter.
 
 	![Create Notebook dialog](images/scratchpad.png)
 
-5. Enter the following script and click the Run icon ![run icon](images/run.png):
+3. In the SQL paragraph, enter the following script and click the Run icon ![run icon](images/run.png):
 
     ```
     <copy>
@@ -199,9 +199,13 @@ To create the table:
 		</copy>
     ```
 
-	![SQL script to create Customers360 table](images/sql-script.png)
+	![SQL script to create Customers360 table](images/scratchpad-run.png)
 
-6. In the next paragraph, run the following script to view the data:
+	After the script runs successfully, the status changes to `FINISHED`, as shown in the screenshot.
+
+	![SQL script to create Customers360 table](images/scratchpad-finished.png)
+
+6. In the next paragraph, edit the paragraph tag to change it to `sql`, run the following statement to view the data:
 
 	```
 		<copy>
