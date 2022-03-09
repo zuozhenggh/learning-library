@@ -17,13 +17,7 @@ In this lab, you will:
 
 
 ## Task 1: Obtain Database Connection details
-
-
-
-## Task 2: Create a database table using a SQL script
-Follow these steps to create a DB table which will be used as part of this workshop. 
-
-1. If you are not already logged in to Oracle Cloud Console, log in and select Autonomous Data Warehouse from the navigation menu.
+1. If you are not already logged in to Oracle Cloud Console, log in and select **Autonomous Database** from the navigation menu under Oracle Database.
 
     ![Select Autonomous Database](images/adb-navigation.png)
 
@@ -33,25 +27,39 @@ Follow these steps to create a DB table which will be used as part of this works
 
     ![Select Autonomous Database](images/select-adb-instance.png)
 
-    > **Note:** Similar steps apply to either Autonomous Data Warehouse or Autonomous Transaction Processing.
+    > **Note:** Similar steps apply to either Autonomous Data Warehouse and Autonomous Transaction Processing.
 
-3.  If you are not already logged in to SQL Worksheet, in your ADW Database Details page, click the **Database Actions** button.
+3.  In your Autonomous Database Details page, click the **DB Connection** button.
+
+4. In the displayed *Database Connection* dialog, click **Download Wallet**. 
+
+5. Provide a Wallet password, then click **Download**. Save the wallet file (ZIP) on your local machine. This file will be used later when creating the Autonomous Database connection in Oracle Integration. 
+
+6. Under *Connection Strings*, select one of the TNS Name entries and note it down. This value will used later when creating the Autonomous Database connection in Oracle Integration.
+
+7. Click **Close**.
+
+
+## Task 2: Create a database table using a SQL script
+Follow these steps to create a DB table which will be used as part of this workshop. 
+
+1.  If you are not already logged in to SQL Worksheet, in your ADW Database Details page, click the **Database Actions** button.
 
     ![Click Database Actions](images/click-database-actions.png)
 
-4. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, Username = `ADMIN` and click **Next**.
+2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, Username = `ADMIN` and click **Next**.
 
    ![Enter DB username](images/enter-username.png)
 
-5.  Enter the **ADMIN** password you specified when creating the database and click **Sign in**.
+3.  Enter the **ADMIN** password you specified when creating the database and click **Sign in**.
 
     ![Enter DB password](images/enter-password.png)
 
-6. The Database Actions page opens. In the *Development* box, click **SQL**.
+4. The Database Actions page opens. In the *Development* box, click **SQL**.
 
     ![Open SQL](images/open-sql.png)
 
-7. The SQL Worksheet appears. Copy below code snippet:
+5. The SQL Worksheet appears. Copy below code snippet:
     ```
     CREATE TABLE PURCHASEORDER 
     (
@@ -101,7 +109,7 @@ Follow these steps to create a DB table which will be used as part of this works
     NOPARALLEL;
     ```
 
-8. Paste the script in SQL Worksheet, then click **Run It** button. This will create the **PURCHASEORDER** table. The table is created successfully when you see the notification in the **Script Output**. 
+6. Paste the script in SQL Worksheet, then click **Run It** button. This will create the **PURCHASEORDER** table. The table is created successfully when you see the notification in the **Script Output**. 
 
     ![Past SQL Script](images/paste-run-sql-script.png)
 
