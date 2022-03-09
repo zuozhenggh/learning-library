@@ -241,7 +241,8 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
     
     IF %argC% LSS 2 (
         ECHO Minimum arguments are missing
-        ECHO Usage:- to execute: installer-wrapper.bat ^<Java Home path^> ^<Full_Path_To_Input.rsp^>
+        ECHO Usage:- To execute: installer-wrapper.bat "<Java Home path>" "<Full_Path_To_Input.rsp>"
+        ECHO Usage:- Use system env variables for paths: "C:\PROGRA~1" instead of "C:\Program Files" and "C:\PROGRA~2" instead of "C:\Program Files (x86)"
         EXIT /b 1
       )
     
@@ -255,6 +256,7 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
         ECHO Java home set to %javaHome%
       ) ELSE (
         ECHO Java home is not as expected. bin directory does not exists under %javaHome%
+        ECHO Usage:- Use system env variables for paths: "C:\PROGRA~1" instead of "C:\Program Files" and "C:\PROGRA~2" instead of "C:\Program Files (x86)"
         EXIT /b 1
       )
     
@@ -279,6 +281,8 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 
 
 6. Open a Command Prompt window as an **Administrator** and install and configure the management agent by running the `installer-wrapper.bat` script as follows:
+
+    **Note: Use system env variables for paths: "C:\PROGRA~1" instead of "C:\Program Files" and "C:\PROGRA~2" instead of "C:\Program Files (x86)"**
 
     ```
     <copy>
