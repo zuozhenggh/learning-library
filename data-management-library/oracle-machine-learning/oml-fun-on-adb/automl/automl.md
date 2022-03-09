@@ -261,7 +261,7 @@ You can create notebooks based on the top models produced in the experiment. Thi
 
 
 
-This completes the task of creating the notebook **NB Customer 360** based on the Naive Bayes model that is created by the AutoML experiment **Customers 360**.
+This completes the task of creating the notebook **Customer 360 NB (1)** based on the Naive Bayes model that is created by the AutoML experiment **Customers 360**.
 
 
 ## Task 6: View Generated Notebook and Individual Paragraphs
@@ -328,4 +328,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia, Senior Principal Product Manager, Machine Learning; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, February 2022
+* **Last Updated By/Date** - Moitreyee Hazarika, March 2022
