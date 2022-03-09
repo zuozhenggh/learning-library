@@ -1,4 +1,4 @@
-# Advanced row compression
+# Enable advanced row compression
 
 ## Introduction
 
@@ -19,7 +19,7 @@ Exponential data growth has put severe pressure from a cost, performance, scalab
 *	Storage costs to drop as the result of any compression deployments, and 
 *	No query performance degradation and only minimal Data Manipulation Language (DML) performance impact from compression.
  
-This Lab will teach you how to Enable advanced row compression. 
+This Lab will teach you how to enable advanced row compression. 
 
 ### Objectives
  
