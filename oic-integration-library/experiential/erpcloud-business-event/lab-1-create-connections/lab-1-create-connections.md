@@ -89,6 +89,7 @@ Create a connection with the Oracle Autonomous Data Warehouse Adapter.
     
 5. Click on **Test**, followed by **Save**. Exit the connection canvas by clicking the back button on the top left side of the screen.
 
+
 You may now **proceed to the next lab**.
 
 
