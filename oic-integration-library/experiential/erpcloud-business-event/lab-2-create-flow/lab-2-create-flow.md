@@ -31,7 +31,7 @@ We will start by creating a new integration and adding some basic info.
 
     | **Element**        | **Value**          |       
     | --- | ----------- |
-    | Name         |    `LLERPEventDemo`       |
+    | Name         | `LLERPEventDemo`       |
     | Description  | `ERP Event integration for LiveLabs demo` |
     |
 
@@ -66,8 +66,7 @@ Add ERP PO Event trigger to the empty integration canvas.
     <copy>`<xpathExpr xmlns:ns0="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/" xmlns:ns2="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/types/">$eventPayload/ns2:result/ns0:Value/ns0:DocumentDescription=**"demo"**</xpathExpr>`</copy>
     ```
 
-    > **Tip:** If you are working on a shared ERP Cloud environment, it is recommended to use a distinct value in the filter expression under **DocumentDescription**. For example `<your-initials>-demo>`. The value you enter is case sensitive. 
-
+    > **Tip:** If you are working on a shared ERP Cloud environment, it is recommended to use a distinct value in the filter expression under **DocumentDescription**. For example `<your-initials>-demo>`. The value you enter is case sensitive. Write down this value for later use. 
     ![ERP Adapter Wizard Request](images/erp-adapter-request.png)
 
     > **Note:** The filter is not required, however it does allow you to control which integration should be triggered. This is useful if there are multiple integrations subscribed to the PO Event in the same ERP Cloud environment. Without the filter expression, all integrations subscribed to the PO Event would get triggered whenever that specific event occurs. 
@@ -199,7 +198,7 @@ Manage business identifiers that enable you to track fields in messages during r
     The activation will complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to *Active*. 
 
 
-You have completed the final step of Lab 2. Please **proceed to the next lab**. 
+You may now **proceed to the next lab**.
 
 
 ## Acknowledgements

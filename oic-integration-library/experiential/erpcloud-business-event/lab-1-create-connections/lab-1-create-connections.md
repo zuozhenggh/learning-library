@@ -34,10 +34,6 @@ Create a connection with the Oracle ERP Cloud Adapter.
     | Description  | `ERP Connection for LiveLabs demo` |
     |
 
-    ```
-    <copy>LLDemo_ERP</copy>
-    ```
-
     Keep all other values as default.
 
 5. In the *Oracle ERP Cloud Connection* dialog, enter the following information:
@@ -45,15 +41,15 @@ Create a connection with the Oracle ERP Cloud Adapter.
     | **Field**  | **Values** |
     |---|---|
     |ERP Cloud Host | `your-erp-host-name` |
-    |Security Policy | `Username Password Token`|
-    |Username | `<user>`|
-    |Password | `<password>`|
+    |Security Policy | **Username Password Token**|
+    |Username | `<erp-username>`|
+    |Password | `<erp-password>`|
     |
 
 6. Click on **Test** and wait until you receive a 
 confirmation box that the test was successful.
 
-    > **Note:** The first time you run the Test, it could take up to 2 minutes. 
+    > **Note:** The first time you run the test, it could take up to 2 minutes for completion. 
 
 7. Click **Save** and wait for the confirmation box. Exit the connection canvas by clicking the back button on the top left side of the screen.
 
@@ -84,8 +80,8 @@ Create a connection with the Oracle Autonomous Data Warehouse Adapter.
     |Service Name | `<your-adb-tns-name>` |
     |Security Policy | **JDBC Over SSL**|
     |Wallet | **Upload wallet file (Zip)** |
-    |Wallet Password | `<password>`|
-    |Database Service Username | `<db-service-user>` (Default: `ADMIN`)|
+    |Wallet Password | `<wallet-password>`|
+    |Database Service Username | `<db-service-username>` (Default: `ADMIN`)|
     |Database Service Password | `<db-service-password>` |
     |
 
@@ -93,7 +89,7 @@ Create a connection with the Oracle Autonomous Data Warehouse Adapter.
     
 5. Click on **Test**, followed by **Save**. Exit the connection canvas by clicking the back button on the top left side of the screen.
 
-You have completed the final step of Lab 1. Please **proceed to the next lab**. 
+You may now **proceed to the next lab**.
 
 
 ## Acknowledgements
