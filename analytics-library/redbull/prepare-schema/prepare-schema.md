@@ -38,7 +38,7 @@ This new user/schema will hold the Grand Prix data.
 
    ![ADW Menu](images/open-database-actions.png)
 
-   If asked, login with user **ADMIN**, password **Oracle_12345** (you specified this upon creation of the Autonomous Data Warehouse earlier).
+   If asked, login with user **ADMIN** and the secure password (you specified this upon creation of the Autonomous Data Warehouse earlier).
 
 4. Click the **SQL** tile under **Development** section.
 
@@ -81,7 +81,7 @@ This new user/schema will hold the Grand Prix data.
    Now log in to Data Actions again using the following:
 
    - Username: F1
-   - Password: Oracle_12345
+   - Password: Provide the secure password for the F1 user
 
 3. Click to the **Data Load** option, under the **Data Tools** section.
 
