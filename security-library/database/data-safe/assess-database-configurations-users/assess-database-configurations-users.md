@@ -34,10 +34,10 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
-- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment)). It's important that your Autonomous Database is registered with Oracle Data Safe, you have enabled the Activity Auditing, User Assessment, and Security Assessment features on your database, and you have the appropriate privileges in Oracle Data Safe to use the Activity Auditing, User Assessment, and Security Assessment features with your database.
-- Registered your Autonomous Database with Oracle Data Safe and loaded sample data into it (see [Register an Autonomous Database with Oracle Data Safe](?lab=register-autonomous-database))
-- Started audit data collection for your Autonomous Database in Oracle Data Safe (see [Audit Database Activity](?lab=audit-database-activity))
+- Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console at `https://cloud.oracle.com`
+- Prepared your environment for this workshop (see [Prepare Your Environment](?lab=prepare-environment))
+- Registered your target database with Oracle Data Safe and loaded sample data into it (see [Register an Autonomous Database with Oracle Data Safe](?lab=register-autonomous-database))
+- Started audit data collection for your target database in Oracle Data Safe (see [Audit Database Activity](?lab=audit-database-activity))
 
 
 ### Assumptions
@@ -49,7 +49,7 @@ This lab assumes you have:
 
 1. In Security Center, click **Security Assessment**.
 
-2. Under **List Scope**, select your compartment. You can include target databases in child compartments by selecting the **Include child compartments** check box.
+2. Under **List Scope**, select your compartment. Deselect **Include child compartments**.
 
     The dashboard shows statistics across all target databases in the selected compartment(s).
 
@@ -73,7 +73,7 @@ This lab assumes you have:
 5. Click the **Target Summary** tab and view the information.
 
     - The **Target Summary** tab shows you the security posture of each target database.
-    - You can view the number of high, medium, low, advisory, and evaluate risks for each database.
+    - You can view the number of high, medium, low, advisory, and evaluate risks for each target database.
     - You can view the assessment date and find out if the latest assessment deviates from a baseline (if one is set).
     - You can access the latest assessment report for each target database.
 
@@ -81,9 +81,11 @@ This lab assumes you have:
 
 ## Task 2: View the latest security assessment for your target database
 
+When you registered your target database, Oracle Data Safe automatically created a security assessment for you. This is what you are viewing now.
+
 1. On the **Target Summary** tab, locate the line that has your target database, and click **View Report**.
 
-    The latest assessment for your target database is displayed.
+    The latest security assessment for your target database is displayed. Notice that **Latest assessment for target database** is displayed at the top of the page.
 
 2. Review the table on the **Assessment Summary** tab.
 
@@ -93,7 +95,7 @@ This lab assumes you have:
     ![Latest Security Assessment Assessment Summary tab](images/latest-sa-assessment-summary-tab2.png "Latest Security Assessment Assessment Summary tab")
 
 
-3. To view details about the assessment itself, click the **Assessment Information** tab.
+3. To view details about the security assessment itself, click the **Assessment Information** tab.
 
     - Details include assessment name, OCID, compartment to which the assessment was saved, target database name, target database version, assessment date, schedule (if applicable), name of the baseline assessment (if one is set), and complies with baseline flag (Yes, No, or No Baseline Set).
 
@@ -120,20 +122,28 @@ This lab assumes you have:
 
 7. Expand another category and review the findings.
 
-    - Each finding shows you the status (risk level), a summary of the finding, details about the finding, remarks to help you to mitigate the risk, and references (whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**).) These references make it easy for you to identify the recommended security controls.
-    - In the example below, there are two references: STIG and CIS.
+    - Each finding shows you the status (risk level), a summary of the finding, details about the finding, remarks to help you to mitigate the risk, and references - whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**). These references make it easy for you to identify the recommended security controls.
+    - In the example below, the **Transparent Data Encryption** finding has two references: **STIG** and **GDPR**.
 
-    ![Password Verification Functions finding](images/password-verification-functions.png "Password Verification Functions finding")
+    ![Transparent Data Encryption finding](images/transparent-data-encryption-finding.png "Transparent Data Encryption finding")
 
 
-8. On the left under **Filters**, select all the filters, and click **Apply**.
+8. On the left under **Filters**, select **ALL**, and click **Apply**.
 
 9. Collapse **User Accounts**, expand a few categories under **Privileges and Roles**, and review the findings.
 
 10. Scroll down further and expand other categories. Each category lists related findings about your target database and how you can make changes to improve its security.
 
+11. At the top of the page, click **View History**. Notice that you have one security assessment listed for your target database. This is a static copy of the latest security assessment.
+
+    ![Assessment History](images/assessment-history.png "Assessment History")
+
+12. Click **Close** to return to the latest security assessment.
+
 
 ## Task 3: Refresh the latest security assessment and analyze the results
+
+After you registered your target database at the beginning of this workshop, you loaded sample data into it. This sample data is not yet showing up in the latest security assessment. Refresh the latest assessment and view the new data.
 
 1. While you are still viewing the latest security assessment, at the top of the assessment, click **Refresh Now**.
 
@@ -150,9 +160,11 @@ This lab assumes you have:
 
     ![Security Assessment Assessed On right now](images/sa-assessed-on-right-now2.png "Security Assessment Assessed On right now")
 
-4. In the breadcrumb at the top of the page, click **Security Assessment** to return to the dashboard. Review the total findings for high, medium, and low risk levels.
+4. In the breadcrumb at the top of the page, click **Security Assessment** to return to the dashboard. Make sure your compartment is selected. Review the total findings for high, medium, and low risk levels.
 
-    Are the values different than the values you viewed in the original assessment (in Task 1)?
+    Notice that the values are different than the values you viewed in the original assessment in Task 1.
+
+    ![Updated Security Assessment dashboard](images/sa-updated-dashboard.png "Updated Security Assessment dashboard")
 
 
 5. In the **Risk Level** column, click **High** to view all the high risk findings.
@@ -172,7 +184,7 @@ This lab assumes you have:
 
     ![Security Assessment High Risk details example](images/sa-high-risk-details-example.png "Security Assessment High Risk details example")
 
-8. Click your target database name to view all the details about the finding for your target database.
+8. Click your target database name to view the details about the finding for your target database.
 
     - The finding includes your target database name, risk level, a summary about the risk, details on your target database, remarks that explain the risk and help you to mitigate it, and references.
 
@@ -200,23 +212,23 @@ This lab assumes you have:
 
 4. Click **Add Schedule**.
 
-    The **Add Schedule To Save an Assessment** panel is displayed.
+    The **Add Schedule To Save An Assessment** panel is displayed.
 
-5. If the compartment shown at the top of the page is incorrect, click **Change Compartment** and select your compartment.
+5. If the compartment shown at the top of the page is not yours, click **Change Compartment** and select your compartment.
 
 6. From the **Target Database** drop-down list, select your target database.
 
 7. In the **Schedule Name** box, enter **Sunday Security Assessment**.
 
-7. From the **Compartment To Save The Assessments** drop-down list, select your compartment.
+8. From the **Compartment To Save The Assessments** drop-down list, select your compartment.
 
-8. From the **Schedule Type** drop-down list, select **Weekly**.
+9. From the **Schedule Type** drop-down list, select **Weekly**.
 
-9. From the **Every** drop-down list, select **Sunday**.
+10. From the **Every** drop-down list, select **Sunday**.
 
-10. Click the **Time** box, scroll down, and select **11:30 PM**. You can manually enter the time too.
+11. Click the **Time** box, scroll down, and select **11:30 PM**. You can manually enter the time too.
 
-11. Click **Add Schedule**. When the schedule is created, its status changes to SUCCEEDED.
+12. Click **Add Schedule**. When the schedule is created, its status changes to SUCCEEDED.
 
     ![Add Schedule to Save Assessments page](images/sa-add-schedule-to-save-an-assessment.png "Add Schedule to Save Assessments page")
 
@@ -235,7 +247,7 @@ This lab assumes you have:
 
 5. Review all the security assessments for your target database.
 
-    - So far, you should have two security assessments: The default assessment that was automatically generated for you by Oracle Data Safe, and the assessment that you saved earlier as My Security Assessment.
+    - So far, you should have two security assessments: The original security assessment (static copy) that was automatically generated for you by Oracle Data Safe, and the security assessment that you saved earlier as My Security Assessment.
     - If you don't see your assessments, make sure that your compartment is selected.
     - To view assessments saved to a different compartment, select the compartment from the **Compartment** drop-down list.
     - To also list assessments that were saved to child compartments of the selected compartment, select the **Include child compartments** check box.
@@ -247,19 +259,23 @@ This lab assumes you have:
 7. Click **Close**.
 
 
-
-
 ## Task 6: Set a baseline and generate a Comparison report for Security Assessment
 
-A baseline assessment shows you data for all your target databases in a selected compartment at a given point in time. However, because we are only dealing with one Autonomous Database in your compartment, the baseline assessment shows data for only your database. When you do a baseline comparison, Oracle Data Safe automatically compares only the assessments that pertain to your database.
+A baseline assessment shows you data for all your target databases in a selected compartment at a given point in time. However, because we are only dealing with one target database in your compartment, the baseline assessment shows data for only your target database. When you do a baseline comparison, Oracle Data Safe automatically compares only the assessments that pertain to your target database.
 
 1. In the breadcrumb at the top of the page, click **Security Assessment**.
 
 2. Under **Related Resources**, click **Assessment History**.
 
-3. Click the name of the security assessment that Oracle Data Safe generated. The names starts with **SA_**. The security assessment is displayed.
+3. Click the name of the first security assessment that Oracle Data Safe generated during target database registration. The names starts with **SA_**.
+
+    ![Security Assessment History page](images/sa-history-page.png "Security Assessment History page")
+
+    The security assessment is displayed.
 
 4. Click **Set As Baseline**.
+
+    ![Set As Baseline button](images/set-as-baseline-button.png "Set As Baseline button")
 
     The **Set As Baseline?** dialog box is displayed.
 
@@ -269,9 +285,13 @@ A baseline assessment shows you data for all your target databases in a selected
 
     ![Security Assessment Baseline has been set message](images/sa-baseline-has-been-set-message.png "Security Assessment Baseline has been set message")
 
-6. (Temporary) For now, please repeat steps 1 through 5 so that the baseline is properly set.
+6. In the breadcrumb at the top of the page, click **Assessment History** and confirm that there is a new row in the table for the baseline assessment.
 
-7. Access the latest assessment for your target database. To do this, in the breadcrumb, click **Security Assessment**. Click the **Target Summary** tab. Click **View Report** for your target database.
+    ![Security Assessment baseline](images/sa-baseline-assessment.png "Security Assessment baseline")
+
+7. Access the latest assessment for your target database. To do this, click **Security Assessment**. Click the **Target Summary** tab. Click **View Report** for your target database.
+
+    The latest security assessment report for your target database is displayed.
 
 8. Under **Resources** on the left, click **Compare with Baseline**.
 
@@ -290,9 +310,9 @@ A baseline assessment shows you data for all your target databases in a selected
 
 ## Task 7: View the dashboard for User Assessment
 
-1. Navigate to User Assessment. To do this, in the breadcrumb at the top of the page, click **Data Safe**. Click **Security Center**, and then **User Assessment**.
+1. Navigate to User Assessment. To do this, in the breadcrumb at the top of the page, click **Security Center**. On the left, click **User Assessment**.
 
-2. Under **List Scope**, select your compartment, if needed.
+2. Under **List Scope**, make sure your compartment is selected.
 
 3. At the top of the dashboard, review the four charts.
 
@@ -305,7 +325,7 @@ A baseline assessment shows you data for all your target databases in a selected
 
 4. Review the **Risk Summary** tab.
 
-    - The Risk Summary focuses on risks across all your target databases. It shows you risk levels, where the risks were found, the number of users at each risk level, and the roles held by the total number of users at each risk level.
+    - The **Risk Summary** tab focuses on risks across all your target databases. It shows you risk levels, where the risks were found, the number of users at each risk level, and the roles held by the total number of users at each risk level.
 
     ![User Assessment Risk Summary tab](images/ua-risk-summary-tab2.png "User Assessment Risk Summary tab")
 
@@ -313,15 +333,17 @@ A baseline assessment shows you data for all your target databases in a selected
 
     - Number of critical and high risk users, DBAs, DV Admins, and Audit Admins
     - Date and time of the latest user assessment
-    - Whether the latest assessment deviates from the baseline (if one is set)
+    - Whether the latest user assessment deviates from the baseline (if one is set)
 
     ![User Assessment Target Summary tab](images/ua-target-summary-tab2.png "User Assessment Target Summary tab")
 
 ## Task 8: Analyze users in the latest user assessment
 
+Currently, the latest user assessment is the one that was automatically generated by Oracle Data Safe when you registered your target database.
+
 1. On the **Target Summary** tab, click **View Report** to view the latest user assessment for your target database.
 
-2. At the top of the report, review the **User Risk**, **User Roles**, **Last Password Change**, and **Last Login** charts.
+2. At the top of the report, review the **User Risks**, **User Roles**, **Last Password Change**, and **Last Login** charts.
 
     ![User Assessment Latest charts](images/ua-latest-charts.png "User Assessment Latest charts")
 
@@ -331,15 +353,13 @@ A baseline assessment shows you data for all your target databases in a selected
     - User type (for example, PRIVILEGED, SCHEMA)
     - Whether the user is a DBA, DV Admin, or Audit Admin
     - User risk level (for example, LOW, HIGH, or CRITICAL)
-    - User's status (for example, OPEN, LOCKED, or EXPIRED_AND_LOCKED)
+    - User's status (for example, OPEN, LOCKED, or EXPIRED\_AND\_LOCKED)
     - Date and time the user last logged in to the target database
     - Audit records for the user
 
-
     ![User Assessment latest assessment details](images/ua-latest-assessment-details2.png "User Assessment latest assessment details")
 
-
-5. In the **User Name** column, click one of the users.
+4. In the **User Name** column, click one of the users.
 
     The **User Details** panel shows the following information about the user:
 
@@ -356,33 +376,33 @@ A baseline assessment shows you data for all your target databases in a selected
 
     ![ADMIN user details](images/ua-admin-user-details.png "ADMIN user details")
 
+5. Click **Close**.
 
-6. Click **Close**.
-
-7. Notice at the top of the table that you can set filters. Click **+ Filter**. From the first drop-down list, select **Risk**. From the second drop-down list, select **=**. In the box, enter **CRITICAL**. Click **Apply**. The table now shows you only critical risk users.
+6. Notice at the top of the table that you can set filters. Click **+ Filter**. From the first drop-down list, select **Risk**. From the second drop-down list, select **=**. In the box, enter **CRITICAL**. Click **Apply**. The table now shows you only critical risk users.
 
     ![Critical risk users filter](images/ua-critical-risk-users-filter.png "Critical risk users filter")
 
-
-8. To remove the filter, click the **X** next to the filter.
+7. To remove the filter, click the **X** next to the filter.
 
 
 ## Task 9: Review the `ADMIN` user's audit records
 
-1. Identify the row in the table for the `ADMIN` user. In the **Audit Records** column for the `ADMIN` user, click **View Activity**. A new browser tab is opened and the **All Activity** report is displayed in the Oracle Data Safe Console.
+1. Identify the row in the table for the `ADMIN` user. In the **Audit Records** column for the `ADMIN` user, click **View Activity**.
+
 
     ![ADMIN user audit records](images/ua-admin-user-audit-records.png "ADMIN user audit records")
 
-2. Examine the **All Activity** report for the `ADMIN` user.
+    The **All Activity** report for the `ADMIN` user is displayed.
 
-    - The report is automatically filtered to show you audit records for the past week, for the `ADMIN` user, and for your target database.
+2. Examine the report.
+
+    - The report is automatically filtered to show you audit records for the past one week, for the `ADMIN` user, and for your target database.
     - At the top of the report, you can view totals for **Targets**, **DB Users**, **Client Hosts**, **DMLs**, **Privilege Changes**, **DDLs**, **User/Entitlement Changes**, **Login Failures**, **Login Successes**, and **Total Events**.
     - The **Event** column in the table shows you the types of activities performed by the `ADMIN` user, for example, `LOGON`, `AUDIT`, `CREATE AUDIT POLICY`, and so on.
     - At the bottom of the page, click the page numbers to view more audit records.
 
 
     ![All Activity report for the ADMIN user](images/ua-all-activity-report-admin-user2.png "All Activity report for the ADMIN user")
-
 
 
 ## Task 10: View the user assessment history for all target databases
@@ -393,16 +413,18 @@ A baseline assessment shows you data for all your target databases in a selected
 
     ![Assessment History link under Related Resources](images/ua-related-resources-assessment-history.png "Assessment History link under Related Resources")
 
-3. Review the assessment history for all target databases.
+3. Under **List Scope**, make sure your compartment is selected.
+
+4. Notice that you currently have one user assessment for your target database. This view, however, lets you review the user assessment history for all your target databases.
 
     - You can compare the number of critical risks, high risks, DBAs, DV Admins, and Audit Admins across all target databases.
     - You can also quickly identify user assessments that are set as baselines.
 
     ![Assessment History for all target databases](images/ua-assessment-history-all-targets2.png "Assessment History for all target databases")
 
-4. To sort the list by target database, click the **Target Database** column heading.
+5. To sort the list by target database, click the **Target Database** column heading.
 
-5. Click the name of the user assessment for your target database.
+6. Click the name of the user assessment for your target database.
 
     - This assessment was generated by Oracle Data Safe when you registered your target database. It is a saved copy of the latest assessment.
     - Notice that you cannot refresh the data in a saved user assessment.
@@ -417,16 +439,16 @@ Let's find the actual latest assessment (not a saved copy of it) and refresh it.
 
 1. In the breadcrumb at the top of the page, click **User Assessment**, and then click the **Target Summary** tab.
 
-2. Click **View Report** for your target database to open the latest assessment.
+2. Click **View Report** for your target database to open the latest user assessment.
 
-    - Notice that this assessment's name is different than the last assessment you viewed. It is not the same as the copy! It is a completely separate user assessment.
+    - Notice that this assessment's name is different than the last assessment you viewed. It is not the same as the copy. It's a completely separate user assessment.
     - Also notice that you can refresh this assessment, whereas you couldn't refresh the copy in the Assessment History.
 
 3. To refresh the latest user assessment, click the **Refresh Now** button.
 
     The **Refresh Now** panel is displayed.
 
-4. For now, let's keep the default name as is, and click **Refresh Now**.
+4. For now, let's keep the default name as is, and click **Refresh Now**. Wait for the status to read **SUCCEEDED**.
 
     - When you refresh the latest user assessment, Oracle Data Safe automatically saves a static copy of it to the Assessment History.
 
@@ -440,12 +462,14 @@ Let's find the actual latest assessment (not a saved copy of it) and refresh it.
 
 7. In the breadcrumb at the top of the page, click **User Assessment**. Under **Related Resources**, click **Assessment History**.
 
-8. Notice that there is an additional saved user assessment. None of the user assessments are called **Latest User Assessment**.
+8. Notice that there is an additional saved user assessment. None of the user assessments are called **Latest User Assessment**. At a glance, you can compare the number of critical risks, high risks, DBAs, DV Admins, and Audit Admins between the two user assessments.
+
+    ![User Assessment History page](images/user-assessment-history.png "User assessment History")
 
 
 ## Task 12: Download the latest user assessment as a PDF report
 
-1. Return to the latest user assessment. To do so, under **Security Center**, click **User Assessment**. On the **Target Summary** tab, click **View Report** for your target database.
+1. Return to the latest user assessment. To do so, under **Security Center**, click **User Assessment**. Click the **Target Summary** tab, and then click **View Report** for your target database.
 
 2. From the **More Actions** menu, click **Generate Report**.
 
@@ -467,7 +491,7 @@ Let's find the actual latest assessment (not a saved copy of it) and refresh it.
     ![Download Report dialog box in User Assessment](images/ua-download-report-dialog.png "Download Report dialog box in User Assessment")
 
 
-7. In the **Opening user-assessment-report.pdf** dialog box, select **Save File**, and then click **OK**.
+7. In the **Opening user-assessment-report.pdf** dialog box, leave **Save File** selected, and click **OK**.
 
     The **Enter name of file to save to** dialog box is displayed.
 
@@ -494,29 +518,27 @@ You can select a user assessment to compare with the latest user assessment. Wit
 
 3. If your compartment isn't shown, click **Change Compartment** and select your compartment.
 
-4. From the **Select Assessment** drop-down list, select the earliest assessment for your target database. As soon as you select it, the comparison operation starts.
+4. From the **Select Assessment** drop-down list, select the earliest assessment for your target database. As soon as you select it, the comparison operation is started.
 
-5. Review the Comparison report.
-
-    The following screenshot is an example of a Comparison report where several new users were added to the database since the initial user assessment. They are all identified as a critical risk. Your report will most likely be different.
+5. Review the Comparison report. The report tells you that several new users are added to the database since the initial user assessment. Many are identified as a critical risk. At the bottom of the page, click the **Next to Page 2** button to view the entire report.
 
     ![User Assessment Comparison report](images/ua-comparison-report.png "User Assessment Comparison report")
 
-6. In the **Comparison Results** column, click one of the **Open Details** links to view more information about a user.
+6. In the **Comparison Results** column, click one of the **Open Details** links to view more information.
 
-    The **Comparison Details** window is displayed.
+    The **Comparison Details** panel is displayed.
 
-7. Review the information about the user, and then click **Close**.
+    ![Comparison Details panel](images/ua-comparison-details-malfoy.png "Comparison Details panel")
 
-
+7. Review the information, and then click **Close**.
 
 
 ## Learn More
 
-* [User Assessment Overview](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/user-assessment-overview.html)
-* [Security Assessment Overview](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/security-assessment-overview.html)
-
+- [Security Assessment Overview](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-030B2A14-272F-49CF-80D2-5559C722E0FF)
+- [User Assessment Overview](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-6BF46EE2-F7B5-4710-A09C-069EA95F8052)
 
 ## Acknowledgements
+
 * **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-* **Last Updated By/Date** - Jody Glover, February 15, 2022
+* **Last Updated By/Date** - Jody Glover, February 26, 2022

@@ -1,4 +1,6 @@
-# How do you create a managed SSH session?
+# How do I create a managed SSH session?
+
+Duration: 10 minutes
 
 1. Open the navigation menu and click Identity & Security. Click Bastion
 
@@ -18,17 +20,9 @@
 
 ![Image alt text](images/managed.png)
 
-
 7. Under Add SSH Key, provide the public key file of the SSH key pair that you want to use for the session.
 Later, when you connect to the session, you must provide the private key of the same SSH key pair.
 
 8. When you are finished, click "Create session"
 
 ![Image alt text](images/create_session2.png)
-
-
-
-## Acknowledgements
-* **Author** - Thea Lazarova, Solution Engineer Santa Monica
-* **Contributors** - Andrew Hong, Solution Engineer Santa Monica
-

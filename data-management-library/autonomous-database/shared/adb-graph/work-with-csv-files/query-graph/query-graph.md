@@ -43,20 +43,27 @@ If you prefer you can simply **import** the notebook and then execute each parag
    Use the following Pre-authenticated Request, or PAR, to download the exported notebook onto your machine.  
    Note the download location. 
 
+  <!--- old location 
+  https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb
+  
+  ---> 
+
 	```
-	<copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Learn_BankGraph_%20Find%20Circular%20Payments%20and%20Key%20Accounts.dsnb</copy>
+	<copy>
+	https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/circular-payments-notebook-wid770.dsnb
+	</copy>
 	```
 
 
 2. Click the **Notebooks** menu icon and then on the **Import Notebook** icon on the top right.  
 
-   ![ALT text is not available for this image](images/import-notebook.png " ")  
+   ![ALT text is not available for this image](images/import-notebook-button.png " ")  
 
 3. Drag the downloaded file or navigate to the correct folder and select it for upload.  
    ![ALT text is not available for this image](images/choose-exported-file.png " ")  
 
 4. Click **Import**. 
-   ![ALT text is not available for this image](images/notebook-file-chosen.png " ")  
+   ![ALT text is not available for this image](images/notebook-file-selected.png " ")  
 5. Once imported it should open in Graph Studio.  
    
    ![ALT text is not available for this image](images/notebook-imported.png " ")  
@@ -145,19 +152,19 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
    ![ALT text is not available for this image](images/31-viz-open-settings.png " ")   
 
-    In this `Settings` dialog, click the **Visualization** tab. Then scroll down and pick `ACCT_ID` from the `Labeling`, `Vertex Label` drop-down list.  
+    In this `Settings` dialog, click the **Customization** tab. Then scroll down and pick `ACCT_ID` from the `Labeling`, `Vertex Label` drop-down list.  
 
-   ![ALT text is not available for this image](images/32-viz-add-vertex-label.png " ")  
+   ![ALT text is not available for this image](images/choose-viz-settings-label.png " ")  
 
    Click the **X** on the top-right to exit the Settings dialog. The resulting visualization should be similar to the screenshot below.   
 
-     >**Note:** The colors and layout shown in the screenshots may differ from those in your results.
+     **Note:** The colors and layout shown in the screenshots may differ from those in your results.
 
 	![ALT text is not available for this image](images/33-viz-labels-shown.png " ")   
 
-   Now open the visualization settings again, click the **Visualization** tab, and choose a different layout (**Concentric**) from the Layout drop-down list. Exit the Settings dialog. 
+   Now open the visualization settings again, click the **Customization** tab, and choose a different layout (**Concentric**) from the Layout drop-down list. Exit the Settings dialog. 
 
-	![ALT text is not available for this image](images/34-viz-concentric-layout.png " ")
+	![ALT text is not available for this image](images/concentric-layout-for-elements.png " ")
 
 3. Add a Markdown paragraph describing the next step which is to look for circular transfers.   
     Create a new paragraph and enter the following text into it and execute it.   
@@ -247,9 +254,9 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 
 	![ALT text is not available for this image](images/40-4th-query-visualized.png " ")  
 
-	Click the **Visualization** settings and then select the **Concentric** layout.  
+	Click the **Customization** settings and then select the **Concentric** layout and `ACCT_ID` for the vertex label.  
 
-	![ALT text is not available for this image](images/41-4th-query-concentric-layout.png " ")
+	![ALT text is not available for this image](images/choose-concentric-and-acctid.png " ")
 
 9. The next query finds and displays the 6-hop circular payment chains originating at account 934.  
 	
@@ -288,9 +295,9 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 	Open the **Visualization** settings dialog and select **Hierarchical** from the **Layouts** drop-down list.  
 	Leave the Direction as `Top-Down` and Algorithm Type as `Network Simplex`.
 
-	![ALT text is not available for this image](images/45-6th-query-hierarchical-layout.png " ")  
+	![ALT text is not available for this image](images/choose-hierarchical-layout.png " ")  
 
-    Use the **Settings** icon and **Visualization** tab to label the vertices with the `ACCT_ID` for the resulting graph.   
+    Use the **Settings** icon and **Customization** tab to label the vertices with the `ACCT_ID` for the resulting graph.   
 	Lastly, let's change the source node's size to highlight it.   
 	Open the **Visualization** settings dialog and select the **Highlights** tab.   
 	Click **New Highlight**.   
@@ -517,5 +524,5 @@ Name it `Learn/BankGraph: Find Circular Payments`.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021  
+March* **Last Updated By/Date** - Jayant Sharma, Product Management, March 2022  
   
