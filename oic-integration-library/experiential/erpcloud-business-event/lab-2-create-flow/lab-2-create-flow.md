@@ -90,7 +90,7 @@ Add ERP PO Event trigger to the empty integration canvas.
 ## **Task 3:** Add the ADW invoke activity
 Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canvas.
 
-1. Hover you cursor over the **+** sign that is displayed after the trigger activity in the integration canvas. Click the **+** sign and select the ADW connection created in Lab 1. 
+1. Hover you cursor over the arrow in the integration canvas to display the **+** sign. Click the **+** sign and select the ADW connection created in Lab 1. 
 
     ![Add ADW Connection](images/add-adw-connection.png)
 
@@ -102,7 +102,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | --- | ----------- |
     | What do you want to call your endpoint? | `ADW_InsertPO`       | 
     | What operation do you want to perform? | **Perform an Operation on a Table** |
-    | What operation do want to perform on Table? | **Insert** |
+    | What operation do want to perform on Table? | **Insert** (Default)|
     |
 
 3. On the Table Operation page, select the following values:
@@ -125,7 +125,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
 
     ![Summary in ADW Wizard](images/adw-wizard-summary.png)
 
-7. Click **Save** to persist changes. 
+7. Click **Save** to apply changes. 
 
 
 ## Task **4:** Map data between ERP trigger and ADW invoke
@@ -133,14 +133,14 @@ Use the mapper to drag fields from the source structure (ERP PO event data)  to 
 
 When we added the ADW invoke to the integration, a map icon was automatically added. 
 
-1. Hover you cursor over the ERP-ADW **Mapper** icon, and click **Edit**.
+1. Hover you cursor over the ERP-ADW **Mapper** icon, click once, then select **Edit**.
    ![Edit ERP-ADW Mapper](images/mapper-edit-erp-adw.png)
 
 2. Use the mapper to drag element nodes in the source ERP Cloud structure to element nodes in the target Oracle ADW structure.
 
     Expand the Source node:
 
-       ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 <sequence> > Value
+       ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 `<sequence>` > Value
 
     Expand the Target node:
     
