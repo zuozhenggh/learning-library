@@ -31,7 +31,7 @@ We will start by creating a new integration and adding some basic info.
 
     | **Element**        | **Value**          |       
     | --- | ----------- |
-    | Name         | `LLERPEventDemo`       |
+    | Name         |    `LLERPEventDemo`       |
     | Description  | `ERP Event integration for LiveLabs demo` |
     |
 
@@ -39,7 +39,7 @@ We will start by creating a new integration and adding some basic info.
 
 5. Click **Create**. 
 
-6. Click **Save** to persist changes. 
+6. Click **Save** to apply changes. 
 
 
 ## **Task 2:** Define ERP Purchase Order (PO) Event trigger
@@ -63,13 +63,13 @@ Add ERP PO Event trigger to the empty integration canvas.
     |
 
     ```
-    <copy><xpathExpr xmlns:ns0="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/" xmlns:ns2="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/types/">$eventPayload/ns2:result/ns0:Value/ns0:DocumentDescription=**"LL demo"**</xpathExpr></copy>
+    <copy><xpathExpr xmlns:ns0="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/" xmlns:ns2="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/types/">$eventPayload/ns2:result/ns0:Value/ns0:DocumentDescription=**"demo"**</xpathExpr></copy>
     ```
 
-    > **Tip:** You can use a custom filter expression by inserting a different value under **DocumentDescription**. The value you enter is case sensitive. 
+    > **Tip:** If you are working on a shared ERP Cloud environment, it is recommended to use a distinct value in the filter expression under **DocumentDescription**. For example `<your-initials>-demo>`. The value you enter is case sensitive. 
     ![ERP Adapter Wizard Request](images/erp-adapter-request.png)
 
-    > **Note:** The Filter is not required, however it does allow you to control when and which integration should be triggered. This is useful if there are multiple integrations subscribed to the same PO Event in the ERP Cloud environment. Without the filter expression, all integrations subscribed to the PO Event will get triggered whenever that specific event occurs. 
+    > **Note:** The filter is not required, however it does allow you to control when and which integration should be triggered. This is useful if there are multiple integrations subscribed to the PO Event in the same ERP Cloud environment. Without the filter expression, all integrations subscribed to the PO Event would get triggered whenever that specific event occurs. 
 
 6. Click **Next**.
 

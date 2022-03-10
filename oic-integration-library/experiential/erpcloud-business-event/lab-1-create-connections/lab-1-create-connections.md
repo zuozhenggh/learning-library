@@ -34,6 +34,10 @@ Create a connection with the Oracle ERP Cloud Adapter.
     | Description  | `ERP Connection for LiveLabs demo` |
     |
 
+    ```
+    <copy>LLDemo_ERP</copy>
+    ```
+
     Keep all other values as default.
 
 5. In the *Oracle ERP Cloud Connection* dialog, enter the following information:
