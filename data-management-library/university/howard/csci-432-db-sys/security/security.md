@@ -790,6 +790,7 @@ In addition, you can run reports on the activities these components monitor and 
 - Design and enforce flexible security policies for your database
 - Addresses Database consolidation and cloud environments concerns to reduce cost and reduce exposure sensitive application data by those without a true need-to-know
 - Protect access to your sensitive data by creating a trusted path (see more by performing the [Full Database Vault lab](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=682&clear=180&session=4531599220675))
+  
 
 ## Task 9: Homework
 
