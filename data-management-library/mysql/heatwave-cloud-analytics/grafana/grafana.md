@@ -61,7 +61,7 @@ wget https://raw.githubusercontent.com/ivanxma/mysqlk8s/main/grafana/grafana.yam
 	kubectl apply -f grafana.yaml -n grafana
 	</copy>
 	```
-![Apply MDS Connection](images/apply-mds-connection.png)
+
 
 
 4. Check the status of pods and wait until all pods are up and running
@@ -72,7 +72,6 @@ wget https://raw.githubusercontent.com/ivanxma/mysqlk8s/main/grafana/grafana.yam
 	</copy>
 	```
 
-![Get Pod](images/get-pod.png)
 
 5. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready.
 
@@ -84,7 +83,7 @@ wget https://raw.githubusercontent.com/ivanxma/mysqlk8s/main/grafana/grafana.yam
 
 Once you have the External IP provisioned, you can execute CTL+C to kill the command
 
-![Get Service](images/get-service.png)
+
 
 ## Task 4: Access the Grafana Application 
 
