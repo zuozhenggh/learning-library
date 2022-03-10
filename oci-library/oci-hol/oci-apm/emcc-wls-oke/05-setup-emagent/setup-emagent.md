@@ -150,7 +150,9 @@ Estimated time: 15 minutes
 
    ![EMCC Console, Login page](images/3-1-emcc.png " ")
 
-2. From the menu bar, navigate to the **Setup** (a gear icon) **Add Target** > **Add Targets Manually**.
+  > **NOTE:** Ask your EMCC Administrator if you do not know the login credentials of the Enterprise Manager.
+
+2. From the Enterprise Manager page menu bar, navigate to the **Setup** (a gear icon) **Add Target** > **Add Targets Manually**.
 
    ![EMCC Console, Setup menu](images/3-2-emcc.png " ")
 

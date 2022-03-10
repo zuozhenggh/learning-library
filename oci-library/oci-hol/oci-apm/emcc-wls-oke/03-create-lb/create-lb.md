@@ -12,14 +12,14 @@ Estimated time: 15 minutes
 
 ## Task 1: Collect WebLogic information
 
-1. From the Oracle Cloud Shell, run the ***kubectl get svc*** command for all namespaces once again.
+1. In the Oracle Cloud console, select the Cloud Shell icon (>_ ) from the menu bar to launch a Cloud Shell session window if one is not. Copy and paste the ***kubectl get svc*** command to list out all the namespaces.
 
     ``` bash
     <copy>
     kubectl get svc --all-namespaces
     </copy>
     ```
-     Note down the service names for the WebLogic admin server and WebLogic managed servers. They are **sample-domain1-admin-server**, **sample-domain1-managed-server1**, **sample-domain1-managed-server2** in the image below, for example.  
+     Write down the service names for the WebLogic admin server and WebLogic managed servers so you can reference them later. They are **sample-domain1-admin-server**, **sample-domain1-managed-server1**, **sample-domain1-managed-server2** in the image below, for example.  
 
    ![Oracle Cloud Shell, kubectl get svc](images/1-1-kubectl.png " ")
 

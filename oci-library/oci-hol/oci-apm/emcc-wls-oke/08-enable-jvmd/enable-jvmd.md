@@ -6,12 +6,13 @@ Optionally, you can enable Enterprise Manager **JVM Diagnostics (JVMD)** on the 
 
 In this tutorial you will add security rules in the VCN subnet, configure firewall settings in the instance, edit configuration files in each WebLogic pod to prepare for the JVMD agent installation. Then download the agent installer, upload it to the Cloud Shell, transfer it to the admin server pod. Next, use WebLogic Administration Console to manually deploy the JVMD agents to all WebLogic Servers. Finally, verify the JVM targets in the EMCC Middleware management home page. You can also associate the JVM targets to the WebLogic domain.
 
+   ![JVMD with WLS in OKE diagram](images/0-1-jvmd-oke.png " ")
 
 ### JVM Diagnostics Architecture
 
 JVMD consists of a **JVMD engine**, which is a core analytical portion of the JVMD monitoring system, and **JVMD agents**, which are the data collectors of the target JVM.  JVMD agents are deployed inside the application servers and collect real-time JVM monitoring data. The agent transmits the collected data to the JVMD engine, directly using SSL. Note that JVMD does not use an EM agent, having its own channel to communicate with OMS.
 
-   ![JVMD diagram](images/0-1-jvmd.png " ")
+   ![JVMD Architecture diagram](images/0-1-jvmd.png " ")
 
 ### Limitation
 
@@ -401,11 +402,11 @@ When a JVMD agent is deployed manually to a WebLogic Server in the Kubernetes cl
 
 
 
-### Conclusions
+## Conclusions
 
-This is the end of the Tutorials for monitoring WebLogic Server on Kubernetes cluster (OKE) using Oracle Enterprise Manager Cloud Control. You learned how to add Kubernetes load balancer services to OKE, configure security rules restricted to the EM monitoring, set up EM agent in the Oracle Cloud, remotely discover the WebLogic domain deployed on OKE, and monitor JMX based metrics and configurations from the WebLogic Server targets using EMCC console.  You also learned that the target monitoring in EMCC continues even after the pods are regenerated, and how to manually set up JVM Diagnostics for the WebLogic Servers on Kubernetes.
+In this workshop you’ve learned how to add Kubernetes load balancer services to OKE, configure security rules restricted to EM monitoring, set up an EM agent in the Oracle Cloud, remotely discover the WebLogic domain deployed on OKE, and monitor JMX based metrics and configurations from the WebLogic Server targets using EM. You also learned that monitoring of the target continues even after the pods are regenerated, and how to manually set up JVM Diagnostics for the WebLogic Servers on Kubernetes.
 
-Enterprise Manager Cloud Control (EMCC) provides prominent monitoring solutions consistently to the WebLogic Servers deployed either on on-premises, or in a Kubernetes cluster in the Oracle Cloud or in other cloud platforms.
+Oracle Enterprise Manager Cloud Control is an on-premises based solution that can provide a monitoring solution for Oracle WebLogic Servers deployed either on on-premises, or in a Kubernetes cluster in the Oracle Cloud or in other cloud platforms.
 
 Additionally, you can configure **Oracle Cloud Infrastructure Application Performance Monitoring (APM)** Java Agent and monitor traces and spans of the WebLogic based application runs on Kubernetes. Refer to **[Oracle LiveLabs Use OpenTracing for WebLogic on Kubernetes utilizing Oracle Application Performance Monitoring](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=932)** workshop for details.
 

@@ -2,8 +2,7 @@
 
 ## Introduction
 
-The tutorials in this workshop assume you have created an OKE cluster in the Oracle Cloud and provisioned a WebLogic domain using the WebLogic Kubernetes Operator. If you have not done this yet, please complete  **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop prior to start the tutorials in this article. The tutorials also assume you have set up EMCC in the Oracle Cloud, in a separate VCN.
-
+The tutorials in this workshop assume you have performed the prerequisite tasks detailed in the Introduction section of this workshop.  You’ve already created an OKE cluster in the Oracle Cloud and provisioned a WebLogic domain using the WebLogic Kubernetes Operator. If you have not done that yet, please complete **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop prior to starting Tutorial 1. The tutorials also assume you have set up EMCC in the Oracle Cloud, in a separate VCN.
 
 Estimated time: 5 minutes
 
@@ -36,7 +35,7 @@ Estimated time: 5 minutes
 
    ![Oracle Cloud console, Cluster](images/1-5-cluster.png " ")
 
-6.	In the **Access Your Cluster** page that is still opened at the upper side of console, locate the textbox with the OCI command, and click **Copy**.
+6.	In the **Access Your Cluster** page that is still opened at the upper side of the console, locate the textbox with the OCI command, and click **Copy**.
 
    ![Oracle Cloud console, Cluster](images/1-6-cluster.png " ")
 
@@ -45,7 +44,7 @@ Estimated time: 5 minutes
    ![Oracle Cloud console, Cloud Shell](images/1-7-cloudshell.png " ")
 
 
-   > **NOTE:**  Save the command to a text file on your laptop, and execute it every time when you start a new Cloud Shell session, while working the labs in this workshop.
+   > **NOTE:**  Save the command to a text file on your laptop, and execute it every time when you start a new Cloud Shell session, while performing the tutorials in this workshop.
 
 
 8.	In the Cloud Shell, run the following command.
@@ -79,13 +78,12 @@ Estimated time: 5 minutes
      * Username: weblogic
      * Password: Password generated in the WebLogic workshop, Lab 4, Step 1
 
-     Make sure the WebLogic Administration console log in page launches in the browser as in the image below.
+     Make sure the WebLogic Administration console login page launches in the new browser tab like the image below.
 
      ![WLS Admin Console](images/1-10-demoapp.png " ")
 
 
-     If you have not set up the application yet, or you cannot start the application, please visit the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop, and complete the tutorials from the Lab 1 to Lab 4.
-
+      >**NOTE:** If you can’t start the application, return to the prerequisite workshop, **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** and validate Lab 1 through Lab 4 were performed.
 
 
 You may now [proceed to the next tutorial](#next).

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Now you have the kubernetes load balance services configured for the WebLogic Servers. Next, you will need to set up an EM agent that talk to the load balancer services. In this tutorial, you will create a public subnet that will be used by the EM agent, in the same VCN which the cluster uses.
+Now you have the kubernetes load balance services configured for the WebLogic Servers. Next, you will need to set up an EM agent that can communicate to the load balancer services. In this tutorial, you will create a public subnet that will be used by the EM agent, in the same VCN which the cluster uses.
 
 Estimated time: 5 minutes
 

@@ -24,7 +24,7 @@ Estimated time: 20 minutes
     * Administration Server Host: External-IP of the Load Balancer that is mapped to the admin server, saved in the Tutorial 3, Task 3
     * Port: **7001**
     * Username: **weblogic**
-    * Password: The password generated in the WebLogic workshop, Lab 4, Step 1
+    * Password: The password generated in the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop, Lab 4, Step 1
     * Unique Domain Identifier: **OKE-WLS**
     * Agent: Select the EM agent created in the previous tutorial
 
