@@ -23,7 +23,7 @@
         },
         {
             "title": "ERP Cloud Prerequisites for OCI Integration",
-            "filename": "../../../../common/provision-oic/provision.md"
+            "filename": "../../../../common/oic-prerequisites-erpcloud/oic-prerequisites-erpcloud.md"
         },
         {
             "title": "Lab Setup",
