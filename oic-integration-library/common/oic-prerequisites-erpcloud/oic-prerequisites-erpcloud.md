@@ -1,4 +1,4 @@
-# ERP Cloud Prerequisites for Oracle Integration
+# ERP Cloud Prerequisites for OCI Integration
 
 ## Introduction
 In this lab you will assign a custom role to an integration service user. This user account will be specified when creating an Oracle ERP Cloud Adapter connection in Oracle Integration.
