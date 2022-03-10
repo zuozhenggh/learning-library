@@ -730,6 +730,49 @@ We will use simulation mode to find the factors to use for our "trusted path" co
 
 5. Now, Database Vault is correctly disabled!
 
+## Task 9: Homework
+
+Submit the answers to these questions in a document uploaded to Blackboard.
+
+**Database Security homework questions** 
+
+1.	What type of security control is Database Vault? (select the MOST correct answer)
+
+   a. Preventive  
+   b. Detective  
+   c. Assessment/Corrective
+      
+2.	Why is simulation mode so important when using Database Vault?
+
+   a.	To identify policies that might block activity that should be allowed  
+   b.	To ensure that policies do not improperly grant access to sensitive data  
+   c.	To test the performance impact of policies  
+   d.	To detect authorized attempts to access protected data  
+   e.	To ensure that all sensitive data is protected within a security realm  
+
+3.	Why is separation of duties important within a security architecture?  
+
+   a.	To prevent inappropriate access to sensitive data  
+   b.	To ensure that end users cannot extract sensitive data for unauthorized purposes  
+   c.	To prevent a single person from controlling all parts of a security process  
+   d.	To block malicious users from accessing the database  
+   e.	To protect the database audit trail  
+
+4.	Why might an organization want to block database administrator access to application data with a Database Vault realm?  
+
+   a.	Because the administrator might corrupt the data  
+   b.	Because the administrator could accidentally disclose the data to a third party  
+   c.	Because the administrator’s account could be compromised by a malicious actor  
+   d.	Because the administrator has no business need to see the data  
+   e.	All of the above  
+   f.	None of the above  
+
+5.	Ransomware is the #1 cyber threat facing most organizations today. How effective is Database Vault in mitigating the results of a ransomware attack?  
+
+   a.	A perfect defense - 100% effective  
+   b.	A very good defense – effective 75-99% of the time  
+   c.	A good defense, effective in about half of the case  
+   d.	Not a good defense, usually will not prevent the ransomware attack from succeeding
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -790,48 +833,4 @@ In addition, you can run reports on the activities these components monitor and 
 - Design and enforce flexible security policies for your database
 - Addresses Database consolidation and cloud environments concerns to reduce cost and reduce exposure sensitive application data by those without a true need-to-know
 - Protect access to your sensitive data by creating a trusted path (see more by performing the [Full Database Vault lab](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=682&clear=180&session=4531599220675))
-  
 
-## Task 9: Homework
-
-Submit the answers to these questions in a document uploaded to Blackboard.
-
-**Database Security homework questions** 
-
-1.	What type of security control is Database Vault? (select the MOST correct answer)
-
-   a. Preventive  
-   b. Detective  
-   c. Assessment/Corrective
-      
-2.	Why is simulation mode so important when using Database Vault?
-
-   a.	To identify policies that might block activity that should be allowed  
-   b.	To ensure that policies do not improperly grant access to sensitive data  
-   c.	To test the performance impact of policies  
-   d.	To detect authorized attempts to access protected data  
-   e.	To ensure that all sensitive data is protected within a security realm  
-
-3.	Why is separation of duties important within a security architecture?  
-
-   a.	To prevent inappropriate access to sensitive data  
-   b.	To ensure that end users cannot extract sensitive data for unauthorized purposes  
-   c.	To prevent a single person from controlling all parts of a security process  
-   d.	To block malicious users from accessing the database  
-   e.	To protect the database audit trail  
-
-4.	Why might an organization want to block database administrator access to application data with a Database Vault realm?  
-
-   a.	Because the administrator might corrupt the data  
-   b.	Because the administrator could accidentally disclose the data to a third party  
-   c.	Because the administrator’s account could be compromised by a malicious actor  
-   d.	Because the administrator has no business need to see the data  
-   e.	All of the above  
-   f.	None of the above  
-
-5.	Ransomware is the #1 cyber threat facing most organizations today. How effective is Database Vault in mitigating the results of a ransomware attack?  
-
-   a.	A perfect defense - 100% effective  
-   b.	A very good defense – effective 75-99% of the time  
-   c.	A good defense, effective in about half of the case  
-   d.	Not a good defense, usually will not prevent the ransomware attack from succeeding
