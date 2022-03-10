@@ -1,9 +1,9 @@
-# How do I set bash profile and start Database listener?
+# How do I set bash profile in Oracle Linux?
 Duration: 2 minutes
 
 ## Edit the .bash_profile file
 
-1. In Oracle Enterprise Linux, the .bash_profile file is located in the users' home directory. the variable values would change according to your database installation
+1. In Oracle Enterprise Linux, the .bash_profile file is located in the users' home directory. The below example shows how you can set environment variables for your database installation. please note some of the variable values might vary according to your database installation
 
       ```
       <copy> 
@@ -39,20 +39,6 @@ Duration: 2 minutes
       ```
       <copy>
       source ~/.bash_profile
-      </copy>
-      ```
-
-3. check the database listener status
-      ```
-      <copy>
-      ./lsnrctl status
-      </copy>
-      ```
-
-4. start the database listener if the listener has not already started
-      ```
-      <copy>
-      ./lsnrctl start
       </copy>
       ```
 
