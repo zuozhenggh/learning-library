@@ -1,4 +1,4 @@
-# TEQ Enqueue and Dequeue
+# Understand TEQ
 
 ## Introduction
 
