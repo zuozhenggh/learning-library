@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The tutorials in this workshop assume you have performed the prerequisite tasks detailed in the Introduction section of this workshop.  You’ve already created an OKE cluster in the Oracle Cloud and provisioned a WebLogic domain using the WebLogic Kubernetes Operator. If you have not done that yet, please complete **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop prior to starting Tutorial 1. The tutorials also assume you have set up EMCC in the Oracle Cloud, in a separate VCN.
+The tutorials in this workshop assume you have performed the prerequisite tasks detailed in the Introduction section of this workshop.  You’ve already created an OKE cluster in the Oracle Cloud and provisioned a WebLogic domain using the WebLogic Kubernetes Operator. If you have not done that yet, please complete **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop prior to starting Tutorial 1. The tutorials also assume you have set up EM in the Oracle Cloud, in a separate VCN.
 
 Estimated time: 5 minutes
 
@@ -76,7 +76,7 @@ Estimated time: 5 minutes
      </copy>
      ```
      * Username: weblogic
-     * Password: Password generated in the WebLogic workshop, Lab 4, Step 1
+     * Password: Password generated in the  **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, Lab 4, Step 1
 
      Make sure the WebLogic Administration console login page launches in the new browser tab like the image below.
 

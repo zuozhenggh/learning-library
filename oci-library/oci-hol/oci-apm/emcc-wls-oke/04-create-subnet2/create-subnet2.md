@@ -34,7 +34,7 @@ Estimated time: 5 minutes
 6. Create two Ingress Rules with the information shown below.  As for the **Ingress Rule 2**, replace the CIDR with the **public IP of the OMS instance** to allow access only from the OMS host.  
 
 
-    > **NOTE:**  Ask your EMCC Administrator if you do not know the IP address of the OMS host/compute instance.
+    > **NOTE:**  Ask your EM Administrator if you do not know the IP address of the OMS host/compute instance.
 
   * Ingress Rule 1:
       * Stateless: **No**

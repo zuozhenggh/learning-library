@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Optionally, you can enable Enterprise Manager **JVM Diagnostics (JVMD)** on the WebLogic Servers on Kubernetes. However, because the WebLogic Servers are deployed on Kubernetes pods, where direct communication between OMS and the targets is not available, automated installation of the JVM agent using the EMCC console is not applicable, and manual arrangements are required.
+Optionally, you can enable Enterprise Manager **JVM Diagnostics (JVMD)** on the WebLogic Servers on Kubernetes. However, because the WebLogic Servers are deployed on Kubernetes pods, where direct communication between OMS and the targets is not available, automated installation of the JVM agent using the EM console is not applicable, and manual arrangements are required.
 
-In this tutorial you will add security rules in the VCN subnet, configure firewall settings in the instance, edit configuration files in each WebLogic pod to prepare for the JVMD agent installation. Then download the agent installer, upload it to the Cloud Shell, transfer it to the admin server pod. Next, use WebLogic Administration Console to manually deploy the JVMD agents to all WebLogic Servers. Finally, verify the JVM targets in the EMCC Middleware management home page. You can also associate the JVM targets to the WebLogic domain.
+In this tutorial you will add security rules in the VCN subnet, configure firewall settings in the instance, edit configuration files in each WebLogic pod to prepare for the JVMD agent installation. Then download the agent installer, upload it to the Cloud Shell, transfer it to the admin server pod. Next, use WebLogic Administration Console to manually deploy the JVMD agents to all WebLogic Servers. Finally, verify the JVM targets in the EM Middleware management home page. You can also associate the JVM targets to the WebLogic domain.
 
    ![JVMD with WLS in OKE diagram](images/0-1-jvmd-oke.png " ")
 
@@ -26,13 +26,13 @@ Estimated time: 25 minutes
 
 ## Task 1: Configure network and firewall settings
 
-1.  First, you will need to obtain **JVMD SSL Port** from the Middleware agent management page in the EMCC console. From the EMCC console, select **Setup** (a gear icon in the menu bar) > **Middleware Management** > **Engines and Agents**.
+1.  First, you will need to obtain **JVMD SSL Port** from the Middleware agent management page in the EM console. From the EM console, select **Setup** (a gear icon in the menu bar) > **Middleware Management** > **Engines and Agents**.
 
-   ![EMCC Console, Setup menu](images/1-1-emcc.png " ")
+   ![EM Console, Setup menu](images/1-1-emcc.png " ")
 
-2. In the **Engines and Agents** page, under **RUEI/BTM/JVMD Engines**, locate **SSL Port** of the JVM Diagnostics Engine. This is the port, which needs to be available at the EMCC host. In the image below, the value is **7301** for an example. Note down the value to a text file.
+2. In the **Engines and Agents** page, under **RUEI/BTM/JVMD Engines**, locate **SSL Port** of the JVM Diagnostics Engine. This is the port, which needs to be available at the EM host. In the image below, the value is **7301** for an example. Note down the value to a text file.
 
-   ![EMCC Console, Engines and Agents page](images/1-2-emcc.png " ")
+   ![EM Console, Engines and Agents page](images/1-2-emcc.png " ")
 
 3.  Next, you will need to add the SSL Port to the security rule in the subnet which is used by your OMS instance. Log on to the Oracle Cloud console, select **Compute** > **Compute instance** from the navigation menu.
 
@@ -42,7 +42,7 @@ Estimated time: 25 minutes
 
    ![Oracle Cloud Console, Instances](images/1-4-oci.png " ")
 
-    > **NOTE:** Ask your EMCC Administrator if you do not know the region or compartment of the OMS instance.
+    > **NOTE:** Ask your EM Administrator if you do not know the region or compartment of the OMS instance.
 
 5. In the **Instance Details** page, click **Copy** next to the **Public IP address** and **Internal FQDN**, and write down the values to a text file. You will need these values later in this tutorial. Then click the link to the **Subnet**.
 
@@ -179,29 +179,29 @@ Estimated time: 25 minutes
 
 ## Task 3: Download JVMD agent and upload to the WebLogic Server pod
 
-In this task, you will download ***jamagent.war*** from the EMCC console.  
+In this task, you will download ***jamagent.war*** from the EM console.  
 
-1. In in the EMCC console, select **Setup** > **Middleware Management** > **Engines and Agents**.
+1. In in the EM console, select **Setup** > **Middleware Management** > **Engines and Agents**.
 
 2. In the **Engines and Agents** page, click **Download JVMD Agent**.
 
-    ![EMCC Console, Engines and Agents page](images/3-1-emcc.png " ")
+    ![EM Console, Engines and Agents page](images/3-1-emcc.png " ")
 
 3. In the **Download JVM Diagnostics Components** window, select **JVMD Agent** from the pull-down menu. Click **OK**.
 
-    ![EMCC Console, Download JVMD components window](images/3-2-emcc.png " ")
+    ![EM Console, Download JVMD components window](images/3-2-emcc.png " ")
 
 4. In the **JVM Diagnostics Agent web.xml Parameters** page, accept the default settings and click **Download**.
 
-    ![EMCC Console, JVMD parameters page](images/3-3-emcc.png " ")
+    ![EM Console, JVMD parameters page](images/3-3-emcc.png " ")
 
 5. Click **Allow** on the dialog.
 
-    ![EMCC Console, confirmation dialog](images/3-4-emcc.png " ")
+    ![EM Console, confirmation dialog](images/3-4-emcc.png " ")
 
 6. Confirm the ***jamagent.war*** file was downloaded.
 
-    ![EMCC Console, select file from computer](images/3-5-emcc.png " ")
+    ![EM Console, select file from computer](images/3-5-emcc.png " ")
 
 7. In the Oracle Cloud Shell title bar, click the three-bars icon (three-bar icon) to open the menu. Select **Upload**.
 
@@ -339,66 +339,66 @@ In this task, you will download ***jamagent.war*** from the EMCC console.
 
     ![WebLogic Admin Console, Start Deployments, confirmation](images/4-17-wls.png " ")
 
-18. Log on to EMCC console, navigate to the **Middleware** home page. You should see the **JVM Pool** target and **JVM** targets for WebLogic Servers added under the **Default** JVM Pool target. Note that it may take few minutes to see the target status updated. Click the **admin-server_jvm** node.
+18. Log on to EM console, navigate to the **Middleware** home page. You should see the **JVM Pool** target and **JVM** targets for WebLogic Servers added under the **Default** JVM Pool target. Note that it may take few minutes to see the target status updated. Click the **admin-server_jvm** node.
 
-    ![EMCC Console, Middleware Home page](images/4-18-emcc.png " ")
+    ![EM Console, Middleware Home page](images/4-18-emcc.png " ")
 
 
-    > **NOTE:** You will see the JVM targets appear under a **Default** JVM pool target, and not associated with your OKE WebLogic Domain. This happens because the IP that is registered in the EMCC is that of the Kubernetes load balancer service, and not of the actual host where JVM runs. You can manually add the association to the WebLogic Domain target, which is explained in the next task.
+    > **NOTE:** You will see the JVM targets appear under a **Default** JVM pool target, and not associated with your OKE WebLogic Domain. This happens because the IP that is registered in the EM is that of the Kubernetes load balancer service, and not of the actual host where JVM runs. You can manually add the association to the WebLogic Domain target, which is explained in the next task.
 
 
 19. In the JVM target home page, observe that data is coming in to the EMCC.
 
-    ![EMCC Console, JVM Pool target home page](images/4-19-emcc.png " ")
+    ![EM Console, JVM Pool target home page](images/4-19-emcc.png " ")
 
 
 ## Task 5: Associate JVM targets with the WebLogic domain
 
-When a JVMD agent is deployed manually to a WebLogic Server in the Kubernetes cluster, JVM targets appear under the **Default** JVM pool target in the EMCC console, and it is not associated with the WebLogic Domain. In this task, you will manually add associations of the JVM targets to the WebLogic domain target.
+When a JVMD agent is deployed manually to a WebLogic Server in the Kubernetes cluster, JVM targets appear under the **Default** JVM pool target in the EM console, and it is not associated with the WebLogic Domain. In this task, you will manually add associations of the JVM targets to the WebLogic domain target.
 
-1. In EMCC console, go to the Middleware Home page. Click Default JVM pool target from the table.
+1. In EM console, go to the Middleware Home page. Click Default JVM pool target from the table.
 
-    ![EMCC Console, Middleware Home page, Default JVM pool target node](images/5-1-emcc.png " ")
+    ![EM Console, Middleware Home page, Default JVM pool target node](images/5-1-emcc.png " ")
 
 2.  In the JVM target home page, select **Java Virtual Machine Pool** > **Manage and Troubleshoot JVMD**.
 
-    ![EMCC Console, Default Pool Target Home page, Target menu](images/5-2-emcc.png " ")
+    ![EM Console, Default Pool Target Home page, Target menu](images/5-2-emcc.png " ")
 
 3.  Click Manage Association tab.
 
-    ![EMCC Console, Default Pool Target Home page, Manage Association](images/5-3-emcc.png " ")
+    ![EM Console, Default Pool Target Home page, Manage Association](images/5-3-emcc.png " ")
 
 4. Select JVM target of the admin server, then click **Associate**.
 
-    ![EMCC Console, Default Pool Target Home page, Target Association](images/5-4-emcc.png " ")
+    ![EM Console, Default Pool Target Home page, Target Association](images/5-4-emcc.png " ")
 
 5. In the **Select Targets** window, select WebLogic Admin Server target from the OKE-WLS domain, then click **Select**.
 
-    ![EMCC Console, Default Pool Target Home page, Select Targets](images/5-5-emcc.png " ")
+    ![EM Console, Default Pool Target Home page, Select Targets](images/5-5-emcc.png " ")
 
 6. Click **OK** on the **Confirmation** window.
 
-    ![EMCC Console, Default Pool Target Home page, Conformation](images/5-6-emcc.png " ")
+    ![EM Console, Default Pool Target Home page, Conformation](images/5-6-emcc.png " ")
 
 7. Repeat the steps 4 to 6 for the managed servers.
 
-    ![EMCC Console, Default Pool Target Home page, Manage Association](images/5-7-emcc.png " ")
+    ![EM Console, Default Pool Target Home page, Manage Association](images/5-7-emcc.png " ")
 
 8.  Navigate to the **Middleware** home page and confirm the JVM targets are associated with the OKE-WLS Domain. Now you can remove the empty Default JVM Pool target. Click the **Default** target from the table.  
 
-    ![EMCC Console, Middleware Home page](images/5-8-emcc.png " ")
+    ![EM Console, Middleware Home page](images/5-8-emcc.png " ")
 
 9. In the JVM target home page, select **Java Virtual Machine Pool** > **Target Setup** > **Remove Target**.
 
-    ![EMCC Console, Default Pool Target Home page, Target menu](images/5-9-emcc.png " ")
+    ![EM Console, Default Pool Target Home page, Target menu](images/5-9-emcc.png " ")
 
 10. Click **Delete JVM Pool Target** button.
 
-    ![EMCC Console, Delete Default Pool Target](images/5-10-emcc.png " ")
+    ![EM Console, Delete Default Pool Target](images/5-10-emcc.png " ")
 
 11. In the Middleware home page, confirm the Default JVM target is removed from the table.
 
-    ![EMCC Console, Middleware home page](images/5-11-emcc.png " ")
+    ![EM Console, Middleware home page](images/5-11-emcc.png " ")
 
 
 

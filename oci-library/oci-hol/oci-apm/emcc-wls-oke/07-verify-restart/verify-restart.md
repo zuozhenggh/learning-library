@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this optional tutorial, you will restart the WebLogic Server pods using the WebLogic Kubernetes Operator, and verify the target monitoring in EMCC continues, without losing the history of the metric collection.
+In this optional tutorial, you will restart the WebLogic Server pods using the WebLogic Kubernetes Operator, and verify the target monitoring in EM continues, without losing the history of the metric collection.
 
 Estimated time: 10 minutes
 
@@ -102,23 +102,23 @@ Estimated time: 10 minutes
 
    ![Oracle Cloud Shell](images/1-8-cloudshell.png " ")
 
-    However, the change made in the WebLogic IP has no impact on the EMCC monitoring.  This is because the EM agent does not directly communicate with the pods where WebLogic Servers are running; instead, it connects with the load balancer services, which automatically handles the mapping when the pods are regenerated.  
+    However, the change made in the WebLogic IP has no impact on the EM monitoring.  This is because the EM agent does not directly communicate with the pods where WebLogic Servers are running; instead, it connects with the load balancer services, which automatically handles the mapping when the pods are regenerated.  
 
 ## Task 2: Verify the monitoring in EM Console
 
-1.  Launch your EMCC web console in a browser, log on and navigate to the Middleware home page.  Observe that the WebLogic targets are in the UP status.  Note that it will take few minutes to have the statuses updated for the targets.
+1.  Launch your EM web console in a browser, log on and navigate to the Middleware home page.  Observe that the WebLogic targets are in the UP status.  Note that it will take few minutes to have the statuses updated for the targets.
 
     Click the link to the **managed-server1**.
 
-   ![EMCC Console, Middleware Home page](images/2-1-emcc.png " ")
+   ![EM Console, Middleware Home page](images/2-1-emcc.png " ")
 
-2. In the WebLogic Server target home page, observe the downtime was recorded in the target availability while the pods were regenerated, but EMCC regarded the new WebLogic Server running in the new pod, as the same target.
+2. In the WebLogic Server target home page, observe the downtime was recorded in the target availability while the pods were regenerated, but EM regarded the new WebLogic Server running in the new pod, as the same target.
 
-   ![EMCC Console, WLS target home page](images/2-2-emcc.png " ")
+   ![EM Console, WLS target home page](images/2-2-emcc.png " ")
 
 3. In the WebLogic Server target home page, select **WebLogic Server** > **Monitoring** > **Performance Summary**. In the dashboard, you can see the metric data collected from the old pod was preserved.
 
-   ![EMCC Console, WLS Performance Summary dashboard page](images/2-3-emcc.png " ")
+   ![EM Console, WLS Performance Summary dashboard page](images/2-3-emcc.png " ")
 
 
 
