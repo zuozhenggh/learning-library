@@ -6,7 +6,12 @@
             "title": "How can I send mail from Oracle Apex?",
             "description": "",
             "filename": "sprint-apex-sendmail.md"
-        }
+        },
+        {
+            "title": "How do I send mails with DBMS SCHEDULER Jobs?",
+            "description": "",
+            "filename": "../sprint-sendmail-jobs/sprint-sendmail-jobs.md"
+        }  
 
     ]
 }
