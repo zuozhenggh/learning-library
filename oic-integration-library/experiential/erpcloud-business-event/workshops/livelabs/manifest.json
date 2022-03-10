@@ -22,8 +22,8 @@
             "filename": "../../../../../data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },
         {
-            "title": "ERP Cloud Prerequisites for OCI Integration",
-            "filename": "../../../../common/oic-prerequisites-erpcloud/oic-prerequisites-erpcloud.md"
+            "title": "Configure ERP Cloud for OCI Integration",
+            "filename": "../../../../common/oic-prerequisites-erpcloud/configure-erpcloud-for-oic.md"
         },
         {
             "title": "Lab Setup",

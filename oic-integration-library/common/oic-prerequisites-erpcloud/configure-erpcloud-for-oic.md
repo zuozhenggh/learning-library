@@ -1,4 +1,4 @@
-# Oracle ERP Cloud Prerequisites for OCI Integration
+# Configure ERP Cloud for OCI Integration
 
 > **Note:** This step is required **only** if your Oracle ERP environment is not yet configured to work with Oracle Integration
 
