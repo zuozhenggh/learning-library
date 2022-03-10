@@ -1,4 +1,4 @@
-# In Autonomous Database how do I create user and grant access to database actions?
+# How do I create user and grant access to database actions?
 Duration: 10 minutes
 
 ##  Create Users on Autonomous Database and grant access to database actions
@@ -11,7 +11,7 @@ There are several options to create users on Autonomous Database. You can use Or
 
       ```
       <copy> 
-            CREATE USER johndoe IDENTIFIED BY AAbbcc123456; 
+            CREATE USER johndoe IDENTIFIED BY < password >; 
       </copy>
       ```
 ## Grant create session to johndoe
