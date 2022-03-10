@@ -1,4 +1,4 @@
-# Deploy PHP application to OCI Kubernetes
+# Deploy Grafana Dashboard for MySQL to OCI Kubernetes
 
 ## Introduction
 
