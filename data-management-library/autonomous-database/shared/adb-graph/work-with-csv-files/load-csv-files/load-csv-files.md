@@ -35,10 +35,10 @@ Learn how to
 
 1. Open the service detail page for your Autonomous Database instance in the Oracle Cloud Console.  
 
-   ![ALT text is not available for this image](images/../../query-graph/images/adb-details-page.png " ")  
+   ![ALT text is not available for this image](images/open-database-actions.png " ")  
 
-2. Click the **Tools** tab and then the **Open Database Actions** link to open it.
-   ![ALT text is not available for this image](images/adb-details-page-yyz.png " ")
+2. Click  **Database Actions**  to open it.
+ 
 
 ## Task 2: Login as the graph-enabled user
 
@@ -155,4 +155,4 @@ Please **proceed to the next lab** to create a graph from these tables.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Arabella Yao, Database Product Manager, October 2021
+* **Last Updated By/Date** - Jayant Sharma, Product Management, February 2022

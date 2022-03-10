@@ -8,7 +8,7 @@
             "filename": "sprint-restore-adb.md"
         },
         {
-          "title": "How to restart an ADB instance?",
+          "title": "How can I restart an ADB instance?",
           "description": "",
           "filename": "../sprint-restart-adb/sprint-restart-adb.md"
         }

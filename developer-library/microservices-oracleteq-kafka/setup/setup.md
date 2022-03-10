@@ -1,8 +1,8 @@
-# Setup
+# Workshop setup
 
 ## Introduction
 
-In this tutorial, you'll provision and set up the resources to execute workshop in your tenancy.  
+In this laboratory, you'll provision and set up the resources to execute workshop in your tenancy.  
 
 Estimated Time: 15 minutes
 
@@ -15,17 +15,17 @@ Estimated Time: 15 minutes
 
 An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
 
-## Task 1: Log in to the Oracle Cloud Console and Launch the Cloud Shell
+## **Task 1:** Log in to the Oracle Cloud Console
 
 If you haven't already, sign in to your account.
 
-## Task 2: Select the Home Region
+## **Task 2:** Select the Home Region
 
 Be sure to select the **home region** of your tenancy. Setup will only work in the home region.
 
   ![Oracle Cloud Infrastructure Home Region](images/home-region.png " ")
 
-## Task 3: Check Your Tenancy Service Limits
+## **Task 3:** Check Your Tenancy Service Limits
 
 If you have a **fresh** free trial account with credits then you can be sure that you have enough quota and you can proceed to the next step.
 
@@ -38,25 +38,25 @@ If, however, you have already used up some quota on your tenancy, perhaps while 
 
 Quota usage and limits can be check through the console: **Limits, Quotas and Usage** in the **Governance & Administration** section , For example:
 
-  ![OCI Service Limit Example](images/service-limit-example.png " ")
+  ![Oracle Cloud Infrastructure Service Limit Example](images/service-limit-example.png " ")
 
 The Tenancy Explorer is used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
 
-  ![OCI Show Subcompartments](images/show-subcompartments.png " ")
+  ![Oracle Cloud Infrastructure Show Subcompartments](images/show-subcompartments.png " ")
 
 It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
 
-## Task 4: Launch Cloud Shell
+## **Task 4:** Launch Cloud Shell
 
 Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
 
 1. Click the Cloud Shell icon in the top-right corner of the Console.
 
-  ![OCI Cloud Shell Opening](images/open-cloud-shell.png " ")
+  ![Oracle Cloud Infrastructure Cloud Shell Opening](images/open-cloud-shell.png " ")
 
-  **NOTE:** Cloud Shell uses *websockets* to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+  > **Note:** Cloud Shell uses *websockets* to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
-## Task 5: Create a Folder to Contain the Workshop Code
+## **Task 5:** Create a Folder to Contain the Workshop Code
 
 1. Create a directory to contain the workshop code. The directory name is used to create a compartment of the same name in your tenancy. The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
@@ -72,12 +72,12 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     <copy>cd lab8022</copy>
     ```
 
-## Task 6: Make a Clone of the Workshop Setup Script and Source Code
+## **Task 6:** Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```bash
-    <copy>git clone -b 22.1.4 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
+    <copy>git clone -b 22.2.2 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
     ```
 
    You should now see the directory `microservices-datadriven` in the directory that you created.
@@ -86,7 +86,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```bash
     <copy>
-    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/microservices-oracleteq-kafka" >>~/.bashrc
+    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/oracleteq-kafka" >>~/.bashrc
     export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2
     echo "export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2" >>~/.bashrc
     echo "export PATH=$JAVA_HOME/bin/:$PATH" >>~/.bashrc
@@ -94,96 +94,113 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     </copy>
     ```
 
-## Task 7: Start the Setup
+## **Task 7:** Start the Setup
 
-1. Execute the following sequence of commands to start the setup.  
+1. Execute the following commands to start the setup.  
 
     ```bash
     <copy>
     source $LAB_HOME/cloud-setup/env.sh
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     source $LAB_HOME/cloud-setup/setup.sh
     </copy>
     ```
 
-   Note, cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run this command to resume the setup:
+    > **Note:** Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run this command to resume the setup:
 
-    ```bash
-    <copy>source $LAB_HOME/cloud-setup/setup.sh</copy>
-    ```
+    >   ```bash
+        <copy>source $LAB_HOME/cloud-setup/setup.sh</copy>
+        ```
 
-   The setup process will typically take around 10 minutes to complete.  
+    The setup process will typically take around 10 minutes to complete.  
 
 2. The setup will ask for you to enter your User OCID.  
 
    Be sure to provide the user OCID and not the user name or tenancy OCID.
 
-   User information is available in the Oracle Cloud Console.
+   User information is available in the Oracle Cloud Infrastructure Console.
 
-   The user OCID will look something like `ocid1.user.oc1..aaaaaa==========l4oi======fasdf===f4===bta`. Note the "ocid1.user" prefix.
+   The user OCID will look something like `ocid1.user.oc1..aaaaaa==========l4oi======fasdf===f4===bta`. Pay attention to the "ocid1.user" prefix.
 
-   Note, sometimes the name link is missing in which case select the `User Settings` link. Do not select the "Tenancy" link.
+   Sometimes the name link is missing in which case select the `User Settings` link. Do not select the "Tenancy" link.
 
-   Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
+   a. Locate your menu bar and click the person icon at the far upper right. From the drop-down menu, select your user's name.
 
-    ![Obtain OCI User OCID](images/get-user-ocid.png " ")
+      ![Obtain Oracle Cloud Infrastructure User OCID](images/get-user-ocid.png " ")
 
-   Click Show to see the details and then click Copy to copy the user OCID to the clipboard, paste in the copied data in console.
+   b. Click Show to see the details and then click Copy to copy the user OCID to the clipboard, paste in the copied data in console.
 
-    ![OCI User OCID example](images/example-user-ocid.png " ")
+      ![Oracle Cloud Infrastructure User OCID example](images/example-user-ocid.png " ")
 
-3. The setup will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin". Please don't forget your database password because during the labs you will be asked to provide it again.
+3. The setup will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot have the double quote (") character or the word "admin.".
 
-**Note**: The passwords typed are not displayed.
+> **Note:** The passwords typed are not displayed and don't forget your database password because you will have to provide it again during the labs.
 
-## Task 8: Monitor the Setup
+## **Task 8:** Monitor the Setup
 
 The setup will provision the following resources in your tenancy:
 
 | Resources              | Oracle Cloud Console Navigation                                               |
 |------------------------|-------------------------------------------------------------------------------|
-| Object Storage Buckets | Storage --> Object Storage --> Buckets                                        |
+| Object Storage Buckets | Storage -- Object Storage -- Buckets                                          |
 | Database               | Oracle Database -- Autonomous Database -- Autonomous Transaction Processing   |
 
-You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
+1. Duplicate browser tab
 
-   ![Duplicate browser tab](images/duplicate-browser-tab.png " ")
+    You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
- From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
+    ![Duplicate browser tab](images/duplicate-browser-tab.png " ")
 
-   ![Select the OCI Compartment](images/select-compartment.png " ")
+2. Navigate to Database resources
 
-Also, the setup will pull a GraalVM CE java11 to your Cloud Shell (local) Docker Repository. Run the following command to check your local docker repository:
+    From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
 
-  ```bash
-  <copy>docker images</copy>
-  ```
+    ![Select the Oracle Cloud Infrastructure Compartment](images/select-compartment.png " ")
 
-As result you will see the following:
+3. Check the Docker images
 
-  ```bash
-  REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-  ghcr.io/graalvm/graalvm-ce   java11-22.0.0.2     9c09d46390b6        2 months ago        1.32GB
-  ```
+    Also, the setup will pull a GraalVM CE java11 to your Cloud Shell (local) Docker Repository. Run the following command to check your local docker repository:
 
-**Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+      ```bash
+      <copy>docker images</copy>
+      ```
 
-## Task 9: Complete the Setup
+    As result you will see the following:
+
+      ```bash
+      REPOSITORY                        TAG                 IMAGE ID            CREATED             SIZE
+      cp-kafka-connect-custom           0.1.0               b7c09d1ca0c1        6 minutes ago       1.43GB
+      ghcr.io/graalvm/graalvm-ce        ol8-java11          87c0795cf942        5 days ago          1.34GB
+      confluentinc/cp-kafka-connect     7.0.1               ce86628e990d        6 weeks ago         1.39GB
+      confluentinc/cp-server            7.0.1               81fddf506c55        6 weeks ago         1.54GB
+      confluentinc/cp-schema-registry   7.0.1               43303c1d5097        6 weeks ago         1.64GB
+      confluentinc/cp-zookeeper         7.0.1               3a7ea656f1af        6 weeks ago         780MB
+      ```
+
+> **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+
+## **Task 9:** Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has completed you will see the message: **SETUP_VERIFIED completed**.
 
-If any of the background setup jobs are still running you can monitor their progress with the following command.
+  1. Check the backgroud running tasks:
+    If any of the background setup jobs are still running you can monitor their progress with the following command.
 
-```bash
-<copy>ps -ef | grep "$LAB_HOME/cloud-setup/utils" | grep -v grep</copy>
-```
+      ```bash
+      <copy>ps -ef | grep "$LAB_HOME/cloud-setup/utils" | grep -v grep</copy>
+      ```
 
-Their log files are located in the $LAB_LOG directory.
+  2. View the processes logs. Their are located in the $LAB_LOG directory.
 
-```bash
-<copy>ls -al $LAB_LOG</copy>
-```
+      ```bash
+      <copy>ls -al $LAB_LOG</copy>
+      ```
 
-You may now **proceed to the next lab...**
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 

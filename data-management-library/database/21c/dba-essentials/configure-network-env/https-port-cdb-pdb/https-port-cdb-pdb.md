@@ -20,7 +20,9 @@ View the dispatcher configuration, check the default HTTPS port numbers for CDB 
 
 This lab assumes you have -
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- Completed all previous labs successfully.
+- You have completed:
+    - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
+    - Lab: Environment Setup
 
 ## Task 1: Set the Environment
 
@@ -45,7 +47,7 @@ To connect to Oracle Database and run SQL commands, set the environment first.
 
 	> **Note:** Oracle SID is case sensitive.  
 
-1. Change the current working directory to `$ORACLE_HOME/bin`. 
+1. Change the current working directory to `$ORACLE_HOME/bin`.
 
 	```
 	$ <copy>cd /opt/oracle/product/21c/dbhome_1/bin</copy>
@@ -55,7 +57,7 @@ You have set the environment variables for the active terminal session. You can 
 
 > **Note:** Every time you open a new terminal window, you must set the environment variables to connect to Oracle Database from that terminal. Environment variables from one terminal do not apply automatically to other terminals.
 
-Alternatively, you may run the script file `.set-env-db.sh` from the home location and enter the number for `ORACLE_SID`. It sets the environment variables automatically. 
+Alternatively, you may run the script file `.set-env-db.sh` from the home location and enter the number for `ORACLE_SID`. It sets the environment variables automatically.
 
 ## Task 2: View the Dispatcher Configuration
 
@@ -162,7 +164,7 @@ The default port for PDB is `0`. For this lab, change the port to, say, *5507*.
 	SQL> <copy>show pdbs</copy>
 	```
 	The values may differ depending on the system you are using.
-	
+
 	```
 		CON_ID CON_NAME			  			  OPEN MODE  RESTRICTED
 	---------- ------------------------------ ---------- ----------
@@ -178,9 +180,9 @@ The default port for PDB is `0`. For this lab, change the port to, say, *5507*.
 
 	Session altered.
 	```
-	
+
 3.	Verify that the container shows the PDB name you entered.
-	
+
 	```
 	SQL> <copy>show con_name</copy>
 	```
@@ -201,7 +203,7 @@ The default port for PDB is `0`. For this lab, change the port to, say, *5507*.
 	Pluggable database altered.
 	```
 
-	> **Note:** If the PDB is in `open` state, the above command returns an error message that the PDB is already open. 
+	> **Note:** If the PDB is in `open` state, the above command returns an error message that the PDB is already open.
 
 5. View the current port number of PDB.
 
