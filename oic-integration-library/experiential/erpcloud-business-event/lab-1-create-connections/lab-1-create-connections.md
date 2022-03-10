@@ -46,7 +46,13 @@ Create a connection with the Oracle ERP Cloud Adapter.
     |Password | `<password>`|
     |
 
-6. Click on **Test**, followed by **Save**. Exit the connection canvas by clicking the back button on the top left side of the screen.
+6. Click on **Test** and wait until you receive a 
+confirmation box that the test was successful.
+
+    > **Note:** The first time you run the Test, it could take up to 2 minutes. 
+
+7. Click **Save** and wait for the confirmation box. Exit the connection canvas by clicking the back button on the top left side of the screen.
+
 
 
 ## **Task 2:** Create an Oracle Autonomous Data Warehouse Connection 
@@ -71,11 +77,11 @@ Create a connection with the Oracle Autonomous Data Warehouse Adapter.
 
     | **Field**  | **Value** |
     |---|---|
-    |Service Name | `<adb-service-name>` |
-    |Security Policy | `JDBC Over SSL`|
+    |Service Name | `<your-adb-tns-name>` |
+    |Security Policy | **JDBC Over SSL**|
     |Wallet | **Upload wallet file (Zip)** |
     |Wallet Password | `<password>`|
-    |Database Service Username | `<db-service-user>` |
+    |Database Service Username | `<db-service-user>` (Default: `ADMIN`|
     |Database Service Password | `<db-service-password>` |
     |
 

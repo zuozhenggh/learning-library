@@ -113,7 +113,7 @@ Follow these steps to create a DB table which will be used as part of this works
     NOPARALLEL;
     ```
 
-6. Paste the script in SQL Worksheet, then click **Run It** button. This will create the **PURCHASEORDER** table. The table is created successfully when you see the notification in the **Script Output**. 
+6. Paste the script in SQL Worksheet, then click **Run It** button. This will create the **PURCHASEORDER** table. The table is created successfully when you see the notification in the *Script Output*. 
 
     ![Past SQL Script](images/paste-run-sql-script.png)
 
