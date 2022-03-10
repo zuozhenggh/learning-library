@@ -25,6 +25,7 @@ cmp\_ratio: Compression ratio, blkcnt\_uncmp divided by blkcnt\_cmp
  
 comptype\_str: Compression type
 
+run the following procedure.
 
 ```
 <copy>  
@@ -50,6 +51,8 @@ END;
 /  
 </copy>
 ```
+    
+![compressed blocks](images/compressed-blocks-sales.png "compressed blocks")
  
 ## Learn More
 * [DBMS_COMPRESSION](https://docs.oracle.com/cd/E11882_01/appdev.112/e40758/d_compress.htm )
