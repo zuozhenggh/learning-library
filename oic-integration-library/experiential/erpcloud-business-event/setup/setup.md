@@ -35,7 +35,7 @@ In this lab, you will:
 
 5. Provide a Wallet password, then click **Download**. Save the wallet file (ZIP) on your local machine. This file will be used later when creating the Autonomous Database connection in Oracle Integration. 
 
-6. Under *Connection Strings*, select one of the TNS Name entries and note it down. This value will used later when creating the Autonomous Database connection in Oracle Integration.
+6. Under *Connection Strings*, select one of the *TNS Name* entries and write it down. This value will used later when creating the Autonomous Database connection in Oracle Integration.
 
 7. Click **Close**.
 
@@ -46,6 +46,8 @@ Follow these steps to create a DB table which will be used as part of this works
 1.  If you are not already logged in to SQL Worksheet, in your ADW Database Details page, click the **Database Actions** button.
 
     ![Click Database Actions](images/click-database-actions.png)
+
+    > If you are automatically signed is as *ADMIN* user, then skip to step 4. 
 
 2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, Username = `ADMIN` and click **Next**.
 
