@@ -6,7 +6,7 @@ This lab shows you how to stage and publish your web app.
 
 Estimated Time:  10 minutes
 
-### Background
+### About this lab
 
 So far in this workshop, you've built the HR web application to show employees, their departments, and locations. Now that your work designing the app is more or less complete, you can stage it to allow team members to test it thoroughly. After testing is complete, you can publish the application and make it available to users.
 
@@ -26,7 +26,7 @@ Stage the application so that other users can test its behavior.
 
     ![](./images/vbcssp_sta_s3.png)
 
-    The application is staged, and its status as shown in the header changes from `DEV` to `STAGE`.
+    The application is staged, and its status in the header changes from `DEV` to `STAGE`.
 
 3.  From the header **Menu** ![Menu icon](./images/vbcssp_menu3_icon.png), click **Open Staged Application**.
 
@@ -44,7 +44,7 @@ Stage the application so that other users can test its behavior.
 
 To add more records to your data in the staging database, let's import data for the Department and Employee business objects from a zip file.
 
-1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/fxYS-wCkrWveFFyOH9qy9uyv24QowtS8uhdCDGmUvqJZqeFA7JAhkXHlOd6IXMpb/n/c4u03/b/oci-library/o/WMS4121HR_Application_Stage.zip) and save the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
+1.  Click [this link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CSv7IOyvydHG3smC6R5EGtI3gc1vA3t-68MnKgq99ivKAbwNf8BVnXVQ2V3H2ZnM/n/c4u04/b/livelabsfiles/o/solutions-library/HR_Application_Stage.zip) and save the `HR_Application_Stage.zip` file. The zip file contains CSV files of the Department and Employee business objects of the HR Application schema, with more records and data.
 
 2.  In the Navigator, click the **Business Objects** ![Business Objects icon](./images/vbcssp_bo_icon.png) tab, then click **Menu** ![Menu icon](./images/vbcssp_menu2_icon.png) and select **Data Manager**.
 
@@ -96,9 +96,9 @@ After you have successfully tested the staged application, you can publish it an
 
     After your application is published, you will no longer be able to make changes to it. To do that, you'll need to create a new version from the application's Options menu on the Visual Applications page. This creates a development version of the app for you to work on while the published version stays live. Once you are ready to go live with your updates, you'll need to re-stage and re-publish the new version.
 
-    That's it for this workshop! If you want, click the user menu in the top-right corner and select Sign Out from the menu.
+    And that's it for this workshop! If you want, click the user menu in the top-right corner and select Sign Out from the menu.
 
 ## Acknowledgements
 
 * **Author** - Sheryl Manoharan, Visual Builder User Assistance
-* **Last Updated By** - November 2021
+* **Last Updated By** - February 2022
