@@ -81,7 +81,7 @@ Create a connection with the Oracle Autonomous Data Warehouse Adapter.
     |Security Policy | **JDBC Over SSL**|
     |Wallet | **Upload wallet file (Zip)** |
     |Wallet Password | `<password>`|
-    |Database Service Username | `<db-service-user>` (Default: `ADMIN`|
+    |Database Service Username | `<db-service-user>` (Default: `ADMIN`)|
     |Database Service Password | `<db-service-password>` |
     |
 

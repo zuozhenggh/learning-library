@@ -42,7 +42,7 @@ We will start by creating a new integration and adding some basic info.
 6. Click **Save** to persist changes. 
 
 
-## Task 2: Define ERP Purchase Order (PO) Event trigger
+## **Task 2:** Define ERP Purchase Order (PO) Event trigger
 Add ERP PO Event trigger to the empty integration canvas.
 
 1. Click the **+** sign below *START* in the integration canvas.
@@ -59,7 +59,9 @@ Add ERP PO Event trigger to the empty integration canvas.
     | --- | ----------- |
     | Define the purpose of the trigger         | **Receive Business Events raised within ERP Cloud**       |
     | Business Event for Subscription  | **Purchase Order Event** |
-    | Filter Expr for Purchase Order Event | ```<copy><xpathExpr xmlns:ns0="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/" xmlns:ns2="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/types/">$eventPayload/ns2:result/ns0:Value/ns0:DocumentDescription=**"LL demo"**</xpathExpr></copy>``` |
+    | Filter Expr for Purchase Order Event | ```
+    <copy><xpathExpr xmlns:ns0="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/" xmlns:ns2="http://xmlns.oracle.com/apps/prc/po/editDocument/purchaseOrderServiceV2/types/">$eventPayload/ns2:result/ns0:Value/ns0:DocumentDescription=**"LL demo"**</xpathExpr></copy>
+    ``` |
     |
 
 
@@ -84,7 +86,7 @@ Add ERP PO Event trigger to the empty integration canvas.
 10. Click **Save** to persist changes. 
  
 
-## Task 3: Add the ADW invoke activity
+## **Task 3:** Add the ADW invoke activity
 Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canvas.
 
 1. Hover you cursor over the **+** sign that is displayed after the trigger activity in the integration canvas. Click the **+** sign and select the ADW connection created in Lab 1. 
@@ -125,7 +127,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
 7. Click **Save** to persist changes. 
 
 
-## Task 4: Map data between ERP trigger and ADW invoke
+## Task **4:** Map data between ERP trigger and ADW invoke
 Use the mapper to drag fields from the source structure (ERP PO event data)  to the target structure (ADW PO table) to map elements between the two.
 
 When we added the ADW invoke to the integration, a map icon was automatically added. 
@@ -165,7 +167,7 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
 5. Click **Save** to persist changes. 
 
 
-## Task 5: Define Tracking Fields
+## **Task 5:** Define Tracking Fields
 Manage business identifiers that enable you to track fields in messages during runtime. 
 
 > **Note:** If you have not yet configured at least one business identifier **Tracking Field** in your integration, then an error icon is displayed in the design canvas. 
@@ -182,7 +184,7 @@ Manage business identifiers that enable you to track fields in messages during r
 
 4. On the Integration canvas, click **Save**, followed by **Close**.
 
-## Task 6: Activate the integration
+## **Task 6:** Activate the integration
 
 1. On the *Integrations* page, click on the **Activate** icon.
 
