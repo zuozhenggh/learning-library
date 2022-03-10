@@ -47,7 +47,7 @@ Follow these steps to create a DB table which will be used as part of this works
 
     ![Click Database Actions](images/click-database-actions.png)
 
-    > **Note:** If you receive dialog with message "Authorization failed or requested resource not found", then go to the next 2. If you are automatically signed is as *ADMIN* user, then skip to step 4. 
+    > **Note:** If you receive a dialog with message "Authorization failed or requested resource not found", then go to the next step. If you are automatically signed is as *ADMIN* user, then skip to step 4. 
 
 2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account, Username = `ADMIN` and click **Next**.
 
