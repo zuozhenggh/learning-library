@@ -91,8 +91,9 @@ To create a notebook:
 	![Notebooks option in hamburger](images/hamburger-notebooks.png)
 
 2. On the Notebooks page, click **Create**. The Create Notebook dialog opens.
-	![Create Notebook dialog](images/create-notebook.png)
+	<if type="livelabs">![Create Notebook dialog](images/create-notebook.png) </if>
 
+	<if type="freetier"> ![Create Notebook dialog](images/create-notebook-freetier.png) </if>
 
 3. In the Name field, enter **Test Notebook**.
 
@@ -310,7 +311,8 @@ This step demonstrates how to create the OML4Py Classification notebook based on
 
 6. The OML4PY Classification DT (1) notebook is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor. Note that you will run this notebook in the subsequent steps.
 
-	![Notebook listed](images/notebook-listed.png)
+	<if type="livelabs"> ![Notebook listed](images/notebook-listed.png) </if>
+	<if type="freetier"> ![Notebook listed](images/notebooks-3.png) </if>
 
 This completes the task of creating a notebook from an Example template.
 
@@ -349,7 +351,8 @@ These steps demonstrate how to create the Time Series notebook based on the Exam
 
 12. The notebook **Notebook "OML4SQL Time Series ESM (1)** is now listed on the Notebooks page, as shown in the screenshot. Click on the notebook to open it in the Notebooks editor and work on it.
 
-	![Notebook listed](images/notebook-list-1.png)
+	<if type="livelabs"> ![Notebook listed](images/notebook-list-1.png)</if>
+	<if type="freetier">![Notebook listed](images/notebooks-4.png) </if>
 
 This completes the task of creating the Time Series notebook from the OML4SQL Time Series ESM Example template.
 
@@ -381,7 +384,8 @@ In this step, you learn how to set the interpreter bindings:
 
 2. On the Notebooks page, click on the **OML4PY Classification_DT (1)** notebook to open it in the Notebook editor.
 
-	![Open Classification notebook](images/open_classification_dt.png)
+	<if type="livelabs"> ![Open Classification notebook](images/open_classification_dt.png) </if>
+	<if type="freetier"> ![Open Classification notebook](images/open-notebooks-4.png) </if>
 
 3. Click ![gear icon](images/gear.png) on the top right corner of the notebook. This opens the interpreter settings.
 
@@ -465,4 +469,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** -  Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -   Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, February 2022
+* **Last Updated By/Date** - Moitreyee Hazarika, March 2022

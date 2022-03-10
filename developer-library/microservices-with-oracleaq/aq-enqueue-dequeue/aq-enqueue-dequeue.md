@@ -1,4 +1,4 @@
-# Advanced Queues
+# Understand Advanced Queues
 
 ## Introduction
 

@@ -110,7 +110,7 @@ To create a user account:
 
 6. On the Oracle Machine Learning User Administration Sign in page, enter the username and password to sign in.
 
-	>**Note:** The username is ADMIN. The password is what is you have defined while provisioning the Autonomous Database instance.   
+	>**Note:** The username is ADMIN. For the password, use the password you defined while provisioning the Autonomous Database instance.   
 
 	![Oracle Machine Learning User Administration Sign in page](images/database-admin-signin.png)
 
@@ -132,9 +132,13 @@ To create a user account:
 
 	* **Confirm Password:** Enter the password to confirm the value that you entered in the **Password** field. By doing so, you create the password for the user. The user can change the password when first Signing in.
 
-8. Click **Create**.
+8. Click **Create**. After the user is created, it is listed on the Oracle Machine Learning User Administration page. This completes the task of creating an Oracle Machine Learning user.
 
-This completes the task of creating an Oracle Machine Learning user.
+	 ![Oracle Autonomous Data Warehouse](images/omluser-created.png)
+
+	 > **Note:** Click on the home icon on the top right corner of the Oracle Machine Learning User Administration page to open the Oracle Machine Learning Notebooks home page.
+
+
 
 ## Task 3: Sign into Oracle Machine Learning
 
@@ -166,33 +170,22 @@ This completes the task of signing into Oracle Machine Learning user interface.
 
 ## Task 4: Create the CUSTOMERS360 table
 
-In this step, you will create a notebook and run a SQL query to create the table ``CUSTOMERS60``.
+In this step, you will create the table ``CUSTOMERS60`` by using the Scratchpad. The Scratchpad is available on the Oracle Machine Learning Notebooks home page. The Scratchpad is a one-click access to a notebook for running SQL statements, PL/SQL scripts, and Python scripts. After you run your scripts, the Scratchpad is automatically saved as a notebook by the default name _Scratchpad_ in the Notebooks page. You can access it later in the Notebooks page. You will learn more about notebooks in Lab 1.
 
 >**Note:** You will be using the table CUSTOMERS360 in the _Using Oracle Machine Learning AutoML UI_ lab and _Using Oracle Machine Learning Services_ lab.
 
 To create the table:
 
-1. On the Oracle Machine Learning home page, click **Notebooks**. The Notebooks page opens.
+1. On the Oracle Machine Learning home page, click **Scratchpad**.
 
-	![Notebooks option in OML homepage](images/homepage-notebooks.png)
-
-	Alternatively, you can click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the home page to open the left navigation menu. Click **Notebooks**.
+	![Notebooks option in OML homepage](images/homepage-scratchpad.png)
 
 
-	![Notebooks option in hamburger](images/hamburger-notebooks.png)
+2. By default, the Scratchpad opens with three paragraphs: `%sql` (to run SQL statements), `%script` (to run PL/SQL scripts), and `%python` (to run Python scripts). Here, you will use the SQL paragraph to run a SQL statement to create the CUSTOMER360 table. On the SQL paragraph, click after the `%sql` tag, and press enter.
 
-2. On the Notebooks page, click **Create**.
+	![Create Notebook dialog](images/scratchpad.png)
 
-	![Create Notebook dialog](images/create-notebook.png)
-
-3. In the Create Notebook dialog, enter `Customers_360` in the name field. and click **OK**.
-
-4. Type ``%sql`` to connect to the SQL interpreter and press Enter.
-
-	![SQL tag](images/tag-sql.png)
-
-
-5. Enter the following script and click the Run icon ![run icon](images/run.png):
+3. In the SQL paragraph, enter the following script and click the Run icon ![run icon](images/run.png):
 
     ```
     <copy>
@@ -206,9 +199,13 @@ To create the table:
 		</copy>
     ```
 
-	![SQL script to create Customers360 table](images/sql-script.png)
+	![SQL script to create Customers360 table](images/scratchpad-run.png)
 
-6. In the next paragraph, run the following script to view the data:
+	After the script runs successfully, the paragraph status changes to `FINISHED`, as shown in the screenshot:
+
+	![SQL script to create Customers360 table](images/scratchpad-finished.png)
+
+6. In the next paragraph, edit the paragraph tag to change it to `%sql`, and run the following statement to view the data:
 
 	```
 		<copy>
@@ -232,4 +229,4 @@ You may now proceed to the next lab.
 ## Acknowledgements
 * **Author** - Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Principal Member of Tech Staff, Advanced Analytics, Machine Learning
-* **Last Updated By/Date** - Moitreyee Hazarika, February 2022
+* **Last Updated By/Date** - Moitreyee Hazarika, March 2022
