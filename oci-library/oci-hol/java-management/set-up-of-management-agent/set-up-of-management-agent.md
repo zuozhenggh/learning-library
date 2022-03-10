@@ -293,9 +293,9 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 7. The output will look similar to the following:
 
     ```
-    C:\Users\test_agent>installer-wrapper.bat "C:\Program Files\Java\jdk.1.8.0_261" "C:\Users\input.rsp"
-    setting JAVA_HOME to C:\Program Files\Java\jdk1.8.0_261
-    Java home set to C:\Program Files\Java\jdk1.8.0_261
+    C:\Users\test_agent>installer-wrapper.bat "C:\PROGRA~1\Java\jdk.1.8.0_261" "C:\Users\input.rsp"
+    setting JAVA_HOME to C:\PROGRA~1\Java\jdk1.8.0_261
+    Java home set to C:\PROGRA~1\Java\jdk1.8.0_261
     Found OVERRIDE_VERSION_CHECK environment variable. This flag allows to install Agent on non-supported platforms.
     Please remove this environment variable and retry agent install if you want to use only supported platforms.
 
@@ -306,7 +306,7 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
           Checking if C:\Oracle\mgmt_agent\200820.0751 directory exists
           Checking available disk space for agent install
           Checking Java version
-                  Java version: 1.8.0_261 found at C:\Program Files\Java\jdk1.8.0_261
+                  Java version: 1.8.0_261 found at C:\PROGRA~1\Java\jdk1.8.0_261
 
     Executing install
           Unpacking software zip
@@ -372,7 +372,7 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
 
 ### For Windows:
 
-1. Open a command prompt as an **administrator**, and create the following script for configuring the usage tracker.
+1. Open a command prompt as an **Administrator**, and create the following script for configuring the usage tracker.
 
     ```
     <copy>
