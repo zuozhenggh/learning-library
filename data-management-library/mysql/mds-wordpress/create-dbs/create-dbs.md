@@ -1,5 +1,5 @@
 # Create and Configure Oracle MySQL Database Service
-![INTRO](./images/00_mds_image.png " ")  
+![INTRO](./images/00-mds-image.png " ")  
 
 ## Introduction
 

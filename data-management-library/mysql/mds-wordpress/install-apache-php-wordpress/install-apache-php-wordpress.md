@@ -1,5 +1,5 @@
 # Install Apache, PHP, and WordPress
-![INTRO](./images/00_mds_image.png " ") 
+![INTRO](./images/00-mds-image.png " ") 
 
 
 ## Introduction
@@ -14,7 +14,7 @@ In this lab, you will install an Apache web server with PHP, and MySQL Shell is 
 _Estimated Time:_ 20 minutes
 
 
-## Objectives
+### Objectives
 
 In this lab, you will be guided through the following tasks:
 
@@ -30,12 +30,13 @@ In this lab, you will be guided through the following tasks:
 * A web browser
 * Should have completed Lab4
 
-## **TASK 1:** Intall Apache
+## **Task 1:** Intall Apache
 1. Copy the public IP address of the active Compute Instance to your notepad
 
     - Go to Navigation Menu 
             Compute 
             Instances
+            
     ![CONNECT](./images/db-list.png " ")
 
     - Click the `MDS-Client` Compute Instance link
@@ -45,13 +46,13 @@ In this lab, you will be guided through the following tasks:
     - Copy `MDS-Client` plus  the `Public IP Address` to the notepad
 
 2. Your notepad should look like the following:
-     ![CONNECT](./images/notepad-rsa-key-compute-mds-1.png " ")
+    ![CONNECT](./images/notepad-rsa-key-compute-mds-1.png " ")
     
 3. Indicate the location of thepublic key you created earlier with **MDS-Client**. 
     
     Enter the username **opc** and the Public **IP Address**.
 
-    Note: The **MDS-Client**  shows the  Public IP Address as mentioned on TASK 5: #11
+    **Note:**  The **MDS-Client**  shows the  Public IP Address as mentioned on TASK 5: #11
     
     (Example: **ssh -i ~/.ssh/id_rsa opc@132.145.170...**) 
 
@@ -86,7 +87,7 @@ In this lab, you will be guided through the following tasks:
 
     Example: http://129.213....
 
-## **TASK 2:** Intall PHP 
+## **Task 2:** Intall PHP 
 
 1.	Install php:
 
@@ -123,7 +124,7 @@ phpinfo();
 
    Example: http://129.213.167.../info.php
 
-## **TASK 3:** Install WordPress
+## **Task 3:** Install WordPress
 
 1. Install WordPress required packages.
 
@@ -169,7 +170,7 @@ phpinfo();
     <copy>sudo setsebool -P httpd_can_network_connect_db 1</copy>   
     ````
 
-## **TASK 4:** Install MySQL Shell,  and create the WordPress user and database.
+## **Task 4:** Install MySQL Shell,  and create the WordPress user and database.
 
 1. Install MySQL Shell and setup wordpress database
 
@@ -198,10 +199,10 @@ phpinfo();
     ````
 
     ````
-    <copy>\q;</copy>   
+    <copy>\q</copy>   
     ````
 
-## **TASK 5:** Configure WordPress
+## **Task 5:** Configure WordPress
 
 1. From a browser access http://instance public IP/wp-admin/setup-config.php.
 
