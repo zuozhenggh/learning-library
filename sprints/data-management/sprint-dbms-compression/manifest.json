@@ -6,6 +6,11 @@
             "title": "How do I get Compression Ratio?",
             "description": "",
             "filename": "sprint-dbms-compression.md"
+        },
+        {
+            "title": "How do I connect to the instance via SSH?",
+            "description": "",
+            "filename": "../sprint-connect-to-instance-via-ssh/instance-ssh.md"
         }
 
     ]
