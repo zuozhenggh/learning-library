@@ -107,7 +107,7 @@ You can login using admin/admin as username/password and change the password acc
 ![Fill MySQL](images/AddDatasource-4.png)
 
 3. Import MySQL Dashboard
-* Choose "Import" from "+" left menu and put in 7362 dashboard ID for import
+* Choose "Import" from "+" left menu and put in 7991 dashboard ID for import
 ![Import](images/import7991.png)
 
 * Choose the Datasource and click "Import"
