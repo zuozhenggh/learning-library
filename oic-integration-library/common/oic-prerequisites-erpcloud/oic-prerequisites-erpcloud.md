@@ -1,4 +1,6 @@
-# ERP Cloud Prerequisites for OCI Integration
+# Oracle ERP Cloud Prerequisites for OCI Integration
+
+> **Note:** This step is required **only** if your Oracle ERP environment is not yet configured to work with Oracle Integration
 
 ## Introduction
 In this lab you will assign a custom role to an integration service user. This user account will be specified when creating an Oracle ERP Cloud Adapter connection in Oracle Integration.
@@ -21,7 +23,7 @@ This lab assumes you have
 1. Login to Oracle ERP Cloud
 
 2. Select **Navigator** > **Tools** > **Security Console**.
-    ![](images/erp-open-security-console.png)
+    ![Open Security Console](images/erp-open-security-console.png)
 
 3. In the *Roles* tab, click **Create Role**. 
 
@@ -73,7 +75,7 @@ This lab assumes you have
 6. Click **Done** to close the Role Membership dialog. 
 
 7. In the *User Information* canvas, click **Save and Close**.
-    ![User with added role](images/erp-user-with-roles.png)
+    ![Save user with added role](images/erp-user-with-roles.png)
 
 
 You have completed the final step of this lab.

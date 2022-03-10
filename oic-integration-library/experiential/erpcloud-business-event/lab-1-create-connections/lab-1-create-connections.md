@@ -24,7 +24,7 @@ Create a connection with the Oracle ERP Cloud Adapter.
 2. Click **Create**.
 
 3. In the *Create Connection - Select Adapter* dialog, select the **Oracle ERP Cloud** adapter to use for this connection. To find the adapter, enter `erp` in the search field. Click on the highlighted adapter and hit **Select**.
-    ![](images/create-erp-connection.png)
+    ![Create ERP Cloud connection](images/create-erp-connection.png)
 
 4. In the *Create Connection* dialog, enter the following information:
 
@@ -55,7 +55,7 @@ Create a connection with the Oracle Autonomous Data Warehouse Adapter.
 1. From the *Connections* window, click **Create**.
 
 2. In the *Create Connection - Select Adapter* dialog, select the **Oracle ADW** adapter to use for this connection. To find the adapter, enter `adw` in the search field. Click on the highlighted adapter and hit **Select**.
-    ![](images/create-adw-connection.png)
+    ![Create ADW connection](images/create-adw-connection.png)
 
 3. In the *Create Connection* dialog, enter the following information:
 
@@ -79,7 +79,7 @@ Create a connection with the Oracle Autonomous Data Warehouse Adapter.
     |Database Service Password | `<db-service-password>` |
     |
 
-    ![](images/configure-adw-connection.png)
+    ![Configure ADW connection](images/configure-adw-connection.png)
     
 5. Click on **Test**, followed by **Save**. Exit the connection canvas by clicking the back button on the top left side of the screen.
 
