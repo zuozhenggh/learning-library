@@ -1,4 +1,4 @@
-# Introduction
+# Oracle Database 21c deinstallation
 
 ## About this workshop
 
@@ -29,7 +29,15 @@ The `deinstall` command performs various functions, such as:
  - Removes the Oracle Database instances including CDB and all PDBs
  - Deletes Oracle home
 
-The `deinstall` command is located in Oracle home under the subdirectory `/u01/app/oracle/product/21.0.0/dbhome_1/deinstall`.
+The `deinstall` command is located in Oracle home under the subdirectory `deinstall`. 
+
+For example -
+
+```
+$ /opt/oracle/product/21c/dbhome_1/deinstall
+```
+
+The path may differ depending on the system you are using.
 
 If the database software in Oracle home is not running for any reason (let's say, due to an unsuccessful installation), then `deinstall` cannot determine the configuration. You must provide all the configuration details either interactively or in a response file. A response file contains configuration values for Oracle home that `deinstall` uses.
 
@@ -77,4 +85,4 @@ Click on the next lab to **Get Started**.
 
 -   **Contributors** - Subrahmanyam Kodavaluru, Suresh Rajan, Prakash Jashnani, Malai Stalin, Subhash Chandra, Dharma Sirnapalli
 
--   **Last Updated By/Date** - Manish Garodia, February 2022
+-   **Last Updated By/Date** - Manish Garodia, March 2022
