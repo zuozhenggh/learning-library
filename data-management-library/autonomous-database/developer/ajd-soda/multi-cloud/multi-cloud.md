@@ -54,7 +54,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![MongoDBConnectCluster](./images/task1/mongodbconnectcluster.png)
 
-    - **Connect Your Application**: Python 3.6 or later. 
+    - **Connect Your Application**: Python 3.6 or later
         You will receive a connection string like this:
 
     ````
@@ -78,7 +78,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
 8. Click Create Database, and name it **SimpleDatabase**, and the collection **SimpleCollection**. This will be used for our Python application development in the next lab.
 
-    ![MongoDB Create Database](./images/task1/mongodbcCreatedatabase.png)
+    ![MongoDB Create Database](./images/task1/mongodbcreatedatabase.png)
     ![MongoDB Simple DB](./images/task1/mongodbsimpledb.png)
 
 9. On the Collections left-side menu, select **SimpleDatabase** > **SimpleCollection**. This collection is now empty.
@@ -222,7 +222,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ````
     ![POST Company Five & Six](./images/task2/postcompanyfivesix.png)
 
-5. Hit **Enter** after each block you copy/paste.
+5. Press **Enter** after each block you copy/paste.
     
     ````
     <copy>
@@ -262,7 +262,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![Microservice Company Five, Six, Seven & Eight](./images/task2/microservicecompanyfivesixseveneight.png)
 
-7. Go to the first Terminal window where the micro-service is running and hit CTRL+C to stop it.
+7. Go to the first Terminal window where the micro-service is running and press CTRL+C to stop it.
             
     ````
     <copy>
@@ -364,7 +364,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![Microservice Company Five, Six, Seven, Eight, One, Two, Three & Four](./images/task3/microservicecompanyfivesixseveneightonetwothreefour.png)
 
-6. Go to the Terminal tab where the micro-service is running, and hit CTRL+C to stop it.
+6. Go to the Terminal tab where the micro-service is running, and press CTRL+C to stop it.
 
     ````
     <copy>
@@ -400,7 +400,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Valentin Leonard Tabacaru, March 2022
+* **Last Updated By/Date** - Priscila Iruela, March 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
