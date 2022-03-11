@@ -61,7 +61,7 @@ Follow these steps to create a DB table which will be used as part of this works
 
     ![Open SQL](images/open-sql.png)
 
-    > **Note:** If this is the very first time you open the SQL action, then you will start with a click-demo. Just hit the **X** button to proceed. 
+    > **Note:** If this is the very first time you open the SQL Action, then a click-demo will be displayed. Just hit the **X** button to proceed. 
 
 5. The SQL Worksheet appears. Before you proceed with the SQL Worksheet, copy below code snippet:
     ```

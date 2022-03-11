@@ -115,7 +115,7 @@ In this lab, you will:
 
 
 8. Choose network access:
-    - For this lab, accept the default, "Secure access from everywhere."
+    - For this lab, accept the default, **Secure access from everywhere**.
     - If you want to restrict access to specified IP addresses and VCNs, select "Secure access from allowed IPs and VCNs only." You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
     - If you want a private endpoint, to enable traffic only from the VCN you specify - and to block access to the database from all public IPs or VCNs, select "Private endpoint access only" in the Choose network access area.
     - If you select "Secure access from allowed IPs and VCNs only" or "Private endpoint access only", you can use the checkbox to require mutual TLS (mTLS) authentication to authenticate connections to your database. If you don't select this checkbox, TLS or mTLS can be used.
@@ -123,23 +123,23 @@ In this lab, you will:
     ![Choose the network access.](./images/task2-8.png " ")
 
 <if type="livelabs">
-9. Choose a license type. For this lab, choose __Bring Your Own License (BYOL)__. The two license types are:
+9. Choose a license type. For this lab, choose **Bring Your Own License (BYOL)**. The two license types are:
 </if>
 <if type="freetier">
-9. Choose a license type. For this lab, choose __License Included__. The two license types are:
+9. Choose a license type. For this lab, choose **License Included**. The two license types are:
 </if>
 
-    - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
-    - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
+    - **Bring Your Own License (BYOL)** - Select this type when your organization has existing database licenses.
+    - **License Included** - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
 <if type="livelabs">
-    ![Click Create Autonomous Database.](./images/task2-9.png " ")
+    ![Click Create Autonomous Database](./images/task2-9.png " ")
 </if>
 <if type="freetier">
-    ![](./images/task2-9.png " ")
+    ![Click Create Autonomous Database](./images/task2-9.png " ")
 </if>
 
-10. Click __Create Autonomous Database__.
+10. Click **Create Autonomous Database**.
 
     ![](./images/task2-10.png " ")
 
