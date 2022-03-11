@@ -17,7 +17,7 @@ MySQL Database Service is a fully managed service, running on Oracle Cloud Infra
 * Create the table
 
 ## Task 1: Clone the GIT repository
-Open the Oracle Cloud Console and clone this repository:
+Open the Oracle Cloud Shell and clone this repository:
 
 ```
 <copy>git clone https://github.com/mgueury/oke_mysql_java_101.git</copy>
@@ -101,7 +101,7 @@ ssh -i &lt;privateKey&gt; -N -L &lt;localPort&gt;:10.0.10.2:3306 -p 22 ocid1.bas
 ```
 4. Try to connect through the bastion 
 
-- Back to the Cloud console
+- Back to the Cloud Shell
 - Modify the command
     - Remove the  -i <privateKey>, since it is the default key
     - Replace &lt;localPort&gt; with 3306
@@ -137,7 +137,7 @@ kubectl create -f setup/oke_mysql.yaml
 </copy>
 ```
 
-To allow the connection to the MySQL database from your console you need
+To allow the connection to the MySQL database from your Oracle Cloud Shell, you need
 to run the following MySQL commands:
 
 ```
@@ -149,9 +149,9 @@ exit
 exit
 </copy>
 ```
-This will connect to MySQL in the container. And create a user that may log in from the console.
+This will connect to MySQL in the container. And create a user that may log in from the shell.
 
-Then forward the MySQL port to your console and check if it works:
+Then forward the MySQL port to your Oracle Cloud Shell and check if it works:
 
 ```
 <copy>kubectl port-forward deployment/mysql 3306 &
