@@ -39,11 +39,11 @@ In this lab, you will:
 
     >**Note**: Use **Root** Compartment, oci-tenant(root), to create all resources for this workshop.
 
-    ![Oracle Console Networking](./images/task1/OracleConsoleNetworking.png)
+    ![Oracle Console Networking](./images/task1/oracleconsolenetworking.png)
 
 3. Select your Region and Compartment assigned by the instructor. Click **Start VCN Wizard**.
     
-    ![Oracle Console Networking Start Wizard](./images/task1/OracleConsoleNetworkingStartWizard.png)
+    ![Oracle Console Networking Start Wizard](./images/task1/oracleconsolenetworkingstartwizard.png)
 
 4. Select **Create VCN with Internet Connectivity**. Start **VCN Wizard**.
 
@@ -52,8 +52,8 @@ In this lab, you will:
 5. Provide the following information:
 
     - VCN Name: DEVCN
-    - Compartment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one.
-    - Click **Next**.
+    - Compartment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
+    - Click **Next**
 
     ![vcnName & Compartment](./images/task1/vcnnamecompartment.png)
 
@@ -83,7 +83,7 @@ In this lab, you will:
     - CIDR Block: 0.0.0.0/0
     - Destination Port Range: 5000
     - Description: Python Flask
-    - Click **+ Another Ingress Rule**.
+    - Click **+ Another Ingress Rule**
 
     ![Python Flask Rule](./images/task1/pythonflaskrule.png)
 
@@ -92,7 +92,7 @@ In this lab, you will:
     - CIDR Block: 0.0.0.0/0
     - Destination Port Range: 6080
     - Description: noVNC
-    - Click **+ Another Ingress Rule**.
+    - Click **+ Another Ingress Rule**
 
     ![noVNC Rule](./images/task1/novncrule.png)
 
@@ -101,7 +101,7 @@ In this lab, you will:
     - CIDR Block: 0.0.0.0/0
     - Destination Port Range: 80
     - Description: HTTP
-    - Click **Add Ingress Rules**.
+    - Click **Add Ingress Rules**
     
     ![HTTP Rule](./images/task1/addhttprule.png)
 
@@ -111,53 +111,49 @@ In this lab, you will:
 
 ## Task 2: Provision Compute Node for development
 
-1. Click on main menu ≡, then Compute > **Instances**. 
+1. Click on the following link to access to the customer image from [Oracle marketplace](https://bit.ly/3CxvsxA).
 
-    ![Oracle Console Compute](./images/task2/oracleconsolecompute.png)
+    ![Marketplace Image](./images/task2/marketplace_image.png)
 
-2. Click **Create Instance**.
-    
-    ![Create Instance](./images/task2/createinstance.png)
+2. Click **Get App**.
 
-3. Provide the following information:
+    ![Marketplace Get App](./images/task2/marketplace_getapp.png)
+
+3. Select **Commercial Market** and click **Sign in**.
+
+    ![Marketplace Commercial Market](./images/task2/marketplace_commercialmarket.png)
+
+4. In the next screen be dure that you have the correct information:
+
+    - Version: 2.0 (3/4/2022) - default
+    - Compartment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
+    - **Accept** the Oracle standard Terms and Restrictions
+    - **Launch Instance**
+
+    ![Marketplace Launch App](./images/task2/marketplace_launchapp.png)
+
+5. Provide the following information:
 
     - Name: DEVM
-    - Comparment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one.
-    - Image and shape: click **Edit/Collapse** and after **Change image**.
-
-    ![Compute Instance Creation](./images/task2/computeinstancecreation.png)
-
-    - Browse all images:
-        - Image source: Select - Image OCID
-        - Image OCID: Type - `ocid1.image.oc1..aaaaaaaamy3s2rymthz4dvguafjcwkipcvrybelu7z6yn7ustuodxh4dhv6q`
-        - **Select image**
+    - Comparment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
+    - Image and shape: click **Edit/Collapse** and after **Change shape** if you don't have the following information:
+        - Image: MongoDB and Autonomous JSON workshop
+        - Shape: VM.Standard.E2.1.Micro - Always Free eligible
     
-    ![Image OCID](./images/task2/imageocid.png)
-    
-    - Image and shape: click **Change shape**.
+    ![Marketplace Compute Instance Creation](./images/task2/marketplace_compute_instance_creation.png)
 
-        ![Compute Shape](./images/task2/computeshape.png)
-
-    - Browse all shapes:
-        - Instance type: Virtual machine
-        - Shape series: Specialty and previous generation 
-        - Shape: VM.Standard.E2.1.Micro (Always Free-eligible)
-        - **Select shape**.
-    
-    ![Shape Stardard E1](./images/task2/shapestardarde1.png)
-
-    - Networking: Be sure you have the following information. If not, click **Edit/Collapse** to edit rhe information.
+    - Networking: Be sure you have the following information. If not, click **Edit/Collapse** to edit the information
 
         - Virtual cloud network: DEVCN
         - Subnet: Public Subnet-DEVCN (regional)
     
-    ![Networking Compute](./images/task2/networkingnompute.png)
+    ![Networking Compute](./images/task2/networkingcompute.png)
 
-    - Download the private and public keys: **Save Private Key**, **Save Public Key**.
+    - Download the private and public keys: **Save Private Key**, **Save Public Key**
 
     ![Private & Public Keys](./images/task2/privatepublickeys.png)
 
-    - Click **Create**.
+    - Click **Create**
 
     ![Create Compute](./images/task2/createcompute.png)
        
@@ -201,7 +197,7 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 3. Provide the following information
 
-    - Comparment: Be sure you have selected the correct one for this workshop purpose. *Root* is the recommended one.
+    - Comparment: Be sure you have selected the correct one for this workshop purpose. *Root* is the recommended one
     - Display name: AJDEV
     - Database name: AJDEV
     - Choose a workload type: JSON
@@ -254,7 +250,7 @@ On the Instance Details page, copy Public IP Address in your notes.
     - Confirm Password: Password: DBlearnPTS#22_
     - Click **Download**
 
-    ![Download Wallet Password](./images/task3/dDownloadwalletpassword.png)
+    ![Download Wallet Password](./images/task3/downloadwalletpassword.png)
 
 11. Click **Save file** and **OK**.
     
@@ -268,7 +264,7 @@ On the Instance Details page, copy Public IP Address in your notes.
 
     ![noVnc Terminal](./images/task3/novncterminal.png)
 
-14. **Run** the following commands. Use **Shift+Ctrl+V** to paste the block in Terminal, and hit **Enter** after it.
+14. **Run** the following commands. Use **Shift+Ctrl+V** to paste the block in Terminal, and press **Enter** after it.
 
     ````
     <copy>
@@ -618,7 +614,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Microservice Company One, Two, Three & Four](./images/task5/microservicecompanyonetwothreefour.png)
 
-14. **Go** to the first Terminal window where the micro-service is running on port 5000, and hit CTRL+C to stop it.
+14. **Go** to the first Terminal window where the micro-service is running on port 5000, and press CTRL+C to stop it.
 
     ````
     <copy>
@@ -688,7 +684,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 6. Provide the following information:
 
     - Name: Companies
-    - Click Click **Add Page**. 
+    - Click Click **Add Page**
     
     ![Companies App](./images/task6/companiesapp.png)
 
@@ -698,7 +694,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     - Page Name: Report
     - SQL Query:
-    - Click **Add Page**. 
+    - Click **Add Page**
     ````
     <copy>
     SELECT co.JSON_DOCUMENT.company, 
@@ -712,7 +708,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Interactive Report Query](./images/task6/interactivereportquery.png)
     
-    - Click Create Application. 
+    - Click Create Application
     
     ![Create App](./images/task6/createapp.png)
 
@@ -746,7 +742,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Valentin Leonard Tabacaru, March 2022
+* **Last Updated By/Date** - Priscila Iruela, March 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
