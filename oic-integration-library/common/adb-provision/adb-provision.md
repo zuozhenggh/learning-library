@@ -72,26 +72,17 @@ In this lab, you will:
 
 3. Specify basic information for the autonomous database:
 
-    - __Compartment__ - Leave the default compartment.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __ADW Finance Mart__.
-    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.)
-    <if type="livelabs">For this lab, use __ADWFINANCE__ and **append your user id**. For example, if your user id is **LL-185**, then enter __ADWFINANCE185__
-    </if><if type="freetier">For this lab, use __ADWFINANCE__.</if>
-
-    <if type="livelabs">
-    ![Enter the required details.](./images/task2-3.png " ")
-    </if>
-    <if type="freetier">
-    ![Enter the required details.](./images/task2-3.png " ")
-    </if>
-
+    | **Field**  | **Value** | Note |
+    |---|---|---|
+    | **Compartment** | (Defaut) | |
+    | **Display Name** | `OICDemo` | Enter a memorable name for the database for display purposes |
+    | **Database Name** | `OICDEMO` | Use letters and numbers only, starting with a letter. Maximum length is 14 characters. |
+    | 
 
 4. Choose a workload type. Select the workload type for your database from the choices:
 
-    - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.
+    - **Data Warehouse** - For this lab, choose **Data Warehouse** as the workload type.
     - __Transaction Processing__ - Or, you could have chosen Transaction Processing as the workload type.
-
-    ![Choose a workload type.](./images/task2-4.png " ")
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
