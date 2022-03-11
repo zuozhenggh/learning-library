@@ -45,7 +45,7 @@ Here is a video to help with the Oracle Trial Sign Up Process:
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Valentin Leonard Tabacaru, March 2022
+* **Last Updated By/Date** - Priscila Iruela, March 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
