@@ -47,7 +47,7 @@ Follow these steps to create a DB table which will be used as part of this works
 
     ![Click Database Actions](images/click-database-actions.png)
 
-    > **Note:** If you receive a dialog with message "Authorization failed or requested resource not found", then go to the next step. If you are automatically signed is as *ADMIN* user, then skip to step 4. 
+    > **Note:** If you are redirected to the Database Actions page, then skip to Step 4. Otherwise, follow the next step to log-in manually.  
 
 2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account `ADMIN` and click **Next**.
 
@@ -63,7 +63,7 @@ Follow these steps to create a DB table which will be used as part of this works
 
     > **Note:** If this is the very first time you open the SQL action, then you will start with a click-demo. Just hit the **X** button to proceed. 
 
-5. The SQL Worksheet appears. Copy below code snippet:
+5. The SQL Worksheet appears. Before you proceed with the SQL Worksheet, copy below code snippet:
     ```
     <copy>
     CREATE TABLE PURCHASEORDER 
@@ -115,7 +115,7 @@ Follow these steps to create a DB table which will be used as part of this works
     </copy>
     ```
 
-6. Paste the script in SQL Worksheet, then click **Run It** button. This will create the **PURCHASEORDER** table. The table is created successfully when you see the notification in the *Script Output*. 
+6. Paste the script in the SQL Worksheet, then click **Run It** button. This will create the **PURCHASEORDER** table. The table is created successfully when you see the notification in the *Script Output* window. 
 
     ![Past SQL Script](images/paste-run-sql-script.png)
 
