@@ -19,6 +19,10 @@
             "filename": "./../../iam/identity-access-management.md"
         },
         {
+            "title": "Lab 2: IAM with Identity Domains",
+            "filename": "./../../iam/identity-access-management-identy-domain.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
