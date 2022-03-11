@@ -1,0 +1,12 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How do I create an Oracle user account?",
+            "description": "",
+            "filename": "sprint-oracle-user.md"
+        }
+
+    ]
+}

@@ -73,6 +73,8 @@ This lab assumes you have completed the following lab:
       </copy>
       ```  
 
+      view data in USER\_TAB\_PARTITIONS table
+
       ```
       <copy>
       SELECT  
