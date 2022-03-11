@@ -1,4 +1,4 @@
-# Second- Factor Authentication workflow using Transactional Event Queues
+# Use workflow with TEQ (Second-factor Authentication)
 
 ## Introduction
 

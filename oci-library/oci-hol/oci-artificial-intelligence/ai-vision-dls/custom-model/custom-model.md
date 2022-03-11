@@ -1,4 +1,4 @@
-# Lab 2: Create Custom AI Vision Model
+# Lab 2: Create a custom AI Vision Model
 
 ## Introduction
 In this lab, you will use the labeled dataset created in Lab 1 to train a custom image classification model. The image classification model will classify the images as either cell, stripe, or debris within a certain confidence.
@@ -20,15 +20,16 @@ In this lab, you will:
 
 Before you start using OCI Data Labeling Service, your tenancy administrator should set up the following policies by following below steps:
 
-1. Add IAM resources necessary for AI Vision usage. Note that <values> should be replaced with end-user's own values.
+1. Add IAM resources necessary for AI Vision usage.
 
   a. Policy (e.g. named AIVisionPolicy) with the following statements:
-  ```
-  <copy>Allow group ImageClassification_Group to manage ai-service-vision-family in tenancy</copy>
-  ```
-  ```
-  <copy>Allow group ImageClassification_Group to manage object-family in tenancy</copy>
-  ```
+
+      ```
+      <copy>Allow group ImageClassification_Group to manage ai-service-vision-family in tenancy</copy>
+      ```
+      ```
+      <copy>Allow group ImageClassification_Group to manage object-family in tenancy</copy>
+      ```
 
 
 ## **Task 1:** Create a Vision Project
@@ -81,7 +82,7 @@ Before you start using OCI Data Labeling Service, your tenancy administrator sho
 2. Review that the model information is correct and click 'Create and train.'
 ![](./images/create-and-train.png)
 
-Note: This step might vary in time. Wait for the model to appear as 'Active'.
+**Note:** This step might vary in time. Wait for the model to appear as 'Active'.
 
 ## **Task 4:** Test the Model On New Images
 
