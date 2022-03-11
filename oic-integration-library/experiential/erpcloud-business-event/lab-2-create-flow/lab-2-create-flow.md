@@ -128,7 +128,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
 7. Click **Save** to apply changes. 
 
 
-## Task **4:** Map data between ERP trigger and ADW invoke
+## **Task 4:** Map data between ERP trigger and ADW invoke
 Use the mapper to drag fields from the source structure (ERP PO event data)  to the target structure (ADW PO table) to map elements between the two.
 
 When we added the ADW invoke to the integration, a map icon was automatically added. 
@@ -139,8 +139,9 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
 2. Use the mapper to drag element nodes in the source ERP Cloud structure to element nodes in the target Oracle ADW structure.
 
     Expand the Source node:
+    
+        ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 &lt;<sequence\> > Value
 
-        ``ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 <sequence> > Value``
 
     Expand the Target node:
     

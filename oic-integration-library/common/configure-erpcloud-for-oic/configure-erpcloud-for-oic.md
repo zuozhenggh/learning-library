@@ -18,7 +18,7 @@ This lab assumes you have
 * Access to an ERP Cloud user account with privileges to assign specific roles to an integration user. 
 
 
-## Task 1: Create a custom Integration role
+## **Task 1:** Create a custom Integration role
 
 1. Login to Oracle ERP Cloud
 
@@ -41,16 +41,16 @@ This lab assumes you have
 
     | Grant Type | Name | Code |
     | ---- | ---- | ---- |
-    | Function Security Policy | Manage Webservices catalog | FND_MANAGE_CATALOG_SERVICE_PRIV
-    | Role | Integration Specialist | FND_INTEGRATION_SPECIALIST_JOB
+    | Function Security Policy | Manage Webservices catalog | FND_MANAGE\_CATALOG\_SERVICE\_PRIV
+    | Role | Integration Specialist | FND\_INTEGRATION\_SPECIALIST\_JOB
     | Role | Attachments User | AttachmentsUser |
-    | Role | SOA Operator | SOAOperator |FND_MANAGE_CATALOG_SERVICE_PRIV | 
+    | Role | SOA Operator | SOAOperator |
     | 
 
 
 7. In the *Summary* screen, click **Save and Close**.
 
-## Task 2: Create an Integration Service user with custom role
+## **Task 2:** Create an Integration Service user with custom role
 
 1. In the *Security Console*, select **Users** tab and click **Add User Account**.
 

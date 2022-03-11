@@ -16,7 +16,7 @@ In this lab, you will:
 * Completion of the **Provision an Oracle Autonomous Database** section in the **Contents** menu on the left
 
 
-## Task 1: Obtain Database Connection details
+## **Task 1:** Obtain Database Connection details
 1. If you are not already logged in to Oracle Cloud Console, log in and select **Autonomous Database** from the navigation menu under Oracle Database.
 
     ![Select Autonomous Database](images/adb-navigation.png)
@@ -40,7 +40,7 @@ In this lab, you will:
 7. Click **Close**.
 
 
-## Task 2: Create a database table using a SQL script
+## **Task 2:** Create a database table using a SQL script
 Follow these steps to create a DB table which will be used as part of this workshop. 
 
 1.  If you are not already logged in to SQL Worksheet, in your ADW Database Details page, click the **Database Actions** button.

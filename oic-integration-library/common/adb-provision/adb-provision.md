@@ -16,13 +16,13 @@ Watch the video below for a quick walk through of the lab.
 
 In this lab, you will:
 
--   Learn how to provision a new Autonomous Database
+-   Learn how to provision a new Oracle Autonomous Database
 
 ### Prerequisites
 
 - This lab requires completion of the Get Started section in the Contents menu on the left.
 
-## Task 1: Choose ADW or ATP from the services menu
+## **Task 1:** Choose ADW or ATP from the services menu
 
 1. Log in to the Oracle Cloud.
 2. Once you log in, the cloud services dashboard shows all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -42,7 +42,7 @@ In this lab, you will:
     <if type="freetier">
     ![Check the workload type on the left.](images/task1-4.png " ")
 
-   > **Note:** Avoid the use of the `ManagedCompartmentforPaaS` compartment, as this is an Oracle default used for Oracle Platform Services.
+   > **Note:** Avoid the use of the *ManagedCompartmentforPaaS* compartment, as this is an Oracle default used for Oracle Platform Services.
    </if>
 
 5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated). You can also sort by __Workload Type__. In this example, __Data Warehouse__ is the workload type.
@@ -55,7 +55,7 @@ In this lab, you will:
     ![Select region on the far upper-right corner of the page.](./images/task1-6.png " ")
 </if>
 
-## Task 2: Create the Oracle Autonomous Database instance
+## **Task 2:** Create an Oracle Autonomous Database instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
@@ -169,4 +169,4 @@ Go to [the documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-
 - **Author** - Nilay Panchal, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Richard Green, September 2021
+- **Last Updated By/Date** - Ravi Chablani, March 2022
