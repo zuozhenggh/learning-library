@@ -45,6 +45,8 @@ This lab assumes you have:
 
 8. Under *General* section, in the *Description* field, enter the same value used for *Lab 2 > Task 2 > Step 5: Filter Expr for Purchase Order Event*. For example: `demo` or `<your initials>-demo`
 
+    ![Add PO Line](images/enter-po-filter.png)
+
 9. In the *Lines* Tab, click **+** to add a Purchase Order line row.
     ![Add PO Line](images/add-po-line.png)
 
