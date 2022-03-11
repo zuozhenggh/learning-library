@@ -6,6 +6,11 @@
             "title": "How can I index columns in the Oracle database?",
             "description": "",
             "filename": "./index-columns.md"
+        },
+        {
+            "title": "How can I drop the index in the Oracle database?",
+            "description": "",
+            "filename": "../drop-index/drop-index.md"
         }
     ]
 }
