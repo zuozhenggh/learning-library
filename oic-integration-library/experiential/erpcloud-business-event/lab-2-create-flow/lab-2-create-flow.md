@@ -112,7 +112,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | Schema | **ADMIN**  |
     | Table Type | **TABLE** |
     | Table Name | &lt;keep blank&gt; and click **Search** |
-    | Available | **PURCHASEORDER** and click **>** to move the table to the *Selected* column |
+    | Available | Select **PURCHASEORDER** and click **>** to move it to the *Selected* box |
     |
 
     ![Choose Table in AWD Wizard](images/adw-wizard-choose-table.png)
