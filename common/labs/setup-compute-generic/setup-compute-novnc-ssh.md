@@ -279,7 +279,7 @@ Modify your stack to use fixed shapes instead.
 ![](./images/standardshape.png " ")
 
 
-You may now [proceed to the next lab](#next)
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology

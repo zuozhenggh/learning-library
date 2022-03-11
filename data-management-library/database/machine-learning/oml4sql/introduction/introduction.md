@@ -52,7 +52,7 @@ For more information about [OML4SQL API Guide](https://docs.oracle.com/en/databa
 
 
 
-You may now [proceed to the next lab](#next).
+[You may now proceed to the next lab](#next).
 
 
 
