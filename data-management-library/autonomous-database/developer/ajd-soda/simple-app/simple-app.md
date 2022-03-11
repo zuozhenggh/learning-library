@@ -1,4 +1,4 @@
-# Python SODA Micro-service with Autonomous Database for JSON
+# Python SODA micro-service with Autonomous Database for JSON
 
 ## Introduction
 
@@ -8,7 +8,7 @@ You can use SODA for Python to perform create, read (retrieve), update, and dele
 
 SODA is a set of NoSQL-style APIs that let you create and store collections of documents (in particular JSON) in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.
 
-Estimated Lab Time: 1 hour 40 minutes
+**Estimated Lab Time: 1 hour 40 minutes**
 
 ### Objectives
 In this lab, you will:
@@ -18,7 +18,6 @@ In this lab, you will:
 
 ### Prerequisites
 * An Oracle Free Tier, Always Free, or Paid Oracle Cloud Account
-* Putty and PuttyGen tools for Windows laptops
 
 
 ## Task 1: Create Virtual Cloud Network (VCN)
@@ -26,132 +25,179 @@ In this lab, you will:
 1. Login to Oracle cloud console: [cloud.oracle.com](https://cloud.oracle.com/)
 
     - Cloud Account Name: oci-tenant
-    - User Name: oci-username
-    - Password: oci-password
+    - **Next**
+    
+    ![cloud Account Name](./images/task1/cloudaccountname.png)
 
-    >**Note** : Use Root Compartment, oci-tenant(root), to create all resources for this workshop.
+    - User Name: oci-username - email address provided
+    - Password: oci-password
+    - **Sign In**
+
+    ![User Name & Password](./images/task1/usernamepassword.png)    
 
 2. Click on main menu ≡, then Networking > **Virtual Cloud Networks**. Select your Region and Compartment assigned by the instructor. 
 
-3. Click **Start VCN Wizard**.
+    >**Note**: Use **Root** Compartment, oci-tenant(root), to create all resources for this workshop.
 
-4. Select **VCN with Internet Connectivity**. Start VCN Wizard.
+    ![Oracle Console Networking](./images/task1/oracleconsolenetworking.png)
+
+3. Select your Region and Compartment assigned by the instructor. Click **Start VCN Wizard**.
+    
+    ![Oracle Console Networking Start Wizard](./images/task1/oracleconsolenetworkingstartwizard.png)
+
+4. Select **Create VCN with Internet Connectivity**. Start **VCN Wizard**.
+
+   ![Create VCN with Internet Connectivity](./images/task1/createvcnwithinternetconnectivity.png)
+
+5. Provide the following information:
 
     - VCN Name: DEVCN
+    - Compartment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
+    - Click **Next**
 
-5. Click Next and Create.
+    ![vcnName & Compartment](./images/task1/vcnnamecompartment.png)
 
-6. Click DEVCN for details. 
+6. Review the information in the 'Review and Create Page' and Click **Create**.
 
-7. Click **Public Subnet-DEVCN**. Click **Default Security List for DEVCN**. Click **Add Ingress Rules**.
+    ![vcn Creation](./images/task1/vcncreation.png)
+
+7. The Resources have being created on the next page. Click **View Virtual Cloud Network** to access to the vcn.
+
+    ![View vcn Page](./images/task1/viewvcnpage.png)
+    ![DEVCN Detail](./images/task1/devcndetail.png)
+
+8. Click **Public Subnet-DEVCN**. 
+
+    ![Public Subnet](./images/task1/publicsubnet.png)
+
+9. Click **Default Security List for DEVCN**.
+    
+    ![Default Security List for DEVCN](./images/task1/defaultsecuritylistfordevcn.png)
+
+10. Click **Add Ingress Rules**.
+
+    ![Add Ingress Rules](./images/task1/addingressrules.png)
+
+11. Provide the following information:
 
     - CIDR Block: 0.0.0.0/0
     - Destination Port Range: 5000
     - Description: Python Flask
+    - Click **+ Another Ingress Rule**
 
-8. Click **+ Another Ingress Rule**.
+    ![Python Flask Rule](./images/task1/pythonflaskrule.png)
+
+12. Provide the following information:
 
     - CIDR Block: 0.0.0.0/0
     - Destination Port Range: 6080
     - Description: noVNC
+    - Click **+ Another Ingress Rule**
 
-9. Click **+ Another Ingress Rule**.
+    ![noVNC Rule](./images/task1/novncrule.png)
+
+13. Provide the following information:
 
     - CIDR Block: 0.0.0.0/0
     - Destination Port Range: 80
     - Description: HTTP
+    - Click **Add Ingress Rules**
+    
+    ![HTTP Rule](./images/task1/addhttprule.png)
 
-10. Click **Add Ingress Rules**.
-
+14. You can check on the **Detail Page** that the 3 Ingress Rules have beed added.
+    
+    ![All Ingress Rules Added](./images/task1/allingressrulesadded.png)
 
 ## Task 2: Provision Compute Node for development
 
-1. Click on main menu ≡, then Compute > **Instances**. Click **Create Instance**.
+1. Click on the following link to access to the customer image from [Oracle marketplace](https://bit.ly/3CxvsxA).
+
+    ![Marketplace Image](./images/task2/marketplace_image.png)
+
+2. Click **Get App**.
+
+    ![Marketplace Get App](./images/task2/marketplace_getapp.png)
+
+3. Select **Commercial Market** and click **Sign in**.
+
+    ![Marketplace Commercial Market](./images/task2/marketplace_commercialmarket.png)
+
+4. In the next screen be dure that you have the correct information:
+
+    - Version: 2.0 (3/4/2022) - default
+    - Compartment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
+    - **Accept** the Oracle standard Terms and Restrictions
+    - **Launch Instance**
+
+    ![Marketplace Launch App](./images/task2/marketplace_launchapp.png)
+
+5. Provide the following information:
 
     - Name: DEVM
-    - Image and shape: click **edit**.
-    - Change Image: **Oracle Autonomous Linux 7.9**
-    - Shape: VM.Standard.E2.1.Micro (Always Free-eligible)
-    - Download the private and public keys: **Save Private Key**, Save Public Key.
+    - Comparment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
+    - Image and shape: click **Edit/Collapse** and after **Change shape** if you don't have the following information:
+        - Image: MongoDB and Autonomous JSON workshop
+        - Shape: VM.Standard.E2.1.Micro - Always Free eligible
+    
+    ![Marketplace Compute Instance Creation](./images/task2/marketplace_compute_instance_creation.png)
 
-2. Click **Create**. Wait for Compute Instance to finish provisioning, and have status Available. On the Instance Details page, copy Public IP Address in your notes.
+    - Networking: Be sure you have the following information. If not, click **Edit/Collapse** to edit the information
 
-3. Connect to the Compute node using SSH. (Mac/Linux only)
+        - Virtual cloud network: DEVCN
+        - Subnet: Public Subnet-DEVCN (regional)
+    
+    ![Networking Compute](./images/task2/networkingcompute.png)
 
-    ````
-    ssh -C -i ssh-key-YYYY-MM-DD.key opc@[DEVM public-ip address]
-    ````
+    - Download the private and public keys: **Save Private Key**, **Save Public Key**
 
-4. Connect to the Compute node using **Putty**. (Windows only)
+    ![Private & Public Keys](./images/task2/privatepublickeys.png)
 
-    ![](./images/putty1.png "")
+    - Click **Create**
 
-5. Use **PuttyGen** from your computer to convert the private key file you saved on your computer to Putty `.ppk` format. Click on Conversions > Import Key. Open the private key. Click on Save Private Key and Yes to save **without a passphrase**. Use the same name for the new `.ppk` key file, add only the extension `.ppk`. Use the `ssh-key-YYYY-MM-DD.ppk` private key to connect. (Windows only)
+    ![Create Compute](./images/task2/createcompute.png)
+       
+4. Wait for Compute Instance to finish provisioning, and have status Available (click browser Refresh button). 
+On the Instance Details page, copy Public IP Address in your notes.
 
-    ![](./images/putty2.png "")
+    ![Compute Provisioning](./images/task2/computeprovisioning.png)
+    ![Compute Running](./images/task2/computerunning.png)
 
-7. Go back to Session, give it a name, and save it. When asked if you trust this host, click **Yes**.
+> Note: On the Instance Details page, copy **Public IP Address** in your notes.
 
-    ![](./images/putty3.png "")
+5. Use your laptop web browser to open the URL returned by the script, replacing **[DEVM public-ip address]** with the actual values. (If the URL doesn't work, give it a couple of minutes to start the graphical user interface).
 
+    http://[DEVM public-ip address]/livelabs/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true&reconnect=true
 
-## Task 3: Configure Compute Node for development
+    ![noVnc](./images/task2/novnc.png)
 
-Developers usually need a graphical user interface, and this can be achieved using a Remote Desktop connection. Copy and paste these blocks of commands into your SSH connection, and hit **Enter** after each one.
+6. Check if your keyboard works. If you need to select another keyboard layout, click the **On-Off** button in the upper right corner, and **Settings** button. You will find the options under **Region & Language**.
 
-1. Create oracle user.
+    ![noVnc Settings](./images/task2/novncsettings.png)
+    ![noVnc Region & Language](./images/task2/novncregionlanguage.png)
 
-    ````
-    <copy>
-    sudo groupadd oinstall
-    sudo groupadd dba
-    sudo groupadd oper
-    sudo useradd -g oinstall -G dba,oper oracle
-    </copy>
-    ````
+7. Click Applications > Favorites > Firefox to launch the web browser on the DEVM Compute Node remote desktop.
 
-2. Use the substitute user command to start a session as **root** user.
+    ![noVnc Firefox](./images/task2/novncfirefox.png)
+    
+8. Navigate to **cloud.oracle.com**, and **login** to Oracle cloud console using your Cloud Account Name, User Name, and Password.
 
-    ````
-    <copy>
-    sudo su - || (sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd && sudo su -)
-    </copy>
-    ````
-
-3. Install Oracle Instant Client. 
-
-    ````
-    <copy>
-    yum -y install gnome* --exclude=gnome-session-wayland-session
-    yum -y install oracle-release-el7
-    yum-config-manager --enable ol7_developer_EPEL
-    yum -y install oracle-instantclient19.13-basic.x86_64 oracle-instantclient19.13-devel.x86_64 oracle-instantclient19.13-jdbc.x86_64 oracle-instantclient19.13-odbc.x86_64 oracle-instantclient19.13-sqlplus.x86_64 oracle-instantclient19.13-tools.x86_64
-    firewall-cmd --permanent --add-port=5000/tcp
-    firewall-cmd --reload
-    </copy>
-    ````
-
-4. Install the remote desktop tools, type **oracle** when asked.
-
-    ````
-    <copy>
-    cd /tmp
-    rm -rf ll-setup
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Nx05fQvoLmaWOPXEMT_atsi0G7Y2lHAlI7W0k5fEijsa-36DcucQwPUn6xR2OIH8/n/natdsecurity/b/misc/o/setup-novnc-livelabs.zip -O setup-novnc-livelabs.zip
-    unzip -o  setup-novnc-livelabs.zip -d ll-setup
-    cd ll-setup/
-    chmod +x *.sh .*.sh
-    ./setup-novnc-livelabs.sh
-    </copy>
-    ````
-
-5. These commands will take 50 minutes to execute. Continue with the next Task.
+    ![Oracle Cloud Page](./images/task2/oraclecloud.png)
 
 
-## Task 4: Provision Oracle Autonomous JSON Database (AJD)
+## Task 3: Provision Oracle Autonomous JSON Database (AJD)
 
 1. Click on main menu ≡, then Oracle Database > **Autonomous JSON Database**. **Create Autonomous Database**.
 
+    ![Oracle Console AJSON](./images/task3/oracleconsoleajson.png)
+
+2. Click **Create Autonomous Database**.
+
+    ![Create AJSON](./images/task3/createajson.png)
+
+3. Provide the following information
+
+    - Comparment: Be sure you have selected the correct one for this workshop purpose. *Root* is the recommended one
     - Display name: AJDEV
     - Database name: AJDEV
     - Choose a workload type: JSON
@@ -161,39 +207,130 @@ Developers usually need a graphical user interface, and this can be achieved usi
     - OCPU count: 1
     - Storage (TB): 1
 
-2. Under Create administrator credentials:
+    ![Creation AJSON Dashboard](./images/task3/creationajsondashboard.png)
+
+4. Under **Create administrator** credentials:
 
     - Password: DBlearnPTS#22_
 
-3. Under Choose network access:
+    ![Creation AJSON Password](./images/task3/creationajsonpassword.png)
+    
+5. Under **Choose network access**:
 
     - Access Type: Secure access from everywhere
 
-4. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
+    ![Creation AJSON Network](./images/task3/creationajsonnetwork.png)
 
-5. On Tools tab, under Oracle Application Express, click **Open APEX**. On Administration Services login page, use password for ADMIN.
+6. Under **Choose a license type**:
+    
+    - License included
+    
+    ![Creation AJSON License](./images/task3/creationajsonlicense.png)
+
+7. Click **Create Autonomous Database**.
+
+    ![Creation AJSON Create](./images/task3/creationajsoncreate.png)
+
+8. Wait for Lifecycle State to become **Available** from Provisioning (click browser Refresh button).
+
+    ![AJSON Provisioning](./images/task3/ajsonprovisioning.png)
+    ![AJSON Available](./images/task3/ajsonavailable.png)
+
+8. Next to the big green box, click **DB Connection**.
+    
+    ![AJSONDBConnection](./images/task3/ajsondbcConnection.png)
+
+9. Click **Download wallet**.
+
+    ![Download Wallet](./images/task3/downloadwallet.png)
+
+10. Type the following information:
+
+    - Password: DBlearnPTS#22_
+    - Confirm Password: Password: DBlearnPTS#22_
+    - Click **Download**
+
+    ![Download Wallet Password](./images/task3/downloadwalletpassword.png)
+
+11. Click **Save file** and **OK**.
+    
+    ![Save Wallet](./images/task3/savewallet.png)
+
+12. Open another tab in **Firefox** on remote desktop, and navigate to **bit.ly/SODAjson**. Use this lab guide to copy and paste commands on the DEVM Compute Node remote desktop.
+
+    ![Content NoVNC](./images/task3/contentnovnc.png)
+
+13. Click **Applications** > **System Tools** > **Terminal** on the DEVM Compute Node remote desktop. 
+
+    ![noVnc Terminal](./images/task3/novncterminal.png)
+
+14. **Run** the following commands. Use **Shift+Ctrl+V** to paste the block in Terminal, and press **Enter** after it.
+
+    ````
+    <copy>
+    unzip Downloads/Wallet_AJDEV.zip -d Wallet_AJDEV
+    sed -i 's/?\/network\/admin/\${TNS_ADMIN}/g' Wallet_AJDEV/sqlnet.ora
+    export TNS_ADMIN=/home/oracle/Wallet_AJDEV
+    export LD_LIBRARY_PATH=/usr/lib/oracle/19.13/client64/lib
+    export PATH=$PATH:/usr/lib/oracle/19.13/client64/bin/
+    </copy>
+    ````
+    ![Unzip & Export](./images/task3/unzipexport.png)
+
+## Task 4: Prepare Document Store
+
+1. Use the web browser on the DEVM Compute Node remote desktop to access AJDEV instance under Oracle Database > **Autonomous JSON Database**.
+
+    ![AJSON Dashboard](./images/task4/ajsondashboard.png)
+
+2. On **Tools tab**, under **Oracle Application Express**, click **Open APEX**. 
+
+    ![Apex](./images/task4/apex.png)
+
+3. On **Administration Services** login page, use password for ADMIN.
 
     - Password: DBlearnPTS#22_
 
-6. Click **Create Workspace**.
+    ![Apex ADMIN](./images/task4/apexadmin.png)
+
+4. Click **Create Workspace**.
+
+    ![Apex Workspace](./images/task4/apexworkspace.png)
+
+5. Type the following information:
 
     - Database User: DEMO
     - Password: DBlearnPTS#22_
     - Workspace Name: DEMO
 
-7. Click AD icon on upper right corner, **Sign out**. Click **Return to Sign In Page**.
+    ![Apex Workspace DEMO](./images/task4/apexworkspacedemo.png)
+    
+6. Click **DEMO** in the middle of the page to **Sign in** as DEMO user.
+ 
+    ![Apex Login DEMO](./images/task4/apexlogindemo.png)
+ 
+7. Click **Sign In** Page using the following information.
 
     - Workspace: demo
     - Username: demo
     - Pasword: DBlearnPTS#22_
 
-8. Click **Sign In**. Oracle APEX uses low-code development to let you build data-driven apps quickly without having to learn complex web technologies. This also gives you access to Oracle REST Data Services, that allows developers to readily expose and/or consume RESTful Web Services by defining REST end points.
+    ![Login DEMO](./images/task4/logindemo.png)
 
-9. On Oracle Cloud Infrastructure Console, click **Database Actions** next to the big green box.
+    **Oracle APEX** uses low-code development to let you build data-driven apps quickly without having to learn complex web technologies. This also gives you access to Oracle REST Data Services, that allows developers to readily expose and/or consume RESTful Web Services by defining REST end points.
 
-10. Click Development > SQL (first button), and run the following code:
+8. On Oracle Cloud Infrastructure Console, click **Database Actions** next to the big green box. Allow pop-ups from cloud.oracle.com.
+
+    ![DB Actions](./images/task4/dbactions.png)
+
+9. Click **Development** > **SQL** (first button).
+
+    ![DB Actions SQL](./images/task4/dbactionssql.png)
+
+10. Run the following code using **Run Script** button:
 
     ````
+    <copy>
     BEGIN 
        ords_admin.enable_schema (
           p_enabled => TRUE,
@@ -205,83 +342,51 @@ Developers usually need a graphical user interface, and this can be achieved usi
       commit ;
     END ; 
     /
+    </copy>
     ````
 
+    ![Enable Schema Script](./images/task4/enableschemascript.png)
+    
     >**Note** : For all code you run in SQL Developer Web, make sure you receive a success message:
 
     ````
     PL/SQL procedure successfully completed.
     ````
+    
+    ![PLSQL Successfully completed](./images/task4/plsqlsuccess.png)    
 
-11. Grant **SODA_APP** to DEMO user. This role provides privileges to use the SODA APIs, in particular, to create, drop, and list document collections.
+11. Grant **SODA_APP** to DEMO user. This role provides privileges to use the SODA APIs, in particular, to create, drop, and list document collections. Use **Run Statement** button to execute this command.
 
     ````
+    <copy>
     GRANT SODA_APP TO demo;
+    </copy>
     ````
+
+    ![GRANT SODA](./images/task4/grantsoda.png)
 
 12. Click **ADMIN** upper right corner, and **Sign Out**. 
+
+    ![Sign Out](./images/task4/signout.png)
 
 13. Click **Sign In**. Login using DEMO user credentials.
 
     - Username: demo
     - Password: DBlearnPTS#22_
+    
+    ![Sign In DEMO](./images/task4/signindemo.png)
+    
+14. Click **Development** > **JSON**, and follow the tips. This is the interface you will use to manage your JSON collections in this document store.
 
-14. Click Development > JSON (under first button), and follow the tips. This is the interface you will use to manage your JSON collections in this document store.
-
-## Task 5: Back to Compute Node SSH connection
-
-1. Wait until all commands finished, there is a 'Completed!' success message at the end. Exit root user session. 
-
-    ````
-    <copy>
-    exit
-    </copy>
-    ````
-
-2. Use your laptop web browser to open the URL returned by the script, replacing **[DEVM public-ip address]** with the actual values.
-
-    http://[DEVM public-ip address]/livelabs/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true&reconnect=true
-
-3. Follow the wizard to complete your remote desktop environment. 
-
-    - Language: English. Next
-    - Select Keyboard. Next
-    - Set Location Services Off. Next
-    - Skip Online Accounts settings.
-    - Start Using Oracle Linux Server.
-    - Close Getting Started dialog.
-
-4. Check if your keyboard works. If you need to select another keyboard layout, click the **On-Off** button in the upper right corner, and **Settings** button. You will find the options under Region & Language.
-
-5. Click Applications > Favorites > Firefox to launch the web browser on the DEVM Compute Node remote desktop. Navigate to cloud.orale.com, and login to Oracle cloud console using your Cloud Account Name, User Name, and Password.
-
-6. Click on main menu ≡, then Oracle Database > **Autonomous JSON Database**. Click **AJDEV**.
-
-7. Next to the big green box, click DB Connection > Download wallet.
-
-    - Password: DBlearnPTS#22_
-    - Click Download > Save file.
-
-8. Open another tab in Firefox on remote desktop, and navigate to **bit.ly**. Use the lab guide to copy and paste commands on the DEVM Compute Node remote desktop.
-
-9. Click Applications > System Tools > Terminal on the DEVM Compute Node remote desktop. Run the following commands. Use Shift+Ctrl+V to paste the block in Terminal, and hit **Enter** after it.
-
-    ````
-    <copy>
-    unzip Downloads/Wallet_AJDEV.zip -d Wallet_AJDEV
-    sed -i 's/?\/network\/admin/\${TNS_ADMIN}/g' Wallet_AJDEV/sqlnet.ora
-    export TNS_ADMIN=/home/oracle/Wallet_AJDEV
-    export LD_LIBRARY_PATH=/usr/lib/oracle/19.13/client64/lib
-    export PATH=$PATH:/usr/lib/oracle/19.13/client64/bin/
-    </copy>
-    ````
+    ![DB Actions JSON](./images/task4/dbactionsjson.png)
 
 
-## Task 6: Develop micro-service with SODA for Python
+## Task 5: Develop micro-service with SODA for Python
 
 Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-service application that will allow you to insert and retrieve JSON documents using REST calls.
 
-1. Create a new folder under `/home/oracle` as the location of the Python application. Create a Python virtual environment for development, and activate it.
+1. Use **Terminal** window on the DEVM Compute Node remote desktop. Create a new folder under `/home/oracle` as the location of the Python application. Create a Python virtual environment for development, and activate it. 
+**Copy** the block of commands using Copy button, **paste** in Terminal window using **Shift+Ctrl+V**, and press **Enter** after it.
 
     ````
     <copy>
@@ -292,7 +397,8 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     . bin/activate
     </copy>
     ````
-
+    ![Python Simple Project](./images/task5/pythonsimpleproject.png)
+    
 2. Use the **gEdit** text editor on Remote Desktop to create a file with the required libraries for the application.
 
     ````
@@ -301,7 +407,9 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-3. Add the following lines in requirements.pip, click Save, and close the editor.
+    ![Requirements](./images/task5/requirements.png)
+
+3. **Add** the following lines in requirements.pip, click **Save**, and **Close** the editor.
 
     ````
     <copy>
@@ -311,6 +419,8 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     pymongo
     </copy>
     ````
+    ![Requirements Script](./images/task5/requirementsscript.png)
+    
 
 4. Use **pip** package installer for Python 3 to install the required libraries specified in the requirements.pip file.
 
@@ -320,6 +430,14 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
+    ![Requirements Installer](./images/task5/requirementsinstaller.png)
+
+    You should see the installation of requirements.pip similar to the following:
+
+    ![Requirements Installer Result](./images/task5/requirementsinstallerresult.png)
+
+    ![Requirements Installer Result Second Part](./images/task5/requirementsinstallerresult2.png)
+
 5. Use the **gEdit** text editor on Remote Desktop to create a file the Python application code.
 
     ````
@@ -327,8 +445,9 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     gedit simple-app.py
     </copy>
     ````
+    ![Simple app](./images/task5/simpleapp.png)
 
-6. Paste the following code in simple-app.py file. Verify all connection variables are correct. Click Save, and close the editor.
+6. **Paste** the following code in simple-app.py file. Verify all connection variables are correct. Click **Save**, and **Close** the editor.
 
     ````
     <copy>
@@ -374,8 +493,9 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
         app.run(host= '0.0.0.0')
     </copy>
     ````
+    ![Simple App Script](./images/task5/simpleappscript.png)
 
-7. Run simple-app application. 
+7. **Run** simple-app application. 
 
     ````
     <copy>
@@ -383,18 +503,27 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-8. If you followed the steps correctly, you should see this output in the terminal. Leave this Terminal window like this in order to keep the micro-service running on port 5000.
+    ![Simple App Installer](./images/task5/simpleappinstaller.png)
 
-    ````
-    * Serving Flask app "simple-app" (lazy loading)
-    * Environment: production
-      WARNING: This is a development server. Do not use it in a production deployment.
-      Use a production WSGI server instead.
-    * Debug mode: off
-    * Running on http://X.X.X.X:5000/ (Press CTRL+C to quit)
-    ````
+    If you followed the steps correctly, you should see this output in the terminal. Leave this Terminal window like this in order to keep the micro-service running on port 5000.
 
-9. Use Terminal main menu to click File > New Tab, to open a new tab. Use the new tab to perform two POST request with CURL client.
+        ````
+        * Serving Flask app "simple-app" (lazy loading)
+        * Environment: production
+        WARNING: This is a development server. Do not use it in a production deployment.
+        Use a production WSGI server instead.
+        * Debug mode: off
+        * Running on http://X.X.X.X:5000/ (Press CTRL+C to quit)
+        ````
+    
+    ![Simple App Execution](./images/task5/simpleappexecution.png)
+
+8. Use **Terminal** main menu to click **File** > **New Tab**, to open a new tab. 
+
+    ![Terminal New Tab](./images/task5/terminalnewtab.png)
+
+
+9. Use the **new tab** to perform two POST request with CURL client.
 
     ````
     <copy>
@@ -413,8 +542,10 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     }'
     </copy>
     ````
-    
-10. Make sure you hit **Enter** after each one.
+
+    ![POST Company One](./images/task5/postcompanyone.png)
+        
+10. Make sure you press **Enter** after each one.
 
     ````
     <copy>
@@ -434,11 +565,15 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
     
-11. Use the web browser on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database.
+    ![POST Company Two](./images/task5/postcompanytwo.png)
+
+11. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database.
 
     http://[DEVM public-ip address]:5000/oracle/
 
-12. Insert two more documents into Oracle Autonomous Database using REST calls to the micro-service. Hit **Enter** after this block.
+    ![Microservice Company One & Two](./images/task5/microservicecompanyonetwo.png)
+    
+12. **Insert** two more documents into Oracle Autonomous Database using REST calls to the micro-service. Press **Enter** after this block.
 
     ````
     <copy>
@@ -470,12 +605,16 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     }'
     </copy>
     ````
+    
+    ![POST Company Three & Four](./images/task5/postcompanythreefour.png)
 
-13. Refresh the web browser on your laptop to list all JSON documents inserted.
+13. **Refresh** the **web browser** on your laptop to list all JSON documents inserted.
 
     http://[DEVM public-ip address]:5000/oracle/
 
-14. Go to the first Terminal window where the micro-service is running on port 5000, and hit CTRL+C to stop it.
+    ![Microservice Company One, Two, Three & Four](./images/task5/microservicecompanyonetwothreefour.png)
+
+14. **Go** to the first Terminal window where the micro-service is running on port 5000, and press CTRL+C to stop it.
 
     ````
     <copy>
@@ -483,11 +622,127 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
+    ![Simple App Stop](./images/task5/simpleappstop.png)
+
+    
+## Task 6: The Advantage of Apex and SQL Knowledge
+
+1. Use the **web browser** tab where Oracle Application Express (Apex) is opened, or open Apex from AJDEV using the browser on your laptop. If you need to **Sign In** again use the following credentials:
+
+    - Database User: DEMO
+    - Password: DBlearnPTS#22_
+    - Workspace Name: DEMO
+
+    Click **SQL Workshop** > **SQL Commands**. 
+
+    ![Apex SQL Workshop](./images/task6/apexsqlworkshop.png)
+    ![Apex SQL Commands](./images/task6/apexsqlcommands.png)
+
+2. **Run** this SQL query:
+
+    ````
+    <copy>
+    select TABLE_NAME from USER_TABLES;
+    </copy>
+    ````
+
+    ![Select](./images/task6/select.png)
+
+2. **Describe** the table that holds JSON documents data in the collection. The name of the column that stores JSON documents is JSON_DOCUMENT.
+
+    ````
+    <copy>
+    desc "SimpleCollection"
+    </copy>
+    ````
+
+    ![Desc](./images/task6/desc.png)
+
+3. SQL dot-notation syntax is designed for easy queries to return JSON values from tables. **Run** a JSON dot-notation query.
+
+    ````
+    <copy>
+    SELECT co.JSON_DOCUMENT.company, 
+           co.JSON_DOCUMENT.address.country Country, 
+           co.JSON_DOCUMENT.address.city City, 
+           co.JSON_DOCUMENT.industry, 
+           co.JSON_DOCUMENT.employees 
+        FROM "SimpleCollection" co;
+    </copy>
+    ````
+
+    ![Select JSON](./images/task6/selectjson.png)
+
+4. JSON data can be accessed via SQL from your applications. Click **App Builder** > **Create**. 
+    
+    ![New App](./images/task6/newapp.png)
+
+5. Click New **Application**.
+
+    ![New App Dashboard](./images/task6/newappdashboard.png)
+
+6. Provide the following information:
+
+    - Name: Companies
+    - Click Click **Add Page**
+    
+    ![Companies App](./images/task6/companiesapp.png)
+
+    -  Interactive Report.
+
+    ![Interactive Report](./images/task6/interactivereport.png)
+
+    - Page Name: Report
+    - SQL Query:
+    - Click **Add Page**
+    ````
+    <copy>
+    SELECT co.JSON_DOCUMENT.company, 
+           co.JSON_DOCUMENT.address.country Country, 
+           co.JSON_DOCUMENT.address.city City, 
+           co.JSON_DOCUMENT.industry, 
+           co.JSON_DOCUMENT.employees 
+        FROM "SimpleCollection" co;
+    </copy>
+    ````
+
+    ![Interactive Report Query](./images/task6/interactivereportquery.png)
+    
+    - Click Create Application
+    
+    ![Create App](./images/task6/createapp.png)
+
+    The application will be create immediatly.
+
+    ![Creating App](./images/task6/creatingapp.png)
+        
+7. Click **Run Application**. 
+
+    ![Run App](./images/task6/runapp.png)
+
+8. **Log In** to Companies using the following credentials:
+
+    - Username: demo
+    - Password: DBlearnPTS#22_
+
+    ![Log In Companies](./images/task6/logincompanies.png)
+
+9. Click **Report**. 
+
+    ![Report App](./images/task6/reportapp.png)
+    
+    You can see the Four Companies that we have inserted on the previous Task.
+    
+    ![Report App Result](./images/task6/reportappresult.png)
+    
+    With Oracle Autonomous Database as a document store, JSON data is valued in the same way as relational data.
+
+*You can proceed to the next lab…*
 
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Valentin Leonard Tabacaru, March 2022
+* **Last Updated By/Date** - Priscila Iruela, March 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
