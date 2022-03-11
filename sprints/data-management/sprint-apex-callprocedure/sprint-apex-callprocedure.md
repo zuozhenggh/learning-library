@@ -3,7 +3,7 @@ Duration: 10 minutes
 
 ## Calling procedure on button click or submit
 
-In Oracle Apex, we will have use cases where a procedure needs to be called after clicking on a submit button, also passing the page parameters into the procedure. In this sprint, we will look into how it is done.
+In Oracle Apex, we will have use cases where a procedure needs to be called after clicking on a submit button, also passing the page parameters into the procedure. In this sprint, we will take an example of calling a procedure that inserts a record into a database table.
 
 ## Create a package and procedure
 
@@ -17,6 +17,8 @@ In Oracle Apex, we will have use cases where a procedure needs to be called afte
             END; 
       </copy>
       ``` 
+
+      The procedure pl\_eventmail\_proc1 inserts a record into CUSTOMER\_LIST table, taking the event name parameter from the apex page. optionally we can also send mail to customer's mailing address with event details
 
       ```
       <copy> 
