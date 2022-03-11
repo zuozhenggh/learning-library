@@ -111,7 +111,7 @@ You can login using admin/admin as username/password and change the password acc
 ![Import](images/import7991.png)
 
 * Choose the Datasource and click "Import"
-![Import](images/import7991-import.png)
+![Import](images/import7991-Import.png)
 
 4. Checking the Dashboard
 ![Dashboard](images/MySQLDashboard7991.png)
