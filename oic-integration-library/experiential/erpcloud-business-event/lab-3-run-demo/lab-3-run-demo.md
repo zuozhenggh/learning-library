@@ -97,6 +97,7 @@ After the PO is submitted, the initial status becomes *Pending Approval*. The PO
     > **Tip:** The last created PO should generally be the top one in the list.
 
 5. Validate the PO Status. If it's *Open* then the Business Event has occurred. 
+
     > **Note:** If PO has another Status, such as *Pending Approval*, then wait a couple of minutes and keep refreshing the page until the desired PO Status appears. 
 
 
