@@ -32,7 +32,7 @@ This lab assumes you have
     |---|---|
     |Role Name | `<your-role-name>` |
     |Role Code | `<your-role-code>` |
-    |Role Category | Use default |
+    |Role Category | (Default) |
     |    
 
 5. Click **Next**.
@@ -58,11 +58,11 @@ This lab assumes you have
 
     | **Field**  | **Value** |
     |---|---|
-    |User Category | Use default |
-    |First Name | `<your-first-name>` |
-    |Last Name	 | `<your-last-name>` |
+    |User Category | (Default) |
+    |First Name | `Integration` |
+    |Last Name	 | `Service` |
     |Email | `<your-email>` (can be mock)|
-    |User Name | Use default |
+    |User Name | (Default) |
     |Password | `<your-password>` |
     |
 
@@ -78,7 +78,8 @@ This lab assumes you have
     ![Save user with added role](images/erp-user-with-roles.png)
 
 
-You have completed the final step of this lab.
+You may now **proceed to the next lab**.
+
 
 ## Learn More
 * [Prerequisites for Creating an ERP Cloud Adapter Connection](https://docs.oracle.com/en/cloud/paas/integration-cloud/erp-adapter/prerequisites-creating-connection.html)
