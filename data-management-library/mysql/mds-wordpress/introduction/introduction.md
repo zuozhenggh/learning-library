@@ -37,7 +37,7 @@ In this lab, you will be guided through the following steps:
 
 **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
-You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)”
+You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 

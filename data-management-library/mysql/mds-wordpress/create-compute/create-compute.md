@@ -28,7 +28,7 @@ In this lab, you will be guided through the following tasks:
 
 * An Oracle Free Tier or Paid Cloud Account
 * A web browser
-* Should have completed Lab3
+* Should have completed Lab 2
 
 ## Task 1: Create SSH Key on OCI Cloud Shell
 
@@ -141,7 +141,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     ![CONNECT](./images/05compute08-a.png " ")
 
-You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)”
+You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)
 
 
 ## Acknowledgements

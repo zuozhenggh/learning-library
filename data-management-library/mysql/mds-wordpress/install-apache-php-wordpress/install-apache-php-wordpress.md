@@ -28,7 +28,7 @@ In this lab, you will be guided through the following tasks:
 
 * An Oracle Free Tier or Paid Cloud Account
 * A web browser
-* Should have completed Lab4
+* Should have completed Lab 3
 
 ## **Task 1:** Intall Apache
 1. Copy the public IP address of the active Compute Instance to your notepad
