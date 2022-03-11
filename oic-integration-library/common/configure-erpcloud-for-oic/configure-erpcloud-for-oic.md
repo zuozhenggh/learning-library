@@ -62,7 +62,7 @@ This lab assumes you have
     |First Name | `Integration` |
     |Last Name	 | `Service` |
     |Email | `<your-email>` (can be mock)|
-    |User Name | (Default) |
+    |User Name | \<auto generated\> |
     |Password | `<your-password>` |
     |
 

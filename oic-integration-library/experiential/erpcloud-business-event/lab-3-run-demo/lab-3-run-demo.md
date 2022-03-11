@@ -43,7 +43,7 @@ This lab assumes you have:
     This opens the *Edit Document (Purchase Order)* page.
     ![Enter PO info](images/enter-po-info.png)
 
-8. Under *General* section, in the *Description* field, enter the same value used for *Lab 2 > Task 2 > Step 5: Filter Expr for Purchase Order Event*. For example: `"LL demo"` 
+8. Under *General* section, in the *Description* field, enter the same value used for *Lab 2 > Task 2 > Step 5: Filter Expr for Purchase Order Event*. For example: `demo` or `<your initials>-demo`
 
 9. In the *Lines* Tab, click **+** to add a Purchase Order line row.
     ![Add PO Line](images/add-po-line.png)
@@ -53,10 +53,10 @@ This lab assumes you have:
     | --- | ----------- |
     | Line | `1` (Default)       |
     | Type | `Goods` |
-    | Item | Start typing `AS1`, then select an item from the drop-down (or hit the search button to select a valid item)
+    | Item | Choose a valid item. For example, start typing `AS1`, and choose an item from the resulting drop-down (or hit the search button to select a valid item)
     | Description | &lt;keep default&gt; |
     | Quantity | Enter a valid number, eg. `2` |
-    | UOM | `Ea` (default) |
+    | UOM | `Ea` (Default) |
     | Base Price | Enter a valid number, eg. `200`
 
      ![Review PO line](images/review-po-line.png)

@@ -61,35 +61,33 @@ In this lab, you will:
 
     ![Click Create Autonomous Database.](./images/task2-1.png " ")
 
+
 2.  This brings up the *Create Autonomous Database* screen where you will specify the configuration of the instance.
 
-    <if type="livelabs">
-    ![](./images/task2-2.png " ")
-    </if>
-    <if type="freetier">
-    ![](./images/task2-2.png " ")
-    </if>
 
 3. Specify basic information for the autonomous database:
 
     | **Field**  | **Value** | Note |
     |---|---|---|
-    | **Compartment** | (Defaut) | |
-    | **Display Name** | `OICDemo` | Enter a memorable name for the database for display purposes |
-    | **Database Name** | `OICDEMO` | Use letters and numbers only, starting with a letter. Maximum length is 14 characters. |
+    | Compartment | (Defaut) | |
+    | Display Name | `OICDemo` | Enter a memorable name for the database for display purposes |
+    | Database Name | `OICDEMO` | Use letters and numbers only, starting with a letter. Maximum length is 14 characters. |
     | 
+
 
 4. Choose a workload type. Select the workload type for your database from the choices:
 
     - **Data Warehouse** - For this lab, choose **Data Warehouse** as the workload type.
     - __Transaction Processing__ - Or, you could have chosen Transaction Processing as the workload type.
 
+    ![Choose workload type.](./images/create-adb-workload-type.png)
+
+
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
     - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
     - __Dedicated Infrastructure__ - Or, you could have chosen Dedicated Infrastructure as the deployment type.
 
-    ![Choose a deployment type.](./images/task2-5.png " ")
 
 6. Configure the database:
 
@@ -104,9 +102,10 @@ In this lab, you will:
 
     ![Choose the remaining parameters.](./images/create-adb-configure.png)
 
+
 7. Create administrator credentials:
 
-    - __Password and Confirm Password__ - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
+    - __Password and Confirm Password__ - Specify the password for *ADMIN* user of the service instance. The password must meet the following requirements:
     - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
     - The password cannot contain the username.
     - The password cannot contain the double quote (") character.
@@ -114,7 +113,6 @@ In this lab, you will:
     - The password must not be the same password that you set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
-    ![Enter password and confirm password.](./images/task2-7.png " ")
 
 8. Choose network access:
     - For this lab, accept the default, "Secure access from everywhere."
@@ -145,9 +143,15 @@ In this lab, you will:
 
     ![](./images/task2-10.png " ")
 
-11.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+11.  Your instance will begin provisioning. In a few minutes, the state will turn from *Provisioning* to *Available*. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
-    ![Database instance homepage.](./images/task2-11.png " ")
+<if type="livelabs">
+    ![Click Create Autonomous Database.](./images/task2-9.png " ")
+</if>
+<if type="freetier">
+    ![Database instance available](images/adb-available-freetier.png)
+</if>
+     
 
 Please *proceed to the next lab*.
 
