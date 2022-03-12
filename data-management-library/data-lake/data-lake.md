@@ -28,24 +28,20 @@ First navigate to the OCI Data Flow and click on Create Application.
 
 ![Create Data Flow](./images/nav_dataflow.png " ")
 
-For creating the application, you need to have the java jar file and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
+For creating the application, you need to have the python code and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
 
 ![Create Data Flow](./images/df_createapp.png " ")
 
-For this example, choose Java, and check the box for entering the URL manually. Copy and paste from the following into the form. 
+For this example, choose python, and check the box for entering the URL manually. Copy and paste from the following into the form. 
 
 ![Create Data Flow](./images/df_app_details1.png " ")
 
 ```
 <copy>
-oci://dataflow_sample_apps@bigdatadatasciencelarge/dataflow-java-sample-1.0-SNAPSHOT.jar
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/data-lakehouse/csv_to_parquet.py
 </copy>
 ```
-```
-<copy>
-com.oracle.oci.dataflow.samples.DataFlowJavaSample
-</copy>
-```
+
 And for the arguments:
 ```
 <copy>

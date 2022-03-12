@@ -1,0 +1,12 @@
+{
+    "workshoptitle": "LiveLabs Sprints",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "How do I get Oracle Database SERVICE_NAME?",
+            "description": "",
+            "filename": "sprint-db-servicename.md"
+        }
+
+    ]
+}
