@@ -1,11 +1,11 @@
-# How do I get Compression Ratio? 
+# How do I get table compression ratio? 
 Duration: 10 minutes
 
 The DBMS_COMPRESSION package gathers compression-related information within a database environment. This includes tools for estimating compressibility of a table for both partitioned and non-partitioned tables, and gathering row-level compression information on previously compressed tables. This gives the user with adequate information to make compression-related decision. 
 
 *GET\_COMPRESSION\_RATIO procedure analyzes the compression ratio of a table, and gives information about compressibility of a table. Various parameters can be provided by the user to selectively analyze different compression types.*
 
-## Get Compression Ratio
+## Get Table Compression Ratio
 
 **Login to SQLPlus and run the following statement:**
 
