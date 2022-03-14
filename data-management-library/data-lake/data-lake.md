@@ -24,58 +24,53 @@ You have several choices on how to create applications and languages. You can ch
 
 This is just an example of how you can use your already created scripts to run as an application and schedule using OCI Data Flow. This currently only reads the data from a csv file which can be used to populate a table or put the output into the bucket.
 
-First navigate to the OCI Data Flow and click on Create Application.
+Before you create the application we need to grab the python script, configure and place in object storage.
+
+Down load this file by copying the link and saving it in a text editor:
+
+```
+<copy>
+https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/data-lakehouse/live_labs_example.py
+</copy>
+```
+
+Place this file in a text editor and replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database where it stats replacewithXXXX.
+
+Upload this edited file to your object storage into the warehouse bucket that we already created in the last lab.
+
+Navigate from the hamburger memu to storage and select buckets.
+
+![Storage Buckets](./images/showbuckets.png " ")
+
+Select bucket dataflow-warehouse bucket. And upload file by selecting or dragging and dropping the updated python script.
+
+![Upload file](./images/uploadscript.png " ")
+
+Now, navigate to the OCI Data Flow and click on Create Application.
 
 ![Create Data Flow](./images/nav_dataflow.png " ")
 
-For creating the application, you need to have the java jar file and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
+For creating the application, you need to have the python code and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
 
-![Create Data Flow](./images/df_createapp.png " ")
+![Create Data Flow](./images/createsparkapp.png " ")
 
-For this example, choose Java, and check the box for entering the URL manually. Copy and paste from the following into the form. 
+For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded live_labs_example.py
 
-![Create Data Flow](./images/df_app_details1.png " ")
+![Create Data Flow](./images/createappconfigure.png " ")
 
-```
-<copy>
-oci://dataflow_sample_apps@bigdatadatasciencelarge/dataflow-java-sample-1.0-SNAPSHOT.jar
-</copy>
-```
-```
-<copy>
-com.oracle.oci.dataflow.samples.DataFlowJavaSample
-</copy>
-```
-And for the arguments:
-```
-<copy>
-${input} ${output}
-</copy>
-```
+Click on Show advanced options. And enter in the Spark configuration properties the key: spark.oracle.datasource.enabled and the value: true
+
+![Advanced Options](./images/createappadvoptions.png " ")
+
 Click on Create Application.
 
-![Create Data Flow](./images/df_app_details2.png " ")
+Now we can run the application by selecting the more option dots and selecting Run from the menu.
 
-Now we can run the application. Copy and paste the following into the input and output arguments and click run.
-Input
-```
-<copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/custsales_custsales-2020-01.csv
-</copy>
-```
-Output
-You will need to supply the namespace of your tenancy for your dataflow-warehouse bucket, and use this as the output for the process.
-```
-<copy>
-oci://dataflow-warehouse@NAMESPACE
-</copy>
-```
+![Run Data Flow](./images/runappmanual.png " ")
 
-![Create Data Flow](./images/df_run_app.png " ")
+It of course depends on how big your data file is but this sample takes about two minutes to return successfully. This job has filtered out the data and populated the movie_genre table with the job.
 
-It of course depends on how big your data file is but this sample takes about a minute to return successfully.
-
-![Create Data Flow](./images/df_validate_run.png " ")
+![Completed Data Flow](./images/runappresults.png " ")
 
 You can also monitor your applications in the Spark UI. Click on the application name and click on the Spark UI button.
 
