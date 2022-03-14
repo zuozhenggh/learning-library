@@ -114,7 +114,7 @@ You will notice that this query will complete in less than 1s comparing to 10s e
 
 Now that we have enabled HeatWave cluster, lets test our migrated PHP application
 
-1. Access your PHP application via http://xxx.xxx.xxx.xxx:5000/index.php (replace xxx.xxx.xxx.xxx with your IP address). Once HeatWave cluster is enabled on MDS, all the SELECT SQL statements will be offloaded to HeatWave automatically via the default **use_secondary_engine=ON** setting. First, we will test the PHP application by executing the SQL on MDS, we will use an optimizer hint ( to set the **use_secondary_engine=OFF** so that we will force the SELECT SQL to execute in MDS
+1. Access your PHP application via http://xxx.xxx.xxx.xxx:5000/index.php (replace xxx.xxx.xxx.xxx with your IP address). Once HeatWave cluster is enabled on MDS, all the SELECT SQL statements will be offloaded to HeatWave automatically via the default **"use_secondary_engine=ON"** setting. First, we will test the PHP application by executing the SQL on MDS, we will use an optimizer hint (to set the **"use_secondary_engine=OFF"** so that we will force the SELECT SQL to execute in MDS)
 
 ![php-mds-query](images/php-mds-query.png)
 
