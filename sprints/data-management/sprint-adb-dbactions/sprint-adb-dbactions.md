@@ -1,4 +1,4 @@
-# How do I create user and grant access to database actions?
+# How do I grant access to database actions?
 Duration: 10 minutes
 
 ##  Create Users on Autonomous Database and grant access to database actions
