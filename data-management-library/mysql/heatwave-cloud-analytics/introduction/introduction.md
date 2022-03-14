@@ -34,7 +34,7 @@ In this workshop, you will learn how to:
 
 * You have an Oracle account
 * You have enough privileges to use OCI
-* You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it.
+
 
 ## Acknowledgements
 * **Author** 
