@@ -23,7 +23,7 @@ This lab assumes you have:
 ![MDS Menu](images/mds-menu.png)
 
 2. Select the **MDSInstance**
-![MDS Details](images/mds-details.png)
+![MDS Details](images/mds-details-1.png)
 
 3. From the menu on the left bottom side select HeatWave, and click on the button Add HeatWave Cluster located on the right.
 ![Add HeatWave](images/heatwave-add.png)

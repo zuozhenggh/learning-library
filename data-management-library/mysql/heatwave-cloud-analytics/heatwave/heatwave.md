@@ -61,8 +61,6 @@ In this lab, you will provision the following resources:
 
 ![MySQL Completed](images/mds-completed.png)
 
-
-
 ## Acknowledgements
 * **Author** 
              - Rayes Huang, Cloud Solution Architect, OCI APAC
