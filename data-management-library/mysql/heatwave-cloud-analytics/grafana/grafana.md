@@ -1,18 +1,20 @@
-# Deploy PHP application to OCI Kubernetes
+# Deploy Grafana Dashboard for MySQL to OCI Kubernetes
 
 ## Introduction
 
 **Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes. 
 
-In this lab, you will deploy a PHP application on **OKE**, and connect it to **MySQL**.
+In this lab, you will deploy a Grafana application on **OKE**, and connect it to **MySQL**.
 
 Estimated Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
-* Deploy a PHP application to the OKE cluster
-* Test the deployed PHP applicationa against MySQL database
+* Deploy a Grafana application to the OKE cluster
+* Define MySQL Datasource
+* Import MySQL Dashboard to Grafana
+* Test the deployed Grafana applicationa against MySQL database
 
 ### Prerequisites
 
@@ -20,6 +22,8 @@ This lab assumes you have:
 * An Oracle account
 * You have enough privileges to use OCI
 * All previous labs successfully completed
+* Resources Ready : HOL-compartment, OKE cluster, MySQL Database Service 
+
 
 ## Task 1: Verify OKE cluster
 
@@ -27,7 +31,7 @@ This lab assumes you have:
 
 ![Navigate to OKE](images/navigate-to-oke.png)
 
-2. Select the Compartment (e.g. PHP-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
+2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
 
 ![Locate OKE](images/locate-oke-instance.png)
 
@@ -41,145 +45,83 @@ This lab assumes you have:
 
 ## Task 3: Deploy Application to OKE
 
-1. Download yaml deployment file [mds_connection.yaml](mds-connection.yaml) to the operator VM.
+1. Download yaml deployment file [grafana.yaml](grafana.yaml) to the operator VM.
 
+```
+<copy>
+wget https://raw.githubusercontent.com/ivanxma/mysqlk8s/main/grafana/grafana.yaml
+</copy>
+```
+
+
+3. Create Namespace and deploy grafna.yaml
 	```
 	<copy>
-	wget https://raw.githubusercontent.com/kuanrcl/mysql-migration/main/lab4/mds_connection.yaml
-	</copy>
-	```
-
-2. Update parameter **“mds-host”** in mds_connection.yaml. Replace **TO BET SET** below with the IP address of your MySQL instance, and execute the script.
-   
-	```
-	<copy>
-	sed -i 's/mds-host: "<TO BE SET>"/mds-host: "<IP ADDRESS>"/g' mds_connection.yaml
-	</copy>
-	```
-
-For example, if the IP address of your MDS instance is "10.0.30.41", your script should be:
-
-	```
-	<copy>
-	sed -i 's/mds-host: "<TO BE SET>"/mds-host: "10.0.30.41"/g' mds_connection.yaml
+	kubectl create ns grafana
+	kubectl apply -f grafana.yaml -n grafana
 	</copy>
 	```
 
 
-3. (Skip this step if you use default password  for MySQL) Update parameter **“mds-password”** in mds_connection.yaml. Replace **MySQL Password** with the password you gave when provisioning MySQL in Resource Manager, and execute the script.
+
+4. Check the status of pods and wait until all pods are up and running
 
 	```
 	<copy>
-	sed -i 's/Oracle#123/<MySQL Password>/g' mds_connection.yaml
+	kubectl get all -n grafana
 	</copy>
 	```
 
-For example, if your new password is "MySQL#12345", your script should be:
+
+5. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready.
 
 	```
 	<copy>
-	sed -i 's/Oracle#123/MySQL#12345/g' mds_connection.yaml
-	</copy>
-	```
-
-4. Print your mds_connection.yaml file and verify it has the correct IP address and password for MySQL.
-
-	```
-	<copy>
-	cat mds_connection.yaml
-	</copy>
-	```
-
-![Update MDS Connection](images/mds-connection.png)
-
-
-5. Create Kubernetes configmap and secret to store MySQL connection metadata.
-
-	```
-	<copy>
-	kubectl apply -f  mds_connection.yaml
-	</copy>
-	```
-
-![Apply MDS Connection](images/apply-mds-connection.png)
-
-6. Download yaml deployment file [deploy_webapp.yaml](deploy_webapp.yaml).
-
-	```
-	<copy>
-	wget https://raw.githubusercontent.com/kuanrcl/mysql-migration/main/lab4/deploy_webapp.yaml
-	</copy>
-	```
-
-7. Deploy the PHP application into OKE.
-
-	```
-	<copy>
-	kubectl apply -f deploy_webapp.yaml
-	</copy>
-	```
-
-![Apply WebApp](images/apply-webapp.png)
-
-8. Check the status of pods and wait until all pods are up and running
-
-	```
-	<copy>
-	kubectl -n cloudnative-webapp-airportdb-mds get pod
-	</copy>
-	```
-
-![Get Pod](images/get-pod.png)
-
-9. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready.
-
-	```
-	<copy>
-	kubectl -n cloudnative-webapp-airportdb-mds get service --watch
+	kubectl get service -n grafana --watch
 	</copy>
 	```
 
 Once you have the External IP provisioned, you can execute CTL+C to kill the command
 
-![Get Service](images/get-service.png)
 
-## Task 4: Access the Application 
 
-1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:5000/index.php). You will get a page to submit SQL statement against MySQL.
+## Task 4: Access the Grafana Application 
 
-![Access App](images/access-app.png)
+1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:3000/). 
+You can login using admin/admin as username/password and change the password accordingly.
 
-2. Submit a SQL statement to verify that PHP application connects well with MySQL.
+	<img src=images/GrafanaLogin.png width=300>
 
-	```
-	<copy>
-	SELECT
-	airline.airlinename,
-	AVG(datediff(departure,birthdate)/365.25) as avg_age,
-	count(*) as nb_people
-	FROM
-	booking, flight, airline, passengerdetails
-	WHERE
-	booking.flight_id=flight.flight_id AND
-	airline.airline_id=flight.airline_id AND
-	booking.passenger_id=passengerdetails.passenger_id AND
-	country IN ('GERMANY', 'SPAIN', 'GREECE')
-	GROUP BY 
-	airline.airlinename
-	ORDER BY 
-	airline.airlinename, avg_age
-	LIMIT 10;
-	</copy>
-	```
- 
-3. After a while, you should get the query result together with the execution time. Note down the execution time, you will see performance improvement in next lab after HeatWave is enabled.
+2. Add Datasource MySQL
+* Select Datasource from Settings left menu
 
-![Query Result](images/query-result.png)
+<img src=images/AddDatasource.png width=300>
+
+* Click "Add Data source" button
+![Choose MySQL](images/AddDatasource-2.png)
+
+* Type in mysql in the filter textbox and click the MySQL Datasource
+![Choose MySQL](images/AddDatasource-3.png)
+
+* Fill in the Datasource details based on the MDS ip/port and username/password details.
+![Fill MySQL](images/AddDatasource-4.png)
+
+3. Import MySQL Dashboard
+* Choose "Import" from "+" left menu and put in 7991 dashboard ID for import
+![Import](images/import7991.png)
+
+* Choose the Datasource and click "Import"
+![Import](images/import7991-Import.png)
+
+4. Checking the Dashboard
+![Dashboard](images/MySQLDashboard7991.png)
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
-			 - Ivan Ma, MySQL Engineer, MySQL JAPAC, Ryan Kuan, Cloud Engineer, MySQL APAC
+			 - Ivan Ma, MySQL Solution Engineer, MySQL APAC
+			 - Ryan Kuan, Cloud Engineer, MySQL APAC
 * **Contributors** 
-* **Last Updated By/Date** - Ryan Kuan, March 2021
+			 - Perside Foster, MySQL Solution Engineering 
+* **Last Updated By/Date** - Ivan Ma, March, 2022
