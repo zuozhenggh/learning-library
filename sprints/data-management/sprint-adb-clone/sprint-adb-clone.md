@@ -11,7 +11,7 @@ When you create a clone for an Autonomous Database instance, you have the option
 * Refreshable Clone: creates a read-only full clone that can be easily refreshed with the data from the source database.
 * Metadata Clone: creates a new database that includes all of the source database schema metadata, but not the source database data.
 
-## Create Clone
+### Create Clone
 
 1. Access Autonomous Database from Cloud Console
      
