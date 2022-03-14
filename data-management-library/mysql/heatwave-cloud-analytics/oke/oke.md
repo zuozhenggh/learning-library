@@ -11,8 +11,8 @@ Estimated Time: 2 minutes
 ### Objectives
 
 In this lab, you will:
-* Create a compartment
-* Create an OKE cluster
+* Create a compartment 
+* Create an OKE cluster 
 
 ### Prerequisites
 
