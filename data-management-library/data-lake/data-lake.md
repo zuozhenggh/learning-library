@@ -48,7 +48,7 @@ Select bucket dataflow-warehouse bucket. And upload file by selecting or draggin
 
 Now, navigate to the OCI Data Flow and click on Create Application.
 
-![Create Data Flow](./images/.png " ")
+![Create Data Flow](./images/nav_dataflow.png " ")
 
 For creating the application, you need to have the python code and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
 
