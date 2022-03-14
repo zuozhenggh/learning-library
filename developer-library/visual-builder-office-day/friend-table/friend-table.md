@@ -10,7 +10,7 @@ Estimated Time:  30 minutes
 
 In a previous lab, you have created a visual builder installation and imported the base OfficeDay program that you will extend.
 
-## Task 1: Create a business object
+## Task 1: Create a Business Object
 
 In this task, you'll create a business object (table) called Friends (or Ennemies if you prefer)
 
@@ -26,7 +26,7 @@ In this task, you'll create a business object (table) called Friends (or Ennemie
 
     ![](./images/friend-bo-add-field-name.png)
 
-## Task 2: Create a table
+## Task 2: Create a Table
 
 In this task, you will create the user interface
 
@@ -114,7 +114,7 @@ That is it. If you reached this point, CONGRATULATION !!
 
 Let's do some cleanup to make it prettier. Back to Visual Builder
 
-1. First press on the refresh. Choose the table. Data. Remove the username columns.
+1. First press on the **Refresh**. Select the table, go to the tab **Data**. Remove the **username** columns.
 
 ![](./images/friend-cleanup.png)  
 
