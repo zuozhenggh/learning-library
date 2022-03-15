@@ -5,7 +5,7 @@ Duration: 10 minutes
 
 To create a new table in your schema, you must have the CREATE TABLE system privilege. To create a table in another user's schema, you must have the CREATE ANY TABLE system privilege. Additionally, the owner of the table must have a quota for the tablespace that contains the table, or the UNLIMITED TABLESPACE system privilege.
 
-## Create a new table from another sample table
+### Create a new table from another sample table
 
 1. Create customers360 table from a sales sample table in Autonomous Database
 

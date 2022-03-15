@@ -1,11 +1,11 @@
-# How do I create user and grant access to database actions?
+# How do I grant access to database actions?
 Duration: 10 minutes
 
 ##  Create Users on Autonomous Database and grant access to database actions
 
 There are several options to create users on Autonomous Database. You can use Oracle Database Actions Database Users card or use client-side tools that connect to the database to create database users or follow the instructions below. 
 
-## Create Autonomous Database user
+### Create Autonomous Database user
 
 1. Create Autonomous Database user johndoe 
 
@@ -14,7 +14,7 @@ There are several options to create users on Autonomous Database. You can use Or
             CREATE USER johndoe IDENTIFIED BY < password >; 
       </copy>
       ```
-## Grant create session to johndoe
+### Grant create session to johndoe
 
 1. Grant create session to johndoe
 
