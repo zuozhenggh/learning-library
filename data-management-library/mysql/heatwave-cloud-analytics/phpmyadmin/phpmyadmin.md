@@ -21,7 +21,7 @@ In this lab, you will:
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it
 * All previous labs successfully completed
 
-## Task 1: Create k8s namespace
+## Task 1: Access OKE cluster 
 
 1. Log in to **OCI** and select **Developer Services**, and **Kubernetes Clusters (OKE)** to access to your OKE cluster created
 
@@ -47,7 +47,9 @@ In this lab, you will:
 
 ![Cloud Shell](images/cloud-shell.png)
 
-7. Download the PhpMyAdmin yaml files from
+## Task 2: Deploy PhpMyAdmin to OKE
+
+1. Download the PhpMyAdmin yaml files from
 
 ```
 <copy>
@@ -55,7 +57,7 @@ wget
 </copy>
 ```
 
-8. Unzip the yaml files
+2. Unzip the yaml files
 
 ```
 <copy>
@@ -64,7 +66,7 @@ cd
 </copy>
 ```
 
-9. Execute the kubectl commands to create a namespace
+3. Execute the kubectl commands to create a namespace
 
 ```
 <copy>
@@ -72,7 +74,7 @@ kubectl create namespace phpmyadmin
 </copy>
 ```
 
-10. Deploy PhpMyAdmin 
+4. Deploy PhpMyAdmin 
 
 ```
 <copy>
@@ -90,7 +92,7 @@ kubectl apply -f service.yaml -n phpmyadmin
 </copy>
 ```
 
-11. Access the deployed PhpMyAdmin application
+5. Access the deployed PhpMyAdmin application
 
 ![PhpMyAdmin](images/phpmyadmin.png)
 
