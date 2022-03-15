@@ -20,6 +20,6 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
-			 - Ivan Ma, MySQL Engineer, MySQL JAPAC, Ryan Kuan, Cloud Engineer, MySQL APAC
+			 - Ivan Ma, MySQL Solutions Engineer, MySQL JAPAC, Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors** 
 * **Last Updated By/Date** - Ryan Kuan, March 2021

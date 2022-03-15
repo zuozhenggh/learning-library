@@ -119,7 +119,7 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** 
 			 - Ivan Ma, MySQL Solution Engineer, MySQL APAC
-			 - Ryan Kuan, Cloud Engineer, MySQL APAC
+			 - Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors** 
 			 - Perside Foster, MySQL Solution Engineering 
 * **Last Updated By/Date** - Ivan Ma, March, 2022
