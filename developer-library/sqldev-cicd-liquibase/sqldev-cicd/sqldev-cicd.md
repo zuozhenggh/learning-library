@@ -8,13 +8,6 @@ This scenario is based on the requirement to run all tasks from SQL Developer, s
 
 Estimated Lab Time: 120 minutes
 
-{% capture nameOfVariableToCapture %}any markdown here...{% endcapture %}
-
-{{ nameOfVariableToCapture }} -- that prints the content of the variable
-Content before variable.
-{{ nameOfVariableToCapture }}
-Content after variable.
-
 ### Objectives
 In this lab, you will:
 * Add files to your GitHub repository and push changes
