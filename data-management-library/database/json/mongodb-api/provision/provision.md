@@ -132,12 +132,24 @@ In this lab, you will:
     - The password must not be the same password that is set less than 24 hours ago.
     - Re-enter the password to confirm it. Make a note of this password.
 
+    Later stages of this LiveLab will be easier if you avoid any of the characters / : ? # [ ] and @ in your password.
+    
     ![Enter password and confirm password.](./images/administration.png " ")
 
 8. Set network access:
 
     In order to use the Database API for MongoDB, you must set the database up with an access control rule. So choose __Secure access from allowed IPs and VCNs only__.
 
+    You can then click "Add My IP Address" to allow access from your current IP address. You should avoid any VPN or proxy server access which may mask or change your actual IP address. 
+
+    ![](./images/network-access.png " ")
+
+    Then you must also add the IP address for the Compute Node we set up in the previous lab (which you should have saved!)
+    To do that, click __+ Access Control Rule__ button and enter the IP address of your Compute Node in the "Values" field.
+
+    ![](./images/add-access-rule.png " ")
+
+    ![](./images/network-add-ip.png " ")
     You can then click "Add My IP Address" to allow access from your current IP address. You should avoid any VPN or proxy server access which may mask or change your actual IP address. If you have any issues with this, you can add a __CIDR Block__ (under __IP notation type__) of __0.0.0.0/0__, which will allow access from any IP address.
 
 
