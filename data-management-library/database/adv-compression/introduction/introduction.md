@@ -34,11 +34,10 @@ The amount of data that enterprises are storing, and managing, is overgrowing - 
 * Enable Automatic Data Optimization
 
 ### Prerequisites
-This lab assumes you have the following:
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported 
+> **Note:** If you have a Free Trial account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
-* Access to Oracle Database 19c.
-* You have access to Paid or Free Tier cloud tenancy. 
-  
+ 
 ## More information and References 
 
 * [Partitioning whitepaper ](https://www.oracle.com/technetwork/database/options/partitioning/partitioning-wp-12c-1896137.pdf)   

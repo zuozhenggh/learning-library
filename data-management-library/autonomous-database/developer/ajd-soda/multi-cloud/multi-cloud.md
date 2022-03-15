@@ -24,37 +24,37 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
 1. Access MongoDB Cloud at [https://cloud.mongodb.com](https://cloud.mongodb.com), and create an account. You can login using your Google account.
     
-    ![MongoDB Sign In](./images/task1/mongodbsignin.png)
+    ![MongoDB Sign In](./images/task1/mongodb_sign_in.png)
 
 2. Click Build a Database. Select the Free option, choose a Cloud Provider and Region. Create the new Cluster using the default settings. Name it **Cluster0**.
 
-    ![MongoDB Free Option](./images/task1/mongodbfreeoption.png)
-    ![MongoDB CloudProvider](./images/task1/mongodbcloudprovider.png)
+    ![MongoDB Free Option](./images/task1/mongodb_free_option.png)
+    ![MongoDB CloudProvider](./images/task1/mongodb_cloud_provider.png)
     
 
 3. Once your Cluster is up and running, on the **overview page**, click **Connect**.
 
-    ![MongoDB Connect](./images/task1/mongodbconnect.png)
+    ![MongoDB Connect](./images/task1/mongodb_connect.png)
 
 4. Click **Add a Different IP Address**, and use the **Public IP address** of your DEVM Compute Node. To add more or change this IP address, go to Security > Network Access on the left side menu.
 
-    ![MongoDB Network](./images/task1/mongodbnetwork.png)
+    ![MongoDB Network](./images/task1/mongodb_network.png)
 
-    ![MongoDB Network IP Address](./images/task1/mongodbnetworkipaddress.png)
+    ![MongoDB Network IP Address](./images/task1/mongodb_network_ip_address.png)
 
 5. Create a Database User: **mongoUser/DBlearnPTS#22_**. To add or edit users, click Security > Database Access on the left side menu.
 
-    ![MongoDB User](./images/task1/mongodbuser.png)
+    ![MongoDB User](./images/task1/mongodb_user.png)
 
-    ![Add MongoDB User](./images/task1/addmongodbuser.png)
+    ![Add MongoDB User](./images/task1/add_mongodb_user.png)
     
     > Note: Save the **username** and the **password** in your notes.
 
 6. On the Cluster Overview Page, Click **Connect**.
 
-    ![MongoDBConnectCluster](./images/task1/mongodbconnectcluster.png)
+    ![MongoDBConnectCluster](./images/task1/mongodb_connect_cluster.png)
 
-    - **Connect Your Application**: Python 3.6 or later. 
+    - **Connect Your Application**: Python 3.6 or later
         You will receive a connection string like this:
 
     ````
@@ -63,27 +63,27 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     </copy>
     ````
 
-    ![MongoDB Connect Your App](./images/task1/mongodbconnectyourapp.png)
-    ![MongoDB Connect String](./images/task1/mongodbconnectstring.png)
+    ![MongoDB Connect Your App](./images/task1/mongodb_connect_your_app.png)
+    ![MongoDB Connect String](./images/task1/mongodb_connect_string.png)
 
     
     > Note: Save this string in your notes. Replace `[password]` (DBlearnPTS#22_), `[cluster_name]` (Cluster0), `[sub_domain_name]` and `[dbname]` (SimpleDatabase) with your values.
 
 7. Click the cluster name **Cluster0**. Under **Collections**, use Load a Sample Dataset wizard to generate some JSON documents for different use cases in your MongoDB database. Navigate these sample datasets and familiarize yourself with JSON documents, if this is your first experience.
 
-    ![MongoDB Collections](./images/task1/mongodbcollections.png)
-    ![MongoDB Load Sample](./images/task1/mongodbloadsample.png)
-    ![MongoDB Load Sample Two](./images/task1/mongodbloadsampletwo.png)
+    ![MongoDB Collections](./images/task1/mongodb_collections.png)
+    ![MongoDB Load Sample](./images/task1/mongodb_load_sample.png)
+    ![MongoDB Load Sample Two](./images/task1/mongodb_load_sample_two.png)
 
 
 8. Click Create Database, and name it **SimpleDatabase**, and the collection **SimpleCollection**. This will be used for our Python application development in the next lab.
 
-    ![MongoDB Create Database](./images/task1/mongodbcCreatedatabase.png)
-    ![MongoDB Simple DB](./images/task1/mongodbsimpledb.png)
+    ![MongoDB Create Database](./images/task1/mongodb_create_database.png)
+    ![MongoDB Simple DB](./images/task1/mongodb_simple_db.png)
 
 9. On the Collections left-side menu, select **SimpleDatabase** > **SimpleCollection**. This collection is now empty.
 
-    ![MongoDB SimpleDB Empty](./images/task1/mongodbsimpledbempty.png)
+    ![MongoDB SimpleDB Empty](./images/task1/mongodb_simple_db_empty.png)
 
 ## Task 2: Develop dual document store micro-service
 
@@ -95,7 +95,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     </copy>
     ````
 
-    ![Double app](./images/task2/doubleapp.png)
+    ![Double app](./images/task2/double_app.png)
 
 
 2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor. This micro-service has 2 URLs: 
@@ -177,7 +177,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     </copy>
     ````
 
-    ![Double App Script](./images/task2/doubleappscript.png)
+    ![Double App Script](./images/task2/double_app_script.png)
 
 3. **Run** double-app application.
     
@@ -186,7 +186,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     python3 double-app.py
     </copy>
     ````
-    ![Double App Execution](./images/task2/doubleappexecution.png)
+    ![Double App Execution](./images/task2/double_app_execution.png)
 
 4. Use **Terminal second tab** to perform two POST request with CURL client.
     
@@ -220,9 +220,9 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     }'
     </copy>
     ````
-    ![POST Company Five & Six](./images/task2/postcompanyfivesix.png)
+    ![POST Company Five & Six](./images/task2/post_company_five_six.png)
 
-5. Hit **Enter** after each block you copy/paste.
+5. Press **Enter** after each block you copy/paste.
     
     ````
     <copy>
@@ -254,15 +254,15 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     }'
     </copy>
     ````
-    ![POST Company Seven & Eight](./images/task2/postcompanyseveneight.png)
+    ![POST Company Seven & Eight](./images/task2/post_company_seven_eight.png)
 
 6. Use a new tab in the web browser on your laptop to navigate to the micro-service to list JSON documents inserted into MongoDB.
 
     http://[DEVM public-ip address]:5000/mongo/
 
-    ![Microservice Company Five, Six, Seven & Eight](./images/task2/microservicecompanyfivesixseveneight.png)
+    ![Microservice Company Five, Six, Seven & Eight](./images/task2/microservice_company_five_six_seven_eight.png)
 
-7. Go to the first Terminal window where the micro-service is running and hit CTRL+C to stop it.
+7. Go to the first Terminal window where the micro-service is running and press CTRL+C to stop it.
             
     ````
     <copy>
@@ -270,11 +270,11 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     </copy>
     ````
 
-    ![Double App Stop](./images/task2/doubleappstop.png)
+    ![Double App Stop](./images/task2/double_app_stop.png)
 
 8. We can check that the Four Companies (Five, Six, Seven and Eight) are being stored on MongoDB cloud, on SimpleDatabase.SimpleCollection that we created in Task 1 of this Lab.
 
-    ![MongoDB Companies Added](./images/task2/mongodbcompaniesadded.png)
+    ![MongoDB Companies Added](./images/task2/mongodb_companies_added.png)
 
 
 ## Task 3: Develop document store migration application
@@ -286,7 +286,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     gedit migrate-app.py
     </copy>
     ````
-    ![Migrate app](./images/task3/migrateapp.png)
+    ![Migrate app](./images/task3/migrate_app.png)
 
 2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor.
     
@@ -337,7 +337,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     </copy>
     ````
 
-    ![Migrate app Script](./images/task3/migrateappscript.png)
+    ![Migrate app Script](./images/task3/migrate_app_script.png)
 
 3. Run migrate-app application. It will print the content of the migrated documents from MongoDB to Oracle Autonomous Database.
     
@@ -347,7 +347,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     </copy>
     ````
     
-    ![Migrate app Execution](./images/task3/migrateappexecution.png)
+    ![Migrate app Execution](./images/task3/migrate_app_execution.png)
     
 4. Run double-app application to verify the JSON were migrated successfully.
     
@@ -356,43 +356,43 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     python3 double-app.py
     </copy>
     ````
-    ![Double app Execution](./images/task3/doubleappexecution.png)
+    ![Double app Execution](./images/task3/double_app_execution.png)
 
 5. Refresh the web browser on your laptop to list all JSON documents inserted and migrated.
 
     http://[DEVM public-ip address]:5000/oracle/
 
-    ![Microservice Company Five, Six, Seven, Eight, One, Two, Three & Four](./images/task3/microservicecompanyfivesixseveneightonetwothreefour.png)
+    ![Microservice Company Five, Six, Seven, Eight, One, Two, Three & Four](./images/task3/microservice_company_five_six_seven_eight_one_two_three_four.png)
 
-6. Go to the Terminal tab where the micro-service is running, and hit CTRL+C to stop it.
+6. Go to the Terminal tab where the micro-service is running, and press CTRL+C to stop it.
 
     ````
     <copy>
     CTRL+C
     </copy>
     ````
-    ![Double App Stop](./images/task3/doubleappstop.png)
+    ![Double App Stop](./images/task3/double_app_stop.png)
 
 ## Task 4: Final Results in Companies App built with Apex
       
 1. Execute **Companies Application**. 
 
-    ![Run App](./images/task4/runapp.png)
+    ![Run App](./images/task4/run_app.png)
 
 2. **Log In** to Companies using the following credentials:
 
     - Username: demo
     - Password: DBlearnPTS#22_
 
-    ![Log In Companies](./images/task4/logincompanies.png)
+    ![Log In Companies](./images/task4/log_in_companies.png)
 
 3. Click **Report**. 
 
-    ![Report App](./images/task4/reportapp.png)
+    ![Report App](./images/task4/report_app.png)
     
     You can see the Eight Companies. Four (One, Two, Three and Four) were inserted directly to the Oracle Microservice and Four (Five, Six, Seven and Eight) were migrated from the MongoDB Microservice.
     
-    ![Report App Result Eight Companies](./images/task4/reportappresulteightcompanies.png)
+    ![Report App Result Eight Companies](./images/task4/report_app_result_eight_companies.png)
     
     
 *Congratulations! Well done!*
@@ -400,7 +400,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Valentin Leonard Tabacaru, March 2022
+* **Last Updated By/Date** - Priscila Iruela, March 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
