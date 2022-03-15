@@ -5,7 +5,7 @@ Duration: 2 minutes
 
 The DBMS_SCHEDULER package provides a collection of scheduling functions and procedures that can be called from any PL/SQL program.
 
-## Create a procedure that checks for unsent mails and sends them
+### Create a procedure that checks for unsent mails and sends them
 
 1. Create a procedure that checks for unsent mails in the mailing\_list table with a mail sent status as null. Once a mail is sent, the status will be updated as mail\_sent
 
@@ -50,7 +50,7 @@ The DBMS_SCHEDULER package provides a collection of scheduling functions and pro
       end;   
       </copy>
       ```
-## Create a Job that sends mail periodically
+### Create a Job that sends mail periodically
 
 1. This example assumes that you have access to the Oracle Apex environment to create tables, jobs and plsql procedures. Here we will create a JOB by the name my\_sendmail\_job that calls the TEST\_EMAIL\_ALERT PLSQL procedure. the frequency is set as 10 minutes, and this can be set to various other time intervals
 
