@@ -7,7 +7,7 @@ USER\_ILMPOLICIES displays details about Automatic Data Optimization policies ow
 
  Login to SQLPlus and run the following statement: 
  
-## Task 1: Enable automatic data optimization
+### Enable automatic data optimization
 
 1.  Create table students 
 

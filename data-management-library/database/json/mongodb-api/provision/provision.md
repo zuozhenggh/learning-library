@@ -150,6 +150,10 @@ In this lab, you will:
     ![](./images/add-access-rule.png " ")
 
     ![](./images/network-add-ip.png " ")
+    You can then click "Add My IP Address" to allow access from your current IP address. You should avoid any VPN or proxy server access which may mask or change your actual IP address. If you have any issues with this, you can add a __CIDR Block__ (under __IP notation type__) of __0.0.0.0/0__, which will allow access from any IP address.
+
+
+    ![](./images/network-access.png " ")
 
 9. Choose a license type:
 
