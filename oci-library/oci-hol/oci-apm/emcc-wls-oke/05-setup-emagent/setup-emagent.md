@@ -107,16 +107,20 @@ Estimated time: 15 minutes
     sudo firewall-cmd --permanent --add-service=https
     sudo firewall-cmd --permanent --add-service=http
     sudo firewall-cmd --reload
+    exit
     </copy>
     ```
 
-5. Open another terminal window, type the following to open an SSH connection to the EM Server (OMS) host.
+5. Ensure that you exited from the EM agent host. In the same terminal window (or open another terminal window), type the following to open an SSH connection to the EM Server (OMS) host.
 
     ``` bash
     <copy>
     ssh opc@<OMS-Host-Public-IP> -i "<path-to-the-private-key>/id_rsa"
     </copy>
     ```
+
+    ![Terminal](images/2-1-1-terminal.png " ")
+
 6. Open the hosts file with the following command.
 
     ``` bash
@@ -133,7 +137,7 @@ Estimated time: 15 minutes
 
     > **NOTE:**
       - If you do not have permission to access the OMS host, please ask your EM administrator to add the EM Agent information to the hosts file in the OMS host.
-      - Do ***NOT*** close the terminal window. You will need to use it in the Task 3.
+      - Do ***NOT*** close the terminal window that connected to the OMS host. You will need to use it in the Task 3.
 
 
 
@@ -202,7 +206,7 @@ Estimated time: 15 minutes
 
    ![EM Console, Add Target wizard](images/3-7-emcc.png " ")
 
-    > **NOTE:** In case the wizard returns warnings for missing packages, update the package in the EM agent host, and try the agent install again. E.g., if the warning is: "Checking for libnsl-2.28-18 Not found", run **sudo yum install libnsl**. For other Agent installation issues, please refer to the doc **[EM 12c, EM 13c: Known Issues and Troubleshooting Enterprise Manager Cloud Control Management Agent Installation Issues (Doc ID 1396675.1)](https://support.oracle.com/knowledge/Enterprise%20Management/1396675_1.html)** or contact My oracle Support. 
+    > **NOTE:** In case the wizard returns warnings for missing packages, update the package in the EM agent host, and try the agent install again. E.g., if the warning is: "Checking for libnsl-2.28-18 Not found", run **sudo yum install libnsl**. For other Agent installation issues, please refer to the doc **[EM 12c, EM 13c: Known Issues and Troubleshooting Enterprise Manager Cloud Control Management Agent Installation Issues (Doc ID 1396675.1)](https://support.oracle.com/knowledge/Enterprise%20Management/1396675_1.html)** or contact My oracle Support.
 
 11.  From the menu bar, select **Setup** > **Manage Cloud Control** > **Agents**. Confirm the agent is added, and the status shows green UP arrow icon.
 
