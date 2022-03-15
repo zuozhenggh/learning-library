@@ -122,7 +122,7 @@ Please WAIT until the capture_cc.sql scripts returns control back to you – DON
 
 ## Appendix 1: Additional information on HammerDB
 
-You can modify the standard parameters in either the GUI tool or as defaults in config.xml located in `/home/oracle/HammerDB-3.3`
+1. You can modify the standard parameters in either the GUI tool or as defaults in config.xml located in `/home/oracle/HammerDB-3.3`
 
 You may now *proceed to the next lab*.
 

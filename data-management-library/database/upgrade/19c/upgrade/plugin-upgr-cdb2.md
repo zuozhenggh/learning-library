@@ -216,31 +216,31 @@ This lab assumes you have:
 
 DON'T USE THIS IF YOU HAVE DONE THE PLUGIN WITH THE ABOVE STEPS ALREADY.
 
-You could have completed the above task with AutoUpgrade as well. Even when the database has been upgraded already, AutoUpgrade automated the entire plugin operation for you. You only need to specify the target\_sid you'd like to plugin and change the source\_home to Oracle 19c. This would be an example config file:
+1. You could have completed the above task with AutoUpgrade as well. Even when the database has been upgraded already, AutoUpgrade automated the entire plugin operation for you. You only need to specify the target\_sid you'd like to plugin and change the source\_home to Oracle 19c. This would be an example config file:
 
-   ```
-   <copy>
-   global.autoupg_log_dir=/home/oracle/logs
+    ```
+    <copy>
+    global.autoupg_log_dir=/home/oracle/logs
 
-   upg1.source_home=/u01/app/oracle/product/19
-   upg1.target_home=/u01/app/oracle/product/19
-   upg1.sid=UPGR
-   upg1.target_sid=CDB2
-   upg1.target_pdb_name=PDB1
-   upg1.log_dir=/home/oracle/logs
-   </copy>
-   ```
+    upg1.source_home=/u01/app/oracle/product/19
+    upg1.target_home=/u01/app/oracle/product/19
+    upg1.sid=UPGR
+    upg1.target_sid=CDB2
+    upg1.target_pdb_name=PDB1
+    upg1.log_dir=/home/oracle/logs
+    </copy>
+    ```
 
-   Save the file under /home/oracle/scripts/PLUG.cfg.
+2.   Save the file under /home/oracle/scripts/PLUG.cfg.
 
-   You start AutoUpgrade now, and let it plugin your database as a new PDB.
+3.   You start AutoUpgrade now, and let it plugin your database as a new PDB.
 
 
-   ```
-   <copy>
-   java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/PLUG.cfg -mode deploy
-   </copy>
-   ```
+    ```
+    <copy>
+    java -jar $OH19/rdbms/admin/autoupgrade.jar -config /home/oracle/scripts/PLUG.cfg -mode deploy
+    </copy>
+    ```
 
 
 You may now *proceed to the next lab*.

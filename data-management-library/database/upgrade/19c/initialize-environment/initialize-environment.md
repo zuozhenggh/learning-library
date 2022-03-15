@@ -68,34 +68,34 @@ You may now *proceed to the next lab*.
 
     - Start
 
-    ```
-    <copy>
-    sudo systemctl start oracle-database
-    </copy>
-    ```
+        ```
+        <copy>
+        sudo systemctl start oracle-database
+        </copy>
+        ```
     - Stop
 
-    ```
-    <copy>
-    sudo systemctl stop oracle-database
-    </copy>
-    ```
+        ```
+        <copy>
+        sudo systemctl stop oracle-database
+        </copy>
+        ```
 
     - Status
 
-    ```
-    <copy>
-    systemctl status oracle-database
-    </copy>
-    ```
+        ```
+        <copy>
+        systemctl status oracle-database
+        </copy>
+        ```
 
     - Restart
 
-    ```
-    <copy>
-    sudo systemctl restart oracle-database
-    </copy>
-    ```
+        ```
+        <copy>
+        sudo systemctl restart oracle-database
+        </copy>
+        ```
 
 ## Acknowledgements
 

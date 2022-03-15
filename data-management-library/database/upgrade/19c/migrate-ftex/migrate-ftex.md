@@ -194,7 +194,7 @@ Before we can transport anything, we need to prepare the FTEX database.
 
 ## Task 3: Migration to Oracle Cloud or Cloud Machine
 
-The Migration to Oracle Cloud or Cloud Machine feature can be used to migrate to Oracle Cloud or ExaCC machines.
+1. The Migration to Oracle Cloud or Cloud Machine feature can be used to migrate to Oracle Cloud or ExaCC machines.
 
 You may now *proceed to the next lab*.
 
