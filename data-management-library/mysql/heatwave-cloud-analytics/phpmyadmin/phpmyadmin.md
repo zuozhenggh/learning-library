@@ -4,7 +4,7 @@
 
 In this lab, we will deploy an open source MySQL management tool, PhpMyAdmin (https://www.phpmyadmin.net/) to OKE to manage MySQL
 
-Estimated Time: 2 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
