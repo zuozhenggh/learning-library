@@ -124,25 +124,20 @@ Estimated time: 15 minutes
     sudo vi /etc/hosts
     </copy>
     ```
-    Add the Public IP and the host name of the EM Agent to the ***hosts*** file, in the below format.
+    Add the Public IP and the host name of the EM Agent to the ***hosts*** file, in the below format.   
+
 
         <Public IP address of the EM Agent host> <FQDN of the EM Agent host>
 
    ![Terminal](images/2-2-terminal.png " ")
 
-    > **NOTE:** If you do not have permission to access the OMS host, please ask your EM administrator to add the EM Agent information to the hosts file in the OMS host.
+    > **NOTE:**
+      - If you do not have permission to access the OMS host, please ask your EM administrator to add the EM Agent information to the hosts file in the OMS host.
+      - Do ***NOT*** close the terminal window. You will need to use it in the Task 3.
 
 
-7.  Type the following in the terminal window to ensure the OMS Upload port is open in the firewall settings.
 
-    ``` bash
-    <copy>
-    sudo firewall-cmd --zone=public --permanent --add-port=4903/tcp
-    sudo firewall-cmd –reload
-    </copy>
-    ```
 
-    > **NOTE:** Please also make sure that an ingress rule for the port 4903 is created in the security list in the VCN, which is used by the OMS host. This is required for the EM agent to upload any data to the OMS. To create a security rule, please refer to the Tutorial 4, Task 1.
 
 ## Task 3: Install EM agent in the compute instance
 
@@ -164,23 +159,52 @@ Estimated time: 15 minutes
 
    ![EM Console, Add Target wizard](images/3-4-emcc.png " ")
 
-5.  Enter the directory where the agent files will be installed. **/home/opc/agent** is specified in the image below, as an example. Select **SSH Key based named credentials** that can access the Oracle Cloud compute instance. Leave the other fields with the default values, then click **Next**.
+5.  Enter the directory where the agent files will be installed. **/home/opc/agent** is specified in the image below, as an example. Select **SSH Key based named credentials** that can access the Oracle Cloud compute instance.
 
     > **NOTE:** If you have not created a SSH based named credential, go to **Setup** > **Security** > **Named Credentials**. Please refer to the EMCC Security Guide documentation > ***[Configuring and Using Target Credentials](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emsec/security-features.html#GUID-E2792E49-FBF5-4A25-837B-4225CFD16012)*** for how to create SSH key based named credentials.
 
+   Leave the other fields with the default values, then click **Next**.
+
    ![EM Console, Add Target wizard](images/3-5-emcc.png " ")
 
-6.  Review the entries and click **Deploy Agent**. The EM agent installation takes about 10 minutes.
+6.  Locate the **OMS Upload Port** in the **Review** page. In many cases, the value is 4903, but it can be different as in the image below. Write the port number to a text file.
+
+    ![EM Console, Add Target wizard](images/3-6-1-emcc.png " ")
+
+
+7.  Go to the terminal window that you opened in the Tutorial 5, Task2, Step 5, to access the EM Server (OMS) host. If you have already closed the terminal, re-open it, and type the following to open an SSH connection to the OMS host.
+
+    ``` bash
+    <copy>
+    ssh opc@<OMS-Host-Public-IP> -i "<path-to-the-private-key>/id_rsa"
+    </copy>
+    ```
+
+8. Type the following to ensure the OMS Upload port is open in the firewall settings.
+
+
+    ``` bash
+    <copy>
+    sudo firewall-cmd --zone=public --permanent --add-port=<OMS UPLOAD PORT NUMBER>/tcp
+    sudo firewall-cmd –-reload
+    </copy>
+    ```
+
+    > **NOTE:** Please also make sure that an ingress rule for the OMS Upload Port (E.g., 4903) is created in the security list in the VCN, which is used by the OMS host. This is required for the EM agent to upload any data to the OMS. To create a security rule, please refer to the Tutorial 4, Task 1.
+
+
+9. In the Review page in the EM console, click **Deploy Agent**. The EM agent installation takes about 10 minutes.
 
    ![EM Console, Add Target wizard](images/3-6-emcc.png " ")
 
-    > **NOTE:** In case the wizard returns warnings for missing packages, update the package in the EM agent host, and try the agent install again. E.g., if the warning is: "Checking for libnsl-2.28-18 Not found", run **sudo yum install libnsl**.
 
-7.  Once the installation is succeeded, you will see a screen similar to the image below. Click **Done** to exit the wizard.
+10.  Once the installation is succeeded, you will see a screen similar to the image below. Click **Done** to exit the wizard.
 
    ![EM Console, Add Target wizard](images/3-7-emcc.png " ")
 
-8.  From the menu bar, select **Setup** > **Manage Cloud Control** > **Agents**. Confirm the agent is added, and the status shows green UP arrow icon.
+    > **NOTE:** In case the wizard returns warnings for missing packages, update the package in the EM agent host, and try the agent install again. E.g., if the warning is: "Checking for libnsl-2.28-18 Not found", run **sudo yum install libnsl**. For other Agent installation issues, please refer to the doc **[EM 12c, EM 13c: Known Issues and Troubleshooting Enterprise Manager Cloud Control Management Agent Installation Issues (Doc ID 1396675.1)](https://support.oracle.com/knowledge/Enterprise%20Management/1396675_1.html)** or contact My oracle Support. 
+
+11.  From the menu bar, select **Setup** > **Manage Cloud Control** > **Agents**. Confirm the agent is added, and the status shows green UP arrow icon.
 
    ![EM Console, Manage Cloud Control, Agents page](images/3-8-emcc.png " ")
 
