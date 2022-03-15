@@ -24,7 +24,7 @@ In the following simplified example, the three-drawer filing cabinet represents 
 
 ## Oracle GitHub Project and learning-library Repository
 
-At Oracle, we have a GitHub project named **Oracle** which has **291** repositories as of November 3, 2021. One of the repositories in the **Oracle** GitHub project is named **learning-library**. All of the LiveLabs workshops that you and others create are stored in the **learning-library** repository. This repo is sometimes referred to as **Production** since it's where customers view the completed LiveLabs workshops.
+At Oracle, we have a GitHub project named **Oracle** which has **305** repositories as of March 15th, 2022. One of the repositories in the **Oracle** GitHub project is named **learning-library**. All of the LiveLabs workshops that you and others create are stored in the **learning-library** repository. This repo is sometimes referred to as **Production** since it's where customers view the completed LiveLabs workshops.
 
 ![](./images/git-hub-oracle-projects-learning-library.png " ")
 
@@ -65,10 +65,11 @@ The following diagram shows the general workflow process that your need to follo
 
 ## Lab Breakdown
 - **Lab 1:** Get Started with Git and Set up the Environment
-- **Lab 2:** Understand the Folder Structure
-- **Lab 3:** Use Atom Editor and Live Server to Develop Content
-- **Lab 4:** Use GitHub to Commit to Git Repository (Git Web UI)
-- **Lab 5:** Add GitHub Hosted Labs to OHC
+- **Lab 2:** Understand the learning-library Folder Structure
+- **Lab 3:** Use A Text Editor to Develop Markdown Content
+- **Lab 3a:** Common Markdown Features for Content Development
+- **Lab 4:** Use GitHub Desktop to Commit to the GitHub Repository
+- **Optional Lab 5:** Add GitHub Hosted Labs and Workshops to OHC
 
 ## What's Next?
 

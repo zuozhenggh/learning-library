@@ -41,7 +41,7 @@ This lab assumes you have:
     ![](images/oml4py-open-oml4py-part-1.png " ")
 
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**
 
 
 ## Acknowledgements
