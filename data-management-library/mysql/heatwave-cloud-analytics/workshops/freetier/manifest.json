@@ -37,7 +37,7 @@
             "filename": "../../phpmyadmin/phpmyadmin.md"
         },
         {
-            "title": "Lab 5: Deploy Grafana Dashboard for MySQL to OCI Kubernetes",
+            "title": "Lab 5: Monitor MySQL HeatWave with Grafana",
             "description": "Deploy Grafana Dashboard for MySQL to OCI Kubernetes",
             "filename": "../../grafana/grafana.md"
         },
