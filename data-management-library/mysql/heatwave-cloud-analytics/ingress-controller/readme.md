@@ -110,6 +110,7 @@ spec:
 
 EOF
 ```
+![Deploy Hello World Application](images/deploy-helloworld-app-output.png)
 
 ### Deploy Ingress Resource 'helloworld-ing' to namespace helloworld
 
@@ -121,7 +122,6 @@ metadata:
   name: helloworld-ing
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/default-backend: docker-hello-world-svc
 spec:
   ingressClassName: nginx
   rules:
@@ -137,6 +137,8 @@ spec:
 EOF
 ```
 
+![Deploy ingress](images/deploy-ingress-output.png)
+
 ### Check the Public IP and resource agin
 - Based on the output and note down the public IP from the service.  
 - The Ingress Resource helloworld-ing may get empty Public IP at the beginning.  After a while, the publc IP will be associated.
@@ -146,19 +148,21 @@ EOF
 kubectl get svc -n ingress-nginx
 kubectl get ing -n helloworld
 ```
-
+![Check Ingress status](images/check-ingress-status.png)
 
 
 
 ### Open a browser and access your hello world application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:/helloworld). 
+
+![Hello World Output](images/helloworld-test-output.png)
 
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
-			 - Ivan Ma, MySQL Solution Engineer, MySQL APAC
-			 - Ryan Kuan, Cloud Engineer, MySQL APAC
+- Ivan Ma, MySQL Solution Engineer, MySQL APAC
+- Ryan Kuan, Cloud Engineer, MySQL APAC
 * **Contributors** 
 
 * **Last Updated By/Date** - Ivan Ma, March, 2022
