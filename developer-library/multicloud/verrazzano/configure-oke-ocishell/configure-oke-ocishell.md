@@ -16,7 +16,16 @@ In this lab, you will:
 
 ### Prerequisites
 
-This workshop assumes that you have reservation of this workshop on LiveLabs. Once your environment is ready, you must have an OKE Cluster in Active State.
+* This workshop assumes that you have reservation of this workshop on LiveLabs. Once your environment is ready, Click on *Launch Workshop*.
+        ![](images/1.png " ")
+* On this page, you will find your *Tenancy name*, *Region*, *User name* and *Compartment*. We need this information as we proceed further in this workshop. Click on *Copy Password*  and then click *Launch Console*.
+        ![](images/2.png " ")
+
+* Enter the copied password here and click *Sign In*.
+        ![](images/3.png " ")
+
+* Enter the copied password and new password here. Click on *Save New Password*.
+        ![](images/4.png " ")
 
 
 ## Task 1: Configure `kubectl` (Kubernetes Cluster CLI)

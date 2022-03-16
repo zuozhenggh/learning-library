@@ -1,4 +1,4 @@
-# Use DLS to Bulk Label Dataset
+# Use DLS to bulk label a dataset
 
 ## Introduction
 In this lab, we will provide a ZIP file containing biomedical images separated into 3 subfolders based on how each image has been medically classified. In this lab, participants will download this ZIP file, bulk upload the images to object storage, and will create a labeled dataset using the Data Labeling Service and custom bulk-labeling code.
@@ -135,7 +135,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   ![](./images/create-bucket.png)
 
 ## **Task 2:** Upload the Images From Your Local Machine Into Your Bucket
-Note: These instructions are Mac OS compatible
+**Note:** These instructions are Mac OS compatible
 1. On your local machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values.
     ```
     <copy>export DL_BucketName="<your bucket name>"</copy>
@@ -213,7 +213,7 @@ Note: These instructions are Mac OS compatible
 
 3. Open the file named config.py from the bulk-labeling tool contents, and replace the values with your own (config file path, region identifier, compartment id, dataset id, labels).
 
-  Note: Enter "cell", "stripe", "debris" as the 3 labels.
+  **Note:** Enter "cell", "stripe", "debris" as the 3 labels.
 
 4. Open your Command-Line Interface (CLI) and navigate to the folder where the bulk-labeling tool files exist on your machine.
 
@@ -228,7 +228,7 @@ Note: These instructions are Mac OS compatible
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+[You may now **proceed to the next lab**](#next).
 
 ## Acknowledgements
 * **Authors**

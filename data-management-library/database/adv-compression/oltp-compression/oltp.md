@@ -1,4 +1,4 @@
-# OLTP table compression
+# Enable OLTP table compression
 
 ## Introduction
 
@@ -11,7 +11,7 @@ Estimated Time: 20 minutes
 
 Oracle's OLTP Table Compression uses a unique compression algorithm specifically designed to work with OLTP applications. The algorithm eliminates duplicate values within a database block, even across multiple columns. Compressed blocks contain a structure called a symbol table that maintains compression metadata. When a block is compressed, duplicate values are eliminated by first adding a single copy of the duplicate value to the symbol table. Each duplicate value is then replaced by a short reference to the appropriate entry in the symbol table. 
 
-### SecureFiles LOB Compression
+### SecureFiles LOB compression
 
 SecureFiles LOB Compression utilizes industry-standard compression algorithms to minimize the storage requirements of SecureFiles data. With SecureFiles LOB Compression, typical files such as documents or XML files experience a reduction of 2x to 3x times in size. There are three levels of SecureFiles LOB Compression:  LOW, MEDIUM, and HIGH. By default, SecureFiles LOB Compression uses the MEDIUM level, which typically provides good compression with a modest CPU overhead. In addition to SecureFiles LOB Compression, SecureFiles LOB Deduplication, a feature of Advanced Compression, eliminates duplicate copies of SecureFiles LOBs. SecureFiles LOB Compression was renamed Advanced LOB Compression, and SecureFiles LOB Deduplication was renamed Advanced LOB Deduplication in Oracle Database release 12c. Compression advisor typically provides fairly accurate estimates, of the actual compression results that may be obtained, after implementing compression.
  
@@ -90,7 +90,7 @@ This lab assumes you have:
 
       ![User ILM Policies](images/images.png "User ILM Policies")
  
-## Task 3: SecureFiles LOB Compression
+## Task 3: SecureFiles LOB compression
 
 1. Create table with STORE AS SECUREFILE option 
  
