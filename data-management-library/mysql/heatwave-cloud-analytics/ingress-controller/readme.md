@@ -110,6 +110,11 @@ spec:
 
 EOF
 ```
+### Check the application deployment in namespace 'helloworld'
+```
+kubectl get all -n helloworld
+```
+
 ![Deploy Hello World Application](images/deploy-helloworld-app.png)
 
 ### Deploy Ingress Resource 'helloworld-ing' to namespace helloworld
@@ -136,7 +141,6 @@ spec:
               number: 8088
 EOF
 ```
-
 ![Deploy ingress](images/deploy-ingress-output.png)
 
 ### Check the Public IP and resource agin
