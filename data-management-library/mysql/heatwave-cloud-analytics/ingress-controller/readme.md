@@ -15,7 +15,6 @@ Estimated Time: 5 minutes
 In this lab, you will:
 * Deploy ingress controller
 * Deploy hello world service for testing
-* Define security list in VCN for public subnet
 * Test browser access to hello world thru ingress resource
 
 ### Prerequisites
@@ -50,19 +49,15 @@ This lab assumes you have:
 2. Download yaml deployment file to **OKE**
 
 ```
-<copy>
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
-</copy>
 ```
 
 
 3. Check the status of deployed namespace and service
 
 	```
-	<copy>
 	kubectl get all -n ingress-nginx
 	kubectl get service -n ingress-nginx --watch
-	</copy>
 	```
 
 Once you have the External IP provisioned, you can execute CTL+C to kill the command
@@ -78,7 +73,6 @@ kubectl create ns helloworld
 
 ### Deploying hello world app to namespace helloworld
 ```
-<copy>
 cat <<EOF | kubectl apply -n helloworld -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -115,7 +109,6 @@ spec:
   type: ClusterIP
 
 EOF
-</copy>
 ```
 
 ### Deploy Ingress Resource 'helloworld-ing' to namespace helloworld
