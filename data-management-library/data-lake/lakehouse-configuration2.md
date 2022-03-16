@@ -108,7 +108,7 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 
     ![Click Data Load](./images/selectlanding.png " ")
 
-6. From the MOVIESTREAMLANDING location, drag the **customer_contact**, **customer_extension**, **customer_segment** folders over to the right hand pane and click **OK** to load all objects into one table for each of these folders.
+6. From the MOVIESTREAMLANDING location, drag the **customer_contact**, **customer_extension**, and **customer_segment** folders over to the right hand pane and click **OK** to load all objects into one table for each of these folders.
 
 7. Drag the **genre** and **movie** folders over to the right hand pane and click **OK**.
 

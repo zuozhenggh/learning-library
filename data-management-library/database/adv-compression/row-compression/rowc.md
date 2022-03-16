@@ -1,4 +1,4 @@
-# Advanced row compression
+# Enable advanced row compression
 
 ## Introduction
 
@@ -8,7 +8,7 @@ Estimated Time: 20 minutes
 
 ### About advanced row compression
 
-Advanced row compression uses a unique compression algorithm specifically designed to work with OLTP/DW applications. The algorithm eliminates duplicate values within a database block, even across multiple columns. Compressed blocks contain a structure called a symbol table that maintains compression metadata. When a block is compressed, duplicate values are eliminated by first adding a single copy of the duplicate value to the symbol table. Each duplicate value is then replaced by a short reference to the appropriate entry in the symbol table. Compressed data is self-contained within the database block through this innovative design, as the metadata used to translate compressed data into its original state is stored in the block header. When compared with competing compression algorithms that maintain a global database symbol table, Oracle’s approach offers significant performance benefits by not introducing additional I/O (needed with a global symbol table) when accessing compressed data
+Advanced row compression uses a unique compression algorithm specifically designed to work with OLTP/DW applications. The algorithm eliminates duplicate values within a database block, even across multiple columns. Compressed blocks contain a structure called a symbol table that maintains compression metadata. When a block is compressed, duplicate values are eliminated by first adding a single copy of the duplicate value to the symbol table. Each duplicate value is then replaced by a short reference to the appropriate entry in the symbol table. Compressed data is self-contained within the database block through this innovative design, as the metadata used to translate compressed data into its original state is stored in the block header. When compared with competing compression algorithms that maintain a global database symbol table, Oracle’s approach offers significant performance benefits by not introducing additional I/O (needed with a global symbol table) when accessing compressed data.
 
 ### Data growth challenges 
 
@@ -19,7 +19,7 @@ Exponential data growth has put severe pressure from a cost, performance, scalab
 *	Storage costs to drop as the result of any compression deployments, and 
 *	No query performance degradation and only minimal Data Manipulation Language (DML) performance impact from compression.
  
-This Lab will teach you how to Enable advanced row compression. 
+This Lab will teach you how to enable advanced row compression. 
 
 ### Objectives
  
