@@ -23,7 +23,7 @@ This lab assumes you have:
 ![MDS Menu](images/mds-menu.png)
 
 2. Select the **MDSInstance**
-![MDS Details](images/mds-details.png)
+![MDS Details](images/mds-details-1.png)
 
 3. From the menu on the left bottom side select HeatWave, and click on the button Add HeatWave Cluster located on the right.
 ![Add HeatWave](images/heatwave-add.png)
@@ -110,72 +110,12 @@ We will use this AutoPilot feature, **heatwave_load** function to offload the da
 
 You will notice that this query will complete in less than 1s comparing to 10s earlier!
 
-## Task 3: Test SQL on migrated PHP application
-
-Now that we have enabled HeatWave cluster, lets test our migrated PHP application
-
-1. Access your PHP application via http://xxx.xxx.xxx.xxx:5000/index.php (replace xxx.xxx.xxx.xxx with your IP address). Once HeatWave cluster is enabled on MDS, all the SELECT SQL statements will be offloaded to HeatWave automatically via the default **use_secondary_engine=ON** setting. First, we will test the PHP application by executing the SQL on MDS, we will use an optimizer hint ( to set the **use_secondary_engine=OFF** so that we will force the SELECT SQL to execute in MDS
-
-![php-mds-query](images/php-mds-query.png)
-
-   ```
-   <copy>
-   SELECT /*+ SET_VAR(use_secondary_engine = OFF) */  airline.airlinename, 
-   AVG(datediff(departure,birthdate)/365.25) as avg_age, 
-   count(*) as nb_people 
-   FROM 
-   booking, flight, airline, passengerdetails 
-   WHERE 
-   booking.flight_id=flight.flight_id AND 
-   airline.airline_id=flight.airline_id AND 
-   booking.passenger_id=passengerdetails.passenger_id AND 
-   country IN ('GERMANY', 'SPAIN', 'GREECE') 
-   GROUP BY 
-   airline.airlinename 
-   ORDER BY 
-   airline.airlinename, avg_age 
-   LIMIT 10;
-   </copy>
-   ```
-
-The query will take around 13s to complete just like what we saw in [Lab 3: Load data to MySQL HeatWave](../data-load/data-load.md)
-
-![php-mds](images/php-mds.png)
-
-2. Next, we will execute the query against the HeatWave cluster without the optimizer hint (/*+ SET_VAR(use_secondary_engine=OFF) */))
-
-   ```
-   <copy>
-   SELECT
-   airline.airlinename,
-   AVG(datediff(departure,birthdate)/365.25) as avg_age,
-   count(*) as nb_people
-   FROM
-   booking, flight, airline, passengerdetails
-   WHERE
-   booking.flight_id=flight.flight_id AND
-   airline.airline_id=flight.airline_id AND
-   booking.passenger_id=passengerdetails.passenger_id AND
-   country IN ('GERMANY', 'SPAIN', 'GREECE')
-   GROUP BY 
-   airline.airlinename
-   ORDER BY 
-   airline.airlinename, avg_age
-   LIMIT 10;
-   </copy>
-   ```
-
-![php-heatwave-query](images/php-heatwave-query.png)
-
-The query will complete in less than 1s without any modification to the original SQL statement! This is 10x improvement on HeatWave!
-![php-heatwave](images/php-heatwave.png)
-
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
-             - Rayes Huang, Cloud Solution Architect, OCI APAC
-			    - Ryan Kuan, Cloud Engineer, MySQL APAC
+             - Ivan Ma, MySQL Solutions Engineer, MySQL APAC
+			    - Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors** 
 			    - Perside Foster, MySQL Solution Engineering 
 * **Last Updated By/Date** - Ryan Kuan, March 2021

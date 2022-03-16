@@ -1,62 +1,65 @@
-# Provision OCI Kubernetes and MySQL HeatWave using OCI Resource Manager
+# Create MySQL HeatWave
 
 ## Introduction
 
-Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model.
+**Oracle MySQL Database Service** is a fully managed database service that lets developers quickly develop and deploy secure, cloud native applications using the world’s most popular open source database. MySQL Database Service is the only MySQL cloud service with an integrated, high performance, in-memory query accelerator—
+**HeatWave**. It enables customers to run sophisticated analytics directly against their operational MySQL databases—eliminating the need for complex, time-consuming, and expensive data movement and integration with a separate analytics database. **HeatWave** accelerates MySQL performance by orders of magnitude for analytics and mixed workloads. Optimized for Oracle Cloud Infrastructure (OCI), MySQL Database Service is 100% built, managed, and supported by the OCI and MySQL engineering teams.
+
+### About HeatWave
+
+HeatWave is a distributed, scalable, shared-nothing, in-memory, hybrid columnar, query processing engine designed for extreme performance. It is enabled when you add a HeatWave cluster to a MySQL DB System. To know more about HeatWave Cluster <a href="https://dev.mysql.com/doc/heatwave/en/heatwave-introduction.html" target="\_blank">**Click Here**</a>
+
+In this lab, we will provision MySQL HeatWave instance in the private subnet of the OKE cluster we created earlier.
 
 Estimated Time: 30 minutes
 
+### About Oracle MySQL Database Service
+
+
 ### Objectives
 
-In this lab, you will provision the following OCI resources using Resource Manager:
-
-* Virtual Cloud Network with related network resources and policies
-* Oracle Container Engine for Kubernetes and a node pool with 2 worker nodes
-* MySQL Database System
-* An Operator Virtual Machine with kubectl and MySQL client tools installed
+In this lab, you will provision the following resources:
+* MySQL HeatWave instance
 
 ### Prerequisites (Optional)
 
 * You have an Oracle account
 * You have enough privileges to use OCI
-* You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it
 * All previous labs successfully completed
 
-## Task 1: Create Stack in Resource Manager
+## Task 1: Create MySQL HeatWave instance
 
-1. Visit the [Terraform scripts](https://github.com/rayeswong/terraform-oke-mds) in a browser, and click the image **"Deploy to Oracle Cloud"** at the bottom of the page. It would redirect you to OCI console to create a new stack in Resource Manager.
+1. Log in to OCI Console, clicking on the <a href="#menu">&#9776; hamburger menu</a>, select **Databases**, and click on **DB System**
 
-![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)
+![MDS Menu](images/mds-menu.png)
 
-2. Sign in to **Oracle Cloud** if you haven't yet. In the page of 'Create Stack', check to accept terms, give a name to your stack (e.g. "MySQL on OKE Lab"), select the compartment (e.g. PHP-Compartment) to provision OCI resources, and click **Next**.
+2. Specify the name of the MySQL instance, for example, **heatwave**
 
-![Stack Information](images/resource-manager-stack-info.png)
+![MySQL name](images/heatwave-name.png)
 
-3. Review the values pre-populated for your OCI Resources, update the password for "MDS Admin User's Password" (default password: Oracle#123), and click **Next**.
+3. Specify the name of the administrator, for example, **admin** and the password satisfying the password requirements
 
-![Stack Variables](images/resource-manager-stack-variables.png)
+![MySQL admin](images/mds-admin.png)
 
-4. Check **Run Apply** and click **Create** to create the stack and apply the Terraform scripts.
+4. Select the private subnet of the VCN created as part of the OKE provisioning. By default, MySQL HeatWave will be created in the private subnet. You can double-check the private subnet is selected.
 
+![MySQL subnet](images/mds-subnet.png)
 
-![Create Stack 3](images/resource-manager-stack-review.png)
+5. Review the MySQL HeatWave shape
 
-5. A job will be created to apply your Terraform scripts to provision OCI resources.
+![MySQL HeatWave Shape](images/mds-shape.png)
 
+6. You are now ready to provision the HeatWave instance by clicking on **Create**
 
-![Apply Stack](images/resource-manager-stack-apply.png)
+![Create MySQL HeatWave](images/mds-create.png)
 
-6. It takes about **20 minutes** to complete this job. At the meanwhile, you can click on your Terraform job to view logs of progress of your job.
+7. You can monitor the progress of the creation by scrolling down to the bottom of the MySQl page, and click on **Work Request**
 
-![Stack Job](images/resource-manager-stack-job.png)
+![MySQL work request](images/mds-work-request.png)
 
-![Stack Progress](images/resource-manager-stack-progress.png)
+8. It will take about 10 minutes to provision MySQL instance
 
-7. Once your job has been executed successfully, you can find the public IP address of your operator VM, and the private IP address of the MySQL Database from the outputs. 
->**Note** down these two IP addresses that will be used in the subsequent labs.
-
-![Stack Complete](images/resource-manager-stack-complete.png)
-
+![MySQL Completed](images/mds-completed.png)
 
 ## Acknowledgements
 * **Author** 

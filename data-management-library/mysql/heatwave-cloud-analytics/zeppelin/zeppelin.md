@@ -1,27 +1,138 @@
-# Create compartment
+# Interactive analytics with MySQL HeatWave
 
 ## Introduction
-Before you start to provision any OCI resources, it is a good practice to create a **compartment** as an isolated environment for your work. 
+
 In this lab, we will create a compartment for all the OCI resources required to host our PHP application as well as MySQL HeatWave cluster
 
 Estimated Time: 2 minutes
 
-## Task 1: Create Compartment
+### Objectives
 
-1. Log in to **OCI** and click on the <a href="#menu">&#9776; hamburger menu</a> at the top left corner of the OCI console, and type **compartment** in the search box. Click on the **Compartments** in the search result
+In this lab, you will:
 
-![compartment](images/compartment.png)
+* Create a kubernetes namespace for Zeppelin
+* Deploy Zeppelin to OKE
+* Run interactive analytics using PhpMyAdmin on MySQL HeatWave
 
-2. Specify the name of the compartment such as **PHP-Compartment** with a description, click on **Create Compartment**
+### Prerequisites (Optional)
 
-![create compartment](images/create-compartment.png)
+* You have an Oracle account
+* You have enough privileges to use OCI
+* You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it
+* All previous labs successfully completed
+
+
+## Task 1: Access OKE cluster 
+
+1. Log in to **OCI** and select **Developer Services**, and **Kubernetes Clusters (OKE)** to access to your OKE cluster created
+
+![OKE](images/oke-cluster.png)
+
+2. Click on the **oke-cluster**
+
+![oke cluster](images/click-cluster.png)
+
+3. Click on the **Access Cluster** 
+
+![oke cluster detail](images/click-cluster.png)
+
+4. Click on the **Access Cluster** to look for the kubectl script to access the cluster
+
+![Access Cluster](images/access-cluster.png)
+
+5. Copy the kubectl script
+
+![kubectl script](images/copy-kubectl-script.png)
+
+6. On OCI Console, clik on the cloud shell to launch cloud shell
+
+![Cloud Shell](images/cloud-shell.png)
+
+## Task 2: Deploy Zeppelin to OKE
+
+1. Download the PhpMyAdmin yaml files from
+
+```
+<copy>
+wget 
+</copy>
+```
+
+2. Unzip the yaml files
+
+```
+<copy>
+unzip 
+cd 
+</copy>
+```
+
+3. Execute the kubectl commands to create a namespace
+
+```
+<copy>
+kubectl create namespace zeppelin
+</copy>
+```
+
+4. Deploy Zeppelin
+
+```
+<copy>
+kubectl apply -f zeppelin-server.yaml -n zeppelin
+</copy>
+```
+```
+<copy>
+kubectl apply -f ingress.yaml -n zeppelin
+</copy>
+```
+```
+<copy>
+kubectl apply -f service.yaml -n zeppelin
+</copy>
+```
+
+5. Find out the public IP of OKE Ingress Controller
+
+```
+<copy>
+kubectl get all -n ingress-nginx
+</copy>
+```
+![Ingress IP](images/ingress.png)
+
+6. Access the deployed Zeppelin application
+
+![Zeppelin](images/zeppelin.png)
+
+Task 3: Connect to MySQL HeatWave
+
+1. Create a JDBC interpreter for MySQL HeatWave in Zeppelin. 
+
+![Interpreter](images/interpreter.png)
+
+2. Click on **Create** to create a new JDBC driver for MySQL HeatWave. Fill up the details as indicated in the diagram
+Replace the private ip address of your MySQL instance in the **JDBC URL**
+
+![MySQL JDBC](images/mysql-jdbc.png)
+
+3. Scroll to the bottom of the page and specify the MySQL JDBC driver
+
+![MySQL JDBC Driver](images/mysql-jdbc-driver.png)
+
+4. Create a new notebook to start connecting to MySQL HeatWave. Specify the name of the notebook, for example, **airportdb**, and select **mysql** as the JDBC interpreter, click on **Create**
+
+![New Notebook](images/new-notebook.png)
+
+5. You can now start working with MySQL HeatWave!
+![Interactive Query](images/notebook-query.png)
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
-             - Rayes Huang, Cloud Solution Architect, OCI APAC
-			 - Ryan Kuan, Cloud Engineer, MySQL APAC
+			 - Ivan Ma, MySQL Solutions Engineer, MySQL JAPAC, Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors** 
 			 - Perside Foster, MySQL Solution Engineering 
 * **Last Updated By/Date** - Ryan Kuan, March 2021

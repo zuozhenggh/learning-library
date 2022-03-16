@@ -83,8 +83,6 @@ wget https://raw.githubusercontent.com/ivanxma/mysqlk8s/main/grafana/grafana.yam
 
 Once you have the External IP provisioned, you can execute CTL+C to kill the command
 
-
-
 ## Task 4: Access the Grafana Application 
 
 1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:3000/). 
@@ -121,7 +119,7 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Author** 
 			 - Ivan Ma, MySQL Solution Engineer, MySQL APAC
-			 - Ryan Kuan, Cloud Engineer, MySQL APAC
+			 - Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors** 
 			 - Perside Foster, MySQL Solution Engineering 
 * **Last Updated By/Date** - Ivan Ma, March, 2022

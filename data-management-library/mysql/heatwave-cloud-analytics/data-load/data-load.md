@@ -27,7 +27,7 @@ This lab assumes you have:
 
 ![Compute Menu](images/compute-menu.png)
 
-2. In the Compute>Instance page, select the right compartment under “Compartment” > “PHP-Compartment” at the right hand side. The list of instances will be showed. Then, find out the **Public IP** of the compute instance **oke-operator**, we will need this to connect to the compute instance to load the data into **MySQL Database Service**
+2. In the Compute>Instance page, select the right compartment under “Compartment” > “HOL-compartment” at the right hand side. The list of instances will be showed. Then, find out the **Public IP** of the compute instance **oke-operator**, we will need this to connect to the compute instance to load the data into **MySQL Database Service**
 
 ![Compute ip](images/compute-ip.png)
 
@@ -53,8 +53,7 @@ OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud
 
 ## Task 2: Load airportdb data into MDS
 
-1. Download the database (airportdb) export required by the PHP application
-
+1. Download the database (airportdb) export 
 	```
 	<copy>
 	cd /home/opc
@@ -178,8 +177,6 @@ You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
-             - Rayes Huang, Cloud Solution Architect, OCI APAC
-			 - Ryan Kuan, Cloud Engineer, MySQL APAC
+			 - Ivan Ma, MySQL Engineer, MySQL JAPAC, Ryan Kuan, Cloud Engineer, MySQL APAC
 * **Contributors** 
-			 - Perside Foster, MySQL Solution Engineering 
 * **Last Updated By/Date** - Ryan Kuan, March 2021
