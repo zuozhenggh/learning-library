@@ -92,7 +92,16 @@ kubectl apply -f service.yaml -n phpmyadmin
 </copy>
 ```
 
-5. Access the deployed PhpMyAdmin application
+5. Find out the public IP of OKE Ingress Controller
+
+```
+<copy>
+kubectl get all -n ingress-nginx
+</copy>
+```
+![Ingress IP](images/ingress.png)
+
+6. Access the deployed PhpMyAdmin application
 
 ![PhpMyAdmin](images/phpmyadmin.png)
 
