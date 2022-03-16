@@ -46,8 +46,8 @@ You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cl
     * **Kubernetes Version**: The version of Kubernetes. Select the **v1.21.5** version.
     * **Kubernetes API Endpoint**: Determines if the cluster master nodes are going to be routable or not. Select the **Public Endpoint** value.
     * **Kubernetes Worker Nodes**: Determines if the cluster worker nodes are going to be routable or not. Accept the default value **Private Workers**.
-    * **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select **VM.Standard.E2.4**.<br>
-    > **Caution**: *VM.Standard.E2.4 is the recommended because Verrazzano has many components. The default VM.Standard2.1 can be enough for testing purposes but the installation takes much longer.*
+    * **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select **VM.Standard.E4.Flex**. You need to select *3* as the number of *OCPUs* and *48* as the *Amount of Memory(GB)*.<br>
+    > **Caution**: *VM.Standard.E4.Flex is the recommended because Verrazzano has many components. The default VM.Standard2.1 can be enough for testing purposes but the installation takes much longer.*
 
     * **Number of nodes**: The number of worker nodes to create. Accept the default value, **3**.
 
@@ -77,4 +77,4 @@ You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cl
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Ankit Pandey, January 2022
+* **Last Updated By/Date** - Peter Nagy, September 2021

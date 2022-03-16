@@ -11,11 +11,17 @@ Useful to track the user behaviour, application behaviour, frequency of errors p
 
 [https://grafana.com/grafana/](https://grafana.com/grafana/)
 
-### Kibana
+### OpenSearch Dashboards
 
-Kibana is a frontend application that sits on top of the Elastic Stack, providing search and data visualization capabilities for data indexed in Elasticsearch. Verrazzano uses Elasticsearch to store applications log entries.
+OpenSearch Dashboards is a visualization dashboard for the content indexed on an OpenSearch cluster. Verrazzano creates a OpenSearch Dashboards deployment to provide a user interface for querying and visualizing the log data collected in OpenSearch.
 
-[https://www.elastic.co/kibana/](https://www.elastic.co/kibana/)
+To access the OpenSearch Dashboards console, read [Access Verrazzano](https://verrazzano.io/latest/docs/access/).
+
+To see the records of an OpenSearch index through OpenSearch Dashboards, create an index pattern to filter for records under the desired index.
+
+In Task 3, we will explore the OpenSearch Dashboards.
+
+[https://opensearch.org/docs/latest/dashboards/index/](https://opensearch.org/docs/latest/dashboards/index/)
 
 ### Prometheus
 
@@ -35,10 +41,9 @@ In this lab, you will:
 
 * Explore the Verrazzano console.
 * Explore the Grafana console.
-* Explore the Kibana console.
+* Explore the OpenSearch Dashboards.
 * Explore the Prometheus console.
 * Explore the Rancher console.
-* Explore the Kiali console.
 
 ### Prerequisites
 
@@ -51,27 +56,28 @@ In this lab, you will:
 
 Verrazzano installs several consoles. The endpoints for an installation are stored in the `Status` field of the installed Verrazzano Custom Resource.
 
-1. To get the endpoints for these consoles, copy the following command and paste it in the *Cloud Shell*:
+1. You can get the endpoints for these consoles by using the following command:
 
-    ```bash
-    <copy>kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .</copy>
-    ```
+      ```bash
+      <copy>kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .</copy>
+      ```
 
-    The output should be similar to the following:
-    ```bash
-    $ kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .
-    {
-    "consoleUrl": "https://verrazzano.default.XX.XX.XX.XX.nip.io",
-    "elasticUrl": "https://elasticsearch.vmi.system.default.XX.XX.XX.XX.nip.io",
-    "grafanaUrl": "https://grafana.vmi.system.default.XX.XX.XX.XX.nip.io",
-    "keyCloakUrl": "https://keycloak.default.XX.XX.XX.XX.nip.io",
-    "kialiUrl": "https://kiali.vmi.system.default.XX.XX.XX.XX.nip.io",
-    "kibanaUrl": "https://kibana.vmi.system.default.XX.XX.XX.XX.nip.io",
-    "prometheusUrl": "https://prometheus.vmi.system.default.XX.XX.XX.XX.nip.io",
-    "rancherUrl": "https://rancher.default.XX.XX.XX.XX.nip.io"
-    }
-    $
-    ```
+   The output should be similar to the following:
+      ```bash
+      $ kubectl get vz -o jsonpath="{.items[].status.instance}" | jq .
+      {
+      "consoleUrl": "https://verrazzano.default.XX.XX.XX.XX.nip.io",
+      "elasticUrl": "https://elasticsearch.vmi.system.default.XX.XX.XX.XX.nip.io",
+      "grafanaUrl": "https://grafana.vmi.system.default.XX.XX.XX.XX.nip.io",
+      "keyCloakUrl": "https://keycloak.default.XX.XX.XX.XX.nip.io",
+      "kialiUrl": "https://kiali.vmi.system.default.XX.XX.XX.XX.nip.io",
+      "kibanaUrl": "https://kibana.vmi.system.default.XX.XX.XX.XX.nip.io",
+      "prometheusUrl": "https://prometheus.vmi.system.default.1XX.XX.XX.XX.nip.io",
+      "rancherUrl": "https://rancher.default.XX.XX.XX.XX.nip.io"
+      }
+      $
+      ```
+
 
 2. Use the `https://verrazzano.default.YOUR_UNIQUE_IP.nip.io` to open the Verrazzano console.
 
@@ -79,7 +85,7 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
 ![Advanced](images/1.png)
 
-4. Click **Proceed to verrazzano default XX.XX.XX.XX.nip.io(unsafe)**.
+4. Click **Proceed to verrazzano default XX.XX.XX.XX.nip.io(unsafe)**. If you are the not getting this option for proceed, just type *thisisunsafe* without any space anywhere inside this chrome browser window. As you are typing in the chrome browser window, you can't see it, but as soon as you finish typing *thisisunsafe*, you can see next page immediately. You can find more details [here](https://verrazzano.io/latest/docs/faq/faq/#enable-google-chrome-to-accept-self-signed-verrazzano-certificates).
 
 ![Proceed](images/2.png)
 
@@ -87,7 +93,7 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
 ![Keycloak Authentication](images/3.png)
 
-6. Click **Proceed to Keycloak default XX.XX.XX.XX.nip.io(unsafe)**.
+6. Click **Proceed to Keycloak default XX.XX.XX.XX.nip.io(unsafe)**. If you are the not getting this option for proceed, just type *thisisunsafe* without any space anywhere inside this chrome browser window. As you are typing in the chrome browser window, you can't see it, but as soon as you finish typing *thisisunsafe*, you can see next page immediately. You can find more details [here](https://verrazzano.io/latest/docs/faq/faq/#enable-google-chrome-to-accept-self-signed-verrazzano-certificates).
 
 ![Proceed](images/4.png)
 
@@ -104,7 +110,6 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 9. From the home page of the Verrazzano Console, you can see *System Telemetry*, and because we installed the *Development Profile* of Verrazzano, you can see it in the **General Information** section. You can see the Helidon *quickstart-mp* application under **OAM Applications**. Click **hello-helidon-appconf** to view components of this application.
 
 ![Home Page](images/6.png)
-![Home Page](images/36.png)
 
 10. There is only one component for this application as you can see under **Components**. To explore the configuration click the **OAM Component Ref:** *hello-helidon-component* component as shown:
 
@@ -132,7 +137,7 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
 ![Advanced](images/12.png)
 
-4. Click **Proceed to grafana.vmi.system.default.XX.XX.XX.XX.nip.io(unsafe)**.
+4. Click **Proceed to grafana.vmi.system.default.XX.XX.XX.XX.nip.io(unsafe)**. If you are the not getting this option for proceed, just type *thisisunsafe* without any space anywhere inside this chrome browser window. As you are typing in the chrome browser window, you can't see it, but as soon as you finish typing *thisisunsafe*, you can see next page immediately. You can find more details [here](https://verrazzano.io/latest/docs/faq/faq/#enable-google-chrome-to-accept-self-signed-verrazzano-certificates).
 
 ![proceed](images/13.png)
 
@@ -148,34 +153,32 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
 ![Dashboard](images/16.png)
 
-## Task 3: Explore the Kibana Console
+## Task 3: Explore the OpenSearch Dashboards
 
-1. Go back to the Verrazzano home page and click **Kibana** console.
+1. Go back to the Verrazzano home page and click **OpenSearch Dashboards** console.
 
 ![Kibana link](images/17.png)
 
-2. Click *Proceed to ... default XX.XX.XX.XX.nip.io(unsafe)* if necessary. First time Kibana shows the welcome page. It offers built in sample data to try Kibana but you can select the **Explore on my own** option, because Verrazzano completed the necessary configuration and the application data is already available.
+2. Click *Proceed to ... default XX.XX.XX.XX.nip.io(unsafe)* if necessary. First time *OpenSearch Dashboards* shows the welcome page. It offers built in sample data to try OpenSearch but you can select the **Explore on my own** option, because Verrazzano completed the necessary configuration and the application data is already available.
 
 ![Kibana welcome page](images/34.png)
 
-3. On the Kibana homepage click **Home** and then click **Discover**.
+3. On the OpenSearch homepage click the **Home** -> **Discover**.
 
 ![Kibana dashboard click](images/18.png)
 
-4. In order to find log entry in Elasticsearch first you need to click **Create index pattern**. Type `verrazzano-namespace-hello-helidon` in the **Index Pattern**. Select the result from the list below and click **Next step**.
+4. In order to find log entry in OpenSearch first you need to define index pattern. Click *Create index pattern*. Type `verrazzano-namespace-hello-helidon` in the **Index Pattern name**. Select the result from the list below and click **Next step** as shown.
 
+![Index pattern](images/36.png)
 ![Index pattern](images/19.png)
-![Index pattern](images/37.png)
-
-
 
 5. On the next page select *@timestamp* as **Time Filter** field name and click **Create Index pattern**.
 
-![Index pattern](images/38.png)
+![Index pattern](images/20.png)
 
-6. When the index is ready you need to click **Home ->  Discover** short on the left side.
+6. When the index is ready you need to click *Home* -> *Discover*. 
 
-![Index pattern](images/39.png)
+![Index pattern](images/35.png)
 
 7. Type the custom log entry value you created in the Helidon application: `Help requested` into the filter textbox. Press **Enter** or click **Refresh**. You should get at least one result. <br>
 >If you haven't hit the application endpoint, or that happened a long time ago, simply invoke again the following HTTP request in the Cloud Shell against your endpoint. You can execute request multiple times.
@@ -183,7 +186,7 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 <copy>curl -k https://$(kubectl get gateway hello-helidon-hello-helidon-appconf-gw -n hello-helidon -o jsonpath={.spec.servers[0].hosts[0]})/help/allGreetings; echo</copy>
 ```
 
-![Log result](images/40.png)
+![Log result](images/21.png)
 
 ## Task 4: Explore the Prometheus Console
 
@@ -247,40 +250,10 @@ Verrazzano installs several consoles. The endpoints for an installation are stor
 
 ![Pod](images/33.png)
 
-## Task 6: Explore the Kiali Console
-
-1. Go to Verrazzano console and then click on link for **Kiali** console.
-
-    ![Pod](images/41.png)
-
-2. Click on *Graph* on left side.
-
-    ![Pod](images/42.png)
-
-3. Click on Namespace dropdown and check the box for **hello-helidon** and move the curser out of dropdown list.
-
-![Pod](images/43.png)
-
-4. On right side, you can view information about the **hello-helidon** application. Click **Legend**.
-
-    ![Pod](images/44.png)
-
-5. Legend represents what each shapes reflects. On left side, you have links for Applications, Workloads, Services and Istio Config.
-
-    ![Pod](images/45.png)
-
-6. Click on Namespace dropdown and uncheck the box for **hello-helidon** and check the box for **verrazzano-system** and move the curser out of dropdown list.
-
-    ![Pod](images/46.png)
-
-7. Here you can view the traffic in **verrazzano-system** namespace.
-![Pod](images/47.png)
-
-
 Congratulations you have successfully completed the Helidon application deployment on Verrazzano lab.
 
 ## Acknowledgements
 
 * **Author** -  Peter Nagy
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Ankit Pandey, January 2022
+* **Last Updated By/Date** - Peter Nagy, August 2021

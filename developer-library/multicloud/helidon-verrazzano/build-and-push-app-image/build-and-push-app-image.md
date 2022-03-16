@@ -50,15 +50,17 @@ Refer to the table documented at this URL [https://docs.oracle.com/en-us/iaas/Co
 
 >Now you have both the tenancy namespace and endpoint for your region.
 
-4. Copy the following command and paste it in your text editor. Then replace the `ENDPOINT_OF_YOUR_REGION` with the endpoint of your region name and `NAMESPACE_OF_YOUR_TENANCY` with your tenancy's namespace.
+4. Copy the following command and paste it in your text editor. Then replace the *`ENDPOINT_OF_YOUR_REGION`* with the endpoint of your region name, *`NAMESPACE_OF_YOUR_TENANCY`* with your tenancy's namespace and *`your_first_name`* with your's first name.
 
 ```bash
-<copy>docker build -t ENDPOINT_OF_YOUR_REGION/NAMESPACE_OF_YOUR_TENANCY/quickstart-mp:1.0 .</copy>
+<copy>docker build -t ENDPOINT_OF_YOUR_REGION/NAMESPACE_OF_YOUR_TENANCY/quickstart-mp-your_first_name:1.0 .</copy>
 ```
-When the command is ready then run in the terminal what was used to build and run the Helidon application `quickstart-mp` project. The build will produce the following result:
+When the command is ready then run in the Cloud Shell  from the `~/quickstart-mp/` directory. The build will produce the following result:
+
 ```bash
-$ docker build iad.ocir.io/tenancynamespace/quickstart-mp:1.0 .
-> docker pull iad.ocir.io/tenancynamespace/quickstart-mp:1.0
+$ cd ~/quickstart-mp/
+$ docker build iad.ocir.io/tenancynamespace/quickstart-mp-your_first_name:1.0 .
+> docker pull iad.ocir.io/tenancynamespace/quickstart-mp-your_first_name:1.0
 [+] Building 107.5s (19/19) FINISHED                                                                                                            
  => [internal] load build definition from Dockerfile                                                                                       0.1s
  => => transferring dockerfile: 785B                                                                                                       0.1s
@@ -96,18 +98,17 @@ $ docker build iad.ocir.io/tenancynamespace/quickstart-mp:1.0 .
  => exporting to image                                                                                                                     0.1s
  => => exporting layers                                                                                                                    0.1s
  => => writing image sha256:587a079ad854fc79e768acda11fc05dd87d37013261249e778e80749798c2837                                               0.0s
- => => naming to iad.ocir.io/weblogick8s/quickstart-mp:1.0                                                                                 0.0s
-
-5. Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them.
+ => => naming to iad.ocir.io/weblogick8s/quickstart-mp-your_first_name:1.0                                                                           0.0s
 ```
-This creates the Docker image, what you can check in your local repository.
 
-```bash
-$ docker images
+5. This creates the Docker image, what you can check in your local repository.
 
-REPOSITORY                                                                           TAG                               IMAGE ID       CREATED         SIZE
-iad.ocir.io/tenancynamespace/quickstart-mp                                                1.0                               587a079ad854   5 minutes ago   243MB
-```
+  ```bash
+  $ docker images
+
+  REPOSITORY                                                                           TAG                               IMAGE ID       CREATED         SIZE
+  iad.ocir.io/tenancynamespace/quickstart-mp                                                1.0                               587a079ad854   5 minutes ago   243MB
+  ```
 Copy to your text editor the replaced full image name `ENDPOINT_OF_YOUR_REGION/NAMESPACE_OF_YOUR_TENANCY/quickstart-mp:1.0` because you will need it later.
 
 ## Task 2: Generate an Authentication Token to Login to the Oracle Cloud Container Registry
@@ -172,23 +173,23 @@ Login Succeeded
 
 ![Repository Create](images/8.png)
 
-5. Select the compartment and enter *quickstart-mp* as the Repository Name, then choose Access as **Public** and click **Create Repository**.
+5. Select the compartment and enter *`quickstart-mp-your_first_name`* as the Repository Name, then choose Access as **Public** and click **Create Repository**.
 
 ![Repository Description](images/9.png)
 
-6. After the repository *quickstart-mp* has been created you can verify in the repository list and its settings.
+6. After the repository *`quickstart-mp-your_first_name`* has been created you can verify in the repository list and its settings.
 
 ![Verify Namespace](images/10.png)
 
-7. To push your Docker image into your repository inside the Oracle Cloud Container Registry, copy and paste the following command in your text editor and then replace `ENDPOINT_OF_YOUR_REGION_NAME`/`NAMESPACE_OF_YOUR_TENANCY`/quickstar-mp:1.0 with Docker image full name, which you saved earlier.
+7. To push your Docker image into your repository inside the Oracle Cloud Container Registry, copy and paste the following command in your text editor and then replace `ENDPOINT_OF_YOUR_REGION_NAME`/`NAMESPACE_OF_YOUR_TENANCY`/quickstar-mp-your_first_name:1.0 with Docker image full name, which you saved earlier.
 
 ```bash
-<copy>docker push ENDPOINT_OF_YOUR_REGION_NAME/NAMESPACE_OF_YOUR_TENANCY/quickstart-mp:1.0</copy>
+<copy>docker push ENDPOINT_OF_YOUR_REGION_NAME/NAMESPACE_OF_YOUR_TENANCY/quickstart-mp-your_first_name:1.0</copy>
 ```
 The result should look like this:
 ```bash
-$ docker push iad.ocir.io/tenancynamespace/quickstart-mp:1.0
-The push refers to repository [iad.ocir.io/tenancynamespace/quickstart-mp]
+$ docker push iad.ocir.io/tenancynamespace/quickstart-mp-your_first_name:1.0
+The push refers to repository [iad.ocir.io/tenancynamespace/quickstart-mp-your_first_name]
 0795b8384c47: Pushed
 131452972f9d: Pushed
 93c53f2e9519: Pushed
@@ -199,7 +200,7 @@ e1434e7d0308: Pushed
 1.0: digest: sha256:355fa56eab185535a58c5038186381b6d02fd8e0bcb534872107fc249f98256a size: 1786
 ```
 
-8. After the *docker push* command runs successfully, expand the *quickstart-mp* repository and you will notice a new image has been uploaded in this repository.
+8. After the *docker push* command runs successfully, expand the *`quickstart-mp-your_first_name`* repository and you will notice a new image has been uploaded in this repository.
 
 ![Image uploaded](images/12.png)
 
@@ -209,4 +210,4 @@ e1434e7d0308: Pushed
 
 * **Author** -  Peter Nagy
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Ankit Pandey, January 2022
+* **Last Updated By/Date** - Peter Nagy, September 2021
