@@ -108,6 +108,8 @@ On the Instance Details page, copy Public IP Address in your notes.
     
 10. Navigate to **cloud.oracle.com**, and **login** to Oracle cloud console using your Cloud Account Name, User Name, and Password.
 
+11. Open another Firefox tab and navigate to the lab guide at **bit.ly/CICDsql**. Use the lab guide on the ClientVM remote desktop to perform the following steps.
+
 
 ## Task 4: Provision Oracle Autonomous Database (ATP)
 
