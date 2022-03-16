@@ -110,7 +110,7 @@ spec:
 
 EOF
 ```
-![Deploy Hello World Application](images/deploy-helloworld-app-output.png)
+![Deploy Hello World Application](images/deploy-helloworld-app.png)
 
 ### Deploy Ingress Resource 'helloworld-ing' to namespace helloworld
 
