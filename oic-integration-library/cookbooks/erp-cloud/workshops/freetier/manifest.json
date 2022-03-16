@@ -29,12 +29,12 @@
             "filename": "../../intro-design-patterns/intro-to-design-patterns.md"
         },
         {
-            "title": "Lab 5: Functional Details of the ERP Cloud Adapter",
-            "filename": "../../adapter-functional-details/erp-cloud-adapter-details.md"
+            "title": "Lab 5: Configure ERP Cloud Connection",
+            "filename": "../../configure-erp-cloud-connection/configure-erp-connection.md"
         },
         {
-            "title": "Lab 6: Configure ERP Cloud Connection",
-            "filename": "../../configure-erp-cloud-connection/configure-erp-connection.md"
+            "title": "Lab 6: Functional Details of the ERP Cloud Adapter",
+            "filename": "../../adapter-functional-details/erp-cloud-adapter-details.md"
         },
         {
             "title": "Lab 7: Business Events Integration",
