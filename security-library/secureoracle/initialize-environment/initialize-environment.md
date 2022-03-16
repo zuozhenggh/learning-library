@@ -19,11 +19,8 @@ This lab assumes you have:
 
 ## Task 0: Running your Lab
 ### Access the graphical desktop
-1. Now with access to your remote desktop session, proceed with the subsequent tasks.
+Now with access to your remote desktop session, proceed with the subsequent tasks.
 
-2. To launch *Chrome* browser or a *Terminal* client, click on respective icon on the desktop
-
-    ![](./images/guacamole-landing.png " ")
 
 ### Login to Host using SSH Key based authentication
 While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
@@ -64,24 +61,6 @@ Follow the steps below to Start/Stop SecureOracle components.
     sc <start|stop|status> all          // start, stop or status all OIG and OAM components
     ```
 
-2. From the terminal session opened on your remote desktop, proceed as shown below to launch the **OIG Design Console**. The credentials are provided in Task 3.
-
-    ```
-    <copy>
-    cd /home/oracle/products/oim/idm/designconsole
-    ./xlclient.sh
-    </copy>
-    ```
-
-3. The **Hedwig Mail Server** can be re-started if you experience issues when connecting with the Roundcube email client. E.g run the following commands to re-start the Hedwig Mail Server as user *opc*:
-
-    ```
-    <copy>
-    export JAVA_HOME=/home/oracle/products/jdk
-    sudo -E /home/oracle/demo/hedwig-0.7/bin/run.sh stop
-    sudo -E /home/oracle/demo/hedwig-0.7/bin/run.sh start
-    </copy>
-    ```
 
 ## Task 2: Running Development Tools
 
@@ -116,7 +95,6 @@ The development tools in SecureOracle are aimed to support use cases like editin
 
     ```
     <copy>
-    cd ~
     ./startSQLDEV.sh
     </copy>
     ```
@@ -127,7 +105,6 @@ The development tools in SecureOracle are aimed to support use cases like editin
 
     ```
     <copy>
-    cd ~
   	./startAStudio.sh
     </copy>
     ```
@@ -228,6 +205,15 @@ If you prefer accessing these from your local computer then chose one of the fol
     URL         http://secureoracle.oracledemo.com:7001/hedwig-web-0.6/
     User        admin
     Password    Oracle123
+    ```
+    **Note**: The **Hedwig Mail Server** can be re-started if you experience issues when connecting with the Roundcube email client. E.g run the following commands to re-start the Hedwig Mail Server as user *opc*:
+
+    ```
+    <copy>
+    export JAVA_HOME=/home/oracle/products/jdk
+    sudo -E /home/oracle/demo/hedwig-0.7/bin/run.sh stop
+    sudo -E /home/oracle/demo/hedwig-0.7/bin/run.sh start
+    </copy>
     ```
 
     Email Web Client (Roundcube):

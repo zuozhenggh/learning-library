@@ -25,16 +25,14 @@ The following use cases are available:
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
 ## Task 1: Validate Access to required components and applications
 
-1. Validate Access to required components and applications. These are also bookmarked on Firefox running on your remote desktop. Refer to *Lab: Initialize Environment* for more
+1. Validate Access to required components and applications. Refer to *Lab 1: Initialize Environment* for more
 
     Oracle Identity Manager Admin Console:
 
@@ -87,7 +85,7 @@ This lab assumes you have:
     ```
 
 ## Task 2: Employee On-Boarding and Notifications
-1. Proceed to import new employees into My HR Application. To do so login into the APEX Workspace **HRSPACE**.
+1. Open the APEX Workspace **HRSPACE** in a browser and Proceed to import new employees into My HR Application.
 
     E.g. Use the following link and credentials:
 
@@ -117,7 +115,7 @@ This lab assumes you have:
 
 5. Click on **Load Data** button to start the import process. Upon successful import of new rows, proceed to close the Load Data page.
 
-6. Logout from APEX Workspace by clicking in the **HRADMIN** avatar in the top right corner and select **Sign out**.
+6. Sign out from APEX Workspace by clicking in the **HRADMIN** avatar in the top right corner and select **Sign out**.
 
 7. Login as user **hradmin** with password **Oracle123** to My HR Application.
 
@@ -154,9 +152,10 @@ This lab assumes you have:
     **Note:** before adding a new employee, you must first create an email account so the new employee receives a notification after being on-boarded into OIM. Access the **Email Server Admin Console** as admin user to create new email accounts.
 
 ## Task 3:  On-board New Employees
-1. Login as user **xelsysadm** with password **Oracle123** to the OIM Admin Console. Click on the **Scheduler** option and under System Management tab enter **HRData\*** in the search box.
+1. Login as user **xelsysadm** with password **Oracle123** to the OIM Admin Console. Click on the **Scheduler** option and go to System Management tab and enter **HRData** in the search box or click on the arrow icon to fetch data.
 
-2. From the results list, select job **HRData DBAT Trusted Resource User Reconciliation**
+2. From the results list, double click on job **HRData DBAT Trusted Resource User Reconciliation**
+    ![](./images/hrdata.png " ")
 
 3. In the Job Details tab, click on **Run Now** and monitor the progress by clicking on **Refresh** and looking at the bottom under Job History.
 
@@ -179,7 +178,9 @@ This lab assumes you have:
     ```
 
 ## Task 4:  Checking On-boarded Employees
-1. Login as user **xelsysadm** with password **Oracle123** to the OIM Self Service Console. Click on **`Manage -> Users`**, review if the on-boarded employees are listed as users in the Users page.
+1. Login to the OIM Self Service Console as user: **xelsysadm** with password: **Oracle123** . Click on **`Manage -> Users`**, review if the on-boarded employees are listed as users in the Users page.
+
+    ![](./images/oim_users.png " ")
 
 2. Notice if user login **RMAINOR** is listed in the Users page, then click on the user login to open the User Details page, select the **Attributes** tab and check the **End Date** attribute for this user. His end date had passed the current date, meaning this user will be disabled and deleted in the next **`Disable/Delete User After End Date`** job execution. Do not close the User Details page to proceed with the next step.
 
