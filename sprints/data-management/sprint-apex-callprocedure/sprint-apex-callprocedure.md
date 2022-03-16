@@ -5,7 +5,7 @@ Duration: 10 minutes
 
 In Oracle Apex, we will have use cases where a procedure needs to be called after clicking on a submit button, also passing the page parameters into the procedure. In this sprint, we will take an example of calling a procedure that inserts a record into a database table.
 
-## Create a package and procedure
+### Create a package and procedure
 
 1. Create a package pl\_newsletter\_pkg1 and procedure pl\_eventmail\_proc1
 
@@ -18,7 +18,7 @@ In Oracle Apex, we will have use cases where a procedure needs to be called afte
       </copy>
       ``` 
 
-      The procedure pl\_eventmail\_proc1 inserts a record into CUSTOMER\_LIST table, taking the event name parameter from the apex page. optionally we can also send mail to customer's mailing address with event details
+2. The procedure pl\_eventmail\_proc1 inserts a record into CUSTOMER\_LIST table, taking the event name parameter from the apex page. optionally we can also send mail to customer's mailing address with event details
 
       ```
       <copy> 
@@ -36,9 +36,9 @@ In Oracle Apex, we will have use cases where a procedure needs to be called afte
       </copy>
       ``` 
 
-## Invoke the procedure from Apex on button click      
+### Invoke the procedure from Apex on button click      
       
-1. On the Apex page on Submit button action, call the PLSQL Procedure passing the event name as parameter
+   1. On the Apex page on Submit button action, call the PLSQL Procedure passing the event name as parameter
 
       ```
       <copy> 
