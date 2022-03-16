@@ -15,7 +15,6 @@ Estimated Time: 5 minutes
 In this lab, you will:
 * Deploy ingress controller
 * Deploy hello world service for testing
-* Define security list in VCN for public subnet
 * Test browser access to hello world thru ingress resource
 
 ### Prerequisites
@@ -50,19 +49,15 @@ This lab assumes you have:
 2. Download yaml deployment file to **OKE**
 
 ```
-<copy>
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
-</copy>
 ```
 
 
 3. Check the status of deployed namespace and service
 
 	```
-	<copy>
 	kubectl get all -n ingress-nginx
 	kubectl get service -n ingress-nginx --watch
-	</copy>
 	```
 
 Once you have the External IP provisioned, you can execute CTL+C to kill the command
@@ -78,7 +73,6 @@ kubectl create ns helloworld
 
 ### Deploying hello world app to namespace helloworld
 ```
-<copy>
 cat <<EOF | kubectl apply -n helloworld -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -115,8 +109,13 @@ spec:
   type: ClusterIP
 
 EOF
-</copy>
 ```
+### Check the application deployment in namespace 'helloworld'
+```
+kubectl get all -n helloworld
+```
+
+![Deploy Hello World Application](images/deploy-helloworld-app.png)
 
 ### Deploy Ingress Resource 'helloworld-ing' to namespace helloworld
 
@@ -128,7 +127,6 @@ metadata:
   name: helloworld-ing
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/default-backend: docker-hello-world-svc
 spec:
   ingressClassName: nginx
   rules:
@@ -143,6 +141,7 @@ spec:
               number: 8088
 EOF
 ```
+![Deploy ingress](images/deploy-ingress-output.png)
 
 ### Check the Public IP and resource agin
 - Based on the output and note down the public IP from the service.  
@@ -153,19 +152,21 @@ EOF
 kubectl get svc -n ingress-nginx
 kubectl get ing -n helloworld
 ```
-
+![Check Ingress status](images/check-ingress-status.png)
 
 
 
 ### Open a browser and access your hello world application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:/helloworld). 
+
+![Hello World Output](images/helloworld-test-output.png)
 
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
-			 - Ivan Ma, MySQL Solution Engineer, MySQL APAC
-			 - Ryan Kuan, Cloud Engineer, MySQL APAC
+- Ivan Ma, MySQL Solution Engineer, MySQL APAC
+- Ryan Kuan, Cloud Engineer, MySQL APAC
 * **Contributors** 
 
 * **Last Updated By/Date** - Ivan Ma, March, 2022
