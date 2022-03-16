@@ -57,6 +57,10 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
 
     ![](images/02-06-hide.png " ")
 
+    <if type="livelabs">
+    >**Note:** When you reserve the workshop on LiveLabs, you are asked for a public SSH key. Please make sure the private key you upload here is on the same set with the public key you provided (your public and private SSH keys should match).
+    </if>
+
 7.  To ensure the SSH key permissions are valid, enter the following command in Cloud Shell:
 
     ```
@@ -72,6 +76,10 @@ Follow the instructions for [Connecting to a Linux Instance ](https://docs.oracl
     ```
     <copy>sftp -i <private-SSH-key> opc@<ip-address></copy>
     ```
+
+    <if type="livelabs">
+    >**Note:** If you get a *Permission Denied* error, please double check that the private SSH key matches the public SSH key.
+    </if>
 
 10. Enter the following `put` command to upload the wallet\_ADW.zip to /home/opc.
 
