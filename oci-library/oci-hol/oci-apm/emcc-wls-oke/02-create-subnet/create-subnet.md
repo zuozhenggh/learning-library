@@ -14,7 +14,7 @@ Estimated time: 5 minutes
 
 ## Task 1:  Create a private subnet
 
-1. 1.	From the Oracle Cloud navigation menu, select **Developer Services** > **Kubernetes Clusters (OKE)**.
+1. From the Oracle Cloud navigation menu, select **Developer Services** > **Kubernetes Clusters (OKE)**.
 
    ![Oracle Cloud console, Navigation Menu](images/1-1-menu.png " ")
 
@@ -62,5 +62,6 @@ Renjit Clement, Principal Member Technical Staff,
 Rupesh Kumar, Consulting Member of Technical Staff,  
 Ravi Mohan, Senior Software Development Manager,  
 Steven Lemme, Senior Principal Product Manager,  
+Mahesh Sharma, Consulting Member of Technical Staff,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

@@ -93,5 +93,6 @@ You may now [proceed to the next tutorial](#next).
 * **Author** - Yutaka Takatsu, Product Manager, Enterprise and Cloud Manageability
 - **Contributors** -
 Steven Lemme, Senior Principal Product Manager,  
+Mahesh Sharma, Consulting Member of Technical Staff,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

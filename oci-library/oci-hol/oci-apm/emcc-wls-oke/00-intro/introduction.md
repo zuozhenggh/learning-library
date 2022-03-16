@@ -64,7 +64,7 @@ However, considering that the out-of-box metrics included in the EM’s WebLogic
 
 In short, using this model, most of the WebLogic Server target metrics are available to monitor with EM. You can configure alerts to these metrics and receive notifications using the EM’s monitoring functionalities. JVMD can be set up for the performance diagnostics, and a limited set of WebLogic configurations are collected. On the other hand, any option that requires OMS to log on to the target host, or to the WebLogic admin console, are not supported.
 
-
+## Learn More
 ### Reference
 *  Oracle LiveLabs **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** workshop
 
@@ -86,5 +86,6 @@ Ravi Mohan, Senior Software Development Manager,
 Adrian Padilla Duarte, Principal Member of Technical Staff,  
 Monica Riccelli, WebLogic Server Product Manager,  
 Steven Lemme, Senior Principal Product Manager,  
+Mahesh Sharma, Consulting Member of Technical Staff,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022

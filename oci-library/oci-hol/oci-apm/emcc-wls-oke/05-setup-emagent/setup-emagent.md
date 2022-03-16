@@ -92,7 +92,9 @@ Estimated time: 15 minutes
 
         <Public IP address of the OMS host> <FQDN of the OMS host>
 
-    > **NOTE:** Ask your EM Administrator if you do not know the IP address and the FQDN of the OMS host/compute instance.
+    > **NOTE:**
+    - Ask your EM Administrator if you do not know the IP address and the FQDN of the OMS host/compute instance.
+    - If you use EM app on Oracle Cloud Marketplace, the hostname of the OMS host can be different from the FDQN displayed on the Compute Instance home page. You can verify the hostname by running **hostname -f** command in the OMS host. Below image shows **oms1** as a hostname for an host provisioned by the EM app.  ![Terminal](images/2-3-terminal.png " ")    
 
    ![Terminal](images/2-1-terminal.png " ")
 
@@ -224,5 +226,6 @@ Renjit Clement, Principal Member Technical Staff,
 Rupesh Kumar, Consulting Member of Technical Staff,  
 Ravi Mohan, Senior Software Development Manager,  
 Steven Lemme, Senior Principal Product Manager,  
+Mahesh Sharma, Consulting Member of Technical Staff,  
 Avi Huber, Senior Director, Product Management
 * **Last Updated By/Date** - Yutaka Takatsu, March 2022
