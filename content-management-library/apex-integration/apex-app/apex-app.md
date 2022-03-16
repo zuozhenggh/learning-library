@@ -20,7 +20,7 @@ In this lab, you will:
 This lab assumes you have:
 * An Oracle APEX instance with **21.1.x version**
 
-## Task 1: Import Customer Tracker sample application
+## **Task 1**: Import Customer Tracker sample application
 
 
 1. Login to APEX application (Refer Lab 2 - Task 2.8 for application URL) & Select **Import** from the option available on home page
@@ -52,7 +52,7 @@ This lab assumes you have:
 9. Click **Edit Application** to complete this lab
     ![Edit App](images/edit-app.png)
 
-## Task 2: Create IAM application for SSO
+## **Task 2**: Create IAM application for SSO
 
 1.	Naviage to IAM **Default** Domain page (Refer Lab 1 – Task 2.2)
 
@@ -69,7 +69,7 @@ This lab assumes you have:
     * **Description** : APEX Sign in for Customer Tracker App
     * **Application URL** : <paste your APEX application URL> like https://&lt;your-instance-specific-value&gt;.oraclecloudapps.com/ords/f?p=100
 
-    *(**Note**: p=100 if you are assigning the same App ID while importing the app, otherwise provide the app ID of your APEX application.)*
+    >**Note:**  p=100 if you are assigning the same App ID while importing the app, otherwise provide the app ID of your APEX application.
 
 6.	Click **Next**
 
@@ -95,7 +95,7 @@ This lab assumes you have:
 
 
 
-## Task 3: Configure APEX App security for SSO
+## **Task 3**: Configure APEX App security for SSO
 
 1.	Login to APEX and click **App builder** icon . You will see the application (Customer Tracker) which was created in earlier lab. Click the application name.
 
@@ -129,7 +129,7 @@ This lab assumes you have:
 
 10.	Click **Apply Changes**
 
-## Task 4: Login & verify IAM integration
+## **Task 4**: Login & verify IAM integration
 
 1.	Login to APEX application & click **App Builder** icon.
 
@@ -155,7 +155,7 @@ This lab assumes you have:
 
 ## Summary
 
-This completes this lab. At this point, you know how to import sample application and configure Single Sign-on. Click on **Lab 7: Integrate OCM & APEX** to integrate both application & access content from APEX.
+This completes this lab. At this point, you know how to import sample application and configure Single Sign-on.You may now **proceed to the next lab**.
 
 
 ## Learn More

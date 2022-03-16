@@ -22,14 +22,14 @@ In this lab, you will:
 * Associate IAM App with OCM Instance
 
 
-## Task 1: Create an instance of Oracle Content Management
+## **Task 1**: Create an instance of Oracle Content Management
 
 
 1. Log into your Oracle Cloud account. From any browser go to [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in)
 
   Enter Cloud **Account Name** in the input field and click the **Next** button
 	
-  ![Cloud account name](images/cloud-account-name.png)
+  ![Cloud account name](../../../common/images/console/images/cloud-account-name.png)
 
 
 2. Select **oracleidentityservice** and click **Continue** button
@@ -68,7 +68,7 @@ In this lab, you will:
 
   ![OCM Home page](images/ocm-homepage.png)
 
-## Task 2: Create IAM app for integrating OCM & APEX
+## **Task 2**: Create IAM app for integrating OCM & APEX
 
 1. Assuming you are already logged in to https://cloud.oracle.com , Click side navigation menu to select **Identity & Security** and then click **Domains**
 
@@ -128,7 +128,7 @@ In this lab, you will:
 
 
 
-## Task 3: Assign OCM roles to IAM App
+## **Task 3**: Assign OCM roles to IAM App
 
 1.	Go back to **Default** domain and select **Oracle Cloud Services** from side menu. Click application name corresponding to your OCM Instance,it will follow pattern **CECSAUTO_** &lt;Your InstanceName &gt; **CECSAUTO**
 
@@ -148,11 +148,11 @@ In this lab, you will:
 
 5.	Repeat above step 3 & 4 for roles **CECContentAdministrator** & **CECRepositoryAdministrator**. You might have to navigate to next page using page navigation option available at bottom of table to select this roles.
 
-  *Note: You will use this IAM application later while assigning access to repository. Sometime it take approx 45min before it's visible as member in OCM*
+    >**Note:** You will use this IAM application later while assigning access to repository. Sometime it take approx 45min before it's visible as member in OCM
 
 ## Summary
 
-This completes this lab. At this point, you know how to create a new Oracle Content Management instance and create an IAM app. Click on **Lab 2: Setup an APEX Instance** to provision Oracle Autonomous Transaction Processing instance and create an APEX workspace within it.
+This completes this lab. At this point, you know how to create a new Oracle Content Management instance and create an IAM app.You may now **proceed to the next lab**.
 
 ## Learn
 

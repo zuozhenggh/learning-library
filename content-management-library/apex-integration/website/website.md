@@ -4,11 +4,11 @@
 
 In this lab we will create site based on site template provided as part of lab file.
 
-*Note:Oracle Content Management let you create unlimited website but Starter edition is limited to 1 site per instance*
+  >**Note**:Oracle Content Management let you create unlimited website but Starter edition is limited to 1 site per instance
 
 Estimated Time: 20 minutes
 
-## Background
+### Background
 
 As a site developer, you define the framework that site creators use to build sites, such as:
 * [standard templates](https://docs.oracle.com/en/cloud/paas/content-cloud/creating-experiences/understand-templates.html#GUID-0BA49046-671B-4DE0-8D64-ADBFECB2EC76), used as a framework for a site, based on a theme, with sample pages and content, custom components, and other resources you need to start building a site
@@ -23,13 +23,13 @@ In this lab, you will:
 * Change Site Security
 * Publish Site
 
-## Task 1: Import Site Template
+## **Task 1**: Import Site Template
 
 1.	Navigate to **Developer** for side vertical menu
 
 	![Developer Menu](images/developer-menu.png)
 
-  *Note: If you are first user to visit Developer menu then you will get prompt to install sample site template. We recommend you to install it but it's not needed for this lab.*
+  >**Note**: If you are first user to visit Developer menu then you will get prompt to install sample site template. We recommend you to install it but it's not needed for this lab.
 
 2.	Select **View All Template** as show in above image in the **Templates** block
 
@@ -49,7 +49,7 @@ In this lab, you will:
   
     ![Template](images/template-status.png)
 
-## Task 2: Create new Site
+## **Task 2**: Create new Site
 
 1.	Navigate to **Sites** from side vertical menu
 
@@ -74,7 +74,7 @@ In this lab, you will:
 7.	Click **Finish** and wait for your site creation process to complete.	
 
 
-## Task 3: Change site Security
+## **Task 3**: Change site Security
 
 1.	Select the site and then click **More** menu to select **Properties**
 
@@ -88,7 +88,7 @@ In this lab, you will:
   ![Site Security](./images/site-security.png)
 
 
-## Task 4: Publish Site
+## **Task 4**: Publish Site
 
 1.	Select the site and click “Publish”, it will show you below screen
 
@@ -116,7 +116,7 @@ In this lab, you will:
 
 ## Summary
 
-This completes this lab. At this point, you know how to create new site using template, change security setting & publish it. Click on **Lab 6: Setup APEX application** to setup Oracle APEX application to consume content.
+This completes this lab. At this point, you know how to create new site using template, change security setting & publish it.You may now **proceed to the next lab**.
 
 ## Learn More
 

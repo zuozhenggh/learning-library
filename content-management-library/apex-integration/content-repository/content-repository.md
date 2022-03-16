@@ -18,7 +18,7 @@ In this lab, you will:
 * Create Asset Repository
 * Add members to Repository
 
-## Task 1: Create Custom Digital Asset Type
+## **Task 1**: Create Custom Digital Asset Type
 
 We need to have Custom Digital Asset type “Contract” with meta-data to capture document & meta-data.
 
@@ -73,7 +73,7 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
    
    ![Contract Asset type](images/contract-asset-type.png =50%x*)
 
-## Task 2: Create Asset repository
+## **Task 2**: Create Asset repository
 
    We will create Asset repository to manage all our content for this lab.
 
@@ -90,7 +90,7 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
 
 4. Click **Save** from top right corner and this will create the required repository.
 
-## Task 3: Grant access on repository to IAM App
+## **Task 3**: Grant access on repository to IAM App
 
 1. Select the Demo asset repository and click Member menu from top section as shown below
 
@@ -104,7 +104,7 @@ We need to have Custom Digital Asset type “Contract” with meta-data to captu
 
 ## Summary
 
-This completes this lab. At this point, you know how to define Custom Digital Asset type, create Asset repository & assign member. Click on **Lab 4: Configure Content Capture** to setup content Capture to automate ingestion of email attachment.
+This completes this lab. At this point, you know how to define Custom Digital Asset type, create Asset repository & assign member. You may now **proceed to the next lab**.
 
 ## Learn More
 

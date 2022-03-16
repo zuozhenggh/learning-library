@@ -26,7 +26,7 @@ In this lab, you will:
 * Test Content Ingestion flow
 
 
-## Task 1: Create Procedure
+## **Task 1**: Create Procedure
 
 Procedures are defined content capture workflows, from the initial sourcing all the way to final upload to Oracle Content Management.
 
@@ -42,24 +42,24 @@ Procedures are defined content capture workflows, from the initial sourcing all 
 
 4. Select the newly created procedure **Contract** and move to next task.
 
-## Task 2: Define Metadata
+## **Task 2**: Define Metadata
 
 Navigate to **Metadata** tab and here we will create define metadata as **Party Name** to store subject of email (Assuming that email subject will have Party name just for this session purpose)
 
 1. Click ![Add](images/plus-icon.png) on “Metadata Fields” section as shown below
 
-![Metadata Tab](images/metadata-tab.png)
+   ![Metadata Tab](images/metadata-tab.png)
 
 2. Fill up the “Metadata Fields: New Metadata Field” forms with below details
    * **Field Name** : Party Name
    * **Data Type** : Alpha Numeric
   
-![Metadata Tab](images/metadata-form.png)
+   ![Metadata Tab](images/metadata-form.png)
 
 3.	Click **Submit** to complete the field creation.
 
 
-## Task 3: Configure Capture Source as Email account
+## **Task 3**: Configure Capture Source as Email account
 
 1.	Navigate to “Capture” tab and here we will setup email account from where document will be ingested.
 ![Capture Tab](images/capture-tab.png)
@@ -92,7 +92,7 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
 
    ![Email Settings](./images/ms-exchange.png)
 
-   *Note: If you have Office 365 email account with Single Sign-on enable then you need to create OAuth application, please refer to Office 365 documentation for creating OAuth app. Alternatively you can create free account with Google Mail & create OAuth application.*
+   >**Note**: If you have Office 365 email account with Single Sign-on enable then you need to create OAuth application, please refer to Office 365 documentation for creating OAuth app. Alternatively you can create free account with Google Mail & create OAuth application.
 
 10. As shown above Click ![Add](./images/plus-icon.png) icon for **Email Accounts** to Process and provide **Email address & Password**.
 
@@ -119,7 +119,7 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
 16. Click **Next** to review setup and click **Submit**.
 
 
-## Task 4: Define Commit Target
+## **Task 4**: Define Commit Target
 
 1.	Skip **Processing** tab and navigate to **Commit**. Click add icon to create Commit Profile.
 
@@ -157,7 +157,7 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
 
 10.	Click **Submit**
 
-##  Task 5: Test the Content Ingestion flow
+##  **Task 5**: Test the Content Ingestion flow
 
 1.	Send Email to configured email address (Refer Task 3.10) with any sample file as attachment and mention **Subject**  as **CafeSupremo**
 
@@ -171,7 +171,7 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
 
 ## Summary
 
-This completes this lab. At this point, you know how to configure Capture procedure to automate content ingestion from email account and store it in content repository along with meta-data. Click on **Lab 5: Create webiste based on template** to create site to distribute content.
+This completes this lab. At this point, you know how to configure Capture procedure to automate content ingestion from email account and store it in content repository along with meta-data.You may now **proceed to the next lab**.
 ## Learn More
 
 * [Content Capture Quick Tour](https://docs.oracle.com/en/cloud/paas/content-cloud/capturing-content/get-know-content-capture-procedures-page.html)

@@ -15,7 +15,7 @@ In this lab, you will:
 
 
 
-## Task 1: Configure OCM REST API web credentials
+## **Task 1**: Configure OCM REST API web credentials
 
 (optional) Step 1 opening paragraph.
 
@@ -46,7 +46,7 @@ In this lab, you will:
     * Client Secret : Refer from Lab 1- Task 2.17
     * Valid for URLS: Add your OCM Instance URL (Refer Lab 1 - Task 1.9) and Domain URL (Refer Lab 1 - Task 2.2)
 
-    *Note: Add each url in new line, do not user comma or any other character as seperator*
+    >**Note**: Add each url in new line, do not user comma or any other character as seperator
 
     ![Configuration](images/ocm-web-cred.png)
 
@@ -59,7 +59,7 @@ Change below attributes
 
 11. Click **Apply Changes**
 
-## Task 2: Change Embed content URL
+## **Task 2**: Change Embed content URL
 
 1.	Login to APEX and click **App Builder** Icon. Click **Customer Tracker** from the list of application.
 
@@ -79,7 +79,7 @@ Change below attributes
 
 7.	Click “Save” and then run the application.
 
-## Task 3 : Allow Cross Origin Resource Sharing (CORS)
+## **Task 3** : Allow Cross Origin Resource Sharing (CORS)
 
 1. Login to IAM and Navigate to **Session Settings** under **Settings** 
 
@@ -93,7 +93,7 @@ Change below attributes
 
 4. Click **Save changes**
 
-## Task 4: Allow OCM embedding within APEX
+## **Task 4**: Allow OCM embedding within APEX
 
 1. Naviage to **Defaul** Domain and then **Settings**
 
@@ -108,7 +108,7 @@ Change below attributes
 4. Click **Save**
 
 
-## Task 5: Run end-to-end demonstration
+## **Task 5**: Run end-to-end demonstration
 
 1.	Login to Customer Tracker application go to dashboard page.
 
@@ -126,7 +126,7 @@ Change below attributes
  
    ![Resources](images/apex-resources.png)
 
-   *Note: Content are filtered based on Customer Industry, for example Cafe Supremo belong to industry Coffee and that's why you will see the content with keyword Coffee. You can change the query criteria based on your requirement.*
+   >**Note**: Content are filtered based on Customer Industry, for example Cafe Supremo belong to industry Coffee and that's why you will see the content with keyword Coffee. You can change the query criteria based on your requirement.
 
 5.	This complete end to end integration of OCM & APEX application.
 

@@ -3,7 +3,7 @@
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "help": "vinay.x.kumar@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
@@ -11,19 +11,17 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
             "title": "Lab 1: Setup an OCM instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
             "filename": "../../setup-ocm/setup-ocm.md"
         },
         {
             "title": "Lab 2: Setup an Oracle APEX instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../setup-apex/setup-apex.md"
+            "filename": "../../../../../developer-library/apex/common/1-sign-up-apex/1-sign-up-apex.md"
         },
         {
             "title": "Lab 3: Setup content repository",
