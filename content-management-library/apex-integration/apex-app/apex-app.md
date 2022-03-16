@@ -15,7 +15,7 @@ In this lab, you will:
 * Configure SSO Security
 * Verify Sample Application
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes you have:
 * An Oracle APEX instance with **21.1.x version**
