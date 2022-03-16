@@ -79,7 +79,7 @@ In this lab, you will:
 
 3. 'testpy' directory should contain the following:
 
-    ![image of python sdk example code](/../images/folder-structure.png)
+    ![image of testpy directory](/../images/folder-structure.png)
 
 
 4. Access the sample [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20210610/Fleet/GetFleet) lab.
@@ -87,11 +87,11 @@ In this lab, you will:
 
 5. Create a `get_fleet_example.py` file in the SDK downloaded and copy the example SDK code into it.
 
-    ![image of python sdk example code](/../images/get-fleet.png)
+    ![image of get fleet example in testpy directory](/../images/get-fleet.png)
 
 6. Ensure the file path for the newly created file adheres to the sample SDK code.
 
-    ![image of python sdk example code](/../images/python-sdk-response.png)
+    ![image of get fleet example example code](/../images/python-sdk-response.png)
 
 7. Run it in the virtual environment created.
 
@@ -101,7 +101,7 @@ In this lab, you will:
     </copy>
     ```
 
-    ![image of python sdk example code](/../images/python-sdk-success.png)
+    ![image of get fleet example response in terminal](/../images/python-sdk-success.png)
 
 ### Download SDKs
 
@@ -127,7 +127,7 @@ The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs.
 
 4. Select JSON Files after unzipping download.
 
-    ![image of Postman import](/../images/json-import.png)
+    ![image of JSON files for Postman import](/../images/json-import.png)
 
 5. Click **Import**.
 
@@ -160,7 +160,7 @@ The steps above can be applied for the Typescript, .NET, Ruby and GO SDKs.
 
 2. Click **Send**.
 
-    ![image of initialisation script](/../images/initialise-post.png)
+    ![image of send get request for initialisation script](/../images/initialise-post.png)
 
 3. A 200 response will appear.
 
