@@ -80,7 +80,9 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 	* #	  %23
 	* [	  %5B
 	* ]   %5D
-	* @	%40
+	* @	  %40
+
+	So if your password was **P@ssword#123** you would encode it as **P%40ssword%23123**.
 
 2. In the ssh shell prompt, enter "mongosh" followed by a space followed the first edited URL (the one with 27017 in it) in single-quotes.
 
@@ -127,6 +129,6 @@ After that, we can consider adding a more advanced section where we load some si
 
 ## Acknowledgements
 
-- **Author** - Beda Hammerschmidt, Architect
+- **Author** - Roger Ford, Principal Product Manager
 - **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
 - **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021

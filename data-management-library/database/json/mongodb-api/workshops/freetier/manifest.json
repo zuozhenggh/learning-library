@@ -29,12 +29,8 @@
             "filename": "../../mongoshell/mongoshell.md"
         },
         {
-            "title": "Lab 4: SODA for REST",
-            "filename": "../../soda/soda.md"
-        },
-        {
-            "title": "Lab 5: Using SQL to work with JSON",
-            "filename": "../../sql-json/sql-json.md"
+            "title": "Lab 4: Database Actions",
+            "filename": "../../dbactions/dbactions.md"
         },
         {
             "title": "Need Help?",
