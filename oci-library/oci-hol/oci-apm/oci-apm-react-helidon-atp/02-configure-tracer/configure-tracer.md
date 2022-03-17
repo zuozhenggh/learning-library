@@ -344,7 +344,7 @@ Refer to the screenshots of the ***TodoListAppService.java*** where the changes 
 	``` bash
 	<copy>
 	private void addConnectionInfo(Span span, String sql) {
-  	span.setTag("DbStatment", sql);
+  	span.setTag("DbStatement", sql);
 		span.setTag("DbConnUrl", pool.getURL());
 		span.setTag("DbType", "sql");
 		span.setTag("DbUser", pool.getUser());
