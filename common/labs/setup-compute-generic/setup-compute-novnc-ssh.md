@@ -51,19 +51,23 @@ Your options are:
 
     - **Instance Count:** Accept the default, **1**, unless you intend to create more than one. e.g. for a team
     - **Select Availability Domain:** Select an availability domain from the dropdown list.
-    - **Need Remote Access via SSH? (Leave Uncheck for Remote Desktop only Access - The Default):** Keep the default as checked to only use the remote desktop
+    - **Need Remote Access via SSH?** In this step you have 3 options to select from:
+        - **Option (A)** - Keep Unchecked for Remote Desktop only Access - The Default
+        - **Option (B)** - Check *Need Remote Access via SSH?* and keep *Auto Generate SSH Key Pair* unchecked to enable remote access via SSH protocol, then provide the SSH public key(s).
 
-    If you would like to enable remote access via SSH protocol and unchecked *Need Remote Access via SSH* above, then provide the SSH public key. This assumes that you already have an RSA type SSH key-pair available on the local system where you will be connecting from. If you don't and for more info on creating and using SSH keys for your specific platform and client, please refer to the guide [Generate SSH Keys](https://oracle.github.io/learning-library/common/labs/generate-ssh-key)
+            - **SSH Public Key**: Select from the following two options
+                - *Paste SSH Keys*: Paste the plaintext key strings or
+                - *Choose SSH Key Files*: Drag-n-drop or browse and select valid public keys of *openssh* format from your computer
 
-    - **SSH Public Key**: Select from the following two options
-        - *Paste SSH Key*: Paste the plaintext key string or
-        - *Choose SSH Key File*: Drag-n-drop or browse and select a valid public key of *openssh* format from your computer
+        ![](./images/create-stack-novnc-ssh-2.png " ")
 
-    ![](./images/create-stack-novnc-ssh-2.png " ")
+        ![](./images/create-stack-novnc-ssh-3.png " ")
 
-    ![](./images/create-stack-novnc-ssh-3.png " ")
+        ***Note 1:*** This assumes that you already have an RSA type SSH key-pair available on the local system where you will be connecting from. If you don't and for more info on creating and using SSH keys for your specific platform and client, please refer to the guide [Generate SSH Keys](https://oracle.github.io/learning-library/common/labs/generate-ssh-key)
 
-    ***Note:*** *If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance*
+        ***Note 2:*** If you used the Oracle Cloud Shell to create your key, make sure you paste the pub file in a notepad, remove any hard returns.  The file should be one line or you will not be able to login to your compute instance
+
+        - **Option (C)** - Check *Need Remote Access via SSH?* and *Auto Generate SSH Key Pair* to have the keys auto-generated for you during provisioning. If you elect this option you will be provided with the private key post provisioning.
 
     Depending on the quota you have in your tenancy you can choose from standard Compute shapes or Flex shapes. Please visit the Appendix: Troubleshooting Tips for instructions on checking your quota
 
@@ -278,6 +282,8 @@ Modify your stack to use fixed shapes instead.
 1. Uncheck the option *"Use Flexible Instance Shape with Adjustable OCPU Count"* to use fixed shape instead
 ![](./images/standardshape.png " ")
 
+
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology

@@ -25,6 +25,10 @@
         {
             "title": "Lab 4: Developing with JSON in the Oracle Database",
             "filename": "../../json/json.md"
+        }, 
+        {
+            "title": "Lab 5: Security",
+            "filename": "../../security/security.md"
         },
         {
             "title": "Need Help?",
