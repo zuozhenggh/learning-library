@@ -161,6 +161,13 @@ kubectl get ing -n helloworld
 ![Hello World Output](images/helloworld-test-output.png)
 
 
+
+## Clean up helloworld namespace
+### This is to remove the hello world deployment and service together with ingress resource
+```
+kubectl delete ns helloworld
+```
+
 You may now **proceed to the next lab.**
 
 ## Acknowledgements

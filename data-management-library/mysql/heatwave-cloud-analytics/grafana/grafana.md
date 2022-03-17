@@ -76,9 +76,7 @@ wget https://raw.githubusercontent.com/ivanxma/mysqlk8s/main/grafana/grafana.yam
 5. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready.
 
 	```
-	<copy>
 	kubectl get service -n grafana --watch
-	</copy>
 	```
 
 Once you have the External IP provisioned, you can execute CTL+C to kill the command
@@ -88,15 +86,13 @@ Once you have the External IP provisioned, you can execute CTL+C to kill the com
 1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:3000/). 
 You can login using admin/admin as username/password and change the password accordingly.
 
-	<img src=images/GrafanaLogin.png width=300>
+
+	<img src=images/GrafanaLogin.png width=300 />   <img src=images/grafana-login-change-password.png width=300 />
 
 2. Add Datasource MySQL
-* Select Datasource from Settings left menu
+* Select Datasource from Settings left menu and Click "Add Data source" button
 
-<img src=images/AddDatasource.png width=300>
-
-* Click "Add Data source" button
-![Choose MySQL](images/AddDatasource-2.png)
+<img src=images/AddDatasource.png width=100>    <img src=images/AddDatasource-1.png width=500>
 
 * Type in mysql in the filter textbox and click the MySQL Datasource
 ![Choose MySQL](images/AddDatasource-3.png)

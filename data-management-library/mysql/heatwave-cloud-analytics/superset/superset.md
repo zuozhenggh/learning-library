@@ -1,26 +1,62 @@
-# Create compartment
 
+# Deploy Superset Dashboard for MySQL to OCI Kubernetes
 ## Introduction
-Before you start to provision any OCI resources, it is a good practice to create a **compartment** as an isolated environment for your work. 
-In this lab, we will create a compartment for all the OCI resources required to host our PHP application as well as MySQL HeatWave cluster
 
-Estimated Time: 2 minutes
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes. 
 
-## Task 1: Create Compartment
+In this lab, you will deploy a Grafana application on **OKE**, and connect it to **MySQL**.
 
-1. Log in to **OCI** and click on the <a href="#menu">&#9776; hamburger menu</a> at the top left corner of the OCI console, and type **compartment** in the search box. Click on the **Compartments** in the search result
+Estimated Time: 15 minutes
 
-![compartment](images/compartment.png)
+### Objectives
 
-2. Specify the name of the compartment such as **PHP-Compartment** with a description, click on **Create Compartment**
+In this lab, you will:
+* Install helm cli client and superset repo for k8s package installation
+* Deploy a superset application to the OKE cluster using helm cli client
+* Define MySQL Datasource
+* Import MySQL Dashboard to Grafana
+* Test the deployed Grafana applicationa against MySQL database
 
-![create compartment](images/create-compartment.png)
+### Prerequisites
 
-You may now **proceed to the next lab.**
+This lab assumes you have:
+* An Oracle account
+* You have enough privileges to use OCI
+* All previous labs successfully completed
+* Resources Ready : HOL-compartment, OKE cluster, MySQL Database Service 
 
-## Acknowledgements
-* **Author** 
-			 - Ivan Ma, MySQL Solutions Engineer, MySQL JAPAC, Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
-* **Contributors** 
-			 - Perside Foster, MySQL Solution Engineering 
-* **Last Updated By/Date** - Ryan Kuan, March 2021
+
+## Task 1: Verify OKE cluster
+
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
+
+![Navigate to OKE](images/navigate-to-oke.png)
+
+2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
+
+![Locate OKE](images/locate-oke-instance.png)
+
+3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster. You will deploy a PHP application to this OKE cluster soon.
+
+![Verify OKE](images/oke-worker-nodes.png)
+
+## Task 2: Connect to **oke-operator** compute instance
+
+1. Connect to the **oke-operator** compute instance again using OCI Cloud Shell
+
+## Task 3: Deploy Application to OKE
+
+1. Install helm cli client 'helm' to the operator VM and add superset repo.
+
+```
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
+helm repo add superset https://apache.github.io/superset
+```
+![Install helm cli](images/helm-cli-install.png)  
+![Add superset repo to helm ](images/helm-add-repo.png)
+
+2. 
+```
+helm show values superset/superset > superset-custom-values.yaml
+helm upgrade --install --values superset-custom-values.yaml superset superset/superset
+```
