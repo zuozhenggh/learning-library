@@ -23,6 +23,13 @@ In this lab, you will:
 * Change Site Security
 * Publish Site
 
+### Prerequisites
+
+This lab assumes you have:
+
+* An Oracle account
+* All previous labs successfully completed
+
 ## **Task 1**: Import Site Template
 
 1.	Navigate to **Developer** for side vertical menu
@@ -116,7 +123,7 @@ In this lab, you will:
 
 ## Summary
 
-This completes this lab. At this point, you know how to create new site using template, change security setting & publish it.You may now **proceed to the next lab**.
+This completes this lab. At this point, you know how to create new site using template, change security setting & publish it. You may now **proceed to the next lab**.
 
 ## Learn More
 

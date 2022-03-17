@@ -18,6 +18,13 @@ In this lab, you will:
 * Create Asset Repository
 * Add members to Repository
 
+### Prerequisites
+
+This lab assumes you have:
+
+* An Oracle account
+* All previous labs successfully completed
+
 ## **Task 1**: Create Custom Digital Asset Type
 
 We need to have Custom Digital Asset type “Contract” with meta-data to capture document & meta-data.

@@ -13,7 +13,14 @@ In this lab, you will:
 * Change OCM Endpoint URL
 * Run end-to-end demonstration
 
+### Prerequisites
 
+This lab assumes you have:
+
+* An Oracle account
+* An Oracle APEX instance with **21.1.x version**
+* An OCM instance
+* All previous labs successfully completed
 
 ## **Task 1**: Configure OCM REST API web credentials
 

@@ -18,7 +18,10 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
+
+* An Oracle account
 * An Oracle APEX instance with **21.1.x version**
+* All previous labs successfully completed
 
 ## **Task 1**: Import Customer Tracker sample application
 
@@ -155,7 +158,7 @@ This lab assumes you have:
 
 ## Summary
 
-This completes this lab. At this point, you know how to import sample application and configure Single Sign-on.You may now **proceed to the next lab**.
+This completes this lab. At this point, you know how to import sample application and configure Single Sign-on. You may now **proceed to the next lab**.
 
 
 ## Learn More

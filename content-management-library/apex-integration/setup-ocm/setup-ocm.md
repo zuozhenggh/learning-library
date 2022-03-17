@@ -21,6 +21,11 @@ In this lab, you will:
 * Create IAM App for Integration(API Call)
 * Associate IAM App with OCM Instance
 
+### Prerequisites
+
+This lab assumes you have:
+* An Oracle account
+* You have enough privileges to use OCI
 
 ## **Task 1**: Create an instance of Oracle Content Management
 
@@ -29,7 +34,7 @@ In this lab, you will:
 
   Enter Cloud **Account Name** in the input field and click the **Next** button
 	
-  ![Cloud account name](../../../common/images/console/images/cloud-account-name.png)
+  ![Cloud account name](images/cloud-account-name.png)
 
 
 2. Select **oracleidentityservice** and click **Continue** button
@@ -42,7 +47,7 @@ In this lab, you will:
 
 4. After successful login click the navigation menu icon from left upper corner. From the menu click **Developer services** and then **Content Management – Overview** 
 
-  ![OCM Navigation Menu](images/ocm-oci-menu.png)
+  ![OCM Navigation Menu](../../../common/images/console/ocm-oci-menu.png)
 
 5. Click **Create Instance** . If compartment is not selected by default for you then first you need to select **Compartment** <your tenancy>(root) from dropdown.
 
@@ -152,7 +157,7 @@ In this lab, you will:
 
 ## Summary
 
-This completes this lab. At this point, you know how to create a new Oracle Content Management instance and create an IAM app.You may now **proceed to the next lab**.
+This completes this lab. At this point, you know how to create a new Oracle Content Management instance and create an IAM app. You may now **proceed to the next lab**.
 
 ## Learn
 

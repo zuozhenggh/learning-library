@@ -25,6 +25,12 @@ In this lab, you will:
 * Define Commit Target
 * Test Content Ingestion flow
 
+### Prerequisites
+
+This lab assumes you have:
+
+* An Oracle account
+* All previous labs successfully completed
 
 ## **Task 1**: Create Procedure
 
@@ -51,12 +57,12 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
    ![Metadata Tab](images/metadata-tab.png)
 
 2. Fill up the “Metadata Fields: New Metadata Field” forms with below details
-   * **Field Name** : Party Name
-   * **Data Type** : Alpha Numeric
-  
+    * **Field Name** : Party Name
+    * **Data Type** : Alpha Numeric
+
    ![Metadata Tab](images/metadata-form.png)
 
-3.	Click **Submit** to complete the field creation.
+3. Click **Submit** to complete the field creation.
 
 
 ## **Task 3**: Configure Capture Source as Email account
@@ -171,7 +177,7 @@ Navigate to **Metadata** tab and here we will create define metadata as **Party 
 
 ## Summary
 
-This completes this lab. At this point, you know how to configure Capture procedure to automate content ingestion from email account and store it in content repository along with meta-data.You may now **proceed to the next lab**.
+This completes this lab. At this point, you know how to configure Capture procedure to automate content ingestion from email account and store it in content repository along with meta-data. You may now **proceed to the next lab**.
 ## Learn More
 
 * [Content Capture Quick Tour](https://docs.oracle.com/en/cloud/paas/content-cloud/capturing-content/get-know-content-capture-procedures-page.html)
