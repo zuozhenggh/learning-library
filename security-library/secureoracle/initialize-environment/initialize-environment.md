@@ -49,6 +49,7 @@ Follow the steps below to Start/Stop SecureOracle components.
     ```
 
     **Note:** the time to start the OIG components varies between 15-20 minutes.
+        ![](./images/startall.png " ")
 
     For your reference, the following commands are available to start or stop the different components and applications.
 
@@ -380,5 +381,5 @@ Use these links to get more information about Oracle Identity and Access Managem
 
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
-- **Contributors** - Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+- **Contributors** - Rene Fontcha, Sahaana Manavalan
+- **Last Updated By/Date** - Sahaana Manavalan, LiveLabs Developer, NA Technology, March 2022

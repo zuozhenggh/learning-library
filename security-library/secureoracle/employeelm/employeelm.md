@@ -117,7 +117,7 @@ This lab assumes you have:
 
 6. Sign out from APEX Workspace by clicking in the **HRADMIN** avatar in the top right corner and select **Sign out**.
 
-7. Login as user **hradmin** with password **Oracle123** to My HR Application.
+7. Open another tab and Login as user **hradmin** with password **Oracle123** to My HR Application.
 
     E.g. use the following link and credentials:
 
@@ -152,16 +152,17 @@ This lab assumes you have:
     **Note:** before adding a new employee, you must first create an email account so the new employee receives a notification after being on-boarded into OIM. Access the **Email Server Admin Console** as admin user to create new email accounts.
 
 ## Task 3:  On-board New Employees
-1. Login as user **xelsysadm** with password **Oracle123** to the OIM Admin Console. Click on the **Scheduler** option and go to System Management tab and enter **HRData** in the search box or click on the arrow icon to fetch data.
+1. Login as user **xelsysadm** with password **Oracle123** to the [OIM Admin Console](http://secureoracle.oracledemo.com:14000/sysadmin). Click on the **Scheduler** option and go to System Management tab and enter **HRData** in the search box or click on the arrow icon to fetch data.
 
 2. From the results list, double click on job **HRData DBAT Trusted Resource User Reconciliation**
     ![](./images/hrdata.png " ")
 
 3. In the Job Details tab, click on **Run Now** and monitor the progress by clicking on **Refresh** and looking at the bottom under Job History.
 
-4. Once the job is completed with Job Status **Stopped::Success**, click on the Event Management tab at the top and click the **Arrow** icon to search for reconciliation events.
-
-5. A list of events with Profile Name **HRData** should be listed as recent events indicating that records were processed. Click on one of the event IDs to see the details. If the current status shows **Creation Succeeded** for all the events, the import was successful. Sign out from the Admin Console.
+4. Once the job is completed with Job Status **Stopped::Success**,
+    ![](./images/stopped.png " ")
+5. Click on the Event Management tab at the top and click the **Arrow** icon to search for reconciliation events. A list of events with Profile Name **HRData** should be listed as recent events indicating that records were processed. Click on one of the event IDs to see the details. If the current status shows **Creation Succeeded** for all the events, the import was successful. Sign out from the Admin Console.
+    ![](./images/creation.png " ")
 
     **Notes**: The reconciliation job import new employees that do not exist in OIM. Optionally, you can perform a filtered reconciliation by entering a filter expression in the **Filter** field under the **Parameters** section in the Job Details page.
 
@@ -178,7 +179,7 @@ This lab assumes you have:
     ```
 
 ## Task 4:  Checking On-boarded Employees
-1. Login to the OIM Self Service Console as user: **xelsysadm** with password: **Oracle123** . Click on **`Manage -> Users`**, review if the on-boarded employees are listed as users in the Users page.
+1. Login to the [OIM Self Service Console](http://secureoracle.oracledemo.com:14000/identity) as user: **xelsysadm** with password: **Oracle123** . Click on **`Manage -> Users`**, review if the on-boarded employees are listed as users in the Users page.
 
     ![](./images/oim_users.png " ")
 
@@ -416,4 +417,4 @@ Use these links to get more information about Oracle Identity and Access Managem
 ## Acknowledgements
 - **Author** - Ricardo Gutierrez, Solution Engineering - Security and Management
 - **Contributors** - Rene Fontcha
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+- **Last Updated By/Date** - Sahaana Manavalan, LiveLabs Developer, NA Technology, March 2022
