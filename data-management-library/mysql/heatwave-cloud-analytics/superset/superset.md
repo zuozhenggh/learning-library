@@ -85,8 +85,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: superset
-    http:
+  - http:
       paths:
         - path: /
           pathType: Prefix
@@ -97,3 +96,57 @@ spec:
                 number: 8088
 EOF
 ```
+
+![Deploy superset ingress resource](images/superset-get-all.png)
+
+4. Check status on superset-ing and Identify the IP address.  The "address" as public ip from ingress resource "superset-ing" is populated a while after the ingress resource is created.  Please wait for a moment and retry until you can find the address.
+```
+kubectl get ing superset-ing -n superset
+kubectl get ing superset-ing -n superset --watch
+```
+- Wait until public ip is populated and press **CTRL-C** to exit the watch status
+
+![Deploy superset ingress resource](images/superset-ing.png)
+
+## Task 4 : Test Superset 
+- Open a browser and put in the URL : http://<public IP>
+- login as admin / admin and click "Sign In"
+![Superset login](images/superset-login.png)
+- You will be landing on superset **HOME** page
+![Superset Home page](images/superset-home-page.png)
+
+## Task 5 : Adding MySQL Database Service Connection to Superset
+### Identify the MySQL DB System IP Address
+- Open New Browser page to OCI console
+- On hamburger menu, type mysql and choose DB System.  
+- Click on the link "MySQLInstance" to check the details
+![DB System](images/oci-mysql-dbsystem.png)
+- Note down the IP Address for the DB System
+![DB System](images/oci-mysql-dbsystem-ip.png)
+
+### Add MySQL Database Connection to superset
+- Select "Connect Database" from "Data" menu item on "+" icon
+![Connect Database Menu](images/superset-add-database-menu.png)
+- Choose "MySQL" for Database connection
+![Connect MySQL database](images/superset-connect-mysql.png)
+- Fill in the Content accordingly.   
+![MySQL Details](images/superset-mysql-details.png)
+- Click "Finish" on successful connection to the MySQL Database Service
+![Connect Success](images/superset-mysql-connect-success.png)
+
+### Testing SQL on SQL Editor from superset
+- Choose **SQL Editor** from SQL Lab menu
+![SQL Editor menu](images/superset-sqllab-menu.png)
+![SQL Editor menu](images/superset-sql-editor.png)
+
+- Select Database:"MySQL", Schema:"airportdb", Table Schema:"airline", the result is listed
+![SQL Editor test](images/superset-sql-editor-test.png)
+
+
+
+
+
+
+
+
+
