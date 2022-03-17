@@ -28,9 +28,9 @@ Open the Oracle Cloud Shell and clone this repository:
 * Option 2: Install MySQL inside the Kubernetes cluster
 * Or both !
 
-## Option 1: Install MySQL Database Service
+## Option 1 - Part 1: Install MySQL Database Service
 
-We will install MySQL Database service:
+To install the MySQL Database service, follow these steps:
 
 1. In the Oracle Cloud Menu, go to Database / MySQL. Click "Create MySQL Database System"
 
@@ -52,21 +52,18 @@ We will install MySQL Database service:
 
 ## Option 1 - Part 2: Create a bastion to create a SSH Tunnel to our MySQL DB System
 
-A longer explanation is available here:[https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service](https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service)
+Let's install a Bastion. A longer explanation is available here:[https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service](https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service)
 
 
-1. The Bastion Service’s dashboard is located in Identity & Security
-
+1) The Bastion Service’s dashboard is located in Identity & Security
   - Menu / Identity & Security
   - Click Bastion
   - Choose the VCN where MySQL is installed (##2##)
   - Choose the Subnet where MySQL is installed (##3##)
   - Use 0.0.0.0/0 for the CIDR allow block (See the blog above for more secure solution)
-
   ![Image alt text](images/bastion-create.png)
 
-2 Create a SSL Certificate
-
+2) Create a SSL Certificate
   - Back the Cloud shell
   - Create a SSH Certificate
 
@@ -78,10 +75,9 @@ cat $HOME/.ssh/id_rsa.pub
 ```
 ssh-rsa abcdefghijklAADAQABAAABAQDF9jXWObkl6n482Gxxxxxxxxxxxxxx marc_gueur@06671dff81b6
 ```
+- Copy the key (##5##)
 
-Copy the key (##5##)
-
-3. Create a Bastion Session
+3) Create a Bastion Session
 
   - Back in the Bastion screen
   - Click Create session
@@ -99,7 +95,7 @@ Copy the key (##5##)
 ```
 ssh -i &lt;privateKey&gt; -N -L &lt;localPort&gt;:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com
 ```
-4. Try to connect through the bastion 
+4) Try to connect through the bastion 
 
 - Back to the Cloud Shell
 - Modify the command

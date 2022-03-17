@@ -1,4 +1,4 @@
-# Add a Friends or Ennemies table
+# Add a Friends or Enemies table
 
 ## Introduction
 
@@ -12,7 +12,7 @@ In a previous lab, you have created a visual builder installation and imported t
 
 ## Task 1: Create a Business Object
 
-In this task, you'll create a business object (table) called Friends (or Ennemies if you prefer)
+In this task, you'll create a business object (table) called Friends (or Enemies if you prefer)
 
 1.  Click the **Business Object** ![Web Applications icon](./images/vbcsmd_webapp_icon.png) tab, click (+) to create a business objects. Enter "Friends" as teh business object name.
 
