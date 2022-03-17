@@ -51,7 +51,7 @@ During the execution of your labs you may need to copy text from your local PC/M
 
     ![](./images/firefox-launch-2.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology

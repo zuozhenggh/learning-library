@@ -1,4 +1,4 @@
-# Advanced index compression 
+# Enable advanced index compression 
 
 ## Introduction
 
