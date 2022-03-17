@@ -55,7 +55,7 @@ helm repo add superset https://apache.github.io/superset
 ![Install helm cli](images/helm-cli-install.png)  
 ![Add superset repo to helm ](images/helm-add-repo.png)
 
-2. 
+2. Generate superset-custom-values.yaml (if neede, to update any specific variables) and Install superset package.
 ```
 helm show values superset/superset > superset-custom-values.yaml
 helm upgrade --install --values superset-custom-values.yaml superset superset/superset
