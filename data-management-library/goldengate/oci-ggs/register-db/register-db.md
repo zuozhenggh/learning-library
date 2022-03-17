@@ -62,35 +62,32 @@ Oracle Autonomous Databases come with a GGADMIN user that is locked by default. 
 
     ![Autonomous Databases page](images/02-02.png " ")
 
-3.  On the SourceATP Database Details page, click **Tools**, and then click **Open Database Actions**.
+3.  On the SourceATP Database Details page, click **Database Actions**.
 
     ![Database Details page](images/02-03-db-tools.png " ")
 
-4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment. If you're running this lab as a workshop, copy the ADMIN password provided with your lab environment details.
+    > **Note:** *If you're prompted to log in to Database Actions, use the source database admin credentials.*
 
-5.  Under **Administration**, click **Database Users**.
+4.  Under **Administration**, click **Database Users**.
 
     ![Database Actions](images/02-05.png " ")
 
-6.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
+5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
 
     ![GGADMIN user context menu highlighted](images/02-06-locked.png)
 
-7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
+6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
 
     ![Edit user](images/02-07-edit.png)
 
     Note that the user icon changes from a padlock to a checkmark.
 
-8.  From the navigation menu (hamburger icon), click **SQL**.
+7.  From the navigation menu (hamburger icon), click **SQL**.
 
-9.  In the worksheet, enter the following, and then click **Run Statement**:
+8.  In the worksheet, enter the following, and then click **Run Statement**:
 
     ```
-    <copy>set pagesize 50
-alter session set container=pdbeast;
-column object_name format a40
-column support_mode format a8 heading 'Support|Mode'
+    <copy>
 select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
     </copy>
     ```
@@ -135,4 +132,4 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - Jenny Chan, February 2022
+* **Last Updated By/Date** - Jenny Chan, March 2022

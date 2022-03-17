@@ -69,7 +69,7 @@ In this lab, you will:
 3. Specify basic information for the autonomous database:
 
     - __Compartment__ - Leave the default compartment.
-    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __ADW Finance Mart__.
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __ADW\_Finance\_Mart__.
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.)
     <if type="livelabs">For this lab, use __ADWFINANCE__ and **append your user id**. For example, if your user id is **LL-185**, then enter __ADWFINANCE185__
     </if><if type="freetier">For this lab, use __ADWFINANCE__.</if>

@@ -1,4 +1,4 @@
-# Second- Factor Authentication workflow using Oracle AQ
+# Use workflow with Oracle AQ (Second-factor Authentication)
 
 ## Introduction
 

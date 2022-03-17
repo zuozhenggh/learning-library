@@ -89,3 +89,9 @@ If the workshop asks you to open cloud shell, but you cannot access it, please m
 
 3. Relaunch your cloud shell. You should be able to open your cloud shell.
    ![Cloud Shell](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/cloud-shell.png " ")
+
+
+## Cannot Connect to the Marketplace compute instance using private SSH key?
+
+   ![Policy Missing Error](images/private-ssh-key-denied.png " ")
+1. If you cannot connect to your compute instance using your private SSH key, please make sure the private key you provide and use matches the public SSH key you provide when you reserve the workshop on LiveLabs.

@@ -1,4 +1,4 @@
-# OML4SQL using One-Class Support Vector Machine (SVM) for Anomaly Detection
+# Detect anomalies with OML4SQL using one-class support vector machine (SVM)
 
 ## Introduction
 
@@ -161,14 +161,14 @@ Notice how the small padlock closes in both options, which represents that you a
 
 ## Task 4: Modeling
 
-* CREATE A Model with the name: SVMO\_CUST\_Class_sample
+1. CREATE A Model with the name: SVMO\_CUST\_Class_sample
   We use One-Class Support Vector Machine, Support Vector Machine (SVM) as a one-class classifier is used for detecting anomalies. Oracle Machine Learning for SQL uses SVM as the one-class classifier for anomaly detection. When SVM is used for anomaly detection, it has the classification machine learning function but no target.
 
   One-class SVM models, when applied, produce a prediction and a probability for each case in the scoring data. If the prediction is 1, the case is considered typical. If the prediction is 0, the case is considered anomalous. This behavior reflects the fact that the model is trained with normal data.
 
   Note the NULL specification for target column name.
 
-* For more information about SVM in Oracle check this link: [Support Vector Machine](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/support-vector-machine.html#GUID-FD5DF1FB-AAAA-4D4E-84A2-8F645F87C344).
+  For more information about SVM in Oracle, check this link: [Support Vector Machine](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/support-vector-machine.html#GUID-FD5DF1FB-AAAA-4D4E-84A2-8F645F87C344).
 
     ````
     <copy>
@@ -185,7 +185,7 @@ Notice how the small padlock closes in both options, which represents that you a
     </copy>
     ````
 
-* DISPLAY MODEL SETTINGS
+2. DISPLAY MODEL SETTINGS
 
     ````
     <copy>
@@ -198,7 +198,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
     ![settings-model](../oml4sql-anomaly-detection/images/settings-model.png)
 
-* Review your model attributes. DISPLAY MODEL SIGNATURE
+3. Review your model attributes. DISPLAY MODEL SIGNATURE
 
     ````
     <copy>
@@ -211,7 +211,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
     ![model-attributesl](../oml4sql-anomaly-detection/images/model-attributes.png)
 
-* Review your model details. Model details are available only for SVM models with linear kernel.
+4. Review your model details. Model details are available only for SVM models with linear kernel.
 
     ````
     <copy>
@@ -234,7 +234,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
     ![model-details](../oml4sql-anomaly-detection/images/model-details.png)
 
-* Review your model views that are generated.
+5. Review your model views that are generated.
 
     ````
     <copy>
@@ -325,7 +325,7 @@ Necessary data preparation on the input attributes is performed automatically du
     ![case-3](../oml4sql-anomaly-detection/images/case-3.png)
 
 
-BUSINESS USE CASE 4
+BUSINESS CASE 4
 
 * Identify rows that are most atypical in the input dataset.
 Consider each type of marital status to be separate, so the most anomalous rows per married status group should be returned.
@@ -361,7 +361,7 @@ With this practice, we can conclude that the SVM algorithm is very useful to sol
 
 ## Acknowledgements
 * **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru, Rajeev Rumale.
-* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2022.
+* **Last Updated By/Date** -  Adrian Castillo Mendoza, March 2022.
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
