@@ -1,5 +1,5 @@
 # Create and Configure Oracle MySQL Database Service
-![INTRO](./images/00_mds_image.png " ")  
+![INTRO](./images/00-mds-image.png " ")  
 
 ## Introduction
 
@@ -63,20 +63,22 @@ In this lab, you will be guided through the following tasks:
  Select Standalone to specify a Standalone DB System
     ![MDS](./images/04mysql03-1.png " ")
 
-5. Create Administrator Credentials
+5. Create Administrator Credentials. 
 
  Enter Username
     ```
     <copy>admin</copy>
     ```
-    
+
+ **Note:** Be sure to choose and remember your password
+
  Enter Password
     ```
-    <copy>Welcome#12345</copy>
+    <copy>????</copy>
     ```   
  Confirm Password
     ```
-    <copy>Welcome#12345</copy>
+    <copy>????</copy>
     ```
     ![MDS](./images/04mysql04.png " ")
 
@@ -129,7 +131,7 @@ In this lab, you will be guided through the following tasks:
     ![MDS](./images/04mysql11-1.png" ")
 
 
-You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)”
+You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
