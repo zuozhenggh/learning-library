@@ -31,7 +31,7 @@ When you create a clone for an Autonomous Database instance, you have the option
 
       ![License Type](images/clone-settings-03.png "License Type")
 
-      Click on Create Autonomous Database Clone Button
+      Click on *Create Autonomous Database Clone* Button
        
 ## Learn More
 
