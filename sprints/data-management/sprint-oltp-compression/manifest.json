@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How do I Enable OLTP table compression?",
+            "title": "How do I enable OLTP table compression?",
             "description": "",
             "filename": "sprint-oltp-compression.md"
         },
