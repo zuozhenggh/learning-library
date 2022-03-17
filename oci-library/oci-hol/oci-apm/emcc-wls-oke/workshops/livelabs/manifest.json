@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Monitor WebLogic Server on Kubernetes managed by WebLogic Kubernetes Operator using Oracle Enterprise Manager Cloud Control",
+  "workshoptitle": "Monitor WebLogic Server on Kubernetes using Oracle Enterprise Manager",
 	"help": "livelabs-help-em_us@oracle.com",
     "tutorials": [
         {
