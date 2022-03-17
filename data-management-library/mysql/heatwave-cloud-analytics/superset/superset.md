@@ -12,10 +12,10 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 * Install helm cli client and superset repo for k8s package installation
-* Deploy a superset application to the OKE cluster using helm cli client
-* Define MySQL Datasource
-* Import MySQL Dashboard to Grafana
-* Test the deployed Grafana applicationa against MySQL database
+* Deploy a superset package to the OKE cluster using helm cli client
+* Define MySQL Database in Superset
+* Test MySQL Database connection with SQL Editor in Superset
+* Create a simple Dashboard
 
 ### Prerequisites
 
