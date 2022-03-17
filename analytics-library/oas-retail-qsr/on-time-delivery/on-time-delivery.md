@@ -37,7 +37,7 @@ This lab assumes you have:
 
 *This is the "fold" - below items are collapsed by default*
 
-## Task 1: Standard LiveLabs Images and Text
+## Task 1: anything Standard LiveLabs Images and Text
 
 <!-- Images -->
 
