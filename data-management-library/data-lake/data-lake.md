@@ -22,29 +22,85 @@ Watch the video below for a quick walk through of the lab.
 
 You have several choices on how to create applications and languages. You can choose something that makes sense for your environment. First, we are going to take a look at the OCI Data Flow and create an application to read through files in the object storage or data lake.
 
-This is just an example of how you can use your already created scripts to run as an application and schedule using OCI Data Flow. This currently only reads the data from a csv file which can be used to populate a table or put the output into the bucket.
+We have created a python script for you to use as part of your OCI Data Flow application. It requires a little bit of editing to get your ADB ID, user name and password added to script and then uploaded to object storage. We are going to use Cloud Shell to do the editing and upload to our object storage bucket.
 
-Before you create the application we need to grab the python script, configure and place in object storage.
+Start Cloud Shell
 
-Down load this file by copying the link and saving it in a text editor:
+![Start Cloud Shell](./images/cloudshell-open.png " ")
+
+From the current directory (your home directory of your user in Cloud Shell), create a file called livelabs_example.py
 
 ```
 <copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/data-lakehouse/live_labs_example.py
+vi livelabs_example.py
+</copy>
+```
+Copy the following script and insert it into the livelabs_example.py file you are currently editing in Cloud Shell:
+
+```
+<copy>
+from pyspark.sql import SparkSession
+import sys
+
+def oracle_datasource_example(spark):
+    # Wallet  information.
+    properties = {"adbId": "replacewithADBID","user" : "replacewithUSER","password": "replacewithPASSWORD"}
+
+    print("Reading data from autonomous database.")
+    df = spark.read.format("oracle").option("dbtable", SRC_TABLE).options(**properties).load()
+
+    df.printSchema()
+
+    print("Filtering recommendation.")
+    df.filter(df.RECOMMENDED == "Y")
+
+    print("Writing to autonomous database.")
+    df.write.format("oracle").mode("overwrite").option("dbtable",TARGET_TABLE).options(**properties).save()
+
+if __name__ == "__main__":
+    spark = SparkSession \
+        .builder \
+        .appName("Python Spark Oracle Datasource Example") \
+        .getOrCreate()
+
+    # TODO: PROVIDE THE ARGUMENTS 
+    ABD_ID = "replacewithADBID"
+    SRC_TABLE = "ADMIN.EXPORT_STREAM_2020_UPDATED" 
+    TARGET_TABLE = "ADMIN.MOVIE_GENRE" 
+    USERNAME = "replacewithUSER"
+    PASSWORD = "replacewithPASSWORD"
+
+    oracle_datasource_example(spark)
+
+    spark.stop()
 </copy>
 ```
 
-Place this file in a text editor and replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database where it stats replacewithXXXX.
+After pasting the above script, replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it stats replacewithXXXX. If you are unsure of your ADB ID, with Cloud Shell still open you can navigate to your ADW database from the hamburger menu to Autonomous Database and **Copy** the OCID to be pasted in the script in Cloud Shell in both places where it states "replacewithADBID".
 
-Upload this edited file to your object storage into the warehouse bucket that we already created in the last lab.
+![Get the ADB ID](./images/getadbid.png " ")
 
-Navigate from the hamburger memu to storage and select buckets.
+Edit the replacewithXXXXX text with the correct information (paste with right click between the quotation marks:
+
+![Paste ADB ID](./images/editfilepaste.png " ")
+
+![Edited File](./images/editedfile.png " ")
+
+See the edited file for the two places there are edits. When finished editing press **esc** **:wq** to save the file and your changes.
+
+Upload this edited file to your object storage using the command line in Cloud Shell after replacing REPLACEYOURNAME with your actual namespace name (Namespace name can be found in OCI tenancy:
+
+```
+<copy>
+oci os object put --file livelabs_example.py --namespace REPLACEYOURNAMESPACE --bucket-name dataflow-warehouse
+</copy>
+```
+
+![Upload File](./images/cloudshellupload.png " ")
+
+Navigate from the hamburger memu to storage and select buckets. And you should see your python script in your dataflow-warehouse bucket ready for you to use in your application.
 
 ![Storage Buckets](./images/showbuckets.png " ")
-
-Select bucket dataflow-warehouse bucket. And upload file by selecting or dragging and dropping the updated python script.
-
-![Upload file](./images/uploadscript.png " ")
 
 Now, navigate to the OCI Data Flow and click on Create Application.
 
