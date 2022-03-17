@@ -88,6 +88,7 @@ Estimated time: 25 minutes
     ``` bash
     <copy>
     sudo firewall-cmd --zone=public --permanent --add-port=7301/tcp
+    sudo firewall-cmd --reload
     </copy>
     ```
 
@@ -127,15 +128,14 @@ Estimated time: 25 minutes
 
     ``` bash
     <copy>
-    yum install vi
+    yum -y install vi
     </copy>
     ```
 
    ![Oracle Cloud Shell, install vi](images/2-4-oci.png " ")
 
-   Type “y” when prompted.
 
-    ![Oracle Cloud Shell, install vi](images/2-5-oci.png " ")
+   ![Oracle Cloud Shell, install vi](images/2-5-oci.png " ")
 
 5. Open the ***hosts*** file with the vi editor.
 

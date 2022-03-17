@@ -29,8 +29,10 @@ Estimated time: 15 minutes
    ![Oracle Cloud console, Create Instance](images/1-3-instances.png " ")
 
 
-     * Image: Accept the default Linux image
-     * Shape: Select a shape. VM.Standard 2.1 is selected in the example
+     * Image: Select **Oracle Linux 7.9** to best go with the steps in this workshop.
+     * Shape: Select a minimum shape (1 or 2 OCPU, 16MB memory) for the workshop use. VM.Standard 2.1 is selected in the example.
+
+    > **NOTE:** In production, OCPUs 4, Memory 16GB and Boot volume 70GB at minimum is recommended, as you will typically install target application or database in the host to monitor with the EM agent.
 
    ![Oracle Cloud console, Create Instance](images/1-4-instances.png " ")
 
@@ -43,7 +45,7 @@ Estimated time: 15 minutes
 
 
      * Add SSH keys: Select any option to add SSH keys. Upload public key file was selected in the example
-     * Boot volume size: **200 (GB)**
+     * Boot volume size: **70(GB)**
 
     Click **Create** button.
 
@@ -192,7 +194,7 @@ Estimated time: 15 minutes
     ``` bash
     <copy>
     sudo firewall-cmd --zone=public --permanent --add-port=<OMS UPLOAD PORT NUMBER>/tcp
-    sudo firewall-cmd –-reload
+    sudo firewall-cmd --reload
     </copy>
     ```
 
