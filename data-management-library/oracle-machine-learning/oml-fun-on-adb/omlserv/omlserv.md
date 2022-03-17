@@ -7,6 +7,7 @@
 Estimated Time: 30 minutes
 
 ### About Oracle Machine Learning Services
+
 OML Services extends OML functionality to support model deployment and model lifecycle management for both in-database OML models and third-party Open Neural Networks Exchange (ONNX) machine learning models via REST APIs. These third-party classification, regression or clustering models can be built using tools that support the ONNX format, which includes packages like Scikit-learn and TensorFlow, among several others.
 
 Oracle Machine Learning Services provides REST endpoints through the Oracle Autonomous Database environment. These endpoints enable the storage of machine learning models along with their metadata, the creation of scoring endpoints for the model, and producing scores using these endpoints.
@@ -30,11 +31,10 @@ In this lab, you will:
     * Use Oracle's Cognitive Text functionality to discover keywords and get a summary for a given text string.
 * Review OML Services support for ONNX format models
 
-
 ### Prerequisites
 
 This lab assumes you have:
-* OCI Cloud Shell, which has cURL installed by default. If you are using the LiveLabs tenancy, you get OCI Cloud Shell as part of the reservation. However, if you are in your own OCI tenancy or using a free trial account, ensure you have OCI Cloud Shell or install cURL for your operating system to run the OML Services commands.
+* OCI Cloud Shell, which has cURL installed by default. If you are using the Workshops tenancy, you get OCI Cloud Shell as part of the reservation. However, if you are in your own OCI tenancy or using a free trial account, ensure you have OCI Cloud Shell or install cURL for your operating system to run the OML Services commands.
 * an Autonomous Database instance created in your account/tenancy if you are using your own tenancy or a free trial account. You should have handy the following information for your instance:
     * Your OML user name and password
     * OML server URL
@@ -56,11 +56,13 @@ This lab assumes you have:
     * OML server URL
 
    Here is the syntax:
+
      ```
      curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'\
      -d '{"grant_type":"password", "username":"'${oml_username}'", "password":"'${oml_password}'"}'\
      "<OML server URL>/omlusers/api/oauth2/v1/token"
      ```
+
    In the syntax above, OML server URL is the Autonomous Database URL and points to the region where the Autonomous Database instance resides. The URL also contains the database name and tenancy ID. You can obtain this URL information from the Development tab on the Autonomous Database service console. From your ADB instance details page, click open the service console.
 
   ![Image alt text](images/adb-instance.png)
@@ -81,8 +83,9 @@ This lab assumes you have:
     export omlserver=<omlserver url></copy>
 
     ```
+
    In the command above,
-    
+
      * OMLUSER is your OML user name.
      * AAbbcc123456 is your OML password.
      * omlserver url is the URL that you copied from the ADB console, without the /omlusers/ segment in it. An example of omlserver URL is https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this URL ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
@@ -93,6 +96,7 @@ This lab assumes you have:
     <copy>export token=$(curl -X POST -H 'Content-Type: application/json'  -d '{"grant_type":"password", "username":"'${oml_username}'",  "password":"'${oml_password}'"}' "${omlserver}/omlusers/api/oauth2/v1/token" | grep -o -P '(?<="accessToken":").*(?=","expiresIn)' )
     </copy>
     ```
+
    Successfully running the command above results in a token string that is saved to the variable ``token``. To visually inspect the token, run the command below:
 
     ```
@@ -114,6 +118,7 @@ This lab assumes you have:
     ```
     <copy>export token=$(curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" -d '{"grant_type":"refresh_token", "refresh_token":"'${token}'"}' "${omlserver}/omlusers/api/oauth2/v1/token" | grep -o -P '(?<="accessToken":").*(?=","expiresIn)' )</copy>
     ```
+
     To visually inspect the token, run the command below:
 
     ```
@@ -121,11 +126,12 @@ This lab assumes you have:
 
     ```
 
-4. You can also revoke a token. You cannot use or refresh a token you have revoked. For this LiveLab, do not perform this step. The syntax is provided for your reference.
+4. You can also revoke a token. You cannot use or refresh a token you have revoked. For this Workshop, do not perform this step. The syntax is provided for your reference.
 
     ```
     <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" "${omlserver}/omlusers/api/oauth2/v1/token/revoke"</copy>
     ```
+
    Running the command above produces a result similar to this:
 
     ```
@@ -149,17 +155,20 @@ This lab assumes you have:
 
 1. View the content of OML Services REST APIs. You can return the API content in a readable format by using the Linux utility jq.  
 
-  **Note:** If you are using OCI Cloud Shell, you don't need to install the jq utility as OCI Cloud Shell comes with jq pre-installed. If you are using your own tenancy or a trial account and if you are not using OCI Cloud Shell, you can check if jq is installed by running the command rpm -qa jq. If this command returns an empty value, jq is not installed. In that case, install the jq utility by running the following command.
+  > **Note:** If you are using OCI Cloud Shell, you don't need to install the jq utility as OCI Cloud Shell comes with jq pre-installed. If you are using your own tenancy or a trial account and if you are not using OCI Cloud Shell, you can check if jq is installed by running the command rpm -qa jq. If this command returns an empty value, jq is not installed. In that case, install the jq utility by running the following command.
 
     ```
     <copy>sudo yum install jq</copy>
 
     ```
+
    Run the curl command to view the APIs.
+
     ```
     <copy>curl -i -X GET --header "Authorization: Bearer ${token}" "${omlserver}/omlmod/v1/api" | head -n 50</copy>
 
     ```
+
    Here's the result, in a truncated form, of running the command above:
 
     ```
@@ -193,14 +202,13 @@ This lab assumes you have:
 
     ```
 
-
-
 2.  Get a list of saved models. For this step to return results, you need to have models deployed in your OML user account. If you have completed Lab 4, your account should include deployed models. Refer back to Lab 4 Using OML AutoML UI  to know how to quickly create and save a  model.
 
     ```
     <copy>curl -X GET --header "Authorization: Bearer ${token}" "${omlserver}/omlmod/v1/models" | jq</copy>
 
     ```
+
    The result of running the command above is displayed below:
 
     ```
@@ -239,6 +247,7 @@ This lab assumes you have:
     <copy>curl -X GET --header "Authorization: Bearer $token" "${omlserver}/omlmod/v1/models?modelName=NaiveBayes_CUST360" | jq</copy>
 
     ```
+
    Running the command above displays the model details for the model `NaiveBayes_CUST360` as displayed below:
 
     ```
@@ -273,12 +282,13 @@ This lab assumes you have:
 
 4.  Next, get a list of models filtered by version=1.0 and namespace=`DEMO`.
 
-   **Note**: The namespace parameter is case-sensitive.
+   > **Note**: The namespace parameter is case-sensitive.
 
     ```
     <copy>curl -X GET --header "Authorization: Bearer $token" "${omlserver}/omlmod/v1/models?version=1.0&namespace=DEMO" | jq</copy>
 
     ```
+
    The command above applies the filters and produces the following result:
 
     ```
@@ -324,6 +334,7 @@ This lab assumes you have:
     <copy>curl -X GET "${omlserver}/omlmod/v1/deployment/nb_cust360" --header "Authorization: Bearer $token" | jq</copy>
 
     ```
+
    The endpoint details of the model with the model URI `nb_cust360` are displayed below:
 
     ```
@@ -394,6 +405,7 @@ This lab assumes you have:
 
 
     ```
+
 ## Task 4: Score singleton and mini batch records against a model
 
 1. Score a single record with a model. You need the following information handy to make a REST call to score with a model:
@@ -412,12 +424,14 @@ This lab assumes you have:
     -d '{"topNdetails":n,"inputRecords":[{"XXX":value,"YYY":value}]}'| jq
 
     ```
+
   In the syntax above, the parameter `topNdetails` is optional. It fetches the top n prediction details for the record you are scoring. Prediction details refer to the attributes or features that impact a prediction. In the following example,  you specify the model URI `nb_cust360` and a valid token generated in Task 1. The model was built using the Supplementary Demographics data set. To score with a single record, for XXX use `YRS_RESIDENCE` with the value of 10 and for YYY  use `Y_BOX_GAMES` with a value of 0. You want to predict the probability that the person associated with this record will purchase the affinity card.
 
     ```
    <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/nb_cust360/score"  --header "Authorization: Bearer ${token}" --header 'Content-Type: application/json'  -d '{"inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0}]}' | jq</copy>
 
     ```
+
    Here's the score for the data above. It indicates the probability value for each label.
 
     ```
@@ -440,7 +454,6 @@ This lab assumes you have:
 
     ```
 
-
 2.  Next, score a mini-batch of 2 records with the same model URI. For the first record, use the same data as in the singleton scoring step above. For the second record and the prediction details parameter, use the data shown below. You want to return the top 3 attributes that impact the predictions and, therefore, set `topNdetails` to 3.:
     * `YRS_RESIDENCE`=5
     * `Y_BOX_GAMES`=1
@@ -450,6 +463,7 @@ This lab assumes you have:
     <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/nb_cust360/score" --header "Authorization: Bearer ${token}" --header 'Content-Type: application/json' -d '{"topNdetails":3, "inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0},{"YRS_RESIDENCE":5,"Y_BOX_GAMES":1}]}' | jq</copy>
 
     ```
+
     The scores for the above two records, along with the prediction details for each score, are displayed below:
 
     ```
@@ -524,6 +538,7 @@ This lab assumes you have:
             }' | jq
 
     ```
+
    In the syntax above,
 
     * topN is an optional parameter, which determines the number of most relevant keywords to return. If you don't specify this parameter, by default 5 keywords are returned.
@@ -563,6 +578,7 @@ This lab assumes you have:
     <copy>curl -X POST "${omlserver}/omlmod/v1/cognitive-text/summary" --header 'Content-Type: application/json' --header "Authorization: Bearer ${token}" --data '{"topN":2,"textList":["With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects - both on-premises and in the Cloud."]}' | jq</copy>
 
     ```
+
    Here's the result of running the command above. Two summary statements have been returned as the topN parameter was set to 2.
 For each summary, an associated weight is also returned.
 
@@ -584,6 +600,7 @@ For each summary, an associated weight is also returned.
    ]
 
     ```
+
 ## Task 5: Review OML Services support for ONNX Models
 
    Open Neural Network Exchange or ONNX is an open standard format of machine learning models. By using the Oracle Machine Learning Services REST API, you can deploy and score with your ONNX format models (both image and non-image).
@@ -596,7 +613,6 @@ For each summary, an associated weight is also returned.
 
 To learn more about how OML Services support ONNX format models, see resources listed under the Learn More section of this lab.
 
-
 ## Learn More
 
 * [REST API for Oracle Machine Learning Services](https://docs.oracle.com/en/database/oracle/machine-learning/omlss/omlss/index.html)
@@ -605,6 +621,7 @@ To learn more about how OML Services support ONNX format models, see resources l
 * [Create the proper ONNX files that work with OML Services](https://github.com/oracle/oracle-db-examples/blob/main/machine-learning/oml-services/SKLearn%20kMeans%20and%20GMM%20export%20to%20ONNX.ipynb)
 
 ## Acknowledgements
+
 * **Author** - Suresh Rajan, Senior Manager, Oracle Database User Assistance Development
 * **Contributors** -  Mark Hornick, Senior Director, Data Science and Oracle Machine Learning Product Management; Sherry LaMonica, Consulting Member of Technical Staff, Oracle Machine Learning; Marcos Arancibia Coddou, Senior Principal Product Manager, Machine Learning
 * **Last Updated By/Date** - Suresh Rajan, February 2022

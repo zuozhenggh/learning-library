@@ -220,7 +220,7 @@ curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
 
 1. Open your favorite IDE and navigate to the **microprofile-config.properties** file.
 
-![Initial](images/1.jpg)
+![Configuration File](images/config.jpg)
 
 2. In the console/terminal, navigate to the project folder and enter:
 
@@ -236,7 +236,7 @@ curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
 <copy>app.greeting=Hello Oracle</copy>
 ```
 
-![HelidonDev](images/2.jpg)
+![HelidonDev](images/properties.jpg)
 
 >You will see that whenever you change a file, the **Helidon CLI** recognizes there is a change, recompiles the app, and reruns it. Since Helidon is small, everything happens quickly.
 
@@ -258,7 +258,7 @@ Be sure to stop the development loop with `CTRL+C`
 
 >You can see that it is pure MicroProfile compatible code:
 
-![ModifyJava](images/3.jpg)
+![ModifyJava](images/GreetResource.jpg)
 
 6. Create a new endpoint that provides help for different greetings in different languages. To create this new functionality, create a new class called **GreetHelpResource** with the following code:
 
@@ -334,7 +334,7 @@ INFO me.buzz.mp.quickstart.GreetHelpResource Thread[helidon-4,5,server]: Help re
 
 And the new endpoint has been added.
 
-![NewEndpoint](images/4.jpg)
+![NewEndpoint](images/LogsOutput.jpg)
 
 >Working with Helidon and its tooling is really easy and fast!
 
