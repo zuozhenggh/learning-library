@@ -58,5 +58,42 @@ helm repo add superset https://apache.github.io/superset
 2. Generate superset-custom-values.yaml (if neede, to update any specific variables) and Install superset package.
 ```
 helm show values superset/superset > superset-custom-values.yaml
-helm upgrade --install --values superset-custom-values.yaml superset superset/superset
+
+kubectl create ns superset
+
+helm upgrade --install --values superset-custom-values.yaml superset superset/superset -n superset
+```
+![Install superset ](images/superset-install.png)
+3. Check deployment
+```
+helm list
+kubectl get all -n superset
+```
+![Check resources in namespace superset ](images/superset-get-all.png)
+
+3. Deploy ingress resource
+
+```
+cat << EOF | kubectl apply -n superset -f -
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: superset-ing
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: superset
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: superset
+              port:
+                number: 8088
+EOF
 ```
