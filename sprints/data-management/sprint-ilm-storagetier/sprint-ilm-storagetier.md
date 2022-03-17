@@ -55,8 +55,7 @@ USER\_ILMPOLICIES displays details about Automatic Data Optimization policies ow
 
     ```
     <copy>
-    SELECT SUBSTR(policy_name,1,24) POLICY_NAME, policy_type, enabled 
-    FROM USER_ILMPOLICIES;
+    select * from user_ilmpolicies; 
     </copy>
     ```
  
