@@ -42,13 +42,13 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
 
     > If you moved away from that page, then open the navigation menu and under **Developer Services**, select **Kubernetes Clusters (OKE)**. Select your cluster and go the detail page.
 
-    ![Access Cluster](images/1.png)
+    ![Access Cluster](images/AccessCluster.png)
 
     > A dialog is displayed from which you can open the Cloud Shell and contains the customized OCI command that you need to run, to create a Kubernetes configuration file.
 
 2. Accept the default **Cloud Shell Access** and click **Copy** copy the `oci ce...` command and paste it into the Cloud Shell and run the command.
 
-    ![Copy kubectl Config](images/2.png)
+    ![Copy kubectl Config](images/CopyConfig.png)
 
     For example, the command looks like the following:
 
@@ -56,7 +56,7 @@ We will use `kubectl` to manage the cluster remotely using the Cloud Shell. It n
     oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.phx.aaaaaaaaaezwen..................zjwgm2tqnjvgc2dey3emnsd --file $HOME/.kube/config --region us-phoenix-1 --token-version 2.0.0
     ```
 
-    ![kubectl config](images/4.png)
+    ![kubectl config](images/CreateConfig.png)
 
 5. Verify that the `kubectl` is working by using the `get node` command. <br>
 You may need to run this command several times until you see the output similar to the following.
@@ -157,7 +157,7 @@ In this lab, we are going to install the *development profile of Verrazzano*, wh
 
 The following image describes the Verrazzano components that are installed with each profile.
 
-![Verrazzano Profile](images/12.png)
+![Verrazzano Profile](images/Components.png)
 
 According to our DNS choice, we can use nip.io (wildcard DNS) or [Oracle OCI DNS](https://docs.cloud.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm). In this lab, we are going to install using nip.io (wildcard DNS).
 
@@ -195,24 +195,19 @@ According to our DNS choice, we can use nip.io (wildcard DNS) or [Oracle OCI DNS
 
 2. The Verrazzano operator launches a Kubernetes job to install Verrazzano. You can view the installation logs from that job with the following command:
 
-    ```bash
-    <copy></copy>
-    ```
+````bash
+<copy>kubectl logs -n verrazzano-install \
+ -f $(kubectl get pod \
+ -n verrazzano-install \
+ -l app=verrazzano-platform-operator \
+ -o jsonpath="{.items[0].metadata.name}") | grep '^{.*}$' \
+ | jq -r '."@timestamp" as $timestamp | "\($timestamp) \(.level) \(.message)"'</copy>
+````
 
-2. To verify the successful installation, copy the following command and paste it in the *Cloud Shell*. It checks for the condition, if *InstallComplete* condition is met, and notifies you. Here *example-verrazzano* is the name of the *Verrazzano Custom Resource*.
-
-    ```bash
-    <copy>kubectl logs -n verrazzano-install \
-    -f $(kubectl get pod \
-    -n verrazzano-install \
-    -l app=verrazzano-platform-operator \
-    -o jsonpath="{.items[0].metadata.name}") | grep '^{.*}$' \
-    | jq -r '."@timestamp" as $timestamp | "\($timestamp) \(.level) \(.message)"'</copy>
-    ```
-
-    The output should be similar to the following:
-    ```bash
-    $ $ kubectl logs -n verrazzano-install \
+The output should be similar to the following:
+    
+````bash
+  $ kubectl logs -n verrazzano-install \
 >     -f $(kubectl get pod \
 >     -n verrazzano-install \
 >     -l app=verrazzano-platform-operator \
@@ -237,7 +232,8 @@ According to our DNS choice, we can use nip.io (wildcard DNS) or [Oracle OCI DNS
       2022-03-15T12:24:13.742Z info Starting Controller
       2022-03-15T12:24:13.843Z info Starting workers
     $
-    ```
+````
+    
 
 3. Leave the *Cloud Shell* open and let the installation running. Please continue with the next lab.
 
@@ -245,4 +241,4 @@ According to our DNS choice, we can use nip.io (wildcard DNS) or [Oracle OCI DNS
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Peter Nagy, August 2021
+* **Last Updated By/Date** - Ankit Pandey, March 2022
