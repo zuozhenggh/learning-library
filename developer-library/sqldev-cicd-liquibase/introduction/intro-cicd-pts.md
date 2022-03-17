@@ -4,7 +4,7 @@
 
 Before we can start capturing any changes, we need an Oracle Database and a development environment to work on. The fastest way to get an Oracle Database up and running is to provision an Oracle Autonomous Database on Oracle Cloud Infrastructure. In the same way, the easiest way to put your hands on a sandbox with all the development tools necessary for this project, is to provision a Compute Instance using Oracle Cloud Developer Image.
 
-{{ param }}
+{{ paramz }}
 
 Estimated Lab Time: 60 minutes
 
