@@ -50,24 +50,20 @@ In this lab, you will:
 
 ## Task 2: Deploy Zeppelin to OKE
 
-1. Download the PhpMyAdmin yaml files from
+1. Download the Zeppelin yaml files from
 
 ```
 <copy>
-wget 
+wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-server.yml
 </copy>
 ```
-
-2. Unzip the yaml files
-
 ```
 <copy>
-unzip 
-cd 
+wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-ing.yml
 </copy>
 ```
 
-3. Execute the kubectl commands to create a namespace
+2. Execute the kubectl commands to create a namespace
 
 ```
 <copy>
@@ -75,7 +71,7 @@ kubectl create namespace zeppelin
 </copy>
 ```
 
-4. Deploy Zeppelin
+3. Deploy Zeppelin
 
 ```
 <copy>
@@ -84,16 +80,11 @@ kubectl apply -f zeppelin-server.yaml -n zeppelin
 ```
 ```
 <copy>
-kubectl apply -f ingress.yaml -n zeppelin
-</copy>
-```
-```
-<copy>
-kubectl apply -f service.yaml -n zeppelin
+kubectl apply -f zeppelin-ing.yaml -n zeppelin
 </copy>
 ```
 
-5. Find out the public IP of OKE Ingress Controller
+4. Find out the public IP of OKE Ingress Controller
 
 ```
 <copy>
@@ -102,9 +93,10 @@ kubectl get all -n ingress-nginx
 ```
 ![Ingress IP](images/ingress.png)
 
-6. Access the deployed Zeppelin application
+5. Access the deployed Zeppelin application. Point your browser to **http://<PUBLIC_IP_ADDRESS>/zeppelin**
 
 ![Zeppelin](images/zeppelin.png)
+
 
 Task 3: Connect to MySQL HeatWave
 

@@ -53,17 +53,18 @@ In this lab, you will:
 
 ```
 <copy>
-wget 
+wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/phpmyadmin/phpmyadmin.yaml
 </copy>
 ```
-
-2. Unzip the yaml files
-
 ```
 <copy>
-unzip 
-cd 
-</copy>
+wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/phpmyadmin/phpadmin-ing.yaml
+```
+
+2. Specify your MySQL private IP address in the yaml file, replace **MYSQL_IP_ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
+
+```
+sed -i -e 's/MYSQL_HOST/<MYSQL_IP_ADDRESS>/g' phpmyadmin.yaml 
 ```
 
 3. Execute the kubectl commands to create a namespace
@@ -83,12 +84,7 @@ kubectl apply -f phpmyadmin.yaml -n phpmyadmin
 ```
 ```
 <copy>
-kubectl apply -f ingress.yaml -n phpmyadmin
-</copy>
-```
-```
-<copy>
-kubectl apply -f service.yaml -n phpmyadmin
+kubectl apply -f phpadmin-ing.yaml -n phpmyadmin
 </copy>
 ```
 
@@ -101,7 +97,7 @@ kubectl get all -n ingress-nginx
 ```
 ![Ingress IP](images/ingress.png)
 
-6. Access the deployed PhpMyAdmin application
+6. Access the deployed PhpMyAdmin application using your browser, http:://<LOAD_BALANCER_PUBLIC_IP>/phpadmin
 
 ![PhpMyAdmin](images/phpmyadmin.png)
 
