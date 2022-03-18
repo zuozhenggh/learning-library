@@ -1,4 +1,4 @@
-# Use DLS to Bulk Label Dataset
+# Use DLS to bulk label a dataset
 
 ## Introduction
 In this lab, we will provide a ZIP file containing biomedical images separated into 3 subfolders based on how each image has been medically classified. In this lab, participants will download this ZIP file, bulk upload the images to object storage, and will create a labeled dataset using the Data Labeling Service and custom bulk-labeling code.
@@ -22,7 +22,7 @@ In this lab, you will:
 - Ensure that you have Python SDK installed on your machine by following the steps [here](https://docs.oracle.com/en-us/iaas/tools/python/2.57.0/installation.html#install)
   * Note that if you have a Python version of less than 3, it is necessary to replace all instances of 'python3' in the CLI operations mentioned in this lab with 'python'. In these lab instructions, we will assume that the user has Python3.
 
-**Required Download:** Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/f-1dBsWg9DAGhViJqzilRjdlGZOWrKbXAak6t1SUUq12pkgSubfxUVMD9bUYuwHC/n/orasenatdpltintegration03/b/all-images-live-lab/o/Biomedical_Demo.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
+**Required Download:** Use [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/kME0F5aYc9Ln9pdjOn09iNHxmUmU-kn6M2HmOoKuNZfaVnDyZvSPNWmSb4R3UkIh/n/orasenatdpltintegration03/b/all-images-live-lab/o/Biomedical%20Image%20Classification-%20Training%20Data.zip) link to download the files needed throughout the lab. Unzip the file to a location of your choice on your local machine.
 
 ## **Policy Setup**
 
@@ -135,7 +135,7 @@ Before you start using OCI Data Labeling Service, you or your tenancy administra
   ![](./images/create-bucket.png)
 
 ## **Task 2:** Upload the Images From Your Local Machine Into Your Bucket
-Note: These instructions are Mac OS compatible
+**Note:** These instructions are Mac OS compatible
 1. On your local machine, execute the following commands to set environment variables for the name of your bucket and the OCID of the compartment where your bucket exists. Be sure to replace the information in "<>" with your own values.
     ```
     <copy>export DL_BucketName="<your bucket name>"</copy>
@@ -211,24 +211,26 @@ Note: These instructions are Mac OS compatible
 2. Download the bulk-labeling tool to your machine. Navigate to the link [here](https://github.com/scacela/oci-dls-bulk-labeling), select 'Code' and select 'Download ZIP' to download the tool locally.
 ![](./images/download-bulk-labeling-code.png)
 
-3. Open the file named config.py from the bulk-labeling tool contents, and replace the values with your own (config file path, region identifier, compartment id, dataset id, labels).
+3. Open the file named config.py from the bulk-labeling tool contents, and replace the values with your own (config\_file\_path, region\_identifier, compartment\_id, dataset\_id, labels).
 
-  Note: Enter "cell", "stripe", "debris" as the 3 labels.
+  **Note:** Enter "cell", "stripe", "debris" as the 3 labels.
 
-4. Open your Command-Line Interface (CLI) and navigate to the folder where the bulk-labeling tool files exist on your machine.
+4. Modify the labeling\_algorithm to "first\_letter" from "first\_match"
 
-5. Bulk-label the records in your DLS Dataset by running the following command:
+5. Open your Command-Line Interface (CLI) and navigate to the folder where the bulk-labeling tool files exist on your machine.
+
+6. Bulk-label the records in your DLS Dataset by running the following command:
     ```
     <copy>python3 main.py</copy>
     ```
 
-6. Verify that your images have been labeled by navigating to the dataset created earlier and selecting one of the images.
+7. Verify that your images have been labeled by navigating to the dataset created earlier and selecting one of the images.
 ![](./images/verify-label1.png)
 ![](./images/verify-label2.png)
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
+[You may now **proceed to the next lab**](#next).
 
 ## Acknowledgements
 * **Authors**

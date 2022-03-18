@@ -1,16 +1,23 @@
-# How do you connect to different Oracle databases that are installed in a same Linux server?
+# How do I connect to different Oracle Databases that are installed in a same Linux server?
 
 Duration: 5 minutes
 
+## Connect to different Oracle Databases
+
 If you use a oracle container database, you can login to the database using the steps that are below:
-1. login db via sqlplus
-2. show pdbs;
-3. alter session set container=container_db_name;
 
+1. login to the database via sqlplus
 
+    ```
+    <copy> show pdbs; <copy/>
+    ```
 
+2. alter session set container to 
 
-## Acknowledgements
-* **Author** - Thea Lazarova, Solution Engineer Santa Monica
+    ```
+    <copy> container_db_name; <copy/>
+    ```
 
-
+## Learn More
+* [Oracle Linux] (https://www.oracle.com/linux/)
+* [Connecting to the Database] (https://docs.oracle.com/cd/E17781_01/server.112/e18804/connecting.htm#ADMQS127)
