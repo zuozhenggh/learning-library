@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For questions related to LiveLabs please review this FAQ. If you don't see an answer listed here, please visit the LiveLabs slack channel - #workshop-authors-help or email your respective admins, you can view the email in [LWMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) under the support link section of your workshop. For example, database - [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
+For questions related to LiveLabs please review this FAQ. If you don't see an answer listed here, please visit the LiveLabs slack channel - #workshop-authors-help or email your respective admins, you can view the email in [WMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) under the support link section of your workshop. For example, database - [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
 
 ## **General FAQ**
 
@@ -27,7 +27,7 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	Don’t share the github.io links, we do not track this URL and that may change.
 7.	How to look for a specific workshop to run?
     -	Search in [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1). It is self-service.
-    -	Or click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Or click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to WMS.
     -	Look through the catalog or search the workshop using the Search bar on the top.
     -	If the status of the workshop is in production on the tile, click on the tile.
     -	Look for the production link field to navigate to the workshop and run.
@@ -228,10 +228,10 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
         - Navigate to My reservations on [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1) homepage.
         - Click on Launch Workshop of the active reservation workshop that you want to extend.
         - Click on Extend Workshop Reservation button available on the last row of the Workshop Details section.
-6.	What do I do if I have a feedback for a workshop? Whom to reach if I face errors running through the workshop? What to do if I have similar content in LWMS and want to add more content to the existing workshop?
+6.	What do I do if I have a feedback for a workshop? Whom to reach if I face errors running through the workshop? What to do if I have similar content in WMS and want to add more content to the existing workshop?
     -	Click on the Support forum Link in the Need Help section of the lab. You will be navigated to the community forum of the workshop and post your question there.
     -	Or, contact the author of the workshop listed in the acknowledgments section of the workshop through slack or write an email.
-    -	Or, click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Or, click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to WMS.
     -	Look through the catalog or search the workshop using the Search bar at the top.
     -	Click on the workshop tile of the workshop author you want to contact.
     -	Then click on Ask Workshop Contacts a Question.
