@@ -8,7 +8,7 @@ You can use SODA for Python to perform create, read (retrieve), update, and dele
 
 SODA is a set of NoSQL-style APIs that let you create and store collections of documents (in particular JSON) in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.
 
-**Estimated Lab Time: 1 hour 40 minutes**
+**Estimated Lab Time: 1 hour 40 minutes**.
 
 ### Objectives
 In this lab, you will:
@@ -103,7 +103,7 @@ In this lab, you will:
     - Description: HTTP
     - Click **Add Ingress Rules**
     
-    ![HTTP Rule](./images/task1/http_rule.png)
+    ![HTTP Rule](./images/task1/add_http_rule.png)
 
 14. You can check on the **Detail Page** that the 3 Ingress Rules have beed added.
     
@@ -142,6 +142,16 @@ In this lab, you will:
     
     ![Marketplace Compute Instance Creation](./images/task2/marketplace_compute_instance_creation.png)
 
+    If you are using your own cloud account, nos just a trial, you can see this section different. Just be sure you have all the information as following selected:
+
+    - Name: DEVM
+    - Comparment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
+    - Image and shape: click **Edit/Collapse** and after **Change shape** if you don't have the following information:
+        - Image: MongoDB and Autonomous JSON workshop
+        - Shape: VM.Standard.E2.1.Micro - Always Free eligible
+    
+    ![Marketplace Compute Instance Creation No Trial](./images/task2/marketplace_compute_instance_creation_no_trial.png)
+
     - Networking: Be sure you have the following information. If not, click **Edit/Collapse** to edit the information
 
         - Virtual cloud network: DEVCN
@@ -176,7 +186,7 @@ On the Instance Details page, copy Public IP Address in your notes.
     ![noVnc Settings](./images/task2/novnc_settings.png)
     ![noVnc Region & Language](./images/task2/novnc_region_language.png)
 
-9. Click Applications > Favorites > Firefox to launch the web browser on the DEVM Compute Node remote desktop.
+9. Click **Applications** > **Favorites** > **Firefox** to launch the web browser on the DEVM Compute Node remote desktop.
 
     ![noVnc Firefox](./images/task2/novnc_firefox.png)
     
@@ -305,7 +315,7 @@ On the Instance Details page, copy Public IP Address in your notes.
 
     ![Apex Workspace DEMO](./images/task4/apex_workspace_demo.png)
     
-6. Click **DEMO** in the middle of the page to **Sign in** as DEMO user.
+6. Click **DEMO** in the middle of the page to **Sign in** as **DEMO** user.
  
     ![Apex Login DEMO](./images/task4/apex_log_in_demo.png)
  
@@ -688,13 +698,13 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     
     ![Companies App](./images/task6/companies_app.png)
 
-    -  Interactive Report.
+    -  Interactive Report
 
     ![Interactive Report](./images/task6/interactive_report.png)
 
     - Page Name: Report
     - SQL Query:
-    - Click **Add Page**
+    
     ````
     <copy>
     SELECT co.JSON_DOCUMENT.company, 
@@ -705,6 +715,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
         FROM "SimpleCollection" co;
     </copy>
     ````
+    - Click **Add Page**
 
     ![Interactive Report Query](./images/task6/interactive_report_query.png)
     
@@ -714,7 +725,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     The application will be create immediatly.
 
-    ![Creating App](./images/task6/creatin_gapp.png)
+    ![Creating App](./images/task6/creating_app.png)
         
 7. Click **Run Application**. 
 

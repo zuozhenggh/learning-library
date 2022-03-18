@@ -6,7 +6,7 @@ Oracle Autonomous JSON Database (AJD) is a new service in Autonomous Database fa
 
 Learn why customers choose Oracle Autonomous JSON Database over MongoDB Atlas. Autonomous JSON Database provides all the core capabilities of MongoDB along with high performance, simple elasticity, full ACID support and complete SQL functionality.
 
-**Estimated Lab Time: 20 minutes**
+**Estimated Lab Time: 20 minutes**.
 
 ### Objectives
 In this lab, you will:

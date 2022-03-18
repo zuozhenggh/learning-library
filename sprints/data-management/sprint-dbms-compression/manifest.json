@@ -8,10 +8,9 @@
             "filename": "sprint-dbms-compression.md"
         },
         {
-            "title": "How do I connect to the instance via SSH?",
+            "title": "How do I enable OLTP table compression?",
             "description": "",
-            "filename": "../sprint-connect-to-instance-via-ssh/instance-ssh.md"
-        }
-
+            "filename": "../sprint-oltp-compression/sprint-oltp-compression.md"
+        } 
     ]
 }
