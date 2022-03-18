@@ -143,7 +143,7 @@ from performance_schema.rpd_tables mytable_load, performance_schema.rpd_table_id
 where mytable_load.id = mytable.id
 ```
 
-![Dashboard](images/grafana-panel-edit-sql-table.png)
+![Dashboard](images/grafana-edit-sql-table.png)
 
 4. Change the Visualization using Table as shown and putting the Panel title as "Table loaded to Heatwave"
 ![Dashboard](images/grafana-change-panel-settings.png)
