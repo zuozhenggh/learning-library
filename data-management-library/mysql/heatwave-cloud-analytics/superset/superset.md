@@ -1,26 +1,152 @@
-# Create compartment
 
+# Deploy Superset Dashboard for MySQL to OCI Kubernetes
 ## Introduction
-Before you start to provision any OCI resources, it is a good practice to create a **compartment** as an isolated environment for your work. 
-In this lab, we will create a compartment for all the OCI resources required to host our PHP application as well as MySQL HeatWave cluster
 
-Estimated Time: 2 minutes
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes. 
 
-## Task 1: Create Compartment
+In this lab, you will deploy a Superset package using Helm to **OKE**, and connect it to **MySQL**.
 
-1. Log in to **OCI** and click on the <a href="#menu">&#9776; hamburger menu</a> at the top left corner of the OCI console, and type **compartment** in the search box. Click on the **Compartments** in the search result
+Estimated Time: 15 minutes
 
-![compartment](images/compartment.png)
+### Objectives
 
-2. Specify the name of the compartment such as **PHP-Compartment** with a description, click on **Create Compartment**
+In this lab, you will:
+* Install helm cli client and superset repo for k8s package installation
+* Deploy a superset package to the OKE cluster using helm cli client
+* Define MySQL Database in Superset
+* Test MySQL Database connection with SQL Editor in Superset
+* Create a simple Dashboard
 
-![create compartment](images/create-compartment.png)
+### Prerequisites
 
-You may now **proceed to the next lab.**
+This lab assumes you have:
+* An Oracle account
+* You have enough privileges to use OCI
+* All previous labs successfully completed
+* Resources Ready : HOL-compartment, OKE cluster, MySQL Database Service 
 
-## Acknowledgements
-* **Author** 
-			 - Ivan Ma, MySQL Solutions Engineer, MySQL JAPAC, Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
-* **Contributors** 
-			 - Perside Foster, MySQL Solution Engineering 
-* **Last Updated By/Date** - Ryan Kuan, March 2021
+
+## Task 1: Verify OKE cluster
+
+1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
+
+![Navigate to OKE](images/navigate-to-oke.png)
+
+2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
+
+![Locate OKE](images/locate-oke-instance.png)
+
+3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster. You will deploy a PHP application to this OKE cluster soon.
+
+![Verify OKE](images/oke-worker-nodes.png)
+
+## Task 2: Connect to **oke-operator** compute instance
+
+1. Connect to the **oke-operator** compute instance again using OCI Cloud Shell
+
+## Task 3: Deploy Application to OKE
+
+1. Install helm cli client 'helm' to the operator VM and add superset repo.
+
+```
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
+helm repo add superset https://apache.github.io/superset
+```
+![Install helm cli](images/helm-cli-install.png)  
+![Add superset repo to helm ](images/helm-add-repo.png)
+
+2. Generate superset-custom-values.yaml (if neede, to update any specific variables) and Install superset package.
+```
+helm show values superset/superset > superset-custom-values.yaml
+
+kubectl create ns superset
+
+helm upgrade --install --values superset-custom-values.yaml superset superset/superset -n superset
+```
+![Install superset ](images/superset-install.png)
+3. Check deployment
+```
+helm list
+kubectl get all -n superset
+```
+![Check resources in namespace superset ](images/superset-get-all.png)
+
+3. Deploy ingress resource
+
+```
+cat << EOF | kubectl apply -n superset -f -
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: superset-ing
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: superset
+              port:
+                number: 8088
+EOF
+```
+
+![Deploy superset ingress resource](images/superset-get-all.png)
+
+4. Check status on superset-ing and Identify the IP address.  The "address" as public ip from ingress resource "superset-ing" is populated a while after the ingress resource is created.  Please wait for a moment and retry until you can find the address.
+```
+kubectl get ing superset-ing -n superset
+kubectl get ing superset-ing -n superset --watch
+```
+- Wait until public ip is populated and press **CTRL-C** to exit the watch status
+
+![Deploy superset ingress resource](images/superset-ing.png)
+
+## Task 4 : Test Superset 
+- Open a browser and put in the URL : http://<public IP>
+- login as admin / admin and click "Sign In"
+![Superset login](images/superset-login.png)
+- You will be landing on superset **HOME** page
+![Superset Home page](images/superset-home-page.png)
+
+## Task 5 : Adding MySQL Database Service Connection to Superset
+### Identify the MySQL DB System IP Address
+- Open New Browser page to OCI console
+- On hamburger menu, type mysql and choose DB System.  
+- Click on the link "MySQLInstance" to check the details
+![DB System](images/oci-mysql-dbsystem.png)
+- Note down the IP Address for the DB System
+![DB System](images/oci-mysql-dbsystem-ip.png)
+
+### Add MySQL Database Connection to superset
+- Select "Connect Database" from "Data" menu item on "+" icon
+![Connect Database Menu](images/superset-add-database-menu.png)
+- Choose "MySQL" for Database connection
+![Connect MySQL database](images/superset-connect-mysql.png)
+- Fill in the Content accordingly.   
+![MySQL Details](images/superset-mysql-details.png)
+- Click "Finish" on successful connection to the MySQL Database Service
+![Connect Success](images/superset-mysql-connect-success.png)
+
+### Testing SQL on SQL Editor from superset
+- Choose **SQL Editor** from SQL Lab menu
+![SQL Editor menu](images/superset-sqllab-menu.png)
+![SQL Editor menu](images/superset-sql-editor.png)
+
+- Select Database:"MySQL", Schema:"airportdb", Table Schema:"airline", the result is listed
+![SQL Editor test](images/superset-sql-editor-test.png)
+
+
+
+
+
+
+
+
+
