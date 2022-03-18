@@ -6,17 +6,12 @@
             "title": "How do I clone Autonomous Database?",
             "description": "",
             "filename": "sprint-adb-clone.md"
-        }  
+        }
         ,
         {
-            "title": "How can I grant common privileges to individual database users?",
+            "title": "How do I rename Autonomous Database?",
             "description": "",
-            "filename": "../sprint-grant-privileges/sprint-grant-privileges.md"
-        },
-        {
-            "title": "How do I create user and grant access to database actions?",
-            "description": "",
-            "filename": "../sprint-adb-dbactions/sprint-adb-dbactions.md"
+            "filename": "../sprint-adb-rename/sprint-adb-rename.md"
         } 
     ]
 }
