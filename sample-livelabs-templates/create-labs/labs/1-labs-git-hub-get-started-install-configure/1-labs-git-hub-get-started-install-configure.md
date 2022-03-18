@@ -196,4 +196,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Madhusudhan Rao, Principal Product Manager, Database
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
 
-* **Last Updated By/Date:** Lauran Serhal and Anuradha Chepuri, November 2021
+* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, March 2022

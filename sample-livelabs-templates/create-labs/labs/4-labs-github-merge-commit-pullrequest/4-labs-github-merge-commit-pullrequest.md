@@ -226,7 +226,7 @@ You may now **proceed to the next lab**.
 ### Issue: Clone failed
   ![](./images/clone-failed.png " ")
 
-  1. Execute the following commands to make sure .gitconfig is updated:                           
+  1. Execute the following commands to make sure .gitconfig is updated:
 
     ```
     <copy> git config --global core.longpaths true </copy>
@@ -252,4 +252,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Kamryn Vinson, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, January 2022
+* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, March 2022
