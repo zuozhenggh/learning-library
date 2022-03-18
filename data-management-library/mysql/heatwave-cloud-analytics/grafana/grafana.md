@@ -89,7 +89,8 @@ You can login using admin/admin as username/password and change the password acc
 
 	<img src=images/GrafanaLogin.png width=300 />   <img src=images/grafana-login-change-password.png width=300 />
 
-2. Add Datasource MySQL
+## Task 5: Add MySQL Datasource
+1. Add Datasource MySQL
 * Select Datasource from Settings left menu and Click "Add Data source" button
 
 <img src=images/AddDatasource.png width=100>    <img src=images/AddDatasource-1.png width=500>
@@ -100,6 +101,19 @@ You can login using admin/admin as username/password and change the password acc
 * Fill in the Datasource details based on the MDS ip/port and username/password details.
 ![Fill MySQL](images/AddDatasource-4.png)
 
+
+## Task 6: MySQL Dashboard
+1. Creating dashboard my2 database with script,  Login to the Cloud Shell and operator VM
+
+```
+curl https://raw.githubusercontent.com/meob/my2Collector/master/my2_80.sql | sed 's/^set global/-- set global/g; s/^set sql_log/-- set sql_log/g' > my2_80.sql
+```
+
+2. Execute the creation my2 script
+```
+mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
+```
+
 3. Import MySQL Dashboard
 * Choose "Import" from "+" left menu and put in 7991 dashboard ID for import
 ![Import](images/import7991.png)
@@ -107,8 +121,39 @@ You can login using admin/admin as username/password and change the password acc
 * Choose the Datasource and click "Import"
 ![Import](images/import7991-Import.png)
 
-4. Checking the Dashboard
+2. Checking the Dashboard
 ![Dashboard](images/MySQLDashboard7991.png)
+
+## Task 7: Add heatwave table panel to MySQL Dashboard
+1. Click on the add panel icon as shown
+![Dashboard](images/grafana-add-panel-menu.png)
+
+2. Click on 'Add Empty Panel' and the panel will show.  
+![Dashboard](images/grafana-panel-add.png)
+
+Click on the **Edit SQL** button
+![Dashboard](images/grafana-panel-edit-sql.png)
+
+
+3. Paste the SQL to the query text field and Change the format to **Table**.
+
+```
+select mytable.schema_name, mytable.name, mytable_load.load_status, nrows, load_progress, QUERY_COUNT 
+from performance_schema.rpd_tables mytable_load, performance_schema.rpd_table_id  mytable
+where mytable_load.id = mytable.id
+```
+
+![Dashboard](images/grafana-panel-edit-sql-table.png)
+
+4. Change the Visualization using Table as shown and putting the Panel title as "Table loaded to Heatwave"
+![Dashboard](images/grafana-change-panel-settings.png)
+
+5. Click "Apply" and return to dashboard
+![Dashboard](images/grafana-panel-apply.png)
+
+6. Finally click the "disk" icon to save
+![Dashboard](images/grafana-save-dashboard.png)
+
 
 You may now **proceed to the next lab.**
 
