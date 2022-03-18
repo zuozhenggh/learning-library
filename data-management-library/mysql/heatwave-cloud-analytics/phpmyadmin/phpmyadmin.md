@@ -84,7 +84,7 @@ kubectl apply -f phpmyadmin.yaml -n phpmyadmin
 ```
 ```
 <copy>
-kubectl apply -f phpadmin-ing.yaml -n phpmyadmin
+kubectl apply -f phpmyadmin-ing.yaml -n phpmyadmin
 </copy>
 ```
 
@@ -97,7 +97,7 @@ kubectl get all -n ingress-nginx
 ```
 ![Ingress IP](images/ingress.png)
 
-6. Access the deployed PhpMyAdmin application using your browser, http:://<LOAD_BALANCER_PUBLIC_IP>/phpadmin
+6. Access the deployed PhpMyAdmin application using your browser, http:://<LOAD_BALANCER_PUBLIC_IP>/phpmyadmin
 
 ![PhpMyAdmin](images/phpmyadmin.png)
 

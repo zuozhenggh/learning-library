@@ -32,22 +32,27 @@
             "filename": "../../enable-heatwave-cluster/enable-heatwave-cluster.md"
         },
         {
-            "title": "Lab 4: Manage MySQL with phpMyAdmin",
+            "title": "Lab 4: Deploy ingress controller to OCI Kubernetes",
+            "description": "Deploy ingress controller to OCI Kubernetes",
+            "filename": "../../ingress-controller/readme.md"
+        },
+        {
+            "title": "Lab 5: Manage MySQL with phpMyAdmin",
             "description": "Manage MySQL with phpMyAdmin",
             "filename": "../../phpmyadmin/phpmyadmin.md"
         },
         {
-            "title": "Lab 5: Monitor MySQL HeatWave with Grafana",
+            "title": "Lab 6: Monitor MySQL HeatWave with Grafana",
             "description": "Deploy Grafana Dashboard for MySQL to OCI Kubernetes",
             "filename": "../../grafana/grafana.md"
         },
         {
-            "title": "Lab 6: Build analytics dashboard with Superset on MySQL HeatWave",
+            "title": "Lab 7: Build analytics dashboard with Superset on MySQL HeatWave",
             "description": "Build analytics dashboard with Superset on MySQL HeatWave",
             "filename": "../../superset/superset.md"
         },
         {
-            "title": "Lab 7: Build interactive analytics notebook with Zeppelin on MySQL HeatWave",
+            "title": "Lab 8: Build interactive analytics notebook with Zeppelin on MySQL HeatWave",
             "description": "Build interactive analytics notebook with Zeppelin on MySQL HeatWave",
             "filename": "../../zeppelin/zeppelin.md"
         },

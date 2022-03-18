@@ -109,7 +109,7 @@ Replace the private ip address of your MySQL instance in the **JDBC URL**
 
 ![MySQL JDBC](images/mysql-jdbc.png)
 
-3. Scroll to the bottom of the page and specify the MySQL JDBC driver
+3. Scroll to the bottom of the page and specify the MySQL JDBC driver, **mysql:mysql-connector-java:8.0.28**
 
 ![MySQL JDBC Driver](images/mysql-jdbc-driver.png)
 
