@@ -25,7 +25,7 @@ Before getting started, you should submit your LiveLabs workshop request to the 
 2.  Access the **Oracle Workshop Management System (WMS)** page.
     > **Note:** This page is only accessible to Oracle Employees.
 
-3.  Click **Submit a New Workshop**.
+3.  Click **Submit a New Workshop Request**.
 
 4.  Fill in the required fields including the **Workshop Abstract** field *thoroughly*.  Failure to do so will prevent your workshop from being approved.
 

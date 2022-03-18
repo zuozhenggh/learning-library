@@ -94,7 +94,7 @@ To share and view your workshop:
 
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
 
-Note:  *Before executing a PR, make sure you have run Task 1 above and that your personal github repo on the web is not behind.  Failure to do so will result in conflicts.  You cannot issue a pull request without syncing first.  PRs will not be approved without your LWMS ID (Workshop ID)*
+Note:  *Before executing a PR, make sure you have run Task 1 above and that your personal github repo on the web is not behind.  Failure to do so will result in conflicts.  You cannot issue a pull request without syncing first.  PRs will not be approved without your WMS ID (Workshop ID)*
 
 > **Note:** The owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
 
@@ -107,7 +107,7 @@ To create a Pull Request:
 
   ![](./images/git-hub-branch-browser-create-pull-request.png " ")
 
-3. Enter the title for the pull request, **include your LWMS ID** (you can find that by visiting the [LWMS](http://bit.ly/oraclelwms)) in the title.  PRs will not be approved without this ID.
+3. Enter the title for the pull request, **include your WMS ID** (you can find that by visiting the [WMS](http://bit.ly/oraclewms)) in the title.  PRs will not be approved without this ID.
 4. Click **Create pull request**.
     ![](./images/git-hub-pull-request-title-comment.png " ")
   A status page is displayed indicating that you have created a pull request along with the request number (for example, #1770), that it is pending review, and that merging is blocked.
@@ -179,7 +179,7 @@ You have finish developing your workshop. In order to publish your workshop, you
 
     - Paid Tier On? - Can this workshop be done in a customer tenancy?
 
-    - Green Button On? - Can this workshop be done in a registered LiveLabs tenancy, a.k.a Green Button? With Green Button, users can run the workshop in pre-provisioned environements. Users have to complete the workshop in a specified limited amount of time. After their reservations expire, any instances they create will be destroyed. However, users can extend their reservations up to 4 times. You can contact us via LWMS to request a Green Button for your workshop. Green Button can also be added after your workshop has already been in production.
+    - Green Button On? - Can this workshop be done in a registered LiveLabs tenancy, a.k.a Green Button? With Green Button, users can run the workshop in pre-provisioned environements. Users have to complete the workshop in a specified limited amount of time. After their reservations expire, any instances they create will be destroyed. However, users can extend their reservations up to 4 times. You can contact us via WMS to request a Green Button for your workshop. Green Button can also be added after your workshop has already been in production.
 
     ![](images/livelabs-publishing.png " ")
 
