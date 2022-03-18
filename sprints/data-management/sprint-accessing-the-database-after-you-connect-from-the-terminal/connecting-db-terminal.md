@@ -1,20 +1,17 @@
-# How do I access the database after I connect from the terminal?
+# How do I connect to the Database from the terminal?
 
 Duration: 10 minutes
 
+In this lab you will first log in as opc and then sudo to the grid user. You will perform commands and login to the Oracle environment. From there you will verify that the appropriate information is inputted. Once completed, you will be connected to the Oracle Database.
+
+## Connecting to the Database from the terminal
+
 1. Log in as *opc* and then sudo to the grid user.
-    login as: opc
     
     ```
     <copy>
     sudo su - grid
     </copy>
-    ```
-
-    In your terminal it will look like this:
-
-    ```
-    [opc@123456 ~]$ sudo su - grid
     ```
 
 2. List all the databases on the system.
@@ -93,7 +90,7 @@ Duration: 10 minutes
     OLAP, Advanced Analytics and Real Application Testing options
     ```
 
+## Learn More
 
-
-
-
+* [Connecting To The Database] (https://docs.oracle.com/cd/E17781_01/server.112/e18804/connecting.htm#ADMQS147)
+* [Getting Started with Oracle Cloud at Customer] (https://docs.oracle.com/en/cloud/cloud-at-customer/occ-get-started/log-vm-using-ssh.html)
