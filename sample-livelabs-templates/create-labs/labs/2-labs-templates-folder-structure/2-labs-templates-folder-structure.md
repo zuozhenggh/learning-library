@@ -35,6 +35,16 @@ The following image shows a folder structure of the **sample-workshop** that is 
 
 This concludes this lab. You may now **proceed to the next lab**.
 
+## (Optional) Task 3: Customize Workshop for Events
+
+Sometimes, workshop team may want to *customize the workshop for an upcoming event*, for example, having a different introduction of the workshop, adding or removing some labs. Meanwhile, the workshop team doesn't want to affect the workshop already in production. They can definitely have this customized version of workshop in production by following the instructions below.
+
+Under the `workshops` folder, workshop team can create an event folder. Just like the `desktop`, `freetier`, and/or `livelabs` folder that already existed, this event folder also contains an `index.html` file and a `manifest.json` file. Workshop team can customize the workshop by updating the `manifest.json` file. Then, workshop team can use the link to the event folder for the event, leaving other workshops untouched.
+
+Refer to Lab 3a -> Task 2 to use conditional formatting for event's content.
+
+Refer to Lab 4 -> Task 9 to request to publish the workshop of type *Event*.
+
 ## Acknowledgements
 
 * **Author:**
