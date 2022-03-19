@@ -185,19 +185,20 @@ You have finish developing your workshop. In order to publish your workshop, you
 
 6. Click **Save**.
 
-7.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your stakeholder (e.g. livelabs-help-db_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
+7.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your *stakeholder* (livelabs-help-xx_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
 
-8. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS. Then, email your completed Self QA document to your stakeholder email address.
-
+8. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS.
   ![Self QA Complete](images/self-qa-complete.png " ")
 
-9. Your stakeholders will verify the QA within 2 business days. They will reach out to you via WMS if there are more changes needed. Otherwise, they will move the workshop into **Completed** status. If you have not heard back from your stakeholder 2 business days after you submit the Self QA form, please message them via WMS.
+9. Then, email your completed Self QA document to your stakeholder email address. Stakeholder is who sent you the Self QA form. You can also find your stakeholder by going into WMS and looking at your *Workshop Details* page.
+
+10. Your stakeholders will verify the QA within 2 business days. They will reach out to you via WMS if there are more changes needed. Otherwise, they will move the workshop into **Completed** status. If you have not heard back from your stakeholder 2 business days after you submit the Self QA form, please message them via WMS.
 
   ![Message](images/message-team.png " ")
 
-10. When your workshop is in **Completed** status, and we have approved your publishing request, your workshop will be published automatically within 1 business day.
+11. When your workshop is in **Completed** status, and we have approved your publishing request, your workshop will be published automatically within 1 business day.
 
-11. Questions?  Go to your workshop and find your stakeholder email address, and contact them.  You can also ask in the #workshops-authors-help Slack channel.
+12. Questions?  Go to your workshop and find your stakeholder email address, and contact them.  You can also ask in the #workshops-authors-help Slack channel.
 
   ![Stakeholder](images/stakeholder.png " ")
 
@@ -251,5 +252,6 @@ This concludes this lab. You may now proceed to the next lab.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Kamryn Vinson, Product Manager, Database
+    * Arabella Yao, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, March 2022
+* **Last Updated By/Date:** Arabella Yao, March 2022
