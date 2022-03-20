@@ -1,5 +1,5 @@
 # Create your Virtual Cloud Network and Related Components
-![INTRO](./images/00_mds_image.png " ") 
+![INTRO](./images/00-mds-image.png" ") 
 
 
 ## Introduction
@@ -26,7 +26,7 @@ In this lab, you will be guided through the following tasks:
 * A web browser
 * Login to OCI to land on OCI Dashboard (This image shows a trial account)
 
-![INTRO](./images/oci_dashboard.png " ") 
+![INTRO](./images/oci-dashboard.png " ") 
 
 ## Task 1: Create Virtual Cloud Network 
 
@@ -129,7 +129,7 @@ Description
 6.	On Security List for Default Security List for mds_vcn page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn13.png " ")
 
-You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)”
+You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)
 
 
 ## Acknowledgements
