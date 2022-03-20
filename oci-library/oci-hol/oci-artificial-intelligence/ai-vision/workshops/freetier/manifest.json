@@ -8,11 +8,6 @@
             "filename": "./intro.md"
         },
         {
-            "title": "Get Started",
-            "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "../../pre-register-free-tier-account/pre-register-free-tier-account.md"
-        },
-        {
             "title": "Lab 1: Use Vision Service through the OCI Console",
             "description": "Learn how to access AI vision using oci console",
             "filename": "../../analyze-vision/analyze-vision.md"

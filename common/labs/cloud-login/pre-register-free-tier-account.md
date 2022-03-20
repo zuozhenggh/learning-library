@@ -63,7 +63,7 @@ If you already have a cloud account, skip to **Task 2**.
 10. Click the **Add payment verification method** button.
           ![](images/free-tier-payment-1.png " ")  
 
-11. Choose the verification method. In this case, click the **Credit Card** button. Enter your information and payment details. 
+11. Choose the verification method. In this case, click the **Credit Card** button. Enter your information and payment details.
 
     >**Note:** This is a free credit promotion account. You will not be charged unless you elect to upgrade the account.
 
@@ -97,6 +97,10 @@ _Please note that while your tenancy is initially created, you will only see a d
 4. You are now signed in to Oracle Cloud!
 
     ![](images/oci-console-home-page.png " ")
+
+
+You may now **proceed to the next lab**
+
 
 ## **Acknowledgements**
 
