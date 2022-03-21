@@ -16,6 +16,7 @@ Estimated time: 5 minutes
 
 ## **Task 1**: Create a private subnet
 
+
 1. From the Oracle Cloud navigation menu, select **Developer Services** > **Kubernetes Clusters (OKE)**.
 
    ![Oracle Cloud console, Navigation Menu](images/1-1-menu.png " ")
@@ -51,6 +52,7 @@ Estimated time: 5 minutes
 6.	In the Subnet Details page, click **Copy** next to the OCID. Save the value to a text file. You will need this value in the next Tutorial, when create load balancer services.
 
       ![Oracle Cloud console, VCN](images/1-7-subnet.png " ")
+
 
 
 

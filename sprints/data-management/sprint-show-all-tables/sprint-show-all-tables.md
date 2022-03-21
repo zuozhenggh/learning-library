@@ -8,8 +8,7 @@ Duration: 1 minute
 
   ```
   <copy>
-  SELECT table_name
-  FROM dba_tables;
+  SELECT table_name FROM dba_tables;
   </copy>
   ```
 

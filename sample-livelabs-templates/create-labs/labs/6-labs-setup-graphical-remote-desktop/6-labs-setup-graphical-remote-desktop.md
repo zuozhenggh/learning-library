@@ -55,6 +55,7 @@ Follow steps below to establish a unique static hostname that will be enforced o
     #  --------        ----------           -----------------------------------
     #  Rene Fontcha    02/17/2021           Initial Creation
     #  Rene Fontcha    10/07/2021           Added routine to update livelabs-get_started.sh
+    #  Rene Fontcha    02/11/2022           Added Google Chrome update
     #
     ###############################################################################
 
@@ -65,7 +66,6 @@ Follow steps below to establish a unique static hostname that will be enforced o
     hostnamectl set-hostname <host>.livelabs.oraclevcn.com
 
     # Add static name to /etc/hosts
-    #echo "\$(oci-metadata -g privateIp --value-only | head -1)   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
     echo "\$(oci-metadata -g privateIp |sed -n -e 's/^.*Private IP address: //p')   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
 
     # Update "livelabs-get_started.sh"
@@ -78,6 +78,9 @@ Follow steps below to establish a unique static hostname that will be enforced o
       mv -f livelabs-get_started.sh /usr/local/bin/
       rm -f livelabs-get_started.zip
     fi
+
+    # Update Google Chrome
+    yum update -y google-chrome-stable
 
     EOF
     </copy>
@@ -133,7 +136,7 @@ Follow steps below to establish a unique static hostname that will be enforced o
     <copy>
     cd /tmp
     rm -rf ll-setup
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Nx05fQvoLmaWOPXEMT_atsi0G7Y2lHAlI7W0k5fEijsa-36DcucQwPUn6xR2OIH8/n/natdsecurity/b/misc/o/setup-novnc-livelabs.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Nx05fQvoLmaWOPXEMT_atsi0G7Y2lHAlI7W0k5fEijsa-36DcucQwPUn6xR2OIH8/n/natdsecurity/b/misc/o/setup-novnc-livelabs.zip -O setup-novnc-livelabs.zip
     unzip -o  setup-novnc-livelabs.zip -d ll-setup
     cd ll-setup/
     chmod +x *.sh .*.sh
@@ -588,16 +591,15 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
         libguac-client-vnc \
     	tomcat \
         tomcat-admin-webapps \
-        tomcat-webapps \
-        nginx
+        tomcat-webapps
     EOF
     chmod +x /tmp/remove-guac.sh
     /tmp/remove-guac.sh
 
     rm -rf /etc/guac*
-    rm -rf /etc/nginx*
     rm -f /tmp/remove-guac.sh
     rm -rf /opt/guac*
+    rm -rf /etc/init.d/guac*
     cd
     </copy>
     ```
@@ -605,4 +607,4 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
 * **Contributors** - Robert Pastijn
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2022
