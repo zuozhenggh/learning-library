@@ -8,14 +8,9 @@
             "filename": "./what-are-sprints.md"
         },
         {
-            "title": "How can I launch an Oracle LiveLabs Sprint?",
+            "title": "How can I filter Oracle LiveLabs Sprints?",
             "description": "",
-            "filename": "../update-data/update-data.md"
-        },
-        {
-            "title": "How can I filter other Oracle LiveLabs Sprints?",
-            "description": "",
-            "filename": "../query-tables/query-tables.md"
+            "filename": "../filter-sprints/filter-sprints.md"
         }
     ]
 }
