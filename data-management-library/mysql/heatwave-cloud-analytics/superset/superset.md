@@ -83,8 +83,8 @@ sudo systemctl disable firewalld
 kubectl port-forward --address 0.0.0.0 8088:8088 service/superset -n superset
 ```
 
-## Task 4 : Test Superset 
-- Open a browser and put in the URL : http://<public IP of oke-operator VM>
+## Task 4 : Test Superset (note: using http://<public IP>:8088)
+- Open a browser and put in the URL : http://<public IP of oke-operator VM>:8088
 - login as admin / admin and click "Sign In"
 ![Superset login](images/superset-login.png)
 - You will be landing on superset **HOME** page
