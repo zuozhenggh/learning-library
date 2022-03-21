@@ -73,6 +73,8 @@ kubectl create ns helloworld
 
 ### Deploying hello world app to namespace helloworld
 ```
+<copy>
+<pre>
 cat <<EOF | kubectl apply -n helloworld -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -109,6 +111,9 @@ spec:
   type: ClusterIP
 
 EOF
+</pre>
+</copy>
+
 ```
 ### Check the application deployment in namespace 'helloworld'
 ```
