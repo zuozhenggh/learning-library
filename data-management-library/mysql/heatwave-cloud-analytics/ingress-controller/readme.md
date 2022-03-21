@@ -74,7 +74,6 @@ kubectl create ns helloworld
 ### Deploying hello world app to namespace helloworld
 ```
 <copy>
-<pre>
 cat <<EOF | kubectl apply -n helloworld -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -111,7 +110,6 @@ spec:
   type: ClusterIP
 
 EOF
-</pre>
 </copy>
 
 ```
@@ -125,6 +123,7 @@ kubectl get all -n helloworld
 ### Deploy Ingress Resource 'helloworld-ing' to namespace helloworld
 
 ```
+<copy>
 cat <<EOF | kubectl apply -n helloworld -f -
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -145,6 +144,7 @@ spec:
             port:
               number: 8088
 EOF
+</copy>
 ```
 ![Deploy ingress](images/deploy-ingress-output.png)
 
