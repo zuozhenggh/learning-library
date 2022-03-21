@@ -71,45 +71,20 @@ kubectl get all -n superset
 ```
 ![Check resources in namespace superset ](images/superset-get-all.png)
 
-3. Deploy ingress resource
-
+3. Disable firewalld in oke-operator COMPUTE VM (make sure you are on oke-operator)
 ```
-cat << EOF | kubectl apply -n superset -f -
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: superset-ing
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  ingressClassName: nginx
-  rules:
-  - http:
-      paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: superset
-              port:
-                number: 8088
-EOF
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
 ```
 
-![Deploy superset ingress resource](images/superset-get-all.png)
+4. Start port-forward to service/superset.  If the testing finishes, press **CTRL-C** to terminate port-forward service.
 
-4. Check status on superset-ing and Identify the IP address.  The "address" as public ip from ingress resource "superset-ing" is populated a while after the ingress resource is created.  Please wait for a moment and retry until you can find the address.
 ```
-kubectl get ing superset-ing -n superset
-kubectl get ing superset-ing -n superset --watch
+kubectl port-forward --address 0.0.0.0 8088:8088 service/superset -n superset
 ```
-- Wait until public ip is populated and press **CTRL-C** to exit the watch status
-
-![Deploy superset ingress resource](images/superset-ing.png)
 
 ## Task 4 : Test Superset 
-- Open a browser and put in the URL : http://<public IP>
+- Open a browser and put in the URL : http://<public IP of oke-operator VM>
 - login as admin / admin and click "Sign In"
 ![Superset login](images/superset-login.png)
 - You will be landing on superset **HOME** page
