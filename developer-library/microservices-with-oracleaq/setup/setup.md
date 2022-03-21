@@ -1,4 +1,4 @@
-# Setup
+# Set up the environment
 
 ## Introduction
 
@@ -54,51 +54,52 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![OCI Cloud Shell Opening](images/open-cloud-shell.png " ")
 
-  **NOTE:** Cloud Shell uses *websockets* to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+> **Note:** Cloud Shell uses *websockets* to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
 ## Task 5: Make a Clone of the Workshop Setup Script and Source Code
 
-To work with the application code, you need to make a clone from the GitHub repository using the following command.  
+To work with the application code, you need to make a clone from the GitHub repository.  
 
-```bash
-<copy>
-git clone https://github.com/oracle/microservices-datadriven.git;
-cp -r ./microservices-datadriven/workshops/oracleAQ $HOME;     
-rm -r -f microservices-datadriven; 
-cd oracleAQ;
-</copy>
-```
+1. Execute the following sequence of commands into cloud shell:
 
-You should now see the directory `oracleAQ` in the directory that you clone.
+    ```bash
+    <copy>
+    git clone -b 22.2.2 --single-branch https://github.com/oracle/microservices-datadriven.git
+    cp -r ./microservices-datadriven/workshops/oracleAQ $HOME;     
+    rm -r -f microservices-datadriven; 
+    cd oracleAQ;
+    </copy>
+    ```
+
+2. You should now see the directory `oracleAQ` in the directory that you clone.
 
 ## Task 6: Start the Setup
 
-- Execute the below command to start the setup.
+1. Execute the below command into cloud shell to start the setup.
   
-```bash
-<copy>
-source setup.sh
-</copy>
-```
+    ```bash
+    <copy>
+    source setup.sh
+    </copy>
+    ```
   
-- Enter the password to be used for database connection and wait for the ATP provisioning when you will see the message:
-"Action completed. Waiting until the resource has entered state: ('AVAILABLE',)".
+2. Enter the password to be used for database connection and wait for the ATP provisioning when you will see the message: **"Action completed. Waiting until the resource has entered state: ('AVAILABLE',)".**
+
+3. The setup process will typically take around 5 minutes to complete.
 
 > **Note:** Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then re-run the above command to resume the setup.
-
-The setup process will typically take around 5 minutes to complete.
 
 ## Task 7: Complete the Setup
 
 Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has been completed you will see the message: **SETUP COMPLETED**.
 
-If any of the background setup jobs are still running you can monitor their progress with the following command.
+1. If any of the background setup jobs are still running you can monitor their progress with the following command into cloud shell.
 
-```bash
-<copy>
-ps -ef | grep "$ORACLEAQ_HOME" | grep -v grep
-</copy>
-```
+    ```bash
+    <copy>
+    ps -ef | grep "$ORACLEAQ_HOME" | grep -v grep
+    </copy>
+    ```
 
 > **Note:**  Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
@@ -107,5 +108,5 @@ Once the setup has been completed you are ready to **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Mayank Tayal, Developer Advocate
-- **Contributors** - Paul Parkinson, Developer Evangelist; Paulo Simoes, Developer Evangelist;  Richard Exley, Maximum Availability Architecture; Sanjay Goil, VP
+- **Contributors** - Sanjay Goil, VP Microservices and Oracle Database; Paul Parkinson, Developer Evangelist; Paulo Simoes, Developer Evangelist; Richard Exley, Maximum Availability Architecture; Shivani Karnewar, Senior Member Technical Staff
 - **Last Updated By/Date** - Mayank Tayal, February 2022

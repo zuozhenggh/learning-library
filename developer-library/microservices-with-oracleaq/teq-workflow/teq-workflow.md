@@ -1,4 +1,4 @@
-# Second- Factor Authentication workflow using Transactional Event Queues
+# Use workflow with TEQ (Second-factor Authentication)
 
 ## Introduction
 
@@ -10,29 +10,29 @@ This workflow relies on a secure and verified delivery from an Application to th
 
 This Lab will help you understand OTP workflow (one-time-password)/ Second-Factor Authentication/ 2FA based on order delivery with multiconsumer TEQ.
 
-![workflow](./images/Workflow.png " ")
+![workflow](./images/workflow.png " ")
 
 ### Prerequisites
 
 - This workshop assumes you have an Oracle cloud account and configured setup in Lab 1.
 
-## Task 1: Creation of required queues- User, Deliverer, Application
+## Task 1: Create queues
 
 1. Below are the code samples to create required queues
 
-  ![createWoekflow queues](./images/workflow-create-teq.png " ")
-   
+    ![createWoekflow queues](./images/workflow-create-teq.png " ")
+
 2. Execute the following sequence of commands into cloud shell:
 
-  ```bash
+    ```bash
 
-  <copy>cd $ORACLEAQ_HOME; source workflowCreateTEQ.sh;
+    <copy>cd $ORACLEAQ_HOME; source workflowCreateTEQ.sh;
 
-  </copy>
+    </copy>
 
-  ```
+    ```
 
-## Task 2: User placed the order, and Application will generate 4-digit OTP
+## Task 2: The user places the order, and the Application generates a 4-digit OTP
 
 Below are the code samples to create the workflow
 
@@ -64,9 +64,9 @@ Below are the code samples to create the workflow
 
       - Message(OrderId, username, 9707 , deliveryLocation, "PENDING")
 
-## Task 4: Application Validates the OTP shared by Deliverer
+## Task 4: OTP verfication
 
-- **Application validation is successful:**
+- **Application verfication for OTP is successful:**
 
     1. Application updates DELIVERY STATUS as "DELIVERED" in the exiting record.
 
@@ -80,7 +80,7 @@ Below are the code samples to create the workflow
 
     4. Deliverer handover the order to User.
 
-- **Application validation is failed:**
+- **Application verfication for OTP is failed:**
 
     1. Application updates DELIVERY STATUS as "FAILED" in the Database.
 
@@ -93,8 +93,8 @@ Below are the code samples to create the workflow
         - Message(OrderId, username, 9707 , deliveryLocation, "FAILED")
 
     4. Deliverer declines delivery to User.
-    
-     - Execute the following sequence of commands into cloud shell:
+
+- Execute the following sequence of commands into cloud shell:
 
     ```bash
 
@@ -104,44 +104,44 @@ Below are the code samples to create the workflow
 
     ```
 
-    [VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ)
+     You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ)
 
 ## Task 5: Workflow using Java
 
 1. Execute the following sequence of commands into cloud shell:
 
-```bash
+    ```bash
 
-<copy> curl http://localhost:8081/oracleAQ/workflowTEQ </copy>
+    <copy> curl http://localhost:8081/oracleAQ/workflowTEQ </copy>
 
-```
+    ```
 
-[VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/workflowTEQ/WorkflowTEQ.java)
+    You can view the java source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/workflowTEQ/WorkflowTEQ.java)
 
-## Task 6: Cleanups: Drop the QueueTables(User, Deliverer, Application)
+## Task 6: Drop queues
 
 1. Below are the code samples to cleanup workflow Queues
 
-  ![cleanupWorkflow](./images/workflow-cleanup-teq.png " ")
+    ![cleanupWorkflow](./images/workflow-cleanup-teq.png " ")
 
-  - Stop User, Deliverer, Application Queues
+    - Stop User, Deliverer, Application Queues
 
-  - Drop User, Deliverer, Application Queues
+    - Drop User, Deliverer, Application Queues
 
 2. Execute the following sequence of commands into cloud shell:
 
-  ```bash
+    ```bash
 
-  <copy>cd $ORACLEAQ_HOME; source workflowCleanupTEQ.sh;
+    <copy>cd $ORACLEAQ_HOME; source workflowCleanupTEQ.sh;
 
-  </copy>
+    </copy>
 
-  ```
+    ```
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
 - **Author** - Mayank Tayal, Developer Advocate
-
+- **Contributors** - Sanjay Goil, VP Microservices and Oracle Database; Paul Parkinson, Developer Evangelist; Paulo Simoes, Developer Evangelist; Richard Exley, Maximum Availability Architecture; Shivani Karnewar, Senior Member Technical Staff
 - **Last Updated By/Date** - Mayank Tayal, February 2022

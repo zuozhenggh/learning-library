@@ -1,4 +1,4 @@
-# Advanced Queues
+# Understand Advanced Queues
 
 ## Introduction
 
@@ -67,27 +67,27 @@ This lab will give an understanding of Advanced Queues creation using different 
     </copy>
     ```
 
-## Task 4: AQ creation, Enqueue and Dequeue using Java
+## Task 4: Create AQ, Enqueue and Dequeue using Java
 
 1. Point to Point
-   - Execute the following sequence of commands into cloud shell:
+    - Execute the following sequence of commands into cloud shell:
 
-    ```bash
-    <copy> curl http://localhost:8081/oracleAQ/pointToPointAQ 
-    </copy>
-    ```
+        ```bash
+        <copy> curl http://localhost:8081/oracleAQ/pointToPointAQ 
+        </copy>
+        ```
 
 2. Publisher Subscriber
-   - Execute the following sequence of commands into cloud shell:
+    - Execute the following sequence of commands into cloud shell:
 
-    ```bash
-    <copy> curl http://localhost:8081/oracleAQ/pubSubAQ 
-    </copy>
-    ```
+        ```bash
+        <copy> curl http://localhost:8081/oracleAQ/pubSubAQ 
+        </copy>
+        ```
 
-[VISIT THE GITHUB CODE HERE](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/workflowTEQ/EnqueueDequeueAQ.java)
+    You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/enqueueDequeueAQ/EnqueueDequeueAQ.java)
 
-## Task 5: Cleanups
+## Task 5: Drop queues
 
 1. Below are the code samples to cleanup AQ
 
@@ -111,5 +111,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Mayank Tayal, Developer Advocate
-
+- **Contributors** - Sanjay Goil, VP Microservices and Oracle Database; Paul Parkinson, Developer Evangelist; Paulo Simoes, Developer Evangelist; Richard Exley, Maximum Availability Architecture; Shivani Karnewar, Senior Member Technical Staff
 - **Last Updated By/Date** - Mayank Tayal, February 2022

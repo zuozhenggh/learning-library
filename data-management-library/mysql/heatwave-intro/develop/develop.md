@@ -1,4 +1,4 @@
-# USE MySQL HEATWAVE FOR DEVELOPMENT  
+# Use MySQL HeatWave For Development  
 ![INTRO](./images/00_mds_heatwave_2.png " ") 
 
 ## Introduction
