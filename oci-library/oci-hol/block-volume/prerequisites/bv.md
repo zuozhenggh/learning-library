@@ -17,11 +17,11 @@ Estimated time: 10 minutes
 
 - Your Oracle Cloud Trial Account
 
-## **STEP 1:** Create compartment
+## Task 1: Create compartment
 
 If you want to use an existing compartment, skip this step. Otherwise, click **Compartments** and then **Create Compartment**, to create a new compartment.
 
-## **STEP 2**: Creating <if type="freetier">a Web Server on </if>a Compute Instance
+## Task 2: Creating <if type="freetier">a Web Server on </if>a Compute Instance
 
 Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instances:
 
@@ -45,7 +45,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <if type="livelabs">Enter your username + *-Instance* as the name of the server.</if>
 
     <if type="freetier">
-    ![Create step 1](images/Create1.png " ")
+    ![Create step 1](images/create1.png " ")
     </if>
     <if type="livelabs">
     ![](images/create-compute-livelabs-2.png)

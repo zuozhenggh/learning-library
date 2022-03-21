@@ -23,7 +23,7 @@ As a LOB user,
 * A pre-provisioned Oracle Analytics Cloud instance. Refer [here](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acoci/create-services.html#GUID-D2F03D22-95FB-45C8-AB94-928AE4E167AB) to create an Oracle Analytics Cloud instance.
 * VNC Viewer or other suitable VNC client on your local laptop
 
-## **STEP 1:** Connect to Dev Client Desktop over VNC
+## Task 1: Connect to Dev Client Desktop over VNC
 
 1. First, we shh into the dev client and invoke the VNC server that comes pre-installed.
 
@@ -71,7 +71,7 @@ As a LOB user,
 
 13. If all goes well, you should now see a linux desktop in your VNC window.
 
-## **STEP 2:** Download, Install and Configure Remote Data Gateway
+## Task 2: Download, Install and Configure Remote Data Gateway
 
 1. Download OAC Data Gateway 5.6.0+ from [here](https://www.oracle.com/middleware/technologies/oac-downloads.html).
 
@@ -189,7 +189,7 @@ As a LOB user,
 
     ![](./images/RDC-installer13.png " ")
 
-## **STEP 3:** Configure Remote Data Connectivity and Connect ExaCS Database to Oracle Analytics Cloud
+## Task 3: Configure Remote Data Connectivity and Connect ExaCS Database to Oracle Analytics Cloud
 
 1. Now, in your Oracle Analytics Cloud URL in you local machine, log in to the console.
 

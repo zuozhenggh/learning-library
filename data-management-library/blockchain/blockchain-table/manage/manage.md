@@ -24,7 +24,7 @@ In this lab, you will:
 * Lab: Provision a 20c instance
 
 
-## **STEP 1**: Create the Blockchain Table
+## Task 1: Create the Blockchain Table
 
 1. Create the blockchain table named `bank_ledger`. Rows can never be deleted in the blockchain table `bank_ledger`. Moreover the blockchain table can be dropped only after 16 days of inactivity. 
 
@@ -37,7 +37,7 @@ In this lab, you will:
     ```
   The blockchain table has been created. 
 
-## **STEP 2:** Describe and Query Blockchain Table
+## Task 2: Describe and Query Blockchain Table
 
 1. At this time you can look at your table. Describe and query blockchain table:
 
@@ -50,7 +50,7 @@ In this lab, you will:
     select bank, deposit_date, deposit_amount, ORABCTAB_INST_ID$, ORABCTAB_CHAIN_ID$, ORABCTAB_SEQ_NUM$, ORABCTAB_CREATION_TIME$, ORABCTAB_USER_NUMBER$, ORABCTAB_HASH$, ORABCTAB_SIGNATURE$, ORABCTAB_SIGNATURE_ALG$, ORABCTAB_SIGNATURE_CERT$ from bank_ledger;
   ```
 
-## **STEP 3:** View all blockchain tables
+## Task 3: View all blockchain tables
 
 1. View all the blockchain tables in your current database:
     

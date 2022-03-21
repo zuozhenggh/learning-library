@@ -13,7 +13,7 @@ Estimated Completion Time: 15 minutes.
 - Take a snapshot of the app state on *`dev`*, and deploy it to the *`prd`* environment.
 - Make changes on *`dev`*, take a new snapshot and redeploy to *`prd`*.
 
-## **STEP 1:** Taking a Snapshot of the Application State
+## Task 1: Taking a Snapshot of the Application State
 
 1. To take a snapshot of the application state in the *`dev`* environment, simply run:
 
@@ -63,7 +63,7 @@ Estimated Completion Time: 15 minutes.
     </copy>
     ```
 
-## **STEP 2:** Deploy the App to the Production Environment
+## Task 2: Deploy the App to the Production Environment
 
 1. With the app export and the schema changelog, we can reproduce the full application to another environment with:
 
@@ -81,7 +81,7 @@ Estimated Completion Time: 15 minutes.
     </copy>
     ```
 
-## **STEP 3:** Check the Deployment
+## Task 3: Check the Deployment
 
 1. Log in to the Oracle Autonomous Database for *`prd`*:
 
@@ -113,7 +113,7 @@ Estimated Completion Time: 15 minutes.
 
 2. You should find your application and be able to run it.
 
-## **STEP 4:** Make Some Changes
+## Task 4: Make Some Changes
 
 1. Back on the *`APEX_DEV`* database, we'll make some changes:
 
@@ -159,7 +159,7 @@ Estimated Completion Time: 15 minutes.
 
     - Click **Save**.
 
-## **STEP 5:** Create a New Snapshot
+## Task 5: Create a New Snapshot
 
 1. Create a new snapshot:
 
@@ -189,7 +189,7 @@ Estimated Completion Time: 15 minutes.
     </copy>
     ```
 
-## **STEP 6:** Deploy the Changes to Production
+## Task 6: Deploy the Changes to Production
 
 1. Redeploy to prod
 

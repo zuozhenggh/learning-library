@@ -4,7 +4,7 @@
 
 In this lab, you will dynamically scale the number of OCPU resources available to a an Autonomous Transaction Processing (ATP) instance. Use an open source load generator, Swingbench, you will see how ATP dynamically scales up as a result of manually adding additional OCPU resources.
 
-## **STEP 1:** Install Swingbench on your local PC (shell)
+## Task 1: Install Swingbench on your local PC (shell)
 
 1. Open a shell on your local PC, for example Git Bash.
 
@@ -30,7 +30,7 @@ In this lab, you will dynamically scale the number of OCPU resources available t
 
      ![](images/unzip-swingbench.png)
 
-## **STEP 2:** Create ATP instance in OCI and Configure Swingbench on Compute instance to generate load traffic
+## Task 2: Create ATP instance in OCI and Configure Swingbench on Compute instance to generate load traffic
 
 *In this section we will create a ATP instance in OCI. We will initially create this instance with only 1 OCPU and scale it after generating load test from the compute instance created earlier*
 
@@ -165,7 +165,7 @@ In this lab, you will dynamically scale the number of OCPU resources available t
 
 *We have Autonomous Transaction Processing DB instance configured and are testing Transaction per second data using a compute instance. Next we will dynamically scale the OCPU count via OCI console and observe the Transaction Per Second number. We will also see that Dynamic CPU scaling has no impact on the operation of Autonomous Transaction Processing Instance.*
 
-## **Step 3:** Dynamically Scale CPU on ATP instance and verify results
+## Task 3: Dynamically Scale CPU on ATP instance and verify results
 
 In this section we will utilize the dynamic CPU scaling feature of Autonomous Transaction Processing instance and verify Transaction Per second number.
 
@@ -192,7 +192,7 @@ In this section we will utilize the dynamic CPU scaling feature of Autonomous Tr
 
 *We have now demonstrated the Dynamic Scaling of CPU for an ATP instance. We also successfully generated load traffic and observed CPU usage and other indicators for the ATP instance.*
 
-## **Step 4:** Delete the resources
+## Task 4: Delete the resources
 *NOTE: As a practice user will need to figure out any errors encountered during deletion of resources.*
 
 1. Switch to  OCI console window.

@@ -27,7 +27,7 @@ Estimated time: 20 minutes
 [](youtube:wIoLDX7iWXo)
 
 
-## **STEP 1:** Log into OCI Tenancy
+## Task 1: Log into OCI Tenancy
 
    Log in to your OCI dashboard and retrieve information required to create resources.
 
@@ -54,7 +54,7 @@ Estimated time: 20 minutes
   ![](images/landingScreen2.png " ")
 
 
-## **STEP 2:** Basic OCI Infrastructure Setup
+## Task 2: Basic OCI Infrastructure Setup
 
    1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**. From this screen, you will see a list of compartments, click **Create Compartment**.
 
@@ -125,7 +125,7 @@ To access Cloud Shell:
 
 10. Make sure to copy the **fingerprint** and paste in a notepad, we will use it later in this lab.
 
-## **STEP 3:** Lets Create ATP
+## Task 3: Lets Create ATP
 
   1. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
@@ -188,7 +188,7 @@ To access Cloud Shell:
 
 Now you are ready to move on to Step 4.
 
-## **STEP 4:** Lets Create OKE
+## Task 4: Lets Create OKE
 
 1.  To create an OKE cluster, open up the hamburger button in the top-left corner of the Console and go to **Developer Services** >   **Kubernetes Clusters**.
 
@@ -219,7 +219,7 @@ Now you are ready to move on to Step 4.
 
    ![](images/OKE-4.png " ")
 
-## **STEP 5:** Lets Create Visual Builder Studio
+## Task 5: Lets Create Visual Builder Studio
 
    You can create only one **Visual Builder Studio instance** in an Oracle Cloud account. Before you attempt to create an instance make    sure there's no existing Visual Builder Studio instance in your account.
 
@@ -320,7 +320,7 @@ Now you are ready to move on to Step 4.
   ![](images/44-7.PNG " ")
 
 
-## **STEP 6:** Lets create Visual Builder Cloud Service
+## Task 6: Lets create Visual Builder Cloud Service
 
   1. Navigate back to your Cloud Console and click on the hamburger menu on top left, scroll down to Platform Services, and then click on **Visual Builder**
 

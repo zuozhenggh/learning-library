@@ -41,7 +41,7 @@ Lab perform analytics
 
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: title
+## Task 1: title
 
 Step 1 opening paragraph.
 
@@ -67,7 +67,7 @@ Step 1 opening paragraph.
 
    If you add another paragraph, add 3 spaces before the line.
 
-## **STEP 2:** title
+## Task 2: title
 
 1. Sub step 1
 

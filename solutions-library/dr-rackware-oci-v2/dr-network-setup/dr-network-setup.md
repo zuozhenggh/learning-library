@@ -9,7 +9,7 @@ Estimated Lab Time 45-60 minutes
 - Deploy Terraform to setup necessary architechture for DR
 
 ### Prerequisites
-1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/doGqCx8nAES04cJcea1x-J9562_ViCXPWeeYXorD42R6E46hq7w6AMCpd_oonxLY/n/c4u04/b/solutions-library/o/DR-ORDS-RW.zip) to your local machine.
+1. Download & unzip the [Terraform zip file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/CSv7IOyvydHG3smC6R5EGtI3gc1vA3t-68MnKgq99ivKAbwNf8BVnXVQ2V3H2ZnM/n/c4u04/b/livelabsfiles/o/solutions-library/DR-ORDS-RW.zip) to your local machine.
 
 2.  Create your own private/public key pair on your local system.
 3.  Zip up all of the files in to a zip folder. The zip file name is not important.
@@ -20,21 +20,21 @@ Estimated Lab Time 45-60 minutes
         ├── dr-ords-schema.yaml
         ├── main.tf
         ├── modules
-        │   ├── bastion_instance
-        │   │   ├── main.tf
-        │   │   ├── outputs.tf
-        │   │   └── variables.tf
-        │   ├── dbaas
-        │   │   ├── main.tf
-        │   │   ├── outputs.tf
-        │   │   └── variables.tf
-        │   ├── network
-        │   │   ├── main.tf
-        │   │   ├── outputs.tf
-        │   │   └── variables.tf
-        │   └── ords
-        │       ├── main.tf
-        │       ├── outputs.tf
+        │ ├── bastion_instance
+        │ │ ├── main.tf
+        │ │ ├── outputs.tf
+        │ │ └── variables.tf
+        │ ├── dbaas
+        │ │ ├── main.tf
+        │ │ ├── outputs.tf
+        │ │ └── variables.tf
+        │ ├── network
+        │ │ ├── main.tf
+        │ │ ├── outputs.tf
+        │ │ └── variables.tf
+        │ └── ords
+        │     ├── main.tf
+        │     ├── outputs.tf
         │       ├── README.md
         │       ├── remote-exec.tf
         │       └── variables.tf
@@ -75,7 +75,7 @@ Estimated Lab Time 45-60 minutes
     The ords.war file can be downloaded using the following link [ords](https://www.oracle.com/database/technologies/appdev/rest-data-services-downloads.html)
         ![](rackwaresaleplay/Objectstorage.PNG)
     
-## **Step 1:** Create Stack    
+## Task 1: Create Stack    
 1. Navigate to the resource manager tab in OCI. Then create a new stack to import the zip file.
 
 2. Import the zip file into the stack 
@@ -96,7 +96,7 @@ Estimated Lab Time 45-60 minutes
 7. Review 
     ![](./images/ResourceManager-Review.PNG)
 
-## **Step 2:** Plans
+## Task 2: Plans
 
 1.  Select plan from the dropdown menu.
     ![](./images/ResourceManager-Plan-2.PNG)
@@ -107,7 +107,7 @@ Estimated Lab Time 45-60 minutes
 3.  Wait until the icon to turn green.
     ![](./images/ResourceManager-Plan-4.PNG)
 
-## **Step 3:** Apply
+## Task 3: Apply
 
 1.  Select plan from the dropdown menu.
     ![](./images/ResourceManager-Apply-1.PNG)
@@ -115,7 +115,7 @@ Estimated Lab Time 45-60 minutes
 2.  Wait unitl the icon to turn green.
     ![](./images/ResourceManager-Apply-2.PNG)
 
-## **Step 4:** Destroy
+## Task 4: Destroy
 1.  First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
 
 2.  Select destroy from the dropdown menu.
@@ -134,7 +134,4 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 - **Author** - Saul Chavez
 - **Last Updated by/date** Will Bullock, October 2020
-
-## See an issue?
-Please submit feedback using this [form](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1). Please include the *workshop name*, *lab* and *step* in your request. If you don't see the workshop listed, please enter it manually. If you would like for us to follow up with you, enter your email in the *Feedback Comments* section.
 

@@ -10,7 +10,7 @@ Our deployment will be monitored and managed using Kubernetes Dashboard.
 
 Estimated Lab Time: 30 minutes
 
-## **Step 1:** Define Wercker Variables
+## Task 1: Define Wercker Variables
 
 1. In Wercker, we need to define three environment variables, in the **Environment** tab. Enter the name of the variable in Key field, the value in Value, set Protected or not, and click **Add**.
 
@@ -51,7 +51,7 @@ Estimated Lab Time: 30 minutes
 
 - pdb01.sub[Number].[Your Initials]vcn.oraclevcn.com
 
-## **Step 2:** Launch Web Service on Docker
+## Task 2: Launch Web Service on Docker
 
 1. We create a very small linux bash script that will start our web service application on the Docker container when deployed.
 
@@ -145,7 +145,7 @@ Estimated Lab Time: 30 minutes
 
 8. Verify the build is successful on Wercker console. Open Oracle Cloud console. Click on hamburger menu ≡, then Developer Services > **Registry (OCIR)**. Click on the repository called [Your Initials]rep. It has a Docker image with Size: 543.77 MB. This is not important, just wanted to show where your build is stored.
 
-## **Step 3:** OCI CLI and Kubectl Configuration
+## Task 3: OCI CLI and Kubectl Configuration
 
 1. Now we can use this build for the deploy pipeline. The deployment is performed on the Container Cluster (OKE) called [Your Initials]cluster we created. This cluster uses Kubernetes, and we need to configure **kubectl** on our development environment.
 
@@ -218,7 +218,7 @@ Estimated Lab Time: 30 minutes
 
 13. On Oracle Cloud console, navigate to hamburger menu ≡, then Developer Services > **Container Clusters (OKE)**. Click [Your Initials]cluster, and copy the value of **Kubernetes Address**. This is the value of OKE_MASTER, write it in your notes text file, adding 'https://' in front of it, if it doesn't start with.
 
-## **Step 4:** Kubernetes Dashboard
+## Task 4: Kubernetes Dashboard
 
 1. Next step is to define an OKE administrator service account and a cluster role binding, both called oke-admin. For the definition we can use a YML file, **oke-admin-service-account.yaml**, already cloned from GitHub. This is the definition:
 

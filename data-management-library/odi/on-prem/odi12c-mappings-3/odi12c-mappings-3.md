@@ -15,14 +15,12 @@ In this chapter you will learn how to create the Multi Target mapping:
 This lab assumes you have:
 - Basic knowledge of Oracle Database
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:** Load GEOGRAPHY Mapping Description
+## Task 1: Load GEOGRAPHY Mapping Description
 
 This section contains the following topics:
 
@@ -60,7 +58,7 @@ This section contains the following topics:
 
     * No transformation rules.
 
-## **STEP 2:** Creating the Mapping
+## Task 2: Creating the Mapping
 
 This section describes how to create the Load GEOGRAPHY mapping. To create the Load GEOGRAPHY mapping perform the following procedure:
 
@@ -111,7 +109,7 @@ This section describes how to create the Load GEOGRAPHY mapping. To create the L
 
   ![](./images/Capture4.PNG)
 
-## **STEP 3:** Add a Distinct Component
+## Task 3: Add a Distinct Component
 
 In this example, only distinct Country fields should be retrieved.
 
@@ -129,7 +127,7 @@ In this example, only distinct Country fields should be retrieved.
 
   ![](./images/5.PNG)
 
-## **STEP 4:** Define the Target Load Order
+## Task 4: Define the Target Load Order
 
 This section describes how to connect source and target data sources and also define the target load order when there are multiple target tables.
 
@@ -153,12 +151,12 @@ This section describes how to connect source and target data sources and also de
 
   ![](./images/Capture9.PNG)
 
-## **STEP 5:** Setting the Integration Type
+## Task 5: Setting the Integration Type
 Select all the three target tables. In the *properties* window for the target tables, double click on each entry for Integration Type and select *Incremental Update*
 
   ![](./images/Capture10.PNG)
 
-## **STEP 6:** Define the Data Loading Strategies (LKM)
+## Task 6: Define the Data Loading Strategies (LKM)
 
 In the Physical tab, Oracle Data Integrator indicates the various steps that are performed when the map is executed. In the Physical tab you define how to load the data of the source tables into your target environment with a Loading Knowledge Module (LKM).
 
@@ -176,7 +174,7 @@ To define the loading strategies:
 
   ![](./images/Capture13.PNG)
 
-## **STEP 7:** Define the Data Integration Strategies (IKM)
+## Task 7: Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -196,7 +194,7 @@ To define the integration strategies:
 
 **Note:** Only the built-in Knowledge Modules or the ones you imported to your Project appear in the KM Selector lists. The demonstration environment already includes the Knowledge Modules required for the getting started examples. You do not need to import KMs into the demonstration Project.
 
-## **STEP 8:** Run the Mapping
+## Task 8: Run the Mapping
 
 In this section , lets save and run the mapping we created to check how the data load is performed.
 
@@ -233,7 +231,7 @@ In this section , lets save and run the mapping we created to check how the data
 
   ![](./images/Capture22.PNG)  
 
-This concludes the lab on Multiple Target Mappings. You many proceed to the next lab.
+This concludes the lab on Multiple Target Mappings. You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)

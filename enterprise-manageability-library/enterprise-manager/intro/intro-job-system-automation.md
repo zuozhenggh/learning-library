@@ -5,6 +5,8 @@ The Job System Automation workshop is a fully functional Oracle Enterprise Manag
 - This Workshop VM comes preinstalled with Enterprise Manager 13.5 and Oracle Database targets - 18.3, 18.8, 18.10, 19.3 and 19.10
 - It's easy and quick to deploy with everything starting automatically in under 20 minutes
 
+*Estimated Time:* 60 minutes
+
 ## About Oracle Enterprise Manager
 Oracle Enterprise Manager is Oracle’s on-premise management platform that provides a single dashboard to manage all of your Oracle deployments, in your data center or in the cloud. Through deep integration with Oracle’s product stack, it provides market-leading management and automation support for Oracle applications, databases, middleware, hardware, and engineered systems
 
@@ -58,6 +60,27 @@ For additional Enterprise Manager use cases, see below and visit [LiveLabs](http
 * Run a review aggregated security compliance framework and standard for Oracle Database 12c and Oracle Host targets
 * Host security compliance using custom compliance standard
 
+#### 6. Real Application Testing
+* Run SQL Performance Analyzer to review SQL performance before 19c Upgrade
+* Capture workload of 18c Database
+* Run Database Replay of 18c Database Workload in 19c Database
+* Run Consolidation Replay in 2 separate Pluggable Databases
+
+#### 7. Enterprise Monitoring
+- Explore Enterprise Summary page and drill down to see a list of down targets
+- Triage unassigned incidents from Incident Manager and acknowledge then assign an incident
+- Change the Warning and Critical threshold of a metric from Metric and Collection Settings page. Go to the All Metrics page and review the metric in context of the thresholds
+- Create a new Corrective Action and associate it with a metric
+- Test a Metric Extension on a target to see the results then deploy the same Metric Extension to multiple targets
+- Create a Monitoring Template from a Database Instance target and deploy the Monitoring Template to other Database Instance targets to standardize monitoring settings across the enterprise
+- View the hierarchy of an existing Administrator Group
+- Review out-of-the-box incident rules shipped with Enterprise Manager
+
+#### 8. Deploy and Manage Oracle Databases with Ansible and Enterprise Manager
+- Install and configure Ansible to work with Oracle Enterprise Manager 13c
+- Review Oracle Enterprise Manager DBaaS setup for Pluggable Databases
+- Provision, resize, shutdown, start and delete a Pluggable Database using Ansible playbooks and EM's DBaaS capabilities
+
 ## Learn More
 Managing Your Hybrid Database Fleet
 [](youtube:TUaAweMX3S4)
@@ -77,4 +100,4 @@ Drive Your Autonomous Future with Oracle Enterprise Manager
 ## Acknowledgements
 - **Author** - Shefali Bhargava - Enterprise Manager Product Management
 - **Contributors** - Shefali Bhargava - Enterprise Manager Product Management
-- **Last Updated By/Date** - Shefali Bhargava - Enterprise Manager Product Management, June 2021
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2022

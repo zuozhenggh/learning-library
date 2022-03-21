@@ -43,7 +43,7 @@ In this section, you will fill out the registration form at [oracle.com/cloud/fr
 
 7. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign in page. You'll also receive a confirmation email containing sign in information.
 
-## **Step 2:** Sign in to Your Account
+## Task 2: Sign in to Your Account
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
@@ -67,12 +67,11 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
   ![](images/pt_BR-oci-console-home-page.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Agradecimentos
 
 - **Created By/Date** - Tom McGinn, Sr. Mgr, UA DB Development, March 2020
-- **Contributors** - Kay Malcolm, [John Peach](https://www.linkedin.com/in/jpeach/)
+- **Contributors** - LiveLabs Team, John Peach
 - **pt_BR Translated by** - André Ambrósio, April 2021
 - **Last Updated By** - André Ambrósio, May 2021
-

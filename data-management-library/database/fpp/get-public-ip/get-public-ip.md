@@ -14,14 +14,14 @@ In this lab, you will:
 - An assigned Oracle LiveLabs Cloud account
 - An assigned compartment
 
-## **Step 1:** Access the OCI Console
+## Task 1: Access the OCI Console
 1. Access the OCI Console using the **User Name**, **Initial Password** and **Login URL** that you received with your Livelabs Reservation confirmation.
 
     ![](./images/00-reservation.png)
 
 2. Change the password as required.
 
-## **Step 2:** Verify your Region and Compartment
+## Task 2: Verify your Region and Compartment
 1. Make sure that the **Region** (top-right corner) corresponds to the one you received in the reservation confirmation.
     ![](./images/region.png)
 
@@ -31,7 +31,7 @@ In this lab, you will:
 3. **Important**: in the left menu, under **List Scope**, verify that you select the same compartment that you received in the reservation confirmation.
     ![](./images/02-select-compartment.png)
 
-## **Step 3:** Get the Public IP of the FPP Server
+## Task 3: Get the Public IP of the FPP Server
 1. Click on the DB System name **fpps-cluster-xxxx** (xxxx is your reservation number: the number that compose also your Compartment name, e.g. LLxxxx-COMPARTMENT).
 
     The DB System Details page appears:

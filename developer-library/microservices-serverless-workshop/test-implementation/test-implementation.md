@@ -21,7 +21,7 @@ This lab assumes you have completed the following labs:
 * Lab: Import a Developer Cloud Service Project
 * Lab: Configure the Project to Match the Kubernetes Cluster
 
-## **Step 1**: Run Kubernetes Proxy
+## Task 1: Run Kubernetes Proxy
 
 1. First, come back to VM and if not launch yet, run the Kubernetes proxy program to have access to Kubernetes Dashboard(explained already in section Using Virtualbox and a preconfigured VM image).
 
@@ -45,7 +45,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/image162.png " ")
 
-## **Step 2**: Modify the Project to match new feature
+## Task 2: Modify the Project to match new feature
 
 So that we can create a new upgrade feature to be used in Pizza orders, we will modify the frontend to support a new upgrade feature so that we can choose if we want to upgrade an order with a present or not.
 
@@ -87,7 +87,7 @@ So that we can create a new upgrade feature to be used in Pizza orders, we will 
 
   ![](./images/image169.png " ")
 
-## **Step 3**: Create a New Order
+## Task 3: Create a New Order
 Now I can create a new order using postman.
 
 1. It has to be a POST request to endpoint:

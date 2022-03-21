@@ -41,7 +41,7 @@ The goal of this lab is to demonstrate the basic functionality of OCI and allow 
 
 [vi Editor Cheat Sheet](http://web.mit.edu/merolish/Public/vi-ref.pdf "vi Editor Cheat Sheet")
 
-## Step 1: Create a VCN
+## Task 1: Create a VCN
 
 1. From the OCI Services menu, choose **Networking > Virtual Cloud Networks**. 
 
@@ -123,7 +123,7 @@ In the next step we will change the VCN security list and open port 80 to the in
 ![](img/012.png " ")
 In the next step, you will create and configure a compute instance and deploy a simple web application.
 
-## Step 2: Launch Compute Instance
+## Task 2: Launch Compute Instance
 
 In order for customers to run their business applications, they'll need computing resources.  Oracle provides several different types of compute instances to help customers fulfill their application and performance needs.  Oracle provides bare metal and virtual machine (VM) instance types with different cpu and memory configurations called shapes. In this section you'll learn how to deploy a virtual compute instance with a simple web server application.  This is the basis of cloud computing.
 
@@ -196,7 +196,7 @@ The instance will begin provisioning.  You should see the instance details scree
 
 ![](img/026.png " ")
 
-## Step 3: Connect to the instance
+## Task 3: Connect to the instance
 
 1. In the *Instance Details* screen, locate the field containing the **Public IP Address**.  Click the **Copy** link to copy the IP address to the clipboard.  The link will change briefly to *copied* to indicate success.  Alternately you can right click/drag, then copy the IP address if you wish.  The next step will require the IP address as we connect to the instance.  
 
@@ -248,7 +248,7 @@ ssh -i ssh-key-2020-07-22.key.pub opc@129.213.43.29
 
 You have successfully created an instance and logged in via SSH.  Feel free to explore the instance environment if you have time to explore.  If you're not familiar with Linux or the command line, there are tons of how-to's and basic Linux tutorials available.  In the next section we'll add external block storage to the instance for application data storage.
 
-## Step 4: Create and mount block storage
+## Task 4: Create and mount block storage
 
 OCI offers 3 types of storage that offer different levels of performance, access, and redundancy for customer applications.  **Block storage** is based on physical blocks organized on a physical storage medium, namely SSDs (Solid State Disk), and organized via a file system.  Block storage is accessed via a dedicated storage network commonly referred to as a SAN (Storage Area Network).  Block storage is limited to the physical size of the disk or array of disks, but it is also considered the highest performance option for most applications.  It's ideal for databases and mission critical applications.  **Object Storage** is a data storage architecture that manages data as objects.  Object storage presents massive capacity and the ability to store unstructured data.  Object storage is commonly used for disaster recovery, document storage, and analytics data.   The third type is **File Storage**.  File storage is essentially an OS filesystem that's shared over the network and commonly referred to as NAS (Network Attached Storage).   File storage is a basic Unix function and was commercialized as hardware file storage systems called NAS Appliances. 
 
@@ -345,7 +345,7 @@ lsblk
 
 You have successfully formatted and mounted the external block volume.   Next you will install and configure a simple web application.
 
-## Step 5: Install and configure a web application
+## Task 5: Install and configure a web application
 
  In the following section we'll install the Apache web server and configure it for use with our simple application.
  
@@ -447,7 +447,7 @@ You should see the simple http application form in your browser.
 
 So far you have created a cloud network, launched an instance, created and attached block storage, configured a web server, and created a simple application.   In the next section you will delete the first compute instance.  Then you'll launch a new compute instance with the boot and block volume that you created for the first instance, thus retaining the configuration information from the first instance.
 
-## Step 6: Re-use the boot and block volumes for a new instance.
+## Task 6: Re-use the boot and block volumes for a new instance.
 
 In this section we're going to detach the block volume and terminate the instance.  You will then use the existing boot volume to launch a new compute instance. And you'll re-attach the block storage.  This type of action can be helpful for customers with disaster recovery or building 'golden images' which helps with resource re-use and streamlining of operations in the cloud.
 

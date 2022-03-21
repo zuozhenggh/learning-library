@@ -27,7 +27,7 @@ In this workshop we will be using wrapper scripts to export, move the data to th
 - To have provisioned the target database on OCI.
 - To have gathered information about the passthrough-server to the database, and the database node IP and domain name which is part of the connection string.
 
-## **STEP 1:** Get a Shell Inside the On-Premises Database Instance
+## Task 1: Get a Shell Inside the On-Premises Database Instance
 
 ### If you used the Docker environment
 
@@ -93,7 +93,7 @@ In this workshop we will be using wrapper scripts to export, move the data to th
       expdp system/${DB_PWD}@${DB_HOST}:${DB_PORT}/${DB_PDB}.${DB_DOMAIN} schemas=RIDERS DIRECTORY=${EXPORT_DB_DIRNAME}
       ```
 
-## **STEP 2:** Export the Source Database
+## Task 2: Export the Source Database
 
 Run the `datapump_export.sh` script:
 
@@ -107,7 +107,7 @@ The output will look like:
 
 ![](./images/migrate-db-1.png " ")
 
-## **STEP 3:** Edit the `datapump_import.sh` Script
+## Task 3: Edit the `datapump_import.sh` Script
 
 Once the schema and data are exported, we'll import it into the OCI DBaaS database.
 
@@ -123,9 +123,7 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
 2. Enter the `BASTION_IP`.
 
-     If you provisioned in a *Private Subnet* the `BASTION_IP` is the **public IP** of the Bastion instance.
-
-     If you provisioned in a *Public Subnet* the `BASTION_IP` is the **public IP** of the WebLogic Admin Server that can be found in the output of the job that deployed the WebLogic stack, as part of the WebLogic Admin Server console URL.
+     The `BASTION_IP` is the **public IP** of the Bastion instance.
 
      Find it in **Resource Manager -> Stack -> stack details -> job details -> Outputs**.
 
@@ -143,7 +141,9 @@ First, we'll need to edit the `datapump_import.sh` script to target the OCI data
 
       ![](./images/provision-db-27-connection2.png " ")
 
-## **STEP 4:** Import the Data into the Target Database
+5. Enter your DB SYS password for `TARGET_DB_PWD`.
+
+## Task 4: Import the Data into the Target Database
 
 1. Run the `datapump_import.sh` script you edited at the previous step:
 

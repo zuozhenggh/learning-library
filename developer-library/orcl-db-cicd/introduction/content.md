@@ -1,4 +1,4 @@
-# Continuous Integration / Delivery / Deployment (CI/CD) Pipeline with Oracle Database and Python
+# CI/CD Pipeline with Oracle Database and Python
 
 ## Workshop Overview
 

@@ -19,7 +19,7 @@ This lab assumes you have completed the following labs:
 - Upload Files to Object Storage
 - Loading from Object Storage
 
-## **STEP 1:** Functional Indexes
+## Task 1: Functional Indexes
 
 All our data is now loaded, and we can proceed to creating indexes. The main index we’ll be using is a “json search index” on the REVIEWS table. This is a JSON full-text index, which indexes ALL of the JSON in the table and allows for word-based searching on textual fields.
 
@@ -50,7 +50,7 @@ All our data is now loaded, and we can proceed to creating indexes. The main ind
     ```
     That will probably take 5 to 6 minutes to run.
 
-## **STEP 2:** Creating a Search Index
+## Task 2: Creating a Search Index
 
 A search index indexes **all** the JSON in a collection. It is particularly useful if
 -    You don't know the schema (layout) of the JSON in advance. Creating a functional index _requires_ you to know the name of the element (such as business_id) on which you wish to create the index.
@@ -102,7 +102,7 @@ Search indexes take a significant time to create on large collections. As earlie
     ```
 
    
-## **STEP 3:** Queries
+## Task 3: Queries
 
 **Note:** All queries in SQL Developer Web should be run using the "Run Statement" button. If you run them using "Run Script", the query will run to completion, which may fetch many thousands of rows and take some minutes to run.
 

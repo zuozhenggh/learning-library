@@ -10,7 +10,7 @@ Estimated Completion Time: 5 minutes.
 
 We will install a sample app from the app library.
 
-## **STEP 1:** Install a Sample Application
+## Task 1: Install a Sample Application
 
 1. Log in to the Oracle Autonomous Database for *`dev`*:
 
@@ -40,7 +40,7 @@ We will install a sample app from the app library.
 
     ![](./images/signin.png " ")
 
-## **STEP 2:** Sample App from Gallery On APEX below 21.1
+## Task 2: Sample App from Gallery On APEX below 21.1
 
 1. Click **App Gallery**.
 
@@ -56,7 +56,7 @@ We will install a sample app from the app library.
 
   ![](./images/unlock.png " ")
 
-## **STEP 3:** Sample App on APEX 21.1 and Above
+## Task 3: Sample App on APEX 21.1 and Above
 
 The application gallery was removed from version 20.1, it is now available on Github at [https://github.com/oracle/apex](https://github.com/oracle/apex).
 
@@ -70,7 +70,7 @@ The application gallery was removed from version 20.1, it is now available on Gi
 
 5. Follow prompts using all defaults.
 
-## **STEP 4:** Run the Application
+## Task 4: Run the Application
 
 1. To run the application, sign in with the WS\_ADMIN credentials.
 

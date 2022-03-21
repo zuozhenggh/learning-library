@@ -22,7 +22,7 @@ This lab requires -
 
 *Note:* Whenever there is a “Name” being assigned to any Resource / Application / Cube or to any database in this lab please follow the naming convention as “Sample_<FIRST_NAME>” to avoid duplication.
 
-## **Step 1:** Data Load to Cube
+## Task 1: Data Load to Cube
 
 DataCorp IT group stores data in an Oracle Data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
 
@@ -151,7 +151,7 @@ Create a rule file that is based on sample file from the data warehouse.
 
 16. You have now completed loading data using a rule.
 
-## **Step 2:** Calculating Essbase Cube
+## Task 2: Calculating Essbase Cube
 
 A cube contains two types of values: values that you enter, called input data, and values that are calculated from input data.
 
@@ -218,7 +218,7 @@ See the Function description under the menu to read descriptions of each functio
 
 20.	Click Refresh to see the status of your calculation.
 
-## **Step 3:** Migration Utilities
+## Task 3: Migration Utilities
 
 This exercise will introduce how to automate tasks using Essbase Command Line Interface.
 
@@ -267,7 +267,7 @@ The file Sample_Basic.xlsx will be imported using CLI and form the starting poin
 
     ![](./images/image14_93.png)
 
-## **Step 4:** REST APIs
+## Task 4: REST APIs
 
 Using the REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over secured HTTP.
 

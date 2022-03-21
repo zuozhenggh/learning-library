@@ -23,7 +23,7 @@ As an application developer,
    - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-prepare-private-network).
 
 
-## STEP 1: Instances Setup
+## Task 1: Instances Setup
 
 - Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
@@ -52,7 +52,7 @@ As an application developer,
 
 - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
-## STEP 2: Download sample python application
+## Task 2: Download sample python application
 
 - In your developer client ssh session,
 
@@ -79,7 +79,7 @@ As an application developer,
     ```
 
 
-## STEP 3: Transfer database wallet to developer client
+## Task 3: Transfer database wallet to developer client
 
 - Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
@@ -110,7 +110,7 @@ As an application developer,
     ![](./images/atpd5.png " ")
 
 
-## STEP 4: Run your python application
+## Task 4: Run your python application
 
 Now that you have successfully SCP'd the encryption to your client machine, let's connect to our linux host, unzip the wallet and update sqlnet.ora file to point to the wallet folder.
 

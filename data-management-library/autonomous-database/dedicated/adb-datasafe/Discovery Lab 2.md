@@ -18,7 +18,7 @@ In this lab, you learn how to do the following:
 7. In Oracle Data Safe, run the verification test again against your database, but this time use the Data Discovery wizard. Observe the verification findings. Do you need to do anything to your sensitive data model?
 8. If needed, manually update your sensitive data model from the Library so that it accurately reflects your target database.
 
-## STEP 1: Connect to ATP-D DB using SQL Developer Web
+## Task 1: Connect to ATP-D DB using SQL Developer Web
 
 Refer Step 5 from [Lab - Assess Users with Oracle Data Safe](https://github.com/labmaterial/adbguides-dev/blob/master/adb-datasafe/Assessment%20Lab%202.md)
 
@@ -37,7 +37,7 @@ Next, in SQL Developer, add a column to the `EMPLOYEES` table in your database
 ```
 - Keep this tab open because you return to it in a later step.
 
-## STEP 2: Verify your sensitive data model
+## Task 2: Verify your sensitive data model
 
 Sign in to Oracle Data Safe with your OCI credentials
 
@@ -62,7 +62,7 @@ The verification job is started.
 - Click **Continue**.
    ![](./images/Img45.png " ")
   
-## STEP 3: Change your sensitive data model
+## Task 3: Change your sensitive data model
 
 Manually add the AGE column to your sensitive data model
 
@@ -80,7 +80,7 @@ Manually add the AGE column to your sensitive data model
 - Click **Save and Continue**.
 - Click **Exit**.
 
-## STEP 4: Drop the AGE column in your database
+## Task 4: Drop the AGE column in your database
 
 - Return to SQL Developer Web.
 - On the SQL Worksheet, run the following commands to drop the `HCM1.EMPLOYEES.AGE` column.
@@ -101,7 +101,7 @@ Manually add the AGE column to your sensitive data model
 - Notice that the `AGE` column is gone and you receive an "Invalid Identifier" message when you run the command.
 - If the AGE column is still there, click the **Refresh** button to refresh the table.
 
-## STEP 5: Verify your sensitive data model 
+## Task 5: Verify your sensitive data model 
 
 Verify your sensitive data model against the database again, but this time using the Data Discovery wizard
 
@@ -120,7 +120,7 @@ Verify your sensitive data model against the database again, but this time using
 - Expand **Missing sensitive columns**, and then `HCM1`. The Data Discovery wizard identifies the `AGE` column as missing from the database.
    ![](./images/Img53.png " ")
 
-## STEP 6: Update your sensitive data model from the Library
+## Task 6: Update your sensitive data model from the Library
 
 You can manually update your sensitive data model while continuing to work in the Data Discovery wizard. In which case, you simply deselect your sensitive column and save your sensitive data model. This part, however, shows you another way to do it from the Library.
 - Click **Exit** to exit the Data Discovery wizard.

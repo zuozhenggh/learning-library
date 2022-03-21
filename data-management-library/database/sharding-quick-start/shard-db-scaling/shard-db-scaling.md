@@ -4,13 +4,13 @@
 
 You can scale the shard database with no impact to the application and with zero downtime.
 
-Estimated Lab Time: 45 minutes.
+Estimated Lab Time: 45 minutes
 
 ### Objectives
 
-In this lab, you will perform the following steps:
+In this lab, you will:
 - Scale the shard database.
--  Verify the New Shard.
+- Verify the New Shard.
 - Run the demo application again
 
 ### Prerequisites
@@ -20,59 +20,59 @@ This lab assumes you have already completed the following:
 - Create the app schema
 - Deploy the demo applications
 
-## **STEP 1:** Scale the shard database
+## Task 1: Scale the Shard Database
 
 1. From the OCI console, click on the left hamburger navigation Menu. Choose **Resource Manager** under **Solutions and Marketplace**.
 
-    ![image-20210124085747424](images/image-20210124085747424.png)
+    ![image-resource-manager](images/image-resource-manager.png)
    
 2. Select the stack that you created in the previous lab.
 
-    ![image-20210124090020578](images/image-20210124090020578.png)
+    ![image-stacks](images/image-stacks.png)
 
 3. Click on **Edit Stack**.
 
-    ![image-20210124090236164](images/image-20210124090236164.png)
+    ![image-edit-stack](images/image-edit-stack.png)
 
 4. Click **Next**.
 
-    ![image-20210124090609055](images/image-20210124090609055.png)
+    ![image-next](images/image-next.png)
 
 5. There are two variables that can be modified in the stack: Number of the shard database and number of the shard director.
 
-    ![image-20210124090935424](images/image-20210124090935424.png)
+    ![image-shard-config](images/image-shard-config.png)
 
 6. Shard database and shard director can be scaled in (increased) or out (decreased) based on user requirements without affecting the application. In this workshop, we will only increase the number of the shard database. Modify the number of the shard database to 3 and click **Next**.
 
-    ![image-20210124091339120](images/image-20210124091339120.png)
+    ![image-number-of-shard](images/image-number-of-shard.png)
 
 7. Review the changed variables and click **Save Changes**.
 
-    ![image-20210124091434041](images/image-20210124091434041.png)
+    ![image-save-change](images/image-save-change.png)
 
 8. Click on **Terraform Actions**, then click **Apply**.
 
-    ![image-20210124091753503](images/image-20210124091753503.png)
+    ![image-apply-job](images/image-apply-job.png)
 
 9. Accept the default values and click **Apply** in the pop up window.
 
-    ![image-20210124091907385](images/image-20210124091907385.png)
+    ![image-click-apply](images/image-click-apply.png)
 
 10. The Job is running.
 
-    ![image-20210124092110914](images/image-20210124092110914.png)
+    ![image-running-job](images/image-running-job.png)
 
 11. Wait about 20 minutes, the shard scaling job will complete, click **Output** 
 
-    ![image-20210124094145202](images/image-20210124094145202.png)
+    ![image-job-complete](images/image-job-complete.png)
     
 12. You can found the third shard database was added, and the public ip is in the output page.
 
-    ![image-20210124095448949](images/image-20210124095448949.png)
+    ![image-confirm-the-3rd-ip](images/image-confirm-the-3rd-ip.png)
 
     
 
-## **STEP 2:** Verify the New Shard.
+## Task 2: Verify the New Shard
 
 1. Connect to the shard director host, Run the GDSCTL command.
 
@@ -212,9 +212,9 @@ This lab assumes you have already completed the following:
 
    
 
-## **STEP 3:** Run the Demo Application
+## Task 3: Run the Demo Application
 
-2. Connect to the catalog database as sysdba with sqlplus. Using your own sys user password.
+1. Connect to the catalog database as sysdba with sqlplus. Using your own sys user password.
 
     ```
     [oracle@sdbsd0 ~]$ <copy>sqlplus sys/sdwAf1Z82_wX5M_vm_0@sdbsc0:1521/sdbpdb as sysdba</copy>
@@ -234,7 +234,7 @@ This lab assumes you have already completed the following:
    
    
    
-3. Manually update the monitored shard list. The package `dbms_global_views` is used by the monitor tools to monitor the status of shards. It will create a public `shard_dblinks_view` and a public dblink to each shard. If you skip this step, the monitor tools will not show the status of the latest added shard database. 
+2. Manually update the monitored shard list. The package `dbms_global_views` is used by the monitor tools to monitor the status of shards. It will create a public `shard_dblinks_view` and a public dblink to each shard. If you skip this step, the monitor tools will not show the status of the latest added shard database. 
 
     ```
     SQL> <copy>exec dbms_global_views.create_all_database_links();</copy>
@@ -246,7 +246,7 @@ This lab assumes you have already completed the following:
    
    
    
-4. Exit the sqlplus.
+3. Exit the sqlplus.
 
     ```
     SQL> <copy>exit</copy>
@@ -257,7 +257,7 @@ This lab assumes you have already completed the following:
 
    
 
-5. Change the directory to `sdb_demo_app`. 
+4. Change the directory to `sdb_demo_app`. 
 
     ```
     [oracle@sdbsd0 ~]$ <copy>cd sdb_demo_app</copy>
@@ -266,7 +266,7 @@ This lab assumes you have already completed the following:
 
    
 
-6. Start the workload by executing command:
+5. Start the workload by executing command:
 
     ```
     [oracle@sdbsd0 sdb_demo_app]$ <copy>./run.sh demo</copy>
@@ -274,7 +274,7 @@ This lab assumes you have already completed the following:
 
    
 
-7. The result looks like the following. Wait several minutes, compare the APS values with the previous 2 sharded database. (Note: due to the application deployed in the shard director VM, you can scale the director VM to a larger shape to improve the performance)
+6. The result looks like the following. Wait several minutes, compare the APS values with the previous 2 sharded database. (Note: due to the application deployed in the shard director VM, you can scale the director VM to a larger shape to improve the performance)
 
     ```
     RO Queries | RW Queries | RO Failed  | RW Failed  | APS 
@@ -297,7 +297,7 @@ This lab assumes you have already completed the following:
 
    
 
-8. Open another terminal, connect to the catalog host, switch to oracle user. Change the directory to `sdb_demo_app`.
+7. Open another terminal, connect to the catalog host, switch to oracle user. Change the directory to `sdb_demo_app`.
 
     ```
     $ ssh -i labkey opc@xxx.xxx.xxx.xxx
@@ -313,7 +313,7 @@ This lab assumes you have already completed the following:
 
    
 
-9. Start the monitoring tool via the following command. (Note: due to the resource limit, start monitor may impact the application performance).
+8. Start the monitoring tool via the following command. (Note: due to the resource limit, start monitor may impact the application performance).
 
     ```
     [oracle@sdbsd0 sdb_demo_app]$ <copy>./run.sh monitor</copy>
@@ -325,18 +325,23 @@ This lab assumes you have already completed the following:
 
    
 
-10. From you laptop, launch a browser and use the URL: `http://xxx.xxx.xxx.xxx:8081`. Using the public ip address of the shard director host and the port number is 8081.
+9. From you laptop, launch a browser and use the URL: `http://xxx.xxx.xxx.xxx:8081`. Using the public ip address of the shard director host and the port number is 8081.
 
-    ![image-20210124103206554](images/image-20210124103206554.png)
-
-   
-
-11. Scroll down the screen, you can see the Last inserted orders:
-
-    ![image-20210124103246650](images/image-20210124103246650.png)
+    ![image-app-monitor](images/image-app-monitor.png)
 
    
 
-12. Press `Ctrl+C` to cancel the demo in both of the terminal.
+10. Scroll down the screen, you can see the Last inserted orders:
+
+    ![image-last-inserted-orders](images/image-last-inserted-orders.png)
+
+   
+
+11. Press `Ctrl+C` to cancel the demo in both of the terminal.
 
 You may now [proceed to the next lab](#next).
+
+## Acknowledgements
+* **Author** - Minqiao Wang, DB Product Management, Jan 2021
+* **Last Updated By/Date** - Minqiao Wang, Jul 2021
+* **Workshop Expiry Date** - Jul 2022

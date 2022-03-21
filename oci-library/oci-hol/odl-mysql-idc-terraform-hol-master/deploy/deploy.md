@@ -6,7 +6,7 @@ In this lab, you will deploy your infrastructure code to Oracle Cloud.
 
 Estimated Lab Time: 5 minutes
 
-## **STEP 1**: Environment Initialization 
+## Task 1: Environment Initialization 
 
 1. The `terraform init` command is used to initialize a working directory containing Terraform configuration files. 
 This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. 
@@ -22,7 +22,7 @@ This is the first command that should be run after writing a new Terraform confi
 
     ⚠️ verify that you are in the correct directory (the one cloned from GitHub where you created the `terraform.tfvars` file.
 
-## **STEP 2**: Execution Plan
+## Task 2: Execution Plan
 
 1. The `terraform plan` command is used to create an execution plan. Terraform will determine what actions are necessary to achieve the desired 
 state specified in the configuration files. In our case, a VCN, gateways, compute instances, firewall rules, ... all should be planned:
@@ -35,7 +35,7 @@ state specified in the configuration files. In our case, a VCN, gateways, comput
 
     💡 You can see how many operations are required: new resources, changed resources and resource to destroy.
 
-## **STEP 3**: Deployment
+## Task 3: Deployment
 
 1. It's finally time to deploy our code to Oracle Cloud Infrastructure. We use `terraform apply`, this is the command used to apply the changes required to reach 
 the desired state of the configuration (see `terraform plan`).

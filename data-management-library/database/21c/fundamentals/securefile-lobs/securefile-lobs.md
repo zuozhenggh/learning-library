@@ -38,7 +38,7 @@ In this lab, you will:
 
 
 <if type="dbcs">
-## **STEP 1:** Create a table with a SecureFile LOB
+## Task 1: Create a table with a SecureFile LOB
 
 1. Execute a shell script that creates a tablespace with sufficient space to let the LOB grow and be candidate for shrinking.
 
@@ -98,7 +98,7 @@ In this lab, you will:
     ```
 </if>
 <if type="atp">
-## **STEP  1**: Login to SQL Developer Web on ADB
+## Task 1: Login to SQL Developer Web on ADB
 There are multiple ways to access your Autonomous Database.  You can access it via SQL\*Plus or by using SQL Developer Web.  To access it via SQL\*Plus, skip to [Step 1B](#STEP1B:LogintoADBusingSQLPlus).
 
 1.  If you aren't still logged in, login to your ADB screen by clicking on the Hamburger Menu and selecting the Autonomous Database flavor you selected (ATP, ADW or AJD). Otherwise skip to the next step.
@@ -111,22 +111,22 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 4.  Click on the **Tools** tab, select **Database Actions**, a new browser will open up.
       ![](../set-operators/images/tools.png " ")
 
-5.  Login with the *hr* user, click **Next**.  Enter the password *WElcome123##* 
+5.  Login with the *hr* user, click **Next**.  Enter the password *WElcome123##*
 6.  Click on the **SQL** button.
 
-## **STEP  1B**: Login to ADB using SQL Plus
+## Task 1B: Login to ADB using SQL Plus
 1. If you aren't logged into the cloud, log back in
-2. Open up Cloud Shell 
+2. Open up Cloud Shell
 3. Connect to the HR user using SQL\*Plus by entering the commands below.
-   
+
     ```
     export TNS_ADMIN=$(pwd)/wallet
     sqlplus /nolog
-	conn hr/WElcome123##@adb1_high
-	```
+	  conn hr/WElcome123##@adb1_high
+	  ```
 </if>
 
-## **STEP 2:** Shrink the SecureFile LOB after rows inserted and updated
+## Task 2: Shrink the SecureFile LOB after rows inserted and updated
 
 <if type="atp">
 1.  Create a Large Object table
@@ -142,7 +142,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 1. Insert rows, update the CLOB data and commit.
 
 <if type="dbcs">
-    
+
     ```
     SQL> <copy>INSERT INTO hr.t1 values ('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');</copy>
     1 row created.
@@ -174,7 +174,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
     ```
 </if>
 <if type="atp">
-    
+
     ```
     SQL> <copy>INSERT INTO hr.t1 values ('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');</copy>
     SQL> <copy>INSERT INTO hr.t1 Select * from hr.t1;</copy>
@@ -192,7 +192,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 <if type="dbcs">
     ````
     SQL> <copy>ALTER TABLE hr.t1 MODIFY LOB(a) (SHRINK SPACE);</copy>
-    
+
     Table altered.
 
     SQL>
@@ -242,7 +242,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
   As a result, two blocks are freed.
 </if>
 
-## **STEP 3:** Shrink the SecureFile LOB after rows updated
+## Task 3: Shrink the SecureFile LOB after rows updated
 
 1. Update the CLOB.
 
@@ -268,7 +268,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 </if>
 
 <if type="atp">
-    
+
     ```
     SQL> <copy>UPDATE hr.t1 SET a=a||a||a||a||a||a||a;</copy>
     SQL> <copy>UPDATE hr.t1 SET a=a||a||a||a||a||a||a;</copy>
@@ -360,7 +360,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 4. Update the CLOB.
 
 <if type="dbcs">
-    
+
     ```
     SQL> <copy>UPDATE hr.t1 SET a=a||a;</copy>
 
@@ -375,7 +375,7 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
 </if>
 <if type="atp">
-    
+
     ```
     SQL> <copy>UPDATE hr.t1 SET a=a||a;</copy>
     SQL> <copy>COMMIT;</copy>
@@ -390,11 +390,13 @@ There are multiple ways to access your Autonomous Database.  You can access it v
 
     ```
     SQL> <copy>ALTER TABLE hr.t1 MODIFY LOB(a) (SHRINK SPACE);</copy>
-    <if type="atp">
+
     ```
+    <if type="atp">
     ![](./images/step3-4.png " ")
     </if>
     <if type="dbcs">
+    ```
     Table altered.
 
     SQL>
@@ -465,5 +467,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Didi Han, Database Product Management
-* **Last Updated By/Date** -  Didi Han, April 2021
-
+* **Last Updated By/Date** -  Tom McGinn, July 2021

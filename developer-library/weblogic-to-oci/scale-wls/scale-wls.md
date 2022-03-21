@@ -20,7 +20,7 @@ Estimated Completion Time: 20 minutes
 
 - To have deployed the WebLogic on OCI stack successfully
 
-## **STEP 1:** Scaling the number of nodes
+## Task 1: Scaling the number of nodes
 
 > **Note:** If you changed a node shape manually, any change using the variables and re-applying to the stack will revert node shapes to their original shape defined at provisioning time.
 
@@ -52,7 +52,7 @@ Estimated Completion Time: 20 minutes
 
 7. Go check the Admin Console under **Environment -> Servers** to verify an server was added
 
-## **STEP 2:** Scaling a node by changing shape
+## Task 2: Scaling a node by changing shape
 
 > **Note:** Beware that manual node shape changes will be overriden when applying changes through the Resources Manager, like when scaling the number of nodes. It is recommended to scale the number of nodes rather than change the shape of the nodes, but we'll show this process for reference.
 

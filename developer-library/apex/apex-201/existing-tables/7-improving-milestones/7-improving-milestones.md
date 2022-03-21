@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, you will learn how to update and then save the layout of an *Interactive Grid* to improve your Milestones.
 
-## **STEP 1** - Change the Name Column
+## Task 1: Change the Name Column
 In your runtime environment, click on **Milestones** and then double-click a record, you can edit the details. Navigate to each column and notice that the Project column is a select list, the Name and Description columns are textareas, and the Due Date is a date picker. Generally, the Name is not that long; therefore, you should update the column type to a text field.
 
 1. Navigate to the App Builder.
@@ -19,7 +19,7 @@ In your runtime environment, click on **Milestones** and then double-click a rec
 
     ![](images/view-name.png " ")
 
-## **STEP 2** - Update the Grid Layout
+## Task 2: Update the Grid Layout
 Once again reviewing the report, it would be beneficial to rearrange the columns into the following order - Name, Project, Due Date, and then Description. It would also be useful to freeze the Name column so users can scroll left and right to see more of the Description column.
 
 1. In the Runtime environment, click **Actions**, and then click **Columns**
@@ -64,7 +64,7 @@ Once again reviewing the report, it would be beneficial to rearrange the columns
 
     ![](images/freeze-display.png " ")
 
-## **STEP 3** - Save the Report
+## Task 3: Save the Report
 The changes you have made to the grid layout are only visible to you. If other users log in, they will see the original layout with the previous column order and column sizes. Therefore, you need to save the Default report layout.
 
 1. In the runtime environment, click **Actions**, select **Report**, and then select **Save**.  

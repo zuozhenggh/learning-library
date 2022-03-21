@@ -29,7 +29,7 @@ _Estimated Lab Time:_ 40 minutes
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
 
-## **STEP 1**: Certify and Index your Data Set
+## Task 1: Certify and Index your Data Set
 
 1. **Search** for your Data Set.  
 In order to ask questions using the Data Set, you need to **index** the Data Set to **enable the searching**, to choose a **Language** and  **Indexing Schedule**.  
@@ -68,7 +68,7 @@ Note: if you are still on the previous lab, you can quickly Go Back ![Go Back](.
   
    ![Home Page](../ask-direct-questions/images/navigatorhome.png)
 
-## **STEP 2**: Ask Questions about your data
+## Task 2: Ask Questions about your data
 
 1. **BI Ask**.  
 In the **Home** Page of OAC, a dialog bar appearing at the top can be leveraged to **ask** plain English language questions on the data.
@@ -104,7 +104,7 @@ In the **Home** Page of OAC, a dialog bar appearing at the top can be leveraged 
 
    ![Visualize Data](../ask-direct-questions/images/biaskexploreasprojectsmall.png)
 
-## **STEP 3**: Day by Day
+## Task 3: Day by Day
 
    We should be able to get our questions answered at anytime and anywhere even when we are on the go. We should be able to move from desktop to mobile seemly, ask the same questions, get the same results and more.
 
@@ -194,7 +194,7 @@ Choose a visual, click on the 3 dots and select **Comments**. Speak or type “*
     ![Comment](../ask-direct-questions/images/daybydaycomment.png)
     Note: see “**1 comment**” ![Comment](../ask-direct-questions/images/daybydaycomment1small.png) at the bottom of the feed
 
-## **STEP 4**: Troubleshoot and Fine-Tune Searches
+## Task 4: Troubleshoot and Fine-Tune Searches
 
 This topic  briefly describes common problems and suggestions to fine-tune your searches.
 1. **Connectivity** issues.  

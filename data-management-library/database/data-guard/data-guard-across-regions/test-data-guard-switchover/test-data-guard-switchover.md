@@ -9,7 +9,7 @@ Estimated wait time: 15 minutes for Switchover
 ### Objective
 - Perform a switchover
 
-## **STEP 1:** Test Switchover
+## Task 1: Test Switchover
 1. Navigate to the Data Guard Associations of the primary database.
 
 2. Click the 3-dot action menu on right and select Switchover

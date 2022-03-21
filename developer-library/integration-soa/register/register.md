@@ -24,7 +24,7 @@ This lab assumes you have:
     - Lab: Initialize Environment
     - Lab: Develop SOA Composite App Validate Payment
 
-## **STEP 1**:  Create a Service Bus Application and New Project **Validate Payment**.
+## Task 1:  Create a Service Bus Application and New Project **Validate Payment**.
 
 1. Create a new Service Bus application. There are various ways and shortcuts to do this, and in this case choose **File** > **New** > **Application**... from the menu.
 2. From the Categories tree, click on **General** > **Applications**
@@ -67,7 +67,7 @@ The Overview Editor below is a new view for Service Bus in SOA Suite 12c, and mo
 
 ![](./images/continue-to-create-application-wizard.png " ")
 
-## **STEP 2**: Create Folders and Import Artifacts, WSDL and XSD Resource Click **Create App**.
+## Task 2: Create Folders and Import Artifacts, WSDL and XSD Resource Click **Create App**.
 
 In Service Bus applications, Folders are leveraged to organize artifacts within a Project. For brand new applications, we encourage you to create folders that align with the default folders in your Composite application.
 
@@ -140,7 +140,7 @@ A wizard takes you through the steps of importing resources into your project. T
 
     ![](./images/sb12.png " ")
 
-## **STEP 3**: Configure a Business Service for the ValidatePayment Composite and Review Properties.
+## Task 3: Configure a Business Service for the ValidatePayment Composite and Review Properties.
 
 In this section, you will configure a Business Service to represent your validatePayment composite. There are different ways to create artifacts in Service Bus in JDeveloper:
 - Right-click menu from the left-hand Application Navigator (traditional approach)
@@ -176,7 +176,7 @@ A wizard will walk you through the steps of configuring the Business Service. Th
 
 8. Click **Ok**.
 
-    ![](./images/CreateBusinessService.png " ")
+    ![](./images/WSDLs.png " ")
 
 9. Confirm that ValidationPaymentPort is selected in the Port field when you return back to the wizard.
 10. Click **Next**
@@ -193,7 +193,7 @@ A wizard will walk you through the steps of configuring the Business Service. Th
 
     ![](./images/createbizsvc6.png " ")
 
-To find the composite deployment URI from the instance graphical desktop session, launch the included FireFox browser, then go to the [EM console](http://localhost:7101/em) and navigate to your composite.
+To find the composite deployment URI from the instance graphical desktop session, launch the Chrome browser, then go to the [EM console](http://localhost:7101/em) with **Username : weblogic** ,**Password : welcome1** and navigate to your composite. 
 
 16. Click the **Test** icon on the top right of screen. This will bring up a Web Service test page that lists your deployed endpoint.
 
@@ -205,7 +205,7 @@ To find the composite deployment URI from the instance graphical desktop session
 
     ![](./images/createbizsvc8.png " ")
 
-## **STEP 4**: Configure Proxy and Pipeline and Wire to the Business Service.
+## Task 4: Configure Proxy and Pipeline and Wire to the Business Service.
 
 For references on this step, please review starting page 71 on the tutorial document.
 
@@ -255,7 +255,7 @@ You could add some actions to the Pipeline to validate, transform the payload or
 
 12. Click the **Save All** icon on top left of your screen.
 
-## **STEP 5**: Run Diagnostic of the Composite Application.
+## Task 5: Run Diagnostic of the Composite Application.
 
 **IMPORTANT:** The server was started in *Lab: Initialize Environment* and should be RUNNING for this deployment and end-to-end test to be successful. If your server is down for some reasons, please bring it back up before attempting deployment.
 
@@ -269,7 +269,7 @@ This will bring up your overview and refresh the canvas.
 
     ![](./images/Deploy-and-Test.png " ")
 
-## **STEP 6**:   Test Console
+## Task 6:   Test Console
 
 1. The Test Console will activate as one of your windows in JDeveloper on Windows. On Linux, this may start a new browser window outside of JDeveloper. Make this window active by clicking on the title bar.
 
@@ -304,5 +304,5 @@ To find more detail about Service Bus, Enterprise Service Bus - please go to thi
 
 ## Acknowledgements
 * **Author** - Daniel Tarudji
-* **Contributors** - Meghana Banka, Rene Fontcha, Kamryn Vinson
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
+* **Contributors** - Meghana Banka, Rene Fontcha, Kamryn Vinson, Sahaana Manavalan
+* **Last Updated By/Date** - Sahaana Manavalan, LiveLabs Developer, NA Technology, February 2022 

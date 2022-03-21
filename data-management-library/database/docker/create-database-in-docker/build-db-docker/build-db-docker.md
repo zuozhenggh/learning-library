@@ -14,7 +14,7 @@ This lab walks you through the steps to build an Oracle Database Docker image on
 * SSH keys
 * Docker installed on an Oracle Cloud compute instance.
 
-## **STEP 1**: Install Docker build files from GitHub
+## Task 1: Install Docker build files from GitHub
 
 Oracle has provided a complete set of Docker build files on an Oracle GitHub repository. There are several ways to get the files to the compute instance, but for simplicity, you will use GitHub's download option.
 
@@ -37,7 +37,7 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 
     ![](images/unzip-main.png)
 
-## **STEP 2**: Upload Oracle Database zip to your compute instance
+## Task 2: Upload Oracle Database zip to your compute instance
 
 1. Navigate to the folder where you want to put your image zip file.
     ```
@@ -52,7 +52,7 @@ Oracle has provided a complete set of Docker build files on an Oracle GitHub rep
 
   ![](images/download_PAR.png " ")
 
-## **STEP 3**: Build the Docker image
+## Task 3: Build the Docker image
 
 1. Change directories to the `dockerfiles` directory:
 

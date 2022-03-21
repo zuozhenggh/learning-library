@@ -28,7 +28,7 @@ In this lab, you will:
 * Provisioned an Oracle Database 21c Instance
 * Have successfully completed the Setup lab
 
-## **STEP 1:** Connect to ADB with SQL Developer Web
+## Task 1: Connect to ADB with SQL Developer Web
 
 Please proceed to next step if you are already connected to Autonomous Database with SQL Developer Web as a ADMIN user.
 
@@ -62,7 +62,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 
 	![](./images/step1-8.png " ")
 
-## **STEP 2:** Create a blockchain table and insert rows
+## Task 2: Create a blockchain table and insert rows
 
 1. The `CREATE BLOCKCHAIN TABLE` statement requires additional attributes. The `NO DROP`, `NO DELETE`, `HASHING USING`, and `VERSION` clauses are mandatory.
 
@@ -153,7 +153,7 @@ Please proceed to next step if you are already connected to Autonomous Database 
 
 	![](./images/step2-8.png " ")
 
-## **STEP 3:** Manage blockchain tables and rows in a blockchain table
+## Task 3: Manage blockchain tables and rows in a blockchain table
 
 When you try to manage the rows using update, delete, truncate you get the error `operation not allowed on the blockchain table` if the rows are not outside the retention period.
 
@@ -242,7 +242,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 	![](./images/step3-8.png " ")
 
-## **STEP 4:** Verify rows without signature
+## Task 4: Verify rows without signature
 
 1. Verify the rows in blockchain table using DBMS\_BLOCKCHAIN\_TABLE.VERIFY_ROWS.
 
@@ -275,7 +275,7 @@ Similar to managing rows within the retention period, managing the blockchain ta
 
 	![](./images/step4-2.png " ")
 
-## **STEP 5:** Create a certificate directory and add your certificate
+## Task 5: Create a certificate directory and add your certificate
 
 In this lab, we will mock the key management service (a feature of Oracle that stores the keys securely) by generating the keys in Oracle Cloud Shell and storing them on Autonomous Database instance and Object storage as storing keys securely is not the main focus of this lab.
 
@@ -397,7 +397,7 @@ In this lab, we will mock the key management service (a feature of Oracle that s
 
 	![](./images/step5-10.png " ")
 
-## **STEP 6**: Sign a row and verify the rows with signature
+## Task 6: Sign a row and verify the rows with signature
 
 1. Query the Blockchain table and make note of the `ORABCTAB_INST_ID$`, `ORABCTAB_CHAIN_ID$` and `ORABCTAB_SEQ_NUM$` column values for the row you want to sign.
 

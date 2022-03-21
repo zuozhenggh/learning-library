@@ -39,7 +39,7 @@ In this lab, you will:
 * An Oracle Free Tier or Paid Account
 * A Google Account
 
-## **STEP 1**: Configure Google
+## Task 1: Configure Google
 
 * *Personas*:
     - Administrator
@@ -88,7 +88,7 @@ In order to use Google as an IdP for IDCS, we need to obtain Auth 2.0 credential
     ![Image](images/L3008.png)
 
 
-## **STEP 2:** Configure IDCS
+## Task 2: Configure IDCS
 
 * *Personas*:
     - Administrator
@@ -138,7 +138,7 @@ Now return to *IDCS* and enter the provider parameter values in order to configu
 13.	Your Gmail account is now linked to your IDCS account. Click *Sign Out* in order to sign out from IDCS.
     ![Image](images/L3020.png)
 
-## **STEP 3:** Verify Social Login
+## Task 3: Verify Social Login
 
 * *Personas*:
     - End User

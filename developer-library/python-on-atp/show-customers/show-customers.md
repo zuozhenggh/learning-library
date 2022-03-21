@@ -8,7 +8,7 @@
 
 Marketing is also interested in a map like interface to assess and establish sales and sales forecasts for new proposed sales regions, which are defined in shape files that are maintained in marketing systems.  There was concern that merging and processing external shape files with online Oracle Autonomous Transaction Processing Database customer data on the fly would be complicated and time consuming, but again Oracle's extensive Spatial support that has been developed over decades and used by Oracle's largest enterprise customers has recently been added to Autonomous Databases, is a good fit for this use case.  Derek will take those shape files and display them as regions on the map, and identify and display customers in those regions, and derive sales from within those.  He will use the GeoPandas Python extension, and Oracle's native Spatial functions in the Autonomous Transaction Processing Database.
 
-## **Step 1:** Plot customer based on region
+## Task 1: Plot customer based on region
 
 1. If you closed the terminal, open it again and make sure to be in virtual env. Run the command
   ```
@@ -40,8 +40,6 @@ Finally you created a pair of spatial applications that utilized the GeoPandas e
 
 ## Acknowledgements
 
-- **Authors/Contributors** - Derrick Cameron
-- **Last Updated By/Date** - Kay Malcolm, April 2020
-- **Workshop Expiration Date** - April 31, 2021
-
+- **Authors/Contributors** - Varun Yadav
+- **Last Updated By/Date** - Varun Yadav, July 2021
 

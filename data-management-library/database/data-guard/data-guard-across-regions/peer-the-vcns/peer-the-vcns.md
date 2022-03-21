@@ -28,7 +28,7 @@ Estimated lab time: 10 minutes
 - Oracle Database Cloud Service created in your primary region
 
 
-## **STEP 1:** Create the Dynamic Routing Gateways
+## Task 1: Create the Dynamic Routing Gateways
 1. Create the DRGs in both VCNs.  
 
 2. Select a region to start with.  You can pick either the primary side or the standby.
@@ -47,7 +47,7 @@ Estimated lab time: 10 minutes
   ![drg-create](./images/drg-create-copy.png)
 
 
-## **STEP 2:** After creating the DRG, you must attach it to your VCN
+## Task 2: After creating the DRG, you must attach it to your VCN
 
 1. Navigate to your VCN details, select Dynamic Routing Gateways, and click Attach Dynamic Routing Gateways
 
@@ -55,10 +55,10 @@ Estimated lab time: 10 minutes
 
   ![attach-drg](./images/attach-drg-copy.png)
 
-## **STEP 3:** Do the same steps above in your second region
+## Task 3: Do the same steps above in your second region
 
 
-## **STEP 4:** Now let's create the Remote Peering Connections in both VCNs
+## Task 4: Now let's create the Remote Peering Connections in both VCNs
 
 1. Create the Remote Peering Connections in both VCNs.
 
@@ -80,9 +80,9 @@ Estimated lab time: 10 minutes
 
 
 
-## **STEP 5:** Now do the same on the other DRG in the other region
+## Task 5: Now do the same on the other DRG in the other region
 
-## **STEP 6:** Establish connection
+## Task 6: Establish connection
 Once you have both DRGs and RPCs created.  You must decide which side accepts a connection, and which side requests a connection.
 
 For our lab, we'll use the standby side as the acceptor, and the primary side as the requestor.  

@@ -18,7 +18,7 @@ Estimated Lab Time: 2 hour
 * If you need to test MDS Heatwave (Step 5 of Lab), spin up MDS instance with shape - MySQL.HeatWave.VM.Standard.E3
 
 
-## **STEP 1:** Create MDS Instance on OCI
+## Task 1: Create MDS Instance on OCI
 1. Please login to OCI Console and click MySQL > DB Systems. And click Create MySQL DB System.
 
     ![](./images/1.png "")
@@ -35,7 +35,7 @@ Estimated Lab Time: 2 hour
 
     ![](./images/4.png "")
 
-## **STEP 2:** OCI CLI & MySQL Shell Setup
+## Task 2: OCI CLI & MySQL Shell Setup
 
 ### **OCI CLI Setup**
 1. Please ssh in your primary instance. Run the following command in the terminal. For more information on how to setup OCI CLI for Ubuntu - [link](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/climanualinst.htm)
@@ -221,7 +221,7 @@ Estimated Lab Time: 2 hour
     </copy>
     ```
 
-## **STEP 3:** Migrating Database to MDS
+## Task 3: Migrating Database to MDS
 
 1. For database migration, you would use MySQL Shell and Object Storage as repository for database dump during the migration process. You would need to create bucket in Object Storage. Go to your OCI Console and create bucket as shown below. 
 
@@ -281,7 +281,7 @@ Estimated Lab Time: 2 hour
     MySQL  10.0.0.99:3306 ssl JS> GRANT ALL PRIVILEGES ON oscommerce.* TO oscommerce@'%';
     ```
 
-## **STEP 4:** Connecting your E-Commerce App with MDS
+## Task 4: Connecting your E-Commerce App with MDS
 
 1. Now, you would need to update the global.php file of the OsCommerce application to point to the MDS Database. Run the following command in the terminal.
 
@@ -313,7 +313,7 @@ Estimated Lab Time: 2 hour
 
 5. Congrats! You've successfully connected your primary instance of the E-Commerce application with MDS. You can repeat step 4 of this lab for your secondary instance.
 
-## **STEP 5:** Enabling Heatwave Cluster [Optional]
+## Task 5: Enabling Heatwave Cluster [Optional]
 
 1. When a HeatWave cluster is enabled, queries that meet certain prerequisites are automatically offloaded from the MySQL DB System to the HeatWave cluster for accelerated execution. In order to enable the heatwave cluster, go to your OCI Console and Open your MDS MySQL Database. From resources select Heatwave and click enable Heatwave cluster. Select the minimum number of nodes as 2 and click create.
 

@@ -20,7 +20,7 @@ Estimated Lab Time: 10 minutes
 4. [Familiarity with Compartment](https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm)
 5. [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
  
-## **STEP 1**: Create a Virtual Cloud Network
+## Task 1: Create a Virtual Cloud Network
 
 In this step, you will create a *Virtual Cloud Network (VCN)*, i.e. a software-defined private network in the Oracle Cloud Infrastructure. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Tasks/managingVCNs.htm) for more details on VCN.
 
@@ -67,7 +67,7 @@ You still need to do one thing, i.e. configure a security rule to allow requests
 
 You now have a VCN properly configured, you can move on to the next step.
 
-## **STEP 2**: Provision a Compute Instance
+## Task 2: Provision a Compute Instance
 
 In this step, you will configure and provision a *Compute Instance* that will be used to test new Java features.
 
@@ -134,7 +134,7 @@ You will get a message saying "The authenticity of host '158.xxx.xxx.xxx' can't 
 
 
 
-## **STEP 3**: Configure the instance for Java development
+## Task 3: Configure the instance for Java development
 
 
 You now have a VM running Linux on OCI. Next, you will install the latest version of OpenJDK and other tools required for the Lab (Maven, Git, Helidon).

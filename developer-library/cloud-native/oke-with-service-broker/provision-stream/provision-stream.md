@@ -12,7 +12,7 @@ Estimated Time: 10 minutes.
 - Use kubectl to deploy the instance and provision the stream.
 - Tear down the stream instance.
 
-## **STEP 1:** Get the Template Manifests for Streams
+## Task 1: Get the Template Manifests for Streams
 
 1. Download the example templates:
 
@@ -35,7 +35,7 @@ Estimated Time: 10 minutes.
     - OCI Service Broker will then create a secret named `test-stream-binding` containing the access to the stream.
 
 
-## **STEP 2:** Edit the Manifests
+## Task 2: Edit the Manifests
 
 1. Edit `create-oss-instance.yaml` and replace `CHANGE_COMPARTMENT_OCID_HERE` with the compartment OCID of the compartment where you deployed the OKE cluster, and the `CHANGE_PARTITION_COUNT_HERE` with the number of partitions you want (we'll use `1`).
 
@@ -52,7 +52,7 @@ Estimated Time: 10 minutes.
     If you're running this as part of a workshop with multiple users, make sure you modify the name of the bucket to make it unique by replacing the name `teststream` with your unique name both in the `create-oss-instance.yaml` and `create-oss-binding.yaml` files.
 
 
-## **STEP 3:** Deploy
+## Task 3: Deploy
 
 1. To deploy the mainfest use:
 
@@ -64,7 +64,7 @@ Estimated Time: 10 minutes.
 
     This will deploy all the manifests in the `streaming` folder.
 
-## **STEP 4:** Check the Deployment
+## Task 4: Check the Deployment
 
 1. Verify the database instance is being provisioned:
 
@@ -97,7 +97,7 @@ Estimated Time: 10 minutes.
 
 3. You can also check in the OCI console under **Solution and Platforms -> Analytics -> Streaming** in the compartment where you provisioned and you should see the stream named `teststream` (or the unique name you gave it).
 
-## **STEP 5:** Look at the Content of the Secret
+## Task 5: Look at the Content of the Secret
 
 1. You can view the content of the secret by running:
 
@@ -177,7 +177,7 @@ Estimated Time: 10 minutes.
     https://cell-1.streaming.us-ashburn-1.oci.oraclecloud.com
     ```
 
-## **STEP 6:** Usage
+## Task 6: Usage
 
 1. To mount the secret into a pod, use an environment variable like:
 
@@ -281,7 +281,7 @@ Estimated Time: 10 minutes.
     Also:
     - Before tearing down the stack, you will need to remove the security list from the subnet for the subnet to be deprovisioned properly.
 
-## **STEP 7:** Clean Up
+## Task 7: Clean Up
 
 1. To undeploy, and terminate the stream instance, delete the Kubernetes instances:
 

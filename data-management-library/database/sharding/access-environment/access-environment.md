@@ -31,7 +31,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **STEP 1:** Connect to your Instances
+## Task 1: Connect to your Instances
 
 ### MAC or Windows CYGWIN Emulator
 
@@ -77,7 +77,7 @@ This lab assumes you have already completed the following:
 
 8.  Click Open to begin your session with the instance.
 
-## **STEP 2:** Verify the Database is Up
+## Task 2: Verify the Database is Up
 
 1.  From your connected session of choice **tail** the `buildsingle.log`, This file has the configures log of the database.
 

@@ -18,7 +18,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Set up the environment
+## Task 1: Set up the environment
 
 1. Create the `HR` schema. Change the string *password* in the command by your password.
 
@@ -88,7 +88,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 2:** Export the table
+## Task 2: Export the table
 
 Export the `HR.EMPLOYEES` table. Ignore any Database Vault warning.
 
@@ -121,7 +121,7 @@ Export the `HR.EMPLOYEES` table. Ignore any Database Vault warning.
 
   ```
 
-## **STEP 3:** Import the table using the compression parameters
+## Task 3: Import the table using the compression parameters
 
 1. Drop the table in `PDB21`.
 

@@ -19,7 +19,7 @@ Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which p
 * A valid email address
 * Ability to receive SMS text verification (only if your email isn't recognized)
 
-## **STEP 1**: Create Your Free Trial Account
+## Task 1: Create Your Free Trial Account
 
 If you already have a cloud account, skip to **STEP 2**.
 
@@ -70,7 +70,7 @@ If you already have a cloud account, skip to **STEP 2**.
 11. Your account is provisioning and should be available in a few seconds! When it's ready, you're automatically taken to a sign-in page. You'll also receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be notification that provisioning is complete. Here is a copy of the final notification:
        ![](images/account-provisioned.png " ")
 
-## **STEP 2**: Sign in to Your Account
+## Task 2: Sign in to Your Account
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 

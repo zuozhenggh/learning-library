@@ -19,7 +19,7 @@ This lab assumes you have already completed the following:
 - Sharded database deployment
 - Migrate application to sharded database
 
-## **STEP 1:** Add the New Shard
+## Task 1: Add the New Shard
 
 1. Connect to the catalog database host. Switch to oracle user.
 
@@ -200,7 +200,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **STEP 2:** Deploy and Verify the New Shard.
+## Task 2: Deploy and Verify the New Shard.
 
 1. Run the deploy command to add the new shard.
 
@@ -333,7 +333,7 @@ This lab assumes you have already completed the following:
 
     
 
-## **STEP 3:** Run the Demo Application Again
+## Task 3: Run the Demo Application Again
 
 1. Switch to catalog environment.
 

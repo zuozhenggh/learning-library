@@ -18,7 +18,7 @@ Estimated Lab Time: 15 minutes
 * An Oracle Cloud compute instance's Public IP Address
 * SSH keys
 
-## **STEP 1**: Set up the Docker environment
+## Task 1: Set up the Docker environment
 
 Docker is shipped as addon with Oracle Linux 7 UEK4. On Oracle Cloud compute instances, the `addons yum` repository is now enabled by default, so you only need to install the docker-engine package as root.
 
@@ -71,7 +71,7 @@ Docker is shipped as addon with Oracle Linux 7 UEK4. On Oracle Cloud compute ins
 
 Docker is now installed on the compute instance!
 
-## **STEP 2**: Enable a non-root user
+## Task 2: Enable a non-root user
 
 Enable a non-root user to communicate with the Docker engine. When Docker was installed, a new Unix group docker was created along with it. To allow a non-root user (for example, `opc`) to communicate with the Docker daemon directly, you add the non-root user to the docker group.
 
@@ -98,7 +98,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
     [root@oraclelinux77 ~]#
     ```
 
-## **STEP 3**: Start Docker
+## Task 3: Start Docker
 
 1. Start the Docker service.
 
@@ -132,7 +132,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
     [root@oraclelinux77 ~]#
     ```
 
-## **STEP 4**: Install docker-compose
+## Task 4: Install docker-compose
 
 1. Install the docker-compose. Enter **y** when prompted:
 
@@ -150,7 +150,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
     </copy>
     ```
 
-## **STEP 5**: Connect to Docker with the non-root user
+## Task 5: Connect to Docker with the non-root user
 
 1. Open a new terminal window, navigate to the folder where you created the SSH keys. Connect again using SSH:
 
@@ -180,7 +180,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
     [opc@oraclelinux77 ~]$
     ```
 
-## **STEP 6**: Install git
+## Task 6: Install git
 
 Now, we are going to install git using yum as the root user.
 

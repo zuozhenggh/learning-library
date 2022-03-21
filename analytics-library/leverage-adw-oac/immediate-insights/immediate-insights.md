@@ -21,7 +21,7 @@ _Estimated Lab Time:_ 25 minutes
     * Lab 2: Provisioning your Oracle Analytics Cloud instance
     * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
 
-## **STEP 1**: Create a Project  
+## Task 1: Create a Project  
 Creating visualizations and projects is easy, and your data analysis work is flexible and exploratory.  
 Oracle Analytics helps you to understand your data from different perspectives and fully explore your data to find correlations, discover patterns, and see trends.
 
@@ -36,7 +36,7 @@ After you have applied the [starter file script](https://objectstorage.us-ashbur
 
     ![Create Project](../immediate-insights/images/blankcanvas.png)    
 
-## **STEP 2**: Get Started with Visualizing Data  
+## Task 2: Get Started with Visualizing Data  
 Before drowning into details, let us introduce you to the different sections of the screen. This will help you to easily follow the next steps.
 
 1. An **Oracle Analytics Project** consist of **three main parts** (you can see them at the top center part of the screen):
@@ -62,7 +62,7 @@ The **Visualize** screen is this one:
 
     Some of the **options** are **context based**, so we’ll get a better idea once we start working on it
 
-## **STEP 3**: Basic Insights
+## Task 3: Basic Insights
 
 Now that you know a bit your way around in the **Project**, you can continue with the lab.  
 **Remember** that you have just added the new dataset from the **DCA\_SALES\_DATA** table.  

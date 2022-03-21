@@ -16,7 +16,7 @@ In this lab, you will:
 This lab assumes you have completed the following labs:
 - Getting Started
 
-## **STEP 1:** Download the Data Files Necessary for the Workshop
+## Task 1: Download the Data Files Necessary for the Workshop
 
 The files are available at [https://www.yelp.com/dataset]( https://www.yelp.com/dataset ). Click Download Dataset and agree to the license. The dataset is a zip archive of just under 5GB, so may take a while to download on a slow internet connection.
 
@@ -28,7 +28,7 @@ Of those 5 files, we need 3:
 
 In the next step, we will upload these files to Oracle Cloud storage.
 
-## **STEP 2:** Upload JSON Data Files to Oracle Cloud Storage
+## Task 2: Upload JSON Data Files to Oracle Cloud Storage
 
 1.  Log in to the Oracle Cloud console. Click on the hamburger menu at the top left and choose "Object Storage".
 

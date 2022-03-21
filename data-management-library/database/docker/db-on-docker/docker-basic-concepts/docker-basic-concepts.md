@@ -34,7 +34,7 @@ In this lab, you will:
 * Install JSON Extension on Chrome Browser [click here](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en)
 * Successfully completed the lab - Setup Compute Instance
 
-## **STEP 1:** Setup Docker on compute instance
+## Task 1: Setup Docker on compute instance
 
 1. If you are not logged into you compute instance as an `opc` user, using the terminal of your choice (we recommend using the Oracle Cloud Shell) login to the instance you created using secure shell (ssh).
 
@@ -129,7 +129,7 @@ In this lab, you will:
     </copy>
     ````
 
-## **STEP 2:** Docker basic concepts
+## Task 2: Docker basic concepts
 
 1. Check the version of docker.
 
@@ -200,7 +200,7 @@ In this lab, you will:
     ![](images/18002.png " ")
 
 
-## **STEP 3:** Docker networking basics
+## Task 3: Docker networking basics
 
 Now that you know how to start, stop and relocate a container, let's see how to get information about the network.
 

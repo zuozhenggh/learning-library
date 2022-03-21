@@ -17,7 +17,7 @@ Many of the more recent applications have been designed to personalize the user 
 ### Objectives
 
 In this workshop you will:
-* Download and connect to an Oracle NoSQL Database SDK.
+* Download an Oracle NoSQL Database SDK.
 * Create a table with provisioned reads/sec, writes/sec, and GB storage and write data to the table and read data from the table
 * Create an API Signing Key and SDK CLI Configuration File
 * Run the Sample NoSQL Application
@@ -29,7 +29,7 @@ In this workshop you will:
 
 *  An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
-## **STEP 1:** Getting started with the Oracle NoSQL Database Cloud Service
+## Task 1: Getting started with the Oracle NoSQL Database Cloud Service
 
 The Oracle NoSQL Database Cloud Service is a server-less, fully managed data store that delivers predictable single digit response times and allows application to scale on demand via provisioning API calls. There are four simple steps to getting started with the Oracle NoSQL Database Cloud Service.
 
@@ -50,4 +50,3 @@ You may proceed to the next lab.
 * **Author** - Dave Rubin, Senior Director, NoSQL and Embedded Database Development and Michael Brey, Director, NoSQL Product Development
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
 * **Last Updated By/Date** - Anoosha Pilli, Database Product Management, September 2020
-

@@ -14,14 +14,12 @@ Data profiling is a process of understanding the data in EDQ. The first step in 
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **Step 1**: Quickstats Profiler
+## Task 1: Quickstats Profiler
 1.	In the Project Browser, right-click on “Processes” under your project, then select “New Process”.
 
     ![](./images/image1200_25.png " ")
@@ -107,7 +105,7 @@ This lab assumes you have:
 
 17.	Click the “Back” icon in the "Results Browser" panel as many times as needed to return to the results of the “Quickstats Profiler”.
 
-## **Step 2**: Frequency Profiler
+## Task 2: Frequency Profiler
 1.	In the "Tool Palette" find the “Frequency Profiler” processor.
 
     ![](./images/image1200_40.png " ")
@@ -156,7 +154,7 @@ This lab assumes you have:
 
     By now, you will surely see that this dataset needs some fine tuning to make it usable for accurate analytics. For instance, 19.5% of the gender values above are blank.
 
-## **Step 3**: Record Completeness Profiler
+## Task 3: Record Completeness Profiler
 
 1.	Now, Let’s explore record completeness profiler. In the “Profiling Tool Palette" find “Record Completeness” processor and “Record Duplication” processor. Drag and drop each processor to the "Project Canvas".
 
@@ -203,19 +201,6 @@ You may now [proceed to the next lab](#next).
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
 
-## Rate this Workshop
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
-
-1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
-
-If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
 
 ## Acknowledgements
 * **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020

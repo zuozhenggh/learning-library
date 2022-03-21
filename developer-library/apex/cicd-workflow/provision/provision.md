@@ -13,7 +13,7 @@ Estimated Completion Time: 10 minutes.
 - Provision the databases.
 - Configure the environments.
 
-## **STEP 1:** Terraform Setup
+## Task 1: Terraform Setup
 
 1. Navigate to the `terraform` folder:
 
@@ -127,7 +127,7 @@ Estimated Completion Time: 10 minutes.
 
     If you make changes, make sure that SCHEMA, WORKSPACE and WS_ADMIN names are different if setting up multiple environments in the same database as these need to be unique per database.
 
-## **STEP 2:** Provision the Database and Setup the Environments
+## Task 2: Provision the Database and Setup the Environments
 
 1. The whole stack and environments can be deployed and configured in one command:
 
@@ -146,7 +146,7 @@ Estimated Completion Time: 10 minutes.
 
     The script sets up all of the environments for you, ready to install a new app.
 
-## **STEP 3:** Using the makefile
+## Task 3: Using the makefile
 
 1. The makefile in this repository simplifies a lot of the tasks to be performed. Get the full list of commands with:
 

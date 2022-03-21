@@ -18,7 +18,7 @@ This lab assumes you have completed the following labs:
 * Lab: Create a Kubernetes Cluster
 * Lab: Install the Front-end Client
 
-## **Step 1**: Import a Developer Cloud Service Project
+## Task 1: Import a Developer Cloud Service Project
 1. Go to your DevCS instance and in the organization menu, under the projects tab, click **Create**:
 
   ![](./images/image101.png " ")

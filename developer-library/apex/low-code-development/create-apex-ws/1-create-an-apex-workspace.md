@@ -14,7 +14,7 @@ Estimated Time: 10 minutes
 - Create a new workspace in APEX
 - Log in to your new workspace
 
-## **Step 1:** Create an Autonomous Transaction Processing instance
+## Task 1: Create an Autonomous Transaction Processing instance
 
 In this step, you will create an instance of the Autonomous Transaction Processing database service.
 
@@ -40,7 +40,7 @@ In this step, you will create an instance of the Autonomous Transaction Processi
 
     ![](images/status-available.png " ")
 
-## **Step 2:** Create a new workspace in APEX
+## Task 2: Create a new workspace in APEX
 
 Within your new database, APEX is not yet configured. Therefore, when you first access APEX you will need to log in as an APEX Instance Administrator to create a workspace.
 

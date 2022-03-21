@@ -11,7 +11,7 @@ Estimated Lab Time: 5 minutes
 In this lab, you will tear down and clean up resources.
 
 
-## **STEP 1:** Tear Down Terraform Resources
+## Task 1: Tear Down Terraform Resources
 
 1. Simply run the terraform destroy command:
 
@@ -23,7 +23,7 @@ In this lab, you will tear down and clean up resources.
 
     You will be prompted to type `yes` to confirm.
 
-## **STEP 2:** Tear Down the Local Docker Environment
+## Task 2: Tear Down the Local Docker Environment
 
 1. Exit any container you may still be logged into:
 
@@ -53,7 +53,7 @@ In this lab, you will tear down and clean up resources.
     </copy>
     ```
 
-## **STEP 3:** Delete the Database Dump and Storage Bucket
+## Task 3: Delete the Database Dump and Storage Bucket
 
 1. In the Oracle Cloud Console go to Object Storage
 

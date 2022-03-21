@@ -12,10 +12,10 @@ Estimated lab time:  5 minutes
 - Oracle Cloud Account
 - User policy to create the VCN
 
-## **STEP 1:** Sign in to Oracle Cloud
+## Task 1: Sign in to Oracle Cloud
 1. Sign in to your tenancy with your username and password.
 
-## **STEP 2:** Create a Virtual Cloud Network  
+## Task 2: Create a Virtual Cloud Network  
 
 You will provision the Oracle Database Cloud Service on this network.
 
@@ -50,7 +50,7 @@ ie: 10.0.0.0/16 for one region and 11.0.0.0/16 for the peer region.
 
 9. Click Next and then Click Create.  Your cloud network will be created quickly.
 
-## **STEP 3:** Create the second Virtual Cloud Network on your Peer Region
+## Task 3: Create the second Virtual Cloud Network on your Peer Region
 Now do the same steps as above and create another VCN on your peer region.  
 1. Switch to your peer region and create your VCN with the wizard.  
 

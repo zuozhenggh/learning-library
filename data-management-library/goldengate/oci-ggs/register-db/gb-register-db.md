@@ -1,10 +1,10 @@
-# Create a Database Registration
+# Register databases
 
 ## Introduction
 
 This lab walks you through the steps to create a database registration.
 
-Estimated Lab Time: 2 minutes
+Estimated time: 2 minutes
 
 ### About Database Registrations
 Database Registrations capture source and target credential information. A database registration also enables networking between the OCI GoldenGate service tenancy virtual cloud network (VCN) and your tenancy VCN using a private endpoint.
@@ -15,77 +15,103 @@ In this lab, you will register source and target databases for Oracle GoldenGate
 ### Prerequisites
 This lab assumes that you completed all preceding labs.
 
-## **STEP 1**: Register the Source Database
+## Task 1: Register the source database
 
 First, follow the steps below to register the source Oracle Autonomous Transaction Processing \(ATP\) Database.
 
-1.  Click **Registered Databases**.
+1.  Use the Oracle Cloud Console breadcrumb to navigate back to the GoldenGate page.
 
-    ![Click Registered Databases](images/01-01-ggs-registerdb.png "Click Registered Databases")
+    ![GoldenGate highlighted in Oracle Cloud Console breadcrumb](images/01-01-breadcrumb.png " ")
 
-2.  Click **Register Database**.
+2.  Click **Registered Databases**.
 
-    ![Click Register Database](images/01-02-ggs-registerdb.png "Click Register Database")
+    ![Registered Databases in GoldenGate menu](images/01-02-ggs-registerdb.png " ")
 
-3.  In the Register Database panel, for Name and Alias, enter **SourceATP**.
+3.  Click **Register Database**.
 
-4.  From the Compartment dropdown, select a compartment.
+    ![Registered Databases page](images/01-03-ggs-registerdb.png " ")
 
-5.  Click **Select Database**.
+4.  In the Register Database panel, for Name and Alias, enter **SourceATP**.
 
-6.  From the Database Type dropdown, select **Autonomous Database**.
+5.  From the Compartment dropdown, select a compartment.
 
-7.  For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ATP instance, and then select **ATPSource** from the dropdown. Some fields are autopopulated based on your selection.
+6.  Click **Select Database**.
 
-8.  Enter the database's password in the Password field, and then click **Register**.
+7.  From the Database Type dropdown, select **Autonomous Database**.
+
+8.  For **Autonomous Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ATP instance, and then select **SourceATP** from the dropdown. Some fields are autopopulated based on your selection.
+
+9.  Enter the database's password in the Password field, and then click **Register**.
 
     ![Source Database details](images/01_01_12_regSourceDB.png)
 
-    The database becomes Active after a few minutes.
+    The database registration becomes Active after a few minutes.
 
-## **STEP 2:** Enable the ggadmin user and supplemental logging for the Source Database
+## Task 2: Unlock the GGADMIN user and enable supplemental logging for the source database
 
-Although the ggadmin user is created during the database registration process, it is disabled by default. The following steps guide you through how to enable the ggadmin user.
+Oracle Autonomous Databases come with a GGADMIN user that is locked by default. The following steps guide you through how to unlock the GGADMIN user.
 
-1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
+1.  From the Oracle Cloud Console **Navigation Menu** (hamburger icon), click **Oracle Database**, and then select **Autonomous Transaction Processing**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
+	![Autonomous Transaction Processing in the Oracle Cloud Console navigation menu](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
-2.  From the list of databases, select **ATPSource**.
+2.  From the list of databases, select **SourceATP**.
 
-3.  On the ATPSource Database Details page, click **Tools**, and then click **Open Database Actions**.
+    ![Autonomous Transaction Processing page](images/02-02.png " ")
 
-4.  Sign in to Database Actions using the ADMIN user details from Lab 1: Set Up the Environment. If you're running this lab as a workshop, copy the ADMIN password provided with your lab environment details.
+3.  On the SourceATP Database Details page, click **Database Actions**.
 
-5.  Under **Administration**, click **Database Users**.
+    ![SourceATP Database Details page](images/02-03-db-tools.png " ")
 
-6.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
+    > **Note:** *If you're prompted to log in to Database Actions, use the SourceATP admin credentials located in the Workshop Details.*
 
-    ![GGADMIN user](images/02-06-locked.png)
+4.  Under **Administration**, click **Database Users**.
 
-7.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
+    ![Database Actions](images/02-05.png " ")
+
+5.  From the list of users, locate **GGADMIN**, and then click the ellipsis (three dots) icon and select **Edit**.
+
+    ![Database users](images/02-06-locked.png)
+
+6.  In the Edit User panel, deselect **Account is Locked**, enter the password you gave the ggadmin user in the database registration steps above, and then click **Apply Changes**.
 
     ![Edit user](images/02-07-edit.png)
 
-    Note that the user icon changes from a blue padlock to a green checkmark.
+    Note that the user icon changes from a padlock to a checkmark.
 
-8.  Open the navigation menu, and then under **Development**, select **SQL**.
+7.  Open the navigation menu (hamburger icon), and then under **Development**, select **SQL**.
 
     ![Open navigation menu](images/01-08-sql.png)
 
-9.  Enter the following into the Worksheet, and then click **Run Statement**.
+8.  Enter the following into the Worksheet, and then click **Run Statement**.
 
     ```
     <copy>ALTER PLUGGABLE DATABASE ADD SUPPLEMENTAL LOG DATA;</copy>
     ```
 
-8.  Log out of Database Actions.
+9.  Replace the supplemental logging script with the following to check support mode, and then click **Run Statement**:
 
-## **STEP 3:** Register the Target Database and enable the ggadmin user
+    ```
+    <copy>
+    select * from DBA_GOLDENGATE_SUPPORT_MODE where owner = 'SRC_OCIGGLL';
+    </copy>
+    ```
+
+    The Script Output panel displays six tables whose Support_Mode is **FULL**.
+
+    ![Script Output](images/02-09b.png " ")
+
+    You can leave the SQL window open and continue with the next Task.
+
+## Task 3: Register the target database and unlock the GGADMIN user
 
 Now, follow the steps below to register the target Autonomous Data Warehouse \(ADW\) instance.
 
-1.  On the Registered Databases page, click **Register Database**.
+1.  Use the Oracle Cloud Console navigation menu to navigate back to GoldenGate.
+
+1.  Click **Registered Databases** and then **Register Database**.
+
+    ![Registered Databases in GoldenGate menu](images/03-02.png)
 
 2.  In the Register Database panel, enter **TargetADW** for Name and Alias.
 
@@ -93,23 +119,23 @@ Now, follow the steps below to register the target Autonomous Data Warehouse \(A
 
 4.  Click **Select Database**.
 
-5.  For **Autonomous Database in** *compartment*, click **Change Compartment**, select the compartment you created your ADW instance, and then select **ADWTarget** from the dropdown. Some fields are autopopulated based on your selection.
+5.  For **Autonomous Database in &lt;compartment-name&gt;**, click **Change Compartment**, select the compartment you created your ADW instance, and then select **TargetADW** from the dropdown. Some fields are autopopulated based on your selection.
 
 6.  Enter the database's password in the Password field, and then click **Register**.
 
     ![Target Database details](images/02_10-ggs-regDB_target.png)
 
-    The source and target databases appear in the list of Registered Databases. The database becomes Active after a few minutes.
+    The source and target databases appear in the list of Registered Databases. The database registration becomes Active after a few minutes.
 
-7.  Repeat the instructions under STEP 2 to enable the ggadmin user on the TargetADW database.
+7.  Repeat Task 2, steps 1 to 7, to unlock the GGADMIN user on the TargetADW database.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
-## Learn More
+## Learn more
 
 * [Managing Database Registrations](https://docs.oracle.com/en/cloud/paas/goldengate-service/using/database-registrations.html)
 
 ## Acknowledgements
 * **Author** - Jenny Chan, Consulting User Assistance Developer, Database User Assistance
 * **Contributors** -  Denis Gray, Database Product Management
-* **Last Updated By/Date** - March 2021
+* **Last Updated By/Date** - Jenny Chan, February 2022

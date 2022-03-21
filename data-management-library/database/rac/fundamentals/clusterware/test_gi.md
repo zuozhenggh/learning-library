@@ -22,7 +22,7 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 
  [](youtube:GIq-jb4bKmo)
 
-## **STEP 1:**  Connect and Disable the private interconnect
+## Task 1:  Connect and Disable the private interconnect
 
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 2.  Once you are logged in, open up a 2nd web browser tab.
@@ -128,7 +128,7 @@ For more information on Oracle Clusterware visit http://www.oracle.com/goto/clus
 
 17.  Explore the result.
 
-## **STEP 2:** Examine the CRSD log
+## Task 2: Examine the CRSD log
 
 1. Go back to node1 in cloudshell
 2. Switch to the oracle user
@@ -175,7 +175,7 @@ All of the virtual IP addresses will be present on the running node as ens3\:1 t
 
 Can you connect an application client to a VIP (a host-vip) when it is running on a host other than its home host?
 
-## **STEP 3:** Restart the private interconnect
+## Task 3: Restart the private interconnect
 
 1. On whichever node you stopped the private interconnect, restart it
 

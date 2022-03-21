@@ -5,7 +5,7 @@ In this lab, you will run the stack.
 
 Estimated Lab Time: 2 minutes
 
-## **STEP**: Run the Stack
+## Task: Run the Stack
 Now that your stack is created, you can run jobs.
 
 1. Select the stack that you created. 

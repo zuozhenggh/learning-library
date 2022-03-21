@@ -10,7 +10,7 @@ Estimated Lab Time: 15 minutes.
 
 In this lab, you clean up the environment.
 
-## **STEP 1:** Clean Up the SOA Domain Only With Terraform
+## Task 1: Clean Up the SOA Domain Only With Terraform
 
 1. If you deployed everything with Terraform, and you want to clean up the SOA domain only but keep the cluster up you can use:
 
@@ -30,7 +30,7 @@ In this lab, you clean up the environment.
     </copy>
     ```
 
-## **STEP 2:** Clean Up the SOA Domain Only Using Helm
+## Task 2: Clean Up the SOA Domain Only Using Helm
 
 If you wanted to remove the SOA domain using Helm, you need to use a 2-steps process (which is performed by the Terraform)
 
@@ -59,7 +59,7 @@ The steps are shown here for reference, as you already undeployed the domain on 
     helm delete mysoa -n soans
     ```
 
-## **STEP 3:** Decommission the Infrastructure
+## Task 3: Decommission the Infrastructure
 
 1. To decommission the whole infrastructure, use
 

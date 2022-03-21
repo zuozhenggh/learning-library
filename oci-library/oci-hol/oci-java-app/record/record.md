@@ -11,7 +11,7 @@ Estimated Lab Time: 10 minutes
 ### Objectives
 In this lab, you will use *Records*, a Java language feature going through a second preview round in JDK 15.
 
-## **STEP 1**: A simple Record
+## Task 1: A simple Record
 
 💡 Make sure that Preview Features are enabled, see [Lab 4](/?lab=lab-4-java-se-preview-features).
 
@@ -109,7 +109,7 @@ You can also observe that the Person record extends the [`java.lang.Record`](htt
       Person{firstname=Jane, lastname=Doe}
       ```
 
-## **STEP 2**: A Speaker Record
+## Task 2: A Speaker Record
 
 1. Back to the Conference application (`cd ~/odl-java-hol`), it exposes simple REST endpoints to get speaker-related information.
 
@@ -246,7 +246,7 @@ You can notice that using Records leads to a more concise, more readable code wh
 📝 Make sure to add support Records to all `SpeakerService.java` methods (`getByCompany`, `getByTrack`, `getSpeakersById`) as you just did for the `getAll` method.
 
 
-## **STEP 3**: Local Records (optional)
+## Task 3: Local Records (optional)
 
 
 When you are developing applications, think how many times you are creating intermediate values that are a simple group of variables? That should be very frequent! The Record feature is perfect to cope with such use-case.

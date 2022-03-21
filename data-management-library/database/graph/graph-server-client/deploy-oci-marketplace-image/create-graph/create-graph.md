@@ -9,35 +9,49 @@ Estimated time: 5 minutes
 ### Objectives
 
 Learn how to create a graph from relational data sources by:
-- Restarting the graph server
-- Starting a client (Python shell) that connects to the server
+- Starting a client (Python shell) that connects to the Graph Server
 - Using PGQL Data Definition Language (DDL) (e.g. CREATE PROPERTY GRAPH) to instantiate a graph
 
 ### Prerequisites
 
 - This lab assumes you have successfully completed the lab - Create and populate tables.
 
-## **STEP 1:** Start the Python client
+## Task 1: Start the Python client
 
-Start a client shell instance that connects to the server
+Connect to the compute instance via SSH as **opc** user, using the private key you created earlier.
 
 ```
 <copy>
-opgpy -b https://localhost:7007 --username customer_360
+ssh -i <private_key> opc@<public_ip_for_compute>
+</copy>
+```
+
+Example:
+
+```
+ssh -i key.pem opc@203.0.113.14
+```
+
+Start a Python client shell instance that connects to the server.
+
+```
+<copy>
+opg4py -b https://localhost:7007 -u customer_360
 </copy>
 ```
 
 You should see the following if the client shell starts up successfully.
 
 ```
-enter password for user customer_360 (press Enter for no password):
-Oracle Graph Client Shell 21.1.0
+password:
+
+Oracle Graph Client Shell 21.4.2
 >>>
 ```
 
-## **STEP 2:** Create the graph
+## Task 2: Create a graph
 
-Set up the create property graph statement, which creates the graph from the existing tables.
+Set up the create property graph statement, which creates a graph from the existing tables.
 
 ```    
 <copy>
@@ -67,35 +81,34 @@ CREATE PROPERTY GRAPH "customer_360"
 </copy>
 ```
 
-For more about DDL syntax, please see [pgql-lang.org](https://pgql-lang.org/spec/1.3/#create-property-graph). Please note that **all columns of the input tables are mapped to the properties of vertices/edges [by default](https://pgql-lang.org/spec/1.3/#properties)**. For `owned_by` edge, only `id` property is given with `PROPERTIES` keyword for edge ID generation purpose, and the other properties are not given, because they are already hold by the account vertices. 
+For more about DDL syntax, please see [pgql-lang.org](https://pgql-lang.org/spec/1.4/#create-property-graph). Please note that *all columns of the input tables are mapped to the properties of vertices/edges [by default](https://pgql-lang.org/spec/1.4/#properties)*. For **owned_by** edge, only **id** property is given with **PROPERTIES** keyword for edge ID generation purpose, and the other properties are not given, because they are already hold by the account vertices. 
 
 Now execute the PGQL DDL to create the graph.
 
 ```
-<copy>
-session.prepare_pgql(statement).execute()
-</copy>
-
-False   // This is the expected result
+>>> <copy>session.prepare_pgql(statement).execute()</copy>
+False   # This is the expected result
 ```
 
-## **STEP 3:** Check the newly created graph
+## Task 3: Check the newly created graph
 
 Check that the graph was created. Copy, paste, and run the following statements in the Python shell.
 
-Attach the graph to check that the graph was created.
-```
-<copy>
-graph = session.get_graph("customer_360")
-graph
-</copy>
+Attach the graph.
 
+```
+>>> <copy>graph = session.get_graph("customer_360")</copy>
+```
+
+Check that the graph was created.
+
+```
+>>> <copy>graph</copy>
 PgxGraph(name: customer_360, v: 15, e: 24, directed: True, memory(Mb): 0)
 ```
 
-Run some PGQL queries.
+Run some PGQL queries. E.g. the list of the vertex labels:
 
-The list of the vertex labels:
 ```
 <copy>
 graph.query_pgql("""
@@ -165,39 +178,30 @@ graph.query_pgql("""
 +----------------------+
 ```
 
-## **STEP 4:** Publish the graph (optional)
+## Task 4: Publish the graph
 
 The newly created graph is "private" by default, and is accessible only from the current session. To access the graph from new sessions in future, you can "publish" the graph.
 
-First, login to SQL Developer Web as the `admin` user, and give permission to publish graphs to the `customer_360` user.
-```
-GRANT PGX_SESSION_ADD_PUBLISHED_GRAPH TO customer_360;
-```
-
-Exit the Python shell and re-connect to pick up the updated permissions, then create the graph again and publish it.
-```
-<copy>
-opgpy -b https://localhost:7007 --username customer_360
-</copy>
-```
+Then create the graph again following the procedure above, then publish it.
 ```
 <copy>
 graph.publish()
 </copy>
 ```
 
-Next time you connect you can access the graph in-memory without re-loading it, if the graph server has not been shutdown or restarted between logins.
+Next time you connect you can access the graph kept on memory without re-loading it, if the graph server has not been shutdown or restarted between logins.
 ```
 <copy>
 graph = session.get_graph("customer_360")
 </copy>
 ```
 
+Please note that you are allowed to publish graphs because **`PGX_SESSION_ADD_PUBLISHED_GRAPH`** role has been granted when the user is created. Otherwise, it has to be granted by **ADMIN** user and re-connect with the Python shell to pick up the updated permissions.
+
 You may now proceed to the next lab.
 
 ## Acknowledgements
 
-- **Author** - Jayant Sharma, Product Manager, Spatial and Graph
-- **Contributors** - Thanks to Jenny Tsai for helpful, constructive feedback that improved this workshop. Arabella Yao, Product Manager Intern, Database Management
-- **Last Updated By/Date** - Ryota Yamanaka, Feburary 2020
-
+- **Author** - Jayant Sharma
+- **Contributors** - Arabella Yao, Jenny Tsai
+- **Last Updated By/Date** - Ryota Yamanaka, January 2022

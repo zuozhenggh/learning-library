@@ -23,7 +23,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Deploy GoldenGate for Big Data
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -40,7 +40,7 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 
  3. Repeat the two steps above to create a second session. These two sessions will be used respectively for `source` and `target` execution tasks
 
-## **STEP 1**: Explore GoldenGate Configuration  
+## Task 1: Explore GoldenGate Configuration  
 1. In the first or `source` terminal session as user `ggadmin`, type  `labmenu` to display the labmenu IF not at the labmenu.
 
   **By default ggadmin will automatically start in the labmenu**
@@ -82,11 +82,11 @@ Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH 
 5. Start the Cassandra database server. Open a new ssh session, run the alias as shown below and leave this running until you are done.
 
     ````
-      <copy>startcass</copy>
+    <copy>startcass</copy>
     ````
 Now we need to start the GG manager process on both the source and target. Keep these sessions opened for the rest of this lab.
 
-## **STEP 2**: GoldenGate Source Configuration
+## Task 2: GoldenGate Source Configuration
 
 1. In the first or `source` terminal session, go to the **GG Home for MySQL**, and start the manager process. You can either cd to the directory, or call the alias ggmysql:
 
@@ -158,7 +158,7 @@ Now we need to start the GG manager process on both the source and target. Keep 
 
 Now that the source side is setup, let us configure GG on the target side (for Cassandra).
 
-## **STEP 3**: GoldenGate Target Configuration
+## Task 3: GoldenGate Target Configuration
 
 1. In the GG for Hadoop session, you will need to modify the Cassandra properties byremoving the `---` prefixes from the highlighted values::
 
@@ -188,7 +188,7 @@ Now that the source side is setup, let us configure GG on the target side (for C
     ```
     <copy>start mgr</copy>
     ````
-
+    ```
     <copy>info all</copy>		
     ```
     ```
@@ -204,7 +204,7 @@ Now that the source side is setup, let us configure GG on the target side (for C
     <copy>info all</copy>
     ```
 
-## **STEP 4**: Cassandra Replication
+## Task 4: Cassandra Replication
 
 Now that GG processes have been created and started on both the source and target, we need to create the Cassandra Keyspace before loading data. A Cassandra Keyspace is equivalent to a database or schema in relational databases. This step can be done at anytime, and is not dependant on GG.
 
@@ -215,7 +215,7 @@ Now that GG processes have been created and started on both the source and targe
   ![](./images/f9.png " ")
 
     ```
-      <copy>createcasskeyspace</copy>
+    <copy>createcasskeyspace</copy>
     ```
 
 2. Let us check to see if any tables exist in the `ggtarget2cass` Cassandra keyspace. The expected result is an error “`unconfigured table …`” – since the tables have not been created by GG yet. That will be done when GG encounters the first transaction for a new table.
@@ -223,7 +223,7 @@ Now that GG processes have been created and started on both the source and targe
   ![](./images/f10.png " ")
 
     ```
-      <copy>cassselect</copy>
+    <copy>cassselect</copy>
     ```
 
 3. We will load some data on the MySQL database `ggsource` and GG will extract the data, create the Cassandra tables, and write the data to the Cassandra target tables.
@@ -256,7 +256,7 @@ Now that GG processes have been created and started on both the source and targe
   ![](./images/f14.png " ")
 
     ```
-      <copy>dmlsource</copy>
+    <copy>dmlsource</copy>
     ```
 
 7. Next we will do a count of the Cassandra tables to see if the changes were applied as expected. You can also do a cassselect to see all the data
@@ -265,7 +265,7 @@ Now that GG processes have been created and started on both the source and targe
   ![](./images/f16.png " ")
 
     ```
-      <copy>casscount</copy>
+    <copy>casscount</copy>
     ```
 
 8. Let us confirm using GG to see statistics about data that was replicated In a GG Home for Hadoop session
@@ -274,15 +274,14 @@ Now that GG processes have been created and started on both the source and targe
   ![](./images/f18.png " ")
 
     ```
-      <copy>./ggsci</copy>
+    <copy>./ggsci</copy>
     ```
     ```
     <copy>stats rcass total</copy>
     ```
 
 ## Summary
-In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process
-`pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rcas’` read the remote trail files, created the Cassandra tables and wrote the data to those tables.
+In summary, you loaded data in MySQL database `ggsource`, GG extract process `extmysql` captured the changes from the MySQL binary logs and wrote them to the local trail file. The pump process `pmphadop` routed the data from the local trail (on the source) to the remote trail (on the target). The replicat process `rcas’` read the remote trail files, created the Cassandra tables and wrote the data to those tables.
 
 You may now *proceed to the next lab*.
 

@@ -18,7 +18,7 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Configure GoldenGate
 
-## **STEP 1:** GoldenGate - Oracle Data Capture
+## Task 1: GoldenGate - Oracle Data Capture
 
 1. Open a terminal session
 
@@ -83,7 +83,7 @@ table pdbeast.tpc.*;</copy>
 
 10. Save and close the file.
 
-## **STEP 2:**  GoldenGate - Oracle Data Apply
+## Task 2:  GoldenGate - Oracle Data Apply
 
 1. GoldenGate will be configured on the target to apply changes using the **Parallel Replicat**:
    
@@ -114,7 +114,7 @@ map pdbeast.tpc.*, target pdbwest.tpc.*;</copy>
 
 4. Save and close the file.
 
-## **STEP 3:** GoldenGate - MySQL Data Apply
+## Task 3: GoldenGate - MySQL Data Apply
 
 1. MySQL data apply using GoldenGate 
 
@@ -204,7 +204,7 @@ add replicat rtpc, parallel, exttrail ./dirdat/et, checkpointtable pdbwest.ggadm
 ````
 
 
-## **STEP 4:** GoldenGate - MySQL Coordinated Replicat
+## Task 4: GoldenGate - MySQL Coordinated Replicat
 
 1. MySQL Coordinated Replicat
 
@@ -263,7 +263,7 @@ When prompted enter the password: Oracle1
 
 Enter "100" at the prompt, and return.
 
-## **STEP 5:** GoldenGate - Verify Replication
+## Task 5: GoldenGate - Verify Replication
 
 Verify data has been replicated
 
@@ -325,7 +325,7 @@ extract (second from (heartbeat_received_ts - incoming_heartbeat_ts)) Total_Lag
 from ggadmin.gg_heartbeat_history order by heartbeat_received_ts desc;</copy>
 ````
 
-## **STEP 6:** GoldenGate - Replicate Oracle DDL
+## Task 6: GoldenGate - Replicate Oracle DDL
 
 Replicate Oracle DDL
 

@@ -22,7 +22,7 @@ Estimated Lab Time: 20 minutes
 -   To learn more about Oracle Analytics Cloud (OAC), feel free to explore the capabilities by clicking on this link: [OAC Overview](https://www.oracle.com/business-analytics/analytics-cloud.html)
 
 
-## **STEP 1**: Create a Project
+## Task 1: Create a Project
 
 1. From Oracle Analytics Cloud, click on the hamburger menu icon and click on **Data**.
 
@@ -33,7 +33,7 @@ Estimated Lab Time: 20 minutes
     ![](./images/1.png " ")
 
 
-## **STEP 2**: Create a Visualization
+## Task 1: Create a Visualization
 
 1. If you don't see all the columns, expand **Master_Table** on the left with the **small arrow** in order to see all the columns in the data set.
 
@@ -145,5 +145,3 @@ Estimated Lab Time: 20 minutes
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributors** - Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Kamryn Vinson, June 2021
-
-

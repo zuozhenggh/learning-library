@@ -10,7 +10,7 @@ Estimated Time: 10 minutes.
 
 You will tear down the infrastructure you deployed.
 
-## **STEP 1:** Tear Down the OKE Cluster
+## Task 1: Tear Down the OKE Cluster
 
 1. Before tearing down infrastructure, it is recommended that you undeploy the Kubernetes objects. The Terraform code will attempt to destroy all Kubernetes objects but some artifacts may be left behind if it is not able to deprovision some resources (like buckets that are not empty).
 

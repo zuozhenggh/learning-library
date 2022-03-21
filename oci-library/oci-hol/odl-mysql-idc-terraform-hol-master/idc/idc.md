@@ -6,7 +6,7 @@ In this lab, you will connect to the bastion host to check the status of your My
 
 Estimated Lab Time: 10 minutes
 
-## **STEP 1**: SSH to Bastion Host
+## Task 1: SSH to Bastion Host
 
 1. To connect to the bastion host, we use ssh with the user **opc** on the public IP and the ssh key you created earliers.
 
@@ -14,7 +14,7 @@ Estimated Lab Time: 10 minutes
 
     ![](.././images/terminal/term04.png)
 
-## **STEP 2**: MySQL Shell
+## Task 2: MySQL Shell
 
 1. MySQL Shell is an advanced client and code editor for MySQL Server. It also allows you to manage a MySQL InnoDB Cluster via the [AdminAPI](https://dev.mysql.com/doc/dev/mysqlsh-api-python/8.0/group___admin_a_p_i.html).
 
@@ -24,7 +24,7 @@ Estimated Lab Time: 10 minutes
 
     ⚠️ please use your IPs, they should be in the range `10.0.1.0/24`.
 
-## **STEP 3**: MySQL InnoDB Cluster - Status
+## Task 3: MySQL InnoDB Cluster - Status
 
 1. You can now check the status of the cluster or the router, using `cluster.status()` and `cluster.listRouters()`:
 

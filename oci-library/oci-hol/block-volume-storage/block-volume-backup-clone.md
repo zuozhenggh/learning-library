@@ -19,7 +19,7 @@ In this lab you will create and attach Block Volume Storage to a compute instanc
 * [Connecting to a compute instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm)
 
 
-## **Step 1:** Sign in to OCI Console and create VCN
+## Task 1: Sign in to OCI Console and create VCN
 
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**.
 
@@ -46,7 +46,7 @@ In this lab you will create and attach Block Volume Storage to a compute instanc
 
     *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
 
-## **Step 2:** Create ssh keys, compute instance and Block Volume
+## Task 2: Create ssh keys, compute instance and Block Volume
 
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
 
@@ -230,7 +230,7 @@ In this lab you will create and attach Block Volume Storage to a compute instanc
 
 We successfully attached a block volume that existed in a different Availability domain than the compute instance.Next we will Clone the original block volume.
 
-## **Step 3:** Clone Block Volume and explore Volume Groups
+## Task 3: Clone Block Volume and explore Volume Groups
 
 1. From OCI services menu Click **Block Volumes** under Block Storage, locate the Original Block Volume create.Click Action icon  and then Create Clone.Fill out the dialog box:
 
@@ -272,7 +272,7 @@ We successfully attached a block volume that existed in a different Availability
 
 8. New Volume group will be created.
 
-## **Step 4:** Delete the resources
+## Task 4: Delete the resources
 
 1. Switch to  OCI console window.
 

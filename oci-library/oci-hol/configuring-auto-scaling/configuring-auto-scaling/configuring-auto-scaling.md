@@ -16,7 +16,7 @@ A cooldown period between autoscaling events lets the system stabilize at the up
 
 *Note: OCI user interface is being updated, thus some screenshots in the instructions may be different than the actual UI*
 
-## **STEP 1:** Create VCN
+## Task 1: Create VCN
 
 1. Sign in using your tenant name, user name, and password. Use the login option under **Oracle Cloud Infrastructure**.
     ![](images/Grafana_015.PNG " ")
@@ -44,7 +44,7 @@ A cooldown period between autoscaling events lets the system stabilize at the up
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
 
-## **STEP 2:** Create Load Balancer and Update Security List
+## Task 2: Create Load Balancer and Update Security List
 
 *When you create a load balancer, you choose its shape (size) and specify subnets from different Availability Domains. This ensures that the load balancer is highly available.*
 
@@ -117,7 +117,7 @@ Enter the following ingress rule:
 
 9. Click **Add Ingress Rules**.
 
-## **STEP 3:** Configure instance pool and auto scaling
+## Task 3: Configure instance pool and auto scaling
 
 1. Go to the OCI console. From OCI services menu, under **Compute**, click **Instances**.
 
@@ -277,7 +277,7 @@ Fill out the dialog box:
 
     ![](images/autoscale-config-3.png)
 
-## **Step 4:** Test the setup
+## Task 4: Test the setup
 
 1. Wait until your Instance Pool change from *Scaling* to *Running* state. Under **Compute**, click **Instance Pools**, and then your pool name. Click **Created Instances**, you should see a compute instance created. Click the Compute Instance name.
     ![](./images/Auto_Scaling_007.PNG " ")
@@ -340,7 +340,7 @@ Fill out the dialog box:
 
     *This is because our criteria of CPU utilization < 5 is met.*
 
-## **Step 5:** Delete the resources
+## Task 5: Delete the resources
 
 1. Switch to  OCI console window.
 

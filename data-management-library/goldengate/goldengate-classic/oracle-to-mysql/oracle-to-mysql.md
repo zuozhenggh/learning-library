@@ -60,6 +60,17 @@ WALLETLOCATION /u01/app/oracle/product/19.1.0/oggWallet</copy>
 ![](./images/GLOBALS.png " ")
 
 In the Goldengate home directory for MySQL, edit the file GLOBALS
+````
+<copy>vi /u01/app/oracle/product/19.1.0/oggmysql/GLOBALS</copy>
+````
+Input the following parameters into the file GLOBALS
+
+```
+<copy>ggschema ggadmin
+CHECKPOINTTABLE ggadmin.ggchkpoint
+WALLETLOCATION /u01/app/oracle/product/19.1.0/oggWallet</copy>
+```
+## Task 2:- GoldenGate for non-Oracle (MySQL)
 
 ````
 <copy>vi /u01/app/oracle/product/19.1.0/oggmysql/GLOBALS</copy>

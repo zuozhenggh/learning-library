@@ -25,7 +25,7 @@ For technical videos that walk through this portion of the lab, please see the l
 * A Domain name (To demonstrate failover)
 
 Estimated Lab Time: 2 hour
-## **STEP 1:** Transfer Files And Synchronize Servers
+## Task 1: Transfer Files And Synchronize Servers
 
 ### **Installing rsync utility on primary and secondary compute instances**
 
@@ -155,7 +155,7 @@ Run the following command in your local terminal
     </copy>
     ```
 
-## **STEP 2:** Configure Load Balancer
+## Task 2: Configure Load Balancer
 Let's proceed and configure the failover from the Oracle Cloud console. There are multiple ways to setup a failover, like using keepalived, using load balancers, and using DNS Traffic Management Steering policies in OCI. For this lab, you will use the Load Balancer service, which provides automated traffic distribution. 
 
 ### **Make your application accessible from your IP address**
@@ -240,7 +240,7 @@ Let's proceed and configure the failover from the Oracle Cloud console. There ar
 
 17. Congratulations, you have successfully configured Load Balancer. The next step is optional. It will explore how to use DNS and Traffic Management Steering Policy.
 
-## **STEP 3:** Configure DNS failover [Optional]
+## Task 3: Configure DNS failover [Optional]
 
 ### **Export DNS zone file**
 

@@ -27,7 +27,7 @@ Estimated time: 30 minutes
 *In addition to the workshop*, feel free to watch the walkthrough companion video by clicking on the following image:
 [](youtube:vo_doCpX0KQ)
 
-## **STEP 1:** Log into your OCI Tenancy
+## Task 1: Log into your OCI Tenancy
 
    Log in to your OCI dashboard and retrieve information required to create resources.
 
@@ -50,7 +50,7 @@ Estimated time: 30 minutes
 
       ![](../images/common/username.png " ")  
 
-## **STEP 2:** Create User Auth Token, Storage Bucket and Upload Data Pump export file.
+## Task 2: Create User Auth Token, Storage Bucket and Upload Data Pump export file.
 
 1.  Navigate to the user details page from the top, right-hand menu item as shown below
 
@@ -68,7 +68,7 @@ Estimated time: 30 minutes
 
       ![](images/image4.png " ")
 
-5.  Download the Data Pump Export File [Here](https://objectstorage.us-ashburn-1.oraclecloud.com/n/natdcshjumpstartprod/b/spw-appDev-DevOps-files/o/expdp_alpha121.dmp).
+5.  Download the Data Pump Export File [Here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/expdp_alpha121.dmp).
 
 6.  Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
@@ -94,7 +94,7 @@ Estimated time: 30 minutes
 
       ![](images/image32.png " ")
 
-## **STEP 3:** Setup Product Catalog MicroService Data in ATP
+## Task 3: Setup Product Catalog MicroService Data in ATP
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
@@ -226,7 +226,7 @@ Estimated time: 30 minutes
      ![](images/image18.png " ")
 
 
-## **STEP 4:** Setup User Catalog MicroService Data in ATP
+## Task 4: Setup User Catalog MicroService Data in ATP
 
 1.  Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Autonomous Transaction Processing**.
 
@@ -289,7 +289,7 @@ Estimated time: 30 minutes
 
 **You are ready to proceed to** *Lab 2*
 
-## **STEP 5:** Grant Access to Alpha user to SQL Developer Web (Optional)
+## Task 5: Grant Access to Alpha user to SQL Developer Web (Optional)
 
 This step is optional and can be done in both the Product and User ATP instances.
 

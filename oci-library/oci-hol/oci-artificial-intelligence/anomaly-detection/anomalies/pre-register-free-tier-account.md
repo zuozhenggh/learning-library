@@ -9,7 +9,7 @@ Before you get started, you will need an Oracle Cloud account.
 If you already have access to an Oracle Cloud account, including an Oracle Cloud account through [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html),  **STEP 1** can be used to sign in to tenancy.
 
 
-## **STEP 1**: Sign in to Your Account
+## Task 1: Sign in to Your Account
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 

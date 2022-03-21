@@ -8,7 +8,7 @@ Oracle REST Data Services is a Java Enterprise Edition (Java EE) based data serv
 
 Estimated Lab Time: 45 minutes
     
-## **Step 1:** Register schema with ORDS
+## Task 1: Register schema with ORDS
     
 1. On Tools tab, under Oracle Application Express, click **Open APEX**.
     
@@ -39,7 +39,7 @@ Estimated Lab Time: 45 minutes
     
 8. At this moment, no authentication is required to retrieve data via ORDS. Click **oracle.example.hr** under Modules. Review Resource Templates Protected by Privilege column: Template not protected by any privilege.
     
-## **Step 2:** Create a new ORDS module
+## Task 2: Create a new ORDS module
     
 1. Create a new ORDS module to provide remote access to our Pet Shop data via REST APIs. Click Modules. Click **Create Module**.
     
@@ -73,7 +73,7 @@ Estimated Lab Time: 45 minutes
     
 9. If JSON documents are displayed correctly in your browser, it means ORDS works and your new Pet Shop module is ready.
     
-## **Step 3:** Provision ADW to be used as client
+## Task 3: Provision ADW to be used as client
     
 1. Login to OCI Console, to create a new Autonomous Data Warehouse (ADW) instance. Click on hamburger menu ≡, then **Autonomous Data Warehouse** under Oracle Database. **Create Autonomous Database**.
     
@@ -108,7 +108,7 @@ Estimated Lab Time: 45 minutes
     - Username: admin
     - Password: DBlearnPTS#20_
     
-## **Step 4:** Create ACL for ADMIN to Catfood
+## Task 4: Create ACL for ADMIN to Catfood
     
 1. Your new ADW instance requires an Access Control List (ACL) to be able to connect to your AJD instance via HTTP (or HTTPS). If you omit this step, you will receive the following error:
     
@@ -129,7 +129,7 @@ Estimated Lab Time: 45 minutes
     /
     ````
     
-## **Step 5:** Retrieve AJD Catfood records via REST
+## Task 5: Retrieve AJD Catfood records via REST
     
 1. From ADW, send a request to AJD to provide Catfood records via REST.
     
@@ -378,7 +378,7 @@ Estimated Lab Time: 45 minutes
     WhiskersSnacks","cat_id":"15D421E3FC164F11BFAEAE0D83178C95"}
     ````
 
-## **Step 6:** Store first 10 records from AJD locally on ADW
+## Task 6: Store first 10 records from AJD locally on ADW
     
 1. Create a table called `CATFOOD_R` in ADW to store data retrieved from AJD.
     
@@ -439,7 +439,7 @@ Estimated Lab Time: 45 minutes
     select * from CATFOOD_R;
     ````
     
-## **Step 7:** Read all records from AJD via REST
+## Task 7: Read all records from AJD via REST
     
 1. Now we can read all pages and insert data into `CATFOOD_R` table. This procedure verifies if there is a next page link, and if true, it makes new requests in a loop, until no next page is retrieved.
     

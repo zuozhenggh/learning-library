@@ -22,7 +22,7 @@ FAN callouts provide a simple yet powerful integration mechanism available with 
 
 For more information about FAN, click [here](https://www.oracle.com/technetwork/database/options/clustering/applicationcontinuity/learnmore/fastapplicationnotification12c-2538999.pdf) to view the technical paper.
 
-## **STEP 1:**  Write a callout
+## Task 1:  Write a callout
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 2.  Once you are logged in, open up a 2nd web browser tab.
 3.  Start Cloud Shell in each.  Maximize both Cloud Shell instances.
@@ -111,7 +111,7 @@ For more information about FAN, click [here](https://www.oracle.com/technetwork/
     </copy>
     ````
 
-## **STEP 2**: Generate an event
+## Task 2: Generate an event
 
 Stopping or starting a database instance, or a database service will generate a FAN event. A failure of an instance, a node, or a public network will generate an event.
 
@@ -177,7 +177,7 @@ Stopping or starting a database instance, or a database service will generate a 
     ![](./images/fan-step2-num7.png " ")
 
 
-## **STEP 3**: Create a more elaborate callout
+## Task 3: Create a more elaborate callout
 
 Callouts can be any shell-script or executable. There can be multiple callouts in the racg/usrco directory and all will be executed with the FAN payload as arguments. The scripts are executed sequentially, so it is not recommended to have many scripts in this directory, as they could place a load on the system that is not desired, and there may be timeliness issues if the scripts wait for scheduling.
 
@@ -262,7 +262,7 @@ Callouts can be any shell-script or executable. There can be multiple callouts i
     exit
     ````
 
-## **STEP 4**: Client-side FAN events
+## Task 4: Client-side FAN events
 
 FAN events are sent to the application mid-tier or client tier using the **Oracle Notification Service** (ONS). ONS is configured automatically on the cluster when you install Grid Infrastructure. CRS manages the stop and start of the ONS daemon.
 

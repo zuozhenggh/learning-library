@@ -27,7 +27,7 @@ While you are working on the challenge, think about the following questions:
 - How many tables contain the discovered sensitive columns?
 
 
-## STEP 1: Use the Data Discovery wizard to discover sensitive data
+## Task 1: Use the Data Discovery wizard to discover sensitive data
 
 Sign in to your OCI tenancy and navigate to the Autonomous database conole page for the database you wish to secure.
 
@@ -64,7 +64,7 @@ Oracle Data Safe automatically discovers referential relationships defined in th
    ![](./images/Img29.png " ")
 - If the job is successful, the **Detail** column states Data discovery job finished successfully, and you can click **Continue**. Otherwise, you need to click **Back** or **Exit** and investigate the issue.
 
-## STEP 2: Review and fine tune your sensitive data model
+## Task 2: Review and fine tune your sensitive data model
 
 - On the **Non-Dictionary Referential Relationships** page, you are presented with a list of potential non-dictionary (application level) referential relationships that Data Discovery found by using column name patterns and column data patterns. 
 
@@ -95,7 +95,7 @@ The sensitive type is **Healthcare Provider** and the discovered sensitive colum
 > **Tip:**<br>
 To quickly locate a sensitive column, enter the name or part of the name in the search box.
 
-## STEP 3: Modify your search for sensitive data and re-run the data discovery job
+## Task 3: Modify your search for sensitive data and re-run the data discovery job
 
 Suppose that you're missing some sensitive columns in your sensitive data model. While working in the Data Discovery wizard, you can backtrack to reconfigure and rerun the data discovery job. You can repeat the process as many times as you need until you feel that your sensitive data model is accurate. Try the following:
 
@@ -118,7 +118,7 @@ Because you chose to not discover non-dictionary referential relationships, the 
 
 - To view the newly discovered sensitive columns, click **View newly discovered sensitive columns only**. Notice that Data Discovery found additional sensitive columns.
 
-## STEP 4: View the Sensitive Data Discovery report and analyze the report data
+## Task 4: View the Sensitive Data Discovery report and analyze the report data
 
 - Scroll down and click **Report** at the bottom right corner of the screen.<br>
 The report shows you a chart that compares sensitive categories. You can also view totals of sensitive values, sensitive types, sensitive tables, and sensitive columns. The table at the bottom of the report displays individual sensitive column names, sample data for the sensitive columns, column counts based on sensitive categories, and estimated data counts.
@@ -149,7 +149,7 @@ The report shows you a chart that compares sensitive categories. You can also vi
   - Scroll down, and under **Discovery Reports**, click **Data Discovery**.
   - Click your sensitive data model to open the report.
   
-## STEP 5: View your sensitive data model in the Library
+## Task 5: View your sensitive data model in the Library
 
 - Click the **Library** tab.
 - Click **Sensitive Data Models**.<br>
@@ -168,7 +168,7 @@ For each sensitive data model, you can view information about when your sensitiv
 > **Note:**<br>
 Keep your sensitive data model so that later you can use it for masking sensitive data in **[Masking Lab - Configure a Variety of Masking Formats with Oracle Data Safe](https://github.com/labmaterial/adbguides-dev/blob/master/adb-datasafe/Masking%20Lab%204.md)**.
 
-## Step 6: Download your sensitive data model
+## Task 6: Download your sensitive data model
 
 - Select the check box for your sensitive data model.
 - Click **Download**.

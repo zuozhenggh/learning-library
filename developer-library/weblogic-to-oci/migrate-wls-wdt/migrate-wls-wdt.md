@@ -33,7 +33,7 @@ Migration with WebLogic Deploy Tooling (WDT) consists of 3 steps:
 - Have deployed a WebLogic on OCI domain using the marketplace.
 - Have migrated the application database from the source environment to OCI.
 
-## **STEP 1:** Installing WebLogic Deploy Tooling
+## Task 1: Installing WebLogic Deploy Tooling
 
 ### Using the docker on-premises environment:
 
@@ -83,7 +83,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
     This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`.
 
 
-## **STEP 2:** Discover the On-Premises Domain
+## Task 2: Discover the On-Premises Domain
 
 The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate 3 files:
 
@@ -105,7 +105,7 @@ Applications found under `ORACLE_HOME` will have a path that includes `@@ORACLE_
 
     [output of the discover_domain.sh script](https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/workshops/weblogic-on-oci-mp/freetier/discover_domain.output.txt)
 
-## **STEP 3:** Edit the `source.yaml` File
+## Task 3: Edit the `source.yaml` File
 
 The extracted `source.yaml` file looks like the following:
 
@@ -374,7 +374,7 @@ appDeployments:
 
 5. Save the `source.yaml` file by typing `CTRL+x` then `y`.
 
-## **STEP 4:** Edit the `source.properties` File
+## Task 4: Edit the `source.properties` File
 
   ```bash
   <copy>
@@ -394,19 +394,26 @@ appDeployments:
 
 1. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`.
 
-2. Enter the JDBC Connection password for the `RIDERS` user pdb: `Nge29v2rv#1YtSIS#`.
+2. Enter the JDBC Connection password for the `RIDERS` user pdb.
 
-  Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
+    This can be found with
+    ```bash
+    <copy>
+    cat /u01/app/oracle/gen_env.sh | grep DS_
+    </copy>
+    ```
 
-  The resulting file should look like:
+   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
+
+   The resulting file should look like:
 
     ```yaml
-    JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
+    JDBC.JDBCConnection.PasswordEncrypted=<PDB_PASSWORD>
     ```
 
 3. Save the file with `CTRL+x` and `y`.
 
-## **STEP 5:** Update the WebLogic Domain on OCI
+## Task 5: Update the WebLogic Domain on OCI
 
 The `update_domain.sh` script updates the target domain.
 
@@ -431,10 +438,9 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
     ```
 2. Provide the `TARGET_WLS_ADMIN`.
 
-    This is the **WebLogic Admin Server public IP** gather previously if you deployed in a **Public Subnet**
-    or the **Admin Server Private IP** if you deployed in a **Private subnet**
+    This is the **Admin Server Private IP**
 
-3. If you deployed in a **Private Subnet**, you also need to provide a `BASTION_IP` which is the **public IP** of the Bastion Instance.
+3. You also need to provide a `BASTION_IP` which is the **public IP** of the Bastion Instance.
 
     Furthermore, you'll need to add a **NAT gateway** to the admin server subnet so it is possible to download the required software.
 
@@ -468,7 +474,7 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 
   [View the output of the update_domain.sh script](https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/workshops/weblogic-on-oci-mp/freetier/update_domain.output.txt)
 
-## **STEP 6:** Check that the app deployed properly
+## Task 6: Check that the app deployed properly
 
 1. Go to the WebLogic Admin console (at https://`ADMIN_SERVER_PUBLIC_IP`:7002/console if you deployed in a *Public Subnet*), or through the tunnel (at https://localhost:7002/console) as you did earlier.
 

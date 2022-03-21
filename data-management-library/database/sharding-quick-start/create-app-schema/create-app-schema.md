@@ -4,11 +4,11 @@
 
 In this lab you will create a shard app schema. You will create a sharded table family `Customers->Orders->LineItems` sharded by `CustId`, and a duplicate table `Products`.
 
-Estimated Lab Time: 30 minutes.
+Estimated Lab Time: 30 minutes
 
 ### Objectives
 
-In this lab, you will perform the following steps:
+In this lab, you will:
 - Create the schema user, tablespace set, sharded tables and duplicated tables
 - Verify that the DDLs have been propagated to all the shards
 - Create a global service used to connect to the sharded database
@@ -19,7 +19,7 @@ This lab assumes you have already completed the following:
 - Deploy the Sharded Database
 
 
-## **STEP 1:** Create Shard App Schema
+## Task 1: Create Shard App Schema
 
 1. Login to the shard director host using the public ip address, switch to oracle user.
 
@@ -39,7 +39,7 @@ This lab assumes you have already completed the following:
 2. Download the SQL scripts `create-app-schema-qs.sql`.
 
     ```
-    [oracle@sdbsd0 ~]$ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/eSQ5xkzqiv-yWsQj5FzDm33LKnVbdvPlkIMzHgDP9OmMgaPTQzNfNSOVNcAT2uhK/n/c4u04/b/data-management-library-files/o/OracleShardingQuickStart/create-app-schema-qs.sql</copy>
+    [oracle@sdbsd0 ~]$ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/create-app-schema-qs.sql</copy>
     ```
 
    
@@ -421,7 +421,7 @@ This lab assumes you have already completed the following:
 
    
 
-## **STEP 2:** Verify the Shard App Schema
+## Task 2: Verify the Shard App Schema
 
 1. Run GDSCTL command.
 
@@ -785,7 +785,7 @@ This lab assumes you have already completed the following:
 
     
 
-## **STEP 3:** Create a global service
+## Task 3: Create a global service
 
 1. Login to the shard director host, switch to oracle user.
 

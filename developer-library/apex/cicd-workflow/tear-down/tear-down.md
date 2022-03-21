@@ -10,7 +10,7 @@ Estimated Completion Time: 3 minutes
 
 We will clean up the deployment.
 
-## **STEP 1:** Destroy the Databases
+## Task 1: Destroy the Databases
 
 1. Use the following command to destroy the environments and databases:
 

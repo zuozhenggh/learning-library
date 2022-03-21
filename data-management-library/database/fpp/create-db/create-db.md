@@ -26,7 +26,7 @@ In this lab, you will:
       - Lab: Provision an Oracle Restart environment
       - Lab: Install the Oracle Database homes (working copies)
 
-## **Step 1:** Provision the database using the standard template
+## Task 1: Provision the database using the standard template
 
 1. Run the following command on the FPP Server (Est. 14-15 minutes): password is always FPPll##123 unless you have changed it
 
@@ -39,7 +39,7 @@ In this lab, you will:
 
   Notice that you have not specified the target name: the FPP server knows what is the target node (or cluster) because the working copy named `WC_db_19_9_0_FPPC` has been provisioned there. This information is stored in the FPP metadata schema.
 
-## **Step 2:** Verify the new database
+## Task 2: Verify the new database
 
 1. Connect to the target node:
 

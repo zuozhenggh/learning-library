@@ -16,7 +16,7 @@ In this lab you will:
 - Install kubectl >= 1.18 if not already present.
 - install Helm 3.x.
 
-## **STEP 1:** Install the OCI CLI
+## Task 1: Install the OCI CLI
 
 1. To install the OCI CLI on Linux or Mac OS X, run the command:
 
@@ -120,7 +120,7 @@ In this lab you will:
     }
     ```
 
-## **STEP 2:** Install `kubectl`
+## Task 2: Install `kubectl`
 
 1. *If you are using Docker Desktop on Mac OS X or Windows, `kubectl` should already be installed, and you can skip the install step.*
 
@@ -156,7 +156,7 @@ In this lab you will:
     </copy>
     ```
 
-## **STEP 3:** Install Helm
+## Task 3: Install Helm
 
 1. To install helm on Mac OS X and Linux, use:
 
@@ -169,7 +169,7 @@ In this lab you will:
     For more detailed instructions for your specific OS, go to:
     [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/).
 
-## **STEP 4:** Install Terraform
+## Task 4: Install Terraform
 
 If you are on a Linux based machine or Mac OS X, we recommend using tfswitch [https://tfswitch.warrensbox.com/Install/](https://tfswitch.warrensbox.com/Install/) to install Terraform, as it allows easy switching between Terraform versions.
 

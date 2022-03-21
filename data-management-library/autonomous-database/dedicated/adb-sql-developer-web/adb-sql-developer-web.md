@@ -20,7 +20,7 @@ As a developer or DBA,
 - A pre-provisioned Autonomous Database with admin access.
 - A pre-provisioned developer client machine with network access to the database.
 
-## STEP 1: Access the OCI Autonomous Database console and get the URL for the Database Actions console
+## Task 1: Access the OCI Autonomous Database console and get the URL for the Database Actions console
 
 - Login to your Oracle Cloud Infrastructure account and navigate to your dedicated Autonomous Database console page.
     ![access_db_console](./images/access_db_console_v2.png " ")
@@ -32,7 +32,7 @@ As a developer or DBA,
 - Save the URL someplace while working on the next step to access your developer client machine over VNC.
 
 
-## STEP 2: Create a VNC connection to the developer client VM and access the Database Actions console
+## Task 2: Create a VNC connection to the developer client VM and access the Database Actions console
 
 - Since your Autonomous Database is in a private network, you cannot access it with the above URL unless you are on a machine that has a network path to your database subnet.
 
@@ -72,7 +72,7 @@ As a developer or DBA,
 - You may also access the Database Actions console of your dedicated Autonomous Database instance from your local web browser, if you are in the same OCI Network/VCN as your database. For detailed instructions on setting up a VPN connection into your private database cloud infrastructure, refer to [Lab 9](?lab=lab-9-configuring-vpn-into-private-atp).
 
 
-## STEP 3: Access the Performance Hub through the Database Actions Console
+## Task 3: Access the Performance Hub through the Database Actions Console
 
 - You can access Performance Hub from the Database Actions console. Click the **Performance Hub** from the **Activity** menu to navigate to it.
     ![performance_hub](./images/access_perfhub.png " ")

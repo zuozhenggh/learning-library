@@ -33,7 +33,7 @@ If your system lacks any of these characteristics, parallel execution might not 
 
 The benefits of parallel execution can be observed in DSS and data warehouse environments. OLTP systems can also benefit from parallel execution during batch processing and during schema maintenance operations such as creation of indexes. The average simple DML or SELECT statements that characterize OLTP applications would not experience any benefit from being executed in parallel.
 
-## **STEP 1:**  Grant DBA to the SH user
+## Task 1:  Grant DBA to the SH user
 1.  If you aren't already logged in to the Oracle Cloud, open up a web browser and re-login to Oracle Cloud.
 
 2.  Start Cloud Shell
@@ -71,7 +71,7 @@ The benefits of parallel execution can be observed in DSS and data warehouse env
     ![](./images/dba-sh-grid.png " ")
 
 
-## **STEP 2:** Run a parallel query operation
+## Task 2: Run a parallel query operation
 
 1. Ensure that the **testy** service created earlier is running on instance 1.
 

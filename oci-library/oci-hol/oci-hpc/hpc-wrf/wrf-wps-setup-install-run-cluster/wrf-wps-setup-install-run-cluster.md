@@ -21,7 +21,7 @@ This lab assumes you have:
 - An Oracle Trial or Paid Cloud account  
 - Note for this lab we will be using two **BM.HPC2.36** nodes for our cluster and a VM.Standard2.4 for our Bastion.
 
-## **STEP 1**: Setup HPC Infrastructure
+## Task 1: Setup HPC Infrastructure
 
 1. Use the navigation menu on the left and navigate to **Solutions and Platform** > Marketplace > Applications.
 2. In the searchbar type HPC, then press your ENTER/Return key.
@@ -32,7 +32,7 @@ This lab assumes you have:
 6. For the Bastion choose the same AD as the cluster and choose the **VM.Standard.2.4** shape, then click NEXT.
 7. At the review screen, double check all the information you have entered, then click create.
 
-## **STEP 2**: Setup Gnome Desktop
+## Task 2: Setup Gnome Desktop
 
 1. There are a number of different desktop technologies you can use, but this guide will go over setting up and congifuring Gnome desktop as it is the default for Oracle Linux. The following steps will download, install, and configure Gnome Desktop for our Oracle Linux 7 Bastion instance.
 
@@ -59,7 +59,7 @@ This lab assumes you have:
 4. You will finally be presented with a gnome desktop and you should continue working from here.  
     ![Screenshot of Gnome Desktop](images/gnomedesktop.png)    
 
-## **STEP 3**: Configuring Oracle Linux
+## Task 3: Configuring Oracle Linux
 1. Now that we can access the desktop environment of our instance we can begin to configure it to run WRF. To begin lets install the dependencies we will need to go forward. Click Applications on the top left, click System Tools, then click Terminal. Perform the following in the terminal.  
     
     ```
@@ -72,7 +72,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 4**: Downloading and Compiling libraries for WRF
+## Task 4: Downloading and Compiling libraries for WRF
 Now that we have installed most dependencies we will need for WRF, lets begin to compile the libraries WRF needs to function.
 ### Creating folder structure and downloading libraries
 1. Enter in the following commands in the remote terminal to begin setting up the required folder structure.  
@@ -179,7 +179,7 @@ The grib2 library is actually a compilation of three separate libraries, specifi
     </copy>
     ```
 
-## **STEP 5**: Compiling WRF & WPS
+## Task 5: Compiling WRF & WPS
 1. Now that we have set up the folder structure for the libraries, we can begin to download and compile WRF and WPS. The following code block will download and place the programs in the appropriate locations.     
     
     ```
@@ -458,7 +458,7 @@ Don’t actually download anything. We will create a script for that. We are goi
     ```
     ![Screenshot of ncview](images/nc2.png)  
 
-## **STEP 6**: Running Real and WRF
+## Task 6: Running Real and WRF
 1. We have downloded data to represent a geographic location and we have added meteorological data to it; its finally time to run WRF using real data.
 
     ```

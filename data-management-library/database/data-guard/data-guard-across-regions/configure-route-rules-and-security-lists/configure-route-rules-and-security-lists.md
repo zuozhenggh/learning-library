@@ -16,7 +16,7 @@ Estimated lab time:  10 minutes
 
 Let's start on the standby side.  
 
-## **STEP 1:** Setup the route table and rules
+## Task 1: Setup the route table and rules
 1. From your VCN details select Route Tables, then select the private subnet route table or click Create Route Table if the private subnet route table is not there.
 
 2. Click Add Route Rules
@@ -31,7 +31,7 @@ Let's start on the standby side.
 
   ![image-20210122200451778](./images/image-20210122200451778.png)
 
-## **STEP 2:** Now configure the security list  
+## Task 2: Now configure the security list  
 
 1. Navigate to Security Lists and click Create Security List and name it something like Sec-List-Private-Subnet.
 
@@ -73,7 +73,7 @@ Let's start on the standby side.
 
   ![image-20210122201351067](./images/image-20210122201351067.png)
 
-## **STEP 3:** Now do the same steps for the primary side  
+## Task 3: Now do the same steps for the primary side  
 
 This time the CIDR block should be different since they can not overlap with the standby.
 When you have completed the primary side proceed to the next lab.

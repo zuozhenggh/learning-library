@@ -1,10 +1,10 @@
-# Lab 2: Create Anomaly Detection Project
+#  Create Anomaly Detection Project
 
 ## Introduction
 
 In this session, we will show you how to create the anomaly detection project, upload data into object storage, and create the data assets.
 
-***Estimated Lab Time***: 15 minutes
+***Estimated Time***: 15 minutes
 
 ### Objectives
 
@@ -14,11 +14,11 @@ In this lab, you will:
 - Learn how to create data asset to refer data in Oracle object storage.
 
 ### Prerequisites
+
 - A Free tier or paid tenancy account in OCI (Oracle Cloud Infrastructure)
 - Familiar with OCI object storage to upload data
 
-
-## **STEP 1:** Create a Project
+## Task 1: Create a Project
 
 As mentioned, Project is a way to organize multiple data assets, models, deployments to the same workspace. It is the first step to start.
 
@@ -37,7 +37,7 @@ The Create Project button navigates User to a form where they can specify the co
 Once the details are entered click the Create Button. If the project is successfully created it will show up in projects pane. From here onwards, select ad_demo.
 ![](../images/4_project_pane.png " ")
 
-## **STEP 2:** Create a Data Asset
+## Task 2: Create a Data Asset
 
 We now need to create a data asset to refer to the previously uploaded object storage.
 
@@ -51,7 +51,9 @@ Click the Data Asset menu on the middle left, and Click the Create Data Asset bu
 Then you can specify the compartment of Object storage that houses the data. Click Create Button.
 ![](../images/7_create_data_asset_form.png " ")
 
-After a few seconds, the data asset will be shown in the data asset main pane.
+After a few seconds, the data asset will be shown in the data asset main panel.
+
+For other types of data sources, such as Oracle Autonomous Transaction Processing (ATP) or InfluxDB, please refer [this documentation page](https://docs.oracle.com/en-us/iaas/anomaly/using/add-data-assets.htm#add-data-assets) for how to configure.
 
 ### 2: Use the Train Model button to create a new data asset (Optional)
 
@@ -64,9 +66,8 @@ Create a new dataset navigates the User to a form, where they can specify the co
 
 Congratulations on completing this lab!
 
-[Proceed to the next section](#next).
-
 ## Acknowledgements
+
 * **Authors**
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services

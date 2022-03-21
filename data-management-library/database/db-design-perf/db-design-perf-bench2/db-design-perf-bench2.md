@@ -13,7 +13,7 @@ Estimated lab time: 10 minutes
 
 -   This lab requires completion of the preceding labs in the Contents menu on the left.
 
-## **STEP 1:** Run the New Benchmark via Cloud Shell
+## Task 1: Run the New Benchmark via Cloud Shell
 
 1. Using Cloud Shell, run the benchmark2 shell script.
 
@@ -44,7 +44,7 @@ Estimated lab time: 10 minutes
 
     This time, because you are now familiar with the benchmark process, the 8 sessions will be launched and the initiating commit will occur automatically, thus you simply need to wait for the benchmark to complete.
 
-## **STEP 2:** Review results
+## Task 2: Review results
 
 1. The benchmark will produce a similar performance summary to the first execution.
 

@@ -33,7 +33,7 @@ This lab assumes you have completed the following labs:
 * Lab: Environment Setup
 * Lab: Sample Schema Setup
 
-## **Step 1**: Install Python
+## Task 1: Install Python
 
 Python comes preinstalled on most Linux distributions, and it is available as a package on others. The Python packages can be obtained from the software repository of your Linux distribution using the package manager.
 
@@ -63,7 +63,7 @@ Python comes preinstalled on most Linux distributions, and it is available as a 
 
     ![](./images/p_installPython.jpg " ")
 
-## **Step 2**: The Python Interpreter
+## Task 2: The Python Interpreter
 
 There are several ways to execute Python code. In this step, we start with two examples on how to execute Python code from the command line. The first example executing code from the command prompt i.e. executing commands directly in the interpreter. The second example to save your code in a .py file and invoke the interpreter to execute the file.
 
@@ -101,7 +101,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-2.png " " )
 
-## **Step 3**: Install Python Oracle module and connect to a database
+## Task 3: Install Python Oracle module and connect to a database
 
 *cx\_Oracle* is a python module that enables access to Oracle databases. This module is supported by Oracle 11.2 and higher and works for both Python 2.X and 3.X. There are various ways in which cx\_Oracle can be installed. In this example, we will use pip (installed by default for python 3.4 and up). For more ways to install cx\_Oracle (like yum) check the documentation on [https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle](https://yum.oracle.com/oracle-linux-python.html#Aboutcx_Oracle "documentation").
 
@@ -162,7 +162,7 @@ There are several ways to execute Python code. In this step, we start with two e
 
     ![](./images/p_python-3.png " ")
 
-## **Step 4**: Querying the Oracle database
+## Task 4: Querying the Oracle database
 
 Retrieving records from Oracle database using cursors is a simple as embedding a SQL statement within a cursor().execute statement. For this example, we will use an existing table from the *SH* sample schema.
 
@@ -205,7 +205,7 @@ Retrieving records from the Oracle database using cursors is a simple as embeddi
 
 **Note**: Closing the cursor is considered good practice. Oracle will automatically close the cursor after the execution of its parent block finishes.
 
-## **Step 5**: Query a JSON table from PYTHON
+## Task 5: Query a JSON table from PYTHON
 
 This section provides detail on how to work with JSON data in Oracle Database 19c using Python’s interface. The exercises include creating a table in the pluggable database ORCLPDB, loading data into the table, validating documents with IS JSON check, and querying data from Python.
 
@@ -408,7 +408,7 @@ This section provides detail on how to work with JSON data in Oracle Database 19
 
     ![](./images/step5.10-conclose.png " " )
 
-## **Step 6**: Load JSON data into a table using PYTHON
+## Task 6: Load JSON data into a table using PYTHON
 
 It is likely that rather than writing one JSON row at a time to the database, you will want to load many JSON records at once. In this example, we will leverage Oracle External Tables functionality to do this.
 
@@ -418,7 +418,27 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
 **Note**: If you have already completed the HYBRID PARTITIONING lab the *SH* user has been granted the CREATE ANY DIRECTORY privilege.
 
-1.  Connect to the database as SYS and create a new DIRECTORY object.
+You need to create a file-system directory and place a JSON document in this directory.
+
+1. Create a directory as the **oracle** user
+
+    ````
+    <copy>
+    mkdir -p /home/oracle/labs/python/External
+    </copy>
+    ````
+
+2. Download a ZIP file containing *departments.dmp* and expand this in the directory you have just created
+
+    ````
+    <copy>
+    cd /home/oracle/labs/python/External
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/deptJSON.zip
+    unzip deptJSON.zip
+    </copy>
+    ````
+
+3.  Connect to the database as SYS and create a new DIRECTORY object.
 
     ````
     <copy>
@@ -437,7 +457,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ![](./images/p_pyth_cr_dir.png " " )
 
-2.  Open the python interpreter and connect to the Oracle database as the *SH* user. Open a cursor.
+4.  Open the python interpreter and connect to the Oracle database as the *SH* user. Open a cursor.
 
     ````
     <copy>
@@ -457,7 +477,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ![](./images/step6.2-connectdb.png " " )
 
-3.  To create an external table pointing to the JSON document *departments.dmp*, execute the following in the Python shell.
+5.  To create an external table pointing to the JSON document *departments.dmp*, execute the following in the Python shell.
 
     ````
     <copy>
@@ -465,7 +485,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
     </copy>
     ````
 
-4.  Query the JSON table retrieving all the documents.
+6.  Query the JSON table retrieving all the documents.
 
     ````
     <copy>
@@ -477,7 +497,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ![](./images/p_pythQuery-12.png " " )
 
-5.  The data in the file *departments.dmp* is not a single JSON document. Each row is JSON data consisting of a *Department* object which contains an array of *employees* objects. Each employees object has a Name, a Job Title, and a Hire Date. The Oracle database can manipulate JSON directly, as you have seen with the SQL/JSON operator json\_query. Other operators include json\_value, json\_table, and so on.
+7.  The data in the file *departments.dmp* is not a single JSON document. Each row is JSON data consisting of a *Department* object which contains an array of *employees* objects. Each employees object has a Name, a Job Title, and a Hire Date. The Oracle database can manipulate JSON directly, as you have seen with the SQL/JSON operator json\_query. Other operators include json\_value, json\_table, and so on.
 
     Use Python to retrieve the data from our table, load it into an array, and print the first department name (the indentation is important).
 
@@ -498,7 +518,7 @@ The access driver requires that a DIRECTORY object is defined to specify the loc
 
     ![](./images/step6.5-retrievedata.png " " )
 
-6.  Now determine how many employees there are per department.
+8.  Now determine how many employees there are per department.
 
     ````
     <copy>
@@ -522,5 +542,5 @@ An additional lab on using Python with Spatial data is also available elsewhere 
 
 - **Author** - Troy Anthony
 - **Contributors** - Anoosha Pilli, Dylan McLeod, Arabella Yao
-- **Last Updated By/Date** - Kamryn Vinson, June 2021
+- **Last Updated By/Date** - Troy Anthony, November 2021
 

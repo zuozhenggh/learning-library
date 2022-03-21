@@ -20,9 +20,9 @@ Estimated Lab Time: 1 Hour.
  
 *This is the "fold" - below items are collapsed by default*
 
-## **STEP 1**: title
+## Task 1: title
 
-## **STEP 2:** title
+## Task 2: title
 
 ## Learn More
 

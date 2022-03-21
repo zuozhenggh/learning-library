@@ -37,7 +37,7 @@ To run this lab, you need to:
 - Have deployed a WebLogic on OCI domain using the marketplace.
 - Have migrated the application database from the source environment to OCI.
 
-## **STEP 1:** Installing WebLogic Deploy Tooling
+## Task 1: Installing WebLogic Deploy Tooling
 
 ### Using the docker on-premises environment:
 
@@ -87,7 +87,7 @@ You should already be in the on-premises environment logged in as the `oracle` u
     This will install WebLogic Deploy Tooling locally in a folder `weblogic-deploy`.
 
 
-## **STEP 2:** Discover the On-Premises Domain
+## Task 2: Discover the On-Premises Domain
 
 The `discover_domain.sh` script wraps the **WebLogic Deploy Tooling** `discoverDomain` script to generate 3 files:
 
@@ -109,7 +109,7 @@ Applications found under `ORACLE_HOME` will have a path that includes `@@ORACLE_
 
     [output of the discover_domain.sh script](https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/workshops/weblogic-on-oci-mp/freetier/discover_domain.output.txt)
 
-## **STEP 3:** Edit the `source.yaml` File
+## Task 3: Edit the `source.yaml` File
 
 The extracted `source.yaml` file looks like the following:
 
@@ -378,7 +378,7 @@ appDeployments:
 
 5. Save the `source.yaml` file by typing `CTRL+x` then `y`.
 
-## **STEP 4:** Edit the `source.properties` File
+## Task 4: Edit the `source.properties` File
 
   ```bash
   <copy>
@@ -398,22 +398,27 @@ appDeployments:
 
 1. Delete all lines except for the `JDBC.JDBCConnection.PasswordEncrypted=` line, as these pertain to the `domainInfo` and `topology` sections we deleted from the `source.yaml`.
 
-2. Enter the JDBC Connection password for the `RIDERS` user: `Nge29v2rv#1YtSIS#`.
+2. Enter the JDBC Connection password for the `RIDERS` user pdb.
 
-  Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
+    The password for the RIDERS user from the source DB can be found with
+    ```bash
+    <copy>
+    cat /u01/app/oracle/gen_env.sh | grep DS_
+    </copy>
+    ```
 
-  The resulting file should look like the follwoing (with the default wallet password):
+   Although the name is `PasswordEncrypted`, enter the plaintext password and WebLogic will encrypt it when updating the domain.
+
+   The resulting file should look like:
 
     ```yaml
-    <copy>
-    JDBC.JDBCConnection.PasswordEncrypted=Nge29v2rv#1YtSIS#
-    </copy>
+    JDBC.JDBCConnection.PasswordEncrypted=<PDB_PASSWORD>
     ```
 
 4. Save the file with `CTRL+x` and `y`.
 
 
-## **STEP 5:** Update the WebLogic Domain on OCI
+## Task 5: Update the WebLogic Domain on OCI
 
 The `update_domain.sh` script updates the target domain.
 
@@ -455,7 +460,7 @@ The `update_domain_as_oracle_user.sh` script runs the **WebLogic Deploy Tooling*
 
   [View the output of the update_domain.sh script](https://raw.githubusercontent.com/oracle/learning-library/master/developer-library/weblogic-to-oci/workshops/weblogic-on-oci-mp/freetier/update_domain.output.txt)
 
-## **STEP 6:** Check the Application Deployed Properly
+## Task 6: Check the Application Deployed Properly
 
 1. Go to the WebLogic Admin console at https://*ADMIN_SERVER_PUBLIC_IP*:7002/console.
 

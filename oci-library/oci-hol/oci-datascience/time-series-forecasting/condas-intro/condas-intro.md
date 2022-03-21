@@ -18,7 +18,7 @@ In this lab, you will:
 
 * A foundational understanding of Python
 
-## **STEP 1:** Launching Environment Explorer
+## Task 1: Launching Environment Explorer
 
 1.  After you log into OCI Data Science and create a Notebook, go to `File` and select `New Launcher`.
 
@@ -28,7 +28,7 @@ In this lab, you will:
 
     ![](../images/environment_explorer.png " ")
 
-## **STEP 2:** Downloading a pre-built Conda Environment
+## Task 2: Downloading a pre-built Conda Environment
 
 1.  Choose from a list of conda environments
 
@@ -42,7 +42,7 @@ In this lab, you will:
 
     ![](../images/download_ml_conda_instructions.png " ")
 
-## **STEP 3:** Selecting Conda Environment for Notebook session
+## Task 3: Selecting Conda Environment for Notebook session
 
 1.  Choose an installed conda environment for notebook
 

@@ -35,7 +35,7 @@ This lab assumes you have completed the following labs:
 
 * Launch the workshop (in the Introduction)
 
-## **STEP 1**: Import Notebook to Oracle Machine Learning
+## Task 1: Import Notebook to Oracle Machine Learning
 
 1. Once you are in the compartment where your ADW instance is created, click on your ADW instance. Display Name would be ADW followed by Reservation id, for example, ADW1135.
 
@@ -80,7 +80,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/notebook.png " ")
 
-## **STEP 2**: Run the Notebook
+## Task 2: Run the Notebook
 
 1. In the Picking Good Wines < $30 Using Wine Reviews notebook, click on the **gear** icon in the upper right.
 
@@ -98,7 +98,7 @@ This lab assumes you have completed the following labs:
 
     ![](./images/run-all-paragraphs.png " ")
 
-## **STEP 3**: Explore the Notebook
+## Task 3: Explore the Notebook
 
 ### Explore the data with the focus on points, price, province, region, Taster\_Name, taster\_Twitter_handle.
 

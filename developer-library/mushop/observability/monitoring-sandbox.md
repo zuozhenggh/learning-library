@@ -17,7 +17,7 @@ In this lab, you will:
 
 * Completed the **Deploy the MuShop App** lab and have the app running
 
-## **STEP 1**: Review OKE Metrics
+## Task 1: Review OKE Metrics
 
 1. *OKE Cluster Metrics:* Navigate to **Developer Services -> Kubernetes Clusters -> <Your_Cluster_Name>**
 
@@ -51,7 +51,7 @@ In this lab, you will:
 
     ![OKE Worker Node Metric](images/node-metric.png)
 
-## **STEP 2**: Grafana Monitoring
+## Task 2: Grafana Monitoring
 
 Good news! You already installed Prometheus/Grafana as part of the umbrella chart during setup. Now let's revisit the charts and connect to some Grafana dashboards!
 
@@ -124,7 +124,7 @@ Good news! You already installed Prometheus/Grafana as part of the umbrella char
 
     *Note:* You can install other dashboards from the [community](https://grafana.com/grafana/dashboards?dataSource=prometheus) or create your own
 
-## **STEP 3**: Autoscaling
+## Task 3: Autoscaling
 
 Scaling out a Deployment will ensure new Pods are created and scheduled to Nodes with available resources. Scaling will increase the number of Pods to the new desired state. Kubernetes also supports autoscaling of Pods, but it is outside of the scope of this tutorial. Scaling to zero is also possible, and it will terminate all Pods of the specified Deployment.
 

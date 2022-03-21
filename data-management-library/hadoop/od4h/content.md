@@ -31,7 +31,7 @@ In this lab, you will:
 OD4H is already installed on BDS nodes when you provision BDS. It is available under `/opt/oracle/od4h/jlib`.
 
 
-## **STEP 1**: Set up the OD4H Jars
+## Task 1: Set up the OD4H Jars
 
 
 1. Add `/opt/oracle/od4h/jlib/` to **HADOOP_CLASSPATH**.
@@ -50,7 +50,7 @@ OD4H is already installed on BDS nodes when you provision BDS. It is available u
     </copy>
     ```
 
-## **STEP 2**: Download Autonomous Data Warehouse Cloud Credentials
+## Task 2: Download Autonomous Data Warehouse Cloud Credentials
 
 Oracle client credentials (wallet files) are downloaded from Autonomous Data Warehouse by a service administrator. If you are not an Autonomous Data Warehouse administrator, your administrator should provide you with the client credentials.
 
@@ -127,7 +127,7 @@ To download client credentials, do the following from Oracle Cloud Infrastructur
       </copy>
       ```    
 
-## **STEP 3**: Create an OD4H User and EMPLOYEEDATA Table on Autonomous Data Warehouse
+## Task 3: Create an OD4H User and EMPLOYEEDATA Table on Autonomous Data Warehouse
 
 Although you can connect to your autonomous database using local PC desktop tools like Oracle SQL Developer, you can conveniently access the browser-based SQL Developer Web directly from your ADW or ATP console.
 
@@ -190,7 +190,7 @@ Navigate to the Autonomous Data Warehouse details page.
     ```
     ![create-table.png](images/create-table.png "create-table.png")
 
-## **STEP 4**: Create and Query a Hive External Table Using the Autonomous Data Warehouse Table
+## Task 4: Create and Query a Hive External Table Using the Autonomous Data Warehouse Table
 
 The following section contains Hive commands to build an external Hive table that refers to `EMPLOYEEDATA` table.
 

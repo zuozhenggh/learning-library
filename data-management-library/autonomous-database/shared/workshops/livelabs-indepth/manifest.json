@@ -1,9 +1,9 @@
 {
-  "workshoptitle" : "Analyzing your data with Autonomous Database",
+  "workshoptitle" : "Manage and Monitor Autonomous Database",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
-          "title": "Getting Started",
+          "title": "Get Started",
           "description": "Login to Oracle Cloud",
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
       },
@@ -37,7 +37,7 @@
         {
             "title": "Lab 5: Visualize Your Data",
             "description": "Create Rich Data Visualizations",
-            "filename": "./../../adw-visualizations/adw-visualizations.md"
+            "filename": "./../../adw-visualizations-using-oad6pt3/adw-visualizations.md"
         },
         {
             "title": "Lab 6: Use Wallets for Secure Connections",
@@ -60,19 +60,19 @@
             "filename": "./../../adb-auto-scaling/adb-auto-scaling.md"
         },
         {
-            "title": "Lab 10: Disaster Recovery",
+            "title": "Lab 10: Enable Disaster Recovery",
             "description": "Enable Autonomous Data Guard",
             "filename": "./../../adb-autonomous-data-guard/adb-autonomous-data-guard.md"
         },
         {
-            "title": "Lab 11: Get Started with Machine Learning Notebooks",
-            "description": "Using Oracle Machine Learning Notebooks",
-            "filename": "./../../adw-oml-notebooks/adw-oml-notebooks.md"
+            "title": "Lab 11: Create Refreshable Clones",
+            "description": "Creating Refreshable Clones",
+            "filename": "./../../adb-refreshable-clones/adb-refreshable-clones.md"
         },
         {
-            "title": "Lab 12: Build a Simple Machine Learning Algorithm",
-            "description": "Simple Introduction to Machine Learning Algorithms (DBMS_PREDICTIVE_ANALYTICS)",
-            "filename": "./../../adw-machine-learning/adw-machine-learning.md"
+            "title": "Lab 12: Set Event and Alarm Notifications",
+            "description": "Setting Event and Alarm Notifications for an Autonomous Database",
+            "filename": "./../../adb-event-alarm/adb-event-alarm.md"
         },
         {
             "title": "Need Help?",

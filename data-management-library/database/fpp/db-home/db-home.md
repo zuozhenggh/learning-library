@@ -46,7 +46,7 @@ In this lab, you will:
       - Lab: Import Gold Images
       - Lab: Provision an Oracle Restart environment
 
-## **Step 1:** Provision the first workingcopy
+## Task 1: Provision the first workingcopy
 
 1. From the FPP Server, verify that you have the images that you should have imported in the lab **Import Gold Images**.
 
@@ -66,7 +66,7 @@ In this lab, you will:
       ![](./images/first-db.png)
       ![](./images/first-db2.png)
 
-## **Step 2:** Provision the second workingcopy
+## Task 2: Provision the second workingcopy
 1. Provision the second DB image to the target (Est. 8-9 minutes), **please note the additional -groups** parameter passed here:
 
       ```
@@ -79,7 +79,7 @@ In this lab, you will:
       ![](./images/second-db.png)
       ![](./images/second-db2.png)
 
-## **Step 3:** Verify the working copies
+## Task 3: Verify the working copies
 1. On the server:
 
       ```

@@ -17,7 +17,7 @@ In this lab you will:
 - Configure GitHub actions to perform tests upon committing to the development or master branch.
 - Optionally we'll configure GitHub actions to deploy to production upon creating a new release.
 
-## **STEP 1:** GitHub Actions Overview
+## Task 1: GitHub Actions Overview
 
 1. GitHub Actions are available to run tasks, using a yaml configuration file under `.github/workflow`.
 
@@ -162,7 +162,7 @@ In this lab you will:
 
     ```
 
-## **STEP 2:** GitHub Secrets
+## Task 2: GitHub Secrets
 
 1. The GitHub actions is already present in the `.github/workflow/ci.yaml`. 
 
@@ -203,7 +203,7 @@ In this lab you will:
 
     These files can be found in the `terraform` folder.
 
-## **STEP 3:** Test the Action
+## Task 3: Test the Action
 
 1. Click the **Actions** menu.
 

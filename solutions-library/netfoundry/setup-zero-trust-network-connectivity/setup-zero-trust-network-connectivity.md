@@ -41,7 +41,7 @@ To get started you will need:
 
 - An existing application in the cloud to connect to: [NetFoundry Prerequsites](?lab=netfoundry-prerequisites)
 
-## **STEP 1:** Create Network
+## Task 1: Create Network
 
 1. Once you have created your Organization after signing up for the 7 day trial or other, you are ready to create your first network. 
 
@@ -57,7 +57,7 @@ To get started you will need:
 
 	![](./images/creatingOrg.png " ")
 
-## **STEP 2:** Create Hosted Edge Router
+## Task 2: Create Hosted Edge Router
 
 The next step is to create the Fabric Router which essentially builds the transport mechanism for the "middle mile". 
 
@@ -75,7 +75,7 @@ The next step is to create the Fabric Router which essentially builds the transp
 
 	![](./images/selectRegion.png " ")
 
-## **STEP 3:** Create Edge Router Policy
+## Task 3: Create Edge Router Policy
 
 For the next step, we will create the Edge Router policy which allows Endpoints transit access to the customer edge network in the Cloud. 
 
@@ -93,7 +93,7 @@ For the next step, we will create the Edge Router policy which allows Endpoints 
 
     **NOTE: by using #all in the endpoints field, you are allowing all endpoints to transit this Fabric via @FabricRouter1. For the purposes of a standard deployment and test this is a best practice. For advanced deployments you can utilize this feature to control transit for various endpoints.**
 
-## **STEP 4:** Create Customer Hosted Edge Router
+## Task 4: Create Customer Hosted Edge Router
 
 The next element we will deploy is the Edge Router in the customer VCN containing the WebApp we created for this exercise. 
 
@@ -132,7 +132,7 @@ The next element we will deploy is the Edge Router in the customer VCN containin
 
 	![](./images/edgeRouterCreated.png " ")
 
-## **STEP 5:** Create Endpoint for User Access - Windows
+## Task 5: Create Endpoint for User Access - Windows
 
 The next step in the process is to register your Laptop/Host as an endpoint in the Fabric. 
 
@@ -168,7 +168,7 @@ The next step in the process is to register your Laptop/Host as an endpoint in t
 
 	![](./images/endpointResiteredConsole.png " ")
 
-## **STEP 6:** Create Services and AppWAN
+## Task 6: Create Services and AppWAN
 
 The final step is to create a service for the web app in our VCN and to build an AppWAN to allow our endpoint (mylaptop) access to this service (port 80) on the private VCN IP address. The customer edge router will be used to terminate the service as show in this example. 
 

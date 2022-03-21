@@ -3,9 +3,9 @@
 ## Introduction
 In this section you can learn how to upgrade instances to a Paid Model.
 
-Estimated Lab Time: 2 minutes
+Estimated Lab Time: 2 minutes.
 
-## **STEP 1**: Upgrade Instances to Paid
+## Task 1: Upgrade Instances to Paid
 
 ![Oracle Cloud Pricing](./images/next_banner.png)
 
@@ -41,7 +41,7 @@ Remember that you will see **Always Free** logo next to the name of your databas
 
 You have learned how to Upgrade your Always Free Account to a subscription model!
 
-## **STEP 2**: Learn More?
+## Task 2: Learn More?
 
 If you enjoy the workshop, give me a star on Github: [click here](https://github.com/vmleon/oracle-atp-da)!
 ![Github start](./images/github.png)

@@ -22,7 +22,7 @@ This lab assumes you have already completed the following:
 - Create Demo App Schema
 - Custom Demo Data Loading
 
-## **STEP 1:** Prepare the sample rows
+## Task 1: Prepare the sample rows
 1. Login to the catalog database host, switch to oracle user, and make sure you are in the cata environment.
 
     ```
@@ -76,7 +76,7 @@ This lab assumes you have already completed the following:
     ```
 
    
-## **STEP 2:** Cross Shard Query
+## Task 2: Cross Shard Query
 1. Now, let’s run a Cross Shard Query which does a SELECT with ORDER BY query accessing multiple shards but not all shards.   
 	 ```
     SQL> set termout on

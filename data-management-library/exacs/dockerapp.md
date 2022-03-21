@@ -27,7 +27,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 ## Steps
 
-### **STEP 1: Connect to your database and create nodeuser and run create_schema.sql**
+### **Task 1: Connect to your database and create nodeuser and run create_schema.sql**
 
 
 - SSH into your Exadata Cloud Service Database VM
@@ -76,7 +76,7 @@ If you do not have an Oracle Account, click [here](https://profile.oracle.com/my
 
 **Now that nodeuser is created and logged in, copy the contents of create_schema.sql that we downloaded earlier and run it here.**
 
-### **STEP 2: Configure dbconfig.js and Build docker image**
+### **Task 2: Configure dbconfig.js and Build docker image**
 
 - Now ssh into the Oracle compute instance and run the below command to get the zip file containing the docker application
 
@@ -140,7 +140,7 @@ Once the docker image build is done, you can find the image by running the below
  
 ![](./images/dockerApp/docker_images.png " ") 
 
-### **STEP 3: Run your docker image as container**
+### **Task 3: Run your docker image as container**
 
 - Run the aone image with the name nodeapp to deploy the node application as a container
 

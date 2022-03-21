@@ -14,14 +14,14 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 - SSH Keys
 
-## **Step 1**: Download Oracle Resource Manager (ORM) stack zip file
+## Task 1: Download Oracle Resource Manager (ORM) stack zip file
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [aa-oml-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/JSipeWrHozz-Tr6ywW66gK5TgshrvnpZZMSG1hO67y5Ox5w8e8TvranjvOtO9NQ3/n/natdsecurity/b/stack/o/aa-oml-mkplc-freetier.zip)
 
 2.  Save in your downloads folder.
 
 We strongly recommend using this stack to create a self-contained/dedicated VCN with your instance(s). Skip to *Step 3* to follow our recommendations. If you would rather use an exiting VCN then proceed to the next step as indicated below to update your existing VCN with the required Egress rules.
 
-## **Step 2**: Adding Security Rules to an Existing VCN   
+## Task 2: Adding Security Rules to an Existing VCN   
 This workshop requires a certain number of ports to be available, a requirement that can be met by using the default ORM stack execution that creates a dedicated VCN. In order to use an existing VCN the following ports should be added to Ingress rules
 
 | Port           |Description                            |
@@ -40,7 +40,7 @@ This workshop requires a certain number of ports to be available, a requirement 
     - Destination Port Range: *Refer to above table*
 7.  Click the Add Ingress Rules button
 
-## **Step 3**: Setup Compute   
+## Task 3: Setup Compute   
 Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
   -  Create Stack:  *Compute + Networking*
   -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above

@@ -21,7 +21,7 @@ Estimated Lab Time: 5 minutes
 
 <!-- *This is the "fold" - below items are collapsed by default*  -->
 
-## **STEP 1**: Create Repo Schema
+## Task 1: Create Repo Schema
 
 
 1. In SQL Developer Web, connect to the Autonomous database to be used for the Spatial Studio repository as the **admin** user
@@ -33,7 +33,7 @@ Estimated Lab Time: 5 minutes
    IDENTIFIED BY <password goes here>;</copy>
     ```
 
-## **STEP 2**: Assign Tablespace Quota
+## Task 2: Assign Tablespace Quota
 
 1. Assign default tablespace to Spatial Studio repository schema.  With Autonomous Database you can use tablespace name **data** 
    
@@ -49,7 +49,7 @@ Estimated Lab Time: 5 minutes
    QUOTA <quota value> ON data;</copy>
     ```
 
-## **STEP 3**: Grant Permissions    
+## Task 3: Grant Permissions    
 
 1. Grant the following permissions to the Spatial Studio repository schema user
 
@@ -70,7 +70,7 @@ Estimated Lab Time: 5 minutes
 
 The studio_repo schema is now ready to be used as your Spatial Studio repository.
 
-## **STEP 4**: Download Wallet   
+## Task 4: Download Wallet   
 
    A Wallet is required for Spatial Studio to connect to the Autonomous Database repo schema we have created. We will use the Wallet in the next Lab.
 

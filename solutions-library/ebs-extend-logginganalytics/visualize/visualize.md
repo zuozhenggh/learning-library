@@ -17,7 +17,7 @@ In this lab, you will:
 * An Oracle Cloud Environment
 * EBS Cloud Manager, EBS 1-Click and Advanced Provisioned Instance, Network - All setup in previous workshop
 
-## **STEP 1:** Overview of Log Explorer 
+## Task 1: Overview of Log Explorer 
 
 1. Navigate to Logging Analytics - Log Explorer
 
@@ -49,7 +49,7 @@ In this lab, you will:
 
 5. Lastly the main part of the log explorer is where you can see the data in a visual. These are called widgets. 
 
-## **STEP 2:** Create a Dashboard
+## Task 2: Create a Dashboard
 
 1. From the log explorer go to Actions in the top right and Click **Save As**
 
@@ -79,7 +79,7 @@ In this lab, you will:
 
   d. As you create more widgets based off of queries or built using the fields and visualization panels you can add them from the right side by dragging the widget into the dashboard and placing as you see fit. Allowing you to customize your dashboard to your preference.
 
-## **STEP 3:** Example flow for analyzing your VCN Flow Logs
+## Task 3: Example flow for analyzing your VCN Flow Logs
   
 We will now walk through a flow to understand our logs and create some common widgets. Corresponding query will be shown captioned below each image
 

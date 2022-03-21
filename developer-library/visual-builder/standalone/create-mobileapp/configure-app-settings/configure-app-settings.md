@@ -14,7 +14,7 @@ You can also install PWAs on laptops (for example, as a Chrome app). This means 
 
 In this lab, you'll configure the HR mobile application to run as a PWA. You'll also review the app's settings to make sure the values are what you want your user to see. You'll use these settings to launch your PWA from a browser.
 
-## **STEP 1**: Configure Application Settings
+## Task 1: Configure Application Settings
 
 1.  In the Navigator, click the **Mobile Applications ![](images/vbcsia_mob_mob_icon.png)**  tab.
 2.  Click the **hrmobileapp** node and click the **Settings** tab.
@@ -27,7 +27,7 @@ In this lab, you'll configure the HR mobile application to run as a PWA. You'll 
 
     ![](images/vbcsia_mob_gen_s3.png)
 
-## **STEP 2**: Enable PWA Support
+## Task 2: Enable PWA Support
 
 1.  Click the **PWA** tab, then click **Enable Progressive Web App (PWA)**.
 
@@ -43,7 +43,7 @@ In this lab, you'll configure the HR mobile application to run as a PWA. You'll 
 
     The Resources section is where you'd customize your app's splash screen and icons. The Advanced File Caching section lists the flows and pages to be cached on the user’s device when the PWA is first launched. For demonstration purposes, we'll accept the default settings in both sections.
 
-## **STEP 3**: Run the Mobile App as a PWA
+## Task 3: Run the Mobile App as a PWA
 
 1. Click **Preview** ![](./images/vbcsia_mob_run_icon.png).
 

@@ -22,10 +22,9 @@ In this lab, you will:
 
 ### Prerequisites
 
-- Oracle Free Trial Account
+- This lab assumes you have logged into your to Oracle Cloud account.
 
-
-## **STEP 1:** Create Virtual Cloud Network (VCN)
+## Task 1: Create Virtual Cloud Network (VCN)
 
 1. We are going to **create a network with a public subnet** (with access from the Internet) and a **private subnet** (no direct access from the Internet).
 
@@ -94,7 +93,7 @@ In this lab, you will:
 
    ![VCN Security List Rules for MySQL](images/vcn_security_list_for_mysql.png)
 
-## **STEP 2:** Create Bastion Host
+## Task 2: Create Bastion Host
 
 1. We are going to **create a compute instance** in the Public Subnet with a public IP; it will be our access point to public and private resources.
 
@@ -235,7 +234,7 @@ In this lab, you will:
       <copy>mysqlsh --version</copy>
       ```
 
-## **STEP 3:** Create Object Storage and Upload Files
+## Task 3: Create Object Storage and Upload Files
 
 1. Go to **Menu** > **Storage** > **Buckets**.
 
@@ -261,7 +260,7 @@ In this lab, you will:
 
    ![Create Bucket](images/os_object_upload.png)
 
-7. **Download** the dataset <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/27PK5yRJp6ikvVdli-21D0vTwNywA0Q1aUPD2RQ7G8rtbPQwO2onh7TaZjfjawPj/n/odca/b/workshops-livelabs-do-not-delete/o/mds-di-ds-reef_life_survey_fish.csv" target="\_blank">Reef Life Survey Fish</a>.
+7. **Download** the dataset <a href="https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/5Sf36_9IRucKBEPwsm-5Zq2QWOl57HK5DlZhIOhqfNBJBlXp53jD621PLjiWz-C_/n/fruktknlrefu/b/workshop-marine-life/o/mds-di-ds-reef_life_survey_fish.csv" target="\_blank">Reef Life Survey Fish</a>.
 
 8. Drop the file on **Choose Files from your Computer**. Leave everything else by default.
 

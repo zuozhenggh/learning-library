@@ -18,7 +18,7 @@ Estimated workshop time: 15 minutes
 - [Add an ingress rule to the VCN security list](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm#Using) to allow TCP traffic for the ports port 5900+N where N is the display number (usually :0 for a physical display).
   ![](images/vncseclist.PNG " ")
 
-## **Step 1:** Connect to your compute instance through SSH
+## Task 1: Connect to your compute instance through SSH
 
 1. Open a terminal (also known as command line or console) of your choice. In this example, we work on a local Windows machine and use Windows PowerShell as terminal.
 
@@ -36,7 +36,7 @@ Estimated workshop time: 15 minutes
    <copy>ssh -i private-key ubuntu@public_ip</copy>
 ```
 
-## **Step 2:** Set up and configure VNC on your Ubuntu instance
+## Task 2: Set up and configure VNC on your Ubuntu instance
 
 1. Install VNC server by running the commands below in your terminal:
 
@@ -110,7 +110,7 @@ Type **:wq** - to save and exit.
    <copy>exit</copy>
 ```
 
-## **Step 3:** Connect to the VNC Desktop
+## Task 3: Connect to the VNC Desktop
 
 You can connect to remote desktop using a VNC client (e.g. TigerVNC) and SSH tunneling.
 

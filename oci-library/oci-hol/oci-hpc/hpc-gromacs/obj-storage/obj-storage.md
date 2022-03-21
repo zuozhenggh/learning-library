@@ -5,7 +5,7 @@ In this lab, you will add Gromacs Installer to Object Storage.
 
 Estimated Lab Time: 5 minutes
 
-## **STEP**: Add Gromacs Installer to Object Storage
+## Task: Add Gromacs Installer to Object Storage
 *Note that the terraform scripts [zip file](https://github.com/oci-hpc/oci-hpc-runbook-gromacs/tree/master/Resources/gromacs-2020.1.zip) provided in this github already contain object storage urls for Gromacs 2020.1, VMD 1.9.3 and an example benchmarking model from [Max Planck Institute](https://www.mpibpc.mpg.de/grubmueller/bench). If you want to change these url's, modify the variable.tf file and replace the values for gromacs_url, model_url and visualizer_url with your own pre-authenticated request urls.*
 
 1. Select the menu ![](./images/menu.png)  on the top left, then select Object Storage --> Object Storage

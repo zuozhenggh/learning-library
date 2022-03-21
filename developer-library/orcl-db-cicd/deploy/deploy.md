@@ -8,7 +8,7 @@ Automated deployment uses YML templates received from the original [vltabacaru/o
 
 Estimated Lab Time: 30 minutes
 
-## **Step 1:** Add Pipeline to Wercker.YML
+## Task 1: Add Pipeline to Wercker.YML
 
 1. Add this section at the end of your wercker.yml file (leave a blank line between build section and deploy section):
 
@@ -74,7 +74,7 @@ Estimated Lab Time: 30 minutes
     ...
     ````
 
-## **Step 2:** Deploy Pipeline
+## Task 2: Deploy Pipeline
 
 1. We need to add the second pipeline to Wercker **Workflows** using the console. Click **Add New Pipeline** button.
 
@@ -138,7 +138,7 @@ Estimated Lab Time: 30 minutes
     orcl-ws-app           1/1     1            1           3m34s
     ````
 
-## **Step 3:** Run Web Service
+## Task 3: Run Web Service
 
 1. Open Kubernetes Dashboard, login using the token, and check the deployment on Overview under **Deployments**. Go down on the page, and view our Python microservice under **Services**, **orcl-ws-app**. Copy the IP address of this microservice under External endpoints, [orcl-ws-app-IP]. 
 

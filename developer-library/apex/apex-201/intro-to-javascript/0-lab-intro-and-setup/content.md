@@ -21,7 +21,7 @@ Estimated Time: 160 minutes
 | 2 | [Adding JavaScript to APEX Apps](?lab=lab-3-adding-javascript-apex-apps) | 60 minutes |
 | 3 | [Working with jQuery and the DOM](?lab=lab-4-working-dom-jquery) | 60 minutes |
 
-## **Step 1**: Acquire an Oracle Cloud trial account
+## Task 1: Acquire an Oracle Cloud trial account
 
 In this step, you will sign up for an Oracle Cloud trial account. Trial accounts have access to the <a href="https://www.oracle.com/cloud/free/" target="\_blank">free tier services</a> and get a $300 credit for other services. This lab only requires an APEX workspace, which is available via the free tier services and will continue to work when the credits expire (after 30 days). Use the credits as you wish to explore other parts of the Oracle Cloud.
 
@@ -33,7 +33,7 @@ In this step, you will sign up for an Oracle Cloud trial account. Trial accounts
 
     ![](images/get-started-email.png)
 
-## **Step 2:** Log in to your Oracle Cloud account
+## Task 2: Log in to your Oracle Cloud account
 
 In this step, you will log into your Oracle Cloud account so that you can start working with various services.
 
@@ -49,7 +49,7 @@ In this step, you will log into your Oracle Cloud account so that you can start 
 
     ![](images/enter-user-name-and-password.png)
 
-## **Step 3:** Create an Autonomous Transaction Processing instance
+## Task 3: Create an Autonomous Transaction Processing instance
 
 In this step, you will create an instance of the Autonomous Transaction Processing database service.
 
@@ -75,7 +75,7 @@ In this step, you will create an instance of the Autonomous Transaction Processi
 
     ![](images/status-available.png)
 
-## **Step 4:** Create a new workspace in APEX
+## Task 4: Create a new workspace in APEX
 
 When you first access APEX you will need to log in as an APEX instance administrator to create a workspace. A workspace is a logical domain where you define APEX applications. Each workspace is associated with one or more database schemas (database users) which are used to store the database objects, such as tables, views, packages, and more. These database objects are generally what APEX applications are built on top of.
 

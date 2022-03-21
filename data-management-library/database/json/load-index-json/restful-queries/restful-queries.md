@@ -20,7 +20,7 @@ This lab assumes you have completed the following labs:
 - Loading from Object Storage
 - Creating Indexes and Basic Queries
 
-## **STEP 1:** Create an APEX Workspace
+## Task 1: Create an APEX Workspace
 
 All our data is now loaded, and we can proceed to creating indexes.  The main index we’ll be using is a “json search index” on the REVIEWS table. This is a JSON full-text index which indexes ALL of the JSON in the table, and allows for word-based searching on textual fields.
 
@@ -50,7 +50,7 @@ All our data is now loaded, and we can proceed to creating indexes.  The main in
 
     ![](./images/apex5.png)
 
-## **STEP 2:** Create a RESTful Module, Template and Handler
+## Task 2: Create a RESTful Module, Template and Handler
 
 1. RESTful Services - Create a module
    

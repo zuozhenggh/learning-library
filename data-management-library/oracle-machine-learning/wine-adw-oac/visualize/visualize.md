@@ -28,11 +28,11 @@ In this lab, you will:
 
 - Have successfully completed all the previous labs
 
-## **STEP 1**: Import Project
+## Task 1: Import Project
 
 1. Download the project DVA file from the link below.
 
-  [Picking-a-Good-Wine.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/IaeDgojzlkM-KiPIDi5breDrCRI4mJ7MquFFKluvdHBublGidm--FKNtQqtWnkCf/n/c4u04/b/data-management-library-files/o/oracle-machine-learning/Picking%20a%20Good%20Wine.dva)
+  [Picking-a-Good-Wine.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/oracle-machine-learning/Picking%20a%20Good%20Wine.dva)
 
 2. Click the **Navigation Menu** in the upper left, navigate to **Analytics**, and select **Analytics Cloud**.
 
@@ -58,7 +58,7 @@ In this lab, you will:
 
   ![](./images/step1-7.png  " ")
 
-## **STEP 2**: Project Setup
+## Task 2: Project Setup
 
 1. Open up the imported project called **Picking a Good Wine** by clicking the picture.
 
@@ -110,7 +110,7 @@ In this lab, you will:
 
   ![](./images/step2-10.png  " ")
 
-## **STEP 3**: Populate the Canvases
+## Task 3: Populate the Canvases
 
   In this section, we will be adding data to the 6 prepared canvases in order to visualize the data we processed into useful presentations. Feel free to skip around or modify any of the canvases to suit your own needs or curiosities.  We will only be going in depth for the first canvas.
 
@@ -287,7 +287,7 @@ In this lab, you will:
   ![](./images/step3-canvas6.png  " ")
 
 
-## **STEP 4:** Summary
+## Task 4: Summary
 
 To recap, we first took the top-down approach in the initial canvas where we take a global perspective to identify the wines based on the price and quality worldwide, which is achieved using the map visualization.
 

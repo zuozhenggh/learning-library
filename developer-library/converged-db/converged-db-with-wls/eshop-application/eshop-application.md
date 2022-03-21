@@ -23,22 +23,18 @@ The new application re-written in J2EE standards using JDeveloper to deploy on W
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Access the WebLogic Admin Console
+## Task 1: Access the WebLogic Admin Console
 
 Handling database connections using WebLogic datasources gives the developers freedom to configure database related performance parameters on the WebLogic side rather than tweaking the application code.
 
 It improves application performance as connections are not created/closed within a class, they are managed by the application server and can be fetched while at runtime. It provides a facility for creating a pool of connectionsrecycling of connections in the pool is helpful for enterprise application performance It supports distributed transactions.
 
-1. Open the Firefox browser on the remote desktop and navigate to *`http://localhost:7101/console`* OR You can use the bookmark **Oracle Weblogic Server Administration Console** under **ConvergedDB-Workshp in Bookmark Toolbar**.
-
-2. Login with below credentials:
+1. On the web browser window on the right is a tab preloaded with  **Oracle Weblogic Server Administration Console**, provide the credentials below to login
 
     ```
     Username	: <copy>weblogic</copy>
@@ -51,7 +47,7 @@ It improves application performance as connections are not created/closed within
     ![](./images/weblogic-console-login.png " ")
 
 
-## **STEP 2**: Configure datasource recoding
+## Task 2: Configure datasource recoding
 
 1. Click on **Preferences**.
 
@@ -98,7 +94,7 @@ It improves application performance as connections are not created/closed within
 
      ![](./images/datasource-recording-start.png " ")
 
-## **STEP 3**: Create a datasource using WebLogic console
+## Task 3: Create a datasource using WebLogic console
 
 1. Under **Domain Structure** tab on the left hand side, expand **Service**.
 2. Click on **Data Sources**  Click on New and select **Generic Data Source**.
@@ -149,7 +145,7 @@ It improves application performance as connections are not created/closed within
 
 Now we have successfully recorded how a datasource can be created from WebLogic Admin Console.
 
-## **STEP 4**: Edit the recorded script for creating another datasource
+## Task 4: Edit the recorded script for creating another datasource
 
 WebLogic Scripting tool is used to perform administrative actions which can be done using administrative console on a command prompt.
 
@@ -195,7 +191,7 @@ In this step we will edit the recorded script a little to connect to the require
 
 9. Click **Save** button and **Close** gedit window.
 
-## **STEP 5**: Use WLST for creating eSHOP datasources
+## Task 5: Use WLST for creating eSHOP datasources
 
 1. Use the existing **Terminal**  or Open a new **Terminal** on VNC desktop to execute commands.
 
@@ -252,7 +248,7 @@ In this step we will edit the recorded script a little to connect to the require
     </copy>
     ```
 
-## **STEP 6**: Deploy eSHOP Application
+## Task 6: Deploy eSHOP Application
 
 1. Click on the **Coffee Cup** Icon of **Oracle JDeveloper** 12c on the VNC desktop to open the Oracle JDeveloper IDE.
 
@@ -298,9 +294,9 @@ In this step we will edit the recorded script a little to connect to the require
 
     ![](./images/jdev-project-deploy-to-wls.png " ")
 
-## **STEP 7**: Verify eSHOP functionality
+## Task 7: Verify eSHOP functionality
 
-1. Open the Firefox browser, access the application by navigating to *`http://localhost:7101/`*  or from the bookmarks toolbar, Click **ConvergeDB-Workshop**, and Click **eSpeedShop**.
+1. On the web browser window on the right, access the application by navigating to *`http://localhost:7101/`* .
 
 2. Navigate through all endpoints and features of the application like Dashboard, shopping cart, search etc.
 

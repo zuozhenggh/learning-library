@@ -14,7 +14,7 @@ Estimated Lab Time: 25 minutes
 - Create a first serverless function with Node.js
 - Import data from Object Store to MySQL
 
-## **STEP 1:** Creating the Code for an Hello World
+## Task 1: Creating the Code for an Hello World
 
 As with any good guide, the first Function built is a _Hello World_. The name
 used is `import` since that describes the future purpose well:
@@ -51,7 +51,7 @@ function is called again within a timeout of a few minutes the same Container
 with the same Node.js instance will be reused. If it isn't called for a few
 minutes a cleanup task will shut down.
 
-## **STEP 2:** Deploying and Running the Function
+## Task 2: Deploying and Running the Function
 
 To see this in effect you have to deploy this into an Fn application. Our setup
 created a function with the name `DemoApp`, which we will be using. No worries,
@@ -80,7 +80,7 @@ If data is provided to the `fn` tool, the function can access it:
 
 To learn more about Fn please check the [Fn Project Website](https://fnproject.io/).
 
-## **STEP 3:** Exploring the Console
+## Task 3: Exploring the Console
 
 In the Web Console you can find *Functions* under the *Developer Services* menu. 
 
@@ -112,7 +112,7 @@ in this setup. Since this is a tutorial this is tolerable. In a production
 environment you should secure credentials by using OCI's Vault Service or some
 other mechanism.*
 
-## **STEP 4:** Talking to MySQL and Object Store
+## Task 4: Talking to MySQL and Object Store
 
 In this step we extend our Function to interpret information provided by a
 Cloud Event, when a file is uploaded to Object Store. That file will be
@@ -236,7 +236,7 @@ After getting the code ready it has to be deployed as before:
     Updating function import using image iad.ocir.io/.../..../import:0.0.3...
 
 
-## **STEP 5:** Configure the Event Handling
+## Task 5: Configure the Event Handling
 
 First thing we do is take a look at the Object Store in the console. Navigate
 to it in your Web Browser.
@@ -284,7 +284,7 @@ Compartment* `node-mysql`, *Function Application* `DemoApp` and *Function*
 
 With a click on *Create Rule* this rule becomes effective.
 
-## **STEP 6:** Upload a File and Verify the Data Arrived
+## Task 6: Upload a File and Verify the Data Arrived
 
 Navigate back to the Object Storage page in the Console and open the `import`
 Bucket. Click *Upload*. In the panel pick the `data1.json` file provided

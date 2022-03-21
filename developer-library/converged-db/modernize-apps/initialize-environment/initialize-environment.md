@@ -12,86 +12,44 @@ In this lab we will review and startup all components required to successfully r
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 1**: Running your Lab
-### Access the graphical desktop
-For ease of execution of this workshop, your instance has been pre-configured for remote graphical desktop accessible using any modern browser on your laptop or workstation. Proceed as detailed below to login.
+## Task 1: Validate That Required Processes are Up and Running.
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-1. Launch your browser to the following URL
+    - Database Listener
+        - LISTENER
+    - Database Server Instance
+        - convergedcdb
+    - Application
+        - bestbank2020
 
-    ```
-    URL: <copy>http://[your instance public-ip address]:8080/guacamole</copy>
-    ```
-
-2. Provide login credentials
-
-    ```
-    Username: <copy>oracle</copy>
-    ```
-    ```
-    Password: <copy>Guac.LiveLabs_</copy>
-    ```
-
-    ![](./images/guacamole-login.png " ")
-
-    *Note*: There is an underscore `_` character at the end of the password.
-
-3. Click on *Terminal* icon on the desktop to start a terminal
-
-    ![](./images/guacamole-landing.png " ")
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
-
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-## **STEP 2**: Setup and Initialize Environment
-1.	From any of the terminal session, proceed as shown below as user “*oracle*”
-2.	Source the setWLS14Profile.sh and setBankAppEnv.sh to set the environment variables required to start the weblogic 14c Admin server and run commands to build Helidon and Bank applications:
-
-  	```
-  	<copy>  cd /u01/middleware_demo/scripts/
-  	. ./setWLS14Profile.sh
-  	. ./setBankAppEnv.sh
-    </copy>
-  	```
-
-3.	Change the working directory to WebLogic 14c domain bin and start AdminServer in the wl_server domain:
+2. Validate that expected processes are up. Please note that it may take up to 5 minutes after instance provisioning for all processes to fully start.
 
     ```
     <copy>
-    cd $DOMAIN_HOME/bin
-    nohup sh startWeblogic.sh &
-    tail -f nohup.out
+    ps -ef|grep LISTENER|grep -v grep
+    ps -ef|grep ora_|grep pmon|grep -v grep
+    systemctl status oracle-database
+    systemctl status oracle-init-workshop
     </copy>
-  	```
+    ```
 
-Press `CTRL + C` to end the tail command
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
 
-4.	The terminal shows stdout logs for starting the AdminServer.
-3.	Open the Weblogic Admin Console and login with credentials provided below:
+    ```
+    e.g. Restarting the DB and DB Listener
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
+
+4. On the web browser window on the right preloaded with *WebLogic Admin Console* login page, click on the *Username* field and select the saved credentials or provide the credentials below to login.
 
     ![](./images/adminconsole.png " ")  
 
-    ```
-    Console URL: <copy>http://<Your instance public IP address>:7101/console</copy>
-    ```
     ```
     username: <copy>weblogic</copy>
     ```
@@ -99,28 +57,51 @@ Press `CTRL + C` to end the tail command
     password: <copy>Oracle123!</copy>
     ```
 
-4.	On the left hand side Menu under “Domain Structure” click on “Deployments”. Observe that the bestbank2020 application has been already deployed and available to access.
+5.	On the left hand side Menu under “Domain Structure” click on “Deployments”. Observe that the bestbank2020 application has been already deployed and available to access.
 
 	![](./images/deployments.png " ")  
 
-5.	Open a new browser tab or session and access the bank application UI with URL `http://<Your instance public IP address>:7101/bestbank2020`
-6.	The existence of base version of the sample bestbank application is confirmed.
-7.	Change directory to `/u01/middleware_demo/wls-helidon`
+5.	Still on the same browser window on the right, switch to the second tab preloaded with  tab *BestBank" application UI and confirm that the page loaded successfully
 
-  	```
-  	<copy>cd /u01/middleware_demo/wls-helidon/</copy>
-  	```
+You may now [proceed to the next lab](#next).
 
-8.	Verify if pom.xml and `src/` folder is available under `/u01/middleware_demo/wls-helidon`
+## Appendix 1: Managing Startup Services
 
-  	```
-  	<copy>ls -alrt</copy>
-  	```
+1. Database service (Database and Standard Listener).
 
-You may now *proceed to the next lab*.
+    - Start
+
+    ```
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
+    ```
+    - Stop
+
+    ```
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>
+    systemctl status oracle-database
+    </copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
 
 ## Acknowledgements
 
 - **Authors** - Balasubramanian Ramamoorthy, Sudip Bandyopadhyay, Vishwanath Venkatachalaiah
 - **Contributors** - Jyotsana Rawat, Satya Pranavi Manthena, Kowshik Nittala, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
+- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021

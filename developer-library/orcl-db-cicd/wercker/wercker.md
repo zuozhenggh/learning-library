@@ -12,7 +12,7 @@ Open [https://app.wercker.com](https://app.wercker.com) and login with your GitH
 
 Estimated Lab Time: 30 minutes
 
-## **Step 1:** Add Application
+## Task 1: Add Application
 
 1. Click the **+** sign next to profile icon 👤 on upper right corner, and **Add Application**.
 
@@ -24,7 +24,7 @@ Estimated Lab Time: 30 minutes
 
 3. Wercker uses a **wercker.yml** file to define the Steps required to execute automation tasks for your application, along with the Pipelines that group them. 
 
-## **Step 2:** Create Wercker.YML
+## Task 2: Create Wercker.YML
 
 1. Create a wercker.yml file.
 
@@ -71,7 +71,7 @@ Estimated Lab Time: 30 minutes
 
 7. You can review the build on Wercker console under [Your Username]/orcl-ws-cicd > **Runs**. Click on the **build** pipeline to see all the steps. Click on **run tests** step to see the execution details. You should see the same results as when the pytest tool was executed locally on the development machine.
 
-## **Step 3:** Enhance Application Code
+## Task 3: Enhance Application Code
 
 1. Next step is to add a new feature to the application. We will first add a unit test without writing the function. Writing a failing test first and then adding the code to pass the test is called Test Driven Development (TDD). Add the following code to the end of **test_promotion.py**:
 
@@ -116,7 +116,7 @@ Estimated Lab Time: 30 minutes
 
 7. Review the build results on Wercker console. If you followed this guide, the build is successful.
 
-## **Step 4:** Create Web Service
+## Task 4: Create Web Service
 
 1. We want our application to be used as a web service, available online. For this purpose we will use [Bottle](https://bottlepy.org), a Web Server Gateway Interface (WSGI) micro web-framework for the Python programming language. It is designed to be fast, simple and lightweight, and is distributed as a single file module with no dependencies other than the Python Standard Library. 
 
@@ -294,7 +294,7 @@ Estimated Lab Time: 30 minutes
 
 15. Verify this build is successful. We are still not covering all functions with a unit test, but this is fine for now, you get the idea.
 
-## **Step 5:** Test Web Application Locally
+## Task 5: Test Web Application Locally
 
 1. We can test the web service Python application locally on the development machine. In order to use the browser from our computer, we need another port forwarding tunnel added to our SSH connection. This requires to close our current connection, and reconnect.
 

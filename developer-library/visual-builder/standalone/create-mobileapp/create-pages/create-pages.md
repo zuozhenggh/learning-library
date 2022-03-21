@@ -13,7 +13,7 @@ In Oracle Visual Builder, you create pages in your mobile application by draggin
 In this lab, we'll use Quick Starts to create a page that displays Departments and another that displays Employees. We'll also create pages that let users add a new department and a new employee - again using Quick Starts.
 
 
-## **STEP 1**: Use the main-start Page to Display Departments
+## Task 1: Use the main-start Page to Display Departments
 
 These steps assume that you are already logged in to Oracle Visual Builder and are viewing the HR Application you created in the previous lab.
 
@@ -49,7 +49,7 @@ These steps assume that you are already logged in to Oracle Visual Builder and a
     The empty list view component is displayed with a message that there are no items to display.
 
 
-## **STEP 2**: Add a Create Page for the Department Business Object
+## Task 2: Add a Create Page for the Department Business Object
 
 A Create page allows you to create data instances. In this step, you're setting up a Create page that lets your users create new departments.
 
@@ -84,7 +84,7 @@ A Create page allows you to create data instances. In this step, you're setting 
 
 10.  Click **Design** to return to Design view.
 
-## **STEP 3**: Change the Name of the main-start Page
+## Task 3: Change the Name of the main-start Page
 
 It makes sense at this point to change the name of the main-start page to main-departments.
 

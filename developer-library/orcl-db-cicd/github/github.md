@@ -10,7 +10,7 @@ Fork [vltabacaru/orcl-ws-cicd](https://github.com/vltabacaru/orcl-ws-cicd) proje
 
 Estimated Lab Time: 45 minutes
 
-## **Step 1:** Remote Desktop vs. Command Line
+## Task 1: Remote Desktop vs. Command Line
 
 1. Get the Public IP address of the Compute Instance from Oracle Cloud console, and save it in your notes text file.
 
@@ -71,7 +71,7 @@ Estimated Lab Time: 45 minutes
 
 9. When completed, this script installs and configures Remote Desktop on your Compute Instance for user **oracle** with password **WelcomePTS#2019**.
 
-## **Step 2:** OCI CLI and Kubectl
+## Task 2: OCI CLI and Kubectl
 
 1. **OCI CLI** is already installed on our development Compute Instance, we can check the version.
 
@@ -108,7 +108,7 @@ Estimated Lab Time: 45 minutes
 
 5. Now OCI CLI and Kubectl are installed.
 
-## **Step 3:** Git Client
+## Task 3: Git Client
 
 1. GitHub uses Git version control systems (VCS) to handle the collaboration workflow. This allows developers to create a local copy of the project, makes changes, and merge them back into the central repository.
 
@@ -172,7 +172,7 @@ Estimated Lab Time: 45 minutes
     git config --global credential.helper 'cache --timeout 28800'
     ````
 
-## **Step 4:** Start Application Development
+## Task 4: Start Application Development
 
 1. Make a local clone on the development machine of the GitHub repository you forked.
 
@@ -234,7 +234,7 @@ Estimated Lab Time: 45 minutes
 
 8. If all is good, you should see promotion.py file in your forked repository at https://github.com/[Your Username]/orcl-ws-cicd. Refresh the page, and click on the file to see the contents.
 
-## **Step 5:** Implement Automated Testing
+## Task 5: Implement Automated Testing
 
 1. For automated testing, we will use three Python tools:
 

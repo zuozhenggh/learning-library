@@ -23,7 +23,7 @@ The data is provided in CSV format and your first step is to convert this data t
 * Basic understanding of Java
 
 
-## **STEP 1**: Create Java Application
+## Task 1: Create Java Application
 
 1. Navigate to the Data Flow service in the Console by expanding the hamburger menu on the top left and scrolling to the bottom
 
@@ -90,7 +90,7 @@ The data is provided in CSV format and your first step is to convert this data t
 
    ![](../images/step1_created_java_app.png " ")
 
-## **STEP 2**: Run the Data Flow Java Application
+## Task 2: Run the Data Flow Java Application
 
 1. Highlight your Application in the list, click the **Actions** icon, and click **Run**
 

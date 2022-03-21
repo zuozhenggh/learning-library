@@ -28,18 +28,16 @@ Oracle’s JSON capabilities are focused on providing full support for schemales
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
     - Lab: eSHOP Application
     - Lab: Data Type Demonstrator Tool
 
-## **STEP 1**: Retrieve JSON data
+## Task 1: Retrieve JSON data
 
-1. Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
+1. On the web browser window on the right preloaded with  **Oracle Weblogic Server Administration Console**, navigate to *`http://localhost:7101/resources/html/endPointChecker.html`*.
 
 2. Click on the drop-down to see the list of datatypes shown in workshop.
 
@@ -53,12 +51,12 @@ This lab assumes you have:
 
     ![](./images/json-search-product-292.png " ")
 
-6. To verify the product on eShop application, open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
+6. To verify the product on eShop application, open a new browser tab and navigate to *`http://localhost:7101/product/292`* to see the details of the product graphically.
     ![](./images/json-product-292.png " ")
 
 7.	Verify the PID, Details and Title.
 
-## **STEP 2**: Update JSON data
+## Task 2: Update JSON data
 
 1.	In the search result occurring after searching for product 292, update the price of the product from 12$ to 14$ in the text area.
 
@@ -68,7 +66,7 @@ This lab assumes you have:
 
 3.	You will observe the message “1 records updated”.
 
-4.	To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
+4.	To verify the product on eShop application, return to the browser tab on the right window loaded with the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
 
     ![](./images/json-product-292-updated.png " ")
 
@@ -78,7 +76,7 @@ This lab assumes you have:
 
    JSON manipulation function which is supplied out of the box called JSON_MERGEPATCH which is entirely replacing the JSON text with the new text is used within the code to update JSON data.  Similarly, we can re-write the query to update only a particular field and value in JSON by other methods provided to scan through and manipulate JSON key-value pairs in Oracle Converged DB for JSON.
 
-## **STEP 3**: Delete JSON data
+## Task 3: Delete JSON data
 
 1. Search for product with ID **292** and Click on the **Go** button.
 
@@ -96,17 +94,15 @@ This lab assumes you have:
 
     ![](./images/json-product-292-notavlbl.png " ")
 
-6. To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`*.
+6. To verify the product on eShop application, return to the browser tab on the right window loaded with the URL *`http://localhost:7101/product/292`*.
 
 7. You will find the product missing from the JSON database.
 
      ![](./images/json-product-292-missing.png " ")
 
-## **STEP 4**: Insert JSON data
+## Task 4: Insert JSON data
 
-1.	Open the Firefox browser and navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* OR You can use the bookmark **DataType-End Point Check Utility** under **ConvergedDB-Workshp in Bookmark Toolbar**.
-
-   If the tool is already open, continue...
+1.	On the web browser window on the right, navigate to *`http://localhost:7101/resources/html/endPointChecker.html`* if not already opened
 
 2.	Click on the drop-down to see the list of datatypes shown in workshop.
 
@@ -133,13 +129,13 @@ This lab assumes you have:
 
     ![](./images/json-search-product-292.png " ")
 
-9. To verify the product on eShop application, Open the Firefox browser in the Remote Desktop session (Or a new tab if already open) and enter the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
+9. To verify the product on eShop application, return to the browser tab on the right window loaded with the URL *`http://localhost:7101/product/292`* to see the details of the product graphically.
 
     ![](./images/json-product-292.png " ")
 
 10.	Verify the PID, Details and Title.
 
-## **STEP 5**: Update JSON Query and verify
+## Task 5: Update JSON Query and verify
 
 We have searched and handled JSON data based on the product id.  Now what if we want to get the products by ID only if the price of the product is $10?  
 

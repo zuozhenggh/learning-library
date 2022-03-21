@@ -15,7 +15,7 @@ Estimated Time: 10 minutes.
 - See an example usage.
 - Tear down the bucket instance.
 
-## **STEP 1:** Get the Template Manifests for Object Storage
+## Task 1: Get the Template Manifests for Object Storage
 
 1. Download the example templates:
 
@@ -38,7 +38,7 @@ Estimated Time: 10 minutes.
     - OCI Service Broker will then create a secret named `test-bucket-binding` containing the pre-authorized request endpoint to access the bucket in read and write mode.
 
 
-## **STEP 2:** Edit the Manifests
+## Task 2: Edit the Manifests
 
 1. Edit `create-bucket.yaml` and replace `CHANGE_COMPARTMENT_OCID_HERE` with the **compartment OCID** of the compartment where you deployed the OKE cluster, and replace `CHANGE_NAMESPACE_HERE` with the name of the namespace of your OCI tenancy (not to be confused with the Kubernetes namespace).
 
@@ -63,7 +63,7 @@ Estimated Time: 10 minutes.
 
     If you're running this as part of a workshop with multiple users, make sure you modify the name of the bucket to make it unique by replacing the name `testbucket` with your unique name both in the `create-bucket.yaml` and `pre-auth.yaml` files.
 
-## **STEP 3:** Deploy
+## Task 3: Deploy
 
 1. To deploy the mainfest, use:
 
@@ -75,7 +75,7 @@ Estimated Time: 10 minutes.
 
     This will deploy all the manifests in the `object_storage` folder in the `default` Kubernetes namespace defined in the file.
 
-## **STEP 4:** Check the Deployment
+## Task 4: Check the Deployment
 
 1. Verify the database instance is being provisioned:
 
@@ -108,7 +108,7 @@ Estimated Time: 10 minutes.
 
     You can also check in the Oracle Cloud Console Console by selecting **Core**, and then selecting **Object Storage** in the compartment where you provisioned. You should see the bucket named `testbucket` (or the unique name you gave it).
 
-## **STEP 5:** Look at the Content of the Secret
+## Task 5: Look at the Content of the Secret
 
 1. You can look at the content of the secret by running:
 
@@ -192,7 +192,7 @@ Estimated Time: 10 minutes.
     https://objectstorage.us-ashburn-1.oraclecloud.com/
     ```
 
-## **STEP 6:** Example Usage
+## Task 6: Example Usage
 
 1. To mount the secret into a pod, use an environment variable like:
 
@@ -292,7 +292,7 @@ Estimated Time: 10 minutes.
 
 7. In the Oracle Cloud Console, check that the object was created in the bucket.
 
-## **STEP 7:** Clean Up
+## Task 7: Clean Up
 
 1. Delete the content of the bucket.
 

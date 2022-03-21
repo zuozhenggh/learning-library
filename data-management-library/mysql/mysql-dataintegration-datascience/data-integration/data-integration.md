@@ -23,7 +23,7 @@ In this lab, you will:
 
 - All previous labs have been successfully completed.
 
-## **STEP 1:** Create Your OCI Data Integration Instance
+## Task 1: Create Your OCI Data Integration Instance
 
 1. We need to create some **policies** to allow the Data Integration service to use other services within OCI.
 
@@ -140,7 +140,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 2:** Create the Data Assets
+## Task 2: Create the Data Assets
 
 We are going to need the **Object Storage URL** and **Tenancy ID**.
 
@@ -258,7 +258,7 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
    ![](images/dataasset_mysql_success_go_back_home.png)
 
-## **STEP 3:** It Works
+## Task 3: It Works
 
 1. Go back to the **Home** Screen. You have just created the **two Data Assets** needed for the next Lab. Your **Recents** should look like this:
 

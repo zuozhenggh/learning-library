@@ -6,7 +6,7 @@ In this lab, you will prepare your local machine and your Oracle Cloud API keys 
 
 Estimated Lab Time: 15 minutes
  
-## **STEP 1**: Create your API Keys
+## Task 1: Create your API Keys
 
 1. In this step, you will create your Oracle Cloud API keys. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two) for more details on API signing keys.
 
@@ -20,7 +20,7 @@ Estimated Lab Time: 15 minutes
 2. For Windows users, please use [Git for Windows](https://github.com/git-for-windows/git/releases/latest) that allows you to use bash and other GNU tools.
 
 
-## **STEP 2**: Create your SSH Keys
+## Task 2: Create your SSH Keys
 
 1. In this step, you will generate your SSH Keys to allow secure connections from your machine to the servers we will create on OCI. **Pay attention that you should not enter a passphrase, leave it blank!**
 
@@ -35,7 +35,7 @@ Estimated Lab Time: 15 minutes
     ```
 
 
-## **STEP 3**: Deploying the API Public Key
+## Task 3: Deploying the API Public Key
 
 
 1. The API Key you created earlier needs to be linked to your OCI account: 
@@ -48,7 +48,7 @@ Estimated Lab Time: 15 minutes
 
 2. You need to upload the public key: `oci_api_key_public.pem`
 
-## **STEP 4**: Installing Terraform
+## Task 4: Installing Terraform
 
 1. Terraform is proposed as a unique binary that you can download [here](https://www.terraform.io/downloads.html).
 

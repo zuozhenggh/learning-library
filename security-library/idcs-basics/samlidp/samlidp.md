@@ -25,7 +25,7 @@ In this lab, you will:
 * An Okta Integrator Account
 
 
-## **STEP 1**: Configure Okta
+## Task 1: Configure Okta
 
 * *Personas*:
     - Administrator
@@ -91,7 +91,7 @@ In this lab, you will:
 17.	IDCS is now configured as a Service Provider in Okta. Open IDCS to configure Okta as an Identity Provider.
 
 
-## **STEP 2**: Configure IDCS
+## Task 2: Configure IDCS
 
 * *Personas*:
     - Administrator
@@ -146,7 +146,7 @@ In this lab, you will:
     ![Image](images/L4031.png)
 
 
-## **STEP 3**: Verify External IDP Login  
+## Task 3: Verify External IDP Login  
 
 * *Personas*:
     - Administrator

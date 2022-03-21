@@ -10,7 +10,7 @@ Estimated Lab Time:  5 minutes
 
 If you just created a new Cloud account following the instructions in Getting Started, you must wait at least 30 minutes before you attempt to create an instance of Visual Builder. (It could take anywhere between 10 and 30 minutes for a new user account to be fully provisioned and for the Visual Builder navigation menu to show.) If you already have a Cloud account, you don't need to wait. Either way, make sure you've signed in to the Oracle Cloud as an Oracle Identity Cloud Service user before proceeding. *Note: If you log in using an Oracle Cloud Infrastructure account, the navigation menu to Visual Builder won't show.*
 
-## **STEP 1**: Create an Instance of Visual Builder
+## Task 1: Create an Instance of Visual Builder
 
 1.  On the Oracle Cloud Get Started page, click the menu in the upper left corner to display the services you can provision:
 

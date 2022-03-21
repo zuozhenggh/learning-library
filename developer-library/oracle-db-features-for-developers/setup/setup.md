@@ -3,9 +3,24 @@
 ## Introduction
 This lab will show you how to setup your database schemas for the subsequent labs.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
-## **Step**: Install Sample Data
+### Objectives
+ 
+In this lab, you will setup sample schema:
+* Set the environment variables 
+* Get the Database sample schemas and unzip them
+* Install the Sample Schemas
+
+### Prerequisites 
+This lab assumes you have:
+
+* A LiveLabs Cloud account and assigned compartment
+* The IP address and instance name for your DB19c Compute instance
+* Successfully logged into your LiveLabs account
+* A Valid SSH Key Pair
+
+## Task: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
@@ -95,5 +110,5 @@ The above copyright notice and this permission notice shall be included in all c
 ## **Acknowledgements**
 
 - **Author** - Troy Anthony, DB Product Management
-- **Contributors** - Anoosha Pilli, Kay Malcolm
-- **Last Updated By/Date** - Kamryn Vinson, June 2021
+- **Contributors** - Anoosha Pilli, Kay Malcolm, Madhusudhan Rao
+* **Last Updated By/Date** -  Madhusudhan Rao, Feb 2022 

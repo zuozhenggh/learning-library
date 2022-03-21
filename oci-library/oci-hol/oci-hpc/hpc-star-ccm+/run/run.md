@@ -5,7 +5,7 @@ In this lab, you will Run STAR-CCM+.
 
 Estimated Lab Time: 10 minutes
 
-## **STEP 1**: Running STAR-CCM+
+## Task 1: Running STAR-CCM+
 1. Running Star-CCM+ is pretty straightforward: You can either start the GUI if you have a VNC session started with
 
     ```
@@ -23,7 +23,7 @@ Estimated Lab Time: 10 minutes
         -licpath 1999@flex.cd-adapco.com -podkey PODKEY -np CORENUMBER 
         -machinefile machinefile /mnt/nfs-share/work/model.sim
     ```
-## **STEP 2**: MPI implementations and RDMA
+## Task 2: MPI implementations and RDMA
 
 Performances can really differ depending on the MPI that you are using. 3 are supported by Star-CCM+ out of the box.
 

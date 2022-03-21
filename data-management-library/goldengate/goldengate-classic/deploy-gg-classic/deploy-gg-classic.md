@@ -51,7 +51,7 @@ This lab assumes you have:
 
 *Estimated Lab Time*:  60 minutes
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”

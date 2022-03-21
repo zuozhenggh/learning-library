@@ -20,16 +20,14 @@ The COLUMNS clause evaluates the row source, finds specific JSON values within t
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1**: Connect to the Pluggable Database (PDB)
+## Task 1: Connect to the Pluggable Database (PDB)
 
-1. Open Linux terminal on VNC. As Oracle user set Oracle Environment and connect to the PDB.
+1. As *oracle* user from your remote desktop session, set the environment and connect to the PDB.
 
     ```
     <copy>
@@ -49,7 +47,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## **STEP 2**: Connect to Database using JDeveloper
+## Task 2: Connect to Database using JDeveloper
 
 1. Open JDeveloper in Studio Mode, if not open already.
 
@@ -87,7 +85,7 @@ This lab assumes you have:
 
     ![](./images/Lab9-Step2-7.png)
 
-## **STEP 3**: JSON with Relational
+## Task 3: JSON with Relational
 
 **`JSON_TABLE`** creates a relational view of JSON data. It maps the result of a JSON data evaluation into relational rows and columns. The COLUMNS clause evaluates the row source, finds specific JSON values within the row source, and returns those JSON values as SQL values in individual columns of a row of relational data.
 
@@ -137,7 +135,7 @@ Below are the examples using **`JSON_TABLE`**.
 
     ![](./images/Lab9-Step3-2.png)
 
-## **STEP 4**: XML with Relational
+## Task 4: XML with Relational
 
 **XMLTABLE**: Convert XML Data into Rows and Columns using SQL. The XMLTABLE operator, which allows you to project columns on to XML data in an XMLTYPE , making it possible to query the data directly from SQL as if it were relational data.
 
@@ -163,7 +161,7 @@ Below are the examples using **XMLTABLE**:
 
     ![](./images/Lab9-Step4-2.png)
 
-## **STEP 5**: JSON with Spatial
+## Task 5: JSON with Spatial
 
 GeoJSON Objects: Geometry, Feature, Feature Collection.
 GeoJSON uses JSON objects that represent various geometrical entities and combinations of these together with user-defined properties.

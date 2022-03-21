@@ -13,7 +13,8 @@
     },
     {
       "title": "Create an APEX Workspace",
-      "filename": "../../../common/create-apex-workspace/create-apex-workspace.md"
+      "filename": "../../../common/create-apex-workspace/create-apex-workspace.md",
+      "type": "livelabs"
     },
     {
 

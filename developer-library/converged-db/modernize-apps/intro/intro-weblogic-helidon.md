@@ -25,9 +25,7 @@ The REST framework for Helidon SE is the Helidon WebServer. It’s built on top 
 ### Prerequisites
 * This lab assumes you have:
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-* SSH Private Key to access the host via SSH
 * You have completed:
-    * Lab: Generate SSH Keys
     * Lab: Prepare Setup (Free Tier and Paid Tenants only)
     * Lab: Environment Setup
 
@@ -42,5 +40,3 @@ The REST framework for Helidon SE is the Helidon WebServer. It’s built on top 
 * **Authors** - Srinivas Pothukuchi, Pradeep Chandramouli, Chethan BR, AppDev & Integration Team, Oracle, October 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2020
-
-

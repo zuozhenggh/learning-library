@@ -29,11 +29,11 @@ Suppose that you are notified that your database may have been breached. You pla
 - Configure the audit trail to collect audit data from the target database and start the audit trail.
 - Review the audit policies for your target database to ensure that the policies you selected are correctly provisioned.
 
-## STEP 1: Sign in to the Oracle Data Safe Console in your region
+## Task 1: Sign in to the Oracle Data Safe Console in your region
 
 Refer [Lab - Register a Target Database (ATP-D) with Oracle Data Safe](https://github.com/labmaterial/adbguides-dev/blob/master/adb-datasafe/Register%20a%20Target%20Database.md)
 
-## STEP 2: Review the recommended audit policies for a target database in the Oracle Data Safe Console
+## Task 2: Review the recommended audit policies for a target database in the Oracle Data Safe Console
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **Activity Auditing**. The **Select Targets for Auditing** page is displayed.
 
@@ -63,11 +63,11 @@ The Review and Provision Audit and Alert Policies page is displayed.
 
    ![](./images/Img117.png " ")
    
-## STEP 3: Connect to ATP-D DB using SQL Developer Web
+## Task 3: Connect to ATP-D DB using SQL Developer Web
 
 Refer Step 5 from [Lab - Assess Users with Oracle Data Safe](https://github.com/labmaterial/adbguides-dev/blob/master/adb-datasafe/Assessment%20Lab%202.md)
 
-## STEP 4: Query the unified auditing policies on your database by using SQL Developer Web and compare with the audit policies being recommended by Oracle Data Safe
+## Task 4: Query the unified auditing policies on your database by using SQL Developer Web and compare with the audit policies being recommended by Oracle Data Safe
 
 - In SQL Developer Web, run the following query to view the list of unified audit policies.
 
@@ -87,7 +87,7 @@ Refer Step 5 from [Lab - Assess Users with Oracle Data Safe](https://github.com/
 
 - Notice that only the `ORA_LOGON_FAILURES` and `ORA_SECURECONFIG` are listed by default. If you are using a different type of database, the list may be different.
 
-## STEP 5: In the Oracle Data Safe Console, provision audit policies in the target database and alert policies in Oracle Data Safe
+## Task 5: In the Oracle Data Safe Console, provision audit policies in the target database and alert policies in Oracle Data Safe
 
 - Return to the Oracle Data Safe Console. You should be in the **Edit Policies** dialog box, where you left off.
 - Select the checkboxes for each of the policies under the **Oracle pre-defined policies**.
@@ -101,7 +101,7 @@ The **Review and Provision Audit and Alert Policies** page shows check marks for
 
    ![](./images/Img120.png " ")
 
-## STEP 6: Configure the audit trail to collect audit data from the target ATP-D database and start the audit trail
+## Task 6: Configure the audit trail to collect audit data from the target ATP-D database and start the audit trail
 
 - Click **Continue**.
 - On the Start Audit Collection page, notice the following defaults:
@@ -132,7 +132,7 @@ The **Review and Provision Audit and Alert Policies** page shows check marks for
 
    ![](./images/Img125.png " ")
 
-## STEP 7: Review the audit policies for your target database to ensure that the policies you selected are correctly provisioned
+## Task 7: Review the audit policies for your target database to ensure that the policies you selected are correctly provisioned
 
 1. Click the **Targets** tab, and then click **Audit Policies**. The **Audit and Alert Policies page** is displayed.
 2. Click the name of your target database.

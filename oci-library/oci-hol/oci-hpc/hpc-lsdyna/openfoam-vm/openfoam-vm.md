@@ -38,7 +38,7 @@ As a developer, data Engineer,
 
 
 
-## **STEP 1**: Provision Oracle Virtual Cloud Network
+## Task 1: Provision Oracle Virtual Cloud Network
 
 1. Before creating an instance, we need to configure a Virtual Cloud Network. Select the menu on the top left, then select Networking and Virtual Cloud Networks
 ![](./images/vcn.png)
@@ -91,7 +91,7 @@ Note: That will create the internet gateway, and it will need to be associated w
 
 
 
-## **STEP 2**: Create Cluster Nodes
+## Task 2: Create Cluster Nodes
 
 We will create two nodes for this lab, the **Headnode** for the cluster on the public subnet, and **a worker compute node** in the private subnet. In order to access the worker nodes, we will first create the headnode, then generate a ssh key on the headnode, and use that public key when creating the worker node.
 
@@ -150,7 +150,7 @@ Note: For this lab we will be utilizing only the basic VM.Standard2.1 shape, but
             ```
 
 
-## **STEP 3**: Setup NAT Gateway
+## Task 3: Setup NAT Gateway
 
 ** Please note this is for the worker node only ** <br/>
 
@@ -160,7 +160,7 @@ Note: For this lab we will be utilizing only the basic VM.Standard2.1 shape, but
 ![](./images/nat_gateway.png)
 
 
-## **STEP 4**: Mounting a drive
+## Task 4: Mounting a drive
 Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Standard2.1), HPC machines have local NVMe storage but it is not mounted by default. Skip to Step 5 if using VM.Standard2.1
 
   1. SSH into your headnode and run the below commands
@@ -238,7 +238,7 @@ Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Sta
 
 
 
-## **STEP 5**: Creating a Network File System
+## Task 5: Creating a Network File System
 
   1. Create Mount Target. On the top left menu, click **File Storage** and **Mount Target**.
 
@@ -268,7 +268,7 @@ Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Sta
     sudo mount <fss-ip-address>:/<ExportPathName> /mnt/share
     ```
 
-## **STEP 6**: Install OpenFOAM
+## Task 6: Install OpenFOAM
   1. **Connecting all worker nodes** <br/>
    
     Each worker node needs to be able to talk to all the worker nodes. SSH communication works but most applications have issues if all the hosts are not in the known host file. To disable the known host check for nodes with address in the VCN, you can deactivate with the following commands. You may need to modify it slightly if your have different addresses in your subnets. Put the following code block in a shell script and run the script. 
@@ -327,7 +327,7 @@ Note: Only if the node shape has a NVMe attached (BM.HPC2.36 has one, not VM.Sta
         ```
 
 
-## **STEP 7**: Run simulation workload and Render the output
+## Task 7: Run simulation workload and Render the output
 
 1. On Headnode, run the following commands that will be needed to render the output using Paraview package.
 

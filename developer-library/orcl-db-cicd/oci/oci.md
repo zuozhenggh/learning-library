@@ -8,7 +8,7 @@ In this lab we will create all the required components on OCI.
 
 Estimated Lab Time: 60 minutes
 
-## **Step 1:** Generate SSH Keys
+## Task 1: Generate SSH Keys
 
 1. On a linux machine you can generate the required ssh keys
 
@@ -103,7 +103,7 @@ Estimated Lab Time: 60 minutes
     ````
     >**Note** : Use these keys as examples, and for training purpose only. It is highly recommended to create your own SSH keys for your development environments.
 
-## **Step 2:** Login to Oracle Cloud Infrastructure
+## Task 2: Login to Oracle Cloud Infrastructure
 
 1. Oracle cloud console URL: [https://console.eu-frankfurt-1.oraclecloud.com](https://console.eu-frankfurt-1.oraclecloud.com)
 
@@ -111,7 +111,7 @@ Estimated Lab Time: 60 minutes
 - Username: oci-username
 - Password: oci-password
 
-## **Step 3:** Create Network
+## Task 3: Create Network
 
 1. Click on hamburger menu ≡, then Networking > **Virtual Cloud Networks**. 
 2. Click **Start VCN Wizard**.
@@ -138,7 +138,7 @@ Estimated Lab Time: 60 minutes
 
 7. **Create Subnet**.
 
-## **Step 4:** Create Database
+## Task 4: Create Database
 
 1. Click on hamburger menu ≡, then **Bare Metal, VM, and Exadata** under Databases. **Create DB System**.
 
@@ -165,7 +165,7 @@ Estimated Lab Time: 60 minutes
 
 4. **Create DB System**.
 
-## **Step 5:** Create Compute Instance
+## Task 5: Create Compute Instance
 
 1. Click on hamburger menu ≡, then Compute > **Instances**. 
 2. Click **Create Instance**.
@@ -179,7 +179,7 @@ Estimated Lab Time: 60 minutes
 
 3. Create.
 
-## **Step 6:** Create Container Cluster
+## Task 6: Create Container Cluster
 
 1. Click on hamburger menu ≡, then Developer Services > **Container Clusters (OKE)**. 
 2. Click **Create Cluster**.
@@ -213,7 +213,7 @@ Estimated Lab Time: 60 minutes
 
 7. Copy the Cluster OCID in your notes text file, Cluster Id: ocid1.cluster.oc1.eu-frankfurt-1.aa[some_long_string]mu2d
 
-## **Step 7:** Create Container Repository
+## Task 7: Create Container Repository
 
 1. Click on hamburger menu ≡, then Developer Services > **Registry (OCIR)**. 
 2. Click **Create Repository**.
@@ -223,7 +223,7 @@ Estimated Lab Time: 60 minutes
 
 3. **Create Repository**.
 
-## **Step 8:** Create Authentication Token
+## Task 8: Create Authentication Token
 
 1. Click on profile icon 👤 on upper right corner, then on the name of your user. It opens Identity > Users > User Details page. 
 2. On the lower left side menu, click on **Auth Tokens**.
@@ -234,7 +234,7 @@ Estimated Lab Time: 60 minutes
 
 4. Generated Token: **Copy this token for your records in a text file on your computer** in a notes text file. It will not be shown again.
 
-## **Step 9:** Create API Key
+## Task 9: Create API Key
 
 1. In the same dialog, or click on profile icon 👤 on upper right corner, then on the name of your user. It opens Identity > Users > User Details page. 
 2. On the lower left side menu, click on **API Keys**.
@@ -257,7 +257,7 @@ Estimated Lab Time: 60 minutes
 
 4. Click Add. Save the **Fingerprint** in your notes text file.
 
-## **Step 10:** Gather OCID Values
+## Task 10: Gather OCID Values
 
 1. During the workshop, we will need some OCID values from Oracle Cloud console. Get these values and save them in your text notes file.
 

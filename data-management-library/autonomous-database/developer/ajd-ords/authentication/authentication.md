@@ -13,7 +13,7 @@ These are the two kinds of authentication supported by RESTful Services:
 
 Estimated Lab Time: 15 minutes
     
-## **Step 1:** Create new ORDS service with authentication
+## Task 1: Create new ORDS service with authentication
     
 1. Open SQL Developer Web on Tools tab, and login to AJD as DEMO user.
     
@@ -102,7 +102,7 @@ Estimated Lab Time: 15 minutes
     
 10. Same message will be received.
     
-## **Step 2:** Authenticate to new ORDS service with token
+## Task 2: Authenticate to new ORDS service with token
     
 1. Open SQL Developer Web on Tools tab, and login to AJD as DEMO user. Retrieve your OAuth client registration details from `USER_ORDS_CLIENTS` view. These fields are required to request an authentication token for the client.
     
@@ -181,7 +181,7 @@ Estimated Lab Time: 15 minutes
     
 7. We need to add some extra steps to our PL/SQL code for the authentication.
     
-## **Step 3:** Use authentication token in PL/SQL to retrieve data
+## Task 3: Use authentication token in PL/SQL to retrieve data
     
 1. Connect to the web service and access the JSON document store **catfood** collection from AJD with authentication. `APEX_WEB_SERVICE.OAUTH_AUTHENTICATE` procedure performs OAUTH autentication and requests an OAuth access token. `APEX_WEB_SERVICE.OAUTH_GET_LAST_TOKEN` function returns the OAuth access token received in the last `OAUTH_AUTHENTICATE` call. Returns NULL when the token is already expired or `OAUTH_AUTHENTICATE` has not been called.  
     

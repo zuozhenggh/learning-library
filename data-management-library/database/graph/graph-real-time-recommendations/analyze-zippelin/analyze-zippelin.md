@@ -30,7 +30,7 @@ The in-memory analyst provides an interpreter implementation for Apache Zeppelin
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Successful completion of all steps in the previous lab
 
-## **STEP 1**: Setup Zeppelin in a Docker Container
+## Task 1: Setup Zeppelin in a Docker Container
 
 Running Apache Zeppelin on Docker is a great way to get started with Zeppelin. Follow the steps below to provision the Zeppelin docker container in the lab VM.
 
@@ -57,7 +57,7 @@ Running Apache Zeppelin on Docker is a great way to get started with Zeppelin. F
 
 5. **DO NOT** exit this session.
 
-## **STEP 2**: Login to Zeppelin
+## Task 2: Login to Zeppelin
 
 1. From your laptop/desktop, open a new web browser and point to the following URL for Apache Zeppelin, replacing the **{VM IP Address}** with your lab VM's IP Address.
 
@@ -87,7 +87,7 @@ Running Apache Zeppelin on Docker is a great way to get started with Zeppelin. F
 
     ![](./images/online-retail-note-imported.png)
 
-## **STEP 3**: Connect to Graph Server
+## Task 3: Connect to Graph Server
 
 1. Click on **Online Retail** to open the note.
 
@@ -105,7 +105,7 @@ Running Apache Zeppelin on Docker is a great way to get started with Zeppelin. F
 
   ![](./images/connect-to-graph-success.png)
 
-## **STEP 4**: Load Retail Graph
+## Task 4: Load Retail Graph
 
 Load the retail graph using the **config-tables.json** file provided.
 
@@ -113,7 +113,7 @@ Load the retail graph using the **config-tables.json** file provided.
 
   ![](./images/1-load-graph.png)
 
-## **STEP 5**: Analyze Graph
+## Task 5: Analyze Graph
 
 Continue running the remaining paragraphs in the note.
 

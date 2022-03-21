@@ -32,15 +32,15 @@ This lab assumes you have:
 
 In this lab we will setup GoldenGate Microservices
 
-## **STEP 1:** Creating Deployments – Atlanta and Boston
+## Task 1: Creating Deployments – Atlanta and Boston
 
 Deployments are a new concept in Oracle GoldenGate Microservices.
 Deployments provide a siloed approach to splitting replication environments between applications, customers, or environments. This allows for greater control over the use of Oracle GoldenGate in larger environments.
 
-1.	Log in to ServiceManager’s HTML5 webpage using the following details.
+<!-- 1.	Log in to ServiceManager’s HTML5 webpage using the following details.
 
     ```
-    URL: <copy> https://<Your VM Public IP Address>:16000 </copy>
+    URL: <copy> https://localhost:16000 </copy>
     ```
 
     ```
@@ -51,19 +51,19 @@ Deployments provide a siloed approach to splitting replication environments betw
     Password: <copy>Welcome1</copy>
     ```
 
-    ![](./images/g2.png " ")
+    ![](./images/g2.png " ") -->
 
-2.	You should see “ServiceManager” under Deployments at the bottom of the page and the status should be set to “Running”.
+1.	You should see “ServiceManager” under Deployments at the bottom of the page and the status should be set to “Running”.
 
     ![](./images/g3.png " ")
 
-3.	Now switch back to the SSH Terminal session you started as user *oracle*, navigate to *`~/Desktop/Scripts/HOL/Lab2`*
+2.	Now switch back to the SSH Terminal session you started as user *oracle*, navigate to *`~/Desktop/Scripts/HOL/Lab2`*
 
     ```
     <copy>cd ~/Desktop/Scripts/HOL/Lab2</copy>
     ```
 
-4.	To run the `create_deployment.sh` script, you will need to provide eight (8) command line parameters. Here is the template of the command:
+3.	To run the `create_deployment.sh` script, you will need to provide eight (8) command line parameters. Here is the template of the command:
 
     ```
     sh ./create_deployment.sh <Deployment Name> <Admin Password> <SMPort> <ASPort> <DSPort> <RSPort> <PMSPort> <PMSPortUDP>
@@ -81,22 +81,22 @@ Deployments provide a siloed approach to splitting replication environments betw
 
     ***Atlanta deployment creation***  
 
-5.	Run the script using the following parameter values, to create the Atlanta Deployment:
+4.	Run the script using the following parameter values, to create the Atlanta Deployment:
 
     ```
     <copy>sh ./create_deployment.sh Atlanta Welcome1 16000 16001 16002 16003 16004 16005</copy>
     ```
     ![](./images/g4.png " ")
 
-6.	Return to the browser and refresh the ServiceManager page. You should have one (1) new Deployment called Atlanta, with four (4) services listed.
+5.	Return to the browser and refresh the ServiceManager page. You should have one (1) new Deployment called Atlanta, with four (4) services listed.
 
     ![](./images/g5.png " ")
 
-7.	Return to the Terminal Window where you ran the `create_deployment.sh` script and rerun the script again to create a 2nd Deployment (Boston), this time changing the Deployment name and all port numbers other than the ServiceManager (16000) port number.
+6.	Return to the Terminal Window where you ran the `create_deployment.sh` script and rerun the script again to create a 2nd Deployment (Boston), this time changing the Deployment name and all port numbers other than the ServiceManager (16000) port number.
 
     ***Boston deployment creation***
 
-8. Run the script using the following parameter values, to create the Boston Deployment:
+7. Run the script using the following parameter values, to create the Boston Deployment:
 
     ```
     <copy>sh ./create_deployment.sh Boston Welcome1 16000 17001 17002 17003 17004 17005 </copy>
@@ -104,11 +104,11 @@ Deployments provide a siloed approach to splitting replication environments betw
 
     ![](./images/g6.png " ")
 
-9.	Return to the browser and refresh the ServiceManager page again. You should now have two (2) Deployments with a total of eight (8) services running.
+8.	Return to the browser and refresh the ServiceManager page again. You should now have two (2) Deployments with a total of eight (8) services running.
 
     ![](./images/g7.png " ")
 
-## **STEP 2:** Configure Reverse Proxy
+## Task 2: Configure Reverse Proxy
 
 In this Task, you will configure the NGINX Reverse Proxy.  
 
@@ -135,7 +135,7 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
 3.	Upon completion, return to your web browser. You should be able to access the ServiceManager page by only using the URL without a port number.
 
     ```
-    <copy>https://<Your Public IP Address></copy>
+    <copy>https://localhost</copy>
     ```
 
     If this is the first time you access this address, you will need to click through some security exceptions page as it is using a self-signed certificate.  Once you get to the page, you will see below website.
@@ -149,18 +149,18 @@ After the completion of this task, accessing the Oracle GoldenGate Microservices
     Simplified URLs: The benefit of using the Reverse Proxy is that is makes the URLs simpler to use.  If you are so inclined, provide your browser a URL that models this:
 
     ```
-    https://<Your Public IP Address>/<deployment>/adminsrvr
+    https://localhost/<deployment>/adminsrvr
     ```
 
     Where *deployment* is the name of a deployment you built earlier. In the example below using the Atlanta deployment, the URL would look like this:
 
     ```
-    <copy>https://<Your Public IP Address>/Atlanta/adminsrvr</copy>
+    <copy>https://localhost/Atlanta/adminsrvr</copy>
     ```
 
     ![](./images/g10-1.png " ")
 
-## **STEP 3:** Create Credentials and Add Trandata
+## Task 3: Create Credentials and Add Trandata
 The scripts provided and executed in this step are meant to speed up the lab process. If you are interested in creating credentials and adding schematrandata from the portal or AdminClient, access the Administration Service (adminsrvr) and navigate go to `Context Menu -> Configuration -> Credentials -> click on the plus ( + )` sign.
 
 In this step we will manually execute each step from the SSH terminal session.
@@ -183,7 +183,7 @@ In this step we will manually execute each step from the SSH terminal session.
 3. From a browser session to the Administration Service of your deployment as user *oggadmin*, validate the results.
 
     ```
-    URL: <copy> https://<Your VM Public IP Address>/atlanta/adminsrvr </copy>
+    URL: <copy> https://localhost/Atlanta/adminsrvr </copy>
     ```
 
     ```
@@ -224,7 +224,7 @@ In this step we will manually execute each step from the SSH terminal session.
 
     You have now completed configuring schema level supplemental logging needed for use in the replication process
 
-## **STEP 4:** Create Oracle Replication Objects
+## Task 4: Create Oracle Replication Objects
 
 1.	Add Extract for Atlanta Deployment
 
@@ -253,7 +253,7 @@ In this step we will manually execute each step from the SSH terminal session.
 4. Validate your results from the browser by navigating to the path below as *oggadmin*
 
     ```
-    <copy>https://<Your Public IP Address>/Atlanta/distsrvr</copy>
+    <copy>https://localhost/Atlanta/distsrvr</copy>
     ```
 
     ![](./images/g16.png " ")
@@ -275,7 +275,7 @@ In this step we will manually execute each step from the SSH terminal session.
     ![](./images/g17.png " ")
 
     ```
-    <copy>https://<Your Public IP Address>/Boston/adminsrvr/</copy>
+    <copy>https://localhost/Boston/adminsrvr/</copy>
     ```
 
     ![](./images/g18.png " ")

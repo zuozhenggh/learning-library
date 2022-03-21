@@ -13,7 +13,7 @@ In this lab you will:
 - Tear down the infrastructure deployed.
 - Tear down the cluster.
 
-## **STEP 1:** Tear Down the Application and Infrastructure
+## Task 1: Tear Down the Application and Infrastructure
 
 1. Before discarding the cluster, we need to undeploy the Kubernetes manifests that were deployed, which deployed services external to the cluster (load balancer, Autonomous Database, and Stream).
 
@@ -57,7 +57,7 @@ In this lab you will:
     </copy>
     ```
 
-## **STEP 2:** Tear Down the Users
+## Task 2: Tear Down the Users
 
 1. Get back in the repo Terraform folder, run:
 
@@ -79,7 +79,7 @@ In this lab you will:
 
     This will take a minute or less.
 
-## **STEP 3:** Tear Down the OKE Cluster
+## Task 3: Tear Down the OKE Cluster
 
 1. Go back to the cluster deployment folder, from your original cluster deployment with Terraform and there again run:
 
@@ -97,7 +97,7 @@ In this lab you will:
 
     Run the destroy command again to finish clean up if it fails at first.
 
-## **STEP 4:** Clean up Docker Images
+## Task 4: Clean up Docker Images
 
 1. Go to your OCIR image registry and delete any unwanted images. They were created under the `demo` artifact name.
 

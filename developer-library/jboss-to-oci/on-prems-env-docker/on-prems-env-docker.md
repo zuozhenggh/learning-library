@@ -37,7 +37,7 @@ To run this lab, you will need:
   [https://hub.docker.com/signup](https://hub.docker.com/signup)
 
 
-## **STEP 1:** Get the Code
+## Task 1: Get the Code
 
 ### **On Linux**
 
@@ -73,7 +73,7 @@ To run this lab, you will need:
     ```bash
     <copy>
     cd ~/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ku2fmIyfei9z2vgqIArRp4D43LN5q731U6HyST8LLX5Rbq7QHB4L1ug754bphbZG/n/ocisateam/b/images/o/wildfly-to-oci.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/30LeL0WtFewd9uoyUhYsJPwmoKIE1Wyg64_8smFntX5TmlLxc3vWzp-VdGKd9wxV/n/orasenatdpltintegration01/b/images/o/wildfly-to-oci.zip
     </copy>
     ```
 
@@ -85,7 +85,7 @@ To run this lab, you will need:
     </copy>
     ```
 
-You can also download the code [https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ku2fmIyfei9z2vgqIArRp4D43LN5q731U6HyST8LLX5Rbq7QHB4L1ug754bphbZG/n/ocisateam/b/images/o/wildfly-to-oci.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ku2fmIyfei9z2vgqIArRp4D43LN5q731U6HyST8LLX5Rbq7QHB4L1ug754bphbZG/n/ocisateam/b/images/o/wildfly-to-oci.zip)
+You can also download the code [https://objectstorage.us-ashburn-1.oraclecloud.com/p/30LeL0WtFewd9uoyUhYsJPwmoKIE1Wyg64_8smFntX5TmlLxc3vWzp-VdGKd9wxV/n/orasenatdpltintegration01/b/images/o/wildfly-to-oci.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/30LeL0WtFewd9uoyUhYsJPwmoKIE1Wyg64_8smFntX5TmlLxc3vWzp-VdGKd9wxV/n/orasenatdpltintegration01/b/images/o/wildfly-to-oci.zip)
 
 ### **On Mac OS X**
 
@@ -94,7 +94,7 @@ You can also download the code [https://objectstorage.us-ashburn-1.oraclecloud.c
     ```bash
     <copy>
     cd ~/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ku2fmIyfei9z2vgqIArRp4D43LN5q731U6HyST8LLX5Rbq7QHB4L1ug754bphbZG/n/ocisateam/b/images/o/wildfly-to-oci.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/30LeL0WtFewd9uoyUhYsJPwmoKIE1Wyg64_8smFntX5TmlLxc3vWzp-VdGKd9wxV/n/orasenatdpltintegration01/b/images/o/wildfly-to-oci.zip
     </copy>
     ```
 
@@ -113,17 +113,17 @@ You can also download the code [https://objectstorage.us-ashburn-1.oraclecloud.c
     </copy>
     ```
 
-You can also download the code [https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ku2fmIyfei9z2vgqIArRp4D43LN5q731U6HyST8LLX5Rbq7QHB4L1ug754bphbZG/n/ocisateam/b/images/o/wildfly-to-oci.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ku2fmIyfei9z2vgqIArRp4D43LN5q731U6HyST8LLX5Rbq7QHB4L1ug754bphbZG/n/ocisateam/b/images/o/wildfly-to-oci.zip)
+You can also download the code [https://objectstorage.us-ashburn-1.oraclecloud.com/p/30LeL0WtFewd9uoyUhYsJPwmoKIE1Wyg64_8smFntX5TmlLxc3vWzp-VdGKd9wxV/n/orasenatdpltintegration01/b/images/o/wildfly-to-oci.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/30LeL0WtFewd9uoyUhYsJPwmoKIE1Wyg64_8smFntX5TmlLxc3vWzp-VdGKd9wxV/n/orasenatdpltintegration01/b/images/o/wildfly-to-oci.zip)
 
 ### **On Windows**
 
-1. Download the code [https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ku2fmIyfei9z2vgqIArRp4D43LN5q731U6HyST8LLX5Rbq7QHB4L1ug754bphbZG/n/ocisateam/b/images/o/wildfly-to-oci.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ku2fmIyfei9z2vgqIArRp4D43LN5q731U6HyST8LLX5Rbq7QHB4L1ug754bphbZG/n/ocisateam/b/images/o/wildfly-to-oci.zip)
+1. Download the code [https://objectstorage.us-ashburn-1.oraclecloud.com/p/30LeL0WtFewd9uoyUhYsJPwmoKIE1Wyg64_8smFntX5TmlLxc3vWzp-VdGKd9wxV/n/orasenatdpltintegration01/b/images/o/wildfly-to-oci.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/30LeL0WtFewd9uoyUhYsJPwmoKIE1Wyg64_8smFntX5TmlLxc3vWzp-VdGKd9wxV/n/orasenatdpltintegration01/b/images/o/wildfly-to-oci.zip)
 
 2. Unzip the file with your preferred tool.
 
 3. Open a terminal and get into the unzipped folder.
 
-## **STEP 2:** Agree to the Terms of the Private Docker Images
+## Task 2: Agree to the Terms of the Private Docker Images
 
 This repository makes use of Oracle Docker images which are licensed and need to be pulled from DockerHub after acknowledging the terms of the license.
 
@@ -151,7 +151,7 @@ This repository makes use of Oracle Docker images which are licensed and need to
     </copy>
     ```
 
-## **STEP 3:** Start the Local Environment
+## Task 3: Start the Local Environment
 
 *Startup the local environment stack that will simulate our on-premises environment*.
 
@@ -187,7 +187,7 @@ pull access denied for store/oracle/database-instantclient, repository does not 
 
 Go to the appropriate registry and image page, and go through the acknowledgement steps.
 
-## **STEP 4:**  Check the Local Environment
+## Task 4:  Check the Local Environment
 
 **It may take up to 10 minutes for the app to be up and running**
 
@@ -229,7 +229,7 @@ For the JBoss/WildFly container to run the application, the database needs to be
 
     ![./images/localhost-simpledb-app.png](./images/localhost-simpledb-app.png)
 
-## **STEP 5:** Create an SSH Key
+## Task 5: Create an SSH Key
 
 *We'll need a SSH key pair to communicate with the WebLogic servers and the database on OCI. The public key will need to be provided when provisioning those resources.*
 

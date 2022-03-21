@@ -18,7 +18,7 @@ Watch the video below for an overview of the Load ADB and Start Application lab
 - Lab: Generate SSH Keys
 - Lab: Setup Compute and ADB
 
-## **STEP 1:** Create Oracle Wallet
+## Task 1: Create Oracle Wallet
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
 1.  Before starting this section make sure you have exited out of your compute instance and are back in your cloudshell home.  
@@ -57,7 +57,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     ````
       ![](./images/converged-wallet.png " ")
 
-## **STEP 2:** Create Auth Token
+## Task 2: Create Auth Token
 There are multiple ways to create an Oracle Wallet for ADB.  We will be using Oracle Cloud Shell as this is not the focus of this workshop.  To learn more about Oracle Wallets and use the interface to create one, please refer to the lab in this workshop: [Analyzing Your Data with ADB - Lab 6](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?p180_id=553)
 
 1.  Click on the person icon in the upper right corner.
@@ -79,7 +79,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 6.  Copy the value for the token somewhere safe, you will need it for the next step.
 
 
-## **STEP 3:** Connect to SQL Developer and Create Credentials
+## Task 3: Connect to SQL Developer and Create Credentials
 1.  Go back to your ATP screen by clicking on the Hamburger Menu -> **Autonomous Transaction Processing**
       ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
@@ -108,7 +108,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     ````
     ![](./images/sql-run.png " ")
 
-## **STEP 4:**  Load ATP Instance with Application Schemas
+## Task 4:  Load ATP Instance with Application Schemas
 1. Go back to your cloud shell and start the cloud shell if it isn't already running
 2. Enter the command below to login to your compute instance.    
 
@@ -139,22 +139,26 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
 
       ![](./images/oraenv.png " ")
    
-5. Run the wget command to download the load_atp.sh script from object storage.
+5. Run this wget command to download the .sh script that will load your ADB.
 
       ````
       <copy>
       cd $HOME
       pwd
-      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/X312bI3U-DsOUoKgeFt8bt5U7nLOEpEbKg4cBQjljGDTChLIr__YJD6ab6SlChHP/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/load-atp.sh
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/ew-K0IQrTXaBF3OeT8NT-q8fMsqFZapho_rpbDelTM4dvibgVxOv0bZRyxk3gc5l/n/c4u04/b/livelabsfiles/o/developer-library/load-atp.sh
       </copy>
       ````
 
-6.   Run the load script passing in two arguments, your admin password and the name of your ATP instance.  This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  Your ATP name should be the name of your ATP instance *cvgad01*.  This load script takes approximately 2 minutes to run. 
+6.   Run the load script passing in two arguments, your admin password and the name of your ATP's database's name.
+
+      ![](./images/adb-db-name.png " ")
+
+      This script will import all the data into your ATP instance for your application and set up SQL Developer Web for each schema.  This script runs as the opc user.  Your ATP name should be the name of your ATP's database's instance name like *cvgad01*.  This load script takes approximately 2 minutes to run. 
    
       ``` 
       <copy> 
       chmod +x load-atp.sh
-      ./load-atp.sh WElcome123## cvgad01 2>&1 > load-atp.out</copy>
+      ./load-atp.sh WElcome123## <database name> 2>&1 > load-atp.out</copy>
      
       ```
       ![](./images/load-atp.png " ")
@@ -166,7 +170,7 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
       ````
       <copy>
       export TNS_ADMIN=/home/oracle/wallet
-      sqlplus admin/WElcome123##@cvgad01_high
+      sqlplus admin/WElcome123##@<database name>_high
       select count(*) from appnodejs.orders;
       </copy>
       ````
@@ -179,13 +183,13 @@ There are multiple ways to create an Oracle Wallet for ADB.  We will be using Or
     ````
     ![](./images/exit.png " ")
 
-## **STEP 5:**  Connect Docker Instance to ATP
+## Task 5:  Connect Docker Instance to ATP
 
 1.  Run the script env\_setup\_script\_adb.sh, this will download the docker application from OKE (Oracle Kubernetes engine) start the eshop application. This script will take 2-5 minutes to run.
 
       ````
       <copy>cd /u01/script
-      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/9__SPAwP9dcj7afYX4uhbyGf3-7Wv4iD-ypyxcShp0X88EffrT5myM1_S3jvsjtO/n/idcd8c1uxhbm/b/temp-converged-atp-bucket/o/env_script_setup_atp.sh
+      wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/env_script_setup_atp.sh
       chmod +x env_script_setup_atp.sh
       ./env_script_setup_atp.sh</copy>
       ````

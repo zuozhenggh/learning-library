@@ -31,11 +31,11 @@ Follow these general steps:
 
 ## Steps
 
-### **Step 1:** Connect to your ExaCS database with SQL Developer
+### Task 1: Connect to your ExaCS database with SQL Developer
 
 Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### **Step 2:** View sensitive data in your ExaCS database
+### Task 2: View sensitive data in your ExaCS database
 
 - In the SQL Developer worksheet, run the following command to connect to your PDB:
 ```
@@ -52,7 +52,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 - Keep this tab open so that you can return to it later in part 4 when you view the masked
 data.
 
-### **Step 3:** Sign in to the Oracle Data Safe Console for your region
+### Task 3: Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -67,7 +67,7 @@ data.
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### **Step 4:** Discover sensitive data by using Data Discovery
+### Task 4: Discover sensitive data by using Data Discovery
 
 - Access the **Data Discovery** wizard by clicking the **Data Discovery** tab.
 
@@ -125,7 +125,7 @@ the data discovery job.
 19. To drill-up, position your mouse over an expanded sensitive category, and then click the **Collapse** button.
 20. Click the **Close** button (**X**) to close the expanded chart. Continue to work in the wizard.
 
-### **Step 5:** Mask sensitive data by using Data Masking
+### Task 5: Mask sensitive data by using Data Masking
 
 - Click **Continue to mask the data**.
 
@@ -183,7 +183,7 @@ sensitive column, you can view the masking format used and the number of rows ma
 
 ![](./images/dbsec/datasafe/masking/masking-report-pdf.png " ")
 
-### **Step 6:** Verify the masked data in your ExaCS database
+### Task 6: Verify the masked data in your ExaCS database
 
 1. Return to SQL Developer. You should still have your query results from Part 2 in this lab.
 2. Take a moment to review the data.

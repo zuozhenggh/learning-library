@@ -16,7 +16,7 @@ This lab assumes you have already completed the following:
 - An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 - Create a SSH Keys pair
 
-## **STEP 1:** Create the VCN
+## Task 1: Create the VCN
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Networking**, and select **Virtual Cloud Networks**.
 
@@ -54,7 +54,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **STEP 2:** Create the DB System
+## Task 2: Create the DB System
 
 1. Open the navigation menu. Under **Database**, click **Bare Metal, VM, and Exadata**.
 

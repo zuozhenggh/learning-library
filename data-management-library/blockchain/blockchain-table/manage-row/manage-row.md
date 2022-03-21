@@ -21,7 +21,7 @@ In this lab, you will:
 * Lab: Create a VCN
 * Lab: Provision a 20c instance
 
-## **STEP 1**: Insert Rows
+## Task 1: Insert Rows
 
 1. Insert rows into the blockchain table:
 
@@ -62,7 +62,7 @@ In this lab, you will:
 
   When you try to delete a row in the blockchain table you get the same error because this is an insert only database table.
 
-## **STEP 2:** Query Rows
+## Task 2: Query Rows
 
 1. Query rows:
 
@@ -73,7 +73,7 @@ In this lab, you will:
     select bank, deposit_date, deposit_amount, ORABCTAB_INST_ID$, ORABCTAB_CHAIN_ID$, ORABCTAB_SEQ_NUM$, ORABCTAB_CREATION_TIME$, ORABCTAB_USER_NUMBER$, ORABCTAB_HASH$, ORABCTAB_SIGNATURE$, ORABCTAB_SIGNATURE_ALG$, ORABCTAB_SIGNATURE_CERT$ from bank_ledger;
     ```
 
-## **STEP 3:** Verify Rows without Signature
+## Task 3: Verify Rows without Signature
 The PL/SQL procedure DBMS\_BLOCKCHAIN\_TABLE.VERIFY_ROWS verifies that rows in a blockchain table were not modified since they were inserted. Being tamper-proof is a key requirement for blockchain tables.
 
 You can validate all rows in the blockchain table or specify a criteria to filter rows that must be validated. Rows can be filtered using the instance ID, chain ID, or row creation time.

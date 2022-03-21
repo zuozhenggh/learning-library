@@ -26,7 +26,7 @@ In this lab, you will:
     - The OCID of the target database
 
 
-## **STEP 1:** Enable Data Safe
+## Task 1: Enable Data Safe
 
 This step is not necessary if Data Safe is already been used in you tenancy and region. If it is not, follow these steps:
 
@@ -39,7 +39,7 @@ This step is not necessary if Data Safe is already been used in you tenancy and 
 4. Click **Enable Data Safe**. 
 
 
-## **STEP 2:** Create a Private Endpoint for the Database
+## Task 2: Create a Private Endpoint for the Database
 
 1. From the navigation menu on OCI, go to **Data Safe** and then click on **Private Endpoints**. 
 
@@ -61,7 +61,7 @@ This step is not necessary if Data Safe is already been used in you tenancy and 
 
     ![](./images/2.png " ")
 
-## **STEP 3:** Configure the Security List rules
+## Task 3: Configure the Security List rules
 
 1. Open Security List rules to allow traffic between the endpoint and the database. Go to **Networking** > **Virtual Cloud Networks** and select the VCN in which your target database resides.
 

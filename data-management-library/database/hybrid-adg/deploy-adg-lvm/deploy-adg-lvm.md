@@ -25,7 +25,7 @@ This lab assumes you have already completed the following labs:
 
 **Note: The following steps is for the cloud database using LVM for the storage management in Lab5. If you chose ASM for the storage, please use the other Lab for ASM.**
 
-## **STEP 1:** Manually Delete the Standby Database Created by Tooling 
+## Task 1: Manually Delete the Standby Database Created by Tooling 
 
 Please perform the below operations to delete the starter database files in the cloud and we will restore the on-premise database using RMAN. 
 
@@ -138,7 +138,7 @@ To manually delete the database on the cloud host, run the steps below.
 
 
 
-## **STEP 2:** Copy the Password File to the Cloud Host 
+## Task 2: Copy the Password File to the Cloud Host 
 
 As **oracle** user, copy the on-premise database password file to cloud host `$ORACLE_HOME/dbs` directory. 
 
@@ -158,7 +158,7 @@ As **oracle** user, copy the on-premise database password file to cloud host `$O
 
 
 
-## **STEP 3:** Copying the Wallet File to the Cloud Host 
+## Task 3: Copying the Wallet File to the Cloud Host 
 
 Make sure that `$ORACLE_HOME/network/admin/sqlnet.ora` contains the following line wallet file location is defined as `ENCRYPTION_WALLET_LOCATION` parameter in sqlnet.ora.
 
@@ -204,7 +204,7 @@ Make sure that `$ORACLE_HOME/network/admin/sqlnet.ora` contains the following li
 
 
 
-## **STEP 4:** Configure Static Listeners 
+## Task 4: Configure Static Listeners 
 
 A static listener is needed for initial instantiation of a standby database. The static listener enables remote connection to an instance while the database is down in order to start a given instance. See MOS 1387859.1 for additional details.  A static listener for Data Guard Broker is optional. 
 
@@ -321,7 +321,7 @@ A static listener is needed for initial instantiation of a standby database. The
 
 
 
-## **STEP 5:** TNS Entries for Redo Transport 
+## Task 5: TNS Entries for Redo Transport 
 
 1. From on-premise side, switch as **oracle** user, edit the tnsnames.ora
 
@@ -437,7 +437,7 @@ A static listener is needed for initial instantiation of a standby database. The
 
 
 
-## **STEP 6:** Instantiate the Standby Database 
+## Task 6: Instantiate the Standby Database 
 
 The standby database can be created from the active primary database.
 
@@ -631,7 +631,7 @@ The standby database can be created from the active primary database.
 
 
 
-## **STEP 7:** Clear All Online and Standby Redo Logs 
+## Task 7: Clear All Online and Standby Redo Logs 
 
 1. Copy the following command.
 
@@ -670,7 +670,7 @@ The standby database can be created from the active primary database.
 
 
 
-## **STEP 8:** Configure Data Guard Broker
+## Task 8: Configure Data Guard Broker
 
 1. Copy the following command.
 

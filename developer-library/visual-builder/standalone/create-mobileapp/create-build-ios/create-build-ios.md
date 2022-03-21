@@ -10,19 +10,19 @@ This lab shows you how to create a build configuration to install a mobile appli
 
 In the previous lab, you defined a build configuration to deploy your mobile application on the Android platform; you'll do the same for the iOS platform in this lab. You'll then use these settings to build the mobile application for installation on both Android and iOS devices in a later lab.
 
-## **STEP 1**: Enroll in an iOS Developer Program
+## Task 1: Enroll in an iOS Developer Program
 
 Deployment to an iOS-powered device or to a distribution site requires membership in the iOS Developer Program or the iOS Developer Enterprise Program.
 
 Visit the Apple website and enroll for the iOS Developer Program or iOS Developer Enterprise Program. You can enroll as an individual or organization. For information about these programs, see this [page](https://developer.apple.com/programs/).
 
-## **STEP 2**: Create a Provisioning Profile
+## Task 2: Create a Provisioning Profile
 
 You must have a provisioning profile to deploy an iOS application (.IPA file) to an iOS-powered device or to publish it either to the App Store or to an internal hosted download site. A provisioning profile contains an application ID as well as signing certificate(s), either a *distribution* certificate or one or more *developer* certificates depending on the profile type. You'll need the exact application ID and the certificate's signing identity for the iOS build configuration you'll define in the next step.
 
 Use the iOS Provisioning Portal, accessible only to members of the iOS Developer Program, to create a provisioning profile. For more information, review the [iOS Developer Support page](https://developer.apple.com/support/).
 
-## **STEP 3**: Define a Build Configuration
+## Task 3: Define a Build Configuration
 
 A build configuration includes deployment configuration information, such as the credentials of the certificate that you use to sign the application, and other information, such as the build type, bundle ID, and bundle version. You'll want to create separate builds: one for development and another for production, especially because iOS requires you to provide a certificate that can be used for production. For the purposes of this lab, however, we'll use one build configuration for both environments.
 

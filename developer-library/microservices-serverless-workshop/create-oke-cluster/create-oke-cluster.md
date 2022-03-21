@@ -17,7 +17,7 @@ This lab assumes you have completed the following labs:
 * Lab: Provision a DevCS Instance
 * Lab: Build Virtual Machines in Developer Cloud Service
 
-## **Step 1**: Create Policies
+## Task 1: Create Policies
 
 1. Start by creating a policy that allows Service OKE to be created and manage all resources in this tenancy. To do this open the menu and go to Identity-\>Policies.
 
@@ -41,7 +41,7 @@ This lab assumes you have completed the following labs:
 
   ![](./images/image58.png " ")
 
-## **Step 2**: Create OKE Clusters
+## Task 2: Create OKE Clusters
 
 1. In the OCI Dashboard Menu go to: Developer Services-\> Container Clusters (OKE).
 

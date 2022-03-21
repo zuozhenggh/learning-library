@@ -14,7 +14,7 @@ This lab walks you through the steps to set up Docker on Oracle Linux 7.7 runnin
 * An Oracle Cloud compute instance's Public IP Address
 * SSH keys
 
-## **STEP 1**: Set up the Docker environment
+## Task 1: Set up the Docker environment
 
   Docker is shipped as addon with Oracle Linux. On Oracle Cloud compute instances, the `addons yum` repository is now enabled by default, so you only need to install the docker-engine package as root.
 
@@ -46,7 +46,7 @@ This lab walks you through the steps to set up Docker on Oracle Linux 7.7 runnin
 
   Docker is now installed on the compute instance!
 
-## **STEP 2**: Enable a non-root user
+## Task 2: Enable a non-root user
 
 Enable a non-root user to communicate with the Docker engine. When Docker was installed, a new Unix group docker was created along with it. To allow a non-root user (for example, `opc`) to communicate with the Docker daemon directly, you add the non-root user to the docker group.
 
@@ -70,7 +70,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
 
     ![](images/non-root-enabled.png)
 
-## **STEP 3**: Start Docker
+## Task 3: Start Docker
 
 1. Start the Docker service.
 
@@ -92,7 +92,7 @@ Enable a non-root user to communicate with the Docker engine. When Docker was in
 
     ![](images/start-docker.png)
 
-## **STEP 4**: Connect to Docker with the non-root user
+## Task 4: Connect to Docker with the non-root user
 
 1. Exit the existing connection (as root) and open a new connection:
 

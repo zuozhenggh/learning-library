@@ -19,7 +19,7 @@ As a Developer or Data Engineer,
 - An Oracle Cloud Infrastructure account with privileges to create an instance VM standard 2.1 or BM.HPC2.36 shape. 
 
 
-## **STEP 1**: Navigate to the OCI Marketplace
+## Task 1: Navigate to the OCI Marketplace
 1. Click the Hamburger Menu (≡) on the top left corner.
  <img src="images/click_hamburger.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 2. Scroll down and click Marketplace.
@@ -31,7 +31,7 @@ As a Developer or Data Engineer,
 click **Launch Stack**.
 <img src="images/launch_stack.png" alt="marketplace" width="700" style="vertical-align:middle;margin:0px 50px"/>
 
-## **STEP 2**: Configure the HPC Stack
+## Task 2: Configure the HPC Stack
 After launching the stack you'll be redirected to the Create Stack Wizard where you'll fill in the Stack information.
 
 1. In **Stack Information** give the Stack a name and *(optionally)* specify to deploy in a compartment that you are currently not in.
@@ -53,7 +53,7 @@ After launching the stack you'll be redirected to the Create Stack Wizard where 
 
 **Note:** It will take approximately 15 minutes to provision the Stack.
 
-## **STEP 3**: View the running Stack
+## Task 3: View the running Stack
 
 Once you've created the Stack it will redirect you to a page where you can view the stack job running. It should look something like below. Here you can view:
 1. **Logs**

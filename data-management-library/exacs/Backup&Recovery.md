@@ -35,7 +35,7 @@ As a database user or DBA,
 
 ## Steps
 
-### **Step 1:** Backup and Recover using Console
+### Task 1: Backup and Recover using Console
 
 You can use Console to enable automatic incremental backups, create full backups on demand, and view a list of managed backups for a database. The Console also allows you to delete full backups.
 
@@ -142,7 +142,7 @@ As mentioned above in Backup using Console,
 **Note: If the restore operation fails, the database will be in a \"Restore Failed\" state. You can try restoring again using a different restore option. However, Oracle recommends that you review the RMAN logs on the host and fix any issues before reattempting to restore the database. These log files can be found in subdirectories of the /var/opt/oracle/log directory.**
 
 
-### **Step 2:** Backup and Recover using API
+### Task 2: Backup and Recover using API
 
 You can use Exadata's backup utility, bkup\_api, to back up databases on an Exadata DB system to an existing bucket in the Oracle Cloud Infrastructure Object Storage service and to the local disk Fast Recovery Area.
 
@@ -370,6 +370,6 @@ In this example, recovery completion status is checked as shown below.
 
 **Note: you can find the recovery logs in /var/opt/oracle/log/\<dbname\>/orec**
 
-### **Step 3:** Backup and Recover using RMAN
+### Task 3: Backup and Recover using RMAN
 
 [Backup and Recover using RMAN](?lab=appendix) 

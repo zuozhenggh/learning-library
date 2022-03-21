@@ -17,7 +17,7 @@ In this lab, you will:
 * This lab assumes that you have completed the lab - Set up Docker on an Oracle Cloud Compute Instance
 * Internet access to download the Graph Server and Client kit.
 
-## **STEP 1:** Get required components
+## Task 1: Get required components
 
 ### Clone repository
 
@@ -123,7 +123,7 @@ to
     <copy>"defaultValue":"http://graph-server:7007"</copy>
     ```
 
-## **STEP 2:** Create and start the containers
+## Task 2: Create and start the containers
 
 ### Build and pull images, create containers, and start them
 

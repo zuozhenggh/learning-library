@@ -15,7 +15,7 @@ Estimated Lab Time: 30 minutes
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
 
 
-## **STEP 1**: Select Cost Analysis
+## Task 1: Select Cost Analysis
 
 1. Click the **Hamburger Menu** on the top left
 2. Select from the Governance and Administration Tab.  The Account Management Tab which opens up the Cost Analysis Options
@@ -24,7 +24,7 @@ Estimated Lab Time: 30 minutes
 
   ![](./images/Step2.png " ")
 
-## **STEP 2**: Cost Analysis Options
+## Task 2: Cost Analysis Options
 
 1. Under this view, there is the possibility to create specific filters from different time periods, reports
 2. Explore grouping dimensions, with different values, for example Availability Domain, Compartment, Service, etc
@@ -32,7 +32,7 @@ Estimated Lab Time: 30 minutes
   ![](./images/Step3.png " ")
   ![](./images/Step4.png " ")
 
-## **STEP 3**: Overview of the Cost Analysis Diagram
+## Task 3: Overview of the Cost Analysis Diagram
 
 1. Below we would be able to see a detailed overview of the Cost Analysis Diagram, and in detail which service generated which costs:
   ![](./images/Step5.png " ")

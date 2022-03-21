@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-In this workshop, you will create a simple web shop for 80s,90s and 2000s memorabilia (movies, posters, mugs, wearables, caps, toys electronics) -> easter eggs.
+In this workshop, you will create a simple web shop for 80s, 90s and 2000s memorabilia (movies, posters, mugs, wearables, caps, toys electronics).
 
 This lab is organized into different topics, each topic consists of multiple steps. Some steps are a bit more advanced, they're marked as 'advanced' and you can skip them. After completing this workshop a user has a very good understanding what JSON features are available in Oracle Database and when to use them. A user will also have learned why Oracle database is better suited for JSON Development than MongoDB, etc.
 
@@ -24,6 +24,7 @@ Watch this quick video to know why JSON in Oracle Autonomous Database is awesome
 
 [](youtube:yiGFO139ftg)
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/uvlhnG-bjnY).</if>
 
 ### About JSON
 
@@ -74,17 +75,17 @@ In this workshop, you will explore:
 *	Fundamentals on the JSON data model and when to use it,
 *	How to store, query and process JSON document in collections using the SODA Api,
 *	How to use SQL to query, generate and process JSON data,
-*	How to convert JSON data to the relational model (e.g., for analytics or reporting),
-*	How to generate JSON data from relational sources (e.g., to serve a microservice)
+*	How to convert JSON data to the relational model (for example: for analytics or reporting),
+*	How to generate JSON data from relational sources (for example: to serve a microservice),
 *	How to update JSON data,
 *	How to perform transactions over JSON data,
-*	How to use stored procedures with JSON business logic
+*	How to use stored procedures with JSON business logic.
 
 ### Prerequisites
 
 * An Oracle Cloud Account
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 

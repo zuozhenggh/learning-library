@@ -16,14 +16,12 @@ The demonstration environment includes several example mappings. In this chapter
 This lab assumes you have:
 - Basic knowledge of Oracle Database
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-## **STEP 1:** Load TRG\_SALES Mapping Example
+## Task 1: Load TRG\_SALES Mapping Example
 
 This section contains the following topics:
 
@@ -88,7 +86,7 @@ The Load TRG\_SALES mapping uses the following data and transformations:
   |AMOUNT                 |Sum of the amounts from the order lines             | SUM(SRC\_ORDER\_LINES.AMOUNT)    |
   |PROD\_AVG\_PRICE       |Average amount from the order lines                 | AVG(SRC\_ORDER\_LINES.AMOUNT)    |
 
-## **STEP 2:** Creating the Mapping
+## Task 2: Creating the Mapping
 
 This section describes how to create the Load TRG\_SALES mapping. To create the Load TRG\_SALES mapping perform the following procedure:
 
@@ -126,7 +124,7 @@ This section describes how to create the Load TRG\_SALES mapping. To create the 
 
   ![](./images/load_trg_sales_mapping.png)
 
-## **STEP 3:** Define the Order Filter
+## Task 3: Define the Order Filter
 
 In this example, only completed orders should be retrieved. A filter needs to be defined on the SRC\_ORDERS datastore.
 
@@ -148,7 +146,7 @@ To define the filter:
   </copy>
   ```
 
-## **STEP 4:** Define Joins between the Source Datastores
+## Task 4: Define Joins between the Source Datastores
 
 This section describes how to define joins between the source datastores. To create the join defined earlier:
 
@@ -166,7 +164,7 @@ This section describes how to define joins between the source datastores. To cre
   </copy>
   ```
 
-## **STEP 5:** Define the Transformation Rules
+## Task 5: Define the Transformation Rules
 
 Many of the transformations used for this mapping will use an aggregate function. These functions are implemented using the AGGREGATE Component.
 
@@ -246,10 +244,10 @@ Many of the transformations used for this mapping will use an aggregate function
 
   ![](./images/mapping_logical_view.png)
 
-## **STEP 6:** Setting the Integration Type
+## Task 6: Setting the Integration Type
 Click on the TRG\_SALES datastore in the mapping, in the *Properties* panel under Target set the Integration Type to Incremental Update.
 
-## **STEP 7:** Define the Data Loading Strategies (LKM)
+## Task 7: Define the Data Loading Strategies (LKM)
 
 In the Physical tab, Oracle Data Integrator indicates the various steps that are performed when the map is executed. In the Physical tab you define how to load the result of the orders and order line aggregates into your target environment with a Loading Knowledge Module (LKM).
 
@@ -263,7 +261,7 @@ To define the loading strategies:
 
   ![](./images/aggregate_ap_lkm_selection.png)
 
-## **STEP 8:** Define the Data Integration Strategies (IKM)
+## Task 8: Define the Data Integration Strategies (IKM)
 
 After defining the loading phase, you need to define the strategy to adopt for the integration of the data into the target table.
 
@@ -275,7 +273,7 @@ To define the integration strategies:
 
 3.  In the knowledge module options, leave the default values.
 
-## **STEP 9:** Define the Data Control Strategy
+## Task 9: Define the Data Control Strategy
 
 In "Define the Data Loading Strategies (LKM)"and "Define the Data Integration Strategies (IKM)" you have specified the data flow from the source to the target. You must now define how to check your data (CKM) and the constraints and rules that must be satisfied before integrating the data.
 
@@ -299,7 +297,7 @@ To define the data control strategy:
 
 The Load **TRG\_SALES** mapping is now ready to be executed.
 
-You many now proceed to the next lab.
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 - [Oracle Data Integrator](https://docs.oracle.com/en/middleware/fusion-middleware/data-integrator/index.html)

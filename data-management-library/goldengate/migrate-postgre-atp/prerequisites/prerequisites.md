@@ -25,13 +25,13 @@ For a technical overview of this lab step, please watch the following video:
 * Your cloud account user must have the required IAM (Identity and Access Management) policy or admin user.
 * Successfully logged in to your cloud tenancy, if not please [login](https://www.oracle.com/cloud/sign-in.html) to your cloud account.
 
-## **Step 1**: Open Cloud-Shell
+## Task 1: Open Cloud-Shell
 
 1. Let's prepare our work directory. We will use Cloud Shell, it is located at the top right corner of the OCI web console
 
 	![](/images/0.Prep_0.PNG)
 
-## **Step 2**: Generate SSH keys 
+## Task 2: Generate SSH keys 
 
 1. Once the cloud shell environment is ready, issue the below 4 lines of commands. This will create the ssh key files and the api signing keys:
 
@@ -54,7 +54,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/0.Prep_1.PNG)
 
-## **Step 3**: Add Public API keys
+## Task 3: Add Public API keys
 
 1. Click on the top right corner of your OCI web console and click on your **profile**. Then navigate to the **API Keys** from the left pane and click on the **Add API Key** button. A small pop-up will appear and you need to choose the "Paste Public Key" radio button. Paste your **copied public pem key** there and click on the **Add** button.
 
@@ -64,7 +64,7 @@ For a technical overview of this lab step, please watch the following video:
 
 	![](/images/0.Prep_3.PNG)
 
-## **Step 4**: Modify Bash Profile (Optional)
+## Task 4: Modify Bash Profile (Optional)
 
 1. This step is **not needed** if you are running this lab from OCI **cloud-shell**. But will require this when you run from your local machine. In your notepad, copy the below lines and add related values from previous step. For example: `export TF_VAR_user_ocid="ocid1.user.oc1..."`
 

@@ -14,7 +14,7 @@ Estimated Time: 10 minutes.
 - Install `kubectl` 1.18 or later if not already present.
 - install Helm 3.x.
 
-## **STEP 1:** Install the Oracle Cloud Infrastructure CLI
+## Task 1: Install the Oracle Cloud Infrastructure CLI
 
 1. To install the Oracle Cloud Infrastructure (OCI) CLI on Linux or Mac OS X, run the following command:
 
@@ -104,7 +104,7 @@ Estimated Time: 10 minutes.
 
 7. Make a note of this name for later.
 
-## **STEP 2:** Install `kubectl`
+## Task 2: Install `kubectl`
 
 **Note**: If you are using Docker Desktop on Mac OS X or Windows, `kubectl` should already be installed, and you can skip the install step.
 
@@ -140,7 +140,7 @@ Estimated Time: 10 minutes.
     </copy>
     ```
 
-## **STEP 3:** Install Helm
+## Task 3: Install Helm
 
 1. To install helm on Mac OS X and Linux, use:
 
@@ -153,7 +153,7 @@ Estimated Time: 10 minutes.
     For more detailed instructions for your specific OS, go to:
     [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/).
 
-## **STEP 4:** Check OpenSSL
+## Task 4: Check OpenSSL
 
 1. Make sure you have OpenSSL installed with
 

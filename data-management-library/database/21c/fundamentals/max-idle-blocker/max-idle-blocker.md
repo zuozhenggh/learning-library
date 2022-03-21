@@ -18,7 +18,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Set up the environment with two sessions
+## Task 1: Set up the environment with two sessions
 
 1. Prepare two terminal sessions, one logged in `PDB21` as `HR` and another one logged in `PDB21` as `SYSTEM`.
 
@@ -56,7 +56,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 2:** Set the initialization parameter `MAX_IDLE_BLOCKER_TIME` to two minutes
+## Task 2: Set the initialization parameter `MAX_IDLE_BLOCKER_TIME` to two minutes
 
 1. In the `SYSTEM` session, set the initialization parameter `MAX_IDLE_BLOCKER_TIME` to two minutes.
 
@@ -73,7 +73,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 3:** Test
+## Task 3: Test
 
 1. In the `HR` session, update the employees' salary.
 
@@ -126,7 +126,7 @@ In this lab, you will:
 
 
 
-## **STEP 4:** Examine the DIAG trace files
+## Task 4: Examine the DIAG trace files
 
 1. Observe the DIAG trace file.
 

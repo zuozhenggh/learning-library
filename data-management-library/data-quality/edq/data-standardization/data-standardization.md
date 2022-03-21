@@ -16,9 +16,7 @@ You will be working on the below EDQ components in this lab.
 ### Prerequisites
 This lab assumes you have:
 - A Free Tier, Paid or LiveLabs Oracle Cloud account
-- SSH Private Key to access the host via SSH
 - You have completed:
-    - Lab: Generate SSH Keys (*Free-tier* and *Paid Tenants* only)
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
     - Lab: Initialize Environment
@@ -27,7 +25,7 @@ This lab assumes you have:
     - Lab: Data Auditing
 
 
-## **Step 1:** Normalize Whitespace
+## Task 1: Normalize Whitespace
 
 1.	Create a New Process under your project in the “Project Browser” by right-clicking on “Processes” and clicking “New Process…”.
 
@@ -45,7 +43,7 @@ This lab assumes you have:
 
 6.	Click the “Run” icon to start the process.
 
-## **Step 2:** Enhance from Map
+## Task 2: Enhance from Map
 1.	Find the “Enhance from Map” processor from the “Tool Palette” (you can use the "Search" field, type "Enhance"). Drag and drop the processor to the "Process Canvas". Double click the “Enhance from Map” and rename it to “Country from City”.
 
     ![](./images/image1200_91.png " ")
@@ -72,7 +70,7 @@ This lab assumes you have:
 
     ![](./images/image1200_96.png " ")
 
-## **Step 3:** Replace
+## Task 3: Replace
 
 1.	Go back to the “Tool Palette” and search for the “Replace” processor. Drag and drop the “Replace” processor to the “Project Canvas”. Rename “Replace” processor to “Standardize Country”.
 
@@ -92,7 +90,7 @@ This lab assumes you have:
 
 5.	Click the “Run” icon to start the process.
 
-## **Step 4:** Merge
+## Task 4: Merge
 
 1.	Return to the “Tool Palette” and search for “Merge”. Drag and drop the “Merge Attributes” processor onto the “Project Canvas” and rename it to “Create Best Country Attribute”.
 
@@ -110,7 +108,7 @@ This lab assumes you have:
 
     Notice how the two columns, “Country.Replaced” and “Derived Country” have now been merged to a single column “Best Country”.
 
-## **Step 5:** Writer
+## Task 5: Writer
 
 1.	In the “Tool Palette”, search for “Writer”. This processor enables an EDQ process to write data to different types of data stores, for example, Staged Data. Drag and drop the “Writer” to the right of the “Create Best Country Attribute” processor on the Project Canvas.
 
@@ -146,18 +144,8 @@ You may now [proceed to the next lab](#next).
 ## Learn More
 - [Oracle Enterprise Data Quality](https://docs.oracle.com/en/middleware/fusion-middleware/enterprise-data-quality/index.html)
 
-## Rate this Workshop
-When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
 
-1.  Go back to your **workshop homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-2.  Click on the **Brown Button** to re-access the workshop  
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**
-
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/images/rate-this-workshop.png " ")
-
-If you selected the **Green Button** for this workshop and still have an active reservation, you can also rate by going to My Reservations -> Launch Workshop.
-
-
+## Acknowledgements
+* **Author** - Ravi Lingam, Sri Vishnu Gullapalli, Data Integration Team, Oracle, August 2020
+* **Contributors** - Meghana Banka, Rene Fontcha, Narayanan Ramakrishnan
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021

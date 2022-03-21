@@ -15,7 +15,7 @@ In this lab, you will:
 
 * This lab assumes that you have successfully completed the lab - Create the Graph
 
-## **STEP 1:** Configure the graph server to load the graph
+## Task 1: Configure the graph server to load the graph
 
 The following configuration files determine the graph server startup settings and optionally the graphs that are pre-loaded.
 
@@ -73,7 +73,7 @@ The following configuration files determine the graph server startup settings an
 
   Note that edge labels are also loaded.
 
-## **STEP 2:** Start the graph server and verify that the graph was loaded
+## Task 2: Start the graph server and verify that the graph was loaded
 
 1. Start the database and Graph Server
 
@@ -91,7 +91,7 @@ The following configuration files determine the graph server startup settings an
     var graph = session.readGraphWithProperties("/graphs/customer_360/rdbms.json")
     ```
 
-## **STEP 3:** Query and analyze in Zeppelin
+## Task 3: Query and analyze in Zeppelin
 
 1. Replace *your-instance-ip-address* with your instance IP address in the URL and open Zeppelin. Execute all the paragraphs in the "Customer 360" analytics example notebook.
 

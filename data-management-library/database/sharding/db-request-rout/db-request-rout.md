@@ -22,7 +22,7 @@ This lab assumes you have already completed the following:
 - Sharded Database Deployment
 - Migrate application to sharded database
 
-## **STEP 1:** Routing Queries and DMLs Directly to Shards
+## Task 1: Routing Queries and DMLs Directly to Shards
 
 1. Login to the catalog host, switch to oracle user.
 
@@ -237,7 +237,7 @@ This lab assumes you have already completed the following:
 
     
 
-## **STEP 2:** Routing Queries and DMLs by Proxy
+## Task 2: Routing Queries and DMLs by Proxy
 
 1. Connect to the shardcatalog (coordinator database) using the GDS$CATALOG service (from catalog or any shard host):
 
@@ -302,7 +302,7 @@ This lab assumes you have already completed the following:
 
 
 
-## **STEP 3:**  Multi-Shard Query
+## Task 3:  Multi-Shard Query
 
 A multi-shard query is a query that must scan data from more than one shard, and the processing on each shard is independent of any other shard.
 

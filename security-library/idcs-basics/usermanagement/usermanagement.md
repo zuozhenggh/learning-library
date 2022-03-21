@@ -23,7 +23,7 @@ In this lab, you will:
 * An Oracle Free Tier or Paid Account
 * Postman native application installed locally
 
-## **STEP 1**: Create User in UI
+## Task 1: Create User in UI
 
 * *Personas*:
     - Administrator
@@ -48,7 +48,7 @@ In this lab, you will:
     Once a new user is created in the IDCS service, the user receives an email invitation to finish first time login formalities such as setting a password to logging into IDCS.
     ```
 
-## **STEP 2**: Import Users with CSV
+## Task 2: Import Users with CSV
 
 * *Personas*:
     - Administrator
@@ -112,7 +112,7 @@ If you are an identity domain administrator or a user administrator, you can bat
 
     ![Image](images/L1014.png)
 
-## **STEP 3**: API User Creation with REST APIs
+## Task 3: API User Creation with REST APIs
 
 * *Personas*:
     - Administrator

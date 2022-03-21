@@ -1,4 +1,4 @@
-# Expanding Oracle REST Data Services into Oracle Cloud Infrastructure
+# Expand Oracle REST Data Services into Oracle Cloud Infrastructure
 
 ## About this Workshop
 
@@ -14,15 +14,8 @@ In this lab you will create a series of scenarios in OCI where Oracle REST Data 
 - Send Log Data to an Autonomous Database using OCI Logging and the Service Connector Hub and Functions
 
 ### Prerequisites
-This lab assumes you have completed the following labs:
-* Lab: [Login to Oracle Cloud](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md)
-
-
-## **STEP 1:** Setup Your Account and Create an Oracle Autonomous Database
-
-## **STEP 2:** Create a Function to batch load data into the database using ORDS
-
-## **STEP 3:** Create a Function and Service Connector to load logs from the Logging Service into the database using ORDS
+This lab assumes you have:
+* Completed the [Getting Started](https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md) lab
 
 ## Learn More
 
@@ -55,4 +48,4 @@ More about Logging can be found [here](https://docs.oracle.com/en-us/iaas/Conten
 ## Acknowledgements
 
 - **Authors** - Jeff Smith and Brian Spendolini
-- **Last Updated By/Date** - Brian Spendolini, June 2021
+- **Last Updated By/Date** - Brian Spendolini, December 2021

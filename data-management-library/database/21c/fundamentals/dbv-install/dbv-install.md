@@ -18,17 +18,16 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Ensure Database Vault is not installed
+## Task 1: Ensure Database Vault is not installed
 
 Before starting the reinstallation of Database Vault, use the [Practice: Deinstalling Oracle Database Vault](https://oracle.github.io/learning-library/data-management-library/database/21c/fundamentals/workshops/freetier/index.html?lab=lab-uninstall-db-vault) in case Database Vault is already installed.
 
-## **STEP 2:** Use DBCA to reinstall or install Database Vault in the CDB
+## Task 2: Use DBCA to reinstall or install Database Vault in the CDB
 
 1. Before running the command, replace the password in the command below for both the DV owner and the DV account manager. Ensure that the DV owner and DV account manager accounts do not exist in the CDB root. The password cannot have any repeating consecutive characters and so the password had to change.
 
 
     ```
-
     $ <copy>$ORACLE_HOME/bin/dbca -silent -configureDatabase -sourceDB CDB21 -dvConfiguration true -olsConfiguration true -dvUserName c##dvo -dvUserPassword WElcome123#! -dvAccountManagerName c##dvacctmgr -dvAccountManagerPassword WElcome123#! </copy>
 
     Enter password for the TDE wallet: <i> password </i>
@@ -108,5 +107,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Donna Keesling, Database UA Team
 * **Contributors** -  David Start, Kay Malcolm, Database Product Management
-* **Last Updated By/Date** -  David Start, December 2020
-
+* **Last Updated By/Date** -  Tom McGinn, July 2020

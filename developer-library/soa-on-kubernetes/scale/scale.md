@@ -15,7 +15,7 @@ There are 2 ways to do so:
 - Editing the domain manifest directly (not recommended).
 - Editing the values in the Helm chart (recommended).
 
-## **STEP 1:** Scale by Editing the Domain Manifest
+## Task 1: Scale by Editing the Domain Manifest
 
 The original way of scaling the Oracle SOA domain when deploying Kubernetes manifests manually, is to edit the domain manifest.
 
@@ -57,7 +57,7 @@ The original way of scaling the Oracle SOA domain when deploying Kubernetes mani
     mysoa-soa-server3   0/1     ContainerCreating   0          6s      <none>      10.0.10.56    <none>           <none>
     ```
 
-## **STEP 2:** Scale by Updating the Helm Chart
+## Task 2: Scale by Updating the Helm Chart
 
 The main issue with the previous method is that the changes are no longer tracked by the Helm deployment.
 

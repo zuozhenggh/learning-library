@@ -19,7 +19,7 @@ This lab assumes you have already completed the following labs:
 
 In this lab, you can use 2 terminal windows, one connected to the on-premise host, the other connected to the cloud host. 
 
-## **STEP 1:** Name Resolution Configure
+## Task 1: Name Resolution Configure
 
 1. Connect as the opc user.
 
@@ -48,7 +48,7 @@ In this lab, you can use 2 terminal windows, one connected to the on-premise hos
    
 
 
-## **STEP 2:** Prompt-less SSH configure
+## Task 2: Prompt-less SSH configure
 
 Now you will configure the prompt-less ssh for oracle users between on-premise and the cloud.
 

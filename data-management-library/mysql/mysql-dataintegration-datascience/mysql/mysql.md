@@ -23,7 +23,7 @@ In this lab, you will:
 
 - All previous labs have been successfully completed.
 
-## **STEP 1:** Create an Instance of MySQL in the Cloud
+## Task 1: Create an Instance of MySQL in the Cloud
 
 1. Go to **Menu** > **Databases** > **DB Systems**.
 
@@ -78,7 +78,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 2:** Connect and Create DB
+## Task 2: Connect and Create DB
 
 1. Connect with **Cloud Shell** (if you close it or it is no longer active).
 
@@ -87,7 +87,7 @@ In this lab, you will:
       - (If you are NOT inside the bastion host already) SSH into the bastion host: `ssh -i ~/.ssh/bastion opc@PUBLIC_IP`
       - Run MySQL Shell (replace `PRIVATE_IP` with your MDS IP value): 
          ```
-         <copy>curl -L https://bit.ly/2S9abYm | mysqlsh --sql --save-passwords=always root@PRIVATE_IP</copy>
+         <copy>curl -L https://bit.ly/3yoHvem | mysqlsh --sql --save-passwords=always root@PRIVATE_IP</copy>
          ```
    This command will download the SQL script, and pipe the content to MySQL Shell to be executed as SQL code. We also indicate with `--save-passwords=always` to save the password securely for future uses of MySQL Shell.
 
@@ -101,7 +101,7 @@ In this lab, you will:
 
 ---
 
-## **STEP 3:** Enable HeatWave (Optional)
+## Task 3: Enable HeatWave (Optional)
 
 1. If and only if you have selected the **HeatWave** Shape `MySQL.HeatWave.VM.Standard.E3`, you should be able to **enable HeatWave Analytics Engine**.
 

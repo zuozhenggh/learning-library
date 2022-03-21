@@ -21,7 +21,7 @@ In this lab, you will:
 * Access to the cloud environment and resources configured in Lab 1
 * The Log Group created in Lab 2 and Custom Log created in Lab 3
 
-## **STEP 1**: Create Object Storage Archive Bucket
+## Task 1: Create Object Storage Archive Bucket
 
 The target bucket must already exist prior to creating the service connector, so let's create a bucket now.
 
@@ -40,7 +40,7 @@ The target bucket must already exist prior to creating the service connector, so
 
 5.  Click **Create Bucket** to complete the new bucket creation task, and you're ready to move on to the next step.
 
-## **STEP 2:** Configure Automated Export
+## Task 2: Configure Automated Export
 
 In this step you will create a **Service Connector** to export Log content to the bucket you created in Step 1.
 
@@ -82,7 +82,7 @@ In this step you will create a **Service Connector** to export Log content to th
     ![Service Connector](images/create-service-connector-7.png)
 
    
-## **STEP 3:** [Optional] View Log Archive Content
+## Task 3: [Optional] View Log Archive Content
 
 Log content archived to Object Storage is aggregated via batches (default every 7 minutes) and stored in .gz format. Timestamps allow easy retrieval by time range(s).  In this step you will locate archived content and optionally download/extract/view to validate the storage integrity.
 

@@ -1,4 +1,4 @@
-# Deploy GoldenGate for Big Data
+# Deploy GoldenGate for Big Data (Classic)
 
 ## Introduction
 
@@ -20,7 +20,7 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-## **STEP 0:** Running your Lab
+## Task 0: Running your Lab
 ### Login to Host using SSH Key based authentication
 Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
   - Authentication OS User - “*opc*”
@@ -42,7 +42,7 @@ Follow the steps below to install GoldenGate, or optionally you can select “I�
 
     ![](./images/labmenu_opt1.png " ")
 
-## **STEP 1**: Performing the Install
+## Task 1: Performing the Install
 
 1.  **Select Option 1**
 
@@ -110,8 +110,9 @@ You may now *proceed to the next lab*.
 ## Learn More
 
 * [Oracle GoldenGate for Big Data 19c | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/big-data/)
+* [GoldenGate Microservices Architecture (MA)](https://docs.oracle.com/en/middleware/goldengate/big-data/21.1/gadbd/getting-started-oracle-goldengate-microservices-big-data.html#GUID-248D5562-397F-4D10-9E95-CE9477012950)
 
 ## Acknowledgements
 * **Author** - Brian Elliott, Data Integration Team, Oracle, August 2020
 * **Contributors** - Meghana Banka, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, Master Principal Solutions Architect, NA Technology, October 2020
+* **Last Updated By/Date** - Brian Elliott, Data Integration Team, Oracle, August 2021

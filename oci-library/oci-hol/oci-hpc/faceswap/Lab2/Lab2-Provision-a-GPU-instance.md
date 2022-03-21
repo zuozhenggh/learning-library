@@ -22,7 +22,7 @@ Estimated workshop time: 15 minutes
 - A compartment for the user. Check the page [Managing Compartments](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm#uscons) to read how **To create a compartment** using the console.
 - Check service limits for the allowed maximum number of GPU instances per availability domain in the region you wish to provision the GPU instance. To increase the service limit, follow the steps in the page [Service Limits](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm#top).
 
-## **Step 1:** Login to Oracle Cloud
+## Task 1: Login to Oracle Cloud
 
 If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
@@ -42,7 +42,7 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
    ![](images/oci-console-home-page.png " ")
 
-## **Step 2:** Launch a GPU instance
+## Task 2: Launch a GPU instance
 
 1.  After you login, click on the **Create a VM instance** button in the **Quick Actions** section.
 

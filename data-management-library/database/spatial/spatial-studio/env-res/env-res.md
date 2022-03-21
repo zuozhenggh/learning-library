@@ -18,7 +18,7 @@ In this lab, you will:
 
 <!-- *This is the "fold" - below items are collapsed by default* -->
 
-## **STEP 1**: Download Cloud Wallet for your Autonomous Database 
+## Task 1: Download Cloud Wallet for your Autonomous Database 
 
 1. In Workshop Details, note your Cloud user name, password, Compartment, and Spatial Studio IP address. Then launch the Cloud Console.
 
@@ -41,7 +41,7 @@ In this lab, you will:
 
  ![Image alt text](images/1-5.png "Image title") 
 
-## **STEP 2**: Spatial Studio First-Time Login 
+## Task 2: Spatial Studio First-Time Login 
 
 1. You will now use the Spatial Studio IP address you noted earlier. Open a new tab in your browser and navigate to **https://[your Spatial Studio IP address]:4040/spatialstudio**. For example, if your Spatial Studio IP address is 123.123.12.123 then you would navigate to https://123.123.12.123:4040/spatialstudio. Because your Spatial Studio instance is not configured with a signed SSL certificate you will see a browser-specific security warning. Accept the warning and proceed to the site. In a production environment a certificate would be configured and this would not occur. Log in with user **admin** and password **welcome1**.
    

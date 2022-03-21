@@ -23,7 +23,7 @@ Estimated Lab Time: 30 minutes
 -   To learn more about SQL Developer Web, feel free to explore the capabilities by clicking on this link: [SQL Developer Web Documentation](https://docs.oracle.com/en/database/oracle/sql-developer-web/18.1/sdweb/sdw-about.html#GUID-AF7601F9-7713-4ECC-8EC9-FB0296002C69)
 
 
-## **STEP 1**: Creating OML Users
+## Task 1: Creating OML Users
 
 1. Navigate to your ADW instance in the Oracle Cloud console. Then, click the **Service Console** button on your Autonomous Data Warehouse details page.
 
@@ -59,7 +59,7 @@ Estimated Lab Time: 30 minutes
 
 9. Now that you have an OML user created, make sure to keep note of the login details. You will use this user later in this workshop.
 
-## **STEP 2**: Access SQL Developer Web and Grant OML user privileges
+## Task 1: Access SQL Developer Web and Grant OML user privileges
 
 1. We will use SQL Developer Web, an included cloud service with your ADW instance, to grant the necessary privileges for the OML user **testuser** to run the future prediction model OML script.
 
@@ -100,7 +100,7 @@ Estimated Lab Time: 30 minutes
 
 9. You have just used SQL developer web in order to grant a new user certain privileges to your Autonomous Database.
 
-## **STEP 3**: Import an OML script
+## Task 1: Import an OML script
 
 1. Navigate to and click on **Oracle Machine Learning Notebooks** from the development page of your ADW instance service console.
 
@@ -124,7 +124,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/22.png " ")
 
-## **STEP 4**: Run the OML script
+## Task 1: Run the OML script
 1. OML notebooks are structured with Paragraph sections that consist of markdown and SQL code. The paragraphs can be run one by one or all together.
 
 2. In order for the notebook to communicate with the database, an interpreter binding must be set for the database connection. Click on the **Gear** interpreter binding button and click on **adwdemo_low**. This service name will be labeled with your ADW instance name (which we name **adwdemo** by default in this workshop) and then low, medium, or high. To run this script, a low concurrency option is preferred to avoid script errors.
@@ -149,7 +149,7 @@ Estimated Lab Time: 30 minutes
 
 7. You have just ran a prediction model using OML through a SQL script! Let's view some of the data using your APEX app.
 
-## **STEP 5**: Access Your APEX App
+## Task 1: Access Your APEX App
 
 1. Navigate to and click on **Oracle APEX** from the development page of your ADW instance service console.
 
@@ -159,7 +159,7 @@ Estimated Lab Time: 30 minutes
 
     ![](./images/27.png " ")
 
-## **STEP 6**: Access the New OML Generated Tables
+## Task 1: Access the New OML Generated Tables
 
 3. Click on **SQL Workshop** and then on **Object Browser** to view the tables of your Autonomous Data Warehouse.
 
@@ -178,5 +178,3 @@ Estimated Lab Time: 30 minutes
 - **Author** - NATD Cloud Engineering - Austin Hub (Khader Mohiuddin, Jess Rein, Philip Pavlov, Naresh Sanodariya, Parshwa Shah)
 - **Contributors** - Jeffrey Malcolm, QA Specialist, Arabella Yao, Product Manager Intern, DB Product Management
 - **Last Updated By/Date** - Kamryn Vinson, June 2021
-
-

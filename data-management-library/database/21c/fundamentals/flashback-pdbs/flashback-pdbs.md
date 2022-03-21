@@ -17,7 +17,7 @@ In this lab, you will:
 * Lab: 21c Setup
 
 
-## **STEP 1:** Set up the environment
+## Task 1: Set up the environment
 
 1. The shell script enables flashback in the CDB, creates `PDB21` and creates the HR schema in `PDB21`.
 
@@ -105,7 +105,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 2:** Complete a human error on a table
+## Task 2: Complete a human error on a table
 
 1. Before any DDL or DML command is executed on `HR.EMPLOYEES` table in `PDB21`, display the current SCN, its associated timestamp and the incarnations of the PDB. **Make sure to take note of the SCN as you will use it in future steps**
 
@@ -167,7 +167,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 3:** Restore the table
+## Task 3: Restore the table
 
 1. Flashback the PDB so as to restore the dropped table. Ensure that   `PDB21` is closed. Other PDBs can be open and operational.  
 
@@ -226,7 +226,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 4:** Complete a second human error on a table
+## Task 4: Complete a second human error on a table
 
 1. Increase the salary of the employees in `HR.EMPLOYEES` by 2 for some employees.
 
@@ -294,7 +294,7 @@ In this lab, you will:
 
     ```
 
-## **STEP 5:** Restore the table back to the point before the table was dropped
+## Task 5: Restore the table back to the point before the table was dropped
 
 1. You decide to flashback the data back to the point before the table was dropped. **You will need to change the SCN in the FLASHBACK command to the SCN you saved from before**  
 

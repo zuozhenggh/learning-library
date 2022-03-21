@@ -20,7 +20,7 @@ As a database security administrator,
 - An Oracle Cloud Infrastructure account.
 
 
-## STEP 1: Create a Vault and Key in OCI Vault service
+## Task 1: Create a Vault and Key in OCI Vault service
 
 The first step is for a security admin responsible for all encryption keys to login to the OCI Vault service and create a Vault for storing autonomous database keys. Oracle Vault is an OCI service for storing encryption keys, certificates and other secrets. Keys are stored in a FIPS-140 Security Level 3 certified HSM module. Check out [OCI Vault documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm) for details.
 
@@ -58,7 +58,7 @@ If you do not ever need an ACD and decide to drop it, you may simply drop the co
 **It is also important to remember that Keys should be deleted or disabled with extreme caution. Once a key is deleted / disabled, the associated database becomes unavailable immediately unless Keys are restored from a backup or enabled again.**
 
 
-## STEP 2: Setup IAM policy & Network Access to allow Exadata to access Vault
+## Task 2: Setup IAM policy & Network Access to allow Exadata to access Vault
 
 This puts the control around who accesses the Key Vault in the hands of the customer. You need to, 
 
@@ -100,7 +100,7 @@ Create a route rule in your exadata subnet, routing traffic to the service gatew
 
 
 
-## STEP 3: Create ACDs and ADBs with Customer managed keys in Vault
+## Task 3: Create ACDs and ADBs with Customer managed keys in Vault
 
 You are now ready to create an Autonomous Container Database with customer controlled encryption keys residing in the OCI Key Vault
 

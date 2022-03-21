@@ -9,32 +9,33 @@ This lab will walk you through combining different components of OCI and the aut
 ### Objectives
 
 In this lab, you will:
-    * Create a table and Auto-REST enable it
-    * Create a function to pass a CSV file into batch load API of the auto-REST enabled table
-    * Create an event that looks in a bucket for CSV files to consume and pass into our function.
+* Create a table and Auto-REST enable it
+* Create a function to pass a CSV file into batch load API of the auto-REST enabled table
+* Create an event that looks in a bucket for CSV files to consume and pass into our function.
 
 ### Prerequisites
 
-- You have completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
+This lab assumes you have:
+- Completed the [setup steps](../setups/setups.md)(OCI permissions and database creation).
 
-## **STEP 1:** Download Lab Files
+## Task 1: Download Lab Files
 
 Download the lab files with the following link. 
 
-[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip)
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/func.zip)
 
 We will be using the **file1.csv** file in the next section via a browser so unzip the func.zip file in your local environment/desktop.
 
 To download them in the OCI Cloud Console, use the following command:
 ```
-curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip
+curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/func.zip
 ```
 
 If you have the OCI Cloud Shell open, you can now drag and drop files to your home directory.
 
 ![drag and drop files to your home directory](./images/cdd-1.png)
 
-## **STEP 2**: Prepare the Database
+## Task 2: Prepare the Database
 
 1. Start by going to the details page of your autonomous database if not already there. Use the OCI web console drop down menu to go to **Oracle Database** and then **Autonomous Database**.
 
@@ -48,13 +49,20 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     ![ORDS ADB database in the list](./images/sdw-2.png)
 
-3. On the Autonomous Database Details page for our ORDS ADB database, click the **Tools** tab in the middle of the page
+3. On the Autonomous Database Details page for our ORDS ADB database, click the **Database Actions** button on the top of the page
 
-    ![Tools Tab](./images/sdw-3.png)
+    ![Database Actions Button](./images/sdw-3.png)
 
-    then click the **Database Actions** button.
+    this will pop up a modal window
 
-    ![Database Actions Button](./images/sdw-4.png)
+    ![Database Actions Modal](./images/sdw-4.png)
+
+    **NOTE**: If you have a pop-up blocker on your browser, you will have to view the blocked window and allow it to open.
+
+
+**The new browser window should automatically login you in directly to the Database Actions Page. If it does, you can then move to step 6.**
+
+**If it does not log you in automatically, continue with the next 2 steps (4 and 5).**
 
 4. On the Database Actions page that was opened in a new browser tab/window, enter **admin** as the username. Then left click the **Next** button.
 
@@ -70,41 +78,41 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
 **If this is your first time accessing the SQL Worksheet, you will be presented with a guided tour. Complete the tour or click the X in any tour popup window to quit the tour.**
 
-2. We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
+7. We are now ready to load data into the database. For this task, we will use the Data Loading tab in the SQL Worksheet.
 
     ![Click Data Loading Tab on SQL Worksheet](./images/sdw-16.png)
 
-3. Start by clicking the Data Loading area; the center of the gray dotted-line box.
+8. Start by clicking the Data Loading area; the center of the gray dotted-line box.
 
     ![Click the Center of the Data Loading Tab Area](./images/sdw-17.png)
 
-4. The Upload Data into New Table modal will appear.
+9. The Upload Data into New Table modal will appear.
 
     ![To upload a file, Drag into the File Load Modal or Click Select File and use the OS File Browser](./images/sdw-18.png)
 
-5. We are going to use the same file we are going to run the automated load with so that the table definitions match. In the zip file you downloaded at the begining of the lab, find the **file1.csv** file.
+10. We are going to use the same file we are going to run the automated load with so that the table definitions match. In the zip file you downloaded at the begining of the lab, find the **file1.csv** file.
 
-6. Drag the **file1.csv** file into the Upload Data into New Table modal. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
+11. Drag the **file1.csv** file into the Upload Data into New Table modal. You can also click the Select Files button and find where you downloaded it via your operating system's file browser.
 
     ![Click the Next Button](./images/sdw-19.png)
 
-7. The modal will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
+12. The modal will then give you a preview of what the data will look like in an Oracle table. Go ahead and click the Next button on the bottom right of the modal.
 
     ![View Data Preview and then Click Next Button](./images/sdw-20.png)
 
-8. On the following step of the data loading modal, we can see the name of the table we are going to create (FILE1) as well as the column and data types for the table.
+13. On the following step of the data loading modal, we can see the name of the table we are going to create (FILE1) as well as the column and data types for the table.
 
     ![Data Column Layout from uploaded file](./images/sdw-21.png)
     
-9. Seeing our sample data deals with regional counts of ska shows, lets name the table **REGION**.
+14. Seeing our sample data deals with regional counts of ska shows, lets name the table **REGION**.
 
     ![Rename the Table to REGION](./images/sdw-22.png)
     
-10. Click Next on the bottom right of the modal when done renaming the table.
+15. Click Next on the bottom right of the modal when done renaming the table.
 
     ![Check out data then Click Next Button](./images/sdw-23.png)
 
-11. On the last step of the modal, we can see a review of the table name (that we changed to REGION) and source file
+16. On the last step of the modal, we can see a review of the table name (that we changed to REGION) and source file
 
     ![Review of Table Name and Source File](./images/sdw-24.png)
 
@@ -116,7 +124,7 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     ![Check out data then Click Next Button](./images/sdw-26.png)
 
-10. When you are done taking a look, click the Finish button in the lower right of the modal.
+17. When you are done taking a look, click the Finish button in the lower right of the modal.
 
     ![Click Finish in the Data Loading Modal](./images/sdw-27.png)
 
@@ -128,7 +136,7 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     ![Row indicating data load is finished in the Data Loading Tab of the SQL Worksheet](./images/sdw-29.png)
 
-11. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
+18. We can take a look at our newly created table and the data in it by using the navigator on the left of the SQL Worksheet. Just right click the table name and select Open from the pop up menu.
 
     ![Using the navigator on the left of the SQL Worksheet, we can see out new table](./images/sdw-30.png)
 
@@ -136,7 +144,7 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 
     ![Click the Data option to view the table data](./images/sdw-31.png)
 
-## **STEP 3:** Auto-REST Enable a Table
+## Task 3: Auto-REST Enable a Table
 
 1. REST enabling a table couldn't be easier. To do this, find the table we just created named **CSV_DATA** in the navigator on the left of the SQL Worksheet.
 
@@ -159,7 +167,7 @@ If you have the OCI Cloud Shell open, you can now drag and drop files to your ho
 We need to capture the hostname in the URL for our function. Copy and paste the URL and save it for later user (paste in a text editor or notes application). You can see from the image the URL is **https://myadbhostname-ordsadb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/sql-developer**. Yours will be in a similar format but a different hostname.
 
 
-## **STEP 4:** Create and Deploy the Function
+## Task 4: Create and Deploy the Function
 
 We now need to create a function that will see the incoming file in Object Store and use the Batch Load API of the table we created that leverages the REST services available to us from ORDS. 
 
@@ -336,7 +344,7 @@ In Oracle Functions, an application is:
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn list apps
     NAME            ID
-    functionsApp    ocid1.fnapp.oc1.eu-frankfurt-1.aaaaaaaaf2snfvp2gxhghcsvadeffffdddd32rf7hqh3lbcgiztw2xkqrv74ha
+    functionsApp    ocid1.fnapp.oc1.eu-frankfurt-1.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     ```
 
     We are now setup to deploy our function.
@@ -344,7 +352,7 @@ In Oracle Functions, an application is:
 18. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```
-    curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/HQkThPXg3FmQrz2aqjpTOuVmIKQfFFL1KXPQVZkFVVUetYcblgQlSeWnlA7NvMx6/n/c4u04/b/developer-library/o/func.zip
+    curl -o func.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/func.zip
     ```    
 
     Once downloaded, unzip it
@@ -391,7 +399,7 @@ In Oracle Functions, an application is:
     747aa001f428: Pushed 
     f9ef7f1bcb19: Pushed 
     02c055ef67f5: Pushed 
-    0.0.68: digest: sha256:2a9b72e1f08abc89ce3ac98bc1b074efe0bfccbc1103a14ba6b0b4c9745c623c size: 2623
+    0.0.68: digest: sha256:2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a size: 2623
     Updating function csv-to-adw-with-ords-and-fn using image fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn:0.0.68...
     Successfully created function: csv-to-adw-with-ords-and-fn with fra.ocir.io/mytenancy/livelabsrepo/csv-to-adw-with-ords-and-fn:0.0.68
     ```
@@ -433,7 +441,7 @@ In Oracle Functions, an application is:
     For the **secret_ocid** parameter, use the OCID of the password you entered in the secrets service during the setup.
 
     ```
-    fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
+    fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4"
     ```
 
     Once the values are entered, run them in the OCI Cloud Shell. Be sure to press enter/return after each configuration and that you see the confirmation that the function was updated.
@@ -447,8 +455,8 @@ In Oracle Functions, an application is:
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn db_user "admin"
     functionsApp csv-to-adw-with-ords-and-fn updated db_user with admin
     
-    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
-    functionsApp csv-to-adw-with-ords-and-fn updated dbpwd_cipher with ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4"
+    functionsApp csv-to-adw-with-ords-and-fn updated dbpwd_cipher with ocid1.vaultsecret.oc1.eu-frankfurt-1.a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4
     
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp csv-to-adw-with-ords-and-fn input_bucket "input-bucket"
     functionsApp csv-to-adw-with-ords-and-fn updated input_bucket with input-bucket
@@ -492,7 +500,7 @@ In Oracle Functions, an application is:
 
     ![view the log by clicking on the functionsApp_invoke link](./images/func-21.png)
 
-## **STEP 5:** Create an Event
+## Task 5: Create an Event
 
 1. So that the function triggers when the file1.csv csv file is put into a bucket, we have to create an **Event**. Use the OCI web console drop down menu to go to **Observability & Management** and then **Events Service**.
 
@@ -589,7 +597,7 @@ In Oracle Functions, an application is:
 
     ![Create Rule Filled Out](./images/event-15.png)
 
-## **STEP 6:** Taking the Flow for a Spin
+## Task 6: Taking the Flow for a Spin
 
 1. It's time to see our function in action. To do this we need to put the file1.csv csv file into the input-bucket bucket. Use the OCI web console drop down menu to go to **Storage** and then **Buckets**.
 
@@ -648,4 +656,4 @@ In this section, you created a table, auto-REST enabled it and use that REST end
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Brian Spendolini, June 2021
+- **Last Updated By/Date** - Brian Spendolini, December 2021

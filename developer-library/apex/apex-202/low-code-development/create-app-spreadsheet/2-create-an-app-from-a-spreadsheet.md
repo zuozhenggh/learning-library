@@ -13,7 +13,7 @@ Estimated Time: 15 minutes
 - Load project and tasks data
 - Create and run an application
 
-## **Step 1**: Loading project and tasks data  
+## Task 1: Loading project and tasks data  
 
 1.  From your APEX workspace home page, click **App Builder**.
 2.  Click **Create a New App**.
@@ -40,7 +40,7 @@ Estimated Time: 15 minutes
 
     After clicking **Load Data** you will see a spinner until the wizard finishes loading the data.
 
-## **Step 2**: Creating an application
+## Task 2: Creating an application
 
 The Data Load wizard has created a new table and populated that table with the records from the sample data. Now you can create an app based on this new table.
 
@@ -68,7 +68,7 @@ The Data Load wizard has created a new table and populated that table with the r
 
     When the wizard finishes creating the application, you will be redirected to the application's home page in the App Builder.
 
-## **Step 3**: Running and exploring the new app
+## Task 3: Running and exploring the new app
 
 1.  Click **Run Application**. This will open the runtime application in a new browser tab, allowing you to see how end users will view the app.
 

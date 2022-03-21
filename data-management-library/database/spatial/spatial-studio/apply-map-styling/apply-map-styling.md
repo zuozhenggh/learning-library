@@ -19,7 +19,7 @@ Estimated Lab Time: 30 minutes
 * Successfully complete Lab 2: Create Project
 
 
-## **STEP 1:** Navigate to styling
+## Task 1: Navigate to styling
 
 1. From the left-panel menu, navigate to the Projects page. Click on hamburger icon for Livelabs Spatial Intro and select **Open**. 
 ![Image alt text](images/apply-styling-1.png)
@@ -34,7 +34,7 @@ Estimated Lab Time: 30 minutes
 
 4. As you did in the previous lab, click the hamburger icon for ACCIDENTS and select Settings.  
 
-## **STEP 2:** Apply cluster style  
+## Task 2: Apply cluster style  
    
 5. Point layers, such as ACCIDENTS, can be rendered using various render styles. Each render style has its own settings.  Change the render style from Circle (the default) to Cluster.
   ![Image alt text](images/apply-styling-5.png)
@@ -44,14 +44,14 @@ Estimated Lab Time: 30 minutes
    Observe that as you zoom in (rotate mouse wheel) the clusters explode into smaller clusters, and vice verse as you zoom out.
   ![Image alt text](images/apply-styling-7.png)
 
-## **STEP 3:** Apply heatmap style 
+## Task 3: Apply heatmap style 
 
 6. Change the Render Style from Cluster to Heatmap. The map now renders ACCIDENTS with continuous colors based on the concentration of points. Hot colors represent  concentration of points, and cool colors represent sparcity of points. A key parameter of the Heatmap style is Radius, which controls the distance around each point for defining a concentration. The default Radius is so large that the initial heatmap just shows point contrations along the roads, which is not very helpful.
   ![Image alt text](images/apply-styling-8.png)
   To focus our Heatmap on more localized contrations, reduce the Radius from the default to 10 and observe a more localized view of point concenrtations.
   ![Image alt text](images/apply-styling-9.png)
 
-## **STEP 4:** Apply data-driven style 
+## Task 4: Apply data-driven style 
 
 7. Change the Render Style from Heatmap to Circle. When using the Circle render style, both the radius and color can be controlled by data values. Pull down the Color menu and select "Based on data".
   ![Image alt text](images/apply-styling-10.png)
@@ -62,7 +62,7 @@ Estimated Lab Time: 30 minutes
  9. Now that you have assigned colors based on data values, finalize the style by setting the Radius to 3 and Opacity to 90%. Also, update the Stroke (i.e., outline) values: set Width to 0.5, Color to grey, and Opacity to 90%. You can of course pick your own values for these if you prefer. Then click the **Back** link to return to the Layers List.
   ![Image alt text](images/apply-styling-12.png)
 
-## **STEP 5:** Apply symbol style 
+## Task 5: Apply symbol style 
 
 10. You will next use the remaining point style option, Symbol, for the POLICE\_POINTS layer. Turn on the POLICE\_POINTS layer and turn off the other 2 layers in the map by clicking on the visibility controls (i.e., blue eyeball icons.)  Then click the hamburger icon for POLICE\_POINTS and select Settings. 
 
@@ -70,7 +70,7 @@ Estimated Lab Time: 30 minutes
  ![Image alt text](images/apply-styling-13.png)
 
 
-## **STEP 6:** Apply interactivity
+## Task 6: Apply interactivity
 
 15. Click on then hamburger icon for the layer POLICE\_BOUNDS and select **Settings**. Then click on the **Interaction** tab.  The first type of interactivity we configure for a layer is the ability to select an item(s). Selections are used for analyses, for example where we want to identify the items contained within a selected region. By default the selectable option is off. Click in a POLICE\_BOUNDS region and observe the nothing is selected. Then turn on **Allow selection**, click inside a POLICE\_BOUNDS regions and observe the selection highlighted. 
 
@@ -85,7 +85,7 @@ Estimated Lab Time: 30 minutes
    ![Image alt text](images/apply-interactions-3.png)
 
 
-## **STEP 7:** Save changes
+## Task 7: Save changes
 
 11. Click the **Back** link and then click the **Save** button to save our project with the style changes.
  ![Image alt text](images/apply-styling-14.png)

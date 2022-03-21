@@ -1,5 +1,5 @@
 ﻿
-# Deploying ODI Web Edition
+# Deploy ODI Web Edition
 
 ## Introduction
 
@@ -7,7 +7,7 @@ Oracle Data Integrator (ODI) is Oracle's industry-leading, enterprise-class data
 
 ODI Web Edition needs to be deployed from OCI Marketplace before we can use Data Transforms. In this lab we will go through the steps to create an  ODI Web Edition instance.
 
-Estimated Lab Time: 60 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
@@ -37,7 +37,7 @@ To complete this lab, you need to have the following:
 
 - Knowledge of basic concepts of OCI console navigation 
 
-## **STEP 1:** Create OCI Policies for ODI Web Edition Deployment
+## Task 1: Create OCI Policies for ODI Web Edition Deployment
 
 1. **NOTE:** If you have already been provided a compartment then skip this step. For the remaining steps, replace compartment name `odi` with your assigned compartment name. Create a compartment `odi` where ODI Web Edition related artifacts will be created. Make sure you have a privilege to create a compartment or request your administrator to give you a compartment. Use this compartment for the rest of the lab. Navigate to **Identity & Security > Compartments** and create a compartment. 
 
@@ -93,7 +93,7 @@ To complete this lab, you need to have the following:
 
     ![ALT text is not available for this image](images/3018125118.jpg)
 
-## **STEP 2:** Deploy ODI Web Edition
+## Task 2: Deploy ODI Web Edition
 
 1. Starting from the OCI console, navigate to the OCI Marketplace, as follows (and as shown in the screenshot below):
 
@@ -110,65 +110,57 @@ To complete this lab, you need to have the following:
 
     ![ALT text is not available for this image](images/3018104742.png)
 
-2. In the details screen that appears, you should review and (if suitable) accept the Oracle Terms of Use. Then press **Launch Stack**. 
+2. In the details screen that appears, you should review and (if suitable) accept the Oracle Terms of Use. Then click **Launch Stack**. 
 
-    ![ALT text is not available for this image](images/3018104743.png)
+    ![Launch ODI Web Edition Stack](images/Launch_ODI_Web_Edition_Stack.jpg)
 
-3. What follows is a simple fill-in-the-blanks dialog to configure the OCI software stack appropriately. In the **Stack Information** section, provide a name and description for this software stack. You can ignore the target compartment in this dialog, but it's important to specify this appropriately in the next dialog. 
+3. What follows is a simple fill-in-the-blanks dialog to configure the OCI software stack appropriately. In the **Stack Information** section, provide a name and description for this software stack. Specify target compartment in in which you want to create the stack and the compute instance. Then click **Next**. 
 
-    ![ALT text is not available for this image](images/3018104744.png)
+    ![Create Stack configuration menu 01](images/Create_Stack_menu_01.jpg)
 
-4. The **Configure Variables** section is a rather long form, broken up here into three separate screenshots. 
+4. In the **Oracle Data Transforms Instance Settings** section, enter your own OCI Public key into the field SSH PUBLIC KEY. Then click **Next**.
 
-    **Important**: In the **General Settings** section, be sure to specify the same TARGET COMPARTMENT as you used to deploy your Autonomous Database.
+    ![Create Stack configuration menu 02](images/Create_Stack_menu_02.jpg)
 
-    ![ALT text is not available for this image](images/3018104745.png)
+5. Next comes the **Review** section. Be sure to check the values specified here, so that the stack is deployed successfully. Go back and make any corrections necessary. When you're satisfied, click **Create**. 
 
-5. In the **Oracle Data Transforms Instance Settings** section, enter your own OCI Public key into the field SSH PUBLIC KEY. You'll also need to specify a password for ORACLE DATA TRANSFORMS VNC PASSWORD. 
+    ![Create Stack configuration menu 03](images/Create_Stack_menu_03.jpg)
 
-    ![ALT text is not available for this image](images/3018104746.png)
+6. First status will be yellow **In Progress** and when the OCI components of the stack are successfully deployed, the status icon will turn green, as shown below.
 
-6. In the **New Oracle Data Transforms Metadata Repository** section, pick the name of your Autonomous Database from the pick list at the top. (This pick list is populated with names of Autonomous Databases in the same Compartment as you're using here. This is why it was important to pick the Target Compartment carefully in the **General Settings** section above.)
+    **NOTE:** It can take several minutes to finish.
 
-    **Important**: Be sure to check the box next to REGISTER ORACLE DATA TRANSFORMS WITH THE AUTONOMOUS DATABASE, DATABASE ACTIONS PAGE. This is what puts the Data Transforms card on your Database Actions page. 
+    ![Stack is being created](images/Stack_being_created.jpg)In this window, you can view the progress of the stack deployment log.
 
-    ![ALT text is not available for this image](images/3018104747.png)
+7. Wait for the job to finish and scroll to the end of the log and copy Data Transforms URL.
 
-7. Next comes the **Review** section. Be sure to check the values specified here, so that the stack is deployed successfully. Go back and make any corrections necessary. When you're satisfied, press **Create**. 
+    ![Copy Data Transforms URL from the log](images/Data_Transforms_URL_in_job_log.jpg)
 
-    ![ALT text is not available for this image](images/3018104748.png)
+8. In a browser window, launch Data Transforms using the URL copied in previous step. Click on **Create a new Data Transforms Repository**.
 
-    **Important**: What follows is a two-part deployment process:
+    **NOTE:** It may take one minute to start the Transforms service. Refresh the page after one minute if you don't get the UI immediately
 
-    * Deployment of the OCI components. This may take around 10 minutes. Data Transforms is still not ready to use at this stage!
+    ![Create Data Transforms repository](images/Create_Data_Transforms_repository_01.jpg)
 
-    * Deployment of the ODI components in your Autonomous Database. This may take around 30-40 minutes. 
+9. Provide Autonomous Database Details where the repository will be created. You can select the Autonomous database from the list in a specified compartment. If your database doesn't show in the list then it means OCI policies are not set in order to access the database from your compartment. Refer to the Task 1 to review the policies. Ask your Autonomous Database administrator for the Admin password. Then click **Next**.
 
-    Because of the time required to set up Data Transforms completely, this is an ideal time to take a 10 min break from the workshop. We suggest a walk, a nice meal, or perhaps a coffee break. 
+    ![Provide Autonomous Database Details](images/Create_Data_Transforms_repository_02.jpg)
 
-8. During Phase 1 (deployment of OCI components), you'll see a dialog similar to this:
+10. Provide schema Details where the repository will be created. Data Transforms repository schema name is prefixed with the text provide. Schema password will be used to create the schema. Then click **Next**.
 
-    ![ALT text is not available for this image](images/3018104749.png)
+    ![Provide repository schema Details](images/Create_Data_Transforms_repository_03.jpg)
 
-9. When the OCI components of the stack are successfully deployed, the status icon will turn green, as follows:
+11. Provide Supervisor password for Data Transforms. Carefully note down this password. Then click **Next**.
 
-    **NOTE:** This can take several minutes to finish.
+    ![Provide Supervisor password](images/Create_Data_Transforms_repository_05.jpg)
 
-    ![ALT text is not available for this image](images/3018104750.png)In this window, you can view the progress of the stack deployment log, if you're interested. 
+12. Repository creation process will start and you can see the progress. It will take around 15 minutes for the process to complete. After the process is successfully complete, you can launch Data Transforms by clicking on **Login to Data Transforms**. In future you can also use the previously copied URL to start Data Transforms.
 
-    **NOTE:** After the stack is successfully deployed, your compute instance is created. However, ODI deployment script is running in the background  to do the following:
+    **Note:** If there is an error then you can download the logs and look for the cause of the failure. Please refer to the documentation linked in the Marketplace listing for error logs.
 
-    - **Installing ODI Web Edition software**
+    ![Monitor repository creation progress](images/Create_Data_Transforms_repository_06_final.jpg)
 
-    - **Creating repository in ADW**
-
-    - **Starting ODI agents**
-
-  **All the above steps take around 30-40 minutes to finish. You can come back after 30 minutes and check for Data Transforms using direct URL as shown in Step 3. If it is not ready then give it another 10 minutes.**
-
-  **In order to check the progress of the deployment script, one need to login to VNC viewer to the compute instance and check the log file. This is beyond the scope of this workshop. To keep steps simple, we simply wait for 30-40 minutes and launch the Data Transforms tool.** 
-
-## **Step 3:** Launch The Data Transforms Tool
+## Task 3: Launch The Data Transforms Tool
 
 Data Transforms tool can be launched by two methods:
 
@@ -191,13 +183,26 @@ Data Transforms tool can be launched by two methods:
 
 4. The page that appears provides both private and public URLs for accessing **Oracle Data Integrator - Web Edition** directly.  
 
-    ![ALT text is not available for this image](images/3018104789.png) 
+    ![ALT text is not available for this image](images/3018104789.png)
 
-5. You can also launch **Data Transforms** from Autonomous Database. You'll see a card for a fully pre-configured connection to your Autonomous Database. Click the **DATA TRANSFORMS** card.
+5. We need to perform few administration steps before we can successfully launch Data Transforms form Autonomous Database Actions menu. Click on the Data Transforms URL in previous step to launch Data Transform. Login with SUPERVISOR user and your password.
+
+    ![ALT text is not available for this image](images/lab04-task03-05.jpg)
+
+6. Click Administration and click Continue.
+
+    ![ALT text is not available for this image](images/lab04-task03-06.jpg)
+
+7. This is where Database user is mapped to Data Transforms user. There is a default map for ADMIN user to SUPERVISOR. Click + and add QTEAM user mapping to SUPERVISOR. Enter Database URL (as shown) and click Save. After this you will be able to launch Data Transforms from Autonomous Database Actions page.
+
+    ![ALT text is not available for this image](images/lab04-task03-07.jpg)
+
+
+8. You can also launch **Data Transforms** from Autonomous Database. You'll see a card for a fully pre-configured connection to your Autonomous Database. Click the **DATA TRANSFORMS** card.
 
     ![ALT text is not available for this image](images/3018124770.png)
 
-6. You will see the login screen for the Data Transforms tool. Specify username **SUPERVISOR** and the password that you provided in the ODI Web Edition deployment. Click **Connect**.
+9. You will see the login screen for the Data Transforms tool. Specify username **SUPERVISOR** and the password that you provided in the ODI Web Edition deployment. Click **Connect**.
 
     ![ALT text is not available for this image](images/3018123500.png)Follow the next lab for using Data Transforms to create a data flow.
 
@@ -215,4 +220,4 @@ In this section we've covered the following topics:
 
 - **Authors** - Jayant Mahto, ADB Product Management
 - **Contributors** - Patrick Wheeler, Mike Matthews, ADB Product Management
-- **Last Updated By/Date** - Jayant Mahto, Brianna Ambler June 2021
+- **Last Updated By/Date** - Jayant Mahto, Arabella Yao, October 2021

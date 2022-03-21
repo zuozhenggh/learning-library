@@ -31,7 +31,7 @@ This lab assumes that you have:
 * A Data Science notebook session running on a GPU VM Shape.
 * The NVIDIA RAPIDS 0.16 conda environment installed in the notebook session.
 
-## **STEP 1:** Download the cuML Notebook
+## Task 1: Download the cuML Notebook
 
 1. Launch a terminal window from the JupyterLab launcher tab
 
@@ -57,7 +57,7 @@ This lab assumes that you have:
 
    ![](./../accelerate-ds-rapids-gpu/images/cuml-file-in-file-browser.png)
 
-## **STEP 2:** Open the Notebook
+## Task 2: Open the Notebook
 
 1. Open the file `intro_to_clustering.ipynb` by double-clicking on it. This operation may take a couple of seconds depending on your browser. A new tab opens with the notebook:
 
@@ -99,7 +99,7 @@ This lab assumes that you have:
 
   These two windows are useful to monitor and confirm that the GPU and the CPUs are being truly utilized by various commands. It's also useful to monitor Python processes in general to diagnose potential issues at runtime.
 
-## **STEP 3:** Running the Intro to Clustering notebook
+## Task 3: Running the Intro to Clustering notebook
 
 1. Click on the `intro_to_clustering.ipynb` notebook tab. This will activate the notebook file.
 

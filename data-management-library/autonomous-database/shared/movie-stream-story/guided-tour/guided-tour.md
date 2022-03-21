@@ -1,90 +1,98 @@
-# A Guided Tour Of The Autonomous Data Warehouse Console
+# A quick tour Of The Autonomous Data Warehouse console
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+Autonomous Data Warehouse provides a web-based console to create, manage, and monitor Autonomous Databases. Let's take a quick tour of the Autonomous Data Warehouse console. 
 
-Estimated Time: n minutes
+Estimated Time: 10 minutes
 
-### About <Product/Technology>
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction.
-
-### Objectives <optional>
-
-*List objectives for this lab*
+### Objectives (this lab is optional)
 
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Familiarize with the Autonomous Database console
+* Examine the built-in Autonomous Database tools
+* Check the performance monitoring features of the built-in Performance Hub
 
+### Prerequisites
+- This lab requires completion of Lab 1, **Provision an ADB Instance**, in the Contents menu on the left.
+- You can complete the prerequisite lab in two ways:
 
-*This is the "fold" - below items are collapsed by default*
+    a. Manually run through Lab 1.
 
-## **Step 1**: <what is the action in this step>
+    b. Provision your Autonomous Database and then go to the **Initializing Labs** section in the contents menu on the left. Initialize Labs will create the required database objects.
 
-(optional) Step 1 opening paragraph.
+## Task 1: Familiarize with the Autonomous Database console
+The Autonomous Data Warehouse console provides a user interface to create and manage autonomous databases, plus database tools to perform typical data warehouse tasks including loading and managing data, and a Performance Hub to monitor real-time and historical performance.
 
-1. Sub step 1
+1. Navigate to the Autonomous Database Details page for your new database, My Quick Start ADW. There are 5 buttons across the top, and 3 tabs under those, to navigate among the many functions and tools of the Autonomous Database console. Click the **More Actions** drop down menu, and note the many actions you can perform.
 
-		![Image alt text](images/sample1.png)
+    ![The More Actions drop down menu](images/more-actions-menu.png " ")
 
-  To create a link to local file you want the reader to download, use this format:
+2. Click the **Service Console** button.
 
-  Download the [starter file](files/starter-file.sql) SQL code.
+    ![The Service Console button highlighted](images/click-service-console-button.png " ")
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+3. The **Overview** tab in the Service Console provides information about the performance of an Autonomous Database: CPU utilization, running SQL statements, Number of OCPUs allocated, and SQL statement response time.
 
-2. Sub step 2
+    ![Charts in the Overview tab of the Service Console](images/service-console-overview-page.png " ")
 
-    ![Image alt text](images/sample1.png)
+4. Click the **Activity** tab. The Activity page shows past and current monitored SQL statements and detailed information about each statement. This page has two tabs: Monitor, Monitored SQL.
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+    ![Charts in the Activity tab of the Service Console](images/service-console-activity-page.png " ")
 
-5. Example with bold **text**.
+5. Click the **Administration** tab. The Administration page has cards to download client credentials (a wallet), set resource management rules, set or reset the Administrator password, manage Oracle Machine Learning users, and send feedback to Oracle.
 
-   If you add another paragraph, add 3 spaces before the line.
+    ![Contents of the Administration tab of the Service Console](images/service-console-administration-page.png " ")
 
-## **STEP 2:** <what is the action in this step>
+6. Click the **Development** tab. The Development page has cards to download Oracle Instant Client, download SODA drivers, open Oracle APEX application development framework, open Database Actions tools page, open Oracle Machine Learning (OML) Notebooks, and access RESTFUL Services and SODA.
 
-1. Sub step 1 - tables sample
+    ![Contents of the Development tab of the Service Console](images/service-console-development-page.png " ")
 
-  Use tables sparingly:
+## Task 2: Examine the built-in Autonomous Database Tools
+Autonomous Data Warehouse comes with a built-in suite of tools that can help you with many of the typical data warehouse tasks. This tool suite is complementary to various capabilities accessible using the SQL command line, which themselves are covered by other workshops. 
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+There are two ways to access the Autonomous Database built-in tool suite:
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+* From the Autonomous Database console page
+* Directly from a URL
 
-    - List item 1
-    - List item 2
+1. Switch back to the browser tab showing the Autonomous Database Details page. Click the **Database Actions** button:
 
-3. Code examples
+    ![Contents of the Tools tab of the Autonomous Database Details page](images/2879072598.png " ")
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+    In the log-in dialog, enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse. Click **Sign in**.
 
-4. Code examples that include variables
+2. This will open a browser tab taking you to the Autonomous Data Warehouse **Database Actions Launchpad** page (shown below). This page has a card for each of the most common tasks that the data warehouse user would want to perform. The cards are grouped by theme. For example, here you see groups for Development and Data Tools. Each card has a title and description.  
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+    ![Database Actions home page](images/2879071279.png " ")
 
-## Learn More
+3. If you want more information about each of the tasks related to each card then you can access the online help by clicking the **Question Mark** in the title bar, as indicated in the image below:
 
-*(optional - include links to docs, white papers, blogs, etc)*
+    ![The question mark icon in the title bar](images/2879071281.png " ")
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+4. This will pop out a tray containing links to the relevant topics in the Autonomous Data Warehouse documentation. To close the help tray, simply click the  **X**.
+
+    ![The pop out help tray](images/2879071282.png " ")
+
+## Task 3: Check the performance monitoring features of the Performance Hub
+The Autonomous Data Warehouse console has a built-in performance monitoring tool called Performance Hub. This tool gives us both real-time and historical performance data for our Autonomous Data Warehouse.
+
+1. Switch back to the browser tab showing the Autonomous Database Details page. Click the **Performance Hub** button.
+
+    ![Performance Hub button highlighted on the Autonomous Database Details page](images/click-performance-hub-button.png " ")
+
+2. The Performance Hub page shows active session analytics along with SQL monitoring and workload information. There are tabs for Average Active Sessions (ASH Analytics), SQL monitoring, ADDM analysis, Workload analysis, and blocking sessions.
+
+    ![The Performance Hub page](images/performance-hub-page.png " ")
+
+    Click **Close** in the lower left corner when you finish examining the Performance Hub.
+
+Please *proceed to the next lab*.
+
+## Learn more
+
+* See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/part-using.html#GUID-F9B1D121-5D89-40B4-90C6-8E8E233C2B3F) for Oracle Autonomous Database.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Group, Month Year>
+* **Author** - Rick Green, Principal Developer, Database User Assistance
+* **Last Updated By/Date** - Rick Green, July 2021

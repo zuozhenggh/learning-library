@@ -23,7 +23,7 @@ Estimated time: 20 minutes
 
 - **Works better with the Chrome browser**.
 
-## **STEP 1**: Add a Policy Statement for OKE
+## Task 1: Add a Policy Statement for OKE
 
 1. You should already have a browser tab logged in to the OCI Console. If you do not, log in again using the following URL.
 
@@ -50,7 +50,7 @@ Estimated time: 20 minutes
 
   ![](images/LabGuide200-bd5bcbd1.png)
 
-## **STEP 2**: Verify Kubernetes Cluster up and running.
+## Task 2: Verify Kubernetes Cluster up and running.
 1.  Navigate to **Developer Services** >   **Kubernetes Clusters**.
   ![](images/OKE1.png " ")
 2.  Select the **AppDev** compartment and select **cluster1**.
@@ -96,7 +96,7 @@ Estimated time: 20 minutes
 
 13.  Click **Close**.
   ![](images/300_12.png " ")
-## **STEP 3**: Find Deployed REST Services URLs.
+## Task 3: Find Deployed REST Services URLs.
  
 1.  Copy following command and paste it to Cloud Shell to view deployed REST web-services
     ```
@@ -105,7 +105,7 @@ Estimated time: 20 minutes
 
   ![](images/OKE_Services1.png " ") 
 
-## **STEP 4**: Test REST Services.
+## Task 4: Test REST Services.
 1.  Copy **product-svc** External IP. Append **:8080/product/list** to External IP and paste it in your browser.
   ![](images/OKE_Services4.png " ") 
 2.  You can see all products available for the REST endpoint GET method.
@@ -134,7 +134,7 @@ Estimated time: 20 minutes
     ```
     <copy> kubectl logs [pod_name] </copy>
     ```
-## **STEP 5**: Simulate Pod Failure and REST Service Recovery.
+## Task 5: Simulate Pod Failure and REST Service Recovery.
 1.  Copy following command to get pods
    
     ```
