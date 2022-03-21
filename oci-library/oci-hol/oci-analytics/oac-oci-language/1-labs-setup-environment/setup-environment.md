@@ -9,6 +9,7 @@ Estimated Time: 90 minutes
 ### Objectives
 
 In this lab, you will:
+* Verify Compartment and Group
 * Set up Policies
 * Create VCN with right access
 * Create an API Gateway
@@ -22,9 +23,52 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## **Task 1**: Setup Policies
+## **Task 1**: Create Compartment and Group
 
-Talk to your Administrator and make sure you can: Create VCN Networks, Function, API Gateways, use AI Services (Language) and Data Integration.
+Talk to your Administrator to verify the name of compartment you are to use for this lab as well as the group. In our scenario we are using compartment "oac-compartment" and "oac-developer" for the group. If these are not created you can refer to below steps to create.
+
+1.	Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Compartments**. A list of the compartments you have access to is displayed.
+
+    ![Create Compartment One](./images/createcompartmentone.png " ")
+
+2. Navigate to the compartment in which you want to create the new compartment:
+    * To create the compartment in the tenancy (root compartment) click **Create Compartment**
+    * Otherwise, click through the hierarchy of compartments until you reach the detail page of the compartment in which you want to create the compartment. On the **Compartment Details** page, click **Create Compartment**
+
+3. Enter the following:
+    * **Name**: A unique name for the compartment (maximum 100 characters, including letters, numbers, periods, hyphens, and underscores). The name must be unique across all the compartments in your tenancy. Avoid entering confidential information.
+    * **Description**: A friendly description. You can change this later if you want to.
+    * **Compartment**: The compartment you are in is displayed. To choose another compartment to create this compartment in, select it from the list.
+    **Tags**: If you have permissions to create a resource, then you also have permissions to apply free-form tags to that resource. To apply a defined tag, you must have permissions to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
+
+    ![Create Compartment Two](./images/createcompartmenttwo.png " ")
+
+4. Click **Create Compartment**.
+
+  For compartment : See [Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm) for more details.
+
+5. Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Groups**. A list of the groups in your tenancy is displayed.
+
+    ![Create Group One](./images/creategroupone.png " ")
+
+6. Click **Create Group**
+
+7. Enter the following:
+    * **Name**: A unique name for the group. The name must be unique across all groups in your tenancy. You cannot change this later. The name must be 1-100 characters long and can include the following characters: lowercase letters a-z, uppercase letters A-Z, 0-9, and the period (.), dash (-), and underscore (_). Spaces are not allowed. Avoid entering confidential information.
+    * **Description**: A friendly description. You can change this later if you want to.
+    * **Tags**: If you have permissions to create a resource, then you also have permissions to apply free-form tags to that resource. To apply a defined tag, you must have permissions to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
+
+    ![Create Group Two](./images/creategrouptwo.png " ")
+
+8. Click **Create Group**.
+
+  In the next steps you will create policies for the group.    
+
+  For Groups : See [Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm) for more details.
+
+## **Task 2**: Setup Policies
+
+  Talk to your Administrator and make sure you can: Create VCN Networks, Function, API Gateways, use AI Services (Language) and Data Integration.
 
 1.	Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**
 
@@ -34,6 +78,10 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
     * For **Name**, enter a name without any spaces. You can use alphanumeric characters, hyphens, periods, and underscores only.
     * For **Description**, enter a description to help other users know the purpose of this set of policies.
     * In **Policy Builder**, use the manual editor to add the following statements, then click **Create**.
+
+   ![Create Policies](./images/createpolicy.png " ")
+
+   **Note** When creating policies the one which says 'in tenancy' must be created/run in the root compartment of tenancy. All other policies should be created in the respective compartments.
 
 4.	The following policies should be set:
 
@@ -105,19 +153,29 @@ Talk to your Administrator and make sure you can: Create VCN Networks, Function,
     ```
 
 
-## **Task 2**: Create VCN with the right access levels
+## **Task 3**: Create VCN with the right access levels
 
 We will create a virtual cloud network that will serve as the home for our serverless function and the API gateway we will create.
 
 Create a VCN with Internet access.
 1.	Open the navigation menu, click **Networking**, and then click **Virtual Cloud Networks**.
 
-   ![Create VCN](./images/createvcn.png " ")
+    ![Create VCN](./images/createvcn.png " ")
 
 2.	Click the button **Start VCN Wizard**.
+
+    ![Create VCN One](./images/createvcnone.png " ")
+
 3.	Select **Create VCN with Internet Connectivity**
+
+    ![Create VCN Two](./images/createvcntwo.png " ")
+
 4.	Click **Start SVN Wizard**
+
 5.	Enter a name for the VCN and click **Next**
+
+    ![Create VCN Three](./images/createvcnthree.png " ")
+
 6.	Click **Create**
 
 Make sure your VCN can be accessed from the Internet.
@@ -125,6 +183,8 @@ The API Gateway communicates on port 443, which is not open by default. You must
 1.	Open the navigation menu, click **Networking**, and then click **Virtual Cloud Networks**.
 2.	Select the VCN you just created.
 3.	Click the name of the public regional subnet.
+    ![Configure Public Subnet](./images/configurepublicsubnet.png " ")
+
 4.	In the **Security Lists** section, select the Default Security List
 5.	Click **Add Ingress Rules**
 6.	Specify:
@@ -133,46 +193,47 @@ The API Gateway communicates on port 443, which is not open by default. You must
     * IP Protocol: TCP
     * Source Port Range: All
     * Destination Port Range: 443
-   ![](./images/introduction.png " ")
+   ![Configure Ingress Rules](./images/addingressrules.png " ")
 7.	Click **Add Ingress Rules** to add the new rule to the default security list.
     See [Documentation](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks/apigatewaycreatingpolicies.htm) for more details.
 
 
-## **Task 3**: Create an API Gateway
+## **Task 4**: Create an API Gateway
 
-An API Gateway allows you to aggregate all the functions you created into a single end-point that can be consumed by your customers.
+ An API Gateway allows you to aggregate all the functions you created into a single end-point that can be consumed by your customers.
 
-On the console, go to **Developer Services** and click **Gateways**, and then:
+1. On the console, go to **Developer Services** and click **Gateways**
 
-   ![Create Gateway](./images/createapigateway.png " ")
+    ![Create Gateway](./images/createapigateway.png " ")
 
-1.	Click **Create Gateway**
-2.	Specify:
+2.	Click **Create Gateway**
+
+3.	Specify:
     * a name for the new gateway, such as lab1-gateway
     * the type of the new gateway as **Public**
     * the name of the compartment in which to create API Gateway resources
     * the name of the VCN to use with API Gateway (the one you just created)
     * the name of the regional subnet in the VCN, select the **Public subnet** you just modified.
-3.	Click **Create Gateway**.
+
+    ![Configure API Gateway](./images/configureapigateway.png " ")
+
+4.	Click **Create Gateway**.
 
 When the new API gateway has been created, it is shown as Active in the list on the Gateways page.
 See [Documentantion](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks/apigatewaycreatinggateway.htm) for more details.
 
 
-## **Task 4**: Confirm access to OCI Language Services
+## **Task 5**: Confirm access to OCI Language Services
 This step ensures you are able to access OCI Language Service.
 
-Policy Pre-requisites
-1.	Navigate to **Identity & Security**, and then select **Policies** item under Identity.
-2.	Click **Create Policy**
-3.	Create a new Policy with the following statement:
-    ```
+Policy Pre-requisites:
+Please verify below policy that was created on Task 2, if it does not exists go ahead and add it.
+
+
     <copy>
     allow any-user to use ai-service-language-family in tenancy
     </copy>
-    ```
 
-4.	Click **Create**
 
 Get familiar with the Language AI Service
 1.	On the console, navigate to **Analytics & AI** > **Language**
@@ -183,13 +244,15 @@ Get familiar with the Language AI Service
 
    ![Open AI Language Two](./images/openlanguageaitwo.png " ")
 
-3.	OCI Language has several capabilities, including sentiment analysis and entity extraction.
-    Make sure those capabilities are selected and click **Analyze**
-4.	Inspect the results you get. If you cannot analyze the text, you may have to check that your policies are set correctly.
+3.	OCI Language has several capabilities, including sentiment analysis and entity extraction. Make sure those capabilities are selected
+
+4. Select the tab **Text Analytics** and enter your text and click **Analyze**
+
+5.	Inspect the results you get. If you cannot analyze the text, you may have to check that your policies are set correctly.
 
    ![Open AI Language Three](./images/openlanguageaithree.png " ")
 
-5.	Click the **Show JSON** button on the output of the analysis so that you can see the schema of the JSON that you get by calling each of the capabilities.
+6.	Click the **Show JSON** button on the output of the analysis so that you can see the schema of the JSON that you get by calling each of the capabilities.
 
 We need to call the endpoint from Python code (or using some other SDK). In **Lab 2** we will write a couple of functions that will call OCI Language Service.
 
