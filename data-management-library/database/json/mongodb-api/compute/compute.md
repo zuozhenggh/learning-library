@@ -115,7 +115,7 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
     There is an additional menu at the top left of the Cloud Shell window. Open this and select __Upload__.
 
-	![](./images/cloud-shell.png)
+	![](./images/cloud-shell-upload.png)
 
     Select the key file ssh-key-YYYY-MM-DD.key that you saved earlier either by dropping it onto the window of using the file selector. Then click the __Upload__ button.
 
@@ -138,7 +138,7 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
     ```
     <copy>
-    ssh -i ssh-key-2022-03-14.key opc@11.22.33.44
+    ssh -i ssh-key-YYYY-MM-DD.key opc@11.22.33.44
     </copy>
     ```
 
@@ -153,7 +153,7 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
 	In the Available Downloads box, leave the Version as it is and change Platform to __Linux Tarball 64-bit__. Click the __Copy Link__ button
 
-	![](./images/mongo-download.png)
+	![Mongo Shell download](./images/mongosh-download.png)
 
 2. Go back to the cloud shell where you are logged into your Compute instance, and type "wget" and a space, followed by the link you just copied
 

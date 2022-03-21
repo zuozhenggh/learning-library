@@ -2,27 +2,27 @@
 
 ## Introduction
 
-As a best practice, merge your library everyday or whenever you start your GitHub Desktop application. Merge pulls all the commits (changes) from the [upstream/master repository (production)](https://github.com/oracle/learning-library), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
+As a best practice, merge your library everyday or whenever you start your GitHub Desktop application. *Merge* pulls all the commits (changes) from the [upstream/master repository (production)](https://github.com/oracle/learning-library), into your local filesystem clone (local machine). This keeps your local clone up-to-date with other people's work (commits) from the upstream/master. Next, you push the updated content from your clone into the origin of your clone, that is, your fork, to synchronize your clone with your fork. Merging also avoids the long time it could take to complete if you don't do that often.
 
 ### Objectives
 
-* Commit your changes.
-* Request for a review.
-* Test your content.
-* Create a Pull Request to upload your content to master.
+* Commit your changes
+* Request for a review
+* Test your content
+* Create a Pull Request to upload your content to master
 
 ### What Do You Need?
 * Git Environment Setup
 * GitHub Desktop client
 
 
-This lab assumes that you have successfully completed **Lab 3: Using Atom Editor to Develop Content** in the **Contents** menu on the right.
+This lab assumes that you have successfully completed **Lab 3: Use a Text Editor to Develop Markdown Content** in the **Contents** menu on the right.
 
 ## Task 1: Get Latest Updates from Production
 
 Before you develop you should ensure you have the latest content from production to ensure you are developing off the latest code set.
 
-1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is perform the following steps to sync.  This should be done before you commit.
+1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is, perform the following steps to sync.  This should be done before you commit.
 
   ![](./images/git-hub-sync-behind.png " ")
 
@@ -94,7 +94,7 @@ To share and view your workshop:
 
 The **Pull Request** is a request that you send to the repository owners and code owners of the **oracle/learning-library** repository to approve and host your content on production **(upstream/master)** repository).
 
-Note:  *Before executing a PR, make sure you have run Step 1 above and that your personal github repo on the web is not behind.  Failure to do so will result in conflicts.  You cannot issue a pull request without syncing first.  PRs will not be approved without your LWMS ID (Workshop ID)*
+Note:  *Before executing a PR, make sure you have run Task 1 above and that your personal github repo on the web is not behind.  Failure to do so will result in conflicts.  You cannot issue a pull request without syncing first.  PRs will not be approved without your WMS ID (Workshop ID)*
 
 > **Note:** The owners can approve your request, ask for more information if required, or reject your request if your content does not meet the standards for Oracle GitHub.
 
@@ -107,7 +107,7 @@ To create a Pull Request:
 
   ![](./images/git-hub-branch-browser-create-pull-request.png " ")
 
-3. Enter the title for the pull request, **include your LWMS ID** (you can find that by visiting the [LWMS](http://bit.ly/oraclelwms)) in the title.  PRs will not be approved without this ID.
+3. Enter the title for the pull request, **include your WMS ID** (you can find that by visiting the [WMS](http://bit.ly/oraclewms)) in the title.  PRs will not be approved without this ID.
 4. Click **Create pull request**.
     ![](./images/git-hub-pull-request-title-comment.png " ")
   A status page is displayed indicating that you have created a pull request along with the request number (for example, #1770), that it is pending review, and that merging is blocked.
@@ -122,7 +122,7 @@ To create a Pull Request:
 
   Your committed content is now visible to the public on the learning-library (upstream/master or production) repository.
 
-## Task 6: Accessing your workshop in GitHub
+## Task 6: Access your workshop in GitHub
 
 After your pull request is complete, wait a few minutes and perform the steps below.  Github pages takes approximately 5 minutes for the pages to be copied
 
@@ -139,16 +139,71 @@ After your pull request is complete, wait a few minutes and perform the steps be
   https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier
 
 ## Task 7: Change your status
-Now that your workshop is in the learning library, change your status.  If you are finished and ready to QA, change your status to **Self QA**, if you still have some work to do, change your status to **Moving to Github**.
-1. Go into the LWMS (Oracle employees only - bit.ly/oraclelivelabs) and click edit your workshop.
-4.  Go to the row for your workshop and change your workshop status to at least *Moving to GitHub* *Note: If your workshop is already in production you will need to contact livelabs-admin_us@oracle.com to edit it.*
-5.  Click on the ID for your workshop
-6.  On the edit page, scroll down and update the **Production GitHub URL** update it to the new oracle.github.io address you identified in step 3.
-7.  Update your Development GithHub URL to your personal github pages address
-8.  When you are finished with your workshop, set your workshop status to **Self QA**.
-9.  Questions?  Go to your workshop and find your support url, contact your assigned support team.  You can also ask in the #livelabs-authors-help slack channel.
+Now that your workshop is in the learning library, set your workshop status in WMS to the appropriate status: **In Development** or **Self QA**.
+1. Go to the WMS (Oracle employees only - [bit.ly/oraclelivelabs](https://bit.ly/oraclelivelabs)) and click **Edit My Workshops**.
 
-You may now [proceed to the next lab](#next).
+  ![Edit Workshop](images/edit-my-workshop.png " ")
+
+2.  Go to the row for your workshop and click the **WMS ID** of your workshop.
+    >**Note:** If your workshop is already in production, you will need to contact livelabs-admin_us@oracle.com to edit it.
+
+    ![WMS ID](images/wms-id.png " ")
+
+3.  On the *Workshop Details* page, update your **Workshop Status**. If you are finished and ready to QA, change the status to **Self QA**. If you still have some work to do, change the status to **In Development**.
+
+  ![Statuses](images/workshop-status.png " ")
+
+## Task 8: Self QA
+You have finish developing your workshop. In order to publish your workshop, you still need to perform self QA on the workshop.
+
+1.  On the *Workshop Details* page, ensure **Workshop Title** matches the workshop title in development, and **Short Description**, **Long Description**, **Workshop Outline**, and **Workshop Prerequisites** are all up-to-date. Click **?** beside each field to see its details.
+
+  ![Basic Information](images/description.png " ")
+  ![Detailed Workshop Information](images/outline-description.png " ")
+
+2.  If your workshop has been added to oracle/learning-library GitHub repo (your pull request has been merged), scroll down and update the **Production GitHub/GitLab URL**. Update it to the new oracle.github.io address you identified in Task 6. Update the **Development GithHub/GitLab URL** to your personal github page address.
+  ![GitHub link](images/github-url.png " ")
+
+3. Click the **Tags** tab. Make sure you have selected correct tags for **Level**, **Role**, **Focus Area**, and **Product**. Click **Save**. Tags help people find your workshop in LiveLabs.
+	![Tags](images/tags.png " ")
+
+4.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your *stakeholder* (livelabs-help-xx_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
+
+5. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS.
+  ![Self QA Complete](images/self-qa-complete.png " ")
+
+6. Then, email your completed Self QA document to your stakeholder email address. Stakeholder is who sent you the Self QA form. You can also find your stakeholder by going into WMS and looking at your *Workshop Details* page.
+
+7. Your stakeholders will verify the QA within 2 business days. They will reach out to you via WMS if there are more changes needed. Otherwise, they will move the workshop into **Completed** status. If you have not heard back from your stakeholder 2 business days after you submit the Self QA form, please message them via WMS. While you are waiting to hear back from your stakeholder, you can go to Task 9 and request publishing.
+
+  ![Message](images/message-team.png " ")
+
+8. Questions?  Go to your workshop and find your stakeholder email address, and contact them.  You can also ask in the #workshops-authors-help Slack channel.
+
+  ![Stakeholder](images/stakeholder.png " ")
+
+## Task 9: Request Publishing
+1.  Click **Publishing** tab, then **+ Publish to LiveLabs**.
+
+	![Request Publishing](images/publishing-tab.png)
+
+2. Fill out publishing information, including **Publish Type** and **Workshop Time**. Click **?** beside the Publishing Type to see different types of publishing. Turn on approriate tenancies for your workshop: **Always Free Enabled?**, **Free Tier Enbaled?**, **Paid Tier Enabled?**, **Green Button Enabled?**, and fill out appropriate **URL**s. Click **Create** to submit your publishing request. Our LiveLabs team will either approve your publishing request, or ask you for more information within 2 business days.
+
+    - Always Free On? - Can this workshop be done in an Always Free account using only Always Free services? (i.e. Compute Micro, ADB-Shared, etc). [Here](https://www.oracle.com/cloud/free/#always-free) is a list of Always Free eligible services.
+
+    - Free Tier On? - Can this workshop be done in a Free Tier account using the $300 (or $500) credit and Always Free services? [Here](https://www.oracle.com/cloud/free/#free-cloud-trial) is a list of Free Tier eligible services.
+
+    - Paid Tier On? - Can this workshop be done in a customer tenancy?
+
+    - Green Button On? - Can this workshop be done in a registered LiveLabs tenancy, a.k.a Green Button? With Green Button, users can run the workshop in pre-provisioned environements. Users have to complete the workshop in a specified limited amount of time. After their reservations expire, any instances they create will be destroyed. However, users can extend their reservations up to 4 times. You can contact us via WMS to request a Green Button for your workshop. Green Button can also be added after your workshop has already been in production.
+
+    ![Publishing Information](images/livelabs-publishing.png " ")
+
+3. Click **Save**.
+
+4. When your workshop is in **Completed** status, and we have approved your publishing request, your workshop will be published automatically within 1 business day.
+
+You may now **proceed to the next lab**.
 
 ## **Appendix**: Troubleshooting Tips
 ### Issue: Conflicts
@@ -173,7 +228,7 @@ You may now [proceed to the next lab](#next).
 ### Issue: Clone failed
   ![](./images/clone-failed.png " ")
 
-  1. Execute the following commands to make sure .gitconfig is updated:                           
+  1. Execute the following commands to make sure .gitconfig is updated:
 
     ```
     <copy> git config --global core.longpaths true </copy>
@@ -198,5 +253,6 @@ This concludes this lab. You may now proceed to the next lab.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Kamryn Vinson, Product Manager, Database
+    * Arabella Yao, Product Manager, Database
 
-* **Last Updated By/Date:** Lauran Serhal & Anuradha Chepuri, November, 2021
+* **Last Updated By/Date:** Arabella Yao, March 2022
