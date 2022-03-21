@@ -58,13 +58,15 @@ wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-mana
 ```
 ```
 <copy>
-wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/phpmyadmin/phpadmin-ing.yaml
+wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/phpmyadmin/phpmyadmin-ing.yaml
 ```
 
 2. Specify your MySQL private IP address in the yaml file, replace **MYSQL_IP_ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
 
 ```
+<copy>
 sed -i -e 's/MYSQL_HOST/<MYSQL_IP_ADDRESS>/g' phpmyadmin.yaml 
+</copy>
 ```
 
 3. Execute the kubectl commands to create a namespace

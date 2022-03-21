@@ -51,38 +51,46 @@ This lab assumes you have:
 1. Install helm cli client 'helm' to the operator VM and add superset repo.
 
 ```
+<copy>
 curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
 helm repo add superset https://apache.github.io/superset
+</copy>
 ```
 ![Install helm cli](images/helm-cli-install.png)  
 ![Add superset repo to helm ](images/helm-add-repo.png)
 
 2. Generate superset-custom-values.yaml (if neede, to update any specific variables) and Install superset package.
 ```
+<copy>
 helm show values superset/superset > superset-custom-values.yaml
-
 kubectl create ns superset
-
 helm upgrade --install --values superset-custom-values.yaml superset superset/superset -n superset
+</copy>
 ```
 ![Install superset ](images/superset-install.png)
 3. Check deployment
 ```
+<copy>
 helm list
 kubectl get all -n superset
+</copy>
 ```
 ![Check resources in namespace superset ](images/superset-get-all.png)
 
 3. Disable firewalld in oke-operator COMPUTE VM (make sure you are on oke-operator)
 ```
+<copy>
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
+</copy>
 ```
 
 4. Start port-forward to service/superset.  If the testing finishes, press **CTRL-C** to terminate port-forward service.
 
 ```
+<copy>
 kubectl port-forward --address 0.0.0.0 8088:8088 service/superset -n superset
+</copy>
 ```
 ## Task 4 : Change VCN security list attached to oke-operator VM's subnet to open 8088 traffic
 ### Select VCN oke-vcn from networking
@@ -100,8 +108,8 @@ kubectl port-forward --address 0.0.0.0 8088:8088 service/superset -n superset
 ![Add Ingress Rule](images/VCN-AddIngressRule-8088.png)
 
 
-## Task 5 : Test Superset (note: using http://<public IP>:8088)
-- Open a browser and put in the URL : http://<public IP of oke-operator VM>:8088
+## Task 5 : Test Superset (note: using http://[public IP of oke-operator VM]:8088)
+- Open a browser and put in the URL : http://[public IP of oke-operator VM]:8088
 - login as admin / admin and click "Sign In"
 ![Superset login](images/superset-login.png)
 - You will be landing on superset **HOME** page
