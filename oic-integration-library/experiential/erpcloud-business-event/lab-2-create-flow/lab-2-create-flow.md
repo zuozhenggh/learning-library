@@ -105,7 +105,9 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | What operation do want to perform on Table? | **Insert** (Default)|
     |
 
-3. On the Table Operation page, select the following values:
+3. Click **Next**.
+
+4. On the Table Operation page, select the following values:
 
     | **Element**        | **Value**          |       
     | --- | ----------- |
@@ -117,15 +119,15 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
 
     ![Choose Table in AWD Wizard](images/adw-wizard-choose-table.png)
 
-4. Click on **Import Tables**, wait and press **Next**.
+5. Click on **Import Tables**, wait and press **Next**.
 
-5. When the *Select the parent database table* element appears, click **Next**.
+6. When the *Select the parent database table* element appears, click **Next**.
 
-6. On the Summary page, click **Done**.
+7. On the Summary page, click **Done**.
 
     ![Summary in ADW Wizard](images/adw-wizard-summary.png)
 
-7. Click **Save** to apply changes. 
+8. Click **Save** to apply changes. 
 
 
 ## **Task 4:** Map data between ERP trigger and ADW invoke
