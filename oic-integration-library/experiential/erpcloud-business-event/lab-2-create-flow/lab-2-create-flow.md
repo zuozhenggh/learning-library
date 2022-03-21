@@ -140,12 +140,12 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
 
 2. Use the mapper to drag element nodes in the source ERP Cloud structure to element nodes in the target Oracle ADW structure.
 
-    Expand the Source node:
+    Expand the **Source** node:
     
         ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 &lt;sequence&gt; > Value
 
 
-    Expand the Target node:
+    Expand the **Target** node:
     
         ADW_InsertPO Request > Purchaseorder
 
