@@ -15,7 +15,8 @@
     {
       "title": "Lab 1: Prepare setup",
       "description": "How to download your ORM stack and update security rules for an existing VCN.",
-      "filename": "../../prepare-setup/prepare-setup.md"
+      "filename": "../../prepare-setup/prepare-setup.md",
+      "type": "default"
     },
     {
       "title": "Lab 2: Setup compute instance",

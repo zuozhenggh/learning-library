@@ -117,7 +117,7 @@ In this workshop, you will:
 
 3. Build your Java application.
 
-  In the **Terminal** window, create a java file by entering this command:
+  In the **Terminal** window, create a Java file by entering this command:
     ```
     <copy>
     sudo nano HelloWorld.java
