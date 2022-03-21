@@ -58,7 +58,7 @@ This lab assumes you have:
     | Line | `1` (Default)       |
     | Type | `Goods` |
     | Item | Choose a valid item. For example, start typing `AS1`, and choose an item from the resulting drop-down (or hit the search button to select a valid item)
-    | Description | &lt;keep default&gt; |
+    | Description | &lt;keep default&gt; or enter a value if empty |
     | Quantity | Enter a valid number, eg. `2` |
     | UOM | `Ea` (Default) |
     | Base Price | Enter a valid number, eg. `200`
