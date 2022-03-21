@@ -48,12 +48,15 @@ This lab assumes you have:
 1. Create Name Space 'grafana'
 
 ```
+<copy>
 kubectl create ns grafana
+</copy>
 ```
 
 
 3. Deploy grafna deployent with LoadBalancer service
 ```
+<copy>
 cat << EOF | kubectl apply -n grafana -f -
 
 apiVersion: v1
@@ -138,7 +141,7 @@ spec:
   sessionAffinity: None
   type: LoadBalancer
 EOF
-
+</copy>
 ```
 
 
@@ -146,17 +149,21 @@ EOF
 4. Check the status of pods and wait until all pods are up and running
 
 ```
+<copy>
 kubectl get all -n grafana
+</copy>
 ```
 
 
 5. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready.
 
 ```
+<copy>
 kubectl get service -n grafana --watch
+</copy>
 ```
 
-Once you have the External IP provisioned, you can execute CTL+C to kill the command
+Once you have the External IP provisioned, you can press **CTL+C** to terminate the command
 
 ## Task 4: Access the Grafana Application 
 
@@ -183,12 +190,16 @@ You can login using admin/admin as username/password and change the password acc
 1. Creating dashboard my2 database with script,  Login to the Cloud Shell and operator VM
 
 ```
+<copy>
 curl https://raw.githubusercontent.com/meob/my2Collector/master/my2_80.sql | sed 's/^set global/-- set global/g; s/^set sql_log/-- set sql_log/g' > my2_80.sql
+</copy>
 ```
 
 2. Execute the creation my2 script
 ```
+<copy>
 mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
+</copy>
 ```
 
 3. Import MySQL Dashboard
@@ -215,9 +226,11 @@ Click on the **Edit SQL** button
 3. Paste the SQL to the query text field and Change the format to **Table**.
 
 ```
+<copy>
 select mytable.schema_name, mytable.name, mytable_load.load_status, nrows, load_progress, QUERY_COUNT 
 from performance_schema.rpd_tables mytable_load, performance_schema.rpd_table_id  mytable
 where mytable_load.id = mytable.id
+</copy>
 ```
 
 ![Dashboard](images/grafana-edit-sql-table.png)
