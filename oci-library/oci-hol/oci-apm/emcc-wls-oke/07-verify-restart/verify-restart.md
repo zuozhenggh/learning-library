@@ -9,6 +9,7 @@ Estimated time: 10 minutes
 * Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
 * Completion of the preceding tutorials in this workshop
 
+
 ### Objectives
 * Verify the continuous monitoring at the pod restart
 
@@ -106,7 +107,9 @@ Estimated time: 10 minutes
 
     However, the change made in the WebLogic IP has no impact on the EM monitoring.  This is because the EM agent does not directly communicate with the pods where WebLogic Servers are running; instead, it connects with the load balancer services, which automatically handles the mapping when the pods are regenerated.  
 
+
 ## **Task 2**: Verify the monitoring in EM Console
+
 
 1.  Launch your EM web console in a browser, log on and navigate to the Middleware home page.  Observe that the WebLogic targets are in the UP status.  Note that it will take few minutes to have the statuses updated for the targets.
 
@@ -124,7 +127,9 @@ Estimated time: 10 minutes
 
 
 
+
 You may now **proceed to the next tutorial**.
+
 
 ## Acknowledgements
 

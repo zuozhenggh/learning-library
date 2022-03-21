@@ -78,7 +78,7 @@ You can click **View VCN Details** and to verify both a Public and Private subne
 
 1.  Click the following link to download the database schema.
 
-    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/GBBFZbbFdladZV7maRiV3egDpZ_jCOglhpEWyqOgEuKZzIjxqeDgbrq9_WRhzjR5/n/c4u04/b/data-management-library-files/o/Archive.zip)
+    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
 
 2.  Save `Archive.zip` to a download directory, and then unzip the file.
 

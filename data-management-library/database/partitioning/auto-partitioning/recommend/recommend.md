@@ -62,15 +62,10 @@ The time to complete the following proceure is dependent on the table size, the 
         dbms_output.put_line('Method: '||c.partition_method);
         dbms_output.put_line('Key   : '||c.partition_key);
         dbms_output.put_line('=============================================');
-        :rep := c.report;
      end loop;
 
      end;
      /
-     --
-     -- Uncomment if want to see the report immediately
-     --
-     -- select :rep from dual;
 
     </copy>
     ````

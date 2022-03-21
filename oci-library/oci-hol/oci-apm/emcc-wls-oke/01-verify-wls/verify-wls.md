@@ -17,6 +17,7 @@ Estimated time: 5 minutes
 
 ## **Task 1**: Verify Kubernetes services
 
+
 1. Click the navigation icon at the top left corner (three bars) in the Oracle Cloud console, drop down the menu, navigate and choose **Developer Services** > **Kubernetes Clusters (OKE)**.
 
    ![Oracle Cloud console, Navigation Menu](images/1-1-menu.png " ")
@@ -66,7 +67,9 @@ Estimated time: 5 minutes
 
    ![Oracle Cloud console, Cloud Shell](images/1-9-cloudshell.png " ")
 
+
 ## **Task 2**: Verify WebLogic Administration Console in a browser
+
 
 
 
@@ -88,7 +91,9 @@ Estimated time: 5 minutes
       >**NOTE:** If you can’t start the application, return to the prerequisite workshop, **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=567&p210_type=2&session=102696148940850)** and validate Lab 1 through Lab 4 were performed.
 
 
+
 You may now **proceed to the next tutorial**.
+
 
 ## Acknowledgements
 

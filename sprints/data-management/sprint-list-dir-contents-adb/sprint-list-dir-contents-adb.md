@@ -1,9 +1,9 @@
-# How do I List Contents of Directory in Autonomous Database?
+# How do I list contents of directory in Autonomous Database?
 Duration: 1 minutes
 
 ## List Contents of Directory in Autonomous Database
 
-Use the function DBMS_CLOUD.LIST_FILES to list the contents of a directory.
+Use the function DBMS\_CLOUD.LIST\_FILES to list the contents of a directory.
 
 For example, to list the contents of the staging directory, run the following query:
 ```

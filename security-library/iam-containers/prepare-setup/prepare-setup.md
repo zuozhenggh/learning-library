@@ -1,7 +1,7 @@
 # Prepare Setup
 
 ## Introduction
-This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance running the Oracle Identity Role Intelligence(OIRI) Marketplace image and a Virtual Cloud Network (VCN).
+This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance running the dedicated Marketplace image and a Virtual Cloud Network (VCN).
 
 *Estimated Lab Time:* 15 minutes
 
@@ -17,11 +17,9 @@ This lab assumes you have:
 1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
 
 <if type="default">
-    - [oiri-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iFttTcCqZvJ1WCvrpbo8rv-_WHSTXg8zp-TqCfAtR40K-MnPYu9RULyEAlUQHN1p/n/natdsecurity/b/stack/o/oiri-mkplc-freetier.zip)
+    - [iam-container-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MHI-EI0TdPdOU7LIHiwm6j5A5hgy4nIeY14CnyFEK0noUnYyfAPvQT7tczBJA0Sn/n/natdsecurity/b/stack/o/iam-container-mkplc-freetier.zip)
 </if>
-<if type="app-onboarding">
-    - [oiri-mkplc-app-onboarding.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/DTG8immn-5boO9l5E-4MkB8VC2o-iJzTxiLHGlrZViSxhdy6jye8JWN1nICq6qoy/n/natdsecurity/b/stack/o/oiri-mkplc-app-onboarding.zip)
-</if>
+
 
 2.  Save in your downloads folder.
 
@@ -33,6 +31,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |   
+| 80             | noVNC Remote Desktop                  |
 | 6080           | noVNC Remote Desktop                  |
 
 1.  Go to *Networking >> Virtual Cloud Networks*
@@ -51,6 +50,6 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 -  Create Stack:  *Compute only* with an existing VCN where security lists have been updated as per *Step 2* above
 
 ## Acknowledgements
-* **Author** - Keerti R, Brijith TG, Anuj Tripathi, NATD Solution Engineering
-* **Contributors** -  Keerti R, Brijith TG, Anuj Tripathi
-* **Last Updated By/Date** - Keerti R, NATD Solution Engineering, June 2021
+  - **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
+  - **Contributors** -  
+  - **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, February 2022
