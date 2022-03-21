@@ -45,39 +45,116 @@ This lab assumes you have:
 
 ## Task 3: Deploy Application to OKE
 
-1. Download yaml deployment file [grafana.yaml](grafana.yaml) to the operator VM.
+1. Create Name Space 'grafana'
 
 ```
-<copy>
-wget https://raw.githubusercontent.com/ivanxma/mysqlk8s/main/grafana/grafana.yaml
-</copy>
+kubectl create ns grafana
 ```
 
 
-3. Create Namespace and deploy grafna.yaml
-	```
-	<copy>
-	kubectl create ns grafana
-	kubectl apply -f grafana.yaml -n grafana
-	</copy>
-	```
+3. Deploy grafna deployent with LoadBalancer service
+```
+cat << EOF | kubectl apply -n grafana -f -
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: grafana-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: grafana
+  name: grafana
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      securityContext:
+        fsGroup: 472
+        supplementalGroups:
+          - 0
+      containers:
+        - name: grafana
+          image: grafana/grafana:7.5.2
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+              name: http-grafana
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /robots.txt
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 2
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            tcpSocket:
+              port: 3000
+            timeoutSeconds: 1
+          resources:
+            requests:
+              cpu: 250m
+              memory: 750Mi
+          volumeMounts:
+            - mountPath: /var/lib/grafana
+              name: grafana-pv
+      volumes:
+        - name: grafana-pv
+          persistentVolumeClaim:
+            claimName: grafana-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+spec:
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: http-grafana
+  selector:
+    app: grafana
+  sessionAffinity: None
+  type: LoadBalancer
+EOF
+
+```
 
 
 
 4. Check the status of pods and wait until all pods are up and running
 
-	```
-	<copy>
-	kubectl get all -n grafana
-	</copy>
-	```
+```
+kubectl get all -n grafana
+```
 
 
 5. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready.
 
-	```
-	kubectl get service -n grafana --watch
-	```
+```
+kubectl get service -n grafana --watch
+```
 
 Once you have the External IP provisioned, you can execute CTL+C to kill the command
 
