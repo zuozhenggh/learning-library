@@ -35,7 +35,7 @@ From the current directory (your home directory of your user in Cloud Shell), cr
 vi live_labs_example.py
 </copy>
 ```
-Copy the following script and insert it into the live_labs_example.py file you are currently editing in Cloud Shell:
+Copy the following script and insert it into the live\_labs\_example.py file you are currently editing in Cloud Shell:
 
 ```
 <copy>
@@ -110,7 +110,7 @@ For creating the application, you need to have the python code and we are provid
 
 ![Create Data Flow](./images/createsparkapp.png " ")
 
-For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded live_labs_example.py
+For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded live\_labs\_example.py
 
 ![Create Data Flow](./images/createappconfigure.png " ")
 
@@ -144,11 +144,11 @@ First we want to download the customer sales csv file that we can put into our o
 
 Download the CSV file:
 
-'''
+```
 <copy>
 https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/custsales_custsales-2020-01.csv
 </copy>
-'''
+```
 
 Upload this file to your object storage bucket dataflow-warehouse:
 
