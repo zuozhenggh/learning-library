@@ -14,44 +14,11 @@ Watch the video below for a quick walk through of the lab.
 
 ### Objectives
 
-* Learn how to create OCI Data Flow from OCI Data Integration
-* Learn how to create an OCI Data Flow App
+* Learn how to create OCI Data Flow App
+* Learn how to create OCI Data Load 
 * Learn how to schedule to automate OCI Data Flow Apps
 
-## Task 2: Create OCI Data Flow from Data Integration
-
-In this step, we are going to use again Quick Actions to click on Create Data Flow and then use the designer to setup the source and target along with any other filters we would like.
-
-![Create Data Flow](./images/Create_dataflow.png " ")
-
-By default, at the bottom of the designer,  you want to enter the name for the New Data Flow, DataFlow_UploadGenre, and Select the Project that was created in the last lab.
-
-![Create Data Flow](./images/dataflow1.png " ")
-
-Then click Create. This way you can save as you go along to in order not to lose any changes.
-
-From the toolbar, there are sources, targets, filters, joins and other options. You are going to drag the source icon over to the design area. Then start to fill out the details for the source by clicking on Select, and then choose the ADW asset that was created in the first lab. Select the Default Connection, and in Schema, ADMIN. For the Entity choose the MOVIE_GENRE table. 
-
-![Create Data Flow](./images/dataflow2.png " ")
-
-Next you want to filter the data in order not to pull in the entire data set. If this was streaming it or large files this would be an important step.
-
-![Create Data Flow](./images/dataflowfilter.png " ")
-
-Now you are going to drag the Target icon over to the designer area. Target is going to be defined as the Object Storage that was created for the dataflow-warehouse. You can insert, overwrite or merge data with the existing data, and even create a new file or table here. This lab, you are just going to insert data, and choose one file which will overwrite the file each time.
-
-![Create Data Flow](./images/dataflow3.png " ")
-
-Then click on the Data Entity and in the next menu type the name of the folder **File_output**. Choose JSON file. This will put the file based on the data and joins that you create into the data lake and allow other processes to use the data.
-
-![Create Data Flow](./images/dataflow5.png " ")
-
-Save at this step, since you now have your source and target. Now you need to connect the source to the target. Drag the icon onto the designer area between the source and the target.
-After Saving the dataflow, click on Validate, and the Snapshot should show 0s for Errors and Warnings.
-
-![Create Data Flow](./images/dataflow6.png " ")
-
-## Task 2: Create an OCI Data Flow app
+## Task 1: Create an OCI Data Flow app
 
 You have several choices on how to create applications and languages. You can choose something that makes sense for your environment. First, we are going to take a look at the OCI Data Flow and create an application to read through files in the object storage or data lake.
 
@@ -68,7 +35,7 @@ From the current directory (your home directory of your user in Cloud Shell), cr
 vi live_labs_example.py
 </copy>
 ```
-Copy the following script and insert it into the live_labs_example.py file you are currently editing in Cloud Shell:
+Copy the following script and insert it into the live\_labs\_example.py file you are currently editing in Cloud Shell:
 
 ```
 <copy>
@@ -143,7 +110,7 @@ For creating the application, you need to have the python code and we are provid
 
 ![Create Data Flow](./images/createsparkapp.png " ")
 
-For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded live_labs_example.py
+For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded live\_labs\_example.py
 
 ![Create Data Flow](./images/createappconfigure.png " ")
 
@@ -169,7 +136,33 @@ And there are additional views to see the details about the jobs and application
 
 ![Create Data Flow](./images/df_sparkui2.png " ")
 
-Now let's go back to OCI Data Integrations because we export our data flows from here into an application to run for OCI Data Flows.
+Now let's go back to OCI Data Integrations because we setup some other data sources to load as part of our data integration into the Data Lakehouse and use for additional queries as par of our analysis.
+
+## Task 2: Create OCI Data Integration - Load
+
+First we want to download the customer sales csv file that we can put into our object storage. This will show how you can do integrations from your object storage directly into your ADW or we can use the object storage to filter and change the files and stora back into our object storage without even going to the database.
+
+Download the CSV file:
+
+```
+<copy>
+https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/custsales_custsales-2020-01.csv
+</copy>
+```
+
+Upload this file to your object storage bucket dataflow-warehouse:
+
+![Upload to object storage](./images/upload-object-storage.png " ")
+
+Select the custsales_custsales-2020-01.csv file from your downloaded folder and click upload.
+
+Navigate from the Hamburger menu to Analytics & AI, select Data Integration, and from the left menu select **Workspaces**. Here we will see our Workspace Lakehouse that we created as part of our configuration. We are going to then create a data loader task.
+
+![Load Data Task](./images/load-data-task.png " ")
+
+Lets give this task the name of LoadCustomerCSV, and before we create we need to select the project - Project_lakehouse.
+
+![Create Load Data Task](./images/create-load-data-task.png " ")
 
 
 ## Task 3: Create an application for automation
