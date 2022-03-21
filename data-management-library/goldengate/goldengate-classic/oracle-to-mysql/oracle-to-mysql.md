@@ -94,6 +94,9 @@ Open GGSCI
 ./ggsci</copy>
 ````
 2. Log in to the database as ggadmin and add a checkpointtable
+
+![](./images/DBLogin.png " ")
+
 ````
 <copy>dblogin sourcedb tpc@localhost:3306, userid ggadmin, password @Oracle1@</copy>
 ````
@@ -122,6 +125,8 @@ In GGSCI, create the OGG Credential Store by executing the command in both sessi
 ````
 
 6. Add credentials on the Oracle side
+
+![](./images/AlterCredentialStore.png " ")
 
 ````
 <copy>alter credentialstore add user c##ggadmin@orcl password Oracle1 alias oggcapture</copy>
@@ -179,6 +184,8 @@ Command:
 
 5. **Oracle:**
 
+![](./images/InfoMasterKey.png " ")
+
 ````
 <copy>open wallet</copy>
 ````
@@ -186,19 +193,6 @@ Command:
 ````
 <copy>info masterkey</copy>
 ````
-6.  GGSCI (ogg-ggbd) 5>
-
-````
-<copy>./ggsci</copy>
-````
-
-````
-<copy>info masterkey</copy>
-````
-7. Masterkey Name: OGG_DEFAULT_MASTERKEY
-
-Version         Creation Date                            Status
-2020-09-10T15:22:28.000+00:00   Current
 
 ## Task 4:- GoldenGate Checkpoint Table
 In SQLplus, make sure the pluggable databases PDBEAST and PDBWEST are open.
@@ -229,13 +223,17 @@ Connect to the target database:
 ````
 <copy>add checkpointtable pdbwest.ggadmin.ggchkpoint</copy>
 ````
+![](./images/InfoCheckpointTable.png " ")
+````
+<copy>info checkpointtable pdbwest.ggadmin.ggchkpoint</copy>
+````
 
 4. **Mysql**
 
 5. Connect to the target database:
 
 ````
-<copy>dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias ggapply</copy>
+<copy>dblogin sourcedb ggadmin@localhost:3306, useridalias ggapply</copy>
 ````
 
 6.  Create the table:
@@ -278,7 +276,7 @@ In GGSCI, create and activate OGG Integrated Heartbeat
 6.  Connect to the ggadmin database:
 
 ````
-<copy>dblogin sourcedb ggadmin@db-ora19-mysql:3306, useridalias oggcapture</copy>
+<copy>dblogin sourcedb ggadmin@localhost:3306, useridalias oggcapture</copy>
 ````
 
 7.  Create the heartbeat target:
@@ -344,9 +342,17 @@ startupvalidationdelay 2</copy>
 ````
 <copy>start mgr</copy>
 ````
+![](./images/InfoAllOrcl.png " ")
+````
+<copy>info all</copy>
+````
 2. MySQL:
 ````
 <copy>start mgr</copy>
+````
+![](./images/InfoAllMySQL.png " ")
+````
+<copy>info all</copy>
 ````
 
 You may now *proceed to the next lab*.
@@ -356,6 +362,6 @@ You may now *proceed to the next lab*.
 * [Oracle GoldenGate 21.3 | Oracle](https://www.oracle.com/middleware/data-integration/goldengate/)
 
 ## Acknowledgements
-* **Author** - Andrew Hong, Data Integration February 2022
-* **Contributors** - Madhu Kumar, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2020
+* **Author** - Brian Elliott, , Data Integration November 2020
+* **Contributors** - Madhu Kumar, Rene Fontcha, Andrew Hong
+* **Last Updated By/Date** - Andrew Hong, Solution Engineer, March 2022
