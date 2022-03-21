@@ -6,8 +6,11 @@
             "title": "How do I connect to the instance via SSH?",
             "description": "",
             "filename": "instance-ssh.md"
+        },
+        {
+            "title": "How do I connect to the Database using SQL*Plus?",
+            "description": "",
+            "filename": "../sprint-connect-to-db/connect-to-db.md"
         }
-
-
     ]
 }
