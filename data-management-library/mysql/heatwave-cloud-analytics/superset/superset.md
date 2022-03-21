@@ -13,6 +13,8 @@ Estimated Time: 15 minutes
 In this lab, you will:
 * Install helm cli client and superset repo for k8s package installation
 * Deploy a superset package to the OKE cluster using helm cli client
+* Using port-forward in oke-operator VM to route 8088 port traffic to superset service
+* Change VCN security list to open 8088 
 * Define MySQL Database in Superset
 * Test MySQL Database connection with SQL Editor in Superset
 * Create a simple Dashboard
@@ -71,51 +73,41 @@ kubectl get all -n superset
 ```
 ![Check resources in namespace superset ](images/superset-get-all.png)
 
-3. Deploy ingress resource
-
+3. Disable firewalld in oke-operator COMPUTE VM (make sure you are on oke-operator)
 ```
-cat << EOF | kubectl apply -n superset -f -
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: superset-ing
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  ingressClassName: nginx
-  rules:
-  - http:
-      paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: superset
-              port:
-                number: 8088
-EOF
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
 ```
 
-![Deploy superset ingress resource](images/superset-get-all.png)
+4. Start port-forward to service/superset.  If the testing finishes, press **CTRL-C** to terminate port-forward service.
 
-4. Check status on superset-ing and Identify the IP address.  The "address" as public ip from ingress resource "superset-ing" is populated a while after the ingress resource is created.  Please wait for a moment and retry until you can find the address.
 ```
-kubectl get ing superset-ing -n superset
-kubectl get ing superset-ing -n superset --watch
+kubectl port-forward --address 0.0.0.0 8088:8088 service/superset -n superset
 ```
-- Wait until public ip is populated and press **CTRL-C** to exit the watch status
+## Task 4 : Change VCN security list attached to oke-operator VM's subnet to open 8088 traffic
+### Select VCN oke-vcn from networking
+![Choose oke-vnc VCN](images/VCN.png)
 
-![Deploy superset ingress resource](images/superset-ing.png)
+### Click on the oke-operator subnet "operator-subnet-regional"
+![ooperator subnet](images/VCN-subnet.png)
 
-## Task 4 : Test Superset 
-- Open a browser and put in the URL : http://<public IP>
+### Click on the security list on operator-subnet-regional
+![security list](images/VCN-subnet-securitylist.png)
+
+### Add ingress rule to define 8088 and Click "Add Ingress Rules" button
+![Add Ingress Rule](images/VCN-AddIngressRule.png)
+
+![Add Ingress Rule](images/VCN-AddIngressRule-8088.png)
+
+
+## Task 5 : Test Superset (note: using http://<public IP>:8088)
+- Open a browser and put in the URL : http://<public IP of oke-operator VM>:8088
 - login as admin / admin and click "Sign In"
 ![Superset login](images/superset-login.png)
 - You will be landing on superset **HOME** page
 ![Superset Home page](images/superset-home-page.png)
 
-## Task 5 : Adding MySQL Database Service Connection to Superset
+## Task 6 : Adding MySQL Database Service Connection to Superset
 ### Identify the MySQL DB System IP Address
 - Open New Browser page to OCI console
 - On hamburger menu, type mysql and choose DB System.  
