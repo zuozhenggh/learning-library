@@ -163,6 +163,11 @@ As the Database is generated during setup based on your environment, you will ne
     ```bash
     <copy>
     cd $LAB_HOME/springboot-oracleteq
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     mvn clean install -DskipTests
     </copy>
     ```
