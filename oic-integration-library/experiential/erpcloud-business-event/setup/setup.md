@@ -31,11 +31,15 @@ In this lab, you will:
 
 3.  In your Autonomous Database Details page, click the **DB Connection** button.
 
+    ![Click Database Connection](images/click-database-connection.png)
+
 4. In the displayed *Database Connection* dialog, click **Download Wallet**. 
 
 5. Provide a Wallet password, then click **Download**. Save the wallet file (ZIP) on your local machine. This file will be used later when creating the Autonomous Database connection in Oracle Integration. 
 
 6. Under *Connection Strings*, select one of the *TNS Name* entries and write it down. This value will used later when creating the Autonomous Database connection in Oracle Integration.
+
+    ![Select Connection TNS Name](images/database-connection-tnsname.png)
 
 7. Click **Close**.
 
