@@ -57,246 +57,146 @@ In this lab, you will learn how to:
    
     ![](./images/adb-compartment.png " ")
 
-## Task 2: Machine Learning Notebooks
+## Task 2: Getting Started with Machine Learning
+
+**Create an Oracle Machine Learning user**
+
+An administrator creates a new user account and user credentials for Oracle Machine Learning in the User Management interface.
+
+> **Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface.
+
+To create a user account:
+
+1. Sign into your OCI account, click the hamburger on the left to open the left navigation pane, and click **Autonomous Data Warehouse**.
+
+	![Oracle Autonomous Data Warehouse](images/adw.png)
+
+2. Click on the Autonomous Database instance.   
+
+	![Oracle Autonomous Data Warehouse](images/provisioned-adb.png)
+
+3. On the Autonomous Database Details page, click **Service Console**.
+
+	![Oracle Autonomous Data Warehouse](images/service-console.png)
+
+4. On the Service Console, click **Administration**.
+
+	![Oracle Autonomous Data Warehouse](images/administration.png)
+
+5. Click **Manage Oracle ML Users** to open the Oracle Machine Learning User Administration page.
+
+	![Oracle Autonomous Data Warehouse](images/manage-oml-users.png)
+
+6. On the Oracle Machine Learning User Administration Sign in page, enter the username and password to sign in.
+
+	> **Note:** The username is ADMIN. For the password, use the password you defined while provisioning the Autonomous Database instance.   
+
+	![Oracle Machine Learning User Administration Sign in page](images/database-admin-signin.png)
+
+7. Click **Create** on the Oracle Machine Learning User Administration page.
+
+	![Oracle Autonomous Data Warehouse](images/oml-um-page.png)
+
+8. On the Create User page, enter the following details to create the user:
+
+	![Oracle Autonomous Data Warehouse](images/omluser-creation.png)
+
+	* **Username:** Enter a username for the account. Using the username, the user will log in to an Oracle Machine Learning instance.
+	* **First Name:** Enter the first name of the user.
+	* **Last Name:**  Enter the first name of the user.
+	* **Email Address:** Enter the email ID of the user.
+	* Deselect the option **Generate password and email account details to user. User will be required to reset the password on first sign in**. This option auto generates a temporary password and sends an email with the account credentials to the user. If you select this option, you need not define the password in the **Password** and **Confirm Password** fields, as these two fields are disabled.
+	* **Password:** Enter a password for the user.
+		> **Note:** This option is disabled if you select the **Generate password...** option to auto generate a temporary password for the user.
+
+	* **Confirm Password:** Enter the password to confirm the value that you entered in the **Password** field. By doing so, you create the password for the user. The user can change the password when first Signing in.
+
+9. Click **Create**. After the user is created, it is listed on the Oracle Machine Learning User Administration page. This completes the task of creating an Oracle Machine Learning user.
+
+	 ![Oracle Autonomous Data Warehouse](images/omluser-created.png)
+
+	 > **Note:** Click on the home icon on the top right corner of the Oracle Machine Learning User Administration page to open the Oracle Machine Learning Notebooks home page.
+
+**Sign into Oracle Machine Learning**
+
+A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks in Oracle Machine Learning user interface. You can access Oracle Machine Learning user interface from Autonomous Database.
+
+1. From the tab on your browser with your ADW instance, click **Service Console**, then select **Development** on the left.
+
+	![Development option in ADW Service Console](images/adw-development.png)
+
+2. Click **Oracle Machine Learning Notebooks User Interface.**
+
+	 ![Oracle Machine Learning Notebooks in ADW](images/oml-notebooks-dev.png)
+
+3. Enter your user credentials and click **Sign in**.
+
+	> **Note:** The credential is what you have defined while creating the Oracle Machine Learning user.
+
+	![Oracle Machine Learning Notebooks Sign in page](images/omluser-signin.png)
+
+  This opens the Oracle Machine Learning user interface home page.
+
+	![Notebooks option in OML homepage](images/homepage.png)
+
+This completes the task of signing into Oracle Machine Learning user interface.
+
+**Create the CUSTOMERS360 table**
+
+In this step, you will create the table ``CUSTOMERS60`` by using the Scratchpad. The Scratchpad is available on the Oracle Machine Learning Notebooks home page. The Scratchpad is a one-click access to a notebook for running SQL statements, PL/SQL scripts, and Python scripts. After you run your scripts, the Scratchpad is automatically saved as a notebook by the default name _Scratchpad_ in the Notebooks page. You can access it later in the Notebooks page. You will learn more about notebooks in Task 3.
+
+> **Note:** You will be using the table CUSTOMERS360 in the _Using Oracle Machine Learning AutoML UI_ task.
+
+To create the table:
+
+1. On the Oracle Machine Learning home page, click **Scratchpad**.
+
+	![Notebooks option in OML homepage](images/homepage-scratchpad.png)
+
+2. By default, the Scratchpad opens with three paragraphs: `%sql` (to run SQL statements), `%script` (to run PL/SQL scripts), and `%python` (to run Python scripts). Here, you will use the SQL paragraph to run a SQL statement to create the CUSTOMER360 table. On the SQL paragraph, click after the `%sql` tag, and press enter.
+
+	![Create Notebook dialog](images/scratchpad.png)
+
+3. In the SQL paragraph, enter the following script and click the Run icon ![run icon](images/run.png):
+
+    ```
+    <copy>
+		CREATE TABLE CUSTOMERS360 AS
+              (SELECT a.CUST_ID, a.CUST_GENDER, a.CUST_MARITAL_STATUS,
+                 a.CUST_YEAR_OF_BIRTH, a.CUST_INCOME_LEVEL, a.CUST_CREDIT_LIMIT,
+                 b.EDUCATION, b.AFFINITY_CARD,
+                 b.HOUSEHOLD_SIZE, b.OCCUPATION, b.YRS_RESIDENCE, b.Y_BOX_GAMES
+           FROM SH.CUSTOMERS a, SH.SUPPLEMENTARY_DEMOGRAPHICS b
+           WHERE a.CUST_ID = b.CUST_ID);
+		</copy>
+    ```
+
+	![SQL script to create Customers360 table](images/scratchpad-run.png)
+
+	After the script runs successfully, the paragraph status changes to `FINISHED`, as shown in the screenshot:
+
+	![SQL script to create Customers360 table](images/scratchpad-finished.png)
+
+4. In the next paragraph, edit the paragraph tag to change it to `%sql`, and run the following statement to view the data:
+
+	```
+		<copy>
+		select * from CUSTOMERS360
+			where rownum < 10;
+		 </copy>
+	 ```
+
+	![Script to view Customers360 table](images/script-view-customers360.png)
+
+This completes the task of creating the CUSTOMERS360 table.
+
+
+
+## Task 3: Machine Learning Notebooks
 
 **Sign into Oracle Machine Learning User Interface**
 
 A notebook is a web-based interface for data analysis, data discovery, data visualization, and collaboration. You create and run notebooks using Oracle Machine Learning Notebooks, which is accessed through the Oracle Machine Learning user interface on Oracle Autonomous Database.
-
-<if type="freetier">
-
-1. Sign into your OCI console, click on the left navigation menu, and then click **Autonomous Database**.  
-
-	![ADB in OCI](images/adb-in-oci.png)
-
-2. The Autonomous Database dashboard lists all the databases that are provisioned in the tenancy. Click the Oracle Autonomous Database that you have provisioned.
-
-  ![List of provisioned ADBs](images/provisioned-adb.png)        	  
-
-3. On your Oracle Autonomous Database instance page, click **Service Console**. The Launch Service Console dialog opens. Wait till the Service Console opens.
-
-	![ADW Service Console](images/service-console.png)
-
-
-4. On the Service Console page, click **Development** on the left pane.
-
-	![Development option in ADW Service Console](images/adw-development.png)
-
-5. Click **Oracle Machine Learning User Interface.** This opens the Oracle Machine Learning sign in page.
-
-  ![Oracle Machine Learning User Interface in ADW](images/adw-oml-notebooks.png)
-
-6. Enter your user credentials and click **Sign in**. This opens the Oracle Machine Learning home page.
-
-	>**Note:** The credential is what you have defined while creating the Oracle Machine Learning user.
-
-	![Oracle Machine Learning UI Sign in page](images/oml-signin-page.png)
-</if>
-
-<if type="livelabs">
-1. On your Livelabs workshop page, click **Launch Workshop** under **My Reservations**.
-
-	![Launch Workshop](images/launch-workshop.png)
-
-2. On the Launch Oracle Machine Learning Fundamentals on Autonomous Database page, click  **OML Notebooks**.  This opens the Oracle Machine Learning sign in page.
-
-	![ADB in OCI](images/workshop-login.png)
-
-3. Enter your user credentials and click **Sign in**. This opens the Oracle Machine Learning home page.
-
-	>**Note:** The username is `OMLUSER`, and password is `AAbbcc123456`.
-
-	![Oracle Machine Learning UI Sign in page](images/oml-signin-page.png)
-
-</if>
-This completes the task of accessing Oracle Machine Learning.
-
-**Create a Notebook and define paragraphs using the md, SQL, PL/SQL, and Python interpreters**
-
-To create a notebook:
-
-1. On the Oracle Machine Learning home page, click **Notebooks**. The Notebooks page opens.
-
-	![Notebooks option in Oracle Machine Learning home page](images/homepage-notebooks.png)
-
-	Alternatively, you can click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the home page to open the left navigation menu. Click **Notebooks**.
-
-	![Notebooks option in hamburger](images/hamburger-notebooks.png)
-
-2. On the Notebooks page, click **Create**. The Create Notebook dialog opens.
-	![Create Notebook dialog](images/create-notebook.png)
-
-
-3. In the Name field, enter **Test Notebook**.
-
-4. In the **Comments** field, enter comments, if any.
-
-5. In the **Connections** field, select a connection in the drop-down list. By default, the **Global** Connection Group is assigned.
-
-6. Click **OK**. Your notebook is created and it opens in the notebook editor.
-
-
-You can now use it to create a Markdown paragraph, SQL paragraph, and Python paragraph and do the following:
-
-### Call the Markdown interpreter and generate static html from Markdown plain text
-To call the Markdown interpreter and generate static html from Markdown plain text:
-
-7. In the Test Notebook, type ``%md`` and press Enter.
-
-	![Markdown tag](images/tag-markdown.png)
-
-8. Type the following:   
-
-	* To generate static html text, type the text `Hello World` inside double quotes, and press Enter.
-	* To format the text in bold, type the text `Hello World` inside two asterisks pair, and press Enter.
-	* To format the text in italics, type the text `Hello World` either inside an asterisk pair or an underscore pair, and click the Run ![run icon](images/run.png) icon.
-
-	Alternatively, you may copy the code and paste it in the notebook just below `%md`, and click the Run icon ![run icon](images/run.png) as shown in the screenshot:
-
-
-
-		<copy>
-		"Hello World"
-		**Hello World**
-		*Hello World*
-		_Hello World_
-		</copy>
-
-
-	![Markdown tags for plain text and other formatting](images/run-md-text-formatting.png)
-
-
-	After running the paragraph, the output is displayed, and a new paragraph is automatically created. Also, you can manually create additional paragraphs.
-
-	![Markdown tags for plain text and other formatting](images/md-text-formatting.png)
-
-9. To display the text in a bulleted list, prefix * (asterisk) to the text `Hello World`, as shown in the screenshot below.
-
-
-		<copy>
-		* Hello World
-		* We welcome you
-		 </copy>
-
-
-	![Markdown tags for bulleted points](images/md-bullets.png)
-
-	> **Note:** You are not clicking the Run icon here.
-
-10. Manually create another paragraph just below by hovering your cursor over the paragraph border. This brings up the Add Paragraph option. Click **Add Paragraph** to create a new paragraph, as shown in the screenshot.   
-
-	![Add Paragraph](images/add-paragraph.png)
-
-11. In this paragraph that you just created, the markdown tag `%md` is already present. Here, you will use Markdown tags to display the text in heading 1 (H1), heading 2 (H2) and heading 23 (H3). For H1, H2, and H3, add one, two, and three hashes before the text `Hello World` respectively. Or, you may copy the code below and paste it just below the tag `%md`.
-
-		<copy>
-		# Hello World
-		# Hello World
-		### Hello World
-		 </copy>
-
-
-
-12. Now, scroll up the notebook and click the Run All icon present in the notebook toolbar, as shown in the screenshot here.  
-
-	![Run all paragraphs](images/run-all-paragraphs.png)
-
-
-13. Click **OK** in the Run All dialog to confirm.
-
-	![Run all confirm](images/run-all-confirm.png)
-
-	The two paragraphs run and the output is displayed in the respective paragraphs, as shown in the screenshot.
-
-
-
-	 ![Run all paragraphs](images/md-paragraph-output.png)
-
-
-### Call the SQL Interpreter and run SQL Statements
-Let’s create another paragraph to call the SQL interpreter and run SQL statements:
-
-14. To create another paragraph, hover your cursor over the paragraph border. This brings up the Add Paragraph option. Click **Add Paragraph** to create a new paragraph.
-
-	![Add Paragraph](images/add-paragraph-gen.png)
-
-15. Edit the existing paragraph tag, type ``%sql`` to call the SQL interpreter, and press Enter.
-
-	![SQL Paragraph](images/tag-sql.png)
-
-16. Type the following command and click the Run ![run icon](images/run.png) icon. Alternatively, you can press Shift+Enter keys to run the paragraph.
-
-	```
-	<copy>
-	select table_name from user_tables
-	</copy>
-	```
-	 The command returns the table names in a tabular format, as shown in the screenshot:
-
-	![SQL commands](images/sql-commands.png)
-
-
-### Call the PL/SQL Interpreter and run PL/SQL Scripts
-
-Create another paragraph to call the PL/SQL interpreter and run PL/SQL scripts:
-17. In the new paragraph, type ``%script`` to call the PL/SQL interpreter, and press Enter.
-
-	![PL/SQL Paragraph](images/tag-script.png)
-
-18. Type the following command and click ![run icon](images/run.png). Alternatively, you can press Shift+Enter keys to run the paragraph.
-
-
-		<copy>
-		CREATE TABLE small_table
-		(
-		NAME VARCHAR(200),
-		ID1 INTEGER,
-		ID2 VARCHAR(200),
-		ID3 VARCHAR(200),
-		ID4 VARCHAR(200),
-		TEXT VARCHAR(200)
-		);
-
-		BEGIN
-		FOR i IN 1..100 LOOP
-		INSERT INTO small_table VALUES ('Name_'||i, i,'ID2_'||i,'ID3_'||i,'ID4_'||i,'TEXT_'||i);
-		END LOOP;
-		COMMIT;
-		END;
-
-		</copy>
-
-
-
-	![PL/SQL script](images/plsql-script.png)
-
-The PL/SQL script successfully creates the table SMALL_TABLE. The PL/SQL script in this example contains two parts:
-* The first part of the script contains the SQL statement CREATE TABLE to create a table named ``small_table``. It defines the table name, table column, data types, and size. In this example, the column names are ``NAME, ID1, ID2, ID3, ID4, and TEXT``.
-
-* The second part of the script begins with the keyword ``BEGIN``. It inserts 100 rows into the table ``small_table``
-
-
-### Call the Python Interpreter and run Python Statements
-Let’s create another paragraph to call the Python interpreter and run Python statements:
-19. To call the python interpreter, edit the paragraph tag, type ``%python`` and press Enter.
-
-	![Python Paragraph](images/tag-python.png)
-
-20. Type the following command and click ![run icon](images/run.png).
-
-	```
-	<copy>
-	import pandas as pd
-	import oml
-	DATA = oml.sync(table = "SUPPLEMENTARY_DEMOGRAPHICS", schema = "SH")
-	z.show(DATA.head())
-	</copy>
-	```
-
-
-	The ``z.show`` command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH schema, as shown in the screenshot here. Use the ``z.show`` command to display Python objects, proxy object content, and to display the desired data in the notebook. You will learn more about ``z.show`` in the lab on Oracle Machine Learning for Python.
-
-	![Python script](images/python-commands.png)
 
 **Create a Notebook using a Template Example**
 
@@ -483,263 +383,6 @@ To create a job:
 	![Job created](images/job-created.png)
 
 This completes the task of creating a job.
-
-## Task 3: Machine Learning for SQL
-
-**Examine the Data**
-
-1. Click the hamburger icon ![Hamburger image](images/hamburger.png) to open the left navigation menu and click **Notebooks**.
-2. The Notebooks page opens with all the notebooks listed in it. Click the **OML4SQL Time Series ESM (1)** notebook to open it.
-![Notebooks listed](images/notebooklist.png)
-3. The _OML4SQL Time Series ESM (1)_ notebook opens in the notebook editor. Click the gear icon to view and set the interpreter binding order.
-5. Click the play icon next to the **OML4SQL Time Series ESM (1)** title to run all paragraphs of the notebook.
-
-  ![Run all paragraphs](images/timeseries-run-all-paragraphs.png)
-6.Click **OK** in the confirmation window to run all paragraphs.
-![Run all paragraphs confirmation](images/timeseries-run-all-confirmation.png)
-7. The paragraphs start running one by one and display the status next to the paragraph titles. When the paragraph is running, the status displays **PENDING** and when it finishes, it displays **FINISHED**.
-![Paragraph running](images/timeseries-para-pending.png)
-
- ![Paragraph finished](images/timeseries-para-finished.png)
-
-In this notebook you are using the `SALES` table from the `SH` schema. You can access the table by running the `SELECT` statements in OML Notebooks.
-The following table displays information about the attributes from the `SALES` table:
-
-| Attribute Name | Information |
-| --- | --- |
-| `PROD_ID`  |The ID of the product  |
-| `CUST_ID` |The ID of the customer | More text |
-| `TIME_ID` | The timestamp of the purchase of the product in yyy-mm-dd hh:mm:ss format | More text |
-| `CHANNEL_ID` | The channel ID of the channel sales data|
-|`PROMO_ID` | The product promotion ID|
-|`QUANTITY_SOLD` |The number of items sold|
-|`AMOUNT_SOLD` |	The amount or sales data|
-
-
-**Prepare the Data**
-
-In this step, you will prepare the data by creating a view.
-The following steps help you to create a view and view the data:
-1. Prepare a view called `ESM_SH_DATA` by selecting the necessary columns from `SH.SALES` table. For this example, select `TIME_ID` and `AMOUNT_SOLD`.
-
-    ```
-    <copy>
-    %script
-    CREATE OR REPLACE VIEW ESM_SH_DATA AS
-    SELECT TIME_ID, AMOUNT_SOLD FROM SH.SALES;
-
-    </copy>
-
-     ```
-
-  The output is as follows:
-    ```
-    View ESM_SH_DATA created.
-    --------------------------
-    ```
-
-    >**Note:** If you are reserving a workshop on LiveLabs, some of the table views may already exist.
-
-
-2. Count the number of rows to ensure that we have the same amount of data. Run the following query:
-
-    ```
-    <copy>
-    %script
-    SELECT count(*) from ESM_SH_DATA;
-    </copy>
-    ```
-The output is follows:
-
-    ```
-    COUNT(*)  
-    918843
-
-    ---------------------------
-
-    ```
-
-3. View the `ESM_SH_DATA`.
-
-
-    ```
-    <copy>
-    %sql
-    SELECT * from ESM_SH_DATA
-    WHERE rownum <11;
-
-    </copy>
-    ```
-
-	![Displays few rows from the created view](images/timeseries-table-view.png)
-
-**Build Your Model**
-
-To build a model using the time series data, you will use the Exponential Smoothing algorithm on the `ESM_SH_DATA` view that is generated during the data preparation stage. In this example you build a time series model by applying the Holt-Winters model on time series aggregated on a quarterly interval.
-1. Build a Holt-Winters model with the `ESM_SH_DATA` table, run the following script:
-    ```sql
-        <copy>
-        %script
-
-        BEGIN DBMS_DATA_MINING.DROP_MODEL('ESM_SALES_FORECAST_1');
-        EXCEPTION WHEN OTHERS THEN NULL; END;
-        /
-        DECLARE
-              v_setlst DBMS_DATA_MINING.SETTING_LIST;
-        BEGIN
-    &nbsp;
-             -- algorithm = exponential smoothing
-             v_setlst('ALGO_NAME')            := 'ALGO_EXPONENTIAL_SMOOTHING';
-
-
-
-                 -- accumulation interval = quarter
-                 v_setlst('EXSM_INTERVAL')        := 'EXSM_INTERVAL_QTR';
-
-                 -- prediction step = 4 quarters
-                 v_setlst('EXSM_PREDICTION_STEP') := '4';                 
-
-                 -- ESM model = Holt-Winters
-                 v_setlst('EXSM_MODEL')           := 'EXSM_WINTERS';      
-
-                 -- seasonal cycle = 4 quarters
-                 v_setlst('EXSM_SEASONALITY')     := '4';                 
-
-    &nbsp;
-             DBMS_DATA_MINING.CREATE_MODEL2(
-                MODEL_NAME           => 'ESM_SALES_FORECAST_1',
-                MINING_FUNCTION      => 'TIME_SERIES',
-                DATA_QUERY           => 'select * from ESM_SH_DATA',
-                SET_LIST             => v_setlst,
-                CASE_ID_COLUMN_NAME  => 'TIME_ID',
-                TARGET_COLUMN_NAME   =>'AMOUNT_SOLD');
-        END;
-        </copy>
-
-
-    ```
-
-    The output is as follows:
-    ```
-        PL/SQL procedure successfully completed.
-        ---------------------------
-        PL/SQL procedure successfully completed.
-
-    ```
-
-    Examine the script:
-    - `v_setlist` is a variable to store `SETTING_LIST`.
-    - `SETTING_LIST` specifies model settings or hyperparameters for the model.
-    - `DBMS_DATA_MINING` is the PL/SQL package used for machine learning. These settings are described in [`DBMS_DATA_MINING — Algorithm Settings: Exponential Smoothing`](https://docs.oracle.com/en/database/oracle/oracle-database/21/arpls/DBMS_DATA_MINING.html#GUID-A95A0A38-8A5A-4470-B49F-80D81C588BFC).
-    - `ALGO_NAME` specifies the algorithm name. Since you are using Exponential Smoothing as the algorithm, the value of the setting is `ALGO_EXPONENTIAL_SMOOTHING`.
-    - `EXSM_INTERVAL` indicates the interval of the data set or a unit of interval size. For example, day, week, month, and so on. You want to predict for quarterly sales. Hence, the setting is `EXSM_INTERVAL_QTR`. This setting applies only to the time column with datetime type.
-    - `EXSM_PREDICTION_STEP` specifies how many predictions to make. You want to display each value representing a quarter. Hence, a value of 4 gives four values ahead prediction.
-    - `EXSM_MODEL` specifies the type of exponential smoothing model to be used. Here the value is `EXSM_HW`. The Holt-Winters triple exponential smoothing model with additive trend and multiplicative seasonality is applied. This type of model considers various combinations of additive and multiplicative trend, seasonality and error, with and without trend damping. Other options are `EXSM_SIMPLE`, `EXSM_SIMPLE_MULT`, `EXSM_HOLT`, `EXSM_HOLT_DMP`, `EXSM_MUL_TRND`, `EXSM_MULTRD_DMP`, `EXSM_SEAS_ADD`, `EXSM_SEAS_MUL`, `EXSM_HW`, `EXSM_HW_DMP`, `EXSM_HW_ADDSEA`, `EXSM_DHW_ADDSEA`, `EXSM_HWMT`, `EXSM_HWMT_DMP`.
-    - `EXSM_SEASONALITY` indicates how long a season lasts. The parameter specifies a positive integer value as the length of seasonal cycle. The value it takes must be larger than 1. For example, 4 means that every group of four values forms a seasonal cycle.
-    - `EXSM_SETMISSING` specifies how to handle missing values. Time series data can contain missing values. The special value `EXSM_MISS_AUTO` indicates that, if the series contains missing values it is to be treated as an irregular time series. The Automatic Data Preparation (ADP) setting does not impact this data for time series.
-
-    The `CREATE_MODEL2` procedure takes the following parameters:
-    - `MODEL_NAME`: A unique name that you will give to the model. Name of the model in the form `[schema_name.]model_name`. If you do not specify a schema, then your own schema is used. Here, the model name is `ESM_SALES_FORECAST_1`.
-    - `MINING_FUNCTION`: Specifies the machine learning function. Since it is a time series problem, select `TIME_SERIES`.
-    - `DATA_QUERY`: A query that provides training data for building the model. Here, the query is SELECT * FROM `ESM_SH_DATA`.
-    - `SET_LIST`: Specifies `SETTING_LIST`.
-    - `CASE_ID_COLUMN_NAME`: A unique case identifier column in the training data. In this example, `case_id` is `TIME_ID`. If there is a composite key, you must create a new attribute before creating the model.
-    - `TARGET_COLUMN_NAME`: Specifies the column that is to be predicted. Also referred to as the target variable of the model. In other words, the value the model predicts. In this example, you are predicting the sale of products in terms of their dollar price. Therefore, in this example, the `TARGET_COLUMN_NAME` is `AMOUNT_SOLD`.
-    >**Note:** Any parameters or settings not specified are either system-determined or default values are used.
-
-
-**Evaluate Your Model**
-
-Evaluate your model by viewing diagnostic metrics and performing quality checks. To obtain more insights about the model and view model settings, you can query data dictionary views and model detail views. Specific model detail views display model statistics which can help you evaluate the model. Model detail views are specific to the algorithm. The names of model detail views begin with `DM$xx` where _xx_ corresponds to the view prefix. See [Model Detail Views](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmprg/model-detail-views.html#GUID-AF7C531D-5327-4456-854C-9D6424C5F9EC).
-1. You can review the model settings by running the following query:
-
-    ```
-    <copy>
-    %sql
-    SELECT SETTING_NAME, SETTING_VALUE
-    FROM USER_MINING_MODEL_SETTINGS
-    WHERE MODEL_NAME = UPPER('ESM_SALES_FORECAST_1')
-    ORDER BY SETTING_NAME;
-    </copy>
-    ```
-	![Review model settings](images/timeseries-modelsettings.png)
-
-2. To view the model diagnostic view, `DM$VG`, and evaluate the model, run the following query:
-
-    ```
-    <copy>
-    %sql
-    SELECT NAME, round(NUMERIC_VALUE,4), STRING_VALUE
-    FROM DM$VGESM_SALES_FORECAST_1
-    ORDER BY NAME;
-    </copy>
-    ```
-
-	![Review diagnostic metrics](images/timeseries-diagnosticview.png)
-The `DM$VG` view for time series contains the global information of the model along with the estimated smoothing constants, the estimated initial state, and global diagnostic measures.
-
-- `NAME`: Indicates the diagnostic attribute name.
-- `NUMERIC_VALUE`: Indicates the calculated statistical value for the model.
-- `STRING_VALUE`: Indicates alphanumeric values for the diagnostic parameter.
-
-    A few parameters to note for an exponential smoothing algorithm are:
-    - `ALPHA`: Indicates the smoothing constant.
-    - `BETA`: Indicates the trend smoothing constant.
-    - `GAMMA`: Indicates the seasonal smoothing constant.
-    - `MAE`: Indicates Mean Absolute Error.
-    - `MSE`: Indicates Mean Square Error.
-
-In exponential smoothing, a series extends infinitely into the past, but that influence of past on future decays smoothly and exponentially fast. The smooth rate of decay is expressed by one or more smoothing constants. The smoothing constants are parameters that the model estimates. These smoothing constants are represented as _α_, _β_, and _γ_. Values of a smoothing constant near one put almost all weight on the most recent observations. Values of a smoothing constant near zero allow the distant past observations to have a large influence.
-
-Note that _α_ is associated with the error or noise of the series, _β_ is associated with the trend, and _γ_ is associated with the seasonality factors.
-
-**Access Forecasts from Your Model**
-
-For a time series model, you use the `DM$VP` view to retrieve the forecasts for the requested time periods.
-1. Query the `DM$VP` model detail view to see the forecast (sales for four quarters). The `DM$VP` view for time series contains the result of an ESM model. The output has a set of records such as partition, `CASE_ID`, value, prediction, lower, upper, and so on and ordered by partition and `CASE_ID` (time). Run the following statement:
-
-    ```
-    <copy>
-    %sql
-    SELECT TO_CHAR(CASE_ID,'YYYY-MON') DATE_ID,
-           round(VALUE,2) ACTUAL_SOLD,
-           round(PREDICTION,2) FORECAST_SOLD,
-           round(LOWER,2) LOWER_BOUND, round(UPPER,2) UPPER_BOUND
-    FROM DM$VPESM_SALES_FORECAST_1
-    ORDER BY CASE_ID DESC;
-    </copy>
-    ```
-
-	![The image displays the forecast using the DM$VP model detail view](images/timeseries-forecast.png)
-	In this step, the forecast shows the amount sold along with the `case_id`. The forecasts display upper and lower confidence bounds showing that the estimates can vary between those values.
-
-	Examine the statement:
-	- `TO_CHAR(CASE_ID,'YYYY-MON') DATE_ID`: The `DATE_ID` column has timestamp or `case_id` extracted in year-month (yyyy-mon) format.
-	- `round(VALUE,2) ACTUAL_SOLD`: Specifies the `AMOUNT_SOLD` value as `ACTUAL_SOLD` rounded to two decimal places.
-	- `round(PREDICTION,2) FORECAST_SOLD`: Specifies the predicted value as `FORECAST_SOLD` rounded to two decimal places.
-	- `round(LOWER,2) LOWER_BOUND, round(UPPER,2) UPPER_BOUND`: Specifies the lower and upper confidence levels rounded to two decimal places.
-
-2. To see a visual representation of the predictions in OML Notebooks, run the same query above without ```DESC``` in the ```ORDER BY``` clause. Click the Line Chart graph and apply the following settings:
-Click **settings** and drag `DATE_ID` to **keys** and `FORECASTED_SOLD`, `ACTUAL_SOLD`, `LOWER_BOUND`, and `UPPER_BOUND` to **values**. By default, the columns in the **values** field show `(sum)`. For example,  `ACTUAL_SOLD (sum)`. Click the column name and change it to `(avg)`. Change all the column names in the **values** field to show `(avg)`.
-
-    ```
-    <copy>
-      %sql
-      SELECT TO_CHAR(CASE_ID,'YYYY-MON') DATE_ID, VALUE ACTUAL_SOLD,
-             round(PREDICTION,2) FORECAST_SOLD,
-             round(LOWER,2) LOWER_BOUND, round(UPPER,2) UPPER_BOUND
-        FROM DM$VPESM_SALES_FORECAST_1
-        ORDER BY CASE_ID;
-    </copy>
-    ```
-
-  ![Line Chart icon](images/timeseries-line-chart.png)
-
-  ![Displays the Line Graph settings](images/timeseries-graph-settings.png)
-
-  ![A visual representation of the forecast](images/timeseries-forecast-graph.png)
-
-This completes the prediction step. The model has successfully forecast sales for the next four quarters.
 
 ## Task 4: Machine Learning for Python
 
@@ -1727,555 +1370,3 @@ To view the generated notebook Customer 360:
 
 This completes the task of creating a notebook based on a model and viewing the paragraphs contained in it.
 
-## Task 6: Maching Learning Service 
-
-**Authenticate Your User Account with Your Autonomous Database Instance to Use OML Services**
-
-1.  This lab uses OCI Cloud Shell. To access the OCI Cloud Shell, select your compartment and click on the Cloud Shell icon.
-
-	 ![Image alt text](images/oci-cloud-shell-1-new.png)
-
-   On clicking the Cloud Shell icon, the OCI Cloud Shell command prompt is displayed in the lower half of the console as illustrated in the image below.
-
-  ![Image alt text](images/oci-cloud-shell-2-new.png)
-
-2. To access Oracle Machine Learning Services using the REST API, you must acquire an access token. To authenticate and obtain an access token, use cURL with the -d option to pass the user name and password for your Oracle Machine Learning Services account against the Oracle Machine Learning User Management Cloud Service token service. Use the following details to get an authentication token.
-    * Your OML user name
-    * Your OML password
-    * OML server URL
-
-   Here is the syntax:
-     ```
-     curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json'\
-     -d '{"grant_type":"password", "username":"'${oml_username}'", "password":"'${oml_password}'"}'\
-     "<OML server URL>/omlusers/api/oauth2/v1/token"
-     ```
-   In the syntax above, OML server URL is the Autonomous Database URL and points to the region where the Autonomous Database instance resides. The URL also contains the database name and tenancy ID. You can obtain this URL information from the Development tab on the Autonomous Database service console. From your ADB instance details page, click open the service console.
-
-  ![Image alt text](images/adb-instance.png)
-
-   On the service console, click the Development link on the left panel.
-
-  ![Image alt text](images/adb-console.png)
-
-   Scroll down the Development page to view the Oracle Machine Learning RESTful Services tile, and copy the URL for your ADB instance. Paste the URL to a text editor, such as Notepad. From the URL, remove the /omlusers/ segment.
-
-  ![Image alt text](images/development-tab.png)
-
-   Now, go back to the Cloud Shell interface and run a command to obtain a token. First set variables for the parameters for ease of use in subsequent requests.
-
-    ```
-    <copy>export oml_username=OMLUSER
-    export oml_password=AAbbcc123456
-    export omlserver=<omlserver url></copy>
-
-    ```
-   In the command above,
-    
-     * OMLUSER is your OML user name.
-     * AAbbcc123456 is your OML password.
-     * omlserver url is the URL that you copied from the ADB console, without the /omlusers/ segment in it. An example of omlserver URL is https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this URL ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
-
-   Run the following command to obtain an authentication token using the variables set above and save the token string to the variable ``token``.
-
-    ```
-    <copy>export token=$(curl -X POST -H 'Content-Type: application/json'  -d '{"grant_type":"password", "username":"'${oml_username}'",  "password":"'${oml_password}'"}' "${omlserver}/omlusers/api/oauth2/v1/token" | grep -o -P '(?<="accessToken":").*(?=","expiresIn)' )
-    </copy>
-    ```
-   Successfully running the command above results in a token string that is saved to the variable ``token``. To visually inspect the token, run the command below:
-
-    ```
-    <copy>echo $token</copy>
-
-    ```
-
-   Running the command above should display the token string. Note that the token string displayed below is truncated for security reasons.
-
-    ```
-    eyJhbGci... KLbI1wQ==
-
-    ```
-
-3. A token is valid for an hour. You can refresh a token for up to 8 hours after generating it. Each refresh will extend its validity by an hour.
-
-     Here's the command for refreshing a token:
-
-    ```
-    <copy>export token=$(curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" -d '{"grant_type":"refresh_token", "refresh_token":"'${token}'"}' "${omlserver}/omlusers/api/oauth2/v1/token" | grep -o -P '(?<="accessToken":").*(?=","expiresIn)' )</copy>
-    ```
-    To visually inspect the token, run the command below:
-
-    ```
-    <copy>echo $token</copy>
-
-    ```
-
-4. You can also revoke a token. You cannot use or refresh a token you have revoked. For this LiveLab, do not perform this step. The syntax is provided for your reference.
-
-    ```
-    <copy>curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer ${token}" "${omlserver}/omlusers/api/oauth2/v1/token/revoke"</copy>
-    ```
-   Running the command above produces a result similar to this:
-
-    ```
-    HTTP/1.1 200 OK
-    Date: Mon, 06 Sep 2021 07:12:49 GMT
-    Content-Type: application/json
-    Content-Length: 15
-    Connection: keep-alive
-    Cache-Control: no-cache, no-store, must-revalidate
-    Pragma: no-cache
-    X-Frame-Options: SAMEORIGIN
-    X-XSS-Protection: 1;mode=block
-    Strict-Transport-Security: max-age=31536000; includeSubDomains
-    X-Content-Type-Options: nosniff
-    Content-Security-Policy: frame-ancestors 'none'
-
-    {"status":"ok"}
-    ```
-
-**Explore OML Services REST APIs**
-
-1. View the content of OML Services REST APIs. You can return the API content in a readable format by using the Linux utility jq.  
-
-  **Note:** If you are using OCI Cloud Shell, you don't need to install the jq utility as OCI Cloud Shell comes with jq pre-installed. If you are using your own tenancy or a trial account and if you are not using OCI Cloud Shell, you can check if jq is installed by running the command rpm -qa jq. If this command returns an empty value, jq is not installed. In that case, install the jq utility by running the following command.
-
-    ```
-    <copy>sudo yum install jq</copy>
-
-    ```
-   Run the curl command to view the APIs.
-    ```
-    <copy>curl -i -X GET --header "Authorization: Bearer ${token}" "${omlserver}/omlmod/v1/api" | head -n 50</copy>
-
-    ```
-   Here's the result, in a truncated form, of running the command above:
-
-    ```
-    "lifecycle": {
-                "type": "string",
-                "enum": [
-                  "active",
-                  "deprecated"
-                ]
-              },
-                "links": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/OMLResourceLink"
-              }
-            }
-          }
-        },
-        "ApiVersionCollection": {
-          "required": [
-           "items",
-           "links"
-         ],
-         "properties": {
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ApiVersion"
-            }
-    ...
-
-    ```
-
-2.  Get a list of saved models. For this step to return results, you need to have models deployed in your OML user account. If you have completed Lab 4, your account should include deployed models. Refer back to Lab 4 Using OML AutoML UI  to know how to quickly create and save a  model.
-
-    ```
-    <copy>curl -X GET --header "Authorization: Bearer ${token}" "${omlserver}/omlmod/v1/models" | jq</copy>
-
-    ```
-   The result of running the command above is displayed below:
-
-    ```
-    {
-      "items": [
-        {
-          "version": "1.0",
-          "modelType": "OML",
-          "createdBy": "OMLUSER",
-          "modelId": "25e9bd6a-a8be-48af-8657-ee66c9201157",
-          "modelName": "NaiveBayes_CUST360",
-          "links": [
-            {
-              "rel": "self",
-              "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/25e9bd6a-a8be-48af-8657-ee66c9201157"
-            }
-          ],
-          "namespace": "DEMO",
-          "shared": true,
-          "storedOn": "2022-02-07T11:17:00.871Z"
-        }
-      ],
-      "links": [
-        {
-          "rel": "self",
-          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models"
-        }
-      ]
-    }
-
-    ```
-
-3. View a model's details by providing its name in the REST API call. In this case, the model name is `NaiveBayes_CUST360`.
-
-    ```
-    <copy>curl -X GET --header "Authorization: Bearer $token" "${omlserver}/omlmod/v1/models?modelName=NaiveBayes_CUST360" | jq</copy>
-
-    ```
-   Running the command above displays the model details for the model `NaiveBayes_CUST360` as displayed below:
-
-    ```
-    {
-      "items": [
-        {
-          "version": "1.0",
-          "modelType": "OML",
-          "createdBy": "OMLUSER",
-          "modelId": "25e9bd6a-a8be-48af-8657-ee66c9201157",
-          "modelName": "NaiveBayes_CUST360",
-          "links": [
-            {
-              "rel": "self",
-              "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/25e9bd6a-a8be-48af-8657-ee66c9201157"
-            }
-          ],
-          "namespace": "DEMO",
-          "shared": true,
-          "storedOn": "2022-02-07T11:17:00.871Z"
-        }
-      ],
-      "links": [
-        {
-          "rel": "self",
-          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models"
-        }
-      ]
-    }
-
-    ```
-
-4.  Next, get a list of models filtered by version=1.0 and namespace=`DEMO`.
-
-   **Note**: The namespace parameter is case-sensitive.
-
-    ```
-    <copy>curl -X GET --header "Authorization: Bearer $token" "${omlserver}/omlmod/v1/models?version=1.0&namespace=DEMO" | jq</copy>
-
-    ```
-   The command above applies the filters and produces the following result:
-
-    ```
-    {
-      "items": [
-        {
-          "version": "1.0",
-          "modelType": "OML",
-          "createdBy": "OMLUSER",
-          "modelId": "25e9bd6a-a8be-48af-8657-ee66c9201157",
-          "modelName": "NaiveBayes_CUST360",
-          "links": [
-            {
-              "rel": "self",
-              "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models/25e9bd6a-a8be-48af-8657-ee66c9201157"
-            }
-          ],
-          "namespace": "DEMO",
-          "shared": true,
-          "storedOn": "2022-02-07T11:17:00.871Z"
-        }
-      ],
-      "links": [
-        {
-          "rel": "self",
-          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/models"
-        }
-      ]
-    }
-
-
-    ```
-
-**Get Model Endpoint Details**
-
-1. Get model endpoint details for the model that you created in the preceding lab (Lab 4). Use the following values:
-
-    * authentication token=generated in Task 1 or if expired then a refreshed or regenerated token
-    * omlserver= OML server URL that you copied from the ADB console (in Task 1 Step 2), without the /omlusers/ segment in it. This URL is already saved to the ``omlserver`` variable so you don't have to copy it again. An example of an OML server URL is https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com. In this example URL, ``aabbcc123456xyz`` is the tenancy ID, ``db2`` is the database name and ``adb.us-ashburn-1.oraclecloudapps.com`` is the region name.
-    * model URI=`nb_cust360` (To get the URI for the model that you want the endpoint for, log in to OML Notebooks, go to the Models page,  Deployed tab.)
-
-    ```
-    <copy>curl -X GET "${omlserver}/omlmod/v1/deployment/nb_cust360" --header "Authorization: Bearer $token" | jq</copy>
-
-    ```
-   The endpoint details of the model with the model URI `nb_cust360` are displayed below:
-
-    ```
-    {
-      "version": "1.0",
-      "modelType": "OML",
-      "createdBy": "OMLUSER",
-      "modelId": "25e9bd6a-a8be-48af-8657-ee66c9201157",
-      "modelName": "NaiveBayes_CUST360",
-      "metadata": {
-        "miningFunction": "CLASSIFICATION",
-        "algorithm": "NAIVE_BAYES",
-        "attributes": [
-          {
-            "name": "CUST_GENDER",
-            "attributeType": "CATEGORICAL"
-          },
-          {
-            "name": "CUST_MARITAL_STATUS",
-            "attributeType": "CATEGORICAL"
-          },
-          {
-            "name": "CUST_YEAR_OF_BIRTH",
-            "attributeType": "NUMERICAL"
-          },
-          {
-            "name": "EDUCATION",
-            "attributeType": "CATEGORICAL"
-          },
-          {
-            "name": "HOUSEHOLD_SIZE",
-            "attributeType": "CATEGORICAL"
-          },
-          {
-            "name": "OCCUPATION",
-            "attributeType": "CATEGORICAL"
-          },
-          {
-            "name": "YRS_RESIDENCE",
-            "attributeType": "NUMERICAL"
-          },
-          {
-            "name": "Y_BOX_GAMES",
-            "attributeType": "NUMERICAL"
-          }
-        ],
-        "output": {
-          "name": "AFFINITY_CARD",
-          "attributeType": "CATEGORICAL"
-        },
-        "labels": [
-          "0",
-          "1"
-        ],
-        "modelName": "NaiveBayes_CUST360"
-      },
-      "links": [
-        {
-          "rel": "self",
-          "href": "https://aabbcc123456xyz-db2.adb.us-ashburn-1.oraclecloudapps.com/omlmod/v1/deployment/nb_cust360"
-        }
-      ],
-      "namespace": "DEMO",
-      "shared": true,
-      "uri": "nb_cust360",
-      "deployedOn": "2022-02-07T11:17:01.119Z"
-    }
-
-
-    ```
-**Score singleton and mini batch records against a model**
-
-1. Score a single record with a model. You need the following information handy to make a REST call to score with a model:
-
-    * OML server name
-    * Model URI of the model against which you are scoring
-    * A valid authentication token
-    * Input record to score
-
-   Here's the syntax:
-
-    ```
-    curl -X POST "${omlserver}/omlmod/v1/deployment/${model_URI}/score" \
-    --header "Authorization: Bearer ${token}" \
-    --header 'Content-Type: application/json' \
-    -d '{"topNdetails":n,"inputRecords":[{"XXX":value,"YYY":value}]}'| jq
-
-    ```
-  In the syntax above, the parameter `topNdetails` is optional. It fetches the top n prediction details for the record you are scoring. Prediction details refer to the attributes or features that impact a prediction. In the following example,  you specify the model URI `nb_cust360` and a valid token generated in Task 1. The model was built using the Supplementary Demographics data set. To score with a single record, for XXX use `YRS_RESIDENCE` with the value of 10 and for YYY  use `Y_BOX_GAMES` with a value of 0. You want to predict the probability that the person associated with this record will purchase the affinity card.
-
-    ```
-   <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/nb_cust360/score"  --header "Authorization: Bearer ${token}" --header 'Content-Type: application/json'  -d '{"inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0}]}' | jq</copy>
-
-    ```
-   Here's the score for the data above. It indicates the probability value for each label.
-
-    ```
-    {
-      "scoringResults": [
-        {
-          "classifications": [
-            {
-              "label": "0",
-              "probability": 0.9893342613843232
-            },
-            {
-              "label": "1",
-              "probability": 0.010665738615676828
-            }
-          ]
-        }
-      ]
-    }
-
-    ```
-
-2.  Next, score a mini-batch of 2 records with the same model URI. For the first record, use the same data as in the singleton scoring step above. For the second record and the prediction details parameter, use the data shown below. You want to return the top 3 attributes that impact the predictions and, therefore, set `topNdetails` to 3.:
-    * `YRS_RESIDENCE`=5
-    * `Y_BOX_GAMES`=1
-    * `topNdetails` = 3
-
-    ```
-    <copy>curl -X POST "${omlserver}/omlmod/v1/deployment/nb_cust360/score" --header "Authorization: Bearer ${token}" --header 'Content-Type: application/json' -d '{"topNdetails":3, "inputRecords":[{"YRS_RESIDENCE":10,"Y_BOX_GAMES":0},{"YRS_RESIDENCE":5,"Y_BOX_GAMES":1}]}' | jq</copy>
-
-    ```
-    The scores for the above two records, along with the prediction details for each score, are displayed below:
-
-    ```
-    {
-      "scoringResults": [
-        {
-          "classifications": [
-            {
-              "label": "0",
-              "probability": 0.9893342613843232
-            },
-            {
-              "label": "1",
-              "probability": 0.010665738615676828
-            }
-          ],
-          "details": [
-            {
-              "columnName": "YRS_RESIDENCE",
-              "weight": 0.401
-            },
-            {
-              "columnName": "CUST_YEAR_OF_BIRTH",
-              "weight": 0.386
-            },
-            {
-              "columnName": "Y_BOX_GAMES",
-              "weight": 0.176
-            }
-          ]
-        },
-        {
-          "classifications": [
-            {
-              "label": "0",
-              "probability": 0.9993139062755378
-            },
-            {
-              "label": "1",
-              "probability": 0.000686093724462145
-            }
-          ],
-          "details": [
-            {
-              "columnName": "CUST_YEAR_OF_BIRTH",
-              "weight": 0.386
-            },
-            {
-              "columnName": "Y_BOX_GAMES",
-              "weight": 0.325
-            },
-            {
-              "columnName": "YRS_RESIDENCE",
-              "weight": 0.166
-            }
-          ]
-        }
-      ]
-    }
-
-    ```
-
-3. In this task, use Oracle's proprietary Cognitive Text functionality. This functionality provides endpoints to score a string of text to obtain information such as most relevant keywords, topics, text summary, sentiment, similarity to another text string and text features. The supported languages for Cognitive Text include English (America), Spanish, French and Italian. In this step, pass a text string to obtain keywords and its summary using the relevant end points. Here's the syntax for using the keywords endpoint:
-
-    ```
-    curl -X POST "${omlserver}/omlmod/v1/cognitive-text/keywords" \
-    --header 'Content-Type: application/json' \
-    --header "Authorization: Bearer ${token}" \
-    --data '{
-         "topN":<n=number of top keywords to return>,
-         "textList":["<text to score>"]
-            }' | jq
-
-    ```
-   In the syntax above,
-
-    * topN is an optional parameter, which determines the number of most relevant keywords to return. If you don't specify this parameter, by default 5 keywords are returned.
-    * textList is a required parameter to pass the text string to be scored.
-
-   Run the following command to obtain the top 2 most relevant keywords in the provided text string.
-
-    ```
-    <copy>curl -X POST "${omlserver}/omlmod/v1/cognitive-text/keywords" --header 'Content-Type: application/json' --header "Authorization: Bearer ${token}" --data '{"topN":2,"textList":["With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects - both on-premises and in the Cloud."]}' | jq</copy>
-
-    ```
-
-   Here's the result of running the command above. Notice that the result includes a weight for each keyword returned.
-
-    ```
-    [
-      {
-        "text": "With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects - both on-premises and in the Cloud.",
-        "keywordResults": [
-          {
-            "keyword": "data",
-            "weight": 0.5521764418721277
-          },
-          {
-            "keyword": "algorithms",
-            "weight": 0.46610186622828115
-          }
-        ]
-      }
-    ]
-
-    ```
-
-4. Next, get a summary of the same text string that you passed in the previous step by using the summary endpoint. Run the following command:
-
-    ```
-    <copy>curl -X POST "${omlserver}/omlmod/v1/cognitive-text/summary" --header 'Content-Type: application/json' --header "Authorization: Bearer ${token}" --data '{"topN":2,"textList":["With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects - both on-premises and in the Cloud."]}' | jq</copy>
-
-    ```
-   Here's the result of running the command above. Two summary statements have been returned as the topN parameter was set to 2.
-For each summary, an associated weight is also returned.
-
-    ```
-    [
-      {
-      "text": "With Oracle Machine Learning, Oracle moves the algorithms to the data. Oracle runs machine learning within the database, where the data reside. This approach minimizes or eliminates data movement, achieves scalability, preserves data security, and accelerates time-to-model deployment. Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. Oracle Machine Learning delivers the performance, scalability, and automation required by enterprise-scale data science projects - both on-premises and in the Cloud.",
-      "summaryResults": [
-       {
-        "sentence": "With Oracle Machine Learning, Oracle moves the algorithms to the data. ",
-        "weight": 0.8011026647210766
-       },
-       {
-        "sentence": "Oracle delivers parallelized in-database implementations of machine learning algorithms and integration with the leading open source environments R and Python. ",
-        "weight": 0.7995010355715527
-       }
-      ]
-     }
-   ]
-
-    ```
-**Review OML Services support for ONNX Models**
-
-   Open Neural Network Exchange or ONNX is an open standard format of machine learning models. By using the Oracle Machine Learning Services REST API, you can deploy and score with your ONNX format models (both image and non-image).
-
-   The REST API is exposed as part of the Oracle Machine Learning Services on Oracle Autonomous Database cloud service. The Oracle Machine Learning Services REST API supports ONNX format model deployment through REST endpoints for:
-
-   * Classification models (both non-image models and image models)
-   * Regression models
-   * Clustering models
