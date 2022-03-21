@@ -1,6 +1,6 @@
 {
   "workshoptitle": "Monitor WebLogic Server on Kubernetes using Oracle Enterprise Manager",
-	"help": "livelabs-help-em_us@oracle.com",
+	"help": "livelabs-help-em_us_grp@oracle.com",
     "tutorials": [
         {
             "title": "Introduction",
