@@ -77,7 +77,7 @@ Create a connection with the Oracle Autonomous Data Warehouse Adapter.
 
     | **Field**  | **Value** |
     |---|---|
-    |Service Name | `<your-adb-tns-name>` |
+    |Service Name | `<your-adb-tns-name>` (Use the TNS Name obtained in **Lab Setup** > **Task 1** > **Step 6**) |
     |Security Policy | **JDBC Over SSL**|
     |Wallet | **Upload wallet file (Zip)** |
     |Wallet Password | `<wallet-password>`|
