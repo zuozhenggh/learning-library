@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This lab will use JSON and SQL in Database Actions from the Autonomous JSON Database page.
+This lab will use JSON and SQL in Database Actions from the Autonomous JSON Database page. It shows how we can swap between a document-centric model (MongoDB and Oracle's JSON tool in Database Actions), and a relational model using Oracle's SQL tool in Database Actions.
+
+Estimated Time: 20 minutes
 
 ### Objectives
 
@@ -166,6 +168,196 @@ In this lab, you will:
     After that, we're ready to move on to the next task.
 
 ## Task 3: SQL in Database Actions
+
+So far we've looked at a documemt-centric view of our data, from Mongo Shell and from Oracle's JSON workshop.
+
+Now we're going to look at a SQL view of the same data, showing how you can swap between document and SQL views.
+
+1.  Get to the Database Actions menu
+
+    If you've just finished the previous task, click on 'Database Actions' in the top bar. If you've closed that window, then follow the instructions for Task 3 to get to the Database Actions menu.
+
+    ![](./images/back-to-dbactions.png " ")
+
+    Now we want to open SQL. Click on the SQL panel in Database Actions
+
+    ![](./images/dbactions-menu-sql.png " ")
+
+2.  Examine the EMP table
+
+    On the left hand panel, we will see all the tables in our database. Notice that there are two tables, EMP and NEWCOLLECTION.
+    These correspond with the two collections we created - "emp" from Mongo Shell and "newcollection" from JSON.
+
+    Open the EMP collection by clicking on the triangle next to it, to list the columns in the table.
+
+    ![](./images/emp-columns.png " ")
+
+    You can see that there are various "housekeeping" columns in the table, and a mysterious one called "DATA". We'll learn more about that later.
+    In the top right "Worksheet" pane, enter the following query and click the "Run Statement" button:
+
+    ```
+    <copy>
+    select * from emp
+    </copy>
+    ```
+    ![](./images/select-star.png " ")
+
+    In the output, you can see four rows. And we know that our "emp" collection has four documents in it, so we can deduce that:
+
+    * Collections are represented by tables
+    * Documents are represented by rows in a table
+
+    The "DATA" column of the table contains the actual JSON of the documents, but since it's in a binary format, SQL can't show it. We can use a function JSON_SERIALIZE to get it into readable format.
+
+    Enter the following query and click "Run Statement"
+
+    ```
+    <copy>
+    select json_serialize(data) from emp
+    </copy>
+    ```
+
+    You may need to adjust the column size to read the output better, but when you do you will see the JSON text displayed.
+
+    This is great, we're accessing the JSON from a relational table. But it would be better if we could get at individual elements of the JSON, right?
+
+3.  Simple dot notation
+
+    We can do that using something called "simple dot notation". To use that, we **must** give our table an alias, then we can refer to an element in the JSON as "alias.column.elementname". Run the following:
+
+    ```
+    <copy>
+    select e.data.name,
+           e.data.job,
+           e.data.salary
+        from emp e
+    </copy>
+    ```
+
+    [](./images/dot-notation.png " ")
+
+    Fantastic! We've accessed individual elements of the JSON and returned them as though they were relational columns. In fact, anywhere we can use a relational column in a query we can use this simple dot notation. For example, we can use a simple aggregation query to find the average salary by job:
+
+    ```
+    <copy>
+    select  avg (e.data.salary),
+            e.data.job
+        from emp e
+        group by e.data.job
+    </copy>
+    ```
+
+    ![](./images/avg-salary.png " ")
+
+    Simple dot notation is great for straightforward "flat" JSON. There are many other JSON functions available to access data within JSON, such as JSON_VALUE, JSON_OBJECT and JSON_TABLE, but we won't go into those here.
+
+4.  JSON Dataguide
+
+    JSON Dataguide examines the JSON stored in a collection and shows us the schema of that JSON - what elements are available, and their size and data types. Let's run it on our EMP table to see what the collection looks like:
+
+    ```
+    <copy>
+    select json_dataguide(data, dbms_json.FORMAT_HIERARCHICAL, dbms_json.pretty) from emp;
+    </copy>
+    ```
+
+    Since this is producing some quite long output, it's best if we use the "Run Script" button rather than "Run Statement". Scroll through the output to see the elements discovered in the JSON.
+
+    ![](./images/dataguide.png " ")
+
+
+
+5.  Generate a view from Dataguide
+
+    JSON Dataguide is useful for examing the layout of our JSON. But we can also use it to automatically create a relational view over the JSON data.
+
+    To do that, we first run JSON\_DATAGUIDE, and then feed the output from that into DBMS\_JSON.CREATE\_VIEW.
+
+    Note: the dbms_json.pretty used in the previous example is only to format the output nicely. DBMS\_JSON.CREATE\_VIEW doesn't care about formatting so we can leave that out here. Copy the following and click "Run Statement".
+
+    ```
+    <copy>
+    declare
+        dg clob;
+    begin
+        select json_dataguide(data, dbms_json.FORMAT_HIERARCHICAL, dbms_json.pretty) into dg
+        from emp;
+    
+        dbms_json.create_view(
+            viewname  => 'EMP_VIEW', 
+            tablename => 'EMP', 
+            jcolname  => 'DATA', 
+            dataguide => dg
+        );
+    end;
+    </copy>
+    ```
+
+    ![](./images/create-view.png " ")
+
+    That created a view based on the elements within our JSON. On the left hand side, choose "Views" rather than "Tables" and open the "EMP_VIEW" view.
+
+    You can see that our view contains the "housekeeping" data from our EMP table, plus the various elements from the JSON. Note that columns such as "job", "name" etc are in lower-case - case is significant for JSON, and "NAME" would be a different element to "name", so the case is maintained in the view. That means to refer to any of these colums, we must put them in double quotes, otherwise SQL will upper-case them.
+
+    So let's run a query against the view. We no longer need to use the dot notation, but as noted above we do need to quote the column names. We're going to figure out how much of our company's salary bill is spent on each job. We'll do that with an aggregation query:
+
+    ```
+    <copy>
+    select  sum("salary"),
+            "job"
+        from emp_view
+        group by "job"
+    </copy>
+    ``` 
+
+    Looking good! We've now automatically created a view over our collection, and can run SQL queries over it without even knowing that it's based on a JSON datasource.
+
+6.  Create a Pie Chart of salaries
+
+    Let's see if we can get that last query output in a more pleasing visual pattern. Click on "Database Actions" at the top of the page, and then choose Charts from the Database Actions menu.
+
+    ![](./images/dbactions-button-2.png " ")
+
+    ![](./images/dbactions-menu-charts.png " ")
+
+    As usual, the first time you enter Charts you will see a tutorial. You can step through it or skip it for now.
+
+    Click on "+ Create" in the top right, and then "New Chart"
+
+    ![](./images/chart-create.png " ")
+
+    Give your chart a name "Salary Breakdown" and a description of "Total Salaries by job". Set the "Protected by Privilege" drop-down to "Not protected". When done, click "Next".
+
+    ![](./images/chart-create-2.png " ")
+
+    In the next panel, enter the SQL aggregation query we used earlier in the "Enter a valid SQL query" box.
+
+    ```
+    <copy>
+    select  sum("salary"),
+            "job"
+        from emp_view
+        group by "job"
+    </copy>
+    ``` 
+    On the right Choose "Pie Chart" in the "Chart type" drop-down. Click "Create" when done.
+
+    ![](./images/chart-create-2.png " ")
+
+    On the next page, click the "three dots" menu to the right of our Salary Breakdown panel, and choose "View Chart".
+
+    And now we should see a nice pie chart of our salary costs - we can see that Programmers are by far our largest cost at 63.6% of the total salary bill.
+
+    ![](./images/chart-display.png " ")
+
+
+
+
+
+
+
+
+    
 
 
 ## Learn More
