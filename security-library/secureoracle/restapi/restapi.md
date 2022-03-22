@@ -69,7 +69,7 @@ This lab assumes you have:
 
     **Note**: Since we have already stored the access token we don't need to specify the user credentials and HTTPie is able to successful invoke the API as shown in Figure 1.
 
-	![](./images/oim-rest-direct-reports.png " ")
+	![Get Direct Reports API](./images/oim-rest-direct-reports.png " ")
 
     Figure 1. Get Direct Reports API
 

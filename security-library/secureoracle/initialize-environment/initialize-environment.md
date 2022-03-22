@@ -49,7 +49,7 @@ Follow the steps below to Start/Stop SecureOracle components.
     ```
 
     **Note:** the time to start the OIG components varies between 15-20 minutes.
-        ![](./images/startall.png " ")
+        ![OIG components starting](./images/startall.png " ")
 
     For your reference, the following commands are available to start or stop the different components and applications.
 
