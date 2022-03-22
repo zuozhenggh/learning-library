@@ -60,6 +60,8 @@ Estimated Time: 10 minutes
     After a few seconds, the container from Connect Service will be *healthy*
     ![Kafka Cluster Services Running with Connect starting](images/kafka-platform-containers-status-healthy.png)
 
+    > **Note:** If your cloud shell connection interrupt during the process, may you will have to reconnect and executing the instructions from [Task 5](#task5restartkafkacomponentsoptional).
+
 3. Create a Topic:
 
     You are ready to create the topic *LAB8022_TOPIC*. Run the following command to create a new topic into the Kafka Broker:
@@ -166,14 +168,17 @@ This workshop makes the source codes of the two microservices available; We invi
     <copy>
     curl -X POST -H "Content-Type: application/json" \
     -d '{ "id": "id1", "message": "message1" } ' \
-    http://localhost:8080/placeMessage
+    http://localhost:8080/placeMessage | jq
     </copy>
     ```
 
     The result should be
 
     ```bash
-    {"id":"0","statusMessage":"Successful"}
+    {
+        "id": "0",
+        "statusMessage": "Successful"
+    }
     ```
 
     We also can validate if the message was published inside topic LAB8022_TOPIC.
@@ -231,10 +236,51 @@ Now that we have Producer running and publishing events inside the Kafka Broker,
 
     ![Spring Boot Kafka Consumer Running Logs](images/springboot-kafka-consumer-test.png " ")
 
+## **Task 5:** Restart Kafka Components (optional)
+
+You session of cloud shell may expire or disconnect during the process [bellow image] thus you will have to check if the Kafka components are still running and if not restart them following the next commands:
+
+![Cloud Shell disconnection message](images/cloud-shell-disconnection-message.png " ")
+
+1. Setup environment.
+
+    After reconnect you have to setup environment running the following command:
+
+    ```bash
+    <copy>
+    source $LAB_HOME/cloud-setup/env.sh
+    </copy>
+    ```
+
+2. Check if Kafka components are running.
+
+    Execute the following command to check if Kafka Components are running:
+
+    ```bash
+    <copy>
+    cd $LAB_HOME/cloud-setup/confluent-kafka
+    </copy>
+    ```
+
+    ```bash
+    <copy>
+    ./docker-compose ps
+    </copy>
+    ```
+
+    You should see the four containers running
+    ![Kafka Cluster Services Running with Connect starting](images/kafka-platform-containers-status-healthy.png)
+
+3. Restart components
+
+    If they are not running like bellow image, execute again [Task 1](#task1runkafkabrokerandcreateatopic).
+
+    ![Kafka Cluster Services exist 1](images/kafka-platform-containers-status-exit.png)
+
 You may now **proceed to the next lab**
 
 ## Acknowledgements
 
 - **Authors** - Paulo Simoes, Developer Evangelist; Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 - **Contributors** - Mayank Tayal, Developer Evangelist; Sanjay Goil, VP Microservices and Oracle Database
-- **Last Updated By/Date** - Paulo Simoes, February 2022
+- **Last Updated By/Date** - Paulo Simoes, March 2022
