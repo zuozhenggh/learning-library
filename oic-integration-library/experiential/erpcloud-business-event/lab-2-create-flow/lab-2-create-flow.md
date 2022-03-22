@@ -143,7 +143,7 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
     Expand the **Source** node:
     
     ```
-    ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 &lt;sequence&gt; > Value
+    ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 <sequence&gt; > Value
     ```
 
     Expand the **Target** node:
@@ -208,4 +208,4 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Ravi Chablani, Product Management - Oracle Integration
-* **Last Updated By/Date** - Ravi Chablani, February 2022
+* **Last Updated By/Date** - Ravi Chablani, March 2022
