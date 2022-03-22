@@ -104,9 +104,9 @@ Estimates Time: 10 minutes
     # LiveLab Setup -- END
     ```
 
-4. Clean the local docker registry
+4. Clean the Docker containers
 
-    The lab deploys some images referring to the Kafka platform and also to microservices. You have to cleanup the local registry. The following command you present the current Containers deployed.
+    The lab deploys some containers referring to the Kafka platform and also to microservices. You have to cleanup the local registry. The following command you present the current Containers deployed.
 
     ```bash
     <copy>
@@ -114,7 +114,7 @@ Estimates Time: 10 minutes
     </copy>
     ```
 
-    This command may generate the following result:
+    The expected result should be similar to the block below:
 
     ```shell
     CONTAINER ID        IMAGE                                              COMMAND                  ......              NAMES
@@ -136,22 +136,43 @@ Estimates Time: 10 minutes
     </copy>
     ```
 
-    ```
-    paulo_simo@cloudshell:~ (us-ashburn-1)$ docker images
-    REPOSITORY                          TAG                 IMAGE ID            CREATED             SIZE
-    oracle-developers-okafka-consumer   0.0.1-SNAPSHOT      3841deeb3c90        23 minutes ago      1.37GB
-    oracle-developers-okafka-producer   0.0.1-SNAPSHOT      175db75ee22c        24 minutes ago      1.37GB
-    oracle-developers-kafka-consumer    0.0.1-SNAPSHOT      e4de4fa142e1        29 minutes ago      1.38GB
-    oracle-developers-kafka-producer    0.0.1-SNAPSHOT      77d67bd2c993        30 minutes ago      1.38GB
-    cp-kafka-connect-custom             0.1.0               eeb923b2ecc7        35 minutes ago      1.43GB
-    ghcr.io/graalvm/graalvm-ce          ol8-java11          87c0795cf942        4 weeks ago         1.34GB
-    confluentinc/cp-kafka-connect       7.0.1               ce86628e990d        2 months ago        1.39GB
-    confluentinc/cp-server              7.0.1               81fddf506c55        2 months ago        1.54GB
-    confluentinc/cp-schema-registry     7.0.1               43303c1d5097        2 months ago        1.64GB
-    confluentinc/cp-zookeeper           7.0.1               3a7ea656f1af        2 months ago        780MB
+    >**Note:** The above command removes all containers, don't use it if you have other containers and don't want to delete them.
+
+5. Clean the Docker images
+
+    The lab container images have to be deleted from the local registry too. The following command you present the current images deployed.
+
+    ```bash
+    <copy>
+    docker images
+    </copy>
     ```
 
+    The expected result should be similar to the block below:
 
+    ```shell
+    REPOSITORY                          TAG                 IMAGE ID
+    oracle-developers-okafka-consumer   0.0.1-SNAPSHOT      ......
+    oracle-developers-okafka-producer   0.0.1-SNAPSHOT      ......
+    oracle-developers-kafka-consumer    0.0.1-SNAPSHOT      ......
+    oracle-developers-kafka-producer    0.0.1-SNAPSHOT      ......
+    cp-kafka-connect-custom             0.1.0               ......
+    ghcr.io/graalvm/graalvm-ce          ol8-java11          ......
+    confluentinc/cp-kafka-connect       7.0.1               ......
+    confluentinc/cp-server              7.0.1               ......
+    confluentinc/cp-schema-registry     7.0.1               ......
+    confluentinc/cp-zookeeper           7.0.1               ......
+    ```
+
+    To clean the local repository removing all images you can use the following command:
+
+    ```bash
+    <copy>
+    docker image prune --all
+    </copy>
+    ```
+
+    >**Note:** The above command removes all images from your local Docker Repository.
 
 ## **Task 2:** Delete the Directory
 
@@ -169,4 +190,4 @@ In the Oracle Cloud Infraestructure Console navigate to the Compartments screen 
 
 - **Authors** - Paulo Simoes, Developer Evangelist; Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 - **Contributors** - Mayank Tayal, Developer Evangelist; Sanjay Goil, VP Microservices and Oracle Database
-- **Last Updated By/Date** - Paulo Simoes, February 2022
+- **Last Updated By/Date** - Paulo Simoes, March 2022
