@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will provision and setup the resources to execute microservices in your environment.
+In this lab, we will provision and setup the resources to execute microservices in your environment.
 
 Estimates Lab Time - 20 minutes
 
@@ -41,7 +41,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    ![Open Cloud Shell](images/open-cloud-shell.png " ")
 
-   NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+>**Note**: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
 ## Task 3: Make a Clone of the Workshop Setup Script and Source Code
 
@@ -101,7 +101,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
-**Note**: The passwords typed are not displayed.
+>**Note**: The passwords typed are not displayed.
 
 5. The setup will also ask you to enter a UI password that is used to enter the microservice frontend user interface. Make a note of the password as you will need it later. The UI password must be 8 to 30 characters.
 
@@ -134,6 +134,7 @@ Note, builds may continue to run even after the setup has completed. The status 
 status
 </copy>
 ```
+You may now proceed to the next lab.
 
 Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
