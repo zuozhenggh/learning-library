@@ -28,14 +28,14 @@ Start Cloud Shell
 
 ![Start Cloud Shell](./images/cloudshell-open.png " ")
 
-From the current directory (your home directory of your user in Cloud Shell), create a file called livelabs_example.py
+From the current directory (your home directory of your user in Cloud Shell), create a file called livelabs-df.py
 
 ```
 <copy>
-vi live_labs_example.py
+vi livelabs-df.py
 </copy>
 ```
-Copy the following script and insert it into the live\_labs\_example.py file you are currently editing in Cloud Shell:
+Copy the following script and insert it into the livelabs-df.py file you are currently editing in Cloud Shell:
 
 ```
 <copy>
@@ -44,15 +44,18 @@ import sys
 
 def oracle_datasource_example(spark):
     # Wallet  information.
-    properties = {"adbId": "replacewithADBID","user" : "replacewithUSER","password": "replacewithPASSWORD"}
+    properties = {"adbId": ADB_ID,"user" : USERNAME,"password": PASSWORD}
 
-    print("Reading data from autonomous database.")
-    df = spark.read.format("oracle").option("dbtable", SRC_TABLE).options(**properties).load()
-
+    ##print("Reading data from autonomous database.")
+    ##df = spark.read.format("oracle").option("dbtable", SRC_TABLE).options(**properties).load()
+    
+    print("Reading data from json file in object storage")
+    df = spark.read.json("oci://data_lakehouse@c4u04/export-stream-2020-custid-genreid.json")
+    
     df.printSchema()
 
     print("Filtering recommendation.")
-    df.filter(df.RECOMMENDED == "Y")
+    df.filter(df."recommended" == "Y")
 
     print("Writing to autonomous database.")
     df.write.format("oracle").mode("overwrite").option("dbtable",TARGET_TABLE).options(**properties).save()
@@ -64,7 +67,7 @@ if __name__ == "__main__":
         .getOrCreate()
 
     # TODO: PROVIDE THE ARGUMENTS 
-    ABD_ID = "replacewithADBID"
+    ADB_ID = "replacewithADBID"
     SRC_TABLE = "ADMIN.EXPORT_STREAM_2020_UPDATED" 
     TARGET_TABLE = "ADMIN.MOVIE_GENRE" 
     USERNAME = "replacewithUSER"
@@ -76,7 +79,7 @@ if __name__ == "__main__":
 </copy>
 ```
 
-After pasting the above script, replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it stats replacewithXXXX. If you are unsure of your ADB ID, with Cloud Shell still open you can navigate to your ADW database from the hamburger menu to Autonomous Database and **Copy** the OCID to be pasted in the script in Cloud Shell in both places where it states "replacewithADBID".
+After pasting the above script, in the TODO section at bottom of the script a few of the variables nneed values. Replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it states replacewithXXXX. If you are unsure of your ADB ID, with Cloud Shell still open you can navigate to your ADW database from the hamburger menu to Autonomous Database and **Copy** the OCID to be pasted in the script in Cloud Shellwhere it states "replacewithADBID".
 
 ![Get the ADB ID](./images/getadbid.png " ")
 
@@ -88,11 +91,11 @@ Edit the replacewithXXXXX text with the correct information (paste with right cl
 
 See the edited file for the two places there are edits. When finished editing press **esc** **:wq** to save the file and your changes.
 
-Upload this edited file to your object storage using the command line in Cloud Shell after replacing REPLACEYOURNAME with your actual namespace name (Namespace name can be found in OCI tenancy:
+Upload this edited file to your object storage using the command line in Cloud Shell after replacing REPLACEYOURNAMESPACE with your actual namespace name (Namespace name can be found in OCI tenancy:
 
 ```
 <copy>
-oci os object put --file live_labs_example.py --namespace REPLACEYOURNAMESPACE --bucket-name dataflow-warehouse
+oci os object put --file livelabs-df.py --namespace REPLACEYOURNAMESPACE --bucket-name dataflow-warehouse
 </copy>
 ```
 
@@ -110,7 +113,7 @@ For creating the application, you need to have the python code and we are provid
 
 ![Create Data Flow](./images/createsparkapp.png " ")
 
-For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded live\_labs\_example.py
+For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded livelabs-df.py
 
 ![Create Data Flow](./images/createappconfigure.png " ")
 
