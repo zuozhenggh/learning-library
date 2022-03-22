@@ -9,7 +9,12 @@ Estimated time: 5 minutes
 * Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
 * Completion of the preceding tutorials in this workshop
 
-## Task 1: Create Security rules
+
+### Objectives
+* Create a public subnet for EM agent
+
+## **Task 1**: Create Security rules
+
 
 1. From the Oracle Cloud navigation menu, select **Developer Services** > **Kubernetes Clusters (OKE)**.
 
@@ -74,7 +79,9 @@ Estimated time: 5 minutes
 
     ![Oracle Cloud console, VCN Details, Subnets](images/1-9-vcn.png " ")
 
-## Task 2: Create a Subnet
+
+## **Task 2**: Create a Subnet
+
 
 
 1. In the **Subnet** section, click **Create Subnet** button.
@@ -106,7 +113,9 @@ Estimated time: 5 minutes
 
 
 
-You may now [proceed to the next tutorial](#next).
+
+You may now **proceed to the next tutorial**.
+
 
 ## Acknowledgements
 
