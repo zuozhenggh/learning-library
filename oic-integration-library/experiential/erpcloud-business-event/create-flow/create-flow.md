@@ -143,7 +143,7 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
     Expand the **Source** node:
     
     ```
-    ERP_POCreateEvent Request > Get Purchase Order Response > Result > 2nd \<sequence> > Value
+    ERP_POCreateEvent Request > Get Purchase Order Response > Result > 2nd <sequence> > Value
     ```
 
     Expand the **Target** node:
