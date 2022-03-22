@@ -30,8 +30,8 @@ This lab assumes you have
 4. In the *Create Role* Canvas, enter the following information:
     | **Field**  | **Value** |
     |---|---|
-    |Role Name | `<your-role-name>` |
-    |Role Code | `<your-role-code>` |
+    |Role Name | `&lt;your-role-name&lt;` |
+    |Role Code | `&lt;your-role-code&lt;` |
     |Role Category | (Default) |
     |    
 
