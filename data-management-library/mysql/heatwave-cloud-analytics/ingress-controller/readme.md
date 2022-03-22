@@ -60,125 +60,123 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 	kubectl get service -n ingress-nginx --watch
 	```
 
-Once you have the External IP provisioned, you can execute CTL+C to kill the command
+Once you have the External IP provisioned, you can press CTL+C to terminate the command
 
 
 
 ## Task 4: Deploy hello world application and Test with Ingress resource
 
 ### Creating namespace helloworld
-```
-kubectl create ns helloworld
-```
+  ```
+  kubectl create ns helloworld
+  ```
 
 ### Deploying hello world app to namespace helloworld
-```
-<copy>
-cat <<EOF | kubectl apply -n helloworld -f -
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: docker-hello-world
-  labels:
-    app: docker-hello-world
-spec:
-  selector:
-    matchLabels:
+  ```
+  <copy>
+  cat <<EOF | kubectl apply -n helloworld -f -
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: docker-hello-world
+    labels:
       app: docker-hello-world
-  replicas: 3
-  template:
-    metadata:
-      labels:
+  spec:
+    selector:
+      matchLabels:
         app: docker-hello-world
-    spec:
-      containers:
-      - name: docker-hello-world
-        image: scottsbaldwin/docker-hello-world:latest
-        ports:
-        - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: docker-hello-world-svc
-spec:
-  selector:
-    app: docker-hello-world
-  ports:
-    - port: 8088
-      targetPort: 80
-  type: ClusterIP
+    replicas: 3
+    template:
+      metadata:
+        labels:
+          app: docker-hello-world
+      spec:
+        containers:
+        - name: docker-hello-world
+          image: scottsbaldwin/docker-hello-world:latest
+          ports:
+          - containerPort: 80
+  ---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: docker-hello-world-svc
+  spec:
+    selector:
+      app: docker-hello-world
+    ports:
+      - port: 8088
+        targetPort: 80
+    type: ClusterIP
 
-EOF
-</copy>
+  EOF
+  </copy>
 
-```
+  ```
 ### Check the application deployment in namespace 'helloworld'
-```
-kubectl get all -n helloworld
-```
+  ```
+  kubectl get all -n helloworld
+  ```
 
-![Deploy Hello World Application](images/deploy-helloworld-app.png)
+  ![Deploy Hello World Application](images/deploy-helloworld-app.png)
 
 ### Deploy Ingress Resource 'helloworld-ing' to namespace helloworld
+  ```
+  <copy>
+  cat <<EOF | kubectl apply -n helloworld -f -
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: helloworld-ing
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+  spec:
+    ingressClassName: nginx
+    rules:
+    - http:
+        paths: 
+        - path: /helloworld
+          pathType: Prefix
+          backend:
+            service:
+              name: docker-hello-world-svc
+              port:
+                number: 8088
+  EOF
+  </copy>
+  ```
+  ![Deploy ingress](images/deploy-ingress-output.png)
 
-```
-<copy>
-cat <<EOF | kubectl apply -n helloworld -f -
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: helloworld-ing
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  ingressClassName: nginx
-  rules:
-  - http:
-      paths: 
-      - path: /helloworld
-        pathType: Prefix
-        backend:
-          service:
-            name: docker-hello-world-svc
-            port:
-              number: 8088
-EOF
-</copy>
-```
-![Deploy ingress](images/deploy-ingress-output.png)
-
-### Check the Public IP and resource agin
-- Based on the output and note down the public IP from the service.  
+### Check the Public IP and resource again
+- Based on the output and note down the external public IP for the service.  
 - The Ingress Resource helloworld-ing may get empty Public IP at the beginning.  After a while, the publc IP will be associated.
 
-
-```
-kubectl get svc -n ingress-nginx
-kubectl get ing -n helloworld
-```
-![Check Ingress status](images/check-ingress-status.png)
+  ```
+  kubectl get svc -n ingress-nginx
+  kubectl get ing -n helloworld
+  ```
+  ![Check Ingress status](images/check-ingress-status.png)
 
 
 
 ### Open a browser and access your hello world application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:/helloworld). 
 
-![Hello World Output](images/helloworld-test-output.png)
+  ![Hello World Output](images/helloworld-test-output.png)
 
 
 
 ## Clean up helloworld namespace
 ### This is to remove the hello world deployment and service together with ingress resource
-```
-kubectl delete ns helloworld
-```
+  ```
+  kubectl delete ns helloworld
+  ```
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
-- Ivan Ma, MySQL Solution Engineer, MySQL APAC
-- Ryan Kuan, Cloud Engineer, MySQL APAC
+  - Ivan Ma, MySQL Solution Engineer, MySQL APAC
+  - Ryan Kuan, Cloud Engineer, MySQL APAC
 * **Contributors** 
 
 * **Last Updated By/Date** - Ivan Ma, March, 2022
