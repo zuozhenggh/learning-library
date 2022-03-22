@@ -6,16 +6,12 @@ This lab walks you through the steps to provision a Compute Node. This is where 
 
 Estimated Time: 10 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:ICHM8bDast0)
-
 ### Objectives
 
 In this lab, you will:
 
 * Learn how to provision a new Compute Node
-* Install MongoDB tools
+* Install MongoDB Shell
 
 ### Prerequisites
 
@@ -175,22 +171,6 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
     echo export PATH=$(dirname `find /home/opc -name mongosh`):\$PATH >> .bashrc && . .bashrc
 	</copy>
 	```
-5. Repeat steps 1 to 4 for MongoDB Tools. The web page is [https://www.mongodb.com/try/download/database-tools](https://www.mongodb.com/try/download/database-tools)
-This time in "Platform" choose __Redhat / Centos 8.0 x86_64__ and click __Copy Link__
-
-	![](./images/tools-download.png)
-
-    Use "wget" to download the tar package, and "tar xvf" to expand it.
-
-    Then use the following shell command to add the new bin directory to the path:
-
-    ```
-    <copy>
-    echo export PATH=$(dirname `find /home/opc -name mongoimport`):\$PATH >> .bashrc && . .bashrc
-    </copy>
-    ```
-
-    ![](./images/mdb-tools.png)
 
 Our Compute instance is now set up. We will later use it to connect to Autonomous Database. Remember the "ssh" command you used to connect from Cloud Shell to the instance.
 
