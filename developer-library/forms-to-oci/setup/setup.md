@@ -1,0 +1,177 @@
+# Explore the Forms installation 
+
+Estimated Lab Time: 10 minutes
+
+### About Forms
+Oracle Forms is a software product for creating screens that interact with an Oracle database. 
+The source form (fmb) is compiled into a platform-specific "executable" (fmx), that is run (interpreted) by the forms runtime module. The form is used to view and edit data in database-driven applications. Various GUI elements, such as buttons, menus, scrollbars, and graphics can be placed on the form. 
+
+### Objectives
+
+In this lab, you will:
+* Check the main files and directory created by the Oracle Forms Image
+* Check the URLs that are preinstalled.
+
+### Prerequisites 
+
+This lab assumes you have:
+* All previous labs successfully completed
+
+## Task 1: Check the Main Files and Directories
+
+Let's look at the important files and directories.
+
+### 1. DOMAIN_HOME
+
+A Forms server is a Weblogic (Java Server) with Forms installed on top of it. The Weblogic configuration files are installed in a **Domain**. You can find the domain here.
+
+```
+export DOMAIN_HOME=/u01/oracle/middleware/user_projects/domains/base_domain/
+cd $DOMAIN_HOME
+ls
+```
+
+```
+autodeploy     bin     config       fileRealm.properties  lib          resources  startWebLogic.sh  tmp
+backup_config  common  console-ext  init-info             nodemanager  security   sysman
+```
+
+### 2. Oracle Forms Runtime configuration
+
+The main files to configure Oracle Forms Runtime are: 
+- formsweb.cfg : who contains the list of configurations to start your Forms programs
+- default.env : who contains the FORMS environment variables used at runtime.
+
+Let's look at them.
+
+```
+export FORMS_CONFIG=/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/servers/WLS_FORMS/applications/formsapp_12.2.1/config
+cd $FORMS_CONFIG
+```
+
+```
+cat default.env
+...
+# default.env - default Forms environment file, Linux version
+# 
+# This file is used to set the Forms runtime environment parameters.
+# If a parameter is not defined here, the value used will be that defined
+# in the environment in which the WLS Managed Server was started.
+# 
+# NOTES
+#    Configuration assistant will replace all the macro's with
+#    the actual values.
+# 
+ORACLE_HOME=/u01/oracle/middleware/Oracle_Home
+FORMS_INSTANCE=/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/components/FORMS/instances/forms1
+# 
+# 
+# TNS Entry to locate the database
+# 
+TNS_ADMIN=/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig
+FORMS_PATH=/u01/oracle/middleware/Oracle_Home/forms:/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/components/FORMS/instances/forms1:/home/opc/oracle/formsmodules
+# 
+# 
+...
+```
+
+There are important things to notice about the runtime configuration:
+- ORACLE\_HOME (Directory with Forms Binaries) is in /u01/oracle/middleware/Oracle_Home
+- TNS\_ADMIN (Directory with connection to the Database) is per default is $DOMAIN_HOME/config/fmwconfig
+- FORMS\_PATH (Directory your your Forms program) includes /home/opc/oracle/formsmodules
+
+```
+cat formsweb.cfg
+...
+[webstart]
+basejnlp=base.jnlp
+webstart=enabled
+
+[webutil_webstart]
+WebUtilLogging=off
+WebUtilLoggingDetail=normal
+WebUtilErrorMode=Alert
+WebUtilDispatchMonitorInterval=5
+WebUtilTrustInternal=true
+WebUtilMaxTransferSize=16384
+basejnlp=webutil.jnlp
+webstart=enabled
+...
+```
+
+In the **formsweb.cfg** file, we see several configurations that can be used to start Forms in URL like:
+
+```
+http://xxxxx/forms/frmservlet?config=&lt;config name&gt;
+ex: http://xxxxx/forms/frmservlet?config=webstart
+```
+
+### 4. TNS_ADMIN
+
+The TNS\_ADMIN used by the runtime is $DOMAIN\_HOME/config/fmwconfig. Let's check it:
+
+```
+cd $DOMAIN_HOME/config/fmwconfig
+cat tnsnames.ora 
+```
+
+```
+ORCL = 
+  (DESCRIPTION = 
+    (ADDRESS = (PROTOCOL = TCP)(HOST = forms.subnet03211405.vcn03211405.oraclevcn.com)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+       (SERVICE_NAME = orcl)
+   )
+  )
+```
+
+### 5. Database (Local DB only)
+
+If you are using the Local DB for the RCU and optionally your own schemas. You can find the database in /u01/oracle/database/base/Oracle_Home.
+Let's connect to it.
+
+```
+cat /etc/oratab 
+```
+```
+...
+#
+orcl:/u01/oracle/database/base/Oracle_Home:N
+```
+The file /etc/oratab defines the list of ORACLE\_HOME environments
+```
+. oraenv
+orcl
+sqlplus system/LiveLab__123@orcl
+```
+
+```
+SQL*Plus: Release 19.0.0.0.0 - Production on Tue Mar 22 08:33:27 2022
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL> 
+```
+
+## Task 2: Test the URLs.
+
+Notice that the installation has created the following URLs:
+
+- Test forms URL: [http://localhost:9001/forms/frmservlet?config=webstart](http://localhost:9001/forms/frmservlet?config=webstart)
+- Weblogic Console: [http://localhost:7001/console](http://localhost:7001/console) ( weblogic / LiveLab1 )
+- FADS console: [http://localhost:7001/fadsui](http://localhost:7001/fadsui) ( weblogic / LiveLab1 )
+
+## Learn More
+
+* [Forms Documentation](https://docs.oracle.com/en/middleware/developer-tools/forms/12.2.1.4/index.html)
+
+## Acknowledgements
+* Marc Gueury - Application Development EMEA
+* Last Updated - March 2022
