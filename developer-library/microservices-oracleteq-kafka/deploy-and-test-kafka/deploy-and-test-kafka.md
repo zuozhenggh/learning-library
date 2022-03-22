@@ -168,14 +168,17 @@ This workshop makes the source codes of the two microservices available; We invi
     <copy>
     curl -X POST -H "Content-Type: application/json" \
     -d '{ "id": "id1", "message": "message1" } ' \
-    http://localhost:8080/placeMessage
+    http://localhost:8080/placeMessage | jq
     </copy>
     ```
 
     The result should be
 
     ```bash
-    {"id":"0","statusMessage":"Successful"}
+    {
+        "id": "0",
+        "statusMessage": "Successful"
+    }
     ```
 
     We also can validate if the message was published inside topic LAB8022_TOPIC.
