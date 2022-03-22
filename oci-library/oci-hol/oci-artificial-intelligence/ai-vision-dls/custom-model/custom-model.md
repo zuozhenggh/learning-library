@@ -1,4 +1,4 @@
-# Lab 2: Create a custom AI Vision Model
+# Create a custom AI Vision Model
 
 ## Introduction
 In this lab, you will use the labeled dataset created in Lab 1 to train a custom image classification model. The image classification model will classify the images as either cell, stripe, or debris within a certain confidence.
