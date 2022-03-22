@@ -1,4 +1,4 @@
-# Customer Insurance Use Case
+# Understand customer insurance use case
 
 ## Introduction
 
