@@ -8,13 +8,15 @@ This lab is organized into different topics, each topic consists of multiple ste
 
 ### Workshop Scenario
 
-This workshop is loosely based on the video below where an "order processing system' is described. In this workshop, we implement an online shop selling used products: popular items like movies, posters, merchandise from the 80s, 90's and 2000s (maybe you find your favorite movie?). We show how the product catalog can be managed with JSON in a very schema-flexible way - allowing to add new product types on the fly. We also show how multiple JSON collections (products, shopping carts, orders, etc) play well together using SQL and JOIN, etc.
+In this workshop we'll implement a very simple employee database. 
 
-This workshop is not a 'cookbook' or 'design guideline' on how to build an online shop - the purpose is to illustrate various JSON features that the Oracle Database offers. That said, you likely find that many examples are applicable to your business needs!
+We'll create an Autonomous JSON Database, and connect to it using the standard "MongoDB Shell" tool. We'll use that to create an employee collection, and populate it with some employee records.
 
-The workshop uses the 'Autonomous JSON Database' cloud service. But everything shown here also works in other Oracle cloud and on-premise databases.
+We'll then explore the same data using "Database Actions" in Oracle's Cloud Infrastructure.
 
-You can complete this entire workshop using your web browser. There is no need to install any extra software. Obviously, when writing a real application, you would call many of the functionalities from a programming language like Java, JavaScript(nodeJS) or Python.
+You can complete this entire workshop using your web browser. There is no need to install any extra software. For simplicity, we will run the command-line MongoDB shell program from a non-graphical virtual machine (Compute Node).
+
+If you have MongoDB tools such as MongoDB Shell or MongoDB Atlas installed on your own machine, you could run the MongoDB commands from there instead. However, the workshop will assume at all times that you are following the provided instructions.
 
 This workshop consists of multiple 'labs' - each describing one aspect or feature. This lab has been designed for 19c AJD database but should also work on 21c AJD database and these concepts are also applicable to on-premise versions.
 
@@ -93,6 +95,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 
-* **Author** - Beda Hammerschmidt, Architect
-* **Contributors** -  Anoosha Pilli, Product Manager, Oracle Database
-* **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
+* **Author** - Roger Ford, Principal Product Manager
+* **Last Updated By/Date** - Roger Ford, March 2022

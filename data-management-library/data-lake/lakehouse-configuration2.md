@@ -51,7 +51,7 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 
     Copy and paste the following URI into the URI + Bucket field:
 
-    ```
+   ```
     <copy>
     https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_landing/o
     </copy>
@@ -64,27 +64,6 @@ In this step, you will set up access to the two buckets on Oracle Object Store t
 7. The page now invites us to load data from this area. In this case, we want to set up access to an additional cloud location first. Click **Data Load** in the top left of your screen to go back to the main Data Load page.
 
     ![Click Data Load](./images/todataload.png " ")
-
-8. In the **Explore and Connect** section, click **CLOUD LOCATIONS**, then to add access to the Moviestream gold area, click **+Add Cloud Storage**.
-
-    - In the **Name** field, enter 'CustomerSales'
-
-        > **Note:** Take care not to use spaces in the name.
-
-    - Leave the Cloud Store selected as **Oracle**
-    - Copy and paste the following URI into the URI + Bucket field:
-
-    ```
-    <copy>
-    https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o
-    </copy>
-    ```
-    ![Click Data Load](./images/customersales2.png " ")
-    
-    - Select **No Credential** as this is a public bucket.
-    - Click the **Test** button to test the connection. Then click **Create**.
-
-    We now have the cloud storage locations set up.
 
 ## Task 2: Load data from files in Object Storage using Data Tools
 
@@ -123,14 +102,6 @@ In this step, we will perform some simple data loading tasks, to load in CSV fil
 10. Check that all three data load cards have green tick marks in them, indicating that the data load tasks have completed successfully.
 
     ![Check the job is completed](./images/loadcompleted2.png " ")
-
-11. From the CUSTOMERSALES location, drag the json file EXPORT\_STREAM\_2020\_UPDATED\_COLLECTION over to the right hand pane. We will load the sales data later but this file will be used for the Data Flow Application.
-
-    ![CustomerSales load task](./images/customersales3.png " ")
-
-12. Now click the Play button to run the data load job.
-
-13. Click the **Done** button in the bottom right of the screen.
 
 This completes the data load lab. We now have a full set of structured tables loaded into the Autonomous Database from the MovieStream Data Lake. We will be working with these tables in later labs.
 
