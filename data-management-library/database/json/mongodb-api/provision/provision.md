@@ -181,7 +181,7 @@ In this lab, you will:
 
     ![](./images/service-console-dev.png)
 
-3. Scroll down to the bottom of the Development page, and you should see a card titled Oracle Database API for MongoDB (if you don't, it's possible you didn't set up secure access to your database). There are two URLs listed, copy them both and save them in a text file somewhere for later use.
+3. Scroll down to the bottom of the Development page, and you should see a card titled Oracle Database API for MongoDB (if you don't, it's possible you didn't set up secure access to your database). There are two URLs listed, copy the first one and save it in a text file somewhere for later use.
 
     ![](./images/mongo-urls.png)
 
