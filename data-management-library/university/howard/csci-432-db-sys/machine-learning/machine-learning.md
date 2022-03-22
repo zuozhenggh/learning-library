@@ -65,39 +65,29 @@ An administrator creates a new user account and user credentials for Oracle Mach
 
 > **Note:** You must have the administrator role to access the Oracle Machine Learning User Management interface.
 
-To create a user account:
-
-1. Sign into your OCI account, click the hamburger on the left to open the left navigation pane, and click **Autonomous Data Warehouse**.
-
-	![Oracle Autonomous Data Warehouse](images/adw.png)
-
-2. Click on the Autonomous Database instance.   
-
-	![Oracle Autonomous Data Warehouse](images/provisioned-adb.png)
-
-3. On the Autonomous Database Details page, click **Service Console**.
+1. On the Autonomous Database Details page, click **Service Console**.
 
 	![Oracle Autonomous Data Warehouse](images/service-console.png)
 
-4. On the Service Console, click **Administration**.
+2. On the Service Console, click **Administration**.
 
 	![Oracle Autonomous Data Warehouse](images/administration.png)
 
-5. Click **Manage Oracle ML Users** to open the Oracle Machine Learning User Administration page.
+3. Click **Manage Oracle ML Users** to open the Oracle Machine Learning User Administration page.
 
 	![Oracle Autonomous Data Warehouse](images/manage-oml-users.png)
 
-6. On the Oracle Machine Learning User Administration Sign in page, enter the username and password to sign in.
+4. On the Oracle Machine Learning User Administration Sign in page, enter the username and password to sign in.
 
 	> **Note:** The username is ADMIN. For the password, use the password you defined while provisioning the Autonomous Database instance.   
 
 	![Oracle Machine Learning User Administration Sign in page](images/database-admin-signin.png)
 
-7. Click **Create** on the Oracle Machine Learning User Administration page.
+5. Click **Create** on the Oracle Machine Learning User Administration page.
 
 	![Oracle Autonomous Data Warehouse](images/oml-um-page.png)
 
-8. On the Create User page, enter the following details to create the user:
+6. On the Create User page, enter the following details to create the user:
 
 	![Oracle Autonomous Data Warehouse](images/omluser-creation.png)
 
@@ -111,11 +101,9 @@ To create a user account:
 
 	* **Confirm Password:** Enter the password to confirm the value that you entered in the **Password** field. By doing so, you create the password for the user. The user can change the password when first Signing in.
 
-9. Click **Create**. After the user is created, it is listed on the Oracle Machine Learning User Administration page. This completes the task of creating an Oracle Machine Learning user.
+7. Click **Create**. After the user is created, it is listed on the Oracle Machine Learning User Administration page. This completes the task of creating an Oracle Machine Learning user.
 
 	 ![Oracle Autonomous Data Warehouse](images/omluser-created.png)
-
-	 > **Note:** Click on the home icon on the top right corner of the Oracle Machine Learning User Administration page to open the Oracle Machine Learning Notebooks home page.
 
 **Sign into Oracle Machine Learning**
 
@@ -157,7 +145,7 @@ To create the table:
 
 	![Create Notebook dialog](images/scratchpad.png)
 
-3. In the SQL paragraph, enter the following script and click the Run icon ![run icon](images/run.png):
+3. In the SQL paragraph copy the following statement and past it on the `%sql` paragraph. Make sure you paste in starting in a new line as shown (add a carriage return after the `%sql` to go to a new line) and click the Run icon ![run icon](images/run.png):
 
     ```
     <copy>
@@ -177,7 +165,11 @@ To create the table:
 
 	![SQL script to create Customers360 table](images/scratchpad-finished.png)
 
-4. In the next paragraph, edit the paragraph tag to change it to `%sql`, and run the following statement to view the data:
+4. Add a new paragraph to run another SQL paragraph. To do that hold  your mouse at the bottom of the paragraph you just ran and a “+ Add Paragraph” option will appear. Click on it and a new empty paragraph will open right under it.
+
+	![Add new paragraph to run another SQL paragraph](images/add-paragraph-howard.png)
+
+5. To view the data in the table you just created, copy and paste the following sql statement into the new paragraph (again in a new line after the `%sql`) and click the Run icon ![run icon](images/run.png):
 
 	```
 		<copy>
@@ -247,178 +239,33 @@ This step demonstrates how to create the OML4Py Classification notebook based on
 
 This completes the task of creating a notebook from an Example template.
 
-
-### Create a Time Series Notebook using the OML4SQL Time Series Template Example
-
-These steps demonstrate how to create the Time Series notebook based on the Example template:
-
-7. Click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the page to open the left navigation menu. Click **Examples** under Templates to open the Examples page. If you choose to go to the home page, then click **Home** on the left navigation pane, and then click **Examples**.
-
-	![hamburger](images/hamburger-gen.png)
-
-	![Go to Examples](images/goto-examples.png)
-
-8. Navigate to the **OML4SQL Time Series ESM** example template notebook. You may type ESM in the search box on the upper right corner of the page to get a list of the ESM-related notebooks. Click the grey box around the notebook. This highlights the notebook and enables the **Create Notebook** button. Click **Create Notebook**.
-
-	![Create Notebook](images/oml4sql-time-series.png)
-
-9. The Create Notebook dialog opens. By default, the **Name** field displays the same name as the template with the suffix `(1)`. You can edit this field. In this example, we will retain the auto-generated name **OML4SQL Time Series ESM (1)** and click **OK**.
-
-	> **Note:** In the Project field, the current user, project and workspace is selected by default. You have the option to choose a different project or a workspace by clicking the edit icon here.  
-
-	![Create Time Series notebook from example template](images/create-notebook-time-series.png)
-
-
-10. Once the notebook is created, the message _Notebook "OML4SQL Time Series ESM (1)" created in project "OMLUSER Project"_ is displayed. The notebook is now available in the Notebooks page.
-
-	![Time Series notebook message](images/esm-notebook-message.png)
-
-
-11. To view the notebook, click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the page to open the left navigation menu. Click **Notebooks** to go to the Notebooks page.
-
-	![hamburger](images/hamburger-gen.png)
-	![Notebooks in left navigation menu](images/notebooks-left-nav-pane.png)
-
-
-12. The notebook **Notebook "OML4SQL Time Series ESM (1)** is now listed on the Notebooks page, as shown in the screenshot. Click on the notebook to open it in the Notebooks editor and work on it.
-
-	![Notebook listed](images/notebook-list-1.png)
-
-This completes the task of creating the Time Series notebook from the OML4SQL Time Series ESM Example template.
-
-**Change Interpreter Bindings Order**
-
-An interpreter allows using a specific data processing language at the backend to process commands entered in a notebook paragraph. For the notebooks in Oracle Machine Learning, you use the following interpreters:
-
-* SQL interpreter for SQL Statements
-* PL/SQL  interpreter for PL/SQL scripts/statements
-* Python interpreter to process Python scripts
-* md (MarkDown) interpreter for plain text formatting syntax so that it can be converted to HTML.
-
-This is the initial binding order of the interpreters. You can change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
-
-* **Low** (Default): Provides the least level of resources for in-database operations, typically serial (non-parallel) running of database operations. It supports the maximum number of concurrent in-database operations by multiple users. The interpreter with low priority is listed at the top of the interpreter list, and hence, is the default.
-* **Medium:** Provides a fixed number of CPUs to run in-database operations in parallel, where possible. It supports a limited number of concurrent users, typically 1.25 times the number of CPUs allocated to the Autonomous Database instance.
-* **High:** Provides the highest level of CPUs to run in-database operations in parallel, up to the number of CPUs allocated to the Autonomous Database instance. It offers the highest performance but supports the minimum number of concurrent in-database operations, typically 3.
-
-	> **Note:** The interpreter binding order that is set for a notebook applies to all the paragraphs in that notebook. However, you can override the binding of an individual paragraph also. This is an advanced topic, and is not covered in this workshop.
-
-In this step, you learn how to set the interpreter bindings:
-1. Go to the Notebooks page by clicking the hamburger icon on the top left corner of the page. On the left navigation menu, click **Notebooks**.
-
-	![hamburger](images/hamburger-gen.png)
-	![Notebooks in left navigation menu](images/notebooks-left-nav-pane.png)
-
-2. On the Notebooks page, click on the **OML4PY Classification_DT (1)** notebook to open it in the Notebook editor.
-
-	![Open Classification notebook](images/open_classification_dt.png)
-
-3. Click ![gear icon](images/gear.png) on the top right corner of the notebook. This opens the interpreter settings.
-
-	![Gear icon](images/interpreter-binding-icon.png)
-
-4. Click **medium**, and drag and drop it on top of the list.
-
-	![Drag and drop an interpreter binding](images/drag-int-binding.png)
-
-	>**Note:** You can disable a particular binding by deselecting it (turns from blue to white) or enable it by selecting it (turns from white to blue). However, this does not require dragging the enabled interpreters above the disabled ones.
-
-
-	![Enable and disable interpreter binding](images/enable-disable-int-bindings.png)
-
-5. Once you successfully drag and drop it on top of the list, click **Save**.
-
-	![Save interpreter binding order](images/save-order.png)
-
-Clicking **Save** records the changes and hides the interpreter settings. You can verify it again by clicking the gear icon ![gear icon](images/gear.png). This completes the task of changing the interpreter binding order.
-
-**Create Jobs to Schedule Notebook Run**
-
-Jobs allow you to schedule the running of notebooks. On the Jobs page, you can create jobs, duplicate jobs, start and stop jobs, delete jobs, and monitor job status by viewing job logs, which are read-only notebooks. In this lab, you will learn how to create a job to schedule the running of the notebook Classification_DT.
-
-To create a job:
-
-1. Click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the page to open the left navigation menu, and click **Jobs** to go to the Jobs page. You can also go to Jobs from the Oracle Machine Learning home page by clicking **Jobs**.
-	![hamburger](images/hamburger-gen.png)
-	![Job](images/jobs.png)
-
-2. On the Jobs page, click **Create**. The Create Job dialog opens.
-
-	![Create Job](images/create-job.png)
-
-3. In the **Name** field, enter `Job1`. The number of characters in the job name must not exceed 128 bytes.
-
-	![Create Job](images/create-jobs1.png)
-
-4. In the **Notebook** field, click the search icon. This opens the Search Notebook dialog. In the Search Notebook dialog, navigate through the OMLUSER workspace and OMLUSER project, select `OML4PY Classification_DT (1)`, and click **OK**.
-
-	> **Note:** Only notebooks that are owned by the user or shared are available for selection.
-
-	![Select notebook to schedule job](images/select-notebook-for-job.png)
-
-5. In the **Start Date** field, click the date-time editor to set the date and time for your job to commence. You can select the current date or any future date and time. Based on the selected date and time, the next run date is computed.
-
-6. Select **Repeat Frequency** and enter **3**, and select **Days** to set the repeat frequency and settings. You can set the frequency in minutes, hours, days, weeks, and months.
-
-7. Expand **Advanced Settings**, and specify the following settings:
-
-	![Create Job](images/create-jobs2.png)
-
-	* **Maximum Number of Runs:** Select **3**. This specifies the maximum number of times the job must run before it is stopped. When the job reaches the maximum run limit, it will stop.  
-
-	* **Timeout in Minutes:** Select **60**. This specifies the maximum amount of time a job should be allowed to run.
-
-	* **Maximum Failures Allowed:** Select **3**. This specifies the maximum number of times a job can fail on consecutive scheduled runs. When the maximum number of failures is reached, the next run date column in the Jobs UI will show an empty value to indicate the job is no longer scheduled to run. The Status column may show the status as `Failed`.
-
-		> **Note:** Select **Automatic Retry** if you do not wish to specify the maximum failures allowed manually.  
-
-8. Click **OK**. The job is now listed on the Jobs page with the status SCHEDULED.
-
-	![Job created](images/job-created1.png)
-
-
-9. Click on the job row to enable the options to either **Edit**, **Duplicate**, **Start**, or **Delete** the selected job.
-
-
-	![Job created](images/job-created.png)
-
-This completes the task of creating a job.
-
 ## Task 4: Machine Learning for Python
 
-**Create a Database Table**
+With OML4Py, you can create Python proxy objects that can be used to access, analyze, and manipulate data that reside in the database. OML4Py uses these proxy objects and transparently translates many standard Python functions into SQL.
 
-With OML4Py, you can create Python proxy objects that can be used to access, analyze, and manipulate data that reside in the database. OML4Py uses these proxy objects and transparently translates many standard Python functions into SQL. First access the OML4Py Classification DT (1) notebook and then create the database table.
+For this section of the lab we will be using the iris data set as the source data for creating our machine learning algorithms.  
 
-### Access the OML4Py Classification DT (1) notebook
+1. To get started we will create a new notebook. From the hamburger menu on the top left of the OML page select **Notebooks**
 
-This step illustrates how you can access the OML4Py Classification DT (1) notebook available on the Notebook page which was created in Lab 1. The OML4Py Classification DT (1) notebook was created based on the example template of the OML4Py Classification Decision Tree.
-1. Click the hamburger icon ![Hamburger Icon](images/hamburger-icon.png) on the top left screen. Click Notebooks to proceed to the Notebook page.
-	![Illustration of Hamburger Icon with OML.](images/hamburger-oml.png)
-	![Left pane navigation to Notebooks through hamburger icon.](images/left-pane-navigation.png)
+	![Click Notebooks](images/click-notebooks.png)
 
-2. The Notebook page opens with the list of notebooks available. Click the OML4Py Classification DT (1) notebook to open it.
-	![List of Notebooks available.](images/list-notebooks-available.png)
+2. When the Notebooks page appears, click on **+Create**
 
-3. The OML4Py Classification DT (1) notebook opens up in the notebook editor. Click the gear icon ![Gear Icon](images/gear-icon.png) on the top right corner of the notebook to view and set the interpreter binding order.
-	![Illustration for getting the configuration for interpreter](images/getting-configuration-interpreter.png)
-	You can change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
-	![Illustration for configuring interpreter](images/configuring-interpreter.png)
-	Click **Save** to set the interpreter bindings.
+	![Click +Create](images/plus-create.png)
 
-4. Click the play icon next to the title of the notebook to run all paragraphs.
-	![Illustration for running all paragraph](images/run-all-paragraphs.png)
+3. Name your notebook **OML4Py Classification DT** and click **OK**. The Notebook server will start, this may take a few moments. Once the Notebook starts you will have an empty Notebook and a single empty paragraph.
 
-5. Click **OK** to confirm in the confirmation dialogue.
-	![Confirmation for running all paragraph](images/confirmation-run-all-paragraphs.png)
+	![Empty Notebook](images/empty-notebook.png)
 
-6. The paragraphs start running one by one and display the status next to the paragraph titles. When the paragraph is running, the status displays **PENDING** and when it finishes, it displays **FINISHED**.
-	![Illustration for pending on a paragraph](images/pending-paragraph.png)
-	![Illustration for finished on a paragraph](images/finished-paragraph.png)
+	**Note:** For the remainder of this lab section we will be executing Python code in new paragraphs in the notebook. As you execute each paragraph, a new empty paragraph should open up below it for your next code run. If it does not, to open up a new paragraph, hold your mouse at the bottom of the current paragraph and a **+ Add Paragraph** option will appear. Click on it and a new empty paragraph will open right under it. 
 
-In this step, the iris data set is used for illustrative purposes to load the data into a temporary database table. Such temporary tables are automatically deleted when the OML Notebook connection to the database ends unless you have saved its proxy object to a datastore, which we'll discuss in step 10, before disconnecting.
-To use OML4Py, you must first import the `oml` module and the Pandas library. Use the `oml.push` function to create a temporary table.
-1. Run the following scripts to import the `oml` package, the Pandas library, and set the display options:
+	![Click +Add Paragraph](images/arrow-add-paragraph.png)
+
+4. To use OML4Py, you must first import the `oml` module and the Pandas library. Use the `oml`.push function to create a temporary table.
+
+	**Note:**  As you run code in the paragraphs, make sure the first line of the paragraph contains **%python**. When a new paragraph is created, the **%python** is automatically populated after the first time. As you copy and paste code, make sure it only appears one time and not twice or the code won’t run.
+
+5. Run the following scripts to import the `oml` package, the Pandas library, and set the display options:
 	```
 	<copy>
 	%python
@@ -431,7 +278,7 @@ To use OML4Py, you must first import the `oml` module and the Pandas library. Us
 	pd.set_option('display.width', 1000)
 	</copy>
 	```
-2. Load the iris data into a single DataFrame. Use the `oml.push` function to load this Pandas DataFrame into the database, which creates a temporary table and returns a proxy object that you can use for IRIS_TMP.
+6. Load the iris data into a single DataFrame. Use the `oml.push` function to load this Pandas DataFrame into the database, which creates a temporary table and returns a proxy object that you can use for IRIS_TMP.
 
 	```
 	<copy>
@@ -1004,99 +851,13 @@ You can score data and make similar predictions using the SQL interface. The tes
 	The output is similar to the following:
 	![Illustration of prediction of model on materialized test data and its greatest attribute influence on the prediction.](images/score-predict-sql-interface.png)
 
-**Save and Load Python Objects in a Datastore Instance**
-
-You can save the python objects you create in one python session and load them in another session using the OML4Py datastore. Python objects and OML4Py proxy objects exist only during the current Python session, unless they are saved to a Datastore. OML4Py creates the datastore in the current user’s database schema. Until you delete the datastore and objects, they remain in the database. OML4Py provides functions for managing the objects in the datastore, such as `oml.ds.save`, `oml.ds.load`, `oml.ds.dir`, and so on.
-
-1. First insert a new paragraph at the bottom of the Notebook. Click on the gear icon in the top-right corner of the last paragraph. Then, click on **Insert new** in the drop-down list. The default paragraph shows %md indicating that it is a markdown paragraph. To run a Python code, enter %python to change it to a Python paragraph.
-	![Drop down-list of setting of a paragraph.](images/setting-paragraph.png)
-
-2. To save one or more python objects to a datastore, use the `oml.ds.save` function. Here the DataFrame object is stored to `ds_pydata` and python model object is stored to `ds_pymodel`.
-	- To save IRIS and res_df `oml.DataFrame` proxy object to the `ds_pydata` datastore, run the script below. Use the oml.sync function to create a python object as a proxy for IRIS table (see Task 3). You can give some descriptive text using the description argument, which will appear when you get information on the datastore.
-	```
-	<copy>
-	%python
-	IRIS = oml.sync(table='IRIS')
-	oml.ds.save(objs={'iris':IRIS, 'res_df':RES_DF},name="ds_pydata", description = "python datasets", overwrite=True)
-	</copy>
-	```
-	- Run the below script to save the `dt_mod` model proxy object to the `ds_pymodel` datastore. When the **overwrite**  boolean argument is set to TRUE (overwrite=TRUE), an existing datastore is replaced with a new datastore with the same name.
-	```
-	<copy>
-	%python
-	oml.ds.save(objs={'dt_mod':dt_mod},name="ds_pymodel",description = "python model", grantable=True, overwrite=True)
-	</copy>
-	```
-	- The `oml.ds.dir` function returns a list of existing datastores that are available to you. Run the script below to get the list.
-	```
-	<copy>
-	%python
-	oml.ds.dir()
-	</copy>
-	```
-	The output is similar to the following:
-	![List of all datastore available and their object_count, size, date and description.](images/datastore-list.png)
-	The output also includes the size in bytes consumed, the date, and the descriptive text provided by the user when loading the python objects into the datastore.
-
-3. In this step, you will use `oml.ds.load` function for loading one or more python objects from the datastore to the global workspace or the user's workspace.
-	- Run the following script to load all the python objects of a datastore into global Workspace and sort them by their name.
-		```
-		<copy>
-		%python
-		sorted(oml.ds.load(name="ds_pydata"))
-		</copy>
-		```
-		![Sorted list of python proxy objects in a datastore.](images/sorted-objects-datastore.png)
-
-	- Run the following script to load the named python object from the datastore into the global workspace.
-		```
-		<copy>
-		%python
-		oml.ds.load(name="ds_pymodel", objs=["dt_mod"])
-		</copy>
-		```
-		The output is similar to the following:
-		![list of python model proxy objects in a datastore.](images/model-object-datastore.png)
-
-	-	Run the following script to use the `dt_mod` model from the datastore to make predictions on the test data using the predict function.
-		```
-		<copy>
-		%python
-		RES_DS= dt_mod.predict(TEST_X, supplemental_cols = TEST_X)
-		z.show(RES_DS)
-		</copy>
-		```
-		The output is similar to the following:
-		![Rows of res_ds after prediction by loaded model.](images/rows-res-ds.png)
-
-	- Run the following script to load the named python object from the datastore into the user's workspace.
-		```
-		<copy>
-		%python
-		oml.ds.load(name="ds_pymodel", objs=["dt_mod"], to_globals=False)
-		</copy>
-		```
-		The output is similar to the following:
-		![Illustration of a dictionary object containing the models name and value.](images/loaded-dictionaryobject-datastore.png)
-		Also, the boolean input **to\_globals** is set to True by default. If to\_global=True then the `oml.ds.load` loads the python object to the global workspace. If to\_global=False, then the `oml.ds.load` function returns a dictionary object containing the object's name and value.
-		To learn more about how to use datastores to store python objects click this [link](https://docs.oracle.com/en/database/oracle/machine-learning/oml4py/1/mlpug/save-python-objects-in-database.html#GUID-C02396D1-2B30-47A0-AE27-37B123E15710).
-
-In this example, you classified customers who are most likely to be positive responders to an Affinity Card loyal program. You built and applied a classification decision tree model using the Sales history (SH) schema data. You were also able to successfully identify the top **N** attributes that are important to the model built.
-
 ## Task 5: Machine Learning AutoML UI
  
  **Access Oracle Machine Learning AutoML UI**
 
 To access AutoML UI, you must sign into the Oracle Machine Learning User Interface, which also includes Oracle Machine Learning notebooks, on Autonomous Database:
 
-
-1. Sign into Oracle Machine Learning user interface.
-
-2. On your Oracle Machine Learning home page, click **AutoML** in the Quick Actions section.
-
-	![home page](images/homepage-automl.png)
-
-	Alternatively, you can click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the home page to open the left navigation menu. Click **AutoML**. This opens the AutoML Experiments page.
+Click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the home page to open the left navigation menu. Click **AutoML**. This opens the AutoML Experiments page.
 
 	![home page](images/hamburger-automl.png)
 
@@ -1118,9 +879,9 @@ When creating an Experiment, you must define the data source and the target of t
 
 4. In the **Comments** field, enter comments, if any.
 
-5. In the **Data Source** field, click the search icon to open the Select Table dialog. Under Schema, click **ADMIN** and on the right pane, click **CUSTOMERS360** from the list of tables. Click **OK**.
+5. In the **Data Source** field, click the search icon to open the Select Table dialog. Under Schema, click **OMLUSER** and on the right pane, click **CUSTOMERS360** from the list of tables. Click **OK**.
 
-	>**Note:** The Customers360 table is present in the ADMIN schema.
+	>**Note:** The Customers360 table is present in the OMLUSER schema.
 
 	![Create Experiment dialog](images/select-customer360.png)
 
@@ -1219,154 +980,4 @@ The Leader Board displays the top performing models relative to the model metric
 	![Go to Experiments page](images/goto_exp.png)
 
 	Alternatively, you can click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the experiment page and click **AutoML** on the left navigation menu.
-
-**Deploy Top Model to Oracle Machine Learning Services**
-
-When you deploy a model using the Oracle Machine Learning AutoML UI, you create an Oracle Machine Learning Services endpoint for scoring. Oracle Machine Learning Services extends Oracle Machine Learning functionality to support model deployment and model lifecycle management for in-database OML models through REST APIs.
-
->**Note:** Through Oracle Machine Learning AutoML UI, you can deploy in-database models only, not ONNX-format models.
-
-To deploy a model:  
-
-1. Go to the AutoML Experiments page by clicking the hamburger icon on the top left corner of the page. Click **AutoML** on the left navigation menu.  
-
-	![home page](images/hamburger-gen.png)
-	![home page](images/hamburger-automl.png)
-
-2. On the AutoML Experiments page, click on the **Customer 360** experiment to open it.
-
-	![Experiments page](images/open-customers-360.png)
-
-3. Scroll down to the Leader Board of the experiment, click on the **NB_CUSTOMER360** model row. Clicking on a model row enables all the Leader Board options - Deploy, Rename, Create Notebooks, and Metrics. Click **Deploy**. The Deploy Model dialog opens.
-
-	![Deploy Model option in Leader Board](images/deploy-model-nb.png)
-
-	>**Note:** You can also deploy a model from the Models page. You can access the Models page from the home page and the left navigation menu.  
-
-4. In the Deploy Models dialog, enter the following details:
-
-	![Deploy Model dialog](images/deploy-model.png)
-
-5. In the **Name** field, the model name is displayed here by default. In this example, the name `NB_CUSTOMER360` is displayed. This is the name that you renamed in the previous step. Edit this name to change it to **NaiveBayes_CUST360**. The model name must be a unique alphanumeric name with a maximum of 50 characters.
-
-6. In the **URI** field, enter **nb_cust360**. The URI must be alphanumeric, and the length must be max 200 characters.
-
-7. In the **Version** field, enter **1.0**. The version must be in the format ``xx.xx`` where x is a number.
-
-8. In the **Namespace** field, enter **DEMO**. This is the name for the model namespace. You can specify any name here to create different namespaces.
-	>**Note:** Namespace is case sensitive.
-
-9. Click **Shared** to allow users with access to the database schema to view and deploy the model.
-
-10. Click **OK**. After a model is successfully deployed, a confirmation message is displayed stating that _The selected model has been deployed successfully_, as shown in the screenshot below. The deployed model is listed under Deployments.
-
-	![Deploy Model option in Leader Board](images/model-deployed-message.png)
-
-This completes the task of deploying the top model Naive Bayes to Oracle Machine Learning Services.
-
-**View Oracle Machine Learning Models with Deployed Metadata and REST Endpoint**
-
-The deployed models are listed under **Deployments** on the Models page. To view the metadata of the deployed model **NaiveBayes_CUST360**:
-
-1. To go to Deployments, click the hamburger icon ![hamburger icon](images/hamburger.png) to open the left navigation menu. Click  **Models**. Alternatively, you can click **Models** on the Oracle Machine Learning home page.
-
-  ![Models](images/models-option.png)
-
-2. On the Models page, click **Deployments**.
-
-	![Deployments](images/deployments-tab.png)
-
-2. The deployed model **NaiveBayes_CUST360** is listed along with the metadata - Shared, version, namespace, owner, deployed date and URI under **Deployments** on the Models page.
-
-	![List of deployed models on the Deployments page](images/deployed-models.png)
-
-3. To view the metadata of the deployed model, click the name of the deployed model `NaiveBayes_CUST360`.  The model metadata is listed in the **Model metadata for NaiveBayes_CUST360** dialog.
-
-	![View model metadata](images/naivebayes-cust360-metadata.png)
-
-4. To view the entire JSON of the REST endpoint, click the URI `nb_cust360`. All details of the deployed model are listed in the **OPEN API Specification for NaiveBayes_CUST360** dialog, as shown in the screenshot. Scroll down to view all details of the endpoint.
-
-	![View JSON endpoints](images/nb-cust360-endpoint.png)
-
-This completes the task of viewing the metadata of the deployed model, and its endpoint.
-
-**Create a Notebook for the Top Model**
-
-You can create notebooks based on the top models produced in the experiment. This provides the code to build a model with the same settings for the selected model. This option is helpful if you want to use the code to re-create a similar machine learning model. To create a notebook:
-
-1. Click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of your page to open the left navigation menu, and click **AutoML**.
-
-	![Experiments page](images/model-to-exp.png)
-
-2. On the AutoML Experiments page, click the **Customers 360** experiment.  
-
-	![Experiments page](images/open-customers-360.png)
-
-3. Scroll down to the Leader Board, click on the Naive Bayes model row. Clicking on a model row enables all the Leader Board options - Deploy, Rename, Create Notebooks, and Metrics. Click **Create Notebook**. The Create Notebook dialog opens.
-
- 	![Create Notebook option in Leader Board](images/create-notebook-lb.png)
-
-4. In the Create Notebook dialog, the experiment name is displayed in the **Notebook Name** field with the suffix (1). Retain this name and click **OK**.
-
-	![Create Notebook from model dialog](images/create-notebook-from-mod.png)
-
-4. Click **OK**. The message _Notebook NB Customer 360 (1) successfully created_ is displayed once the notebook is created successfully.
-
-	![Notebook creation message](images/nb-customer-message.png)
-
-	The notebook is created, and is listed on the Notebooks page.
-
-This completes the task of creating the notebook **NB Customer 360** based on the Naive Bayes model that is created by the AutoML experiment **Customers 360**.
-
-**View Generated Notebook and Individual Paragraphs**
-
-To view the generated notebook Customer 360:
-
-1. Click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the page to open the left navigation menu. Click **Notebooks**.
-
-	![Notebooks](images/hamburger-notebooks.png)
-
-2. The Notebooks page opens with all the notebooks listed in it. Click the **NB Customers 360** notebook to open it.
-
- 	![Generated Notebook](images/notebooks-listed-final.png)
-
-3. The generated notebook _NB Customer 360_  opens in the notebook editor. Click the gear icon on the upper right corner of the notebook to view and set the interpreter binding order.
-
-	![gear icon](images/gear-icon.png)
-
-	Change the order of the interpreter bindings by clicking and dragging an entry above or below others (turns from white to blue). You can also deselect a binding to disable it (turns from blue to white). This does not require dragging the enabled interpreters above the disabled ones.
-
-	![Enable and disable interpreter binding](images/enable-disable-int-bindings.png)
-
-4. Click **Save**. Clicking **Save** records the changes and hides the interpreter settings. You can verify it again by clicking the gear icon ![gear icon](images/gear.png). This completes the task of changing the interpreter binding order.
-
-	![Enable and disable interpreter binding](images/enable-disable-int-bindings2.png)
-
-5. Scroll up to the notebooks toolbar, and click the **Run All** icon to run all the paragraphs in the notebook.
-
-	![Run all](images/run-all.png)
-
-6. In the Run All confirmation dialog, click **OK**.  
-
-	![Run all](images/run-all-confirm.png)
-
-7. Scroll down to view all the paragraphs in the notebook:
-
-* The paragraph titled _Oracle Machine Learning AutoML UI - Experiment - Generated Notebook_ contains the experiment metadata.
-
-	![Experiment metadata](images/experiment-metadata.png)
-
-* The paragraph titled _Get proxy object for selected data_ contains the code to get the proxy object for the data used in the experiment, which is the Customers360 table here. The paragraph titled _Prepare Training Data_ contains the code to prepare the training data.
-
-	![Generated Notebook](images/generated-nb-1.png)
-
-* The paragraph titled _Build Model_ contains the code to build the model. In this lab, it is the Naive Bayes model. The settings used to produce the model using AutoML are provided here in the ``nb_settings`` variable. The paragraph titled _Show Model Details_ contains the code to view the model details.
-
-	![Generated Notebook](images/generated-nb-2.png)
-
-* The paragraph titled _Data for Scoring_ contains the code to score the data, and the paragraph _Show model quality metric_ contains the code to view the model quality metric.
-
-	![Generated Notebook](images/generated-nb-3.png)
-
-This completes the task of creating a notebook based on a model and viewing the paragraphs contained in it.
 
