@@ -171,19 +171,19 @@ Once you have the External IP provisioned, you can press **CTL+C** to terminate 
 You can login using admin/admin as username/password and change the password accordingly.
 
 
-	<img src=images/GrafanaLogin.png width=300 />   <img src=images/grafana-login-change-password.png width=300 />
+  <img src=images/GrafanaLogin.png width=300 />   <img src=images/grafana-login-change-password.png width=300 />
 
 ## Task 5: Add MySQL Datasource
 1. Add Datasource MySQL
 * Select Datasource from Settings left menu and Click "Add Data source" button
 
-<img src=images/AddDatasource.png width=100 />    <img src=images/AddDatasource-1.png width=500 />
+  <img src=images/AddDatasource.png width=100 />    <img src=images/AddDatasource-1.png width=500 />
 
 * Type in mysql in the filter textbox and click the MySQL Datasource
-![Choose MySQL](images/AddDatasource-3.png)
+  ![Choose MySQL](images/AddDatasource-3.png)
 
 * Fill in the Datasource details based on the MDS ip/port and username/password details.
-![Fill MySQL](images/AddDatasource-4.png)
+  ![Fill MySQL](images/AddDatasource-4.png)
 
 
 ## Task 6: MySQL Dashboard
@@ -204,23 +204,23 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 3. Import MySQL Dashboard
 * Choose "Import" from "+" left menu and put in 7991 dashboard ID for import
-![Import](images/import7991.png)
+  ![Import](images/import7991.png)
 
 * Choose the Datasource and click "Import"
-![Import](images/import7991-Import.png)
+  ![Import](images/import7991-Import.png)
 
 2. Checking the Dashboard
-![Dashboard](images/MySQLDashboard7991.png)
+  ![Dashboard](images/MySQLDashboard7991.png)
 
 ## Task 7: Add heatwave table panel to MySQL Dashboard
 1. Click on the add panel icon as shown
-![Dashboard](images/grafana-add-panel-menu.png)
+  ![Dashboard](images/grafana-add-panel-menu.png)
 
 2. Click on 'Add Empty Panel' and the panel will show.  
-![Dashboard](images/grafana-panel-add.png)
+  ![Dashboard](images/grafana-panel-add.png)
 
 Click on the **Edit SQL** button
-![Dashboard](images/grafana-panel-edit-sql.png)
+  ![Dashboard](images/grafana-panel-edit-sql.png)
 
 
 3. Paste the SQL to the query text field and Change the format to **Table**.
@@ -233,24 +233,24 @@ where mytable_load.id = mytable.id
 </copy>
 ```
 
-![Dashboard](images/grafana-edit-sql-table.png)
+  ![Dashboard](images/grafana-edit-sql-table.png)
 
 4. Change the Visualization using Table as shown and putting the Panel title as "Table loaded to Heatwave"
-![Dashboard](images/grafana-change-panel-settings.png)
+  ![Dashboard](images/grafana-change-panel-settings.png)
 
 5. Click "Apply" and return to dashboard
-![Dashboard](images/grafana-panel-apply.png)
+  ![Dashboard](images/grafana-panel-apply.png)
 
 6. Finally click the "disk" icon to save
-![Dashboard](images/grafana-save-dashboard.png)
+  ![Dashboard](images/grafana-save-dashboard.png)
 
 
 You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
-			 - Ivan Ma, MySQL Solution Engineer, MySQL APAC
-			 - Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+      - Ivan Ma, MySQL Solution Engineer, MySQL APAC
+      - Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors** 
 			 - Perside Foster, MySQL Solution Engineering 
 * **Last Updated By/Date** - Ivan Ma, March, 2022
