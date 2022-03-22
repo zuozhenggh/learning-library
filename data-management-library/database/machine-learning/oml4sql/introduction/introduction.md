@@ -1,4 +1,4 @@
-# OML4SQL using One-Class Support Vector Machine (SVM) for Anomaly Detection
+# Detect anomalies with OML4SQL using one-class support vector machine (SVM)
 
 ## About this Workshop
 
