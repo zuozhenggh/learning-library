@@ -62,9 +62,9 @@ This lab assumes you have:
 
   Now that we have an empty canvas, we can begin to get a better understanding of On-time delivery statistics. Now is a great time to activate One-Click explain to get a snapshot of On-Time Delivery.
 
-  4. **Navigate** to the file directory and select **"Supply Chain Underlying Dashboard Data"**
+  4. **Navigate** to the visualizations menu and select **"Supply Chain Underlying Dashboard Data"**
 
-  ![open file directory](images/view-supply-chain-data.png)
+  ![open visualizations menu](images/view-supply-chain-data.png)
 
   5. **Right Click** the variable **'On Time Delivery'** and select **'Explain On Time Delivery'**
 
@@ -94,9 +94,9 @@ Now we can start building our self-service visualization canvas that breaks down
   ![view empty canvas](images/empty-dashboard-two.png)
 
 
-  2. **Navigate** To the file directory on the left side of the screen and expand the files named **"Supply Chain Underlying Dashboard Data"** and **"Underlying Dashboard Data 5"**
+  2. **Navigate** To the visualizations menu on the left side of the screen and expand the files named **"Supply Chain Underlying Dashboard Data"** and **"Underlying Dashboard Data 5"**
 
-  ![view file directory](images/visual-data-one.png)
+  ![view visualizations menu](images/visual-data-one.png)
 
   3. Under **"Supply Chain Underlying Dashboard Data"** click and drag **Ordered Quantity** to the canvas.  
 
@@ -218,7 +218,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   Let's first create a custom calculation to represent 'Ship Late Percentage'
 
-  1. **Scroll Down** to the bottom of the file directory and locate the **'My Calculations'** folder. **Right Click** that folder and select **'Add Calculation'**
+  1. **Scroll Down** to the bottom of the visualizations menu and locate the **'My Calculations'** folder. **Right Click** that folder and select **'Add Calculation'**
 
   ![Add calculation](images/add-calculation.png)
 

@@ -16,7 +16,8 @@ QSR chains are facing issues with customers and their changing preferences, mana
 
 In this scenario we will monitor business performance through the creation of dashboards and canvases to quickly find insights:
 * **Net Sales and On Time Delivery Percentage**
-    - "Net Sales in Northeast region performing lower than other geographies. On Time Delivery performance lagging in Distribution Centers”
+    - Net Sales in Northeast region performing lower than other geographies.
+    - On Time Delivery performance lagging in Distribution Centers.
 * Deeper insights through the analysis of dashboards with the ability to analyze:
     - **Sales Analysis**  – “Being out of fries could be hurting sales”
     - **OTD Analysis** – “The Pennsylvania Distribution Center appears to be driving the shortage of fries, hampering sales in the Northeast region.”
@@ -40,7 +41,7 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
 1. From the browser session you started in the  Initialize environment lab, **click** on the **Page Menu** icon identified by the ![Page menu icon](./images/page-menu.PNG) symbol located in the upper right-hand corner.
     ![Page menu icon](./images/introp.png)
 
-2. **Click** on **Import Project/Flow...** to upload the file used in the .
+2. **Click** on **Import Project/Flow...** to upload the file we will be using.
 
 3. **Choose** the **Select File** option and pick the .dva file you downloaded earlier.
 
@@ -81,7 +82,7 @@ The data visualization capabilities in Oracle Analytics Server are extensive, in
     ![drag and drop sales above visual](./images/drag-and-drop-sales.png " ")
     ![sales card](./images/sales-card.PNG " ")
 
-5. Now we are going to format our value using the properties box (in the bottom right of the screen). **Select** the **'Values'(#)** tab and we are going to change from **auto** to **currency** as well as **turn on abbreviate** by selecting it.
+5. Now we are going to format our value using the properties box (in the bottom left of the screen). **Select** the **'Values'(#)** tab and we are going to change from **auto** to **currency** as well as **turn on abbreviate** by selecting it.
 
   ![formatting the currency](./images/formatting-the-currency.png " ")
   ![abbreviate the currency](./images/abbreviate-the-currency.png " ")
@@ -116,7 +117,7 @@ The data visualization capabilities in Oracle Analytics Server are extensive, in
 
       Select **'Save'** in the top right of the screen to save and update your project.
 
-11. In this exercise we will create a custom calculations and two more custom visuals to create our HR analysis cards in order analyze salary and the relationship to company headcount.
+11. In this exercise we will create custom calculations and two more custom visuals to create our HR analysis cards in order analyze salary and the relationship to company headcount.
 
 12. **Right Click** on the **"My Calculations"** dataset.  **Select** 'Add Calculation'.
 
@@ -145,7 +146,7 @@ The data visualization capabilities in Oracle Analytics Server are extensive, in
 
     ![creating HR card](./images/hr-card.PNG " ")
 
-17. Within the properties box (in the bottom right of the screen)  **Select** the **'Values'(#)** tab and we are going to change from **auto** to **currency** as well as **turn on abbreviate** by selecting it.
+17. Within the properties box (in the bottom left of the screen)  **Select** the **'Values'(#)** tab and we are going to change from **auto** to **currency** as well as **turn on abbreviate** by selecting it.
 
     ![formatting the currency](./images/formatting-the-currency.png " ")
     ![abbreviate the currency](./images/abbreviate-the-currency.png " ")

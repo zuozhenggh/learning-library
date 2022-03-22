@@ -44,7 +44,7 @@ This lab assumes you have:
 
     ![Bar Chart](images/bar.png")
 
-4. Next, let's filter out the years that are not relevant to the visual by dragging Date(Quarter) to the filter tab and **select** quarters in 2020 - 2021.
+4. Next, let's filter out the years that are not relevant to the visual by dragging Date(Quarter) to the filter tab and **select** quarters in 2020 - 2021. Exclude Q3 of 2021.
 
     ![Filter](images/filtered-bar.png")
 
