@@ -177,7 +177,7 @@ You can login using admin/admin as username/password and change the password acc
 1. Add Datasource MySQL
 * Select Datasource from Settings left menu and Click "Add Data source" button
 
-<img src=images/AddDatasource.png width=100>    <img src=images/AddDatasource-1.png width=500>
+<img src=images/AddDatasource.png width=100 />    <img src=images/AddDatasource-1.png width=500 />
 
 * Type in mysql in the filter textbox and click the MySQL Datasource
 ![Choose MySQL](images/AddDatasource-3.png)
