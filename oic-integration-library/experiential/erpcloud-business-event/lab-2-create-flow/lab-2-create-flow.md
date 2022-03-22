@@ -142,13 +142,15 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
 
     Expand the **Source** node:
     
-        ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 &lt;sequence&gt; > Value
-
+    ```
+    ERP_POCreateEvent Request > Get Purchase Order Response > Result > #2 &lt;sequence&gt; > Value
+    ```
 
     Expand the **Target** node:
     
-        ADW_InsertPO Request > Purchaseorder
-
+    ```
+    ADW_InsertPO Request > Purchaseorder
+    ```
 
     Complete the mapping as below:    
 
