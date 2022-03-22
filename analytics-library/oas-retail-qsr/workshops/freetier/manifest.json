@@ -43,15 +43,15 @@
       "type": "external"
     },
     {
-      "title": "Predict on time delivery",
-      "description": "On Time Delivery",
-      "filename": "../../on-time-delivery/on-time-delivery.md",
-      "type": "external"
-    },
-    {
       "title": "Uncover HR trends",
       "description": "HR Analysis",
       "filename": "../../hr-analysis/hr-analysis.md",
+      "type": "external"
+    },
+    {
+      "title": "Predict on time delivery",
+      "description": "On Time Delivery",
+      "filename": "../../on-time-delivery/on-time-delivery.md",
       "type": "external"
     },
     {

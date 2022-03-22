@@ -25,11 +25,15 @@ This lab assumes you have:
 
 ## **Task 1:** Create Stacked Bar Chart
 
-1. To begin you will select the plus symbol to open an empty canvas so that we can build out this project. So, let’s get right into it!
+1. **Select** the plus symbol to open an empty canvas so we can build out our visualizations.
 
-    ![New Canvas](images/add-canvas.png)
+    ![empty canvas](images/empty-dashboard-red-box.png)
 
-2. First, let’s see how sales are split across the different channels within the **'Underlying DashBoard Data - 1.'**
+2. **Rename** the canvas by tapping the arrow, and hitting 'rename'. Rename the canvas to **'Analyze Channel Sales'**
+
+    ![rename canvas](images/rename-canvas.png)
+
+3. First, let’s see how sales are split across the different channels within the **'Underlying DashBoard Data - 1.'**
 
 
     * **Control select** and choose **'Sales by Channel'** and then navigate to **'Quarter'** within Date

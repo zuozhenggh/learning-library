@@ -26,9 +26,9 @@ This lab assumes you have:
 <!-- Images -->
 In this exercise, we are going to create a 12 month forecast using OAS's built in ML capabilities to help us predict where our payroll trends are heading.
 
-1. **Create** a new canvas and **rename** it "HR Analysis"
+1. **Create** a new canvas like we did at the start of last lab and **rename** it "HR Analysis"
 
-    ![Create new canvas](images/create-canvas.png "Create new canvas")
+    ![Create new canvas](images/red-box.png "Create new canvas")
     ![Rename canvas](images/rename-canvas.png "Rename canvas")
 
 2. From the **"OAX PL Payroll"** dataset, **Control select** and choose **'Base Salary'** and **'Overtime Cost'**.
@@ -139,7 +139,8 @@ In this exercise, we are going to create a 12 month forecast using OAS's built i
 
   Our executives now need to put together a strategy to retain existing employees and fill the open positions as soon as possible. By doing so, payroll costs will be normalized, headcount will be restored, and her customers won't experience long wait times anymore.
 
-  **This concludes the lab**
+You have now finished the HR Analysis dashboard creation. Next we will take a closer look at our On Time Delivery. You may now **proceed to the next Lab.**
+  
 
 
 ## Learn More

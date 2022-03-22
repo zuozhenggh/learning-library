@@ -444,11 +444,11 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![select low to high sort](images/final-viz-four.png)
 
-  Here we can see a distribution of the centers, states, and products and which are predicted to have the lowest ship ontime delivery percentages. This is especially useful if management wants to catch products that have lower on-time ship quantities resulting in more late shipments.
+  Here we can see a distribution of the centers, states, and products and which are predicted to have the lowest ship on time delivery percentages. This is especially useful if management wants to catch products that have lower on-time ship quantities resulting in more late shipments.
 
   We have now successfully created a machine learning model and applied it's results to our project.
 
-  You have now completed 'Lab 6: On Time Delivery' and are ready to move on to the next lab.
+  **This concludes the lab**
 
 ## Learn More
 
