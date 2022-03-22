@@ -94,7 +94,7 @@ Now we can start building our self-service visualization canvas that breaks down
   ![view empty canvas](images/empty-dashboard-two.png)
 
 
-  2. **Navigate** To the visualizations menu on the left side of the screen and expand the files named **"Supply Chain Underlying Dashboard Data"** and **"Underlying Dashboard Data 5"**
+  2. **Navigate** to the visualizations menu on the left side of the screen and expand the files named **"Supply Chain Underlying Dashboard Data"** and **"Underlying Dashboard Data 5"**
 
   ![view visualizations menu](images/visual-data-one.png)
 
@@ -108,15 +108,19 @@ Now we can start building our self-service visualization canvas that breaks down
   ![select combo graph](images/choose-combo-graph.png)
 
 
-  5. Now expand 'date' under **"Supply Chain Underlying Dashboard Data"**. **Click and Drag** the variable **'Quarter'** to the **'X-Axis'**
+  5. Now expand 'date' under **"Supply Chain Underlying Dashboard Data"**. **Click and Drag** the variable **'Quarter'** to the **'X-Axis'**.
 
   ![add quarter](images/quarter-in-visual.png)
 
-  6. **Navigate** to the file named **"Underlying Dashboard Data 5"** and click and drag **'On-Time Delivery'** into the **'Y-Axis'**.
+  6. Now **Click and Drag** the variable **'Quarter'** to the **Filters** tab. Filter to display all quarters except for '<NULL>', 'Q1 2019', and 'Q3 2021'. This will remove the quarters that are not as important to us.
+
+  ![add filter](images/add-filter.png)
+
+  7. **Navigate** to the file named **"Underlying Dashboard Data 5"** and click and drag **'On-Time Delivery'** into the **'Y-Axis'**.
 
   ![drag variables to canvas](images/combo-visual-before-change.png)
 
-  7. **Format** the visual by right clicking on **'Ordered Quantity'** and selecting **Bar** and right clicking on **'On Time Delivery'** and selecting **Line**
+  8. **Format** the visual by right clicking on **'Ordered Quantity'** and selecting **Bar** and right clicking on **'On Time Delivery'** and selecting **Line**
 
   ![format visual](images/combo-visual-select-bar.png)
 
@@ -124,17 +128,17 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![combination bar chart](images/combination-line-and-bar.png)
 
-  8. Now, let's change the color assignments for this visual. **Right Click** on the visual on canvas, and hover over **'color'** and select **'manage assignments'**.
+  9. Now, let's change the color assignments for this visual. **Right Click** on the visual on canvas, and hover over **'color'** and select **'manage assignments'**.
 
   ![change color assignments](images/change-combo-color.png)
 
 
-  9. **Scroll Down** to find **'On Time Delivery'** variable.
+  10. **Scroll Down** to find **'On Time Delivery'** variable.
 
   ![find on time delivery](images/find-variable-color-combo.png)
 
 
-  10. **Change the Color** assignment of 'On Time Delivery' to **green**.
+  11. **Change the Color** assignment of 'On Time Delivery' to **green**.
 
   ![change color assignment to green](images/combo-change-color-green.png)
 
@@ -419,24 +423,31 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![create project from dataset](images/create-project.png)
 
-  23. Hold Ctrl/Command and select **'Predicted On Time Delivery'**, **'Channel'**, **'State'**, **'Month'** and select **'Bar'**. Add **'State'** to Trellis Rows, **'Predicted On Time Delivery'** to **'Y Values'**, **'Channel'** to **'X Axis'**, and **'Product Name'** to **'Color'**. This will display the predictions for On Time Delivery from our model.
+  23. Hold Ctrl/Command and select **'Predicted On Time Delivery'**, **'Channel'**, **'Product Name'**, **'State'** and select **'Bar'**. Add **'State'** to Trellis Rows, **'Predicted On Time Delivery'** to **'Y Values'**, **'Channel'** to **'X Axis'**, and **'Product Name'** to **'Color'**. This will display the predictions for On Time Delivery from our model.
 
   ![select variable](images/ml-project-bar.png)
 
   ![select bar chart](images/select-bar.png)
 
-  ![view Ml output visual](images/ml-visualization.png)
+  ![view Ml output visual](images/ml-visualization-incomplete.png)
 
 
-  24. Now let's truncate some values so we can clearly see the differences by product. **Select** the visual and tap the **'Grid Line' icon** on the bottom left menu.
+  24. Now let's filter out our unwanted values. **Click and Drag** the **'Channel'** variable to the **'Filter'** section. Select all the channels except for '<NULL>'
+
+  ![select variable](images/ml-channel-filter.png)
+
+  ![select bar chart](images/ml-select-channel-filter.png)
+
+
+  25. Now let's truncate some values so we can clearly see the differences by product. **Select** the visual and tap the **'Grid Line' icon** on the bottom left menu.
 
   ![select grid line icon](images/click-gridline.png)
 
-  25. Expand the **'Value Axis'** and scroll down to **'Start'**. Set this value to 50 and press enter. This only shows us values from 50 and beyond.
+  26. Expand the **'Value Axis'** and scroll down to **'Start'**. Set this value to 50 and press enter. This only shows us values from 50 and beyond.
 
   ![set start value to 50](images/final-viz.png)
 
-  26. Now let's sort our view. **Right Click** on 'Predicted On Time Delivery' and hover over 'Sort By'. Then select **Low to High** to view products with the lowest on time delivery percentages first.
+  27. Now let's sort our view. **Right Click** on 'Predicted On Time Delivery' and hover over 'Sort By'. Then select **Low to High** to view products with the lowest on time delivery percentages first.
 
   ![right click predicted on time delivery](images/final-viz-two.png)
 
@@ -444,7 +455,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![select low to high sort](images/final-viz-four.png)
 
-  Here we can see a distribution of the centers, states, and products and which are predicted to have the lowest ship on time delivery percentages. This is especially useful if management wants to catch products that have lower on-time ship quantities resulting in more late shipments.
+  Here we can see a distribution of the centers, states, and products and which are predicted to have the lowest ship ontime delivery percentages. This is especially useful if management wants to catch products that have lower on-time ship quantities resulting in more late shipments.
 
   We have now successfully created a machine learning model and applied it's results to our project.
 
