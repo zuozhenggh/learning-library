@@ -3,11 +3,14 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How do I connect to different Oracle databases that are installed in a same Linux server?",
+            "title": "How do I connect to different Oracle Databases that are installed in a same Linux server?",
             "description": "",
             "filename": "linux-server.md"
+        },
+        {
+            "title": "How do I set bash profile in Oracle Linux?",
+            "description": "",
+            "filename": "../sprint-bashprofile/sprint-bashprofile.md"
         }
-
-
     ]
 }

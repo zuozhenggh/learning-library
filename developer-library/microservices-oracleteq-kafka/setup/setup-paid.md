@@ -133,11 +133,13 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```bash
     <copy>
-    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/oracleteq-kafka" >>~/.bashrc
-    export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2
-    echo "export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2" >>~/.bashrc
-    echo "export PATH=$JAVA_HOME/bin/:$PATH" >>~/.bashrc
-    source ~/.bashrc
+    echo "# LiveLab Setup -- BEGIN" >>${HOME}/.bashrc
+    echo "export LAB_HOME=${HOME}/lab8022/microservices-datadriven/workshops/oracleteq-kafka" >>${HOME}/.bashrc
+    export JAVA_HOME=${HOME}/graalvm-ce-java11-22.0.0.2
+    echo "export JAVA_HOME=${HOME}/graalvm-ce-java11-22.0.0.2" >>${HOME}/.bashrc
+    echo "export PATH=$JAVA_HOME/bin/:$PATH" >>${HOME}/.bashrc
+    echo "# LiveLab Setup -- END" >>${HOME}/.bashrc
+    source ${HOME}/.bashrc
     </copy>
     ```
 

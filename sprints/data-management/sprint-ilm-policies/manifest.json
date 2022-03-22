@@ -8,15 +8,10 @@
             "filename": "sprint-ilm-policies.md"
         },
         {
-            "title": "How do I get Compression Ratio?",
+            "title": "How do I add storage tier policy to move old data to a different tablespace?",
             "description": "",
-            "filename": "../sprint-dbms-compression/sprint-dbms-compression.md"
-        },
-        {
-            "title": "How do I connect to the instance via SSH?",
-            "description": "",
-            "filename": "../sprint-connect-to-instance-via-ssh/instance-ssh.md"
-        }
+            "filename": "../sprint-ilm-storagetier/sprint-ilm-storagetier.md"
+        } 
 
     ]
 }

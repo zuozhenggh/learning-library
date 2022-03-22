@@ -591,16 +591,15 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
         libguac-client-vnc \
     	tomcat \
         tomcat-admin-webapps \
-        tomcat-webapps \
-        nginx
+        tomcat-webapps
     EOF
     chmod +x /tmp/remove-guac.sh
     /tmp/remove-guac.sh
 
     rm -rf /etc/guac*
-    rm -rf /etc/nginx*
     rm -f /tmp/remove-guac.sh
     rm -rf /opt/guac*
+    rm -rf /etc/init.d/guac*
     cd
     </copy>
     ```
@@ -608,4 +607,4 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
 * **Contributors** - Robert Pastijn
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, December 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, March 2022
