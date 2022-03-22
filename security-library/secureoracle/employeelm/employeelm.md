@@ -6,7 +6,7 @@ In this lab we will exercise several use cases associated with employee on-board
 
 My HR Application is a sample application developed in Oracle APEX and hosted in the Oracle database. Its main function is to manage and store employee data in tables within the database HR schema. The Oracle Identity Manager **DBAT Connector** is used to interface with the database tables facilitating the on-boarding and management of employees records into Oracle Identity Manager.
 
-![](./images/img-myhr-app-menu.png " ")
+![My HR Application](./images/img-myhr-app-menu.png " ")
 
 Figure 1. My HR Application
 
@@ -155,14 +155,14 @@ This lab assumes you have:
 1. Login as user **xelsysadm** with password **Oracle123** to the [OIM Admin Console](http://secureoracle.oracledemo.com:14000/sysadmin). Click on the **Scheduler** option and go to System Management tab and enter **HRData** in the search box or click on the arrow icon to fetch data.
 
 2. From the results list, double click on job **HRData DBAT Trusted Resource User Reconciliation**
-    ![](./images/hrdata.png " ")
+    ![OIM Admin Console Scheduler Search Result](./images/hrdata.png " ")
 
 3. In the Job Details tab, click on **Run Now** and monitor the progress by clicking on **Refresh** and looking at the bottom under Job History.
 
 4. Once the job is completed with Job Status **Stopped::Success**,
-    ![](./images/stopped.png " ")
+    ![HRData DBAT Trusted Resource User Reconciliation Service Details](./images/stopped.png " ")
 5. Click on the Event Management tab at the top and click the **Arrow** icon to search for reconciliation events. A list of events with Profile Name **HRData** should be listed as recent events indicating that records were processed. Click on one of the event IDs to see the details. If the current status shows **Creation Succeeded** for all the events, the import was successful. Sign out from the Admin Console.
-    ![](./images/creation.png " ")
+    ![Event Management tab](./images/creation.png " ")
 
     **Notes**: The reconciliation job import new employees that do not exist in OIM. Optionally, you can perform a filtered reconciliation by entering a filter expression in the **Filter** field under the **Parameters** section in the Job Details page.
 
@@ -181,7 +181,7 @@ This lab assumes you have:
 ## Task 4:  Checking On-boarded Employees
 1. Login to the [OIM Self Service Console](http://secureoracle.oracledemo.com:14000/identity) as user: **xelsysadm** with password: **Oracle123** . Click on **`Manage -> Users`**, review if the on-boarded employees are listed as users in the Users page.
 
-    ![](./images/oim_users.png " ")
+    ![OIM Self Service Console](./images/oim_users.png " ")
 
 2. Notice if user login **RMAINOR** is listed in the Users page, then click on the user login to open the User Details page, select the **Attributes** tab and check the **End Date** attribute for this user. His end date had passed the current date, meaning this user will be disabled and deleted in the next **`Disable/Delete User After End Date`** job execution. Do not close the User Details page to proceed with the next step.
 
@@ -226,7 +226,7 @@ This lab assumes you have:
 
 2. Click on **Employees** tile to open the employees page, select one employee e.g. **DCOBY** and click on the **Pencil** icon to edit the employee details.
 
-    ![](./images/img-myhr-app.png " ")
+    ![My HR Application](./images/img-myhr-app.png " ")
 
     Figure 2. Edit Employee Details
 
@@ -305,7 +305,7 @@ This lab assumes you have:
 
 3. Open the email and verify if the requester is **Ray Lauria** and proceed to click on the **Approve** link.
 
-    ![](./images/uc03-action-notification.png " ")
+    ![Roundcube notification mail for approval](./images/uc03-action-notification.png " ")
 
     Figure 3. Actionable Notification - Approvals
 
@@ -325,7 +325,7 @@ This lab assumes you have:
 
 4. Proceed to sign out from the Self Service Console.
 
-    ![](./images/uc03-account-provisioned.png " ")
+    ![OIM Self service](./images/uc03-account-provisioned.png " ")
 
     Figure 4. Provisioned Account - Access Request
 

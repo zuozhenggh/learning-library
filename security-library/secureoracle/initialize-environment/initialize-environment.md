@@ -334,7 +334,7 @@ Use the following instructions to customize the logo in the OIG Self Service int
 
 1. SecureOracle includes a sample top OIM organization **Oracle Users** and two child departments **Sales** and **Finance**. For each department an administrator account has been defined to demonstrate delegated administration. In addition, sample users have been added to demonstrate manager approval, escalation and organizational transfers.
 
-    ![](./images/img-orgtree.png " ")
+    ![Sample top OIM organization](./images/img-orgtree.png " ")
 
     Figure 4. Sample OIG Organization
 
@@ -342,7 +342,7 @@ Use the following instructions to customize the logo in the OIG Self Service int
 
     ```
     USERNAME        ORGANIZATION     TITLE                        ADMIN ROLE      SCOPE OF CONTROL
-    FINANCEADM      Finance          Administration Assistant     FinanceAdmin    Finance             
+    FINANCEADM      Finance          Administration Assistant     FinanceAdmin    Finance
     SALESADM        Sales            Administration Assistant     SaleseAdmin     Sales
     MGRAFF          Sales            Sales Manager
     HDANIELS        Sales            Sales Manager

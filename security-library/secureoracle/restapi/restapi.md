@@ -50,7 +50,7 @@ This lab assumes you have:
     <copy>
     http --session=oim --print=HBb -a jsmith:Oracle123 \
     POST secureoracle.oracledemo.com:14000/iam/governance/token/api/v1/tokens \
-    X-Requested-By:dummy Content-Type:application/json    
+    X-Requested-By:dummy Content-Type:application/json
     </copy>
     ```
 
@@ -326,7 +326,7 @@ This lab assumes you have:
   	            ]
   	        }
   	    ]
-  	}    
+  	}
     ```
 
 ## Task 3: OIM Update User Profile
@@ -718,7 +718,7 @@ This lab assumes you have:
   	            "tokenType": "AUTHZ_CODE"
   	        }
   	    ]
-  	}    
+  	}
     ```
 
 ## Task 6: OAM Create OAuth Resource
