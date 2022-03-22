@@ -10,7 +10,12 @@ Estimated time: 15 minutes
 * Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
 * Completion of the preceding tutorials in this workshop
 
-## Task 1: Create a compute instance
+
+### Objectives
+* Set up EM Agent
+
+## **Task 1**: Create a compute instance
+
 
 1. From the Oracle Cloud Shell navigation menu, select **Compute** > **Instances**.
 
@@ -60,7 +65,9 @@ Estimated time: 15 minutes
 
    ![Oracle Cloud console, Instances](images/1-8-instances.png " ")
 
-## Task 2: Preparing for the agent installation
+
+## **Task 2**: Preparing for the agent installation
+
 
 1. Open a terminal window (or a Putty connection) on your computer, type the following command to open an SSH connection to the Agent host. Replace the **Agent-Instance-Public-IP** with the value copied in the previous step (Tutorial 5, Task 1, Step 5).
 
@@ -147,7 +154,9 @@ Estimated time: 15 minutes
 
 
 
-## Task 3: Install EM agent in the compute instance
+
+## **Task 3**: Install EM agent in the compute instance
+
 
 1. Launch your Enterprise Manager Cloud Control 13.5 in a browser. Log on with your credentials.
 
@@ -218,7 +227,9 @@ Estimated time: 15 minutes
 
 
 
-You may now [proceed to the next tutorial](#next).
+
+You may now **proceed to the next tutorial**.
+
 
 ## Acknowledgements
 

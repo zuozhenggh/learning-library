@@ -10,7 +10,12 @@ Estimated time: 15 minutes
 * Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
 * Completion of the preceding tutorials in this workshop
 
-## Task 1: Collect WebLogic information
+
+### Objectives
+* Create Kubernetes load balancer services
+
+## **Task 1**: Collect WebLogic information
+
 
 1. In the Oracle Cloud console, select the Cloud Shell icon (>_ ) from the menu bar to launch a Cloud Shell session window if one is not. Copy and paste the ***kubectl get svc*** command to list out all the namespaces.
 
@@ -59,7 +64,8 @@ Estimated time: 15 minutes
    ![Oracle Cloud Shell, kubectl describe svc, managed server 2](images/1-4-kubectl.png " ")
 
 
-## Task 2:  Create YAML files to set up load balancer services
+## **Task 2**: Create YAML files to set up load balancer services
+
 
 1. Using the Oracle Cloud Shell, from the home directory, create YAML files.
 
@@ -183,7 +189,8 @@ Estimated time: 15 minutes
 
     >  This YAML configures two managed WebLogic Servers in a single file, and three hyphens “---” are used as separators. If you have more than two managed servers, you can add sections in the file, collect server names from the ***kubectl describe pod*** command, and populate them in the YAML file.
 
-## Task 3:  Apply the configuration
+## **Task 3**: Apply the configuration
+
 
 
 1. From the home directory in the Oracle Cloud Shell, execute the following commands to apply the configuration to the Kubernetes pods.
@@ -215,7 +222,9 @@ Estimated time: 15 minutes
         10.0.x.156 sample-domain1-managed-server2
 
 
-You may now [proceed to the next tutorial](#next).
+
+You may now **proceed to the next tutorial**.
+
 
 ## Acknowledgements
 
