@@ -19,7 +19,7 @@ This lab assumes you have:
 
 ## Task 0: Running your Lab
 ### Access the graphical desktop
-Now with access to your remote desktop session, proceed with the subsequent tasks.
+Now with access to your remote desktop session, open **Terminal** and proceed with the subsequent tasks.
 
 
 ### Login to Host using SSH Key based authentication
