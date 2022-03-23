@@ -53,20 +53,20 @@ Here are the steps for creating a new group and assigning security policy requir
 
   ![Create a New Securiry Policy](images/create-policy.png " ")
 
-  Using **Edit Policy Statement** option, add the below statements to the policy created above.
+   Using **Edit Policy Statement** option, add the below statements to the policy created above.
 
-  ```
-  <copy>
-  Allow group MicroservicesAdmin to use cloud-shell in tenancy
-  Allow group MicroservicesAdmin to manage users in tenancy
-  Allow group MicroservicesAdmin to manage all-resources in tenancy
+   ```
+   <copy>
+   Allow group MicroservicesAdmin to use cloud-shell in tenancy
+   Allow group MicroservicesAdmin to manage users in tenancy
+   Allow group MicroservicesAdmin to manage all-resources in tenancy
 
-  Allow group MicroservicesAdmin to manage vaults in tenancy
-  Allow group MicroservicesAdmin to manage buckets in tenancy
-  Allow group MicroservicesAdmin to manage objects in tenancy
+   Allow group MicroservicesAdmin to manage vaults in tenancy
+   Allow group MicroservicesAdmin to manage buckets in tenancy
+   Allow group MicroservicesAdmin to manage objects in tenancy
 
-  </copy>
-  ```
+   </copy>
+   ```
 
   ![Policy Statements](images/policy-statements.png " ")
 
@@ -102,63 +102,63 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![Oracle Cloud Infrastructure Cloud Shell Opening](images/open-cloud-shell.png " ")
 
-  > **Note:**  Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+  > **Note:** Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
 ## Task 6: Create a Folder to Contain the Workshop Code
 
 1. Create a directory to contain the workshop code. The directory name will also be used to create a compartment of the same name in your tenancy.  The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter.  Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
-  ```
-  <copy>
-  mkdir grabdish
-  </copy>
-  ```
+   ```
+   <copy>
+   mkdir grabdish
+   </copy>
+   ```
 
   All the resources that are created by the setup will be created in this compartment.  This will allow you to quickly delete and cleanup afterwards.  
 
 2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
-  ```
-  <copy> 
-  cd grabdish
-  </copy>
-  ```
+   ```
+   <copy> 
+   cd grabdish
+   </copy>
+   ```
 
 ## Task 7: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
-  ```
-  <copy>
-  git clone -b 22.2.3 --single-branch https://github.com/oracle/microservices-datadriven.git
-  </copy>
-  ```
+   ```
+   <copy>
+   git clone -b 22.2.3 --single-branch https://github.com/oracle/microservices-datadriven.git
+   </copy>
+   ```
 
-  You should now see the directory `microservices-datadriven` in the directory that you created.
+   You should now see the directory `microservices-datadriven` in the directory that you created.
 
 ## Task 8: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
-  ```
-  <copy>
-  source microservices-datadriven/workshops/dcms-oci/source.env
-  setup
-  </copy>
-  ```
+   ```
+   <copy>
+   source microservices-datadriven/workshops/dcms-oci/source.env
+   setup
+   </copy>
+   ```
 
-  >**Note**: Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run the command to resume the setup.
+   **Note:** Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run the command to resume the setup.
 
-  The setup process will typically take around 20 minutes to complete.  
+   The setup process will typically take around 20 minutes to complete.  
 
 2. The setup will ask you to confirm that there are no other un-terminated OKE clusters exist in your tenancy.
 
-  ```
-  <copy>
-  You are limited to only one OKE cluster in this tenancy. This workshop will create one additional OKE cluster and so any other OKE clusters must be terminated.
-  Please confirm that no other un-terminated OKE clusters exist in this tenancy and then hit [RETURN]?
-  </copy>
-  ```
+   ```
+   <copy>
+   You are limited to only one OKE cluster in this tenancy. This workshop will create one additional OKE cluster and so any other OKE clusters must be terminated.
+   Please confirm that no other un-terminated OKE clusters exist in this tenancy and then hit [RETURN]?
+   </copy>
+   ```
   To confirm that there are no other un-terminated OKE clusters, click the Navigation Menu in the upper left of Oracle Cloud Console, navigate to Developer Services and click on Kubernetes Clusters (OKE).
 
   ![Oracle Cloud Infrastructure Developer Services Screen](images/dev-services-menu.png " ")
@@ -189,9 +189,9 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   Be sure to provide the user OCID and not the user name or tenancy OCID. The user OCID will look something like:
 
-  `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta`
+   `ocid1.user.oc1..aaaaaaaanu5dhxbl4oiasdfasdfasdfasdf4mjhbta`
 
-  >**Note**: Notice the format of "ocid1.user" prefix.
+  > **Note:** Notice the format of "ocid1.user" prefix.
 
   Locate your menu bar in the Cloud Console and click the person icon at the far upper right. From the drop-down menu, select your user's name. Note, sometimes the name link is missing in which case select the **User Settings** link. Do not select the **Tenancy** link.
 
@@ -207,7 +207,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![![Obtain Oracle Cloud Infrastructure User Name]](images/get-user-ocid.png " ")
 
-   On the User Details console, click Auth Tokens under Resources.
+  On the User Details console, click Auth Tokens under Resources.
 
   ![Review Oracle Cloud Infrastructure User Auth Token Screen](images/auth-token.png " ")
 
@@ -246,31 +246,31 @@ The setup will provision the following resources in your tenancy:
 
 2. While the background setup jobs are running you can monitor their progress with the following command.
 
-  ```
-  <copy>
-  ps -ef
-  </copy>
-  ```
+   ```
+   <copy>
+   ps -ef
+   </copy>
+   ```
 
 3. You can monitor log files located in the $GRABDISH_LOG directory.
 
-  ```
-  <copy>
-  ls -al $GRABDISH_LOG
-  </copy>
-  ```
+   ```
+   <copy>
+   ls -al $GRABDISH_LOG
+   </copy>
+   ```
 
   Once the setup has completed you are ready to [move on to Lab 2](#next).
 
-  >**Note** Builds may continue to run even after the setup has completed. 
+  > **Note:** Builds may continue to run even after the setup has completed. 
   
 4. The status of the builds can be monitored with this command:
 
-  ```
-  <copy>
-  status
-  </copy>
-  ```
+   ```
+   <copy>
+   status
+   </copy>
+   ```
 
 You may now proceed to the next lab.
 
