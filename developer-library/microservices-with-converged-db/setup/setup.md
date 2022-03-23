@@ -69,7 +69,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
    </copy>
    ```
 
-All the resources created by the setup are created in this compartment. This will let you to quickly delete and cleanup afterward.  
+ All the resources created by the setup are created in this compartment. This will let you to quickly delete and cleanup afterward.  
 
 2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
