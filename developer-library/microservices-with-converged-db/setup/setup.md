@@ -88,7 +88,7 @@ All the resources created by the setup are created in this compartment. This wil
    git clone -b 22.3.1 --single-branch https://github.com/oracle/microservices-datadriven.git
    </copy>
    ```
-You should now see the directory `microservices-datadriven` in the directory that you created.
+   You should now see the directory `microservices-datadriven` in the directory that you created.
 
 ## Task 7: Start the Setup
 
