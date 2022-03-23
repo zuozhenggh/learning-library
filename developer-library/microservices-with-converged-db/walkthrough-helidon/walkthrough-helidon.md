@@ -69,7 +69,7 @@ You should then see the Front End home page. You've now accessed your first micr
 
 We created a self-signed certificate to protect the frontend-helidon service. This certificate will not be recognized by your browser and so a warning is displayed. It will be necessary to instruct the browser to trust this site to display the frontend. In a production implementation a certificate that is officially signed by a certificate authority should be used.
 
-## Task 3: Verify the Order and Inventory Functionality of GrabDish store
+## Task 3: Verify the Order and Inventory Functionality of GrabDish Store
 
 1. Click **Transactional** under **Labs**.
 
