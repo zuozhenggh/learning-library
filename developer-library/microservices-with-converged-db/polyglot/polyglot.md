@@ -1,10 +1,10 @@
-# Polyglot microservices
+# Polyglot Microservices
 
 ## Introduction
 
 The illustration below shows four microservices: Order, Inventory, Delivery, Supplier, and the infrastructure required to run them.
 
-![](images/architecture.png " ")
+![Microservices Architecture](images/architecture.png " ")
 
 For more information on microservices visit http://developer.oracle.com/microservices
 
@@ -119,6 +119,8 @@ In this step you can choose between six different implementations of the Invento
     cd $GRABDISH_HOME
     </copy>
     ```
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture; Paul Parkinson, Developer Evangelist; Mayank Tayal, Developer Advocate
