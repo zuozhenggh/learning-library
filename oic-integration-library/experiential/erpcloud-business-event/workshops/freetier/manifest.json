@@ -16,7 +16,7 @@
             "filename": "../../../../common/provision-oic/provision.md"
         },
         {
-            "title": "Lab 2:Provision an Oracle Autonomous Database",
+            "title": "Lab 2: Provision an Oracle Autonomous Database",
             "type": "freetier",
             "filename": "../../../../common/adb-provision/adb-provision.md"
         },
@@ -25,7 +25,7 @@
             "filename": "../../../../common/configure-erpcloud-for-oic/configure-erpcloud-for-oic.md"
         },
         {
-            "title": "Lab 4: Lab Setup",
+            "title": "Lab 4: Setup",
             "filename": "../../setup/setup.md"
         },
         {
