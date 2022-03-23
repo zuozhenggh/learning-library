@@ -238,7 +238,7 @@ The setup will provision the following resources in your tenancy:
 
   ![Database Resources](images/db-example.png " ")
 
-  >**Note** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+  >**Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
 ## Task 10: Complete the Setup
 
