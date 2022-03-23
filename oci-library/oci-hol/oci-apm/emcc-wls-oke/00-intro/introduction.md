@@ -1,4 +1,4 @@
-﻿# Introduction
+# Introduction
 
 ## About this Workshop
 
@@ -16,7 +16,9 @@ Although OKE is used as the example in this workshop, the approach of using the 
 
   ![EMCC console Middleware Home Page monitoring WLS on Kubernetes  ](images/emcc.png " ")
 
-### PREREQUISITES
+
+### Prerequisites
+
 * This workshop uses a simple WebLogic web application running on a Kubernetes cluster as the target application to trace the user transactions. Before starting this workshop, you need to first complete Labs 1-4 in the  **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop.
 * The workshop assumes you have set up Oracle Enterprise Manager Cloud Control 13c in the Oracle Cloud. You can either manually install EM to a compute instance, or provision **[Oracle Enterprise Manager App](https://blogs.oracle.com/observability/post/oracle-enterprise-manager-is-now-available-on-oracle-cloud-marketplace)** from the **[Oracle Cloud Marketplace](https://cloudmarketplace.oracle.com/marketplace)**.
 * An Oracle Free Tier with 30-day free trial or Paid Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported. 
@@ -24,7 +26,7 @@ Although OKE is used as the example in this workshop, the approach of using the 
 **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 
-# How to use this workshop
+### Objectives - How to use this workshop
 
 Two types of use cases are considered.
 
