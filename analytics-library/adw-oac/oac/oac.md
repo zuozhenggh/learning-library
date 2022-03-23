@@ -95,7 +95,7 @@ workshop, you will use this same wallet mechanism to make a connection from OAC 
 
     - **Username**: `ADMIN` -- We have created this user on the ADW instance creation.
 
-    - **Password**: The password that you created on the ADW instance creation at the beginning of the workshop. `ADWwelcome-1234`.
+    - **Password**: The password that you created on the ADW instance creation at the beginning of the workshop.
 
     ![Connection Creation - ADW - WORKSHOPADWOAC](./images/lab300_11.png)
 
@@ -139,13 +139,13 @@ existing projects.
 
     ![OAC - Sales Add](./images/lab300_17.png)
 
-    After you clicked **Add** to create the Data Set, select **SALES** at the top of the page (Add_Data_Set_1 image) or at the right side of the selection panel (Add_Data_Set_2 image) depending the version of OAC that you are using to modify the Data Set that we are currently creating.
+    After you clicked **Add** to create the Data Set, select **SALES** at the top of the page (`Add_Data_Set_1` image) or at the right side of the selection panel (`Add_Data_Set_2` image) depending the version of OAC that you are using to modify the Data Set that we are currently creating.
 
-    **Add_Data_Set_1**.
+    **`Add_Data_Set_1`**.
 
-    ![OAC - Sales Add - Add_Data_Set_1](./images/lab300_18.png)
+    ![OAC - Sales Add - `Add_Data_Set_1`](./images/lab300_18.png)
 
-    **Add_Data_Set_2**.
+    **`Add_Data_Set_2`**.
 
     ![OAC - Sales Add - Add_Data_Set_2](./images/lab300_19.png)
 

@@ -42,7 +42,7 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
   ![](images/open-workshop.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 
 ## Acknowledgements
