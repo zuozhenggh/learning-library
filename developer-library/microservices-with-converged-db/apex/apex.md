@@ -107,6 +107,8 @@ In this task, you will create a new APEX app based on the inventory table.
 
 12. Now that you've logged into the application, take a few moments to explore what you get out of the box. Of course, this is just the starting point for a real app, but it's not bad for not having written any lines of code!
 
+You may now proceed to the next lab.
+
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist
                Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
