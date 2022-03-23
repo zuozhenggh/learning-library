@@ -151,7 +151,7 @@ To create your lab and workshop content:
 
   ![](./images/image-desc.png " ")
 
-3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text.Do not provide a demo password. 
+3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text. Do not provide a demo password. 
 
 
 ## Task 6: Preview Your Workshop and Labs Using Live Server
