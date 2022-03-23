@@ -22,7 +22,7 @@ In this lab, you will:
 
 - This lab requires completion of the Get Started section in the Contents menu on the left.
 
-## **Task 1:** Choose ADW or ATP from the services menu
+## Task 1: Choose ADW or ATP from the services menu
 
 1. Log in to the Oracle Cloud.
 2. Once you log in, the cloud services dashboard shows all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
@@ -55,7 +55,7 @@ In this lab, you will:
     ![Select region on the far upper-right corner of the page.](./images/task1-6.png " ")
 </if>
 
-## **Task 2:** Create an Oracle Autonomous Database instance
+## Task 2: Create an Oracle Autonomous Database instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
