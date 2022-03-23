@@ -7,7 +7,7 @@ This workshop will help you understand the technical capabilities inside and out
 
 ###About Product/Technology
 
-Helidon microservices with Javascript front-end, using REST and messaging for communication will be deployed on Oracle Cloud Infrastructure Kubernetes cluster (OKE) and access pluggable Oracle Autonomous Transaction Processing databases.
+Helidon microservices with Javascript front-end will be deployed on Oracle Cloud Infrastructure Kubernetes cluster (OKE) and access pluggable Oracle Autonomous Transaction Processing databases. REST and messaging are being used for communication 
 
 ![](./images/architecture.png " ")
 
@@ -18,11 +18,14 @@ Estimated Workshop Time: 75 mins
 ###Objectives
 
 - Learn about Oracle Database unique abilityty to provide native support for modern data types, key data center components, and the latest development paradigms like Spatial data for location awareness, JSON for document stores, IoT for device integration, in-memory technologies and many more. 
-- Learn about microservices architecture major tiers  the application tier, the messaging tier, and the database tier - to bring agility, horizontal scale, and robustness to enterprise applications. 
+- Learn about microservices architecture major tiers - the application tier, the messaging tier, and the database tier - to bring agility, horizontal scale, and robustness to enterprise applications. 
 
 ### Prerequisites
 
-- This workshop assumes you have an Oracle cloud account and have signed in to the account.
+ - An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
+
+  > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 
 ## Want to Learn More?
