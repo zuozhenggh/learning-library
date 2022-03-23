@@ -196,4 +196,4 @@ You may now [proceed to the next lab](#next).
 
 - **Author** - Narayanan Ramakrishnan, December 2020
 - **Contributors** - Srivishnu Gullapalli
-- **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+- **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, March 2022
