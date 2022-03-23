@@ -1,4 +1,4 @@
-# How to create a new vault?
+# How do I create a new vault?
 Duration: 3 minutes
 
 The Vault service lets you create vaults in your tenancy as containers for encryption keys and secrets. If needed, a virtual private vault provides you with a dedicated partition in a hardware security module (HSM), offering a level of storage isolation for encryption keys that’s effectively equivalent to a virtual independent HSM.

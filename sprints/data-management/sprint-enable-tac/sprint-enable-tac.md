@@ -1,4 +1,4 @@
-# How to enable Transparent Application Continuity?
+# How do I enable Transparent Application Continuity?
 Duration: 1 minutes
 
 ## Enable Transparent Application Continuity

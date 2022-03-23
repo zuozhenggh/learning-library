@@ -28,7 +28,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
-- Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console
+- Obtained an Oracle Cloud account and signed in to the Oracle Cloud Infrastructure Console at `https://cloud.oracle.com`
 
 
 ## Task 1: Enable Oracle Data Safe in a region of your tenancy
@@ -190,4 +190,4 @@ As a tenancy administrator or user with appropriate permissions to manage an Aut
 ## Acknowledgements
 
 - **Author** - Jody Glover, Consulting User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, February 15, 2022
+- **Last Updated By/Date** - Jody Glover, February 26, 2022

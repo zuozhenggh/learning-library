@@ -1,4 +1,4 @@
-# Customer Insurance Use Case
+# Understand customer insurance use case
 
 ## Introduction
 
@@ -10,7 +10,7 @@ The insurance business wants to analyze four business cases to get demographics 
 
 ### Business Objectives
 
-* Find the most atypical members of this customer group (outlier identification).
+* Find the most atypical members of this customer group.
 * Discover the common demographic characteristics of the most typical customers with insurance.
 * Compute how typical or What probability of purchase have a given new/hypothetical customer is, And grant it to sellers like a tool to qualify better their potential clients since the first contact.
 * Identify rows that are most atypical in the input dataset. Consider each type of marital status to be separate, so the most anomalous rows per marital status group should be returned.
@@ -19,6 +19,10 @@ The insurance business wants to analyze four business cases to get demographics 
 
 * Access the Oracle database containing the customer insurance table and run the scripts to configure the user and prepare data.
 
+
+You may now **proceed to the next lab**
+
+
 ## Acknowledgements
 * **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru, Rajeev Rumale.
-* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2022.
+* **Last Updated By/Date** -  Adrian Castillo Mendoza, March 2022.

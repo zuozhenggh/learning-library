@@ -1,12 +1,6 @@
 # What is Structured Query Language (SQL)?
 
-## Introduction
-
-This lab provides an introduction to the Structured Query Language (SQL).
-
-Estimated Time: 2 minutes
-
-### About SQL and how it works
+Duration: 2 minutes
 
 Structured Query Language (SQL) is the set of statements with which all programs and users access data in an Oracle database. Application programs and Oracle tools often allow users access to the database without using SQL directly, but these applications in turn must use SQL when executing the user's request.
 
