@@ -69,7 +69,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
    </copy>
    ```
 
- All the resources created by the setup are created in this compartment. This will let you to quickly delete and cleanup afterward.  
+   All the resources created by the setup are created in this compartment. This will let you to quickly delete and cleanup afterward.  
 
 2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
@@ -113,15 +113,15 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
    Please confirm that no other un-terminated OKE clusters exist in this tenancy and then hit [RETURN]?
    </copy>
    ```
-  To confirm that there are no other un-terminated OKE clusters, click the Navigation Menu in the upper left of Oracle Cloud Console, navigate to Developer Services and click on Kubernetes Clusters (OKE).
+   To confirm that there are no other un-terminated OKE clusters, click the Navigation Menu in the upper left of Oracle Cloud Console, navigate to Developer Services and click on Kubernetes Clusters (OKE).
 
-  ![Oracle Cloud Infrastructure Developer Services Screen](images/dev-services-menu.png " ")
+   ![Oracle Cloud Infrastructure Developer Services Screen](images/dev-services-menu.png " ")
 
-  ![Navigate to Oracle Cloud Infrastructure OKE Screen](images/get-oke-info.png " ")
+   ![Navigate to Oracle Cloud Infrastructure OKE Screen](images/get-oke-info.png " ")
 
-  If there are any un-terminated OKE clusters, please delete them and continue with setup steps.
+   If there are any un-terminated OKE clusters, please delete them and continue with setup steps.
 
-  ![Review Oracle Cloud Infrastructure Kubernetes Cluster Details](images/get-oke-details.png " ")
+   ![Review Oracle Cloud Infrastructure Kubernetes Cluster Details](images/get-oke-details.png " ")
 
 
 3. The setup will create the workshop resources in a compartment within your tenancy. You will be prompted to enter the compartment information.  You may choose to use an existing compartment or create a new one.
