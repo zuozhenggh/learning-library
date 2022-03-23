@@ -18,7 +18,8 @@ In this workshop, you will learn how to:
 * Create a Forms Server 
 * Create a schema and table in an Oracle Database
 * Compile Oracle Forms file
-* Test them
+* Test the Forms
+* (Optional) Install a Forms Builder on Windows
 
 ### Prerequisites (Optional)
 
