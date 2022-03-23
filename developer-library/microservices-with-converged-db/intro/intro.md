@@ -9,7 +9,7 @@ This workshop will help you understand the technical capabilities inside and out
 
 Helidon microservices with Javascript front-end will be deployed on Oracle Cloud Infrastructure Kubernetes cluster (OKE) and access pluggable Oracle Autonomous Transaction Processing databases. REST and messaging are being used for communication 
 
-![](./images/architecture.png " ")
+![Microservices Architecture](./images/architecture.png " ")
 
 If you would like to watch us do the workshop, click [here](https://youtu.be/yLBEPjOWaz0).
 
