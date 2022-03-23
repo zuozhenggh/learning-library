@@ -1,16 +1,16 @@
 # Compile and Run Forms
 
-In this lab, you will install a database schema in the database, and compile Oracle Forms samples.
+In this lab, you will install a database schema and compile Oracle Forms samples.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 20 minutes
 
 ### Objectives
 
 In this lab, you will:
 * Install a schema in a database
 * Compile Oracle Forms samples
-* Configure Oracle Forms Runtime to start them 
-* Run them
+* Configure Oracle Forms Runtime
+* Run the samples
 
 ### Prerequisites 
 
@@ -19,13 +19,14 @@ This lab assumes you have:
 
 ## Task 1: Copy the sample files
 
-Log to your Forms machine. And download the file.
+Log to your Forms machine. And download the sample files.
 
 ```
 cd $HOME
 wget https://marcgueury.github.io/learning-library/developer-library/forms-to-oci/compile/files/forms_samples.zip
 unzip forms_samples.zip
 cd forms_samples
+# Copy the Forms files in the FORMS_PATH
 cp *.fmb ../oracle/formsmodules/.
 ```
 
@@ -110,8 +111,7 @@ Run the dept.sql script in the database. It takes as arguments:
 - the password that will be used for the scott schema (LiveLab__123)
 - the tns entry name of the database (orcl)
 
-The script will first set the env variable defined above. Mostly for the TNS_ADMIN variable.
-
+Let's create the schema.
 ```
 cd $HOME/forms_samples
 . ./env.sh
@@ -244,8 +244,9 @@ Try this URL. You will need to have Java Runtime installed on your laptop to do 
   http://localhost:9001/forms/frmservlet?config=dept_emp
 ```
 
-Depending of the browser, it will or download a .jnlp file on which you have to click or start the Java Runtinme.
-You will probably have 1 or 2 warning before tha 
+Depending of the browser, it will download a .jnlp file or start it automatically.
+If it is just a download, you have to click on the download .jnlp file to start the Java Runtinme.
+You will probably have 1 or 2 warnings before the Forms windows appears.
 
 ![Warning](images/forms-test-warning.png)
 
@@ -254,6 +255,16 @@ Then the screen will appear. Click on the below icon to get the data.
 ![dept_emp](images/forms-test-dept_emp.png)
 
 If you reached this point. CONGRATULATION !!
+
+## Next Steps
+
+You could improve this setup by:
+- using a Oracle Database Service or an Autonomous Database 
+- using a Devops Git repository to store source Forms files to share between the Forms Builder and Server
+- using several Forms servers and a Load Balancer in front of them for High Availability
+- using Dataguard to replicate the database in another datacenter for Disaster and Recovery
+- using Terraform and "Infrastructure As Code" to create the setup automatically
+- ...
 
 ## Learn More
 

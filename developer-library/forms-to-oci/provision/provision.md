@@ -1,4 +1,4 @@
-# Title of the Lab
+# Install Oracle Forms 
 
 ## Introduction
 
@@ -7,7 +7,6 @@ Estimated Time: 20 minutes
 ### Objectives
 
 In this lab, you will:
-* Install the needed network to start Forms
 * Install an Oracle Forms Server 
 * Connect to it via SSH
 
@@ -20,8 +19,8 @@ This lab assumes you have:
 
 Go to the Marketplace. 
 
-1. In the Hamburger menu, look for Marketplace
-2. In the search, look for Forms
+1. Go to the Oracle Cloud home page. In the Hamburger menu, look for **Marketplace**
+2. In the search, look for **Forms**
 
    ![](./images/forms-marketplace-search.png)
 
@@ -29,14 +28,14 @@ Go to the Marketplace.
 
    ![](./images/forms-marketplace.png)
 
-4. Enter the machine name, ex: **forms***
+4. Enter the machine name, ex: **forms**
 
    ![](./images/forms-instance-name.png)
 
 5. Then check that:
 - VCN: **forms-vcn**
 - Subnet: **Private subnet for forms-vcn**
-- Change Upload the public key and upload the key that you got from the Bastion in Lab1 (##1##)
+- Check the button **Upload the public key** and upload the public key that you got from the Bastion in Lab1 (##1##)
 - Click Create
 
 ![](./images/forms-instance-network.png), 
@@ -55,12 +54,13 @@ Let's provision the installation.
 
 Ideally, you should SSH to you Forms Server from your laptop.
 
-There are several way to do this. We will use a Bastion
-
-It is a lot easier on a day to day like to use a VPN or Fastconnect. 
-But for our simple test here, we will stick to the Bastion.
+There are several way to do this. For this tutorial, we will use a Bastion.
+But note that it is a lot easier on a day to day like to use a VPN or Fastconnect. 
 
 ```
+# Add the key to ssh-agent
+ssh-add &lt;ssh-private-key&gt;
+# Connect via the bastion
 ssh -J opc@&lt;bastion-ip&gt; opc@&lt;Forms Private IP&gt;
 
 Ex:
@@ -72,10 +72,10 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130
    ![](./images/forms-local-provision-start.png)
 
 3. Enter the passwords. By example:
-- Vnc Password: LiveLab1
-- FMW Repository Schema password: LiveLab__123 
-- WLS Admin password: LiveLab1
-- Database System Password: LiveLab1
+- Vnc Password: **LiveLab1**
+- FMW Repository Schema password: **LiveLab__123**
+- WLS Admin password: **LiveLab1**
+- Database System Password: **LiveLab__123**
 
    ![](./images/forms-local-provision-password.png)
 
@@ -87,16 +87,18 @@ Then wait that it is finished.
 
 ## Task 3: Port Forwarding
 
-Since we use a Bastion, do not have direct access to the Forms machine. We will use port forwarding to access
+Since we use a Bastion, we do not have direct access to the Forms machine. We will use port forwarding to access
 the different ports of the installation.
 
 ```
 With port forwarding:
-ssh -i &lt;ssh-private-key&gt; -J opc@&lt;bastion-ip&gt; opc@&lt;Forms Private IP&gt; -L5901:localhost:5901 -L9001:0.0.0.0:9001 -L7001:0.0.0.0:7001
+ssh -J opc@&lt;bastion-ip&gt; opc@&lt;Forms Private IP&gt; -L5901:localhost:5901 -L9001:0.0.0.0:9001 -L7001:0.0.0.0:7001
 
 Ex:
-ssh -i ssh-key-2022-03-21.key -J opc@130.131.132.133 opc@10.0.1.130 -L5901:localhost:5901 -L9001:0.0.0.0:9001 -L7001:0.0.0.0:7001
+ssh -J opc@130.131.132.133 opc@10.0.1.130 -L5901:localhost:5901 -L9001:0.0.0.0:9001 -L7001:0.0.0.0:7001
 ```
+
+Run the above command and let the ssh connection opened. We will need it in the next lab.
 
 ## Learn More
 

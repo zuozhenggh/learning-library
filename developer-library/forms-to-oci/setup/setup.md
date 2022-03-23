@@ -4,12 +4,12 @@ Estimated Lab Time: 10 minutes
 
 ### About Forms
 Oracle Forms is a software product for creating screens that interact with an Oracle database. 
-The source form (fmb) is compiled into a platform-specific "executable" (fmx), that is run (interpreted) by the forms runtime module. The form is used to view and edit data in database-driven applications. Various GUI elements, such as buttons, menus, scrollbars, and graphics can be placed on the form. 
+The source form (fmb) is compiled into a platform-specific "executable" (fmx), that is run (interpreted) by the forms runtime module. The form is used to view and edit data in database-driven applications. 
 
 ### Objectives
 
 In this lab, you will:
-* Check the main files and directory created by the Oracle Forms Image
+* Check the main files and directory created by Oracle Forms 
 * Check the URLs that are preinstalled.
 
 ### Prerequisites 
