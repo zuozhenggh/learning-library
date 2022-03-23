@@ -34,7 +34,7 @@ This lab assumes you have already completed the earlier labs.
     <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy.sh</copy>
     ```
 
-   ![](images/undeploy-inventory-helidon-mp.png " ")
+   ![Undeploy Inventory Service](images/undeploy-inventory-helidon-mp.png " ")
 
 ## Task 2: Deploy an Alternate Implementation of the Inventory Microservice
 
