@@ -17,7 +17,7 @@ This lab assumes you have:
 - Completed all previous labs successfully 
 
 
-## **Task 1:** Create Purchase Order in ERP Cloud
+## Task 1: Create Purchase Order in ERP Cloud
 1. Access your ERP Cloud environment. Login with a user having the correct roles and privileges to create a PO. 
 
 2. Navigate to the **Procurement** Tab.
@@ -83,7 +83,7 @@ This lab assumes you have:
 15. Click **OK** to close the confirmation dialog. 
 
 
-## **Task 2:** Validate Purchase Order status
+## Task 2: Validate Purchase Order status
 After the PO is submitted, the initial status becomes *Pending Approval*. The PO Create event will occur once the status changes to *Open*. 
 
 1. In the **Overview** section, click **Tasks** button on the right.
@@ -127,7 +127,7 @@ Use the Oracle Integration dashboard to see the data flow resulting from the cre
 6. Click **Close** after reviewing the Activity Stream. 
 
 
-## **Task 4:** Verify PO record in ADW Table
+## Task 4: Verify PO record in ADW Table
 Follow these steps to view the PO record in the designated DB table. 
 
 1. If you are not already logged in to Oracle Cloud Console, log in and select **Autonomous Data Warehouse** from the navigation menu.
