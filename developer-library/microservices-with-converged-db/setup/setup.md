@@ -47,7 +47,7 @@ If, however, you have already used up some quota on your tenancy, perhaps while 
 
   ![Oracle Cloud Infrastructure Show Subcompartments](images/show-subcompartments.png " ")
 
-It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
+  It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
 
 ## Task 4: Launch Cloud Shell
 
@@ -63,56 +63,56 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 1. Create a directory to contain the workshop code. The directory name is used to create a compartment of the same name in your tenancy. The directory name must have between 1 and 13 characters, contain only letters or numbers, and start with a letter. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. For example:
 
-  ```
-  <copy>
-  mkdir grabdish
-  </copy>
-  ```
+   ```
+   <copy>
+   mkdir grabdish
+   </copy>
+   ```
 
 All the resources created by the setup are created in this compartment. This will let you to quickly delete and cleanup afterward.  
 
 2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
-  ```
-  <copy> 
-  cd grabdish
-  </copy>
-  ```
+   ```
+   <copy> 
+   cd grabdish
+   </copy>
+   ```
 
 ## Task 6: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
-  ```
-  <copy>
-  git clone -b 22.2.3 --single-branch https://github.com/oracle/microservices-datadriven.git
-  </copy>
-  ```
-  You should now see the directory `microservices-datadriven` in the directory that you created.
+   ```
+   <copy>
+   git clone -b 22.2.3 --single-branch https://github.com/oracle/microservices-datadriven.git
+   </copy>
+   ```
+You should now see the directory `microservices-datadriven` in the directory that you created.
 
 ## Task 7: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
 
-  ```
-  <copy>
-  source microservices-datadriven/workshops/dcms-oci/source.env
-  setup
-  </copy>
-  ```
+   ```
+   <copy>
+   source microservices-datadriven/workshops/dcms-oci/source.env
+   setup
+   </copy>
+   ```
 
- >**Note**: Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run the command to resume the setup.
+   > **Note:** Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then run the command to resume the setup.
 
-  The setup process will typically take around 20 minutes to complete.  
+   The setup process will typically take around 20 minutes to complete.  
 
 2. The setup will ask you to confirm that there are no other un-terminated OKE clusters exist in your tenancy.
 
-  ```
-  <copy>
-  You are limited to only one OKE cluster in this tenancy. This workshop will create one additional OKE cluster and so any other OKE clusters must be terminated.
-  Please confirm that no other un-terminated OKE clusters exist in this tenancy and then hit [RETURN]?
-  </copy>
-  ```
+   ```
+   <copy>
+   You are limited to only one OKE cluster in this tenancy. This workshop will create one additional OKE cluster and so any other OKE clusters must be terminated.
+   Please confirm that no other un-terminated OKE clusters exist in this tenancy and then hit [RETURN]?
+   </copy>
+   ```
   To confirm that there are no other un-terminated OKE clusters, click the Navigation Menu in the upper left of Oracle Cloud Console, navigate to Developer Services and click on Kubernetes Clusters (OKE).
 
   ![Oracle Cloud Infrastructure Developer Services Screen](images/dev-services-menu.png " ")
@@ -146,7 +146,7 @@ All the resources created by the setup are created in this compartment. This wil
 
   `ocid1.user.oc1....<unique_ID>`
 
-  >**Note**: Notice the format of "ocid1.user" prefix.
+  > **Note:** Notice the format of "ocid1.user" prefix.
 
   Locate your menu bar in the Cloud Console and click the person icon at the far upper right. From the drop-down menu, select your user's name. Note, sometimes the name link is missing in which case select the **User Settings** link. Do not select the **Tenancy** link.
 
@@ -187,13 +187,13 @@ The setup will provision the following resources in your tenancy:
 
 1. You should monitor the setup progress from a different browser window or tab.  It is best not to use the original browser window or not to refresh it as this may disturb the setup or you might lose your shell session. Most browsers have a "duplicate" feature that will allow you to quickly created a second window or tab.
 
-  ![Duplicate Browser](images/duplicate-browser-tab.png " ")
+   ![Duplicate Browser](images/duplicate-browser-tab.png " ")
 
 2. From the new browser window or tab, navigate around the console to view the resources within the new compartment. The table includes the console navigation for each resource. For example, here we show the database resources:
 
   ![Database Resources](images/db-example.png " ")
 
- >**Note** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+  > **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
 ## Task 9: Complete the Setup
 
@@ -201,32 +201,33 @@ The setup will provision the following resources in your tenancy:
 
 2. While the background setup jobs are running you can monitor their progress with the following command.
 
-  ```
-  <copy>
-  ps -ef
-  </copy>
-  ```
+   ```
+   <copy>
+   ps -ef
+   </copy>
+   ```
 
 3. You can monitor log files located in the $GRABDISH_LOG directory.
 
-  ```
-  <copy>
-  ls -al $GRABDISH_LOG
+    ```
+   <copy>
+   ls -al $GRABDISH_LOG
    </copy>
-  ```
+   ```
 
-  Once the setup has completed you are ready to [move on to Lab 2](#next). 
+   Once the setup has completed you are ready to [move on to Lab 2](#next). 
 
- >**Note**  builds may continue to run even after the setup has completed. 
+   > **Note:** Builds may continue to run even after the setup has completed. 
  
 4. The status of the builds can be monitored with this command:
 
-  ```
-  <copy>
-  status
-  </copy>
-  ```
-  You may now proceed to the next lab.
+   ```
+   <copy>
+   status
+   </copy>
+   ```
+
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
