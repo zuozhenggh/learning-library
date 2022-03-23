@@ -65,7 +65,6 @@ In this lab, you will:
     - **Accept** the Oracle standard Terms and Restrictions
     - **Launch Instance**
 
->>>>>>> master
     ![Marketplace Launch App](./images/task2/marketplace_launchapp.png)
 
 5. Provide the following information:
@@ -111,7 +110,6 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 
 ## Task 4: Provision Oracle Autonomous Database (ATP)
->>>>>>> master
 
 1. Click on main menu ≡, then Oracle Database > **Autonomous Transaction Processing**. **Create Autonomous Database**.
 
