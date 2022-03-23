@@ -19,7 +19,7 @@ Estimates Time: 10 minutes
 
 This lab assumes that you have already completed the earlier labs.
 
-## Task 1:  Install a Load Testing Tool and Start an External Load Balancer for the Order Service
+## Task 1: Install a Load Testing Tool and Start an External Load Balancer for the Order Service
 
 1. Start an external load balancer for the order service.
 
@@ -147,7 +147,7 @@ This lab assumes that you have already completed the earlier labs.
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
-## Task 3: Load test and scale the database tier
+## Task 3: Load Test and Scale the Database Tier
 
 1. To scale the Order DB Autonomous Transaction Processing database to **2 OCPUs**, click the navigation icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
@@ -181,7 +181,7 @@ This lab assumes that you have already completed the earlier labs.
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
     ```
 
-## Task 4: Scale down the application and database tiers
+## Task 4: Scale Down the Application and Database Tiers
 
 1. To scale the Order database down to **1 OCPUs**, click the hamburger icon in the top-left corner of the Console and go to Autonomous Transaction Processing.
 
