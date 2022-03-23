@@ -38,8 +38,8 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
 - *** use the dva here ***
 
 ## **Task 1:** Data exploration
-1. From the browser session you started in the  Initialize environment lab, **click** on the **Page Menu** icon identified by the ![Page menu icon](./images/page-menu.png) symbol located in the upper right-hand corner.
-    ![Page menu icon](./images/introp.png)
+1. From the browser session you started in the  Initialize environment lab, **click** on the **Page Menu** icon identified by the ![Page menu icon](./images/page-menu.png " ") symbol located in the upper right-hand corner.
+    ![Page menu icon](./images/introp.png " ")
 
 2. **Click** on **Import Project/Flow...** to upload the file we will be using.
 
