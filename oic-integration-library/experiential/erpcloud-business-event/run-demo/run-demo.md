@@ -103,7 +103,7 @@ After the PO is submitted, the initial status becomes *Pending Approval*. The PO
     > **Note:** If PO has another Status, such as *Pending Approval*, then wait a couple of minutes and keep refreshing the page until the desired PO Status appears. 
 
 
-## **Task 3:** Track message flow triggered by the PO Create Event
+## Task 3: Track message flow triggered by the PO Create Event
 Use the Oracle Integration dashboard to see the data flow resulting from the create Purchase Order event in ERP Cloud. 
 
 1. In the Integration navigation pane, click **Home** > **Monitoring** > **Integrations** > **Tracking**
