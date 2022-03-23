@@ -19,7 +19,7 @@ In this lab, you will:
 * GitHub account
 * Strong experience with SQLcl (or any SQL command line interface like SQL*Plus), and/or SQL Developer
 
-## Task 1: Verify Virtual Cloud Network (VCN)
+## Task 1: Verify Virtual Cloud Network (VCN)
 
 1. Login to Oracle cloud console using the Workshop Details received:
 
@@ -43,7 +43,7 @@ In this lab, you will:
 6. Review the Ingress Rules and Egress Rules defined in this security list.
 
 
-## Task 2: Provision Compute node for development
+## Task 2: Provision Compute node for development
 
 1. Click on the following link to access to the customer image from [Oracle marketplace](https://bit.ly/3CxvsxA).
 
@@ -71,14 +71,9 @@ In this lab, you will:
 
     - Name: [Your Initials]-ClientVM (e.g. VLT-ClientVM)
     - Comparment: [Your Compartment]
-    - Image and shape: click **Edit/Collapse** and after **Change shape** if you don't have the following information:
-        - Image: MongoDB and Autonomous JSON workshop
-        - Shape: VM.Standard2.1
-    - Networking: Be sure you have the following information. If not, click **Edit/Collapse** to edit the information
-        - Virtual cloud network: existing VCN (default)
-        - Subnet: Public Subnet (default)
-
-    - Download the private and public keys: **Save Private Key**, **Save Public Key**
+    - Image and shape: default values, or ask instructor what shape is available.
+    - Networking: default values.
+    - Add SSH keys: save both Private Key and Public Key to your computer, in order to have SSH access.
 
     ![Private & Public Keys](./images/task2/privatepublickeys.png)
 
@@ -108,13 +103,15 @@ On the Instance Details page, copy Public IP Address in your notes.
     
 10. Navigate to **cloud.oracle.com**, and **login** to Oracle cloud console using your Cloud Account Name, User Name, and Password.
 
+11. Open another Firefox tab and navigate to the lab guide at **bit.ly/CICDsql**. Use the lab guide on the ClientVM remote desktop to perform the following steps.
 
-## Task 4: Provision Oracle Autonomous Database (ATP)
 
-1. Click on main menu ≡, then Oracle Database > **Autonomous Transaction Processing**. **Create Autonomous Database**.
+## Task 4: Provision Oracle Autonomous Database (ATP)
+
+1. Click on main menu ≡, then Oracle Database > **Autonomous Transaction Processing**. Select the Region and Compartment provided in the Workshop Reservation page. Click **Create Autonomous Database**.
 
     - Select a compartment: [Your Compartment]
-    - Display name: [Your Initials]-Dev01 (e.g. VLT-Dev01)
+    - Display name: [Your Initials]Dev01 (e.g. VLTDev01)
     - Database name: [Your Initials]Dev01 (e.g. VLTDev01)
     - Choose a workload type: Transaction Processing
     - Choose a deployment type: Shared Infrastructure
@@ -136,13 +133,13 @@ On the Instance Details page, copy Public IP Address in your notes.
 5. Click **Create Autonomous Database**. Wait for Lifecycle State to become Available.
 
 
-## Task 5: Connect to your Autonomous Database
+## Task 5: Connect to your Autonomous Database
 
 1. Click **DB Connection**, and download Instance Wallet using **Download Wallet** button.
 
     ![Download Wallet](./images/task3/downloadwallet.png)
 
-2. Provide a password (use the same as for RD connection - DBlearnPTS#21_), and Save File.
+2. Provide a password (use the same as for RD connection - DBlearnPTS#21_), and **Save File**.
 
 3. Click **Applications** > **System Tools** > **Terminal** on the ClientVM Compute Node remote desktop. 
 
@@ -150,7 +147,7 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 4. Open **Applications** > **Accessories** > **Text Editor**. Use this editor to replace **[Your Initials]** in the next commands with your initials, before running.
 
-5. Wallet file was downloaded in folder `/home/oracle/Downloads/`. Create a new folder to place wallet files.
+5. Wallet file was downloaded in folder `/home/oracle/Downloads/`. Create a new folder to place wallet files. Use **Shift+Ctrl+V** to paste commands in Terminal, and press **Enter** after them.
 
     ````
     <copy>
@@ -170,7 +167,11 @@ On the Instance Details page, copy Public IP Address in your notes.
     SSL_SERVER_DN_MATCH=yes
     ````
 
-7. Set the `TNS_ADMIN` environment variable to the directory where the unzipped credentials files.
+7. Click **Save** and close only the sqlnet.ora tab in Text Editor. Always leave the first tab with your notes open.
+
+    ![Save and Close](./images/task5/saveandclose.png)
+
+8. Set the `TNS_ADMIN` environment variable to the directory where the unzipped credentials files.
 
     ````
     <copy>
@@ -178,7 +179,7 @@ On the Instance Details page, copy Public IP Address in your notes.
     </copy>
     ````
 
-8. Get service names for your instance from **tnsnames.ora** file.
+9. Get service names for your instance from **tnsnames.ora** file.
 
     ````
     <copy>
@@ -186,18 +187,17 @@ On the Instance Details page, copy Public IP Address in your notes.
     </copy>
     ````
 
-9. Verify the connectivity using SQL*Plus, using the TP service. If the connection works, exit. Replace `[Your Initials]` with your initials.
+10. Verify the connectivity using SQL*Plus, using the TP service. If the connection works, exit. Replace `[Your Initials]` with your initials. Use **Shift+Ctrl+V** to paste commands in Terminal, and press **Enter** after them. If the connection is successful, you can continue with the next task.
 
     ````
     <copy>
     sqlplus admin/DBlearnPTS#21_@[Your Initials]dev01_tp
-    </copy>
-
     exit
+    </copy>
     ````
 
 
-## Task 6: Install HR Sample Schema
+## Task 6: Install HR Sample Schema
 
 For this simple CICD example, we will capture database changes from the HR sample schema.
 
@@ -265,10 +265,12 @@ For this simple CICD example, we will capture database changes from the HR sampl
     </copy>
     ````
 
+9. When finished, exit SQL*Plus.
 
-## Task 7: Connect to your ATP using SQL Developer
 
-1. Create a new connection in SQL Developer to Dev01 ATP. You can find SQL Developer on the Compute Node under Applications > Programming main menu.
+## Task 7: Connect to your ATP using SQL Developer
+
+1. Create a new connection in SQL Developer to Dev01 ATP. You can find SQL Developer on the Compute Node under **Applications** > **Programming** main menu.
 
     - Name: hr@Dev01ATP
     - Username: hr
@@ -297,11 +299,11 @@ For this simple CICD example, we will capture database changes from the HR sampl
 6. If files are modified outside SQL Developer, you need to click the `database` folder and **Refresh** icon ![](./images/refresh.jpg "") to show those changes.
 
 
-## Task 8: Update Git Client
+## Task 8: Update Git Client
 
 GitHub uses Git version control systems (VCS) to handle the collaboration workflow. This allows developers to create a local copy of the project, makes changes, and merge them back into the central repository.
 
-1. Existing Git client is old, we need to update to a newer version (e.g. 2.28.1).
+1. Existing Git client is old, we need to update to a newer version (e.g. 2.28.1). Use Terminal to run these commands.
 
     ````
     <copy>
@@ -388,7 +390,7 @@ GitHub uses Git version control systems (VCS) to handle the collaboration workfl
     ````
 
 
-## Task 9: Install Liquibase
+## Task 9: Install Liquibase
 
 1. Access the website, and find the URL for the latest stable Liquibase release for Linux x64. 
 
