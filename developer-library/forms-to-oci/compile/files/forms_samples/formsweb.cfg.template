@@ -30,8 +30,8 @@ otherparams=record=forms tracegroup=debug
 [pdf]
 basejnlp=base.jnlp
 webstart=enabled
-userid=scott/SYS_PASSWORD@orcl
-form=pdf.LiveLab__123
+userid=scott/LiveLab__123@orcl
+form=pdf.fmx
 # webstart_codebase=https://LOADBALANCER_HOSTNAME/forms/java
 
 [webutil_demo]
