@@ -30,7 +30,9 @@ This lab assumes you have already completed the earlier labs.
 1. To undeploy the Inventory Helidon MP service, open Cloud Shell and go to the   inventory-helidon folder, using the following command.
 
     ```
-    <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy.sh</copy>
+    <copy>
+    cd $GRABDISH_HOME/inventory-helidon ; ./undeploy.sh
+    </copy>
     ```
 
    ![Undeploy Inventory Service](images/undeploy-inventory-helidon-mp.png " ")
