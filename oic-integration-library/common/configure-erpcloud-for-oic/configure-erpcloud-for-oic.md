@@ -18,7 +18,7 @@ This lab assumes you have
 * Access to an ERP Cloud user account with privileges to assign specific roles to an integration user. 
 
 
-## **Task 1:** Create a custom Integration role
+## Task 1: Create a custom Integration role
 
 1. Login to Oracle ERP Cloud
 
@@ -50,7 +50,7 @@ This lab assumes you have
 
 7. In the *Summary* screen, click **Save and Close**.
 
-## **Task 2:** Create an Integration Service user with custom role
+## Task 2: Create an Integration Service user with custom role
 
 1. In the *Security Console*, select **Users** tab and click **Add User Account**.
 
