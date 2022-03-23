@@ -3,9 +3,9 @@
   "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
      {
-      "title": "Introduction",
-      "type": "odbw",
-      "filename": "../../intro/intro.md"
+        "title": "Introduction",
+        "type": "odbw",
+        "filename": "../../intro/intro.md"
      },
      {
         "title": "Get Started",
