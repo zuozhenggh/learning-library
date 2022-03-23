@@ -79,11 +79,11 @@ if __name__ == "__main__":
 </copy>
 ```
 
-After pasting the above script, in the TODO section at bottom of the script a few of the variables nneed values. Replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it states replacewithXXXX. If you are unsure of your ADB ID, with Cloud Shell still open you can navigate to your ADW database from the hamburger menu to Autonomous Database and **Copy** the OCID to be pasted in the script in Cloud Shellwhere it states "replacewithADBID".
+After pasting the above script, in the TODO section at bottom of the script a few of the variables need values. Replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it states replacewithXXXX. If you are unsure of your ADB ID, with Cloud Shell still open you can navigate to your ADW database from the hamburger menu to Autonomous Database and **Copy** the OCID to be pasted in the script in Cloud Shellwhere it states "replacewithADBID".
 
 ![Get the ADB ID](./images/getadbid.png " ")
 
-Edit the replacewithXXXXX text with the correct information (paste with right click between the quotation marks:
+Edit the replacewithXXXXX text with the correct information (paste with right click between the quotation marks):
 
 ![Paste ADB ID](./images/editfilepaste.png " ")
 
@@ -161,12 +161,29 @@ Select the custsales_custsales-2020-01.csv file from your downloaded folder and 
 
 Navigate from the Hamburger menu to Analytics & AI, select Data Integration, and from the left menu select **Workspaces**. Here we will see our Workspace Lakehouse that we created as part of our configuration. We are going to then create a data loader task.
 
-![Load Data Task](./images/load-data-task.png " ")
+![Load Data Task](./images/create-data-loader-task.png " ")
 
 Lets give this task the name of LoadCustomerCSV, and before we create we need to select the project - Project_lakehouse.
 
-![Create Load Data Task](./images/create-load-data-task.png " ")
+![Create Load Data Task](./images/create-data-loader-task2.png " ")
 
+Now we have to just put in the Source, any transformations and Target for the load process. Click on Source and provide the data asset, dataflow_warehouse_bucket, and default connection, bucket would be the dataflow-warehouse, and finally the file type is CSV.
+
+![Create Load Data Source](./images/create-data-loader-task3.png " ")
+
+![Create Load Data Transformation](./images/create-data-loader-task5.png " ")
+
+![Create Load Data Source](./images/create-data-loader-task4.png " ")
+
+Now click on Configure Transformations, and here we are going to filter out, extract all of the APPs that are like chrome. This will then pull in just the data for those choices and if you wanted you can also exclude columns here.
+
+![Create Load Data Target](./images/create-data-loader-task6.png " ")
+
+Finally, select Target and here we are going to put the file back into object storage so that we can use it in an analytics query as an external table. 
+
+![Create Load Data Target](./images/create-data-loader-task7.png " ")
+
+Create and close the data loader task. We will put it into an application to run the job and load the data as part of the data integration tasks.
 
 ## Task 3: Create an application for automation
 
