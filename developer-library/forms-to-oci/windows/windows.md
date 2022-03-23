@@ -139,20 +139,35 @@ Note: If you want to avoid the Warning during the pretest. You need to install f
 
 ## Task 4: Test Forms Builder
 
-1. Before to start. Copy the tnsnames.ora from your Linux environment from /u01/oracle/middleware/user\_projects/domains/base\_domain/config/fmwconfig in C:\Oracle\Middleware\Oracle_Home\network\ADMIN
+1. If you want to access the local database on the Forms Server. 
+1. Before to start. Copy the tnsnames.ora from your Linux environment from /u01/oracle/middleware/user\_projects/domains/base\_domain/config/fmwconfig in C:\Oracle\Middleware\forms1
 
 - Copy the SSH private key on the Windows machine.
-- Start CMD.EXE on Windows. Then run this command:
+- Start CMD.EXE on Windows in Administator mode. Then run this command:
+
+![](images/forms-windows-cmd-adminstrator.png)
+
 ```
-scp -i &lt;ssh private key&gt; opc@&lt;Forms Private IP&gt;:/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/tnsnames.ora C:\Oracle\Middleware\Oracle_Home\network\ADMIN\.
+# Copy the tnsadmin.ora file
+scp -i &lt;ssh private key&gt; opc@&lt;Forms Private IP&gt;:/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/tnsnames.ora C:\Oracle\Middleware\forms1
+
+# If you use the Local DB of the Forms Server. Open the port in the Linux Firewall.
+ssh -i &lt;ssh private key&gt; opc@&lt;Forms Private IP&gt;
+sudo firewall-cmd --zone=public --add-port=1521/tcp --permanent
+exit
 
 Ex:
-scp -i ssh-key-2022-03-21.key opc@10.0.1.130:/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/tnsnames.ora C:\Oracle\Middleware\Oracle_Home\network\ADMIN\.
+scp -i ssh-key-2022-03-21.key opc@10.0.1.130:/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/tnsnames.ora C:\Oracle\Middleware\forms1
+
+ssh -i ssh-key-2022-03-21.key opc@10.0.1.130
+sudo firewall-cmd --zone=public --add-port=1521/tcp --permanent
+exit
 ```
 
 2. Start Forms Builder
 
 ![](images/forms-builder-test.png)
+
 
 ## Learn More
 

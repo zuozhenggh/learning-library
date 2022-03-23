@@ -83,7 +83,7 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130
 
    ![](./images/forms-local-provision-end.png)
 
-Then wait that it is finished.
+Then wait that it is finished. It takes about 10 mins.
 
 ## Task 3: Port Forwarding
 
