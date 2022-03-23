@@ -84,6 +84,11 @@ This lab assumes you have:
 
   ![](./images/odi_studio_5c.png " ")   
 
+  Unless specified otherwise, the export key is
+    ```
+    <copy>Welcome1#</copy>
+    ```
+
 8. Click "Next" on the next screen and then click on Finish.
 
   ![](./images/odi_studio_5d.png " ")
