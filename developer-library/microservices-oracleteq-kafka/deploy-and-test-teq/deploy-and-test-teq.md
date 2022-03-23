@@ -163,6 +163,11 @@ As the Database is generated during setup based on your environment, you will ne
     ```bash
     <copy>
     cd $LAB_HOME/springboot-oracleteq
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     mvn clean install -DskipTests
     </copy>
     ```
@@ -217,14 +222,17 @@ Now that we have the applications successfully built, we can deploy them and tes
 
     ```bash
     <copy>
-    curl -X POST -H "Content-Type: application/json" -d '{ "id": "id1", "message": "okafka message 1" } ' http://localhost:8090/placeMessage
+    curl -X POST -H "Content-Type: application/json" -d '{ "id": "id1", "message": "okafka message 1" } ' http://localhost:8090/placeMessage | jq
     </copy>
     ```
 
     The result should be
 
     ```bash
-    {"id":"0","statusMessage":"Successful"}
+    {
+        "id": "0",
+        "statusMessage": "Successful"
+    }
     ```
 
 ## **Task 3:** Deploy and Test Spring Boot Oracle TEQ Consumer
@@ -238,6 +246,11 @@ Now that you have Producer running and publishing events inside the Oracle TEQ T
     ```bash
     <copy>
     cd $LAB_HOME/springboot-oracleteq/okafka-consumer
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     ./build.sh
     </copy>
     ```
@@ -260,9 +273,9 @@ Now that you have Producer running and publishing events inside the Oracle TEQ T
 
     ![Spring Boot TEQ Consumer Running Logs](images/springboot-okafka-consumer-running.png " ")
 
-3. Test the Oracle TEQ Consumer microservice
+3. Check message consumption by Oracle TEQ Consumer microservice
 
-    And finally, You can now produce and consume messages from Oracle TEQ; the result inside Consumer logs should be similar to:
+    And finally, you can check the consumption of messages published in Oracle TEQ by analyzing the microservice logs.
 
     ![Spring Boot TEQ Consumer Running Logs](images/springboot-okafka-consumer-test.png " ")
 
