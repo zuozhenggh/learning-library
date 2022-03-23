@@ -16,7 +16,7 @@ This lab assumes you have:
 - Completed the Lab Setup
 
 
-## **Task 1:** Create an Oracle ERP Cloud Adapter connection 
+## Task 1: Create an Oracle ERP Cloud Adapter connection 
 Create a connection with the Oracle ERP Cloud Adapter.
 
 1. Show the left Navigation menu, and click **Integrations** > **Connections**.
@@ -55,7 +55,7 @@ confirmation box that the test was successful.
 
 
 
-## **Task 2:** Create an Oracle Autonomous Data Warehouse Connection 
+## Task 2: Create an Oracle Autonomous Data Warehouse Connection 
 Create a connection with the Oracle Autonomous Data Warehouse Adapter.
 
 1. From the *Connections* window, click **Create**.
