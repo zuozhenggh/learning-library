@@ -27,8 +27,7 @@ This lab assumes you have already completed the earlier labs.
 
 ## Task 1: Undeploy the Java Helidon MP Inventory Microservice
 
-1. To undeploy the Inventory Helidon MP service, open Cloud Shell and go to the
-    inventory-helidon folder, using the following command.
+1. To undeploy the Inventory Helidon MP service, open Cloud Shell and go to the   inventory-helidon folder, using the following command.
 
     ```
     <copy>cd $GRABDISH_HOME/inventory-helidon ; ./undeploy.sh</copy>
