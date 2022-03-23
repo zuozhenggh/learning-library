@@ -168,45 +168,49 @@ Once you have the External IP provisioned, you can press **CTL+C** to terminate 
 ## Task 4: Access the Grafana Application 
 
 1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:3000/). 
-You can login using admin/admin as username/password and change the password accordingly.
+  - You can login using admin/admin as username/password 
 
+  ![Grafana Login](images/GrafanaLogin.png)
 
-  <img src=images/GrafanaLogin.png width=300 />   <img src=images/grafana-login-change-password.png width=300 />
-
+  - And you change the password accordingly.
+  ![Grafana Login](images/grafana-login-change-password.png)
+  
 ## Task 5: Add MySQL Datasource
 1. Add Datasource MySQL
-* Select Datasource from Settings left menu and Click "Add Data source" button
+  - Select Datasource from Settings left menu 
 
-  <img src=images/AddDatasource.png width=100 />    <img src=images/AddDatasource-1.png width=500 />
+  ![Add Datasource](images/AddDatasource.png)
+  - and Click "Add Data source" button
+  ![Add Datasource](images/AddDatasource-1.png)
 
-* Type in mysql in the filter textbox and click the MySQL Datasource
+  - Type in mysql in the filter textbox and click the MySQL Datasource
   ![Choose MySQL](images/AddDatasource-3.png)
 
-* Fill in the Datasource details based on the MDS ip/port and username/password details.
+  - Fill in the Datasource details based on the MDS ip/port and username/password details.
   ![Fill MySQL](images/AddDatasource-4.png)
 
 
 ## Task 6: MySQL Dashboard
 1. Creating dashboard my2 database with script,  Login to the Cloud Shell and operator VM
 
-```
-<copy>
-curl https://raw.githubusercontent.com/meob/my2Collector/master/my2_80.sql | sed 's/^set global/-- set global/g; s/^set sql_log/-- set sql_log/g' > my2_80.sql
-</copy>
-```
+  ```
+  <copy>
+  curl https://raw.githubusercontent.com/meob/my2Collector/master/my2_80.sql | sed 's/^set global/-- set global/g; s/^set sql_log/-- set sql_log/g' > my2_80.sql
+  </copy>
+  ```
 
 2. Execute the creation my2 script
-```
-<copy>
-mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
-</copy>
-```
+  ```
+  <copy>
+  mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
+  </copy>
+  ```
 
 3. Import MySQL Dashboard
-* Choose "Import" from "+" left menu and put in 7991 dashboard ID for import
+  - Choose "Import" from "+" left menu and put in 7991 dashboard ID for import
   ![Import](images/import7991.png)
 
-* Choose the Datasource and click "Import"
+  - Choose the Datasource and click "Import"
   ![Import](images/import7991-Import.png)
 
 2. Checking the Dashboard

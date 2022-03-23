@@ -46,11 +46,11 @@ This lab assumes you have:
 
 ## Task 3: Deploy Ingress Controller to OKE
 
-2. Download yaml deployment file to **OKE**
+2. Apply the ingress controller deployment yaml to **OKE**
 
-```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
-```
+  ```
+  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
+  ```
 
 
 3. Check the status of deployed namespace and service

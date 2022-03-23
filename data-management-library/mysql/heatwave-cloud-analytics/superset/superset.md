@@ -50,99 +50,114 @@ This lab assumes you have:
 
 1. Install helm cli client 'helm' to the operator VM and add superset repo.
 
-```
-<copy>
-curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
-helm repo add superset https://apache.github.io/superset
-</copy>
-```
-![Install helm cli](images/helm-cli-install.png)  
-![Add superset repo to helm ](images/helm-add-repo.png)
+    ```
+    <copy>
+    curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
+    helm repo add superset https://apache.github.io/superset
+    </copy>
+    ```
+
+    ![Install helm cli](images/helm-cli-install.png)  
+    ![Add superset repo to helm ](images/helm-add-repo.png)
 
 2. Generate superset-custom-values.yaml (if neede, to update any specific variables) and Install superset package.
-```
-<copy>
-helm show values superset/superset > superset-custom-values.yaml
-kubectl create ns superset
-helm upgrade --install --values superset-custom-values.yaml superset superset/superset -n superset
-</copy>
-```
-![Install superset ](images/superset-install.png)
+    ```
+    <copy>
+    helm show values superset/superset > superset-custom-values.yaml
+    kubectl create ns superset
+    helm upgrade --install --values superset-custom-values.yaml superset superset/superset -n superset
+    </copy>
+    ```
+    ![Install superset ](images/superset-install.png)
+
 3. Check deployment
-```
-<copy>
-helm list
-kubectl get all -n superset
-</copy>
-```
-![Check resources in namespace superset ](images/superset-get-all.png)
+    ```
+    <copy>
+    helm list
+    kubectl get all -n superset
+    </copy>
+    ```
+    ![Check resources in namespace superset ](images/superset-get-all.png)
 
 3. Disable firewalld in oke-operator COMPUTE VM (make sure you are on oke-operator)
-```
-<copy>
-sudo systemctl stop firewalld
-sudo systemctl disable firewalld
-</copy>
-```
+    ```
+    <copy>
+    sudo systemctl stop firewalld
+    sudo systemctl disable firewalld
+    </copy>
+    ```
 
 4. Start port-forward to service/superset.  If the testing finishes, press **CTRL-C** to terminate port-forward service.
 
-```
-<copy>
-kubectl port-forward --address 0.0.0.0 8088:8088 service/superset -n superset
-</copy>
-```
+    ```
+    <copy>
+    kubectl port-forward --address 0.0.0.0 8088:8088 service/superset -n superset
+    </copy>
+    ```
+
+
 ## Task 4 : Change VCN security list attached to oke-operator VM's subnet to open 8088 traffic
-### Select VCN oke-vcn from networking
-![Choose oke-vnc VCN](images/VCN.png)
 
-### Click on the oke-operator subnet "operator-subnet-regional"
-![ooperator subnet](images/VCN-subnet.png)
+- Select VCN oke-vcn from networking
+    ![Choose oke-vnc VCN](images/VCN.png)
 
-### Click on the security list on operator-subnet-regional
-![security list](images/VCN-subnet-securitylist.png)
+- Click on the oke-operator subnet "operator-subnet-regional"
+    ![operator subnet](images/VCN-subnet.png)
 
-### Add ingress rule to define 8088 and Click "Add Ingress Rules" button
-![Add Ingress Rule](images/VCN-AddIngressRule.png)
+- Click on the security list on operator-subnet-regional
+    ![security list](images/VCN-subnet-securitylist.png)
 
-![Add Ingress Rule](images/VCN-AddIngressRule-8088.png)
+- Add ingress rule to define 8088 and Click "Add Ingress Rules" button
+    ![Add Ingress Rule](images/VCN-AddIngressRule.png)
+
+    ![Add Ingress Rule](images/VCN-AddIngressRule-8088.png)
 
 
 ## Task 5 : Test Superset (note: using http://[public IP of oke-operator VM]:8088)
 - Open a browser and put in the URL : http://[public IP of oke-operator VM]:8088
-- login as admin / admin and click "Sign In"
-![Superset login](images/superset-login.png)
-- You will be landing on superset **HOME** page
-![Superset Home page](images/superset-home-page.png)
+    - login as admin / admin and click "Sign In"
+    ![Superset login](images/superset-login.png)
+    - You will be landing on superset **HOME** page
+    ![Superset Home page](images/superset-home-page.png)
 
 ## Task 6 : Adding MySQL Database Service Connection to Superset
-### Identify the MySQL DB System IP Address
-- Open New Browser page to OCI console
-- On hamburger menu, type mysql and choose DB System.  
-- Click on the link "MySQLInstance" to check the details
-![DB System](images/oci-mysql-dbsystem.png)
-- Note down the IP Address for the DB System
-![DB System](images/oci-mysql-dbsystem-ip.png)
+- Identify the MySQL DB System IP Address
+    - Open New Browser page to OCI console
+    - On hamburger menu, type mysql and choose DB System.  
+    - Click on the link "MySQLInstance" to check the details
+    ![DB System](images/oci-mysql-dbsystem.png)
+    - Note down the IP Address for the DB System
+    ![DB System](images/oci-mysql-dbsystem-ip.png)
 
-### Add MySQL Database Connection to superset
-- Select "Connect Database" from "Data" menu item on "+" icon
-![Connect Database Menu](images/superset-add-database-menu.png)
-- Choose "MySQL" for Database connection
-![Connect MySQL database](images/superset-connect-mysql.png)
-- Fill in the Content accordingly.   
-![MySQL Details](images/superset-mysql-details.png)
-- Click "Finish" on successful connection to the MySQL Database Service
-![Connect Success](images/superset-mysql-connect-success.png)
+- Add MySQL Database Connection to superset
+    - Select "Connect Database" from "Data" menu item on "+" icon
+    ![Connect Database Menu](images/superset-add-database-menu.png)
+    - Choose "MySQL" for Database connection
+    ![Connect MySQL database](images/superset-connect-mysql.png)
+    - Fill in the Content accordingly.   
+    ![MySQL Details](images/superset-mysql-details.png)
+    - Click "Finish" on successful connection to the MySQL Database Service
+    ![Connect Success](images/superset-mysql-connect-success.png)
 
-### Testing SQL on SQL Editor from superset
+
+## Task 7 : Testing SQL on SQL Editor from superset 
 - Choose **SQL Editor** from SQL Lab menu
-![SQL Editor menu](images/superset-sqllab-menu.png)
-![SQL Editor menu](images/superset-sql-editor.png)
+    ![SQL Editor menu](images/superset-sqllab-menu.png)
+    ![SQL Editor menu](images/superset-sql-editor.png)
 
-- Select Database:"MySQL", Schema:"airportdb", Table Schema:"airline", the result is listed
-![SQL Editor test](images/superset-sql-editor-test.png)
+    - Select Database:"MySQL", Schema:"airportdb", Table Schema:"airline", the result is listed
+    ![SQL Editor test](images/superset-sql-editor-test.png)
 
 
+You may now **proceed to the next lab.**
+
+## Acknowledgements
+* **Author** 
+      - Ivan Ma, MySQL Solution Engineer, MySQL APAC
+      - Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+* **Contributors** 
+			 
+* **Last Updated By/Date** - Ivan Ma, March, 2022
 
 
 
