@@ -13,7 +13,7 @@ In the final lab of the workshop, we will configure the replication process in M
 
 For a technical overview of this lab step, please watch the following video:
 
-[](youtube:x7vX5r3Qzns)
+[Video showing technical overview of this lab.](youtube:x7vX5r3Qzns)
 
 ### Prerequisites
 
@@ -288,4 +288,4 @@ Don't forget to rate this workshop!  We rely on this feedback to help us improve
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
 * **Contributors** - John Craig - Technology Strategy Program Manager, Patrick Agreiter - Senior Cloud Engineer
-* **Last Updated By/Date** - Bilegt Bat-Ochir 5/10/2021
+* **Last Updated By/Date** - Andres Quintana, March 2022
