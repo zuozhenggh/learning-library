@@ -50,11 +50,11 @@ We are taking the quick option, but there is also a custom option to create reso
 
 9. Click **View Virtual Cloud Network**
 
-## Task 2: Optional - Security List for Database or Forms Builder on Windows ##
+## Task 2: Security List for Database or Forms Builder on Windows ##
 
-You need to run these steps only if:
-- you will use separate machine to run the Database. A VM or Autonomous DB. 
-- you will use a Forms Builder on Windows
+You need to run these steps to:
+- connect your Forms Server to a database listener in a VM or Autonomous. 
+- (optional) connect a Forms Builder on Windows to the other servers
 
 You should be in the details of the Virtual Cloud Network.
 

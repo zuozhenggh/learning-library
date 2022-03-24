@@ -2,6 +2,10 @@
 export ORACLE_HOME=/u01/oracle/middleware/Oracle_Home
 export PATH=$ORACLE_HOME/bin:$PATH
 
+# JAVA
+export JAVA_HOME=/u01/oracle/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+
 # Domain Home
 export DOMAIN_HOME=/u01/oracle/middleware/user_projects/domains/base_domain
 
@@ -24,6 +28,7 @@ export FORMS_INSTANCE=$DOMAIN_HOME/config/fmwconfig/components/FORMS/instances/f
 export TERM=vt220
 
 # Connection used during compilation
+export DB_ADMIN=system
 export DB_USER=scott
 export DB_PASSWD=LiveLab1
 export DB_TNS=orcl

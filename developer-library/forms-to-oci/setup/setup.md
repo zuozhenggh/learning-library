@@ -126,7 +126,33 @@ ORCL =
   )
 ```
 
-### 5. Database (Local DB only)
+### 5. Stop/Start script
+
+There is a script to start/stop the Database, OHS, Forms or WebLogic
+
+```
+/u01/oracle/.frm_config/startup/srvcontroller.sh
+```
+
+```
+----------------------------------------------------------------------------------
+     Oracle Forms Instance Control     
+----------------------------------------------------------------------------------
+ 1 : stop_all         : stops admin server, OHS, Forms managed server and RCU DB.
+ 2 : start_all        : starts admin server, OHS, Forms managed server and RCU DB.
+ 3 : stop_local_db    : stops RCU DB.
+ 4 : start_local_db   : starts RCU DB.
+ 5 : stop_domain      : stops admin server, OHS, Forms managed server.
+ 6 : start_domain     : starts admin server, OHS, Forms managed server.
+ 7 : stop_fserver     : stops Forms managed server.
+ 8 : start_fserver    : starts Forms managed server.
+ 9 : stop_ohs         : stops OHS.
+10 : start_ohs        : starts OHS.
+11 : delete_domain    : deletes the FMW Domain and the Weblogic RCU schemas.      
+----------------------------------------------------------------------------------
+```
+
+### 6. Database (Local DB only)
 
 If you are using the Local DB for the RCU and optionally your own schemas. You can find the database in /u01/oracle/database/base/Oracle_Home.
 Let's connect to it.
