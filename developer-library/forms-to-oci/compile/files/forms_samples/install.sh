@@ -1,5 +1,11 @@
 . ./env.sh
 
+# Install the scott schema
+sqlplus $DB_ADMIN/$DB_PASSWD@$DB_TNS @dept.sql $DB_PASSWORD $DB_TNS
+
+# Add the sample to formsweb.cfg
+cat formsweb.cfg.template >> $FORMS_CONFIG/formsweb.cfg
+
 # create the schema in the database
 sqlplus $DB_USER/$DB_PASSWD@$DB_TNS @$ORACLE_HOME/forms/create_webutil_db.sql
 
@@ -36,3 +42,6 @@ diff extensions.jnlp extensions.jnlp.orig
 # - Or go in the java console tab security and add https://lb.url in the list of exceptions
 # - Or import /u01/oracle/selfAlias.cer in java console tab security
 # Ideally, it would be nice to create a certificate (with let's encrypt?) and use it to sign instead
+
+# Compile
+./compile.sh

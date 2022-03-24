@@ -98,6 +98,7 @@ Keep the SSH session opened.
 1. Download the software.
 
 Go to https://www.oracle.com/middleware/technologies/forms/downloads.html
+
 Then download the Forms Builder software. It is a zip file of about 2GB.
 
 ![](images/forms-builder-download.png), 
