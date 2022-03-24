@@ -164,16 +164,20 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130
 - Enter the DBCS Sys Password: **LiveLab__123**
 - Enter the DBCS PDB Name: **db\_pdb1**
   = the name of the db + "_pdb1"
-- Enter the DBCS long connect string:  see ##DB\_LONG## with the service replaced by db_pdb1
+- Enter the DBCS long connect string:  see ##DB\_LONG##. Take care to replace with the service name by db_pdb1
 
 ```
-Ex: (DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.0.197)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=db_pdb1.subnet03211405.vcn03211405.oraclevcn.com)))
+(DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.0.197)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=DB_fra125.subnet03211405.vcn03211405.oraclevcn.com)))
+
+to 
+
+(DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.0.197)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=db_pdb1.subnet03211405.vcn03211405.oraclevcn.com)))
 ```
 
-- Enter the DBCS easy connect string: see ##DB\_EASY## with the service name replaced by db_pdb1
+- Enter the DBCS easy connect string: see ##DB\_EASY##
 
 ```
-Ex: db.subnet03211405.vcn03211405.oraclevcn.com:1521/db_pdb1.subnet03211405.vcn03211405.oraclevcn.com
+Ex: db.subnet03211405.vcn03211405.oraclevcn.com:1521/DB_fra125.subnet03211405.vcn03211405.oraclevcn.com
 ```
 
    ![](./images/forms-db-provision-db.png)

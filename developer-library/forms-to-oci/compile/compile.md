@@ -115,8 +115,7 @@ Let's create the schema.
 ```
 cd $HOME/forms_samples
 . ./env.sh 
-sqlplus $DB_ADMIN/$DB_PASSWD@$DB_TNS 
-@dept.sql LiveLab__123 orcl
+sqlplus $DB_ADMIN/$DB_PASSWD@$DB_TNS @dept.sql $DB_PASSWD $DB_TNS
 ```
 
 Output:
@@ -227,14 +226,14 @@ The interesting parameters:
 Let's add this configuration
 
 ```
-export FORMS_CONFIG=/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/servers/WLS_FORMS/applications/formsapp_12.2.1/config
+. ./env.sh
 cat formsweb.cfg.template >> $FORMS_CONFIG/formsweb.cfg
 ```
 
 ## Task 5: Test
 
 You should have a SSH connection from your laptop to the server forwarding port 9001.
-Check **Lab 2 - Task 2: SSH to Oracle Forms** for the command.
+Check **Lab 2 - Task 4: Port Forwarding** for the command.
 
 Try this URL. You will need to have Java Runtime installed on your laptop to do this.
 
