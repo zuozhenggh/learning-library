@@ -30,6 +30,10 @@ In this lab, you will:
 Here is a video to help with the Oracle Trial Sign Up Process:
 [](youtube:4U-0SumNz6w)
 
+We are providing a basic reference to create a Mongo DB account, we are not pretending to be MongoDB experts or provide MongoDB best practices. We are using MongoDB account as user for the workshop purpose not experts level on the matter. If you need support on this process, contact your MongoDB support contact.
+
+Here you have a [Prerequisites document](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/8mPUcFqASM0awq5qKFU9mD6occf83Z5vxeOrWC38CEU2nC-15wusaIY6aCehDVW6/n/fruktknlrefu/b/workshop-ajson-mongodb/o/MongoDB%20Developers%20Full%20Python%20App%20Development%20with%20Autonomous%20JSON%20-%20Prerequisites.pdf) where you can find support to crete the Oracle Cloud account and MongoDB account.
+
 *At this point, you are ready to start learning! Please proceed.*
 
 ## Acknowledgements
