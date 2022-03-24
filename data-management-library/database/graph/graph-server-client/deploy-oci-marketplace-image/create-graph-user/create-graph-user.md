@@ -50,7 +50,7 @@ Open the main menu and click "Database Users".
 
 Click **Create User** button, input user name and password. Enable **Graph** and **Web Access**, and set the quota to **UNLILMITED**.
 
-![](images/user-2.jpg)
+![](images/user-2.png)
 
 Proceed with **Create User**, and open the login window.
 
