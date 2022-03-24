@@ -119,15 +119,77 @@ Logrotatewin is a Windows implementation of the Logrotate utility found in Linux
 
 5. Create scheduled tasks on Windows.
 
-    * With your Command Prompt window still open as an **Administrator**, execute the following command:
+    * With your Command Prompt window still open as an **Administrator**, create a `taskScheduler.xml` file for configuring the Windows Task Scheduler.
+
         ```
         <copy> 
-        SETLOCAL
-        PATH=C:\Windows\system32;%PATH%
-        SCHTASKS /CREATE /SC DAILY /TN "Logrotate\Default task" /TR "\"C:\PROGRA~1\LogRotate\logrotate.exe\" \"C:\PROGRA~1\LogRotate\Content\logrotate.conf\"" /ST 03:00
+        notepad C:\PROGRA~1\LogRotate\taskScheduler.xml
         </copy>
         ```
-    * This will create a daily task to run logrotatewin at 3:00am.
+
+    * In the file, paste the following text:
+
+        ```
+        <copy> 
+        <?xml version="1.0" encoding="UTF-16"?>
+        <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+          <Triggers>
+            <CalendarTrigger>
+              <StartBoundary>2022-01-01T03:00:00</StartBoundary>
+              <Enabled>true</Enabled>
+              <ScheduleByDay>
+                <DaysInterval>1</DaysInterval>
+              </ScheduleByDay>
+            </CalendarTrigger>
+          </Triggers>
+          <Principals>
+            <Principal id="Author">
+              <UserId>S-1-5-18</UserId>
+              <RunLevel>HighestAvailable</RunLevel>
+            </Principal>
+          </Principals>
+          <Settings>
+            <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+            <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+            <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+            <AllowHardTerminate>true</AllowHardTerminate>
+            <StartWhenAvailable>false</StartWhenAvailable>
+            <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
+            <IdleSettings>
+              <StopOnIdleEnd>true</StopOnIdleEnd>
+              <RestartOnIdle>false</RestartOnIdle>
+            </IdleSettings>
+            <AllowStartOnDemand>true</AllowStartOnDemand>
+            <Enabled>true</Enabled>
+            <Hidden>false</Hidden>
+            <RunOnlyIfIdle>false</RunOnlyIfIdle>
+            <WakeToRun>false</WakeToRun>
+            <ExecutionTimeLimit>PT72H</ExecutionTimeLimit>
+            <Priority>7</Priority>
+          </Settings>
+          <Actions Context="Author">
+            <Exec>
+              <Command>"C:\PROGRA~1\LogRotate\logrotate.exe"</Command>
+              <Arguments>"C:\PROGRA~1\LogRotate\Content\logrotate.conf"</Arguments>
+            </Exec>
+          </Actions>
+        </Task>
+        </copy>
+        ```
+
+        Go to the File option and click the Save button to save the file. Close the notepad window.
+
+        >**Note:** The xml configuration file contains the settings to create a daily task to run Logrotatewin at 3:00am.
+
+    * Move to the command prompt window again, run the following commands to create a scheduled task using the XML file
+        ```
+        <copy>
+        SETLOCAL
+        PATH=C:\Windows\system32;%PATH% 
+        SCHTASKS /CREATE /XML "C:\PROGRA~1\LogRotate\taskScheduler.xml" /TN "Logrotate\Default task"
+        </copy>
+        ```
+    * This will create a daily task to run Logrotatewin at 3:00am.
 
 ## Want to Learn More?
 
