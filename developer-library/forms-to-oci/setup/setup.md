@@ -32,8 +32,12 @@ ls
 ```
 
 ```
-autodeploy     bin     config       fileRealm.properties  lib          resources  startWebLogic.sh  tmp
-backup_config  common  console-ext  init-info             nodemanager  security   sysman
+auditlogs      console-ext           init-info      resources                        sysman
+autodeploy     derby.log             lib            security                         system_components
+backup_config  derbyShutdown.log     nodemanager    servers                          tmp
+bin            edit.lok              orchestration  startManagedWebLogic_readme.txt
+common         fileRealm.properties  original       startWebLogic.sh
+config         generated_classes     pending        store
 ```
 
 ### 2. Oracle Forms Runtime configuration
@@ -115,6 +119,7 @@ cd $DOMAIN_HOME/config/fmwconfig
 cat tnsnames.ora 
 ```
 
+For a Local DB
 ```
 ORCL = 
   (DESCRIPTION = 
@@ -125,6 +130,13 @@ ORCL =
    )
   )
 ```
+
+For Database Cloud Service
+```
+ORCL =(DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.1.179)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=DB_fra125.sub03241142161.formsvcn.oraclevcn.com)))
+```
+
+Notice both have the same ORCL alias.
 
 ### 5. Stop/Start script
 

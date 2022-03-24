@@ -34,7 +34,7 @@ Let's create a Windows Machine
 
  ![](./images/forms-windows-name.png)
 
-4. Choose the image, as Windows
+4. Click **Change Image**. Then choose **Windows**
 
 ![](./images/forms-builder-windows-image.png)
 

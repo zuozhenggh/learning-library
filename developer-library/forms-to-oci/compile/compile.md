@@ -114,10 +114,8 @@ Run the dept.sql script in the database. It takes as arguments:
 Let's create the schema.
 ```
 cd $HOME/forms_samples
-. ./env.sh
-. oraenv
-orcl
-sqlplus system/LiveLab__123@orcl 
+. ./env.sh 
+sqlplus $DB_ADMIN/$DB_PASSWD@$DB_TNS 
 @dept.sql LiveLab__123 orcl
 ```
 
